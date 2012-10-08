@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Mento.Framework.Constants;
-using Mento.App;
+using Mento.Business.Case;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -22,7 +22,7 @@ using Mento.App;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4c8d3acd-2c4b-4cbf-9071-2efaad67f2f6")]
+[assembly: Guid("2055bc99-337c-40fc-8187-5a7f1a1b8183")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -38,13 +38,11 @@ using Mento.App;
 [assembly: AssemblyFileVersion(AssemblyInfo.ASSEMBLYVERSION)]
 
 
-
-
-namespace Mento.App
+namespace Mento.Business.Case
 {
     internal static class AssemblyInfo
     {
-        public const string ASSEMBLYTITLE = "Mento.App";
+        public const string ASSEMBLYTITLE = "Mento.Business.Case";
         public const string ASSEMBLYDESCRIPTION = "";
         public const string ASSEMBLYCONFIGURATION = "";
 

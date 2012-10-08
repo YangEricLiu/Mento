@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Administration", "Administration\Administration.csproj", "{C0E96FFA-5126-4486-B74D-5000569A4EAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer", "Customer\Customer.csproj", "{8CE3B60E-099B-436A-84AA-88313B01610D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyView", "EnergyView\EnergyView.csproj", "{A0063174-550F-43B1-A412-98D5759E303D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Information", "Information\Information.csproj", "{1615FA2F-812E-4374-AC19-CCB00119895C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientAccess", "ClientAccess\ClientAccess.csproj", "{24EB12A8-184D-425F-B757-A573E7D9735B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System", "System\System.csproj", "{74673397-F815-44D8-876A-D6CCF87A2382}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.177.1.111:8080/tfs/kara
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Administration\\Administration.csproj
+		SccProjectName1 = Administration
+		SccLocalPath1 = Administration
+		SccProjectUniqueName2 = ClientAccess\\ClientAccess.csproj
+		SccProjectName2 = ClientAccess
+		SccLocalPath2 = ClientAccess
+		SccProjectUniqueName3 = Customer\\Customer.csproj
+		SccProjectName3 = Customer
+		SccLocalPath3 = Customer
+		SccProjectUniqueName4 = EnergyView\\EnergyView.csproj
+		SccProjectName4 = EnergyView
+		SccLocalPath4 = EnergyView
+		SccProjectUniqueName5 = Information\\Information.csproj
+		SccProjectName5 = Information
+		SccLocalPath5 = Information
+		SccProjectUniqueName6 = System\\System.csproj
+		SccProjectName6 = System
+		SccLocalPath6 = System
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0E96FFA-5126-4486-B74D-5000569A4EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E96FFA-5126-4486-B74D-5000569A4EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E96FFA-5126-4486-B74D-5000569A4EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E96FFA-5126-4486-B74D-5000569A4EAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE3B60E-099B-436A-84AA-88313B01610D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE3B60E-099B-436A-84AA-88313B01610D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE3B60E-099B-436A-84AA-88313B01610D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE3B60E-099B-436A-84AA-88313B01610D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0063174-550F-43B1-A412-98D5759E303D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0063174-550F-43B1-A412-98D5759E303D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0063174-550F-43B1-A412-98D5759E303D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0063174-550F-43B1-A412-98D5759E303D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1615FA2F-812E-4374-AC19-CCB00119895C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1615FA2F-812E-4374-AC19-CCB00119895C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1615FA2F-812E-4374-AC19-CCB00119895C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1615FA2F-812E-4374-AC19-CCB00119895C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24EB12A8-184D-425F-B757-A573E7D9735B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24EB12A8-184D-425F-B757-A573E7D9735B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24EB12A8-184D-425F-B757-A573E7D9735B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24EB12A8-184D-425F-B757-A573E7D9735B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74673397-F815-44D8-876A-D6CCF87A2382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74673397-F815-44D8-876A-D6CCF87A2382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74673397-F815-44D8-876A-D6CCF87A2382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74673397-F815-44D8-876A-D6CCF87A2382}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

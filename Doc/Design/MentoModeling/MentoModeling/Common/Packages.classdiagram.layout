@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Packages">
+  <logicalClassDesignerModelMoniker Id="a5c008e6-e5c9-475b-969e-cbfb41081c39" />
+  <nestedChildShapes>
+    <packageShape Id="c49fa2ca-d88c-4d7f-a303-6f191e9eea80" absoluteBounds="1, 0.75, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="d4c507b0-852f-404b-9463-11c4ddcd69df" LastKnownName="Api" />
+    </packageShape>
+    <packageShape Id="7d5489fa-33b0-4d52-aa2e-32a1a6e7639f" absoluteBounds="2.875, 0.75, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="3dcdc641-2cf6-4ede-b539-82533ff0c783" LastKnownName="App" />
+    </packageShape>
+    <packageShape Id="36bdfd20-19da-42dd-bfea-01aaaa161a05" absoluteBounds="4.75, 0.75, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="61d44f08-1413-4a92-9391-1fa8727cad64" LastKnownName="Business" />
+    </packageShape>
+    <packageShape Id="c32f5592-2c24-4e00-9901-f181a5eab60a" absoluteBounds="6.75, 0.75, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="cc885ae5-091c-417b-a5df-ff6cfb0d91b0" LastKnownName="Common" />
+    </packageShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

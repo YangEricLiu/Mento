@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="a5c008e6-e5c9-475b-969e-cbfb41081c39" name="Packages" linkedPackageId="a87d7bdb-8bdf-4a2a-8ccd-54ba4c7a3b83" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="dd28985d-34b1-477e-b4ec-f1989b6685a3">
+      <profileInstance Id="8440c3c6-85b2-42df-ac17-f4726e9318dc" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="bb977db1-31ad-4a8a-9f28-363f808e6d74">
+      <profileInstance Id="a90c4c27-864d-4646-9f68-853ce5c80a27" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="d4c507b0-852f-404b-9463-11c4ddcd69df" name="Api">
+        <elementDefinition Id="2861e0a1-3343-49e9-96c1-ec054d18b511" />
+        <profileInstances>
+          <packageHasProfileInstances Id="dfd842c7-3a4b-486f-9aa7-e3c9ba4e54e2">
+            <profileInstance Id="c98b2434-b973-4a1d-9caf-54a2c73c2660" name="CSharpProfile">
+              <elementDefinition Id="487a55b8-0f32-465b-813f-db4fd3c89e28" />
+            </profileInstance>
+            <elementDefinition Id="f8bae130-a720-469d-b2b6-6f5c55258d9a" />
+          </packageHasProfileInstances>
+        </profileInstances>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="3dcdc641-2cf6-4ede-b539-82533ff0c783" name="App">
+        <elementDefinition Id="452d08b5-65b5-4c9c-9efb-ac455d76ea30" />
+        <profileInstances>
+          <packageHasProfileInstances Id="2a2afae0-1529-4574-835f-e5ccc0806dfa">
+            <profileInstance Id="07e3d86a-817a-4e23-9254-8890a36b3218" name="CSharpProfile">
+              <elementDefinition Id="7442ad38-a1ab-41de-8887-244b8648adc9" />
+            </profileInstance>
+            <elementDefinition Id="26a33622-3749-4d3e-904a-6945b2fd7d62" />
+          </packageHasProfileInstances>
+        </profileInstances>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="61d44f08-1413-4a92-9391-1fa8727cad64" name="Business">
+        <elementDefinition Id="8d33253b-c633-4b5e-94fb-dc0a8848c9fe" />
+        <profileInstances>
+          <packageHasProfileInstances Id="914c5d1a-f692-45c4-8abd-306d7ba208cb">
+            <profileInstance Id="8765be6c-ec47-425b-a1b0-6f9db14097fd" name="CSharpProfile">
+              <elementDefinition Id="dabde16a-a9d3-40e8-8c1a-86735343c1db" />
+            </profileInstance>
+            <elementDefinition Id="0a2651e8-2728-41b0-9af1-a5cc098a0406" />
+          </packageHasProfileInstances>
+        </profileInstances>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="cc885ae5-091c-417b-a5df-ff6cfb0d91b0" name="Common">
+        <elementDefinition Id="2da51bca-f243-48b2-a560-0d99343f326e" />
+        <profileInstances>
+          <packageHasProfileInstances Id="391959e3-60a8-4707-b6b6-4a5465c2bcae">
+            <profileInstance Id="82b3ab4d-de8d-4c70-b962-dedc509de518" name="CSharpProfile">
+              <elementDefinition Id="6da30af3-75a3-48a1-8b57-e0b65691a94c" />
+            </profileInstance>
+            <elementDefinition Id="cf2c6225-942e-4d8b-b056-96505548f640" />
+          </packageHasProfileInstances>
+        </profileInstances>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="a87d7bdb-8bdf-4a2a-8ccd-54ba4c7a3b83" name="MentoModeling">
+    <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />
+  </package>
+</logicalClassDesignerModel>

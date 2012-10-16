@@ -1,21 +1,128 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="93a339f4-15af-4e29-b02b-110b4ace077e" name="Controller" linkedPackageId="c9fc2b01-6e47-4379-a6a3-82c130e07017" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <profileInstances>
-    <packageHasProfileInstances Id="223c18c4-155a-4e2a-ba9a-aadf05dd5869">
-      <profileInstance Id="5c28b8e8-ac08-42d2-b15b-83fd444cfcfe" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+    <packageHasProfileInstances Id="b52d11d3-804f-4c34-8ec9-41a28d2685ef">
+      <profileInstance Id="4e02e805-d4da-4d55-b2ee-3bbb685bd880" name="CSharpProfile">
+        <elementDefinition Id="7442ad38-a1ab-41de-8887-244b8648adc9" />
       </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="af9362be-b3a5-4af1-a78c-5e0c7d30d029">
-      <profileInstance Id="00150570-a404-43d8-880b-4973f38c87ef" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      <elementDefinition Id="26a33622-3749-4d3e-904a-6945b2fd7d62" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2df9a3c1-bc47-45d4-be47-6ecfda75699b" name="ScriptController" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4199761e-cdc3-4dd3-b6a9-637ae0ad46a7" />
+        <ownedOperationsInternal>
+          <operation Id="52d23900-6a61-4e32-991d-d00e29612630" name="Sync" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="57b366d1-470f-4df8-8058-5f6ca489f9ea" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e176da1b-c939-4943-94e4-6b904c872b7c" direction="Return">
+                  <elementDefinition Id="129868c4-59a4-4c8e-a282-e28901eadf11" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ea77ef77-c1bd-49e8-a1ca-922f87b1a5a9" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f3541262-f3bf-4849-a42e-c88830d6a94c" name="View" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0800f263-7a6e-4c1d-9ec8-82717de7987b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="38bf9b2a-cfdb-4dc4-872a-f295e6d5ace7" direction="Return">
+                  <elementDefinition Id="26be53f3-f108-47cd-b3e6-af2c94f6967b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="06d16e00-8ff1-42e8-8a3c-6b79b04a035f" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="71a02a89-7827-4ced-8820-7ebd31993f25" name="PlanController" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c1e80a5e-4310-4c96-8857-f67352d5d443" />
+        <ownedOperationsInternal>
+          <operation Id="5952bd3b-fd07-47c4-9f35-c29a6f45cb18" name="Create" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f70cb479-abbf-46d9-8614-490275199c22" />
+          </operation>
+          <operation Id="ca1872a4-979f-45e8-bf38-b8b6fc7cf906" name="View" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="344e2a98-31b3-4fed-ac1b-cb03c99b51ce" />
+          </operation>
+          <operation Id="7e455cb1-152b-419a-87ed-bb629021faff" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e31043dc-cc2d-4e28-8c6a-5110628902d7" />
+          </operation>
+          <operation Id="91d3c2f1-30a5-4add-bd47-dca82dfa99cb" name="Delete" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c20afb13-df99-48a7-8d9a-95961065b26d" />
+          </operation>
+          <operation Id="63e7d957-90a8-4f2e-9acb-749eda00f539" name="View" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="787a7e65-21d2-4bd4-9fdf-cfbe1dce6cbe" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fd714817-9ed3-4059-af56-8158d50c3648" name="ExecutionController" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4678d39c-2471-4aed-9114-592b222a73c0" />
+        <ownedOperationsInternal>
+          <operation Id="268123c0-d905-4a24-908d-3e631152b344" name="Run" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a99b7abb-37aa-4301-88b8-65fae7e1b382" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="da9f3ed8-86bb-474b-9935-65138f74bc21" name="ResultController" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2b7ba3d8-a588-4e66-9bd2-63bd3e4d11d5" />
+        <ownedOperationsInternal>
+          <operation Id="848b298f-f075-4224-996f-7d255bf2c092" name="View" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eca17d13-ba45-4c9d-be45-7ec23893e51c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="ea77ef77-c1bd-49e8-a1ca-922f87b1a5a9" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="0f317f08-730e-41ae-8f26-d2682d1cf780" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="06d16e00-8ff1-42e8-8a3c-6b79b04a035f" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="0f317f08-730e-41ae-8f26-d2682d1cf780" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
   <package Id="84fb5753-60ab-469f-a48c-73f824e3dca7" name="MentoModeling">
     <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="73a82887-c3d0-4e05-b078-a949495a37b2">
+        <profileInstance Id="9cff1706-6d4e-4cb1-83bc-6190beb80dd8" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="36df0230-1a22-4257-a25c-e11731c4dcf3">
+        <profileInstance Id="ef1f061c-ad70-48c5-8343-4dd542b95251" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="223c18c4-155a-4e2a-ba9a-aadf05dd5869">
+        <profileInstance Id="5c28b8e8-ac08-42d2-b15b-83fd444cfcfe" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="af9362be-b3a5-4af1-a78c-5e0c7d30d029">
+        <profileInstance Id="00150570-a404-43d8-880b-4973f38c87ef" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
   <package Id="c9fc2b01-6e47-4379-a6a3-82c130e07017" name="App">
     <elementDefinition Id="452d08b5-65b5-4c9c-9efb-ac455d76ea30" />

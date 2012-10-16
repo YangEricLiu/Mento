@@ -1,21 +1,109 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="dfa86afc-6134-4966-b9d5-72020e5cafc3" name="Entity" linkedPackageId="521ac42e-06cc-4966-b7a9-f954b4f77897" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <profileInstances>
-    <packageHasProfileInstances Id="93b57395-9729-45d7-ba21-52685a55daf0">
-      <profileInstance Id="70a3b7b0-6f1c-4b9e-9fe0-191d606c4706" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+    <packageHasProfileInstances Id="bb22236e-f48d-4ae7-a621-e58cb58da9f7">
+      <profileInstance Id="c781483f-5356-4e85-b3b6-d8e6a1bc06a9" name="CSharpProfile">
+        <elementDefinition Id="dabde16a-a9d3-40e8-8c1a-86735343c1db" />
       </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="bd15f558-4f24-4ae3-8967-ce6f5703b325">
-      <profileInstance Id="6ede9ac0-ddd6-49f8-aeb0-04eb136f265a" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      <elementDefinition Id="0a2651e8-2728-41b0-9af1-a5cc098a0406" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1275648b-af8f-425d-9d3d-f586690dc600" name="ScriptEntity" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance Id="13ef5b0b-63fb-436d-8fbf-5766b50a6113" name="class" profile="CSharpProfile">
+            <elementDefinition Id="619a3b06-727e-4c37-b5c5-beb60e4db015" />
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="b47eed6a-16d3-43e6-92e4-5536ef150ea7">
+                <propertyInstance Id="f25a074e-ae6e-44ab-8a67-f2849662e9a2" name="ClrAttributes">
+                  <elementDefinition Id="1b585361-0566-4150-9b1e-6e09fa35f59c" />
+                </propertyInstance>
+                <elementDefinition Id="886f8c03-3ca9-4e07-8389-af95a1377ed5" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="eb22f4d8-8a8a-480e-8145-2609873ce7ee">
+                <propertyInstance Id="9d7a401d-37ae-4efa-810e-d3c7019ad17c" name="IsPartial" value="false">
+                  <elementDefinition Id="c03a2d78-270c-401e-bed3-a449d42c28f5" />
+                </propertyInstance>
+                <elementDefinition Id="9fd4b70a-1543-4715-829f-a1d910fd39ff" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="8a0bbbfd-ee26-4b9a-9e8d-7a4133961380">
+                <propertyInstance Id="11d6d677-a957-45fb-a493-ae16b44ace11" name="IsStatic" value="false">
+                  <elementDefinition Id="ea807abd-1c24-4887-82b1-62345c0dc08e" />
+                </propertyInstance>
+                <elementDefinition Id="3ce5fdb0-6fdf-4723-9bc0-5a185e17ba9c" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="5cea1315-b4bd-446c-a02a-f0a384fd3a6d">
+                <propertyInstance Id="df7a0480-fc5d-40ab-807e-e9dcd4dcff74" name="IsUnsafe" value="false">
+                  <elementDefinition Id="f9524dd6-e966-448f-b861-e9dc803de5b6" />
+                </propertyInstance>
+                <elementDefinition Id="f419b824-4240-4142-a0a7-5345092c8e88" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances Id="11804cc1-276e-4a52-aeac-0d295f8ad3c6">
+                <propertyInstance Id="0db546d8-cbe1-4052-b128-1b763ca3e013" name="PackageVisibility" value="internal">
+                  <elementDefinition Id="53f936a3-ce1e-4897-a71e-e3067b74e77f" />
+                </propertyInstance>
+                <elementDefinition Id="62886234-2423-4b58-8450-34c3851b304d" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <elementDefinition Id="d4c06a4b-1dab-4805-93c1-19a680d1b1e6" />
+        <generalsInternal>
+          <generalization Id="85b93446-6348-40df-9c2c-3228e38bb96d" isSubstitutable="false">
+            <classMoniker Id="22f99988-71b4-4801-ae11-ad82101f0c70" LastKnownName="EntityBase" />
+            <elementDefinition Id="0214da4e-c975-4263-b36c-dd92ea42a62d" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="22f99988-71b4-4801-ae11-ad82101f0c70" name="EntityBase" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c7cebd97-2efb-4d35-90e8-ede4901ce91e" />
+        <ownedAttributesInternal>
+          <property Id="300479fa-a43a-433d-893b-c5ce745547f3" name="ID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0acdc531-1eb5-4731-93d3-af3aaea42ea2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="816f8a2d-ba84-44b2-9ecd-a610f9a0b6a4" LastKnownName="long" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="816f8a2d-ba84-44b2-9ecd-a610f9a0b6a4" name="long" isAbstract="false" isLeaf="false" cachedFullName="long">
+        <elementDefinition Id="fe4e8bd0-35e1-42f0-a108-999a0d6e5cd3" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
   <package Id="5e08c6ca-8c06-45db-9d33-169997db9732" name="MentoModeling">
     <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="51dbbde1-5553-4bb5-9457-df901e698bbe">
+        <profileInstance Id="96dd9f4b-33d5-44c8-a9de-8675a79a130f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="f7512376-9f55-46c1-8248-c294a3a09c34">
+        <profileInstance Id="6aaf3244-65c1-4b46-bfed-c1976a8243c4" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="93b57395-9729-45d7-ba21-52685a55daf0">
+        <profileInstance Id="70a3b7b0-6f1c-4b9e-9fe0-191d606c4706" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="bd15f558-4f24-4ae3-8967-ce6f5703b325">
+        <profileInstance Id="6ede9ac0-ddd6-49f8-aeb0-04eb136f265a" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
   <package Id="521ac42e-06cc-4966-b7a9-f954b4f77897" name="Business">
     <elementDefinition Id="8d33253b-c633-4b5e-94fb-dc0a8848c9fe" />

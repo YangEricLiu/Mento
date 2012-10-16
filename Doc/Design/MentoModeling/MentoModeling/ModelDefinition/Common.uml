@@ -11,4 +11,82 @@
         name="CSharpProfile" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="c7cebd97-2efb-4d35-90e8-ede4901ce91e"
+        name="EntityBase"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="0acdc531-1eb5-4731-93d3-af3aaea42ea2"
+            name="ID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fe4e8bd0-35e1-42f0-a108-999a0d6e5cd3"
+                LastKnownName="long"
+                LastKnownLocation="Common.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="97b81f20-0b56-4fcf-8e5f-7d718399860a"
+        name="DataAccessBase"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="ff2da200-9a9b-4e20-8ac2-a1b8ce36079d"
+            name="Database"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="e47b13e1-c58e-49d8-a0da-73dd6cb13f33"
+                LastKnownName="Database"
+                LastKnownLocation="Common.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="e47b13e1-c58e-49d8-a0da-73dd6cb13f33"
+        name="Database" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="fe4e8bd0-35e1-42f0-a108-999a0d6e5cd3"
+        name="long" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="29afebd5-c2bc-4a47-81c8-d6f7b0047c2e"
+        name="BusinessLogicBase"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
 </package>

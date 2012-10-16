@@ -11,4 +11,14 @@
         name="CSharpProfile" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="1ff8b368-ffc4-4b76-8629-6c85fe8586e4"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
 </package>

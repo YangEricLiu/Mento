@@ -1,21 +1,107 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6dd6da62-b4d6-47f6-b651-2bfd9c8dcf19" name="BusinessLogic" linkedPackageId="eaca7ad1-b1ec-409f-8f91-d8c408360eb9" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <profileInstances>
-    <packageHasProfileInstances Id="1ccdabea-e173-4151-815d-0428fd7fcb4b">
-      <profileInstance Id="03b88be1-20d9-4c8f-9068-4a648f6d6fff" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+    <packageHasProfileInstances Id="ab665b3d-433d-41b5-9b6c-e3d2c70e87fd">
+      <profileInstance Id="4d72dff8-a448-44be-bd66-703760355a9e" name="CSharpProfile">
+        <elementDefinition Id="dabde16a-a9d3-40e8-8c1a-86735343c1db" />
       </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="c36bb50f-13e6-4ca0-b3f1-82c8bc84bf5b">
-      <profileInstance Id="eeecd774-9748-497f-a4cf-a2d2a1b677da" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      <elementDefinition Id="0a2651e8-2728-41b0-9af1-a5cc098a0406" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="59ad808e-d0f6-4627-911d-970832d0e44e" name="BusinessLogicBase" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="29afebd5-c2bc-4a47-81c8-d6f7b0047c2e" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="cb9d90ac-3f71-4687-81be-d6815b89e71f" name="ScriptBL" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="74a6422e-31fc-45bd-80c6-7d19c19e7ae0" />
+        <generalsInternal>
+          <generalization Id="ef49f654-804d-474e-b185-17c6da13a6ae" isSubstitutable="false">
+            <classMoniker Id="59ad808e-d0f6-4627-911d-970832d0e44e" LastKnownName="BusinessLogicBase" />
+            <elementDefinition Id="ea105298-e6df-4d6b-8688-dee84ebdecfb" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="478f49d2-30ff-40ec-b13e-03304d01552d" name="Synchronize" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9a6c7cc8-51c5-442f-9165-30fc3eef93f7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c80d1cac-fe94-481b-b76c-d9d942ce792c" direction="Return">
+                  <elementDefinition Id="fd502607-e9eb-42ca-9234-ff9678bbfb6a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="fecec8c9-d738-4c55-9e33-b9c101fb2f6c" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8c5ff92f-82b5-4b79-be2f-9db081c1832b" name="Export" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fc4f2c29-dd11-4a4b-97af-ff83ab3d22c2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="50e38704-2054-492a-bb89-2c7d9137722c" direction="Return">
+                  <lowerValueInternal>
+                    <literalString Id="4489adb3-6aec-4719-a216-c91233f200f8" name="Lower" value="*">
+                      <elementDefinition Id="215aa707-fa3d-4324-b029-20b7dc380476" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="0ba8b079-4450-4665-83c4-b2d10037792b" name="Upper" value="*">
+                      <elementDefinition Id="ef1ee5bf-4a4b-4fe1-91ac-6b7700d52a94" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="d05f9dd8-721d-4aec-bcdf-dc1aa1e7a484" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="57424152-d6e6-43f1-a9f9-b7c3d721394c" LastKnownName="ScriptEntity" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="57424152-d6e6-43f1-a9f9-b7c3d721394c" name="ScriptEntity" isAbstract="false" isLeaf="false" cachedFullName="MentoModeling::Business::ScriptEntity">
+        <elementDefinition Id="d4c06a4b-1dab-4805-93c1-19a680d1b1e6" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fecec8c9-d738-4c55-9e33-b9c101fb2f6c" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="0f317f08-730e-41ae-8f26-d2682d1cf780" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
   <package Id="ceca455c-9cb4-4f71-b383-3d672120d9b4" name="MentoModeling">
     <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="28dee8d5-d4de-45dd-9ad5-2178a5d97263">
+        <profileInstance Id="ab8a3108-2bed-4603-9846-9f305a312663" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="898aa430-993b-4695-b1cc-359d197112d9">
+        <profileInstance Id="3751651b-2f64-4b7c-9968-bba80c556f45" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="1ccdabea-e173-4151-815d-0428fd7fcb4b">
+        <profileInstance Id="03b88be1-20d9-4c8f-9068-4a648f6d6fff" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="c36bb50f-13e6-4ca0-b3f1-82c8bc84bf5b">
+        <profileInstance Id="eeecd774-9748-497f-a4cf-a2d2a1b677da" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
   <package Id="eaca7ad1-b1ec-409f-8f91-d8c408360eb9" name="Business">
     <elementDefinition Id="8d33253b-c633-4b5e-94fb-dc0a8848c9fe" />

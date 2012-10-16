@@ -1,21 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="4c8d7a50-506e-49c4-9633-cd090d9f337a" name="WebUserInterface" linkedPackageId="6dc3e825-5828-46da-be1e-c5277883a993" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <profileInstances>
-    <packageHasProfileInstances Id="2184e75f-a1e4-49c0-bc8d-cbf4c45a2923">
-      <profileInstance Id="ae258d9f-7f96-42b0-b2b0-5898774b3381" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+    <packageHasProfileInstances Id="cdecf7cf-19f5-4bc3-99e2-74ca6bfdd7bd">
+      <profileInstance Id="d78e180c-7dfa-4921-8616-0718797ceab4" name="CSharpProfile">
+        <elementDefinition Id="487a55b8-0f32-465b-813f-db4fd3c89e28" />
       </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="ff0ee110-0c48-4121-b2e0-a648267be6ee">
-      <profileInstance Id="295b52aa-f77c-447a-89a6-c7e78c146ba1" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      <elementDefinition Id="f8bae130-a720-469d-b2b6-6f5c55258d9a" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1732b0ed-a5b6-4254-9dd0-09b24f846622" name="Class1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1ff8b368-ffc4-4b76-8629-6c85fe8586e4" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
   <package Id="2d74e9fc-f813-4964-9312-ae7fe4df096a" name="MentoModeling">
     <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="f599202f-d66d-43a3-a324-4fce18b13be6">
+        <profileInstance Id="95795db4-4ad8-416f-b4b1-ee1319132047" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="da83c6b5-7d18-4d9d-b0ed-8d4b46b316b2">
+        <profileInstance Id="a6f74162-9903-460c-a6c8-176993310ae1" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="2184e75f-a1e4-49c0-bc8d-cbf4c45a2923">
+        <profileInstance Id="ae258d9f-7f96-42b0-b2b0-5898774b3381" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="ff0ee110-0c48-4121-b2e0-a648267be6ee">
+        <profileInstance Id="295b52aa-f77c-447a-89a6-c7e78c146ba1" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
   <package Id="6dc3e825-5828-46da-be1e-c5277883a993" name="Api">
     <elementDefinition Id="2861e0a1-3343-49e9-96c1-ec054d18b511" />

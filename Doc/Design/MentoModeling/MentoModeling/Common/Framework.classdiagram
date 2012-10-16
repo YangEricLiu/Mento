@@ -1,5 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6b261b53-5c83-4142-8b3b-39e5b784d5ca" name="Framework" linkedPackageId="4b5769ef-b0ae-4ace-95c8-890d0aa5e0df" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0faa9433-f50d-450f-92da-59941a9f962a" name="EntityBase" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c7cebd97-2efb-4d35-90e8-ede4901ce91e" />
+        <ownedAttributesInternal>
+          <property Id="021476fe-13e7-4054-af6b-2eb16d22eaf7" name="ID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0acdc531-1eb5-4731-93d3-af3aaea42ea2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ddd454b5-5a0e-4e94-8294-1f6a19b0eaee" LastKnownName="long" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8b84cc02-8d65-4ddd-a295-a623f83f208e" name="DataAccessBase" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="97b81f20-0b56-4fcf-8e5f-7d718399860a" />
+        <ownedAttributesInternal>
+          <property Id="6855ea2f-437b-4be6-a16c-859a881e8c58" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ff2da200-9a9b-4e20-8ac2-a1b8ce36079d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="17fa38a5-5597-445b-8130-5d8831e36d7f" LastKnownName="Database" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="17fa38a5-5597-445b-8130-5d8831e36d7f" name="Database" isAbstract="false" isLeaf="false" cachedFullName="Database">
+        <elementDefinition Id="e47b13e1-c58e-49d8-a0da-73dd6cb13f33" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ddd454b5-5a0e-4e94-8294-1f6a19b0eaee" name="long" isAbstract="false" isLeaf="false" cachedFullName="long">
+        <elementDefinition Id="fe4e8bd0-35e1-42f0-a108-999a0d6e5cd3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9895a030-a64b-466d-b154-300c60977ee3" name="BusinessLogicBase" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="29afebd5-c2bc-4a47-81c8-d6f7b0047c2e" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
   <package Id="a3132459-80da-4c58-8d9c-b0cf183d56e0" name="MentoModeling">
     <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />
     <profileInstances>
@@ -19,5 +62,13 @@
   </package>
   <package Id="4b5769ef-b0ae-4ace-95c8-890d0aa5e0df" name="Common">
     <elementDefinition Id="2da51bca-f243-48b2-a560-0d99343f326e" />
+    <profileInstances>
+      <packageHasProfileInstances Id="a88954d7-5ee0-4339-8f6b-d7b3b539d685">
+        <profileInstance Id="2ce28548-e524-47a6-ae6c-11ec9cb3436c" name="CSharpProfile">
+          <elementDefinition Id="6da30af3-75a3-48a1-8b57-e0b65691a94c" />
+        </profileInstance>
+        <elementDefinition Id="cf2c6225-942e-4d8b-b056-96505548f640" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

@@ -1,5 +1,115 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="56950f7e-21bc-48f6-ad3f-0044e693823b" name="DataAccess" linkedPackageId="9bcce06f-eb13-4603-8b8d-cc9fdecc2eef" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="7a1a5989-7755-4d91-b83a-96b8d2f45c6e" name="ScriptDA" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1cf650b7-6acd-4a69-bd3c-ca7e34c5fdc5" />
+        <generalsInternal>
+          <generalization Id="c1e844ab-c199-4fb9-84be-9ead45901fa6" isSubstitutable="false">
+            <classMoniker Id="4c4280ce-2745-41f0-a3e3-a2db729e1a81" LastKnownName="DataAccessBase" />
+            <elementDefinition Id="1bbc3b77-f953-4bf0-9452-b7ef60f063cb" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="1ba6a80a-e900-4a2b-a668-50dcb56b4e73" name="Create" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cb332c99-8f46-48e7-8e41-8485b33f9db9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="10e42e25-a876-43da-b924-8bf2eff4ffe2" name="entity" direction="In">
+                  <elementDefinition Id="1a30f07e-e272-458b-beff-da4b1ce058c6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0b16c728-55d1-4808-9dda-256dc3192635" LastKnownName="ScriptEntity" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1dad3589-6999-4748-81b8-0b137d03b84f" direction="Return">
+                  <elementDefinition Id="8e16b9e4-388c-41d9-8cae-269ba9f249f2" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d1ed2f1a-0792-497a-9b00-ecd6073f0c3c" LastKnownName="long" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4e22f4a2-1bab-4d87-a670-3d6b0718c48d" name="DeleteAll" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="97788a4d-55ed-40a5-9543-bf7f60e0496d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3cc402be-890a-496c-b922-5e757476c290" direction="Return">
+                  <elementDefinition Id="6324b76c-402c-41fb-8949-1277e8a9b615" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="aa299b64-77f7-4c12-b3b9-9ada318a103d" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="8b1f6e31-c792-4391-89b5-5bd67ed75d17" name="RetrieveAll" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d820c4fb-61d3-415f-aa3a-c105f7254f02" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ecbc09f3-49ac-47c3-bf31-3bd13afd7a87" direction="Return">
+                  <lowerValueInternal>
+                    <literalString Id="f3e33bf6-cf56-4d11-9cb8-b8a25a50ae94" name="Lower" value="*">
+                      <elementDefinition Id="a5f8f272-c7ba-4cf8-ae36-6662b5c2cfed" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="97cf4654-ba82-44a9-847c-a2a1c9dea86c" name="Upper" value="*">
+                      <elementDefinition Id="ffcb022b-b51b-45ac-adf6-62afcef17570" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="813dead5-17a7-434d-9f02-ecd5ea6d61f0" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="29210a85-b2be-4a13-824d-9aff180d589e" LastKnownName="ScriptEntity" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="0b16c728-55d1-4808-9dda-256dc3192635" name="ScriptEntity" isAbstract="false" isLeaf="false" cachedFullName="MentoModeling::Business::ScriptEntity">
+        <elementDefinition Id="d4c06a4b-1dab-4805-93c1-19a680d1b1e6" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7f026e5e-99b5-4bac-abd9-c2e43643febf" name="Database" isAbstract="false" isLeaf="false" cachedFullName="Database">
+        <elementDefinition Id="e47b13e1-c58e-49d8-a0da-73dd6cb13f33" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4c4280ce-2745-41f0-a3e3-a2db729e1a81" name="DataAccessBase" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="97b81f20-0b56-4fcf-8e5f-7d718399860a" />
+        <ownedAttributesInternal>
+          <property Id="3f063a61-7d7e-4c84-bb1c-07bf441fc865" name="Database" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ff2da200-9a9b-4e20-8ac2-a1b8ce36079d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7f026e5e-99b5-4bac-abd9-c2e43643febf" LastKnownName="Database" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="d1ed2f1a-0792-497a-9b00-ecd6073f0c3c" name="long" isAbstract="false" isLeaf="false" cachedFullName="long">
+        <elementDefinition Id="fe4e8bd0-35e1-42f0-a108-999a0d6e5cd3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="aa299b64-77f7-4c12-b3b9-9ada318a103d" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="0f317f08-730e-41ae-8f26-d2682d1cf780" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="29210a85-b2be-4a13-824d-9aff180d589e" name="ScriptEntity" isAbstract="false" isLeaf="false" cachedFullName="MentoModeling::Business::ScriptEntity">
+        <elementDefinition Id="d4c06a4b-1dab-4805-93c1-19a680d1b1e6" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
   <package Id="713278f2-b71f-40b3-9be8-4ada91d7b324" name="MentoModeling">
     <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />
     <profileInstances>
@@ -19,5 +129,13 @@
   </package>
   <package Id="9bcce06f-eb13-4603-8b8d-cc9fdecc2eef" name="Business">
     <elementDefinition Id="8d33253b-c633-4b5e-94fb-dc0a8848c9fe" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4abf5076-c000-41f4-99ee-f73a3cfb65ef">
+        <profileInstance Id="8974c6c2-605b-4a22-a2ed-e2d5dd0d1dd6" name="CSharpProfile">
+          <elementDefinition Id="dabde16a-a9d3-40e8-8c1a-86735343c1db" />
+        </profileInstance>
+        <elementDefinition Id="0a2651e8-2728-41b0-9af1-a5cc098a0406" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

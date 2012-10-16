@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mento.Framework
+namespace Mento.Business.Case.BusinessLogic
 {
-    public abstract class EntityBase
+    class CaseBL
     {
     }
 }

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Mento.Framework;
 
-namespace Mento.Framework
+namespace Mento.Business.Case.Entity
 {
-    public abstract class EntityBase
+    public class CaseEntity : EntityBase
     {
     }
 }

@@ -44,12 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\CaseBL.cs" />
+    <Compile Include="DataAccess\CaseDA.cs" />
+    <Compile Include="Entity\CaseEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessLogic\" />
-    <Folder Include="DataAccess\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Mento.Framework\Mento.Framework.csproj">
       <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>

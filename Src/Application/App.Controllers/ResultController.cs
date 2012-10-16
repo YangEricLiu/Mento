@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mento.Business.Case.BusinessLogic
+namespace App.Controllers
 {
-    class CaseBL
+    public static class ResultController
     {
     }
 }

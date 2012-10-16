@@ -44,9 +44,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExecutionController.cs" />
+    <Compile Include="PlanController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultController.cs" />
+    <Compile Include="ScriptController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Business\Mento.Business.Case\Mento.Business.Script.csproj">
+      <Project>{9B7F3CC7-6C21-4EE4-8FAB-AD62C17DCD1E}</Project>
+      <Name>Mento.Business.Script</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\Mento.Business.Execution\Mento.Business.Execution.csproj">
+      <Project>{738BE4F0-A152-40E7-87B9-60C0A09D0E15}</Project>
+      <Name>Mento.Business.Execution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\Mento.Business.Plan\Mento.Business.Plan.csproj">
+      <Project>{AA90ABC5-A233-40FC-A1D0-DC1DED2431BB}</Project>
+      <Name>Mento.Business.Plan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business\Mento.Business.Result\Mento.Business.Result.csproj">
+      <Project>{27155D41-3745-49F2-A981-26D411B800F8}</Project>
+      <Name>Mento.Business.Result</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Common\Mento.Framework\Mento.Framework.csproj">
       <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
       <Name>Mento.Framework</Name>

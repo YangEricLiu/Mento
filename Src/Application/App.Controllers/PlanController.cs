@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Mento.Framework;
 
-namespace Mento.Business.Case.Entity
+namespace App.Controllers
 {
-    public class CaseEntity : EntityBase
+    public static class PlanController
     {
     }
 }

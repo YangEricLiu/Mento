@@ -8,8 +8,8 @@
     <ProjectGuid>{9B7F3CC7-6C21-4EE4-8FAB-AD62C17DCD1E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mento.Business.Case</RootNamespace>
-    <AssemblyName>Mento.Business.Case</AssemblyName>
+    <RootNamespace>Mento.Business.Script</RootNamespace>
+    <AssemblyName>Mento.Business.Script</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -35,7 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,9 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogic\CaseBL.cs" />
-    <Compile Include="DataAccess\CaseDA.cs" />
-    <Compile Include="Entity\CaseEntity.cs" />
+    <Compile Include="BusinessLogic\ScriptBL.cs" />
+    <Compile Include="DataAccess\ScriptDA.cs" />
+    <Compile Include="Entity\ScriptEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

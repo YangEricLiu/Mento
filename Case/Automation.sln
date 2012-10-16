@@ -13,30 +13,70 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientAccess", "ClientAcces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System", "System\System.csproj", "{74673397-F815-44D8-876A-D6CCF87A2382}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{DF8C2E48-7DE6-4B6B-BED2-49108704970F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.Framework", "..\Src\Common\Mento.Framework\Mento.Framework.csproj", "{12D162B3-1ED8-4854-A7F0-C68EE94B8317}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.Utility", "..\Src\Common\Mento.Utility\Mento.Utility.csproj", "{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{AB40EA61-7C83-46BA-BB88-A42DE3DC675C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{31F0CE15-73BE-455D-A252-D3D59249D757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.TestApi.WebUserInterface", "..\Src\Api\Mento.TestApi.WebUserInterface\Mento.TestApi.WebUserInterface.csproj", "{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cases", "Cases", "{95A2E6D1-2BCC-4865-821D-9AF521B231D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{7EA3BB89-9D43-4D17-92C3-896CA8776C45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestData", "TestData\TestData.csproj", "{BAD5CD98-21C3-4FD0-B25B-B83CC3123AD7}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 7
+		SccNumberOfProjects = 11
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://10.177.1.111:8080/tfs/kara
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = Administration\\Administration.csproj
+		SccProjectTopLevelParentUniqueName1 = Automation.sln
 		SccProjectName1 = Administration
 		SccLocalPath1 = Administration
 		SccProjectUniqueName2 = ClientAccess\\ClientAccess.csproj
+		SccProjectTopLevelParentUniqueName2 = Automation.sln
 		SccProjectName2 = ClientAccess
 		SccLocalPath2 = ClientAccess
 		SccProjectUniqueName3 = Customer\\Customer.csproj
+		SccProjectTopLevelParentUniqueName3 = Automation.sln
 		SccProjectName3 = Customer
 		SccLocalPath3 = Customer
 		SccProjectUniqueName4 = EnergyView\\EnergyView.csproj
+		SccProjectTopLevelParentUniqueName4 = Automation.sln
 		SccProjectName4 = EnergyView
 		SccLocalPath4 = EnergyView
 		SccProjectUniqueName5 = Information\\Information.csproj
+		SccProjectTopLevelParentUniqueName5 = Automation.sln
 		SccProjectName5 = Information
 		SccLocalPath5 = Information
 		SccProjectUniqueName6 = System\\System.csproj
+		SccProjectTopLevelParentUniqueName6 = Automation.sln
 		SccProjectName6 = System
 		SccLocalPath6 = System
+		SccProjectUniqueName7 = ..\\Src\\Common\\Mento.Framework\\Mento.Framework.csproj
+		SccProjectTopLevelParentUniqueName7 = Automation.sln
+		SccProjectName7 = ../Src/Common/Mento.Framework
+		SccLocalPath7 = ..\\Src\\Common\\Mento.Framework
+		SccProjectUniqueName8 = ..\\Src\\Common\\Mento.Utility\\Mento.Utility.csproj
+		SccProjectTopLevelParentUniqueName8 = Automation.sln
+		SccProjectName8 = ../Src/Common/Mento.Utility
+		SccLocalPath8 = ..\\Src\\Common\\Mento.Utility
+		SccProjectUniqueName9 = ..\\Src\\Api\\Mento.TestApi.WebUserInterface\\Mento.TestApi.WebUserInterface.csproj
+		SccProjectTopLevelParentUniqueName9 = Automation.sln
+		SccProjectName9 = ../Src/Api/Mento.TestApi.WebUserInterface
+		SccLocalPath9 = ..\\Src\\Api\\Mento.TestApi.WebUserInterface
+		SccProjectUniqueName10 = TestData\\TestData.csproj
+		SccProjectTopLevelParentUniqueName10 = Automation.sln
+		SccProjectName10 = TestData
+		SccLocalPath10 = TestData
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,8 +107,38 @@ Global
 		{74673397-F815-44D8-876A-D6CCF87A2382}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74673397-F815-44D8-876A-D6CCF87A2382}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74673397-F815-44D8-876A-D6CCF87A2382}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D162B3-1ED8-4854-A7F0-C68EE94B8317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D162B3-1ED8-4854-A7F0-C68EE94B8317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D162B3-1ED8-4854-A7F0-C68EE94B8317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D162B3-1ED8-4854-A7F0-C68EE94B8317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD5CD98-21C3-4FD0-B25B-B83CC3123AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD5CD98-21C3-4FD0-B25B-B83CC3123AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD5CD98-21C3-4FD0-B25B-B83CC3123AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD5CD98-21C3-4FD0-B25B-B83CC3123AD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AB40EA61-7C83-46BA-BB88-A42DE3DC675C} = {DF8C2E48-7DE6-4B6B-BED2-49108704970F}
+		{31F0CE15-73BE-455D-A252-D3D59249D757} = {DF8C2E48-7DE6-4B6B-BED2-49108704970F}
+		{12D162B3-1ED8-4854-A7F0-C68EE94B8317} = {AB40EA61-7C83-46BA-BB88-A42DE3DC675C}
+		{C3EC8BE0-F643-4126-9CE6-DEB029AE1564} = {AB40EA61-7C83-46BA-BB88-A42DE3DC675C}
+		{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD} = {31F0CE15-73BE-455D-A252-D3D59249D757}
+		{C0E96FFA-5126-4486-B74D-5000569A4EAC} = {95A2E6D1-2BCC-4865-821D-9AF521B231D6}
+		{74673397-F815-44D8-876A-D6CCF87A2382} = {95A2E6D1-2BCC-4865-821D-9AF521B231D6}
+		{24EB12A8-184D-425F-B757-A573E7D9735B} = {95A2E6D1-2BCC-4865-821D-9AF521B231D6}
+		{8CE3B60E-099B-436A-84AA-88313B01610D} = {95A2E6D1-2BCC-4865-821D-9AF521B231D6}
+		{A0063174-550F-43B1-A412-98D5759E303D} = {95A2E6D1-2BCC-4865-821D-9AF521B231D6}
+		{1615FA2F-812E-4374-AC19-CCB00119895C} = {95A2E6D1-2BCC-4865-821D-9AF521B231D6}
+		{BAD5CD98-21C3-4FD0-B25B-B83CC3123AD7} = {7EA3BB89-9D43-4D17-92C3-896CA8776C45}
 	EndGlobalSection
 EndGlobal

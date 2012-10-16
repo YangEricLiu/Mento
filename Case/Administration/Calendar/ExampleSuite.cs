@@ -6,6 +6,7 @@ using NUnit.Framework;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System.Configuration;
 
 namespace Automation.Administration.Calendar
 {
@@ -75,6 +76,38 @@ namespace Automation.Administration.Calendar
 
         [Test]
         public void TestCase3()
-        { }
+        {
+            var a = 1;
+            var b = 2;
+            Assert.That(a, Is.LessThan(b));
+        }
+
+        [Test]
+        public void TestCase4()
+        {
+            string Path = ConfigurationManager.AppSettings["path"];
+            Assert.That(Path, Is.StringContaining("temp"));
+        }
+
+        [TestCase("Round A", "Round A")]
+        [TestCase("Round B", "Round B")]
+        [TestCase("Round C", "Round D")]
+        public void TestCase5(string input, string expected)
+        {
+            Assert.AreEqual(input, expected);
+        }
+
+        [Test]
+        [Combinatorial]
+        public void TestCase6([Values(1,2)]int a, [Values("a","b")]string b)
+        {
+        }
+
+        [Test]
+        [Sequential]
+        public void TestCase7([Values(1, 2, 3)]int a, [Values(3, 2, 1)]int b)
+        {
+            Assert.AreEqual(4, a + b);
+        }
     }
 }

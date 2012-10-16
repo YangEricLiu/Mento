@@ -35,10 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\..\Lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,7 +54,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calendar\Suite1.cs" />
+    <Compile Include="Calendar\ExampleSuite.cs" />
+    <Compile Include="Calendar\TheoryExampleSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,8 +63,9 @@
     <Folder Include="Tou\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Calendar\Data\Suite1\TestCase1.json" />
-    <None Include="Calendar\Data\Suite1\TestCase2.json" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

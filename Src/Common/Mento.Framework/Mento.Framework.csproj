@@ -57,7 +57,11 @@
     <Compile Include="Constants\Manufacture.cs" />
     <Compile Include="DataAccess\DataAccessBase.cs" />
     <Compile Include="DataAccess\EntityBase.cs" />
+    <Compile Include="Enumeration\Browser.cs" />
+    <Compile Include="Enumeration\Language.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestData\MultipleTestDataAttribute.cs" />
+    <Compile Include="TestData\TestContextExtend.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

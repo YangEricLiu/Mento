@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A0063174-550F-43B1-A412-98D5759E303D}</ProjectGuid>
+    <ProjectGuid>{74673397-F815-44D8-876A-D6CCF87A2382}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EnergyView</RootNamespace>
-    <AssemblyName>EnergyView</AssemblyName>
+    <RootNamespace>System</RootNamespace>
+    <AssemblyName>System</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

@@ -61,17 +61,19 @@ namespace Automation.Administration.Calendar
             IWebDriver driverChrome = new ChromeDriver();
             //IWebDriver driverIE = new InternetExplorerDriver();
 
-            driverChrome.Url = "http://www.youdao.com";
+            driverChrome.Url = "http://www.bing.com";
 
-            IWebElement textbox = driverChrome.FindElement(By.Id("query"));
+            IWebElement textbox = driverChrome.FindElement(By.Id("sb_form_q"));
 
-            IWebElement submit = driverChrome.FindElement(By.ClassName("s-btn"));
+            IWebElement submit = driverChrome.FindElement(By.Id("sb_form_go"));
 
             textbox.SendKeys("sss");
 
             submit.Click();
 
             Assert.IsTrue(driverChrome.PageSource.Contains("sss"));
+
+            driverChrome.Close();
         }
 
         [Test]
@@ -108,6 +110,12 @@ namespace Automation.Administration.Calendar
         public void TestCase7([Values(1, 2, 3)]int a, [Values(3, 2, 1)]int b)
         {
             Assert.AreEqual(4, a + b);
+        }
+
+        [Test]
+        public void TestCase8()
+        { 
+            
         }
     }
 }

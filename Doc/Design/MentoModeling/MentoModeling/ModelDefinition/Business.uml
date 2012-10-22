@@ -281,5 +281,234 @@
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9c640c43-2054-430d-b80e-68adef6a2dd3"
+        name="BusinessLogicBase"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a5c86f46-6021-413b-92a5-d71b231e9c3a"
+        name="ExecutionBL"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="946025c5-c53a-49e2-b60b-ba56212f3d8c"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9c640c43-2054-430d-b80e-68adef6a2dd3"
+              LastKnownName="BusinessLogicBase"
+              LastKnownLocation="Business.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="035c6590-e1b3-45ad-8336-b5da73f5ddb5"
+            name="RunScript"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1af0157c-ba50-4b12-9561-9b0bbbc1afde"
+                  direction="Return"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="4c93faaa-6462-4046-a209-9fa712360895"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="87eb48ea-ea13-452e-b7ff-dccdf8608d14"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="57145d88-46db-42e9-be3a-472abe630fea"
+                      LastKnownName="runPara"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b0280871-0869-4999-a324-0e81b8feca0c"
+            name="RunPlan"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0828fc38-66fe-46b2-ba47-ef3844e2ca3f"
+                  direction="Return"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="1dce16fa-b2f4-443a-b807-4a8fc7f9a9ac"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="64b3a6a9-d125-4b43-8b24-cf997dcda74c"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="57145d88-46db-42e9-be3a-472abe630fea"
+                      LastKnownName="runPara"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="57145d88-46db-42e9-be3a-472abe630fea"
+        name="runPara" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="517e54da-0f7d-4e11-8cbd-a9a6242fb12f"
+        name="BusinessLogicBase"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="cc1606e5-b5bd-4ff1-bd9f-7fddebb4ee85"
+        name="PlanBL"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="930b89b3-584a-495b-b300-8b8a6c92c38b"
+            isSubstitutable="false">
+            <classMoniker
+              Id="517e54da-0f7d-4e11-8cbd-a9a6242fb12f"
+              LastKnownName="BusinessLogicBase"
+              LastKnownLocation="Business.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c6190b8e-c2f7-47d2-857e-bfc9e9ffe67f"
+            name="Create"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f53cf99f-229c-46c2-822f-fd541f4fbd09"
+                  direction="Return"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="e6d8c456-1e62-48cf-92d7-48757c990a18"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="8e51b0a7-6f93-44ac-abbb-24ffbeaddd13"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a6954ab3-7bac-4b63-aea9-4e10bd96e979"
+                      LastKnownName="planEntity"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="da7c6901-08eb-4f05-93b6-60675f2bdfef"
+            name="Delete"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f7afebf3-b0f8-4e58-b6ed-1d7de3faa73f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="42001a05-01d0-4139-a89f-eec35fe0f727"
+                      LastKnownName="planID"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b8ce549f-4c4f-4f56-ad6f-675aaa30c6e1"
+            name="View"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="de9eae24-6862-4a47-b5eb-be0de20ccd4a"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="42001a05-01d0-4139-a89f-eec35fe0f727"
+                      LastKnownName="planID"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="a6954ab3-7bac-4b63-aea9-4e10bd96e979"
+        name="planEntity" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="42001a05-01d0-4139-a89f-eec35fe0f727"
+        name="planID" />
+    </packageHasNamedElement>
   </packagedElements>
 </package>

@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="dfa86afc-6134-4966-b9d5-72020e5cafc3" name="Entity" linkedPackageId="521ac42e-06cc-4966-b7a9-f954b4f77897" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="bb22236e-f48d-4ae7-a621-e58cb58da9f7">
-      <profileInstance Id="c781483f-5356-4e85-b3b6-d8e6a1bc06a9" name="CSharpProfile">
-        <elementDefinition Id="dabde16a-a9d3-40e8-8c1a-86735343c1db" />
-      </profileInstance>
-      <elementDefinition Id="0a2651e8-2728-41b0-9af1-a5cc098a0406" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="1275648b-af8f-425d-9d3d-f586690dc600" name="ScriptEntity" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -107,5 +99,13 @@
   </package>
   <package Id="521ac42e-06cc-4966-b7a9-f954b4f77897" name="Business">
     <elementDefinition Id="8d33253b-c633-4b5e-94fb-dc0a8848c9fe" />
+    <profileInstances>
+      <packageHasProfileInstances Id="bb22236e-f48d-4ae7-a621-e58cb58da9f7">
+        <profileInstance Id="c781483f-5356-4e85-b3b6-d8e6a1bc06a9" name="CSharpProfile">
+          <elementDefinition Id="dabde16a-a9d3-40e8-8c1a-86735343c1db" />
+        </profileInstance>
+        <elementDefinition Id="0a2651e8-2728-41b0-9af1-a5cc098a0406" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

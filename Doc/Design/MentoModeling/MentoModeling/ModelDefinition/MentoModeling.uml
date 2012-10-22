@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c"
   name="MentoModeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -59,25 +59,249 @@
       <packageMoniker
         Id="2861e0a1-3343-49e9-96c1-ec054d18b511"
         LastKnownName="Api"
-        LastKnownLocation="Package_1019.uml" />
+        LastKnownLocation="App.uml" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <packageMoniker
         Id="452d08b5-65b5-4c9c-9efb-ac455d76ea30"
         LastKnownName="App"
-        LastKnownLocation="Package1_1019.uml" />
+        LastKnownLocation="Api.uml" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <packageMoniker
         Id="8d33253b-c633-4b5e-94fb-dc0a8848c9fe"
         LastKnownName="Business"
-        LastKnownLocation="Package2_1019.uml" />
+        LastKnownLocation="Business.uml" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <packageMoniker
         Id="2da51bca-f243-48b2-a560-0d99343f326e"
         LastKnownName="Common"
-        LastKnownLocation="Package3_1019.uml" />
+        LastKnownLocation="Common.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1409bda4-a469-42f4-9481-0f773d97b1c8"
+        name="HierarchyController"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="f7b1bbf3-9830-4248-aa46-0367297b0d84"
+            name="ExplandHNode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="dc90e376-fbf7-4ae6-8b6b-a68bd64eb256"
+            name="CollapseHNode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fe6fa471-d50c-45f6-91a5-3dda38133edc"
+            name="SelectHNode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="18624e6d-cd9a-4eb1-a8e4-85c3eb5c2de5"
+            name="FloatOnNode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="2decb2eb-368d-4b7d-bf76-54b82c11d95b"
+            name="GetTreeView"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="0daa6b6b-7f1c-42b3-b132-7db0689b8840"
+        name="NavigatorController"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="4d88a7ed-1c68-4f64-91b9-6482bbfd5613"
+            name="NavigatorTo"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="78f56387-a2c9-458b-9120-1e8d9ea48af7"
+        name="Sequence1"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="42488f29-dc25-46f0-a4de-44a57cf67cc5"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="7f0180d9-16eb-47b9-83fe-9e990d0b8bbf"
+                LastKnownName="FunctionWrapper"
+                LastKnownLocation="MentoModeling.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="dfa745fc-cc2a-442e-920b-4e556129121c"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="MentoModeling.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="8ccc3b6a-b931-4ca6-89fd-4c38e83d8560"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="MentoModeling.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="14c53d0b-d42e-42ef-b58c-9d60a4ccc53e"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="MentoModeling.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="8ccc3b6a-b931-4ca6-89fd-4c38e83d8560"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="cff04a97-89a1-4861-bf9d-425103ef1cf4"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="MentoModeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="7f0180d9-16eb-47b9-83fe-9e990d0b8bbf"
+                LastKnownName="FunctionWrapper"
+                LastKnownLocation="MentoModeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="14c53d0b-d42e-42ef-b58c-9d60a4ccc53e"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="7f0180d9-16eb-47b9-83fe-9e990d0b8bbf"
+                LastKnownName="FunctionWrapper"
+                LastKnownLocation="MentoModeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <lostFoundTarget
+            Id="2797b229-9e85-460b-96c8-71ff48a2e5fd"
+            name="LostFoundTarget1" />
+          <executionOccurrenceSpecification
+            Id="dfa745fc-cc2a-442e-920b-4e556129121c"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="9f15d10f-589c-4a1a-bce0-df063866fb51"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="MentoModeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="7f0180d9-16eb-47b9-83fe-9e990d0b8bbf"
+                LastKnownName="FunctionWrapper"
+                LastKnownLocation="MentoModeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="d1e4b779-37a6-4087-8d54-c502b74ac658"
+            name="Scripts"
+            isActor="false"
+            lifelineDisplayName="Scripts" />
+          <lifeline
+            Id="7f0180d9-16eb-47b9-83fe-9e990d0b8bbf"
+            name="FunctionWrapper"
+            isActor="false"
+            lifelineDisplayName="FunctionWrapper">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="8ccc3b6a-b931-4ca6-89fd-4c38e83d8560"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="MentoModeling.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="dfa745fc-cc2a-442e-920b-4e556129121c"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="MentoModeling.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="cfad498b-a89d-4b07-bf48-cdc7986f1294"
+            name="ControlWrapper"
+            isActor="false"
+            lifelineDisplayName="ControlWrapper" />
+          <lifeline
+            Id="c02e3e2c-5dcf-4c8d-b118-08181048abb2"
+            name="ElementWrapper"
+            isActor="false"
+            lifelineDisplayName="ElementWrapper" />
+        </lifelines>
+        <messages>
+          <message
+            Id="1d5714d0-0e31-4491-83e2-b51b6c3ad856"
+            name="Message1"
+            messageKind="Found"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <lostFoundTargetMoniker
+                Id="2797b229-9e85-460b-96c8-71ff48a2e5fd"
+                LastKnownName="LostFoundTarget1"
+                LastKnownLocation="MentoModeling.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="14c53d0b-d42e-42ef-b58c-9d60a4ccc53e"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="MentoModeling.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="cff04a97-89a1-4861-bf9d-425103ef1cf4"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="9f15d10f-589c-4a1a-bce0-df063866fb51"
+        name="ExecutionEvent" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

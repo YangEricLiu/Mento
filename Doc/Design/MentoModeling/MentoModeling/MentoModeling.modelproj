@@ -21,6 +21,13 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
+    <Content Include="Api\UMLSequenceDiagram1.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Api\UMLSequenceDiagram1.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Api\UMLSequenceDiagram1.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="Api\WebUserInterface.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -156,6 +163,7 @@
     <Folder Include="Business\Execution" />
     <Folder Include="Business\Result" />
     <Folder Include="Business\Plan" />
+    <Folder Include="Case\Controller" />
     <Folder Include="ModelDefinition\" />
     <Content Include="Business\Case\DataAccess.classdiagram">
       <SubType>Content</SubType>
@@ -178,5 +186,6 @@
     <Folder Include="Api" />
     <Folder Include="Business" />
     <Folder Include="Common" />
+    <Folder Include="Case" />
   </ItemGroup>
 </Project>

@@ -14,5 +14,8 @@
     <packageShape Id="c32f5592-2c24-4e00-9901-f181a5eab60a" absoluteBounds="6.75, 0.75, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
       <packageMoniker Id="cc885ae5-091c-417b-a5df-ff6cfb0d91b0" LastKnownName="Common" />
     </packageShape>
+    <packageShape Id="db327c29-c823-4d33-a7ed-46ddafca9394" absoluteBounds="8.75, 0.75, 1.5, 1" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="bd42af57-0ee5-4bcb-b0fd-0b2e1af6ce06" LastKnownName="Selenium" />
+    </packageShape>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>

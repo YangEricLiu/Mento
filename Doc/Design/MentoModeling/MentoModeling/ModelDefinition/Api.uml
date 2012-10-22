@@ -84,7 +84,22 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="779990aa-e737-4d4f-a51b-2a0a9ea3416b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0f317f08-730e-41ae-8f26-d2682d1cf780"
+                      LastKnownName="void"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="344e2a98-31b3-4fed-ac1b-cb03c99b51ce"
             name="View"
@@ -92,7 +107,22 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a766a0d0-4e30-4781-b27c-9bbed740a73e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0f317f08-730e-41ae-8f26-d2682d1cf780"
+                      LastKnownName="void"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="e31043dc-cc2d-4e28-8c6a-5110628902d7"
             name="Update"
@@ -100,7 +130,22 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b926975d-fccb-4f8c-ac94-64a8447cbd47"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0f317f08-730e-41ae-8f26-d2682d1cf780"
+                      LastKnownName="void"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="c20afb13-df99-48a7-8d9a-95961065b26d"
             name="Delete"
@@ -108,7 +153,22 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0296ce97-7615-477f-b2c9-a8e7dcd033b9"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0f317f08-730e-41ae-8f26-d2682d1cf780"
+                      LastKnownName="void"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="787a7e65-21d2-4bd4-9fdf-cfbe1dce6cbe"
             name="View"
@@ -116,7 +176,22 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f94afa80-bc0a-4b3a-b146-3f84749022d5"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0f317f08-730e-41ae-8f26-d2682d1cf780"
+                      LastKnownName="void"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -135,7 +210,22 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6baf10af-e7b5-42aa-a23e-cbee9ad937cd"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0f317f08-730e-41ae-8f26-d2682d1cf780"
+                      LastKnownName="void"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -154,7 +244,22 @@
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="04f9cc17-c344-4dd2-aac7-77b4394e8477"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0f317f08-730e-41ae-8f26-d2682d1cf780"
+                      LastKnownName="void"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

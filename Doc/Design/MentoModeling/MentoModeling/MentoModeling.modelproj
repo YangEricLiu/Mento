@@ -21,12 +21,12 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
-    <Content Include="Api\UMLSequenceDiagram1.sequencediagram">
+    <Content Include="Api\WebUserInterface.sequencediagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Api\UMLSequenceDiagram1.sequencediagram.layout">
+    <Content Include="Api\WebUserInterface.sequencediagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Api\UMLSequenceDiagram1.sequencediagram</DependentUpon>
+      <DependentUpon>Api\WebUserInterface.sequencediagram</DependentUpon>
     </Content>
     <Content Include="Api\WebUserInterface.classdiagram">
       <SubType>Content</SubType>

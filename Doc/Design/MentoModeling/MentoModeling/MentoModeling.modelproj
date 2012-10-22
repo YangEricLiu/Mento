@@ -21,6 +21,20 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
+    <Content Include="Api\TestData.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Api\TestData.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Api\TestData.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Api\TestData.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Api\TestData.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Api\TestData.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="Api\WebUserInterface.sequencediagram">
       <SubType>Content</SubType>
     </Content>
@@ -147,6 +161,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Common\Utility.classdiagram</DependentUpon>
     </Content>
+    <Content Include="External\Selenium.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="External\Selenium.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>External\Selenium.classdiagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\Api.uml">
       <SubType>Content</SubType>
     </Content>
@@ -164,6 +185,7 @@
     <Folder Include="Business\Result" />
     <Folder Include="Business\Plan" />
     <Folder Include="Case\Controller" />
+    <Folder Include="External\" />
     <Folder Include="ModelDefinition\" />
     <Content Include="Business\Case\DataAccess.classdiagram">
       <SubType>Content</SubType>

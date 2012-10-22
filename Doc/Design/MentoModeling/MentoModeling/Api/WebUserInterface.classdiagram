@@ -217,7 +217,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="bd73e128-2877-4f54-b71b-91389684f3df" name="ElementWrapper" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="bd73e128-2877-4f54-b71b-91389684f3df" name="ElementLocator" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="3c052a49-62c1-4328-8a93-9421bd548d99" />
         <ownedOperationsInternal>
           <operation Id="7189c0b1-a45e-4f13-8268-98c4870eeff4" name="WaitForElement" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -254,29 +254,56 @@
           <property Id="fd486e59-fc09-4169-972d-5b8fd4f73cab" name="Dimension" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="f85ff5c9-4106-483e-aae5-4f09477b95ef" />
           </property>
-          <property Id="e9613e8e-fc2f-41a0-b51d-cd875b71a1fb" name="Platform" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="0787a20f-81a6-4bfd-a9b2-0c04277b4d76" />
+          <property Id="121018ca-a0c4-4231-a083-542de48f39c4" name="TargetBaseline" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="39ec1cf6-32d0-40b8-b8cf-6b620def0bec" />
           </property>
-          <property Id="8b4a79b2-77ea-4fd5-90c5-080e96f1b986" name="ChartView" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="6826ad64-764e-42a8-9fde-229f67bec26a" />
+          <property Id="20ae4590-a039-4b35-b545-f923f3d023e4" name="TimeManagement" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fa245ead-4aaf-4684-806b-340e84069fa7" />
           </property>
-          <property Id="329562b8-1ad1-4a4f-a692-d25a35e1d698" name="DataView" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="5b797e36-884a-4970-9c24-2861c2b816c4" />
+          <property Id="e185c10e-b2ef-4e7b-95a5-4defc0309978" name="TOUTariff" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8a94b6e5-03dd-4328-b4d9-c565f98c95d7" />
           </property>
-          <property Id="50fddaad-50d9-47b1-b485-055460a00f33" name="TimeRange" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="44ee1bc2-c633-46bb-9142-b413295c02f0" />
+          <property Id="4923464b-8ced-44a4-92fd-4cc0b2ff9510" name="SingleTag" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f11be880-ad76-4987-b329-8f9d0ab20c32" />
           </property>
-          <property Id="dd3dbdd2-be25-4596-aee1-c0d924d72831" name="Dashborad" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="ee7780e1-41e9-4d1a-8824-45fa6dd4db3d" />
+          <property Id="9b3df4ce-7653-4dea-9feb-0db28df87a81" name="SingleKPI" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5b8c58a0-4651-42a8-a948-50b2c7b46fb3" />
+          </property>
+          <property Id="a997729c-66ea-457e-adfe-df5c48c64f1c" name="MultipleTags" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cb057859-7f1b-4b3e-a03b-08b123e2a726" />
+          </property>
+          <property Id="85b631d3-9913-401e-867e-0903faf24aeb" name="DateSpansCompare" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="42949a97-5fe3-4715-a30b-50767995b016" />
+          </property>
+          <property Id="986244cc-5438-4753-ad7e-062b8b5fcc56" name="ClientAccess" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b937ce89-d43c-4989-ad4f-81ae1ef20217" />
+          </property>
+          <property Id="c7d4f3cf-0a99-4b70-8367-6059aaeb3393" name="CarbonUsage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2de7f78a-7829-4641-a425-068ca973879e" />
+          </property>
+          <property Id="537c5b7a-5902-4392-a105-870be927573f" name="CostUsage" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="751fbc28-8426-4e6f-a07f-01f9a7965804" />
+          </property>
+          <property Id="cb068cb0-8f07-4244-b885-3b389f674b84" name="ConversionFactor" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="61770ed8-f04c-4488-8854-22d9078fcf19" />
+          </property>
+          <property Id="9648d06c-abdd-4ffe-9466-38fb7140b409" name="Cost" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8b081857-5ec8-44da-b77c-c2433dda5f60" />
+          </property>
+          <property Id="bf845717-2f39-46e0-88d3-86c8a0708c4a" name="Calendar" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="44440c41-3a3b-4052-8a7f-75e7c93c0646" />
+          </property>
+          <property Id="11a4142f-fe75-48a7-bc0d-330b6adca111" name="PopulationArea" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b527f9f1-5a44-4dd8-81a4-dc3cf5434eb2" />
           </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="3cb7931a-60da-4b76-bb1b-6ff00d1a3845" name="ControllerAccess" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="3cb7931a-60da-4b76-bb1b-6ff00d1a3845" name="ControlAccess" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="330bbfd7-825f-4361-a20f-3cf5d4a952df" />
         <ownedOperationsInternal>
-          <operation Id="c97e4419-c995-4274-a8c5-c7e2e78efa26" name="GetController&lt;T&gt;" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="c97e4419-c995-4274-a8c5-c7e2e78efa26" name="GetControl&lt;T&gt;" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="e1d429dc-401b-4f26-8cfb-7e5eedf960ce" />
           </operation>
         </ownedOperationsInternal>
@@ -329,6 +356,12 @@
           <operation Id="4413371b-3bd6-407b-b219-05a347eb3981" name="IsTagPresent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="8dc050b6-e761-4b6d-b9fe-20bfda3deb43" />
           </operation>
+          <operation Id="e4fa34f2-7be2-4bbe-af62-f952f51b7553" name="TagAssociate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8ffb3ecd-13b8-41c3-9d00-40a9ac5a60df" />
+          </operation>
+          <operation Id="dfa4d038-c363-41ec-9b40-3d051e19ce3d" name="TagDisassociate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2ddb7dc8-1e26-4cb7-a4ba-2e0ecf98ca92" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -366,6 +399,311 @@
           </operation>
           <operation Id="9e3b4a6d-8b54-4b35-aa32-5f3afb7c0f12" name="DisassociateDimension" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="92c4c6d9-5344-4041-a03d-b0ae626fb74c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b232b64e-b9bd-42a9-85af-fb5768f1d1e4" name="Calendar" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5eb85d1e-49d7-4474-bac7-8eb411a97f0c" />
+        <ownedOperationsInternal>
+          <operation Id="293572e7-36c8-48cb-85c6-528a8c5fdc2d" name="AddCalendar" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="16e58092-7b03-49bf-be33-91f467ad88a0" />
+          </operation>
+          <operation Id="a92ae63d-d1d2-4fc6-a1fc-8e6a3c89b2b2" name="AddWorkday" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6ba475b5-fb79-498f-849e-1ea78e163755" />
+          </operation>
+          <operation Id="19559967-4bb0-42a6-984e-dc4b8c947e7d" name="AddDayNight" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3e524b5a-ced7-4a10-ab9d-e8eeb7963709" />
+          </operation>
+          <operation Id="f973b601-0a45-467a-a47e-40009e2a80dc" name="AddCoolHeat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0a862026-23af-423b-a44b-40958c3964ac" />
+          </operation>
+          <operation Id="ee7d1ce1-5c44-4a7b-a574-d0f849dda31c" name="DeleteCalendar" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e3be5870-072f-4969-8ad2-e2ef16a71397" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2a862825-2f94-456f-b860-dba2b54dbb44" name="ConversionFactor" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="656f1812-68e0-4f00-8a00-93efc48439b2" />
+        <ownedOperationsInternal>
+          <operation Id="472c8006-d667-4a6c-8069-c951082cbedf" name="AddConversionFactor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b0c7e1f9-1ebb-4ed1-a9dd-79c2fc17a4a0" />
+          </operation>
+          <operation Id="a91ba64f-0efb-4986-9807-e0b20fb964b8" name="DeleteConversionFactor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="79ea9884-3ea7-4ac4-9707-3f35f62ae6c4" />
+          </operation>
+          <operation Id="0af13ea2-a262-49ca-a992-b10f7f4357b4" name="AddConversionTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9e1cf4c1-0c7a-4297-b76c-bfa2ad4c6137" />
+          </operation>
+          <operation Id="0a481d77-67e7-4738-877a-56999861650a" name="DeleteConvertionTime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="02d5009a-460f-4cea-aad9-89526e750a1c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="00711b3f-d649-4823-ae99-0e9ad98f00a9" name="PopulationArea" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="63ac6c7c-c720-4945-bdfa-51e65cdc489f" />
+        <ownedOperationsInternal>
+          <operation Id="9dc6fad3-d730-413b-a06c-c527735cd7b4" name="AddPopulationArea" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ed1470e7-95ad-4c91-83db-6b1feaebfbbe" />
+          </operation>
+          <operation Id="46502711-99a1-4df9-b927-5c51d7c54348" name="DeletePopulation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="91a71dd2-89ef-4eed-8856-6f02a757c592" />
+          </operation>
+          <operation Id="4934ee11-5350-44a3-b54a-f6db66953499" name="DeleteArea" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ae6db49b-2b79-4e58-96b8-50b6b2863c4b" />
+          </operation>
+          <operation Id="26a797c9-4452-4014-b5c4-62af3d0bbe59" name="GetAreaValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fdadee56-1441-4d53-b455-9186a08edbbe" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3dd4e7b3-569f-462b-b57f-a46bb638311f" name="TOUTariff" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e1ee8cd9-5030-41e2-9eea-2ee04a95182c" />
+        <ownedOperationsInternal>
+          <operation Id="cd91f6ea-162e-4e30-9b20-8c7a109c7eca" name="AddTOU" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="484f7d8d-23b8-47c2-8798-06e8e0563f19" />
+          </operation>
+          <operation Id="3810fb10-7dca-482e-9987-d31e93540e79" name="DeleteTOU" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="aae0a2ec-0f57-4fb3-8bc2-e9877f01f77a" />
+          </operation>
+          <operation Id="7e37a190-8c1b-4891-aeda-12fc395d8079" name="AddPeakRange" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0ae484c6-f9b1-4527-b99f-d37cccc89e9b" />
+          </operation>
+          <operation Id="42c45677-ffbf-4f52-ab3a-aefed929e95b" name="AddValleyRange" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a1d1dd53-4ab6-4c2c-ada3-8c58ca5a6810" />
+          </operation>
+          <operation Id="056d7490-3fde-4722-80db-4ad094361712" name="GetValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fffe4737-0817-462a-acfe-516a60d6eb17" />
+          </operation>
+          <operation Id="eeb8bcf6-d37d-4adc-8c38-ae2ac896dbb5" name="AddPeakSeason" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f7397361-1af7-42f1-9085-d1f21c11799d" />
+          </operation>
+          <operation Id="e343b55e-c85b-4f50-8065-bbf06e8ad71d" name="DeletePeakSeason" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="465f1dab-608b-40d1-85ef-ffb80fc81f06" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d512bc58-a04e-4303-b127-f025a8386e14" name="TargetBaseline" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3f1ae1d5-6538-4a86-a57f-1f3fc8c8457e" />
+        <ownedOperationsInternal>
+          <operation Id="72bc74f3-de14-4c7a-a8a1-7de9e784fa5c" name="AddTargetValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8291eb1f-f518-40bf-82c1-eced92ed58bd" />
+          </operation>
+          <operation Id="119becc9-9571-42ec-8749-caaf12c032e3" name="AddBaselineValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="60111c3d-f155-4261-82c1-7b842e990e37" />
+          </operation>
+          <operation Id="87e9914f-fd07-4f5c-a538-6f5e0a3584a0" name="AddCaculationRule" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ab6189f9-bae8-42af-9194-58ff7f7b4a63" />
+          </operation>
+          <operation Id="30700e01-3e91-4a06-895d-1ebb9ed9eb34" name="GetBaselineValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="53728cba-2da7-4f4c-ba02-c0e8e5d827ef" />
+          </operation>
+          <operation Id="a0aed0f0-45c3-4c6e-a111-112960abc3f2" name="GetTargetValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8046c870-866f-4a07-9f05-8074dd6f8544" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f77d4015-0419-4e57-a3bd-6f5d3521433a" name="CarbonUsage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f4c00510-5b79-4ae2-b080-bdb4084d73a4" />
+        <ownedOperationsInternal>
+          <operation Id="aa0d224f-1370-473a-b2e8-24a3a4607f48" name="CheckOverview" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3dd9b4c5-8ba3-416e-91de-6b1c9a08aed5" />
+          </operation>
+          <operation Id="f8f89faa-788d-4812-9d0e-975ade5d7cbe" name="CheckSingleItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e2cbf9ac-eadd-4839-9d36-b6b1ec6afbae" />
+          </operation>
+          <operation Id="1bec641d-6bb8-44c3-b5d5-f3c115a3a0d7" name="ChangeChartTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="609f7154-542e-4087-a0bc-b1d2e7aa0869" />
+          </operation>
+          <operation Id="aca65e56-992a-4611-83af-d640c24360b6" name="ChangeTimeRangeTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ec56011c-5530-4056-b8b6-c3392db4633a" />
+          </operation>
+          <operation Id="d84f5183-475e-4ac6-8220-fb5041a537a5" name="ChangeToCarbon" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="41ca1fc1-f806-4874-863f-a6c35c6c5765" />
+          </operation>
+          <operation Id="ba5aa1b5-15a2-4a61-9bf6-3efbb8b04f1a" name="ChangeToTree" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c201e3f4-81ce-4ea1-8043-4aa6a57c7280" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d5c78426-0515-41cd-bfd5-6e4a70ef4292" name="CostUsage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="35dafd4b-e785-48cd-a83a-59e9e930ed31" />
+        <ownedOperationsInternal>
+          <operation Id="2beb4af0-151e-4912-93ff-14e7b577de5e" name="CheckOverview" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7f95fe9f-548c-4923-9404-3b4760f75896" />
+          </operation>
+          <operation Id="5a5b9583-dead-4b1c-87fb-7b1c72188f2b" name="CheckSingleItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="706cc8fe-2431-40e9-bcaa-f9141ac3e4b6" />
+          </operation>
+          <operation Id="ad762abd-71e7-49b8-9c39-d69c02594ce1" name="ChangeTimeRangeTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="99c76e95-6be2-41ea-9946-0beeb5898dd7" />
+          </operation>
+          <operation Id="5eb3ea4b-06e9-46e3-a2f5-ac64577334d7" name="ChangeChartTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0614332d-f450-44ee-966e-d5f54a9f639f" />
+          </operation>
+          <operation Id="e5bcefdf-20b3-4676-a986-29d896b11d04" name="TOUShow" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b54cb255-543f-4ee5-9ce6-0a9954f9400c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="11e6d997-bc11-4dbb-b641-0827d2a67e54" name="ClientAccess" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="67b84655-83ca-4aa0-a5e1-6935214d326c" />
+        <ownedOperationsInternal>
+          <operation Id="877397a0-f464-4da3-8590-edebf4c61943" name="Login" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d131dd55-c150-4013-8e2b-9fb009515e7b" />
+          </operation>
+          <operation Id="6dd9c05d-c54f-4e30-a699-9ae360cd2445" name="Logout" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="47d67945-d981-4855-9054-654fb662e9fc" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="dcf37487-b24a-41cd-84eb-76527317cab9" name="DateSpansCompare" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="dce8728b-37c6-4f83-8ce8-75fc76567a1d" />
+        <ownedOperationsInternal>
+          <operation Id="07aa5dcc-c1f1-423d-8e4b-02bcf2d0369c" name="PickupTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b8d1e008-fe60-492f-91f4-bcddac828791" />
+          </operation>
+          <operation Id="c31cf8f2-0346-4f7c-8ec8-cf2ff794f068" name="AddCompDate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7a715172-e806-4b31-ae73-a2dfa26b63c4" />
+          </operation>
+          <operation Id="35684f63-5531-4587-a88e-4154d17fd5cd" name="DeleteAllTags" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="656108bd-b003-4ba6-a479-5c78ec98ef1d" />
+          </operation>
+          <operation Id="2f45dc81-7014-4f10-892e-d9c0927dd666" name="ChangeTimeRangeTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="54162ec1-6b2b-423b-96f9-de1c3205bc7d" />
+          </operation>
+          <operation Id="239ae322-0c9c-4115-86ef-d498cc576480" name="ChangeChartTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ad5982ef-058e-4935-baef-d44b9fb4d358" />
+          </operation>
+          <operation Id="681fdfb1-18f6-4eb4-8eec-af04a370cf91" name="DeleteCompDate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dd9d850d-c4dd-4d72-9f49-d3c75129b2e3" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d4e05443-9083-41cb-9998-40216fae93bc" name="MultipleTags" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="22963c1b-5111-47db-ad89-09931da0b825" />
+        <ownedOperationsInternal>
+          <operation Id="48a96f9d-6991-442f-8729-02e9ce9812ef" name="PickupTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1048fdbb-cb7b-453b-8854-be9baecfcaef" />
+          </operation>
+          <operation Id="adbde9f6-80a5-420e-94c8-a71e1d6651d5" name="DeleteAllTags" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="18b95e41-54d0-4c6c-89f8-b71f3ac25c74" />
+          </operation>
+          <operation Id="9e94ee64-1f0a-46db-a2c3-933ad4ff21b4" name="ChangeTimeTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4504fff0-6c76-42cc-87bf-33fe3880e9be" />
+          </operation>
+          <operation Id="4fe8c7ce-0edb-4ffd-8d08-1066c200e769" name="ChangeChartTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="52c112af-4378-478a-88df-b3f35326954d" />
+          </operation>
+          <operation Id="939cdfc6-706b-4f29-8fda-df07cb854923" name="DeleteSingleTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="92c7a6e9-1594-4a12-b44a-3aa4f6b46de2" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b13a4b72-c7a7-4007-af1c-f2f59722f9ac" name="SingleTag" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9f3b5491-3dd1-4c9f-9d01-04652a7ad63b" />
+        <ownedOperationsInternal>
+          <operation Id="4ea20765-936f-40d8-9590-efc5eb6b823a" name="ChangeChartTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3e9b2af6-7eb8-4da2-bd20-575198abacf6" />
+          </operation>
+          <operation Id="990413ea-48d1-4fde-92f7-4a44c8e46f7a" name="ChangeTimeTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="44a7e22c-fa54-41d8-9374-b1ddb8b2ea06" />
+          </operation>
+          <operation Id="ee348b9c-558e-4d58-8b70-320f844f9ef3" name="DeleteSingleTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c60933ba-d215-4014-aa22-1ae1b6d750b1" />
+          </operation>
+          <operation Id="b3ba202e-9527-49b4-bdb5-973a59306489" name="PickupTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f8ff7393-aaab-42a1-8730-9bd1c61763d6" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5447b6a5-1bce-41ce-a8c3-a49913dc60bb" name="SingleKPI" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="43144ecb-3fe2-478a-a29f-9cfd30d03566" />
+        <ownedOperationsInternal>
+          <operation Id="4cec8d43-bec4-4974-992c-1240e8ed2ebd" name="ChangeChartTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7ab4c4af-4af8-4c43-9a7d-b09b31f87b24" />
+          </operation>
+          <operation Id="86626bb2-6940-4e2b-a8ef-8e06d7fb3cb1" name="ChangeTimeTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6b6f08a8-0700-4fbe-b9f0-3d5accca9114" />
+          </operation>
+          <operation Id="752d00c3-616f-4e1c-b4d5-5ca449214ce8" name="PickupTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="22ffc531-f441-4035-888d-ef21d8ae623c" />
+          </operation>
+          <operation Id="bd43984b-d9ef-49c2-9f65-3768cee18875" name="DeleteSingleTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="993e00ff-5eb8-4ab5-842e-067cef893a68" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a5366f52-8d66-445e-82a4-140146a5dc75" name="TimeManagement" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4a57199b-ddb7-4e77-8d4a-92b7a809665f" />
+        <ownedOperationsInternal>
+          <operation Id="b2c60a4e-218f-485c-bc81-e54aef1a3187" name="AddWorkday" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ec098ebc-d6a2-4eeb-9943-6591fa130c40" />
+          </operation>
+          <operation Id="2301d2f9-3aea-427f-ba91-2924c696f569" name="AddWorktime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ea3fc0ff-d52d-48df-b111-44b4a0d198c3" />
+          </operation>
+          <operation Id="53192733-8fdf-4877-94a0-23b5ea24d612" name="AddDayNight" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e17c8c70-0887-4937-8404-3feebf62e946" />
+          </operation>
+          <operation Id="fe85948e-c6ef-4986-8f46-c19f75170b7b" name="AddCoolHeat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="84d75497-b0b4-419d-89bb-cf7c73312013" />
+          </operation>
+          <operation Id="579899db-0473-42ad-8a4e-a8aab409e9df" name="DeleteWorkday" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="04b7d8fb-2ddf-4eab-bf04-5c64736b74bd" />
+          </operation>
+          <operation Id="31507c25-ab29-4071-ad84-16e873cd2c86" name="DeleteDayNight" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2766c289-f2be-42ff-b434-78d6e094c121" />
+          </operation>
+          <operation Id="3b0aeb90-9efb-427c-9913-64224dfd9727" name="DeleteWorktime" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b44c535d-f28f-4c8b-b118-c31ab921028a" />
+          </operation>
+          <operation Id="37a7adeb-7939-4b27-8587-3c7c2cd96bb2" name="DeleteCoolheat" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="70141cac-722d-4ba0-921a-b3cdd7674782" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="cad6c7ca-79d5-413b-84a5-3ec1dd1ccf90" name="Cost" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="68fec9c9-3022-4880-bc98-e742e97d559b" />
+        <ownedOperationsInternal>
+          <operation Id="57a4aa20-160c-4f77-ac85-e8c46da92258" name="AddElectric" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b8ce3f6a-229f-4233-9c7a-67e3226879b2" />
+          </operation>
+          <operation Id="c1bdfc23-ce11-4867-b347-8279b540d684" name="AddOther" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fd5329c8-eef0-4c4b-90b6-4f157c69747d" />
+          </operation>
+          <operation Id="fa86686a-b4a0-4ad0-8cd1-c7d76797d897" name="DeleteOther" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ade4718b-8494-4c44-8039-8f061bf62b17" />
+          </operation>
+          <operation Id="231ffc86-5672-4f5d-bcaf-82b7f535030e" name="DeleteElectric" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="abe80bce-bb68-4c01-ab89-82a40520f17d" />
           </operation>
         </ownedOperationsInternal>
       </class>

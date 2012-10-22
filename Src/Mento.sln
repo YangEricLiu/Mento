@@ -54,9 +54,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.App.Command.Test", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.App.Test", "..\UnitTest\Mento.App.Test\Mento.App.Test.csproj", "{7459AD4B-BFF8-4C4B-B372-14056A4E10C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.TestApi.TestData", "Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj", "{2076AF41-49F1-4C46-AF54-B21ED42B07C3}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 19
+		SccNumberOfProjects = 20
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://10.177.1.111:8080/tfs/kara
 		SccLocalPath0 = .
@@ -132,6 +134,10 @@ Global
 		SccProjectTopLevelParentUniqueName18 = Mento.sln
 		SccProjectName18 = ../UnitTest/Mento.Business.Case.Test
 		SccLocalPath18 = ..\\UnitTest\\Mento.Business.Case.Test
+		SccProjectUniqueName19 = Api\\Mento.TestApi.TestData\\Mento.TestApi.TestData.csproj
+		SccProjectTopLevelParentUniqueName19 = Mento.sln
+		SccProjectName19 = Api/Mento.TestApi.TestData
+		SccLocalPath19 = Api\\Mento.TestApi.TestData
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Mento.vsmdi
@@ -325,6 +331,16 @@ Global
 		{7459AD4B-BFF8-4C4B-B372-14056A4E10C5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{7459AD4B-BFF8-4C4B-B372-14056A4E10C5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{7459AD4B-BFF8-4C4B-B372-14056A4E10C5}.Release|x86.ActiveCfg = Release|Any CPU
+		{2076AF41-49F1-4C46-AF54-B21ED42B07C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2076AF41-49F1-4C46-AF54-B21ED42B07C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2076AF41-49F1-4C46-AF54-B21ED42B07C3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2076AF41-49F1-4C46-AF54-B21ED42B07C3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2076AF41-49F1-4C46-AF54-B21ED42B07C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2076AF41-49F1-4C46-AF54-B21ED42B07C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2076AF41-49F1-4C46-AF54-B21ED42B07C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2076AF41-49F1-4C46-AF54-B21ED42B07C3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2076AF41-49F1-4C46-AF54-B21ED42B07C3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2076AF41-49F1-4C46-AF54-B21ED42B07C3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -340,6 +356,7 @@ Global
 		{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD} = {0764FCE0-47BA-45AE-A02F-0E89BDFE1F95}
 		{1B28E716-BD3F-403B-835B-076C5A788558} = {0764FCE0-47BA-45AE-A02F-0E89BDFE1F95}
 		{CC7DBD2D-66C0-4155-BDDB-2D153C23788B} = {0764FCE0-47BA-45AE-A02F-0E89BDFE1F95}
+		{2076AF41-49F1-4C46-AF54-B21ED42B07C3} = {0764FCE0-47BA-45AE-A02F-0E89BDFE1F95}
 		{12D162B3-1ED8-4854-A7F0-C68EE94B8317} = {139C7F94-FEBA-42E4-99DF-F3C587A1A1D9}
 		{C3EC8BE0-F643-4126-9CE6-DEB029AE1564} = {139C7F94-FEBA-42E4-99DF-F3C587A1A1D9}
 		{03CC033D-9676-4B82-B785-BBA9F8CAE38B} = {2E3A39E4-C0B4-426B-81D5-396210B3E5C8}

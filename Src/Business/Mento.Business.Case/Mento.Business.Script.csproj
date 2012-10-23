@@ -51,10 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attribute\CaseIDAttribute.cs.cs" />
-    <Compile Include="Attribute\CreateTimeAttribute.cs" />
-    <Compile Include="Attribute\ManualCaseIDAttribute.cs" />
-    <Compile Include="Attribute\OwnerAttribute.cs" />
     <Compile Include="BusinessLogic\ScriptBL.cs" />
     <Compile Include="DataAccess\ScriptDA.cs" />
     <Compile Include="Entity\ScriptEntity.cs" />

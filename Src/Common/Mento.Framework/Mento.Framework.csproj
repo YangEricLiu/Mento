@@ -44,6 +44,9 @@
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\..\..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\Lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\CaseIDAttribute.cs" />
+    <Compile Include="Attributes\CreateTimeAttribute.cs" />
+    <Compile Include="Attributes\ManualCaseIDAttribute.cs" />
+    <Compile Include="Attributes\OwnerAttribute.cs" />
     <Compile Include="Constants\ASCII.cs" />
     <Compile Include="Constants\ConfigurationKey.cs" />
     <Compile Include="Constants\Manufacture.cs" />
@@ -62,8 +69,6 @@
     <Compile Include="Enumeration\Language.cs" />
     <Compile Include="Enumeration\LoggingSeverity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestData\MultipleTestDataAttribute.cs" />
-    <Compile Include="TestData\TestContextExtend.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

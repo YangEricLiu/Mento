@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
-namespace Mento.Business.Script.Attribute
+namespace Mento.Framework.Attributes
 {
     /// <summary>
     /// Summary description for CaseIDAttribute.

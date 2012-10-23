@@ -8,22 +8,16 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Configuration;
 using Mento.Utility;
+using Mento.Framework.Attributes;
+using Mento.TestApi.TestData;
+using Administration.Calendar.TestData;
+using System.IO;
 
 namespace Automation.Administration.Calendar
 {
     [TestFixture]
     public class ExampleSuite
     {
-        //[TestFixtureSetUp]
-        //public static void FixtureSetUp(TestContext context)
-        //{ 
-        //}
-        
-        //[TestFixtureTearDown]
-        //public static void FixtureTearDown()
-        //{
-        //}
-
         [SetUp]
         public void CaseSetUp()
         { 
@@ -35,6 +29,7 @@ namespace Automation.Administration.Calendar
         }
 
         [Test]
+        [CaseID("TA-Example-001"),ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
         public void TestCase1()
         {
             //1. load test data
@@ -57,6 +52,7 @@ namespace Automation.Administration.Calendar
         }
 
         [Test]
+        [CaseID("TA-Example-002"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
         public void TestCase2()
         {
             IWebDriver driverChrome = new ChromeDriver();
@@ -78,6 +74,7 @@ namespace Automation.Administration.Calendar
         }
 
         [Test]
+        [CaseID("TA-Example-003"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
         public void TestCase3()
         {
             var a = 1;
@@ -86,6 +83,7 @@ namespace Automation.Administration.Calendar
         }
 
         [Test]
+        [CaseID("TA-Example-004"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
         public void TestCase4()
         {
             string Path = ConfigurationManager.AppSettings["path"];
@@ -95,6 +93,7 @@ namespace Automation.Administration.Calendar
         [TestCase("Round A", "Round A")]
         [TestCase("Round B", "Round B")]
         [TestCase("Round C", "Round D")]
+        [CaseID("TA-Example-005"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
         public void TestCase5(string input, string expected)
         {
             Assert.AreEqual(input, expected);
@@ -102,23 +101,49 @@ namespace Automation.Administration.Calendar
 
         [Test]
         [Combinatorial]
+        [CaseID("TA-Example-006"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
         public void TestCase6([Values(1,2)]int a, [Values("a","b")]string b)
         {
         }
 
         [Test]
         [Sequential]
+        [CaseID("TA-Example-007"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
         public void TestCase7([Values(1, 2, 3)]int a, [Values(3, 2, 1)]int b)
         {
             Assert.AreEqual(4, a + b);
         }
 
         [Test]
+        [CaseID("TA-Example-008"), ManualCaseID("TA-Example"), CreateTime("2012-10-23"), Owner("Aries")]
         public void TestCase8()
         {
-            LogHelper.LogDebug(TestContext.CurrentContext.Test.FullName);
-            Console.Write(TestContext.CurrentContext.Test.FullName);
-            Assert.AreEqual(1,1);
+            //LogHelper.LogDebug(TestContext.CurrentContext.Test.FullName);
+            Func<int, int, int> function = (int a, int b) => a + b;
+
+            var testData = TestContext.CurrentContext.GetTestData<SingleExampleData>();
+
+            int actual = function(testData.InputData.Number1, testData.InputData.Number2);
+
+            Assert.AreEqual(testData.ExpectedData.Result, actual);
+        }
+
+        [Test]
+        [CaseID("TA-Example-009"), ManualCaseID("TA-Example"), CreateTime("2012-10-23"), Owner("Aries")]
+        public void TestCase9()
+        {
+            Func<int, int, int> function = (int a, int b) => a + b;
+
+            var testData = TestContext.CurrentContext.GetTestData<MultipleExampleData>();
+
+            int i=0;
+            foreach (var input in testData.InputData)
+            {
+                int actual = function(input.Number1, input.Number2);
+
+                Assert.AreEqual(testData.ExpectedData[i].Result, actual);
+                i++;
+            }
         }
     }
 }

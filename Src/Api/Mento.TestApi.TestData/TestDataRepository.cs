@@ -6,10 +6,11 @@ using System.IO;
 using System.Configuration;
 using Mento.Framework.Constants;
 using System.Xml.Linq;
+using Mento.Utility;
 
 namespace Mento.TestApi.TestData
 {
-    public class TestDataRepository
+    internal static class TestDataRepository
     {
         private static Dictionary<string, string> _dataMapping;
         private static Dictionary<string, string> DataMapping
@@ -39,7 +40,7 @@ namespace Mento.TestApi.TestData
             }
         }
 
-        public static T GetTestData<T>(string testCaseID) where T : TestDataBase
+        public static T GetTestData<T>(string testCaseID,string testScriptFullName)
         {
             //search dictionary first, if not exist mapping relation, search test data using the input test case id
             string testDataID = testCaseID;
@@ -48,13 +49,55 @@ namespace Mento.TestApi.TestData
                 testDataID = DataMapping[testCaseID];
             }
 
-            return null;
+            string testDataFileName = GetTestDataFileName(testDataID, testScriptFullName);
+
+            return Deserialize<T>(testDataFileName);
         }
 
-        private static string GetTestDataFileName(string testDataID)
+        private static string GetTestDataFileName(string testDataID, string testScriptFullName)
         { 
             //get test script namespace by caseid
+            string[] Namespaces = testScriptFullName.Split('.');
+
+            //replace "Automation" with "Data"
+
+            //add file name
+            if (Namespaces.Length > 1)
+            {
+                StringBuilder pathBuilder = new StringBuilder();
+
+                Namespaces[0] = "Data";
+                Namespaces[Namespaces.Length - 1] = testDataID;
+
+                for (int i = 0; i < Namespaces.Length; i++)
+                {
+                    pathBuilder.Append(Namespaces[i]);
+                    if (i == Namespaces.Length - 1)
+                    {
+                        pathBuilder.Append(".json");
+                    }
+                    else
+                    {
+                        pathBuilder.Append("\\");
+                    }
+                }
+
+                return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, pathBuilder.ToString());
+            }
+            
             return String.Empty;
+        }
+
+        private static T Deserialize<T>(string fileName)
+        {
+            if (File.Exists(fileName))
+            {
+                string content = File.ReadAllText(fileName, Encoding.UTF8);
+
+                return JsonHelper.String2Object<T>(content);
+            }
+
+            return default(T);
         }
     }
 }

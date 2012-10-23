@@ -1,0 +1,29 @@
+﻿{
+	"InputData":
+	[
+		{
+			"Number1":"1",
+			"Number2":"2"
+		},
+		{
+			"Number1":"5",
+			"Number2":"6"
+		},
+		{
+			"Number1":"7",
+			"Number2":"6"
+		}
+	],
+	"ExpectedData":
+	[
+		{
+			"Result":"3"
+		},
+		{
+			"Result":"11"
+		},
+		{
+			"Result":"13"
+		}
+	]
+}

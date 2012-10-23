@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="fastJSON, Version=1.9.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\fastJSON.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\Lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -55,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calendar\ExampleSuite.cs" />
+    <Compile Include="Calendar\TestData\MultipleExampleData.cs" />
+    <Compile Include="Calendar\TestData\SingleExampleData.cs" />
     <Compile Include="Calendar\TheoryExampleSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -68,6 +74,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
+      <Project>{2076AF41-49F1-4C46-AF54-B21ED42B07C3}</Project>
+      <Name>Mento.TestApi.TestData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Src\Common\Mento.Framework\Mento.Framework.csproj">
       <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
       <Name>Mento.Framework</Name>

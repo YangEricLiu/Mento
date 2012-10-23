@@ -1,0 +1,11 @@
+﻿{
+	"InputData":
+	{
+		"Number1":"1",
+		"Number2":"2"
+	},
+	"ExpectedData":
+	{
+		"Result":"3"
+	}
+}

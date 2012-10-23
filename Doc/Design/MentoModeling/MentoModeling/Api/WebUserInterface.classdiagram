@@ -697,6 +697,28 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4b32df2e-0908-47ab-ac19-7139ef536b24" name="FunctionHelper" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="378f71a9-fe6e-4995-9122-6c7f1ba3a0ba" />
+        <ownedOperationsInternal>
+          <operation Id="f477ed8c-f97e-423f-8625-9abfeb9ed69e" name="ChangeTimeRangeTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3452ec3e-5dc2-4ad2-9dbc-50fb93511404" />
+          </operation>
+          <operation Id="9f49ce17-a324-4b83-864d-b713ffa8f6b7" name="ChangeChartTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a31b6b15-6fde-4333-ad35-5d36cb4b1ebd" />
+          </operation>
+          <operation Id="ca739ca9-0486-41fc-b54a-2ab2d8143c9a" name="PickUpTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="cb2dafab-4a67-4033-b2e0-32f9d54511c3" />
+          </operation>
+          <operation Id="a78e0c51-67b9-4b7d-85e9-ccdeb36cdede" name="ChartView" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="40838508-18e6-463b-ad00-2dd8ce925409" />
+          </operation>
+          <operation Id="68cf428b-3659-4f5f-8824-6fa8c95b4d93" name="DataView" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0bf0e30b-1b55-420d-867b-55773a7f8d6f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="2d74e9fc-f813-4964-9312-ae7fe4df096a" name="MentoModeling">
     <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />

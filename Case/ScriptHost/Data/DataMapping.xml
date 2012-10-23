@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<relation>
+  <script caseid="TA-M01-C02" testdata="TA-M01-C01"/>
+  <script caseid="TA-M01-C03" testdata="TA-M01-C01"/>
+</relation>

@@ -7,11 +7,12 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Configuration;
+using Mento.Utility;
 
 namespace Automation.Administration.Calendar
 {
     [TestFixture]
-    public class Suite1
+    public class ExampleSuite
     {
         //[TestFixtureSetUp]
         //public static void FixtureSetUp(TestContext context)
@@ -114,8 +115,10 @@ namespace Automation.Administration.Calendar
 
         [Test]
         public void TestCase8()
-        { 
-            
+        {
+            LogHelper.LogDebug(TestContext.CurrentContext.Test.FullName);
+            Console.Write(TestContext.CurrentContext.Test.FullName);
+            Assert.AreEqual(1,1);
         }
     }
 }

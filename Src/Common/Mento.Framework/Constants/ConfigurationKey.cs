@@ -10,7 +10,10 @@ namespace Mento.Framework.Constants
         public const string MENTO_DATABASE_KEY = "Mento";
         public const string JAZZ_DATABASE_KEY = "Jazz";
 
-        public const string ELEMENT_SOURCE_PATH = "";
+        public const string LOGGING_SEVERITY = "loggingSeverity";
+
+        public const string SCRIPT_DATA_MAPPINGFILE = "dataMapping";
+		public const string ELEMENT_SOURCE_PATH = "";
         public const string ELEMENT_MODULE_NAME = "";
         public const string ZH_CN_PATH = "";
     }

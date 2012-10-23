@@ -67,6 +67,16 @@
       <Link>App.config</Link>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Src\Common\Mento.Framework\Mento.Framework.csproj">
+      <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
+      <Name>Mento.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Src\Common\Mento.Utility\Mento.Utility.csproj">
+      <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
+      <Name>Mento.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

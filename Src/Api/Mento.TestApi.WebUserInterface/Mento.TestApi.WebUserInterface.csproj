@@ -44,6 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\ElementLocator.cs" />
+    <Compile Include="Controllers\TreeView.cs" />
+    <Compile Include="DriverFactory.cs" />
     <Compile Include="JazzControlAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

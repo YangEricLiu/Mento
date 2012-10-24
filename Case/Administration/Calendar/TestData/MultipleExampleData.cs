@@ -6,7 +6,7 @@ using Mento.TestApi.TestData;
 
 namespace Administration.Calendar.TestData
 {
-    public class MultipleExampleData : IMultipleTestData<ExampleInputData, ExampleExpectedData>
+    public class MultipleExampleData : MultipleTestDataBase<ExampleInputData, ExampleExpectedData>
     {
     }
 }

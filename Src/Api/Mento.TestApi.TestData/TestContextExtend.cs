@@ -8,9 +8,14 @@ namespace Mento.TestApi.TestData
 {
     public static class TestContextExtend
     {
+        private static object _testData;
+
         public static T GetTestData<T>(this TestContext context)
         {
-            return TestDataRepository.GetTestData<T>(context.Test.Properties["CaseID"].ToString(), context.Test.FullName);
+            if (_testData == null)
+                _testData = TestDataRepository.GetTestData<T>(context.Test.Properties["CaseID"].ToString(), context.Test.FullName);
+
+            return (T)_testData;
         }
     }
 }

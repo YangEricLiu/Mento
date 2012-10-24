@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mento.TestApi.TestData
 {
-    public abstract class ISingleTestData<I, E>
+    public abstract class SingleTestDataBase<I, E>
         where I : InputTestDataBase
         where E : ExpectedTestDataBase
     {
@@ -22,7 +22,7 @@ namespace Mento.TestApi.TestData
         }
     }
 
-    public abstract class IMultipleTestData<I, E>
+    public abstract class MultipleTestDataBase<I, E>
         where I : InputTestDataBase
         where E : ExpectedTestDataBase
     {

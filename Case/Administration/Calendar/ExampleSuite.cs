@@ -130,18 +130,35 @@ namespace Automation.Administration.Calendar
 
         [Test]
         [CaseID("TA-Example-009"), ManualCaseID("TA-Example"), CreateTime("2012-10-23"), Owner("Aries")]
-        public void TestCase9()
+        [MultipleTestData(typeof(MultipleExampleData), 0, 0)]
+        [MultipleTestData(typeof(MultipleExampleData), 1, 1)]
+        [MultipleTestData(typeof(MultipleExampleData), 2, 2)]
+        public void TestCase9(ExampleInputData input, ExampleExpectedData expected)
+        {
+            Func<int, int, int> function = (int a, int b) => a + b;
+
+            //var testData = TestContext.CurrentContext.GetTestData<MultipleExampleData>();
+
+            int actual = function(input.Number1, input.Number2);
+
+            Assert.AreEqual(expected.Result, actual);
+        }
+
+        [Test]
+        [CaseID("TA-Example-010"), ManualCaseID("TA-Example"), CreateTime("2012-10-24"), Owner("Aries")]
+        public void TestCase10()
         {
             Func<int, int, int> function = (int a, int b) => a + b;
 
             var testData = TestContext.CurrentContext.GetTestData<MultipleExampleData>();
 
-            int i=0;
+            int i = 0;
             foreach (var input in testData.InputData)
             {
                 int actual = function(input.Number1, input.Number2);
 
                 Assert.AreEqual(testData.ExpectedData[i].Result, actual);
+
                 i++;
             }
         }

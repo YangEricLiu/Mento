@@ -59,6 +59,7 @@
     <Compile Include="Attributes\CaseIDAttribute.cs" />
     <Compile Include="Attributes\CreateTimeAttribute.cs" />
     <Compile Include="Attributes\ManualCaseIDAttribute.cs" />
+    <Compile Include="Attributes\MultipleTestDataAttribute.cs" />
     <Compile Include="Attributes\OwnerAttribute.cs" />
     <Compile Include="Constants\ASCII.cs" />
     <Compile Include="Constants\ConfigurationKey.cs" />

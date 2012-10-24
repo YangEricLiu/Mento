@@ -61,7 +61,6 @@
     <Compile Include="Calendar\ExampleSuite.cs" />
     <Compile Include="Calendar\TestData\MultipleExampleData.cs" />
     <Compile Include="Calendar\TestData\SingleExampleData.cs" />
-    <Compile Include="Calendar\TheoryExampleSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

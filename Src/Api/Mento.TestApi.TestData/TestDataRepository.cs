@@ -94,7 +94,10 @@ namespace Mento.TestApi.TestData
             {
                 string content = File.ReadAllText(fileName, Encoding.UTF8);
 
-                return JsonHelper.String2Object<T>(content);
+
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(content);
+
+                //return JsonHelper.String2Object<T>(content);
             }
 
             return default(T);

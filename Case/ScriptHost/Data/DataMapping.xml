@@ -2,4 +2,5 @@
 <relation>
   <script caseid="TA-M01-C02" testdata="TA-M01-C01"/>
   <script caseid="TA-M01-C03" testdata="TA-M01-C01"/>
+  <script caseid="TA-Example-010" testdata="TA-Example-009"/>
 </relation>

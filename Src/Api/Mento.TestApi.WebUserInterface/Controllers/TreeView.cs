@@ -7,30 +7,30 @@ namespace Mento.TestApi.WebUserInterface
 {
     public class TreeView : ControllerBase
     {
-        public static Boolean IsExpand(string nodeName)
+        public static Boolean IsExpand(string treeNodeName)
         {
-            string nodeExpandPath = "xxnodeName";//here should get the xpath of tree child node expand or not according to tree node name
+            string nodeExpandPath = Ele.IsTreeNodeExpand.Replace(ManualElementName.treeNodeName, treeNodeName);
 
             return ElementLocator.IsElementPresent(nodeExpandPath, byType.Xpath);
         }
 
-        public static void Expand(string nodeName)
+        public static void Expand(string treeNodeName)
         {
-            string nodePath = "xxnodeName";//here should get the xpath of tree child node according to tree node name
+            string nodePath = Ele.TreeNode.Replace(ManualElementName.treeNodeName, treeNodeName);
 
             IWebElement nodeLocator = ElementLocator.FindElement(nodePath, byType.Xpath);
 
             ElementLocator.FocusOn(nodeLocator);
 
-            if (!IsExpand(nodeName))
+            if (!IsExpand(treeNodeName))
             {
                 ElementLocator.DoubleClick(nodeLocator);
             }
         }
 
-        public static void Collapse(string nodeName)
+        public static void Collapse(string treeNodeName)
         {
-            string nodePath = "xxnodeName";//here should get the xpath of tree child node according to tree node name
+            string nodePath = Ele.TreeNode.Replace(ManualElementName.treeNodeName, treeNodeName);
 
             IWebElement nodeLocator = ElementLocator.FindElement(nodePath, byType.Xpath);
 
@@ -41,5 +41,6 @@ namespace Mento.TestApi.WebUserInterface
                 ElementLocator.DoubleClick(nodeLocator);
             }
         }
+
     }
 }

@@ -7,11 +7,11 @@ namespace Mento.Utility.Utility
 {
     public class TypeTranslator
     {
-        public static elementType StringToEnum(string sourceString)
+        public static byType StringToEnum(string sourceString)
         {
-            elementType typeValue;
+            byType typeValue;
 
-            typeValue = (elementType)System.Enum.Parse(typeof(elementType), sourceString, false);
+            typeValue = (byType)System.Enum.Parse(typeof(byType), sourceString, false);
 
             return typeValue;
         }

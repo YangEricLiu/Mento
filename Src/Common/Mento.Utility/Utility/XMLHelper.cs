@@ -10,7 +10,7 @@ namespace Mento.Utility.Utility
 {
     public class XMLHelper
     {
-        private static Dictionary<string, TypeValue> GetElementXML(string fileName, string moduleName)
+        private static Dictionary<string, TypeValue> GetValueFromXML(string fileName, string moduleName)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(fileName);
@@ -38,14 +38,14 @@ namespace Mento.Utility.Utility
             return elementMap;
         }
 
-        public static Dictionary<string, TypeValue> GetElementValue()
+        public static Dictionary<string, TypeValue> GetElementMapValue()
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();
             Dictionary<string, TypeValue> localValue = new Dictionary<string, TypeValue>();
             Dictionary<string, TypeValue> finalValue = new Dictionary<string, TypeValue>();
 
-            localValue = GetElementXML(ConfigurationKey.ELEMENT_SOURCE_PATH, ConfigurationKey.ELEMENT_MODULE_NAME);
-            dict = JSParser.GetFormatKeyValue(ConfigurationKey.ZH_CN_PATH);
+            localValue = GetValueFromXML(@"E:\Mento\Debug_Mento_Web\lib\Utilities\ElementMap.xml", "WebElement");
+            dict = JSHelper.GetFormatKeyValue(@"E:\Mento\Debug_Mento_Web\lib\Utilities\test.txt");
 
             foreach (string key in localValue.Keys)
             {
@@ -63,6 +63,11 @@ namespace Mento.Utility.Utility
             }
 
             return finalValue;
+        }
+
+        public static Dictionary<string, TypeValue> GetManualElementValue()
+        {
+            return GetValueFromXML(@"E:\Mento\Debug_Mento_Web\lib\Utilities\Locator.xml", "Locator");
         }
 
     }

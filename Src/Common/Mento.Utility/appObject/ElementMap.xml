@@ -1,8 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <WebElement>
   <!--Login-->
-  <add key = "LoginTextNameField" value = "login-username-inputEl" type = "ID"/>
-  <add key = "LoginTextPasswordField" value = "login-password-inputEl" type = "ID"/>
+  <add key = "LoginName" value = "login-username-inputEl" type = "ID"/>
+  <add key = "LoginPassword" value = "login-password-inputEl" type = "ID"/>
   <add key = "PopUpMessageBox" value = "//div[contains(@id,'messagebox')]" type = "Xpath"/>
   <add key = "InvalidNameInputError" value = "//input[contains(@data-errorqtip,'Common.Label.NameRegexError')]" type = "Xpath"/>
-  </WebElement>
+  <!--Tag Setting-->
+  <add key = "FormulaField" value = "Formula" type = "Name"/>
+</WebElement>

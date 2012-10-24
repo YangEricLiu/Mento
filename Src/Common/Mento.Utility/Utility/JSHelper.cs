@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Mento.Utility.Utility
 {
-    public class JSParser
+    public class JSHelper
     {
         private static Dictionary<string, string> GetKeyValueFromJS(string filePath)
         {

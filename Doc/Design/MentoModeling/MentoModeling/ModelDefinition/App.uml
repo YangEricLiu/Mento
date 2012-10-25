@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="2861e0a1-3343-49e9-96c1-ec054d18b511"
   name="Api" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -1653,6 +1653,262 @@
             isQuery="false" />
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dd0196b8-f669-4005-95f0-5e5680a98af1"
+        name="TestContextExtention"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="0dd379f8-6580-40a0-be70-c391494de155"
+            name="GetTestData&lt;T&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4b358fd7-6428-4e57-82f5-61bf1bdff65c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="794a3180-c62f-44cc-85e4-98b3a3a7c933"
+                      LastKnownName="T"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="794a3180-c62f-44cc-85e4-98b3a3a7c933"
+        name="T" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6d0e7417-ec70-4860-89a1-6629013001d6"
+        name="TestDataRepository"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="edff3c4b-53ac-4c83-ae54-b757dff019bc"
+            name="GetTestData&lt;T&gt;"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="56e6cecd-d773-4c9b-8a9d-bed7745325e1"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="794a3180-c62f-44cc-85e4-98b3a3a7c933"
+                      LastKnownName="T"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e47cb802-281d-43ca-9379-b87cbc80395a"
+                  name="fullName"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                      LastKnownName="string"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d83fc4b7-3d8c-447e-af42-58b3f97b7729"
+                  name="caseId"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                      LastKnownName="string"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+        name="string" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="79d9b105-7d98-4200-aa47-e9f4096d9d58"
+        name="SingleTestDataBase&lt;I,E&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="5c499e59-2d47-4685-bbaa-1d4f5aaf926c"
+            name="InputData"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9bf55146-822e-4ba8-9068-eccefb4b9d0e"
+                LastKnownName="I"
+                LastKnownLocation="App.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f492ecff-8959-481d-a69c-d2fd328d0948"
+            name="ExpectedData"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="c4b1d558-4170-4327-9f3e-3372f9372c5c"
+                LastKnownName="E"
+                LastKnownLocation="App.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="fa5dd738-a142-4f8b-a07b-eb685ef03e07"
+        name="MultipleTestDataBase&lt;I,E&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="f81094aa-e471-4a26-951e-a0b375c192cb"
+            name="InputData"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="eda31ae7-f782-48a0-a8a1-d295a12ef644"
+                name="Lower"
+                value="*" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="2417a3df-5bea-40a9-9988-bfd63040811b"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9bf55146-822e-4ba8-9068-eccefb4b9d0e"
+                LastKnownName="I"
+                LastKnownLocation="App.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9c18fe11-21ad-4c84-8c45-439dd7e7d7bb"
+            name="ExpectedData"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <lowerValueInternal>
+              <literalString
+                Id="62916bb5-c996-4150-b7ba-f1f14a7d62d0"
+                name="Lower"
+                value="*" />
+            </lowerValueInternal>
+            <upperValueInternal>
+              <literalString
+                Id="3ba2ec2f-cec7-46b3-ad71-8e16f581ffab"
+                name="Upper"
+                value="*" />
+            </upperValueInternal>
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="c4b1d558-4170-4327-9f3e-3372f9372c5c"
+                LastKnownName="E"
+                LastKnownLocation="App.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="74f32aa5-23b7-446e-8afd-3af298f801cf"
+        name="InputTestDataBase"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8a1680bb-5b2a-4bad-985d-8c234c5a96c1"
+        name="ExpectedTestDataBase"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="9bf55146-822e-4ba8-9068-eccefb4b9d0e"
+        name="I" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c4b1d558-4170-4327-9f3e-3372f9372c5c"
+        name="E" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b97b903e-8623-491f-bad5-e1eb60da24f3"
+        name="MultipleTestDataAttribute"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

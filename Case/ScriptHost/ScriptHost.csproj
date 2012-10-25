@@ -95,7 +95,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Platform\" />
+    <Folder Include="Data\Administration\Platform\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

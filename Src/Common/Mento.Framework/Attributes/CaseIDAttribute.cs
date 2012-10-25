@@ -19,4 +19,42 @@ namespace Mento.Framework.Attributes
         public CaseIDAttribute(string caseid)
             : base(caseid) { }
     }
+
+
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+    public class ScriptPropertyAttribute : PropertyAttribute
+    {
+        public string CaseID { get; set; }
+        public string ManualCaseID { get; set; }
+        public DateTime CreateTime { get; set; }
+        public string Owner { get; set; }
+
+
+        public ScriptPropertyAttribute()
+        {
+            AddProperties(CaseID,ManualCaseID,CreateTime,Owner);
+        }
+
+        public ScriptPropertyAttribute(string caseID, string manualCaseID, DateTime createTime, string owner)
+        {
+            this.CaseID = caseID;
+            this.ManualCaseID = ManualCaseID;
+            this.CreateTime = createTime;
+            this.Owner = owner;
+
+            AddProperties(CaseID, ManualCaseID, CreateTime, Owner);
+        }
+
+        public void AddProperties(string caseID, string manualCaseID, DateTime createTime, string owner)
+        { 
+            if (!String.IsNullOrEmpty(CaseID))
+                this.Properties.Add("CaseID", CaseID);
+            if (!String.IsNullOrEmpty(ManualCaseID))
+                this.Properties.Add("ManualCaseID", ManualCaseID);
+            if (!String.IsNullOrEmpty(Owner))
+                this.Properties.Add("Owner", Owner);
+
+            this.Properties.Add("CreateTime", CreateTime);
+        }
+    }
 }

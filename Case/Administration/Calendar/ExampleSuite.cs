@@ -130,9 +130,9 @@ namespace Automation.Administration.Calendar
 
         [Test]
         [CaseID("TA-Example-009"), ManualCaseID("TA-Example"), CreateTime("2012-10-23"), Owner("Aries")]
-        [MultipleTestData(typeof(MultipleExampleData), 0, 0)]
-        [MultipleTestData(typeof(MultipleExampleData), 1, 1)]
-        [MultipleTestData(typeof(MultipleExampleData), 2, 2)]
+        [MultipleTestData(typeof(MultipleExampleData), 0, 0/*, typeof(ExampleSuite), "TA-Example-009"*/)]
+        //[MultipleTestData(typeof(MultipleExampleData), 1, 1)]
+        //[MultipleTestData(typeof(MultipleExampleData), 2, 2)]
         public void TestCase9(ExampleInputData input, ExampleExpectedData expected)
         {
             Func<int, int, int> function = (int a, int b) => a + b;
@@ -161,6 +161,15 @@ namespace Automation.Administration.Calendar
 
                 i++;
             }
+        }
+        [Test]
+        [MultipleTestData(typeof(TagTestData), 0, 0)]
+        [MultipleTestData(typeof(TagTestData), 1, 0)]
+        [MultipleTestData(typeof(TagTestData), 2, 0)]
+        public void TestCase11(TagInput input,ExpectedTestDataBase expected)
+        {
+ input.TagID
+
         }
     }
 }

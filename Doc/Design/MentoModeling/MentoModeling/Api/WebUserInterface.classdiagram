@@ -18,12 +18,42 @@
         <ownedOperationsInternal>
           <operation Id="f0913776-988c-43c9-a87d-decacde08171" name="Expland" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="837293e8-27ea-4338-b70c-6da3ae60a424" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="49500aab-599a-49ad-a10f-2018a3c98b71" direction="Return" isUnique="false">
+                  <elementDefinition Id="7aab0119-b80b-428c-8c58-e9dad2255908" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d4f2bccb-6ec4-4266-89cc-aaed63aaf409" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="ce911cb1-132e-4baf-9fdd-b0478826bb96" name="Collapse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="ebd2cc64-a5b3-4368-ac2e-9b7a9fa1424c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3cafddbd-9be9-4e05-a92e-2ad9d1ed5c4f" direction="Return" isUnique="false">
+                  <elementDefinition Id="e7c5d148-bcbb-4c67-826a-8a2148dd6366" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d4f2bccb-6ec4-4266-89cc-aaed63aaf409" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="3d4a83f1-fdb5-48fc-b568-66befcedbf22" name="IsExpland" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="33aea877-dd1b-408f-b719-6afa49d880b2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4ea93e00-f17a-4091-8c03-318f2081a781" direction="Return" isUnique="false">
+                  <elementDefinition Id="11ab43e8-d8b0-42ea-b46c-a6ee0370cbde" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d4f2bccb-6ec4-4266-89cc-aaed63aaf409" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="9d01aebe-2863-45e6-97a6-744f693f7cf1" name="GetChildValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="58fc95c9-57af-40b3-b4d0-f0d2968fb833" />
@@ -117,6 +147,9 @@
           </operation>
           <operation Id="777d5be1-19ad-4a82-98f3-344400b70d2d" name="GetLastOptionValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="62d58a6e-e93b-450d-96aa-09f70b242308" />
+          </operation>
+          <operation Id="6e3fd345-0ada-4c37-a1cf-6afb7ad81999" name="DisplayItems" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="71f1cc95-6af8-48b8-91e3-e7af99f2224a" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -226,6 +259,9 @@
           </operation>
           <operation Id="d0ce3a8d-d41d-4c88-9eb2-9637cf4761a2" name="FindElement" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="820b75ac-0e08-4be5-86d3-e42a24abaf97" />
+          </operation>
+          <operation Id="54f19f85-e521-4acb-b610-73e9fcfe3684" name="FindElements" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a4e1118e-ab29-42be-9d32-5d9c14964fb9" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -719,6 +755,11 @@
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="d4f2bccb-6ec4-4266-89cc-aaed63aaf409" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="fcae02e5-5bd2-4589-b618-f5d5b3863167" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="2d74e9fc-f813-4964-9312-ae7fe4df096a" name="MentoModeling">
     <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />

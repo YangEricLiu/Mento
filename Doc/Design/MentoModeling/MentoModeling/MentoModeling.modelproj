@@ -21,6 +21,13 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
+    <Content Include="Api\TestData.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Api\TestData.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Api\TestData.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="Api\TestData.classdiagram">
       <SubType>Content</SubType>
     </Content>

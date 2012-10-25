@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c"
   name="MentoModeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -375,7 +375,7 @@
             <coveredLifelines>
               <lifelineMoniker
                 Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9"
-                LastKnownName="JazzControl"
+                LastKnownName="ControlBase"
                 LastKnownLocation="MentoModeling.uml" />
             </coveredLifelines>
             <finish>
@@ -415,7 +415,7 @@
             <covered>
               <lifelineMoniker
                 Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9"
-                LastKnownName="JazzControl"
+                LastKnownName="ControlBase"
                 LastKnownLocation="MentoModeling.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -435,7 +435,7 @@
             <covered>
               <lifelineMoniker
                 Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9"
-                LastKnownName="JazzControl"
+                LastKnownName="ControlBase"
                 LastKnownLocation="MentoModeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -455,7 +455,7 @@
             <covered>
               <lifelineMoniker
                 Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9"
-                LastKnownName="JazzControl"
+                LastKnownName="ControlBase"
                 LastKnownLocation="MentoModeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -473,7 +473,7 @@
             <covered>
               <lifelineMoniker
                 Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9"
-                LastKnownName="JazzControl"
+                LastKnownName="ControlBase"
                 LastKnownLocation="MentoModeling.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -845,7 +845,7 @@
             <coveredLifelines>
               <lifelineMoniker
                 Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9"
-                LastKnownName="JazzControl"
+                LastKnownName="ControlBase"
                 LastKnownLocation="MentoModeling.uml" />
             </coveredLifelines>
             <finish>
@@ -885,7 +885,7 @@
             <covered>
               <lifelineMoniker
                 Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9"
-                LastKnownName="JazzControl"
+                LastKnownName="ControlBase"
                 LastKnownLocation="MentoModeling.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -895,7 +895,7 @@
             <covered>
               <lifelineMoniker
                 Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9"
-                LastKnownName="JazzControl"
+                LastKnownName="ControlBase"
                 LastKnownLocation="MentoModeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -915,7 +915,7 @@
             <covered>
               <lifelineMoniker
                 Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9"
-                LastKnownName="JazzControl"
+                LastKnownName="ControlBase"
                 LastKnownLocation="MentoModeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -943,7 +943,7 @@
             <covered>
               <lifelineMoniker
                 Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9"
-                LastKnownName="JazzControl"
+                LastKnownName="ControlBase"
                 LastKnownLocation="MentoModeling.uml" />
             </covered>
           </executionOccurrenceSpecification>
@@ -1255,9 +1255,9 @@
           </lifeline>
           <lifeline
             Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9"
-            name="JazzControl"
+            name="ControlBase"
             isActor="false"
-            lifelineDisplayName="JazzControl">
+            lifelineDisplayName="ControlBase">
             <topLevelOccurrences>
               <executionOccurrenceSpecificationMoniker
                 Id="2c85e262-81bc-4d52-9639-afdd7b3bf806"
@@ -2825,6 +2825,136 @@
       <executionEvent
         Id="4676412e-e897-4aa4-8990-f20179d942f3"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="90b462db-1c38-4c28-afdb-5479b5341530"
+        name="TestData"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="ac35589b-a585-4116-a5d0-222f234ad3ca"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1b5cd363-a5ea-4e09-bd58-61cc569b8d43"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="ee4dd4ff-bdf4-4b72-91a6-efc586fa8872"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="MentoModeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <decisionNode
+            Id="ee4dd4ff-bdf4-4b72-91a6-efc586fa8872"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0144b1eb-26bf-4b93-845e-6a5f2a92d5f2"
+                guard="if: mapping relation is defined"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5908fdf8-200b-4f47-a9a3-d945b5d0b176"
+                  LastKnownName="GetRealTestCaseIDFromConfig"
+                  LastKnownLocation="MentoModeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1bffb34d-6b0e-433f-9f3d-115a81e711de"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="1b8896fd-c77e-462b-9c5d-ae0117800179"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="MentoModeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="5908fdf8-200b-4f47-a9a3-d945b5d0b176"
+            name="GetRealTestCaseIDFromConfig"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e842960a-062e-47fb-aeaf-b27d66d54438"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="1b8896fd-c77e-462b-9c5d-ae0117800179"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="MentoModeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="91fae1a5-bd9c-44e6-99f6-65b05972068c"
+            name="GetTestDataFileName"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1c8dd021-7023-49bc-a60b-abdbb820f297"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6afb74fe-d929-4bdb-babb-b5c53345f5b6"
+                  LastKnownName="Deserialize"
+                  LastKnownLocation="MentoModeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="1b8896fd-c77e-462b-9c5d-ae0117800179"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b416a484-7bcd-4e6b-9472-2ef16974c8cf"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="91fae1a5-bd9c-44e6-99f6-65b05972068c"
+                  LastKnownName="GetTestDataFileName"
+                  LastKnownLocation="MentoModeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="6afb74fe-d929-4bdb-babb-b5c53345f5b6"
+            name="Deserialize"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7735d0c0-b205-4bbc-99be-3b2fb5390487"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="9ecbcadc-14cf-4d26-a903-9735c93ca282"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="MentoModeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="9ecbcadc-14cf-4d26-a903-9735c93ca282"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <objectNode
+            Id="09cf6294-e3c3-48ad-95bf-2f6d35322883"
+            name="GetTestData"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <upperBound>
+              <literalInteger
+                Id="bedff5d8-b8d2-495d-959c-85201f6b7b8d"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

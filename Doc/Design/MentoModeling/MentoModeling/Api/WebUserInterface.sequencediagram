@@ -117,7 +117,7 @@
           <behaviorExecutionSpecification Id="202ba84b-419f-4a58-b15b-8821c17122dd" name="BehaviorExecutionSpecification7">
             <elementDefinition Id="dcc07bae-3e2a-4948-b9d5-3be3d3e385aa" />
             <coveredLifelines>
-              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="JazzControl" />
+              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="ControlBase" />
             </coveredLifelines>
             <finish>
               <executionOccurrenceSpecificationMoniker Id="a207023d-73da-41bb-b6e8-adb7ee30aa08" LastKnownName="ExecutionOccurrenceSpecification14" />
@@ -138,7 +138,7 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="JazzControl" />
+              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="ControlBase" />
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification Id="48e74537-4402-4636-ae16-e7b68af1765b" name="MessageOccurrenceSpecification22">
@@ -150,19 +150,19 @@
           <messageOccurrenceSpecification Id="d797e955-9d9f-4ce4-a145-f8760b1ad451" name="MessageOccurrenceSpecification23">
             <elementDefinition Id="02f76e67-516f-4801-8a94-ac5a989bf803" />
             <covered>
-              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="JazzControl" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="6fbeb72a-f137-4248-9b69-845badfb3b5a" name="MessageOccurrenceSpecification24">
-            <elementDefinition Id="8a330977-ac15-4541-a126-54ab6ec9adaf" />
-            <covered>
-              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="JazzControl" />
+              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="ControlBase" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="dcb39b45-098a-4461-b706-dde1b5bb356c" name="MessageOccurrenceSpecification25">
             <elementDefinition Id="209efdb6-4be9-4c8b-ba3a-077f02cac0e2" />
             <covered>
               <lifelineMoniker Id="1920a7e1-68da-432f-a271-89c72d90b999" LastKnownName="FunctionWrapper" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="6fbeb72a-f137-4248-9b69-845badfb3b5a" name="MessageOccurrenceSpecification24">
+            <elementDefinition Id="8a330977-ac15-4541-a126-54ab6ec9adaf" />
+            <covered>
+              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="ControlBase" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="a207023d-73da-41bb-b6e8-adb7ee30aa08" name="ExecutionOccurrenceSpecification14">
@@ -173,7 +173,7 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="JazzControl" />
+              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="ControlBase" />
             </covered>
           </executionOccurrenceSpecification>
           <behaviorExecutionSpecification Id="2a87f0ab-186f-4acd-97a5-5d58eb8c572a" name="BehaviorExecutionSpecification8">
@@ -388,7 +388,7 @@
           <behaviorExecutionSpecification Id="de01b413-083a-430f-acc1-68b60404d630" name="BehaviorExecutionSpecification10">
             <elementDefinition Id="7daed3c6-3989-4d6f-ba9c-749156217946" />
             <coveredLifelines>
-              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="JazzControl" />
+              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="ControlBase" />
             </coveredLifelines>
             <finish>
               <executionOccurrenceSpecificationMoniker Id="b71cce2a-2a98-4987-bdd6-337a68024f11" LastKnownName="ExecutionOccurrenceSpecification20" />
@@ -409,13 +409,13 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="JazzControl" />
+              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="ControlBase" />
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification Id="635d5433-f8d6-4565-8bcd-8fc516facdfb" name="MessageOccurrenceSpecification35">
             <elementDefinition Id="e9dc92ba-59f1-497e-9a35-0e034fc54e1d" />
             <covered>
-              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="JazzControl" />
+              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="ControlBase" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="5f559b77-9489-4dea-bca9-8223166fca27" name="MessageOccurrenceSpecification34">
@@ -424,16 +424,16 @@
               <lifelineMoniker Id="195b402c-8625-413b-bda0-61e31a44ce4e" LastKnownName="Scripts" />
             </covered>
           </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="d23b04a5-4f5b-4589-83a3-afaa99c0e48c" name="MessageOccurrenceSpecification36">
+            <elementDefinition Id="2ccb575b-2a48-4887-87b6-91c9a0f9592e" />
+            <covered>
+              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="ControlBase" />
+            </covered>
+          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="4b41bff0-18c4-42c8-b992-74b4f0e1186b" name="MessageOccurrenceSpecification37">
             <elementDefinition Id="60812698-6775-44a3-ac9a-fe82433f5a80" />
             <covered>
               <lifelineMoniker Id="195b402c-8625-413b-bda0-61e31a44ce4e" LastKnownName="Scripts" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="d23b04a5-4f5b-4589-83a3-afaa99c0e48c" name="MessageOccurrenceSpecification36">
-            <elementDefinition Id="2ccb575b-2a48-4887-87b6-91c9a0f9592e" />
-            <covered>
-              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="JazzControl" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="b71cce2a-2a98-4987-bdd6-337a68024f11" name="ExecutionOccurrenceSpecification20">
@@ -444,7 +444,7 @@
               </executionOccurrenceSpecificationReferencesEvent>
             </event>
             <covered>
-              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="JazzControl" />
+              <lifelineMoniker Id="8a45d4ad-404e-4de6-8191-390374276254" LastKnownName="ControlBase" />
             </covered>
           </executionOccurrenceSpecification>
           <behaviorExecutionSpecification Id="023ba616-4993-4080-bcf1-a6cd40629685" name="BehaviorExecutionSpecification4">
@@ -548,16 +548,16 @@
               <lifelineMoniker Id="adacfa5d-eb0c-4f21-8d07-5974de4e92b7" LastKnownName="IWebElement" />
             </covered>
           </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="c5e579e3-8f72-4f2e-ab71-d46bed13764e" name="MessageOccurrenceSpecification43">
-            <elementDefinition Id="36d931d1-9ff6-4a34-b8a3-08764d68b059" />
-            <covered>
-              <lifelineMoniker Id="195b402c-8625-413b-bda0-61e31a44ce4e" LastKnownName="Scripts" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="2f19a12d-5d3f-4132-b5b8-f760e955aaf0" name="MessageOccurrenceSpecification42">
             <elementDefinition Id="b5053596-ed23-4928-8d1d-938a468eb91d" />
             <covered>
               <lifelineMoniker Id="adacfa5d-eb0c-4f21-8d07-5974de4e92b7" LastKnownName="IWebElement" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="c5e579e3-8f72-4f2e-ab71-d46bed13764e" name="MessageOccurrenceSpecification43">
+            <elementDefinition Id="36d931d1-9ff6-4a34-b8a3-08764d68b059" />
+            <covered>
+              <lifelineMoniker Id="195b402c-8625-413b-bda0-61e31a44ce4e" LastKnownName="Scripts" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="8e60743d-d247-4257-9f70-8c3bd82462c5" name="ExecutionOccurrenceSpecification24">
@@ -604,7 +604,7 @@
               <executionOccurrenceSpecificationMoniker Id="4f21de61-63a6-4504-8958-a0bdf8bbddae" LastKnownName="ExecutionOccurrenceSpecification4" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="8a45d4ad-404e-4de6-8191-390374276254" name="JazzControl" isActor="false" lifelineDisplayName="JazzControl">
+          <lifeline Id="8a45d4ad-404e-4de6-8191-390374276254" name="ControlBase" isActor="false" lifelineDisplayName="ControlBase">
             <elementDefinition Id="5f78b37d-1c8a-4bd8-8437-aca93688ebf9" />
             <topLevelOccurrences>
               <executionOccurrenceSpecificationMoniker Id="b69bb045-c67d-4aaf-885a-973121bcf894" LastKnownName="ExecutionOccurrenceSpecification13" />

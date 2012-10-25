@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm11="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ee380b50-95a8-4659-a86d-4753f1e5b427" name="TestData" linkedPackageId="030fbfb7-d5b5-410b-a4b8-1e66ae335855" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="5c51f583-c458-40cf-b31b-953167159b31">
+      <profileInstance Id="5f8b2b3d-e105-419d-8754-575421a99e53" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="998d707b-60ac-422b-8ec8-cb188c895cfc">
+      <profileInstance Id="0c92d59f-0814-431c-a702-8dc8f787c8e9" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="30f40a37-abc1-41fc-9fae-a2bb294b4475" name="TestData" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="90b462db-1c38-4c28-afdb-5479b5341530" />
+        <nodes>
+          <initialNode Id="bc530ef2-cb6f-445f-ab36-c3ee154f03d8" name="Initial1" isLeaf="false">
+            <elementDefinition Id="ac35589b-a585-4116-a5d0-222f234ad3ca" />
+            <flowNodeTargets>
+              <controlFlow Id="e151305a-eef9-4889-8701-98961f03b2de" isLeaf="false">
+                <decisionNodeMoniker Id="78e440c6-d919-4a70-86da-187475b0874b" LastKnownName="Decision1" />
+                <elementDefinition Id="1b5cd363-a5ea-4e09-bd58-61cc569b8d43" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <decisionNode Id="78e440c6-d919-4a70-86da-187475b0874b" name="Decision1" isLeaf="false">
+            <elementDefinition Id="ee4dd4ff-bdf4-4b72-91a6-efc586fa8872" />
+            <flowNodeTargets>
+              <controlFlow Id="298d4cf6-9c52-4d75-9c4d-a9613e8f5d58" guard="if: mapping relation is defined" isLeaf="false">
+                <opaqueActionMoniker Id="350692aa-58f9-446c-9a68-6ce687c9328a" LastKnownName="GetRealTestCaseIDFromConfig" />
+                <elementDefinition Id="0144b1eb-26bf-4b93-845e-6a5f2a92d5f2" />
+              </controlFlow>
+              <controlFlow Id="606355d8-f213-4fab-9361-3a4008717178" isLeaf="false">
+                <mergeNodeMoniker Id="1fc3c783-a8f7-412b-ba4f-d70cd3de086f" LastKnownName="Merge1" />
+                <elementDefinition Id="1bffb34d-6b0e-433f-9f3d-115a81e711de" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="350692aa-58f9-446c-9a68-6ce687c9328a" name="GetRealTestCaseIDFromConfig" isLeaf="false">
+            <elementDefinition Id="5908fdf8-200b-4f47-a9a3-d945b5d0b176" />
+            <flowNodeTargets>
+              <controlFlow Id="4dd98678-1227-4518-9b2c-88badf66af6b" isLeaf="false">
+                <mergeNodeMoniker Id="1fc3c783-a8f7-412b-ba4f-d70cd3de086f" LastKnownName="Merge1" />
+                <elementDefinition Id="e842960a-062e-47fb-aeaf-b27d66d54438" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="785b9c31-a8d0-4ec1-8626-37fc403b9e1e" name="GetTestDataFileName" isLeaf="false">
+            <elementDefinition Id="91fae1a5-bd9c-44e6-99f6-65b05972068c" />
+            <flowNodeTargets>
+              <controlFlow Id="0b4d0e4a-c3ac-435e-a63d-f78c8960e420" isLeaf="false">
+                <opaqueActionMoniker Id="c8b795ac-a07e-4325-b9b9-8eeec08bbb72" LastKnownName="Deserialize" />
+                <elementDefinition Id="1c8dd021-7023-49bc-a60b-abdbb820f297" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="1fc3c783-a8f7-412b-ba4f-d70cd3de086f" name="Merge1" isLeaf="false">
+            <elementDefinition Id="1b8896fd-c77e-462b-9c5d-ae0117800179" />
+            <flowNodeTargets>
+              <controlFlow Id="f1b87931-9fe2-4967-8fb7-2117905aa8b1" isLeaf="false">
+                <opaqueActionMoniker Id="785b9c31-a8d0-4ec1-8626-37fc403b9e1e" LastKnownName="GetTestDataFileName" />
+                <elementDefinition Id="b416a484-7bcd-4e6b-9472-2ef16974c8cf" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction Id="c8b795ac-a07e-4325-b9b9-8eeec08bbb72" name="Deserialize" isLeaf="false">
+            <elementDefinition Id="6afb74fe-d929-4bdb-babb-b5c53345f5b6" />
+            <flowNodeTargets>
+              <controlFlow Id="7b2f59ec-8987-4f18-aaf5-70a3ca92cbb3" isLeaf="false">
+                <activityFinalNodeMoniker Id="d73e62ee-8074-4bcd-b9e1-ed61cf7cb4aa" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="7735d0c0-b205-4bbc-99be-3b2fb5390487" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="d73e62ee-8074-4bcd-b9e1-ed61cf7cb4aa" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="9ecbcadc-14cf-4d26-a903-9735c93ca282" />
+          </activityFinalNode>
+          <objectNode Id="abd05afc-69c8-4ba2-85e9-9f31fcb00316" name="GetTestData" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="09cf6294-e3c3-48ad-95bf-2f6d35322883" />
+            <upperBound>
+              <literalInteger Id="fff2bb78-4c50-4a7e-994c-8f18d186e40d" name="2147483647" value="2147483647">
+                <elementDefinition Id="bedff5d8-b8d2-495d-959c-85201f6b7b8d" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="030fbfb7-d5b5-410b-a4b8-1e66ae335855" name="MentoModeling">
+    <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />
+  </package>
+</activityRootModel>

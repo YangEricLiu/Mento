@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenQA.Selenium;
 
 namespace Mento.TestApi.WebUserInterface
 {
     public class TreeView : ControllerBase
     {
-        public static Boolean IsExpand(string treeNodeName)
+        public Boolean IsExpand(string treeNodeName)
         {
             string nodeExpandPath = Ele.IsTreeNodeExpand.Replace(ManualElementName.treeNodeName, treeNodeName);
 
             return ElementLocator.IsElementPresent(nodeExpandPath, byType.Xpath);
         }
 
-        public static void Expand(string treeNodeName)
+        public void Expand(string treeNodeName)
         {
             string nodePath = Ele.TreeNode.Replace(ManualElementName.treeNodeName, treeNodeName);
 
@@ -28,7 +29,7 @@ namespace Mento.TestApi.WebUserInterface
             }
         }
 
-        public static void Collapse(string treeNodeName)
+        public void Collapse(string treeNodeName)
         {
             string nodePath = Ele.TreeNode.Replace(ManualElementName.treeNodeName, treeNodeName);
 

@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenQA.Selenium;
+using Mento.Utility;
+using Mento.Framework;
+using NUnit.Framework;
+using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Interactions;
 
 namespace Mento.TestApi.WebUserInterface
 {
@@ -11,7 +17,7 @@ namespace Mento.TestApi.WebUserInterface
 
         public static void OpenJazz()
         {
-            driver = DriverFactory.GetDriver("");
+            driver = DriverFactory.GetDriver(Browser.IE);
         }
 
         public static void QuitJazz()
@@ -46,7 +52,7 @@ namespace Mento.TestApi.WebUserInterface
             {
                 System.Threading.Thread.Sleep(millisecs);
             }
-            catch (ThreadInterruptedException e)
+            catch (Exception e)
             {
                 Assert.Fail(e.Message);
                 //add log here

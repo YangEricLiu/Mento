@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenQA.Selenium;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using Mento.Framework;
 
 namespace Mento.TestApi.WebUserInterface
 {
     public class DriverFactory
     {
-        public static IWebDriver GetDriver(string browserType)
+        public static IWebDriver GetDriver(Browser browser)
         {
-            switch (browserType)
+            switch (browser)
             {
-                case "IE":
+                case Browser.IE:
                     return new InternetExplorerDriver();
-                case "Chrome":
+                case Browser.Chrome:
                     return new ChromeDriver();
-                case "FireFox":
+                case Browser.Firefox:
                     return new FirefoxDriver();
                 default:
                     return null;

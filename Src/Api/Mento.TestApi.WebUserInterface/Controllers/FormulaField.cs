@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenQA.Selenium;
 
-namespace Mento.TestApi.WebUserInterface.Controllers
+namespace Mento.TestApi.WebUserInterface
 {
     public class FormulaField : TextField
     {
-        public static void DragTag(string tagName, string formulaField)
+        public void DragTag(string tagName, string formulaField)
         {
             string tagPath = Element.TagNameRow.Replace(ManualElementName.tagName, tagName);
 

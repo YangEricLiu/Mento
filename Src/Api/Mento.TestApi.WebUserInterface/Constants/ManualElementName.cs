@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mento.TestApi.WebUserInterface.Constants
+namespace Mento.TestApi.WebUserInterface
 {
     class ManualElementName
     {

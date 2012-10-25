@@ -6,7 +6,7 @@ using System.Xml;
 using System.IO;
 using Mento.Framework.Constants;
 
-namespace Mento.Utility.Utility
+namespace Mento.Utility
 {
     public class XMLHelper
     {

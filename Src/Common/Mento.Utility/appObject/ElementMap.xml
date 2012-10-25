@@ -7,4 +7,6 @@
   <add key = "InvalidNameInputError" value = "//input[contains(@data-errorqtip,'Common.Label.NameRegexError')]" type = "Xpath"/>
   <!--Tag Setting-->
   <add key = "FormulaField" value = "Formula" type = "Name"/>
+  <!--Hierarchy Setting-->
+  <add key = "AddHierarchyButton" value = "st-hier-tree-add-btnInnerEl" type = "ID"/>
 </WebElement>

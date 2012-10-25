@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="Selenium.WebDriverBackedSelenium">
       <HintPath>..\..\..\Lib\Selenium.WebDriverBackedSelenium.dll</HintPath>
     </Reference>
@@ -58,13 +62,16 @@
   <ItemGroup>
     <Compile Include="Constants\ElementKey.cs" />
     <Compile Include="Constants\ManualElementName.cs" />
+    <Compile Include="ControlAccess\ControlAccess.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\ElementLocator.cs" />
     <Compile Include="Controllers\FormulaField.cs" />
     <Compile Include="Controllers\TextField.cs" />
     <Compile Include="Controllers\TreeView.cs" />
     <Compile Include="DriverFactory.cs" />
-    <Compile Include="Element.cs" />
+    <Compile Include="Controllers\Element.cs" />
+    <Compile Include="FunctionWrapper\FunctionWrapper.cs" />
+    <Compile Include="FunctionWrapper\Hierarchy.cs" />
     <Compile Include="JazzControlAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,7 +80,12 @@
       <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
       <Name>Mento.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Common\Mento.Utility\Mento.Utility.csproj">
+      <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
+      <Name>Mento.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

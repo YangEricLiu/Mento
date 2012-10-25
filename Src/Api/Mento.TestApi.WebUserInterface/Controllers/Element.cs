@@ -57,5 +57,13 @@ namespace Mento.TestApi.WebUserInterface
                 return dictManualElement[ElementKey.TagNameRow].value;
             }
         }
+
+        public static string AddHierarchyButton
+        {
+            get
+            {
+                return dictElement[ElementKey.AddHierarchyButton].value;
+            }
+        }
     }
 }

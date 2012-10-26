@@ -5,6 +5,7 @@ using System.Text;
 using OpenQA.Selenium;
 using Mento.Utility;
 using Mento.Framework;
+using Mento.Framework.Execution;
 using NUnit.Framework;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
@@ -17,7 +18,8 @@ namespace Mento.TestApi.WebUserInterface
 
         public static void OpenJazz()
         {
-            driver = DriverFactory.GetDriver(Browser.IE);
+            driver = DriverFactory.GetDriver(ExecutionContext.Browser);
+            driver.Navigate().GoToUrl(ExecutionContext.Url);
         }
 
         public static void QuitJazz()
@@ -111,6 +113,12 @@ namespace Mento.TestApi.WebUserInterface
             action.Click(elementHandler).Perform();
 
             pause(1000);
+        }
+
+        public static void DragAndDrop(IWebElement source, IWebElement desination)
+        {
+            Actions action = new Actions(driver);
+            action.DragAndDrop(source, desination).Perform();
         }
 
         public static void DoubleClick(IWebElement elementHandler)

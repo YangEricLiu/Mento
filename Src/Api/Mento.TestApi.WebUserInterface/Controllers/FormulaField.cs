@@ -9,16 +9,27 @@ namespace Mento.TestApi.WebUserInterface
 {
     public class FormulaField : TextField
     {
-        public void DragTag(string tagName, string formulaField)
+        public void DragTag(string tagName)
         {
-            string tagPath = Element.TagNameRow.Replace(ManualElementName.tagName, tagName);
+            string tagPath = DictDataLoad.dictManualElement[ElementKey.TagNameRow].value.Replace(ManualElementName.tagName, tagName);
+            byType type1 = DictDataLoad.dictManualElement[ElementKey.TagNameRow].type;
 
-            IWebElement tagElement = ElementLocator.FindElement(tagPath, byType.Name);
-            IWebElement formulaElement = ElementLocator.FindElement(Element.FormulaField, byType.Name);
+            string formulaField = DictDataLoad.dictElement[ElementKey.FormulaField].value;
+            byType type2 = DictDataLoad.dictElement[ElementKey.FormulaField].type;
+
+            IWebElement tagElement = ElementLocator.FindElement(tagPath, type1);
+            IWebElement formulaElement = ElementLocator.FindElement(formulaField, type2);
 
             ElementLocator.FocusOn(tagElement);
             ElementLocator.DragAndDrop(tagElement, formulaElement);
+        }
 
+        public string GetValue()
+        {
+            string formulaField = DictDataLoad.dictElement[ElementKey.FormulaField].value;
+            byType type = DictDataLoad.dictElement[ElementKey.FormulaField].type;
+
+            return ElementLocator.FindElement(formulaField, type).GetAttribute("value");
         }
     }
 }

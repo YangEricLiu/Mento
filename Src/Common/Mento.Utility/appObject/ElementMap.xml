@@ -9,4 +9,11 @@
   <add key = "FormulaField" value = "Formula" type = "Name"/>
   <!--Hierarchy Setting-->
   <add key = "AddHierarchyButton" value = "st-hier-tree-add-btnInnerEl" type = "ID"/>
+  <add key = "HierarchyName" value = "Name" type = "Name"/>
+  <add key = "HierarchyCode" value = "Code" type = "Name"/>
+  <add key = "HierarchyType" value = "Type" type = "Name"/>
+  <add key = "Orgnization" value = "//li[text()='Common.Glossary.Organization']" type = "Xpath"/>
+  <add key = "Site" value = "//li[text()='Common.Glossary.Site']" type = "Xpath"/>
+  <add key = "Building" value = "//li[text()='Common.Glossary.Building']" type = "Xpath"/>
+  <add key = "HierarchyComment" value = "Comment" type = "Name"/>
 </WebElement>

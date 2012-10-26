@@ -3,45 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
+using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface
 {
     public class TreeView : ControllerBase
     {
-        //public Boolean IsExpand(string treeNodeName)
-        //{
-        //    string nodeExpandPath = Ele.IsTreeNodeExpand.Replace(ManualElementName.treeNodeName, treeNodeName);
+        public Boolean IsExpand(string treeNodeName)
+        {
+            string nodeExpandPath = DictDataLoad.dictManualElement[ElementKey.IsTreeNodeExpand].value.Replace(ManualElementName.treeNodeName, treeNodeName);
+            byType type = DictDataLoad.dictManualElement[ElementKey.TreeNode].type;
 
-        //    return ElementLocator.IsElementPresent(nodeExpandPath, byType.Xpath);
-        //}
+            return ElementLocator.IsElementPresent(nodeExpandPath, type);
+        }
 
-        //public void Expand(string treeNodeName)
-        //{
-        //    string nodePath = Ele.TreeNode.Replace(ManualElementName.treeNodeName, treeNodeName);
+        public void FocusOnTreeNode(string treeNodeName)
+        {
+            string nodePath = DictDataLoad.dictManualElement[ElementKey.TreeNode].value.Replace(ManualElementName.treeNodeName, treeNodeName);
+            byType type = DictDataLoad.dictManualElement[ElementKey.TreeNode].type;
 
-        //    IWebElement nodeLocator = ElementLocator.FindElement(nodePath, byType.Xpath);
+            IWebElement nodeLocator = ElementLocator.FindElement(nodePath, type);
+            ElementLocator.FocusOn(nodeLocator);
+        }
 
-        //    ElementLocator.FocusOn(nodeLocator);
+        public void DoubleClickTreeNode(string treeNodeName)
+        {
+            string nodePath = DictDataLoad.dictManualElement[ElementKey.TreeNode].value.Replace(ManualElementName.treeNodeName, treeNodeName);
+            byType type = DictDataLoad.dictManualElement[ElementKey.TreeNode].type;
 
-        //    if (!IsExpand(treeNodeName))
-        //    {
-        //        ElementLocator.DoubleClick(nodeLocator);
-        //    }
-        //}
+            IWebElement nodeLocator = ElementLocator.FindElement(nodePath, type);
+            ElementLocator.DoubleClick(nodeLocator);
+        }
 
-        //public void Collapse(string treeNodeName)
-        //{
-        //    string nodePath = Ele.TreeNode.Replace(ManualElementName.treeNodeName, treeNodeName);
+        public void Expand(string treeNodeName)
+        {
+            FocusOnTreeNode(treeNodeName);
 
-        //    IWebElement nodeLocator = ElementLocator.FindElement(nodePath, byType.Xpath);
+            if (!IsExpand(treeNodeName))
+            {
+                DoubleClickTreeNode(treeNodeName);
+            }
+        }
 
-        //    ElementLocator.FocusOn(nodeLocator);
+        public void Collapse(string treeNodeName)
+        {
+            FocusOnTreeNode(treeNodeName);
 
-        //    if (IsExpand(nodeName))
-        //    {
-        //        ElementLocator.DoubleClick(nodeLocator);
-        //    }
-        //}
-
+            if (IsExpand(treeNodeName))
+            {
+                DoubleClickTreeNode(treeNodeName);
+            }
+        }
     }
 }

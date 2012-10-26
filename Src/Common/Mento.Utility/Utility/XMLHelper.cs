@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using System.IO;
-using Mento.Framework;
+using Mento.Framework.Constants;
 
 namespace Mento.Utility
 {
@@ -38,14 +38,14 @@ namespace Mento.Utility
             return elementMap;
         }
 
-        public static Dictionary<string, TypeValue> GetElementMapValue()
+        public static Dictionary<string, TypeValue> GetElementMapValue(string languageFilePath)
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();
             Dictionary<string, TypeValue> localValue = new Dictionary<string, TypeValue>();
             Dictionary<string, TypeValue> finalValue = new Dictionary<string, TypeValue>();
 
-            localValue = GetValueFromXML(@"E:\Mento\Debug_Mento_Web\lib\Utilities\ElementMap.xml", "WebElement");
-            dict = JSHelper.GetFormatKeyValue(@"E:\Mento\Debug_Mento_Web\lib\Utilities\test.txt");
+            localValue = GetValueFromXML(ConfigurationKey.ELEMENTMAP_PATH, ConfigurationKey.ELEMENTMAP_MODULE_NAME);
+            dict = JSHelper.GetFormatKeyValue(@languageFilePath);
 
             foreach (string key in localValue.Keys)
             {
@@ -67,7 +67,7 @@ namespace Mento.Utility
 
         public static Dictionary<string, TypeValue> GetManualElementValue()
         {
-            return GetValueFromXML(@"E:\Mento\Debug_Mento_Web\lib\Utilities\Locator.xml", "Locator");
+            return GetValueFromXML(ConfigurationKey.ELEMENTMANUALMAP_PATH, ConfigurationKey.ELEMENTMANUALMAP_MODULE_NAME);
         }
 
     }

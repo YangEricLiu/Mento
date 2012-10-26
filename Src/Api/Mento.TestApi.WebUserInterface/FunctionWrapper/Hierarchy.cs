@@ -4,28 +4,31 @@ using System.Linq;
 using System.Text;
 using Mento.Framework;
 using Mento.Utility;
+using Mento.TestApi.TestData;
 
 namespace Mento.TestApi.WebUserInterface
 {
     public class Hierarchy
     {
-        private TreeView controlInstance = ControlAccess.GetControl<TreeView>();
+        private TreeView treeViewInstance = ControlAccess.GetControl<TreeView>();
+        private TextField textFieldInstance = ControlAccess.GetControl<TextField>();
+        private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
 
         private void PrepareToAddNode(string treeNodeName)
         {
-            string nodePath = Element.TreeNode.Replace(ManualElementName.treeNodeName, treeNodeName);
+            string addHierarchyButton = DictDataLoad.dictElement[ElementKey.AddHierarchyButton].value;
+            byType type = DictDataLoad.dictElement[ElementKey.AddHierarchyButton].type;
 
-            ElementLocator.FocusOn(ElementLocator.FindElement(nodePath, byType.Xpath));
+            treeViewInstance.FocusOnTreeNode(treeNodeName);
 
-            ElementLocator.FindElement(Element.AddHierarchyButton, byType.ID).Click();
+            ElementLocator.FindElement(addHierarchyButton, type).Click();
         }
 
-        public void AddHierarchynode(string treeNodeName, Array inputData)
+        public void AddHierarchynode(string treeNodeName, InputTestDataBase input)
         {
             PrepareToAddNode(treeNodeName);
 
-
-
+            
         }
     }
 }

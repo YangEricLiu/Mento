@@ -13,8 +13,11 @@ namespace Mento.Framework.Constants
         public const string LOGGING_SEVERITY = "loggingSeverity";
 
         public const string SCRIPT_DATA_MAPPINGFILE = "dataMapping";
-		public const string ELEMENT_SOURCE_PATH = "";
-        public const string ELEMENT_MODULE_NAME = "";
-        public const string ZH_CN_PATH = "";
-    }
+        public const string ELEMENTMAP_PATH = @"D:\Schneider\Mento\Trunk\Src\Common\Mento.Utility\appObject\ElementMap.xml";
+        public const string ELEMENTMANUALMAP_PATH = @"D:\Schneider\Mento\Trunk\Src\Common\Mento.Utility\appObject\ManualElementMap.xml";
+        public const string ELEMENTMAP_MODULE_NAME = "WebElement";
+        public const string ELEMENTMANUALMAP_MODULE_NAME = "Locator";
+        public const string CN_PATH = "";
+        public const string EN_PATH = "";
+     }
 }

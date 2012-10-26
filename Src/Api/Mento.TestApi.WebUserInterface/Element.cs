@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Mento.Framework;
 using Mento.Utility;
+using Mento.Framework.Execution;
 
 namespace Mento.TestApi.WebUserInterface
 {
     public class Element
     {
-        private static Dictionary<string, TypeValue> dictElement = XMLHelper.GetElementMapValue();
+        private static Dictionary<string, TypeValue> dictElement = GetLanguageResource.GetLangResource(ExecutionContext.Language);
         private static Dictionary<string, TypeValue> dictManualElement = XMLHelper.GetManualElementValue();
 
         public static string LoginName
@@ -24,46 +26,6 @@ namespace Mento.TestApi.WebUserInterface
             get
             {
                 return dictElement[ElementKey.LoginPassword].value;
-            }
-        }
-
-        public static string TreeNode
-        {
-            get
-            {
-                return dictManualElement[ElementKey.TreeNode].value;
-            }
-        }
-
-        public static string FormulaField
-        {
-            get
-            {
-                return dictElement[ElementKey.FormulaField].value;
-            }
-        }
-
-        public static string IsTreeNodeExpand
-        {
-            get
-            {
-                return dictManualElement[ElementKey.IsTreeNodeExpand].value;
-            }
-        }
-
-        public static string TagNameRow
-        {
-            get
-            {
-                return dictManualElement[ElementKey.TagNameRow].value;
-            }
-        }
-
-        public static string AddHierarchyButton
-        {
-            get
-            {
-                return dictElement[ElementKey.AddHierarchyButton].value;
             }
         }
     }

@@ -12,6 +12,10 @@
 		{
 			"Number1":"7",
 			"Number2":"6"
+		},
+		{
+			"Number1":"11",
+			"Number2":"62"
 		}
 	],
 	"ExpectedData":
@@ -24,6 +28,9 @@
 		},
 		{
 			"Result":"13"
+		},
+		{
+			"Result":"73"
 		}
 	]
 }

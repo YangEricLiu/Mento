@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Mento.TestApi.TestData;
+using Mento.Utility;
 
 namespace Administration.Calendar.TestData
 {
@@ -19,6 +20,11 @@ namespace Administration.Calendar.TestData
         {
             this.Number1 = number1;
             this.Number2 = number2;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0},{1}",this.Number1,this,Number2);
         }
     }
 

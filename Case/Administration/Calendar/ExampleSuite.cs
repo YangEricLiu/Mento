@@ -115,7 +115,7 @@ namespace Automation.Administration.Calendar
         }
 
         [Test]
-        [CaseID("TA-Example-008"), ManualCaseID("TA-Example"), CreateTime("2012-10-23"), Owner("Aries")]
+        [ScriptProperty("TA-Example-008", "TA-Example", "2012-10-23", "Aries")]
         public void TestCase8()
         {
             //LogHelper.LogDebug(TestContext.CurrentContext.Test.FullName);
@@ -129,10 +129,10 @@ namespace Automation.Administration.Calendar
         }
 
         [Test]
-        [CaseID("TA-Example-009"), ManualCaseID("TA-Example"), CreateTime("2012-10-23"), Owner("Aries")]
-        [MultipleTestData(typeof(MultipleExampleData), 0, 0/*, typeof(ExampleSuite), "TA-Example-009"*/)]
-        //[MultipleTestData(typeof(MultipleExampleData), 1, 1)]
-        //[MultipleTestData(typeof(MultipleExampleData), 2, 2)]
+        [ScriptProperty("TA-Example-009", "TA-Example", "2012-10-23", "Aries")]
+        [MultipleTestData(typeof(MultipleExampleData), 0, 0, typeof(ExampleSuite), "TA-Example-009")]
+        [MultipleTestData(typeof(MultipleExampleData), 1, 1, typeof(ExampleSuite), "TA-Example-009")]
+        [MultipleTestData(typeof(MultipleExampleData), 2, 2, typeof(ExampleSuite), "TA-Example-009")]
         public void TestCase9(ExampleInputData input, ExampleExpectedData expected)
         {
             Func<int, int, int> function = (int a, int b) => a + b;
@@ -162,14 +162,17 @@ namespace Automation.Administration.Calendar
                 i++;
             }
         }
-        [Test]
-        [MultipleTestData(typeof(TagTestData), 0, 0)]
-        [MultipleTestData(typeof(TagTestData), 1, 0)]
-        [MultipleTestData(typeof(TagTestData), 2, 0)]
-        public void TestCase11(TagInput input,ExpectedTestDataBase expected)
-        {
- input.TagID
 
+        [Test]
+        [ScriptProperty("TA-Example-011", "TA-Example", "2012-10-25", "Aries")]
+        [MultipleTestDataSource(typeof(MultipleExampleData), typeof(ExampleSuite), "TA-Example-011")]
+        public void TestCase11(ExampleInputData input, ExampleExpectedData expected)
+        {
+            Func<int, int, int> function = (int a, int b) => a + b;
+
+            int actual = function(input.Number1, input.Number2);
+
+            Assert.AreEqual(expected.Result, actual);
         }
     }
 }

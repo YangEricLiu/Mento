@@ -8,14 +8,22 @@ namespace Mento.TestApi.TestData
 {
     public static class TestContextExtend
     {
-        private static object _testData;
+        private static Dictionary<string,object> _testData;
 
         public static T GetTestData<T>(this TestContext context)
         {
+            string testCaseID = context.Test.Properties["CaseID"].ToString();
+            string testScriptName = context.Test.FullName;
             if (_testData == null)
-                _testData = TestDataRepository.GetTestData<T>(context.Test.Properties["CaseID"].ToString(), context.Test.FullName);
+            {
+                _testData = new Dictionary<string, object>();
+            }
+            if (!_testData.Keys.Contains(testCaseID))
+            {
+                _testData.Add(testCaseID, TestDataRepository.GetTestData<T>(testCaseID, testScriptName));
+            }
 
-            return (T)_testData;
+            return (T)_testData[testCaseID];
         }
     }
 }

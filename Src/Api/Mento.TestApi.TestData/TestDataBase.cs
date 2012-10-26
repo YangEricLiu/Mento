@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Mento.Utility;
 
 namespace Mento.TestApi.TestData
 {
@@ -39,11 +40,19 @@ namespace Mento.TestApi.TestData
         }
     }
 
-    public abstract class InputTestDataBase
+    public abstract class InputTestDataBase : TestDataElementBase
     {
     }
 
-    public abstract class ExpectedTestDataBase
+    public abstract class ExpectedTestDataBase : TestDataElementBase
     {
+    }
+
+    public abstract class TestDataElementBase
+    { 
+        public virtual string ToString()
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this);
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Configuration;
 using Mento.Framework.Constants;
 using System.Xml.Linq;
 using Mento.Utility;
+using System.Reflection;
 
 namespace Mento.TestApi.TestData
 {
@@ -52,6 +53,74 @@ namespace Mento.TestApi.TestData
             string testDataFileName = GetTestDataFileName(testDataID, testScriptFullName);
 
             return Deserialize<T>(testDataFileName);
+        }
+
+        public static object[] GetTestDataElement(Type testDataType, int inputDataIndex, int expectedDataIndex, Type testSuiteType, string testCaseID)
+        {
+            PropertyInfo InputTestDataProperty = testDataType.GetProperty("InputData", BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty("ExpectedData", BindingFlags.Public | BindingFlags.Instance);
+
+            //Type InputTestDataType = InputTestDataProperty.PropertyType.GetElementType();
+            //Type ExpectedTestDataType = ExpectedTestDataProperty.PropertyType.GetElementType();
+
+            //var inputTestData = Activator.CreateInstance(InputTestDataType, 1, 2);
+            //var expectedTestData = Activator.CreateInstance(ExpectedTestDataType, 3);
+
+            MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod("GetTestData", BindingFlags.Public | BindingFlags.Static);
+
+            MethodInfo genericGetTestDataMethod = getTestDataMethod.MakeGenericMethod(testDataType);
+
+            //PropertyInfo CurrentContextProperty = typeof(TestContext).GetProperty("CurrentContext", BindingFlags.Public | BindingFlags.Static);
+
+            object testData = genericGetTestDataMethod.Invoke(null, new object[] { /*testCaseID*/testCaseID, /*testScriptFullName*/String.Format("{0}.{1}", testSuiteType.FullName, testCaseID) });
+
+            //var inputTestData = InputTestDataProperty.GetValue(testData, new object[] { inputDataIndex });
+            //var expectedTestData = ExpectedTestDataProperty.GetValue(testData, new object[] { expectedDataIndex });
+            var inputTestData = (Array)InputTestDataProperty.GetValue(testData, null);
+            var expectedTestData = (Array)ExpectedTestDataProperty.GetValue(testData, null);
+
+            return new object[] { inputTestData.GetValue(inputDataIndex), expectedTestData.GetValue(expectedDataIndex) };
+        }
+        
+        public static object[] GetTestDataElementArray(Type testDataType, Type testSuiteType, string testCaseID)
+        {
+            PropertyInfo InputTestDataProperty = testDataType.GetProperty("InputData", BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty("ExpectedData", BindingFlags.Public | BindingFlags.Instance);
+
+            //Type InputTestDataType = InputTestDataProperty.PropertyType.GetElementType();
+            //Type ExpectedTestDataType = ExpectedTestDataProperty.PropertyType.GetElementType();
+
+            //var inputTestData = Activator.CreateInstance(InputTestDataType, 1, 2);
+            //var expectedTestData = Activator.CreateInstance(ExpectedTestDataType, 3);
+
+            MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod("GetTestData", BindingFlags.Public | BindingFlags.Static);
+
+            MethodInfo genericGetTestDataMethod = getTestDataMethod.MakeGenericMethod(testDataType);
+
+            //PropertyInfo CurrentContextProperty = typeof(TestContext).GetProperty("CurrentContext", BindingFlags.Public | BindingFlags.Static);
+            //LogHelper.LogDebug(String.Format("{0}-{1}", testSuiteType.Namespace, testCaseID));
+            object testData = genericGetTestDataMethod.Invoke(null, new object[] { /*testCaseID*/testCaseID, /*testScriptFullName*/String.Format("{0}.{1}", testSuiteType.FullName, testCaseID) });
+
+            //var inputTestData = InputTestDataProperty.GetValue(testData, new object[] { inputDataIndex });
+            //var expectedTestData = ExpectedTestDataProperty.GetValue(testData, new object[] { expectedDataIndex });
+            var inputTestData = (Array)InputTestDataProperty.GetValue(testData, null);
+            var expectedTestData = (Array)ExpectedTestDataProperty.GetValue(testData, null);
+
+            List<object> testDataList = new List<object>();
+
+            for (int i = 0; i < Math.Max(inputTestData.Length, expectedTestData.Length); i++)
+            {
+                object inputObject = null, expectedObject = null;
+
+                if (i < inputTestData.Length)
+                    inputObject = inputTestData.GetValue(i);
+                if (i < expectedTestData.Length)
+                    expectedObject = expectedTestData.GetValue(i);
+
+                testDataList.Add(new object[] { inputObject, expectedObject });
+            }
+
+            return testDataList.ToArray();
         }
 
         private static string GetTestDataFileName(string testDataID, string testScriptFullName)

@@ -8,8 +8,8 @@
     <ProjectGuid>{74673397-F815-44D8-876A-D6CCF87A2382}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>System</RootNamespace>
-    <AssemblyName>System</AssemblyName>
+    <RootNamespace>Mento.Script.System</RootNamespace>
+    <AssemblyName>Mento.Script.System</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

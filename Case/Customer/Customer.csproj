@@ -8,8 +8,8 @@
     <ProjectGuid>{8CE3B60E-099B-436A-84AA-88313B01610D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Customer</RootNamespace>
-    <AssemblyName>Customer</AssemblyName>
+    <RootNamespace>Mento.Script.Customer</RootNamespace>
+    <AssemblyName>Mento.Script.Customer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

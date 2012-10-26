@@ -21,11 +21,6 @@ namespace Administration.Calendar.TestData
             this.Number1 = number1;
             this.Number2 = number2;
         }
-
-        public override string ToString()
-        {
-            return String.Format("{0},{1}",this.Number1,this,Number2);
-        }
     }
 
     public class ExampleExpectedData : ExpectedTestDataBase

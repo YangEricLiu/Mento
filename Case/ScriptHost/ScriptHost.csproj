@@ -8,8 +8,8 @@
     <ProjectGuid>{89A953B5-D558-4F6F-95EE-A11A85BA8C22}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ScriptHost</RootNamespace>
-    <AssemblyName>ScriptHost</AssemblyName>
+    <RootNamespace>Mento.ScriptHost</RootNamespace>
+    <AssemblyName>Mento.ScriptHost</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

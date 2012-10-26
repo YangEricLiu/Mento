@@ -8,8 +8,8 @@
     <ProjectGuid>{1615FA2F-812E-4374-AC19-CCB00119895C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Information</RootNamespace>
-    <AssemblyName>Information</AssemblyName>
+    <RootNamespace>Mento.Script.Information</RootNamespace>
+    <AssemblyName>Mento.Script.Information</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

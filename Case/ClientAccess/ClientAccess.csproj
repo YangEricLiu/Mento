@@ -8,8 +8,8 @@
     <ProjectGuid>{24EB12A8-184D-425F-B757-A573E7D9735B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClientAccess</RootNamespace>
-    <AssemblyName>ClientAccess</AssemblyName>
+    <RootNamespace>Mento.Script.ClientAccess</RootNamespace>
+    <AssemblyName>Mento.Script.ClientAccess</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

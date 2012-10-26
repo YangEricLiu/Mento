@@ -50,7 +50,7 @@ namespace Mento.TestApi.TestData
 
     public abstract class TestDataElementBase
     { 
-        public virtual string ToString()
+        public override string ToString()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this);
         }

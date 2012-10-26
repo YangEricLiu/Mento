@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.Business.Script.Entity;
 using Mento.Business.Script.DataAccess;
+using System.IO;
 
 namespace Mento.Business.Script.BusinessLogic
 {
@@ -16,6 +17,17 @@ namespace Mento.Business.Script.BusinessLogic
             throw new NotImplementedException();
 
             //from the publish location, get all script meta-data
+            string scriptPath = @"";
+            DirectoryInfo publishDirectory = new DirectoryInfo(scriptPath);
+            if(!publishDirectory.Exists)
+            {
+                throw new Exception("the publish directory does not exist!");
+            }
+
+            foreach (var scriptAssembly in publishDirectory.GetFiles(scriptPath).Where(f=>f.Name.StartsWith("")))
+            {
+            }
+
             List<ScriptEntity> scripts;
 
             //for each script meta-data, insert it into database

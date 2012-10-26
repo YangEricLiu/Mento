@@ -8,40 +8,40 @@ namespace Mento.TestApi.WebUserInterface
 {
     public class TreeView : ControllerBase
     {
-        public Boolean IsExpand(string treeNodeName)
-        {
-            string nodeExpandPath = Ele.IsTreeNodeExpand.Replace(ManualElementName.treeNodeName, treeNodeName);
+        //public Boolean IsExpand(string treeNodeName)
+        //{
+        //    string nodeExpandPath = Ele.IsTreeNodeExpand.Replace(ManualElementName.treeNodeName, treeNodeName);
 
-            return ElementLocator.IsElementPresent(nodeExpandPath, byType.Xpath);
-        }
+        //    return ElementLocator.IsElementPresent(nodeExpandPath, byType.Xpath);
+        //}
 
-        public void Expand(string treeNodeName)
-        {
-            string nodePath = Ele.TreeNode.Replace(ManualElementName.treeNodeName, treeNodeName);
+        //public void Expand(string treeNodeName)
+        //{
+        //    string nodePath = Ele.TreeNode.Replace(ManualElementName.treeNodeName, treeNodeName);
 
-            IWebElement nodeLocator = ElementLocator.FindElement(nodePath, byType.Xpath);
+        //    IWebElement nodeLocator = ElementLocator.FindElement(nodePath, byType.Xpath);
 
-            ElementLocator.FocusOn(nodeLocator);
+        //    ElementLocator.FocusOn(nodeLocator);
 
-            if (!IsExpand(treeNodeName))
-            {
-                ElementLocator.DoubleClick(nodeLocator);
-            }
-        }
+        //    if (!IsExpand(treeNodeName))
+        //    {
+        //        ElementLocator.DoubleClick(nodeLocator);
+        //    }
+        //}
 
-        public void Collapse(string treeNodeName)
-        {
-            string nodePath = Ele.TreeNode.Replace(ManualElementName.treeNodeName, treeNodeName);
+        //public void Collapse(string treeNodeName)
+        //{
+        //    string nodePath = Ele.TreeNode.Replace(ManualElementName.treeNodeName, treeNodeName);
 
-            IWebElement nodeLocator = ElementLocator.FindElement(nodePath, byType.Xpath);
+        //    IWebElement nodeLocator = ElementLocator.FindElement(nodePath, byType.Xpath);
 
-            ElementLocator.FocusOn(nodeLocator);
+        //    ElementLocator.FocusOn(nodeLocator);
 
-            if (IsExpand(nodeName))
-            {
-                ElementLocator.DoubleClick(nodeLocator);
-            }
-        }
+        //    if (IsExpand(nodeName))
+        //    {
+        //        ElementLocator.DoubleClick(nodeLocator);
+        //    }
+        //}
 
     }
 }

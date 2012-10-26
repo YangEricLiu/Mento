@@ -65,6 +65,7 @@
     <Compile Include="ControlAccess\ControlAccess.cs" />
     <Compile Include="Controllers\ComboBox.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="DictDataLoad.cs" />
     <Compile Include="ElementLocator.cs" />
     <Compile Include="Controllers\FormulaField.cs" />
     <Compile Include="Controllers\TextField.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Element.cs" />
     <Compile Include="FunctionWrapper\FunctionWrapper.cs" />
     <Compile Include="FunctionWrapper\Hierarchy.cs" />
+    <Compile Include="GetLanguageResource.cs" />
     <Compile Include="JazzControlAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,9 +87,6 @@
       <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
       <Name>Mento.Utility</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

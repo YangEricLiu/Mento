@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.TestData;
 
-namespace Administration.Calendar.TestData
+namespace Mento.Script.Calendar.TestData
 {
     public class MultipleExampleData : MultipleTestDataBase<ExampleInputData, ExampleExpectedData>
     {

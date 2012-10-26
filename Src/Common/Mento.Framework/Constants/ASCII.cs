@@ -21,5 +21,10 @@ namespace Mento.Framework.Constants
         /// \
         /// </summary>
         public static string BACKLASH = @"\";
+
+        /// <summary>
+        /// .
+        /// </summary>
+        public static string DOT = ".";
     }
 }

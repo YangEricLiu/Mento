@@ -8,11 +8,19 @@ using Mento.Framework.Constants;
 using System.Xml.Linq;
 using Mento.Utility;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace Mento.TestApi.TestData
 {
     internal static class TestDataRepository
     {
+        private const string DATAFOLDERNAME = "Data";
+        private const string DATAFILESUFIX = "json";
+        private const string SCRIPTNAMESPACEPREFIX = "Mento.Script";
+        private const string GETTESTDATAMETHODNAME = "GetTestData";
+        private const string TESTDATAINPUTPROPERTYNAME = "InputData";
+        private const string TESTDATAEXPECTEDPROPERTYNAME = "ExpectedData";
+
         private static Dictionary<string, string> _dataMapping;
         private static Dictionary<string, string> DataMapping
         {
@@ -57,8 +65,8 @@ namespace Mento.TestApi.TestData
 
         public static object[] GetTestDataElement(Type testDataType, int inputDataIndex, int expectedDataIndex, Type testSuiteType, string testCaseID)
         {
-            PropertyInfo InputTestDataProperty = testDataType.GetProperty("InputData", BindingFlags.Public | BindingFlags.Instance);
-            PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty("ExpectedData", BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo InputTestDataProperty = testDataType.GetProperty(TESTDATAINPUTPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty(TESTDATAEXPECTEDPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
 
             //Type InputTestDataType = InputTestDataProperty.PropertyType.GetElementType();
             //Type ExpectedTestDataType = ExpectedTestDataProperty.PropertyType.GetElementType();
@@ -66,7 +74,7 @@ namespace Mento.TestApi.TestData
             //var inputTestData = Activator.CreateInstance(InputTestDataType, 1, 2);
             //var expectedTestData = Activator.CreateInstance(ExpectedTestDataType, 3);
 
-            MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod("GetTestData", BindingFlags.Public | BindingFlags.Static);
+            MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod(GETTESTDATAMETHODNAME, BindingFlags.Public | BindingFlags.Static);
 
             MethodInfo genericGetTestDataMethod = getTestDataMethod.MakeGenericMethod(testDataType);
 
@@ -84,25 +92,15 @@ namespace Mento.TestApi.TestData
         
         public static object[] GetTestDataElementArray(Type testDataType, Type testSuiteType, string testCaseID)
         {
-            PropertyInfo InputTestDataProperty = testDataType.GetProperty("InputData", BindingFlags.Public | BindingFlags.Instance);
-            PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty("ExpectedData", BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo InputTestDataProperty = testDataType.GetProperty(TESTDATAINPUTPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
+            PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty(TESTDATAEXPECTEDPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
 
-            //Type InputTestDataType = InputTestDataProperty.PropertyType.GetElementType();
-            //Type ExpectedTestDataType = ExpectedTestDataProperty.PropertyType.GetElementType();
-
-            //var inputTestData = Activator.CreateInstance(InputTestDataType, 1, 2);
-            //var expectedTestData = Activator.CreateInstance(ExpectedTestDataType, 3);
-
-            MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod("GetTestData", BindingFlags.Public | BindingFlags.Static);
+            MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod(GETTESTDATAMETHODNAME, BindingFlags.Public | BindingFlags.Static);
 
             MethodInfo genericGetTestDataMethod = getTestDataMethod.MakeGenericMethod(testDataType);
 
-            //PropertyInfo CurrentContextProperty = typeof(TestContext).GetProperty("CurrentContext", BindingFlags.Public | BindingFlags.Static);
-            //LogHelper.LogDebug(String.Format("{0}-{1}", testSuiteType.Namespace, testCaseID));
             object testData = genericGetTestDataMethod.Invoke(null, new object[] { /*testCaseID*/testCaseID, /*testScriptFullName*/String.Format("{0}.{1}", testSuiteType.FullName, testCaseID) });
 
-            //var inputTestData = InputTestDataProperty.GetValue(testData, new object[] { inputDataIndex });
-            //var expectedTestData = ExpectedTestDataProperty.GetValue(testData, new object[] { expectedDataIndex });
             var inputTestData = (Array)InputTestDataProperty.GetValue(testData, null);
             var expectedTestData = (Array)ExpectedTestDataProperty.GetValue(testData, null);
 
@@ -124,18 +122,20 @@ namespace Mento.TestApi.TestData
         }
 
         private static string GetTestDataFileName(string testDataID, string testScriptFullName)
-        { 
-            //get test script namespace by caseid
-            string[] Namespaces = testScriptFullName.Split('.');
+        {
+            //LogHelper.LogDebug(testScriptFullName);
+            //LogHelper.LogDebug(testDataID);
 
-            //replace "Automation" with "Data"
+            //replace test script namespace prefix with data folder name
+            testScriptFullName = testScriptFullName.Replace(TestDataRepository.SCRIPTNAMESPACEPREFIX, TestDataRepository.DATAFOLDERNAME);
 
             //add file name
+            string[] Namespaces = testScriptFullName.Split(ASCII.DOT.ToCharArray()[0]);
+            //LogHelper.LogDebug("array:" + Namespaces + ",length" + Namespaces.Length);
             if (Namespaces.Length > 1)
             {
                 StringBuilder pathBuilder = new StringBuilder();
 
-                Namespaces[0] = "Data";
                 Namespaces[Namespaces.Length - 1] = testDataID;
 
                 for (int i = 0; i < Namespaces.Length; i++)
@@ -143,11 +143,11 @@ namespace Mento.TestApi.TestData
                     pathBuilder.Append(Namespaces[i]);
                     if (i == Namespaces.Length - 1)
                     {
-                        pathBuilder.Append(".json");
+                        pathBuilder.Append(ASCII.DOT).Append(TestDataRepository.DATAFILESUFIX);
                     }
                     else
                     {
-                        pathBuilder.Append("\\");
+                        pathBuilder.Append(ASCII.BACKLASH);
                     }
                 }
 

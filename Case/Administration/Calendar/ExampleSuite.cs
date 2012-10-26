@@ -10,10 +10,10 @@ using System.Configuration;
 using Mento.Utility;
 using Mento.Framework.Attributes;
 using Mento.TestApi.TestData;
-using Administration.Calendar.TestData;
+using Mento.Script.Calendar.TestData;
 using System.IO;
 
-namespace Automation.Administration.Calendar
+namespace Mento.Script.Administration.Calendar
 {
     [TestFixture]
     public class ExampleSuite

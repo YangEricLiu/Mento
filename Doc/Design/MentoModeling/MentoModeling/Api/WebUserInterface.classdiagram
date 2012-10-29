@@ -242,6 +242,12 @@
           <operation Id="d0ce3a8d-d41d-4c88-9eb2-9637cf4761a2" name="FindElement" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="820b75ac-0e08-4be5-86d3-e42a24abaf97" />
           </operation>
+          <operation Id="36a64149-0a40-4b95-a1f7-204bc3d0b261" name="DragAndDrop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="02b01c92-8727-44f8-bbea-cb38b0419c31" />
+          </operation>
+          <operation Id="bb4ae13a-9889-4455-b249-8cf7c0242183" name="DoubleClick" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1d91ee8e-7b1c-417d-a468-74eec88b91a5" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>

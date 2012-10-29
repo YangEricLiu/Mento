@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <WebElement>
+  <!--TreeView-->
+  <add key = "TreeNode" value = "//div[text()='treeNodeName']" type ="Xpath"/>
+  <add key = "IsTreeNodeExpand" value = "//div[text()='treeNodeName']/../../self::node()[not(contains(@class, 'x-grid-tree-node-expanded'))]" type ="Xpath"/>
+  <!--DimensionTree-->
+  <add key = "CheckNodeButton" value = "//div[text()='dimensionNodeName']/input[@class='x-tree-checkbox']" type ="Xpath"/>
+  <!--TextField-->
+  <add key = "TagNameRow" value = "//div[text()='tagName']" type ="Xpath"/>
   <!--Login-->
   <add key = "LoginName" value = "login-username-inputEl" type = "ID"/>
   <add key = "LoginPassword" value = "login-password-inputEl" type = "ID"/>

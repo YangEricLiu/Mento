@@ -12,7 +12,7 @@ namespace Mento.TestApi.WebUserInterface
         public void DisplayItems(string itemButton)
         {
             string comboLocator = DictDataLoad.dictElement[itemButton].value;
-            byType type = DictDataLoad.dictElement[itemButton].type;
+            ByType type = DictDataLoad.dictElement[itemButton].type;
             
             ElementLocator.FindElement(comboLocator, type).Click();
         }
@@ -20,7 +20,7 @@ namespace Mento.TestApi.WebUserInterface
         public void SelectItem(string item)
         {
             string itemLocator = DictDataLoad.dictElement[item].value;
-            byType type = DictDataLoad.dictElement[item].type;
+            ByType type = DictDataLoad.dictElement[item].type;
 
             ElementLocator.FindElement(itemLocator, type).Click();
         }

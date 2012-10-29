@@ -11,16 +11,16 @@ namespace Mento.TestApi.WebUserInterface
     {
         public Boolean IsExpand(string treeNodeName)
         {
-            string nodeExpandPath = DictDataLoad.dictManualElement[ElementKey.IsTreeNodeExpand].value.Replace(ManualElementName.treeNodeName, treeNodeName);
-            byType type = DictDataLoad.dictManualElement[ElementKey.TreeNode].type;
+            string nodeExpandPath = DictDataLoad.dictElement[ElementKey.IsTreeNodeExpand].value.Replace(ManualElementName.treeNodeName, treeNodeName);
+            ByType type = DictDataLoad.dictElement[ElementKey.TreeNode].type;
 
             return ElementLocator.IsElementPresent(nodeExpandPath, type);
         }
 
         public void FocusOnTreeNode(string treeNodeName)
         {
-            string nodePath = DictDataLoad.dictManualElement[ElementKey.TreeNode].value.Replace(ManualElementName.treeNodeName, treeNodeName);
-            byType type = DictDataLoad.dictManualElement[ElementKey.TreeNode].type;
+            string nodePath = DictDataLoad.dictElement[ElementKey.TreeNode].value.Replace(ManualElementName.treeNodeName, treeNodeName);
+            ByType type = DictDataLoad.dictElement[ElementKey.TreeNode].type;
 
             IWebElement nodeLocator = ElementLocator.FindElement(nodePath, type);
             ElementLocator.FocusOn(nodeLocator);
@@ -28,8 +28,8 @@ namespace Mento.TestApi.WebUserInterface
 
         public void DoubleClickTreeNode(string treeNodeName)
         {
-            string nodePath = DictDataLoad.dictManualElement[ElementKey.TreeNode].value.Replace(ManualElementName.treeNodeName, treeNodeName);
-            byType type = DictDataLoad.dictManualElement[ElementKey.TreeNode].type;
+            string nodePath = DictDataLoad.dictElement[ElementKey.TreeNode].value.Replace(ManualElementName.treeNodeName, treeNodeName);
+            ByType type = DictDataLoad.dictElement[ElementKey.TreeNode].type;
 
             IWebElement nodeLocator = ElementLocator.FindElement(nodePath, type);
             ElementLocator.DoubleClick(nodeLocator);

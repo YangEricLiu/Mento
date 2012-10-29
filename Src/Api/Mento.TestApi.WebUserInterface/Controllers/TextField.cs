@@ -11,7 +11,7 @@ namespace Mento.TestApi.WebUserInterface
         public void FillIn(string obj, string content)
         {
             string textLocator = DictDataLoad.dictElement[obj].value;
-            byType type = DictDataLoad.dictElement[obj].type;
+            ByType type = DictDataLoad.dictElement[obj].type;
 
             ElementLocator.FindElement(textLocator, type).Clear();
             ElementLocator.FindElement(textLocator, type).SendKeys(content);
@@ -20,7 +20,7 @@ namespace Mento.TestApi.WebUserInterface
         public void Append(string obj, string content)
         {
             string textLocator = DictDataLoad.dictElement[obj].value;
-            byType type = DictDataLoad.dictElement[obj].type;
+            ByType type = DictDataLoad.dictElement[obj].type;
 
             ElementLocator.FindElement(textLocator, type).SendKeys(content);
         }
@@ -28,7 +28,7 @@ namespace Mento.TestApi.WebUserInterface
         public string GetValue(string obj)
         {
             string textLocator = DictDataLoad.dictElement[obj].value;
-            byType type = DictDataLoad.dictElement[obj].type;
+            ByType type = DictDataLoad.dictElement[obj].type;
 
             return ElementLocator.FindElement(textLocator, type).GetAttribute("value");
         }

@@ -10,6 +10,6 @@ namespace Mento.TestApi.WebUserInterface
     public static class DictDataLoad
     {
         public static Dictionary<string, TypeValue> dictElement = GetLanguageResource.GetLangResource(ExecutionContext.Language);
-        public static Dictionary<string, TypeValue> dictManualElement = XMLHelper.GetManualElementValue();
+        //public static Dictionary<string, TypeValue> dictManualElement = XMLHelper.GetManualElementValue();
     }
 }

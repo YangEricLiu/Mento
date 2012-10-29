@@ -26,5 +26,7 @@ namespace Mento.TestApi.WebUserInterface
         public const string Site = "Site";
         public const string Building = "Building";
         public const string HierarchyComment = "HierarchyComment";
+
+        public const string CheckNodeButton = "CheckNodeButton";
     }
 }

@@ -17,7 +17,7 @@ namespace Mento.TestApi.WebUserInterface
         private void PrepareToAddNode(string treeNodeName)
         {
             string addHierarchyButton = DictDataLoad.dictElement[ElementKey.AddHierarchyButton].value;
-            byType type = DictDataLoad.dictElement[ElementKey.AddHierarchyButton].type;
+            ByType type = DictDataLoad.dictElement[ElementKey.AddHierarchyButton].type;
 
             treeViewInstance.FocusOnTreeNode(treeNodeName);
 

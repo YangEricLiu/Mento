@@ -27,23 +27,23 @@ namespace Mento.TestApi.WebUserInterface
             driver.Quit();
         }
 
-        public static By ByWrapper(string locator, byType type)
+        private static By ByWrapper(string locator, ByType type)
         {
             switch (type)
             {
-                case byType.ID: return By.Id(locator);
-                case byType.Name: return By.Name(locator);
-                case byType.Xpath: return By.XPath(locator);
-                case byType.TagName: return By.TagName(locator);
-                case byType.ClassName: return By.ClassName(locator);
-                case byType.CssSelector: return By.CssSelector(locator);
-                case byType.LinkText: return By.LinkText(locator);
-                case byType.PartialLinkText: return By.PartialLinkText(locator);
+                case ByType.ID: return By.Id(locator);
+                case ByType.Name: return By.Name(locator);
+                case ByType.Xpath: return By.XPath(locator);
+                case ByType.TagName: return By.TagName(locator);
+                case ByType.ClassName: return By.ClassName(locator);
+                case ByType.CssSelector: return By.CssSelector(locator);
+                case ByType.LinkText: return By.LinkText(locator);
+                case ByType.PartialLinkText: return By.PartialLinkText(locator);
                 default: return null;
             }
         }
 
-        public static IWebElement FindElement(string locator, byType findType)
+        public static IWebElement FindElement(string locator, ByType findType)
         {
             return driver.FindElement(ByWrapper(locator, findType));
         }
@@ -61,7 +61,7 @@ namespace Mento.TestApi.WebUserInterface
             }
         }
 
-        public static Boolean IsElementPresent(string locator, byType findType)
+        public static Boolean IsElementPresent(string locator, ByType findType)
         {
             Boolean present = false;
 
@@ -78,7 +78,7 @@ namespace Mento.TestApi.WebUserInterface
             return present;
         }
 
-        public static Boolean WaitForElement(string locator, byType findType, int timeOut)
+        public static Boolean WaitForElement(string locator, ByType findType, int timeOut)
         {
             Boolean elementExist = false;
 
@@ -127,6 +127,7 @@ namespace Mento.TestApi.WebUserInterface
             action.DoubleClick(elementHandler).Perform();
         }
 
+        /*
         public static Boolean DeleteLoginCookie()
         {
             try
@@ -139,6 +140,6 @@ namespace Mento.TestApi.WebUserInterface
                 Assert.Fail(e.Message);
                 return true;
             }
-        }
+        }*/
     }
 }

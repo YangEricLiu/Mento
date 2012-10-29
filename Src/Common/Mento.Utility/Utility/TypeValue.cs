@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mento.Utility
 {
-    public enum byType
+    public enum ByType
     {
         ID = 1,
         Name = 2,
@@ -20,6 +20,6 @@ namespace Mento.Utility
     public class TypeValue
     {
         public string value {get; set;}
-        public byType type { get; set; }
+        public ByType type { get; set; }
     }
 }

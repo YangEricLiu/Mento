@@ -65,6 +65,7 @@
     <Compile Include="ControlAccess\ControlAccess.cs" />
     <Compile Include="Controllers\ComboBox.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\SystemDimensionTree.cs" />
     <Compile Include="DictDataLoad.cs" />
     <Compile Include="ElementLocator.cs" />
     <Compile Include="Controllers\FormulaField.cs" />
@@ -86,6 +87,10 @@
     <ProjectReference Include="..\..\Common\Mento.Utility\Mento.Utility.csproj">
       <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
       <Name>Mento.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
+      <Project>{2076AF41-49F1-4C46-AF54-B21ED42B07C3}</Project>
+      <Name>Mento.TestApi.TestData</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

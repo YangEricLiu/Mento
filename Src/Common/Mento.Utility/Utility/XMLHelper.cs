@@ -65,11 +65,12 @@ namespace Mento.Utility
             return finalValue;
         }
 
+        /*
         public static Dictionary<string, TypeValue> GetManualElementValue()
         {
             return GetValueFromXML(ConfigurationKey.ELEMENTMANUALMAP_PATH, ConfigurationKey.ELEMENTMANUALMAP_MODULE_NAME);
         }
-
+        */
     }
 }
 

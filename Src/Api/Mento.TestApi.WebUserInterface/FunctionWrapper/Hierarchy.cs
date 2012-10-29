@@ -24,12 +24,12 @@ namespace Mento.TestApi.WebUserInterface
             ElementLocator.FindElement(addHierarchyButton, type).Click();
         }
 
-        public void AddHierarchynode(string treeNodeName, HierarchyInputData input)
-        {
-            PrepareToAddNode(treeNodeName);
+        //public void AddHierarchynode(string treeNodeName, HierarchyInputData input)
+        //{
+        //    PrepareToAddNode(treeNodeName);
 
-            textFieldInstance.FillIn(ElementKey.HierarchyName, input.);
+        //    textFieldInstance.FillIn(ElementKey.HierarchyName, input.);
             
-        }
+        //}
     }
 }

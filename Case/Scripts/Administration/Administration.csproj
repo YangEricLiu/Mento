@@ -35,18 +35,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="fastJSON, Version=1.9.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Lib\fastJSON.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\Lib\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\Lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\..\Lib\nunit.framework.dll</HintPath>
+      <HintPath>..\..\..\Lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Selenium.WebDriverBackedSelenium">
-      <HintPath>..\..\Lib\Selenium.WebDriverBackedSelenium.dll</HintPath>
+      <HintPath>..\..\..\Lib\Selenium.WebDriverBackedSelenium.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -57,22 +53,18 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="ThoughtWorks.Selenium.Core">
-      <HintPath>..\..\Lib\ThoughtWorks.Selenium.Core.dll</HintPath>
+      <HintPath>..\..\..\Lib\ThoughtWorks.Selenium.Core.dll</HintPath>
     </Reference>
     <Reference Include="WebDriver">
-      <HintPath>..\..\Lib\WebDriver.dll</HintPath>
+      <HintPath>..\..\..\Lib\WebDriver.dll</HintPath>
     </Reference>
     <Reference Include="WebDriver.Support">
-      <HintPath>..\..\Lib\WebDriver.Support.dll</HintPath>
+      <HintPath>..\..\..\Lib\WebDriver.Support.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calendar\ExampleSuite.cs" />
-    <Compile Include="Calendar\TestData\MultipleExampleData.cs" />
-    <Compile Include="Calendar\TestData\SingleExampleData.cs" />
     <Compile Include="Hierarchy\HierarchyManagement.cs" />
-    <Compile Include="Hierarchy\TestData\MultipleHierarchyData.cs" />
-    <Compile Include="Hierarchy\TestData\SingleHierarchyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,23 +72,27 @@
     <Folder Include="Tou\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\ScriptHost\App.config">
-      <Link>App.config</Link>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
+    <ProjectReference Include="..\..\..\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
       <Project>{2076AF41-49F1-4C46-AF54-B21ED42B07C3}</Project>
       <Name>Mento.TestApi.TestData</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Src\Common\Mento.Framework\Mento.Framework.csproj">
+    <ProjectReference Include="..\..\..\Src\Common\Mento.Framework\Mento.Framework.csproj">
       <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
       <Name>Mento.Framework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Src\Common\Mento.Utility\Mento.Utility.csproj">
+    <ProjectReference Include="..\..\..\Src\Common\Mento.Utility\Mento.Utility.csproj">
       <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
       <Name>Mento.Utility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Common\TestData\TestData.csproj">
+      <Project>{F463BF99-E570-46DE-A384-FE533482558D}</Project>
+      <Name>TestData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Host\ScriptHost\App.config">
+      <Link>App.config</Link>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

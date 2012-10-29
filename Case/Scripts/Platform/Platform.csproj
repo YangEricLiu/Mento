@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8CE3B60E-099B-436A-84AA-88313B01610D}</ProjectGuid>
+    <ProjectGuid>{74673397-F815-44D8-876A-D6CCF87A2382}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mento.Script.Customer</RootNamespace>
-    <AssemblyName>Mento.Script.Customer</AssemblyName>
+    <RootNamespace>Mento.Script.System</RootNamespace>
+    <AssemblyName>Mento.Script.System</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -45,16 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
-      <Project>{2076AF41-49F1-4C46-AF54-B21ED42B07C3}</Project>
-      <Name>Mento.TestApi.TestData</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Src\Common\Mento.Utility\Mento.Utility.csproj">
-      <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
-      <Name>Mento.Utility</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

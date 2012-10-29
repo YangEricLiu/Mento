@@ -5,7 +5,7 @@ using System.Text;
 using Mento.TestApi.TestData;
 using Mento.Utility;
 
-namespace Mento.Script.Customer.Hierarchy.TestData
+namespace Mento.ScriptCommon.TestData.Administration.Hierarchy.HierarchyManagement
 {
     public class SingleHierarchyData : SingleTestDataBase<HierarchyInputData, ExpectedTestDataBase>
     {

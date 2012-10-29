@@ -69,27 +69,27 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Administration\Administration.csproj">
+    <ProjectReference Include="..\..\Scripts\Administration\Administration.csproj">
       <Project>{C0E96FFA-5126-4486-B74D-5000569A4EAC}</Project>
       <Name>Administration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ClientAccess\ClientAccess.csproj">
+    <ProjectReference Include="..\..\Scripts\ClientAccess\ClientAccess.csproj">
       <Project>{24EB12A8-184D-425F-B757-A573E7D9735B}</Project>
       <Name>ClientAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Customer\Customer.csproj">
+    <ProjectReference Include="..\..\Scripts\Customer\Customer.csproj">
       <Project>{8CE3B60E-099B-436A-84AA-88313B01610D}</Project>
       <Name>Customer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EnergyView\EnergyView.csproj">
+    <ProjectReference Include="..\..\Scripts\EnergyView\EnergyView.csproj">
       <Project>{A0063174-550F-43B1-A412-98D5759E303D}</Project>
       <Name>EnergyView</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Information\Information.csproj">
+    <ProjectReference Include="..\..\Scripts\Information\Information.csproj">
       <Project>{1615FA2F-812E-4374-AC19-CCB00119895C}</Project>
       <Name>Information</Name>
     </ProjectReference>
-    <ProjectReference Include="..\System\Platform.csproj">
+    <ProjectReference Include="..\..\Scripts\Platform\Platform.csproj">
       <Project>{74673397-F815-44D8-876A-D6CCF87A2382}</Project>
       <Name>Platform</Name>
     </ProjectReference>

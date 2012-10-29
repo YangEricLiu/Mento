@@ -10,9 +10,9 @@ using System.Configuration;
 using Mento.Utility;
 using Mento.Framework.Attributes;
 using Mento.TestApi.TestData;
-using Mento.Script.Calendar.TestData;
 using System.IO;
 using Mento.Framework.Script;
+using Mento.ScriptCommon.TestData.Administration.Calendar.ExampleSuite;
 
 namespace Mento.Script.Administration.Calendar
 {

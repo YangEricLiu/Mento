@@ -51,6 +51,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
+      <Project>{2076AF41-49F1-4C46-AF54-B21ED42B07C3}</Project>
+      <Name>Mento.TestApi.TestData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Src\Common\Mento.Utility\Mento.Utility.csproj">
+      <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
+      <Name>Mento.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

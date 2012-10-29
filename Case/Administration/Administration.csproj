@@ -45,6 +45,9 @@
     <Reference Include="nunit.framework">
       <HintPath>..\..\Lib\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Selenium.WebDriverBackedSelenium">
+      <HintPath>..\..\Lib\Selenium.WebDriverBackedSelenium.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -53,14 +56,23 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.Selenium.Core">
+      <HintPath>..\..\Lib\ThoughtWorks.Selenium.Core.dll</HintPath>
+    </Reference>
     <Reference Include="WebDriver">
-      <HintPath>..\..\..\Lib\WebDriver.dll</HintPath>
+      <HintPath>..\..\Lib\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>..\..\Lib\WebDriver.Support.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calendar\ExampleSuite.cs" />
     <Compile Include="Calendar\TestData\MultipleExampleData.cs" />
     <Compile Include="Calendar\TestData\SingleExampleData.cs" />
+    <Compile Include="Hierarchy\HierarchyManagement.cs" />
+    <Compile Include="Hierarchy\TestData\MultipleHierarchyData.cs" />
+    <Compile Include="Hierarchy\TestData\SingleHierarchyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -107,6 +107,9 @@
     <Content Include="Data\Administration\Calendar\ExampleSuite\TA-Example-009.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\Administration\Hierarchy\HierarchyManagement\TA-Hierarchy-001.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

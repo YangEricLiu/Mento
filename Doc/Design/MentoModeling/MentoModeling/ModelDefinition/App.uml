@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="2861e0a1-3343-49e9-96c1-ec054d18b511"
   name="Api" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -1908,7 +1908,157 @@
         name="MultipleTestDataAttribute"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="8897ea44-6808-4fe2-be7a-ae5552da724f"
+            name="MultipleTestDataAttribute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="79983acf-a64f-4ea9-86ca-bdd97e143984"
+                  name="testDataType"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0d6296db-743d-476a-8b02-4f0098a2d94e"
+                      LastKnownName="Type"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="49f16d01-025d-4963-bac5-f8304a526def"
+                  name="inputDataIndex"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d65f9dea-932c-4f2a-b7ac-6a3c3fd69b24"
+                      LastKnownName="int"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ad39d274-1217-4ffe-a661-8a653a72a5c5"
+                  name="expectedDataIndex"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d65f9dea-932c-4f2a-b7ac-6a3c3fd69b24"
+                      LastKnownName="int"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="fb370afe-2ae1-4d4f-8476-82925ad55d00"
+                  name="testSuiteType"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0d6296db-743d-476a-8b02-4f0098a2d94e"
+                      LastKnownName="Type"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="52a46bcb-1ffa-40e7-a50e-24e8a2787f84"
+                  name="testCaseID"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                      LastKnownName="string"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5500fa6e-985b-4fba-85e3-f4ce0e53eafd"
+        name="MultipleTestDataSourceAttribute"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="19264c62-1d32-41f2-aef4-3b4d3bc6c9a3"
+            name="MultipleTestDataSourceAttribute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2bd5a6a9-90ab-41d5-a518-5399899853d4"
+                  name="testDataType"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0d6296db-743d-476a-8b02-4f0098a2d94e"
+                      LastKnownName="Type"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="748b8ce8-b99d-4c9a-bf77-b319efb5a888"
+                  name="testSuiteType"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0d6296db-743d-476a-8b02-4f0098a2d94e"
+                      LastKnownName="Type"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ee996164-e203-445e-8f0d-450485fad5b2"
+                  name="testCaseID"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                      LastKnownName="string"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="0d6296db-743d-476a-8b02-4f0098a2d94e"
+        name="Type" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d65f9dea-932c-4f2a-b7ac-6a3c3fd69b24"
+        name="int" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

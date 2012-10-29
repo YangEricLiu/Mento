@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c"
   name="MentoModeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -2955,6 +2955,186 @@
           </objectNode>
         </nodes>
       </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7b83293e-2ed2-46e2-9a6d-9453dae6191c"
+        name="Type" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="2024642f-d660-4c5d-95cf-4e7ea4f571fb"
+        name="int" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a4b3c23a-38de-4f7e-829c-3834a8a7dc16"
+        name="MultipleTestDataAttribute"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="4d673ffa-9d00-46a0-b1d0-5dd8841c14f9"
+            name="MultipleTestDataAttribute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <elementDefinition
+              Id="8897ea44-6808-4fe2-be7a-ae5552da724f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cc9c9827-568d-42bc-b3b0-2d71c83688b4"
+                  name="testDataType"
+                  direction="In">
+                  <elementDefinition
+                    Id="79983acf-a64f-4ea9-86ca-bdd97e143984" />
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7b83293e-2ed2-46e2-9a6d-9453dae6191c"
+                      LastKnownName="Type"
+                      LastKnownLocation="MentoModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2abb03be-a152-423b-9669-8b68f35ff28d"
+                  name="inputDataIndex"
+                  direction="In">
+                  <elementDefinition
+                    Id="49f16d01-025d-4963-bac5-f8304a526def" />
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2024642f-d660-4c5d-95cf-4e7ea4f571fb"
+                      LastKnownName="int"
+                      LastKnownLocation="MentoModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="29dc29a0-7292-4125-899e-0fce64acaf10"
+                  name="expectedDataIndex"
+                  direction="In">
+                  <elementDefinition
+                    Id="ad39d274-1217-4ffe-a661-8a653a72a5c5" />
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2024642f-d660-4c5d-95cf-4e7ea4f571fb"
+                      LastKnownName="int"
+                      LastKnownLocation="MentoModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c81bb4a3-9e41-44e5-bde1-0cec7596e64a"
+                  name="testSuiteType"
+                  direction="In">
+                  <elementDefinition
+                    Id="fb370afe-2ae1-4d4f-8476-82925ad55d00" />
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7b83293e-2ed2-46e2-9a6d-9453dae6191c"
+                      LastKnownName="Type"
+                      LastKnownLocation="MentoModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="78745c2f-3abe-4836-a896-f1d9129b0feb"
+                  name="testCaseID"
+                  direction="In">
+                  <elementDefinition
+                    Id="52a46bcb-1ffa-40e7-a50e-24e8a2787f84" />
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                      LastKnownName="string"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8ab74aa1-dd9b-4646-8985-d962fcb96011"
+        name="MultipleTestDataSourceAttribute"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <elementDefinition
+          Id="5500fa6e-985b-4fba-85e3-f4ce0e53eafd" />
+        <ownedOperationsInternal>
+          <operation
+            Id="c007a11c-e6f4-45c6-8a99-bcb06b94ea28"
+            name="MultipleTestDataSourceAttribute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <elementDefinition
+              Id="19264c62-1d32-41f2-aef4-3b4d3bc6c9a3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="cff53b7e-1e96-4953-8391-7c64e8581c02"
+                  name="testDataType"
+                  direction="In">
+                  <elementDefinition
+                    Id="2bd5a6a9-90ab-41d5-a518-5399899853d4" />
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7b83293e-2ed2-46e2-9a6d-9453dae6191c"
+                      LastKnownName="Type"
+                      LastKnownLocation="MentoModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="14343df1-1e59-4e46-9787-608e5348f275"
+                  name="testSuiteType"
+                  direction="In">
+                  <elementDefinition
+                    Id="748b8ce8-b99d-4c9a-bf77-b319efb5a888" />
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="7b83293e-2ed2-46e2-9a6d-9453dae6191c"
+                      LastKnownName="Type"
+                      LastKnownLocation="MentoModeling.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="83063eac-1184-4fa1-9f98-53fdcdda9e17"
+                  name="testCaseID"
+                  direction="In">
+                  <elementDefinition
+                    Id="ee996164-e203-445e-8f0d-450485fad5b2" />
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                      LastKnownName="string"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

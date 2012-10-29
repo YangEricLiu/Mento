@@ -5,7 +5,7 @@ using System.Text;
 using Mento.Business.Script.BusinessLogic;
 using Mento.Business.Script.Entity;
 
-namespace App.Controllers
+namespace Mento.App.Controllers
 {
     public static class ScriptController
     {

@@ -8,8 +8,8 @@
     <ProjectGuid>{F2D5E614-DA62-4075-80CE-A47DD00F6A1C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>App.Controllers</RootNamespace>
-    <AssemblyName>App.Controllers</AssemblyName>
+    <RootNamespace>Mento.App.Controllers</RootNamespace>
+    <AssemblyName>Mento.App.Controllers</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mento.App.Controllers
+namespace Mento.Framework.Script
 {
-    public static class ExecutionController
+    public abstract class TestSuiteBase
     {
     }
 }

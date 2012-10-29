@@ -12,11 +12,12 @@ using Mento.Framework.Attributes;
 using Mento.TestApi.TestData;
 using Mento.Script.Calendar.TestData;
 using System.IO;
+using Mento.Framework.Script;
 
 namespace Mento.Script.Administration.Calendar
 {
     [TestFixture]
-    public class ExampleSuite
+    public class ExampleSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()

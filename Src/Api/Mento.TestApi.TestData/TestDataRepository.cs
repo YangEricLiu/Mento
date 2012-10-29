@@ -15,8 +15,6 @@ namespace Mento.TestApi.TestData
     internal static class TestDataRepository
     {
         private const string DATAFOLDERNAME = "Data";
-        private const string DATAFILESUFIX = "json";
-        private const string SCRIPTNAMESPACEPREFIX = "Mento.Script";
         private const string GETTESTDATAMETHODNAME = "GetTestData";
         private const string TESTDATAINPUTPROPERTYNAME = "InputData";
         private const string TESTDATAEXPECTEDPROPERTYNAME = "ExpectedData";
@@ -127,7 +125,7 @@ namespace Mento.TestApi.TestData
             //LogHelper.LogDebug(testDataID);
 
             //replace test script namespace prefix with data folder name
-            testScriptFullName = testScriptFullName.Replace(TestDataRepository.SCRIPTNAMESPACEPREFIX, TestDataRepository.DATAFOLDERNAME);
+            testScriptFullName = testScriptFullName.Replace(Project.SCRIPTNAMESPACEPREFIX, TestDataRepository.DATAFOLDERNAME);
 
             //add file name
             string[] Namespaces = testScriptFullName.Split(ASCII.DOT.ToCharArray()[0]);
@@ -143,7 +141,7 @@ namespace Mento.TestApi.TestData
                     pathBuilder.Append(Namespaces[i]);
                     if (i == Namespaces.Length - 1)
                     {
-                        pathBuilder.Append(ASCII.DOT).Append(TestDataRepository.DATAFILESUFIX);
+                        pathBuilder.Append(ASCII.DOT).Append(FileExtensions.JSON);
                     }
                     else
                     {

@@ -18,48 +18,24 @@
         <ownedOperationsInternal>
           <operation Id="f0913776-988c-43c9-a87d-decacde08171" name="Expland" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="837293e8-27ea-4338-b70c-6da3ae60a424" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="49500aab-599a-49ad-a10f-2018a3c98b71" direction="Return" isUnique="false">
-                  <elementDefinition Id="7aab0119-b80b-428c-8c58-e9dad2255908" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="d4f2bccb-6ec4-4266-89cc-aaed63aaf409" LastKnownName="string" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
           </operation>
           <operation Id="ce911cb1-132e-4baf-9fdd-b0478826bb96" name="Collapse" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="ebd2cc64-a5b3-4368-ac2e-9b7a9fa1424c" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="3cafddbd-9be9-4e05-a92e-2ad9d1ed5c4f" direction="Return" isUnique="false">
-                  <elementDefinition Id="e7c5d148-bcbb-4c67-826a-8a2148dd6366" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="d4f2bccb-6ec4-4266-89cc-aaed63aaf409" LastKnownName="string" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
           </operation>
           <operation Id="3d4a83f1-fdb5-48fc-b568-66befcedbf22" name="IsExpland" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="33aea877-dd1b-408f-b719-6afa49d880b2" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="4ea93e00-f17a-4091-8c03-318f2081a781" direction="Return" isUnique="false">
-                  <elementDefinition Id="11ab43e8-d8b0-42ea-b46c-a6ee0370cbde" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="d4f2bccb-6ec4-4266-89cc-aaed63aaf409" LastKnownName="string" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
           </operation>
           <operation Id="9d01aebe-2863-45e6-97a6-744f693f7cf1" name="GetChildValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="58fc95c9-57af-40b3-b4d0-f0d2968fb833" />
           </operation>
           <operation Id="5f7d3e59-5e2a-4419-bf92-bfd6ddeb94df" name="GetParentValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="1acba82e-9dad-4307-b59e-d602c8cb12f4" />
+          </operation>
+          <operation Id="8ddc1e29-de2c-42bc-8a87-5747c0d8ff04" name="FocusOnTreeNode" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1072cbc3-3647-4f34-818c-219bd4392436" />
+          </operation>
+          <operation Id="eb86eefd-0e95-4475-888c-2ea38be8fb4a" name="DoubleClickTreeNode" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b14e5a46-7197-4883-a601-7d6229cf9bb9" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -148,9 +124,6 @@
           <operation Id="777d5be1-19ad-4a82-98f3-344400b70d2d" name="GetLastOptionValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="62d58a6e-e93b-450d-96aa-09f70b242308" />
           </operation>
-          <operation Id="6e3fd345-0ada-4c37-a1cf-6afb7ad81999" name="DisplayItems" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="71f1cc95-6af8-48b8-91e3-e7af99f2224a" />
-          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -207,7 +180,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="1997d19a-34d2-4517-9304-1431d3b28788" name="DimensionTree" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="1997d19a-34d2-4517-9304-1431d3b28788" name="SystemDimensionTree" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="6cfff5b1-2508-498d-bec6-2866e6260ad1" />
         <generalsInternal>
           <generalization Id="c4677627-3025-41a1-81b6-614d28c8333c" isSubstitutable="false">
@@ -216,8 +189,14 @@
           </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
-          <operation Id="8ac6ade7-a1d9-47d3-97df-7212ebdada11" name="CheckBox" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="8ac6ade7-a1d9-47d3-97df-7212ebdada11" name="CheckedBox" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="f6a9bcab-ba2d-45bd-b074-b919b1e4f4b8" />
+          </operation>
+          <operation Id="073c2733-0e82-4aef-95f3-5f046a13c9d9" name="IsNodeSelected" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0ef1ec78-26ba-46a9-bdaa-aedf406304d6" />
+          </operation>
+          <operation Id="8067700a-81fa-4f01-bcd2-43de46e49c51" name="UnCheckedBox" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c8736a6b-758f-4de0-84ce-f225f551f7bb" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -234,6 +213,9 @@
         <ownedOperationsInternal>
           <operation Id="bd144180-4659-47fa-a751-86f2cc1a4dde" name="DragTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="8a0f58b3-b4ea-443d-aeb0-852d8104311e" />
+          </operation>
+          <operation Id="a6df4676-6c4f-4fdc-868e-c2fd53153707" name="GetValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fb6c3288-e749-468d-b992-d0ab949643a0" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -259,9 +241,6 @@
           </operation>
           <operation Id="d0ce3a8d-d41d-4c88-9eb2-9637cf4761a2" name="FindElement" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="820b75ac-0e08-4be5-86d3-e42a24abaf97" />
-          </operation>
-          <operation Id="54f19f85-e521-4acb-b610-73e9fcfe3684" name="FindElements" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="a4e1118e-ab29-42be-9d32-5d9c14964fb9" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -734,32 +713,27 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="4b32df2e-0908-47ab-ac19-7139ef536b24" name="FunctionHelper" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <elementDefinition Id="378f71a9-fe6e-4995-9122-6c7f1ba3a0ba" />
+      <class Id="1ddd8148-d723-4048-8f1d-d73cdfe781eb" name="FunctionHelper" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1f94c3f5-9fb9-4548-bbea-fd035fa5303e" />
         <ownedOperationsInternal>
-          <operation Id="f477ed8c-f97e-423f-8625-9abfeb9ed69e" name="ChangeTimeRangeTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="3452ec3e-5dc2-4ad2-9dbc-50fb93511404" />
+          <operation Id="12891b43-3c77-41bb-9bc6-9989ea405bc8" name="ChartView" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="abd55e04-4821-4be8-ae85-604a003dfa78" />
           </operation>
-          <operation Id="9f49ce17-a324-4b83-864d-b713ffa8f6b7" name="ChangeChartTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="a31b6b15-6fde-4333-ad35-5d36cb4b1ebd" />
+          <operation Id="eaf7d0ce-1b2d-4562-a4d1-041de1c8405f" name="DataView" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2616aadb-f981-4e83-8149-0b1c1285baed" />
           </operation>
-          <operation Id="ca739ca9-0486-41fc-b54a-2ab2d8143c9a" name="PickUpTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="cb2dafab-4a67-4033-b2e0-32f9d54511c3" />
+          <operation Id="e4484aa8-7ece-4f1a-8c0d-5312a992f205" name="PickUpTag" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6e906323-4b09-46b6-a310-f95ee30fa102" />
           </operation>
-          <operation Id="a78e0c51-67b9-4b7d-85e9-ccdeb36cdede" name="ChartView" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="40838508-18e6-463b-ad00-2dd8ce925409" />
+          <operation Id="4574722b-28c8-4795-8e33-ffa732bcb178" name="ChangeChartTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="38606d2b-e16c-41f3-89ca-40eb964abeb7" />
           </operation>
-          <operation Id="68cf428b-3659-4f5f-8824-6fa8c95b4d93" name="DataView" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="0bf0e30b-1b55-420d-867b-55773a7f8d6f" />
+          <operation Id="3ad07cd3-6163-4414-98b5-e18fbdafd910" name="ChangeTimeRangeTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4406bbab-e983-409a-9467-3af42856bb67" />
           </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="d4f2bccb-6ec4-4266-89cc-aaed63aaf409" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
-        <elementDefinition Id="fcae02e5-5bd2-4589-b618-f5d5b3863167" />
-      </referencedType>
-    </packageHasNamedElement>
   </packagedElements>
   <package Id="2d74e9fc-f813-4964-9312-ae7fe4df096a" name="MentoModeling">
     <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />

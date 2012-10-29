@@ -17,6 +17,9 @@ using Mento.Framework.Script;
 namespace Mento.Script.Administration.Calendar
 {
     [TestFixture]
+    [ManualCaseID("TA-Example")]
+    [CreateTime("2012-10-13")]
+    [Owner("Aries")]
     public class ExampleSuite : TestSuiteBase
     {
         [SetUp]
@@ -30,7 +33,7 @@ namespace Mento.Script.Administration.Calendar
         }
 
         [Test]
-        [CaseID("TA-Example-001"),ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
+        [CaseID("TA-Example-001")]
         public void TestCase1()
         {
             //1. load test data
@@ -53,7 +56,7 @@ namespace Mento.Script.Administration.Calendar
         }
 
         [Test]
-        [CaseID("TA-Example-002"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
+        [CaseID("TA-Example-002")]
         public void TestCase2()
         {
             IWebDriver driverChrome = new ChromeDriver();
@@ -75,7 +78,7 @@ namespace Mento.Script.Administration.Calendar
         }
 
         [Test]
-        [CaseID("TA-Example-003"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
+        [CaseID("TA-Example-003")]
         public void TestCase3()
         {
             var a = 1;
@@ -84,7 +87,7 @@ namespace Mento.Script.Administration.Calendar
         }
 
         [Test]
-        [CaseID("TA-Example-004"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
+        [CaseID("TA-Example-004")]
         public void TestCase4()
         {
             string Path = ConfigurationManager.AppSettings["path"];
@@ -94,7 +97,7 @@ namespace Mento.Script.Administration.Calendar
         [TestCase("Round A", "Round A")]
         [TestCase("Round B", "Round B")]
         [TestCase("Round C", "Round D")]
-        [CaseID("TA-Example-005"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
+        [CaseID("TA-Example-005")]
         public void TestCase5(string input, string expected)
         {
             Assert.AreEqual(input, expected);
@@ -102,21 +105,21 @@ namespace Mento.Script.Administration.Calendar
 
         [Test]
         [Combinatorial]
-        [CaseID("TA-Example-006"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
+        [CaseID("TA-Example-006")]
         public void TestCase6([Values(1,2)]int a, [Values("a","b")]string b)
         {
         }
 
         [Test]
         [Sequential]
-        [CaseID("TA-Example-007"), ManualCaseID("TA-Example"), CreateTime("2012-10-13"), Owner("Aries")]
+        [CaseID("TA-Example-007")]
         public void TestCase7([Values(1, 2, 3)]int a, [Values(3, 2, 1)]int b)
         {
             Assert.AreEqual(4, a + b);
         }
 
         [Test]
-        [ScriptProperty("TA-Example-008", "TA-Example", "2012-10-23", "Aries")]
+        [CaseID("TA-Example-008")]
         public void TestCase8()
         {
             //LogHelper.LogDebug(TestContext.CurrentContext.Test.FullName);
@@ -130,7 +133,7 @@ namespace Mento.Script.Administration.Calendar
         }
 
         [Test]
-        [ScriptProperty("TA-Example-009", "TA-Example", "2012-10-23", "Aries")]
+        [CaseID("TA-Example-009"), CreateTime("2012-10-23")]
         [MultipleTestData(typeof(MultipleExampleData), 0, 0, typeof(ExampleSuite), "TA-Example-009")]
         [MultipleTestData(typeof(MultipleExampleData), 1, 1, typeof(ExampleSuite), "TA-Example-009")]
         [MultipleTestData(typeof(MultipleExampleData), 2, 2, typeof(ExampleSuite), "TA-Example-009")]
@@ -146,7 +149,7 @@ namespace Mento.Script.Administration.Calendar
         }
 
         [Test]
-        [CaseID("TA-Example-010"), ManualCaseID("TA-Example"), CreateTime("2012-10-24"), Owner("Aries")]
+        [CaseID("TA-Example-010"), CreateTime("2012-10-24")]
         public void TestCase10()
         {
             Func<int, int, int> function = (int a, int b) => a + b;
@@ -165,7 +168,7 @@ namespace Mento.Script.Administration.Calendar
         }
 
         [Test]
-        [ScriptProperty("TA-Example-011", "TA-Example", "2012-10-25", "Aries")]
+        [CaseID("TA-Example-011"), CreateTime("2012-10-24")]
         [MultipleTestDataSource(typeof(MultipleExampleData), typeof(ExampleSuite), "TA-Example-011")]
         public void TestCase11(ExampleInputData input, ExampleExpectedData expected)
         {

@@ -70,11 +70,15 @@
     <Compile Include="Constants\FileExtensions.cs" />
     <Compile Include="Constants\Manufacture.cs" />
     <Compile Include="Constants\Project.cs" />
+    <Compile Include="Constants\ValidationRegexPatterns.cs" />
     <Compile Include="DataAccess\DataAccessBase.cs" />
     <Compile Include="DataAccess\EntityBase.cs" />
     <Compile Include="Enumeration\Browser.cs" />
     <Compile Include="Enumeration\Language.cs" />
     <Compile Include="Enumeration\LoggingSeverity.cs" />
+    <Compile Include="Exceptions\ApiException.cs" />
+    <Compile Include="Exceptions\AppException.cs" />
+    <Compile Include="Exceptions\MentoException.cs" />
     <Compile Include="Execution\ExecutionContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Script\TestSuiteBase.cs" />

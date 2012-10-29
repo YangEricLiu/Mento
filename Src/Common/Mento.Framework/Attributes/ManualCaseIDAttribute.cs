@@ -9,7 +9,7 @@ namespace Mento.Framework.Attributes
     /// <summary>
     /// Summary description for ManualCaseIDAttribute.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class ManualCaseIDAttribute : PropertyAttribute
     {
         /// <summary>

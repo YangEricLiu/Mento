@@ -9,7 +9,7 @@ namespace Mento.Framework.Attributes
     /// <summary>
     /// Summary description for CaseIDAttribute.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
+    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class CreateTimeAttribute : PropertyAttribute
     {
         /// <summary>

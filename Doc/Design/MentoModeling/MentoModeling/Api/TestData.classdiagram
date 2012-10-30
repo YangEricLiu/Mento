@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="66dcba03-2a20-418d-bd4a-0f3ff9dffd9b" name="TestData" linkedPackageId="ecacb65e-05fd-4d67-b1a4-ec5eb5af93f1" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="66dcba03-2a20-418d-bd4a-0f3ff9dffd9b" name="TestData" linkedPackageId="ecacb65e-05fd-4d67-b1a4-ec5eb5af93f1" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="63b553e0-3e58-4ec9-bca0-ebe324d34f27" name="TestContextExtention" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -191,7 +191,7 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="8e4131e4-0003-4afe-8683-6d3913d78918" name="inputDataIndex" direction="In">
+                <parameter Id="8e4131e4-0003-4afe-8683-6d3913d78918" name="dataIndex" direction="In">
                   <elementDefinition Id="215d54ea-749f-481f-9abe-b7d60ddf0509" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="b1ffbfe0-7a12-471d-a67d-9738f48d0a14" LastKnownName="int" />
@@ -199,26 +199,18 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="db088e1e-6ee3-448c-a7f1-1fe0aae5b728" name="expectedDataIndex" direction="In">
+                <parameter Id="db088e1e-6ee3-448c-a7f1-1fe0aae5b728" name="testSuiteType" direction="In">
                   <elementDefinition Id="e1ca07a9-4801-4796-a5d1-1c4a0b66e59c" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="b1ffbfe0-7a12-471d-a67d-9738f48d0a14" LastKnownName="int" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="007afa18-0634-470c-bca0-3f3cf53d9b74" name="testSuiteType" direction="In">
-                  <elementDefinition Id="5b27c786-6d08-4cfb-a7a8-96a6f71ea719" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="8c0fbc17-a937-4ac8-bd65-5eac18a9f496" LastKnownName="Type" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="c564cec4-cb85-4bc9-94c6-656bf46f8915" name="testCaseID" direction="In">
-                  <elementDefinition Id="b758af6a-0430-4399-9ed7-6a9d954423e9" />
+                <parameter Id="007afa18-0634-470c-bca0-3f3cf53d9b74" name="testCaseID" direction="In">
+                  <elementDefinition Id="5b27c786-6d08-4cfb-a7a8-96a6f71ea719" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="aea61502-75d4-4b47-a64d-2adf2a5ef705" LastKnownName="string" />
+                    <referencedTypeMoniker Id="1665f71a-013b-49a6-b9bf-264f599f4d9c" LastKnownName="string" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>

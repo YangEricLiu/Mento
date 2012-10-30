@@ -217,4 +217,17 @@
     <Folder Include="Common" />
     <Folder Include="Case" />
   </ItemGroup>
+  <ItemGroup>
+    <Validate Include="Api\Api.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="Api\Api.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Api\Api.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="Api\Api.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>Api\Api.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
 </Project>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="6c8905e4-cc32-4ff7-a916-1388c38ffd7d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="48eab584-2e6c-4b9d-8b03-ec8005065c8d" name="Mento.ScriptHost">
+      <childLayers>
+        <layer Id="632bbf51-3afc-4763-9b77-b0df82bf54a6" name="Test data file" />
+        <layer Id="edf27d38-ecec-4646-8d19-9fdddfd66efa" name="Xml configuration" />
+        <layer Id="290a9b80-5519-4862-9452-e7b4877f5d36" name="Language resource" />
+      </childLayers>
+    </layer>
+    <layer Id="24ab2288-1bd4-4afb-9324-2ecd3fc1c5b1" name="Mento scripts">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="c1901041-45cb-4532-ae29-962aff89af2f" direction="Forward">
+          <layerMoniker Id="76c5d323-9760-486a-b472-39e20aeaf37f" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="9fd1b14c-0e03-4b9f-8bee-48e87396d90e" direction="Forward">
+          <layerMoniker Id="d8165be7-cf9f-4ce4-ac2a-172f3041279f" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="cefd4993-1a87-4056-8d01-2dc04c9700bd" direction="Forward">
+          <layerMoniker Id="5682724f-5d2a-41a3-a8d5-f2f563978231" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="eeef122f-65a2-448d-a24b-8db9fd36e36a" name="Mento.Script.&#xD;&#xA;Administartion" />
+        <layer Id="6677c6cc-493b-44e0-b06b-7c420fabc4d2" name="Mento.Script.&#xD;&#xA;ClientAccess" />
+        <layer Id="daa9907a-ae7f-4d91-8b2a-d5e9f1d7e3a4" name="Mento.Script.&#xD;&#xA;Customer" />
+        <layer Id="b6a2ffcc-e7a1-40e4-8fc1-a27d141ee445" name="Mento.Script.&#xD;&#xA;EnergyView" />
+        <layer Id="72bda97f-bc0c-4482-8a2f-5da51cb5fab0" name="Mento.Script.&#xD;&#xA;Information" />
+        <layer Id="03eb1635-7404-4ca2-a14f-01c07edf51a4" name="Mento.Script.&#xD;&#xA;Platform" />
+      </childLayers>
+    </layer>
+    <layer Id="b56e3b57-9eb4-492f-aa19-7a2232996d67" name="Mento script support">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="91e3561b-be9d-43e9-aedb-1871be01eed1" direction="Forward">
+          <layerMoniker Id="76c5d323-9760-486a-b472-39e20aeaf37f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="5682724f-5d2a-41a3-a8d5-f2f563978231" name="Mento.ScriptCommon.TestData" />
+        <layer Id="d8165be7-cf9f-4ce4-ac2a-172f3041279f" name="Mento.ScriptCommon.Library">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="6ead0e04-525d-4621-8fba-406c8e118e78" direction="Forward">
+              <layerMoniker Id="5682724f-5d2a-41a3-a8d5-f2f563978231" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="76c5d323-9760-486a-b472-39e20aeaf37f" name="Mento test Api">
+      <childLayers>
+        <layer Id="184ff382-b187-4939-a5c0-5668bec8e1fd" name="Mento.TestApi.&#xD;&#xA;TestData" />
+        <layer Id="f4fd9561-9d64-4254-8d29-032236526460" name="Mento.TestApi.&#xD;&#xA;WebUserInterface" />
+        <layer Id="d46c2fa3-aa6c-4968-9d02-2047c89594ce" name="Mento.Framework" />
+        <layer Id="53410d80-5d15-49dd-bbe7-593d94652d78" name="Mento.Utility" />
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

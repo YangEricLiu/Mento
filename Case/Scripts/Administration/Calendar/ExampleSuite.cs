@@ -33,7 +33,7 @@ namespace Mento.Script.Administration.Calendar
         }
 
         [Test]
-        [CaseID("TA-Example-001")]
+        //[CaseID("TA-Example-001")]
         public void TestCase1()
         {
             //1. load test data
@@ -125,7 +125,7 @@ namespace Mento.Script.Administration.Calendar
             //LogHelper.LogDebug(TestContext.CurrentContext.Test.FullName);
             Func<int, int, int> function = (int a, int b) => a + b;
 
-            var testData = TestContext.CurrentContext.GetTestData<SingleExampleData>();
+            var testData = TestContext.CurrentContext.GetTestData<ExampleData>();
 
             int actual = function(testData.InputData.Number1, testData.InputData.Number2);
 
@@ -134,49 +134,28 @@ namespace Mento.Script.Administration.Calendar
 
         [Test]
         [CaseID("TA-Example-009"), CreateTime("2012-10-23")]
-        [MultipleTestData(typeof(MultipleExampleData), 0, 0, typeof(ExampleSuite), "TA-Example-009")]
-        [MultipleTestData(typeof(MultipleExampleData), 1, 1, typeof(ExampleSuite), "TA-Example-009")]
-        [MultipleTestData(typeof(MultipleExampleData), 2, 2, typeof(ExampleSuite), "TA-Example-009")]
-        public void TestCase9(ExampleInputData input, ExampleExpectedData expected)
+        [MultipleTestData(typeof(ExampleData[]), typeof(ExampleSuite), "TA-Example-009", 0)]
+        [MultipleTestData(typeof(ExampleData[]), typeof(ExampleSuite), "TA-Example-009", 1)]
+        [MultipleTestData(typeof(ExampleData[]), typeof(ExampleSuite), "TA-Example-009", 2)]
+        public void TestCase9(ExampleData testData)
         {
             Func<int, int, int> function = (int a, int b) => a + b;
+            
+            int actual = function(testData.InputData.Number1, testData.InputData.Number2);
 
-            //var testData = TestContext.CurrentContext.GetTestData<MultipleExampleData>();
-
-            int actual = function(input.Number1, input.Number2);
-
-            Assert.AreEqual(expected.Result, actual);
+            Assert.AreEqual(testData.ExpectedData.Result, actual);
         }
-
+        
         [Test]
         [CaseID("TA-Example-010"), CreateTime("2012-10-24")]
-        public void TestCase10()
+        [MultipleTestDataSource(typeof(ExampleData[]), typeof(ExampleSuite), "TA-Example-010")]
+        public void TestCase10(ExampleData testData)
         {
             Func<int, int, int> function = (int a, int b) => a + b;
 
-            var testData = TestContext.CurrentContext.GetTestData<MultipleExampleData>();
+            int actual = function(testData.InputData.Number1, testData.InputData.Number2);
 
-            int i = 0;
-            foreach (var input in testData.InputData)
-            {
-                int actual = function(input.Number1, input.Number2);
-
-                Assert.AreEqual(testData.ExpectedData[i].Result, actual);
-
-                i++;
-            }
-        }
-
-        [Test]
-        [CaseID("TA-Example-011"), CreateTime("2012-10-24")]
-        [MultipleTestDataSource(typeof(MultipleExampleData), typeof(ExampleSuite), "TA-Example-011")]
-        public void TestCase11(ExampleInputData input, ExampleExpectedData expected)
-        {
-            Func<int, int, int> function = (int a, int b) => a + b;
-
-            int actual = function(input.Number1, input.Number2);
-
-            Assert.AreEqual(expected.Result, actual);
+            Assert.AreEqual(testData.ExpectedData.Result, actual);
         }
     }
 }

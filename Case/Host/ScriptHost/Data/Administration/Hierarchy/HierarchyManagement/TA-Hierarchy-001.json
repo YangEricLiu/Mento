@@ -1,11 +1,11 @@
-﻿{
-	"InputData":
-	[
+﻿[
+	{
+		"InputData":
 		{
 			"Name":"1",
 			"Code":"2",
 			"Type":"Orgnization",
 			"Comment":""
 		}
-	]
-}
+	}
+]

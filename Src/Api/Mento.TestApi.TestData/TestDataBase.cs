@@ -6,7 +6,7 @@ using Mento.Utility;
 
 namespace Mento.TestApi.TestData
 {
-    public abstract class SingleTestDataBase<I, E>
+    public abstract class TestDataBase<I, E>
         where I : InputTestDataBase
         where E : ExpectedTestDataBase
     {
@@ -21,38 +21,18 @@ namespace Mento.TestApi.TestData
             get;
             set;
         }
-    }
 
-    public abstract class MultipleTestDataBase<I, E>
-        where I : InputTestDataBase
-        where E : ExpectedTestDataBase
-    {
-        public I[] InputData
-        {
-            get;
-            set;
-        }
-
-        public E[] ExpectedData
-        {
-            get;
-            set;
-        }
-    }
-
-    public abstract class InputTestDataBase : TestDataElementBase
-    {
-    }
-
-    public abstract class ExpectedTestDataBase : TestDataElementBase
-    {
-    }
-
-    public abstract class TestDataElementBase
-    { 
         public override string ToString()
         {
             return Newtonsoft.Json.JsonConvert.SerializeObject(this);
         }
+    }
+
+    public abstract class InputTestDataBase 
+    {
+    }
+
+    public abstract class ExpectedTestDataBase 
+    {
     }
 }

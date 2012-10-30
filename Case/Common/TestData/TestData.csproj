@@ -44,8 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administration\Calendar\ExampleSuite\MultipleExampleData.cs" />
-    <Compile Include="Administration\Calendar\ExampleSuite\SingleExampleData.cs" />
+    <Compile Include="Administration\Calendar\ExampleSuite\ExampleData.cs" />
     <Compile Include="Administration\Hierarchy\HierarchyManagement\MultipleHierarchyData.cs" />
     <Compile Include="Administration\Hierarchy\HierarchyManagement\SingleHierarchyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,6 +62,13 @@
       <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
       <Name>Mento.Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClientAccess\" />
+    <Folder Include="Customer\" />
+    <Folder Include="EnergyView\" />
+    <Folder Include="Information\" />
+    <Folder Include="Platform\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

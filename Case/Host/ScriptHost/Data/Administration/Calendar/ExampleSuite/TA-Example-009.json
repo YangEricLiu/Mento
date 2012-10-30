@@ -1,36 +1,46 @@
-﻿{
-	"InputData":
-	[
+﻿[
+	{
+		"InputData":
 		{
 			"Number1":"1",
 			"Number2":"2"
 		},
+		"ExpectedData":
+		{
+			"Result":"3"
+		}
+	},
+	{
+		"InputData":
 		{
 			"Number1":"5",
 			"Number2":"6"
 		},
+		"ExpectedData":
+		{
+			"Result":"11"
+		}
+	},
+	{
+		"InputData":
 		{
 			"Number1":"7",
 			"Number2":"6"
 		},
+		"ExpectedData":
+		{
+			"Result":"13"
+		}
+	},
+	{
+		"InputData":
 		{
 			"Number1":"11",
 			"Number2":"62"
-		}
-	],
-	"ExpectedData":
-	[
-		{
-			"Result":"3"
 		},
-		{
-			"Result":"11"
-		},
-		{
-			"Result":"13"
-		},
+		"ExpectedData":
 		{
 			"Result":"73"
 		}
-	]
-}
+	}
+]

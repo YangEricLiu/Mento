@@ -7,7 +7,7 @@ using Mento.Utility;
 
 namespace Mento.ScriptCommon.TestData.Administration.Calendar.ExampleSuite
 {
-    public class SingleExampleData : SingleTestDataBase<ExampleInputData, ExampleExpectedData>
+    public class ExampleData : TestDataBase<ExampleInputData, ExampleExpectedData>
     {
     }
 

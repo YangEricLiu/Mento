@@ -27,7 +27,7 @@ namespace Mento.TestApi.TestData
                 if (_dataMapping == null)
                 {
                     string mappingFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ConfigurationManager.AppSettings[ConfigurationKey.SCRIPT_DATA_MAPPINGFILE]);
-
+                    
                     if (File.Exists(mappingFile))
                     {
                         XDocument xdoc = XDocument.Load(mappingFile);
@@ -51,6 +51,12 @@ namespace Mento.TestApi.TestData
         {
             //search dictionary first, if not exist mapping relation, search test data using the input test case id
             string testDataID = testCaseID;
+
+            if (DataMapping == null || DataMapping.Count <= 0)
+            {
+                throw new Exception("data mapping not found!");
+            }
+
             if (DataMapping.Keys.Contains(testCaseID))
             {
                 testDataID = DataMapping[testCaseID];
@@ -61,10 +67,10 @@ namespace Mento.TestApi.TestData
             return Deserialize<T>(testDataFileName);
         }
 
-        public static object[] GetTestDataElement(Type testDataType, int inputDataIndex, int expectedDataIndex, Type testSuiteType, string testCaseID)
+        public static object[] GetTestDataElement(Type testDataType, Type testSuiteType, string testCaseID, int dataIndex)
         {
-            PropertyInfo InputTestDataProperty = testDataType.GetProperty(TESTDATAINPUTPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
-            PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty(TESTDATAEXPECTEDPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
+            //PropertyInfo InputTestDataProperty = testDataType.GetProperty(TESTDATAINPUTPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
+            //PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty(TESTDATAEXPECTEDPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
 
             //Type InputTestDataType = InputTestDataProperty.PropertyType.GetElementType();
             //Type ExpectedTestDataType = ExpectedTestDataProperty.PropertyType.GetElementType();
@@ -82,16 +88,16 @@ namespace Mento.TestApi.TestData
 
             //var inputTestData = InputTestDataProperty.GetValue(testData, new object[] { inputDataIndex });
             //var expectedTestData = ExpectedTestDataProperty.GetValue(testData, new object[] { expectedDataIndex });
-            var inputTestData = (Array)InputTestDataProperty.GetValue(testData, null);
-            var expectedTestData = (Array)ExpectedTestDataProperty.GetValue(testData, null);
+            //var inputTestData = (Array)InputTestDataProperty.GetValue(testData, null);
+            //var expectedTestData = (Array)ExpectedTestDataProperty.GetValue(testData, null);
 
-            return new object[] { inputTestData.GetValue(inputDataIndex), expectedTestData.GetValue(expectedDataIndex) };
+            return new object[] { ((Array)testData).GetValue(dataIndex) };
         }
         
         public static object[] GetTestDataElementArray(Type testDataType, Type testSuiteType, string testCaseID)
         {
-            PropertyInfo InputTestDataProperty = testDataType.GetProperty(TESTDATAINPUTPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
-            PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty(TESTDATAEXPECTEDPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
+            //PropertyInfo InputTestDataProperty = testDataType.GetProperty(TESTDATAINPUTPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
+            //PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty(TESTDATAEXPECTEDPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
 
             MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod(GETTESTDATAMETHODNAME, BindingFlags.Public | BindingFlags.Static);
 
@@ -99,21 +105,14 @@ namespace Mento.TestApi.TestData
 
             object testData = genericGetTestDataMethod.Invoke(null, new object[] { /*testCaseID*/testCaseID, /*testScriptFullName*/String.Format("{0}.{1}", testSuiteType.FullName, testCaseID) });
 
-            var inputTestData = (Array)InputTestDataProperty.GetValue(testData, null);
-            var expectedTestData = (Array)ExpectedTestDataProperty.GetValue(testData, null);
+            //var inputTestData = (Array)InputTestDataProperty.GetValue(testData, null);
+            //var expectedTestData = (Array)ExpectedTestDataProperty.GetValue(testData, null);
 
             List<object> testDataList = new List<object>();
 
-            for (int i = 0; i < Math.Max(inputTestData.Length, expectedTestData.Length); i++)
+            for (int i = 0; i < ((Array)testData).Length; i++)
             {
-                object inputObject = null, expectedObject = null;
-
-                if (i < inputTestData.Length)
-                    inputObject = inputTestData.GetValue(i);
-                if (i < expectedTestData.Length)
-                    expectedObject = expectedTestData.GetValue(i);
-
-                testDataList.Add(new object[] { inputObject, expectedObject });
+                testDataList.Add(new object[] { ((Array)testData).GetValue(i) });
             }
 
             return testDataList.ToArray();

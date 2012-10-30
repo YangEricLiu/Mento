@@ -12,9 +12,9 @@ namespace Mento.TestApi.TestData
     public class MultipleTestDataAttribute : TestCaseAttribute
     {
         //Type inputDatatype,Type expectedDataType, int inputDataIndex, int expectedDataIndex
-        public MultipleTestDataAttribute(Type testDataType, int inputDataIndex, int expectedDataIndex, Type testSuiteType, string testCaseID)
+        public MultipleTestDataAttribute(Type testDataType, Type testSuiteType, string testCaseID, int dataIndex)
         {
-            var testData = TestDataRepository.GetTestDataElement(testDataType, inputDataIndex, expectedDataIndex, testSuiteType, testCaseID);
+            var testData = TestDataRepository.GetTestDataElement(testDataType, testSuiteType, testCaseID, dataIndex);
 
             ReflectionHelper.SetPrivateFieldValue(this, typeof(TestCaseAttribute), "arguments", testData);
         }

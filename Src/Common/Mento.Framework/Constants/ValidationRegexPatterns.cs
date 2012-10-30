@@ -7,6 +7,6 @@ namespace Mento.Framework.Constants
 {
     public static class ValidationRegexPatterns
     {
-        public const string IDENTITYPATTERN = @"^[0-9a-zA-Z_]+$";
+        public const string IDENTITYPATTERN = @"^[0-9a-zA-Z_\-]+$";
     }
 }

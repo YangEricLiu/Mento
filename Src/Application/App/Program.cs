@@ -14,6 +14,7 @@ namespace Mento.App
         {
             ScriptController.Sync();
 
+            Console.WriteLine("Press any key to continue..");
             Console.Read();
         }
 

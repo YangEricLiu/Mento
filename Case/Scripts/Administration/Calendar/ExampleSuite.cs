@@ -33,7 +33,7 @@ namespace Mento.Script.Administration.Calendar
         }
 
         [Test]
-        //[CaseID("TA-Example-001")]
+        [CaseID("TA-Example-001")]
         public void TestCase1()
         {
             //1. load test data

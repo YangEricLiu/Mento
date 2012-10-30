@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Mento.Business.Script.BusinessLogic;
 using Mento.Business.Script.Entity;
+using System.Reflection;
+using Mento.Utility;
 
 namespace Mento.App.Controllers
 {
@@ -13,7 +15,22 @@ namespace Mento.App.Controllers
 
         public static void Sync()
         {
-            ScriptBL.Synchronize();
+            Console.WriteLine("Starting synchronize all test scripts..");
+            Dictionary<MethodInfo, List<Type>> validationResult;
+            bool result = ScriptBL.Synchronize(out validationResult);
+
+            if (!result)
+            {
+                Console.WriteLine("Synchronization error:");
+                foreach (var item in validationResult)
+                {
+                    ColorConsole.WriteLine(item.Key.Name, ConsoleColor.Red);
+                }
+            }
+            else
+            {
+                ColorConsole.WriteLine("Synchronization successfully finished!", ConsoleColor.Green);
+            }
         }
 
         public static void View()

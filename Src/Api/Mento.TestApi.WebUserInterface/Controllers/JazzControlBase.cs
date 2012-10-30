@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mento.TestApi.WebUserInterface
 {
-    public abstract class ControllerBase
+    public abstract class JazzControlBase
     {
         //
     }

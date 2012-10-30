@@ -11,7 +11,7 @@ namespace Mento.TestApi.WebUserInterface
     public class Element
     {
         private static Dictionary<string, TypeValue> dictElement = GetLanguageResource.GetLangResource(ExecutionContext.Language);
-        private static Dictionary<string, TypeValue> dictManualElement = XMLHelper.GetManualElementValue();
+        //private static Dictionary<string, TypeValue> dictManualElement = XMLHelper.GetManualElementValue();
 
         public static string LoginName
         {

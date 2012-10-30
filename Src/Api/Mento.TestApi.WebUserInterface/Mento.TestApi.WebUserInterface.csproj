@@ -64,7 +64,7 @@
     <Compile Include="Constants\ManualElementName.cs" />
     <Compile Include="ControlAccess\ControlAccess.cs" />
     <Compile Include="Controllers\ComboBox.cs" />
-    <Compile Include="Controllers\ControllerBase.cs" />
+    <Compile Include="Controllers\JazzControlBase.cs" />
     <Compile Include="Controllers\SystemDimensionTree.cs" />
     <Compile Include="DictDataLoad.cs" />
     <Compile Include="ElementLocator.cs" />

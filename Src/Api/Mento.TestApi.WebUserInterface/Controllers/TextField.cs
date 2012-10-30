@@ -6,7 +6,7 @@ using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface
 {
-    public class TextField : ControllerBase
+    public class TextField : JazzControlBase
     {
         public void FillIn(string obj, string content)
         {

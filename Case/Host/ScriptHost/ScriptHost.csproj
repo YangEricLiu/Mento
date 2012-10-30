@@ -98,9 +98,14 @@
     <Folder Include="Data\Administration\Platform\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resource\string.js" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Config\ElementMap.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\ManualElementMap.xml" />
     <Content Include="Data\Administration\Calendar\ExampleSuite\TA-Example-008.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -134,7 +139,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\DataMapping.xml">
+    <Content Include="Config\DataMapping.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

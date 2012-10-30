@@ -59,24 +59,16 @@
     <Compile Include="LogHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectionHelper.cs" />
-    <Compile Include="Utility\JSHelper.cs" />
-    <Compile Include="Utility\TypeTranslator.cs" />
-    <Compile Include="Utility\TypeValue.cs" />
-    <Compile Include="Utility\XMLHelper.cs" />
+    <Compile Include="JSHelper.cs" />
+    <Compile Include="TypeTranslator.cs" />
+    <Compile Include="TypeValue.cs" />
+    <Compile Include="XMLHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mento.Framework\Mento.Framework.csproj">
       <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
       <Name>Mento.Framework</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="appObject\ElementMap.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="appObject\ManualElementMap.xml" />
-    <Content Include="appObject\string.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,7 +7,7 @@ using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface
 {
-    public class TreeView : ControllerBase
+    public class TreeView : JazzControlBase
     {
         public Boolean IsExpand(string treeNodeName)
         {

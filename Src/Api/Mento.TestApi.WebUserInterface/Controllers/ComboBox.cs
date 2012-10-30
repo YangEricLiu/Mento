@@ -7,7 +7,7 @@ using Mento.Framework;
 
 namespace Mento.TestApi.WebUserInterface
 {
-    public class ComboBox : ControllerBase
+    public class ComboBox : JazzControlBase
     {
         public void DisplayItems(string itemButton)
         {

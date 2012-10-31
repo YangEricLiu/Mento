@@ -11,34 +11,39 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     public class Hierarchy
     {
+        private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
+
         private TreeView treeViewInstance = ControlAccess.GetControl<TreeView>();
         private TextField textFieldInstance = ControlAccess.GetControl<TextField>();
         private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
 
         private void PrepareToAddNode(string treeNodeName)
         {
-            string addHierarchyButton = DictDataLoad.dictElement[ElementKey.AddHierarchyButton].value;
-            ByType type = DictDataLoad.dictElement[ElementKey.AddHierarchyButton].type;
+            //string addHierarchyButton = DictDataLoad.dictElement[ElementKey.AddHierarchyButton].value;
+            //ByType type = DictDataLoad.dictElement[ElementKey.AddHierarchyButton].type;
+            var locator = ElementDictionary[ElementKey.AddHierarchyButton];
 
             treeViewInstance.FocusOnTreeNode(treeNodeName);
 
-            ElementLocator.FindElement(addHierarchyButton, type).Click();
+            ElementLocator.FindElement(locator).Click();
         }
 
         public void ClickSaveButton()
         {
-            string buttonLocator = DictDataLoad.dictElement[ElementKey.SaveButton].value;
-            ByType type = DictDataLoad.dictElement[ElementKey.SaveButton].type;
+            //string buttonLocator = DictDataLoad.dictElement[ElementKey.SaveButton].value;
+            //ByType type = DictDataLoad.dictElement[ElementKey.SaveButton].type;
+            var locator = ElementDictionary[ElementKey.SaveButton];
 
-            ElementLocator.FindElement(buttonLocator, type);
+            ElementLocator.FindElement(locator);
         }
 
         public void ClickCancelButton()
         {
-            string buttonLocator = DictDataLoad.dictElement[ElementKey.CancelButton].value;
-            ByType type = DictDataLoad.dictElement[ElementKey.CancelButton].type;
+            //string buttonLocator = DictDataLoad.dictElement[ElementKey.CancelButton].value;
+            //ByType type = DictDataLoad.dictElement[ElementKey.CancelButton].type;
+            var locator = ElementDictionary[ElementKey.CancelButton];
 
-            ElementLocator.FindElement(buttonLocator, type);
+            ElementLocator.FindElement(locator);
         }
 
         public void AddHierarchyNode(string treeNodeName, HierarchyInputData input)
@@ -56,18 +61,20 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void WaitForCreateOKDisplay(int timeout)
         { 
-            string CreateOK = DictDataLoad.dictElement[ElementKey.CreateOKText].value;
-            ByType type = DictDataLoad.dictElement[ElementKey.CreateOKText].type;
+            //string CreateOK = DictDataLoad.dictElement[ElementKey.CreateOKText].value;
+            //ByType type = DictDataLoad.dictElement[ElementKey.CreateOKText].type;
+            var locator = ElementDictionary[ElementKey.CreateOKText];
 
-            ElementLocator.WaitForElement(CreateOK, type, timeout);
+            ElementLocator.WaitForElement(locator, timeout);
         }
 
         public void ConfirmCreateOKMagBox()
         {
-            string OKButton = DictDataLoad.dictElement[ElementKey.OKButton].value;
-            ByType type = DictDataLoad.dictElement[ElementKey.OKButton].type;
+            //string OKButton = DictDataLoad.dictElement[ElementKey.OKButton].value;
+            //ByType type = DictDataLoad.dictElement[ElementKey.OKButton].type;
+            var locator = ElementDictionary[ElementKey.OKButton];
 
-            ElementLocator.FindElement(OKButton, type).Click();
+            ElementLocator.FindElement(locator).Click();
         }
     }
 }

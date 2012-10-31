@@ -12,40 +12,57 @@ using OpenQA.Selenium.Interactions;
 
 namespace Mento.TestApi.WebUserInterface
 {
-    public class ElementLocator
+    public static class ElementLocator
     {
-        private static IWebDriver driver;
+        private static IWebDriver _driver;
+        private static IWebDriver Driver
+        {
+            get 
+            {
+                if (!ExecutionContext.Browser.HasValue)
+                    throw new Exception("Execution context not initialized yet.");
+
+                if (_driver == null)
+                {
+                    _driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value);
+                }
+
+                return _driver;
+            }
+        }
 
         public static void OpenJazz()
         {
-            driver = DriverFactory.GetDriver(ExecutionContext.Browser);
-            driver.Navigate().GoToUrl(ExecutionContext.Url);
+            Driver.Navigate().GoToUrl(ExecutionContext.Url);
         }
 
         public static void QuitJazz()
         {
-            driver.Quit();
+            Driver.Quit();
         }
 
-        private static By ByWrapper(string locator, ByType type)
+        private static By ByWrapper(Locator locator)
         {
+            var type = locator.Type;
+            var locatorValue = locator.Value;
+
             switch (type)
             {
-                case ByType.ID: return By.Id(locator);
-                case ByType.Name: return By.Name(locator);
-                case ByType.Xpath: return By.XPath(locator);
-                case ByType.TagName: return By.TagName(locator);
-                case ByType.ClassName: return By.ClassName(locator);
-                case ByType.CssSelector: return By.CssSelector(locator);
-                case ByType.LinkText: return By.LinkText(locator);
-                case ByType.PartialLinkText: return By.PartialLinkText(locator);
+                case ByType.ID: return By.Id(locatorValue);
+                case ByType.Name: return By.Name(locatorValue);
+                case ByType.Xpath: return By.XPath(locatorValue);
+                case ByType.TagName: return By.TagName(locatorValue);
+                case ByType.ClassName: return By.ClassName(locatorValue);
+                case ByType.CssSelector: return By.CssSelector(locatorValue);
+                case ByType.LinkText: return By.LinkText(locatorValue);
+                case ByType.PartialLinkText: return By.PartialLinkText(locatorValue);
                 default: return null;
             }
         }
 
-        public static IWebElement FindElement(string locator, ByType findType)
+        public static IWebElement FindElement(Locator locator)
         {
-            return driver.FindElement(ByWrapper(locator, findType));
+            return Driver.FindElement(ByWrapper(locator));
         }
 
         public static void pause(int millisecs)
@@ -61,13 +78,13 @@ namespace Mento.TestApi.WebUserInterface
             }
         }
 
-        public static Boolean IsElementPresent(string locator, ByType findType)
+        public static Boolean IsElementPresent(Locator locator)
         {
             Boolean present = false;
 
             try
             {
-                driver.FindElement(ByWrapper(locator, findType));
+                Driver.FindElement(ByWrapper(locator));
                 present = true;
             }
             catch (NoSuchElementException)
@@ -78,14 +95,14 @@ namespace Mento.TestApi.WebUserInterface
             return present;
         }
 
-        public static Boolean WaitForElement(string locator, ByType findType, int timeOut)
+        public static Boolean WaitForElement(Locator locator, int timeOut)
         {
             Boolean elementExist = false;
 
             try
             {
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOut));
-                wait.Until((d) => { return d.FindElement(ByWrapper(locator, findType)); });
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(timeOut));
+                wait.Until((d) => { return d.FindElement(ByWrapper(locator)); });
 
                 elementExist = true;
             }
@@ -103,13 +120,13 @@ namespace Mento.TestApi.WebUserInterface
 
         public static void FloatOn(IWebElement elementHandler)
         {
-            Actions action = new Actions(driver);
+            Actions action = new Actions(Driver);
             action.MoveToElement(elementHandler).Perform();
         }
 
         public static void FocusOn(IWebElement elementHandler)
         {
-            Actions action = new Actions(driver);
+            Actions action = new Actions(Driver);
             action.Click(elementHandler).Perform();
 
             pause(1000);
@@ -117,13 +134,13 @@ namespace Mento.TestApi.WebUserInterface
 
         public static void DragAndDrop(IWebElement source, IWebElement desination)
         {
-            Actions action = new Actions(driver);
+            Actions action = new Actions(Driver);
             action.DragAndDrop(source, desination).Perform();
         }
 
         public static void DoubleClick(IWebElement elementHandler)
         {
-            Actions action = new Actions(driver);
+            Actions action = new Actions(Driver);
             action.DoubleClick(elementHandler).Perform();
         }
 

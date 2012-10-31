@@ -9,6 +9,7 @@ namespace Mento.ScriptCommon.TestData.Administration.Calendar.ExampleSuite
 {
     public class ExampleData : TestDataBase<ExampleInputData, ExampleExpectedData>
     {
+
     }
 
     public class ExampleInputData : InputTestDataBase

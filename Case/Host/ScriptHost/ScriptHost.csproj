@@ -98,7 +98,7 @@
     <Folder Include="Data\Administration\Platform\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resource\string.js" />
+    <Content Include="Resource\zh-cn.js" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -140,6 +140,7 @@
   <ItemGroup>
     <Content Include="Config\DataMapping.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

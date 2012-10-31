@@ -7,7 +7,7 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     public static class FunctionWrapper
     {
-        public static Hierarchy hierarchy
+        public static Hierarchy Hierarchy
         {
             get
             {

@@ -26,7 +26,7 @@ namespace Mento.TestApi.TestData
             {
                 if (_dataMapping == null)
                 {
-                    string mappingFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ConfigurationManager.AppSettings[ConfigurationKey.SCRIPT_DATA_MAPPINGFILE]);
+                    string mappingFile = PathHelper.GetAppAbsolutePath(ConfigurationManager.AppSettings[ConfigurationKey.SCRIPT_DATA_MAPPINGFILE]);
                     
                     if (File.Exists(mappingFile))
                     {

@@ -53,6 +53,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
+      <Project>{2076AF41-49F1-4C46-AF54-B21ED42B07C3}</Project>
+      <Name>Mento.TestApi.TestData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Src\Api\Mento.TestApi.WebUserInterface\Mento.TestApi.WebUserInterface.csproj">
       <Project>{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD}</Project>
       <Name>Mento.TestApi.WebUserInterface</Name>

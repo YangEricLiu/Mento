@@ -43,6 +43,7 @@
       <HintPath>..\..\..\Lib\Selenium.WebDriverBackedSelenium.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -60,21 +61,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants\ElementKey.cs" />
-    <Compile Include="Constants\ManualElementName.cs" />
-    <Compile Include="ControlAccess\ControlAccess.cs" />
-    <Compile Include="Controllers\ComboBox.cs" />
-    <Compile Include="Controllers\JazzControlBase.cs" />
-    <Compile Include="Controllers\SystemDimensionTree.cs" />
-    <Compile Include="DictDataLoad.cs" />
+    <Compile Include="Resource\ByType.cs" />
+    <Compile Include="Resource\ElementConfigurationReader.cs" />
+    <Compile Include="Resource\ElementKey.cs" />
+    <Compile Include="ControlAccess.cs" />
+    <Compile Include="Controls\ComboBox.cs" />
+    <Compile Include="Controls\FormulaField.cs" />
+    <Compile Include="Controls\JazzControlBase.cs" />
+    <Compile Include="Controls\TextField.cs" />
+    <Compile Include="Controls\TreeView.cs" />
     <Compile Include="ElementLocator.cs" />
-    <Compile Include="Controllers\FormulaField.cs" />
-    <Compile Include="Controllers\TextField.cs" />
-    <Compile Include="Controllers\TreeView.cs" />
     <Compile Include="DriverFactory.cs" />
-    <Compile Include="GetLanguageResource.cs" />
-    <Compile Include="JazzControlAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\ResourceManager.cs" />
+    <Compile Include="Resource\LanguageResourceReader.cs" />
+    <Compile Include="Resource\ManualElementName.cs" />
+    <Compile Include="Resource\TypeValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Mento.Framework\Mento.Framework.csproj">
@@ -89,6 +91,9 @@
       <Project>{2076AF41-49F1-4C46-AF54-B21ED42B07C3}</Project>
       <Name>Mento.TestApi.TestData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ControlAccess\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -38,15 +38,15 @@ namespace Mento.Script.Administration.Hierarchy
         [Test]
         [CaseID("TA-Hierarchy-001"), CreateTime("2012-10-30"), Owner("Emma")]
         [MultipleTestDataSource(typeof(AddHierarchyData[]), typeof(HierarchyManagement), "TA-Hierarchy-001")]
-        public void AddOrgnizationNode(HierarchyInputData input, ExpectedTestDataBase expected)
+        public void AddOrgnizationNode(AddHierarchyData hierarchyData)
         {
-            FunctionWrapper.hierarchy.AddHierarchyNode("Schneider", input);
-            FunctionWrapper.hierarchy.ClickSaveButton();
-            FunctionWrapper.hierarchy.WaitForCreateOKDisplay(120);
+            FunctionWrapper.Hierarchy.AddHierarchyNode("Schneider", hierarchyData.InputData);
+            FunctionWrapper.Hierarchy.ClickSaveButton();
+            FunctionWrapper.Hierarchy.WaitForCreateOKDisplay(120);
 
             ElementLocator.pause(500);
 
-            FunctionWrapper.hierarchy.ConfirmCreateOKMagBox();
+            FunctionWrapper.Hierarchy.ConfirmCreateOKMagBox();
         }
 
     }

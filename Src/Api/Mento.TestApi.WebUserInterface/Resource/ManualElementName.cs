@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mento.TestApi.WebUserInterface
 {
-    class ManualElementName
+    public class ManualElementName
     {
         public const string treeNodeName = "treeNodeName";
         public const string tagName = "tagName";

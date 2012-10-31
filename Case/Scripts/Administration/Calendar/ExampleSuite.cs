@@ -135,7 +135,6 @@ namespace Mento.Script.Administration.Calendar
         [Test]
         [CaseID("TA-Example-009"), CreateTime("2012-10-23")]
         [MultipleTestData(typeof(ExampleData[]), typeof(ExampleSuite), "TA-Example-009", 0)]
-        [MultipleTestData(typeof(ExampleData[]), typeof(ExampleSuite), "TA-Example-009", 1)]
         [MultipleTestData(typeof(ExampleData[]), typeof(ExampleSuite), "TA-Example-009", 2)]
         public void TestCase9(ExampleData testData)
         {

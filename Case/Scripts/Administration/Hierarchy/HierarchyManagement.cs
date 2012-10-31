@@ -12,6 +12,9 @@ using Mento.Framework.Attributes;
 using Mento.TestApi.TestData;
 using System.IO;
 using Mento.Framework.Script;
+using Mento.ScriptCommon.TestData.Administration.Hierarchy.HierarchyManagement;
+using Mento.TestApi.WebUserInterface;
+using Mento.ScriptCommon.Library.Functions;
 
 
 namespace Mento.Script.Administration.Hierarchy
@@ -22,11 +25,24 @@ namespace Mento.Script.Administration.Hierarchy
         [SetUp]
         public void CaseSetUp()
         {
+            //OpenJazz()
+            //Login()
+            //NavigateToHierarchySetting()
         }
 
         [TearDown]
         public void CaseTearDown()
         {
         }
+
+        [Test]
+        [CaseID("TA-Hierarchy-001"), CreateTime("2012-10-30"), Owner("Emma")]
+        [MultipleTestDataSource(typeof(MultipleHierarchyData), typeof(HierarchyManagement), "TA-Hierarchy-001")]
+        public void AddOrgnizationNode(HierarchyInputData input, ExpectedTestDataBase expected)
+        {
+            FunctionWrapper.hierarchy.AddHierarchyNode("Schneifer", input);
+            FunctionWrapper.hierarchy.ClickSaveButton();
+        }
+
     }
 }

@@ -28,5 +28,8 @@ namespace Mento.TestApi.WebUserInterface
         public const string HierarchyComment = "HierarchyComment";
 
         public const string CheckNodeButton = "CheckNodeButton";
+        public const string SaveButton = "SaveButton";
+        public const string CancelButton = "CancelButton";
+        public const string CreateOKText = "CreateOKText";
     }
 }

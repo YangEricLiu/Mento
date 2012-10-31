@@ -64,6 +64,10 @@
       <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
       <Name>Mento.Utility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TestData\TestData.csproj">
+      <Project>{F463BF99-E570-46DE-A384-FE533482558D}</Project>
+      <Name>TestData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

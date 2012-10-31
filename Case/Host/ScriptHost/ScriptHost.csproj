@@ -105,7 +105,6 @@
     <Content Include="Config\ElementMap.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Config\ManualElementMap.xml" />
     <Content Include="Data\Administration\Calendar\ExampleSuite\TA-Example-008.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

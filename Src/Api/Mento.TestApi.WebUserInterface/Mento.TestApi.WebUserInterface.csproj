@@ -72,9 +72,6 @@
     <Compile Include="Controllers\TextField.cs" />
     <Compile Include="Controllers\TreeView.cs" />
     <Compile Include="DriverFactory.cs" />
-    <Compile Include="Element.cs" />
-    <Compile Include="FunctionWrapper\FunctionWrapper.cs" />
-    <Compile Include="FunctionWrapper\Hierarchy.cs" />
     <Compile Include="GetLanguageResource.cs" />
     <Compile Include="JazzControlAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -23,4 +23,6 @@
   <add key = "Site" value = "//li[text()='Common.Glossary.Site']" type = "Xpath"/>
   <add key = "Building" value = "//li[text()='Common.Glossary.Building']" type = "Xpath"/>
   <add key = "HierarchyComment" value = "Comment" type = "Name"/>
+  <add key = "SaveButton" value = "" type = "Xpath"/>
+  <add key = "CancelButton" value = "" type = "Xpath"/>
 </WebElement>

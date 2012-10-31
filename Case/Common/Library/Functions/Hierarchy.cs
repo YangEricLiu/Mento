@@ -5,6 +5,7 @@ using System.Text;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
+using Mento.ScriptCommon.TestData.Administration.Hierarchy.HierarchyManagement;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -24,12 +25,21 @@ namespace Mento.ScriptCommon.Library.Functions
             ElementLocator.FindElement(addHierarchyButton, type).Click();
         }
 
-        //public void AddHierarchynode(string treeNodeName, HierarchyInputData input)
-        //{
-        //    PrepareToAddNode(treeNodeName);
-
-        //    textFieldInstance.FillIn(ElementKey.HierarchyName, input.);
+        public void ClickSaveButton()
+        { 
             
-        //}
+        }
+
+        public void AddHierarchynode(string treeNodeName, HierarchyInputData input)
+        {
+            PrepareToAddNode(treeNodeName);
+
+            textFieldInstance.FillIn(ElementKey.HierarchyName, input.Name);
+            textFieldInstance.FillIn(ElementKey.HierarchyCode, input.Code);
+            comboBoxInstance.DisplayItems(ElementKey.HierarchyType);
+            comboBoxInstance.SelectItem(ElementKey.Orgnization);
+
+            
+        }
     }
 }

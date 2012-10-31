@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mento.TestApi.WebUserInterface
+namespace Mento.ScriptCommon.Library.Functions
 {
-    public static class JazzControlAPI
+    public class Login
     {
     }
 }

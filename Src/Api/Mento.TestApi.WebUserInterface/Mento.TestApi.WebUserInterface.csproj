@@ -76,7 +76,7 @@
     <Compile Include="Resource\ResourceManager.cs" />
     <Compile Include="Resource\LanguageResourceReader.cs" />
     <Compile Include="Resource\ManualElementName.cs" />
-    <Compile Include="Resource\TypeValue.cs" />
+    <Compile Include="Resource\Locator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Mento.Framework\Mento.Framework.csproj">

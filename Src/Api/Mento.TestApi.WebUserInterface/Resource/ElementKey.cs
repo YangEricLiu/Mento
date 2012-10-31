@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Mento.TestApi.WebUserInterface
 {
-    public class ElementKey
+    public static class ElementKey
     {
         public const string FormulaField = "FormulaField";
         public const string TagNameRow = "TagNameRow";

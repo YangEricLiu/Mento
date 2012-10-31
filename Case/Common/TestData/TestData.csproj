@@ -45,8 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administration\Calendar\ExampleSuite\ExampleData.cs" />
-    <Compile Include="Administration\Hierarchy\HierarchyManagement\MultipleHierarchyData.cs" />
-    <Compile Include="Administration\Hierarchy\HierarchyManagement\SingleHierarchyData.cs" />
+    <Compile Include="Administration\Hierarchy\HierarchyManagement\AddHierarchyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

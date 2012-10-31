@@ -26,11 +26,22 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         public void ClickSaveButton()
-        { 
-            
+        {
+            string buttonLocator = DictDataLoad.dictElement[ElementKey.SaveButton].value;
+            ByType type = DictDataLoad.dictElement[ElementKey.SaveButton].type;
+
+            ElementLocator.FindElement(buttonLocator, type);
         }
 
-        public void AddHierarchynode(string treeNodeName, HierarchyInputData input)
+        public void ClickCancelButton()
+        {
+            string buttonLocator = DictDataLoad.dictElement[ElementKey.CancelButton].value;
+            ByType type = DictDataLoad.dictElement[ElementKey.CancelButton].type;
+
+            ElementLocator.FindElement(buttonLocator, type);
+        }
+
+        public void AddHierarchyNode(string treeNodeName, HierarchyInputData input)
         {
             PrepareToAddNode(treeNodeName);
 
@@ -38,8 +49,25 @@ namespace Mento.ScriptCommon.Library.Functions
             textFieldInstance.FillIn(ElementKey.HierarchyCode, input.Code);
             comboBoxInstance.DisplayItems(ElementKey.HierarchyType);
             comboBoxInstance.SelectItem(ElementKey.Orgnization);
+            textFieldInstance.FillIn(ElementKey.HierarchyComment, input.Comment);
 
-            
+            ClickSaveButton();
+        }
+
+        public void WaitForCreateOKDisplay(int timeout)
+        { 
+            string CreateOK = DictDataLoad.dictElement[ElementKey.CreateOKText].value;
+            ByType type = DictDataLoad.dictElement[ElementKey.CreateOKText].type;
+
+            ElementLocator.WaitForElement(CreateOK, type, timeout);
+        }
+
+        public void ConfirmCreateOKMagBox()
+        {
+            string OKButton = DictDataLoad.dictElement[ElementKey.OKButton].value;
+            ByType type = DictDataLoad.dictElement[ElementKey.OKButton].type;
+
+            ElementLocator.FindElement(OKButton, type).Click();
         }
     }
 }

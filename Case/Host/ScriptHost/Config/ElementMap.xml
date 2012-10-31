@@ -23,6 +23,10 @@
   <add key = "Site" value = "//li[text()='Common.Glossary.Site']" type = "Xpath"/>
   <add key = "Building" value = "//li[text()='Common.Glossary.Building']" type = "Xpath"/>
   <add key = "HierarchyComment" value = "Comment" type = "Name"/>
-  <add key = "SaveButton" value = "" type = "Xpath"/>
-  <add key = "CancelButton" value = "" type = "Xpath"/>
+  <add key = "SaveButton" value = "//span[text()='Common.Button.Save']" type = "Xpath"/>
+  <add key = "CancelButton" value = "//span[text()='Common.Button.Cancel']" type = "Xpath"/>
+  <add key = "DeleteButton" value = "//span[text()='Common.Button.Delete']" type = "Xpath"/>
+  <add key = "UpdateButton" value = "//span[text()='Common.Operation.Update']" type = "Xpath"/>
+  <add key = "CreateOKText" value = "//div[text()='Common.Label.CreateOK']" type = "Xpath"/>
+  <add key = "OKButton" value = "//div[text()='Common.Label.OKButton']" type = "Xpath"/>
 </WebElement>

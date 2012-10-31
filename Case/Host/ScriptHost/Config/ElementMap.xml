@@ -29,4 +29,5 @@
   <add key = "UpdateButton" value = "//span[text()='Common.Operation.Update']" type = "Xpath"/>
   <add key = "CreateOKText" value = "//div[text()='Common.Label.CreateOK']" type = "Xpath"/>
   <add key = "OKButton" value = "//div[text()='Common.Label.OKButton']" type = "Xpath"/>
+  <add key = "FormulaTab" value = "//div[text()='?']" type = "Xpath"/>
 </WebElement>

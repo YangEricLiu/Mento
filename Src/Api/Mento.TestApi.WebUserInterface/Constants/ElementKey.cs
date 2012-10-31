@@ -32,5 +32,6 @@ namespace Mento.TestApi.WebUserInterface
         public const string CancelButton = "CancelButton";
         public const string CreateOKText = "CreateOKText";
         public const string OKButton = "OKButton";
+        public const string FormulaTab = "FormulaTab";
     }
 }

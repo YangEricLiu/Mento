@@ -15,5 +15,13 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public static Tag tag
+        {
+            get
+            {
+                return new Tag();
+            }
+        }
+
     }
 }

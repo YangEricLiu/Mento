@@ -61,7 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Button.cs" />
     <Compile Include="Controls\Grid.cs" />
+    <Compile Include="Controls\ToggleButton.cs" />
     <Compile Include="Resource\ByType.cs" />
     <Compile Include="Resource\ElementConfigurationReader.cs" />
     <Compile Include="Resource\ElementKey.cs" />

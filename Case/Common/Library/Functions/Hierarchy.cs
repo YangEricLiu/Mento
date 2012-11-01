@@ -76,5 +76,10 @@ namespace Mento.ScriptCommon.Library.Functions
 
             ElementLocator.FindElement(locator).Click();
         }
+
+        public Boolean IsNodesChildParent(string nodeChild, string nodeParent)
+        {
+            return treeViewInstance.IsNodesParentChild(nodeChild, nodeParent);
+        }
     }
 }

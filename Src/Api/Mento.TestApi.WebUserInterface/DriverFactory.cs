@@ -12,6 +12,11 @@ namespace Mento.TestApi.WebUserInterface
 {
     public class DriverFactory
     {
+        /// <summary>
+        /// Construct the driver 
+        /// </summary>
+        /// <param name="browser"></param>
+        /// <returns>The driver instance</returns>
         public static IWebDriver GetDriver(Browser browser)
         {
             switch (browser)

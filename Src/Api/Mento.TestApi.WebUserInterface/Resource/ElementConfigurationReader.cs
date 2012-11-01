@@ -12,6 +12,12 @@ namespace Mento.TestApi.WebUserInterface
 {
     public static class ElementConfigurationReader
     {
+        /// <summary>
+        ///     Get the key&value from element map configuration file
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="moduleName"></param>
+        /// <returns>The element dictionary with out JS key replaced</returns>
         private static Dictionary<string, Locator> GetValueFromXML(string fileName, string moduleName)
         {
             XmlDocument doc = new XmlDocument();
@@ -40,6 +46,11 @@ namespace Mento.TestApi.WebUserInterface
             return elementMap;
         }
 
+        /// <summary>
+        ///     Get the key&value from element map configuration file
+        /// </summary>
+        /// <param name="languageFilePath"></param>
+        /// <returns>The element dictionary with JS key replaced</returns>
         public static Dictionary<string, Locator> GetElementMapValue(string languageFilePath)
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();

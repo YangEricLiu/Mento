@@ -14,7 +14,7 @@ namespace Mento.TestApi.WebUserInterface
             //string nodeExpandPath = DictDataLoad.dictElement[ElementKey.IsTreeNodeExpand].Value.Replace(ManualElementName.treeNodeName, treeNodeName);
             //ByType type = DictDataLoad.dictElement[ElementKey.TreeNode].Type;
 
-            var locator = this.GetVariableLocator(ElementKey.IsTreeNodeExpand, "treeNodeName", treeNodeName);
+            var locator = this.GetVariableLocator(ElementKey.IsTreeNodeExpand, ManualElementName.treeNodeName, treeNodeName);
 
             return ElementLocator.IsElementPresent(locator);
         }
@@ -24,7 +24,7 @@ namespace Mento.TestApi.WebUserInterface
             //string nodePath = DictDataLoad.dictElement[ElementKey.TreeNode].Value.Replace(ManualElementName.treeNodeName, treeNodeName);
             //ByType type = DictDataLoad.dictElement[ElementKey.TreeNode].Type;
 
-            var locator = this.GetVariableLocator(ElementKey.TreeNode, "treeNodeName", treeNodeName);
+            var locator = this.GetVariableLocator(ElementKey.TreeNode, ManualElementName.treeNodeName, treeNodeName);
 
             IWebElement nodeLocator = ElementLocator.FindElement(locator);
             ElementLocator.FocusOn(nodeLocator);
@@ -35,7 +35,7 @@ namespace Mento.TestApi.WebUserInterface
             //string nodePath = DictDataLoad.dictElement[ElementKey.TreeNode].Value.Replace(ManualElementName.treeNodeName, treeNodeName);
             //ByType type = DictDataLoad.dictElement[ElementKey.TreeNode].Type;
 
-            var locator = this.GetVariableLocator(ElementKey.TreeNode, "treeNodeName", treeNodeName);
+            var locator = this.GetVariableLocator(ElementKey.TreeNode, ManualElementName.treeNodeName, treeNodeName);
 
             IWebElement nodeLocator = ElementLocator.FindElement(locator);
             ElementLocator.DoubleClick(nodeLocator);
@@ -59,6 +59,24 @@ namespace Mento.TestApi.WebUserInterface
             {
                 DoubleClickTreeNode(treeNodeName);
             }
+        }
+
+        public Boolean IsNodesParentChild(string nodeChild, string nodeParent)
+        {
+            Boolean isChildExisted = false; 
+            Boolean isChild = false;
+
+            Collapse(nodeParent);
+            var locatorChild = this.GetVariableLocator(ElementKey.TreeNode, ManualElementName.treeNodeName, nodeChild);
+            isChildExisted = ElementLocator.IsElementPresent(locatorChild);
+
+            if (!isChildExisted)
+            {
+                Expand(nodeParent);
+                isChild = ElementLocator.IsElementPresent(locatorChild);
+            }
+
+            return isChild;
         }
     }
 }

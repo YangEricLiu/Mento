@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Grid.cs" />
     <Compile Include="Resource\ByType.cs" />
     <Compile Include="Resource\ElementConfigurationReader.cs" />
     <Compile Include="Resource\ElementKey.cs" />

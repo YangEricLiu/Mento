@@ -17,7 +17,7 @@ namespace Mento.TestApi.WebUserInterface
             //string formulaField = DictDataLoad.dictElement[ElementKey.FormulaField].Value;
             //ByType type2 = DictDataLoad.dictElement[ElementKey.FormulaField].Type;
 
-            var tagLocator = this.GetVariableLocator(ElementKey.TagNameRow, "tagName", tagName);
+            var tagLocator = this.GetVariableLocator(ElementKey.TagNameRow, ManualElementName.tagName, tagName);
             var formulaLocator = ElementDictionary[ElementKey.FormulaField];
 
             IWebElement tagElement = ElementLocator.FindElement(tagLocator);

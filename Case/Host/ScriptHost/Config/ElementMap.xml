@@ -7,6 +7,8 @@
   <add key = "CheckNodeButton" value = "//div[text()='dimensionNodeName']/input[@class='x-tree-checkbox']" type ="Xpath"/>
   <!--TextField-->
   <add key = "TagNameRow" value = "//div[text()='tagName']" type ="Xpath"/>
+  <!--Grid-->
+  <add key = "RowCellName" value = "//div[text()='cellName']" type ="Xpath"/>
   <!--Login-->
   <add key = "LoginName" value = "login-username-inputEl" type = "ID"/>
   <add key = "LoginPassword" value = "login-password-inputEl" type = "ID"/>

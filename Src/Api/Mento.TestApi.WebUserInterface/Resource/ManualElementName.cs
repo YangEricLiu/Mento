@@ -10,5 +10,6 @@ namespace Mento.TestApi.WebUserInterface
         public const string treeNodeName = "treeNodeName";
         public const string tagName = "tagName";
         public const string dimensionNodeName = "dimensionNodeName";
+        public const string cellName = "cellName";
     }
 }

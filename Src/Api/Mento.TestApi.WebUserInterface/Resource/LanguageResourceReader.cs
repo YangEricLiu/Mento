@@ -8,6 +8,11 @@ namespace Mento.TestApi.WebUserInterface
 {
     public static class LanguageResourceReader
     {
+        /// <summary>
+        ///     Get the key&value from language resource JS file
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns>The language key&value dictionary with out JS key replaced</returns>
         private static Dictionary<string, string> GetKeyValueFromJS(string filePath)
         {
             StreamReader objReader = new StreamReader(filePath);
@@ -35,6 +40,11 @@ namespace Mento.TestApi.WebUserInterface
             return lineList;
         }
 
+        /// <summary>
+        ///     Get the key&value from language resource JS file
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns>The language key&value dictionary with JS key replaced</returns>
         public static Dictionary<string, string> GetFormatKeyValue(string filePath)
         {
             Dictionary<string, string> dict = GetKeyValueFromJS(filePath);

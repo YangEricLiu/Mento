@@ -33,5 +33,7 @@ namespace Mento.TestApi.WebUserInterface
         public const string CreateOKText = "CreateOKText";
         public const string OKButton = "OKButton";
         public const string FormulaTab = "FormulaTab";
+
+        public const string RowCellName = "RowCellName";
     }
 }

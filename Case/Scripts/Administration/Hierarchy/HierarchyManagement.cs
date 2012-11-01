@@ -15,6 +15,7 @@ using Mento.Framework.Script;
 using Mento.ScriptCommon.TestData.Administration.Hierarchy.HierarchyManagement;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
+using NUnit.Framework;
 
 
 namespace Mento.Script.Administration.Hierarchy
@@ -47,6 +48,8 @@ namespace Mento.Script.Administration.Hierarchy
             ElementLocator.pause(500);
 
             FunctionWrapper.Hierarchy.ConfirmCreateOKMagBox();
+
+            Assert.IsTrue(FunctionWrapper.Hierarchy.IsNodesChildParent(hierarchyData.InputData.Name, "Schneider"));
         }
 
     }

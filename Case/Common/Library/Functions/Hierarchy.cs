@@ -34,7 +34,7 @@ namespace Mento.ScriptCommon.Library.Functions
             //ByType type = DictDataLoad.dictElement[ElementKey.SaveButton].type;
             var locator = ElementDictionary[ElementKey.SaveButton];
 
-            ElementLocator.FindElement(locator);
+            ElementLocator.FindElement(locator).Click();
         }
 
         public void ClickCancelButton()
@@ -43,9 +43,9 @@ namespace Mento.ScriptCommon.Library.Functions
             //ByType type = DictDataLoad.dictElement[ElementKey.CancelButton].type;
             var locator = ElementDictionary[ElementKey.CancelButton];
 
-            ElementLocator.FindElement(locator);
+            ElementLocator.FindElement(locator).Click();
         }
-
+        
         public void AddHierarchyNode(string treeNodeName, HierarchyInputData input)
         {
             PrepareToAddNode(treeNodeName);

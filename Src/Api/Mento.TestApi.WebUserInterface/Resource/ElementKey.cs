@@ -13,10 +13,12 @@ namespace Mento.TestApi.WebUserInterface
         public const string TreeNode = "TreeNode";
         public const string IsTreeNodeExpand = "IsTreeNodeExpand";
         
+        //Login function
         public const string LoginName = "LoginName";
         public const string LoginPassword = "LoginPassword";
         public const string InvalidNameInputError = "InvalidNameInputError";
         public const string PopUpMessageBox = "PopUpMessageBox";
+        public const string LoginSubmit = "LoginSubmit";
 
         public const string AddHierarchyButton = "AddHierarchyButton";
         public const string HierarchyName = "HierarchyName";

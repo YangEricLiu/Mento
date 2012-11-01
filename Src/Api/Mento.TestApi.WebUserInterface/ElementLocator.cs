@@ -22,10 +22,10 @@ namespace Mento.TestApi.WebUserInterface
                 if (!ExecutionContext.Browser.HasValue)
                     throw new Exception("Execution context not initialized yet.");
 
-                if (_driver == null)
-                {
-                    _driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value);
-                }
+                //if (_driver == null)
+                //{
+                //    _driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value);
+                //}
 
                 return _driver;
             }
@@ -33,6 +33,7 @@ namespace Mento.TestApi.WebUserInterface
 
         public static void OpenJazz()
         {
+            _driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value); 
             Driver.Navigate().GoToUrl(ExecutionContext.Url);
         }
 

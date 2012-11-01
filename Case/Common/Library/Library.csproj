@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Functions\FunctionWrapper.cs" />
     <Compile Include="Functions\Hierarchy.cs" />
+    <Compile Include="Functions\Login.cs" />
     <Compile Include="Functions\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -9,5 +9,15 @@ namespace Mento.TestApi.WebUserInterface
     {
         public string Value { get; set; }
         public ByType Type { get; set; }
+
+        public Locator()
+        { 
+        }
+
+        public Locator(string value,ByType byType)
+        {
+            Value = value;
+            Type = byType;
+        }
     }
 }

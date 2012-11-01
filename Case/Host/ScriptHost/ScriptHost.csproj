@@ -98,12 +98,24 @@
     <Folder Include="Data\Administration\Platform\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resource\zh-cn.js" />
+    <Content Include="chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IEDriverServer.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="InternetExplorerDriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\zh-cn.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Config\ElementMap.xml">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Administration\Calendar\ExampleSuite\TA-Example-008.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -114,6 +126,9 @@
     <Content Include="Data\Administration\Hierarchy\HierarchyManagement\TA-Hierarchy-001.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Data\Administration\Calendar\LoginSuite\TA-Trial-Login-001.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

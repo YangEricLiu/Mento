@@ -44,7 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administration\Calendar\ExampleSuite\ExampleData.cs" />
+    <Compile Include="Administration\Calendar\ExampleData.cs" />
+    <Compile Include="ClientAccess\LoginData.cs" />
     <Compile Include="Administration\Hierarchy\HierarchyManagement\AddHierarchyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,7 +64,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ClientAccess\" />
+    <Folder Include="Administration\Calendar\ExampleSuite\" />
     <Folder Include="Customer\" />
     <Folder Include="EnergyView\" />
     <Folder Include="Information\" />

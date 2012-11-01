@@ -27,7 +27,7 @@ namespace Mento.TestApi.TestData
                 if (_dataMapping == null)
                 {
                     string mappingFile = PathHelper.GetAppAbsolutePath(ConfigurationManager.AppSettings[ConfigurationKey.SCRIPT_DATA_MAPPINGFILE]);
-                    
+
                     if (File.Exists(mappingFile))
                     {
                         XDocument xdoc = XDocument.Load(mappingFile);
@@ -41,6 +41,11 @@ namespace Mento.TestApi.TestData
 
                         _dataMapping = query.ToDictionary(x => x[0], x => x[1]);
                     }
+                    else
+                    {
+                        var errorMessage = String.Format("data mapping was not found at: {0}!", mappingFile);
+                        throw new Exception(errorMessage);
+                    }
                 }
 
                 return _dataMapping;
@@ -51,11 +56,6 @@ namespace Mento.TestApi.TestData
         {
             //search dictionary first, if not exist mapping relation, search test data using the input test case id
             string testDataID = testCaseID;
-
-            if (DataMapping == null || DataMapping.Count <= 0)
-            {
-                throw new Exception("data mapping not found!");
-            }
 
             if (DataMapping.Keys.Contains(testCaseID))
             {
@@ -164,6 +164,11 @@ namespace Mento.TestApi.TestData
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(content);
 
                 //return JsonHelper.String2Object<T>(content);
+            }
+            else
+            {
+                var errorMessage = String.Format("test data file was not found at: {0}!", fileName);
+                throw new Exception(errorMessage);
             }
 
             return default(T);

@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calendar\ExampleSuite.cs" />
+    <Compile Include="Calendar\LoginSuite.cs" />
     <Compile Include="Hierarchy\HierarchyManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

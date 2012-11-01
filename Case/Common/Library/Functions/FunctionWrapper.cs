@@ -7,19 +7,42 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     public static class FunctionWrapper
     {
+        private static Hierarchy _hierarchy;
         public static Hierarchy Hierarchy
         {
             get
             {
-                return new Hierarchy();
+                if (_hierarchy == null)
+                {
+                    _hierarchy = new Hierarchy();
+                }
+                return _hierarchy;
             }
         }
 
-        public static Tag tag
+        private static Tag _tag;
+        public static Tag Tag
         {
             get
             {
-                return new Tag();
+                if (_tag == null)
+                {
+                    _tag = new Tag();
+                }
+                return _tag;
+            }
+        }
+
+        private static LoginFunction _login;
+        public static LoginFunction Login
+        {
+            get
+            {
+                if (_login == null)
+                {
+                    _login = new LoginFunction();
+                }
+                return _login;
             }
         }
 

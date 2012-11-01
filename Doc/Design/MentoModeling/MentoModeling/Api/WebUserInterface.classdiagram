@@ -128,7 +128,7 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="80d7d53e-ef80-4c5c-9b53-2a62474be320" name="DateField" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="80d7d53e-ef80-4c5c-9b53-2a62474be320" name="DatePicker" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="527cc9e9-5cdc-4348-b8a2-aee01a658f9a" />
         <generalsInternal>
           <generalization Id="2cd7b5fa-052e-4aae-adc4-047bd4a4c1e5" isSubstitutable="false">
@@ -164,6 +164,15 @@
           </operation>
           <operation Id="9af5b6be-61db-4d73-86c2-5a72789ca1fe" name="GetAllItemValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="94aa8798-3814-4dc0-945a-52e2903f501e" />
+          </operation>
+          <operation Id="b16b7b28-f863-409e-ad82-10fd18f65992" name="CheckedItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c4d3a06e-e157-4f56-92d9-0e408bc3299b" />
+          </operation>
+          <operation Id="9ead98a2-c4d7-48b5-abac-3889c7a110e0" name="UncheckedItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3a769643-0d36-4f50-a27e-41081e2f1e34" />
+          </operation>
+          <operation Id="ce37c77f-2286-449c-8f4f-1ee83de6a5a5" name="FloatOnItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a7482d9c-511f-4869-8d7f-f8b650d6d481" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -736,6 +745,60 @@
           </operation>
           <operation Id="3ad07cd3-6163-4414-98b5-e18fbdafd910" name="ChangeTimeRangeTo" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="4406bbab-e983-409a-9467-3af42856bb67" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="2e328a14-d15b-4ea8-b737-620fcbf4bba0" name="MonthPicher" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="967d4db0-fe2b-4703-a926-ed498fab1558" />
+        <generalsInternal>
+          <generalization Id="897995fe-d4f8-4436-8196-23ed99028822" isSubstitutable="false">
+            <classMoniker Id="535ffb13-58f8-418d-a084-3ea0c0c56e56" LastKnownName="ControllerBase" />
+            <elementDefinition Id="2664e1ff-83a7-46a9-a531-584b5658ba8c" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="c12bd6b9-b151-4624-b7c4-2bd58ec2c7e7" name="PickUpMonth" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="164790d9-cd80-49ef-aeb5-9233caaa1729" />
+          </operation>
+          <operation Id="879cc342-eaa1-45e5-a3ea-6efb6aee9182" name="GetMonthValue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e2040105-1e66-4948-8f08-82737b927513" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="48cd1340-3e58-4b6f-bb6e-b9d53d7d0e5a" name="Button" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="d480205b-cac1-40b9-adc3-5cb9808cc5e9" />
+        <generalsInternal>
+          <generalization Id="80748dc5-f317-4542-bcf3-686fcab2d200" isSubstitutable="false">
+            <classMoniker Id="535ffb13-58f8-418d-a084-3ea0c0c56e56" LastKnownName="ControllerBase" />
+            <elementDefinition Id="91bce331-494d-4a68-be9b-2129331877eb" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="ec71738a-ca3d-4b67-b6e3-5d9f470fcb9f" name="FloatOnButton" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7f732c72-c5c6-4881-a5e5-d340c1c28393" />
+          </operation>
+          <operation Id="71ecf3a5-151d-41eb-888e-e990f6c046d8" name="ClickButton" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3ef51499-8d54-4ac7-83b7-e7f2481245af" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="e13e715d-5081-4ee3-bcb4-d5877d25ab30" name="ToggleButton" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9bb71cff-56a9-4c1d-a383-6d35d2829262" />
+        <generalsInternal>
+          <generalization Id="96e470a5-8a9b-4adb-80e3-12079830f358" isSubstitutable="false">
+            <classMoniker Id="48cd1340-3e58-4b6f-bb6e-b9d53d7d0e5a" LastKnownName="Button" />
+            <elementDefinition Id="7bb2cc35-533a-430c-806c-0317d4bb7d7b" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="975db134-7ad2-4b56-85a1-fa5eb0bf20a5" name="IsButtonClicked" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3bf2b714-b8ef-42bf-85a1-6e89e63accf9" />
           </operation>
         </ownedOperationsInternal>
       </class>

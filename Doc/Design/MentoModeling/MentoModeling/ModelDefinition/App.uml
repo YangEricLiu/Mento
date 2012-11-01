@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="2861e0a1-3343-49e9-96c1-ec054d18b511"
   name="Api" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -299,7 +299,7 @@
     <packageHasNamedElement>
       <class
         Id="527cc9e9-5cdc-4348-b8a2-aee01a658f9a"
-        name="DateField"
+        name="DatePicker"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -370,6 +370,30 @@
           <operation
             Id="94aa8798-3814-4dc0-945a-52e2903f501e"
             name="GetAllItemValue"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c4d3a06e-e157-4f56-92d9-0e408bc3299b"
+            name="CheckedItem"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3a769643-0d36-4f50-a27e-41081e2f1e34"
+            name="UncheckedItem"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="a7482d9c-511f-4869-8d7f-f8b650d6d481"
+            name="FloatOnItem"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -2169,6 +2193,109 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="967d4db0-fe2b-4703-a926-ed498fab1558"
+        name="MonthPicher"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="2664e1ff-83a7-46a9-a531-584b5658ba8c"
+            isSubstitutable="false">
+            <classMoniker
+              Id="7a2a425a-99f1-4e96-848b-dae0934a5e5d"
+              LastKnownName="ControllerBase"
+              LastKnownLocation="App.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="164790d9-cd80-49ef-aeb5-9233caaa1729"
+            name="PickUpMonth"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e2040105-1e66-4948-8f08-82737b927513"
+            name="GetMonthValue"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d480205b-cac1-40b9-adc3-5cb9808cc5e9"
+        name="Button"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="91bce331-494d-4a68-be9b-2129331877eb"
+            isSubstitutable="false">
+            <classMoniker
+              Id="7a2a425a-99f1-4e96-848b-dae0934a5e5d"
+              LastKnownName="ControllerBase"
+              LastKnownLocation="App.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="7f732c72-c5c6-4881-a5e5-d340c1c28393"
+            name="FloatOnButton"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3ef51499-8d54-4ac7-83b7-e7f2481245af"
+            name="ClickButton"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9bb71cff-56a9-4c1d-a383-6d35d2829262"
+        name="ToggleButton"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="7bb2cc35-533a-430c-806c-0317d4bb7d7b"
+            isSubstitutable="false">
+            <classMoniker
+              Id="d480205b-cac1-40b9-adc3-5cb9808cc5e9"
+              LastKnownName="Button"
+              LastKnownLocation="App.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="3bf2b714-b8ef-42bf-85a1-6e89e63accf9"
+            name="IsButtonClicked"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

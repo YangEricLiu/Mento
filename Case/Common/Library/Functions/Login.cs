@@ -23,5 +23,18 @@ namespace Mento.ScriptCommon.Library.Functions
 
             ButtonSubmit.Submit();
         }
+
+        public void Login()
+        {
+            TextField UserNameField = ControlAccess.GetControl<TextField>();
+            TextField PasswordField = ControlAccess.GetControl<TextField>();
+
+            UserNameField.FillIn(ElementKey.LoginName, "demo");
+            PasswordField.FillIn(ElementKey.LoginPassword, "password");
+
+            var ButtonSubmit = ElementLocator.FindElement(ElementDictionary[ElementKey.LoginSubmit]);
+
+            ButtonSubmit.Submit();
+        }
     }
 }

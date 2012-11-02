@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Navigator.cs" />
     <Compile Include="Controls\Button.cs" />
     <Compile Include="Controls\Grid.cs" />
     <Compile Include="Controls\ToggleButton.cs" />

@@ -104,9 +104,6 @@
     <Content Include="IEDriverServer.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="InternetExplorerDriver.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resource\zh-cn.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

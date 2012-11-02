@@ -2290,7 +2290,7 @@
         <ownedOperationsInternal>
           <operation
             Id="3bf2b714-b8ef-42bf-85a1-6e89e63accf9"
-            name="IsButtonClicked"
+            name="IsButtonPressed"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

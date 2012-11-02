@@ -797,7 +797,7 @@
           </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
-          <operation Id="975db134-7ad2-4b56-85a1-fa5eb0bf20a5" name="IsButtonClicked" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="975db134-7ad2-4b56-85a1-fa5eb0bf20a5" name="IsButtonPressed" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="3bf2b714-b8ef-42bf-85a1-6e89e63accf9" />
           </operation>
         </ownedOperationsInternal>

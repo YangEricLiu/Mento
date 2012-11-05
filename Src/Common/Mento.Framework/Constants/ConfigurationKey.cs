@@ -22,5 +22,7 @@ namespace Mento.Framework.Constants
 
         public const string LANGUAGE_CN_PATH = "languageResourcePath_CN";
         public const string LANGUAGE_EN_PATH = "languageResourcePath_EN";
+
+        public const string FIREFOX_LOCATION = "firefoxLocation";
      }
 }

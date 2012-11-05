@@ -35,6 +35,17 @@ namespace Mento.ScriptCommon.Library.Functions
             var ButtonSubmit = ElementLocator.FindElement(ElementDictionary[ElementKey.LoginSubmit]);
 
             ButtonSubmit.Submit();
+
+            //2012-11-05
+            //test in cn proxy schneider intranet
+            //load time: 27s, render time: 7s, total: 34s
+            //test in fr proxy schneider intranet
+            //load time: 66s, render time: 26s, total: 92s
+            //load time: 72s, render time: 45s, total: 117s
+
+            //pause 2.5 minutes to let ext render Jazz layout
+
+            ElementLocator.pause(150000);
         }
     }
 }

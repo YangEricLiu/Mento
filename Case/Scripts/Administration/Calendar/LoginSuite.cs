@@ -27,7 +27,7 @@ namespace Mento.Script.Administration.Calendar
         [TearDown]
         public void TearDown()
         {
-            //ElementLocator.QuitJazz();
+            ElementLocator.QuitJazz();
         }
 
         [Test]
@@ -41,9 +41,8 @@ namespace Mento.Script.Administration.Calendar
             //Threading.Thread.Sleep(10000);
 
             FunctionWrapper.Login.Login(loginData.InputData);
-            //Assert.IsTrue();
 
-
+            Assert.IsTrue(ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 600));
         }
 
         [Test]
@@ -56,7 +55,9 @@ namespace Mento.Script.Administration.Calendar
 
             var navigator = ControlAccess.GetControl<Navigator>();
 
-            navigator.NavigateToTarget(NavigationTarget.TagSettings);
+            navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+
+
         }
     }
 }

@@ -9,14 +9,13 @@ namespace Mento.TestApi.WebUserInterface
 {
     public class FormulaField : TextField
     {
+        /// <summary>
+        /// Simulate the mouse drag formula tag list to formula field
+        /// </summary>
+        /// <param name="tagName"></param>
+        /// <returns></returns>
         public void DragTag(string tagName)
         {
-            //string tagPath = DictDataLoad.dictElement[ElementKey.TagNameRow].Value.Replace(ManualElementName.tagName, tagName);
-            //ByType type1 = DictDataLoad.dictElement[ElementKey.TagNameRow].Type;
-
-            //string formulaField = DictDataLoad.dictElement[ElementKey.FormulaField].Value;
-            //ByType type2 = DictDataLoad.dictElement[ElementKey.FormulaField].Type;
-
             var tagLocator = this.GetVariableLocator(ElementKey.TagNameRow, ManualElementName.tagName, tagName);
             var formulaLocator = ElementDictionary[ElementKey.FormulaField];
 
@@ -27,10 +26,13 @@ namespace Mento.TestApi.WebUserInterface
             ElementLocator.DragAndDrop(tagElement, formulaElement);
         }
 
+        /// <summary>
+        /// Get the text value of formula field
+        /// </summary>
+        /// <param name="tagName"></param>
+        /// <returns></returns>
         public string GetValue()
         {
-            //string formulaField = DictDataLoad.dictElement[ElementKey.FormulaField].Value;
-            //ByType type = DictDataLoad.dictElement[ElementKey.FormulaField].Type;
             var formulaLocator = ElementDictionary[ElementKey.FormulaField];
 
             return ElementLocator.FindElement(formulaLocator).GetAttribute("value");

@@ -68,34 +68,39 @@ namespace Mento.TestApi.WebUserInterface
 
         public static void pause(int millisecs)
         {
-            try
-            {
-                System.Threading.Thread.Sleep(millisecs);
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-                //add log here
-            }
+            System.Threading.Thread.Sleep(millisecs);
         }
 
+
+        /// <summary>
+        /// Judge that whether the element is present on web page
+        /// </summary>
+        /// <param name="locator"></param>
+        /// <returns>True if the element is present, false if not</returns>
         public static Boolean IsElementPresent(Locator locator)
         {
             Boolean present = false;
 
             try
             {
-                Driver.FindElement(ByWrapper(locator));
+                FindElement(locator);
                 present = true;
             }
             catch (NoSuchElementException)
-            {
-                //add log here
+            {              
+                //Element Not Existed
             }
 
             return present;
         }
 
+
+        /// <summary>
+        /// Judge that whether the element is displayed within certain time
+        /// </summary>
+        /// <param name="locator"></param>
+        /// <param name="timeOut"></param>
+        /// <returns>True if this element is displayed within certain time, false if not</returns>
         public static Boolean WaitForElement(Locator locator, int timeOut)
         {
             Boolean elementExist = false;
@@ -119,12 +124,22 @@ namespace Mento.TestApi.WebUserInterface
             return elementExist;
         }
 
+        /// <summary>
+        /// simulate mouse float on the element
+        /// </summary>
+        /// <param name="elementHandler"></param>
+        /// <returns></returns>
         public static void FloatOn(IWebElement elementHandler)
         {
             Actions action = new Actions(Driver);
             action.MoveToElement(elementHandler).Perform();
         }
 
+        /// <summary>
+        /// simulate mouse focus on the element
+        /// </summary>
+        /// <param name="elementHandler"></param>
+        /// <returns></returns>
         public static void FocusOn(IWebElement elementHandler)
         {
             Actions action = new Actions(Driver);
@@ -133,16 +148,37 @@ namespace Mento.TestApi.WebUserInterface
             pause(1000);
         }
 
+        /// <summary>
+        /// simulate mouse drag one element from one position to another position
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="desination"></param>
+        /// <returns></returns>
         public static void DragAndDrop(IWebElement source, IWebElement desination)
         {
             Actions action = new Actions(Driver);
             action.DragAndDrop(source, desination).Perform();
         }
 
+        /// <summary>
+        /// simulate mouse double click one element
+        /// </summary>
+        /// <param name="elementHandler"></param>
+        /// <returns></returns>
         public static void DoubleClick(IWebElement elementHandler)
         {
             Actions action = new Actions(Driver);
             action.DoubleClick(elementHandler).Perform();
+        }
+
+        /// <summary>
+        /// Judge that whether the element is displayed, which check "style" attribute to determine visibility of an element.
+        /// </summary>
+        /// <param name="locator"></param>
+        /// <returns>True if the element is present, false if not</returns>
+        public static Boolean IsElementDisplayed(Locator locator)
+        {
+            return FindElement(locator).Displayed;
         }
 
         /*

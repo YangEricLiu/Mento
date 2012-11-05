@@ -45,7 +45,9 @@ namespace Mento.ScriptCommon.Library.Functions
 
             //pause 2.5 minutes to let ext render Jazz layout
 
-            ElementLocator.pause(150000);
+            //ElementLocator.Pause(150000);
+            ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 150);
+            ElementLocator.WaitForElementToDisappear(new Locator("mainLoadingMask", ByType.ID), 30);
         }
     }
 }

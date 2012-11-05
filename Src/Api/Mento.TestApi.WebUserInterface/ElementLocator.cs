@@ -66,7 +66,7 @@ namespace Mento.TestApi.WebUserInterface
             return Driver.FindElement(ByWrapper(locator));
         }
 
-        public static void pause(int millisecs)
+        public static void Pause(int millisecs)
         {
             System.Threading.Thread.Sleep(millisecs);
         }
@@ -120,7 +120,47 @@ namespace Mento.TestApi.WebUserInterface
                 //add log here
             }
 
-            pause(1000);
+            Pause(1000);
+            return elementExist;
+        }
+
+        /// <summary>
+        /// Judge that whether the element is hidden or removed within certain time
+        /// </summary>
+        /// <param name="locator"></param>
+        /// <param name="timeOut"></param>
+        /// <returns></returns>
+        public static bool WaitForElementToDisappear(Locator locator, int timeOut)
+        {
+            bool elementExist = true;
+
+            try
+            {
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(timeOut));
+                wait.Until<bool>(d =>
+                {
+                    var foundElement = d.FindElement(ByWrapper(locator));
+
+                    if (foundElement == null)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        string displayValue = foundElement.GetCssValue("display");
+
+                        return displayValue.ToLower() == "none";
+                    }
+                });
+
+                elementExist = false;
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+
+            Pause(1000);
             return elementExist;
         }
 
@@ -145,7 +185,7 @@ namespace Mento.TestApi.WebUserInterface
             Actions action = new Actions(Driver);
             action.Click(elementHandler).Perform();
 
-            pause(1000);
+            Pause(1000);
         }
 
         /// <summary>

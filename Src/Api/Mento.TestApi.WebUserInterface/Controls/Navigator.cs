@@ -18,6 +18,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 element.Click();
 
                 System.Threading.Thread.Sleep(50);
+
+                ElementLocator.WaitForElementToDisappear(new Locator("mainLoadingMask", ByType.ID), 30);
             }
         }
 

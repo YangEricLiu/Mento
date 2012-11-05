@@ -45,7 +45,7 @@ namespace Mento.Script.Administration.Hierarchy
             FunctionWrapper.Hierarchy.ClickSaveButton();
             FunctionWrapper.Hierarchy.WaitForCreateOKDisplay(120);
 
-            ElementLocator.pause(500);
+            ElementLocator.Pause(500);
 
             FunctionWrapper.Hierarchy.ConfirmCreateOKMagBox();
 

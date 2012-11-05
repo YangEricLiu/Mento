@@ -9,21 +9,25 @@ namespace Mento.TestApi.WebUserInterface
 {
     public class ComboBox : JazzControlBase
     {
+        /// <summary>
+        /// Simulate the mouse open combo box drop down menu
+        /// </summary>
+        /// <param name="itemButton"></param>
+        /// <returns></returns>
         public void DisplayItems(string itemButton)
         {
-            //string comboLocator = DictDataLoad.dictElement[itemButton].Value;
-            //ByType type = DictDataLoad.dictElement[itemButton].Type;
-
             var locator = ElementDictionary[itemButton];
 
             ElementLocator.FindElement(locator).Click();
         }
 
+        /// <summary>
+        /// Simulate the mouse select one item from drop down list
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public void SelectItem(string item)
         {
-            //string itemLocator = DictDataLoad.dictElement[item].Value;
-            //ByType type = DictDataLoad.dictElement[item].Type;
-
             var locator = ElementDictionary[item];
 
             ElementLocator.FindElement(locator).Click();

@@ -32,10 +32,12 @@ namespace Mento.TestApi.WebUserInterface
         public const string CheckNodeButton = "CheckNodeButton";
         public const string SaveButton = "SaveButton";
         public const string CancelButton = "CancelButton";
+        public const string UpdateButton = "UpdateButton";
         public const string CreateOKText = "CreateOKText";
         public const string OKButton = "OKButton";
         public const string FormulaTab = "FormulaTab";
 
         public const string RowCellName = "RowCellName";
+        public const string TestButton = "TestButton";
     }
 }

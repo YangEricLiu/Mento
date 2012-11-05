@@ -29,9 +29,9 @@ namespace Mento.TestApi.WebUserInterface
         {
             var locator = ElementDictionary[elementKey];
 
-            locator.Value = locator.Value.Replace(variableName, variableValue);
+            Locator newLocator = new Locator(locator.Value.Replace(variableName, variableValue), locator.Type);
 
-            return locator;
+            return newLocator;
         }
     }
 }

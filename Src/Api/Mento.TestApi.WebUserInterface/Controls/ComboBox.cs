@@ -28,13 +28,25 @@ namespace Mento.TestApi.WebUserInterface
         /// <summary>
         /// Simulate the mouse select one item from drop down list
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="key">combo box element key</param>
         /// <returns></returns>
-        public void SelectItem(string item)
+        public void SelectItem(string key)
         {
-            var locator = ElementDictionary[item];
+            var locator = ElementDictionary[key];
 
             ElementLocator.FindElement(locator).Click();
+        }
+
+        /// <summary>
+        /// Get the value of combo box
+        /// </summary>
+        /// <param name="key">combo box element key</param>
+        /// <returns>Combo box value</returns>
+        public string GetValue(string key)
+        {
+            var locator = ElementDictionary[key];
+
+            return ElementLocator.FindElement(locator).GetAttribute("value");
         }
     }
 }

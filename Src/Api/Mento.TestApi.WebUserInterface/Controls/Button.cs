@@ -5,6 +5,10 @@ using System.Text;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Include the basic action of the button.
+    /// </summary>
+    /// <remarks>Inherited from control base class.</remarks>
     public class Button : JazzControlBase
     {
         /// <summary>

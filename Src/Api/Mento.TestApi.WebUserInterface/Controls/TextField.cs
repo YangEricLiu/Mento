@@ -6,6 +6,10 @@ using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Include the basic action of the text field.
+    /// </summary>
+    /// <remarks>Inherited from control base class.</remarks>
     public class TextField : JazzControlBase
     {
 

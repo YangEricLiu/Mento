@@ -7,6 +7,10 @@ using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Include the basic action of the grid.
+    /// </summary>
+    /// <remarks>Inherited from control basic class.</remarks>
     public class Grid : JazzControlBase
     {
         /// <summary>

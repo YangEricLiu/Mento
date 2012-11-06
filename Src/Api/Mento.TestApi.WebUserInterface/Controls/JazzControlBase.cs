@@ -7,9 +7,12 @@ using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Get the element map dictionary.
+    /// </summary>
+    /// <remarks>Abstract class of all the control class.</remarks>
     public abstract class JazzControlBase
     {
-        //
         protected virtual Dictionary<string, Locator> ElementDictionary
         {
             get

@@ -7,6 +7,10 @@ using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Include the basic action of the formula field.
+    /// </summary>
+    /// <remarks>Inherited from control class TextField.</remarks>
     public class FormulaField : TextField
     {
         /// <summary>

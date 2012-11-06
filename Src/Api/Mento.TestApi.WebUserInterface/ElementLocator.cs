@@ -12,6 +12,10 @@ using OpenQA.Selenium.Interactions;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Communicate with webdriver, implement basic action, find element and so on.
+    /// </summary>
+    /// <remarks>This class is static, can't be heritted.</remarks>
     public static class ElementLocator
     {
         private static IWebDriver _driver;
@@ -31,12 +35,21 @@ namespace Mento.TestApi.WebUserInterface
             }
         }
 
+
+        /// <summary>
+        /// Open Jazz with special browser and maximize the window
+        /// </summary>
+        /// <returns></returns>
         public static void OpenJazz()
         {
             _driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value); 
             Driver.Navigate().GoToUrl(ExecutionContext.Url);
         }
 
+        /// <summary>
+        /// Close the browser but NOT log out from Jazz
+        /// </summary>
+        /// <returns></returns>
         public static void QuitJazz()
         {
             Driver.Quit();
@@ -61,11 +74,22 @@ namespace Mento.TestApi.WebUserInterface
             }
         }
 
+
+        /// <summary>
+        /// Get the IWebElement which reference to the element
+        /// </summary>
+        /// <param name="locator"></param>
+        /// <returns>IWebElement which reference to the element</returns>
         public static IWebElement FindElement(Locator locator)
         {
             return Driver.FindElement(ByWrapper(locator));
         }
 
+        /// <summary>
+        /// Pause and wait for several milliseconds
+        /// </summary>
+        /// <param name="millisecs"></param>
+        /// <returns></returns>
         public static void Pause(int millisecs)
         {
             System.Threading.Thread.Sleep(millisecs);

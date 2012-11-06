@@ -47,17 +47,34 @@ namespace Mento.Script.Administration.Calendar
 
         [Test]
         [CaseID("TA-Trial-Login-002")]
+        //[TestCase]
+        //[TestCase]
+        //[TestCase]
+        //[TestCase]
+        //[TestCase]
         public void LoginJazzAndNavigage()
         {
             FunctionWrapper.Login.Login();
 
-            ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 600);
-
             var navigator = ControlAccess.GetControl<Navigator>();
 
             navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+        }
+        
+        [Test]
+        [CaseID("TA-Trial-Login-003")]
+        [TestCase]
+        [TestCase]
+        [TestCase]
+        [TestCase]
+        [TestCase]
+        public void NavigateTest()
+        {
+            FunctionWrapper.Login.Login();
 
+            var navigator = ControlAccess.GetControl<Navigator>();
 
+            navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
         }
     }
 }

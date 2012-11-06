@@ -7,6 +7,10 @@ using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Include the basic action of the tree.
+    /// </summary>
+    /// <remarks>Inherited from control base class.</remarks>
     public class TreeView : JazzControlBase
     {
         public Locator GetTreeNodeLocator(string treeNodeName)

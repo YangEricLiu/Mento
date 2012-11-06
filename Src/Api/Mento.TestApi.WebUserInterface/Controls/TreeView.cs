@@ -63,7 +63,7 @@ namespace Mento.TestApi.WebUserInterface
             if (!IsExpand(treeNodeName))
             {
                 DoubleClickTreeNode(treeNodeName);
-                ElementLocator.pause(1000);
+                ElementLocator.Pause(1000);
             }
         }
 
@@ -79,7 +79,7 @@ namespace Mento.TestApi.WebUserInterface
             if (IsExpand(treeNodeName))
             {
                 DoubleClickTreeNode(treeNodeName);
-                ElementLocator.pause(1000);
+                ElementLocator.Pause(1000);
             }
         }
 

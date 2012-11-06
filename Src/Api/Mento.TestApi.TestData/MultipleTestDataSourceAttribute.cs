@@ -7,8 +7,17 @@ using Mento.Utility;
 
 namespace Mento.TestApi.TestData
 {
+    /// <summary>
+    /// Mark that the target test script is going to be run for all of the loaded test data
+    /// </summary>
     public class MultipleTestDataSourceAttribute : TestCaseSourceAttribute
     {
+        /// <summary>
+        /// Load the test data source for the specified test script
+        /// </summary>
+        /// <param name="testDataType">The specified test data type</param>
+        /// <param name="testSuiteType">Type of test suite of the target test scipt</param>
+        /// <param name="testCaseID">Test case id of the target test script</param>
         public MultipleTestDataSourceAttribute(Type testDataType, Type testSuiteType, string testCaseID) :
             base(GetSourceType(testDataType, testSuiteType, testCaseID), "TestData")
         {
@@ -24,7 +33,7 @@ namespace Mento.TestApi.TestData
         }
     }
 
-    public static class MultipleTestDataSourceLoader
+    internal static class MultipleTestDataSourceLoader
     {
         public static Type TestDataType { get; set; }
         public static Type TestSuiteType { get; set; }

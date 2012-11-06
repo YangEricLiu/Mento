@@ -8,7 +8,6 @@ using Threading = System.Threading;
 using System;
 using Mento.ScriptCommon.TestData.ClientAccess;
 using Mento.ScriptCommon.Library.Functions;
-using Mento.TestApi.WebUserInterface.Controls;
 
 namespace Mento.Script.Administration.Calendar
 {
@@ -75,6 +74,8 @@ namespace Mento.Script.Administration.Calendar
             var navigator = ControlAccess.GetControl<Navigator>();
 
             navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
+
+            Assert.That(ElementLocator.FindElement(new Locator("st-menu-areadtags", ByType.ID)).GetAttribute("class").Contains("x-btn-pressed"));
         }
     }
 }

@@ -52,6 +52,13 @@ namespace Mento.TestApi.TestData
             }
         }
 
+        /// <summary>
+        /// Load test data for current test script
+        /// </summary>
+        /// <typeparam name="T">Generic type of the acquiring test data type</typeparam>
+        /// <param name="testCaseID">Test case id of the current test script</param>
+        /// <param name="testScriptFullName">The acquiring test script full name.</param>
+        /// <returns>The test data instance</returns>
         public static T GetTestData<T>(string testCaseID,string testScriptFullName)
         {
             //search dictionary first, if not exist mapping relation, search test data using the input test case id
@@ -67,6 +74,14 @@ namespace Mento.TestApi.TestData
             return Deserialize<T>(testDataFileName);
         }
 
+        /// <summary>
+        /// Load the acquiring multiple test data and return the specified element
+        /// </summary>
+        /// <param name="testDataType">The specified test data type</param>
+        /// <param name="testSuiteType">Type of test suite of the target test scipt</param>
+        /// <param name="testCaseID">Test case id of the target test script</param>
+        /// <param name="dataIndex">Element index of the test data array, which will be passed to the test script as its parameter.</param>
+        /// <returns>Object array that contains only the specified element</returns>
         public static object[] GetTestDataElement(Type testDataType, Type testSuiteType, string testCaseID, int dataIndex)
         {
             //PropertyInfo InputTestDataProperty = testDataType.GetProperty(TESTDATAINPUTPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
@@ -94,6 +109,13 @@ namespace Mento.TestApi.TestData
             return new object[] { ((Array)testData).GetValue(dataIndex) };
         }
         
+        /// <summary>
+        /// Load all test data from a test data file
+        /// </summary>
+        /// <param name="testDataType">The specified test data type</param>
+        /// <param name="testSuiteType">Type of test suite of the target test scipt</param>
+        /// <param name="testCaseID">Test case id of the target test script</param>
+        /// <returns>Object array that contains all the loaded test data elements</returns>
         public static object[] GetTestDataElementArray(Type testDataType, Type testSuiteType, string testCaseID)
         {
             //PropertyInfo InputTestDataProperty = testDataType.GetProperty(TESTDATAINPUTPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
@@ -118,6 +140,12 @@ namespace Mento.TestApi.TestData
             return testDataList.ToArray();
         }
 
+        /// <summary>
+        /// Get test data file name with test case id and the test script namespace
+        /// </summary>
+        /// <param name="testDataID">The specified test case id</param>
+        /// <param name="testScriptFullName">The acquiring test script full name.</param>
+        /// <returns>The constructed path string of the test data file.</returns>
         private static string GetTestDataFileName(string testDataID, string testScriptFullName)
         {
             //LogHelper.LogDebug(testScriptFullName);
@@ -154,6 +182,12 @@ namespace Mento.TestApi.TestData
             return String.Empty;
         }
 
+        /// <summary>
+        /// Load test data from the input test data file and deserialize to the specified type
+        /// </summary>
+        /// <typeparam name="T">Generic type of the acquiring test data</typeparam>
+        /// <param name="fileName">The test data file name</param>
+        /// <returns>Test data instance</returns>
         private static T Deserialize<T>(string fileName)
         {
             if (File.Exists(fileName))
@@ -170,8 +204,6 @@ namespace Mento.TestApi.TestData
                 var errorMessage = String.Format("test data file was not found at: {0}!", fileName);
                 throw new Exception(errorMessage);
             }
-
-            return default(T);
         }
     }
 }

@@ -10,6 +10,12 @@ namespace Mento.TestApi.TestData
     {
         private static Dictionary<string,object> _testData;
 
+        /// <summary>
+        /// Get test data for the current test script.
+        /// </summary>
+        /// <typeparam name="T">Generic type of the expected test data to be loaded.</typeparam>
+        /// <param name="context"></param>
+        /// <returns>Test data instance of the current test script.</returns>
         public static T GetTestData<T>(this TestContext context)
         {
             string testCaseID = context.Test.Properties["CaseID"].ToString();

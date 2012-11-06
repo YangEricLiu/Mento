@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 
-namespace Mento.TestApi.WebUserInterface.Controls
+namespace Mento.TestApi.WebUserInterface
 {
     public class Navigator : JazzControlBase
     {

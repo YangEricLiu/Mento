@@ -23,7 +23,16 @@ namespace Mento.TestApi.WebUserInterface
 
             for (var i = 0; i < pathLocators.Length; i++)
             {
-                IWebElement maskElement = ElementLocator.FindElement(MaskLocator);
+                IWebElement maskElement = null;
+
+                try
+                {
+                    maskElement = ElementLocator.FindElement(MaskLocator);
+                }
+                catch
+                { 
+                }
+
                 if (maskElement != null && !maskElement.GetCssValue("display").Equals("none",StringComparison.OrdinalIgnoreCase))
                 {
                     ElementLocator.WaitForElementToDisappear(MaskLocator, 30);

@@ -43,7 +43,13 @@ namespace Mento.TestApi.WebUserInterface
         public static void OpenJazz()
         {
             _driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value); 
+
             Driver.Navigate().GoToUrl(ExecutionContext.Url);
+
+            if (ExecutionContext.Browser == Browser.IE)
+            {
+                ClickHttpsSecurityWarning();
+            }
         }
 
         /// <summary>
@@ -259,5 +265,30 @@ namespace Mento.TestApi.WebUserInterface
                 return true;
             }
         }*/
+
+        private static void ClickHttpsSecurityWarning()
+        {
+            //IJavaScriptExecutor jsExecutor = (IJavaScriptExecutor)Driver;
+
+            //jsExecutor.ExecuteScript("document.getElementById('overridelink').click()");
+
+            //Driver.FindElement(By.XPath(String.Format("a[href=\"{0}\"]", ExecutionContext.Url)));
+            //IWebElement overrideLink = Driver.FindElement(By.Id("overridelink"));
+            //string pageTitle = Driver.Title;
+
+            //if (pageTitle.StartsWith("Certificate Error") && overrideLink != null)
+            //{
+            //    overrideLink.Click();
+            //}
+
+            //solution from http://stackoverflow.com/questions/7338128/regd-webdriver-on-secure-certificate
+            //webDriver.navigate().to(javascript:document.getElementById('overridelink').click());
+
+            string pageTitle = Driver.Title;
+            if (pageTitle.StartsWith("Certificate Error"))
+            {
+                Driver.Navigate().GoToUrl("javascript:document.getElementById('overridelink').click()");
+            }
+        }
     }
 }

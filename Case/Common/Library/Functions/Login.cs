@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.TestData.ClientAccess;
+using OpenQA.Selenium;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -27,9 +28,17 @@ namespace Mento.ScriptCommon.Library.Functions
             UserNameField.FillIn(ElementKey.LoginName, loginData.UserName);
             PasswordField.FillIn(ElementKey.LoginPassword, loginData.Password);
 
+            //ElementLocator.
+
+
             var ButtonSubmit = ElementLocator.FindElement(ElementDictionary[ElementKey.LoginSubmit]);
 
             ButtonSubmit.Submit();
+            //ElementLocator.Driver.FindElement(By.Id("txtPassword")).SendKeys("\n");
+            
+
+            ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 150);
+            ElementLocator.WaitForElementToDisappear(new Locator("mainLoadingMask", ByType.ID), 30);
         }
 
         /// <summary>
@@ -38,15 +47,15 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void Login()
         {
-            TextField UserNameField = ControlAccess.GetControl<TextField>();
-            TextField PasswordField = ControlAccess.GetControl<TextField>();
+            //TextField UserNameField = ControlAccess.GetControl<TextField>();
+            //TextField PasswordField = ControlAccess.GetControl<TextField>();
 
-            UserNameField.FillIn(ElementKey.LoginName, "demo");
-            PasswordField.FillIn(ElementKey.LoginPassword, "password");
+            //UserNameField.FillIn(ElementKey.LoginName, "demo");
+            //PasswordField.FillIn(ElementKey.LoginPassword, "password");
 
-            var ButtonSubmit = ElementLocator.FindElement(ElementDictionary[ElementKey.LoginSubmit]);
+            //var ButtonSubmit = ElementLocator.FindElement(ElementDictionary[ElementKey.LoginSubmit]);
 
-            ButtonSubmit.Submit();
+            //ButtonSubmit.Submit();
 
             //2012-11-05
             //test in cn proxy schneider intranet
@@ -58,8 +67,13 @@ namespace Mento.ScriptCommon.Library.Functions
             //Pause 2.5 minutes to let ext render Jazz layout
 
             //ElementLocator.Pause(150000);
-            ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 150);
-            ElementLocator.WaitForElementToDisappear(new Locator("mainLoadingMask", ByType.ID), 30);
+
+            string defaultUserName = "demo";
+            string defaultPassword = "password";
+
+            var loginData = new LoginInputData() { UserName = defaultUserName, Password = defaultPassword };
+
+            this.Login(loginData);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using NUnit.Framework;
+//using NUnit.Framework;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
@@ -173,10 +173,10 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             FocusOnHierarchyNode(treeNodeName);
 
-            Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyName), input.Name);
-            Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyCode), input.Code);
-            comboBoxInstance.GetValue(ElementKey.HierarchyType);
-            Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyComment), input.Comment);
+            //Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyName), input.Name);
+            //Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyCode), input.Code);
+            //comboBoxInstance.GetValue(ElementKey.HierarchyType);
+            //Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyComment), input.Comment);
         }
     }
 }

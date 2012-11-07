@@ -51,16 +51,8 @@ namespace Mento.TestApi.WebUserInterface
 
         private static void Maxmize(IWebDriver driver)
         {
-            //ITakesScreenshot shot = (ITakesScreenshot)driver;
-            //var s = shot.GetScreenshot();
-            //s.SaveAsFile();
-
-            driver.Manage().Window.Position = new Point(0,0);
+            //driver.Manage().Window.Position = new Point(0,0);
             driver.Manage().Window.Maximize();
-
-            //IJavaScriptExecutor jsExecutor = (IJavaScriptExecutor)driver;
-            //Selenium.ISelenium
-            //jsExecutor.ExecuteScript();
         }
 
         private static string GetFirefoxLocation()

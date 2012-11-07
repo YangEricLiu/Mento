@@ -52,6 +52,7 @@ namespace Mento.Script.Administration.Calendar
         //[TestCase]
         public void LoginJazzAndNavigage()
         {
+
             FunctionWrapper.Login.Login();
 
             var navigator = ControlAccess.GetControl<Navigator>();

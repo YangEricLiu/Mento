@@ -52,5 +52,22 @@ namespace Mento.Script.Administration.Hierarchy
             Assert.IsTrue(FunctionWrapper.Hierarchy.IsNodesChildParent(hierarchyData.InputData.Name, "Schneider"));
         }
 
+        #region private region
+
+        #endregion
+
+        //Suite common
+        public void A()
+        {
+            //70 10,20
+        }
+
+
+        //Feature common
+        //Module common
+        private void A10()
+        {
+ 
+        }
     }
 }

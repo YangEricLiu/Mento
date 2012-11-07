@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NUnit.Framework;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
@@ -10,7 +11,7 @@ using Mento.ScriptCommon.TestData.Administration.Hierarchy.HierarchyManagement;
 namespace Mento.ScriptCommon.Library.Functions
 {
     /// <summary>
-    /// The business logic implement of hierarchy setting
+    /// The business logic implement of hierarchy setting.
     /// </summary>
     public class Hierarchy
     {
@@ -163,21 +164,19 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Expand the hierarchy  node
+        /// Judge whether the hieraychy node is correct on view status
         /// </summary>
         /// <param name = "treeNodeName">Hierarchy node name which will be expanded</param>
+        /// <param name = "input">Test data</param>
         /// <returns></returns>
-        public Boolean IsNodeValueCorrect(string treeNodeName, HierarchyInputData input)
+        public void IsNodeValueCorrect(string treeNodeName, HierarchyInputData input)
         {
             FocusOnHierarchyNode(treeNodeName);
 
-            textFieldInstance.GetValue(ElementKey.HierarchyName);
-            textFieldInstance.GetValue(ElementKey.HierarchyCode);
+            Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyName), input.Name);
+            Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyCode), input.Code);
             comboBoxInstance.GetValue(ElementKey.HierarchyType);
-            textFieldInstance.GetValue(ElementKey.HierarchyComment);
-            textFieldInstance.FillIn(ElementKey.HierarchyComment, input.Comment);
-
-            return true;
+            Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyComment), input.Comment);
         }
     }
 }

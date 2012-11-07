@@ -7,10 +7,18 @@ using Mento.ScriptCommon.TestData.ClientAccess;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
+    /// <summary>
+    /// The business logic implement of Login.
+    /// </summary>
     public class LoginFunction
     {
         private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
 
+        /// <summary>
+        /// Login Jazz with test data
+        /// </summary>
+        /// <param name="loginData">login test data</param>
+        /// <returns></returns>
         public void Login(LoginInputData loginData)
         {
             TextField UserNameField = ControlAccess.GetControl<TextField>();
@@ -24,6 +32,10 @@ namespace Mento.ScriptCommon.Library.Functions
             ButtonSubmit.Submit();
         }
 
+        /// <summary>
+        /// Login Jazz with default data
+        /// </summary>
+        /// <returns></returns>
         public void Login()
         {
             TextField UserNameField = ControlAccess.GetControl<TextField>();
@@ -43,7 +55,7 @@ namespace Mento.ScriptCommon.Library.Functions
             //load time: 66s, render time: 26s, total: 92s
             //load time: 72s, render time: 45s, total: 117s
 
-            //pause 2.5 minutes to let ext render Jazz layout
+            //Pause 2.5 minutes to let ext render Jazz layout
 
             //ElementLocator.Pause(150000);
             ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 150);

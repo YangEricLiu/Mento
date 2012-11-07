@@ -5,9 +5,15 @@ using System.Text;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
+    /// <summary>
+    /// Reference to Jazz function attitude.
+    /// </summary
     public static class FunctionWrapper
     {
         private static Hierarchy _hierarchy;
+        /// <summary>
+        /// Hierarchy function property
+        /// </summary>
         public static Hierarchy Hierarchy
         {
             get
@@ -21,6 +27,9 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         private static Tag _tag;
+        /// <summary>
+        /// Tag function property
+        /// </summary>
         public static Tag Tag
         {
             get
@@ -34,6 +43,9 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         private static LoginFunction _login;
+        /// <summary>
+        /// Login function property
+        /// </summary>
         public static LoginFunction Login
         {
             get

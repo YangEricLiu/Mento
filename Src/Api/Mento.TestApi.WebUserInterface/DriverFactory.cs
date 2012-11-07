@@ -14,6 +14,9 @@ using System.Drawing;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Get the instance of browser when execuation.
+    /// </summary>
     public class DriverFactory
     {
         /// <summary>

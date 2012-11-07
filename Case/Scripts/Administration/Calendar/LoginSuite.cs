@@ -35,8 +35,7 @@ namespace Mento.Script.Administration.Calendar
         public void LoginToJazz(LoginData loginData)
         {
             //throw new Exception(loginData.ToString());
-
-
+            
             //Threading.Thread.Sleep(10000);
 
             FunctionWrapper.Login.Login(loginData.InputData);

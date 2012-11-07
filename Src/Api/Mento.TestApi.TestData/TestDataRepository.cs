@@ -12,6 +12,9 @@ using System.Text.RegularExpressions;
 
 namespace Mento.TestApi.TestData
 {
+    /// <summary>
+    /// Test data repository which provides methods for loading test data
+    /// </summary>
     internal static class TestDataRepository
     {
         private const string DATAFOLDERNAME = "Data";

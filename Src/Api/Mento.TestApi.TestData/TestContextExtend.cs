@@ -6,6 +6,9 @@ using NUnit.Framework;
 
 namespace Mento.TestApi.TestData
 {
+    /// <summary>
+    /// Extending class for <see cref="TestContext" />
+    /// </summary>
     public static class TestContextExtend
     {
         private static Dictionary<string,object> _testData;

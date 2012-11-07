@@ -64,7 +64,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Administration\Calendar\ExampleSuite\" />
     <Folder Include="Customer\" />
     <Folder Include="EnergyView\" />
     <Folder Include="Information\" />

@@ -6,10 +6,17 @@ using OpenQA.Selenium;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Navigator control, able to navigate to a <see cref="NavigationTarget" /> item.
+    /// </summary>
     public class Navigator : JazzControlBase
     {
         private static Locator MaskLocator = new Locator("mainLoadingMask", ByType.ID);
 
+        /// <summary>
+        /// Navigate to a specified target
+        /// </summary>
+        /// <param name="target">The specified target</param>
         public void NavigateToTarget(NavigationTarget target)
         {
             Locator[] pathLocators = this.GetParentPathLocators(target);
@@ -31,6 +38,11 @@ namespace Mento.TestApi.WebUserInterface
             }
         }
 
+        /// <summary>
+        /// Get the array of locators on path of navigating to the target navigation item.
+        /// </summary>
+        /// <param name="target">The specified navigation target</param>
+        /// <returns>Array of locators on path of navigating to the target navigation item</returns>
         private Locator[] GetParentPathLocators(NavigationTarget target)
         {
             List<Locator> pathLocators = new List<Locator>();
@@ -115,6 +127,9 @@ namespace Mento.TestApi.WebUserInterface
         }
     }
 
+    /// <summary>
+    /// Navigation target
+    /// </summary>
     public enum NavigationTarget
     {
         HomePage = 1, //header-btn-homepage-btnEl

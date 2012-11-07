@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Constant value for Element Map Key value, which should be sync up with ElementMap XML file.
+    /// </summary>
     public static class ElementKey
     {
         public const string FormulaField = "FormulaField";

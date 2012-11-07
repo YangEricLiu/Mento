@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Enumeration of element location type
+    /// </summary>
     public enum ByType
     {
         ID = 1,

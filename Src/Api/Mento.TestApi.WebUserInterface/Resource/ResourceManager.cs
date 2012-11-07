@@ -10,6 +10,9 @@ using System.Configuration;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Initialized element map dictionary with language package
+    /// </summary>
     public class ResourceManager
     {
         private static Dictionary<string, Locator> _elementDictionary;

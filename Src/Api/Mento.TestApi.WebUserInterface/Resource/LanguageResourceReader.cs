@@ -6,10 +6,13 @@ using System.IO;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Get the key&value from language resource JS file.
+    /// </summary>
     public static class LanguageResourceReader
     {
         /// <summary>
-        ///     Get the key&value from language resource JS file
+        ///     Get the key&value from language resource JS file.
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns>The language key&value dictionary with out JS key replaced</returns>

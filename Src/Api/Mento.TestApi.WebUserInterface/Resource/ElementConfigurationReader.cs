@@ -10,14 +10,11 @@ using System.Configuration;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Get the key&value from element map configuration file
+    /// </summary>
     public static class ElementConfigurationReader
     {
-        /// <summary>
-        ///     Get the key&value from element map configuration file
-        /// </summary>
-        /// <param name="fileName"></param>
-        /// <param name="moduleName"></param>
-        /// <returns>The element dictionary with out JS key replaced</returns>
         private static Dictionary<string, Locator> GetValueFromXML(string fileName, string moduleName)
         {
             XmlDocument doc = new XmlDocument();

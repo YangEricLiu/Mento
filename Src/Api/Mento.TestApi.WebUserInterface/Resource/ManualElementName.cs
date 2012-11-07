@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Mento.TestApi.WebUserInterface
 {
+    /// <summary>
+    /// Constant value for manual variable, which should be sync up with ElementMap XML file 
+    /// </summary>
     public class ManualElementName
     {
         public const string treeNodeName = "treeNodeName";

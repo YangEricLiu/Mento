@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Mento.Framework.Exceptions
 {
+    /// <summary>
+    /// App exception abstract class
+    /// </summary>
     public abstract class AppException
     {
     }

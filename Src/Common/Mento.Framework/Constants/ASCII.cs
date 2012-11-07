@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Mento.Framework.Constants
 {
+    /// <summary>
+    /// ASCII
+    /// </summary>
     public static class ASCII
     {
         /// <summary>

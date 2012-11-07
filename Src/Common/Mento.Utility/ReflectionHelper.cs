@@ -6,6 +6,9 @@ using System.Reflection;
 
 namespace Mento.Utility
 {
+    /// <summary>
+    /// The reflection helper class.
+    /// </summary>
     public static class ReflectionHelper
     {
         public static void SetPrivateFieldValue(object target, Type targetType, string fieldName, object value)

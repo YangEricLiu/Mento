@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Mento.Framework
 {
+    /// <summary>
+    /// Entity base class
+    /// </summary>
     public abstract class EntityBase
     {
         /// <summary>

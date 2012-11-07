@@ -9,6 +9,9 @@ using System.Reflection;
 
 namespace Mento.Framework
 {
+    /// <summary>
+    /// Data access base class
+    /// </summary>
     public abstract class DataAccessBase
     {
         /// <summary>

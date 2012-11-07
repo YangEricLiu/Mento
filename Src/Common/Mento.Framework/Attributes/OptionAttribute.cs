@@ -5,8 +5,14 @@ using System.Text;
 
 namespace Mento.Framework.Attributes
 {
+    /// <summary>
+    /// Summary description for OptionAttribute.
+    /// </summary>
     public class OptionAttribute : Attribute
     {
+        /// <summary>
+        /// Construct a OptionAttribute.
+        /// </summary>
         public OptionAttribute()
         { 
         }

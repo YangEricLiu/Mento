@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Mento.Framework.Execution
 {
+    /// <summary>
+    /// Execution context 
+    /// </summary>
     public static class ExecutionContext
     {
         public static Browser? Browser { get; set; }

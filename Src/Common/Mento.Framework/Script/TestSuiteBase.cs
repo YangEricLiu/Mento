@@ -6,6 +6,9 @@ using Mento.Framework.Execution;
 
 namespace Mento.Framework.Script
 {
+    /// <summary>
+    /// Test suite base abstract class
+    /// </summary>
     public abstract class TestSuiteBase
     {
         static TestSuiteBase()

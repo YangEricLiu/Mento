@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Mento.Framework.Constants
 {
+    /// <summary>
+    /// Configuration Key.
+    /// </summary>
     public static class ConfigurationKey
     {
         public const string MENTO_DATABASE_KEY = "Mento";

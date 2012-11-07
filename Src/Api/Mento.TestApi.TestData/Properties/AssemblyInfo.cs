@@ -1,18 +1,20 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Mento.Framework.Constants;
+using Mento.TestApi.TestData;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Mento.TestApi.TestData")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Mento.TestApi.TestData")]
-[assembly: AssemblyCopyright("Copyright ©  2012")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+[assembly: AssemblyTitle(AssemblyInfo.ASSEMBLYTITLE)]
+[assembly: AssemblyDescription(AssemblyInfo.ASSEMBLYDESCRIPTION)]
+[assembly: AssemblyConfiguration(AssemblyInfo.ASSEMBLYCONFIGURATION)]
+[assembly: AssemblyCompany(Manufacture.COMPANY)]
+[assembly: AssemblyProduct(Manufacture.PRODUCTNAME)]
+[assembly: AssemblyCopyright(Manufacture.COPYRIGHT)]
+[assembly: AssemblyTrademark(Manufacture.TRADEMARK)]
+[assembly: AssemblyCulture(Manufacture.CULTURE)]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -32,5 +34,18 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion(AssemblyInfo.ASSEMBLYVERSION)]
+[assembly: AssemblyFileVersion(AssemblyInfo.ASSEMBLYVERSION)]
+
+namespace Mento.TestApi.TestData
+{
+    internal static class AssemblyInfo
+    {
+        public const string ASSEMBLYTITLE = "Mento.TestApi.TestData";
+        public const string ASSEMBLYDESCRIPTION = "";
+        public const string ASSEMBLYCONFIGURATION = "";
+
+        public const string ASSEMBLYVERSION = Manufacture.PRODUCTVERSION;
+        public const string FILEVERSION = Manufacture.PRODUCTVERSION;
+    }
+}

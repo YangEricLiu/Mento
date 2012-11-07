@@ -38,6 +38,6 @@ namespace Mento.Framework.Constants
         /// <summary>
         /// The product version constant.
         /// </summary>
-        public const string PRODUCTVERSION = "0.1.0.0";
+        public const string PRODUCTVERSION = "0.1.0.1";
     }
 }

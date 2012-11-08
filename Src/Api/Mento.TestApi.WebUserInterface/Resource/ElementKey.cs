@@ -19,6 +19,7 @@ namespace Mento.TestApi.WebUserInterface
         //Login function
         public const string LoginName = "LoginName";
         public const string LoginPassword = "LoginPassword";
+
         public const string InvalidNameInputError = "InvalidNameInputError";
         public const string PopUpMessageBox = "PopUpMessageBox";
         public const string LoginSubmit = "LoginSubmit";

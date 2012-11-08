@@ -13,7 +13,7 @@ namespace Mento.Framework.Script
     {
         static TestSuiteBase()
         {
-            ExecutionContext.Browser = Browser.IE;
+            ExecutionContext.Browser = Browser.Chrome;
 
             ExecutionContext.Language = Language.CN;
 

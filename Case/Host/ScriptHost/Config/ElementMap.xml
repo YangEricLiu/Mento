@@ -10,11 +10,11 @@
   <!--Grid-->
   <add key = "RowCellName" value = "//div[text()='cellName']" type ="Xpath"/>
   <!--Login-->
-  <add key = "LoginName" value = "txtUserName" type = "ID"/>
-  <add key = "LoginPassword" value = "txtPassword" type = "ID"/>
-  <add key="LoginSubmit" value="btnSubmit" type="ID"/>
+  <add key = "LoginName" value="txtUserName" type="ID"/>
+  <add key = "LoginPassword" value="txtPassword" type="ID"/>  
+  <add key = "LoginSubmit" value="btnSubmit" type="ID"/>
   <add key = "PopUpMessageBox" value = "//div[contains(@id,'messagebox')]" type = "Xpath"/>
-  <add key = "InvalidNameInputError" value = "//input[contains(@data-errorqtip,'Common.Label.NameRegexError')]" type = "Xpath"/>
+  <add key = "InvalidNameInputError" value = "//input[contains(@data-errorqtip,'$@Common.Label.NameRegexError')]" type = "Xpath"/>
   <!--Tag Setting-->
   <add key = "FormulaField" value = "Formula" type = "Name"/>
   <!--Hierarchy Setting-->

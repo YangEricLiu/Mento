@@ -290,5 +290,5 @@ namespace Mento.TestApi.WebUserInterface
                 Driver.Navigate().GoToUrl("javascript:document.getElementById('overridelink').click()");
             }
         }
-    }
+    } 
 }

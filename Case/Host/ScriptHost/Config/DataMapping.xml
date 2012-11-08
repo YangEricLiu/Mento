@@ -4,4 +4,5 @@
   <script caseid="TA-M01-C03" testdata="TA-M01-C01"/>
   <script caseid="TA-Example-010" testdata="TA-Example-009"/>
   <script caseid="TA-Example-011" testdata="TA-Example-009"/>
+  <script caseid="TC-J1-ShowTime-002" testdata="TC-J1-ShowTime-001"/>  
 </relation>

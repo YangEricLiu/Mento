@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ItemList>
+  <!--Hierarchy Type-->
+  <add key = "Orgnization" value = "组织"/>
+  <add key = "Site" value = "园区"/>
+  <add key = "Building" value = "楼宇"/>
+  <!--Commodity-->
+  <add key = "Water" value = "自来水"/>
+  <add key = "SoftWater" value = "软水"/>
+  <!--UOM-->
+  <add key = "KG" value = "千克"/>
+  </ItemList>

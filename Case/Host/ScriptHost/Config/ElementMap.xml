@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <WebElement>
+  <!--Common-->
+  <add key = "LoadingMessage" value = "mainLoadingMask" type ="ID"/>
   <!--TreeView-->
   <add key = "TreeNode" value = "//div[text()='treeNodeName']" type ="Xpath"/>
-  <add key = "IsTreeNodeExpand" value = "//div[text()='treeNodeName']/../../self::node()[not(contains(@class, 'x-grid-tree-node-expanded'))]" type ="Xpath"/>
+  <add key = "IsTreeNodeExpand" value = "//div[text()='treeNodeName']/../../self::node()[contains(@class, 'x-grid-tree-node-expanded')]" type ="Xpath"/>
   <!--DimensionTree-->
   <add key = "CheckNodeButton" value = "//div[text()='dimensionNodeName']/input[@class='x-tree-checkbox']" type ="Xpath"/>
   <!--TextField-->
@@ -10,11 +12,11 @@
   <!--Grid-->
   <add key = "RowCellName" value = "//div[text()='cellName']" type ="Xpath"/>
   <!--Login-->
-  <add key = "LoginName" value="txtUserName" type="ID"/>
-  <add key = "LoginPassword" value="txtPassword" type="ID"/>  
-  <add key = "LoginSubmit" value="btnSubmit" type="ID"/>
+  <add key = "LoginName" value = "txtUserName" type = "ID"/>
+  <add key = "LoginPassword" value = "txtPassword" type = "ID"/>
+  <add key = "LoginSubmit" value = "btnSubmit" type="ID"/>
   <add key = "PopUpMessageBox" value = "//div[contains(@id,'messagebox')]" type = "Xpath"/>
-  <add key = "InvalidNameInputError" value = "//input[contains(@data-errorqtip,'$@Common.Label.NameRegexError')]" type = "Xpath"/>
+  <add key = "InvalidNameInputError" value = "//input[contains(@data-errorqtip,'Common.Label.NameRegexError')]" type = "Xpath"/>
   <!--Tag Setting-->
   <add key = "FormulaField" value = "Formula" type = "Name"/>
   <!--Hierarchy Setting-->
@@ -26,11 +28,16 @@
   <add key = "Site" value = "//li[text()='Common.Glossary.Site']" type = "Xpath"/>
   <add key = "Building" value = "//li[text()='Common.Glossary.Building']" type = "Xpath"/>
   <add key = "HierarchyComment" value = "Comment" type = "Name"/>
-  <add key = "SaveButton" value = "//span[text()='Common.Button.Save']" type = "Xpath"/>
-  <add key = "CancelButton" value = "//span[text()='Common.Button.Cancel']" type = "Xpath"/>
-  <add key = "DeleteButton" value = "//span[text()='Common.Button.Delete']" type = "Xpath"/>
-  <add key = "UpdateButton" value = "//span[text()='Common.Operation.Update']" type = "Xpath"/>
-  <add key = "CreateOKText" value = "//div[text()='Common.Label.CreateOK']" type = "Xpath"/>
-  <add key = "OKButton" value = "//div[text()='Common.Label.OKButton']" type = "Xpath"/>
-  <add key = "FormulaTab" value = "//div[text()='?']" type = "Xpath"/>
+  <add key = "HierarchySaveButton" value = "//span[text()='Common.Button.Save']" type = "Xpath"/>
+  <add key = "HierarchyCancelButton" value = "//span[text()='Common.Button.Cancel']" type = "Xpath"/>
+  <add key = "HierarchyDeleteButton" value = "//span[text()='Common.Button.Delete']" type = "Xpath"/>
+  <add key = "HierarchyUpdateButton" value = "//span[text()='Common.Operation.Update']" type = "Xpath"/>
+  <add key = "HierarchyCreateOKText" value = "//div[text()='Common.Label.CreateOK']" type = "Xpath"/>
+  <add key = "HirarchyOKButton" value = "//span[text()='Common.Label.OKButton']" type = "Xpath"/>
+  <add key = "TestButton" value = "st-hier-tree-add-btnEl" type = "ID"/>
+  <!--Tag-->
+  <add key = "FormulaTab" value = "//span[text()='计算公式']" type = "Xpath"/>
+  <add key = "FormulaUpdateButton" value = "//div[@id='st-vtag-formula']//span[text()='Common.Operation.Update']" type = "Xpath"/>
+  <add key = "FormulaSaveButton" value = "//div[@id='st-vtag-formula']//span[text()='Common.Button.Save']" type = "Xpath"/>
+  <add key = "FormulaTagRow" value = "//div[text()='tagName']" type = "Xpath"/>
 </WebElement>

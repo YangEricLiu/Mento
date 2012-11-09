@@ -11,7 +11,7 @@ namespace Mento.ScriptCommon.Library.Functions
     /// <summary>
     /// The business logic implement of Tag(ptag/vtag/KPI).
     /// </summary>
-    public class Tag
+    public class Formula
     {
         private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
         private Grid tagInstance = ControlAccess.GetControl<Grid>();

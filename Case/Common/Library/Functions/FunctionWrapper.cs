@@ -27,19 +27,19 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
-        private static Tag _tag;
+        private static Formula _formula;
         /// <summary>
         /// Tag function property
         /// </summary>
-        public static Tag Tag
+        public static Formula Formula
         {
             get
             {
-                if (_tag == null)
+                if (_formula == null)
                 {
-                    _tag = new Tag();
+                    _formula = new Formula();
                 }
-                return _tag;
+                return _formula;
             }
         }
 
@@ -56,6 +56,38 @@ namespace Mento.ScriptCommon.Library.Functions
                     _login = new LoginFunction();
                 }
                 return _login;
+            }
+        }
+
+        private static Ptag _ptag;
+        /// <summary>
+        /// Ptag function property
+        /// </summary>
+        public static Ptag Ptag
+        {
+            get
+            {
+                if (_ptag == null)
+                {
+                    _ptag = new Ptag();
+                }
+                return _ptag;
+            }
+        }
+
+        private static Vtag _vtag;
+        /// <summary>
+        /// Ptag function property
+        /// </summary>
+        public static Vtag Vtag
+        {
+            get
+            {
+                if (_vtag == null)
+                {
+                    _vtag = new Vtag();
+                }
+                return _vtag;
             }
         }
 

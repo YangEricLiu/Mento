@@ -20,7 +20,7 @@ namespace Mento.TestApi.WebUserInterface
         /// <returns></returns>
         public void DragTag(string tagName)
         {
-            var tagLocator = this.GetVariableLocator(ElementKey.TagNameRow, ManualElementName.tagName, tagName);
+            var tagLocator = this.GetVariableLocator(ElementKey.FormulaTagRow, ManualElementName.tagName, tagName);
             var formulaLocator = ElementDictionary[ElementKey.FormulaField];
 
             IWebElement tagElement = ElementLocator.FindElement(tagLocator);

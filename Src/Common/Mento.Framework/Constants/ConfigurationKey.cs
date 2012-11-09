@@ -27,5 +27,8 @@ namespace Mento.Framework.Constants
         public const string LANGUAGE_EN_PATH = "languageResourcePath_EN";
 
         public const string FIREFOX_LOCATION = "firefoxLocation";
+
+        public const string COMBOPATH = @"D:\Schneider\Mento\Trunk\Case\Host\ScriptHost\Config\ComboBoxItemList-CN.xml";
+        public const string COMBOMODULE = "ItemList";
      }
 }

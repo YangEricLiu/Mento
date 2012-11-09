@@ -29,5 +29,15 @@ namespace Mento.Framework.Constants
         /// .
         /// </summary>
         public static string DOT = ".";
+
+        /// <summary>
+        /// $#
+        /// </summary>
+        public static string MANUALPREFIX = "$#";
+
+        /// <summary>
+        /// $@
+        /// </summary>
+        public static string LANGPREFIX = "$@";
     }
 }

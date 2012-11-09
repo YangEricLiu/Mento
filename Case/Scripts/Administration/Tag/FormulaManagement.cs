@@ -30,7 +30,7 @@ namespace Mento.Script.Administration.Tag
         [SetUp]
         public void CaseSetUp()
         {
-            FunctionWrapper.Tag.NavigatorToVtagSetting();
+            FunctionWrapper.Formula.NavigatorToVtagSetting();
             ElementLocator.Pause(2000);
         }
 
@@ -47,18 +47,18 @@ namespace Mento.Script.Administration.Tag
             string vtagName = "AutoVtag001";
             string expectedFormula = "{vtag.AZuoKongtiaoDian}+{vtag.AZuoDian}";
 
-            FunctionWrapper.Tag.PrepareToAddFormula(vtagName);
+            FunctionWrapper.Formula.PrepareToAddFormula(vtagName);
 
-            FunctionWrapper.Tag.AppendFormulaField("{vtag.AZuoDian}");
-            FunctionWrapper.Tag.AppendFormulaField("+");
-            FunctionWrapper.Tag.DragTagToFormula("A座空调用电");
+            FunctionWrapper.Formula.AppendFormulaField("{vtag.AZuoDian}");
+            FunctionWrapper.Formula.AppendFormulaField("+");
+            FunctionWrapper.Formula.DragTagToFormula("A座空调用电");
 
-            FunctionWrapper.Tag.ClickSaveFormulaButton();
+            FunctionWrapper.Formula.ClickSaveFormulaButton();
 
             FunctionWrapper.WaitForLoadingDisappeared(2000);
             ElementLocator.Pause(500);
 
-            Assert.AreEqual(FunctionWrapper.Tag.GetFormulaValue(), expectedFormula);
+            Assert.AreEqual(FunctionWrapper.Formula.GetFormulaValue(), expectedFormula);
 
         }
     }

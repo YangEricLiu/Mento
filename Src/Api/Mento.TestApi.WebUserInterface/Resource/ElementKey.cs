@@ -10,6 +10,8 @@ namespace Mento.TestApi.WebUserInterface
     /// </summary>
     public static class ElementKey
     {
+        public const string LoadingMessage = "LoadingMessage";
+        
         public const string FormulaField = "FormulaField";
         public const string TagNameRow = "TagNameRow";
 
@@ -34,14 +36,17 @@ namespace Mento.TestApi.WebUserInterface
         public const string HierarchyComment = "HierarchyComment";
 
         public const string CheckNodeButton = "CheckNodeButton";
-        public const string SaveButton = "SaveButton";
-        public const string CancelButton = "CancelButton";
-        public const string UpdateButton = "UpdateButton";
-        public const string CreateOKText = "CreateOKText";
-        public const string OKButton = "OKButton";
-        public const string FormulaTab = "FormulaTab";
+        public const string HierarchySaveButton = "HierarchySaveButton";
+        public const string HierarchyCancelButton = "HierarchyCancelButton";
+        public const string HierarchyUpdateButton = "HierarchyUpdateButton";
+        public const string HierarchyCreateOKText = "HierarchyCreateOKText";
+        public const string HierarchyOKButton = "HierarchyOKButton";
 
+        public const string FormulaTab = "FormulaTab";
         public const string RowCellName = "RowCellName";
+        public const string FormulaUpdateButton = "FormulaUpdateButton";
+        public const string FormulaSaveButton = "FormulaSaveButton";
+        public const string FormulaTagRow = "FormulaTagRow";
         public const string TestButton = "TestButton";
     }
 }

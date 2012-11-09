@@ -35,7 +35,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
             ButtonSubmit.Submit();
             //ElementLocator.Driver.FindElement(By.Id("txtPassword")).SendKeys("\n");
-            
+
+            ElementLocator.Pause(5000);
 
             ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 150);
             ElementLocator.WaitForElementToDisappear(new Locator("mainLoadingMask", ByType.ID), 30);

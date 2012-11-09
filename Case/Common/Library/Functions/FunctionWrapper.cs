@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Mento.TestApi.WebUserInterface;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -56,6 +57,18 @@ namespace Mento.ScriptCommon.Library.Functions
                 }
                 return _login;
             }
+        }
+
+        /// <summary>
+        /// After click save button, waiting for add successful message box pop up
+        /// </summary>
+        /// <param name="timeout">Waiting time</param>
+        /// <returns></returns>
+        public static void WaitForLoadingDisappeared(int timeOut)
+        {
+            var locator = new Locator("mainLoadingMask", ByType.ID);
+
+            ElementLocator.WaitForElementToDisappear(locator, timeOut);
         }
 
     }

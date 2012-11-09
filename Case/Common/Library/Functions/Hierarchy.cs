@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-//using NUnit.Framework;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
@@ -65,7 +64,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickSaveButton()
         {
-            var locator = ElementDictionary[ElementKey.SaveButton];
+            var locator = ElementDictionary[ElementKey.HierarchySaveButton];
 
             ElementLocator.FindElement(locator).Click();
         }
@@ -77,7 +76,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickCancelButton()
         {
-            var locator = ElementDictionary[ElementKey.CancelButton];
+            var locator = ElementDictionary[ElementKey.HierarchyCancelButton];
 
             ElementLocator.FindElement(locator).Click();
         }
@@ -85,10 +84,10 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Input name, code type and comments of the new hierarchy node 
         /// </summary>
-        /// <param name="treeNodeName">Hierarchy node name</param>
+        /// <param name="treeNodeName">Parent hierarchy node name</param>
         /// <param name="input">Test data</param>
         /// <returns></returns>
-        public void AddHierarchyNode(string treeNodeName, HierarchyInputData input)
+        public void FillInHierarchyNode(string treeNodeName, HierarchyInputData input)
         {
             PrepareToAddNode(treeNodeName);
 
@@ -100,13 +99,54 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Input name of the new hierarchy node 
+        /// </summary>
+        /// <param name="name">Hierarchy node name</param>
+        /// <returns></returns>
+        public void FillInName(string name)
+        {
+            textFieldInstance.FillIn(ElementKey.HierarchyName, name);
+        }
+
+        /// <summary>
+        /// Input code of the new hierarchy node 
+        /// </summary>
+        /// <param name="code">Hierarchy node code</param>
+        /// <returns></returns>
+        public void FillInCode(string code)
+        {
+            textFieldInstance.FillIn(ElementKey.HierarchyCode, code);
+        }
+
+        /// <summary>
+        /// Input type of the new hierarchy node 
+        /// </summary>
+        /// <param name="type">Hierarchy node type</param>
+        /// <returns></returns>
+        public void FillInType(string type)
+        {
+            comboBoxInstance.DisplayItems(ElementKey.HierarchyType);
+            comboBoxInstance.SelectItem(type);
+        }
+
+        /// <summary>
+        /// Input comment of the new hierarchy node 
+        /// </summary>
+        /// <param name="code">Hierarchy comment code</param>
+        /// <returns></returns>
+        public void FillInComment(string comment)
+        {
+            textFieldInstance.FillIn(ElementKey.HierarchyComment, comment);
+        }
+
+        /// <summary>
         /// After click save button, waiting for add successful message box pop up
         /// </summary>
         /// <param name="timeout">Waiting time</param>
         /// <returns></returns>
         public void WaitForCreateOKDisplay(int timeout)
         { 
-            var locator = ElementDictionary[ElementKey.CreateOKText];
+            var locator = ElementDictionary[ElementKey.HierarchyCreateOKText];
 
             ElementLocator.WaitForElement(locator, timeout);
         }
@@ -117,7 +157,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ConfirmCreateOKMagBox()
         {
-            var locator = ElementDictionary[ElementKey.OKButton];
+            var locator = ElementDictionary[ElementKey.HierarchyOKButton];
 
             ElementLocator.FindElement(locator).Click();
         }
@@ -164,19 +204,53 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Judge whether the hieraychy node is correct on view status
+        /// Get the hierarchy type expected value, for language sencitive
         /// </summary>
-        /// <param name = "treeNodeName">Hierarchy node name which will be expanded</param>
-        /// <param name = "input">Test data</param>
-        /// <returns></returns>
-        public void IsNodeValueCorrect(string treeNodeName, HierarchyInputData input)
+        /// <param name = "itemKey">Hierarchy type key</param>
+        /// <returns>Key value</returns>
+        public string GetTypeExpectedValue(string itemKey)
         {
-            FocusOnHierarchyNode(treeNodeName);
+            return comboBoxInstance.GetItemTypeLangValue(itemKey);
+        }
 
-            //Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyName), input.Name);
-            //Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyCode), input.Code);
-            //comboBoxInstance.GetValue(ElementKey.HierarchyType);
-            //Assert.AreEqual(textFieldInstance.GetValue(ElementKey.HierarchyComment), input.Comment);
+        /// <summary>
+        /// Get the hierarchy code expected value
+        /// </summary>
+        /// <param name = "itemKey">Hierarchy name key</param>
+        /// <returns>Name value</returns>
+        public string GetNameValue()
+        {
+            return comboBoxInstance.GetValue(ElementKey.HierarchyName);
+        }
+
+        /// <summary>
+        /// Get the hierarchy code expected value
+        /// </summary>
+        /// <param name = "itemKey">Hierarchy code key</param>
+        /// <returns>Code value</returns>
+        public string GetCodeValue()
+        {
+            return comboBoxInstance.GetValue(ElementKey.HierarchyCode);
+        }
+
+        /// <summary>
+        /// Get the hierarchy code expected value
+        /// </summary>
+        /// <param name = "itemKey">Hierarchy code key</param>
+        /// <returns>Code value</returns>
+        public string GetTypeValue()
+        {
+            return comboBoxInstance.GetValue(ElementKey.HierarchyType);
+        }
+
+        /// <summary>
+        /// Get the hierarchy comment expected value
+        /// </summary>
+        /// <param name = "itemKey">Hierarchy comment key</param>
+        /// <returns>Comment value</returns>
+        public string GetCommentValue()
+        {
+            return comboBoxInstance.GetValue(ElementKey.HierarchyComment);
         }
     }
 }

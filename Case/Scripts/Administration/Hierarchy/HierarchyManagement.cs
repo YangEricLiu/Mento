@@ -15,7 +15,6 @@ using Mento.Framework.Script;
 using Mento.ScriptCommon.TestData.Administration.Hierarchy.HierarchyManagement;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
-using NUnit.Framework;
 
 
 namespace Mento.Script.Administration.Hierarchy
@@ -23,25 +22,38 @@ namespace Mento.Script.Administration.Hierarchy
     [TestFixture]
     public class HierarchyManagement : TestSuiteBase
     {
+        [TestFixtureSetUp]
+        public void CaseFixtureSetUp()
+        {
+            ElementLocator.OpenJazz();
+            FunctionWrapper.Login.Login();
+        }
+
+        [TestFixtureTearDown]
+        public void CaseFixtureTearDown()
+        {
+            ElementLocator.QuitJazz();
+        }
+
         [SetUp]
         public void CaseSetUp()
         {
-            //OpenJazz()
-            //Login()
-            //NavigateToHierarchySetting()
+            FunctionWrapper.Hierarchy.NavigatorToHSetting();
+            ElementLocator.Pause(2000);
         }
 
         [TearDown]
         public void CaseTearDown()
         {
+            //
         }
 
         [Test]
         [CaseID("TA-Hierarchy-001"), CreateTime("2012-10-30"), Owner("Emma")]
         [MultipleTestDataSource(typeof(AddHierarchyData[]), typeof(HierarchyManagement), "TA-Hierarchy-001")]
-        public void AddOrgnizationNode(AddHierarchyData hierarchyData)
+        public void AddOrgnizationNodeTest(AddHierarchyData input)
         {
-            FunctionWrapper.Hierarchy.AddHierarchyNode("Schneider", hierarchyData.InputData);
+            FunctionWrapper.Hierarchy.FillInHierarchyNode("Schneider", input.InputData);
             FunctionWrapper.Hierarchy.ClickSaveButton();
             FunctionWrapper.Hierarchy.WaitForCreateOKDisplay(120);
 
@@ -49,25 +61,12 @@ namespace Mento.Script.Administration.Hierarchy
 
             FunctionWrapper.Hierarchy.ConfirmCreateOKMagBox();
 
-            Assert.IsTrue(FunctionWrapper.Hierarchy.IsNodesChildParent(hierarchyData.InputData.Name, "Schneider"));
+            Assert.IsTrue(FunctionWrapper.Hierarchy.IsNodesChildParent(input.InputData.Name, "Schneider"));
+
+            FunctionWrapper.Hierarchy.FocusOnHierarchyNode(input.InputData.Name);
+
+            Assert.AreEqual(FunctionWrapper.Hierarchy.GetTypeExpectedValue(input.InputData.Type), FunctionWrapper.Hierarchy.GetTypeValue());
         }
 
-        #region private region
-
-        #endregion
-
-        //Suite common
-        public void A()
-        {
-            //70 10,20
-        }
-
-
-        //Feature common
-        //Module common
-        private void A10()
-        {
- 
-        }
     }
 }

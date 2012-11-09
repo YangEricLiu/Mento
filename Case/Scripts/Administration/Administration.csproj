@@ -62,9 +62,9 @@
   <ItemGroup>
     <Compile Include="Calendar\ExampleSuite.cs" />
     <Compile Include="Calendar\LoginSuite.cs" />
-    <Compile Include="Calendar\ShowTimeSuite.cs" />
     <Compile Include="Hierarchy\HierarchyManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tag\FormulaManagement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Factor\" />
@@ -99,6 +99,7 @@
   <ItemGroup>
     <None Include="..\..\Host\ScriptHost\App.config">
       <Link>App.config</Link>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

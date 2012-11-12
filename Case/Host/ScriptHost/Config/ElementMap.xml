@@ -11,6 +11,8 @@
   <add key = "TagNameRow" value = "//div[text()='tagName']" type ="Xpath"/>
   <!--Grid-->
   <add key = "RowCellName" value = "//div[text()='cellName']" type ="Xpath"/>
+  <add key = "RowCheckBox" value = "//div[text()='cellName']/../../td[2]//div[contains(@class, 'x-grid-checkheader')]" type = "Xpath"/>
+  <add key = "IsRowChecked" value = "//div[text()='cellName']/../../td[2]//div[contains(@class, 'x-grid-checkheader-checked')]" type = "Xpath"/>
   <!--Login-->
   <add key = "LoginName" value = "txtUserName" type = "ID"/>
   <add key = "LoginPassword" value = "txtPassword" type = "ID"/>
@@ -40,4 +42,5 @@
   <add key = "FormulaUpdateButton" value = "//div[@id='st-vtag-formula']//span[text()='Common.Operation.Update']" type = "Xpath"/>
   <add key = "FormulaSaveButton" value = "//div[@id='st-vtag-formula']//span[text()='Common.Button.Save']" type = "Xpath"/>
   <add key = "FormulaTagRow" value = "//div[text()='tagName']" type = "Xpath"/>
+  <add key = "AssociateTagButton" value = "st-tagassoc-taggrid-assoc-btnInnerEl" type = "ID"/>
 </WebElement>

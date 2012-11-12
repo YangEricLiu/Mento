@@ -47,6 +47,9 @@ namespace Mento.TestApi.WebUserInterface
         public const string FormulaUpdateButton = "FormulaUpdateButton";
         public const string FormulaSaveButton = "FormulaSaveButton";
         public const string FormulaTagRow = "FormulaTagRow";
+        public const string RowCheckBox = "RowCheckBox";
+        public const string AssociateTagButton = "AssociateTagButton";
+        public const string IsRowChecked = "IsRowChecked";
         public const string TestButton = "TestButton";
     }
 }

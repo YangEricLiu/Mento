@@ -104,5 +104,21 @@
         isLeaf="false"
         isActiveClass="false" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="f27f5b0c-1d47-4527-a568-d237668cd80e"
+        name="EntityStatus"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="e513ac65-d6b6-4976-98d4-43f096adfd62"
+            name="Active" />
+          <enumerationLiteral
+            Id="21b2e280-1d31-424f-b041-2dfb86859285"
+            name="Deleted" />
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
   </packagedElements>
 </package>

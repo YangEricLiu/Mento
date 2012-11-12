@@ -1,21 +1,140 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="e94cb2e5-79d8-4260-9fc4-2424b9551044" name="Entity" linkedPackageId="3a373f31-bda3-49d8-bb9b-ed4993d13313" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="e94cb2e5-79d8-4260-9fc4-2424b9551044" name="Entity" linkedPackageId="3a373f31-bda3-49d8-bb9b-ed4993d13313" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <profileInstances>
-    <packageHasProfileInstances Id="cb999cb3-97b4-4eeb-8393-1680b6ec8674">
-      <profileInstance Id="03b30185-b4bf-4b55-a058-f3decb873db9" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+    <packageHasProfileInstances Id="a60127c9-bb3c-4620-8612-4d7160dfe0f0">
+      <profileInstance Id="5258a7ce-df02-4d21-8071-5fc0b2b98c4e" name="CSharpProfile">
+        <elementDefinition Id="dabde16a-a9d3-40e8-8c1a-86735343c1db" />
       </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="02af5ff2-6256-4c85-a3cf-fbfcb5f8ceb0">
-      <profileInstance Id="d0164389-6279-42ea-9b07-0ee87e2762fc" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      <elementDefinition Id="0a2651e8-2728-41b0-9af1-a5cc098a0406" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0b7acb2f-9b26-49e3-bc3e-f947737ce750" name="PlanEntity" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="79e3896e-6c2b-4547-97d3-562cc553f6f1" />
+        <generalsInternal>
+          <generalization Id="f93cbe2f-ce95-435e-9d11-005059bde7f9" isSubstitutable="false">
+            <classMoniker Id="92884769-5ce4-4794-9f1a-1e1a3a95b5e9" LastKnownName="EntityBase" />
+            <elementDefinition Id="181d6d15-1ce1-4862-a087-73d6f4aab57c" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="e2d0efd1-b417-41dd-ab93-753be5c71e85" name="PlanID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0049edee-7d1b-471d-b16c-23884b60aa54" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8b304b24-f8ea-4d59-845a-ee0f1b2b0ae5" LastKnownName="long" />
+            </type_NamedElement>
+          </property>
+          <property Id="56e90a9d-1adf-442e-a45d-88e6f90b90c6" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="76341003-4b16-4c48-a5bc-821ea0d13889" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e8e61562-f393-4aa6-9bfa-93d51fa818b1" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="47a064a1-e933-4b0f-afae-7d18579b44b0" name="TargetVersion" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="08e8259b-66e9-4708-9561-7505d73d78bf" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8080403c-e49c-4879-b1da-cea7cb39f95b" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="f83ae52f-b1bb-460e-8ec6-c798b9d11190" name="Owner" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="819d916a-2607-4e9d-934e-b14f5645ecc6" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e5de3f34-0fc5-4e24-a2fb-7d60da022acd" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="bcc023fe-80e4-472f-afb2-f1ca1eaa6d91" name="UpdateTime" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="528733a2-a7d0-4954-a59a-af0dfe818011" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3e5d3f11-73c7-495a-8e9d-369493544f6f" LastKnownName="Datetime" />
+            </type_NamedElement>
+          </property>
+          <property Id="ad78d5c8-6bfa-4b6b-9df8-13a98d8d53d7" name="Status" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="e0789aa5-61db-493f-b465-c006b7d8972f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6a58a1ae-d547-41f5-a9fe-80d9cf8736f4" LastKnownName="EntityStatus" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="f62fc971-1604-468a-9180-40fafe36b73e" name="long" isAbstract="false" isLeaf="false" cachedFullName="long">
+        <elementDefinition Id="fe4e8bd0-35e1-42f0-a108-999a0d6e5cd3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="92884769-5ce4-4794-9f1a-1e1a3a95b5e9" name="EntityBase" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c7cebd97-2efb-4d35-90e8-ede4901ce91e" />
+        <ownedAttributesInternal>
+          <property Id="2aae8396-4986-48a1-bdeb-38908edf256f" name="ID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0acdc531-1eb5-4731-93d3-af3aaea42ea2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f62fc971-1604-468a-9180-40fafe36b73e" LastKnownName="long" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="6a58a1ae-d547-41f5-a9fe-80d9cf8736f4" name="EntityStatus" isAbstract="false" isLeaf="false" cachedFullName="MentoModeling::Common::EntityStatus">
+        <elementDefinition Id="f27f5b0c-1d47-4527-a568-d237668cd80e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="3e5d3f11-73c7-495a-8e9d-369493544f6f" name="Datetime" isAbstract="false" isLeaf="false" cachedFullName="Datetime">
+        <elementDefinition Id="cb51d5e2-7eff-4d5c-8e4c-93dbdaa45ccd" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8080403c-e49c-4879-b1da-cea7cb39f95b" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="4640541f-b6d5-41a7-a35b-4fe028618fbe" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8b304b24-f8ea-4d59-845a-ee0f1b2b0ae5" name="long" isAbstract="false" isLeaf="false" cachedFullName="long">
+        <elementDefinition Id="fe4e8bd0-35e1-42f0-a108-999a0d6e5cd3" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e5de3f34-0fc5-4e24-a2fb-7d60da022acd" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="4640541f-b6d5-41a7-a35b-4fe028618fbe" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e8e61562-f393-4aa6-9bfa-93d51fa818b1" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="4640541f-b6d5-41a7-a35b-4fe028618fbe" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
   <package Id="76d10c98-ca04-43e7-8aac-6583cc607f22" name="MentoModeling">
     <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="18087d79-6d19-4c24-a26b-f8a0922090e5">
+        <profileInstance Id="59444d5b-bd90-46f0-956a-8e261e20f905" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="6e7abf78-4599-4ae6-99c0-b4d6679d9100">
+        <profileInstance Id="ff307dd2-1c64-49b2-9141-72fc96249734" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="cb999cb3-97b4-4eeb-8393-1680b6ec8674">
+        <profileInstance Id="03b30185-b4bf-4b55-a058-f3decb873db9" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="02af5ff2-6256-4c85-a3cf-fbfcb5f8ceb0">
+        <profileInstance Id="d0164389-6279-42ea-9b07-0ee87e2762fc" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
   <package Id="3a373f31-bda3-49d8-bb9b-ed4993d13313" name="Business">
     <elementDefinition Id="8d33253b-c633-4b5e-94fb-dc0a8848c9fe" />

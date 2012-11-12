@@ -25,7 +25,7 @@ namespace Mento.Business.Plan.Entity
         /// <summary>
         /// Testing target product version of a plan
         /// </summary>
-        public string Version { get; set; }
+        public string TargetVersion { get; set; }
 
         /// <summary>
         /// Owner of a plan

@@ -2,26 +2,26 @@
 <logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BusinessLogic">
   <logicalClassDesignerModelMoniker Id="0f860cec-4a36-42e4-a78c-7fba58e8ff45" />
   <nestedChildShapes>
-    <classShape Id="79666f82-8639-47f4-9325-09f27827eb53" absoluteBounds="4, 1, 2.375, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
-      <classMoniker Id="1e8787bb-e030-4023-ae78-5946e86ce64c" LastKnownName="BusinessLogicBase" />
-      <nestedChildShapes>
-        <AttributeElementListCompartment Id="1b2fbf76-ce3e-45e5-90c2-8c9c140883ad" absoluteBounds="4.015, 1.3900000000000001, 2.3449999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="f69fc35a-7bd4-4852-9cb9-355fcdade0f9" absoluteBounds="4.015, 1.6011718675494193, 2.3449999999999998, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="48ac4fe1-d5e9-40d3-b201-39dd5ce37589" absoluteBounds="4.125, 2.625, 2.125, 1.3828124701976776" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+    <classShape Id="48ac4fe1-d5e9-40d3-b201-39dd5ce37589" absoluteBounds="2.125, 2.25, 3.625, 1.7031249602635699" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
       <classMoniker Id="e855fee0-b0d4-4ac4-a6ce-2bb804e27421" LastKnownName="PlanBL" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="9fd15c79-859e-4ac2-bf7b-7c728aa5ebf7" absoluteBounds="4.14, 3.015, 2.0949999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="d1ba9e99-8b15-4522-98c9-7a770011b996" absoluteBounds="4.14, 3.2261718675494193, 2.0949999999999998, 0.68164060264825821" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="9fd15c79-859e-4ac2-bf7b-7c728aa5ebf7" absoluteBounds="2.14, 2.64, 3.5949999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="d1ba9e99-8b15-4522-98c9-7a770011b996" absoluteBounds="2.14, 2.8511718675494193, 3.5949999999999998, 1.0019530927141509" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <generalizationConnector edgePoints="[(5.1875 : 2.625); (5.1875 : 1.90234373509884)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
-      <generalizationMoniker Id="824f77bd-10fb-4eca-a0cf-ad3d25b5562e" />
+    <classShape Id="cec18203-3caa-41fb-ae58-4f52d73b888b" absoluteBounds="2.125, 0.625, 3.625, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="3334f90f-af88-4a49-9f04-d81115105b3d" LastKnownName="BusinessLogicBase" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="1e5005ad-7e77-4584-bec3-c9141778a8b4" absoluteBounds="2.14, 1.0150000000000001, 3.5949999999999998, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="0ccd4a7a-1148-4e2e-9b04-c0813219c515" absoluteBounds="2.14, 1.2261718675494193, 3.5949999999999998, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <generalizationConnector edgePoints="[(3.9375 : 2.25); (3.9375 : 1.52734373509884)]" fixedFrom="NotFixed" fixedTo="NotFixed" customColor="113, 111, 110">
+      <generalizationMoniker Id="34210a94-6a3b-4f45-a733-431aecd8e376" />
       <relativeChildShapes />
       <nodes>
         <classShapeMoniker Id="48ac4fe1-d5e9-40d3-b201-39dd5ce37589" />
-        <classShapeMoniker Id="79666f82-8639-47f4-9325-09f27827eb53" />
+        <classShapeMoniker Id="cec18203-3caa-41fb-ae58-4f52d73b888b" />
       </nodes>
     </generalizationConnector>
   </nestedChildShapes>

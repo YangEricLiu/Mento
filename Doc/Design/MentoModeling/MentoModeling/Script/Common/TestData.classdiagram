@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="228d95bf-e7d5-4a83-8681-fb56f7650dcb" name="TestData" linkedPackageId="68cbda50-631b-4a5d-a341-60ee88ab3bf7" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="9e387bf5-ad82-40c2-a51a-cb3959674a5a">
+      <profileInstance Id="7a6b7d9e-2e44-47a1-89cd-e0b9ee883364" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="1a134f45-1091-489b-931b-2af8097047ed">
+      <profileInstance Id="77248b57-f506-44b1-aadc-13af21415715" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <package Id="01c34cca-ff1a-4183-925e-7eee6ba07ef1" name="MentoModeling">
+    <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />
+  </package>
+  <package Id="68cbda50-631b-4a5d-a341-60ee88ab3bf7" name="Script">
+    <elementDefinition Id="12b6c5c6-f268-4319-8fc8-b3a1781a6844" />
+  </package>
+</logicalClassDesignerModel>

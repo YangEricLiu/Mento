@@ -21,7 +21,7 @@ namespace Mento.Business.Plan.DataAccess
 
             Database.AddInParameter(command, "PlanID", DbType.String, entity.PlanID);
             Database.AddInParameter(command, "Name", DbType.String, entity.Name);
-            Database.AddInParameter(command, "Version", DbType.String, entity.Version);
+            Database.AddInParameter(command, "Version", DbType.String, entity.TargetVersion);
             Database.AddInParameter(command, "Owner", DbType.String, entity.Owner);
             Database.AddInParameter(command, "UpdateTime", DbType.DateTime, entity.UpdateTime);
 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="8d33253b-c633-4b5e-94fb-dc0a8848c9fe"
   name="Business" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -411,6 +411,14 @@
               LastKnownName="BusinessLogicBase"
               LastKnownLocation="Business.uml" />
           </generalization>
+          <generalization
+            Id="08731d29-07dc-417b-af06-cd38a2fdf9fb"
+            isSubstitutable="false">
+            <classMoniker
+              Id="29afebd5-c2bc-4a47-81c8-d6f7b0047c2e"
+              LastKnownName="BusinessLogicBase"
+              LastKnownLocation="Common.uml" />
+          </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
           <operation
@@ -421,6 +429,11 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
+            <description>Validation:
+1. Plan name and plan id, not null, satisfy rul
+2. Test suite and test case, existing check
+
+Validation result shoud be output to gui</description>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -431,19 +444,33 @@
                     <literalString
                       Id="e6d8c456-1e62-48cf-92d7-48757c990a18"
                       name="Lower"
-                      value="*" />
+                      value="1" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
                       Id="8e51b0a7-6f93-44ac-abbb-24ffbeaddd13"
                       name="Upper"
-                      value="*" />
+                      value="1" />
                   </upperValueInternal>
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="a6954ab3-7bac-4b63-aea9-4e10bd96e979"
-                      LastKnownName="planEntity"
+                      Id="6ee1aea9-f488-4ef9-ac05-6add7efe3e68"
+                      LastKnownName="bool"
                       LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6975dde5-1021-4fbe-ab8b-bb79c7f2b16a"
+                  name="planFileName"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                      LastKnownName="string"
+                      LastKnownLocation="App.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -475,7 +502,7 @@
           </operation>
           <operation
             Id="b8ce549f-4c4f-4f56-ad6f-675aaa30c6e1"
-            name="View"
+            name="Export"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -488,10 +515,108 @@
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="42001a05-01d0-4139-a89f-eec35fe0f727"
-                      LastKnownName="planID"
+                    <classMoniker
+                      Id="79e3896e-6c2b-4547-97d3-562cc553f6f1"
+                      LastKnownName="PlanEntity"
                       LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8779815c-84ad-4f02-a5ae-7cb298490f65"
+                  name="planID"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                      LastKnownName="string"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6abb2fa2-8110-4ae4-b5c6-d179d89f60ea"
+            name="Export"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3163d7e3-3cc2-4ab4-95f2-1ca1481e9963"
+                  direction="Return">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="650fcc56-fc0c-448c-ba92-25b3a2a04be2"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3b707adb-8cc0-4962-836f-f866a09b6e3c"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="79e3896e-6c2b-4547-97d3-562cc553f6f1"
+                      LastKnownName="PlanEntity"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b59546c5-237f-4f27-ae8c-77a8bd18f9bf"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="02792e3a-48f3-47f2-8415-8809f046255e"
+                  name="planID"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                      LastKnownName="string"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a49fc236-5df5-4846-81da-3933b6a66aba"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="6ee1aea9-f488-4ef9-ac05-6add7efe3e68"
+                      LastKnownName="bool"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="16ae7f0e-8e3a-44a0-85fa-fb4f301a25f2"
+                  name="planFileName"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                      LastKnownName="string"
+                      LastKnownLocation="App.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -509,6 +634,319 @@
       <undefinedType
         Id="42001a05-01d0-4139-a89f-eec35fe0f727"
         name="planID" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="79e3896e-6c2b-4547-97d3-562cc553f6f1"
+        name="PlanEntity"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="181d6d15-1ce1-4862-a087-73d6f4aab57c"
+            isSubstitutable="false">
+            <classMoniker
+              Id="c7cebd97-2efb-4d35-90e8-ede4901ce91e"
+              LastKnownName="EntityBase"
+              LastKnownLocation="Common.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="0049edee-7d1b-471d-b16c-23884b60aa54"
+            name="PlanID"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="fe4e8bd0-35e1-42f0-a108-999a0d6e5cd3"
+                LastKnownName="long"
+                LastKnownLocation="Common.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="76341003-4b16-4c48-a5bc-821ea0d13889"
+            name="Name"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                LastKnownName="string"
+                LastKnownLocation="App.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="08e8259b-66e9-4708-9561-7505d73d78bf"
+            name="TargetVersion"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                LastKnownName="string"
+                LastKnownLocation="App.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="819d916a-2607-4e9d-934e-b14f5645ecc6"
+            name="Owner"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                LastKnownName="string"
+                LastKnownLocation="App.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="528733a2-a7d0-4954-a59a-af0dfe818011"
+            name="UpdateTime"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="cb51d5e2-7eff-4d5c-8e4c-93dbdaa45ccd"
+                LastKnownName="Datetime"
+                LastKnownLocation="Business.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="e0789aa5-61db-493f-b465-c006b7d8972f"
+            name="Status"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="f27f5b0c-1d47-4527-a568-d237668cd80e"
+                LastKnownName="EntityStatus"
+                LastKnownLocation="Common.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="9a5a0d95-456a-4147-b2c5-a06b5bf4681f"
+        name="EntityStatus" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="cb51d5e2-7eff-4d5c-8e4c-93dbdaa45ccd"
+        name="Datetime" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="efe4ee4b-182c-4442-a2a6-780fcd14a1b9"
+        name="PlanDA"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="35f03c95-b650-4cac-83b1-e8df8c1b1346"
+            isSubstitutable="false">
+            <classMoniker
+              Id="97b81f20-0b56-4fcf-8e5f-7d718399860a"
+              LastKnownName="DataAccessBase"
+              LastKnownLocation="Common.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="7bcbd126-2df1-4c9e-a713-5a7e951dddc5"
+            name="Create"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="22f5a414-8496-4520-ae5b-1cf395231e33"
+                  name="entity"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="79e3896e-6c2b-4547-97d3-562cc553f6f1"
+                      LastKnownName="PlanEntity"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0c1969bc-5b4a-4f72-accf-2ef79c73a997"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fe4e8bd0-35e1-42f0-a108-999a0d6e5cd3"
+                      LastKnownName="long"
+                      LastKnownLocation="Common.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e6755fc3-ba06-4462-8de7-af145f257f75"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1d4e606d-e9f7-4e15-9f66-dce3e353c42d"
+                  name="entity"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="79e3896e-6c2b-4547-97d3-562cc553f6f1"
+                      LastKnownName="PlanEntity"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e0e43e2a-6bb0-4b6f-8534-f2096edc8fa5"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="0f317f08-730e-41ae-8f26-d2682d1cf780"
+                      LastKnownName="void"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="839c97b3-e1e1-49bd-aed8-c20f19c991f6"
+            name="Retrieve"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ee46aabf-64a4-41ab-80d1-78ef50e170db"
+                  name="planID"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
+                      LastKnownName="string"
+                      LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d7f42e37-c019-47e1-a90d-d875b9735a04"
+                  direction="Return">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="79e3896e-6c2b-4547-97d3-562cc553f6f1"
+                      LastKnownName="PlanEntity"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="43220be9-fc9f-4e21-94fe-bbda88e01145"
+            name="Retrieve"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7123b445-8c2b-44d2-abe9-a735bd338b8d"
+                  direction="Return">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="991b2996-a9c1-4383-8cfa-68b9d0288c2d"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ee8f64be-e5c0-4cbe-b3f5-6c6e76f5907f"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="79e3896e-6c2b-4547-97d3-562cc553f6f1"
+                      LastKnownName="PlanEntity"
+                      LastKnownLocation="Business.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="76cb5d51-fe9e-4394-ab45-7c19d3068586"
+        name="lonmg" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="6ee1aea9-f488-4ef9-ac05-6add7efe3e68"
+        name="bool" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

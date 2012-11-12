@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="0e2d37f3-68ea-41af-8476-be66b5506966" name="Library" linkedPackageId="3d6d946b-60ca-406b-a768-cdd06420811e" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="05fca9b0-a32b-4256-b7d5-bd1f056cdbff">
+      <profileInstance Id="54fd25ce-54e2-4390-9561-e170475a8ff3" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="8f2fde84-105a-46db-9e2d-d45a63b51418">
+      <profileInstance Id="bd740601-b452-411c-a8fb-cc69db7d8ca4" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <package Id="c979736e-675f-4db5-925c-8cfa883b6176" name="MentoModeling">
+    <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />
+  </package>
+  <package Id="3d6d946b-60ca-406b-a768-cdd06420811e" name="Script">
+    <elementDefinition Id="12b6c5c6-f268-4319-8fc8-b3a1781a6844" />
+  </package>
+</logicalClassDesignerModel>

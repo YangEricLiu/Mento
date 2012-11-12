@@ -77,19 +77,19 @@
       <SubType>Content</SubType>
       <DependentUpon>App\Controller.classdiagram</DependentUpon>
     </Content>
-    <Content Include="Business\Case\BusinessLogic.classdiagram">
+    <Content Include="Business\Script\BusinessLogic.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Business\Case\BusinessLogic.classdiagram.layout">
+    <Content Include="Business\Script\BusinessLogic.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Business\Case\BusinessLogic.classdiagram</DependentUpon>
+      <DependentUpon>Business\Script\BusinessLogic.classdiagram</DependentUpon>
     </Content>
-    <Content Include="Business\Case\Entity.classdiagram">
+    <Content Include="Business\Script\Entity.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Business\Case\Entity.classdiagram.layout">
+    <Content Include="Business\Script\Entity.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Business\Case\Entity.classdiagram</DependentUpon>
+      <DependentUpon>Business\Script\Entity.classdiagram</DependentUpon>
     </Content>
     <Content Include="Business\Execution\BusinessLogic.classdiagram">
       <SubType>Content</SubType>
@@ -168,13 +168,6 @@
       <SubType>Content</SubType>
       <DependentUpon>Common\Utility.classdiagram</DependentUpon>
     </Content>
-    <Content Include="External\Selenium.classdiagram">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="External\Selenium.classdiagram.layout">
-      <SubType>Content</SubType>
-      <DependentUpon>External\Selenium.classdiagram</DependentUpon>
-    </Content>
     <Content Include="ModelDefinition\Api.uml">
       <SubType>Content</SubType>
     </Content>
@@ -187,19 +180,35 @@
     <Content Include="ModelDefinition\App.uml">
       <SubType>Content</SubType>
     </Content>
-    <Folder Include="Business\Case" />
+    <Content Include="ModelDefinition\Script.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Script\Common\Library.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Script\Common\Library.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Script\Common\Library.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Script\Common\TestData.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Script\Common\TestData.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Script\Common\TestData.classdiagram</DependentUpon>
+    </Content>
+    <Folder Include="Business\Script" />
     <Folder Include="Business\Execution" />
     <Folder Include="Business\Result" />
     <Folder Include="Business\Plan" />
-    <Folder Include="Case\Controller" />
-    <Folder Include="External\" />
+    <Folder Include="Script\Common" />
     <Folder Include="ModelDefinition\" />
-    <Content Include="Business\Case\DataAccess.classdiagram">
+    <Content Include="Business\Script\DataAccess.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Business\Case\DataAccess.classdiagram.layout">
+    <Content Include="Business\Script\DataAccess.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>Business\Case\DataAccess.classdiagram</DependentUpon>
+      <DependentUpon>Business\Script\DataAccess.classdiagram</DependentUpon>
     </Content>
     <Content Include="Common\Packages.classdiagram">
       <SubType>Content</SubType>
@@ -215,7 +224,7 @@
     <Folder Include="Api" />
     <Folder Include="Business" />
     <Folder Include="Common" />
-    <Folder Include="Case" />
+    <Folder Include="Script" />
   </ItemGroup>
   <ItemGroup>
     <Validate Include="Api\Api.layerdiagram">

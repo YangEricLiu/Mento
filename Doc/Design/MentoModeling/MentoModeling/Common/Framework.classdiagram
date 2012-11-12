@@ -42,6 +42,19 @@
         <elementDefinition Id="29afebd5-c2bc-4a47-81c8-d6f7b0047c2e" />
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <enumeration Id="9a189975-fded-48d5-a7b5-a6348a5e815b" name="EntityStatus" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f27f5b0c-1d47-4527-a568-d237668cd80e" />
+        <ownedLiterals>
+          <enumerationLiteral Id="bf8089db-4c73-496f-b903-34c4ee5ddb5a" name="Active">
+            <elementDefinition Id="e513ac65-d6b6-4976-98d4-43f096adfd62" />
+          </enumerationLiteral>
+          <enumerationLiteral Id="5dd5f62f-5b22-4813-aa86-870a59ece52f" name="Deleted">
+            <elementDefinition Id="21b2e280-1d31-424f-b041-2dfb86859285" />
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="a3132459-80da-4c58-8d9c-b0cf183d56e0" name="MentoModeling">
     <elementDefinition Id="ec3115d8-bce8-47a3-8a91-07b76d258f8c" />

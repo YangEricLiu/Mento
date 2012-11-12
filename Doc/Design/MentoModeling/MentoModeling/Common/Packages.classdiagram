@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="a5c008e6-e5c9-475b-969e-cbfb41081c39" name="Packages" linkedPackageId="a87d7bdb-8bdf-4a2a-8ccd-54ba4c7a3b83" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="a5c008e6-e5c9-475b-969e-cbfb41081c39" name="Packages" linkedPackageId="a87d7bdb-8bdf-4a2a-8ccd-54ba4c7a3b83" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="d4c507b0-852f-404b-9463-11c4ddcd69df" name="Api">
@@ -54,8 +54,8 @@
       </package>
     </logicalClassDesignerModelHasPackages>
     <logicalClassDesignerModelHasPackages>
-      <package Id="bd42af57-0ee5-4bcb-b0fd-0b2e1af6ce06" name="Selenium">
-        <elementDefinition Id="67182a5a-61a3-4107-9e9d-c81f1d9d1ffd" />
+      <package Id="051326f0-70f1-434d-a00a-41d6270c3da0" name="Script">
+        <elementDefinition Id="12b6c5c6-f268-4319-8fc8-b3a1781a6844" />
       </package>
     </logicalClassDesignerModelHasPackages>
   </packagedElements>

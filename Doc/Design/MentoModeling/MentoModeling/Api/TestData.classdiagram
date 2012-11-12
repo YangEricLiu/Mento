@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="66dcba03-2a20-418d-bd4a-0f3ff9dffd9b" name="TestData" linkedPackageId="ecacb65e-05fd-4d67-b1a4-ec5eb5af93f1" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="66dcba03-2a20-418d-bd4a-0f3ff9dffd9b" name="TestData" linkedPackageId="ecacb65e-05fd-4d67-b1a4-ec5eb5af93f1" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="63b553e0-3e58-4ec9-bca0-ebe324d34f27" name="TestContextExtention" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -176,7 +176,7 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="613bfc9f-7493-47cc-b1ec-4db903a00a11" name="MultipleTestDataAttribute1" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="613bfc9f-7493-47cc-b1ec-4db903a00a11" name="MultipleTestDataAttribute" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="08f23550-2084-40a1-8e24-cf6bcc94119b" />
         <ownedOperationsInternal>
           <operation Id="0c9be76c-6fbe-4c2f-a6cd-a85cd7e8624e" name="MultipleTestDataAttribute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">

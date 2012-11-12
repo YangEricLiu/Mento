@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="2861e0a1-3343-49e9-96c1-ec054d18b511"
   name="Api" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -2044,7 +2044,7 @@
     <packageHasNamedElement>
       <class
         Id="08f23550-2084-40a1-8e24-cf6bcc94119b"
-        name="MultipleTestDataAttribute1"
+        name="MultipleTestDataAttribute"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -2078,25 +2078,10 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="215d54ea-749f-481f-9abe-b7d60ddf0509"
-                  name="dataIndex"
-                  direction="In">
-                  <elementDefinition
-                    Id="49f16d01-025d-4963-bac5-f8304a526def" />
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="2024642f-d660-4c5d-95cf-4e7ea4f571fb"
-                      LastKnownName="int"
-                      LastKnownLocation="MentoModeling.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="e1ca07a9-4801-4796-a5d1-1c4a0b66e59c"
                   name="testSuiteType"
                   direction="In">
                   <elementDefinition
-                    Id="ad39d274-1217-4ffe-a661-8a653a72a5c5" />
+                    Id="49f16d01-025d-4963-bac5-f8304a526def" />
                   <type_NamedElement>
                     <undefinedTypeMoniker
                       Id="7b83293e-2ed2-46e2-9a6d-9453dae6191c"
@@ -2107,16 +2092,31 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="5b27c786-6d08-4cfb-a7a8-96a6f71ea719"
+                  Id="e1ca07a9-4801-4796-a5d1-1c4a0b66e59c"
                   name="testCaseID"
                   direction="In">
                   <elementDefinition
-                    Id="fb370afe-2ae1-4d4f-8476-82925ad55d00" />
+                    Id="ad39d274-1217-4ffe-a661-8a653a72a5c5" />
                   <type_NamedElement>
                     <undefinedTypeMoniker
                       Id="4640541f-b6d5-41a7-a35b-4fe028618fbe"
                       LastKnownName="string"
                       LastKnownLocation="App.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5b27c786-6d08-4cfb-a7a8-96a6f71ea719"
+                  name="dataIndex"
+                  direction="In">
+                  <elementDefinition
+                    Id="fb370afe-2ae1-4d4f-8476-82925ad55d00" />
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2024642f-d660-4c5d-95cf-4e7ea4f571fb"
+                      LastKnownName="int"
+                      LastKnownLocation="MentoModeling.uml" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>

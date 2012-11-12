@@ -45,7 +45,7 @@
       </nestedChildShapes>
     </classShape>
     <classShape Id="87b28154-6650-4eb8-9392-0c003ab3d90c" absoluteBounds="0.5, 1.625, 5.875, 1.0624999801317849" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
-      <classMoniker Id="613bfc9f-7493-47cc-b1ec-4db903a00a11" LastKnownName="MultipleTestDataAttribute1" />
+      <classMoniker Id="613bfc9f-7493-47cc-b1ec-4db903a00a11" LastKnownName="MultipleTestDataAttribute" />
       <nestedChildShapes>
         <AttributeElementListCompartment Id="63411409-e35d-49a2-8d0e-19fa040725e3" absoluteBounds="0.515, 2.015, 5.8450000000000006, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
         <OperationElementListCompartment Id="bc09492f-7b9a-45fe-9fd0-19b1e5f6ef1b" absoluteBounds="0.515, 2.2261718675494193, 5.8450000000000006, 0.36132811258236563" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />

@@ -51,5 +51,8 @@ namespace Mento.TestApi.WebUserInterface
         public const string AssociateTagButton = "AssociateTagButton";
         public const string IsRowChecked = "IsRowChecked";
         public const string TestButton = "TestButton";
+
+        public const string AddVtagButton = "AddVtagButton";
+        public const string VtagConfigButton = "VtagConfigButton";
     }
 }

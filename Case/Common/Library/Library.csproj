@@ -52,10 +52,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\Formula.cs" />
     <Compile Include="Functions\FunctionWrapper.cs" />
     <Compile Include="Functions\Hierarchy.cs" />
     <Compile Include="Functions\Login.cs" />
-    <Compile Include="Functions\Tag.cs" />
+    <Compile Include="Functions\Ptag.cs" />
+    <Compile Include="Functions\Vtag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

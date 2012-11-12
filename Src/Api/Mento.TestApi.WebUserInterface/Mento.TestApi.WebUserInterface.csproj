@@ -25,7 +25,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Mento.TestApi.WebUserInterface.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -68,6 +69,7 @@
     <Compile Include="Controls\Grid.cs" />
     <Compile Include="Controls\ToggleButton.cs" />
     <Compile Include="Resource\ByType.cs" />
+    <Compile Include="Resource\ComboBoxItemListReader.cs" />
     <Compile Include="Resource\ElementConfigurationReader.cs" />
     <Compile Include="Resource\ElementKey.cs" />
     <Compile Include="ControlAccess.cs" />

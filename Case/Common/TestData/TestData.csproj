@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administration\ExampleData.cs" />
+    <Compile Include="Administration\Tag\VtagManagement\AddVtagData.cs" />
     <Compile Include="ClientAccess\LoginData.cs" />
     <Compile Include="Administration\AddHierarchyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

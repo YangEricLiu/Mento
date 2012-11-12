@@ -43,4 +43,8 @@
   <add key = "FormulaSaveButton" value = "//div[@id='st-vtag-formula']//span[text()='Common.Button.Save']" type = "Xpath"/>
   <add key = "FormulaTagRow" value = "//div[text()='tagName']" type = "Xpath"/>
   <add key = "AssociateTagButton" value = "st-tagassoc-taggrid-assoc-btnInnerEl" type = "ID"/>
+  <!--NancyVTag-->
+  <add key = "AddVtagButton" value = "st-vtag-grid-add-btnInnerEl" type = "ID"/>
+  <add key=  "VtagConfigButton" Value ="st-menu-vtagmgr" type = "ID"/>
+  
 </WebElement>

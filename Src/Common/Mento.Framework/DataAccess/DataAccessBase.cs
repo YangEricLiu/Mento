@@ -17,7 +17,7 @@ namespace Mento.Framework
         /// <summary>
         /// Database connection instance
         /// </summary>
-        protected static readonly Database Database = DatabaseFactory.CreateDatabase(ConfigurationKey.MENTO_DATABASE_KEY);
+        protected static readonly Database Database = DatabaseContainer.Database;
 
         /// <summary>
         /// Construct entities from a data reader

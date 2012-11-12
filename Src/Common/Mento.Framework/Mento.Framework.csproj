@@ -72,8 +72,10 @@
     <Compile Include="Constants\Project.cs" />
     <Compile Include="Constants\ValidationRegexPatterns.cs" />
     <Compile Include="DataAccess\DataAccessBase.cs" />
+    <Compile Include="DataAccess\DatabaseContainer.cs" />
     <Compile Include="DataAccess\EntityBase.cs" />
     <Compile Include="Enumeration\Browser.cs" />
+    <Compile Include="Enumeration\EntityStatus.cs" />
     <Compile Include="Enumeration\Language.cs" />
     <Compile Include="Enumeration\LoggingSeverity.cs" />
     <Compile Include="Exceptions\ApiException.cs" />

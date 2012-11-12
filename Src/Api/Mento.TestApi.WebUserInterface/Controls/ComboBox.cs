@@ -14,7 +14,7 @@ namespace Mento.TestApi.WebUserInterface
     /// <remarks>Inherited from control base class.</remarks>
     public class ComboBox : JazzControlBase
     {
-        private Dictionary<string, string> itemList = ComboBoxItemListReader.GetValueXML(ConfigurationKey.COMBOPATH, ConfigurationKey.COMBOMODULE);
+        //private Dictionary<string, string> itemList = ComboBoxItemListReader.GetValueXML(ConfigurationKey.COMBOPATH, ConfigurationKey.COMBOMODULE);
 
         /// <summary>
         /// Simulate the mouse open combo box drop down menu
@@ -57,9 +57,9 @@ namespace Mento.TestApi.WebUserInterface
         /// </summary>
         /// <param name="key">combo box element key</param>
         /// <returns>Key value</returns>
-        public string GetItemTypeLangValue(string key)
-        { 
-            return itemList[key];
-        }
+        //public string GetItemTypeLangValue(string key)
+        //{ 
+        //    return itemList[key];
+        //}
     }
 }

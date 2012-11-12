@@ -13,8 +13,8 @@ namespace Mento.Business.Case.Test
     {
         private static ScriptDA ScriptDA = new ScriptDA();
 
-        [TestInitialize]
-        public void TestInitialize()
+        [TestCleanup]
+        public void TestCleanup()
         {
             ScriptDA.DeleteAll();
         }

@@ -7,6 +7,9 @@
   <!--Commodity-->
   <add key = "Water" value = "自来水"/>
   <add key = "SoftWater" value = "软水"/>
+  <add key = "Electricity" value = "电"/>
   <!--UOM-->
   <add key = "KG" value = "千克"/>
-  </ItemList>
+  <add key = "KWH" value = "千瓦时"/>
+  <add key = "Ton" value = "吨"/>
+</ItemList>

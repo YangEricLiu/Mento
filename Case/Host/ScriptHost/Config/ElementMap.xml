@@ -46,5 +46,25 @@
   <!--NancyVTag-->
   <add key = "AddVtagButton" value = "st-vtag-grid-add-btnInnerEl" type = "ID"/>
   <add key=  "VtagConfigButton" Value ="st-menu-vtagmgr" type = "ID"/>
-  
+  <!--PTag Configuration-->
+  <add key = "PtagAddButton" value = "st-ptag-grid-add-btnEl" type = "ID"/>
+  <add key = "PtagSaveButton" value = "//span[text()='Common.Button.Save']" type = "Xpath"/>
+  <add key = "PtagUpdateButton" value = "//span[text()='Common.Operation.Update']" type = "Xpath"/>
+  <add key = "PtagName" value = "Name" type = "Name"/>
+  <add key = "PtagCode" value = "Code" type = "Name"/>
+  <add key = "PtagMeterCode" value = "MeterCode" type = "Name"/>
+  <add key = "PtagChannelId" value = "ChannelId" type = "Name"/>
+  <add key = "PtagCommodityId" value = "CommodityId" type = "Name"/>
+  <add key = "PtagUomId" value = "UomId" type = "Name"/>
+  <add key = "PtagCalculationType" value = "CalculationType" type = "Name"/>
+  <add key = "PtagComment" value = "Comment" type = "Name"/>
+  <!--Commodity-->
+  <add key = "Electricity" value = "//li[text()='Common.Commodity.Electric']" type = "Xpath"/>
+  <add key = "Water" value = "//li[text()='Common.Commodity.Water']" type = "Xpath"/>
+  <!--UOM-->
+  <add key = "KWH" value = "//li[text()='Common.UOM.KWH']" type = "Xpath"/>
+  <add key = "Ton" value = "//li[text()='Common.UOM.Ton']" type = "Xpath"/>
+  <!--CaculationType-->
+  <add key = "Sum" value = "//li[text()='Common.CaculationType.Sum']" type = "Xpath"/>
+  <add key = "Avg" value = "//li[text()='Common.CaculationType.Avg']" type = "Xpath"/>
 </WebElement>

@@ -54,5 +54,27 @@ namespace Mento.TestApi.WebUserInterface
 
         public const string AddVtagButton = "AddVtagButton";
         public const string VtagConfigButton = "VtagConfigButton";
+
+        //PTag Configuration
+        public const string PtagAddButton = "PtagAddButton";
+        public const string PtagSaveButton = "PtagSaveButton";
+        public const string PtagUpdateButton = "PtagUpdateButton";
+        public const string PtagName = "PtagName";
+        public const string PtagCode = "PtagCode";
+        public const string PtagMeterCode = "PtagMeterCode";
+        public const string PtagChannelId = "PtagChannelId";
+        public const string PtagCommodityId = "PtagCommodityId";
+        public const string PtagUomId = "PtagUomId";
+        public const string PtagCalculationType = "PtagCalculationType";
+        public const string PtagComment = "PtagComment";
+        //Commodity
+        public const string Electricity = "Electricity";
+        public const string Water = "Water";
+        //UOM
+        public const string KWH = "KWH";
+        public const string Ton = "Ton";
+        //CaculationType
+        public const string Sum = "Sum";
+        public const string Avg = "Avg";
     }
 }

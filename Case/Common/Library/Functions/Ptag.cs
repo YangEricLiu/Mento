@@ -20,6 +20,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private TextField textFieldInstance = ControlAccess.GetControl<TextField>();
         private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
         private Grid tagInstance = ControlAccess.GetControl<Grid>();
+        private Button buttonInstance = ControlAccess.GetControl<Button>();
         
         /// <summary>
         /// Navigate to Ptag Configuration Page
@@ -39,8 +40,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void PrepareToAddPtag()
         {
-            var locator = ElementDictionary[ElementKey.PtagAddButton];
-            ElementLocator.FindElement(locator).Click();
+            buttonInstance.ClickButton(ElementDictionary[ElementKey.PtagAddButton]);
         }
 
         /// <summary>
@@ -50,8 +50,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickSaveButton()
         {
-            var locator = ElementDictionary[ElementKey.PtagSaveButton];
-            ElementLocator.FindElement(locator).Click();
+            buttonInstance.ClickButton(ElementDictionary[ElementKey.PtagSaveButton]);
         }
 
         /// <summary>
@@ -82,8 +81,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void PrepareToModifyPtag(string tagName)
         {
             FocusOnTag(tagName);
-            var locator = ElementDictionary[ElementKey.PtagUpdateButton];
-            ElementLocator.FindElement(locator).Click();
+            buttonInstance.ClickButton(ElementDictionary[ElementKey.PtagUpdateButton]);
         }
         
         /// <summary>

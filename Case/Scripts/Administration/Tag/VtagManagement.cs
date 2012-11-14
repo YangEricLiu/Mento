@@ -10,6 +10,7 @@ using Mento.Framework.Script;
 using Mento.TestApi.WebUserInterface;
 using OpenQA.Selenium;
 using Mento.ScriptCommon.Library.Functions;
+using Mento.ScriptCommon.TestData.Administration.Tag.VtagManagement;
 
 namespace Mento.Script.Administration.Tag
 {
@@ -41,8 +42,11 @@ namespace Mento.Script.Administration.Tag
 
             //Navigate to Vtag setting
             NavigatorIns.NavigateToTarget(NavigationTarget.TagSettingsV);
-        }   
-        FunctionWrapper.Vtag.ClickVtagConfigButton();
+            FunctionWrapper.Vtag.ClickVtagConfigButton();
+            FunctionWrapper.Vtag.ClickAddVtagButton();
+            FunctionWrapper.Vtag.FillInName(ElementKey.VtagName);
 
+
+        }   
     }
 }

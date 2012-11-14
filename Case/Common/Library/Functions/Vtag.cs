@@ -5,18 +5,34 @@ using System.Text;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
+using Mento.ScriptCommon.TestData.Administration.Tag.VtagManagement;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
+    //Click Vtag config button
+        public void ClickVtagConfigButton()
+        {
+            var locator = ElementDictionary[ElementKey.VtagConfigButton];
+
+            ElementLocator.FindElement(locator).Click();
+            FunctionWrapper.WaitForLoadingDisappeared(2000);
+        }
+        
+        //Click Add Vtag button to pop up Vtag add window.
+        public void ClickAddVtagButton()
+        {
+            var locator = ElementDictionary[ElementKey.AddVtagButton];
+
+            ElementLocator.FindElement(locator).Click();
+            FunctionWrapper.WaitForLoadingDisappeared(2000);
+        }
     /// <summary>
     /// The business logic for Vtag creation.
     /// </summary>
     public class Vtag
     {
-        private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
+        private Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
         
- /*       private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
-
         private TextField textFieldInstance = ControlAccess.GetControl<TextField>();
         private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
         private Navigator navigatorInstance = ControlAccess.GetControl<Navigator>();
@@ -31,7 +47,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickSaveButton()
         {
-            var locator = ElementDictionary[ElementKey.];
+            var locator = ElementDictionary[ElementKey.VtagSaveButton];
 
             ElementLocator.FindElement(locator).Click();
         }
@@ -49,27 +65,24 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Input name, code type and comments of the new Vtag node 
-        /// </summary>
-        /// <param name="treeNodeName">Parent Vtag node name</param>
-        /// <param name="input">Test data</param>
-        /// <returns></returns>
-        public void FillInVtagNode(string treeNodeName, VtagInputData input)
+        /// Input name, code, commodity, uom, step, calculationstep and comment to add new Vtag
+        public void FillInAddVtagData(string VtagInputData, VtagInputData input)
         {
-            PrepareToAddNode(treeNodeName);
-
+            
             textFieldInstance.FillIn(ElementKey.VtagName, input.Name);
             textFieldInstance.FillIn(ElementKey.VtagCode, input.Code);
-            comboBoxInstance.DisplayItems(ElementKey.VtagType);
-            comboBoxInstance.SelectItem(input.Type);
+            comboBoxInstance.DisplayItems(ElementKey.VtagCommodity);
+            comboBoxInstance.SelectItem(input.Commodity);
             textFieldInstance.FillIn(ElementKey.VtagComment, input.Comment);
         }
 
         /// <summary>
-        /// Input name of the new Vtag node 
+        /// Input name of the new Vtag 
         /// </summary>
-        /// <param name="name">Vtag node name</param>
+        /// <param name="name">Vtag name</param>
         /// <returns></returns>
+        /// 
+       
 
         public void FillInName(string name)
         {
@@ -79,7 +92,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Input code of the new Vtag node 
         /// </summary>
-        /// <param name="code">Vtag node code</param>
+        /// <param name="code">Vtag code</param>
         /// <returns></returns>
         public void FillInCode(string code)
         {
@@ -89,16 +102,16 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Input type of the new Vtag node 
         /// </summary>
-        /// <param name="type">Vtag node type</param>
+        /// <param name="Commodity">Vtag commodity</param>
         /// <returns></returns>
-        public void FillInType(string type)
+        public void FillInCommodity(string Commodity)
         {
-            comboBoxInstance.DisplayItems(ElementKey.VtagType);
-            comboBoxInstance.SelectItem(type);
+            comboBoxInstance.DisplayItems(ElementKey.VtagCommodity);
+            comboBoxInstance.SelectItem(Commodity);
         }
 
         /// <summary>
-        /// Input comment of the new Vtag node 
+        /// Input comment of the new Vtag 
         /// </summary>
         /// <param name="code">Vtag comment code</param>
         /// <returns></returns>

@@ -61,11 +61,11 @@ namespace Mento.TestApi.WebUserInterface
         public const string VtagCommodity = "VtagCommodity";
         public const string Electric = "Electric";
         public const string VtagUOM = "VtagUOM";
-        public const string KWH = "KWH";
+        public const string VtagKWH = "VtagKWH";
         public const string VtagCalculationStep = "VtagCalculationStep";
         public const string Hourly = "Hourly";
         public const string VtagCalculationType = "VtagCalculationType";
-        public const string Sum = "Sum";
+        public const string VtagSum = "VtagSum";
         public const string VtagComment = "VtagComment";
 
 

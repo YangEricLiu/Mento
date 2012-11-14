@@ -133,21 +133,32 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="Commodity">Vtag commodity</param>
         /// <returns></returns>
-        public void FillInCommodity(string VtagUOM)
+        public void FillinVtagUOM(string UOM)
         {
             comboBoxInstance.DisplayItems(ElementKey.VtagUOM);
-            comboBoxInstance.SelectItem(VtagUOM);
+            comboBoxInstance.SelectItem(UOM);
         }
 
         /// <summary>
         /// Input type of the new Vtag 
         /// </summary>
-        /// <param name="Commodity">Vtag commodity</param>
+        /// <param name="Commodity">Vtag Calculation type</param>
         /// <returns></returns>
-        public void FillInCommodity(string VtagCalculationStep)
+        public void FillInVtagCalculationStep(string CalculationStep)
         {
             comboBoxInstance.DisplayItems(ElementKey.VtagCalculationStep);
-            comboBoxInstance.SelectItem(VtagCalculationStep); ;
+            comboBoxInstance.SelectItem(CalculationStep); ;
+        }
+
+        /// <summary>
+        /// Input CalculationStep of the new Vtag 
+        /// </summary>
+        /// <param name="Commodity">Vtag Calculation step</param>
+        /// <returns></returns>
+        public void FillInCalculationType(string VtagCalculationType)
+        {
+            comboBoxInstance.DisplayItems(ElementKey.VtagCalculationType);
+            comboBoxInstance.SelectItem(VtagCalculationType); ;
         }
 
         /// <summary>

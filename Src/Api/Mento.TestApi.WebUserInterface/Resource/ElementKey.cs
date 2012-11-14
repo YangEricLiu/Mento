@@ -50,6 +50,8 @@ namespace Mento.TestApi.WebUserInterface
         public const string RowCheckBox = "RowCheckBox";
         public const string AssociateTagButton = "AssociateTagButton";
         public const string IsRowChecked = "IsRowChecked";
+        public const string AssociateButton = "AssociateButton";
+        public const string IsTagOnAssociateGrid = "IsTagOnAssociateGrid";
         public const string TestButton = "TestButton";
 
         public const string AddVtagButton = "AddVtagButton";

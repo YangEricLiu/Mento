@@ -123,6 +123,43 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Get the tag MeterCode actual value
+        /// </summary>
+        /// <returns></returns>
+        public string GetMeterCodeValue()
+        {
+            return textFieldInstance.GetValue(ElementKey.PtagMeterCode);
+        }
+
+        /// <summary>
+        /// Get the tag ChannelId actual value
+        /// </summary>
+        /// <returns></returns>
+        public string GetChannelIdValue()
+        {
+            return textFieldInstance.GetValue(ElementKey.PtagChannelId);
+        }
+
+        /// <summary>
+        /// Get the tag Commodity actual value
+        /// </summary>
+        /// <returns></returns>
+        public string GetCommodityValue()
+        {
+            return comboBoxInstance.GetValue(ElementKey.PtagCommodityId);
+        }
+
+        /// <summary>
+        /// Get the tag Commodity expected value, for language sensitive
+        /// </summary>
+        /// <param name = "itemKey">Commodity key</param>
+        /// <returns>Key value</returns>
+        public string GetCommodityExpectedValue(string itemKey)
+        {
+            return comboBoxInstance.GetItemTypeLangValue(itemKey);
+        }
+
+        /// <summary>
         /// Get the tag Uom actual value
         /// </summary>
         /// <returns></returns>
@@ -139,6 +176,34 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetUomExpectedValue(string itemKey)
         {
             return comboBoxInstance.GetItemTypeLangValue(itemKey);
+        }
+
+        /// <summary>
+        /// Get the tag CalculationType actual value
+        /// </summary>
+        /// <returns></returns>
+        public string GetCalculationTypeValue()
+        {
+            return comboBoxInstance.GetValue(ElementKey.PtagCalculationType);
+        }
+
+        /// <summary>
+        /// Get the tag CalculationType expected value, for language sensitive
+        /// </summary>
+        /// <param name = "itemKey">CalculationType key</param>
+        /// <returns>Key value</returns>
+        public string GetCalculationTypeExpectedValue(string itemKey)
+        {
+            return comboBoxInstance.GetItemTypeLangValue(itemKey);
+        }
+
+        /// <summary>
+        /// Get the tag Comment actual value
+        /// </summary>
+        /// <returns></returns>
+        public string GetCommentValue()
+        {
+            return textFieldInstance.GetValue(ElementKey.PtagComment);
         }
 
     }

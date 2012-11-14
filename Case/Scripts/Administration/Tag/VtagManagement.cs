@@ -38,15 +38,22 @@ namespace Mento.Script.Administration.Tag
             //Threading.Thread.Sleep(10000);
 
             FunctionWrapper.Login.Login(loginData.InputData);
-            Assert.IsTrue(ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 600));
+            Assert.IsTrue(ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 600));;
 
-            //Navigate to Vtag setting
+        }
+        public void VtagConfigueNavigation()
+
+        {
             NavigatorIns.NavigateToTarget(NavigationTarget.TagSettingsV);
             FunctionWrapper.Vtag.ClickVtagConfigButton();
-            FunctionWrapper.Vtag.ClickAddVtagButton();
+        }
+        public void VtagFillin()
+        {
             FunctionWrapper.Vtag.FillInName(ElementKey.VtagName);
-
-
-        }   
+        }
+        public void VtagSaveAction()
+        {
+            FunctionWrapper.Vtag.ClickSaveButton();
+        }
     }
 }

@@ -10,6 +10,19 @@ namespace Mento.Framework.Exceptions
     /// </summary>
     public abstract class MentoException : Exception
     {
+        public MentoException()
+            : base()
+        {
+        }
 
+        public MentoException(string message)
+            : base(message)
+        { 
+        }
+
+        public MentoException(string message, Exception innerException)
+            : base(message, innerException)
+        { 
+        }
     }
 }

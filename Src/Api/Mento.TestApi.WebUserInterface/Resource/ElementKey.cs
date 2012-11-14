@@ -54,8 +54,8 @@ namespace Mento.TestApi.WebUserInterface
 
         public const string AddVtagButton = "AddVtagButton";
         public const string VtagConfigButton = "VtagConfigButton";
-        public const string AddVtagButton = "AddVtagButton";
-        public const string VtagConfigButton = "VtagConfigButton";
+        //public const string AddVtagButton = "AddVtagButton";
+        //public const string VtagConfigButton = "VtagConfigButton";
         public const string VtagSaveButton = "VtagSaveButton";
         public const string VtagCancelButton = "VtagCancelButton";
         public const string VtagName = "VtagName";

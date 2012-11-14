@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,8 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\PlanBL.cs" />
+    <Compile Include="DataAccess\ExecutionDA.cs" />
     <Compile Include="DataAccess\PlanDA.cs" />
     <Compile Include="DataAccess\PlanScriptDA.cs" />
+    <Compile Include="Entity\ExecutionEntity.cs" />
     <Compile Include="Entity\PlanEntity.cs" />
     <Compile Include="Entity\PlanScriptEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,6 +63,10 @@
     <ProjectReference Include="..\..\Common\Mento.Framework\Mento.Framework.csproj">
       <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
       <Name>Mento.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mento.Business.Case\Mento.Business.Script.csproj">
+      <Project>{9B7F3CC7-6C21-4EE4-8FAB-AD62C17DCD1E}</Project>
+      <Name>Mento.Business.Script</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,7 +8,7 @@ namespace Mento.Utility
     /// <summary>
     /// Enumeration help
     /// </summary>
-    public class EnumHelper
+    public class EnumHelper 
     {
         /// <summary>
         /// Convert string to the specific enumeration

@@ -12,7 +12,9 @@ namespace Mento.App
     {
         static void Main(string[] args)
         {
-            ScriptController.Sync();
+            //ScriptController.Sync();
+
+            PlanController.Create("");
 
             Console.WriteLine("Press any key to continue..");
             Console.Read();

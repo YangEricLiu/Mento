@@ -7,6 +7,8 @@ using Mento.Business.Plan.Entity;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using System.Data.Common;
 using System.Data;
+using Mento.Business.Script.Entity;
+using Mento.Framework.Enumeration;
 
 namespace Mento.Business.Plan.DataAccess
 {
@@ -14,7 +16,7 @@ namespace Mento.Business.Plan.DataAccess
     {
         public long Create(PlanEntity entity)
         {
-            string sql = @" INSERT INTO [Plan]([PlanID],[Name],[Version],[Owner],[UpdateTime]) VALUES(@PlanID,@Name,@Version,@Owner,@UpdateTime)
+            string sql = @" INSERT INTO [Plan]([PlanID],[Name],[Version],[Owner],[UpdateTime],[Status]) VALUES(@PlanID,@Name,@Version,@Owner,@UpdateTime,@Status)
                             SELECT SCOPE_IDENTITY()";
             
             DbCommand command = Database.GetSqlStringCommand(sql);
@@ -24,10 +26,42 @@ namespace Mento.Business.Plan.DataAccess
             Database.AddInParameter(command, "Version", DbType.String, entity.TargetVersion);
             Database.AddInParameter(command, "Owner", DbType.String, entity.Owner);
             Database.AddInParameter(command, "UpdateTime", DbType.DateTime, entity.UpdateTime);
+            Database.AddInParameter(command, "Status", DbType.Int32, entity.Status);
 
             object result = Database.ExecuteScalar(command);
 
             return (result != null) ? Convert.ToInt64(result) : 0;
+        }
+
+        public void Update(PlanEntity entity)
+        {
+            string sql = "UPDATE [Plan] SET [PlanID] = @PlanID, [Name] = @Name,[Version] = @Version,[Owner] = @Owner,[UpdateTime] =@UpdateTime,[Status] = @Status WHERE [ID]=@ID";
+            
+            DbCommand command = Database.GetSqlStringCommand(sql);
+
+            Database.AddInParameter(command, "ID", DbType.Int64, entity.ID);
+            Database.AddInParameter(command, "PlanID", DbType.String, entity.PlanID);
+            Database.AddInParameter(command, "Name", DbType.String, entity.Name);
+            Database.AddInParameter(command, "Version", DbType.String, entity.TargetVersion);
+            Database.AddInParameter(command, "Owner", DbType.String, entity.Owner);
+            Database.AddInParameter(command, "UpdateTime", DbType.DateTime, entity.UpdateTime);
+            Database.AddInParameter(command, "Status", DbType.Int32, entity.Status);
+
+            Database.ExecuteNonQuery(command);
+        }
+
+        public PlanEntity Retrieve(string planID)
+        {
+            string sql = @"SELECT [ID],[PlanID],[Name],[Version],[Owner],[UpdateTime],[Status] FROM [Plan] WHERE [PlanID] = @PlanID AND [Status]=@Status";
+
+            DbCommand command = Database.GetSqlStringCommand(sql);
+
+            Database.AddInParameter(command, "PlanID", DbType.String, planID);
+            Database.AddInParameter(command, "Status", DbType.Int32, (int)EntityStatus.Deleted);
+
+            List<PlanEntity> list = base.ReadEntity<PlanEntity>(Database.ExecuteReader(command));
+
+            return list.Count > 0 ? list[0] : null;
         }
     }
 }

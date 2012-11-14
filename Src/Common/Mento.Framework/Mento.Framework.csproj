@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Attributes\CaseIDAttribute.cs" />
     <Compile Include="Attributes\CommandAttribute.cs" />
+    <Compile Include="Attributes\ControllerAttribute.cs" />
     <Compile Include="Attributes\CreateTimeAttribute.cs" />
     <Compile Include="Attributes\ManualCaseIDAttribute.cs" />
     <Compile Include="Attributes\MultipleTestDataAttribute.cs" />

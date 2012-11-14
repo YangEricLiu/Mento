@@ -14,8 +14,7 @@ namespace Mento.Business.Plan.DataAccess
     {
         public long Create(PlanScriptEntity entity)
         {
-            string sql = @" INSERT INTO [PlanScript]([PlanID],[CaseID]) VALUES(@PlanID,@CaseID);
-                            SELECT SCOPE_IDENTITY()";
+            string sql = @"INSERT INTO [PlanScript]([PlanID],[CaseID]) VALUES(@PlanID,@CaseID)";
 
             DbCommand command = Database.GetSqlStringCommand(sql);
 
@@ -24,7 +23,7 @@ namespace Mento.Business.Plan.DataAccess
 
             object result = Database.ExecuteScalar(command);
 
-            return (result != null) ? Convert.ToInt64(result) : 0;
+            return 1;
         }
 
         public void Delete(long planID)

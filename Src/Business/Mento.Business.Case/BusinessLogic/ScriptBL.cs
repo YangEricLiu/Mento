@@ -11,6 +11,8 @@ using Mento.Framework.Script;
 using Mento.Framework.Constants;
 using Mento.Framework.Attributes;
 using System.Text.RegularExpressions;
+using System.Runtime.Caching;
+using Mento.Utility;
 
 namespace Mento.Business.Script.BusinessLogic
 {
@@ -18,7 +20,8 @@ namespace Mento.Business.Script.BusinessLogic
     {
         private static ScriptDA ScriptDA = new ScriptDA();
         private static Type[] PropertyTypes = new Type[] { typeof(CaseIDAttribute), typeof(ManualCaseIDAttribute), typeof(CreateTimeAttribute), typeof(OwnerAttribute) };
-        
+
+
         public bool Synchronize(out Dictionary<MethodInfo, List<Type>> validationResult)
         {
             ScriptDA.DeleteAll();
@@ -55,9 +58,62 @@ namespace Mento.Business.Script.BusinessLogic
             return scripts;
         }
 
+        /// <summary>
+        /// Validate a list of suite, output the not existing suites
+        /// </summary>
+        /// <param name="suiteNameList"></param>
+        /// <param name="notExistedList"></param>
+        /// <returns></returns>
+        public bool ValidateSuiteExistence(List<string> suiteNameList, out List<string> notExistingSuites)
+        {
+            var existingSuites = GetScriptsFromCache().Where(s => suiteNameList.Contains(s.SuiteName)).Select(s => s.SuiteName).Distinct();
+
+            notExistingSuites = suiteNameList.Except(existingSuites).ToList();
+
+            return notExistingSuites.Count == 0;
+        }
+
+        /// <summary>
+        /// Validate a list of script, output the not existing scripts
+        /// </summary>
+        /// <param name="caseIDList"></param>
+        /// <param name="notExistedList"></param>
+        /// <returns></returns>
+        public bool ValidateScriptExistence(List<string> caseIDList, out List<string> notExistingScripts)
+        {
+            var existingScripts = GetScriptsFromCache().Where(s => caseIDList.Contains(s.CaseID)).Select(s => s.CaseID).Distinct();
+
+            notExistingScripts = caseIDList.Except(existingScripts).ToList();
+
+            return notExistingScripts.Count == 0;
+        }
+
+        /// <summary>
+        /// Get script list of a suite
+        /// </summary>
+        /// <param name="suiteName"></param>
+        /// <returns></returns>
+        public string[] GetScriptListBySuiteName(string suiteName)
+        {
+            return GetScriptsFromCache().Where(s => String.Equals(s.SuiteName, suiteName, StringComparison.OrdinalIgnoreCase)).Select(s => s.CaseID).ToArray();
+        }
+
+        #region private methods
+        private ScriptEntity[] GetScriptsFromCache()
+        {
+            string AllScriptsCacheKey = "SCRIPT-ALLSCRIPTS";
+
+            if (CacheHelper.Get(AllScriptsCacheKey) == null)
+            {
+                CacheHelper.Add(AllScriptsCacheKey, ScriptDA.RetrieveAll());
+            }
+
+            return (ScriptEntity[])CacheHelper.Get(AllScriptsCacheKey);
+        }
+
         private Dictionary<MethodInfo, List<Type>> ValidateScript(out List<ScriptEntity> scriptList)
         {
-            string scriptPath = @"E:\works\kara\mento\Trunk\Case\Host\ScriptHost\bin\Debug";
+            string scriptPath = @"D:\publish\TA\Release0.1.0.0";
 
             Dictionary<MethodInfo, List<Type>> validationFaults = new Dictionary<MethodInfo, List<Type>>();
             scriptList = new List<ScriptEntity>();
@@ -149,5 +205,6 @@ namespace Mento.Business.Script.BusinessLogic
 
             return testSuites;
         }
+        #endregion
     }
 }

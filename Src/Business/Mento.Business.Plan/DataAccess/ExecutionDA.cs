@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Mento.Framework;
-using Mento.Business.Execution.Entity;
 using System.Data.Common;
 using System.Data;
 using Microsoft.Practices.EnterpriseLibrary.Data;
+using Mento.Business.Plan.Entity;
 
-namespace Mento.Business.Plan.DataAccess
+namespace Mento.Business.Execution.DataAccess
 {
     public class ExecutionDA : DataAccessBase
     {

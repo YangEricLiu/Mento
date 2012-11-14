@@ -43,6 +43,16 @@ namespace Mento.Business.Plan.Test
             Assert.IsTrue(result>0);
         }
 
+        [TestMethod]
+        public void UpdateTest()
+        { 
+        }
+
+        [TestMethod]
+        public void DeleteTest()
+        { 
+        }
+
         private void DeleteTestingData()
         {
             string sql = String.Format("DELETE FROM [Plan] WHERE [PlanID]='{0}'", UnitTestPlanID);

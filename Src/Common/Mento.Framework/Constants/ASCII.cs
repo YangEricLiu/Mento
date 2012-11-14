@@ -39,5 +39,10 @@ namespace Mento.Framework.Constants
         /// $@
         /// </summary>
         public static string LANGPREFIX = "$@";
+
+        /// <summary>
+        /// ,
+        /// </summary>
+        public const string COMMA = ",";
     }
 }

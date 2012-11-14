@@ -6,13 +6,17 @@ using Mento.Business.Script.BusinessLogic;
 using Mento.Business.Script.Entity;
 using System.Reflection;
 using Mento.Utility;
+using Mento.Framework.Constants;
+using Mento.Framework.Attributes;
 
 namespace Mento.App.Controllers
 {
+    [Controller]
     public static class ScriptController
     {
         private static ScriptBL ScriptBL = new ScriptBL();
 
+        [Command]
         public static void Sync()
         {
             Console.WriteLine("Starting synchronize all test scripts..");
@@ -24,7 +28,11 @@ namespace Mento.App.Controllers
                 Console.WriteLine("Synchronization error:");
                 foreach (var item in validationResult)
                 {
-                    ColorConsole.WriteLine(item.Key.Name, ConsoleColor.Red);
+                    StringBuilder messageBuilder = new StringBuilder();
+                    foreach(var type in item.Value)
+                        messageBuilder.Append(type.Name).Append(type == item.Value.Last() ? String.Empty : ASCII.COMMA);
+
+                    ColorConsole.WriteLine(String.Format("{0}.{1}:{2}", item.Key.DeclaringType.FullName,item.Key.Name, messageBuilder.ToString()), ConsoleColor.Red);
                 }
             }
             else
@@ -33,6 +41,7 @@ namespace Mento.App.Controllers
             }
         }
 
+        [Command]
         public static void View()
         {
             ScriptEntity[] scripts = ScriptBL.Export();

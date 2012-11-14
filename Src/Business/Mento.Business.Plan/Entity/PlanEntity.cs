@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.Framework;
 using Mento.Framework.Enumeration;
+using Mento.Business.Script.Entity;
 
 namespace Mento.Business.Plan.Entity
 {
@@ -41,5 +42,10 @@ namespace Mento.Business.Plan.Entity
         /// Status of a plan
         /// </summary>
         public EntityStatus Status { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<ScriptEntity> ScriptList { get; set; }
     }
 }

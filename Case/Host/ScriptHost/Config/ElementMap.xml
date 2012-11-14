@@ -55,11 +55,11 @@
   <add key = "VtagCommodity" value = "CommodityId" type = "Name"/>
   <add key = "Electric" value = "//li[text()='Common.Commodity.Electric'" type = "Xpath"/>
   <add key = "VtagUOM" value ="UomId" type = "Name"/>
-  <add key = "KWH" value ="//li[text()='Common.UOM.KWH']" type = "Xpath"/>
+  <add key = "VtagKWH" value ="//li[text()='Common.UOM.KWH']" type = "Xpath"/>
   <add key = "VtagCalculationStep" value = "CalculationStep" type = "Name"/>
   <add key = "Hourly" value = "Common.AggregationStep.Hourly" type = "Xpath"/>
   <add key = "VtagCalculationType" value = "CalculationType" type = "Name"/>
-  <add key = "Sum" value = "Common.CaculationType.Sum" type = "Xpath"/>
+  <add key = "VtagSum" value = "Common.CaculationType.Sum" type = "Xpath"/>
   <add key = "VtagComment" value = "Comment" type = "Name"/>
    <!--PTag Configuration-->
   <add key = "PtagAddButton" value = "st-ptag-grid-add-btnEl" type = "ID"/>

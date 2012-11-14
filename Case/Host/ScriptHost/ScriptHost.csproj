@@ -129,7 +129,7 @@
     <None Include="Data\Administration\Calendar\ShowTimeSuite\TC-J1-ShowTime-001.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Data\Administration\Tag\TA-Vtag-001.json">
+    <Content Include="Data\Administration\Tag\VtagManagement\TA-VtagConfigue-001.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Data\Administration\Tag\VtagManagement\TA-Trial-Login-001.json">

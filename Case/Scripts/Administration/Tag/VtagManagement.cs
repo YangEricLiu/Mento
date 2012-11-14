@@ -15,7 +15,7 @@ namespace Mento.Script.Administration.Tag
 {
     [TestFixture]
     [ManualCaseID("TA-Trial-Login")]
-    [CreateTime("2012-11-01")]
+    [CreateTime("2012-11-04")]
     [Owner("Aries")]
     public class VtagManagement : TestSuiteBase
     {
@@ -28,8 +28,8 @@ namespace Mento.Script.Administration.Tag
         }
 
         [Test]
-        [CaseID("TA-Trial-Login-001")]
-        [MultipleTestDataSource(typeof(LoginData[]), typeof(VtagManagement), "TA-Trial-Login-001")]
+        //[CaseID("TA-Trial-Login-001")]
+        //[MultipleTestDataSource(typeof(LoginData[]), typeof(VtagManagement), "TA-Trial-Login-001")]
         public void LoginToJazz(LoginData loginData)
         {
             //throw new Exception(loginData.ToString());
@@ -41,10 +41,8 @@ namespace Mento.Script.Administration.Tag
 
             //Navigate to Vtag setting
             NavigatorIns.NavigateToTarget(NavigationTarget.TagSettingsV);
-        }
+        }   
+        FunctionWrapper.Vtag.ClickVtagConfigButton();
 
-        
-
-       
     }
 }

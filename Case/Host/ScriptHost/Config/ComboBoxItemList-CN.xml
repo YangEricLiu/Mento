@@ -12,4 +12,7 @@
   <add key = "KG" value = "千克"/>
   <add key = "KWH" value = "千瓦时"/>
   <add key = "Ton" value = "吨"/>
+  <!--CaculationType-->
+  <add key = "Sum" value = "求和"/>
+  <add key = "Avg" value = "平均值"/>
 </ItemList>

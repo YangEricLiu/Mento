@@ -5,55 +5,67 @@ using System.Text;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
+using Mento.ScriptCommon.TestData.ClientAccess;
+using Mento.Framework.Script;
+using Mento.ScriptCommon.Library.Functions;
 using Mento.ScriptCommon.TestData.Administration.Tag.VtagManagement;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    //Click Vtag config button
+
+    public class Vtag
+    {
+        private Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
+
+    /// <summary>
+    /// The business logic for Vtag creation.
+    /// </summary>
+        
+        private TextField textFieldInstance = ControlAccess.GetControl<TextField>();
+        private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
+        private Navigator navigatorInstance = ControlAccess.GetControl<Navigator>();
+       
+        /// <summary>
+        /// Click add vtag configue button
+        /// </summary>
+        /// <returns></returns>
+        /// <summary>
         public void ClickVtagConfigButton()
         {
             var locator = ElementDictionary[ElementKey.VtagConfigButton];
 
             ElementLocator.FindElement(locator).Click();
-            FunctionWrapper.WaitForLoadingDisappeared(2000);
+            FunctionWrapper.WaitForLoadingDisappeared(1000);
         }
-        
-        //Click Add Vtag button to pop up Vtag add window.
+
+        /// <summary>
+        /// Click add vtag add button
+        /// </summary>
+        /// <returns></returns>
+        /// <summary>
         public void ClickAddVtagButton()
         {
             var locator = ElementDictionary[ElementKey.AddVtagButton];
 
             ElementLocator.FindElement(locator).Click();
-            FunctionWrapper.WaitForLoadingDisappeared(2000);
+            FunctionWrapper.WaitForLoadingDisappeared(1000);
         }
-    /// <summary>
-    /// The business logic for Vtag creation.
-    /// </summary>
-    public class Vtag
-    {
-        private Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
-        
-        private TextField textFieldInstance = ControlAccess.GetControl<TextField>();
-        private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
-        private Navigator navigatorInstance = ControlAccess.GetControl<Navigator>();
+       
         /// <summary>
-        /// Click add vtag button
+        /// Click add vtag save button
         /// </summary>
         /// <returns></returns>
         /// <summary>
-        /// Click save button to add new Vtag node
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
         public void ClickSaveButton()
         {
             var locator = ElementDictionary[ElementKey.VtagSaveButton];
 
             ElementLocator.FindElement(locator).Click();
+            FunctionWrapper.WaitForLoadingDisappeared(1000);
         }
 
         /// <summary>
-        /// Click cancel button to cancel add new Vtag node
+        /// Click cancel button to cancel add new Vtag
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -62,6 +74,7 @@ namespace Mento.ScriptCommon.Library.Functions
             var locator = ElementDictionary[ElementKey.VtagCancelButton];
 
             ElementLocator.FindElement(locator).Click();
+            FunctionWrapper.WaitForLoadingDisappeared(1000);
         }
 
         /// <summary>
@@ -73,6 +86,12 @@ namespace Mento.ScriptCommon.Library.Functions
             textFieldInstance.FillIn(ElementKey.VtagCode, input.Code);
             comboBoxInstance.DisplayItems(ElementKey.VtagCommodity);
             comboBoxInstance.SelectItem(input.Commodity);
+            comboBoxInstance.DisplayItems(ElementKey.VtagUOM);
+            comboBoxInstance.SelectItem(input.UOM);
+            comboBoxInstance.DisplayItems(ElementKey.VtagCalculationStep);
+            comboBoxInstance.SelectItem(input.Step);
+            comboBoxInstance.DisplayItems(ElementKey.VtagCalculationType);
+            comboBoxInstance.SelectItem(input.CalculationType);
             textFieldInstance.FillIn(ElementKey.VtagComment, input.Comment);
         }
 
@@ -83,14 +102,13 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         /// 
        
-
         public void FillInName(string name)
         {
             textFieldInstance.FillIn(ElementKey.VtagName, name);
         }
 
         /// <summary>
-        /// Input code of the new Vtag node 
+        /// Input code of the new Vtag 
         /// </summary>
         /// <param name="code">Vtag code</param>
         /// <returns></returns>
@@ -100,7 +118,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Input type of the new Vtag node 
+        /// Input type of the new Vtag 
         /// </summary>
         /// <param name="Commodity">Vtag commodity</param>
         /// <returns></returns>
@@ -111,26 +129,36 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Input comment of the new Vtag 
+        /// Input type of the new Vtag 
         /// </summary>
-        /// <param name="code">Vtag comment code</param>
+        /// <param name="Commodity">Vtag commodity</param>
         /// <returns></returns>
-        public void FillInComment(string comment)
+        public void FillInCommodity(string VtagUOM)
         {
-            textFieldInstance.FillIn(ElementKey.VtagComment, comment);
+            comboBoxInstance.DisplayItems(ElementKey.VtagUOM);
+            comboBoxInstance.SelectItem(VtagUOM);
         }
 
         /// <summary>
-        /// After click save button, waiting for add successful message box pop up
+        /// Input type of the new Vtag 
         /// </summary>
-        /// <param name="timeout">Waiting time</param>
+        /// <param name="Commodity">Vtag commodity</param>
         /// <returns></returns>
-        public void WaitForCreateOKDisplay(int timeout)
+        public void FillInCommodity(string VtagCalculationStep)
         {
-            var locator = ElementDictionary[ElementKey.VtagCreateOKText];
+            comboBoxInstance.DisplayItems(ElementKey.VtagCalculationStep);
+            comboBoxInstance.SelectItem(VtagCalculationStep); ;
+        }
 
-            ElementLocator.WaitForElement(locator, timeout);
-        }*/
+        /// <summary>
+        /// Input comment of the new Vtag 
+        /// </summary>
+        /// <param name="code">Vtag comment</param>
+        /// <returns></returns>
+        public void FillInComment(string Comment)
+        {
+            textFieldInstance.FillIn(ElementKey.VtagComment, Comment);
+        }
         
     }
 }

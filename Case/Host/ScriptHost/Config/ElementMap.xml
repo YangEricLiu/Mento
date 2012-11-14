@@ -41,8 +41,10 @@
   <add key = "FormulaTab" value = "//span[text()='计算公式']" type = "Xpath"/>
   <add key = "FormulaUpdateButton" value = "//div[@id='st-vtag-formula']//span[text()='Common.Operation.Update']" type = "Xpath"/>
   <add key = "FormulaSaveButton" value = "//div[@id='st-vtag-formula']//span[text()='Common.Button.Save']" type = "Xpath"/>
-  <add key = "FormulaTagRow" value = "//div[text()='tagName']" type = "Xpath"/>
+  <add key = "FormulaTagRow" value = "//div[@id='ptaglist_formula']//div[text()='tagName']" type = "Xpath"/>
   <add key = "AssociateTagButton" value = "st-tagassoc-taggrid-assoc-btnInnerEl" type = "ID"/>
+  <add key = "AssociateButton" value = "st-tagassoc-taggrid-assocaction-btnInnerEl" type = "ID"/>
+  <add key = "IsTagOnAssociateGrid" value = "//div[contains(@id,'gridview')]//div[text()='tagName']" type = "Xpath"/>
   <!--VTag Setting-->
   <add key = "AddVtagButton" value = "st-vtag-grid-add-btnInnerEl" type = "ID"/>
   <add key=  "VtagConfigButton" Value ="st-menu-vtagmgr" type = "ID"/>

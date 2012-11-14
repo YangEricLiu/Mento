@@ -53,13 +53,13 @@
   <add key = "VtagName" value = "Name" type = "Name"/>
   <add key = "VtagCode" value = "Code" type = "Name"/>
   <add key = "VtagCommodity" value = "CommodityId" type = "Name"/>
-  <add key = "VtagCommodityElectric" value = "//li[text()='Common.Commodity.Electric'" type = "Xpath"/>
+  <add key = "Electric" value = "//li[text()='Common.Commodity.Electric'" type = "Xpath"/>
   <add key = "VtagUOM" value ="UomId" type = "Name"/>
-  <add key = "VtagUOMKWH" value ="//li[text()='Common.UOM.KWH']" type = "Xpath"/>
+  <add key = "KWH" value ="//li[text()='Common.UOM.KWH']" type = "Xpath"/>
   <add key = "VtagCalculationStep" value = "CalculationStep" type = "Name"/>
-  <add key = "VtagStepHourly" value = "Common.AggregationStep.Hourly" type = "Xpath"/>
+  <add key = "Hourly" value = "Common.AggregationStep.Hourly" type = "Xpath"/>
   <add key = "VtagCalculationType" value = "CalculationType" type = "Name"/>
-  <add key = "VtagCalTypeSum" value = "Common.CaculationType.Sum" type = "Xpath"/>
+  <add key = "Sum" value = "Common.CaculationType.Sum" type = "Xpath"/>
   <add key = "VtagComment" value = "Comment" type = "Name"/>
    <!--PTag Configuration-->
   <add key = "PtagAddButton" value = "st-ptag-grid-add-btnEl" type = "ID"/>

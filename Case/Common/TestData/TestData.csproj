@@ -44,8 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administration\PtagData.cs" />
     <Compile Include="Administration\ExampleData.cs" />
-    <Compile Include="Administration\Tag\VtagManagement\AddVtagData.cs" />
     <Compile Include="ClientAccess\LoginData.cs" />
     <Compile Include="Administration\AddHierarchyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +67,8 @@
   <ItemGroup>
     <Folder Include="Administration\Calendar\" />
     <Folder Include="Administration\Hierarchy\HierarchyManagement\" />
+    <Folder Include="Administration\Tag\PtagConfiguration\" />
+    <Folder Include="Administration\Tag\VtagManagement\" />
     <Folder Include="Customer\" />
     <Folder Include="EnergyView\" />
     <Folder Include="Information\" />

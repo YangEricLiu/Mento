@@ -10,7 +10,6 @@ using Mento.Framework.Script;
 using Mento.TestApi.WebUserInterface;
 using OpenQA.Selenium;
 using Mento.ScriptCommon.Library.Functions;
-using Mento.ScriptCommon.TestData.Administration.Tag.VtagManagement;
 
 namespace Mento.Script.Administration.Tag
 {
@@ -44,23 +43,7 @@ namespace Mento.Script.Administration.Tag
             NavigatorIns.NavigateToTarget(NavigationTarget.TagSettingsV);
         }
 
-        //
-        public void ClickVtagConfigButton()
-        {
-            var locator = ElementDictionary[ElementKey.VtagConfigButton];
-
-            ElementLocator.FindElement(locator).Click();
-            FunctionWrapper.WaitForLoadingDisappeared(2000);
-        }
         
-        //Click Add Vtag button to pop up Vtag add window.
-        public void ClickAddVtagButton()
-        {
-            var locator = ElementDictionary[ElementKey.AddVtagButton];
-
-            ElementLocator.FindElement(locator).Click();
-            FunctionWrapper.WaitForLoadingDisappeared(2000);
-        }
 
        
     }

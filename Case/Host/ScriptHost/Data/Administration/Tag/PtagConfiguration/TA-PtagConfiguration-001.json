@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Name":"Amy_Ptag1_名称",
+			"Name":" Amy_Ptag1_名称 ",
 			"Code":"Amy_Ptag1_Code",
 			"MeterCode":"Amy_MeterCode1",
 			"ChannelId":"1",
@@ -19,7 +19,7 @@
 	{
 		"InputData":
 		{
-			"Name":"Amy_Ptag2_名称",
+			"Name":"Amy_Ptag2_名称 ",
 			"Code":"Amy_Ptag2_Code",
 			"MeterCode":"Amy_MeterCode1",
 			"ChannelId":"2",

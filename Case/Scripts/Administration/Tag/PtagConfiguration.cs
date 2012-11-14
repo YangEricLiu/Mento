@@ -53,9 +53,15 @@ namespace Mento.Script.Administration.Tag
             FunctionWrapper.Ptag.ClickSaveButton();
 
             ElementLocator.Pause(500);
-            FunctionWrapper.Ptag.FocusOnTag(testData.InputData.Name);
+            FunctionWrapper.Ptag.FocusOnTag(testData.ExpectedData.Name);
             Assert.AreEqual(testData.ExpectedData.Name, FunctionWrapper.Ptag.GetNameValue());
+            Assert.AreEqual(testData.InputData.Code, FunctionWrapper.Ptag.GetCodeValue());
+            Assert.AreEqual(testData.InputData.MeterCode, FunctionWrapper.Ptag.GetMeterCodeValue());
+            Assert.AreEqual(testData.InputData.ChannelId, FunctionWrapper.Ptag.GetChannelIdValue());
+            Assert.AreEqual(FunctionWrapper.Ptag.GetCommodityExpectedValue(testData.InputData.CommodityId), FunctionWrapper.Ptag.GetCommodityValue());
             Assert.AreEqual(FunctionWrapper.Ptag.GetUomExpectedValue(testData.InputData.UomId), FunctionWrapper.Ptag.GetUomValue());
+            Assert.AreEqual(FunctionWrapper.Ptag.GetCalculationTypeExpectedValue(testData.InputData.CalculationType), FunctionWrapper.Ptag.GetCalculationTypeValue());
+            Assert.AreEqual(testData.InputData.Comment, FunctionWrapper.Ptag.GetCommentValue());
         }
 
         [Test]

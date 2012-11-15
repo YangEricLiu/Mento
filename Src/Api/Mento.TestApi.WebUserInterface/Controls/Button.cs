@@ -40,5 +40,15 @@ namespace Mento.TestApi.WebUserInterface
         {
             return ElementLocator.FindElement(buttonLocator).Text;
         }
+
+        /// <summary>
+        /// Judge if the button is enabled
+        /// </summary>
+        /// <param name="buttonLocator"></param>
+        /// <returns>True if the button is enabl, false if not </returns>
+        public Boolean IsButtonEnabled(Locator buttonLocator)
+        {
+            return ElementLocator.FindElement(buttonLocator).Enabled;
+        }
     }
 }

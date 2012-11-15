@@ -14,6 +14,7 @@ namespace Mento.ScriptCommon.Library.Functions
     public class LoginFunction
     {
         private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
+        private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
 
         /// <summary>
         /// Login Jazz with test data
@@ -38,7 +39,14 @@ namespace Mento.ScriptCommon.Library.Functions
 
             ElementLocator.Pause(5000);
 
+            //Amy update starts: add customer selection for R1.0. so if running case in R1.0, these need to be uncomment.
+            //comboBoxInstance.DisplayItems(ElementKey.CustomerSelection);
+            //comboBoxInstance.SelectItem("Schneider");  //or "REMPlatform"
+            //ElementLocator.FindElement(ElementDictionary[ElementKey.CustomerConfirmButton]).Click();
+            //Amy update ends
+
             ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 150);
+            //Amy comment: if running case in R1.0, below clause "ElementLocator.WaitForElementToDisappear.." needs to be commented out.
             ElementLocator.WaitForElementToDisappear(new Locator("mainLoadingMask", ByType.ID), 30);
         }
 

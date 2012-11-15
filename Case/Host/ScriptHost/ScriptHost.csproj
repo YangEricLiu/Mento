@@ -114,27 +114,13 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\Administration\Calendar\ExampleSuite\TA-Example-008.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Administration\Calendar\ExampleSuite\TA-Example-009.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Administration\Hierarchy\HierarchyManagement\TA-Hierarchy-001.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="Data\Administration\Calendar\LoginSuite\TA-Trial-Login-001.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\Administration\Calendar\ShowTimeSuite\TC-J1-ShowTime-001.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <Content Include="Data\Administration\Tag\VtagManagement\TA-VtagConfigue-001.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="Data\Administration\Tag\VtagManagement\TA-Trial-Login-001.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Content Include="Data\Administration\Calendar\ExampleSuite\TA-Example-008.json" />
+    <Content Include="Data\Administration\Calendar\ExampleSuite\TA-Example-009.json" />
+    <Content Include="Data\Administration\Hierarchy\HierarchyManagement\TA-Hierarchy-001.json" />
+    <Content Include="Data\Administration\Calendar\LoginSuite\TA-Trial-Login-001.json" />
+    <Content Include="Data\Administration\Calendar\ShowTimeSuite\TC-J1-ShowTime-001.json" />
+    <Content Include="Data\Administration\Tag\VtagManagement\TA-VtagConfigue-001.json" />
+    <Content Include="Data\Administration\Tag\VtagManagement\TA-Trial-Login-001.json" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -165,6 +151,15 @@
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(ProjectDir)Data $(TargetDir)Data /E /Y /R /I
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Administration.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.ClientAccess.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Customer.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.EnergyView.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Information.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.System.dll.config</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

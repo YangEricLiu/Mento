@@ -41,7 +41,7 @@ namespace Mento.Script.Administration.Tag
         }
 
         [Test]
-        [CaseID("TA-Formula-001"), CreateTime("2012-11-08"), Owner("Emma")]
+        [CaseID("TA-Formula-001"), CreateTime("2012-11-08"), Owner("Emma"),ManualCaseID("TA-Example")]
         public void AddFormulaToVtag()
         {
             string vtagName = "AutoVtag001";

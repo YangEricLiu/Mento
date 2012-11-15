@@ -35,7 +35,7 @@ namespace Mento.Business.Plan.Test
                 Owner="Aries",
                 Status = Framework.Enumeration.EntityStatus.Active,
                 UpdateTime = DateTime.Now,
-                TargetVersion = String.Empty,                
+                ProductVersion = String.Empty,                
             };
 
             long result = PlanDA.Create(plan);

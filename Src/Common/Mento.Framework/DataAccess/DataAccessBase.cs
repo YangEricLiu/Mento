@@ -35,6 +35,9 @@ namespace Mento.Framework
 
                 foreach (PropertyInfo property in typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance))
                 {
+                    if (reader.GetSchemaTable().AsEnumerable().Where(r => String.Equals(r["ColumnName"].ToString(), property.Name, StringComparison.OrdinalIgnoreCase)).Count() <= 0)
+                        continue;
+
                     if (property.PropertyType == typeof(string))
                     {
                         property.SetValue(entity, reader[property.Name].ToString(), null);
@@ -58,6 +61,10 @@ namespace Mento.Framework
                     else if (property.PropertyType == typeof(DateTime))
                     {
                         property.SetValue(entity, Convert.ToDateTime(reader[property.Name]), null);
+                    }
+                    else if (property.PropertyType.IsEnum)
+                    {
+                        property.SetValue(entity, Enum.Parse(property.PropertyType,reader[property.Name].ToString()), null);
                     }
                 }
 

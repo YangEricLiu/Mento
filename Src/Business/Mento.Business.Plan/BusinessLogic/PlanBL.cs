@@ -15,6 +15,8 @@ using System.Transactions;
 using Mento.Business.Script.Entity;
 using Mento.Framework.Enumeration;
 using Mento.Business.Execution.DataAccess;
+using Mento.Framework;
+using Mento.Utility;
 
 namespace Mento.Business.Plan.BusinessLogic
 {
@@ -22,7 +24,6 @@ namespace Mento.Business.Plan.BusinessLogic
     {
         private static PlanDA PlanDA = new PlanDA();
         private static PlanScriptDA PlanScriptDA = new PlanScriptDA();
-        private static ExecutionDA ExecutionDA = new ExecutionDA();
 
         private static ScriptBL ScriptBL = new ScriptBL();
 
@@ -31,6 +32,8 @@ namespace Mento.Business.Plan.BusinessLogic
             XDocument planDefinition = GetPlanXDocument(planFile);
 
             PlanEntity plan = GetPlanInformationFromXDocument(planDefinition);
+            plan.Status = EntityStatus.Active;
+            plan.UpdateTime = DateTime.Now;
             
             using (TransactionScope ts = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions() { IsolationLevel = System.Transactions.IsolationLevel.RepeatableRead }))
             {
@@ -52,8 +55,9 @@ namespace Mento.Business.Plan.BusinessLogic
             XDocument planDefinition = GetPlanXDocument(planFile);
 
             PlanEntity plan = GetPlanInformationFromXDocument(planDefinition);
-
             plan.ID = originalPlan.ID;
+            plan.Status = originalPlan.Status;
+            plan.UpdateTime = DateTime.Now;
 
             using (TransactionScope ts = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions() { IsolationLevel = System.Transactions.IsolationLevel.RepeatableRead }))
             {
@@ -83,11 +87,6 @@ namespace Mento.Business.Plan.BusinessLogic
         public PlanEntity Export(string planID)
         {
             throw new NotImplementedException();
-        }
-
-        public void Run(string planID, string url, string browser, string language)
-        { 
-
         }
 
         #region private methods
@@ -129,7 +128,7 @@ namespace Mento.Business.Plan.BusinessLogic
 
             plan.PlanID = root.Element("id") == null ? String.Empty : root.Element("id").Value.Trim();
             plan.Name = root.Element("name") == null ? String.Empty : root.Element("name").Value.Trim();
-            plan.TargetVersion = root.Element("version") == null ? String.Empty : root.Element("version").Value.Trim();
+            plan.ProductVersion = root.Element("version") == null ? String.Empty : root.Element("version").Value.Trim();
             plan.Owner = root.Element("owner") == null ? String.Empty : root.Element("owner").Value.Trim();
             plan.ScriptList = GetScriptListFromXDocument(xdoc);
 
@@ -172,8 +171,8 @@ namespace Mento.Business.Plan.BusinessLogic
 
             if (String.IsNullOrEmpty(plan.PlanID) || !Regex.IsMatch(plan.PlanID, ValidationRegexPatterns.IDENTITYPATTERN))
                 validationResult.Add("PlanID", "can not be null and match identity rule");
-            if (String.IsNullOrEmpty(plan.TargetVersion))
-                validationResult.Add("Version", "can not be null");
+            if (String.IsNullOrEmpty(plan.ProductVersion))
+                validationResult.Add("ProductVersion", "can not be null");
             if (!ScriptBL.ValidateScriptExistence(plan.ScriptList.Select(s=>s.CaseID).ToList(), out notExistingScripts))
                 validationResult.Add("CaseList", String.Join(ASCII.COMMA, notExistingScripts.ToArray()) + "does not exist");
 

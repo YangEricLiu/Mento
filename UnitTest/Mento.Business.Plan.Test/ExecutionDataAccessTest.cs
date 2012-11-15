@@ -67,7 +67,7 @@ namespace Mento.Business.Execution.Test
                 Owner = "Aries",
                 Status = Framework.Enumeration.EntityStatus.Active,
                 UpdateTime = DateTime.Now,
-                TargetVersion = String.Empty,
+                ProductVersion = String.Empty,
             };
 
             UnitTestPlanID = PlanDA.Create(plan);

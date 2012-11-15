@@ -16,14 +16,14 @@ namespace Mento.Business.Plan.DataAccess
     {
         public long Create(PlanEntity entity)
         {
-            string sql = @" INSERT INTO [Plan]([PlanID],[Name],[Version],[Owner],[UpdateTime],[Status]) VALUES(@PlanID,@Name,@Version,@Owner,@UpdateTime,@Status)
+            string sql = @" INSERT INTO [Plan]([PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status]) VALUES(@PlanID,@Name,@ProductVersion,@Owner,@UpdateTime,@Status)
                             SELECT SCOPE_IDENTITY()";
             
             DbCommand command = Database.GetSqlStringCommand(sql);
 
             Database.AddInParameter(command, "PlanID", DbType.String, entity.PlanID);
             Database.AddInParameter(command, "Name", DbType.String, entity.Name);
-            Database.AddInParameter(command, "Version", DbType.String, entity.TargetVersion);
+            Database.AddInParameter(command, "ProductVersion", DbType.String, entity.ProductVersion);
             Database.AddInParameter(command, "Owner", DbType.String, entity.Owner);
             Database.AddInParameter(command, "UpdateTime", DbType.DateTime, entity.UpdateTime);
             Database.AddInParameter(command, "Status", DbType.Int32, entity.Status);
@@ -35,14 +35,14 @@ namespace Mento.Business.Plan.DataAccess
 
         public void Update(PlanEntity entity)
         {
-            string sql = "UPDATE [Plan] SET [PlanID] = @PlanID, [Name] = @Name,[Version] = @Version,[Owner] = @Owner,[UpdateTime] =@UpdateTime,[Status] = @Status WHERE [ID]=@ID";
+            string sql = "UPDATE [Plan] SET [PlanID] = @PlanID, [Name] = @Name,[ProductVersion] = @ProductVersion,[Owner] = @Owner,[UpdateTime] =@UpdateTime,[Status] = @Status WHERE [ID]=@ID";
             
             DbCommand command = Database.GetSqlStringCommand(sql);
 
             Database.AddInParameter(command, "ID", DbType.Int64, entity.ID);
             Database.AddInParameter(command, "PlanID", DbType.String, entity.PlanID);
             Database.AddInParameter(command, "Name", DbType.String, entity.Name);
-            Database.AddInParameter(command, "Version", DbType.String, entity.TargetVersion);
+            Database.AddInParameter(command, "ProductVersion", DbType.String, entity.ProductVersion);
             Database.AddInParameter(command, "Owner", DbType.String, entity.Owner);
             Database.AddInParameter(command, "UpdateTime", DbType.DateTime, entity.UpdateTime);
             Database.AddInParameter(command, "Status", DbType.Int32, entity.Status);
@@ -52,12 +52,12 @@ namespace Mento.Business.Plan.DataAccess
 
         public PlanEntity Retrieve(string planID)
         {
-            string sql = @"SELECT [ID],[PlanID],[Name],[Version],[Owner],[UpdateTime],[Status] FROM [Plan] WHERE [PlanID] = @PlanID AND [Status]=@Status";
+            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan] WHERE [PlanID] = @PlanID AND [Status]=@Status";
 
             DbCommand command = Database.GetSqlStringCommand(sql);
 
             Database.AddInParameter(command, "PlanID", DbType.String, planID);
-            Database.AddInParameter(command, "Status", DbType.Int32, (int)EntityStatus.Deleted);
+            Database.AddInParameter(command, "Status", DbType.Int32, (int)EntityStatus.Active);
 
             List<PlanEntity> list = base.ReadEntity<PlanEntity>(Database.ExecuteReader(command));
 

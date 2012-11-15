@@ -53,7 +53,7 @@ namespace Mento.Business.Script.BusinessLogic
 
         public ScriptEntity[] Export()
         {
-            string excelFilePath = ExportConfig.GetExportLocationConfig(ConfigurationKey.SCRIPT_EXPORT_DIRECTORY);;
+            string excelFilePath = ExportConfig.ScriptExportDirectory;
             //string excelFilePath = @"D:\backup\ScriptMetaData.xlsx";
 
             String[] headerList = new string[] { "CaseID", "ManualCaseID", "Name", 
@@ -118,6 +118,11 @@ namespace Mento.Business.Script.BusinessLogic
             return GetScriptsFromCache().Where(s => String.Equals(s.SuiteName, suiteName, StringComparison.OrdinalIgnoreCase)).Select(s => s.CaseID).ToArray();
         }
 
+        public ScriptEntity[] GetScriptsByPlanID(long planID)
+        {
+            return ScriptDA.RetrieveByPlanID(planID);
+        }
+
         #region private methods
         private ScriptEntity[] GetScriptsFromCache()
         {
@@ -133,7 +138,7 @@ namespace Mento.Business.Script.BusinessLogic
 
         private Dictionary<MethodInfo, List<Type>> ValidateScript(out List<ScriptEntity> scriptList)
         {
-            string scriptPath = @"D:\publish\TA\Release0.1.0.0";
+            string scriptPath = @"D:\publish\TA\Release0.1.0.1";
 
             Dictionary<MethodInfo, List<Type>> validationFaults = new Dictionary<MethodInfo, List<Type>>();
             scriptList = new List<ScriptEntity>();
@@ -186,11 +191,13 @@ namespace Mento.Business.Script.BusinessLogic
                 Owner = owner,
                 SuiteName = testSuite.Name,
                 Feature = testSuite.Namespace.Split(ASCII.DOT.ToCharArray()[0]).LastOrDefault(),
-                Module = testSuite.Namespace.Replace(Project.SCRIPTNAMESPACEPREFIX+ASCII.DOT,String.Empty).Split(ASCII.DOT.ToCharArray()[0]).FirstOrDefault(),
+                Module = testSuite.Namespace.Replace(Project.SCRIPTNAMESPACEPREFIX + ASCII.DOT, String.Empty).Split(ASCII.DOT.ToCharArray()[0]).FirstOrDefault(),
                 Name = testScript.Name,
                 SyncTime = DateTime.Now,
                 Priority = 1,
                 Type = 1,
+                Assembly = String.Format("{0}.dll",testScript.DeclaringType.Assembly.GetName().Name),
+                FullName = String.Format("{0}.{1}", testScript.DeclaringType.FullName, testScript.Name),
             };
         }
 

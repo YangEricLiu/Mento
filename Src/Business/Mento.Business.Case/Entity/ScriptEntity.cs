@@ -65,5 +65,15 @@ namespace Mento.Business.Script.Entity
         /// Synchronization time of this script
         /// </summary>
         public DateTime? SyncTime { get; set; }
+
+        /// <summary>
+        /// Full name of this script
+        /// </summary>
+        public string FullName { get; set; }
+
+        /// <summary>
+        /// Assembly name that contains this script
+        /// </summary>
+        public string Assembly { get; set; }
     }
 }

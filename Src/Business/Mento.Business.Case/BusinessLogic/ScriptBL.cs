@@ -10,9 +10,13 @@ using NUnit.Framework;
 using Mento.Framework.Script;
 using Mento.Framework.Constants;
 using Mento.Framework.Attributes;
+using Mento.Framework.Configuration;
 using System.Text.RegularExpressions;
 using System.Runtime.Caching;
 using Mento.Utility;
+using System.Data;
+using Microsoft.Office.Interop.Excel;
+
 
 namespace Mento.Business.Script.BusinessLogic
 {
@@ -49,13 +53,28 @@ namespace Mento.Business.Script.BusinessLogic
 
         public ScriptEntity[] Export()
         {
-            throw new NotImplementedException();
+            string excelFilePath = ExportConfig.GetExportLocationConfig(ConfigurationKey.SCRIPT_EXPORT_DIRECTORY);;
+            //string excelFilePath = @"D:\backup\ScriptMetaData.xlsx";
 
-            ScriptEntity[] scripts = ScriptDA.RetrieveAll();
+            String[] headerList = new string[] { "CaseID", "ManualCaseID", "Name", 
+                "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime" };
 
-            //for each script in scripts, write it into an excel row
+            System.Data.DataTable scriptsTable = ScriptDA.RetrieveToDataTable();
 
-            return scripts;
+            //Open excel file which restore scripts data
+            ExcelHelper handler = new ExcelHelper(excelFilePath, false);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Worksheet sheet = handler.GetWorksheet("ScriptsData");
+
+            //Import data from the start
+            handler.ImportDataTable(sheet, headerList, scriptsTable);
+
+            handler.Save();
+
+            return ScriptDA.RetrieveAll();
         }
 
         /// <summary>

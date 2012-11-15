@@ -64,5 +64,15 @@ namespace Mento.Business.Script.DataAccess
 
             return list.ToArray();
         }
+
+        public DataTable RetrieveToDataTable()
+        {
+            string sql = "SELECT [ID],[CASEID],[MANUALCASEID],[NAME],[SUITENAME],[TYPE],[PRIORITY],[FEATURE],[MODULE],[OWNER],[CREATETIME],[SYNCTIME] FROM [Script]";
+
+            DbCommand command = Database.GetSqlStringCommand(sql);
+
+            return Database.ExecuteDataSet(command).Tables[0];
+        
+        }
     }
 }

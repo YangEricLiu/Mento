@@ -7,15 +7,15 @@ using NUnit.Framework;
 namespace Mento.Framework.Attributes
 {
     /// <summary>
-    /// Summary description for CaseIDAttribute.
+    /// Summary description for OwnerAttribute.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class OwnerAttribute : PropertyAttribute
     {
         /// <summary>
-        /// Construct a MaxTimeAttribute, given a time in milliseconds.
+        /// Construct a OwnerAttribute, given a owner name.
         /// </summary>
-        /// <param name="milliseconds">The maximum elapsed time in milliseconds</param>
+        /// <param name="owner">owner name</param>
         public OwnerAttribute(string owner)
             : base(owner) { }
     }

@@ -13,9 +13,9 @@ namespace Mento.Framework.Attributes
     public class ManualCaseIDAttribute : PropertyAttribute
     {
         /// <summary>
-        /// Construct a MaxTimeAttribute, given a time in milliseconds.
+        /// Construct a ManualCaseIDAttribute, given a manual case id.
         /// </summary>
-        /// <param name="milliseconds">The maximum elapsed time in milliseconds</param>
+        /// <param name="manualcaseid">manual case id</param>
         public ManualCaseIDAttribute(string manualcaseid)
             : base(manualcaseid) { }
     }

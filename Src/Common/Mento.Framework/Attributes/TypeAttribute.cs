@@ -7,16 +7,16 @@ using NUnit.Framework;
 namespace Mento.Framework.Attributes
 {
     /// <summary>
-    /// Summary description for CaseIDAttribute.
+    /// Summary description for Type Attribute.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
-    public class CaseIDAttribute : PropertyAttribute
+    public class TypeAttribute : PropertyAttribute
     {
         /// <summary>
-        /// Construct a CaseIDAttribute, given a case ID.
+        /// Construct a TypeAttribute, given a type.
         /// </summary>
-        /// <param name="caseid">Case ID string</param>
-        public CaseIDAttribute(string caseid)
-            : base(caseid) { }
+        /// <param name="type">Case type</param>
+        public TypeAttribute(string type)
+            : base(type) { }
     }
 }

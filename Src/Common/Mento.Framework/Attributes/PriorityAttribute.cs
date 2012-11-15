@@ -7,16 +7,16 @@ using NUnit.Framework;
 namespace Mento.Framework.Attributes
 {
     /// <summary>
-    /// Summary description for CaseIDAttribute.
+    /// Summary description for Priority Attribute.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
-    public class CaseIDAttribute : PropertyAttribute
+    public class PriorityAttribute : PropertyAttribute
     {
         /// <summary>
-        /// Construct a CaseIDAttribute, given a case ID.
+        /// Construct a PriorityAttribute, given a priority.
         /// </summary>
-        /// <param name="caseid">Case ID string</param>
-        public CaseIDAttribute(string caseid)
-            : base(caseid) { }
+        /// <param name="priority">Priority</param>
+        public PriorityAttribute(int priority)
+            : base(priority) { }
     }
 }

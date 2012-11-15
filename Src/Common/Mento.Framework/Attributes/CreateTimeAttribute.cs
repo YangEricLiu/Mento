@@ -7,15 +7,15 @@ using NUnit.Framework;
 namespace Mento.Framework.Attributes
 {
     /// <summary>
-    /// Summary description for CaseIDAttribute.
+    /// Summary description for CreateTimeAttribute.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public class CreateTimeAttribute : PropertyAttribute
     {
         /// <summary>
-        /// Construct a MaxTimeAttribute, given a time in milliseconds.
+        /// Construct a CreateTimeAttribute, given a create time.
         /// </summary>
-        /// <param name="milliseconds">The maximum elapsed time in milliseconds</param>
+        /// <param name="createtime">Case create time</param>
         public CreateTimeAttribute(string createtime)
             : base(createtime) { }
     }

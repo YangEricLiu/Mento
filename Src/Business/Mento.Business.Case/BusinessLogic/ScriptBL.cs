@@ -73,6 +73,7 @@ namespace Mento.Business.Script.BusinessLogic
             handler.ImportDataTable(sheet, headerList, scriptsTable);
 
             handler.Save();
+            handler.Dispose();
 
             return ScriptDA.RetrieveAll();
         }

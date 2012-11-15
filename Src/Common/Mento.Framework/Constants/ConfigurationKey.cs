@@ -34,15 +34,5 @@ namespace Mento.Framework.Constants
         public const string EXECUTION_CONFIGURATION = "executionConfiguration";
         public const string EXPORT_LOCATION_CONFIGURATION = "exportLocationConfiguration";
 
-        public const string BROWSER = "browser";
-        public const string LANGUAGE = "language";
-        public const string URL = "url";
-        public const string OS = "OS";
-        public const string IE_VERSION = "IEVersion";
-        public const string PLAN_ID = "planID";
-
-        public const string PLAN_EXPORT_DIRECTORY = "planExportDirectory";
-        public const string SCRIPT_EXPORT_DIRECTORY = "scriptExportDirectory";
-        public const string RESULT_EXPORT_DIRECTORY = "resultExportDirectory";
      }
 }

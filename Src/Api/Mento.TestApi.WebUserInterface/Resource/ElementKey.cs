@@ -26,6 +26,13 @@ namespace Mento.TestApi.WebUserInterface
         public const string PopUpMessageBox = "PopUpMessageBox";
         public const string LoginSubmit = "LoginSubmit";
 
+        //Amy update starts: add customer selection function for R1.0
+        public const string CustomerSelection = "CustomerSelection";
+        public const string CustomerConfirmButton = "CustomerConfirmButton";
+        public const string Schneider = "Schneider";
+        public const string REMPlatform = "REMPlatform";
+        //Amy update ends
+
         public const string AddHierarchyButton = "AddHierarchyButton";
         public const string HierarchyName = "HierarchyName";
         public const string HierarchyCode = "HierarchyCode";
@@ -92,5 +99,6 @@ namespace Mento.TestApi.WebUserInterface
         //CaculationType
         public const string Sum = "Sum";
         public const string Avg = "Avg";
+
     }
 }

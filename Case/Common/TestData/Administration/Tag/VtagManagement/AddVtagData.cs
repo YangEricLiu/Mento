@@ -21,15 +21,15 @@ namespace Mento.ScriptCommon.TestData.Administration.Tag.VtagManagement
         public string CalculationType { get; set; }
         public string Comment { get; set; }
 
-        public VtagInputData(string name, string code, string Commodity, string UOM, string Step, string CalculationType, string Comment)
+        public VtagInputData(string name, string code, string commodity, string uom, string step, string calculationtype, string comment)
         {
             this.Name = name;
             this.Code = code;
-            this.Commodity = Commodity;
-            this.UOM = UOM;
-            this.Step = Step;
-            this.CalculationType = CalculationType;
-            this.Comment = Comment;
+            this.Commodity = commodity;
+            this.UOM = uom;
+            this.Step = step;
+            this.CalculationType = calculationtype;
+            this.Comment = comment;
 
         }
     }

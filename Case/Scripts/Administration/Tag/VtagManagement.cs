@@ -15,45 +15,55 @@ using Mento.ScriptCommon.TestData.Administration.Tag.VtagManagement;
 namespace Mento.Script.Administration.Tag
 {
     [TestFixture]
-    [ManualCaseID("TA-Trial-Login")]
-    [CreateTime("2012-11-04")]
-    [Owner("Aries")]
+    //[ManualCaseID("TA-VtagConfigue")]
+    [CreateTime("2012-11-15")]
+    [Owner("Nancy")]
     public class VtagManagement : TestSuiteBase
     {
         private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
         private Navigator NavigatorIns = ControlAccess.GetControl<Navigator>();
-        [SetUp]
-        public void SetUp()
+       [TestFixtureSetUp]
+        public void CaseFixtureSetUp()
         {
             ElementLocator.OpenJazz();
-        }
-
-        [Test]
-        //[CaseID("TA-Trial-Login-001")]
-        //[MultipleTestDataSource(typeof(LoginData[]), typeof(VtagManagement), "TA-Trial-Login-001")]
-        public void LoginToJazz(LoginData loginData)
-        {
-            //throw new Exception(loginData.ToString());
-
-            //Threading.Thread.Sleep(10000);
-
-            FunctionWrapper.Login.Login(loginData.InputData);
-            Assert.IsTrue(ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 600));;
-
-        }
-        public void VtagConfigueNavigation()
-
-        {
+            FunctionWrapper.Login.Login();
+            
             NavigatorIns.NavigateToTarget(NavigationTarget.TagSettingsV);
-            FunctionWrapper.Vtag.ClickVtagConfigButton();
+
         }
-        public void VtagFillin()
+        [TestFixtureTearDown]
+        public void CaseFixtureTearDown()
         {
-            FunctionWrapper.Vtag.FillInName(ElementKey.VtagName);
+            ElementLocator.QuitJazz();
         }
-        public void VtagSaveAction()
+        
+        [Test]
+        [CaseID("TA-VtagConfigue-001.json"), CreateTime("2012-11-14"), Owner("Nancy")]
+        [MultipleTestDataSource(typeof(AddVtagData[]), typeof(VtagManagement), "TA-VtagConfigue-001.json")]
+
+        public void AddVtag(AddVtagData input)
         {
+            FunctionWrapper.Vtag.ClickAddVtagButton();
+            FunctionWrapper.Vtag.FillInAddVtagData(input.InputData);
             FunctionWrapper.Vtag.ClickSaveButton();
+            FunctionWrapper.WaitForLoadingDisappeared(5000);
         }
+
+
+        public void AddVtagResultView(AddVtagData testdata)
+        {
+
+            string AddedVtagName = "NancyVtag";
+            FunctionWrapper.Vtag.FocusOnTag(AddedVtagName);
+            Assert.AreEqual(testdata.InputData.Name, FunctionWrapper.Vtag.GetVtagNameValue());
+            Assert.AreEqual(testdata.InputData.Code, FunctionWrapper.Vtag.GetVtagCodeValue());
+            Assert.AreEqual(testdata.InputData.Commodity, FunctionWrapper.Vtag.GetVtagCommodityValue());
+            Assert.AreEqual(testdata.InputData.UOM, FunctionWrapper.Vtag.GetVtagUOMValue());
+            Assert.AreEqual(FunctionWrapper.Vtag.GetVtagUOMExpectedValue(testdata.InputData.Commodity), FunctionWrapper.Vtag.GetVtagUOMValue());
+            Assert.AreEqual(FunctionWrapper.Vtag.GetVtagCalculationStepExpectedValue(testdata.InputData.Step), FunctionWrapper.Vtag.GetVtagCalculationStepValue());
+            Assert.AreEqual(FunctionWrapper.Vtag.GetVtagCalculationTypeExpectedValue(testdata.InputData.CalculationType), FunctionWrapper.Vtag.GetVtagCalculationTypeValue());
+            Assert.AreEqual(testdata.InputData.Comment, FunctionWrapper.Vtag.GetVtagCommentValue());
+        }
+       
     }
 }

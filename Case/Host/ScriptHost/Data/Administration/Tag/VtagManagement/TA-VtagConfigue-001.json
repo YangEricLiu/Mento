@@ -4,7 +4,8 @@
 		{
 			"Name":"NancyVtag",
 			"Code":"nancy1",
-			"Commodity":"KWH",
+			"Commodity":"Electric",
+			"UOM":"KWH"
 			"VtagCalculationStep":"Hourly",
 			"VtagCalculationType":"Sum",
 			"Comment":"This is add vtag comments",

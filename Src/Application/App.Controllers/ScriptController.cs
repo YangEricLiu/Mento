@@ -45,11 +45,26 @@ namespace Mento.App.Controllers
         public static void View()
         {
             ScriptEntity[] scripts = ScriptBL.Export();
+            int scriptNumber = scripts.GetLength(0);
+
+            Console.WriteLine("There are {0} scripts currently", scriptNumber);
+
+            //Console.WriteLine("\n{0,-10}{1,-16}{2,-8}{3,-13}{4,-8}{5,-12}{6,-11}{7,-10}{8,-9}{9,-14}{10,-12}", "CaseID", "ManualCaseID", "Name",
+            //    "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime");
+            //Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------");
+
+            //For the item string is too long, so just display 5 column
+            Console.WriteLine("\n{0,-25}{1,-40}{2,-8}{3,-13}{4,-9}", "CaseID", "Name", "Type", "Priority", "Owner");
+            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------");
 
             foreach (var script in scripts)
             {
-                //should format the script information
-                Console.WriteLine(scripts);
+                //Console.WriteLine("\n{0,-10}{1,-16}{2,-8}{3,-13}{4,-8}{5,-12}{6,-11}{7,-10}{8,-9}{9,-14}{10,-12}",script.CaseID, script.ManualCaseID, script.Name,
+                //script.SuiteName, script.Type, script.Priority, script.Feature, script.Module, script.Owner, script.CreateTime, script.SyncTime);
+                
+                //format the script information
+                //For the item string is too long, so just display 5 column
+                Console.WriteLine("\n{0,-25}{1,-40}{2,-8}{3,-13}{4,-9}", script.CaseID, script.Name,script.Type, script.Priority, script.Owner);
             }
         }
     }

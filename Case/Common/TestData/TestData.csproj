@@ -46,7 +46,9 @@
   <ItemGroup>
     <Compile Include="Administration\PtagData.cs" />
     <Compile Include="Administration\ExampleData.cs" />
-    <Compile Include="Administration\Tag\VtagManagement\AddVtagData.cs" />
+    <Compile Include="Administration\Tag\VtagManagement\AddVtagData.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ClientAccess\LoginData.cs" />
     <Compile Include="Administration\AddHierarchyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

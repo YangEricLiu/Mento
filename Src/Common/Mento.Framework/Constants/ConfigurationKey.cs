@@ -28,7 +28,7 @@ namespace Mento.Framework.Constants
 
         public const string FIREFOX_LOCATION = "firefoxLocation";
 
-        public const string COMBOPATH = @"D:\Schneider\Mento\Trunk\Case\Host\ScriptHost\Config\ComboBoxItemList-CN.xml";
+        public const string COMBOPATH = @"D:\Mento\Trunk\Case\Host\ScriptHost\Config\ComboBoxItemList-CN.xml";
         public const string COMBOMODULE = "ItemList";
 
         public const string EXECUTION_CONFIGURATION = "executionConfiguration";

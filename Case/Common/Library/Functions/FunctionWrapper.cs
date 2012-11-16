@@ -8,7 +8,7 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     /// <summary>
     /// Reference to Jazz function attitude.
-    /// </summary
+    /// </summary>
     public static class FunctionWrapper
     {
         private static Hierarchy _hierarchy;

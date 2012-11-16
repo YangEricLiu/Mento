@@ -18,6 +18,11 @@ namespace Mento.Framework.Configuration
         private const string PUBLISHDIRECTORY = "publishDirectory";
         private const string SCRIPTDIRECTORY = "scriptDirectory";
         private const string EXECUTIONDIRECTORY = "executionDirectory";
+        private const string LOCALNETWORKDRIVE = "localNetworkDrive";
+        private const string PUBLISHSERVERUSERNAME = "publishServerUserName";
+        private const string PUBLISHSERVERPASSWORD = "publishServerPassword";
+        private const string ISREFRESHSCRIPTSONEXECUTION = "isRefreshScriptsOnExecution";
+
 
         private static string BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
@@ -45,11 +50,13 @@ namespace Mento.Framework.Configuration
             }
         }
 
+        
+
         public static string PublishDirectory
         {
             get
             {
-                return Path.Combine(BaseDirectory, GetExecutionConfig(PUBLISHDIRECTORY));
+                return GetAbsoluteOrRelativePath(GetExecutionConfig(PUBLISHDIRECTORY), BaseDirectory);
             }
         }
 
@@ -57,7 +64,7 @@ namespace Mento.Framework.Configuration
         {
             get
             {
-                return Path.Combine(BaseDirectory, GetExecutionConfig(SCRIPTDIRECTORY));
+                return GetAbsoluteOrRelativePath(GetExecutionConfig(SCRIPTDIRECTORY),BaseDirectory);
             }
         }
 
@@ -65,16 +72,57 @@ namespace Mento.Framework.Configuration
         {
             get
             {
-                return Path.Combine(BaseDirectory, GetExecutionConfig(EXECUTIONDIRECTORY));
+                return GetAbsoluteOrRelativePath(GetExecutionConfig(EXECUTIONDIRECTORY), BaseDirectory);
             }
         }
 
+        public static string LocalNetworkDrive
+        {
+            get
+            {
+                return GetExecutionConfig(LOCALNETWORKDRIVE);
+            }
+        }
+
+        public static string PublishServerUserName
+        {
+            get
+            {
+                return GetExecutionConfig(PUBLISHSERVERUSERNAME);
+            }
+        }
+
+        public static string PublishServerPassword
+        {
+            get
+            {
+                return GetExecutionConfig(PUBLISHSERVERPASSWORD);
+            }
+        }
+
+        public static bool IsRefreshScriptsOnExecution
+        {
+            get
+            {
+                bool result = false;
+                bool.TryParse(GetExecutionConfig(ISREFRESHSCRIPTSONEXECUTION), out result);
+                return result;
+            }
+        }
 
         private static string GetExecutionConfig(string configKey)
         {
             var dictNameValueCollection = ConfigurationManager.GetSection(ConfigurationKey.EXECUTION_CONFIGURATION) as NameValueCollection;
 
             return dictNameValueCollection[configKey];
+        }
+
+        private static string GetAbsoluteOrRelativePath(string configPath,string basePath)
+        {
+            if (Path.IsPathRooted(configPath) || Uri.IsWellFormedUriString(configPath, UriKind.Absolute))
+                return configPath;
+
+            return Path.Combine(basePath, configPath);
         }
     }
 }

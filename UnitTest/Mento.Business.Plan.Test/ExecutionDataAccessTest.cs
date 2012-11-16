@@ -48,8 +48,8 @@ namespace Mento.Business.Execution.Test
                 Owner = "Aries",
                 Url = "Https://jazz",
                 CpuCount = 4,
-                CpuFrequency = 2,
-                MemorySize = 4096,
+                CpuFrequency = "2",
+                MemorySize = "4096",
                 ScreenResolution = "1366*768",
             };
 

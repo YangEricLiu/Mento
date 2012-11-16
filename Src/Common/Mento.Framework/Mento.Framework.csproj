@@ -43,6 +43,9 @@
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
       <HintPath>..\..\..\Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\..\..\Lib\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\..\..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
@@ -84,13 +87,19 @@
     <Compile Include="Enumeration\Browser.cs" />
     <Compile Include="Enumeration\EntityStatus.cs" />
     <Compile Include="Enumeration\Language.cs" />
-    <Compile Include="Enumeration\LoggingSeverity.cs" />
     <Compile Include="Exceptions\ApiException.cs" />
     <Compile Include="Exceptions\AppException.cs" />
     <Compile Include="Exceptions\MentoException.cs" />
     <Compile Include="Execution\ExecutionContext.cs" />
+    <Compile Include="Log\LogHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Script\TestSuiteBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mento.Utility\Mento.Utility.csproj">
+      <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
+      <Name>Mento.Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

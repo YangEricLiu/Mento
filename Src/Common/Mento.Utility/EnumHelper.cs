@@ -15,9 +15,9 @@ namespace Mento.Utility
         /// </summary>
         /// <param name="sourceString">The string which will convert to specific enumeration</param>
         /// <returns></returns>
-        public static T StringToEnum<T>(string sourceString)
+        public static T StringToEnum<T>(string sourceString, bool ignoreCase = false)
         {
-            return (T)System.Enum.Parse(typeof(T), sourceString, false);
+            return (T)System.Enum.Parse(typeof(T), sourceString, ignoreCase);
         }
     }
 }

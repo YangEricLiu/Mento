@@ -24,12 +24,12 @@ namespace Mento.Business.Plan.Entity
         /// <summary>
         /// Browser that this execution is running on
         /// </summary>
-        public Browser Browser { get; set; }
+        public Browser? Browser { get; set; }
 
         /// <summary>
         /// Language that this execution is using
         /// </summary>
-        public Language Language { get; set; }
+        public Language? Language { get; set; }
 
         /// <summary>
         /// Start time of this execution
@@ -39,7 +39,7 @@ namespace Mento.Business.Plan.Entity
         /// <summary>
         /// End time of this execution
         /// </summary>
-        public DateTime EndTime { get; set; }
+        public DateTime? EndTime { get; set; }
 
         /// <summary>
         /// Owner of this execution
@@ -52,9 +52,9 @@ namespace Mento.Business.Plan.Entity
         public int CpuCount { get; set; }
 
         /// <summary>
-        /// CPU frequency of the machine that runs this execution
+        /// CPU frequency of the machine that runs this execution, in MHz
         /// </summary>
-        public int CpuFrequency { get; set; }
+        public string CpuFrequency { get; set; }
 
         /// <summary>
         /// Screen resolution of the machine that runs this execution
@@ -62,8 +62,8 @@ namespace Mento.Business.Plan.Entity
         public string ScreenResolution { get; set; }
 
         /// <summary>
-        /// Memory size of the machine that runs this execution
+        /// Memory size of the machine that runs this execution, in B
         /// </summary>
-        public int MemorySize { get; set; }
+        public string MemorySize { get; set; }
     }
 }

@@ -139,12 +139,12 @@ namespace Mento.Business.Script.BusinessLogic
         private Dictionary<MethodInfo, List<Type>> ValidateScript(out List<ScriptEntity> scriptList)
         {
             //string scriptPath = @"D:\publish\TA\Release0.1.0.1";
-            string scriptPath = @"D:\Schneider\Mento\Trunk\Case\Host\ScriptHost\bin\Debug";
+            FileSystemHelper.CopySharedFiles(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, ExecutionConfig.ScriptDirectory);
 
             Dictionary<MethodInfo, List<Type>> validationFaults = new Dictionary<MethodInfo, List<Type>>();
             scriptList = new List<ScriptEntity>();
 
-            List<Type> testSuites = this.GetTestSuites(scriptPath);
+            List<Type> testSuites = this.GetTestSuites(ExecutionConfig.ScriptDirectory);
 
             foreach (var testSuite in testSuites)
             {

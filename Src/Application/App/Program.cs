@@ -6,12 +6,16 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using Mento.App.Controllers;
 using System.IO;
+using Mento.Utility;
+using Mento.Framework.Configuration;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Mento.App
 {
     static class Program
     {
-        static void Main(string[] args)        
+        static void Main(string[] args)
         {
             //ScriptController.Sync();
 
@@ -19,13 +23,9 @@ namespace Mento.App
             //PlanController.Update("", "");
             //PlanController.Delete("");
 
-            //PlanController.Run("", "", "", "");
+            PlanController.Run("", "", "", "");
 
-            Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
-            Console.WriteLine(Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"../result"));
-            Directory.CreateDirectory(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../result"));
-            Console.WriteLine(new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName);
-
+            
             Console.WriteLine("Press any key to continue..");
             Console.Read();
         }

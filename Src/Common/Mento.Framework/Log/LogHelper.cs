@@ -8,7 +8,7 @@ using Mento.Framework.Constants;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using System.Configuration;
 
-namespace Mento.Utility
+namespace Mento.Framework.Log
 {
     /// <summary>
     /// The log utility class.
@@ -131,5 +131,41 @@ namespace Mento.Utility
             }
         }
         #endregion
+    }
+    
+    /// <summary>
+    /// Logging severity.
+    /// </summary>
+    public enum LoggingSeverity
+    {
+        /// <summary>
+        /// Log nothing.
+        /// </summary>
+        Off,
+
+        /// <summary>
+        /// Log fatal message.
+        /// </summary>
+        Fatal,
+
+        /// <summary>
+        /// Log error message.
+        /// </summary>
+        Error,
+
+        /// <summary>
+        /// Log warning message.
+        /// </summary>
+        Warning,
+
+        /// <summary>
+        /// Log information message.
+        /// </summary>
+        Information,
+
+        /// <summary>
+        /// Log the process of method invoking、input/output arguments、return value.
+        /// </summary>
+        Debug
     }
 }

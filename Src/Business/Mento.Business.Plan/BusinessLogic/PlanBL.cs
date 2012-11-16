@@ -89,6 +89,18 @@ namespace Mento.Business.Plan.BusinessLogic
             throw new NotImplementedException();
         }
 
+        public PlanEntity GetPlanByPlanID(string planID)
+        {
+            PlanEntity plan = PlanDA.Retrieve(planID);
+            if (plan == null)
+            {
+                throw new Exception(String.Format("plan '{0}' was not found.", planID));
+            }
+            plan.ScriptList = ScriptBL.GetScriptsByPlanID(plan.ID).ToList();
+
+            return plan;
+        }
+
         #region private methods
         private PlanEntity CheckPlanExists(string planID)
         {

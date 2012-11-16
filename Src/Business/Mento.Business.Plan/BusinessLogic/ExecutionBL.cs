@@ -11,90 +11,114 @@ using Mento.Business.Plan.DataAccess;
 using Mento.Business.Script.Entity;
 using NUnit.Core;
 using System.IO;
+using Mento.Framework.Configuration;
+using Mento.Framework.Constants;
+using Mento.Framework.Execution;
 
 namespace Mento.Business.Plan.BusinessLogic
 {
     public class ExecutionBL
     {
         private static ExecutionDA ExecutionDA = new ExecutionDA();
-        private static PlanDA PlanDA = new PlanDA();
+        private static PlanBL PlanBL = new PlanBL();
 
         private static ScriptBL ScriptBL = new ScriptBL();
 
         public void Execute(string planID, string url, string browser, string language)
         {
-            if (String.IsNullOrEmpty(url))
-                url = "";
-            if (String.IsNullOrEmpty(browser))
-                browser = "Firefox";
-            if (String.IsNullOrEmpty(language))
-                language = "CN";
+            PlanEntity plan = PlanBL.GetPlanByPlanID(planID);
 
-            Browser CurrentBrowser = EnumHelper.StringToEnum<Browser>(browser);
-            Language CurrentLanguage = EnumHelper.StringToEnum<Language>(language);
+            string workFolder = Path.Combine(ExecutionConfig.ExecutionDirectory, plan.PlanID);
 
-            PlanEntity plan = PlanDA.Retrieve(planID);
+            //initialize execution context
+            InitializeExecutionContext(url,browser,language);
 
-            ScriptEntity[] planScripts = ScriptBL.GetScriptsByPlanID(plan.ID);
+            //copy published script from publish directory to local
+            if (!Directory.Exists(ExecutionConfig.ScriptDirectory) || ExecutionConfig.IsRefreshScriptsOnExecution)
+                FileSystemHelper.CopySharedFiles(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, ExecutionConfig.ScriptDirectory);
             
             //CreateExecutionRecordForPlan();
+            long executionID = CreateExecutionRecord(plan);
 
             //call unit to execute the script list
-            ExecuteScripts(planScripts);
+            ExecuteScripts(plan, workFolder);
+
+            //when execution finished, update endtime, destruct execution context
+            ExecutionDA.UpdateEndTime(executionID, DateTime.Now);
+            ExecutionContext.Destruct();
 
             //collect execute result, split result for every script
+            
 
             //save result
         }
 
-        public void ExecuteScripts(ScriptEntity[] scripts)
+        private void ExecuteScripts(PlanEntity plan, string workFolder)
         {
-            var group = scripts.GroupBy(s=>s.Assembly);
-
-            string workFolder = @"D:\publish\TA\Release0.1.0.1\";
-
-            string commonCommand = String.Format("/work:{0} /nologo", workFolder);
-
-            foreach (var groupItem in group)
+            foreach (var groupItem in plan.ScriptList.GroupBy(s => s.Assembly))
             {
                 StringBuilder Command = new StringBuilder();
+                //make nunit project
 
-                Command.Append(@"/run:");
-                Command.Append(String.Join(",", groupItem.Select(s => s.FullName).ToArray()));
-                Command.Append(@" ");
-                Command.Append(Path.Combine(workFolder,groupItem.Key));
-                Command.Append(@" ");
+                //add project parameter
+                Command.Append("/run:");
+                Command.Append(String.Join(ASCII.COMMA,groupItem.Select(s=>s.FullName).ToArray()));
+                Command.Append(ASCII.SPACE);
+                Command.Append(Path.Combine(workFolder,String.Format("../../script/{0}",groupItem.Key)));
 
-                Command.Append(@"/result:");
-                Command.Append(Path.Combine(workFolder, string.Format("{0}-result.xml",groupItem.Key)));
-                Command.Append(@" ");
+                //add work parameter
+                Command.Append(ASCII.SPACE);
+                Command.Append("/work:");
+                Command.Append(workFolder);
 
-                Command.Append(commonCommand);
+                //add nologo parameter
+                Command.Append(ASCII.SPACE);
+                Command.Append("/nologo");
 
+                //add result parameter
+                Command.Append(ASCII.SPACE);
+                Command.Append("/result:");
+                Command.Append(Path.Combine(workFolder, String.Format("result-{0}.xml", groupItem.Key)));
+
+                //add process parameter
+                Command.Append(ASCII.SPACE);
+                Command.Append("/process:Single");
+                
                 NUnit.ConsoleRunner.Runner.Main(Command.ToString().Split(' '));
             }
-            //// /run
-            //StringBuilder Command = new StringBuilder();
-
-            //Command.Append(@"D:\publish\TA\Release0.1.0.0\Mento.Script.Administration.dll");
-            //Command.Append(@" ");
-            //Command.Append(@"/include:");
-            //Command.Append(@"Mento.Script.Administration.Calendar.ExampleSuite.TestCase1");
-            //Command.Append(@",");
-            //Command.Append(@"Mento.Script.Administration.Calendar.ExampleSuite.TestCase3");
-
-            //Command.Append(@"D:\publish\TA\Release0.1.0.0\Mento.Script.EnergyView.dll");
-            //Command.Append(@" ");
-            //Command.Append(@"/include:");
-            //Command.Append(@"Mento.Script.EnergyView.Trial.TryNuintMultipleAssembly.GoMento");
-
-            ////Command.Append(@"/run:");
-            ////Command.Append(@"Mento.Script.Administration.Calendar.ExampleSuite.TestCase1,Mento.Script.Administration.Calendar.ExampleSuite.TestCase5 D:\publish\TA\Release0.1.0.0\Mento.Script.Administration.dll");
-            //////Command.Append(@",");
-            ////Command.Append(@"Mento.Script.Administration.Calendar.ExampleSuite.TestCase5 D:\publish\TA\Release0.1.0.0\Mento.Script.Administration.dll");
-            ////Command.Append(@" ");
-
-            //NUnit.ConsoleRunner.Runner.Main(Command.ToString().Split(' '));
         }
+
+        private long CreateExecutionRecord(PlanEntity plan)
+        {
+            ExecutionEntity execution = new ExecutionEntity()
+            {
+                PlanID = plan.ID,
+                Url = ExecutionContext.Url,
+                Browser = ExecutionContext.Browser,
+                Language = ExecutionContext.Language,
+                CpuCount = HardwareHelper.GetCpuCount(),
+                CpuFrequency = HardwareHelper.GetCpuFrequency(),
+                MemorySize = HardwareHelper.GetTotalPhysicalMemory(),
+                StartTime = DateTime.Now,
+                EndTime = null,
+                Owner = HardwareHelper.GetUserName(),
+                ScreenResolution = HardwareHelper.GetScreenResolution(),
+            };
+
+            return ExecutionDA.Create(execution);
+        }
+
+        private void InitializeExecutionContext(string url, string browser, string language)
+        {
+            if (String.IsNullOrEmpty(url))
+                url = ExecutionConfig.Url;
+            if (String.IsNullOrEmpty(browser))
+                browser = ExecutionConfig.Browser;
+            if (String.IsNullOrEmpty(language))
+                language = ExecutionConfig.Language;
+
+            ExecutionContext.Initialize(url, browser, language);
+        }
+
     }
 }

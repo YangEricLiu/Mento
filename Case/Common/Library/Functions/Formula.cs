@@ -9,7 +9,7 @@ using Mento.TestApi.WebUserInterface;
 namespace Mento.ScriptCommon.Library.Functions
 {
     /// <summary>
-    /// The business logic implement of Tag(ptag/vtag/KPI).
+    /// The business logic implement of formula for vtag/kpi.
     /// </summary>
     public class Formula
     {

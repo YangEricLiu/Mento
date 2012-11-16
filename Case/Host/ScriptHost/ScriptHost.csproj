@@ -101,6 +101,7 @@
     <Content Include="chromedriver.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Config\ComboBoxItemList-CN.xml" />
     <Content Include="IEDriverServer.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -121,6 +122,8 @@
     <Content Include="Data\Administration\Calendar\ShowTimeSuite\TC-J1-ShowTime-001.json" />
     <Content Include="Data\Administration\Tag\VtagManagement\TA-VtagConfigue-001.json" />
     <Content Include="Data\Administration\Tag\VtagManagement\TA-Trial-Login-001.json" />
+    <None Include="Data\Administration\Hierarchy\HierarchyManagement\TA-Hierarchy-002.json" />
+    <None Include="Data\Administration\Hierarchy\HierarchyManagement\TA-Hierarchy-003.json" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

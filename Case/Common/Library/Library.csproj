@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\Associate.cs" />
     <Compile Include="Functions\Formula.cs" />
     <Compile Include="Functions\FunctionWrapper.cs" />
     <Compile Include="Functions\Hierarchy.cs" />

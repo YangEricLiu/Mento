@@ -2,8 +2,8 @@
 	{
 		"InputData":
 		{
-			"Name":"1",
-			"Code":"2",
+			"Name":"AutoOrg001",
+			"Code":"AutoOrg001",
 			"Type":"Orgnization",
 			"Comment":""
 		}
@@ -11,10 +11,10 @@
 	{
 		"InputData":
 		{
-			"Name":"1djdkjs",
-			"Code":"2dsd",
+			"Name":"AutoOrg002",
+			"Code":"AutoOrg002",
 			"Type":"Orgnization",
-			"Comment":""
+			"Comment":"test"
 		}
 	}
 ]

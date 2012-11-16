@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Name":"AutoSite001",
+			"Code":"AutoSite001",
+			"Type":"Site",
+			"Comment":"test"
+		}
+	},
+	{
+		"InputData":
+		{
+			"Name":"AutoSite002",
+			"Code":"AutoSite002",
+			"Type":"Site",
+			"Comment":""
+		}
+	}
+]

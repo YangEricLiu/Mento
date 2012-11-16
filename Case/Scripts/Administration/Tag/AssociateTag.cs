@@ -12,7 +12,7 @@ using Mento.Framework.Script;
 
 namespace Mento.Script.Administration.Tag
 {
-    public class FormulaManagement : TestSuiteBase
+    public class AssociateTag : TestSuiteBase
     {
         [TestFixtureSetUp]
         public void CaseFixtureSetUp()
@@ -30,7 +30,7 @@ namespace Mento.Script.Administration.Tag
         [SetUp]
         public void CaseSetUp()
         {
-            FunctionWrapper.Formula.NavigatorToVtagSetting();
+            FunctionWrapper.Associate.NavigateToHierarchyAssociate();
             ElementLocator.Pause(2000);
         }
 
@@ -41,25 +41,22 @@ namespace Mento.Script.Administration.Tag
         }
 
         [Test]
-        [CaseID("TA-Formula-001"), ManualCaseID("TJ-Formula-001"), CreateTime("2012-11-08"), Owner("Emma")]
-        public void AddFormulaToVtag()
+        [CaseID("TA-AssociateTag-001"), ManualCaseID("TJ-AssociateTag-001"), CreateTime("2012-11-09"), Owner("Emma")]
+        public void AssociateOneTag()
         {
-            string vtagName = "AutoVtag001";
-            string expectedFormula = "{vtag.AZuoDian}+{vtag.AZuoKongtiaoDian}";
+            FunctionWrapper.Hierarchy.FocusOnHierarchyNode("Schneider");
+            ElementLocator.Pause(1000);
 
-            FunctionWrapper.Formula.PrepareToAddFormula(vtagName);
-
-            FunctionWrapper.Formula.FillInFormulaField("{vtag.AZuoDian}");
-            FunctionWrapper.Formula.AppendFormulaField("+");
-            FunctionWrapper.Formula.DragTagToFormula("A座空调用电");
-
-            FunctionWrapper.Formula.ClickSaveFormulaButton();
-
+            FunctionWrapper.Associate.ClickAssociateTagButton();
             FunctionWrapper.WaitForLoadingDisappeared(2000);
-            ElementLocator.Pause(500);
+            ElementLocator.Pause(1000);
 
-            Assert.AreEqual(FunctionWrapper.Formula.GetFormulaValue(), expectedFormula);
+            FunctionWrapper.Associate.CheckedTag("test01");
+            FunctionWrapper.Associate.ClickAssociateButton();
+            FunctionWrapper.WaitForLoadingDisappeared(2000);
+            ElementLocator.Pause(1000);
 
+            Assert.IsTrue(FunctionWrapper.Associate.IsTagOnAssociategGridView("test01"));
         }
     }
 }

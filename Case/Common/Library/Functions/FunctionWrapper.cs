@@ -29,7 +29,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Formula _formula;
         /// <summary>
-        /// Tag function property
+        /// Formula function property
         /// </summary>
         public static Formula Formula
         {
@@ -77,7 +77,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Vtag _vtag;
         /// <summary>
-        /// Ptag function property
+        /// Vtag function property
         /// </summary>
         public static Vtag Vtag
         {
@@ -88,6 +88,22 @@ namespace Mento.ScriptCommon.Library.Functions
                     _vtag = new Vtag();
                 }
                 return _vtag;
+            }
+        }
+
+        private static Associate _associate;
+        /// <summary>
+        /// Associate function property
+        /// </summary>
+        public static Associate Associate
+        {
+            get
+            {
+                if (_associate == null)
+                {
+                    _associate = new Associate();
+                }
+                return _associate;
             }
         }
 

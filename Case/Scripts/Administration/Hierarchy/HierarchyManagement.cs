@@ -49,7 +49,7 @@ namespace Mento.Script.Administration.Hierarchy
         }
 
         [Test]
-        [CaseID("TA-Hierarchy-001"), CreateTime("2012-10-30"), Owner("Emma"), ManualCaseID("TA-Example")]
+        [CaseID("TA-Hierarchy-001"), ManualCaseID("TJ-Hierarchy-001"), CreateTime("2012-10-30"), Owner("Emma")]
         [MultipleTestDataSource(typeof(AddHierarchyData[]), typeof(HierarchyManagement), "TA-Hierarchy-001")]
         public void AddOrgnizationNodeTest(AddHierarchyData input)
         {

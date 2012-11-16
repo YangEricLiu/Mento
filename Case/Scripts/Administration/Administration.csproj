@@ -66,6 +66,7 @@
     <Compile Include="Hierarchy\HierarchyManagement.cs" />
     <Compile Include="platform\TimeMagament.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tag\AssociateTag.cs" />
     <Compile Include="Tag\FormulaManagement.cs">
       <SubType>Code</SubType>
     </Compile>

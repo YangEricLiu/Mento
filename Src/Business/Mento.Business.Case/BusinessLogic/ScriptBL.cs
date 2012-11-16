@@ -53,13 +53,13 @@ namespace Mento.Business.Script.BusinessLogic
 
         public ScriptEntity[] Export()
         {
-            string excelFilePath = ExportConfig.ScriptExportDirectory;
-            //string excelFilePath = @"D:\backup\ScriptMetaData.xlsx";
+            //string excelFilePath = ExportConfig.ScriptExportDirectory;
+            string excelFilePath = @"D:\backup\ScriptMetaData.xlsx";
 
             String[] headerList = new string[] { "CaseID", "ManualCaseID", "Name", 
                 "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime" };
 
-            System.Data.DataTable scriptsTable = ScriptDA.RetrieveToDataTable();
+            System.Data.DataTable scriptsTable = ScriptDA.RetrieveScriptsToDataTable();
 
             //Open excel file which restore scripts data
             ExcelHelper handler = new ExcelHelper(excelFilePath, false);
@@ -138,7 +138,8 @@ namespace Mento.Business.Script.BusinessLogic
 
         private Dictionary<MethodInfo, List<Type>> ValidateScript(out List<ScriptEntity> scriptList)
         {
-            string scriptPath = @"D:\publish\TA\Release0.1.0.1";
+            //string scriptPath = @"D:\publish\TA\Release0.1.0.1";
+            string scriptPath = @"D:\Schneider\Mento\Trunk\Case\Host\ScriptHost\bin\Debug";
 
             Dictionary<MethodInfo, List<Type>> validationFaults = new Dictionary<MethodInfo, List<Type>>();
             scriptList = new List<ScriptEntity>();

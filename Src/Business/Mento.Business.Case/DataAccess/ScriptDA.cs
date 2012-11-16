@@ -83,7 +83,7 @@ namespace Mento.Business.Script.DataAccess
             return list.ToArray();
         }
 
-        public DataTable RetrieveToDataTable()
+        public DataTable RetrieveScriptsToDataTable()
         {
             string sql = "SELECT [ID],[CASEID],[MANUALCASEID],[NAME],[SUITENAME],[TYPE],[PRIORITY],[FEATURE],[MODULE],[OWNER],[CREATETIME],[SYNCTIME] FROM [Script]";
 

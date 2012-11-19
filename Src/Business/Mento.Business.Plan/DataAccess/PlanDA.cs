@@ -63,5 +63,29 @@ namespace Mento.Business.Plan.DataAccess
 
             return list.Count > 0 ? list[0] : null;
         }
+
+        public PlanEntity[] RetrieveAll()
+        {
+            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan]";
+
+            DbCommand command = Database.GetSqlStringCommand(sql);
+
+            Database.AddInParameter(command, "Status", DbType.Int32, (int)EntityStatus.Active);
+
+            List<PlanEntity> list = base.ReadEntity<PlanEntity>(Database.ExecuteReader(command));
+
+            return list.ToArray();
+        }
+
+        public DataTable RetrieveAllToDataSet()
+        {
+            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan]";
+
+            DbCommand command = Database.GetSqlStringCommand(sql);
+
+            Database.AddInParameter(command, "Status", DbType.Int32, (int)EntityStatus.Active);
+
+            return Database.ExecuteDataSet(command).Tables[0];
+        }
     }
 }

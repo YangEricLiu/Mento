@@ -17,6 +17,8 @@ using Mento.Framework.Enumeration;
 using Mento.Business.Execution.DataAccess;
 using Mento.Framework;
 using Mento.Utility;
+using Mento.Framework.Configuration;
+using Microsoft.Office.Interop.Excel;
 
 namespace Mento.Business.Plan.BusinessLogic
 {
@@ -80,8 +82,31 @@ namespace Mento.Business.Plan.BusinessLogic
         }
 
         public PlanEntity[] Export()
-        { 
-            throw new NotImplementedException();
+        {
+            //string planFilePath = ExportConfig.PlanExportDirectory;
+            string planFilePath = @"D:\backup\AllPlanInfo.xlsx";
+
+            String[] headerList = new string[] { "ID", "PlanID", "Name", "ProductVersion", 
+                "Owner", "UpdateTime", "Status" };
+
+            System.Data.DataTable scriptsTable = PlanDA.RetrieveAllToDataSet();
+
+            //Open excel file which restore scripts data
+            ExcelHelper handler = new ExcelHelper(planFilePath, false);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Worksheet sheet = handler.GetWorksheet("PlansData");
+
+            //Import data from the start
+            handler.ImportDataTable(sheet, headerList, scriptsTable);
+
+            handler.Save();
+            handler.Dispose();
+
+            return PlanDA.RetrieveAll();
+
         }
 
         public PlanEntity Export(string planID)

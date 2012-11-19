@@ -48,9 +48,22 @@ namespace Mento.App.Controllers
         }
 
         [Command]
-        public static PlanEntity[] View()
+        public static void View()
         {
-            throw new NotImplementedException();
+            PlanEntity[] plans = PlanBL.Export();
+            int planNumber = plans.GetLength(0);
+
+            Console.WriteLine("There are {0} plans currently", planNumber);
+
+            //Display the plan 
+            Console.WriteLine("\n{0,-20}{1,-20}{2,-8}{3,-13}{4,-9}{5,-10}", "PlanID", "Name", "ProductVersion", "Owner", "UpdateTime","Status");
+            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------");
+
+            foreach (var plan in plans)
+            {   
+                //format the plan information
+                Console.WriteLine("\n{0,-20}{1,-20}{2,-8}{3,-13}{4,-9}{5,-10}", plan.PlanID, plan.Name,plan.ProductVersion, plan.Owner, plan.UpdateTime,plan.Status);
+            }
         }
 
         [Command]

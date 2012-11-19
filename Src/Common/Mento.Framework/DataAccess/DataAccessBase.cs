@@ -62,6 +62,13 @@ namespace Mento.Framework
                     {
                         property.SetValue(entity, Convert.ToDateTime(reader[property.Name]), null);
                     }
+                    else if (property.PropertyType == typeof(DateTime?))
+                    {
+                        if (!reader.IsDBNull(reader.GetOrdinal(property.Name)))
+                        {
+                            property.SetValue(entity, Convert.ToDateTime(reader[property.Name]), null);
+                        }
+                    }
                     else if (property.PropertyType.IsEnum)
                     {
                         property.SetValue(entity, Enum.Parse(property.PropertyType,reader[property.Name].ToString()), null);

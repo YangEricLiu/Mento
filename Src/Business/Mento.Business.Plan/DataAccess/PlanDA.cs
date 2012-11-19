@@ -64,6 +64,20 @@ namespace Mento.Business.Plan.DataAccess
             return list.Count > 0 ? list[0] : null;
         }
 
+        public PlanEntity Retrieve(long id)
+        {
+            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan] WHERE [ID] = @ID AND [Status]=@Status";
+
+            DbCommand command = Database.GetSqlStringCommand(sql);
+
+            Database.AddInParameter(command, "ID", DbType.String, id);
+            Database.AddInParameter(command, "Status", DbType.Int32, (int)EntityStatus.Active);
+
+            List<PlanEntity> list = base.ReadEntity<PlanEntity>(Database.ExecuteReader(command));
+
+            return list.Count > 0 ? list[0] : null;
+        }
+
         public PlanEntity[] RetrieveAll()
         {
             string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan]";
@@ -86,6 +100,23 @@ namespace Mento.Business.Plan.DataAccess
             Database.AddInParameter(command, "Status", DbType.Int32, (int)EntityStatus.Active);
 
             return Database.ExecuteDataSet(command).Tables[0];
+        }
+
+        public PlanEntity RetrieveByExecutionID(long executionID)
+        {
+            string sql = @"SELECT [P].[ID],[P].[PlanID],[P].[Name],[P].[ProductVersion],[P].[Owner],[P].[UpdateTime],[P].[Status] 
+                           FROM [Plan] [P]
+                           INNER JOIN [Execution] [E] ON [P].ID = [E].PlanID
+                           WHERE [E].[ID] = @ExecutionID AND [P].[Status]=@Status";
+
+            DbCommand command = Database.GetSqlStringCommand(sql);
+
+            Database.AddInParameter(command, "ExecutionID", DbType.String, executionID);
+            Database.AddInParameter(command, "Status", DbType.Int32, (int)EntityStatus.Active);
+
+            List<PlanEntity> list = base.ReadEntity<PlanEntity>(Database.ExecuteReader(command));
+
+            return list.Count > 0 ? list[0] : null;
         }
     }
 }

@@ -16,6 +16,7 @@ using Mento.Framework.Constants;
 using Mento.Framework.Execution;
 using Mento.Framework.Exceptions;
 using System.Data;
+using System.Reflection;
 
 namespace Mento.Business.Plan.BusinessLogic
 {
@@ -26,7 +27,7 @@ namespace Mento.Business.Plan.BusinessLogic
 
         private static ScriptBL ScriptBL = new ScriptBL();
 
-        public ExecutionEntity[] ExportByPlanID(string planID)
+        public DataTable ExportByPlanID(string planID)
         {
             PlanEntity plan = PlanBL.GetPlanByPlanID(planID);
 
@@ -36,22 +37,24 @@ namespace Mento.Business.Plan.BusinessLogic
             //Export to excel
             string fileName = Path.Combine(ExportConfig.ResultExportDirectory, String.Format("{0}.xls", plan.PlanID));
 
-            ExcelHelper.ExportToExcel<ExecutionEntity>(executions.ToList(), fileName, "ResultList");
+            DataTable dataTable = ExecutionArrayToDataTable(executions, plan: plan);
+            ExcelHelper.ExportToExcel(dataTable, fileName, "ResultList");
 
-            return executions;
+            return dataTable;
         }
 
-        public ExecutionEntity[] ExportByCaseID(string caseID)
+        public DataTable ExportByCaseID(string caseID)
         {
             ExecutionEntity[] executions = ExecutionDA.RetrieveByCaseID(caseID);
 
             //TODO:
             //Export to excel
             string fileName = Path.Combine(ExportConfig.ResultExportDirectory, String.Format("{0}.xls", caseID));
-            
-            ExcelHelper.ExportToExcel<ExecutionEntity>(executions.ToList(), fileName, "ResultList");
 
-            return executions;
+            DataTable dataTable = ExecutionArrayToDataTable(executions);
+            ExcelHelper.ExportToExcel(dataTable, fileName, "ResultList");
+
+            return dataTable;
         }
 
         public void Execute(string planID, string url, string browser, string language)
@@ -152,6 +155,32 @@ namespace Mento.Business.Plan.BusinessLogic
             ExecutionContext.Initialize(url, browser, language);
         }
 
+        private DataTable ExecutionArrayToDataTable(ExecutionEntity[] executions,PlanEntity plan=null)
+        {
+            string[] headers = typeof(ExecutionEntity).GetProperties(BindingFlags.Public | BindingFlags.Instance).Select(p => p.Name).ToArray();
+
+            DataTable table = new DataTable();
+
+            foreach (var column in headers)
+                table.Columns.Add(column);
+
+            foreach (ExecutionEntity execution in executions)
+            {
+                DataRow row = table.NewRow();
+
+                foreach (var column in headers)
+                {
+                    if (String.Equals(column, "PlanID", StringComparison.OrdinalIgnoreCase))
+                        row[column] = plan != null ? plan.PlanID : PlanBL.GetPlanByID(execution.PlanID, isGetScripts: false).PlanID;
+                    else
+                        row[column] = typeof(ExecutionEntity).GetProperty(column).GetValue(execution, null);
+                }
+
+                table.Rows.Add(row);
+            }
+
+            return table;
+        }
         #endregion
     }
 }

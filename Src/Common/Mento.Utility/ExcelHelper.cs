@@ -522,13 +522,17 @@ namespace Mento.Utility
                 headers = columns.ToArray();
             }
 
+            FileInfo excelFile = new FileInfo(fileName);
+            if (!excelFile.Directory.Exists)
+                excelFile.Directory.Create();
+
             //Open excel file which restore scripts data
-            ExcelHelper handler = new ExcelHelper(fileName, false);
+            ExcelHelper handler = new ExcelHelper(fileName, true);
 
             handler.OpenOrCreate();
 
             //Get Worksheet object 
-            Microsoft.Office.Interop.Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
+            Microsoft.Office.Interop.Excel.Worksheet sheet = handler.AddWorksheet(sheetName);
 
             //Import data from the start
             handler.ImportDataTable(sheet, headers, data);
@@ -549,7 +553,7 @@ namespace Mento.Utility
         {
             if (headers == null || headers.Length <= 0)
                 headers = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance).Select(p => p.Name).ToArray();
-
+            
             DataTable table = new DataTable();
 
             foreach (var column in headers)

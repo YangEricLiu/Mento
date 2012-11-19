@@ -62,16 +62,18 @@ namespace Mento.Framework
                     {
                         property.SetValue(entity, Convert.ToDateTime(reader[property.Name]), null);
                     }
-                    else if (property.PropertyType == typeof(DateTime?))
-                    {
-                        if (!reader.IsDBNull(reader.GetOrdinal(property.Name)))
-                        {
-                            property.SetValue(entity, Convert.ToDateTime(reader[property.Name]), null);
-                        }
-                    }
                     else if (property.PropertyType.IsEnum)
                     {
                         property.SetValue(entity, Enum.Parse(property.PropertyType,reader[property.Name].ToString()), null);
+                    }
+                    else if (property.PropertyType.IsGenericType && property.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
+                    {
+                        var realType = property.PropertyType.GetGenericArguments()[0];
+                        if (!reader.IsDBNull(reader.GetOrdinal(property.Name)))
+                            if (realType.IsEnum)
+                                property.SetValue(entity, Enum.Parse(realType, reader[property.Name].ToString()), null);
+                            else if (realType == typeof(DateTime))
+                                property.SetValue(entity, Convert.ToDateTime(reader[property.Name]), null);
                     }
                 }
 

@@ -67,5 +67,19 @@ namespace Mento.Business.Execution.DataAccess
 
             return base.ReadEntity<ExecutionEntity>(Database.ExecuteReader(command)).ToArray();
         }
+
+        public ExecutionEntity[] RetrieveByCaseID(string caseID)
+        {
+            string sql = @"SELECT [E].[ID],[E].[PlanID],[E].[Url],[E].[Browser],[E].[Language],[E].[StartTime],[E].[EndTime],[E].[Owner],[E].[CpuCount],[E].[CpuFrequency],[E].[ScreenResolution],[E].[MemorySize]
+                           FROM [Execution] AS [E]
+                           INNER JOIN [PlanScript] AS [PS] ON [E].[PlanID] = [PS].[PlanID]
+                           WHERE [PS].[CaseID] = @CaseID";
+
+            DbCommand command = Database.GetSqlStringCommand(sql);
+
+            Database.AddInParameter(command, "CaseID", DbType.String, caseID);
+
+            return base.ReadEntity<ExecutionEntity>(Database.ExecuteReader(command)).ToArray();
+        }
     }
 }

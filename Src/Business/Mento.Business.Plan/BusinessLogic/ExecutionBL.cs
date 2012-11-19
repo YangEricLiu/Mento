@@ -24,6 +24,21 @@ namespace Mento.Business.Plan.BusinessLogic
 
         private static ScriptBL ScriptBL = new ScriptBL();
 
+        public ExecutionEntity[] ExportByPlanID(long planID)
+        {
+            ExecutionEntity[] executions = ExecutionDA.RetrieveByPlanID(planID);
+
+            return executions;
+        }
+
+        public ExecutionEntity[] ExportByCaseID(string caseID)
+        {
+            ExecutionEntity[] executions = ExecutionDA.RetrieveByCaseID(caseID);
+
+
+            return executions;
+        }
+
         public void Execute(string planID, string url, string browser, string language)
         {
             PlanEntity plan = PlanBL.GetPlanByPlanID(planID);
@@ -53,6 +68,8 @@ namespace Mento.Business.Plan.BusinessLogic
             //save result
         }
 
+
+        #region Private methods
         private void ExecuteScripts(PlanEntity plan, string workFolder)
         {
             foreach (var groupItem in plan.ScriptList.GroupBy(s => s.Assembly))
@@ -119,6 +136,6 @@ namespace Mento.Business.Plan.BusinessLogic
 
             ExecutionContext.Initialize(url, browser, language);
         }
-
+        #endregion
     }
 }

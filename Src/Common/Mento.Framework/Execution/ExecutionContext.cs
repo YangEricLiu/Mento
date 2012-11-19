@@ -8,6 +8,7 @@ using System.Xml;
 using System.Reflection;
 using System.Xml.Linq;
 using Mento.Utility;
+using Mento.Framework.Constants;
 
 namespace Mento.Framework.Execution
 {
@@ -15,9 +16,7 @@ namespace Mento.Framework.Execution
     /// Execution context 
     /// </summary>
     public static class ExecutionContext
-    {
-        private const string TEMPFILENAME = @"temp\executioncontext.xml";
-        
+    {        
         private static string[] ContextPropertyList
         {
             get
@@ -26,7 +25,7 @@ namespace Mento.Framework.Execution
             }
         }
 
-        private static string ContextConfigFileName = Path.Combine(ExecutionConfig.ExecutionDirectory, TEMPFILENAME);
+        private static string ContextConfigFileName = Path.Combine(ExecutionConfig.ExecutionDirectory, Project.EXECUTIONTEMPCONFIGNAME);
         private static string ConfigRootElementName = "context";
 
         public static Browser? Browser

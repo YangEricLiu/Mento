@@ -14,5 +14,8 @@ namespace Mento.Framework.Constants
         /// Script namespace prefix
         /// </summary>
         public const string SCRIPTNAMESPACEPREFIX = "Mento.Script";
+
+
+        public const string EXECUTIONTEMPCONFIGNAME = @"temp\executioncontext.xml";
     }
 }

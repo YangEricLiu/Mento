@@ -12,6 +12,11 @@ namespace Mento.Framework.Attributes
     public class CommandAttribute:Attribute
     {
         /// <summary>
+        /// Real name of the command
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
         /// Construct a CommandAttribute.
         /// </summary>
         public CommandAttribute()

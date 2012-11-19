@@ -14,6 +14,7 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 using System.Data;
 using Mento.Framework;
 using Mento.Business.Plan.BusinessLogic;
+using Mento.Business.Script.Entity;
 
 namespace Mento.Business.Plan.Test
 {
@@ -47,11 +48,11 @@ namespace Mento.Business.Plan.Test
         [TestMethod]
         public void GetPlansDataTest()
         {
-            //string planid = "Plan_002";
+            string planid = "TA-P02";
 
             //string pathApp = "";
 
-            ll.Export();
+            ll.Export(planid);
             //Assert.AreEqual(AppDomain.CurrentDomain.BaseDirectory.ToString(), "hello");
         }
 

@@ -83,6 +83,20 @@ namespace Mento.Business.Script.DataAccess
             return list.ToArray();
         }
 
+        public DataTable RetrieveByPlanIDToDataSet(long PlanID)
+        {
+            string sql = @"SELECT [S].[ID],[S].[CaseID],[S].[ManualCaseID],[S].[Name],[S].[SuiteName],[S].[Type],[S].[Priority],[S].[Feature],[S].[Module],[S].[Owner],[S].[CreateTime],[S].[SyncTime],[S].[FullName],[S].[Assembly]
+                           FROM [Script] [S]
+                           INNER JOIN [PlanScript] [PS] ON [S].[CaseID] = [PS].[CaseID]
+                           WHERE [PS].[PlanID] = @PlanID";
+
+            DbCommand command = Database.GetSqlStringCommand(sql);
+
+            Database.AddInParameter(command, "PlanID", DbType.Int64, PlanID);
+
+            return Database.ExecuteDataSet(command).Tables[0];
+        }
+
         public DataTable RetrieveScriptsToDataTable()
         {
             string sql = "SELECT [ID],[CASEID],[MANUALCASEID],[NAME],[SUITENAME],[TYPE],[PRIORITY],[FEATURE],[MODULE],[OWNER],[CREATETIME],[SYNCTIME] FROM [Script]";

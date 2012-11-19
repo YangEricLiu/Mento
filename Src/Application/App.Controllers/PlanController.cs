@@ -5,6 +5,8 @@ using System.Text;
 using Mento.Business.Plan.BusinessLogic;
 using Mento.Utility;
 using Mento.Business.Plan.Entity;
+using Mento.Business.Script.Entity;
+using Mento.Business.Script.BusinessLogic;
 using Mento.Framework.Attributes;
 
 namespace Mento.App.Controllers
@@ -67,9 +69,22 @@ namespace Mento.App.Controllers
         }
 
         [Command]
-        public static PlanEntity View([Parameter]string planID)
+        public static void View([Parameter]string planID)
         {
-            throw new NotImplementedException();
+            ScriptEntity[] scripts = PlanBL.Export(planID);
+            int scriptsNumber = scripts.GetLength(0);
+
+            Console.WriteLine("There are {0} scripts in plan -- {1}currently", scriptsNumber, planID);
+
+            //Display scripts list
+            Console.WriteLine("\n{0,-25}{1,-40}{2,-8}{3,-13}{4,-9}", "CaseID", "Name", "Type", "Priority", "Owner");
+            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------");
+
+            foreach (var script in scripts)
+            {
+                //format the script information
+                Console.WriteLine("\n{0,-25}{1,-40}{2,-8}{3,-13}{4,-9}", script.CaseID, script.Name, script.Type, script.Priority, script.Owner);
+            }
         }
 
         [Command]

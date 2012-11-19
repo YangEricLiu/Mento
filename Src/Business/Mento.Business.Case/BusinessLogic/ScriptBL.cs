@@ -77,6 +77,33 @@ namespace Mento.Business.Script.BusinessLogic
 
             return ScriptDA.RetrieveAll();
         }
+        /*
+        public ScriptEntity[] ExportByPlanID(string planID)
+        {
+            //string excelFilePath = ExportConfig.ScriptExportDirectory;
+            string excelFilePath = @"D:\backup\ScriptMetaData.xlsx";
+
+            String[] headerList = new string[] { "CaseID", "ManualCaseID", "Name", 
+                "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime" };
+
+            System.Data.DataTable scriptsTable = ScriptDA.RetrieveScriptsToDataTable();
+
+            //Open excel file which restore scripts data
+            ExcelHelper handler = new ExcelHelper(excelFilePath, false);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Worksheet sheet = handler.GetWorksheet("ScriptsData");
+
+            //Import data from the start
+            handler.ImportDataTable(sheet, headerList, scriptsTable);
+
+            handler.Save();
+            handler.Dispose();
+
+            return ScriptDA.RetrieveAll();
+        }*/
 
         /// <summary>
         /// Validate a list of suite, output the not existing suites

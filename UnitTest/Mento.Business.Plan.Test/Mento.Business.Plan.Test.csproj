@@ -71,6 +71,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Src\Business\Mento.Business.Case\Mento.Business.Script.csproj">
+      <Project>{9B7F3CC7-6C21-4EE4-8FAB-AD62C17DCD1E}</Project>
+      <Name>Mento.Business.Script</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Src\Business\Mento.Business.Plan\Mento.Business.Plan.csproj">
       <Project>{AA90ABC5-A233-40FC-A1D0-DC1DED2431BB}</Project>
       <Name>Mento.Business.Plan</Name>

@@ -29,9 +29,9 @@ namespace Mento.Business.Case.Test
         [TestMethod]
         public void GetScriptsDataTest()
         {
-            ScriptEntity script1 = new ScriptEntity() { CaseID = "TEST_CASE_ID_009", ManualCaseID = "Manual_ID_082" };
-            ScriptEntity script2 = new ScriptEntity() { CaseID = "TEST_CASE_ID_093", ManualCaseID = "Manual_ID_073" };
-            ScriptEntity script3 = new ScriptEntity() { CaseID = "TEST_CASE_ID_008", ManualCaseID = "Manual_ID_064" };
+            ScriptEntity script1 = new ScriptEntity() { CaseID = "TA-Example-001", ManualCaseID = "Manual_ID_082" };
+            ScriptEntity script2 = new ScriptEntity() { CaseID = "TA-Example-007", ManualCaseID = "Manual_ID_073" };
+            ScriptEntity script3 = new ScriptEntity() { CaseID = "TA-Trial-001", ManualCaseID = "Manual_ID_064" };
 
             long result = ScriptDA.Create(script1);
             long result2 = ScriptDA.Create(script2);

@@ -19,6 +19,7 @@ using Mento.Framework;
 using Mento.Utility;
 using Mento.Framework.Configuration;
 using Microsoft.Office.Interop.Excel;
+using Mento.Business.Script.DataAccess;
 
 namespace Mento.Business.Plan.BusinessLogic
 {
@@ -28,13 +29,13 @@ namespace Mento.Business.Plan.BusinessLogic
         private static PlanScriptDA PlanScriptDA = new PlanScriptDA();
 
         private static ScriptBL ScriptBL = new ScriptBL();
+        private static ScriptDA ScriptDA = new ScriptDA();
 
         public void Create(string planFile)
         {
             XDocument planDefinition = GetPlanXDocument(planFile);
 
             PlanEntity plan = GetPlanInformationFromXDocument(planDefinition);
-
             plan.Status = EntityStatus.Active;
             plan.UpdateTime = DateTime.Now;
             
@@ -110,9 +111,33 @@ namespace Mento.Business.Plan.BusinessLogic
 
         }
 
-        public PlanEntity Export(string planID)
+        public ScriptEntity[] Export(string planID)
         {
-            throw new NotImplementedException();
+            //string excelFilePath = string.Format("{0}Plans-{1}.xls", AppDomain.CurrentDomain.BaseDirectory, planID);
+            string path = "D:\\backup\\";
+            string excelFilePath = string.Format("{0}Plans-{1}.xls", path, planID);
+            String[] headerList = new string[] { "ID","CaseID", "ManualCaseID", "Name", 
+                "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime" };
+
+            PlanEntity plan = GetPlanByPlanID(planID);
+
+            System.Data.DataTable scriptsTable = ScriptDA.RetrieveByPlanIDToDataSet(plan.ID);
+
+            ExcelHelper handler = new ExcelHelper(excelFilePath, true);
+
+            handler.OpenOrCreate();
+            Worksheet sheet = handler.AddWorksheet(planID);
+            //Delete all sheet except special one
+            handler.DeleteWorksheetExcept(sheet);
+
+            //Import data from the start
+            handler.ImportDataTable(sheet, headerList, scriptsTable);
+
+            handler.Save();
+
+            handler.Dispose();
+
+            return ScriptDA.RetrieveByPlanID(plan.ID);
         }
 
         public PlanEntity GetPlanByPlanID(string planID)
@@ -123,34 +148,6 @@ namespace Mento.Business.Plan.BusinessLogic
                 throw new Exception(String.Format("plan '{0}' was not found.", planID));
             }
             plan.ScriptList = ScriptBL.GetScriptsByPlanID(plan.ID).ToList();
-
-            return plan;
-        }
-
-        public PlanEntity GetPlanByExecutionID(long executionID, bool isGetScripts = true)
-        {
-            PlanEntity plan = PlanDA.RetrieveByExecutionID(executionID);
-            if (plan == null)
-            {
-                throw new Exception(String.Format("plan '{0}' was not found.", plan.PlanID));
-            }
-
-            if (isGetScripts)
-                plan.ScriptList = ScriptBL.GetScriptsByPlanID(plan.ID).ToList();
-
-            return plan;
-        }
-
-        public PlanEntity GetPlanByID(long planID, bool isGetScripts = true)
-        {
-            PlanEntity plan = PlanDA.Retrieve(planID);
-            if (plan == null)
-            {
-                throw new Exception(String.Format("plan '{0}' was not found.", planID));
-            }
-
-            if (isGetScripts)
-                plan.ScriptList = ScriptBL.GetScriptsByPlanID(plan.ID).ToList();
 
             return plan;
         }
@@ -233,18 +230,14 @@ namespace Mento.Business.Plan.BusinessLogic
         private void ValidatePlanEntity(PlanEntity plan)
         {
             Dictionary<string, string> validationResult = new Dictionary<string, string>();
-            List<string> notExistingScripts;
+            List<string>  notExistingScripts;
 
             if (String.IsNullOrEmpty(plan.PlanID) || !Regex.IsMatch(plan.PlanID, ValidationRegexPatterns.IDENTITYPATTERN))
                 validationResult.Add("PlanID", "can not be null and match identity rule");
             if (String.IsNullOrEmpty(plan.ProductVersion))
                 validationResult.Add("ProductVersion", "can not be null");
-            if (!ScriptBL.ValidateScriptExistence(plan.ScriptList.Select(s => s.CaseID).ToList(), out notExistingScripts))
+            if (!ScriptBL.ValidateScriptExistence(plan.ScriptList.Select(s=>s.CaseID).ToList(), out notExistingScripts))
                 validationResult.Add("CaseList", String.Join(ASCII.COMMA, notExistingScripts.ToArray()) + "does not exist");
-
-            if (PlanDA.Retrieve(plan.PlanID) != null)
-                validationResult.Add("PlanID", String.Format("the given plan '{0}' already exists", plan.PlanID));
-
 
             if (validationResult.Count > 0)
             {

@@ -36,6 +36,10 @@ namespace Mento.Business.Plan.BusinessLogic
             XDocument planDefinition = GetPlanXDocument(planFile);
 
             PlanEntity plan = GetPlanInformationFromXDocument(planDefinition);
+
+            if (PlanDA.Retrieve(plan.PlanID) != null)
+                throw new AppException(String.Format("the given plan '{0}' already exists", plan.PlanID));
+
             plan.Status = EntityStatus.Active;
             plan.UpdateTime = DateTime.Now;
             
@@ -138,6 +142,34 @@ namespace Mento.Business.Plan.BusinessLogic
             handler.Dispose();
 
             return ScriptDA.RetrieveByPlanID(plan.ID);
+        }
+        
+        public PlanEntity GetPlanByExecutionID(long executionID, bool isGetScripts = true)
+        {
+            PlanEntity plan = PlanDA.RetrieveByExecutionID(executionID);
+            if (plan == null)
+            {
+                throw new Exception(String.Format("plan '{0}' was not found.", plan.PlanID));
+            }
+
+            if (isGetScripts)
+                plan.ScriptList = ScriptBL.GetScriptsByPlanID(plan.ID).ToList();
+
+            return plan;
+        }
+
+        public PlanEntity GetPlanByID(long planID, bool isGetScripts = true)
+        {
+            PlanEntity plan = PlanDA.Retrieve(planID);
+            if (plan == null)
+            {
+                throw new Exception(String.Format("plan '{0}' was not found.", planID));
+            }
+
+            if (isGetScripts)
+                plan.ScriptList = ScriptBL.GetScriptsByPlanID(plan.ID).ToList();
+
+            return plan;
         }
 
         public PlanEntity GetPlanByPlanID(string planID)

@@ -36,7 +36,7 @@ namespace Mento.App.Controllers
         [Command]
         public static void Update([Parameter]string planID, [Parameter]string planFile)
         {
-            planID = "TA-P01";
+            planID = "TA-P02";
             planFile = @"D:\publish\TA\plan-example.xml";
 
             PlanBL.Update(planID,planFile);

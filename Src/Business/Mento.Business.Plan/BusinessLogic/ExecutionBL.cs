@@ -17,6 +17,9 @@ using Mento.Framework.Execution;
 using Mento.Framework.Exceptions;
 using System.Data;
 using System.Reflection;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.XPath;
 
 namespace Mento.Business.Plan.BusinessLogic
 {
@@ -24,6 +27,7 @@ namespace Mento.Business.Plan.BusinessLogic
     {
         private static ExecutionDA ExecutionDA = new ExecutionDA();
         private static PlanBL PlanBL = new PlanBL();
+        private static ResultBL ResultBL = new ResultBL();
 
         private static ScriptBL ScriptBL = new ScriptBL();
 
@@ -61,18 +65,18 @@ namespace Mento.Business.Plan.BusinessLogic
         {
             PlanEntity plan = PlanBL.GetPlanByPlanID(planID);
 
-            string workFolder = Path.Combine(ExecutionConfig.ExecutionDirectory, plan.PlanID);
-
             //initialize execution context
-            InitializeExecutionContext(url,browser,language);
+            InitializeExecutionContext(url, browser, language);
 
+            //CreateExecutionRecordForPlan();
+            long executionID = CreateExecutionRecord(plan);
+
+            string workFolder = Path.Combine(ExecutionConfig.ExecutionDirectory, String.Format("{0}-{1}", plan.PlanID, executionID));
+            
             //copy published script from publish directory to local
             if (!Directory.Exists(ExecutionConfig.ScriptDirectory) || ExecutionConfig.IsRefreshScriptsOnExecution)
                 FileSystemHelper.CopySharedFiles(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, ExecutionConfig.ScriptDirectory);
             
-            //CreateExecutionRecordForPlan();
-            long executionID = CreateExecutionRecord(plan);
-
             //call unit to execute the script list
             ExecuteScripts(plan, workFolder);
 
@@ -81,9 +85,13 @@ namespace Mento.Business.Plan.BusinessLogic
             ExecutionContext.Destruct();
 
             //collect execute result, split result for every script
-            
+            List<ResultEntity> results = GetTestSuiteResults(workFolder, executionID);
 
             //save result
+            foreach (var result in results)
+            {
+                ResultBL.Create(result);
+            }
         }
 
 
@@ -92,6 +100,9 @@ namespace Mento.Business.Plan.BusinessLogic
         {
             foreach (var groupItem in plan.ScriptList.GroupBy(s => s.Assembly))
             {
+                if (String.IsNullOrEmpty(groupItem.Key))
+                    continue;
+
                 StringBuilder Command = new StringBuilder();
                 //make nunit project
 
@@ -180,6 +191,45 @@ namespace Mento.Business.Plan.BusinessLogic
             }
 
             return table;
+        }
+
+        public List<ResultEntity> GetTestSuiteResults(string workFolder,long executionID)
+        {
+            List<ResultEntity> fixtureResultList = new List<ResultEntity>();
+
+            DirectoryInfo workDirectory = new DirectoryInfo(workFolder);
+
+            foreach (FileInfo resultFile in workDirectory.GetFiles("result*.xml"))
+            {
+                XDocument resultXml = XDocument.Load(resultFile.FullName);
+
+                foreach (XElement scriptElement in resultXml.XPathSelectElements("//test-suite[@type='TestFixture']/results").Elements())
+                {
+                    //string testFixtureName = fixtureElement.Attribute("name").Value;
+
+                    //foreach (XElement scriptElement in fixtureElement.Element("results").Elements())
+                    //{
+                        //Console.WriteLine(scriptElement.Name);
+                        string caseID = scriptElement.XPathSelectElement("properties/property[@name='CaseID']").Attribute("value").Value;
+                        ScriptExecutionStatus status = String.Equals(scriptElement.Attribute("executed").Value, "True", StringComparison.OrdinalIgnoreCase) ? String.Equals(scriptElement.Attribute("result").Value, "Success", StringComparison.OrdinalIgnoreCase) ? ScriptExecutionStatus.Passed : ScriptExecutionStatus.Failed : ScriptExecutionStatus.NotRun;
+
+                        ResultEntity result = new ResultEntity()
+                        {
+                            CaseID = caseID,
+                            Status = status,
+                            ExecutionID = executionID,
+                            FailReason = status == ScriptExecutionStatus.Failed ? scriptElement.XPathSelectElement("failure/stack-trace").Value : String.Empty,
+                            FailDetail = status == ScriptExecutionStatus.Failed ? scriptElement.XPathSelectElement("failure/message").Value : String.Empty,
+                            //TODO:get image url from fail message
+                            ImageUrl = "",
+                        };
+
+                        fixtureResultList.Add(result);
+                    //}
+                }
+            }
+
+            return fixtureResultList;
         }
         #endregion
     }

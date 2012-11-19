@@ -80,6 +80,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Business\Mento.Business.Plan\Mento.Business.Plan.csproj">
+      <Project>{AA90ABC5-A233-40FC-A1D0-DC1DED2431BB}</Project>
+      <Name>Mento.Business.Plan</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Common\Mento.Framework\Mento.Framework.csproj">
       <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
       <Name>Mento.Framework</Name>

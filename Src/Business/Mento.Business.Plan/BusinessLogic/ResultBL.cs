@@ -16,6 +16,11 @@ namespace Mento.Business.Plan.BusinessLogic
         private static ResultDA ResultDA = new ResultDA();
         private static PlanBL PlanBL = new PlanBL();
 
+        public long Create(ResultEntity result)
+        {
+            return ResultDA.Create(result);
+        }
+
         public DataTable ExeportByPlanID(string planID, long executionID)
         {
             PlanEntity plan = PlanBL.GetPlanByPlanID(planID);

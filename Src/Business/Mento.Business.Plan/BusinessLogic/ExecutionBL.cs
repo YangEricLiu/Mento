@@ -14,6 +14,8 @@ using System.IO;
 using Mento.Framework.Configuration;
 using Mento.Framework.Constants;
 using Mento.Framework.Execution;
+using Mento.Framework.Exceptions;
+using System.Data;
 
 namespace Mento.Business.Plan.BusinessLogic
 {
@@ -24,9 +26,17 @@ namespace Mento.Business.Plan.BusinessLogic
 
         private static ScriptBL ScriptBL = new ScriptBL();
 
-        public ExecutionEntity[] ExportByPlanID(long planID)
+        public ExecutionEntity[] ExportByPlanID(string planID)
         {
-            ExecutionEntity[] executions = ExecutionDA.RetrieveByPlanID(planID);
+            PlanEntity plan = PlanBL.GetPlanByPlanID(planID);
+
+            ExecutionEntity[] executions = ExecutionDA.RetrieveByPlanID(plan.ID);
+
+            //TODO:
+            //Export to excel
+            string fileName = Path.Combine(ExportConfig.ResultExportDirectory, String.Format("{0}.xls", plan.PlanID));
+
+            ExcelHelper.ExportToExcel<ExecutionEntity>(executions.ToList(), fileName, "ResultList");
 
             return executions;
         }
@@ -35,6 +45,11 @@ namespace Mento.Business.Plan.BusinessLogic
         {
             ExecutionEntity[] executions = ExecutionDA.RetrieveByCaseID(caseID);
 
+            //TODO:
+            //Export to excel
+            string fileName = Path.Combine(ExportConfig.ResultExportDirectory, String.Format("{0}.xls", caseID));
+            
+            ExcelHelper.ExportToExcel<ExecutionEntity>(executions.ToList(), fileName, "ResultList");
 
             return executions;
         }
@@ -136,6 +151,7 @@ namespace Mento.Business.Plan.BusinessLogic
 
             ExecutionContext.Initialize(url, browser, language);
         }
+
         #endregion
     }
 }

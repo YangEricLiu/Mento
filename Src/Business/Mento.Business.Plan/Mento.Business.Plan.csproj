@@ -35,6 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
@@ -63,16 +68,16 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\ExecutionBL.cs" />
     <Compile Include="BusinessLogic\PlanBL.cs" />
+    <Compile Include="BusinessLogic\ResultBL.cs" />
     <Compile Include="DataAccess\ExecutionDA.cs" />
     <Compile Include="DataAccess\PlanDA.cs" />
     <Compile Include="DataAccess\PlanScriptDA.cs" />
+    <Compile Include="DataAccess\ResultDA.cs" />
     <Compile Include="Entity\ExecutionEntity.cs" />
     <Compile Include="Entity\PlanEntity.cs" />
     <Compile Include="Entity\PlanScriptEntity.cs" />
+    <Compile Include="Entity\ResultEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Mento.Framework\Mento.Framework.csproj">

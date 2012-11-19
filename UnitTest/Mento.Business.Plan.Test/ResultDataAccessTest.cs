@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Mento.Business.Plan.Entity;
 using Mento.Business.Plan.DataAccess;
 
-namespace Mento.Business.Result.Test
+namespace Mento.Business.Plan.Test
 {
     [TestClass]
     public class ResultDataAccessTest

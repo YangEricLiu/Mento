@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.Business.Script", "Bu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.Business.Plan", "Business\Mento.Business.Plan\Mento.Business.Plan.csproj", "{AA90ABC5-A233-40FC-A1D0-DC1DED2431BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.Business.Result", "Business\Mento.Business.Result\Mento.Business.Result.csproj", "{27155D41-3745-49F2-A981-26D411B800F8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.TestApi.WebUserInterface", "Api\Mento.TestApi.WebUserInterface\Mento.TestApi.WebUserInterface.csproj", "{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.TestApi.Data", "Api\Mento.TestApi.Data\Mento.TestApi.Data.csproj", "{1B28E716-BD3F-403B-835B-076C5A788558}"
@@ -44,8 +42,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.Business.Plan.Test", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.Business.Script.Test", "..\UnitTest\Mento.Business.Case.Test\Mento.Business.Script.Test.csproj", "{257AC1FF-EDB3-4BD4-ABB3-17A0269EBDD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.Business.Result.Test", "..\UnitTest\Mento.Business.Result.Test\Mento.Business.Result.Test.csproj", "{FB9DC403-9193-4655-8AD9-3838B18DACD5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.App.Command.Test", "..\UnitTest\Mento.App.Command.Test\Mento.App.Command.Test.csproj", "{9E76C812-99BA-49BD-96CD-6608EE37371B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.App.Test", "..\UnitTest\Mento.App.Test\Mento.App.Test.csproj", "{7459AD4B-BFF8-4C4B-B372-14056A4E10C5}"
@@ -54,7 +50,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.TestApi.TestData", "A
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 18
+		SccNumberOfProjects = 16
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://10.177.1.111:8080/tfs/kara
 		SccLocalPath0 = .
@@ -74,58 +70,50 @@ Global
 		SccProjectTopLevelParentUniqueName4 = Mento.sln
 		SccProjectName4 = Business/Mento.Business.Plan
 		SccLocalPath4 = Business\\Mento.Business.Plan
-		SccProjectUniqueName5 = Business\\Mento.Business.Result\\Mento.Business.Result.csproj
+		SccProjectUniqueName5 = Api\\Mento.TestApi.WebUserInterface\\Mento.TestApi.WebUserInterface.csproj
 		SccProjectTopLevelParentUniqueName5 = Mento.sln
-		SccProjectName5 = Business/Mento.Business.Result
-		SccLocalPath5 = Business\\Mento.Business.Result
-		SccProjectUniqueName6 = Api\\Mento.TestApi.WebUserInterface\\Mento.TestApi.WebUserInterface.csproj
+		SccProjectName5 = Api/Mento.TestApi.WebUserInterface
+		SccLocalPath5 = Api\\Mento.TestApi.WebUserInterface
+		SccProjectUniqueName6 = Api\\Mento.TestApi.Data\\Mento.TestApi.Data.csproj
 		SccProjectTopLevelParentUniqueName6 = Mento.sln
-		SccProjectName6 = Api/Mento.TestApi.WebUserInterface
-		SccLocalPath6 = Api\\Mento.TestApi.WebUserInterface
-		SccProjectUniqueName7 = Api\\Mento.TestApi.Data\\Mento.TestApi.Data.csproj
+		SccProjectName6 = Api/Mento.TestApi.Data
+		SccLocalPath6 = Api\\Mento.TestApi.Data
+		SccProjectUniqueName7 = Api\\Mento.TestApi.Service\\Mento.TestApi.Service.csproj
 		SccProjectTopLevelParentUniqueName7 = Mento.sln
-		SccProjectName7 = Api/Mento.TestApi.Data
-		SccLocalPath7 = Api\\Mento.TestApi.Data
-		SccProjectUniqueName8 = Api\\Mento.TestApi.Service\\Mento.TestApi.Service.csproj
+		SccProjectName7 = Api/Mento.TestApi.Service
+		SccLocalPath7 = Api\\Mento.TestApi.Service
+		SccProjectUniqueName8 = Application\\App.CommandAnalysis\\App.CommandAnalysis.csproj
 		SccProjectTopLevelParentUniqueName8 = Mento.sln
-		SccProjectName8 = Api/Mento.TestApi.Service
-		SccLocalPath8 = Api\\Mento.TestApi.Service
-		SccProjectUniqueName9 = Application\\App.CommandAnalysis\\App.CommandAnalysis.csproj
+		SccProjectName8 = Application/App.CommandAnalysis
+		SccLocalPath8 = Application\\App.CommandAnalysis
+		SccProjectUniqueName9 = Application\\App.Controllers\\App.Controllers.csproj
 		SccProjectTopLevelParentUniqueName9 = Mento.sln
-		SccProjectName9 = Application/App.CommandAnalysis
-		SccLocalPath9 = Application\\App.CommandAnalysis
-		SccProjectUniqueName10 = Application\\App.Controllers\\App.Controllers.csproj
+		SccProjectName9 = Application/App.Controllers
+		SccLocalPath9 = Application\\App.Controllers
+		SccProjectUniqueName10 = ..\\UnitTest\\Mento.Business.Plan.Test\\Mento.Business.Plan.Test.csproj
 		SccProjectTopLevelParentUniqueName10 = Mento.sln
-		SccProjectName10 = Application/App.Controllers
-		SccLocalPath10 = Application\\App.Controllers
-		SccProjectUniqueName11 = ..\\UnitTest\\Mento.Business.Plan.Test\\Mento.Business.Plan.Test.csproj
+		SccProjectName10 = ../UnitTest/Mento.Business.Plan.Test
+		SccLocalPath10 = ..\\UnitTest\\Mento.Business.Plan.Test
+		SccProjectUniqueName11 = ..\\UnitTest\\Mento.App.Command.Test\\Mento.App.Command.Test.csproj
 		SccProjectTopLevelParentUniqueName11 = Mento.sln
-		SccProjectName11 = ../UnitTest/Mento.Business.Plan.Test
-		SccLocalPath11 = ..\\UnitTest\\Mento.Business.Plan.Test
-		SccProjectUniqueName12 = ..\\UnitTest\\Mento.Business.Result.Test\\Mento.Business.Result.Test.csproj
+		SccProjectName11 = ../UnitTest/Mento.App.Command.Test
+		SccLocalPath11 = ..\\UnitTest\\Mento.App.Command.Test
+		SccProjectUniqueName12 = ..\\UnitTest\\Mento.App.Test\\Mento.App.Test.csproj
 		SccProjectTopLevelParentUniqueName12 = Mento.sln
-		SccProjectName12 = ../UnitTest/Mento.Business.Result.Test
-		SccLocalPath12 = ..\\UnitTest\\Mento.Business.Result.Test
-		SccProjectUniqueName13 = ..\\UnitTest\\Mento.App.Command.Test\\Mento.App.Command.Test.csproj
+		SccProjectName12 = ../UnitTest/Mento.App.Test
+		SccLocalPath12 = ..\\UnitTest\\Mento.App.Test
+		SccProjectUniqueName13 = Business\\Mento.Business.Case\\Mento.Business.Script.csproj
 		SccProjectTopLevelParentUniqueName13 = Mento.sln
-		SccProjectName13 = ../UnitTest/Mento.App.Command.Test
-		SccLocalPath13 = ..\\UnitTest\\Mento.App.Command.Test
-		SccProjectUniqueName14 = ..\\UnitTest\\Mento.App.Test\\Mento.App.Test.csproj
+		SccProjectName13 = Business/Mento.Business.Case
+		SccLocalPath13 = Business\\Mento.Business.Case
+		SccProjectUniqueName14 = ..\\UnitTest\\Mento.Business.Case.Test\\Mento.Business.Script.Test.csproj
 		SccProjectTopLevelParentUniqueName14 = Mento.sln
-		SccProjectName14 = ../UnitTest/Mento.App.Test
-		SccLocalPath14 = ..\\UnitTest\\Mento.App.Test
-		SccProjectUniqueName15 = Business\\Mento.Business.Case\\Mento.Business.Script.csproj
+		SccProjectName14 = ../UnitTest/Mento.Business.Case.Test
+		SccLocalPath14 = ..\\UnitTest\\Mento.Business.Case.Test
+		SccProjectUniqueName15 = Api\\Mento.TestApi.TestData\\Mento.TestApi.TestData.csproj
 		SccProjectTopLevelParentUniqueName15 = Mento.sln
-		SccProjectName15 = Business/Mento.Business.Case
-		SccLocalPath15 = Business\\Mento.Business.Case
-		SccProjectUniqueName16 = ..\\UnitTest\\Mento.Business.Case.Test\\Mento.Business.Script.Test.csproj
-		SccProjectTopLevelParentUniqueName16 = Mento.sln
-		SccProjectName16 = ../UnitTest/Mento.Business.Case.Test
-		SccLocalPath16 = ..\\UnitTest\\Mento.Business.Case.Test
-		SccProjectUniqueName17 = Api\\Mento.TestApi.TestData\\Mento.TestApi.TestData.csproj
-		SccProjectTopLevelParentUniqueName17 = Mento.sln
-		SccProjectName17 = Api/Mento.TestApi.TestData
-		SccLocalPath17 = Api\\Mento.TestApi.TestData
+		SccProjectName15 = Api/Mento.TestApi.TestData
+		SccLocalPath15 = Api\\Mento.TestApi.TestData
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Mento.vsmdi
@@ -189,16 +177,6 @@ Global
 		{AA90ABC5-A233-40FC-A1D0-DC1DED2431BB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{AA90ABC5-A233-40FC-A1D0-DC1DED2431BB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{AA90ABC5-A233-40FC-A1D0-DC1DED2431BB}.Release|x86.ActiveCfg = Release|Any CPU
-		{27155D41-3745-49F2-A981-26D411B800F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27155D41-3745-49F2-A981-26D411B800F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27155D41-3745-49F2-A981-26D411B800F8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{27155D41-3745-49F2-A981-26D411B800F8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{27155D41-3745-49F2-A981-26D411B800F8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{27155D41-3745-49F2-A981-26D411B800F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27155D41-3745-49F2-A981-26D411B800F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27155D41-3745-49F2-A981-26D411B800F8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{27155D41-3745-49F2-A981-26D411B800F8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{27155D41-3745-49F2-A981-26D411B800F8}.Release|x86.ActiveCfg = Release|Any CPU
 		{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -269,16 +247,6 @@ Global
 		{257AC1FF-EDB3-4BD4-ABB3-17A0269EBDD2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{257AC1FF-EDB3-4BD4-ABB3-17A0269EBDD2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{257AC1FF-EDB3-4BD4-ABB3-17A0269EBDD2}.Release|x86.ActiveCfg = Release|Any CPU
-		{FB9DC403-9193-4655-8AD9-3838B18DACD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB9DC403-9193-4655-8AD9-3838B18DACD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB9DC403-9193-4655-8AD9-3838B18DACD5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{FB9DC403-9193-4655-8AD9-3838B18DACD5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{FB9DC403-9193-4655-8AD9-3838B18DACD5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{FB9DC403-9193-4655-8AD9-3838B18DACD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB9DC403-9193-4655-8AD9-3838B18DACD5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB9DC403-9193-4655-8AD9-3838B18DACD5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{FB9DC403-9193-4655-8AD9-3838B18DACD5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{FB9DC403-9193-4655-8AD9-3838B18DACD5}.Release|x86.ActiveCfg = Release|Any CPU
 		{9E76C812-99BA-49BD-96CD-6608EE37371B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9E76C812-99BA-49BD-96CD-6608EE37371B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E76C812-99BA-49BD-96CD-6608EE37371B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -319,7 +287,6 @@ Global
 		{F2D5E614-DA62-4075-80CE-A47DD00F6A1C} = {D7315124-9436-4D10-9546-2E16C1BA6517}
 		{9B7F3CC7-6C21-4EE4-8FAB-AD62C17DCD1E} = {F413892C-6707-4060-AE09-B784FFA70D6B}
 		{AA90ABC5-A233-40FC-A1D0-DC1DED2431BB} = {F413892C-6707-4060-AE09-B784FFA70D6B}
-		{27155D41-3745-49F2-A981-26D411B800F8} = {F413892C-6707-4060-AE09-B784FFA70D6B}
 		{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD} = {0764FCE0-47BA-45AE-A02F-0E89BDFE1F95}
 		{1B28E716-BD3F-403B-835B-076C5A788558} = {0764FCE0-47BA-45AE-A02F-0E89BDFE1F95}
 		{CC7DBD2D-66C0-4155-BDDB-2D153C23788B} = {0764FCE0-47BA-45AE-A02F-0E89BDFE1F95}
@@ -329,7 +296,6 @@ Global
 		{03CC033D-9676-4B82-B785-BBA9F8CAE38B} = {2E3A39E4-C0B4-426B-81D5-396210B3E5C8}
 		{69172FBE-1356-43B9-A002-3828009509AB} = {2E3A39E4-C0B4-426B-81D5-396210B3E5C8}
 		{257AC1FF-EDB3-4BD4-ABB3-17A0269EBDD2} = {2E3A39E4-C0B4-426B-81D5-396210B3E5C8}
-		{FB9DC403-9193-4655-8AD9-3838B18DACD5} = {2E3A39E4-C0B4-426B-81D5-396210B3E5C8}
 		{9E76C812-99BA-49BD-96CD-6608EE37371B} = {2E3A39E4-C0B4-426B-81D5-396210B3E5C8}
 		{7459AD4B-BFF8-4C4B-B372-14056A4E10C5} = {2E3A39E4-C0B4-426B-81D5-396210B3E5C8}
 	EndGlobalSection

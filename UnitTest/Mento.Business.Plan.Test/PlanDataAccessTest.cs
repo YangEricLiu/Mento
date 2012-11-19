@@ -53,6 +53,12 @@ namespace Mento.Business.Plan.Test
         { 
         }
 
+        [TestMethod]
+        public void RetrieveTest()
+        {
+            PlanDA.Retrieve("TA-P02");
+        }
+
         private void DeleteTestingData()
         {
             string sql = String.Format("DELETE FROM [Plan] WHERE [PlanID]='{0}'", UnitTestPlanID);

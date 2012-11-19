@@ -42,5 +42,11 @@ namespace Mento.Business.Case.Test
 
             Assert.IsTrue(!ScriptDA.RetrieveAll().Select(x => x.CaseID).Contains(script.CaseID));
         }
+
+        [TestMethod]
+        public void RetrieveByPlanIDTest()
+        {
+            ScriptDA.RetrieveByPlanID(13);
+        }
     }
 }

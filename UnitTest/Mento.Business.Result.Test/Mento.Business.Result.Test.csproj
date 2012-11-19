@@ -58,10 +58,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\Business\Mento.Business.Result\Mento.Business.Result.csproj">
-      <Project>{27155D41-3745-49F2-A981-26D411B800F8}</Project>
-      <Name>Mento.Business.Result</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Src\Common\Mento.Framework\Mento.Framework.csproj">
       <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
       <Name>Mento.Framework</Name>

@@ -503,5 +503,69 @@ namespace Mento.Utility
         }
 
         #endregion 
+
+        /// <summary>
+        /// Export a data table to excel file
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="fileName"></param>
+        /// <param name="sheetName"></param>
+        /// <param name="headers"></param>
+        public static void ExportToExcel(DataTable data, string fileName, string sheetName, string[] headers=null)
+        {
+            if (headers == null || headers.Length <= 0)
+            {
+                var columns = new List<string>();
+                foreach (DataColumn column in data.Columns)
+                    columns.Add(column.ColumnName);
+
+                headers = columns.ToArray();
+            }
+
+            //Open excel file which restore scripts data
+            ExcelHelper handler = new ExcelHelper(fileName, false);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Microsoft.Office.Interop.Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
+
+            //Import data from the start
+            handler.ImportDataTable(sheet, headers, data);
+
+            handler.Save();
+            handler.Dispose();
+        }
+
+        /// <summary>
+        /// Export a generic list to excel, ATTENTION: headers must be property name of the generic type
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <param name="fileName"></param>
+        /// <param name="sheetName"></param>
+        /// <param name="headers"></param>
+        public static void ExportToExcel<T>(List<T> data, string fileName, string sheetName, string[] headers = null)
+        {
+            if (headers == null || headers.Length <= 0)
+                headers = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance).Select(p => p.Name).ToArray();
+
+            DataTable table = new DataTable();
+
+            foreach (var column in headers)
+                table.Columns.Add(column);
+
+            foreach (T dataItem in data)
+            {
+                DataRow row = table.NewRow();
+
+                foreach (var column in headers)
+                    row[column] = typeof(T).GetProperty(column).GetValue(dataItem, null);
+
+                table.Rows.Add(row);
+            }
+
+            ExportToExcel(table, fileName, sheetName, headers);
+        }
     }
 }

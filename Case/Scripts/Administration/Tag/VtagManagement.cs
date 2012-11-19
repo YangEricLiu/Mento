@@ -38,9 +38,8 @@ namespace Mento.Script.Administration.Tag
         }
         
         [Test]
-        [CaseID("TA-VtagConfigue-001.json"), CreateTime("2012-11-14"), Owner("Nancy")]
-        [MultipleTestDataSource(typeof(AddVtagData[]), typeof(VtagManagement), "TA-VtagConfigue-001.json")]
-
+        [CaseID("TA-VtagConfigue-001"), CreateTime("2012-11-14"), Owner("Nancy"),ManualCaseID("TA-VTAG-T001")]
+        [MultipleTestDataSource(typeof(AddVtagData[]), typeof(VtagManagement), "TA-VtagConfigue-001")]
         public void AddVtag(AddVtagData input)
         {
             FunctionWrapper.Vtag.ClickAddVtagButton();

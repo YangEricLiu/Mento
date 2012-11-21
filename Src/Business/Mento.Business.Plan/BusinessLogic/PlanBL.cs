@@ -143,7 +143,7 @@ namespace Mento.Business.Plan.BusinessLogic
 
             return ScriptDA.RetrieveByPlanID(plan.ID);
         }
-        
+
         public PlanEntity GetPlanByExecutionID(long executionID, bool isGetScripts = true)
         {
             PlanEntity plan = PlanDA.RetrieveByExecutionID(executionID);

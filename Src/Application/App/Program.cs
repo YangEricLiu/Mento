@@ -25,9 +25,11 @@ namespace Mento.App
             //PlanController.Delete("");
 
             //PlanController.Run("", "", "", "");
-            PlanController.View("TA-P02");
-            
+            //PlanController.View("TA-P02");
+
+            Console.WriteLine(args[0]);
             Console.WriteLine("Press any key to continue..");
+            
             Console.Read();
         }
 

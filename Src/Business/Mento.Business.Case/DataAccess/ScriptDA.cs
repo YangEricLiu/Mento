@@ -67,6 +67,23 @@ namespace Mento.Business.Script.DataAccess
             return list.ToArray();
         }
 
+        public List<string> RetrieveAllCaseID()
+        {
+            string sql = "SELECT [CaseID] FROM [Script]";
+
+            DbCommand command = Database.GetSqlStringCommand(sql);
+
+            List<string> list = new List<string>();
+            ScriptEntity[] scripts = RetrieveAll();
+
+            foreach (var script in scripts)
+            {
+                list.Add(script.CaseID);
+            }
+
+            return list;
+        }
+
         public ScriptEntity[] RetrieveByPlanID(long PlanID)
         {
             string sql = @"SELECT [S].[ID],[S].[CaseID],[S].[ManualCaseID],[S].[Name],[S].[SuiteName],[S].[Type],[S].[Priority],[S].[Feature],[S].[Module],[S].[Owner],[S].[CreateTime],[S].[SyncTime],[S].[FullName],[S].[Assembly]

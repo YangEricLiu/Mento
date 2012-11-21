@@ -91,6 +91,19 @@ namespace Mento.Business.Plan.DataAccess
             return list.ToArray();
         }
 
+        public List<string> RetrieveAllPlanID()
+        {
+            PlanEntity[] plans = RetrieveAll();
+            List<string> list = new List<string>();
+
+            foreach (var plan in plans)
+            { 
+                list.Add(plan.PlanID);
+            }
+
+            return list;
+        }
+
         public DataTable RetrieveAllToDataSet()
         {
             string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan]";

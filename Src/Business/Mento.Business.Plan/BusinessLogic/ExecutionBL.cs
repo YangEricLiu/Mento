@@ -20,6 +20,7 @@ using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using Mento.Framework.DataAccess;
 
 namespace Mento.Business.Plan.BusinessLogic
 {
@@ -77,12 +78,16 @@ namespace Mento.Business.Plan.BusinessLogic
             if (!Directory.Exists(ExecutionConfig.ScriptDirectory) || ExecutionConfig.IsRefreshScriptsOnExecution)
                 FileSystemHelper.CopySharedFiles(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, ExecutionConfig.ScriptDirectory);
             
+            //execute initialize sql script
+            JazzDatabaseOperator.Initialize();
+
             //call unit to execute the script list
             ExecuteScripts(plan, workFolder);
 
-            //when execution finished, update endtime, destruct execution context
+            //when execution finished, update endtime, destruct execution context, destruct database
             ExecutionDA.UpdateEndTime(executionID, DateTime.Now);
             ExecutionContext.Destruct();
+            JazzDatabaseOperator.Destruct();
 
             //collect execute result, split result for every script
             List<ResultEntity> results = GetTestSuiteResults(workFolder, executionID);
@@ -93,8 +98,7 @@ namespace Mento.Business.Plan.BusinessLogic
                 ResultBL.Create(result);
             }
         }
-
-
+        
         #region Private methods
         private void ExecuteScripts(PlanEntity plan, string workFolder)
         {
@@ -193,22 +197,23 @@ namespace Mento.Business.Plan.BusinessLogic
             return table;
         }
 
-        public List<ResultEntity> GetTestSuiteResults(string workFolder,long executionID)
+        private List<ResultEntity> GetTestSuiteResults(string workFolder,long executionID)
         {
             List<ResultEntity> fixtureResultList = new List<ResultEntity>();
 
             DirectoryInfo workDirectory = new DirectoryInfo(workFolder);
 
-            foreach (FileInfo resultFile in workDirectory.GetFiles("result*.xml"))
-            {
-                XDocument resultXml = XDocument.Load(resultFile.FullName);
-
-                foreach (XElement scriptElement in resultXml.XPathSelectElements("//test-suite[@type='TestFixture']/results").Elements())
+            if(workDirectory.Exists)
+                foreach (FileInfo resultFile in workDirectory.GetFiles("result*.xml"))
                 {
-                    //string testFixtureName = fixtureElement.Attribute("name").Value;
+                    XDocument resultXml = XDocument.Load(resultFile.FullName);
 
-                    //foreach (XElement scriptElement in fixtureElement.Element("results").Elements())
-                    //{
+                    foreach (XElement scriptElement in resultXml.XPathSelectElements("//test-suite[@type='TestFixture']/results").Elements())
+                    {
+                        //string testFixtureName = fixtureElement.Attribute("name").Value;
+
+                        //foreach (XElement scriptElement in fixtureElement.Element("results").Elements())
+                        //{
                         //Console.WriteLine(scriptElement.Name);
                         string caseID = scriptElement.XPathSelectElement("properties/property[@name='CaseID']").Attribute("value").Value;
                         ScriptExecutionStatus status = String.Equals(scriptElement.Attribute("executed").Value, "True", StringComparison.OrdinalIgnoreCase) ? String.Equals(scriptElement.Attribute("result").Value, "Success", StringComparison.OrdinalIgnoreCase) ? ScriptExecutionStatus.Passed : ScriptExecutionStatus.Failed : ScriptExecutionStatus.NotRun;
@@ -225,9 +230,9 @@ namespace Mento.Business.Plan.BusinessLogic
                         };
 
                         fixtureResultList.Add(result);
-                    //}
+                        //}
+                    }
                 }
-            }
 
             return fixtureResultList;
         }

@@ -22,6 +22,8 @@ namespace Mento.Framework.Configuration
         private const string PUBLISHSERVERUSERNAME = "publishServerUserName";
         private const string PUBLISHSERVERPASSWORD = "publishServerPassword";
         private const string ISREFRESHSCRIPTSONEXECUTION = "isRefreshScriptsOnExecution";
+        private const string ENVIRONMENTSETUPSQLSCRIPT = "environmentSetupSqlScript";
+        private const string ENVIRONMENTTEARDOWNSQLSCRIPT = "environmentTearDownSqlScript";
 
 
         private static string BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -97,6 +99,22 @@ namespace Mento.Framework.Configuration
             get
             {
                 return GetExecutionConfig(PUBLISHSERVERPASSWORD);
+            }
+        }
+
+        public static string SetupSqlScript
+        {
+            get
+            {
+                return GetAbsoluteOrRelativePath(GetExecutionConfig(ENVIRONMENTSETUPSQLSCRIPT), BaseDirectory);
+            }
+        }
+
+        public static string TearDownSqlScript
+        {
+            get
+            {
+                return GetAbsoluteOrRelativePath(GetExecutionConfig(ENVIRONMENTTEARDOWNSQLSCRIPT), BaseDirectory);
             }
         }
 

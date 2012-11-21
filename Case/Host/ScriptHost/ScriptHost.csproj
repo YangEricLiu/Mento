@@ -109,6 +109,20 @@
     <Content Include="Resource\zh-cn.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="SqlScript\Setup\initialization.sql" />
+    <Content Include="SqlScript\TearDown\00create_table.sql" />
+    <Content Include="SqlScript\TearDown\01dbo_Timezone_Data.sql" />
+    <Content Include="SqlScript\TearDown\02dbo_Commodity_Data.sql" />
+    <Content Include="SqlScript\TearDown\03dbo_Uom_Data.sql" />
+    <Content Include="SqlScript\TearDown\05dbo_Customer_Data.sql" />
+    <Content Include="SqlScript\TearDown\06dbo_User_Data.sql" />
+    <Content Include="SqlScript\TearDown\07dbo_SystemDimensionTemplate_Data.sql" />
+    <Content Include="SqlScript\TearDown\08dbo_SystemDimensionTemplateItem_Data.sql" />
+    <Content Include="SqlScript\TearDown\09dbo_DefaultDashBoard_Data.sql" />
+    <Content Include="SqlScript\TearDown\10dbo_UserFunctionPrivilege_Data.sql" />
+    <Content Include="SqlScript\TearDown\11dbo_EdgeNTag__SP.sql" />
+    <Content Include="SqlScript\TearDown\12dbo_Commodity_Uom_schema_data.sql" />
+    <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_data.sql" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
@@ -157,7 +171,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy $(ProjectDir)Data $(TargetDir)Data /E /Y /R /I
+    <PostBuildEvent>del /F /S /Q $(TargetDir)Data
+del /F /S /Q $(TargetDir)SqlScript
+xcopy $(ProjectDir)Data $(TargetDir)Data /E /Y /R /I
+xcopy $(ProjectDir)SqlScript $(TargetDir)SqlScript /E /Y /R /I
 copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Administration.dll.config
 copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.ClientAccess.dll.config
 copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Customer.dll.config

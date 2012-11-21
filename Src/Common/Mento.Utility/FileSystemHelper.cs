@@ -11,6 +11,9 @@ namespace Mento.Utility
     {
         public static void CopySharedFiles(string serverDirectory, string localMappingDrive, string userName, string password, string destinationDirectory)
         {
+            if (Directory.Exists(destinationDirectory))
+                Directory.Delete(destinationDirectory, true);
+
             int status = SambaShareServerHelper.Connect(serverDirectory, localMappingDrive, userName, password);
             if (status == (int)ERROR_ID.ERROR_SUCCESS)
             {

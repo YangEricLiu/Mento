@@ -44,13 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administration\PtagData.cs" />
+    <Compile Include="Customer\PtagData.cs" />
     <Compile Include="Administration\ExampleData.cs" />
-    <Compile Include="Administration\Tag\VtagManagement\AddVtagData.cs">
+    <Compile Include="Customer\AddVtagData.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ClientAccess\LoginData.cs" />
-    <Compile Include="Administration\AddHierarchyData.cs" />
+    <Compile Include="Customer\AddHierarchyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,10 +68,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Administration\Calendar\" />
-    <Folder Include="Administration\Hierarchy\HierarchyManagement\" />
     <Folder Include="Administration\Tag\PtagConfiguration\" />
-    <Folder Include="Customer\" />
+    <Folder Include="Administration\Tag\VtagManagement\" />
     <Folder Include="EnergyView\" />
     <Folder Include="Information\" />
     <Folder Include="Platform\" />

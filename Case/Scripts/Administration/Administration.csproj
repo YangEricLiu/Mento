@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CarbonFactor\" />
-    <Folder Include="platform\" />
     <Folder Include="Tou\" />
   </ItemGroup>
   <ItemGroup>

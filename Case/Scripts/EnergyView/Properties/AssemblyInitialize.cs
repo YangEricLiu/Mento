@@ -5,7 +5,7 @@ using System.Text;
 using NUnit.Framework;
 using Mento.TestApi.WebUserInterface;
 
-namespace Mento.Script.Information
+namespace Mento.Script.EnergyView
 {
     [SetUpFixture]
     public class AssemblyInitialize
@@ -13,13 +13,13 @@ namespace Mento.Script.Information
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            ElementLocator.OpenJazz();
+            JazzBrowseManager.OpenJazz();
         }
 
         [TearDown]
         public void RunAfterAnyTests()
         {
-            ElementLocator.CloseJazz();
+            JazzBrowseManager.OpenJazz();
         }
     }
 }

@@ -58,6 +58,7 @@
     <Compile Include="Functions\FunctionWrapper.cs" />
     <Compile Include="Functions\Hierarchy.cs" />
     <Compile Include="Functions\Login.cs" />
+    <Compile Include="Functions\Navigator.cs" />
     <Compile Include="Functions\Ptag.cs" />
     <Compile Include="Functions\Vtag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

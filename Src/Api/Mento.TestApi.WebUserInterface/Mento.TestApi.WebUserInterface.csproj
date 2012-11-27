@@ -64,15 +64,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Navigator.cs" />
-    <Compile Include="Controls\Button.cs" />
-    <Compile Include="Controls\Grid.cs" />
-    <Compile Include="Controls\ToggleButton.cs" />
-    <Compile Include="NewControls\Button.cs" />
+    <Compile Include="BrowserHandler.cs" />
+    <None Include="NewControls\Button\Button.cs.old" />
+    <Compile Include="NewControls\Grid\Grid.cs" />
+    <Compile Include="NewControls\Button\ToggleButton.cs" />
+    <Compile Include="ElementHandler.cs" />
+    <Compile Include="JazzBrowseManager.cs" />
+    <Compile Include="NewControls\Button\Button.cs" />
     <Compile Include="NewControls\ControlElementMap.cs" />
-    <Compile Include="NewControls\ElementHandler.cs" />
-    <Compile Include="NewControls\ElementMapBase.cs" />
-    <Compile Include="NewControls\Common\LoadingMask.cs" />
+    <Compile Include="NewControls\Mask\LoadingMask.cs" />
     <Compile Include="NewControls\TreeView\AreaDimensionTree.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -83,23 +83,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="NewControls\TreeView\TreeView.cs" />
-    <Compile Include="Resource\ByType.cs" />
     <Compile Include="Resource\ComboBoxItemListReader.cs" />
     <Compile Include="Resource\ElementConfigurationReader.cs" />
     <Compile Include="Resource\ElementKey.cs" />
-    <Compile Include="ControlAccess.cs" />
-    <Compile Include="Controls\ComboBox.cs" />
-    <Compile Include="Controls\FormulaField.cs" />
-    <Compile Include="Controls\JazzControlBase.cs" />
-    <Compile Include="Controls\TextField.cs" />
-    <Compile Include="Controls\TreeView.cs" />
-    <Compile Include="ElementLocator.cs" />
+    <Compile Include="NewControls\ComboBox\ComboBox.cs" />
+    <Compile Include="NewControls\TextField\FormulaField.cs" />
+    <Compile Include="NewControls\TextField\TextField.cs" />
     <Compile Include="DriverFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource\ResourceManager.cs" />
     <Compile Include="Resource\LanguageResourceReader.cs" />
     <Compile Include="Resource\ManualElementName.cs" />
-    <Compile Include="Resource\Locator.cs" />
+    <Compile Include="Locator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Mento.Framework\Mento.Framework.csproj">
@@ -116,7 +111,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewControls\Button\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

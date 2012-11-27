@@ -13,13 +13,13 @@ namespace Mento.Script.ClientAccess
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            ElementLocator.OpenJazz();
+            JazzBrowseManager.OpenJazz();
         }
 
         [TearDown]
         public void RunAfterAnyTests()
         {
-            ElementLocator.CloseJazz();
+            JazzBrowseManager.OpenJazz();
         }
     }
 }

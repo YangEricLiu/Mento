@@ -11,20 +11,39 @@ using System.Configuration;
 using Mento.Framework.Constants;
 using System.IO;
 using System.Drawing;
+using Mento.Framework.Exceptions;
+using Mento.Framework.Execution;
 
 namespace Mento.TestApi.WebUserInterface
 {
     /// <summary>
     /// Get the instance of browser when execuation.
     /// </summary>
-    public class DriverFactory
+    internal static class DriverFactory
     {
+        private static IWebDriver _driver;
+        public static IWebDriver Instance
+        {
+            get
+            {
+                if (!ExecutionContext.Browser.HasValue)
+                    throw new Exception("Execution context not initialized yet.");
+
+                if (_driver == null)
+                {
+                    _driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value);
+                }
+
+                return _driver;
+            }
+        }
+
         /// <summary>
         /// Construct the driver 
         /// </summary>
         /// <param name="browser"></param>
         /// <returns>The driver instance</returns>
-        public static IWebDriver GetDriver(Browser browser)
+        private static IWebDriver GetDriver(Browser browser)
         {
             IWebDriver driver;
 
@@ -37,54 +56,24 @@ namespace Mento.TestApi.WebUserInterface
                     driver = new ChromeDriver(new ChromeOptions() { });
                     break;
                 case Browser.Firefox:
-                    driver = new FirefoxDriver(new FirefoxProfile() { AcceptUntrustedCertificates = true });
+                    try
+                    {
+                        driver = new FirefoxDriver(new FirefoxProfile() { AcceptUntrustedCertificates = true });
+                    }
+                    catch (WebDriverException ex)
+                    {
+                        throw new ApiException("Can not found firefox browser, you may need install firefox.", ex);
+                    }
                     break;
                 default:
                     driver = null;
                     break;
             }
 
-            Maxmize(driver);
+            //maximize the browser
+            driver.Manage().Window.Maximize();
 
             return driver;
-        }
-
-        private static void Maxmize(IWebDriver driver)
-        {
-            //driver.Manage().Window.Position = new Point(0,0);
-            driver.Manage().Window.Maximize();
-        }
-
-        private static string GetFirefoxLocation()
-        {
-            string[] firefoxPossibleLocations = new string[]
-            {
-                //"\"C:\\Program Files\\Mozilla Firefox\\firefox.exe\"",
-                //"\"C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe\"",
-                //"\"D:\\Program Files\\Mozilla Firefox\\firefox.exe\"",
-                //"\"D:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe\"",
-                @"C:\Program Files\Mozilla Firefox\firefox.exe",
-                @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe",
-                @"D:\Program Files\Mozilla Firefox\firefox.exe",
-                @"D:\Program Files (x86)\Mozilla Firefox\firefox.exe",
-            };
-
-            string configuredFirefoxLocation = ConfigurationManager.AppSettings[ConfigurationKey.FIREFOX_LOCATION];
-
-            if (!String.IsNullOrEmpty(configuredFirefoxLocation))
-            {
-                return configuredFirefoxLocation;
-            }
-            else
-            {
-                for (int i = 0; i < firefoxPossibleLocations.Length; i++)
-                {
-                    if (File.Exists(firefoxPossibleLocations[i]))
-                        return firefoxPossibleLocations[i];
-                }
-
-                throw new Exception("Firefox can not be found.");
-            }
         }
     }
 }

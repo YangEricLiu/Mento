@@ -13,16 +13,29 @@ namespace Mento.TestApi.WebUserInterface
     /// </summary>
     public class Locator
     {
-        /// <value>Value is element locator string</value>
-        public string Value { get; set; }
-        /// <value>Type is element location type, which is enumeration</value>
-        public ByType Type { get; set; }
+        /// <summary>
+        /// By what method the element is going to be found.
+        /// </summary>
+        public ByType Type
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// With what value, according to the provided search method type, the element is going to be found. 
+        /// </summary>
+        public string Value
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Default constructor
         /// </summary>
         public Locator()
-        { 
+        {
         }
 
         /// <summary>
@@ -30,7 +43,7 @@ namespace Mento.TestApi.WebUserInterface
         /// </summary>
         /// <param name="value">Element locator string</param>
         /// <param name="byType">Element location type</param>
-        public Locator(string value,ByType byType)
+        public Locator(string value, ByType byType)
         {
             Value = value;
             Type = byType;
@@ -40,7 +53,7 @@ namespace Mento.TestApi.WebUserInterface
         {
             return GetVariableLocator(locatorFormat, locatorType, new Hashtable() { { variableName, variableValue } });
         }
-        
+
         public static Locator GetVariableLocator(string locatorFormat, ByType locatorType, Hashtable variables)
         {
             string locatorValue = locatorFormat;
@@ -68,5 +81,25 @@ namespace Mento.TestApi.WebUserInterface
                 default: return null;
             }
         }
+
+        public override string ToString()
+        {
+            return String.Format("by {0},with '{1}'", this.Type.ToString(), this.Value);
+        }
     }
+    
+    /// <summary>
+    /// Enumeration of element location type
+    /// </summary>
+    public enum ByType
+    {
+        ID = 1,
+        Name = 2,
+        Xpath = 3,
+        ClassName = 4,
+        CssSelector = 5,
+        LinkText = 6,
+        PartialLinkText = 7,
+        TagName = 8
+    };
 }

@@ -5,6 +5,7 @@ using System.Text;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.TestData.ClientAccess;
 using OpenQA.Selenium;
+using Mento.TestApi.WebUserInterface.NewControls;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -14,7 +15,7 @@ namespace Mento.ScriptCommon.Library.Functions
     public class LoginFunction
     {
         private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
-        private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
+        //private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
 
         /// <summary>
         /// Login Jazz with test data
@@ -37,7 +38,7 @@ namespace Mento.ScriptCommon.Library.Functions
             ButtonSubmit.Submit();
             //ElementLocator.Driver.FindElement(By.Id("txtPassword")).SendKeys("\n");
 
-            ElementLocator.Pause(5000);
+            ElementLocator.Pause(2000);
 
             //Amy update starts: add customer selection for R1.0. so if running case in R1.0, these need to be uncomment.
             //comboBoxInstance.DisplayItems(ElementKey.CustomerSelection);
@@ -47,7 +48,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
             ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 150);
             //Amy comment: if running case in R1.0, below clause "ElementLocator.WaitForElementToDisappear.." needs to be commented out.
-            ElementLocator.WaitForElementToDisappear(new Locator("mainLoadingMask", ByType.ID), 30);
+            //ElementLocator.WaitForElementToDisappear(new Locator("mainLoadingMask", ByType.ID), 30);
         }
 
         /// <summary>
@@ -76,6 +77,8 @@ namespace Mento.ScriptCommon.Library.Functions
             //Pause 2.5 minutes to let ext render Jazz layout
 
             //ElementLocator.Pause(150000);
+            if (IsAlreadyLogin())
+                return;
 
             string defaultUserName = "demo";
             string defaultPassword = "password";
@@ -83,6 +86,11 @@ namespace Mento.ScriptCommon.Library.Functions
             var loginData = new LoginInputData() { UserName = defaultUserName, Password = defaultPassword };
 
             this.Login(loginData);
+        }
+
+        public bool IsAlreadyLogin()
+        {
+            return ElementHandler.Exists(new Locator("header-btn-homepage-btnEl", ByType.ID));
         }
     }
 }

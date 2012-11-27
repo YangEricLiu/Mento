@@ -104,7 +104,10 @@
     <Compile Include="Exceptions\AppException.cs" />
     <Compile Include="Exceptions\MentoException.cs" />
     <Compile Include="Execution\ExecutionContext.cs" />
-    <Compile Include="Log\LogHelper.cs" />
+    <Compile Include="Log\AppLog.cs" />
+    <Compile Include="Log\ILog.cs" />
+    <Compile Include="Log\LogBase.cs" />
+    <Compile Include="Log\ScriptLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Script\TestSuiteBase.cs" />
   </ItemGroup>

@@ -8,7 +8,7 @@ using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.TestData.ClientAccess;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library.Functions;
-using Mento.ScriptCommon.TestData.Administration.Tag.VtagManagement;
+using Mento.ScriptCommon.TestData.Customer;
 
 namespace Mento.ScriptCommon.Library.Functions
 {

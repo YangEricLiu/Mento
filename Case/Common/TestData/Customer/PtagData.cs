@@ -5,7 +5,7 @@ using System.Text;
 using Mento.TestApi.TestData;
 using Mento.Utility;
 
-namespace Mento.ScriptCommon.TestData.Administration.Tag.PtagConfiguration
+namespace Mento.ScriptCommon.TestData.Customer
 {
     public class PtagData : TestDataBase<PtagInputData, PtagExpectedData>
     {

@@ -12,7 +12,7 @@ using Mento.Framework.Attributes;
 using Mento.TestApi.TestData;
 using System.IO;
 using Mento.Framework.Script;
-using Mento.ScriptCommon.TestData.Administration.Calendar.ExampleSuite;
+using Mento.ScriptCommon.TestData.Administration;
 
 namespace Mento.Script.Administration.Calendar
 {

@@ -13,14 +13,21 @@ namespace Mento.Framework.Log
     /// <summary>
     /// The log utility class.
     /// </summary>
-    public static class LogHelper
+    public abstract class LogBase : ILog
     {
+        private string LoggerCategory { get; set; }
+
+        public LogBase(string loggerCategory)
+        {
+            LoggerCategory = loggerCategory;
+        }
+
         /// <summary>
         /// Log exception.
         /// </summary>
         /// <param name="ex">The excption need be logged.</param>
         /// <param name="severity">The severity of this exception, default value is <see cref="LoggingSeverity.Error" />.</param>
-        public static void LogException(Exception ex, LoggingSeverity severity = LoggingSeverity.Error)
+        public void LogException(Exception ex, LoggingSeverity severity = LoggingSeverity.Error)
         {
             string message = new StringBuilder(ex.Message).AppendLine().Append(ex.StackTrace).ToString();
 
@@ -33,7 +40,7 @@ namespace Mento.Framework.Log
         /// Log fatal.
         /// </summary>
         /// <param name="message">The fatal message.</param>
-        public static void LogFatal(string message)
+        public void LogFatal(string message)
         {
             WriteLog(message, LoggingSeverity.Fatal);
         }
@@ -42,7 +49,7 @@ namespace Mento.Framework.Log
         /// Log error.
         /// </summary>
         /// <param name="message">The error message.</param>
-        public static void LogError(string message)
+        public void LogError(string message)
         {
             WriteLog(message, LoggingSeverity.Error);
         }
@@ -51,7 +58,7 @@ namespace Mento.Framework.Log
         /// Log warning.
         /// </summary>
         /// <param name="message">The warning message.</param>
-        public static void LogWarning(string message)
+        public void LogWarning(string message)
         {
             WriteLog(message, LoggingSeverity.Warning);
         }
@@ -60,7 +67,7 @@ namespace Mento.Framework.Log
         /// Log information.
         /// </summary>
         /// <param name="message">The information message.</param>
-        public static void LogInformation(string message)
+        public void LogInformation(string message)
         {
             WriteLog(message, LoggingSeverity.Information);
         }
@@ -69,7 +76,7 @@ namespace Mento.Framework.Log
         /// Log debug.
         /// </summary>
         /// <param name="message">The debug message.</param>
-        public static void LogDebug(string message)
+        public void LogDebug(string message)
         {
             WriteLog(message, LoggingSeverity.Debug);
         }
@@ -81,7 +88,7 @@ namespace Mento.Framework.Log
         /// </summary>
         /// <param name="severity">The logging severity.</param>
         /// <returns>true if need logging, else false.</returns>
-        private static bool DoesNeedLogging(LoggingSeverity severity)
+        private bool DoesNeedLogging(LoggingSeverity severity)
         {
             LoggingSeverity loggingSeveritySetting = (LoggingSeverity)Enum.Parse(typeof(LoggingSeverity), ConfigurationManager.AppSettings[ConfigurationKey.LOGGING_SEVERITY]);
 
@@ -113,7 +120,7 @@ namespace Mento.Framework.Log
         /// <param name="severity">The error severity.</param>
         /// <param name="requestId">The reqeust id.</param>
         /// <remarks>The title property of <see cref="LogEntry" /> represents the request id.</remarks>
-        private static void WriteLog(string message, LoggingSeverity severity, Guid? requestId = null)
+        private void WriteLog(string message, LoggingSeverity severity, Guid? requestId = null)
         {
             if (DoesNeedLogging(severity))
             {
@@ -125,7 +132,7 @@ namespace Mento.Framework.Log
 
                 logEntry.Title = String.Empty;
 
-                logEntry.Categories.Add("Log");
+                logEntry.Categories.Add(LoggerCategory);
 
                 EnterpriseLibraryContainer.Current.GetInstance<LogWriter>().Write(logEntry);
             }

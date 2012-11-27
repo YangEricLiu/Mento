@@ -21,6 +21,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using Mento.Framework.DataAccess;
+using Mento.Framework.Log;
 
 namespace Mento.Business.Plan.BusinessLogic
 {
@@ -81,7 +82,7 @@ namespace Mento.Business.Plan.BusinessLogic
             //execute initialize sql script
             JazzDatabaseOperator.Initialize();
 
-            //call unit to execute the script list
+            //call nunit to execute the script list
             ExecuteScripts(plan, workFolder);
 
             //when execution finished, update endtime, destruct execution context, destruct database
@@ -112,7 +113,7 @@ namespace Mento.Business.Plan.BusinessLogic
 
                 //add project parameter
                 Command.Append("/run:");
-                Command.Append(String.Join(ASCII.COMMA,groupItem.Select(s=>s.FullName).ToArray()));
+                Command.Append(String.Join(ASCII.COMMA.ToString(),groupItem.Select(s=>s.FullName).ToArray()));
                 Command.Append(ASCII.SPACE);
                 Command.Append(Path.Combine(workFolder,String.Format("../../script/{0}",groupItem.Key)));
 
@@ -235,6 +236,12 @@ namespace Mento.Business.Plan.BusinessLogic
                 }
 
             return fixtureResultList;
+        }
+
+        private static void PrintAndLog(string message)
+        {
+            Console.WriteLine(message);
+            AppLog.Instance.LogInformation(message);
         }
         #endregion
     }

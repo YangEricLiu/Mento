@@ -18,5 +18,15 @@ namespace Mento.Utility
             if (field != null)
                 field.SetValue(target, value);
         }
+
+        public static T GetPrivateFielValue<T>(object target, Type targetType, string fieldName)
+        {
+            FieldInfo field = targetType.GetField(fieldName, BindingFlags.Instance | BindingFlags.GetField | BindingFlags.NonPublic | BindingFlags.ExactBinding);
+
+            if (field == null)
+                return default(T);
+
+            return (T)field.GetValue(target);
+        }
     }
 }

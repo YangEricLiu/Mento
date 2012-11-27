@@ -30,7 +30,7 @@ namespace Mento.App.Controllers
                 {
                     StringBuilder messageBuilder = new StringBuilder();
                     foreach(var type in item.Value)
-                        messageBuilder.Append(type.Name).Append(type == item.Value.Last() ? String.Empty : ASCII.COMMA);
+                        messageBuilder.Append(type.Name).Append(type == item.Value.Last() ? String.Empty : ASCII.COMMA.ToString());
 
                     ColorConsole.WriteLine(String.Format("{0}.{1}:{2}", item.Key.DeclaringType.FullName,item.Key.Name, messageBuilder.ToString()), ConsoleColor.Red);
                 }

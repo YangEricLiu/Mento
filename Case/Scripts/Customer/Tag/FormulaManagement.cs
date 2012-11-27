@@ -10,7 +10,7 @@ using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 
-namespace Mento.Script.Administration.Tag
+namespace Mento.Script.Customer.Tag
 {
     public class FormulaManagement : TestSuiteBase
     {

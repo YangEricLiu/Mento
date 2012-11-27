@@ -10,9 +10,9 @@ using Mento.Framework.Script;
 using Mento.TestApi.WebUserInterface;
 using OpenQA.Selenium;
 using Mento.ScriptCommon.Library.Functions;
-using Mento.ScriptCommon.TestData.Administration.Tag.VtagManagement;
+using Mento.ScriptCommon.TestData.Customer;
 
-namespace Mento.Script.Administration.Tag
+namespace Mento.Script.Customer.Tag
 {
     [TestFixture]
     //[ManualCaseID("TA-VtagConfigue")]
@@ -34,7 +34,7 @@ namespace Mento.Script.Administration.Tag
         [TestFixtureTearDown]
         public void CaseFixtureTearDown()
         {
-            ElementLocator.QuitJazz();
+            ElementLocator.CloseJazz();
         }
         
         [Test]

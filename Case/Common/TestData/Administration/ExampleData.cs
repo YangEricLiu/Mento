@@ -5,7 +5,7 @@ using System.Text;
 using Mento.TestApi.TestData;
 using Mento.Utility;
 
-namespace Mento.ScriptCommon.TestData.Administration.Calendar.ExampleSuite
+namespace Mento.ScriptCommon.TestData.Administration
 {
     public class ExampleData : TestDataBase<ExampleInputData, ExampleExpectedData>
     {

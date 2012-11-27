@@ -5,7 +5,7 @@ using System.Text;
 using Mento.TestApi.TestData;
 using Mento.Utility;
 
-namespace Mento.ScriptCommon.TestData.Administration.Tag.VtagManagement
+namespace Mento.ScriptCommon.TestData.Customer
 {
     public class AddVtagData : TestDataBase<VtagInputData, ExpectedTestDataBase>
     {

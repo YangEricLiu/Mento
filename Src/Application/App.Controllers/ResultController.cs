@@ -98,7 +98,7 @@ namespace Mento.App.Controllers
             string format = String.Join(String.Empty, formats);
 
             Console.WriteLine(format, headers);
-            Console.WriteLine(ASCII.SUBTRACT);
+            Console.WriteLine(new String(ASCII.SUBTRACT, 10));
 
             foreach (DataRow row in table.Rows)
             {

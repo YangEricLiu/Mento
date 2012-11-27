@@ -12,12 +12,12 @@ using Mento.Framework.Attributes;
 using Mento.TestApi.TestData;
 using System.IO;
 using Mento.Framework.Script;
-using Mento.ScriptCommon.TestData.Administration.Hierarchy.HierarchyManagement;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
+using Mento.ScriptCommon.TestData.Customer;
 
 
-namespace Mento.Script.Administration.Hierarchy
+namespace Mento.Script.Customer.Hierarchy
 {
     [TestFixture]
     public class HierarchyManagement : TestSuiteBase
@@ -32,7 +32,7 @@ namespace Mento.Script.Administration.Hierarchy
         [TestFixtureTearDown]
         public void CaseFixtureTearDown()
         {
-            ElementLocator.QuitJazz();
+            ElementLocator.CloseJazz();
         }
 
         [SetUp]

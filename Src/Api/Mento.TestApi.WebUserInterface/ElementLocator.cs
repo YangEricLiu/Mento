@@ -19,17 +19,17 @@ namespace Mento.TestApi.WebUserInterface
     public static class ElementLocator
     {
         private static IWebDriver _driver;
-        private static IWebDriver Driver
+        public static IWebDriver Driver
         {
             get 
             {
                 if (!ExecutionContext.Browser.HasValue)
                     throw new Exception("Execution context not initialized yet.");
 
-                //if (_driver == null)
-                //{
-                //    _driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value);
-                //}
+                if (_driver == null)
+                {
+                    _driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value);
+                }
 
                 return _driver;
             }
@@ -42,7 +42,7 @@ namespace Mento.TestApi.WebUserInterface
         /// <returns></returns>
         public static void OpenJazz()
         {
-            _driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value); 
+            //_driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value); 
 
             Driver.Navigate().GoToUrl(ExecutionContext.Url);
 
@@ -56,28 +56,9 @@ namespace Mento.TestApi.WebUserInterface
         /// Close the browser but NOT log out from Jazz
         /// </summary>
         /// <returns></returns>
-        public static void QuitJazz()
+        public static void CloseJazz()
         {
             Driver.Quit();
-        }
-
-        private static By ByWrapper(Locator locator)
-        {
-            var type = locator.Type;
-            var locatorValue = locator.Value;
-
-            switch (type)
-            {
-                case ByType.ID: return By.Id(locatorValue);
-                case ByType.Name: return By.Name(locatorValue);
-                case ByType.Xpath: return By.XPath(locatorValue);
-                case ByType.TagName: return By.TagName(locatorValue);
-                case ByType.ClassName: return By.ClassName(locatorValue);
-                case ByType.CssSelector: return By.CssSelector(locatorValue);
-                case ByType.LinkText: return By.LinkText(locatorValue);
-                case ByType.PartialLinkText: return By.PartialLinkText(locatorValue);
-                default: return null;
-            }
         }
 
 
@@ -88,7 +69,7 @@ namespace Mento.TestApi.WebUserInterface
         /// <returns>IWebElement which reference to the element</returns>
         public static IWebElement FindElement(Locator locator)
         {
-            return Driver.FindElement(ByWrapper(locator));
+            return Driver.FindElement(locator.ToBy());
         }
 
         /// <summary>
@@ -138,7 +119,7 @@ namespace Mento.TestApi.WebUserInterface
             try
             {
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(timeOut));
-                wait.Until((d) => { return d.FindElement(ByWrapper(locator)); });
+                wait.Until((d) => { return d.FindElement(locator.ToBy()); });
 
                 elementExist = true;
             }
@@ -169,7 +150,7 @@ namespace Mento.TestApi.WebUserInterface
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(timeOut));
                 wait.Until<bool>(d =>
                 {
-                    var foundElement = d.FindElement(ByWrapper(locator));
+                    var foundElement = d.FindElement(locator.ToBy());
 
                     if (foundElement == null)
                     {
@@ -190,7 +171,7 @@ namespace Mento.TestApi.WebUserInterface
                 Assert.Fail(ex.Message);
             }
 
-            Pause(1000);
+            Pause(1500);
             return elementExist;
         }
 

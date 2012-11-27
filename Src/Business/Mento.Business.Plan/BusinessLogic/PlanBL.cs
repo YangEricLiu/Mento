@@ -251,7 +251,7 @@ namespace Mento.Business.Plan.BusinessLogic
             //validate suite names
             List<string> notExistingSuites;
             if (!ScriptBL.ValidateSuiteExistence(suiteList.Keys.ToList(), out notExistingSuites))
-                throw new AppException(String.Format("Suite {0} does not exist", String.Join(ASCII.COMMA, notExistingSuites.ToArray())));
+                throw new AppException(String.Format("Suite {0} does not exist", String.Join(ASCII.COMMA.ToString(), notExistingSuites.ToArray())));
             
             //get case list from suite list
             List<string> scriptList = suiteList.SelectMany(item => item.Value.Count() > 0 ? item.Value : ScriptBL.GetScriptListBySuiteName(item.Key).ToList()).ToList();
@@ -269,7 +269,7 @@ namespace Mento.Business.Plan.BusinessLogic
             if (String.IsNullOrEmpty(plan.ProductVersion))
                 validationResult.Add("ProductVersion", "can not be null");
             if (!ScriptBL.ValidateScriptExistence(plan.ScriptList.Select(s=>s.CaseID).ToList(), out notExistingScripts))
-                validationResult.Add("CaseList", String.Join(ASCII.COMMA, notExistingScripts.ToArray()) + "does not exist");
+                validationResult.Add("CaseList", String.Join(ASCII.COMMA.ToString(), notExistingScripts.ToArray()) + "does not exist");
 
             if (validationResult.Count > 0)
             {

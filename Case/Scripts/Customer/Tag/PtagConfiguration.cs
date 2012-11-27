@@ -7,13 +7,13 @@ using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.TestData;
 using System.IO;
-using Mento.ScriptCommon.TestData.Administration.Tag.PtagConfiguration;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
+using Mento.ScriptCommon.TestData.Customer;
 
-namespace Mento.Script.Administration.Tag
+namespace Mento.Script.Customer.Tag
 {
     public class PtagConfiguration : TestSuiteBase
     {

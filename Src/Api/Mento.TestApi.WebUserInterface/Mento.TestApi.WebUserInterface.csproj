@@ -68,6 +68,21 @@
     <Compile Include="Controls\Button.cs" />
     <Compile Include="Controls\Grid.cs" />
     <Compile Include="Controls\ToggleButton.cs" />
+    <Compile Include="NewControls\Button.cs" />
+    <Compile Include="NewControls\ControlElementMap.cs" />
+    <Compile Include="NewControls\ElementHandler.cs" />
+    <Compile Include="NewControls\ElementMapBase.cs" />
+    <Compile Include="NewControls\Common\LoadingMask.cs" />
+    <Compile Include="NewControls\TreeView\AreaDimensionTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NewControls\TreeView\HierarchyTree.cs" />
+    <Compile Include="NewControls\JazzControl.cs" />
+    <Compile Include="NewControls\TimeConfig.cs" />
+    <Compile Include="NewControls\TreeView\SystemDimensionTree.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NewControls\TreeView\TreeView.cs" />
     <Compile Include="Resource\ByType.cs" />
     <Compile Include="Resource\ComboBoxItemListReader.cs" />
     <Compile Include="Resource\ElementConfigurationReader.cs" />
@@ -101,7 +116,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <Folder Include="NewControls\Button\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

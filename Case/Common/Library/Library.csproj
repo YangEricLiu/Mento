@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\JazzButton.cs" />
     <Compile Include="Functions\Associate.cs" />
     <Compile Include="Functions\Formula.cs" />
     <Compile Include="Functions\FunctionWrapper.cs" />
@@ -82,6 +83,10 @@
       <Project>{F463BF99-E570-46DE-A384-FE533482558D}</Project>
       <Name>TestData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\Button\" />
+    <Folder Include="Controls\ComboBox\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

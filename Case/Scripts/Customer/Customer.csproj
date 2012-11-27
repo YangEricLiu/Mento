@@ -51,6 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\AssemblyInitialize.cs" />
+    <Compile Include="Dimension\AreaDimensionSuite.cs" />
+    <Compile Include="Dimension\SystemDimensionSuite.cs" />
     <Compile Include="Hierarchy\HierarchyManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tag\FormulaManagement.cs" />
@@ -90,10 +93,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dimension\" />
     <Folder Include="KPI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>del /F /S /Q $(TargetDir)Data
+del /F /S /Q $(TargetDir)SqlScript
+xcopy $(SolutionDir)Host\ScriptHost\Data $(TargetDir)Data /E /Y /R /I
+xcopy $(SolutionDir)Host\ScriptHost\SqlScript $(TargetDir)SqlScript /E /Y /R /I
+xcopy $(SolutionDir)Host\ScriptHost\Config $(TargetDir)Config /E /Y /R /I
+xcopy $(SolutionDir)Host\ScriptHost\Resource $(TargetDir)Resource /E /Y /R /I
+copy $(SolutionDir)Host\ScriptHost\chromedriver.exe $(TargetDir)
+copy $(SolutionDir)Host\ScriptHost\IEDriverServer.exe $(TargetDir)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

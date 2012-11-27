@@ -5,7 +5,7 @@ using System.Text;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
-using Mento.ScriptCommon.TestData.Administration.Tag.PtagConfiguration;
+using Mento.ScriptCommon.TestData.Customer;
 
 
 namespace Mento.ScriptCommon.Library.Functions

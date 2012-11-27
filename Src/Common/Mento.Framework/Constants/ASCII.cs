@@ -13,36 +13,41 @@ namespace Mento.Framework.Constants
         /// <summary>
         /// SPACE
         /// </summary>
-        public static string SPACE = " ";
+        public const char SPACE = ' ';
 
         /// <summary>
         /// -
         /// </summary>
-        public static string SUBTRACT = "-";
+        public const char SUBTRACT = '-';
 
         /// <summary>
         /// \
         /// </summary>
-        public static string BACKLASH = @"\";
+        public const char BACKLASH = '\\';
 
         /// <summary>
         /// .
         /// </summary>
-        public static string DOT = ".";
+        public const char DOT = '.';
 
         /// <summary>
-        /// $#
+        /// $
         /// </summary>
-        public static string MANUALPREFIX = "$#";
+        public const char DOLLAR = '$';
 
         /// <summary>
-        /// $@
+        /// #
         /// </summary>
-        public static string LANGPREFIX = "$@";
+        public const char OCTOTHORPE = '#';
+
+        /// <summary>
+        /// $
+        /// </summary>
+        public const char AT = '$';
 
         /// <summary>
         /// ,
         /// </summary>
-        public const string COMMA = ",";
+        public const char COMMA = ',';
     }
 }

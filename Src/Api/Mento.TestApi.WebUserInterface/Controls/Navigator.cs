@@ -48,6 +48,14 @@ namespace Mento.TestApi.WebUserInterface
         }
 
         /// <summary>
+        /// Navigate to home page, which is considered as every test entry point
+        /// </summary>
+        public void NavigateHome()
+        {
+            NavigateToTarget(NavigationTarget.HomePage);
+        }
+
+        /// <summary>
         /// Get the array of locators on path of navigating to the target navigation item.
         /// </summary>
         /// <param name="target">The specified navigation target</param>

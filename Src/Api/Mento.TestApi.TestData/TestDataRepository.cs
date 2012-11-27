@@ -158,7 +158,7 @@ namespace Mento.TestApi.TestData
             testScriptFullName = testScriptFullName.Replace(Project.SCRIPTNAMESPACEPREFIX, TestDataRepository.DATAFOLDERNAME);
 
             //add file name
-            string[] Namespaces = testScriptFullName.Split(ASCII.DOT.ToCharArray()[0]);
+            string[] Namespaces = testScriptFullName.Split(ASCII.DOT);
             //LogHelper.LogDebug("array:" + Namespaces + ",length" + Namespaces.Length);
             if (Namespaces.Length > 1)
             {

@@ -58,9 +58,19 @@ namespace Mento.TestApi.WebUserInterface
         {
             string locatorValue = locatorFormat;
             foreach (var variableName in variables.Keys)
-                locatorValue = locatorValue.Replace(Project.VARIABLEPREFIX + variableName.ToString(), variables[variableName].ToString());
+                locatorValue = locatorValue.Replace(Project.VariablePrefix + variableName.ToString(), variables[variableName].ToString());
 
             return new Locator(locatorValue, locatorType);
+        }
+
+        public static Locator GetVariableLocator(Locator locator, string variableName, string variableValue)
+        {
+            return GetVariableLocator(locator.Value, locator.Type, variableName, variableName);
+        }
+
+        public static Locator GetVariableLocator(Locator locator, Hashtable variables)
+        {
+            return GetVariableLocator(locator.Value, locator.Type, variables);
         }
 
         public By ToBy()

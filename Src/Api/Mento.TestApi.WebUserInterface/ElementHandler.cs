@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using Mento.Framework.Exceptions;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
-using Mento.TestApi.WebUserInterface.NewControls;
+using Mento.TestApi.WebUserInterface.Controls;
 
 namespace Mento.TestApi.WebUserInterface
 {
@@ -59,6 +59,13 @@ namespace Mento.TestApi.WebUserInterface
         {
             Actions action = new Actions(DriverFactory.Instance);
 
+            action.Click(element).Perform();
+        }
+
+        public static void Click(IWebElement element, int offsetX,int offsetY)
+        {
+            Actions action = new Actions(DriverFactory.Instance);
+            action.MoveToElement(element, offsetX, offsetY);
             action.Click(element).Perform();
         }
 
@@ -131,7 +138,7 @@ namespace Mento.TestApi.WebUserInterface
             IWebElement element = null;
             try
             {
-                element = container == null ? ElementLocator.FindElement(locator) : container.FindElement(locator.ToBy());
+                element = container == null ? FindElement(locator) : container.FindElement(locator.ToBy());
             }
             catch (NoSuchElementException)
             {

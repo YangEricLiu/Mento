@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using System.Drawing;
 using OpenQA.Selenium.Interactions;
 
-namespace Mento.TestApi.WebUserInterface.NewControls
+namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class SystemDimensionTree : TreeView
     {
@@ -15,7 +15,7 @@ namespace Mento.TestApi.WebUserInterface.NewControls
         private const string CHECKBOXXPATHFORMAT = "//tr[contains(@class,'x-grid-row') and td/div[text()='$#" + TREENODEVARIABLENAME + "']]//input";
 
         public SystemDimensionTree(bool isInDialog = false) :
-            base(new Locator(SYSTEMDIMENSIONTREECSSSELECTOR, ByType.CssSelector), parentContainer: ElementLocator.FindElement(new Locator(DIALOGXPATH, ByType.CssSelector))) 
+            base(new Locator(SYSTEMDIMENSIONTREECSSSELECTOR, ByType.CssSelector), parentContainer: ElementHandler.FindElement(new Locator(DIALOGXPATH, ByType.CssSelector))) 
         {
         }
 
@@ -25,7 +25,7 @@ namespace Mento.TestApi.WebUserInterface.NewControls
             
             if (ElementHandler.Exists(checkboxLocator))
             {
-                IWebElement checkbox = FindElement(checkboxLocator);
+                IWebElement checkbox = FindChild(checkboxLocator);
 
                 if (!String.Equals(checkbox.GetAttribute("aria-checked"), "true", StringComparison.OrdinalIgnoreCase))
                 {
@@ -50,11 +50,7 @@ namespace Mento.TestApi.WebUserInterface.NewControls
 
         private void ClickCheckbox(IWebElement checkbox)
         {
-            Actions action = new Actions(ElementLocator.Driver);
-            action.MoveToElement(checkbox, 0, 5);
-            action.Click().Perform();
-
-            TimeManager.PauseShort();
+            ElementHandler.Click(checkbox, 0, 5);
         }
     }
 }

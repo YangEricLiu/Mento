@@ -5,7 +5,7 @@ using System.Text;
 using OpenQA.Selenium;
 using Mento.Framework.Constants;
 
-namespace Mento.TestApi.WebUserInterface.NewControls
+namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class HierarchyTree : TreeView
     {

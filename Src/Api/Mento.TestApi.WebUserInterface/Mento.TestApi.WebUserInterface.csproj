@@ -65,36 +65,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrowserHandler.cs" />
-    <None Include="NewControls\Button\Button.cs.old" />
-    <Compile Include="NewControls\Grid\Grid.cs" />
-    <Compile Include="NewControls\Button\ToggleButton.cs" />
+    <Compile Include="Controls\Button\ToggleButton.cs" />
+    <Compile Include="Controls\ComboBox\ComboBox.cs" />
+    <Compile Include="Controls\ComboBox\ComboBoxItemRepository.cs" />
+    <Compile Include="Controls\Grid\Grid.cs" />
+    <Compile Include="Controls\TextField\FormulaField.cs" />
+    <Compile Include="Controls\TextField\TextField.cs" />
     <Compile Include="ElementHandler.cs" />
+    <Compile Include="Element\LocatorKey.cs" />
+    <Compile Include="Element\LocatorRepository.cs" />
     <Compile Include="JazzBrowseManager.cs" />
-    <Compile Include="NewControls\Button\Button.cs" />
-    <Compile Include="NewControls\ControlElementMap.cs" />
-    <Compile Include="NewControls\Mask\LoadingMask.cs" />
-    <Compile Include="NewControls\TreeView\AreaDimensionTree.cs">
+    <Compile Include="Controls\Button\Button.cs" />
+    <Compile Include="Controls\Common\LoadingMask.cs" />
+    <Compile Include="Controls\TreeView\AreaDimensionTree.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="NewControls\TreeView\HierarchyTree.cs" />
-    <Compile Include="NewControls\JazzControl.cs" />
-    <Compile Include="NewControls\TimeConfig.cs" />
-    <Compile Include="NewControls\TreeView\SystemDimensionTree.cs">
+    <Compile Include="Controls\TreeView\HierarchyTree.cs" />
+    <Compile Include="Controls\JazzControl.cs" />
+    <Compile Include="TimeManager.cs" />
+    <Compile Include="Controls\TreeView\SystemDimensionTree.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="NewControls\TreeView\TreeView.cs" />
-    <Compile Include="Resource\ComboBoxItemListReader.cs" />
-    <Compile Include="Resource\ElementConfigurationReader.cs" />
-    <Compile Include="Resource\ElementKey.cs" />
-    <Compile Include="NewControls\ComboBox\ComboBox.cs" />
-    <Compile Include="NewControls\TextField\FormulaField.cs" />
-    <Compile Include="NewControls\TextField\TextField.cs" />
-    <Compile Include="DriverFactory.cs" />
+    <Compile Include="Controls\TreeView\TreeView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resource\ResourceManager.cs" />
-    <Compile Include="Resource\LanguageResourceReader.cs" />
-    <Compile Include="Resource\ManualElementName.cs" />
-    <Compile Include="Locator.cs" />
+    <Compile Include="Localization\LanguageResourceRepository.cs" />
+    <Compile Include="Element\Locator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Mento.Framework\Mento.Framework.csproj">
@@ -109,6 +104,9 @@
       <Project>{2076AF41-49F1-4C46-AF54-B21ED42B07C3}</Project>
       <Name>Mento.TestApi.TestData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Element\ElementMap.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

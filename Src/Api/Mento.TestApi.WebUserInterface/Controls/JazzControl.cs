@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
 
-namespace Mento.TestApi.WebUserInterface.NewControls
+namespace Mento.TestApi.WebUserInterface.Controls
 {
     public abstract class JazzControl
     {
@@ -21,7 +21,7 @@ namespace Mento.TestApi.WebUserInterface.NewControls
                     return null;
 
                 if (_ParentContainer == null)
-                    return ElementLocator.FindElement(_RootLocator);
+                    return ElementHandler.FindElement(_RootLocator);
                 else
                     return _ParentContainer.FindElement(_RootLocator.ToBy());
             }
@@ -33,12 +33,12 @@ namespace Mento.TestApi.WebUserInterface.NewControls
             _ParentContainer = parentContainer;
         }
 
-        protected virtual IWebElement FindElement(Locator locator)
+        protected virtual IWebElement FindChild(Locator locator)
         {
             return RootElement.FindElement(locator.ToBy());
         }
 
-        protected virtual IWebElement[] FindElements(Locator locator)
+        protected virtual IWebElement[] FindChildren(Locator locator)
         {
             return RootElement.FindElements(locator.ToBy()).ToArray();
         }

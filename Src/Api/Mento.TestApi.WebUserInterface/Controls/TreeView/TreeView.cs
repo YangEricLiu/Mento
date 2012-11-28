@@ -5,7 +5,7 @@ using System.Text;
 using OpenQA.Selenium;
 using Mento.Framework.Constants;
 
-namespace Mento.TestApi.WebUserInterface.NewControls
+namespace Mento.TestApi.WebUserInterface.Controls
 {
     public abstract class TreeView : JazzControl
     {
@@ -56,7 +56,7 @@ namespace Mento.TestApi.WebUserInterface.NewControls
                 if (nextNodeLocator != null)
                     ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear);
 
-                ElementLocator.Pause(500);
+                TimeManager.Pause(500);
             }
         }
 
@@ -81,7 +81,7 @@ namespace Mento.TestApi.WebUserInterface.NewControls
         {
             Locator nodeLocator = GetTreeNodeLocator(nodeText);
 
-            ElementHandler.Focus(nodeLocator, parentElement: RootElement);
+            ElementHandler.Focus(nodeLocator, container: RootElement);
         }
         
         /// <summary>
@@ -105,7 +105,7 @@ namespace Mento.TestApi.WebUserInterface.NewControls
         {
             Locator nodeLocator = GetTreeNodeLocator(nodeText);
 
-            return ElementHandler.Displayed(nodeLocator, parentElement: RootElement);
+            return ElementHandler.Displayed(nodeLocator, container: RootElement);
         }
 
         /// <summary>
@@ -122,12 +122,12 @@ namespace Mento.TestApi.WebUserInterface.NewControls
             CollapseNode(parentNodeText);            
 
             //when parent node is collapsed, child node does not display
-            if (!ElementHandler.Displayed(childLocator, parentElement: parentElement))
+            if (!ElementHandler.Displayed(childLocator, container: parentElement))
             {
                 ExpandNode(parentNodeText);
 
                 //when parent node is expanded, child node displays
-                if (ElementHandler.Displayed(childLocator, parentElement: parentElement))
+                if (ElementHandler.Displayed(childLocator, container: parentElement))
                     //and child identation is one level less than parent node
                     return GetNodeIndentation(parentNodeText) - 1 == GetNodeIndentation(childNodeText);
             }
@@ -157,7 +157,7 @@ namespace Mento.TestApi.WebUserInterface.NewControls
 
         protected virtual IWebElement GetTreeNodeElement(string nodeText)
         {
-            return base.FindElement(GetTreeNodeLocator(nodeText));
+            return base.FindChild(GetTreeNodeLocator(nodeText));
         }
 
         private void ClickNodeExpander(string nodeText)

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WebElement>
+  <!--Common-->
+  <add key="LoadingMessage" value = "mainLoadingMask" type ="ID"/>
+
+  <!--TreeView-->
+  
+  <!--TextField-->
+  <add key = "FormulaTextField" value = "st-formula-text" type = "ID"/>
+  <add key = "FormulaTextArea" value = "textarea" type = "TagName"/>
+
+  <!--Button-->
+  
+  <!--ComboBox-->
+  <add key="ComboBoxTrigger" value = "td.x-trigger-cell" type ="CssSelector"/>
+  <add key="ComboBoxInput" value = "input" type ="TagName"/>
+  <add key="ComboBoxItem" value = "//div[contains(@class,'x-boundlist') and div/ul/li[text()='$#itemKey']]" type ="Xpath"/><!--need change, child can not found with //xpath-->
+
+  <!--Grid-->
+  <add key="GridHeader" value = "div.x-grid-header-ct" type ="CssSelector"/>
+  <add key="GridFooter" value = "div[last()]" type ="XPath"/>
+  <add key="GridRows" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]" type ="XPath"/>
+  <add key="GridRow" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row') and td[$#cellIndex]/div/[text() = '$#cellText']]" type ="XPath"/>
+  <add key="GridRowChecker" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row') and td[$#cellIndex]/div/[text() = '$#cellText']]/td[contains(@class,'x-grid-cell-checkcolumn')/div/div]" type ="XPath"/>
+  
+</WebElement>

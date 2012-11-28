@@ -5,6 +5,11 @@ using System.Text;
 using Mento.Framework.Exceptions;
 using OpenQA.Selenium;
 using System.Drawing.Imaging;
+using Mento.Framework.Execution;
+using Mento.Framework;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 
 namespace Mento.TestApi.WebUserInterface
 {
@@ -71,6 +76,68 @@ namespace Mento.TestApi.WebUserInterface
         public static void DeleteCookies()
         {
             DriverFactory.Instance.Manage().Cookies.DeleteAllCookies();
+        }
+    }
+
+
+    /// <summary>
+    /// Get the instance of browser when execuation.
+    /// </summary>
+    internal static class DriverFactory
+    {
+        private static IWebDriver _driver;
+        public static IWebDriver Instance
+        {
+            get
+            {
+                if (!ExecutionContext.Browser.HasValue)
+                    throw new Exception("Execution context not initialized yet.");
+
+                if (_driver == null)
+                {
+                    _driver = DriverFactory.GetDriver(ExecutionContext.Browser.Value);
+                }
+
+                return _driver;
+            }
+        }
+
+        /// <summary>
+        /// Construct the driver 
+        /// </summary>
+        /// <param name="browser"></param>
+        /// <returns>The driver instance</returns>
+        private static IWebDriver GetDriver(Browser browser)
+        {
+            IWebDriver driver;
+
+            switch (browser)
+            {
+                case Browser.IE:
+                    driver = new InternetExplorerDriver(new InternetExplorerOptions() { });
+                    break;
+                case Browser.Chrome:
+                    driver = new ChromeDriver(new ChromeOptions() { });
+                    break;
+                case Browser.Firefox:
+                    try
+                    {
+                        driver = new FirefoxDriver(new FirefoxProfile() { AcceptUntrustedCertificates = true });
+                    }
+                    catch (WebDriverException ex)
+                    {
+                        throw new ApiException("Can not found firefox browser, you may need install firefox.", ex);
+                    }
+                    break;
+                default:
+                    driver = null;
+                    break;
+            }
+
+            //maximize the browser
+            driver.Manage().Window.Maximize();
+
+            return driver;
         }
     }
 }

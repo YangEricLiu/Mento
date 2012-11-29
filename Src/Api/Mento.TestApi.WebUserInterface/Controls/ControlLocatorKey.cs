@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mento.TestApi.WebUserInterface
+namespace Mento.TestApi.WebUserInterface.Controls
 {
-    public static class LocatorKey
+    internal static class ControlLocatorKey
     {
         #region Common locators
-        public static string LoadingMessage = "LoadingMessage";
+        public static string LoadingMask = "LoadingMask";
         #endregion
 
         #region TreeView locators
+        public static string TreeNode = "TreeNode";
+        public static string TreeNodeImage = "TreeNodeImage";
         #endregion
 
         #region TextField locators
@@ -21,6 +23,7 @@ namespace Mento.TestApi.WebUserInterface
         #endregion
 
         #region Button locators
+        public static string ButtonInput = "ButtonInput";
         #endregion
 
         #region ComboBox locators
@@ -31,11 +34,8 @@ namespace Mento.TestApi.WebUserInterface
         #endregion
 
         #region Grid locators        
-        public static string GridHeader = "GridHeader";
-        public static string GridBody = "GridBody";
-        public static string GridFooter = "GridFooter";
-        public static string GridRow = "GridRow";
         public static string GridRows = "GridRows";
+        public static string GridRow = "GridRow";
         public static string GridRowChecker = "GridRowChecker";      
         
             

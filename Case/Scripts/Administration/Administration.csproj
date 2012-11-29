@@ -61,14 +61,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInitialize.cs" />
-    <Compile Include="Example\ExampleSuite.cs" />
-    <Compile Include="Example\LoginSuite.cs" />
-    <Compile Include="Example\ShowTimeSuite.cs" />
     <Compile Include="Calendar\TimeMagament.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CarbonFactor\" />
+    <Folder Include="Example\" />
     <Folder Include="Tou\" />
   </ItemGroup>
   <ItemGroup>

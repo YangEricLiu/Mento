@@ -6,6 +6,8 @@ using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.TestData.Customer;
+using Mento.TestApi.WebUserInterface.Controls;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 
 namespace Mento.ScriptCommon.Library.Functions
@@ -13,14 +15,29 @@ namespace Mento.ScriptCommon.Library.Functions
     /// <summary>
     /// The business logic implement of physical tag configuration.
     /// </summary>
-    public class Ptag
+    public class PTagSettings
     {
-        private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
-        private Navigator navigatorInstance = ControlAccess.GetControl<Navigator>();
-        private TextField textFieldInstance = ControlAccess.GetControl<TextField>();
-        private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
-        private Grid tagInstance = ControlAccess.GetControl<Grid>();
-        private Button buttonInstance = ControlAccess.GetControl<Button>();
+        internal PTagSettings()
+        {
+        }
+
+        private static Grid PTagList;
+
+        private static Button CreatePTagButton;
+
+        private static Button ModifyButton;
+        private static Button SaveButton;
+        private static Button CancelButton;
+        private static Button DeleteButton;
+
+        private static TextField NameTextField;
+        private static TextField CodeTextField;
+        private static TextField MeterCodeTextField;
+        private static TextField ChannelTextField;
+        private static ComboBox CommodityComboBox;
+        private static ComboBox UomComboBox;
+        private static ComboBox CalculationTypeComboBox;
+        private static TextField CommentTextField;
         
         /// <summary>
         /// Navigate to Ptag Configuration Page
@@ -29,8 +46,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void NavigatorToPtagSetting()
         {
-            navigatorInstance.NavigateToTarget(NavigationTarget.TagSettingsP);
-            ElementLocator.Pause(2000);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsP);
+            TimeManager.PauseShort();
         }
 
         /// <summary>
@@ -40,7 +57,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void PrepareToAddPtag()
         {
-            buttonInstance.ClickButton(ElementDictionary[ElementKey.PtagAddButton]);
+            CreatePTagButton.Click();
         }
 
         /// <summary>
@@ -50,7 +67,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickSaveButton()
         {
-            buttonInstance.ClickButton(ElementDictionary[ElementKey.PtagSaveButton]);
+            SaveButton.Click();
         }
 
         /// <summary>
@@ -60,17 +77,19 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInPtag(PtagInputData input)
         {
-            textFieldInstance.FillIn(ElementKey.PtagName, input.Name);
-            textFieldInstance.FillIn(ElementKey.PtagCode, input.Code);
-            textFieldInstance.FillIn(ElementKey.PtagMeterCode, input.MeterCode);
-            textFieldInstance.FillIn(ElementKey.PtagChannelId, input.ChannelId);
-            comboBoxInstance.DisplayItems(ElementKey.PtagCommodityId);
-            comboBoxInstance.SelectItem(input.CommodityId);
-            comboBoxInstance.DisplayItems(ElementKey.PtagUomId);
-            comboBoxInstance.SelectItem(input.UomId);
-            comboBoxInstance.DisplayItems(ElementKey.PtagCalculationType);
-            comboBoxInstance.SelectItem(input.CalculationType);
-            textFieldInstance.FillIn(ElementKey.PtagComment, input.Comment);
+            NameTextField.Fill(input.Name);
+            CodeTextField.Fill(input.Code);
+            MeterCodeTextField.Fill(input.MeterCode);
+            ChannelTextField.Fill(input.ChannelId);
+            CommodityComboBox.SelectItem(input.Commodity);
+            UomComboBox.SelectItem(input.Uom);
+            CalculationTypeComboBox.SelectItem(input.CalculationType);
+            CommentTextField.Fill(input.Comment);
+        }
+
+        public void FillInCode(string code)
+        {
+            CodeTextField.Fill(code);
         }
 
         /// <summary>
@@ -80,28 +99,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void PrepareToModifyPtag(string tagName)
         {
-            FocusOnTag(tagName);
-            buttonInstance.ClickButton(ElementDictionary[ElementKey.PtagUpdateButton]);
-        }
-        
-        /// <summary>
-        /// Input code of the ptag 
-        /// </summary>
-        /// <param name="code">Ptag code</param>
-        /// <returns></returns>
-        public void FillInCode(string code)
-        {
-            textFieldInstance.FillIn(ElementKey.PtagCode, code);
-        }
-
-        /// <summary>
-        /// Select one tag
-        /// </summary>
-        /// <param name="tagName">Tag name</param>
-        /// <returns></returns>
-        public void FocusOnTag(string tagName)
-        {
-            tagInstance.FocusOnRow(tagName);
+            PTagList.FocusOnRow(1,tagName);
+            ModifyButton.Click();
         }
 
         /// <summary>
@@ -110,7 +109,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetNameValue()
         {
-            return textFieldInstance.GetValue(ElementKey.PtagName);
+            return NameTextField.GetValue();
         }
 
         /// <summary>
@@ -119,7 +118,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetCodeValue()
         {
-            return textFieldInstance.GetValue(ElementKey.PtagCode);
+            return CodeTextField.GetValue();
         }
 
         /// <summary>
@@ -128,7 +127,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetMeterCodeValue()
         {
-            return textFieldInstance.GetValue(ElementKey.PtagMeterCode);
+            return MeterCodeTextField.GetValue();
         }
 
         /// <summary>
@@ -137,7 +136,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetChannelIdValue()
         {
-            return textFieldInstance.GetValue(ElementKey.PtagChannelId);
+            return ChannelTextField.GetValue();
         }
 
         /// <summary>
@@ -146,7 +145,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetCommodityValue()
         {
-            return comboBoxInstance.GetValue(ElementKey.PtagCommodityId);
+            return CommodityComboBox.GetValue();
         }
 
         /// <summary>
@@ -156,7 +155,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Key value</returns>
         public string GetCommodityExpectedValue(string itemKey)
         {
-            return comboBoxInstance.GetItemTypeLangValue(itemKey);
+            return CommodityComboBox.GetActualValue(itemKey);
         }
 
         /// <summary>
@@ -165,7 +164,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetUomValue()
         {
-            return comboBoxInstance.GetValue(ElementKey.PtagUomId);
+            return UomComboBox.GetValue();
         }
 
         /// <summary>
@@ -175,7 +174,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Key value</returns>
         public string GetUomExpectedValue(string itemKey)
         {
-            return comboBoxInstance.GetItemTypeLangValue(itemKey);
+            return UomComboBox.GetActualValue(itemKey);
         }
 
         /// <summary>
@@ -184,7 +183,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetCalculationTypeValue()
         {
-            return comboBoxInstance.GetValue(ElementKey.PtagCalculationType);
+            return CalculationTypeComboBox.GetValue();
         }
 
         /// <summary>
@@ -194,7 +193,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Key value</returns>
         public string GetCalculationTypeExpectedValue(string itemKey)
         {
-            return comboBoxInstance.GetItemTypeLangValue(itemKey);
+            return CalculationTypeComboBox.GetActualValue(itemKey);
         }
 
         /// <summary>
@@ -203,8 +202,12 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetCommentValue()
         {
-            return textFieldInstance.GetValue(ElementKey.PtagComment);
+            return CommodityComboBox.GetValue();
         }
 
+        public void FocusOnPTag(string ptagName)
+        {
+            PTagList.FocusOnRow(1,ptagName);
+        }
     }
 }

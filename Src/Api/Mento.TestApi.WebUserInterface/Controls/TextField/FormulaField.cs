@@ -15,14 +15,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 if (this._TextArea == null)
                 {
-                    this._TextArea = FindChild(LocatorRepository.GetLocator(LocatorKey.FormulaTextArea));
+                    this._TextArea = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.FormulaTextArea));
                 }
 
                 return this._TextArea;
             }
         }
         
-        public FormulaField() : base(LocatorRepository.GetLocator(LocatorKey.FormulaTextBox)) { }
+        public FormulaField() : base(ControlLocatorRepository.GetLocator(ControlLocatorKey.FormulaTextBox)) { }
         
         /// <summary>
         /// Simulate the mouse drag formula tag list to formula field

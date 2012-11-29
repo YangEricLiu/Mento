@@ -23,11 +23,11 @@ namespace Mento.Framework.Constants
         /// <summary>
         /// $#
         /// </summary>
-        public static string VARIABLEPREFIX = String.Format("{0}{1}", ASCII.DOLLAR, ASCII.OCTOTHORPE);
+        public static string VariablePrefix = String.Format("{0}{1}", ASCII.DOLLAR, ASCII.OCTOTHORPE);
 
         /// <summary>
         /// $@
         /// </summary>
-        public static string LANGUAGEPREFIX = String.Format("{0}{1}", ASCII.DOLLAR, ASCII.AT);
+        public static string LanguagePrefix = String.Format("{0}{1}", ASCII.DOLLAR, ASCII.AT);
     }
 }

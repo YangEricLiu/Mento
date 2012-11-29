@@ -10,10 +10,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
     public abstract class TreeView : JazzControl
     {
         protected const string TREENODEVARIABLENAME = "nodeText";
-        private const string TREENODEXPATH = "tbody/tr[contains(@class,'x-grid-row') and td/div[text()='$#" + TREENODEVARIABLENAME + "']]";
-        private const string TREENODEIMGSXPATH = "td/div/img";
-        private const string TREENODEEXPANDCLASS = "x-grid-tree-node-expanded";
-
+        protected const string TREENODEEXPANDCLASS = "x-grid-tree-node-expanded";
 
         public TreeView(Locator rootLocator, ISearchContext parentContainer = null) : base(rootLocator, parentContainer: parentContainer) { }
 
@@ -152,7 +149,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region private methods
         protected virtual Locator GetTreeNodeLocator(string nodeText)
         {
-            return Locator.GetVariableLocator(TREENODEXPATH, ByType.Xpath, TREENODEVARIABLENAME, nodeText);
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.TreeNode), TREENODEVARIABLENAME, nodeText);
         }
 
         protected virtual IWebElement GetTreeNodeElement(string nodeText)
@@ -169,7 +166,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         private IWebElement GetExpanderElement(IWebElement nodeElement)
         {
-            Locator imageButtonsLocator = new Locator(TREENODEIMGSXPATH, ByType.Xpath);
+            Locator imageButtonsLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.TreeNodeImage);
 
             IWebElement[] imageButtons = nodeElement.FindElements(imageButtonsLocator.ToBy()).ToArray();
 

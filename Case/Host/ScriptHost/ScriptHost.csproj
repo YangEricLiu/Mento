@@ -96,17 +96,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\Administration\Platform\TimeMagament\" />
+    <Folder Include="Resource\en\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="chromedriver.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Config\ComboBoxItemList-CN.xml" />
+    <Content Include="Config\ComboBoxItemList.xml" />
     <Content Include="Data\Administration\Tag\VtagManagement\TA-VtagConfigue-001.json" />
     <Content Include="IEDriverServer.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resource\zh-cn.js">
+    <Content Include="Resource\cn\data.js" />
+    <Content Include="Resource\cn\ui.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SqlScript\Setup\initialization.sql" />

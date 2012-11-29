@@ -17,7 +17,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 if (this._SelectTrigger == null)
                 {
-                    this._SelectTrigger = FindChild(LocatorRepository.GetLocator(LocatorKey.ComboBoxTrigger));
+                    this._SelectTrigger = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxTrigger));
                 }
 
                 return this._SelectTrigger;
@@ -31,7 +31,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 if (this._SelectInput == null)
                 {
-                    this._SelectInput = FindChild(LocatorRepository.GetLocator(LocatorKey.ComboBoxInput));
+                    this._SelectInput = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxInput));
                 }
 
                 return this._SelectInput;
@@ -60,6 +60,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             var locator = GetComboBoxItemLocator(itemKey);
 
+            if (!ElementHandler.Displayed(locator))
+                DisplayItems();
+
             FindChild(locator).Click();
         }
 
@@ -68,7 +71,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// </summary>
         /// <param name="key">combo box element key</param>
         /// <returns>Combo box value</returns>
-        public string GetValue(string key)
+        public string GetValue()
         {
             return SelectInput.GetAttribute("value");
         }
@@ -78,8 +81,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// </summary>
         /// <param name="key">combo box element key</param>
         /// <returns>Key value</returns>
-        [Obsolete]
-        public string GetItemTypeLangValue(string itemKey)
+        public string GetActualValue(string itemKey)
         {
             return ComboBoxItemRepository.ComboBoxItemDictionary[itemKey];
         }
@@ -88,7 +90,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             string itemRealValue = ComboBoxItemRepository.ComboBoxItemDictionary[itemKey];
 
-            return Locator.GetVariableLocator(LocatorRepository.GetLocator(LocatorKey.ComboBoxItem), COMBOBOXITEMVARIABLENAME, itemRealValue); 
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxItem), COMBOBOXITEMVARIABLENAME, itemRealValue); 
         }
     }
 }

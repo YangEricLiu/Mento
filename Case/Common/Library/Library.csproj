@@ -41,6 +41,7 @@
       <HintPath>bin\Debug\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,15 +53,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\JazzButton.cs" />
-    <Compile Include="Functions\Associate.cs" />
-    <Compile Include="Functions\Formula.cs" />
-    <Compile Include="Functions\FunctionWrapper.cs" />
-    <Compile Include="Functions\Hierarchy.cs" />
-    <Compile Include="Functions\Login.cs" />
+    <Compile Include="Functions\AreaDimensionSettings.cs" />
+    <Compile Include="Functions\HierarchyAssociateSettings.cs" />
+    <Compile Include="Functions\SystemDimensionSettings.cs" />
+    <Compile Include="JazzFunction.cs" />
+    <Compile Include="Functions\HierarchySettings.cs" />
+    <Compile Include="Functions\LoginPage.cs" />
     <Compile Include="Functions\Navigator.cs" />
-    <Compile Include="Functions\Ptag.cs" />
-    <Compile Include="Functions\Vtag.cs" />
+    <Compile Include="Functions\PTagSettings.cs" />
+    <Compile Include="Functions\VTagSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,10 +86,7 @@
       <Name>TestData</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\Button\" />
-    <Folder Include="Controls\ComboBox\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

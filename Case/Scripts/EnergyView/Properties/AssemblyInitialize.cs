@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using Mento.TestApi.WebUserInterface;
+using Mento.ScriptCommon.Library;
 
 namespace Mento.Script.EnergyView
 {
@@ -14,6 +15,8 @@ namespace Mento.Script.EnergyView
         public void RunBeforeAnyTests()
         {
             JazzBrowseManager.OpenJazz();
+
+            JazzFunction.LoginPage.Login();
         }
 
         [TearDown]

@@ -65,27 +65,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrowserHandler.cs" />
+    <Compile Include="ControlCollection\JazzButton.cs" />
+    <Compile Include="ControlCollection\JazzComboBox.cs" />
+    <Compile Include="ControlCollection\JazzControlCollection.cs" />
+    <Compile Include="ControlCollection\JazzGrid.cs" />
+    <Compile Include="ControlCollection\JazzMessageBox.cs" />
+    <Compile Include="ControlCollection\JazzTextField.cs" />
+    <Compile Include="ControlCollection\JazzTreeView.cs" />
+    <Compile Include="ControlCollection\Resource\JazzControlLocatorKey.cs" />
+    <Compile Include="ControlCollection\Resource\JazzControlLocatorRepository.cs" />
+    <Compile Include="Controls\Button\TabButton.cs" />
     <Compile Include="Controls\Button\ToggleButton.cs" />
     <Compile Include="Controls\ComboBox\ComboBox.cs" />
     <Compile Include="Controls\ComboBox\ComboBoxItemRepository.cs" />
+    <Compile Include="Controls\Common\CreateSuccessMessageBox.cs" />
+    <Compile Include="Controls\Common\MessageBox.cs" />
     <Compile Include="Controls\Grid\Grid.cs" />
     <Compile Include="Controls\TextField\FormulaField.cs" />
     <Compile Include="Controls\TextField\TextField.cs" />
+    <Compile Include="Controls\TreeView\AreaDimensionTree.cs" />
+    <Compile Include="Controls\TreeView\HierarchyTree.cs" />
+    <Compile Include="Controls\TreeView\SystemDimensionTree.cs" />
     <Compile Include="ElementHandler.cs" />
-    <Compile Include="Element\LocatorKey.cs" />
-    <Compile Include="Element\LocatorRepository.cs" />
+    <Compile Include="Controls\ControlLocatorKey.cs" />
+    <Compile Include="Element\LocatorMapReader.cs" />
+    <Compile Include="Controls\ControlLocatorRepository.cs" />
     <Compile Include="JazzBrowseManager.cs" />
     <Compile Include="Controls\Button\Button.cs" />
     <Compile Include="Controls\Common\LoadingMask.cs" />
-    <Compile Include="Controls\TreeView\AreaDimensionTree.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controls\TreeView\HierarchyTree.cs" />
     <Compile Include="Controls\JazzControl.cs" />
     <Compile Include="TimeManager.cs" />
-    <Compile Include="Controls\TreeView\SystemDimensionTree.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Controls\TreeView\TreeView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Localization\LanguageResourceRepository.cs" />
@@ -106,9 +115,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Element\ElementMap.xml" />
+    <EmbeddedResource Include="Controls\ControlLocatorMap.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="ControlCollection\Resource\JazzControlLocatorMap.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

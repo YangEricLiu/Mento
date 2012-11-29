@@ -2,13 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenQA.Selenium;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
-    public abstract class Button : JazzControl
+    public class Button : JazzControl
     {
-        private const string BUTTONINPUTXPATH = "em/button";
-        private static Locator ButtonInputLocator = new Locator(BUTTONINPUTXPATH, ByType.Xpath);
+        private IWebElement _ButtonInput;
+        protected IWebElement ButtonInput
+        {
+            get 
+            {
+                if (this._ButtonInput == null)
+                {
+                    this._ButtonInput = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.ButtonInput));
+                }
+
+                return this._ButtonInput;
+            }
+        }
 
         /// <summary>
         /// 
@@ -51,7 +63,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns>True if the button is enabl, false if not </returns>
         public bool IsEnabled()
         {
-            return FindChild(ButtonInputLocator).Enabled;
+            return this.ButtonInput.Enabled;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 using System.Collections;
+using System.Data;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -12,51 +13,33 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static string CELLINDEXVARIABLE = "cellIndex";
         private static string CELLTEXTVARIABLE = "cellText";
 
-        private IWebElement _Header;
-        /// <summary>
-        /// Header is a collection of divs that lists all data column names
-        /// </summary>
-        protected IWebElement Header 
+        private IWebElement[] _CurrentRows;
+        protected IWebElement[] CurrentRows
         {
-            get
+            get 
             {
-                if (this._Header == null)
-                    this._Header = FindChild(LocatorRepository.GetLocator(LocatorKey.GridHeader));
+                if (this._CurrentRows == null)
+                {
+                    this._CurrentRows = FindChildren(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRows));
+                }
 
-                return this._Header;
+                return this._CurrentRows;
             }
         }
 
-        private IWebElement _Body;
-        /// <summary>
-        /// Body is a table that contains all data rows
-        /// </summary>
-        protected IWebElement Body
+        protected int PageCount
         {
-            get
-            {
-                if (this._Body == null)
-                    this._Body = FindChild(LocatorRepository.GetLocator(LocatorKey.GridBody));
-
-                return this._Body;
-            }
+            get { throw new NotImplementedException(); }
         }
-
-        private IWebElement _Footer;
-        /// <summary>
-        /// Footer is paging bar
-        /// </summary>
-        protected IWebElement Footer
+        protected int RecordCount
         {
-            get
-            {
-                if (this._Footer == null)
-                    this._Footer = FindChild(LocatorRepository.GetLocator(LocatorKey.GridFooter));
-
-                return this._Footer;
-            }
+            get { throw new NotImplementedException(); }
         }
-
+        protected int CurrentPage
+        {
+            get { throw new NotImplementedException(); }
+        }
+        
         /// <summary>
         /// locator parameter must be root element of a grid
         /// </summary>
@@ -122,9 +105,27 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
-        protected virtual IWebElement GetRow(int cellIndex, string cellText)
+        public bool IsRowExist(int cellIndex, string cellText)
         {
-            var rowLocator = LocatorRepository.GetLocator(LocatorKey.GridRow);
+            try
+            {
+                IWebElement row = GetRow(cellIndex, cellText);
+                return row != null;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public DataTable GetAllData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual IWebElement GetRow(int cellIndex, string cellText)
+        {
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
             
@@ -133,7 +134,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         protected virtual IWebElement GetRowChecker(int cellIndex, string cellText)
         {
-            var checkerLocator = LocatorRepository.GetLocator(LocatorKey.GridRowChecker);
+            var checkerLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowChecker);
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
 

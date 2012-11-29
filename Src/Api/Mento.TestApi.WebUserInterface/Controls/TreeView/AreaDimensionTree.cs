@@ -7,8 +7,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class AreaDimensionTree : TreeView
     {
-        private const string AREADIMENSIONTREEXPATH = "//table[@class='x-grid-table x-grid-table-resizer']";
+        //private const string AREADIMENSIONTREEXPATH = "//table[@class='x-grid-table x-grid-table-resizer']";
 
-        public AreaDimensionTree() : base(new Locator(AREADIMENSIONTREEXPATH, ByType.Xpath)) { }
+        public AreaDimensionTree(Locator locator) : base(locator) { }
     }
 }

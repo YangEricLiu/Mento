@@ -5,17 +5,22 @@ using System.Text;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.TestData.ClientAccess;
 using OpenQA.Selenium;
-using Mento.TestApi.WebUserInterface.NewControls;
+using Mento.TestApi.WebUserInterface.Controls;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
     /// <summary>
     /// The business logic implement of Login.
     /// </summary>
-    public class LoginFunction
+    public class LoginPage
     {
-        private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
+        internal LoginPage()
+        {
+        }
+
         //private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
+        private static Locator HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
 
         /// <summary>
         /// Login Jazz with test data
@@ -24,21 +29,13 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void Login(LoginInputData loginData)
         {
-            TextField UserNameField = ControlAccess.GetControl<TextField>();
-            TextField PasswordField = ControlAccess.GetControl<TextField>();
+            JazzTextField.LoginUserNameTextField.Fill(loginData.UserName);
+            JazzTextField.LoginPasswordTextField.Fill(loginData.Password);
 
-            UserNameField.FillIn(ElementKey.LoginName, loginData.UserName);
-            PasswordField.FillIn(ElementKey.LoginPassword, loginData.Password);
-
-            //ElementLocator.
-
-
-            var ButtonSubmit = ElementLocator.FindElement(ElementDictionary[ElementKey.LoginSubmit]);
-
-            ButtonSubmit.Submit();
+            JazzButton.LoginSubmitButton.Click();
             //ElementLocator.Driver.FindElement(By.Id("txtPassword")).SendKeys("\n");
 
-            ElementLocator.Pause(2000);
+            TimeManager.PauseLong();
 
             //Amy update starts: add customer selection for R1.0. so if running case in R1.0, these need to be uncomment.
             //comboBoxInstance.DisplayItems(ElementKey.CustomerSelection);
@@ -46,7 +43,8 @@ namespace Mento.ScriptCommon.Library.Functions
             //ElementLocator.FindElement(ElementDictionary[ElementKey.CustomerConfirmButton]).Click();
             //Amy update ends
 
-            ElementLocator.WaitForElement(new Locator("header-btn-homepage-btnEl", ByType.ID), 150);
+            ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 150);
+
             //Amy comment: if running case in R1.0, below clause "ElementLocator.WaitForElementToDisappear.." needs to be commented out.
             //ElementLocator.WaitForElementToDisappear(new Locator("mainLoadingMask", ByType.ID), 30);
         }
@@ -90,7 +88,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public bool IsAlreadyLogin()
         {
-            return ElementHandler.Exists(new Locator("header-btn-homepage-btnEl", ByType.ID));
+            return ElementHandler.Exists(HomePageNavigationLocator);
         }
     }
 }

@@ -15,6 +15,8 @@ using Mento.Framework.Script;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
 using Mento.ScriptCommon.TestData.Customer;
+using Mento.ScriptCommon.Library;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 
 namespace Mento.Script.Customer.Hierarchy
@@ -22,30 +24,35 @@ namespace Mento.Script.Customer.Hierarchy
     [TestFixture]
     public class HierarchyManagement : TestSuiteBase
     {
+        private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
+
         [TestFixtureSetUp]
         public void CaseFixtureSetUp()
         {
-            ElementLocator.OpenJazz();
-            FunctionWrapper.Login.Login();
+            //ElementLocator.OpenJazz();
+            //FunctionWrapper.Login.Login();
         }
 
         [TestFixtureTearDown]
         public void CaseFixtureTearDown()
         {
-            ElementLocator.CloseJazz();
+            //ElementLocator.CloseJazz();
         }
 
         [SetUp]
         public void CaseSetUp()
         {
-            FunctionWrapper.Hierarchy.NavigatorToHSetting();
-            ElementLocator.Pause(2000);
+            //FunctionWrapper.Hierarchy.NavigatorToHSetting();
+            //ElementLocator.Pause(2000);
+            HierarchySettings.NavigatorToHierarchySetting();
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
             //
+            JazzFunction.Navigator.NavigateHome();
         }
 
         [Test]
@@ -53,19 +60,20 @@ namespace Mento.Script.Customer.Hierarchy
         [MultipleTestDataSource(typeof(AddHierarchyData[]), typeof(HierarchyManagement), "TA-Hierarchy-001")]
         public void AddOrgnizationNodeTest(AddHierarchyData input)
         {
-            FunctionWrapper.Hierarchy.FillInHierarchyNode("Schneider", input.InputData);
-            FunctionWrapper.Hierarchy.ClickSaveButton();
-            FunctionWrapper.Hierarchy.WaitForCreateOKDisplay(120);
+            HierarchySettings.FillInHierarchyNode("Schneider", input.InputData);
+            HierarchySettings.ClickSaveButton();
+            HierarchySettings.WaitForCreateOKDisplay(120);
 
-            ElementLocator.Pause(500);
+            //ElementLocator.Pause(500);
+            TimeManager.PauseShort();
 
-            FunctionWrapper.Hierarchy.ConfirmCreateOKMagBox();
+            HierarchySettings.ConfirmCreateOKMagBox();
 
-            Assert.IsTrue(FunctionWrapper.Hierarchy.IsNodesChildParent(input.InputData.Name, "Schneider"));
+            Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.Name, "Schneider"));
 
-            FunctionWrapper.Hierarchy.FocusOnHierarchyNode(input.InputData.Name);
+            HierarchySettings.FocusOnHierarchyNode(input.InputData.Name);
 
-            Assert.AreEqual(FunctionWrapper.Hierarchy.GetTypeExpectedValue(input.InputData.Type), FunctionWrapper.Hierarchy.GetTypeValue());
+            Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.InputData.Type), HierarchySettings.GetTypeValue());
         }
 
     }

@@ -6,7 +6,7 @@ using NUnit.Framework;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library;
 
-namespace Mento.Script.Platform
+namespace Mento.Script.Customer
 {
     [SetUpFixture]
     public class AssemblyInitialize

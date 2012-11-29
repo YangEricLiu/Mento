@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
-using System.Drawing;
 using OpenQA.Selenium.Interactions;
 
 namespace Mento.TestApi.WebUserInterface.Controls
@@ -14,8 +13,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private const string DIALOGXPATH = "div.x-window";
         private const string CHECKBOXXPATHFORMAT = "//tr[contains(@class,'x-grid-row') and td/div[text()='$#" + TREENODEVARIABLENAME + "']]//input";
 
-        public SystemDimensionTree(bool isInDialog = false) :
-            base(new Locator(SYSTEMDIMENSIONTREECSSSELECTOR, ByType.CssSelector), parentContainer: ElementHandler.FindElement(new Locator(DIALOGXPATH, ByType.CssSelector))) 
+        public SystemDimensionTree(Locator locator) :
+            base(locator) 
         {
         }
 
@@ -31,7 +30,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 {
                     ClickCheckbox(checkbox);
 
-                    LoadingMask.WaitLoading();
+                    GetControl<LoadingMask>().WaitLoading();
                 }
             }
         }

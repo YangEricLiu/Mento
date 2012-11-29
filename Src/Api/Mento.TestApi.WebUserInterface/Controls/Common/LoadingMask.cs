@@ -7,28 +7,27 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class LoadingMask : JazzControl
     {
-        private const string LOADINGMASKID = "mainLoadingMask";
-        private static Locator LoadingLocator = new Locator(LOADINGMASKID, ByType.ID);
+        private static Locator LoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.LoadingMask);
 
         public LoadingMask()
             : base(LoadingLocator)
         {
         }
 
-        public static void WaitLoading()
+        public void WaitLoading(int maxtime = 0)
         {
             try
             {
-                ElementHandler.Wait(LoadingLocator, WaitType.ToAppear, timeout: 1);
+                ElementHandler.Wait(LoadingLocator, WaitType.ToAppear, timeout: maxtime <= 0 ? 1 : maxtime);
 
                 TimeManager.PauseShort();
 
-                ElementHandler.Wait(LoadingLocator, WaitType.ToDisappear, timeout: 5);
+                ElementHandler.Wait(LoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 5 : maxtime);
 
                 TimeManager.PauseShort();
             }
             catch
-            { 
+            {
             }
         }
     }

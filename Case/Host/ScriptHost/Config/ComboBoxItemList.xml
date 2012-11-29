@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ItemList>  
+  <!--Commodity-->
+  <add key = "Other" value = "$@Data.Commodity.Other"/>
+  <add key = "Electricity" value = "$@Data.Commodity.Electricity"/>
+  <add key = "Water" value = "$@Data.Commodity.Water"/>
+  <add key = "Gas" value = "$@Data.Commodity.Gas"/>
+  <add key = "SoftWater" value = "$@Data.Commodity.SoftWater"/>
+  <add key = "Petrol" value = "$@Data.Commodity.Petrol"/>
+  <add key = "LowPressureSteam" value = "$@Data.Commodity.LowPressureSteam"/>
+  <add key = "DieselOil" value = "$@Data.Commodity.DieselOil"/>
+  <add key = "HeatQ" value = "$@Data.Commodity.HeatQ"/>
+  <add key = "CoolQ" value = "$@Data.Commodity.CoolQ"/>
+  <add key = "Coal" value = "$@Data.Commodity.Coal"/>
+  <add key = "CoalOil" value = "$@Data.Commodity.CoalOil"/>
+     
+  <!--UOM-->
+  <add key = "KWH" value = "$@Data.Uom.KWH"/>
+  <add key = "KVARH" value = "$@Data.Uom.KVARH"/>
+  <add key = "KVAH" value = "$@Data.Uom.KVAH"/>
+  <add key = "KW" value = "$@Data.Uom.KW"/>
+  <add key = "m3" value = "$@Data.Uom.m3"/>
+  <add key = "ppm" value = "$@Data.Uom.ppm"/>
+  <add key = "kg" value = "$@Data.Uom.kg"/>
+  <add key = "Ton" value = "$@Data.Uom.Ton"/>
+  <add key = "J" value = "$@Data.Uom.J"/>
+  <add key = "GJ" value = "$@Data.Uom.GJ"/>
+  <add key = "RMB" value = "$@Data.Uom.RMB"/>
+  <add key = "m2" value = "$@Data.Uom.m2"/>
+  <add key = "h" value = "$@Data.Uom.h"/>
+  <add key = "m" value = "$@Data.Uom.m"/>
+  <add key = "s" value = "$@Data.Uom.s"/>
+  <add key = "oC" value = "$@Data.Uom.oC"/>
+  <add key = "kgce" value = "$@Data.Uom.kgce"/>
+  <add key = "kgCO2" value = "$@Data.Uom.kgCO2"/>
+  <add key = "Tree" value = "$@Data.Uom.Tree"/>
+  <add key = "Person" value = "$@Data.Uom.Person"/>
+  <add key = "KWM2" value = "$@Data.Uom.KWM2"/>
+  <add key = "KWHM2" value = "$@Data.Uom.KWHM2"/>
+  <add key = "KWPerson" value = "$@Data.Uom.KWPerson"/>
+  <add key = "KWHPerson" value = "$@Data.Uom.KWHPerson"/>
+  <add key = "kgM2" value = "$@Data.Uom.kgM2"/>
+  <add key = "TM2" value = "$@Data.Uom.TM2"/>
+  <add key = "m3M2" value = "$@Data.Uom.m3M2"/>
+  <add key = "kgPerson" value = "$@Data.Uom.kgPerson"/>
+  <add key = "TPerson" value = "$@Data.Uom.TPerson"/>
+  <add key = "m3Person" value = "$@Data.Uom.m3Person"/>
+  
+  <!--CaculationType-->
+  <add key = "Sum" value = "$@I18N.Common.Glossary.Sum"/>
+  <add key = "Avg" value = "$@I18N.Common.Glossary.Avg"/>
+  <add key = "Max" value = "$@I18N.Common.Glossary.Max"/>
+  <add key = "Min" value = "$@I18N.Common.Glossary.Min"/>
+  
+  <!--Hierarchy Type-->
+  <add key = "Orgnization" value = "$@I18N.Common.Glossary.Organization"/>
+  <add key = "Site" value = "$@I18N.Common.Glossary.Site"/>
+  <add key = "Building" value = "$@I18N.Common.Glossary.Building"/>
+</ItemList>

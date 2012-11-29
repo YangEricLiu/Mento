@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<webelement>
+  <!--Button Begin-->
+  <add key="ButtonLoginSubmit" value = "btnSubmit" type="ID"/>
+  
+  <add key="ButtonDimensionSelectHierarchy" value = "st-assoc-hier-btn" type ="ID"/>
+  <add key="ButtonSystemDimensionUpdate" value = "st-sys-tree-update" type ="ID"/>
+  <add key="ButtonAreaDimensionCreate" value = "st-area-tree-add" type ="ID"/>
+
+  <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
+  <add key="ButtonNavigatorEnergyView" value="header-btn-energyservice" type="ID"/>
+  <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
+
+  <add key="ButtonNavigatorPlatformSettings" value="setting-tab-platformsetting-btn" type="ID"/>
+  <add key="ButtonNavigatorTagSettings" value="setting-tab-tagmrg-btn" type="ID"/>
+  <add key="ButtonNavigatorHierarchySettings" value="setting-tab-hiersetting-btn" type="ID"/>
+  <add key="ButtonNavigatorAssociationSettings" value="setting-tab-tagassoc-btn" type="ID"/>
+
+  <add key="ButtonNavigatorPlatformWorkday" value="st-menu-workday" type="ID"/>
+  <add key="ButtonNavigatorPlatformWorktime" value="st-menu-worktime" type="ID"/>
+  <add key="ButtonNavigatorPlatformSeason" value="st-menu-coldwarm" type="ID"/>
+  <add key="ButtonNavigatorPlatformDaynight" value="st-menu-daynight" type="ID"/>
+  <add key="ButtonNavigatorPlatformCarbon" value="st-menu-carbon" type="ID"/>
+  <add key="ButtonNavigatorPlatformPrice" value="st-menu-price" type="ID"/>
+
+  <add key="ButtonNavigatorTagSettingsP" value="st-menu-ptagmgr" type="ID"/>
+  <add key="ButtonNavigatorTagSettingsV" value="st-menu-vtagmgr" type="ID"/>
+  <add key="ButtonNavigatorTagSettingsKPI" value="st-menu-kpimgr" type="ID"/>
+
+  <add key="ButtonNavigatorHierarchySettingsHierarchy" value="st-menu-hierarchy" type="ID"/>
+  <add key="ButtonNavigatorHierarchySettingsSystemDimension" value="st-menu-systemdimension" type="ID"/>
+  <add key="ButtonNavigatorHierarchySettingsAreaDimension" value="st-menu-areadimension" type="ID"/>
+
+  <add key="ButtonNavigatorAssociationHierarchy" value="st-menu-hierarchytags" type="ID"/>
+  <add key="ButtonNavigatorAssociationSystemDimension" value="st-menu-systemdtags" type="ID"/>
+  <add key="ButtonNavigatorAssociationAreaDimensionButton" value="st-menu-areadtags" type="ID"/>
+
+  
+  <!--settings buttons-->
+  <add key="TabButtonVTagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()=='$@Setting.Label.BasicProperties']]" type="XPath"/>
+  <!--text in this xpath need to be changed to a language variable-->
+  <add key="TabButtonVTagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()=='计算公式']]" type="XPath"/>
+  <add key="ButtonVTagSettingsFormulaUpdate" value="//div[@id='st-vtag-formula']//span[text()='$@Common.Operation.Update']" type="Xpath"/>
+  <add key="ButtonVTagSettingsFormulaSave" value="//div[@id='st-vtag-formula']//span[text()='$@Common.Button.Save']" type="Xpath"/>
+
+  <add key = "ButtonAssociationSettingsTagAssociate" value = "st-tagassoc-taggrid-assoc" type = "ID"/>
+  <add key = "ButtonAssociationSettingsAssociate" value = "st-tagassoc-taggrid-assocaction-btnInnerEl" type = "ID"/>
+  <!--Button End-->
+  
+  <!--TextField Begin-->
+  <add key = "TextFieldLoginUserName" value = "txtUserName" type = "ID"/>
+  <add key = "TextFieldLoginPassword" value = "txtPassword" type = "ID"/>
+  <!--TextField End-->
+  
+  <!--ComboBox-->
+  <add key="" value = "" type =""/>
+  
+  <!--TreeView-->
+  <add key="HierarchyTreeEnergyView" value="" type=""/>
+  <add key="HierarchyTreeHierarchySettings" value="" type=""/>
+  <add key="HierarchyTreeHierarchySettingsDimension" value="" type=""/>
+  <add key="HierarchyTreeAssociation" value="" type=""/>
+  <add key="HierarchyTreeAssociationDimension" value="" type=""/>
+
+  <add key="SystemDimensionTreeEnergyView" value="" type=""/>
+  <add key="SystemDimensionTreeHierarchySettings" value="" type=""/>
+  <add key="SystemDimensionTreeHierarchySettingsDialog" value="" type=""/>
+  <add key="SystemDimensionTreeAssociation" value="" type=""/>
+       
+  <add key="AreaDimensionTreeEnergyView" value="" type=""/>
+  <add key="AreaDimensionTreeHierarchySettings" value="" type=""/>
+  <add key="AreaDimensionTreeAssociation" value="" type=""/>
+  
+  <!--Grid Begin-->
+  <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
+  <add key="GridVTagSettingsVTagList" value="st-vtag-grid" type="ID"/>
+  <add key="GridAssociationTagList" value="//div[@id='st-tag-assoc-form-body']//div[index-of(tokenize(@class,'\s+'),'x-grid')>0 and index-of(tokenize(@class,'\s+'),'x-grid-with-row-lines')>0]" type="XPath"/>
+  <!--Grid End-->
+</webelement>

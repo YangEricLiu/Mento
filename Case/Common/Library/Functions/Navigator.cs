@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
+using Mento.TestApi.WebUserInterface.Controls;
+using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.TestApi.WebUserInterface;
 
-namespace Mento.TestApi.WebUserInterface
+namespace Mento.ScriptCommon.Library.Functions
 {
     /// <summary>
     /// Navigator control, able to navigate to a <see cref="NavigationTarget" /> item.
     /// </summary>
-    public class Navigator : JazzControlBase
+    public class Navigator
     {
-        private static Locator MaskLocator = new Locator("mainLoadingMask", ByType.ID);
+        internal Navigator()
+        {
+        }
 
         /// <summary>
         /// Navigate to a specified target
@@ -19,31 +24,17 @@ namespace Mento.TestApi.WebUserInterface
         /// <param name="target">The specified target</param>
         public void NavigateToTarget(NavigationTarget target)
         {
-            Locator[] pathLocators = this.GetParentPathLocators(target);
+            Button[] pathButtons = GetParentPathButtons(target);
 
-            for (var i = 0; i < pathLocators.Length; i++)
+            for (var i = 0; i < pathButtons.Length; i++)
             {
-                IWebElement maskElement = null;
+                JazzMessageBox.LoadingMask.WaitLoading();
 
-                try
-                {
-                    maskElement = ElementLocator.FindElement(MaskLocator);
-                }
-                catch
-                { 
-                }
+                pathButtons[i].Click();
 
-                if (maskElement != null && !maskElement.GetCssValue("display").Equals("none",StringComparison.OrdinalIgnoreCase))
-                {
-                    ElementLocator.WaitForElementToDisappear(MaskLocator, 30);
-                }
+                JazzMessageBox.LoadingMask.WaitLoading();
 
-                var element = ElementLocator.FindElement(pathLocators[i]);
-
-                element.Click();
-
-                ElementLocator.Pause(300);
-                //ElementLocator.WaitForElementToDisappear(MaskLocator, 30);
+                TimeManager.PauseShort();
             }
         }
 
@@ -53,6 +44,8 @@ namespace Mento.TestApi.WebUserInterface
         public void NavigateHome()
         {
             NavigateToTarget(NavigationTarget.HomePage);
+
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         /// <summary>
@@ -60,9 +53,9 @@ namespace Mento.TestApi.WebUserInterface
         /// </summary>
         /// <param name="target">The specified navigation target</param>
         /// <returns>Array of locators on path of navigating to the target navigation item</returns>
-        private Locator[] GetParentPathLocators(NavigationTarget target)
+        private Button[] GetParentPathButtons(NavigationTarget target)
         {
-            List<Locator> pathLocators = new List<Locator>();
+            List<Button> pathButtons = new List<Button>();
 
             NavigationTarget? currentTarget = target;
 
@@ -70,14 +63,14 @@ namespace Mento.TestApi.WebUserInterface
             {
                 var targetItem = NavigatorItem.NavigationItems[currentTarget.Value];
 
-                pathLocators.Add(targetItem.Locator);
+                pathButtons.Add(targetItem.Button);
 
                 currentTarget = targetItem.Parent;
             }
 
-            pathLocators.Reverse();
+            pathButtons.Reverse();
 
-            return pathLocators.ToArray();
+            return pathButtons.ToArray();
         }
     }
 
@@ -86,36 +79,36 @@ namespace Mento.TestApi.WebUserInterface
         public static Dictionary<NavigationTarget, NavigatorItem> NavigationItems = new Dictionary<NavigationTarget, NavigatorItem>()
         {
             //level 1
-            {NavigationTarget.HomePage,new NavigatorItem( NavigationTarget.HomePage, null, "header-btn-homepage-btnEl",ByType.ID)},
-            {NavigationTarget.EnergyView, new NavigatorItem(NavigationTarget.EnergyView, null,"header-btn-energyservice-btnEl",ByType.ID)},
-            {NavigationTarget.Settings, new NavigatorItem(NavigationTarget.Settings,null,"header-btn-setting-btnEl",ByType.ID)},
+            {NavigationTarget.HomePage,new NavigatorItem(NavigationTarget.HomePage, null, JazzButton.NavigatorHomePageButton)},
+            {NavigationTarget.EnergyView, new NavigatorItem(NavigationTarget.EnergyView, null,JazzButton.NavigatorEnergyViewButton)},
+            {NavigationTarget.Settings, new NavigatorItem(NavigationTarget.Settings,null,JazzButton.NavigatorSettingsButton)},
 
             //level 2
-            {NavigationTarget.PlatformSettings, new NavigatorItem(NavigationTarget.PlatformSettings,NavigationTarget.Settings,"setting-tab-platformsetting-btn-btnEl",ByType.ID)},
-            {NavigationTarget.TagSettings, new NavigatorItem(NavigationTarget.TagSettings,NavigationTarget.Settings,"setting-tab-tagmrg-btn-btnEl",ByType.ID)},
-            {NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,"setting-tab-hiersetting-btn-btnEl",ByType.ID)},
-            {NavigationTarget.AssociationSettings, new NavigatorItem(NavigationTarget.AssociationSettings,NavigationTarget.Settings,"setting-tab-tagassoc-btn-btnEl",ByType.ID)},
+            {NavigationTarget.PlatformSettings, new NavigatorItem(NavigationTarget.PlatformSettings,NavigationTarget.Settings,JazzButton.NavigatorPlatformSettingsButton)},
+            {NavigationTarget.TagSettings, new NavigatorItem(NavigationTarget.TagSettings,NavigationTarget.Settings,JazzButton.NavigatorTagSettingsButton)},
+            {NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,JazzButton.NavigatorHierarchySettingsButton)},
+            {NavigationTarget.AssociationSettings, new NavigatorItem(NavigationTarget.AssociationSettings,NavigationTarget.Settings,JazzButton.NavigatorAssociationSettingsButton)},
 
             //level 3
             //--Platform
-            {NavigationTarget.PlatformWorkday, new NavigatorItem(NavigationTarget.PlatformWorkday,NavigationTarget.PlatformSettings,"st-menu-workday-btnEl",ByType.ID)},
-            {NavigationTarget.PlatformWorktime, new NavigatorItem(NavigationTarget.PlatformWorktime,NavigationTarget.PlatformSettings,"st-menu-worktime-btnInnerEl",ByType.ID)},
-            {NavigationTarget.PlatformSeason, new NavigatorItem(NavigationTarget.PlatformSeason,NavigationTarget.PlatformSettings,"st-menu-coldwarm-btnEl",ByType.ID)},
-            {NavigationTarget.PlatformDaynight, new NavigatorItem(NavigationTarget.PlatformDaynight,NavigationTarget.PlatformSettings,"st-menu-daynight-btnEl",ByType.ID)},
-            {NavigationTarget.PlatformCarbon, new NavigatorItem(NavigationTarget.PlatformCarbon,NavigationTarget.PlatformSettings,"st-menu-carbon-btnEl",ByType.ID)},
-            {NavigationTarget.PlatformPrice, new NavigatorItem(NavigationTarget.PlatformPrice,NavigationTarget.PlatformSettings,"st-menu-price-btnEl",ByType.ID)},
+            {NavigationTarget.PlatformWorkday, new NavigatorItem(NavigationTarget.PlatformWorkday,NavigationTarget.PlatformSettings,JazzButton.NavigatorPlatformWorkdayButton)},
+            {NavigationTarget.PlatformWorktime, new NavigatorItem(NavigationTarget.PlatformWorktime,NavigationTarget.PlatformSettings,JazzButton.NavigatorPlatformWorktimeButton)},
+            {NavigationTarget.PlatformSeason, new NavigatorItem(NavigationTarget.PlatformSeason,NavigationTarget.PlatformSettings,JazzButton.NavigatorPlatformSeasonButton)},
+            {NavigationTarget.PlatformDaynight, new NavigatorItem(NavigationTarget.PlatformDaynight,NavigationTarget.PlatformSettings,JazzButton.NavigatorPlatformDaynightButton)},
+            {NavigationTarget.PlatformCarbon, new NavigatorItem(NavigationTarget.PlatformCarbon,NavigationTarget.PlatformSettings,JazzButton.NavigatorPlatformCarbonButton)},
+            {NavigationTarget.PlatformPrice, new NavigatorItem(NavigationTarget.PlatformPrice,NavigationTarget.PlatformSettings,JazzButton.NavigatorPlatformPriceButton)},
             //--Tag
-            {NavigationTarget.TagSettingsP, new NavigatorItem(NavigationTarget.TagSettingsP,NavigationTarget.TagSettings,"st-menu-ptagmgr-btnEl",ByType.ID)},
-            {NavigationTarget.TagSettingsV, new NavigatorItem(NavigationTarget.TagSettingsV,NavigationTarget.TagSettings,"st-menu-vtagmgr-btnEl",ByType.ID)},
-            {NavigationTarget.TagSettingsKPI, new NavigatorItem(NavigationTarget.TagSettingsKPI, NavigationTarget.TagSettings,"st-menu-kpimgr-btnEl",ByType.ID)},
+            {NavigationTarget.TagSettingsP, new NavigatorItem(NavigationTarget.TagSettingsP,NavigationTarget.TagSettings,JazzButton.NavigatorTagSettingsPButton)},
+            {NavigationTarget.TagSettingsV, new NavigatorItem(NavigationTarget.TagSettingsV,NavigationTarget.TagSettings,JazzButton.NavigatorTagSettingsVButton)},
+            {NavigationTarget.TagSettingsKPI, new NavigatorItem(NavigationTarget.TagSettingsKPI, NavigationTarget.TagSettings,JazzButton.NavigatorTagSettingsKPIButton)},
             //--Hierarchy
-            {NavigationTarget.HierarchySettingsHierarchy, new NavigatorItem(NavigationTarget.HierarchySettingsHierarchy, NavigationTarget.HierarchySettings,"st-menu-hierarchy-btnEl",ByType.ID)},
-            {NavigationTarget.HierarchySettingsSystemDimension, new NavigatorItem(NavigationTarget.HierarchySettingsSystemDimension,NavigationTarget.HierarchySettings,"st-menu-systemdimension-btnEl",ByType.ID)},
-            {NavigationTarget.HierarchySettingsAreaDimension, new NavigatorItem(NavigationTarget.HierarchySettingsAreaDimension,NavigationTarget.HierarchySettings,"st-menu-areadimension-btnEl",ByType.ID)},
+            {NavigationTarget.HierarchySettingsHierarchy, new NavigatorItem(NavigationTarget.HierarchySettingsHierarchy, NavigationTarget.HierarchySettings,JazzButton.NavigatorHierarchySettingsHierarchyButton)},
+            {NavigationTarget.HierarchySettingsSystemDimension, new NavigatorItem(NavigationTarget.HierarchySettingsSystemDimension,NavigationTarget.HierarchySettings,JazzButton.NavigatorHierarchySettingsSystemDimensionButton)},
+            {NavigationTarget.HierarchySettingsAreaDimension, new NavigatorItem(NavigationTarget.HierarchySettingsAreaDimension,NavigationTarget.HierarchySettings,JazzButton.NavigatorHierarchySettingsAreaDimensionButton)},
             //--Association
-            {NavigationTarget.AssociationHierarchy, new NavigatorItem(NavigationTarget.AssociationHierarchy, NavigationTarget.AssociationSettings,"st-menu-hierarchytags-btnEl",ByType.ID)},
-            {NavigationTarget.AssociationSystemDimension, new NavigatorItem(NavigationTarget.AssociationSystemDimension,NavigationTarget.AssociationSettings,"st-menu-systemdtags-btnEl",ByType.ID)},
-            {NavigationTarget.AssociationAreaDimension, new NavigatorItem(NavigationTarget.AssociationAreaDimension,NavigationTarget.AssociationSettings,"st-menu-areadtags-btnEl",ByType.ID)},
+            {NavigationTarget.AssociationHierarchy, new NavigatorItem(NavigationTarget.AssociationHierarchy, NavigationTarget.AssociationSettings,JazzButton.NavigatorAssociationHierarchyButton)},
+            {NavigationTarget.AssociationSystemDimension, new NavigatorItem(NavigationTarget.AssociationSystemDimension,NavigationTarget.AssociationSettings,JazzButton.NavigatorAssociationSystemDimensionButton)},
+            {NavigationTarget.AssociationAreaDimension, new NavigatorItem(NavigationTarget.AssociationAreaDimension,NavigationTarget.AssociationSettings,JazzButton.NavigatorAssociationAreaDimensionButton)},
 
             ////Amy update1 starts: if running case in R1.0, all navigator items above need to be replaced by below level 1 to level 3:
             ////level 1
@@ -165,23 +158,23 @@ namespace Mento.TestApi.WebUserInterface
             set;
         }
 
-        public NavigationTarget Target
+        public NavigationTarget Self
         {
             get;
             set;
         }
 
-        public Locator Locator
+        public Button Button
         {
             get;
             set;
         }
 
-        public NavigatorItem(NavigationTarget self, NavigationTarget? parent, string locatorValue, ByType locatorType)
+        public NavigatorItem(NavigationTarget self, NavigationTarget? parent, Button button)
         {
-            this.Target = self;
+            this.Self = self;
             this.Parent = parent;
-            this.Locator = new Locator(locatorValue, locatorType);
+            this.Button = button;
         }
     }
 

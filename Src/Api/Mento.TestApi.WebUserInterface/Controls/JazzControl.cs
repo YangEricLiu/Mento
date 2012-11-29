@@ -5,6 +5,7 @@ using System.Text;
 using OpenQA.Selenium;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
+using Mento.Framework.Exceptions;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -43,14 +44,21 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return RootElement.FindElements(locator.ToBy()).ToArray();
         }
 
-        public static T GetControl<T>() where T : JazzControl, new()
+        public static T GetControl<T>(Locator locator = null) where T : JazzControl
         {
-            return new T();
-        }
+            Type[] EmptyConstructorParameterControls = new Type[] { typeof(LoadingMask), typeof(FormulaField), };
 
-        public virtual void WaitForMe(WaitType waitType)
-        {
-            ElementHandler.Wait(this._RootLocator, waitType);
+            if (EmptyConstructorParameterControls.Contains(typeof(T)))
+            {
+                return (T)Activator.CreateInstance(typeof(T));
+            }
+            else
+            {
+                if (locator == null)
+                    throw new ApiException("Can not get control when locator is null.");
+
+                return (T)Activator.CreateInstance(typeof(T), locator);
+            }
         }
 
         public virtual bool Exists()

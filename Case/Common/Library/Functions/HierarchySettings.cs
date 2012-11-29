@@ -6,20 +6,33 @@ using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.TestData.Customer;
+using Mento.TestApi.WebUserInterface.Controls;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
     /// <summary>
     /// The business logic implement of hierarchy setting.
     /// </summary>
-    public class Hierarchy
+    public class HierarchySettings
     {
-        private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
+        internal HierarchySettings()
+        {
+        }
 
-        private TreeView treeViewInstance = ControlAccess.GetControl<TreeView>();
-        private TextField textFieldInstance = ControlAccess.GetControl<TextField>();
-        private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
-        private Navigator navigatorInstance = ControlAccess.GetControl<Navigator>();
+        private static HierarchyTree HierarchyTree = JazzTreeView.HierarchySettingsHierarchyTree;
+
+        private static Button CreateChildHierarchyButton;
+
+        private static Button ModifyButton;
+        private static Button SaveButton;
+        private static Button CancelButton;
+        private static Button DeleteButton;
+
+        private static TextField NameTextField;
+        private static TextField CodeTextField;
+        private static ComboBox HierarchyTypeComboBox;
+        private static TextField CommentTextField;
 
         /// <summary>
         /// Click one hierarchy node then click "add hierarchy" button
@@ -28,11 +41,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void PrepareToAddNode(string treeNodeName)
         {
-            var locator = ElementDictionary[ElementKey.AddHierarchyButton];
+            FocusOnHierarchyNode(treeNodeName);
 
-            treeViewInstance.FocusOnTreeNode(treeNodeName);
-
-            ElementLocator.FindElement(locator).Click();
+            CreateChildHierarchyButton.Click();
         }
 
         /// <summary>
@@ -42,7 +53,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FocusOnHierarchyNode(string treeNodeName)
         {
-            treeViewInstance.FocusOnTreeNode(treeNodeName);
+            HierarchyTree.FocusOnNode(treeNodeName);
         }
 
         /// <summary>
@@ -50,11 +61,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void NavigatorToHSetting()
+        public void NavigatorToHierarchySetting()
         {
-            navigatorInstance.NavigateToTarget(NavigationTarget.Settings);
-            ElementLocator.Pause(500);
-            navigatorInstance.NavigateToTarget(NavigationTarget.HierarchySettings);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
         }
 
         /// <summary>
@@ -64,9 +73,10 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickSaveButton()
         {
-            var locator = ElementDictionary[ElementKey.HierarchySaveButton];
+            //var locator = ElementDictionary[ElementKey.HierarchySaveButton];
+            //ElementLocator.FindElement(locator).Click();
 
-            ElementLocator.FindElement(locator).Click();
+            SaveButton.Click();
         }
 
         /// <summary>
@@ -76,9 +86,10 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickCancelButton()
         {
-            var locator = ElementDictionary[ElementKey.HierarchyCancelButton];
+            //var locator = ElementDictionary[ElementKey.HierarchyCancelButton];
+            //ElementLocator.FindElement(locator).Click();
 
-            ElementLocator.FindElement(locator).Click();
+            CancelButton.Click();
         }
 
         /// <summary>
@@ -91,11 +102,16 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             PrepareToAddNode(treeNodeName);
 
-            textFieldInstance.FillIn(ElementKey.HierarchyName, input.Name);
-            textFieldInstance.FillIn(ElementKey.HierarchyCode, input.Code);
-            comboBoxInstance.DisplayItems(ElementKey.HierarchyType);
-            comboBoxInstance.SelectItem(input.Type);
-            textFieldInstance.FillIn(ElementKey.HierarchyComment, input.Comment);
+            //textFieldInstance.FillIn(ElementKey.HierarchyName, input.Name);
+            //textFieldInstance.FillIn(ElementKey.HierarchyCode, input.Code);
+            //comboBoxInstance.DisplayItems(ElementKey.HierarchyType);
+            //comboBoxInstance.SelectItem(input.Type);
+            //textFieldInstance.FillIn(ElementKey.HierarchyComment, input.Comment);
+
+            NameTextField.Fill(input.Name);
+            CodeTextField.Fill(input.Code);
+            HierarchyTypeComboBox.SelectItem(input.Type);
+            CommentTextField.Fill(input.Comment);
         }
 
         /// <summary>
@@ -105,7 +121,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInName(string name)
         {
-            textFieldInstance.FillIn(ElementKey.HierarchyName, name);
+            //textFieldInstance.FillIn(ElementKey.HierarchyName, name);
+            NameTextField.Fill(name);
         }
 
         /// <summary>
@@ -115,7 +132,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInCode(string code)
         {
-            textFieldInstance.FillIn(ElementKey.HierarchyCode, code);
+            //textFieldInstance.FillIn(ElementKey.HierarchyCode, code);
+            CodeTextField.Fill(code);
         }
 
         /// <summary>
@@ -125,8 +143,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInType(string type)
         {
-            comboBoxInstance.DisplayItems(ElementKey.HierarchyType);
-            comboBoxInstance.SelectItem(type);
+            //comboBoxInstance.DisplayItems(ElementKey.HierarchyType);
+            //comboBoxInstance.SelectItem(type);
+            HierarchyTypeComboBox.SelectItem(type);
         }
 
         /// <summary>
@@ -136,7 +155,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInComment(string comment)
         {
-            textFieldInstance.FillIn(ElementKey.HierarchyComment, comment);
+            //textFieldInstance.FillIn(ElementKey.HierarchyComment, comment);
+            CommentTextField.Fill(comment);
         }
 
         /// <summary>
@@ -145,10 +165,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <param name="timeout">Waiting time</param>
         /// <returns></returns>
         public void WaitForCreateOKDisplay(int timeout)
-        { 
-            var locator = ElementDictionary[ElementKey.HierarchyCreateOKText];
-
-            ElementLocator.WaitForElement(locator, timeout);
+        {
+            JazzMessageBox.CreateSuccessMessageBox.WaitMeAppear();
         }
 
         /// <summary>
@@ -157,9 +175,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ConfirmCreateOKMagBox()
         {
-            var locator = ElementDictionary[ElementKey.HierarchyOKButton];
-
-            ElementLocator.FindElement(locator).Click();
+            JazzMessageBox.CreateSuccessMessageBox.Close();
         }
 
         /// <summary>
@@ -168,9 +184,10 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <param name="nodeChild">Child node name</param>
         /// <param name="nodeParent">Parent node name</param>
         /// <returns>True if the nodes are Child-Parent, false if not</returns>
-        public Boolean IsNodesChildParent(string nodeChild, string nodeParent)
+        public bool IsNodesChildParent(string nodeChild, string nodeParent)
         {
-            return treeViewInstance.IsNodesParentChild(nodeChild, nodeParent);
+            return HierarchyTree.IsChildNodeOfParent(nodeParent, nodeChild);
+            //return treeViewInstance.IsNodesParentChild(nodeChild, nodeParent);
         }
 
         /// <summary>
@@ -180,7 +197,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>True if the node is present, false if not</returns>
         public Boolean IsTreeNodePresent(string treeNodeName)
         {
-            return treeViewInstance.IsTreeNodePresent(treeNodeName);
+            return HierarchyTree.IsNodeDisplayed(treeNodeName);
+            //return treeViewInstance.IsTreeNodePresent(treeNodeName);
         }
 
         /// <summary>
@@ -190,7 +208,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void CollapseNode(string treeNodeName)
         {
-            treeViewInstance.Collapse(treeNodeName);
+            HierarchyTree.CollapseNode(treeNodeName);
+            //treeViewInstance.Collapse(treeNodeName);
         }
 
         /// <summary>
@@ -200,7 +219,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ExpandNode(string treeNodeName)
         {
-            treeViewInstance.Expand(treeNodeName);
+            //treeViewInstance.Expand(treeNodeName);
+            HierarchyTree.ExpandNode(treeNodeName);
         }
 
         /// <summary>
@@ -210,7 +230,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Key value</returns>
         public string GetTypeExpectedValue(string itemKey)
         {
-            return comboBoxInstance.GetItemTypeLangValue(itemKey);
+            //return comboBoxInstance.GetItemTypeLangValue(itemKey);
+            return HierarchyTypeComboBox.GetActualValue(itemKey);
         }
 
         /// <summary>
@@ -220,7 +241,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Name value</returns>
         public string GetNameValue()
         {
-            return comboBoxInstance.GetValue(ElementKey.HierarchyName);
+            //return comboBoxInstance.GetValue(ElementKey.HierarchyName);
+            return NameTextField.GetValue();
         }
 
         /// <summary>
@@ -230,7 +252,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Code value</returns>
         public string GetCodeValue()
         {
-            return comboBoxInstance.GetValue(ElementKey.HierarchyCode);
+            //return comboBoxInstance.GetValue(ElementKey.HierarchyCode);
+            return CodeTextField.GetValue();
         }
 
         /// <summary>
@@ -240,7 +263,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Code value</returns>
         public string GetTypeValue()
         {
-            return comboBoxInstance.GetValue(ElementKey.HierarchyType);
+            //return comboBoxInstance.GetValue(ElementKey.HierarchyType);
+            return HierarchyTypeComboBox.GetValue();
         }
 
         /// <summary>
@@ -250,7 +274,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Comment value</returns>
         public string GetCommentValue()
         {
-            return comboBoxInstance.GetValue(ElementKey.HierarchyComment);
+            //return comboBoxInstance.GetValue(ElementKey.HierarchyComment);
+            return CommentTextField.GetValue();
         }
     }
 }

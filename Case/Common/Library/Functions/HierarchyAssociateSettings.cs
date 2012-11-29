@@ -5,16 +5,25 @@ using System.Text;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
+using Mento.TestApi.WebUserInterface.Controls;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    public class Associate
+    public class HierarchyAssociateSettings
     {
-        private static Dictionary<string, Locator> ElementDictionary = ResourceManager.GetElementDictionary();
+        internal HierarchyAssociateSettings()
+        {
+        }
 
-        private Navigator navigatorInstance = ControlAccess.GetControl<Navigator>();
-        private TreeView treeViewInstance = ControlAccess.GetControl<TreeView>();
-        private Grid gridInstance = ControlAccess.GetControl<Grid>();
+        private HierarchyTree HierarchyTree = JazzTreeView.AssociationHierarchyTree;
+        private Grid TagList = JazzGrid.AssociationTagList;
+
+        public void ExpandHierarchyNodePath(string[] hierarchyNodePath)
+        {
+            HierarchyTree.ExpandNodePath(hierarchyNodePath);
+            TimeManager.PauseShort();
+        }
 
         /// <summary>
         /// Navigate to hierarchy associate setting
@@ -23,7 +32,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void NavigateToHierarchyAssociate()
         {
-            navigatorInstance.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
         }
 
         /// <summary>
@@ -33,7 +42,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void CheckedTag(string tagName)
         {
-            gridInstance.CheckedGridRowCheckbox(tagName);
+            TagList.CheckRowCheckbox(3, tagName);
         }
 
         /// <summary>
@@ -41,10 +50,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <returns></returns>
         public void ClickAssociateTagButton()
-        { 
-            var locator = ElementDictionary[ElementKey.AssociateTagButton];
-            
-            ElementLocator.FindElement(locator).Click();
+        {
+            JazzButton.AssociationSettingsTagAssociate.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         /// <summary>
@@ -52,9 +60,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <returns></returns>
         public void ClickAssociateButton()
-        { 
-            var locator = ElementDictionary[ElementKey.AssociateButton];
-            ElementLocator.FindElement(locator).Click();
+        {
+            JazzButton.AssociationSettingsAssociate.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         /// <summary>
@@ -63,9 +71,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>True if the tag displayed, false if not</returns>
         public Boolean IsTagOnAssociategGridView(string tagName)
         {
-            var locator = gridInstance.GetManualTagLocator(ElementKey.IsTagOnAssociateGrid, ManualElementName.tagName, tagName);
-            
-            return ElementLocator.IsElementPresent(locator);
+            return TagList.IsRowExist(3, tagName);
         }
     }
 }

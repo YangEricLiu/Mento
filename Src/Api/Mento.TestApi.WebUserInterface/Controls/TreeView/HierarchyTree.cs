@@ -9,8 +9,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class HierarchyTree : TreeView
     {
-        private const string HIERARCHYTREEXPATH = "//table[@class='x-grid-table x-grid-table-resizer']";
+        //private const string HIERARCHYTREEXPATH = "//table[@class='x-grid-table x-grid-table-resizer']";
 
-        public HierarchyTree() : base(new Locator(HIERARCHYTREEXPATH, ByType.Xpath)) { }
+        public HierarchyTree(Locator locator) : base(locator) { }
     }
 }

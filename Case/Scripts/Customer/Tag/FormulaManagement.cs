@@ -9,16 +9,20 @@ using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
+using Mento.ScriptCommon.Library;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.Tag
 {
     public class FormulaManagement : TestSuiteBase
     {
+        private static VTagSettings VTagSettings = JazzFunction.VTagSettings;
+
         [TestFixtureSetUp]
         public void CaseFixtureSetUp()
         {
-            ElementLocator.OpenJazz();
-            FunctionWrapper.Login.Login();
+            //ElementLocator.OpenJazz();
+            //FunctionWrapper.Login.Login();
         }
 
         [TestFixtureTearDown]
@@ -30,8 +34,9 @@ namespace Mento.Script.Customer.Tag
         [SetUp]
         public void CaseSetUp()
         {
-            FunctionWrapper.Formula.NavigatorToVtagSetting();
-            ElementLocator.Pause(2000);
+            VTagSettings.NavigatorToVTagSetting();
+            //ElementLocator.Pause(2000);
+            TimeManager.PauseMedium();
         }
 
         [TearDown]
@@ -47,18 +52,20 @@ namespace Mento.Script.Customer.Tag
             string vtagName = "AutoVtag001";
             string expectedFormula = "{vtag.AZuoDian}+{vtag.AZuoKongtiaoDian}";
 
-            FunctionWrapper.Formula.PrepareToAddFormula(vtagName);
+            VTagSettings.PrepareToAddFormula(vtagName);
 
-            FunctionWrapper.Formula.FillInFormulaField("{vtag.AZuoDian}");
-            FunctionWrapper.Formula.AppendFormulaField("+");
-            FunctionWrapper.Formula.DragTagToFormula("A座空调用电");
+            VTagSettings.FillInFormulaField("{vtag.AZuoDian}");
+            VTagSettings.AppendFormulaField("+");
+            VTagSettings.DragTagToFormula("A座空调用电");
 
-            FunctionWrapper.Formula.ClickSaveFormulaButton();
+            VTagSettings.ClickSaveFormulaButton();
 
-            FunctionWrapper.WaitForLoadingDisappeared(2000);
-            ElementLocator.Pause(500);
+            //FunctionWrapper.WaitForLoadingDisappeared(2000);
+            //ElementLocator.Pause(500);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.PauseShort();
 
-            Assert.AreEqual(FunctionWrapper.Formula.GetFormulaValue(), expectedFormula);
+            Assert.AreEqual(VTagSettings.GetFormulaValue(), expectedFormula);
 
         }
     }

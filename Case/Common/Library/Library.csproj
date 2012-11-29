@@ -53,6 +53,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlCollection\JazzButton.cs" />
+    <Compile Include="ControlCollection\JazzComboBox.cs" />
+    <Compile Include="ControlCollection\JazzControlCollection.cs" />
+    <Compile Include="ControlCollection\JazzGrid.cs" />
+    <Compile Include="ControlCollection\JazzMessageBox.cs" />
+    <Compile Include="ControlCollection\JazzTextField.cs" />
+    <Compile Include="ControlCollection\JazzTreeView.cs" />
+    <Compile Include="ControlCollection\Resource\JazzControlLocatorKey.cs" />
+    <Compile Include="ControlCollection\Resource\JazzControlLocatorRepository.cs" />
     <Compile Include="Functions\AreaDimensionSettings.cs" />
     <Compile Include="Functions\HierarchyAssociateSettings.cs" />
     <Compile Include="Functions\SystemDimensionSettings.cs" />
@@ -86,7 +95,11 @@
       <Name>TestData</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="ControlCollection\Resource\JazzControlLocatorMap.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

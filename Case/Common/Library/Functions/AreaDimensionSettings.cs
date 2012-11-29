@@ -15,16 +15,16 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static AreaDimensionTree AreaDimensionTree = JazzTreeView.HierarchySettingsAreaDimensionTree;
 
-        private static Button ShowHierarchyTreeButton;
-        private static Button CreateAreaDimensionButton;
+        private static Button ShowHierarchyTreeButton = JazzButton.AreaDimensionShowHierarchyTreeButton;
+        private static Button CreateAreaDimensionButton = JazzButton.AreaDimensionCreateButton;
 
-        private static Button SaveButton;
-        private static Button CancelButton;
-        private static Button ModifyButton;
-        private static Button DeleteButton;
+        private static Button SaveButton = JazzButton.AreaDimensionSettingsSaveButton;
+        private static Button CancelButton = JazzButton.AreaDimensionSettingsCancelButton;
+        private static Button ModifyButton = JazzButton.AreaDimensionSettingsModifyButton;
+        private static Button DeleteButton = JazzButton.AreaDimensionSettingsDeleteButton;
 
-        private static TextField NameTextField;
-        private static TextField CommentTextField;
+        private static TextField NameTextField = JazzTextField.AreaDimensionSettingsNameTextField;
+        private static TextField CommentTextField = JazzTextField.AreaDimensionSettingsCommentTextField;
 
 
         public void ShowHierarchyTree()

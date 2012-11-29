@@ -23,21 +23,21 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Grid PTagList;
 
-        private static Button CreatePTagButton;
+        private static Button CreatePTagButton = JazzButton.PTagSettingsCreatePTagButton;
 
-        private static Button ModifyButton;
-        private static Button SaveButton;
-        private static Button CancelButton;
-        private static Button DeleteButton;
+        private static Button ModifyButton = JazzButton.PTagSettingsModifyButton;
+        private static Button SaveButton = JazzButton.PTagSettingsSaveButton;
+        private static Button CancelButton = JazzButton.PTagSettingsCancelButton;
+        private static Button DeleteButton = JazzButton.PTagSettingsDeleteButton;
 
-        private static TextField NameTextField;
-        private static TextField CodeTextField;
-        private static TextField MeterCodeTextField;
-        private static TextField ChannelTextField;
-        private static ComboBox CommodityComboBox;
-        private static ComboBox UomComboBox;
-        private static ComboBox CalculationTypeComboBox;
-        private static TextField CommentTextField;
+        private static TextField NameTextField = JazzTextField.PTagSettingsNameTextField;
+        private static TextField CodeTextField = JazzTextField.PTagSettingsCodeTextField;
+        private static TextField MeterCodeTextField = JazzTextField.PTagSettingsMeterCodeTextField;
+        private static TextField ChannelTextField = JazzTextField.PTagSettingsChannelTextField;
+        private static ComboBox CommodityComboBox = JazzComboBox.PTagSettingsCommodityComboBox;
+        private static ComboBox UomComboBox = JazzComboBox.PTagSettingsUomComboBox;
+        private static ComboBox CalculationTypeComboBox = JazzComboBox.PTagSettingsCalculationTypeComboBox;
+        private static TextField CommentTextField = JazzTextField.PTagSettingsCommentTextField;
         
         /// <summary>
         /// Navigate to Ptag Configuration Page

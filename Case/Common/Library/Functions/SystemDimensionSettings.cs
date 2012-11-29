@@ -15,12 +15,12 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static SystemDimensionTree SystemDimensionTree = JazzTreeView.HierarchySettingsSystemDimensionTree;
 
-        private static Button ShowHierarchyTreeButton;
-        private static Button SetSystemDimensionButton;
+        private static Button ShowHierarchyTreeButton = JazzButton.SystemDimensionSettingsShowHierarchyTreeButton;
+        private static Button SetSystemDimensionButton = JazzButton.SystemDimensionSettingsSetButton;
 
         private static SystemDimensionTree DialogSystemDimensionTree = JazzTreeView.HierarchySettingsDialogSystemDimensionTree;
 
-        private static Button DialogReturnButton;
+        private static Button DialogReturnButton = JazzButton.SystemDimensionSettingsDialogReturnButton;
 
 
         public void ShowHierarchyTree()

@@ -25,7 +25,7 @@ namespace Mento.TestApi.WebUserInterface
         private static Dictionary<string, Locator> ReadXml(Stream stream)
         {
             const string ELEMENTMAP_MODULE_NAME = "WebElement";
-            const string ELEMENTMAP_ELEMENT_NAME = "Add";
+            const string ELEMENTMAP_ELEMENT_NAME = "add";
 
             XDocument xdoc = XDocument.Load(stream);
 

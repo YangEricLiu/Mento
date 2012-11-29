@@ -25,20 +25,20 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TabButton BasicPropertyTab = JazzButton.VTagSettingsBasicPropertyTabButton;
         private static TabButton FormulaTab = JazzButton.VTagSettingsFormulaTabButton;
 
-        private static Button CreateVTagButton;
+        private static Button CreateVTagButton = JazzButton.VTagSettingsCreateVTagButton;
 
-        private static Button ModifyButton;
-        private static Button SaveButton;
-        private static Button CancelButton;
-        private static Button DeleteButton;
+        private static Button ModifyButton = JazzButton.VTagSettingsModifyButton;
+        private static Button SaveButton = JazzButton.VTagSettingsSaveButton;
+        private static Button CancelButton = JazzButton.VTagSettingsCancelButton;
+        private static Button DeleteButton = JazzButton.VTagSettingsDeleteButton;
 
-        private static TextField NameTextField;
-        private static TextField CodeTextField;
-        private static ComboBox CommodityComboBox;
-        private static ComboBox UomComboBox;
-        private static ComboBox CalculationTypeComboBox;
-        private static ComboBox CalculationStepComboBox;
-        private static TextField CommentTextField;
+        private static TextField NameTextField = JazzTextField.VTagSettingsNameTextField;
+        private static TextField CodeTextField = JazzTextField.VTagSettingsCodeTextField;
+        private static ComboBox CommodityComboBox = JazzComboBox.VTagSettingsCommodityComboBox;
+        private static ComboBox UomComboBox = JazzComboBox.VTagSettingsUomComboBox;
+        private static ComboBox CalculationTypeComboBox = JazzComboBox.VTagSettingsCalculationTypeComboBox;
+        private static ComboBox CalculationStepComboBox = JazzComboBox.VTagSettingsCalculationStepComboBox;
+        private static TextField CommentTextField = JazzTextField.VTagSettingsCommentTextField;
 
         private static Grid FormulaPTagList = JazzGrid.VTagSettingsFormulaEditPTagList;
         private static FormulaField FormulaField = JazzTextField.FormulaField;

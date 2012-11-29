@@ -22,17 +22,17 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static HierarchyTree HierarchyTree = JazzTreeView.HierarchySettingsHierarchyTree;
 
-        private static Button CreateChildHierarchyButton;
+        private static Button CreateChildHierarchyButton = JazzButton.HierarchySettingsCreateChildHierarchyButton;
 
-        private static Button ModifyButton;
-        private static Button SaveButton;
-        private static Button CancelButton;
-        private static Button DeleteButton;
+        private static Button ModifyButton = JazzButton.HierarchySettingsModifyButton;
+        private static Button SaveButton = JazzButton.HierarchySettingsSaveButton;
+        private static Button CancelButton = JazzButton.HierarchySettingsCancelButton;
+        private static Button DeleteButton = JazzButton.HierarchySettingsDeleteButton;
 
-        private static TextField NameTextField;
-        private static TextField CodeTextField;
-        private static ComboBox HierarchyTypeComboBox;
-        private static TextField CommentTextField;
+        private static TextField NameTextField = JazzTextField.HierarchySettingsNameTextField;
+        private static TextField CodeTextField = JazzTextField.HierarchySettingsCodeTextField;
+        private static ComboBox HierarchyTypeComboBox = JazzComboBox.HierarchySettingsHierarchyTypeComboBox;
+        private static TextField CommentTextField = JazzTextField.HierarchySettingsCommentTextField;
 
         /// <summary>
         /// Click one hierarchy node then click "add hierarchy" button

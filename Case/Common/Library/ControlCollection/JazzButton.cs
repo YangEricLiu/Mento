@@ -13,7 +13,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button LoginSubmitButton = GetControl<Button>(JazzControlLocatorKey.ButtonLoginSubmit);
         #endregion
 
-
         #region Navigator buttons
         //level 1
         public static Button NavigatorHomePageButton;//{NavigationTarget.HomePage,new NavigatorItem( NavigationTarget.HomePage, null, "header-btn-homepage-btnEl",ByType.ID)},
@@ -48,21 +47,53 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorAssociationAreaDimensionButton;//{NavigationTarget.AssociationAreaDimension, new NavigatorItem(NavigationTarget.AssociationAreaDimension,NavigationTarget.AssociationSettings,"st-menu-areadtags-btnEl",ByType.ID)},
         #endregion
 
-
         #region Settings buttons
         #region Hierarchy settings buttons
-        public static Button DimensionSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonDimensionSelectHierarchy);
-
-        public static Button SystemDimensionUpdateButton = GetControl<Button>(JazzControlLocatorKey.ButtonSystemDimensionUpdate);
-
-        public static Button AreaDimensionCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonAreaDimensionCreate);
+        public static Button HierarchySettingsCreateChildHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonHierarchySettingsCreateChildHierarchy);
+        public static Button HierarchySettingsModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonHierarchySettingsModify);
+        public static Button HierarchySettingsSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonHierarchySettingsSave);
+        public static Button HierarchySettingsCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonHierarchySettingsCancel);
+        public static Button HierarchySettingsDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonHierarchySettingsDelete);
         #endregion
 
-        #region Tag settings buttons
+        #region PTag settings buttons
+        public static Button PTagSettingsCreatePTagButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagSettingsCreatePTag);
+
+        public static Button PTagSettingsModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagSettingsModify);
+        public static Button PTagSettingsSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagSettingsSave);
+        public static Button PTagSettingsCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagSettingsCancel);
+        public static Button PTagSettingsDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagSettingsDelete);
+        #endregion
+
+        #region VTag settings buttons
         public static TabButton VTagSettingsBasicPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonVTagSettingsBasicProperty);
         public static TabButton VTagSettingsFormulaTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonVTagSettingsFormula);
         public static Button VTagSettingsFormulaUpdate = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsFormulaUpdate);
         public static Button VTagSettingsFormulaSave = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsFormulaSave);
+
+        public static Button VTagSettingsCreateVTagButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsCreateVTag);
+
+        public static Button VTagSettingsModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsModify);
+        public static Button VTagSettingsSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsSave);
+        public static Button VTagSettingsCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsCancel);
+        public static Button VTagSettingsDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsDelete);
+        #endregion
+
+        #region System dimension settings buttons
+        public static Button SystemDimensionSettingsShowHierarchyTreeButton = GetControl<Button>(JazzControlLocatorKey.ButtonDimensionShowHierarchyTree);
+
+        public static Button SystemDimensionSettingsSetButton = GetControl<Button>(JazzControlLocatorKey.ButtonSystemDimensionSet);
+        public static Button SystemDimensionSettingsDialogReturnButton = GetControl<Button>(JazzControlLocatorKey.ButtonSystemDimensionSettingsDialogReturn);
+        #endregion
+
+        #region Area dimension settings buttons
+        public static Button AreaDimensionShowHierarchyTreeButton = SystemDimensionSettingsShowHierarchyTreeButton;
+        public static Button AreaDimensionCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonAreaDimensionSettingsCreate);
+
+        public static Button AreaDimensionSettingsSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonAreaDimensionSettingsSave);
+        public static Button AreaDimensionSettingsCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonAreaDimensionSettingsCancel);
+        public static Button AreaDimensionSettingsModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonAreaDimensionSettingsModify);
+        public static Button AreaDimensionSettingsDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonAreaDimensionSettingsDelete);
         #endregion
 
         #region Association

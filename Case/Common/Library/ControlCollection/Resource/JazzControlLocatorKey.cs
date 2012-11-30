@@ -44,7 +44,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         //--Association
         public static string ButtonNavigatorAssociationHierarchy = "ButtonNavigatorAssociationHierarchy";
         public static string ButtonNavigatorAssociationSystemDimension = "ButtonNavigatorAssociationSystemDimension";
-        public static string ButtonNavigatorAssociationAreaDimensionButton = "ButtonNavigatorAssociationAreaDimensionButton";
+        public static string ButtonNavigatorAssociationAreaDimension = "ButtonNavigatorAssociationAreaDimensionButton";
         #endregion
 
         #region Custormer settings
@@ -171,6 +171,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridVTagSettingsFormulaEditPTagList = "GridVTagSettingsFormulaEditPTagList";
         public static string GridVTagSettingsVTagList = "GridVTagSettingsVTagList";
         public static string GridAssociationTagList = "GridAssociationTagList";
+        public static string GridPTagSettingsPTagList = "GridPTagSettingsPTagList";
         #endregion
     }
 }

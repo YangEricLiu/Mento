@@ -36,14 +36,15 @@ namespace Mento.Script.Customer.TagAssociation
             //FunctionWrapper.Associate.NavigateToHierarchyAssociate();
             //ElementLocator.Pause(2000);
             Association.NavigateToHierarchyAssociate();
-            TimeManager.PauseMedium();
+            TimeManager.MediumPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
             //
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            BrowserHandler.Refresh();
         }
 
         [Test]
@@ -53,19 +54,20 @@ namespace Mento.Script.Customer.TagAssociation
             //FunctionWrapper.Hierarchy.FocusOnHierarchyNode("Schneider");
             //ElementLocator.Pause(1000);
             Association.ExpandHierarchyNodePath(new string[] { "Schneider" });
+            Association.SelectHierarchyNode("Schneider");
 
             Association.ClickAssociateTagButton();
             //FunctionWrapper.WaitForLoadingDisappeared(2000);
             //ElementLocator.Pause(1000);
-            TimeManager.PauseShort();
+            TimeManager.ShortPause();
 
-            Association.CheckedTag("test01");
+            Association.CheckedTag("Amy_m_V1_Vtagconst1");
             Association.ClickAssociateButton();
             //FunctionWrapper.WaitForLoadingDisappeared(2000);
             //ElementLocator.Pause(1000);
-            TimeManager.PauseShort();
+            TimeManager.ShortPause();
 
-            Assert.IsTrue(Association.IsTagOnAssociategGridView("test01"));
+            Assert.IsTrue(Association.IsTagOnAssociategGridView("Amy_m_V1_Vtagconst1"));
         }
     }
 }

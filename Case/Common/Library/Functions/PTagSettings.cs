@@ -21,7 +21,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
-        private static Grid PTagList;
+        private static Grid PTagList = JazzGrid.PTagSettingsPTagList;
 
         private static Button CreatePTagButton = JazzButton.PTagSettingsCreatePTagButton;
 
@@ -47,7 +47,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void NavigatorToPtagSetting()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsP);
-            TimeManager.PauseShort();
+            //TimeManager.ShortPause();
         }
 
         /// <summary>
@@ -97,9 +97,11 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="tagName">Tag name</param>
         /// <returns></returns>
-        public void PrepareToModifyPtag(string tagName)
+        public void PrepareToModifyPtag(string tagCode)
         {
-            PTagList.FocusOnRow(1,tagName);
+            //PTagList.FocusOnRow(1, tagName);
+            //Be care that if the column is TagName, cell index should be 1
+            PTagList.FocusOnRow(2, tagCode);
             ModifyButton.Click();
         }
 
@@ -202,7 +204,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetCommentValue()
         {
-            return CommodityComboBox.GetValue();
+            return CommentTextField.GetValue();
         }
 
         public void FocusOnPTag(string ptagName)

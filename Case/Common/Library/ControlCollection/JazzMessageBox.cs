@@ -8,7 +8,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public class JazzMessageBox : JazzControlCollection
     {
-        public static CreateSuccessMessageBox CreateSuccessMessageBox = GetControl<CreateSuccessMessageBox>(null);
+        public static MessageBox MessageBox = GetControl<MessageBox>(null);
 
         public static LoadingMask LoadingMask = GetControl<LoadingMask>(null);
     }

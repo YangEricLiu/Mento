@@ -6,22 +6,11 @@ using OpenQA.Selenium;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
+    /// <summary>
+    /// FormulaField is a textarea
+    /// </summary>
     public class FormulaField : TextField
-    {
-        private IWebElement _TextArea;
-        protected IWebElement TextArea
-        {
-            get
-            {
-                if (this._TextArea == null)
-                {
-                    this._TextArea = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.FormulaTextArea));
-                }
-
-                return this._TextArea;
-            }
-        }
-        
+    {        
         public FormulaField() : base(ControlLocatorRepository.GetLocator(ControlLocatorKey.FormulaTextBox)) { }
         
         /// <summary>
@@ -31,17 +20,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void DragTagIn(IWebElement tagRowElement)
         {
-            ElementHandler.DragAndDrop(tagRowElement, this.TextArea);
-        }
-
-        /// <summary>
-        /// Get the text value of formula field
-        /// </summary>
-        /// <param name="tagName"></param>
-        /// <returns></returns>
-        public string GetValue()
-        {
-            return this.TextArea.GetAttribute("value");
+            ElementHandler.DragAndDrop(tagRowElement, this.RootElement);
         }
     }
 }

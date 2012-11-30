@@ -13,17 +13,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static string CELLINDEXVARIABLE = "cellIndex";
         private static string CELLTEXTVARIABLE = "cellText";
 
-        private IWebElement[] _CurrentRows;
         protected IWebElement[] CurrentRows
         {
             get 
             {
-                if (this._CurrentRows == null)
-                {
-                    this._CurrentRows = FindChildren(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRows));
-                }
-
-                return this._CurrentRows;
+                return FindChildren(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRows));
             }
         }
 

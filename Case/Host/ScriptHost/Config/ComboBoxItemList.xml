@@ -45,15 +45,21 @@
   <add key = "kgPerson" value = "$@Data.Uom.kgPerson"/>
   <add key = "TPerson" value = "$@Data.Uom.TPerson"/>
   <add key = "m3Person" value = "$@Data.Uom.m3Person"/>
-  
+
+  <!--CaculationStep-->
+  <add key = "Hourly" value = "$@Common.AggregationStep.Hourly"/>
+  <add key = "Daily" value = "$@Common.AggregationStep.Daily"/>
+  <add key = "Monthly" value = "$@Common.AggregationStep.Monthly"/>
+       
   <!--CaculationType-->
-  <add key = "Sum" value = "$@I18N.Common.Glossary.Sum"/>
-  <add key = "Avg" value = "$@I18N.Common.Glossary.Avg"/>
-  <add key = "Max" value = "$@I18N.Common.Glossary.Max"/>
-  <add key = "Min" value = "$@I18N.Common.Glossary.Min"/>
+  <add key = "Sum" value = "$@Common.Glossary.Sum"/>
+  <!--<add key = "Avg" value = "$@Common.Glossary.Avg"/>-->
+  <add key = "Avg" value = "平均值"/>
+  <add key = "Max" value = "$@Common.Glossary.Max"/>
+  <add key = "Min" value = "$@Common.Glossary.Min"/>
   
   <!--Hierarchy Type-->
-  <add key = "Orgnization" value = "$@I18N.Common.Glossary.Organization"/>
-  <add key = "Site" value = "$@I18N.Common.Glossary.Site"/>
-  <add key = "Building" value = "$@I18N.Common.Glossary.Building"/>
+  <add key = "Orgnization" value = "$@Common.Glossary.Organization"/>
+  <add key = "Site" value = "$@Common.Glossary.Site"/>
+  <add key = "Building" value = "$@Common.Glossary.Building"/>
 </ItemList>

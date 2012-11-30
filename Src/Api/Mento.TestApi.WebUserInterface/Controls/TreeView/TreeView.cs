@@ -21,6 +21,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public void ClickNode(string nodeText)
         {
             this.GetTreeNodeElement(nodeText).Click();
+
+            //TimeManager.PauseShort();
+
+            GetControl<LoadingMask>().WaitLoading();
         }
 
         /// <summary>
@@ -33,6 +37,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
             if (!IsNodeExpanded(nodeText))
             {
                 ClickNodeExpander(nodeText);
+
+                //pause to wait animate finish
+                TimeManager.MediumPause();
             }
         }
 
@@ -51,7 +58,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
                 //wait the next item appear
                 if (nextNodeLocator != null)
-                    ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear);
+                    ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear, container: this.RootElement);
 
                 TimeManager.Pause(500);
             }
@@ -67,6 +74,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
             if (IsNodeExpanded(nodeText))
             {
                 ClickNodeExpander(nodeText);
+
+                //pause to wait animate finish
+                TimeManager.MediumPause();
             }
         }
         
@@ -119,14 +129,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
             CollapseNode(parentNodeText);            
 
             //when parent node is collapsed, child node does not display
-            if (!ElementHandler.Displayed(childLocator, container: parentElement))
+            if (!ElementHandler.Displayed(childLocator, container: this.RootElement))
             {
                 ExpandNode(parentNodeText);
 
                 //when parent node is expanded, child node displays
-                if (ElementHandler.Displayed(childLocator, container: parentElement))
+                if (ElementHandler.Displayed(childLocator, container: this.RootElement))
                     //and child identation is one level less than parent node
-                    return GetNodeIndentation(parentNodeText) - 1 == GetNodeIndentation(childNodeText);
+                    return GetNodeIndentation(parentNodeText) + 1 == GetNodeIndentation(childNodeText);
             }
 
             return false;
@@ -141,9 +151,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             IWebElement node = GetTreeNodeElement(nodeText);
 
-            Locator indentationIconLocator = new Locator("//img",ByType.Xpath);
+            Locator indentationIconLocator = new Locator("img", ByType.TagName);
 
-            return node.FindElements(indentationIconLocator.ToBy()).Count - 1;
+            return ElementHandler.FindElements(indentationIconLocator, container: node).Length;//.FindElements(indentationIconLocator.ToBy()).Count - 1;
         }
 
         #region private methods
@@ -168,7 +178,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             Locator imageButtonsLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.TreeNodeImage);
 
-            IWebElement[] imageButtons = nodeElement.FindElements(imageButtonsLocator.ToBy()).ToArray();
+            IWebElement[] imageButtons = ElementHandler.FindElements(imageButtonsLocator, nodeElement);// nodeElement.FindElements(imageButtonsLocator.ToBy()).ToArray();
 
             return imageButtons[imageButtons.Length - 2];
         }

@@ -19,7 +19,7 @@ namespace Mento.Script.ClientAccess
         [TearDown]
         public void RunAfterAnyTests()
         {
-            JazzBrowseManager.OpenJazz();
+            JazzBrowseManager.CloseJazz();
         }
     }
 }

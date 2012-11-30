@@ -31,6 +31,11 @@ namespace Mento.TestApi.WebUserInterface
         {
             BrowserHandler.Quit();
         }
+
+        public static void RefreshJazz()
+        {
+            BrowserHandler.Refresh();
+        }
         
         private static void ClickHttpsSecurityWarning()
         {

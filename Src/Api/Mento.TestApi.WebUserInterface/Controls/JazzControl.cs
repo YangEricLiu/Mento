@@ -24,7 +24,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 if (_ParentContainer == null)
                     return ElementHandler.FindElement(_RootLocator);
                 else
-                    return _ParentContainer.FindElement(_RootLocator.ToBy());
+                    return ElementHandler.FindElement(_RootLocator, _ParentContainer);
             }
         }
 
@@ -36,17 +36,17 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         protected virtual IWebElement FindChild(Locator locator)
         {
-            return RootElement.FindElement(locator.ToBy());
+            return ElementHandler.FindElement(locator, container: this.RootElement);
         }
 
         protected virtual IWebElement[] FindChildren(Locator locator)
         {
-            return RootElement.FindElements(locator.ToBy()).ToArray();
+            return ElementHandler.FindElements(locator, container: this.RootElement).ToArray();
         }
 
         public static T GetControl<T>(Locator locator = null) where T : JazzControl
         {
-            Type[] EmptyConstructorParameterControls = new Type[] { typeof(LoadingMask), typeof(FormulaField), };
+            Type[] EmptyConstructorParameterControls = new Type[] { typeof(LoadingMask), typeof(FormulaField), typeof(MessageBox) };
 
             if (EmptyConstructorParameterControls.Contains(typeof(T)))
             {

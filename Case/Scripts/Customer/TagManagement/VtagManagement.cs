@@ -14,7 +14,7 @@ using Mento.ScriptCommon.TestData.Customer;
 using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
-namespace Mento.Script.Customer.Tag
+namespace Mento.Script.Customer.TagManagement
 {
     [TestFixture]
     //[ManualCaseID("TA-VtagConfigue")]
@@ -45,14 +45,15 @@ namespace Mento.Script.Customer.Tag
             //FunctionWrapper.Ptag.NavigatorToPtagSetting();
             //ElementLocator.Pause(2000);   
             VTagSettings.NavigatorToVTagSetting();
-            TimeManager.PauseMedium();
+            TimeManager.MediumPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
             //
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            BrowserHandler.Refresh();
         }
         
         [Test]

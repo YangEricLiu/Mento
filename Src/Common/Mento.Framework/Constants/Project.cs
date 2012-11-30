@@ -20,6 +20,10 @@ namespace Mento.Framework.Constants
         /// </summary>
         public const string EXECUTIONTEMPCONFIGNAME = @"temp\executioncontext.xml";
 
+        public static string LocalizationStringResourceName = "string.js";
+
+        public static string LocalizationDataResourceName = "data.js";
+
         /// <summary>
         /// $#
         /// </summary>

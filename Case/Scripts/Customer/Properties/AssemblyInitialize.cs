@@ -14,15 +14,13 @@ namespace Mento.Script.Customer
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            JazzBrowseManager.OpenJazz();
-
-            JazzFunction.LoginPage.Login();
+            TestAssemblyInitializer.Initialize();
         }
 
         [TearDown]
         public void RunAfterAnyTests()
         {
-            JazzBrowseManager.OpenJazz();
+            TestAssemblyInitializer.Desctuct();
         }
     }
 }

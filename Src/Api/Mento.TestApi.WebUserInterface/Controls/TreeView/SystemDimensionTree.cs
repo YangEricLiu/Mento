@@ -20,11 +20,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public void CheckNode(string nodeText)
         {
-            Locator checkboxLocator = Locator.GetVariableLocator(CHECKBOXXPATHFORMAT,ByType.Xpath,TREENODEVARIABLENAME,nodeText);
-            
+            Locator checkboxLocator = Locator.GetVariableLocator(CHECKBOXXPATHFORMAT,ByType.XPath,TREENODEVARIABLENAME,nodeText);
+
             if (ElementHandler.Exists(checkboxLocator))
             {
                 IWebElement checkbox = FindChild(checkboxLocator);
+                //Console.WriteLine("checkbox: " + nodeText + ", at point:" + checkbox.Location.X + "," + checkbox.Location.Y);
 
                 if (!String.Equals(checkbox.GetAttribute("aria-checked"), "true", StringComparison.OrdinalIgnoreCase))
                 {
@@ -41,9 +42,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 CheckNode(nodeText);
 
-                TimeManager.PauseShort();
-
                 ExpandNode(nodeText);
+
+                TimeManager.MediumPause();
             }
         }
 

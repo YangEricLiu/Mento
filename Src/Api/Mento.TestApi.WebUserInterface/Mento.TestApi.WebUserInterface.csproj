@@ -69,7 +69,6 @@
     <Compile Include="Controls\Button\ToggleButton.cs" />
     <Compile Include="Controls\ComboBox\ComboBox.cs" />
     <Compile Include="Controls\ComboBox\ComboBoxItemRepository.cs" />
-    <Compile Include="Controls\Common\CreateSuccessMessageBox.cs" />
     <Compile Include="Controls\Common\MessageBox.cs" />
     <Compile Include="Controls\Grid\Grid.cs" />
     <Compile Include="Controls\TextField\FormulaField.cs" />
@@ -106,7 +105,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Controls\ControlLocatorMap.xml" />
+    <EmbeddedResource Include="Controls\ControlLocatorMap.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

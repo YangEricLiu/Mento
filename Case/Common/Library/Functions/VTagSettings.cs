@@ -52,7 +52,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void NavigatorToVTagSetting()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
-            TimeManager.PauseShort();
+            TimeManager.ShortPause();
         }
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace Mento.ScriptCommon.Library.Functions
             SwitchToFormulaTab();
 
             JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
-            TimeManager.PauseShort();
+            TimeManager.ShortPause();
 
             JazzButton.VTagSettingsFormulaUpdate.Click();
         }

@@ -9,8 +9,9 @@ using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.Utility;
 
-namespace Mento.Script.Customer.Dimension
+namespace Mento.Script.Customer.HierarchySettings
 {
     [TestFixture]
     public class AreaDimensionSuite : TestSuiteBase
@@ -24,23 +25,30 @@ namespace Mento.Script.Customer.Dimension
         [TearDown]
         public void ScriptTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            BrowserHandler.Refresh();
         }
 
         [Test]
         public void CreateAreaDimension()
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
-            var testArea = new { Name = "area001", Comment = "auto test" };
+            var randomString = Generate.Random<string>();
+            var testArea = new { Name = "AutoArea" + randomString, Comment = "Auto area " + randomString };
 
             ////Select a Building node.	
             ////The Area dimension is light and enable to select.
-            TimeManager.PauseShort();
+            TimeManager.ShortPause();
             
             ////Select a Building node.	
             ////The Area dimension is light and enable to select.
             AreaSettings.ShowHierarchyTree();
             AreaSettings.ExpandHierarchyNodePath(new string[] { "Schneider", "12345" });
+            AreaSettings.SelectHierarchyNode("124");
+
+            //AreaSettings.ExpandAreaDimensionNodePath(new string[] { "124" });
+            AreaSettings.SelectAreaDimensionNode("124");
+
 
             //Click "子区域" button to add Area node.	
             //The Area property display and enable to input.
@@ -50,6 +58,8 @@ namespace Mento.Script.Customer.Dimension
             //Add Area node successfully.
             AreaSettings.FillAreaDimensionData(testArea.Name, testArea.Comment);
             AreaSettings.ClickSaveButton();
+
+            TimeManager.ShortPause();
 
             Assert.IsTrue(AreaSettings.IsShownSuccessMessage());
 

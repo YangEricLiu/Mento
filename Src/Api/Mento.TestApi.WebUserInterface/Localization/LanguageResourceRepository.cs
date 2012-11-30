@@ -8,6 +8,7 @@ using Mento.Framework;
 using System.Configuration;
 using Mento.Framework.Constants;
 using Mento.Framework.Exceptions;
+using System.Text.RegularExpressions;
 
 namespace Mento.TestApi.WebUserInterface
 {
@@ -23,7 +24,7 @@ namespace Mento.TestApi.WebUserInterface
             {
                 if (_ResourceDictionary == null)
                 {
-                    _ResourceDictionary = ParseUiResource().Union(ParseDataResource()).ToDictionary(item => item.Key, item => item.Value);
+                    _ResourceDictionary = ParseStringResource().Union(ParseDataResource()).ToDictionary(item => item.Key, item => item.Value);
                 }
 
                 return _ResourceDictionary;
@@ -31,13 +32,50 @@ namespace Mento.TestApi.WebUserInterface
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="expression"></param>
+        /// <returns></returns>
+        public static string ReplaceLanguageVariables(string expression)
+        {
+            if (expression.IndexOf(Project.LanguagePrefix) < 0)
+                return expression;
+
+            Regex variableFormat = new Regex(@"\" + Project.LanguagePrefix + @"(\w+(\.{1})?)+");
+            Match match = variableFormat.Match(expression);
+
+            if (!match.Success)
+                return expression;
+
+            foreach (Group matchGroup in match.Groups)
+            {
+                var variable = matchGroup.Value;
+
+                expression = expression.Replace(variable, LanguageResourceRepository.GetLanguageVariableValue(variable));
+            }
+
+            return expression;
+        }
+
+        /// <summary>
         /// Get resource value from language variable, which starts with '$@'
         /// </summary>
         /// <param name="variableName">language variable, which starts with '$@'</param>
         /// <returns>resource value</returns>
-        public static string GetVariableValue(string variableName)
+        public static string GetLanguageVariableValue(string variableName)
         {
-            return ResourceDictionary[variableName.Replace(Project.LanguagePrefix, String.Empty)];
+            if (variableName.StartsWith(Project.LanguagePrefix))
+            {
+                string replacedVariableName = variableName.Replace(Project.LanguagePrefix, String.Empty);
+                if (!ResourceDictionary.ContainsKey(replacedVariableName))
+                    throw new ApiException(String.Format("The given language variable was not found: '{0}'", variableName));
+
+                return ResourceDictionary[replacedVariableName];
+            }
+            else
+            {
+                return variableName;
+            }
         }
 
         /// <summary>
@@ -45,15 +83,15 @@ namespace Mento.TestApi.WebUserInterface
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns>The language key&value dictionary with JS key replaced</returns>
-        private static Dictionary<string, string> ParseUiResource()
+        private static Dictionary<string, string> ParseStringResource()
         {
-            string filePath = Path.Combine(GetResourceFileDirectory(), "ui.js");
+            string filePath = Path.Combine(GetResourceFileDirectory(), Project.LocalizationStringResourceName);
 
-            Dictionary<string, string> dict = LoadUiResource(filePath);
+            Dictionary<string, string> dict = LoadStringResource(filePath);
             Dictionary<string, string> finalDict = new Dictionary<string, string>(0);
 
-            string finalValue = "";
-            string signal = "##";
+            string finalValue = String.Empty;
+            string signal = new string(ASCII.OCTOTHORPE, 2);//"##";
 
             foreach (string key in dict.Keys)
             {
@@ -71,7 +109,7 @@ namespace Mento.TestApi.WebUserInterface
                         }
                     }
 
-                    finalValue = finalValue.Replace(signal, "");
+                    finalValue = finalValue.Replace(signal, String.Empty);
                 }
 
                 finalDict.Add(key, finalValue);
@@ -84,7 +122,7 @@ namespace Mento.TestApi.WebUserInterface
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns>The language key&value dictionary with out JS key replaced</returns>
-        private static Dictionary<string, string> LoadUiResource(string filePath)
+        private static Dictionary<string, string> LoadStringResource(string filePath)
         {
             StreamReader objReader = new StreamReader(filePath);
             string sLine = "";
@@ -113,14 +151,36 @@ namespace Mento.TestApi.WebUserInterface
 
         private static Dictionary<string, string> ParseDataResource()
         {
-            string filePath = Path.Combine(GetResourceFileDirectory(), "data.js");
+            string filePath = Path.Combine(GetResourceFileDirectory(), Project.LocalizationDataResourceName);
 
             //if there is ui resource variable in data resource, replace it
-            throw new NotImplementedException();
+            return LoadDataResource(filePath);
         }
         private static Dictionary<string, string> LoadDataResource(string filePath)
         {
-            throw new NotImplementedException();
+            StreamReader dataReader = new StreamReader(filePath);
+            string dataLine = "";
+            string key = "";
+            string value = "";
+            Dictionary<string, string> lineList = new Dictionary<string, string>();
+
+            while (!dataReader.EndOfStream)
+            {
+                dataLine = dataReader.ReadLine();
+                if (!String.IsNullOrEmpty(dataLine) && dataLine[0] != '/' && !dataLine.Contains("{}") && dataLine.Contains("="))
+                {
+                    string[] tmp = dataLine.Split(new char[2] { '=', ';' });
+                    key = tmp[0].Replace(" ", "");
+                    value = tmp[1].Replace(" ", "").Replace("'", "");
+                    if (!lineList.ContainsKey(key))
+                    {
+                        lineList.Add(key, value);
+                    }
+                }
+            }
+            dataReader.Close();
+
+            return lineList;
         }
 
         private static string GetResourceFileDirectory()

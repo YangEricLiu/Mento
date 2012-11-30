@@ -19,12 +19,12 @@ using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
 
-namespace Mento.Script.Customer.Hierarchy
+namespace Mento.Script.Customer.HierarchySettings
 {
     [TestFixture]
     public class HierarchyManagement : TestSuiteBase
     {
-        private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
+        private static Mento.ScriptCommon.Library.Functions.HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
 
         [TestFixtureSetUp]
         public void CaseFixtureSetUp()
@@ -52,7 +52,8 @@ namespace Mento.Script.Customer.Hierarchy
         public void CaseTearDown()
         {
             //
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            BrowserHandler.Refresh();
         }
 
         [Test]
@@ -65,7 +66,7 @@ namespace Mento.Script.Customer.Hierarchy
             HierarchySettings.WaitForCreateOKDisplay(120);
 
             //ElementLocator.Pause(500);
-            TimeManager.PauseShort();
+            TimeManager.ShortPause();
 
             HierarchySettings.ConfirmCreateOKMagBox();
 

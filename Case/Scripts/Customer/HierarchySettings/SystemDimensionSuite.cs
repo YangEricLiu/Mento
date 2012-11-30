@@ -9,7 +9,7 @@ using Mento.ScriptCommon.Library.Functions;
 using OpenQA.Selenium;
 using Mento.ScriptCommon.Library;
 
-namespace Mento.Script.Customer.Dimension
+namespace Mento.Script.Customer.HierarchySettings
 {
     [TestFixture]
     public class SystemDimensionSuite : TestSuiteBase
@@ -17,20 +17,18 @@ namespace Mento.Script.Customer.Dimension
         [SetUp]
         public void ScriptSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
         }
 
         [TearDown]
         public void ScriptTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            BrowserHandler.Refresh();
         }
 
         [Test]
-        [TestCase]
-        [TestCase]
-        [TestCase]
-        public void AssociateSystemDimension()
+        public void UpdateSystemDimension()
         {
             var SystemSettings = JazzFunction.SystemDimensionSettings;
 
@@ -38,6 +36,7 @@ namespace Mento.Script.Customer.Dimension
             //The system dimension tree for the selected hierarchy node is displayed.
             SystemSettings.ShowHierarchyTree();
             SystemSettings.ExpandHierarchyNodePath(new string[] { "Schneider" });
+            SystemSettings.SelectHierarchyNode("12345");
 
             SystemSettings.ShowSystemDimensionDialog();
 

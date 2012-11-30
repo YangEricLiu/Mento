@@ -9,6 +9,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
     {
         #region Common locators
         public static string LoadingMask = "LoadingMask";
+        //public static string CreateSuccessMessageBox = "CreateSuccessMessageBox";
+        //public static string CreateSuccessMessageBoxOkButton = "CreateSuccessMessageBoxOkButton";
+
+        public static string MessageBox = "MessageBox";
+        public static string MessageBoxOkButton = "MessageBoxOkButton";
+        public static string MessageBoxConfirmButton = "MessageBoxConfirmButton";
+        public static string MessageBoxNoButton = "MessageBoxNoButton";
+        public static string MessageBoxCancelButton = "MessageBoxCancelButton";
         #endregion
 
         #region TreeView locators
@@ -40,5 +48,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
         
             
         #endregion
+
     }
 }

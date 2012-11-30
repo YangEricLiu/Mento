@@ -8,17 +8,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class Button : JazzControl
     {
-        private IWebElement _ButtonInput;
         protected IWebElement ButtonInput
         {
             get 
             {
-                if (this._ButtonInput == null)
-                {
-                    this._ButtonInput = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.ButtonInput));
-                }
-
-                return this._ButtonInput;
+                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.ButtonInput));
             }
         }
 

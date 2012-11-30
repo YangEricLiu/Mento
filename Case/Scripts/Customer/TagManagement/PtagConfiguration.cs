@@ -15,7 +15,7 @@ using Mento.ScriptCommon.TestData.Customer;
 using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
-namespace Mento.Script.Customer.Tag
+namespace Mento.Script.Customer.TagManagement
 {
     public class PtagConfiguration : TestSuiteBase
     {
@@ -40,14 +40,15 @@ namespace Mento.Script.Customer.Tag
             //FunctionWrapper.Ptag.NavigatorToPtagSetting();
             //ElementLocator.Pause(2000);   
             PTagSettings.NavigatorToPtagSetting();
-            TimeManager.PauseMedium();
+            TimeManager.MediumPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
             //
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            BrowserHandler.Refresh();
         }
 
         [Test]
@@ -59,7 +60,7 @@ namespace Mento.Script.Customer.Tag
             PTagSettings.FillInPtag(testData.InputData);
             PTagSettings.ClickSaveButton();
 
-            TimeManager.PauseMedium();
+            TimeManager.MediumPause();
 
             PTagSettings.FocusOnPTag(testData.ExpectedData.Name);
             Assert.AreEqual(testData.ExpectedData.Name, PTagSettings.GetNameValue());
@@ -77,13 +78,14 @@ namespace Mento.Script.Customer.Tag
         [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfiguration), "TA-PtagConfiguration-002")]
         public void ModifyPtag(PtagData testData)
         {
-            string tagName = "tagformodification";
+            //string tagName = "tagformodification";
+            string tagName = "Amy_Ptag1_Code";
             PTagSettings.PrepareToModifyPtag(tagName);
             PTagSettings.FillInCode(testData.InputData.Code);
             PTagSettings.ClickSaveButton();
 
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.PauseMedium();
+            TimeManager.ShortPause();
 
             PTagSettings.FocusOnPTag(tagName);
             Assert.AreEqual(testData.ExpectedData.Code, PTagSettings.GetCodeValue());            

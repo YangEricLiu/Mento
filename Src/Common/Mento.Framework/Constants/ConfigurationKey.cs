@@ -34,5 +34,7 @@ namespace Mento.Framework.Constants
         public const string EXECUTION_CONFIGURATION = "executionConfiguration";
         public const string EXPORT_LOCATION_CONFIGURATION = "exportLocationConfiguration";
 
+        public const string ASSEMBLY_INITIALIZE_DATABASE = "assemblyInitializeDatabase";
+
      }
 }

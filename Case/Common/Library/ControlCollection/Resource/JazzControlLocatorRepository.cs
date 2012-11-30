@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Mento.TestApi.WebUserInterface;
+using Mento.Framework.Exceptions;
 
 namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
@@ -26,6 +27,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static Locator GetLocator(string key)
         {
+            if (!LocatorDictionary.Keys.Contains(key))
+                throw new ApiException(String.Format("The jazz control locator key '{0}' was not found in JazzControlLocatorDictionary.", key));
+
             return LocatorDictionary[key];
         }
     }

@@ -22,7 +22,13 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ExpandHierarchyNodePath(string[] hierarchyNodePath)
         {
             HierarchyTree.ExpandNodePath(hierarchyNodePath);
-            TimeManager.PauseShort();
+            TimeManager.FlashPause();
+        }
+
+        public void SelectHierarchyNode(string hierarchyName)
+        {
+            HierarchyTree.ClickNode(hierarchyName);
+            TimeManager.FlashPause();
         }
 
         /// <summary>

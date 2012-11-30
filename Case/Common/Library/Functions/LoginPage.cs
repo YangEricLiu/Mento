@@ -35,7 +35,7 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzButton.LoginSubmitButton.Click();
             //ElementLocator.Driver.FindElement(By.Id("txtPassword")).SendKeys("\n");
 
-            TimeManager.PauseLong();
+            TimeManager.LongPause();
 
             //Amy update starts: add customer selection for R1.0. so if running case in R1.0, these need to be uncomment.
             //comboBoxInstance.DisplayItems(ElementKey.CustomerSelection);

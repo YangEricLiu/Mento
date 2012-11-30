@@ -25,8 +25,8 @@ namespace Mento.TestApi.WebUserInterface
             catch (NoSuchElementException ex)
             {
                 //capture error image
-                //throw new ApiException(String.Format("Can not found element with locator {0}", locator.ToString()), ex);
-                throw ex;
+                throw new ApiException(String.Format("Can not found element with locator {0}", locator.ToString()), ex);
+                //throw ex;
             }
         }
 
@@ -140,8 +140,9 @@ namespace Mento.TestApi.WebUserInterface
             {
                 element = container == null ? FindElement(locator) : container.FindElement(locator.ToBy());
             }
-            catch (NoSuchElementException)
+            catch (Exception ex)
             {
+
             }
 
             return element;

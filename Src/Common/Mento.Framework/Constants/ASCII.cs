@@ -41,9 +41,9 @@ namespace Mento.Framework.Constants
         public const char OCTOTHORPE = '#';
 
         /// <summary>
-        /// $
+        /// @
         /// </summary>
-        public const char AT = '$';
+        public const char AT = '@';
 
         /// <summary>
         /// ,

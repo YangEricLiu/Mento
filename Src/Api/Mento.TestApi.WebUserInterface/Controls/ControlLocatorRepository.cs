@@ -7,12 +7,13 @@ using Mento.Utility;
 using System.Configuration;
 using Mento.Framework.Constants;
 using System.Xml.Linq;
+using Mento.Framework.Exceptions;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
     internal static class ControlLocatorRepository
     {
-        private const string ELEMENTMAP_RESOURCE_NAME = "Element.ControlLocatorMap.xml";
+        private const string ELEMENTMAP_RESOURCE_NAME = "Controls.ControlLocatorMap.xml";
 
         private static Dictionary<string, Locator> _LocatorDictionary;
         public static Dictionary<string, Locator> LocatorDictionary
@@ -30,6 +31,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public static Locator GetLocator(string key)
         {
+            if (!LocatorDictionary.Keys.Contains(key))
+                throw new ApiException(String.Format("The locator key '{0}' was not found in ControlLocatorDictionary.", key));
+
             return LocatorDictionary[key];
         }
 

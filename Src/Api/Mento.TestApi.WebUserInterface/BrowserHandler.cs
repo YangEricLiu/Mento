@@ -77,6 +77,11 @@ namespace Mento.TestApi.WebUserInterface
         {
             DriverFactory.Instance.Manage().Cookies.DeleteAllCookies();
         }
+
+        public static void Refresh()
+        {
+            DriverFactory.Instance.Navigate().Refresh();
+        }
     }
 
 

@@ -7,6 +7,8 @@ using System.Xml.Linq;
 using Mento.Utility;
 using System.IO;
 using System.Xml.XPath;
+using System.Text.RegularExpressions;
+using Mento.Framework.Constants;
 
 namespace Mento.TestApi.WebUserInterface
 {
@@ -33,12 +35,14 @@ namespace Mento.TestApi.WebUserInterface
                         select new KeyValuePair<string, Locator>(
                             element.Attribute("key").Value,
                             new Locator(
-                                LanguageResourceRepository.GetVariableValue(element.Attribute("value").Value),
+                                //need to find out all resource variables
+                                LanguageResourceRepository.ReplaceLanguageVariables(element.Attribute("value").Value),
                                 EnumHelper.StringToEnum<ByType>(element.Attribute("type").Value)
                             )
                         );
 
             return query.ToDictionary(item => item.Key, item => item.Value);
         }
+
     }
 }

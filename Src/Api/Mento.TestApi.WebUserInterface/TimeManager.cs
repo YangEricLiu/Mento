@@ -9,32 +9,41 @@ namespace Mento.TestApi.WebUserInterface
     {
         public const int WAITELEMENTTIMEOUT = 30; //seconds
 
-        private const int PAUSESHORT = 500; //mili seconds
-        private const int PAUSEMEDIUM = 1000; //mili seconds
-        private const int PAUSELONG = 2000; //mili seconds
+        private static int PauseFlash = 50; //mili seconds
+        private static int PauseShort = 500; //mili seconds
+        private static int PauseMedium = 1000; //mili seconds
+        private static int PauseLong = 2000; //mili seconds
+
+        /// <summary>
+        /// Pause for 0.05 seconds
+        /// </summary>
+        public static void FlashPause()
+        {
+            Pause(PauseFlash);
+        }
 
         /// <summary>
         /// Pause for 0.5 seconds
         /// </summary>
-        public static void PauseShort()
+        public static void ShortPause()
         {
-            Pause(PAUSESHORT);
+            Pause(PauseShort);
         }
 
         /// <summary>
         /// Pause for 1 second
         /// </summary>
-        public static void PauseMedium()
+        public static void MediumPause()
         {
-            Pause(PAUSEMEDIUM);
+            Pause(PauseMedium);
         }
 
         /// <summary>
         /// Pause for 2 seconds
         /// </summary>
-        public static void PauseLong()
+        public static void LongPause()
         {
-            Pause(PAUSELONG);
+            Pause(PauseLong);
         }
 
         /// <summary>

@@ -72,6 +72,7 @@
     <Compile Include="Functions\PTagSettings.cs" />
     <Compile Include="Functions\VTagSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestAssemblyInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">

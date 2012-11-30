@@ -70,6 +70,7 @@
     <Compile Include="ExcelHelper.cs" />
     <Compile Include="FileSystemHelper.cs" />
     <Compile Include="HardwareHelper.cs" />
+    <Compile Include="ObjectGenerateHelper.cs" />
     <Compile Include="Properties\Manufacture.cs" />
     <Compile Include="PathHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

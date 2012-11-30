@@ -10,31 +10,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
     {
         private const string COMBOBOXITEMVARIABLENAME = "itemKey";
 
-        private IWebElement _SelectTrigger;
         protected IWebElement SelectTrigger 
         {
             get 
             {
-                if (this._SelectTrigger == null)
-                {
-                    this._SelectTrigger = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxTrigger));
-                }
-
-                return this._SelectTrigger;
+                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxTrigger));
             }
         }
 
-        private IWebElement _SelectInput;
         protected IWebElement SelectInput
         {
             get
             {
-                if (this._SelectInput == null)
-                {
-                    this._SelectInput = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxInput));
-                }
-
-                return this._SelectInput;
+                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxInput));
             }
         }
 
@@ -83,12 +71,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns>Key value</returns>
         public string GetActualValue(string itemKey)
         {
-            return ComboBoxItemRepository.ComboBoxItemDictionary[itemKey];
+            return ComboBoxItemRepository.GetComboBoxItemRealValue(itemKey);
         }
 
         protected virtual Locator GetComboBoxItemLocator(string itemKey)
         {
-            string itemRealValue = ComboBoxItemRepository.ComboBoxItemDictionary[itemKey];
+            string itemRealValue = ComboBoxItemRepository.GetComboBoxItemRealValue(itemKey);
 
             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxItem), COMBOBOXITEMVARIABLENAME, itemRealValue); 
         }

@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
+    /// <summary>
+    /// TextField is an Input or TextArea
+    /// </summary>
     public class TextField : JazzControl
     {
         public TextField(Locator locator) : base(locator) { }

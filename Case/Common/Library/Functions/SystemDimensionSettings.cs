@@ -33,6 +33,11 @@ namespace Mento.ScriptCommon.Library.Functions
             DimensionHierarchyTree.ExpandNodePath(hierarchyNodePath);
         }
 
+        public void SelectHierarchyNode(string hierarchyNodeName)
+        {
+            DimensionHierarchyTree.ClickNode(hierarchyNodeName);
+        }
+
         public void ShowSystemDimensionDialog()
         {
             SetSystemDimensionButton.Click();

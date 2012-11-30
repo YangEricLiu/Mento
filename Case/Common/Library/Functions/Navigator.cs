@@ -34,7 +34,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
                 JazzMessageBox.LoadingMask.WaitLoading();
 
-                TimeManager.PauseShort();
+                TimeManager.ShortPause();
             }
         }
 
@@ -43,7 +43,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void NavigateHome()
         {
-            NavigateToTarget(NavigationTarget.HomePage);
+            NavigateToTarget(NavigationTarget.EnergyView);
 
             JazzMessageBox.LoadingMask.WaitLoading();
         }

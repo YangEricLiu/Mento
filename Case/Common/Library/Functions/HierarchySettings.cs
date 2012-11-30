@@ -166,7 +166,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void WaitForCreateOKDisplay(int timeout)
         {
-            JazzMessageBox.CreateSuccessMessageBox.WaitMeAppear();
+            JazzMessageBox.MessageBox.WaitMeAppear();
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ConfirmCreateOKMagBox()
         {
-            JazzMessageBox.CreateSuccessMessageBox.Close();
+            JazzMessageBox.MessageBox.OK();
         }
 
         /// <summary>

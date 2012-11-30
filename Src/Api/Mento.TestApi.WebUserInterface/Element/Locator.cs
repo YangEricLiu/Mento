@@ -65,7 +65,7 @@ namespace Mento.TestApi.WebUserInterface
 
         public static Locator GetVariableLocator(Locator locator, string variableName, string variableValue)
         {
-            return GetVariableLocator(locator.Value, locator.Type, variableName, variableName);
+            return GetVariableLocator(locator.Value, locator.Type, variableName, variableValue);
         }
 
         public static Locator GetVariableLocator(Locator locator, Hashtable variables)
@@ -82,7 +82,7 @@ namespace Mento.TestApi.WebUserInterface
             {
                 case ByType.ID: return By.Id(locatorValue);
                 case ByType.Name: return By.Name(locatorValue);
-                case ByType.Xpath: return By.XPath(locatorValue);
+                case ByType.XPath: return By.XPath(locatorValue);
                 case ByType.TagName: return By.TagName(locatorValue);
                 case ByType.ClassName: return By.ClassName(locatorValue);
                 case ByType.CssSelector: return By.CssSelector(locatorValue);
@@ -105,7 +105,7 @@ namespace Mento.TestApi.WebUserInterface
     {
         ID = 1,
         Name = 2,
-        Xpath = 3,
+        XPath = 3,
         ClassName = 4,
         CssSelector = 5,
         LinkText = 6,

@@ -20,11 +20,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 ElementHandler.Wait(LoadingLocator, WaitType.ToAppear, timeout: maxtime <= 0 ? 1 : maxtime);
 
-                TimeManager.PauseShort();
+                TimeManager.ShortPause();
 
                 ElementHandler.Wait(LoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 5 : maxtime);
 
-                TimeManager.PauseShort();
+                TimeManager.ShortPause();
             }
             catch
             {

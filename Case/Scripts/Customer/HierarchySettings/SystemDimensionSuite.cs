@@ -8,10 +8,14 @@ using Mento.Framework.Script;
 using Mento.ScriptCommon.Library.Functions;
 using OpenQA.Selenium;
 using Mento.ScriptCommon.Library;
+using Mento.Framework.Attributes;
 
 namespace Mento.Script.Customer.HierarchySettings
 {
     [TestFixture]
+    [Owner("Aries")]
+    [CreateTime("2012-11-19")]
+    [ManualCaseID("TC-J1-SmokeTest-013")]
     public class SystemDimensionSuite : TestSuiteBase
     {
         [SetUp]
@@ -28,6 +32,7 @@ namespace Mento.Script.Customer.HierarchySettings
         }
 
         [Test]
+        [CaseID("TC-J1-SmokeTest-013")]
         public void UpdateSystemDimension()
         {
             var SystemSettings = JazzFunction.SystemDimensionSettings;

@@ -9,15 +9,41 @@ namespace Mento.Utility
 {
     public static class FileSystemHelper
     {
-        public static void CopySharedFiles(string serverDirectory, string localMappingDrive, string userName, string password, string destinationDirectory)
+        public static void DownloadSharedFiles(string serverDirectory, string localMappingDrive, string userName, string password, string downloadDestinationDirectory)
         {
-            if (Directory.Exists(destinationDirectory))
-                Directory.Delete(destinationDirectory, true);
+            if (Directory.Exists(downloadDestinationDirectory))
+                Directory.Delete(downloadDestinationDirectory, true);
 
             int status = SambaShareServerHelper.Connect(serverDirectory, localMappingDrive, userName, password);
             if (status == (int)ERROR_ID.ERROR_SUCCESS)
             {
-                CopyDirectory(localMappingDrive + Path.DirectorySeparatorChar.ToString(), destinationDirectory);
+                CopyDirectory(localMappingDrive + Path.DirectorySeparatorChar.ToString(), downloadDestinationDirectory);
+            }
+            else
+            {
+                throw new Exception("Can not connect to the specified server.");
+            }
+
+            SambaShareServerHelper.Disconnect(localMappingDrive);
+        }
+
+        public static void UploadSharedFiles(string serverDirectory, string localMappingDrive, string userName, string password, string uploadSourceDirectory)
+        {
+            int status = SambaShareServerHelper.Connect(serverDirectory, localMappingDrive, userName, password);
+            if (status == (int)ERROR_ID.ERROR_SUCCESS)
+            {
+                string virtualDrive = localMappingDrive + Path.DirectorySeparatorChar.ToString();
+                if (!uploadSourceDirectory.EndsWith("\\"))
+                {
+                    string folderName = uploadSourceDirectory.TrimEnd('\\').Split('\\').Last();
+                    new DirectoryInfo(virtualDrive).CreateSubdirectory(folderName);
+
+                    CopyDirectory(uploadSourceDirectory, Path.Combine(virtualDrive, folderName));
+                }
+                else
+                {
+                    CopyDirectory(uploadSourceDirectory, virtualDrive);
+                }
             }
             else
             {

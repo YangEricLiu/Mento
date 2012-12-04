@@ -8,6 +8,7 @@ using Mento.Business.Plan.Entity;
 using Mento.Business.Script.Entity;
 using Mento.Business.Script.BusinessLogic;
 using Mento.Framework.Attributes;
+using Mento.Framework.Constants;
 
 namespace Mento.App.Controllers
 {
@@ -20,78 +21,117 @@ namespace Mento.App.Controllers
         [Command]
         public static void Create([Parameter]string planFile)
         {
-            planFile = @"D:\publish\TA\plan-example.xml";
-
             Console.WriteLine("creating plan..");
-            try
-            {
-                PlanBL.Create(planFile);
-            }
-            catch (Exception ex)
-            {
-                ColorConsole.WriteLine(ex.Message, ConsoleColor.Red);
-            }
+
+            PlanBL.Create(planFile);
+
+            ConsoleHelper.PrintSuccessMessage();
         }
 
         [Command]
         public static void Update([Parameter]string planID, [Parameter]string planFile)
         {
-            planID = "TA-P02";
-            planFile = @"D:\publish\TA\plan-example.xml";
+            Console.WriteLine("updating plan '{0}'..",planID);
 
-            PlanBL.Update(planID,planFile);
+            PlanBL.Update(planID, planFile);
+
+            ConsoleHelper.PrintSuccessMessage();
         }
 
         [Command]
         public static void Delete([Parameter]string planID)
         {
-            planID = "TA-P01";
+            Console.WriteLine("deleting plan '{0}'..", planID);
+
             PlanBL.Delete(planID);
+
+            ConsoleHelper.PrintSuccessMessage();
         }
 
         [Command]
         public static void View()
         {
+            Console.WriteLine("Begin to retrieve all plan data..");
+
             PlanEntity[] plans = PlanBL.Export();
             int planNumber = plans.GetLength(0);
 
             Console.WriteLine("There are {0} plans currently", planNumber);
 
-            //Display the plan 
-            Console.WriteLine("\n{0,-20}{1,-20}{2,-8}{3,-13}{4,-9}{5,-10}", "PlanID", "Name", "ProductVersion", "Owner", "UpdateTime","Status");
-            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------");
+            string[] headers = new string[] { "PlanID", "Name", "Version", "Owner", "UpdateTime", "Status" };
+            string[] formats = new string[] { "{0,-20}", "{1,-20}", "{2,-8}", "{3,-13}", "{4,-15}", "{5,-10}" };
+
+            string format = String.Join(String.Empty, formats);
+
+            Console.WriteLine(format, headers);
+            Console.WriteLine(new String(ASCII.SUBTRACT, 10));
 
             foreach (var plan in plans)
-            {   
-                //format the plan information
-                Console.WriteLine("\n{0,-20}{1,-20}{2,-8}{3,-13}{4,-9}{5,-10}", plan.PlanID, plan.Name,plan.ProductVersion, plan.Owner, plan.UpdateTime,plan.Status);
+            {
+                Console.WriteLine(format, plan.PlanID, plan.Name, plan.ProductVersion, plan.Owner, plan.UpdateTime.ToString("yyyy-MM-dd"), plan.Status);
             }
+
+            Console.WriteLine("In the mean while, the plan data are exported to plan export directory.");
         }
 
         [Command]
         public static void View([Parameter]string planID)
         {
+            Console.WriteLine("Begin to retrieve all scripts in plan '{0}'..", planID);
+
             ScriptEntity[] scripts = PlanBL.Export(planID);
             int scriptsNumber = scripts.GetLength(0);
 
-            Console.WriteLine("There are {0} scripts in plan -- {1}currently", scriptsNumber, planID);
+            Console.WriteLine("There are {0} scripts in plan '{1}' currently", scriptsNumber, planID);
+            
+            string[] headers = new string[] { "CaseID", "Name", "Type", "Priority", "Owner" };
+            string[] formats = new string[] { "{0,-25}", "{1,-40}", "{2,-8}", "{3,-13}", "{4,-9}" };
 
-            //Display scripts list
-            Console.WriteLine("\n{0,-25}{1,-40}{2,-8}{3,-13}{4,-9}", "CaseID", "Name", "Type", "Priority", "Owner");
-            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------");
+            string format = String.Join(String.Empty, formats);
+
+            Console.WriteLine(format, headers);
+            Console.WriteLine(new String(ASCII.SUBTRACT, 10));
 
             foreach (var script in scripts)
             {
-                //format the script information
-                Console.WriteLine("\n{0,-25}{1,-40}{2,-8}{3,-13}{4,-9}", script.CaseID, script.Name, script.Type, script.Priority, script.Owner);
+                Console.WriteLine(format, script.CaseID, script.Name, script.Type, script.Priority, script.Owner);
             }
+
+            Console.WriteLine("In the mean while, the plan data are exported to plan export directory.");
         }
 
         [Command]
         public static void Run([Parameter]string planID, [Parameter(ShortName = "u")]string url, [Parameter(ShortName = "b")]string browser, [Parameter(ShortName = "l")]string language)
         {
-            planID = "TA-P02";
-            ExecutionBL.Execute(planID,url,browser,language); 
+            Console.WriteLine("Start execution..");
+
+            List<ResultEntity> results = ExecutionBL.Execute(planID, url, browser, language);
+
+            Console.WriteLine("Execution finished.");
+
+            if (results.Count <= 0)
+            {
+                Console.WriteLine("No result collected.");
+                return;
+            }
+
+            ExecutionEntity execution = ExecutionBL.GetExecutionByID(results.First().ExecutionID);
+
+            int caseCount = PlanBL.GetPlanByPlanID(planID).ScriptList.Count;
+            TimeSpan? elapsedTime = execution.EndTime.HasValue ? (execution.EndTime - execution.StartTime) : null;
+            Console.WriteLine("{0} {1} scripts run, time taken {2}s", planID, caseCount, elapsedTime.HasValue ? elapsedTime.ToString() : "0");
+            Console.WriteLine("Result:");
+
+            string[] headers = new string[] { "ExecutionID", "CaseID", "Status", "FailReason" };
+            string[] formats = new string[] { "{0,-8}", "{1,-30}", "{2,-14}", "{3,-30}" };
+
+            string format = String.Join(String.Empty, formats);
+
+            foreach (var group in results.GroupBy(r => r.CaseID))
+            {
+                ConsoleColor color = group.First().Status == ScriptExecutionStatus.Passed ? ConsoleColor.Green : group.First().Status == ScriptExecutionStatus.NotRun ? ConsoleColor.Yellow : ConsoleColor.Red;
+                ConsoleHelper.WriteColorLine(String.Format(format, group.Key, group.First().ExecutionID, group.First().Status, group.First().FailReason), color);
+            }
         }
     }
 }

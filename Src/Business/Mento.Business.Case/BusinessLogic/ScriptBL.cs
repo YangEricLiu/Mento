@@ -54,7 +54,7 @@ namespace Mento.Business.Script.BusinessLogic
         public ScriptEntity[] Export()
         {
             //string excelFilePath = ExportConfig.ScriptExportDirectory;
-            string excelFilePath = @"D:\backup\ScriptMetaData.xlsx";
+            string excelFilePath = Path.Combine(ExportConfig.ScriptExportDirectory, "list.xls");
 
             String[] headerList = new string[] { "CaseID", "ManualCaseID", "Name", 
                 "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime" };
@@ -62,18 +62,20 @@ namespace Mento.Business.Script.BusinessLogic
             System.Data.DataTable scriptsTable = ScriptDA.RetrieveScriptsToDataTable();
 
             //Open excel file which restore scripts data
-            ExcelHelper handler = new ExcelHelper(excelFilePath, false);
+            //ExcelHelper handler = new ExcelHelper(excelFilePath, true);
 
-            handler.OpenOrCreate();
+            //handler.OpenOrCreate();
 
             //Get Worksheet object 
-            Worksheet sheet = handler.GetWorksheet("ScriptsData");
+            //Worksheet sheet = handler.GetWorksheet("ScriptsData");
+
+            ExcelHelper.ExportToExcel(scriptsTable, excelFilePath, "ScriptList");
 
             //Import data from the start
-            handler.ImportDataTable(sheet, headerList, scriptsTable);
+            //handler.ImportDataTable(sheet, headerList, scriptsTable);
 
-            handler.Save();
-            handler.Dispose();
+            //handler.Save();
+            //handler.Dispose();
 
             return ScriptDA.RetrieveAll();
         }
@@ -139,7 +141,7 @@ namespace Mento.Business.Script.BusinessLogic
         private Dictionary<MethodInfo, List<Type>> ValidateScript(out List<ScriptEntity> scriptList)
         {
             //string scriptPath = @"D:\publish\TA\Release0.1.0.1";
-            FileSystemHelper.CopySharedFiles(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, ExecutionConfig.ScriptDirectory);
+            FileSystemHelper.DownloadSharedFiles(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, ExecutionConfig.ScriptDirectory);
 
             Dictionary<MethodInfo, List<Type>> validationFaults = new Dictionary<MethodInfo, List<Type>>();
             scriptList = new List<ScriptEntity>();

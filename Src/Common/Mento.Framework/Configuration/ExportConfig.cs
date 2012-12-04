@@ -12,7 +12,7 @@ namespace Mento.Framework.Configuration
 {
     public static class ExportConfig
     {
-        private const string PLANEXPORTDIRECTORY = "resultExportDirectory";
+        private const string PLANEXPORTDIRECTORY = "planExportDirectory";
         private const string SCRIPTEXPORTDIRECTORY = "scriptExportDirectory";
         private const string RESULTEXPORTDIRECTORY = "resultExportDirectory";
 

@@ -32,40 +32,39 @@ namespace Mento.App.Controllers
                     foreach(var type in item.Value)
                         messageBuilder.Append(type.Name).Append(type == item.Value.Last() ? String.Empty : ASCII.COMMA.ToString());
 
-                    ColorConsole.WriteLine(String.Format("{0}.{1}:{2}", item.Key.DeclaringType.FullName,item.Key.Name, messageBuilder.ToString()), ConsoleColor.Red);
+                    ConsoleHelper.WriteColorLine(String.Format("{0}.{1}:{2}", item.Key.DeclaringType.FullName,item.Key.Name, messageBuilder.ToString()), ConsoleColor.Red);
                 }
             }
             else
             {
-                ColorConsole.WriteLine("Synchronization successfully finished!", ConsoleColor.Green);
+                ConsoleHelper.WriteColorLine("Synchronization successfully finished!", ConsoleColor.Green);
             }
         }
 
         [Command]
         public static void View()
         {
+            Console.WriteLine("Begin to retrieve all script data..");
+
             ScriptEntity[] scripts = ScriptBL.Export();
             int scriptNumber = scripts.GetLength(0);
 
             Console.WriteLine("There are {0} scripts currently", scriptNumber);
+                        
+            string[] headers = new string[] { "CaseID", "Name", "Type", "Priority", "Owner" };
+            string[] formats = new string[] { "{0,-25}", "{1,-40}", "{2,-8}", "{3,-13}", "{4,-9}" };
+            
+            string format = String.Join(String.Empty, formats);
 
-            //Console.WriteLine("\n{0,-10}{1,-16}{2,-8}{3,-13}{4,-8}{5,-12}{6,-11}{7,-10}{8,-9}{9,-14}{10,-12}", "CaseID", "ManualCaseID", "Name",
-            //    "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime");
-            //Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------");
-
-            //For the item string is too long, so just display 5 column
-            Console.WriteLine("\n{0,-25}{1,-40}{2,-8}{3,-13}{4,-9}", "CaseID", "Name", "Type", "Priority", "Owner");
-            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine(format, headers);
+            Console.WriteLine(new String(ASCII.SUBTRACT, 10));
 
             foreach (var script in scripts)
             {
-                //Console.WriteLine("\n{0,-10}{1,-16}{2,-8}{3,-13}{4,-8}{5,-12}{6,-11}{7,-10}{8,-9}{9,-14}{10,-12}",script.CaseID, script.ManualCaseID, script.Name,
-                //script.SuiteName, script.Type, script.Priority, script.Feature, script.Module, script.Owner, script.CreateTime, script.SyncTime);
-                
-                //format the script information
-                //For the item string is too long, so just display 5 column
-                Console.WriteLine("\n{0,-25}{1,-40}{2,-8}{3,-13}{4,-9}", script.CaseID, script.Name,script.Type, script.Priority, script.Owner);
+                Console.WriteLine(format, script.CaseID, script.Name, script.Type, script.Priority, script.Owner);
             }
+
+            Console.WriteLine("In the mean while, the script data are exported to script export directory.");
         }
     }
 }

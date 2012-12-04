@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\publish\Mento\script\Mento.Script.ClientAccess.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-12-04" time="13:43:11">
+  <environment nunit-version="2.6.1.12217" clr-version="4.0.30319.17929" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\publish\Mento\Binary" machine-name="ZHANGFENG-WIN7" user="zhangfeng" user-domain="zhangfeng-win7" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="D:\publish\Mento\script\Mento.Script.ClientAccess.dll" executed="True" result="Success" success="True" time="42.040" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="Mento" executed="True" result="Success" success="True" time="42.035" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Script" executed="True" result="Success" success="True" time="42.035" asserts="0">
+            <results>
+              <test-suite type="SetUpFixture" name="ClientAccess" executed="True" result="Success" success="True" time="42.034" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="Login" executed="True" result="Success" success="True" time="17.907" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="CommonUserLoginSuite" executed="True" result="Success" success="True" time="17.907" asserts="0">
+                        <properties>
+                          <property name="Owner" value="Aries" />
+                          <property name="CreateTime" value="2012-11-22" />
+                          <property name="ManualCaseID" value="TC-J1-SmokeTest-031" />
+                        </properties>
+                        <results>
+                          <test-case name="Mento.Script.ClientAccess.Login.CommonUserLoginSuite.Login" executed="True" result="Success" success="True" time="17.898" asserts="1">
+                            <properties>
+                              <property name="CaseID" value="TC-J1-SmokeTest-031" />
+                            </properties>
+                          </test-case>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

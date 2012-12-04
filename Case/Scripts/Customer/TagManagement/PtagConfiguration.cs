@@ -17,6 +17,8 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.TagManagement
 {
+    [TestFixture]
+    [ManualCaseID("TC-J1-SmokeTest-002")]
     public class PtagConfiguration : TestSuiteBase
     {
         private PTagSettings PTagSettings = JazzFunction.PTagSettings;
@@ -52,8 +54,8 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
-        [CaseID("TA-PtagConfiguration-001"), CreateTime("2012-11-12"), Owner("Amy")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfiguration), "TA-PtagConfiguration-001")]
+        [CaseID("TC-J1-SmokeTest-002"), CreateTime("2012-11-12"), Owner("Amy")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfiguration), "TC-J1-SmokeTest-002")]
         public void AddPtag(PtagData testData)
         {
             PTagSettings.PrepareToAddPtag();

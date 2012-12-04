@@ -33,6 +33,16 @@ namespace Mento.Business.Plan.BusinessLogic
 
         private static ScriptBL ScriptBL = new ScriptBL();
 
+        public ExecutionEntity GetExecutionByID(long executionID)
+        {
+            ExecutionEntity entity = ExecutionDA.Retrieve(executionID);
+
+            if (entity == null)
+                throw new AppException(String.Format("Execution record '{0}' does not exist",executionID));
+
+            return entity;
+        }
+
         public DataTable ExportByPlanID(string planID)
         {
             PlanEntity plan = PlanBL.GetPlanByPlanID(planID);
@@ -63,7 +73,7 @@ namespace Mento.Business.Plan.BusinessLogic
             return dataTable;
         }
 
-        public void Execute(string planID, string url, string browser, string language)
+        public List<ResultEntity> Execute(string planID, string url, string browser, string language)
         {
             PlanEntity plan = PlanBL.GetPlanByPlanID(planID);
 
@@ -74,11 +84,11 @@ namespace Mento.Business.Plan.BusinessLogic
             long executionID = CreateExecutionRecord(plan);
 
             string workFolder = Path.Combine(ExecutionConfig.ExecutionDirectory, String.Format("{0}-{1}", plan.PlanID, executionID));
-            
+
             //copy published script from publish directory to local
-            if (!Directory.Exists(ExecutionConfig.ScriptDirectory) || ExecutionConfig.IsRefreshScriptsOnExecution)
-                FileSystemHelper.CopySharedFiles(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, ExecutionConfig.ScriptDirectory);
-            
+            if (!Directory.Exists(ExecutionConfig.ScriptDirectory) || Directory.GetFiles(ExecutionConfig.ScriptDirectory).Length <= 0 || ExecutionConfig.IsRefreshScriptsOnExecution)
+                FileSystemHelper.DownloadSharedFiles(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, ExecutionConfig.ScriptDirectory);
+
             //execute initialize sql script
             JazzDatabaseOperator.Initialize();
 
@@ -90,6 +100,9 @@ namespace Mento.Business.Plan.BusinessLogic
             ExecutionContext.Destruct();
             JazzDatabaseOperator.Destruct();
 
+            //archive error image
+            ArchiveExecutionResult(workFolder);
+
             //collect execute result, split result for every script
             List<ResultEntity> results = GetTestSuiteResults(workFolder, executionID);
 
@@ -98,6 +111,8 @@ namespace Mento.Business.Plan.BusinessLogic
             {
                 ResultBL.Create(result);
             }
+
+            return results;
         }
         
         #region Private methods
@@ -105,37 +120,46 @@ namespace Mento.Business.Plan.BusinessLogic
         {
             foreach (var groupItem in plan.ScriptList.GroupBy(s => s.Assembly))
             {
-                if (String.IsNullOrEmpty(groupItem.Key))
+                try
+                {
+                    if (String.IsNullOrEmpty(groupItem.Key))
+                        continue;
+
+                    StringBuilder Command = new StringBuilder();
+                    //make nunit project
+
+                    //add project parameter
+                    Command.Append("/run:");
+                    Command.Append(String.Join(ASCII.COMMA.ToString(), groupItem.OrderBy(s => s.Priority).Select(s => s.FullName).ToArray()));
+                    Command.Append(ASCII.SPACE);
+                    Command.Append(Path.Combine(workFolder, String.Format("../../script/{0}", groupItem.Key)));
+
+                    //add work parameter
+                    Command.Append(ASCII.SPACE);
+                    Command.Append("/work:");
+                    Command.Append(workFolder);
+
+                    //add nologo parameter
+                    Command.Append(ASCII.SPACE);
+                    Command.Append("/nologo");
+
+                    //add result parameter
+                    Command.Append(ASCII.SPACE);
+                    Command.Append("/result:");
+                    Command.Append(Path.Combine(workFolder, String.Format("result-{0}.xml", groupItem.Key)));
+
+                    //add process parameter
+                    Command.Append(ASCII.SPACE);
+                    Command.Append("/process:Single");
+
+                    NUnit.ConsoleRunner.Runner.Main(Command.ToString().Split(' '));
+                }
+                catch (Exception ex)
+                {
+                    ConsoleHelper.WriteColorLine("Error: " + ex.Message, ConsoleColor.Red);
+                    AppLog.Instance.LogError(ex.ToString());
                     continue;
-
-                StringBuilder Command = new StringBuilder();
-                //make nunit project
-
-                //add project parameter
-                Command.Append("/run:");
-                Command.Append(String.Join(ASCII.COMMA.ToString(),groupItem.Select(s=>s.FullName).ToArray()));
-                Command.Append(ASCII.SPACE);
-                Command.Append(Path.Combine(workFolder,String.Format("../../script/{0}",groupItem.Key)));
-
-                //add work parameter
-                Command.Append(ASCII.SPACE);
-                Command.Append("/work:");
-                Command.Append(workFolder);
-
-                //add nologo parameter
-                Command.Append(ASCII.SPACE);
-                Command.Append("/nologo");
-
-                //add result parameter
-                Command.Append(ASCII.SPACE);
-                Command.Append("/result:");
-                Command.Append(Path.Combine(workFolder, String.Format("result-{0}.xml", groupItem.Key)));
-
-                //add process parameter
-                Command.Append(ASCII.SPACE);
-                Command.Append("/process:Single");
-                
-                NUnit.ConsoleRunner.Runner.Main(Command.ToString().Split(' '));
+                }
             }
         }
 
@@ -198,42 +222,62 @@ namespace Mento.Business.Plan.BusinessLogic
             return table;
         }
 
-        private List<ResultEntity> GetTestSuiteResults(string workFolder,long executionID)
+        private List<ResultEntity> GetTestSuiteResults(string workFolder, long executionID)
         {
             List<ResultEntity> fixtureResultList = new List<ResultEntity>();
 
             DirectoryInfo workDirectory = new DirectoryInfo(workFolder);
+            if (!workDirectory.Exists)
+                return fixtureResultList;
 
-            if(workDirectory.Exists)
-                foreach (FileInfo resultFile in workDirectory.GetFiles("result*.xml"))
+            foreach (FileInfo resultFile in workDirectory.GetFiles("result*.xml"))
+            {
+                XDocument resultXml = XDocument.Load(resultFile.FullName);
+
+                foreach (XElement scriptElement in resultXml.XPathSelectElements("//test-suite[@type='TestFixture']/results").Elements())
                 {
-                    XDocument resultXml = XDocument.Load(resultFile.FullName);
+                    string caseID = scriptElement.XPathSelectElement("properties/property[@name='CaseID']").Attribute("value").Value;
 
-                    foreach (XElement scriptElement in resultXml.XPathSelectElements("//test-suite[@type='TestFixture']/results").Elements())
+                    if (String.IsNullOrEmpty(caseID))
+                        continue;
+
+                    ScriptExecutionStatus status = String.Equals(scriptElement.Attribute("executed").Value, "True", StringComparison.OrdinalIgnoreCase) ? String.Equals(scriptElement.Attribute("result").Value, "Success", StringComparison.OrdinalIgnoreCase) ? ScriptExecutionStatus.Passed : ScriptExecutionStatus.Failed : ScriptExecutionStatus.NotRun;
+                    
+                    ResultEntity result = new ResultEntity() { CaseID = caseID, Status = status, ExecutionID = executionID };
+
+                    if (scriptElement.XPathSelectElement("results") != null) //multi cases
                     {
-                        //string testFixtureName = fixtureElement.Attribute("name").Value;
-
-                        //foreach (XElement scriptElement in fixtureElement.Element("results").Elements())
-                        //{
-                        //Console.WriteLine(scriptElement.Name);
-                        string caseID = scriptElement.XPathSelectElement("properties/property[@name='CaseID']").Attribute("value").Value;
-                        ScriptExecutionStatus status = String.Equals(scriptElement.Attribute("executed").Value, "True", StringComparison.OrdinalIgnoreCase) ? String.Equals(scriptElement.Attribute("result").Value, "Success", StringComparison.OrdinalIgnoreCase) ? ScriptExecutionStatus.Passed : ScriptExecutionStatus.Failed : ScriptExecutionStatus.NotRun;
-
-                        ResultEntity result = new ResultEntity()
+                        foreach (XElement caseElement in scriptElement.XPathSelectElement("results").Elements("test-case"))
                         {
-                            CaseID = caseID,
-                            Status = status,
-                            ExecutionID = executionID,
-                            FailReason = status == ScriptExecutionStatus.Failed ? scriptElement.XPathSelectElement("failure/stack-trace").Value : String.Empty,
-                            FailDetail = status == ScriptExecutionStatus.Failed ? scriptElement.XPathSelectElement("failure/message").Value : String.Empty,
-                            //TODO:get image url from fail message
-                            ImageUrl = "",
-                        };
+                            result.ScriptName = caseElement.Attribute("name").Value;
+                            if (status == ScriptExecutionStatus.Failed)
+                            {
+                                result.FailDetail = caseElement.XPathSelectElement("failure/stack-trace").Value;
+                                result.FailReason = caseElement.XPathSelectElement("failure/message").Value;
+                                result.ImageUrl = GetImageFileName(result.ScriptName, workFolder);
+                            }
+
+                            fixtureResultList.Add(result);
+                        }
+                    }
+                    else if (scriptElement.XPathSelectElement("failure") != null) //single case
+                    {
+                        result.ScriptName = scriptElement.Attribute("name").Value;
+                        if (status == ScriptExecutionStatus.Failed)
+                        {
+                            result.FailDetail = scriptElement.XPathSelectElement("failure/stack-trace").Value;
+                            result.FailReason = scriptElement.XPathSelectElement("failure/message").Value;
+                            result.ImageUrl = GetImageFileName(result.ScriptName, workFolder);
+                        }
 
                         fixtureResultList.Add(result);
-                        //}
+                    }
+                    else
+                    {
+                        fixtureResultList.Add(result);
                     }
                 }
+            }
 
             return fixtureResultList;
         }
@@ -242,6 +286,22 @@ namespace Mento.Business.Plan.BusinessLogic
         {
             Console.WriteLine(message);
             AppLog.Instance.LogInformation(message);
+        }
+
+        private static void ArchiveExecutionResult(string workDirectory)
+        {
+            string workDirectoryName = workDirectory.TrimEnd('\\').Split('\\').Last();
+
+
+            if (Directory.Exists(workDirectory))
+                FileSystemHelper.UploadSharedFiles(ExecutionConfig.ExecutionArchiveDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, workDirectory);
+        }
+
+        private string GetImageFileName(string scriptName, string workFolder)
+        {
+            string fileName = scriptName.GetHashCode() + ".jpg";
+
+            return workFolder.TrimEnd('\\').Split('\\').Last() + "\\" + fileName;
         }
         #endregion
     }

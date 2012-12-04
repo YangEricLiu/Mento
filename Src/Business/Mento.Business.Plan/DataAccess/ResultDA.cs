@@ -13,12 +13,13 @@ namespace Mento.Business.Plan.DataAccess
     {
         public long Create(ResultEntity entity)
         {
-            string sql = @"INSERT INTO [Result]([CaseID],[ExecutionID],[Status],[FailReason],[ImageUrl],[FailDetail]) VALUES(@CaseID,@ExecutionID,@Status,@FailReason,@ImageUrl,@FailDetail)
+            string sql = @"INSERT INTO [Result]([CaseID],[ScriptName],[ExecutionID],[Status],[FailReason],[ImageUrl],[FailDetail]) VALUES(@CaseID,@ScriptName,@ExecutionID,@Status,@FailReason,@ImageUrl,@FailDetail)
                            SELECT SCOPE_IDENTITY()";
 
             DbCommand command = Database.GetSqlStringCommand(sql);
 
             Database.AddInParameter(command, "CaseID", DbType.String, entity.CaseID);
+            Database.AddInParameter(command, "ScriptName", DbType.String, entity.ScriptName);
             Database.AddInParameter(command, "ExecutionID", DbType.Int64, entity.ExecutionID);
             Database.AddInParameter(command, "Status", DbType.Int32, entity.Status);
             Database.AddInParameter(command, "FailReason", DbType.String, entity.FailReason);
@@ -47,7 +48,9 @@ namespace Mento.Business.Plan.DataAccess
         /// <param name="caseID"></param>
         public DataTable Retrieve(long planID, long executionID)
         {
-            string sql = "SELECT [ID],[CaseID],[ExecutionID],[Status],[FailReason],[ImageUrl],[FailDetail] FROM [Result] WHERE [PlanID]=@PlanID AND ExecutionID=@ExecutionID";
+            string sql = @"SELECT [R].[ID],[R].[CaseID],[R].[ScriptName],[R].[ExecutionID],[R].[Status],[R].[FailReason],[R].[ImageUrl],[R].[FailDetail] FROM [Result] [R]
+                           INNER JOIN [Execution] [E] on [R].[ExecutionID] = [E].[ID]
+                           WHERE [E].[PlanID]=@PlanID AND [R].[ExecutionID]=@ExecutionID";
 
             DbCommand command = Database.GetSqlStringCommand(sql);
 
@@ -63,7 +66,7 @@ namespace Mento.Business.Plan.DataAccess
         /// <param name="caseID"></param>
         public DataTable Retrieve(string caseID, long executionID)
         {
-            string sql = "SELECT [ID],[CaseID],[ExecutionID],[Status],[FailReason],[ImageUrl],[FailDetail] FROM [Result] WHERE [CaseID]=@CaseID AND ExecutionID=@ExecutionID";
+            string sql = "SELECT [ID],[CaseID],[ScriptName],[ExecutionID],[Status],[FailReason],[ImageUrl],[FailDetail] FROM [Result] WHERE [CaseID]=@CaseID AND ExecutionID=@ExecutionID";
 
             DbCommand command = Database.GetSqlStringCommand(sql);
 
@@ -79,7 +82,9 @@ namespace Mento.Business.Plan.DataAccess
         /// <param name="caseID"></param>
         public DataTable Retrieve(long planID, string caseID, long executionID)
         {
-            string sql = "SELECT [ID],[CaseID],[ExecutionID],[Status],[FailReason],[ImageUrl],[FailDetail] FROM [Result] WHERE [PlanID]=@PlanID AND [CaseID]=@CaseID AND ExecutionID=@ExecutionID";
+            string sql = @"SELECT [R].[ID],[R].[CaseID],[R].[ScriptName],[R].[ExecutionID],[R].[Status],[R].[FailReason],[R].[ImageUrl],[R].[FailDetail] FROM [Result] [R]
+                           INNER JOIN [Execution] [E] on [R].[ExecutionID] = [E].[ID]
+                           WHERE [E].[PlanID]=@PlanID AND [R].[ExecutionID]=@ExecutionID AND [R].[CaseID]=@CaseID";
             
             DbCommand command = Database.GetSqlStringCommand(sql);
 

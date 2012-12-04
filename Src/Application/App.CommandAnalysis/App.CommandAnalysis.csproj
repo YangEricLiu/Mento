@@ -45,12 +45,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandAnalyer.cs" />
+    <Compile Include="MentoApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Mento.Framework\Mento.Framework.csproj">
       <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
       <Name>Mento.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Mento.Utility\Mento.Utility.csproj">
+      <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
+      <Name>Mento.Utility</Name>
     </ProjectReference>
     <ProjectReference Include="..\App.Controllers\App.Controllers.csproj">
       <Project>{F2D5E614-DA62-4075-80CE-A47DD00F6A1C}</Project>

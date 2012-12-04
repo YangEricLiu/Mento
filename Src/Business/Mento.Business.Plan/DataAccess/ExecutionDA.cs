@@ -57,6 +57,19 @@ namespace Mento.Business.Execution.DataAccess
             Database.ExecuteNonQuery(command);
         }
 
+        public ExecutionEntity Retrieve(long executionID)
+        {
+            string sql = "SELECT [ID],[PlanID],[Url],[Browser],[Language],[StartTime],[EndTime],[Owner],[CpuCount],[CpuFrequency],[ScreenResolution],[MemorySize] FROM [Execution] WHERE [ID]=@ExecutionID";
+
+            DbCommand command = Database.GetSqlStringCommand(sql);
+
+            Database.AddInParameter(command, "ExecutionID", DbType.Int64, executionID);
+
+            List<ExecutionEntity> list = base.ReadEntity<ExecutionEntity>(Database.ExecuteReader(command));
+
+            return list.Count > 0 ? list[0] : null;
+        }
+
         public ExecutionEntity[] RetrieveByPlanID(long planID)
         {
             string sql = "SELECT [ID],[PlanID],[Url],[Browser],[Language],[StartTime],[EndTime],[Owner],[CpuCount],[CpuFrequency],[ScreenResolution],[MemorySize] FROM [Execution] WHERE [PlanID]=@PlanID";

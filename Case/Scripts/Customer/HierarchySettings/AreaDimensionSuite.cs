@@ -10,10 +10,14 @@ using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.Utility;
+using Mento.Framework.Attributes;
 
 namespace Mento.Script.Customer.HierarchySettings
 {
     [TestFixture]
+    [Owner("Aries")]
+    [CreateTime("2012-11-19")]
+    [ManualCaseID("TC-J1-SmokeTest-015")]
     public class AreaDimensionSuite : TestSuiteBase
     {
         [SetUp]
@@ -30,6 +34,7 @@ namespace Mento.Script.Customer.HierarchySettings
         }
 
         [Test]
+        [CaseID("TC-J1-SmokeTest-015")]
         public void CreateAreaDimension()
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;

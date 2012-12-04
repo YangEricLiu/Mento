@@ -89,57 +89,58 @@ namespace Mento.Business.Plan.BusinessLogic
 
         public PlanEntity[] Export()
         {
-            //string planFilePath = ExportConfig.PlanExportDirectory;
-            string planFilePath = @"D:\backup\AllPlanInfo.xlsx";
+            string planFilePath = Path.Combine(ExportConfig.PlanExportDirectory, "list.xls");
 
-            String[] headerList = new string[] { "ID", "PlanID", "Name", "ProductVersion", 
-                "Owner", "UpdateTime", "Status" };
+            String[] headerList = new string[] { "ID", "PlanID", "Name", "ProductVersion", "Owner", "UpdateTime", "Status" };
 
-            System.Data.DataTable scriptsTable = PlanDA.RetrieveAllToDataSet();
+            System.Data.DataTable planTable = PlanDA.RetrieveAllToDataSet();
 
-            //Open excel file which restore scripts data
-            ExcelHelper handler = new ExcelHelper(planFilePath, false);
+            ////Open excel file which restore scripts data
+            //ExcelHelper handler = new ExcelHelper(planFilePath, true);
 
-            handler.OpenOrCreate();
+            //handler.OpenOrCreate();
 
-            //Get Worksheet object 
-            Worksheet sheet = handler.GetWorksheet("PlansData");
+            ////Get Worksheet object 
+            //Worksheet sheet = handler.GetWorksheet("PlansData");
 
-            //Import data from the start
-            handler.ImportDataTable(sheet, headerList, scriptsTable);
+            ////Import data from the start
+            //handler.ImportDataTable(sheet, headerList, scriptsTable);
 
-            handler.Save();
-            handler.Dispose();
+            //handler.Save();
+            //handler.Dispose();
+
+            ExcelHelper.ExportToExcel(planTable, planFilePath, "PlanList");
 
             return PlanDA.RetrieveAll();
-
         }
 
         public ScriptEntity[] Export(string planID)
         {
-            //string excelFilePath = string.Format("{0}Plans-{1}.xls", AppDomain.CurrentDomain.BaseDirectory, planID);
-            string path = "D:\\backup\\";
-            string excelFilePath = string.Format("{0}Plans-{1}.xls", path, planID);
-            String[] headerList = new string[] { "ID","CaseID", "ManualCaseID", "Name", 
-                "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime" };
+            string excelFilePath = string.Format("Plans-{0}.xls", planID);
+
+            excelFilePath = Path.Combine(ExportConfig.PlanExportDirectory, excelFilePath);
+            //String[] headerList = new string[] { "ID","CaseID", "ManualCaseID", "Name", "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime" };
 
             PlanEntity plan = GetPlanByPlanID(planID);
 
             System.Data.DataTable scriptsTable = ScriptDA.RetrieveByPlanIDToDataSet(plan.ID);
 
-            ExcelHelper handler = new ExcelHelper(excelFilePath, true);
+            //ExcelHelper handler = new ExcelHelper(excelFilePath, true);
 
-            handler.OpenOrCreate();
-            Worksheet sheet = handler.AddWorksheet(planID);
-            //Delete all sheet except special one
-            handler.DeleteWorksheetExcept(sheet);
+            //handler.OpenOrCreate();
+            //Worksheet sheet = handler.AddWorksheet(planID);
+            ////Delete all sheet except special one
+            //handler.DeleteWorksheetExcept(sheet);
 
-            //Import data from the start
-            handler.ImportDataTable(sheet, headerList, scriptsTable);
+            ////Import data from the start
+            //handler.ImportDataTable(sheet, headerList, scriptsTable);
 
-            handler.Save();
+            //handler.Save();
 
-            handler.Dispose();
+            //handler.Dispose();
+
+            ExcelHelper.ExportToExcel(scriptsTable, excelFilePath, "ScriptList");
+
 
             return ScriptDA.RetrieveByPlanID(plan.ID);
         }
@@ -177,7 +178,7 @@ namespace Mento.Business.Plan.BusinessLogic
             PlanEntity plan = PlanDA.Retrieve(planID);
             if (plan == null)
             {
-                throw new Exception(String.Format("plan '{0}' was not found.", planID));
+                throw new AppException(String.Format("plan '{0}' was not found.", planID));
             }
             plan.ScriptList = ScriptBL.GetScriptsByPlanID(plan.ID).ToList();
 

@@ -37,11 +37,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="nunit-console-runner, Version=2.6.1.12217, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="nunit.core, Version=2.6.1.12217, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="nunit.core.interfaces, Version=2.6.1.12217, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="nunit.util, Version=2.6.1.12217, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -61,6 +77,22 @@
     <ProjectReference Include="..\..\Src\Application\App.CommandAnalysis\App.CommandAnalysis.csproj">
       <Project>{547B9D48-7C01-4D0D-9B84-C791DB9E31C8}</Project>
       <Name>App.CommandAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Src\Business\Mento.Business.Case\Mento.Business.Script.csproj">
+      <Project>{9B7F3CC7-6C21-4EE4-8FAB-AD62C17DCD1E}</Project>
+      <Name>Mento.Business.Script</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Src\Business\Mento.Business.Plan\Mento.Business.Plan.csproj">
+      <Project>{AA90ABC5-A233-40FC-A1D0-DC1DED2431BB}</Project>
+      <Name>Mento.Business.Plan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Src\Common\Mento.Framework\Mento.Framework.csproj">
+      <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
+      <Name>Mento.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Src\Common\Mento.Utility\Mento.Utility.csproj">
+      <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
+      <Name>Mento.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -80,7 +80,7 @@ namespace Mento.Business.Plan.DataAccess
 
         public PlanEntity[] RetrieveAll()
         {
-            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan]";
+            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan] WHERE [Status]=@Status";
 
             DbCommand command = Database.GetSqlStringCommand(sql);
 
@@ -106,7 +106,7 @@ namespace Mento.Business.Plan.DataAccess
 
         public DataTable RetrieveAllToDataSet()
         {
-            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan]";
+            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan] WHERE [Status]=@Status";
 
             DbCommand command = Database.GetSqlStringCommand(sql);
 

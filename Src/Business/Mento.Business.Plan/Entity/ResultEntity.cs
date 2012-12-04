@@ -22,6 +22,11 @@ namespace Mento.Business.Plan.Entity
         public string CaseID { get; set; }
 
         /// <summary>
+        /// ScriptName
+        /// </summary>
+        public string ScriptName { get; set; }
+
+        /// <summary>
         /// Status of this script's result
         /// </summary>
         public ScriptExecutionStatus Status { get; set; }

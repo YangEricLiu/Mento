@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\publish\Mento\script\Mento.Script.Customer.dll" total="10" errors="7" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-12-04" time="13:46:28">
+  <environment nunit-version="2.6.1.12217" clr-version="4.0.30319.17929" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\publish\Mento\Binary" machine-name="ZHANGFENG-WIN7" user="zhangfeng" user-domain="zhangfeng-win7" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="D:\publish\Mento\script\Mento.Script.Customer.dll" executed="True" result="Failure" success="False" time="196.238" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="Mento" executed="True" result="Failure" success="False" time="196.233" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Script" executed="True" result="Failure" success="False" time="196.233" asserts="0">
+            <results>
+              <test-suite type="SetUpFixture" name="Customer" executed="True" result="Failure" success="False" time="196.231" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="HierarchySettings" executed="True" result="Failure" success="False" time="107.314" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="AreaDimensionSuite" executed="True" result="Success" success="True" time="17.107" asserts="0">
+                        <properties>
+                          <property name="CreateTime" value="2012-11-19" />
+                          <property name="Owner" value="Aries" />
+                          <property name="ManualCaseID" value="TC-J1-SmokeTest-015" />
+                        </properties>
+                        <results>
+                          <test-case name="Mento.Script.Customer.HierarchySettings.AreaDimensionSuite.CreateAreaDimension" executed="True" result="Success" success="True" time="17.104" asserts="3">
+                            <properties>
+                              <property name="CaseID" value="TC-J1-SmokeTest-015" />
+                            </properties>
+                          </test-case>
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="HierarchyManagement" executed="True" result="Failure" success="False" time="75.997" asserts="0">
+                        <results>
+                          <test-suite type="ParameterizedTest" name="AddOrgnizationNodeTest" executed="True" result="Failure" success="False" time="75.993" asserts="0">
+                            <properties>
+                              <property name="Owner" value="Emma" />
+                              <property name="CreateTime" value="2012-10-30" />
+                              <property name="CaseID" value="TA-Hierarchy-001" />
+                              <property name="ManualCaseID" value="TJ-Hierarchy-001" />
+                            </properties>
+                            <results>
+                              <test-case name="Mento.Script.Customer.HierarchySettings.HierarchyManagement.AddOrgnizationNodeTest({&quot;InputData&quot;:{&quot;Name&quot;:&quot;AutoOrg001&quot;,&quot;Code&quot;:&quot;AutoOrg001&quot;,&quot;Type&quot;:&quot;Orgnization&quot;,&quot;Comment&quot;:&quot;&quot;},&quot;ExpectedData&quot;:null})" executed="True" result="Error" success="False" time="38.087" asserts="0">
+                                <failure>
+                                  <message><![CDATA[System.TimeoutException : Timed out after 30 seconds]]></message>
+                                  <stack-trace><![CDATA[at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+at Mento.TestApi.WebUserInterface.ElementHandler.Wait(Locator locator, WaitType waitType, ISearchContext container, Int32 timeout) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\ElementHandler.cs:line 143
+at Mento.TestApi.WebUserInterface.Controls.MessageBox.WaitMeAppear() in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\Common\MessageBox.cs:line 59
+at Mento.ScriptCommon.Library.Functions.HierarchySettings.WaitForCreateOKDisplay(Int32 timeout) in E:\works\kara\mento\Trunk\Case\Common\Library\Functions\HierarchySettings.cs:line 169
+at Mento.Script.Customer.HierarchySettings.HierarchyManagement.AddOrgnizationNodeTest(AddHierarchyData input) in E:\works\kara\mento\Trunk\Case\Scripts\Customer\HierarchySettings\HierarchyManagement.cs:line 66
+]]></stack-trace>
+                                </failure>
+                              </test-case>
+                              <test-case name="Mento.Script.Customer.HierarchySettings.HierarchyManagement.AddOrgnizationNodeTest({&quot;InputData&quot;:{&quot;Name&quot;:&quot;AutoOrg002&quot;,&quot;Code&quot;:&quot;AutoOrg002&quot;,&quot;Type&quot;:&quot;Orgnization&quot;,&quot;Comment&quot;:&quot;test&quot;},&quot;ExpectedData&quot;:null})" executed="True" result="Error" success="False" time="37.903" asserts="0">
+                                <failure>
+                                  <message><![CDATA[System.TimeoutException : Timed out after 30 seconds]]></message>
+                                  <stack-trace><![CDATA[at OpenQA.Selenium.Support.UI.DefaultWait`1.ThrowTimeoutException(String exceptionMessage, Exception lastException)
+at OpenQA.Selenium.Support.UI.DefaultWait`1.Until[TResult](Func`2 condition)
+at Mento.TestApi.WebUserInterface.ElementHandler.Wait(Locator locator, WaitType waitType, ISearchContext container, Int32 timeout) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\ElementHandler.cs:line 143
+at Mento.TestApi.WebUserInterface.Controls.MessageBox.WaitMeAppear() in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\Common\MessageBox.cs:line 59
+at Mento.ScriptCommon.Library.Functions.HierarchySettings.WaitForCreateOKDisplay(Int32 timeout) in E:\works\kara\mento\Trunk\Case\Common\Library\Functions\HierarchySettings.cs:line 169
+at Mento.Script.Customer.HierarchySettings.HierarchyManagement.AddOrgnizationNodeTest(AddHierarchyData input) in E:\works\kara\mento\Trunk\Case\Scripts\Customer\HierarchySettings\HierarchyManagement.cs:line 66
+]]></stack-trace>
+                                </failure>
+                              </test-case>
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="SystemDimensionSuite" executed="True" result="Failure" success="False" time="14.207" asserts="0">
+                        <properties>
+                          <property name="CreateTime" value="2012-11-19" />
+                          <property name="Owner" value="Aries" />
+                          <property name="ManualCaseID" value="TC-J1-SmokeTest-013" />
+                        </properties>
+                        <results>
+                          <test-case name="Mento.Script.Customer.HierarchySettings.SystemDimensionSuite.UpdateSystemDimension" executed="True" result="Error" success="False" time="14.206" asserts="0">
+                            <properties>
+                              <property name="CaseID" value="TC-J1-SmokeTest-013" />
+                            </properties>
+                            <failure>
+                              <message><![CDATA[Mento.Framework.Exceptions.ApiException : Can not found element with locator by XPath,with 'tbody/tr[contains(@class,'x-grid-row') and td/div[text()='空调']]'
+  ----> OpenQA.Selenium.NoSuchElementException : The element could not be found]]></message>
+                              <stack-trace><![CDATA[at Mento.TestApi.WebUserInterface.ElementHandler.FindElement(Locator locator, ISearchContext container) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\ElementHandler.cs:line 40
+at Mento.TestApi.WebUserInterface.Controls.JazzControl.FindChild(Locator locator) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\JazzControl.cs:line 39
+at Mento.TestApi.WebUserInterface.Controls.TreeView.GetTreeNodeElement(String nodeText) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\TreeView\TreeView.cs:line 167
+at Mento.TestApi.WebUserInterface.Controls.TreeView.IsNodeExpanded(String nodeText) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\TreeView\TreeView.cs:line 101
+at Mento.TestApi.WebUserInterface.Controls.TreeView.ExpandNode(String nodeText) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\TreeView\TreeView.cs:line 37
+at Mento.TestApi.WebUserInterface.Controls.SystemDimensionTree.CheckNodePath(String[] nodePath) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\TreeView\SystemDimensionTree.cs:line 45
+at Mento.ScriptCommon.Library.Functions.SystemDimensionSettings.CheckSystemDimensionNodePath(String[] systemDimensionNodePath) in E:\works\kara\mento\Trunk\Case\Common\Library\Functions\SystemDimensionSettings.cs:line 48
+at Mento.Script.Customer.HierarchySettings.SystemDimensionSuite.UpdateSystemDimension() in E:\works\kara\mento\Trunk\Case\Scripts\Customer\HierarchySettings\SystemDimensionSuite.cs:line 55
+--NoSuchElementException
+at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElement(String mechanism, String value)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElementByXPath(String xpath)
+at OpenQA.Selenium.By.<>c__DisplayClasse.<XPath>b__c(ISearchContext context)
+at OpenQA.Selenium.By.FindElement(ISearchContext context)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElement(By by)
+at Mento.TestApi.WebUserInterface.ElementHandler.FindElement(Locator locator, ISearchContext container) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\ElementHandler.cs:line 27
+]]></stack-trace>
+                            </failure>
+                          </test-case>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="TagAssociation" executed="True" result="Failure" success="False" time="14.934" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="HierarchyAssociateTag" executed="True" result="Failure" success="False" time="14.934" asserts="0">
+                        <results>
+                          <test-case name="Mento.Script.Customer.TagAssociation.HierarchyAssociateTag.AssociateOneTag" executed="True" result="Error" success="False" time="14.933" asserts="0">
+                            <properties>
+                              <property name="Owner" value="Emma" />
+                              <property name="CaseID" value="TA-AssociateTag-001" />
+                              <property name="ManualCaseID" value="TJ-AssociateTag-001" />
+                              <property name="CreateTime" value="2012-11-09" />
+                            </properties>
+                            <failure>
+                              <message><![CDATA[Mento.Framework.Exceptions.ApiException : Can not found element with locator by XPath,with 'div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[3]/div[text()='Amy_m_V1_Vtagconst1']]/td[contains(@class,'x-grid-cell-checkcolumn')]/div/div'
+  ----> OpenQA.Selenium.NoSuchElementException : The element could not be found]]></message>
+                              <stack-trace><![CDATA[at Mento.TestApi.WebUserInterface.ElementHandler.FindElement(Locator locator, ISearchContext container) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\ElementHandler.cs:line 40
+at Mento.TestApi.WebUserInterface.Controls.JazzControl.FindChild(Locator locator) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\JazzControl.cs:line 39
+at Mento.TestApi.WebUserInterface.Controls.Grid.GetRowChecker(Int32 cellIndex, String cellText) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\Grid\Grid.cs:line 135
+at Mento.TestApi.WebUserInterface.Controls.Grid.CheckRowCheckbox(Int32 cellIndex, String cellText) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\Grid\Grid.cs:line 79
+at Mento.ScriptCommon.Library.Functions.HierarchyAssociateSettings.CheckedTag(String tagName) in E:\works\kara\mento\Trunk\Case\Common\Library\Functions\HierarchyAssociateSettings.cs:line 51
+at Mento.Script.Customer.TagAssociation.HierarchyAssociateTag.AssociateOneTag() in E:\works\kara\mento\Trunk\Case\Scripts\Customer\TagAssociation\HierarchyAssociateTag.cs:line 64
+--NoSuchElementException
+at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElement(String mechanism, String value)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElementByXPath(String xpath)
+at OpenQA.Selenium.By.<>c__DisplayClasse.<XPath>b__c(ISearchContext context)
+at OpenQA.Selenium.By.FindElement(ISearchContext context)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElement(By by)
+at Mento.TestApi.WebUserInterface.ElementHandler.FindElement(Locator locator, ISearchContext container) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\ElementHandler.cs:line 27
+]]></stack-trace>
+                            </failure>
+                          </test-case>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                  <test-suite type="Namespace" name="TagManagement" executed="True" result="Failure" success="False" time="61.429" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="FormulaManagement" executed="True" result="Success" success="True" time="15.250" asserts="0">
+                        <results>
+                          <test-case name="Mento.Script.Customer.TagManagement.FormulaManagement.AddFormulaToVtag" executed="True" result="Success" success="True" time="15.249" asserts="1">
+                            <properties>
+                              <property name="Owner" value="Emma" />
+                              <property name="ManualCaseID" value="TJ-Formula-001" />
+                              <property name="CreateTime" value="2012-11-08" />
+                              <property name="CaseID" value="TA-Formula-001" />
+                            </properties>
+                          </test-case>
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="PtagConfiguration" executed="True" result="Failure" success="False" time="33.877" asserts="0">
+                        <properties>
+                          <property name="ManualCaseID" value="TC-J1-SmokeTest-002" />
+                        </properties>
+                        <results>
+                          <test-suite type="ParameterizedTest" name="AddPtag" executed="True" result="Failure" success="False" time="23.832" asserts="0">
+                            <properties>
+                              <property name="CaseID" value="TC-J1-SmokeTest-002" />
+                              <property name="Owner" value="Amy" />
+                              <property name="CreateTime" value="2012-11-12" />
+                            </properties>
+                            <results>
+                              <test-case name="Mento.Script.Customer.TagManagement.PtagConfiguration.AddPtag({&quot;InputData&quot;:{&quot;Name&quot;:&quot; Amy_Ptag1_名称 &quot;,&quot;Code&quot;:&quot;Amy_Ptag1_Code&quot;,&quot;MeterCode&quot;:&quot;Amy_MeterCode1&quot;,&quot;ChannelId&quot;:&quot;1&quot;,&quot;Commodity&quot;:&quot;Electricity&quot;,&quot;Uom&quot;:&quot;KWH&quot;,&quot;CalculationType&quot;:&quot;Sum&quot;,&quot;Comment&quot;:&quot;描述1&quot;},&quot;ExpectedData&quot;:{&quot;Name&quot;:&quot;Amy_Ptag1_名称&quot;,&quot;Code&quot;:null,&quot;MeterCode&quot;:null,&quot;ChannelId&quot;:null,&quot;Commodity&quot;:null,&quot;Uom&quot;:null,&quot;CalculationType&quot;:null,&quot;Comment&quot;:null}})" executed="True" result="Error" success="False" time="12.068" asserts="0">
+                                <failure>
+                                  <message><![CDATA[Mento.Framework.Exceptions.ApiException : Can not found element with locator by XPath,with 'div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[1]/div[text()='Amy_Ptag1_名称']]'
+  ----> OpenQA.Selenium.NoSuchElementException : The element could not be found]]></message>
+                                  <stack-trace><![CDATA[at Mento.TestApi.WebUserInterface.ElementHandler.FindElement(Locator locator, ISearchContext container) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\ElementHandler.cs:line 40
+at Mento.TestApi.WebUserInterface.Controls.JazzControl.FindChild(Locator locator) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\JazzControl.cs:line 39
+at Mento.TestApi.WebUserInterface.Controls.Grid.GetRow(Int32 cellIndex, String cellText) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\Grid\Grid.cs:line 126
+at Mento.TestApi.WebUserInterface.Controls.Grid.FocusOnRow(Int32 cellIndex, String cellText) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\Grid\Grid.cs:line 51
+at Mento.ScriptCommon.Library.Functions.PTagSettings.FocusOnPTag(String ptagName) in E:\works\kara\mento\Trunk\Case\Common\Library\Functions\PTagSettings.cs:line 212
+at Mento.Script.Customer.TagManagement.PtagConfiguration.AddPtag(PtagData testData) in E:\works\kara\mento\Trunk\Case\Scripts\Customer\TagManagement\PtagConfiguration.cs:line 67
+--NoSuchElementException
+at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElement(String mechanism, String value)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElementByXPath(String xpath)
+at OpenQA.Selenium.By.<>c__DisplayClasse.<XPath>b__c(ISearchContext context)
+at OpenQA.Selenium.By.FindElement(ISearchContext context)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElement(By by)
+at Mento.TestApi.WebUserInterface.ElementHandler.FindElement(Locator locator, ISearchContext container) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\ElementHandler.cs:line 27
+]]></stack-trace>
+                                </failure>
+                              </test-case>
+                              <test-case name="Mento.Script.Customer.TagManagement.PtagConfiguration.AddPtag({&quot;InputData&quot;:{&quot;Name&quot;:&quot;Amy_Ptag2_名称 &quot;,&quot;Code&quot;:&quot;Amy_Ptag2_Code&quot;,&quot;MeterCode&quot;:&quot;Amy_MeterCode1&quot;,&quot;ChannelId&quot;:&quot;2&quot;,&quot;Commodity&quot;:&quot;Water&quot;,&quot;Uom&quot;:&quot;Ton&quot;,&quot;CalculationType&quot;:&quot;Avg&quot;,&quot;Comment&quot;:&quot;描述2&quot;},&quot;ExpectedData&quot;:{&quot;Name&quot;:&quot;Amy_Ptag2_名称&quot;,&quot;Code&quot;:null,&quot;MeterCode&quot;:null,&quot;ChannelId&quot;:null,&quot;Commodity&quot;:null,&quot;Uom&quot;:null,&quot;CalculationType&quot;:null,&quot;Comment&quot;:null}})" executed="True" result="Error" success="False" time="11.763" asserts="0">
+                                <failure>
+                                  <message><![CDATA[System.InvalidOperationException : Element is not clickable at point (456, 426). Other element would receive the click: <div class="x-mask" id="ext-gen1364" style="width: 1366px; height: 677px; left: 0px; top: 0px; z-index: 18997;"></div>]]></message>
+                                  <stack-trace><![CDATA[at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+at OpenQA.Selenium.Remote.RemoteWebElement.Click()
+at Mento.TestApi.WebUserInterface.Controls.Grid.FocusOnRow(Int32 cellIndex, String cellText) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\Grid\Grid.cs:line 51
+at Mento.ScriptCommon.Library.Functions.PTagSettings.FocusOnPTag(String ptagName) in E:\works\kara\mento\Trunk\Case\Common\Library\Functions\PTagSettings.cs:line 212
+at Mento.Script.Customer.TagManagement.PtagConfiguration.AddPtag(PtagData testData) in E:\works\kara\mento\Trunk\Case\Scripts\Customer\TagManagement\PtagConfiguration.cs:line 67
+]]></stack-trace>
+                                </failure>
+                              </test-case>
+                            </results>
+                          </test-suite>
+                          <test-suite type="ParameterizedTest" name="ModifyPtag" executed="True" result="Failure" success="False" time="10.041" asserts="0">
+                            <properties>
+                              <property name="Owner" value="Amy" />
+                              <property name="CaseID" value="TA-PtagConfiguration-002" />
+                              <property name="CreateTime" value="2012-11-13" />
+                            </properties>
+                            <results>
+                              <test-case name="Mento.Script.Customer.TagManagement.PtagConfiguration.ModifyPtag({&quot;InputData&quot;:{&quot;Name&quot;:null,&quot;Code&quot;:&quot;tag_aftermodify&quot;,&quot;MeterCode&quot;:null,&quot;ChannelId&quot;:null,&quot;Commodity&quot;:null,&quot;Uom&quot;:null,&quot;CalculationType&quot;:null,&quot;Comment&quot;:null},&quot;ExpectedData&quot;:{&quot;Name&quot;:null,&quot;Code&quot;:&quot;tag_aftermodify&quot;,&quot;MeterCode&quot;:null,&quot;ChannelId&quot;:null,&quot;Commodity&quot;:null,&quot;Uom&quot;:null,&quot;CalculationType&quot;:null,&quot;Comment&quot;:null}})" executed="True" result="Error" success="False" time="10.040" asserts="0">
+                                <failure>
+                                  <message><![CDATA[Mento.Framework.Exceptions.ApiException : Can not found element with locator by XPath,with 'div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[2]/div[text()='Amy_Ptag1_Code']]'
+  ----> OpenQA.Selenium.NoSuchElementException : The element could not be found]]></message>
+                                  <stack-trace><![CDATA[at Mento.TestApi.WebUserInterface.ElementHandler.FindElement(Locator locator, ISearchContext container) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\ElementHandler.cs:line 40
+at Mento.TestApi.WebUserInterface.Controls.JazzControl.FindChild(Locator locator) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\JazzControl.cs:line 39
+at Mento.TestApi.WebUserInterface.Controls.Grid.GetRow(Int32 cellIndex, String cellText) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\Grid\Grid.cs:line 126
+at Mento.TestApi.WebUserInterface.Controls.Grid.FocusOnRow(Int32 cellIndex, String cellText) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\Controls\Grid\Grid.cs:line 51
+at Mento.ScriptCommon.Library.Functions.PTagSettings.PrepareToModifyPtag(String tagCode) in E:\works\kara\mento\Trunk\Case\Common\Library\Functions\PTagSettings.cs:line 104
+at Mento.Script.Customer.TagManagement.PtagConfiguration.ModifyPtag(PtagData testData) in E:\works\kara\mento\Trunk\Case\Scripts\Customer\TagManagement\PtagConfiguration.cs:line 85
+--NoSuchElementException
+at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElement(String mechanism, String value)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElementByXPath(String xpath)
+at OpenQA.Selenium.By.<>c__DisplayClasse.<XPath>b__c(ISearchContext context)
+at OpenQA.Selenium.By.FindElement(ISearchContext context)
+at OpenQA.Selenium.Remote.RemoteWebElement.FindElement(By by)
+at Mento.TestApi.WebUserInterface.ElementHandler.FindElement(Locator locator, ISearchContext container) in E:\works\kara\mento\Trunk\Src\Api\Mento.TestApi.WebUserInterface\ElementHandler.cs:line 27
+]]></stack-trace>
+                                </failure>
+                              </test-case>
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                      <test-suite type="TestFixture" name="VTagManagement" executed="True" result="Success" success="True" time="12.299" asserts="0">
+                        <properties>
+                          <property name="CreateTime" value="2012-11-15" />
+                          <property name="Owner" value="Nancy" />
+                        </properties>
+                        <results>
+                          <test-suite type="ParameterizedTest" name="AddVtag" executed="True" result="Success" success="True" time="12.299" asserts="0">
+                            <properties>
+                              <property name="ManualCaseID" value="TA-VTAG-T001" />
+                              <property name="CaseID" value="TA-VtagConfigue-001" />
+                              <property name="CreateTime" value="2012-11-14" />
+                              <property name="Owner" value="Nancy" />
+                            </properties>
+                            <results>
+                              <test-case name="Mento.Script.Customer.TagManagement.VTagManagement.AddVtag({&quot;InputData&quot;:{&quot;Name&quot;:&quot;NancyVtag&quot;,&quot;Code&quot;:&quot;nancy1&quot;,&quot;Commodity&quot;:&quot;Electricity&quot;,&quot;UOM&quot;:&quot;KWH&quot;,&quot;Step&quot;:&quot;Hourly&quot;,&quot;CalculationType&quot;:&quot;Sum&quot;,&quot;Comment&quot;:&quot;This is add vtag comments&quot;},&quot;ExpectedData&quot;:null})" executed="True" result="Success" success="True" time="12.299" asserts="0" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

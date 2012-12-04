@@ -49,5 +49,15 @@ namespace Mento.Framework.Constants
         /// ,
         /// </summary>
         public const char COMMA = ',';
+
+        /// <summary>
+        /// <
+        /// </summary>
+        public const char LESSTHAN = '<';
+
+        /// <summary>
+        /// >
+        /// </summary>
+        public const char LARGERTHAN = '>';
     }
 }

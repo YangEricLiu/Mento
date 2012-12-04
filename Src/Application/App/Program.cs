@@ -11,7 +11,9 @@ using Mento.Framework.Configuration;
 using System.Xml;
 using System.Xml.Linq;
 using Mento.Framework.Execution;
-using App.CommandAnalysis;
+using Mento.Framework.Exceptions;
+using Mento.Framework.Log;
+using Mento.App.CommandAnalysis;
 
 namespace Mento.App
 {
@@ -19,30 +21,7 @@ namespace Mento.App
     {
         static void Main(string[] args)
         {
-            //ScriptController.Sync();
-
-            //PlanController.Create("");
-            //PlanController.Update("", "");
-            //PlanController.Delete("");
-
-            //PlanController.Run("", "", "", "");
-            //PlanController.View("TA-P02");
-
-            try
-            {
-                CommandAnalyer.CommandsAnalysis(args);
-            }
-            catch (Exception ex)
-            {
-                ColorConsole.WriteLine("Error:" + ex.Message,ConsoleColor.Red);
-                Console.WriteLine("StactTrace:");
-                Console.WriteLine(ex.StackTrace);
-            }
-
-            //Console.WriteLine(args[0]);
-            Console.WriteLine("Press any key to continue..");
-            
-            Console.Read();
+            new MentoApp().Run(args);
         }
 
     }

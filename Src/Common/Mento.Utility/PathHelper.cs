@@ -20,5 +20,11 @@ namespace Mento.Utility
         {
             return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
         }
+
+        public static string GetBase64FileName(string complicatedFileName)
+        {
+            byte[] toEncodeAsBytes = System.Text.ASCIIEncoding.ASCII.GetBytes(complicatedFileName);
+            return System.Convert.ToBase64String(toEncodeAsBytes);;
+        }
     }
 }

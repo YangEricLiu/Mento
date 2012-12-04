@@ -37,6 +37,8 @@ using Mento.Business.Plan;
 [assembly: AssemblyVersion(AssemblyInfo.ASSEMBLYVERSION)]
 [assembly: AssemblyFileVersion(AssemblyInfo.ASSEMBLYVERSION)]
 
+[assembly: InternalsVisibleTo("Mento.Business.Plan.Test",AllInternalsVisible=true)]
+
 
 namespace Mento.Business.Plan
 {

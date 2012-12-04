@@ -16,6 +16,7 @@ namespace Mento.Framework.Configuration
         private const string LANGUAGE = "language";
         private const string URL = "url";
         private const string PUBLISHDIRECTORY = "publishDirectory";
+        private const string EXECUTIONARCHIVEDIRECTORY = "executionArchiveDirectory";
         private const string SCRIPTDIRECTORY = "scriptDirectory";
         private const string EXECUTIONDIRECTORY = "executionDirectory";
         private const string LOCALNETWORKDRIVE = "localNetworkDrive";
@@ -24,6 +25,7 @@ namespace Mento.Framework.Configuration
         private const string ISREFRESHSCRIPTSONEXECUTION = "isRefreshScriptsOnExecution";
         private const string ENVIRONMENTSETUPSQLSCRIPT = "environmentSetupSqlScript";
         private const string ENVIRONMENTTEARDOWNSQLSCRIPT = "environmentTearDownSqlScript";
+
 
 
         private static string BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -59,6 +61,14 @@ namespace Mento.Framework.Configuration
             get
             {
                 return GetAbsoluteOrRelativePath(GetExecutionConfig(PUBLISHDIRECTORY), BaseDirectory);
+            }
+        }
+
+        public static string ExecutionArchiveDirectory
+        {
+            get
+            {
+                return GetAbsoluteOrRelativePath(GetExecutionConfig(EXECUTIONARCHIVEDIRECTORY), BaseDirectory);
             }
         }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using App.CommandAnalysis;
+using Mento.App.CommandAnalysis;
 
 namespace Mento.App.Command.Test
 {
@@ -21,7 +21,7 @@ namespace Mento.App.Command.Test
         {
             string[] cmds = new string[] { "result", "view", "-result", "TA-Example-001" };
 
-            CommandAnalyer.CommandsAnalysis(cmds);
+            CommandAnalyer.Execute(cmds);
 
             
             //Assert.AreEqual(AppDomain.CurrentDomain.BaseDirectory.ToString(), "hello");

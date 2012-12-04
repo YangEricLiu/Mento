@@ -7,6 +7,11 @@ using Mento.Framework.Exceptions;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using Mento.TestApi.WebUserInterface.Controls;
+using Mento.Framework.Execution;
+using System.IO;
+using Mento.Framework.Log;
+using NUnit.Framework;
+using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface
 {
@@ -25,6 +30,14 @@ namespace Mento.TestApi.WebUserInterface
             catch (NoSuchElementException ex)
             {
                 //capture error image
+                string fileName = TestContext.CurrentContext.Test.FullName.GetHashCode() + ".jpg";
+
+                string ImageFilePath = Path.Combine(NUnit.Framework.TestContext.CurrentContext.WorkDirectory, fileName);
+                BrowserHandler.TakeCapture(ImageFilePath);
+
+                AppLog.Instance.LogInformation("Image: " + ImageFilePath);
+                AppLog.Instance.LogError(ex.ToString());
+
                 throw new ApiException(String.Format("Can not found element with locator {0}", locator.ToString()), ex);
                 //throw ex;
             }
@@ -45,12 +58,12 @@ namespace Mento.TestApi.WebUserInterface
 
         public static bool Displayed(Locator locator, ISearchContext container = null)
         {
-            var element = TryFindElement(locator, container: container);
+            var elements = FindElements(locator, container: container);
 
-            if (element == null)
+            if (elements == null || elements.Length != 1)
                 return false;
 
-            return element.Displayed;
+            return elements.Single().Displayed;
         }
         #endregion
 
@@ -129,23 +142,6 @@ namespace Mento.TestApi.WebUserInterface
             WebDriverWait wait = new WebDriverWait(DriverFactory.Instance, TimeSpan.FromSeconds(timeout));
 
             return wait.Until<bool>(waitType == WaitType.ToAppear ? AppearCondition : DisappearCondition);
-        }
-        #endregion
-
-        #region Private methods
-        private static IWebElement TryFindElement(Locator locator, ISearchContext container = null)
-        {
-            IWebElement element = null;
-            try
-            {
-                element = container == null ? FindElement(locator) : container.FindElement(locator.ToBy());
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            return element;
         }
         #endregion
     }

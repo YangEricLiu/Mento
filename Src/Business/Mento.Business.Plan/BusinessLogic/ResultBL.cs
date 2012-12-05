@@ -21,7 +21,7 @@ namespace Mento.Business.Plan.BusinessLogic
             return ResultDA.Create(result);
         }
 
-        public DataTable ExeportByPlanID(string planID, long executionID)
+        public DataTable ExeportByPlanID(string planID, long executionID, out string exportFilePath)
         {
             PlanEntity plan = PlanBL.GetPlanByPlanID(planID);
 
@@ -33,14 +33,14 @@ namespace Mento.Business.Plan.BusinessLogic
 
             //TODO:
             //Export to excel
-            string fileName = Path.Combine(ExportConfig.ResultExportDirectory, String.Format("{0}-{1}.xls", plan.PlanID, executionID));
+            exportFilePath = Path.Combine(ExportConfig.ResultExportDirectory, String.Format("{0}-{1}.xls", plan.PlanID, executionID));
 
-            ExcelHelper.ExportToExcel(results, fileName, "ResultList");
+            ExcelHelper.ExportToExcel(results, exportFilePath, "ResultList");
 
             return results;
         }
 
-        public DataTable ExeportByCaseID(string caseID, long executionID)
+        public DataTable ExeportByCaseID(string caseID, long executionID, out string exportFilePath)
         {
             DataTable results = ResultDA.Retrieve(caseID, executionID);
 
@@ -50,14 +50,14 @@ namespace Mento.Business.Plan.BusinessLogic
 
             //TODO:
             //Export to excel
-            string fileName = Path.Combine(ExportConfig.ResultExportDirectory, String.Format("{0}-{1}.xls", caseID, executionID));
+            exportFilePath = Path.Combine(ExportConfig.ResultExportDirectory, String.Format("{0}-{1}.xls", caseID, executionID));
 
-            ExcelHelper.ExportToExcel(results, fileName, "ResultList");
+            ExcelHelper.ExportToExcel(results, exportFilePath, "ResultList");
 
             return results;
         }
 
-        public DataTable Exeport(string planID, string caseID, long executionID)
+        public DataTable Exeport(string planID, string caseID, long executionID, out string exportFilePath)
         {
             PlanEntity plan = PlanBL.GetPlanByPlanID(planID);
 
@@ -65,9 +65,9 @@ namespace Mento.Business.Plan.BusinessLogic
 
             //TODO:
             //Export to excel
-            string fileName = Path.Combine(ExportConfig.ResultExportDirectory, String.Format("{0}-{1}-{2}.xls", plan.PlanID, caseID, executionID));
+            exportFilePath = Path.Combine(ExportConfig.ResultExportDirectory, String.Format("{0}-{1}-{2}.xls", plan.PlanID, caseID, executionID));
 
-            ExcelHelper.ExportToExcel(results, fileName, "ResultList");
+            ExcelHelper.ExportToExcel(results, exportFilePath, "ResultList");
 
             return results;
         }

@@ -87,9 +87,9 @@ namespace Mento.Business.Plan.BusinessLogic
             PlanDA.Update(originalPlan);
         }
 
-        public PlanEntity[] Export()
+        public PlanEntity[] Export(out string exportFilePath)
         {
-            string planFilePath = Path.Combine(ExportConfig.PlanExportDirectory, "list.xls");
+            exportFilePath = Path.Combine(ExportConfig.PlanExportDirectory, "list.xls");
 
             String[] headerList = new string[] { "ID", "PlanID", "Name", "ProductVersion", "Owner", "UpdateTime", "Status" };
 
@@ -109,16 +109,16 @@ namespace Mento.Business.Plan.BusinessLogic
             //handler.Save();
             //handler.Dispose();
 
-            ExcelHelper.ExportToExcel(planTable, planFilePath, "PlanList");
+            ExcelHelper.ExportToExcel(planTable, exportFilePath, "PlanList");
 
             return PlanDA.RetrieveAll();
         }
 
-        public ScriptEntity[] Export(string planID)
+        public ScriptEntity[] Export(string planID, out string exportFilePath)
         {
-            string excelFilePath = string.Format("Plans-{0}.xls", planID);
+            exportFilePath = string.Format("Plans-{0}.xls", planID);
 
-            excelFilePath = Path.Combine(ExportConfig.PlanExportDirectory, excelFilePath);
+            exportFilePath = Path.Combine(ExportConfig.PlanExportDirectory, exportFilePath);
             //String[] headerList = new string[] { "ID","CaseID", "ManualCaseID", "Name", "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime" };
 
             PlanEntity plan = GetPlanByPlanID(planID);
@@ -139,7 +139,7 @@ namespace Mento.Business.Plan.BusinessLogic
 
             //handler.Dispose();
 
-            ExcelHelper.ExportToExcel(scriptsTable, excelFilePath, "ScriptList");
+            ExcelHelper.ExportToExcel(scriptsTable, exportFilePath, "ScriptList");
 
 
             return ScriptDA.RetrieveByPlanID(plan.ID);

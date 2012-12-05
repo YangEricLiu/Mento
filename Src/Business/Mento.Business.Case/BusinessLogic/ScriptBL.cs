@@ -51,13 +51,12 @@ namespace Mento.Business.Script.BusinessLogic
             }
         }
 
-        public ScriptEntity[] Export()
+        public ScriptEntity[] Export(out string exportFilePath)
         {
             //string excelFilePath = ExportConfig.ScriptExportDirectory;
-            string excelFilePath = Path.Combine(ExportConfig.ScriptExportDirectory, "list.xls");
+            exportFilePath = Path.Combine(ExportConfig.ScriptExportDirectory, "list.xls");
 
-            String[] headerList = new string[] { "CaseID", "ManualCaseID", "Name", 
-                "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime" };
+            String[] headerList = new string[] { "CaseID", "ManualCaseID", "Name", "SuiteName", "Type", "Priority", "Feature", "Module", "Owner", "CreateTime", "SyncTime" };
 
             System.Data.DataTable scriptsTable = ScriptDA.RetrieveScriptsToDataTable();
 
@@ -69,7 +68,7 @@ namespace Mento.Business.Script.BusinessLogic
             //Get Worksheet object 
             //Worksheet sheet = handler.GetWorksheet("ScriptsData");
 
-            ExcelHelper.ExportToExcel(scriptsTable, excelFilePath, "ScriptList");
+            ExcelHelper.ExportToExcel(scriptsTable, exportFilePath, "ScriptList");
 
             //Import data from the start
             //handler.ImportDataTable(sheet, headerList, scriptsTable);

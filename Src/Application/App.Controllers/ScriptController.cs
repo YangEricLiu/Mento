@@ -8,6 +8,7 @@ using System.Reflection;
 using Mento.Utility;
 using Mento.Framework.Constants;
 using Mento.Framework.Attributes;
+using System.IO;
 
 namespace Mento.App.Controllers
 {
@@ -46,7 +47,8 @@ namespace Mento.App.Controllers
         {
             Console.WriteLine("Begin to retrieve all script data..");
 
-            ScriptEntity[] scripts = ScriptBL.Export();
+            string exportFilePath = String.Empty;
+            ScriptEntity[] scripts = ScriptBL.Export(out exportFilePath);
             int scriptNumber = scripts.GetLength(0);
 
             Console.WriteLine("There are {0} scripts currently", scriptNumber);
@@ -64,7 +66,7 @@ namespace Mento.App.Controllers
                 Console.WriteLine(format, script.CaseID, script.Name, script.Type, script.Priority, script.Owner);
             }
 
-            Console.WriteLine("In the mean while, the script data are exported to script export directory.");
+            Console.WriteLine("You can also see the exported file at:\n{0}", Path.GetFullPath(exportFilePath));
         }
     }
 }

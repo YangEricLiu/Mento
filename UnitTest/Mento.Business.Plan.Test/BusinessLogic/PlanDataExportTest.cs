@@ -51,8 +51,8 @@ namespace Mento.Business.Plan.Test
             string planid = "TA-P02";
 
             //string pathApp = "";
-
-            ll.Export(planid);
+            string exportFileName = String.Empty;
+            ll.Export(planid, out exportFileName);
             //Assert.AreEqual(AppDomain.CurrentDomain.BaseDirectory.ToString(), "hello");
         }
 

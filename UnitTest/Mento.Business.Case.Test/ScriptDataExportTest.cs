@@ -37,7 +37,8 @@ namespace Mento.Business.Case.Test
             long result2 = ScriptDA.Create(script2);
             long result3 = ScriptDA.Create(script3);
 
-            ll.Export();
+            string exportFileName = String.Empty;
+            ll.Export(out exportFileName);
         }
     }
 }

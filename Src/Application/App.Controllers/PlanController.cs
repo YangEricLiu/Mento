@@ -9,6 +9,7 @@ using Mento.Business.Script.Entity;
 using Mento.Business.Script.BusinessLogic;
 using Mento.Framework.Attributes;
 using Mento.Framework.Constants;
+using System.IO;
 
 namespace Mento.App.Controllers
 {
@@ -53,7 +54,8 @@ namespace Mento.App.Controllers
         {
             Console.WriteLine("Begin to retrieve all plan data..");
 
-            PlanEntity[] plans = PlanBL.Export();
+            string exportFilePath = String.Empty;
+            PlanEntity[] plans = PlanBL.Export(out exportFilePath);
             int planNumber = plans.GetLength(0);
 
             Console.WriteLine("There are {0} plans currently", planNumber);
@@ -71,15 +73,16 @@ namespace Mento.App.Controllers
                 Console.WriteLine(format, plan.PlanID, plan.Name, plan.ProductVersion, plan.Owner, plan.UpdateTime.ToString("yyyy-MM-dd"), plan.Status);
             }
 
-            Console.WriteLine("In the mean while, the plan data are exported to plan export directory.");
+            Console.WriteLine("You can also see the exported file at:\n{0}", Path.GetFullPath(exportFilePath));
         }
 
         [Command]
         public static void View([Parameter]string planID)
         {
             Console.WriteLine("Begin to retrieve all scripts in plan '{0}'..", planID);
-
-            ScriptEntity[] scripts = PlanBL.Export(planID);
+            
+            string exportFilePath = String.Empty;
+            ScriptEntity[] scripts = PlanBL.Export(planID, out exportFilePath);
             int scriptsNumber = scripts.GetLength(0);
 
             Console.WriteLine("There are {0} scripts in plan '{1}' currently", scriptsNumber, planID);
@@ -97,7 +100,7 @@ namespace Mento.App.Controllers
                 Console.WriteLine(format, script.CaseID, script.Name, script.Type, script.Priority, script.Owner);
             }
 
-            Console.WriteLine("In the mean while, the plan data are exported to plan export directory.");
+            Console.WriteLine("You can also see the exported file at:\n{0}", Path.GetFullPath(exportFilePath));
         }
 
         [Command]

@@ -8,6 +8,7 @@ using Mento.Framework.Exceptions;
 using Mento.Framework.Constants;
 using System.Data;
 using Mento.Utility;
+using System.IO;
 
 namespace Mento.App.Controllers
 {
@@ -24,7 +25,8 @@ namespace Mento.App.Controllers
         {
             Console.WriteLine("Begin query..");
 
-            var datatable = ExecutionBL.ExportByPlanID(planID);
+            string exportFilePath = String.Empty;
+            var datatable = ExecutionBL.ExportByPlanID(planID, out exportFilePath);
 
             //TODO:
             //Print the execution information list
@@ -35,7 +37,7 @@ namespace Mento.App.Controllers
 
             ConsoleHelper.PrintDataTable(datatable, headers, format);
 
-            Console.WriteLine("In the mean while, the execution record are exported to result export directory.");
+            Console.WriteLine("You can also see the exported file at:\n{0}", Path.GetFullPath(exportFilePath));
         }
 
         [Command(Name = "View")]
@@ -43,7 +45,8 @@ namespace Mento.App.Controllers
         {
             Console.WriteLine("Begin query..");
 
-            var datatable = ExecutionBL.ExportByCaseID(caseID);
+            string exportFilePath = String.Empty;
+            var datatable = ExecutionBL.ExportByCaseID(caseID, out exportFilePath);
 
             //TODO:
             //Print the execution information list
@@ -54,7 +57,7 @@ namespace Mento.App.Controllers
 
             ConsoleHelper.PrintDataTable(datatable, headers, format);
 
-            Console.WriteLine("In the mean while, the execution record are exported to result export directory.");
+            Console.WriteLine("You can also see the exported file at:\n{0}", Path.GetFullPath(exportFilePath));
         }
 
         [Command(Name = "View")]
@@ -62,7 +65,8 @@ namespace Mento.App.Controllers
         {
             Console.WriteLine("Begin query..");
 
-            var datatable = ResultBL.ExeportByPlanID(planID,executionID);
+            string exportFilePath = String.Empty;
+            var datatable = ResultBL.ExeportByPlanID(planID, executionID, out exportFilePath);
 
             //TODO:
             //Print the result detail
@@ -73,7 +77,7 @@ namespace Mento.App.Controllers
 
             ConsoleHelper.PrintDataTable(datatable, headers, format);
 
-            Console.WriteLine("In the mean while, the results are exported to result export directory.");
+            Console.WriteLine("You can also see the exported file at:\n{0}", Path.GetFullPath(exportFilePath));
         }
 
         [Command(Name = "View")]
@@ -81,7 +85,8 @@ namespace Mento.App.Controllers
         {
             Console.WriteLine("Begin query..");
 
-            var datatable = ResultBL.ExeportByCaseID(caseID, executionID);
+            string exportFilePath = String.Empty;
+            var datatable = ResultBL.ExeportByCaseID(caseID, executionID, out exportFilePath);
 
             //TODO:
             //Print the result detail
@@ -92,7 +97,7 @@ namespace Mento.App.Controllers
 
             ConsoleHelper.PrintDataTable(datatable, headers, format);
 
-            Console.WriteLine("In the mean while, the results are exported to result export directory.");
+            Console.WriteLine("You can also see the exported file at:\n{0}", Path.GetFullPath(exportFilePath));
         }
 
         [Command]
@@ -100,7 +105,8 @@ namespace Mento.App.Controllers
         {
             Console.WriteLine("Begin query..");
 
-            var datatable = ResultBL.Exeport(planID, caseID, executionID);
+            string exportFilePath = String.Empty;
+            var datatable = ResultBL.Exeport(planID, caseID, executionID, out exportFilePath);
 
             //TODO:
             //Print the result detail
@@ -111,7 +117,7 @@ namespace Mento.App.Controllers
 
             ConsoleHelper.PrintDataTable(datatable, headers, format);
 
-            Console.WriteLine("In the mean while, the results are exported to result export directory.");
+            Console.WriteLine("You can also see the exported file at:\n{0}", Path.GetFullPath(exportFilePath));
         }
     }
 }

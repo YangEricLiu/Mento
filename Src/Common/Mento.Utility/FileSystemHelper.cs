@@ -11,49 +11,37 @@ namespace Mento.Utility
     {
         public static void DownloadSharedFiles(string serverDirectory, string localMappingDrive, string userName, string password, string downloadDestinationDirectory)
         {
+            ConnectServer(serverDirectory, localMappingDrive, userName, password);
+
             if (Directory.Exists(downloadDestinationDirectory))
                 Directory.Delete(downloadDestinationDirectory, true);
 
-            int status = SambaShareServerHelper.Connect(serverDirectory, localMappingDrive, userName, password);
-            if (status == (int)ERROR_ID.ERROR_SUCCESS)
-            {
-                CopyDirectory(localMappingDrive + Path.DirectorySeparatorChar.ToString(), downloadDestinationDirectory);
-            }
-            else
-            {
-                throw new Exception("Can not connect to the specified server.");
-            }
+            CopyDirectory(localMappingDrive + Path.DirectorySeparatorChar.ToString(), downloadDestinationDirectory);
 
-            SambaShareServerHelper.Disconnect(localMappingDrive);
+            DisconnectServer(localMappingDrive);
         }
 
         public static void UploadSharedFiles(string serverDirectory, string localMappingDrive, string userName, string password, string uploadSourceDirectory)
         {
-            int status = SambaShareServerHelper.Connect(serverDirectory, localMappingDrive, userName, password);
-            if (status == (int)ERROR_ID.ERROR_SUCCESS)
-            {
-                string virtualDrive = localMappingDrive + Path.DirectorySeparatorChar.ToString();
-                if (!uploadSourceDirectory.EndsWith("\\"))
-                {
-                    string folderName = uploadSourceDirectory.TrimEnd('\\').Split('\\').Last();
-                    new DirectoryInfo(virtualDrive).CreateSubdirectory(folderName);
+            ConnectServer(serverDirectory, localMappingDrive, userName, password);
 
-                    CopyDirectory(uploadSourceDirectory, Path.Combine(virtualDrive, folderName));
-                }
-                else
-                {
-                    CopyDirectory(uploadSourceDirectory, virtualDrive);
-                }
+            string virtualDrive = localMappingDrive + Path.DirectorySeparatorChar.ToString();
+            if (!uploadSourceDirectory.EndsWith("\\"))
+            {
+                string folderName = uploadSourceDirectory.TrimEnd('\\').Split('\\').Last();
+                new DirectoryInfo(virtualDrive).CreateSubdirectory(folderName);
+
+                CopyDirectory(uploadSourceDirectory, Path.Combine(virtualDrive, folderName));
             }
             else
             {
-                throw new Exception("Can not connect to the specified server.");
+                CopyDirectory(uploadSourceDirectory, virtualDrive);
             }
 
-            SambaShareServerHelper.Disconnect(localMappingDrive);
+            DisconnectServer(localMappingDrive);
         }
 
-        private static void CopyDirectory(string sourceDirectory, string destinationDirectory)
+        public static void CopyDirectory(string sourceDirectory, string destinationDirectory)
         {
             string[] directories = Directory.GetDirectories(sourceDirectory);
             if (!Directory.Exists(destinationDirectory))
@@ -80,7 +68,7 @@ namespace Mento.Utility
             }
         }
 
-        private static void CopyFile(DirectoryInfo sourceDirectory, string destinationDirectory)
+        public static void CopyFile(DirectoryInfo sourceDirectory, string destinationDirectory)
         {
             FileInfo[] files = sourceDirectory.GetFiles();
             foreach (FileInfo file in files)
@@ -89,6 +77,20 @@ namespace Mento.Utility
                 string destFileFullName = Path.Combine(destinationDirectory, file.Name);
                 file.CopyTo(destFileFullName, true);
             }
+        }
+
+        public static void ConnectServer(string serverUrl, string localMappingDrive, string userName, string password)
+        {
+            int status = SambaShareServerHelper.Connect(serverUrl, localMappingDrive, userName, password);
+            if (status != (int)ERROR_ID.ERROR_SUCCESS)
+            {
+                throw new Exception("Can not connect to the share server.");
+            }
+        }
+
+        public static void DisconnectServer(string localMappingDrive)
+        {
+            SambaShareServerHelper.Disconnect(localMappingDrive);
         }
     }
 

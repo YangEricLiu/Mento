@@ -65,7 +65,7 @@ namespace Mento.App.CommandAnalysis
 
         private static void SetConsoleStyle()
         {
-            Console.SetWindowSize(140, 32);
+            Console.SetWindowSize(100, 32);
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
         }

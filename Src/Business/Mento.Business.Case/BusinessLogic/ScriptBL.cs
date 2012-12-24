@@ -140,7 +140,8 @@ namespace Mento.Business.Script.BusinessLogic
         private Dictionary<MethodInfo, List<Type>> ValidateScript(out List<ScriptEntity> scriptList)
         {
             //string scriptPath = @"D:\publish\TA\Release0.1.0.1";
-            FileSystemHelper.DownloadSharedFiles(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, ExecutionConfig.ScriptDirectory);
+            //FileSystemHelper.DownloadSharedFiles(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, ExecutionConfig.ScriptDirectory);
+            GetTheLatestScript();
 
             Dictionary<MethodInfo, List<Type>> validationFaults = new Dictionary<MethodInfo, List<Type>>();
             scriptList = new List<ScriptEntity>();
@@ -233,6 +234,22 @@ namespace Mento.Business.Script.BusinessLogic
             }
 
             return testSuites;
+        }
+
+        private void GetTheLatestScript()
+        {
+            FileSystemHelper.ConnectServer(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword);
+
+            if (Directory.Exists(ExecutionConfig.ScriptDirectory))
+                Directory.Delete(ExecutionConfig.ScriptDirectory, true);
+
+            DirectoryInfo localLocation = new DirectoryInfo(ExecutionConfig.LocalNetworkDrive + Path.DirectorySeparatorChar.ToString());
+
+            DirectoryInfo theLatestVersion = localLocation.GetDirectories("Mento_TSIR*").OrderByDescending(d => d.CreationTime).FirstOrDefault();
+
+            FileSystemHelper.CopyDirectory(theLatestVersion.FullName, ExecutionConfig.ScriptDirectory);
+
+            FileSystemHelper.DisconnectServer(ExecutionConfig.LocalNetworkDrive);
         }
         #endregion
     }

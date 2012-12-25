@@ -5,6 +5,8 @@ using System.Text;
 using Mento.Framework.Script;
 using NUnit.Framework;
 using Mento.Framework.Attributes;
+using Mento.TestApi.WebUserInterface;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.EnergyView.Usage
 {
@@ -18,6 +20,7 @@ namespace Mento.Script.EnergyView.Usage
         [CaseID("TC-J1-SmokeTest-034")]
         public void ValidateChartRendered()
         {
+            var button = JazzButton.AreaDimensionCreateButton;
         }
     }
 }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using Mento.TestApi.WebUserInterface;
+using Mento.ScriptCommon.Library;
+using Mento.Framework.Execution;
 
 namespace Mento.Script.ClientAccess
 {
@@ -13,6 +15,8 @@ namespace Mento.Script.ClientAccess
         [SetUp]
         public void RunBeforeAnyTests()
         {
+            TestAssemblyInitializer.InitializeExecutionContext();
+
             JazzBrowseManager.OpenJazz();
         }
 
@@ -20,6 +24,8 @@ namespace Mento.Script.ClientAccess
         public void RunAfterAnyTests()
         {
             JazzBrowseManager.CloseJazz();
+
+            ExecutionContext.Destruct();
         }
     }
 }

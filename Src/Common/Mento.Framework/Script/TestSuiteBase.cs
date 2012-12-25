@@ -20,11 +20,7 @@ namespace Mento.Framework.Script
             //Amy comment: if running case in R1.0, below relevant clause needs to be commented out, and replace with another one.
             //ExecutionContext.Url = "https://223.4.20.20/0.5/Web/";
             ////ExecutionContext.Url = "https://10.177.0.36/Web/";
-
-            string ContextConfigFileName = Path.Combine(ExecutionConfig.ExecutionDirectory, Project.EXECUTIONTEMPCONFIGNAME);
-
-            if(!File.Exists(ContextConfigFileName))
-                ExecutionContext.Initialize("https://localhost/WebHost/", "chrome", "cn");            
+          
         }
 
         protected ILog Logger = ScriptLog.Instance;

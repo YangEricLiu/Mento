@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using Mento.TestApi.WebUserInterface;
-using Mento.ScriptCommon.Library.Functions;
+using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
-using Mento.TestApi.WebUserInterface.Controls;
-using Mento.TestApi.WebUserInterface.ControlCollection;
-using Mento.Utility;
-using Mento.Framework.Attributes;
+using Mento.ScriptCommon.Library.Functions;
+using Mento.TestApi.WebUserInterface;
 
 namespace Mento.Script.Administration.Calendar
 {
@@ -18,12 +15,12 @@ namespace Mento.Script.Administration.Calendar
     [Owner("Emma")]
     [CreateTime("2012-12-28")]
     [ManualCaseID("TC-J1-SmokeTest-015")]
-    public class TimeMagament: TestSuiteBase
+    public class CarbonManagement:TestSuiteBase
     {
         [SetUp]
         public void ScriptSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CarbonSettings);
         }
 
         [TearDown]
@@ -34,12 +31,11 @@ namespace Mento.Script.Administration.Calendar
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-Workday-001")]
-        public void AddWorkDayForValid()
-        { 
-            
+        [CaseID("TC-J1-SmokeTest-Carbon-001")]
+        public void AddCarbonForValid()
+        {
+            string a = "";
 
         }
-
     }
 }

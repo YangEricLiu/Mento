@@ -24,6 +24,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorTimeSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTimeSettings);
         public static Button NavigatorCarbonSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCarbonSettings);
         public static Button NavigatorPriceSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorPriceSettings);
+        public static Button NavigatorCustomerManagementButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCustomerManagement);
+        public static Button NavigatorUserManagementButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorUserManagement);
+
         public static Button NavigatorTagSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTagSettings);//{NavigationTarget.TagSettings, new NavigatorItem(NavigationTarget.TagSettings,NavigationTarget.Settings,"setting-tab-tagmrg-btn-btnEl",ByType.ID)},
         public static Button NavigatorHierarchySettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorHierarchySettings);//{NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,"setting-tab-hiersetting-btn-btnEl",ByType.ID)},
         public static Button NavigatorAssociationSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAssociationSettings);//{NavigationTarget.AssociationSettings, new NavigatorItem(NavigationTarget.AssociationSettings,NavigationTarget.Settings,"setting-tab-tagassoc-btn-btnEl",ByType.ID)},
@@ -38,6 +41,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorCarbonSettingsCarbonButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCarbonSettingsCarbon);//{NavigationTarget.PlatformCarbon, new NavigatorItem(NavigationTarget.PlatformCarbon,NavigationTarget.PlatformSettings,"st-menu-carbon-btnEl",ByType.ID)},
         //--Price
         public static Button NavigatorPriceSettingsPriceButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorPriceSettingsPrice);//{NavigationTarget.PlatformPrice, new NavigatorItem(NavigationTarget.PlatformPrice,NavigationTarget.PlatformSettings,"st-menu-price-btnEl",ByType.ID)},
+        //--Customer
+        public static Button NavigatorCustomerManagementCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCustomerManagementCustomer);//{NavigationTarget.PlatformPrice, new NavigatorItem(NavigationTarget.PlatformPrice,NavigationTarget.PlatformSettings,"st-menu-price-btnEl",ByType.ID)},
+        //--User
+        public static Button NavigatorUserManagementUserButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorUserManagementUser);//{NavigationTarget.PlatformPrice, new NavigatorItem(NavigationTarget.PlatformPrice,NavigationTarget.PlatformSettings,"st-menu-price-btnEl",ByType.ID)},
+        public static Button NavigatorUserManagementUserTypePermissionButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorUserManagementUserTypePermission);//{NavigationTarget.PlatformPrice, new NavigatorItem(NavigationTarget.PlatformPrice,NavigationTarget.PlatformSettings,"st-menu-price-btnEl",ByType.ID)},
         //--Tag
         public static Button NavigatorTagSettingsPButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTagSettingsP);//{NavigationTarget.TagSettingsP, new NavigatorItem(NavigationTarget.TagSettingsP,NavigationTarget.TagSettings,"st-menu-ptagmgr-btnEl",ByType.ID)},
         public static Button NavigatorTagSettingsVButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTagSettingsV);//{NavigationTarget.TagSettingsV, new NavigatorItem(NavigationTarget.TagSettingsV,NavigationTarget.TagSettings,"st-menu-vtagmgr-btnEl",ByType.ID)},

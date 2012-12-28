@@ -88,6 +88,8 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.TimeSettings, new NavigatorItem(NavigationTarget.TimeSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorTimeSettingsButton)},
             {NavigationTarget.CarbonSettings, new NavigatorItem(NavigationTarget.CarbonSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorCarbonSettingsButton)},
             {NavigationTarget.PriceSettings, new NavigatorItem(NavigationTarget.PriceSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorPriceSettingsButton)},
+            {NavigationTarget.CustomerManagement, new NavigatorItem(NavigationTarget.CustomerManagement,NavigationTarget.PlatformSettings,JazzButton.NavigatorCustomerManagementButton)},
+            {NavigationTarget.UserManagement, new NavigatorItem(NavigationTarget.UserManagement,NavigationTarget.PlatformSettings,JazzButton.NavigatorUserManagementButton)},
 
             {NavigationTarget.TagSettings, new NavigatorItem(NavigationTarget.TagSettings,NavigationTarget.Settings,JazzButton.NavigatorTagSettingsButton)},
             {NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,JazzButton.NavigatorHierarchySettingsButton)},
@@ -103,7 +105,11 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.CarbonSettingsCarbon, new NavigatorItem(NavigationTarget.CarbonSettingsCarbon,NavigationTarget.CarbonSettings,JazzButton.NavigatorCarbonSettingsCarbonButton)},
             //--Price
             {NavigationTarget.PriceSettingsPrice, new NavigatorItem(NavigationTarget.PriceSettingsPrice,NavigationTarget.PriceSettings,JazzButton.NavigatorPriceSettingsPriceButton)},
-            
+            //--Customer
+            {NavigationTarget.CustomerManagementCustomer, new NavigatorItem(NavigationTarget.CustomerManagementCustomer,NavigationTarget.PriceSettings,JazzButton.NavigatorCustomerManagementCustomerButton)},
+            //--User
+            {NavigationTarget.UserManagementUser, new NavigatorItem(NavigationTarget.UserManagementUser,NavigationTarget.PriceSettings,JazzButton.NavigatorUserManagementUserButton)},
+            {NavigationTarget.UserManagementUserTypePermission, new NavigatorItem(NavigationTarget.UserManagementUserTypePermission,NavigationTarget.PriceSettings,JazzButton.NavigatorUserManagementUserTypePermissionButton)},
             //--Tag
             {NavigationTarget.TagSettingsP, new NavigatorItem(NavigationTarget.TagSettingsP,NavigationTarget.TagSettings,JazzButton.NavigatorTagSettingsPButton)},
             {NavigationTarget.TagSettingsV, new NavigatorItem(NavigationTarget.TagSettingsV,NavigationTarget.TagSettings,JazzButton.NavigatorTagSettingsVButton)},
@@ -159,31 +165,38 @@ namespace Mento.ScriptCommon.Library.Functions
         TimeSettings = 5,
         CarbonSettings = 6,
         PriceSettings = 7,
-        TagSettings = 8,
-        HierarchySettings = 9,
-        AssociationSettings = 10,
+        CustomerManagement = 8,
+        UserManagement = 9,
+        TagSettings = 10,
+        HierarchySettings = 11,
+        AssociationSettings = 12,
         
         //level 3
         //--Time
-        TimeSettingsWorkday = 11,
-        TimeSettingsWorktime = 12,
-        TimeSettingsSeason = 13,
-        TimeSettingsDaynight = 14,
+        TimeSettingsWorkday = 13,
+        TimeSettingsWorktime = 14,
+        TimeSettingsSeason = 15,
+        TimeSettingsDaynight = 16,
         //--Carbon
-        CarbonSettingsCarbon = 15,
+        CarbonSettingsCarbon = 17,
         //--Price
-        PriceSettingsPrice = 16,
+        PriceSettingsPrice = 18,
+        //--Customer
+        CustomerManagementCustomer = 19,
+        //--User
+        UserManagementUser = 20,
+        UserManagementUserTypePermission = 21,
         //--Tag
-        TagSettingsP = 17,
-        TagSettingsV = 18,
-        TagSettingsKPI = 19,
+        TagSettingsP = 22,
+        TagSettingsV = 23,
+        TagSettingsKPI = 24,
         //--Hierarchy
-        HierarchySettingsHierarchy = 20,
-        HierarchySettingsSystemDimension = 21,
-        HierarchySettingsAreaDimension = 22,
+        HierarchySettingsHierarchy = 25,
+        HierarchySettingsSystemDimension = 26,
+        HierarchySettingsAreaDimension = 27,
         //--Association
-        AssociationHierarchy = 23,
-        AssociationSystemDimension = 24,
-        AssociationAreaDimension = 25,
+        AssociationHierarchy = 28,
+        AssociationSystemDimension = 29,
+        AssociationAreaDimension = 30,
     }
 }

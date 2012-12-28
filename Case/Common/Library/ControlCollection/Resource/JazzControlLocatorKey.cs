@@ -24,6 +24,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorTimeSettings = "ButtonNavigatorTimeSettings";
         public static string ButtonNavigatorCarbonSettings = "ButtonNavigatorCarbonSettings";
         public static string ButtonNavigatorPriceSettings = "ButtonNavigatorPriceSettings";
+        public static string ButtonNavigatorCustomerManagement = "ButtonNavigatorCustomerManagement";
+        public static string ButtonNavigatorUserManagement = "ButtonNavigatorUserManagement";
         public static string ButtonNavigatorTagSettings = "ButtonNavigatorTagSettings";
         public static string ButtonNavigatorHierarchySettings = "ButtonNavigatorHierarchySettings";
         public static string ButtonNavigatorAssociationSettings = "ButtonNavigatorAssociationSettings";
@@ -38,6 +40,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorCarbonSettingsCarbon = "ButtonNavigatorCarbonSettingsCarbon";
         //--Price
         public static string ButtonNavigatorPriceSettingsPrice = "ButtonNavigatorPriceSettingsPrice";
+        //--Customer
+        public static string ButtonNavigatorCustomerManagementCustomer = "ButtonNavigatorCustomerManagementCustomer";
+        //--User
+        public static string ButtonNavigatorUserManagementUser = "ButtonNavigatorUserManagementUser";
+        public static string ButtonNavigatorUserManagementUserTypePermission = "ButtonNavigatorUserManagementUserTypePermission";
         //--Tag
         public static string ButtonNavigatorTagSettingsP = "ButtonNavigatorTagSettingsP";
         public static string ButtonNavigatorTagSettingsV = "ButtonNavigatorTagSettingsV";

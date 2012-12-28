@@ -12,7 +12,9 @@
 
       <add key="ButtonNavigatorTimeSettings" value="st-menu-timecfg" type="ID"/>
       <add key="ButtonNavigatorCarbonSettings" value="st-menu-carbon-lv1" type="ID"/>
-      <add key="ButtonNavigatorPriceSettings" value="st-menu-price-lv1" type="ID"/>     
+      <add key="ButtonNavigatorPriceSettings" value="st-menu-price-lv1" type="ID"/>
+      <add key="ButtonNavigatorCustomerManagement" value="st-menu-customer-lv1" type="ID"/>
+      <add key="ButtonNavigatorUserManagement" value="st-menu-user-lv1" type="ID"/>
       <add key="ButtonNavigatorTagSettings" value="setting-tab-tagmrg-btn" type="ID"/>
       <add key="ButtonNavigatorHierarchySettings" value="setting-tab-hiersetting-btn" type="ID"/>
       <add key="ButtonNavigatorAssociationSettings" value="setting-tab-tagassoc-btn" type="ID"/>
@@ -23,6 +25,9 @@
       <add key="ButtonNavigatorTimeSettingsDaynight" value="st-menu-daynight" type="ID"/>
       <add key="ButtonNavigatorCarbonSettingsCarbon" value="st-menu-carbon" type="ID"/>
       <add key="ButtonNavigatorPriceSettingsPrice" value="st-menu-price" type="ID"/>
+      <add key="ButtonNavigatorCustomerManagementCustomer" value="st-menu-customer" type="ID"/>
+      <add key="ButtonNavigatorUserManagementUser" value="st-menu-user" type="ID"/>
+      <add key="ButtonNavigatorUserManagementUserTypePermission" value="st-menu-usertype" type="ID"/>
       <add key="ButtonNavigatorTagSettingsP" value="st-menu-ptagmgr" type="ID"/>
       <add key="ButtonNavigatorTagSettingsV" value="st-menu-vtagmgr" type="ID"/>
       <add key="ButtonNavigatorTagSettingsKPI" value="st-menu-kpimgr" type="ID"/>

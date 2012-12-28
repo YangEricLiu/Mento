@@ -48,7 +48,7 @@ namespace Mento.Script.Customer.HierarchySettings
             ////Select a Building node.	
             ////The Area dimension is light and enable to select.
             AreaSettings.ShowHierarchyTree();
-            AreaSettings.ExpandHierarchyNodePath(new string[] { "Schneider", "12345" });
+            AreaSettings.ExpandHierarchyNodePath(new string[] { "自动化测试", "12345" });
             AreaSettings.SelectHierarchyNode("124");
 
             //AreaSettings.ExpandAreaDimensionNodePath(new string[] { "124" });

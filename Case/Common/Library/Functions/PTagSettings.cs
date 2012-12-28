@@ -95,7 +95,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Click "modify" button to modify one ptag
         /// </summary>
-        /// <param name="tagName">Tag name</param>
+        /// <param name="tagCode">Tag name</param>
         /// <returns></returns>
         public void PrepareToModifyPtag(string tagCode)
         {

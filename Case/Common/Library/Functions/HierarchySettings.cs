@@ -102,12 +102,6 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             PrepareToAddNode(treeNodeName);
 
-            //textFieldInstance.FillIn(ElementKey.HierarchyName, input.Name);
-            //textFieldInstance.FillIn(ElementKey.HierarchyCode, input.Code);
-            //comboBoxInstance.DisplayItems(ElementKey.HierarchyType);
-            //comboBoxInstance.SelectItem(input.Type);
-            //textFieldInstance.FillIn(ElementKey.HierarchyComment, input.Comment);
-
             NameTextField.Fill(input.Name);
             CodeTextField.Fill(input.Code);
             HierarchyTypeComboBox.SelectItem(input.Type);
@@ -151,7 +145,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Input comment of the new hierarchy node 
         /// </summary>
-        /// <param name="code">Hierarchy comment code</param>
+        /// <param name="comment">Hierarchy comment code</param>
         /// <returns></returns>
         public void FillInComment(string comment)
         {
@@ -167,6 +161,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public void WaitForCreateOKDisplay(int timeout)
         {
             JazzMessageBox.MessageBox.WaitMeAppear();
+        }
+
+        /// <summary>
+        /// After click save button, waiting for add successful message box pop up
+        /// </summary>
+        /// <returns></returns>
+        public string GetMessageText()
+        {
+            return JazzMessageBox.MessageBox.GetMessage();
         }
 
         /// <summary>

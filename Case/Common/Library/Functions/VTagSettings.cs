@@ -85,7 +85,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Select one tag
         /// </summary>
-        /// <param name="VTagName">VTag name</param>
+        /// <param name="vtagName">VTag name</param>
         /// <returns></returns>
         public void FocusOnVTag(string vtagName)
         {

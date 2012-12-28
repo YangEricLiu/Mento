@@ -313,7 +313,7 @@ I18N.Common.Button.LineChart = '折线图';
 I18N.Common.Button.ColumnChart = '柱状图';
 I18N.Common.Button.GridView = '数据表';
 I18N.Common.Button.Comparation = '比较';
-I18N.Common.Button.Confirm = '确定';
+I18N.Common.Button.Confirm = '好';
 I18N.Common.Button.Save = '保存';
 I18N.Common.Button.Cancel = '放弃';
 I18N.Common.Button.Delete = '删除';
@@ -347,7 +347,7 @@ I18N.Common.Label.EmptyData = '没有数据';
 I18N.Common.Label.ConfirmDelete = '确认删除？';
 I18N.Common.Label.CreateOK = '添加成功。';
 I18N.Common.Label.UpdateOK = '修改成功。';
-I18N.Common.Label.OKButton = '好，我知道了。';
+I18N.Common.Label.OKButton = '好';
 I18N.Common.Label.ConfirmLongTermOperation = '本操作耗时较长，确定开始吗？';
 I18N.Common.Label.UnExpectedData = '存在非法数据，无法绘制饼图';
 

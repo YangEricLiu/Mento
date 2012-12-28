@@ -53,8 +53,8 @@ namespace Mento.Script.Customer.TagAssociation
         {
             //FunctionWrapper.Hierarchy.FocusOnHierarchyNode("Schneider");
             //ElementLocator.Pause(1000);
-            Association.ExpandHierarchyNodePath(new string[] { "Schneider" });
-            Association.SelectHierarchyNode("Schneider");
+            Association.ExpandHierarchyNodePath(new string[] { "自动化测试" });
+            Association.SelectHierarchyNode("自动化测试");
 
             Association.ClickAssociateTagButton();
             //FunctionWrapper.WaitForLoadingDisappeared(2000);

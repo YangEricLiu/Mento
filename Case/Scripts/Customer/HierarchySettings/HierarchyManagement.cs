@@ -61,16 +61,18 @@ namespace Mento.Script.Customer.HierarchySettings
         [MultipleTestDataSource(typeof(AddHierarchyData[]), typeof(HierarchyManagement), "TA-Hierarchy-001")]
         public void AddOrgnizationNodeTest(AddHierarchyData input)
         {
-            HierarchySettings.FillInHierarchyNode("Schneider", input.InputData);
+            HierarchySettings.FillInHierarchyNode("自动化测试", input.InputData);
             HierarchySettings.ClickSaveButton();
-            HierarchySettings.WaitForCreateOKDisplay(120);
+            TimeManager.ShortPause();
+            
+            string msgText = HierarchySettings.GetMessageText();
+            Assert.IsTrue(msgText.Contains("添加成功"));
 
-            //ElementLocator.Pause(500);
             TimeManager.ShortPause();
 
             HierarchySettings.ConfirmCreateOKMagBox();
 
-            Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.Name, "Schneider"));
+            Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.Name, "自动化测试"));
 
             HierarchySettings.FocusOnHierarchyNode(input.InputData.Name);
 

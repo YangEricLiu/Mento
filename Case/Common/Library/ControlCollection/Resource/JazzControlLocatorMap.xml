@@ -65,8 +65,8 @@
         <add key="ButtonHierarchySettingsDelete" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
       </hierarchy>
       <systemdimension>
-        <add key="ButtonDimensionShowHierarchyTree" value = "st-assoc-hier-btn" type ="ID"/>
-        <add key="ButtonSystemDimensionSet" value = "st-sys-tree-update" type ="ID"/>
+        <add key="ButtonDimensionShowHierarchyTree" value = "//div[@id='setting-region-center']//button" type ="XPath"/>
+        <add key="ButtonSystemDimensionSet" value = "st-sys-tree-update-btnInnerEl" type ="ID"/>
         <add key="ButtonSystemDimensionSettingsDialogReturn" value = "st-sys-configtree-goback" type ="ID"/>
       </systemdimension>
       <areadimension>

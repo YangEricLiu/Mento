@@ -9,7 +9,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class MessageBox : JazzControl
     {
-        private static Locator MessageContainerLocator = new Locator("div/div/div/div/div/div/div/table/tbody/tr/td[@class='x-form-item-body']/div[@data-errorqtip]", ByType.XPath);
+        private static Locator MessageContainerLocator = new Locator("/div/div/div/div/div/div/div/table/tbody/tr/td[@class='x-form-item-body']/div[@data-errorqtip]", ByType.XPath);
+        //private static Locator MessageContainerLocator = new Locator("//div[contains(@id, 'messagebox')]", ByType.XPath);
 
         protected IWebElement OkButton
         {
@@ -93,7 +94,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public string GetMessage()
         {
-            return FindChild(MessageContainerLocator).Text;
+            return RootElement.Text;
+            //return FindChild(MessageContainerLocator).Text;
         }
     }
 }

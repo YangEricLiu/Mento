@@ -39,11 +39,14 @@ namespace Mento.Script.Customer.HierarchySettings
 
             //1.Select the org/site/building node from hierarchy tree.
             //The system dimension tree for the selected hierarchy node is displayed.
+
             SystemSettings.ShowHierarchyTree();
-            SystemSettings.ExpandHierarchyNodePath(new string[] { "Schneider" });
-            SystemSettings.SelectHierarchyNode("12345");
+            TimeManager.ShortPause();
+            //SystemSettings.ExpandHierarchyNodePath(new string[] { "自动化测试" });
+            SystemSettings.SelectHierarchyNode("自动化测试");
 
             SystemSettings.ShowSystemDimensionDialog();
+            TimeManager.MediumPause();
 
             //2.Associate Level 1 dimension node by select the checkbox: Select ‘空调’ checkbox.
             //The Level 1 dimension node ('空调') is associated.

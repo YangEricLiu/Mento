@@ -19,7 +19,7 @@ namespace Mento.Script.ClientAccess.Login
         [CaseID("TC-J1-SmokeTest-031")]
         public void Login()
         {
-            JazzFunction.LoginPage.LoginToCustomer();
+            JazzFunction.LoginPage.Login();
 
             Assert.IsTrue(JazzFunction.LoginPage.IsAlreadyLogin());
         }

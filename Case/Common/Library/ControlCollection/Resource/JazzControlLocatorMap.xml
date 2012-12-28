@@ -8,27 +8,27 @@
       <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
       <add key="ButtonNavigatorEnergyView" value="header-btn-energyservice" type="ID"/>
       <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
-
       <add key="ButtonNavigatorPlatformSettings" value="setting-tab-platformsetting-btn" type="ID"/>
+
+      <add key="ButtonNavigatorTimeSettings" value="st-menu-timecfg" type="ID"/>
+      <add key="ButtonNavigatorCarbonSettings" value="st-menu-carbon-lv1" type="ID"/>
+      <add key="ButtonNavigatorPriceSettings" value="st-menu-price-lv1" type="ID"/>     
       <add key="ButtonNavigatorTagSettings" value="setting-tab-tagmrg-btn" type="ID"/>
       <add key="ButtonNavigatorHierarchySettings" value="setting-tab-hiersetting-btn" type="ID"/>
       <add key="ButtonNavigatorAssociationSettings" value="setting-tab-tagassoc-btn" type="ID"/>
 
-      <add key="ButtonNavigatorPlatformWorkday" value="st-menu-workday" type="ID"/>
-      <add key="ButtonNavigatorPlatformWorktime" value="st-menu-worktime" type="ID"/>
-      <add key="ButtonNavigatorPlatformSeason" value="st-menu-coldwarm" type="ID"/>
-      <add key="ButtonNavigatorPlatformDaynight" value="st-menu-daynight" type="ID"/>
-      <add key="ButtonNavigatorPlatformCarbon" value="st-menu-carbon" type="ID"/>
-      <add key="ButtonNavigatorPlatformPrice" value="st-menu-price" type="ID"/>
-
+      <add key="ButtonNavigatorTimeSettingsWorkday" value="st-menu-workday" type="ID"/>
+      <add key="ButtonNavigatorTimeSettingsWorktime" value="st-menu-worktime" type="ID"/>
+      <add key="ButtonNavigatorTimeSettingsSeason" value="st-menu-coldwarm" type="ID"/>
+      <add key="ButtonNavigatorTimeSettingsDaynight" value="st-menu-daynight" type="ID"/>
+      <add key="ButtonNavigatorCarbonSettingsCarbon" value="st-menu-carbon" type="ID"/>
+      <add key="ButtonNavigatorPriceSettingsPrice" value="st-menu-price" type="ID"/>
       <add key="ButtonNavigatorTagSettingsP" value="st-menu-ptagmgr" type="ID"/>
       <add key="ButtonNavigatorTagSettingsV" value="st-menu-vtagmgr" type="ID"/>
       <add key="ButtonNavigatorTagSettingsKPI" value="st-menu-kpimgr" type="ID"/>
-
       <add key="ButtonNavigatorHierarchySettingsHierarchy" value="st-menu-hierarchy" type="ID"/>
       <add key="ButtonNavigatorHierarchySettingsSystemDimension" value="st-menu-systemdimension" type="ID"/>
       <add key="ButtonNavigatorHierarchySettingsAreaDimension" value="st-menu-areadimension" type="ID"/>
-
       <add key="ButtonNavigatorAssociationHierarchy" value="st-menu-hierarchytags" type="ID"/>
       <add key="ButtonNavigatorAssociationSystemDimension" value="st-menu-systemdtags" type="ID"/>
       <add key="ButtonNavigatorAssociationAreaDimensionButton" value="st-menu-areadtags" type="ID"/>

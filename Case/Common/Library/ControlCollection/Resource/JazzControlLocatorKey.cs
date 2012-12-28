@@ -18,21 +18,26 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorHomePage = "ButtonNavigatorHomePage";
         public static string ButtonNavigatorEnergyView = "ButtonNavigatorEnergyView";
         public static string ButtonNavigatorSettings = "ButtonNavigatorSettings";
+        public static string ButtonNavigatorPlatformSettings = "ButtonNavigatorPlatformSettings";
 
         //level 2
-        public static string ButtonNavigatorPlatformSettings = "ButtonNavigatorPlatformSettings";
+        public static string ButtonNavigatorTimeSettings = "ButtonNavigatorTimeSettings";
+        public static string ButtonNavigatorCarbonSettings = "ButtonNavigatorCarbonSettings";
+        public static string ButtonNavigatorPriceSettings = "ButtonNavigatorPriceSettings";
         public static string ButtonNavigatorTagSettings = "ButtonNavigatorTagSettings";
         public static string ButtonNavigatorHierarchySettings = "ButtonNavigatorHierarchySettings";
         public static string ButtonNavigatorAssociationSettings = "ButtonNavigatorAssociationSettings";
 
         //level 3
-        //--Platform
-        public static string ButtonNavigatorPlatformWorkday = "ButtonNavigatorPlatformWorkday";
-        public static string ButtonNavigatorPlatformWorktime = "ButtonNavigatorPlatformWorktime";
-        public static string ButtonNavigatorPlatformSeason = "ButtonNavigatorPlatformSeason";
-        public static string ButtonNavigatorPlatformDaynight = "ButtonNavigatorPlatformDaynight";
-        public static string ButtonNavigatorPlatformCarbon = "ButtonNavigatorPlatformCarbon";
-        public static string ButtonNavigatorPlatformPrice = "ButtonNavigatorPlatformPrice";
+        //--Time
+        public static string ButtonNavigatorTimeSettingsWorkday = "ButtonNavigatorTimeSettingsWorkday";
+        public static string ButtonNavigatorTimeSettingsWorktime = "ButtonNavigatorTimeSettingsWorktime";
+        public static string ButtonNavigatorTimeSettingsSeason = "ButtonNavigatorTimeSettingsSeason";
+        public static string ButtonNavigatorTimeSettingsDaynight = "ButtonNavigatorTimeSettingsDaynight";
+        //--Carbon
+        public static string ButtonNavigatorCarbonSettingsCarbon = "ButtonNavigatorCarbonSettingsCarbon";
+        //--Price
+        public static string ButtonNavigatorPriceSettingsPrice = "ButtonNavigatorPriceSettingsPrice";
         //--Tag
         public static string ButtonNavigatorTagSettingsP = "ButtonNavigatorTagSettingsP";
         public static string ButtonNavigatorTagSettingsV = "ButtonNavigatorTagSettingsV";
@@ -115,19 +120,19 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldHierarchySettingsComment = "TextFieldHierarchySettingsComment";
         #endregion
 
-        #region VTag settings
-        public static string TextFieldVTagSettingsName = "TextFieldVTagSettingsName";
-        public static string TextFieldVTagSettingsCode = "TextFieldVTagSettingsCode";
-        public static string TextFieldVTagSettingsComment = "TextFieldVTagSettingsComment";
-        #endregion
-
-        #region VTag settings
+        #region PTag settings
         public static string TextFieldPTagSettingsName = "TextFieldPTagSettingsName";
         public static string TextFieldPTagSettingsCode = "TextFieldPTagSettingsCode";
         public static string TextFieldPTagSettingsMeterCode = "TextFieldPTagSettingsMeterCode";
         public static string TextFieldPTagSettingsChannel = "TextFieldPTagSettingsChannel";
         public static string TextFieldPTagSettingsComment = "TextFieldPTagSettingsComment";
         #endregion
+
+        #region VTag settings
+        public static string TextFieldVTagSettingsName = "TextFieldVTagSettingsName";
+        public static string TextFieldVTagSettingsCode = "TextFieldVTagSettingsCode";
+        public static string TextFieldVTagSettingsComment = "TextFieldVTagSettingsComment";
+        #endregion               
 
         #region Area dimension Settings
         public static string TextFieldAreaDimensionSettingsName = "TextFieldAreaDimensionSettingsName";

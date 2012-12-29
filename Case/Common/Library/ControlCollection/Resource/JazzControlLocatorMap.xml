@@ -8,7 +8,7 @@
       <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
       <add key="ButtonNavigatorEnergyView" value="header-btn-energyservice" type="ID"/>
       <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
-      <add key="ButtonNavigatorPlatformSettings" value="setting-tab-platformsetting-btn" type="ID"/>
+      <add key="ButtonNavigatorPlatformSettings" value="header-btn-pfsetting" type="ID"/>
 
       <add key="ButtonNavigatorTimeSettings" value="st-menu-timecfg" type="ID"/>
       <add key="ButtonNavigatorCarbonSettings" value="st-menu-carbon-lv1" type="ID"/>

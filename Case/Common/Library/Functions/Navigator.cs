@@ -106,10 +106,10 @@ namespace Mento.ScriptCommon.Library.Functions
             //--Price
             {NavigationTarget.PriceSettingsPrice, new NavigatorItem(NavigationTarget.PriceSettingsPrice,NavigationTarget.PriceSettings,JazzButton.NavigatorPriceSettingsPriceButton)},
             //--Customer
-            {NavigationTarget.CustomerManagementCustomer, new NavigatorItem(NavigationTarget.CustomerManagementCustomer,NavigationTarget.PriceSettings,JazzButton.NavigatorCustomerManagementCustomerButton)},
+            {NavigationTarget.CustomerManagementCustomer, new NavigatorItem(NavigationTarget.CustomerManagementCustomer,NavigationTarget.CustomerManagement,JazzButton.NavigatorCustomerManagementCustomerButton)},
             //--User
-            {NavigationTarget.UserManagementUser, new NavigatorItem(NavigationTarget.UserManagementUser,NavigationTarget.PriceSettings,JazzButton.NavigatorUserManagementUserButton)},
-            {NavigationTarget.UserManagementUserTypePermission, new NavigatorItem(NavigationTarget.UserManagementUserTypePermission,NavigationTarget.PriceSettings,JazzButton.NavigatorUserManagementUserTypePermissionButton)},
+            {NavigationTarget.UserManagementUser, new NavigatorItem(NavigationTarget.UserManagementUser,NavigationTarget.UserManagement,JazzButton.NavigatorUserManagementUserButton)},
+            {NavigationTarget.UserManagementUserTypePermission, new NavigatorItem(NavigationTarget.UserManagementUserTypePermission,NavigationTarget.UserManagement,JazzButton.NavigatorUserManagementUserTypePermissionButton)},
             //--Tag
             {NavigationTarget.TagSettingsP, new NavigatorItem(NavigationTarget.TagSettingsP,NavigationTarget.TagSettings,JazzButton.NavigatorTagSettingsPButton)},
             {NavigationTarget.TagSettingsV, new NavigatorItem(NavigationTarget.TagSettingsV,NavigationTarget.TagSettings,JazzButton.NavigatorTagSettingsVButton)},

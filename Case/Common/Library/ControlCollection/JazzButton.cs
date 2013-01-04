@@ -60,7 +60,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorAssociationAreaDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAssociationAreaDimension);//{NavigationTarget.AssociationAreaDimension, new NavigatorItem(NavigationTarget.AssociationAreaDimension,NavigationTarget.AssociationSettings,"st-menu-areadtags-btnEl",ByType.ID)},
         #endregion
 
-        #region Settings buttons
+        #region Customer settings buttons
         #region Hierarchy settings buttons
         public static Button HierarchySettingsCreateChildHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonHierarchySettingsCreateChildHierarchy);
         public static Button HierarchySettingsModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonHierarchySettingsModify);
@@ -125,6 +125,42 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button AssociationSettingsTagAssociate = GetControl<Button>(JazzControlLocatorKey.ButtonAssociationSettingsTagAssociate);
         public static Button AssociationSettingsAssociate = GetControl<Button>(JazzControlLocatorKey.ButtonAssociationSettingsAssociate);
         
+        #endregion
+        #endregion
+
+        #region Platform settings buttons
+        #region Workday buttons
+        public static Button WorkdayCalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCalendarCreate);
+        public static Button WorkdayCalendarModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCalendarModify);
+        public static Button WorkdayCalendarSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCalendarSave);
+        public static Button WorkdayCalendarCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCalendarCancel);
+        public static Button WorkdayCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCalendarDelete);
+        public static Button WorkdayCalendarAddSpecialDatesButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCalendarAddSpecialDates);
+        #endregion
+        #region Worktime buttons
+        public static Button WorktimeCalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarCreate);
+        public static Button WorktimeCalendarModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarModify);
+        public static Button WorktimeCalendarSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarSave);
+        public static Button WorktimeCalendarCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarCancel);
+        public static Button WorktimeCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarDelete);
+        public static Button WorktimeCalendarAddMoreRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarAddMoreRanges);
+        #endregion
+        #region HeatingCoolingSeason buttons
+        public static Button HeatingCoolingSeasonCalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarCreate);
+        public static Button HeatingCoolingSeasonCalendarModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarModify);
+        public static Button HeatingCoolingSeasonCalendarSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarSave);
+        public static Button HeatingCoolingSeasonCalendarCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarCancel);
+        public static Button HeatingCoolingSeasonCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarDelete);
+        public static Button HeatingCoolingSeasonCalendarAddMoreWarmRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges);
+        public static Button HeatingCoolingSeasonCalendarAddMoreColdRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges);
+        #endregion
+        #region DayNight buttons
+        public static Button DayNightCalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarCreate);
+        public static Button DayNightCalendarModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarModify);
+        public static Button DayNightCalendarSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarSave);
+        public static Button DayNightCalendarCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarCancel);
+        public static Button DayNightCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarDelete);
+        public static Button DayNightCalendarAddMoreRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarAddMoreRanges);
         #endregion
         #endregion
     }

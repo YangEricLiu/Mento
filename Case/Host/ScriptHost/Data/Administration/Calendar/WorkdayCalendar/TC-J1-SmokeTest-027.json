@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Name":" Amy_WorkdayCalendar1_名称 ",
+			"SpecialDateType":"工作日",
+		},
+		"ExpectedData":
+		{
+			"Name":"Amy_WorkdayCalendar1_名称",
+		}
+	},
+]

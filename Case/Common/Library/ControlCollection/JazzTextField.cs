@@ -40,5 +40,20 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField AreaDimensionSettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldAreaDimensionSettingsComment);
         #endregion
         #endregion
+
+        #region Platform settings
+        #region Workday
+        public static TextField WorkdayCalendarNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldWorkdayCalendarName);
+        #endregion
+        #region Worktime
+        public static TextField WorktimeCalendarNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldWorktimeCalendarName);
+        #endregion
+        #region HeatingCoolingSeason
+        public static TextField HeatingCoolingSeasonCalendarNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHeatingCoolingSeasonCalendarName);
+        #endregion
+        #region Daynight
+        public static TextField DayNightCalendarNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldDayNightCalendarName);
+        #endregion
+        #endregion
     }
 }

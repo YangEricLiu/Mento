@@ -65,7 +65,7 @@
   <ItemGroup>
     <Compile Include="Calendar\CarbonManagement.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
-    <Compile Include="Calendar\TimeMagament.cs" />
+    <Compile Include="Calendar\TimeManagementSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

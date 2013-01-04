@@ -128,6 +128,42 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonAssociationSettingsAssociate = "ButtonAssociationSettingsAssociate";
         #endregion
         #endregion
+
+        #region Platform settings
+        #region workday
+        public static string ButtonWorkdayCalendarCreate = "ButtonWorkdayCalendarCreate";
+        public static string ButtonWorkdayCalendarModify = "ButtonWorkdayCalendarModify";
+        public static string ButtonWorkdayCalendarSave = "ButtonWorkdayCalendarSave";
+        public static string ButtonWorkdayCalendarCancel = "ButtonWorkdayCalendarCancel";
+        public static string ButtonWorkdayCalendarDelete = "ButtonWorkdayCalendarDelete";
+        public static string ButtonWorkdayCalendarAddSpecialDates = "ButtonWorkdayCalendarAddSpecialDates";
+        #endregion
+        #region worktime
+        public static string ButtonWorktimeCalendarCreate = "ButtonWorktimeCalendarCreate";
+        public static string ButtonWorktimeCalendarModify = "ButtonWorktimeCalendarModify";
+        public static string ButtonWorktimeCalendarSave = "ButtonWorktimeCalendarSave";
+        public static string ButtonWorktimeCalendarCancel = "ButtonWorktimeCalendarCancel";
+        public static string ButtonWorktimeCalendarDelete = "ButtonWorktimeCalendarDelete";
+        public static string ButtonWorktimeCalendarAddMoreRanges = "ButtonWorktimeCalendarAddMoreRanges";
+        #endregion
+        #region heatingcoolingseason
+        public static string ButtonHeatingCoolingSeasonCalendarCreate = "ButtonHeatingCoolingSeasonCalendarCreate";
+        public static string ButtonHeatingCoolingSeasonCalendarModify = "ButtonHeatingCoolingSeasonCalendarModify";
+        public static string ButtonHeatingCoolingSeasonCalendarSave = "ButtonHeatingCoolingSeasonCalendarSave";
+        public static string ButtonHeatingCoolingSeasonCalendarCancel = "ButtonHeatingCoolingSeasonCalendarCancel";
+        public static string ButtonHeatingCoolingSeasonCalendarDelete = "ButtonHeatingCoolingSeasonCalendarDelete";
+        public static string ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges = "ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges";
+        public static string ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges = "ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges";
+        #endregion
+        #region daynight
+        public static string ButtonDayNightCalendarCreate = "ButtonDayNightCalendarCreate";
+        public static string ButtonDayNightCalendarModify = "ButtonDayNightCalendarModify";
+        public static string ButtonDayNightCalendarSave = "ButtonDayNightCalendarSave";
+        public static string ButtonDayNightCalendarCancel = "ButtonDayNightCalendarCancel";
+        public static string ButtonDayNightCalendarDelete = "ButtonDayNightCalendarDelete";
+        public static string ButtonDayNightCalendarAddMoreRanges = "ButtonDayNightCalendarAddMoreRanges";
+        #endregion
+        #endregion
         #endregion
 
         #region TextField
@@ -162,22 +198,49 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldAreaDimensionSettingsComment = "TextFieldAreaDimensionSettingsComment";
         #endregion
         #endregion
+
+        #region Platform settings
+        #region workday
+        public static string TextFieldWorkdayCalendarName = "TextFieldWorkdayCalendarName";
+        #endregion
+        #region worktime
+        public static string TextFieldWorktimeCalendarName = "TextFieldWorktimeCalendarName";
+        #endregion
+        #region heatingcoolingseason
+        public static string TextFieldHeatingCoolingSeasonCalendarName = "TextFieldHeatingCoolingSeasonCalendarName";
+        #endregion
+        #region daynight
+        public static string TextFieldDayNightCalendarName = "TextFieldDayNightCalendarName";
+        #endregion
+        #endregion
         #endregion
 
         #region ComboBox
+        #region Customer settings
+        #region Hierarchy settings
         public static string ComboBoxHierarchySettingsHierarchyType = "ComboBoxHierarchySettingsHierarchyType";
-
+        
+		public static string ComboBoxWorkdayEffectiveYear = "ComboBoxWorkdayEffectiveYear";
+        public static string ComboBoxWorkdayCalendarName = "ComboBoxWorkdayCalendarName";
+		#endregion
+        #region PTag settings
         public static string ComboBoxPTagSettingsCommodity = "ComboBoxPTagSettingsCommodity";
         public static string ComboBoxPTagSettingsUom = "ComboBoxPTagSettingsUom";
         public static string ComboBoxPTagSettingsCalculationType = "ComboBoxPTagSettingsCalculationType";
-
+        #endregion
+        #region VTag settings
         public static string ComboBoxVTagSettingsCommodity = "ComboBoxVTagSettingsCommodity";
         public static string ComboBoxVTagSettingsUom = "ComboBoxVTagSettingsUom";
         public static string ComboBoxVTagSettingsCalculationType = "ComboBoxVTagSettingsCalculationType";
         public static string ComboBoxVTagSettingsCalculationStep = "ComboBoxVTagSettingsCalculationStep";
+        #endregion
+        #endregion
 
-        public static string ComboBoxWorkdayEffectiveYear = "ComboBoxWorkdayEffectiveYear";
-        public static string ComboBoxWorkdayCalendarName = "ComboBoxWorkdayCalendarName";
+        #region Platform settings
+        #region workday
+        public static string ComboBoxWorkdayCalendarSpecialDateType = "ComboBoxWorkdayCalendarSpecialDateType";
+        #endregion
+        #endregion
         #endregion
 
         #region TreeView

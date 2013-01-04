@@ -100,6 +100,41 @@
         
       </areadimensionassociation>
     </customersettings>
+    <platformsettings>
+      <workday>
+        <add key="ButtonWorkdayCalendarCreate" value="st-calendar-grid-add" type="ID"/>
+        <add key="ButtonWorkdayCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+        <add key="ButtonWorkdayCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonWorkdayCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonWorkdayCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+        <add key="ButtonWorkdayCalendarAddSpecialDates" value="st-calendar-workday-items-add-toolEl" type="ID"/>
+      </workday>
+      <worktime>
+        <add key="ButtonWorktimeCalendarCreate" value="st-calendar-grid-add" type="ID"/>
+        <add key="ButtonWorktimeCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+        <add key="ButtonWorktimeCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonWorktimeCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonWorktimeCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+        <add key="ButtonWorktimeCalendarAddMoreRanges" value="st-calendar-worktime-items-add" type="ID"/>
+      </worktime>
+      <heatingcoolingseason>
+        <add key="ButtonHeatingCoolingSeasonCalendarCreate" value="st-calendar-grid-add" type="ID"/>
+        <add key="ButtonHeatingCoolingSeasonCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+        <add key="ButtonHeatingCoolingSeasonCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonHeatingCoolingSeasonCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonHeatingCoolingSeasonCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+        <add key="ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges" value="st-calendar-warm-items-add" type="ID"/>
+        <add key="ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges" value="st-calendar-cold-items-add" type="ID"/>
+      </heatingcoolingseason>
+      <daynight>
+        <add key="ButtonDayNightCalendarCreate" value="st-calendar-grid-add" type="ID"/>
+        <add key="ButtonDayNightCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+        <add key="ButtonDayNightCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonDayNightCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonDayNightCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+        <add key="ButtonDayNightCalendarAddMoreRanges" value="st-calendar-daynight-items-add" type="ID"/>
+      </daynight>     
+    </platformsettings>
   </button> 
   
   <!--TextField Begin-->
@@ -109,7 +144,7 @@
       <add key="TextFieldLoginPassword" value="txtPassword" type="ID"/>
     </login>
 
-    <settings>
+    <customersettings>
       <hierarchysettings>        
         <add key="TextFieldHierarchySettingsName" value="//div[@id='st-hier-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
         <add key="TextFieldHierarchySettingsCode" value="//div[@id='st-hier-properties-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
@@ -131,24 +166,50 @@
         <add key="TextFieldAreaDimensionSettingsName" value="//div[@id='st-area-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
         <add key="TextFieldAreaDimensionSettingsComment" value="//div[@id='st-area-properties-form-body']//textarea[@name='Comment']" type="XPath"/>
       </areadimensionsettings>
-    </settings>
+    </customersettings>
+    <platformsettings>
+      <workday>
+        <add key="TextFieldWorkdayCalendarName" value="//div[@id='st-calendar-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
+      </workday>
+      <worktime>
+        <add key="TextFieldWorktimeCalendarName" value="//div[@id='st-calendar-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
+      </worktime>
+      <heatingcoolingseason>
+        <add key="TextFieldHeatingCoolingSeasonCalendarName" value="//div[@id='st-calendar-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
+      </heatingcoolingseason>
+      <daynight>
+        <add key="TextFieldDayNightCalendarName" value="//div[@id='st-calendar-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
+      </daynight>
+    </platformsettings>
   </textfield>
   <!--TextField End-->
   
   <!--ComboBox-->
   <combobox>
-    <add key="ComboBoxHierarchySettingsHierarchyType" value="//div[@id='st-hier-properties-form']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='Type']]" type="XPath"/>
-
-    <add key="ComboBoxPTagSettingsCommodity" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
-    <add key="ComboBoxPTagSettingsUom" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
-    <add key="ComboBoxPTagSettingsCalculationType" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
-
-    <add key="ComboBoxVTagSettingsCommodity" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
-    <add key="ComboBoxVTagSettingsUom" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
-    <add key="ComboBoxVTagSettingsCalculationType" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
-    <add key="ComboBoxVTagSettingsCalculationStep" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
-    <add key="ComboBoxWorkdayEffectiveYear" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
-    <add key="ComboBoxWorkdayCalendarName" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
+    <customersettings>
+      <hierarchy>
+        <add key="ComboBoxHierarchySettingsHierarchyType" value="//div[@id='st-hier-properties-form']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='Type']]" type="XPath"/>
+      	
+		<add key="ComboBoxWorkdayEffectiveYear" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
+    	<add key="ComboBoxWorkdayCalendarName" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
+      </hierarchy>
+      <ptag>
+        <add key="ComboBoxPTagSettingsCommodity" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
+        <add key="ComboBoxPTagSettingsUom" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
+        <add key="ComboBoxPTagSettingsCalculationType" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
+      </ptag>
+      <vtag>
+        <add key="ComboBoxVTagSettingsCommodity" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
+        <add key="ComboBoxVTagSettingsUom" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
+        <add key="ComboBoxVTagSettingsCalculationType" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
+        <add key="ComboBoxVTagSettingsCalculationStep" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
+      </vtag>
+    </customersettings>
+    <platformsettings>
+      <workday>
+        <add key="ComboBoxWorkdayCalendarSpecialDateType" value="//div[@id='st-calendar-properties-form']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='ItemType']]" type="XPath"/>
+      </workday>
+    </platformsettings>
   </combobox>
   
   <!--TreeView-->

@@ -72,15 +72,15 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        private static HierarchyAssociateSettings _HierarchyAssociateSettings;
-        public static HierarchyAssociateSettings HierarchyAssociateSettings
+        private static AssociateSettings _AssociateSettings;
+        public static AssociateSettings AssociateSettings
         {
             get
             {
-                if (_HierarchyAssociateSettings == null)
-                    _HierarchyAssociateSettings = new HierarchyAssociateSettings();
+                if (_AssociateSettings == null)
+                    _AssociateSettings = new AssociateSettings();
 
-                return _HierarchyAssociateSettings;
+                return _AssociateSettings;
             }
         }
 
@@ -105,6 +105,30 @@ namespace Mento.ScriptCommon.Library
                     _AreaDimensionSettings = new AreaDimensionSettings();
 
                 return _AreaDimensionSettings;
+            }
+        }
+
+        private static KPISettings _KPISettings;
+        public static KPISettings KPISettings
+        {
+            get
+            {
+                if (_KPISettings == null)
+                    _KPISettings = new KPISettings();
+
+                return _KPISettings;
+            }  
+        }
+
+        private static HierarchyPropertySettings _HierarchyPropertySettings;
+        public static HierarchyPropertySettings HierarchyPropertySettings
+        {
+            get
+            {
+                if (_HierarchyPropertySettings == null)
+                    _HierarchyPropertySettings = new HierarchyPropertySettings();
+
+                return _HierarchyPropertySettings;
             }
         }
     }

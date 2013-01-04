@@ -83,12 +83,28 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonVTagSettingsDelete = "ButtonVTagSettingsDelete";
         #endregion
 
+        #region KPI settings
+        public static string ButtonKPISettingsCreateKPI = "ButtonKPISettingsCreateKPI";
+
+        #endregion
+
         #region Hierarchy settings
         public static string ButtonHierarchySettingsCreateChildHierarchy = "ButtonHierarchySettingsCreateChildHierarchy";
         public static string ButtonHierarchySettingsModify = "ButtonHierarchySettingsModify";
         public static string ButtonHierarchySettingsSave = "ButtonHierarchySettingsSave";
         public static string ButtonHierarchySettingsCancel = "ButtonHierarchySettingsCancel";
         public static string ButtonHierarchySettingsDelete = "ButtonHierarchySettingsDelete";
+
+        #region Hierarchy property settings buttons
+        public static string TabButtonCalendarProperty = "TabButtonCalendarProperty";
+        public static string ButtonCalendarCreate = "ButtonCalendarCreate";
+        public static string ButtonCalendarSave = "ButtonCalendarSave";
+        public static string ButtonCalendarCancel = "ButtonCalendarCancel";
+        public static string ButtonWorkdayCreate = "ButtonWorkdayCreate";
+        public static string ButtonHeatingCoolingCreate = "ButtonHeatingCoolingCreate";
+        public static string ButtonDayNightCreate = "ButtonDayNightCreate";
+        #endregion
+
         #endregion
 
         #region System dimension settings
@@ -160,6 +176,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxVTagSettingsCalculationType = "ComboBoxVTagSettingsCalculationType";
         public static string ComboBoxVTagSettingsCalculationStep = "ComboBoxVTagSettingsCalculationStep";
 
+        public static string ComboBoxWorkdayEffectiveYear = "ComboBoxWorkdayEffectiveYear";
+        public static string ComboBoxWorkdayCalendarName = "ComboBoxWorkdayCalendarName";
         #endregion
 
         #region TreeView

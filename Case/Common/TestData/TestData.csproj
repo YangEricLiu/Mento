@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer\KPIData.cs" />
     <Compile Include="Customer\PtagData.cs" />
     <Compile Include="Administration\ExampleData.cs" />
     <Compile Include="Customer\AddVtagData.cs">

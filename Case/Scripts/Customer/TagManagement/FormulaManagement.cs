@@ -18,19 +18,6 @@ namespace Mento.Script.Customer.TagManagement
     {
         private static VTagSettings VTagSettings = JazzFunction.VTagSettings;
 
-        [TestFixtureSetUp]
-        public void CaseFixtureSetUp()
-        {
-            //ElementLocator.OpenJazz();
-            //FunctionWrapper.Login.Login();
-        }
-
-        [TestFixtureTearDown]
-        public void CaseFixtureTearDown()
-        {
-            //ElementLocator.QuitJazz();
-        }
-
         [SetUp]
         public void CaseSetUp()
         {

@@ -67,6 +67,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button HierarchySettingsSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonHierarchySettingsSave);
         public static Button HierarchySettingsCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonHierarchySettingsCancel);
         public static Button HierarchySettingsDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonHierarchySettingsDelete);
+
+        #region Hierarchy property settings buttons
+        public static TabButton CalendarPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonCalendarProperty);
+        public static Button CalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonCalendarCreate);
+        public static Button WorkdayCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCreate);
+        public static Button HeatingCoolingCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingCreate);
+        public static Button DayNightCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCreate);
+        #endregion
         #endregion
 
         #region PTag settings buttons
@@ -90,6 +98,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button VTagSettingsSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsSave);
         public static Button VTagSettingsCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsCancel);
         public static Button VTagSettingsDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsDelete);
+        #endregion
+
+        #region KPI settings buttons
+        public static Button CreateKPIButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPISettingsCreateKPI);
         #endregion
 
         #region System dimension settings buttons

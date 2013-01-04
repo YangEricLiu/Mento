@@ -31,7 +31,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string GetComboBoxItemRealValue(string itemKey)
         {
             if (!ComboBoxItemDictionary.ContainsKey(itemKey))
-                throw new ApiException(String.Format("The provided key does not exist: '{0}'",itemKey));
+                return itemKey;
+                //throw new ApiException(String.Format("The provided key does not exist: '{0}'",itemKey));
 
             return ComboBoxItemDictionary[itemKey];
         }

@@ -15,18 +15,19 @@ namespace Mento.Script.Customer.TagAssociation
 {
     [TestFixture]
     [Owner("Emma")]
-    [CreateTime("2012-11-09")]
-    [ManualCaseID("TC-J1-SmokeTest-015")]
-    public class HierarchyAssociateTag : TestSuiteBase
+    [CreateTime("2012-12-31")]
+    [ManualCaseID("TC-J1-SmokeTest-019")]
+    public class SystemAssociateTag : TestSuiteBase
     {
         private static AssociateSettings Association = JazzFunction.AssociateSettings;
+        private static SystemDimensionSettings SystemSettings = JazzFunction.SystemDimensionSettings;
 
         [SetUp]
         public void CaseSetUp()
         {
             //FunctionWrapper.Associate.NavigateToHierarchyAssociate();
             //ElementLocator.Pause(2000);
-            Association.NavigateToHierarchyAssociate();
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationSystemDimension);
             TimeManager.MediumPause();
         }
 
@@ -39,23 +40,29 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
-        [CaseID("TA-AssociateTag-001")]
+        [CaseID("TC-J1-SmokeTest-014")]
         public void AssociateOneTag()
-        {
-            Association.SelectHierarchyNode("自动化测试");
+        { 
+            SystemSettings.ShowHierarchyTree();
+            TimeManager.ShortPause();
+            SystemSettings.ExpandHierarchyNodePath(new string[] { "自动化测试" });
+            SystemSettings.SelectHierarchyNode("systemAssociate");
+
+            SystemSettings.ExpandSystemDimensionNodePath(new string[] { "systemAssociate" });
+            SystemSettings.SelectSystemDimensionNode("空调");
 
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
 
-            Association.CheckedTag("Amy_m_V1_Vtagconst1");
+            Association.CheckedTag("Add_V1");
             Association.ClickAssociateButton();
             TimeManager.ShortPause();
 
-            Assert.IsTrue(Association.IsTagOnAssociategGridView("Amy_m_V1_Vtagconst1"));
+            Assert.IsTrue(Association.IsTagOnAssociategGridView("Add_V1"));
 
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
-            Assert.IsFalse(Association.IsTagOnAssociategGridView("Amy_m_V1_Vtagconst1"));
+            Assert.IsFalse(Association.IsTagOnAssociategGridView("Add_V1"));
         }
     }
 }

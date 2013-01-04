@@ -12,6 +12,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private const string SYSTEMDIMENSIONTREECSSSELECTOR = "table.x-grid-table,.x-grid-table-resizer";
         private const string DIALOGXPATH = "div.x-window";
         private const string CHECKBOXXPATHFORMAT = "//tr[contains(@class,'x-grid-row') and td/div[text()='$#" + TREENODEVARIABLENAME + "']]//input";
+        private const string UNCHECKMESSAGE = "当前结点下的所有数据点和关键能效指标将被解关联，确认继续？";
+        private const string UNCHECKBOXCONFIRMBUTTON = "//span[text() = '是']";
 
         public SystemDimensionTree(Locator locator) :
             base(locator) 
@@ -30,10 +32,33 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 if (!String.Equals(checkbox.GetAttribute("aria-checked"), "true", StringComparison.OrdinalIgnoreCase))
                 {
                     ClickCheckbox(checkbox);
-
                     GetControl<LoadingMask>().WaitLoading();
                 }
             }
+        }
+
+        public void UncheckNode(string nodeText)
+        {
+            Locator uncheckboxLocator = Locator.GetVariableLocator(CHECKBOXXPATHFORMAT, ByType.XPath, TREENODEVARIABLENAME, nodeText);
+            Locator confirmUncheckboxButton = new Locator(UNCHECKBOXCONFIRMBUTTON, ByType.XPath);
+
+            if (ElementHandler.Exists(uncheckboxLocator))
+            {
+                IWebElement checkbox = FindChild(uncheckboxLocator);
+                //Console.WriteLine("checkbox: " + nodeText + ", at point:" + checkbox.Location.X + "," + checkbox.Location.Y);
+
+                if (String.Equals(checkbox.GetAttribute("aria-checked"), "true", StringComparison.OrdinalIgnoreCase))
+                {
+                    ClickCheckbox(checkbox);
+
+                    if (GetControl<MessageBox>().GetMessage().Contains(UNCHECKMESSAGE))
+                    {
+                        ElementHandler.FindElement(confirmUncheckboxButton).Click();
+
+                        GetControl<LoadingMask>().WaitLoading();
+                    }
+                }
+            }     
         }
         
         public void CheckNodePath(string[] nodePath)
@@ -43,6 +68,23 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 CheckNode(nodeText);
 
                 ExpandNode(nodeText);
+
+                TimeManager.MediumPause();
+            }
+        }
+
+        public void UncheckNodePath(string[] nodePath)
+        {
+            for (int i = 0; i < (nodePath.Length - 1); i++ )
+            {
+                ExpandNode(nodePath[i]);
+
+                TimeManager.MediumPause();
+            }
+
+            for (int i = (nodePath.Length - 1); i > -1; i--)
+            {
+                UncheckNode(nodePath[i]);
 
                 TimeManager.MediumPause();
             }

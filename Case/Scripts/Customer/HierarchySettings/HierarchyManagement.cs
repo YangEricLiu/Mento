@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using System.Configuration;
+using Mento.Framework;
 using Mento.Utility;
-using Mento.Framework.Attributes;
-using Mento.TestApi.TestData;
-using System.IO;
-using Mento.Framework.Script;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
-using Mento.ScriptCommon.TestData.Customer;
+using Mento.Framework.Attributes;
+using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
+using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.ScriptCommon.TestData.Customer;
 
 
 namespace Mento.Script.Customer.HierarchySettings
@@ -55,7 +54,6 @@ namespace Mento.Script.Customer.HierarchySettings
 
         [Test]
         [CaseID("TA-Hierarchy-001"), ManualCaseID("TJ-Hierarchy-001"), CreateTime("2012-10-30"), Owner("Emma")]
-        [MultipleTestDataSource(typeof(AddHierarchyData[]), typeof(HierarchyManagement), "TA-Hierarchy-001")]
         public void AddOrgnizationNodeTest(AddHierarchyData input)
         {
             HierarchySettings.FillInHierarchyNode("自动化测试", input.InputData);

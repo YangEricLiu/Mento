@@ -48,9 +48,29 @@ namespace Mento.ScriptCommon.Library.Functions
             DialogSystemDimensionTree.CheckNodePath(systemDimensionNodePath);
         }
 
+        public void UncheckSystemDimensionNodePath(string[] systemDimensionNodePath)
+        {
+            DialogSystemDimensionTree.UncheckNodePath(systemDimensionNodePath);
+        }
+
         public void CloseSystemDimensionDialog()
         {
             DialogReturnButton.Click();
+        }
+
+        public void ExpandSystemDimensionNodePath(string[] systemDimensionNodePath)
+        {
+            SystemDimensionTree.ExpandNodePath(systemDimensionNodePath);
+        }
+
+        public void SelectSystemDimensionNode(string systemDimensionNodeName)
+        {
+            SystemDimensionTree.ClickNode(systemDimensionNodeName);
+        }
+
+        public Boolean IsSystemDimensionNodeDisplayed(string nodeName)
+        {
+            return SystemDimensionTree.IsNodeDisplayed(nodeName);
         }
     }
 }

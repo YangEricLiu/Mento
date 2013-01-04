@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Name":"NancyVtag",
+			"Code":"nancy1",
+			"UOM":"KWH",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"This is add vtag comments",
+		}
+	}
+]

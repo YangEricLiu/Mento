@@ -19,7 +19,7 @@ namespace Mento.ScriptCommon.Library
 
             JazzBrowseManager.OpenJazz();
 
-            JazzFunction.LoginPage.LoginToAdmin();
+            JazzFunction.LoginPage.LoginToCustomer();
 
             if (IsInitializeDatabase())
                 JazzDatabaseOperator.Initialize();

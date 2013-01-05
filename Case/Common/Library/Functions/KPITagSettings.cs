@@ -14,44 +14,43 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    public class VTagSettings
+    public class KPITagSettings
     {
-        internal VTagSettings()
+        internal KPITagSettings()
         {
         }
 
-        private static Grid VTagList = JazzGrid.VTagSettingsVTagList;
+        private static Grid KPITagList = JazzGrid.KPITagSettingsKPITagList;
 
-        private static TabButton BasicPropertyTab = JazzButton.VTagSettingsBasicPropertyTabButton;
-        private static TabButton FormulaTab = JazzButton.VTagSettingsFormulaTabButton;
+        private static TabButton BasicPropertyTab = JazzButton.KPITagSettingsBasicPropertyTabButton;
+        private static TabButton FormulaTab = JazzButton.KPITagSettingsFormulaTabButton;
 
-        private static Button CreateVTagButton = JazzButton.VTagSettingsCreateVTagButton;
+        private static Button CreateKPITagButton = JazzButton.KPITagSettingsCreateKPITagButton;
 
-        private static Button ModifyButton = JazzButton.VTagSettingsModifyButton;
-        private static Button SaveButton = JazzButton.VTagSettingsSaveButton;
-        private static Button CancelButton = JazzButton.VTagSettingsCancelButton;
-        private static Button DeleteButton = JazzButton.VTagSettingsDeleteButton;
+        private static Button ModifyButton = JazzButton.KPITagSettingsModifyButton;
+        private static Button SaveButton = JazzButton.KPITagSettingsSaveButton;
+        private static Button CancelButton = JazzButton.KPITagSettingsCancelButton;
+        private static Button DeleteButton = JazzButton.KPITagSettingsDeleteButton;
 
-        private static TextField NameTextField = JazzTextField.VTagSettingsNameTextField;
-        private static TextField CodeTextField = JazzTextField.VTagSettingsCodeTextField;
-        private static ComboBox CommodityComboBox = JazzComboBox.VTagSettingsCommodityComboBox;
-        private static ComboBox UomComboBox = JazzComboBox.VTagSettingsUomComboBox;
-        private static ComboBox CalculationTypeComboBox = JazzComboBox.VTagSettingsCalculationTypeComboBox;
-        private static ComboBox CalculationStepComboBox = JazzComboBox.VTagSettingsCalculationStepComboBox;
-        private static TextField CommentTextField = JazzTextField.VTagSettingsCommentTextField;
+        private static TextField NameTextField = JazzTextField.KPITagSettingsNameTextField;
+        private static TextField CodeTextField = JazzTextField.KPITagSettingsCodeTextField;
+        private static ComboBox UomComboBox = JazzComboBox.KPITagSettingsUomComboBox;
+        private static ComboBox CalculationTypeComboBox = JazzComboBox.KPITagSettingsCalculationTypeComboBox;
+        private static ComboBox CalculationStepComboBox = JazzComboBox.KPITagSettingsCalculationStepComboBox;
+        private static TextField CommentTextField = JazzTextField.KPITagSettingsCommentTextField;
 
-        private static Grid FormulaPTagList = JazzGrid.VTagSettingsFormulaEditPTagList;
-        private static FormulaField FormulaField = JazzTextField.VFormulaField;
+        private static Grid FormulaPTagList = JazzGrid.KPITagSettingsFormulaEditPTagList;
+        private static FormulaField FormulaField = JazzTextField.KPIFormulaField;
 
-        #region VTag List Operations
+        #region KPITag List Operations
         /// <summary>
-        /// Navigate to VTag settings
+        /// Navigate to KPITag settings
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void NavigatorToVTagSetting()
+        public void NavigatorToKPITagSetting()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsKPI);
             TimeManager.ShortPause();
         }
 
@@ -77,9 +76,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Click add vtag add button
         /// </summary>
         /// <returns></returns>
-        public void ClickAddVTagButton()
+        public void ClickAddKPITagButton()
         {
-            CreateVTagButton.Click();
+            CreateKPITagButton.Click();
         }
 
         /// <summary>
@@ -87,15 +86,15 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="vtagName">VTag name</param>
         /// <returns></returns>
-        public void FocusOnVTag(string vtagName)
+        public void FocusOnKPITag(string kpitagName)
         {
-            VTagList.FocusOnRow(1, vtagName);
+            KPITagList.FocusOnRow(1, kpitagName);
         }
         #endregion
 
         #region Basic Property Operations
         /// <summary>
-        /// Click add vtag save button
+        /// Click add kpitag save button
         /// </summary>
         /// <returns></returns>
         public void ClickSaveButton()
@@ -104,7 +103,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Click cancel button to cancel add new VTag
+        /// Click cancel button to cancel add new KPITag
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -118,33 +117,31 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void FillInAddVTagData(VtagInputData input)
+        public void FillInAddKPItagData(KPIInputData input)
         {
-            //textFieldInstance.FillIn(ElementKey.VtagName, input.Name);
-            //textFieldInstance.FillIn(ElementKey.VtagCode, input.Code);
-            //comboBoxInstance.DisplayItems(ElementKey.VtagCommodity);
+            //textFieldInstance.FillIn(ElementKey.KPItagName, input.Name);
+            //textFieldInstance.FillIn(ElementKey.KPItagCode, input.Code);
             //comboBoxInstance.SelectItem(input.Commodity);
-            //comboBoxInstance.DisplayItems(ElementKey.VtagUOM);
+            //comboBoxInstance.DisplayItems(ElementKey.KPItagUOM);
             //comboBoxInstance.SelectItem(input.UOM);
-            //comboBoxInstance.DisplayItems(ElementKey.VtagCalculationStep);
-            //comboBoxInstance.SelectItem(input.Step);
-            //comboBoxInstance.DisplayItems(ElementKey.VtagCalculationType);
+            //comboBoxInstance.DisplayItems(ElementKey.KPItagCalculationStep);
+            //comboBoxInstance.SelectItem(input.Steps);
+            //comboBoxInstance.DisplayItems(ElementKey.KPItagCalculationType);
             //comboBoxInstance.SelectItem(input.CalculationType);
-            //textFieldInstance.FillIn(ElementKey.VtagComment, input.Comment);
+            //textFieldInstance.FillIn(ElementKey.KPItagComment, input.Comment);
 
             NameTextField.Fill(input.Name);
             CodeTextField.Fill(input.Code);
-            CommodityComboBox.SelectItem(input.Commodity);
-            UomComboBox.SelectItem(input.UOM);
-            CalculationStepComboBox.SelectItem(input.Step);
+            UomComboBox.SelectItem(input.Uom);
+            CalculationStepComboBox.SelectItem(input.Steps);
             CalculationTypeComboBox.SelectItem(input.CalculationType);
             CommentTextField.Fill(input.Comment);
         }
 
         /// <summary>
-        /// Input name of the new VTag 
+        /// Input name of the new KPITag 
         /// </summary>
-        /// <param name="name">VTag name</param>
+        /// <param name="name">KPITag name</param>
         /// <returns></returns>
         public void FillInName(String name)
         {
@@ -152,9 +149,9 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Input code of the new VTag 
+        /// Input code of the new KPITag 
         /// </summary>
-        /// <param name="code">VTag code</param>
+        /// <param name="code">KPITag code</param>
         /// <returns></returns>
         public void FillInCode(string code)
         {
@@ -162,114 +159,95 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Input comment of the new VTag 
+        /// Input comment of the new KPITag 
         /// </summary>
-        /// <param name="comment">VTag comment</param>
+        /// <param name="comment">KPITag comment</param>
         /// <returns></returns>
         public void FillInComment(string comment)
         {
             CommentTextField.Fill(comment);
         }
-        
+
         /// <summary>
-        /// Get the VTag Name actual value
+        /// Get the KPITag Name actual value
         /// </summary>
         /// <returns></returns>
-        public string GetVTagNameValue()
+        public string GetKPITagNameValue()
         {
             return NameTextField.GetValue();
         }
 
         /// <summary>
-        /// Get the VTag Code actual value
+        /// Get the KPITag Code actual value
         /// </summary>
         /// <returns></returns>
-        public string GetVTagCodeValue()
+        public string GetKPITagCodeValue()
         {
             return CodeTextField.GetValue();
         }
 
         /// <summary>
-        /// Get the VTag Commodity actual value
+        /// Get the KPITag UOM actual value
         /// </summary>
         /// <returns></returns>
-        public string GetVTagCommodityValue()
-        {
-            return CommodityComboBox.GetValue();
-        }
-
-        /// <summary>
-        /// Get the VTag expected value, for language sensitive
-        /// </summary>
-        /// <param name = "itemKey">VTag commodity key</param>
-        /// <returns>Key value</returns>
-        public string GetVTagCommodityExpectedValue(string itemKey)
-        {
-            return CommodityComboBox.GetActualValue(itemKey);
-        }
-
-        /// <summary>
-        /// Get the VTag UOM actual value
-        /// </summary>
-        /// <returns></returns>
-        public string GetVTagUOMValue()
+        public string GetKPITagUOMValue()
         {
             return UomComboBox.GetValue();
         }
 
         /// <summary>
-        /// Get the VTag expected value, for language sensitive
+        /// Get the KPITag expected value, for language sensitive
         /// </summary>
-        /// <param name = "itemKey">VTag UOM key</param>
+        /// <param name = "itemKey">KPITag UOM key</param>
         /// <returns>Key value</returns>
-        public string GetVTagUOMExpectedValue(string itemKey)
+        public string GetKPITagUOMExpectedValue(string itemKey)
         {
             return UomComboBox.GetActualValue(itemKey);
         }
 
         /// <summary>
-        /// Get the VTag CalculationStep actual value
+        /// Get the KPITag CalculationStep actual value
         /// </summary>
         /// <returns></returns>
-        public string GetVTagCalculationStepValue()
+        public string GetKPITagCalculationStepValue()
         {
             return CalculationStepComboBox.GetValue();
         }
 
         /// <summary>
-        /// Get the VTag expected value, for language sensitive
+        /// Get the KPITag expected value, for language sensitive
         /// </summary>
-        /// <param name = "itemKey">VTag calculation step key</param>
+        /// <param name = "itemKey">KPITag calculation step key</param>
         /// <returns>Key value</returns>
-        public string GetVTagCalculationStepExpectedValue(string itemKey)
+        public string GetKPITagCalculationStepExpectedValue(string itemKey)
         {
             return CalculationTypeComboBox.GetActualValue(itemKey);
         }
 
         /// <summary>
-        /// Get the VTag CalculationType actual value
+        /// Get the KPITag CalculationType actual value
         /// </summary>
         /// <returns></returns>
-        public string GetVTagCalculationTypeValue()
+        public string GetKPITagCalculationTypeValue()
         {
             return CalculationTypeComboBox.GetValue();
         }
 
         /// <summary>
-        /// Get the VTag expected value, for language sensitive
+        /// Get the KPITag expected value, for language sensitive
         /// </summary>
-        /// <param name = "itemKey">VTag calculation type key</param>
+        /// <param name = "itemKey">KPITag calculation type key</param>
         /// <returns>Key value</returns>
-        public string GetVTagCalculationTypeExpectedValue(string itemKey)
+        public string GetKPITagCalculationTypeExpectedValue(string itemKey)
         {
             return CalculationTypeComboBox.GetActualValue(itemKey);
         }
 
         /// <summary>
-        /// Get the VTag Comment actual value
+        /// Get the KPITag Comment actual value
         /// </summary>
         /// <returns></returns>
-        public string GetVTagCommentValue()
+        public string GetKPITagCommentValue()
         {
             return CommentTextField.GetValue();
         }
@@ -283,13 +261,13 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void PrepareToAddFormula(string tagName)
         {
-            FocusOnVTag(tagName);
+            FocusOnKPITag(tagName);
             SwitchToFormulaTab();
 
             JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
             TimeManager.ShortPause();
 
-            JazzButton.VTagSettingsFormulaUpdate.Click();
+            JazzButton.KPITagSettingsFormulaUpdate.Click();
         }
 
         /// <summary>
@@ -298,7 +276,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickSaveFormulaButton()
         {
-            JazzButton.VTagSettingsFormulaSave.Click();
+            JazzButton.KPITagSettingsFormulaSave.Click();
         }
 
         /// <summary>
@@ -346,3 +324,4 @@ namespace Mento.ScriptCommon.Library.Functions
     }
 
 }
+

@@ -7,7 +7,7 @@ using Mento.Utility;
 
 namespace Mento.ScriptCommon.TestData.Customer
 {
-    public class KPIData : TestDataBase<KPIInputData, KPIExpectedData>
+    public class AddKPIData : TestDataBase<KPIInputData, KPIExpectedData>
     {
     }
     public class KPIInputData : InputTestDataBase

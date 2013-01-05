@@ -45,9 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administration\TimeManagementData.cs" />
-    <Compile Include="Customer\KPIData.cs" />
-	<Compile Include="Customer\PtagData.cs" />
-	<Compile Include="Administration\ExampleData.cs" />
+    <Compile Include="Customer\AddKPIData.cs" />
+    <Compile Include="Customer\PtagData.cs" />
+    <Compile Include="Administration\ExampleData.cs" />
     <Compile Include="Customer\AddVtagData.cs">
       <SubType>Code</SubType>
     </Compile>

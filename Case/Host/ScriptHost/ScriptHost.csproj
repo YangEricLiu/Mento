@@ -179,6 +179,7 @@
     <None Include="Data\Customer\HierarchySettings\HierarchyManagement\TA-Hierarchy-002.json" />
     <None Include="Data\Customer\HierarchySettings\HierarchyManagement\TA-Hierarchy-003.json" />
     <Content Include="Data\Customer\TagManagement\KPIConfiguration\TA-KPIConfigue-001.json" />
+    <None Include="Data\Customer\TagManagement\KPIConfiguration\TA-KPItag-001.json" />
     <None Include="Data\Customer\TagManagement\PtagConfiguration\TC-J1-SmokeTest-002.json" />
     <None Include="Data\Customer\TagManagement\PtagConfiguration\TA-PtagConfiguration-002.json" />
     <None Include="Data\Customer\TagManagement\VtagManagement\TA-Vtag-001.json" />

@@ -100,8 +100,18 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button VTagSettingsDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsDelete);
         #endregion
 
-        #region KPI settings buttons
-        public static Button CreateKPIButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPISettingsCreateKPI);
+        #region KPITag settings buttons
+        public static TabButton KPITagSettingsBasicPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonKPITagSettingsBasicProperty);
+        public static TabButton KPITagSettingsFormulaTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonKPITagSettingsFormula);
+        public static Button KPITagSettingsFormulaUpdate = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsFormulaUpdate);
+        public static Button KPITagSettingsFormulaSave = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsFormulaSave);
+
+        public static Button KPITagSettingsCreateKPITagButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsCreateKPITag);
+
+        public static Button KPITagSettingsModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsModify);
+        public static Button KPITagSettingsSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsSave);
+        public static Button KPITagSettingsCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsCancel);
+        public static Button KPITagSettingsDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsDelete);
         #endregion
 
         #region System dimension settings buttons

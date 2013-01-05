@@ -2,12 +2,12 @@
 	{
 		"InputData":
 		{
-			"Name":"NancyVtag",
-			"Code":"nancy1",
-			"UOM":"KWH",
+			"Name":"AliceKPItag",
+			"Code":"Alice1",
+			"UOM":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
-			"Comment":"This is add vtag comments",
+			"Comment":"This is a kpitag ",
 		}
 	}
 ]

@@ -32,9 +32,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField VTagSettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldVTagSettingsName);
         public static TextField VTagSettingsCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldVTagSettingsCode);
         public static TextField VTagSettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldVTagSettingsComment);
-        public static FormulaField FormulaField = GetControl<FormulaField>(null);
+        public static FormulaField VFormulaField = GetControl<FormulaField>(null);
         #endregion
 
+        #region KPITag settings
+        public static TextField KPITagSettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITagSettingsName);
+        public static TextField KPITagSettingsCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITagSettingsCode);
+        public static TextField KPITagSettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITagSettingsComment);
+        public static FormulaField KPIFormulaField = GetControl<FormulaField>(null);
+        #endregion
         #region Area dimension settings
         public static TextField AreaDimensionSettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldAreaDimensionSettingsName);
         public static TextField AreaDimensionSettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldAreaDimensionSettingsComment);

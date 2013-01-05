@@ -84,8 +84,18 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region KPI settings
-        public static string ButtonKPISettingsCreateKPI = "ButtonKPISettingsCreateKPI";
+        public static string TabButtonKPITagSettingsBasicProperty = "TabButtonKPITagSettingsBasicProperty";
+        public static string TabButtonKPITagSettingsFormula = "TabButtonKPITagSettingsFormula";
 
+        public static string ButtonKPITagSettingsFormulaUpdate = "ButtonKPITagSettingsFormulaUpdate";
+        public static string ButtonKPITagSettingsFormulaSave = "ButtonKPITagSettingsFormulaSave";
+
+        public static string ButtonKPITagSettingsCreateKPITag = "ButtonKPITagSettingsCreateKPITag";
+
+        public static string ButtonKPITagSettingsModify = "ButtonKPITagSettingsModify";
+        public static string ButtonKPITagSettingsSave = "ButtonKPITagSettingsSave";
+        public static string ButtonKPITagSettingsCancel = "ButtonKPITagSettingsCancel";
+        public static string ButtonKPITagSettingsDelete = "ButtonKPITagSettingsDelete";
         #endregion
 
         #region Hierarchy settings
@@ -191,7 +201,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldVTagSettingsName = "TextFieldVTagSettingsName";
         public static string TextFieldVTagSettingsCode = "TextFieldVTagSettingsCode";
         public static string TextFieldVTagSettingsComment = "TextFieldVTagSettingsComment";
-        #endregion               
+        #endregion   
+        
+        #region KPITag settings
+        public static string TextFieldKPITagSettingsName = "TextFieldKPITagSettingsName";
+        public static string TextFieldKPITagSettingsCode = "TextFieldKPITagSettingsCode";
+        public static string TextFieldKPITagSettingsComment = "TextFieldKPITagSettingsComment";
+        #endregion
 
         #region Area dimension Settings
         public static string TextFieldAreaDimensionSettingsName = "TextFieldAreaDimensionSettingsName";
@@ -234,6 +250,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxVTagSettingsCalculationType = "ComboBoxVTagSettingsCalculationType";
         public static string ComboBoxVTagSettingsCalculationStep = "ComboBoxVTagSettingsCalculationStep";
         #endregion
+
+        #region KPITag settings
+        public static string ComboBoxKPITagSettingsUom = "ComboBoxKPITagSettingsUom";
+        public static string ComboBoxKPITagSettingsCalculationType = "ComboBoxKPITagSettingsCalculationType";
+        public static string ComboBoxKPITagSettingsCalculationStep = "ComboBoxKPITagSettingsCalculationStep";
+        #endregion
         #endregion
 
         #region Platform settings
@@ -263,6 +285,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Grid
         public static string GridVTagSettingsFormulaEditPTagList = "GridVTagSettingsFormulaEditPTagList";
         public static string GridVTagSettingsVTagList = "GridVTagSettingsVTagList";
+        public static string GridKPITagSettingsFormulaEditPTagList = "GridKPITagSettingsFormulaEditPTagList";
+        public static string GridKPITagSettingsKPITagList = "GridKPITagSettingsKPITagList";
         public static string GridAssociationTagList = "GridAssociationTagList";
         public static string GridPTagSettingsPTagList = "GridPTagSettingsPTagList";
         #endregion

@@ -61,8 +61,21 @@
         <add key="ButtonVTagSettingsCancel" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonVTagSettingsModify" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
         <add key="ButtonVTagSettingsDelete" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="ButtonKPISettingsCreateKPI" value="" type="XPath"/>
       </vtag>
+
+      <kpitag>
+        <add key="TabButtonKPITagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
+        <!--text in this xpath need to be changed to a language variable-->
+        <add key="TabButtonKPITagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()='计算公式']]" type="XPath"/>
+        <add key="ButtonKPITagSettingsFormulaUpdate" value="//div[@id='st-kpi-formula']//div[em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+        <add key="ButtonKPITagSettingsFormulaSave" value="//div[@id='st-kpi-formula']//div[em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+
+        <add key="ButtonKPITagSettingsCreateKPITag" value="st-kpi-grid-add" type="ID"/>
+        <add key="ButtonKPITagSettingsSave" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonKPITagSettingsCancel" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonKPITagSettingsModify" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+        <add key="ButtonKPITagSettingsDelete" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+      </kpitag>
       <hierarchy>
         <add key="ButtonHierarchySettingsCreateChildHierarchy" value="st-hier-tree-add" type="ID"/>
         <add key="ButtonHierarchySettingsSave" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
@@ -162,6 +175,12 @@
         <add key="TextFieldVTagSettingsCode" value="//div[@id='st-vtag-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
         <add key="TextFieldVTagSettingsComment" value="//div[@id='st-vtag-form-body']//textarea[@name='Comment']" type="XPath"/>
       </vtagsettings>
+
+      <kpitagsettings>
+        <add key="TextFieldKPITagSettingsName" value="//div[@id='st-kpi-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
+        <add key="TextFieldKPITagSettingsCode" value="//div[@id='st-kpi-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
+        <add key="TextFieldKPITagSettingsComment" value="//div[@id='st-kpi-form-body']//textarea[@name='Comment']" type="XPath"/>
+      </kpitagsettings>
       <areadimensionsettings>
         <add key="TextFieldAreaDimensionSettingsName" value="//div[@id='st-area-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
         <add key="TextFieldAreaDimensionSettingsComment" value="//div[@id='st-area-properties-form-body']//textarea[@name='Comment']" type="XPath"/>
@@ -204,6 +223,12 @@
         <add key="ComboBoxVTagSettingsCalculationType" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
         <add key="ComboBoxVTagSettingsCalculationStep" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
       </vtag>
+
+      <kpitag>
+        <add key="ComboBoxKPITagSettingsUom" value="//div[@id='st-kpi-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
+        <add key="ComboBoxKPITagSettingsCalculationType" value="//div[@id='st-kpi-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
+        <add key="ComboBoxKPITagSettingsCalculationStep" value="//div[@id='st-kpi-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
+      </kpitag>
     </customersettings>
     <platformsettings>
       <workday>
@@ -234,6 +259,8 @@
   <grid>
     <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
     <add key="GridVTagSettingsVTagList" value="st-vtag-grid" type="ID"/>
+    <add key="GridKPITagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
+    <add key="GridKPITagSettingsKPITagList" value="st-kpi-grid" type="ID"/>
     <add key="GridAssociationTagList" value="//div[@id='st-tag-assoc-form-body']//div[contains(@class,'x-grid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
   </grid>

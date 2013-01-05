@@ -60,8 +60,8 @@
     <Compile Include="ControlCollection\Resource\JazzControlLocatorRepository.cs" />
     <Compile Include="Functions\AreaDimensionSettings.cs" />
     <Compile Include="Functions\AssociateSettings.cs" />
-	<Compile Include="Functions\HierarchyPropertySettings.cs" />
-    <Compile Include="Functions\KPISettings.cs" />
+    <Compile Include="Functions\HierarchyPropertySettings.cs" />
+    <Compile Include="Functions\KPITagSettings.cs" />
     <Compile Include="Functions\TimeManagement.cs" />
     <Compile Include="Functions\SystemDimensionSettings.cs" />
     <Compile Include="JazzFunction.cs" />

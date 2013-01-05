@@ -36,18 +36,6 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        private static HierarchySettings _HierarchySettings;
-        public static HierarchySettings HierarchySettings
-        {
-            get
-            {
-                if (_HierarchySettings == null)
-                    _HierarchySettings = new HierarchySettings();
-
-                return _HierarchySettings;
-            }
-        }
-
         private static PTagSettings _PTagSettings;
         public static PTagSettings PTagSettings
         {
@@ -71,6 +59,30 @@ namespace Mento.ScriptCommon.Library
                 return _VTagSettings;
             }
         }
+
+        private static KPITagSettings _KPITagSettings;
+        public static KPITagSettings KPITagSettings
+        {
+            get
+            {
+                if (_KPITagSettings == null)
+                    _KPITagSettings = new KPITagSettings();
+
+                return _KPITagSettings;
+            }
+        }
+        private static HierarchySettings _HierarchySettings;
+        public static HierarchySettings HierarchySettings
+        {
+            get
+            {
+                if (_HierarchySettings == null)
+                    _HierarchySettings = new HierarchySettings();
+
+                return _HierarchySettings;
+            }
+        }
+
 
         private static AssociateSettings _AssociateSettings;
         public static AssociateSettings AssociateSettings
@@ -108,13 +120,13 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        private static KPISettings _KPISettings;
-        public static KPISettings KPISettings
+        private static KPITagSettings _KPISettings;
+        public static KPITagSettings KPISettings
         {
             get
             {
                 if (_KPISettings == null)
-                    _KPISettings = new KPISettings();
+                    _KPISettings = new KPITagSettings();
 
                 return _KPISettings;
             }  

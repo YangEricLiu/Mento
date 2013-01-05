@@ -8,13 +8,20 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public sealed class JazzComboBox : JazzControlCollection
     {
+        #region Get Position ComboBox Method
+        public static ComboBox GetOneComboBox(string key, int positionIndex)
+        {
+            return GetControl<ComboBox>(key, positionIndex);
+        }
+        #endregion
+
         #region Customer settings
         #region Hierarchy settings
         public static ComboBox HierarchySettingsHierarchyTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchySettingsHierarchyType);
-        
-        public static ComboBox WorkdayEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayEffectiveYear);
-        public static ComboBox WorkdayCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarName);
-		#endregion
+
+        public static ComboBox WorkdayEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayEffectiveYear, 1);
+        public static ComboBox WorkdayCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarName, 1);  
+        #endregion
         
         #region PTag settings
         public static ComboBox PTagSettingsCommodityComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagSettingsCommodity);

@@ -50,7 +50,10 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             HPropertySettings.ClickWorkdayCreateButton();
             TimeManager.ShortPause();
 
-            HPropertySettings.SelectWorkdayEffectiveYear("2002");
+            HPropertySettings.SelectWorkdayEffectiveYear("2002",1);
+            HPropertySettings.SelectWorkdayCalendarName("foraddcalendar1",1);
+            TimeManager.MediumPause();
+            HPropertySettings.ClickAddWorktimeLinkButton();
             TimeManager.ShortPause();
         }
     }

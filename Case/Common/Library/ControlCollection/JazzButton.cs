@@ -74,6 +74,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button WorkdayCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCreate);
         public static Button HeatingCoolingCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingCreate);
         public static Button DayNightCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCreate);
+        public static LinkButton WorktimeCreateButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonWorktimeCreate, 1);
         #endregion
         #endregion
 

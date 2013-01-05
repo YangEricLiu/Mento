@@ -140,7 +140,7 @@ namespace Mento.TestApi.WebUserInterface
             }
 
             //maximize the browser
-            //driver.Manage().Window.Maximize();
+            driver.Manage().Window.Maximize();
 
             return driver;
         }

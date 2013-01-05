@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrowserHandler.cs" />
+    <Compile Include="Controls\Button\LinkButton.cs" />
     <Compile Include="Controls\Button\TabButton.cs" />
     <Compile Include="Controls\Button\ToggleButton.cs" />
     <Compile Include="Controls\ComboBox\ComboBox.cs" />

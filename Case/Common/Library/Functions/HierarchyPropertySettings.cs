@@ -27,6 +27,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DayNightCreate = JazzButton.DayNightCreateButton;
         private static ComboBox WorkdayEffectiveYearAdd = JazzComboBox.WorkdayEffectiveYearComboBox;
         private static ComboBox WorkdayCalendarNameAdd = JazzComboBox.WorkdayCalendarNameComboBox;
+        private static LinkButton WorktimeAddCreate = JazzButton.WorktimeCreateButton;
 
         public void ClickCalendarTab()
         {
@@ -62,5 +63,36 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             WorkdayCalendarNameAdd.SelectItem(calendarName);
         }
+
+        public void SelectWorkdayEffectiveYear(string year, int num)
+        {
+            ComboBox OneWorkdayEffectiveYearAdd = GetOneWorkdayEffectiveYearComboBox(num);
+
+            OneWorkdayEffectiveYearAdd.SelectItem(year);
+        }
+
+        public void SelectWorkdayCalendarName(string calendarName, int num)
+        {
+            ComboBox OneWorkdayCalendarNameAdd = GetOneWorkdayCalendarNameComboBox(num);
+
+            OneWorkdayCalendarNameAdd.SelectItem(calendarName);
+        }
+
+        public void ClickAddWorktimeLinkButton()
+        {
+            WorktimeAddCreate.Click();
+        }
+
+        #region private method
+        private ComboBox GetOneWorkdayEffectiveYearComboBox(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxWorkdayEffectiveYear, positionIndex);
+        }
+
+        private ComboBox GetOneWorkdayCalendarNameComboBox(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxWorkdayCalendarName, positionIndex);
+        }
+        #endregion
     }
 }

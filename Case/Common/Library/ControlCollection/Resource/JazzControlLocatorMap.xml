@@ -209,8 +209,9 @@
       <hierarchy>
         <add key="ComboBoxHierarchySettingsHierarchyType" value="//div[@id='st-hier-properties-form']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='Type']]" type="XPath"/>
       	
-		<add key="ComboBoxWorkdayEffectiveYear" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
-    	<add key="ComboBoxWorkdayCalendarName" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
+		    <add key="ComboBoxWorkdayEffectiveYear" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
+    	  <add key="ComboBoxWorkdayCalendarName" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
+        <add key="LinkButtonWorktimeCreate" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a" type="XPath"/>
       </hierarchy>
       <ptag>
         <add key="ComboBoxPTagSettingsCommodity" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>

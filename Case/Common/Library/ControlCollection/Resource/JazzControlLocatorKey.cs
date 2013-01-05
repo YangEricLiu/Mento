@@ -113,6 +113,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonWorkdayCreate = "ButtonWorkdayCreate";
         public static string ButtonHeatingCoolingCreate = "ButtonHeatingCoolingCreate";
         public static string ButtonDayNightCreate = "ButtonDayNightCreate";
+        public static string LinkButtonWorktimeCreate = "LinkButtonWorktimeCreate";
         #endregion
 
         #endregion

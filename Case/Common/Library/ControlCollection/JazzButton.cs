@@ -135,7 +135,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Association
         public static Button AssociationSettingsTagAssociate = GetControl<Button>(JazzControlLocatorKey.ButtonAssociationSettingsTagAssociate);
         public static Button AssociationSettingsAssociate = GetControl<Button>(JazzControlLocatorKey.ButtonAssociationSettingsAssociate);
-        
+        public static Button AssociationSettingsDisassociate = GetControl<Button>(JazzControlLocatorKey.ButtonAssociationSettingsDisassociate);
+        public static Button AssociationSettingCancel = GetControl<Button>(JazzControlLocatorKey.ButtonAssociationSettingsCancel);
         #endregion
         #endregion
 

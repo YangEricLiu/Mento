@@ -143,5 +143,17 @@ namespace Mento.ScriptCommon.Library
                 return _HierarchyPropertySettings;
             }
         }
+
+        private static DisassociateSettings _DisassociateSettings;
+        public static DisassociateSettings DisassociateSettings
+        {
+            get
+            {
+                if (_DisassociateSettings == null)
+                    _DisassociateSettings = new DisassociateSettings();
+
+                return _DisassociateSettings;
+            }
+        }
     }
 }

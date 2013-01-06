@@ -266,4 +266,8 @@
     <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
   </grid>
   <!--Grid End-->
+  <hierarchydisassociation>
+    <add key = "ButtonAssociationSettingsDisassociate" value = "st-tagassoc-taggrid-unassoc-btnInnerEl" type = "ID"/>
+    <add key = "ButtonAssociationSettingsCancel" value = "st-tagassoc-taggrid-cancel" type= "ID"/>
+  </hierarchydisassociation>
 </WebElement>

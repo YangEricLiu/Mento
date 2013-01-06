@@ -137,6 +137,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ButtonAssociationSettingsTagAssociate = "ButtonAssociationSettingsTagAssociate";
         public static string ButtonAssociationSettingsAssociate = "ButtonAssociationSettingsAssociate";
+        public static string ButtonAssociationSettingsDisassociate = "ButtonAssociationSettingsDisassociate";
+        public static string ButtonAssociationSettingsCancel = "ButtonAssociationSettingsCancel";
         #endregion
         #endregion
 

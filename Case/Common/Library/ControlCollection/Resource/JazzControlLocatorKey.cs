@@ -137,7 +137,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ButtonAssociationSettingsTagAssociate = "ButtonAssociationSettingsTagAssociate";
         public static string ButtonAssociationSettingsAssociate = "ButtonAssociationSettingsAssociate";
-        public static string ButtonAssociationSettingsDisassociate = "ButtonAssociationSettingsDisassociate";
+		public static string ButtonAssociationSettingsDisassociate = "ButtonAssociationSettingsDisassociate";
         public static string ButtonAssociationSettingsCancel = "ButtonAssociationSettingsCancel";
         #endregion
         #endregion
@@ -264,7 +264,17 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Platform settings
         #region workday
         public static string ComboBoxWorkdayCalendarSpecialDateType = "ComboBoxWorkdayCalendarSpecialDateType";
+        public static string ComboBoxWorkdayCalendarStartMonth = "ComboBoxWorkdayCalendarStartMonth";
+        public static string ComboBoxWorkdayCalendarStartDate = "ComboBoxWorkdayCalendarStartDate";
+        public static string ComboBoxWorkdayCalendarEndMonth = "ComboBoxWorkdayCalendarEndMonth";
+        public static string ComboBoxWorkdayCalendarEndDate = "ComboBoxWorkdayCalendarEndDate";
         #endregion
+
+        #region worktime
+        public static string ComboBoxWorktimeCalendarStartTime = "ComboBoxWorktimeCalendarStartTime";
+        public static string ComboBoxWorktimeCalendarEndTime = "ComboBoxWorktimeCalendarEndTime";
+        #endregion
+
         #endregion
         #endregion
 

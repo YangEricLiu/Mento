@@ -44,7 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administration\TimeManagementData.cs" />
+    <Compile Include="Administration\TimeSettingsWortimeData.cs" />
+    <Compile Include="Administration\TimeSettingsWordayData.cs" />
     <Compile Include="Customer\AddKPIData.cs" />
     <Compile Include="Customer\PtagData.cs" />
     <Compile Include="Administration\ExampleData.cs" />

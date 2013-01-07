@@ -36,6 +36,7 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+
         private static PTagSettings _PTagSettings;
         public static PTagSettings PTagSettings
         {
@@ -71,6 +72,7 @@ namespace Mento.ScriptCommon.Library
                 return _KPITagSettings;
             }
         }
+
         private static HierarchySettings _HierarchySettings;
         public static HierarchySettings HierarchySettings
         {
@@ -93,6 +95,18 @@ namespace Mento.ScriptCommon.Library
                     _AssociateSettings = new AssociateSettings();
 
                 return _AssociateSettings;
+            }
+        }
+
+		private static DisassociateSettings _DisassociateSettings;
+        public static DisassociateSettings DisassociateSettings
+        {
+            get
+            {
+                if (_DisassociateSettings == null)
+                    _DisassociateSettings = new DisassociateSettings();
+
+                return _DisassociateSettings;
             }
         }
 
@@ -120,18 +134,6 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        private static KPITagSettings _KPISettings;
-        public static KPITagSettings KPISettings
-        {
-            get
-            {
-                if (_KPISettings == null)
-                    _KPISettings = new KPITagSettings();
-
-                return _KPISettings;
-            }  
-        }
-
         private static HierarchyPropertySettings _HierarchyPropertySettings;
         public static HierarchyPropertySettings HierarchyPropertySettings
         {
@@ -144,15 +146,27 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        private static DisassociateSettings _DisassociateSettings;
-        public static DisassociateSettings DisassociateSettings
+        public static TimeSettingsWorkday _TimeSettingsWorkday;
+        public static TimeSettingsWorkday TimeSettingsWorkday
         {
             get
             {
-                if (_DisassociateSettings == null)
-                    _DisassociateSettings = new DisassociateSettings();
+                if (_TimeSettingsWorkday == null)
+                    _TimeSettingsWorkday = new TimeSettingsWorkday();
 
-                return _DisassociateSettings;
+                return _TimeSettingsWorkday;
+            }
+        }
+
+        public static TimeSettingsWorktime _TimeSettingsWorktime;
+        public static TimeSettingsWorktime TimeSettingsWorktime
+        {
+            get
+            {
+                if (_TimeSettingsWorktime == null)
+                    _TimeSettingsWorktime = new TimeSettingsWorktime();
+
+                return _TimeSettingsWorktime;
             }
         }
     }

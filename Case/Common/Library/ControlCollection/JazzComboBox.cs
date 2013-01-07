@@ -46,8 +46,18 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Platform settings
         #region Workday
-        public static ComboBox WorkdayCalendarSpecialDateTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarSpecialDateType);
+        public static ComboBox WorkdayCalendarSpecialDateTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarSpecialDateType, 1);
+        public static ComboBox WorkdayCalendarStartMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarStartMonth, 1);
+        public static ComboBox WorkdayCalendarStartDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarStartDate, 1);
+        public static ComboBox WorkdayCalendarEndMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarEndMonth, 1);
+        public static ComboBox WorkdayCalendarEndDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarEndDate, 1);
         #endregion
+
+        #region Worktime
+        public static ComboBox WorktimeCalendarStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorktimeCalendarStartTime, 1);
+        public static ComboBox WorktimeCalendarEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorktimeCalendarEndTime, 1);
+        #endregion
+
         #endregion
     }
 }

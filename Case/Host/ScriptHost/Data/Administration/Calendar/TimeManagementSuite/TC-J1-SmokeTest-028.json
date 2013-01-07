@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Name":" Amy_WorktimeCalendar1_名称 ",			
+		},
+		"ExpectedData":
+		{
+			"Name":"Amy_WorktimeCalendar1_名称",
+		}
+	},
+]

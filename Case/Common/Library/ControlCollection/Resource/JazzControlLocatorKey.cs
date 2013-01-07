@@ -12,6 +12,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonLoginSubmit = "ButtonLoginSubmit";
         #endregion
 
+        #region EnergyView
+        public static string ButtonSelectHierarchy = "ButtonSelectHierarchy";
+        #endregion
+
         #region Navigator
         //Navigator buttons
         //level 1
@@ -21,6 +25,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorPlatformSettings = "ButtonNavigatorPlatformSettings";
 
         //level 2
+
+        public static string ButtonNavigatorEnergyAnalysis = "ButtonNavigatorEnergyAnalysis";
+        public static string ButtonNavigatorCarbonUsage = "ButtonNavigatorCarbonUsage";
+        public static string ButtonNavigatorCost = "ButtonNavigatorCost";
+        public static string ButtonNavigatorKPI = "ButtonNavigatorKPI";
         public static string ButtonNavigatorTimeSettings = "ButtonNavigatorTimeSettings";
         public static string ButtonNavigatorCarbonSettings = "ButtonNavigatorCarbonSettings";
         public static string ButtonNavigatorPriceSettings = "ButtonNavigatorPriceSettings";
@@ -75,11 +84,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonVTagSettingsFormulaUpdate = "ButtonVTagSettingsFormulaUpdate";
         public static string ButtonVTagSettingsFormulaSave = "ButtonVTagSettingsFormulaSave";
 
-        public static string ButtonVTagSettingsCreateVTag="ButtonVTagSettingsCreateVTag";
-        
-        public static string ButtonVTagSettingsModify="ButtonVTagSettingsModify";
-        public static string ButtonVTagSettingsSave="ButtonVTagSettingsSave";
-        public static string ButtonVTagSettingsCancel="ButtonVTagSettingsCancel";
+        public static string ButtonVTagSettingsCreateVTag = "ButtonVTagSettingsCreateVTag";
+
+        public static string ButtonVTagSettingsModify = "ButtonVTagSettingsModify";
+        public static string ButtonVTagSettingsSave = "ButtonVTagSettingsSave";
+        public static string ButtonVTagSettingsCancel = "ButtonVTagSettingsCancel";
         public static string ButtonVTagSettingsDelete = "ButtonVTagSettingsDelete";
         #endregion
 
@@ -137,7 +146,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ButtonAssociationSettingsTagAssociate = "ButtonAssociationSettingsTagAssociate";
         public static string ButtonAssociationSettingsAssociate = "ButtonAssociationSettingsAssociate";
-		public static string ButtonAssociationSettingsDisassociate = "ButtonAssociationSettingsDisassociate";
+        public static string ButtonAssociationSettingsDisassociate = "ButtonAssociationSettingsDisassociate";
         public static string ButtonAssociationSettingsCancel = "ButtonAssociationSettingsCancel";
         #endregion
         #endregion
@@ -204,8 +213,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldVTagSettingsName = "TextFieldVTagSettingsName";
         public static string TextFieldVTagSettingsCode = "TextFieldVTagSettingsCode";
         public static string TextFieldVTagSettingsComment = "TextFieldVTagSettingsComment";
-        #endregion   
-        
+        #endregion
+
         #region KPITag settings
         public static string TextFieldKPITagSettingsName = "TextFieldKPITagSettingsName";
         public static string TextFieldKPITagSettingsCode = "TextFieldKPITagSettingsCode";
@@ -238,10 +247,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Customer settings
         #region Hierarchy settings
         public static string ComboBoxHierarchySettingsHierarchyType = "ComboBoxHierarchySettingsHierarchyType";
-        
-		public static string ComboBoxWorkdayEffectiveYear = "ComboBoxWorkdayEffectiveYear";
+
+        public static string ComboBoxWorkdayEffectiveYear = "ComboBoxWorkdayEffectiveYear";
         public static string ComboBoxWorkdayCalendarName = "ComboBoxWorkdayCalendarName";
-		#endregion
+        #endregion
         #region PTag settings
         public static string ComboBoxPTagSettingsCommodity = "ComboBoxPTagSettingsCommodity";
         public static string ComboBoxPTagSettingsUom = "ComboBoxPTagSettingsUom";

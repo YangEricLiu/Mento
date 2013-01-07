@@ -129,15 +129,9 @@ namespace Mento.TestApi.WebUserInterface
 
         public static bool Wait(Locator locator, WaitType waitType, ISearchContext container = null, int timeout = TimeManager.WAITELEMENTTIMEOUT)
         {
-            Func<IWebDriver, bool> AppearCondition = (driver) =>
-            {
-                return Displayed(locator, container: (container == null ? driver : container));
-            };
+            Func<IWebDriver, bool> AppearCondition = (driver) => Displayed(locator, container: (container == null ? driver : container));
 
-            Func<IWebDriver, bool> DisappearCondition = (driver) =>
-            {
-                return !Displayed(locator, container: (container == null ? driver : container));
-            };
+            Func<IWebDriver, bool> DisappearCondition = (driver) => !Displayed(locator, container: (container == null ? driver : container));
 
             WebDriverWait wait = new WebDriverWait(DriverFactory.Instance, TimeSpan.FromSeconds(timeout));
 

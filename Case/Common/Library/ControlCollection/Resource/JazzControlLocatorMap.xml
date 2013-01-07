@@ -10,6 +10,10 @@
       <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
       <add key="ButtonNavigatorPlatformSettings" value="header-btn-pfsetting" type="ID"/>
 
+      <add key="ButtonNavigatorEnergyAnalysis" value="em-functionPanel-eAnalysis" type="ID"/>
+      <add key="ButtonNavigatorCarbonUsage" value="em-functionPanel-eCarbon" type="ID"/>
+      <add key="ButtonNavigatorCost" value="em-functionPanel-eCost" type="ID"/>
+      <add key="ButtonNavigatorKPI" value="em-functionPanel-eKPI" type="ID"/>
       <add key="ButtonNavigatorTimeSettings" value="st-menu-timecfg" type="ID"/>
       <add key="ButtonNavigatorCarbonSettings" value="st-menu-carbon-lv1" type="ID"/>
       <add key="ButtonNavigatorPriceSettings" value="st-menu-price-lv1" type="ID"/>
@@ -39,7 +43,7 @@
       <add key="ButtonNavigatorAssociationAreaDimensionButton" value="st-menu-areadtags" type="ID"/>
     </navigator>
     <energyview>
-      
+      <add key="ButtonSelectHierarchy" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@Common.Label.EmptyHierarchyText']]" type="XPath"/>
     </energyview>
     <customersettings>
       <ptag>

@@ -61,6 +61,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
             ElementHandler.Float(this.GetRow(cellIndex, cellText));
         }
 
+        /// <summary>
+        /// Check whether the specified row is checked
+        /// </summary>
+        /// <param name="cellIndex">Column index of the identifier cell</param>
+        /// <param name="cellText">Text of the identifier cell</param>
+        /// <returns></returns>
         public bool IsRowChecked(int cellIndex, string cellText)
         {
             var checker = this.GetRowChecker(cellIndex, cellText);

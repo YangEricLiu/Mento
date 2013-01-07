@@ -43,7 +43,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void NavigateHome()
         {
-            NavigateToTarget(NavigationTarget.EnergyView);
+            NavigateToTarget(NavigationTarget.HomePage);
 
             JazzMessageBox.LoadingMask.WaitLoading();
         }
@@ -85,6 +85,11 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.PlatformSettings, new NavigatorItem(NavigationTarget.PlatformSettings,null,JazzButton.NavigatorPlatformSettingsButton)},
 
             //level 2
+            {NavigationTarget.EnergyAnalysis, new NavigatorItem(NavigationTarget.EnergyAnalysis,NavigationTarget.EnergyView,JazzButton.NavigatorEnergyAnalysisButton)},
+            {NavigationTarget.CarbonUsage, new NavigatorItem(NavigationTarget.CarbonUsage,NavigationTarget.EnergyView,JazzButton.NavigatorCarbonUsageButton)},
+            {NavigationTarget.CostUsage, new NavigatorItem(NavigationTarget.CostUsage,NavigationTarget.EnergyView,JazzButton.NavigatorCostButton)},
+            {NavigationTarget.KpiUsage, new NavigatorItem(NavigationTarget.KpiUsage,NavigationTarget.EnergyView,JazzButton.NavigatorKPIButton)},
+
             {NavigationTarget.TimeSettings, new NavigatorItem(NavigationTarget.TimeSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorTimeSettingsButton)},
             {NavigationTarget.CarbonSettings, new NavigatorItem(NavigationTarget.CarbonSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorCarbonSettingsButton)},
             {NavigationTarget.PriceSettings, new NavigatorItem(NavigationTarget.PriceSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorPriceSettingsButton)},
@@ -162,6 +167,11 @@ namespace Mento.ScriptCommon.Library.Functions
         PlatformSettings = 4,
 
         //level 2
+        //used different number to avoid conflict
+        EnergyAnalysis=201,
+        CarbonUsage = 202,
+        CostUsage = 203,
+        KpiUsage = 204,
         TimeSettings = 5,
         CarbonSettings = 6,
         PriceSettings = 7,

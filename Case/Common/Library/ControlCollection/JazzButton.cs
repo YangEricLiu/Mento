@@ -13,6 +13,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button LoginSubmitButton = GetControl<Button>(JazzControlLocatorKey.ButtonLoginSubmit);
         #endregion
 
+        #region EnergyView buttons
+        public static Button EnergyViewSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonSelectHierarchy);
+        #endregion
+
         #region Navigator buttons
         //level 1
         public static Button NavigatorHomePageButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorHomePage);//{NavigationTarget.HomePage,new NavigatorItem( NavigationTarget.HomePage, null, "header-btn-homepage-btnEl",ByType.ID)},
@@ -21,6 +25,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorPlatformSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorPlatformSettings);//{NavigationTarget.PlatformSettings, new NavigatorItem(NavigationTarget.PlatformSettings,NavigationTarget.Settings,"setting-tab-platformsetting-btn-btnEl",ByType.ID)},
 
         //level 2
+        public static Button NavigatorEnergyAnalysisButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorEnergyAnalysis);
+        public static Button NavigatorCarbonUsageButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCarbonUsage);
+        public static Button NavigatorCostButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCost);
+        public static Button NavigatorKPIButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorKPI);
+
         public static Button NavigatorTimeSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTimeSettings);
         public static Button NavigatorCarbonSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCarbonSettings);
         public static Button NavigatorPriceSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorPriceSettings);

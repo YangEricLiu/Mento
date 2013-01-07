@@ -169,5 +169,17 @@ namespace Mento.ScriptCommon.Library
                 return _TimeSettingsWorktime;
             }
         }
+
+        private static EnergyAnalysisPanel _EnergyAnalysisPanel;
+        public static EnergyAnalysisPanel EnergyAnalysisPanel
+        {
+            get
+            {
+                if (_EnergyAnalysisPanel == null)
+                    _EnergyAnalysisPanel = new EnergyAnalysisPanel();
+
+                return _EnergyAnalysisPanel;
+            }
+        }
     }
 }

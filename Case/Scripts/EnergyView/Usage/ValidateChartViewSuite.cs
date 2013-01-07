@@ -21,6 +21,8 @@ namespace Mento.Script.EnergyView.Usage
         public void ValidateChartRendered()
         {
             var button = JazzButton.AreaDimensionCreateButton;
+
+            LanguageResourceRepository.GetLanguageVariableValue("$@Common.AggregationStep.Hourly");
         }
     }
 }

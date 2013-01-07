@@ -12,7 +12,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.Utility;
 using Mento.Framework.Attributes;
 
-namespace Mento.Script.Customer.HierarchySettings
+namespace Mento.Script.Customer.HierarchyConfiguration
 {
     [TestFixture]
     [Owner("Aries")]

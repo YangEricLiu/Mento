@@ -41,12 +41,21 @@ namespace Mento.TestApi.WebUserInterface.Controls
         
         #endregion
 
-        #region Grid locators        
+        #region Grid locators 
         public static string GridRows = "GridRows";
         public static string GridRow = "GridRow";
         public static string GridRowChecker = "GridRowChecker";      
         
             
+        #endregion
+
+        #region MonthPicker locators
+        public static string MonthPickerTrigger = "MonthPickerTrigger";
+        public static string MonthPickerInput = "MonthPickerInput";
+        public static string MonthPickerYearItem = "MonthPickerYearItem";
+        public static string MonthPickerMonthItem = "MonthPickerMonthItem";
+
+
         #endregion
 
     }

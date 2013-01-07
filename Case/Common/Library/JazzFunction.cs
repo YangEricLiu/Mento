@@ -134,15 +134,15 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        private static HierarchyPropertySettings _HierarchyPropertySettings;
-        public static HierarchyPropertySettings HierarchyPropertySettings
+        private static HierarchyCalendarSettings _HierarchyCalendarSettings;
+        public static HierarchyCalendarSettings HierarchyCalendarSettings
         {
             get
             {
-                if (_HierarchyPropertySettings == null)
-                    _HierarchyPropertySettings = new HierarchyPropertySettings();
+                if (_HierarchyCalendarSettings == null)
+                    _HierarchyCalendarSettings = new HierarchyCalendarSettings();
 
-                return _HierarchyPropertySettings;
+                return _HierarchyCalendarSettings;
             }
         }
 
@@ -167,6 +167,18 @@ namespace Mento.ScriptCommon.Library
                     _TimeSettingsWorktime = new TimeSettingsWorktime();
 
                 return _TimeSettingsWorktime;
+            }
+        }
+
+        public static HierarchyPeopleAreaSettings _HierarchyPeopleAreaSettings;
+        public static HierarchyPeopleAreaSettings HierarchyPeopleAreaSettings
+        {
+            get
+            {
+                if (_HierarchyPeopleAreaSettings == null)
+                    _HierarchyPeopleAreaSettings = new HierarchyPeopleAreaSettings();
+
+                return _HierarchyPeopleAreaSettings;
             }
         }
 

@@ -15,12 +15,12 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.ScriptCommon.TestData.Customer;
 
 
-namespace Mento.Script.Customer.HierarchySettings
+namespace Mento.Script.Customer.HierarchyConfiguration
 {
     [TestFixture]
     public class HierarchyManagement : TestSuiteBase
     {
-        private static Mento.ScriptCommon.Library.Functions.HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
+        private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
 
         [TestFixtureSetUp]
         public void CaseFixtureSetUp()

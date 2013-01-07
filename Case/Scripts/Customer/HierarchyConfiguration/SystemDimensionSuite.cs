@@ -10,7 +10,7 @@ using OpenQA.Selenium;
 using Mento.ScriptCommon.Library;
 using Mento.Framework.Attributes;
 
-namespace Mento.Script.Customer.HierarchySettings
+namespace Mento.Script.Customer.HierarchyConfiguration
 {
     [TestFixture]
     [Owner("Aries")]

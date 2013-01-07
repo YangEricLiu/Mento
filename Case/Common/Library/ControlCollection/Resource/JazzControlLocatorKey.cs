@@ -123,6 +123,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonHeatingCoolingCreate = "ButtonHeatingCoolingCreate";
         public static string ButtonDayNightCreate = "ButtonDayNightCreate";
         public static string LinkButtonWorktimeCreate = "LinkButtonWorktimeCreate";
+
+        public static string TabButtonPeopleAreaProperty = "TabButtonPeopleAreaProperty";
+        public static string ButtonPeopleAreaCreate = "ButtonPeopleAreaCreate";
+        public static string ButtonPeopleAreaSave = "ButtonPeopleAreaSave";
+        public static string ButtonPeopleAreaCancel = "ButtonPeopleAreaCancel";
+        public static string ButtonPeopleCreate = "ButtonPeopleCreate";
         #endregion
 
         #endregion
@@ -199,6 +205,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldHierarchySettingsName = "TextFieldHierarchySettingsName";
         public static string TextFieldHierarchySettingsCode = "TextFieldHierarchySettingsCode";
         public static string TextFieldHierarchySettingsComment = "TextFieldHierarchySettingsComment";
+
+        #region Hierarchy peoperty settings
+        public static string TextFieldTotalAreaValue = "TextFieldTotalAreaValue";
+        public static string TextFieldHeatingAreaValue = "TextFieldHeatingAreaValue";
+        public static string TextFieldCoolingAreaValue = "TextFieldCoolingAreaValue";
+        #endregion
         #endregion
 
         #region PTag settings
@@ -245,17 +257,25 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region ComboBox
         #region Customer settings
-        #region Hierarchy settings
+        #region Hierarchy property settings
         public static string ComboBoxHierarchySettingsHierarchyType = "ComboBoxHierarchySettingsHierarchyType";
 
         public static string ComboBoxWorkdayEffectiveYear = "ComboBoxWorkdayEffectiveYear";
         public static string ComboBoxWorkdayCalendarName = "ComboBoxWorkdayCalendarName";
-        #endregion
+
+        public static string ComboBoxHeatingCoolingEffectiveYear = "ComboBoxHeatingCoolingEffectiveYear";
+        public static string ComboBoxHeatingCoolingCalendarName = "ComboBoxHeatingCoolingCalendarName";
+
+        public static string ComboBoxDayNightEffectiveYear = "ComboBoxDayNightEffectiveYear";
+        public static string ComboBoxDayNightCalendarName = "ComboBoxDayNightCalendarName";
+		#endregion
+
         #region PTag settings
         public static string ComboBoxPTagSettingsCommodity = "ComboBoxPTagSettingsCommodity";
         public static string ComboBoxPTagSettingsUom = "ComboBoxPTagSettingsUom";
         public static string ComboBoxPTagSettingsCalculationType = "ComboBoxPTagSettingsCalculationType";
         #endregion
+
         #region VTag settings
         public static string ComboBoxVTagSettingsCommodity = "ComboBoxVTagSettingsCommodity";
         public static string ComboBoxVTagSettingsUom = "ComboBoxVTagSettingsUom";

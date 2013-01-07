@@ -86,14 +86,24 @@
         <add key="ButtonHierarchySettingsCancel" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonHierarchySettingsModify" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
         <add key="ButtonHierarchySettingsDelete" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+      </hierarchy>
+      <hierarchycalendar>
         <add key="TabButtonCalendarProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[2]" type="XPath"/>
-        <add key="ButtonCalendarCreate" value="//div[@id = 'st-hier-calendar-form']//div[contains(@id, 'button')]" type="XPath"/>
-        <add key="ButtonCalendarSave" value="" type="XPath"/>
+        <add key="ButtonCalendarCreate" value="//div[@id = 'st-hier-calendar-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.Label.HierarchyNodeCalendarProperties']]" type="XPath"/>
+        <add key="ButtonCalendarSave" value="//div[@id='st-hier-calendar-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
         <add key="ButtonCalendarCancel" value="" type="XPath"/>
         <add key="ButtonWorkdayCreate" value="st-hierarchy-calendar-workday-add-toolEl" type="ID"/>
-        <add key="ButtonHeatingCoolingCreate" value="st-hierarchy-calendar-coldwarm-add-toolEl" type="XPath"/>
+        <add key="ButtonHeatingCoolingCreate" value="st-hierarchy-calendar-coldwarm-add-toolEl" type="ID"/>
         <add key="ButtonDayNightCreate" value="st-hierarchy-calendar-daynight-add-toolEl" type="ID"/>
-      </hierarchy>
+        <add key="LinkButtonWorktimeCreate" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//a[text()='添加工作时间']" type="XPath"/>
+      </hierarchycalendar>
+      <hierarchypeoplearea>
+        <add key="TabButtonPeopleAreaProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[4]" type="XPath"/>
+        <add key="ButtonPeopleAreaCreate" value="//div[@id = 'st-hier-dynamic-property-form']//div[contains(@class, 'x-btn') and em/button/span[text() = '$@Setting.Label.HierarchyNodePopulationNAreaProperties']]" type="XPath"/>
+        <add key="ButtonPeopleAreaSave" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonPeopleAreaCancel" value="" type="XPath"/>
+        <add key="ButtonPeopleCreate" value="st-hierarchy-dynamic-population-add-toolEl" type="ID"/>
+      </hierarchypeoplearea>
       <systemdimension>
         <add key="ButtonDimensionShowHierarchyTree" value = "//div[@id='setting-region-center']//button" type ="XPath"/>
         <add key="ButtonSystemDimensionSet" value = "st-sys-tree-update-btnInnerEl" type ="ID"/>
@@ -167,6 +177,11 @@
         <add key="TextFieldHierarchySettingsCode" value="//div[@id='st-hier-properties-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
         <add key="TextFieldHierarchySettingsComment" value="//div[@id='st-hier-properties-form-body']//textarea[@name='Comment']" type="XPath"/>
       </hierarchysettings>
+      <hierarchypeopertysettings>
+        <add key="TextFieldTotalAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-totalarea-container']//input[@type='text' and @name='TotalAreaValue']" type="XPath"/>
+        <add key="TextFieldHeatingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-heatingarea-container']//input[@type='text' and @name='HeatingAreaValue']" type="XPath"/>
+        <add key="TextFieldCoolingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-coolingarea-container']//input[@type='text' and @name='CoolingAreaValue']" type="XPath"/>
+      </hierarchypeopertysettings>
       <ptagsettings>
         <add key="TextFieldPTagSettingsName" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
         <add key="TextFieldPTagSettingsCode" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
@@ -215,7 +230,10 @@
       	
 		    <add key="ComboBoxWorkdayEffectiveYear" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
     	  <add key="ComboBoxWorkdayCalendarName" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
-        <add key="LinkButtonWorktimeCreate" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingEffectiveYear" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingCalendarName" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
+        <add key="ComboBoxDayNightEffectiveYear" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
+        <add key="ComboBoxDayNightCalendarName" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
       </hierarchy>
       <ptag>
         <add key="ComboBoxPTagSettingsCommodity" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>

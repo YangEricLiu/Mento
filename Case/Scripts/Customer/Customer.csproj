@@ -51,13 +51,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HierarchyPropertyConfiguration\AddPeopleAreaProperty.cs" />
     <Compile Include="TagDisassociation\AreaDimensionDisassociateTag.cs" />
     <Compile Include="TagDisassociation\HierarchyDisassociateTag.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddCalendarProperty.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
-    <Compile Include="HierarchySettings\AreaDimensionSuite.cs" />
-    <Compile Include="HierarchySettings\SystemDimensionSuite.cs" />
-    <Compile Include="HierarchySettings\HierarchyManagement.cs" />
+    <Compile Include="HierarchyConfiguration\AreaDimensionSuite.cs" />
+    <Compile Include="HierarchyConfiguration\SystemDimensionSuite.cs" />
+    <Compile Include="HierarchyConfiguration\HierarchyManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TagAssociation\AreaDimensionAssociateTag.cs" />
     <Compile Include="TagAssociation\SystemAssociateTag.cs" />

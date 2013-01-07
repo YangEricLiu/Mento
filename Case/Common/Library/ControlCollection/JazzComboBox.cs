@@ -16,11 +16,17 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region Customer settings
-        #region Hierarchy settings
+        #region Hierarchy property settings
         public static ComboBox HierarchySettingsHierarchyTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchySettingsHierarchyType);
 
         public static ComboBox WorkdayEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayEffectiveYear, 1);
-        public static ComboBox WorkdayCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarName, 1);  
+        public static ComboBox WorkdayCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarName, 1);
+
+        public static ComboBox HeatingCoolingEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingEffectiveYear, 1);
+        public static ComboBox HeatingCoolingCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingCalendarName, 1);
+
+        public static ComboBox DayNightEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightEffectiveYear, 1);
+        public static ComboBox DayNightCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightCalendarName, 1);
         #endregion
         
         #region PTag settings

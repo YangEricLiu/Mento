@@ -72,6 +72,8 @@
     <Compile Include="Controls\ComboBox\ComboBoxItemRepository.cs" />
     <Compile Include="Controls\Common\MessageBox.cs" />
     <Compile Include="Controls\Grid\Grid.cs" />
+    <Compile Include="Controls\MonthPicker\MonthPicker.cs" />
+    <Compile Include="Controls\MonthPicker\MonthPickerItemRepository.cs" />
     <Compile Include="Controls\TextField\FormulaField.cs" />
     <Compile Include="Controls\TextField\TextField.cs" />
     <Compile Include="Controls\TreeView\AreaDimensionTree.cs" />
@@ -110,6 +112,10 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -62,8 +62,9 @@
     <Compile Include="Functions\AssociateSettings.cs" />
     <Compile Include="Functions\DisassociateSettings.cs" />
     <Compile Include="Functions\EnergyAnalysisPanel.cs" />
+    <Compile Include="Functions\HierarchyCalendarSettings.cs" />
+    <Compile Include="Functions\HierarchyPeopleAreaSettings.cs" />
     <Compile Include="Functions\TimeSettingsWorktime.cs" />
-    <Compile Include="Functions\HierarchyPropertySettings.cs" />
     <Compile Include="Functions\KPITagSettings.cs" />
     <Compile Include="Functions\TimeSettingsWorkday.cs" />
     <Compile Include="Functions\SystemDimensionSettings.cs" />
@@ -102,6 +103,9 @@
     <EmbeddedResource Include="ControlCollection\Resource\JazzControlLocatorMap.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

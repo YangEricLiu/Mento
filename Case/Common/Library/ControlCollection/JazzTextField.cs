@@ -18,6 +18,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField HierarchySettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHierarchySettingsName);
         public static TextField HierarchySettingsCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHierarchySettingsCode);
         public static TextField HierarchySettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHierarchySettingsComment);
+
+        #region Hierarchy property settings
+        public static TextField TotalAreaValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTotalAreaValue);
+        public static TextField HeatingAreaValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHeatingAreaValue);
+        public static TextField CoolingAreaValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCoolingAreaValue); 
+        #endregion
+
         #endregion
 
         #region PTag settings

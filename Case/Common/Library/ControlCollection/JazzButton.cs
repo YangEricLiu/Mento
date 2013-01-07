@@ -80,10 +80,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Hierarchy property settings buttons
         public static TabButton CalendarPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonCalendarProperty);
         public static Button CalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonCalendarCreate);
+        public static Button CalendarSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonCalendarSave);
         public static Button WorkdayCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCreate);
         public static Button HeatingCoolingCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingCreate);
         public static Button DayNightCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCreate);
         public static LinkButton WorktimeCreateButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonWorktimeCreate, 1);
+
+        public static TabButton PeopleAreaPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonPeopleAreaProperty);
+        public static Button PeopleAreaCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonPeopleAreaCreate);
+        public static Button PeopleAreaSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonPeopleAreaSave);
+        public static Button PeopleCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonPeopleCreate);
         #endregion
         #endregion
 

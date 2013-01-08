@@ -44,7 +44,7 @@ namespace Mento.Script.EnergyView.Usage
         [CaseID("TC-J1-SmokeTest-039")]
         public void SingleTagDataView()
         {
-
+            JazzFunction.EnergyAnalysisPanel.SelectHierarchy(new string[] { "阿里斯集团" });
         }
     }
 }

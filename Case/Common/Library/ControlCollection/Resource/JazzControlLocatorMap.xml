@@ -288,12 +288,19 @@
   
   <!--Grid Begin-->
   <grid>
-    <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
-    <add key="GridVTagSettingsVTagList" value="st-vtag-grid" type="ID"/>
-    <add key="GridKPITagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
-    <add key="GridKPITagSettingsKPITagList" value="st-kpi-grid" type="ID"/>
-    <add key="GridAssociationTagList" value="//div[@id='st-tag-assoc-form-body']//div[contains(@class,'x-grid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
-    <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
+    <energyview>
+      <add key="GridEnergyAnalysisAllTagList" value="em-energy-alltag-panel" type="ID"/>
+      <add key="GridEnergyAnalysisSystemDimensionTagList" value="em-energy-sdim-tag-grid" type="ID"/>
+      <add key="GridEnergyAnalysisAreaDimensionTagList" value="em-energy-adim-tag-grid" type="ID"/>
+    </energyview>
+    <customersettings>
+      <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
+      <add key="GridVTagSettingsVTagList" value="st-vtag-grid" type="ID"/>
+      <add key="GridKPITagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
+      <add key="GridKPITagSettingsKPITagList" value="st-kpi-grid" type="ID"/>
+      <add key="GridAssociationTagList" value="//div[@id='st-tag-assoc-form-body']//div[contains(@class,'x-grid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
+    </customersettings>
   </grid>
   <!--Grid End-->
   <hierarchydisassociation>

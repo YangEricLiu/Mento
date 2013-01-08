@@ -325,12 +325,20 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region Grid
+        #region EnergyView
+        public static string GridEnergyAnalysisAllTagList = "GridEnergyAnalysisAllTagList";
+        public static string GridEnergyAnalysisSystemDimensionTagList = "GridEnergyAnalysisSystemDimensionTagList";
+        public static string GridEnergyAnalysisAreaDimensionTagList = "GridEnergyAnalysisAreaDimensionTagList";
+        #endregion
+
+        #region Customer settings
         public static string GridVTagSettingsFormulaEditPTagList = "GridVTagSettingsFormulaEditPTagList";
         public static string GridVTagSettingsVTagList = "GridVTagSettingsVTagList";
         public static string GridKPITagSettingsFormulaEditPTagList = "GridKPITagSettingsFormulaEditPTagList";
         public static string GridKPITagSettingsKPITagList = "GridKPITagSettingsKPITagList";
         public static string GridAssociationTagList = "GridAssociationTagList";
         public static string GridPTagSettingsPTagList = "GridPTagSettingsPTagList";
+        #endregion
         #endregion
     }
 }

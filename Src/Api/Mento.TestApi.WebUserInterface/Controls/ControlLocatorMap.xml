@@ -24,7 +24,7 @@
   <!--ComboBox-->
   <add key="ComboBoxTrigger" value = "td.x-trigger-cell" type ="CssSelector"/>
   <add key="ComboBoxInput" value = "input" type ="TagName"/>
-  <!--Amy's note: for below item, I add the '[last()]' attribute so that it works for addition like workday calendar, but may not always work for modification, still needs to be enhanced later-->
+  <!--Amy's note: for below item, I add the '[last()]' attribute so that it works for most cases of addition/modification, but still needs to be enhanced later-->
   <add key="ComboBoxItem" value = "//div[contains(@class,'x-boundlist-floating')][last()]/div/ul/li[@role='option' and text()='$#itemKey']" type ="XPath"/><!--need change, child can not found with //xpath-->
   
   <!--Grid-->

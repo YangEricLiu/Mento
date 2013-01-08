@@ -310,4 +310,9 @@
     <add key = "ButtonAssociationSettingsDisassociate" value = "st-tagassoc-taggrid-unassoc-btnInnerEl" type = "ID"/>
     <add key = "ButtonAssociationSettingsCancel" value = "st-tagassoc-taggrid-cancel" type= "ID"/>
   </hierarchydisassociation>
+
+  <!--MonthPicker-->
+  <hierarchyproperty>
+    <add key="MonthPickerPeopleEffectiveDate" value="//div[@id='st-hierarchy-dynamic-population-value-container']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@type='text']]" type="XPath"/>
+  </hierarchyproperty>
 </WebElement>

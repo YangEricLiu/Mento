@@ -8,6 +8,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class MonthPicker : JazzControl
     {
+        private const string MONTHPICKERITEMVARIABLENAME = "itemKey";
+
         protected IWebElement SelectTrigger 
         {
             get 
@@ -36,19 +38,80 @@ namespace Mento.TestApi.WebUserInterface.Controls
             this.SelectTrigger.Click();
         }
 
+
+        /// <summary>
+        /// Simulate the mouse select year and month item from monthpicker drop down list
+        /// </summary>
+        /// <param name="date">date</param>
+        /// <returns></returns>
+        public void SelectYearMonthItem(DateTime date)
+        {
+            SelectYearItem(date.Year.ToString());
+            SelectMonthItem(date.Month.ToString());
+
+            ClickConfirmButton();
+        }
+
+        /// <summary>
+        /// Simulate the mouse select month item from monthpicker drop down list
+        /// </summary>
+        /// <param name="key">month picker month element key</param>
+        /// <returns></returns>
+        private void SelectMonthItem(string itemKey)
+        {
+            var locator = GetMonthPickerMonthLocator(itemKey);
+
+            if (!ElementHandler.Displayed(locator))
+                DisplayItems();
+
+            FindChild(locator).Click();
+        }
+
         /// <summary>
         /// Simulate the mouse select year item from monthpicker drop down list
         /// </summary>
-        /// <param name="key">combo box element key</param>
+        /// <param name="key">month picker year element key</param>
         /// <returns></returns>
-        public void SelectYearItem(string itemKey)
+        private void SelectYearItem(string itemKey)
         {
             var locator = GetMonthPickerYearLocator(itemKey);
 
             if (!ElementHandler.Displayed(locator))
                 DisplayItems();
 
+            ImplementNavigatorNumber(itemKey);
             FindChild(locator).Click();
+        }
+
+        /// <summary>
+        /// Navigate to the correct year 
+        /// </summary>
+        /// <param name="year">month picker year</param>
+        /// <returns></returns>
+        private void ImplementNavigatorNumber(string year)
+        {
+            int number = Convert.ToInt32(year);
+
+            if (number < 2009)
+            {
+                int prevNumber = ((2009 - number) / 10) + 1;
+
+                for (int i = 0; i < prevNumber; i++)
+                {
+                    ClickPreviousNavigator();
+                    TimeManager.ShortPause();
+                }
+            }
+            else if (number > 2018)
+            {
+                int nextNumber = ((number - 2018) / 10) + 1;
+
+                for (int i = 0; i < nextNumber; i++)
+                {
+                    ClickNextNavigator();
+                    TimeManager.ShortPause();
+                }
+            }
         }
 
         /// <summary>
@@ -60,9 +123,57 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return SelectInput.GetAttribute("value");
         }
 
+
+        protected virtual void ClickPreviousNavigator()
+        {
+            var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.MonthPickerPreviousNavigator);
+
+            FindChild(locator).Click();
+        }
+
+        protected virtual void ClickNextNavigator()
+        {
+            var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.MonthPickerNextNavigator);
+
+            FindChild(locator).Click();
+        }
+
+        protected virtual void ClickConfirmButton()
+        {
+            var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.MonthPickerConfirm);
+
+            FindChild(locator).Click();
+        }
+
+        protected virtual void ClickCanceLButton()
+        {
+            var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.MonthPickerCancel);
+
+            FindChild(locator).Click();
+        }
+
+        /// <summary>
+        /// Get the value of test data type key
+        /// </summary>
+        /// <param name="key">month name element key</param>
+        /// <returns>Key value</returns>
+        public string GetActualValue(string itemKey)
+        {
+            return ComboBoxItemRepository.GetComboBoxItemRealValue(itemKey);
+        }
+
         protected virtual Locator GetMonthPickerYearLocator(string itemKey)
         {
-            return null;
+            string itemRealValue = ComboBoxItemRepository.GetComboBoxItemRealValue(itemKey);
+
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.MonthPickerYearItem), MONTHPICKERITEMVARIABLENAME, itemRealValue); 
+        }
+
+        protected virtual Locator GetMonthPickerMonthLocator(string itemKey)
+        {
+            string itemRealValue = ComboBoxItemRepository.GetComboBoxItemRealValue(itemKey);
+
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.MonthPickerMonthItem), MONTHPICKERITEMVARIABLENAME, itemRealValue); 
         }
     }
 }

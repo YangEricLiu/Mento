@@ -54,8 +54,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string MonthPickerInput = "MonthPickerInput";
         public static string MonthPickerYearItem = "MonthPickerYearItem";
         public static string MonthPickerMonthItem = "MonthPickerMonthItem";
-
-
+        public static string MonthPickerPreviousNavigator = "MonthPickerPreviousNavigator";
+        public static string MonthPickerNextNavigator = "MonthPickerNextNavigator";
+        public static string MonthPickerConfirm = "MonthPickerConfirm";
+        public static string MonthPickerCancel = "MonthPickerCancel";
         #endregion
 
     }

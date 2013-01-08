@@ -62,4 +62,31 @@
   <add key = "Orgnization" value = "$@Common.Glossary.Organization"/>
   <add key = "Site" value = "$@Common.Glossary.Site"/>
   <add key = "Building" value = "$@Common.Glossary.Building"/>
+
+  <!--Month Name-->
+  <add key = "1" value = "$@Data.MonthName.January"/>
+  <add key = "2" value = "$@Data.MonthName.February"/>
+  <add key = "3" value = "$@Data.MonthName.March"/>
+  <add key = "4" value = "$@Data.MonthName.April"/>
+  <add key = "5" value = "$@Data.MonthName.May"/>
+  <add key = "6" value = "$@Data.MonthName.June"/>
+  <add key = "7" value = "$@Data.MonthName.July"/>
+  <add key = "8" value = "$@Data.MonthName.August"/>
+  <add key = "9" value = "$@Data.MonthName.September"/>
+  <add key = "10" value = "$@Data.MonthName.October"/>
+  <add key = "11" value = "$@Data.MonthName.November"/>
+  <add key = "12" value = "$@Data.MonthName.December"/>
+  
+  <!--<add key = "January" value = "$@Data.MonthName.January"/>-->
+  <!--<add key = "February" value = "$@Data.MonthName.February"/>-->
+  <!--<add key = "March" value = "$@Data.MonthName.March"/>-->
+  <!--<add key = "April" value = "$@Data.MonthName.April"/>-->
+  <!--<add key = "May" value = "$@Data.MonthName.May"/>-->
+  <!--<add key = "June" value = "$@Data.MonthName.June"/>-->
+  <!--<add key = "July" value = "$@Data.MonthName.July"/>-->
+  <!--<add key = "August" value = "$@Data.MonthName.August"/>-->
+  <!--<add key = "September" value = "$@Data.MonthName.September"/>-->
+  <!--<add key = "October" value = "$@Data.MonthName.October"/>-->
+  <!--<add key = "November" value = "$@Data.MonthName.November"/>-->
+  <!--<add key = "December" value = "$@Data.MonthName.December"/>-->
 </ItemList>

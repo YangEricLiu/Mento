@@ -344,5 +344,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridPTagSettingsPTagList = "GridPTagSettingsPTagList";
         #endregion
         #endregion
+
+        #region MonthPicker
+        #region Hierarchy People Area property
+        public static string MonthPickerPeopleEffectiveDate = "MonthPickerPeopleEffectiveDate";
+        #endregion
+        #endregion
     }
 }

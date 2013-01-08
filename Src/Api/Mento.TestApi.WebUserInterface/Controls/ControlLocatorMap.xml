@@ -37,6 +37,10 @@
   <!--MonthPicker-->
   <add key="MonthPickerTrigger" value = "td.x-trigger-cell" type ="CssSelector"/>
   <add key="MonthPickerInput" value = "input" type ="TagName"/>
-  <add key="MonthPickerYearItem" value = "" type ="XPath"/>
-  <add key="MonthPickerMonthItem" value = "" type ="XPath"/>
+  <add key="MonthPickerYearItem" value = "//div[contains(@class,'x-monthpicker')][last()]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[contains(@class, 'x-monthpicker-year')]/a[text()='$#itemKey']" type ="XPath"/>
+  <add key="MonthPickerMonthItem" value = "//div[contains(@class,'x-monthpicker')][last()]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-months']/div[contains(@class, 'x-monthpicker-month')]/a[text()='$#itemKey']" type ="XPath"/>
+  <add key="MonthPickerPreviousNavigator" value = "//div[contains(@class,'x-monthpicker')][last()]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[@class = 'x-monthpicker-yearnav']/button[contains(@id,'prevEl')]" type ="XPath"/>
+  <add key="MonthPickerNextNavigator" value = "//div[contains(@class,'x-monthpicker')][last()]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[@class = 'x-monthpicker-yearnav']/button[contains(@id,'nextEl')]" type ="XPath"/>
+  <add key="MonthPickerConfirm" value = "//div[contains(@class,'x-monthpicker')][last()]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type ="XPath"/>
+  <add key="MonthPickerCancel" value = "//div[contains(@class,'x-monthpicker')][last()]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[text()='取消']]" type ="XPath"/>
 </WebElement>

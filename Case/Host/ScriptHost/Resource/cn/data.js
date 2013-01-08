@@ -45,3 +45,16 @@ Data.Uom.m3M2 = '立方米/平方米'
 Data.Uom.kgPerson = '千克/人'
 Data.Uom.TPerson = '吨/人'
 Data.Uom.m3Person = '立方米/人'
+
+Data.MonthName.January = '一月';
+Data.MonthName.February = '二月';
+Data.MonthName.March = '三月';
+Data.MonthName.April = '四月';
+Data.MonthName.May = '五月';
+Data.MonthName.June = '六月';
+Data.MonthName.July = '七月';
+Data.MonthName.August = '八月';
+Data.MonthName.September = '九月';
+Data.MonthName.October = '十月';
+Data.MonthName.November = '十一月';
+Data.MonthName.December = '十二月';

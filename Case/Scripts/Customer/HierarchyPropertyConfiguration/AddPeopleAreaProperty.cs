@@ -74,6 +74,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             PeopleAreaSetting.ClickPeopleCreateButton();
             TimeManager.ShortPause();
+            PeopleAreaSetting.SelectEffectiveDate(new DateTime(2031, 3, 2));
+            TimeManager.ShortPause();
         }
     }
 }

@@ -27,7 +27,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField TotalAreaValue = JazzTextField.TotalAreaValueTextField;
         private static TextField HeatingAreaValue = JazzTextField.HeatingAreaValueTextField;
         private static TextField CoolingAreaValue = JazzTextField.CoolingAreaValueTextField;
+
         private static Button PeopleCreate = JazzButton.PeopleCreateButton;
+        private static MonthPicker PeopleEffectiveDate = JazzMonthPicker.PeopleEffectiveDateMonthPicker;
         #endregion
 
         #region Peoplae Area
@@ -86,6 +88,12 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             PeopleCreate.Click();
         }
+
+        public void SelectEffectiveDate(DateTime date)
+        {
+            PeopleEffectiveDate.SelectYearMonthItem(date);
+        }
+
         #endregion
     }
 }

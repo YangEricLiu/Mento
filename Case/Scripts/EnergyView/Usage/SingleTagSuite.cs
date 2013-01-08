@@ -13,6 +13,9 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.EnergyView.Usage
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-SmokeTest-039"), CreateTime("2013-01-06"), Owner("Aries")]
     public class SingleTagSuite : TestSuiteBase
@@ -29,23 +32,18 @@ namespace Mento.Script.EnergyView.Usage
         {
             JazzFunction.Navigator.NavigateHome();
         }
-
-
+        
+        /// <summary>
+        /// 1. Navigate to Energy Management. Select the Building node in Pre-condition from Hierarchy list and go to Energy usage -> Energy Analysis. (用能->能效分析.)	
+        ///    Successfully navigate to Energy Analysis window.
+        /// 2. select a hierarchy node
+        /// 3. Go to Tag select panel, Select V(1), click "data view", set date range to last year
+        ///    The data view of selected V(1) display.
+        /// </summary>
         [Test]
         [CaseID("TC-J1-SmokeTest-039")]
         public void SingleTagDataView()
         {
-            //Navigate to Energy Management. Select the Building node in Pre-condition from Hierarchy list and go to Energy usage -> Energy Analysis. (用能->能效分析.)	
-            //Successfully navigate to Energy Analysis window.
-
-            //select a hierarchy node
-
-            //Go to Tag select panel, Select V(1), click "data view", set date range to last year
-            //The data view of selected V(1) display.
-
-            Button SelectHierarchyButton = JazzButton.EnergyViewSelectHierarchyButton;
-
-            SelectHierarchyButton.Click();
 
         }
     }

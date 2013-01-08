@@ -51,7 +51,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 case TagTabs.SystemDimensionTab:
                     //click system tab
-                    JazzButton.EnergyViewALLTagsTab.Click();
+                    JazzButton.EnergyViewSystemDimensionTagsTab.Click();
                     TagGrid = JazzGrid.EnergyAnalysisSystemDimensionTagList;
                     break;
                 case TagTabs.AreaDimensionTab:
@@ -62,7 +62,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 case TagTabs.AllTag:
                 default:
                     //click all tab
-                    JazzButton.EnergyViewSystemDimensionTagsTab.Click();
+                    JazzButton.EnergyViewALLTagsTab.Click();
                     TagGrid = JazzGrid.EnergyAnalysisAllTagList;
                     break;
             }

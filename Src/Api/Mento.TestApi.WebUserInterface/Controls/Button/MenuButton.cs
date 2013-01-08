@@ -10,5 +10,17 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public MenuButton()
             : base(new Locator())
         { }
+
+        public void Click()
+        {
+        }
+
+        public void HoverItem()
+        { 
+        }
+
+        public void ClickItem()
+        { 
+        }
     }
 }

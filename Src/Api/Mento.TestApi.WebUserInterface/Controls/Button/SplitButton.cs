@@ -10,5 +10,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public SplitButton()
             : base(new Locator())
         { }
+
+        public void Trigger()
+        { 
+        }
+
+        public void Click()
+        {
+ 
+        }
+
+        public void HoverItem()
+        { 
+        }
+
+        public void SelectItem()
+        { 
+        }
     }
 }

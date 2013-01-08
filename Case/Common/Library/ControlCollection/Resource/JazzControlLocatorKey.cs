@@ -14,6 +14,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region EnergyView
         public static string ButtonSelectHierarchy = "ButtonSelectHierarchy";
+
+        public static string TabButtonEnergyViewALLTagsTab = "TabButtonEnergyViewALLTagsTab";
+        public static string TabButtonEnergyViewSystemDimensionTagsTab = "TabButtonEnergyViewSystemDimensionTagsTab";
+        public static string TabButtonEnergyViewAreaDimensionTagsTab = "TabButtonEnergyViewAreaDimensionTagsTab";
         #endregion
 
         #region Navigator
@@ -268,7 +272,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ComboBoxDayNightEffectiveYear = "ComboBoxDayNightEffectiveYear";
         public static string ComboBoxDayNightCalendarName = "ComboBoxDayNightCalendarName";
-		#endregion
+        #endregion
 
         #region PTag settings
         public static string ComboBoxPTagSettingsCommodity = "ComboBoxPTagSettingsCommodity";

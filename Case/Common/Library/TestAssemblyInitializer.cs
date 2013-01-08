@@ -8,6 +8,7 @@ using Mento.Framework.DataAccess;
 using System.IO;
 using Mento.Framework.Configuration;
 using Mento.Framework.Execution;
+using System.Configuration;
 
 namespace Mento.ScriptCommon.Library
 {
@@ -46,7 +47,7 @@ namespace Mento.ScriptCommon.Library
         public static bool IsInitializeDatabase()
         {
             bool isInitializeDatabase = false;
-            bool.TryParse(ConfigurationKey.ASSEMBLY_INITIALIZE_DATABASE, out isInitializeDatabase);
+            bool.TryParse(ConfigurationManager.AppSettings[ConfigurationKey.ASSEMBLY_INITIALIZE_DATABASE], out isInitializeDatabase);
             return isInitializeDatabase;
         }
     }

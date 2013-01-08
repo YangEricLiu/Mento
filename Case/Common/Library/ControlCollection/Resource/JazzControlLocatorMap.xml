@@ -44,6 +44,9 @@
     </navigator>
     <energyview>
       <add key="ButtonSelectHierarchy" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@Common.Label.EmptyHierarchyText']]" type="XPath"/>
+      <add key="TabButtonEnergyViewALLTagsTab" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='全部数据点']]" type="XPath"/>
+      <add key="TabButtonEnergyViewSystemDimensionTagsTab" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='系统数据点']]" type="XPath"/>
+      <add key="TabButtonEnergyViewAreaDimensionTagsTab" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='区域数据点']]" type="XPath"/>
     </energyview>
     <customersettings>
       <ptag>

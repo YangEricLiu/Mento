@@ -51,15 +51,18 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 case TagTabs.SystemDimensionTab:
                     //click system tab
+                    JazzButton.EnergyViewALLTagsTab.Click();
                     TagGrid = JazzGrid.EnergyAnalysisSystemDimensionTagList;
                     break;
                 case TagTabs.AreaDimensionTab:
                     //click area tab
+                    JazzButton.EnergyViewAreaDimensionTagsTab.Click();
                     TagGrid = JazzGrid.EnergyAnalysisAreaDimensionTagList;
                     break;
                 case TagTabs.AllTag:
                 default:
                     //click all tab
+                    JazzButton.EnergyViewSystemDimensionTagsTab.Click();
                     TagGrid = JazzGrid.EnergyAnalysisAllTagList;
                     break;
             }
@@ -70,10 +73,10 @@ namespace Mento.ScriptCommon.Library.Functions
     internal class EnergyViewToolbar
     {
         //StartDatePicker
-        //StartTimePicker
+        //StartTimeComboBox
         //EndDatePicker
-        //EndTimePicker
-        
+        //EndTimeComboBox
+
         //ViewMenu
         //ConvertTargetSplitButton
         //PeakValleyButton
@@ -81,6 +84,49 @@ namespace Mento.ScriptCommon.Library.Functions
         //AddTimeSpanButton
         //RemoveAllTagButton
         //MoreMenu
- 
+        public EnergyViewToolbar()
+        {
+            CurrentViewType = ViewType.Line;
+        }
+
+        public ViewType CurrentViewType
+        {
+            get;
+            set;
+        }
+
+        public void SetTimeRange(DateTime startTime, DateTime endTime)
+        {
+
+        }
+
+        public enum ViewType 
+        { 
+            Line, 
+            Column, 
+            List, 
+            Distribute 
+        }
+        public void ChangeViewType(ViewType viewType)
+        {
+            switch (viewType)
+            {
+                case ViewType.Column:
+                    CurrentViewType = ViewType.Column;
+                    break;
+                case ViewType.List:
+                    CurrentViewType = ViewType.List;
+                    break;
+                case ViewType.Distribute:
+                    CurrentViewType = ViewType.Distribute;
+                    break;
+                case ViewType.Line:
+                default:
+                    CurrentViewType = ViewType.Line;
+                    break;
+            }
+        }
+
+
     }
 }

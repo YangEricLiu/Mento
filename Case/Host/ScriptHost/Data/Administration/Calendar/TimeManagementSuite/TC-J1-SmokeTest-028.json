@@ -2,7 +2,10 @@
 	{
 		"InputData":
 		{	
-			"Name":" Amy_WorktimeCalendar1_名称 ",			
+			"Name":" Amy_WorktimeCalendar1_名称 ",	
+			"RecordGroupPosition":[1,2],
+			"StartTime":["05:30","09:00"],
+			"EndTime":["06:00","10:30"],		
 		},
 		"ExpectedData":
 		{

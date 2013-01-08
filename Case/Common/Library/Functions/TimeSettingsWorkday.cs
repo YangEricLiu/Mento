@@ -68,6 +68,16 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             AddSpecialDateButton.Click();             
         }
+        
+        /// <summary>
+        /// Fill in name field
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInName(string name)
+        {
+            NameTextField.Fill(name);
+        }
 
         /// <summary>
         /// Select Special date type from the dropdown list
@@ -133,16 +143,6 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             SaveButton.Click();
         }
-
-        /// <summary>
-        /// Input name, special date type, start month, start date, end month and end date of the special date range
-        /// </summary>
-        /// <param name="input">Test data</param>
-        /// <returns></returns>
-        public void FillInWorkdayCalendar(WorkdayCalendarInputData input)
-        {
-            NameTextField.Fill(input.Name);            
-        }
        
         /// <summary>
         /// Get the Name actual value
@@ -153,9 +153,13 @@ namespace Mento.ScriptCommon.Library.Functions
             return NameTextField.GetValue();
         }
 
-        public void FocusOnWorkdayCalendar(string workdayCalendarName)
+        /// <summary>
+        /// Get the SpecialDateType actual value
+        /// </summary>
+        /// <returns></returns>
+        public string GetSpecialDateTypeValue()
         {
-            //PTagList.FocusOnRow(1, workdayCalendarName);
+            return SpecialDateTypeComboBox.GetValue();
         }
 
         #region private method

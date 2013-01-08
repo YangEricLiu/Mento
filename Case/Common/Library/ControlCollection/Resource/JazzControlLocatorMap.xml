@@ -257,9 +257,9 @@
       <workday>
         <add key="ComboBoxWorkdayCalendarSpecialDateType" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='ItemType']]" type="XPath"/>
         <add key="ComboBoxWorkdayCalendarStartMonth" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
-        <add key="ComboBoxWorkdayCalendarStartDate" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//input[@name='StartSecondPart']" type="XPath"/>
-        <add key="ComboBoxWorkdayCalendarEndMonth" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//input[@name='EndFirstPart']" type="XPath"/>
-        <add key="ComboBoxWorkdayCalendarEndDate" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//input[@name='EndSecondPart']" type="XPath"/>
+        <add key="ComboBoxWorkdayCalendarStartDate" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
+        <add key="ComboBoxWorkdayCalendarEndMonth" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
+        <add key="ComboBoxWorkdayCalendarEndDate" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>
       </workday>
       <worktime>
         <add key="ComboBoxWorktimeCalendarStartTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartPart']]" type="XPath"/>

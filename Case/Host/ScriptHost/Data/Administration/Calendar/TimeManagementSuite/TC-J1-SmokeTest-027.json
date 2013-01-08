@@ -3,7 +3,12 @@
 		"InputData":
 		{	
 			"Name":" Amy_WorkdayCalendar1_名称 ",
-			"SpecialDateType":"工作日",
+			"SpecialDateType":["非工作日","工作日"],
+			"RecordGroupPosition":[1,2],
+			"StartMonth":["05","09"],
+			"StartDate":["01","02"],
+			"EndMonth":["05","10"],
+			"EndDate":["07","09"],
 		},
 		"ExpectedData":
 		{

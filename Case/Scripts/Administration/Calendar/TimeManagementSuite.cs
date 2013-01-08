@@ -20,23 +20,21 @@ namespace Mento.Script.Administration.Calendar
     [TestFixture]
     [Owner("Amy")]
     [CreateTime("2013-01-04")]
-    [ManualCaseID("TC-J1-SmokeTest-027")]
+    [ManualCaseID("TC-J1-SmokeTest")]
     public class TimeManagementSuite: TestSuiteBase
     {
         private TimeSettingsWorkday TimeSettingsWorkday = JazzFunction.TimeSettingsWorkday;
         private TimeSettingsWorktime TimeSettingsWorktime = JazzFunction.TimeSettingsWorktime;
         [SetUp]
         public void CaseSetUp()
-        {
-            //TimeManagementSuite.NavigatorToWorkdayCalendarSetting();
-            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
+        {            
         }
 
         [TearDown]
         public void CaseTearDown()
         {
             //JazzFunction.Navigator.NavigateHome();
-            BrowserHandler.Refresh();
+            //BrowserHandler.Refresh();
         }
 
         [Test]
@@ -46,28 +44,41 @@ namespace Mento.Script.Administration.Calendar
         {
             TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
             TimeSettingsWorkday.PrepareToAddWorkdayCalendar();
-            TimeSettingsWorkday.FillInWorkdayCalendar(testData.InputData);
 
+            TimeSettingsWorkday.FillInName(testData.InputData.Name);
+
+            //Click '+' icon to add a special date record
             TimeSettingsWorkday.ClickAddSpecialDateButton();
             TimeManager.ShortPause();
 
-            TimeSettingsWorkday.SelectSpecialDateType("非工作日", 1);
+            //Click '+' icon again to add second special date record
+            TimeSettingsWorkday.ClickAddSpecialDateButton();
             TimeManager.ShortPause();
 
-            //Select start month
-            TimeSettingsWorkday.SelectStartMonth("05", 1);
+            //Amy's note: due to the order of dynamic element will be different if click the '+' icon after the first record has been input. That is why click + icon twice continuaslly: the implementation for finding element(xpath for 'ComboBoxItem' in ControlLocatorMap.xml) needs to be enhanced later..
+            
+            //Input special date type, start month,  start date, end month, end date for the first record
+            TimeSettingsWorkday.SelectSpecialDateType(testData.InputData.SpecialDateType[0], testData.InputData.RecordGroupPosition[0]);
+            TimeManager.ShortPause();
+            TimeSettingsWorkday.SelectStartMonth(testData.InputData.StartMonth[0], testData.InputData.RecordGroupPosition[0]);
+            TimeManager.ShortPause();
+            TimeSettingsWorkday.SelectStartDate(testData.InputData.StartDate[0], testData.InputData.RecordGroupPosition[0]);
+            TimeManager.ShortPause();
+            TimeSettingsWorkday.SelectEndMonth(testData.InputData.EndMonth[0], testData.InputData.RecordGroupPosition[0]);
+            TimeManager.ShortPause();
+            TimeSettingsWorkday.SelectEndDate(testData.InputData.EndDate[0], testData.InputData.RecordGroupPosition[0]);
             TimeManager.ShortPause();
 
-            //Select start date
-            TimeSettingsWorkday.SelectStartDate("01", 1);
+            //Input special date type, start month,  start date, end month, end date for the second record
+            TimeSettingsWorkday.SelectSpecialDateType(testData.InputData.SpecialDateType[1], testData.InputData.RecordGroupPosition[1]);
             TimeManager.ShortPause();
-
-            //Select end month
-            TimeSettingsWorkday.SelectEndMonth("05", 1);
+            TimeSettingsWorkday.SelectStartMonth(testData.InputData.StartMonth[1], testData.InputData.RecordGroupPosition[1]);
             TimeManager.ShortPause();
-
-            //Select end date
-            TimeSettingsWorkday.SelectEndDate("07", 1);
+            TimeSettingsWorkday.SelectStartDate(testData.InputData.StartDate[1], testData.InputData.RecordGroupPosition[1]);
+            TimeManager.ShortPause();
+            TimeSettingsWorkday.SelectEndMonth(testData.InputData.EndMonth[1], testData.InputData.RecordGroupPosition[1]);
+            TimeManager.ShortPause();
+            TimeSettingsWorkday.SelectEndDate(testData.InputData.EndDate[1], testData.InputData.RecordGroupPosition[1]);
             TimeManager.ShortPause();
 
             TimeSettingsWorkday.ClickSaveButton();
@@ -86,42 +97,29 @@ namespace Mento.Script.Administration.Calendar
             TimeSettingsWorktime.NavigatorToWorktimeCalendarSetting();
             TimeSettingsWorktime.PrepareToAddWorktimeCalendar();
             TimeManager.ShortPause();
-            
+
+            TimeSettingsWorktime.FillInName(testData.InputData.Name);
+
+            //Click '添加工作时间' link button to add one more time range record
             TimeSettingsWorktime.ClickAddMoreRangesButton();
             TimeManager.ShortPause();
-            
 
-            //TimeSettingsWorktime.FillInWorktimeCalendar(testData.InputData);
-
-            //TimeSettingsWorktime.ClickAddMoreRangesButton();
-            //TimeManager.ShortPause();
-
-            ////Click 开始时间 combobox
-            ////string selectStartMonthComboboxXpath = "//td[@id='st-calendar-items-container-bodyEl']/table[1]//div[1]//input[@name='StartFirstPart']";
-            //string selectStartTimeComboboxXpath = "//td[@id='st-calendar-items-container-bodyEl']/table[1]//div[1]//input[@name='StartPart']";
-
-            //ElementHandler.FindElement(new Locator(selectStartTimeComboboxXpath, ByType.XPath)).Click();
-            //TimeManager.ShortPause();
-            ////Select '05:30' from the time dropdown list 
-            //string selectStartTimeValueXpath = "//div[contains(@class, 'x-boundlist-floating')][1]//ul/li[12]";
-            //ElementHandler.FindElement(new Locator(selectStartTimeValueXpath, ByType.XPath)).Click();
-
-            //Select start time
-            //TimeSettingsWorktime.SelectStartTime("05:30", 1);
-            //TimeManager.LongPause();
-
-            //Select end time
-            TimeSettingsWorktime.SelectEndTime("09:00", 1);
+            //Input start time,  end time for the first record
+            TimeSettingsWorktime.SelectStartTime(testData.InputData.StartTime[0], testData.InputData.RecordGroupPosition[0]);
+            TimeManager.ShortPause();
+            TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[0], testData.InputData.RecordGroupPosition[0]);
             TimeManager.ShortPause();
 
-            //Select end time2
-            TimeSettingsWorktime.SelectEndTime("09:30", 2);
+            //Input start time,  end time for the second record
+            TimeSettingsWorktime.SelectStartTime(testData.InputData.StartTime[1], testData.InputData.RecordGroupPosition[1]);
             TimeManager.ShortPause();
-            
-            //TimeSettingsWorktime.ClickSaveButton();
-            //TimeManager.MediumPause();
+            TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[1], testData.InputData.RecordGroupPosition[1]);
+            TimeManager.ShortPause();
 
-            //Assert.AreEqual(testData.ExpectedData.Name, TimeSettingsWorktime.GetNameValue());
+            TimeSettingsWorktime.ClickSaveButton();
+            TimeManager.MediumPause();
+
+            Assert.AreEqual(testData.ExpectedData.Name, TimeSettingsWorktime.GetNameValue());
             
         }
     }

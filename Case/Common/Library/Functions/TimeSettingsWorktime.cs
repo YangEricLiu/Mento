@@ -67,6 +67,16 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Fill in name field
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInName(string name)
+        {
+            NameTextField.Fill(name);
+        }
+
+        /// <summary>
         /// Select Start Time from the dropdown list
         /// </summary>
         /// <param></param>
@@ -97,12 +107,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             SaveButton.Click();
         }
-
-        public void FillInWorktimeCalendar(WorktimeCalendarInputData input)
-        {
-            NameTextField.Fill(input.Name);            
-        }
-                     
+                    
         /// <summary>
         /// Get the Name actual value
         /// </summary>
@@ -110,11 +115,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetNameValue()
         {
             return NameTextField.GetValue();
-        }
-
-        public void FocusOnWorktimeCalendar(string worktimeCalendarName)
-        {
-            //PTagList.FocusOnRow(1, worktimeCalendarName);
         }
 
         #region private method

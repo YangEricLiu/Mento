@@ -70,6 +70,7 @@
     <Compile Include="Controls\Button\SplitButton.cs" />
     <Compile Include="Controls\Button\TabButton.cs" />
     <Compile Include="Controls\Button\ToggleButton.cs" />
+    <Compile Include="Controls\CheckBoxField\CheckBoxField.cs" />
     <Compile Include="Controls\ComboBox\ComboBox.cs" />
     <Compile Include="Controls\ComboBox\ComboBoxItemRepository.cs" />
     <Compile Include="Controls\Common\MessageBox.cs" />

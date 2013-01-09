@@ -77,7 +77,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             PeopleAreaSetting.SelectEffectiveDate(new DateTime(2031, 3, 2));
             TimeManager.ShortPause();
             PeopleAreaSetting.InputPeopleNumber("30");
-            //PeopleAreaSetting.ClickSaveButton();
+            PeopleAreaSetting.ClickSaveButton();
             TimeManager.ShortPause();
             Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), "2031-03");
             Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), "30");

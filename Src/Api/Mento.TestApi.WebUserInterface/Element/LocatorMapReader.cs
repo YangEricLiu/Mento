@@ -32,25 +32,31 @@ namespace Mento.TestApi.WebUserInterface
 
             XDocument xdoc = XDocument.Load(stream);
 
-            var query = from element in xdoc.Element(ELEMENTMAP_MODULE_NAME).XPathSelectElements("//" + ELEMENTMAP_ELEMENT_NAME)
-                        select new KeyValuePair<string, Locator>(
-                            element.Attribute("key").Value,
-                            new Locator(
-                            //need to find out all resource variables
-                                LanguageResourceRepository.ReplaceLanguageVariables(element.Attribute("value").Value),
-                                EnumHelper.StringToEnum<ByType>(element.Attribute("type").Value)
-                            )
-                        );
-            
-            try
-            {
-                return query.ToDictionary(item => item.Key, item => item.Value);
-            }
-            catch (Exception ex)
-            {
-                throw new ApiException("locator map format error.",ex);
-            }
-        }
+            Dictionary<string, Locator> dict = new Dictionary<string, Locator>();
 
+            foreach (var element in xdoc.Element(ELEMENTMAP_MODULE_NAME).XPathSelectElements("//" + ELEMENTMAP_ELEMENT_NAME))
+            {
+                if (element.Attribute("key") == null || element.Attribute("value") == null || element.Attribute("type") == null)
+                {
+                    throw new ApiException(String.Format("Missing locator key, value or xpath attribute in locator map. source xml: {0}", element.ToString()));
+                }
+                if (String.IsNullOrEmpty(element.Attribute("key").Value) || String.IsNullOrEmpty(element.Attribute("value").Value) || String.IsNullOrEmpty(element.Attribute("type").Value))
+                {
+                    throw new ApiException(String.Format("Empty key, value or xpath in locator map. source xml: {0}", element.ToString()));
+                }
+                if (dict.ContainsKey(element.Attribute("key").Value))
+                {
+                    throw new ApiException(String.Format("Locator key already exists: {0}.", element.Attribute("key").Value));
+                }
+
+                dict.Add(element.Attribute("key").Value, new Locator(
+                    //need to find out all resource variables
+                    LanguageResourceRepository.ReplaceLanguageVariables(element.Attribute("value").Value),
+                    EnumHelper.StringToEnum<ByType>(element.Attribute("type").Value)
+                ));
+            }
+
+            return dict;
+        }
     }
 }

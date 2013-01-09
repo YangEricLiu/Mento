@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
+using Mento.Framework.Constants;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -59,7 +60,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         private void SelectMonthItem(string itemKey)
         {
-            var locator = GetMonthPickerMonthLocator(itemKey);
+            string newItemKey = Project.LanguagePrefix + itemKey;
+
+            var locator = GetMonthPickerMonthLocator(newItemKey);
 
             if (!ElementHandler.Displayed(locator))
                 DisplayItems();

@@ -95,7 +95,7 @@
         <add key="TabButtonCalendarProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[2]" type="XPath"/>
         <add key="ButtonCalendarCreate" value="//div[@id = 'st-hier-calendar-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.Label.HierarchyNodeCalendarProperties']]" type="XPath"/>
         <add key="ButtonCalendarSave" value="//div[@id='st-hier-calendar-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonCalendarCancel" value="" type="XPath"/>
+        <add key="ButtonCalendarCancel" value="//div[@id='st-hier-calendar-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']" type="XPath"/>
         <add key="ButtonWorkdayCreate" value="st-hierarchy-calendar-workday-add-toolEl" type="ID"/>
         <add key="ButtonHeatingCoolingCreate" value="st-hierarchy-calendar-coldwarm-add-toolEl" type="ID"/>
         <add key="ButtonDayNightCreate" value="st-hierarchy-calendar-daynight-add-toolEl" type="ID"/>
@@ -105,7 +105,7 @@
         <add key="TabButtonPeopleAreaProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[4]" type="XPath"/>
         <add key="ButtonPeopleAreaCreate" value="//div[@id = 'st-hier-dynamic-property-form']//div[contains(@class, 'x-btn') and em/button/span[text() = '$@Setting.Label.HierarchyNodePopulationNAreaProperties']]" type="XPath"/>
         <add key="ButtonPeopleAreaSave" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonPeopleAreaCancel" value="" type="XPath"/>
+        <add key="ButtonPeopleAreaCancel" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonPeopleCreate" value="st-hierarchy-dynamic-population-add-toolEl" type="ID"/>
       </hierarchypeoplearea>
       <systemdimension>
@@ -344,10 +344,10 @@
     <add key="TextFieldUserRealName" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='RealName']" type="XPath"/>
     <add key="ComboBoxUserType" value="st-user-usertype-inputEl" type="XPath"/>
     <add key="ComboBoxUserAssociatedCustomer" value="st-user-firstcustomer-inputEl" type="XPath"/>
-    <add key="LinkButtonUserAssociatedCustomer" Value="st-user-customer-add-btnEl" type="XPath"/>
-    <add key="TextFieldUserTitle" Value="st-user-title-field-inputEl" type="XPath"/>
+    <add key="LinkButtonUserAssociatedCustomer" value="st-user-customer-add-btnEl" type="XPath"/>
+    <add key="TextFieldUserTitle" value="st-user-title-field-inputEl" type="XPath"/>
     <add key="TextFieldUserTelephone" value="//div[@id='st-user-properties-form-body]//input[@type='text' and @name='Telephone']" type="XPath"/>
-    <add key="TextFieldUserEmail" Value="st-user-email-field-inputEl" type="XPath"/>
+    <add key="TextFieldUserEmail" value="st-user-email-field-inputEl" type="XPath"/>
     <add key="TextFieldUserComment" value="st-user-comment-field-inputEl" type="XPath"/>
   </user> 
   <!--User Management End-->

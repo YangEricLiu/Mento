@@ -214,6 +214,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldTotalAreaValue = "TextFieldTotalAreaValue";
         public static string TextFieldHeatingAreaValue = "TextFieldHeatingAreaValue";
         public static string TextFieldCoolingAreaValue = "TextFieldCoolingAreaValue";
+        public static string TextFieldPeopleNumber = "TextFieldPeopleNumber";
         #endregion
         #endregion
 
@@ -272,7 +273,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ComboBoxDayNightEffectiveYear = "ComboBoxDayNightEffectiveYear";
         public static string ComboBoxDayNightCalendarName = "ComboBoxDayNightCalendarName";
-		#endregion
+        #endregion
 
         #region PTag settings
         public static string ComboBoxPTagSettingsCommodity = "ComboBoxPTagSettingsCommodity";

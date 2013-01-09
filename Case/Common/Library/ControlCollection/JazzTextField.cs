@@ -8,6 +8,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public class JazzTextField : JazzControlCollection
     {
+        #region Get Position TextField Method
+        public static TextField GetOneTextField(string key, int positionIndex)
+        {
+            return GetControl<TextField>(key, positionIndex);
+        }
+        #endregion
+
         #region Login
         public static TextField LoginUserNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldLoginUserName);
         public static TextField LoginPasswordTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldLoginPassword);
@@ -22,7 +29,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Hierarchy property settings
         public static TextField TotalAreaValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTotalAreaValue);
         public static TextField HeatingAreaValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHeatingAreaValue);
-        public static TextField CoolingAreaValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCoolingAreaValue); 
+        public static TextField CoolingAreaValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCoolingAreaValue);
+
+        public static TextField PeopleNumberTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPeopleNumber, 1);
         #endregion
 
         #endregion

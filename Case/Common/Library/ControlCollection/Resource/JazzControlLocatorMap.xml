@@ -184,6 +184,7 @@
         <add key="TextFieldTotalAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-totalarea-container']//input[@type='text' and @name='TotalAreaValue']" type="XPath"/>
         <add key="TextFieldHeatingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-heatingarea-container']//input[@type='text' and @name='HeatingAreaValue']" type="XPath"/>
         <add key="TextFieldCoolingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-coolingarea-container']//input[@type='text' and @name='CoolingAreaValue']" type="XPath"/>
+        <add key="TextFieldPeopleNumber" value="//div[@id='st-hierarchy-dynamic-population-value-container']/table[$#positionIndex]//input[contains(@name,'numberfield')]" type="XPath"/>
       </hierarchypeopertysettings>
       <ptagsettings>
         <add key="TextFieldPTagSettingsName" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
@@ -327,7 +328,7 @@
 
   <!--MonthPicker-->
   <hierarchyproperty>
-    <add key="MonthPickerPeopleEffectiveDate" value="//div[@id='st-hierarchy-dynamic-population-value-container']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@type='text']]" type="XPath"/>
+    <add key="MonthPickerPeopleEffectiveDate" value="//div[@id='st-hierarchy-dynamic-population-value-container']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'monthfield')]]" type="XPath"/>
   </hierarchyproperty>
   <!--User Management Begin-->
   <user>

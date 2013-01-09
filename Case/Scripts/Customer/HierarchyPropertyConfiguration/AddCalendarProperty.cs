@@ -39,6 +39,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-SmokeTest-017")]
         public void AddCalendarforWorkday()
         {
+            string[] calendarText = new string[] { "默认工作日：", "周一至周五" };
+            
             HierarchySettings.ExpandNode("自动化测试");
             HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
 
@@ -59,12 +61,15 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             Assert.AreEqual(CalendarSettings.GetWorkdayEffectiveYearValue(), "2002");
             Assert.AreEqual(CalendarSettings.GetWorkdayCalendarNameValue(), "foraddcalendar1");
+            Assert.IsTrue(CalendarSettings.IsWorkdayCalendarTextCorrect(calendarText));
         }
 
         [Test]
         [CaseID("TC-J1-SmokeTest-018")]
         public void AddCalendarforHeatingCooling()
         {
+            string[] calendarText = new string[] { "采暖季：", "1月1日至2月1日 ", "供冷季：", "10月1日至11月1日 " };
+
             HierarchySettings.ExpandNode("自动化测试");
             HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
 
@@ -84,12 +89,15 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             Assert.AreEqual(CalendarSettings.GetHeatingCoolingEffectiveYearValue(), "2002");
             Assert.AreEqual(CalendarSettings.GetHeatingCoolingCalendarNameValue(), "foraddcalendar3");
+            Assert.IsTrue(CalendarSettings.IsHeatingCoolingCalendarTextCorrect(calendarText));
         }
 
         [Test]
         [CaseID("TC-J1-SmokeTest-019")]
         public void AddCalendarforDayNight()
         {
+            string[] calendarText = new string[] { "黑夜时间：", "白昼时间以外均为黑夜时间", "白昼时间：", "06:00-17:00 " };
+
             HierarchySettings.ExpandNode("自动化测试");
             HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
 
@@ -109,6 +117,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             Assert.AreEqual(CalendarSettings.GetDayNightEffectiveYearValue(), "2002");
             Assert.AreEqual(CalendarSettings.GetDayNightCalendarNameValue(), "foraddcalendar4");
+            Assert.IsTrue(CalendarSettings.IsDayNightCalendarTextCorrect(calendarText));
         }
     }
 }

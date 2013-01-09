@@ -396,5 +396,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string MonthPickerPeopleEffectiveDate = "MonthPickerPeopleEffectiveDate";
         #endregion
         #endregion
+
+        #region Label
+        #region Hierarchy People Area property
+        public static string LabelWorkdayCalendar = "LabelWorkdayCalendar";
+        public static string LabelHeatingCoolingCalendar = "LabelHeatingCoolingCalendar";
+        public static string LabelDayNightCalendar = "LabelDayNightCalendar";
+        #endregion
+        #endregion
     }
 }

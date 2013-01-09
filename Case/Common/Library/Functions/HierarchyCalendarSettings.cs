@@ -34,6 +34,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox DayNightEffectiveYearAdd = JazzComboBox.DayNightEffectiveYearComboBox;
         private static ComboBox DayNightCalendarNameAdd = JazzComboBox.DayNightCalendarNameComboBox;
         private static LinkButton WorktimeAddCreate = JazzButton.WorktimeCreateButton;
+        private static Label WorkdayCalendar = JazzLabel.WorkdayCalendarLabel;
+        private static Label HeatingCoolingCalendar = JazzLabel.HeatingCoolingCalendarLabel;
+        private static Label DayNightCalendar = JazzLabel.DayNightCalendarLabel;
         #endregion
 
         #region Calendar 
@@ -97,6 +100,16 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return WorkdayCalendarNameAdd.GetValue();
         }
+
+        public string GetWorkdayLabelValue()
+        {
+            return WorkdayCalendar.GetLabelTextValue();
+        }
+
+        public Boolean IsWorkdayCalendarTextCorrect(string[] texts)
+        {
+            return WorkdayCalendar.IsLabelTextsExisted(texts);
+        }
         #endregion
 
         #region HeatingCooling property
@@ -138,6 +151,16 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return HeatingCoolingCalendarNameAdd.GetValue();
         }
+
+        public string GetHeatingCoolingLabelValue()
+        {
+            return HeatingCoolingCalendar.GetLabelTextValue();
+        }
+
+        public Boolean IsHeatingCoolingCalendarTextCorrect(string[] texts)
+        {
+            return HeatingCoolingCalendar.IsLabelTextsExisted(texts);
+        }
         #endregion
 
         #region DayNight property
@@ -178,6 +201,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetDayNightCalendarNameValue()
         {
             return DayNightCalendarNameAdd.GetValue();
+        }
+
+        public string GetDayNightLabelValue()
+        {
+            return DayNightCalendar.GetLabelTextValue();
+        }
+
+        public Boolean IsDayNightCalendarTextCorrect(string[] texts)
+        {
+            return DayNightCalendar.IsLabelTextsExisted(texts);
         }
         #endregion
 

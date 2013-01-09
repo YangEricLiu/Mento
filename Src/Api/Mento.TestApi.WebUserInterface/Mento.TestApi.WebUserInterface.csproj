@@ -75,6 +75,7 @@
     <Compile Include="Controls\ComboBox\ComboBoxItemRepository.cs" />
     <Compile Include="Controls\TextField\Common\MessageBox.cs" />
     <Compile Include="Controls\Grid\Grid.cs" />
+    <Compile Include="Controls\Label\Label.cs" />
     <Compile Include="Controls\MonthPicker\MonthPicker.cs" />
     <Compile Include="Controls\TextField\FormulaField.cs" />
     <Compile Include="Controls\TextField\TextField.cs" />

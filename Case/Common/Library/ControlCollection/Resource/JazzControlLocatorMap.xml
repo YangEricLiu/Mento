@@ -358,4 +358,8 @@
   <!--CheckBoxField Begin-->
     <add key="CheckBoxFieldDayNightKPITag" value="st-formula-daynight" type="ID"/>
   <!--CheckBoxField End-->
+  <!--Label-->
+    <add key="LabelWorkdayCalendar" value="st-hierarchy-calendar-workday-container" type="ID"/>
+    <add key="LabelHeatingCoolingCalendar" value="st-hierarchy-calendar-coldwarm-container" type="ID"/>
+    <add key="LabelDayNightCalendar" value="st-hierarchy-calendar-daynight-container" type="ID"/>
 </WebElement>

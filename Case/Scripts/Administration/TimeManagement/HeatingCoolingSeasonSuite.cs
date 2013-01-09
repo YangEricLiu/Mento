@@ -23,17 +23,17 @@ namespace Mento.Script.Administration.TimeManagement
     [ManualCaseID("TC-J1-SmokeTest")]
     public class HeatingCoolingSeasonSuite : TestSuiteBase
     {
-        private TimeSettingsHeatingCoolingSeason TimeSettingsHeatingCoolingSeason = JazzFunction.TimeSettingsHeatingCoolingSeason;
+        private static TimeSettingsHeatingCoolingSeason TimeSettingsHeatingCoolingSeason = JazzFunction.TimeSettingsHeatingCoolingSeason;
         [SetUp]
         public void CaseSetUp()
-        {            
+        {
+            TimeSettingsHeatingCoolingSeason.NavigatorToHeatingCoolingSeasonCalendarSetting();
+            TimeManager.MediumPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
-            //BrowserHandler.Refresh();
         }
 
         [Test]
@@ -41,24 +41,27 @@ namespace Mento.Script.Administration.TimeManagement
         [MultipleTestDataSource(typeof(HeatingCoolingSeasonCalendarData[]), typeof(HeatingCoolingSeasonSuite), "TC-J1-SmokeTest-030")]
         public void AddHeatingCoolingSeasonTimeStrategy(HeatingCoolingSeasonCalendarData testData)
         {
-            TimeSettingsHeatingCoolingSeason.NavigatorToHeatingCoolingSeasonCalendarSetting();
             TimeSettingsHeatingCoolingSeason.PrepareToAddHeatingCoolingSeasonCalendar();
             TimeManager.ShortPause();
 
             TimeSettingsHeatingCoolingSeason.FillInName(testData.InputData.Name);
 
+            //Input warm date range1
             TimeSettingsHeatingCoolingSeason.SelectWarmStartMonth(testData.InputData.WarmStartMonth[0], testData.InputData.WarmRecordGroupPosition[0]);
             TimeSettingsHeatingCoolingSeason.SelectWarmStartDate(testData.InputData.WarmStartDate[0], testData.InputData.WarmRecordGroupPosition[0]);
             TimeSettingsHeatingCoolingSeason.SelectWarmEndMonth(testData.InputData.WarmEndMonth[0], testData.InputData.WarmRecordGroupPosition[0]);
             TimeSettingsHeatingCoolingSeason.SelectWarmEndDate(testData.InputData.WarmEndDate[0], testData.InputData.WarmRecordGroupPosition[0]);
 
+            //Click '添加采暖季' button to add one more warm date range record
             TimeSettingsHeatingCoolingSeason.ClickAddMoreWarmRangesButton();
-            
+
+            //Input warm date range2
             TimeSettingsHeatingCoolingSeason.SelectWarmStartMonth(testData.InputData.WarmStartMonth[1], testData.InputData.WarmRecordGroupPosition[1]);
             TimeSettingsHeatingCoolingSeason.SelectWarmStartDate(testData.InputData.WarmStartDate[1], testData.InputData.WarmRecordGroupPosition[1]);
             TimeSettingsHeatingCoolingSeason.SelectWarmEndMonth(testData.InputData.WarmEndMonth[1], testData.InputData.WarmRecordGroupPosition[1]);
             TimeSettingsHeatingCoolingSeason.SelectWarmEndDate(testData.InputData.WarmEndDate[1], testData.InputData.WarmRecordGroupPosition[1]);
 
+            //Input cold date range1
             TimeSettingsHeatingCoolingSeason.SelectColdStartMonth(testData.InputData.ColdStartMonth[0], testData.InputData.ColdRecordGroupPosition[0]);
             TimeSettingsHeatingCoolingSeason.SelectColdStartDate(testData.InputData.ColdStartDate[0], testData.InputData.ColdRecordGroupPosition[0]);
             TimeSettingsHeatingCoolingSeason.SelectColdEndMonth(testData.InputData.ColdEndMonth[0], testData.InputData.ColdRecordGroupPosition[0]);

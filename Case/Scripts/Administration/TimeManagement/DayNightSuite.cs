@@ -23,17 +23,17 @@ namespace Mento.Script.Administration.TimeManagement
     [ManualCaseID("TC-J1-SmokeTest")]
     public class DayNightSuite : TestSuiteBase
     {
-        private TimeSettingsDayNight TimeSettingsDayNight = JazzFunction.TimeSettingsDayNight;
+        private static TimeSettingsDayNight TimeSettingsDayNight = JazzFunction.TimeSettingsDayNight;
         [SetUp]
         public void CaseSetUp()
-        {            
+        {
+            TimeSettingsDayNight.NavigatorToDaynightCalendarSetting();
+            TimeManager.MediumPause();
         }
 
         [TearDown]
         public void CaseTearDown()
-        {
-            //JazzFunction.Navigator.NavigateHome();
-            //BrowserHandler.Refresh();
+        {   
         }
 
         [Test]
@@ -41,11 +41,12 @@ namespace Mento.Script.Administration.TimeManagement
         [MultipleTestDataSource(typeof(DayNightCalendarData[]), typeof(DayNightSuite), "TC-J1-SmokeTest-029")]
         public void AddDayNightTimeStrategy(DayNightCalendarData testData)
         {
-            TimeSettingsDayNight.NavigatorToDaynightCalendarSetting();
             TimeSettingsDayNight.PrepareToAddDaynightCalendar();
             TimeManager.ShortPause();
 
             TimeSettingsDayNight.FillInName(testData.InputData.Name);
+            
+            //Input time range1
             TimeSettingsDayNight.SelectStartTime(testData.InputData.StartTime[0], testData.InputData.RecordGroupPosition[0]);
             TimeSettingsDayNight.SelectEndTime(testData.InputData.EndTime[0], testData.InputData.RecordGroupPosition[0]);
 

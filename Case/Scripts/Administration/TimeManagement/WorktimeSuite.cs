@@ -23,17 +23,17 @@ namespace Mento.Script.Administration.TimeManagement
     [ManualCaseID("TC-J1-SmokeTest")]
     public class WorktimeSuite : TestSuiteBase
     {
-        private TimeSettingsWorktime TimeSettingsWorktime = JazzFunction.TimeSettingsWorktime;
+        private static TimeSettingsWorktime TimeSettingsWorktime = JazzFunction.TimeSettingsWorktime;
         [SetUp]
         public void CaseSetUp()
-        {            
+        {
+            TimeSettingsWorktime.NavigatorToWorktimeCalendarSetting();
+            TimeManager.MediumPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
-            //BrowserHandler.Refresh();
         }
 
         [Test]
@@ -41,23 +41,22 @@ namespace Mento.Script.Administration.TimeManagement
         [MultipleTestDataSource(typeof(WorktimeCalendarData[]), typeof(WorktimeSuite), "TC-J1-SmokeTest-028")]
         public void AddWorktimeTimeStrategy(WorktimeCalendarData testData)
         {
-            TimeSettingsWorktime.NavigatorToWorktimeCalendarSetting();
             TimeSettingsWorktime.PrepareToAddWorktimeCalendar();
             TimeManager.ShortPause();
 
             TimeSettingsWorktime.FillInName(testData.InputData.Name);
 
-            //Click '添加工作时间' link button to add one more time range record
+            //Click '添加工作时间' button to add one more time range record
             TimeSettingsWorktime.ClickAddMoreRangesButton();
             TimeManager.ShortPause();
 
-            //Input start time,  end time for the first record
+            //Input time range1
             TimeSettingsWorktime.SelectStartTime(testData.InputData.StartTime[0], testData.InputData.RecordGroupPosition[0]);
             TimeManager.ShortPause();
             TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[0], testData.InputData.RecordGroupPosition[0]);
             TimeManager.ShortPause();
 
-            //Input start time,  end time for the second record
+            //Input time range2
             TimeSettingsWorktime.SelectStartTime(testData.InputData.StartTime[1], testData.InputData.RecordGroupPosition[1]);
             TimeManager.ShortPause();
             TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[1], testData.InputData.RecordGroupPosition[1]);

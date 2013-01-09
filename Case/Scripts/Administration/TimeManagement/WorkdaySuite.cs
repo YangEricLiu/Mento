@@ -27,8 +27,6 @@ namespace Mento.Script.Administration.TimeManagement
         [SetUp]
         public void CaseSetUp()
         {
-            //TimeManager.MediumPause();
-            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
             TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
             TimeManager.MediumPause();
         }
@@ -36,7 +34,6 @@ namespace Mento.Script.Administration.TimeManagement
         [TearDown]
         public void CaseTearDown()
         {
-            BrowserHandler.Refresh();
         }
 
         [Test]
@@ -44,9 +41,8 @@ namespace Mento.Script.Administration.TimeManagement
         [MultipleTestDataSource(typeof(WorkdayCalendarData[]), typeof(WorkdaySuite), "TC-J1-SmokeTest-027")]
         public void AddWorkdayTimeStrategy(WorkdayCalendarData testData)
         {
-            TimeManager.ShortPause();
-            
             TimeSettingsWorkday.PrepareToAddWorkdayCalendar();
+            TimeManager.ShortPause();
 
             TimeSettingsWorkday.FillInName(testData.InputData.Name);
 
@@ -59,8 +55,8 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
 
             //Amy's note: due to the order of dynamic element will be different if click the '+' icon after the first record has been input. That is why click + icon twice continuaslly: the implementation for finding element(xpath for 'ComboBoxItem' in ControlLocatorMap.xml) needs to be enhanced later..
-            
-            //Input special date type, start month,  start date, end month, end date for the first record
+
+            //Input date range1
             TimeSettingsWorkday.SelectSpecialDateType(testData.InputData.SpecialDateType[0], testData.InputData.RecordGroupPosition[0]);
             TimeManager.ShortPause();
             TimeSettingsWorkday.SelectStartMonth(testData.InputData.StartMonth[0], testData.InputData.RecordGroupPosition[0]);
@@ -72,7 +68,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorkday.SelectEndDate(testData.InputData.EndDate[0], testData.InputData.RecordGroupPosition[0]);
             TimeManager.ShortPause();
 
-            //Input special date type, start month,  start date, end month, end date for the second record
+            //Input date range2
             TimeSettingsWorkday.SelectSpecialDateType(testData.InputData.SpecialDateType[1], testData.InputData.RecordGroupPosition[1]);
             TimeManager.ShortPause();
             TimeSettingsWorkday.SelectStartMonth(testData.InputData.StartMonth[1], testData.InputData.RecordGroupPosition[1]);

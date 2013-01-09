@@ -46,12 +46,9 @@ namespace Mento.Script.EnergyView.Usage
         {
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(new string[] { "阿里斯集团" });
 
-            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(EnergyAnalysisPanel.TagTabs.SystemDimensionTab);
-            TimeManager.LongPause();
-            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(EnergyAnalysisPanel.TagTabs.AreaDimensionTab);
-            TimeManager.LongPause();
-            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(EnergyAnalysisPanel.TagTabs.AllTag);
-            TimeManager.LongPause();
+            JazzFunction.EnergyAnalysisPanel.CheckTag("P0");
+
+            JazzFunction.EnergyAnalysisPanel.ViewData(EnergyViewToolbar.ViewType.List);
         }
     }
 }

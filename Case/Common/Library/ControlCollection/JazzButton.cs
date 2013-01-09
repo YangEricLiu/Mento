@@ -19,6 +19,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TabButton EnergyViewALLTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewALLTagsTab);
         public static TabButton EnergyViewSystemDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewSystemDimensionTagsTab);
         public static TabButton EnergyViewAreaDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewAreaDimensionTagsTab);
+
+        public static SplitButton EnergyViewViewDataButton = GetControl<SplitButton>(JazzControlLocatorKey.SplitButtonEnergyViewViewData);
         #endregion
 
         #region Navigator buttons

@@ -30,6 +30,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         //Toolbar
+        private static EnergyViewToolbar Toolbar = new EnergyViewToolbar();
 
         //Chart
 
@@ -68,16 +69,35 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public void CheckTag(string tagName)
+        {
+            TagGrid.CheckRowCheckbox(2, tagName);
+        }
+
+        public void UncheckTag(string tagName)
+        { 
+        }
+
+        public void RemoveAllTag()
+        { 
+        }
+
+        public void ViewData(EnergyViewToolbar.ViewType viewType)
+        {
+            Toolbar.View(viewType);
+        }
+
     }
 
-    internal class EnergyViewToolbar
+    public class EnergyViewToolbar
     {
         //StartDatePicker
         //StartTimeComboBox
         //EndDatePicker
         //EndTimeComboBox
 
-        //ViewMenu
+        //ViewButton
+        private static SplitButton ViewButton = JazzButton.EnergyViewViewDataButton;
         //ConvertTargetSplitButton
         //PeakValleyButton
 
@@ -107,26 +127,49 @@ namespace Mento.ScriptCommon.Library.Functions
             List, 
             Distribute 
         }
-        public void ChangeViewType(ViewType viewType)
+
+        public void View(ViewType viewType)
+        {
+            if (this.CurrentViewType == viewType)
+            {
+                ViewButton.Click();
+            }
+            else
+            {
+                ViewButton.Trigger();
+                ChangeViewType(viewType);
+            }
+        }
+
+        private void ChangeViewType(ViewType viewType)
         {
             switch (viewType)
             {
                 case ViewType.Column:
+                    ViewButton.Trigger();
+                    ViewButton.HoverItem("趋势数据");
+                    ViewButton.SelectItem("柱状图");
                     CurrentViewType = ViewType.Column;
                     break;
                 case ViewType.List:
+                    ViewButton.Trigger();
+                    ViewButton.HoverItem("趋势数据");
+                    ViewButton.SelectItem("列表数据");
                     CurrentViewType = ViewType.List;
                     break;
                 case ViewType.Distribute:
+                    ViewButton.Trigger();
+                    ViewButton.SelectItem("分布数据");
                     CurrentViewType = ViewType.Distribute;
                     break;
                 case ViewType.Line:
                 default:
+                    ViewButton.Trigger();
+                    ViewButton.HoverItem("趋势数据");
+                    ViewButton.SelectItem("折线图");
                     CurrentViewType = ViewType.Line;
                     break;
             }
         }
-
-
     }
 }

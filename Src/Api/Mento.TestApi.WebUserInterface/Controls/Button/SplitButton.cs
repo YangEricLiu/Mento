@@ -7,25 +7,36 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class SplitButton : Button
     {
-        public SplitButton()
-            : base(new Locator())
+        private static string MenuItemLocatorFormat = "//div[contains(@class,'x-menu-item') and a/span[text()='{0}']]";
+        private static Locator TriggerLocator = new Locator("em", ByType.TagName);
+
+        public SplitButton(Locator locator)
+            : base(locator)
         { }
 
         public void Trigger()
-        { 
-        }
-
-        public void Click()
         {
- 
+            var Trigger = this.FindChild(TriggerLocator);
+            ElementHandler.Click(Trigger, this.RootElement.Size.Width - 5, 0);
         }
 
-        public void HoverItem()
-        { 
+        public void HoverItem(string itemResourceVariable)
+        {
+            Locator itemLocator = GetMenuItemLocator(itemResourceVariable);
+
+            ElementHandler.Focus(FindChild(itemLocator));
         }
 
-        public void SelectItem()
-        { 
+        public void SelectItem(string itemResourceVariable)
+        {
+            Locator itemLocator = GetMenuItemLocator(itemResourceVariable);
+
+            ElementHandler.Click(FindChild(itemLocator));
+        }
+
+        private Locator GetMenuItemLocator(string itemResourceVariable)
+        {
+            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(MenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
         }
     }
 }

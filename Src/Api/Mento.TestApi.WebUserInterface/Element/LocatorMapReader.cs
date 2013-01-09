@@ -9,6 +9,7 @@ using System.IO;
 using System.Xml.XPath;
 using System.Text.RegularExpressions;
 using Mento.Framework.Constants;
+using Mento.Framework.Exceptions;
 
 namespace Mento.TestApi.WebUserInterface
 {
@@ -31,17 +32,24 @@ namespace Mento.TestApi.WebUserInterface
 
             XDocument xdoc = XDocument.Load(stream);
 
-            var query = from element in xdoc.Element(ELEMENTMAP_MODULE_NAME).XPathSelectElements("//"+ELEMENTMAP_ELEMENT_NAME)
+            var query = from element in xdoc.Element(ELEMENTMAP_MODULE_NAME).XPathSelectElements("//" + ELEMENTMAP_ELEMENT_NAME)
                         select new KeyValuePair<string, Locator>(
                             element.Attribute("key").Value,
                             new Locator(
-                                //need to find out all resource variables
+                            //need to find out all resource variables
                                 LanguageResourceRepository.ReplaceLanguageVariables(element.Attribute("value").Value),
                                 EnumHelper.StringToEnum<ByType>(element.Attribute("type").Value)
                             )
                         );
-
-            return query.ToDictionary(item => item.Key, item => item.Value);
+            
+            try
+            {
+                return query.ToDictionary(item => item.Key, item => item.Value);
+            }
+            catch (Exception ex)
+            {
+                throw new ApiException("locator map format error.",ex);
+            }
         }
 
     }

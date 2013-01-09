@@ -217,5 +217,17 @@ namespace Mento.ScriptCommon.Library
                 return _EnergyAnalysisPanel;
             }
         }
+
+        public static UserSettings _UserSettings;
+        public static UserSettings UserSettings
+        {
+            get
+            {
+                if (_UserSettings == null)
+                    _UserSettings = new UserSettings();
+
+                return _UserSettings;
+            }
+        }
     }
 }

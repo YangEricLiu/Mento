@@ -329,4 +329,24 @@
   <hierarchyproperty>
     <add key="MonthPickerPeopleEffectiveDate" value="//div[@id='st-hierarchy-dynamic-population-value-container']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@type='text']]" type="XPath"/>
   </hierarchyproperty>
+  <!--User Management Begin-->
+  <user>
+    <add key="ButtonUserCreate" value="st-user-grid-add-btnInnerEl" type="ID"/>
+    <add key="ButtonUserRefresh" value="st-user-grid-refresh" type="ID"/>
+    <add key="ButtonUserSave" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
+    <add key="ButtonUserCancel" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+    <add key="ButtonUserModify" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+    <add key="ButtonUserDelete" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>    
+    <add key="ButtonUserGeneratePassword" value="st-user-resetpassword-btnInnerEl" type="XPath"/>
+    <add key="TextFieldUserName" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
+    <add key="TextFieldUserRealName" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='RealName']" type="XPath"/>
+    <add key="ComboBoxUserType" value="st-user-usertype-inputEl" type="XPath"/>
+    <add key="ComboBoxUserAssociatedCustomer" value="st-user-firstcustomer-inputEl" type="XPath"/>
+    <add key="LinkButtonUserAssociatedCustomer" Value="st-user-customer-add-btnEl" type="XPath"/>
+    <add key="TextFieldUserTitle" Value="st-user-title-field-inputEl" type="XPath"/>
+    <add key="TextFieldUserTelephone" value="//div[@id='st-user-properties-form-body]//input[@type='text' and @name='Telephone']" type="XPath"/>
+    <add key="TextFieldUserEmail" Value="st-user-email-field-inputEl" type="XPath"/>
+    <add key="TextFieldUserComment" value="st-user-comment-field-inputEl" type="XPath"/>
+  </user> 
+  <!--User Management End-->
 </WebElement>

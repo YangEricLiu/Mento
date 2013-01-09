@@ -70,6 +70,7 @@
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="TimeManagement\WorkdaySuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\UserConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Example\" />
@@ -106,6 +107,9 @@
       <Link>App.config</Link>
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Administration.csproj.DotSettings.user" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

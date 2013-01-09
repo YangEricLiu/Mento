@@ -67,6 +67,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Daynight
         public static TextField DayNightCalendarNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldDayNightCalendarName);
         #endregion
+        
+        #region User Setting
+        public static TextField UserNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserName);
+        public static TextField UserRealNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserRealName);
+        public static TextField UserTelephoneTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserTelephone);
+        public static TextField UserEmailTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserEmail);
+        public static TextField UserTitleTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserTitle);
+        public static TextField UserCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserComment);
+        #endregion
+
         #endregion
     }
 }

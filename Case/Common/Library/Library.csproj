@@ -71,6 +71,7 @@
     <Compile Include="Functions\KPITagSettings.cs" />
     <Compile Include="Functions\TimeSettingsWorkday.cs" />
     <Compile Include="Functions\SystemDimensionSettings.cs" />
+    <Compile Include="Functions\UserSettings.cs" />
     <Compile Include="JazzFunction.cs" />
     <Compile Include="Functions\HierarchySettings.cs" />
     <Compile Include="Functions\LoginPage.cs" />

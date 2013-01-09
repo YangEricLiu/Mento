@@ -324,6 +324,25 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxDayNightCalendarEndTime = "ComboBoxDayNightCalendarEndTime";
         #endregion
 
+        #region User Setting
+        public static string ButtonUserCreate = "ButtonUserCreate";
+        public static string ButtonUserRefresh = "ButtonUserRefresh";
+        public static string ButtonUserSave = "ButtonUserSave";
+        public static string ButtonUserCancel = "ButtonUserCancel";
+        public static string ButtonUserDelete = "ButtonUserDelete";
+        public static string ButtonUserModify = "ButtonUserModify";
+        public static string LinkButtonUserAssociatedCustomer = "LinkButtonUserAssociatedCustomer";
+        public static string ButtonUserGeneratePassword = "ButtonUserGeneratePassword";
+        public static string TextFieldUserName = "TextFieldUserName";
+        public static string TextFieldUserRealName = "TextFieldUserRealName";
+        public static string TextFieldUserTelephone = "TextFieldUserTelephone";
+        public static string TextFieldUserEmail = "TextFieldUserEmail";
+        public static string TextFieldUserTitle = "TextFieldUserTitle";
+        public static string TextFieldUserComment = "TextFieldUserComment";
+        public static string ComboBoxUserType = "ComboBoxUserType";
+        public static string ComboBoxUserAssociatedCustomer = "ComboBoxUserAssociatedCustomer";
+        #endregion
+
         #endregion
         #endregion
 
@@ -358,6 +377,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridKPITagSettingsKPITagList = "GridKPITagSettingsKPITagList";
         public static string GridAssociationTagList = "GridAssociationTagList";
         public static string GridPTagSettingsPTagList = "GridPTagSettingsPTagList";
+        public static string GridUserList = "GridUserList";
         #endregion
         #endregion
 

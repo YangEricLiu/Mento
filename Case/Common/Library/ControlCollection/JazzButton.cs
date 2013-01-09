@@ -193,6 +193,17 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button DayNightCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarDelete);
         public static Button DayNightCalendarAddMoreRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarAddMoreRanges);
         #endregion
+
+        #region User setting
+        public static Button UserCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserCreate);
+        public static Button UserRefreshButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserRefresh);
+        public static Button UserSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserSave);
+        public static Button UserCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserCancel);
+        public static Button UserDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserDelete);
+        public static Button UserModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserModify);
+        public static Button UserAssociatedCustomerLinkButton = GetControl<Button>(JazzControlLocatorKey.LinkButtonUserAssociatedCustomer);
+        public static Button UserGeneratePasswordButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserGeneratePassword);
+        #endregion
         #endregion
     }
 }

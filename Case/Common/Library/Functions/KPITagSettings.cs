@@ -40,8 +40,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField CommentTextField = JazzTextField.KPITagSettingsCommentTextField;
 
         private static Grid FormulaPTagList = JazzGrid.KPITagSettingsFormulaEditPTagList;
-        private static FormulaField FormulaField = JazzTextField.KPIFormulaField;
-
+        private static FormulaField KPIFormulaField = JazzTextField.KPIFormulaField;
+        private static CheckBoxField CheckBoxFieldDayNightKPITag = JazzCheckBoxField.CheckBoxFieldDayNightKPITag;
         #region KPITag List Operations
         /// <summary>
         /// Navigate to KPITag settings
@@ -262,12 +262,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public void PrepareToAddFormula(string tagName)
         {
             FocusOnKPITag(tagName);
+            JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
+            TimeManager.LongPause();
             SwitchToFormulaTab();
-
             JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
             TimeManager.ShortPause();
 
             JazzButton.KPITagSettingsFormulaUpdate.Click();
+            JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
+            TimeManager.LongPause();
+
         }
 
         /// <summary>
@@ -287,7 +291,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void DragTagToFormula(string ptagName)
         {
             var ptagRow = FormulaPTagList.GetRow(1, ptagName);
-            FormulaField.DragTagIn(ptagRow);
+            KPIFormulaField.DragTagIn(ptagRow);
         }
 
         /// <summary>
@@ -298,7 +302,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInFormulaField(string context)
         {
-            FormulaField.Fill(context);
+            KPIFormulaField.Fill(context);
         }
 
         /// <summary>
@@ -309,7 +313,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void AppendFormulaField(string context)
         {
-            FormulaField.Append(context);
+            KPIFormulaField.Append(context);
         }
 
         /// <summary>
@@ -318,7 +322,17 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetFormulaValue()
         {
-            return FormulaField.GetValue();
+            return KPIFormulaField.GetValue();
+
+        }
+
+        /// <summary>
+        /// judge wheather the KPI is a DayNight KPI
+        /// </summary>
+        /// <returns></returns>
+        public bool DayNightIsChecked()
+        {
+            return CheckBoxFieldDayNightKPITag.IsChecked();
         }
         #endregion
     }

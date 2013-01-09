@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlCollection\JazzButton.cs" />
+    <Compile Include="ControlCollection\JazzCheckBoxField.cs" />
     <Compile Include="ControlCollection\JazzComboBox.cs" />
     <Compile Include="ControlCollection\JazzControlCollection.cs" />
     <Compile Include="ControlCollection\JazzGrid.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="ControlCollection\Resource\JazzControlLocatorRepository.cs" />
     <Compile Include="Functions\AreaDimensionSettings.cs" />
     <Compile Include="Functions\AssociateSettings.cs" />
+    <Compile Include="Functions\HierarchyAssociateSettings.cs" />
     <Compile Include="Functions\TimeSettingsHeatingCoolingSeason.cs" />
     <Compile Include="Functions\TimeSettingsDayNight.cs" />
     <Compile Include="Functions\DisassociateSettings.cs" />

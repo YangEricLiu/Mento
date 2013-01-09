@@ -211,6 +211,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldHierarchySettingsName = "TextFieldHierarchySettingsName";
         public static string TextFieldHierarchySettingsCode = "TextFieldHierarchySettingsCode";
         public static string TextFieldHierarchySettingsComment = "TextFieldHierarchySettingsComment";
+        
 
         #region Hierarchy peoperty settings
         public static string TextFieldTotalAreaValue = "TextFieldTotalAreaValue";
@@ -232,12 +233,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldVTagSettingsName = "TextFieldVTagSettingsName";
         public static string TextFieldVTagSettingsCode = "TextFieldVTagSettingsCode";
         public static string TextFieldVTagSettingsComment = "TextFieldVTagSettingsComment";
+        public static string TextFieldVTagformula = "TextFieldVTagformula";
         #endregion
 
         #region KPITag settings
         public static string TextFieldKPITagSettingsName = "TextFieldKPITagSettingsName";
         public static string TextFieldKPITagSettingsCode = "TextFieldKPITagSettingsCode";
         public static string TextFieldKPITagSettingsComment = "TextFieldKPITagSettingsComment";
+        public static string TextFieldKPIformula = "TextFieldKPIformula";
         #endregion
 
         #region Area dimension Settings
@@ -382,6 +385,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridPTagSettingsPTagList = "GridPTagSettingsPTagList";
         public static string GridUserList = "GridUserList";
         #endregion
+        #endregion
+        #region CheckBoxField
+        public static string CheckBoxFieldDayNightKPITag = "CheckBoxFieldDayNightKPITag";
+       
         #endregion
 
         #region MonthPicker

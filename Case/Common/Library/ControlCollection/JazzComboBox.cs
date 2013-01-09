@@ -64,6 +64,22 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox WorktimeCalendarEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorktimeCalendarEndTime, 1);
         #endregion
 
+        #region HeatingCoolingSeason
+        public static ComboBox HeatingCoolingSeasonCalendarWarmStartMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarWarmStartMonth, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarWarmStartDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarWarmStartDate, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarWarmEndMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarWarmEndMonth, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarWarmEndDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarWarmEndDate, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarColdStartMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdStartMonth, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarColdStartDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdStartDate, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarColdEndMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdEndMonth, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarColdEndDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdEndDate, 1);
+        #endregion
+
+        #region DayNight
+        public static ComboBox DayNightCalendarStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightCalendarStartTime, 1);
+        public static ComboBox DayNightCalendarEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightCalendarEndTime, 1);
+        #endregion
+
         #endregion
     }
 }

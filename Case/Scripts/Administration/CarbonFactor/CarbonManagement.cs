@@ -9,7 +9,7 @@ using Mento.ScriptCommon.Library;
 using Mento.ScriptCommon.Library.Functions;
 using Mento.TestApi.WebUserInterface;
 
-namespace Mento.Script.Administration.Calendar
+namespace Mento.Script.Administration.CarbonFactor
 {
     [TestFixture]
     [Owner("Emma")]

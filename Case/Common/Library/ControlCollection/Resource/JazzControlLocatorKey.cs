@@ -272,7 +272,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ComboBoxDayNightEffectiveYear = "ComboBoxDayNightEffectiveYear";
         public static string ComboBoxDayNightCalendarName = "ComboBoxDayNightCalendarName";
-        #endregion
+		#endregion
 
         #region PTag settings
         public static string ComboBoxPTagSettingsCommodity = "ComboBoxPTagSettingsCommodity";
@@ -306,6 +306,22 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region worktime
         public static string ComboBoxWorktimeCalendarStartTime = "ComboBoxWorktimeCalendarStartTime";
         public static string ComboBoxWorktimeCalendarEndTime = "ComboBoxWorktimeCalendarEndTime";
+        #endregion
+
+        #region HeatingCoolingSeason
+        public static string ComboBoxHeatingCoolingSeasonCalendarWarmStartMonth = "ComboBoxHeatingCoolingSeasonCalendarWarmStartMonth";
+        public static string ComboBoxHeatingCoolingSeasonCalendarWarmStartDate = "ComboBoxHeatingCoolingSeasonCalendarWarmStartDate";
+        public static string ComboBoxHeatingCoolingSeasonCalendarWarmEndMonth = "ComboBoxHeatingCoolingSeasonCalendarWarmEndMonth";
+        public static string ComboBoxHeatingCoolingSeasonCalendarWarmEndDate = "ComboBoxHeatingCoolingSeasonCalendarWarmEndDate";
+        public static string ComboBoxHeatingCoolingSeasonCalendarColdStartMonth = "ComboBoxHeatingCoolingSeasonCalendarColdStartMonth";
+        public static string ComboBoxHeatingCoolingSeasonCalendarColdStartDate = "ComboBoxHeatingCoolingSeasonCalendarColdStartDate";
+        public static string ComboBoxHeatingCoolingSeasonCalendarColdEndMonth = "ComboBoxHeatingCoolingSeasonCalendarColdEndMonth";
+        public static string ComboBoxHeatingCoolingSeasonCalendarColdEndDate = "ComboBoxHeatingCoolingSeasonCalendarColdEndDate";
+        #endregion
+
+        #region daynight
+        public static string ComboBoxDayNightCalendarStartTime = "ComboBoxDayNightCalendarStartTime";
+        public static string ComboBoxDayNightCalendarEndTime = "ComboBoxDayNightCalendarEndTime";
         #endregion
 
         #endregion

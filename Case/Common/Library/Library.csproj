@@ -61,6 +61,8 @@
     <Compile Include="ControlCollection\Resource\JazzControlLocatorRepository.cs" />
     <Compile Include="Functions\AreaDimensionSettings.cs" />
     <Compile Include="Functions\AssociateSettings.cs" />
+    <Compile Include="Functions\TimeSettingsHeatingCoolingSeason.cs" />
+    <Compile Include="Functions\TimeSettingsDayNight.cs" />
     <Compile Include="Functions\DisassociateSettings.cs" />
     <Compile Include="Functions\EnergyAnalysisPanel.cs" />
     <Compile Include="Functions\HierarchyCalendarSettings.cs" />

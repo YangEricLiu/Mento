@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Name":"工作时间 Calendar_1",	
+			"RecordGroupPosition":[1,2],
+			"StartTime":["08:30","13:00"],
+			"EndTime":["12:00","17:30"],		
+		},
+		"ExpectedData":
+		{
+			"Name":"工作时间 Calendar_1",
+		}
+	}
+]

@@ -15,34 +15,37 @@ using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
-namespace Mento.Script.Administration.Calendar
+namespace Mento.Script.Administration.TimeManagement
 {
     [TestFixture]
     [Owner("Amy")]
     [CreateTime("2013-01-04")]
     [ManualCaseID("TC-J1-SmokeTest")]
-    public class TimeManagementSuite: TestSuiteBase
+    public class WorkdaySuite : TestSuiteBase
     {
-        private TimeSettingsWorkday TimeSettingsWorkday = JazzFunction.TimeSettingsWorkday;
-        private TimeSettingsWorktime TimeSettingsWorktime = JazzFunction.TimeSettingsWorktime;
+        private static TimeSettingsWorkday TimeSettingsWorkday = JazzFunction.TimeSettingsWorkday;
         [SetUp]
         public void CaseSetUp()
-        {            
+        {
+            //TimeManager.MediumPause();
+            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+            TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            TimeManager.MediumPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
-            //BrowserHandler.Refresh();
+            BrowserHandler.Refresh();
         }
 
         [Test]
         [CaseID("TC-J1-SmokeTest-027")]
-        [MultipleTestDataSource(typeof(WorkdayCalendarData[]), typeof(TimeManagementSuite), "TC-J1-SmokeTest-027")]
-        public void AddWorkdayCalendar(WorkdayCalendarData testData)
+        [MultipleTestDataSource(typeof(WorkdayCalendarData[]), typeof(WorkdaySuite), "TC-J1-SmokeTest-027")]
+        public void AddWorkdayTimeStrategy(WorkdayCalendarData testData)
         {
-            TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            TimeManager.ShortPause();
+            
             TimeSettingsWorkday.PrepareToAddWorkdayCalendar();
 
             TimeSettingsWorkday.FillInName(testData.InputData.Name);
@@ -84,43 +87,9 @@ namespace Mento.Script.Administration.Calendar
             TimeSettingsWorkday.ClickSaveButton();
             TimeManager.MediumPause();
 
-            Assert.AreEqual(testData.ExpectedData.Name, TimeSettingsWorkday.GetNameValue());
+            Assert.AreEqual(testData.InputData.Name, TimeSettingsWorkday.GetNameValue());
             // verify the text of  默认工作日 lable is displayed as '周一至周五'. this need to be added when the new control is complete.
             
-        }
-
-        [Test]
-        [CaseID("TC-J1-SmokeTest-028")]
-        [MultipleTestDataSource(typeof(WorktimeCalendarData[]), typeof(TimeManagementSuite), "TC-J1-SmokeTest-028")]
-        public void AddWorktimeCalendar(WorktimeCalendarData testData)
-        {
-            TimeSettingsWorktime.NavigatorToWorktimeCalendarSetting();
-            TimeSettingsWorktime.PrepareToAddWorktimeCalendar();
-            TimeManager.ShortPause();
-
-            TimeSettingsWorktime.FillInName(testData.InputData.Name);
-
-            //Click '添加工作时间' link button to add one more time range record
-            TimeSettingsWorktime.ClickAddMoreRangesButton();
-            TimeManager.ShortPause();
-
-            //Input start time,  end time for the first record
-            TimeSettingsWorktime.SelectStartTime(testData.InputData.StartTime[0], testData.InputData.RecordGroupPosition[0]);
-            TimeManager.ShortPause();
-            TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[0], testData.InputData.RecordGroupPosition[0]);
-            TimeManager.ShortPause();
-
-            //Input start time,  end time for the second record
-            TimeSettingsWorktime.SelectStartTime(testData.InputData.StartTime[1], testData.InputData.RecordGroupPosition[1]);
-            TimeManager.ShortPause();
-            TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[1], testData.InputData.RecordGroupPosition[1]);
-            TimeManager.ShortPause();
-
-            TimeSettingsWorktime.ClickSaveButton();
-            TimeManager.MediumPause();
-
-            Assert.AreEqual(testData.ExpectedData.Name, TimeSettingsWorktime.GetNameValue());
-            
-        }
+        }        
     }
 }

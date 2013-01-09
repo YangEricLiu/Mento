@@ -268,6 +268,20 @@
         <add key="ComboBoxWorktimeCalendarStartTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartPart']]" type="XPath"/>
         <add key="ComboBoxWorktimeCalendarEndTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndPart']]" type="XPath"/>
       </worktime>
+      <HeatingCoolingSeason>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmStartMonth" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmStartDate" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmEndMonth" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmEndDate" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarColdStartMonth" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarColdStartDate" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarColdEndMonth" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//div[2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarColdEndDate" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//div[2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>      
+      </HeatingCoolingSeason>
+      <daynight>
+        <add key="ComboBoxDayNightCalendarStartTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartPart']]" type="XPath"/>
+        <add key="ComboBoxDayNightCalendarEndTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndPart']]" type="XPath"/>
+      </daynight>
     </platformsettings>
   </combobox>
   

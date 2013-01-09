@@ -89,6 +89,9 @@
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -170,13 +173,15 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\Administration\Calendar\ExampleSuite\TA-Example-008.json" />
-    <Content Include="Data\Administration\Calendar\ExampleSuite\TA-Example-009.json" />
+    <Content Include="Data\Administration\ExampleSuite\TA-Example-008.json" />
+    <Content Include="Data\Administration\ExampleSuite\TA-Example-009.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\HierarchyManagement\TA-Hierarchy-001.json" />
-    <Content Include="Data\Administration\Calendar\LoginSuite\TA-Trial-Login-001.json" />
-    <Content Include="Data\Administration\Calendar\ShowTimeSuite\TC-J1-ShowTime-001.json" />
-    <None Include="Data\Administration\Calendar\TimeManagementSuite\TC-J1-SmokeTest-028.json" />
-    <None Include="Data\Administration\Calendar\TimeManagementSuite\TC-J1-SmokeTest-027.json" />
+    <Content Include="Data\Administration\LoginSuite\TA-Trial-Login-001.json" />
+    <Content Include="Data\Administration\ShowTimeSuite\TC-J1-ShowTime-001.json" />
+    <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonSuite\TC-J1-SmokeTest-030.json" />
+    <None Include="Data\Administration\TimeManagement\DayNightSuite\TC-J1-SmokeTest-029.json" />
+    <None Include="Data\Administration\TimeManagement\WorktimeSuite\TC-J1-SmokeTest-028.json" />
+    <None Include="Data\Administration\TimeManagement\WorkdaySuite\TC-J1-SmokeTest-027.json" />
     <None Include="Data\Customer\HierarchyConfiguration\HierarchyManagement\TA-Hierarchy-002.json" />
     <None Include="Data\Customer\HierarchyConfiguration\HierarchyManagement\TA-Hierarchy-003.json" />
     <Content Include="Data\Customer\TagManagement\KPIConfiguration\TA-KPIConfigue-001.json" />

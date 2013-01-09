@@ -170,6 +170,30 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        public static TimeSettingsHeatingCoolingSeason _TimeSettingsHeatingCoolingSeason;
+        public static TimeSettingsHeatingCoolingSeason TimeSettingsHeatingCoolingSeason
+        {
+            get
+            {
+                if (_TimeSettingsHeatingCoolingSeason == null)
+                    _TimeSettingsHeatingCoolingSeason = new TimeSettingsHeatingCoolingSeason();
+
+                return _TimeSettingsHeatingCoolingSeason;
+            }
+        }
+
+        public static TimeSettingsDayNight _TimeSettingsDayNight;
+        public static TimeSettingsDayNight TimeSettingsDayNight
+        {
+            get
+            {
+                if (_TimeSettingsDayNight == null)
+                    _TimeSettingsDayNight = new TimeSettingsDayNight();
+
+                return _TimeSettingsDayNight;
+            }
+        }
+
         public static HierarchyPeopleAreaSettings _HierarchyPeopleAreaSettings;
         public static HierarchyPeopleAreaSettings HierarchyPeopleAreaSettings
         {

@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Name":"昼夜时间 Calendar_1",	
+			"RecordGroupPosition":[1],
+			"StartTime":["05:30"],
+			"EndTime":["18:00"],		
+		},
+		"ExpectedData":
+		{
+			"Name":"昼夜时间 Calendar_1",
+		}
+	}
+]

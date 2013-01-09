@@ -63,13 +63,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calendar\CarbonManagement.cs" />
+    <Compile Include="CarbonFactor\CarbonManagement.cs" />
+    <Compile Include="TimeManagement\HeatingCoolingSeasonSuite.cs" />
+    <Compile Include="TimeManagement\DayNightSuite.cs" />
+    <Compile Include="TimeManagement\WorktimeSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
-    <Compile Include="Calendar\TimeManagementSuite.cs" />
+    <Compile Include="TimeManagement\WorkdaySuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CarbonFactor\" />
     <Folder Include="Example\" />
     <Folder Include="Tou\" />
   </ItemGroup>

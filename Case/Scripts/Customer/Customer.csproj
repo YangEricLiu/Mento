@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HierarchyPropertyConfiguration\AddElectricfixedCostProperty.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddPeopleAreaProperty.cs" />
     <Compile Include="TagDisassociation\AreaDimensionDisassociateTag.cs" />
     <Compile Include="TagDisassociation\HierarchyDisassociateTag.cs" />

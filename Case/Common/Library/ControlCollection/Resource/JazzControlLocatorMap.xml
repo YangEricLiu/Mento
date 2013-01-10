@@ -110,6 +110,9 @@
         <add key="ButtonPeopleAreaCancel" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonPeopleCreate" value="st-hierarchy-dynamic-population-add-toolEl" type="ID"/>
       </hierarchypeoplearea>
+      <hierarchycost>
+        <add key="TabButtonCostProperty" value="st-hierarchy-dynamic-population-add-toolEl" type="XPath"/>
+      </hierarchycost>
       <systemdimension>
         <add key="ButtonDimensionShowHierarchyTree" value = "//div[@id='setting-region-center']//button" type ="XPath"/>
         <add key="ButtonSystemDimensionSet" value = "st-sys-tree-update-btnInnerEl" type ="ID"/>

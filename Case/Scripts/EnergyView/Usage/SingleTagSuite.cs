@@ -10,6 +10,8 @@ using Mento.TestApi.WebUserInterface;
 using Mento.Framework.Script;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.ScriptCommon.TestData.EnergyView;
+using Mento.TestApi.TestData;
 
 namespace Mento.Script.EnergyView.Usage
 {
@@ -32,6 +34,8 @@ namespace Mento.Script.EnergyView.Usage
         {
             JazzFunction.Navigator.NavigateHome();
         }
+
+        private static EnergyAnalysisPanel DataPanel = JazzFunction.EnergyAnalysisPanel;
         
         /// <summary>
         /// 1. Navigate to Energy Management. Select the Building node in Pre-condition from Hierarchy list and go to Energy usage -> Energy Analysis. (用能->能效分析.)	
@@ -44,16 +48,18 @@ namespace Mento.Script.EnergyView.Usage
         [CaseID("TC-J1-SmokeTest-039")]
         public void SingleTagDataView()
         {
-            JazzFunction.EnergyAnalysisPanel.SelectHierarchy(new string[] { "阿里斯集团" });
+            EnergyViewData testData = TestContext.CurrentContext.GetTestData<EnergyViewData>();
 
-            JazzFunction.EnergyAnalysisPanel.CheckTag("P0");
+            DataPanel.SelectHierarchy(testData.InputData.Hierarchies);
 
-            JazzFunction.EnergyAnalysisPanel.ViewData(EnergyViewToolbar.ViewType.List);
+            DataPanel.CheckTags(testData.InputData.TagNames);
 
-            Assert.AreEqual(120, JazzFunction.EnergyAnalysisPanel.GetRecordCount());
-            Assert.AreEqual(6, JazzFunction.EnergyAnalysisPanel.GetPageCount());
-            Assert.AreEqual(20, JazzFunction.EnergyAnalysisPanel.GetCurrentPageData().Rows.Count);
-            Assert.AreEqual(120, JazzFunction.EnergyAnalysisPanel.GetAllData().Rows.Count);
+            DataPanel.Toolbar.View(testData.InputData.ViewType);
+
+            DataPanel.Toolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
+
+            Assert.AreEqual(12, DataPanel.GetRecordCount());
+            Assert.AreEqual(1, DataPanel.GetPageCount());
         }
     }
 }

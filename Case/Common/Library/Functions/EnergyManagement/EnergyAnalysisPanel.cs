@@ -32,7 +32,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         //Toolbar
-        private static EnergyViewToolbar Toolbar = new EnergyViewToolbar();
+        public EnergyViewToolbar Toolbar = new EnergyViewToolbar();
 
         //Chart
 
@@ -72,11 +72,15 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
-        public void CheckTag(string tagName)
+        public void CheckTags(string[] tagNames)
         {
-            TagGrid.CheckRowCheckbox(2, tagName);
+            foreach (var tagName in tagNames)
+            {
+                TagGrid.CheckRowCheckbox(2, tagName);
 
-            JazzMessageBox.LoadingMask.WaitLoading();
+                JazzMessageBox.LoadingMask.WaitLoading();
+                TimeManager.MediumPause();
+            }
         }
 
         public void UncheckTag(string tagName)
@@ -85,13 +89,6 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void RemoveAllTag()
         { 
-        }
-
-        public void ViewData(EnergyViewToolbar.ViewType viewType)
-        {
-            Toolbar.View(viewType);
-
-            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         public int GetRecordCount()
@@ -115,82 +112,4 @@ namespace Mento.ScriptCommon.Library.Functions
         }
     }
 
-    public class EnergyViewToolbar
-    {
-        //StartDatePicker
-        //StartTimeComboBox
-        //EndDatePicker
-        //EndTimeComboBox
-
-        //ViewButton
-        private static SplitButton ViewButton = JazzButton.EnergyViewViewDataButton;
-        //ConvertTargetSplitButton
-        //PeakValleyButton
-
-        //AddTimeSpanButton
-        //RemoveAllTagButton
-        //MoreMenu
-        public EnergyViewToolbar()
-        {
-            CurrentViewType = ViewType.Line;
-        }
-
-        public ViewType CurrentViewType
-        {
-            get;
-            set;
-        }
-
-        public void SetTimeRange(DateTime startTime, DateTime endTime)
-        {
-
-        }
-
-        public enum ViewType 
-        { 
-            Line, 
-            Column, 
-            List, 
-            Distribute 
-        }
-
-        public void View(ViewType viewType)
-        {
-            if (this.CurrentViewType == viewType)
-            {
-                ViewButton.Click();
-            }
-            else
-            {
-                ChangeViewType(viewType);
-            }
-        }
-
-        private void ChangeViewType(ViewType viewType)
-        {
-            ViewButton.Trigger();
-            TimeManager.FlashPause();
-
-            switch (viewType)
-            {
-                case ViewType.Column:
-                    ViewButton.SelectItem(new string[] { "趋势数据", "柱状图" });
-                    CurrentViewType = ViewType.Column;
-                    break;
-                case ViewType.List:
-                    ViewButton.SelectItem(new string[] { "趋势数据", "列表数据" });
-                    CurrentViewType = ViewType.List;
-                    break;
-                case ViewType.Distribute:
-                    ViewButton.SelectItem(new string[] { "分布数据" });
-                    CurrentViewType = ViewType.Distribute;
-                    break;
-                case ViewType.Line:
-                default:
-                    ViewButton.SelectItem(new string[] { "趋势数据", "折线图" });
-                    CurrentViewType = ViewType.Line;
-                    break;
-            }
-        }
-    }
 }

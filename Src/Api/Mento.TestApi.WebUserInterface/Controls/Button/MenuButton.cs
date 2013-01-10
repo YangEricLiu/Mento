@@ -7,20 +7,36 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class MenuButton : Button
     {
-        public MenuButton()
-            : base(new Locator())
-        { }
+        private static string MenuItemLocatorFormat = "//div[contains(@class,'x-menu-item') and a/span[text()='{0}']]";
 
-        public void Click()
+        public MenuButton(Locator locator) : base(locator) { }
+
+        public void SelectItem(string[] itemPath)
         {
+            this.Click();
+            TimeManager.FlashPause();
+
+            for (int i = 0; i < itemPath.Length; i++)
+            {
+                Locator itemLocator = GetMenuItemLocator(itemPath[i]);
+
+                ElementHandler.Click(FindChild(itemLocator));
+
+                TimeManager.ShortPause();
+            }
         }
 
-        public void HoverItem()
-        { 
+        public void CheckItem(string itemText)
+        {
+            this.Click();
+            TimeManager.FlashPause();
+
+            throw new NotImplementedException(); 
         }
 
-        public void ClickItem()
-        { 
+        private Locator GetMenuItemLocator(string itemResourceVariable)
+        {
+            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(MenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
         }
     }
 }

@@ -148,6 +148,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\Customer\TagManagement\VtagManagement\TA-VtagConfigue-001.json" />
+    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-039.json" />
     <Content Include="IEDriverServer.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

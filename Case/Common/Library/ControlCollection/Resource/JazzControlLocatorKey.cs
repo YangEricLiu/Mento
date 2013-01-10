@@ -20,6 +20,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TabButtonEnergyViewAreaDimensionTagsTab = "TabButtonEnergyViewAreaDimensionTagsTab";
 
         public static string SplitButtonEnergyViewViewData = "SplitButtonEnergyViewViewData";
+        public static string MenuButtonEnergyViewMore = "MenuButtonEnergyViewMore";
         #endregion
 
         #region Navigator

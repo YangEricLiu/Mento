@@ -234,14 +234,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldVTagSettingsName = "TextFieldVTagSettingsName";
         public static string TextFieldVTagSettingsCode = "TextFieldVTagSettingsCode";
         public static string TextFieldVTagSettingsComment = "TextFieldVTagSettingsComment";
-        public static string TextFieldVTagformula = "TextFieldVTagformula";
+        public static string VFormulaField = "VFormulaField";
         #endregion
 
         #region KPITag settings
         public static string TextFieldKPITagSettingsName = "TextFieldKPITagSettingsName";
         public static string TextFieldKPITagSettingsCode = "TextFieldKPITagSettingsCode";
         public static string TextFieldKPITagSettingsComment = "TextFieldKPITagSettingsComment";
-        public static string TextFieldKPIformula = "TextFieldKPIformula";
+        public static string KPIFormulaField = "KPIFormulaField";
         #endregion
 
         #region Area dimension Settings

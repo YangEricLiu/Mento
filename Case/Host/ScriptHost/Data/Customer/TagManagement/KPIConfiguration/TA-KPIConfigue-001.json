@@ -2,9 +2,9 @@
 	{
 		"InputData":
 		{
-			"Name":"AliceKPItag",
-			"Code":"Alice1",
-			"UOM":"KWHPerson",
+			"Name":"KPI2",
+			"Code":"KPI2",
+			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
 			"Comment":"This is a kpitag ",

@@ -38,9 +38,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-006-001")]
-        [Priority("P1")]
-        [Type("Smoke")]
+        [CaseID("TA-FormulaforDayNightKPI-001"), ManualCaseID("TJ-FormulaForKPI-001"), CreateTime("2013-01-07"), Owner("Alice")]
         public void AddFormulaToKPItag()
         {
             //string kpitagName = "AliceKPItag";
@@ -54,6 +52,8 @@ namespace Mento.Script.Customer.TagManagement
 
             KPITagSettings.ClickSaveFormulaButton();
 
+            //FunctionWrapper.WaitForLoadingDisappeared(2000);
+            //ElementLocator.Pause(500);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 

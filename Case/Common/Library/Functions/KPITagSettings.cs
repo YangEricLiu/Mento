@@ -262,15 +262,10 @@ namespace Mento.ScriptCommon.Library.Functions
         public void PrepareToAddFormula(string tagName)
         {
             FocusOnKPITag(tagName);
-            JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
-            TimeManager.LongPause();
             SwitchToFormulaTab();
-            JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
-            TimeManager.ShortPause();
-
             JazzButton.KPITagSettingsFormulaUpdate.Click();
-            JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
-            TimeManager.LongPause();
+            //JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
+            //TimeManager.ShortPause();
 
         }
 

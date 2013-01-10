@@ -203,14 +203,14 @@
         <add key="TextFieldVTagSettingsName" value="//div[@id='st-vtag-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
         <add key="TextFieldVTagSettingsCode" value="//div[@id='st-vtag-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
         <add key="TextFieldVTagSettingsComment" value="//div[@id='st-vtag-form-body']//textarea[@name='Comment']" type="XPath"/>
-        <add key="TextFieldVTagformula" value="//div[@id='st-vtag-formula-body']//textarea[@name='Formula']" type="XPath"/>
+        <add key="VFormulaField" value="//div[@id='st-vtag-formula-body']//textarea[@name='Formula']" type="XPath"/>
       </vtagsettings>
 
       <kpitagsettings>
         <add key="TextFieldKPITagSettingsName" value="//div[@id='st-kpi-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
         <add key="TextFieldKPITagSettingsCode" value="//div[@id='st-kpi-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
         <add key="TextFieldKPITagSettingsComment" value="//div[@id='st-kpi-form-body']//textarea[@name='Comment']" type="XPath"/>
-        <add key="TextFieldKPIformula" value="//div[@id='st-KPI-formula-body']//textarea[@name='Formula']" type="XPath"/>
+        <add key="KPIFormulaField" value="//div[@id='st-KPI-formula-body']//textarea[@name='Formula']" type="XPath"/>
       </kpitagsettings>
       <areadimensionsettings>
         <add key="TextFieldAreaDimensionSettingsName" value="//div[@id='st-area-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>

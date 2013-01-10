@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.TestApi.WebUserInterface;
+using System.Data;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -35,6 +37,7 @@ namespace Mento.ScriptCommon.Library.Functions
         //Chart
 
         //DataGrid
+        private static Grid EnergyDataGrid = JazzGrid.EnergyAnalysisEnergyDataList;
 
 
         public void SelectHierarchy(string[] hierarchyNames)
@@ -72,6 +75,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public void CheckTag(string tagName)
         {
             TagGrid.CheckRowCheckbox(2, tagName);
+
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         public void UncheckTag(string tagName)
@@ -85,8 +90,29 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ViewData(EnergyViewToolbar.ViewType viewType)
         {
             Toolbar.View(viewType);
+
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
+        public int GetRecordCount()
+        {
+            return EnergyDataGrid.RecordCount;
+        }
+
+        public int GetPageCount()
+        {
+            return EnergyDataGrid.PageCount;
+        }
+
+        public DataTable GetCurrentPageData()
+        {
+            return EnergyDataGrid.GetCurrentPageData();
+        }
+
+        public DataTable GetAllData()
+        {
+            return EnergyDataGrid.GetAllData();
+        }
     }
 
     public class EnergyViewToolbar
@@ -136,37 +162,32 @@ namespace Mento.ScriptCommon.Library.Functions
             }
             else
             {
-                ViewButton.Trigger();
                 ChangeViewType(viewType);
             }
         }
 
         private void ChangeViewType(ViewType viewType)
         {
+            ViewButton.Trigger();
+            TimeManager.FlashPause();
+
             switch (viewType)
             {
                 case ViewType.Column:
-                    ViewButton.Trigger();
-                    ViewButton.HoverItem("趋势数据");
-                    ViewButton.SelectItem("柱状图");
+                    ViewButton.SelectItem(new string[] { "趋势数据", "柱状图" });
                     CurrentViewType = ViewType.Column;
                     break;
                 case ViewType.List:
-                    ViewButton.Trigger();
-                    ViewButton.HoverItem("趋势数据");
-                    ViewButton.SelectItem("列表数据");
+                    ViewButton.SelectItem(new string[] { "趋势数据", "列表数据" });
                     CurrentViewType = ViewType.List;
                     break;
                 case ViewType.Distribute:
-                    ViewButton.Trigger();
-                    ViewButton.SelectItem("分布数据");
+                    ViewButton.SelectItem(new string[] { "分布数据" });
                     CurrentViewType = ViewType.Distribute;
                     break;
                 case ViewType.Line:
                 default:
-                    ViewButton.Trigger();
-                    ViewButton.HoverItem("趋势数据");
-                    ViewButton.SelectItem("折线图");
+                    ViewButton.SelectItem(new string[] { "趋势数据", "折线图" });
                     CurrentViewType = ViewType.Line;
                     break;
             }

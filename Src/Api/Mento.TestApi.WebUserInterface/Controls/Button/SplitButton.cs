@@ -20,18 +20,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
             ElementHandler.Click(Trigger, this.RootElement.Size.Width - 5, 0);
         }
 
-        public void HoverItem(string itemResourceVariable)
+        public void SelectItem(string[] itemPath)
         {
-            Locator itemLocator = GetMenuItemLocator(itemResourceVariable);
+            for (int i = 0; i < itemPath.Length; i++)
+            {
+                Locator itemLocator = GetMenuItemLocator(itemPath[i]);
 
-            ElementHandler.Focus(FindChild(itemLocator));
-        }
+                ElementHandler.Click(FindChild(itemLocator));
 
-        public void SelectItem(string itemResourceVariable)
-        {
-            Locator itemLocator = GetMenuItemLocator(itemResourceVariable);
-
-            ElementHandler.Click(FindChild(itemLocator));
+                TimeManager.ShortPause();
+            }
         }
 
         private Locator GetMenuItemLocator(string itemResourceVariable)

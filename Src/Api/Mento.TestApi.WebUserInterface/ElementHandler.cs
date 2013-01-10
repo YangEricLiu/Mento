@@ -78,8 +78,9 @@ namespace Mento.TestApi.WebUserInterface
         public static void Click(IWebElement element, int offsetX,int offsetY)
         {
             Actions action = new Actions(DriverFactory.Instance);
-            action.MoveToElement(element, offsetX, offsetY);
-            action.Click(element).Perform();
+            action.MoveToElement(element, offsetX, offsetY).Perform();
+            //action.MoveByOffset(offsetX, offsetY).Perform();
+            action.Click().Perform();
         }
 
         public static void Click(Locator locator, ISearchContext container = null)

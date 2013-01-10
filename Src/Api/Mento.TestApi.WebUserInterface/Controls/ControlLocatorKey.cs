@@ -44,7 +44,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region Grid locators 
         public static string GridRows = "GridRows";
         public static string GridRow = "GridRow";
-        public static string GridRowChecker = "GridRowChecker";      
+        public static string GridRowChecker = "GridRowChecker";
+        public static string GridPagingToolbar = "GridPagingToolbar";   
+        public static string GridPagingPreviousPageButton = "GridPagingPreviousPageButton";
+        public static string GridPagingNextPageButton = "GridPagingNextPageButton";
+        public static string GridPagingCurrentPageTextBox = "GridPagingCurrentPageTextBox";
+        public static string GridPagingTotalPageLabel = "GridPagingTotalPageLabel";
+        public static string GridPagingTotalRecordLabel = "GridPagingTotalRecordLabel";
         
             
         #endregion

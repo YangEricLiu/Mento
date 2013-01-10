@@ -49,6 +49,11 @@ namespace Mento.Script.EnergyView.Usage
             JazzFunction.EnergyAnalysisPanel.CheckTag("P0");
 
             JazzFunction.EnergyAnalysisPanel.ViewData(EnergyViewToolbar.ViewType.List);
+
+            Assert.AreEqual(120, JazzFunction.EnergyAnalysisPanel.GetRecordCount());
+            Assert.AreEqual(6, JazzFunction.EnergyAnalysisPanel.GetPageCount());
+            Assert.AreEqual(20, JazzFunction.EnergyAnalysisPanel.GetCurrentPageData().Rows.Count);
+            Assert.AreEqual(120, JazzFunction.EnergyAnalysisPanel.GetAllData().Rows.Count);
         }
     }
 }

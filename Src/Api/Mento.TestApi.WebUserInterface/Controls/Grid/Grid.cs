@@ -5,6 +5,7 @@ using System.Text;
 using OpenQA.Selenium;
 using System.Collections;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -21,17 +22,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
-        protected int PageCount
+        protected IWebElement PagingToolbar
         {
-            get { throw new NotImplementedException(); }
-        }
-        protected int RecordCount
-        {
-            get { throw new NotImplementedException(); }
-        }
-        protected int CurrentPage
-        {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingToolbar));
+            }
         }
         
         /// <summary>
@@ -118,11 +114,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
-        public DataTable GetAllData()
-        {
-            throw new NotImplementedException();
-        }
-
         public virtual IWebElement GetRow(int cellIndex, string cellText)
         {
             var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
@@ -139,6 +130,125 @@ namespace Mento.TestApi.WebUserInterface.Controls
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
 
             return FindChild(Locator.GetVariableLocator(checkerLocator, variables));
+        }
+
+        public int PageCount
+        {
+            get
+            {
+                //get page count locator
+                Locator pageCountLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingTotalPageLabel);
+
+                IWebElement pageCountElement = ElementHandler.FindElement(pageCountLocator, container: PagingToolbar);
+
+                if (String.IsNullOrEmpty(pageCountElement.Text))
+                    return -1;
+
+                return Convert.ToInt32(pageCountElement.Text.Replace("/", "").Trim());
+            }
+        }
+
+        public int RecordCount
+        {
+            get
+            {
+                Locator recordCountLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingTotalRecordLabel);
+                IWebElement recordCountElement = ElementHandler.FindElement(recordCountLocator, container: PagingToolbar);
+
+                if (String.IsNullOrEmpty(recordCountElement.Text))
+                    return -1;
+
+                Match match = Regex.Match(recordCountElement.Text, @"\d+");
+
+                if (!match.Success)
+                    return -1;
+
+                return Convert.ToInt32(match.Value);
+            }
+        }
+
+        protected int CurrentPage
+        {
+            get
+            {
+                Locator currentPageLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingCurrentPageTextBox);
+                IWebElement currentPageElement = ElementHandler.FindElement(currentPageLocator, container: PagingToolbar);
+
+                return Convert.ToInt32(currentPageElement.GetAttribute("value"));
+            }
+        }
+
+        public void NextPage()
+        {
+            Locator nextPageLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingNextPageButton);
+            ElementHandler.FindElement(nextPageLocator, container: PagingToolbar).Click();
+
+            GetControl<LoadingMask>().WaitLoading();
+        }
+
+        public void PreviousPage()
+        {
+            Locator previousPageLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingPreviousPageButton);
+            ElementHandler.FindElement(previousPageLocator, container: PagingToolbar).Click();
+        }
+
+        public void GotoPage(int pageIndex)
+        {
+            Locator currentPageLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingCurrentPageTextBox);
+            
+            IWebElement currentPageElement = ElementHandler.FindElement(currentPageLocator, container: PagingToolbar);
+
+            currentPageElement.Clear();
+            currentPageElement.SendKeys(pageIndex.ToString());
+
+            currentPageElement.SendKeys("\n");
+        }
+
+        public DataTable GetCurrentPageData()
+        {
+            DataTable data = new DataTable();
+
+            var headerLocator = new Locator("div[contains(@class,'x-grid-header-ct')]/div/div/div[contains(@class,'x-column-header')]", ByType.XPath);
+            var cellLocator = new Locator("td", ByType.TagName);
+
+            foreach (IWebElement column in FindChildren(headerLocator))
+            {
+                data.Columns.Add(column.Text);
+            }
+
+            foreach (IWebElement row in CurrentRows)
+            {
+                DataRow dataRow = data.NewRow();
+                IWebElement[] cells = ElementHandler.FindElements(cellLocator, container: row);
+
+                for (int i = 0; i < cells.Length; i++)
+                    dataRow[i] = cells[i].Text;
+
+                data.Rows.Add(dataRow);
+            }
+
+            return data;
+        }
+
+        public DataTable GetAllData()
+        {
+            if (CurrentPage != 1)
+                GotoPage(1);
+
+            DataTable data = null;
+
+            for (int pageIndex = 1; pageIndex <= PageCount; pageIndex++)
+            {
+                if(data==null)
+                    data = GetCurrentPageData();
+                else
+                    data.Merge(GetCurrentPageData());
+
+                NextPage();
+                GetControl<LoadingMask>().WaitLoading();
+            }
+
+            return data;
         }
     }
 }

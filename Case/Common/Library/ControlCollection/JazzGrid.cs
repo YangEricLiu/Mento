@@ -12,6 +12,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid EnergyAnalysisAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridEnergyAnalysisAllTagList);
         public static Grid EnergyAnalysisSystemDimensionTagList = GetControl<Grid>(JazzControlLocatorKey.GridEnergyAnalysisSystemDimensionTagList);
         public static Grid EnergyAnalysisAreaDimensionTagList = GetControl<Grid>(JazzControlLocatorKey.GridEnergyAnalysisAreaDimensionTagList);
+
+        public static Grid EnergyAnalysisEnergyDataList = GetControl<Grid>(JazzControlLocatorKey.GridEnergyAnalysisEnergyDataList);
         #endregion
 
         #region Customer settings
@@ -24,7 +26,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid AssociationTagList = GetControl<Grid>(JazzControlLocatorKey.GridAssociationTagList);
 
         public static Grid PTagSettingsPTagList = GetControl<Grid>(JazzControlLocatorKey.GridPTagSettingsPTagList);
-        public static Grid UserListGrid = GetControl<Grid>(JazzControlLocatorKey.GridUserList);
+        public static Grid UserListGrid
+        {
+            get { return GetControl<Grid>(JazzControlLocatorKey.GridUserList); }
+        }
         #endregion
     }
 }

@@ -314,6 +314,7 @@
       <add key="GridEnergyAnalysisAllTagList" value="em-energy-alltag-panel" type="ID"/>
       <add key="GridEnergyAnalysisSystemDimensionTagList" value="em-energy-sdim-tag-grid" type="ID"/>
       <add key="GridEnergyAnalysisAreaDimensionTagList" value="em-energy-adim-tag-grid" type="ID"/>
+      <add key="GridEnergyAnalysisEnergyDataList" value="//div[@id='em-energy-chartgridpanel']//div[contains(@class,'x-grid')]" type="XPath"/>
     </energyview>
     <customersettings>
       <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>

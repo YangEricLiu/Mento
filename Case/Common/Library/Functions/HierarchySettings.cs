@@ -73,9 +73,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickSaveButton()
         {
-            //var locator = ElementDictionary[ElementKey.HierarchySaveButton];
-            //ElementLocator.FindElement(locator).Click();
-
             SaveButton.Click();
         }
 
@@ -86,9 +83,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickCancelButton()
         {
-            //var locator = ElementDictionary[ElementKey.HierarchyCancelButton];
-            //ElementLocator.FindElement(locator).Click();
-
             CancelButton.Click();
         }
 
@@ -115,7 +109,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInName(string name)
         {
-            //textFieldInstance.FillIn(ElementKey.HierarchyName, name);
             NameTextField.Fill(name);
         }
 
@@ -126,7 +119,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInCode(string code)
         {
-            //textFieldInstance.FillIn(ElementKey.HierarchyCode, code);
             CodeTextField.Fill(code);
         }
 
@@ -137,8 +129,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInType(string type)
         {
-            //comboBoxInstance.DisplayItems(ElementKey.HierarchyType);
-            //comboBoxInstance.SelectItem(type);
             HierarchyTypeComboBox.SelectItem(type);
         }
 
@@ -149,7 +139,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInComment(string comment)
         {
-            //textFieldInstance.FillIn(ElementKey.HierarchyComment, comment);
             CommentTextField.Fill(comment);
         }
 
@@ -190,7 +179,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsNodesChildParent(string nodeChild, string nodeParent)
         {
             return HierarchyTree.IsChildNodeOfParent(nodeParent, nodeChild);
-            //return treeViewInstance.IsNodesParentChild(nodeChild, nodeParent);
         }
 
         /// <summary>
@@ -201,7 +189,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsTreeNodePresent(string treeNodeName)
         {
             return HierarchyTree.IsNodeDisplayed(treeNodeName);
-            //return treeViewInstance.IsTreeNodePresent(treeNodeName);
         }
 
         /// <summary>
@@ -212,7 +199,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void CollapseNode(string treeNodeName)
         {
             HierarchyTree.CollapseNode(treeNodeName);
-            //treeViewInstance.Collapse(treeNodeName);
         }
 
         /// <summary>
@@ -222,7 +208,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ExpandNode(string treeNodeName)
         {
-            //treeViewInstance.Expand(treeNodeName);
             HierarchyTree.ExpandNode(treeNodeName);
         }
 
@@ -233,7 +218,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Key value</returns>
         public string GetTypeExpectedValue(string itemKey)
         {
-            //return comboBoxInstance.GetItemTypeLangValue(itemKey);
             return HierarchyTypeComboBox.GetActualValue(itemKey);
         }
 
@@ -244,7 +228,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Name value</returns>
         public string GetNameValue()
         {
-            //return comboBoxInstance.GetValue(ElementKey.HierarchyName);
             return NameTextField.GetValue();
         }
 
@@ -255,7 +238,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Code value</returns>
         public string GetCodeValue()
         {
-            //return comboBoxInstance.GetValue(ElementKey.HierarchyCode);
             return CodeTextField.GetValue();
         }
 
@@ -266,7 +248,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Code value</returns>
         public string GetTypeValue()
         {
-            //return comboBoxInstance.GetValue(ElementKey.HierarchyType);
             return HierarchyTypeComboBox.GetValue();
         }
 
@@ -277,7 +258,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>Comment value</returns>
         public string GetCommentValue()
         {
-            //return comboBoxInstance.GetValue(ElementKey.HierarchyComment);
             return CommentTextField.GetValue();
         }
     }

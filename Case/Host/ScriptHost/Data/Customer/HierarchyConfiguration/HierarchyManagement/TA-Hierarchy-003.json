@@ -7,14 +7,5 @@
 			"Type":"Building",
 			"Comment":""
 		}
-	},
-	{
-		"InputData":
-		{
-			"Name":"AutoBuilding002",
-			"Code":"AutoBuilding002",
-			"Type":"Building",
-			"Comment":"test"
-		}
 	}
 ]

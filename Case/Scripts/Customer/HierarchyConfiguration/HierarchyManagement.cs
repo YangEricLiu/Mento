@@ -13,33 +13,22 @@ using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.ScriptCommon.TestData.Customer;
+using Mento.TestApi.TestData;
 
 
 namespace Mento.Script.Customer.HierarchyConfiguration
 {
     [TestFixture]
+    [Owner("Emma")]
+    [CreateTime("2012-10-30")]
+    [ManualCaseID("TC-J1-SmokeTest-001")]
     public class HierarchyManagement : TestSuiteBase
     {
         private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
 
-        [TestFixtureSetUp]
-        public void CaseFixtureSetUp()
-        {
-            //ElementLocator.OpenJazz();
-            //FunctionWrapper.Login.Login();
-        }
-
-        [TestFixtureTearDown]
-        public void CaseFixtureTearDown()
-        {
-            //ElementLocator.CloseJazz();
-        }
-
         [SetUp]
         public void CaseSetUp()
         {
-            //FunctionWrapper.Hierarchy.NavigatorToHSetting();
-            //ElementLocator.Pause(2000);
             HierarchySettings.NavigatorToHierarchySetting();
             JazzMessageBox.LoadingMask.WaitLoading();
         }
@@ -47,16 +36,18 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void CaseTearDown()
         {
-            //
-            //JazzFunction.Navigator.NavigateHome();
             BrowserHandler.Refresh();
         }
 
         [Test]
-        [CaseID("TA-Hierarchy-001"), ManualCaseID("TJ-Hierarchy-001"), CreateTime("2012-10-30"), Owner("Emma")]
-        public void AddOrgnizationNodeTest(AddHierarchyData input)
+        [CaseID("TC-J1-SmokeTest-001-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(HierarchyManagement), "TC-J1-SmokeTest-001-001")]
+        public void AddOrgnizationNodeTest(HierarchyData input)
         {
             HierarchySettings.FillInHierarchyNode("自动化测试", input.InputData);
+            TimeManager.MediumPause();
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
             

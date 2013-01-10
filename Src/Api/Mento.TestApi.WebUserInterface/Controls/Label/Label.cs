@@ -24,7 +24,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
             foreach (string text in labelTexts)
             {
                 if (!allTexts.Contains(text))
+                {
+                    Console.Out.WriteLine(text);
                     return false;
+                }
             }
 
             return true;

@@ -14,6 +14,10 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.TagManagement
 {
+    [TestFixture]
+    [Owner("Alice")]
+    [CreateTime("2013-01-09")]
+    [ManualCaseID("TC-J1-SmokeTest-007")]
     public class FormulaForNonDayNightKPI : TestSuiteBase
     {
         private static KPITagSettings KPITagSettings = JazzFunction.KPITagSettings;
@@ -22,7 +26,6 @@ namespace Mento.Script.Customer.TagManagement
         public void CaseSetUp()
         {
             KPITagSettings.NavigatorToKPITagSetting();
-            //ElementLocator.Pause(2000);
             TimeManager.MediumPause();
         }
 
@@ -34,7 +37,9 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
-        [CaseID("TA-FormulaforNonDayNightKPI-001"), ManualCaseID("TJ-FormulaForKPI-001"), CreateTime("2013-01-09"), Owner("Alice")]
+        [CaseID("TC-J1-SmokeTest-007-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
         public void AddFormulaToKPItag()
         {
             //string kpitagName = "KPI1";
@@ -48,8 +53,6 @@ namespace Mento.Script.Customer.TagManagement
 
             KPITagSettings.ClickSaveFormulaButton();
 
-            //FunctionWrapper.WaitForLoadingDisappeared(2000);
-            //ElementLocator.Pause(500);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 

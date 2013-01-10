@@ -16,7 +16,7 @@ namespace Mento.Script.Customer.TagAssociation
     [TestFixture]
     [Owner("Emma")]
     [CreateTime("2012-12-31")]
-    [ManualCaseID("TC-J1-SmokeTest-019")]
+    [ManualCaseID("TC-J1-SmokeTest-010")]
     public class AreaDimensionAssociateTag : TestSuiteBase
     {
         private static AssociateSettings Association = JazzFunction.AssociateSettings;
@@ -36,7 +36,9 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-014")]
+        [CaseID("TC-J1-SmokeTest-010-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
         public void AssociateOneTag()
         {
             AreaSettings.ShowHierarchyTree();

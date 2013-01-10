@@ -56,7 +56,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ClientAccess\LoginData.cs" />
-    <Compile Include="Customer\AddHierarchyData.cs" />
+    <Compile Include="Customer\HierarchyData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

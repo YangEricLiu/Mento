@@ -25,8 +25,6 @@ namespace Mento.Script.Customer.TagDisassociation
         [SetUp]
         public void CaseSetUp()
         {
-            //FunctionWrapper.Associate.NavigateToHierarchyAssociate();
-            //ElementLocator.Pause(2000);
             Association.NavigateToHierarchyAssociate();
             TimeManager.MediumPause();
         }
@@ -34,13 +32,13 @@ namespace Mento.Script.Customer.TagDisassociation
         [TearDown]
         public void CaseTearDown()
         {
-            //
-            //JazzFunction.Navigator.NavigateHome();
             BrowserHandler.Refresh();
         }
 
         [Test]
-        [CaseID("TA-DisassociateTag-001")]
+        [CaseID("TA-DisassociateTag-001-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
         public void DisassociateOneTag()
         {
             Association.SelectHierarchyNode("自动化测试");

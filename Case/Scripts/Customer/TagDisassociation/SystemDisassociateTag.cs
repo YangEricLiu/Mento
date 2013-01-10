@@ -37,7 +37,9 @@ namespace Mento.Script.Customer.TagDisassociation
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-012")]
+        [CaseID("TC-J1-SmokeTest-012-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
         public void DisassociateOneTag()
         { 
             SystemSettings.ShowHierarchyTree();

@@ -5,15 +5,6 @@
 			"Name":"AutoOrg001",
 			"Code":"AutoOrg001",
 			"Type":"Orgnization",
-			"Comment":""
-		}
-	},
-	{
-		"InputData":
-		{
-			"Name":"AutoOrg002",
-			"Code":"AutoOrg002",
-			"Type":"Orgnization",
 			"Comment":"test"
 		}
 	}

@@ -16,7 +16,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
     [TestFixture]
     [Owner("Emma")]
     [CreateTime("2013-01-06")]
-    [ManualCaseID("TC-J1-SmokeTest-019")]
+    [ManualCaseID("TC-J1-SmokeTest-021")]
     public class AddPeopleAreaProperty : TestSuiteBase
     {
         private static HierarchySettings HierarchySetting = JazzFunction.HierarchySettings;
@@ -36,7 +36,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-017")]
+        [CaseID("TC-J1-SmokeTest-021-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
         public void AddAreaProperty()
         {
             HierarchySetting.ExpandNode("自动化测试");
@@ -61,7 +63,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-017")]
+        [CaseID("TC-J1-SmokeTest-021-002")]
+        [Priority("P1")]
+        [Type("Smoke")]
         public void AddPeoplePeoperty()
         {
             HierarchySetting.ExpandNode("自动化测试");

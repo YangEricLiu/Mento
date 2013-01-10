@@ -17,33 +17,16 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Customer.TagManagement
 {
     [TestFixture]
-    //[ManualCaseID("TA-VtagConfigue")]
+    [ManualCaseID("TC-J1-SmokeTest-003")]
     [CreateTime("2012-11-15")]
     [Owner("Nancy")]
     public class VTagManagement : TestSuiteBase
     {
         private VTagSettings VTagSettings = JazzFunction.VTagSettings;
 
-       [TestFixtureSetUp]
-        public void CaseFixtureSetUp()
-        {
-            //ElementLocator.OpenJazz();
-            //FunctionWrapper.Login.Login();
-            
-            //NavigatorIns.NavigateToTarget(NavigationTarget.TagSettingsV);
-
-        }
-        [TestFixtureTearDown]
-        public void CaseFixtureTearDown()
-        {
-            //ElementLocator.CloseJazz();
-        }
-
         [SetUp]
         public void CaseSetUp()
-        {
-            //FunctionWrapper.Ptag.NavigatorToPtagSetting();
-            //ElementLocator.Pause(2000);   
+        {  
             VTagSettings.NavigatorToVTagSetting();
             TimeManager.MediumPause();
         }
@@ -51,13 +34,13 @@ namespace Mento.Script.Customer.TagManagement
         [TearDown]
         public void CaseTearDown()
         {
-            //
-            //JazzFunction.Navigator.NavigateHome();
             BrowserHandler.Refresh();
         }
         
         [Test]
-        [CaseID("TA-VtagConfigue-001"), CreateTime("2012-11-14"), Owner("Nancy"),ManualCaseID("TA-VTAG-T001")]
+        [CaseID("TA-VtagConfigue-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
         [MultipleTestDataSource(typeof(AddVtagData[]), typeof(VTagManagement), "TA-VtagConfigue-001")]
         public void AddVtag(AddVtagData input)
         {

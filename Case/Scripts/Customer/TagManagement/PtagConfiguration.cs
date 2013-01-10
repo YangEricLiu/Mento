@@ -18,29 +18,16 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Customer.TagManagement
 {
     [TestFixture]
+    [Owner("Amy")]
+    [CreateTime("2012-11-12")]
     [ManualCaseID("TC-J1-SmokeTest-002")]
     public class PtagConfiguration : TestSuiteBase
     {
         private PTagSettings PTagSettings = JazzFunction.PTagSettings;
 
-        [TestFixtureSetUp]
-        public void CaseFixtureSetUp()
-        {
-            //ElementLocator.OpenJazz();
-            //FunctionWrapper.Login.Login();
-        }
-
-        [TestFixtureTearDown]
-        public void CaseFixtureTearDown()
-        {
-            //ElementLocator.QuitJazz();
-        }
-
         [SetUp]
         public void CaseSetUp()
-        {
-            //FunctionWrapper.Ptag.NavigatorToPtagSetting();
-            //ElementLocator.Pause(2000);   
+        {   
             PTagSettings.NavigatorToPtagSetting();
             TimeManager.MediumPause();
         }
@@ -48,14 +35,12 @@ namespace Mento.Script.Customer.TagManagement
         [TearDown]
         public void CaseTearDown()
         {
-            //
-            //JazzFunction.Navigator.NavigateHome();
             BrowserHandler.Refresh();
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-002"), CreateTime("2012-11-12"), Owner("Amy")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfiguration), "TC-J1-SmokeTest-002")]
+        [CaseID("TC-J1-SmokeTest-002-001")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfiguration), "TC-J1-SmokeTest-002-001")]
         public void AddPtag(PtagData testData)
         {
             PTagSettings.PrepareToAddPtag();
@@ -76,7 +61,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
-        [CaseID("TA-PtagConfiguration-002"), CreateTime("2012-11-13"), Owner("Amy")]
+        [CaseID("TA-PtagConfiguration-002")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfiguration), "TA-PtagConfiguration-002")]
         public void ModifyPtag(PtagData testData)
         {

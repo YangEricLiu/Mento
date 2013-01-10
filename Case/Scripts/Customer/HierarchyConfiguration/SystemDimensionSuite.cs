@@ -15,7 +15,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [TestFixture]
     [Owner("Aries")]
     [CreateTime("2012-11-19")]
-    [ManualCaseID("TC-J1-SmokeTest-013")]
+    [ManualCaseID("TC-J1-SmokeTest-014")]
     public class SystemDimensionSuite : TestSuiteBase
     {
         [SetUp]
@@ -32,7 +32,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-013")]
+        [CaseID("TC-J1-SmokeTest-014-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
         public void AssoicateSystemDimension()
         {
             var SystemSettings = JazzFunction.SystemDimensionSettings;
@@ -64,7 +66,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-014")]
+        [CaseID("TC-J1-SmokeTest-014-002")]
+        [Priority("P2")]
+        [Type("Smoke")]
         public void DisassoicateSystemDimension()
         {
             var SystemSettings = JazzFunction.SystemDimensionSettings;

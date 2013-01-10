@@ -16,7 +16,7 @@ namespace Mento.Framework.Attributes
         /// Construct a PriorityAttribute, given a priority.
         /// </summary>
         /// <param name="priority">Priority</param>
-        public PriorityAttribute(int priority)
+        public PriorityAttribute(string priority)
             : base(priority) { }
     }
 }

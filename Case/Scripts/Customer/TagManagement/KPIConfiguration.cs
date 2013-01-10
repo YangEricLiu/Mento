@@ -17,33 +17,16 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Customer.TagManagement
 {
     [TestFixture]
-    //[ManualCaseID("TA-KPIConfigue")]
+    [ManualCaseID("TC-J1-SmokeTest-004")]
     [CreateTime("2013-01-04")]
     [Owner("Alice")]
     public class KPIConfiguration : TestSuiteBase
     {
         private KPITagSettings KPITagSettings = JazzFunction.KPITagSettings;
 
-        [TestFixtureSetUp]
-        public void CaseFixtureSetUp()
-        {
-            //ElementLocator.OpenJazz();
-            //FunctionWrapper.Login.Login();
-
-            //NavigatorIns.NavigateToTarget(NavigationTarget.TagSettingsKPI);
-
-        }
-        [TestFixtureTearDown]
-        public void CaseFixtureTearDown()
-        {
-            //ElementLocator.CloseJazz();
-        }
-
         [SetUp]
         public void CaseSetUp()
-        {
-            //FunctionWrapper.KPItag.NavigatorToKPItagSetting();
-            //ElementLocator.Pause(2000);   
+        { 
             KPITagSettings.NavigatorToKPITagSetting();
             TimeManager.MediumPause();
         }
@@ -51,13 +34,13 @@ namespace Mento.Script.Customer.TagManagement
         [TearDown]
         public void CaseTearDown()
         {
-            //
-            //JazzFunction.Navigator.NavigateHome();
             BrowserHandler.Refresh();
         }
 
         [Test]
-        [CaseID("TA-KPIConfigue-001"), CreateTime("2013-01-04"), Owner("Alice"), ManualCaseID("TA-KPItag-T001")]
+        [CaseID("TA-KPIConfigue-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
         [MultipleTestDataSource(typeof(AddKPIData[]), typeof(KPIConfiguration), "TA-KPIConfigue-001")]
         public void AddKPItag(AddKPIData input)
         {

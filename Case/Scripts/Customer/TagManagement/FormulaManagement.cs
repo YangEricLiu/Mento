@@ -14,6 +14,10 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.TagManagement
 {
+    [TestFixture]
+    [Owner("Emma")]
+    [CreateTime("2012-11-08")]
+    [ManualCaseID("TC-J1-SmokeTest-005")]
     public class FormulaManagement : TestSuiteBase
     {
         private static VTagSettings VTagSettings = JazzFunction.VTagSettings;
@@ -22,23 +26,21 @@ namespace Mento.Script.Customer.TagManagement
         public void CaseSetUp()
         {
             VTagSettings.NavigatorToVTagSetting();
-            //ElementLocator.Pause(2000);
             TimeManager.MediumPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            //
             BrowserHandler.Refresh();
         }
 
         [Test]
-        [CaseID("TA-Formula-001"), ManualCaseID("TJ-Formula-001"), CreateTime("2012-11-08"), Owner("Emma")]
+        [CaseID("TC-J1-SmokeTest-005-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
         public void AddFormulaToVtag()
         {
-            //string vtagName = "Add_V1";
-            //string expectedFormula = "{vtag.AZuoDian}+{vtag.AZuoKongtiaoDian}";
             string vtagName = "Add_V1";
             string expectedFormula = "{ptag.Add_P1}+{ptag.Amy_c_P1}";
             
@@ -50,8 +52,6 @@ namespace Mento.Script.Customer.TagManagement
 
             VTagSettings.ClickSaveFormulaButton();
 
-            //FunctionWrapper.WaitForLoadingDisappeared(2000);
-            //ElementLocator.Pause(500);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 

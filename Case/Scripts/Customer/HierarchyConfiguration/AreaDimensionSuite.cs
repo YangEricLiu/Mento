@@ -29,12 +29,13 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void ScriptTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
             BrowserHandler.Refresh();
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-015")]
+        [CaseID("TC-J1-SmokeTest-015-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
         public void CreateAreaDimension()
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;

@@ -16,7 +16,7 @@ namespace Mento.Script.Customer.TagAssociation
     [TestFixture]
     [Owner("Emma")]
     [CreateTime("2012-11-09")]
-    [ManualCaseID("TC-J1-SmokeTest-015")]
+    [ManualCaseID("TC-J1-SmokeTest-008")]
     public class HierarchyAssociateTag : TestSuiteBase
     {
         private static AssociateSettings Association = JazzFunction.AssociateSettings;
@@ -24,8 +24,6 @@ namespace Mento.Script.Customer.TagAssociation
         [SetUp]
         public void CaseSetUp()
         {
-            //FunctionWrapper.Associate.NavigateToHierarchyAssociate();
-            //ElementLocator.Pause(2000);
             Association.NavigateToHierarchyAssociate();
             TimeManager.MediumPause();
         }
@@ -33,13 +31,13 @@ namespace Mento.Script.Customer.TagAssociation
         [TearDown]
         public void CaseTearDown()
         {
-            //
-            //JazzFunction.Navigator.NavigateHome();
             BrowserHandler.Refresh();
         }
 
         [Test]
-        [CaseID("TA-AssociateTag-001")]
+        [CaseID("TC-J1-SmokeTest-008-001")]
+        [Priority("P1")]
+        [Type("Smoke")]
         public void AssociateOneTag()
         {
             Association.SelectHierarchyNode("自动化测试");

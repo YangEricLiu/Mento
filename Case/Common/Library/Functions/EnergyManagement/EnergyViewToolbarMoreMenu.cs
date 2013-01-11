@@ -29,6 +29,8 @@ namespace Mento.ScriptCommon.Library.Functions
             {EnergyViewMoreOption.ShowCalendar,new string[]{"显示日历"}},
         };
 
+        internal EnergyViewToolbarMoreMenu() { }
+
         public void SwitchMenuItem(EnergyViewMoreOption moreOption)
         {
             MoreButton.SelectItem(MenuItems[moreOption]);

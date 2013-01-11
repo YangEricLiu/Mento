@@ -119,9 +119,16 @@ namespace Mento.Script.EnergyView.Usage
         /// </summary>
         [Test]
         [CaseID("TC-J1-SmokeTest-040	")]
-        public void SingleTagDistributionChart() 
-        { 
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-040")]
+        public void SingleTagDistributionChart(EnergyViewOptionData option)
+        {
+            DataPanel.SelectHierarchy(option.InputData.Hierarchies);
 
+            DataPanel.CheckTags(option.InputData.TagNames);
+
+            DataPanel.Toolbar.View(option.InputData.ViewType);
+
+            Assert.IsTrue(DataPanel.IsDistributionChartDrawn());
         }
     }
 }

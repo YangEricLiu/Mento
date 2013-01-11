@@ -27,7 +27,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static EnergyViewToolbarMoreMenu MoreMenu = new EnergyViewToolbarMoreMenu();
 
 
-        public EnergyViewToolbar()
+        internal EnergyViewToolbar()
         {
         }
 

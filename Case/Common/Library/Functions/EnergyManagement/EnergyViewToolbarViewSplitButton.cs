@@ -27,6 +27,8 @@ namespace Mento.ScriptCommon.Library.Functions
         //    set;
         //}
 
+        internal EnergyViewToolbarViewSplitButton() { }
+
         public void Click()
         {
             ViewButton.Click();

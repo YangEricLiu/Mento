@@ -14,9 +14,9 @@ namespace Mento.ScriptCommon.Library.Functions
     /// <summary>
     /// The business logic implement of Hierarchy Cost Property Settings.
     /// </summary>
-    public class HierarchyCostSettings
+    public class HierarchyElectricCostSettings
     {
-        internal HierarchyCostSettings()
+        internal HierarchyElectricCostSettings()
         {
         }
 
@@ -27,6 +27,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button ElectricCostCreate = JazzButton.ElectricCostCreateButton;
         private static ComboBox ElectricPriceMode = JazzComboBox.ElectricPriceModeComboBox;
         private static MonthPicker ElectricCostEffectiveDate = JazzMonthPicker.ElectricCostEffectiveDateMonthPicker;
+        private static TextField ElectricPrice = JazzTextField.ElectricPriceTextField;
+        private static Button CostSave = JazzButton.CostSaveButton;
+        
         #endregion
 
         #region cost property
@@ -60,6 +63,32 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectElectricEffectiveDate(DateTime date)
         {
             ElectricCostEffectiveDate.SelectYearMonthItem(date);
+        }
+
+        public void FillElectricPrice(string price)
+        {
+            ElectricPrice.Append(price);
+        }
+
+        public void ClickCostSaveButton()
+        {
+            CostSave.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        public string GetElectricCostEffectiveDateValue()
+        {
+            return ElectricCostEffectiveDate.GetValue();
+        }
+
+        public string GetElectricPriceValue()
+        {
+            return ElectricPrice.GetValue();
+        }
+
+        public string GetElectricPriceMode()
+        {
+            return ElectricPriceMode.GetValue();
         }
         #endregion
 

@@ -251,6 +251,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldHeatingAreaValue = "TextFieldHeatingAreaValue";
         public static string TextFieldCoolingAreaValue = "TextFieldCoolingAreaValue";
         public static string TextFieldPeopleNumber = "TextFieldPeopleNumber";
+        public static string TextFieldElectricPrice = "TextFieldElectricPrice";
         #endregion
         #endregion
 

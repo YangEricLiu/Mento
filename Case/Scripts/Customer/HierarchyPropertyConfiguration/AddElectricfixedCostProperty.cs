@@ -21,7 +21,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
     public class AddElectricfixedCostProperty :TestSuiteBase
     {
         private static HierarchySettings HierarchySetting = JazzFunction.HierarchySettings;
-        private static HierarchyCostSettings CostSettings = JazzFunction.HierarchyCostSettings;
+        private static HierarchyElectricCostSettings CostSettings = JazzFunction.HierarchyElectricCostSettings;
 
         [SetUp]
         public void CaseSetUp()
@@ -54,7 +54,14 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
             CostSettings.SelectElectricEffectiveDate(new DateTime(2013,1,5));
             CostSettings.SelectElectricPriceMode("固定电价");
+            CostSettings.FillElectricPrice("50");
+            TimeManager.ShortPause();
+            CostSettings.ClickCostSaveButton();
+            TimeManager.ShortPause();
 
+            Assert.AreEqual(CostSettings.GetElectricCostEffectiveDateValue(), "2013-01");
+            Assert.AreEqual(CostSettings.GetElectricPriceMode(), "固定电价");
+            Assert.AreEqual(CostSettings.GetElectricPriceValue(), "50");
         }
     }
 }

@@ -32,6 +32,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField CoolingAreaValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCoolingAreaValue);
 
         public static TextField PeopleNumberTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPeopleNumber, 1);
+        public static TextField ElectricPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldElectricPrice, 2);
         #endregion
 
         #endregion

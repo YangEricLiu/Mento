@@ -221,6 +221,7 @@
         <add key="TextFieldHeatingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-heatingarea-container']//input[@type='text' and @name='HeatingAreaValue']" type="XPath"/>
         <add key="TextFieldCoolingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-coolingarea-container']//input[@type='text' and @name='CoolingAreaValue']" type="XPath"/>
         <add key="TextFieldPeopleNumber" value="//div[@id='st-hierarchy-dynamic-population-value-container']//table[contains(@id,'fieldcontainer')][$#positionIndex]//table[contains(@id,'numberfield') and contains(@class,'x-form-trigger-wrap')]//input[@type='text'and contains(@name,'numberfield')]" type="XPath"/>
+        <add key="TextFieldElectricPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
       </hierarchypeopertysettings>
       <ptagsettings>
         <add key="TextFieldPTagSettingsName" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='Name']" type="XPath"/>

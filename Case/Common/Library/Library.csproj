@@ -65,7 +65,7 @@
     <Compile Include="Functions\AreaDimensionSettings.cs" />
     <Compile Include="Functions\AssociateSettings.cs" />
     <Compile Include="Functions\KPITargetBaselineSettings.cs" />
-    <Compile Include="Functions\HierarchyCostSettings.cs" />
+    <Compile Include="Functions\HierarchyElectricCostSettings.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbar.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbarMoreMenu.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbarViewSplitButton.cs" />

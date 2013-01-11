@@ -158,7 +158,7 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        public static TimeSettingsWorkday _TimeSettingsWorkday;
+        private static TimeSettingsWorkday _TimeSettingsWorkday;
         public static TimeSettingsWorkday TimeSettingsWorkday
         {
             get
@@ -170,7 +170,7 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        public static TimeSettingsWorktime _TimeSettingsWorktime;
+        private static TimeSettingsWorktime _TimeSettingsWorktime;
         public static TimeSettingsWorktime TimeSettingsWorktime
         {
             get
@@ -182,7 +182,7 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        public static TimeSettingsHeatingCoolingSeason _TimeSettingsHeatingCoolingSeason;
+        private static TimeSettingsHeatingCoolingSeason _TimeSettingsHeatingCoolingSeason;
         public static TimeSettingsHeatingCoolingSeason TimeSettingsHeatingCoolingSeason
         {
             get
@@ -194,7 +194,7 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        public static TimeSettingsDayNight _TimeSettingsDayNight;
+        private static TimeSettingsDayNight _TimeSettingsDayNight;
         public static TimeSettingsDayNight TimeSettingsDayNight
         {
             get
@@ -206,7 +206,7 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        public static CarbonFactorSettings _CarbonFactorSettings;
+        private static CarbonFactorSettings _CarbonFactorSettings;
         public static CarbonFactorSettings CarbonFactorSettings
         {
             get
@@ -218,7 +218,7 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        public static HierarchyPeopleAreaSettings _HierarchyPeopleAreaSettings;
+        private static HierarchyPeopleAreaSettings _HierarchyPeopleAreaSettings;
         public static HierarchyPeopleAreaSettings HierarchyPeopleAreaSettings
         {
             get
@@ -242,7 +242,7 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        public static UserSettings _UserSettings;
+        private static UserSettings _UserSettings;
         public static UserSettings UserSettings
         {
             get
@@ -254,7 +254,7 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        public static HierarchyElectricCostSettings _HierarchyElectricCostSettings;
+        private static HierarchyElectricCostSettings _HierarchyElectricCostSettings;
         public static HierarchyElectricCostSettings HierarchyElectricCostSettings
         {
             get
@@ -265,6 +265,19 @@ namespace Mento.ScriptCommon.Library
                 return _HierarchyElectricCostSettings;
             }
         }
+
+        private static HierarchyOtherCostPropertySettings _HierarchyOtherCostPropertySettings;
+        public static HierarchyOtherCostPropertySettings HierarchyOtherCostPropertySettings
+        {
+            get
+            {
+                if (_HierarchyOtherCostPropertySettings == null)
+                    _HierarchyOtherCostPropertySettings = new HierarchyOtherCostPropertySettings();
+
+                return _HierarchyOtherCostPropertySettings;
+            }
+        }
+        
         
     }
 }

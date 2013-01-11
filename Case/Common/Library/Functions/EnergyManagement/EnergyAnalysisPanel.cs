@@ -16,6 +16,7 @@ namespace Mento.ScriptCommon.Library.Functions
             TagGrid = JazzGrid.EnergyAnalysisAllTagList;
         }
 
+        #region Controls
         //Select hierarchy button
         private static Button SelectHierarchyButton = JazzButton.EnergyViewSelectHierarchyButton;
 
@@ -31,15 +32,17 @@ namespace Mento.ScriptCommon.Library.Functions
             set;
         }
 
-        //Toolbar
-        public EnergyViewToolbar Toolbar = new EnergyViewToolbar();
-
         //Chart
+        private static Chart Chart = JazzChart.EnergyViewChart;
 
         //DataGrid
         private static Grid EnergyDataGrid = JazzGrid.EnergyAnalysisEnergyDataList;
+        #endregion
 
+        //Toolbar
+        public EnergyViewToolbar Toolbar = new EnergyViewToolbar();
 
+        #region Hierarchy & tag operations
         public void SelectHierarchy(string[] hierarchyNames)
         {
             List<string> parentHierarchies = hierarchyNames.ToList();
@@ -86,14 +89,12 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
-        public void UncheckTag(string tagName)
+        public void UncheckTags(string[] tagNames)
         { 
         }
+        #endregion
 
-        public void RemoveAllTag()
-        { 
-        }
-
+        #region Data view operations
         public int GetRecordCount()
         {
             return EnergyDataGrid.RecordCount;
@@ -113,6 +114,22 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return EnergyDataGrid.GetAllData();
         }
+        #endregion
+
+        #region Chart view operations
+        public bool IsTrendChartDrawn()
+        {
+            return Chart.HasDrawnTrend();
+        }
+        public bool IsDistributionChartDrawn()
+        {
+            return Chart.HasDrawnDistribute();
+        }
+        public bool IsLegendDrawn()
+        {
+            return Chart.HasDrawnLegend();
+        }
+        #endregion
     }
 
 }

@@ -435,6 +435,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridUserList = "GridUserList";
         #endregion
         #endregion
+
         #region CheckBoxField
         public static string CheckBoxFieldDayNightKPITag = "CheckBoxFieldDayNightKPITag";
        
@@ -461,6 +462,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelPlatformDayNightCalendar = "LabelPlatformDayNightCalendar";
         #endregion
         #endregion
+        #endregion
+
+        #region Chart
+        public static string ChartEnergyView = "ChartEnergyView";
         #endregion
     }
 }

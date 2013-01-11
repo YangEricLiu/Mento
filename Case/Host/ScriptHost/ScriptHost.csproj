@@ -149,6 +149,8 @@
     </Content>
     <Content Include="Data\Customer\TagManagement\VtagManagement\TA-VtagConfigue-001.json" />
     <None Include="Data\Customer\TagManagement\KPITargetSuite\TC-J1-SmokeTest-022.json" />
+    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-037.json" />
+    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-038.json" />
     <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-039.json" />
     <Content Include="IEDriverServer.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

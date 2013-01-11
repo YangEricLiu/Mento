@@ -6,11 +6,11 @@ using Mento.TestApi.TestData;
 
 namespace Mento.ScriptCommon.TestData.EnergyView
 {
-    public class EnergyViewData : TestDataBase<EnergyViewInputData, ExpectedTestDataBase>
+    public class EnergyViewOptionData : TestDataBase<EnergyViewOptionInput, ExpectedTestDataBase>
     {
     }
 
-    public class EnergyViewInputData : InputTestDataBase
+    public class EnergyViewOptionInput : InputTestDataBase
     { 
         public string[] Hierarchies { get; set; }
 

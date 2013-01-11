@@ -426,4 +426,9 @@
     </calendar>
   </platformsettings>
   <!--Label End-->
+  
+  <!--Chart-->
+  <chart>
+    <add key="ChartEnergyView" value="div.highcharts-container" type="CssSelector"/>
+  </chart>
 </WebElement>

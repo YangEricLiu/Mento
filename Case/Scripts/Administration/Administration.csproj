@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarbonFactor\CarbonManagement.cs" />
+    <Compile Include="CarbonFactor\CarbonFactorSuite.cs" />
     <Compile Include="TimeManagement\HeatingCoolingSeasonSuite.cs" />
     <Compile Include="TimeManagement\DayNightSuite.cs" />
     <Compile Include="TimeManagement\WorktimeSuite.cs" />

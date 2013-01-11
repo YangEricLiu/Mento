@@ -31,12 +31,13 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DeleteButton = JazzButton.WorktimeCalendarDeleteButton;
 
         private static TextField NameTextField = JazzTextField.WorktimeCalendarNameTextField;
-        private static Button AddMoreRangesButton = JazzButton.WorktimeCalendarAddMoreRangesButton;
+        private static LinkButton AddMoreRangesButton = JazzButton.WorktimeCalendarAddMoreRangesButton;
         private static ComboBox StartTimeComboBox = JazzComboBox.WorktimeCalendarStartTimeComboBox;
         private static ComboBox EndTimeComboBox = JazzComboBox.WorktimeCalendarEndTimeComboBox;
+        private static Label WorktimeCalendarLabel = JazzLabel.PlatformWorktimeCalendarLabel;
         
         /// <summary>
-        /// Navigate to Workday Calendar Setting Page
+        /// Navigate to Worktime Calendar Setting Page
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -47,7 +48,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Click "add workday" button to add one workday calendar
+        /// Click "add worktime" button to add one workday calendar
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -57,7 +58,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
         
         /// <summary>
-        /// Click "add special dates" icon
+        /// Click "add more ranges" button
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -115,6 +116,38 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetNameValue()
         {
             return NameTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get Start Time value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetStartTimeValue(int num)
+        {
+            ComboBox OneStartTime = GetOneStartTimeComboBox(num);
+            return OneStartTime.GetValue();
+        }
+
+        /// <summary>
+        /// Get End Time value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetEndTimeValue(int num)
+        {
+            ComboBox OneEndTime = GetOneEndTimeComboBox(num);
+            return OneEndTime.GetValue();
+        }
+
+        public string GetWorktimeLabelValue()
+        {
+            return WorktimeCalendarLabel.GetLabelTextValue();
+        }
+
+        public Boolean IsWorktimeCalendarTextCorrect(string[] texts)
+        {
+            return WorktimeCalendarLabel.IsLabelTextsExisted(texts);
         }
 
         #region private method

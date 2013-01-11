@@ -80,6 +80,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox DayNightCalendarEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightCalendarEndTime, 1);
         #endregion
 
+        #region Carbonfactor
+        public static ComboBox CarbonFactorSourceComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCarbonFactorSource, 1);
+        public static ComboBox CarbonFactorDestinationComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCarbonFactorDestination, 1);
+        public static ComboBox CarbonFactorEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCarbonFactorEffectiveYear, 1);
+        #endregion
+
         #region User Setting
         public static ComboBox UserTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserType, 1);
         public static ComboBox UserAssociatedCustomerComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserAssociatedCustomer, 1);

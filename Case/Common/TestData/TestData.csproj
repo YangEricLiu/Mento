@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administration\CarbonFactorSettingsData.cs" />
     <Compile Include="Administration\TimeSettingsHeatingCoolingSeasonData.cs" />
     <Compile Include="Administration\TimeSettingsDayNightData.cs" />
     <Compile Include="Administration\TimeSettingsWortimeData.cs" />
@@ -75,6 +76,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="EnergyView\" />
     <Folder Include="Information\" />
     <Folder Include="Platform\" />
   </ItemGroup>

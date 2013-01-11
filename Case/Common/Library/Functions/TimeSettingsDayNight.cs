@@ -31,12 +31,13 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DeleteButton = JazzButton.DayNightCalendarDeleteButton;
 
         private static TextField NameTextField = JazzTextField.DayNightCalendarNameTextField;
-        private static Button AddMoreRangesButton = JazzButton.DayNightCalendarAddMoreRangesButton;
+        private static LinkButton AddMoreRangesButton = JazzButton.DayNightCalendarAddMoreRangesButton;
         private static ComboBox StartTimeComboBox = JazzComboBox.DayNightCalendarStartTimeComboBox;
         private static ComboBox EndTimeComboBox = JazzComboBox.DayNightCalendarEndTimeComboBox;
+        private static Label DayNightCalendarLabel = JazzLabel.PlatformDayNightCalendarLabel;
         
         /// <summary>
-        /// Navigate to Workday Calendar Setting Page
+        /// Navigate to DayNight Calendar Setting Page
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -47,7 +48,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Click "add workday" button to add one workday calendar
+        /// Click "add daynight calendar" button to add one daynight calendar
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -57,7 +58,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
         
         /// <summary>
-        /// Click "add special dates" icon
+        /// Click "add more ranges" button
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -115,6 +116,38 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetNameValue()
         {
             return NameTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get Start Time value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetStartTimeValue(int num)
+        {
+            ComboBox OneStartTime = GetOneStartTimeComboBox(num);
+            return OneStartTime.GetValue();
+        }
+
+        /// <summary>
+        /// Get End Time value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetEndTimeValue(int num)
+        {
+            ComboBox OneEndTime = GetOneEndTimeComboBox(num);
+            return OneEndTime.GetValue();
+        }
+
+        public string GetDayNightLabelValue()
+        {
+            return DayNightCalendarLabel.GetLabelTextValue();
+        }
+
+        public Boolean IsDayNightCalendarTextCorrect(string[] texts)
+        {
+            return DayNightCalendarLabel.IsLabelTextsExisted(texts);
         }
 
         #region private method

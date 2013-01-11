@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Source":"煤(千克)",	
+			"RecordNumber":1,
+			"EffectiveYear":["2011"],
+			"FactorValue":["0.45"],		
+		},
+		"ExpectedData":
+		{
+			"Destination":"标煤",	
+		}
+	}
+]

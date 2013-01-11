@@ -151,7 +151,7 @@
         <add key="ButtonWorktimeCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
         <add key="ButtonWorktimeCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonWorktimeCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="ButtonWorktimeCalendarAddMoreRanges" value="st-calendar-worktime-items-add-btnEl" type="ID"/>
+        <add key="LinkButtonWorktimeCalendarAddMoreRanges" value="//div[@id='st-calendar-worktime-items-add']//a[text()='添加工作时间']" type="XPath"/>
       </worktime>
       <heatingcoolingseason>
         <add key="ButtonHeatingCoolingSeasonCalendarCreate" value="st-calendar-grid-add" type="ID"/>
@@ -159,8 +159,8 @@
         <add key="ButtonHeatingCoolingSeasonCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
         <add key="ButtonHeatingCoolingSeasonCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonHeatingCoolingSeasonCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges" value="st-calendar-warm-items-add" type="ID"/>
-        <add key="ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges" value="st-calendar-cold-items-add" type="ID"/>
+        <add key="LinkButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges" value="//div[@id='st-calendar-warm-items-add']//a[text()='添加采暖季']" type="XPath"/>
+        <add key="LinkButtonHeatingCoolingSeasonCalendarAddMoreColdRanges" value="//div[@id='st-calendar-cold-items-add']//a[text()='添加供冷季']" type="XPath"/>
       </heatingcoolingseason>
       <daynight>
         <add key="ButtonDayNightCalendarCreate" value="st-calendar-grid-add" type="ID"/>
@@ -168,8 +168,16 @@
         <add key="ButtonDayNightCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
         <add key="ButtonDayNightCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonDayNightCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="ButtonDayNightCalendarAddMoreRanges" value="st-calendar-daynight-items-add" type="ID"/>
-      </daynight>     
+        <add key="LinkButtonDayNightCalendarAddMoreRanges" value="//div[@id='st-calendar-daynight-items-add']//a[text()='添加白昼时间']" type="XPath"/>
+      </daynight>
+      <carbonfactor>
+        <add key="ButtonCarbonFactorCreate" value="st-carbonfactor-grid-add" type="ID"/>
+        <add key="ButtonCarbonFactorModify" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+        <add key="ButtonCarbonFactorSave" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonCarbonFactorCancel" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonCarbonFactorDelete" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+        <add key="LinkButtonCarbonFactorAddMoreRanges" value="//div[@id='st-carbonfactor-items-add']/a[contains(text(), '添加生效日期')]" type="XPath"/>        
+      </carbonfactor>
     </platformsettings>
   </button> 
   
@@ -230,6 +238,9 @@
       <daynight>
         <add key="TextFieldDayNightCalendarName" value="//div[@id='st-calendar-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
       </daynight>
+      <carbonfactor>
+        <add key="TextFieldCarbonFactorValue" value="//td[@id='st-carbonfactor-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[2]//input" type="XPath"/>
+      </carbonfactor>
     </platformsettings>
   </textfield>
   <!--TextField End-->
@@ -291,6 +302,11 @@
         <add key="ComboBoxDayNightCalendarStartTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartPart']]" type="XPath"/>
         <add key="ComboBoxDayNightCalendarEndTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndPart']]" type="XPath"/>
       </daynight>
+      <carbonfactor>
+        <add key="ComboBoxCarbonFactorSource" value="//table[@id='st-carbonfactor-source-triggerWrap' and tbody/tr/td/input[@name='SourceId']]" type="XPath"/>
+        <add key="ComboBoxCarbonFactorDestination" value="//table[@id='st-carbonfactor-destination-triggerWrap' and tbody/tr/td/input[@name='DestinationUom']]" type="XPath"/>
+        <add key="ComboBoxCarbonFactorEffectiveYear" value="//td[@id='st-carbonfactor-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
+      </carbonfactor>
     </platformsettings>
   </combobox>
   
@@ -363,8 +379,20 @@
   <!--CheckBoxField Begin-->
     <add key="CheckBoxFieldDayNightKPITag" value="st-formula-daynight" type="ID"/>
   <!--CheckBoxField End-->
-  <!--Label-->
-    <add key="LabelWorkdayCalendar" value="st-hierarchy-calendar-workday-container" type="ID"/>
-    <add key="LabelHeatingCoolingCalendar" value="st-hierarchy-calendar-coldwarm-container" type="ID"/>
-    <add key="LabelDayNightCalendar" value="st-hierarchy-calendar-daynight-container" type="ID"/>
+  <!--Label Begin-->
+  <customersettings>
+    <hierarchycalendar>
+      <add key="LabelWorkdayCalendar" value="st-hierarchy-calendar-workday-container" type="ID"/>
+      <add key="LabelHeatingCoolingCalendar" value="st-hierarchy-calendar-coldwarm-container" type="ID"/>
+      <add key="LabelDayNightCalendar" value="st-hierarchy-calendar-daynight-container" type="ID"/>
+    </hierarchycalendar>    
+  </customersettings>
+  <platformsettings>
+    <calendar>
+      <add key="LabelPlatformWorkdayCalendar" value="st-calendar-properties-form-body" type="ID"/>
+      <add key="LabelPlatformWorktimeCalendar" value="st-calendar-properties-form-body" type="ID"/>
+      <add key="LabelPlatformDayNightCalendar" value="st-calendar-properties-form-body" type="ID"/>
+    </calendar>
+  </platformsettings>
+  <!--Label End-->
 </WebElement>

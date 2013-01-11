@@ -46,26 +46,37 @@ namespace Mento.Script.Administration.TimeManagement
 
             TimeSettingsWorktime.FillInName(testData.InputData.Name);
 
-            //Click '添加工作时间' button to add one more time range record
-            TimeSettingsWorktime.ClickAddMoreRangesButton();
-            TimeManager.ShortPause();
+            //Input 'Start Time' and 'End Time' for the record(s) based on the input data file
+            for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
+            {
+                //Click '添加工作时间' button if more than one record need to be entered
+                if (elementPosition > 1)
+                {                    
+                    TimeSettingsWorktime.ClickAddMoreRangesButton();
+                    TimeManager.ShortPause();
+                }
 
-            //Input time range1
-            TimeSettingsWorktime.SelectStartTime(testData.InputData.StartTime[0], testData.InputData.RecordGroupPosition[0]);
-            TimeManager.ShortPause();
-            TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[0], testData.InputData.RecordGroupPosition[0]);
-            TimeManager.ShortPause();
-
-            //Input time range2
-            TimeSettingsWorktime.SelectStartTime(testData.InputData.StartTime[1], testData.InputData.RecordGroupPosition[1]);
-            TimeManager.ShortPause();
-            TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[1], testData.InputData.RecordGroupPosition[1]);
-            TimeManager.ShortPause();
+                int inputDataArrayPosition = elementPosition - 1;
+                TimeSettingsWorktime.SelectStartTime(testData.InputData.StartTime[inputDataArrayPosition], elementPosition);
+                TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[inputDataArrayPosition], elementPosition);                TimeManager.ShortPause();
+            }
 
             TimeSettingsWorktime.ClickSaveButton();
             TimeManager.MediumPause();
 
+            //Verify the name
             Assert.AreEqual(testData.InputData.Name, TimeSettingsWorktime.GetNameValue());
+
+            //Verify the label text
+            Assert.IsTrue(TimeSettingsWorktime.IsWorktimeCalendarTextCorrect(testData.ExpectedData.LabelText));
+
+            //Verify 'Start Time' and 'End Time' of the record(s)
+            for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
+            {
+                int inputDataArrayPosition = elementPosition - 1;
+                Assert.AreEqual(testData.InputData.StartTime[inputDataArrayPosition], TimeSettingsWorktime.GetStartTimeValue(elementPosition));
+                Assert.AreEqual(testData.InputData.EndTime[inputDataArrayPosition], TimeSettingsWorktime.GetEndTimeValue(elementPosition));
+            }
         }       
     }
 }

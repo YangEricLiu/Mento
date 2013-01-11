@@ -194,6 +194,18 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        public static CarbonFactorSettings _CarbonFactorSettings;
+        public static CarbonFactorSettings CarbonFactorSettings
+        {
+            get
+            {
+                if (_CarbonFactorSettings == null)
+                    _CarbonFactorSettings = new CarbonFactorSettings();
+
+                return _CarbonFactorSettings;
+            }
+        }
+
         public static HierarchyPeopleAreaSettings _HierarchyPeopleAreaSettings;
         public static HierarchyPeopleAreaSettings HierarchyPeopleAreaSettings
         {

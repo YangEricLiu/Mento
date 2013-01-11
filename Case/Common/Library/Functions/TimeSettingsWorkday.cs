@@ -37,6 +37,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox StartDateComboBox = JazzComboBox.WorkdayCalendarStartDateComboBox;
         private static ComboBox EndMonthComboBox = JazzComboBox.WorkdayCalendarEndMonthComboBox;
         private static ComboBox EndDateComboBox = JazzComboBox.WorkdayCalendarEndDateComboBox;
+        private static Label WorkdayCalendarLabel = JazzLabel.PlatformWorkdayCalendarLabel;
 
         /// <summary>
         /// Navigate to Workday Calendar Setting Page
@@ -154,12 +155,68 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Get the SpecialDateType actual value
+        /// Get Special date type value
         /// </summary>
+        /// <param></param>
         /// <returns></returns>
-        public string GetSpecialDateTypeValue()
+        public string GetSpecialDateTypeValue(int num)
         {
-            return SpecialDateTypeComboBox.GetValue();
+            ComboBox OneSpecialDateType = GetOneSpecialDateTypeComboBox(num);
+            return OneSpecialDateType.GetValue();
+        }
+
+        /// <summary>
+        /// Get Start Month value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetStartMonthValue(int num)
+        {
+            ComboBox OneStartMonth = GetOneStartMonthComboBox(num);
+            return OneStartMonth.GetValue();
+        }
+
+        /// <summary>
+        /// Get Start Date value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetStartDateValue(int num)
+        {
+            ComboBox OneStartDate = GetOneStartDateComboBox(num);
+            return OneStartDate.GetValue();
+        }
+
+        /// <summary>
+        /// Get End Month value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetEndMonthValue(int num)
+        {
+            ComboBox OneEndMonth = GetOneEndMonthComboBox(num);
+            return OneEndMonth.GetValue();
+        }
+
+        /// <summary>
+        /// Get End Date value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetEndDateValue(int num)
+        {
+            ComboBox OneEndDate = GetOneEndDateComboBox(num);
+            return OneEndDate.GetValue();
+        }
+
+        public string GetWorkdayLabelValue()
+        {
+            return WorkdayCalendarLabel.GetLabelTextValue();
+        }
+
+        public Boolean IsWorkdayCalendarTextCorrect(string[] texts)
+        {
+            return WorkdayCalendarLabel.IsLabelTextsExisted(texts);
         }
 
         #region private method

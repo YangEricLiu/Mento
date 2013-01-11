@@ -13,14 +13,14 @@ namespace Mento.ScriptCommon.TestData.Administration
     public class DayNightCalendarInputData : InputTestDataBase
     {
         public string Name { get; set; }
-        public int[] RecordGroupPosition { get; set; }
+        public int RecordNumber { get; set; }
         public string[] StartTime { get; set; }
         public string[] EndTime { get; set; }
 
-        public DayNightCalendarInputData(string name, int[] recordGroupPosition, string[] startTime, string[] endTime)
+        public DayNightCalendarInputData(string name, int recordNumber, string[] startTime, string[] endTime)
         {
             this.Name = name;
-            this.RecordGroupPosition = recordGroupPosition;
+            this.RecordNumber = recordNumber;
             this.StartTime = startTime;
             this.EndTime = endTime;
         }
@@ -29,16 +29,12 @@ namespace Mento.ScriptCommon.TestData.Administration
     public class DayNightCalendarExpectedData : ExpectedTestDataBase
     {
         public string Name { get; set; }
-        public int[] RecordGroupPosition { get; set; }
-        public string[] StartTime { get; set; }
-        public string[] EndTime { get; set; }
+        public string[] LabelText { get; set; }
 
-        public DayNightCalendarExpectedData(string name, int[] recordGroupPosition, string[] startTime, string[] endTime)
+        public DayNightCalendarExpectedData(string name, string[] labelText)
         {
             this.Name = name;
-            this.RecordGroupPosition = recordGroupPosition;
-            this.StartTime = startTime;
-            this.EndTime = endTime;
+            this.LabelText = labelText;
         }
     }
 }

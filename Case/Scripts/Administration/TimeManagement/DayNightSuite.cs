@@ -45,15 +45,38 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
 
             TimeSettingsDayNight.FillInName(testData.InputData.Name);
-            
-            //Input time range1
-            TimeSettingsDayNight.SelectStartTime(testData.InputData.StartTime[0], testData.InputData.RecordGroupPosition[0]);
-            TimeSettingsDayNight.SelectEndTime(testData.InputData.EndTime[0], testData.InputData.RecordGroupPosition[0]);
+
+            //Input 'Start Time' and 'End Time' for the record(s) based on the input data file
+            for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
+            {
+                //Click '添加白昼时间' button if more than one record need to be entered
+                if (elementPosition > 1)
+                {
+                    TimeSettingsDayNight.ClickAddMoreRangesButton();
+                    TimeManager.ShortPause();
+                }
+
+                int inputDataArrayPosition = elementPosition - 1;
+                TimeSettingsDayNight.SelectStartTime(testData.InputData.StartTime[inputDataArrayPosition], elementPosition);
+                TimeSettingsDayNight.SelectEndTime(testData.InputData.EndTime[inputDataArrayPosition], elementPosition);
+            }
 
             TimeSettingsDayNight.ClickSaveButton();
             TimeManager.MediumPause();
 
+            //Verify the name
             Assert.AreEqual(testData.InputData.Name, TimeSettingsDayNight.GetNameValue());
+
+            //Verify the label text
+            Assert.IsTrue(TimeSettingsDayNight.IsDayNightCalendarTextCorrect(testData.ExpectedData.LabelText));
+
+            //Verify 'Start Time' and 'End Time' of the record(s)
+            for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
+            {
+                int inputDataArrayPosition = elementPosition - 1;
+                Assert.AreEqual(testData.InputData.StartTime[inputDataArrayPosition], TimeSettingsDayNight.GetStartTimeValue(elementPosition));
+                Assert.AreEqual(testData.InputData.EndTime[inputDataArrayPosition], TimeSettingsDayNight.GetEndTimeValue(elementPosition));
+            }
         }
     }
 }

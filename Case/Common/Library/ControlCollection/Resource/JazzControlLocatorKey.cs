@@ -179,7 +179,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonWorktimeCalendarSave = "ButtonWorktimeCalendarSave";
         public static string ButtonWorktimeCalendarCancel = "ButtonWorktimeCalendarCancel";
         public static string ButtonWorktimeCalendarDelete = "ButtonWorktimeCalendarDelete";
-        public static string ButtonWorktimeCalendarAddMoreRanges = "ButtonWorktimeCalendarAddMoreRanges";
+        public static string LinkButtonWorktimeCalendarAddMoreRanges = "LinkButtonWorktimeCalendarAddMoreRanges";
         #endregion
         #region heatingcoolingseason
         public static string ButtonHeatingCoolingSeasonCalendarCreate = "ButtonHeatingCoolingSeasonCalendarCreate";
@@ -187,8 +187,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonHeatingCoolingSeasonCalendarSave = "ButtonHeatingCoolingSeasonCalendarSave";
         public static string ButtonHeatingCoolingSeasonCalendarCancel = "ButtonHeatingCoolingSeasonCalendarCancel";
         public static string ButtonHeatingCoolingSeasonCalendarDelete = "ButtonHeatingCoolingSeasonCalendarDelete";
-        public static string ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges = "ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges";
-        public static string ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges = "ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges";
+        public static string LinkButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges = "LinkButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges";
+        public static string LinkButtonHeatingCoolingSeasonCalendarAddMoreColdRanges = "LinkButtonHeatingCoolingSeasonCalendarAddMoreColdRanges";
         #endregion
         #region daynight
         public static string ButtonDayNightCalendarCreate = "ButtonDayNightCalendarCreate";
@@ -196,7 +196,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonDayNightCalendarSave = "ButtonDayNightCalendarSave";
         public static string ButtonDayNightCalendarCancel = "ButtonDayNightCalendarCancel";
         public static string ButtonDayNightCalendarDelete = "ButtonDayNightCalendarDelete";
-        public static string ButtonDayNightCalendarAddMoreRanges = "ButtonDayNightCalendarAddMoreRanges";
+        public static string LinkButtonDayNightCalendarAddMoreRanges = "LinkButtonDayNightCalendarAddMoreRanges";
+        #endregion
+        #region carbonfactor
+        public static string ButtonCarbonFactorCreate = "ButtonCarbonFactorCreate";
+        public static string ButtonCarbonFactorModify = "ButtonCarbonFactorModify";
+        public static string ButtonCarbonFactorSave = "ButtonCarbonFactorSave";
+        public static string ButtonCarbonFactorCancel = "ButtonCarbonFactorCancel";
+        public static string ButtonCarbonFactorDelete = "ButtonCarbonFactorDelete";
+        public static string LinkButtonCarbonFactorAddMoreRanges = "LinkButtonCarbonFactorAddMoreRanges";
         #endregion
         #endregion
         #endregion
@@ -262,6 +270,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
         #region daynight
         public static string TextFieldDayNightCalendarName = "TextFieldDayNightCalendarName";
+        #endregion
+        #region carbon factor
+        public static string TextFieldCarbonFactorValue = "TextFieldCarbonFactorValue";
         #endregion
         #endregion
         #endregion
@@ -330,6 +341,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxDayNightCalendarStartTime = "ComboBoxDayNightCalendarStartTime";
         public static string ComboBoxDayNightCalendarEndTime = "ComboBoxDayNightCalendarEndTime";
         #endregion
+        #region carbonfactor
+        public static string ComboBoxCarbonFactorSource = "ComboBoxCarbonFactorSource";
+        public static string ComboBoxCarbonFactorDestination = "ComboBoxCarbonFactorDestination";
+        public static string ComboBoxCarbonFactorEffectiveYear = "ComboBoxCarbonFactorEffectiveYear";
+        #endregion
 
         #region User Setting
         public static string ButtonUserCreate = "ButtonUserCreate";
@@ -375,8 +391,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridEnergyAnalysisAllTagList = "GridEnergyAnalysisAllTagList";
         public static string GridEnergyAnalysisSystemDimensionTagList = "GridEnergyAnalysisSystemDimensionTagList";
         public static string GridEnergyAnalysisAreaDimensionTagList = "GridEnergyAnalysisAreaDimensionTagList";
-
-        public static string GridEnergyAnalysisEnergyDataList = "GridEnergyAnalysisEnergyDataList";
+		public static string GridEnergyAnalysisEnergyDataList = "GridEnergyAnalysisEnergyDataList";
         #endregion
 
         #region Customer settings
@@ -401,10 +416,19 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region Label
-        #region Hierarchy People Area property
+        #region Customer settings
+        #region hierarchy calendar property
         public static string LabelWorkdayCalendar = "LabelWorkdayCalendar";
         public static string LabelHeatingCoolingCalendar = "LabelHeatingCoolingCalendar";
         public static string LabelDayNightCalendar = "LabelDayNightCalendar";
+        #endregion
+        #endregion
+        #region Platform settings
+        #region calendar
+        public static string LabelPlatformWorkdayCalendar = "LabelPlatformWorkdayCalendar";
+        public static string LabelPlatformWorktimeCalendar = "LabelPlatformWorktimeCalendar";
+        public static string LabelPlatformDayNightCalendar = "LabelPlatformDayNightCalendar";
+        #endregion
         #endregion
         #endregion
     }

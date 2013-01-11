@@ -13,8 +13,8 @@ namespace Mento.ScriptCommon.TestData.Administration
     public class HeatingCoolingSeasonCalendarInputData : InputTestDataBase
     {
         public string Name { get; set; }
-        public int[] WarmRecordGroupPosition { get; set; }
-        public int[] ColdRecordGroupPosition { get; set; }
+        public int WarmRecordNumber { get; set; }
+        public int ColdRecordNumber { get; set; }
         public string[] WarmStartMonth { get; set; }
         public string[] WarmStartDate { get; set; }
         public string[] WarmEndMonth { get; set; }
@@ -24,11 +24,11 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string[] ColdEndMonth { get; set; }
         public string[] ColdEndDate { get; set; }
 
-        public HeatingCoolingSeasonCalendarInputData(string name, int[] warmRecordGroupPosition, int[] coldRecordGroupPosition, string[] warmStartMonth, string[] warmStartDate, string[] warmEndMonth, string[] warmEndDate, string[] coldStartMonth, string[] coldStartDate, string[] coldEndMonth, string[] coldEndDate)
+        public HeatingCoolingSeasonCalendarInputData(string name, int warmRecordNumber, int coldRecordNumber, string[] warmStartMonth, string[] warmStartDate, string[] warmEndMonth, string[] warmEndDate, string[] coldStartMonth, string[] coldStartDate, string[] coldEndMonth, string[] coldEndDate)
         {
             this.Name = name;
-            this.WarmRecordGroupPosition = warmRecordGroupPosition;
-            this.ColdRecordGroupPosition = coldRecordGroupPosition;
+            this.WarmRecordNumber = warmRecordNumber;
+            this.ColdRecordNumber = coldRecordNumber;
             this.WarmStartMonth = warmStartMonth;
             this.WarmStartDate = warmStartDate;
             this.WarmEndMonth = warmEndMonth;
@@ -43,8 +43,8 @@ namespace Mento.ScriptCommon.TestData.Administration
     public class HeatingCoolingSeasonCalendarExpectedData : ExpectedTestDataBase
     {
         public string Name { get; set; }
-        public int[] WarmRecordGroupPosition { get; set; }
-        public int[] ColdRecordGroupPosition { get; set; }
+        public int WarmRecordNumber { get; set; }
+        public int ColdRecordNumber { get; set; }
         public string[] WarmStartMonth { get; set; }
         public string[] WarmStartDate { get; set; }
         public string[] WarmEndMonth { get; set; }
@@ -54,11 +54,11 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string[] ColdEndMonth { get; set; }
         public string[] ColdEndDate { get; set; }
 
-        public HeatingCoolingSeasonCalendarExpectedData(string name, int[] warmRecordGroupPosition, int[] coldRecordGroupPosition, string[] warmStartMonth, string[] warmStartDate, string[] warmEndMonth, string[] warmEndDate, string[] coldStartMonth, string[] coldStartDate, string[] coldEndMonth, string[] coldEndDate)
+        public HeatingCoolingSeasonCalendarExpectedData(string name, int warmRecordNumber, int coldRecordNumber, string[] warmStartMonth, string[] warmStartDate, string[] warmEndMonth, string[] warmEndDate, string[] coldStartMonth, string[] coldStartDate, string[] coldEndMonth, string[] coldEndDate)
         {
             this.Name = name;
-            this.WarmRecordGroupPosition = warmRecordGroupPosition;
-            this.ColdRecordGroupPosition = coldRecordGroupPosition;
+            this.WarmRecordNumber = warmRecordNumber;
+            this.ColdRecordNumber = coldRecordNumber;
             this.WarmStartMonth = warmStartMonth;
             this.WarmStartDate = warmStartDate;
             this.WarmEndMonth = warmEndMonth;

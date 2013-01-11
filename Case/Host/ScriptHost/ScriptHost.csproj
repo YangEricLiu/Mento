@@ -182,6 +182,7 @@
     <Content Include="Data\Customer\HierarchyConfiguration\HierarchyManagement\TC-J1-SmokeTest-001-001.json" />
     <Content Include="Data\Administration\LoginSuite\TA-Trial-Login-001.json" />
     <Content Include="Data\Administration\ShowTimeSuite\TC-J1-ShowTime-001.json" />
+    <None Include="Data\Administration\CarbonFactor\CarbonFactorSuite\TC-J1-SmokeTest-024.json" />
     <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonSuite\TC-J1-SmokeTest-030.json" />
     <None Include="Data\Administration\TimeManagement\DayNightSuite\TC-J1-SmokeTest-029.json" />
     <None Include="Data\Administration\TimeManagement\WorktimeSuite\TC-J1-SmokeTest-028.json" />

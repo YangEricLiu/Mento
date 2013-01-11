@@ -45,33 +45,66 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
 
             TimeSettingsHeatingCoolingSeason.FillInName(testData.InputData.Name);
+                      
+            //Input warm record(s) based on the input data file
+            for (int elementPosition = 1; elementPosition <= testData.InputData.WarmRecordNumber; elementPosition++)
+            {
+                //Click '添加采暖季' button if more than one warm record need to be entered                    
+                if (elementPosition > 1)
+                {
+                    TimeSettingsHeatingCoolingSeason.ClickAddMoreWarmRangesButton();
+                    TimeManager.ShortPause();
+                }
 
-            //Input warm date range1
-            TimeSettingsHeatingCoolingSeason.SelectWarmStartMonth(testData.InputData.WarmStartMonth[0], testData.InputData.WarmRecordGroupPosition[0]);
-            TimeSettingsHeatingCoolingSeason.SelectWarmStartDate(testData.InputData.WarmStartDate[0], testData.InputData.WarmRecordGroupPosition[0]);
-            TimeSettingsHeatingCoolingSeason.SelectWarmEndMonth(testData.InputData.WarmEndMonth[0], testData.InputData.WarmRecordGroupPosition[0]);
-            TimeSettingsHeatingCoolingSeason.SelectWarmEndDate(testData.InputData.WarmEndDate[0], testData.InputData.WarmRecordGroupPosition[0]);
+                int inputDataArrayPosition = elementPosition - 1;
+                TimeSettingsHeatingCoolingSeason.SelectWarmStartMonth(testData.InputData.WarmStartMonth[inputDataArrayPosition], elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectWarmStartDate(testData.InputData.WarmStartDate[inputDataArrayPosition], elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectWarmEndMonth(testData.InputData.WarmEndMonth[inputDataArrayPosition], elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectWarmEndDate(testData.InputData.WarmEndDate[inputDataArrayPosition], elementPosition);
+            }
 
-            //Click '添加采暖季' button to add one more warm date range record
-            TimeSettingsHeatingCoolingSeason.ClickAddMoreWarmRangesButton();
+            //Input cold record(s) based on the input data file
+            for (int elementPosition = 1; elementPosition <= testData.InputData.ColdRecordNumber; elementPosition++)
+            {
+                //Click '添加供冷季' button if more than one cold record need to be entered                    
+                if (elementPosition > 1)
+                {
+                    TimeSettingsHeatingCoolingSeason.ClickAddMoreColdRangesButton();
+                    TimeManager.ShortPause();
+                }
 
-            //Input warm date range2
-            TimeSettingsHeatingCoolingSeason.SelectWarmStartMonth(testData.InputData.WarmStartMonth[1], testData.InputData.WarmRecordGroupPosition[1]);
-            TimeSettingsHeatingCoolingSeason.SelectWarmStartDate(testData.InputData.WarmStartDate[1], testData.InputData.WarmRecordGroupPosition[1]);
-            TimeSettingsHeatingCoolingSeason.SelectWarmEndMonth(testData.InputData.WarmEndMonth[1], testData.InputData.WarmRecordGroupPosition[1]);
-            TimeSettingsHeatingCoolingSeason.SelectWarmEndDate(testData.InputData.WarmEndDate[1], testData.InputData.WarmRecordGroupPosition[1]);
-
-            //Input cold date range1
-            TimeSettingsHeatingCoolingSeason.SelectColdStartMonth(testData.InputData.ColdStartMonth[0], testData.InputData.ColdRecordGroupPosition[0]);
-            TimeSettingsHeatingCoolingSeason.SelectColdStartDate(testData.InputData.ColdStartDate[0], testData.InputData.ColdRecordGroupPosition[0]);
-            TimeSettingsHeatingCoolingSeason.SelectColdEndMonth(testData.InputData.ColdEndMonth[0], testData.InputData.ColdRecordGroupPosition[0]);
-            TimeSettingsHeatingCoolingSeason.SelectColdEndDate(testData.InputData.ColdEndDate[0], testData.InputData.ColdRecordGroupPosition[0]);
-
+                int inputDataArrayPosition = elementPosition - 1;
+                TimeSettingsHeatingCoolingSeason.SelectColdStartMonth(testData.InputData.ColdStartMonth[inputDataArrayPosition], elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectColdStartDate(testData.InputData.ColdStartDate[inputDataArrayPosition], elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectColdEndMonth(testData.InputData.ColdEndMonth[inputDataArrayPosition], elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectColdEndDate(testData.InputData.ColdEndDate[inputDataArrayPosition], elementPosition);
+            }
 
             TimeSettingsHeatingCoolingSeason.ClickSaveButton();
             TimeManager.MediumPause();
 
+            //Verify the name
             Assert.AreEqual(testData.InputData.Name, TimeSettingsHeatingCoolingSeason.GetNameValue());
+
+            //Verify the warm record(s)
+            for (int elementPosition = 1; elementPosition <= testData.InputData.WarmRecordNumber; elementPosition++)
+            {
+                int inputDataArrayPosition = testData.InputData.WarmRecordNumber - elementPosition; //Note: After saving, the second record will be displayed on top and become the first position. so inputDataArrayPosition doesn't equal to "elementPosition - 1" this time.
+                Assert.AreEqual(testData.InputData.WarmStartMonth[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetWarmStartMonthValue(elementPosition));
+                Assert.AreEqual(testData.InputData.WarmStartDate[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetWarmStartDateValue(elementPosition));
+                Assert.AreEqual(testData.InputData.WarmEndMonth[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetWarmEndMonthValue(elementPosition));
+                Assert.AreEqual(testData.InputData.WarmEndDate[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetWarmEndDateValue(elementPosition));
+            }
+
+            //Verify the cold record(s)
+            for (int elementPosition = 1; elementPosition <= testData.InputData.ColdRecordNumber; elementPosition++)
+            {
+                int inputDataArrayPosition = testData.InputData.ColdRecordNumber - elementPosition;
+                Assert.AreEqual(testData.InputData.ColdStartMonth[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetColdStartMonthValue(elementPosition));
+                Assert.AreEqual(testData.InputData.ColdStartDate[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetColdStartDateValue(elementPosition));
+                Assert.AreEqual(testData.InputData.ColdEndMonth[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetColdEndMonthValue(elementPosition));
+                Assert.AreEqual(testData.InputData.ColdEndDate[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetColdEndDateValue(elementPosition));
+            }
         }
     }
 }

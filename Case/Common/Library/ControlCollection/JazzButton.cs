@@ -177,7 +177,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button WorktimeCalendarSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarSave);
         public static Button WorktimeCalendarCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarCancel);
         public static Button WorktimeCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarDelete);
-        public static Button WorktimeCalendarAddMoreRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarAddMoreRanges);
+        public static LinkButton WorktimeCalendarAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonWorktimeCalendarAddMoreRanges);
         #endregion
         #region HeatingCoolingSeason buttons
         public static Button HeatingCoolingSeasonCalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarCreate);
@@ -185,8 +185,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button HeatingCoolingSeasonCalendarSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarSave);
         public static Button HeatingCoolingSeasonCalendarCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarCancel);
         public static Button HeatingCoolingSeasonCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarDelete);
-        public static Button HeatingCoolingSeasonCalendarAddMoreWarmRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges);
-        public static Button HeatingCoolingSeasonCalendarAddMoreColdRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges);
+        public static LinkButton HeatingCoolingSeasonCalendarAddMoreWarmRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges);
+        public static LinkButton HeatingCoolingSeasonCalendarAddMoreColdRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonHeatingCoolingSeasonCalendarAddMoreColdRanges);
         #endregion
         #region DayNight buttons
         public static Button DayNightCalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarCreate);
@@ -194,7 +194,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button DayNightCalendarSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarSave);
         public static Button DayNightCalendarCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarCancel);
         public static Button DayNightCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarDelete);
-        public static Button DayNightCalendarAddMoreRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarAddMoreRanges);
+        public static LinkButton DayNightCalendarAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonDayNightCalendarAddMoreRanges);
+        #endregion
+        #region Carbonfactor buttons
+        public static Button CarbonFactorCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorCreate);
+        public static Button CarbonFactorModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorModify);
+        public static Button CarbonFactorSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorSave);
+        public static Button CarbonFactorCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorCancel);
+        public static Button CarbonFactorDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorDelete);
+        public static LinkButton CarbonFactorAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonCarbonFactorAddMoreRanges);
+        
         #endregion
 
         #region User setting

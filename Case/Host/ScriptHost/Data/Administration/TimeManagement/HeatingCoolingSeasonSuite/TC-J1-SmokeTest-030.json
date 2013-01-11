@@ -2,13 +2,13 @@
 	{
 		"InputData":
 		{	
-			"Name":"冷暖季 Calendar_1",
-			"WarmRecordGroupPosition":[1,2],
+			"Name":"冷暖季日历1",
+			"WarmRecordNumber":2,
 			"WarmStartMonth":["01","11"],
 			"WarmStartDate":["01","15"],
 			"WarmEndMonth":["03","12"],
 			"WarmEndDate":["15","31"],
-			"ColdRecordGroupPosition":[1],
+			"ColdRecordNumber":1,
 			"ColdStartMonth":["05"],
 			"ColdStartDate":["31"],
 			"ColdEndMonth":["08"],
@@ -16,7 +16,6 @@
 		},
 		"ExpectedData":
 		{
-			"Name":"冷暖季 Calendar_1",
 		}
 	}
 ]

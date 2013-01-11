@@ -31,8 +31,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DeleteButton = JazzButton.HeatingCoolingSeasonCalendarDeleteButton;
 
         private static TextField NameTextField = JazzTextField.HeatingCoolingSeasonCalendarNameTextField;
-        private static Button AddMoreWarmRangesButton = JazzButton.HeatingCoolingSeasonCalendarAddMoreWarmRangesButton;
-        private static Button AddMoreColdRangesButton = JazzButton.HeatingCoolingSeasonCalendarAddMoreColdRangesButton;
+        private static LinkButton AddMoreWarmRangesButton = JazzButton.HeatingCoolingSeasonCalendarAddMoreWarmRangesButton;
+        private static LinkButton AddMoreColdRangesButton = JazzButton.HeatingCoolingSeasonCalendarAddMoreColdRangesButton;
         private static ComboBox WarmStartMonthComboBox = JazzComboBox.HeatingCoolingSeasonCalendarWarmStartMonthComboBox;
         private static ComboBox WarmStartDateComboBox = JazzComboBox.HeatingCoolingSeasonCalendarWarmStartDateComboBox;
         private static ComboBox WarmEndMonthComboBox = JazzComboBox.HeatingCoolingSeasonCalendarWarmEndMonthComboBox;
@@ -198,6 +198,94 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetNameValue()
         {
             return NameTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get Warm Start Month value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetWarmStartMonthValue(int num)
+        {
+            ComboBox OneStartMonth = GetOneWarmStartMonthComboBox(num);
+            return OneStartMonth.GetValue();
+        }
+
+        /// <summary>
+        /// Get Warm Start Date value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetWarmStartDateValue(int num)
+        {
+            ComboBox OneStartDate = GetOneWarmStartDateComboBox(num);
+            return OneStartDate.GetValue();
+        }
+
+        /// <summary>
+        /// Get Warm End Month value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetWarmEndMonthValue(int num)
+        {
+            ComboBox OneEndMonth = GetOneWarmEndMonthComboBox(num);
+            return OneEndMonth.GetValue();
+        }
+
+        /// <summary>
+        /// Get Warm End Date value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetWarmEndDateValue(int num)
+        {
+            ComboBox OneEndDate = GetOneWarmEndDateComboBox(num);
+            return OneEndDate.GetValue();
+        }
+
+        /// <summary>
+        /// Get Cold Start Month value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetColdStartMonthValue(int num)
+        {
+            ComboBox OneStartMonth = GetOneColdStartMonthComboBox(num);
+            return OneStartMonth.GetValue();
+        }
+
+        /// <summary>
+        /// Get Cold Start Date value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetColdStartDateValue(int num)
+        {
+            ComboBox OneStartDate = GetOneColdStartDateComboBox(num);
+            return OneStartDate.GetValue();
+        }
+
+        /// <summary>
+        /// Get Cold End Month value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetColdEndMonthValue(int num)
+        {
+            ComboBox OneEndMonth = GetOneColdEndMonthComboBox(num);
+            return OneEndMonth.GetValue();
+        }
+
+        /// <summary>
+        /// Get Cold End Date value
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetColdEndDateValue(int num)
+        {
+            ComboBox OneEndDate = GetOneColdEndDateComboBox(num);
+            return OneEndDate.GetValue();
         }
 
         #region private method

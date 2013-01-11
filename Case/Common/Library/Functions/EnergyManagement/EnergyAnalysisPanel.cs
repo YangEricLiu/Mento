@@ -42,8 +42,11 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SelectHierarchy(string[] hierarchyNames)
         {
+            List<string> parentHierarchies = hierarchyNames.ToList();
+            parentHierarchies.Remove(hierarchyNames.Last());
+
             SelectHierarchyButton.Click();
-            HierarchyTree.ExpandNodePath(hierarchyNames);
+            HierarchyTree.ExpandNodePath(parentHierarchies.ToArray());
             HierarchyTree.ClickNode(hierarchyNames.Last());
         }
 

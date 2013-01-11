@@ -42,31 +42,16 @@ namespace Mento.Framework.DataAccess
             {
                 //StreamReader scriptReader = new StreamReader(scripts[i].FullName);
 
-                SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings[ConfigurationKey.JAZZ_DATABASE_KEY].ConnectionString);
-                Microsoft.SqlServer.Management.Smo.Server server = new Server(new ServerConnection(connection));
-                int result = server.ConnectionContext.ExecuteNonQuery(File.ReadAllText(scripts[i].FullName));
-
-                //if (result != 1)
-                //    throw new Exception("can not execute init sql.");
-
-                
-                //DbCommand command;// = JazzDatabase.GetSqlStringCommand(File.ReadAllText());
-                //StringBuilder builder = new StringBuilder();
-                //string line = String.Empty;
-
-                //while (!scriptReader.EndOfStream)
-                //{
-                //    line = scriptReader.ReadLine();
-                //    if (line.Trim().ToUpper() != @"GO")
-                //        builder.AppendLine(line);
-                //    else
-                //    {
-                //        command = JazzDatabase.GetSqlStringCommand(builder.ToString());
-                //        JazzDatabase.ExecuteNonQuery(command);
-
-                //        builder.Remove(0, builder.Length);
-                //    }
-                //}
+                try
+                {
+                    SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings[ConfigurationKey.JAZZ_DATABASE_KEY].ConnectionString);
+                    Microsoft.SqlServer.Management.Smo.Server server = new Server(new ServerConnection(connection));
+                    int result = server.ConnectionContext.ExecuteNonQuery(File.ReadAllText(scripts[i].FullName));
+                }
+                catch (Exception ex)
+                {
+                    throw new ApiException(String.Format("DB script execute error in: {0}", scripts[i].FullName), ex);
+                }
             }
         }
     } 

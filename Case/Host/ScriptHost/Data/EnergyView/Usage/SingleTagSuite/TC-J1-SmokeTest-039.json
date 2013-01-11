@@ -1,7 +1,7 @@
 ﻿{
 	"InputData":
 	{
-		"Hierarchies":["阿里斯集团"],
+		"Hierarchies":["自动化测试","HierarchyEV"],
 		"TagNames":["P0"],
 		"ViewType":"List"
 	}

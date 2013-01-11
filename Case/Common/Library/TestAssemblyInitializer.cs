@@ -18,12 +18,13 @@ namespace Mento.ScriptCommon.Library
         {
             InitializeExecutionContext();
 
+            if (IsInitializeDatabase())
+                JazzDatabaseOperator.Initialize();
+
             JazzBrowseManager.OpenJazz();
 
             JazzFunction.LoginPage.LoginToCustomer();
 
-            if (IsInitializeDatabase())
-                JazzDatabaseOperator.Initialize();
         }
 
         public static void Desctuct()

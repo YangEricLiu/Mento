@@ -59,5 +59,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return this.ButtonInput.Enabled;
         }
+
+        public bool IsDisplayed()
+        {
+            return this.RootElement.Displayed;
+        }
     }
 }

@@ -253,5 +253,18 @@ namespace Mento.ScriptCommon.Library
                 return _UserSettings;
             }
         }
+
+        public static HierarchyCostSettings _HierarchyCostSettings;
+        public static HierarchyCostSettings HierarchyCostSettings
+        {
+            get
+            {
+                if (_HierarchyCostSettings == null)
+                    _HierarchyCostSettings = new HierarchyCostSettings();
+
+                return _HierarchyCostSettings;
+            }
+        }
+        
     }
 }

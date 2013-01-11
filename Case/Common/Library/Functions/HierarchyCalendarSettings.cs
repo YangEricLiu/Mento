@@ -23,6 +23,7 @@ namespace Mento.ScriptCommon.Library.Functions
         #region Controls
         private static TabButton CalendarTab = JazzButton.CalendarPropertyTabButton;
         private static Button CalendarCreate = JazzButton.CalendarCreateButton;
+        private static Button CalendarUpdate = JazzButton.CalendarUpdateButton;
         private static Button WorkdayCreate = JazzButton.WorkdayCreateButton;
         private static Button HeatingCoolingCreate = JazzButton.HeatingCoolingCreateButton;
         private static Button DayNightCreate = JazzButton.DayNightCreateButton;
@@ -47,7 +48,14 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickCreateCalendarButton()
         {
-            CalendarCreate.Click();
+            if (CalendarCreate.IsDisplayed())
+            {
+                CalendarCreate.Click();
+            }
+            else if (CalendarUpdate.IsDisplayed())
+            {
+                CalendarUpdate.Click();
+            }
         }
 
         public void ClickSaveCalendarButton()

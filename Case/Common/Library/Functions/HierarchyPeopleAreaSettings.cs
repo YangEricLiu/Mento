@@ -23,6 +23,7 @@ namespace Mento.ScriptCommon.Library.Functions
         #region Controls
         private static TabButton PeopleAreaTab = JazzButton.PeopleAreaPropertyTabButton;
         private static Button PeopleAreaCreate = JazzButton.PeopleAreaCreateButton;
+        private static Button PeopleAreaUpdate = JazzButton.PeopleAreaUpdateButton;
         private static Button PeopleAreaSave = JazzButton.PeopleAreaSaveButton;
         private static TextField TotalAreaValue = JazzTextField.TotalAreaValueTextField;
         private static TextField HeatingAreaValue = JazzTextField.HeatingAreaValueTextField;
@@ -41,7 +42,14 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickPeopleAreaCreateButton()
         {
-            PeopleAreaCreate.Click();
+            if (PeopleAreaCreate.IsDisplayed())
+            {
+                PeopleAreaCreate.Click();
+            }
+            else if (PeopleAreaUpdate.IsDisplayed())
+            {
+                PeopleAreaUpdate.Click();
+            }
         }
 
         public void ClickSaveButton()

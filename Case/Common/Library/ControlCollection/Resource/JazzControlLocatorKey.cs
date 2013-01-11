@@ -140,6 +140,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonCalendarCreate = "ButtonCalendarCreate";
         public static string ButtonCalendarSave = "ButtonCalendarSave";
         public static string ButtonCalendarCancel = "ButtonCalendarCancel";
+        public static string ButtonCalendarUpdate = "ButtonCalendarUpdate";
         public static string ButtonWorkdayCreate = "ButtonWorkdayCreate";
         public static string ButtonHeatingCoolingCreate = "ButtonHeatingCoolingCreate";
         public static string ButtonDayNightCreate = "ButtonDayNightCreate";
@@ -149,7 +150,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonPeopleAreaCreate = "ButtonPeopleAreaCreate";
         public static string ButtonPeopleAreaSave = "ButtonPeopleAreaSave";
         public static string ButtonPeopleAreaCancel = "ButtonPeopleAreaCancel";
+        public static string ButtonPeopleAreaUpdate = "ButtonPeopleAreaUpdate";
         public static string ButtonPeopleCreate = "ButtonPeopleCreate";
+
+        public static string TabButtonCostProperty = "TabButtonCostProperty";
+        public static string ButtonCostCreate = "ButtonCostCreate";
+        public static string ButtonCostSave = "ButtonCostSave";
+        public static string ButtonCostCancel = "ButtonCostCancel";
+        public static string ButtonCostUpdate = "ButtonCostUpdate";
+        public static string ButtonElectricCostCreate = "ButtonElectricCostCreate";
+
         #endregion
 
         #endregion
@@ -320,6 +330,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ComboBoxDayNightEffectiveYear = "ComboBoxDayNightEffectiveYear";
         public static string ComboBoxDayNightCalendarName = "ComboBoxDayNightCalendarName";
+
+        public static string ComboBoxElectricPriceMode = "ComboBoxElectricPriceMode";
         #endregion
 
         #region PTag settings
@@ -444,6 +456,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region MonthPicker
         #region Hierarchy People Area property
         public static string MonthPickerPeopleEffectiveDate = "MonthPickerPeopleEffectiveDate";
+        public static string MonthPickerElectricCostEffectiveDate = "MonthPickerElectricCostEffectiveDate";
         #endregion
         #endregion
 

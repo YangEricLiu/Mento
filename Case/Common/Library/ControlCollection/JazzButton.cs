@@ -88,6 +88,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TabButton CalendarPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonCalendarProperty);
         public static Button CalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonCalendarCreate);
         public static Button CalendarSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonCalendarSave);
+        public static Button CalendarUpdateButton = GetControl<Button>(JazzControlLocatorKey.ButtonCalendarUpdate);
+        public static Button CalendarCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonCalendarCancel);
         public static Button WorkdayCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCreate);
         public static Button HeatingCoolingCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingCreate);
         public static Button DayNightCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCreate);
@@ -97,6 +99,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button PeopleAreaCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonPeopleAreaCreate);
         public static Button PeopleAreaSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonPeopleAreaSave);
         public static Button PeopleCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonPeopleCreate);
+        public static Button PeopleAreaUpdateButton = GetControl<Button>(JazzControlLocatorKey.ButtonPeopleAreaUpdate);
+        public static Button PeopleAreaCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonPeopleAreaCancel);
+
+        public static TabButton CostPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonCostProperty);
+        public static Button CostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonCostCreate);
+        public static Button CostSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonCostSave);
+        public static Button CostCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonCostCancel);
+        public static Button CostUpdateButton  = GetControl<Button>(JazzControlLocatorKey.ButtonCostUpdate);
+        public static Button ElectricCostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonElectricCostCreate);
         #endregion
         #endregion
 

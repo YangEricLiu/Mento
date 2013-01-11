@@ -21,7 +21,47 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         #region Controls
-
+        private static TabButton CostProperty = JazzButton.CostPropertyTabButton;
+        private static Button CostCreate = JazzButton.CostCreateButton;
+        private static Button CostUpdate = JazzButton.CostUpdateButton;
+        private static Button ElectricCostCreate = JazzButton.ElectricCostCreateButton;
+        private static ComboBox ElectricPriceMode = JazzComboBox.ElectricPriceModeComboBox;
+        private static MonthPicker ElectricCostEffectiveDate = JazzMonthPicker.ElectricCostEffectiveDateMonthPicker;
         #endregion
+
+        #region cost property
+        public void ClickCostPropertyTabButton()
+        {
+            CostProperty.Click();
+        }
+
+        public void ClickCostCreateButton()
+        {
+            if (CostCreate.IsDisplayed())
+            {
+                CostCreate.Click();
+            }
+            else if (CostUpdate.IsDisplayed())
+            {
+                CostUpdate.Click();
+            }
+        }
+
+        public void ClickElectricCostCreateButton()
+        {
+            ElectricCostCreate.Click();
+        }
+
+        public void SelectElectricPriceMode(string priceMode)
+        {
+            ElectricPriceMode.SelectItem(priceMode);
+        }
+
+        public void SelectElectricEffectiveDate(DateTime date)
+        {
+            ElectricCostEffectiveDate.SelectYearMonthItem(date);
+        }
+        #endregion
+
     }
 }

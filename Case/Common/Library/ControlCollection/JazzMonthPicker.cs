@@ -18,6 +18,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region customer setting
         #region hierarchy people area property
         public static MonthPicker PeopleEffectiveDateMonthPicker = GetControl<MonthPicker>(JazzControlLocatorKey.MonthPickerPeopleEffectiveDate, 1);
+        public static MonthPicker ElectricCostEffectiveDateMonthPicker = GetControl<MonthPicker>(JazzControlLocatorKey.MonthPickerElectricCostEffectiveDate, 2);
         #endregion
         #endregion
     }

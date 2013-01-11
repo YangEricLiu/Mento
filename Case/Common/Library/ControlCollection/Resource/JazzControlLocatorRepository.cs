@@ -43,5 +43,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
             return Locator.GetVariableLocator(variableLocator, variables);
         }
+
+        public static Locator GetLocator(string key, string positionIndex)
+        {
+            var variableLocator = GetLocator(key);
+
+            Hashtable variables = new Hashtable() { { JAZZCONTROLPOSITIONINDEX, positionIndex } };
+
+            return Locator.GetVariableLocator(variableLocator, variables);
+        }
     }
 }

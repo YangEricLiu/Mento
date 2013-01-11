@@ -46,10 +46,9 @@ namespace Mento.Script.EnergyView.Usage
         /// </summary>
         [Test]
         [CaseID("TC-J1-SmokeTest-039")]
-        public void SingleTagDataView()
+        [MultipleTestDataSource(typeof(EnergyViewData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-039")]
+        public void SingleTagDataView(EnergyViewData testData)
         {
-            EnergyViewData testData = TestContext.CurrentContext.GetTestData<EnergyViewData>();
-
             DataPanel.SelectHierarchy(testData.InputData.Hierarchies);
 
             DataPanel.CheckTags(testData.InputData.TagNames);

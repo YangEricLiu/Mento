@@ -17,7 +17,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public void Trigger()
         {
             var Trigger = this.FindChild(TriggerLocator);
-            ElementHandler.Click(Trigger, this.RootElement.Size.Width - 5, 0);
+            ElementHandler.Click(Trigger, this.RootElement.Size.Width - 5, 8);
         }
 
         public void SelectItem(string[] itemPath)

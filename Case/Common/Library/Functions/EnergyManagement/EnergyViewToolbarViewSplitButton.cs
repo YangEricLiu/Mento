@@ -21,11 +21,11 @@ namespace Mento.ScriptCommon.Library.Functions
             {EnergyViewType.Distribute,new string[] { "分布数据" }},
         };
 
-        public EnergyViewType CurrentViewType
-        {
-            get;
-            set;
-        }
+        //public EnergyViewType CurrentViewType
+        //{
+        //    get;
+        //    set;
+        //}
 
         public void Click()
         {
@@ -38,7 +38,7 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.FlashPause();
 
             ViewButton.SelectItem(MenuItemDictionary[viewType]);
-            CurrentViewType = viewType;
+            //CurrentViewType = viewType;
         }
     }
 

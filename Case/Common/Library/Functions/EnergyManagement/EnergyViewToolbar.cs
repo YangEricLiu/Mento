@@ -38,14 +38,14 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void View(EnergyViewType viewType)
         {
-            if (ViewButton.CurrentViewType == viewType)
-            {
-                ViewButton.Click();
-            }
-            else
-            {
+            //if (ViewButton.CurrentViewType == viewType)
+            //{
+            //    ViewButton.Click();
+            //}
+            //else
+            //{
                 ViewButton.SwitchViewType(viewType);
-            }
+            //}
 
             JazzMessageBox.LoadingMask.WaitLoading();
         }

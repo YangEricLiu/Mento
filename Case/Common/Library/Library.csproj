@@ -63,12 +63,13 @@
     <Compile Include="ControlCollection\Resource\JazzControlLocatorRepository.cs" />
     <Compile Include="Functions\AreaDimensionSettings.cs" />
     <Compile Include="Functions\AssociateSettings.cs" />
-	<Compile Include="Functions\HierarchyCostSettings.cs" />
+    <Compile Include="Functions\KPITargetBaselineSettings.cs" />
+    <Compile Include="Functions\HierarchyCostSettings.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbar.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbarMoreMenu.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbarViewSplitButton.cs" />
     <Compile Include="Functions\CarbonFactorSettings.cs" />
-	<Compile Include="Functions\TimeSettingsHeatingCoolingSeason.cs" />
+    <Compile Include="Functions\TimeSettingsHeatingCoolingSeason.cs" />
     <Compile Include="Functions\TimeSettingsDayNight.cs" />
     <Compile Include="Functions\DisassociateSettings.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyAnalysisPanel.cs" />

@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="ClientAccess\LoginData.cs" />
     <Compile Include="Customer\HierarchyData.cs" />
+    <Compile Include="Customer\KPITargetData.cs" />
     <Compile Include="EnergyView\EnergyViewInputData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -76,7 +77,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EnergyView\" />
     <Folder Include="Information\" />
     <Folder Include="Platform\" />
   </ItemGroup>

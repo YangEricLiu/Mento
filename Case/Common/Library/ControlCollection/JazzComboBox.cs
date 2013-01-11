@@ -42,11 +42,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox VTagSettingsCalculationStepComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVTagSettingsCalculationStep);
         #endregion
         
-
         #region KPITag settings
         public static ComboBox KPITagSettingsUomComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITagSettingsUom);
         public static ComboBox KPITagSettingsCalculationTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITagSettingsCalculationType);
         public static ComboBox KPITagSettingsCalculationStepComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITagSettingsCalculationStep);
+        public static ComboBox KPITargetBaselineEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineEffectiveYear);
         #endregion
         #endregion
 

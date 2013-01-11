@@ -84,7 +84,21 @@
         <add key="ButtonKPITagSettingsCancel" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonKPITagSettingsModify" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
         <add key="ButtonKPITagSettingsDelete" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        
+
+        <add key="TabButtonKPITargetProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='目标值']]" type="XPath"/>
+        <add key="TabButtonKPIBaselineProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='基准值']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineCalculationRuleView" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算规则']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineCalculationRuleCreate" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算规则']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineCalculationRuleBack" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='返回']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineCalculationRuleModify" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineCalculateTarget" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算基准值']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineCalculateBaseline" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算基准值']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineRevise" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='修正计算值']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineSave" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineCancel" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineAddSpecialDates" value="//input[contains(@class,'x-tool-plus')]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineDeleteSpecialDates" value="//input[contains(@class,'x-tool-trash')]" type="XPath"/>
+
       </kpitag>
       <hierarchy>
         <add key="ButtonHierarchySettingsCreateChildHierarchy" value="st-hier-tree-add" type="ID"/>
@@ -213,12 +227,27 @@
         <add key="TextFieldVTagSettingsComment" value="//div[@id='st-vtag-form-body']//textarea[@name='Comment']" type="XPath"/>
         <add key="VFormulaField" value="//div[@id='st-vtag-formula-body']//textarea[@name='Formula']" type="XPath"/>
       </vtagsettings>
-
       <kpitagsettings>
         <add key="TextFieldKPITagSettingsName" value="//div[@id='st-kpi-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
         <add key="TextFieldKPITagSettingsCode" value="//div[@id='st-kpi-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
         <add key="TextFieldKPITagSettingsComment" value="//div[@id='st-kpi-form-body']//textarea[@name='Comment']" type="XPath"/>
         <add key="KPIFormulaField" value="//div[@id='st-KPI-formula-body']//textarea[@name='Formula']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineWorkdayRuleValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='Value']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineNonworkdayRuleValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='Value']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineSpecialdayRuleValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='Value']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineAnnualCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='Annual']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineJanuaryCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='January']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineFebruaryCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='February']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineMarchCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='March']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineAprilCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='April']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineMayCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='May']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineJuneCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='June']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineJulyCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='July']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineAugustCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='August']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineSeptemberCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='September']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineOctoberCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='October']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineNovemberCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='November']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineDecemberCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='December']" type="XPath"/>
       </kpitagsettings>
       <areadimensionsettings>
         <add key="TextFieldAreaDimensionSettingsName" value="//div[@id='st-area-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
@@ -274,6 +303,8 @@
         <add key="ComboBoxKPITagSettingsUom" value="//div[@id='st-kpi-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
         <add key="ComboBoxKPITagSettingsCalculationType" value="//div[@id='st-kpi-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
         <add key="ComboBoxKPITagSettingsCalculationStep" value="//div[@id='st-kpi-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
+
+        <add key="ComboBoxKPITargetBaselineEffectiveYear" value="//div[@id='setting-region-east-body']//input[1]" type="XPath"/>
       </kpitag>
     </customersettings>
     <platformsettings>

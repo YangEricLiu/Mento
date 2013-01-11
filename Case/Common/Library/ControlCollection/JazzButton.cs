@@ -130,11 +130,24 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button KPITagSettingsFormulaSave = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsFormulaSave);
 
         public static Button KPITagSettingsCreateKPITagButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsCreateKPITag);
-
         public static Button KPITagSettingsModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsModify);
         public static Button KPITagSettingsSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsSave);
         public static Button KPITagSettingsCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsCancel);
         public static Button KPITagSettingsDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsDelete);
+
+        public static TabButton KPITargetPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonKPITargetProperty);
+        public static TabButton KPIBaselinePropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonKPIBaselineProperty);
+        public static Button KPITargetBaselineCalculationRuleViewButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITargetBaselineCalculationRuleView);
+        public static Button KPITargetBaselineCalculationRuleCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITargetBaselineCalculationRuleCreate);
+        public static Button KPITargetBaselineCalculationRuleBackButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITargetBaselineCalculationRuleBack);
+        public static Button KPITargetBaselineCalculationRuleModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITargetBaselineCalculationRuleModify);
+        public static Button KPITargetBaselineCalculateTargetButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITargetBaselineCalculateTarget);
+        public static Button KPITargetBaselineCalculateBaselineButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITargetBaselineCalculateBaseline);
+        public static Button KPITargetBaselineReviseButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITargetBaselineRevise);
+        public static Button KPITargetBaselineSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITargetBaselineSave);
+        public static Button KPITargetBaselineCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITargetBaselineCancel);
+        public static Button KPITargetBaselineAddSpecialDatesButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITargetBaselineAddSpecialDates);
+        public static Button KPITargetBaselineDeleteSpecialDatesButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITargetBaselineDeleteSpecialDates);
         #endregion
 
         #region System dimension settings buttons

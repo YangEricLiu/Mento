@@ -112,6 +112,20 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonKPITagSettingsSave = "ButtonKPITagSettingsSave";
         public static string ButtonKPITagSettingsCancel = "ButtonKPITagSettingsCancel";
         public static string ButtonKPITagSettingsDelete = "ButtonKPITagSettingsDelete";
+
+        public static string TabButtonKPITargetProperty = "TabButtonKPITargetProperty";
+        public static string TabButtonKPIBaselineProperty = "TabButtonKPIBaselineProperty";
+        public static string ButtonKPITargetBaselineCalculationRuleView = "ButtonKPITargetBaselineCalculationRuleView";
+        public static string ButtonKPITargetBaselineCalculationRuleCreate = "ButtonKPITargetBaselineCalculationRuleCreate";
+        public static string ButtonKPITargetBaselineCalculationRuleBack = "ButtonKPITargetBaselineCalculationRuleBack";
+        public static string ButtonKPITargetBaselineCalculationRuleModify = "ButtonKPITargetBaselineCalculationRuleModify";
+        public static string ButtonKPITargetBaselineCalculateTarget = "ButtonKPITargetBaselineCalculateTarget";
+        public static string ButtonKPITargetBaselineCalculateBaseline = "ButtonKPITargetBaselineCalculateBaseline";
+        public static string ButtonKPITargetBaselineRevise = "ButtonKPITargetBaselineRevise";
+        public static string ButtonKPITargetBaselineSave = "ButtonKPITargetBaselineSave";
+        public static string ButtonKPITargetBaselineCancel = "ButtonKPITargetBaselineCancel";
+        public static string ButtonKPITargetBaselineAddSpecialDates = "ButtonKPITargetBaselineAddSpecialDates";
+        public static string ButtonKPITargetBaselineDeleteSpecialDates = "ButtonKPITargetBaselineDeleteSpecialDates";   
         #endregion
 
         #region Hierarchy settings
@@ -250,6 +264,22 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldKPITagSettingsCode = "TextFieldKPITagSettingsCode";
         public static string TextFieldKPITagSettingsComment = "TextFieldKPITagSettingsComment";
         public static string KPIFormulaField = "KPIFormulaField";
+        public static string TextFieldKPITargetBaselineWorkdayRuleValue = "TextFieldKPITargetBaselineWorkdayRuleValue";
+        public static string TextFieldKPITargetBaselineNonworkdayRuleValue = "TextFieldKPITargetBaselineNonworkdayRuleValue";
+        public static string TextFieldKPITargetBaselineSpecialdayRuleValue = "TextFieldKPITargetBaselineSpecialdayRuleValue";           
+        public static string TextFieldKPITargetBaselineAnnualCalculationValue = "TextFieldKPITargetBaselineAnnualCalculationValue";
+        public static string TextFieldKPITargetBaselineJanuaryCalculationValue = "TextFieldKPITargetBaselineJanuaryCalculationValue";
+        public static string TextFieldKPITargetBaselineFebruaryCalculationValue = "TextFieldKPITargetBaselineFebruaryCalculationValue";
+        public static string TextFieldKPITargetBaselineMarchCalculationValue = "TextFieldKPITargetBaselineMarchCalculationValue";
+        public static string TextFieldKPITargetBaselineAprilCalculationValue = "TextFieldKPITargetBaselineAprilCalculationValue";
+        public static string TextFieldKPITargetBaselineMayCalculationValue = "TextFieldKPITargetBaselineMayCalculationValue";
+        public static string TextFieldKPITargetBaselineJuneCalculationValue = "TextFieldKPITargetBaselineJuneCalculationValue";
+        public static string TextFieldKPITargetBaselineJulyCalculationValue = "TextFieldKPITargetBaselineJulyCalculationValue";
+        public static string TextFieldKPITargetBaselineAugustCalculationValue = "TextFieldKPITargetBaselineAugustCalculationValue";
+        public static string TextFieldKPITargetBaselineSeptemberCalculationValue = "TextFieldKPITargetBaselineSeptemberCalculationValue";
+        public static string TextFieldKPITargetBaselineOctoberCalculationValue = "TextFieldKPITargetBaselineOctoberCalculationValue";
+        public static string TextFieldKPITargetBaselineNovemberCalculationValue = "TextFieldKPITargetBaselineNovemberCalculationValue";
+        public static string TextFieldKPITargetBaselineDecemberCalculationValue = "TextFieldKPITargetBaselineDecemberCalculationValue";
         #endregion
 
         #region Area dimension Settings
@@ -309,6 +339,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxKPITagSettingsUom = "ComboBoxKPITagSettingsUom";
         public static string ComboBoxKPITagSettingsCalculationType = "ComboBoxKPITagSettingsCalculationType";
         public static string ComboBoxKPITagSettingsCalculationStep = "ComboBoxKPITagSettingsCalculationStep";
+        public static string ComboBoxKPITargetBaselineEffectiveYear = "ComboBoxKPITargetBaselineEffectiveYear"; 
         #endregion
         #endregion
 

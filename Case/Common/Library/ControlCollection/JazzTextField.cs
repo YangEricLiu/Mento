@@ -56,7 +56,24 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField KPITagSettingsCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITagSettingsCode);
         public static TextField KPITagSettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITagSettingsComment);
         public static FormulaField KPIFormulaField = GetControl<FormulaField>(null);
+        public static TextField KPITargetBaselineWorkdayRuleValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineWorkdayRuleValue);
+        public static TextField KPITargetBaselineNonworkdayRuleValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineNonworkdayRuleValue);
+        public static TextField KPITargetBaselineSpecialdayRuleValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineSpecialdayRuleValue);
+        public static TextField KPITargetBaselineAnnualCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineAnnualCalculationValue);
+        public static TextField KPITargetBaselineJanuaryCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineJanuaryCalculationValue);
+        public static TextField KPITargetBaselineFebruaryCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineFebruaryCalculationValue);
+        public static TextField KPITargetBaselineMarchCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineMarchCalculationValue);
+        public static TextField KPITargetBaselineAprilCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineAprilCalculationValue);
+        public static TextField KPITargetBaselineMayCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineMayCalculationValue);
+        public static TextField KPITargetBaselineJuneCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineJuneCalculationValue);
+        public static TextField KPITargetBaselineJulyCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineJulyCalculationValue);
+        public static TextField KPITargetBaselineAugustCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineAugustCalculationValue);
+        public static TextField KPITargetBaselineSeptemberCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineSeptemberCalculationValue);
+        public static TextField KPITargetBaselineOctoberCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineOctoberCalculationValue);
+        public static TextField KPITargetBaselineNovemberCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineNovemberCalculationValue);
+        public static TextField KPITargetBaselineDecemberCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineDecemberCalculationValue);
         #endregion
+
         #region Area dimension settings
         public static TextField AreaDimensionSettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldAreaDimensionSettingsName);
         public static TextField AreaDimensionSettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldAreaDimensionSettingsComment);

@@ -73,6 +73,18 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static KPITargetBaselineSettings _KPITargetBaselineSettings;
+        public static KPITargetBaselineSettings KPITargetBaselineSettings
+        {
+            get
+            {
+                if (_KPITargetBaselineSettings == null)
+                    _KPITargetBaselineSettings = new KPITargetBaselineSettings();
+
+                return _KPITargetBaselineSettings;
+            }
+        }
+
         private static HierarchySettings _HierarchySettings;
         public static HierarchySettings HierarchySettings
         {

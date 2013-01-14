@@ -27,7 +27,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region TextField locators
         public static string FormulaTextBox = "FormulaTextBox";
         public static string FormulaTextArea = "FormulaTextArea";
-        
+
         #endregion
 
         #region Button locators
@@ -38,21 +38,21 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string ComboBoxTrigger = "ComboBoxTrigger";
         public static string ComboBoxInput = "ComboBoxInput";
         public static string ComboBoxItem = "ComboBoxItem";
-        
+
         #endregion
 
-        #region Grid locators 
+        #region Grid locators
         public static string GridRows = "GridRows";
         public static string GridRow = "GridRow";
         public static string GridRowChecker = "GridRowChecker";
-        public static string GridPagingToolbar = "GridPagingToolbar";   
+        public static string GridPagingToolbar = "GridPagingToolbar";
         public static string GridPagingPreviousPageButton = "GridPagingPreviousPageButton";
         public static string GridPagingNextPageButton = "GridPagingNextPageButton";
         public static string GridPagingCurrentPageTextBox = "GridPagingCurrentPageTextBox";
         public static string GridPagingTotalPageLabel = "GridPagingTotalPageLabel";
         public static string GridPagingTotalRecordLabel = "GridPagingTotalRecordLabel";
-        
-            
+
+
         #endregion
 
         #region MonthPicker locators
@@ -66,5 +66,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string MonthPickerCancel = "MonthPickerCancel";
         #endregion
 
+        #region Window locators
+        public static string WindowTitleLabel = "WindowTitle";
+        public static string WindowCloseButton = "WindowCloseButton";
+        public static string WindowConfirmButton = "WindowConfirmButton";
+        public static string WindowCancelButton = "WindowCancelButton";
+        #endregion
     }
 }

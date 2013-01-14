@@ -83,6 +83,7 @@
     <Compile Include="Controls\TreeView\AreaDimensionTree.cs" />
     <Compile Include="Controls\TreeView\HierarchyTree.cs" />
     <Compile Include="Controls\TreeView\SystemDimensionTree.cs" />
+    <Compile Include="Controls\Window\Window.cs" />
     <Compile Include="ElementHandler.cs" />
     <Compile Include="Controls\ControlLocatorKey.cs" />
     <Compile Include="Element\LocatorMapReader.cs" />

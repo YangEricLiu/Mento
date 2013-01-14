@@ -48,4 +48,10 @@
   <add key="MonthPickerNextNavigator" value = "//div[contains(@class,'x-monthpicker')][last()]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[@class = 'x-monthpicker-yearnav']/button[contains(@id,'nextEl')]" type ="XPath"/>
   <add key="MonthPickerConfirm" value = "//div[contains(@class,'x-monthpicker')][last()]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type ="XPath"/>
   <add key="MonthPickerCancel" value = "//div[contains(@class,'x-monthpicker')][last()]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[text()='取消']]" type ="XPath"/>
+  
+  <!--Window-->
+  <add key="WindowTitle" value="div[contains(@class,'x-window-header')]/div/div/div/div[contains(@class,'x-window-header-text-container')]" type="XPath"/>
+  <add key="WindowCloseButton" value="div[contains(@class,'x-window-header')]/div/div/div/div[img[@class='x-tool-close']]" type="XPath"/>
+  <add key="WindowConfirmButton" value="div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+  <add key="WindowCancelButton" value="div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
 </WebElement>

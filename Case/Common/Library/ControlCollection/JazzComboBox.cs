@@ -15,6 +15,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         }
         #endregion
 
+        #region Energy view
+        public static ComboBox EnergyViewSaveDashboardHierarchyComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewSaveDashboardHierarchy);
+        public static ComboBox EnergyViewSaveDashboardDashboardComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewSaveDashboardDashboard);
+        #endregion
+
         #region Customer settings
         #region Hierarchy property settings
         public static ComboBox HierarchySettingsHierarchyTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchySettingsHierarchyType);

@@ -17,10 +17,11 @@ INSERT INTO UserCustomer(Id,UserId,HierarchyId)
 VALUES(2,2,2)
 SET IDENTITY_INSERT UserCustomer OFF
 
+/*
 SET IDENTITY_INSERT SystemDimensionTemplate ON
 INSERT INTO SystemDimensionTemplate([Id],[Name],[Comment],[CustomerId],[Status],UpdateUser,UpdateTime)
 VALUES(2,'自动化测试',NULL,2,1,'AutoCustomer',GETDATE())
-SET IDENTITY_INSERT SystemDimensionTemplate OFF
+SET IDENTITY_INSERT SystemDimensionTemplate OFF*/
 
 
 -----------------------------------Hierarchy------------------------------------
@@ -41,7 +42,7 @@ INSERT INTO Hierarchy(Id,Type,Code,Name,TimezoneId,Comment,ParentId,CustomerId,P
 VALUES(6,1,'systemAssociate','systemAssociate',1,'test',2,2,'/2/6/',1,'AutoCustomer',GETDATE())
 
 INSERT INTO Hierarchy(Id,Type,Code,Name,TimezoneId,Comment,ParentId,CustomerId,Path,Status,UpdateUser,UpdateTime)
-VALUES(7,2,'AreaDimension','AreaDimension',1,'test',6,2,'/2/6/7',1,'AutoCustomer',GETDATE())
+VALUES(7,2,'AreaDimension','AreaDimension',1,'test',6,2,'/2/6/7/',1,'AutoCustomer',GETDATE())
 
 INSERT INTO Hierarchy(Id,Type,Code,Name,TimezoneId,Comment,ParentId,CustomerId,Path,Status,UpdateUser,UpdateTime)
 VALUES(8,2,'AddPeopleProperty','AddPeopleProperty',1,'test',4,1,'/2/4/8/',1,'AutoCustomer',GETDATE())
@@ -57,11 +58,11 @@ VALUES(11,0,'BuildingEV','BuildingEV',1,'BuildingEV',10,2,'/2/3/10/11/',1,'Mento
 SET IDENTITY_INSERT Hierarchy OFF
 
 -----------------------------------System Dimension------------------------------------
-/*System dimention for associate/disassociate tag*/
+/*System dimention for associate/disassociate tag
 SET IDENTITY_INSERT SystemDimension ON
 INSERT INTO SystemDimension(Id,TemplateItemId,HierarchyId,UpdateUser,UpdateTime)
 VALUES(1,,6,'AutoCustomer',GETDATE())
-SET IDENTITY_INSERT SystemDimension OFF
+SET IDENTITY_INSERT SystemDimension OFF*/
 
 -----------------------------------Tag------------------------------------
 /*Tag for Energy view -- single tag*/
@@ -92,7 +93,7 @@ SET IDENTITY_INSERT Tag OFF
 /*Tag for tag associate/disassociate with area dimension node*/
 SET IDENTITY_INSERT Tag ON
 INSERT INTO [Tag] ([ID],[Type],[GuidCode],[Code],[Name],[TimezoneId],[Comment],[MeterCode],[ChannelId],[CalculationType],[CalculationStep],[UomId],[CommodityId],[StartTime],[EnergyConsumption],[DayNightRatio],[Formula],[FormulaRpn],[CustomerId],[HierarchyId],[SystemDimensionId],[AreaDimensionId],[Status],[UpdateUser],[UpdateTime])
-VALUES(5,1,4875414180730017321,'AddforAreaAssociate','AddforAreaAssociate',11,NULL,'AddforAreaAssociate',1,1,NULL,1,1,GETDATE(),0,NULL,NULL,NULL,1,NULL,NULL,NULL,1,'AutoCustomer',GETDATE())
+VALUES(5,1,4875414180730017321,'AddforAreaAssociate','AddforAreaAssociate',1,NULL,'AddforAreaAssociate',1,1,NULL,1,1,GETDATE(),0,NULL,NULL,NULL,1,NULL,NULL,NULL,1,'AutoCustomer',GETDATE())
 SET IDENTITY_INSERT Tag OFF
 
 /*Tag for tag associate/disassociate with hierarchy node*/

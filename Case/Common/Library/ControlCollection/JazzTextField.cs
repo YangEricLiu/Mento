@@ -20,6 +20,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField LoginPasswordTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldLoginPassword);
         #endregion
 
+        #region Energy view
+        public static TextField EnergyViewSaveDashboardWidgetNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldEnergyViewSaveDashboardWidgetName);
+        public static TextField EnergyViewSaveDashboardDashboardNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldEnergyViewSaveDashboardDashboardName);
+        #endregion
+
         #region Customer settings
         #region Hierarchy settings
         public static TextField HierarchySettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHierarchySettingsName);

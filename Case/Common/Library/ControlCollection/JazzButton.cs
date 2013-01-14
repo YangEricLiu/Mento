@@ -14,7 +14,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region EnergyView buttons
-        public static Button EnergyViewSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonSelectHierarchy);
+        public static Button EnergyViewSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectHierarchy);
+        public static Button EnergyViewSelectSystemDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectSystemDimension);
+        public static Button EnergyViewSelectAreaDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectAreaDimension);
+        
 
         public static TabButton EnergyViewALLTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewALLTagsTab);
         public static TabButton EnergyViewSystemDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewSystemDimensionTagsTab);
@@ -22,6 +25,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static SplitButton EnergyViewViewDataButton = GetControl<SplitButton>(JazzControlLocatorKey.SplitButtonEnergyViewViewData);
         public static MenuButton EnergyViewMoreButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonEnergyViewMore);
+
+        public static LinkButton EnergyViewSaveDashboardCreateDashboardButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonEnergyViewSaveDashboardCreateDashboard);
         #endregion
 
         #region Navigator buttons

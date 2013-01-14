@@ -19,10 +19,14 @@ namespace Mento.ScriptCommon.Library.Functions
         #region Controls
         //Select hierarchy button
         private static Button SelectHierarchyButton = JazzButton.EnergyViewSelectHierarchyButton;
-
-        //Hierarchy tree
         private static HierarchyTree HierarchyTree = JazzTreeView.EnergyViewHierarchyTree;
+
+        //Select system dimension tree button
+        private static Button SelectSystemDimensionButton = JazzButton.EnergyViewSelectSystemDimensionButton;
         private static SystemDimensionTree SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
+
+        //Select area dimension tree button
+        private static Button SelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
         private static AreaDimensionTree AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
 
         //TagGrid
@@ -45,12 +49,9 @@ namespace Mento.ScriptCommon.Library.Functions
         #region Hierarchy & tag operations
         public void SelectHierarchy(string[] hierarchyNames)
         {
-            List<string> parentHierarchies = hierarchyNames.ToList();
-            parentHierarchies.Remove(hierarchyNames.Last());
-
             SelectHierarchyButton.Click();
-            HierarchyTree.ExpandNodePath(parentHierarchies.ToArray());
-            HierarchyTree.ClickNode(hierarchyNames.Last());
+
+            HierarchyTree.SelectNode(hierarchyNames);
         }
 
         public enum TagTabs { AllTag, SystemDimensionTab, AreaDimensionTab, }
@@ -76,6 +77,20 @@ namespace Mento.ScriptCommon.Library.Functions
                     TagGrid = JazzGrid.EnergyAnalysisAllTagList;
                     break;
             }
+        }
+
+        public void SelectSystemDimension(string[] systemDimensionPath)
+        {
+            SelectSystemDimensionButton.Click();
+
+            SystemDimensionTree.SelectNode(systemDimensionPath);
+        }
+
+        public void SelectAreaDimension(string[] areaDimensionPath)
+        {
+            SelectAreaDimensionButton.Click();
+
+            AreaDimensionTree.SelectNode(areaDimensionPath);
         }
 
         public void CheckTags(string[] tagNames)

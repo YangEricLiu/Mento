@@ -60,7 +60,6 @@ namespace Mento.Script.EnergyView.Usage
             Assert.IsTrue(DataPanel.IsTrendChartDrawn());
 
             //save to dashboard
-
         }
 
         /// <summary>

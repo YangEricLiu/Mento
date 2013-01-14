@@ -35,6 +35,16 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             MoreButton.SelectItem(MenuItems[moreOption]);
         }
+
+        public void CheckShowCanlendar()
+        {
+            MoreButton.CheckItem(MenuItems[EnergyViewMoreOption.ShowCalendar][0]);
+        }
+
+        public void UncheckShowCanlendar()
+        {
+            MoreButton.UncheckItem(MenuItems[EnergyViewMoreOption.ShowCalendar][0]);
+        }
     }
 
     public enum EnergyViewMoreOption

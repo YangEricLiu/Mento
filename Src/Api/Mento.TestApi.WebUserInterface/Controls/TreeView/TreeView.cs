@@ -15,6 +15,20 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public TreeView(Locator rootLocator, ISearchContext parentContainer = null) : base(rootLocator, parentContainer: parentContainer) { }
 
         /// <summary>
+        /// 1. expand to the disired node
+        /// 2. click the node
+        /// </summary>
+        /// <param name="nodesText"></param>
+        public void SelectNode(string[] nodePath)
+        {
+            List<string> parentNodes = nodePath.ToList();
+            parentNodes.Remove(nodePath.Last());
+
+            ExpandNodePath(parentNodes.ToArray());
+            ClickNode(nodePath.Last());
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="nodeText"></param>

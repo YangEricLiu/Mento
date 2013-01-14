@@ -20,7 +20,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         //private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
-        private static Locator HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
+        //private static Locator HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
 
         /// <summary>
         /// Login Jazz with test data
@@ -29,6 +29,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void Login(LoginInputData loginData)
         {
+            var HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
             JazzTextField.LoginUserNameTextField.Fill(loginData.UserName);
             JazzTextField.LoginPasswordTextField.Fill(loginData.Password);
 
@@ -79,7 +80,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 return;
 
             string defaultUserName = "AutoCustomer";
-            string defaultPassword = "123456qq";
+            string defaultPassword = "P@ssw0rd";
 
             var loginData = new LoginInputData() { UserName = defaultUserName, Password = defaultPassword };
 
@@ -146,6 +147,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public bool IsAlreadyLogin()
         {
+            var HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
             return ElementHandler.Exists(HomePageNavigationLocator);
         }
     }

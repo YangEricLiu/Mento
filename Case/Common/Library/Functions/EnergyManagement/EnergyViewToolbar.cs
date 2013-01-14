@@ -26,7 +26,8 @@ namespace Mento.ScriptCommon.Library.Functions
         //MoreMenu
         private static EnergyViewToolbarMoreMenu MoreMenu = new EnergyViewToolbarMoreMenu();
 
-
+        private static SaveToDashboardDialog DashboardDialog = new SaveToDashboardDialog();
+        
         internal EnergyViewToolbar()
         {
         }
@@ -55,6 +56,24 @@ namespace Mento.ScriptCommon.Library.Functions
             MoreMenu.SwitchMenuItem(moreOption);
 
             JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        public void SaveToDashboard(string widgetName, string hierarchyName, bool isCreateDashboard, string dashboardName)
+        {
+            MoreMenu.SwitchMenuItem(EnergyViewMoreOption.ToDashboard);
+            TimeManager.FlashPause();
+
+            DashboardDialog.Save(widgetName, hierarchyName, isCreateDashboard, dashboardName);
+        }
+
+        public void ShowCalendar()
+        {
+            MoreMenu.CheckShowCanlendar();
+        }
+
+        public void HideCalendar()
+        {
+            MoreMenu.UncheckShowCanlendar();
         }
     }
 }

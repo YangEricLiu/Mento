@@ -13,7 +13,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region EnergyView
-        public static string ButtonSelectHierarchy = "ButtonSelectHierarchy";
+        public static string ButtonEnergyViewSelectHierarchy = "ButtonEnergyViewSelectHierarchy";
+        public static string ButtonEnergyViewSelectSystemDimension = "ButtonEnergyViewSelectSystemDimension";
+        public static string ButtonEnergyViewSelectAreaDimension = "ButtonEnergyViewSelectAreaDimension";
+
 
         public static string TabButtonEnergyViewALLTagsTab = "TabButtonEnergyViewALLTagsTab";
         public static string TabButtonEnergyViewSystemDimensionTagsTab = "TabButtonEnergyViewSystemDimensionTagsTab";
@@ -21,6 +24,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string SplitButtonEnergyViewViewData = "SplitButtonEnergyViewViewData";
         public static string MenuButtonEnergyViewMore = "MenuButtonEnergyViewMore";
+
+        public static string LinkButtonEnergyViewSaveDashboardCreateDashboard = "LinkButtonEnergyViewSaveDashboardCreateDashboard";
         #endregion
 
         #region Navigator
@@ -248,6 +253,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldLoginPassword = "TextFieldLoginPassword";
         #endregion
 
+        #region Energy view
+        public static string TextFieldEnergyViewSaveDashboardWidgetName = "TextFieldEnergyViewSaveDashboardWidgetName";
+        public static string TextFieldEnergyViewSaveDashboardDashboardName = "TextFieldEnergyViewSaveDashboardDashboardName";
+        #endregion
+
         #region Custormer settings
         #region Hierarchy settings
         public static string TextFieldHierarchySettingsName = "TextFieldHierarchySettingsName";
@@ -343,6 +353,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region ComboBox
+        #region Energy view
+        public static string ComboBoxEnergyViewSaveDashboardHierarchy = "ComboBoxEnergyViewSaveDashboardHierarchy";
+        public static string ComboBoxEnergyViewSaveDashboardDashboard = "ComboBoxEnergyViewSaveDashboardDashboard";        
+        #endregion
+
         #region Customer settings
         #region Hierarchy property settings
         public static string ComboBoxHierarchySettingsHierarchyType = "ComboBoxHierarchySettingsHierarchyType";

@@ -43,12 +43,16 @@
       <add key="ButtonNavigatorAssociationAreaDimensionButton" value="st-menu-areadtags" type="ID"/>
     </navigator>
     <energyview>
-      <add key="ButtonSelectHierarchy" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@Common.Label.EmptyHierarchyText']]" type="XPath"/>
+      <add key="ButtonEnergyViewSelectHierarchy" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@Common.Label.EmptyHierarchyText']]" type="XPath"/>
+      <add key="ButtonEnergyViewSelectSystemDimension" value="em-energy-sdim-button" type="ID"/>
+      <add key="ButtonEnergyViewSelectAreaDimension" value="em-energy-adim-button" type="ID"/>
+            
       <add key="TabButtonEnergyViewALLTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='全部数据点']]" type="XPath"/>
       <add key="TabButtonEnergyViewSystemDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='系统数据点']]" type="XPath"/>
       <add key="TabButtonEnergyViewAreaDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='区域数据点']]" type="XPath"/>
       <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
       <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
+      <add key="LinkButtonEnergyViewSaveDashboardCreateDashboard" value="//div[contains(@id,'remlinkbutton') and a[text()='新增仪表盘']]" type="XPath"/>
     </energyview>
     <customersettings>
       <ptag>
@@ -219,6 +223,11 @@
       <add key="TextFieldLoginPassword" value="txtPassword" type="ID"/>
     </login>
 
+    <energyview>
+      <add key="TextFieldEnergyViewSaveDashboardWidgetName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='小组件名称']]//input[contains(@class,'x-form-field')]" type="XPath"/>
+      <add key="TextFieldEnergyViewSaveDashboardDashboardName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='新增仪表盘']]//input[contains(@class,'x-form-field')]" type="XPath"/>
+    </energyview>
+
     <customersettings>
       <hierarchysettings>        
         <add key="TextFieldHierarchySettingsName" value="//div[@id='st-hier-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
@@ -308,6 +317,10 @@
   
   <!--ComboBox-->
   <combobox>
+    <energyview>
+      <add key="ComboBoxEnergyViewSaveDashboardHierarchy" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='层级结点']]//table[contains(@id,'combobox')]" type="XPath"/>
+      <add key="ComboBoxEnergyViewSaveDashboardDashboard" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='已建仪表盘']]//table[contains(@id,'combobox')]" type="XPath"/>
+    </energyview>
     <customersettings>
       <hierarchy>
         <add key="ComboBoxHierarchySettingsHierarchyType" value="//div[@id='st-hier-properties-form']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='Type']]" type="XPath"/>

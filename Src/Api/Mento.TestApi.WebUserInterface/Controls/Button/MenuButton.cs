@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenQA.Selenium;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -31,7 +32,36 @@ namespace Mento.TestApi.WebUserInterface.Controls
             this.Click();
             TimeManager.FlashPause();
 
-            throw new NotImplementedException(); 
+            if (!IsItemChecked(itemText))
+            {
+                ToggleCheckItem(itemText);
+            }
+        }
+
+        public void UncheckItem(string itemText)
+        {
+            this.Click();
+            TimeManager.FlashPause();
+
+            if (IsItemChecked(itemText))
+            {
+                ToggleCheckItem(itemText);
+            }
+        }
+
+        public bool IsItemChecked(string itemText)
+        {
+            return GetMenuItem(itemText).GetAttribute("class").Contains("x-menu-item-checked");
+        }
+
+        private void ToggleCheckItem(string itemText)
+        {
+            ElementHandler.Click(GetMenuItem(itemText), 15, 10);
+        }
+
+        private IWebElement GetMenuItem(string itemResourceVariable)
+        {
+            return FindChild(GetMenuItemLocator(itemResourceVariable));
         }
 
         private Locator GetMenuItemLocator(string itemResourceVariable)

@@ -48,15 +48,49 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             KPITargetBaselineSettings.SelectYear("2010");
-
+            TimeManager.LongPause();
             TimeManager.LongPause();
 
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            KPITargetBaselineSettings.ViewCalculationRule();
+            TimeManager.ShortPause();
+
+            //KPITargetBaselineSettings.BackFromCalculationRule();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             //KPITargetBaselineSettings.ViewCalculationRule();
+            TimeManager.ShortPause();
 
-            //KPITargetBaselineSettings.CreateCalculationRule();
+            KPITargetBaselineSettings.CreateCalculationRule();
+            TimeManager.ShortPause();
 
-            //Input 'Effective Year' and 'Factor Value' for the record(s) based on the input data file
-                   
+            KPITargetBaselineSettings.SelectWorkdayRuleEndTime("22:00", 1);
+            TimeManager.LongPause();
+            KPITargetBaselineSettings.SelectWorkdayRuleEndTime("23:00", 2);
+            TimeManager.LongPause();
+            KPITargetBaselineSettings.FillInWorkdayRuleValue("20", 1);
+            TimeManager.ShortPause();
+            KPITargetBaselineSettings.FillInWorkdayRuleValue("28", 2);
+            TimeManager.ShortPause();
+            KPITargetBaselineSettings.SelectNonworkdayRuleEndTime("18:00",1);
+            TimeManager.ShortPause();
+            KPITargetBaselineSettings.SelectNonworkdayRuleEndTime("23:00",2);
+            TimeManager.ShortPause();
+            KPITargetBaselineSettings.FillInNonworkdayRuleValue("23",1);
+            TimeManager.ShortPause();
+            KPITargetBaselineSettings.FillInNonworkdayRuleValue("25",2);
+            TimeManager.ShortPause();
+
+            KPITargetBaselineSettings.ClickAddSpecialDatesButton();
+            TimeManager.ShortPause();
+            KPITargetBaselineSettings.ClickAddSpecialDatesButton();
+            TimeManager.ShortPause();
+            KPITargetBaselineSettings.FillInSpecialdayRuleValue("10.5",1);
+            TimeManager.ShortPause();
+            KPITargetBaselineSettings.FillInSpecialdayRuleValue("12.5",2);
+            TimeManager.ShortPause();                             
             
         }       
     }

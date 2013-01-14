@@ -382,7 +382,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxKPITagSettingsUom = "ComboBoxKPITagSettingsUom";
         public static string ComboBoxKPITagSettingsCalculationType = "ComboBoxKPITagSettingsCalculationType";
         public static string ComboBoxKPITagSettingsCalculationStep = "ComboBoxKPITagSettingsCalculationStep";
-        public static string ComboBoxKPITargetBaselineEffectiveYear = "ComboBoxKPITargetBaselineEffectiveYear"; 
+        public static string ComboBoxKPITargetBaselineEffectiveYear = "ComboBoxKPITargetBaselineEffectiveYear";
+        public static string ComboBoxKPITargetBaselineWorkdayRuleEndTime = "ComboBoxKPITargetBaselineWorkdayRuleEndTime";
+        public static string ComboBoxKPITargetBaselineNonworkdayRuleEndTime = "ComboBoxKPITargetBaselineNonworkdayRuleEndTime"; 
         #endregion
         #endregion
 

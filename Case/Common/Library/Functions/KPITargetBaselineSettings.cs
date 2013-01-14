@@ -55,6 +55,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField DecemberCalculationValueTextField = JazzTextField.KPITargetBaselineDecemberCalculationValueTextField;
         
         private static ComboBox EffectiveYear = JazzComboBox.KPITargetBaselineEffectiveYearComboBox;
+        private static ComboBox WorkdayRuleEndTime = JazzComboBox.KPITargetBaselineWorkdayRuleEndTimeComboBox;
+        private static ComboBox NonworkdayRuleEndTime = JazzComboBox.KPITargetBaselineNonworkdayRuleEndTimeComboBox;
 
         /// <summary>
         /// Navigate to KPITag settings
@@ -141,7 +143,98 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzButton.KPITargetBaselineCalculationRuleModifyButton.Click();
         }
 
-        
+        /// <summary>
+        /// Select end time for workday rule
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void SelectWorkdayRuleEndTime(string time, int num)
+        {
+            ComboBox OneEndTime = GetOneWorkdayRuleEndTimeComboBox(num);
+            OneEndTime.SelectItem(time); 
+        }
+
+        /// <summary>
+        /// Select end time for Nonworkday rule
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void SelectNonworkdayRuleEndTime(string time, int num)
+        {
+            ComboBox OneEndTime = GetOneNonworkdayRuleEndTimeComboBox(num);
+            OneEndTime.SelectItem(time); 
+        }
+
+        /// <summary>
+        /// Fill in Workday rull value field
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInWorkdayRuleValue(string value, int num)
+        {
+            TextField OneWorkdayRuleValueValue = GetOneWorkdayRuleValueTextField(num);
+            OneWorkdayRuleValueValue.Fill(value);
+        }
+
+        /// <summary>
+        /// Fill in Nonworkday rull value field
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInNonworkdayRuleValue(string value, int num)
+        {
+            TextField OneNonworkdayRuleValueValue = GetOneNonworkdayRuleValueTextField(num);
+            OneNonworkdayRuleValueValue.Fill(value);
+        }
+
+        /// <summary>
+        /// Click "add more ranges" button
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickAddSpecialDatesButton()
+        {
+            AddSpecialDatesButton.Click();
+        }
+
+        /// <summary>
+        /// Fill in special day rull value field
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInSpecialdayRuleValue(string value, int num)
+        {
+            TextField OneSpecialdayRuleValueValue = GetOneSpecialdayRuleValueTextField(num);
+            OneSpecialdayRuleValueValue.Fill(value);
+        }
+
+        #region private method
+
+        private ComboBox GetOneWorkdayRuleEndTimeComboBox(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxKPITargetBaselineWorkdayRuleEndTime, positionIndex);
+        }
+
+        private ComboBox GetOneNonworkdayRuleEndTimeComboBox(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxKPITargetBaselineNonworkdayRuleEndTime, positionIndex);
+        }
+
+        private TextField GetOneWorkdayRuleValueTextField(int positionIndex)
+        {
+            return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldKPITargetBaselineWorkdayRuleValue, positionIndex);
+        }
+
+        private TextField GetOneNonworkdayRuleValueTextField(int positionIndex)
+        {
+            return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldKPITargetBaselineNonworkdayRuleValue, positionIndex);
+        }
+
+        private TextField GetOneSpecialdayRuleValueTextField(int positionIndex)
+        {
+            return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldKPITargetBaselineSpecialdayRuleValue, positionIndex);
+        }
+        #endregion
 
     }
 

@@ -133,7 +133,16 @@
         <add key="ButtonCostCancel" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonCostUpdate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
         <add key="ButtonElectricCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='电力']]/div/img" type="XPath"/>
-
+        <add key="ButtonGasCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='天然气']]/div/img" type="XPath"/>
+        <add key="ButtonWaterCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='自来水']]/div/img" type="XPath"/>
+        <add key="ButtonHeatQCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='热量']]/div/img" type="XPath"/>
+        <add key="ButtonCoolQCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='冷量']]/div/img" type="XPath"/>
+        <add key="ButtonLightWaterCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='软水']]/div/img" type="XPath"/>
+        <add key="ButtonCoalCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='煤']]/div/img" type="XPath"/>
+        <add key="ButtonPetrolCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='汽油']]/div/img" type="XPath"/>
+        <add key="ButtonKeroseneCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='煤油']]/div/img" type="XPath"/>
+        <add key="ButtonDieselOilCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='柴油']]/div/img" type="XPath"/>
+        <add key="ButtonLowPressureSteamCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='低压蒸汽']]/div/img" type="XPath"/>
       </hierarchycost>
       <systemdimension>
         <add key="ButtonDimensionShowHierarchyTree" value = "//div[@id='setting-region-center']//button" type ="XPath"/>
@@ -221,7 +230,21 @@
         <add key="TextFieldHeatingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-heatingarea-container']//input[@type='text' and @name='HeatingAreaValue']" type="XPath"/>
         <add key="TextFieldCoolingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-coolingarea-container']//input[@type='text' and @name='CoolingAreaValue']" type="XPath"/>
         <add key="TextFieldPeopleNumber" value="//div[@id='st-hierarchy-dynamic-population-value-container']//table[contains(@id,'fieldcontainer')][$#positionIndex]//table[contains(@id,'numberfield') and contains(@class,'x-form-trigger-wrap')]//input[@type='text'and contains(@name,'numberfield')]" type="XPath"/>
-        <add key="TextFieldElectricPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
+        <add key="TextFieldElectricPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//input[@name='Price']" type="XPath"/>
+        <add key="TextFieldElectricPaddingCost" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//input[@name='PaddingCost']" type="XPath"/>
+        <add key="TextFieldElectricTransformerCapacity" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//input[@name='TransformerCapacity']" type="XPath"/>
+        <add key="TextFieldElectricTransformerPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//input[@name='TransformerPrice']" type="XPath"/>
+        <add key="TextFieldElectricHourPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//input[@name='HourPrice']" type="XPath"/>
+        <add key="TextFieldWaterPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
+        <add key="TextFieldGasPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][2]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
+        <add key="TextFieldHeatQPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][3]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
+        <add key="TextFieldCoolQPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][4]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
+        <add key="TextFieldLightWaterPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][5]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
+        <add key="TextFieldCoalPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][6]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
+        <add key="TextFieldPetrolPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][7]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
+        <add key="TextFieldKerosenePrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][8]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
+        <add key="TextFieldDieselOilPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][9]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
+        <add key="TextFieldLowPressureSteamPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][10]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//input[@name='Price']" type="XPath"/>
       </hierarchypeopertysettings>
       <ptagsettings>
         <add key="TextFieldPTagSettingsName" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
@@ -298,9 +321,13 @@
         <add key="ComboBoxDayNightCalendarName" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
       </hierarchyCalendarproperty>
       <hierarchyCostproperty>
-        <add key="ComboBoxElectricPriceMode" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='PriceMode']]" type="XPath"/>
-
-        
+        <add key="ComboBoxElectricPriceMode" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='PriceMode']]" type="XPath"/>
+        <add key="ComboBoxDemandCostType" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='DemandCostType']]" type="XPath"/>
+        <add key="ComboBoxTouTariffId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='TouTariffId']]" type="XPath"/>
+        <add key="ComboBoxFactorType" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='FactorType']]" type="XPath"/>
+        <add key="ComboBoxRealTagId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='RealTagId']]" type="XPath"/>
+        <add key="ComboBoxReactiveTagId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='ReactiveTagId']]" type="XPath"/>
+        <add key="ComboBoxHourTagId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='HourTagId']]" type="XPath"/>
       </hierarchyCostproperty>
       <ptag>
         <add key="ComboBoxPTagSettingsCommodity" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
@@ -401,8 +428,17 @@
   <!--MonthPicker-->
   <hierarchyproperty>
     <add key="MonthPickerPeopleEffectiveDate" value="//div[@id='st-hierarchy-dynamic-population-value-container']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'monthfield')]]" type="XPath"/>
-    <add key="MonthPickerElectricCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-
+    <add key="MonthPickerElectricCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+    <add key="MonthPickerWaterCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+    <add key="MonthPickerGasCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][2]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+    <add key="MonthPickerHeatQCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][3]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+    <add key="MonthPickerCoolQCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][4]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+    <add key="MonthPickerLightWaterCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][5]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+    <add key="MonthPickerCoalCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][6]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+    <add key="MonthPickerPetrolCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][7]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+    <add key="MonthPickerKeroseneCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][8]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+    <add key="MonthPickerDieselOilCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][9]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+    <add key="MonthPickerLowPressureSteamCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][10]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
   </hierarchyproperty>
   <!--User Management Begin-->
   <user>

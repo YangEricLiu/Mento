@@ -19,5 +19,39 @@ namespace Mento.ScriptCommon.Library.Functions
         internal HierarchyOtherCostPropertySettings()
         {
         }
+
+        #region Controls
+        private static Button GasCostCreate = JazzButton.GasCostCreateButton;
+        private static MonthPicker GasCostEffectiveDate = JazzMonthPicker.GasCostEffectiveDateMonthPicker;
+        private static TextField GasCostPrice = JazzTextField.GasPriceTextField;
+        #endregion
+
+        #region Gas Cost
+
+        public void ClickGasCostCreateButton()
+        {
+            GasCostCreate.Click();
+        }
+
+        public void SelectGasCostEffectiveDate(DateTime date)
+        {
+            GasCostEffectiveDate.SelectYearMonthItem(date);
+        }
+
+        public void FillGasCostPrice(string price)
+        {
+            GasCostPrice.Append(price);
+        }
+
+        public string GetGasCostEffectiveDate()
+        {
+            return GasCostEffectiveDate.GetValue();
+        }
+
+        public string GetGasCostPrice()
+        {
+            return GasCostPrice.GetValue();
+        }
+        #endregion
     }
 }

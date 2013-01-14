@@ -32,7 +32,22 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField CoolingAreaValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCoolingAreaValue);
 
         public static TextField PeopleNumberTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPeopleNumber, 1);
-        public static TextField ElectricPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldElectricPrice, 2);
+        public static TextField ElectricPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldElectricPrice, 1);
+        public static TextField ElectricPaddingCostTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldElectricPaddingCost, 1);
+        public static TextField ElectricTransformerCapacityTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldElectricTransformerCapacity, 1);
+        public static TextField ElectricTransformerPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldElectricTransformerPrice, 1);
+        public static TextField ElectricHourPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldElectricHourPrice, 1);
+
+        public static TextField WaterPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldWaterPrice, 2);
+        public static TextField GasPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldGasPrice,2);
+        public static TextField HeatQPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHeatQPrice, 2);
+        public static TextField CoolQPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCoolQPrice, 2);
+        public static TextField LightWaterPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldLightWaterPrice, 2);
+        public static TextField CoalPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCoalPrice, 2);
+        public static TextField PetrolPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPetrolPrice, 2);
+        public static TextField KerosenePriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKerosenePrice, 2);
+        public static TextField DieselOilPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldDieselOilPrice, 2);
+        public static TextField LowPressureSteamPriceTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldLowPressureSteamPrice, 2);
         #endregion
 
         #endregion

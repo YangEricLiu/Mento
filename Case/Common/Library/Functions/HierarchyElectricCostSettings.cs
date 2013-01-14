@@ -29,7 +29,16 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MonthPicker ElectricCostEffectiveDate = JazzMonthPicker.ElectricCostEffectiveDateMonthPicker;
         private static TextField ElectricPrice = JazzTextField.ElectricPriceTextField;
         private static Button CostSave = JazzButton.CostSaveButton;
-        
+        private static ComboBox DemandCostType = JazzComboBox.DemandCostTypeComboBox;
+        private static ComboBox TouTariffId = JazzComboBox.TouTariffIdComboBox;
+        private static ComboBox FactorType = JazzComboBox.FactorTypeComboBox;
+        private static ComboBox RealTagId = JazzComboBox.RealTagIdComboBox;
+        private static ComboBox ReactiveTagId = JazzComboBox.ReactiveTagIdComboBox;
+        private static ComboBox HourTagId = JazzComboBox.HourTagIdComboBox;
+        private static TextField ElectricPaddingCost = JazzTextField.ElectricPaddingCostTextField;
+        private static TextField ElectricTransformerCapacity = JazzTextField.ElectricTransformerCapacityTextField;
+        private static TextField ElectricTransformerPrice = JazzTextField.ElectricTransformerPriceTextField;
+        private static TextField ElectricHourPrice = JazzTextField.ElectricHourPriceTextField;
         #endregion
 
         #region cost property
@@ -89,6 +98,106 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetElectricPriceMode()
         {
             return ElectricPriceMode.GetValue();
+        }
+
+        public void SelectDemandCostType(string type)
+        {
+            DemandCostType.SelectItem(type);
+        }
+
+        public void SelectTouTariffId(string tariffId)
+        {
+            TouTariffId.SelectItem(tariffId);
+        }
+
+        public void SelectFactorType(string factorType)
+        {
+            FactorType.SelectItem(factorType);
+        }
+
+        public void SelectRealTagId(string realTagId)
+        {
+            RealTagId.SelectItem(realTagId);
+        }
+
+        public void SelectReactiveTagId(string reactiveTagId)
+        {
+            ReactiveTagId.SelectItem(reactiveTagId);
+        }
+
+        public void SelectHourTagId(string hourTagId)
+        {
+            HourTagId.SelectItem(hourTagId);
+        }
+
+        public void FillElectricPaddingCost(string cost)
+        {
+            ElectricPaddingCost.Append(cost);
+        }
+
+        public void FillElectricTransformerCapacity(string capacity)
+        {
+            ElectricTransformerCapacity.Append(capacity);
+        }
+
+        public void FillElectricTransformerPrice(string price)
+        {
+            ElectricTransformerPrice.Append(price);
+        }
+
+        public void FillElectricHourPrice(string price)
+        {
+            ElectricHourPrice.Append(price);
+        }
+
+        public string GetDemandCostTypeValue()
+        {
+            return DemandCostType.GetValue();
+        }
+
+        public string GetTouTariffIdValue()
+        {
+            return TouTariffId.GetValue();
+        }
+
+        public string GetFactorTypeValue()
+        {
+            return FactorType.GetValue();
+        }
+
+        public string GetRealTagIdValue()
+        {
+            return RealTagId.GetValue();
+        }
+
+        public string GetReactiveTagIdValue()
+        {
+            return ReactiveTagId.GetValue();
+        }
+
+        public string GetHourTagIdValue()
+        {
+            return HourTagId.GetValue();
+        }
+
+        public string GetElectricPaddingCostValue()
+        {
+            return ElectricPaddingCost.GetValue();
+        }
+
+        public string GetElectricTransformerCapacityValue()
+        {
+            return ElectricTransformerCapacity.GetValue();
+        }
+
+        public string GetElectricTransformerPriceValue()
+        {
+            return ElectricTransformerPrice.GetValue();
+        }
+
+        public string GetElectricHourPriceValue()
+        {
+            return ElectricHourPrice.GetValue();
         }
         #endregion
 

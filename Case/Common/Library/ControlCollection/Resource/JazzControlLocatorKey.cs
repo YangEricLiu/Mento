@@ -159,7 +159,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonCostCancel = "ButtonCostCancel";
         public static string ButtonCostUpdate = "ButtonCostUpdate";
         public static string ButtonElectricCostCreate = "ButtonElectricCostCreate";
-
+        public static string ButtonGasCostCreate = "ButtonGasCostCreate";
+        public static string ButtonWaterCostCreate = "ButtonWaterCostCreate";
+        public static string ButtonHeatQCostCreate = "ButtonHeatQCostCreate";
+        public static string ButtonCoolQCostCreate = "ButtonCoolQCostCreate";
+        public static string ButtonLightWaterCostCreate = "ButtonLightWaterCostCreate";
+        public static string ButtonCoalCostCreate = "ButtonCoalCostCreate";
+        public static string ButtonPetrolCostCreate = "ButtonPetrolCostCreate";
+        public static string ButtonKeroseneCostCreate = "ButtonKeroseneCostCreate";
+        public static string ButtonDieselOilCostCreate = "ButtonDieselOilCostCreate";
+        public static string ButtonLowPressureSteamCostCreate = "ButtonLowPressureSteamCostCreate";
         #endregion
 
         #endregion
@@ -252,6 +261,21 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldCoolingAreaValue = "TextFieldCoolingAreaValue";
         public static string TextFieldPeopleNumber = "TextFieldPeopleNumber";
         public static string TextFieldElectricPrice = "TextFieldElectricPrice";
+        public static string TextFieldElectricPaddingCost = "TextFieldElectricPaddingCost";
+        public static string TextFieldElectricTransformerCapacity = "TextFieldElectricTransformerCapacity";
+        public static string TextFieldElectricTransformerPrice = "TextFieldElectricTransformerPrice";
+        public static string TextFieldElectricHourPrice = "TextFieldElectricHourPrice";
+
+        public static string TextFieldGasPrice = "TextFieldGasPrice";
+        public static string TextFieldWaterPrice = "TextFieldWaterPrice";
+        public static string TextFieldHeatQPrice = "TextFieldHeatQPrice";
+        public static string TextFieldCoolQPrice = "TextFieldCoolQPrice";
+        public static string TextFieldLightWaterPrice = "TextFieldLightWaterPrice";
+        public static string TextFieldCoalPrice = "TextFieldCoalPrice";
+        public static string TextFieldPetrolPrice = "TextFieldPetrolPrice";
+        public static string TextFieldKerosenePrice = "TextFieldKerosenePrice";
+        public static string TextFieldDieselOilPrice = "TextFieldDieselOilPrice";
+        public static string TextFieldLowPressureSteamPrice = "TextFieldLowPressureSteamPrice";
         #endregion
         #endregion
 
@@ -333,6 +357,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxDayNightCalendarName = "ComboBoxDayNightCalendarName";
 
         public static string ComboBoxElectricPriceMode = "ComboBoxElectricPriceMode";
+        public static string ComboBoxDemandCostType = "ComboBoxDemandCostType";
+        public static string ComboBoxTouTariffId = "ComboBoxTouTariffId";
+        public static string ComboBoxFactorType = "ComboBoxFactorType";
+        public static string ComboBoxRealTagId = "ComboBoxRealTagId";
+        public static string ComboBoxReactiveTagId = "ComboBoxReactiveTagId";
+        public static string ComboBoxHourTagId = "ComboBoxHourTagId";
         #endregion
 
         #region PTag settings
@@ -458,6 +488,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Hierarchy People Area property
         public static string MonthPickerPeopleEffectiveDate = "MonthPickerPeopleEffectiveDate";
         public static string MonthPickerElectricCostEffectiveDate = "MonthPickerElectricCostEffectiveDate";
+        public static string MonthPickerWaterCostEffectiveDate = "MonthPickerWaterCostEffectiveDate";
+        public static string MonthPickerGasCostEffectiveDate = "MonthPickerGasCostEffectiveDate";
+        public static string MonthPickerHeatQCostEffectiveDate = "MonthPickerHeatQCostEffectiveDate";
+        public static string MonthPickerCoolQCostEffectiveDate = "MonthPickerCoolQCostEffectiveDate";
+        public static string MonthPickerLightWaterCostEffectiveDate = "MonthPickerLightWaterCostEffectiveDate";
+        public static string MonthPickerCoalCostEffectiveDate = "MonthPickerCoalCostEffectiveDate";
+        public static string MonthPickerPetrolCostEffectiveDate = "MonthPickerPetrolCostEffectiveDate";
+        public static string MonthPickerKeroseneCostEffectiveDate = "MonthPickerKeroseneCostEffectiveDate";
+        public static string MonthPickerDieselOilCostEffectiveDate = "MonthPickerDieselOilCostEffectiveDate";
+        public static string MonthPickerLowPressureSteamCostEffectiveDate = "MonthPickerLowPressureSteamCostEffectiveDate";
         #endregion
         #endregion
 

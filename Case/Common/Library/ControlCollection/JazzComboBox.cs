@@ -29,6 +29,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox DayNightCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightCalendarName, 1);
 
         public static ComboBox ElectricPriceModeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxElectricPriceMode, 1);
+        public static ComboBox DemandCostTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDemandCostType, 1);
+        public static ComboBox TouTariffIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTouTariffId, 1);
+        public static ComboBox FactorTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxFactorType, 1);
+        public static ComboBox RealTagIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxRealTagId, 1);
+        public static ComboBox ReactiveTagIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxReactiveTagId, 1);
+        public static ComboBox HourTagIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHourTagId, 1);
         #endregion
         
         #region PTag settings

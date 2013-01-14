@@ -108,6 +108,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button CostCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonCostCancel);
         public static Button CostUpdateButton  = GetControl<Button>(JazzControlLocatorKey.ButtonCostUpdate);
         public static Button ElectricCostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonElectricCostCreate);
+        public static Button GasCostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonGasCostCreate);
+        public static Button WaterCostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonWaterCostCreate);
+        public static Button HeatQCostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatQCostCreate);
+        public static Button CoolQCostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonCoolQCostCreate);
+        public static Button LightWaterCostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonLightWaterCostCreate);
+        public static Button CoalCostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonCoalCostCreate);
+        public static Button PetrolCostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonPetrolCostCreate);
+        public static Button KeroseneCostCreate = GetControl<Button>(JazzControlLocatorKey.ButtonKeroseneCostCreate);
+        public static Button DieselOilCostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonDieselOilCostCreate);
+        public static Button LowPressureSteamCostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonLowPressureSteamCostCreate);
         #endregion
         #endregion
 

@@ -34,7 +34,7 @@ namespace Mento.ScriptCommon.TestData.Administration
             this.Comment = comment;
         }
     }
-        public class UserExpectedData : ExpectedTestDataBase
+    public class UserExpectedData : ExpectedTestDataBase
         {
             public string Name { get; set; }
             public string RealName { get; set; }
@@ -55,7 +55,6 @@ namespace Mento.ScriptCommon.TestData.Administration
                 this.Telephone = telephone;
                 this.Email = email;
                 this.Comment = comment;
-            }
-        
-    }
+            }        
+        }
 }

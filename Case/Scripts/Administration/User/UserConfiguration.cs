@@ -18,15 +18,17 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Administration.User
 {
     [TestFixture]
-    [ManualCaseID("TC-J1-SmokeTest-034")]
     public class UserConfiguration : TestSuiteBase
     {
         private UserSettings UserSettings = JazzFunction.UserSettings;
 
         [SetUp]
+        [Owner("Nancy")]
+        [CreateTime("2013-01-08")]
+        [ManualCaseID("TC-J1-SmokeTest")]
         public void CaseSetUp()
         {
-            
+            UserSettings.NavigatorToUserSetting();
             TimeManager.MediumPause();
         }
 
@@ -41,11 +43,12 @@ namespace Mento.Script.Administration.User
         [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserConfiguration), "TC-J1-SmokeTest-034")]
         public void AddNewUser(UserSettingsData testData)
         {
-            UserSettings.NavigatorToUserSetting();
-            TimeManager.MediumPause();
+
             UserSettings.ClickAddUser();
+            TimeManager.ShortPause();
             UserSettings.FillInUser(testData.InputData);
             UserSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
 
             UserSettings.FocusOnUser(testData.InputData.Name);
             Assert.AreEqual(testData.InputData.Name, UserSettings.GetNameValue());
@@ -57,20 +60,32 @@ namespace Mento.Script.Administration.User
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-035"), CreateTime("2013-01-08"), Owner("Nancy")]
-        [MultipleTestDataSource(typeof(UserInputData[]), typeof(UserConfiguration), "TC-J1-SmokeTest-034-Modify")]
+        [CaseID("TC-J1-SmokeTest-034-Modify"), CreateTime("2013-01-08"), Owner("Nancy")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserConfiguration), "TC-J1-SmokeTest-034-Modify")]
         public void ModifyUser(UserSettingsData testData)
         {
-            string Name = "Nancy_PlatformAdminUser";
+            string modifyUser = "Nancy_Consultant";
+            UserSettings.FocusOnUser(modifyUser);
+
             UserSettings.ClickModifyButton();
-            UserSettings.FillInUser(testData.InputData);
+            TimeManager.ShortPause();
+
+            UserSettings.FillInName(testData.InputData.Name);
+            UserSettings.FillInRealName(testData.InputData.RealName);
+            UserSettings.FillInType(testData.InputData.Type);
+            UserSettings.FillInTitle(testData.InputData.Title);
+            UserSettings.FillInTelephone(testData.InputData. Telephone);
+            UserSettings.FillInEmail(testData.InputData.Email);
+            UserSettings.FillInComment(testData.InputData.Comment);
+
             UserSettings.ClickSaveButton();
 
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
             UserSettings.FocusOnUser(testData.InputData.Name);
-            Assert.AreEqual(testData.ExpectedData.AssociatedCustomer, UserSettings.GetAssociatedCustomerValue());            
+            Assert.AreEqual(testData.ExpectedData.AssociatedCustomer, UserSettings.GetAssociatedCustomerValue());
+            Assert.AreEqual(testData.InputData.Comment, UserSettings.GetCommentValue());
         }
     }
 }

@@ -3,11 +3,11 @@
 		"InputData":
 		{	
 			"Name":"Nancy_Engineer",
-			"Reakname":"工程人员",
-			"Type":"工程人员"
-			"Associatedcustomer":"自动化测试"
+			"Realname":"工程人员",
+			"Type":"工程人员",
+			"AssociatedCustomer":"自动化测试",
 			"Title":"职员",
-			"Telephone":"010-123456789",
+			"Telephone":"010123456789",
 			"Email":"mgr@163.com",
 			"Comment":"Nancy 的第三个用户",
 		},
@@ -15,34 +15,37 @@
 		"ExpectedData":
 		{	
 			"Name":"Nancy_Engineer",
-			"Reakname":"工程人员",
-			"Type":"工程人员"
-			"Associatedcustomer":"自动化测试"
+			"Realname":"工程人员",
+			"Type":"工程人员",
+			"AssociatedCustomer":"自动化测试",
 			"Title":"职员",
-			"Telephone":"010-123456789",
+			"Telephone":"010123456789",
 			"Email":"mgr@163.com",
 			"Comment":"Nancy 的第三个用户",
-		},
-		
+		}
+	},
+	
+	{
+
 		"InputData":
 		{	
 			"Name":"Nancy_Consultant",
-			"Reakname":"咨询人员",
-			"Type":"咨询人员"
-			"Associatedcustomer":"自动化测试"
+			"Realname":"咨询人员",
+			"Type":"咨询人员",
+			"AssociatedCustomer":"自动化测试",
 			"Title":"经理",
-			"Telephone":"010-12345678",
+			"Telephone":"01012345678",
 			"Email":"mg@163.com",
 			"Comment":"Nancy 的第二个用户",
 		},
 		"ExpectedData":
 		{
 			"Name":"Nancy_Consultant",
-			"Reakname":"咨询人员",
-			"Type":"咨询人员"
-			"Associatedcustomer":"自动化测试"
+			"Realname":"咨询人员",
+			"Type":"咨询人员",
+			"AssociatedCustomer":"自动化测试",
 			"Title":"经理",
-			"Telephone":"010-12345678",
+			"Telephone":"01012345678",
 			"Email":"mg@163.com",
 			"Comment":"Nancy 的第二个用户",
 		}

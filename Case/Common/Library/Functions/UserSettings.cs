@@ -49,12 +49,12 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void NavigatorToUserSetting()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UserManagementUser);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UserManagement);
         }
         /// <summary>
         /// click "add user" button
         /// </summary>
-        /// <param name="addUser">Add user button</param>
+        /// <param>Add user button</param>
         /// <returns></returns>
         public void ClickAddUser()
         {
@@ -81,8 +81,9 @@ namespace Mento.ScriptCommon.Library.Functions
             DeleteButton.Click();
         }
 
+
         /// <summary>
-        /// Click delete button to add new user
+        /// Click save button to save new user
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -131,12 +132,12 @@ namespace Mento.ScriptCommon.Library.Functions
 
             NameTextField.Fill(input.Name);
             RealNameTextField.Fill(input.RealName);
+            UserTypeComboBox.SelectItem(input.Type);
+            UserAssociatedCustomerComboBox.SelectItem(input.AssociatedCustomer); 
             TelephoneTextField.Fill(input.Telephone);
             EmailTextField.Fill(input.Email);
             TitleTextField.Fill(input.Title);
             CommentTextField.Fill(input.Comment);            
-            UserTypeComboBox.SelectItem(input.Type);
-            UserAssociatedCustomerComboBox.SelectItem(input.AssociatedCustomer);
 
         }
 
@@ -154,7 +155,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Input realname of the new user 
         /// </summary>
-        /// <param name="code">user realname</param>
+        /// <param name="realname">user realname</param>
         /// <returns></returns>
         public void FillInRealName(string realname)
         {
@@ -174,7 +175,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Input title of the new user 
         /// </summary>
-        /// <param name="code">user title</param>
+        /// <param name="title">user title</param>
         /// <returns></returns>
         public void FillInTitle(string title)
         {
@@ -184,7 +185,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Input telephone of the new user 
         /// </summary>
-        /// <param name="code">user telephone</param>
+        /// <param name="telephone">user telephone</param>
         /// <returns></returns>
         public void FillInTelephone(string telephone)
         {
@@ -194,7 +195,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Input  of the new user 
         /// </summary>
-        /// <param name="code">user email</param>
+        /// <param name="email">user email</param>
         /// <returns></returns>
         public void FillInEmail(string email)
         {
@@ -221,39 +222,25 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.MessageBox.WaitMeAppear();
         }
 
-        /// <summary>
-        /// After click save button, waiting for add successful message box pop up
-        /// </summary>
-        /// <returns></returns>
-        public string GetMessageText()
-        {
-            return JazzMessageBox.MessageBox.GetMessage();
-        }
-
-        /// <summary>
-        /// Confirm the add successful popup message box
-        /// </summary>
-        /// <returns></returns>
         public void ConfirmCreateOKMagBox()
         {
             JazzMessageBox.MessageBox.OK();
         }
 
         /// <summary>
-        /// Get the hierarchy code expected value
+        /// Get name expected value
         /// </summary>
-        /// <param name = "itemKey">Hierarchy name key</param>
+        /// <param name = "name">name key</param>
         /// <returns>Name value</returns>
         public string GetNameValue()
         {
-            //return comboBoxInstance.GetValue(ElementKey.HierarchyName);
             return NameTextField.GetValue();
         }
 
         /// <summary>
         /// Get the realname expected value
         /// </summary>
-        /// <param name = "itemKey">Hierarchy code key</param>
+        /// <param>realname key</param>
         /// <returns>realname value</returns>
         public string GetRealNameValue()
         {
@@ -263,7 +250,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Get the user type expected value
         /// </summary>
-        /// <param name = "itemKey">Hierarchy code key</param>
+        /// <param name = "type">type key</param>
         /// <returns>type value</returns>
         public string GetTypeValue()
         {
@@ -271,9 +258,9 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Get the user type expected value
+        /// Get the user associatedcustomer expected value
         /// </summary>
-        /// <param name = "itemKey">Hierarchy code key</param>
+        /// <param name = "associatedcustomer">associatedcustomer key</param>
         /// <returns>type value</returns>
         public string GetAssociatedCustomerValue()
         {
@@ -293,7 +280,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Get the comment expected value
         /// </summary>
-        /// <param name = "itemKey">comment key</param>
+        /// <param>comment key</param>
         /// <returns>Comment value</returns>
         public string GetCommentValue()
         {

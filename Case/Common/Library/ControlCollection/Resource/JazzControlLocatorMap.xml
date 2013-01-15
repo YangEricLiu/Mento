@@ -52,7 +52,6 @@
       <add key="TabButtonEnergyViewAreaDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='区域数据点']]" type="XPath"/>
       <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
       <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
-      <add key="LinkButtonEnergyViewSaveDashboardCreateDashboard" value="//div[contains(@id,'remlinkbutton') and a[text()='新增仪表盘']]" type="XPath"/>
     </energyview>
     <customersettings>
       <ptag>
@@ -431,7 +430,7 @@
       <add key="GridKPITagSettingsKPITagList" value="st-kpi-grid" type="ID"/>
       <add key="GridAssociationTagList" value="//div[@id='st-tag-assoc-form-body']//div[contains(@class,'x-grid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
-      <add key="GridUserList" value=" " type="ID"/>
+      <add key="GridUserList" value="st-user-grid" type="ID"/>
     </customersettings>
   </grid>
   <!--Grid End-->
@@ -463,16 +462,16 @@
     <add key="ButtonUserCancel" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
     <add key="ButtonUserModify" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
     <add key="ButtonUserDelete" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>    
-    <add key="ButtonUserGeneratePassword" value="st-user-resetpassword-btnInnerEl" type="XPath"/>
+    <add key="ButtonUserGeneratePassword" value="st-user-resetpassword-btnInnerEl" type="ID"/>
     <add key="TextFieldUserName" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
     <add key="TextFieldUserRealName" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='RealName']" type="XPath"/>
-    <add key="ComboBoxUserType" value="st-user-usertype-inputEl" type="XPath"/>
-    <add key="ComboBoxUserAssociatedCustomer" value="st-user-firstcustomer-inputEl" type="XPath"/>
-    <add key="LinkButtonUserAssociatedCustomer" value="st-user-customer-add-btnEl" type="XPath"/>
-    <add key="TextFieldUserTitle" value="st-user-title-field-inputEl" type="XPath"/>
-    <add key="TextFieldUserTelephone" value="//div[@id='st-user-properties-form-body]//input[@type='text' and @name='Telephone']" type="XPath"/>
-    <add key="TextFieldUserEmail" value="st-user-email-field-inputEl" type="XPath"/>
-    <add key="TextFieldUserComment" value="st-user-comment-field-inputEl" type="XPath"/>
+    <add key="ComboBoxUserType" value="st-user-usertype-triggerWrap" type="ID"/>
+    <add key="ComboBoxUserAssociatedCustomer" value="st-user-firstcustomer-triggerWrap" type="ID"/>
+    <add key="LinkButtonUserAssociatedCustomer" value="st-user-customer-add" type="ID"/>
+    <add key="TextFieldUserTitle" value="st-user-title-field-inputEl" type="ID"/>
+    <add key="TextFieldUserTelephone" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='Telephone']" type="XPath"/>
+    <add key="TextFieldUserEmail" value="st-user-email-field-inputEl" type="ID"/>
+    <add key="TextFieldUserComment" value="st-user-comment-field-inputEl" type="ID"/>
   </user> 
   <!--User Management End-->
   <!--CheckBoxField Begin-->

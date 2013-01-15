@@ -18,13 +18,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button EnergyViewSelectSystemDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectSystemDimension);
         public static Button EnergyViewSelectAreaDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectAreaDimension);
         
-
         public static TabButton EnergyViewALLTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewALLTagsTab);
         public static TabButton EnergyViewSystemDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewSystemDimensionTagsTab);
         public static TabButton EnergyViewAreaDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewAreaDimensionTagsTab);
 
         public static SplitButton EnergyViewViewDataButton = GetControl<SplitButton>(JazzControlLocatorKey.SplitButtonEnergyViewViewData);
         public static MenuButton EnergyViewMoreButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonEnergyViewMore);
+        public static Button EnergyViewAddTimeSpanButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewAddTimeSpan);
+        public static Button EnergyViewRemoveAllButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewRemoveAll);
+        public static MenuButton EnergyViewConvertTargetMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonEnergyViewConvertTarget);
+        public static Button EnergyViewPeakValleyButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewPeakValley);
 
         public static LinkButton EnergyViewSaveDashboardCreateDashboardButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonEnergyViewSaveDashboardCreateDashboard);
         #endregion

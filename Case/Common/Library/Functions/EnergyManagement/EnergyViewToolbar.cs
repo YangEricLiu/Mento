@@ -11,6 +11,7 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     public class EnergyViewToolbar
     {
+        #region Controls
         //StartDatePicker
         //StartTimeComboBox
         //EndDatePicker
@@ -18,16 +19,25 @@ namespace Mento.ScriptCommon.Library.Functions
 
         //ViewButton
         private static EnergyViewToolbarViewSplitButton ViewButton = new EnergyViewToolbarViewSplitButton();
+
         //ConvertTargetSplitButton
+        private static EnergyViewToolbarConvertTargetMenu ConvertTargetButton = new EnergyViewToolbarConvertTargetMenu();
+
         //PeakValleyButton
+        private static Button PeakValleyButton = JazzButton.EnergyViewPeakValleyButton;
 
-        //AddTimeSpanButton
+        //AddTimeSpanButton and add time span dialog
+        private static Button AddTimeSpanButton = JazzButton.EnergyViewAddTimeSpanButton;//em-chartgrid-topbar-addInterval
+        private static TimeSpanDialog TimeSpanDialog = new TimeSpanDialog();
+
         //RemoveAllTagButton
-        //MoreMenu
-        private static EnergyViewToolbarMoreMenu MoreMenu = new EnergyViewToolbarMoreMenu();
+        private static Button RemoveAllButton = JazzButton.EnergyViewRemoveAllButton; //em-chartgrid-topbar-del
 
+        //MoreMenu and more dialog
+        private static EnergyViewToolbarMoreMenu MoreMenu = new EnergyViewToolbarMoreMenu();
         private static SaveToDashboardDialog DashboardDialog = new SaveToDashboardDialog();
-        
+        #endregion
+
         internal EnergyViewToolbar()
         {
         }
@@ -47,6 +57,31 @@ namespace Mento.ScriptCommon.Library.Functions
             //{
                 ViewButton.SwitchViewType(viewType);
             //}
+
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        public void SelectConvertTarget(CarbonConvertTarget target)
+        {
+            ConvertTargetButton.SwitchMenuItem(target);
+        }
+
+        public void RemoveAllTags()
+        {
+            RemoveAllButton.Click();
+        }
+
+        public void ShowPeakValley()
+        {
+            PeakValleyButton.Click();
+        }
+
+        public void AddTimeSpan(DateTime startTime)
+        {
+            AddTimeSpanButton.Click();
+
+            TimeSpanDialog.InputStartTime(startTime);
+            TimeSpanDialog.Confirm();
 
             JazzMessageBox.LoadingMask.WaitLoading();
         }

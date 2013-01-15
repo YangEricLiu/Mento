@@ -52,6 +52,11 @@
       <add key="TabButtonEnergyViewAreaDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='区域数据点']]" type="XPath"/>
       <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
       <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
+      <add key="ButtonEnergyViewAddTimeSpan" value="em-chartgrid-topbar-addInterval" type="ID"/>
+      <add key="ButtonEnergyViewRemoveAll" value="em-chartgrid-topbar-del" type="ID"/>
+      <add key="MenuButtonEnergyViewConvertTarget" value="//div[em/button/span[text()='标煤'] or em/button/span[text()='二氧化碳'] or em/button/span[text()='树']]" type="XPath"/>
+      <add key="ButtonEnergyViewPeakValley" value="//div[contains(@class,'x-btn') and em/button/span[text()='峰谷展示']]" type="XPath"/>
+      <add key="LinkButtonEnergyViewSaveDashboardCreateDashboard" value="//div[contains(@id,'remlinkbutton') and a[text()='新增仪表盘']]" type="XPath"/>
     </energyview>
     <customersettings>
       <ptag>

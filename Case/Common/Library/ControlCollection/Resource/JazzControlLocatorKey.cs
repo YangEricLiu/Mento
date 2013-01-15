@@ -24,6 +24,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string SplitButtonEnergyViewViewData = "SplitButtonEnergyViewViewData";
         public static string MenuButtonEnergyViewMore = "MenuButtonEnergyViewMore";
+        public static string ButtonEnergyViewAddTimeSpan = "ButtonEnergyViewAddTimeSpan";
+        public static string ButtonEnergyViewRemoveAll = "ButtonEnergyViewRemoveAll";
+        public static string MenuButtonEnergyViewConvertTarget = "MenuButtonEnergyViewConvertTarget";
+        public static string ButtonEnergyViewPeakValley = "ButtonEnergyViewPeakValley";
+
 
         public static string LinkButtonEnergyViewSaveDashboardCreateDashboard = "LinkButtonEnergyViewSaveDashboardCreateDashboard";
         #endregion

@@ -64,7 +64,9 @@
     <Compile Include="ControlCollection\Resource\JazzControlLocatorRepository.cs" />
     <Compile Include="Functions\AreaDimensionSettings.cs" />
     <Compile Include="Functions\AssociateSettings.cs" />
+    <Compile Include="Functions\EnergyManagement\EnergyViewToolbarConvertTargetMenu.cs" />
     <Compile Include="Functions\EnergyManagement\SaveToDashboardDialog.cs" />
+    <Compile Include="Functions\EnergyManagement\TimeSpanDialog.cs" />
     <Compile Include="Functions\HierarchyOtherCostPropertySettings.cs" />
     <Compile Include="Functions\KPITargetBaselineSettings.cs" />
     <Compile Include="Functions\HierarchyElectricCostSettings.cs" />

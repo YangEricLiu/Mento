@@ -117,16 +117,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
-        /// <summary>
-        /// Get the value of monthpicker
-        /// </summary>
-        /// <returns>Monthpicker value</returns>
-        public string GetValue()
-        {
-            return SelectInput.GetAttribute("value");
-        }
-
-
         protected virtual void ClickPreviousNavigator()
         {
             var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.MonthPickerPreviousNavigator);
@@ -156,13 +146,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
-        /// Get the value of test data type key
+        /// Get the value of month picker
         /// </summary>
-        /// <param name="key">month name element key</param>
-        /// <returns>Key value</returns>
-        public string GetActualValue(string itemKey)
+        /// <param name="key">month picker element key</param>
+        /// <returns>month picker value</returns>
+        public string GetValue()
         {
-            return ComboBoxItemRepository.GetComboBoxItemRealValue(itemKey);
+            return SelectInput.GetAttribute("value");
         }
 
         protected virtual Locator GetMonthPickerYearLocator(string itemKey)

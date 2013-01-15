@@ -129,5 +129,18 @@ namespace Mento.Script.EnergyView.Usage
 
             Assert.IsTrue(DataPanel.IsDistributionChartDrawn());
         }
+
+        [Test]
+        [CaseID("TC-J1-SmokeTest-040-005	")]
+        public void TestDatePicker()
+        {
+            DatePicker EnergyUsageStartDate = JazzDatePicker.EnergyUsageStartDateDatePicker;
+            DatePicker EnergyUsageEndDate = JazzDatePicker.EnergyUsageEndDateDatePicker;
+
+            
+            EnergyUsageEndDate.SelectDateItem(new DateTime(2012, 7, 14));
+            TimeManager.MediumPause();
+            EnergyUsageStartDate.SelectDateItem(new DateTime(2012, 6, 10));
+        }
     }
 }

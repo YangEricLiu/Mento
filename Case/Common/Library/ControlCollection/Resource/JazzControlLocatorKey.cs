@@ -549,5 +549,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Chart
         public static string ChartEnergyView = "ChartEnergyView";
         #endregion
+
+        #region DatePicker
+        #region Energy Usage
+        public static string DatePickerEnergyUsageStartDate = "DatePickerEnergyUsageStartDate";
+        public static string DatePickerEnergyUsageEndDate = "DatePickerEnergyUsageEndDate";   
+        #endregion
+        #endregion
     }
 }

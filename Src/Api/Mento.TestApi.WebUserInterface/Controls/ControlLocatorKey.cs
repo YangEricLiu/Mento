@@ -72,5 +72,20 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string WindowConfirmButton = "WindowConfirmButton";
         public static string WindowCancelButton = "WindowCancelButton";
         #endregion
-    }
+
+        #region DatePicker locators
+        public static string DatePickerTrigger = "DatePickerTrigger";
+        public static string DatePickerInput = "DatePickerInput";
+        public static string DatePickerPreviousMonth = "DatePickerPreviousMonth";
+        public static string DatePickerNextMonth = "DatePickerNextMonth";
+        public static string InnerMonthPickerButton = "InnerMonthPickerButton";
+        public static string InnerMonthPickerPreviousNavigator = "InnerMonthPickerPreviousNavigator";
+        public static string InnerMonthPickerNextNavigator = "InnerMonthPickerNextNavigator";
+        public static string InnerMonthPickerConfirm = "InnerMonthPickerConfirm";
+        public static string InnerMonthPickerCancel = "InnerMonthPickerCancel";
+        public static string InnerMonthPickerYearItem = "InnerMonthPickerYearItem";
+        public static string InnerMonthPickerMonthItem = "InnerMonthPickerMonthItem";
+        public static string DatePickerDayItem = "DatePickerDayItem";
+        #endregion
+    } 
 }

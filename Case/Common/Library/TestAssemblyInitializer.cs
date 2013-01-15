@@ -32,7 +32,7 @@ namespace Mento.ScriptCommon.Library
             JazzBrowseManager.CloseJazz();
 
             if (IsInitializeDatabase())
-                JazzDatabaseOperator.Destruct();
+                //JazzDatabaseOperator.Destruct();
 
             ExecutionContext.Destruct();
         }

@@ -85,8 +85,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Cost\" />
-    <Folder Include="Emission\" />
+    <Folder Include="Emission\Cost\" />
     <Folder Include="KPI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

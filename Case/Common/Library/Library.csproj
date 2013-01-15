@@ -54,6 +54,7 @@
     <Compile Include="ControlCollection\JazzCheckBoxField.cs" />
     <Compile Include="ControlCollection\JazzComboBox.cs" />
     <Compile Include="ControlCollection\JazzControlCollection.cs" />
+    <Compile Include="ControlCollection\JazzDatePicker.cs" />
     <Compile Include="ControlCollection\JazzGrid.cs" />
     <Compile Include="ControlCollection\JazzLabel.cs" />
     <Compile Include="ControlCollection\JazzMessageBox.cs" />

@@ -503,4 +503,10 @@
   <chart>
     <add key="ChartEnergyView" value="div.highcharts-container" type="CssSelector"/>
   </chart>
+
+  <!--DatePicker-->
+  <EnergyUsage>
+    <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+    <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+  </EnergyUsage>
 </WebElement>

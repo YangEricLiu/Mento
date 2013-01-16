@@ -220,7 +220,11 @@
       <customermanagement>
         <add key="ButtonAddCustomer" value="st-customer-grid-add" type="ID"/>
         <add key="ButtonUploadLogo" value="st-customer-logo-upload-button-fileInputEl" type="ID"/>
-      </customermanagement>
+        <add key="ButtonSaveCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonCancelCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonDeleteCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+        <add key="ButtonUpdateCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+     </customermanagement>
     </platformsettings>
   </button> 
   

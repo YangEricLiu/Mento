@@ -252,6 +252,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Customer Settings
         public static string ButtonAddCustomer = "ButtonAddCustomer";
         public static string ButtonUploadLogo = "ButtonUploadLogo";
+        public static string ButtonSaveCustomer = "ButtonSaveCustomer";
+        public static string ButtonCancelCustomer = "ButtonCancelCustomer";
+        public static string ButtonDeleteCustomer = "ButtonDeleteCustomer";
+        public static string ButtonUpdateCustomer = "ButtonUpdateCustomer";
         #endregion
         #region User settings
         public static string ButtonUserCreate = "ButtonUserCreate";

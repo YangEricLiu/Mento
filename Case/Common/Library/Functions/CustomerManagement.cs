@@ -17,10 +17,58 @@ namespace Mento.ScriptCommon.Library.Functions
     public class CustomerManagement
     {
         internal CustomerManagement()
-        { 
-            
+        {
+
         }
 
+        #region Controls
+        private static Button AddCustomer = JazzButton.AddCustomerButton;
+        private static Button UploadLogo = JazzButton.UploadLogoButton;
+        private static Button SaveCustomer = JazzButton.SaveCustomerButton;
+        private static TextField CustomerName = JazzTextField.CustomerNameTextField;
+        private static TextField CustomerCode = JazzTextField.CustomerCodeTextField;
+        private static TextField CustomerAddress = JazzTextField.CustomerAddressTextField;
+        private static TextField CustomerManager = JazzTextField.CustomerManagerTextField;
+        private static TextField CustomerTelephone = JazzTextField.CustomerTelephoneTextField;
+        private static TextField CustomerEmail = JazzTextField.CustomerCommentTextField;
+        private static TextField CustomerComment = JazzTextField.CustomerCommentTextField;
+        private static DatePicker CustomerOperationTime = JazzDatePicker.OperationTimeDatePicker;
+        #endregion
+
+        #region Add Customer
+        public void ClickAddCustomerButton()
+        {
+            AddCustomer.Click();
+        }
+
+        public void FillInCustomerInfo(CustomerInputData　inputData)
+        {
+            CustomerName.Fill(inputData.Name);
+            CustomerCode.Fill(inputData.Code);
+            CustomerAddress.Fill(inputData.Address);
+            CustomerManager.Fill(inputData.ResponsiblePerson);
+            CustomerTelephone.Fill(inputData.Telephone);
+            CustomerEmail.Fill(inputData.Email);
+            CustomerOperationTime.SelectDateItem(ConvertStringToDateTime(inputData.OperationTime));
+            CustomerComment.Fill(inputData.Comment);
+        }
+
+        private DateTime ConvertStringToDateTime(string date)
+        { 
+            string[] newDate = date.Split(new char[] {'-'});
+
+            int year = Convert.ToInt32(newDate[0]);
+            int month = Convert.ToInt32(newDate[1]);
+            int day = Convert.ToInt32(newDate[2]);
+
+            return new DateTime(year, month, day);
+        }
+
+        public void ClickSaveButton()
+        {
+            SaveCustomer.Click();
+        }
+        #endregion
 
     }
 }

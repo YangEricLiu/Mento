@@ -39,9 +39,12 @@ namespace Mento.Script.Administration.CustomerOperation
 
         [Test]
         [CaseID("TC-J1-SmokeTest-033-001")]
-        public void AddNewCustomer()
-        { 
-            
+        [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(AddCustomerSuite), "TC-J1-SmokeTest-033-001")]
+        public void AddNewCustomer(CustomerManagementData testData)
+        {
+            CustomerManagement.ClickAddCustomerButton();
+            TimeManager.ShortPause();
+            CustomerManagement.FillInCustomerInfo(testData.InputData);
         }
     }
 }

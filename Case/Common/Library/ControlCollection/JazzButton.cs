@@ -250,6 +250,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Customer settings buttons
         public static Button AddCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonAddCustomer);
         public static Button UploadLogoButton = GetControl<Button>(JazzControlLocatorKey.ButtonUploadLogo);
+        public static Button SaveCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonSaveCustomer);
+        public static Button CancelCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonCancelCustomer);
+        public static Button DeleteCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteCustomer);
+        public static Button UpdateCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonUpdateCustomer);
         #endregion
         #region User setting
         public static Button UserCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserCreate);

@@ -38,7 +38,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox CalculationTypeComboBox = JazzComboBox.KPITagSettingsCalculationTypeComboBox;
         private static ComboBox CalculationStepComboBox = JazzComboBox.KPITagSettingsCalculationStepComboBox;
         private static TextField CommentTextField = JazzTextField.KPITagSettingsCommentTextField;
-
+        private Grid TagList = JazzGrid.KPITagSettingsKPITagList;
         private static Grid FormulaPTagList = JazzGrid.KPITagSettingsFormulaEditPTagList;
         private static FormulaField KPIFormulaField = JazzTextField.KPIFormulaField;
         private static CheckBoxField CheckBoxFieldDayNightKPITag = JazzCheckBoxField.CheckBoxFieldDayNightKPITag;
@@ -93,6 +93,35 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region Basic Property Operations
+        /// <summary>
+        /// After click confirm button,would display a messagebox
+        /// </summary>
+        /// <returns></returns>
+        public string GetMessageText()
+        {
+            return JazzMessageBox.MessageBox.GetMessage();
+        }
+
+        /// <summary>
+        /// Confirm to delete
+        /// </summary>
+        /// <returns></returns>
+        public void ConfirmDeleteMagBox()
+        {
+            JazzMessageBox.MessageBox.Confirm();
+        }
+        /// <summary>
+        /// Click modify kpitag  button
+        /// </summary>
+        /// <returns></returns>
+       public void ClickModifyKPITagButton()
+        {
+            ModifyButton.Click();
+        }
+        public void ClickDeleteKPITagButton()
+        {
+            DeleteButton.Click();
+        }
         /// <summary>
         /// Click add kpitag save button
         /// </summary>
@@ -328,6 +357,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool DayNightIsChecked()
         {
             return CheckBoxFieldDayNightKPITag.IsChecked();
+        }
+        /// <summary>
+        /// judge KPItag is deleted
+        /// </summary>
+        /// <param name="tagName"></param>
+        /// <returns></returns>
+        public Boolean KPITagIsNotDeleted(string tagName)
+        {
+            return TagList.IsRowExist(3, tagName);
         }
         #endregion
     }

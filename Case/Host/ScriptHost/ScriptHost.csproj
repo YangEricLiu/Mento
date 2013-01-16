@@ -147,11 +147,19 @@
     <Content Include="Config\ComboBoxItemList.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\Customer\TagManagement\VtagManagement\TA-VtagConfigue-001.json" />
-    <None Include="Data\Administration\CustomerOperation\AddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
     <None Include="Data\Administration\User\UserConfiguration\TC-J1-SmokeTest-034-Modify.json" />
     <None Include="Data\Administration\User\UserConfiguration\TC-J1-SmokeTest-034.json" />
+    <None Include="Data\Customer\TagManagement\KPIConfiguration\TA-KPIConfigue-001.json" />
+    <None Include="Data\Customer\TagManagement\KPIConfiguration\TA-KPItag-001.json" />
+    <None Include="Data\Customer\TagManagement\KPItagConfiguration\TA-KPItag-001.json" />
+    <None Include="Data\Customer\TagManagement\KPItagConfiguration\TA-KPItagConfigue-001.json" />
     <None Include="Data\Customer\TagManagement\KPITargetSuite\TC-J1-SmokeTest-022.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITag\TA-KPITag-001.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITag\TA-ModifyKPITag-001.json" />
+    <None Include="Data\Customer\TagManagement\PtagConfiguration\TA-PtagConfiguration-002.json" />
+    <None Include="Data\Customer\TagManagement\PtagConfiguration\TC-J1-SmokeTest-002-001.json" />
+    <None Include="Data\Customer\TagManagement\VtagManagement\TA-Vtag-001.json" />
+    <None Include="Data\Customer\TagManagement\VtagManagement\TA-VtagConfigue-001.json" />
     <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-040.json" />
     <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-037.json" />
     <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-038.json" />

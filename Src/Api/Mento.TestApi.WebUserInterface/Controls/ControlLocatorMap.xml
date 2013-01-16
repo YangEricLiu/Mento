@@ -7,7 +7,7 @@
 
   <add key="MessageBox" value="//div[contains(@class,'x-message-box')]" type="XPath"/>
   <add key="MessageBoxOkButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
-  <add key="MessageBoxConfirmButton" value="//span[text()='$@Common.Button.Confirm']]" type="XPath"/>
+  <add key="MessageBoxConfirmButton" value="//span[text()='$@Common.Button.Confirm']" type="XPath"/>
   <add key="MessageBoxNoButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='否']]" type="XPath"/>
   <add key="MessageBoxCancelButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='取消']]" type="XPath"/>
 

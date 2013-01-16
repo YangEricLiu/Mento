@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarbonFactor\CarbonFactorSuite.cs" />
+    <Compile Include="CustomerOperation\AddCustomerSuite.cs" />
     <Compile Include="TimeManagement\HeatingCoolingSeasonSuite.cs" />
     <Compile Include="TimeManagement\DayNightSuite.cs" />
     <Compile Include="TimeManagement\WorktimeSuite.cs" />

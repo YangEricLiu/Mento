@@ -43,8 +43,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void AddCostforElectricfixed()
         {
             HierarchySetting.ExpandNode("自动化测试");
-            HierarchySetting.ExpandNode("AddCalendarProperty");
-            HierarchySetting.FocusOnHierarchyNode("AddPeopleProperty");
+            HierarchySetting.ExpandNode("systemAssociate");
+            HierarchySetting.FocusOnHierarchyNode("AreaDimension");
             TimeManager.ShortPause();
             CostSettings.ClickCostPropertyTabButton();
             TimeManager.MediumPause();

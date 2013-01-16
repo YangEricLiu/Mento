@@ -10,6 +10,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
     public class DatePicker : JazzControl
     {
         private const string DATEPICKERITEMVARIABLENAME = "itemKey";
+        private const string YEARWORD = "年";
+        private const string MONTHWORD = "月";
 
         protected IWebElement SelectTrigger 
         {
@@ -61,24 +63,30 @@ namespace Mento.TestApi.WebUserInterface.Controls
             FindChild(locator).Click();
         }
 
-        private void DisplayMonthPicker()
+        private void  DisplayMonthPicker()
         {
             var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.InnerMonthPickerButton);
 
             FindChild(locator).Click();
+        }
 
+        private string GetDate()
+        {
+            var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.InnerMonthPickerButton);
+
+            return FindChild(locator).Text;
         }
 
         private DateTime GetCurrentDate()
         {
-            string[] date = GetValue().Split(new char[1] { '-' });
+            string currentDate = GetDate();
+            string dateValue = currentDate.Replace(YEARWORD, "-").Replace(MONTHWORD,"-");
+
+            string[] date = dateValue.Split(new char[1] { '-' });
             int year = Convert.ToInt32(date[0]);
             int month = Convert.ToInt32(date[1]);
-            int day = Convert.ToInt32(date[2]);
 
-            Console.Out.WriteLine(GetValue());
-
-            return new DateTime(year, month, day);
+            return new DateTime(year, month, 1);
         }
         
         private void NavigateToMonth(DateTime date)

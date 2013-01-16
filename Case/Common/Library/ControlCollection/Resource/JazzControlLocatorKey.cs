@@ -249,7 +249,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonCarbonFactorDelete = "ButtonCarbonFactorDelete";
         public static string LinkButtonCarbonFactorAddMoreRanges = "LinkButtonCarbonFactorAddMoreRanges";
         #endregion
-
+        #region Customer Settings
+        public static string ButtonAddCustomer = "ButtonAddCustomer";
+        public static string ButtonUploadLogo = "ButtonUploadLogo";
+        #endregion
         #region User settings
         public static string ButtonUserCreate = "ButtonUserCreate";
         public static string ButtonUserRefresh = "ButtonUserRefresh";
@@ -365,7 +368,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region carbon factor
         public static string TextFieldCarbonFactorValue = "TextFieldCarbonFactorValue";
         #endregion
-
+        #region Customer Setting
+        public static string TextFieldCustomerName = "TextFieldCustomerName";
+        public static string TextFieldCustomerCode= "TextFieldCustomerCode";
+        public static string TextFieldCustomerAddress = "TextFieldCustomerAddress";
+        public static string TextFieldCustomerManager = "TextFieldCustomerManager";
+        public static string TextFieldCustomerTelephone = "TextFieldCustomerTelephone";
+        public static string TextFieldCustomerEmail = "TextFieldCustomerEmail";
+        public static string TextFieldCustomerComment = "TextFieldCustomerComment";
+        #endregion
         #region User Setting
         public static string TextFieldUserName = "TextFieldUserName";
         public static string TextFieldUserRealName = "TextFieldUserRealName";
@@ -554,6 +565,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Energy Usage
         public static string DatePickerEnergyUsageStartDate = "DatePickerEnergyUsageStartDate";
         public static string DatePickerEnergyUsageEndDate = "DatePickerEnergyUsageEndDate";   
+        #endregion
+
+        #region Customer Management
+        public static string DatePickerOperationTime = "DatePickerOperationTime";
         #endregion
         #endregion
     }

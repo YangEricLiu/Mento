@@ -277,7 +277,18 @@ namespace Mento.ScriptCommon.Library
                 return _HierarchyOtherCostPropertySettings;
             }
         }
-        
+
+        private static CustomerManagement _CustomerManagement;
+        public static CustomerManagement CustomerManagement
+        {
+            get
+            {
+                if (_CustomerManagement == null)
+                    _CustomerManagement = new CustomerManagement();
+
+                return _CustomerManagement;
+            }
+        }
         
     }
 }

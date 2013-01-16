@@ -247,7 +247,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static LinkButton CarbonFactorAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonCarbonFactorAddMoreRanges);
         
         #endregion
-
+        #region Customer settings buttons
+        public static Button AddCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonAddCustomer);
+        public static Button UploadLogoButton = GetControl<Button>(JazzControlLocatorKey.ButtonUploadLogo);
+        #endregion
         #region User setting
         public static Button UserCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserCreate);
         public static Button UserRefreshButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserRefresh);

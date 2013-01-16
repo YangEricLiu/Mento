@@ -1,4 +1,9 @@
 ﻿-----------------------------------Preset data------------------------------------
+SET IDENTITY_INSERT [User] ON
+INSERT INTO [User](Id,Name,RealName,UserType,Password,Comment,Title,Telephone,Email,Status,UpdateUser,UpdateTime)
+VALUES(3,'Admin','Admin',1,'161EBD7D45089B3446EE4E0D86DBCF92','Admin','Admin','0100000','11@11.11',1,'Admin',GETDATE())
+SET IDENTITY_INSERT [User] OFF
+
 SET IDENTITY_INSERT Hierarchy ON
 INSERT INTO Hierarchy(Id,Type,Code,Name,TimezoneId,Comment,ParentId,CustomerId,Path,Status,UpdateUser,UpdateTime)
 VALUES(2,-1,'Mento','自动化测试',1,'Mento',NULL,2,'/2/',1,'Mento',GETDATE())

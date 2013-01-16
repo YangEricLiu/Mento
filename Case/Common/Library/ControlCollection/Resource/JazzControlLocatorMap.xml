@@ -217,6 +217,10 @@
         <add key="ButtonCarbonFactorDelete" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
         <add key="LinkButtonCarbonFactorAddMoreRanges" value="//div[@id='st-carbonfactor-items-add']/a[contains(text(), '添加生效日期')]" type="XPath"/>        
       </carbonfactor>
+      <customermanagement>
+        <add key="ButtonAddCustomer" value="st-customer-grid-add" type="ID"/>
+        <add key="ButtonUploadLogo" value="st-customer-logo-upload-button-fileInputEl" type="ID"/>
+      </customermanagement>
     </platformsettings>
   </button> 
   
@@ -315,6 +319,15 @@
       <carbonfactor>
         <add key="TextFieldCarbonFactorValue" value="//td[@id='st-carbonfactor-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[2]//input" type="XPath"/>
       </carbonfactor>
+      <customersetting>
+        <add key="TextFieldCustomerName" value="st-customer-name-inputEl" type="ID"/>
+        <add key="TextFieldCustomerCode" value="//input[@type='text'and @name='Code']" type="XPath"/>
+        <add key="TextFieldCustomerAddress" value="//input[@type='text'and @name='Address']" type="XPath"/>
+        <add key="TextFieldCustomerManager" value="//input[@type='text'and @name='Manager']" type="XPath"/>
+        <add key="TextFieldCustomerTelephone" value="//input[@type='text'and @name='Telephone']" type="XPath"/>
+        <add key="TextFieldCustomerEmail" value="//input[@type='text'and @name='Email']" type="XPath"/>
+        <add key="TextFieldCustomerComment" value="st-customer-comment-inputEl" type="ID"/>       
+      </customersetting>
     </platformsettings>
   </textfield>
   <!--TextField End-->
@@ -459,6 +472,7 @@
     <add key="MonthPickerDieselOilCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][9]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
     <add key="MonthPickerLowPressureSteamCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][10]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
   </hierarchyproperty>
+ 
   <!--User Management Begin-->
   <user>
     <add key="ButtonUserCreate" value="st-user-grid-add-btnInnerEl" type="ID"/>
@@ -509,4 +523,7 @@
     <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
     <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
   </EnergyUsage>
+  <customermanagement>
+    <add key="DatePickerOperationTime" value="//td[@id='st-customer-starttime-bodyEl']/table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartTime']]" type="XPath"/>
+  </customermanagement>
 </WebElement>

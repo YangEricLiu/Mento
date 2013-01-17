@@ -62,7 +62,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox KPITargetBaselineEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineEffectiveYear);
         public static ComboBox KPITargetBaselineWorkdayRuleEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineWorkdayRuleEndTime);
         public static ComboBox KPITargetBaselineNonworkdayRuleEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineNonworkdayRuleEndTime);
-        
+        public static ComboBox KPITargetBaselineSpecialdayRuleStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineSpecialdayRuleStartTime);
+        public static ComboBox KPITargetBaselineSpecialdayRuleEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineSpecialdayRuleEndTime);        
         #endregion
         #endregion
 

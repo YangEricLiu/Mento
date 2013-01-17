@@ -372,7 +372,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region carbon factor
         public static string TextFieldCarbonFactorValue = "TextFieldCarbonFactorValue";
         #endregion
-        #region Customer Setting
+        #region Customer Management
         public static string TextFieldCustomerName = "TextFieldCustomerName";
         public static string TextFieldCustomerCode= "TextFieldCustomerCode";
         public static string TextFieldCustomerAddress = "TextFieldCustomerAddress";
@@ -381,7 +381,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldCustomerEmail = "TextFieldCustomerEmail";
         public static string TextFieldCustomerComment = "TextFieldCustomerComment";
         #endregion
-        #region User Setting
+        #region User Management
         public static string TextFieldUserName = "TextFieldUserName";
         public static string TextFieldUserRealName = "TextFieldUserRealName";
         public static string TextFieldUserTitle = "TextFieldUserTitle";
@@ -439,7 +439,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxKPITagSettingsCalculationStep = "ComboBoxKPITagSettingsCalculationStep";
         public static string ComboBoxKPITargetBaselineEffectiveYear = "ComboBoxKPITargetBaselineEffectiveYear";
         public static string ComboBoxKPITargetBaselineWorkdayRuleEndTime = "ComboBoxKPITargetBaselineWorkdayRuleEndTime";
-        public static string ComboBoxKPITargetBaselineNonworkdayRuleEndTime = "ComboBoxKPITargetBaselineNonworkdayRuleEndTime"; 
+        public static string ComboBoxKPITargetBaselineNonworkdayRuleEndTime = "ComboBoxKPITargetBaselineNonworkdayRuleEndTime";
+        public static string ComboBoxKPITargetBaselineSpecialdayRuleStartTime = "ComboBoxKPITargetBaselineSpecialdayRuleStartTime";
+        public static string ComboBoxKPITargetBaselineSpecialdayRuleEndTime = "ComboBoxKPITargetBaselineSpecialdayRuleEndTime";
         #endregion
         #endregion
 
@@ -570,10 +572,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string DatePickerEnergyUsageStartDate = "DatePickerEnergyUsageStartDate";
         public static string DatePickerEnergyUsageEndDate = "DatePickerEnergyUsageEndDate";   
         #endregion
-
-        #region Customer Management
+        #region Customer settings
+        #region KPITag settings
+        public static string DatePickerKPITargetBaselineSpecialdayRuleStartDate = "DatePickerKPITargetBaselineSpecialdayRuleStartDate";
+        public static string DatePickerKPITargetBaselineSpecialdayRuleEndDate = "DatePickerKPITargetBaselineSpecialdayRuleEndDate";
+        #endregion
+        #endregion
+		#region Customer Management
         public static string DatePickerOperationTime = "DatePickerOperationTime";
         #endregion
+
         #endregion
     }
 }

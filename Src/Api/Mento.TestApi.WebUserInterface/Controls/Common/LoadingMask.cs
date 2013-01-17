@@ -26,8 +26,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
                 TimeManager.ShortPause();
             }
-            catch
+            catch(Exception ex)
             {
+                //throw;
             }
         }
     }

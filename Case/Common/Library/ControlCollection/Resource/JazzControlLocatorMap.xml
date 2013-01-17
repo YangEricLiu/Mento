@@ -99,11 +99,11 @@
         <add key="ButtonKPITargetBaselineCalculationRuleCreate" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='empty']/span[text()='计算规则']]" type="XPath"/>
         <add key="ButtonKPITargetBaselineCalculationRuleBack" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='返回']]" type="XPath"/>
         <add key="ButtonKPITargetBaselineCalculationRuleModify" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineCalculateTarget" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算基准值']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineCalculateTarget" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算目标值']]" type="XPath"/>
         <add key="ButtonKPITargetBaselineCalculateBaseline" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算基准值']]" type="XPath"/>
         <add key="ButtonKPITargetBaselineRevise" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='修正计算值']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineSave" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineCancel" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineSave" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineCancel" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonKPITargetBaselineAddSpecialDates" value="//img[contains(@class,'x-tool-plus')]" type="XPath"/>
         <add key="ButtonKPITargetBaselineDeleteSpecialDates" value="//img[contains(@class,'x-tool-trash')]" type="XPath"/>
 
@@ -383,6 +383,8 @@
         <add key="ComboBoxKPITargetBaselineEffectiveYear" value="//div[@id='setting-region-east-body']//table[contains(@class,'x-autocontainer-form-item')]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input]" type="XPath"/>
         <add key="ComboBoxKPITargetBaselineWorkdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
         <add key="ComboBoxKPITargetBaselineNonworkdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='非工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineSpecialdayRuleStartTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineSpecialdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']/table[4]//table[@class='x-form-trigger-wrap']" type="XPath"/>
       </kpitag>
     </customersettings>
     <platformsettings>
@@ -476,7 +478,6 @@
     <add key="MonthPickerDieselOilCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][9]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
     <add key="MonthPickerLowPressureSteamCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][10]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
   </hierarchyproperty>
- 
   <!--User Management Begin-->
   <user>
     <add key="ButtonUserCreate" value="st-user-grid-add-btnInnerEl" type="ID"/>
@@ -527,7 +528,15 @@
     <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
     <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
   </EnergyUsage>
-  <customermanagement>
-    <add key="DatePickerOperationTime" value="//td[@id='st-customer-starttime-bodyEl']/table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartTime']]" type="XPath"/>
-  </customermanagement>
+  <customersettings>
+    <kpitag>
+      <add key="DatePickerKPITargetBaselineSpecialdayRuleStartDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      <add key="DatePickerKPITargetBaselineSpecialdayRuleEndDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+    </kpitag>
+  </customersettings>
+  <platformsettings>
+    <customermanagement>
+      <add key="DatePickerOperationTime" value="//td[@id='st-customer-starttime-bodyEl']/table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartTime']]" type="XPath"/>
+    </customermanagement>
+  </platformsettings>
 </WebElement>

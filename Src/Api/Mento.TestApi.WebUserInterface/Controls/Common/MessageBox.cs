@@ -31,6 +31,17 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        private IWebElement _YesButton;
+        protected IWebElement YesButton
+        {
+            get
+            {
+                if (this._YesButton == null)
+                    this._YesButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxYesButton));
+                return this._YesButton;
+            }
+        }
+
         private IWebElement _NoButton;
         protected IWebElement NoButton
         {
@@ -76,6 +87,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
             this.ConfirmButton.Click();
         }
 
+        public void Yes()
+        {
+            if (!this.YesButton.Enabled)
+                throw new ApiException("Yes button can not be clicked because it is not enabled in the messagebox.");
+
+            this.YesButton.Click();
+        }
+
+        
         public void No()
         {
             if (!this.NoButton.Enabled)

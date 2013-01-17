@@ -28,12 +28,13 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Button CalculationRuleViewButton = JazzButton.KPITargetBaselineCalculationRuleViewButton;
         private static Button CalculationRuleCreateButton = JazzButton.KPITargetBaselineCalculationRuleCreateButton;
-        private static Button CalculationRuleBackButton = JazzButton.KPITargetBaselineCalculationRuleBackButton;        
-        private static Button CalculateTarget = JazzButton.KPITargetBaselineCalculateTargetButton;
-        private static Button CalculateBaseline = JazzButton.KPITargetBaselineCalculateBaselineButton;
+        private static Button CalculationRuleBackButton = JazzButton.KPITargetBaselineCalculationRuleBackButton;
+        private static Button CalculationRuleModifyButton = JazzButton.KPITargetBaselineCalculationRuleModifyButton;
+        private static Button CalculateTargetButton = JazzButton.KPITargetBaselineCalculateTargetButton;
+        private static Button CalculateBaselineButton = JazzButton.KPITargetBaselineCalculateBaselineButton;
         private static Button ReviseButton = JazzButton.KPITargetBaselineReviseButton;
-        private static Button SaveButton = JazzButton.KPITagSettingsSaveButton;
-        private static Button CancelButton = JazzButton.KPITagSettingsCancelButton;
+        private static Button SaveButton = JazzButton.KPITargetBaselineSaveButton;
+        private static Button CancelButton = JazzButton.KPITargetBaselineCancelButton;
         private static Button AddSpecialDatesButton = JazzButton.KPITargetBaselineAddSpecialDatesButton;
         private static Button DeleteSpecialDatesButton = JazzButton.KPITargetBaselineDeleteSpecialDatesButton;
                 
@@ -57,7 +58,13 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox EffectiveYear = JazzComboBox.KPITargetBaselineEffectiveYearComboBox;
         private static ComboBox WorkdayRuleEndTime = JazzComboBox.KPITargetBaselineWorkdayRuleEndTimeComboBox;
         private static ComboBox NonworkdayRuleEndTime = JazzComboBox.KPITargetBaselineNonworkdayRuleEndTimeComboBox;
+        private static ComboBox SpecialdayRuleStartTime = JazzComboBox.KPITargetBaselineSpecialdayRuleStartTimeComboBox;
+        private static ComboBox SpecialdayRuleEndTime = JazzComboBox.KPITargetBaselineSpecialdayRuleEndTimeComboBox;
 
+        private static DatePicker SpecialdayRuleStartDate = JazzDatePicker.KPITargetBaselineSpecialdayRuleStartDateDatePicker;
+        private static DatePicker SpecialdayRuleEndDate = JazzDatePicker.KPITargetBaselineSpecialdayRuleEndDateDatePicker;
+
+        #region common
         /// <summary>
         /// Navigate to KPITag settings
         /// </summary>
@@ -106,41 +113,66 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             EffectiveYear.SelectItem(year);
         }
+               
+
+        /// <summary>
+        /// Click save button
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickSaveButton()
+        {
+            SaveButton.Click();
+        }
+
+        /// <summary>
+        /// Click cancel button
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickCancelButton()
+        {
+            CancelButton.Click();
+        }
+        #endregion
+
+        #region configuration rule settings
 
         /// <summary>
         /// Click calculation rule view button
         /// </summary>
         /// <returns></returns>
-        public void ViewCalculationRule()
+        public void ClickViewCalculationRuleButton()
         {
-            JazzButton.KPITargetBaselineCalculationRuleViewButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            CalculationRuleViewButton.Click();
         }
 
         /// <summary>
         /// Click calculation rule add button
         /// </summary>
         /// <returns></returns>
-        public void CreateCalculationRule()
+        public void ClickCreateCalculationRuleButton()
         {
-            JazzButton.KPITargetBaselineCalculationRuleCreateButton.Click();
+            CalculationRuleCreateButton.Click();
         }
 
         /// <summary>
         /// Click calculation rule back button
         /// </summary>
         /// <returns></returns>
-        public void BackFromCalculationRule()
+        public void ClickBackFromCalculationRuleButton()
         {
-            JazzButton.KPITargetBaselineCalculationRuleBackButton.Click();
+            CalculationRuleBackButton.Click();
         }
 
         /// <summary>
         /// Click calculation rule modify button
         /// </summary>
         /// <returns></returns>
-        public void ModifyCalculationRule()
+        public void ClickModifyCalculationRuleButton()
         {
-            JazzButton.KPITargetBaselineCalculationRuleModifyButton.Click();
+            CalculationRuleModifyButton.Click();
         }
 
         /// <summary>
@@ -151,7 +183,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectWorkdayRuleEndTime(string time, int num)
         {
             ComboBox OneEndTime = GetOneWorkdayRuleEndTimeComboBox(num);
-            OneEndTime.SelectItem(time); 
+            OneEndTime.SelectItem(time);
         }
 
         /// <summary>
@@ -162,7 +194,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectNonworkdayRuleEndTime(string time, int num)
         {
             ComboBox OneEndTime = GetOneNonworkdayRuleEndTimeComboBox(num);
-            OneEndTime.SelectItem(time); 
+            OneEndTime.SelectItem(time);
         }
 
         /// <summary>
@@ -198,6 +230,50 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Select start date for special date rule 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void SelectSpecialdayRuleStartDate(int year, int month, int day, int num)
+        {
+            DatePicker OneStartDate = GetOneSpecialdayRuleStartDateDatePicker(num);
+            OneStartDate.SelectDateItem(new DateTime(year, month, day));
+        }
+
+        /// <summary>
+        /// Select end date for special date rule 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void SelectSpecialdayRuleEndDate(int year, int month, int day, int num)
+        {
+            DatePicker OneEndDate = GetOneSpecialdayRuleEndDateDatePicker(num);
+            OneEndDate.SelectDateItem(new DateTime(year, month, day));
+        }
+
+        /// <summary>
+        /// Select start time for special date rule
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void SelectSpecialdayRuleStartTime(string time, int num)
+        {
+            ComboBox OneStartTime = GetOneSpecialdayRuleStartTimeComboBox(num);
+            OneStartTime.SelectItem(time);
+        }
+
+        /// <summary>
+        /// Select end time for special date rule
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void SelectSpecialdayRuleEndTime(string time, int num)
+        {
+            ComboBox OneEndTime = GetOneSpecialdayRuleEndTimeComboBox(num);
+            OneEndTime.SelectItem(time);
+        }
+
+        /// <summary>
         /// Fill in special day rull value field
         /// </summary>
         /// <param name="input">Test data</param>
@@ -207,7 +283,178 @@ namespace Mento.ScriptCommon.Library.Functions
             TextField OneSpecialdayRuleValueValue = GetOneSpecialdayRuleValueTextField(num);
             OneSpecialdayRuleValueValue.Fill(value);
         }
+        #endregion
 
+        #region calculate values
+
+        /// <summary>
+        /// Click calculate target value button
+        /// </summary>
+        /// <returns></returns>
+        public void ClickCalculateTargetButton()
+        {
+            JazzMessageBox.LoadingMask.WaitLoading();
+            CalculateTargetButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            JazzMessageBox.MessageBox.Yes();
+            JazzMessageBox.LoadingMask.WaitLoading(maxtime:30);
+        }
+
+        /// <summary>
+        /// Click calculate baseline value button
+        /// </summary>
+        /// <returns></returns>
+        public void ClickCalculateBaselineButton()
+        {
+            JazzMessageBox.LoadingMask.WaitLoading();
+            CalculateBaselineButton.Click();
+        }
+        #endregion
+
+        #region revise calculation values
+
+        /// <summary>
+        /// Click revise target or baseline value button
+        /// </summary>
+        /// <returns></returns>
+        public void ClickReviseButton()
+        {
+            JazzMessageBox.LoadingMask.WaitLoading();
+            ReviseButton.Click();
+        }
+                
+        public void FillInAnnualCalculationValue(string value)
+        {
+            AnnualCalculationValueTextField.Fill(value);            
+        }
+                
+        public void FillInJanuaryCalculationValue(string value)
+        {
+            JanuaryCalculationValueTextField.Fill(value);
+        }
+                
+        public void FillInFebruaryCalculationValue(string value)
+        {
+            FebruaryCalculationValueTextField.Fill(value);            
+        }
+        
+        public void FillInMarchCalculationValue(string value)
+        {
+            MarchCalculationValueTextField.Fill(value);            
+        }
+                
+        public void FillInAprilCalculationValue(string value)
+        {
+            AprilCalculationValueTextField.Fill(value);            
+        }
+
+        public void FillInMayCalculationValue(string value)
+        {
+            MayCalculationValueTextField.Fill(value);
+        }
+                
+        public void FillInJuneCalculationValue(string value)
+        {
+            JuneCalculationValueTextField.Fill(value);
+        }
+
+        public void FillInJulyCalculationValue(string value)
+        {
+            JulyCalculationValueTextField.Fill(value);
+        }
+
+        public void FillInAugustCalculationValue(string value)
+        {
+            AugustCalculationValueTextField.Fill(value);
+        }
+
+        public void FillInSeptemberCalculationValue(string value)
+        {
+            SeptemberCalculationValueTextField.Fill(value);
+        }
+
+        public void FillInOctoberCalculationValue(string value)
+        {
+            OctoberCalculationValueTextField.Fill(value);
+        }
+
+        public void FillInNovemberCalculationValue(string value)
+        {
+            NovemberCalculationValueTextField.Fill(value);
+        }
+
+        public void FillInDecemberCalculationValue(string value)
+        {
+            DecemberCalculationValueTextField.Fill(value);
+        }
+
+        public string GetAnnualCalculationValue()
+        {
+            return AnnualCalculationValueTextField.GetValue();
+        }
+
+        public string GetJanuaryCalculationValue()
+        {
+            return JanuaryCalculationValueTextField.GetValue();
+        }
+
+        public string GetFebruaryCalculationValue()
+        {
+            return FebruaryCalculationValueTextField.GetValue();
+        }
+
+        public string GetMarchCalculationValue()
+        {
+            return MarchCalculationValueTextField.GetValue();
+        }
+
+        public string GetAprilCalculationValue()
+        {
+            return AprilCalculationValueTextField.GetValue();
+        }
+
+        public string GetMayCalculationValue()
+        {
+            return MayCalculationValueTextField.GetValue();
+        }
+
+        public string GetJuneCalculationValue()
+        {
+            return JuneCalculationValueTextField.GetValue();
+        }
+
+        public string GetJulyCalculationValue()
+        {
+            return JulyCalculationValueTextField.GetValue();
+        }
+
+        public string GetAugustCalculationValue()
+        {
+            return AugustCalculationValueTextField.GetValue();
+        }
+
+        public string GetSeptemberCalculationValue()
+        {
+            return SeptemberCalculationValueTextField.GetValue();
+        }
+
+        public string GetOctoberCalculationValue()
+        {
+            return OctoberCalculationValueTextField.GetValue();
+        }
+
+        public string GetNovemberCalculationValue()
+        {
+            return NovemberCalculationValueTextField.GetValue();
+        }
+
+        public string GetDecemberCalculationValue()
+        {
+            return DecemberCalculationValueTextField.GetValue();
+        }
+        #endregion
+                                 
+        
         #region private method
 
         private ComboBox GetOneWorkdayRuleEndTimeComboBox(int positionIndex)
@@ -220,6 +467,16 @@ namespace Mento.ScriptCommon.Library.Functions
             return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxKPITargetBaselineNonworkdayRuleEndTime, positionIndex);
         }
 
+        private ComboBox GetOneSpecialdayRuleStartTimeComboBox(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxKPITargetBaselineSpecialdayRuleStartTime, positionIndex);
+        }
+
+        private ComboBox GetOneSpecialdayRuleEndTimeComboBox(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxKPITargetBaselineSpecialdayRuleEndTime, positionIndex);
+        }
+
         private TextField GetOneWorkdayRuleValueTextField(int positionIndex)
         {
             return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldKPITargetBaselineWorkdayRuleValue, positionIndex);
@@ -228,12 +485,23 @@ namespace Mento.ScriptCommon.Library.Functions
         private TextField GetOneNonworkdayRuleValueTextField(int positionIndex)
         {
             return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldKPITargetBaselineNonworkdayRuleValue, positionIndex);
-        }
+        }       
 
         private TextField GetOneSpecialdayRuleValueTextField(int positionIndex)
         {
             return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldKPITargetBaselineSpecialdayRuleValue, positionIndex);
         }
+
+        private DatePicker GetOneSpecialdayRuleStartDateDatePicker(int positionIndex)
+        {
+            return JazzDatePicker.GetOneMonthPicker(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleStartDate, positionIndex);
+        }
+
+        private DatePicker GetOneSpecialdayRuleEndDateDatePicker(int positionIndex)
+        {
+            return JazzDatePicker.GetOneMonthPicker(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleEndDate, positionIndex);
+        }
+
         #endregion
 
     }

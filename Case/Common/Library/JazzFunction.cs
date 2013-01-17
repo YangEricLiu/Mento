@@ -254,6 +254,19 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static UserTypePermissionSettings _UserTypePermissionSettings;
+        public static UserTypePermissionSettings UserTypePermissionSettings
+        {
+            get
+            {
+                if (_UserTypePermissionSettings == null)
+                    _UserTypePermissionSettings = new UserTypePermissionSettings();
+
+                return _UserTypePermissionSettings;
+            }
+        }
+
+
         private static HierarchyElectricCostSettings _HierarchyElectricCostSettings;
         public static HierarchyElectricCostSettings HierarchyElectricCostSettings
         {

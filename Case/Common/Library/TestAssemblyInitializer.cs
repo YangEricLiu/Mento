@@ -23,7 +23,7 @@ namespace Mento.ScriptCommon.Library
 
             JazzBrowseManager.OpenJazz();
 
-            JazzFunction.LoginPage.LoginToCustomer();
+            JazzFunction.LoginPage.LoginToAdmin();
 
         }
 

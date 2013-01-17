@@ -31,7 +31,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SaveButton = JazzButton.KPITagSettingsSaveButton;
         private static Button CancelButton = JazzButton.KPITagSettingsCancelButton;
         private static Button DeleteButton = JazzButton.KPITagSettingsDeleteButton;
-
+        private static Button FormulaCancel = JazzButton.KPITagSettingsFormulaCancel;
+    
         private static TextField NameTextField = JazzTextField.KPITagSettingsNameTextField;
         private static TextField CodeTextField = JazzTextField.KPITagSettingsCodeTextField;
         private static ComboBox UomComboBox = JazzComboBox.KPITagSettingsUomComboBox;
@@ -122,6 +123,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             DeleteButton.Click();
         }
+        
         /// <summary>
         /// Click add kpitag save button
         /// </summary>
@@ -291,7 +293,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public void PrepareToAddFormula(string tagName)
         {
             FocusOnKPITag(tagName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
             SwitchToFormulaTab();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
             JazzButton.KPITagSettingsFormulaUpdate.Click();
             //JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
             //TimeManager.ShortPause();
@@ -307,6 +313,14 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzButton.KPITagSettingsFormulaSave.Click();
         }
 
+        /// <summary>
+        /// Click cancel modify formula button
+        /// </summary>
+        /// <returns></returns>
+        public void ClickCancelFormula()
+        {
+            FormulaCancel.Click();
+        }
         /// <summary>
         /// Simulate the mouse drag formula tag list to formula field
         /// </summary>

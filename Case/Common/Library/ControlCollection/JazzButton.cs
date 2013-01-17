@@ -157,6 +157,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TabButton KPITagSettingsFormulaTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonKPITagSettingsFormula);
         public static Button KPITagSettingsFormulaUpdate = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsFormulaUpdate);
         public static Button KPITagSettingsFormulaSave = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsFormulaSave);
+        public static Button KPITagSettingsFormulaCancel = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsFormulaCancel);
 
         public static Button KPITagSettingsCreateKPITagButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsCreateKPITag);
         public static Button KPITagSettingsModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonKPITagSettingsModify);
@@ -264,6 +265,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button UserModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserModify);
         public static Button UserAssociatedCustomerLinkButton = GetControl<Button>(JazzControlLocatorKey.LinkButtonUserAssociatedCustomer);
         public static Button UserGeneratePasswordButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserGeneratePassword);
+        public static Button UserTypePermissionModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionModify);
+        public static Button UserTypePermissionSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionSave);
+        public static Button UserTypePermissionCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionCancel);
+        public static Button UserTypePermissionRefreshButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionRefresh);
         #endregion
         #endregion
     }

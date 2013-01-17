@@ -31,5 +31,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             get { return GetControl<Grid>(JazzControlLocatorKey.GridUserList); }
         }
         #endregion
+        #region platform settings
+        public static Grid UserTypePermissionList = GetControl<Grid>(JazzControlLocatorKey.GridUserTypePermissionList);
+        #endregion
     }
 }

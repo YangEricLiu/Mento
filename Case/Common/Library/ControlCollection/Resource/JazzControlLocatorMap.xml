@@ -86,6 +86,7 @@
         <add key="TabButtonKPITagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()='计算公式']]" type="XPath"/>
         <add key="ButtonKPITagSettingsFormulaUpdate" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
         <add key="ButtonKPITagSettingsFormulaSave" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonKPITagSettingsFormulaCancel" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
 
         <add key="ButtonKPITagSettingsCreateKPITag" value="st-kpi-grid-add" type="ID"/>
         <add key="ButtonKPITagSettingsSave" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
@@ -454,8 +455,11 @@
       <add key="GridKPITagSettingsKPITagList" value="st-kpi-grid" type="ID"/>
       <add key="GridAssociationTagList" value="//div[@id='st-tag-assoc-form-body']//div[contains(@class,'x-grid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
-      <add key="GridUserList" value="st-user-grid" type="ID"/>
     </customersettings>
+    <platformsettings>
+      <add key="GridUserList" value="st-user-grid" type="ID"/>
+      <add key="GridUserTypePermissionList" value="st-usertype-grid" type="ID"/>
+    </platformsettings>
   </grid>
   <!--Grid End-->
   <hierarchydisassociation>
@@ -496,10 +500,16 @@
     <add key="TextFieldUserTelephone" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='Telephone']" type="XPath"/>
     <add key="TextFieldUserEmail" value="st-user-email-field-inputEl" type="ID"/>
     <add key="TextFieldUserComment" value="st-user-comment-field-inputEl" type="ID"/>
-  </user> 
+    <add key="ButtonUserTypePermissionModify" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+    <add key="ButtonUserTypePermissionRefresh" value="st-usertype-refresh" type="ID"/>
+    <add key="ButtonUserTypePermissionSave" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
+    <add key="ButtonUserTypePermissionCancel" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+  </user>
   <!--User Management End-->
   <!--CheckBoxField Begin-->
     <add key="CheckBoxFieldDayNightKPITag" value="st-formula-daynight" type="ID"/>
+    <add key="CheckBoxFieldUserTypeEnergyUse" value="//div[@id='st-usertype-energyuse-body']//table[tbody/tr//label[text()='用能']]" type="XPath"/>
+    <add key="CheckBoxFieldUserTypeCost" value="//div[@id='st-usertype-cost-body']//table[tbody/tr//label[text()='成本']]" type="XPath"/>
   <!--CheckBoxField End-->
   <!--Label Begin-->
   <customersettings>

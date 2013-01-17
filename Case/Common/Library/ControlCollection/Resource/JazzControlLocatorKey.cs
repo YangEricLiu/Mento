@@ -115,6 +115,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ButtonKPITagSettingsFormulaUpdate = "ButtonKPITagSettingsFormulaUpdate";
         public static string ButtonKPITagSettingsFormulaSave = "ButtonKPITagSettingsFormulaSave";
+        public static string ButtonKPITagSettingsFormulaCancel = "ButtonKPITagSettingsFormulaCancel";
 
         public static string ButtonKPITagSettingsCreateKPITag = "ButtonKPITagSettingsCreateKPITag";
 
@@ -266,6 +267,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonUserDelete = "ButtonUserDelete";
         public static string ButtonUserGeneratePassword = "ButtonUserGeneratePassword";
         public static string LinkButtonUserAssociatedCustomer = "LinkButtonUserAssociatedCustomer";
+        public static string GridUserTypePermissionList = "GridUserTypePermissionList";
+        public static string GridUserTypePermissionTabList = "GridUserTypePermissionTabList";
+        public static string ButtonUserTypePermissionModify = "ButtonUserTypePermissionModify";
+        public static string ButtonUserTypePermissionRefresh = "ButtonUserTypePermissionRefresh";
+        public static string ButtonUserTypePermissionSave = "ButtonUserTypePermissionSave";
+        public static string ButtonUserTypePermissionCancel = "ButtonUserTypePermissionCancel";
         #endregion
         #endregion
         #endregion
@@ -526,7 +533,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region CheckBoxField
         public static string CheckBoxFieldDayNightKPITag = "CheckBoxFieldDayNightKPITag";
-       
+        public static string CheckBoxFieldUserTypeEnergyUse = "CheckBoxFieldUserTypeEnergyUse";
+        public static string CheckBoxFieldUserTypeCost = "CheckBoxFieldUserTypeCost";
         #endregion
 
         #region MonthPicker

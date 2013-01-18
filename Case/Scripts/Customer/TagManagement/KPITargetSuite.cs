@@ -36,6 +36,11 @@ namespace Mento.Script.Customer.TagManagement
         {
         }
 
+        /// <summary>
+        /// Precondition: 1. make sure there is a KPI tag with name 'KPITagForTargetBaseline'
+        ///               2. make sure the KPI tag has been associated to a hiearchy(or system or area) node
+        ///               3. make sure the hiearchy node (or its upper nodes) has been configured a workday calendar '工休日日历1' for year '2010'.
+        /// </summary>        
         [Test]
         [CaseID("TC-J1-SmokeTest-022")]
         [MultipleTestDataSource(typeof(KPITargetData[]), typeof(KPITargetSuite), "TC-J1-SmokeTest-022")]

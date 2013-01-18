@@ -574,6 +574,7 @@
     <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
     <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
   </EnergyUsage>
+
   <customersettings>
     <kpitag>
       <add key="DatePickerKPITargetBaselineSpecialdayRuleStartDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
@@ -585,4 +586,23 @@
       <add key="DatePickerOperationTime" value="//td[@id='st-customer-starttime-bodyEl']/table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartTime']]" type="XPath"/>
     </customermanagement>
   </platformsettings>
+
+  <!--User Profile Begin-->
+  <UserProfile>
+    <add key="ButtonUserProfile" value="//div[@id='header-userprofile-container-innerCt']/img" type="XPath"/>
+    <add key="MenuButtonUserProfileView" value="header-btn-personalinfo" type="ID"/>
+    <add key="ButtonUserProfileModify" value="st-userprofile-profilepanel-update" type="ID"/>
+    <add key="ButtonUserProfileCancel" value="st-userprofile-profilepanel-cancel" type="ID"/>
+    <add key="ButtonUserProfileSave" value="st-userprofile-profilepanel-save" type="ID"/>
+    <add key="ButtonUserProfileClose" value="//div[@id='st-userprofile-personalinfo-window_header-targetEl']/div[2]/img" type="XPath"/>
+    <add key="TextFieldUserProfileName" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@id='st-userprofile-personalinfo-name-inputEl']" type="XPath"/>
+    <add key="TextFieldUserProfileRealName" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@name='RealName']" type="XPath"/>
+    <add key="ComboBoxUserProfileType" value="st-userprofile-personalinfo-usertype-triggerWrap" type="ID"/>
+    <add key="ComboBoxUserProfileAssociatedCustomer" value="st-userprofile-personalinfo-firstcustomer-triggerWrap" type="ID"/>
+    <add key="TextFieldUserProfileTitle" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@id='st-userprofile-title-field-inputEl']" type="XPath"/>
+    <add key="TextFieldUserProfileEmail" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@id='st-userprofile-email-field-inputEl']" type="XPath"/>
+    <add key="TextFieldUserProfileTelephone" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@name='Telephone']" type="XPath"/> 
+    <add key="TextFieldUserProfileComment" value="//table[@id='st-userprofile-personalinfo-panel-body']//textarea[@id='st-userprofile-comment-field-inputEl']" type="XPath"/>
+  </UserProfile>
+  <!--User Profile End-->
 </WebElement>

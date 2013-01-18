@@ -11,87 +11,30 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    /// <summary>
-    /// The business logic implement of User setting.
-    /// </summary>
-    public class UserSettings
+    public class UserProfileDialog : Window
     {
-        internal UserSettings()
+        private static Locator Locator = new Locator("/div[@id='st-userprofile-personalinfo-window']", ByType.ID);
+        private static Button ModifyButton = JazzButton.UserProfileModifyButton;
+        private static Button SaveButton = JazzButton.UserProfileSaveButton;
+        private static Button CancelButton = UserProfileDialog.CancelButton;
+        private static Button CloseButton = UserProfileDialog.CloseButton;
+
+        private static Label Title = UserProfileDialog.Title;
+
+        private static TextField NameTextField = JazzTextField.UserProfileNameTextField;
+        private static TextField RealNameTextField = JazzTextField.UserProfileRealNameTextField;
+        private static TextField TelephoneTextField = JazzTextField.UserProfileTelephoneTextField;
+        private static TextField EmailTextField = JazzTextField.UserProfileEmailTextField;
+        private static TextField TitleTextField = JazzTextField.UserProfileTitleTextField;
+        private static TextField CommentTextField = JazzTextField.UserProfileCommentTextField;
+
+        private static ComboBox UserTypeComboBox = JazzComboBox.UserProfileTypeComboBox;
+        private static ComboBox UserAssociatedCustomerComboBox = JazzComboBox.UserProfileAssociatedCustomerComboBox;
+
+        internal UserProfileDialog()
+            : base(Locator)
         {
         }
-
-        private static Grid GridUserList = JazzGrid.UserListGrid;
-
-        private static Button CreateButton = JazzButton.UserCreateButton;
-        private static Button RefreshButton = JazzButton.UserRefreshButton;
-
-        private static Button ModifyButton = JazzButton.UserModifyButton;
-        private static Button SaveButton = JazzButton.UserSaveButton;
-        private static Button CancelButton = JazzButton.UserCancelButton;
-        private static Button DeleteButton = JazzButton.UserDeleteButton;
-        private static Button GeneratePasswordButton = JazzButton.UserGeneratePasswordButton;
-
-
-        private static TextField NameTextField = JazzTextField.UserNameTextField;
-        private static TextField RealNameTextField = JazzTextField.UserRealNameTextField;
-        private static TextField TelephoneTextField = JazzTextField.UserTelephoneTextField;
-        private static TextField EmailTextField = JazzTextField.UserEmailTextField;
-        private static TextField TitleTextField = JazzTextField.UserTitleTextField;
-        private static TextField CommentTextField = JazzTextField.UserCommentTextField;
-
-        private static ComboBox UserTypeComboBox = JazzComboBox.UserTypeComboBox;
-        private static ComboBox UserAssociatedCustomerComboBox = JazzComboBox.UserAssociatedCustomerComboBox;
-
-        /// <summary>
-        /// Navigate to User setting
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public void NavigatorToUserSetting()
-        {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UserManagement);
-        }
-        /// <summary>
-        /// click "add user" button
-        /// </summary>
-        /// <param>Add user button</param>
-        /// <returns></returns>
-        public void ClickAddUser()
-        {
-            CreateButton.Click();
-        }
-
-        /// <summary>
-        /// click "Refresh" button
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public void ClickRefreshUserList()
-        {
-            RefreshButton.Click();
-        }
-       
-        /// <summary>
-        /// click "Delete" button
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public void DeleteUser()
-        {
-            DeleteButton.Click();
-        }
-
-
-        /// <summary>
-        /// Click save button to save new user
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public void ClickSaveButton()
-        {
-            SaveButton.Click();
-        }
-
         /// <summary>
         /// Click Modify button to cancel add user
         /// </summary>
@@ -113,13 +56,23 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Click Generate password button to reset password for user
+        /// Click close button to cancel add user
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void ClickGeneratePasswordButton()
+        public void ClickCloseButton()
         {
-            GeneratePasswordButton.Click();
+            CloseButton.Click();
+        }
+
+        /// <summary>
+        /// Click save button to cancel add user
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickSaveButton()
+        {
+            CloseButton.Click();
         }
 
         /// <summary>
@@ -127,29 +80,15 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="input">Test data</param>
         /// <returns></returns>
-        public void FillInUser(UserInputData input)
+        public void FillInUserProfile(UserProfileInputData input)
         {
 
-            NameTextField.Fill(input.Name);
             RealNameTextField.Fill(input.RealName);
-            UserTypeComboBox.SelectItem(input.Type);
-            UserAssociatedCustomerComboBox.SelectItem(input.AssociatedCustomer); 
             TelephoneTextField.Fill(input.Telephone);
             EmailTextField.Fill(input.Email);
             TitleTextField.Fill(input.Title);
-            CommentTextField.Fill(input.Comment);            
+            CommentTextField.Fill(input.Comment);
 
-        }
-
-        /// <summary>
-        /// Input name of the new user 
-        /// </summary>
-        /// <param name="name">user name</param>
-        /// <returns></returns>
-        public void FillInName(string name)
-        {
-            //textFieldInstance.FillIn(ElementKey.HierarchyName, name);
-            NameTextField.Fill(name);
         }
 
         /// <summary>
@@ -163,26 +102,6 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Input type of the new user 
-        /// </summary>
-        /// <param name="type">user type</param>
-        /// <returns></returns>
-        public void FillInType(string type)
-        {
-            UserTypeComboBox.SelectItem(type);
-        }
-
-        /// <summary>
-        /// Input associatedcustomer of the new user 
-        /// </summary>
-        /// <param name="associatedcustomer">user associatedcustomer</param>
-        /// <returns></returns>
-        public void FillInAssociatedCustomer(string associatedcustomer)
-        {
-            UserAssociatedCustomerComboBox.SelectItem(associatedcustomer);
-        }
-
-        /// <summary>
         /// Input title of the new user 
         /// </summary>
         /// <param name="title">user title</param>
@@ -191,7 +110,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             TitleTextField.Fill(title);
         }
-        
+
         /// <summary>
         /// Input telephone of the new user 
         /// </summary>
@@ -227,14 +146,11 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="timeout">Waiting time</param>
         /// <returns></returns>
-        public void WaitForCreateOKDisplay(int timeout)
-        {
-            JazzMessageBox.MessageBox.WaitMeAppear();
-        }
 
-        public void ConfirmCreateOKMagBox()
+        public string UserProfileTitle()
         {
-            JazzMessageBox.MessageBox.OK();
+            return GetTitle();
+
         }
 
         /// <summary>
@@ -288,19 +204,34 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Get the user email expected value
+        /// </summary>
+        /// <param name></param>
+        /// <returns>email value</returns>
+        public string GetEmailValue()
+        {
+            return EmailTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get the user telephone expected value
+        /// </summary>
+        /// <param name></param>
+        /// <returns>telephone value</returns>
+        public string GetTelephoneValue()
+        {
+            return TelephoneTextField.GetValue();
+        }
+
+        /// <summary>
         /// Get the comment expected value
         /// </summary>
         /// <param>comment key</param>
         /// <returns>Comment value</returns>
         public string GetCommentValue()
         {
-            //return comboBoxInstance.GetValue(ElementKey.HierarchyComment);
             return CommentTextField.GetValue();
-        } 
-
-        public void FocusOnUser(string userName)
-        {
-            GridUserList.FocusOnRow(1, userName);    
         }
+
     }
 }

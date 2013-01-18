@@ -151,6 +151,9 @@
     <None Include="Data\Administration\TOU\TOUSuite\TC-J1-SmokeTest-025.json" />
     <None Include="Data\Administration\User\UserConfiguration\TC-J1-SmokeTest-034-Modify.json" />
     <None Include="Data\Administration\User\UserConfiguration\TC-J1-SmokeTest-034.json" />
+    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-1.json" />
+    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-2.json" />
+    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-3.json" />
     <None Include="Data\Customer\TagManagement\KPIConfiguration\TA-KPIConfigue-001.json" />
     <None Include="Data\Customer\TagManagement\KPIConfiguration\TA-KPItag-001.json" />
     <None Include="Data\Customer\TagManagement\KPItagConfiguration\TA-KPItag-001.json" />

@@ -110,7 +110,7 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-		private static DisassociateSettings _DisassociateSettings;
+        private static DisassociateSettings _DisassociateSettings;
         public static DisassociateSettings DisassociateSettings
         {
             get
@@ -314,6 +314,18 @@ namespace Mento.ScriptCommon.Library
                 return _CustomerManagement;
             }
         }
-        
+
+        private static UserProfile _UserProfile;
+        public static UserProfile UserProfile
+        {
+            get
+            {
+                if (_UserProfile == null)
+                    _UserProfile = new UserProfile();
+
+                return _UserProfile;
+            }
+
+        }
     }
 }

@@ -73,6 +73,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TOU\TOUSuite.cs" />
     <Compile Include="User\UserConfiguration.cs" />
+    <Compile Include="User\UserProfileSuite.cs" />
     <Compile Include="User\UserTypePermission.cs" />
   </ItemGroup>
   <ItemGroup>

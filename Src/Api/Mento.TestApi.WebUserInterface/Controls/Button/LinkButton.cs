@@ -10,5 +10,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public LinkButton(Locator locator)
             : base(locator)
         { }
+
+
+        public void ClickLink()
+        {
+            ElementHandler.Click(this.RootElement);
+        }
     }
 }

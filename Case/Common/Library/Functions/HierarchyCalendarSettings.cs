@@ -30,12 +30,14 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button CalendarSave = JazzButton.CalendarSaveButton;
         private static ComboBox WorkdayEffectiveYearAdd = JazzComboBox.WorkdayEffectiveYearComboBox;
         private static ComboBox WorkdayCalendarNameAdd = JazzComboBox.WorkdayCalendarNameComboBox;
+        private static ComboBox WorktimeCalendarName = JazzComboBox.WorktimeCalendarNameComboBox;
         private static ComboBox HeatingCoolingEffectiveYearAdd = JazzComboBox.HeatingCoolingEffectiveYearComboBox;
         private static ComboBox HeatingCoolingCalendarNameAdd = JazzComboBox.HeatingCoolingCalendarNameComboBox;
         private static ComboBox DayNightEffectiveYearAdd = JazzComboBox.DayNightEffectiveYearComboBox;
         private static ComboBox DayNightCalendarNameAdd = JazzComboBox.DayNightCalendarNameComboBox;
         private static LinkButton WorktimeAddCreate = JazzButton.WorktimeCreateButton;
         private static Label WorkdayCalendar = JazzLabel.WorkdayCalendarLabel;
+        private static Label WorktimeCalendar = JazzLabel.WorktimeCalendarLabel;
         private static Label HeatingCoolingCalendar = JazzLabel.HeatingCoolingCalendarLabel;
         private static Label DayNightCalendar = JazzLabel.DayNightCalendarLabel;
         #endregion
@@ -96,7 +98,17 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickAddWorktimeLinkButton()
         {
-            WorktimeAddCreate.Click();
+            WorktimeAddCreate.ClickLink();
+        }
+
+        public void SelectWorktimeCalendarName(string calendarName)
+        {
+            WorktimeCalendarName.SelectItem(calendarName);
+        }
+
+        public string GetWorktimeCalendarNameValue()
+        {
+            return WorktimeCalendarName.GetValue();
         }
 
         public string GetWorkdayEffectiveYearValue()
@@ -117,6 +129,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsWorkdayCalendarTextCorrect(string[] texts)
         {
             return WorkdayCalendar.IsLabelTextsExisted(texts);
+        }
+
+        public Boolean IsWorktimeCalendarTextCorrect(string[] texts)
+        {
+            return WorktimeCalendar.IsLabelTextsExisted(texts);
         }
         #endregion
 

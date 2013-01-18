@@ -64,7 +64,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickAddMoreRangesButton()
         {
-            AddMoreRangesButton.Click();             
+            AddMoreRangesButton.ClickLink();        
         }
 
         /// <summary>

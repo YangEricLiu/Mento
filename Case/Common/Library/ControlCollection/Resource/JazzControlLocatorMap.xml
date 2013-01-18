@@ -125,7 +125,7 @@
         <add key="ButtonWorkdayCreate" value="st-hierarchy-calendar-workday-add-toolEl" type="ID"/>
         <add key="ButtonHeatingCoolingCreate" value="st-hierarchy-calendar-coldwarm-add-toolEl" type="ID"/>
         <add key="ButtonDayNightCreate" value="st-hierarchy-calendar-daynight-add-toolEl" type="ID"/>
-        <add key="LinkButtonWorktimeCreate" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[a[text()='添加工作时间']]" type="XPath"/>
+        <add key="LinkButtonWorktimeCreate" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='添加工作时间']" type="XPath"/>
       </hierarchycalendar>
       <hierarchypeoplearea>
         <add key="TabButtonPeopleAreaProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[4]" type="XPath"/>
@@ -372,6 +372,7 @@
       <hierarchyCalendarproperty>
 		    <add key="ComboBoxWorkdayEffectiveYear" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
     	  <add key="ComboBoxWorkdayCalendarName" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
+        <add key="ComboBoxWorktimeCalendarName" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='Worktime']]" type="XPath"/>
         <add key="ComboBoxHeatingCoolingEffectiveYear" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
         <add key="ComboBoxHeatingCoolingCalendarName" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
         <add key="ComboBoxDayNightEffectiveYear" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
@@ -549,6 +550,7 @@
   <customersettings>
     <hierarchycalendar>
       <add key="LabelWorkdayCalendar" value="st-hierarchy-calendar-workday-container" type="ID"/>
+      <add key="LabelWorktimeCalendar" value="st-hierarchy-calendar-workday-container" type="ID"/>
       <add key="LabelHeatingCoolingCalendar" value="st-hierarchy-calendar-coldwarm-container" type="ID"/>
       <add key="LabelDayNightCalendar" value="st-hierarchy-calendar-daynight-container" type="ID"/>
     </hierarchycalendar>    

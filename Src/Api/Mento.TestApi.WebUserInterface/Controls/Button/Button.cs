@@ -31,7 +31,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void Click()
         {
-            this.RootElement.Click();
+            ElementHandler.Click(this.RootElement);
+            //this.RootElement.Click();
         }
 
         /// <summary>

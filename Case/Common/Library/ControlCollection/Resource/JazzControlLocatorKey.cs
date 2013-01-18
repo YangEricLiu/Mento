@@ -433,6 +433,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ComboBoxWorkdayEffectiveYear = "ComboBoxWorkdayEffectiveYear";
         public static string ComboBoxWorkdayCalendarName = "ComboBoxWorkdayCalendarName";
+        public static string ComboBoxWorktimeCalendarName = "ComboBoxWorktimeCalendarName";
 
         public static string ComboBoxHeatingCoolingEffectiveYear = "ComboBoxHeatingCoolingEffectiveYear";
         public static string ComboBoxHeatingCoolingCalendarName = "ComboBoxHeatingCoolingCalendarName";
@@ -595,6 +596,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Customer settings
         #region hierarchy calendar property
         public static string LabelWorkdayCalendar = "LabelWorkdayCalendar";
+        public static string LabelWorktimeCalendar = "LabelWorktimeCalendar";
         public static string LabelHeatingCoolingCalendar = "LabelHeatingCoolingCalendar";
         public static string LabelDayNightCalendar = "LabelDayNightCalendar";
         #endregion

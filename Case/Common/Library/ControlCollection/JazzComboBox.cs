@@ -26,6 +26,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static ComboBox WorkdayEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayEffectiveYear, 1);
         public static ComboBox WorkdayCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarName, 1);
+        public static ComboBox WorktimeCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorktimeCalendarName, 1);
 
         public static ComboBox HeatingCoolingEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingEffectiveYear, 1);
         public static ComboBox HeatingCoolingCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingCalendarName, 1);

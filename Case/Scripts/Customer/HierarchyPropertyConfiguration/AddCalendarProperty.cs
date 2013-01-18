@@ -42,7 +42,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void AddCalendarforWorkday()
         {
             string[] calendarText = new string[] { "默认工作日：", "周一至周五" };
-            
+            string[] workTimecalendarText = new string[] { "非工作时间：", "工作时间以外均为非工作时间", "工作时间：", "01:00-02:30 " };
+
             HierarchySettings.ExpandNode("自动化测试");
             HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
 
@@ -54,16 +55,19 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CalendarSettings.ClickWorkdayCreateButton();
             TimeManager.ShortPause();
 
-            //CalendarSettings.SelectWorkdayEffectiveYear("2002", 1);
-            //CalendarSettings.SelectWorkdayCalendarName("foraddcalendar1", 1);
-            TimeManager.ShortPause();
-            CalendarSettings.ClickAddWorktimeLinkButton();
-            CalendarSettings.ClickSaveCalendarButton();
+            CalendarSettings.SelectWorkdayEffectiveYear("2002");
+            CalendarSettings.SelectWorkdayCalendarName("foraddcalendar1");
             TimeManager.MediumPause();
+
+            CalendarSettings.ClickAddWorktimeLinkButton();
+            TimeManager.MediumPause();
+            CalendarSettings.SelectWorktimeCalendarName("foraddcalendar2");
 
             Assert.AreEqual(CalendarSettings.GetWorkdayEffectiveYearValue(), "2002");
             Assert.AreEqual(CalendarSettings.GetWorkdayCalendarNameValue(), "foraddcalendar1");
+            Assert.AreEqual(CalendarSettings.GetWorktimeCalendarNameValue(), "foraddcalendar2");
             Assert.IsTrue(CalendarSettings.IsWorkdayCalendarTextCorrect(calendarText));
+            Assert.IsTrue(CalendarSettings.IsWorktimeCalendarTextCorrect(workTimecalendarText));
         }
 
         [Test]

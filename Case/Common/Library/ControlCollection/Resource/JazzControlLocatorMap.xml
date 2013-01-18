@@ -229,6 +229,7 @@
         <add key="LinkButtonTOUBasicPropertyAddMoreValleyRanges" value="//div[@id='st-tou-linkbtn-addvalleytime']//a[(text()='添加谷时范围')]" type="XPath"/>
         <add key="TabButtonTOUPulsePeakProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='峰值季节']]" type="XPath"/>
         <add key="ButtonTOUPulsePeakPropertyCreate" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='峰值季节电价']]" type="XPath"/>
+        <add key="ButtonTOUPulsePeakPropertyPlusIcon" value="st-tou-peakproperty-addtool-toolEl" type="ID"/>
         <add key="ButtonTOUPulsePeakPropertyModify" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
         <add key="ButtonTOUPulsePeakPropertySave" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
         <add key="ButtonTOUPulsePeakPropertyCancel" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
@@ -345,7 +346,7 @@
         <add key="TextFieldTOUBasicPropertyPlainPriceValue" value="//div[@id='st-priceStrategy-basicproperty']//input[@type='text' and @name='PlainPrice']" type="XPath"/>
         <add key="TextFieldTOUBasicPropertyPeakPriceValue" value="//div[@id='st-priceStrategy-basicproperty']//input[@type='text' and @name='PeakPrice']" type="XPath"/>
         <add key="TextFieldTOUBasicPropertyValleyPriceValue" value="//div[@id='st-priceStrategy-basicproperty']//input[@type='text' and @name='ValleyPrice']" type="XPath"/>
-        <add key="TextFieldTOUPulsePeakPropertyPriceValue" value="//div[@id='st-priceStrategy-basicproperty']//input[@type='text' and @name='Price']" type="XPath"/>
+        <add key="TextFieldTOUPulsePeakPropertyPriceValue" value="//div[@id='st-priceStrategy-pulsepeakproperty']//input[@type='text' and @name='Price']" type="XPath"/>
       </TOU>
       <customersetting>
         <add key="TextFieldCustomerName" value="st-customer-name-inputEl" type="ID"/>
@@ -499,6 +500,7 @@
     <platformsettings>
       <add key="GridUserList" value="st-user-grid" type="ID"/>
       <add key="GridUserTypePermissionList" value="st-usertype-grid" type="ID"/>
+      <add key="GridTOUTariffsList" value="st-priceStrategy-grid" type="ID"/>
     </platformsettings>
   </grid>
   <!--Grid End-->
@@ -579,7 +581,6 @@
     <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
     <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
   </EnergyUsage>
-
   <customersettings>
     <kpitag>
       <add key="DatePickerKPITargetBaselineSpecialdayRuleStartDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>

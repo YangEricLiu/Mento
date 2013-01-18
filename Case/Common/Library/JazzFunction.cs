@@ -109,7 +109,7 @@ namespace Mento.ScriptCommon.Library
                 return _AssociateSettings;
             }
         }
-
+		
         private static DisassociateSettings _DisassociateSettings;
         public static DisassociateSettings DisassociateSettings
         {
@@ -218,15 +218,27 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        private static TOUSettings _TOUSettings;
-        public static TOUSettings TOUSettings
+        private static TOUBasicTariffSettings _TOUBasicTariffSettings;
+        public static TOUBasicTariffSettings TOUBasicTariffSettings
         {
             get
             {
-                if (_TOUSettings == null)
-                    _TOUSettings = new TOUSettings();
+                if (_TOUBasicTariffSettings == null)
+                    _TOUBasicTariffSettings = new TOUBasicTariffSettings();
 
-                return _TOUSettings;
+                return _TOUBasicTariffSettings;
+            }
+        }
+
+        private static TOUPulsePeakTariffSettings _TOUPulsePeakTariffSettings;
+        public static TOUPulsePeakTariffSettings TOUPulsePeakTariffSettings
+        {
+            get
+            {
+                if (_TOUPulsePeakTariffSettings == null)
+                    _TOUPulsePeakTariffSettings = new TOUPulsePeakTariffSettings();
+
+                return _TOUPulsePeakTariffSettings;
             }
         }
 

@@ -7,10 +7,10 @@ using Mento.Utility;
 
 namespace Mento.ScriptCommon.TestData.Administration
 {
-    public class TOUData : TestDataBase<TOUInputData, TOUExpectedData>
+    public class TOUBasicTariffData : TestDataBase<TOUBasicTariffInputData, TOUBasicTariffExpectedData>
     {
     }
-    public class TOUInputData : InputTestDataBase
+    public class TOUBasicTariffInputData : InputTestDataBase
     {
         public string Name { get; set; }
         public string PlainPrice { get; set; }
@@ -24,7 +24,7 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string[] ValleyEndTime { get; set; }
 
 
-        public TOUInputData(string name, string plainPrice, string peakPrice, string valleyPrice, int peakRecordNumber, int valleyRecordNumber, string[] peakStartTime, string[] peakEndTime, string[] valleyStartTime, string[] valleyEndTime)
+        public TOUBasicTariffInputData(string name, string plainPrice, string peakPrice, string valleyPrice, int peakRecordNumber, int valleyRecordNumber, string[] peakStartTime, string[] peakEndTime, string[] valleyStartTime, string[] valleyEndTime)
         {
             this.Name = name;
             this.PlainPrice = plainPrice;
@@ -39,13 +39,13 @@ namespace Mento.ScriptCommon.TestData.Administration
         }
     }
 
-    public class TOUExpectedData : ExpectedTestDataBase
+    public class TOUBasicTariffExpectedData : ExpectedTestDataBase
     {
-        public string Name { get; set; }
-        
-        public TOUExpectedData(string name)
+        public string Price { get; set; }
+
+        public TOUBasicTariffExpectedData(string price)
         {
-            this.Name = name;
+            this.Price = price;
         }
     }
 }

@@ -70,7 +70,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickAddMoreWarmRangesButton()
         {
-            AddMoreWarmRangesButton.Click();             
+            AddMoreWarmRangesButton.ClickLink();             
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickAddMoreColdRangesButton()
         {
-            AddMoreColdRangesButton.Click();
+            AddMoreColdRangesButton.ClickLink();
         }
         
         /// <summary>

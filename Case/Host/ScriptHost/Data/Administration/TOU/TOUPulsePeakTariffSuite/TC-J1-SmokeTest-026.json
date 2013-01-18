@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Price":"6",	
+			"RecordNumber":2,
+			"StartMonth":["01","11"],
+			"StartDate":["01","15"],
+			"EndMonth":["03","12"],
+			"EndDate":["15","31"],
+			"StartTime":["08:30","13:00"],
+			"EndTime":["12:00","13:30"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

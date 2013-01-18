@@ -261,6 +261,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LinkButtonTOUBasicPropertyAddMoreValleyRanges = "LinkButtonTOUBasicPropertyAddMoreValleyRanges";
         public static string TabButtonTOUPulsePeakProperty = "TabButtonTOUPulsePeakProperty";
         public static string ButtonTOUPulsePeakPropertyCreate = "ButtonTOUPulsePeakPropertyCreate";
+        public static string ButtonTOUPulsePeakPropertyPlusIcon = "ButtonTOUPulsePeakPropertyPlusIcon";
         public static string ButtonTOUPulsePeakPropertyModify = "ButtonTOUPulsePeakPropertyModify";
         public static string ButtonTOUPulsePeakPropertySave = "ButtonTOUPulsePeakPropertySave";
         public static string ButtonTOUPulsePeakPropertyCancel = "ButtonTOUPulsePeakPropertyCancel";
@@ -404,7 +405,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region carbon factor
         public static string TextFieldCarbonFactorValue = "TextFieldCarbonFactorValue";
         #endregion
-
         #region TOU
         public static string TextFieldTOUBasicPropertyName = "TextFieldTOUBasicPropertyName";
         public static string TextFieldTOUBasicPropertyPlainPriceValue = "TextFieldTOUBasicPropertyPlainPriceValue";
@@ -595,6 +595,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridAssociationTagList = "GridAssociationTagList";
         public static string GridPTagSettingsPTagList = "GridPTagSettingsPTagList";
         public static string GridUserList = "GridUserList";
+        #endregion
+
+        #region Platform settings
+        public static string GridTOUTariffsList = "GridTOUTariffsList";
         #endregion
         #endregion
 

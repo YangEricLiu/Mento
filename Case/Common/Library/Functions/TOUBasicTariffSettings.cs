@@ -13,15 +13,15 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.ScriptCommon.Library.Functions
 {
     /// <summary>
-    /// The business logic implement of time management.
+    /// The business logic implement of TOU basic tariff management.
     /// </summary>
-    public class TOUSettings
+    public class TOUBasicTariffSettings
     {
-        internal TOUSettings()
+        internal TOUBasicTariffSettings()
         {
         }
 
-        //private static Grid TOUTariffsList = JazzGrid.TOUTariffsList;
+        private static Grid TOUTariffsList = JazzGrid.TOUTariffsList;
 
         private static Button BasicPropertyCreateButton = JazzButton.TOUBasicPropertyCreateButton;
         private static Button BasicPropertyModifyButton = JazzButton.TOUBasicPropertyModifyButton;
@@ -30,37 +30,23 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button BasicPropertyDeleteButton = JazzButton.TOUBasicPropertyDeleteButton;
         private static LinkButton BasicPropertyAddMorePeakRangesButton = JazzButton.TOUBasicPropertyAddMorePeakRangesButton;
         private static LinkButton BasicPropertyAddMoreValleyRangesButton = JazzButton.TOUBasicPropertyAddMoreValleyRangesButton;
-        private static TabButton PulsePeakPropertyTab = JazzButton.TOUPulsePeakPropertyTabButton;
-        private static Button PulsePeakPropertyCreateButton = JazzButton.TOUPulsePeakPropertyCreateButton;
-        private static Button PulsePeakPropertyModifyButton = JazzButton.TOUPulsePeakPropertyModifyButton;
-        private static Button PulsePeakPropertySaveButton = JazzButton.TOUPulsePeakPropertySaveButton;
-        private static Button PulsePeakPropertyCancelButton = JazzButton.TOUPulsePeakPropertyCancelButton;
-        private static LinkButton PulsePeakPropertyAddMorePulsePeakRangesButton = JazzButton.TOUPulsePeakPropertyAddMorePulsePeakRangesButton;
         
         private static TextField BasicPropertyNameTextField = JazzTextField.TOUBasicPropertyNameTextField;
         private static TextField BasicPropertyPlainPriceValueTextField = JazzTextField.TOUBasicPropertyPlainPriceValueTextField;
         private static TextField BasicPropertyPeakPriceValueTextField = JazzTextField.TOUBasicPropertyPeakPriceValueTextField;
         private static TextField BasicPropertyValleyPriceValueTextField = JazzTextField.TOUBasicPropertyValleyPriceValueTextField;
-        private static TextField PulsePeakPropertyValleyPriceValueTextField = JazzTextField.TOUPulsePeakPropertyPriceValueTextField;
-
+        
         private static ComboBox BasicPropertyPeakStartTimeComboBox = JazzComboBox.TOUBasicPropertyPeakStartTimeComboBox;
         private static ComboBox BasicPropertyPeakEndTimeComboBox = JazzComboBox.TOUBasicPropertyPeakEndTimeComboBox;
         private static ComboBox BasicPropertyValleyStartTimeComboBox = JazzComboBox.TOUBasicPropertyValleyStartTimeComboBox;
         private static ComboBox BasicPropertyValleyEndTimeComboBox = JazzComboBox.TOUBasicPropertyValleyEndTimeComboBox;
-        private static ComboBox PulsePeakPropertyStartMonthComboBox = JazzComboBox.TOUPulsePeakPropertyStartMonthComboBox;
-        private static ComboBox PulsePeakPropertyStartDateComboBox = JazzComboBox.TOUPulsePeakPropertyStartDateComboBox;
-        private static ComboBox PulsePeakPropertyEndMonthComboBox = JazzComboBox.TOUPulsePeakPropertyEndMonthComboBox;
-        private static ComboBox PulsePeakPropertyEndDateComboBox = JazzComboBox.TOUPulsePeakPropertyEndDateComboBox;
-        private static ComboBox PulsePeakPropertyStartTimeComboBox = JazzComboBox.TOUPulsePeakPropertyStartTimeComboBox;
-        private static ComboBox PulsePeakPropertyEndTimeComboBox = JazzComboBox.TOUPulsePeakPropertyEndTimeComboBox;
-
+        
         public void NavigatorToPriceSettings()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.PriceSettingsPrice);
             //TimeManager.ShortPause();
         }        
-
-        #region TOU Basic property
+                
         public void PrepareToAddTOUBasicProperty()
         {
             BasicPropertyCreateButton.Click();
@@ -112,12 +98,12 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickAddMorePeakRangesButton()
         {
-            BasicPropertyAddMorePeakRangesButton.Click();
+            BasicPropertyAddMorePeakRangesButton.ClickLink();
         }
 
         public void ClickAddMoreValleyRangesButton()
         {
-            BasicPropertyAddMoreValleyRangesButton.Click();
+            BasicPropertyAddMoreValleyRangesButton.ClickLink();
         }
 
         public void ClickBasicPropertySaveButton()
@@ -129,24 +115,46 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return BasicPropertyNameTextField.GetValue();
         }
-        #endregion
 
-        #region TOU Pulse peak property
-        public void FocusOnTOUBasicTariff(string touBasicTariffName)
+        public string GetBasicPropertyPlainPriceValue()
         {
-            //KPITagList.FocusOnRow(1, touBasicTariffName);
+            return BasicPropertyPlainPriceValueTextField.GetValue();
         }
 
-        public void SwitchToPulsePeakPropertyTab()
+        public string GetBasicPropertyPeakPriceValue()
         {
-            PulsePeakPropertyTab.Click();
-        }      
-        public void PrepareToAddTOUPulsePeakProperty()
-        {
-            PulsePeakPropertyCreateButton.Click();
+            return BasicPropertyPeakPriceValueTextField.GetValue();
         }
-        #endregion
 
+        public string GetBasicPropertyValleyPriceValue()
+        {
+            return BasicPropertyValleyPriceValueTextField.GetValue();
+        }
+
+        public string GetBasicPropertyPeakStartTimeValue(int num)
+        {
+            ComboBox OneStartTime = GetOneBasicPropertyPeakStartTimeComboBox(num);
+            return OneStartTime.GetValue();
+        }
+
+        public string GetBasicPropertyPeakEndTimeValue(int num)
+        {
+            ComboBox OneEndTime = GetOneBasicPropertyPeakEndTimeComboBox(num);
+            return OneEndTime.GetValue();
+        }
+
+        public string GetBasicPropertyValleyStartTimeValue(int num)
+        {
+            ComboBox OneStartTime = GetOneBasicPropertyValleyStartTimeComboBox(num);
+            return OneStartTime.GetValue();
+        }
+
+        public string GetBasicPropertyValleyEndTimeValue(int num)
+        {
+            ComboBox OneEndTime = GetOneBasicPropertyValleyEndTimeComboBox(num);
+            return OneEndTime.GetValue();
+        }
+        
         #region private method
 
         private ComboBox GetOneBasicPropertyPeakStartTimeComboBox(int positionIndex)

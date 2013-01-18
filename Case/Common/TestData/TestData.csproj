@@ -51,6 +51,7 @@
     <Compile Include="Administration\TimeSettingsDayNightData.cs" />
     <Compile Include="Administration\TimeSettingsWortimeData.cs" />
     <Compile Include="Administration\TimeSettingsWordayData.cs" />
+    <Compile Include="Administration\UserProfileData.cs" />
     <Compile Include="Administration\UserSettingsData.cs" />
     <Compile Include="Customer\AddKPIData.cs" />
     <Compile Include="Customer\PtagData.cs" />

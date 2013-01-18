@@ -428,6 +428,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldUserEmail = "TextFieldUserEmail";
         public static string TextFieldUserComment = "TextFieldUserComment";
         #endregion
+
+        #region User Profile
+        public static string TextFieldUserProfileName = "TextFieldUserProfileName";
+        public static string TextFieldUserProfileRealName = "TextFieldUserProfileRealName";
+        public static string TextFieldUserProfileTitle = "TextFieldUserProfileTitle";
+        public static string TextFieldUserProfileTelephone = "TextFieldUserProfileTelephone";
+        public static string TextFieldUserProfileEmail = "TextFieldUserProfileEmail";
+        public static string TextFieldUserProfileComment = "TextFieldUserProfileComment";
+        #endregion
         #endregion
         #endregion
 
@@ -540,6 +549,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxUserAssociatedCustomer = "ComboBoxUserAssociatedCustomer";
         #endregion
 
+        #region User Profile
+        public static string ComboBoxUserProfileType = "ComboBoxUserProfileType";
+        public static string ComboBoxUserProfileAssociatedCustomer = "ComboBoxUserProfileAssociatedCustomer";
+        #endregion
         #endregion
         #endregion
 
@@ -640,5 +653,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #endregion
+
     }
 }

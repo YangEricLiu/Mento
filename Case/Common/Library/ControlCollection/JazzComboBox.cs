@@ -103,6 +103,19 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox CarbonFactorEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCarbonFactorEffectiveYear, 1);
         #endregion
 
+        #region TOU
+        public static ComboBox TOUBasicPropertyPeakStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyPeakStartTime, 1);
+        public static ComboBox TOUBasicPropertyPeakEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyPeakEndTime, 1);
+        public static ComboBox TOUBasicPropertyValleyStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyValleyStartTime, 1);
+        public static ComboBox TOUBasicPropertyValleyEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyValleyEndTime, 1);
+        public static ComboBox TOUPulsePeakPropertyStartMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyStartMonth, 1);
+        public static ComboBox TOUPulsePeakPropertyStartDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyStartDate, 1);
+        public static ComboBox TOUPulsePeakPropertyEndMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyEndMonth, 1);
+        public static ComboBox TOUPulsePeakPropertyEndDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyEndDate, 1);
+        public static ComboBox TOUPulsePeakPropertyStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyStartTime, 1);
+        public static ComboBox TOUPulsePeakPropertyEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyEndTime, 1);
+        #endregion
+
         #region User Setting
         public static ComboBox UserTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserType, 1);
         public static ComboBox UserAssociatedCustomerComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserAssociatedCustomer, 1);

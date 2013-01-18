@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administration\CarbonFactorSettingsData.cs" />
+    <Compile Include="Administration\TOUSettingsData.cs" />
     <Compile Include="Administration\CustomerManagementData.cs" />
     <Compile Include="Administration\TimeSettingsHeatingCoolingSeasonData.cs" />
     <Compile Include="Administration\TimeSettingsDayNightData.cs" />

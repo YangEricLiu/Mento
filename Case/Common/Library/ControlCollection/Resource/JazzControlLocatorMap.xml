@@ -98,8 +98,8 @@
         <add key="TabButtonKPIBaselineProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='基准值']]" type="XPath"/>
         <add key="ButtonKPITargetBaselineCalculationRuleView" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='update_cal_rule']/span[text()='计算规则']]" type="XPath"/>
         <add key="ButtonKPITargetBaselineCalculationRuleCreate" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='empty']/span[text()='计算规则']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineCalculationRuleBack" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='返回']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineCalculationRuleModify" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineCalculationRuleBack" value="//div[contains(@class,'x-btn') and em/button/span[text()='返回']]" type="XPath"/>
+        <add key="ButtonKPITargetBaselineCalculationRuleModify" value="//div[contains(@class,'x-btn') and em/button/span[text()='修改'] and not(contains(@style,'display: none')) and //parent::*[not(contains(@style,'display: none'))]]" type="XPath"/>
         <add key="ButtonKPITargetBaselineCalculateTarget" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算目标值']]" type="XPath"/>
         <add key="ButtonKPITargetBaselineCalculateBaseline" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算基准值']]" type="XPath"/>
         <add key="ButtonKPITargetBaselineRevise" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='修正计算值']]" type="XPath"/>
@@ -218,6 +218,21 @@
         <add key="ButtonCarbonFactorDelete" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
         <add key="LinkButtonCarbonFactorAddMoreRanges" value="//div[@id='st-carbonfactor-items-add']/a[contains(text(), '添加生效日期')]" type="XPath"/>        
       </carbonfactor>
+      <TOU>
+        <add key="ButtonTOUBasicPropertyCreate" value="st-priceStrategy-grid-add" type="ID"/>
+        <add key="ButtonTOUBasicPropertyModify" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+        <add key="ButtonTOUBasicPropertySave" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonTOUBasicPropertyCancel" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonTOUBasicPropertyDelete" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+        <add key="LinkButtonTOUBasicPropertyAddMorePeakRanges" value="//div[@id='st-tou-linkbtn-addpeaktime']//a[(text()='添加峰时范围')]" type="XPath"/>
+        <add key="LinkButtonTOUBasicPropertyAddMoreValleyRanges" value="//div[@id='st-tou-linkbtn-addvalleytime']//a[(text()='添加谷时范围')]" type="XPath"/>
+        <add key="TabButtonTOUPulsePeakProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='峰值季节']]" type="XPath"/>
+        <add key="ButtonTOUPulsePeakPropertyCreate" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='峰值季节电价']]" type="XPath"/>
+        <add key="ButtonTOUPulsePeakPropertyModify" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+        <add key="ButtonTOUPulsePeakPropertySave" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonTOUPulsePeakPropertyCancel" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="LinkButtonTOUPulsePeakPropertyAddMorePulsePeakRanges" value="//div[@id='st-tou-linkbtn-addpeaktime']//a[(text()='添加峰值季节时间')]" type="XPath"/>
+      </TOU>
       <customermanagement>
         <add key="ButtonAddCustomer" value="st-customer-grid-add" type="ID"/>
         <add key="ButtonUploadLogo" value="st-customer-logo-upload-button-fileInputEl" type="ID"/>
@@ -324,6 +339,13 @@
       <carbonfactor>
         <add key="TextFieldCarbonFactorValue" value="//td[@id='st-carbonfactor-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[2]//input" type="XPath"/>
       </carbonfactor>
+      <TOU>
+        <add key="TextFieldTOUBasicPropertyName" value="//div[@id='st-priceStrategy-basicproperty']//input[@type='text' and @name='Name']" type="XPath"/>
+        <add key="TextFieldTOUBasicPropertyPlainPriceValue" value="//div[@id='st-priceStrategy-basicproperty']//input[@type='text' and @name='PlainPrice']" type="XPath"/>
+        <add key="TextFieldTOUBasicPropertyPeakPriceValue" value="//div[@id='st-priceStrategy-basicproperty']//input[@type='text' and @name='PeakPrice']" type="XPath"/>
+        <add key="TextFieldTOUBasicPropertyValleyPriceValue" value="//div[@id='st-priceStrategy-basicproperty']//input[@type='text' and @name='ValleyPrice']" type="XPath"/>
+        <add key="TextFieldTOUPulsePeakPropertyPriceValue" value="//div[@id='st-priceStrategy-basicproperty']//input[@type='text' and @name='Price']" type="XPath"/>
+      </TOU>
       <customersetting>
         <add key="TextFieldCustomerName" value="st-customer-name-inputEl" type="ID"/>
         <add key="TextFieldCustomerCode" value="//input[@type='text'and @name='Code']" type="XPath"/>
@@ -419,6 +441,18 @@
         <add key="ComboBoxCarbonFactorDestination" value="//table[@id='st-carbonfactor-destination-triggerWrap' and tbody/tr/td/input[@name='DestinationUom']]" type="XPath"/>
         <add key="ComboBoxCarbonFactorEffectiveYear" value="//td[@id='st-carbonfactor-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
       </carbonfactor>
+      <TOU>
+        <add key="ComboBoxTOUBasicPropertyPeakStartTime" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxTOUBasicPropertyPeakEndTime" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxTOUBasicPropertyValleyStartTime" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxTOUBasicPropertyValleyEndTime" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyStartMonth" value="//div[@id='st-tou-pulsepeaktimerange']//table[$#positionIndex]//table[@class='x-form-trigger-wrap'][1]" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyStartDate" value="//div[@id='st-tou-peakTimeRange']//div[@class='x-column-inner'][$#positionIndex]/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyEndMonth" value="//div[@id='st-tou-peakTimeRange']//div[@class='x-column-inner'][$#positionIndex]/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyEndDate" value="//div[@id='st-tou-peakTimeRange']//div[@class='x-column-inner'][$#positionIndex]/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyStartTime" value="//div[@id='st-tou-peakTimeRange']//div[@class='x-column-inner'][$#positionIndex]/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyEndTime" value="//div[@id='st-tou-peakTimeRange']//div[@class='x-column-inner'][$#positionIndex]/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+      </TOU>
     </platformsettings>
   </combobox>
   

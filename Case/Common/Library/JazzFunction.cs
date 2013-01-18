@@ -218,6 +218,18 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static TOUSettings _TOUSettings;
+        public static TOUSettings TOUSettings
+        {
+            get
+            {
+                if (_TOUSettings == null)
+                    _TOUSettings = new TOUSettings();
+
+                return _TOUSettings;
+            }
+        }
+
         private static HierarchyPeopleAreaSettings _HierarchyPeopleAreaSettings;
         public static HierarchyPeopleAreaSettings HierarchyPeopleAreaSettings
         {

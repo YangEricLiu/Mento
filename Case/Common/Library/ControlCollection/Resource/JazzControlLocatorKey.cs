@@ -250,6 +250,21 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonCarbonFactorDelete = "ButtonCarbonFactorDelete";
         public static string LinkButtonCarbonFactorAddMoreRanges = "LinkButtonCarbonFactorAddMoreRanges";
         #endregion
+        #region TOU
+        public static string ButtonTOUBasicPropertyCreate = "ButtonTOUBasicPropertyCreate";
+        public static string ButtonTOUBasicPropertyModify = "ButtonTOUBasicPropertyModify";
+        public static string ButtonTOUBasicPropertySave = "ButtonTOUBasicPropertySave";
+        public static string ButtonTOUBasicPropertyCancel = "ButtonTOUBasicPropertyCancel";
+        public static string ButtonTOUBasicPropertyDelete = "ButtonTOUBasicPropertyDelete";
+        public static string LinkButtonTOUBasicPropertyAddMorePeakRanges = "LinkButtonTOUBasicPropertyAddMorePeakRanges";
+        public static string LinkButtonTOUBasicPropertyAddMoreValleyRanges = "LinkButtonTOUBasicPropertyAddMoreValleyRanges";
+        public static string TabButtonTOUPulsePeakProperty = "TabButtonTOUPulsePeakProperty";
+        public static string ButtonTOUPulsePeakPropertyCreate = "ButtonTOUPulsePeakPropertyCreate";
+        public static string ButtonTOUPulsePeakPropertyModify = "ButtonTOUPulsePeakPropertyModify";
+        public static string ButtonTOUPulsePeakPropertySave = "ButtonTOUPulsePeakPropertySave";
+        public static string ButtonTOUPulsePeakPropertyCancel = "ButtonTOUPulsePeakPropertyCancel";
+        public static string LinkButtonTOUPulsePeakPropertyAddMorePulsePeakRanges = "LinkButtonTOUPulsePeakPropertyAddMorePulsePeakRanges";
+        #endregion
         #region Customer Settings
         public static string ButtonAddCustomer = "ButtonAddCustomer";
         public static string ButtonUploadLogo = "ButtonUploadLogo";
@@ -379,6 +394,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region carbon factor
         public static string TextFieldCarbonFactorValue = "TextFieldCarbonFactorValue";
         #endregion
+        #region TOU
+        public static string TextFieldTOUBasicPropertyName = "TextFieldTOUBasicPropertyName";
+        public static string TextFieldTOUBasicPropertyPlainPriceValue = "TextFieldTOUBasicPropertyPlainPriceValue";
+        public static string TextFieldTOUBasicPropertyPeakPriceValue = "TextFieldTOUBasicPropertyPeakPriceValue";
+        public static string TextFieldTOUBasicPropertyValleyPriceValue = "TextFieldTOUBasicPropertyValleyPriceValue";
+        public static string TextFieldTOUPulsePeakPropertyPriceValue = "TextFieldTOUPulsePeakPropertyPriceValue";        
+        #endregion
         #region Customer Management
         public static string TextFieldCustomerName = "TextFieldCustomerName";
         public static string TextFieldCustomerCode= "TextFieldCustomerCode";
@@ -481,10 +503,25 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxDayNightCalendarStartTime = "ComboBoxDayNightCalendarStartTime";
         public static string ComboBoxDayNightCalendarEndTime = "ComboBoxDayNightCalendarEndTime";
         #endregion
+
         #region carbonfactor
         public static string ComboBoxCarbonFactorSource = "ComboBoxCarbonFactorSource";
         public static string ComboBoxCarbonFactorDestination = "ComboBoxCarbonFactorDestination";
         public static string ComboBoxCarbonFactorEffectiveYear = "ComboBoxCarbonFactorEffectiveYear";
+        #endregion
+
+        #region TOU
+        public static string ComboBoxTOUBasicPropertyPeakStartTime = "ComboBoxTOUBasicPropertyPeakStartTime";
+        public static string ComboBoxTOUBasicPropertyPeakEndTime = "ComboBoxTOUBasicPropertyPeakEndTime";
+        public static string ComboBoxTOUBasicPropertyValleyStartTime = "ComboBoxTOUBasicPropertyValleyStartTime";
+        public static string ComboBoxTOUBasicPropertyValleyEndTime = "ComboBoxTOUBasicPropertyValleyEndTime";
+        public static string ComboBoxTOUPulsePeakPropertyStartMonth = "ComboBoxTOUPulsePeakPropertyStartMonth";
+        public static string ComboBoxTOUPulsePeakPropertyStartDate = "ComboBoxTOUPulsePeakPropertyStartDate";
+        public static string ComboBoxTOUPulsePeakPropertyEndMonth = "ComboBoxTOUPulsePeakPropertyEndMonth";
+        public static string ComboBoxTOUPulsePeakPropertyEndDate = "ComboBoxTOUPulsePeakPropertyEndDate";
+        public static string ComboBoxTOUPulsePeakPropertyStartTime = "ComboBoxTOUPulsePeakPropertyStartTime";
+        public static string ComboBoxTOUPulsePeakPropertyEndTime = "ComboBoxTOUPulsePeakPropertyEndTime";
+        
         #endregion
 
         #region User Setting

@@ -65,6 +65,7 @@
     <Compile Include="ControlCollection\Resource\JazzControlLocatorRepository.cs" />
     <Compile Include="Functions\AreaDimensionSettings.cs" />
     <Compile Include="Functions\AssociateSettings.cs" />
+    <Compile Include="Functions\TOUSettings.cs" />
     <Compile Include="Functions\CustomerManagement.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbarConvertTargetMenu.cs" />
     <Compile Include="Functions\EnergyManagement\SaveToDashboardDialog.cs" />

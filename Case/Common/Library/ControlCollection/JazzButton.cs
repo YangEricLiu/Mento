@@ -248,6 +248,21 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static LinkButton CarbonFactorAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonCarbonFactorAddMoreRanges);
         
         #endregion
+        #region TOU buttons
+        public static Button TOUBasicPropertyCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUBasicPropertyCreate);
+        public static Button TOUBasicPropertyModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUBasicPropertyModify);
+        public static Button TOUBasicPropertySaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUBasicPropertySave);
+        public static Button TOUBasicPropertyCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUBasicPropertyCancel);
+        public static Button TOUBasicPropertyDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUBasicPropertyDelete);
+        public static LinkButton TOUBasicPropertyAddMorePeakRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonTOUBasicPropertyAddMorePeakRanges);
+        public static LinkButton TOUBasicPropertyAddMoreValleyRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonTOUBasicPropertyAddMoreValleyRanges);
+        public static TabButton TOUPulsePeakPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonTOUPulsePeakProperty);
+        public static Button TOUPulsePeakPropertyCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertyCreate);
+        public static Button TOUPulsePeakPropertyModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertyModify);
+        public static Button TOUPulsePeakPropertySaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertySave);
+        public static Button TOUPulsePeakPropertyCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertyCancel);
+        public static LinkButton TOUPulsePeakPropertyAddMorePulsePeakRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonTOUPulsePeakPropertyAddMorePulsePeakRanges);
+        #endregion
         #region Customer settings buttons
         public static Button AddCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonAddCustomer);
         public static Button UploadLogoButton = GetControl<Button>(JazzControlLocatorKey.ButtonUploadLogo);

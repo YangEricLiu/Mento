@@ -117,6 +117,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Carbonfactor
         public static TextField CarbonFactorValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCarbonFactorValue, 1);
         #endregion
+        #region TOU
+        public static TextField TOUBasicPropertyNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTOUBasicPropertyName, 1);
+        public static TextField TOUBasicPropertyPlainPriceValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTOUBasicPropertyPlainPriceValue, 1);
+        public static TextField TOUBasicPropertyPeakPriceValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTOUBasicPropertyPeakPriceValue, 1);
+        public static TextField TOUBasicPropertyValleyPriceValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTOUBasicPropertyValleyPriceValue, 1);
+        public static TextField TOUPulsePeakPropertyPriceValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTOUPulsePeakPropertyPriceValue, 1);        
+        #endregion
         #region Customer settings
         public static TextField CustomerNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerName);
         public static TextField CustomerCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerCode);

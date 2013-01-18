@@ -11,6 +11,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
     {
         #region Login buttons
         public static Button LoginSubmitButton = GetControl<Button>(JazzControlLocatorKey.ButtonLoginSubmit);
+        public static Button LoginCustomerOptionConfirmButton = GetControl<Button>(JazzControlLocatorKey.ButtonLoginCustomerOptionConfirm);
         #endregion
 
         #region EnergyView buttons

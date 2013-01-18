@@ -19,6 +19,10 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
+        private static Locator HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
+        private static Locator OptionWindowLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.WindowLoginOption);
+        private static ComboBox LoginCustomerOption = JazzComboBox.LoginCustomerOptionComboBox;
+        private static Button LoginCustomerOptionConfirm = JazzButton.LoginCustomerOptionConfirmButton;
         //private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
         //private static Locator HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
 
@@ -29,7 +33,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void Login(LoginInputData loginData)
         {
-            var HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
             JazzTextField.LoginUserNameTextField.Fill(loginData.UserName);
             JazzTextField.LoginPasswordTextField.Fill(loginData.Password);
 
@@ -116,8 +119,8 @@ namespace Mento.ScriptCommon.Library.Functions
             if (IsAlreadyLogin())
                 return;
 
-            string defaultUserName = "Nancy_PlatformAdminUser";
-            string defaultPassword = "123456qq";
+            string defaultUserName = "Admin";
+            string defaultPassword = "P@ssw0rd";
 
             var loginData = new LoginInputData() { UserName = defaultUserName, Password = defaultPassword };
 
@@ -145,10 +148,61 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.LongPause();
         }
 
+
+        public void LoginWithOption(string userName, string passWord, string customerName)
+        {
+            JazzTextField.LoginUserNameTextField.Fill(userName);
+            JazzTextField.LoginPasswordTextField.Fill(passWord);
+
+            JazzButton.LoginSubmitButton.Click();
+            TimeManager.LongPause();
+            
+
+            if (String.IsNullOrEmpty(customerName))
+            {
+                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 150);
+            }
+            else
+            {
+                ElementHandler.Wait(OptionWindowLocator, WaitType.ToAppear, timeout: 150);
+                TimeManager.ShortPause();
+
+                if (ElementHandler.Exists(OptionWindowLocator))
+                {
+                    LoginCustomerOption.SelectItem(customerName);
+                    TimeManager.ShortPause();
+                    LoginCustomerOptionConfirm.Click();
+                    ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 150);
+                    TimeManager.MediumPause();
+                }
+                else
+                {
+                    throw new Exception("Login error, no popup option window and can't login");
+                }
+            }
+        }
+
+        public void LoginCutomerOption(string customer)
+        {
+            if (ElementHandler.Exists(OptionWindowLocator))
+            {
+                LoginCustomerOption.SelectItem(customer);
+                TimeManager.ShortPause();
+                LoginCustomerOptionConfirm.Click();
+                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 150);
+                TimeManager.MediumPause();
+            }
+        }
+
         public bool IsAlreadyLogin()
         {
             var HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
             return ElementHandler.Exists(HomePageNavigationLocator);
+        }
+
+        public bool IsOptionWindowPopup()
+        {
+            return ElementHandler.Exists(OptionWindowLocator);
         }
     }
 }

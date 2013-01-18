@@ -38,7 +38,7 @@ namespace Mento.Script.Customer.TagManagement
         [TearDown]
         public void CaseTearDown()
         {
-            BrowserHandler.Refresh();
+            JazzFunction.Navigator.NavigateHome();
         }
         [Test]
         [CaseID("TA-ModifyKPITag-001")]

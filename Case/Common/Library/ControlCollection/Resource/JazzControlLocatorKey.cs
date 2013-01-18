@@ -10,6 +10,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Button
         #region Login
         public static string ButtonLoginSubmit = "ButtonLoginSubmit";
+        public static string ButtonLoginCustomerOptionConfirm = "ButtonLoginCustomerOptionConfirm";
         #endregion
 
         #region EnergyView
@@ -419,6 +420,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldCustomerTelephone = "TextFieldCustomerTelephone";
         public static string TextFieldCustomerEmail = "TextFieldCustomerEmail";
         public static string TextFieldCustomerComment = "TextFieldCustomerComment";
+        public static string TextFieldUploadLogo = "TextFieldUploadLogo";
         #endregion
         #region User Management
         public static string TextFieldUserName = "TextFieldUserName";
@@ -441,6 +443,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region ComboBox
+        #region Login
+        public static string ComboBoxLoginCustomerOption = "ComboBoxLoginCustomerOption";
+        #endregion
+
         #region Energy view
         public static string ComboBoxEnergyViewSaveDashboardHierarchy = "ComboBoxEnergyViewSaveDashboardHierarchy";
         public static string ComboBoxEnergyViewSaveDashboardDashboard = "ComboBoxEnergyViewSaveDashboardDashboard";        
@@ -652,6 +658,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string DatePickerOperationTime = "DatePickerOperationTime";
         #endregion
 
+        #endregion
+
+        #region Window
+        public static string WindowLoginOption = "WindowLoginOption";
         #endregion
 
     }

@@ -147,6 +147,7 @@
     <Content Include="Config\ComboBoxItemList.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Data\Administration\CustomerOperation\AddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
     <None Include="Data\Administration\TOU\TOUSuite\TC-J1-SmokeTest-026.json" />
     <None Include="Data\Administration\TOU\TOUSuite\TC-J1-SmokeTest-025.json" />
     <None Include="Data\Administration\User\UserConfiguration\TC-J1-SmokeTest-034-Modify.json" />

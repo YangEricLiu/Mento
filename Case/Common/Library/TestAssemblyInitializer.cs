@@ -23,8 +23,8 @@ namespace Mento.ScriptCommon.Library
 
             JazzBrowseManager.OpenJazz();
 
-            JazzFunction.LoginPage.LoginToAdmin();
-
+            JazzFunction.LoginPage.LoginToCustomer();
+            //JazzFunction.LoginPage.LoginWithOption("Admin", "P@ssw0rd", "REM管理平台");
         }
 
         public static void Desctuct()

@@ -33,7 +33,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [TearDown]
         public void CaseTearDown()
         {
-            BrowserHandler.Refresh();
+            JazzFunction.Navigator.NavigateHome();
         }
 
         [Test]

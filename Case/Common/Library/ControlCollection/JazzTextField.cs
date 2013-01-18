@@ -132,6 +132,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField CustomerTelephoneTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerTelephone);
         public static TextField CustomerEmailTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerEmail);
         public static TextField CustomerCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerComment);
+        public static TextField UploadLogoTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUploadLogo);
         #endregion
         #region User Setting
         public static TextField UserNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserName);

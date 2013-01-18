@@ -32,7 +32,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [TearDown]
         public void CaseTearDown()
         {
-            BrowserHandler.Refresh();
+            JazzFunction.Navigator.NavigateHome();
         }
 
         [Test]
@@ -41,8 +41,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Type("Smoke")]
         public void AddCalendarforWorkday()
         {
-            string[] calendarText = new string[] { "默认工作日：", "周一至周五" };
-            string[] workTimecalendarText = new string[] { "非工作时间：", "工作时间以外均为非工作时间", "工作时间：", "01:00-02:30 " };
+            string[] calendarText = new string[] { "默认工作日", "周一至周五" };
+            string[] workTimecalendarText = new string[] { "非工作时间", "工作时间以外均为非工作时间", "工作时间", "01:00-02:30" };
 
             HierarchySettings.ExpandNode("自动化测试");
             HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
@@ -62,6 +62,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CalendarSettings.ClickAddWorktimeLinkButton();
             TimeManager.MediumPause();
             CalendarSettings.SelectWorktimeCalendarName("foraddcalendar2");
+            TimeManager.MediumPause();
+            CalendarSettings.ClickSaveCalendarButton();
+            TimeManager.MediumPause();
 
             Assert.AreEqual(CalendarSettings.GetWorkdayEffectiveYearValue(), "2002");
             Assert.AreEqual(CalendarSettings.GetWorkdayCalendarNameValue(), "foraddcalendar1");
@@ -76,7 +79,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Type("Smoke")]
         public void AddCalendarforHeatingCooling()
         {
-            string[] calendarText = new string[] { "采暖季：", "1月1日至2月1日", "供冷季：", "10月1日至11月1日" };
+            string[] calendarText = new string[] { "采暖季", "1月1日至2月1日", "供冷季", "10月1日至11月1日" };
 
             HierarchySettings.ExpandNode("自动化测试");
             HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
@@ -106,7 +109,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Type("Smoke")]
         public void AddCalendarforDayNight()
         {
-            string[] calendarText = new string[] { "黑夜时间：", "白昼时间以外均为黑夜时间", "白昼时间：", "06:00-17:00" };
+            string[] calendarText = new string[] { "黑夜时间", "白昼时间以外均为黑夜时间", "白昼时间", "06:00-17:00" };
 
             HierarchySettings.ExpandNode("自动化测试");
             HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");

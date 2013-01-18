@@ -23,7 +23,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region Controls
         private static Button AddCustomer = JazzButton.AddCustomerButton;
-        private static Button UploadLogo = JazzButton.UploadLogoButton;
+        private static Button UploadLogoButton = JazzButton.UploadLogoButton;
         private static Button SaveCustomer = JazzButton.SaveCustomerButton;
         private static TextField CustomerName = JazzTextField.CustomerNameTextField;
         private static TextField CustomerCode = JazzTextField.CustomerCodeTextField;
@@ -33,6 +33,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField CustomerEmail = JazzTextField.CustomerCommentTextField;
         private static TextField CustomerComment = JazzTextField.CustomerCommentTextField;
         private static DatePicker CustomerOperationTime = JazzDatePicker.OperationTimeDatePicker;
+        private static TextField UploadLogoTextField = JazzTextField.UploadLogoTextField;
         #endregion
 
         #region Add Customer
@@ -41,10 +42,18 @@ namespace Mento.ScriptCommon.Library.Functions
             AddCustomer.Click();
         }
 
+        private void UploadLogoPicture(string picturePath)
+        {
+            UploadLogoButton.Click();
+            TimeManager.LongPause();
+            UploadLogoTextField.Append(picturePath);
+        }
+
         public void FillInCustomerInfo(CustomerInputData　inputData)
         {
             CustomerName.Fill(inputData.Name);
             CustomerCode.Fill(inputData.Code);
+            //UploadLogoPicture(inputData.LogoPath);
             CustomerAddress.Fill(inputData.Address);
             CustomerManager.Fill(inputData.ResponsiblePerson);
             CustomerTelephone.Fill(inputData.Telephone);

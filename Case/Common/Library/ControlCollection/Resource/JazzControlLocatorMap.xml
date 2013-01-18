@@ -3,6 +3,7 @@
   <button>
     <login>
       <add key="ButtonLoginSubmit" value = "btnSubmit" type="ID"/>
+      <add key="ButtonLoginCustomerOptionConfirm" value = "//div[contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
     </login>
     <navigator>
       <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
@@ -118,10 +119,10 @@
       </hierarchy>
       <hierarchycalendar>
         <add key="TabButtonCalendarProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[2]" type="XPath"/>
-        <add key="ButtonCalendarCreate" value="//div[@id = 'st-hier-calendar-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.Label.HierarchyNodeCalendarProperties']]" type="XPath"/>
-        <add key="ButtonCalendarSave" value="//div[@id='st-hier-calendar-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonCalendarCancel" value="//div[@id='st-hier-calendar-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonCalendarUpdate" value="//div[@id='st-hier-calendar-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+        <add key="ButtonCalendarCreate" value="//div[@id = 'st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.Label.HierarchyNodeCalendarProperties']]" type="XPath"/>
+        <add key="ButtonCalendarSave" value="//div[@id='st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonCalendarCancel" value="//div[@id='st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonCalendarUpdate" value="//div[@id='st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
         <add key="ButtonWorkdayCreate" value="st-hierarchy-calendar-workday-add-toolEl" type="ID"/>
         <add key="ButtonHeatingCoolingCreate" value="st-hierarchy-calendar-coldwarm-add-toolEl" type="ID"/>
         <add key="ButtonDayNightCreate" value="st-hierarchy-calendar-daynight-add-toolEl" type="ID"/>
@@ -353,7 +354,8 @@
         <add key="TextFieldCustomerManager" value="//input[@type='text'and @name='Manager']" type="XPath"/>
         <add key="TextFieldCustomerTelephone" value="//input[@type='text'and @name='Telephone']" type="XPath"/>
         <add key="TextFieldCustomerEmail" value="//input[@type='text'and @name='Email']" type="XPath"/>
-        <add key="TextFieldCustomerComment" value="st-customer-comment-inputEl" type="ID"/>       
+        <add key="TextFieldCustomerComment" value="st-customer-comment-inputEl" type="ID"/>
+        <add key="TextFieldUploadLogo" value="st-customer-logo-upload-button-fileInputEl" type="ID"/>
       </customersetting>
     </platformsettings>
   </textfield>
@@ -361,6 +363,9 @@
   
   <!--ComboBox-->
   <combobox>
+    <login>
+      <add key="ComboBoxLoginCustomerOption" value="//div[contains(@class,'x-window-default')]/div[contains(@class,'x-window-body-default')]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'combobox')]]" type="XPath"/>
+    </login>
     <energyview>
       <add key="ComboBoxEnergyViewSaveDashboardHierarchy" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='层级结点']]//table[contains(@id,'combobox')]" type="XPath"/>
       <add key="ComboBoxEnergyViewSaveDashboardDashboard" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='已建仪表盘']]//table[contains(@id,'combobox')]" type="XPath"/>
@@ -605,4 +610,9 @@
     <add key="TextFieldUserProfileComment" value="//table[@id='st-userprofile-personalinfo-panel-body']//textarea[@id='st-userprofile-comment-field-inputEl']" type="XPath"/>
   </UserProfile>
   <!--User Profile End-->
+
+  <!--Window-->
+  <Login>
+    <add key="WindowLoginOption" value="//div[contains(@class, 'x-window-default')]" type="XPath"/>
+  </Login>
 </WebElement>

@@ -29,7 +29,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void ScriptTearDown()
         {
-            BrowserHandler.Refresh();
+            JazzFunction.Navigator.NavigateHome();
         }
 
         [Test]

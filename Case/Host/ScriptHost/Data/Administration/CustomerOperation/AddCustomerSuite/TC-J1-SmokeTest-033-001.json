@@ -4,6 +4,7 @@
 		{	
 			"Name":"自动化测试1",	
 			"Code":"auto1",
+			"LogoPath":"E:\\Test Run\\1.0\\logo\\雪雪1.PNG",
 			"Address":"beijing",
 			"ResponsiblePerson":"auto",	
 			"Telephone":"010000",	

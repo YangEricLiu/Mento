@@ -34,7 +34,7 @@ namespace Mento.Script.Customer.TagManagement
         public void CaseTearDown()
         {
 
-            BrowserHandler.Refresh();
+            JazzFunction.Navigator.NavigateHome();
         }
 
         [Test]

@@ -32,7 +32,7 @@ namespace Mento.Script.Customer.TagDisassociation
         [TearDown]
         public void CaseTearDown()
         {
-            BrowserHandler.Refresh();
+            JazzFunction.Navigator.NavigateHome();
         }
 
         [Test]

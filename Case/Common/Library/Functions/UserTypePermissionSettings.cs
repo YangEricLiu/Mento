@@ -91,13 +91,42 @@ namespace Mento.ScriptCommon.Library.Functions
             GridUserTypePermissionList.FocusOnRow(1, usertypeName);
         }
         /// <summary>
-        /// judge wheather the user has a permission
+        /// uncheck the energyuse permission 
+        /// </summary>
+        public void UserTypeEnergyUseUnCheck()
+        {
+            CheckBoxFieldUserTypeEnergyUse.Uncheck();
+        }
+        /// <summary>
+        /// check the energyuse permission
+        /// </summary>
+        public void UserTypeEnergyUseCheck()
+        {
+            CheckBoxFieldUserTypeEnergyUse.Check();
+        }
+        /// <summary>
+        /// uncheck the cost permission
+        /// </summary>
+        public void UserTypeCostUnCheck()
+        {
+            CheckBoxFieldUserTypeCost.Uncheck();
+        }
+        /// <summary>
+        /// check the cost permission
+        /// </summary>
+        public void UserTypeCostCheck()
+        {
+            CheckBoxFieldUserTypeCost.Check();
+        }
+        /// <summary>
+        /// judge wheather the user has or no a permission
         /// </summary>
         /// <returns></returns>
         public bool UserTypeEnergyUseIsChecked()
         {
             return CheckBoxFieldUserTypeEnergyUse.IsChecked();
         }
+        
         public bool UserTypeCostIsChecked()
         {
             return CheckBoxFieldUserTypeCost.IsChecked();

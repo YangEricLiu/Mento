@@ -420,25 +420,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldCustomerEmail = "TextFieldCustomerEmail";
         public static string TextFieldCustomerComment = "TextFieldCustomerComment";
         #endregion
-
         #region User Management
-        #region User Setting
         public static string TextFieldUserName = "TextFieldUserName";
         public static string TextFieldUserRealName = "TextFieldUserRealName";
         public static string TextFieldUserTitle = "TextFieldUserTitle";
         public static string TextFieldUserTelephone = "TextFieldUserTelephone";
         public static string TextFieldUserEmail = "TextFieldUserEmail";
         public static string TextFieldUserComment = "TextFieldUserComment";
-        #endregion
-
-        #region User Profile
-        public static string TextFieldUserProfileName = "TextFieldUserProfileName";
-        public static string TextFieldUserProfileRealName = "TextFieldUserProfileRealName";
-        public static string TextFieldUserProfileTitle = "TextFieldUserProfileTitle";
-        public static string TextFieldUserProfileTelephone = "TextFieldUserTelephone";
-        public static string TextFieldUserProfileEmail = "TextFieldUserProfileEmail";
-        public static string TextFieldUserProfileComment = "TextFieldUserProfileComment";
-        #endregion
         #endregion
         #endregion
         #endregion
@@ -551,11 +539,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxUserType = "ComboBoxUserType";
         public static string ComboBoxUserAssociatedCustomer = "ComboBoxUserAssociatedCustomer";
         #endregion
- 
-        #region User Profile
-        public static string ComboBoxUserProfileType = "ComboBoxUserType";
-        public static string ComboBoxUserProfileAssociatedCustomer = "ComboBoxUserProfileAssociatedCustomer";
-        #endregion
+
         #endregion
         #endregion
 

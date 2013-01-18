@@ -52,12 +52,20 @@ namespace Mento.Script.Administration.User
             Assert.IsFalse(UserTypePermissionSettings.UserTypeCostIsChecked());
             Assert.IsTrue(UserTypePermissionSettings.UserTypeEnergyUseIsChecked());
             
-            //UserTypePermissionSettings.ClickModifyButton();
-            //
-            //UserTypePermissionSettings.ClickSaveButton();
+            UserTypePermissionSettings.ClickModifyButton();
+            TimeManager.LongPause();
             
-            //Assert.IsTrue(UserTypePermissionSettings.UserTypeCostIsChecked());
-            //Assert.IsFalse(UserTypePermissionSettings.UserTypeEnergyUseIsChecked());
+            UserTypePermissionSettings.UserTypeEnergyUseUnCheck();
+            UserTypePermissionSettings.UserTypeCostCheck();
+            TimeManager.LongPause();
+            
+            UserTypePermissionSettings.ClickSaveButton();
+            
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+            
+            Assert.IsTrue(UserTypePermissionSettings.UserTypeCostIsChecked());
+            Assert.IsFalse(UserTypePermissionSettings.UserTypeEnergyUseIsChecked());
             
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();

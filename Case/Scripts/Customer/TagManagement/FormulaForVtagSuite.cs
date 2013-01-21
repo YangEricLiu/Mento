@@ -15,17 +15,17 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Customer.TagManagement
 {
     [TestFixture]
-    [Owner("Alice")]
-    [CreateTime("2013-01-09")]
-    [ManualCaseID("TC-J1-SmokeTest-007")]
-    public class FormulaForNonDayNightKPI : TestSuiteBase
+    [Owner("Emma")]
+    [CreateTime("2012-11-08")]
+    [ManualCaseID("TC-J1-SmokeTest-005")]
+    public class FormulaForVtagSuite : TestSuiteBase
     {
-        private static KPITagSettings KPITagSettings = JazzFunction.KPITagSettings;
+        private static VTagSettings VTagSettings = JazzFunction.VTagSettings;
 
         [SetUp]
         public void CaseSetUp()
         {
-            KPITagSettings.NavigatorToKPITagSetting();
+            VTagSettings.NavigatorToVTagSetting();
             TimeManager.MediumPause();
         }
 
@@ -36,27 +36,26 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-007-001")]
-        [Priority("P1")]
+        [CaseID("TC-J1-SmokeTest-005-001")]
+        [Priority("19")]
         [Type(ScriptType.BVT)]
-        public void AddFormulaToKPItag()
+        public void AddFormulaToVtag()
         {
-            //string kpitagName = "KPI1";
-            //string expectedFormula = "{ptag.P1}";
-            string kpitagName = "KPI1";
-            string expectedFormula = "{ptag.P1}";
-
-            KPITagSettings.PrepareToAddFormula(kpitagName);
+            string vtagName = "Add_V1";
+            string expectedFormula = "{ptag.Add_P1}+{ptag.Amy_c_P1}";
             
-            KPITagSettings.FillInFormulaField("{ptag.P1}");
+            VTagSettings.PrepareToAddFormula(vtagName);
 
-            KPITagSettings.ClickSaveFormulaButton();
+            VTagSettings.FillInFormulaField("{ptag.Add_P1}");
+            VTagSettings.AppendFormulaField("+");
+            VTagSettings.DragTagToFormula("Amy_c_P1电_分散空调");
+
+            VTagSettings.ClickSaveFormulaButton();
 
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
-            Assert.AreEqual(KPITagSettings.GetFormulaValue(), expectedFormula);
-            Assert.IsFalse(KPITagSettings.DayNightIsChecked());
+            Assert.AreEqual(VTagSettings.GetFormulaValue(), expectedFormula);
 
         }
     }

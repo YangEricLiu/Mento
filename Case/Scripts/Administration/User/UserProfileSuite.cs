@@ -40,6 +40,7 @@ namespace Mento.Script.Administration.User
 
         [Test]
         [CaseID("TC-J1-SmokeTest-035-1"), CreateTime("2013-01-15"), Owner("Nancy")]
+        [Priority("9")]
         [MultipleTestDataSource(typeof(UserProfileData[]), typeof(UserProfileSuite), "TC-J1-SmokeTest-035-1")]
         public void ViewUserProfile(UserProfileData testData)
         {

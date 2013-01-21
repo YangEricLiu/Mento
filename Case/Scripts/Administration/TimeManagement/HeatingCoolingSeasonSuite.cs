@@ -38,6 +38,7 @@ namespace Mento.Script.Administration.TimeManagement
 
         [Test]
         [CaseID("TC-J1-SmokeTest-030")]
+        [Priority("6")]
         [MultipleTestDataSource(typeof(HeatingCoolingSeasonCalendarData[]), typeof(HeatingCoolingSeasonSuite), "TC-J1-SmokeTest-030")]
         public void AddHeatingCoolingSeasonTimeStrategy(HeatingCoolingSeasonCalendarData testData)
         {

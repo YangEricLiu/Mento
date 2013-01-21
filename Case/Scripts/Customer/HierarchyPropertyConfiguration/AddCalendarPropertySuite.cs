@@ -17,7 +17,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
     [Owner("Emma")]
     [CreateTime("2012-12-31")]
     [ManualCaseID("TC-J1-SmokeTest-017")]
-    public class AddCalendarProperty : TestSuiteBase
+    public class AddCalendarPropertySuite : TestSuiteBase
     {
         private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
         private static HierarchyCalendarSettings CalendarSettings = JazzFunction.HierarchyCalendarSettings;
@@ -37,12 +37,18 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
         [Test]
         [CaseID("TC-J1-SmokeTest-017-001")]
-        [Priority("P1")]
+        [Priority("34")]
         [Type(ScriptType.BVT)]
         public void AddCalendarforWorkday()
         {
-            string[] calendarText = new string[] { "默认工作日", "周一至周五" };
-            string[] workTimecalendarText = new string[] { "非工作时间", "工作时间以外均为非工作时间", "工作时间", "01:00-02:30" };
+            /// <summary>
+            /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"
+            ///               2. make sure there is workday calendar with name '工休日日历1'
+            ///               3. make sure there is worktime calendar with name '工作时间日历1'
+            ///               4. These data will prepare on previous cases
+            /// </summary>  
+            string[] calendarText = new string[] { "默认工作日", "周一至周五", "工作日", "10月25日至10月31日", "休息日", "5月1日至5月7日" };
+            string[] workTimecalendarText = new string[] { "非工作时间", "工作时间以外均为非工作时间", "工作时间", "08:30-12:00 13:00-17:30" };
 
             HierarchySettings.ExpandNode("自动化测试");
             HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
@@ -56,30 +62,35 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             CalendarSettings.SelectWorkdayEffectiveYear("2002");
-            CalendarSettings.SelectWorkdayCalendarName("foraddcalendar1");
+            CalendarSettings.SelectWorkdayCalendarName("工休日日历1");
             TimeManager.MediumPause();
 
             CalendarSettings.ClickAddWorktimeLinkButton();
             TimeManager.MediumPause();
-            CalendarSettings.SelectWorktimeCalendarName("foraddcalendar2");
+            CalendarSettings.SelectWorktimeCalendarName("工作时间日历1");
             TimeManager.MediumPause();
             CalendarSettings.ClickSaveCalendarButton();
             TimeManager.MediumPause();
 
             Assert.AreEqual(CalendarSettings.GetWorkdayEffectiveYearValue(), "2002");
-            Assert.AreEqual(CalendarSettings.GetWorkdayCalendarNameValue(), "foraddcalendar1");
-            Assert.AreEqual(CalendarSettings.GetWorktimeCalendarNameValue(), "foraddcalendar2");
+            Assert.AreEqual(CalendarSettings.GetWorkdayCalendarNameValue(), "工休日日历1");
+            Assert.AreEqual(CalendarSettings.GetWorktimeCalendarNameValue(), "工作时间日历1");
             Assert.IsTrue(CalendarSettings.IsWorkdayCalendarTextCorrect(calendarText));
             Assert.IsTrue(CalendarSettings.IsWorktimeCalendarTextCorrect(workTimecalendarText));
         }
 
         [Test]
         [CaseID("TC-J1-SmokeTest-017-002")]
-        [Priority("P1")]
+        [Priority("34")]
         [Type(ScriptType.BVT)]
         public void AddCalendarforHeatingCooling()
         {
-            string[] calendarText = new string[] { "采暖季", "1月1日至2月1日", "供冷季", "10月1日至11月1日" };
+            /// <summary>
+            /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"
+            ///               2. make sure there is heatingcooling calendar with name '冷暖季日历1'
+            ///               3. These data will prepare on previous cases
+            /// </summary> 
+            string[] calendarText = new string[] { "采暖季", "1月1日至3月15日 11月15日至12月31日", "供冷季", "5月31日至8月31日" };
 
             HierarchySettings.ExpandNode("自动化测试");
             HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
@@ -93,23 +104,28 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             CalendarSettings.SelectHeatingCoolingEffectiveYear("2002", 1);
-            CalendarSettings.SelectHeatingCoolingCalendarName("foraddcalendar3", 1);
+            CalendarSettings.SelectHeatingCoolingCalendarName("冷暖季日历1", 1);
             TimeManager.ShortPause();
             CalendarSettings.ClickSaveCalendarButton();
             TimeManager.MediumPause();
 
             Assert.AreEqual(CalendarSettings.GetHeatingCoolingEffectiveYearValue(), "2002");
-            Assert.AreEqual(CalendarSettings.GetHeatingCoolingCalendarNameValue(), "foraddcalendar3");
+            Assert.AreEqual(CalendarSettings.GetHeatingCoolingCalendarNameValue(), "冷暖季日历1");
             Assert.IsTrue(CalendarSettings.IsHeatingCoolingCalendarTextCorrect(calendarText));
         }
 
         [Test]
         [CaseID("TC-J1-SmokeTest-017-003")]
-        [Priority("P1")]
+        [Priority("34")]
         [Type(ScriptType.BVT)]
         public void AddCalendarforDayNight()
         {
-            string[] calendarText = new string[] { "黑夜时间", "白昼时间以外均为黑夜时间", "白昼时间", "06:00-17:00" };
+            /// <summary>
+            /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"
+            ///               2. make sure there is heatingcooling calendar with name '昼夜时间日历1'
+            ///               3. These data will prepare on previous cases
+            /// </summary> 
+            string[] calendarText = new string[] { "黑夜时间", "白昼时间以外均为黑夜时间", "白昼时间", "05:30-18:00" };
 
             HierarchySettings.ExpandNode("自动化测试");
             HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
@@ -123,13 +139,13 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             CalendarSettings.SelectDayNightEffectiveYear("2002", 1);
-            CalendarSettings.SelectDayNightCalendarName("foraddcalendar4", 1);
+            CalendarSettings.SelectDayNightCalendarName("昼夜时间日历1", 1);
             TimeManager.ShortPause();
             CalendarSettings.ClickSaveCalendarButton();
             TimeManager.MediumPause();
 
             Assert.AreEqual(CalendarSettings.GetDayNightEffectiveYearValue(), "2002");
-            Assert.AreEqual(CalendarSettings.GetDayNightCalendarNameValue(), "foraddcalendar4");
+            Assert.AreEqual(CalendarSettings.GetDayNightCalendarNameValue(), "昼夜时间日历1");
             Assert.IsTrue(CalendarSettings.IsDayNightCalendarTextCorrect(calendarText));
         }
     }

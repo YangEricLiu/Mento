@@ -34,10 +34,13 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
         [Test]
         [CaseID("TC-J1-SmokeTest-015-001")]
-        [Priority("P1")]
+        [Priority("16")]
         [Type(ScriptType.BVT)]
         public void CreateAreaDimension()
         {
+            /// <summary>
+            /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
+            /// </summary> 
             var AreaSettings = JazzFunction.AreaDimensionSettings;
             var randomString = Generate.Random<string>();
             var testArea = new { Name = "AutoArea" + randomString, Comment = "Auto area " + randomString };
@@ -49,11 +52,11 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             ////Select a Building node.	
             ////The Area dimension is light and enable to select.
             AreaSettings.ShowHierarchyTree();
-            AreaSettings.ExpandHierarchyNodePath(new string[] { "自动化测试", "12345" });
-            AreaSettings.SelectHierarchyNode("124");
+            AreaSettings.ExpandHierarchyNodePath(new string[] { "自动化测试", "AddCalendarProperty" });
+            AreaSettings.SelectHierarchyNode("AddPeopleProperty");
 
             //AreaSettings.ExpandAreaDimensionNodePath(new string[] { "124" });
-            AreaSettings.SelectAreaDimensionNode("124");
+            AreaSettings.SelectAreaDimensionNode("AddPeopleProperty");
 
 
             //Click "子区域" button to add Area node.	

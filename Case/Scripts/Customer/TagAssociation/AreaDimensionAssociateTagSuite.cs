@@ -11,17 +11,16 @@ using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
 
-namespace Mento.Script.Customer.TagDisassociation
+namespace Mento.Script.Customer.TagAssociation
 {
     [TestFixture]
-    [Owner("Nancy")]
-    [CreateTime("2013-01-06")]
-    [ManualCaseID("TC-J1-SmokeTest-013")]
-    public class AreaDimensionDisassociateTag : TestSuiteBase
+    [Owner("Emma")]
+    [CreateTime("2012-12-31")]
+    [ManualCaseID("TC-J1-SmokeTest-010")]
+    public class AreaDimensionAssociateTagSuite : TestSuiteBase
     {
         private static AssociateSettings Association = JazzFunction.AssociateSettings;
         private static AreaDimensionSettings AreaSettings = JazzFunction.AreaDimensionSettings;
-        private static DisassociateSettings Disassociation = JazzFunction.DisassociateSettings;
 
         [SetUp]
         public void CaseSetUp()
@@ -37,10 +36,10 @@ namespace Mento.Script.Customer.TagDisassociation
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-013-001")]
-        [Priority("P1")]
+        [CaseID("TC-J1-SmokeTest-010-001")]
+        [Priority("26")]
         [Type(ScriptType.BVT)]
-        public void DisassociateOneTag()
+        public void AssociateOneTag()
         {
             AreaSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
@@ -50,15 +49,18 @@ namespace Mento.Script.Customer.TagDisassociation
             AreaSettings.ExpandAreaDimensionNodePath(new string[] { "AreaDimension" });
             AreaSettings.SelectAreaDimensionNode("FirstFloor");
 
-            Disassociation.FocusOnTag("AddforAreaAssociate");
-            Disassociation.ClickDisassociateButton();
+            Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
-            Assert.IsFalse(Association.IsTagOnAssociategGridView("AddforAreaAssociate"));
+
+            Association.CheckedTag("AddforAreaAssociate");
+            Association.ClickAssociateButton();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(Association.IsTagOnAssociategGridView("AddforAreaAssociate"));
 
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
-            Assert.IsTrue(Association.IsTagOnAssociategGridView("AddforAreaAssociate"));
-
+            Assert.IsFalse(Association.IsTagOnAssociategGridView("AddforAreaAssociate"));
         }
     }
 }

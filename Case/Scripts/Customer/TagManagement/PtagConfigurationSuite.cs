@@ -21,7 +21,7 @@ namespace Mento.Script.Customer.TagManagement
     [Owner("Amy")]
     [CreateTime("2012-11-12")]
     [ManualCaseID("TC-J1-SmokeTest-002")]
-    public class PtagConfiguration : TestSuiteBase
+    public class PtagConfigurationSuite : TestSuiteBase
     {
         private PTagSettings PTagSettings = JazzFunction.PTagSettings;
 
@@ -40,7 +40,9 @@ namespace Mento.Script.Customer.TagManagement
 
         [Test]
         [CaseID("TC-J1-SmokeTest-002-001")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfiguration), "TC-J1-SmokeTest-002-001")]
+        [Type(ScriptType.BVT)]
+        [Priority("17")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfigurationSuite), "TC-J1-SmokeTest-002-001")]
         public void AddPtag(PtagData testData)
         {
             PTagSettings.PrepareToAddPtag();
@@ -62,7 +64,7 @@ namespace Mento.Script.Customer.TagManagement
 
         [Test]
         [CaseID("TA-PtagConfiguration-002")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfiguration), "TA-PtagConfiguration-002")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfigurationSuite), "TA-PtagConfiguration-002")]
         public void ModifyPtag(PtagData testData)
         {
             //string tagName = "tagformodification";

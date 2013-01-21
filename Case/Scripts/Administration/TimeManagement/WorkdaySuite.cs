@@ -38,6 +38,7 @@ namespace Mento.Script.Administration.TimeManagement
 
         [Test]
         [CaseID("TC-J1-SmokeTest-027")]
+        [Priority("6")]
         [MultipleTestDataSource(typeof(WorkdayCalendarData[]), typeof(WorkdaySuite), "TC-J1-SmokeTest-027")]
         public void AddWorkdayTimeStrategy(WorkdayCalendarData testData)
         {

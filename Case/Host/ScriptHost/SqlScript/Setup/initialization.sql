@@ -40,7 +40,7 @@ VALUES(3,0,'HierarchyEV','HierarchyEV',1,'HierarchyEV',2,2,'/2/3/',1,'Mento',GET
 
 
 /*Hierarchy for customer settings -- add calendar*/
-INSERT INTO Hierarchy(Id,Type,Code,Name,TimezoneId,Comment,ParentId,CustomerId,Path,Status,UpdateUser,UpdateTime)
+/*INSERT INTO Hierarchy(Id,Type,Code,Name,TimezoneId,Comment,ParentId,CustomerId,Path,Status,UpdateUser,UpdateTime)
 VALUES(4,1,'AddCalendarProperty','AddCalendarProperty',1,'test',2,2,'/2/4/',1,'AutoCustomer',GETDATE())
 
 INSERT INTO Hierarchy(Id,Type,Code,Name,TimezoneId,Comment,ParentId,CustomerId,Path,Status,UpdateUser,UpdateTime)
@@ -56,7 +56,7 @@ INSERT INTO Hierarchy(Id,Type,Code,Name,TimezoneId,Comment,ParentId,CustomerId,P
 VALUES(8,2,'AddPeopleProperty','AddPeopleProperty',1,'test',4,1,'/2/4/8/',1,'AutoCustomer',GETDATE())
 
 INSERT INTO Hierarchy(Id,Type,Code,Name,TimezoneId,Comment,ParentId,CustomerId,Path,Status,UpdateUser,UpdateTime)
-VALUES(9,2,'124','124',1,'test',5,1,'/2/5/9/',1,'AutoCustomer',GETDATE())
+VALUES(9,2,'124','124',1,'test',5,1,'/2/5/9/',1,'AutoCustomer',GETDATE())*/
 
 INSERT INTO Hierarchy(Id,Type,Code,Name,TimezoneId,Comment,ParentId,CustomerId,Path,Status,UpdateUser,UpdateTime)
 VALUES(10,0,'SiteEV','SiteEV',1,'SiteEV',3,2,'/2/3/10/',1,'Mento',GETDATE())
@@ -82,7 +82,7 @@ SET IDENTITY_INSERT [Tag] OFF
 /*Tag for Formula -- Add_V1 ＝ Add_P1 + Amy_c_P1*/
 SET IDENTITY_INSERT Tag ON
 INSERT INTO [Tag] ([ID],[Type],[GuidCode],[Code],[Name],[TimezoneId],[Comment],[MeterCode],[ChannelId],[CalculationType],[CalculationStep],[UomId],[CommodityId],[StartTime],[EnergyConsumption],[DayNightRatio],[Formula],[FormulaRpn],[CustomerId],[HierarchyId],[SystemDimensionId],[AreaDimensionId],[Status],[UpdateUser],[UpdateTime])
-VALUES(2,1,5703362057196811983,'Add_P1','Add_P1',1,NULL,'Add_P1',1,1,NULL,1,1,'2012-12-31',0,NULL,NULL,NULL,1,NULL,NULL,NULL,1,'AutoCustomer','2013-01-10 16:46:33.497')
+VALUES(2,1,5703362057196811983,'Add_P1','Add_P1',1,'Add_P1','Add_P1',1,1,NULL,1,1,'2012-12-31',0,NULL,NULL,NULL,1,NULL,NULL,NULL,1,'AutoCustomer','2013-01-10 16:46:33.497')
 SET IDENTITY_INSERT Tag OFF
 
 /*Tag for Formula -- Add_V1 ＝ Add_P1 + Amy_c_P1*/

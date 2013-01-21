@@ -38,6 +38,7 @@ namespace Mento.Script.Administration.TOU
 
         [Test]
         [CaseID("TC-J1-SmokeTest-026")]
+        [Priority("7")]
         [MultipleTestDataSource(typeof(TOUPulsePeakTariffData[]), typeof(TOUPulsePeakTariffSuite), "TC-J1-SmokeTest-026")]
         public void AddTOUPulsePeakTariff(TOUPulsePeakTariffData testData)
         {

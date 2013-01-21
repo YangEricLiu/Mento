@@ -38,6 +38,7 @@ namespace Mento.Script.Administration.TimeManagement
 
         [Test]
         [CaseID("TC-J1-SmokeTest-029")]
+        [Priority("6")]
         [MultipleTestDataSource(typeof(DayNightCalendarData[]), typeof(DayNightSuite), "TC-J1-SmokeTest-029")]
         public void AddDayNightTimeStrategy(DayNightCalendarData testData)
         {

@@ -43,6 +43,7 @@ namespace Mento.Script.Customer.TagManagement
         /// </summary>        
         [Test]
         [CaseID("TC-J1-SmokeTest-022")]
+        [Priority("23")]
         [MultipleTestDataSource(typeof(KPITargetData[]), typeof(KPITargetSuite), "TC-J1-SmokeTest-022")]
         public void AddKPITarget(KPITargetData testData)
         {

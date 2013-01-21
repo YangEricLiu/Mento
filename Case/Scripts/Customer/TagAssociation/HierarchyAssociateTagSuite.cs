@@ -11,16 +11,15 @@ using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
 
-namespace Mento.Script.Customer.TagDisassociation
+namespace Mento.Script.Customer.TagAssociation
 {
     [TestFixture]
-    [Owner("Nancy")]
+    [Owner("Emma")]
     [CreateTime("2012-11-09")]
-    [ManualCaseID("TC-J1-SmokeTest-011")]
-    public class HierarchyDisassociateTag : TestSuiteBase
+    [ManualCaseID("TC-J1-SmokeTest-008")]
+    public class HierarchyAssociateTagSuite : TestSuiteBase
     {
         private static AssociateSettings Association = JazzFunction.AssociateSettings;
-        private static DisassociateSettings Disassociation = JazzFunction.DisassociateSettings;
 
         [SetUp]
         public void CaseSetUp()
@@ -36,23 +35,23 @@ namespace Mento.Script.Customer.TagDisassociation
         }
 
         [Test]
-        [CaseID("TA-DisassociateTag-001-001")]
-        [Priority("P1")]
+        [CaseID("TC-J1-SmokeTest-008-001")]
+        [Priority("24")]
         [Type(ScriptType.BVT)]
-        public void DisassociateOneTag()
+        public void AssociateOneTag()
         {
             Association.SelectHierarchyNode("自动化测试");
-            TimeManager.ShortPause();
-
-            Disassociation.FocusOnTag("Amy_m_V1_Vtagconst1");
-            Disassociation.ClickDisassociateButton();
-            TimeManager.ShortPause();
 
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
+
+            Association.CheckedTag("Amy_m_V1_Vtagconst1");
+            Association.ClickAssociateButton();
+            TimeManager.ShortPause();
+
             Assert.IsTrue(Association.IsTagOnAssociategGridView("Amy_m_V1_Vtagconst1"));
 
-            Disassociation.ClickAssociatedCancel();
+            Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
             Assert.IsFalse(Association.IsTagOnAssociategGridView("Amy_m_V1_Vtagconst1"));
         }

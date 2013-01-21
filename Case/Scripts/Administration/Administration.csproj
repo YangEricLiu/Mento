@@ -73,9 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TOU\TOUPulsePeakTariffSuite.cs" />
     <Compile Include="TOU\TOUBasicTariffSuite.cs" />
-	<Compile Include="User\UserConfiguration.cs" />
+    <Compile Include="User\UserConfigurationSuite.cs" />
     <Compile Include="User\UserProfileSuite.cs" />
-    <Compile Include="User\UserTypePermission.cs" />
+    <Compile Include="User\UserTypePermissionSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Example\" />

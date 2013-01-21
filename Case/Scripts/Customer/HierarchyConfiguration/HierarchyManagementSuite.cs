@@ -22,7 +22,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [Owner("Emma")]
     [CreateTime("2012-10-30")]
     [ManualCaseID("TC-J1-SmokeTest-001")]
-    public class HierarchyManagement : TestSuiteBase
+    public class HierarchyManagementSuite : TestSuiteBase
     {
         private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
 
@@ -41,11 +41,15 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
         [Test]
         [CaseID("TC-J1-SmokeTest-001-001")]
-        [Priority("P1")]
+        [Priority("12")]
         [Type(ScriptType.BVT)]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(HierarchyManagement), "TC-J1-SmokeTest-001-001")]
-        public void AddOrgnizationNodeTest(HierarchyData input)
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(HierarchyManagementSuite), "TC-J1-SmokeTest-001-001")]
+        public void AddOrgnizationAndSiteNodeTest(HierarchyData input)
         {
+            /// <summary>
+            /// PrepareData:  1. Add one org node "systemAssociate" for system dimension Un/Associate 
+            ///               2. Add one site node "AddCalendarProperty" for hierarchy calendar property setting 
+            /// </summary> 
             HierarchySettings.FillInHierarchyNode("自动化测试", input.InputData);
             TimeManager.MediumPause();
             HierarchySettings.ClickSaveButton();
@@ -65,5 +69,35 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.InputData.Type), HierarchySettings.GetTypeValue());
         }
 
+        [Test]
+        [CaseID("TC-J1-SmokeTest-001-002")]
+        [Priority("13")]
+        [Type(ScriptType.BVT)]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(HierarchyManagementSuite), "TC-J1-SmokeTest-001-002")]
+        public void AddBuildingNodeTest(HierarchyData input)
+        {
+            /// <summary>
+            /// PrepareData:  1. Add one building node "AddPeopleProperty" for hierarchy cost&peoplearea property
+            /// </summary> 
+            HierarchySettings.ExpandNode("自动化测试");
+            HierarchySettings.FillInHierarchyNode("AddCalendarProperty", input.InputData);
+            
+            TimeManager.MediumPause();
+            HierarchySettings.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            string msgText = HierarchySettings.GetMessageText();
+            Assert.IsTrue(msgText.Contains("添加成功"));
+
+            TimeManager.ShortPause();
+
+            HierarchySettings.ConfirmCreateOKMagBox();
+
+            Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.Name, "自动化测试"));
+
+            HierarchySettings.FocusOnHierarchyNode(input.InputData.Name);
+
+            Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.InputData.Type), HierarchySettings.GetTypeValue());
+        }
     }
 }

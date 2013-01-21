@@ -51,36 +51,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HierarchyPropertyConfiguration\AddElectricfixedCostProperty.cs" />
-    <Compile Include="HierarchyPropertyConfiguration\AddElectricityComprehensiveCostProperty .cs" />
-    <Compile Include="HierarchyPropertyConfiguration\AddOtherCostProperty.cs" />
-    <Compile Include="HierarchyPropertyConfiguration\AddPeopleAreaProperty.cs" />
-    <Compile Include="TagDisassociation\AreaDimensionDisassociateTag.cs" />
-    <Compile Include="TagDisassociation\HierarchyDisassociateTag.cs" />
-    <Compile Include="HierarchyPropertyConfiguration\AddCalendarProperty.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AddElectricfixedCostPropertySuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AddElectricityComprehensiveCostPropertySuite .cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AddOtherCostPropertySuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AddPeopleAreaPropertySuite.cs" />
+    <Compile Include="TagDisassociation\AreaDimensionDisassociateTagSuite.cs" />
+    <Compile Include="TagDisassociation\HierarchyDisassociateTagSuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AddCalendarPropertySuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="HierarchyConfiguration\AreaDimensionSuite.cs" />
     <Compile Include="HierarchyConfiguration\SystemDimensionSuite.cs" />
-    <Compile Include="HierarchyConfiguration\HierarchyManagement.cs" />
+    <Compile Include="HierarchyConfiguration\HierarchyManagementSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TagAssociation\AreaDimensionAssociateTag.cs" />
-    <Compile Include="TagAssociation\SystemAssociateTag.cs" />
-    <Compile Include="TagDisassociation\SystemDisassociateTag.cs" />
+    <Compile Include="TagAssociation\AreaDimensionAssociateTagSuite.cs" />
+    <Compile Include="TagAssociation\SystemAssociateTagSuite.cs" />
+    <Compile Include="TagDisassociation\SystemDisassociateTagSuite.cs" />
     <Compile Include="TagManagement\CancelModifyFormDayNightKPI.cs" />
     <Compile Include="TagManagement\CancelModifyFormNonDayNightKPI.cs" />
     <Compile Include="TagManagement\CancelModifyKPITag.cs" />
     <Compile Include="TagManagement\DeleteKPITag.cs" />
     <Compile Include="TagManagement\KPITargetSuite.cs" />
-    <Compile Include="TagManagement\FormulaForDayNightKPI.cs" />
-    <Compile Include="TagManagement\FormulaForNonDayNightKPI.cs" />
-    <Compile Include="TagManagement\FormulaManagement.cs" />
-    <Compile Include="TagManagement\KPIConfiguration.cs" />
+    <Compile Include="TagManagement\FormulaForDayNightKPISuite.cs" />
+    <Compile Include="TagManagement\FormulaForNonDayNightKPISuite.cs" />
+    <Compile Include="TagManagement\FormulaForVtagSuite.cs" />
+    <Compile Include="TagManagement\KPIConfigurationSuite.cs" />
     <Compile Include="TagManagement\ModifyFormulaDayNightKPI.cs" />
     <Compile Include="TagManagement\ModifyFormulaNonDayNightKPI.cs" />
     <Compile Include="TagManagement\ModifyKPITag.cs" />
-    <Compile Include="TagManagement\PtagConfiguration.cs" />
-    <Compile Include="TagAssociation\HierarchyAssociateTag.cs" />
-    <Compile Include="TagManagement\VtagManagement.cs" />
+    <Compile Include="TagManagement\PtagConfigurationSuite.cs" />
+    <Compile Include="TagAssociation\HierarchyAssociateTagSuite.cs" />
+    <Compile Include="TagManagement\VtagManagementSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">

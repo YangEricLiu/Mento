@@ -18,7 +18,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Administration.User
 {
     [TestFixture]
-    public class UserConfiguration : TestSuiteBase
+    public class UserConfigurationSuite : TestSuiteBase
     {
         private UserSettings UserSettings = JazzFunction.UserSettings;
 
@@ -40,7 +40,8 @@ namespace Mento.Script.Administration.User
 
         [Test]
         [CaseID("TC-J1-SmokeTest-034"), CreateTime("2013-01-08"), Owner("Nancy")]
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserConfiguration), "TC-J1-SmokeTest-034")]
+        [Priority("8")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserConfigurationSuite), "TC-J1-SmokeTest-034")]
         public void AddNewUser(UserSettingsData testData)
         {
 
@@ -61,7 +62,7 @@ namespace Mento.Script.Administration.User
 
         [Test]
         [CaseID("TC-J1-SmokeTest-034-Modify"), CreateTime("2013-01-08"), Owner("Nancy")]
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserConfiguration), "TC-J1-SmokeTest-034-Modify")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserConfigurationSuite), "TC-J1-SmokeTest-034-Modify")]
         public void ModifyUser(UserSettingsData testData)
         {
             string modifyUser = "Nancy_Consultant";

@@ -38,6 +38,7 @@ namespace Mento.Script.Administration.CarbonFactor
                 
         [Test]
         [CaseID("TC-J1-SmokeTest-024")]
+        [Priority("11")]
         [MultipleTestDataSource(typeof(CarbonFactorData[]), typeof(CarbonFactorSuite), "TC-J1-SmokeTest-024")]
         public void AddCarbonFactor(CarbonFactorData testData)
         {

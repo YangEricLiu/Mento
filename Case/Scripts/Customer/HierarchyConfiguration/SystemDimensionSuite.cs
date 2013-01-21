@@ -32,14 +32,14 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
         [Test]
         [CaseID("TC-J1-SmokeTest-014-001")]
-        [Priority("P1")]
+        [Priority("14")]
         [Type(ScriptType.BVT)]
         public void AssoicateSystemDimension()
         {
+            /// <summary>
+            /// PrepareData: 1. Associated system dimension for next case 
+            /// </summary>  
             var SystemSettings = JazzFunction.SystemDimensionSettings;
-
-            //1.Select the org/site/building node from hierarchy tree.
-            //The system dimension tree for the selected hierarchy node is displayed.
 
             SystemSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
@@ -66,35 +66,34 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
         [Test]
         [CaseID("TC-J1-SmokeTest-014-002")]
-        [Priority("P2")]
+        [Priority("15")]
         [Type(ScriptType.BVT)]
         public void DisassoicateSystemDimension()
         {
+            /// <summary>
+            /// Precondition: 1. Disssociated system dimension from last case
+            /// </summary> 
             var SystemSettings = JazzFunction.SystemDimensionSettings;
-
-            //1.Select the org/site/building node from hierarchy tree.
-            //The system dimension tree for the selected hierarchy node is displayed.
 
             SystemSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
-            SystemSettings.ExpandHierarchyNodePath(new string[] { "自动化测试" });
-            SystemSettings.SelectHierarchyNode("12345");
+            SystemSettings.SelectHierarchyNode("自动化测试");
 
             SystemSettings.ShowSystemDimensionDialog();
             TimeManager.MediumPause();
 
-            //2.Associate Level 1 dimension node by select the checkbox: Select ‘空调’ checkbox.
-            //The Level 1 dimension node ('空调') is associated.
-            //3.Associate Level 2 dimension node by select the checkbox: Select ‘冷热源’ checkbox.
-            //The Level 2 dimension node ('冷热源') is associated.
-            //4.Associate Level 3 dimension node by select the checkbox: Select ‘供冷主机’ checkbox.
-            //The Level 3 dimension node ('供冷主机') is associated.
+            //2.Disassociate Level 3 dimension node by select the checkbox: Select ‘供冷主机’ checkbox.
+            //The Level 3 dimension node ('供冷主机') is Disassociated.
+            //3.Disassociate Level 2 dimension node by select the checkbox: Select ‘冷热源’ checkbox.
+            //The Level 2 dimension node ('冷热源') is Disassociated.
+            //4.Disassociate Level 1 dimension node by select the checkbox: Select ‘空调’ checkbox.
+            //The Level 1 dimension node ('空调') is Disassociated.
 
             SystemSettings.UncheckSystemDimensionNodePath(new string[] { "空调", "冷热源", "供冷主机" });
 
             SystemSettings.CloseSystemDimensionDialog();
 
-            SystemSettings.ExpandSystemDimensionNodePath(new string[] { "12345" });
+            SystemSettings.ExpandSystemDimensionNodePath(new string[] { "自动化测试" });
 
             Assert.IsFalse(SystemSettings.IsSystemDimensionNodeDisplayed("空调"));
             Assert.IsFalse(SystemSettings.IsSystemDimensionNodeDisplayed("冷热源"));

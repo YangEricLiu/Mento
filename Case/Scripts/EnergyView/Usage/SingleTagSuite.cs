@@ -50,6 +50,7 @@ namespace Mento.Script.EnergyView.Usage
         /// </summary>
         [Test]
         [CaseID("TC-J1-SmokeTest-037")]
+        [Priority("30")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-037")]
         public void SingTagTrendChart(EnergyViewOptionData option)
         {
@@ -72,6 +73,7 @@ namespace Mento.Script.EnergyView.Usage
         /// </summary>
         [Test]
         [CaseID("TC-J1-SmokeTest-038")]
+        [Priority("31")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-038")]
         public void SingleTagColumnChart(EnergyViewOptionData option)
         {
@@ -95,6 +97,7 @@ namespace Mento.Script.EnergyView.Usage
         /// </summary>
         [Test]
         [CaseID("TC-J1-SmokeTest-039")]
+        [Priority("32")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-039")]
         public void SingleTagDataView(EnergyViewOptionData option)
         {
@@ -119,6 +122,7 @@ namespace Mento.Script.EnergyView.Usage
         /// </summary>
         [Test]
         [CaseID("TC-J1-SmokeTest-040	")]
+        [Priority("33")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-040")]
         public void SingleTagDistributionChart(EnergyViewOptionData option)
         {

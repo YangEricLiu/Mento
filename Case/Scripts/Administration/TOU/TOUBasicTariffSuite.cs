@@ -38,6 +38,7 @@ namespace Mento.Script.Administration.TOU
 
         [Test]
         [CaseID("TC-J1-SmokeTest-025")]
+        [Priority("7")]
         [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffSuite), "TC-J1-SmokeTest-025")]
         public void AddTOUBasicTariff(TOUBasicTariffData testData)
         {

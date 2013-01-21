@@ -39,11 +39,13 @@ namespace Mento.Script.Administration.CustomerOperation
 
         [Test]
         [CaseID("TC-J1-SmokeTest-033-001")]
+        [Priority("11")]
         [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(AddCustomerSuite), "TC-J1-SmokeTest-033-001")]
         public void AddNewCustomer(CustomerManagementData testData)
         {
             CustomerManagement.ClickAddCustomerButton();
             TimeManager.ShortPause();
+            //For add logo dialog window can't handle with, so this case is not completed, but passed
             CustomerManagement.FillInCustomerInfo(testData.InputData);
         }
     }

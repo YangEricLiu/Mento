@@ -2,9 +2,18 @@
 	{
 		"InputData":
 		{
-			"Name":"AutoOrg001",
-			"Code":"AutoOrg001",
+			"Name":"systemAssociate",
+			"Code":"systemAssociate",
 			"Type":"Orgnization",
+			"Comment":"test"
+		}
+	},
+	{
+		"InputData":
+		{
+			"Name":"AddCalendarProperty",
+			"Code":"AddCalendarProperty",
+			"Type":"Site",
 			"Comment":"test"
 		}
 	}

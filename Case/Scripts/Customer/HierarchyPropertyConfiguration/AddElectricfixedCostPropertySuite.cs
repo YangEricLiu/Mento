@@ -18,7 +18,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
     [Owner("Emma")]
     [CreateTime("2013-01-10")]
     [ManualCaseID("TC-J1-SmokeTest-018")]
-    public class AddElectricfixedCostProperty :TestSuiteBase
+    public class AddElectricfixedCostPropertySuite :TestSuiteBase
     {
         private static HierarchySettings HierarchySetting = JazzFunction.HierarchySettings;
         private static HierarchyElectricCostSettings CostSettings = JazzFunction.HierarchyElectricCostSettings;
@@ -38,13 +38,13 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
         [Test]
         [CaseID("TC-J1-SmokeTest-018-001")]
-        [Priority("P1")]
+        [Priority("35")]
         [Type(ScriptType.BVT)]
         public void AddCostforElectricfixed()
         {
             HierarchySetting.ExpandNode("自动化测试");
-            HierarchySetting.ExpandNode("systemAssociate");
-            HierarchySetting.FocusOnHierarchyNode("AreaDimension");
+            HierarchySetting.ExpandNode("AddCalendarProperty");
+            HierarchySetting.FocusOnHierarchyNode("AddPeopleProperty");
             TimeManager.ShortPause();
             CostSettings.ClickCostPropertyTabButton();
             TimeManager.MediumPause();

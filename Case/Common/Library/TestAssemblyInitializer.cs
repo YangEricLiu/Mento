@@ -19,12 +19,24 @@ namespace Mento.ScriptCommon.Library
             InitializeExecutionContext();
 
             if (IsInitializeDatabase())
-              // JazzDatabaseOperator.Initialize();
+               JazzDatabaseOperator.Initialize();
 
             JazzBrowseManager.OpenJazz();
 
             JazzFunction.LoginPage.LoginToCustomer();
             //JazzFunction.LoginPage.LoginWithOption("Admin", "P@ssw0rd", "REM管理平台");
+        }
+
+        public static void InitializeWithOption(string userName, string passWord, string customer)
+        {
+            InitializeExecutionContext();
+
+            if (IsInitializeDatabase())
+                // JazzDatabaseOperator.Initialize();
+
+                JazzBrowseManager.OpenJazz();
+
+            JazzFunction.LoginPage.LoginWithOption(userName, passWord, customer);
         }
 
         public static void Desctuct()

@@ -28,6 +28,9 @@ INSERT INTO SystemDimensionTemplate([Id],[Name],[Comment],[CustomerId],[Status],
 VALUES(2,'自动化测试',NULL,2,1,'AutoCustomer',GETDATE())
 SET IDENTITY_INSERT SystemDimensionTemplate OFF*/
 
+--add a customer
+--add a user
+--add hierarchy nodes
 
 -----------------------------------Hierarchy------------------------------------
 /*HierarchyType: Customer=-1, Organization = 0, Site = 1, Building = 2*/

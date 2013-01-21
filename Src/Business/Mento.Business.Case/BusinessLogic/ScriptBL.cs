@@ -162,8 +162,11 @@ namespace Mento.Business.Script.BusinessLogic
                     string ManualCaseID = this.GetScriptePropertyValue(suiteProperties, scriptProperties, typeof(ManualCaseIDAttribute));
                     string CreateTimeString = this.GetScriptePropertyValue(suiteProperties, scriptProperties, typeof(CreateTimeAttribute));
                     string Owner = this.GetScriptePropertyValue(suiteProperties, scriptProperties, typeof(OwnerAttribute));
+                    string Priority = this.GetScriptePropertyValue(suiteProperties, scriptProperties, typeof(PriorityAttribute));
+                    string Type = this.GetScriptePropertyValue(suiteProperties, scriptProperties, typeof(PriorityAttribute));
 
                     DateTime CreateTime;
+                    int priority;
 
                     if (String.IsNullOrEmpty(CaseID) || !Regex.IsMatch(CaseID, ValidationRegexPatterns.IDENTITYPATTERN))
                         faults.Add(typeof(CaseIDAttribute));
@@ -173,18 +176,20 @@ namespace Mento.Business.Script.BusinessLogic
                         faults.Add(typeof(CreateTimeAttribute));
                     if (String.IsNullOrEmpty(Owner))
                         faults.Add(typeof(OwnerAttribute));
+                    if (!int.TryParse(Priority, out priority))
+                        faults.Add(typeof(PriorityAttribute));
 
                     if (faults.Count > 0)
                         validationFaults.Add(testScript, faults);
                     else
-                        scriptList.Add(this.ConstructScriptEntity(CaseID, DateTime.Parse(CreateTimeString), ManualCaseID, Owner, testSuite, testScript));
+                        scriptList.Add(this.ConstructScriptEntity(CaseID, DateTime.Parse(CreateTimeString), ManualCaseID, Owner, testSuite, testScript, priority));
                 }
             }
 
             return validationFaults;
         }
 
-        private ScriptEntity ConstructScriptEntity(string caseID,DateTime createTime,string manualCaseID,string owner,Type testSuite,MethodInfo testScript)
+        private ScriptEntity ConstructScriptEntity(string caseID,DateTime createTime,string manualCaseID,string owner,Type testSuite,MethodInfo testScript,int priority)
         {
             return new ScriptEntity()
             {
@@ -197,7 +202,7 @@ namespace Mento.Business.Script.BusinessLogic
                 Module = testSuite.Namespace.Replace(Project.SCRIPTNAMESPACEPREFIX + ASCII.DOT, String.Empty).Split(ASCII.DOT).FirstOrDefault(),
                 Name = testScript.Name,
                 SyncTime = DateTime.Now,
-                Priority = 1,
+                Priority = priority,
                 Type = 1,
                 Assembly = String.Format("{0}.dll",testScript.DeclaringType.Assembly.GetName().Name),
                 FullName = String.Format("{0}.{1}", testScript.DeclaringType.FullName, testScript.Name),

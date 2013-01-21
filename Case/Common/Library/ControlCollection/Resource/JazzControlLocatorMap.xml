@@ -368,8 +368,12 @@
       <add key="ComboBoxLoginCustomerOption" value="//div[contains(@class,'x-window-default')]/div[contains(@class,'x-window-body-default')]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'combobox')]]" type="XPath"/>
     </login>
     <energyview>
+      <add key="ComboBoxEnergyViewStartTime" value="//div[@id='em-energy-chartgridpanel']/div/div/div/div/table[contains(@id,'combobox') and position()=1]" type="XPath"/>
+      <add key="ComboBoxEnergyViewEndTime" value="//div[@id='em-energy-chartgridpanel']/div/div/div/div/table[contains(@id,'combobox') and position()=2]" type="XPath"/>
       <add key="ComboBoxEnergyViewSaveDashboardHierarchy" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='层级结点']]//table[contains(@id,'combobox')]" type="XPath"/>
       <add key="ComboBoxEnergyViewSaveDashboardDashboard" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='已建仪表盘']]//table[contains(@id,'combobox')]" type="XPath"/>
+      <add key="ComboBoxEnergyViewIntervalDialogStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body')]//table[contains(@id,'combobox') and position()=1]" type="XPath"/>
+      <add key="ComboBoxEnergyViewIntervalDialogEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body')]//table[contains(@id,'combobox') and position()=2]" type="XPath"/>
     </energyview>
     <customersettings>
       <hierarchy>
@@ -578,6 +582,8 @@
 
   <!--DatePicker-->
   <EnergyUsage>
+    <add key="DatePickerIntervalDialogStartDate" value="//div[contains(@id,'addintervalwindow')]//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+    <add key="DatePickerIntervalDialogEndDate" value="//table[@id='em-addinterval-enddate']//table" type="XPath"/>
     <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
     <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
   </EnergyUsage>

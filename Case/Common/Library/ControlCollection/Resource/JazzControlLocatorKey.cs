@@ -448,8 +448,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region Energy view
+        public static string ComboBoxEnergyViewStartTime = "ComboBoxEnergyViewStartTime";
+        public static string ComboBoxEnergyViewEndTime = "ComboBoxEnergyViewEndTime";
         public static string ComboBoxEnergyViewSaveDashboardHierarchy = "ComboBoxEnergyViewSaveDashboardHierarchy";
-        public static string ComboBoxEnergyViewSaveDashboardDashboard = "ComboBoxEnergyViewSaveDashboardDashboard";        
+        public static string ComboBoxEnergyViewSaveDashboardDashboard = "ComboBoxEnergyViewSaveDashboardDashboard";
+        public static string ComboBoxEnergyViewIntervalDialogStartTime = "ComboBoxEnergyViewIntervalDialogStartTime";
+        public static string ComboBoxEnergyViewIntervalDialogEndTime = "ComboBoxEnergyViewIntervalDialogEndTime";  
         #endregion
 
         #region Customer settings
@@ -650,7 +654,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region DatePicker
         #region Energy Usage
         public static string DatePickerEnergyUsageStartDate = "DatePickerEnergyUsageStartDate";
-        public static string DatePickerEnergyUsageEndDate = "DatePickerEnergyUsageEndDate";   
+        public static string DatePickerEnergyUsageEndDate = "DatePickerEnergyUsageEndDate";
+        public static string DatePickerIntervalDialogStartDate = "DatePickerIntervalDialogStartDate";
+        public static string DatePickerIntervalDialogEndDate = "DatePickerIntervalDialogEndDate";
         #endregion
         #region Customer settings
         #region KPITag settings

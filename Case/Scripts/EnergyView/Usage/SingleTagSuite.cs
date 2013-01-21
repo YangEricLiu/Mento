@@ -60,6 +60,7 @@ namespace Mento.Script.EnergyView.Usage
             Assert.IsTrue(DataPanel.IsTrendChartDrawn());
 
             //save to dashboard
+            DataPanel.Toolbar.SaveToDashboard("","",true,"");
         }
 
         /// <summary>
@@ -124,6 +125,8 @@ namespace Mento.Script.EnergyView.Usage
             DataPanel.SelectHierarchy(option.InputData.Hierarchies);
 
             DataPanel.CheckTags(option.InputData.TagNames);
+
+            DataPanel.Toolbar.SetTimeRange(new DateTime(2012, 1, 1), new DateTime(2012, 4, 15));
 
             DataPanel.Toolbar.View(option.InputData.ViewType);
 

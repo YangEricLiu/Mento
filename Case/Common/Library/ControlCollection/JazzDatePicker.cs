@@ -18,6 +18,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Energy View
         public static DatePicker EnergyUsageStartDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerEnergyUsageStartDate);
         public static DatePicker EnergyUsageEndDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerEnergyUsageEndDate);
+        public static DatePicker EnergyUsageIntervalDialogStartDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogStartDate);
+        public static DatePicker EnergyUsageIntervalDialogEndDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogEndDate);
         #endregion
 
         #region Customer settings

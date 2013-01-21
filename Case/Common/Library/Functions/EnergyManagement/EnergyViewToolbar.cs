@@ -6,6 +6,7 @@ using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.TestData.EnergyView;
+using Mento.Framework.Exceptions;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -13,9 +14,14 @@ namespace Mento.ScriptCommon.Library.Functions
     {
         #region Controls
         //StartDatePicker
+        private static DatePicker StartDatePicker = JazzDatePicker.EnergyUsageStartDateDatePicker;
         //StartTimeComboBox
+        private static ComboBox StartTimeComboBox = JazzComboBox.EnergyViewStartTimeComboBox;
+
         //EndDatePicker
+        private static DatePicker EndDatePicker = JazzDatePicker.EnergyUsageEndDateDatePicker;
         //EndTimeComboBox
+        private static ComboBox EndTimeComboBox = JazzComboBox.EnergyViewEndTimeComboBox;
 
         //ViewButton
         private static EnergyViewToolbarViewSplitButton ViewButton = new EnergyViewToolbarViewSplitButton();
@@ -44,19 +50,23 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SetTimeRange(DateTime startTime, DateTime endTime)
         {
+            int startHour = startTime.Hour, startMinute = startTime.Minute, endHour = endTime.Hour, endMinute = endTime.Minute;
 
+            if (startMinute != 0 || startMinute != 30 || endMinute != 0 || endMinute != 30)
+            {
+                throw new ApiException("Start time and end time must be multiple of half hour.");
+            }
+
+            StartDatePicker.SelectDateItem(startTime);
+            StartTimeComboBox.SelectItem(String.Format("{0}:{1}", startHour, startMinute));
+
+            EndDatePicker.SelectDateItem(endTime);
+            EndTimeComboBox.SelectItem(String.Format("{0}:{1}", endHour, endMinute));
         }
 
         public void View(EnergyViewType viewType)
         {
-            //if (ViewButton.CurrentViewType == viewType)
-            //{
-            //    ViewButton.Click();
-            //}
-            //else
-            //{
-                ViewButton.SwitchViewType(viewType);
-            //}
+            ViewButton.SwitchViewType(viewType);
 
             JazzMessageBox.LoadingMask.WaitLoading();
         }

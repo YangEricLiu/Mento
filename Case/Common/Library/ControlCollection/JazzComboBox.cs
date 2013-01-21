@@ -20,8 +20,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region Energy view
+        public static ComboBox EnergyViewStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewStartTime);
+        public static ComboBox EnergyViewEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewEndTime);
         public static ComboBox EnergyViewSaveDashboardHierarchyComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewSaveDashboardHierarchy);
         public static ComboBox EnergyViewSaveDashboardDashboardComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewSaveDashboardDashboard);
+        public static ComboBox EnergyViewIntervalDialogStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewIntervalDialogStartTime);
+        public static ComboBox EnergyViewIntervalDialogEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewIntervalDialogEndTime);
         #endregion
 
         #region Customer settings

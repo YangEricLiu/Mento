@@ -16,7 +16,20 @@ namespace Mento.Framework.Attributes
         /// Construct a TypeAttribute, given a type.
         /// </summary>
         /// <param name="type">Case type</param>
-        public TypeAttribute(string type)
+        public TypeAttribute(ScriptType type)
             : base(type) { }
+    }
+
+    public enum ScriptType
+    {
+        /// <summary>
+        /// Smoke test
+        /// </summary>
+        BVT = 1,
+
+        /// <summary>
+        /// Function test
+        /// </summary>
+        BFT = 2,
     }
 }

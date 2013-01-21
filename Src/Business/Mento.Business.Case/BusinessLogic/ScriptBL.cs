@@ -182,14 +182,14 @@ namespace Mento.Business.Script.BusinessLogic
                     if (faults.Count > 0)
                         validationFaults.Add(testScript, faults);
                     else
-                        scriptList.Add(this.ConstructScriptEntity(CaseID, DateTime.Parse(CreateTimeString), ManualCaseID, Owner, testSuite, testScript, priority));
+                        scriptList.Add(this.ConstructScriptEntity(CaseID, DateTime.Parse(CreateTimeString), ManualCaseID, Owner, testSuite, testScript, priority, Type));
                 }
             }
 
             return validationFaults;
         }
 
-        private ScriptEntity ConstructScriptEntity(string caseID,DateTime createTime,string manualCaseID,string owner,Type testSuite,MethodInfo testScript,int priority)
+        private ScriptEntity ConstructScriptEntity(string caseID,DateTime createTime,string manualCaseID,string owner,Type testSuite,MethodInfo testScript,int priority,string type)
         {
             return new ScriptEntity()
             {
@@ -203,7 +203,7 @@ namespace Mento.Business.Script.BusinessLogic
                 Name = testScript.Name,
                 SyncTime = DateTime.Now,
                 Priority = priority,
-                Type = 1,
+                Type = (int)(ScriptType)Enum.Parse(typeof(ScriptType), type),
                 Assembly = String.Format("{0}.dll",testScript.DeclaringType.Assembly.GetName().Name),
                 FullName = String.Format("{0}.{1}", testScript.DeclaringType.FullName, testScript.Name),
             };

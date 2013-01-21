@@ -226,6 +226,7 @@ namespace Mento.Business.Plan.BusinessLogic
             plan.Name = root.Element("name") == null ? String.Empty : root.Element("name").Value.Trim();
             plan.ProductVersion = root.Element("version") == null ? String.Empty : root.Element("version").Value.Trim();
             plan.Owner = root.Element("owner") == null ? String.Empty : root.Element("owner").Value.Trim();
+            plan.Regression = root.Element("regression") == null ? 0 : 1;
             plan.ScriptList = GetScriptListFromXDocument(xdoc);
 
             ValidatePlanEntity(plan);

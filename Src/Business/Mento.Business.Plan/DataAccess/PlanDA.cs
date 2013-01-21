@@ -16,7 +16,7 @@ namespace Mento.Business.Plan.DataAccess
     {
         public long Create(PlanEntity entity)
         {
-            string sql = @" INSERT INTO [Plan]([PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status]) VALUES(@PlanID,@Name,@ProductVersion,@Owner,@UpdateTime,@Status)
+            string sql = @" INSERT INTO [Plan]([PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status],[Regression]) VALUES(@PlanID,@Name,@ProductVersion,@Owner,@UpdateTime,@Status,@Regression)
                             SELECT SCOPE_IDENTITY()";
             
             DbCommand command = Database.GetSqlStringCommand(sql);
@@ -27,6 +27,7 @@ namespace Mento.Business.Plan.DataAccess
             Database.AddInParameter(command, "Owner", DbType.String, entity.Owner);
             Database.AddInParameter(command, "UpdateTime", DbType.DateTime, entity.UpdateTime);
             Database.AddInParameter(command, "Status", DbType.Int32, entity.Status);
+            Database.AddInParameter(command, "Regression", DbType.Int32, entity.Regression);
 
             object result = Database.ExecuteScalar(command);
 
@@ -35,7 +36,7 @@ namespace Mento.Business.Plan.DataAccess
 
         public void Update(PlanEntity entity)
         {
-            string sql = "UPDATE [Plan] SET [PlanID] = @PlanID, [Name] = @Name,[ProductVersion] = @ProductVersion,[Owner] = @Owner,[UpdateTime] =@UpdateTime,[Status] = @Status WHERE [ID]=@ID";
+            string sql = "UPDATE [Plan] SET [PlanID] = @PlanID, [Name] = @Name,[ProductVersion] = @ProductVersion,[Owner] = @Owner,[UpdateTime] =@UpdateTime,[Status] = @Status,[Regression]=@Regression WHERE [ID]=@ID";
             
             DbCommand command = Database.GetSqlStringCommand(sql);
 
@@ -46,13 +47,14 @@ namespace Mento.Business.Plan.DataAccess
             Database.AddInParameter(command, "Owner", DbType.String, entity.Owner);
             Database.AddInParameter(command, "UpdateTime", DbType.DateTime, entity.UpdateTime);
             Database.AddInParameter(command, "Status", DbType.Int32, entity.Status);
+            Database.AddInParameter(command, "Regression", DbType.Int32, entity.Regression);
 
             Database.ExecuteNonQuery(command);
         }
 
         public PlanEntity Retrieve(string planID)
         {
-            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan] WHERE [PlanID] = @PlanID AND [Status]=@Status";
+            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status],[Regression] FROM [Plan] WHERE [PlanID] = @PlanID AND [Status]=@Status";
 
             DbCommand command = Database.GetSqlStringCommand(sql);
 
@@ -66,7 +68,7 @@ namespace Mento.Business.Plan.DataAccess
 
         public PlanEntity Retrieve(long id)
         {
-            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan] WHERE [ID] = @ID AND [Status]=@Status";
+            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status],[Regression] FROM [Plan] WHERE [ID] = @ID AND [Status]=@Status";
 
             DbCommand command = Database.GetSqlStringCommand(sql);
 
@@ -80,7 +82,7 @@ namespace Mento.Business.Plan.DataAccess
 
         public PlanEntity[] RetrieveAll()
         {
-            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan] WHERE [Status]=@Status";
+            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status],[Regression] FROM [Plan] WHERE [Status]=@Status";
 
             DbCommand command = Database.GetSqlStringCommand(sql);
 
@@ -91,22 +93,9 @@ namespace Mento.Business.Plan.DataAccess
             return list.ToArray();
         }
 
-        public List<string> RetrieveAllPlanID()
-        {
-            PlanEntity[] plans = RetrieveAll();
-            List<string> list = new List<string>();
-
-            foreach (var plan in plans)
-            { 
-                list.Add(plan.PlanID);
-            }
-
-            return list;
-        }
-
         public DataTable RetrieveAllToDataSet()
         {
-            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status] FROM [Plan] WHERE [Status]=@Status";
+            string sql = @"SELECT [ID],[PlanID],[Name],[ProductVersion],[Owner],[UpdateTime],[Status],[Regression] FROM [Plan] WHERE [Status]=@Status";
 
             DbCommand command = Database.GetSqlStringCommand(sql);
 
@@ -117,7 +106,7 @@ namespace Mento.Business.Plan.DataAccess
 
         public PlanEntity RetrieveByExecutionID(long executionID)
         {
-            string sql = @"SELECT [P].[ID],[P].[PlanID],[P].[Name],[P].[ProductVersion],[P].[Owner],[P].[UpdateTime],[P].[Status] 
+            string sql = @"SELECT [P].[ID],[P].[PlanID],[P].[Name],[P].[ProductVersion],[P].[Owner],[P].[UpdateTime],[P].[Status],[P].[Regression]
                            FROM [Plan] [P]
                            INNER JOIN [Execution] [E] ON [P].ID = [E].PlanID
                            WHERE [E].[ID] = @ExecutionID AND [P].[Status]=@Status";

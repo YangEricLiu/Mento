@@ -44,6 +44,11 @@ namespace Mento.Business.Plan.Entity
         public EntityStatus Status { get; set; }
 
         /// <summary>
+        /// Marks whether the plan is a regression test plan
+        /// </summary>
+        public int Regression { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         public List<ScriptEntity> ScriptList { get; set; }

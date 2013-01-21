@@ -35,7 +35,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-015-001")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         public void CreateAreaDimension()
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;

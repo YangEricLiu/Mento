@@ -44,7 +44,7 @@ namespace Mento.Script.Customer.TagManagement
         [Test]
         [CaseID("TA-CancelModifyKPITag-001")]
         [Priority("1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         
         public void CancelModifyKPItag()
         {

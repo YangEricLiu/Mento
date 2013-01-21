@@ -33,7 +33,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-014-001")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         public void AssoicateSystemDimension()
         {
             var SystemSettings = JazzFunction.SystemDimensionSettings;
@@ -67,7 +67,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-014-002")]
         [Priority("P2")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         public void DisassoicateSystemDimension()
         {
             var SystemSettings = JazzFunction.SystemDimensionSettings;

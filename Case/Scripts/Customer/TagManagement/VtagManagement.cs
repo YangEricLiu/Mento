@@ -40,7 +40,7 @@ namespace Mento.Script.Customer.TagManagement
         [Test]
         [CaseID("TA-VtagConfigue-001")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         [MultipleTestDataSource(typeof(AddVtagData[]), typeof(VTagManagement), "TA-VtagConfigue-001")]
         public void AddVtag(AddVtagData input)
         {

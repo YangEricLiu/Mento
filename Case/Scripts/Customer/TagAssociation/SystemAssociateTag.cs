@@ -38,7 +38,7 @@ namespace Mento.Script.Customer.TagAssociation
         [Test]
         [CaseID("TC-J1-SmokeTest-009-001")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         public void AssociateOneTag()
         { 
             SystemSettings.ShowHierarchyTree();

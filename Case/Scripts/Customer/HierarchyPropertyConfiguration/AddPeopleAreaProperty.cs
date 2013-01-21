@@ -38,7 +38,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-021-001")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         public void AddAreaProperty()
         {
             HierarchySetting.ExpandNode("自动化测试");
@@ -65,7 +65,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-021-002")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         public void AddPeoplePeoperty()
         {
             HierarchySetting.ExpandNode("自动化测试");

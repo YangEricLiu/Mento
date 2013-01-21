@@ -38,7 +38,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-017-001")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         public void AddCalendarforWorkday()
         {
             string[] calendarText = new string[] { "默认工作日", "周一至周五" };
@@ -76,7 +76,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-017-002")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         public void AddCalendarforHeatingCooling()
         {
             string[] calendarText = new string[] { "采暖季", "1月1日至2月1日", "供冷季", "10月1日至11月1日" };
@@ -106,7 +106,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-017-003")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         public void AddCalendarforDayNight()
         {
             string[] calendarText = new string[] { "黑夜时间", "白昼时间以外均为黑夜时间", "白昼时间", "06:00-17:00" };

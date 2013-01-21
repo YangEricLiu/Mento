@@ -38,7 +38,7 @@ namespace Mento.Script.Customer.TagDisassociation
         [Test]
         [CaseID("TA-DisassociateTag-001-001")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         public void DisassociateOneTag()
         {
             Association.SelectHierarchyNode("自动化测试");

@@ -42,7 +42,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-001-001")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(HierarchyManagement), "TC-J1-SmokeTest-001-001")]
         public void AddOrgnizationNodeTest(HierarchyData input)
         {

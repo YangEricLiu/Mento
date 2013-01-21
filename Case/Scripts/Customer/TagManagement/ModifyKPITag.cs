@@ -43,7 +43,7 @@ namespace Mento.Script.Customer.TagManagement
         [Test]
         [CaseID("TA-ModifyKPITag-001")]
         [Priority("1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         [MultipleTestDataSource(typeof(AddKPIData[]), typeof(ModifyKPITag), "TA-ModifyKPITag-001")]
         public void ModifyKPItag(AddKPIData input)
         {

@@ -38,7 +38,7 @@ namespace Mento.Script.Customer.TagManagement
         [Test]
         [CaseID("TC-J1-SmokeTest-005-001")]
         [Priority("P1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
         public void AddFormulaToVtag()
         {
             string vtagName = "Add_V1";

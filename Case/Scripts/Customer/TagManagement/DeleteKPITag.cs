@@ -41,7 +41,7 @@ namespace Mento.Script.Customer.TagManagement
         [Test]
         [CaseID("TA-DeleteKPITag-001")]
         [Priority("1")]
-        [Type("Smoke")]
+        [Type(ScriptType.BVT)]
 
         public void DeleteKPItag()
         {

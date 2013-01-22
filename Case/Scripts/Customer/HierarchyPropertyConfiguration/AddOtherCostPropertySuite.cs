@@ -42,22 +42,37 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Type(ScriptType.BVT)]
         public void AddCostforGas()
         {
+            /// <summary>
+            /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
+            /// </summary>  
+            /// 
+            //Select buidling node "AddPeopleProperty"
             HierarchySetting.ExpandNode("自动化测试");
             HierarchySetting.ExpandNode("AddCalendarProperty");
             HierarchySetting.FocusOnHierarchyNode("AddPeopleProperty");
             TimeManager.ShortPause();
+
+            //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton();
             TimeManager.MediumPause();
+
+            //Click "+成本属性" button
             CostSettings.ClickCostCreateButton();
             TimeManager.ShortPause();
+
+            //Click "+" before "天然气"
             OtherCostSettings.ClickGasCostCreateButton();
             TimeManager.ShortPause();
+
+            //select effective year and input value, save it
             OtherCostSettings.SelectGasCostEffectiveDate(new DateTime(2012,6,7));
             TimeManager.ShortPause();
             OtherCostSettings.FillGasCostPrice("60");
             TimeManager.ShortPause();
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
+
+            //Verify the input value displayed correct
             Assert.AreEqual(OtherCostSettings.GetGasCostEffectiveDate(), "2012-06");
             Assert.AreEqual(OtherCostSettings.GetGasCostPrice(), "60");
         }

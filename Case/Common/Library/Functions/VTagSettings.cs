@@ -31,6 +31,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SaveButton = JazzButton.VTagSettingsSaveButton;
         private static Button CancelButton = JazzButton.VTagSettingsCancelButton;
         private static Button DeleteButton = JazzButton.VTagSettingsDeleteButton;
+        private static Button VTagSettingsFormulaUpdate = JazzButton.VTagSettingsFormulaUpdateButton;
+        private static Button VTagSettingsFormulaSave = JazzButton.VTagSettingsFormulaSaveButton;
 
         private static TextField NameTextField = JazzTextField.VTagSettingsNameTextField;
         private static TextField CodeTextField = JazzTextField.VTagSettingsCodeTextField;
@@ -120,18 +122,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInAddVTagData(VtagInputData input)
         {
-            //textFieldInstance.FillIn(ElementKey.VtagName, input.Name);
-            //textFieldInstance.FillIn(ElementKey.VtagCode, input.Code);
-            //comboBoxInstance.DisplayItems(ElementKey.VtagCommodity);
-            //comboBoxInstance.SelectItem(input.Commodity);
-            //comboBoxInstance.DisplayItems(ElementKey.VtagUOM);
-            //comboBoxInstance.SelectItem(input.UOM);
-            //comboBoxInstance.DisplayItems(ElementKey.VtagCalculationStep);
-            //comboBoxInstance.SelectItem(input.Step);
-            //comboBoxInstance.DisplayItems(ElementKey.VtagCalculationType);
-            //comboBoxInstance.SelectItem(input.CalculationType);
-            //textFieldInstance.FillIn(ElementKey.VtagComment, input.Comment);
-
             NameTextField.Fill(input.Name);
             CodeTextField.Fill(input.Code);
             CommodityComboBox.SelectItem(input.Commodity);
@@ -289,7 +279,7 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
             TimeManager.ShortPause();
 
-            JazzButton.VTagSettingsFormulaUpdate.Click();
+            VTagSettingsFormulaUpdate.Click();
         }
 
         /// <summary>
@@ -298,7 +288,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickSaveFormulaButton()
         {
-            JazzButton.VTagSettingsFormulaSave.Click();
+            VTagSettingsFormulaSave.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         /// <summary>

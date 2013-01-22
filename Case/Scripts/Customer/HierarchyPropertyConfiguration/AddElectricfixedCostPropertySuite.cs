@@ -42,16 +42,28 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Type(ScriptType.BVT)]
         public void AddCostforElectricfixed()
         {
+            /// <summary>
+            /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
+            /// </summary>  
+            ///
             HierarchySetting.ExpandNode("自动化测试");
             HierarchySetting.ExpandNode("AddCalendarProperty");
             HierarchySetting.FocusOnHierarchyNode("AddPeopleProperty");
             TimeManager.ShortPause();
+
+            //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton();
             TimeManager.MediumPause();
+
+            //Click "+成本属性" button
             CostSettings.ClickCostCreateButton();
             TimeManager.ShortPause();
+
+            //Click "+" before "电力"
             CostSettings.ClickElectricCostCreateButton();
             TimeManager.ShortPause();
+
+            //select effective year and input value, save it
             CostSettings.SelectElectricEffectiveDate(new DateTime(2013,1,5));
             CostSettings.SelectElectricPriceMode("固定电价");
             CostSettings.FillElectricPrice("50");
@@ -59,6 +71,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
 
+            //Verify the input value displayed correct
             Assert.AreEqual(CostSettings.GetElectricCostEffectiveDateValue(), "2013-01");
             Assert.AreEqual(CostSettings.GetElectricPriceMode(), "固定电价");
             Assert.AreEqual(CostSettings.GetElectricPriceValue(), "50");

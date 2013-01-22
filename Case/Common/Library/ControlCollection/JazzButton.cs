@@ -142,8 +142,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region VTag settings buttons
         public static TabButton VTagSettingsBasicPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonVTagSettingsBasicProperty);
         public static TabButton VTagSettingsFormulaTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonVTagSettingsFormula);
-        public static Button VTagSettingsFormulaUpdate = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsFormulaUpdate);
-        public static Button VTagSettingsFormulaSave = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsFormulaSave);
+        public static Button VTagSettingsFormulaUpdateButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsFormulaUpdate);
+        public static Button VTagSettingsFormulaSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsFormulaSave);
 
         public static Button VTagSettingsCreateVTagButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsCreateVTag);
 

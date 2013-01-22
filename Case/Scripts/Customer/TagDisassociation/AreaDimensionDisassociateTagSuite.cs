@@ -42,6 +42,13 @@ namespace Mento.Script.Customer.TagDisassociation
         [Type(ScriptType.BVT)]
         public void DisassociateOneTag()
         {
+            /// <summary>
+            /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"->"AddCalendarProperty"->"AddPeopleProperty"
+            ///                  And "FirstFloor" area dimension added
+            ///               2. make sure tag "AddforAreaAssociate" has been added and associate to "FirstFloor"
+            /// </summary> 
+            ///
+            //Select hierarchy node "AddPeopleProperty"
             AreaSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
             AreaSettings.ExpandHierarchyNodePath(new string[] { "自动化测试", "systemAssociate" });
@@ -50,11 +57,15 @@ namespace Mento.Script.Customer.TagDisassociation
             AreaSettings.ExpandAreaDimensionNodePath(new string[] { "AreaDimension" });
             AreaSettings.SelectAreaDimensionNode("FirstFloor");
 
+            //Select area dimension node "FirstFloor" and click associate tag button
             Disassociation.FocusOnTag("AddforAreaAssociate");
+
+            //Verify the tag is not on associated tag list
             Disassociation.ClickDisassociateButton();
             TimeManager.ShortPause();
             Assert.IsFalse(Association.IsTagOnAssociategGridView("AddforAreaAssociate"));
 
+            //Verify the tag is on disassociated tag list
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
             Assert.IsTrue(Association.IsTagOnAssociategGridView("AddforAreaAssociate"));

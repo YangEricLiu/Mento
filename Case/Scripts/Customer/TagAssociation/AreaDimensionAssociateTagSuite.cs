@@ -41,21 +41,33 @@ namespace Mento.Script.Customer.TagAssociation
         [Type(ScriptType.BVT)]
         public void AssociateOneTag()
         {
+            /// <summary>
+            /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"->"AddCalendarProperty"->"AddPeopleProperty"
+            ///                  And "FirstFloor" area dimension added
+            ///               2. make sure tag "AddforAreaAssociate" has been added for associate
+            /// Prepare Data: 1. associate tag for the case to disassociate tag
+            /// </summary> 
+            /// 
+            //Select hierarchy node "AddPeopleProperty"
             AreaSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
-            AreaSettings.ExpandHierarchyNodePath(new string[] { "自动化测试", "systemAssociate" });
-            AreaSettings.SelectHierarchyNode("AreaDimension");
+            AreaSettings.ExpandHierarchyNodePath(new string[] { "自动化测试", "AddCalendarProperty" });
+            AreaSettings.SelectHierarchyNode("AddPeopleProperty");
 
-            AreaSettings.ExpandAreaDimensionNodePath(new string[] { "AreaDimension" });
+            //Select area dimension node "FirstFloor" and click associate tag button
+            AreaSettings.ExpandAreaDimensionNodePath(new string[] { "AddPeopleProperty" });
             AreaSettings.SelectAreaDimensionNode("FirstFloor");
 
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
 
+            //select tag "AddforAreaAssociate" and click associate button to associate
             Association.CheckedTag("AddforAreaAssociate");
+            
+            //Verify the tag is  display on associated tag list
+            //And not display on disassociate tag list
             Association.ClickAssociateButton();
             TimeManager.ShortPause();
-
             Assert.IsTrue(Association.IsTagOnAssociategGridView("AddforAreaAssociate"));
 
             Association.ClickAssociateTagButton();

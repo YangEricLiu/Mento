@@ -41,11 +41,10 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             /// </summary>  
             var SystemSettings = JazzFunction.SystemDimensionSettings;
 
+            //Display hierarchy tree -> click hierarchy node "自动化测试" -> open system dimension dialog
             SystemSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
-            //SystemSettings.ExpandHierarchyNodePath(new string[] { "自动化测试" });
             SystemSettings.SelectHierarchyNode("自动化测试");
-
             SystemSettings.ShowSystemDimensionDialog();
             TimeManager.MediumPause();
 
@@ -55,11 +54,10 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //The Level 2 dimension node ('冷热源') is associated.
             //4.Associate Level 3 dimension node by select the checkbox: Select ‘供冷主机’ checkbox.
             //The Level 3 dimension node ('供冷主机') is associated.
-
             SystemSettings.CheckSystemDimensionNodePath(new string[] { "空调", "冷热源", "供冷主机" });
-
             SystemSettings.CloseSystemDimensionDialog();
 
+            //Expand system dimension tree and verify
             SystemSettings.ExpandSystemDimensionNodePath(new string[] { "自动化测试", "空调", "冷热源" });
             Assert.IsTrue(SystemSettings.IsSystemDimensionNodeDisplayed("供冷主机"));
         }
@@ -75,10 +73,10 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             /// </summary> 
             var SystemSettings = JazzFunction.SystemDimensionSettings;
 
+            //Display hierarchy tree -> click hierarchy node "自动化测试" -> open system dimension dialog
             SystemSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
             SystemSettings.SelectHierarchyNode("自动化测试");
-
             SystemSettings.ShowSystemDimensionDialog();
             TimeManager.MediumPause();
 
@@ -90,11 +88,10 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //The Level 1 dimension node ('空调') is Disassociated.
 
             SystemSettings.UncheckSystemDimensionNodePath(new string[] { "空调", "冷热源", "供冷主机" });
-
             SystemSettings.CloseSystemDimensionDialog();
 
+            //Expand system dimension tree and verify
             SystemSettings.ExpandSystemDimensionNodePath(new string[] { "自动化测试" });
-
             Assert.IsFalse(SystemSettings.IsSystemDimensionNodeDisplayed("空调"));
             Assert.IsFalse(SystemSettings.IsSystemDimensionNodeDisplayed("冷热源"));
             Assert.IsFalse(SystemSettings.IsSystemDimensionNodeDisplayed("供冷主机"));

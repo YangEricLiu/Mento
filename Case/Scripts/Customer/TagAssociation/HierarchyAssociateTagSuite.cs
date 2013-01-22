@@ -40,17 +40,25 @@ namespace Mento.Script.Customer.TagAssociation
         [Type(ScriptType.BVT)]
         public void AssociateOneTag()
         {
+            /// <summary>
+            /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"
+            ///               2. make sure tag "Amy_m_V1_Vtagconst1" has been added for associate
+            /// Prepare Data: 1. associate tag for the case to disassociate tag
+            /// </summary> 
+            /// 
+            //Click hierarchy node and click associate tag button
             Association.SelectHierarchyNode("自动化测试");
-
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
 
+            //select tag "Amy_m_V1_Vtagconst1" and click associate button to associate
             Association.CheckedTag("Amy_m_V1_Vtagconst1");
             Association.ClickAssociateButton();
             TimeManager.ShortPause();
 
+            //Verify the tag is  display on associated tag list
+            //And not display on disassociate tag list
             Assert.IsTrue(Association.IsTagOnAssociategGridView("Amy_m_V1_Vtagconst1"));
-
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
             Assert.IsFalse(Association.IsTagOnAssociategGridView("Amy_m_V1_Vtagconst1"));

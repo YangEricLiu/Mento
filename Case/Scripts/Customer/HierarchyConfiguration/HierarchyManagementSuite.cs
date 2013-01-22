@@ -50,22 +50,24 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             /// PrepareData:  1. Add one org node "systemAssociate" for system dimension Un/Associate 
             ///               2. Add one site node "AddCalendarProperty" for hierarchy calendar property setting 
             /// </summary> 
+            /// 
+            //Add organization and site node to "自动化测试"
             HierarchySettings.FillInHierarchyNode("自动化测试", input.InputData);
             TimeManager.MediumPause();
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
-            
+
+            //Verify that the "添加成功" message box popup, other is failed
             string msgText = HierarchySettings.GetMessageText();
             Assert.IsTrue(msgText.Contains("添加成功"));
-
             TimeManager.ShortPause();
 
+            //confirm message box
             HierarchySettings.ConfirmCreateOKMagBox();
 
+            //Verify nodes are added as children
             Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.Name, "自动化测试"));
-
             HierarchySettings.FocusOnHierarchyNode(input.InputData.Name);
-
             Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.InputData.Type), HierarchySettings.GetTypeValue());
         }
 
@@ -79,24 +81,26 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             /// <summary>
             /// PrepareData:  1. Add one building node "AddPeopleProperty" for hierarchy cost&peoplearea property
             /// </summary> 
+            /// 
+            //Add building node to "自动化测试"/"AddCalendarProperty"
             HierarchySettings.ExpandNode("自动化测试");
             HierarchySettings.FillInHierarchyNode("AddCalendarProperty", input.InputData);
-            
             TimeManager.MediumPause();
+            
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
+            //Verify that the "添加成功" message box popup, other is failed
             string msgText = HierarchySettings.GetMessageText();
             Assert.IsTrue(msgText.Contains("添加成功"));
-
             TimeManager.ShortPause();
-
+            
+            //confirm message box
             HierarchySettings.ConfirmCreateOKMagBox();
 
+            //Verify nodes are added as children
             Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.Name, "自动化测试"));
-
             HierarchySettings.FocusOnHierarchyNode(input.InputData.Name);
-
             Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.InputData.Type), HierarchySettings.GetTypeValue());
         }
     }

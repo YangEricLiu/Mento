@@ -41,17 +41,26 @@ namespace Mento.Script.Customer.TagDisassociation
         [Type(ScriptType.BVT)]
         public void DisassociateOneTag()
         {
+            /// <summary>
+            /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"
+            ///               2. make sure tag "Amy_m_V1_Vtagconst1" has been added and associate to "自动化测试"
+            /// </summary> 
+            ///
+            //Select hierarchy node "自动化测试"
             Association.SelectHierarchyNode("自动化测试");
             TimeManager.ShortPause();
 
+            //Select associated tag "Amy_m_V1_Vtagconst1" and click "disassociate" button
             Disassociation.FocusOnTag("Amy_m_V1_Vtagconst1");
             Disassociation.ClickDisassociateButton();
             TimeManager.ShortPause();
 
+            //Verify the tag is on disassociated tag list
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
             Assert.IsTrue(Association.IsTagOnAssociategGridView("Amy_m_V1_Vtagconst1"));
 
+            //Verify the tag is not on associated tag list
             Disassociation.ClickAssociatedCancel();
             TimeManager.ShortPause();
             Assert.IsFalse(Association.IsTagOnAssociategGridView("Amy_m_V1_Vtagconst1"));

@@ -40,55 +40,58 @@ namespace Mento.Script.Customer.TagManagement
         /// Precondition: 1. make sure there is a KPI tag with name 'KPITagForTargetBaseline'
         ///               2. make sure the KPI tag has been associated to a hiearchy(or system or area) node
         ///               3. make sure the hiearchy node (or its upper nodes) has been configured a workday calendar '工休日日历1' for year '2010'.
+        ///               4. make sure the KPI tag hasn't been configured any calculation rule for 2010 yet.
         /// </summary>        
         [Test]
         [CaseID("TC-J1-SmokeTest-022")]
-        [Priority("23")]
-        [MultipleTestDataSource(typeof(KPITargetData[]), typeof(KPITargetSuite), "TC-J1-SmokeTest-022")]
-        public void AddKPITarget(KPITargetData testData)
+		[Priority("23")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(KPITargetSuite), "TC-J1-SmokeTest-022")]
+        public void KPITargetConfigurationCalculationRevision(KPITargetBaselineData testData)
         {
             KPITargetBaselineSettings.FocusOnKPITag("KPITagForTargetBaseline");
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             KPITargetBaselineSettings.SwitchToTargetPropertyTab();
-            TimeManager.ShortPause();
-            KPITargetBaselineSettings.SelectYear("2010");
+            TimeManager.LongPause();
+            KPITargetBaselineSettings.SelectYear(testData.InputData.Year);
             TimeManager.ShortPause();
 
             #region Edit calculate values
             KPITargetBaselineSettings.ClickViewCalculationRuleButton();
             TimeManager.ShortPause();
-            KPITargetBaselineSettings.ClickModifyCalculationRuleButton();
-            TimeManager.ShortPause();
+            //KPITargetBaselineSettings.ClickModifyCalculationRuleButton();
+            //TimeManager.ShortPause();
             KPITargetBaselineSettings.ClickCreateCalculationRuleButton();
             TimeManager.ShortPause();
 
-            KPITargetBaselineSettings.SelectWorkdayRuleEndTime("22:00", 1);
-            KPITargetBaselineSettings.SelectWorkdayRuleEndTime("23:30", 2);
-            KPITargetBaselineSettings.FillInWorkdayRuleValue("1.1", 1);
-            KPITargetBaselineSettings.FillInWorkdayRuleValue("2.2", 2);
-            KPITargetBaselineSettings.FillInWorkdayRuleValue("0", 3);
+            //Input the Worday rule record(s) based on the input data file
+            for (int elementPosition = 1; elementPosition <= testData.InputData.WorkdayRuleRecordNumber; elementPosition++)
+            {
+                int inputDataArrayPosition = elementPosition - 1;
+                KPITargetBaselineSettings.SelectWorkdayRuleEndTime(testData.InputData.WorkdayRuleEndTime[inputDataArrayPosition], elementPosition);
+                KPITargetBaselineSettings.FillInWorkdayRuleValue(testData.InputData.WorkdayRuleValue[inputDataArrayPosition], elementPosition);
+            }
 
-            KPITargetBaselineSettings.SelectNonworkdayRuleEndTime("11:30", 1);
-            KPITargetBaselineSettings.SelectNonworkdayRuleEndTime("22:00", 2);
-            KPITargetBaselineSettings.FillInNonworkdayRuleValue("0.5", 1);
-            KPITargetBaselineSettings.FillInNonworkdayRuleValue("1.2", 2);
-            KPITargetBaselineSettings.FillInNonworkdayRuleValue("0", 3);
+            //Input the Nonworday rule record(s) based on the input data file
+            for (int elementPosition = 1; elementPosition <= testData.InputData.NonworkdayRuleRecordNumber; elementPosition++)
+            {
+                int inputDataArrayPosition = elementPosition - 1;
+                KPITargetBaselineSettings.SelectNonworkdayRuleEndTime(testData.InputData.NonworkdayRuleEndTime[inputDataArrayPosition], elementPosition);
+                KPITargetBaselineSettings.FillInNonworkdayRuleValue(testData.InputData.NonworkdayRuleValue[inputDataArrayPosition], elementPosition);
+            }
 
-            KPITargetBaselineSettings.ClickAddSpecialDatesButton();
-            TimeManager.ShortPause();
-            KPITargetBaselineSettings.SelectSpecialdayRuleStartDate(2010, 1, 14, 1);
-            KPITargetBaselineSettings.SelectSpecialdayRuleStartTime("00:30", 1);
-            KPITargetBaselineSettings.SelectSpecialdayRuleEndDate(2010, 1, 22, 1);
-            KPITargetBaselineSettings.SelectSpecialdayRuleEndTime("12:30", 1);
-            KPITargetBaselineSettings.FillInSpecialdayRuleValue("10.5", 1);
-            KPITargetBaselineSettings.ClickAddSpecialDatesButton();
-            TimeManager.ShortPause();
-            KPITargetBaselineSettings.SelectSpecialdayRuleStartDate(2010, 4, 5, 2);
-            KPITargetBaselineSettings.SelectSpecialdayRuleStartTime("08:30", 2);
-            KPITargetBaselineSettings.SelectSpecialdayRuleEndDate(2010, 5, 6, 2);
-            KPITargetBaselineSettings.SelectSpecialdayRuleEndTime("22:30", 2);
-            KPITargetBaselineSettings.FillInSpecialdayRuleValue("12.5", 2);
-            TimeManager.ShortPause();
+            //Input the SpecialDates rule record(s) based on the input data file
+            for (int elementPosition = 1; elementPosition <= testData.InputData.SpecialdayRuleRecordNumber; elementPosition++)
+            {
+                KPITargetBaselineSettings.ClickAddSpecialDatesButton();
+                TimeManager.ShortPause();
+
+                int inputDataArrayPosition = elementPosition - 1;
+                KPITargetBaselineSettings.SelectSpecialdayRuleStartDate(testData.InputData.SpecialdayRuleStartDate[inputDataArrayPosition], elementPosition);
+                KPITargetBaselineSettings.SelectSpecialdayRuleStartTime(testData.InputData.SpecialdayRuleStartTime[inputDataArrayPosition], elementPosition);
+                KPITargetBaselineSettings.SelectSpecialdayRuleEndDate(testData.InputData.SpecialdayRuleEndDate[inputDataArrayPosition], elementPosition);
+                KPITargetBaselineSettings.SelectSpecialdayRuleEndTime(testData.InputData.SpecialdayRuleEndTime[inputDataArrayPosition], elementPosition);
+                KPITargetBaselineSettings.FillInSpecialdayRuleValue(testData.InputData.SpecialdayRuleValue[inputDataArrayPosition], elementPosition);
+            }
 
             KPITargetBaselineSettings.ClickSaveButton();
             TimeManager.ShortPause();
@@ -97,31 +100,34 @@ namespace Mento.Script.Customer.TagManagement
             #endregion
 
             #region Calculate values
-            KPITargetBaselineSettings.ClickCalculateTargetButton();
+            KPITargetBaselineSettings.ClickCalculateBaselineButton();
             TimeManager.LongPause();
-            
-            Assert.AreEqual("6264", KPITargetBaselineSettings.GetAnnualCalculationValue());
+
+            Assert.AreEqual(testData.ExpectedData.AnnualCalculatedValue, KPITargetBaselineSettings.GetAnnualValue());
             TimeManager.LongPause();
             #endregion
 
             #region Revise calculation values
             KPITargetBaselineSettings.ClickReviseButton();
             TimeManager.ShortPause();
-            KPITargetBaselineSettings.FillInAnnualCalculationValue("30000");
-            KPITargetBaselineSettings.FillInJanuaryCalculationValue("100.1");
-            KPITargetBaselineSettings.FillInFebruaryCalculationValue("100.1");
-            KPITargetBaselineSettings.FillInMarchCalculationValue("100.1");
-            KPITargetBaselineSettings.FillInAprilCalculationValue("100.1");
-            KPITargetBaselineSettings.FillInMayCalculationValue("100.1");
-            KPITargetBaselineSettings.FillInJuneCalculationValue("100.1");
-            KPITargetBaselineSettings.FillInJulyCalculationValue("100.1");
-            KPITargetBaselineSettings.FillInAugustCalculationValue("99");
-            KPITargetBaselineSettings.FillInSeptemberCalculationValue("999");
-            KPITargetBaselineSettings.FillInOctoberCalculationValue("1000");
-            KPITargetBaselineSettings.FillInNovemberCalculationValue("111");
-            KPITargetBaselineSettings.FillInDecemberCalculationValue("1212");
+            KPITargetBaselineSettings.FillInAnnualRevisedValue(testData.InputData.AnnualRevisedValue);
+            KPITargetBaselineSettings.FillInJanuaryRevisedValue(testData.InputData.JanuaryRevisedValue);
+            KPITargetBaselineSettings.FillInFebruaryRevisedValue(testData.InputData.FebruaryRevisedValue);
+            KPITargetBaselineSettings.FillInMarchRevisedValue(testData.InputData.MarchRevisedValue);
+            KPITargetBaselineSettings.FillInAprilRevisedValue(testData.InputData.AprilRevisedValue);
+            KPITargetBaselineSettings.FillInMayRevisedValue(testData.InputData.MayRevisedValue);
+            KPITargetBaselineSettings.FillInJuneRevisedValue(testData.InputData.JuneRevisedValue);
+            KPITargetBaselineSettings.FillInJulyRevisedValue(testData.InputData.JulyRevisedValue);
+            KPITargetBaselineSettings.FillInAugustRevisedValue(testData.InputData.AugustRevisedValue);
+            KPITargetBaselineSettings.FillInSeptemberRevisedValue(testData.InputData.SeptemberRevisedValue);
+            KPITargetBaselineSettings.FillInOctoberRevisedValue(testData.InputData.OctoberRevisedValue);
+            KPITargetBaselineSettings.FillInNovemberRevisedValue(testData.InputData.NovemberRevisedValue);
+            KPITargetBaselineSettings.FillInDecemberRevisedValue(testData.InputData.DecemberRevisedValue);
             TimeManager.ShortPause();
             KPITargetBaselineSettings.ClickSaveButton();
+            TimeManager.ShortPause();
+            Assert.AreEqual(testData.InputData.AnnualRevisedValue, KPITargetBaselineSettings.GetAnnualValue());
+            Assert.AreEqual(testData.InputData.JanuaryRevisedValue, KPITargetBaselineSettings.GetJanuaryValue());
             TimeManager.ShortPause();
             #endregion
         }       

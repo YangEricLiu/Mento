@@ -160,7 +160,8 @@
     <None Include="Data\Customer\TagManagement\KPIConfiguration\TA-KPItag-001.json" />
     <None Include="Data\Customer\TagManagement\KPItagConfiguration\TA-KPItag-001.json" />
     <None Include="Data\Customer\TagManagement\KPItagConfiguration\TA-KPItagConfigue-001.json" />
-    <None Include="Data\Customer\TagManagement\KPITargetSuite\TC-J1-SmokeTest-022.json" />
+	<None Include="Data\Customer\TagManagement\KPITargetSuite\TC-J1-SmokeTest-022.json" />
+    <None Include="Data\Customer\TagManagement\KPIBaselineSuite\TC-J1-SmokeTest-023.json" />
     <None Include="Data\Customer\TagManagement\ModifyKPITag\TA-KPITag-001.json" />
     <None Include="Data\Customer\TagManagement\ModifyKPITag\TA-ModifyKPITag-001.json" />
     <None Include="Data\Customer\TagManagement\PtagConfiguration\TA-PtagConfiguration-002.json" />

@@ -62,7 +62,7 @@
     </Compile>
     <Compile Include="ClientAccess\LoginData.cs" />
     <Compile Include="Customer\HierarchyData.cs" />
-    <Compile Include="Customer\KPITargetData.cs" />
+    <Compile Include="Customer\KPITargetBaselineData.cs" />
     <Compile Include="EnergyView\EnergyViewInputData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

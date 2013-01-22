@@ -123,6 +123,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickSaveButton()
         {
             SaveButton.Click();
+            JazzMessageBox.MessageBox.Yes();
         }
 
         /// <summary>
@@ -234,9 +235,14 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void SelectSpecialdayRuleStartDate(int year, int month, int day, int num)
+        public void SelectSpecialdayRuleStartDate(string yyyyMMDD, int num)
         {
-            DatePicker OneStartDate = GetOneSpecialdayRuleStartDateDatePicker(num);
+            string[] yyyyMMDDArray = yyyyMMDD.Split(new char[1] { '-' });
+            int year = Convert.ToInt32(yyyyMMDDArray[0]);
+            int month = Convert.ToInt32(yyyyMMDDArray[1]);
+            int day = Convert.ToInt32(yyyyMMDDArray[2]);
+
+            DatePicker OneStartDate = GetOneSpecialdayRuleStartDateDatePicker(num);         
             OneStartDate.SelectDateItem(new DateTime(year, month, day));
         }
 
@@ -245,8 +251,13 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void SelectSpecialdayRuleEndDate(int year, int month, int day, int num)
+        public void SelectSpecialdayRuleEndDate(string yyyyMMDD, int num)
         {
+            string[] yyyyMMDDArray = yyyyMMDD.Split(new char[1] { '-' });
+            int year = Convert.ToInt32(yyyyMMDDArray[0]);
+            int month = Convert.ToInt32(yyyyMMDDArray[1]);
+            int day = Convert.ToInt32(yyyyMMDDArray[2]);
+
             DatePicker OneEndDate = GetOneSpecialdayRuleEndDateDatePicker(num);
             OneEndDate.SelectDateItem(new DateTime(year, month, day));
         }
@@ -323,138 +334,137 @@ namespace Mento.ScriptCommon.Library.Functions
             ReviseButton.Click();
         }
                 
-        public void FillInAnnualCalculationValue(string value)
+        public void FillInAnnualRevisedValue(string value)
         {
             AnnualCalculationValueTextField.Fill(value);            
         }
-                
-        public void FillInJanuaryCalculationValue(string value)
+
+        public void FillInJanuaryRevisedValue(string value)
         {
             JanuaryCalculationValueTextField.Fill(value);
         }
-                
-        public void FillInFebruaryCalculationValue(string value)
+
+        public void FillInFebruaryRevisedValue(string value)
         {
             FebruaryCalculationValueTextField.Fill(value);            
         }
-        
-        public void FillInMarchCalculationValue(string value)
+
+        public void FillInMarchRevisedValue(string value)
         {
             MarchCalculationValueTextField.Fill(value);            
         }
-                
-        public void FillInAprilCalculationValue(string value)
+
+        public void FillInAprilRevisedValue(string value)
         {
             AprilCalculationValueTextField.Fill(value);            
         }
 
-        public void FillInMayCalculationValue(string value)
+        public void FillInMayRevisedValue(string value)
         {
             MayCalculationValueTextField.Fill(value);
         }
-                
-        public void FillInJuneCalculationValue(string value)
+
+        public void FillInJuneRevisedValue(string value)
         {
             JuneCalculationValueTextField.Fill(value);
         }
 
-        public void FillInJulyCalculationValue(string value)
+        public void FillInJulyRevisedValue(string value)
         {
             JulyCalculationValueTextField.Fill(value);
         }
 
-        public void FillInAugustCalculationValue(string value)
+        public void FillInAugustRevisedValue(string value)
         {
             AugustCalculationValueTextField.Fill(value);
         }
 
-        public void FillInSeptemberCalculationValue(string value)
+        public void FillInSeptemberRevisedValue(string value)
         {
             SeptemberCalculationValueTextField.Fill(value);
         }
 
-        public void FillInOctoberCalculationValue(string value)
+        public void FillInOctoberRevisedValue(string value)
         {
             OctoberCalculationValueTextField.Fill(value);
         }
 
-        public void FillInNovemberCalculationValue(string value)
+        public void FillInNovemberRevisedValue(string value)
         {
             NovemberCalculationValueTextField.Fill(value);
         }
 
-        public void FillInDecemberCalculationValue(string value)
+        public void FillInDecemberRevisedValue(string value)
         {
             DecemberCalculationValueTextField.Fill(value);
         }
 
-        public string GetAnnualCalculationValue()
+        public string GetAnnualValue()
         {
             return AnnualCalculationValueTextField.GetValue();
         }
 
-        public string GetJanuaryCalculationValue()
+        public string GetJanuaryValue()
         {
             return JanuaryCalculationValueTextField.GetValue();
         }
 
-        public string GetFebruaryCalculationValue()
+        public string GetFebruaryValue()
         {
             return FebruaryCalculationValueTextField.GetValue();
         }
 
-        public string GetMarchCalculationValue()
+        public string GetMarchValue()
         {
             return MarchCalculationValueTextField.GetValue();
         }
 
-        public string GetAprilCalculationValue()
+        public string GetAprilValue()
         {
             return AprilCalculationValueTextField.GetValue();
         }
 
-        public string GetMayCalculationValue()
+        public string GetMayValue()
         {
             return MayCalculationValueTextField.GetValue();
         }
 
-        public string GetJuneCalculationValue()
+        public string GetJuneValue()
         {
             return JuneCalculationValueTextField.GetValue();
         }
 
-        public string GetJulyCalculationValue()
+        public string GetJulyValue()
         {
             return JulyCalculationValueTextField.GetValue();
         }
 
-        public string GetAugustCalculationValue()
+        public string GetAugustValue()
         {
             return AugustCalculationValueTextField.GetValue();
         }
 
-        public string GetSeptemberCalculationValue()
+        public string GetSeptemberValue()
         {
             return SeptemberCalculationValueTextField.GetValue();
         }
 
-        public string GetOctoberCalculationValue()
+        public string GetOctoberValue()
         {
             return OctoberCalculationValueTextField.GetValue();
         }
 
-        public string GetNovemberCalculationValue()
+        public string GetNovemberValue()
         {
             return NovemberCalculationValueTextField.GetValue();
         }
 
-        public string GetDecemberCalculationValue()
+        public string GetDecemberValue()
         {
             return DecemberCalculationValueTextField.GetValue();
         }
         #endregion
                                  
-        
         #region private method
 
         private ComboBox GetOneWorkdayRuleEndTimeComboBox(int positionIndex)

@@ -26,7 +26,7 @@ namespace Mento.ScriptCommon.TestData.Administration
             this.Price = price;
             this.RecordNumber = recordNumber;
             this.StartMonth = startMonth;
-            this.StartDate = StartDate;
+            this.StartDate = startDate;
             this.EndMonth = endMonth;
             this.EndDate = endDate;
             this.StartTime = startTime;

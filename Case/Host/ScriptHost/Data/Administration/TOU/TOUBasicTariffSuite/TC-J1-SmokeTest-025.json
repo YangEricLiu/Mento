@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Name":"pricename",	
+			"Name":"价格策略1",	
 			"PlainPrice":"2",	
 			"PeakPrice":"3",	
 			"ValleyPrice":"1",	

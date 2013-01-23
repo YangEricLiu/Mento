@@ -39,7 +39,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-018-001")]
         [Priority("35")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         public void AddCostforElectricfixed()
         {
             /// <summary>

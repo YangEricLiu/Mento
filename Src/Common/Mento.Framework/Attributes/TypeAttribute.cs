@@ -16,7 +16,7 @@ namespace Mento.Framework.Attributes
         /// Construct a TypeAttribute, given a type.
         /// </summary>
         /// <param name="type">Case type</param>
-        public TypeAttribute(ScriptType type)
+        public TypeAttribute(string type)
             : base(type) { }
     }
 

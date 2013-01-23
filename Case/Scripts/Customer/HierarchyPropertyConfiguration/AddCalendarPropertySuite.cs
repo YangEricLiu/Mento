@@ -38,7 +38,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-017-001")]
         [Priority("34")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         public void AddCalendarforWorkday()
         {
             /// <summary>
@@ -91,7 +91,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-017-002")]
         [Priority("34")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         public void AddCalendarforHeatingCooling()
         {
             /// <summary>
@@ -131,7 +131,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-017-003")]
         [Priority("34")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         public void AddCalendarforDayNight()
         {
             /// <summary>

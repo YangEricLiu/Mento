@@ -40,7 +40,7 @@ namespace Mento.Script.Customer.TagManagement
         [Test]
         [CaseID("TC-J1-SmokeTest-004-001")]
         [Priority("20")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         [MultipleTestDataSource(typeof(AddKPIData[]), typeof(KPIConfigurationSuite), "TC-J1-SmokeTest-004-001")]
         public void AddKPItag(AddKPIData input)
         {

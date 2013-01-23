@@ -35,7 +35,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-015-001")]
         [Priority("16")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         public void CreateAreaDimension()
         {
             /// <summary>

@@ -39,7 +39,7 @@ namespace Mento.Script.Customer.TagDisassociation
         [Test]
         [CaseID("TC-J1-SmokeTest-012-001")]
         [Priority("28")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         public void DisassociateOneTag()
         {
             /// <summary>

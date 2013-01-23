@@ -38,7 +38,7 @@ namespace Mento.Script.Customer.TagAssociation
         [Test]
         [CaseID("TC-J1-SmokeTest-009-001")]
         [Priority("25")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         public void AssociateOneTag()
         {
             /// <summary>

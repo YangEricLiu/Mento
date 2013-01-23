@@ -33,7 +33,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-014-001")]
         [Priority("14")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         public void AssoicateSystemDimension()
         {
             /// <summary>
@@ -65,7 +65,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-SmokeTest-014-002")]
         [Priority("15")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         public void DisassoicateSystemDimension()
         {
             /// <summary>

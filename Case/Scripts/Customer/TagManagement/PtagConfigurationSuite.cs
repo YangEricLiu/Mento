@@ -40,7 +40,7 @@ namespace Mento.Script.Customer.TagManagement
 
         [Test]
         [CaseID("TC-J1-SmokeTest-002-001")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         [Priority("17")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfigurationSuite), "TC-J1-SmokeTest-002-001")]
         public void AddPtag(PtagData testData)

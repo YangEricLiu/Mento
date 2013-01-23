@@ -38,7 +38,7 @@ namespace Mento.Script.Customer.TagManagement
         [Test]
         [CaseID("TC-J1-SmokeTest-007-001")]
         [Priority("22")]
-        [Type(ScriptType.BVT)]
+        [Type("BVT")]
         public void AddFormulaToKPItag()
         {
             //string kpitagName = "KPI1";

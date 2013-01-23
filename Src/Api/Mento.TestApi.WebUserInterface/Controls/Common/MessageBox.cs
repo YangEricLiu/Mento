@@ -53,6 +53,17 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        private IWebElement _DeleteButton;
+        protected IWebElement DeleteButton
+        {
+            get
+            {
+                if (this._DeleteButton == null)
+                    this._DeleteButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxDeleteButton));
+                return this._DeleteButton;
+            }
+        }
+
         private IWebElement _CancelButton;
         protected IWebElement CancelButton
         {
@@ -69,6 +80,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public void WaitMeAppear()
         {
             ElementHandler.Wait(this._RootLocator, WaitType.ToAppear);
+        }
+        public void Delete()
+        {
+            if (!this.DeleteButton.Enabled)
+                throw new ApiException("Delete button can not be clicked because it is not enabled in the messagebox.");
+
+            this.DeleteButton.Click();
         }
 
         public void OK()

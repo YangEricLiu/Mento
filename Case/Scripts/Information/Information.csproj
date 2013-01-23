@@ -48,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboard\DeleteWidgetSuite.cs" />
+    <Compile Include="Dashboard\ModifyWidgetNameSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,9 +58,7 @@
       <Link>App.config</Link>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dashboard\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
       <Project>{2076AF41-49F1-4C46-AF54-B21ED42B07C3}</Project>

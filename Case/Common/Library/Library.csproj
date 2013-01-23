@@ -92,6 +92,7 @@
     <Compile Include="Functions\UserProfileDialog.cs" />
     <Compile Include="Functions\UserSettings.cs" />
     <Compile Include="Functions\UserTypePermissionSettings.cs" />
+    <Compile Include="Functions\Widget.cs" />
     <Compile Include="JazzFunction.cs" />
     <Compile Include="Functions\HierarchySettings.cs" />
     <Compile Include="Functions\LoginPage.cs" />

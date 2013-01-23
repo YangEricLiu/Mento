@@ -23,6 +23,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Energy view
         public static TextField EnergyViewSaveDashboardWidgetNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldEnergyViewSaveDashboardWidgetName);
         public static TextField EnergyViewSaveDashboardDashboardNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldEnergyViewSaveDashboardDashboardName);
+        public static TextField TextFieldModifyWidgetName = GetControl<TextField>(JazzControlLocatorKey.TextFieldModifyWidgetName);
         #endregion
 
         #region Customer settings

@@ -339,5 +339,18 @@ namespace Mento.ScriptCommon.Library
             }
 
         }
+
+        private static Widget _Widget;
+        public static Widget Widget
+        {
+            get
+            {
+                if (_Widget == null)
+                    _Widget = new Widget();
+
+                return _Widget;
+            }
+
+        }
     }
 }

@@ -29,8 +29,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button EnergyViewRemoveAllButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewRemoveAll);
         public static MenuButton EnergyViewConvertTargetMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonEnergyViewConvertTarget);
         public static Button EnergyViewPeakValleyButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewPeakValley);
+        public static Button ButtonModifyWidgetName = GetControl<Button>(JazzControlLocatorKey.ButtonModifyWidgetName);
+        public static Button ModifyWidgetNameSaveButton = GetControl<Button>(JazzControlLocatorKey.ModifyWidgetNameSaveButton);
+        public static Button ModifyWidgetNameCancelButton = GetControl<Button>(JazzControlLocatorKey.ModifyWidgetNameCancelButton);
+        public static Button ButtonDeleteWidget = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteWidget);
+        public static Button DeleteWidgetConfirmButton = GetControl<Button>(JazzControlLocatorKey.DeleteWidgetConfirmButton);
+        public static Button DeleteWidgetCancelButton = GetControl<Button>(JazzControlLocatorKey.DeleteWidgetCancelButton);
 
         public static LinkButton EnergyViewSaveDashboardCreateDashboardButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonEnergyViewSaveDashboardCreateDashboard);
+        public static LinkButton DashboardHierarchyNameButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonDashboardHierarchyName);
         #endregion
 
         #region Navigator buttons

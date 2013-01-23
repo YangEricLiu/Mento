@@ -29,9 +29,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonEnergyViewRemoveAll = "ButtonEnergyViewRemoveAll";
         public static string MenuButtonEnergyViewConvertTarget = "MenuButtonEnergyViewConvertTarget";
         public static string ButtonEnergyViewPeakValley = "ButtonEnergyViewPeakValley";
-
+        public static string ButtonModifyWidgetName = "ButtonModifyWidgetName";
+        public static string ModifyWidgetNameSaveButton = "ModifyWidgetNameSaveButton";
+        public static string ModifyWidgetNameCancelButton = "ModifyWidgetNameCancelButton";
+        public static string WidgetName = "WidgetName";
+        public static string ButtonDeleteWidget = "ButtonDeleteWidget";
+        public static string DeleteWidgetConfirmButton = "DeleteWidgetConfirmButton";
+        public static string DeleteWidgetCancelButton = "DeleteWidgetCancelButton";
 
         public static string LinkButtonEnergyViewSaveDashboardCreateDashboard = "LinkButtonEnergyViewSaveDashboardCreateDashboard";
+        public static string LinkButtonDashboardHierarchyName = "LinkButtonDashboardHierarchyName";
         #endregion
 
         #region Navigator
@@ -312,6 +319,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Energy view
         public static string TextFieldEnergyViewSaveDashboardWidgetName = "TextFieldEnergyViewSaveDashboardWidgetName";
         public static string TextFieldEnergyViewSaveDashboardDashboardName = "TextFieldEnergyViewSaveDashboardDashboardName";
+        public static string TextFieldModifyWidgetName = "TextFieldModifyWidgetName";
         #endregion
 
         #region Custormer settings

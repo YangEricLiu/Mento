@@ -43,7 +43,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <summary>
         /// Simulate the mouse select year and month item from monthpicker drop down list
         /// </summary>
-        /// <param name="date">date</param>
+        /// <param name="date">DateTime type</param>
         /// <returns></returns>
         public void SelectYearMonthItem(DateTime date)
         {
@@ -51,6 +51,36 @@ namespace Mento.TestApi.WebUserInterface.Controls
             SelectMonthItem(date.Month.ToString());
 
             ClickConfirmButton();
+        }
+
+        /// <summary>
+        /// Simulate the mouse select year and month item from monthpicker drop down list
+        /// </summary>
+        /// <param name="date">string type</param>
+        /// <returns></returns>
+        public void SelectYearMonthItem(string date)
+        {
+            DateTime dateTime = ConvertStringToDateTime(date);
+
+            SelectYearItem(dateTime.Year.ToString());
+            SelectMonthItem(dateTime.Month.ToString());
+
+            ClickConfirmButton();
+        }
+
+        /// <summary>
+        /// Convert string "xxxx-xx-xx" to DateTime
+        /// </summary>
+        /// <param name="date">string type parameter, the date must be "xxxx-xx-xx"</param>
+        /// <returns></returns>
+        private DateTime ConvertStringToDateTime(string date)
+        {
+            string[] newDate = date.Split(new char[] { '-' });
+
+            int year = Convert.ToInt32(newDate[0]);
+            int month = Convert.ToInt32(newDate[1]);
+
+            return new DateTime(year, month, 1);
         }
 
         /// <summary>

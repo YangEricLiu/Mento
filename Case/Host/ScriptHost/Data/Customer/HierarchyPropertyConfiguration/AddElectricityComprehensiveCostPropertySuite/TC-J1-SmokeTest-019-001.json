@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
+			"EffectiveDate":"2013-01",
+			"PriceMode":"综合电价",
+			"DemandCostType":"变压器容量模式",
+			"HourTagId":"",
+			"ElectricHourPrice":"",
+			"TransformerCapacity":"10",
+			"TransformerPrice":"21",
+			"TouTariffId":"ElectricCost1",
+			"FactorType":"0.85",
+			"RealTagId":"ElecCost_P2",
+			"ReactiveTagId":"ElecCost_P1",
+			"ElectricPaddingCost":"80"
+		}
+	}
+]

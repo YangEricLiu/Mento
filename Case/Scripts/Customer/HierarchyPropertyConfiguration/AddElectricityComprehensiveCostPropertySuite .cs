@@ -10,6 +10,8 @@ using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
+using Mento.ScriptCommon.TestData.Customer;
+using Mento.TestApi.TestData;
 
 namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
@@ -43,7 +45,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-SmokeTest-019-001")]
         [Priority("36")]
         [Type("BVT")]
-        public void AddCostforElectricComprehensive()
+        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElectricityComprehensiveCostPropertySuite), "TC-J1-SmokeTest-019-001")]
+        public void AddCostforElectricComprehensive(ElectricityComprehensiveCostData testData)
         {
             HierarchySetting.ExpandNode("自动化测试");
             HierarchySetting.ExpandNode("AddCalendarProperty");
@@ -63,17 +66,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //select and input value, save it
-            CostSettings.SelectElectricEffectiveDate(new DateTime(2013, 1, 5));
-            CostSettings.SelectElectricPriceMode("综合电价");
-
-            CostSettings.SelectDemandCostType("变压器容量模式");
-            CostSettings.FillElectricTransformerCapacity("10");
-            CostSettings.FillElectricTransformerPrice("21");
-            CostSettings.SelectTouTariffId("ElectricCost1");
-            CostSettings.SelectFactorType("0.85");
-            CostSettings.SelectRealTagId("ElecCost_P2");
-            CostSettings.SelectReactiveTagId("ElecCost_P1");
-            CostSettings.FillElectricPaddingCost("80");
+            CostSettings.FillInComprehensiveCost(testData.InputData);
             TimeManager.ShortPause();
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();

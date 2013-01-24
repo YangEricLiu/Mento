@@ -34,7 +34,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MonthPicker PeopleEffectiveDate = JazzMonthPicker.PeopleEffectiveDateMonthPicker;
         #endregion
 
-        #region Peoplae Area
+        #region People Area
         public void ClickPeopleAreaTab()
         {
             PeopleAreaTab.Click();
@@ -60,6 +60,19 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region Area
+
+        /// <summary>
+        /// Input total, heating, cooling value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInAreaValue(PeopleAreaPropertyInputData input)
+        {
+            InputTotalAreaValue(input.TotalArea);
+            InputHeatingAreaValue(input.HeatingArea);
+            InputCoolingAreaValue(input.CoolingArea);
+        }
+
         public void InputTotalAreaValue(string value)
         {
             TotalAreaValue.Fill(value);
@@ -98,7 +111,24 @@ namespace Mento.ScriptCommon.Library.Functions
             PeopleCreate.Click();
         }
 
+        /// <summary>
+        /// Input DayNight Calendar value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        /// 
+        public void FillInPeopleValue(PeopleAreaPropertyInputData input)
+        {
+            SelectEffectiveDate(input.PeopleEffectiveDate);
+            InputPeopleNumber(input.PeopleNumber);
+        }
+
         public void SelectEffectiveDate(DateTime date)
+        {
+            PeopleEffectiveDate.SelectYearMonthItem(date);
+        }
+
+        public void SelectEffectiveDate(string date)
         {
             PeopleEffectiveDate.SelectYearMonthItem(date);
         }

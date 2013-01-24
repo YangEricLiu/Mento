@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty"],
+			"WorkdayEffectiveDate":"2002",
+			"WorkdayCalendarName":"工休日日历1",
+			"WorktimeCalendarName":"工作时间日历1",
+			"HeatingCoolingEffectiveDate":"2002",
+			"HeatingCoolingCalendarName":"冷暖季日历1",
+			"DayNightEffectiveDate":"2002",
+			"DayNightCalendarName":"昼夜时间日历1"
+		}
+	}
+]

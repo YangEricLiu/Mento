@@ -10,6 +10,8 @@ using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
+using Mento.ScriptCommon.TestData.Customer;
+using Mento.TestApi.TestData;
 
 namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
@@ -44,7 +46,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-SmokeTest-020-001")]
         [Priority("37")]
         [Type("BVT")]
-        public void AddCostforGas()
+        [MultipleTestDataSource(typeof(OtherCostData[]), typeof(AddOtherCostPropertySuite), "TC-J1-SmokeTest-020-001")]
+        public void AddCostforGas(OtherCostData testData)
         { 
             //Select buidling node "AddPeopleProperty"
             HierarchySetting.ExpandNode("自动化测试");
@@ -65,9 +68,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //select effective year and input value, save it
-            OtherCostSettings.SelectGasCostEffectiveDate(new DateTime(2012,6,7));
-            TimeManager.ShortPause();
-            OtherCostSettings.FillGasCostPrice("60");
+            OtherCostSettings.FillInGasCostValue(testData.InputData);
             TimeManager.ShortPause();
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();

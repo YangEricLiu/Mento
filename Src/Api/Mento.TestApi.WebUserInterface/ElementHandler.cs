@@ -56,6 +56,11 @@ namespace Mento.TestApi.WebUserInterface
             return FindElements(locator, container: container).Count() > 0;
         }
 
+        public static bool ExistOne(Locator locator, ISearchContext container = null)
+        {
+            return FindElements(locator, container: container).Count() == 1;
+        }
+
         public static bool Displayed(Locator locator, ISearchContext container = null)
         {
             var elements = FindElements(locator, container: container);

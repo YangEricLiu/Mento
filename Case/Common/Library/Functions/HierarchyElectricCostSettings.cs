@@ -20,6 +20,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
+        private static string TRANSFORMERCAPACITYMODE = "变压器容量模式";
+        private static string TIMECAPACITYMODE = "时间容量模式";
+
         #region Controls
         private static TabButton CostProperty = JazzButton.CostPropertyTabButton;
         private static Button CostCreate = JazzButton.CostCreateButton;
@@ -41,7 +44,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField ElectricHourPrice = JazzTextField.ElectricHourPriceTextField;
         #endregion
 
-        #region cost property
+        #region electric cost property
         public void ClickCostPropertyTabButton()
         {
             CostProperty.Click();
@@ -64,6 +67,56 @@ namespace Mento.ScriptCommon.Library.Functions
             ElectricCostCreate.Click();
         }
 
+        public void ClickCostSaveButton()
+        {
+            CostSave.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+        #endregion
+
+        #region fill in value
+
+        /// <summary>
+        /// Input comprehensive electric cost value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInComprehensiveCost(ElectricComprehensiveCostInputData input)
+        {
+            ElectricCostEffectiveDate.SelectYearMonthItem(input.EffectiveDate);
+            ElectricPriceMode.SelectItem(input.PriceMode);
+            DemandCostType.SelectItem(input.DemandCostType);
+
+            if (String.Equals(input.DemandCostType, TRANSFORMERCAPACITYMODE))
+            {
+                ElectricTransformerCapacity.Append(input.TransformerCapacity);
+                ElectricTransformerPrice.Append(input.TransformerPrice);
+            }
+            else if (String.Equals(input.DemandCostType, TRANSFORMERCAPACITYMODE))
+            {
+                HourTagId.SelectItem(input.HourTagId);
+                ElectricHourPrice.Append(input.ElectricHourPrice);
+            }
+            
+            TouTariffId.SelectItem(input.TouTariffId);
+            FactorType.SelectItem(input.FactorType);
+            RealTagId.SelectItem(input.RealTagId);
+            ReactiveTagId.SelectItem(input.ReactiveTagId);
+            ElectricPaddingCost.Append(input.ElectricPaddingCost);
+        }
+
+        /// <summary>
+        /// Input fixed electric cost value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInFixedCost(ElectricfixedCostInputData input)
+        {
+            ElectricCostEffectiveDate.SelectYearMonthItem(input.EffectiveDate);
+            ElectricPriceMode.SelectItem(input.PriceMode);
+            ElectricPrice.Append(input.Price);
+        }
+
         public void SelectElectricPriceMode(string priceMode)
         {
             ElectricPriceMode.SelectItem(priceMode);
@@ -77,27 +130,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillElectricPrice(string price)
         {
             ElectricPrice.Append(price);
-        }
-
-        public void ClickCostSaveButton()
-        {
-            CostSave.Click();
-            JazzMessageBox.LoadingMask.WaitLoading();
-        }
-
-        public string GetElectricCostEffectiveDateValue()
-        {
-            return ElectricCostEffectiveDate.GetValue();
-        }
-
-        public string GetElectricPriceValue()
-        {
-            return ElectricPrice.GetValue();
-        }
-
-        public string GetElectricPriceMode()
-        {
-            return ElectricPriceMode.GetValue();
         }
 
         public void SelectDemandCostType(string type)
@@ -150,6 +182,24 @@ namespace Mento.ScriptCommon.Library.Functions
             ElectricHourPrice.Append(price);
         }
 
+        #endregion
+
+        #region get controls value
+        public string GetElectricCostEffectiveDateValue()
+        {
+            return ElectricCostEffectiveDate.GetValue();
+        }
+
+        public string GetElectricPriceValue()
+        {
+            return ElectricPrice.GetValue();
+        }
+
+        public string GetElectricPriceMode()
+        {
+            return ElectricPriceMode.GetValue();
+        }
+
         public string GetDemandCostTypeValue()
         {
             return DemandCostType.GetValue();
@@ -200,6 +250,5 @@ namespace Mento.ScriptCommon.Library.Functions
             return ElectricHourPrice.GetValue();
         }
         #endregion
-
     }
 }

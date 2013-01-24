@@ -10,6 +10,8 @@ using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
+using Mento.ScriptCommon.TestData.Customer;
+using Mento.TestApi.TestData;
 
 namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
@@ -40,10 +42,11 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         /// </summary>  
         /// 
         [Test]
-        [CaseID("TC-J1-SmokeTest-021-001")]
+        [CaseID("TC-J1-SmokeTest-021")]
         [Priority("38")]
         [Type("BVT")]
-        public void AddAreaProperty()
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddPeopleAreaPropertySuite), "TC-J1-SmokeTest-021")]
+        public void AddAreaProperty(PeopleAreaPropertyData testData)
         {
             //Select buidling node "AddPeopleProperty"
             HierarchySetting.ExpandNode("自动化测试");
@@ -57,9 +60,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             PeopleAreaSetting.ClickPeopleAreaCreateButton();
 
             //Input value and save
-            PeopleAreaSetting.InputTotalAreaValue("10");
-            PeopleAreaSetting.InputHeatingAreaValue("20");
-            PeopleAreaSetting.InputCoolingAreaValue("30");
+            PeopleAreaSetting.FillInAreaValue(testData.InputData);
             TimeManager.ShortPause();
 
             PeopleAreaSetting.ClickSaveButton();
@@ -76,10 +77,11 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         /// </summary>  
         ///
         [Test]
-        [CaseID("TC-J1-SmokeTest-021-002")]
+        [CaseID("TC-J1-SmokeTest-021")]
         [Priority("38")]
         [Type("BVT")]
-        public void AddPeoplePeoperty()
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddPeopleAreaPropertySuite), "TC-J1-SmokeTest-021")]
+        public void AddPeoplePeoperty(PeopleAreaPropertyData testData)
         {
             //Select buidling node "AddPeopleProperty"
             HierarchySetting.ExpandNode("自动化测试");
@@ -96,9 +98,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //select effective year and input value
-            PeopleAreaSetting.SelectEffectiveDate(new DateTime(2031, 3, 2));
-            TimeManager.ShortPause();
-            PeopleAreaSetting.InputPeopleNumber("30");
+            PeopleAreaSetting.FillInPeopleValue(testData.InputData);
             PeopleAreaSetting.ClickSaveButton();
             TimeManager.ShortPause();
 

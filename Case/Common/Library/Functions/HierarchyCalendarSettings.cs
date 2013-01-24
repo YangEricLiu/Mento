@@ -72,6 +72,22 @@ namespace Mento.ScriptCommon.Library.Functions
             WorkdayCreate.Click();
         }
 
+        /// <summary>
+        /// Input Workday Calendar value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInWorkdayCalendarValue(CalendarPropertInputData input)
+        {
+            WorkdayEffectiveYearAdd.SelectItem(input.WorkdayEffectiveDate);
+            WorkdayCalendarNameAdd.SelectItem(input.WorkdayCalendarName);
+
+            if (!String.IsNullOrEmpty(input.WorktimeCalendarName))
+            {
+                WorktimeCalendarName.SelectItem(input.WorktimeCalendarName);
+            }
+        }
+
         public void SelectWorkdayEffectiveYear(string year)
         {
             WorkdayEffectiveYearAdd.SelectItem(year);
@@ -143,6 +159,17 @@ namespace Mento.ScriptCommon.Library.Functions
             HeatingCoolingCreate.Click();
         }
 
+        /// <summary>
+        /// Input Workday Calendar value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInHeatingCoolingCalendarValue(CalendarPropertInputData input)
+        {
+            HeatingCoolingEffectiveYearAdd.SelectItem(input.HeatingCoolingEffectiveDate);
+            HeatingCoolingCalendarNameAdd.SelectItem(input.HeatingCoolingCalendarName);
+        }
+
         public void SelectHeatingCoolingEffectiveYear(string year)
         {
             HeatingCoolingEffectiveYearAdd.SelectItem(year);
@@ -192,6 +219,17 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickDayNightCreateButton()
         {
             DayNightCreate.Click();
+        }
+
+        /// <summary>
+        /// Input DayNight Calendar value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInDayNightCalendarValue(CalendarPropertInputData input)
+        {
+            DayNightEffectiveYearAdd.SelectItem(input.DayNightEffectiveDate);
+            DayNightCalendarNameAdd.SelectItem(input.DayNightCalendarName);
         }
 
         public void SelectDayNightEffectiveYear(string year)

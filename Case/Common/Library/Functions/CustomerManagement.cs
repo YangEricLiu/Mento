@@ -58,19 +58,8 @@ namespace Mento.ScriptCommon.Library.Functions
             CustomerManager.Fill(inputData.ResponsiblePerson);
             CustomerTelephone.Fill(inputData.Telephone);
             CustomerEmail.Fill(inputData.Email);
-            CustomerOperationTime.SelectDateItem(ConvertStringToDateTime(inputData.OperationTime));
+            CustomerOperationTime.SelectDateItem(inputData.OperationTime);
             CustomerComment.Fill(inputData.Comment);
-        }
-
-        private DateTime ConvertStringToDateTime(string date)
-        { 
-            string[] newDate = date.Split(new char[] {'-'});
-
-            int year = Convert.ToInt32(newDate[0]);
-            int month = Convert.ToInt32(newDate[1]);
-            int day = Convert.ToInt32(newDate[2]);
-
-            return new DateTime(year, month, day);
         }
 
         public void ClickSaveButton()

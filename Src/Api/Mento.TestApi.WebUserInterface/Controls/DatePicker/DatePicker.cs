@@ -51,6 +51,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public DatePicker(Locator locator) : base(locator) { }
 
+        /// <summary>
+        /// Select the date item from date picker
+        /// </summary>
+        /// <param name="date">DateTime type parameter</param>
+        /// <returns></returns>
         public void SelectDateItem(DateTime date)
         {
             DisplayDatePickerItems();
@@ -61,6 +66,41 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             var locator = GetDatePickerDayLocator(date.Day.ToString());
             FindChild(locator).Click();
+        }
+
+        /// <summary>
+        /// Select the date item from date picker
+        /// </summary>
+        /// <param name="date">string type parameter, the date must be "xxxx-xx-xx"</param>
+        /// <returns></returns>
+        public void SelectDateItem(string date)
+        {
+            DateTime dateTime = ConvertStringToDateTime(date);
+
+            DisplayDatePickerItems();
+            TimeManager.ShortPause();
+
+            //SelectInnerYearMonthItem(date);
+            NavigateToMonth(dateTime);
+
+            var locator = GetDatePickerDayLocator(dateTime.Day.ToString());
+            FindChild(locator).Click();
+        }
+
+        /// <summary>
+        /// Convert string "xxxx-xx-xx" to DateTime
+        /// </summary>
+        /// <param name="date">string type parameter, the date must be "xxxx-xx-xx"</param>
+        /// <returns></returns>
+        private DateTime ConvertStringToDateTime(string date)
+        {
+            string[] newDate = date.Split(new char[] { '-' });
+
+            int year = Convert.ToInt32(newDate[0]);
+            int month = Convert.ToInt32(newDate[1]);
+            int day = Convert.ToInt32(newDate[2]);
+
+            return new DateTime(year, month, day);
         }
 
         private void  DisplayMonthPicker()

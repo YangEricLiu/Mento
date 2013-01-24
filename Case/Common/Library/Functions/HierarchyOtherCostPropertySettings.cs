@@ -28,6 +28,12 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region Gas Cost
 
+        public void FillInGasCostValue(OtherCostInputData input)
+        {
+            GasCostEffectiveDate.SelectYearMonthItem(input.EffectiveDate);
+            GasCostPrice.Append(input.Price);
+        }
+
         public void ClickGasCostCreateButton()
         {
             GasCostCreate.Click();

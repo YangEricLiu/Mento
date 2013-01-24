@@ -10,6 +10,8 @@ using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
+using Mento.ScriptCommon.TestData.Customer;
+using Mento.TestApi.TestData;
 
 namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
@@ -43,10 +45,11 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         /// </summary>  
         ///
         [Test]
-        [CaseID("TC-J1-SmokeTest-017-001")]
+        [CaseID("TC-J1-SmokeTest-017")]
         [Priority("34")]
         [Type("BVT")]
-        public void AddCalendarforWorkday()
+        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(AddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
+        public void AddCalendarforWorkday(CalendarPropertyData testData)
         { 
             string[] calendarText = new string[] { "默认工作日", "周一至周五", "工作日", "10月25日至10月31日", "休息日", "5月1日至5月7日" };
             string[] workTimecalendarText = new string[] { "非工作时间", "工作时间以外均为非工作时间", "工作时间", "08:30-12:00 13:00-17:30" };
@@ -64,19 +67,15 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             //Click "+" button
             CalendarSettings.ClickWorkdayCreateButton();
             TimeManager.ShortPause();
-            
-            //Select effective year and workday calendar
-            CalendarSettings.SelectWorkdayEffectiveYear("2002");
-            CalendarSettings.SelectWorkdayCalendarName("工休日日历1");
-            TimeManager.MediumPause();
 
             //Click "添加工作时间" linkbutton
             CalendarSettings.ClickAddWorktimeLinkButton();
             TimeManager.MediumPause();
 
-            //Select worktime calendar and save it
-            CalendarSettings.SelectWorktimeCalendarName("工作时间日历1");
+            //Select effective year and workday calendar
+            CalendarSettings.FillInWorkdayCalendarValue(testData.InputData);
             TimeManager.MediumPause();
+
             CalendarSettings.ClickSaveCalendarButton();
             TimeManager.MediumPause();
 
@@ -94,10 +93,11 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         ///               3. These data will prepare on previous cases
         /// </summary> 
         [Test]
-        [CaseID("TC-J1-SmokeTest-017-002")]
+        [CaseID("TC-J1-SmokeTest-017")]
         [Priority("34")]
         [Type("BVT")]
-        public void AddCalendarforHeatingCooling()
+        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(AddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
+        public void AddCalendarforHeatingCooling(CalendarPropertyData testData)
         {
             string[] calendarText = new string[] { "采暖季", "1月1日至3月15日 11月15日至12月31日", "供冷季", "5月31日至8月31日" };
 
@@ -116,8 +116,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //Select effective year and HeatingCooling calendar, save it
-            CalendarSettings.SelectHeatingCoolingEffectiveYear("2002", 1);
-            CalendarSettings.SelectHeatingCoolingCalendarName("冷暖季日历1", 1);
+            CalendarSettings.FillInHeatingCoolingCalendarValue(testData.InputData);
             TimeManager.ShortPause();
             CalendarSettings.ClickSaveCalendarButton();
             TimeManager.MediumPause();
@@ -137,7 +136,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-SmokeTest-017-003")]
         [Priority("34")]
         [Type("BVT")]
-        public void AddCalendarforDayNight()
+        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(AddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
+        public void AddCalendarforDayNight(CalendarPropertyData testData)
         {
             string[] calendarText = new string[] { "黑夜时间", "白昼时间以外均为黑夜时间", "白昼时间", "05:30-18:00" };
 
@@ -156,8 +156,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //Select effective year and DayNight calendar, save it
-            CalendarSettings.SelectDayNightEffectiveYear("2002", 1);
-            CalendarSettings.SelectDayNightCalendarName("昼夜时间日历1", 1);
+            CalendarSettings.FillInDayNightCalendarValue(testData.InputData) ;
             TimeManager.ShortPause();
             CalendarSettings.ClickSaveCalendarButton();
             TimeManager.MediumPause();

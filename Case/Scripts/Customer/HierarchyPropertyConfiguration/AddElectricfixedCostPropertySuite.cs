@@ -10,7 +10,8 @@ using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
-
+using Mento.ScriptCommon.TestData.Customer;
+using Mento.TestApi.TestData;
 
 namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
@@ -44,7 +45,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-SmokeTest-018-001")]
         [Priority("35")]
         [Type("BVT")]
-        public void AddCostforElectricfixed()
+        [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(AddElectricfixedCostPropertySuite), "TC-J1-SmokeTest-018-001")]
+        public void AddCostforElectricfixed(ElectricfixedCostData testData)
         {
             HierarchySetting.ExpandNode("自动化测试");
             HierarchySetting.ExpandNode("AddCalendarProperty");
@@ -64,9 +66,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //select effective year and input value, save it
-            CostSettings.SelectElectricEffectiveDate(new DateTime(2013,1,5));
-            CostSettings.SelectElectricPriceMode("固定电价");
-            CostSettings.FillElectricPrice("50");
+            CostSettings.FillInFixedCost(testData.InputData);
             TimeManager.ShortPause();
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();

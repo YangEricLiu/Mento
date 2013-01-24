@@ -68,10 +68,10 @@
     <Compile Include="TagDisassociation\SystemDisassociateTagSuite.cs" />
     <Compile Include="TagManagement\CancelModifyFormDayNightKPI.cs" />
     <Compile Include="TagManagement\CancelModifyFormNonDayNightKPI.cs" />
-    <Compile Include="TagManagement\CancelModifyKPITag.cs" />    
+    <Compile Include="TagManagement\CancelModifyKPITag.cs" />
     <Compile Include="TagManagement\DeleteKPITag.cs" />
     <Compile Include="TagManagement\KPITargetSuite.cs" />
-	<Compile Include="TagManagement\KPIBaselineSuite.cs" />
+    <Compile Include="TagManagement\KPIBaselineSuite.cs" />
     <Compile Include="TagManagement\FormulaForDayNightKPISuite.cs" />
     <Compile Include="TagManagement\FormulaForNonDayNightKPISuite.cs" />
     <Compile Include="TagManagement\FormulaForVtagSuite.cs" />

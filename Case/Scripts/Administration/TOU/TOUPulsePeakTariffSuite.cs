@@ -36,13 +36,17 @@ namespace Mento.Script.Administration.TOU
         {
         }
 
+        /// <summary>
+        /// Precondition: 1. make sure there is a TOU basic tariff with name '价格策略1'
+        ///               2. make sure the TOU tariff hasn't defined Pulse Peak property yet.
+        /// </summary>
         [Test]
         [CaseID("TC-J1-SmokeTest-026")]
         [Priority("7")]
         [MultipleTestDataSource(typeof(TOUPulsePeakTariffData[]), typeof(TOUPulsePeakTariffSuite), "TC-J1-SmokeTest-026")]
         public void AddTOUPulsePeakTariff(TOUPulsePeakTariffData testData)
         {
-            TOUPulsePeakTariffSettings.FocusOnTOUTariff("pricename");
+            TOUPulsePeakTariffSettings.FocusOnTOUTariff("价格策略1");
             TimeManager.ShortPause();
             TOUPulsePeakTariffSettings.SwitchToPulsePeakPropertyTab();
             TimeManager.ShortPause();

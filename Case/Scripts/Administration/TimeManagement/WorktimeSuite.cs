@@ -59,7 +59,8 @@ namespace Mento.Script.Administration.TimeManagement
 
                 int inputDataArrayPosition = elementPosition - 1;
                 TimeSettingsWorktime.SelectStartTime(testData.InputData.StartTime[inputDataArrayPosition], elementPosition);
-                TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[inputDataArrayPosition], elementPosition);                TimeManager.ShortPause();
+                TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[inputDataArrayPosition], elementPosition);
+                TimeManager.ShortPause();
             }
 
             TimeSettingsWorktime.ClickSaveButton();

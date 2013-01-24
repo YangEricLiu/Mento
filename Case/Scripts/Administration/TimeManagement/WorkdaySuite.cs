@@ -78,7 +78,7 @@ namespace Mento.Script.Administration.TimeManagement
             //Verify the record(s)
             for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
             {
-                int inputDataArrayPosition = testData.InputData.RecordNumber - elementPosition; //Note: After saving, the second record will be displayed on top and become the first position. so inputDataArrayPosition doesn't equal to "elementPosition - 1" this time.
+                int inputDataArrayPosition = elementPosition - 1; 
                 Assert.AreEqual(testData.InputData.SpecialDateType[inputDataArrayPosition], TimeSettingsWorkday.GetSpecialDateTypeValue(elementPosition));
                 Assert.AreEqual(testData.InputData.StartMonth[inputDataArrayPosition], TimeSettingsWorkday.GetStartMonthValue(elementPosition));
                 Assert.AreEqual(testData.InputData.StartDate[inputDataArrayPosition], TimeSettingsWorkday.GetStartDateValue(elementPosition));

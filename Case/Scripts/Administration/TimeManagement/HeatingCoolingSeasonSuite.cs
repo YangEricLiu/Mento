@@ -90,7 +90,7 @@ namespace Mento.Script.Administration.TimeManagement
             //Verify the warm record(s)
             for (int elementPosition = 1; elementPosition <= testData.InputData.WarmRecordNumber; elementPosition++)
             {
-                int inputDataArrayPosition = testData.InputData.WarmRecordNumber - elementPosition; //Note: After saving, the second record will be displayed on top and become the first position. so inputDataArrayPosition doesn't equal to "elementPosition - 1" this time.
+                int inputDataArrayPosition = elementPosition - 1;
                 Assert.AreEqual(testData.InputData.WarmStartMonth[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetWarmStartMonthValue(elementPosition));
                 Assert.AreEqual(testData.InputData.WarmStartDate[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetWarmStartDateValue(elementPosition));
                 Assert.AreEqual(testData.InputData.WarmEndMonth[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetWarmEndMonthValue(elementPosition));
@@ -100,7 +100,7 @@ namespace Mento.Script.Administration.TimeManagement
             //Verify the cold record(s)
             for (int elementPosition = 1; elementPosition <= testData.InputData.ColdRecordNumber; elementPosition++)
             {
-                int inputDataArrayPosition = testData.InputData.ColdRecordNumber - elementPosition;
+                int inputDataArrayPosition = elementPosition - 1;
                 Assert.AreEqual(testData.InputData.ColdStartMonth[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetColdStartMonthValue(elementPosition));
                 Assert.AreEqual(testData.InputData.ColdStartDate[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetColdStartDateValue(elementPosition));
                 Assert.AreEqual(testData.InputData.ColdEndMonth[inputDataArrayPosition], TimeSettingsHeatingCoolingSeason.GetColdEndMonthValue(elementPosition));

@@ -466,12 +466,12 @@
         <add key="ComboBoxTOUBasicPropertyPeakEndTime" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
         <add key="ComboBoxTOUBasicPropertyValleyStartTime" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
         <add key="ComboBoxTOUBasicPropertyValleyEndTime" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyStartMonth" value="//div[@id='st-tou-pulsepeaktimerange']//table[$#positionIndex]//table[@class='x-form-trigger-wrap'][1]" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyStartDate" value="//div[@id='st-tou-peakTimeRange']//div[@class='x-column-inner'][$#positionIndex]/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyEndMonth" value="//div[@id='st-tou-peakTimeRange']//div[@class='x-column-inner'][$#positionIndex]/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyEndDate" value="//div[@id='st-tou-peakTimeRange']//div[@class='x-column-inner'][$#positionIndex]/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyStartTime" value="//div[@id='st-tou-peakTimeRange']//div[@class='x-column-inner'][$#positionIndex]/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyEndTime" value="//div[@id='st-tou-peakTimeRange']//div[@class='x-column-inner'][$#positionIndex]/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyStartMonth" value="//div[@id='st-tou-pulsepeaktimerange']//table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[1]//table[@class='x-form-trigger-wrap'][1]" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyStartDate" value="//div[@id='st-tou-pulsepeaktimerange']//table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[1]//table[@class='x-form-trigger-wrap'][2]" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyEndMonth" value="//div[@id='st-tou-pulsepeaktimerange']//table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[2]//table[@class='x-form-trigger-wrap'][1]" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyEndDate" value="//div[@id='st-tou-pulsepeaktimerange']//table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[2]//table[@class='x-form-trigger-wrap'][2]" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyStartTime" value="//div[@id='st-tou-pulsepeaktimerange']//table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[3]//table[@class='x-form-trigger-wrap'][1]" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyEndTime" value="//div[@id='st-tou-pulsepeaktimerange']//table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[3]//table[@class='x-form-trigger-wrap'][2]" type="XPath"/>
       </TOU>
     </platformsettings>
   </combobox>

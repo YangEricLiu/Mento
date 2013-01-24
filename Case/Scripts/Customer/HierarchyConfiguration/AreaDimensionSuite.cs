@@ -32,16 +32,16 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             JazzFunction.Navigator.NavigateHome();
         }
 
+        /// <summary>
+        /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
+        /// Prepare Data: 1. add area dimension "FirstFloor" for associate tag
+        /// </summary> 
         [Test]
         [CaseID("TC-J1-SmokeTest-015-001")]
         [Priority("16")]
         [Type("BVT")]
         public void CreateAreaDimension()
         {
-            /// <summary>
-            /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
-            /// Prepare Data: 1. add area dimension "FirstFloor" for associate tag
-            /// </summary> 
             var AreaSettings = JazzFunction.AreaDimensionSettings;
             string areaName = "FirstFloor";
             var testArea = new { Name = areaName, Comment = "Auto area " + areaName };

@@ -2,6 +2,7 @@
 	{
 		"InputData":
 		{
+		    "HierarchyNodePath":["自动化测试", "AddCalendarProperty"],   
 			"Name":"AddPeopleProperty",
 			"Code":"AddPeopleProperty",
 			"Type":"Building",

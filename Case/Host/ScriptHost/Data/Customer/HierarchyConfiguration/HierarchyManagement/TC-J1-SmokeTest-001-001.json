@@ -2,6 +2,7 @@
 	{
 		"InputData":
 		{
+			"HierarchyNodePath":["自动化测试"],
 			"Name":"systemAssociate",
 			"Code":"systemAssociate",
 			"Type":"Orgnization",
@@ -11,6 +12,7 @@
 	{
 		"InputData":
 		{
+			"HierarchyNodePath":["自动化测试"],
 			"Name":"AddCalendarProperty",
 			"Code":"AddCalendarProperty",
 			"Type":"Site",

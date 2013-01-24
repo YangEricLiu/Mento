@@ -35,25 +35,25 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             JazzFunction.Navigator.NavigateHome();
         }
 
+        /// <summary>
+        /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"
+        ///               2. make sure there is workday calendar with name '工休日日历1'
+        ///               3. make sure there is worktime calendar with name '工作时间日历1'
+        ///               4. These data will prepare on previous cases
+        /// </summary>  
+        ///
         [Test]
         [CaseID("TC-J1-SmokeTest-017-001")]
         [Priority("34")]
         [Type("BVT")]
         public void AddCalendarforWorkday()
-        {
-            /// <summary>
-            /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"
-            ///               2. make sure there is workday calendar with name '工休日日历1'
-            ///               3. make sure there is worktime calendar with name '工作时间日历1'
-            ///               4. These data will prepare on previous cases
-            /// </summary>  
-            /// 
+        { 
             string[] calendarText = new string[] { "默认工作日", "周一至周五", "工作日", "10月25日至10月31日", "休息日", "5月1日至5月7日" };
             string[] workTimecalendarText = new string[] { "非工作时间", "工作时间以外均为非工作时间", "工作时间", "08:30-12:00 13:00-17:30" };
 
             //Select hierarchy node "AddCalendarProperty"
             HierarchySettings.ExpandNode("自动化测试");
-            HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
+            HierarchySettings.SelectHierarchyNode("AddCalendarProperty");
 
             //Click calendar tab and create button "+日历属性"
             CalendarSettings.ClickCalendarTab();
@@ -88,22 +88,22 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.IsTrue(CalendarSettings.IsWorktimeCalendarTextCorrect(workTimecalendarText));
         }
 
+        /// <summary>
+        /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"
+        ///               2. make sure there is heatingcooling calendar with name '冷暖季日历1'
+        ///               3. These data will prepare on previous cases
+        /// </summary> 
         [Test]
         [CaseID("TC-J1-SmokeTest-017-002")]
         [Priority("34")]
         [Type("BVT")]
         public void AddCalendarforHeatingCooling()
         {
-            /// <summary>
-            /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"
-            ///               2. make sure there is heatingcooling calendar with name '冷暖季日历1'
-            ///               3. These data will prepare on previous cases
-            /// </summary> 
             string[] calendarText = new string[] { "采暖季", "1月1日至3月15日 11月15日至12月31日", "供冷季", "5月31日至8月31日" };
 
             //Select hierarchy node "AddCalendarProperty"
             HierarchySettings.ExpandNode("自动化测试");
-            HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
+            HierarchySettings.SelectHierarchyNode("AddCalendarProperty");
 
             //Click calendar tab and create button "+日历属性"
             CalendarSettings.ClickCalendarTab();
@@ -128,22 +128,22 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.IsTrue(CalendarSettings.IsHeatingCoolingCalendarTextCorrect(calendarText));
         }
 
+        /// <summary>
+        /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"
+        ///               2. make sure there is heatingcooling calendar with name '昼夜时间日历1'
+        ///               3. These data will prepare on previous cases
+        /// </summary> 
         [Test]
         [CaseID("TC-J1-SmokeTest-017-003")]
         [Priority("34")]
         [Type("BVT")]
         public void AddCalendarforDayNight()
         {
-            /// <summary>
-            /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"
-            ///               2. make sure there is heatingcooling calendar with name '昼夜时间日历1'
-            ///               3. These data will prepare on previous cases
-            /// </summary> 
             string[] calendarText = new string[] { "黑夜时间", "白昼时间以外均为黑夜时间", "白昼时间", "05:30-18:00" };
 
             //Select hierarchy node "AddCalendarProperty"
             HierarchySettings.ExpandNode("自动化测试");
-            HierarchySettings.FocusOnHierarchyNode("AddCalendarProperty");
+            HierarchySettings.SelectHierarchyNode("AddCalendarProperty");
 
             //Click calendar tab and create button "+日历属性"
             CalendarSettings.ClickCalendarTab();

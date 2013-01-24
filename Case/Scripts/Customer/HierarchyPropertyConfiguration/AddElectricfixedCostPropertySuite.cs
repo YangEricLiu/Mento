@@ -36,19 +36,19 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             JazzFunction.Navigator.NavigateHome();
         }
 
+        /// <summary>
+        /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
+        /// </summary>  
+        ///
         [Test]
         [CaseID("TC-J1-SmokeTest-018-001")]
         [Priority("35")]
         [Type("BVT")]
         public void AddCostforElectricfixed()
         {
-            /// <summary>
-            /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
-            /// </summary>  
-            ///
             HierarchySetting.ExpandNode("自动化测试");
             HierarchySetting.ExpandNode("AddCalendarProperty");
-            HierarchySetting.FocusOnHierarchyNode("AddPeopleProperty");
+            HierarchySetting.SelectHierarchyNode("AddPeopleProperty");
             TimeManager.ShortPause();
 
             //Click "成本属性" tab button

@@ -30,15 +30,15 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             JazzFunction.Navigator.NavigateHome();
         }
 
+        /// <summary>
+        /// PrepareData: 1. Associated system dimension for next case 
+        /// </summary> 
         [Test]
         [CaseID("TC-J1-SmokeTest-014-001")]
         [Priority("14")]
         [Type("BVT")]
         public void AssoicateSystemDimension()
-        {
-            /// <summary>
-            /// PrepareData: 1. Associated system dimension for next case 
-            /// </summary>  
+        { 
             var SystemSettings = JazzFunction.SystemDimensionSettings;
 
             //Display hierarchy tree -> click hierarchy node "自动化测试" -> open system dimension dialog
@@ -62,15 +62,15 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             Assert.IsTrue(SystemSettings.IsSystemDimensionNodeDisplayed("供冷主机"));
         }
 
+        /// <summary>
+        /// Precondition: 1. Disssociated system dimension from last case
+        /// </summary> 
         [Test]
         [CaseID("TC-J1-SmokeTest-014-002")]
         [Priority("15")]
         [Type("BVT")]
         public void DisassoicateSystemDimension()
         {
-            /// <summary>
-            /// Precondition: 1. Disssociated system dimension from last case
-            /// </summary> 
             var SystemSettings = JazzFunction.SystemDimensionSettings;
 
             //Display hierarchy tree -> click hierarchy node "自动化测试" -> open system dimension dialog

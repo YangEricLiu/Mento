@@ -37,12 +37,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Click one hierarchy node then click "add hierarchy" button
         /// </summary>
-        /// <param name="treeNodeName">Hierarchy node name</param>
         /// <returns></returns>
-        public void PrepareToAddNode(string treeNodeName)
+        public void ClickCreateChildHierarchyButton()
         {
-            FocusOnHierarchyNode(treeNodeName);
-
             CreateChildHierarchyButton.Click();
         }
 
@@ -51,7 +48,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="treeNodeName">Hierarchy node name</param>
         /// <returns></returns>
-        public void FocusOnHierarchyNode(string treeNodeName)
+        public void SelectHierarchyNode(string treeNodeName)
         {
             HierarchyTree.FocusOnNode(treeNodeName);
         }
@@ -93,10 +90,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <param name="treeNodeName">Parent hierarchy node name</param>
         /// <param name="input">Test data</param>
         /// <returns></returns>
-        public void FillInHierarchyNode(string treeNodeName, HierarchyInputData input)
+        public void FillInHierarchyNode(HierarchyInputData input)
         {
-            PrepareToAddNode(treeNodeName);
-
             NameTextField.Fill(input.Name);
             CodeTextField.Fill(input.Code);
             HierarchyTypeComboBox.SelectItem(input.Type);
@@ -210,6 +205,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ExpandNode(string treeNodeName)
         {
             HierarchyTree.ExpandNode(treeNodeName);
+        }
+
+        /// <summary>
+        /// Expand the hierarchy node path
+        /// </summary>
+        /// <param name = "nodePath">Hierarchy nodes will be expanded</param>
+        /// <returns></returns>
+        public void ExpandHierarchyNodePath(string[] nodePath)
+        {
+            HierarchyTree.ExpandNodePath(nodePath);
         }
 
         /// <summary>

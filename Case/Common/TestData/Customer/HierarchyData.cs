@@ -13,13 +13,15 @@ namespace Mento.ScriptCommon.TestData.Customer
 
     public class HierarchyInputData : InputTestDataBase
     {
+        public string[] HierarchyNodePath { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
         public string Type { get; set; }
         public string Comment { get; set; }
-
-        public HierarchyInputData(string name, string code, string type, string comment)
+        
+        public HierarchyInputData(string[] hierarchyNodePath, string name, string code, string type, string comment)
         {
+            this.HierarchyNodePath = hierarchyNodePath;
             this.Name = name;
             this.Code = code;
             this.Type = type;

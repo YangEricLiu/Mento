@@ -35,20 +35,20 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             JazzFunction.Navigator.NavigateHome();
         }
 
+        /// <summary>
+        /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
+        /// </summary>  
+        /// 
         [Test]
         [CaseID("TC-J1-SmokeTest-021-001")]
         [Priority("38")]
         [Type("BVT")]
         public void AddAreaProperty()
         {
-            /// <summary>
-            /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
-            /// </summary>  
-            /// 
             //Select buidling node "AddPeopleProperty"
             HierarchySetting.ExpandNode("自动化测试");
             HierarchySetting.ExpandNode("AddCalendarProperty");
-            HierarchySetting.FocusOnHierarchyNode("AddPeopleProperty");
+            HierarchySetting.SelectHierarchyNode("AddPeopleProperty");
             
             //Click "人口面积" tab button
             PeopleAreaSetting.ClickPeopleAreaTab();
@@ -71,20 +71,20 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.AreEqual(PeopleAreaSetting.GetCoolingAreaValue(), "30");
         }
 
+        /// <summary>
+        /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
+        /// </summary>  
+        ///
         [Test]
         [CaseID("TC-J1-SmokeTest-021-002")]
-        [Priority("P1")]
+        [Priority("38")]
         [Type("BVT")]
         public void AddPeoplePeoperty()
         {
-            /// <summary>
-            /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
-            /// </summary>  
-            ///
             //Select buidling node "AddPeopleProperty"
             HierarchySetting.ExpandNode("自动化测试");
             HierarchySetting.ExpandNode("AddCalendarProperty");
-            HierarchySetting.FocusOnHierarchyNode("AddPeopleProperty");
+            HierarchySetting.SelectHierarchyNode("AddPeopleProperty");
 
             //Click "人口面积" tab button
             PeopleAreaSetting.ClickPeopleAreaTab();

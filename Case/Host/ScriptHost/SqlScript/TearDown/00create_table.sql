@@ -621,73 +621,46 @@ if exists (select 1
 go
 
 
-/****** Object:  StoredProcedure [dbo].[AddEdge]    Script Date: 11/21/2012 16:17:20 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[AddEdge]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [dbo].[AddEdge]
-GO
-/****** Object:  StoredProcedure [dbo].[RemoveEdge]    Script Date: 11/21/2012 16:17:53 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RemoveEdge]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [dbo].[RemoveEdge]
-GO
-/****** Object:  StoredProcedure [dbo].[RemoveVertex]    Script Date: 11/21/2012 16:18:05 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[RemoveVertex]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [dbo].[RemoveVertex]
-GO
-/****** Object:  StoredProcedure [dbo].[ResetEdge]    Script Date: 11/21/2012 16:18:17 ******/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ResetEdge]') AND type in (N'P', N'PC'))
-DROP PROCEDURE [dbo].[ResetEdge]
-GO
-
-
-GO
-/****** Object:  Table [dbo].[UserTypePrivilegeLimit]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[Uom]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[UserTypePrivilegeLimit](
-	[UserTypeId] [bigint] NOT NULL,
-	[PrivilegeCode] [nvarchar](100) NOT NULL,
- CONSTRAINT [PK_UserTypePrivilegeLimit] PRIMARY KEY CLUSTERED 
-(
-	[UserTypeId] ASC,
-	[PrivilegeCode] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[UserTypePrivilege]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[UserTypePrivilege](
-	[UserTypeId] [bigint] NOT NULL,
-	[PrivilegeCode] [nvarchar](100) NOT NULL,
-	[UpdateUser] [nvarchar](100) NOT NULL,
-	[UpdateTime] [datetime] NOT NULL,
-	[Version] [timestamp] NOT NULL,
- CONSTRAINT [PK_UserTypeRight] PRIMARY KEY CLUSTERED 
-(
-	[UserTypeId] ASC,
-	[PrivilegeCode] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[UserType]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[UserType](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](100) NULL,
- CONSTRAINT [PK_UserType] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[Uom](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[Code] [nvarchar](100) NULL,
+	[Comment] [nvarchar](200) NULL,
+	[Status] [int] NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_UOM] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserDataPrivilege]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[Timezone]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Timezone](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Code] [nvarchar](100) NULL,
+	[Offset] [decimal](18, 0) NULL,
+	[Comment] [nvarchar](200) NULL,
+	[Status] [int] NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_TIMEZONE] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserDataPrivilege]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -708,306 +681,7 @@ CREATE TABLE [dbo].[UserDataPrivilege](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UserCustomer]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[UserCustomer](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[UserId] [bigint] NOT NULL,
-	[HierarchyId] [bigint] NOT NULL,
- CONSTRAINT [PK_UserCustomer] PRIMARY KEY CLUSTERED 
-(
-	[UserId] ASC,
-	[HierarchyId] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[User]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[User](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](100) NULL,
-	[RealName] [nvarchar](100) NULL,
-	[UserType] [int] NULL,
-	[Password] [nvarchar](100) NULL,
-	[Comment] [nvarchar](200) NULL,
-	[Title] [nvarchar](100) NULL,
-	[Telephone] [nvarchar](100) NULL,
-	[Email] [nvarchar](100) NULL,
-	[Status] [int] NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_USER] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[SystemDimensionTemplate]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[SystemDimensionTemplate](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](100) NULL,
-	[Comment] [nvarchar](200) NULL,
-	[CustomerId] [bigint] NULL,
-	[Status] [int] NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_SYSTEMDIMENSIONTEMPLATE] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Privilege]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[Privilege](
-	[Code] [char](10) NOT NULL,
-	[Comment] [nvarchar](200) NOT NULL,
- CONSTRAINT [PK_Right] PRIMARY KEY CLUSTERED 
-(
-	[Code] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[Logo]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[Logo](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Logo] [varbinary](max) NOT NULL,
-	[HierarchyId] [bigint] NULL,
-	[UpdateUser] [nvarchar](100) NOT NULL,
-	[UpdateTime] [datetime] NOT NULL,
- CONSTRAINT [PK_File] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[TouTariff]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[TouTariff](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[Name] [nvarchar](100) NULL,
-	[Code] [nvarchar](100) NULL,
-	[Comment] [nvarchar](200) NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_TOUTARIFF] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Timezone]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Timezone](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Code] [nvarchar](100) NULL,
-	[Offset] [decimal](18, 0) NULL,
-	[Comment] [nvarchar](200) NULL,
-	[Status] [int] NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_TIMEZONE] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Uom]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Uom](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[Code] [nvarchar](100) NULL,
-	[Comment] [nvarchar](200) NULL,
-	[Status] [int] NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_UOM] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Customer]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Customer](
-	[HierarchyId] [bigint] NOT NULL,
-	[Address] [nvarchar](100) NOT NULL,
-	[Manager] [nvarchar](100) NOT NULL,
-	[Telephone] [nvarchar](100) NOT NULL,
-	[Email] [nvarchar](100) NOT NULL,
-	[StartTime] [datetime] NOT NULL,
- CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED 
-(
-	[HierarchyId] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[CostStartTime]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[CostStartTime](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[CommodityId] [bigint] NULL,
-	[HierarchyId] [bigint] NULL,
-	[AreaDimensionId] [bigint] NULL,
-	[SystemDimensionTemplateItemId] [bigint] NULL,
-	[StartTime] [datetime] NOT NULL,
-	[Version] [timestamp] NOT NULL,
- CONSTRAINT [PK_CostStartTime] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Calendar]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Calendar](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](100) NULL,
-	[Type] [int] NULL,
-	[Comment] [nvarchar](200) NULL,
-	[Status] [int] NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_Calendar] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[AdjustmentFactor]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[AdjustmentFactor](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[FactorType] [int] NULL,
-	[StartPowerFactor] [decimal](15, 6) NULL,
-	[EndPowerFactor] [decimal](15, 6) NULL,
-	[ValueType] [int] NULL,
-	[BaseValue] [decimal](15, 6) NULL,
-	[Step] [decimal](15, 6) NULL,
-	[Increment] [decimal](15, 6) NULL,
-	[Status] [int] NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_ADJUSTMENTFACTOR] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Commodity]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Commodity](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[Code] [nvarchar](100) NULL,
-	[Comment] [nvarchar](200) NULL,
-	[Status] [int] NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_COMMODITY] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[CarbonFactor]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-SET ANSI_PADDING ON
-GO
-CREATE TABLE [dbo].[CarbonFactor](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[CommodityId] [bigint] NULL,
-	[FactorType] [int] NULL,
-	[UpdateUser] [varchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_CARBONFACTOR] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-SET ANSI_PADDING OFF
-GO
-/****** Object:  Table [dbo].[CalendarItem]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[CalendarItem](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[CalendarId] [bigint] NULL,
-	[Type] [int] NULL,
-	[StartFirstPart] [int] NULL,
-	[StartSecondPart] [int] NULL,
-	[EndFirstPart] [int] NULL,
-	[EndSecondPart] [int] NULL,
- CONSTRAINT [PK_CalendarItem] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Hierarchy]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[Hierarchy]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1036,178 +710,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'0-Organization
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'0-Inactive 1-Active' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Hierarchy', @level2type=N'COLUMN',@level2name=N'Status'
 GO
-/****** Object:  Table [dbo].[TouTariffItem]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[TouTariffItem](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[TouTariffId] [bigint] NULL,
-	[ItemType] [int] NULL,
-	[Price] [decimal](15, 6) NULL,
-	[StartTime] [int] NULL,
-	[EndTime] [int] NULL,
- CONSTRAINT [PK_TOUTARIFFITEM] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[PeakTariff]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[PeakTariff](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[TouTariffId] [bigint] NULL,
-	[Price] [decimal](15, 6) NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_PEAKTARIFF] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[UomGroup]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[UomGroup](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[Code] [nvarchar](100) NULL,
-	[Comment] [nvarchar](400) NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
-	[CommodityId] [bigint] NULL,
-	[IsEnergyConsumptionGroup] [bit] NULL,
- CONSTRAINT [PK_UOMGROUP] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[SystemDimensionTemplateItem]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[SystemDimensionTemplateItem](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Code] [nvarchar](100) NOT NULL,
-	[Name] [nvarchar](100) NULL,
-	[Comment] [nvarchar](200) NULL,
-	[ParentId] [bigint] NULL,
-	[TemplateId] [bigint] NOT NULL,
-	[Status] [int] NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_SYSTEMDIMENSIONTEMPLATEITEM] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Dashboard]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Dashboard](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Name] [nvarchar](100) NULL,
-	[Comment] [nvarchar](200) NULL,
-	[HierarchyId] [bigint] NULL,
-	[UserId] [bigint] NULL,
-	[Syntax] [nvarchar](max) NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
-	[IsFavorite] [bit] NULL,
- CONSTRAINT [PK_DASHBOARD] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[UomGroupRelation]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[UomGroupRelation](
-	[Precision] [int] NULL,
-	[GroupId] [bigint] NULL,
-	[UomId] [bigint] NULL,
-	[IsBase] [bit] NULL,
-	[IsCommon] [bit] NULL,
-	[IsStandardCoal] [bit] NULL,
-	[Factor] [decimal](18, 8) NULL
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[PeakTariffTime]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[PeakTariffTime](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[PeakTariffId] [bigint] NULL,
-	[StartMonth] [int] NULL,
-	[StartDay] [int] NULL,
-	[StartTime] [int] NULL,
-	[EndMonth] [int] NULL,
-	[EndDay] [int] NULL,
-	[EndTime] [int] NULL,
- CONSTRAINT [PK_PEAKTARIFFTIME] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[SystemDimension]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[SystemDimension](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[TemplateItemId] [bigint] NULL,
-	[HierarchyId] [bigint] NULL,
-	[UpdateUser] [nvarchar](100) NULL,
-	[UpdateTime] [datetime] NULL,
-	[Version] [timestamp] NULL,
- CONSTRAINT [PK_SYSTEMDIMENSION] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[HierarchyAdvancedPropertyVersion]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[HierarchyAdvancedPropertyVersion](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Type] [smallint] NOT NULL,
-	[Version] [timestamp] NOT NULL,
-	[HierarchyId] [bigint] NOT NULL,
-	[UpdateUser] [nvarchar](100) NOT NULL,
-	[UpdateTime] [datetime] NOT NULL,
- CONSTRAINT [PK_HierarchyAdvancedPropertyVersion] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[AdvancedProperty]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[AdvancedProperty]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1230,7 +733,126 @@ CREATE TABLE [dbo].[AdvancedProperty](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AreaDimension]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[AdvancedPropertyValue]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AdvancedPropertyValue](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[PropertyId] [bigint] NOT NULL,
+	[StartDate] [date] NOT NULL,
+	[Value] [decimal](21, 6) NULL,
+ CONSTRAINT [PK_HierarchyDynamicPropertySettingValue] PRIMARY KEY CLUSTERED 
+(
+	[PropertyId] ASC,
+	[StartDate] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Commodity]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Commodity](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[Code] [nvarchar](100) NULL,
+	[Comment] [nvarchar](200) NULL,
+	[Status] [int] NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_COMMODITY] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HierarchyAdvancedPropertyVersion]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HierarchyAdvancedPropertyVersion](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Type] [smallint] NOT NULL,
+	[Version] [timestamp] NOT NULL,
+	[HierarchyId] [bigint] NOT NULL,
+	[UpdateUser] [nvarchar](100) NOT NULL,
+	[UpdateTime] [datetime] NOT NULL,
+ CONSTRAINT [PK_HierarchyAdvancedPropertyVersion] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CostCommodity]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CostCommodity](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[CommodityId] [bigint] NOT NULL,
+	[UomId] [bigint] NOT NULL,
+	[CostId] [bigint] NOT NULL,
+ CONSTRAINT [PK_CostCommodity] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CostSimpleItem]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CostSimpleItem](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[EffectiveDate] [date] NOT NULL,
+	[Price] [decimal](15, 6) NOT NULL,
+	[CostCommodityId] [bigint] NOT NULL,
+ CONSTRAINT [PK_CostSimpleItem] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HierarchyCalendar]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HierarchyCalendar](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[PropertyVersionId] [bigint] NULL,
+	[EffectiveTime] [int] NULL,
+	[CalendarId] [bigint] NULL,
+	[WorkTimeId] [bigint] NULL,
+ CONSTRAINT [PK_HIERARCHYCALENDAR] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[HierarchyCalendarReference]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[HierarchyCalendarReference](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[HierarchyId] [bigint] NULL,
+	[PropertyVersionId] [bigint] NULL,
+	[CalendarType] [int] NULL,
+ CONSTRAINT [PK_HIERARCHYCALENDARREFERENCE] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AreaDimension]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1252,56 +874,67 @@ CREATE TABLE [dbo].[AreaDimension](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CarbonFactorItem]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[SystemDimensionTemplate]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[CarbonFactorItem](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[CarbonFactorId] [bigint] NULL,
-	[EffectiveTime] [datetime] NULL,
-	[FactorValue] [decimal](15, 6) NULL,
- CONSTRAINT [PK_CARBONFACTORITEM] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[SystemDimensionTemplate](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](100) NULL,
+	[Comment] [nvarchar](200) NULL,
+	[CustomerId] [bigint] NULL,
+	[Status] [int] NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_SYSTEMDIMENSIONTEMPLATE] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CostCommodity]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[SystemDimensionTemplateItem]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[CostCommodity](
+CREATE TABLE [dbo].[SystemDimensionTemplateItem](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[CommodityId] [bigint] NOT NULL,
-	[UomId] [bigint] NOT NULL,
-	[CostId] [bigint] NOT NULL,
- CONSTRAINT [PK_CostCommodity] PRIMARY KEY CLUSTERED 
+	[Code] [nvarchar](100) NOT NULL,
+	[Name] [nvarchar](100) NULL,
+	[Comment] [nvarchar](200) NULL,
+	[ParentId] [bigint] NULL,
+	[TemplateId] [bigint] NOT NULL,
+	[Status] [int] NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_SYSTEMDIMENSIONTEMPLATEITEM] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AdvancedPropertyValue]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[SystemDimension]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[AdvancedPropertyValue](
+CREATE TABLE [dbo].[SystemDimension](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[PropertyId] [bigint] NOT NULL,
-	[StartDate] [date] NOT NULL,
-	[Value] [decimal](21, 6) NULL,
- CONSTRAINT [PK_HierarchyDynamicPropertySettingValue] PRIMARY KEY CLUSTERED 
+	[TemplateItemId] [bigint] NULL,
+	[HierarchyId] [bigint] NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_SYSTEMDIMENSION] PRIMARY KEY CLUSTERED 
 (
-	[PropertyId] ASC,
-	[StartDate] ASC
+	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tag]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[Tag]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1339,40 +972,7 @@ CREATE TABLE [dbo].[Tag](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[HierarchyCalendarReference]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[HierarchyCalendarReference](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[HierarchyId] [bigint] NULL,
-	[PropertyVersionId] [bigint] NULL,
-	[CalendarType] [int] NULL,
- CONSTRAINT [PK_HIERARCHYCALENDARREFERENCE] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[HierarchyCalendar]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[HierarchyCalendar](
-	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[PropertyVersionId] [bigint] NULL,
-	[EffectiveTime] [int] NULL,
-	[CalendarId] [bigint] NULL,
-	[WorkTimeId] [bigint] NULL,
- CONSTRAINT [PK_HIERARCHYCALENDAR] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[TargetBaseline]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[TargetBaseline]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1393,23 +993,222 @@ CREATE TABLE [dbo].[TargetBaseline](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CostSimpleItem]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[TargetBaselineSpecialDate]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[CostSimpleItem](
+CREATE TABLE [dbo].[TargetBaselineSpecialDate](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[EffectiveDate] [date] NOT NULL,
-	[Price] [decimal](15, 6) NOT NULL,
-	[CostCommodityId] [bigint] NOT NULL,
- CONSTRAINT [PK_CostSimpleItem] PRIMARY KEY CLUSTERED 
+	[TargetBaselineId] [bigint] NOT NULL,
+	[StartTime] [datetime] NOT NULL,
+	[EndTime] [datetime] NOT NULL,
+	[Value] [decimal](18, 8) NOT NULL,
+	[Status] [int] NOT NULL,
+	[UpdateUser] [nvarchar](100) NOT NULL,
+	[UpdateTime] [datetime] NOT NULL,
+	[Version] [timestamp] NOT NULL,
+ CONSTRAINT [PK_KPISpecialDateConfig] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CostComplexItem]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[TargetBaselineNormalDate]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TargetBaselineNormalDate](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[TargetBaselineId] [bigint] NOT NULL,
+	[DayType] [int] NOT NULL,
+	[Year] [int] NOT NULL,
+	[StartTime] [int] NOT NULL,
+	[Value] [decimal](18, 8) NULL,
+	[Status] [int] NOT NULL,
+	[UpdateUser] [nvarchar](100) NOT NULL,
+	[UpdateTime] [datetime] NOT NULL,
+	[Version] [timestamp] NOT NULL,
+ CONSTRAINT [PK_KPIFigureSetting] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TargetBaselineDataVersion]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TargetBaselineDataVersion](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[TargetBaselineId] [bigint] NOT NULL,
+	[Year] [int] NOT NULL,
+	[Status] [int] NOT NULL,
+	[UpdateUser] [nvarchar](100) NOT NULL,
+	[UpdateTime] [datetime] NOT NULL,
+	[Version] [timestamp] NOT NULL,
+ CONSTRAINT [PK_TargetBaselineVersion] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Edge]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Edge](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[EntryEdgeId] [bigint] NULL,
+	[DirectEdgeId] [bigint] NULL,
+	[ExitEdgeId] [bigint] NULL,
+	[StartVertex] [bigint] NULL,
+	[EndVertex] [bigint] NULL,
+	[Hops] [int] NULL,
+	[Source] [varchar](150) NULL,
+ CONSTRAINT [PK_Edge] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[UserTypePrivilegeLimit]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserTypePrivilegeLimit](
+	[UserTypeId] [bigint] NOT NULL,
+	[PrivilegeCode] [nvarchar](100) NOT NULL,
+ CONSTRAINT [PK_UserTypePrivilegeLimit] PRIMARY KEY CLUSTERED 
+(
+	[UserTypeId] ASC,
+	[PrivilegeCode] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserTypePrivilege]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserTypePrivilege](
+	[UserTypeId] [bigint] NOT NULL,
+	[PrivilegeCode] [nvarchar](100) NOT NULL,
+	[UpdateUser] [nvarchar](100) NOT NULL,
+	[UpdateTime] [datetime] NOT NULL,
+	[Version] [timestamp] NOT NULL,
+ CONSTRAINT [PK_UserTypeRight] PRIMARY KEY CLUSTERED 
+(
+	[UserTypeId] ASC,
+	[PrivilegeCode] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserType]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserType](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](100) NULL,
+ CONSTRAINT [PK_UserType] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[UserCustomer]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserCustomer](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[UserId] [bigint] NOT NULL,
+	[HierarchyId] [bigint] NOT NULL,
+ CONSTRAINT [PK_UserCustomer] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC,
+	[HierarchyId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[User]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[User](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](100) NULL,
+	[RealName] [nvarchar](100) NULL,
+	[UserType] [int] NULL,
+	[Password] [nvarchar](100) NULL,
+	[Comment] [nvarchar](200) NULL,
+	[Title] [nvarchar](100) NULL,
+	[Telephone] [nvarchar](100) NULL,
+	[Email] [nvarchar](100) NULL,
+	[Status] [int] NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_USER] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Dashboard]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Dashboard](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](100) NULL,
+	[Comment] [nvarchar](200) NULL,
+	[HierarchyId] [bigint] NULL,
+	[UserId] [bigint] NULL,
+	[Syntax] [nvarchar](max) NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+	[IsFavorite] [bit] NULL,
+ CONSTRAINT [PK_DASHBOARD] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[TouTariff]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TouTariff](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[Name] [nvarchar](100) NULL,
+	[Code] [nvarchar](100) NULL,
+	[Comment] [nvarchar](200) NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_TOUTARIFF] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CostComplexItem]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1434,23 +1233,119 @@ CREATE TABLE [dbo].[CostComplexItem](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Edge]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[Privilege]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_PADDING ON
 GO
-CREATE TABLE [dbo].[Edge](
+CREATE TABLE [dbo].[Privilege](
+	[Code] [char](10) NOT NULL,
+	[Comment] [nvarchar](200) NOT NULL,
+ CONSTRAINT [PK_Right] PRIMARY KEY CLUSTERED 
+(
+	[Code] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Customer]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Customer](
+	[HierarchyId] [bigint] NOT NULL,
+	[Address] [nvarchar](100) NOT NULL,
+	[Manager] [nvarchar](100) NOT NULL,
+	[Telephone] [nvarchar](100) NOT NULL,
+	[Email] [nvarchar](100) NOT NULL,
+	[StartTime] [datetime] NOT NULL,
+ CONSTRAINT [PK_Customer] PRIMARY KEY CLUSTERED 
+(
+	[HierarchyId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CostStartTime]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CostStartTime](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[EntryEdgeId] [bigint] NULL,
-	[DirectEdgeId] [bigint] NULL,
-	[ExitEdgeId] [bigint] NULL,
-	[StartVertex] [bigint] NULL,
-	[EndVertex] [bigint] NULL,
-	[Hops] [int] NULL,
-	[Source] [varchar](150) NULL,
- CONSTRAINT [PK_Edge] PRIMARY KEY CLUSTERED 
+	[CommodityId] [bigint] NULL,
+	[HierarchyId] [bigint] NULL,
+	[AreaDimensionId] [bigint] NULL,
+	[SystemDimensionTemplateItemId] [bigint] NULL,
+	[StartTime] [datetime] NOT NULL,
+	[Version] [timestamp] NOT NULL,
+ CONSTRAINT [PK_CostStartTime] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[AdjustmentFactor]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[AdjustmentFactor](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[FactorType] [int] NULL,
+	[StartPowerFactor] [decimal](15, 6) NULL,
+	[EndPowerFactor] [decimal](15, 6) NULL,
+	[ValueType] [int] NULL,
+	[BaseValue] [decimal](15, 6) NULL,
+	[Step] [decimal](15, 6) NULL,
+	[Increment] [decimal](15, 6) NULL,
+	[Status] [int] NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_ADJUSTMENTFACTOR] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Calendar]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Calendar](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](100) NULL,
+	[Type] [int] NULL,
+	[Comment] [nvarchar](200) NULL,
+	[Status] [int] NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_Calendar] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Logo]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Logo](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[Logo] [varbinary](max) NOT NULL,
+	[HierarchyId] [bigint] NULL,
+	[UpdateUser] [nvarchar](100) NOT NULL,
+	[UpdateTime] [datetime] NOT NULL,
+ CONSTRAINT [PK_File] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
@@ -1458,586 +1353,429 @@ CREATE TABLE [dbo].[Edge](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  StoredProcedure [dbo].[AddEdge]    Script Date: 11/16/2012 14:02:18 ******/
+/****** Object:  Table [dbo].[UomGroup]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE PROC [dbo].[AddEdge]
-   @StartVertexId bigint,
-   @EndVertexId bigint,
-   @Source varchar(150)
-AS
-BEGIN
-   SET NOCOUNT ON
-
-   IF EXISTS(SELECT Id 
-   FROM Edge 
-   WHERE StartVertex = @StartVertexId 
-     AND EndVertex = @EndVertexId 
-     AND Hops = 0)
-   BEGIN
-      RETURN 0 -- DO NOTHING!!!
-   END
-
-   IF @StartVertexId = @EndVertexId 
-      OR EXISTS (SELECT Id 
-                     FROM Edge 
-                     WHERE StartVertex = @EndVertexId 
-                       AND EndVertex = @StartVertexId)
-   BEGIN
-      RAISERROR ('Attempt to create a circular relation detected!', 21, 1) WITH SETERROR 
-      RETURN -1
-   END
-
-   DECLARE @Id int
-
-   INSERT INTO Edge (
-         StartVertex,
-         EndVertex,
-         Hops,
-         Source)
-      VALUES (
-         @StartVertexId,
-         @EndVertexId,
-         0,
-         @Source)
-
-   SELECT @Id = SCOPE_IDENTITY()
-   UPDATE Edge
-      SET EntryEdgeId = @Id
-        , ExitEdgeId = @Id
-        , DirectEdgeId = @Id 
-      WHERE Id = @Id
-
-   -- step 1: A's incoming edges to B
-   INSERT INTO Edge (
-         EntryEdgeId,
-         DirectEdgeId,
-         ExitEdgeId,
-         StartVertex,
-         EndVertex,
-         Hops,
-         Source) 
-      SELECT Id
-         , @Id
-         , @Id
-         , StartVertex 
-         , @EndVertexId
-         , Hops + 1
-         , @Source
-      FROM Edge
-      WHERE EndVertex = @StartVertexId
-
-   -- step 2: A to B's outgoing edges
-   INSERT INTO Edge (
-         EntryEdgeId,
-         DirectEdgeId,
-         ExitEdgeId,
-         StartVertex,
-         EndVertex,
-         Hops,
-         Source) 
-      SELECT @Id
-         , @Id
-         , Id
-         , @StartVertexId 
-         , EndVertex
-         , Hops + 1
-         , @Source
-      FROM Edge
-      WHERE StartVertex = @EndVertexId
-
-   -- step 3: A¡¯s incoming edges to end vertex of B's outgoing edges
-   INSERT INTO Edge (
-         EntryEdgeId,
-         DirectEdgeId,
-         ExitEdgeId,
-         StartVertex,
-         EndVertex,
-         Hops,
-         Source)
-      SELECT A.Id
-         , @Id
-         , B.Id
-         , A.StartVertex 
-         , B.EndVertex
-         , A.Hops + B.Hops + 1
-         , @Source
-      FROM Edge A
-         CROSS JOIN Edge B
-      WHERE A.EndVertex = @StartVertexId
-        AND B.StartVertex = @EndVertexId
-END
-GO
-/****** Object:  Table [dbo].[TargetBaselineSpecialDate]    Script Date: 11/16/2012 14:02:15 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[TargetBaselineSpecialDate](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[TargetBaselineId] [bigint] NOT NULL,
-	[StartTime] [datetime] NOT NULL,
-	[EndTime] [datetime] NOT NULL,
-	[Value] [decimal](18, 8) NOT NULL,
-	[Status] [int] NOT NULL,
-	[UpdateUser] [nvarchar](100) NOT NULL,
-	[UpdateTime] [datetime] NOT NULL,
-	[Version] [timestamp] NOT NULL,
- CONSTRAINT [PK_KPISpecialDateConfig] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[UomGroup](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[Code] [nvarchar](100) NULL,
+	[Comment] [nvarchar](400) NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+	[CommodityId] [bigint] NULL,
+	[IsEnergyConsumptionGroup] [bit] NULL,
+ CONSTRAINT [PK_UOMGROUP] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TargetBaselineNormalDate]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[CarbonFactor]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[TargetBaselineNormalDate](
-	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[TargetBaselineId] [bigint] NOT NULL,
-	[DayType] [int] NOT NULL,
-	[Year] [int] NOT NULL,
-	[StartTime] [int] NOT NULL,
-	[Value] [decimal](18, 8) NULL,
-	[Status] [int] NOT NULL,
-	[UpdateUser] [nvarchar](100) NOT NULL,
-	[UpdateTime] [datetime] NOT NULL,
-	[Version] [timestamp] NOT NULL,
- CONSTRAINT [PK_KPIFigureSetting] PRIMARY KEY CLUSTERED 
+SET ANSI_PADDING OFF
+GO
+CREATE TABLE [dbo].[CarbonFactor](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[CommodityId] [bigint] NULL,
+	[FactorType] [int] NULL,
+	[UpdateUser] [varchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_CARBONFACTOR] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[TargetBaselineDataVersion]    Script Date: 11/16/2012 14:02:15 ******/
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[CalendarItem]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[TargetBaselineDataVersion](
+CREATE TABLE [dbo].[CalendarItem](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[TargetBaselineId] [bigint] NOT NULL,
-	[Year] [int] NOT NULL,
-	[Status] [int] NOT NULL,
-	[UpdateUser] [nvarchar](100) NOT NULL,
-	[UpdateTime] [datetime] NOT NULL,
-	[Version] [timestamp] NOT NULL,
- CONSTRAINT [PK_TargetBaselineVersion] PRIMARY KEY CLUSTERED 
+	[CalendarId] [bigint] NULL,
+	[Type] [int] NULL,
+	[StartFirstPart] [int] NULL,
+	[StartSecondPart] [int] NULL,
+	[EndFirstPart] [int] NULL,
+	[EndSecondPart] [int] NULL,
+ CONSTRAINT [PK_CalendarItem] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  StoredProcedure [dbo].[RemoveEdge]    Script Date: 11/16/2012 14:02:18 ******/
+/****** Object:  Table [dbo].[PeakTariff]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE PROC [dbo].[RemoveEdge]
-    @Id bigint
-AS
-BEGIN
-    IF NOT EXISTS( SELECT Id FROM Edge WHERE Id = @Id AND Hops = 0 )
-    BEGIN
-        RAISERROR ('Relation does not exists', 21 ,1) WITH SETERROR 
-        RETURN -1
-    END
-
-    CREATE TABLE #PurgeList (Id int)
-
-    -- step 1: rows that were originally inserted with the first
-    -- AddEdge call for this direct edge
-    INSERT INTO #PurgeList
-        SELECT Id
-          FROM Edge
-          WHERE DirectEdgeId = @Id
-
-    -- step 2: scan and find all dependent rows that are inserted afterwards
-    WHILE 1 = 1
-    BEGIN
-        INSERT INTO #PurgeList
-            SELECT Id    
-                FROM Edge
-                WHERE Hops > 0
-                    AND ( EntryEdgeId IN ( SELECT Id FROM #PurgeList ) 
-                        OR ExitEdgeId IN ( SELECT Id FROM #PurgeList ) )
-                AND Id NOT IN (SELECT Id FROM #PurgeList )
-        IF @@ROWCOUNT = 0 BREAK
-    END
-
-    DELETE Edge
-       WHERE Id IN ( SELECT Id FROM #PurgeList)
-    DROP TABLE #PurgeList
-END
+CREATE TABLE [dbo].[PeakTariff](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[TouTariffId] [bigint] NULL,
+	[Price] [decimal](15, 6) NULL,
+	[UpdateUser] [nvarchar](100) NULL,
+	[UpdateTime] [datetime] NULL,
+	[Version] [timestamp] NULL,
+ CONSTRAINT [PK_PEAKTARIFF] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
-/****** Object:  StoredProcedure [dbo].[ResetEdge]    Script Date: 11/16/2012 14:02:19 ******/
+/****** Object:  Table [dbo].[TouTariffItem]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE PROC [dbo].[ResetEdge]
-	@StartVertexId BIGINT,
-	@NewVertexIdstr VARCHAR(4000),
-	@Source VARCHAR(150),
-	@Result INT=0 OUTPUT
-AS
-BEGIN
-	SET NOCOUNT ON
-	BEGIN TRY
-		--GET NEW END VERTEX ID TABLE FROM @NewVertexIdstr
-		DECLARE @EndVertexIdTb TABLE(Id BIGINT)
-		DECLARE @Pos INT, @NextPos INT, @EndVertexId BIGINT
-		SET @Pos = 0
-		WHILE(@Pos <= LEN(@NewVertexIdstr))
-		BEGIN
-			SELECT @nextpos = CHARINDEX(',', @NewVertexIdstr, @Pos)
-			IF (@NextPos = 0 OR @NextPos IS NULL)
-				SELECT @nextpos = LEN(@NewVertexIdstr) + 1
-			INSERT INTO @EndVertexIdTb VALUES(CAST(SUBSTRING(@NewVertexIdstr, @Pos, @NextPos - @Pos) AS BIGINT))
-			SELECT @pos = @nextpos+1
-		END
-		
-		--REMOVE OLD EDGE
-		DECLARE @OldEdgeTb TABLE(Id BIGINT)
-		DECLARE @EdgeId BIGINT
-		
-		INSERT INTO @OldEdgeTb SELECT Id FROM Edge WHERE EntryEdgeId=DirectEdgeId AND DirectEdgeId=ExitEdgeId AND StartVertex=@StartVertexId AND EndVertex NOT IN (SELECT Id FROM @EndVertexIdTb)
-		
-		DECLARE removecur CURSOR FOR SELECT Id FROM @OldEdgeTb
-		OPEN removecur
-		FETCH NEXT FROM removecur INTO @EdgeId
-		WHILE @@FETCH_STATUS =0
-		BEGIN
-			EXEC RemoveEdge @EdgeId	
-			FETCH NEXT FROM removecur INTO @EdgeId
-		END
-		CLOSE removecur
-		DEALLOCATE removecur
-			
-		
-		--ADD NEW EDGE
-		IF(LTRIM(RTRIM(@NewVertexIdstr))<>'')
-		BEGIN
-			DECLARE addcur CURSOR FOR SELECT Id FROM @EndVertexIdTb 
-			OPEN addcur
-			FETCH NEXT FROM addcur INTO @EndVertexId
-			WHILE @@FETCH_STATUS =0
-			BEGIN
-				EXEC AddEdge @StartVertexId,@EndVertexId,@Source
-				FETCH NEXT FROM addcur INTO @EndVertexId
-			END
-			CLOSE addcur
-			DEALLOCATE addcur
-		END
-		SET @Result=0
-	END TRY
-	BEGIN CATCH	
-		SET @Result=-1
-	END CATCH
-END
+CREATE TABLE [dbo].[TouTariffItem](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[TouTariffId] [bigint] NULL,
+	[ItemType] [int] NULL,
+	[Price] [decimal](15, 6) NULL,
+	[StartTime] [int] NULL,
+	[EndTime] [int] NULL,
+ CONSTRAINT [PK_TOUTARIFFITEM] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
-/****** Object:  StoredProcedure [dbo].[RemoveVertex]    Script Date: 11/16/2012 14:02:18 ******/
+/****** Object:  Table [dbo].[UomGroupRelation]    Script Date: 11/22/2012 10:56:41 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE PROC [dbo].[RemoveVertex]
-	@VertexId bigint
-AS
-BEGIN
-	SET NOCOUNT ON
-	DECLARE @EdgeId BIGINT
-	DECLARE removecur CURSOR FOR SELECT Id FROM Edge WHERE (StartVertex=@VertexId OR EndVertex=@VertexId) AND EntryEdgeId=DirectEdgeId AND DirectEdgeId=EntryEdgeId
-	OPEN removecur
-	FETCH NEXT FROM removecur INTO @EdgeId
-	WHILE @@FETCH_STATUS =0
-	BEGIN
-		EXEC RemoveEdge @EdgeId	
-		FETCH NEXT FROM removecur INTO @EdgeId
-	END
-	CLOSE removecur
-	DEALLOCATE removecur
-END
+CREATE TABLE [dbo].[UomGroupRelation](
+	[Precision] [int] NULL,
+	[GroupId] [bigint] NULL,
+	[UomId] [bigint] NULL,
+	[IsBase] [bit] NULL,
+	[IsCommon] [bit] NULL,
+	[IsStandardCoal] [bit] NULL,
+	[Factor] [decimal](18, 8) NULL
+) ON [PRIMARY]
 GO
-/****** Object:  Default [DF_AdvancedProperty_Type]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Table [dbo].[PeakTariffTime]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[PeakTariffTime](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[PeakTariffId] [bigint] NULL,
+	[StartMonth] [int] NULL,
+	[StartDay] [int] NULL,
+	[StartTime] [int] NULL,
+	[EndMonth] [int] NULL,
+	[EndDay] [int] NULL,
+	[EndTime] [int] NULL,
+ CONSTRAINT [PK_PEAKTARIFFTIME] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CarbonFactorItem]    Script Date: 11/22/2012 10:56:41 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CarbonFactorItem](
+	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[CarbonFactorId] [bigint] NULL,
+	[EffectiveTime] [datetime] NULL,
+	[FactorValue] [decimal](15, 6) NULL,
+ CONSTRAINT [PK_CARBONFACTORITEM] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Default [DF_AdvancedProperty_Type]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[AdvancedProperty] ADD  CONSTRAINT [DF_AdvancedProperty_Type]  DEFAULT ((1)) FOR [Type]
 GO
-/****** Object:  Default [DF_Dashboard_IsFavorite]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Default [DF_Dashboard_IsFavorite]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Dashboard] ADD  CONSTRAINT [DF_Dashboard_IsFavorite]  DEFAULT ((0)) FOR [IsFavorite]
 GO
-/****** Object:  Default [DF_Tag_EnergyConsumption]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Default [DF_Tag_EnergyConsumption]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Tag] ADD  CONSTRAINT [DF_Tag_EnergyConsumption]  DEFAULT ((0)) FOR [EnergyConsumption]
 GO
-/****** Object:  Default [DF_Tag_DayNightRatio]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  Default [DF_Tag_DayNightRatio]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Tag] ADD  CONSTRAINT [DF_Tag_DayNightRatio]  DEFAULT ((0)) FOR [DayNightRatio]
 GO
-/****** Object:  ForeignKey [FK_AdvancedProperty_Uom]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_AdvancedProperty_Uom]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[AdvancedProperty]  WITH NOCHECK ADD  CONSTRAINT [FK_AdvancedProperty_Uom] FOREIGN KEY([UomId])
 REFERENCES [dbo].[Uom] ([Id])
 GO
 ALTER TABLE [dbo].[AdvancedProperty] CHECK CONSTRAINT [FK_AdvancedProperty_Uom]
 GO
-/****** Object:  ForeignKey [FK_HierarchyDynamicProperty_Hierarchy]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_HierarchyDynamicProperty_Hierarchy]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[AdvancedProperty]  WITH NOCHECK ADD  CONSTRAINT [FK_HierarchyDynamicProperty_Hierarchy] FOREIGN KEY([HierarchyId])
 REFERENCES [dbo].[Hierarchy] ([Id])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[AdvancedProperty] CHECK CONSTRAINT [FK_HierarchyDynamicProperty_Hierarchy]
 GO
-/****** Object:  ForeignKey [FK_HierarchyDynamicPropertyValue_HierarchyDynamicProperty]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_HierarchyDynamicPropertyValue_HierarchyDynamicProperty]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[AdvancedPropertyValue]  WITH NOCHECK ADD  CONSTRAINT [FK_HierarchyDynamicPropertyValue_HierarchyDynamicProperty] FOREIGN KEY([PropertyId])
 REFERENCES [dbo].[AdvancedProperty] ([Id])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[AdvancedPropertyValue] CHECK CONSTRAINT [FK_HierarchyDynamicPropertyValue_HierarchyDynamicProperty]
 GO
-/****** Object:  ForeignKey [FK_AREADIME_REFERENCE_HIERARCH]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_AREADIME_REFERENCE_HIERARCH]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[AreaDimension]  WITH NOCHECK ADD  CONSTRAINT [FK_AREADIME_REFERENCE_HIERARCH] FOREIGN KEY([HierarchyId])
 REFERENCES [dbo].[Hierarchy] ([Id])
 GO
 ALTER TABLE [dbo].[AreaDimension] CHECK CONSTRAINT [FK_AREADIME_REFERENCE_HIERARCH]
 GO
-/****** Object:  ForeignKey [FK_CalendarItem_Calendar]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CalendarItem_Calendar]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CalendarItem]  WITH NOCHECK ADD  CONSTRAINT [FK_CalendarItem_Calendar] FOREIGN KEY([CalendarId])
 REFERENCES [dbo].[Calendar] ([Id])
 GO
 ALTER TABLE [dbo].[CalendarItem] CHECK CONSTRAINT [FK_CalendarItem_Calendar]
 GO
-/****** Object:  ForeignKey [FK_CARBONFA_REFERENCE_COMMODIT]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CARBONFA_REFERENCE_COMMODIT]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CarbonFactor]  WITH CHECK ADD  CONSTRAINT [FK_CARBONFA_REFERENCE_COMMODIT] FOREIGN KEY([CommodityId])
 REFERENCES [dbo].[Commodity] ([Id])
 GO
 ALTER TABLE [dbo].[CarbonFactor] CHECK CONSTRAINT [FK_CARBONFA_REFERENCE_COMMODIT]
 GO
-/****** Object:  ForeignKey [FK_CARBONFA_REFERENCE_CARBONFA]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CARBONFA_REFERENCE_CARBONFA]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CarbonFactorItem]  WITH CHECK ADD  CONSTRAINT [FK_CARBONFA_REFERENCE_CARBONFA] FOREIGN KEY([CarbonFactorId])
 REFERENCES [dbo].[CarbonFactor] ([Id])
 GO
 ALTER TABLE [dbo].[CarbonFactorItem] CHECK CONSTRAINT [FK_CARBONFA_REFERENCE_CARBONFA]
 GO
-/****** Object:  ForeignKey [FK_CostCommodity_Commodity]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CostCommodity_Commodity]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CostCommodity]  WITH NOCHECK ADD  CONSTRAINT [FK_CostCommodity_Commodity] FOREIGN KEY([CommodityId])
 REFERENCES [dbo].[Commodity] ([Id])
 GO
 ALTER TABLE [dbo].[CostCommodity] CHECK CONSTRAINT [FK_CostCommodity_Commodity]
 GO
-/****** Object:  ForeignKey [FK_CostCommodity_HierarchyAdvancedPropertyVersion]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CostCommodity_HierarchyAdvancedPropertyVersion]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CostCommodity]  WITH NOCHECK ADD  CONSTRAINT [FK_CostCommodity_HierarchyAdvancedPropertyVersion] FOREIGN KEY([CostId])
 REFERENCES [dbo].[HierarchyAdvancedPropertyVersion] ([Id])
 GO
 ALTER TABLE [dbo].[CostCommodity] CHECK CONSTRAINT [FK_CostCommodity_HierarchyAdvancedPropertyVersion]
 GO
-/****** Object:  ForeignKey [FK_CostCommodity_Uom]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CostCommodity_Uom]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CostCommodity]  WITH NOCHECK ADD  CONSTRAINT [FK_CostCommodity_Uom] FOREIGN KEY([UomId])
 REFERENCES [dbo].[Uom] ([Id])
 GO
 ALTER TABLE [dbo].[CostCommodity] CHECK CONSTRAINT [FK_CostCommodity_Uom]
 GO
-/****** Object:  ForeignKey [FK_CostComplexItem_CostCommodity]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CostComplexItem_CostCommodity]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CostComplexItem]  WITH NOCHECK ADD  CONSTRAINT [FK_CostComplexItem_CostCommodity] FOREIGN KEY([CostCommodityId])
 REFERENCES [dbo].[CostCommodity] ([Id])
 GO
 ALTER TABLE [dbo].[CostComplexItem] CHECK CONSTRAINT [FK_CostComplexItem_CostCommodity]
 GO
-/****** Object:  ForeignKey [FK_CostComplexItem_Tag]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CostComplexItem_Tag]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CostComplexItem]  WITH NOCHECK ADD  CONSTRAINT [FK_CostComplexItem_Tag] FOREIGN KEY([HourTagId])
 REFERENCES [dbo].[Tag] ([Id])
 GO
 ALTER TABLE [dbo].[CostComplexItem] CHECK CONSTRAINT [FK_CostComplexItem_Tag]
 GO
-/****** Object:  ForeignKey [FK_CostComplexItem_Tag1]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CostComplexItem_Tag1]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CostComplexItem]  WITH NOCHECK ADD  CONSTRAINT [FK_CostComplexItem_Tag1] FOREIGN KEY([ReactiveTagId])
 REFERENCES [dbo].[Tag] ([Id])
 GO
 ALTER TABLE [dbo].[CostComplexItem] CHECK CONSTRAINT [FK_CostComplexItem_Tag1]
 GO
-/****** Object:  ForeignKey [FK_CostComplexItem_Tag2]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CostComplexItem_Tag2]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CostComplexItem]  WITH NOCHECK ADD  CONSTRAINT [FK_CostComplexItem_Tag2] FOREIGN KEY([RealTagId])
 REFERENCES [dbo].[Tag] ([Id])
 GO
 ALTER TABLE [dbo].[CostComplexItem] CHECK CONSTRAINT [FK_CostComplexItem_Tag2]
 GO
-/****** Object:  ForeignKey [FK_CostComplexItem_TouTariff]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CostComplexItem_TouTariff]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CostComplexItem]  WITH NOCHECK ADD  CONSTRAINT [FK_CostComplexItem_TouTariff] FOREIGN KEY([TouTariffId])
 REFERENCES [dbo].[TouTariff] ([Id])
 GO
 ALTER TABLE [dbo].[CostComplexItem] CHECK CONSTRAINT [FK_CostComplexItem_TouTariff]
 GO
-/****** Object:  ForeignKey [FK_CostSimpleItem_CostCommodity]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_CostSimpleItem_CostCommodity]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[CostSimpleItem]  WITH NOCHECK ADD  CONSTRAINT [FK_CostSimpleItem_CostCommodity] FOREIGN KEY([CostCommodityId])
 REFERENCES [dbo].[CostCommodity] ([Id])
 GO
 ALTER TABLE [dbo].[CostSimpleItem] CHECK CONSTRAINT [FK_CostSimpleItem_CostCommodity]
 GO
-/****** Object:  ForeignKey [FK_DASHBOAR_REFERENCE_HIERARCH]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_DASHBOAR_REFERENCE_HIERARCH]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Dashboard]  WITH NOCHECK ADD  CONSTRAINT [FK_DASHBOAR_REFERENCE_HIERARCH] FOREIGN KEY([HierarchyId])
 REFERENCES [dbo].[Hierarchy] ([Id])
 GO
 ALTER TABLE [dbo].[Dashboard] CHECK CONSTRAINT [FK_DASHBOAR_REFERENCE_HIERARCH]
 GO
-/****** Object:  ForeignKey [FK_DASHBOAR_REFERENCE_HIERARCH1]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_DASHBOAR_REFERENCE_HIERARCH1]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Dashboard]  WITH NOCHECK ADD  CONSTRAINT [FK_DASHBOAR_REFERENCE_HIERARCH1] FOREIGN KEY([HierarchyId])
 REFERENCES [dbo].[Hierarchy] ([Id])
 GO
 ALTER TABLE [dbo].[Dashboard] CHECK CONSTRAINT [FK_DASHBOAR_REFERENCE_HIERARCH1]
 GO
-/****** Object:  ForeignKey [FK_DASHBOAR_REFERENCE_USER]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_DASHBOAR_REFERENCE_USER]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Dashboard]  WITH NOCHECK ADD  CONSTRAINT [FK_DASHBOAR_REFERENCE_USER] FOREIGN KEY([UserId])
 REFERENCES [dbo].[User] ([Id])
 GO
 ALTER TABLE [dbo].[Dashboard] CHECK CONSTRAINT [FK_DASHBOAR_REFERENCE_USER]
 GO
-/****** Object:  ForeignKey [FK_DASHBOAR_REFERENCE_USER1]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_DASHBOAR_REFERENCE_USER1]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Dashboard]  WITH NOCHECK ADD  CONSTRAINT [FK_DASHBOAR_REFERENCE_USER1] FOREIGN KEY([UserId])
 REFERENCES [dbo].[User] ([Id])
 GO
 ALTER TABLE [dbo].[Dashboard] CHECK CONSTRAINT [FK_DASHBOAR_REFERENCE_USER1]
 GO
-/****** Object:  ForeignKey [FK_Edge_Tag_End]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_Edge_Tag_End]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Edge]  WITH NOCHECK ADD  CONSTRAINT [FK_Edge_Tag_End] FOREIGN KEY([EndVertex])
 REFERENCES [dbo].[Tag] ([Id])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Edge] CHECK CONSTRAINT [FK_Edge_Tag_End]
 GO
-/****** Object:  ForeignKey [FK_HIERARCH_REFERENCE_TIMEZONE]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_HIERARCH_REFERENCE_TIMEZONE]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Hierarchy]  WITH NOCHECK ADD  CONSTRAINT [FK_HIERARCH_REFERENCE_TIMEZONE] FOREIGN KEY([TimezoneId])
 REFERENCES [dbo].[Timezone] ([Id])
 GO
 ALTER TABLE [dbo].[Hierarchy] CHECK CONSTRAINT [FK_HIERARCH_REFERENCE_TIMEZONE]
 GO
-/****** Object:  ForeignKey [FK_HierarchyAdvancedPropertyVersion_Hierarchy]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_HierarchyAdvancedPropertyVersion_Hierarchy]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[HierarchyAdvancedPropertyVersion]  WITH NOCHECK ADD  CONSTRAINT [FK_HierarchyAdvancedPropertyVersion_Hierarchy] FOREIGN KEY([HierarchyId])
 REFERENCES [dbo].[Hierarchy] ([Id])
 GO
 ALTER TABLE [dbo].[HierarchyAdvancedPropertyVersion] CHECK CONSTRAINT [FK_HierarchyAdvancedPropertyVersion_Hierarchy]
 GO
-/****** Object:  ForeignKey [FK_HIERARCH_REFERENCE_HIERARCH]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_HIERARCH_REFERENCE_HIERARCH]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[HierarchyCalendar]  WITH NOCHECK ADD  CONSTRAINT [FK_HIERARCH_REFERENCE_HIERARCH] FOREIGN KEY([PropertyVersionId])
 REFERENCES [dbo].[HierarchyAdvancedPropertyVersion] ([Id])
 GO
 ALTER TABLE [dbo].[HierarchyCalendar] CHECK CONSTRAINT [FK_HIERARCH_REFERENCE_HIERARCH]
 GO
-/****** Object:  ForeignKey [FK_HIERARCH_REFERENCE_HIERARCHY]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_HIERARCH_REFERENCE_HIERARCHY]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[HierarchyCalendarReference]  WITH NOCHECK ADD  CONSTRAINT [FK_HIERARCH_REFERENCE_HIERARCHY] FOREIGN KEY([HierarchyId])
 REFERENCES [dbo].[Hierarchy] ([Id])
 GO
 ALTER TABLE [dbo].[HierarchyCalendarReference] CHECK CONSTRAINT [FK_HIERARCH_REFERENCE_HIERARCHY]
 GO
-/****** Object:  ForeignKey [FK_HIERARCH_REFERENCE_HIERARCHYVERSION]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_HIERARCH_REFERENCE_HIERARCHYVERSION]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[HierarchyCalendarReference]  WITH NOCHECK ADD  CONSTRAINT [FK_HIERARCH_REFERENCE_HIERARCHYVERSION] FOREIGN KEY([PropertyVersionId])
 REFERENCES [dbo].[HierarchyAdvancedPropertyVersion] ([Id])
 GO
 ALTER TABLE [dbo].[HierarchyCalendarReference] CHECK CONSTRAINT [FK_HIERARCH_REFERENCE_HIERARCHYVERSION]
 GO
-/****** Object:  ForeignKey [FK_TARIFFPEAK_REFERENCE_TARIFF]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_TARIFFPEAK_REFERENCE_TARIFF]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[PeakTariff]  WITH NOCHECK ADD  CONSTRAINT [FK_TARIFFPEAK_REFERENCE_TARIFF] FOREIGN KEY([TouTariffId])
 REFERENCES [dbo].[TouTariff] ([Id])
 GO
 ALTER TABLE [dbo].[PeakTariff] CHECK CONSTRAINT [FK_TARIFFPEAK_REFERENCE_TARIFF]
 GO
-/****** Object:  ForeignKey [FK_PEAKTARI_REFERENCE_PEAKTARI]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_PEAKTARI_REFERENCE_PEAKTARI]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[PeakTariffTime]  WITH NOCHECK ADD  CONSTRAINT [FK_PEAKTARI_REFERENCE_PEAKTARI] FOREIGN KEY([PeakTariffId])
 REFERENCES [dbo].[PeakTariff] ([Id])
 GO
 ALTER TABLE [dbo].[PeakTariffTime] CHECK CONSTRAINT [FK_PEAKTARI_REFERENCE_PEAKTARI]
 GO
-/****** Object:  ForeignKey [FK_SYSTEMDI_REFERENCE_HIERARCH]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_SYSTEMDI_REFERENCE_HIERARCH]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[SystemDimension]  WITH NOCHECK ADD  CONSTRAINT [FK_SYSTEMDI_REFERENCE_HIERARCH] FOREIGN KEY([HierarchyId])
 REFERENCES [dbo].[Hierarchy] ([Id])
 GO
 ALTER TABLE [dbo].[SystemDimension] CHECK CONSTRAINT [FK_SYSTEMDI_REFERENCE_HIERARCH]
 GO
-/****** Object:  ForeignKey [FK_SYSTEMDI_REFERENCE_SYSTEMDI]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_SYSTEMDI_REFERENCE_SYSTEMDI]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[SystemDimension]  WITH NOCHECK ADD  CONSTRAINT [FK_SYSTEMDI_REFERENCE_SYSTEMDI] FOREIGN KEY([TemplateItemId])
 REFERENCES [dbo].[SystemDimensionTemplateItem] ([Id])
 GO
 ALTER TABLE [dbo].[SystemDimension] CHECK CONSTRAINT [FK_SYSTEMDI_REFERENCE_SYSTEMDI]
 GO
-/****** Object:  ForeignKey [FK_SYSTEMDI_REFERENCE_SYSTEMDIT]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_SYSTEMDI_REFERENCE_SYSTEMDIT]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[SystemDimensionTemplateItem]  WITH NOCHECK ADD  CONSTRAINT [FK_SYSTEMDI_REFERENCE_SYSTEMDIT] FOREIGN KEY([TemplateId])
 REFERENCES [dbo].[SystemDimensionTemplate] ([Id])
 GO
 ALTER TABLE [dbo].[SystemDimensionTemplateItem] CHECK CONSTRAINT [FK_SYSTEMDI_REFERENCE_SYSTEMDIT]
 GO
-/****** Object:  ForeignKey [FK_Tag_AreaDimension]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_Tag_AreaDimension]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Tag]  WITH NOCHECK ADD  CONSTRAINT [FK_Tag_AreaDimension] FOREIGN KEY([AreaDimensionId])
 REFERENCES [dbo].[AreaDimension] ([Id])
 ON DELETE SET NULL
 GO
 ALTER TABLE [dbo].[Tag] CHECK CONSTRAINT [FK_Tag_AreaDimension]
 GO
-/****** Object:  ForeignKey [FK_Tag_Commodity]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_Tag_Commodity]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Tag]  WITH CHECK ADD  CONSTRAINT [FK_Tag_Commodity] FOREIGN KEY([CommodityId])
 REFERENCES [dbo].[Commodity] ([Id])
 GO
 ALTER TABLE [dbo].[Tag] CHECK CONSTRAINT [FK_Tag_Commodity]
 GO
-/****** Object:  ForeignKey [FK_Tag_Hierarchy]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_Tag_Hierarchy]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Tag]  WITH NOCHECK ADD  CONSTRAINT [FK_Tag_Hierarchy] FOREIGN KEY([CustomerId])
 REFERENCES [dbo].[Hierarchy] ([Id])
 ON DELETE SET NULL
 GO
 ALTER TABLE [dbo].[Tag] CHECK CONSTRAINT [FK_Tag_Hierarchy]
 GO
-/****** Object:  ForeignKey [FK_Tag_SystemDimension]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_Tag_SystemDimension]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Tag]  WITH NOCHECK ADD  CONSTRAINT [FK_Tag_SystemDimension] FOREIGN KEY([SystemDimensionId])
 REFERENCES [dbo].[SystemDimension] ([Id])
 ON DELETE SET NULL
 GO
 ALTER TABLE [dbo].[Tag] CHECK CONSTRAINT [FK_Tag_SystemDimension]
 GO
-/****** Object:  ForeignKey [FK_Tag_Timezone]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_Tag_Timezone]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[Tag]  WITH NOCHECK ADD  CONSTRAINT [FK_Tag_Timezone] FOREIGN KEY([TimezoneId])
 REFERENCES [dbo].[Timezone] ([Id])
 GO
 ALTER TABLE [dbo].[Tag] CHECK CONSTRAINT [FK_Tag_Timezone]
 GO
-/****** Object:  ForeignKey [FK_TargetBaseline_Tag]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_TargetBaseline_Tag]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[TargetBaseline]  WITH NOCHECK ADD  CONSTRAINT [FK_TargetBaseline_Tag] FOREIGN KEY([TagId])
 REFERENCES [dbo].[Tag] ([Id])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[TargetBaseline] CHECK CONSTRAINT [FK_TargetBaseline_Tag]
 GO
-/****** Object:  ForeignKey [FK_TargetBaselineDataVersion_TargetBaseline]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_TargetBaselineDataVersion_TargetBaseline]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[TargetBaselineDataVersion]  WITH NOCHECK ADD  CONSTRAINT [FK_TargetBaselineDataVersion_TargetBaseline] FOREIGN KEY([TargetBaselineId])
 REFERENCES [dbo].[TargetBaseline] ([Id])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[TargetBaselineDataVersion] CHECK CONSTRAINT [FK_TargetBaselineDataVersion_TargetBaseline]
 GO
-/****** Object:  ForeignKey [FK_TargetBaselineNormalDate_TargetBaseline]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_TargetBaselineNormalDate_TargetBaseline]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[TargetBaselineNormalDate]  WITH NOCHECK ADD  CONSTRAINT [FK_TargetBaselineNormalDate_TargetBaseline] FOREIGN KEY([TargetBaselineId])
 REFERENCES [dbo].[TargetBaseline] ([Id])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[TargetBaselineNormalDate] CHECK CONSTRAINT [FK_TargetBaselineNormalDate_TargetBaseline]
 GO
-/****** Object:  ForeignKey [FK_TargetBaselineSpecialDate_TargetBaseline]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_TargetBaselineSpecialDate_TargetBaseline]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[TargetBaselineSpecialDate]  WITH NOCHECK ADD  CONSTRAINT [FK_TargetBaselineSpecialDate_TargetBaseline] FOREIGN KEY([TargetBaselineId])
 REFERENCES [dbo].[TargetBaseline] ([Id])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[TargetBaselineSpecialDate] CHECK CONSTRAINT [FK_TargetBaselineSpecialDate_TargetBaseline]
 GO
-/****** Object:  ForeignKey [FK_TARIFFITEM_REFERENCE_TARIFF]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_TARIFFITEM_REFERENCE_TARIFF]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[TouTariffItem]  WITH NOCHECK ADD  CONSTRAINT [FK_TARIFFITEM_REFERENCE_TARIFF] FOREIGN KEY([TouTariffId])
 REFERENCES [dbo].[TouTariff] ([Id])
 GO
 ALTER TABLE [dbo].[TouTariffItem] CHECK CONSTRAINT [FK_TARIFFITEM_REFERENCE_TARIFF]
 GO
-/****** Object:  ForeignKey [FK_UOMGROUP_REFERENCE_COMMODITY]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_UOMGROUP_REFERENCE_COMMODITY]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[UomGroup]  WITH CHECK ADD  CONSTRAINT [FK_UOMGROUP_REFERENCE_COMMODITY] FOREIGN KEY([CommodityId])
 REFERENCES [dbo].[Commodity] ([Id])
 GO
 ALTER TABLE [dbo].[UomGroup] CHECK CONSTRAINT [FK_UOMGROUP_REFERENCE_COMMODITY]
 GO
-/****** Object:  ForeignKey [FK_UOMGROUPRELATION_REFERENCE_UOMGROUP]    Script Date: 11/16/2012 14:02:15 ******/
+/****** Object:  ForeignKey [FK_UOMGROUPRELATION_REFERENCE_UOMGROUP]    Script Date: 11/22/2012 10:56:41 ******/
 ALTER TABLE [dbo].[UomGroupRelation]  WITH CHECK ADD  CONSTRAINT [FK_UOMGROUPRELATION_REFERENCE_UOMGROUP] FOREIGN KEY([GroupId])
 REFERENCES [dbo].[UomGroup] ([Id])
 GO

@@ -147,6 +147,8 @@
     <Content Include="Config\ComboBoxItemList.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_schema_data.sql" />
+    <Content Include="SqlScript\TearDown\14dbo_Trigger.sql" />
     <None Include="Data\Administration\CustomerOperation\AddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
     <None Include="Data\Administration\TOU\TOUPulsePeakTariffSuite\TC-J1-SmokeTest-026.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffSuite\TC-J1-SmokeTest-025.json" />
@@ -185,6 +187,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SqlScript\Setup\initialization.sql" />
+    <Content Include="SqlScript\Setup\initialization.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="SqlScript\TearDown\00create_table.sql" />
     <Content Include="SqlScript\TearDown\01dbo_Timezone_Data.sql" />
     <Content Include="SqlScript\TearDown\02dbo_Commodity_Data.sql" />
@@ -197,7 +202,6 @@
     <Content Include="SqlScript\TearDown\10dbo_UserFunctionPrivilege_Data.sql" />
     <Content Include="SqlScript\TearDown\11dbo_EdgeNTag__SP.sql" />
     <Content Include="SqlScript\TearDown\12dbo_Commodity_Uom_schema_data.sql" />
-    <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_data.sql" />
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>

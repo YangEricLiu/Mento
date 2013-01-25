@@ -1,4 +1,5 @@
-﻿/*    privilege code             */
+﻿
+/*    privilege code             */
 insert into Privilege values(110	,	'Homepage---Dashboard & Widget View')
 insert into Privilege values(111	,	'Homepage---Map')
 insert into Privilege values(120	,	'Notification---Alarm View')

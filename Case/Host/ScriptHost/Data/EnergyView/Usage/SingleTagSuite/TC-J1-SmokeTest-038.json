@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":["自动化测试","HierarchyEV"],
+			"Hierarchies":["Mento","HierarchyEV"],
 			"TagNames":["P0"],
 			"ViewType":"Column"
 		}

@@ -12,6 +12,7 @@ using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.ScriptCommon.TestData.EnergyView;
 using Mento.TestApi.TestData;
+using System.Data;
 
 namespace Mento.Script.EnergyView.Usage
 {
@@ -61,7 +62,7 @@ namespace Mento.Script.EnergyView.Usage
             Assert.IsTrue(DataPanel.IsTrendChartDrawn());
 
             //save to dashboard
-            DataPanel.Toolbar.SaveToDashboard("","",true,"");
+            DataPanel.Toolbar.SaveToDashboard("", "", true, "");
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace Mento.Script.EnergyView.Usage
         ///     The pie chart of selected V(1) display.
         /// </summary>
         [Test]
-        [CaseID("TC-J1-SmokeTest-040	")]
+        [CaseID("TC-J1-SmokeTest-040")]
         [Priority("33")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-040")]
         public void SingleTagDistributionChart(EnergyViewOptionData option)

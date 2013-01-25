@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<intialization>
+  <request>
+    <base>https://192.168.72.128/Web/</base>
+    <cookie>
+      <![CDATA[FedAuth=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U2VjdXJpdHlDb250ZXh0VG9rZW4gcDE6SWQ9Il8zMjM4N2NkOS05NDdlLTQ0YTEtYjk1Yi0xYWFlZGY2ZDQ3YjQtMEU0RDRCNTNDN0VCQzUyOEJEMEU0NjMxOUI3MzE0MDciIHhtbG5zOnAxPSJodHRwOi8vZG9jcy5vYXNpcy1vcGVuLm9yZy93c3MvMjAwNC8wMS9vYXNpcy0yMDA0MDEtd3NzLXdzc2VjdXJpdHktdXRpbGl0eS0xLjAueHNkIiB4bWxucz0iaHR0cDovL2RvY3Mub2FzaXMtb3Blbi5vcmcvd3Mtc3gvd3Mtc2VjdXJlY29udmVyc2F0aW9uLzIwMDUxMiI+PElkZW50aWZpZXI+dXJuOnV1aWQ6MGVlMmZmYjMtMWNiMi00Y2FiLWIyNzAtMTgwZDE3N2EzMWNmPC9JZGVudGlmaWVyPjxJbnN0YW5jZT51cm46dXVpZDo3NGRkMjQ4Yi00YTdmLTQ3YWItOGI2NC1iNDNlYmVkNTE0ODI8L0luc3RhbmNlPjxDb29raWUgeG1sbnM9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwNi8wNS9zZWN1cml0eSI+QVFBQUFOQ01uZDhCRmRFUmpIb0F3RS9DbCtzQkFBQUFyUGlLMjh6TExFdUdYNlNGckZZYWJnQUFBQUFDQUFBQUFBQURaZ0FBd0FBQUFCQUFBQUM3RVdTYWdVY2Npc0dLY1FYTVRWdFNBQUFBQUFTQUFBQ2dBQUFBRUFBQUFJay96em16MFUwdnlDZzk5cWN0SFRIZ0FnQUFzTVNDNUxpK2MxUks0WFpsVitpK3QrRFBrOEc0U2lpMWRhd2JBZi9WclpMZFNjS2kxUEoxUFFFMnRscW5tYjJWdHEwbmFKbjloYmhKTWlUVGxmWml3K1FyTk5GNFZwU0VnYkFSMmRHQzVoY2R1ZkNuWFJDczFBbkM2WXRJbytpT3AvL3Nlc0pRT1FDRldXdlRWc2VyQ0hacVMvMzkwVllQQ1pZR25EeENzWVBJWSs0Z0RqSGdieWRsMzlJd1o2Vk9Fc0ZSd1VJTWNTRDMxbVc3Smo4NnQvMkk0TjAxU0wwQlpTd1FtQUlXaDlpTlZUQnR3OTlxWEJTSGRPamlWN2tBNWl0RkpaYlZJdkhxTDJsZ2duaFU4TXFuMzZCOTVtWnZFYitKVFpaN1llNGRweldLbi9QTUNiOWNLV1JJT2psVVFMVzZIakhiU1JMSmk0OWJ0aVV5a2JCT1JTNis2Ukd2Y01CS0wyd1E5ZW5Sdm5yc2tZc3dRblMxUUVUOTNKc2VIUXlZRVduWjBIN0hwUy9kQkNBT2tDQVlhR2VEUWw3dTIyeWZmMDVFWG9VcGZ0KytIY1BtNmdJREdtd3RPejNFdC9RS1h5azlqaFIzbDRZYXMzQStzVko5d3JtTEdnWVdRZm1ROTJ4aTEyaVljdUlGSFRJVGpNSUpvS2M5aWpmSTEvZmJ4bjZwQlVoUFhTbXFEYWEzMnppS3lSTER2d1J4M0ZIeXhzZ0YvSUw3aFllMTRKR3Z4MTBJQ1N2dzVvZzQ1OFdVcW9nZ2cvSU1zM3B5UFE2a0ttcEhydUVxYm1lOWlUOEJtVjkwSC9pVFplM3F5cTVTcDNqbDJMZ042N2Vwc0lYSmNUUjdXM3RvK3ZnMnc1b2hkTGFLRGpNanlld1lIR3RVSHgxVUtXekU0Q0o4REk3d2ZzeTJDV3VHYTRnQ0UyUWQ3eHJ1RWIxZWVoUytNMWhHYWhER3Q4OEVQRGIvNlZKMCtseU5WNENsc0M1RitOUWxCOU14TGN0cjNZd3RNbGMwUGF3Wmd5SDdOaXVOMDMvVENZTkl2L3JkZHp5LzRBOXZzRi9PTUhpWlVqNkFYcndrM0JCRERFR1FQSllTaUNoTUI0OXR1; FedAuth1=Ym1XbkR4QXJ4MnVCcWtmenppdjRqMFpaYTdQWTJ5QjgveG5pUDcraFBSd0RxblFPdThLOGF2emxqYUhXMHNMT1FhWncyM0UrN3dnNUpJZ0d2a3NjWGxtcndsZzYzVzJWaVNzTFovV24wWkZ0L1hUR1FtMWloY3lLdHhVcE5jOHFoSTh4Z2FQUy8rdnF4UUFBQURZZ2t5T1V3Z3R2L2EveWJ0a0JTalRtcUZDUkE9PTwvQ29va2llPjwvU2VjdXJpdHlDb250ZXh0VG9rZW4+; ASP.NET_SessionId=h1njqovfw2n1zfwzmti5bn2i; username=PlatformAdmin; .ASPXAUTH=B3F77915481941E6E4FB5FCE3DC9AD6376600549E75B892B8CAB6494FF7642D2C3BB379CAB4EB4E361FF5340EAEDE9D46C566E95DDD7596CABD203CCA63DB8171D9D1109679AD6D4CFF872EDC09B4EC559E3E17450B7A722DC3797492F1884B30D638BAEDB7E8EF30C773DEE6A255165F580598F00A7D895D66D8650805A279FB4790EDF2D55E1E9107D135F8C3FAFCB]]>
+    </cookie>
+    <interfaces>
+      <interface name="customer" url="API/Customer.svc/CreateCustomer"/>
+      <interface name="user" url="API/User.svc/CreateUser"/>
+      <interface name="hierarchy" url="API/Hierarchy.svc/CreateHierarchy"/>
+      <interface name="tag" url="API/Tag.svc/CreateTag"/>
+    </interfaces>
+  </request>
+  <testdata>
+    <logo>
+      <add identity="1" type="sql">
+        <![CDATA[
+        SET IDENTITY_INSERT [Logo] ON
+        INSERT INTO [Logo] ([ID],[Logo],[HierarchyId],[UpdateUser],[UpdateTime])
+        VALUES(1,Convert(varbinary,''),1,'Auto',GETDATE())
+        SET IDENTITY_INSERT [Logo] OFF
+        ]]>
+      </add>
+    </logo>
+    <customer>
+      <!--the test customer-->
+      <add identity="2">
+        <![CDATA[{"dto":{"Id":0,"Version":0,"LogoId":"1","TimezoneId":1,"Name":"Mento","Code":"Mento","Address":"Beijing","Manager":"REM","Email":"rem@rem.com","Telephone":"010-88888888","StartTime":"/Date(1358812800000)/","Comment":"TestAutomation"}}]]>
+      </add>
+    </customer>
+    <user>
+      <!--admin -->
+      <add identity="2" type="sql">
+        <![CDATA[
+        SET IDENTITY_INSERT [User] ON
+        INSERT INTO [User](Id,Name,RealName,UserType,Password,Comment,Title,Telephone,Email,Status,UpdateUser,UpdateTime)
+        VALUES(2,'Admin','Admin',1,'161EBD7D45089B3446EE4E0D86DBCF92','Admin','Admin','0100000','11@11.11',1,'Admin',GETDATE())
+        SET IDENTITY_INSERT [User] OFF
+        ]]>
+      </add>
+      <!--customer admin -->
+      <add identity="3" type="sql">
+        <![CDATA[
+        SET IDENTITY_INSERT [User] ON
+        INSERT INTO [User](Id,Name,RealName,UserType,Password,Comment,Title,Telephone,Email,Status,UpdateUser,UpdateTime) 
+        VALUES(3,'AutoCustomer','Auto',2,'161EBD7D45089B3446EE4E0D86DBCF92','auto','auto','0100000','11@11.11',1,'AutoCustomer',GETDATE())
+        SET IDENTITY_INSERT [User] OFF
+        INSERT INTO UserCustomer(UserId,HierarchyId)
+        VALUES(3,2)
+        ]]>
+      </add>
+    </user>
+    <hierarchy>
+      <add identity="3">
+        <![CDATA[{"hierarchy":{"Id":0,"Name":"HierarchyEV","Code":"HierarchyEV","Type":0,"ParentId":2,"CustomerId":2,"Comment":"HierarchyEV","TimezoneId":1,"Version":0}}]]>
+      </add>
+      <add identity="4">
+        <![CDATA[{"hierarchy":{"Id":0,"Name":"SiteEV","Code":"SiteEV","Type":1,"ParentId":3,"CustomerId":2,"Comment":"SiteEV","TimezoneId":1,"Version":0}}]]>
+      </add>
+      <add identity="5">
+        <![CDATA[{"hierarchy":{"Id":0,"Name":"BuildingEV","Code":"BuildingEV","Type":2,"ParentId":4,"CustomerId":2,"Comment":"BuildingEV","TimezoneId":1,"Version":0}}]]>
+      </add>
+    </hierarchy>
+    <tag>
+      <add identity="1" type="sql">
+        <![CDATA[        
+        SET IDENTITY_INSERT [Tag] ON
+        INSERT INTO [Tag] ([ID],[Type],[GuidCode],[Code],[Name],[TimezoneId],[Comment],[MeterCode],[ChannelId],[CalculationType],[CalculationStep],[UomId],[CommodityId],[StartTime],[EnergyConsumption],[DayNightRatio],[Formula],[FormulaRpn],[CustomerId],[HierarchyId],[SystemDimensionId],[AreaDimensionId],[Status],[UpdateUser],[UpdateTime])
+        VALUES(1,1,5373062981773366147,'P0','P0',1,'P0','P0',0,1,NULL,1,1,'2011-12-31',0,NULL,NULL,NULL,2,3,NULL,NULL,1,'OTSTool','2013-01-09 16:46:33.497')
+        SET IDENTITY_INSERT [Tag] OFF
+        ]]>
+      </add>
+      <add identity="2">
+        <!--PTag-->
+        <![CDATA[{"dto":{"Id":0,"Type":1,"Name":"Add_P1","Code":"Add_P1","MeterCode":"Add_P1","ChannelId":1,"CommodityId":1,"UomId":1,"CalculationType":1,"Comment":"Add_P1","CustomerId":1,"TimezoneId":1,"CalculationStep":null}}]]>
+      </add>
+      <add identity="3">
+        <!--PTag-->
+        <![CDATA[{"dto":{"Id":0,"Type":1,"Name":"Amy_c_P1\u7535_\u5206\u6563\u7a7a\u8c03","Code":"Amy_c_P1","MeterCode":"123","ChannelId":5,"CommodityId":1,"UomId":1,"CalculationType":1,"Comment":"","CustomerId":1,"TimezoneId":1,"CalculationStep":null}}]]>
+      </add>
+      <add identity="4">
+        <!--VTag-->
+        <![CDATA[{"dto":{"Id":0,"Type":2,"Name":"Add_V1","Code":"Add_V1","CommodityId":1,"UomId":1,"CalculationStep":1,"CalculationType":1,"Comment":"","ChannelId":0,"MeterCode":"","CustomerId":1,"TimezoneId":1,"TagModifyMode":1}}]]>
+      </add>
+      <add identity="5">
+        <!--PTag-->
+        <![CDATA[{"dto":{"Id":0,"Type":1,"Name":"AddforAreaAssociate","Code":"AddforAreaAssociate","MeterCode":"AddforAreaAssociate","ChannelId":1,"CommodityId":1,"UomId":1,"CalculationType":1,"Comment":"","CustomerId":1,"TimezoneId":1,"CalculationStep":null}}]]>
+      </add>
+      <add identity="6">
+        <!--VTag-->
+        <![CDATA[{"dto":{"Id":0,"Type":2,"Name":"Amy_m_V1_Vtagconst1","Code":"Amy_m_V1_Vtagconst1","CommodityId":1,"UomId":1,"CalculationStep":1,"CalculationType":1,"Comment":"","ChannelId":0,"MeterCode":"","CustomerId":1,"TimezoneId":1,"TagModifyMode":1}}]]>
+      </add>
+      <add identity="7" type="sql">        
+        <![CDATA[
+        SET IDENTITY_INSERT Tag ON
+        INSERT INTO [Tag] ([ID],[Type],[GuidCode],[Code],[Name],[TimezoneId],[Comment],[MeterCode],[ChannelId],[CalculationType],[CalculationStep],[UomId],[CommodityId],[StartTime],[EnergyConsumption],[DayNightRatio],[Formula],[FormulaRpn],[CustomerId],[HierarchyId],[SystemDimensionId],[AreaDimensionId],[Status],[UpdateUser],[UpdateTime])
+        VALUES(7,1,5373062981773366148,'P1','P1',1,'P1','P1',0,1,NULL,1,1,'2011-12-31',0,NULL,NULL,NULL,2,5,NULL,NULL,1,'OTSTool','2013-01-09 16:46:33.497')
+        SET IDENTITY_INSERT [Tag] OFF
+        ]]>
+      </add>
+    </tag>
+  </testdata>
+</intialization>

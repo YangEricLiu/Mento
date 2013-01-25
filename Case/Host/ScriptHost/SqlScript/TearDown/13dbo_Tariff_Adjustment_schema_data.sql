@@ -1,3 +1,4 @@
+
 --------AdjustmentFactor--------
 SET IDENTITY_INSERT AdjustmentFactor ON
 

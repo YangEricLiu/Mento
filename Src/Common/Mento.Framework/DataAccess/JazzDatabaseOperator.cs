@@ -16,7 +16,6 @@ namespace Mento.Framework.DataAccess
     public static class JazzDatabaseOperator
     {
         private const string SQL_PATTERN = "*.sql";
-        //private static Database JazzDatabase = DatabaseContainer.JazzDatabase;
 
         public static void Initialize()
         {
@@ -40,18 +39,34 @@ namespace Mento.Framework.DataAccess
 
             for (int i = 0; i < scripts.Length; i++)
             {
-                //StreamReader scriptReader = new StreamReader(scripts[i].FullName);
+                    ExecuteScript(File.ReadAllText(scripts[i].FullName));
+            }
+        }
 
-                try
-                {
-                    SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings[ConfigurationKey.JAZZ_DATABASE_KEY].ConnectionString);
-                    Microsoft.SqlServer.Management.Smo.Server server = new Server(new ServerConnection(connection));
-                    int result = server.ConnectionContext.ExecuteNonQuery(File.ReadAllText(scripts[i].FullName));
-                }
-                catch (Exception ex)
-                {
-                    throw new ApiException(String.Format("DB script execute error in: {0}", scripts[i].FullName), ex);
-                }
+        private static void ExecuteScriptFile(string fileName)
+        {
+            try
+            {
+                string scriptContent = File.ReadAllText(fileName);
+                ExecuteScript(scriptContent);
+            }
+            catch (Exception ex)
+            {
+                throw new ApiException(String.Format("DB script execute error in: {0}", fileName), ex);
+            }
+        }
+
+        public static void ExecuteScript(string scriptContent)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings[ConfigurationKey.JAZZ_DATABASE_KEY].ConnectionString);
+                Microsoft.SqlServer.Management.Smo.Server server = new Server(new ServerConnection(connection));
+                int result = server.ConnectionContext.ExecuteNonQuery(scriptContent);
+            }
+            catch (Exception ex)
+            {
+                throw new ApiException(ex.Message, ex);
             }
         }
     } 

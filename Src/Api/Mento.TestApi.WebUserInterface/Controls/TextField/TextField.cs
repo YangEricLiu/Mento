@@ -46,5 +46,33 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return this.RootElement.GetAttribute("value");
         }
 
+        /// <summary>
+        /// Return whether the value in text field is invalid
+        /// </summary>
+        /// <returns>True if invalid</returns>
+        public bool IsTextFieldValueInvalid()
+        {
+            string invalid = this.RootElement.GetAttribute("aria-invalid");
+
+            return String.Equals(invalid, "true", StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Return the invalid input tooltips info
+        /// </summary>
+        /// <returns>the invalid input tooltips info</returns>
+        public string GetInvalidTips()
+        {
+            return this.RootElement.GetAttribute("data-errorqtip");
+        }
+
+        /// <summary>
+        /// Return whether the text field displayed 
+        /// </summary>
+        /// <returns>True if displayed</returns>
+        public Boolean IsFieldDisplayed()
+        {
+            return this.RootElement.Displayed;
+        }
     }
 }

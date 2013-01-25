@@ -39,6 +39,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
         /// <summary>
         /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
+        ///               2. make sure there are 1 Toutriff "ElectricCost1"and 2 tags "ElecCost_P2", "ElecCost_P1"
         /// </summary>  
         ///
         [Test]

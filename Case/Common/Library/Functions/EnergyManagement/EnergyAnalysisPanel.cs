@@ -35,6 +35,8 @@ namespace Mento.ScriptCommon.Library.Functions
             get;
             set;
         }
+        private static Grid CommodityGrid;
+        private static Grid TotalCommotidyGrid;
 
         //Chart
         private static Chart Chart = JazzChart.EnergyViewChart;
@@ -64,17 +66,23 @@ namespace Mento.ScriptCommon.Library.Functions
                     //click system tab
                     JazzButton.EnergyViewSystemDimensionTagsTab.Click();
                     TagGrid = JazzGrid.EnergyAnalysisSystemDimensionTagList;
+                    CommodityGrid = null;
+                    TotalCommotidyGrid = null;
                     break;
                 case TagTabs.AreaDimensionTab:
                     //click area tab
                     JazzButton.EnergyViewAreaDimensionTagsTab.Click();
                     TagGrid = JazzGrid.EnergyAnalysisAreaDimensionTagList;
+                    CommodityGrid = null;
+                    TotalCommotidyGrid = null;
                     break;
                 case TagTabs.AllTag:
                 default:
                     //click all tab
                     JazzButton.EnergyViewALLTagsTab.Click();
                     TagGrid = JazzGrid.EnergyAnalysisAllTagList;
+                    CommodityGrid = null;
+                    TotalCommotidyGrid = null;
                     break;
             }
         }
@@ -106,6 +114,24 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void UncheckTags(string[] tagNames)
         { 
+        }
+
+        public void SelectCommodity(string[] commodityNames = null)
+        {
+            //total
+            if (commodityNames == null || commodityNames.Length <= 0)
+            {
+                TotalCommotidyGrid.CheckRowCheckbox(2, "介质总览");
+            }
+            else //specified commodity
+            {
+                TotalCommotidyGrid.CheckRowCheckbox(2, "介质单项");
+                foreach (var commodity in commodityNames)
+                {
+                    CommodityGrid.CheckRowCheckbox(2, commodity);
+                    JazzMessageBox.LoadingMask.WaitLoading();
+                }
+            }
         }
         #endregion
 
@@ -142,7 +168,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
         public bool IsLegendDrawn()
         {
-            return Chart.HasDrawnLegend();
+            return Chart.LegendExists();
         }
         #endregion
     }

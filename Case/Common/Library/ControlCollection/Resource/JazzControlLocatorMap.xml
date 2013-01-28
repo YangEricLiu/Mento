@@ -62,7 +62,7 @@
       <add key="ModifyWidgetNameCancelButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
       <add key="WidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]//span[text()='表3']" type="XPath"/>
       <add key="ButtonDeleteWidget" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[4]" type="XPath"/>
-      <add key="LinkButtonEnergyViewSaveDashboardCreateDashboard" value="//div[contains(@id,'remlinkbutton') and a[text()='新增仪表盘']]" type="XPath"/>
+      <add key="LinkButtonEnergyViewSaveDashboardCreateDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-default')]//div[contains(@id,'remlinkbutton')]/a[text()='新增仪表盘']" type="XPath"/>
       <add key="LinkButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
       <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
       <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>

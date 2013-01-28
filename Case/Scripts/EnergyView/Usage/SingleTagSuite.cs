@@ -62,7 +62,8 @@ namespace Mento.Script.EnergyView.Usage
             Assert.IsTrue(DataPanel.IsTrendChartDrawn());
 
             //save to dashboard
-            DataPanel.Toolbar.SaveToDashboard("", "", true, "");
+            var dashboard = option.InputData.DashboardInfo;
+            DataPanel.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
         }
 
         /// <summary>

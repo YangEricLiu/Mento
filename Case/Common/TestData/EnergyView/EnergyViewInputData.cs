@@ -19,6 +19,17 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public EnergyViewType ViewType { get; set; }
 
         public DefaultTimeRange? DefaultTimeRange { get; set; }
+
+        public DashboardInformation DashboardInfo { get; set; }
+    }
+
+
+    public class DashboardInformation
+    {
+        public string WigetName { get; set; }
+        public string HierarchyName { get; set; }
+        public bool IsCreateDashboard { get; set; }
+        public string DashboardName { get; set; }
     }
 
     

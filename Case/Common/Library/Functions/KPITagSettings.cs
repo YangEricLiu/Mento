@@ -42,7 +42,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private Grid TagList = JazzGrid.KPITagSettingsKPITagList;
         private static Grid FormulaPTagList = JazzGrid.KPITagSettingsFormulaEditPTagList;
         private static FormulaField KPIFormulaField = JazzTextField.KPIFormulaField;
-        private static CheckBoxField CheckBoxFieldDayNightKPITag = JazzCheckBoxField.CheckBoxFieldDayNightKPITag;
+        private static CheckBoxField CheckBoxFieldDayNightKPITag = JazzCheckBox.CheckBoxFieldDayNightKPITag;
         #region KPITag List Operations
         /// <summary>
         /// Navigate to KPITag settings

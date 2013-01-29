@@ -27,8 +27,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button CancelButton = JazzButton.UserTypePermissionCancelButton;
         private static Button RefreshButton = JazzButton.UserTypePermissionRefreshButton;
 
-        private static CheckBoxField CheckBoxFieldUserTypeCost = JazzCheckBoxField.CheckBoxFieldUserTypeCost;
-        private static CheckBoxField CheckBoxFieldUserTypeEnergyUse = JazzCheckBoxField.CheckBoxFieldUserTypeEnergyUse;
+        private static CheckBoxField CheckBoxFieldUserTypeCost = JazzCheckBox.CheckBoxFieldUserTypeCost;
+        private static CheckBoxField CheckBoxFieldUserTypeEnergyUse = JazzCheckBox.CheckBoxFieldUserTypeEnergyUse;
         /// <summary>
         /// Navigate to User setting
         /// </summary>

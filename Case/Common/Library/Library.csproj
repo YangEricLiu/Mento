@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="ControlCollection\JazzButton.cs" />
     <Compile Include="ControlCollection\JazzChart.cs" />
-    <Compile Include="ControlCollection\JazzCheckBoxField.cs" />
+    <Compile Include="ControlCollection\JazzCheckBox.cs" />
     <Compile Include="ControlCollection\JazzComboBox.cs" />
     <Compile Include="ControlCollection\JazzControlCollection.cs" />
     <Compile Include="ControlCollection\JazzDatePicker.cs" />
@@ -65,6 +65,11 @@
     <Compile Include="ControlCollection\Resource\JazzControlLocatorRepository.cs" />
     <Compile Include="Functions\AreaDimensionSettings.cs" />
     <Compile Include="Functions\AssociateSettings.cs" />
+    <Compile Include="Functions\EnergyManagement\CarbonUsagePanel.cs" />
+    <Compile Include="Functions\EnergyManagement\CostPanel.cs" />
+    <Compile Include="Functions\EnergyManagement\KpiPanel.cs" />
+    <Compile Include="Functions\EnergyManagement\EnergyViewPanel.cs" />
+    <Compile Include="Functions\EnergyManagement\TabbedEnergyViewPanel.cs" />
     <Compile Include="Functions\TOUPulsePeakTariffSettings.cs" />
     <Compile Include="Functions\TOUBasicTariffSettings.cs" />
     <Compile Include="Functions\CustomerManagement.cs" />

@@ -5,20 +5,35 @@ using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.TestApi.WebUserInterface;
-using System.Data;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    public class EnergyAnalysisPanel : EnergyViewPanel
+    public class KpiPanel : EnergyViewPanel
     {
         #region Controls
         //Select system dimension tree button
-        private static Button SelectSystemDimensionButton = JazzButton.EnergyViewSelectSystemDimensionButton;
-        private static SystemDimensionTree SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
+        private static Button SelectSystemDimensionButton
+        {
+            get;
+            set;
+        }
+        private static SystemDimensionTree SystemDimensionTree
+        {
+            get;
+            set;
+        }
 
         //Select area dimension tree button
-        private static Button SelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
-        private static AreaDimensionTree AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
+        private static Button SelectAreaDimensionButton
+        {
+            get;
+            set;
+        }
+        private static AreaDimensionTree AreaDimensionTree
+        {
+            get;
+            set;
+        }
 
         //TagGrid
         private static Grid TagGrid
@@ -26,21 +41,17 @@ namespace Mento.ScriptCommon.Library.Functions
             get;
             set;
         }
-
-        protected override Chart Chart
-        {
-            get { return JazzChart.EnergyViewChart; }
-        }
-
-        protected override Grid EnergyDataGrid
-        {
-            get { return JazzGrid.EnergyAnalysisEnergyDataList; }
-        }
         #endregion
 
-        internal EnergyAnalysisPanel()
+        internal KpiPanel()
         {
             TagGrid = JazzGrid.EnergyAnalysisAllTagList;
+
+            SelectSystemDimensionButton = JazzButton.EnergyViewSelectSystemDimensionButton;
+            SelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
+
+            SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
+            AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
         }
 
         #region Tag operations
@@ -81,28 +92,13 @@ namespace Mento.ScriptCommon.Library.Functions
             AreaDimensionTree.SelectNode(areaDimensionPath);
         }
 
-        public void CheckTags(string[] tagNames)
+        public void CheckTag(string tagName)
         {
-            foreach (var tagName in tagNames)
-            {
-                TagGrid.CheckRowCheckbox(2, tagName);
+            TagGrid.CheckRowCheckbox(2, tagName);
 
-                JazzMessageBox.LoadingMask.WaitLoading();
-                TimeManager.MediumPause();
-            }
-        }
-
-        public void UncheckTags(string[] tagNames)
-        {
-            foreach (var tagName in tagNames)
-            {
-                TagGrid.UncheckRowCheckbox(2, tagName);
-
-                JazzMessageBox.LoadingMask.WaitLoading();
-                TimeManager.MediumPause();
-            }
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
         }
         #endregion
     }
-
 }

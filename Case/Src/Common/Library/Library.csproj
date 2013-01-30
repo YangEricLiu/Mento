@@ -63,47 +63,47 @@
     <Compile Include="ControlCollection\JazzTreeView.cs" />
     <Compile Include="ControlCollection\Resource\JazzControlLocatorKey.cs" />
     <Compile Include="ControlCollection\Resource\JazzControlLocatorRepository.cs" />
-    <Compile Include="Functions\AreaDimensionSettings.cs" />
-    <Compile Include="Functions\AssociateSettings.cs" />
+    <Compile Include="Functions\CustomerSettings\AreaDimensionSettings.cs" />
+    <Compile Include="Functions\CustomerSettings\AssociateSettings.cs" />
     <Compile Include="Functions\EnergyManagement\CarbonUsagePanel.cs" />
     <Compile Include="Functions\EnergyManagement\CostPanel.cs" />
     <Compile Include="Functions\EnergyManagement\KpiPanel.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewPanel.cs" />
     <Compile Include="Functions\EnergyManagement\TabbedEnergyViewPanel.cs" />
-    <Compile Include="Functions\TOUPulsePeakTariffSettings.cs" />
-    <Compile Include="Functions\TOUBasicTariffSettings.cs" />
-    <Compile Include="Functions\CustomerManagement.cs" />
+    <Compile Include="Functions\PlatformSettings\TOUPulsePeakTariffSettings.cs" />
+    <Compile Include="Functions\PlatformSettings\TOUBasicTariffSettings.cs" />
+    <Compile Include="Functions\PlatformSettings\CustomerManagement.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbarConvertTargetMenu.cs" />
     <Compile Include="Functions\EnergyManagement\SaveToDashboardDialog.cs" />
     <Compile Include="Functions\EnergyManagement\TimeSpanDialog.cs" />
-    <Compile Include="Functions\HierarchyOtherCostPropertySettings.cs" />
-    <Compile Include="Functions\KPITargetBaselineSettings.cs" />
-    <Compile Include="Functions\HierarchyElectricCostSettings.cs" />
+    <Compile Include="Functions\CustomerSettings\HierarchyOtherCostPropertySettings.cs" />
+    <Compile Include="Functions\CustomerSettings\KPITargetBaselineSettings.cs" />
+    <Compile Include="Functions\CustomerSettings\HierarchyElectricCostSettings.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbar.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbarMoreMenu.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbarViewSplitButton.cs" />
-    <Compile Include="Functions\CarbonFactorSettings.cs" />
-    <Compile Include="Functions\TimeSettingsHeatingCoolingSeason.cs" />
-    <Compile Include="Functions\TimeSettingsDayNight.cs" />
-    <Compile Include="Functions\DisassociateSettings.cs" />
+    <Compile Include="Functions\PlatformSettings\CarbonFactorSettings.cs" />
+    <Compile Include="Functions\PlatformSettings\TimeSettingsHeatingCoolingSeason.cs" />
+    <Compile Include="Functions\PlatformSettings\TimeSettingsDayNight.cs" />
+    <Compile Include="Functions\CustomerSettings\DisassociateSettings.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyAnalysisPanel.cs" />
-    <Compile Include="Functions\HierarchyCalendarSettings.cs" />
-    <Compile Include="Functions\HierarchyPeopleAreaSettings.cs" />
-    <Compile Include="Functions\TimeSettingsWorktime.cs" />
-    <Compile Include="Functions\KPITagSettings.cs" />
-    <Compile Include="Functions\TimeSettingsWorkday.cs" />
-    <Compile Include="Functions\SystemDimensionSettings.cs" />
-    <Compile Include="Functions\UserProfile.cs" />
-    <Compile Include="Functions\UserProfileDialog.cs" />
+    <Compile Include="Functions\CustomerSettings\HierarchyCalendarSettings.cs" />
+    <Compile Include="Functions\CustomerSettings\HierarchyPeopleAreaSettings.cs" />
+    <Compile Include="Functions\PlatformSettings\TimeSettingsWorktime.cs" />
+    <Compile Include="Functions\CustomerSettings\KPITagSettings.cs" />
+    <Compile Include="Functions\PlatformSettings\TimeSettingsWorkday.cs" />
+    <Compile Include="Functions\CustomerSettings\SystemDimensionSettings.cs" />
+    <Compile Include="Functions\HomePage\UserProfile.cs" />
+    <Compile Include="Functions\HomePage\UserProfileDialog.cs" />
     <Compile Include="Functions\UserSettings.cs" />
-    <Compile Include="Functions\UserTypePermissionSettings.cs" />
-    <Compile Include="Functions\Widget.cs" />
+    <Compile Include="Functions\CustomerSettings\UserTypePermissionSettings.cs" />
+    <Compile Include="Functions\HomePage\Widget.cs" />
     <Compile Include="JazzFunction.cs" />
-    <Compile Include="Functions\HierarchySettings.cs" />
+    <Compile Include="Functions\CustomerSettings\HierarchySettings.cs" />
     <Compile Include="Functions\LoginPage.cs" />
-    <Compile Include="Functions\Navigator.cs" />
-    <Compile Include="Functions\PTagSettings.cs" />
-    <Compile Include="Functions\VTagSettings.cs" />
+    <Compile Include="Functions\HomePage\Navigator.cs" />
+    <Compile Include="Functions\CustomerSettings\PTagSettings.cs" />
+    <Compile Include="Functions\CustomerSettings\VTagSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestAssemblyInitializer.cs" />
   </ItemGroup>
@@ -134,11 +134,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Functions\CustomerSettings\" />
-    <Folder Include="Functions\HomePage\" />
-    <Folder Include="Functions\PlatformSettings\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Tool\GenLocatorKey.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

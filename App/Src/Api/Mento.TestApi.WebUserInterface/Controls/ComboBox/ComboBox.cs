@@ -46,12 +46,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void SelectItem(string itemKey)
         {
-            var locator = GetComboBoxItemLocator(itemKey);
+            if (!String.IsNullOrEmpty(itemKey))
+            {
+                var locator = GetComboBoxItemLocator(itemKey);
 
-            if (!ElementHandler.Displayed(locator))
-                DisplayItems();
+                if (!ElementHandler.Displayed(locator))
+                    DisplayItems();
 
-            FindChild(locator).Click();
+                FindChild(locator).Click();
+            }
         }
 
         /// <summary>

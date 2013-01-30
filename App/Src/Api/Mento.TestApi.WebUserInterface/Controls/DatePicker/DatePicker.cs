@@ -58,14 +58,17 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void SelectDateItem(DateTime date)
         {
-            DisplayDatePickerItems();
-            TimeManager.ShortPause();
-            
-            //SelectInnerYearMonthItem(date);
-            NavigateToMonth(date);
+            if (!String.IsNullOrEmpty(date.ToString()))
+            {
+                DisplayDatePickerItems();
+                TimeManager.ShortPause();
 
-            var locator = GetDatePickerDayLocator(date.Day.ToString());
-            FindChild(locator).Click();
+                //SelectInnerYearMonthItem(date);
+                NavigateToMonth(date);
+
+                var locator = GetDatePickerDayLocator(date.Day.ToString());
+                FindChild(locator).Click();
+            }
         }
 
         /// <summary>
@@ -75,16 +78,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void SelectDateItem(string date)
         {
-            DateTime dateTime = ConvertStringToDateTime(date);
+            if (!String.IsNullOrEmpty(date))
+            {
+                DateTime dateTime = ConvertStringToDateTime(date);
 
-            DisplayDatePickerItems();
-            TimeManager.ShortPause();
+                DisplayDatePickerItems();
+                TimeManager.ShortPause();
 
-            //SelectInnerYearMonthItem(date);
-            NavigateToMonth(dateTime);
+                //SelectInnerYearMonthItem(date);
+                NavigateToMonth(dateTime);
 
-            var locator = GetDatePickerDayLocator(dateTime.Day.ToString());
-            FindChild(locator).Click();
+                var locator = GetDatePickerDayLocator(dateTime.Day.ToString());
+                FindChild(locator).Click();
+            }
         }
 
         /// <summary>

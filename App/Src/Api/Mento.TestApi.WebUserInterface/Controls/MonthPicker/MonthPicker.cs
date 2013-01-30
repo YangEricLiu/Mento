@@ -47,10 +47,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void SelectYearMonthItem(DateTime date)
         {
-            SelectYearItem(date.Year.ToString());
-            SelectMonthItem(date.Month.ToString());
+            if (!String.IsNullOrEmpty(date.ToString()))
+            {
+                SelectYearItem(date.Year.ToString());
+                SelectMonthItem(date.Month.ToString());
 
-            ClickConfirmButton();
+                ClickConfirmButton();
+            }
         }
 
         /// <summary>
@@ -60,12 +63,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void SelectYearMonthItem(string date)
         {
-            DateTime dateTime = ConvertStringToDateTime(date);
+            if (!String.IsNullOrEmpty(date))
+            {
+                DateTime dateTime = ConvertStringToDateTime(date);
 
-            SelectYearItem(dateTime.Year.ToString());
-            SelectMonthItem(dateTime.Month.ToString());
+                SelectYearItem(dateTime.Year.ToString());
+                SelectMonthItem(dateTime.Month.ToString());
 
-            ClickConfirmButton();
+                ClickConfirmButton();
+            }
         }
 
         /// <summary>

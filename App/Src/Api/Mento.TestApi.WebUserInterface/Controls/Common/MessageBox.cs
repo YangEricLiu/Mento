@@ -75,6 +75,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        private IWebElement _CloseButton;
+        protected IWebElement CloseButton
+        {
+            get
+            {
+                if (this._CloseButton == null)
+                    this._CloseButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxCloseButton));
+                return this._CloseButton;
+            }
+        }
         public MessageBox() : base(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBox)) { }
 
         public void WaitMeAppear()
@@ -128,6 +138,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 throw new ApiException("Cancel button can not be clicked because it is not enabled in the messagebox.");
 
             this.CancelButton.Click();
+        }
+
+        public void Close()
+        {
+            if (!this.CloseButton.Enabled)
+                throw new ApiException("Close button can not be clicked because it is not enabled in the messagebox.");
+
+            this.CloseButton.Click();
         }
 
         public string GetMessage()

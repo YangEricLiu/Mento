@@ -1,0 +1,27 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Name":"Nancy_CustomerAdmin_Regression",
+			"Realname":"客户管理人员",
+			"Type":"客户管理员",
+			"AssociatedCustomer":"RegressionCustomer",
+			"Title":"Leader",
+			"Telephone":"01012345678900",
+			"Email":"customermgr@163.com",
+			"Comment":"Nancy 的第11个用户",
+		},
+
+		"ExpectedData":
+		{	
+			"Name":"Nancy_CustomerAdmin_Regression",
+			"Realname":"客户管理人员",
+			"Type":"客户管理员",
+			"AssociatedCustomer":"RegressionCustomer",
+			"Title":"Leader",
+			"Telephone":"01012345678900",
+			"Email":"customermgr@163.com",
+			"Comment":"Nancy 的第11个用户",
+		}
+	},
+]

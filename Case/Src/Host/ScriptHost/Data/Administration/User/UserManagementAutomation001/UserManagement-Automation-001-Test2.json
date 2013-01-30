@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"SpecialChar":["我是中文字符","！·#￥%……—*","()"," ", "_","OverLength","ABCabc],
+		},
+		"ExpectedData":
+		{
+			"SpecialChar":["我是中文字符","！·#￥%……—*","()"," ", "_","OverLength","ABCabc],
+		}
+	},
+]

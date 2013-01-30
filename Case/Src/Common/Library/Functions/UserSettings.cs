@@ -148,7 +148,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInName(string name)
         {
-            //textFieldInstance.FillIn(ElementKey.HierarchyName, name);
             NameTextField.Fill(name);
         }
 
@@ -278,10 +277,30 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Get the user email expected value
+        /// </summary>
+        /// <param name></param>
+        /// <returns>email value</returns>
+        public string GetEmailValue()
+        {
+            return EmailTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get the user telephone expected value
+        /// </summary>
+        /// <param name></param>
+        /// <returns>telephone value</returns>
+        public string GetTelephoneValue()
+        {
+            return TelephoneTextField.GetValue();
+        }
+
+        /// <summary>
         /// Get the user title expected value
         /// </summary>
         /// <param name></param>
-        /// <returns>type value</returns>
+        /// <returns>title value</returns>
         public string GetTitleValue()
         {
             return TitleTextField.GetValue();

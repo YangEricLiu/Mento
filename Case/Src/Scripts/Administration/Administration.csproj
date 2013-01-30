@@ -61,7 +61,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TOU\TOUPulsePeakTariffSuite.cs" />
     <Compile Include="TOU\TOUBasicTariffSuite.cs" />
+    <Compile Include="User\ExitJazzSuite.cs" />
+    <Compile Include="User\ModifyUserPasswordSuite.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="User\UserConfigurationSuite.cs" />
+    <Compile Include="User\UserManagementAutomation001.cs" />
     <Compile Include="User\UserProfileSuite.cs" />
     <Compile Include="User\UserTypePermissionSuite.cs" />
   </ItemGroup>

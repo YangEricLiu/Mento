@@ -147,13 +147,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField UserCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserComment);
         #endregion
 
-        #region User Setting
+        #region User Profile
         public static TextField UserProfileNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserProfileName);
         public static TextField UserProfileRealNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserProfileRealName);
         public static TextField UserProfileTelephoneTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserProfileTelephone);
         public static TextField UserProfileEmailTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserProfileEmail);
         public static TextField UserProfileTitleTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserProfileTitle);
         public static TextField UserProfileCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserProfileComment);
+        public static TextField UserOriginalPasswordTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserOriginalPassword);
+        public static TextField UserNewPasswordTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserNewPassword);
+        public static TextField UserConfirmPasswordTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserConfirmPassword);
         #endregion
         #endregion
     }

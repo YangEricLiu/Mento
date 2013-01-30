@@ -1,0 +1,130 @@
+﻿[
+	{
+		"InputData":
+		{	
+		    
+			"OriginalName":"ModifyOriginalUser",
+			"Name":"Nancy_Engineer_Regression",
+			"Realname":"工程人员",
+			"Type":"工程人员",
+			"AssociatedCustomer":"自动化测试",
+			"Title":"职员",
+			"Telephone":"010123456789",
+			"Email":"mg_mg-mg@163.com@163.com",
+			"Comment":"Nancy 的第1个-用户_",
+		},
+
+		"ExpectedData":
+		{	
+			"Name":"Nancy_Engineer_Regression",
+			"Realname":"工程人员",
+			"Type":"工程人员",
+			"AssociatedCustomer":"自动化测试",
+			"Title":"职员",
+			"Telephone":"010123456789",
+			"Email":"mg_mg-mg@163.com@163.com",
+			"Comment":"Nancy 的第1个-用户_",
+		}
+	},
+
+		"InputData":
+		{	
+		    "OriginalName":"Nancy_Engineer_Regression",
+			"Name":"Nancy_PlatAdmin_Regression",
+			"Realname":"平台管理人员",
+			"Type":"平台管理员",
+			"Title":"CEO",
+			"Telephone":"15888888888",
+			"Email":"CEO@163.com@163.com",
+			"Comment":"Nancy 的第2个-用户_",
+		},
+
+		"ExpectedData":
+		{	
+			"Name":"Nancy_PlatAdmin_Regression",
+			"Realname":"平台管理人员",
+			"Type":"平台管理员",
+			"AssociatedCustomer":"全部客户",
+			"Title":"CEO",
+			"Telephone":"15888888888",
+			"Email":"CEO@163.com@163.com",
+			"Comment":"Nancy 的第2个-用户_",
+		}
+	},
+	{
+
+		"InputData":
+		{	
+			"OriginalName":"Nancy_PlatAdmin_Regression",
+			"Name":"Nancy_ConsultantNancy_12345678",
+			"Realname":"咨询人员咨询人员",
+			"Type":"咨询人员",
+			"AssociatedCustomer":"自动化测试",
+			"Title":"经理toMax",
+			"Telephone":"010-12345678toMax",
+			"Email":"mg_mg-mg@163.comtoMax",
+			"Comment":"Nancy 的第3个-用户_toMax",
+		},
+		"ExpectedData":
+		{
+			"Name":"Nancy_ConsultantNancy_12345678",
+			"Realname":"咨询人员咨询人员",
+			"Type":"咨询人员",
+			"AssociatedCustomer":"自动化测试",
+			"Title":"经理toMax",
+			"Telephone":"010-12345678toMax",
+			"Email":"mg_mg-mg@163.comtoMax",
+			"Comment":"Nancy 的第3个-用户_"ToMax,
+		}
+	},
+
+	{
+
+		"InputData":
+		{	
+			"OriginalName":"Nancy_ConsultantNancy_12345678",
+			"Name":"Nancy_Consultant001",
+			"Realname":"咨询人员",
+			"Type":"咨询人员",
+			"AssociatedCustomer":"自动化测试",
+			"Title":"",
+			"Telephone":"",
+			"Email":"mg@163.com",
+			"Comment":"",
+		},
+		"ExpectedData":
+		{
+			"Name":"Nancy_Consultant001",
+			"Realname":"咨询人员",
+			"Type":"咨询人员",
+			"AssociatedCustomer":"自动化测试",
+			"Email":"mg_mg-mg@163.com",
+		}
+	},
+	{
+
+		"InputData":
+		{	
+			"OriginalName":"Nancy_Consultant001",
+			"Name":"  Nancy_Consultant002  ",
+			"Realname":"  咨询 人员 ",
+			"Type":"咨询人员",
+			"AssociatedCustomer":"自动化测试",
+			"Title":"  经 理 ",
+			"Telephone":"  010-12345678  ",
+			"Email":"  mg_mg-mg@163.com ",
+			"Comment":"  Nancy 的第5个-用户_  ",
+		},
+		"ExpectedData":
+		{
+			"Name":"Nancy_Consultant002",
+			"Realname":"咨询 人员",
+			"Type":"咨询人员",
+			"AssociatedCustomer":"自动化测试",
+			"Title":"经 理",
+			"Telephone":"010-12345678",
+			"Email":"mg_mg-mg@163.com",
+			"Comment":"Nancy 的第5个-用户_",
+		}
+	},
+]

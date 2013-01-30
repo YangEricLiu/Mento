@@ -1,0 +1,28 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"OriginalPassword":"123456qq",
+			"NewPassword":"123456qq",
+			"ConfirmPassword":"123456qq",
+		},
+
+		"ExpectedData":
+		{	
+			"OriginalPassword":"123456qq",
+			"NewPassword":"123456qq",
+			"ConfirmPassword":"123456qq",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"SpecialChar":"123",
+		},
+
+		"ExpectedData":
+		{	
+			"SpecialChar":"123",
+		}
+	},
+]

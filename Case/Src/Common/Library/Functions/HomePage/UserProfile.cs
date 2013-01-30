@@ -19,7 +19,10 @@ namespace Mento.ScriptCommon.Library.Functions
         
         private static Button MenuButton = JazzButton.UserProfileButton;
         private static Button ViewButton = JazzButton.UserProfileViewMenuButton;
+        private static Button ModifyPassword = JazzButton.UserPasswordModifyMenuButton;
+        private static Button ExitJazzButton = JazzButton.ExitJazzMenuButton;
         public static UserProfileDialog UserProfileDialog = new UserProfileDialog();
+        public static UserPasswordDialog UserPasswordDialog = new UserPasswordDialog();
         
         
         /// <summary>
@@ -47,15 +50,15 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name = "name">name key</param>
         /// <returns>Name value</returns>
-        /*public void ModifyUserPassword()
+        public void ModifyUserPassword()
         {
-
+         ModifyPassword.Click();
         }
 
         public void ExitJazz()
         { 
-        
-        }*/
+        ExitJazzButton.Click();
+        }
     }
     
 }

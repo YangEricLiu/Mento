@@ -13,6 +13,7 @@ namespace Mento.ScriptCommon.TestData.Administration
 
     public class UserInputData : InputTestDataBase
     {
+        public string OriginalName { get; set; }
         public string Name { get; set; }
         public string RealName { get; set; }
         public string Type { get; set; }
@@ -21,9 +22,12 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string Telephone { get; set; }
         public string Email { get; set; }
         public string Comment { get; set; }
+        public string[] SpecialChar { get; set; }
 
-        public UserInputData(string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comment)
+        public UserInputData(string originalname, string[] specialchar, string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comment)
         {
+            this.OriginalName = originalname;
+            this.SpecialChar = SpecialChar;
             this.Name = name;
             this.RealName = realname;
             this.Type = type;
@@ -44,9 +48,13 @@ namespace Mento.ScriptCommon.TestData.Administration
             public string Telephone { get; set; }
             public string Email { get; set; }
             public string Comment { get; set; }
+            public string OriginalName { get; set; }
+            public string[] SpecialChar { get; set; }
 
-            public UserExpectedData(string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comment)
+            public UserExpectedData(string originalname, string[] specialchar, string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comment)
             {
+                this.OriginalName = originalname;
+                this.SpecialChar = specialchar;
                 this.Name = name;
                 this.RealName = realname;
                 this.Type = type;

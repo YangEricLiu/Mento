@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administration\CarbonFactorSettingsData.cs" />
+    <Compile Include="Administration\UserPasswordData.cs" />
     <Compile Include="Administration\TOUPulsePeakTariffSettingsData.cs" />
     <Compile Include="Administration\TOUBasicTariffSettingsData.cs" />
     <Compile Include="Administration\CustomerManagementData.cs" />
@@ -52,8 +53,11 @@
     <Compile Include="Administration\TimeSettingsDayNightData.cs" />
     <Compile Include="Administration\TimeSettingsWortimeData.cs" />
     <Compile Include="Administration\TimeSettingsWordayData.cs" />
+    <Compile Include="Administration\UserAndProfileData.cs" />
     <Compile Include="Administration\UserProfileData.cs" />
-    <Compile Include="Administration\UserSettingsData.cs" />
+    <Compile Include="Administration\UserSettingsData.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Customer\AddKPIData.cs" />
     <Compile Include="Customer\CalendarPropertyData.cs" />
     <Compile Include="Customer\ElectricfixedCostData.cs" />
@@ -89,6 +93,7 @@
       <Name>Mento.Utility</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -65,6 +65,8 @@
       <add key="ButtonUserProfileCancel" value="st-userprofile-profilepanel-cancel" type="ID"/>
       <add key="ButtonUserProfileSave" value="st-userprofile-profilepanel-save" type="ID"/>
       <add key="ButtonUserProfileClose" value="//div[@id='st-userprofile-personalinfo-window_header-targetEl']/div[2]/img" type="XPath"/>
+      <add key="MenuButtonExitJazz" value="//div[id='header-btn-personalinfo']/../div[4] and a/span[text()='退出系统']]" type="XPath"/>
+      <add key="MenuButtonModifyUserPassword" value="//div[id='header-btn-personalinfo']/../div[3] and a/span[text()='修改密码']]" type="XPath"/>   
     </UserProfile>
     <energyview>
       <add key="ButtonEnergyViewSelectHierarchy" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@Common.Label.EmptyHierarchyText']]" type="XPath"/>
@@ -302,6 +304,9 @@
       <add key="TextFieldUserProfileComment" value="//table[@id='st-userprofile-personalinfo-panel-body']//textarea[@id='st-userprofile-comment-field-inputEl']" type="XPath"/>
       <add key="TextFieldUserProfileName" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@id='st-userprofile-personalinfo-name-inputEl']" type="XPath"/>
       <add key="TextFieldUserProfileRealName" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@name='RealName']" type="XPath"/>
+      <add key="TextFieldUserOriginalPassword" value="st-userprofile-resetpassword-originalpassword-inputEl" type="ID"/>
+      <add key="TextFieldUserNewPassword" value="st-userprofile-resetpassword-newpassword-inputEl" type="ID"/>
+      <add key="TextFieldUserConfirmPassword" value="st-userprofile-resetpassword-confirmpassword-inputEl" type="ID"/>    
     </UserProfile>
     <energyview>
       <add key="TextFieldEnergyViewSaveDashboardWidgetName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='小组件名称']]//input[contains(@class,'x-form-field')]" type="XPath"/>

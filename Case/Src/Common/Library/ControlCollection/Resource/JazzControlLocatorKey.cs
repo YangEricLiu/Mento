@@ -298,7 +298,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonUserTypePermissionSave = "ButtonUserTypePermissionSave";
         public static string ButtonUserTypePermissionCancel = "ButtonUserTypePermissionCancel";
         #endregion
-
         #region User Profile
         public static string ButtonUserProfile = "ButtonUserProfile";
         public static string MenuButtonUserProfileView = "MenuButtonUserProfileView";
@@ -306,6 +305,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonUserProfileCancel = "ButtonUserProfileCancel";
         public static string ButtonUserProfileModify = "ButtonUserProfileModify";
         public static string ButtonUserProfileClose = "ButtonUserProfileClose";
+        public static string MenuButtonModifyUserPassword = "MenuButtonModifyUserPassword";
+        public static string MenuButtonExitJazz = "MenuButtonExitJazz";
         #endregion
         #endregion
         #endregion
@@ -438,7 +439,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldUserEmail = "TextFieldUserEmail";
         public static string TextFieldUserComment = "TextFieldUserComment";
         #endregion
-
         #region User Profile
         public static string TextFieldUserProfileName = "TextFieldUserProfileName";
         public static string TextFieldUserProfileRealName = "TextFieldUserProfileRealName";
@@ -446,6 +446,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldUserProfileTelephone = "TextFieldUserProfileTelephone";
         public static string TextFieldUserProfileEmail = "TextFieldUserProfileEmail";
         public static string TextFieldUserProfileComment = "TextFieldUserProfileComment";
+        public static string TextFieldUserOriginalPassword = "TextFieldUserOriginalPassword";
+        public static string TextFieldUserNewPassword = "TextFieldUserNewPassword";
+        public static string TextFieldUserConfirmPassword = "TextFieldUserConfirmPassword";
         #endregion
         #endregion
         #endregion

@@ -294,14 +294,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button UserTypePermissionCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionCancel);
         public static Button UserTypePermissionRefreshButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionRefresh);
         #endregion
-
         #region User Profile
         public static Button UserProfileButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserProfile);
         public static Button UserProfileViewMenuButton = GetControl<Button>(JazzControlLocatorKey.MenuButtonUserProfileView);
         public static Button UserProfileSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserProfileSave);
         public static Button UserProfileCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserProfileCancel);
         public static Button UserProfileModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserProfileModify);
-        public static Button UserProfileCloseButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserProfileClose);
+        public static Button UserPasswordModifyMenuButton = GetControl<Button>(JazzControlLocatorKey.MenuButtonModifyUserPassword);
+        public static Button ExitJazzMenuButton = GetControl<Button>(JazzControlLocatorKey.MenuButtonExitJazz);
         #endregion
         #endregion
     }

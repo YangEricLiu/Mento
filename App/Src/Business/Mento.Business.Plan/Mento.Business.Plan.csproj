@@ -42,19 +42,19 @@
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+      <HintPath>..\..\..\..\Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
     <Reference Include="nunit-console-runner">
-      <HintPath>..\..\..\Lib\nunit-console-runner.dll</HintPath>
+      <HintPath>..\..\..\..\Lib\nunit-console-runner.dll</HintPath>
     </Reference>
     <Reference Include="nunit.core">
-      <HintPath>..\..\..\Lib\nunit.core.dll</HintPath>
+      <HintPath>..\..\..\..\Lib\nunit.core.dll</HintPath>
     </Reference>
     <Reference Include="nunit.core.interfaces">
-      <HintPath>..\..\..\Lib\nunit.core.interfaces.dll</HintPath>
+      <HintPath>..\..\..\..\Lib\nunit.core.interfaces.dll</HintPath>
     </Reference>
     <Reference Include="nunit.util">
-      <HintPath>..\..\..\Lib\nunit.util.dll</HintPath>
+      <HintPath>..\..\..\..\Lib\nunit.util.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

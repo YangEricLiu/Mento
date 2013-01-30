@@ -41,6 +41,16 @@ namespace Mento.ScriptCommon.Library.Functions
             get;
             set;
         }
+
+        protected override Chart Chart
+        {
+            get { return JazzChart.EnergyViewChart; }
+        }
+
+        protected override Grid EnergyDataGrid
+        {
+            get { return JazzGrid.EnergyAnalysisEnergyDataList; }
+        }
         #endregion
 
         internal KpiPanel()

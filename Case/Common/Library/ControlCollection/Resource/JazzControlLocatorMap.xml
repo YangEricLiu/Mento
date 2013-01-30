@@ -632,7 +632,7 @@
     </PlatformSettings>
   </Label>
   <!--Label End-->
-  
+   
   <!--Chart-->
   <Chart>
     <add key="ChartEnergyView" value="div.highcharts-container" type="CssSelector"/>

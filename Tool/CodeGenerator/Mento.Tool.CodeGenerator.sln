@@ -4,6 +4,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.Tool.CodeGenerator", "Mento.Tool.CodeGenerator\Mento.Tool.CodeGenerator.csproj", "{629D54E4-E766-405E-A1A7-2663E8EDA739}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.177.1.111:8080/tfs/kara
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Mento.Tool.CodeGenerator\\Mento.Tool.CodeGenerator.csproj
+		SccProjectName1 = Mento.Tool.CodeGenerator
+		SccLocalPath1 = Mento.Tool.CodeGenerator
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

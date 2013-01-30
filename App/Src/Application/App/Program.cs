@@ -21,7 +21,7 @@ namespace Mento.App
     {
         static void Main(string[] args)
         {
-            new MentoApp().Run(args);
+            new MentoApp().Run(args); 
         }
 
     }

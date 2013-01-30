@@ -9,13 +9,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
     public class JazzTextField : JazzControlCollection
     {
         #region Get Position TextField Method
+
         public static TextField GetOneTextField(string key, int positionIndex)
         {
             return GetControl<TextField>(key, positionIndex);
         }
+
         #endregion
 
         #region Login
+
         public static TextField LoginUserNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldLoginUserName);
         public static TextField LoginPasswordTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldLoginPassword);
         #endregion

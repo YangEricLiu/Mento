@@ -8,7 +8,6 @@ using Mento.TestApi.TestData;
 using Mento.ScriptCommon.TestData.ClientAccess;
 using Mento.Framework.Script;
 using Mento.TestApi.WebUserInterface;
-using OpenQA.Selenium;
 using Mento.ScriptCommon.Library.Functions;
 using Mento.ScriptCommon.TestData.Customer;
 using Mento.ScriptCommon.Library;

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.TestData.ClientAccess;
-using OpenQA.Selenium;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 

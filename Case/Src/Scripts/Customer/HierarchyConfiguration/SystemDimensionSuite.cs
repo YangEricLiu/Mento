@@ -6,7 +6,6 @@ using NUnit.Framework;
 using Mento.TestApi.WebUserInterface;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library.Functions;
-using OpenQA.Selenium;
 using Mento.ScriptCommon.Library;
 using Mento.Framework.Attributes;
 

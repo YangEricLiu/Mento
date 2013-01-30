@@ -21,8 +21,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void Fill(string content)
         {
-            this.RootElement.Clear();
-            this.RootElement.SendKeys(content);
+            if (content != null)
+            {
+                this.RootElement.Clear();
+                this.RootElement.SendKeys(content);
+            }
         }
 
         /// <summary>
@@ -33,7 +36,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void Append(string content)
         {
-            this.RootElement.SendKeys(content);
+            if (content != null)
+            {
+                this.RootElement.SendKeys(content);
+            }
         }
 
         /// <summary>

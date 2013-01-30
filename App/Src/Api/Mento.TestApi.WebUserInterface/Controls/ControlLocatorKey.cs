@@ -41,7 +41,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string ComboBoxTrigger = "ComboBoxTrigger";
         public static string ComboBoxInput = "ComboBoxInput";
         public static string ComboBoxItem = "ComboBoxItem";
-
+        public static string ComboBoxDropdownListItems = "ComboBoxDropdownListItems";
         #endregion
 
         #region Grid locators

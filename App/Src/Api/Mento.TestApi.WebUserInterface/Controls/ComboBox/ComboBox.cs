@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
+using System.Collections;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -23,6 +24,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
             get
             {
                 return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxInput));
+            }
+        }
+
+        protected IWebElement[] CurrentComboBoxDropdownListItems
+        {
+            get
+            {
+                return FindChildren(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxDropdownListItems));
             }
         }
 
@@ -55,6 +64,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
                 FindChild(locator).Click();
             }
+        }
+
+        /// <summary>
+        /// Get the items of current dropdown list
+        /// </summary>
+        /// <returns></returns>
+        public ArrayList GetCurrentDropdownListItems()
+        {
+            ArrayList items = new ArrayList();
+            
+            foreach (IWebElement item in CurrentComboBoxDropdownListItems)
+            { 
+                items.Add(item.Text);
+            }
+
+            return items;
         }
 
         /// <summary>

@@ -140,13 +140,16 @@
     <Folder Include="Functions\PlatformSettings\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GenLocatorKey.exe">
+    <Content Include="Tool\GenLocatorKey.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Tool\GenLocatorKey.exe.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>$(ProjectDir)GenLocatorKey.exe $(ProjectDir)\ControlCollection\Resource\JazzControlLocatorMap.xml $(ProjectDir)\ControlCollection\Resource\JazzControlLocatorKey2.cs</PreBuildEvent>
+    <PreBuildEvent>$(ProjectDir)Tool\GenLocatorKey.exe $(ProjectDir)\ControlCollection\Resource\JazzControlLocatorMap.xml $(ProjectDir)\ControlCollection\Resource\JazzControlLocatorKey2.cs</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

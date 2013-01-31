@@ -5,7 +5,7 @@
       <add key="ButtonLoginSubmit" value = "btnSubmit" type="ID"/>
       <add key="ButtonLoginCustomerOptionConfirm" value = "//div[contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
     </login>
-    <navigator>
+    <navigator> 
       <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
       <add key="ButtonNavigatorEnergyView" value="header-btn-energyservice" type="ID"/>
       <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
@@ -41,7 +41,7 @@
       <add key="ButtonNavigatorHierarchySettingsAreaDimension" value="st-menu-areadimension" type="ID"/>
       <add key="ButtonNavigatorAssociationHierarchy" value="st-menu-hierarchytags" type="ID"/>
       <add key="ButtonNavigatorAssociationSystemDimension" value="st-menu-systemdtags" type="ID"/>
-      <add key="ButtonNavigatorAssociationAreaDimensionButton" value="st-menu-areadtags" type="ID"/>
+      <add key="ButtonNavigatorAssociationAreaDimension" value="st-menu-areadtags" type="ID"/>
     </navigator>
     <!--User Management Begin-->
     <User>

@@ -37,8 +37,8 @@ namespace Mento.Tool.CodeGenerator
             if (inputFile.IsReadOnly)
                 return;
 
-            //if (outputFile.IsReadOnly)
-            //    File.SetAttributes(outputFile.FullName, FileAttributes.Archive);
+            if (outputFile.IsReadOnly)
+                CheckoutForEdit(outputFile.FullName);
 
             StreamWriter writer = new StreamWriter(outputFile.FullName) { AutoFlush = true };
 
@@ -75,6 +75,49 @@ namespace Mento.Tool.CodeGenerator
             writer.WriteLine(CLOSEMARKS);
             writer.Flush();
             writer.Close();
+        }
+
+        private static void CheckoutForEdit(string fileName)
+        {
+            string[] drives = new string[] { "C", "D", "E" };
+            string executable = @"{0}:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\tf.exe";
+            string command = "checkout";
+
+            foreach (var drive in drives)
+            {
+                string exeLocation = String.Format(executable, drive);
+                string exeParameter = String.Format(" {0} {1}",command,fileName);
+                if (File.Exists(exeLocation))
+                {
+                    ExecuteCommand(exeLocation, exeParameter);
+                    break;
+                }
+            }
+        }
+
+        private static void ExecuteCommand(string executable, string command)
+        {
+            try
+            {
+                System.Diagnostics.ProcessStartInfo procStartInfo = new System.Diagnostics.ProcessStartInfo(executable, command);
+
+                procStartInfo.RedirectStandardOutput = true;
+                procStartInfo.UseShellExecute = false;
+
+                procStartInfo.CreateNoWindow = true;
+
+                System.Diagnostics.Process proc = new System.Diagnostics.Process();
+                proc.StartInfo = procStartInfo;
+                proc.Start();
+
+                string result = proc.StandardOutput.ReadToEnd();
+
+                Console.WriteLine(result);
+            }
+            catch (Exception objException)
+            {
+                // Log the exception
+            }
         }
     }
 }

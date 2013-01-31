@@ -28,6 +28,9 @@ namespace Mento.Tool.CodeGenerator
             if (args == null || args.Length <= 0 || String.IsNullOrEmpty(args[0]))
                 return;
 
+            Console.WriteLine(args[0]);
+            Console.WriteLine(args[1]);
+
             FileInfo inputFile = new FileInfo(args[0]);//@"E:\works\kara\mento\Trunk\Case\Common\Library\ControlCollection\Resource\JazzControlLocatorMap.xml";
             FileInfo outputFile = new FileInfo(args[1]);//@"result.txt";
 

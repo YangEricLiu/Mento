@@ -53,8 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MultipleTestDataAttribute.cs" />
-    <Compile Include="MultipleTestDataSourceAttribute.cs" />
+    <Compile Include="Attribute\IllegalInputValidationAttribute.cs" />
+    <Compile Include="Attribute\MultipleTestDataAttribute.cs" />
+    <Compile Include="Attribute\MultipleTestDataSourceAttribute.cs" />
+    <Compile Include="DataSource\IllegalInputDataSource.cs" />
+    <Compile Include="DataSource\MultipleTestDataSource.cs" />
     <Compile Include="TestContextExtend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDataBase.cs" />

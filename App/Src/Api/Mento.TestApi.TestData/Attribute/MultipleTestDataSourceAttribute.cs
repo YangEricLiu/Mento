@@ -32,43 +32,12 @@ namespace Mento.TestApi.TestData
         /// <returns>The test data source type</returns>
         private static Type GetSourceType(Type testDataType, Type testSuiteType, string testCaseID)
         {
-            MultipleTestDataSourceLoader.TestCaseID = testCaseID;
-            MultipleTestDataSourceLoader.TestDataType = testDataType;
-            MultipleTestDataSourceLoader.TestSuiteType = testSuiteType;
+            MultipleTestDataSource.TestCaseID = testCaseID;
+            MultipleTestDataSource.TestDataType = testDataType;
+            MultipleTestDataSource.TestSuiteType = testSuiteType;
 
-            return typeof(MultipleTestDataSourceLoader);
+            return typeof(MultipleTestDataSource);
         }
     }
 
-    /// <summary>
-    /// Act as test data source, loads test data according to the set properties
-    /// </summary>
-    internal static class MultipleTestDataSourceLoader
-    {
-        /// <summary>
-        /// The specified test data type
-        /// </summary>
-        public static Type TestDataType { get; set; }
-
-        /// <summary>
-        /// Type of test suite of the target test scipt
-        /// </summary>
-        public static Type TestSuiteType { get; set; }
-
-        /// <summary>
-        /// Test case id of the target test script
-        /// </summary>
-        public static string TestCaseID { get; set; }
-
-        /// <summary>
-        /// Get test data according to the set properties
-        /// </summary>
-        public static object[] TestData
-        {
-            get
-            {
-                return TestDataRepository.GetTestDataElementArray(TestDataType, TestSuiteType, TestCaseID);
-            }
-        }
-    }
 }

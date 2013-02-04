@@ -87,28 +87,12 @@ namespace Mento.TestApi.TestData
         /// <returns>Object array that contains only the specified element</returns>
         public static object[] GetTestDataElement(Type testDataType, Type testSuiteType, string testCaseID, int dataIndex)
         {
-            //PropertyInfo InputTestDataProperty = testDataType.GetProperty(TESTDATAINPUTPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
-            //PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty(TESTDATAEXPECTEDPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
-
-            //Type InputTestDataType = InputTestDataProperty.PropertyType.GetElementType();
-            //Type ExpectedTestDataType = ExpectedTestDataProperty.PropertyType.GetElementType();
-
-            //var inputTestData = Activator.CreateInstance(InputTestDataType, 1, 2);
-            //var expectedTestData = Activator.CreateInstance(ExpectedTestDataType, 3);
-
             MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod(GETTESTDATAMETHODNAME, BindingFlags.Public | BindingFlags.Static);
 
             MethodInfo genericGetTestDataMethod = getTestDataMethod.MakeGenericMethod(testDataType);
 
-            //PropertyInfo CurrentContextProperty = typeof(TestContext).GetProperty("CurrentContext", BindingFlags.Public | BindingFlags.Static);
-
             object testData = genericGetTestDataMethod.Invoke(null, new object[] { /*testCaseID*/testCaseID, /*testScriptFullName*/String.Format("{0}.{1}", testSuiteType.FullName, testCaseID) });
-
-            //var inputTestData = InputTestDataProperty.GetValue(testData, new object[] { inputDataIndex });
-            //var expectedTestData = ExpectedTestDataProperty.GetValue(testData, new object[] { expectedDataIndex });
-            //var inputTestData = (Array)InputTestDataProperty.GetValue(testData, null);
-            //var expectedTestData = (Array)ExpectedTestDataProperty.GetValue(testData, null);
-
+            
             return new object[] { ((Array)testData).GetValue(dataIndex) };
         }
         
@@ -121,17 +105,11 @@ namespace Mento.TestApi.TestData
         /// <returns>Object array that contains all the loaded test data elements</returns>
         public static object[] GetTestDataElementArray(Type testDataType, Type testSuiteType, string testCaseID)
         {
-            //PropertyInfo InputTestDataProperty = testDataType.GetProperty(TESTDATAINPUTPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
-            //PropertyInfo ExpectedTestDataProperty = testDataType.GetProperty(TESTDATAEXPECTEDPROPERTYNAME, BindingFlags.Public | BindingFlags.Instance);
-
             MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod(GETTESTDATAMETHODNAME, BindingFlags.Public | BindingFlags.Static);
 
             MethodInfo genericGetTestDataMethod = getTestDataMethod.MakeGenericMethod(testDataType);
 
             object testData = genericGetTestDataMethod.Invoke(null, new object[] { /*testCaseID*/testCaseID, /*testScriptFullName*/String.Format("{0}.{1}", testSuiteType.FullName, testCaseID) });
-
-            //var inputTestData = (Array)InputTestDataProperty.GetValue(testData, null);
-            //var expectedTestData = (Array)ExpectedTestDataProperty.GetValue(testData, null);
 
             List<object> testDataList = new List<object>();
 
@@ -144,6 +122,31 @@ namespace Mento.TestApi.TestData
         }
 
         /// <summary>
+        /// Load all test data from a test data file
+        /// </summary>
+        /// <param name="testDataType">The specified test data type</param>
+        /// <param name="dataFileName">The specified test data file</param>
+        /// <returns>Test data array</returns>
+        public static object[] GetTestDataElementArray(Type testDataType, string dataFileName)
+        {
+            MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod("Deserialize", BindingFlags.NonPublic | BindingFlags.Static);
+
+            MethodInfo genericGetTestDataMethod = getTestDataMethod.MakeGenericMethod(testDataType);
+
+            object testData = genericGetTestDataMethod.Invoke(null, new object[] { dataFileName });
+
+            List<object> testDataList = new List<object>();
+
+            for (int i = 0; i < ((Array)testData).Length; i++)
+            {
+                testDataList.Add(new object[] { ((Array)testData).GetValue(i) });
+            }
+
+            return testDataList.ToArray();
+        }
+
+        #region Private methods
+        /// <summary>
         /// Get test data file name with test case id and the test script namespace
         /// </summary>
         /// <param name="testDataID">The specified test case id</param>
@@ -151,15 +154,11 @@ namespace Mento.TestApi.TestData
         /// <returns>The constructed path string of the test data file.</returns>
         private static string GetTestDataFileName(string testDataID, string testScriptFullName)
         {
-            //LogHelper.LogDebug(testScriptFullName);
-            //LogHelper.LogDebug(testDataID);
-
             //replace test script namespace prefix with data folder name
             testScriptFullName = testScriptFullName.Replace(Project.SCRIPTNAMESPACEPREFIX, TestDataRepository.DATAFOLDERNAME);
 
             //add file name
             string[] Namespaces = testScriptFullName.Split(ASCII.DOT);
-            //LogHelper.LogDebug("array:" + Namespaces + ",length" + Namespaces.Length);
             if (Namespaces.Length > 1)
             {
                 StringBuilder pathBuilder = new StringBuilder();
@@ -197,10 +196,7 @@ namespace Mento.TestApi.TestData
             {
                 string content = File.ReadAllText(fileName, Encoding.UTF8);
 
-
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(content);
-
-                //return JsonHelper.String2Object<T>(content);
             }
             else
             {
@@ -208,5 +204,6 @@ namespace Mento.TestApi.TestData
                 throw new Exception(errorMessage);
             }
         }
+        #endregion
     }
 }

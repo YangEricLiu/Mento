@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Example\IllegalTestSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +58,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
+      <Project>{2076AF41-49F1-4C46-AF54-B21ED42B07C3}</Project>
+      <Name>Mento.TestApi.TestData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.WebUserInterface\Mento.TestApi.WebUserInterface.csproj">
+      <Project>{FCBEFBBD-AD47-4C0C-8A56-773B0B328EDD}</Project>
+      <Name>Mento.TestApi.WebUserInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\App\Src\Common\Mento.Framework\Mento.Framework.csproj">
+      <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
+      <Name>Mento.Framework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\App\Src\Common\Mento.Utility\Mento.Utility.csproj">
       <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
       <Name>Mento.Utility</Name>

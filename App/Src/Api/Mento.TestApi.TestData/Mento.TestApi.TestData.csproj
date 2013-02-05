@@ -56,6 +56,7 @@
     <Compile Include="Attribute\IllegalInputValidationAttribute.cs" />
     <Compile Include="Attribute\MultipleTestDataAttribute.cs" />
     <Compile Include="Attribute\MultipleTestDataSourceAttribute.cs" />
+    <Compile Include="CommonInputData.cs" />
     <Compile Include="DataSource\IllegalInputDataSource.cs" />
     <Compile Include="DataSource\MultipleTestDataSource.cs" />
     <Compile Include="TestContextExtend.cs" />

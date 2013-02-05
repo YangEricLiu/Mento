@@ -51,5 +51,26 @@ namespace Mento.Utility
 
             return content;
         }
+
+        public static object MakeDynamicCall(Type callingType, string callMethodName, BindingFlags flags, object callingInstance = null, object[] parameters = null)
+        {
+            MethodInfo method = GetMethodInfo(callingType, callMethodName, flags);
+
+            return method.Invoke(callingInstance, parameters);
+        }
+
+        public static object MakeGenericDynamicCall(Type callingType, string callMethodName, BindingFlags flags, Type genericType, object callingInstance = null, object[] parameters = null)
+        {
+            MethodInfo method = GetMethodInfo(callingType, callMethodName, flags);
+            
+            MethodInfo genericMethod = method.MakeGenericMethod(genericType);
+
+            return genericMethod.Invoke(callingInstance, parameters);
+        }
+
+        public static MethodInfo GetMethodInfo(Type callingType, string callMethodName, BindingFlags flags)
+        {
+            return callingType.GetMethod(callMethodName, flags);
+        }
     }
 }

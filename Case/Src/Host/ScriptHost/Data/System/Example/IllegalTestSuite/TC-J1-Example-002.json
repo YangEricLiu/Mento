@@ -1,0 +1,34 @@
+﻿/*using common.json*/
+
+[
+	{
+		"InputData":
+		{	
+			"MeterCode":"Amy_MeterCode1",
+			"ChannelId":"1",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"CalculationType":"Sum",
+			"Comment":"描述1",
+		},
+		"ExpectedData":
+		{
+			"Name":"Amy_Ptag1_名称",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"MeterCode":"Amy_MeterCode1",
+			"ChannelId":"1",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"CalculationType":"Sum",
+			"Comment":"描述1",
+		},
+		"ExpectedData":
+		{
+			"Name":"",
+		}
+	}
+]

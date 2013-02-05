@@ -232,6 +232,7 @@
     <None Include="Data\Customer\TagManagement\PtagConfigurationSuite\TA-PtagConfiguration-002.json" />
     <None Include="Data\Customer\TagManagement\VtagManagementSuite\TA-Vtag-001.json" />
     <None Include="Data\IllegalInputData.json" />
+    <None Include="Data\System\Example\IllegalTestSuite\TC-J1-Example-002.json" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

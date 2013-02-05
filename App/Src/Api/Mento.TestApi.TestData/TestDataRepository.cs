@@ -74,7 +74,11 @@ namespace Mento.TestApi.TestData
 
             string testDataFileName = GetTestDataFileName(testDataID, testScriptFullName);
 
-            return Deserialize<T>(testDataFileName);
+            T instance = Deserialize<T>(testDataFileName);
+
+            SetCommonData<T>(testDataFileName, instance);
+
+            return instance;
         }
 
         /// <summary>
@@ -87,12 +91,10 @@ namespace Mento.TestApi.TestData
         /// <returns>Object array that contains only the specified element</returns>
         public static object[] GetTestDataElement(Type testDataType, Type testSuiteType, string testCaseID, int dataIndex)
         {
-            MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod(GETTESTDATAMETHODNAME, BindingFlags.Public | BindingFlags.Static);
+            object[] parameters = new object[] { /*testCaseID*/testCaseID, /*testScriptFullName*/String.Format("{0}.{1}", testSuiteType.FullName, testCaseID) };
+                        
+            object testData = DynamicCall(GETTESTDATAMETHODNAME,testDataType,parameters);
 
-            MethodInfo genericGetTestDataMethod = getTestDataMethod.MakeGenericMethod(testDataType);
-
-            object testData = genericGetTestDataMethod.Invoke(null, new object[] { /*testCaseID*/testCaseID, /*testScriptFullName*/String.Format("{0}.{1}", testSuiteType.FullName, testCaseID) });
-            
             return new object[] { ((Array)testData).GetValue(dataIndex) };
         }
         
@@ -105,20 +107,11 @@ namespace Mento.TestApi.TestData
         /// <returns>Object array that contains all the loaded test data elements</returns>
         public static object[] GetTestDataElementArray(Type testDataType, Type testSuiteType, string testCaseID)
         {
-            MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod(GETTESTDATAMETHODNAME, BindingFlags.Public | BindingFlags.Static);
+            object[] parameters = new object[] { /*testCaseID*/testCaseID, /*testScriptFullName*/String.Format("{0}.{1}", testSuiteType.FullName, testCaseID) };
 
-            MethodInfo genericGetTestDataMethod = getTestDataMethod.MakeGenericMethod(testDataType);
+            object testData = DynamicCall(GETTESTDATAMETHODNAME, testDataType, parameters);
 
-            object testData = genericGetTestDataMethod.Invoke(null, new object[] { /*testCaseID*/testCaseID, /*testScriptFullName*/String.Format("{0}.{1}", testSuiteType.FullName, testCaseID) });
-
-            List<object> testDataList = new List<object>();
-
-            for (int i = 0; i < ((Array)testData).Length; i++)
-            {
-                testDataList.Add(new object[] { ((Array)testData).GetValue(i) });
-            }
-
-            return testDataList.ToArray();
+            return Object2Array(testData);
         }
 
         /// <summary>
@@ -129,20 +122,12 @@ namespace Mento.TestApi.TestData
         /// <returns>Test data array</returns>
         public static object[] GetTestDataElementArray(Type testDataType, string dataFileName)
         {
-            MethodInfo getTestDataMethod = typeof(TestDataRepository).GetMethod("Deserialize", BindingFlags.NonPublic | BindingFlags.Static);
+            object[] parameters = new object[] { dataFileName };
+            BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Static;
 
-            MethodInfo genericGetTestDataMethod = getTestDataMethod.MakeGenericMethod(testDataType);
+            object testData = DynamicCall("Deserialize", testDataType, parameters, flags: flags);
 
-            object testData = genericGetTestDataMethod.Invoke(null, new object[] { dataFileName });
-
-            List<object> testDataList = new List<object>();
-
-            for (int i = 0; i < ((Array)testData).Length; i++)
-            {
-                testDataList.Add(new object[] { ((Array)testData).GetValue(i) });
-            }
-
-            return testDataList.ToArray();
+            return Object2Array(testData);
         }
 
         #region Private methods
@@ -203,6 +188,126 @@ namespace Mento.TestApi.TestData
                 var errorMessage = String.Format("test data file was not found at: {0}!", fileName);
                 throw new Exception(errorMessage);
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="methodName"></param>
+        /// <param name="genericType"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        private static object DynamicCall(string methodName, Type genericType, object[] parameters,BindingFlags flags = BindingFlags.Public | BindingFlags.Static)
+        {
+            return ReflectionHelper.MakeGenericDynamicCall(typeof(TestDataRepository), methodName, flags, genericType, parameters: parameters);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="arrayObject"></param>
+        /// <returns></returns>
+        private static object[] Object2Array(object arrayObject)
+        {
+            if (!arrayObject.GetType().IsArray)
+                return null;
+
+            List<object> dataList = new List<object>();
+            Array array = (Array)arrayObject;
+
+            for (int i = 0; i < ((Array)arrayObject).Length; i++)
+            {
+                dataList.Add(new object[] { array.GetValue(i) });
+            }
+
+            return dataList.ToArray();
+        }
+
+        private static void SetCommonData<T>(string testDataFileName,T instance)
+        { 
+            string usingPhrase = GetFirstUsingLine(testDataFileName);
+            string[] testDataPropertyNames = new string[] { "InputData", "ExpectedData" };
+
+            if (String.IsNullOrEmpty(usingPhrase))
+                return;
+            
+            string commonDataFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Data\CommonInputData.json");
+            CommonTestData[] commonTestData = Deserialize<CommonTestData[]>(commonDataFile);
+
+            if (typeof(T).IsArray)
+            {
+                for (int i = 0; i < ((Array)(object)instance).Length; i++)
+                {
+                    if (i < commonTestData.Length)
+                    {
+                        var commonDataItem = commonTestData[i];
+                        var testDataItem = ((Array)(object)instance).GetValue(i);
+
+                        SetTestDataProperty(commonDataItem, testDataItem, testDataPropertyNames);
+                    }
+                }
+            }
+            else
+            {
+                if (commonTestData.Length > 0)
+                {
+                    var commonDataItem = commonTestData[0];
+                    var testDataItem = instance;
+
+                    SetTestDataProperty(commonDataItem, testDataItem, testDataPropertyNames);
+                }
+            }
+        }
+
+        private static void SetTestDataProperty(CommonTestData commonDataItem, object testDataItem, string[] propertyNames)
+        {
+            BindingFlags flags = BindingFlags.Public | BindingFlags.Instance;
+
+            foreach (string propertyName in propertyNames)
+            {
+                var commonDataPropertyValue = commonDataItem.GetType().GetProperty(propertyName).GetValue(commonDataItem, null);
+                if (commonDataPropertyValue != null)
+                {
+                    foreach (var commonProperty in commonDataPropertyValue.GetType().GetProperties(flags))
+                    {
+                        var testDataProperty = testDataItem.GetType().GetProperty(propertyName);
+                        var testDataPropertyValue = testDataProperty.GetValue(testDataItem, null);
+
+                        var testDataPropertyProperty = testDataProperty.PropertyType.GetProperty(commonProperty.Name, flags);
+                        var testDataPropertyProtertyValue = testDataPropertyProperty.GetValue(testDataPropertyValue, null);
+
+                        if (testDataPropertyProperty != null/* && testDataPropertyProtertyValue != null*/)
+                        {
+                            testDataPropertyProperty.SetValue(testDataPropertyValue, commonProperty.GetValue(commonDataPropertyValue, null).ToString(), null);
+                        }
+                    }
+                }
+            }
+        }
+
+        private static string GetFirstUsingLine(string testDataFileName)
+        {
+            string result = String.Empty;
+
+            using (StreamReader reader = new StreamReader(testDataFileName))
+            {
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    if (line.Trim().StartsWith("/*using "))
+                    {
+                        result = line;
+                        break;
+                    }
+
+                    if (line.Trim().Contains("[") || line.Trim().Contains("{"))
+                        break;
+                }
+
+                reader.Close();
+            }
+
+            return result;
         }
         #endregion
     }

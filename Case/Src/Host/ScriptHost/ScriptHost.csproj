@@ -138,6 +138,7 @@
     <Folder Include="Data\Customer\HierarchySettings\SystemDimensionSuite\" />
     <Folder Include="Data\Customer\TagAssociation\HierarchyAssociateTagSuite\" />
     <Folder Include="Data\Customer\TagManagement\FormulaManagement\" />
+    <Folder Include="Data\Customer\TagManagement\KPIBaselineSuite\" />
     <Folder Include="Resource\en\" />
   </ItemGroup>
   <ItemGroup>
@@ -168,14 +169,32 @@
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElectricityComprehensiveCostPropertySuite\TC-J1-SmokeTest-019-001.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddOtherCostPropertySuite\TC-J1-SmokeTest-020-001.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddPeopleAreaPropertySuite\TC-J1-SmokeTest-021.json" />
-    <None Include="Data\Customer\TagManagement\KPIConfigurationSuite\TA-KPIConfigue-001.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Valid.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Valid.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Invalid-redline.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPIbutCancel-Invalid.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPIbutCancel-Invalid.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Invalid-redline.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Invalid-messagebox.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Invalid-messagebox.json" />
+    <None Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddValid.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddInvalid.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddValidbutCancel.json" />
     <None Include="Data\Customer\TagManagement\KPIConfigurationSuite\TA-KPItag-001.json" />
-    <None Include="Data\Customer\TagManagement\KPItagConfiguration\TA-KPItag-001.json" />
-    <None Include="Data\Customer\TagManagement\KPItagConfiguration\TA-KPItagConfigue-001.json" />
+    <None Include="Data\Customer\TagManagement\KPItagConfiguration\TC-J1-SmokeTest-004-001.json" />
     <None Include="Data\Customer\TagManagement\KPITargetSuite\TC-J1-SmokeTest-022.json" />
-    <None Include="Data\Customer\TagManagement\KPIBaselineSuite\TC-J1-SmokeTest-023.json" />
-    <None Include="Data\Customer\TagManagement\ModifyKPITag\TA-KPITag-001.json" />
-    <None Include="Data\Customer\TagManagement\ModifyKPITag\TA-ModifyKPITag-001.json" />
+    <None Include="Data\Customer\TagManagement\KPIConfigurationSuite\TC-J1-SmokeTest-023.json" />
+    <Content Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForDayNightKPI-Invalid-redline.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForDayNightKPI-Valid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForDayNightKPIbutCancel-Invalid.json" />
+    <Content Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForNonDayNightKPI-Invalid-messagebox.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForNonDayNightKPI-Valid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForNonDayNightKPIbutCancel-Invalid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifytoInvalid-001.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifytoInvalid-002.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifytoValid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifybutCancel.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITag\TA-ModifyKPITag-001" />
     <None Include="Data\Customer\TagManagement\PtagConfigurationSuite\TA-PtagConfiguration-002.json" />
     <None Include="Data\Customer\TagManagement\PtagConfigurationSuite\TC-J1-SmokeTest-002-001.json" />
     <None Include="Data\Customer\TagManagement\VtagManagementSuite\TA-Vtag-001.json" />

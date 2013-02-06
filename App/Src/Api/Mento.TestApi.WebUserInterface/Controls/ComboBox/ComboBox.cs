@@ -108,5 +108,23 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxItem), COMBOBOXITEMVARIABLENAME, itemRealValue); 
         }
+        /// <summary>
+        /// Return whether the value in text field is invalid
+        /// </summary>
+        /// <returns>True if invalid</returns>
+        public bool IsComboBoxValueInvalid()
+        {
+            string invalid = SelectInput.GetAttribute("aria-invalid");
+
+            return String.Equals(invalid, "true", StringComparison.OrdinalIgnoreCase);
+        }
+        /// <summary>
+        /// Return the invalid input tooltips info
+        /// </summary>
+        /// <returns>the invalid input tooltips info</returns>
+        public string GetInvalidTips()
+        {
+            return this.SelectInput.GetAttribute("data-errorqtip");
+        }
     }
 }

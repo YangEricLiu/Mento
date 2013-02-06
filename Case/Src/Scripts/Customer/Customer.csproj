@@ -63,10 +63,13 @@
     <Compile Include="TagAssociation\AreaDimensionAssociateTagSuite.cs" />
     <Compile Include="TagAssociation\SystemAssociateTagSuite.cs" />
     <Compile Include="TagDisassociation\SystemDisassociateTagSuite.cs" />
+    <Compile Include="TagManagement\AddKPIFormulaSuite.cs" />
+    <Compile Include="TagManagement\AddKPITagSuite.cs" />
     <Compile Include="TagManagement\CancelModifyFormDayNightKPI.cs" />
     <Compile Include="TagManagement\CancelModifyFormNonDayNightKPI.cs" />
     <Compile Include="TagManagement\CancelModifyKPITag.cs" />
     <Compile Include="TagManagement\DeleteKPITag.cs" />
+    <Compile Include="TagManagement\DeleteKPITagSuite.cs" />
     <Compile Include="TagManagement\KPITargetSuite.cs" />
     <Compile Include="TagManagement\KPIBaselineSuite.cs" />
     <Compile Include="TagManagement\FormulaForDayNightKPISuite.cs" />
@@ -75,7 +78,9 @@
     <Compile Include="TagManagement\KPIConfigurationSuite.cs" />
     <Compile Include="TagManagement\ModifyFormulaDayNightKPI.cs" />
     <Compile Include="TagManagement\ModifyFormulaNonDayNightKPI.cs" />
+    <Compile Include="TagManagement\ModifyKPIFormulaSuite.cs" />
     <Compile Include="TagManagement\ModifyKPITag.cs" />
+    <Compile Include="TagManagement\ModifyKPITagSuite.cs" />
     <Compile Include="TagManagement\PtagConfigurationSuite.cs" />
     <Compile Include="TagAssociation\HierarchyAssociateTagSuite.cs" />
     <Compile Include="TagManagement\VtagManagementSuite.cs" />

@@ -22,5 +22,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             ElementHandler.DragAndDrop(tagRowElement, this.RootElement);
         }
+        /// <summary>
+        /// Return the invalid input tooltips info
+        /// </summary>
+        /// <returns>the invalid input tooltips info</returns>
+        public string GetInvalidTips()
+        {
+            return this.RootElement.GetAttribute("data-errorqtip");
+        }
     }
 }

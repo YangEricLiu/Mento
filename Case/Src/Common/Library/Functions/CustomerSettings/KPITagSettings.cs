@@ -35,10 +35,10 @@ namespace Mento.ScriptCommon.Library.Functions
     
         private static TextField NameTextField = JazzTextField.KPITagSettingsNameTextField;
         private static TextField CodeTextField = JazzTextField.KPITagSettingsCodeTextField;
+        private static TextField CommentTextField = JazzTextField.KPITagSettingsCommentTextField;
         private static ComboBox UomComboBox = JazzComboBox.KPITagSettingsUomComboBox;
         private static ComboBox CalculationTypeComboBox = JazzComboBox.KPITagSettingsCalculationTypeComboBox;
         private static ComboBox CalculationStepComboBox = JazzComboBox.KPITagSettingsCalculationStepComboBox;
-        private static TextField CommentTextField = JazzTextField.KPITagSettingsCommentTextField;
         private Grid TagList = JazzGrid.KPITagSettingsKPITagList;
         private static Grid FormulaPTagList = JazzGrid.KPITagSettingsFormulaEditPTagList;
         private static FormulaField KPIFormulaField = JazzTextField.KPIFormulaField;
@@ -52,7 +52,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void NavigatorToKPITagSetting()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsKPI);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
         }
 
         /// <summary>
@@ -83,13 +83,61 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Select one tag
+        /// Select one tag through Tag name
         /// </summary>
-        /// <param name="vtagName">VTag name</param>
+        /// <param name="vtagName">KPITag name</param>
         /// <returns></returns>
         public void FocusOnKPITag(string kpitagName)
         {
             KPITagList.FocusOnRow(1, kpitagName);
+        }
+        /// <summary>
+        /// Select one tag through Tag code
+        /// </summary>
+        /// <param name="kpitagName"></param>
+        public void FocusOnKPITagCode(string kpitagCode)
+        {
+            KPITagList.FocusOnRow(2, kpitagCode);
+        }
+        /// <summary>
+        /// Invalid code redline
+        /// </summary>
+        /// <param name="kpitagCode"></param>
+        public bool InvalidCode()
+        {
+            return CodeTextField.IsTextFieldValueInvalid();
+        }
+        /// <summary>
+        /// Invalid name redline
+        /// </summary>
+        /// <returns></returns>
+        public bool InvalidName()
+        {
+            return NameTextField.IsTextFieldValueInvalid();
+        }
+        /// <summary>
+        /// Invalid UOM redline
+        /// </summary>
+        /// <returns></returns>
+        public bool InvalidUOM()
+        {
+            return UomComboBox.IsComboBoxValueInvalid();
+        }
+        /// <summary>
+        /// Invalid steps redline
+        /// </summary>
+        /// <returns></returns>
+        public bool InvalidSteps()
+        {
+            return CalculationStepComboBox.IsComboBoxValueInvalid();
+        }
+        /// <summary>
+        /// Invalid Type redline
+        /// </summary>
+        /// <returns></returns>
+        public bool InvalidType()
+        {
+            return CalculationTypeComboBox.IsComboBoxValueInvalid();
         }
         #endregion
 
@@ -102,7 +150,14 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return JazzMessageBox.MessageBox.GetMessage();
         }
-
+        /// <summary>
+        /// Confirm messagebox
+        /// </summary>
+        /// <returns></returns>
+        public void ConfirmMagBox()
+        {
+            JazzMessageBox.MessageBox.Confirm();
+        }
         /// <summary>
         /// Confirm to delete
         /// </summary>
@@ -110,6 +165,14 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ConfirmDeleteMagBox()
         {
             JazzMessageBox.MessageBox.Confirm();
+        }
+        /// <summary>
+        /// cancel to delete
+        /// </summary>
+        /// <returns></returns>
+        public void CancelDeleteMagBox()
+        {
+            JazzMessageBox.MessageBox.Cancel();
         }
         /// <summary>
         /// Click modify kpitag  button
@@ -282,6 +345,73 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return CommentTextField.GetValue();
         }
+        /// <summary>
+        /// Get the KPITag name invalid message value
+        /// </summary>
+        /// <returns></returns>
+        public string GetNameErrorMessageValue()
+        {
+            return NameTextField.GetInvalidTips();
+        }
+        /// <summary>
+        /// Get the KPITag code invalid message value
+        /// </summary>
+        /// <returns></returns>
+        public string GetCodeErrorMessageValue()
+        {
+            return CodeTextField.GetInvalidTips();
+        }
+        /// <summary>
+        /// Get the KPITag code invalid message value
+        /// </summary>
+        /// <returns></returns>
+        public string GetCommentErrorMessageValue()
+        {
+            return CommentTextField.GetInvalidTips();
+        }
+        
+        /// <summary>
+        /// Get the KPITag Uom invalid message value
+        /// </summary>
+        /// <returns></returns>
+        public string GetUomErrorMessageValue()
+        {
+            return UomComboBox.GetInvalidTips();
+        }
+        /// <summary>
+        /// Get the KPITag step invalid message value
+        /// </summary>
+        /// <returns></returns>
+        public string GetStepErrorMessageValue()
+        {
+            return CalculationStepComboBox.GetInvalidTips();
+        }
+        /// <summary>
+        /// Get the KPITag type invalid message value
+        /// </summary>
+        /// <returns></returns>
+        public string GetTypeErrorMessageValue()
+        {
+            return CalculationTypeComboBox.GetInvalidTips();
+        }
+        /// <summary>
+        /// judge whether KPItag has been deleted
+        /// </summary>
+        /// <param name="tagName"></param>
+        /// <returns></returns>
+        public Boolean KPITagIsNotDeleted(string tagName)
+        {
+            return TagList.IsRowExist(3, tagName);
+        }
+        /// <summary>
+        /// judge whether KPItag has been Created
+        /// </summary>
+        /// <param name="tagName"></param>
+        /// <returns></returns>
+        public Boolean KPITagIsExist(string tagCode)
+        {
+            return KPITagList.IsRowExist(2, tagCode);
+        }
         #endregion
 
         #region Formula Operations
@@ -363,7 +493,14 @@ namespace Mento.ScriptCommon.Library.Functions
             return KPIFormulaField.GetValue();
 
         }
-
+        /// <summary>
+        /// Get the KPITag formula invalid message value
+        /// </summary>
+        /// <returns></returns>
+        public string GetFormulaErrorMessageValue()
+        {
+            return KPIFormulaField.GetInvalidTips();
+        }
         /// <summary>
         /// judge wheather the KPI is a DayNight KPI
         /// </summary>
@@ -372,15 +509,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return CheckBoxFieldDayNightKPITag.IsChecked();
         }
-        /// <summary>
-        /// judge KPItag is deleted
-        /// </summary>
-        /// <param name="tagName"></param>
-        /// <returns></returns>
-        public Boolean KPITagIsNotDeleted(string tagName)
-        {
-            return TagList.IsRowExist(3, tagName);
-        }
+     
         #endregion
     }
 

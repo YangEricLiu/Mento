@@ -81,8 +81,8 @@ namespace Mento.ScriptCommon.Library.Functions
             if (IsAlreadyLogin())
                 return;
 
-            string defaultUserName = "AutoCustomer";
-            string defaultPassword = "P@ssw0rd";
+            string defaultUserName = "yan5";
+            string defaultPassword = "yanyanyan5";
 
             var loginData = new LoginInputData() { UserName = defaultUserName, Password = defaultPassword };
 

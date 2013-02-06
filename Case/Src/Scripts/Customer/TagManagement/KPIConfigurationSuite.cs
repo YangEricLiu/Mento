@@ -54,9 +54,7 @@ namespace Mento.Script.Customer.TagManagement
 
         public void AddKPItagResultView(AddKPIData testdata)
         {
-
-            string AddedKPItagName = "AliceKPItag";
-            KPITagSettings.FocusOnKPITag(AddedKPItagName);
+            KPITagSettings.FocusOnKPITag(testdata.InputData.Name);
             Assert.AreEqual(testdata.InputData.Name, KPITagSettings.GetKPITagNameValue());
             Assert.AreEqual(testdata.InputData.Code, KPITagSettings.GetKPITagCodeValue());
             Assert.AreEqual(testdata.InputData.Uom, KPITagSettings.GetKPITagUOMValue());

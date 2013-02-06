@@ -1,0 +1,38 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Name":"KPI1",
+			"Formula":"{ptag.P1}+{ptag.P2}",
+		}
+	},
+		
+	{
+		"InputData":
+		{
+			"Name":"KPI1",
+			"Formula":"2*{ptag.P1}",
+		}
+	},
+	{
+		"InputData":
+		{
+			"Name":"KPI1",
+			"Formula":"0*{ptag.P1}",
+		}
+	},
+	{
+		"InputData":
+		{
+			"Name":"KPI1",
+			"Formula":"-3.05*{vtag.V1}/{ptag.P1}",
+		}
+	},
+	{
+		"InputData":
+		{
+			"Name":"KPI1",
+			"Formula":"{ptag.P1}",
+		}
+	},
+]

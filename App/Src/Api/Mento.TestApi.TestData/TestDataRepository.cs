@@ -274,9 +274,9 @@ namespace Mento.TestApi.TestData
                         var testDataPropertyValue = testDataProperty.GetValue(testDataItem, null);
 
                         var testDataPropertyProperty = testDataProperty.PropertyType.GetProperty(commonProperty.Name, flags);
-                        var testDataPropertyProtertyValue = testDataPropertyProperty.GetValue(testDataPropertyValue, null);
+                        //var testDataPropertyProtertyValue = testDataPropertyProperty.GetValue(testDataPropertyValue, null);
 
-                        if (testDataPropertyProperty != null/* && testDataPropertyProtertyValue != null*/)
+                        if (testDataPropertyProperty != null)
                         {
                             testDataPropertyProperty.SetValue(testDataPropertyValue, commonProperty.GetValue(commonDataPropertyValue, null).ToString(), null);
                         }

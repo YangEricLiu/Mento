@@ -73,9 +73,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
             TimeManager.LongPause();
             KPITagSettings.FocusOnKPITag(tagname);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             KPITagSettings.ClickDeleteKPITagButton();
             TimeManager.LongPause();

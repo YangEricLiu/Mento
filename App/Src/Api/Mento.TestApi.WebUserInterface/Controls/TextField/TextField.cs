@@ -59,7 +59,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool IsTextFieldValueInvalid()
         {
             string invalid = this.RootElement.GetAttribute("aria-invalid");
-            Console.Out.WriteLine(invalid);
 
             return String.Equals(invalid, "true", StringComparison.OrdinalIgnoreCase);
         }

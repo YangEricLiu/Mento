@@ -2,22 +2,187 @@
 	{
 		"InputData":
 		{
-			"Name":"1",
-			"Code":"2"
+			"HierarchyNodePath":["自动化测试"],
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"该输入项为必输项",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"该输入项为必输项",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"",
+			"FeedbackComments":"",
+			"Type": "该输入项为必输项"
 		}
 	},
 	{
 		"InputData":
 		{
-			"Name":"1",
-			"Code":"2"
+			"HierarchyNodePath":["自动化测试", "AutoOrg001"],
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"@",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"中文",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"$%^",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"名称只能由汉字，半角英文字母, 数字, 下划线和空格组成",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"编码只能由半角英文字母，数字和下划线组成",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"备注只能由汉字，半角英文字母, 数字,下划线和空格组成",
+			"FeedbackComments":"",
 		}
 	},
 	{
 		"InputData":
 		{
-			"Name":"1",
-			"Code":"2"
+			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"&*(",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"^&*",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"$%^",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"名称只能由汉字，半角英文字母, 数字, 下划线和空格组成",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"编码只能由半角英文字母，数字和下划线组成",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"备注只能由汉字，半角英文字母, 数字,下划线和空格组成",
+			"FeedbackComments":"",
+		}
+	},
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","AutoOrg001","AutoSite001"],
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"中文@",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"中文^&*",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"$%^中文",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"名称只能由汉字，半角英文字母, 数字, 下划线和空格组成",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"编码只能由半角英文字母，数字和下划线组成",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"备注只能由汉字，半角英文字母, 数字,下划线和空格组成",
+			"FeedbackComments":"",
+		}
+	},
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"chars@",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"chars中文",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"chars$%^",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"名称只能由汉字，半角英文字母, 数字, 下划线和空格组成",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"编码只能由半角英文字母，数字和下划线组成",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"备注只能由汉字，半角英文字母, 数字,下划线和空格组成",
+			"FeedbackComments":"",
 		}
 	}
 ]

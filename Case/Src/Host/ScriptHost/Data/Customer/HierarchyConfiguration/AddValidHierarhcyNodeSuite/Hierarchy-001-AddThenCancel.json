@@ -1,0 +1,35 @@
+﻿/*using common.json*/
+
+[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"Type":"",
+		},
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"Type":"",
+		},
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"Type":"Site",
+		},
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"CommonName":"systemdimension",
+			"Code":"hahabutong",
+			"Type":"Site",
+			"Comments":"djsdj",
+		},
+	}
+]

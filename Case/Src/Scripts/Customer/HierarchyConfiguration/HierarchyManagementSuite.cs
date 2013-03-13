@@ -14,6 +14,7 @@ using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.ScriptCommon.TestData.Customer;
 using Mento.TestApi.TestData;
+using Mento.TestApi.TestData.Attribute;
 
 
 namespace Mento.Script.Customer.HierarchyConfiguration
@@ -50,9 +51,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Type("BVT")]
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(HierarchyManagementSuite), "TC-J1-SmokeTest-001-001")]
         public void AddOrgnizationAndSiteNodeTest(HierarchyData input)
-        { 
+        {
             //Add organization and site node to "自动化测试"
-            HierarchySettings.SelectHierarchyNode(input.InputData.HierarchyNodePath[0]);
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickCreateChildHierarchyButton();
             HierarchySettings.FillInHierarchyNode(input.InputData);
             TimeManager.MediumPause();
@@ -68,8 +69,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ConfirmCreateOKMagBox();
 
             //Verify nodes are added as children
-            Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.Name, input.InputData.HierarchyNodePath[0]));
-            HierarchySettings.SelectHierarchyNode(input.InputData.Name);
+            Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.CommonName, input.InputData.HierarchyNodePath[0]));
+            HierarchySettings.SelectHierarchyNode(input.InputData.CommonName);
             Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.InputData.Type), HierarchySettings.GetTypeValue());
         }
 
@@ -85,8 +86,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         public void AddBuildingNodeTest(HierarchyData input)
         {
             //Add building node to "自动化测试"/"AddCalendarProperty"
-            HierarchySettings.ExpandHierarchyNodePath(input.InputData.HierarchyNodePath);
-            HierarchySettings.SelectHierarchyNode(input.InputData.HierarchyNodePath[1]);
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickCreateChildHierarchyButton();
             HierarchySettings.FillInHierarchyNode(input.InputData);
             TimeManager.MediumPause();
@@ -103,8 +103,36 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ConfirmCreateOKMagBox();
 
             //Verify nodes are added as children
-            Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.Name, input.InputData.HierarchyNodePath[1]));
-            HierarchySettings.SelectHierarchyNode(input.InputData.Name);
+            Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.CommonName, input.InputData.HierarchyNodePath[1]));
+            HierarchySettings.SelectHierarchyNode(input.InputData.CommonName);
+            Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.InputData.Type), HierarchySettings.GetTypeValue());
+        }
+
+        [Test]
+        [CaseID("TC-J1-SmokeTest-001-003")]
+        [IllegalInputValidation(typeof(HierarchyData[]))]
+        public void AddBuildingNodeTest2(HierarchyData input)
+        {
+            //Add building node to "自动化测试"/"AddCalendarProperty"
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            HierarchySettings.ClickCreateChildHierarchyButton();
+            HierarchySettings.FillInHierarchyNode(input.InputData);
+            TimeManager.MediumPause();
+
+            HierarchySettings.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            //Verify that the "添加成功" message box popup, other is failed
+            string msgText = HierarchySettings.GetMessageText();
+            Assert.IsTrue(msgText.Contains("添加成功"));
+            TimeManager.ShortPause();
+
+            //confirm message box
+            HierarchySettings.ConfirmCreateOKMagBox();
+
+            //Verify nodes are added as children
+            Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.CommonName, input.InputData.HierarchyNodePath[1]));
+            HierarchySettings.SelectHierarchyNode(input.InputData.CommonName);
             Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.InputData.Type), HierarchySettings.GetTypeValue());
         }
     }

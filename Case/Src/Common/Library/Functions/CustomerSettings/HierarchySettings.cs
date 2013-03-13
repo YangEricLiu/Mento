@@ -20,6 +20,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
+        #region Controls
         private static HierarchyTree HierarchyTree = JazzTreeView.HierarchySettingsHierarchyTree;
 
         private static Button CreateChildHierarchyButton = JazzButton.HierarchySettingsCreateChildHierarchyButton;
@@ -33,7 +34,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField CodeTextField = JazzTextField.HierarchySettingsCodeTextField;
         private static ComboBox HierarchyTypeComboBox = JazzComboBox.HierarchySettingsHierarchyTypeComboBox;
         private static TextField CommentTextField = JazzTextField.HierarchySettingsCommentTextField;
+        #endregion
 
+        #region common action
         /// <summary>
         /// Click one hierarchy node then click "add hierarchy" button
         /// </summary>
@@ -51,6 +54,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectHierarchyNode(string treeNodeName)
         {
             HierarchyTree.FocusOnNode(treeNodeName);
+        }
+
+        /// <summary>
+        /// Click one hierarchy node
+        /// </summary>
+        /// <param name="treeNodePath">Hierarchy node name</param>
+        /// <returns></returns>
+        public void SelectHierarchyNodePath(string[] treeNodePath)
+        {
+            HierarchyTree.SelectNode(treeNodePath);
         }
 
         /// <summary>
@@ -85,6 +98,66 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// After click save button, waiting for add successful message box pop up
+        /// </summary>
+        /// <param name="timeout">Waiting time</param>
+        /// <returns></returns>
+        public void WaitForCreateOKDisplay(int timeout)
+        {
+            JazzMessageBox.MessageBox.WaitMeAppear();
+        }
+
+        /// <summary>
+        /// After click save button, waiting for add successful message box pop up
+        /// </summary>
+        /// <returns></returns>
+        public string GetMessageText()
+        {
+            return JazzMessageBox.MessageBox.GetMessage();
+        }
+
+        /// <summary>
+        /// Confirm the add successful popup message box
+        /// </summary>
+        /// <returns></returns>
+        public void ConfirmCreateOKMagBox()
+        {
+            JazzMessageBox.MessageBox.OK();
+        }
+
+        /// <summary>
+        /// Collapse the hierarchy  node
+        /// </summary>
+        /// <param name = "treeNodeName">Hierarchy node name which will be collapsed</param>
+        /// <returns></returns>
+        public void CollapseNode(string treeNodeName)
+        {
+            HierarchyTree.CollapseNode(treeNodeName);
+        }
+
+        /// <summary>
+        /// Expand the hierarchy  node
+        /// </summary>
+        /// <param name = "treeNodeName">Hierarchy node name which will be expanded</param>
+        /// <returns></returns>
+        public void ExpandNode(string treeNodeName)
+        {
+            HierarchyTree.ExpandNode(treeNodeName);
+        }
+
+        /// <summary>
+        /// Expand the hierarchy node path
+        /// </summary>
+        /// <param name = "nodePath">Hierarchy nodes will be expanded</param>
+        /// <returns></returns>
+        public void ExpandHierarchyNodePath(string[] nodePath)
+        {
+            HierarchyTree.ExpandNodePath(nodePath);
+        }
+        #endregion
+
+        #region item operation
+        /// <summary>
         /// Input name, code type and comments of the new hierarchy node 
         /// </summary>
         /// <param name="treeNodeName">Parent hierarchy node name</param>
@@ -92,10 +165,10 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInHierarchyNode(HierarchyInputData input)
         {
-            NameTextField.Fill(input.Name);
+            NameTextField.Fill(input.CommonName);
             CodeTextField.Fill(input.Code);
             HierarchyTypeComboBox.SelectItem(input.Type);
-            CommentTextField.Fill(input.Comment);
+            CommentTextField.Fill(input.Comments);
         }
 
         /// <summary>
@@ -137,35 +210,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             CommentTextField.Fill(comment);
         }
+        #endregion
 
-        /// <summary>
-        /// After click save button, waiting for add successful message box pop up
-        /// </summary>
-        /// <param name="timeout">Waiting time</param>
-        /// <returns></returns>
-        public void WaitForCreateOKDisplay(int timeout)
-        {
-            JazzMessageBox.MessageBox.WaitMeAppear();
-        }
-
-        /// <summary>
-        /// After click save button, waiting for add successful message box pop up
-        /// </summary>
-        /// <returns></returns>
-        public string GetMessageText()
-        {
-            return JazzMessageBox.MessageBox.GetMessage();
-        }
-
-        /// <summary>
-        /// Confirm the add successful popup message box
-        /// </summary>
-        /// <returns></returns>
-        public void ConfirmCreateOKMagBox()
-        {
-            JazzMessageBox.MessageBox.OK();
-        }
-
+        #region verification
         /// <summary>
         /// Judge whether the nodes are Child-Parent
         /// </summary>
@@ -188,35 +235,104 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Collapse the hierarchy  node
+        /// Judge whether the name textfield is invalid
         /// </summary>
-        /// <param name = "treeNodeName">Hierarchy node name which will be collapsed</param>
-        /// <returns></returns>
-        public void CollapseNode(string treeNodeName)
+        /// <returns>True if the name is invalid, false if not</returns>
+        public Boolean IsNameInvalid()
         {
-            HierarchyTree.CollapseNode(treeNodeName);
+            return NameTextField.IsTextFieldValueInvalid();
         }
 
         /// <summary>
-        /// Expand the hierarchy  node
+        /// Judge whether invalid message of name field is correct
         /// </summary>
-        /// <param name = "treeNodeName">Hierarchy node name which will be expanded</param>
-        /// <returns></returns>
-        public void ExpandNode(string treeNodeName)
+        /// <param name="output">HierarchyExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsNameInvalidMsgCorrect(HierarchyExpectedData output )
         {
-            HierarchyTree.ExpandNode(treeNodeName);
+            return NameTextField.GetInvalidTips().Contains(output.CommonName);
         }
 
         /// <summary>
-        /// Expand the hierarchy node path
+        /// Judge whether the code textfield is invalid
         /// </summary>
-        /// <param name = "nodePath">Hierarchy nodes will be expanded</param>
-        /// <returns></returns>
-        public void ExpandHierarchyNodePath(string[] nodePath)
+        /// <returns>True if the code is invalid, false if not</returns>
+        public Boolean IsCodeInvalid()
         {
-            HierarchyTree.ExpandNodePath(nodePath);
+            return CodeTextField.IsTextFieldValueInvalid();
         }
 
+        /// <summary>
+        /// Judge whether invalid message of code field is correct
+        /// </summary>
+        /// <param name="output">HierarchyExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsCodeInvalidMsgCorrect(HierarchyExpectedData output)
+        {
+            return CodeTextField.GetInvalidTips().Contains(output.Code);
+        }
+
+        /// <summary>
+        /// Judge whether the name textfield is invalid
+        /// </summary>
+        /// <returns>True if the node is invalid, false if not</returns>
+        public Boolean IsTypeInvalid()
+        {
+            return HierarchyTypeComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">HierarchyExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsTypeInvalidMsgCorrect(HierarchyExpectedData output)
+        {
+            if (String.IsNullOrEmpty(output.Type))
+            {
+                return true;
+            }
+            else
+            {
+                return HierarchyTypeComboBox.GetInvalidTips().Contains(output.Type);
+            }
+        }
+
+        /// <summary>
+        /// Judge whether the Comments textfield is invalid
+        /// </summary>
+        /// <returns>True if the Comments is invalid, false if not</returns>
+        public Boolean IsCommentsInvalid(HierarchyExpectedData output)
+        {
+            if (String.IsNullOrEmpty(output.Comments))
+            {
+                return true;
+            }
+            else
+            {
+                return CommentTextField.IsTextFieldValueInvalid();
+            }
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Comments field is correct
+        /// </summary>
+        /// <param name="output">HierarchyExpectedData</param>
+        /// <returns>whether the invalid message is true</returns>
+        public Boolean IsCommentsInvalidMsgCorrect(HierarchyExpectedData output)
+        {
+            if (String.IsNullOrEmpty(output.Comments))
+            {
+                return true;
+            }
+            else
+            {
+                return CommentTextField.GetInvalidTips().Contains(output.Comments);
+            }
+        }
+        #endregion
+
+        #region Get value
         /// <summary>
         /// Get the hierarchy type expected value, for language sencitive
         /// </summary>
@@ -230,7 +346,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Get the hierarchy code expected value
         /// </summary>
-        /// <param name = "itemKey">Hierarchy name key</param>
         /// <returns>Name value</returns>
         public string GetNameValue()
         {
@@ -240,7 +355,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Get the hierarchy code expected value
         /// </summary>
-        /// <param name = "itemKey">Hierarchy code key</param>
         /// <returns>Code value</returns>
         public string GetCodeValue()
         {
@@ -250,7 +364,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Get the hierarchy code expected value
         /// </summary>
-        /// <param name = "itemKey">Hierarchy code key</param>
         /// <returns>Code value</returns>
         public string GetTypeValue()
         {
@@ -260,11 +373,11 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Get the hierarchy comment expected value
         /// </summary>
-        /// <param name = "itemKey">Hierarchy comment key</param>
         /// <returns>Comment value</returns>
         public string GetCommentValue()
         {
             return CommentTextField.GetValue();
         }
+        #endregion
     }
 }

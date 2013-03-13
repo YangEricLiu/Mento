@@ -2,17 +2,58 @@
 	{
 		"InputData":
 		{
-			"Name":"a",
-			"Code":"b",
-			"Comment":"c"
+			"AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"onlychars",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"CAPITALCHARS",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"CAPITALCHARS",
+			"FeedbackComments":""
 		}
 	},
 	{
 		"InputData":
 		{
-			"Name":"d",
-			"Code":"e",
-			"Comment":"f"
+			"AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"只有中文",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"onlychars",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"只有中文",
+			"FeedbackComments":""
 		}
-	}
+	},
+	{
+		"InputData":
+		{
+			"AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"中文CAPITALchars 1234_F",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"chars1234_F",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"中文CAPITALchars 1234_F",
+			"FeedbackComments":""
+		}
+	},
 ]

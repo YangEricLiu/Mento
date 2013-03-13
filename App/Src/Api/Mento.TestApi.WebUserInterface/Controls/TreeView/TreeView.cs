@@ -22,7 +22,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public void SelectNode(string[] nodePath)
         {
             List<string> parentNodes = nodePath.ToList();
-            parentNodes.Remove(nodePath.Last());
+            //parentNodes.Remove(nodePath.Last());
 
             ExpandNodePath(parentNodes.ToArray());
             ClickNode(nodePath.Last());
@@ -68,12 +68,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 Locator nextNodeLocator = (i < nodesText.Length - 1) ? GetTreeNodeLocator(nodesText[i + 1]) : null;
 
                 //click item
-                ExpandNode(nodesText[i]);
+                //ExpandNode(nodesText[i]);
 
                 //wait the next item appear
                 if (nextNodeLocator != null)
+                {
+                    ExpandNode(nodesText[i]);
                     ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear, container: this.RootElement);
-
+                    TimeManager.Pause(500);
+                }
                 TimeManager.Pause(500);
             }
         }

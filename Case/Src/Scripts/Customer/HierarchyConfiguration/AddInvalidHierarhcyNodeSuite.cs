@@ -40,6 +40,26 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [CaseID("Hierarchy-001-AddThenCancel")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "Hierarchy-001-AddThenCancel")]
+        public void AddThenCancel(HierarchyData input)
+        {
+            //Add organization and site node to "自动化测试"
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            HierarchySettings.ClickCreateChildHierarchyButton();
+            HierarchySettings.FillInHierarchyNode(input.InputData);
+
+            //Click "Cancel" button
+            TimeManager.MediumPause();
+            HierarchySettings.ClickCancelButton();
+            TimeManager.ShortPause();
+
+            //Verify nodes are not added as children
+            Assert.IsFalse(HierarchySettings.IsNodesChildParent(input.InputData.CommonName, input.InputData.HierarchyNodePath.Last()));
+        }
+
+        [Test]
         [CaseID("Hierarchy-001-AddInvalidInput")]
         [Type("BFT")]
         [IllegalInputValidation(typeof(HierarchyData[]))]

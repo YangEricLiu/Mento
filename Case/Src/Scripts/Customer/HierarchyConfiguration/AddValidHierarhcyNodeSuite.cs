@@ -40,23 +40,36 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
-        [CaseID("Hierarchy-001-AddThenCancel")]
+        [CaseID("Hierarchy-001-AddValidNode")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "Hierarchy-001-AddThenCancel")]
-        public void AddHierarchyCancel(HierarchyData input)
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "Hierarchy-001-AddValidNode")]
+        public void AddValidNode(HierarchyData input)
         {
             //Add organization and site node to "自动化测试"
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickCreateChildHierarchyButton();
             HierarchySettings.FillInHierarchyNode(input.InputData);
 
-            //Click "Cancel" button
+            //Click "Save" button
             TimeManager.MediumPause();
-            HierarchySettings.ClickCancelButton();
+            HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
-            //Verify nodes are not added as children
-            Assert.IsFalse(HierarchySettings.IsNodesChildParent(input.InputData.CommonName, input.InputData.HierarchyNodePath[0]));
+            //Verify that the "添加成功" message box popup, other is failed
+            string msgText = HierarchySettings.GetMessageText();
+            Assert.IsTrue(msgText.Contains("添加成功"));
+            TimeManager.ShortPause();
+
+            //confirm message box
+            HierarchySettings.ConfirmCreateOKMagBox();
+
+            //Verify nodes are added as children
+            Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.ExpectedData.CommonName, input.InputData.HierarchyNodePath.Last()));
+            HierarchySettings.SelectHierarchyNode(input.ExpectedData.CommonName);
+            Assert.AreEqual(input.ExpectedData.CommonName, HierarchySettings.GetNameValue());
+            Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetCodeValue());
+            Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.ExpectedData.Type), HierarchySettings.GetTypeValue());
+            Assert.AreEqual(input.ExpectedData.Comments, HierarchySettings.GetCommentValue());
         }
     }
 }

@@ -131,7 +131,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\" />
     <Folder Include="Data\Customer\HierarchyConfiguration\AreaDimensionSuite\" />
     <Folder Include="Data\Customer\HierarchyConfiguration\SystemDimensionSuite\" />
     <Folder Include="Data\Customer\HierarchySettings\AreaDimensionSuite\" />
@@ -165,7 +164,8 @@
     <Content Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\TC-J1-SmokeTest-001-002.json" />
     <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-4.json" />
     <None Include="Data\CommonInputData.json" />
-    <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\Hierarchy-001-AddThenCancel.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\Hierarchy-001-AddValidNode.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\Hierarchy-001-AddThenCancel.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-SmokeTest-017.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElectricfixedCostPropertySuite\TC-J1-SmokeTest-018-001.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElectricityComprehensiveCostPropertySuite\TC-J1-SmokeTest-019-001.json" />

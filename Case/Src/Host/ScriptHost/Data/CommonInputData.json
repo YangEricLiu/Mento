@@ -16,6 +16,23 @@
 			"DataValue":"",
 			"Comments":"CAPITALCHARS",
 			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"onlychars",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"CAPITALCHARS",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"CAPITALCHARS",
+			"FeedbackComments":"",
 		}
 	},
 	{
@@ -35,6 +52,23 @@
 			"DataValue":"",
 			"Comments":"只有中文",
 			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"只有中文",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"onlychars",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"只有中文",
+			"FeedbackComments":"",
 		}
 	},
 	{
@@ -54,6 +88,95 @@
 			"DataValue":"",
 			"Comments":"中文CAPITALchars 1234_F",
 			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+			"AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"中文CAPITALchars 1234_F",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"chars1234_F",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"中文CAPITALchars 1234_F",
+			"FeedbackComments":""
 		}
 	},
+	{
+		"InputData":
+		{
+			"AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"chars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+			"AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"chars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"FeedbackComments":""
+		}
+	},
+	{
+		"InputData":
+		{
+			"AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F000",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"FGars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F000",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F000",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+			"AccountID":"",
+			"Password":"",
+			"PersonName":"",
+			"CustomerName":"",
+			"CommonName":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"Address":"",
+			"Email":"",
+			"PhoneNumber":"",
+			"Code":"FGars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"FeedbackComments":""
+		}
+	}
 ]

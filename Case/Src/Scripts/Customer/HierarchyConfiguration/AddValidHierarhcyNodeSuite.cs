@@ -101,6 +101,47 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Add-101-3")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-3")]
+        public void AddFiveOrgnization(HierarchyData input)
+        {
+            int hierarchyLength = input.InputData.HierarchyNodePath.Length;
+
+            for (int i = 0; i < (hierarchyLength - 1); i++)
+            {
+                HierarchySettings.SelectHierarchyNode(input.InputData.HierarchyNodePath[i]);
+                HierarchySettings.ClickCreateChildHierarchyButton();
+                HierarchySettings.FillInName(input.InputData.HierarchyNodePath[i + 1]);
+                HierarchySettings.FillInCode(input.InputData.HierarchyNodePath[i + 1]);
+                HierarchySettings.FillInType(input.InputData.Type);
+
+                //Click "Save" button
+                TimeManager.MediumPause();
+                HierarchySettings.ClickSaveButton();
+                TimeManager.ShortPause();
+
+                //Verify that the "添加成功" message box popup, other is failed
+                string msgText = HierarchySettings.GetMessageText();
+                Assert.IsTrue(msgText.Contains("添加成功"));
+                TimeManager.ShortPause();
+
+                //confirm message box
+                HierarchySettings.ConfirmCreateOKMagBox();
+                TimeManager.LongPause();
+            }
+
+            //Click the level 5 orgnization
+            HierarchySettings.SelectHierarchyNode(input.InputData.HierarchyNodePath.Last());
+            HierarchySettings.ClickCreateChildHierarchyButton();
+
+            //Verify the type list not contain "org" and "building", only "site"
+            Assert.IsFalse(HierarchySettings.IsTypeContainsOrgnization());
+            Assert.IsTrue(HierarchySettings.IsTypeContainsSite());
+            Assert.IsFalse(HierarchySettings.IsTypeContainsBuilding());
+        }
+
+        [Test]
         [CaseID("TC-J1-FVT-Hierarchy-Add-101-4")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-4")]

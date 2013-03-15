@@ -30,7 +30,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region TextField locators
         public static string FormulaTextBox = "FormulaTextBox";
         public static string FormulaTextArea = "FormulaTextArea";
-        public static string TextFieldTable = "TextFieldTable";
+        public static string TextFieldHiddenTable = "TextFieldHiddenTable";
 
         #endregion
 

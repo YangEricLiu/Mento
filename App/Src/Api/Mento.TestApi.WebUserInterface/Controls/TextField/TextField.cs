@@ -11,15 +11,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
     /// </summary>
     public class TextField : JazzControl
     {
-
-        protected IWebElement TextFieldTable
-        {
-            get
-            {
-                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.TextFieldTable));
-            }
-        }
-
         public TextField(Locator locator) : base(locator) { }
 
         /// <summary>
@@ -28,7 +19,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns>True if it is hidden, false if not</returns>
         public Boolean IsTextFieldHidden()
         {
-            return TextFieldTable.GetAttribute("style").Contains("display: none");
+            return Exists(ControlLocatorRepository.GetLocator(ControlLocatorKey.TextFieldHiddenTable));
         }
 
         /// <summary>

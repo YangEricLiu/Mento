@@ -73,6 +73,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public ArrayList GetCurrentDropdownListItems()
         {
             ArrayList items = new ArrayList();
+            DisplayItems();
             
             foreach (IWebElement item in CurrentComboBoxDropdownListItems)
             { 

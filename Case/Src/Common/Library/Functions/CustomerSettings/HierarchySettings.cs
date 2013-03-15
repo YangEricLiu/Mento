@@ -239,7 +239,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public Boolean IsTypeContainsSite()
         {
-            return GetTypeListValue().Contains(GetTypeExpectedValue("Site"));
+            return GetTypeListValue().Contains(GetTypeExpectedValue("Site"));  
         }
 
         /// <summary>

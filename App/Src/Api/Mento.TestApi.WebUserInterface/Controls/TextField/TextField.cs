@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenQA.Selenium;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -10,8 +11,25 @@ namespace Mento.TestApi.WebUserInterface.Controls
     /// </summary>
     public class TextField : JazzControl
     {
+
+        protected IWebElement TextFieldTable
+        {
+            get
+            {
+                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.TextFieldTable));
+            }
+        }
+
         public TextField(Locator locator) : base(locator) { }
 
+        /// <summary>
+        /// Judge whether the textfield and its label are hidden
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsTextFieldHidden()
+        {
+            return TextFieldTable.GetAttribute("style").Contains("display: none");
+        }
 
         /// <summary>
         /// Fill the text to object text field, clear the field first, then input text

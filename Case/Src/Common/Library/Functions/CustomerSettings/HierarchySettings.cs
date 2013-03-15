@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using Mento.Framework;
@@ -213,6 +214,52 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region verification
+
+        /// <summary>
+        /// Judge whether the textfield and its label are hidden
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsCommentHidden()
+        {
+            return CommentTextField.IsTextFieldHidden();
+        }
+
+        /// <summary>
+        /// Judge whether the type list contains Orgnization
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsTypeContainsOrgnization()
+        {
+            return GetTypeListValue().Contains(GetTypeExpectedValue("Orgnization"));
+        }
+
+        /// <summary>
+        /// Judge whether the type list contains Site
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsTypeContainsSite()
+        {
+            return GetTypeListValue().Contains(GetTypeExpectedValue("Site"));
+        }
+
+        /// <summary>
+        /// Judge whether the type list contains Building
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsTypeContainsBuilding()
+        {
+            return GetTypeListValue().Contains(GetTypeExpectedValue("Building"));
+        }
+
+        /// <summary>
+        /// Judge whether the child button is enable
+        /// </summary>
+        /// <returns>True if the button is enable, false if not</returns>
+        public Boolean IsChildButtonEnable()
+        {
+            return CreateChildHierarchyButton.IsEnabled();
+        }
+
         /// <summary>
         /// Judge whether the nodes are Child-Parent
         /// </summary>
@@ -288,14 +335,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>whether the invalid message is ture</returns>
         public Boolean IsTypeInvalidMsgCorrect(HierarchyExpectedData output)
         {
-            if (String.IsNullOrEmpty(output.Type))
-            {
-                return true;
-            }
-            else
-            {
-                return HierarchyTypeComboBox.GetInvalidTips().Contains(output.Type);
-            }
+            return HierarchyTypeComboBox.GetInvalidTips().Contains(output.Type);   
         }
 
         /// <summary>
@@ -304,14 +344,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>True if the Comments is invalid, false if not</returns>
         public Boolean IsCommentsInvalid(HierarchyExpectedData output)
         {
-            if (String.IsNullOrEmpty(output.Comments))
-            {
-                return true;
-            }
-            else
-            {
-                return CommentTextField.IsTextFieldValueInvalid();
-            }
+            return CommentTextField.IsTextFieldValueInvalid();
         }
 
         /// <summary>
@@ -321,18 +354,20 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>whether the invalid message is true</returns>
         public Boolean IsCommentsInvalidMsgCorrect(HierarchyExpectedData output)
         {
-            if (String.IsNullOrEmpty(output.Comments))
-            {
-                return true;
-            }
-            else
-            {
-                return CommentTextField.GetInvalidTips().Contains(output.Comments);
-            }
+            return CommentTextField.GetInvalidTips().Contains(output.Comments);
         }
         #endregion
 
         #region Get value
+        /// <summary>
+        /// Get the hierarchy type combobox list value
+        /// </summary>
+        /// <returns>type list value</returns>
+        public ArrayList GetTypeListValue()
+        {
+            return HierarchyTypeComboBox.GetCurrentDropdownListItems();
+        }
+
         /// <summary>
         /// Get the hierarchy type expected value, for language sencitive
         /// </summary>

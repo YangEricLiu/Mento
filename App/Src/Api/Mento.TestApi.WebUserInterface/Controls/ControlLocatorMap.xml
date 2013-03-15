@@ -19,7 +19,8 @@
 
   <!--TextField-->
   <add key = "FormulaTextBox" value="//textarea[contains(@id,'st-formula-text') and @name='Formula']" type = "XPath"/>
-
+  <add key = "TextFieldTable" value="../../../../self::node()" type = "XPath"/>
+  
   <!--Button-->
   <add key = "ButtonInput" value = "em/button" type = "XPath"/>
   

@@ -21,7 +21,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [TestFixture]
     [Owner("Emma")]
     [CreateTime("2013-03-12")]
-    [ManualCaseID("TC-J1-FVT-Hierarchy-001")]
+    [ManualCaseID("TC-J1-FVT-Hierarchy-Add-101")]
     public class AddValidHierarhcyNodeSuite : TestSuiteBase
     {
         private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
@@ -40,9 +40,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
-        [CaseID("Hierarchy-001-AddValidNode")]
+        [CaseID("TC-J1-FVT-Hierarchy-Add-101-1")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "Hierarchy-001-AddValidNode")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-1")]
         public void AddValidNode(HierarchyData input)
         {
             //Add organization and site node to "自动化测试"
@@ -70,6 +70,59 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetCodeValue());
             Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.ExpectedData.Type), HierarchySettings.GetTypeValue());
             Assert.AreEqual(input.ExpectedData.Comments, HierarchySettings.GetCommentValue());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Add-101-2")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-2")]
+        public void HierarchyType(HierarchyData input)
+        {
+            //Select buidling node
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+
+            //Verify the child button is disable
+            Assert.IsFalse(HierarchySettings.IsChildButtonEnable());
+
+            //Select site node and click "childlevel" button
+            HierarchySettings.SelectHierarchyNode(input.InputData.HierarchyNodePath[1]);
+            HierarchySettings.ClickCreateChildHierarchyButton();
+            
+            //Verify the type list not contain "org" and "site"
+            Assert.IsFalse(HierarchySettings.IsTypeContainsOrgnization());
+            Assert.IsFalse(HierarchySettings.IsTypeContainsSite());
+
+            //Select orgnization node and click "childlevel" button
+            HierarchySettings.SelectHierarchyNode(input.InputData.HierarchyNodePath[0]);
+            HierarchySettings.ClickCreateChildHierarchyButton();
+
+            //Verify the type list not contain "building"
+            Assert.IsFalse(HierarchySettings.IsTypeContainsBuilding());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Add-101-4")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-4")]
+        public void EmptyItemNotDisplay(HierarchyData input)
+        {
+            //Select root node and add node without comments 
+            HierarchySettings.SelectHierarchyNode(input.InputData.HierarchyNodePath[0]);
+            HierarchySettings.ClickCreateChildHierarchyButton();
+            HierarchySettings.FillInHierarchyNode(input.InputData);
+
+            //Click "Save" button
+            TimeManager.MediumPause();
+            HierarchySettings.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            //Verify that the "添加成功" message box popup, other is failed
+            string msgText = HierarchySettings.GetMessageText();
+            Assert.IsTrue(msgText.Contains("添加成功"));
+            TimeManager.ShortPause();
+
+            //Verify the comments not display
+            Assert.IsTrue(HierarchySettings.IsCommentHidden());
         }
     }
 }

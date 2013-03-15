@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"该输入项为必输项",
+			"Code":"该输入项为必输项",
+			"Type":"该输入项为必输项",
+		}
+	}
+]

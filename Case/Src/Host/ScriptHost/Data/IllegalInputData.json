@@ -2,44 +2,6 @@
 	{
 		"InputData":
 		{
-			"HierarchyNodePath":["自动化测试"],
-		    "AccountID":"",
-			"Password":"",
-			"PersonName":"",
-			"CustomerName":"",
-			"CommonName":"",
-			"Address":"",
-			"Email":"",
-			"PhoneNumber":"",
-			"Code":"",
-			"Meter":"",
-			"Channel":"",
-			"DataValue":"",
-			"Comments":"",
-			"FeedbackComments":""
-		},
-		"ExpectedData":
-		{
-		    "AccountID":"",
-			"Password":"",
-			"PersonName":"",
-			"CustomerName":"",
-			"CommonName":"该输入项为必输项",
-			"Address":"",
-			"Email":"",
-			"PhoneNumber":"",
-			"Code":"该输入项为必输项",
-			"Meter":"",
-			"Channel":"",
-			"DataValue":"",
-			"Comments":"",
-			"FeedbackComments":"",
-			"Type": "该输入项为必输项"
-		}
-	},
-	{
-		"InputData":
-		{
 			"HierarchyNodePath":["自动化测试", "AutoOrg001"],
 		    "AccountID":"",
 			"Password":"",

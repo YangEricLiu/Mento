@@ -40,10 +40,10 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
-        [CaseID("Hierarchy-001-AddThenCancel")]
+        [CaseID("TC-J1-FVT-Hierarchy-Add-001-1")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "Hierarchy-001-AddThenCancel")]
-        public void AddThenCancel(HierarchyData input)
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-1")]
+        public void AddHierarchyCancel(HierarchyData input)
         {
             //Add organization and site node to "自动化测试"
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -60,7 +60,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
-        [CaseID("Hierarchy-001-AddInvalidInput")]
+        [CaseID("TC-J1-FVT-Hierarchy-Add-001-2")]
         [Type("BFT")]
         [IllegalInputValidation(typeof(HierarchyData[]))]
         public void AddInvalidInput(HierarchyData input)
@@ -84,6 +84,31 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             Assert.IsTrue(HierarchySettings.IsTypeInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(HierarchySettings.IsCommentsInvalid(input.ExpectedData));
             Assert.IsTrue(HierarchySettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Add-001-5")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-5")]
+        public void EmptyField(HierarchyData input)
+        {
+            //Add organization and site node to "自动化测试"
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            HierarchySettings.ClickCreateChildHierarchyButton();
+
+            //Input nothing and click "Save" button
+            TimeManager.MediumPause();
+            HierarchySettings.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            //Verify that the error message popup and the input field is invalid
+            Assert.IsTrue(HierarchySettings.IsNameInvalid());
+            Assert.IsTrue(HierarchySettings.IsNameInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(HierarchySettings.IsCodeInvalid());
+            Assert.IsTrue(HierarchySettings.IsCodeInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(HierarchySettings.IsTypeInvalid());
+            Assert.IsTrue(HierarchySettings.IsTypeInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsFalse(HierarchySettings.IsCommentsInvalid(input.ExpectedData));
         }
     }
 }

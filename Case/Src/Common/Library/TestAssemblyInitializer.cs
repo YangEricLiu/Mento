@@ -20,8 +20,8 @@ namespace Mento.ScriptCommon.Library
 
             if (IsInitializeDatabase())
             {
-                //JazzDatabaseOperator.Destruct();
-                //JazzDataInitializer.Execute();
+                JazzDatabaseOperator.Destruct();
+                JazzDataInitializer.Execute();
             }
 
             JazzBrowseManager.OpenJazz();

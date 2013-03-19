@@ -11,6 +11,7 @@ using Mento.Utility;
 using Mento.Framework.Log;
 using Mento.Framework.Exceptions;
 using System.Text.RegularExpressions;
+using Mento.Framework.Execution;
 
 namespace Mento.Framework.DataAccess
 {
@@ -18,19 +19,6 @@ namespace Mento.Framework.DataAccess
     {
         private static XDocument XmlDefinition = XDocument.Load(Path.Combine(ExecutionConfig.SetupSqlScript, "initialization.xml"));
 
-        private static string _BaseUrl;
-        private static string BaseUrl
-        {
-            get 
-            {
-                if (String.IsNullOrEmpty(_BaseUrl))
-                {
-                    _BaseUrl = XmlDefinition.XPathSelectElement("intialization/request/base").Value;
-                }
-
-                return _BaseUrl;
-            }
-        }
 
         private static CookieCollection _Cookies;
         private static CookieCollection Cookies
@@ -39,16 +27,7 @@ namespace Mento.Framework.DataAccess
             {
                 if (_Cookies == null)
                 {
-                    _Cookies = new CookieCollection();
-
-                    string cookie = XmlDefinition.XPathSelectElement("intialization/request/cookie").Value;
-
-                    _Cookies = new CookieCollection();
-
-                    foreach (string pair in cookie.Split(';'))
-                    {
-                        _Cookies.Add(new Cookie(pair.Split('=')[0].Trim(), pair.Split('=')[1].Trim()));
-                    }
+                    _Cookies = JazzLoginHelper.GetFedAuthCookie(ExecutionContext.Url);
                 }
 
                 return _Cookies;
@@ -69,7 +48,7 @@ namespace Mento.Framework.DataAccess
                         string name = interfaceElement.Attribute("name").Value;
                         string url = interfaceElement.Attribute("url").Value;
 
-                        _Interfaces.Add(name, BaseUrl + url);
+                        _Interfaces.Add(name, ExecutionContext.Url + url);
                     }
                 }
 

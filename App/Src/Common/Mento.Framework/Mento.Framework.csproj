@@ -71,6 +71,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -100,6 +101,7 @@
     <Compile Include="DataAccess\EntityBase.cs" />
     <Compile Include="DataAccess\JazzDatabaseOperator.cs" />
     <Compile Include="DataAccess\JazzDataInitializer.cs" />
+    <Compile Include="DataAccess\JazzLoginHelper.cs" />
     <Compile Include="Enumeration\Browser.cs" />
     <Compile Include="Enumeration\EntityStatus.cs" />
     <Compile Include="Enumeration\Language.cs" />

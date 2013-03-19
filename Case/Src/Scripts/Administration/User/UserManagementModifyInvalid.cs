@@ -43,7 +43,7 @@ namespace Mento.Script.Administration.User
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-UserManagement-Modify-001"), CreateTime("2013-01-08"), Owner("Nancy")]
+        [CaseID("TC-J1-FVT-UserManagement-Modify-001-1"), CreateTime("2013-01-08"), Owner("Nancy")]
         //Add user failed with redline when click save button directly.
         [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementAddInvalid), "TC-J1-FVT-UserManagement-Add-001-1")]
         public void ModifyUserBlank(UserSettingsData testData)
@@ -71,7 +71,7 @@ namespace Mento.Script.Administration.User
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-UserManagement-Modify-001"), CreateTime("2013-01-08"), Owner("Nancy")]
+        [CaseID("TC-J1-FVT-UserManagement-Modify-001-2"), CreateTime("2013-01-08"), Owner("Nancy")]
         //Add user failed when input invalid chars to each field, redline display.
         [IllegalInputValidation(typeof(UserSettingsData[]))]
         public void ModifyUserInvalid(UserSettingsData testData)
@@ -98,7 +98,7 @@ namespace Mento.Script.Administration.User
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-UserManagement-Modify-101"), CreateTime("2013-01-08"), Owner("Nancy")]
+        [CaseID("TC-J1-FVT-UserManagement-Modify-001-3"), CreateTime("2013-01-08"), Owner("Nancy")]
         //Add user valid and canceled.
         [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementAddValid), "TC-J1-FVT-UserManagement-Add-101-2")]
         public void AddUserCancel(UserSettingsData testData)
@@ -112,7 +112,7 @@ namespace Mento.Script.Administration.User
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-UserManagement-Modify-101"), CreateTime("2013-01-08"), Owner("Nancy")]
+        [CaseID("TC-J1-FVT-UserManagement-Modify-001-4"), CreateTime("2013-01-08"), Owner("Nancy")]
         //Modify user accountid="Nancy_EngineerBlankComments" has already exist in user list.
         [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementAddValid), "TC-J1-FVT-UserManagement-Add-101-2")]
         public void AddDuplicatedUser(UserSettingsData testData)

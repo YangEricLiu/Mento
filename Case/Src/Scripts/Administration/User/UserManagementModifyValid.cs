@@ -42,7 +42,7 @@ namespace Mento.Script.Administration.User
         }
 
         [Test]//TC-J1-FVT-UserManagement-Modify-101-1/2/3
-        [CaseID("TC-J1-FVT-UserManagement-Modify-101"), CreateTime("2013-01-08"), Owner("Nancy")]
+        [CaseID("TC-J1-FVT-UserManagement-Modify-101-1"), CreateTime("2013-01-08"), Owner("Nancy")]
         [Priority("8")]
         //Modify user valid test: maxlength, not required field blank, leading and trailing space excluded verify. 
         [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementAddValid), "TC-J1-FVT-UserManagement-Add-101-1")]

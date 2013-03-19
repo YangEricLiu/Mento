@@ -20,6 +20,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
+        #region controls
         private static Grid GridUserList = JazzGrid.UserListGrid;
 
         private static Button CreateButton = JazzButton.UserCreateButton;
@@ -42,6 +43,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox UserTypeComboBox = JazzComboBox.UserTypeComboBox;
         private static ComboBox UserAssociatedCustomerComboBox = JazzComboBox.UserAssociatedCustomerComboBox;
 
+        #endregion
+
+        #region common action
         /// <summary>
         /// Navigate to User setting
         /// </summary>
@@ -70,7 +74,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             RefreshButton.Click();
         }
-       
+
         /// <summary>
         /// click "Delete" button
         /// </summary>
@@ -122,6 +126,31 @@ namespace Mento.ScriptCommon.Library.Functions
             GeneratePasswordButton.Click();
         }
 
+        public void FocusOnUser(string userName)
+        {
+            GridUserList.FocusOnRow(1, userName);
+        }
+
+        /// <summary>
+        /// After click save button, waiting for add successful message box pop up
+        /// </summary>
+        /// <returns></returns>
+        public string GetMessageText()
+        {
+            return JazzMessageBox.MessageBox.GetMessage();
+        }
+
+        /// <summary>
+        /// Confirm the add successful popup message box
+        /// </summary>
+        /// <returns></returns>
+        public void ConfirmMagBox()
+        {
+            JazzMessageBox.MessageBox.Confirm();
+        }
+        #endregion
+
+        #region item operation
         /// <summary>
         /// Input name, realname comments etc. of all user field
         /// </summary>
@@ -130,14 +159,14 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInUser(UserInputData input)
         {
 
-            NameTextField.Fill(input.Name);
+            NameTextField.Fill(input.AccountID);
             RealNameTextField.Fill(input.RealName);
             UserTypeComboBox.SelectItem(input.Type);
-            UserAssociatedCustomerComboBox.SelectItem(input.AssociatedCustomer); 
+            UserAssociatedCustomerComboBox.SelectItem(input.AssociatedCustomer);
             TelephoneTextField.Fill(input.Telephone);
             EmailTextField.Fill(input.Email);
             TitleTextField.Fill(input.Title);
-            CommentTextField.Fill(input.Comment);            
+            CommentTextField.Fill(input.Comments);
 
         }
 
@@ -190,7 +219,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             TitleTextField.Fill(title);
         }
-        
+
         /// <summary>
         /// Input telephone of the new user 
         /// </summary>
@@ -220,22 +249,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             CommentTextField.Fill(comment);
         }
+        #endregion
 
-        /// <summary>
-        /// After click save button, waiting for add successful message box pop up
-        /// </summary>
-        /// <param name="timeout">Waiting time</param>
-        /// <returns></returns>
-        public void WaitForCreateOKDisplay(int timeout)
-        {
-            JazzMessageBox.MessageBox.WaitMeAppear();
-        }
-
-        public void ConfirmCreateOKMagBox()
-        {
-            JazzMessageBox.MessageBox.OK();
-        }
-
+        #region get value
         /// <summary>
         /// Get name expected value
         /// </summary>
@@ -315,11 +331,153 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             //return comboBoxInstance.GetValue(ElementKey.HierarchyComment);
             return CommentTextField.GetValue();
-        } 
-
-        public void FocusOnUser(string userName)
-        {
-            GridUserList.FocusOnRow(1, userName);    
         }
+
+        #endregion
+
+        #region verification
+        /// <summary>
+        /// Judge whether the name textfield is invalid
+        /// </summary>
+        /// <returns>True if the name is invalid, false if not</returns>
+        public Boolean IsUserNameInvalid()
+        {
+            return NameTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of name field is correct
+        /// </summary>
+        /// <param name="output">UserExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsUserNameInvalidMsgCorrect(UserExpectedData output)
+        {
+            return NameTextField.GetInvalidTips().Contains(output.AccountID);
+        }
+
+        /// <summary>
+        /// Judge whether the realname textfield is invalid
+        /// </summary>
+        /// <returns>True if the realname is invalid, false if not</returns>
+        public Boolean IsRealNameInvalid()
+        {
+            return RealNameTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of realname field is correct
+        /// </summary>
+        /// <param name="output">UserExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsRealNameInvalidMsgCorrect(UserExpectedData output)
+        {
+            return RealNameTextField.GetInvalidTips().Contains(output.RealName);
+        }
+
+        /// <summary>
+        /// Judge whether the telephone textfield is invalid
+        /// </summary>
+        /// <returns>True if the telehone is invalid, false if not</returns>
+        public Boolean IsTelephoneInvalid()
+        {
+            return TelephoneTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of telephone field is correct
+        /// </summary>
+        /// <param name="output">UserExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsTelephoneInvalidMsgCorrect(UserExpectedData output)
+        {
+            return TelephoneTextField.GetInvalidTips().Contains(output.Telephone);
+        }
+
+        /// <summary>
+        /// Judge whether the email textfield is invalid
+        /// </summary>
+        /// <returns>True if the email is invalid, false if not</returns>
+        public Boolean IsEmailInvalid()
+        {
+            return EmailTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of email field is correct
+        /// </summary>
+        /// <param name="output">UserExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsEmailInvalidMsgCorrect(UserExpectedData output)
+        {
+            return TelephoneTextField.GetInvalidTips().Contains(output.Email);
+        }
+
+        /// <summary>
+        /// Judge whether the usertype combobox is invalid
+        /// </summary>
+        /// <returns>True if the usertype is invalid, false if not</returns>
+        public Boolean IsUserTypeInvalid()
+        {
+            return UserTypeComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">UserExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsTypeInvalidMsgCorrect(UserExpectedData output)
+        {
+            if (String.IsNullOrEmpty(output.Type))
+            {
+                return true;
+            }
+            else
+            {
+                return UserTypeComboBox.GetInvalidTips().Contains(output.Type);
+            }
+        }
+
+        /// <summary>
+        /// Judge whether the Comments textfield is invalid
+        /// </summary>
+        /// <returns>True if the Comments is invalid, false if not</returns>
+        public Boolean IsCommentsInvalid(UserExpectedData output)
+        {
+            if (String.IsNullOrEmpty(output.Comments))
+            {
+                return true;
+            }
+            else
+            {
+                return CommentTextField.IsTextFieldValueInvalid();
+            }
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Comments field is correct
+        /// </summary>
+        /// <param name="output">UserExpectedData</param>
+        /// <returns>whether the invalid message is true</returns>
+        public Boolean IsCommentsInvalidMsgCorrect(UserExpectedData output)
+        {
+            /*if (String.IsNullOrEmpty(output.Comments))
+            {
+                return true;
+            }
+            else
+            {*/
+            return CommentTextField.GetInvalidTips().Contains(output.Comments);
+        }
+
+        /// <summary>
+        /// Judge whether the textfield and its label are hidden
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsUserCommentHidden()
+        {
+            return CommentTextField.IsTextFieldHidden();
+        }
+        #endregion
     }
 }

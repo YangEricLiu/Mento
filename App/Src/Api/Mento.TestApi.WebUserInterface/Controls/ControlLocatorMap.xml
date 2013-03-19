@@ -7,11 +7,11 @@
 
   <add key="MessageBox" value="//div[contains(@class,'x-message-box')]" type="XPath"/>
   <add key="MessageBoxOkButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
-  <add key="MessageBoxConfirmButton" value="//span[text()='$@Common.Button.Confirm']" type="XPath"/>
+  <add key="MessageBoxConfirmButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
   <add key="MessageBoxYesButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='是']]" type="XPath"/>
   <add key="MessageBoxNoButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='否']]" type="XPath"/>
   <add key="MessageBoxCancelButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='取消']]" type="XPath"/>
-  <add key="MessageBoxCloseButton" value="//div[contain(class,x-window x-message-box)//img" type="XPath"/>
+  <add key="MessageBoxCloseButton" value="//div[contains(@class,'x-message-box')]//img" type="XPath"/>
 
   <!--TreeView-->
   <add key = "TreeNode" value = "tbody/tr[contains(@class,'x-grid-row') and td/div[text()='$#nodeText']]" type = "XPath"/>

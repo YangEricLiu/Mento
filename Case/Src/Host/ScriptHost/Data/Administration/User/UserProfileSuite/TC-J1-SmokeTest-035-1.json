@@ -6,9 +6,9 @@
 			"RealName":"平台管理员",
 			"Type":"平台管理员",
 			"Title":"运维工程师",
-			"Telephone":"1234567",
-			"Email":"song@163.com",
-			"Comment":"Nancy 的第一个用户",
+			"CommonTelephone":"1234567",
+			"CommonEmail":"song@163.comCommonComment",
+			"CommonComment":"Nancy 的第一个用户CommonComment",
 		},
 
 		"ExpectedData":

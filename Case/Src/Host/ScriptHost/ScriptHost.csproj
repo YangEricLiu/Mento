@@ -131,6 +131,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Data\Administration\User\UserManagementAddInvalid\" />
+    <Folder Include="Data\Administration\User\UserManagementAddValid\" />
+    <Folder Include="Data\Administration\User\UserManagementModifyValid\" />
     <Folder Include="Data\Customer\HierarchyConfiguration\AreaDimensionSuite\" />
     <Folder Include="Data\Customer\HierarchyConfiguration\SystemDimensionSuite\" />
     <Folder Include="Data\Customer\HierarchySettings\AreaDimensionSuite\" />
@@ -155,9 +158,6 @@
     <None Include="Data\Administration\TOU\TOUBasicTariffSuite\TC-J1-SmokeTest-025.json" />
     <None Include="Data\Administration\User\UserConfigurationSuite\TC-J1-SmokeTest-034-Modify.json" />
     <None Include="Data\Administration\User\UserConfigurationSuite\TC-J1-SmokeTest-034.json" />
-    <None Include="Data\Administration\User\UserManagementAutomation001\UserManagement-Automation-001-Test1.json" />
-    <None Include="Data\Administration\User\UserManagementAutomation001\UserManagement-Automation-001-Test2.json" />
-    <None Include="Data\Administration\User\UserManagementAutomation001\UserManagement-Automation-001-Test3.json" />
     <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-1.json" />
     <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-2.json" />
     <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-3.json" />

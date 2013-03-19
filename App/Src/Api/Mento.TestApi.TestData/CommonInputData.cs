@@ -15,12 +15,12 @@ namespace Mento.TestApi.TestData
     {
         public string AccountID { get; set; }
         public string Password { get; set; }
-        public string PersonName { get; set; }
+        public string RealName { get; set; }
         public string CustomerName { get; set; }
         public string CommonName { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        public string Telephone { get; set; }
         public string Code { get; set; }
         public string Meter { get; set; }
         public string Channel { get; set; }
@@ -33,12 +33,12 @@ namespace Mento.TestApi.TestData
     {
         public string AccountID { get; set; }
         public string Password { get; set; }
-        public string PersonName { get; set; }
+        public string RealName { get; set; }
         public string CustomerName { get; set; }
         public string CommonName { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        public string Telephone { get; set; }
         public string Code { get; set; }
         public string Meter { get; set; }
         public string Channel { get; set; }

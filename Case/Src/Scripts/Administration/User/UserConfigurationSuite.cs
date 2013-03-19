@@ -51,11 +51,11 @@ namespace Mento.Script.Administration.User
             UserSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
 
-            UserSettings.FocusOnUser(testData.InputData.Name);
-            Assert.AreEqual(testData.InputData.Name, UserSettings.GetNameValue());
+            UserSettings.FocusOnUser(testData.InputData.AccountID);
+            Assert.AreEqual(testData.InputData.AccountID, UserSettings.GetNameValue());
             Assert.AreEqual(testData.InputData.RealName, UserSettings.GetRealNameValue());
             Assert.AreEqual(testData.InputData.Title, UserSettings.GetTitleValue());
-            Assert.AreEqual(testData.InputData.Comment, UserSettings.GetCommentValue());
+            Assert.AreEqual(testData.InputData.Comments, UserSettings.GetCommentValue());
             Assert.AreEqual(testData.InputData.Type, UserSettings.GetTypeValue());
             Assert.AreEqual(testData.ExpectedData.AssociatedCustomer, UserSettings.GetAssociatedCustomerValue());
         }
@@ -71,22 +71,22 @@ namespace Mento.Script.Administration.User
             UserSettings.ClickModifyButton();
             TimeManager.ShortPause();
 
-            UserSettings.FillInName(testData.InputData.Name);
+            UserSettings.FillInName(testData.InputData.AccountID);
             UserSettings.FillInRealName(testData.InputData.RealName);
             UserSettings.FillInType(testData.InputData.Type);
             UserSettings.FillInTitle(testData.InputData.Title);
             UserSettings.FillInTelephone(testData.InputData. Telephone);
             UserSettings.FillInEmail(testData.InputData.Email);
-            UserSettings.FillInComment(testData.InputData.Comment);
+            UserSettings.FillInComment(testData.InputData.Comments);
 
             UserSettings.ClickSaveButton();
 
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
-            UserSettings.FocusOnUser(testData.InputData.Name);
+            UserSettings.FocusOnUser(testData.InputData.AccountID);
             Assert.AreEqual(testData.ExpectedData.AssociatedCustomer, UserSettings.GetAssociatedCustomerValue());
-            Assert.AreEqual(testData.InputData.Comment, UserSettings.GetCommentValue());
+            Assert.AreEqual(testData.InputData.Comments, UserSettings.GetCommentValue());
         }
     }
 }

@@ -57,7 +57,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify that the "添加成功" message box popup, other is failed
             string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains("添加成功"));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
             TimeManager.ShortPause();
 
             //confirm message box
@@ -123,7 +123,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
                 //Verify that the "添加成功" message box popup, other is failed
                 string msgText = HierarchySettings.GetMessageText();
-                Assert.IsTrue(msgText.Contains("添加成功"));
+                Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
                 TimeManager.ShortPause();
 
                 //confirm message box
@@ -159,8 +159,12 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify that the "添加成功" message box popup, other is failed
             string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains("添加成功"));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
             TimeManager.ShortPause();
+
+            //confirm message box
+            HierarchySettings.ConfirmCreateOKMagBox();
+            TimeManager.MediumPause();
 
             //Verify the comments not display
             Assert.IsTrue(HierarchySettings.IsCommentHidden());

@@ -26,5 +26,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Code { get; set; }
         public string Type { get; set; }
         public string Comments { get; set; }
+        public string Message { get; set; }
     }
 }

@@ -127,5 +127,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return this.SelectInput.GetAttribute("data-errorqtip");
         }
+
+        /// <summary>
+        /// Return whether combobox is enabled
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsComboBoxTextEnabled()
+        {
+            return this.SelectInput.Enabled;
+        }
     }
 }

@@ -1,0 +1,41 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+		},
+		"ExpectedData":
+		{
+			"CommonName":"AutoOrg001",
+			"Code":"AutoOrg001",
+			"Comments":"AutoOrg001",
+		    "Message":"修改成功",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001","AutoSite001"],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"AutoSite001",
+			"Code":"AutoSite001",
+			"Comments":"AutoSite001",
+		    "Message":"修改成功",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001","AutoSite001", "AutoBuilding001"],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"AutoBuilding001",
+			"Code":"AutoBuilding001",
+			"Comments":"AutoBuilding001",
+		    "Message":"修改成功",
+		}
+	}
+]

@@ -89,5 +89,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return this.RootElement.Displayed;
         }
+
+        /// <summary>
+        /// Return whether the text field enabled 
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsFieldEnabled()
+        {
+            return this.RootElement.Enabled;
+        }
+
     }
 }

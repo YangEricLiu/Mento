@@ -10,6 +10,7 @@
 		"ExpectedData":
 		{
 		    "Type":"Orgnization",
+			"Message":"添加成功",
 		}
 	},
 	{
@@ -21,6 +22,7 @@
 		"ExpectedData":
 		{
 		    "Type":"Site",
+			"Message":"添加成功",
 		}
 	},
 	{
@@ -32,6 +34,7 @@
 		"ExpectedData":
 		{
 		    "Type":"Building",
+			"Message":"添加成功",
 		}
 	},
 	{
@@ -43,6 +46,7 @@
 		"ExpectedData":
 		{
 		    "Type":"Orgnization",
+			"Message":"添加成功",
 		}
 	},
 	{
@@ -54,6 +58,7 @@
 		"ExpectedData":
 		{
 		    "Type":"Site",
+			"Message":"添加成功",
 		}
 	}
 ]

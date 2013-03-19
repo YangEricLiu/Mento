@@ -1,0 +1,38 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoOrg001"],
+			"CommonName":"AutoModifyOrg001",
+		},
+		"ExpectedData":
+		{
+		    "Message":"层级的名称重复，无法保存",
+			"CommonName":"AutoOrg001",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoOrg001", "AutoSite001"],
+			"CommonName":"AutoSite003",
+		},
+		"ExpectedData":
+		{
+		    "Message":"层级的名称重复，无法保存",
+			"CommonName":"AutoSite001",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001", "AutoSite001", "AutoBuilding001"],
+			"CommonName":"AutoBuilding003",
+		},
+		"ExpectedData":
+		{
+		    "Message":"层级的名称重复，无法保存",
+			"CommonName":"AutoBuilding001",
+		}
+	}
+]

@@ -48,6 +48,15 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Click one hierarchy node then click "Modify" button
+        /// </summary>
+        /// <returns></returns>
+        public void ClickModifyButton()
+        {
+            ModifyButton.Click();
+        }
+
+        /// <summary>
         /// Click one hierarchy node
         /// </summary>
         /// <param name="treeNodeName">Hierarchy node name</param>
@@ -118,12 +127,21 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Confirm the add successful popup message box
+        /// Confirm the add/modify successful popup message box
         /// </summary>
         /// <returns></returns>
         public void ConfirmCreateOKMagBox()
         {
             JazzMessageBox.MessageBox.OK();
+        }
+
+        /// <summary>
+        /// Confirm the popup error message box
+        /// </summary>
+        /// <returns></returns>
+        public void ConfirmErrorMsgBox()
+        {
+            JazzMessageBox.MessageBox.Confirm();
         }
 
         /// <summary>
@@ -355,6 +373,42 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsCommentsInvalidMsgCorrect(HierarchyExpectedData output)
         {
             return CommentTextField.GetInvalidTips().Contains(output.Comments);
+        }
+
+        /// <summary>
+        /// Return whether Name is enabled
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsNameFieldEnabled()
+        {
+            return NameTextField.IsFieldEnabled();
+        }
+
+        /// <summary>
+        /// Return whether Code is enabled
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsCodeFieldEnabled()
+        {
+            return CodeTextField.IsFieldEnabled();
+        }
+
+        /// <summary>
+        /// Return whether type is enabled
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsTypeFieldEnabled()
+        {
+            return HierarchyTypeComboBox.IsComboBoxTextEnabled();
+        }
+
+        /// <summary>
+        /// Return whether comment is enabled
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsCommentFieldEnabled()
+        {
+            return CommentTextField.IsFieldEnabled();
         }
         #endregion
 

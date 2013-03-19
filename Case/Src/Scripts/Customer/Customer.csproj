@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="HierarchyConfiguration\AddInvalidHierarhcyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\AddValidHierarhcyNodeSuite.cs" />
+    <Compile Include="HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite.cs" />
+    <Compile Include="HierarchyConfiguration\ModifyValidHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddElectricfixedCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddElectricityComprehensiveCostPropertySuite .cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddOtherCostPropertySuite.cs" />

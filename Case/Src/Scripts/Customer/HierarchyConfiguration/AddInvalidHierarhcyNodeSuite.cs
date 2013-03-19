@@ -20,7 +20,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 {
     [TestFixture]
     [Owner("Emma")]
-    [CreateTime("2013-03-12")]
+    [CreateTime("2013-03-15")]
     [ManualCaseID("TC-J1-FVT-Hierarchy-001")]
     public class AddInvalidHierarhcyNodeSuite : TestCaseAttribute
     {
@@ -84,6 +84,59 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             Assert.IsTrue(HierarchySettings.IsTypeInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(HierarchySettings.IsCommentsInvalid(input.ExpectedData));
             Assert.IsTrue(HierarchySettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Add-001-3")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-3")]
+        public void AddSameCode(HierarchyData input)
+        {
+            //xxx
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            HierarchySettings.ClickCreateChildHierarchyButton();
+            HierarchySettings.FillInHierarchyNode(input.InputData);
+
+            //Click "Save" button
+            TimeManager.MediumPause();
+            HierarchySettings.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            //Verify that message box popup for failed
+            string msgText = HierarchySettings.GetMessageText();
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            TimeManager.ShortPause();
+
+            //confirm message box
+            HierarchySettings.ConfirmErrorMsgBox();
+
+            //Verify nodes are not added as children
+            Assert.IsFalse(HierarchySettings.IsNodesChildParent(input.InputData.CommonName, input.InputData.HierarchyNodePath.Last()));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Add-001-4")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-4")]
+        public void SameNameOnlevel(HierarchyData input)
+        {
+            //xxx
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            HierarchySettings.ClickCreateChildHierarchyButton();
+            HierarchySettings.FillInHierarchyNode(input.InputData);
+
+            //Click "Save" button
+            TimeManager.MediumPause();
+            HierarchySettings.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            //Verify that message box popup for failed
+            string msgText = HierarchySettings.GetMessageText();
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            TimeManager.ShortPause();
+
+            //confirm message box
+            HierarchySettings.ConfirmErrorMsgBox();
         }
 
         [Test]

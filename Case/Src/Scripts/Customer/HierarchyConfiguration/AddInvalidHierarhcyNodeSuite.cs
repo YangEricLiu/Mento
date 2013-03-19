@@ -21,7 +21,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [TestFixture]
     [Owner("Emma")]
     [CreateTime("2013-03-15")]
-    [ManualCaseID("TC-J1-FVT-Hierarchy-001")]
+    [ManualCaseID("TC-J1-FVT-Hierarchy-Add-001")]
     public class AddInvalidHierarhcyNodeSuite : TestCaseAttribute
     {
         private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;

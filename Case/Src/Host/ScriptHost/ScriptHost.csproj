@@ -172,6 +172,10 @@
     <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-2.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-1.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-001-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-001-1.json" />
     <None Include="Data\Customer\HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-001-2.json" />
     <None Include="Data\Customer\HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-001-1.json" />
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-4.json" />

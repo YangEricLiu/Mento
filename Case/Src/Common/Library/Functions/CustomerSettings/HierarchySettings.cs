@@ -48,12 +48,21 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Click one hierarchy node then click "Modify" button
+        /// Click　"Modify" button
         /// </summary>
         /// <returns></returns>
         public void ClickModifyButton()
         {
             ModifyButton.Click();
+        }
+
+        /// <summary>
+        /// Click　"Delete" button
+        /// </summary>
+        /// <returns></returns>
+        public void ClickDeleteButton()
+        {
+            DeleteButton.Click();
         }
 
         /// <summary>
@@ -67,13 +76,21 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Click one hierarchy node
+        /// Click one hierarchy node, and return true if successful 
         /// </summary>
         /// <param name="treeNodePath">Hierarchy node name</param>
         /// <returns></returns>
-        public void SelectHierarchyNodePath(string[] treeNodePath)
+        public Boolean SelectHierarchyNodePath(string[] treeNodePath)
         {
-            HierarchyTree.SelectNode(treeNodePath);
+            try
+            {
+                HierarchyTree.SelectNode(treeNodePath);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -142,6 +159,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ConfirmErrorMsgBox()
         {
             JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        /// <summary>
+        /// Cancel the popup error message box
+        /// </summary>
+        /// <returns></returns>
+        public void CancelErrorMsgBox()
+        {
+            JazzMessageBox.MessageBox.Cancel();
         }
 
         /// <summary>
@@ -409,6 +436,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsCommentFieldEnabled()
         {
             return CommentTextField.IsFieldEnabled();
+        }
+
+        /// <summary>
+        /// Return whether delete button is enabled
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsDeleteButtonEnabled()
+        {
+            return DeleteButton.IsEnabled();
         }
         #endregion
 

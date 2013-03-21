@@ -56,7 +56,22 @@ namespace Mento.Framework.DataAccess
             }
         }
 
-        public static void Execute()
+        public static void Initialize()
+        {
+            Console.WriteLine("Begin to clear data..");
+            JazzDatabaseOperator.Destruct();
+
+            Console.WriteLine("Begin to initialize data..");
+            ExecuteAllImport();
+        }
+
+        public static void Destruct()
+        {
+            Console.WriteLine("Begin to clear data..");
+            JazzDatabaseOperator.Destruct();
+        }
+
+        private static void ExecuteAllImport()
         {
             Console.WriteLine("Initializing Jazz data...");
             foreach (var dataElement in XmlDefinition.XPathSelectElement("/intialization/testdata").Elements())

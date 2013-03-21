@@ -37,73 +37,56 @@ namespace Mento.Framework.DataAccess
         {
             var uri = new Uri(homeUrl);
             string BaseUrl = String.Format("{0}://{1}", uri.Scheme, uri.Host);
+            string loginPageUrl;
 
+            HttpResponse loginPageResponse = GotoHomePage(BaseUrl, homeUrl, out loginPageUrl);
+
+            return PostLoginPage(BaseUrl,loginPageUrl,homeUrl,loginPageResponse.Content);
+        }
+
+        private static HttpResponse GotoHomePage(string baseUrl, string homeUrl, out string loginPageUrl)
+        {
             Console.WriteLine("-----goto home page-----");
             string url1 = homeUrl;
             HttpResponse response1 = new HttpRequest(url1, CommonHeaders).Get();
-            Console.WriteLine(url1);
-            Console.WriteLine(response1.StatusCode + ": " + response1.RedirectUrl);
-            Console.WriteLine("");
 
             Console.WriteLine("-----redirected-----");
             string url2 = response1.RedirectUrl;
             HttpResponse response2 = new HttpRequest(url2, CommonHeaders).Get();
-            Console.WriteLine(url2);
-            Console.WriteLine(response2.StatusCode + ": " + response2.RedirectUrl);
-            Console.WriteLine("");
 
             Console.WriteLine("-----redirected-----");
             string url3 = response2.RedirectUrl;
             HttpResponse response3 = new HttpRequest(url3, CommonHeaders).Get();
-            Console.WriteLine(url3);
-            Console.WriteLine(response3.StatusCode + ": " + response3.RedirectUrl);
-            Console.WriteLine("");
 
             Console.WriteLine("-----redirected-----");
-            string url4 = BaseUrl + response3.RedirectUrl;
+            string url4 = baseUrl + response3.RedirectUrl;
             HttpResponse response4 = new HttpRequest(url4, CommonHeaders).Get();
-            Console.WriteLine(url4);
-            Console.WriteLine(response4.StatusCode);
-            Console.WriteLine(response4.Content);
-            Console.WriteLine("");
 
+            loginPageUrl = url4;
+            return response4;
+        }
+
+        private static CookieCollection PostLoginPage(string baseUrl, string loginPageUrl,string homeUrl,string loginPageContent)
+        {
             Console.WriteLine("-----post login page-----");
-            string url5 = url4;
-            HttpResponse response5 = new HttpRequest(url5, CommonHeaders).Post(HttpCommon.Parameter(GetLoginFormValues(response4.Content)));
-            Console.WriteLine(url5);
-            Console.WriteLine(response5.StatusCode);
-            Console.WriteLine("");
+            string url5 = loginPageUrl;
+            HttpResponse response5 = new HttpRequest(url5, CommonHeaders).Post(HttpCommon.Parameter(GetLoginFormValues(loginPageContent)));
 
             Console.WriteLine("-----login page redirect to default-----");
-            string url6 = BaseUrl + response5.RedirectUrl;
+            string url6 = baseUrl + response5.RedirectUrl;
             var headers6 = GetStsRequestHeaders(response5);
             HttpResponse response6 = new HttpRequest(url6, headers6).Get();
-            Console.WriteLine(url6);
-            Console.WriteLine(response6.StatusCode);
-            Console.WriteLine(response6.Content);
-            Console.WriteLine("");
 
             Console.WriteLine("-----execute default form-----");
             string url7;
             var formValues7 = GetDefaultFormValues(response6.Content, out url7);
             HttpResponse response7 = new HttpRequest(url7, headers6).Post(HttpCommon.Parameter(formValues7));
-            Console.WriteLine(url7);
-            Console.WriteLine(response7.StatusCode);
-            Console.WriteLine(response7.Content);
-            Console.WriteLine("");
 
             Console.WriteLine("-----redirected with FedAuth cookie to home-----");
             string url8 = homeUrl;
             CookieCollection fedAuthCookies;
             var headers8 = SetFedAuthCookies(response7, out fedAuthCookies);
             HttpResponse response8 = new HttpRequest(url8, headers8).Get();
-            Console.WriteLine(url8);
-            Console.WriteLine(response8.StatusCode);
-            Console.WriteLine(response8.Content);
-            Console.WriteLine("");
-
-            Console.WriteLine("Press any key to continue..");
-            //Console.Read();
 
             return fedAuthCookies;
         }

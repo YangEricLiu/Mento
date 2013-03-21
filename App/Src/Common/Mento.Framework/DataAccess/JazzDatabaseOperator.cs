@@ -13,18 +13,18 @@ using Mento.Framework.Exceptions;
 
 namespace Mento.Framework.DataAccess
 {
-    public static class JazzDatabaseOperator
+    internal static class JazzDatabaseOperator
     {
         private const string SQL_PATTERN = "*.sql";
 
         public static void Initialize()
         {
-            BatchExecuteScripts(ExecutionConfig.TearDownSqlScript);
             BatchExecuteScripts(ExecutionConfig.SetupSqlScript);
         }
 
         public static void Destruct()
         {
+
             BatchExecuteScripts(ExecutionConfig.TearDownSqlScript);
         }
 

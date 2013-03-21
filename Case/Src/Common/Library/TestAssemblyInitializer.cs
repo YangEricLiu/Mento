@@ -20,8 +20,7 @@ namespace Mento.ScriptCommon.Library
 
             if (IsInitializeDatabase())
             {
-                JazzDatabaseOperator.Destruct();
-                JazzDataInitializer.Execute();
+                JazzDataInitializer.Initialize();
             }
 
             JazzBrowseManager.OpenJazz();
@@ -35,10 +34,11 @@ namespace Mento.ScriptCommon.Library
             InitializeExecutionContext();
 
             if (IsInitializeDatabase())
-                //JazzDatabaseOperator.Destruct();
-                //JazzDatabaseOperator.Initialize();
+            {
+                JazzDataInitializer.Initialize();
+            }
 
-                JazzBrowseManager.OpenJazz();
+            JazzBrowseManager.OpenJazz();
 
             JazzFunction.LoginPage.LoginWithOption(userName, passWord, customer);
         }
@@ -48,7 +48,9 @@ namespace Mento.ScriptCommon.Library
             JazzBrowseManager.CloseJazz();
 
             if (IsInitializeDatabase())
-                //JazzDatabaseOperator.Destruct();
+            {
+                JazzDataInitializer.Destruct();
+            }
 
             ExecutionContext.Destruct();
         }

@@ -35,6 +35,8 @@ namespace Mento.Framework.DataAccess
 
         public static CookieCollection GetFedAuthCookie(string homeUrl)
         {
+            Console.WriteLine("Begin auto login to Jazz..");
+
             var uri = new Uri(homeUrl);
             string BaseUrl = String.Format("{0}://{1}", uri.Scheme, uri.Host);
             string loginPageUrl;
@@ -46,19 +48,19 @@ namespace Mento.Framework.DataAccess
 
         private static HttpResponse GotoHomePage(string baseUrl, string homeUrl, out string loginPageUrl)
         {
-            Console.WriteLine("-----goto home page-----");
+            //Console.WriteLine("-----goto home page-----");
             string url1 = homeUrl;
             HttpResponse response1 = new HttpRequest(url1, CommonHeaders).Get();
 
-            Console.WriteLine("-----redirected-----");
+            //Console.WriteLine("-----redirected-----");
             string url2 = response1.RedirectUrl;
             HttpResponse response2 = new HttpRequest(url2, CommonHeaders).Get();
 
-            Console.WriteLine("-----redirected-----");
+            //Console.WriteLine("-----redirected-----");
             string url3 = response2.RedirectUrl;
             HttpResponse response3 = new HttpRequest(url3, CommonHeaders).Get();
 
-            Console.WriteLine("-----redirected-----");
+            //Console.WriteLine("-----redirected-----");
             string url4 = baseUrl + response3.RedirectUrl;
             HttpResponse response4 = new HttpRequest(url4, CommonHeaders).Get();
 
@@ -68,21 +70,21 @@ namespace Mento.Framework.DataAccess
 
         private static CookieCollection PostLoginPage(string baseUrl, string loginPageUrl,string homeUrl,string loginPageContent)
         {
-            Console.WriteLine("-----post login page-----");
+            //Console.WriteLine("-----post login page-----");
             string url5 = loginPageUrl;
             HttpResponse response5 = new HttpRequest(url5, CommonHeaders).Post(HttpCommon.Parameter(GetLoginFormValues(loginPageContent)));
 
-            Console.WriteLine("-----login page redirect to default-----");
+            //Console.WriteLine("-----login page redirect to default-----");
             string url6 = baseUrl + response5.RedirectUrl;
             var headers6 = GetStsRequestHeaders(response5);
             HttpResponse response6 = new HttpRequest(url6, headers6).Get();
 
-            Console.WriteLine("-----execute default form-----");
+            //Console.WriteLine("-----execute default form-----");
             string url7;
             var formValues7 = GetDefaultFormValues(response6.Content, out url7);
             HttpResponse response7 = new HttpRequest(url7, headers6).Post(HttpCommon.Parameter(formValues7));
 
-            Console.WriteLine("-----redirected with FedAuth cookie to home-----");
+            //Console.WriteLine("-----redirected with FedAuth cookie to home-----");
             string url8 = homeUrl;
             CookieCollection fedAuthCookies;
             var headers8 = SetFedAuthCookies(response7, out fedAuthCookies);

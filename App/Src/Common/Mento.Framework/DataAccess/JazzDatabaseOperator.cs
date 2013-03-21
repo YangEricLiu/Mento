@@ -13,7 +13,7 @@ using Mento.Framework.Exceptions;
 
 namespace Mento.Framework.DataAccess
 {
-    internal static class JazzDatabaseOperator
+    public static class JazzDatabaseOperator
     {
         private const string SQL_PATTERN = "*.sql";
 

@@ -141,6 +141,9 @@
   <ItemGroup>
     <None Include="Tool\CodeGen.exe.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>$(ProjectDir)Tool\CodeGen.exe $(ProjectDir)ControlCollection\Resource\JazzControlLocatorMap.xml $(ProjectDir)ControlCollection\Resource\JazzControlLocatorKey.cs</PreBuildEvent>

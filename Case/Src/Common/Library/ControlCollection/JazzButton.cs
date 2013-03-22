@@ -9,6 +9,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public sealed class JazzButton : JazzControlCollection
     {
+        #region Get Position Button Method
+        public static Button GetOneButton(string key, int positionIndex)
+        {
+            return GetControl<Button>(key, positionIndex);
+        }
+        #endregion
+
         #region Login buttons
         public static Button LoginSubmitButton = GetControl<Button>(JazzControlLocatorKey.ButtonLoginSubmit);
         public static Button LoginCustomerOptionConfirmButton = GetControl<Button>(JazzControlLocatorKey.ButtonLoginCustomerOptionConfirm);
@@ -264,6 +271,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button TOUBasicPropertyDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUBasicPropertyDelete);
         public static LinkButton TOUBasicPropertyAddMorePeakRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonTOUBasicPropertyAddMorePeakRanges);
         public static LinkButton TOUBasicPropertyAddMoreValleyRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonTOUBasicPropertyAddMoreValleyRanges);
+        public static LinkButton TOUBasicPropertyDeletePeakRangeItemButton = GetControl<LinkButton>(JazzControlLocatorKey.ButtonTOUBasicPropertyDeletePeakRangeItem);
+        public static LinkButton TOUBasicPropertyDeleteValleyRangeItemButton = GetControl<LinkButton>(JazzControlLocatorKey.ButtonTOUBasicPropertyDeleteValleyRangeItem);
         public static TabButton TOUPulsePeakPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonTOUPulsePeakProperty);
         public static Button TOUPulsePeakPropertyCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertyCreate);
         public static Button TOUPulsePeakPropertyPlusIconButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertyPlusIcon);        

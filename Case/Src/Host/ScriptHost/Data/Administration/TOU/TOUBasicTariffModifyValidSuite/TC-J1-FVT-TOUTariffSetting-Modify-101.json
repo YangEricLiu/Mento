@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"价格AfterModify名称",	
+			"PlainPrice":"0.8",	
+			"PeakPrice":"1.12",	
+			"ValleyPrice":"0.5",
+		},
+		"ExpectedData":
+		{
+		    
+		}		
+	},
+]

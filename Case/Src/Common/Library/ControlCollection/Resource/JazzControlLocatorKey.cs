@@ -282,6 +282,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonTOUBasicPropertyDelete = "ButtonTOUBasicPropertyDelete";
         public static string LinkButtonTOUBasicPropertyAddMorePeakRanges = "LinkButtonTOUBasicPropertyAddMorePeakRanges";
         public static string LinkButtonTOUBasicPropertyAddMoreValleyRanges = "LinkButtonTOUBasicPropertyAddMoreValleyRanges";
+        public static string ButtonTOUBasicPropertyDeletePeakRangeItem = "ButtonTOUBasicPropertyDeletePeakRangeItem";
+        public static string ButtonTOUBasicPropertyDeleteValleyRangeItem = "ButtonTOUBasicPropertyDeleteValleyRangeItem";
         public static string TabButtonTOUPulsePeakProperty = "TabButtonTOUPulsePeakProperty";
         public static string ButtonTOUPulsePeakPropertyCreate = "ButtonTOUPulsePeakPropertyCreate";
         public static string ButtonTOUPulsePeakPropertyPlusIcon = "ButtonTOUPulsePeakPropertyPlusIcon";

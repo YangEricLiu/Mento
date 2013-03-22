@@ -21,7 +21,7 @@ namespace Mento.Script.Administration.TOU
     [Owner("Amy")]
     [CreateTime("2013-01-04")]
     [ManualCaseID("TC-J1-SmokeTest")]
-    public class TOUPulsePeakTariffSuite : TestSuiteBase
+    public class TOUPulsePeakTariffSmokeTestSuite : TestSuiteBase
     {
         private static TOUPulsePeakTariffSettings TOUPulsePeakTariffSettings = JazzFunction.TOUPulsePeakTariffSettings;
         [SetUp]
@@ -43,7 +43,7 @@ namespace Mento.Script.Administration.TOU
         [Test]
         [CaseID("TC-J1-SmokeTest-026")]
         [Priority("7")]
-        [MultipleTestDataSource(typeof(TOUPulsePeakTariffData[]), typeof(TOUPulsePeakTariffSuite), "TC-J1-SmokeTest-026")]
+        [MultipleTestDataSource(typeof(TOUPulsePeakTariffData[]), typeof(TOUPulsePeakTariffSmokeTestSuite), "TC-J1-SmokeTest-026")]
         public void AddTOUPulsePeakTariff(TOUPulsePeakTariffData testData)
         {
             TOUPulsePeakTariffSettings.FocusOnTOUTariff("价格策略1");

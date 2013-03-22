@@ -58,6 +58,7 @@
     <Compile Include="Administration\UserSettingsData.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Common\TimeRange.cs" />
     <Compile Include="Customer\AddKPIData.cs" />
     <Compile Include="Customer\AssociateTagData.cs" />
     <Compile Include="Customer\CalendarPropertyData.cs" />

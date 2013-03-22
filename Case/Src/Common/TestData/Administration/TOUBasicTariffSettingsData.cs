@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.TestData;
 using Mento.Utility;
+using Mento.ScriptCommon.TestData.Common;
 
 namespace Mento.ScriptCommon.TestData.Administration
 {
@@ -12,40 +13,43 @@ namespace Mento.ScriptCommon.TestData.Administration
     }
     public class TOUBasicTariffInputData : InputTestDataBase
     {
-        public string Name { get; set; }
+        public string CommonName { get; set; }
         public string PlainPrice { get; set; }
         public string PeakPrice { get; set; }
         public string ValleyPrice { get; set; }
-        public int PeakRecordNumber { get; set; }
-        public int ValleyRecordNumber { get; set; }
-        public string[] PeakStartTime { get; set; }
-        public string[] PeakEndTime { get; set; }
-        public string[] ValleyStartTime { get; set; }
-        public string[] ValleyEndTime { get; set; }
+        public TimeRange[] PeakRange { get; set; }
+        public TimeRange[] ValleyRange { get; set; }
 
-
-        public TOUBasicTariffInputData(string name, string plainPrice, string peakPrice, string valleyPrice, int peakRecordNumber, int valleyRecordNumber, string[] peakStartTime, string[] peakEndTime, string[] valleyStartTime, string[] valleyEndTime)
+        public TOUBasicTariffInputData(string CommonName, string PlainPrice, string PeakPrice, string ValleyPrice, TimeRange[] PeakRange, TimeRange[] ValleyRange)
         {
-            this.Name = name;
-            this.PlainPrice = plainPrice;
-            this.PeakPrice = peakPrice;
-            this.ValleyPrice = valleyPrice;
-            this.PeakRecordNumber = peakRecordNumber;
-            this.ValleyRecordNumber = valleyRecordNumber;
-            this.PeakStartTime = peakStartTime;
-            this.PeakEndTime = peakEndTime;
-            this.ValleyStartTime = valleyStartTime;
-            this.ValleyEndTime = valleyEndTime;
+            this.CommonName = CommonName;
+            this.PlainPrice = PlainPrice;
+            this.PeakPrice = PeakPrice;
+            this.ValleyPrice = ValleyPrice;
+            this.PeakRange = PeakRange;
+            this.ValleyRange = ValleyRange;
         }
     }
 
     public class TOUBasicTariffExpectedData : ExpectedTestDataBase
     {
-        public string Price { get; set; }
+        public string CommonName { get; set; }
+        public string PlainPrice { get; set; }
+        public string PeakPrice { get; set; }
+        public string ValleyPrice { get; set; }
+        public TimeRange[] PeakRange { get; set; }
+        public TimeRange[] ValleyRange { get; set; }
+        public string PopMessage { get; set; }
 
-        public TOUBasicTariffExpectedData(string price)
+        public TOUBasicTariffExpectedData(string CommonName, string PlainPrice, string PeakPrice, string ValleyPrice, TimeRange[] PeakRange, TimeRange[] ValleyRange, string PopMessage)
         {
-            this.Price = price;
+            this.CommonName = CommonName;
+            this.PlainPrice = PlainPrice;
+            this.PeakPrice = PeakPrice;
+            this.ValleyPrice = ValleyPrice;
+            this.PeakRange = PeakRange;
+            this.ValleyRange = ValleyRange;
+            this.PopMessage = PopMessage;
         }
     }
 }

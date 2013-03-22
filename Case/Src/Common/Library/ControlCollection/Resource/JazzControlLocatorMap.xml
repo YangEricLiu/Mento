@@ -264,6 +264,8 @@
         <add key="ButtonTOUBasicPropertyDelete" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
         <add key="LinkButtonTOUBasicPropertyAddMorePeakRanges" value="//div[@id='st-tou-linkbtn-addpeaktime']//a[(text()='添加峰时范围')]" type="XPath"/>
         <add key="LinkButtonTOUBasicPropertyAddMoreValleyRanges" value="//div[@id='st-tou-linkbtn-addvalleytime']//a[(text()='添加谷时范围')]" type="XPath"/>
+        <add key="ButtonTOUBasicPropertyDeletePeakRangeItem" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-trash')]" type="XPath"/>
+        <add key="ButtonTOUBasicPropertyDeleteValleyRangeItem" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-trash')]" type="XPath"/>
         <add key="TabButtonTOUPulsePeakProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='峰值季节']]" type="XPath"/>
         <add key="ButtonTOUPulsePeakPropertyCreate" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='峰值季节电价']]" type="XPath"/>
         <add key="ButtonTOUPulsePeakPropertyPlusIcon" value="st-tou-peakproperty-addtool-toolEl" type="ID"/>

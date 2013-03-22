@@ -7,7 +7,7 @@ using Mento.Utility;
 
 namespace Mento.ScriptCommon.TestData.Customer
 {
-    public class CalendarPropertyData : TestDataBase<CalendarPropertInputData, ExpectedTestDataBase>
+    public class CalendarPropertyData : TestDataBase<CalendarPropertInputData, CalendarPropertExpectedData>
     {
     }
 
@@ -21,17 +21,23 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string HeatingCoolingCalendarName { get; set; }
         public string DayNightEffectiveDate { get; set; }
         public string DayNightCalendarName { get; set; }
+    }
 
-        public CalendarPropertInputData(string[] hierarchyNodePath, string workdayEffectiveDate, string workdayCalendarName, string worktimeCalendarName, string heatingCoolingEffectiveDate, string heatingCoolingCalendarName, string dayNightEffectiveDate, string dayNightCalendarName)
-        {
-            this.HierarchyNodePath = hierarchyNodePath;
-            this.WorkdayEffectiveDate = workdayEffectiveDate;
-            this.WorkdayCalendarName = workdayCalendarName;
-            this.WorktimeCalendarName = worktimeCalendarName;
-            this.HeatingCoolingEffectiveDate = heatingCoolingEffectiveDate;
-            this.HeatingCoolingCalendarName = heatingCoolingCalendarName;
-            this.DayNightEffectiveDate = dayNightEffectiveDate;
-            this.DayNightCalendarName = dayNightCalendarName;
-        }
+    public class CalendarPropertExpectedData : ExpectedTestDataBase
+    {
+        public string[] HierarchyNodePath { get; set; }
+        public string WorkdayEffectiveDate { get; set; }
+        public string WorkdayCalendarName { get; set; }
+        public string WorktimeCalendarName { get; set; }
+        public string HeatingCoolingEffectiveDate { get; set; }
+        public string HeatingCoolingCalendarName { get; set; }
+        public string DayNightEffectiveDate { get; set; }
+        public string DayNightCalendarName { get; set; }
+        public string[] WorkdayText { get; set; }
+        public string[] WorktimeText { get; set; }
+        public string[] HeatingCoolingText { get; set; }
+        public string[] DayNightText { get; set; }
+        public string Message { get; set; }
+        public string ErrorMessage { get; set; }
     }
 }

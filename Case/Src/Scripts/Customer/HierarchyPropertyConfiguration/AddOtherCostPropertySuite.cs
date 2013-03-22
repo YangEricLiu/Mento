@@ -47,12 +47,11 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Priority("37")]
         [Type("BVT")]
         [MultipleTestDataSource(typeof(OtherCostData[]), typeof(AddOtherCostPropertySuite), "TC-J1-SmokeTest-020-001")]
-        public void AddCostforGas(OtherCostData testData)
+        public void AddCostforGas(OtherCostData input)
         { 
             //Select buidling node "AddPeopleProperty"
-            HierarchySetting.ExpandNode("自动化测试");
-            HierarchySetting.ExpandNode("AddCalendarProperty");
-            HierarchySetting.SelectHierarchyNode("AddPeopleProperty");
+
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.ShortPause();
 
             //Click "成本属性" tab button
@@ -68,14 +67,14 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //select effective year and input value, save it
-            OtherCostSettings.FillInGasCostValue(testData.InputData);
+            OtherCostSettings.FillInGasCostValue(input.InputData);
             TimeManager.ShortPause();
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
 
             //Verify the input value displayed correct
-            Assert.AreEqual(OtherCostSettings.GetGasCostEffectiveDate(), "2012-06");
-            Assert.AreEqual(OtherCostSettings.GetGasCostPrice(), "60");
+            Assert.AreEqual(OtherCostSettings.GetGasCostEffectiveDate(), input.ExpectedData.EffectiveDate);
+            Assert.AreEqual(OtherCostSettings.GetGasCostPrice(), input.ExpectedData.Price);
         }
     }
 }

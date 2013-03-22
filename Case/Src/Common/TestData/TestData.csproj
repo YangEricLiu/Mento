@@ -59,7 +59,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Customer\AddKPIData.cs" />
+    <Compile Include="Customer\AssociateTagData.cs" />
     <Compile Include="Customer\CalendarPropertyData.cs" />
+    <Compile Include="Customer\AreaDimensionData.cs" />
     <Compile Include="Customer\ElectricfixedCostData.cs" />
     <Compile Include="Customer\ElectricityComprehensiveCostData.cs" />
     <Compile Include="Customer\KPITagFormulaData.cs" />
@@ -73,6 +75,7 @@
     <Compile Include="ClientAccess\LoginData.cs" />
     <Compile Include="Customer\HierarchyData.cs" />
     <Compile Include="Customer\KPITargetBaselineData.cs" />
+    <Compile Include="Customer\SystemDimensionData.cs" />
     <Compile Include="EnergyView\EnergyViewInputData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

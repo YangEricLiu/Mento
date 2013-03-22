@@ -5,7 +5,14 @@
 			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
 			"EffectiveDate":"2013-01",
 			"PriceMode":"固定电价",
-			"Price":"50"
+			"Price":"50",
+		},
+		"ExpectedData":
+		{
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
+			"EffectiveDate":"2013-01",
+			"PriceMode":"固定电价",
+			"Price":"50",
 		}
 	}
 ]

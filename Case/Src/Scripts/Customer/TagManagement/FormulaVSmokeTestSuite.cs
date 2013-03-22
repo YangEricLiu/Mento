@@ -18,7 +18,7 @@ namespace Mento.Script.Customer.TagManagement
     [Owner("Emma")]
     [CreateTime("2012-11-08")]
     [ManualCaseID("TC-J1-SmokeTest-005")]
-    public class FormulaForVtagSuite : TestSuiteBase
+    public class FormulaVSmokeTestSuite : TestSuiteBase
     {
         private static VTagSettings VTagSettings = JazzFunction.VTagSettings;
 
@@ -39,24 +39,24 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-SmokeTest-005-001")]
         [Priority("19")]
         [Type("BVT")]
-        public void AddFormulaToVtag()
+        public void SmokeTestAddFormulaToVtag()
         {
             /// <summary>
-            /// Precondition: 1. make sure there is vtag "Add_V1" for adding formula
-            ///               2. make sure there are one ptag named "Amy_c_P1电_分散空调" code is "Amy_c_P1"
-            ///                  one ptag named "Add_P1", code is "Add_P1"
+            /// Precondition: 1. make sure there is vtag "Formula_V1" for adding formula
+            ///               2. make sure there are one ptag named "ptag.Formula_P1" code is "ptag.Formula_P1"
+            ///                  one ptag named "ptag.Formula_P2", code is "ptag.Formula_P2"
             /// </summary>  
             ///
-            string vtagName = "Add_V1";
-            string expectedFormula = "{ptag.Add_P1}+{ptag.Amy_c_P1}";
+            string vtagName = "Formula_V1";
+            string expectedFormula = "{ptag.Formula_P1}+{ptag.Formula_P2}";
 
             //Focus on vtag "Add_V1" and click "计算公式" tab, 
             VTagSettings.PrepareToAddFormula(vtagName);
 
             //Fill formula "{ptag.Add_P1}+{ptag.Amy_c_P1}", and save
-            VTagSettings.FillInFormulaField("{ptag.Add_P1}");
+            VTagSettings.FillInFormulaField("{ptag.Formula_P1}");
             VTagSettings.AppendFormulaField("+");
-            VTagSettings.DragTagToFormula("Amy_c_P1电_分散空调");
+            VTagSettings.DragTagToFormula("ptag.Formula_P2");
 
             VTagSettings.ClickSaveFormulaButton();
             TimeManager.ShortPause();

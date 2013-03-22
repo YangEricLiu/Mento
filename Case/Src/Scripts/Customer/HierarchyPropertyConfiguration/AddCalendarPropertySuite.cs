@@ -49,14 +49,10 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Priority("34")]
         [Type("BVT")]
         [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(AddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
-        public void AddCalendarforWorkday(CalendarPropertyData testData)
+        public void AddCalendarforWorkday(CalendarPropertyData input)
         { 
-            string[] calendarText = new string[] { "默认工作日", "周一至周五", "工作日", "10月25日至10月31日", "休息日", "5月1日至5月7日" };
-            string[] workTimecalendarText = new string[] { "非工作时间", "工作时间以外均为非工作时间", "工作时间", "08:30-12:00 13:00-17:30" };
-
             //Select hierarchy node "AddCalendarProperty"
-            HierarchySettings.ExpandNode("自动化测试");
-            HierarchySettings.SelectHierarchyNode("AddCalendarProperty");
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
 
             //Click calendar tab and create button "+日历属性"
             CalendarSettings.ClickCalendarTab();
@@ -73,18 +69,18 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.MediumPause();
 
             //Select effective year and workday calendar
-            CalendarSettings.FillInWorkdayCalendarValue(testData.InputData);
+            CalendarSettings.FillInWorkdayCalendarValue(input.InputData);
             TimeManager.MediumPause();
 
             CalendarSettings.ClickSaveCalendarButton();
             TimeManager.MediumPause();
 
             //Verify the calendar display correct and label text is right
-            Assert.AreEqual(CalendarSettings.GetWorkdayEffectiveYearValue(), "2002");
-            Assert.AreEqual(CalendarSettings.GetWorkdayCalendarNameValue(), "工休日日历1");
-            Assert.AreEqual(CalendarSettings.GetWorktimeCalendarNameValue(), "工作时间日历1");
-            Assert.IsTrue(CalendarSettings.IsWorkdayCalendarTextCorrect(calendarText));
-            Assert.IsTrue(CalendarSettings.IsWorktimeCalendarTextCorrect(workTimecalendarText));
+            Assert.AreEqual(CalendarSettings.GetWorkdayEffectiveYearValue(), input.ExpectedData.WorkdayEffectiveDate);
+            Assert.AreEqual(CalendarSettings.GetWorkdayCalendarNameValue(), input.ExpectedData.WorkdayCalendarName);
+            Assert.AreEqual(CalendarSettings.GetWorktimeCalendarNameValue(), input.ExpectedData.WorktimeCalendarName);
+            Assert.IsTrue(CalendarSettings.IsWorkdayCalendarTextCorrect(input.ExpectedData.WorkdayText));
+            Assert.IsTrue(CalendarSettings.IsWorktimeCalendarTextCorrect(input.ExpectedData.WorktimeText));
         }
 
         /// <summary>
@@ -97,13 +93,10 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Priority("34")]
         [Type("BVT")]
         [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(AddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
-        public void AddCalendarforHeatingCooling(CalendarPropertyData testData)
+        public void AddCalendarforHeatingCooling(CalendarPropertyData input)
         {
-            string[] calendarText = new string[] { "采暖季", "1月1日至3月15日 11月15日至12月31日", "供冷季", "5月31日至8月31日" };
-
             //Select hierarchy node "AddCalendarProperty"
-            HierarchySettings.ExpandNode("自动化测试");
-            HierarchySettings.SelectHierarchyNode("AddCalendarProperty");
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
 
             //Click calendar tab and create button "+日历属性"
             CalendarSettings.ClickCalendarTab();
@@ -116,15 +109,15 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //Select effective year and HeatingCooling calendar, save it
-            CalendarSettings.FillInHeatingCoolingCalendarValue(testData.InputData);
+            CalendarSettings.FillInHeatingCoolingCalendarValue(input.InputData);
             TimeManager.ShortPause();
             CalendarSettings.ClickSaveCalendarButton();
             TimeManager.MediumPause();
 
             //Verify the calendar display correct and label text is right
-            Assert.AreEqual(CalendarSettings.GetHeatingCoolingEffectiveYearValue(), "2002");
-            Assert.AreEqual(CalendarSettings.GetHeatingCoolingCalendarNameValue(), "冷暖季日历1");
-            Assert.IsTrue(CalendarSettings.IsHeatingCoolingCalendarTextCorrect(calendarText));
+            Assert.AreEqual(CalendarSettings.GetHeatingCoolingEffectiveYearValue(), input.ExpectedData.HeatingCoolingEffectiveDate);
+            Assert.AreEqual(CalendarSettings.GetHeatingCoolingCalendarNameValue(), input.ExpectedData.HeatingCoolingCalendarName);
+            Assert.IsTrue(CalendarSettings.IsHeatingCoolingCalendarTextCorrect(input.ExpectedData.HeatingCoolingText));
         }
 
         /// <summary>
@@ -137,13 +130,10 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Priority("34")]
         [Type("BVT")]
         [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(AddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
-        public void AddCalendarforDayNight(CalendarPropertyData testData)
+        public void AddCalendarforDayNight(CalendarPropertyData input)
         {
-            string[] calendarText = new string[] { "黑夜时间", "白昼时间以外均为黑夜时间", "白昼时间", "05:30-18:00" };
-
             //Select hierarchy node "AddCalendarProperty"
-            HierarchySettings.ExpandNode("自动化测试");
-            HierarchySettings.SelectHierarchyNode("AddCalendarProperty");
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
 
             //Click calendar tab and create button "+日历属性"
             CalendarSettings.ClickCalendarTab();
@@ -156,15 +146,15 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //Select effective year and DayNight calendar, save it
-            CalendarSettings.FillInDayNightCalendarValue(testData.InputData) ;
+            CalendarSettings.FillInDayNightCalendarValue(input.InputData);
             TimeManager.ShortPause();
             CalendarSettings.ClickSaveCalendarButton();
             TimeManager.MediumPause();
 
             //Verify the calendar display correct and label text is right
-            Assert.AreEqual(CalendarSettings.GetDayNightEffectiveYearValue(), "2002");
-            Assert.AreEqual(CalendarSettings.GetDayNightCalendarNameValue(), "昼夜时间日历1");
-            Assert.IsTrue(CalendarSettings.IsDayNightCalendarTextCorrect(calendarText));
+            Assert.AreEqual(CalendarSettings.GetDayNightEffectiveYearValue(), input.ExpectedData.DayNightEffectiveDate);
+            Assert.AreEqual(CalendarSettings.GetDayNightCalendarNameValue(), input.ExpectedData.DayNightCalendarName);
+            Assert.IsTrue(CalendarSettings.IsDayNightCalendarTextCorrect(input.ExpectedData.DayNightText));
         }
     }
 }

@@ -38,6 +38,11 @@ namespace Mento.ScriptCommon.Library.Functions
             DimensionHierarchyTree.ClickNode(hierarchyNodeName);
         }
 
+        public void SelectHierarchyNodePath(string[] hierarchyNodePath)
+        {
+            DimensionHierarchyTree.SelectNode(hierarchyNodePath);
+        }
+
         public void ShowSystemDimensionDialog()
         {
             SetSystemDimensionButton.Click();
@@ -66,6 +71,19 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectSystemDimensionNode(string systemDimensionNodeName)
         {
             SystemDimensionTree.ClickNode(systemDimensionNodeName);
+        }
+
+        public Boolean SelectSystemDimensionNodePath(string[] systemDimensionNodePath)
+        {
+            try
+            {
+                SystemDimensionTree.SelectNode(systemDimensionNodePath);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public Boolean IsSystemDimensionNodeDisplayed(string nodeName)

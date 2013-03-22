@@ -3,8 +3,13 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
-			"EffectiveDate":"2013-06",
-			"Price":"60"
+			"EffectiveDate":"2012-06",
+			"Price":"60",
+		},
+		"ExpectedData":
+		{	
+			"EffectiveDate":"2012-06",
+			"Price":"60",
 		}
 	}
 ]

@@ -134,13 +134,10 @@
     <Folder Include="Data\Administration\User\UserManagementAddInvalid\" />
     <Folder Include="Data\Administration\User\UserManagementAddValid\" />
     <Folder Include="Data\Administration\User\UserManagementModifyValid\" />
-    <Folder Include="Data\Customer\HierarchyConfiguration\AreaDimensionSuite\" />
-    <Folder Include="Data\Customer\HierarchyConfiguration\SystemDimensionSuite\" />
     <Folder Include="Data\Customer\HierarchySettings\AreaDimensionSuite\" />
     <Folder Include="Data\Customer\HierarchySettings\HierarchyManagement\" />
     <Folder Include="Data\Customer\HierarchySettings\SystemDimensionSuite\" />
-    <Folder Include="Data\Customer\TagAssociation\HierarchyAssociateTagSuite\" />
-    <Folder Include="Data\Customer\TagManagement\FormulaManagement\" />
+    <Folder Include="Data\Customer\TagManagement\FormulaVSmokeTestSuite\" />
     <Folder Include="Data\Customer\TagManagement\KPIBaselineSuite\" />
     <Folder Include="Resource\en\" />
   </ItemGroup>
@@ -153,7 +150,7 @@
     </Content>
     <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_schema_data.sql" />
     <Content Include="SqlScript\TearDown\14dbo_Trigger.sql" />
-    <None Include="Data\Administration\CustomerOperation\AddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
+    <None Include="Data\Administration\CustomerOperation\AddCustomerSmokeTestSuite\TC-J1-SmokeTest-033-001.json" />
     <None Include="Data\Administration\TOU\TOUPulsePeakTariffSuite\TC-J1-SmokeTest-026.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffSuite\TC-J1-SmokeTest-025.json" />
     <None Include="Data\Administration\User\UserConfigurationSuite\TC-J1-SmokeTest-034-Modify.json" />
@@ -161,7 +158,6 @@
     <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-1.json" />
     <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-2.json" />
     <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-3.json" />
-    <Content Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\TC-J1-SmokeTest-001-002.json" />
     <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-4.json" />
     <None Include="Data\CommonInputData.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-4.json" />
@@ -172,6 +168,7 @@
     <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-2.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-1.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-1.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AreaDimensionSmokeTestSuite\TC-J1-SmokeTest-AreaDimension-001.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-2.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-1.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-001-2.json" />
@@ -182,11 +179,19 @@
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-3.json" />
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-2.json" />
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-1.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\SystemDimensionSmokeTestSuite\TC-J1-SmokeTest-SystemDimension-001.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\SystemDimensionSmokeTestSuite\TC-J1-SmokeTest-SystemDimension-002.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-SmokeTest-017.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElectricfixedCostPropertySuite\TC-J1-SmokeTest-018-001.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElectricityComprehensiveCostPropertySuite\TC-J1-SmokeTest-019-001.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddOtherCostPropertySuite\TC-J1-SmokeTest-020-001.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddPeopleAreaPropertySuite\TC-J1-SmokeTest-021.json" />
+    <Content Include="Data\Customer\TagAssociation\HierarchyAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-001.json" />
+    <Content Include="Data\Customer\TagAssociation\SystemAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-002.json" />
+    <Content Include="Data\Customer\TagAssociation\AreaDimensionAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-003.json" />
+    <Content Include="Data\Customer\TagAssociation\HierarchyDisassociateTagSmokeTestSuite\TC-J1-SmokeTest-DisassociateTag-001.json" />
+    <Content Include="Data\Customer\TagAssociation\SystemDisassociateTagSmokeTestSuite\TC-J1-SmokeTest-DisassociateTag-002.json" />
+    <Content Include="Data\Customer\TagAssociation\AreaDimensionDisassociateTagSmokeTestSuite\TC-J1-SmokeTest-DisassociateTag-003.json" />
     <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Valid.json" />
     <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Valid.json" />
     <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Invalid-redline.json" />
@@ -253,7 +258,7 @@
     </Content>
     <Content Include="Data\Administration\ExampleSuite\TA-Example-008.json" />
     <Content Include="Data\Administration\ExampleSuite\TA-Example-009.json" />
-    <Content Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\TC-J1-SmokeTest-001-001.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\TC-J1-SmokeTest-Hierarchy-001.json" />
     <Content Include="Data\Administration\LoginSuite\TA-Trial-Login-001.json" />
     <Content Include="Data\Administration\ShowTimeSuite\TC-J1-ShowTime-001.json" />
     <None Include="Data\Administration\CarbonFactor\CarbonFactorSuite\TC-J1-SmokeTest-024.json" />

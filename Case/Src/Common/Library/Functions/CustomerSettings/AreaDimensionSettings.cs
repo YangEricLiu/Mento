@@ -42,6 +42,11 @@ namespace Mento.ScriptCommon.Library.Functions
             DimensionHierarchyTree.ClickNode(hierarchyNodeName);
         }
 
+        public void SelectHierarchyNodePath(string[] hierarchyNodePath)
+        {
+            DimensionHierarchyTree.SelectNode(hierarchyNodePath);
+        }
+
         public void ExpandAreaDimensionNodePath(string[] areaDimensionNodePath)
         {
             AreaDimensionTree.ExpandNodePath(areaDimensionNodePath);
@@ -50,6 +55,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectAreaDimensionNode(string areaDimensionNodeName)
         {
             AreaDimensionTree.ClickNode(areaDimensionNodeName);
+        }
+
+        public void SelectAreaDimensionNodePath(string[] areaDimensionNodePath)
+        {
+            AreaDimensionTree.SelectNode(areaDimensionNodePath);
         }
 
         public void ClickCreateAreaDimensionButton()

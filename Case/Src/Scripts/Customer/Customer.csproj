@@ -59,17 +59,17 @@
     <Compile Include="HierarchyPropertyConfiguration\AddElectricityComprehensiveCostPropertySuite .cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddOtherCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddPeopleAreaPropertySuite.cs" />
-    <Compile Include="TagDisassociation\AreaDimensionDisassociateTagSuite.cs" />
-    <Compile Include="TagDisassociation\HierarchyDisassociateTagSuite.cs" />
+    <Compile Include="TagAssociation\AreaDimensionDisassociateTagSmokeTestSuite.cs" />
+    <Compile Include="TagAssociation\HierarchyDisassociateTagSmokeTestSuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddCalendarPropertySuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
-    <Compile Include="HierarchyConfiguration\AreaDimensionSuite.cs" />
-    <Compile Include="HierarchyConfiguration\SystemDimensionSuite.cs" />
-    <Compile Include="HierarchyConfiguration\HierarchyManagementSuite.cs" />
+    <Compile Include="HierarchyConfiguration\AreaDimensionSmokeTestSuite.cs" />
+    <Compile Include="HierarchyConfiguration\SystemDimensionSmokeTestSuite.cs" />
+    <Compile Include="HierarchyConfiguration\HierarchySmokeTestSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TagAssociation\AreaDimensionAssociateTagSuite.cs" />
-    <Compile Include="TagAssociation\SystemAssociateTagSuite.cs" />
-    <Compile Include="TagDisassociation\SystemDisassociateTagSuite.cs" />
+    <Compile Include="TagAssociation\AreaDimensionAssociateTagSmokeTestSuite.cs" />
+    <Compile Include="TagAssociation\SystemAssociateTagSmokeTestSuite.cs" />
+    <Compile Include="TagAssociation\SystemDisassociateTagSmokeTestSuite.cs" />
     <Compile Include="TagManagement\AddKPIFormulaSuite.cs" />
     <Compile Include="TagManagement\AddKPITagSuite.cs" />
     <Compile Include="TagManagement\CancelModifyFormDayNightKPI.cs" />
@@ -81,7 +81,7 @@
     <Compile Include="TagManagement\KPIBaselineSuite.cs" />
     <Compile Include="TagManagement\FormulaForDayNightKPISuite.cs" />
     <Compile Include="TagManagement\FormulaForNonDayNightKPISuite.cs" />
-    <Compile Include="TagManagement\FormulaForVtagSuite.cs" />
+    <Compile Include="TagManagement\FormulaVSmokeTestSuite.cs" />
     <Compile Include="TagManagement\KPIConfigurationSuite.cs" />
     <Compile Include="TagManagement\ModifyFormulaDayNightKPI.cs" />
     <Compile Include="TagManagement\ModifyFormulaNonDayNightKPI.cs" />
@@ -89,7 +89,7 @@
     <Compile Include="TagManagement\ModifyKPITag.cs" />
     <Compile Include="TagManagement\ModifyKPITagSuite.cs" />
     <Compile Include="TagManagement\PtagConfigurationSuite.cs" />
-    <Compile Include="TagAssociation\HierarchyAssociateTagSuite.cs" />
+    <Compile Include="TagAssociation\HierarchyAssociateTagSmokeTestSuite.cs" />
     <Compile Include="TagManagement\VtagManagementSuite.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -123,7 +123,9 @@
       <Link>App.config</Link>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="TagDisassociation\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>del /F /S /Q $(TargetDir)Data

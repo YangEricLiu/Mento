@@ -25,7 +25,7 @@ namespace Mento.Script.Administration.User
         [SetUp]
         [Owner("Nancy")]
         [CreateTime("2013-01-08")]
-        [ManualCaseID("TC-J1-SmokeTest")]
+        [ManualCaseID("TC-J1-SmokeTest-034")]
         public void CaseSetUp()
         {
             UserSettings.NavigatorToUserSetting();
@@ -61,7 +61,7 @@ namespace Mento.Script.Administration.User
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-034-Modify"), CreateTime("2013-01-08"), Owner("Nancy")]
+        [CaseID("TC-J1-Modify"), CreateTime("2013-01-08"), Owner("Nancy")]
         [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserConfigurationSuite), "TC-J1-SmokeTest-034-Modify")]
         public void ModifyUser(UserSettingsData testData)
         {

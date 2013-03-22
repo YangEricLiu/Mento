@@ -46,11 +46,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Priority("35")]
         [Type("BVT")]
         [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(AddElectricfixedCostPropertySuite), "TC-J1-SmokeTest-018-001")]
-        public void AddCostforElectricfixed(ElectricfixedCostData testData)
+        public void AddCostforElectricfixed(ElectricfixedCostData input)
         {
-            HierarchySetting.ExpandNode("自动化测试");
-            HierarchySetting.ExpandNode("AddCalendarProperty");
-            HierarchySetting.SelectHierarchyNode("AddPeopleProperty");
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.ShortPause();
 
             //Click "成本属性" tab button
@@ -66,15 +64,15 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //select effective year and input value, save it
-            CostSettings.FillInFixedCost(testData.InputData);
+            CostSettings.FillInFixedCost(input.InputData);
             TimeManager.ShortPause();
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
 
             //Verify the input value displayed correct
-            Assert.AreEqual(CostSettings.GetElectricCostEffectiveDateValue(), "2013-01");
-            Assert.AreEqual(CostSettings.GetElectricPriceMode(), "固定电价");
-            Assert.AreEqual(CostSettings.GetElectricPriceValue(), "50");
+            Assert.AreEqual(CostSettings.GetElectricCostEffectiveDateValue(), input.ExpectedData.EffectiveDate);
+            Assert.AreEqual(CostSettings.GetElectricPriceMode(), input.ExpectedData.PriceMode);
+            Assert.AreEqual(CostSettings.GetElectricPriceValue(), input.ExpectedData.Price);
         }
     }
 }

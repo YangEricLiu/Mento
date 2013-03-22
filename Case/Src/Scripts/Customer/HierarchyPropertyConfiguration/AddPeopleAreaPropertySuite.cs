@@ -46,12 +46,10 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Priority("38")]
         [Type("BVT")]
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddPeopleAreaPropertySuite), "TC-J1-SmokeTest-021")]
-        public void AddAreaProperty(PeopleAreaPropertyData testData)
+        public void AddAreaProperty(PeopleAreaPropertyData input)
         {
             //Select buidling node "AddPeopleProperty"
-            HierarchySetting.ExpandNode("自动化测试");
-            HierarchySetting.ExpandNode("AddCalendarProperty");
-            HierarchySetting.SelectHierarchyNode("AddPeopleProperty");
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             
             //Click "人口面积" tab button
             PeopleAreaSetting.ClickPeopleAreaTab();
@@ -60,16 +58,16 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             PeopleAreaSetting.ClickPeopleAreaCreateButton();
 
             //Input value and save
-            PeopleAreaSetting.FillInAreaValue(testData.InputData);
+            PeopleAreaSetting.FillInAreaValue(input.InputData);
             TimeManager.ShortPause();
 
             PeopleAreaSetting.ClickSaveButton();
             TimeManager.ShortPause();
 
             //Verify the input value displayed correct
-            Assert.AreEqual(PeopleAreaSetting.GetTotalAreaValue(), "10");
-            Assert.AreEqual(PeopleAreaSetting.GetHeatingAreaValue(), "20");
-            Assert.AreEqual(PeopleAreaSetting.GetCoolingAreaValue(), "30");
+            Assert.AreEqual(PeopleAreaSetting.GetTotalAreaValue(), input.ExpectedData.TotalArea);
+            Assert.AreEqual(PeopleAreaSetting.GetHeatingAreaValue(), input.ExpectedData.HeatingArea);
+            Assert.AreEqual(PeopleAreaSetting.GetCoolingAreaValue(), input.ExpectedData.CoolingArea);
         }
 
         /// <summary>
@@ -81,12 +79,10 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Priority("38")]
         [Type("BVT")]
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddPeopleAreaPropertySuite), "TC-J1-SmokeTest-021")]
-        public void AddPeoplePeoperty(PeopleAreaPropertyData testData)
+        public void AddPeoplePeoperty(PeopleAreaPropertyData input)
         {
             //Select buidling node "AddPeopleProperty"
-            HierarchySetting.ExpandNode("自动化测试");
-            HierarchySetting.ExpandNode("AddCalendarProperty");
-            HierarchySetting.SelectHierarchyNode("AddPeopleProperty");
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
 
             //Click "人口面积" tab button
             PeopleAreaSetting.ClickPeopleAreaTab();
@@ -98,13 +94,13 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //select effective year and input value
-            PeopleAreaSetting.FillInPeopleValue(testData.InputData);
+            PeopleAreaSetting.FillInPeopleValue(input.InputData);
             PeopleAreaSetting.ClickSaveButton();
             TimeManager.ShortPause();
 
             //Verify the input value displayed correct
-            Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), "2031-03");
-            Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), "30");
+            Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), input.ExpectedData.PeopleEffectiveDate);
+            Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), input.ExpectedData.PeopleNumber);
         }
     }
 }

@@ -10,14 +10,17 @@ using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
+using Mento.ScriptCommon.TestData.Customer;
+using Mento.TestApi.TestData;
+using Mento.TestApi.TestData.Attribute;
 
-namespace Mento.Script.Customer.TagDisassociation
+namespace Mento.Script.Customer.TagAssociation
 {
     [TestFixture]
     [Owner("Nancy")]
     [CreateTime("2012-01-06")]
     [ManualCaseID("TC-J1-SmokeTest-012")]
-    public class SystemDisassociateTagSuite : TestSuiteBase
+    public class SystemDisassociateTagSmokeTestSuite : TestSuiteBase
     {
         private static AssociateSettings Association = JazzFunction.AssociateSettings;
         private static SystemDimensionSettings SystemSettings = JazzFunction.SystemDimensionSettings;
@@ -37,10 +40,11 @@ namespace Mento.Script.Customer.TagDisassociation
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-012-001")]
+        [CaseID("TC-J1-SmokeTest-DisassociateTag-002")]
         [Priority("28")]
         [Type("BVT")]
-        public void DisassociateOneTag()
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(SystemDisassociateTagSmokeTestSuite), "TC-J1-SmokeTest-DisassociateTag-002")]
+        public void DisassociateOneTag(AssociateTagData input)
         {
             /// <summary>
             /// Precondition: 1. make sure the hiearchy node has been added "自动化测试"->"systemAssociate"
@@ -51,25 +55,23 @@ namespace Mento.Script.Customer.TagDisassociation
             //Select hierarchy node "自动化测试"->"systemAssociate"
             SystemSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
-            SystemSettings.ExpandHierarchyNodePath(new string[] { "自动化测试" });
-            SystemSettings.SelectHierarchyNode("systemAssociate");
+            SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
 
             //Select system dimension "空调"
-            SystemSettings.ExpandSystemDimensionNodePath(new string[] { "systemAssociate" });
-            SystemSettings.SelectSystemDimensionNode("空调");
+            SystemSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionPath);
 
-            //Select associated tag "Add_V1" and click "disassociate" button
-            Disassociation.FocusOnTag("Add_V1");
+            //Select associated tag and click "disassociate" button
+            Disassociation.FocusOnTag(input.InputData.TagName);
 
             //Verify the tag is not on associated tag list
             Disassociation.ClickDisassociateButton();
             TimeManager.ShortPause();
-            Assert.IsFalse(Association.IsTagOnAssociategGridView("Add_V1"));
+            Assert.IsFalse(Association.IsTagOnAssociategGridView(input.InputData.TagName));
 
             //Verify the tag is on disassociated tag list
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
-            Assert.IsTrue(Association.IsTagOnAssociategGridView("Add_V1"));
+            Assert.IsTrue(Association.IsTagOnAssociategGridView(input.InputData.TagName));
         }
     }
 }

@@ -10,14 +10,17 @@ using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
+using Mento.ScriptCommon.TestData.Customer;
+using Mento.TestApi.TestData;
+using Mento.TestApi.TestData.Attribute;
 
-namespace Mento.Script.Customer.TagDisassociation
+namespace Mento.Script.Customer.TagAssociation
 {
     [TestFixture]
     [Owner("Nancy")]
     [CreateTime("2013-01-06")]
     [ManualCaseID("TC-J1-SmokeTest-013")]
-    public class AreaDimensionDisassociateTagSuite : TestSuiteBase
+    public class AreaDimensionDisassociateTagSmokeTestSuite : TestSuiteBase
     {
         private static AssociateSettings Association = JazzFunction.AssociateSettings;
         private static AreaDimensionSettings AreaSettings = JazzFunction.AreaDimensionSettings;
@@ -37,10 +40,11 @@ namespace Mento.Script.Customer.TagDisassociation
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-013-001")]
+        [CaseID("TC-J1-SmokeTest-DisassociateTag-003")]
         [Priority("29")]
         [Type("BVT")]
-        public void DisassociateOneTag()
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AreaDimensionDisassociateTagSmokeTestSuite), "TC-J1-SmokeTest-DisassociateTag-003")]
+        public void DisassociateOneTag(AssociateTagData input)
         {
             /// <summary>
             /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"->"AddCalendarProperty"->"AddPeopleProperty"
@@ -51,24 +55,22 @@ namespace Mento.Script.Customer.TagDisassociation
             //Select hierarchy node "AddPeopleProperty"
             AreaSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
-            AreaSettings.ExpandHierarchyNodePath(new string[] { "自动化测试", "systemAssociate" });
-            AreaSettings.SelectHierarchyNode("AreaDimension");
+            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
 
-            AreaSettings.ExpandAreaDimensionNodePath(new string[] { "AreaDimension" });
-            AreaSettings.SelectAreaDimensionNode("FirstFloor");
+            AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaDimensionPath);
 
             //Select area dimension node "FirstFloor" and click associate tag button
-            Disassociation.FocusOnTag("AddforAreaAssociate");
+            Disassociation.FocusOnTag(input.InputData.TagName);
 
             //Verify the tag is not on associated tag list
             Disassociation.ClickDisassociateButton();
             TimeManager.ShortPause();
-            Assert.IsFalse(Association.IsTagOnAssociategGridView("AddforAreaAssociate"));
+            Assert.IsFalse(Association.IsTagOnAssociategGridView(input.InputData.TagName));
 
             //Verify the tag is on disassociated tag list
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
-            Assert.IsTrue(Association.IsTagOnAssociategGridView("AddforAreaAssociate"));
+            Assert.IsTrue(Association.IsTagOnAssociategGridView(input.InputData.TagName));
 
         }
     }

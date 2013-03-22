@@ -7,22 +7,20 @@ using Mento.Utility;
 
 namespace Mento.ScriptCommon.TestData.Customer
 {
-    public class OtherCostData : TestDataBase<OtherCostInputData, OtherCostExpectedData>
+    public class SystemDimensionData : TestDataBase<SystemDimensionInputData, SystemDimensionExpectedData>
     {
     }
 
-    public class OtherCostInputData : InputTestDataBase
+    public class SystemDimensionInputData : InputTestDataBase
     {
         public string[] HierarchyNodePath { get; set; }
-        public string EffectiveDate { get; set; }
-        public string Price { get; set; }
+        public string[] SystemDimensionItemPath { get; set; }
     }
 
-    public class OtherCostExpectedData : ExpectedTestDataBase
+    public class SystemDimensionExpectedData : ExpectedTestDataBase
     {
         public string[] HierarchyNodePath { get; set; }
-        public string EffectiveDate { get; set; }
-        public string Price { get; set; }
+        public string[] SystemDimensionPath { get; set; }
         public string Message { get; set; }
         public string ErrorMessage { get; set; }
     }

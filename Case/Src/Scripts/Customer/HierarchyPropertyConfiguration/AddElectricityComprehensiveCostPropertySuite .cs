@@ -47,11 +47,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Priority("36")]
         [Type("BVT")]
         [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElectricityComprehensiveCostPropertySuite), "TC-J1-SmokeTest-019-001")]
-        public void AddCostforElectricComprehensive(ElectricityComprehensiveCostData testData)
+        public void AddCostforElectricComprehensive(ElectricityComprehensiveCostData input)
         {
-            HierarchySetting.ExpandNode("自动化测试");
-            HierarchySetting.ExpandNode("AddCalendarProperty");
-            HierarchySetting.SelectHierarchyNode("AddPeopleProperty");
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.ShortPause();
 
             //Click "成本属性" tab button
@@ -67,22 +65,22 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //select and input value, save it
-            CostSettings.FillInComprehensiveCost(testData.InputData);
+            CostSettings.FillInComprehensiveCost(input.InputData);
             TimeManager.ShortPause();
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
 
             //Verify the input value displayed correct
-            Assert.AreEqual(CostSettings.GetElectricCostEffectiveDateValue(), "2013-01");
-            Assert.AreEqual(CostSettings.GetElectricPriceMode(), "综合电价");
-            Assert.AreEqual(CostSettings.GetDemandCostTypeValue(), "变压器容量模式");
-            Assert.AreEqual(CostSettings.GetElectricTransformerCapacityValue(), "10");
-            Assert.AreEqual(CostSettings.GetElectricTransformerPriceValue(), "21");
-            Assert.AreEqual(CostSettings.GetTouTariffIdValue(), "ElectricCost1");
-            Assert.AreEqual(CostSettings.GetFactorTypeValue(), "0.85");
-            Assert.AreEqual(CostSettings.GetRealTagIdValue(), "ElecCost_P2");
-            Assert.AreEqual(CostSettings.GetReactiveTagIdValue(), "ElecCost_P1");
-            Assert.AreEqual(CostSettings.GetElectricPaddingCostValue(), "80");
+            Assert.AreEqual(CostSettings.GetElectricCostEffectiveDateValue(), input.ExpectedData.EffectiveDate);
+            Assert.AreEqual(CostSettings.GetElectricPriceMode(), input.ExpectedData.PriceMode);
+            Assert.AreEqual(CostSettings.GetDemandCostTypeValue(), input.ExpectedData.DemandCostType);
+            Assert.AreEqual(CostSettings.GetElectricTransformerCapacityValue(), input.ExpectedData.TransformerCapacity);
+            Assert.AreEqual(CostSettings.GetElectricTransformerPriceValue(), input.ExpectedData.TransformerPrice);
+            Assert.AreEqual(CostSettings.GetTouTariffIdValue(), input.ExpectedData.TouTariffId);
+            Assert.AreEqual(CostSettings.GetFactorTypeValue(), input.ExpectedData.FactorType);
+            Assert.AreEqual(CostSettings.GetRealTagIdValue(), input.ExpectedData.RealTagId);
+            Assert.AreEqual(CostSettings.GetReactiveTagIdValue(), input.ExpectedData.ReactiveTagId);
+            Assert.AreEqual(CostSettings.GetElectricPaddingCostValue(), input.ExpectedData.ElectricPaddingCost);
         }
     }
 }

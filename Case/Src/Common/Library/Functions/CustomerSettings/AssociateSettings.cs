@@ -31,6 +31,12 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.FlashPause();
         }
 
+        public void SelectHierarchyNodePath(string[] hierarchyNamePath)
+        {
+            HierarchyTree.SelectNode(hierarchyNamePath);
+            TimeManager.FlashPause();
+        }
+
         /// <summary>
         /// Navigate to hierarchy associate setting
         /// </summary>

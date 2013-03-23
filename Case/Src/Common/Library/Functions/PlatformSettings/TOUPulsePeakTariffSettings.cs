@@ -21,6 +21,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
+        #region Controls
         private static Grid TOUTariffsList = JazzGrid.TOUTariffsList;
 
         private static TabButton PulsePeakPropertyTab = JazzButton.TOUPulsePeakPropertyTabButton;
@@ -29,7 +30,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button PulsePeakPropertyModifyButton = JazzButton.TOUPulsePeakPropertyModifyButton;
         private static Button PulsePeakPropertySaveButton = JazzButton.TOUPulsePeakPropertySaveButton;
         private static Button PulsePeakPropertyCancelButton = JazzButton.TOUPulsePeakPropertyCancelButton;
-        private static LinkButton PulsePeakPropertyAddMorePulsePeakRangesButton = JazzButton.TOUPulsePeakPropertyAddMorePulsePeakRangesButton;
+        private static Button PulsePeakPropertyDeleteWholeRangeButton = JazzButton.TOUPulsePeakPropertyDeleteWholeRangeButton;
+        private static Button PulsePeakPropertyDeleteRangeItemButton = JazzButton.TOUPulsePeakPropertyDeleteRangeItemButton;
+        private static LinkButton PulsePeakPropertyAddMoreRangesButton = JazzButton.TOUPulsePeakPropertyAddMoreRangesButton;
         
         private static TextField PulsePeakPropertyPriceValueTextField = JazzTextField.TOUPulsePeakPropertyPriceValueTextField;
 
@@ -39,11 +42,12 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox PulsePeakPropertyEndDateComboBox = JazzComboBox.TOUPulsePeakPropertyEndDateComboBox;
         private static ComboBox PulsePeakPropertyStartTimeComboBox = JazzComboBox.TOUPulsePeakPropertyStartTimeComboBox;
         private static ComboBox PulsePeakPropertyEndTimeComboBox = JazzComboBox.TOUPulsePeakPropertyEndTimeComboBox;
+        #endregion
 
+        #region common action
         public void NavigatorToPriceSettings()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.PriceSettingsPrice);
-            //TimeManager.ShortPause();
         }        
                 
         public void FocusOnTOUTariff(string touTariffName)
@@ -55,16 +59,59 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             PulsePeakPropertyTab.Click();
         }
-      
-        public void PrepareToAddTOUPulsePeakProperty()
+
+        public void ClickPulsePeakPropertyCreateButton()
         {
             PulsePeakPropertyCreateButton.Click();
+        }
+
+        public void ClickPulsePeakPropertyPlusIcon()
+        {
             PulsePeakPropertyPlusIconButton.Click();
         }
 
+        public void ClickPulsePeakPropertyModifyButton()
+        {
+            PulsePeakPropertyModifyButton.Click();
+        }
+        
+        public void ClickPulsePeakPropertySaveButton()
+        {
+            PulsePeakPropertySaveButton.Click();
+        }
+
+        public void ClickPulsePeakPropertyCancelButton()
+        {
+            PulsePeakPropertyCancelButton.Click();
+        }        
+        #endregion
+
+        #region item operation
         public void FillInPulsePeakPropertyPriceValue(string price)
         {
             PulsePeakPropertyPriceValueTextField.Fill(price);
+        }
+
+        public void AddPulsePeakRanges(TOUPulsePeakTariffData testData)
+        {
+            for (int elementPosition = 1; elementPosition <= testData.InputData.PulsePeakRange.Length; elementPosition++)
+            {
+                //Click '添加峰时范围' button if more than one record need to be entered
+                if (elementPosition > 1)
+                {
+                    ClickAddMorePulsePeakRangesButton();
+                    TimeManager.ShortPause();
+                }
+                int inputDataArrayPosition = elementPosition - 1;
+
+                SelectPulsePeakPropertyStartMonth(testData.InputData.PulsePeakRange[inputDataArrayPosition].StartMonth, elementPosition);
+                SelectPulsePeakPropertyStartDate(testData.InputData.PulsePeakRange[inputDataArrayPosition].StartDate, elementPosition);
+                SelectPulsePeakPropertyEndMonth(testData.InputData.PulsePeakRange[inputDataArrayPosition].EndMonth, elementPosition);
+                SelectPulsePeakPropertyEndDate(testData.InputData.PulsePeakRange[inputDataArrayPosition].EndDate, elementPosition);
+                SelectPulsePeakPropertyStartTime(testData.InputData.PulsePeakRange[inputDataArrayPosition].StartTime, elementPosition);
+                SelectPulsePeakPropertyEndTime(testData.InputData.PulsePeakRange[inputDataArrayPosition].EndTime, elementPosition);                
+                TimeManager.ShortPause();
+            }
         }
 
         public void SelectPulsePeakPropertyStartMonth(string month, int num)
@@ -105,14 +152,22 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickAddMorePulsePeakRangesButton()
         {
-            PulsePeakPropertyAddMorePulsePeakRangesButton.ClickLink();
+            PulsePeakPropertyAddMoreRangesButton.ClickLink();
         }
 
-        public void ClickPulsePeakPropertySaveButton()
+        public void ClickDeletePulsePeakWholeRangeButton()
         {
-            PulsePeakPropertySaveButton.Click();
+            PulsePeakPropertyDeleteWholeRangeButton.Click();
         }
 
+        public void ClickDeletePulsePeakRangeItemButton(int num)
+        {
+            Button OneDeleteRangeIcon = GetOneDeletePulsePeakRangeItemButton(num);
+            OneDeleteRangeIcon.Click();
+        }
+        #endregion
+
+        #region Get value
         public string GetPulsePeakPropertyPriceValue()
         {
             return PulsePeakPropertyPriceValueTextField.GetValue();
@@ -153,6 +208,7 @@ namespace Mento.ScriptCommon.Library.Functions
             ComboBox OneEndTime = GetOnePulsePeakPropertyEndTimeComboBox(num);
             return OneEndTime.GetValue();
         }
+        #endregion
 
         #region private method
 
@@ -184,6 +240,11 @@ namespace Mento.ScriptCommon.Library.Functions
         private ComboBox GetOnePulsePeakPropertyEndTimeComboBox(int positionIndex)
         {
             return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyEndTime, positionIndex);
+        }
+
+        private Button GetOneDeletePulsePeakRangeItemButton(int positionIndex)
+        {
+            return JazzButton.GetOneButton(JazzControlLocatorKey.ButtonTOUPulsePeakPropertyDeleteRangeItem, positionIndex);
         }
         #endregion
     }

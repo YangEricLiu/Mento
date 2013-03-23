@@ -56,7 +56,7 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
-            TimeManager.MediumPause();
+            TimeManager.ShortPause();
 
             //Verify
             Assert.AreEqual(testData.InputData.CommonName, TOUBasicTariffSettings.GetBasicPropertyNameValue());

@@ -290,7 +290,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonTOUPulsePeakPropertyModify = "ButtonTOUPulsePeakPropertyModify";
         public static string ButtonTOUPulsePeakPropertySave = "ButtonTOUPulsePeakPropertySave";
         public static string ButtonTOUPulsePeakPropertyCancel = "ButtonTOUPulsePeakPropertyCancel";
-        public static string LinkButtonTOUPulsePeakPropertyAddMorePulsePeakRanges = "LinkButtonTOUPulsePeakPropertyAddMorePulsePeakRanges";
+        public static string LinkButtonTOUPulsePeakPropertyAddMoreRanges = "LinkButtonTOUPulsePeakPropertyAddMoreRanges";
+        public static string ButtonTOUPulsePeakPropertyDeleteWholeRange = "ButtonTOUPulsePeakPropertyDeleteWholeRange";
+        public static string ButtonTOUPulsePeakPropertyDeleteRangeItem = "ButtonTOUPulsePeakPropertyDeleteRangeItem";
         #endregion
 
         #region customermanagement

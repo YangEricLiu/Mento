@@ -59,9 +59,11 @@
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="TimeManagement\WorkdaySuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TOU\TOUPulsePeakTariffAddValidSuite.cs" />
+    <Compile Include="TOU\TOUPulsePeakTariffModifyValidSuite.cs" />
+    <Compile Include="TOU\TOUBasicTariffAddInvalidSuite.cs" />
     <Compile Include="TOU\TOUBasicTariffModifyValidSuite.cs" />
     <Compile Include="TOU\TOUBasicTariffModifyInvalidSuite.cs" />
-    <Compile Include="TOU\TOUBasicTariffAddInvalidSuite.cs" />
     <Compile Include="TOU\TOUBasicTariffDeleteSuite.cs" />
     <Compile Include="TOU\TOUBasicTariffAddValidSuite.cs" />
     <Compile Include="TOU\TOUPulsePeakTariffSmokeTestSuite.cs" />

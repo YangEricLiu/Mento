@@ -131,19 +131,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Administration\User\UserManagementAddInvalid\" />
-    <Folder Include="Data\Administration\User\UserManagementAddValid\" />
-    <Folder Include="Data\Administration\User\UserManagementModifyValid\" />
-	<Folder Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUBasicTariffAddValidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUBasicTariffModifyInvalidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffAddInvalidSuite\" />
-    <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffAddValidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffModifyInvalidSuite\" />
-    <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffModifyValidSuite\" />
-    
-
-	<Folder Include="Data\Customer\HierarchySettings\AreaDimensionSuite\" />
+    <Folder Include="Data\Administration\User\UserManagementAddInvalid\" />
+    <Folder Include="Data\Administration\User\UserManagementAddValid\" />
+    <Folder Include="Data\Administration\User\UserManagementModifyValid\" />
+    <Folder Include="Data\Customer\HierarchySettings\AreaDimensionSuite\" />
     <Folder Include="Data\Customer\HierarchySettings\HierarchyManagement\" />
     <Folder Include="Data\Customer\HierarchySettings\SystemDimensionSuite\" />
     <Folder Include="Data\Customer\TagManagement\FormulaVSmokeTestSuite\" />
@@ -165,6 +161,8 @@
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSetting-Delete-001.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffModifyValidSuite\TC-J1-FVT-TOUTariffSetting-Modify-101.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffModifyValidSuite\TC-J1-FVT-TOUTariffSetting-Modify-103.json" />
+    <None Include="Data\Administration\TOU\TOUPulsePeakTariffAddValidSuite\TC-J1-FVT-TOUPulsePeakTariffSetting-Add-101.json" />
+    <None Include="Data\Administration\TOU\TOUPulsePeakTariffModifyValidSuite\TC-J1-FVT-TOUPulsePeakTariffSetting-Modify-101.json" />
     <None Include="Data\Administration\TOU\TOUPulsePeakTariffSmokeTestSuite\TC-J1-SmokeTest-026.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffSmokeTestSuite\TC-J1-SmokeTest-025.json" />
     <None Include="Data\Administration\User\UserConfigurationSuite\TC-J1-SmokeTest-034-Modify.json" />

@@ -279,7 +279,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button TOUPulsePeakPropertyModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertyModify);
         public static Button TOUPulsePeakPropertySaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertySave);
         public static Button TOUPulsePeakPropertyCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertyCancel);
-        public static LinkButton TOUPulsePeakPropertyAddMorePulsePeakRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonTOUPulsePeakPropertyAddMorePulsePeakRanges);
+        public static Button TOUPulsePeakPropertyDeleteWholeRangeButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertyDeleteWholeRange);
+        public static Button TOUPulsePeakPropertyDeleteRangeItemButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertyDeleteRangeItem);
+        public static LinkButton TOUPulsePeakPropertyAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonTOUPulsePeakPropertyAddMoreRanges);        
         #endregion
         #region Customer settings buttons
         public static Button AddCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonAddCustomer);

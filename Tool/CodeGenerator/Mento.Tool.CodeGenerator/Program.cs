@@ -23,16 +23,34 @@ namespace Mento.Tool.CodeGenerator
 
         private static string Spaces = new String(' ', 8);
 
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             if (args == null || args.Length <= 0 || String.IsNullOrEmpty(args[0]))
-                return;
+                return 0;
 
             Console.WriteLine(args[0]);
             Console.WriteLine(args[1]);
 
-            FileInfo inputFile = new FileInfo(args[0]);//@"E:\works\kara\mento\Trunk\Case\Common\Library\ControlCollection\Resource\JazzControlLocatorMap.xml";
-            FileInfo outputFile = new FileInfo(args[1]);//@"result.txt";
+            //FileInfo inputFile = new FileInfo(args[0]);//@"E:\works\kara\mento\Trunk\Case\Common\Library\ControlCollection\Resource\JazzControlLocatorMap.xml";
+            //FileInfo outputFile = new FileInfo(args[1]);//@"result.txt";
+
+            try
+            {
+                Generate(args[0], args[1]);
+                return 0;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                //throw;
+                return 1;
+            }
+        }
+
+        private static void Generate(string inputFileName, string outputFileName)
+        {
+            FileInfo inputFile = new FileInfo(inputFileName);//@"E:\works\kara\mento\Trunk\Case\Common\Library\ControlCollection\Resource\JazzControlLocatorMap.xml";
+            FileInfo outputFile = new FileInfo(outputFileName);//@"result.txt";
 
             if (inputFile.IsReadOnly)
                 return;
@@ -74,24 +92,33 @@ namespace Mento.Tool.CodeGenerator
 
             writer.WriteLine(CLOSEMARKS);
             writer.Flush();
-            writer.Close();
+            writer.Close(); 
         }
 
         private static void CheckoutForEdit(string fileName)
         {
             string[] drives = new string[] { "C", "D", "E" };
-            string executable = @"{0}:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\tf.exe";
+            string[] versions = new string[] { "11.0", "10.0" };
+            string executable = @"{0}:\Program Files\Microsoft Visual Studio {1}\Common7\IDE\tf.exe";
             string command = "checkout";
 
             foreach (var drive in drives)
             {
-                string exeLocation = String.Format(executable, drive);
-                string exeParameter = String.Format(" {0} {1}",command,fileName);
-                if (File.Exists(exeLocation))
+                bool found = false;
+                foreach (var version in versions)
                 {
-                    ExecuteCommand(exeLocation, exeParameter);
-                    break;
+                    string exeLocation = String.Format(executable, drive, version);
+                    string exeParameter = String.Format(" {0} {1}", command, fileName);
+                    if (File.Exists(exeLocation))
+                    {
+                        found = true;
+                        ExecuteCommand(exeLocation, exeParameter);
+                        break;
+                    }
                 }
+
+                if (found)
+                    break;
             }
         }
 
@@ -117,6 +144,7 @@ namespace Mento.Tool.CodeGenerator
             catch (Exception objException)
             {
                 // Log the exception
+                throw;
             }
         }
     }

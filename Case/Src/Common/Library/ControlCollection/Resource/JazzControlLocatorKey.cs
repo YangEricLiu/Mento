@@ -252,8 +252,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonHeatingCoolingSeasonCalendarSave = "ButtonHeatingCoolingSeasonCalendarSave";
         public static string ButtonHeatingCoolingSeasonCalendarCancel = "ButtonHeatingCoolingSeasonCalendarCancel";
         public static string ButtonHeatingCoolingSeasonCalendarDelete = "ButtonHeatingCoolingSeasonCalendarDelete";
-        public static string LinkButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges = "LinkButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges";
-        public static string LinkButtonHeatingCoolingSeasonCalendarAddMoreColdRanges = "LinkButtonHeatingCoolingSeasonCalendarAddMoreColdRanges";
+        public static string ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges = "ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges";
+        public static string ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges = "ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges";
         #endregion
 
         #region daynight
@@ -271,7 +271,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonCarbonFactorSave = "ButtonCarbonFactorSave";
         public static string ButtonCarbonFactorCancel = "ButtonCarbonFactorCancel";
         public static string ButtonCarbonFactorDelete = "ButtonCarbonFactorDelete";
-        public static string LinkButtonCarbonFactorAddMoreRanges = "LinkButtonCarbonFactorAddMoreRanges";
+        public static string ButtonCarbonFactorAddMoreRanges = "ButtonCarbonFactorAddMoreRanges";
         #endregion
 
         #region TOU

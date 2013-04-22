@@ -243,8 +243,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button HeatingCoolingSeasonCalendarSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarSave);
         public static Button HeatingCoolingSeasonCalendarCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarCancel);
         public static Button HeatingCoolingSeasonCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarDelete);
-        public static LinkButton HeatingCoolingSeasonCalendarAddMoreWarmRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges);
-        public static LinkButton HeatingCoolingSeasonCalendarAddMoreColdRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonHeatingCoolingSeasonCalendarAddMoreColdRanges);
+        public static Button HeatingCoolingSeasonCalendarAddMoreWarmRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges);
+        public static Button HeatingCoolingSeasonCalendarAddMoreColdRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges);
         #endregion
         #region DayNight buttons
         public static Button DayNightCalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarCreate);
@@ -260,7 +260,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button CarbonFactorSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorSave);
         public static Button CarbonFactorCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorCancel);
         public static Button CarbonFactorDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorDelete);
-        public static LinkButton CarbonFactorAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonCarbonFactorAddMoreRanges);
+        public static Button CarbonFactorAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.ButtonCarbonFactorAddMoreRanges);
         
         #endregion
         #region TOU buttons

@@ -31,7 +31,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DeleteButton = JazzButton.CarbonFactorDeleteButton;
 
         private static TextField FactorValueTextField = JazzTextField.CarbonFactorValueTextField;
-        private static LinkButton AddMoreRangesButton = JazzButton.CarbonFactorAddMoreRangesButton;
+        private static Button AddMoreRangesButton = JazzButton.CarbonFactorAddMoreRangesButton;
         private static ComboBox SourceComboBox = JazzComboBox.CarbonFactorSourceComboBox;
         private static ComboBox DestinationComboBox = JazzComboBox.CarbonFactorDestinationComboBox;
         private static ComboBox EffectiveYearComboBox = JazzComboBox.CarbonFactorEffectiveYearComboBox;
@@ -64,7 +64,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickAddMoreRangesButton()
         {
-            AddMoreRangesButton.ClickLink();        
+            AddMoreRangesButton.Click();        
         }
 
         /// <summary>

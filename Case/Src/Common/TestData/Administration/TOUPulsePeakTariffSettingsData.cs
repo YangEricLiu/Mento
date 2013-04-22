@@ -19,6 +19,7 @@ namespace Mento.ScriptCommon.TestData.Administration
         public TOUPulsePeakTariffInputData(string price, TimeRange[] PulsePeakRange)
         {
             this.Price = price;
+            this.PulsePeakRange = PulsePeakRange;
         }
     }
 
@@ -30,6 +31,7 @@ namespace Mento.ScriptCommon.TestData.Administration
         public TOUPulsePeakTariffExpectedData(string price, TimeRange[] PulsePeakRange)
         {
             this.Price = price;
+            this.PulsePeakRange = PulsePeakRange;
         }
     }
 }

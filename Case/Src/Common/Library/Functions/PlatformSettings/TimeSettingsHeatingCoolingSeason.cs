@@ -31,8 +31,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DeleteButton = JazzButton.HeatingCoolingSeasonCalendarDeleteButton;
 
         private static TextField NameTextField = JazzTextField.HeatingCoolingSeasonCalendarNameTextField;
-        private static LinkButton AddMoreWarmRangesButton = JazzButton.HeatingCoolingSeasonCalendarAddMoreWarmRangesButton;
-        private static LinkButton AddMoreColdRangesButton = JazzButton.HeatingCoolingSeasonCalendarAddMoreColdRangesButton;
+        private static Button AddMoreWarmRangesButton = JazzButton.HeatingCoolingSeasonCalendarAddMoreWarmRangesButton;
+        private static Button AddMoreColdRangesButton = JazzButton.HeatingCoolingSeasonCalendarAddMoreColdRangesButton;
         private static ComboBox WarmStartMonthComboBox = JazzComboBox.HeatingCoolingSeasonCalendarWarmStartMonthComboBox;
         private static ComboBox WarmStartDateComboBox = JazzComboBox.HeatingCoolingSeasonCalendarWarmStartDateComboBox;
         private static ComboBox WarmEndMonthComboBox = JazzComboBox.HeatingCoolingSeasonCalendarWarmEndMonthComboBox;
@@ -70,7 +70,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickAddMoreWarmRangesButton()
         {
-            AddMoreWarmRangesButton.ClickLink();             
+            AddMoreWarmRangesButton.Click();             
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickAddMoreColdRangesButton()
         {
-            AddMoreColdRangesButton.ClickLink();
+            AddMoreColdRangesButton.Click();
         }
         
         /// <summary>

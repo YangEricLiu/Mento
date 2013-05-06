@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Name":"昼夜时间日历1",	
+			"RecordNumber":1,
+			"StartTime":["05:30"],
+			"EndTime":["18:00"],		
+		},
+		"ExpectedData":
+		{
+			"LabelText":["白昼时间以外均为黑夜时间"],
+		}
+	}
+]

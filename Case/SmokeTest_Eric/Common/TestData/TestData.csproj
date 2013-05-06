@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F463BF99-E570-46DE-A384-FE533482558D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mento.ScriptCommon.TestData</RootNamespace>
+    <AssemblyName>Mento.ScriptCommon.TestData</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administration\CarbonFactorSettingsData.cs" />
+    <Compile Include="Administration\UserPasswordData.cs" />
+    <Compile Include="Administration\TOUPulsePeakTariffSettingsData.cs" />
+    <Compile Include="Administration\TOUBasicTariffSettingsData.cs" />
+    <Compile Include="Administration\CustomerManagementData.cs" />
+    <Compile Include="Administration\TimeSettingsHeatingCoolingSeasonData.cs" />
+    <Compile Include="Administration\TimeSettingsDayNightData.cs" />
+    <Compile Include="Administration\TimeSettingsWortimeData.cs" />
+    <Compile Include="Administration\TimeSettingsWordayData.cs" />
+    <Compile Include="Administration\UserAndProfileData.cs" />
+    <Compile Include="Administration\UserProfileData.cs" />
+    <Compile Include="Administration\UserSettingsData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\TimeRange.cs" />
+    <Compile Include="Customer\AddKPIData.cs" />
+    <Compile Include="Customer\AssociateTagData.cs" />
+    <Compile Include="Customer\CalendarPropertyData.cs" />
+    <Compile Include="Customer\AreaDimensionData.cs" />
+    <Compile Include="Customer\ElectricfixedCostData.cs" />
+    <Compile Include="Customer\ElectricityComprehensiveCostData.cs" />
+    <Compile Include="Customer\KPITagFormulaData.cs" />
+    <Compile Include="Customer\OtherCostData.cs" />
+    <Compile Include="Customer\PeopleAreaPropertyData.cs" />
+    <Compile Include="Customer\PtagData.cs" />
+    <Compile Include="Administration\ExampleData.cs" />
+    <Compile Include="Customer\AddVtagData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClientAccess\LoginData.cs" />
+    <Compile Include="Customer\HierarchyData.cs" />
+    <Compile Include="Customer\KPITargetBaselineData.cs" />
+    <Compile Include="Customer\SystemDimensionData.cs" />
+    <Compile Include="EnergyView\EnergyViewInputData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Information\" />
+    <Folder Include="Platform\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
+      <Project>{2076AF41-49F1-4C46-AF54-B21ED42B07C3}</Project>
+      <Name>Mento.TestApi.TestData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\App\Src\Common\Mento.Framework\Mento.Framework.csproj">
+      <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
+      <Name>Mento.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\App\Src\Common\Mento.Utility\Mento.Utility.csproj">
+      <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
+      <Name>Mento.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

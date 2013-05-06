@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89A953B5-D558-4F6F-95EE-A11A85BA8C22}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mento.ScriptHost</RootNamespace>
+    <AssemblyName>Mento.ScriptHost</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Mento.ScriptHost.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Mento.ScriptHost.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;D:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Scripts\Administration\Administration.csproj">
+      <Project>{C0E96FFA-5126-4486-B74D-5000569A4EAC}</Project>
+      <Name>Administration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Scripts\ClientAccess\ClientAccess.csproj">
+      <Project>{24EB12A8-184D-425F-B757-A573E7D9735B}</Project>
+      <Name>ClientAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Scripts\Customer\Customer.csproj">
+      <Project>{8CE3B60E-099B-436A-84AA-88313B01610D}</Project>
+      <Name>Customer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Scripts\EnergyView\EnergyView.csproj">
+      <Project>{A0063174-550F-43B1-A412-98D5759E303D}</Project>
+      <Name>EnergyView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Scripts\Information\Information.csproj">
+      <Project>{1615FA2F-812E-4374-AC19-CCB00119895C}</Project>
+      <Name>Information</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Scripts\Platform\Platform.csproj">
+      <Project>{74673397-F815-44D8-876A-D6CCF87A2382}</Project>
+      <Name>Platform</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUBasicTariffAddValidSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUBasicTariffModifyInvalidSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffAddInvalidSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffModifyInvalidSuite\" />
+    <Folder Include="Data\Administration\User\UserManagementAddInvalid\" />
+    <Folder Include="Data\Administration\User\UserManagementAddValid\" />
+    <Folder Include="Data\Administration\User\UserManagementModifyValid\" />
+    <Folder Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\" />
+    <Folder Include="Data\Customer\HierarchySettings\AreaDimensionSuite\" />
+    <Folder Include="Data\Customer\HierarchySettings\HierarchyManagement\" />
+    <Folder Include="Data\Customer\HierarchySettings\SystemDimensionSuite\" />
+    <Folder Include="Data\Customer\TagManagement\FormulaVSmokeTestSuite\" />
+    <Folder Include="Data\Customer\TagManagement\KPIBaselineSuite\" />
+    <Folder Include="Resource\en\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\ComboBoxItemList.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_schema_data.sql" />
+    <Content Include="SqlScript\TearDown\14dbo_Trigger.sql" />
+    <None Include="Data\Administration\CustomerOperation\AddCustomerSmokeTestSuite\TC-J1-SmokeTest-033-001.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSetting-Delete-002.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSetting-Delete-101.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSetting-Delete-001.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffModifyValidSuite\TC-J1-FVT-TOUTariffSetting-Modify-101.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffModifyValidSuite\TC-J1-FVT-TOUTariffSetting-Modify-103.json" />
+    <None Include="Data\Administration\TOU\TOUPulsePeakTariffAddValidSuite\TC-J1-FVT-TOUPulsePeakTariffSetting-Add-101.json" />
+    <None Include="Data\Administration\TOU\TOUPulsePeakTariffModifyValidSuite\TC-J1-FVT-TOUPulsePeakTariffSetting-Modify-101.json" />
+    <None Include="Data\Administration\TOU\TOUPulsePeakTariffSmokeTestSuite\TC-J1-SmokeTest-026.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffSmokeTestSuite\TC-J1-SmokeTest-025.json" />
+    <None Include="Data\Administration\User\UserConfigurationSuite\TC-J1-SmokeTest-034-Modify.json" />
+    <None Include="Data\Administration\User\UserConfigurationSuite\TC-J1-SmokeTest-034.json" />
+    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-1.json" />
+    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-2.json" />
+    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-3.json" />
+    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-4.json" />
+    <None Include="Data\CommonInputData.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-4.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-3.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-5.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-3.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-4.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-1.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AreaDimensionSmokeTestSuite\TC-J1-SmokeTest-AreaDimension-001.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-001-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-001-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-001-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-001-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-4.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-3.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-1.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\SystemDimensionSmokeTestSuite\TC-J1-SmokeTest-SystemDimension-001.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\SystemDimensionSmokeTestSuite\TC-J1-SmokeTest-SystemDimension-002.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-SmokeTest-017.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElectricfixedCostPropertySuite\TC-J1-SmokeTest-018-001.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElectricityComprehensiveCostPropertySuite\TC-J1-SmokeTest-019-001.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddOtherCostPropertySuite\TC-J1-SmokeTest-020-001.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddPeopleAreaPropertySuite\TC-J1-SmokeTest-021.json" />
+    <Content Include="Data\Customer\TagAssociation\HierarchyAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-001.json" />
+    <Content Include="Data\Customer\TagAssociation\SystemAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-002.json" />
+    <Content Include="Data\Customer\TagAssociation\AreaDimensionAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-003.json" />
+    <Content Include="Data\Customer\TagAssociation\HierarchyDisassociateTagSmokeTestSuite\TC-J1-SmokeTest-DisassociateTag-001.json" />
+    <Content Include="Data\Customer\TagAssociation\SystemDisassociateTagSmokeTestSuite\TC-J1-SmokeTest-DisassociateTag-002.json" />
+    <Content Include="Data\Customer\TagAssociation\AreaDimensionDisassociateTagSmokeTestSuite\TC-J1-SmokeTest-DisassociateTag-003.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Valid.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Valid.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Invalid-redline.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPIbutCancel-Invalid.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPIbutCancel-Invalid.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Invalid-redline.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Invalid-messagebox.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Invalid-messagebox.json" />
+    <None Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddValid.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddInvalid.json" />
+    <Content Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddValidbutCancel.json" />
+    <None Include="Data\Customer\TagManagement\KPIConfigurationSuite\TA-KPItag-001.json" />
+    <None Include="Data\Customer\TagManagement\KPItagConfiguration\TC-J1-SmokeTest-004-001.json" />
+    <None Include="Data\Customer\TagManagement\KPITargetSuite\TC-J1-SmokeTest-022.json" />
+    <None Include="Data\Customer\TagManagement\KPIConfigurationSuite\TC-J1-SmokeTest-023.json" />
+    <Content Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForDayNightKPI-Invalid-redline.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForDayNightKPI-Valid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForDayNightKPIbutCancel-Invalid.json" />
+    <Content Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForNonDayNightKPI-Invalid-messagebox.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForNonDayNightKPI-Valid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForNonDayNightKPIbutCancel-Invalid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifytoInvalid-001.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifytoInvalid-002.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifytoValid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifybutCancel.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITag\TA-ModifyKPITag-001" />
+    <None Include="Data\Customer\TagManagement\PtagConfigurationSuite\TA-PtagConfiguration-002.json" />
+    <None Include="Data\Customer\TagManagement\PtagConfigurationSuite\TC-J1-SmokeTest-002-001.json" />
+    <None Include="Data\Customer\TagManagement\VtagManagementSuite\TA-Vtag-001.json" />
+    <None Include="Data\Customer\TagManagement\VtagManagementSuite\TA-VtagConfigue-001.json" />
+    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-040.json" />
+    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-037.json" />
+    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-038.json" />
+    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-039.json" />
+    <Content Include="IEDriverServer.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\cn\data.js" />
+    <Content Include="Resource\cn\string.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlScript\Setup\initialization.sql" />
+    <Content Include="SqlScript\Setup\initialization.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SqlScript\TearDown\00create_table.sql" />
+    <Content Include="SqlScript\TearDown\01dbo_Timezone_Data.sql" />
+    <Content Include="SqlScript\TearDown\06dbo_User_Data.sql" />
+    <Content Include="SqlScript\TearDown\07dbo_SystemDimensionTemplate_Data.sql" />
+    <Content Include="SqlScript\TearDown\08dbo_SystemDimensionTemplateItem_Data.sql" />
+    <Content Include="SqlScript\TearDown\11dbo_EdgeNTag__SP.sql" />
+    <Content Include="SqlScript\TearDown\12dbo_Commodity_Uom_schema_data.sql" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Config\ElementMap.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Administration\ExampleSuite\TA-Example-008.json" />
+    <Content Include="Data\Administration\ExampleSuite\TA-Example-009.json" />
+    <Content Include="Data\Administration\LoginSuite\TA-Trial-Login-001.json" />
+    <Content Include="Data\Administration\ShowTimeSuite\TC-J1-ShowTime-001.json" />
+    <None Include="Data\Administration\CarbonFactor\CarbonFactorSuite\TC-J1-SmokeTest-024.json" />
+    <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonSuite\TC-J1-SmokeTest-030.json" />
+    <None Include="Data\Administration\TimeManagement\DayNightSuite\TC-J1-SmokeTest-029.json" />
+    <None Include="Data\Administration\TimeManagement\WorktimeSuite\TC-J1-SmokeTest-028.json" />
+    <None Include="Data\Administration\TimeManagement\WorkdaySuite\TC-J1-SmokeTest-027.json" />
+    <Content Include="Data\Customer\TagManagement\KPIConfigurationSuite\TC-J1-SmokeTest-004-001.json" />
+    <None Include="Data\Customer\TagManagement\KPIConfigurationSuite\TA-KPItag-001.json" />
+    <None Include="Data\Customer\TagManagement\PtagConfigurationSuite\TC-J1-SmokeTest-002-001.json" />
+    <None Include="Data\Customer\TagManagement\PtagConfigurationSuite\TA-PtagConfiguration-002.json" />
+    <None Include="Data\Customer\TagManagement\VtagManagementSuite\TA-Vtag-001.json" />
+    <None Include="Data\IllegalInputData.json" />
+    <None Include="Data\System\Example\IllegalTestSuite\TC-J1-Example-002.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\DataMapping.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>del /F /S /Q $(TargetDir)Data
+del /F /S /Q $(TargetDir)SqlScript
+xcopy $(ProjectDir)Data $(TargetDir)Data /E /Y /R /I
+xcopy $(ProjectDir)SqlScript $(TargetDir)SqlScript /E /Y /R /I
+xcopy $(ProjectDir)Resource $(TargetDir)Resource /E /Y /R /I
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Administration.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.ClientAccess.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Customer.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.EnergyView.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Information.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.System.dll.config</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

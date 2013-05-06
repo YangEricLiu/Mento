@@ -1,0 +1,38 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Name":"KPI1",
+			"Formula":"2*{ptag.P1",
+		},
+		"ExpectedData":
+		{
+			"Formula":"计算公式不合法，请检查",
+			
+		}
+	},
+	
+	{
+		"InputData":
+		{
+			"Name":"KPI1",
+			"Formula":"@#$%%",
+		},
+		"ExpectedData":
+		{
+			"Formula":"计算公式不合法，请检查",
+		}
+	},
+	{
+		"InputData":
+		{
+			"Name":"KPI1",
+			"Formula":" ",
+		},
+		"ExpectedData":
+		{
+			"Formula":"计算公式不合法，请检查",
+		}
+	},
+	
+]

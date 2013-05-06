@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
+			"TotalArea":"10",
+			"HeatingArea":"20",
+			"CoolingArea":"30",
+			"PeopleEffectiveDate":"2031-03",
+			"PeopleNumber":"30"
+		}
+	}
+]

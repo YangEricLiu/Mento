@@ -1,0 +1,10 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["Mento","HierarchyEV","SiteEV","BuildingEV"],
+			"TagNames":["P1"],
+			"ViewType":"Distribute"
+		}
+	}
+]

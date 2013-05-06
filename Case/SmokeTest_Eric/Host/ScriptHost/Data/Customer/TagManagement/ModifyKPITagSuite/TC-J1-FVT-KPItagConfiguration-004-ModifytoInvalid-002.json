@@ -1,0 +1,83 @@
+﻿[
+	{
+		"InputData":
+		{
+			
+		},
+       "ExpectedData":
+		{
+			"Name":"AliceKPI",
+			"Code":"KPI",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"This is a kpi tag ",
+		}
+	},
+		
+		{
+			"InputData":
+		{
+			"Name":"#$%&*98",
+			"Code":"KPI_2",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"This is a kpi tag ",
+			
+		},
+		 "ExpectedData":
+		{
+			"Name":"AliceKPI",
+			"Code":"KPI",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"This is a kpi tag ",
+		}
+	},
+	{
+		"InputData":
+		{
+			
+			"Name":"KPI",
+			"Code":"Ali",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":":/><;'%^&7 ",
+		},
+	
+	    "ExpectedData":
+		{
+			"Name":"AliceKPI",
+			"Code":"KPI",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"This is a kpi tag ",
+		}
+	},
+	{
+		"InputData":
+		{
+			"Name":"KPI",
+			"Code":"!?$%^+-,><",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"This is a kpi tag ",
+		},
+	
+	    "ExpectedData":
+		{
+			"Name":"AliceKPI",
+			"Code":"KPI",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"This is a kpi tag ",
+		}
+	},
+]
+

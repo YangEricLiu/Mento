@@ -1,0 +1,150 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "AutoOrg001"],
+		    "AccountID":"我是中文",
+			"Password":"",
+			"RealName":"IamEnglish",
+			"CustomerName":"",
+			"CommonName":"@",
+			"Address":"",
+			"Email":"电话12 45@gma.#&",
+			"Telephone":"电话abc12 45",
+			"Code":"中文",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"$%^",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"用户名只能由半角英文字母，数字和下划线组成。",
+			"Password":"",
+			"RealName":"用户名只能由半角英文字母，数字和下划线组成。",
+			"CustomerName":"",
+			"CommonName":"名称只能由汉字，半角英文字母, 数字, 下划线和空格组成",
+			"Address":"",
+			"Email":"电话只能由数字和连字符组成，且不能以连字符开头或结尾, 多个连字符不能连续。",
+			"Telephone":"电话只能由数字和连字符组成，且不能以连字符开头或结尾, 多个连字符不能连续。",
+			"Code":"编码只能由半角英文字母，数字和下划线组成",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"备注只能由汉字，半角英文字母, 数字,下划线和空格组成",
+			"FeedbackComments":"",
+		}
+	},
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+		    "AccountID":"%……&",
+			"Password":"",
+			"RealName":"(@",
+			"CustomerName":"",
+			"CommonName":"&*(",
+			"Address":"",
+			"Email":"abc163.com",
+			"Telephone":"-123456",
+			"Code":"^&*",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"$%^",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"用户名只能由半角英文字母，数字和下划线组成。",
+			"Password":"",
+			"RealName":"用户名只能由半角英文字母，数字和下划线组成。",
+			"CustomerName":"",
+			"CommonName":"名称只能由汉字，半角英文字母, 数字, 下划线和空格组成",
+			"Address":"",
+			"Email":"电话只能由数字和连字符组成，且不能以连字符开头或结尾, 多个连字符不能连续。",
+			"Telephone":"电话只能由数字和连字符组成，且不能以连字符开头或结尾, 多个连字符不能连续。",
+			"Code":"编码只能由半角英文字母，数字和下划线组成",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"备注只能由汉字，半角英文字母, 数字,下划线和空格组成",
+			"FeedbackComments":"",
+		}
+	},
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","AutoOrg001","AutoSite001"],
+		    "AccountID":"123-45",
+			"Password":"",
+			"RealName":"一",
+			"CustomerName":"",
+			"CommonName":"中文@",
+			"Address":"",
+			"Email":"abc@.com",
+			"Telephone":"010--12345",
+			"Code":"中文^&*",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"$%^中文",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"用户名只能由半角英文字母，数字和下划线组成。",
+			"Password":"",
+			"RealName":"用户名只能由半角英文字母，数字和下划线组成。",
+			"CustomerName":"",
+			"CommonName":"名称只能由汉字，半角英文字母, 数字, 下划线和空格组成",
+			"Address":"",
+			"Email":"电话只能由数字和连字符组成，且不能以连字符开头或结尾, 多个连字符不能连续。",
+			"Telephone":"电话只能由数字和连字符组成，且不能以连字符开头或结尾, 多个连字符不能连续。",
+			"Code":"编码只能由半角英文字母，数字和下划线组成",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"备注只能由汉字，半角英文字母, 数字,下划线和空格组成",
+			"FeedbackComments":"",
+		}
+	},
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+		    "AccountID":"",
+			"Password":"",
+			"RealName":"",
+			"CustomerName":"",
+			"CommonName":"chars@",
+			"Address":"",
+			"Email":"A12@sina..com",
+			"Telephone":"",
+			"Code":"chars中文",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"chars$%^",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"用户名只能由半角英文字母，数字和下划线组成。",
+			"Password":"",
+			"RealName":"用户名只能由半角英文字母，数字和下划线组成。",
+			"CustomerName":"",
+			"CommonName":"名称只能由汉字，半角英文字母, 数字, 下划线和空格组成",
+			"Address":"",
+			"Email":"电话只能由数字和连字符组成，且不能以连字符开头或结尾, 多个连字符不能连续。",
+			"Telephone":"电话只能由数字和连字符组成，且不能以连字符开头或结尾, 多个连字符不能连续。",
+			"Code":"编码只能由半角英文字母，数字和下划线组成",
+			"Meter":"",
+			"Channel":"",
+			"DataValue":"",
+			"Comments":"备注只能由汉字，半角英文字母, 数字,下划线和空格组成",
+			"FeedbackComments":"",
+		}
+	},
+]

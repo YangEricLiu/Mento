@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WebElement>
+  <!--Common-->
+  <add key = "LoadingMessage" value = "mainLoadingMask" type ="ID"/>
+  <!--TreeView-->
+  <add key = "TreeNode" value = "//div[text()='treeNodeName']" type ="Xpath"/>
+  <add key = "IsTreeNodeExpand" value = "//div[text()='treeNodeName']/../../self::node()[contains(@class, 'x-grid-tree-node-expanded')]" type ="Xpath"/>
+  <!--DimensionTree-->
+  <add key = "CheckNodeButton" value = "//div[text()='dimensionNodeName']/input[@class='x-tree-checkbox']" type ="Xpath"/>
+  <!--TextField-->
+  <add key = "TagNameRow" value = "//div[text()='tagName']" type ="Xpath"/>
+  <!--Grid-->
+  <add key = "RowCellName" value = "//div[text()='cellName']" type ="Xpath"/>
+  <add key = "RowCheckBox" value = "//div[text()='cellName']/../../td[2]//div[contains(@class, 'x-grid-checkheader')]" type = "Xpath"/>
+  <add key = "IsRowChecked" value = "//div[text()='cellName']/../../td[2]//div[contains(@class, 'x-grid-checkheader-checked')]" type = "Xpath"/>
+  <!--Login-->
+  <add key = "LoginName" value = "txtUserName" type = "ID"/>
+  <add key = "LoginPassword" value = "txtPassword" type = "ID"/>
+  <add key = "LoginSubmit" value = "btnSubmit" type="ID"/>
+  <add key = "PopUpMessageBox" value = "//div[contains(@id,'messagebox')]" type = "Xpath"/>
+  <add key = "InvalidNameInputError" value = "//input[contains(@data-errorqtip,'Common.Label.NameRegexError')]" type = "Xpath"/>
+  <!--Amy update starts: add customer selection function for R1.0-->
+  <add key="CustomerSelection" value="combobox-1012-inputEl" type="ID" />
+  <add key="CustomerConfirmButton" value="//span[text()='Common.Button.Confirm']" type="Xpath" />
+  <add key="Schneider" value="//li[text()='Schneider']" type="Xpath" />
+  <add key="REMPlatform" value="//li[text()='REM管理平台']" type="Xpath" />
+  <!--Amy update ends-->
+  <!--Tag Setting-->
+  <add key = "FormulaField" value = "Formula" type = "Name"/>
+  <!--Hierarchy Setting-->
+  <add key = "AddHierarchyButton" value = "st-hier-tree-add-btnInnerEl" type = "ID"/>
+  <add key = "HierarchyName" value = "Name" type = "Name"/>
+  <add key = "HierarchyCode" value = "Code" type = "Name"/>
+  <add key = "HierarchyType" value = "Type" type = "Name"/>
+  <add key = "Orgnization" value = "//li[text()='Common.Glossary.Organization']" type = "Xpath"/>
+  <add key = "Site" value = "//li[text()='Common.Glossary.Site']" type = "Xpath"/>
+  <add key = "Building" value = "//li[text()='Common.Glossary.Building']" type = "Xpath"/>
+  <add key = "HierarchyComment" value = "Comment" type = "Name"/>
+  <add key = "HierarchySaveButton" value = "//span[text()='Common.Button.Save']" type = "Xpath"/>
+  <add key = "HierarchyCancelButton" value = "//span[text()='Common.Button.Cancel']" type = "Xpath"/>
+  <add key = "HierarchyDeleteButton" value = "//span[text()='Common.Button.Delete']" type = "Xpath"/>
+  <add key = "HierarchyUpdateButton" value = "//span[text()='Common.Operation.Update']" type = "Xpath"/>
+  <add key = "HierarchyCreateOKText" value = "//div[text()='Common.Label.CreateOK']" type = "Xpath"/>
+  <add key = "HirarchyOKButton" value = "//span[text()='Common.Label.OKButton']" type = "Xpath"/>
+  <add key = "TestButton" value = "st-hier-tree-add-btnEl" type = "ID"/>
+  <!--Tag-->
+  <add key = "FormulaTab" value = "//span[text()='计算公式']" type = "Xpath"/>
+  <add key = "FormulaUpdateButton" value = "//div[@id='st-vtag-formula']//span[text()='Common.Operation.Update']" type = "Xpath"/>
+  <add key = "FormulaSaveButton" value = "//div[@id='st-vtag-formula']//span[text()='Common.Button.Save']" type = "Xpath"/>
+  <add key = "FormulaTagRow" value = "//div[@id='ptaglist_formula']//div[text()='tagName']" type = "Xpath"/>
+  <add key = "AssociateTagButton" value = "st-tagassoc-taggrid-assoc-btnInnerEl" type = "ID"/>
+  <add key = "AssociateButton" value = "st-tagassoc-taggrid-assocaction-btnInnerEl" type = "ID"/>
+  <add key = "IsTagOnAssociateGrid" value = "//div[contains(@id,'gridview')]//div[text()='tagName']" type = "Xpath"/>
+  <!--VTag Setting-->
+  <add key = "AddVtagButton" value = "st-vtag-grid-add-btnInnerEl" type = "ID"/>
+  <add key=  "VtagConfigButton" Value ="st-menu-vtagmgr" type = "ID"/>
+  <add key = "VtagSaveButton" value = "//span[text()='Common.Button.Save']" type = "Xpath"/>
+  <add key = "VtagCancelButton" value = "//span[text()='Common.Button.Cancel']" type = "Xpath"/>
+  <add key = "VtagName" value = "Name" type = "Name"/>
+  <add key = "VtagCode" value = "Code" type = "Name"/>
+  <add key = "VtagCommodity" value = "CommodityId" type = "Name"/>
+  <add key = "Electric" value = "//li[text()='Common.Commodity.Electric'" type = "Xpath"/>
+  <add key = "VtagUOM" value ="UomId" type = "Name"/>
+  <add key = "VtagKWH" value ="//li[text()='Common.UOM.KWH']" type = "Xpath"/>
+  <add key = "VtagCalculationStep" value = "CalculationStep" type = "Name"/>
+  <add key = "Hourly" value = "Common.AggregationStep.Hourly" type = "Xpath"/>
+  <add key = "VtagCalculationType" value = "CalculationType" type = "Name"/>
+  <add key = "VtagSum" value = "Common.CaculationType.Sum" type = "Xpath"/>
+  <add key = "VtagComment" value = "Comment" type = "Name"/>
+   <!--PTag Configuration-->
+  <add key = "PtagAddButton" value = "st-ptag-grid-add-btnEl" type = "ID"/>
+  <add key = "PtagSaveButton" value = "//span[text()='Common.Button.Save']" type = "Xpath"/>
+  <add key = "PtagUpdateButton" value = "//span[text()='Common.Operation.Update']" type = "Xpath"/>
+  <add key = "PtagName" value = "Name" type = "Name"/>
+  <add key = "PtagCode" value = "Code" type = "Name"/>
+  <add key = "PtagMeterCode" value = "MeterCode" type = "Name"/>
+  <add key = "PtagChannelId" value = "ChannelId" type = "Name"/>
+  <add key = "PtagCommodityId" value = "CommodityId" type = "Name"/>
+  <add key = "PtagUomId" value = "UomId" type = "Name"/>
+  <add key = "PtagCalculationType" value = "CalculationType" type = "Name"/>
+  <add key = "PtagComment" value = "Comment" type = "Name"/>
+  <!--Commodity-->
+  <add key = "Electricity" value = "//li[text()='Common.Commodity.Electric']" type = "Xpath"/>
+  <add key = "Water" value = "//li[text()='Common.Commodity.Water']" type = "Xpath"/>
+  <!--UOM-->
+  <add key = "KWH" value = "//li[text()='Common.UOM.KWH']" type = "Xpath"/>
+  <add key = "Ton" value = "//li[text()='Common.UOM.Ton']" type = "Xpath"/>
+  <!--CaculationType-->
+  <add key = "Sum" value = "//li[text()='Common.CaculationType.Sum']" type = "Xpath"/>
+  <add key = "Avg" value = "//li[text()='Common.CaculationType.Avg']" type = "Xpath"/>
+</WebElement>

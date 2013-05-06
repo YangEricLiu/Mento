@@ -1,0 +1,39 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Name":"KPI",
+			"Formula":"{asd1234}",
+		},
+		"ExpectedData":
+		{
+			"Name":"KPI",
+			"Formula":"{ptag.P1}",
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"Name":"KPI",
+			"Formula":"2",
+		},
+		"ExpectedData":
+		{
+			"Name":"KPI",
+			"Formula":"{ptag.P1}",
+		}
+	},
+	{
+		"InputData":
+		{
+			"Name":"KPI",
+			"Formula":"{ptag.P1}+{ptag.notexsit}",
+		},
+		"ExpectedData":
+		{
+			"Name":"KPI",
+			"Formula":"{ptag.P1}",
+		}
+	},
+]

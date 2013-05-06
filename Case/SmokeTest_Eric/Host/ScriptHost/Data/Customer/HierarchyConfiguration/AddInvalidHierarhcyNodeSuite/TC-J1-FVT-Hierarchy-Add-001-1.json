@@ -1,0 +1,37 @@
+﻿/*using common.json*/
+
+[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"Type":"Orgnization",
+		},
+		"ExpectedData":
+		{
+		    
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+			"Type":"Site",
+		},
+		"ExpectedData":
+		{
+		    
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoOrg001", "AutoSite001"],
+			"Type":"Building",
+		},
+		"ExpectedData":
+		{
+		    
+		}
+	}
+]

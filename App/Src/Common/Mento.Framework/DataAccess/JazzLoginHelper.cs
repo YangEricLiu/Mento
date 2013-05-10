@@ -29,8 +29,8 @@ namespace Mento.Framework.DataAccess
 
         private static Dictionary<string, string> User = new Dictionary<string, string>() 
         {
-            { "txtUserName" , "PlatformAdmin" },
-            { "txtPassword" , "P@ssw0rd" },
+            { "username" , "PlatformAdmin" },
+            { "password" , "P@ssw0rd" },
         };
 
         public static CookieCollection GetFedAuthCookie(string homeUrl)
@@ -227,9 +227,10 @@ namespace Mento.Framework.DataAccess
                         cookie.HttpOnly = true;
                     if (item.Contains("="))
                     {
-                        string[] kvPair = item.Split('=');
-                        string key = kvPair[0].Trim();
-                        string value = kvPair.Length > 2 ? joinArray(kvPair, 1, kvPair.Length - 1) : kvPair[1].Trim();
+                        //string[] kvPair = item.Split('=');
+                        int position = item.IndexOf('=');
+                        string key = item.Substring(0, position).Trim();
+                        string value = item.Substring(position + 1, item.Length - (position + 1)).Trim();//kvPair.Length > 2 ? joinArray(kvPair, 1, kvPair.Length - 1) : kvPair[1].Trim();
 
                         //if (key.ToLower() == "path")
                         //    cookie.Path = value;

@@ -129,6 +129,10 @@
       <Project>{74673397-F815-44D8-876A-D6CCF87A2382}</Project>
       <Name>Platform</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Scripts\SmokeTest\SmokeTest.csproj">
+      <Project>{e7c15b1b-93f0-426a-a6d9-2639377dd070}</Project>
+      <Name>SmokeTest</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
@@ -141,6 +145,7 @@
     <Content Include="Config\ComboBoxItemList.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="SqlScript\TearDown\10dbo_UserRolePrivilege_Data.sql" />
     <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_schema_data.sql" />
     <Content Include="SqlScript\TearDown\14dbo_Trigger.sql" />
     <Content Include="IEDriverServer.exe">

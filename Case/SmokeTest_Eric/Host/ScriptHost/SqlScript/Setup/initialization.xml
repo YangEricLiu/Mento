@@ -31,7 +31,7 @@
         <![CDATA[
         SET IDENTITY_INSERT [User] ON
         INSERT INTO [User](Id,Name,RealName,UserType,Password,Comment,Title,Telephone,Email,Status,UpdateUser,UpdateTime)
-        VALUES(2,'Admin','Admin',1,'161EBD7D45089B3446EE4E0D86DBCF92','Admin','Admin','0100000','11@11.11',1,'Admin',GETDATE())
+        VALUES(2,'Admin','Admin',1,'161EBD7D45089B3446EE4E0D86DBCF92','Admin',1,'0100000','11@11.11',1,'Admin',GETDATE())
         SET IDENTITY_INSERT [User] OFF
         ]]>
       </add>
@@ -40,7 +40,7 @@
         <![CDATA[
         SET IDENTITY_INSERT [User] ON
         INSERT INTO [User](Id,Name,RealName,UserType,Password,Comment,Title,Telephone,Email,Status,UpdateUser,UpdateTime) 
-        VALUES(3,'AutoCustomer','Auto',2,'161EBD7D45089B3446EE4E0D86DBCF92','auto','auto','0100000','11@11.11',1,'AutoCustomer',GETDATE())
+        VALUES(3,'AutoCustomer','Auto',2,'161EBD7D45089B3446EE4E0D86DBCF92','auto',1,'0100000','11@11.11',1,'AutoCustomer',GETDATE())
         SET IDENTITY_INSERT [User] OFF
         INSERT INTO UserCustomer(UserId,HierarchyId)
         VALUES(3,2)

@@ -5,7 +5,7 @@ using System.Text;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
-using Mento.ScriptCommon.TestData.Customer;
+using Mento.ScriptCommon.TestData.SmokeTest;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
@@ -106,11 +106,11 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Input fixed electric cost value
+        /// Input Fixed electric cost value
         /// </summary>
         /// <param name="input">Test data</param>
         /// <returns></returns>
-        public void FillInFixedCost(ElectricfixedCostInputData input)
+        public void FillInFixedCost(ElectricFixedCostInputData input)
         {
             ElectricCostEffectiveDate.SelectYearMonthItem(input.EffectiveDate);
             ElectricPriceMode.SelectItem(input.PriceMode);

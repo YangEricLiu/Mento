@@ -123,7 +123,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickSaveButton()
         {
             SaveButton.Click();
-            JazzMessageBox.MessageBox.Yes();
+            //JazzMessageBox.MessageBox.Yes();
         }
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="input">Test data</param>
         /// <returns></returns>
-        public void FillInWorkdayRuleValue(string value, int num)
+        public void FillInWorkdayRuleValue(string value,int num)
         {
             TextField OneWorkdayRuleValueValue = GetOneWorkdayRuleValueTextField(num);
             OneWorkdayRuleValueValue.Fill(value);
@@ -214,7 +214,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="input">Test data</param>
         /// <returns></returns>
-        public void FillInNonworkdayRuleValue(string value, int num)
+        public void FillInNonworkdayRuleValue(string value,int num)
         {
             TextField OneNonworkdayRuleValueValue = GetOneNonworkdayRuleValueTextField(num);
             OneNonworkdayRuleValueValue.Fill(value);
@@ -319,6 +319,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             JazzMessageBox.LoadingMask.WaitLoading();
             CalculateBaselineButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            JazzMessageBox.MessageBox.Yes();
+            JazzMessageBox.LoadingMask.WaitLoading(maxtime: 120);
         }
         #endregion
 

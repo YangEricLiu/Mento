@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.Framework", "..\..\Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mento.Utility", "..\..\App\Src\Common\Mento.Utility\Mento.Utility.csproj", "{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeTest", "Scripts\SmokeTest\SmokeTest.csproj", "{E7C15B1B-93F0-426A-A6D9-2639377DD070}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestScript", "Scripts\TestScript\TestScript.csproj", "{870C5F7B-859F-44DD-ADD5-79EFFF60D85A}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -99,10 +99,10 @@ Global
 		SccProjectTopLevelParentUniqueName13 = SmokeTest.sln
 		SccProjectName13 = Scripts/Platform
 		SccLocalPath13 = Scripts\\Platform
-		SccProjectUniqueName14 = Scripts\\SmokeTest\\SmokeTest.csproj
+		SccProjectUniqueName14 = Scripts\\TestScript\\TestScript.csproj
 		SccProjectTopLevelParentUniqueName14 = SmokeTest.sln
-		SccProjectName14 = Scripts/SmokeTest
-		SccLocalPath14 = Scripts\\SmokeTest
+		SccProjectName14 = Scripts/TestScript
+		SccLocalPath14 = Scripts\\TestScript
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -243,16 +243,16 @@ Global
 		{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}.Release|x86.ActiveCfg = Release|Any CPU
-		{E7C15B1B-93F0-426A-A6D9-2639377DD070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7C15B1B-93F0-426A-A6D9-2639377DD070}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7C15B1B-93F0-426A-A6D9-2639377DD070}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{E7C15B1B-93F0-426A-A6D9-2639377DD070}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{E7C15B1B-93F0-426A-A6D9-2639377DD070}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E7C15B1B-93F0-426A-A6D9-2639377DD070}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7C15B1B-93F0-426A-A6D9-2639377DD070}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E7C15B1B-93F0-426A-A6D9-2639377DD070}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{E7C15B1B-93F0-426A-A6D9-2639377DD070}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{E7C15B1B-93F0-426A-A6D9-2639377DD070}.Release|x86.ActiveCfg = Release|Any CPU
+		{870C5F7B-859F-44DD-ADD5-79EFFF60D85A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{870C5F7B-859F-44DD-ADD5-79EFFF60D85A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{870C5F7B-859F-44DD-ADD5-79EFFF60D85A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{870C5F7B-859F-44DD-ADD5-79EFFF60D85A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{870C5F7B-859F-44DD-ADD5-79EFFF60D85A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{870C5F7B-859F-44DD-ADD5-79EFFF60D85A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{870C5F7B-859F-44DD-ADD5-79EFFF60D85A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{870C5F7B-859F-44DD-ADD5-79EFFF60D85A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{870C5F7B-859F-44DD-ADD5-79EFFF60D85A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{870C5F7B-859F-44DD-ADD5-79EFFF60D85A}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -264,7 +264,7 @@ Global
 		{24EB12A8-184D-425F-B757-A573E7D9735B} = {95A2E6D1-2BCC-4865-821D-9AF521B231D6}
 		{74673397-F815-44D8-876A-D6CCF87A2382} = {95A2E6D1-2BCC-4865-821D-9AF521B231D6}
 		{C0E96FFA-5126-4486-B74D-5000569A4EAC} = {95A2E6D1-2BCC-4865-821D-9AF521B231D6}
-		{E7C15B1B-93F0-426A-A6D9-2639377DD070} = {95A2E6D1-2BCC-4865-821D-9AF521B231D6}
+		{870C5F7B-859F-44DD-ADD5-79EFFF60D85A} = {95A2E6D1-2BCC-4865-821D-9AF521B231D6}
 		{AB40EA61-7C83-46BA-BB88-A42DE3DC675C} = {DF8C2E48-7DE6-4B6B-BED2-49108704970F}
 		{31F0CE15-73BE-455D-A252-D3D59249D757} = {DF8C2E48-7DE6-4B6B-BED2-49108704970F}
 		{12D162B3-1ED8-4854-A7F0-C68EE94B8317} = {AB40EA61-7C83-46BA-BB88-A42DE3DC675C}

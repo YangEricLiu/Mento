@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Name":"KPI2",
+			"Code":"KPI2",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"This is a kpitag ",
+		}
+	}
+]

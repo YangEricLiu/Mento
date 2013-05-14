@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"CommonName":"EmptyComment",
+			"Code":"EmptyComment",
+			"Type":"Orgnization",
+		},
+		"ExpectedData":
+		{
+		    "Message":"添加成功",
+		}
+	}
+]

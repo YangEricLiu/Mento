@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Name":"vElectric1",
+			"Code":"vElectric1",
+			"Commodity":"Electricity",
+			"UOM":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"备注1",
+		},
+		"ExpectedData":
+		{
+			"Name":"vElectric1",
+			"Code":"vElectric1",
+			"Commodity":"Electricity",
+			"UOM":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"备注1",
+		}
+	}
+]

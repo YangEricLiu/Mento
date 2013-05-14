@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["Auto_Customer", "Auto_Org","Auto_Site","Auto_Build"],
+			"AreaNodePath":["Auto_Build"],
+			"CommonName":"Auto_Floor",
+			"Comments":"备注",
+		},
+		"ExpectedData":
+		{
+			"AreaNodePath":["Auto_Build", "Auto_Floor"],
+		}
+	}
+]

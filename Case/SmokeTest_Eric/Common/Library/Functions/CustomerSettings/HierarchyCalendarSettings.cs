@@ -5,7 +5,7 @@ using System.Text;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
-using Mento.ScriptCommon.TestData.Customer;
+using Mento.ScriptCommon.TestData.SmokeTest;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 

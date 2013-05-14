@@ -362,9 +362,9 @@
         <add key="TextFieldKPITagSettingsCode" value="//div[@id='st-kpi-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
         <add key="TextFieldKPITagSettingsComment" value="//div[@id='st-kpi-form-body']//textarea[@name='Comment']" type="XPath"/>
         <add key="KPIFormulaField" value="//div[@id='st-KPI-formula-body']//textarea[@name='Formula']" type="XPath"/>
-        <add key="TextFieldKPITargetBaselineWorkdayRuleValue" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[3]//input[@type='text' and @name='Value']" type="XPath"/>
-        <add key="TextFieldKPITargetBaselineNonworkdayRuleValue" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='非工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[3]//input[@type='text' and @name='Value']" type="XPath"/>
-        <add key="TextFieldKPITargetBaselineSpecialdayRuleValue" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']/table[5]//input[@type='text' and @name='Value']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineWorkdayRuleValue" value="//table[contains(@class,'x-container') and tbody/tr/td[1]/label[text()='工作日']]/tbody/tr[2]/td/div[$#positionIndex]//div[@class='x-column-inner']/table[3]//input[@type='text' and @name='Value']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineNonworkdayRuleValue" value="//table[contains(@class,'x-container') and tbody/tr/td[1]/label[text()='非工作日']]/tbody/tr[2]/td/div[$#positionIndex]//div[@class='x-column-inner']/table[3]//input[@type='text' and @name='Value']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineSpecialdayRuleValue" value="//table[contains(@class,'x-container') and tbody/tr/td[1]/label[text()='补充日期']]/tbody/tr[2]/td/div[$#positionIndex]//div[@class='x-column-inner']/table[5]//input[@type='text' and @name='Value']" type="XPath"/>
         <add key="TextFieldKPITargetBaselineAnnualCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='Annual']" type="XPath"/>
         <add key="TextFieldKPITargetBaselineJanuaryCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='January']" type="XPath"/>
         <add key="TextFieldKPITargetBaselineFebruaryCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='February']" type="XPath"/>
@@ -482,10 +482,10 @@
         <add key="ComboBoxKPITagSettingsCalculationStep" value="//div[@id='st-kpi-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
 
         <add key="ComboBoxKPITargetBaselineEffectiveYear" value="//div[@id='setting-region-east-body']//table[contains(@class,'x-autocontainer-form-item')]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input]" type="XPath"/>
-        <add key="ComboBoxKPITargetBaselineWorkdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxKPITargetBaselineNonworkdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='非工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxKPITargetBaselineSpecialdayRuleStartTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxKPITargetBaselineSpecialdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']/table[4]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineWorkdayRuleEndTime" value="//table[contains(@class,'x-container') and tbody/tr/td[1]/label[text()='工作日']]/tbody/tr[2]/td/div[$#positionIndex]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineNonworkdayRuleEndTime" value="//table[contains(@class,'x-container') and tbody/tr/td[1]/label[text()='非工作日']]/tbody/tr[2]/td/div[$#positionIndex]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineSpecialdayRuleStartTime" value="//table[contains(@class,'x-container') and tbody/tr/td[1]/label[text()='补充日期']]/tbody/tr[2]/td/div[$#positionIndex]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineSpecialdayRuleEndTime" value="//table[contains(@class,'x-container') and tbody/tr/td[1]/label[text()='补充日期']]/tbody/tr[2]/td/div[$#positionIndex]//div[@class='x-column-inner']/table[4]//table[@class='x-form-trigger-wrap']" type="XPath"/>
       </kpitag>
     </customersettings>
     <platformsettings>
@@ -585,8 +585,8 @@
     </EnergyUsage>
     <CustomerSettings>
       <kpitag>
-        <add key="DatePickerKPITargetBaselineSpecialdayRuleStartDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
-        <add key="DatePickerKPITargetBaselineSpecialdayRuleEndDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+        <add key="DatePickerKPITargetBaselineSpecialdayRuleStartDate" value="//table[contains(@class,'x-container') and tbody/tr/td[1]/label[text()='补充日期']]/tbody/tr[2]/td/div[$#positionIndex]//div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+        <add key="DatePickerKPITargetBaselineSpecialdayRuleEndDate" value="//table[contains(@class,'x-container') and tbody/tr/td[1]/label[text()='补充日期']]/tbody/tr[2]/td/div[$#positionIndex]//div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       </kpitag>
     </CustomerSettings>
     <PlatformSettings>

@@ -14,7 +14,7 @@ namespace Mento.Script.Administration
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.InitializeWithOption("Admin", "P@ssw0rd", "REM管理平台");
+            TestAssemblyInitializer.InitializeWithOption("PlatformAdmin", "P@ssw0rd", "REM管理平台");
         }
 
         [TearDown]

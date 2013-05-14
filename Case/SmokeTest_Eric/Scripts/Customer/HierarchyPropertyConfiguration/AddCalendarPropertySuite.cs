@@ -10,7 +10,7 @@ using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
-using Mento.ScriptCommon.TestData.Customer;
+using Mento.ScriptCommon.TestData.SmokeTest;
 using Mento.TestApi.TestData;
 
 namespace Mento.Script.Customer.HierarchyPropertyConfiguration

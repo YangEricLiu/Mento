@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["Auto_Customer", "Auto_Org","Auto_Site","Auto_Build"],
+			"EffectiveDate":"2013-01",
+			"PriceMode":"固定电价",
+			"Price":"5",
+		},
+		"ExpectedData":
+		{
+			"HierarchyNodePath":["Auto_Customer", "Auto_Org","Auto_Site","Auto_Build"],
+			"EffectiveDate":"2013-01",
+			"PriceMode":"固定电价",
+			"Price":"5",
+		}
+	}
+]

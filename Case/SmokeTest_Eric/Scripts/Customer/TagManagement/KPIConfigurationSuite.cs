@@ -9,7 +9,7 @@ using Mento.ScriptCommon.TestData.ClientAccess;
 using Mento.Framework.Script;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
-using Mento.ScriptCommon.TestData.Customer;
+using Mento.ScriptCommon.TestData.SmokeTest;
 using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
@@ -40,8 +40,8 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-SmokeTest-004-001")]
         [Priority("20")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(AddKPIData[]), typeof(KPIConfigurationSuite), "TC-J1-SmokeTest-004-001")]
-        public void AddKPItag(AddKPIData input)
+        [MultipleTestDataSource(typeof(KPIData[]), typeof(KPIConfigurationSuite), "TC-J1-SmokeTest-004-001")]
+        public void AddKPItag(KPIData input)
         {
             KPITagSettings.ClickAddKPITagButton();
             KPITagSettings.FillInAddKPItagData(input.InputData);
@@ -52,7 +52,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
 
-        public void AddKPItagResultView(AddKPIData testdata)
+        public void AddKPItagResultView(KPIData testdata)
         {
             KPITagSettings.FocusOnKPITag(testdata.InputData.Name);
             Assert.AreEqual(testdata.InputData.Name, KPITagSettings.GetKPITagNameValue());

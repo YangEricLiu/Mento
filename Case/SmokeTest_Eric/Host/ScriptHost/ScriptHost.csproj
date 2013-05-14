@@ -93,8 +93,16 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -129,13 +137,27 @@
       <Project>{74673397-F815-44D8-876A-D6CCF87A2382}</Project>
       <Name>Platform</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Scripts\SmokeTest\SmokeTest.csproj">
-      <Project>{e7c15b1b-93f0-426a-a6d9-2639377dd070}</Project>
-      <Name>SmokeTest</Name>
+    <ProjectReference Include="..\..\Scripts\TestScript\TestScript.csproj">
+      <Project>{870c5f7b-859f-44dd-add5-79efff60d85a}</Project>
+      <Name>TestScript</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
+    <Folder Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUBasicTariffAddValidSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUBasicTariffModifyInvalidSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUBasicTariffSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffAddInvalidSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffModifyInvalidSuite\" />
+    <Folder Include="Data\Administration\User\UserManagementAddInvalid\" />
+    <Folder Include="Data\Administration\User\UserManagementAddValid\" />
+    <Folder Include="Data\Administration\User\UserManagementModifyValid\" />
+    <Folder Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\" />
+    <Folder Include="Data\Customer\HierarchySettings\AreaDimensionSuite\" />
+    <Folder Include="Data\Customer\HierarchySettings\HierarchyManagement\" />
+    <Folder Include="Data\Customer\HierarchySettings\SystemDimensionSuite\" />
+    <Folder Include="Data\Customer\TagManagement\FormulaVSmokeTestSuite\" />
+    <Folder Include="Data\Customer\TagManagement\KPIBaselineSuite\" />
     <Folder Include="Resource\en\" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +190,117 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Data\Administration\CarbonFactor\CarbonFactorSuite\TC-J1-SmokeTest-024.json" />
+    <None Include="Data\Administration\CustomerOperation\AddCustomerSmokeTestSuite\TC-J1-SmokeTest-033-001.json" />
+    <None Include="Data\Administration\ExampleSuite\TA-Example-008.json" />
+    <None Include="Data\Administration\ExampleSuite\TA-Example-009.json" />
+    <None Include="Data\Administration\LoginSuite\TA-Trial-Login-001.json" />
+    <None Include="Data\Administration\ShowTimeSuite\TC-J1-ShowTime-001.json" />
+    <None Include="Data\Administration\TimeManagement\DayNightSuite\TC-J1-SmokeTest-029.json" />
+    <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonSuite\TC-J1-SmokeTest-030.json" />
+    <None Include="Data\Administration\TimeManagement\WorkdaySuite\TC-J1-SmokeTest-027.json" />
+    <None Include="Data\Administration\TimeManagement\WorktimeSuite\TC-J1-SmokeTest-028.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSetting-Delete-001.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSetting-Delete-002.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSetting-Delete-101.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffModifyValidSuite\TC-J1-FVT-TOUTariffSetting-Modify-101.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffModifyValidSuite\TC-J1-FVT-TOUTariffSetting-Modify-103.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffSmokeTestSuite\TC-J1-SmokeTest-025.json" />
+    <None Include="Data\Administration\TOU\TOUPulsePeakTariffAddValidSuite\TC-J1-FVT-TOUPulsePeakTariffSetting-Add-101.json" />
+    <None Include="Data\Administration\TOU\TOUPulsePeakTariffModifyValidSuite\TC-J1-FVT-TOUPulsePeakTariffSetting-Modify-101.json" />
+    <None Include="Data\Administration\TOU\TOUPulsePeakTariffSmokeTestSuite\TC-J1-SmokeTest-026.json" />
+    <None Include="Data\Administration\TOU\TOUPulsePeakTariffSuite\TC-J1-SmokeTest-026.json" />
+    <None Include="Data\Administration\User\UserConfigurationSuite\TC-J1-SmokeTest-034-Modify.json" />
+    <None Include="Data\Administration\User\UserConfigurationSuite\TC-J1-SmokeTest-034.json" />
+    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-1.json" />
+    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-2.json" />
+    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-3.json" />
+    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-4.json" />
+    <None Include="Data\CommonInputData.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-3.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-4.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-5.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-3.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-4.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AreaDimensionSmokeTestSuite\TC-J1-SmokeTest-AreaDimension-001.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-001-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-001-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\HierarchySmokeTestSuite\TA-Hierarchy-002.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\HierarchySmokeTestSuite\TA-Hierarchy-003.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\HierarchySmokeTestSuite\TC-J1-SmokeTest-Hierarchy-001.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-001-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-001-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-2.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-3.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-4.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\SystemDimensionSmokeTestSuite\TC-J1-SmokeTest-SystemDimension-001.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\SystemDimensionSmokeTestSuite\TC-J1-SmokeTest-SystemDimension-002.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-SmokeTest-017.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElectricfixedCostPropertySuite\TC-J1-SmokeTest-018-001.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElectricityComprehensiveCostPropertySuite\TC-J1-SmokeTest-019-001.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddOtherCostPropertySuite\TC-J1-SmokeTest-020-001.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddPeopleAreaPropertySuite\TC-J1-SmokeTest-021.json" />
+    <None Include="Data\Customer\TagAssociation\AreaDimensionAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-003.json" />
+    <None Include="Data\Customer\TagAssociation\AreaDimensionDisassociateTagSmokeTestSuite\TC-J1-SmokeTest-DisassociateTag-003.json" />
+    <None Include="Data\Customer\TagAssociation\HierarchyAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-001.json" />
+    <None Include="Data\Customer\TagAssociation\HierarchyDisassociateTagSmokeTestSuite\TC-J1-SmokeTest-DisassociateTag-001.json" />
+    <None Include="Data\Customer\TagAssociation\SystemAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-002.json" />
+    <None Include="Data\Customer\TagAssociation\SystemDisassociateTagSmokeTestSuite\TC-J1-SmokeTest-DisassociateTag-002.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Invalid-messagebox.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Invalid-redline.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Valid.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPIbutCancel-Invalid.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Invalid-messagebox.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Invalid-redline.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Valid.json" />
+    <None Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPIbutCancel-Invalid.json" />
+    <None Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddInvalid.json" />
+    <None Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddValid.json" />
+    <None Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddValidbutCancel.json" />
+    <None Include="Data\Customer\TagManagement\KPIConfigurationSuite\TA-KPItag-001.json" />
+    <None Include="Data\Customer\TagManagement\KPIConfigurationSuite\TC-J1-SmokeTest-004-001.json" />
+    <None Include="Data\Customer\TagManagement\KPIConfigurationSuite\TC-J1-SmokeTest-023.json" />
+    <None Include="Data\Customer\TagManagement\KPItagConfiguration\TC-J1-SmokeTest-004-001.json" />
+    <None Include="Data\Customer\TagManagement\KPITargetSuite\TC-J1-SmokeTest-022.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForDayNightKPI-Invalid-redline.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForDayNightKPI-Valid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForDayNightKPIbutCancel-Invalid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForNonDayNightKPI-Invalid-messagebox.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForNonDayNightKPI-Valid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPIFormulaSuite\ModifyFormulaForNonDayNightKPIbutCancel-Invalid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifybutCancel.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifytoInvalid-001.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifytoInvalid-002.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITagSuite\TC-J1-FVT-KPItagConfiguration-004-ModifytoValid.json" />
+    <None Include="Data\Customer\TagManagement\ModifyKPITag\TA-ModifyKPITag-001" />
+    <None Include="Data\Customer\TagManagement\PtagConfigurationSuite\TA-PtagConfiguration-002.json" />
+    <None Include="Data\Customer\TagManagement\PtagConfigurationSuite\TC-J1-SmokeTest-002-001.json" />
+    <None Include="Data\Customer\TagManagement\VtagManagementSuite\TA-Vtag-001.json" />
+    <None Include="Data\Customer\TagManagement\VtagManagementSuite\TA-VtagConfigue-001.json" />
+    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-037.json" />
+    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-038.json" />
+    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-039.json" />
+    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-040.json" />
+    <None Include="Data\IllegalInputData.json" />
+    <None Include="Data\System\Example\IllegalTestSuite\TC-J1-Example-002.json" />
+    <None Include="Data\TestScript\CustomerOperation\AddCustomerSmokeTestSuite\TC-J1-SmokeTest-033-001.json" />
+    <None Include="Data\TestScript\HierarchyConfiguration\AddValidHierarchyNodeSuite\TA-Smoke-Hierarchy-001-001.json" />
+    <None Include="Data\TestScript\HierarchyConfiguration\AreaDimensionSmokeTestSuite\TA-Smoke-AreaDimension-001-001.json" />
+    <None Include="Data\TestScript\HierarchyConfiguration\SystemDimensionSmokeTestSuite\TA-Smoke-SystemDimension-001-001.json" />
+    <None Include="Data\TestScript\HierarchyPropertyConfiguration\AddElectricCostPropertySuite\TA-Smoke-Cost-001-001.json" />
+    <None Include="Data\TestScript\TagAssociation\HierarchyAssociateTagSuite\TA-Smoke-TagMap-001-001.json" />
+    <None Include="Data\TestScript\TagManagement\AddKPITagSuite\TA-Smoke-Tag-003-002.json" />
+    <None Include="Data\TestScript\TagManagement\AddKPITagSuite\TA-Smoke-Tag-003-001.json" />
+    <None Include="Data\TestScript\TagManagement\KPIBaselineSuite\TA-Smoke-TargetBaseline-001-001.json" />
+    <None Include="Data\TestScript\TagManagement\PtagConfigurationSuite\TA-Smoke-Tag-001-001.json" />
+    <None Include="Data\TestScript\TagManagement\VtagManagementSuite\TA-Smoke-Tag-002-001.json" />
+    <None Include="Data\TestScript\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TA-Smoke-Calendar-001-001.json" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -209,7 +342,8 @@ copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.ClientAcce
 copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Customer.dll.config
 copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.EnergyView.dll.config
 copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Information.dll.config
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.System.dll.config</PostBuildEvent>
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.System.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.TestScript.dll.config</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

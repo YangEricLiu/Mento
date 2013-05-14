@@ -1,0 +1,23 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Name":"AliceKPI",
+			"Code":"AliceKPI",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"This is a kpitag ",
+		},
+		
+		"ExpectedData":
+		{
+			"Name":"KPI",
+			"Code":"Alice1",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"This is a kpitag ",
+		}
+	},
+]

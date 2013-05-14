@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["Auto_Customer", "Auto_Org","Auto_Site","Auto_Build"],
+			"TagName":"Auto_Add_P1",
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

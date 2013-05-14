@@ -1,0 +1,16 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["Mento","HierarchyEV"],
+			"TagNames":["P0"],
+			"ViewType":"Line",
+			"DashboardInfo":{
+				"WigetName":"TestWiget",
+				"HierarchyName":"HierarchyEV",
+				"IsCreateDashboard":"true",
+				"DashboardName":"仪表盘_A1",
+			}
+		}
+	}
+]

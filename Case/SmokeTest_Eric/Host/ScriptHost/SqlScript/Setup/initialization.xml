@@ -6,6 +6,9 @@
       <interface name="user" url="API/User.svc/CreateUser"/>
       <interface name="hierarchy" url="API/Hierarchy.svc/CreateHierarchy"/>
       <interface name="tag" url="API/Tag.svc/CreateTag"/>
+      <interface name="kpi" url="API/Tag.svc/CreateKpi"/>
+      <interface name="calendar" url="API/Administration.svc/CreateCalendar"/>
+      <interface name="cost" url="API/Administration.svc/SaveTouTariff"/>
     </interfaces>
   </request>
   <testdata>
@@ -21,8 +24,8 @@
     </logo>
     <customer>
       <!--the test customer-->
-      <add identity="2">
-        <![CDATA[{"dto":{"Id":0,"Version":0,"LogoId":"1","TimezoneId":1,"Name":"Mento","Code":"Mento","Address":"Beijing","Manager":"REM","Email":"rem@rem.com","Telephone":"010-88888888","StartTime":"/Date(1358812800000)/","Comment":"TestAutomation"}}]]>
+      <add identity="1">
+        <![CDATA[{"dto":{"Id":0,"Version":0,"LogoId":"1","TimezoneId":1,"Name":"Auto_Customer","Code":"Auto_Customer","Address":"Beijing","Manager":"REM","Email":"rem@rem.com","Telephone":"010-88888888","StartTime":"/Date(1358812800000)/","Comment":"SmokeTestCreateWhenInitialization"}}]]>
       </add>
     </customer>
     <user>
@@ -31,7 +34,7 @@
         <![CDATA[
         SET IDENTITY_INSERT [User] ON
         INSERT INTO [User](Id,Name,RealName,UserType,Password,Comment,Title,Telephone,Email,Status,UpdateUser,UpdateTime)
-        VALUES(2,'Admin','Admin',1,'161EBD7D45089B3446EE4E0D86DBCF92','Admin',1,'0100000','11@11.11',1,'Admin',GETDATE())
+        VALUES(2,'Auto_Admin','Auto_Admin',1,'161EBD7D45089B3446EE4E0D86DBCF92','Auto_Admin',1,'0100000','11@11.11',1,'Auto_Admin',GETDATE())
         SET IDENTITY_INSERT [User] OFF
         ]]>
       </add>
@@ -40,22 +43,22 @@
         <![CDATA[
         SET IDENTITY_INSERT [User] ON
         INSERT INTO [User](Id,Name,RealName,UserType,Password,Comment,Title,Telephone,Email,Status,UpdateUser,UpdateTime) 
-        VALUES(3,'AutoCustomer','Auto',2,'161EBD7D45089B3446EE4E0D86DBCF92','auto',1,'0100000','11@11.11',1,'AutoCustomer',GETDATE())
+        VALUES(3,'Auto_Customer','Auto_Customer',2,'161EBD7D45089B3446EE4E0D86DBCF92','Auto_Customer',1,'0100000','Auto_Customer@Auto_Customer.com',1,'Auto_Customer',GETDATE())
         SET IDENTITY_INSERT [User] OFF
-        INSERT INTO UserCustomer(UserId,HierarchyId)
-        VALUES(3,2)
+        INSERT INTO UserCustomer(UserId,HierarchyId,UpdateUser,UpdateTime)
+        VALUES(3,2,'Auto_Customer',GETDATE())
         ]]>
       </add>
     </user>
     <hierarchy>
+      <add identity="2">
+        <![CDATA[{"hierarchy":{"Id":0,"Name":"Auto_Org","Code":"Auto_Org","Type":0,"ParentId":1,"CustomerId":1,"Comment":"Auto_Org","TimezoneId":1,"Version":0}}]]>
+      </add>
       <add identity="3">
-        <![CDATA[{"hierarchy":{"Id":0,"Name":"HierarchyEV","Code":"HierarchyEV","Type":0,"ParentId":2,"CustomerId":2,"Comment":"HierarchyEV","TimezoneId":1,"Version":0}}]]>
+        <![CDATA[{"hierarchy":{"Id":0,"Name":"Auto_Site","Code":"Auto_Site","Type":1,"ParentId":2,"CustomerId":1,"Comment":"Auto_Site","TimezoneId":1,"Version":0}}]]>
       </add>
       <add identity="4">
-        <![CDATA[{"hierarchy":{"Id":0,"Name":"SiteEV","Code":"SiteEV","Type":1,"ParentId":3,"CustomerId":2,"Comment":"SiteEV","TimezoneId":1,"Version":0}}]]>
-      </add>
-      <add identity="5">
-        <![CDATA[{"hierarchy":{"Id":0,"Name":"BuildingEV","Code":"BuildingEV","Type":2,"ParentId":4,"CustomerId":2,"Comment":"BuildingEV","TimezoneId":1,"Version":0}}]]>
+        <![CDATA[{"hierarchy":{"Id":0,"Name":"Auto_Build","Code":"Auto_Build","Type":2,"ParentId":3,"CustomerId":1,"Comment":"Auto_Build","TimezoneId":1,"Version":0}}]]>
       </add>
     </hierarchy>
     <tag>
@@ -63,38 +66,89 @@
         <![CDATA[        
         SET IDENTITY_INSERT [Tag] ON
         INSERT INTO [Tag] ([ID],[Type],[GuidCode],[Code],[Name],[TimezoneId],[Comment],[MeterCode],[ChannelId],[CalculationType],[CalculationStep],[UomId],[CommodityId],[StartTime],[EnergyConsumption],[DayNightRatio],[Formula],[FormulaRpn],[CustomerId],[HierarchyId],[SystemDimensionId],[AreaDimensionId],[Status],[UpdateUser],[UpdateTime])
-        VALUES(1,1,5373062981773366147,'P0','P0',1,'P0','P0',0,1,NULL,1,1,'2011-12-31',0,NULL,NULL,NULL,2,3,NULL,NULL,1,'OTSTool','2013-01-09 16:46:33.497')
+        VALUES(1,1,5373062981773366147,'Auto_P0','Auto_P0',1,'Auto_P0','Auto_P0',0,1,NULL,1,1,'2011-12-31',0,NULL,NULL,NULL,2,3,NULL,NULL,1,'OTSTool','2013-01-09 16:46:33.497')
         SET IDENTITY_INSERT [Tag] OFF
         ]]>
       </add>
       <add identity="2">
-        <!--PTag-->
-        <![CDATA[{"dto":{"Id":0,"Type":1,"Name":"Add_P1","Code":"Add_P1","MeterCode":"Add_P1","ChannelId":1,"CommodityId":1,"UomId":1,"CalculationType":1,"Comment":"Add_P1","CustomerId":1,"TimezoneId":1,"CalculationStep":null}}]]>
+        <!--PTag1-->
+        <![CDATA[{"dto":{"Id":0,"Type":1,"Name":"Auto_Add_P1","Code":"Auto_Add_P1","MeterCode":"Auto_Add_P1","ChannelId":1,"CommodityId":1,"UomId":1,"CalculationType":1,"Comment":"Auto_Add_P1","CustomerId":1,"TimezoneId":1,"CalculationStep":null}}]]>
       </add>
       <add identity="3">
-        <!--PTag-->
-        <![CDATA[{"dto":{"Id":0,"Type":1,"Name":"Amy_c_P1\u7535_\u5206\u6563\u7a7a\u8c03","Code":"Amy_c_P1","MeterCode":"123","ChannelId":5,"CommodityId":1,"UomId":1,"CalculationType":1,"Comment":"","CustomerId":1,"TimezoneId":1,"CalculationStep":null}}]]>
+        <!--PTag2-->
+        <![CDATA[{"dto":{"Id":0,"Type":1,"Name":"Auto_Add_P2","Code":"Auto_Add_P2","MeterCode":"Auto_Add_P2","ChannelId":1,"CommodityId":1,"UomId":1,"CalculationType":1,"Comment":"Auto_Add_P2","CustomerId":1,"TimezoneId":1,"CalculationStep":null}}]]>
       </add>
       <add identity="4">
         <!--VTag-->
-        <![CDATA[{"dto":{"Id":0,"Type":2,"Name":"Add_V1","Code":"Add_V1","CommodityId":1,"UomId":1,"CalculationStep":1,"CalculationType":1,"Comment":"","ChannelId":0,"MeterCode":"","CustomerId":1,"TimezoneId":1,"TagModifyMode":1}}]]>
+        <![CDATA[{"dto":{"Id":0,"Type":2,"Name":"Auto_Add_V1","Code":"Auto_Add_V1","CommodityId":1,"UomId":1,"CalculationStep":1,"CalculationType":1,"Comment":"","ChannelId":0,"MeterCode":"","CustomerId":1,"TimezoneId":1,"TagModifyMode":1}}]]>
       </add>
       <add identity="5">
         <!--PTag-->
-        <![CDATA[{"dto":{"Id":0,"Type":1,"Name":"AddforAreaAssociate","Code":"AddforAreaAssociate","MeterCode":"AddforAreaAssociate","ChannelId":1,"CommodityId":1,"UomId":1,"CalculationType":1,"Comment":"","CustomerId":1,"TimezoneId":1,"CalculationStep":null}}]]>
+        <![CDATA[{"dto":{"Id":0,"Type":1,"Name":"Auto_AddforAreaAssociate","Code":"Auto_AddforAreaAssociate","MeterCode":"Auto_AddforAreaAssociate","ChannelId":1,"CommodityId":1,"UomId":1,"CalculationType":1,"Comment":"","CustomerId":1,"TimezoneId":1,"CalculationStep":null}}]]>
       </add>
       <add identity="6">
         <!--VTag-->
-        <![CDATA[{"dto":{"Id":0,"Type":2,"Name":"Amy_m_V1_Vtagconst1","Code":"Amy_m_V1_Vtagconst1","CommodityId":1,"UomId":1,"CalculationStep":1,"CalculationType":1,"Comment":"","ChannelId":0,"MeterCode":"","CustomerId":1,"TimezoneId":1,"TagModifyMode":1}}]]>
+        <![CDATA[{"dto":{"Id":0,"Type":2,"Name":"Auto_m_V1_Vtagconst1","Code":"Auto_m_V1_Vtagconst1","CommodityId":1,"UomId":1,"CalculationStep":1,"CalculationType":1,"Comment":"","ChannelId":0,"MeterCode":"","CustomerId":1,"TimezoneId":1,"TagModifyMode":1}}]]>
       </add>
       <add identity="7" type="sql">        
         <![CDATA[
         SET IDENTITY_INSERT Tag ON
         INSERT INTO [Tag] ([ID],[Type],[GuidCode],[Code],[Name],[TimezoneId],[Comment],[MeterCode],[ChannelId],[CalculationType],[CalculationStep],[UomId],[CommodityId],[StartTime],[EnergyConsumption],[DayNightRatio],[Formula],[FormulaRpn],[CustomerId],[HierarchyId],[SystemDimensionId],[AreaDimensionId],[Status],[UpdateUser],[UpdateTime])
-        VALUES(7,1,5373062981773366148,'P1','P1',1,'P1','P1',0,1,NULL,1,1,'2011-12-31',0,NULL,NULL,NULL,2,5,NULL,NULL,1,'OTSTool','2013-01-09 16:46:33.497')
+        VALUES(7,1,5373062981773366148,'Auto_P1','Auto_P1',1,'Auto_P1','Auto_P1',0,1,NULL,1,1,'2011-12-31',0,NULL,NULL,NULL,2,5,NULL,NULL,1,'OTSTool','2013-01-09 16:46:33.497')
         SET IDENTITY_INSERT [Tag] OFF
         ]]>
       </add>
+      <!--kpi tag for target base line-->
+      <add type="sql" identity="9">
+        <![CDATA[
+        SET IDENTITY_INSERT Tag ON
+        INSERT INTO [Tag] ([Id], [Type], [GuidCode], [Code], [Name], [TimezoneId], [Comment], [MeterCode], [ChannelId], [CalculationType], [CalculationStep], [UomId], [CommodityId], [StartTime], [EnergyConsumption], [DayNightRatio], [Formula], [FormulaRpn], [CustomerId], [HierarchyId], [SystemDimensionId], [AreaDimensionId], [Status], [UpdateUser], [UpdateTime])
+        VALUES (9, 4, 5630801750082682257, N'Auto_Kpi_Target', N'Auto_Kpi_Target', 1, NULL, NULL, 0, 1, 2, 32, 0, NULL, 0, 1, NULL, NULL, 1, 4, NULL, NULL, 1, N'PlatformAdmin', CAST(0x0000A1BD00962C7C AS DateTime))
+        SET IDENTITY_INSERT Tag ON
+        ]]>
+      </add>
     </tag>
+    <kpi>
+      <add identity="1">
+        <!--kpi1-->
+        <![CDATA[{"dto":{"Checked":0,"Id":0,"Name":"Auto_kSystemConfig","Version":0,"Code":"Auto_kSystemConfig","Comment":"","Type":4,"TypeName":"","ChannelId":0,"TimezoneId":1,"MeterCode":"","CalculationType":1,"UomId":32,"UomName":"","CommodityId":0,"CommodityName":"","StartTime":null,"HierarchyId":null,"SystemDimensionId":null,"AreaDimensionId":null,"CustomerId":1,"GuidCode":0,"EnergyConsumption":0,"CalculationStep":2,"Formula":"","DayNightRatio":true,"ReverseFormula":false,"TagModifyMode":1}}]]>
+      </add>
+    </kpi>
+    <calendar>
+      <!--工休日-->
+      <add identity="1">
+        <![CDATA[{"dto":{"Id":null,"Name":"Auto_DayOff","Type":"0","Version":null,"Items":[]}}]]>
+      </add>
+      <!--工作时间-->
+      <add identity="2">
+        <![CDATA[{"dto":{"Id":null,"Name":"Auto_WorkTime","Type":"1","Version":null,"Items":[{"Type":"2","StartFirstPart":8,"StartSecondPart":30,"EndFirstPart":17,"EndSecondPart":30}]}}]]>
+      </add>
+      <!--冷暖季-->
+      <add identity="3">
+        <![CDATA[{"dto":{"Id":null,"Name":"Auto_Season","Type":"2","Version":null,"Items":[{"Type":"4","StartFirstPart":1,"StartSecondPart":15,"EndFirstPart":3,"EndSecondPart":15},{"Type":"5","StartFirstPart":6,"StartSecondPart":15,"EndFirstPart":9,"EndSecondPart":15}]}}]]>
+      </add>
+      <!--昼夜时间-->
+      <add identity="4">
+        <![CDATA[{"dto":{"Id":null,"Name":"Auto_CirCadian","Type":"3","Version":null,"Items":[{"Type":"6","StartFirstPart":7,"StartSecondPart":0,"EndFirstPart":18,"EndSecondPart":30}]}}]]>
+      </add>
+      <add type="sql">
+        <![CDATA[
+        SET IDENTITY_INSERT [dbo].[HierarchyAdvancedPropertyVersion] ON
+        INSERT [dbo].[HierarchyAdvancedPropertyVersion] ([Id], [Type], [HierarchyId], [UpdateUser], [UpdateTime]) VALUES (1, 1, 4, N'PlatformAdmin', CAST(0x0000A1BD00934B0C AS DateTime))
+        SET IDENTITY_INSERT [dbo].[HierarchyAdvancedPropertyVersion] OFF
+
+        SET IDENTITY_INSERT [dbo].[HierarchyCalendarReference] ON
+        INSERT [dbo].[HierarchyCalendarReference] ([Id], [HierarchyId], [PropertyVersionId], [CalendarType]) VALUES (2, 4, 1, 0)
+        SET IDENTITY_INSERT [dbo].[HierarchyCalendarReference] OFF
+
+        SET IDENTITY_INSERT [dbo].[HierarchyCalendar] ON
+        INSERT [dbo].[HierarchyCalendar] ([Id], [PropertyVersionId], [EffectiveTime], [CalendarId], [WorkTimeId]) VALUES (1, 1, 2013, 1, NULL)
+        SET IDENTITY_INSERT [dbo].[HierarchyCalendar] OFF
+        ]]>
+      </add>
+    </calendar>
+    <cost identity="1">
+      <![CDATA[{"dto":{"Id":null,"Name":"Auto_Cost","PeakPrice":6,"ValleyPrice":4,"PlainPrice":5,"Version":null,"TouTariffItems":[{"TouTariffId":0,"ItemType":2,"Price":5,"PeakPrice":null,"Id":null,"TimeRange":[]},{"TouTariffId":0,"ItemType":1,"Price":6,"PeakPrice":null,"Id":null,"TimeRange":[{"m_Item1":270,"m_Item2":300,"id":null}]},{"TouTariffId":0,"ItemType":3,"Price":4,"PeakPrice":null,"Id":null,"TimeRange":[{"m_Item1":1320,"m_Item2":1440,"id":null}]}]}}]]>
+    </cost>
   </testdata>
 </intialization>

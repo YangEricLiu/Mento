@@ -1,0 +1,22 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Name":"kSystemConfig",
+			"Code":"kSystemConfig",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"备注",
+		},
+       "ExpectedData":
+		{
+			"Name":"kSystemConfig",
+			"Code":"kSystemConfig",
+			"Uom":"KWHPerson",
+			"Steps":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"备注",
+		}
+	}
+]

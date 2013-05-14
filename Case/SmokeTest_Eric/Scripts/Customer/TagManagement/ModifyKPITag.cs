@@ -9,7 +9,7 @@ using Mento.ScriptCommon.TestData.ClientAccess;
 using Mento.Framework.Script;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
-using Mento.ScriptCommon.TestData.Customer;
+using Mento.ScriptCommon.TestData.SmokeTest;
 using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.Framework;
@@ -43,8 +43,8 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TA-ModifyKPITag-001")]
         [Priority("1")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(AddKPIData[]), typeof(ModifyKPITag), "TA-ModifyKPITag-001")]
-        public void ModifyKPItag(AddKPIData input)
+        [MultipleTestDataSource(typeof(KPIData[]), typeof(ModifyKPITag), "TA-ModifyKPITag-001")]
+        public void ModifyKPItag(KPIData input)
         {
             KPITagSettings.FocusOnKPITag("KPI4");
             TimeManager.LongPause();
@@ -56,7 +56,7 @@ namespace Mento.Script.Customer.TagManagement
 
             JazzMessageBox.LoadingMask.WaitLoading();
         }
-        public void ModifyKPItagResultView(AddKPIData testdata)
+        public void ModifyKPItagResultView(KPIData testdata)
         {
             KPITagSettings.FocusOnKPITag(testdata.InputData.Name);
             Assert.AreEqual(testdata.InputData.Name, KPITagSettings.GetKPITagNameValue());

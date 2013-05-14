@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Name":"工作时间日历1",	
+			"RecordNumber":2,
+			"StartTime":["08:30","13:00"],
+			"EndTime":["12:00","17:30"],		
+		},
+		"ExpectedData":
+		{
+			"LabelText":["工作时间以外均为非工作时间"],
+		}
+	}
+]

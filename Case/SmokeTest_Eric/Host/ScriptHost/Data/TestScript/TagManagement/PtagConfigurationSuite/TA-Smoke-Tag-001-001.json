@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Name":"pElectric1",
+			"Code":"pElectric1",
+			"MeterCode":"pElectric1_MeterCode",
+			"ChannelId":"1",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"CalculationType":"Sum",
+			"Comment":"描述1",
+		},
+		"ExpectedData":
+		{
+			"Name":"pElectric1",
+			"Code":"pElectric1",
+			"MeterCode":"pElectric1_MeterCode",
+			"ChannelId":"1",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"CalculationType":"Sum",
+			"Comment":"描述1",
+		}
+	}
+]

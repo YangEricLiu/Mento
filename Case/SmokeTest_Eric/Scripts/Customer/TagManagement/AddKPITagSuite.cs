@@ -9,7 +9,7 @@ using Mento.ScriptCommon.TestData.ClientAccess;
 using Mento.Framework.Script;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
-using Mento.ScriptCommon.TestData.Customer;
+using Mento.ScriptCommon.TestData.SmokeTest;
 using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
@@ -41,8 +41,8 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-FVT-KPItagConfiguration-003")]
         [Priority("20")]
         [Type("FVT")]
-        [MultipleTestDataSource(typeof(AddKPIData[]), typeof(AddKPITagSuite), "TC-J1-FVT-KPItagConfiguration-003-AddValid")]
-        public void AddValidKPItag(AddKPIData input)
+        [MultipleTestDataSource(typeof(KPIData[]), typeof(AddKPITagSuite), "TC-J1-FVT-KPItagConfiguration-003-AddValid")]
+        public void AddValidKPItag(KPIData input)
         {
             KPITagSettings.ClickAddKPITagButton();
             KPITagSettings.FillInAddKPItagData(input.InputData);
@@ -53,7 +53,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
 
-        public void AddKPItagResultView(AddKPIData testdata)
+        public void AddKPItagResultView(KPIData testdata)
         {
 
             KPITagSettings.FocusOnKPITagCode(testdata.InputData.Code);
@@ -69,9 +69,9 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-FVT-KPItagConfiguration-003")]
         [Priority("20")]
         [Type("FVT")]
-        [MultipleTestDataSource(typeof(AddKPIData[]), typeof(AddKPITagSuite), "TC-J1-FVT-KPItagConfiguration-003-AddInvalid")]
+        [MultipleTestDataSource(typeof(KPIData[]), typeof(AddKPITagSuite), "TC-J1-FVT-KPItagConfiguration-003-AddInvalid")]
 
-        public void AddInvalidKPItag(AddKPIData input)
+        public void AddInvalidKPItag(KPIData input)
         {
             KPITagSettings.ClickAddKPITagButton();
             KPITagSettings.FillInAddKPItagData(input.InputData);
@@ -84,7 +84,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.MediumPause();
         }
 
-        public void AddInvalidKPItagResultView(AddKPIData testdata)
+        public void AddInvalidKPItagResultView(KPIData testdata)
         {
             Assert.IsFalse(KPITagSettings.KPITagIsExist(testdata.InputData.Code));
             Assert.AreEqual(testdata.ExpectedData.Name, KPITagSettings.GetNameErrorMessageValue());
@@ -100,8 +100,8 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-FVT-KPItagConfiguration-003")]
         [Priority("20")]
         [Type("FVT")]
-        [MultipleTestDataSource(typeof(AddKPIData[]), typeof(AddKPITagSuite), "TC-J1-FVT-KPItagConfiguration-003-AddValidbutCancel")]
-        public void AddValidbutCancel(AddKPIData input)
+        [MultipleTestDataSource(typeof(KPIData[]), typeof(AddKPITagSuite), "TC-J1-FVT-KPItagConfiguration-003-AddValidbutCancel")]
+        public void AddValidbutCancel(KPIData input)
         {
             KPITagSettings.ClickAddKPITagButton();
             KPITagSettings.FillInAddKPItagData(input.InputData);

@@ -9,7 +9,7 @@ using Mento.ScriptCommon.TestData.ClientAccess;
 using Mento.Framework.Script;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
-using Mento.ScriptCommon.TestData.Customer;
+using Mento.ScriptCommon.TestData.SmokeTest;
 using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.Framework;
@@ -43,8 +43,8 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-FVT-KPItagConfiguration-004")]
         [Priority("1")]
         [Type("FVT")]
-        [MultipleTestDataSource(typeof(AddKPIData[]), typeof(ModifyKPITagSuite), "TC-J1-FVT-KPItagConfiguration-004-ModifytoValid")]
-        public void ModifyKPItagtoValid(AddKPIData input)
+        [MultipleTestDataSource(typeof(KPIData[]), typeof(ModifyKPITagSuite), "TC-J1-FVT-KPItagConfiguration-004-ModifytoValid")]
+        public void ModifyKPItagtoValid(KPIData input)
         {
             KPITagSettings.FocusOnKPITagCode("KPI4");
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -57,7 +57,7 @@ namespace Mento.Script.Customer.TagManagement
 
             JazzMessageBox.LoadingMask.WaitLoading();
         }
-        public void ModifyKPItagtoValidResultView(AddKPIData testdata)
+        public void ModifyKPItagtoValidResultView(KPIData testdata)
         {
 
             KPITagSettings.FocusOnKPITagCode(testdata.InputData.Code);
@@ -74,9 +74,9 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-FVT-KPItagConfiguration-003")]
         [Priority("20")]
         [Type("FVT")]
-        [MultipleTestDataSource(typeof(AddKPIData[]), typeof(ModifyKPITagSuite), "TC-J1-FVT-KPItagConfiguration-004-ModifytoInvalid-001")]
+        [MultipleTestDataSource(typeof(KPIData[]), typeof(ModifyKPITagSuite), "TC-J1-FVT-KPItagConfiguration-004-ModifytoInvalid-001")]
 
-        public void ModifyKPItagtoInvalid002(AddKPIData input)
+        public void ModifyKPItagtoInvalid002(KPIData input)
         {
             KPITagSettings.FocusOnKPITagCode("KPI");
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -90,7 +90,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitLoading();
         }
 
-        public void ModifyKPItagtoInvalidResultView002(AddKPIData testdata)
+        public void ModifyKPItagtoInvalidResultView002(KPIData testdata)
         {
             Assert.AreEqual(testdata.ExpectedData.Name, KPITagSettings.GetNameErrorMessageValue());
             Assert.AreEqual(testdata.ExpectedData.Code, KPITagSettings.GetNameErrorMessageValue());
@@ -105,8 +105,8 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-FVT-KPItagConfiguration-004")]
         [Priority("1")]
         [Type("FVT")]
-        [MultipleTestDataSource(typeof(AddKPIData[]), typeof(ModifyKPITagSuite), "TC-J1-FVT-KPItagConfiguration-004-ModifytoInvalid-002")]
-        public void ModifyKPItagtoInvalid001(AddKPIData input)
+        [MultipleTestDataSource(typeof(KPIData[]), typeof(ModifyKPITagSuite), "TC-J1-FVT-KPItagConfiguration-004-ModifytoInvalid-002")]
+        public void ModifyKPItagtoInvalid001(KPIData input)
         {
             KPITagSettings.FocusOnKPITagCode("KPI");
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -122,7 +122,7 @@ namespace Mento.Script.Customer.TagManagement
 
             JazzMessageBox.LoadingMask.WaitLoading();
         }
-        public void ModifyKPItagtoInvalidResultView001(AddKPIData testdata)
+        public void ModifyKPItagtoInvalidResultView001(KPIData testdata)
         {
             Assert.IsTrue(KPITagSettings.KPITagIsExist("KPI"));
 
@@ -139,8 +139,8 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-FVT-KPItagConfiguration-004")]
         [Priority("1")]
         [Type("FVT")]
-        [MultipleTestDataSource(typeof(AddKPIData[]), typeof(ModifyKPITagSuite), "TC-J1-FVT-KPItagConfiguration-004-ModifybutCancel")]
-        public void ModifyKPItagtoValidbutCancel(AddKPIData input)
+        [MultipleTestDataSource(typeof(KPIData[]), typeof(ModifyKPITagSuite), "TC-J1-FVT-KPItagConfiguration-004-ModifybutCancel")]
+        public void ModifyKPItagtoValidbutCancel(KPIData input)
         {
             KPITagSettings.FocusOnKPITagCode("KPI");
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -154,7 +154,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitLoading();
 
         }
-        public void ModifyKPItagtoValidbutCancelResultView(AddKPIData testdata)
+        public void ModifyKPItagtoValidbutCancelResultView(KPIData testdata)
         {
             Assert.IsTrue(KPITagSettings.KPITagIsExist("KPI"));
             KPITagSettings.FocusOnKPITagCode("KPI");

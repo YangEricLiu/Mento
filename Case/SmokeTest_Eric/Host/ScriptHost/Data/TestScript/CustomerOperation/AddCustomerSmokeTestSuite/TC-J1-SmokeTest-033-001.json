@@ -1,0 +1,16 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Name":"SmokeCustomer",	
+			"Code":"SmokeCustomer",
+			"LogoPath":"",
+			"Address":"Beijing",
+			"ResponsiblePerson":"SmokeCustomer",	
+			"Telephone":"010000",	
+			"Email":"SmokeCustomer@SmokeCustomer.com",
+			"OperationTime":"2013-01-15",
+			"Comment":"SmokeCustomer",	
+		},
+	}
+]

@@ -1,0 +1,29 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["Auto_Customer", "Auto_Org","Auto_Site","Auto_Build"],
+			"WorkdayEffectiveDate":"2013",
+			"WorkdayCalendarName":"Auto_DayOff",
+			"WorktimeCalendarName":"Auto_WorkTime",
+			"HeatingCoolingEffectiveDate":"2013",
+			"HeatingCoolingCalendarName":"Auto_Season",
+			"DayNightEffectiveDate":"2013",
+			"DayNightCalendarName":"Auto_CirCadian",
+		},
+		"ExpectedData":
+		{
+			"WorkdayEffectiveDate":"2013",
+			"WorkdayCalendarName":"Auto_DayOff",
+			"WorktimeCalendarName":"Auto_WorkTime",
+			"HeatingCoolingEffectiveDate":"2013",
+			"HeatingCoolingCalendarName":"Auto_Season",
+			"DayNightEffectiveDate":"2013",
+			"DayNightCalendarName":"Auto_CirCadian",
+			"WorkdayText":["默认工作日", "周一至周五"],
+			"WorktimeText":["非工作时间", "工作时间以外均为非工作时间", "工作时间", "08:30-17:30"],
+			"HeatingCoolingText":["采暖季", "1月15日到3月15日", "供冷季", "6月15日到9月15日"],
+			"DayNightText":["黑夜时间", "白昼时间以外均为黑夜时间", "白昼时间", "07:00-18:30"],
+		}
+	}
+]

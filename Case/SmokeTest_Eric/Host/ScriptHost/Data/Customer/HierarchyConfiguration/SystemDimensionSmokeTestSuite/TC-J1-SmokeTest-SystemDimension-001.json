@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["Auto_Customer", "Auto_Org","Auto_Site11","Auto_Build111"],
+			"SystemDimensionItemPath":["空调", "动力"],
+		},
+		"ExpectedData":
+		{
+			"SystemDimensionPath":["Auto_Build111", "空调", "动力"],
+		}
+	}
+]

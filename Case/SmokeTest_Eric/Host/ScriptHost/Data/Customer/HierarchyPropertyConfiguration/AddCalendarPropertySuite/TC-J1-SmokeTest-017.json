@@ -1,0 +1,29 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty"],
+			"WorkdayEffectiveDate":"2002",
+			"WorkdayCalendarName":"工休日日历1",
+			"WorktimeCalendarName":"工作时间日历1",
+			"HeatingCoolingEffectiveDate":"2002",
+			"HeatingCoolingCalendarName":"冷暖季日历1",
+			"DayNightEffectiveDate":"2002",
+			"DayNightCalendarName":"昼夜时间日历1",
+		},
+		"ExpectedData":
+		{
+			"WorkdayEffectiveDate":"2002",
+			"WorkdayCalendarName":"工休日日历1",
+			"WorktimeCalendarName":"工作时间日历1",
+			"HeatingCoolingEffectiveDate":"2002",
+			"HeatingCoolingCalendarName":"冷暖季日历1",
+			"DayNightEffectiveDate":"2002",
+			"DayNightCalendarName":"昼夜时间日历1",
+			"WorkdayText":["默认工作日", "周一至周五", "工作日", "10月25日至10月31日", "休息日", "5月1日至5月7日"],
+			"WorktimeText":["非工作时间", "工作时间以外均为非工作时间", "工作时间", "08:30-12:00 13:00-17:30"],
+			"HeatingCoolingText":["采暖季", "1月1日至3月15日 11月15日至12月31日", "供冷季", "5月31日至8月31日"],
+			"DayNightText":["黑夜时间", "白昼时间以外均为黑夜时间", "白昼时间", "05:30-18:00"],
+		}
+	}
+]

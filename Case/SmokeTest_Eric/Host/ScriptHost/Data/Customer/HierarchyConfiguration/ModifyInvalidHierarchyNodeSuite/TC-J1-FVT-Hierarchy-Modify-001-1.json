@@ -1,0 +1,62 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoOrg001"],
+			"Code":"AutoBuilding001",
+		},
+		"ExpectedData":
+		{
+		    "Message":"层级的编码重复，无法保存",
+			"Code":"AutoOrg001",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoOrg001", "AutoSite001"],
+			"Code":"AutoSite002",
+		},
+		"ExpectedData":
+		{
+		    "Message":"层级的编码重复，无法保存",
+			"Code":"AutoSite001",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001", "AutoSite001"],
+			"Code":"AutoBuilding002",
+		},
+		"ExpectedData":
+		{
+		    "Message":"层级的编码重复，无法保存",
+			"Code":"AutoSite001",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+			"Code":"AutoSite001",
+		},
+		"ExpectedData":
+		{
+		    "Message":"层级的编码重复，无法保存",
+			"Code":"AutoOrg001",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001", "AutoSite001", "AutoBuilding001"],
+			"Code":"AutoBuilding002",
+		},
+		"ExpectedData":
+		{
+		    "Message":"层级的编码重复，无法保存",
+			"Code":"AutoBuilding001",
+		}
+	}
+]

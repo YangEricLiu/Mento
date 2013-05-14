@@ -55,8 +55,6 @@
     <Compile Include="HierarchyConfiguration\DeleteHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\ModifyValidHierarchyNodeSuite.cs" />
-    <Compile Include="HierarchyPropertyConfiguration\AddElectricfixedCostPropertySuite.cs" />
-    <Compile Include="HierarchyPropertyConfiguration\AddElectricityComprehensiveCostPropertySuite .cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddOtherCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddPeopleAreaPropertySuite.cs" />
     <Compile Include="TagAssociation\AreaDimensionDisassociateTagSmokeTestSuite.cs" />
@@ -77,8 +75,6 @@
     <Compile Include="TagManagement\CancelModifyKPITag.cs" />
     <Compile Include="TagManagement\DeleteKPITag.cs" />
     <Compile Include="TagManagement\DeleteKPITagSuite.cs" />
-    <Compile Include="TagManagement\KPITargetSuite.cs" />
-    <Compile Include="TagManagement\KPIBaselineSuite.cs" />
     <Compile Include="TagManagement\FormulaForDayNightKPISuite.cs" />
     <Compile Include="TagManagement\FormulaForNonDayNightKPISuite.cs" />
     <Compile Include="TagManagement\FormulaVSmokeTestSuite.cs" />
@@ -88,9 +84,7 @@
     <Compile Include="TagManagement\ModifyKPIFormulaSuite.cs" />
     <Compile Include="TagManagement\ModifyKPITag.cs" />
     <Compile Include="TagManagement\ModifyKPITagSuite.cs" />
-    <Compile Include="TagManagement\PtagConfigurationSuite.cs" />
     <Compile Include="TagAssociation\HierarchyAssociateTagSmokeTestSuite.cs" />
-    <Compile Include="TagManagement\VtagManagementSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">

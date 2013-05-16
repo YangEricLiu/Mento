@@ -15,10 +15,10 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Dictionary<EnergyViewType, string[]> MenuItemDictionary = new Dictionary<EnergyViewType, string[]>()
         {
-            {EnergyViewType.Line,new string[] { "趋势数据", "折线图" }},
-            {EnergyViewType.Column,new string[] { "趋势数据", "柱状图" }},
-            {EnergyViewType.List,new string[] { "趋势数据", "列表数据" }},
-            {EnergyViewType.Distribute,new string[] { "分布数据" }},
+            {EnergyViewType.Line,new string[] {  "折线图" }},
+            {EnergyViewType.Column,new string[] { "柱状图" }},
+            {EnergyViewType.List,new string[] { "数据表" }},
+            {EnergyViewType.Distribute,new string[] { "饼状图" }},
         };
 
         //public EnergyViewType CurrentViewType

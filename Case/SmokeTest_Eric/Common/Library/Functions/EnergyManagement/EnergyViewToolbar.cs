@@ -120,5 +120,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             MoreMenu.UncheckShowCanlendar();
         }
+        public void ViewButtonClick()
+        {
+            ViewButton.Click();
+        }
     }
 }

@@ -301,6 +301,8 @@
     <None Include="Data\TestScript\TagManagement\PtagConfigurationSuite\TA-Smoke-Tag-001-001.json" />
     <None Include="Data\TestScript\TagManagement\VtagManagementSuite\TA-Smoke-Tag-002-001.json" />
     <None Include="Data\TestScript\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TA-Smoke-Calendar-001-001.json" />
+    <None Include="Data\TestScript\Usage\SingleTagSuite\TA-Smoke-Energy-001-001.json" />
+    <None Include="Data\TestScript\Usage\SingleTagSuite\TA-Smoke-Energy-001-002.json" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">

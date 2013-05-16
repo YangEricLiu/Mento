@@ -1,0 +1,16 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["Auto_Customer", "Auto_Org","Auto_Site","Auto_Build"],
+			"TagNames":["Auto_P1"],
+			"ViewType":"Line",
+			"DashboardInfo":{
+				"WigetName":"Auto_Wiget",
+				"HierarchyName":"Auto_Build",
+				"IsCreateDashboard":"true",
+				"DashboardName":"Auto_Dashboard",
+			}
+		}
+	}
+]

@@ -86,8 +86,7 @@
       <add key="ModifyWidgetNameSaveButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
       <add key="ModifyWidgetNameCancelButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
       <add key="WidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]//span[text()='表3']" type="XPath"/>
-      <add key="ButtonDeleteWidget" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[4]" type="XPath"/>
-      <add key="LinkButtonEnergyViewSaveDashboardCreateDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-default')]//div[contains(@id,'remlinkbutton')]/a[text()='新增仪表盘']" type="XPath"/>
+      <add key="ButtonDeleteWidget" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[4]" type="XPath"/>      
       <add key="LinkButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
       <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
       <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
@@ -314,7 +313,7 @@
     </UserProfile>
     <energyview>
       <add key="TextFieldEnergyViewSaveDashboardWidgetName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='小组件名称']]//input[contains(@class,'x-form-field')]" type="XPath"/>
-      <add key="TextFieldEnergyViewSaveDashboardDashboardName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='新增仪表盘']]//input[contains(@class,'x-form-field')]" type="XPath"/>
+      <add key="TextFieldEnergyViewSaveDashboardDashboardName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table[contains(@id,'textfield')][2]//input[contains(@class,'x-form-field')]" type="XPath"/>
       <add key="TextFieldModifyWidgetName" value="//div[contains(@id,'dashboardwindow')]//input[@type='text' and @name='Name']" type="XPath"/>
     </energyview>
     <customersettings>
@@ -437,7 +436,7 @@
     <energyview>
       <add key="ComboBoxEnergyViewStartTime" value="//div[@id='em-energy-chartgridpanel']/div/div/div/div/table[contains(@id,'combobox') and position()=1]" type="XPath"/>
       <add key="ComboBoxEnergyViewEndTime" value="//div[@id='em-energy-chartgridpanel']/div/div/div/div/table[contains(@id,'combobox') and position()=2]" type="XPath"/>
-      <add key="ComboBoxEnergyViewSaveDashboardHierarchy" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='层级结点']]//table[contains(@id,'combobox')]" type="XPath"/>
+      <add key="ComboBoxEnergyViewSaveDashboardHierarchy" value="//div[contains(@class,'x-window-body-default')]/table[tbody/tr/td[1]/label[text()='层级节点']]//table[contains(@id,'combobox')]" type="XPath"/>
       <add key="ComboBoxEnergyViewSaveDashboardDashboard" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='已建仪表盘']]//table[contains(@id,'combobox')]" type="XPath"/>
       <add key="ComboBoxEnergyViewIntervalDialogStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body')]//table[contains(@id,'combobox') and position()=1]" type="XPath"/>
       <add key="ComboBoxEnergyViewIntervalDialogEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body')]//table[contains(@id,'combobox') and position()=2]" type="XPath"/>
@@ -555,7 +554,7 @@
   <!--Grid Begin-->
   <Grid>
     <energyview>
-      <add key="GridEnergyAnalysisAllTagList" value="em-energy-alltag-panel" type="ID"/>
+      <add key="GridEnergyAnalysisAllTagList" value="//div[contains(@class,'x-grid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridEnergyAnalysisSystemDimensionTagList" value="em-energy-sdim-tag-grid" type="ID"/>
       <add key="GridEnergyAnalysisAreaDimensionTagList" value="em-energy-adim-tag-grid" type="ID"/>
       <add key="GridEnergyAnalysisEnergyDataList" value="//div[@id='em-energy-chartgridpanel']//div[contains(@class,'x-grid')]" type="XPath"/>
@@ -619,6 +618,7 @@
     <add key="CheckBoxFieldDayNightKPITag" value="st-formula-daynight" type="ID"/>
     <add key="CheckBoxFieldUserTypeEnergyUse" value="//div[@id='st-usertype-energyuse-body']//table[tbody/tr//label[text()='用能']]" type="XPath"/>
     <add key="CheckBoxFieldUserTypeCost" value="//div[@id='st-usertype-cost-body']//table[tbody/tr//label[text()='成本']]" type="XPath"/>
+  <add key="LinkButtonEnergyViewSaveDashboardCreateDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[tbody/tr/td[2]/label[text()='新建仪表盘']]/tbody/tr/td[2]/input" type="XPath"/>
   </CheckBox>
   <!--CheckBoxField End-->
   
@@ -644,7 +644,7 @@
    
   <!--Chart-->
   <Chart>
-    <add key="ChartEnergyView" value="div.highcharts-container" type="CssSelector"/>
+    <add key="ChartEnergyView" value="//div[contains(@class, 'highcharts-container')]" type="XPath"/>
   </Chart>
 
   <!--Window-->

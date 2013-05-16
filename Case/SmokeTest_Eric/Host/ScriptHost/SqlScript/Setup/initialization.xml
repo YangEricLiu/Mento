@@ -66,7 +66,7 @@
         <![CDATA[        
         SET IDENTITY_INSERT [Tag] ON
         INSERT INTO [Tag] ([ID],[Type],[GuidCode],[Code],[Name],[TimezoneId],[Comment],[MeterCode],[ChannelId],[CalculationType],[CalculationStep],[UomId],[CommodityId],[StartTime],[EnergyConsumption],[DayNightRatio],[Formula],[FormulaRpn],[CustomerId],[HierarchyId],[SystemDimensionId],[AreaDimensionId],[Status],[UpdateUser],[UpdateTime])
-        VALUES(1,1,5373062981773366147,'Auto_P0','Auto_P0',1,'Auto_P0','Auto_P0',0,1,NULL,1,1,'2011-12-31',0,NULL,NULL,NULL,2,3,NULL,NULL,1,'OTSTool','2013-01-09 16:46:33.497')
+        VALUES(1,1,5373062981773366147,'Auto_P0','Auto_P0',1,'Auto_P0','Auto_P0',0,1,NULL,1,1,'2011-12-31',0,NULL,NULL,NULL,2,3,NULL,NULL,1,'SmokeTest','2013-01-09 16:46:33.497')
         SET IDENTITY_INSERT [Tag] OFF
         ]]>
       </add>
@@ -94,7 +94,7 @@
         <![CDATA[
         SET IDENTITY_INSERT Tag ON
         INSERT INTO [Tag] ([ID],[Type],[GuidCode],[Code],[Name],[TimezoneId],[Comment],[MeterCode],[ChannelId],[CalculationType],[CalculationStep],[UomId],[CommodityId],[StartTime],[EnergyConsumption],[DayNightRatio],[Formula],[FormulaRpn],[CustomerId],[HierarchyId],[SystemDimensionId],[AreaDimensionId],[Status],[UpdateUser],[UpdateTime])
-        VALUES(7,1,5373062981773366148,'Auto_P1','Auto_P1',1,'Auto_P1','Auto_P1',0,1,NULL,1,1,'2011-12-31',0,NULL,NULL,NULL,2,5,NULL,NULL,1,'OTSTool','2013-01-09 16:46:33.497')
+        VALUES(7,1,5373062981773366148,'Auto_P1','Auto_P1',1,'Auto_P1','Auto_P1',0,1,NULL,1,1,'2013-01-01',0,NULL,NULL,NULL,1,4,NULL,NULL,1,'PlatformAdmin','2013-01-09 16:46:33.497')
         SET IDENTITY_INSERT [Tag] OFF
         ]]>
       </add>

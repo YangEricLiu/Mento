@@ -60,6 +60,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorCostButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCost);
         public static Button NavigatorKPIButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorKPI);
 
+        public static Button NavigatorHomePageMyFavoriteButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorHomePageMyFavorite);
+        public static Button NavigatorHomePageAllDashboardButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorHomePageAllDashboard);
+        public static Button NavigatorHomePageRecentDashboardButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorHomePageRecentDashboard);
+
         public static Button NavigatorTimeSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTimeSettings);
         public static Button NavigatorCarbonSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCarbonSettings);
         public static Button NavigatorPriceSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorPriceSettings);
@@ -313,6 +317,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button UserProfileModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserProfileModify);
         public static Button UserPasswordModifyMenuButton = GetControl<Button>(JazzControlLocatorKey.MenuButtonModifyUserPassword);
         public static Button ExitJazzMenuButton = GetControl<Button>(JazzControlLocatorKey.MenuButtonExitJazz);
+        #endregion
+        #endregion
+
+        #region Dashboard buttons
+        #region All dashboard buttons
+        public static Button AllDashboardSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonAllDashboardSelectHierarchy);
         #endregion
         #endregion
     }

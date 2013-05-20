@@ -15,14 +15,20 @@ namespace Mento.Script.TestScript
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.InitializeExecutionContext();            
+            TestAssemblyInitializer.InitializeExecutionContext();
+            Mento.Framework.DataAccess.JazzDataInitializer.Initialize();
+            JazzBrowseManager.OpenJazz();
+            
+            Mento.ScriptCommon.TestData.ClientAccess.LoginInputData input=new ScriptCommon.TestData.ClientAccess.LoginInputData();
+            input.UserName="PlatformAdmin";
+            input.Password="P@ssw0rd";
+            JazzFunction.LoginPage.LoginToSelectCusromerPage(input);
         }
 
         [TearDown]
         public void RunAfterAnyTests()
         {
             JazzBrowseManager.CloseJazz();
-
             ExecutionContext.Destruct();
         }
     }

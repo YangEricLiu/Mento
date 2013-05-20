@@ -59,41 +59,28 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\TimeRange.cs" />
-    <Compile Include="Customer\AddKPIData.cs" />
     <Compile Include="Customer\AssociateTagData.cs" />
     <Compile Include="Customer\CalendarPropertyData.cs" />
     <Compile Include="Customer\AreaDimensionData.cs" />
-    <Compile Include="Customer\ElectricfixedCostData.cs" />
+    <Compile Include="Customer\ElectricFixedCostData.cs" />
     <Compile Include="Customer\ElectricityComprehensiveCostData.cs" />
+    <Compile Include="Customer\HierarchyDataTree.cs" />
+    <Compile Include="Customer\KPIData.cs" />
     <Compile Include="Customer\KPITagFormulaData.cs" />
     <Compile Include="Customer\OtherCostData.cs" />
     <Compile Include="Customer\PeopleAreaPropertyData.cs" />
     <Compile Include="Customer\PtagData.cs" />
     <Compile Include="Administration\ExampleData.cs" />
-    <Compile Include="Customer\AddVtagData.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ClientAccess\LoginData.cs" />
     <Compile Include="Customer\HierarchyData.cs" />
     <Compile Include="Customer\KPITargetBaselineData.cs" />
+    <Compile Include="Customer\ShareDashboard.cs" />
     <Compile Include="Customer\SystemDimensionData.cs" />
+    <Compile Include="Customer\VtagData.cs" />
     <Compile Include="EnergyView\EnergyViewInputData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SmokeTest\AreaDimensionData.cs" />
-    <Compile Include="SmokeTest\AssociateTagData.cs" />
-    <Compile Include="SmokeTest\CalendarPropertyData.cs" />
-    <Compile Include="SmokeTest\ElectricFixedCostData.cs" />
-    <Compile Include="SmokeTest\ElectricityComprehensiveCostData.cs" />
-    <Compile Include="SmokeTest\KPIData.cs" />
-    <Compile Include="SmokeTest\HierarchyData.cs" />
-    <Compile Include="SmokeTest\HierarchyDataTree.cs" />
-    <Compile Include="SmokeTest\KPITagFormulaData.cs" />
-    <Compile Include="SmokeTest\PtagData.cs" />
-    <Compile Include="SmokeTest\SystemDimensionData.cs" />
-    <Compile Include="SmokeTest\VtagData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Information\" />
     <Folder Include="Platform\" />
   </ItemGroup>
   <ItemGroup>

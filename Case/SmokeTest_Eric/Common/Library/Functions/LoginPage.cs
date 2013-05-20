@@ -146,7 +146,40 @@ namespace Mento.ScriptCommon.Library.Functions
             ElementHandler.FindElement(new Locator(confirmButtonXpath, ByType.XPath)).Click();
             TimeManager.LongPause();
         }
+        public void LoginToSelectCusromerPage(LoginInputData loginData)
+        {
+            JazzTextField.LoginUserNameTextField.Fill(loginData.UserName);
+            JazzTextField.LoginPasswordTextField.Fill(loginData.Password);
 
+            JazzButton.LoginSubmitButton.Click();
+
+            TimeManager.LongPause();
+        }
+        public void SelectCustomer(string customerName)
+        {
+            if (String.IsNullOrEmpty(customerName))
+            {
+                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 150);
+            }
+            else
+            {
+                ElementHandler.Wait(OptionWindowLocator, WaitType.ToAppear, timeout: 150);
+                TimeManager.ShortPause();
+
+                if (ElementHandler.Exists(OptionWindowLocator))
+                {
+                    LoginCustomerOption.SelectItem(customerName);
+                    TimeManager.ShortPause();
+                    LoginCustomerOptionConfirm.Click();
+                    ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 150);
+                    TimeManager.MediumPause();
+                }
+                else
+                {
+                    throw new Exception("Login error, no popup option window and can't login");
+                }
+            }
+        }
 
         public void LoginWithOption(string userName, string passWord, string customerName)
         {

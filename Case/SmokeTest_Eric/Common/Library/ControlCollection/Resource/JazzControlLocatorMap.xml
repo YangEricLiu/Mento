@@ -42,6 +42,10 @@
       <add key="ButtonNavigatorAssociationHierarchy" value="st-menu-hierarchytags" type="ID"/>
       <add key="ButtonNavigatorAssociationSystemDimension" value="st-menu-systemdtags" type="ID"/>
       <add key="ButtonNavigatorAssociationAreaDimension" value="st-menu-areadtags" type="ID"/>
+
+      <add key="ButtonNavigatorHomePageMyFavorite" value="hp-menu-my-fav-btn" type="ID"/>
+      <add key="ButtonNavigatorHomePageAllDashboard" value="hp-menu-all-dsbd-btn" type="ID"/>
+      <add key="ButtonNavigatorHomePageRecentDashboard" value="hp-menu-my-recent-btn" type="ID"/>
     </navigator>
     <!--User Management Begin-->
     <User>
@@ -284,6 +288,11 @@
         <add key="ButtonUpdateCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
      </customermanagement>
     </platformsettings>
+    <dashboard>
+      <alldashboards>
+        <add key="ButtonAllDashboardSelectHierarchy" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@Common.Label.EmptyHierarchyText']]" type="XPath"></add>
+      </alldashboards>
+    </dashboard>
   </Button> 
   
   <!--TextField Begin-->
@@ -549,6 +558,7 @@
     <add key="AreaDimensionTreeEnergyView" value="//div[starts-with(@id,'areadimensiontree') and contains(@class,'x-panel-body')]/div/table" type="XPath"/>
     <add key="AreaDimensionTreeHierarchySettings" value="//div[@id='st-area-tree-body']/div/table" type="XPath"/>
     <add key="AreaDimensionTreeAssociation" value="//div[@id='st-area-tree-body']/div/table" type="XPath"/>
+    <add key="AllDashboardTreeHierarchy" value="//div[@id='hp-hier-tree-body']/div/table" type="XPath"></add>
   </TreeView>
   
   <!--Grid Begin-->
@@ -572,6 +582,11 @@
       <add key="GridUserTypePermissionList" value="st-usertype-grid" type="ID"/>
       <add key="GridTOUTariffsList" value="st-priceStrategy-grid" type="ID"/>
     </platformsettings>
+    <dashboard>
+      <add key="GridAllDashboard" value="hp-dashboard-list" type="ID"></add>
+      <add key="GridAllDashboardListIcon" value="//div[@id='hp-dashboard-list']/div/div/div[$#positionIndex]/span[contains(@class,'x-dsbd-btn-icon')]" type="XPath"></add>
+      <add key="GridAllDashboardListText" value="//div[@id='hp-dashboard-list']/div/div/div[$#positionIndex]/span[contains(@class,'x-dsbd-btn-text')]" type="XPath"></add>
+    </dashboard>
   </Grid>
   <!--Grid End-->
 

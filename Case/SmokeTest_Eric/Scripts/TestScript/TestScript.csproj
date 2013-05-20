@@ -50,21 +50,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCalendarPropertySuite.cs" />
-    <Compile Include="AddCustomerSmokeTestSuite.cs" />
-    <Compile Include="AddElectricCostPropertySuite.cs" />
-    <Compile Include="AddKPITagSuite.cs" />
-    <Compile Include="AddValidHierarhcyNodeSuite.cs" />
-    <Compile Include="AreaDimensionSmokeTestSuite.cs" />
-    <Compile Include="HierarchyAssociateTagSuite.cs" />
-    <Compile Include="KPIBaselineSuite.cs" />
+    <Compile Include="AddCalendarProperty.cs" />
+    <Compile Include="AddCustomer.cs" />
+    <Compile Include="AddElectricCostProperty.cs" />
+    <Compile Include="AddKPITag.cs" />
+    <Compile Include="AddHierarchy.cs" />
+    <Compile Include="AddAreaDimension.cs" />
+    <Compile Include="DashboardShare.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HierarchyAssociateTag.cs" />
+    <Compile Include="KPIBaseline.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
-    <Compile Include="CommonUserLoginSuite.cs" />
+    <Compile Include="PlatformLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PtagConfigurationSuite.cs" />
-    <Compile Include="SingleTagSuite.cs" />
-    <Compile Include="SystemDimensionSmokeTestSuite.cs" />
-    <Compile Include="VtagManagementSuite.cs" />
+    <Compile Include="AddPTag.cs" />
+    <Compile Include="AddToDashboard.cs" />
+    <Compile Include="AddSystemDimension.cs" />
+    <Compile Include="AddVTag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Host\ScriptHost\App.config">

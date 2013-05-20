@@ -48,6 +48,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorAssociationHierarchy = "ButtonNavigatorAssociationHierarchy";
         public static string ButtonNavigatorAssociationSystemDimension = "ButtonNavigatorAssociationSystemDimension";
         public static string ButtonNavigatorAssociationAreaDimension = "ButtonNavigatorAssociationAreaDimension";
+        public static string ButtonNavigatorHomePageMyFavorite = "ButtonNavigatorHomePageMyFavorite";
+        public static string ButtonNavigatorHomePageAllDashboard = "ButtonNavigatorHomePageAllDashboard";
+        public static string ButtonNavigatorHomePageRecentDashboard = "ButtonNavigatorHomePageRecentDashboard";
         #endregion
 
         #region User
@@ -94,7 +97,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ModifyWidgetNameCancelButton = "ModifyWidgetNameCancelButton";
         public static string WidgetName = "WidgetName";
         public static string ButtonDeleteWidget = "ButtonDeleteWidget";
-        public static string LinkButtonEnergyViewSaveDashboardCreateDashboard = "LinkButtonEnergyViewSaveDashboardCreateDashboard";
         public static string LinkButtonDashboardHierarchyName = "LinkButtonDashboardHierarchyName";
         public static string DeleteWidgetConfirmButton = "DeleteWidgetConfirmButton";
         public static string DeleteWidgetCancelButton = "DeleteWidgetCancelButton";
@@ -302,6 +304,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonCancelCustomer = "ButtonCancelCustomer";
         public static string ButtonDeleteCustomer = "ButtonDeleteCustomer";
         public static string ButtonUpdateCustomer = "ButtonUpdateCustomer";
+        #endregion
+
+        #endregion
+
+        #region dashboard
+        #region alldashboards
+        public static string ButtonAllDashboardSelectHierarchy = "ButtonAllDashboardSelectHierarchy";
+
         #endregion
 
         #endregion
@@ -600,6 +610,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string AreaDimensionTreeEnergyView = "AreaDimensionTreeEnergyView";
         public static string AreaDimensionTreeHierarchySettings = "AreaDimensionTreeHierarchySettings";
         public static string AreaDimensionTreeAssociation = "AreaDimensionTreeAssociation";
+        public static string AllDashboardTreeHierarchy = "AllDashboardTreeHierarchy";
+
         #endregion
 
         #region Grid
@@ -623,6 +635,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridUserList = "GridUserList";
         public static string GridUserTypePermissionList = "GridUserTypePermissionList";
         public static string GridTOUTariffsList = "GridTOUTariffsList";
+        #endregion
+
+        #region dashboard
+        public static string GridAllDashboard = "GridAllDashboard";
+
+        public static string GridAllDashboardListIcon = "GridAllDashboardListIcon";
+
+        public static string GridAllDashboardListText = "GridAllDashboardListText";
+
         #endregion
 
         #endregion
@@ -674,6 +695,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string CheckBoxFieldDayNightKPITag = "CheckBoxFieldDayNightKPITag";
         public static string CheckBoxFieldUserTypeEnergyUse = "CheckBoxFieldUserTypeEnergyUse";
         public static string CheckBoxFieldUserTypeCost = "CheckBoxFieldUserTypeCost";
+        public static string LinkButtonEnergyViewSaveDashboardCreateDashboard = "LinkButtonEnergyViewSaveDashboardCreateDashboard";
         #endregion
 
         #region Label

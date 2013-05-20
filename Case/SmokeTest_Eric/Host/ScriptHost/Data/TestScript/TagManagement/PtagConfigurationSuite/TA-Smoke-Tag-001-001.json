@@ -2,8 +2,8 @@
 	{
 		"InputData":
 		{	
-			"Name":"pElectric1",
-			"Code":"pElectric1",
+			"Name":"Smoke_PElectric1",
+			"Code":"Smoke_PElectric1",
 			"MeterCode":"pElectric1_MeterCode",
 			"ChannelId":"1",
 			"Commodity":"Electricity",
@@ -13,8 +13,8 @@
 		},
 		"ExpectedData":
 		{
-			"Name":"pElectric1",
-			"Code":"pElectric1",
+			"Name":"Smoke_PElectric1",
+			"Code":"Smoke_PElectric1",
 			"MeterCode":"pElectric1_MeterCode",
 			"ChannelId":"1",
 			"Commodity":"Electricity",

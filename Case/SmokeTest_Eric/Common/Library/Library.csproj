@@ -70,6 +70,7 @@
     <Compile Include="Functions\EnergyManagement\KpiPanel.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewPanel.cs" />
     <Compile Include="Functions\EnergyManagement\TabbedEnergyViewPanel.cs" />
+    <Compile Include="Functions\HomePage\AllDashboard.cs" />
     <Compile Include="Functions\HomePage\UserPasswordDialog.cs" />
     <Compile Include="Functions\PlatformSettings\TOUPulsePeakTariffSettings.cs" />
     <Compile Include="Functions\PlatformSettings\TOUBasicTariffSettings.cs" />
@@ -141,9 +142,7 @@
   <ItemGroup>
     <None Include="Tool\CodeGen.exe.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>$(ProjectDir)Tool\CodeGen.exe $(ProjectDir)ControlCollection\Resource\JazzControlLocatorMap.xml $(ProjectDir)ControlCollection\Resource\JazzControlLocatorKey.cs</PreBuildEvent>

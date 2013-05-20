@@ -7,11 +7,11 @@ using Mento.Utility;
 
 namespace Mento.ScriptCommon.TestData.Customer
 {
-    public class ElectricfixedCostData : TestDataBase<ElectricfixedCostInputData, ElectricfixedCostExpectedData>
+    public class ElectricFixedCostData : TestDataBase<ElectricFixedCostInputData, ElectricFixedCostExpectedData>
     {
     }
 
-    public class ElectricfixedCostInputData : InputTestDataBase
+    public class ElectricFixedCostInputData : InputTestDataBase
     {
         public string[] HierarchyNodePath { get; set; }
         public string EffectiveDate { get; set; }
@@ -19,7 +19,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Price { get; set; }
     }
 
-    public class ElectricfixedCostExpectedData : ExpectedTestDataBase
+    public class ElectricFixedCostExpectedData : ExpectedTestDataBase
     {
         public string[] HierarchyNodePath { get; set; }
         public string EffectiveDate { get; set; }

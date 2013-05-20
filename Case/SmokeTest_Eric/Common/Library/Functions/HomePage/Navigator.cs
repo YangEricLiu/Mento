@@ -88,6 +88,10 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.CarbonUsage, new NavigatorItem(NavigationTarget.CarbonUsage,NavigationTarget.EnergyView,JazzButton.NavigatorCarbonUsageButton)},
             {NavigationTarget.CostUsage, new NavigatorItem(NavigationTarget.CostUsage,NavigationTarget.EnergyView,JazzButton.NavigatorCostButton)},
             {NavigationTarget.KpiUsage, new NavigatorItem(NavigationTarget.KpiUsage,NavigationTarget.EnergyView,JazzButton.NavigatorKPIButton)},
+            
+            {NavigationTarget.MyFavorite, new NavigatorItem(NavigationTarget.MyFavorite,NavigationTarget.HomePage,JazzButton.NavigatorHomePageMyFavoriteButton)},
+            {NavigationTarget.AllDashboard, new NavigatorItem(NavigationTarget.AllDashboard,NavigationTarget.HomePage,JazzButton.NavigatorHomePageAllDashboardButton)},
+            {NavigationTarget.RecentDashboard, new NavigatorItem(NavigationTarget.RecentDashboard,NavigationTarget.HomePage,JazzButton.NavigatorHomePageRecentDashboardButton)},
 
             {NavigationTarget.TimeSettings, new NavigatorItem(NavigationTarget.TimeSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorTimeSettingsButton)},
             {NavigationTarget.CarbonSettings, new NavigatorItem(NavigationTarget.CarbonSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorCarbonSettingsButton)},
@@ -179,6 +183,9 @@ namespace Mento.ScriptCommon.Library.Functions
         TagSettings = 10,
         HierarchySettings = 11,
         AssociationSettings = 12,
+        MyFavorite=205,
+        AllDashboard=206,
+        RecentDashboard=207,
         
         //level 3
         //--Time

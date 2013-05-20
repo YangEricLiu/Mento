@@ -352,5 +352,17 @@ namespace Mento.ScriptCommon.Library
             }
 
         }
+        private static AllDashboard _AllDashboard;
+        public static AllDashboard AllDashboard
+        {
+            get
+            {
+                if (_AllDashboard == null)
+                    _AllDashboard = new AllDashboard();
+
+                return _AllDashboard;
+            }
+
+        }
     }
 }

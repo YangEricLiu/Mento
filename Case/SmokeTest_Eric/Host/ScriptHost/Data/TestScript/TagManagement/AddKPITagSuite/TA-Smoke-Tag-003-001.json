@@ -2,8 +2,8 @@
 	{
 		"InputData":
 		{
-			"Name":"kSystemConfig",
-			"Code":"kSystemConfig",
+			"Name":"Smoke_kpi",
+			"Code":"Smoke_kpi",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -11,8 +11,8 @@
 		},
        "ExpectedData":
 		{
-			"Name":"kSystemConfig",
-			"Code":"kSystemConfig",
+			"Name":"Smoke_kpi",
+			"Code":"Smoke_kpi",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",

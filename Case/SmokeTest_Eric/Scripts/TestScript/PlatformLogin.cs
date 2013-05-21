@@ -13,7 +13,7 @@ namespace Mento.Script.TestScript.Login
     [TestFixture]
     [Owner("Eric")]
     [CreateTime("2013-05-10")]
-    [ManualCaseID("TC-J1-SmokeTest-031")]
+    [ManualCaseID("TA-Smoke-Login-000")]
     public class CommonUserLoginSuite : TestSuiteBase
     {
         [SetUp]
@@ -29,7 +29,7 @@ namespace Mento.Script.TestScript.Login
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-031")]
+        [CaseID("TA-Smoke-Login-000")]
         public void Login()
         {            
             Assert.IsTrue(JazzFunction.LoginPage.IsAlreadyLogin());

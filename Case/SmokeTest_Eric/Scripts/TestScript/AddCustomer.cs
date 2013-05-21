@@ -21,7 +21,7 @@ namespace Mento.Script.TestScript.CustomerOperation
     [TestFixture]
     [Owner("Eric")]
     [CreateTime("2013-05-10")]
-    [ManualCaseID("TC-J1-SmokeTest-033")]
+    [ManualCaseID("TA-Smoke-Customer-000")]
     public class AddCustomerSmokeTestSuite : TestSuiteBase
     {
         private static CustomerManagement CustomerManagement = JazzFunction.CustomerManagement;
@@ -42,8 +42,7 @@ namespace Mento.Script.TestScript.CustomerOperation
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-033-001")]
-        [Priority("11")]
+        [CaseID("TA-Smoke-Customer-000")]        
         [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(AddCustomerSmokeTestSuite), "TC-J1-SmokeTest-033-001")]
         public void AddNewCustomer(CustomerManagementData input)
         {

@@ -204,12 +204,6 @@ del /F /S /Q $(TargetDir)SqlScript
 xcopy $(ProjectDir)Data $(TargetDir)Data /E /Y /R /I
 xcopy $(ProjectDir)SqlScript $(TargetDir)SqlScript /E /Y /R /I
 xcopy $(ProjectDir)Resource $(TargetDir)Resource /E /Y /R /I
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Administration.dll.config
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.ClientAccess.dll.config
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Customer.dll.config
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.EnergyView.dll.config
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Information.dll.config
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.System.dll.config
 copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.TestScript.dll.config</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

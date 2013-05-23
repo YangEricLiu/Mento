@@ -416,13 +416,13 @@
         <add key="TextFieldTOUPulsePeakPropertyPriceValue" value="//div[@id='st-priceStrategy-pulsepeakproperty']//input[@type='text' and @name='Price']" type="XPath"/>
       </TOU>
       <customersetting>
-        <add key="TextFieldCustomerName" value="st-customer-name-inputEl" type="ID"/>
+        <add key="TextFieldCustomerName" value="//input[@type='text'and @name='Name']" type="XPath"/>
         <add key="TextFieldCustomerCode" value="//input[@type='text'and @name='Code']" type="XPath"/>
         <add key="TextFieldCustomerAddress" value="//input[@type='text'and @name='Address']" type="XPath"/>
         <add key="TextFieldCustomerManager" value="//input[@type='text'and @name='Manager']" type="XPath"/>
         <add key="TextFieldCustomerTelephone" value="//input[@type='text'and @name='Telephone']" type="XPath"/>
         <add key="TextFieldCustomerEmail" value="//input[@type='text'and @name='Email']" type="XPath"/>
-        <add key="TextFieldCustomerComment" value="st-customer-comment-inputEl" type="ID"/>
+        <add key="TextFieldCustomerComment" value="//textarea[@name='Comment']" type="XPath"/>
         <add key="TextFieldUploadLogo" value="st-customer-logo-upload-button-fileInputEl" type="ID"/>
       </customersetting>
     </platformsettings>
@@ -605,7 +605,7 @@
     </CustomerSettings>
     <PlatformSettings>
       <customermanagement>
-        <add key="DatePickerOperationTime" value="//td[@id='st-customer-starttime-bodyEl']/table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartTime']]" type="XPath"/>
+        <add key="DatePickerOperationTime" value="//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartTime']]" type="XPath"/>
       </customermanagement>
     </PlatformSettings>
   </DatePicker>

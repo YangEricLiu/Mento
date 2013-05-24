@@ -21,7 +21,7 @@ namespace Mento.Script.Customer.TagManagement
     [Owner("Amy")]
     [CreateTime("2013-01-11")]
     [ManualCaseID("TC-J1-SmokeTest")]
-    public class KPIBaselineSuite:TestSuiteBase
+    public class SmokeTestKPIBaselineSuite:TestSuiteBase
     {
         private static KPITargetBaselineSettings KPITargetBaselineSettings = JazzFunction.KPITargetBaselineSettings;
         [SetUp]
@@ -44,7 +44,7 @@ namespace Mento.Script.Customer.TagManagement
         /// </summary>        
         [Test]
         [CaseID("TC-J1-SmokeTest-023")]
-        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(KPIBaselineSuite), "TC-J1-SmokeTest-023")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(SmokeTestKPIBaselineSuite), "TC-J1-SmokeTest-023")]
         public void KPIBaselineConfigurationCalculationRevision(KPITargetBaselineData testData)
         {
             KPITargetBaselineSettings.FocusOnKPITag("KPITagForTargetBaseline");

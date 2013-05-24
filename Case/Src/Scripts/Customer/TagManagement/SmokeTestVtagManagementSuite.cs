@@ -19,7 +19,7 @@ namespace Mento.Script.Customer.TagManagement
     [ManualCaseID("TC-J1-SmokeTest-003")]
     [CreateTime("2012-11-15")]
     [Owner("Nancy")]
-    public class VTagManagementSuite : TestSuiteBase
+    public class SmokeTestVTagManagementSuite : TestSuiteBase
     {
         private VTagSettings VTagSettings = JazzFunction.VTagSettings;
 
@@ -40,7 +40,7 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TA-VtagConfigue-001")]
         [Priority("18")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(AddVtagData[]), typeof(VTagManagementSuite), "TA-VtagConfigue-001")]
+        [MultipleTestDataSource(typeof(AddVtagData[]), typeof(SmokeTestVTagManagementSuite), "TA-VtagConfigue-001")]
         public void AddVtag(AddVtagData input)
         {
             VTagSettings.ClickAddVTagButton();

@@ -19,7 +19,7 @@ namespace Mento.Script.Customer.TagManagement
     [ManualCaseID("TC-J1-SmokeTest-004")]
     [CreateTime("2013-01-04")]
     [Owner("Alice")]
-    public class KPIConfigurationSuite : TestSuiteBase
+    public class SmokeTestKPIConfigurationSuite : TestSuiteBase
     {
         private KPITagSettings KPITagSettings = JazzFunction.KPITagSettings;
 
@@ -40,7 +40,7 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-SmokeTest-004-001")]
         [Priority("20")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(AddKPIData[]), typeof(KPIConfigurationSuite), "TC-J1-SmokeTest-004-001")]
+        [MultipleTestDataSource(typeof(AddKPIData[]), typeof(SmokeTestKPIConfigurationSuite), "TC-J1-SmokeTest-004-001")]
         public void AddKPItag(AddKPIData input)
         {
             KPITagSettings.ClickAddKPITagButton();

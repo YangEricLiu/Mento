@@ -18,7 +18,7 @@ namespace Mento.Script.Customer.TagManagement
     [Owner("Emma")]
     [CreateTime("2012-11-08")]
     [ManualCaseID("TC-J1-SmokeTest-005")]
-    public class FormulaVSmokeTestSuite : TestSuiteBase
+    public class SmokeTestFormulaVtagSuite : TestSuiteBase
     {
         private static VTagSettings VTagSettings = JazzFunction.VTagSettings;
 

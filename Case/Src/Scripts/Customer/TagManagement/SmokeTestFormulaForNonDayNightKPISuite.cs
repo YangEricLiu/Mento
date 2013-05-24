@@ -16,9 +16,9 @@ namespace Mento.Script.Customer.TagManagement
 {
     [TestFixture]
     [Owner("Alice")]
-    [CreateTime("2013-01-07")]
-    [ManualCaseID("TC-J1-SmokeTest-006")]
-    public class FormulaForDayNightKPISuite : TestSuiteBase
+    [CreateTime("2013-01-09")]
+    [ManualCaseID("TC-J1-SmokeTest-007")]
+    public class SmokeTestFormulaForNonDayNightKPISuite : TestSuiteBase
     {
         private static KPITagSettings KPITagSettings = JazzFunction.KPITagSettings;
 
@@ -26,7 +26,6 @@ namespace Mento.Script.Customer.TagManagement
         public void CaseSetUp()
         {
             KPITagSettings.NavigatorToKPITagSetting();
-            //ElementLocator.Pause(2000);
             TimeManager.MediumPause();
         }
 
@@ -37,30 +36,28 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
-        [Priority("21")]
-        [CaseID("TA-FormulaforDayNightKPI-001"), ManualCaseID("TJ-FormulaForKPI-001"), CreateTime("2013-01-07"), Owner("Alice")]
+        [CaseID("TC-J1-SmokeTest-007-001")]
+        [Priority("22")]
+        [Type("BVT")]
         public void AddFormulaToKPItag()
         {
-            //string kpitagName = "AliceKPItag";
-            //string expectedFormula = "{ptag.P2}";
-            string kpitagName = "AliceKPItag";
-            string expectedFormula = "{ptag.P2}";
+            //string kpitagName = "KPI1";
+            //string expectedFormula = "{ptag.P1}";
+            string kpitagName = "KPI1";
+            string expectedFormula = "{ptag.P1}";
 
             KPITagSettings.PrepareToAddFormula(kpitagName);
-
-            KPITagSettings.FillInFormulaField("{ptag.P2}");
+            
+            KPITagSettings.FillInFormulaField("{ptag.P1}");
 
             KPITagSettings.ClickSaveFormulaButton();
 
-            //FunctionWrapper.WaitForLoadingDisappeared(2000);
-            //ElementLocator.Pause(500);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
             Assert.AreEqual(KPITagSettings.GetFormulaValue(), expectedFormula);
-            Assert.IsTrue(KPITagSettings.DayNightIsChecked());
+            Assert.IsFalse(KPITagSettings.DayNightIsChecked());
 
         }
     }
 }
-

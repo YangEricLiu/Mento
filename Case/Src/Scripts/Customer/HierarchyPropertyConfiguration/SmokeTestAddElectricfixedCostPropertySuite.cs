@@ -17,13 +17,12 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
     [TestFixture]
     [Owner("Emma")]
-    [CreateTime("2013-01-11")]
-    [ManualCaseID("TC-J1-SmokeTest-020")]
-    public class AddOtherCostPropertySuite : TestSuiteBase
+    [CreateTime("2013-01-10")]
+    [ManualCaseID("TC-J1-SmokeTest-018")]
+    public class SmokeTestAddElectricfixedCostPropertySuite :TestSuiteBase
     {
         private static HierarchySettings HierarchySetting = JazzFunction.HierarchySettings;
         private static HierarchyElectricCostSettings CostSettings = JazzFunction.HierarchyElectricCostSettings;
-        private static HierarchyOtherCostPropertySettings OtherCostSettings = JazzFunction.HierarchyOtherCostPropertySettings;
 
         [SetUp]
         public void CaseSetUp()
@@ -43,14 +42,12 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         /// </summary>  
         ///
         [Test]
-        [CaseID("TC-J1-SmokeTest-020-001")]
-        [Priority("37")]
+        [CaseID("TC-J1-SmokeTest-018-001")]
+        [Priority("35")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(OtherCostData[]), typeof(AddOtherCostPropertySuite), "TC-J1-SmokeTest-020-001")]
-        public void AddCostforGas(OtherCostData input)
-        { 
-            //Select buidling node "AddPeopleProperty"
-
+        [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(SmokeTestAddElectricfixedCostPropertySuite), "TC-J1-SmokeTest-018-001")]
+        public void AddCostforElectricfixed(ElectricfixedCostData input)
+        {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.ShortPause();
 
@@ -62,19 +59,20 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CostSettings.ClickCostCreateButton();
             TimeManager.ShortPause();
 
-            //Click "+" before "天然气"
-            OtherCostSettings.ClickGasCostCreateButton();
+            //Click "+" before "电力"
+            CostSettings.ClickElectricCostCreateButton();
             TimeManager.ShortPause();
 
             //select effective year and input value, save it
-            OtherCostSettings.FillInGasCostValue(input.InputData);
+            CostSettings.FillInFixedCost(input.InputData);
             TimeManager.ShortPause();
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
 
             //Verify the input value displayed correct
-            Assert.AreEqual(OtherCostSettings.GetGasCostEffectiveDate(), input.ExpectedData.EffectiveDate);
-            Assert.AreEqual(OtherCostSettings.GetGasCostPrice(), input.ExpectedData.Price);
+            Assert.AreEqual(CostSettings.GetElectricCostEffectiveDateValue(), input.ExpectedData.EffectiveDate);
+            Assert.AreEqual(CostSettings.GetElectricPriceMode(), input.ExpectedData.PriceMode);
+            Assert.AreEqual(CostSettings.GetElectricPriceValue(), input.ExpectedData.Price);
         }
     }
 }

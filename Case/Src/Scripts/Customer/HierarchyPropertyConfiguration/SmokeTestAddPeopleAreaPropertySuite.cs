@@ -19,7 +19,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
     [Owner("Emma")]
     [CreateTime("2013-01-06")]
     [ManualCaseID("TC-J1-SmokeTest-021")]
-    public class AddPeopleAreaPropertySuite : TestSuiteBase
+    public class SmokeTestAddPeopleAreaPropertySuite : TestSuiteBase
     {
         private static HierarchySettings HierarchySetting = JazzFunction.HierarchySettings;
         private static HierarchyPeopleAreaSettings PeopleAreaSetting = JazzFunction.HierarchyPeopleAreaSettings;
@@ -45,7 +45,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-SmokeTest-021")]
         [Priority("38")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddPeopleAreaPropertySuite), "TC-J1-SmokeTest-021")]
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(SmokeTestAddPeopleAreaPropertySuite), "TC-J1-SmokeTest-021")]
         public void AddAreaProperty(PeopleAreaPropertyData input)
         {
             //Select buidling node "AddPeopleProperty"
@@ -78,7 +78,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-SmokeTest-021")]
         [Priority("38")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddPeopleAreaPropertySuite), "TC-J1-SmokeTest-021")]
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(SmokeTestAddPeopleAreaPropertySuite), "TC-J1-SmokeTest-021")]
         public void AddPeoplePeoperty(PeopleAreaPropertyData input)
         {
             //Select buidling node "AddPeopleProperty"

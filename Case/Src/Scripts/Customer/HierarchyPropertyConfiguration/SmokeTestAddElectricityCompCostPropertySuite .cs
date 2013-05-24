@@ -19,7 +19,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
     [Owner("Emma")]
     [CreateTime("2013-01-14")]
     [ManualCaseID("TC-J1-SmokeTest-019")]
-    public class AddElectricityComprehensiveCostPropertySuite : TestSuiteBase
+    public class AddElectricityCompCostPropertySuite : TestSuiteBase
     {
         private static HierarchySettings HierarchySetting = JazzFunction.HierarchySettings;
         private static HierarchyElectricCostSettings CostSettings = JazzFunction.HierarchyElectricCostSettings;
@@ -46,7 +46,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-SmokeTest-019-001")]
         [Priority("36")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElectricityComprehensiveCostPropertySuite), "TC-J1-SmokeTest-019-001")]
+        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElectricityCompCostPropertySuite), "TC-J1-SmokeTest-019-001")]
         public void AddCostforElectricComprehensive(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);

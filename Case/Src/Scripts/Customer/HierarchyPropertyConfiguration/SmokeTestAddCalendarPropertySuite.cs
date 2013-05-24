@@ -19,7 +19,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
     [Owner("Emma")]
     [CreateTime("2012-12-31")]
     [ManualCaseID("TC-J1-SmokeTest-017")]
-    public class AddCalendarPropertySuite : TestSuiteBase
+    public class SmokeTestAddCalendarPropertySuite : TestSuiteBase
     {
         private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
         private static HierarchyCalendarSettings CalendarSettings = JazzFunction.HierarchyCalendarSettings;
@@ -48,7 +48,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-SmokeTest-017")]
         [Priority("34")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(AddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
+        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(SmokeTestAddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
         public void AddCalendarforWorkday(CalendarPropertyData input)
         { 
             //Select hierarchy node "AddCalendarProperty"
@@ -92,7 +92,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-SmokeTest-017")]
         [Priority("34")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(AddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
+        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(SmokeTestAddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
         public void AddCalendarforHeatingCooling(CalendarPropertyData input)
         {
             //Select hierarchy node "AddCalendarProperty"
@@ -129,7 +129,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-SmokeTest-017-003")]
         [Priority("34")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(AddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
+        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(SmokeTestAddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
         public void AddCalendarforDayNight(CalendarPropertyData input)
         {
             //Select hierarchy node "AddCalendarProperty"

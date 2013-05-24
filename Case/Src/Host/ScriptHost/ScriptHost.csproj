@@ -139,9 +139,6 @@
     <Folder Include="Data\Administration\User\UserManagementAddInvalid\" />
     <Folder Include="Data\Administration\User\UserManagementAddValid\" />
     <Folder Include="Data\Administration\User\UserManagementModifyValid\" />
-    <Folder Include="Data\Customer\HierarchySettings\AreaDimensionSuite\" />
-    <Folder Include="Data\Customer\HierarchySettings\HierarchyManagement\" />
-    <Folder Include="Data\Customer\HierarchySettings\SystemDimensionSuite\" />
     <Folder Include="Data\Customer\TagManagement\FormulaVSmokeTestSuite\" />
     <Folder Include="Data\Customer\TagManagement\KPIBaselineSuite\" />
     <Folder Include="Resource\en\" />
@@ -196,11 +193,11 @@
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-1.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\SmokeTestSystemDimensionSuite\TC-J1-SmokeTest-SystemDimension-001.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\SmokeTestSystemDimensionSuite\TC-J1-SmokeTest-SystemDimension-002.json" />
-    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-SmokeTest-017.json" />
-    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElectricfixedCostPropertySuite\TC-J1-SmokeTest-018-001.json" />
-    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElectricityComprehensiveCostPropertySuite\TC-J1-SmokeTest-019-001.json" />
-    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddOtherCostPropertySuite\TC-J1-SmokeTest-020-001.json" />
-    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddPeopleAreaPropertySuite\TC-J1-SmokeTest-021.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\SmokeTestAddCalendarPropertySuite\TC-J1-SmokeTest-017.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\SmokeTesAddElectricfixedCostPropertySuite\TC-J1-SmokeTest-018-001.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\SmokeTesAddElectricityCompCostPropertySuite\TC-J1-SmokeTest-019-001.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\SmokeTesAddOtherCostPropertySuite\TC-J1-SmokeTest-020-001.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\SmokeTesAddPeopleAreaPropertySuite\TC-J1-SmokeTest-021.json" />
     <Content Include="Data\Customer\TagAssociation\HierarchyAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-001.json" />
     <Content Include="Data\Customer\TagAssociation\SystemAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-002.json" />
     <Content Include="Data\Customer\TagAssociation\AreaDimensionAssociateTagSmokeTestSuite\TC-J1-SmokeTest-AssociateTag-003.json" />

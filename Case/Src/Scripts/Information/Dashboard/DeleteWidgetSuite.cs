@@ -44,7 +44,7 @@ namespace Mento.Script.Information.Dashboard
 
         private static EnergyAnalysisPanel DataPanel = JazzFunction.EnergyAnalysisPanel;
         [Test]
-        //[CaseID("TC-J1-SmokeTest-037")]
+        [CaseID("TC-J1-SmokeTest-037")]
         //[MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-037")]
         public void ToDeleteWidget()
         {

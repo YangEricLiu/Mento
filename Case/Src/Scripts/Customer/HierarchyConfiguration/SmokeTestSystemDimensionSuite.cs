@@ -18,7 +18,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [Owner("Aries")]
     [CreateTime("2012-11-19")]
     [ManualCaseID("TC-J1-SmokeTest-014")]
-    public class SystemDimensionSmokeTestSuite : TestSuiteBase
+    public class SmokeTestSystemDimensionSuite : TestSuiteBase
     {
         [SetUp]
         public void ScriptSetUp()
@@ -39,7 +39,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [CaseID("TC-J1-SmokeTest-SystemDimension-001")]
         [Priority("14")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(SystemDimensionData[]), typeof(SystemDimensionSmokeTestSuite), "TC-J1-SmokeTest-SystemDimension-001")]
+        [MultipleTestDataSource(typeof(SystemDimensionData[]), typeof(SmokeTestSystemDimensionSuite), "TC-J1-SmokeTest-SystemDimension-001")]
         public void SmokeTestAssoicateSystemDimension(SystemDimensionData input)
         { 
             var SystemSettings = JazzFunction.SystemDimensionSettings;
@@ -72,7 +72,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [CaseID("TC-J1-SmokeTest-SystemDimension-002")]
         [Priority("15")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(SystemDimensionData[]), typeof(SystemDimensionSmokeTestSuite), "TC-J1-SmokeTest-SystemDimension-002")]
+        [MultipleTestDataSource(typeof(SystemDimensionData[]), typeof(SmokeTestSystemDimensionSuite), "TC-J1-SmokeTest-SystemDimension-002")]
         public void SmokeTestDisassoicateSystemDimension(SystemDimensionData input)
         {
             var SystemSettings = JazzFunction.SystemDimensionSettings;

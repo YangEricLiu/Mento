@@ -63,9 +63,9 @@
     <Compile Include="TagAssociation\HierarchyDisassociateTagSmokeTestSuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddCalendarPropertySuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
-    <Compile Include="HierarchyConfiguration\AreaDimensionSmokeTestSuite.cs" />
-    <Compile Include="HierarchyConfiguration\SystemDimensionSmokeTestSuite.cs" />
-    <Compile Include="HierarchyConfiguration\HierarchySmokeTestSuite.cs" />
+    <Compile Include="HierarchyConfiguration\SmokeTestAreaDimensionSuite.cs" />
+    <Compile Include="HierarchyConfiguration\SmokeTestSystemDimensionSuite.cs" />
+    <Compile Include="HierarchyConfiguration\SmokeTestHierarchySuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TagAssociation\AreaDimensionAssociateTagSmokeTestSuite.cs" />
     <Compile Include="TagAssociation\SystemAssociateTagSmokeTestSuite.cs" />
@@ -123,9 +123,7 @@
       <Link>App.config</Link>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TagDisassociation\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>del /F /S /Q $(TargetDir)Data

@@ -18,14 +18,14 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Administration.User
 {
     [TestFixture]
+    [Owner("Nancy")]
+    [CreateTime("2013-01-23")]
+    [ManualCaseID("TC-J1-SmokeTest-035")]
     public class ModifyUserPasswordSuite : TestSuiteBase
     {
         public UserProfile UserProfile = JazzFunction.UserProfile;
 
         [SetUp]
-        [Owner("Nancy")]
-        [CreateTime("2013-01-23")]
-        [ManualCaseID("TC-J1-SmokeTest-035")]
         public void CaseSetUp()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UserManagement);

@@ -18,15 +18,15 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Administration.User
 {
     [TestFixture]
+    [Owner("Nancy")]
+    [CreateTime("2013-01-15")]
+    [ManualCaseID("TC-J1-SmokeTest-035")]
     public class UserProfileSuite : TestSuiteBase
     {
         public UserProfile UserProfile = JazzFunction.UserProfile;
         public UserSettings UserSettings = JazzFunction.UserSettings;
 
         [SetUp]
-        [Owner("Nancy")]
-        [CreateTime("2013-01-15")]
-        [ManualCaseID("TC-J1-SmokeTest-035")]
         public void CaseSetUp()
         {
             //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UserManagement);

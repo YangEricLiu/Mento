@@ -21,7 +21,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [Owner("Aries")]
     [CreateTime("2012-11-19")]
     [ManualCaseID("TC-J1-SmokeTest-015")]
-    public class AreaDimensionSmokeTestSuite : TestSuiteBase
+    public class SmokeTestAreaDimensionSuite : TestSuiteBase
     {
         [SetUp]
         public void ScriptSetUp()
@@ -43,7 +43,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [CaseID("TC-J1-SmokeTest-AreaDimension-001")]
         [Priority("16")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AreaDimensionSmokeTestSuite), "TC-J1-SmokeTest-AreaDimension-001")]
+        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(SmokeTestAreaDimensionSuite), "TC-J1-SmokeTest-AreaDimension-001")]
         public void SmokeTestAddAreaDimension(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;

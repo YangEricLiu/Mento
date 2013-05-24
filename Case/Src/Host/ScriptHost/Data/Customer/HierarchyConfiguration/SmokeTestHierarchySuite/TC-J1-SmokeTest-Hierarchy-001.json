@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"HierarchyNodePath":["AutoTest"],
+			"HierarchyNodePath":["自动化测试"],
 			"CommonName":"systemAssociate",
 			"Code":"systemAssociate",
 			"Type":"Orgnization",
@@ -20,7 +20,7 @@
 	{
 		"InputData":
 		{
-			"HierarchyNodePath":["AutoTest"],
+			"HierarchyNodePath":["自动化测试"],
 			"CommonName":"AddCalendarProperty",
 			"Code":"AddCalendarProperty",
 			"Type":"Site",
@@ -38,7 +38,7 @@
 	{
 		"InputData":
 		{
-		    "HierarchyNodePath":["AutoTest", "AddCalendarProperty"],   
+		    "HierarchyNodePath":["自动化测试", "AddCalendarProperty"],   
 			"CommonName":"AddPeopleProperty",
 			"Code":"AddPeopleProperty",
 			"Type":"Building",

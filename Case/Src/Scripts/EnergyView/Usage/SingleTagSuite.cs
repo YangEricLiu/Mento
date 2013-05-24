@@ -140,7 +140,7 @@ namespace Mento.Script.EnergyView.Usage
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-040-005	")]
+        [CaseID("TC-J1-SmokeTest-041")]
         public void TestDatePicker()
         {
             DatePicker EnergyUsageStartDate = JazzDatePicker.EnergyUsageStartDateDatePicker;

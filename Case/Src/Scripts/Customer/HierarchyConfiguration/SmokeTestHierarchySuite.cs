@@ -23,7 +23,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [Owner("Emma")]
     [CreateTime("2012-10-30")]
     [ManualCaseID("TC-J1-SmokeTest-001")]
-    public class HierarchySmokeTestSuite : TestSuiteBase
+    public class SmokeTestHierarchySuite : TestSuiteBase
     {
         private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
 
@@ -50,7 +50,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [CaseID("TC-J1-SmokeTest-Hierarchy-001")]
         [Priority("12")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(HierarchySmokeTestSuite), "TC-J1-SmokeTest-Hierarchy-001")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(SmokeTestHierarchySuite), "TC-J1-SmokeTest-Hierarchy-001")]
         public void SmokeTestAddHierarchyNode(HierarchyData input)
         {
             //Add organization and site node to "自动化测试"
@@ -61,13 +61,15 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
-            //Verify that the "添加成功" message box popup, other is failed
+
+            /* Removed by v1.1-Verify that the "添加成功" message box popup, other is failed
             string msgText = HierarchySettings.GetMessageText();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
             TimeManager.ShortPause();
 
             //confirm message box
             HierarchySettings.ConfirmCreateOKMagBox();
+            */
 
             //Verify nodes are added as children
             Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.InputData.CommonName, input.InputData.HierarchyNodePath.Last()));

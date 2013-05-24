@@ -35,7 +35,7 @@ namespace Mento.ScriptCommon.Library
 
             if (IsInitializeDatabase())
             {
-                JazzDataInitializer.Initialize();
+                //JazzDataInitializer.Initialize();
             }
 
             JazzBrowseManager.OpenJazz();
@@ -49,7 +49,7 @@ namespace Mento.ScriptCommon.Library
 
             if (IsInitializeDatabase())
             {
-                JazzDataInitializer.Destruct();
+                //JazzDataInitializer.Destruct();
             }
 
             ExecutionContext.Destruct();

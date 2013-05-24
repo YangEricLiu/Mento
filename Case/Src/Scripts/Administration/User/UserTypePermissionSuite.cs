@@ -20,14 +20,14 @@ using Mento.TestApi.WebUserInterface.Controls;
 namespace Mento.Script.Administration.User
 {
     [TestFixture]
+    [Owner("Alice")]
+    [CreateTime("2013-01-17")]
+    [ManualCaseID("TC-J1-SmokeTest")]
     public class UserTypePermissionSuite : TestSuiteBase
     {
         private UserTypePermissionSettings UserTypePermissionSettings = JazzFunction.UserTypePermissionSettings;
 
         [SetUp]
-        [Owner("Alice")]
-        [CreateTime("2013-01-17")]
-        [ManualCaseID("TC-J1-SmokeTest")]
         public void CaseSetUp()
         {
             UserTypePermissionSettings.NavigatorToUserTypePermissionSetting();
@@ -42,7 +42,7 @@ namespace Mento.Script.Administration.User
 
         [Test]
         [Priority("10")]
-        //[CaseID("TC-J1-SmokeTest-034-Modify"), CreateTime("2013-01-08"), Owner("Nancy")]
+        [CaseID("TC-J1-SmokeTest-034-Modify"), CreateTime("2013-01-08"), Owner("Nancy")]
         //[MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserTypePermission), "TC-J1-SmokeTest-027")]
         public void ModifyUserTypePermission()
         {

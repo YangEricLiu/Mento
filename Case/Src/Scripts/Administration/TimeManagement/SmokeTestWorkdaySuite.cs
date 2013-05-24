@@ -21,7 +21,7 @@ namespace Mento.Script.Administration.TimeManagement
     [Owner("Amy")]
     [CreateTime("2013-01-04")]
     [ManualCaseID("TC-J1-SmokeTest")]
-    public class WorkdaySuite : TestSuiteBase
+    public class SmokeTestWorkdaySuite : TestSuiteBase
     {
         private static TimeSettingsWorkday TimeSettingsWorkday = JazzFunction.TimeSettingsWorkday;
         [SetUp]
@@ -39,7 +39,7 @@ namespace Mento.Script.Administration.TimeManagement
         [Test]
         [CaseID("TC-J1-SmokeTest-027")]
         [Priority("6")]
-        [MultipleTestDataSource(typeof(WorkdayCalendarData[]), typeof(WorkdaySuite), "TC-J1-SmokeTest-027")]
+        [MultipleTestDataSource(typeof(WorkdayCalendarData[]), typeof(SmokeTestWorkdaySuite), "TC-J1-SmokeTest-027")]
         public void AddWorkdayTimeStrategy(WorkdayCalendarData testData)
         {
             TimeSettingsWorkday.PrepareToAddWorkdayCalendar();

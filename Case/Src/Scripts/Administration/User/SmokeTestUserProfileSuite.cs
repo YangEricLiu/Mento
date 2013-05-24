@@ -21,7 +21,7 @@ namespace Mento.Script.Administration.User
     [Owner("Nancy")]
     [CreateTime("2013-01-15")]
     [ManualCaseID("TC-J1-SmokeTest-035")]
-    public class UserProfileSuite : TestSuiteBase
+    public class SmokeTestUserProfileSuite : TestSuiteBase
     {
         public UserProfile UserProfile = JazzFunction.UserProfile;
         public UserSettings UserSettings = JazzFunction.UserSettings;
@@ -41,7 +41,7 @@ namespace Mento.Script.Administration.User
         [Test]
         [CaseID("TC-J1-SmokeTest-035-1"), CreateTime("2013-01-15"), Owner("Nancy")]
         [Priority("9")]
-        [MultipleTestDataSource(typeof(UserProfileData[]), typeof(UserProfileSuite), "TC-J1-SmokeTest-035-1")]
+        [MultipleTestDataSource(typeof(UserProfileData[]), typeof(SmokeTestUserProfileSuite), "TC-J1-SmokeTest-035-1")]
         public void ViewUserProfile(UserProfileData testData)
         {
 
@@ -102,7 +102,7 @@ namespace Mento.Script.Administration.User
 
         [Test]
         [CaseID("TC-J1-SmokeTest-035-3"), CreateTime("2013-01-15"), Owner("Nancy")]
-        [MultipleTestDataSource(typeof(UserProfileData[]), typeof(UserProfileSuite), "TC-J1-SmokeTest-035-3")]
+        [MultipleTestDataSource(typeof(UserProfileData[]), typeof(SmokeTestUserProfileSuite), "TC-J1-SmokeTest-035-3")]
         public void ModifyUserProfile(UserProfileData testData)
         {
             UserProfile.NavigatorToUserProfile();

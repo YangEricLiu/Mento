@@ -21,7 +21,7 @@ namespace Mento.Script.Administration.User
     [Owner("Nancy")]
     [CreateTime("2013-01-08")]
     [ManualCaseID("TC-J1-SmokeTest-034")]
-    public class UserConfigurationSuite : TestSuiteBase
+    public class SmokeTestUserConfigurationSuite : TestSuiteBase
     {
         private UserSettings UserSettings = JazzFunction.UserSettings;
 
@@ -41,7 +41,7 @@ namespace Mento.Script.Administration.User
         [Test]
         [CaseID("TC-J1-SmokeTest-034"), CreateTime("2013-01-08"), Owner("Nancy")]
         [Priority("8")]
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserConfigurationSuite), "TC-J1-SmokeTest-034")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(SmokeTestUserConfigurationSuite), "TC-J1-SmokeTest-034")]
         public void AddNewUser(UserSettingsData testData)
         {
 
@@ -62,7 +62,7 @@ namespace Mento.Script.Administration.User
 
         [Test]
         [CaseID("TC-J1-Modify"), CreateTime("2013-01-08"), Owner("Nancy")]
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserConfigurationSuite), "TC-J1-SmokeTest-034-Modify")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(SmokeTestUserConfigurationSuite), "TC-J1-SmokeTest-034-Modify")]
         public void ModifyUser(UserSettingsData testData)
         {
             string modifyUser = "Nancy_Consultant";

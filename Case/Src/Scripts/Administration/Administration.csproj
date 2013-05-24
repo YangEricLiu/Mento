@@ -51,13 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarbonFactor\CarbonFactorSuite.cs" />
-    <Compile Include="CustomerOperation\AddCustomerSmokeTestSuite.cs" />
-    <Compile Include="TimeManagement\HeatingCoolingSeasonSuite.cs" />
-    <Compile Include="TimeManagement\DayNightSuite.cs" />
-    <Compile Include="TimeManagement\WorktimeSuite.cs" />
+    <Compile Include="CarbonFactor\SmokeTestCarbonFactorSuite.cs" />
+    <Compile Include="CustomerOperation\SmokeTestAddCustomerSuite.cs" />
+    <Compile Include="TimeManagement\SmokeTestHeatingCoolingSeasonSuite.cs" />
+    <Compile Include="TimeManagement\SmokeTestDayNightSuite.cs" />
+    <Compile Include="TimeManagement\SmokeTestWorktimeSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
-    <Compile Include="TimeManagement\WorkdaySuite.cs" />
+    <Compile Include="TimeManagement\SmokeTestWorkdaySuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TOU\TOUPulsePeakTariffAddValidSuite.cs" />
     <Compile Include="TOU\TOUPulsePeakTariffModifyValidSuite.cs" />
@@ -66,15 +66,15 @@
     <Compile Include="TOU\TOUBasicTariffModifyInvalidSuite.cs" />
     <Compile Include="TOU\TOUBasicTariffDeleteSuite.cs" />
     <Compile Include="TOU\TOUBasicTariffAddValidSuite.cs" />
-    <Compile Include="TOU\TOUPulsePeakTariffSmokeTestSuite.cs" />
-    <Compile Include="TOU\TOUBasicTariffSmokeTestSuite.cs" />
-    <Compile Include="User\ExitJazzSuite.cs" />
-    <Compile Include="User\ModifyUserPasswordSuite.cs">
+    <Compile Include="TOU\SmokeTestTOUPulsePeakTariffSuite.cs" />
+    <Compile Include="TOU\SmokeTestTOUBasicTariffSuite.cs" />
+    <Compile Include="User\SmokeTestExitJazzSuite.cs" />
+    <Compile Include="User\SmokeTestModifyUserPasswordSuite.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="User\UserConfigurationSuite.cs" />
-    <Compile Include="User\UserProfileSuite.cs" />
-    <Compile Include="User\UserTypePermissionSuite.cs" />
+    <Compile Include="User\SmokeTestUserConfigurationSuite.cs" />
+    <Compile Include="User\SmokeTestUserProfileSuite.cs" />
+    <Compile Include="User\SmokeTestUserTypePermissionSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Example\" />

@@ -152,7 +152,7 @@
     </Content>
     <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_schema_data.sql" />
     <Content Include="SqlScript\TearDown\14dbo_Trigger.sql" />
-    <None Include="Data\Administration\CustomerOperation\AddCustomerSmokeTestSuite\TC-J1-SmokeTest-033-001.json" />
+    <None Include="Data\Administration\CustomerOperation\SmokeTestAddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSetting-Delete-002.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSetting-Delete-101.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSetting-Delete-001.json" />
@@ -160,14 +160,14 @@
     <None Include="Data\Administration\TOU\TOUBasicTariffModifyValidSuite\TC-J1-FVT-TOUTariffSetting-Modify-103.json" />
     <None Include="Data\Administration\TOU\TOUPulsePeakTariffAddValidSuite\TC-J1-FVT-TOUPulsePeakTariffSetting-Add-101.json" />
     <None Include="Data\Administration\TOU\TOUPulsePeakTariffModifyValidSuite\TC-J1-FVT-TOUPulsePeakTariffSetting-Modify-101.json" />
-    <None Include="Data\Administration\TOU\TOUPulsePeakTariffSmokeTestSuite\TC-J1-SmokeTest-026.json" />
-    <None Include="Data\Administration\TOU\TOUBasicTariffSmokeTestSuite\TC-J1-SmokeTest-025.json" />
-    <None Include="Data\Administration\User\UserConfigurationSuite\TC-J1-SmokeTest-034-Modify.json" />
-    <None Include="Data\Administration\User\UserConfigurationSuite\TC-J1-SmokeTest-034.json" />
-    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-1.json" />
-    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-2.json" />
-    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-3.json" />
-    <None Include="Data\Administration\User\UserProfileSuite\TC-J1-SmokeTest-035-4.json" />
+    <None Include="Data\Administration\TOU\SmokeTestTOUPulsePeakTariffSuite\TC-J1-SmokeTest-026.json" />
+    <None Include="Data\Administration\TOU\SmokeTestTOUBasicTariffSuite\TC-J1-SmokeTest-025.json" />
+    <None Include="Data\Administration\User\SmokeTestUserConfigurationSuite\TC-J1-SmokeTest-034-Modify.json" />
+    <None Include="Data\Administration\User\SmokeTestUserConfigurationSuite\TC-J1-SmokeTest-034.json" />
+    <None Include="Data\Administration\User\SmokeTestUserProfileSuite\TC-J1-SmokeTest-035-1.json" />
+    <None Include="Data\Administration\User\SmokeTestUserProfileSuite\TC-J1-SmokeTest-035-2.json" />
+    <None Include="Data\Administration\User\SmokeTestUserProfileSuite\TC-J1-SmokeTest-035-3.json" />
+    <None Include="Data\Administration\User\SmokeTestUserProfileSuite\TC-J1-SmokeTest-035-4.json" />
     <None Include="Data\CommonInputData.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-4.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-3.json" />
@@ -234,10 +234,10 @@
     <None Include="Data\Customer\TagManagement\SmokeTestPtagConfigurationSuite\TC-J1-SmokeTest-002-001.json" />
     <None Include="Data\Customer\TagManagement\SmokeTestVtagManagementSuite\TA-Vtag-001.json" />
     <None Include="Data\Customer\TagManagement\SmokeTestVtagManagementSuite\TA-VtagConfigue-001.json" />
-    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-040.json" />
-    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-037.json" />
-    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-038.json" />
-    <None Include="Data\EnergyView\Usage\SingleTagSuite\TC-J1-SmokeTest-039.json" />
+    <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-040.json" />
+    <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-037.json" />
+    <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-038.json" />
+    <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-039.json" />
     <Content Include="IEDriverServer.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -273,11 +273,11 @@
     <Content Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\TC-J1-SmokeTest-Hierarchy-001.json" />
     <Content Include="Data\Administration\LoginSuite\TA-Trial-Login-001.json" />
     <Content Include="Data\Administration\ShowTimeSuite\TC-J1-ShowTime-001.json" />
-    <None Include="Data\Administration\CarbonFactor\CarbonFactorSuite\TC-J1-SmokeTest-024.json" />
-    <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonSuite\TC-J1-SmokeTest-030.json" />
-    <None Include="Data\Administration\TimeManagement\DayNightSuite\TC-J1-SmokeTest-029.json" />
-    <None Include="Data\Administration\TimeManagement\WorktimeSuite\TC-J1-SmokeTest-028.json" />
-    <None Include="Data\Administration\TimeManagement\WorkdaySuite\TC-J1-SmokeTest-027.json" />
+    <None Include="Data\Administration\CarbonFactor\SmokeTestCarbonFactorSuite\TC-J1-SmokeTest-024.json" />
+    <None Include="Data\Administration\TimeManagement\SmokeTestHeatingCoolingSeasonSuite\TC-J1-SmokeTest-030.json" />
+    <None Include="Data\Administration\TimeManagement\SmokeTestDayNightSuite\TC-J1-SmokeTest-029.json" />
+    <None Include="Data\Administration\TimeManagement\SmokeTestWorktimeSuite\TC-J1-SmokeTest-028.json" />
+    <None Include="Data\Administration\TimeManagement\SmokeTestWorkdaySuite\TC-J1-SmokeTest-027.json" />
     <None Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\TA-Hierarchy-002.json" />
     <None Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\TA-Hierarchy-003.json" />
     <Content Include="Data\Customer\TagManagement\SmokeTestKPIConfigurationSuite\TC-J1-SmokeTest-004-001.json" />

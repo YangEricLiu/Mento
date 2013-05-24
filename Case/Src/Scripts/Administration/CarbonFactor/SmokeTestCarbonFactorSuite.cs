@@ -21,7 +21,7 @@ namespace Mento.Script.Administration.CarbonFactor
     [Owner("Amy")]
     [CreateTime("2013-01-09")]
     [ManualCaseID("TC-J1-SmokeTest")]
-    public class CarbonFactorSuite:TestSuiteBase
+    public class SmokeTestCarbonFactorSuite:TestSuiteBase
     {
         private static CarbonFactorSettings CarbonFactorSettings = JazzFunction.CarbonFactorSettings;
         [SetUp]
@@ -39,7 +39,7 @@ namespace Mento.Script.Administration.CarbonFactor
         [Test]
         [CaseID("TC-J1-SmokeTest-024")]
         [Priority("11")]
-        [MultipleTestDataSource(typeof(CarbonFactorData[]), typeof(CarbonFactorSuite), "TC-J1-SmokeTest-024")]
+        [MultipleTestDataSource(typeof(CarbonFactorData[]), typeof(SmokeTestCarbonFactorSuite), "TC-J1-SmokeTest-024")]
         public void AddCarbonFactor(CarbonFactorData testData)
         {
             CarbonFactorSettings.PrepareToAddCarbonFactor();

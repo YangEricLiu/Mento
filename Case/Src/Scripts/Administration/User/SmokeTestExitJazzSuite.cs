@@ -21,7 +21,7 @@ namespace Mento.Script.Administration.User
     [Owner("Nancy")]
     [CreateTime("2013-01-08")]
     [ManualCaseID("TC-J1-SmokeTest")]
-    public class ExitJazzSuite : TestSuiteBase
+    public class SmokeTestExitJazzSuite : TestSuiteBase
     {
         private UserSettings UserSettings = JazzFunction.UserSettings;
 

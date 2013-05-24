@@ -23,7 +23,7 @@ namespace Mento.Script.Administration.User
     [Owner("Alice")]
     [CreateTime("2013-01-17")]
     [ManualCaseID("TC-J1-SmokeTest")]
-    public class UserTypePermissionSuite : TestSuiteBase
+    public class SmokeTestUserTypePermissionSuite : TestSuiteBase
     {
         private UserTypePermissionSettings UserTypePermissionSettings = JazzFunction.UserTypePermissionSettings;
 

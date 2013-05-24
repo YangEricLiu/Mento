@@ -21,7 +21,7 @@ namespace Mento.Script.Administration.User
     [Owner("Nancy")]
     [CreateTime("2013-01-23")]
     [ManualCaseID("TC-J1-SmokeTest-035")]
-    public class ModifyUserPasswordSuite : TestSuiteBase
+    public class SmokeTestModifyUserPasswordSuite : TestSuiteBase
     {
         public UserProfile UserProfile = JazzFunction.UserProfile;
 
@@ -40,7 +40,7 @@ namespace Mento.Script.Administration.User
 
         [Test]
         [CaseID("TC-J1-SmokeTest-035-1"), CreateTime("2013-01-15"), Owner("Nancy")]
-        [MultipleTestDataSource(typeof(UserPasswordData[]), typeof(ModifyUserPasswordSuite), "TC-J1-SmokeTest-035-4")]
+        [MultipleTestDataSource(typeof(UserPasswordData[]), typeof(SmokeTestModifyUserPasswordSuite), "TC-J1-SmokeTest-035-4")]
         public void ModifyUserPassword(UserPasswordData testData)
         {
 

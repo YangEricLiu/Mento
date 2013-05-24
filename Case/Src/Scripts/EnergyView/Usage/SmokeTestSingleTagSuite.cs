@@ -21,7 +21,7 @@ namespace Mento.Script.EnergyView.Usage
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-SmokeTest-039"), CreateTime("2013-01-06"), Owner("Aries")]
-    public class SingleTagSuite : TestSuiteBase
+    public class SmokeTestSingleTagSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -52,7 +52,7 @@ namespace Mento.Script.EnergyView.Usage
         [Test]
         [CaseID("TC-J1-SmokeTest-037")]
         [Priority("30")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-037")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SmokeTestSingleTagSuite), "TC-J1-SmokeTest-037")]
         public void SingTagTrendChart(EnergyViewOptionData option)
         {
             DataPanel.SelectHierarchy(option.InputData.Hierarchies);
@@ -76,7 +76,7 @@ namespace Mento.Script.EnergyView.Usage
         [Test]
         [CaseID("TC-J1-SmokeTest-038")]
         [Priority("31")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-038")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SmokeTestSingleTagSuite), "TC-J1-SmokeTest-038")]
         public void SingleTagColumnChart(EnergyViewOptionData option)
         {
             DataPanel.SelectHierarchy(option.InputData.Hierarchies);
@@ -100,7 +100,7 @@ namespace Mento.Script.EnergyView.Usage
         [Test]
         [CaseID("TC-J1-SmokeTest-039")]
         [Priority("32")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-039")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SmokeTestSingleTagSuite), "TC-J1-SmokeTest-039")]
         public void SingleTagDataView(EnergyViewOptionData option)
         {
             DataPanel.SelectHierarchy(option.InputData.Hierarchies);
@@ -125,7 +125,7 @@ namespace Mento.Script.EnergyView.Usage
         [Test]
         [CaseID("TC-J1-SmokeTest-040")]
         [Priority("33")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TC-J1-SmokeTest-040")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SmokeTestSingleTagSuite), "TC-J1-SmokeTest-040")]
         public void SingleTagDistributionChart(EnergyViewOptionData option)
         {
             DataPanel.SelectHierarchy(option.InputData.Hierarchies);

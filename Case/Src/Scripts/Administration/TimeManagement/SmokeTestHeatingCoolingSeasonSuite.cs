@@ -21,7 +21,7 @@ namespace Mento.Script.Administration.TimeManagement
     [Owner("Amy")]
     [CreateTime("2013-01-04")]
     [ManualCaseID("TC-J1-SmokeTest")]
-    public class HeatingCoolingSeasonSuite : TestSuiteBase
+    public class SmokeTestHeatingCoolingSeasonSuite : TestSuiteBase
     {
         private static TimeSettingsHeatingCoolingSeason TimeSettingsHeatingCoolingSeason = JazzFunction.TimeSettingsHeatingCoolingSeason;
         [SetUp]
@@ -39,7 +39,7 @@ namespace Mento.Script.Administration.TimeManagement
         [Test]
         [CaseID("TC-J1-SmokeTest-030")]
         [Priority("6")]
-        [MultipleTestDataSource(typeof(HeatingCoolingSeasonCalendarData[]), typeof(HeatingCoolingSeasonSuite), "TC-J1-SmokeTest-030")]
+        [MultipleTestDataSource(typeof(HeatingCoolingSeasonCalendarData[]), typeof(SmokeTestHeatingCoolingSeasonSuite), "TC-J1-SmokeTest-030")]
         public void AddHeatingCoolingSeasonTimeStrategy(HeatingCoolingSeasonCalendarData testData)
         {
             TimeSettingsHeatingCoolingSeason.PrepareToAddHeatingCoolingSeasonCalendar();

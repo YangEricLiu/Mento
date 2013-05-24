@@ -21,7 +21,7 @@ namespace Mento.Script.Administration.TOU
     [Owner("Amy")]
     [CreateTime("2013-01-04")]
     [ManualCaseID("TC-J1-SmokeTest")]
-    public class TOUBasicTariffSmokeTestSuite : TestSuiteBase
+    public class SmokeTestTOUBasicTariffSuite : TestSuiteBase
     {
         private static TOUBasicTariffSettings TOUBasicTariffSettings = JazzFunction.TOUBasicTariffSettings;
         [SetUp]
@@ -39,7 +39,7 @@ namespace Mento.Script.Administration.TOU
         [Test]
         [CaseID("TC-J1-SmokeTest-025")]
         [Priority("7")]
-        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffSmokeTestSuite), "TC-J1-SmokeTest-025")]
+        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(SmokeTestTOUBasicTariffSuite), "TC-J1-SmokeTest-025")]
         public void AddTOUBasicTariff(TOUBasicTariffData testData)
         {
             TOUBasicTariffSettings.ClickBasicPropertyCreateButton();

@@ -20,7 +20,7 @@ namespace Mento.Script.Customer.TagAssociation
     [Owner("Nancy")]
     [CreateTime("2012-01-06")]
     [ManualCaseID("TC-J1-SmokeTest-012")]
-    public class SystemDisassociateTagSmokeTestSuite : TestSuiteBase
+    public class SmokeTestSystemDisassociateTagSuite : TestSuiteBase
     {
         private static AssociateSettings Association = JazzFunction.AssociateSettings;
         private static SystemDimensionSettings SystemSettings = JazzFunction.SystemDimensionSettings;
@@ -43,7 +43,7 @@ namespace Mento.Script.Customer.TagAssociation
         [CaseID("TC-J1-SmokeTest-DisassociateTag-002")]
         [Priority("28")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(SystemDisassociateTagSmokeTestSuite), "TC-J1-SmokeTest-DisassociateTag-002")]
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(SmokeTestSystemDisassociateTagSuite), "TC-J1-SmokeTest-DisassociateTag-002")]
         public void DisassociateOneTag(AssociateTagData input)
         {
             /// <summary>

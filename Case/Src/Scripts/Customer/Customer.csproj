@@ -59,17 +59,17 @@
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddElectricityCompCostPropertySuite .cs" />
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddOtherCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddPeopleAreaPropertySuite.cs" />
-    <Compile Include="TagAssociation\AreaDimensionDisassociateTagSmokeTestSuite.cs" />
-    <Compile Include="TagAssociation\HierarchyDisassociateTagSmokeTestSuite.cs" />
+    <Compile Include="TagAssociation\SmokeTestAreaDimensionDisassociateTagSuite.cs" />
+    <Compile Include="TagAssociation\SmokeTestHierarchyDisassociateTagSuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddCalendarPropertySuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="HierarchyConfiguration\SmokeTestAreaDimensionSuite.cs" />
     <Compile Include="HierarchyConfiguration\SmokeTestSystemDimensionSuite.cs" />
     <Compile Include="HierarchyConfiguration\SmokeTestHierarchySuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TagAssociation\AreaDimensionAssociateTagSmokeTestSuite.cs" />
-    <Compile Include="TagAssociation\SystemAssociateTagSmokeTestSuite.cs" />
-    <Compile Include="TagAssociation\SystemDisassociateTagSmokeTestSuite.cs" />
+    <Compile Include="TagAssociation\SmokeTestAreaDimensionAssociateTagSuite.cs" />
+    <Compile Include="TagAssociation\SmokeTestSystemAssociateTagSuite.cs" />
+    <Compile Include="TagAssociation\SmokeTestSystemDisassociateTagSuite.cs" />
     <Compile Include="TagManagement\AddKPIFormulaSuite.cs" />
     <Compile Include="TagManagement\AddKPITagSuite.cs" />
     <Compile Include="TagManagement\CancelModifyFormDayNightKPI.cs" />
@@ -89,7 +89,7 @@
     <Compile Include="TagManagement\ModifyKPITag.cs" />
     <Compile Include="TagManagement\ModifyKPITagSuite.cs" />
     <Compile Include="TagManagement\PtagConfigurationSuite.cs" />
-    <Compile Include="TagAssociation\HierarchyAssociateTagSmokeTestSuite.cs" />
+    <Compile Include="TagAssociation\SmokeTestHierarchyAssociateTagSuite.cs" />
     <Compile Include="TagManagement\VtagManagementSuite.cs" />
   </ItemGroup>
   <ItemGroup>

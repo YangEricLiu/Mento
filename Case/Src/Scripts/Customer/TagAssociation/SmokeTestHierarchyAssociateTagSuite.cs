@@ -18,17 +18,16 @@ namespace Mento.Script.Customer.TagAssociation
 {
     [TestFixture]
     [Owner("Emma")]
-    [CreateTime("2012-12-31")]
-    [ManualCaseID("TC-J1-SmokeTest-009")]
-    public class SystemAssociateTagSmokeTestSuite : TestSuiteBase
+    [CreateTime("2012-11-09")]
+    [ManualCaseID("TC-J1-SmokeTest-008")]
+    public class SmokeTestHierarchyAssociateTagSuite : TestSuiteBase
     {
         private static AssociateSettings Association = JazzFunction.AssociateSettings;
-        private static SystemDimensionSettings SystemSettings = JazzFunction.SystemDimensionSettings;
 
         [SetUp]
         public void CaseSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationSystemDimension);
+            Association.NavigateToHierarchyAssociate();
             TimeManager.MediumPause();
         }
 
@@ -39,32 +38,24 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-AssociateTag-002")]
-        [Priority("25")]
+        [CaseID("TC-J1-SmokeTest-AssociateTag-001")]
+        [Priority("24")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(SystemAssociateTagSmokeTestSuite), "TC-J1-SmokeTest-AssociateTag-002")]
-        public void SmokeTestAssociateSystemTag(AssociateTagData input)
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(SmokeTestHierarchyAssociateTagSuite), "TC-J1-SmokeTest-AssociateTag-001")]
+        public void SmokeTestAssociateHierarchyTag(AssociateTagData input)
         {
             /// <summary>
-            /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"->"systemAssociate"
-            ///                  And "空调" system dimension checked
-            ///               2. make sure tag "Add_V1" has been added for associate
+            /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"
+            ///               2. make sure tag "Amy_m_V1_Vtagconst1" has been added for associate
             /// Prepare Data: 1. associate tag for the case to disassociate tag
             /// </summary> 
             /// 
-            //Select hierarchy node "自动化测试"->"systemAssociate"
-            SystemSettings.ShowHierarchyTree();
-            TimeManager.ShortPause();
-            SystemSettings.SelectHierarchyNodePath(input.InputData.SystemDimensionPath);
-
-            //Select system dimension "空调"
-            SystemSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionPath);
-
-            //Click associate tag button
+            //Click hierarchy node and click associate tag button
+            Association.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
 
-            //select tag "Add_V1" and click associate button to associate
+            //select tag "Amy_m_V1_Vtagconst1" and click associate button to associate
             Association.CheckedTag(input.InputData.TagName);
             Association.ClickAssociateButton();
             TimeManager.ShortPause();

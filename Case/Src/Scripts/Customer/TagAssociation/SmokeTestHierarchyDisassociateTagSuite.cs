@@ -17,12 +17,13 @@ using Mento.TestApi.TestData.Attribute;
 namespace Mento.Script.Customer.TagAssociation
 {
     [TestFixture]
-    [Owner("Emma")]
+    [Owner("Nancy")]
     [CreateTime("2012-11-09")]
-    [ManualCaseID("TC-J1-SmokeTest-008")]
-    public class HierarchyAssociateTagSmokeTestSuite : TestSuiteBase
+    [ManualCaseID("TC-J1-SmokeTest-011")]
+    public class SmokeTestHierarchyDisassociateTagSuite : TestSuiteBase
     {
         private static AssociateSettings Association = JazzFunction.AssociateSettings;
+        private static DisassociateSettings Disassociation = JazzFunction.DisassociateSettings;
 
         [SetUp]
         public void CaseSetUp()
@@ -38,32 +39,33 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
-        [CaseID("TC-J1-SmokeTest-AssociateTag-001")]
-        [Priority("24")]
+        [CaseID("TC-J1-SmokeTest-DisassociateTag-001")]
+        [Priority("27")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(HierarchyAssociateTagSmokeTestSuite), "TC-J1-SmokeTest-AssociateTag-001")]
-        public void SmokeTestAssociateHierarchyTag(AssociateTagData input)
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(SmokeTestHierarchyDisassociateTagSuite), "TC-J1-SmokeTest-DisassociateTag-001")]
+        public void DisassociateOneTag(AssociateTagData input)
         {
             /// <summary>
             /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"
-            ///               2. make sure tag "Amy_m_V1_Vtagconst1" has been added for associate
-            /// Prepare Data: 1. associate tag for the case to disassociate tag
+            ///               2. make sure tag "Amy_m_V1_Vtagconst1" has been added and associate to "自动化测试"
             /// </summary> 
-            /// 
-            //Click hierarchy node and click associate tag button
+            ///
+            //Select hierarchy node 
             Association.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.ShortPause();
+
+            //Select associated tag and click "disassociate" button
+            Disassociation.FocusOnTag(input.InputData.TagName);
+            Disassociation.ClickDisassociateButton();
+            TimeManager.ShortPause();
+
+            //Verify the tag is on disassociated tag list
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
-
-            //select tag "Amy_m_V1_Vtagconst1" and click associate button to associate
-            Association.CheckedTag(input.InputData.TagName);
-            Association.ClickAssociateButton();
-            TimeManager.ShortPause();
-
-            //Verify the tag is  display on associated tag list
-            //And not display on disassociate tag list
             Assert.IsTrue(Association.IsTagOnAssociategGridView(input.InputData.TagName));
-            Association.ClickAssociateTagButton();
+
+            //Verify the tag is not on associated tag list
+            Disassociation.ClickAssociatedCancel();
             TimeManager.ShortPause();
             Assert.IsFalse(Association.IsTagOnAssociategGridView(input.InputData.TagName));
         }

@@ -1,9 +1,0 @@
-﻿[
-	{
-		"InputData":
-		{
-			"Name":"Auto_kSystemConfig",
-			"Formula":"{ptag|Auto_Add_P1}+{ptag|Auto_Add_P2}",
-		}
-	}	
-]

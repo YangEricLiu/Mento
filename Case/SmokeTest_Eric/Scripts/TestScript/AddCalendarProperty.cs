@@ -15,7 +15,7 @@ using Mento.TestApi.TestData;
 
 namespace Mento.Script.TestScript.HierarchyPropertyConfiguration
 {
-    [TestFixture]
+    [TestFixture]    
     [Owner("Eric")]
     [CreateTime("2013-05-14")]
     [ManualCaseID("TA-Smoke-Calendar-001")]
@@ -40,7 +40,8 @@ namespace Mento.Script.TestScript.HierarchyPropertyConfiguration
         }
 
         [Test]
-        [CaseID("TA-Smoke-Calendar-001")]
+        [CaseID("TA-Smoke-Calendar-001-001")]
+        [Owner("Eric")]
         [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(AddCalendarPropertySuite), "TA-Smoke-Calendar-001-001")]
         public void AddCalendar(CalendarPropertyData input)
         {

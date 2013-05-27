@@ -40,6 +40,7 @@ namespace Mento.Script.TestScript.DashboardSuite
         }
 
         [Test]
+        [Owner("Eric")]
         [CaseID("TA-Smoke-Dashboard-001-001")]
         [MultipleTestDataSource(typeof(ShareDashboard[]), typeof(DashboardShare), "TA-Smoke-Dashboard-001-001")]
         public void ShareDashboard(ShareDashboard testData)

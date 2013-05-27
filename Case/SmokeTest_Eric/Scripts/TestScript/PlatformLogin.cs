@@ -10,7 +10,7 @@ using Mento.TestApi.WebUserInterface;
 
 namespace Mento.Script.TestScript.Login
 {
-    [TestFixture]
+    [TestFixture]    
     [Owner("Eric")]
     [CreateTime("2013-05-10")]
     [ManualCaseID("TA-Smoke-Login-000")]
@@ -29,6 +29,7 @@ namespace Mento.Script.TestScript.Login
         }
 
         [Test]
+        [Owner("Eric")]
         [CaseID("TA-Smoke-Login-000")]
         public void Login()
         {            

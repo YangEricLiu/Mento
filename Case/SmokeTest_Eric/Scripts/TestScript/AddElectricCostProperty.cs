@@ -16,6 +16,7 @@ using Mento.TestApi.TestData;
 namespace Mento.Script.TestScript.HierarchyPropertyConfiguration
 {
     [TestFixture]
+    
     [Owner("Eric")]
     [CreateTime("2013-05-13")]
     [ManualCaseID("TA-Smoke-Cost-001")]
@@ -41,6 +42,7 @@ namespace Mento.Script.TestScript.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Owner("Eric")]
         [CaseID("TA-Smoke-Cost-001-001")]
         [MultipleTestDataSource(typeof(ElectricFixedCostData[]), typeof(AddElectricCostPropertySuite), "TA-Smoke-Cost-001-001")]
         public void AddCostForElectricFixed(ElectricFixedCostData input)

@@ -16,9 +16,6 @@ using System.Data;
 
 namespace Mento.Script.TestScript.Usage
 {
-    /// <summary>
-    /// 
-    /// </summary>
     [TestFixture]
     [ManualCaseID("TA-Smoke-Energy-001")]
     [CreateTime("2013-05-13")]
@@ -44,6 +41,7 @@ namespace Mento.Script.TestScript.Usage
         private static EnergyAnalysisPanel DataPanel = JazzFunction.EnergyAnalysisPanel;
        
         [Test]
+        [Owner("Eric")]
         [CaseID("TA-Smoke-Energy-001-001")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TA-Smoke-Energy-001-001")]
         public void SingTagTrendChart(EnergyViewOptionData option)
@@ -60,6 +58,7 @@ namespace Mento.Script.TestScript.Usage
         }
 
         [Test]
+        [Owner("Eric")]
         [CaseID("TA-Smoke-Energy-001-002")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleTagSuite), "TA-Smoke-Energy-001-002")]
         public void SingleTagColumnChart(EnergyViewOptionData option)
@@ -72,6 +71,7 @@ namespace Mento.Script.TestScript.Usage
         }        
 
         [Test]
+        [Owner("Eric")]
         [CaseID("TA-Smoke-Energy-001-003")]
         public void TestDatePicker()
         {

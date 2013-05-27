@@ -42,6 +42,7 @@ namespace Mento.Script.TestScript.TagManagement
         }
 
         [Test]
+        [Owner("Eric")]
         [CaseID("TA-Smoke-Tag-001-001")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(PtagConfigurationSuite), "TA-Smoke-Tag-001-001")]
         public void AddPtag(PtagData testData)

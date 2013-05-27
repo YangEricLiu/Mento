@@ -18,7 +18,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.TestScript.CustomerOperation
 {
-    [TestFixture]
+    [TestFixture]    
     [Owner("Eric")]
     [CreateTime("2013-05-10")]
     [ManualCaseID("TA-Smoke-Customer-000")]
@@ -42,8 +42,9 @@ namespace Mento.Script.TestScript.CustomerOperation
         }
 
         [Test]
-        [CaseID("TA-Smoke-Customer-000")]        
-        [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(AddCustomerSmokeTestSuite), "TC-J1-SmokeTest-033-001")]
+        [CaseID("TA-Smoke-Customer-000")]
+        [Owner("Eric")]
+        [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(AddCustomerSmokeTestSuite), "TA-Smoke-Customer-000-001")]
         public void AddNewCustomer(CustomerManagementData input)
         {
             //Click "Add customer" button

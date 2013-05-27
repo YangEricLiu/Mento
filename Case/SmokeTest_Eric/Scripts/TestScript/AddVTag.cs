@@ -40,6 +40,7 @@ namespace Mento.Script.TestScript.TagManagement
         }
         
         [Test]
+        [Owner("Eric")]
         [CaseID("TA-Smoke-Tag-002-001")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(VTagManagementSuite), "TA-Smoke-Tag-002-001")]
         public void AddVtag(VtagData testdata)

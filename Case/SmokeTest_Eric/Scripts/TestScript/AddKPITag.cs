@@ -41,9 +41,8 @@ namespace Mento.Script.TestScript.TagManagement
         }
 
         [Test]
-        [CaseID("TA-Smoke-Tag-003-001")]
-        [Priority("20")]
-        [Type("FVT")]
+        [Owner("Eric")]
+        [CaseID("TA-Smoke-Tag-003-001")]        
         [MultipleTestDataSource(typeof(KPIData[]), typeof(AddKPITagSuite), "TA-Smoke-Tag-003-001")]
         public void AddValidKPItag(KPIData testdata)
         {
@@ -63,9 +62,8 @@ namespace Mento.Script.TestScript.TagManagement
         }
 
         [Test]
-        [CaseID("TA-Smoke-Tag-003-002")]
-        [Priority("20")]
-        [Type("FVT")]
+        [Owner("Eric")]
+        [CaseID("TA-Smoke-Tag-003-002")]        
         [MultipleTestDataSource(typeof(KPITagFormulaData[]), typeof(AddKPITagSuite), "TA-Smoke-Tag-003-002")]
         public void AddValidFormulaToDayNightKPItag(KPITagFormulaData testdata)
         {

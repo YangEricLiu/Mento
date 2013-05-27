@@ -41,6 +41,7 @@ namespace Mento.Script.TestScript.TagManagement
         }
            
         [Test]
+        [Owner("Eric")]
         [CaseID("TA-Smoke-TargetBaseline-001-001")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(KPIBaselineSuite), "TA-Smoke-TargetBaseline-001-001")]
         public void KPIBaselineConfigurationCalculationRevision(KPITargetBaselineData testData)

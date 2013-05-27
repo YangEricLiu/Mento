@@ -153,7 +153,7 @@
     </None>
     <None Include="Data\CommonInputData.json" />
     <None Include="Data\IllegalInputData.json" />
-    <None Include="Data\TestScript\CustomerOperation\AddCustomerSmokeTestSuite\TC-J1-SmokeTest-033-001.json" />
+    <None Include="Data\TestScript\CustomerOperation\AddCustomerSmokeTestSuite\TA-Smoke-Customer-000-001.json" />
     <None Include="Data\TestScript\DashboardSuite\DashboardShare\TA-Smoke-Dashboard-001-001.json" />
     <None Include="Data\TestScript\HierarchyConfiguration\AddValidHierarchyNodeSuite\TA-Smoke-Hierarchy-001-001.json" />
     <None Include="Data\TestScript\HierarchyConfiguration\AreaDimensionSmokeTestSuite\TA-Smoke-AreaDimension-001-001.json" />

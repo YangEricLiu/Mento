@@ -44,7 +44,7 @@ namespace Mento.Script.TestScript.HierarchyConfiguration
 
         [Test]
         [CaseID("TA-Smoke-Hierarchy-001-001")]
-        [Type("BFT")]
+        [Owner("Eric")]
         [MultipleTestDataSource(typeof(HierarchyDataTree[]), typeof(AddValidHierarchyNodeSuite), "TA-Smoke-Hierarchy-001-001")]
         public void AddThreeOrgnization(HierarchyDataTree inputs)
         {

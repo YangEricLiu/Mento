@@ -38,6 +38,7 @@ namespace Mento.Script.TestScript.HierarchyConfiguration
         }
        
         [Test]
+        [Owner("Eric")]
         [CaseID("TA-Smoke-AreaDimension-001-001")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AreaDimensionSmokeTestSuite), "TA-Smoke-AreaDimension-001-001")]
         public void SmokeTestAddAreaDimension(AreaDimensionData input)

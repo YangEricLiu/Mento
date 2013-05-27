@@ -41,6 +41,7 @@ namespace Mento.Script.TestScript.TagAssociation
         }
 
         [Test]
+        [Owner("Eric")]
         [CaseID("TA-Smoke-TagMap-001-001")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(HierarchyAssociateTagSuite), "TA-Smoke-TagMap-001-001")]
         public void SmokeTestAssociateHierarchyTag(AssociateTagData input)

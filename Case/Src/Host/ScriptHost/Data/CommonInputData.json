@@ -6,7 +6,7 @@
 			"Password":"",
 			"RealName":"真实姓名",
 			"CustomerName":"",
-			"CommonName":"onlychars",
+			"CommonName":"  onlychars  ",
 			"Address":"010-12345678",
 			"Email":"mg_mg-mg@163.com",
 			"Telephone":"Nancy 的第1个用户_",
@@ -42,7 +42,7 @@
 			"Password":"",
 			"RealName":"",
 			"CustomerName":"",
-			"CommonName":"只有中文",
+			"CommonName":"  只有中文  ",
 			"Address":"",
 			"Email":"AaBbZz019_123456789012345678901234567890123456789012345-b.c.-_1@schneider-electric.comxxxxxx100chars",
 			"Telephone":"0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123-0-100",
@@ -114,7 +114,7 @@
 			"Password":"",
 			"RealName":"",
 			"CustomerName":"",
-			"CommonName":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"CommonName":"中文CAPITALhars 1234_F中文CAPITALh",
 			"Address":"",
 			"Email":"  A-b.c._1@schneider-electric.com   ",
 			"Telephone":"  010-123456-789 ",
@@ -122,7 +122,7 @@
 			"Meter":"",
 			"Channel":"",
 			"DataValue":"",
-			"Comments":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"Comments":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
 			"FeedbackComments":""
 		},
 		"ExpectedData":
@@ -131,7 +131,7 @@
 			"Password":"",
 			"RealName":"",
 			"CustomerName":"",
-			"CommonName":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"CommonName":"中文CAPITALhars 1234_F中文CAPITALh",
 			"Address":"",
 			"Email":"A-b.c._1@schneider-electric.com",
 			"Telephone":"010-123456-789",
@@ -139,7 +139,7 @@
 			"Meter":"",
 			"Channel":"",
 			"DataValue":"",
-			"Comments":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"Comments":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
 			"FeedbackComments":""
 		}
 	},
@@ -150,7 +150,7 @@
 			"Password":"",
 			"RealName":"",
 			"CustomerName":"",
-			"CommonName":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F000",
+			"CommonName":"m文CAPITALhars 1234_F中文CAPITALh000",
 			"Address":"",
 			"Email":"",
 			"Telephone":"0",
@@ -158,7 +158,7 @@
 			"Meter":"",
 			"Channel":"",
 			"DataValue":"",
-			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F000",
+			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F000",
 			"FeedbackComments":""
 		},
 		"ExpectedData":
@@ -167,7 +167,7 @@
 			"Password":"",
 			"RealName":"",
 			"CustomerName":"",
-			"CommonName":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"CommonName":"m文CAPITALhars 1234_F中文CAPITALh",
 			"Address":"",
 			"Email":"",
 			"Telephone":"0",
@@ -175,7 +175,7 @@
 			"Meter":"",
 			"Channel":"",
 			"DataValue":"",
-			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
 			"FeedbackComments":""
 		}
 	}

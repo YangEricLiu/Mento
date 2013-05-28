@@ -284,7 +284,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public Boolean IsTypeContainsSite()
         {
-            return GetTypeListValue().Contains(GetTypeExpectedValue("Site"));  
+            GetTypeListValue();
+            return GetTypeListValue().Contains(GetTypeExpectedValue("Site")); 
         }
 
         /// <summary>
@@ -293,6 +294,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public Boolean IsTypeContainsBuilding()
         {
+            GetTypeListValue();
             return GetTypeListValue().Contains(GetTypeExpectedValue("Building"));
         }
 

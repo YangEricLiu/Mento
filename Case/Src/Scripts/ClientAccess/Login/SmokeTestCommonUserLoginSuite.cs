@@ -13,7 +13,7 @@ namespace Mento.Script.ClientAccess.Login
     [Owner("Aries")]
     [CreateTime("2012-11-22")]
     [ManualCaseID("TC-J1-SmokeTest-031")]
-    public class CommonUserLoginSuite : TestSuiteBase
+    public class SmokeTestCommonUserLoginSuite : TestSuiteBase
     {
         [Test]
         [CaseID("TC-J1-SmokeTest-031")]

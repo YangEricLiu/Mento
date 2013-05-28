@@ -12,7 +12,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private const string SYSTEMDIMENSIONTREECSSSELECTOR = "table.x-grid-table,.x-grid-table-resizer";
         private const string DIALOGXPATH = "div.x-window";
         private const string CHECKBOXXPATHFORMAT = "//tr[contains(@class,'x-grid-row') and td/div[text()='$#" + TREENODEVARIABLENAME + "']]//input";
-        private const string UNCHECKMESSAGE = "当前结点下的所有数据点和关键能效指标将被解关联，确认继续？";
+        private const string UNCHECKMESSAGE = "您将同时删除系统维度节点下所有的数据点关联关系。";
         private const string UNCHECKBOXCONFIRMBUTTON = "//span[text() = '是']";
 
         public SystemDimensionTree(Locator locator) :

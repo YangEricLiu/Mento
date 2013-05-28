@@ -2,12 +2,12 @@
 	{
 		"InputData":
 		{
-			"HierarchyNodePath":["AutoTest", "AddCalendarProperty"],
+			"HierarchyNodePath":["自动化测试"],
 			"SystemDimensionItemPath":["空调", "冷热源", "供冷主机"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["AddCalendarProperty", "空调", "冷热源", "供冷主机"],
+			"SystemDimensionPath":["自动化测试", "空调", "冷热源", "供冷主机"],
 		}
 	}
 ]

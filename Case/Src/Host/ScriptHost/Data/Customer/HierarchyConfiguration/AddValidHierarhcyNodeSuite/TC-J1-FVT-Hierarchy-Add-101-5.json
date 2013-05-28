@@ -1,0 +1,16 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+			"CommonName":"Check_所有1Org",
+			"Code":"Check_all1Org",
+			"Type":"Orgnization",
+		},
+		"ExpectedData":
+		{
+			"HierarchyNodePath":["自动化测试","AutoOrg001","Check_所有1Org"],
+		    "Message":"添加成功",
+		}
+	}
+]

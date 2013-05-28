@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"HierarchyNodePath":["AutoTest", "AddCalendarProperty","AddPeopleProperty"],
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty","AddPeopleProperty"],
 			"AreaNodePath":["AddPeopleProperty"],
 			"CommonName":"FirstFloor",
 			"Comments":"smoke test",

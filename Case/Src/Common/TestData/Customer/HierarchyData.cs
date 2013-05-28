@@ -22,6 +22,7 @@ namespace Mento.ScriptCommon.TestData.Customer
 
     public class HierarchyExpectedData : ExpectedTestDataBase
     {
+        public string[] HierarchyNodePath { get; set; }
         public string CommonName { get; set; }
         public string Code { get; set; }
         public string Type { get; set; }

@@ -70,9 +70,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             TimeManager.ShortPause();
 
-            Assert.IsTrue(AreaSettings.IsShownSuccessMessage());
+            //Assert.IsTrue(AreaSettings.IsShownSuccessMessage());
 
-            AreaSettings.CloseSuccessMessage();
+            //AreaSettings.CloseSuccessMessage();
 
             Assert.AreEqual(AreaSettings.GetAreaDimensionName(), input.InputData.CommonName);
             Assert.AreEqual(AreaSettings.GetAreaDimensionComment(), input.InputData.Comments);

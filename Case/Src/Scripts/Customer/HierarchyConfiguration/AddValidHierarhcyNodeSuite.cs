@@ -56,12 +56,12 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.ShortPause();
 
             //Verify that the "添加成功" message box popup, other is failed
-            string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            TimeManager.ShortPause();
+            //string msgText = HierarchySettings.GetMessageText();
+            //Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            //TimeManager.ShortPause();
 
             //confirm message box
-            HierarchySettings.ConfirmCreateOKMagBox();
+            //HierarchySettings.ConfirmCreateOKMagBox();
 
             //Verify nodes are added as children
             Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.ExpectedData.CommonName, input.InputData.HierarchyNodePath.Last()));
@@ -91,6 +91,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Verify the type list not contain "org" and "site"
             Assert.IsFalse(HierarchySettings.IsTypeContainsOrgnization());
             Assert.IsFalse(HierarchySettings.IsTypeContainsSite());
+            Assert.IsTrue(HierarchySettings.IsTypeContainsBuilding());
 
             //Select orgnization node and click "childlevel" button
             HierarchySettings.SelectHierarchyNode(input.InputData.HierarchyNodePath[0]);
@@ -116,18 +117,22 @@ namespace Mento.Script.Customer.HierarchyConfiguration
                 HierarchySettings.FillInCode(input.InputData.HierarchyNodePath[i + 1]);
                 HierarchySettings.FillInType(input.InputData.Type);
 
+                Assert.IsTrue(HierarchySettings.IsTypeContainsOrgnization());
+                Assert.IsTrue(HierarchySettings.IsTypeContainsSite());
+                Assert.IsFalse(HierarchySettings.IsTypeContainsBuilding());
+
                 //Click "Save" button
                 TimeManager.MediumPause();
                 HierarchySettings.ClickSaveButton();
                 TimeManager.ShortPause();
 
                 //Verify that the "添加成功" message box popup, other is failed
-                string msgText = HierarchySettings.GetMessageText();
-                Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+                //string msgText = HierarchySettings.GetMessageText();
+                //Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
                 TimeManager.ShortPause();
 
                 //confirm message box
-                HierarchySettings.ConfirmCreateOKMagBox();
+                //HierarchySettings.ConfirmCreateOKMagBox();
                 TimeManager.LongPause();
             }
 
@@ -158,16 +163,66 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.ShortPause();
 
             //Verify that the "添加成功" message box popup, other is failed
-            string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            //string msgText = HierarchySettings.GetMessageText();
+            //Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
             TimeManager.ShortPause();
 
             //confirm message box
-            HierarchySettings.ConfirmCreateOKMagBox();
+            //HierarchySettings.ConfirmCreateOKMagBox();
             TimeManager.MediumPause();
 
             //Verify the comments not display
             Assert.IsTrue(HierarchySettings.IsCommentHidden());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Add-101-5")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-5")]
+        public void AddValidAndVerify(HierarchyData input)
+        {
+            //Add organization to "自动化测试"
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            HierarchySettings.ClickCreateChildHierarchyButton();
+            HierarchySettings.FillInHierarchyNode(input.InputData);
+
+            //Click "Save" button
+            TimeManager.ShortPause();
+            HierarchySettings.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            //Verify hierarchy node has been added correctly everywhere
+            //1. verify on system dimension configration
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
+            JazzFunction.SystemDimensionSettings.ShowHierarchyTree();
+            TimeManager.ShortPause();
+            JazzFunction.SystemDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+
+            //2. verify on area dimension configration
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
+            JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
+            TimeManager.ShortPause();
+            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+
+            //3. verify on hierarchy for data association
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+            JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+
+            //4. verify on system dimension for data association
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationSystemDimension);
+            JazzFunction.SystemDimensionSettings.ShowHierarchyTree();
+            TimeManager.ShortPause();
+            JazzFunction.SystemDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+
+            //5. verify on system dimension for data association
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
+            JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
+            TimeManager.ShortPause();
+            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+
+            //6. verify on energy analysis on energy view
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
         }
     }
 }

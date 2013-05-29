@@ -7,7 +7,7 @@
 		"ExpectedData":
 		{
 			"Name":"名称只能由汉字，半角英文字母, 数字, 下划线和空格组成 。该输入项为必输项",
-			"Code":"编码只能由半角英文字母，数字和下划线组成。该输入项为必输项",
+			"code":"编码只能由半角英文字母，数字和下划线组成。该输入项为必输项",
 			"Uom":"该输入项为必输项",
 			"Steps":"该输入项为必输项",
 			"CalculationType":"该输入项为必输项",
@@ -17,7 +17,7 @@
 		"InputData":
 		{
 			"Name":"#$%6",
-			"Code":"Alice11",
+			"code":"Alice11",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -32,7 +32,7 @@
 		"InputData":
 		{
 			"Name":"yazi",
-			"Code":"!?$%^+-,><",
+			"code":"!?$%^+-,><",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -40,7 +40,7 @@
 		},
 		"ExpectedData":
 		{
-			"Code":"编码只能由半角英文字母，数字和下划线组成",
+			"code":"编码只能由半角英文字母，数字和下划线组成",
 			
 		}
 	},
@@ -48,7 +48,7 @@
 		"InputData":
 		{
 			"Name":"heihei",
-			"Code":"hh",
+			"code":"hh",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",

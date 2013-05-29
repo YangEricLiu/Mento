@@ -7,7 +7,7 @@
        "ExpectedData":
 		{
 			"Name":"AliceKPI",
-			"Code":"KPI",
+			"code":"KPI",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -19,7 +19,7 @@
 			"InputData":
 		{
 			"Name":"#$%&*98",
-			"Code":"KPI_2",
+			"code":"KPI_2",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -29,7 +29,7 @@
 		 "ExpectedData":
 		{
 			"Name":"AliceKPI",
-			"Code":"KPI",
+			"code":"KPI",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -41,7 +41,7 @@
 		{
 			
 			"Name":"KPI",
-			"Code":"Ali",
+			"code":"Ali",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -51,7 +51,7 @@
 	    "ExpectedData":
 		{
 			"Name":"AliceKPI",
-			"Code":"KPI",
+			"code":"KPI",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -62,7 +62,7 @@
 		"InputData":
 		{
 			"Name":"KPI",
-			"Code":"!?$%^+-,><",
+			"code":"!?$%^+-,><",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -72,7 +72,7 @@
 	    "ExpectedData":
 		{
 			"Name":"AliceKPI",
-			"Code":"KPI",
+			"code":"KPI",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",

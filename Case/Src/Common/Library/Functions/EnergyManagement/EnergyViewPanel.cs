@@ -32,11 +32,20 @@ namespace Mento.ScriptCommon.Library.Functions
         public EnergyViewToolbar Toolbar = new EnergyViewToolbar();
 
         #region Hierarchy operations
-        public void SelectHierarchy(string[] hierarchyNames)
+        public Boolean SelectHierarchy(string[] hierarchyNames)
         {
-            SelectHierarchyButton.Click();
-
-            HierarchyTree.SelectNode(hierarchyNames);
+            try
+            {
+                SelectHierarchyButton.Click();
+                HierarchyTree.SelectNode(hierarchyNames);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
+            
         }
         #endregion
 

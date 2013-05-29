@@ -32,7 +32,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DeleteButton = JazzButton.HierarchySettingsDeleteButton;
 
         private static TextField NameTextField = JazzTextField.HierarchySettingsNameTextField;
-        private static TextField CodeTextField = JazzTextField.HierarchySettingsCodeTextField;
+        private static TextField codeTextField = JazzTextField.HierarchySettingscodeTextField;
         private static ComboBox HierarchyTypeComboBox = JazzComboBox.HierarchySettingsHierarchyTypeComboBox;
         private static TextField CommentTextField = JazzTextField.HierarchySettingsCommentTextField;
         #endregion
@@ -212,7 +212,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInHierarchyNode(HierarchyInputData input)
         {
             NameTextField.Fill(input.CommonName);
-            CodeTextField.Fill(input.Code);
+            codeTextField.Fill(input.Code);
             HierarchyTypeComboBox.SelectItem(input.Type);
             CommentTextField.Fill(input.Comments);
         }
@@ -232,9 +232,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="code">Hierarchy node code</param>
         /// <returns></returns>
-        public void FillInCode(string code)
+        public void FillIncode(string code)
         {
-            CodeTextField.Fill(code);
+            codeTextField.Fill(code);
         }
 
         /// <summary>
@@ -348,12 +348,22 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge whether invalid message of name field is correct
+        /// </summary>
+        /// <param name="output">string</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsNameInvalidMsgCorrect(string output)
+        {
+            return NameTextField.GetInvalidTips().Contains(output);
+        }
+
+        /// <summary>
         /// Judge whether the code textfield is invalid
         /// </summary>
         /// <returns>True if the code is invalid, false if not</returns>
-        public Boolean IsCodeInvalid()
+        public Boolean IscodeInvalid()
         {
-            return CodeTextField.IsTextFieldValueInvalid();
+            return codeTextField.IsTextFieldValueInvalid();
         }
 
         /// <summary>
@@ -361,9 +371,19 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="output">HierarchyExpectedData</param>
         /// <returns>whether the invalid message is ture</returns>
-        public Boolean IsCodeInvalidMsgCorrect(HierarchyExpectedData output)
+        public Boolean IscodeInvalidMsgCorrect(HierarchyExpectedData output)
         {
-            return CodeTextField.GetInvalidTips().Contains(output.Code);
+            return codeTextField.GetInvalidTips().Contains(output.Code);
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of code field is correct
+        /// </summary>
+        /// <param name="output">string</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IscodeInvalidMsgCorrect(string output)
+        {
+            return codeTextField.GetInvalidTips().Contains(output);
         }
 
         /// <summary>
@@ -386,6 +406,16 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">string</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsTypeInvalidMsgCorrect(string output)
+        {
+            return HierarchyTypeComboBox.GetInvalidTips().Contains(output);
+        }
+
+        /// <summary>
         /// Judge whether the Comments textfield is invalid
         /// </summary>
         /// <returns>True if the Comments is invalid, false if not</returns>
@@ -405,6 +435,16 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge whether invalid message of Comments field is correct
+        /// </summary>
+        /// <param name="output">HierarchyExpectedData</param>
+        /// <returns>whether the invalid message is true</returns>
+        public Boolean IsCommentsInvalidMsgCorrect(string output)
+        {
+            return CommentTextField.GetInvalidTips().Contains(output);
+        }
+
+        /// <summary>
         /// Return whether Name is enabled
         /// </summary>
         /// <returns>True if enabled</returns>
@@ -414,12 +454,12 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Return whether Code is enabled
+        /// Return whether code is enabled
         /// </summary>
         /// <returns>True if enabled</returns>
-        public Boolean IsCodeFieldEnabled()
+        public Boolean IscodeFieldEnabled()
         {
-            return CodeTextField.IsFieldEnabled();
+            return codeTextField.IsFieldEnabled();
         }
 
         /// <summary>
@@ -482,16 +522,16 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Get the hierarchy code expected value
         /// </summary>
-        /// <returns>Code value</returns>
-        public string GetCodeValue()
+        /// <returns>code value</returns>
+        public string GetcodeValue()
         {
-            return CodeTextField.GetValue();
+            return codeTextField.GetValue();
         }
 
         /// <summary>
         /// Get the hierarchy code expected value
         /// </summary>
-        /// <returns>Code value</returns>
+        /// <returns>code value</returns>
         public string GetTypeValue()
         {
             return HierarchyTypeComboBox.GetValue();

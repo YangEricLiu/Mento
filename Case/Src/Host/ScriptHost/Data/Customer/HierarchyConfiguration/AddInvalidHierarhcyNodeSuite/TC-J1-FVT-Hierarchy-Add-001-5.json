@@ -6,9 +6,9 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"该输入项为必输项",
-			"Code":"该输入项为必输项",
-			"Type":"该输入项为必输项",
+		    "CommonName":"必填项",
+			"code":"必填项",
+			"Type":"必填项",
 		}
 	}
 ]

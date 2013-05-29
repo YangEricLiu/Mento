@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Name":"AutoBuilding001",
-			"Code":"AutoBuilding001",
+			"code":"AutoBuilding001",
 			"Type":"Building",
 			"Comment":""
 		}

@@ -4,13 +4,13 @@
 		{	
 			"HierarchyNodePath":["自动化测试","AutoModifyOrg001"],
 			"CommonName":"AutoModifyOrg001_M中文",
-			"Code":"AutoModifyOrg001_M",
+			"code":"AutoModifyOrg001_M",
 			"Comments":"AutoModifyOrg001_M中文",
 		},
 		"ExpectedData":
 		{
 			"CommonName":"AutoModifyOrg001_M中文",
-			"Code":"AutoModifyOrg001_M",
+			"code":"AutoModifyOrg001_M",
 			"Comments":"AutoModifyOrg001_M中文",
 		    "Message":"修改成功",
 		}
@@ -20,13 +20,13 @@
 		{	
 			"HierarchyNodePath":["自动化测试","AutoModifyOrg001_M中文","AutoModifySite001"],
 			"CommonName":"AutoModifySite001_M中文",
-			"Code":"AutoModifySite001_M",
+			"code":"AutoModifySite001_M",
 			"Comments":"AutoModifySite001_M中文",
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"AutoModifySite001_M中文",
-			"Code":"AutoModifySite001_M",
+			"code":"AutoModifySite001_M",
 			"Comments":"AutoModifySite001_M中文",
 		    "Message":"修改成功",
 		}
@@ -36,13 +36,13 @@
 		{	
 			"HierarchyNodePath":["自动化测试", "AutoModifyOrg001_M中文", "AutoModifySite001_M中文", "AutoModifyBuilding001"],
 			"CommonName":"AutoModifyBuilding001_M中文",
-			"Code":"AutoModifyBuilding001_M",
+			"code":"AutoModifyBuilding001_M",
 			"Comments":"AutoModifyBuilding001_M中文",
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"AutoModifyBuilding001_M中文",
-			"Code":"AutoModifyBuilding001_M",
+			"code":"AutoModifyBuilding001_M",
 			"Comments":"AutoModifyBuilding001_M中文",
 		    "Message":"修改成功",
 		}

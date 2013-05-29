@@ -30,7 +30,7 @@
   <!--Hierarchy Setting-->
   <add key = "AddHierarchyButton" value = "st-hier-tree-add-btnInnerEl" type = "ID"/>
   <add key = "HierarchyName" value = "Name" type = "Name"/>
-  <add key = "HierarchyCode" value = "Code" type = "Name"/>
+  <add key = "Hierarchycode" value = "code" type = "Name"/>
   <add key = "HierarchyType" value = "Type" type = "Name"/>
   <add key = "Orgnization" value = "//li[text()='Common.Glossary.Organization']" type = "Xpath"/>
   <add key = "Site" value = "//li[text()='Common.Glossary.Site']" type = "Xpath"/>
@@ -57,7 +57,7 @@
   <add key = "VtagSaveButton" value = "//span[text()='Common.Button.Save']" type = "Xpath"/>
   <add key = "VtagCancelButton" value = "//span[text()='Common.Button.Cancel']" type = "Xpath"/>
   <add key = "VtagName" value = "Name" type = "Name"/>
-  <add key = "VtagCode" value = "Code" type = "Name"/>
+  <add key = "Vtagcode" value = "code" type = "Name"/>
   <add key = "VtagCommodity" value = "CommodityId" type = "Name"/>
   <add key = "Electric" value = "//li[text()='Common.Commodity.Electric'" type = "Xpath"/>
   <add key = "VtagUOM" value ="UomId" type = "Name"/>
@@ -72,8 +72,8 @@
   <add key = "PtagSaveButton" value = "//span[text()='Common.Button.Save']" type = "Xpath"/>
   <add key = "PtagUpdateButton" value = "//span[text()='Common.Operation.Update']" type = "Xpath"/>
   <add key = "PtagName" value = "Name" type = "Name"/>
-  <add key = "PtagCode" value = "Code" type = "Name"/>
-  <add key = "PtagMeterCode" value = "MeterCode" type = "Name"/>
+  <add key = "Ptagcode" value = "code" type = "Name"/>
+  <add key = "PtagMetercode" value = "Metercode" type = "Name"/>
   <add key = "PtagChannelId" value = "ChannelId" type = "Name"/>
   <add key = "PtagCommodityId" value = "CommodityId" type = "Name"/>
   <add key = "PtagUomId" value = "UomId" type = "Name"/>

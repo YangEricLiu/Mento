@@ -70,11 +70,11 @@ namespace Mento.Script.Customer.TagAssociation
             //And not display on disassociate tag list
             Association.ClickAssociateButton();
             TimeManager.ShortPause();
-            Assert.IsTrue(Association.IsTagOnAssociategGridView(input.InputData.TagName));
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.InputData.TagName));
 
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
-            Assert.IsFalse(Association.IsTagOnAssociategGridView(input.InputData.TagName));
+            Assert.IsFalse(Association.IsTagOnAssociatedGridView(input.InputData.TagName));
         }
     }
 }

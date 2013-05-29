@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","CheckModifyOrg001"],
+			"CommonName":"CheckModifyOrg001_M中文",
+			"code":"CheckModifyOrg001_M",
+			"Comments":"CheckModifyOrg001_M中文",
+		},
+		"ExpectedData":
+		{
+			"HierarchyNodePath":["自动化测试","CheckModifyOrg001_M中文"],
+			"CommonName":"CheckModifyOrg001_M中文",
+			"code":"CheckModifyOrg001_M",
+			"Comments":"CheckModifyOrg001_M中文",
+		    "Message":"修改成功",
+		}
+	}
+]

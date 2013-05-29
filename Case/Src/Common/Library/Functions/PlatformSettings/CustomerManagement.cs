@@ -26,7 +26,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button UploadLogoButton = JazzButton.UploadLogoButton;
         private static Button SaveCustomer = JazzButton.SaveCustomerButton;
         private static TextField CustomerName = JazzTextField.CustomerNameTextField;
-        private static TextField CustomerCode = JazzTextField.CustomerCodeTextField;
+        private static TextField Customercode = JazzTextField.CustomercodeTextField;
         private static TextField CustomerAddress = JazzTextField.CustomerAddressTextField;
         private static TextField CustomerManager = JazzTextField.CustomerManagerTextField;
         private static TextField CustomerTelephone = JazzTextField.CustomerTelephoneTextField;
@@ -52,7 +52,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInCustomerInfo(CustomerInputData　inputData)
         {
             CustomerName.Fill(inputData.Name);
-            CustomerCode.Fill(inputData.Code);
+            Customercode.Fill(inputData.code);
             //UploadLogoPicture(inputData.LogoPath);
             CustomerAddress.Fill(inputData.Address);
             CustomerManager.Fill(inputData.ResponsiblePerson);

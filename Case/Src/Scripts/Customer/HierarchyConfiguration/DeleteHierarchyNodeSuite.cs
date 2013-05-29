@@ -78,7 +78,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [CaseID("TC-J1-FVT-Hierarchy-Delete-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(DeleteHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Delete-101-1")]
-        public void DeleteLeafNode(HierarchyData input)
+        public void DeleteLeafAndNonLeafNode(HierarchyData input)
         {
             //Select one leaf node
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -91,25 +91,10 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //confirm message box
             HierarchySettings.ConfirmErrorMsgBox();
+            TimeManager.ShortPause();
 
-            if (null != input.ExpectedData.ErrorMessage)
-            {
-                //Verify that message box popup for confirm delete
-                msgText = HierarchySettings.GetMessageText();
-                Assert.IsTrue(msgText.Contains(input.ExpectedData.ErrorMessage));
-                TimeManager.ShortPause();
-
-                //confirm message box
-                HierarchySettings.ConfirmErrorMsgBox();
-
-                //Verify the node not be deleted
-                Assert.IsTrue(HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
-            }
-            else
-            {
-                //Verify the node has been deleted
-                Assert.IsFalse(HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
-            }
+            //Verify the node has been deleted
+            Assert.IsFalse(HierarchySettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath));
         }
 
         [Test]
@@ -118,6 +103,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(DeleteHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Delete-101-2")]
         public void DeleteNodeWithTags(HierarchyData input)
         {
+            string tag1 = "Ptag_OrgWithTags_Delete001";
+            string tag2 = "Vtag_OrgWithTags_Delete001";
+
             //Select one leaf node
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickDeleteButton();
@@ -128,10 +116,89 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.ShortPause();
 
             //confirm message box
-            HierarchySettings.CancelErrorMsgBox();
+            HierarchySettings.ConfirmErrorMsgBox();
 
             //Verify the node has been deleted
             Assert.IsFalse(HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
+
+            //verify the associated tags are on disassociated list
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+            Assert.IsFalse(JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
+            JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            JazzFunction.AssociateSettings.ClickAssociateButton();
+            TimeManager.MediumPause();
+            Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(tag1));
+            Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(tag2));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Delete-101-3")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(DeleteHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Delete-101-3")]
+        public void DeleteNodeAndVerify(HierarchyData input)
+        {
+
+            //Select one leaf node
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            HierarchySettings.ClickDeleteButton();
+
+            //Verify that message box popup for confirm delete
+            string msgText = HierarchySettings.GetMessageText();
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            TimeManager.ShortPause();
+
+            //confirm message box
+            HierarchySettings.ConfirmErrorMsgBox();
+
+            //1. Verify the node has been deleted
+            Assert.IsFalse(HierarchySettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath));
+
+            //2. refresh the page and verify the node has been deleted
+            JazzFunction.Navigator.NavigateHome();
+            HierarchySettings.NavigatorToHierarchySetting();
+            Assert.IsFalse(HierarchySettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath));
+
+            //3. verify the the node has been deleted on associated tag page
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+            Assert.IsFalse(JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath));
+
+            //4. verify the node has been deleted on energy view page
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Delete-101-4")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(DeleteHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Delete-101-4")]
+        public void DeleteParentNodewithChildNodeTags(HierarchyData input)
+        {
+            string tag1 = "Ptag_OrgWithTags_Delete002";
+            string tag2 = "Vtag_OrgWithTags_Delete002";
+
+            //Select one leaf node
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            HierarchySettings.ClickDeleteButton();
+
+            //Verify that message box popup for confirm delete
+            string msgText = HierarchySettings.GetMessageText();
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            TimeManager.ShortPause();
+
+            //confirm message box
+            HierarchySettings.ConfirmErrorMsgBox();
+
+            //Verify the node has been deleted
+            Assert.IsFalse(HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
+
+            //verify the associated tags are on disassociated list
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+            Assert.IsFalse(JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
+            JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            JazzFunction.AssociateSettings.ClickAssociateButton();
+            TimeManager.MediumPause();
+            Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(tag1));
+            Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(tag2));
         }
     }
 }

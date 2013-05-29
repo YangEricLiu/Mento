@@ -64,7 +64,7 @@ I18N.Login = {};
 I18N.Login.Label = {};
 
 I18N.TotalConsumption.Name = '能效总览';
-I18N.TotalConsumption.Code = '能效总览编码';
+I18N.TotalConsumption.code = '能效总览编码';
 I18N.Setting.TotalConsumption.Name = '能效总览';
 
 I18N.DateTimeFormat.ExtFormat.LongDateFormat = 'Y年m月d号，周D';
@@ -200,7 +200,7 @@ I18N.Setting.Hierarchy.Label.CreateSubHierarchyBtn = '子层级';
 //I18N.Setting.Hierarchy.Label.DeleteAreaWindowTitle = '##Common.Operation.Delete####Common.Glossary.Area##';
 //I18N.Setting.Hierarchy.Label.DeleteMeterWindowTitle = '##Common.Operation.Delete####Common.Glossary.Meter##';
 //I18N.Setting.Hierarchy.Label.DeleteTagWindowTitle = '##Common.Operation.Delete####Common.Glossary.Tag##';
-//I18N.Setting.Hierarchy.Label.BuildingAreaCodeRegexError = '##Common.Glossary.Code##只能由半角英文字母，数字和下划线组成。';
+//I18N.Setting.Hierarchy.Label.BuildingAreacodeRegexError = '##Common.Glossary.code##只能由半角英文字母，数字和下划线组成。';
 //I18N.Setting.Hierarchy.Label.TagChannelRegexError = '必须是小于9223372036854775807的正整数';
 //I18N.Setting.Hierarchy.Label.NoUpdates = '未作任何更改。需要关闭修改窗口吗？';
 //I18N.Setting.Hierarchy.Label.UnAssociatePTag = '未分类##Common.Glossary.PhysicalTag##';
@@ -397,7 +397,7 @@ I18N.Common.Label.ConfirmLongTermOperation = '本操作耗时较长，确定开�
 I18N.Common.Label.UnExpectedData = '存在非法数据，无法绘制饼图';
 I18N.Common.Label.DashboardWasBroken = '这个##Common.Glossary.Dashboard##看起来已经坏掉了，联系管理员来帮你恢复它吧。';
 
-I18N.Common.Label.CodeRegexError = '##Common.Glossary.Code##只能由半角英文字母，数字和下划线组成。';
+I18N.Common.Label.codeRegexError = '##Common.Glossary.code##只能由半角英文字母，数字和下划线组成。';
 I18N.Common.Label.NameRegexError = '##Common.Glossary.Name##只能由汉字，半角英文字母, 数字, 下划线和空格组成。';
 I18N.Common.Label.CommentRegexError = '##Common.Glossary.Comment##只能由汉字，半角英文字母, 数字,下划线和空格组成。';
 I18N.Common.Label.CommonRegexError = '只能由汉字，半角英文字母, 数字,下划线和空格组成。';
@@ -459,13 +459,13 @@ I18N.Common.Glossary.Customer = '客户';
 I18N.Common.Glossary.User = '用户';
 I18N.Common.Glossary.Name = '名称';
 I18N.Common.Glossary.WidgetName = '##Common.Glossary.Widget####Common.Glossary.Name##';
-I18N.Common.Glossary.Code = '编码';
+I18N.Common.Glossary.code = '编码';
 I18N.Common.Glossary.Comment = '备注';
 I18N.Common.Glossary.Function = '功能';
 I18N.Common.Glossary.Tag = '数据点';
 I18N.Common.Glossary.Type = '类型';
 I18N.Common.Glossary.Formula = '计算公式';
-I18N.Common.Glossary.MeterCode = '表编码';
+I18N.Common.Glossary.Metercode = '表编码';
 I18N.Common.Glossary.PhysicalTag = '物理数据点';
 I18N.Common.Glossary.VirtualTag = '虚拟数据点';
 
@@ -534,7 +534,7 @@ I18N.Common.Glossary.WeekDay.Sunday = '周日';
 
 
 I18N.Message.MAjaxInvokeFailure = 'AJAX调用失败<br/>HTTP代码:[{0}]<br/>HTTP消息:[{1}]<br/>URL:[{2}]';
-I18N.Message.UndefinedErrorCode = '未定义错误消息。';
+I18N.Message.UndefinedErrorcode = '未定义错误消息。';
 I18N.Message.LoginTimeout = '登录超时，请重新登录！';
 I18N.Message.NetworkProblem = '操作失败，请检查您的网络后重试。';
 
@@ -543,10 +543,10 @@ I18N.Message.M8 = '没有功能权限。';
 I18N.Message.M9 = '没有数据权限。';
 I18N.Message.M01001 = '参数传递错误，层级节点数据为空。';
 I18N.Message.M01002 = '##Common.Glossary.Hierarchy##的ID非法，无法保存。';
-I18N.Message.M01003 = '##Common.Glossary.Hierarchy##的##Common.Glossary.Code##不能为空，无法保存。';
-I18N.Message.M01004 = '##Common.Glossary.Hierarchy##的##Common.Glossary.Code##超过最大长度限制，无法保存。';
-I18N.Message.M01005 = '##Common.Glossary.Hierarchy##的##Common.Glossary.Code##非法，无法保存。';
-I18N.Message.M01006 = '##Common.Glossary.Hierarchy##的##Common.Glossary.Code##重复，无法保存。';
+I18N.Message.M01003 = '##Common.Glossary.Hierarchy##的##Common.Glossary.code##不能为空，无法保存。';
+I18N.Message.M01004 = '##Common.Glossary.Hierarchy##的##Common.Glossary.code##超过最大长度限制，无法保存。';
+I18N.Message.M01005 = '##Common.Glossary.Hierarchy##的##Common.Glossary.code##非法，无法保存。';
+I18N.Message.M01006 = '##Common.Glossary.Hierarchy##的##Common.Glossary.code##重复，无法保存。';
 I18N.Message.M01007 = '##Common.Glossary.Hierarchy##的##Common.Glossary.Name##不能为空，无法保存。';
 I18N.Message.M01008 = '##Common.Glossary.Hierarchy##的##Common.Glossary.Name##超过最大长度限制，无法保存。';
 I18N.Message.M01009 = '##Common.Glossary.Hierarchy##的##Common.Glossary.Name##非法，无法保存。';
@@ -562,7 +562,7 @@ I18N.Message.M01304 = '该##Common.Glossary.Tag##未与任何##Common.Glossary.H
 
 //I18N.Message.M01015 = '##Message.M01007##';
 //I18N.Message.M01016 = '##Message.M01008##';
-//I18N.Message.M01017 = '同一##Common.Glossary.Customer##下已存在相同##Common.Glossary.Code##的##Common.Glossary.Building##，无法保存。';
+//I18N.Message.M01017 = '同一##Common.Glossary.Customer##下已存在相同##Common.Glossary.code##的##Common.Glossary.Building##，无法保存。';
 //I18N.Message.M01018 = '##Message.M01001##';
 //I18N.Message.M01019 = '##Message.M01002##';
 //I18N.Message.M01020 = '##Message.M01007##';
@@ -571,7 +571,7 @@ I18N.Message.M01304 = '该##Common.Glossary.Tag##未与任何##Common.Glossary.H
 //I18N.Message.M01025 = '##Message.M01002##';
 //I18N.Message.M01026 = '##Message.M01007##';
 //I18N.Message.M01027 = '##Message.M01008##';
-//I18N.Message.M01028 = '同一##Common.Glossary.Building##下已存在相同##Common.Glossary.Code##的##Common.Glossary.Meter##，无法保存。';
+//I18N.Message.M01028 = '同一##Common.Glossary.Building##下已存在相同##Common.Glossary.code##的##Common.Glossary.Meter##，无法保存。';
 //I18N.Message.M01029 = '##Message.M01001##';
 //I18N.Message.M01030 = '##Message.M01002##';
 //I18N.Message.M01031 = '##Message.M01007##';
@@ -579,7 +579,7 @@ I18N.Message.M01304 = '该##Common.Glossary.Tag##未与任何##Common.Glossary.H
 //I18N.Message.M01033 = '同一##Common.Glossary.Meter##下不能存在重复的##Common.Glossary.Channel##，无法保存。';
 
 /******
-Energy Error Code
+Energy Error code
 *******/
 
 
@@ -610,7 +610,7 @@ I18N.Message.M08214 = '当前区域维度节点无子节点';
 I18N.Message.M02017 = '数据点关联发生变化，无法绘图';
 
 /******
-SystemDimension Error Code, NOTE that for error of 
+SystemDimension Error code, NOTE that for error of 
 04050,04052,04053,04054, 
 refresh is needed.
 04051 should refresh hierarchy tree
@@ -656,7 +656,7 @@ I18N.Message.M10021 = "有功电量Tag为无效数据";
 I18N.Message.M10007 = '峰谷平电价展示不支持按小时展示';
 
 /******
-TOU Tariff Error Code
+TOU Tariff Error code
 *******/
 I18N.Message.M03025 = '价格策略配置已被他人修改';
 I18N.Message.M03026 = '峰值季节配已被他人修改';
@@ -680,7 +680,7 @@ I18N.Message.M03903 = '价格策略名称中包含非法字符';
 
 
 /******
-Dashboard Error Code, NOTE that for error of 
+Dashboard Error code, NOTE that for error of 
 05002
 refresh is needed.
 05011 should refresh hierarchy tree
@@ -701,7 +701,7 @@ I18N.Message.M05013 = '当前的##Common.Glossary.HierarchyNode##的##Common.Glo
 I18N.Message.M05014 = '我的收藏已满，请删除部分内容后继续';
 
 /******
-Tag Error Code, NOTE that for error of 06001, 06117,06152,06139,06154,06156, refresh is needed.
+Tag Error code, NOTE that for error of 06001, 06117,06152,06139,06154,06156, refresh is needed.
 *******/
 I18N.Message.M06001 = '##Common.Glossary.Tag##所关联的##Common.Glossary.Hierarchy##为空或已被其他用户删除，无法保存。';
 I18N.Message.M06100 = '##Common.Glossary.Tag##可能已经被删除，无法加载。';
@@ -709,16 +709,16 @@ I18N.Message.M06100 = '##Common.Glossary.Tag##可能已经被删除，无法加�
 //I18N.Message.M06102 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Name##不能为空，无法保存。';
 //I18N.Message.M06103 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Name##超过最大长度限制，无法保存。';
 I18N.Message.M06104 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Name##重复，无法保存。';
-//I18N.Message.M06105 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Code##不能为空，无法保存。';
-//I18N.Message.M06106 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Code##超过最大长度限制，无法保存。';
-I18N.Message.M06107 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Code##重复，无法保存。';
-//I18N.Message.M06108 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Code##非法，无法保存。';
+//I18N.Message.M06105 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.code##不能为空，无法保存。';
+//I18N.Message.M06106 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.code##超过最大长度限制，无法保存。';
+I18N.Message.M06107 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.code##重复，无法保存。';
+//I18N.Message.M06108 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.code##非法，无法保存。';
 I18N.Message.M06109 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Channel##重复，无法保存。';
 //I18N.Message.M06110 = '对于指定##Common.Glossary.Type##的##Common.Glossary.PhysicalTag##，##Common.Glossary.Commodity##非法，无法保存。';
 //I18N.Message.M06111 = '对于指定##Common.Glossary.Type##的##Common.Glossary.PhysicalTag##，##Common.Glossary.Commodity##不能为空，无法保存。';
-I18N.Message.M06112 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.MeterCode##不能为空，无法保存。';
-//I18N.Message.M06113 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.MeterCode##超过最大长度限制，无法保存。';
-//I18N.Message.M06114 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.MeterCode##非法，无法保存。';
+I18N.Message.M06112 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Metercode##不能为空，无法保存。';
+//I18N.Message.M06113 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Metercode##超过最大长度限制，无法保存。';
+//I18N.Message.M06114 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Metercode##非法，无法保存。';
 //I18N.Message.M06115 = '##I18N.Common.Glossary.PhysicalTag##的##Common.Glossary.Status##非法，无法保存。';
 //I18N.Message.M06116 = '##I18N.Common.Glossary.PhysicalTag##';
 //I18N.Message.M06117 = '该##Common.Glossary.PhysicalTag##已被其他用户修改或删除，界面将被刷新。';
@@ -729,10 +729,10 @@ I18N.Message.M06112 = '##Common.Glossary.PhysicalTag##的##Common.Glossary.Meter
 I18N.Message.M06122 = '##Common.Glossary.VirtualTag##的##Common.Glossary.Name##重复，无法保存。';
 //I18N.Message.M06123 = '##Common.Glossary.VirtualTag##';
 //I18N.Message.M06124 = '##Common.Glossary.VirtualTag##';
-//I18N.Message.M06125 = '##Common.Glossary.VirtualTag##的##Common.Glossary.Code##不能为空，无法保存。';
-//I18N.Message.M06126 = '##Common.Glossary.VirtualTag##的##Common.Glossary.Code##超过最大长度限制，无法保存。';
-I18N.Message.M06127 = '##Common.Glossary.VirtualTag##的##Common.Glossary.Code##重复，无法保存。';
-//I18N.Message.M06128 = '##Common.Glossary.VirtualTag##的##Common.Glossary.Code##非法，无法保存。';
+//I18N.Message.M06125 = '##Common.Glossary.VirtualTag##的##Common.Glossary.code##不能为空，无法保存。';
+//I18N.Message.M06126 = '##Common.Glossary.VirtualTag##的##Common.Glossary.code##超过最大长度限制，无法保存。';
+I18N.Message.M06127 = '##Common.Glossary.VirtualTag##的##Common.Glossary.code##重复，无法保存。';
+//I18N.Message.M06128 = '##Common.Glossary.VirtualTag##的##Common.Glossary.code##非法，无法保存。';
 //I18N.Message.M06129 = '对于指定##Common.Glossary.Type##的##Common.Glossary.VirtualTag##，##Common.Glossary.Commodity##非法，无法保存。';
 //I18N.Message.M06130 = '对于指定##Common.Glossary.Type##的##Common.Glossary.VirtualTag##，##Common.Glossary.Commodity##不能为空，无法保存。';
 //I18N.Message.M06131 = '##Common.Glossary.VirtualTag##的##Common.Glossary.Commodity##重复，无法保存。';
@@ -805,8 +805,8 @@ I18N.Auth.Message.UserValidationError = '用户名密码不匹配。';
 I18N.Setting.Hierarchy.Label.Population = '人口属性';
 I18N.Setting.Hierarchy.Label.PopulationUnit = '人口单位';
 I18N.Setting.Hierarchy.Label.PopulationUnitValue = '个';
-I18N.Setting.Hierarchy.Label.PopulationCode = '人口编码';
-I18N.Setting.Hierarchy.Label.PopulationCodeValue = 'TotalPopulation';
+I18N.Setting.Hierarchy.Label.Populationcode = '人口编码';
+I18N.Setting.Hierarchy.Label.PopulationcodeValue = 'TotalPopulation';
 I18N.Setting.Hierarchy.Label.PopulationStartDate = '起始日期';
 I18N.Setting.Hierarchy.Label.PopulationNumber = '总人数';
 I18N.Setting.Hierarchy.Button.PopulationNewProperty = '+创建新属性';
@@ -815,14 +815,14 @@ I18N.Setting.Hierarchy.Message.PopulationReduplicate = '人口属性重复。';
 I18N.Setting.Hierarchy.Label.Area = '面积属性';
 I18N.Setting.Hierarchy.Label.AreaUnit = '面积单位';
 I18N.Setting.Hierarchy.Label.AreaUnitValue = '平方米';
-I18N.Setting.Hierarchy.Label.AAreaCode = '总面积编码';
-I18N.Setting.Hierarchy.Label.AAreaCodeValue = 'TotalArea';
+I18N.Setting.Hierarchy.Label.AAreacode = '总面积编码';
+I18N.Setting.Hierarchy.Label.AAreacodeValue = 'TotalArea';
 I18N.Setting.Hierarchy.Label.AArea = '总面积';
-I18N.Setting.Hierarchy.Label.WAreaCode = '采暖面积编码';
-I18N.Setting.Hierarchy.Label.WAreaCodeValue = 'HeatingArea';
+I18N.Setting.Hierarchy.Label.WAreacode = '采暖面积编码';
+I18N.Setting.Hierarchy.Label.WAreacodeValue = 'HeatingArea';
 I18N.Setting.Hierarchy.Label.WArea = '采暖面积';
-I18N.Setting.Hierarchy.Label.CAreaCode = '采冷面积编码';
-I18N.Setting.Hierarchy.Label.CAreaCodeValue = 'CoolingArea';
+I18N.Setting.Hierarchy.Label.CAreacode = '采冷面积编码';
+I18N.Setting.Hierarchy.Label.CAreacodeValue = 'CoolingArea';
 I18N.Setting.Hierarchy.Label.CArea = '采冷面积';
 
 //I18N.Message.M01051 = '该##Common.Glossary.Hierarchy##已被其他用户删除，层级树将被刷新。';

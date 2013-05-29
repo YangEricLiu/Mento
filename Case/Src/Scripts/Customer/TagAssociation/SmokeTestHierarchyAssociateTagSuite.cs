@@ -62,10 +62,10 @@ namespace Mento.Script.Customer.TagAssociation
 
             //Verify the tag is  display on associated tag list
             //And not display on disassociate tag list
-            Assert.IsTrue(Association.IsTagOnAssociategGridView(input.InputData.TagName));
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.InputData.TagName));
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
-            Assert.IsFalse(Association.IsTagOnAssociategGridView(input.InputData.TagName));
+            Assert.IsFalse(Association.IsTagOnAssociatedGridView(input.InputData.TagName));
         }
     }
 }

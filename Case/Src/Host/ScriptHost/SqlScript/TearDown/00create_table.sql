@@ -628,7 +628,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Uom](
 	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[Code] [nvarchar](100) NULL,
+	[code] [nvarchar](100) NULL,
 	[Comment] [nvarchar](200) NULL,
 	[Status] [int] NULL,
 	[UpdateUser] [nvarchar](100) NULL,
@@ -647,7 +647,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Timezone](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Code] [nvarchar](100) NULL,
+	[code] [nvarchar](100) NULL,
 	[Offset] [decimal](18, 0) NULL,
 	[Comment] [nvarchar](200) NULL,
 	[Status] [int] NULL,
@@ -689,7 +689,7 @@ GO
 CREATE TABLE [dbo].[Hierarchy](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Type] [int] NULL,
-	[Code] [nvarchar](100) NULL,
+	[code] [nvarchar](100) NULL,
 	[Name] [nvarchar](100) NULL,
 	[TimezoneId] [bigint] NULL,
 	[Comment] [nvarchar](200) NULL,
@@ -718,7 +718,7 @@ GO
 CREATE TABLE [dbo].[AdvancedProperty](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](100) NOT NULL,
-	[Code] [nvarchar](100) NOT NULL,
+	[code] [nvarchar](100) NOT NULL,
 	[HierarchyId] [bigint] NOT NULL,
 	[UomId] [bigint] NOT NULL,
 	[Type] [int] NOT NULL,
@@ -757,7 +757,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Commodity](
 	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[Code] [nvarchar](100) NULL,
+	[code] [nvarchar](100) NULL,
 	[Comment] [nvarchar](200) NULL,
 	[Status] [int] NULL,
 	[UpdateUser] [nvarchar](100) NULL,
@@ -859,7 +859,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[AreaDimension](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Code] [nvarchar](100) NULL,
+	[code] [nvarchar](100) NULL,
 	[Name] [nvarchar](100) NULL,
 	[Comment] [nvarchar](200) NULL,
 	[ParentId] [bigint] NULL,
@@ -901,7 +901,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[SystemDimensionTemplateItem](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[Code] [nvarchar](100) NOT NULL,
+	[code] [nvarchar](100) NOT NULL,
 	[Name] [nvarchar](100) NULL,
 	[Comment] [nvarchar](200) NULL,
 	[ParentId] [bigint] NULL,
@@ -942,12 +942,12 @@ GO
 CREATE TABLE [dbo].[Tag](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
 	[Type] [int] NOT NULL,
-	[GuidCode] [bigint] NOT NULL,
-	[Code] [nvarchar](100) NOT NULL,
+	[Guidcode] [bigint] NOT NULL,
+	[code] [nvarchar](100) NOT NULL,
 	[Name] [nvarchar](100) NOT NULL,
 	[TimezoneId] [bigint] NOT NULL,
 	[Comment] [nvarchar](200) NULL,
-	[MeterCode] [nvarchar](100) NULL,
+	[Metercode] [nvarchar](100) NULL,
 	[ChannelId] [int] NULL,
 	[CalculationType] [int] NOT NULL,
 	[CalculationStep] [int] NULL,
@@ -979,7 +979,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[TargetBaseline](
 	[Id] [bigint] IDENTITY(1,1) NOT NULL,
-	[GuidCode] [bigint] NOT NULL,
+	[Guidcode] [bigint] NOT NULL,
 	[Name] [nvarchar](100) NOT NULL,
 	[TagId] [bigint] NOT NULL,
 	[Type] [int] NOT NULL,
@@ -1086,11 +1086,11 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[UserTypePrivilegeLimit](
 	[UserTypeId] [bigint] NOT NULL,
-	[PrivilegeCode] [nvarchar](100) NOT NULL,
+	[Privilegecode] [nvarchar](100) NOT NULL,
  CONSTRAINT [PK_UserTypePrivilegeLimit] PRIMARY KEY CLUSTERED 
 (
 	[UserTypeId] ASC,
-	[PrivilegeCode] ASC
+	[Privilegecode] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -1101,14 +1101,14 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[UserTypePrivilege](
 	[UserTypeId] [bigint] NOT NULL,
-	[PrivilegeCode] [nvarchar](100) NOT NULL,
+	[Privilegecode] [nvarchar](100) NOT NULL,
 	[UpdateUser] [nvarchar](100) NOT NULL,
 	[UpdateTime] [datetime] NOT NULL,
 	[Version] [timestamp] NOT NULL,
  CONSTRAINT [PK_UserTypeRight] PRIMARY KEY CLUSTERED 
 (
 	[UserTypeId] ASC,
-	[PrivilegeCode] ASC
+	[Privilegecode] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -1197,7 +1197,7 @@ GO
 CREATE TABLE [dbo].[TouTariff](
 	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
 	[Name] [nvarchar](100) NULL,
-	[Code] [nvarchar](100) NULL,
+	[code] [nvarchar](100) NULL,
 	[Comment] [nvarchar](200) NULL,
 	[UpdateUser] [nvarchar](100) NULL,
 	[UpdateTime] [datetime] NULL,
@@ -1241,11 +1241,11 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Privilege](
-	[Code] [char](10) NOT NULL,
+	[code] [char](10) NOT NULL,
 	[Comment] [nvarchar](200) NOT NULL,
  CONSTRAINT [PK_Right] PRIMARY KEY CLUSTERED 
 (
-	[Code] ASC
+	[code] ASC
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -1360,7 +1360,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[UomGroup](
 	[Id] [bigint] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
-	[Code] [nvarchar](100) NULL,
+	[code] [nvarchar](100) NULL,
 	[Comment] [nvarchar](400) NULL,
 	[UpdateUser] [nvarchar](100) NULL,
 	[UpdateTime] [datetime] NULL,

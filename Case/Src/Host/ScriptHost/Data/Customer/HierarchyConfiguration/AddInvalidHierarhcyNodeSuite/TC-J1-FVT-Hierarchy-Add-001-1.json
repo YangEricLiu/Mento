@@ -1,10 +1,10 @@
-﻿/*using common.json*/
-
-[
+﻿[
 	{
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试"],
+			"CommonName":"OrgCancel",
+			"Code":"OrgCancel",
 			"Type":"Orgnization",
 		},
 		"ExpectedData":
@@ -16,6 +16,8 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+			"CommonName":"SiteCancel",
+			"Code":"SiteCancel",
 			"Type":"Site",
 		},
 		"ExpectedData":
@@ -27,6 +29,8 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试", "AutoOrg001", "AutoSite001"],
+			"CommonName":"BuildCancel",
+			"Code":"BuildCancel",
 			"Type":"Building",
 		},
 		"ExpectedData":

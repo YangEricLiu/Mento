@@ -78,10 +78,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Verify that the error message popup and the input field is invalid
             Assert.IsTrue(HierarchySettings.IsNameInvalid());
             Assert.IsTrue(HierarchySettings.IsNameInvalidMsgCorrect(input.ExpectedData));
-            Assert.IsTrue(HierarchySettings.IsCodeInvalid());
-            Assert.IsTrue(HierarchySettings.IsCodeInvalidMsgCorrect(input.ExpectedData));
-            Assert.IsTrue(HierarchySettings.IsTypeInvalid());
-            Assert.IsTrue(HierarchySettings.IsTypeInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(HierarchySettings.IscodeInvalid());
+            Assert.IsTrue(HierarchySettings.IscodeInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(HierarchySettings.IsCommentsInvalid(input.ExpectedData));
             Assert.IsTrue(HierarchySettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
         }
@@ -90,7 +88,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [CaseID("TC-J1-FVT-Hierarchy-Add-001-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-3")]
-        public void AddSameCode(HierarchyData input)
+        public void AddSamecode(HierarchyData input)
         {
             //xxx
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -102,13 +100,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
-            //Verify that message box popup for failed
-            string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            TimeManager.ShortPause();
-
-            //confirm message box
-            HierarchySettings.ConfirmErrorMsgBox();
+            Assert.IsTrue(HierarchySettings.IscodeInvalid());
+            Assert.IsTrue(HierarchySettings.IscodeInvalidMsgCorrect(input.ExpectedData));
 
             //Verify nodes are not added as children
             Assert.IsFalse(HierarchySettings.IsNodesChildParent(input.InputData.CommonName, input.InputData.HierarchyNodePath.Last()));
@@ -130,13 +123,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
-            //Verify that message box popup for failed
-            string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            TimeManager.ShortPause();
-
-            //confirm message box
-            HierarchySettings.ConfirmErrorMsgBox();
+            Assert.IsTrue(HierarchySettings.IsNameInvalid());
+            Assert.IsTrue(HierarchySettings.IsNameInvalidMsgCorrect(input.ExpectedData));
         }
 
         [Test]
@@ -157,8 +145,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Verify that the error message popup and the input field is invalid
             Assert.IsTrue(HierarchySettings.IsNameInvalid());
             Assert.IsTrue(HierarchySettings.IsNameInvalidMsgCorrect(input.ExpectedData));
-            Assert.IsTrue(HierarchySettings.IsCodeInvalid());
-            Assert.IsTrue(HierarchySettings.IsCodeInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(HierarchySettings.IscodeInvalid());
+            Assert.IsTrue(HierarchySettings.IscodeInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(HierarchySettings.IsTypeInvalid());
             Assert.IsTrue(HierarchySettings.IsTypeInvalidMsgCorrect(input.ExpectedData));
             Assert.IsFalse(HierarchySettings.IsCommentsInvalid(input.ExpectedData));

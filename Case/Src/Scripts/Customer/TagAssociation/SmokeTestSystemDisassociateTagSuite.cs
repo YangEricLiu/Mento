@@ -66,12 +66,12 @@ namespace Mento.Script.Customer.TagAssociation
             //Verify the tag is not on associated tag list
             Disassociation.ClickDisassociateButton();
             TimeManager.ShortPause();
-            Assert.IsFalse(Association.IsTagOnAssociategGridView(input.InputData.TagName));
+            Assert.IsFalse(Association.IsTagOnAssociatedGridView(input.InputData.TagName));
 
             //Verify the tag is on disassociated tag list
             Association.ClickAssociateTagButton();
             TimeManager.ShortPause();
-            Assert.IsTrue(Association.IsTagOnAssociategGridView(input.InputData.TagName));
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.InputData.TagName));
         }
     }
 }

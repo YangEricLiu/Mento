@@ -10,6 +10,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
     public class ComboBox : JazzControl
     {
         private const string COMBOBOXITEMVARIABLENAME = "itemKey";
+        private Locator InvalidTips = new Locator("../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]",ByType.XPath);
 
         protected IWebElement SelectTrigger 
         {
@@ -125,7 +126,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns>the invalid input tooltips info</returns>
         public string GetInvalidTips()
         {
-            return this.SelectInput.GetAttribute("data-errorqtip");
+            return FindChild(InvalidTips).Text;
         }
 
         /// <summary>

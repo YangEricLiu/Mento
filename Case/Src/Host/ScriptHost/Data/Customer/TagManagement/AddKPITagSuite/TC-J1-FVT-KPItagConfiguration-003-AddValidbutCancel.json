@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Name":"AliceKPI",
-			"Code":"AliceKPI",
+			"code":"AliceKPI",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -13,7 +13,7 @@
 		"ExpectedData":
 		{
 			"Name":"KPI",
-			"Code":"Alice1",
+			"code":"Alice1",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",

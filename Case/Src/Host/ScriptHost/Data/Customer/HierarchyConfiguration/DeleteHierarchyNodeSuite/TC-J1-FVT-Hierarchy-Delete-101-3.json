@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "DeleteOrg001"],
+		},
+		"ExpectedData":
+		{
+			"HierarchyNodePath":["自动化测试", "DeleteOrg001"],
+			"Message":"删除层级节点“DeleteOrg001”吗？\r\n您将同时删除层级节点下所有的子节点，维度结构，数据点关联关系，以及间接关联的所有信息",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "DeleteOrg002", "DeleteSite002"],
+		},
+		"ExpectedData":
+		{
+			"HierarchyNodePath":["自动化测试", "DeleteOrg002", "DeleteSite002", "DeleteBuild002"],
+			"Message":"删除层级节点“DeleteSite002”吗？\r\n您将同时删除层级节点下所有的子节点，维度结构，数据点关联关系，以及间接关联的所有信息",
+		}
+	}
+]

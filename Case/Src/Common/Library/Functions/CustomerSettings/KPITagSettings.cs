@@ -34,7 +34,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button FormulaCancel = JazzButton.KPITagSettingsFormulaCancel;
     
         private static TextField NameTextField = JazzTextField.KPITagSettingsNameTextField;
-        private static TextField CodeTextField = JazzTextField.KPITagSettingsCodeTextField;
+        private static TextField codeTextField = JazzTextField.KPITagSettingscodeTextField;
         private static TextField CommentTextField = JazzTextField.KPITagSettingsCommentTextField;
         private static ComboBox UomComboBox = JazzComboBox.KPITagSettingsUomComboBox;
         private static ComboBox CalculationTypeComboBox = JazzComboBox.KPITagSettingsCalculationTypeComboBox;
@@ -95,17 +95,17 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Select one tag through Tag code
         /// </summary>
         /// <param name="kpitagName"></param>
-        public void FocusOnKPITagCode(string kpitagCode)
+        public void FocusOnKPITagcode(string kpitagcode)
         {
-            KPITagList.FocusOnRow(2, kpitagCode);
+            KPITagList.FocusOnRow(2, kpitagcode);
         }
         /// <summary>
         /// Invalid code redline
         /// </summary>
-        /// <param name="kpitagCode"></param>
-        public bool InvalidCode()
+        /// <param name="kpitagcode"></param>
+        public bool Invalidcode()
         {
-            return CodeTextField.IsTextFieldValueInvalid();
+            return codeTextField.IsTextFieldValueInvalid();
         }
         /// <summary>
         /// Invalid name redline
@@ -214,7 +214,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInAddKPItagData(KPIInputData input)
         {
             //textFieldInstance.FillIn(ElementKey.KPItagName, input.Name);
-            //textFieldInstance.FillIn(ElementKey.KPItagCode, input.Code);
+            //textFieldInstance.FillIn(ElementKey.KPItagcode, input.code);
             //comboBoxInstance.SelectItem(input.Commodity);
             //comboBoxInstance.DisplayItems(ElementKey.KPItagUOM);
             //comboBoxInstance.SelectItem(input.UOM);
@@ -225,7 +225,7 @@ namespace Mento.ScriptCommon.Library.Functions
             //textFieldInstance.FillIn(ElementKey.KPItagComment, input.Comment);
 
             NameTextField.Fill(input.Name);
-            CodeTextField.Fill(input.Code);
+            codeTextField.Fill(input.code);
             UomComboBox.SelectItem(input.Uom);
             CalculationStepComboBox.SelectItem(input.Steps);
             CalculationTypeComboBox.SelectItem(input.CalculationType);
@@ -247,9 +247,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="code">KPITag code</param>
         /// <returns></returns>
-        public void FillInCode(string code)
+        public void FillIncode(string code)
         {
-            CodeTextField.Fill(code);
+            codeTextField.Fill(code);
         }
 
         /// <summary>
@@ -272,12 +272,12 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Get the KPITag Code actual value
+        /// Get the KPITag code actual value
         /// </summary>
         /// <returns></returns>
-        public string GetKPITagCodeValue()
+        public string GetKPITagcodeValue()
         {
-            return CodeTextField.GetValue();
+            return codeTextField.GetValue();
         }
 
         /// <summary>
@@ -357,9 +357,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Get the KPITag code invalid message value
         /// </summary>
         /// <returns></returns>
-        public string GetCodeErrorMessageValue()
+        public string GetcodeErrorMessageValue()
         {
-            return CodeTextField.GetInvalidTips();
+            return codeTextField.GetInvalidTips();
         }
         /// <summary>
         /// Get the KPITag code invalid message value
@@ -408,9 +408,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="tagName"></param>
         /// <returns></returns>
-        public Boolean KPITagIsExist(string tagCode)
+        public Boolean KPITagIsExist(string tagcode)
         {
-            return KPITagList.IsRowExist(2, tagCode);
+            return KPITagList.IsRowExist(2, tagcode);
         }
         #endregion
 

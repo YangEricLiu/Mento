@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Name":"关键KPI 1_ a",
-			"Code":"Alice",
+			"code":"Alice",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -12,7 +12,7 @@
        "ExpectedData":
 		{
 			"Name":"关键KPI 1_ a",
-			"Code":"Alice",
+			"code":"Alice",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -24,7 +24,7 @@
 			"InputData":
 		{
 			"Name":"关键KPI 1_ a",
-			"Code":"KPI_2",
+			"code":"KPI_2",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -34,7 +34,7 @@
 		 "ExpectedData":
 		{
 			"Name":"关键KPI 1_ a",
-			"Code":"KPI_2",
+			"code":"KPI_2",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -45,7 +45,7 @@
 		"InputData":
 		{
 			"Name":"heiheiheihheiheiheihheiheiheihheiheiheihheiheiheihheiheiheihheiheiheihheiheiheihheiheiheihheiheiheiha",
-			"Code":"heihei",
+			"code":"heihei",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",
@@ -55,7 +55,7 @@
 	    "ExpectedData":
 		{
 			"Name":"heiheiheihheiheiheihheiheiheihheiheiheihheiheiheihheiheiheihheiheiheihheiheiheihheiheiheihheiheiheih",
-			"Code":"heihei",
+			"code":"heihei",
 			"Uom":"KWHPerson",
 			"Steps":"Hourly",
 			"CalculationType":"Sum",

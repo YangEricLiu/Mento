@@ -201,8 +201,8 @@
       </areadimension>
       <hierarchyassociation>
         <add key = "ButtonAssociationSettingsTagAssociate" value = "st-tagassoc-taggrid-assoc" type = "ID"/>
-        <add key = "ButtonAssociationSettingsAssociate" value = "st-tagassoc-taggrid-assocaction-btnInnerEl" type = "ID"/>
-      </hierarchyassociation>
+        <add key = "ButtonAssociationSettingsAssociate" value = "st-tagassoc-taggrid-assoc-btnInnerEl" type = "ID"/>
+      </hierarchyassociation>                                    
       <hierarchydisassociation>
         <add key = "ButtonAssociationSettingsDisassociate" value = "st-tagassoc-taggrid-unassoc-btnInnerEl" type = "ID"/>
         <add key = "ButtonAssociationSettingsCancel" value = "st-tagassoc-taggrid-cancel" type= "ID"/>
@@ -444,7 +444,7 @@
     </energyview>
     <customersettings>
       <hierarchy>
-        <add key="ComboBoxHierarchySettingsHierarchyType" value="//div[@id='st-hier-properties-form']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='Type']]" type="XPath"/>
+        <add key="ComboBoxHierarchySettingsHierarchyType" value="//div[@id='st-hier-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='Type']]" type="XPath"/>
       </hierarchy>
       <hierarchyCalendarproperty>
 		    <add key="ComboBoxWorkdayEffectiveYear" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>

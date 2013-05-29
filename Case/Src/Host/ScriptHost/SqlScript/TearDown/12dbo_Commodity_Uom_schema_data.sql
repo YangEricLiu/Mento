@@ -60,7 +60,7 @@ go
 /*==============================================================*/
 create table Commodity (
    Id                   bigint               identity(1,1) not for replication,
-   Code                 nvarchar(100)        null,
+   code                 nvarchar(100)        null,
    Comment              nvarchar(200)        null,
    Status               int                  null,
    UpdateUser           nvarchar(100)        null,
@@ -106,7 +106,7 @@ go
 /*==============================================================*/
 create table UomGroup (
    Id                   bigint               identity(1,1) not for replication,
-   Code                 nvarchar(100)        null,
+   code                 nvarchar(100)        null,
    Comment              nvarchar(400)        null,
    UpdateUser           nvarchar(100)        null,
    UpdateTime           datetime             null,
@@ -200,7 +200,7 @@ go
 /*==============================================================*/
 create table Uom (
    Id                   bigint               identity(1,1) not for replication,
-   Code                 nvarchar(100)        null,
+   code                 nvarchar(100)        null,
    Comment              nvarchar(200)        null,
    Status               int                  null,
    UpdateUser           nvarchar(100)        null,
@@ -303,80 +303,80 @@ DELETE FROM Uom
 
 --------Commodity--------
 SET IDENTITY_INSERT Commodity ON
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (1,'Electricity',N'电',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (2,'Water',N'自来水',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (3,'Gas',N'天然气',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (4,'SoftWater',N'软水',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (5,'Petrol',N'汽油',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (6,'LowPressureSteam',N'低压蒸汽',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (7,'DieselOil',N'柴油',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (1,'Electricity',N'电',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (2,'Water',N'自来水',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (3,'Gas',N'天然气',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (4,'SoftWater',N'软水',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (5,'Petrol',N'汽油',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (6,'LowPressureSteam',N'低压蒸汽',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (7,'DieselOil',N'柴油',1,'DEMO','2011-12-19 00:00:00')
 ------ modified on 2012-05-15 ------
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (0,'Other',N'其他',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (0,'Other',N'其他',1,'DEMO','2011-12-19 00:00:00')
 ------ modified on 2012-07-26 ------
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (8,'HeatQ',N'热量',1,'DEMO','2012-07-26 00:00:00')
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (9,'CoolQ',N'冷量',1,'DEMO','2012-07-26 00:00:00')
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (10,'Coal',N'煤',1,'DEMO','2012-07-26 00:00:00')
-INSERT INTO Commodity (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (11,'CoalOil',N'煤油',1,'DEMO','2012-07-26 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (8,'HeatQ',N'热量',1,'DEMO','2012-07-26 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (9,'CoolQ',N'冷量',1,'DEMO','2012-07-26 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (10,'Coal',N'煤',1,'DEMO','2012-07-26 00:00:00')
+INSERT INTO Commodity (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (11,'CoalOil',N'煤油',1,'DEMO','2012-07-26 00:00:00')
 
 SET IDENTITY_INSERT Commodity OFF
 
 --------Uom--------
 SET IDENTITY_INSERT Uom ON
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (1,'KWH',N'千瓦时',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (2,'KVARH',N'千乏时',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (3,'KVAH',N'千伏安时',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (4,'KW',N'千瓦',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (5,'m3',N'立方米',1,'DEMO','2011-12-19 00:00:00')
---INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (6,'m3/hour',N'立方米/小时',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (7,'ppm',N'百万分比浓度',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (8,'kg',N'千克',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (9,'Ton',N'吨',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (10,'J',N'焦',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (11,'GJ',N'千焦',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (12,'RMB',N'人民币',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (13,'m2',N'平方米',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (14,'h',N'小时',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (15,'m',N'分',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (16,'s',N'秒',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (17,'oC',N'摄氏度',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (1,'KWH',N'千瓦时',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (2,'KVARH',N'千乏时',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (3,'KVAH',N'千伏安时',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (4,'KW',N'千瓦',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (5,'m3',N'立方米',1,'DEMO','2011-12-19 00:00:00')
+--INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (6,'m3/hour',N'立方米/小时',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (7,'ppm',N'百万分比浓度',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (8,'kg',N'千克',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (9,'Ton',N'吨',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (10,'J',N'焦',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (11,'GJ',N'千焦',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (12,'RMB',N'人民币',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (13,'m2',N'平方米',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (14,'h',N'小时',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (15,'m',N'分',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (16,'s',N'秒',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (17,'oC',N'摄氏度',1,'DEMO','2011-12-19 00:00:00')
 ------ added on 2012-05-15-------
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (18,'kgce',N'千克标煤',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (19,'kgCO2',N'千克二氧化碳',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (20,'Tree',N'棵树',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (21,'Person',N'人',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (22,'KW/M2',N'千瓦/平方米',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (23,'KWH/M2',N'千瓦时/平方米',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (24,'KW/Person',N'千瓦/人',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (25,'KWH/Person',N'千瓦时/人',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (18,'kgce',N'千克标煤',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (19,'kgCO2',N'千克二氧化碳',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (20,'Tree',N'棵树',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (21,'Person',N'人',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (22,'KW/M2',N'千瓦/平方米',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (23,'KWH/M2',N'千瓦时/平方米',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (24,'KW/Person',N'千瓦/人',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (25,'KWH/Person',N'千瓦时/人',1,'DEMO','2011-12-19 00:00:00')
 ------ added on 2012-05-29-------
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (26,'kg/M2',N'千克/平方米',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (27,'T/M2',N'吨/平方米',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (28,'m3/M2',N'立方米/平方米',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (29,'kg/Person',N'千克/人',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (30,'T/Person',N'吨/人',1,'DEMO','2011-12-19 00:00:00')
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (31,'m3/Person',N'立方米/人',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (26,'kg/M2',N'千克/平方米',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (27,'T/M2',N'吨/平方米',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (28,'m3/M2',N'立方米/平方米',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (29,'kg/Person',N'千克/人',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (30,'T/Person',N'吨/人',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (31,'m3/Person',N'立方米/人',1,'DEMO','2011-12-19 00:00:00')
 ------ added on 2012-10-23-------
-INSERT INTO Uom (Id,Code,Comment,Status,UpdateUser,UpdateTime) VALUES (32,'null',N'无',1,'DEMO','2011-12-19 00:00:00')
+INSERT INTO Uom (Id,code,Comment,Status,UpdateUser,UpdateTime) VALUES (32,'null',N'无',1,'DEMO','2011-12-19 00:00:00')
 SET IDENTITY_INSERT Uom OFF
 
 --------UomGroup--------
 SET IDENTITY_INSERT UomGroup ON
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (1,'ElectricityRealEnergyGroup',N'电能组','DEMO','2012-05-07 19:48:01',1,1)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (2,'ElectricityDemandGroup',N'电功率组','DEMO','2012-05-07 19:48:01',1,0)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (3,'ElectricityReactiveEnergyGroup',N'','DEMO','2012-05-07 19:48:01',1,0)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (4,'ElectricityApparentEnergyGroup',N'','DEMO','2012-05-07 19:48:01',1,0)
---INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (5,'WaterFlowRateGroup',N'水流量组','DEMO','2012-05-07 19:48:01',2,0)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (6,'WaterMassGroup',N'水质量组','DEMO','2012-05-07 19:48:01',2,1)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (7,'GasFlowRateGroup',N'天然气流量组','DEMO','2012-05-07 19:48:01',3,1)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (8,'SoftWaterMassGroup',N'软水质量组','DEMO','2012-05-07 19:48:01',4,1)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (9,'GasolineMassGroup',N'汽油质量组','DEMO','2012-05-07 19:48:01',5,1)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (10,'LowPressureSteamMassGroup',N'低压蒸汽质量组','DEMO','2012-05-07 19:48:01',6,1)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (11,'DieselOilMassGroup',N'柴油质量组','DEMO','2012-05-07 19:48:01',7,1)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (12,'HeatQEnergyGroup',N'热量能量组','DEMO','2012-05-07 19:48:01',8,1)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (13,'CoolQEnergyGroup',N'冷量能量组','DEMO','2012-05-07 19:48:01',9,1)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (14,'CoalMassGroup',N'煤质量组','DEMO','2012-05-07 19:48:01',10,1)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (15,'CoalOilMassGroup',N'煤油质量组','DEMO','2012-05-07 19:48:01',11,1)
-INSERT INTO UomGroup (Id,Code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (16,'OtherGroup',N'其他组','DEMO','2012-05-15 19:48:01',0,0)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (1,'ElectricityRealEnergyGroup',N'电能组','DEMO','2012-05-07 19:48:01',1,1)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (2,'ElectricityDemandGroup',N'电功率组','DEMO','2012-05-07 19:48:01',1,0)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (3,'ElectricityReactiveEnergyGroup',N'','DEMO','2012-05-07 19:48:01',1,0)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (4,'ElectricityApparentEnergyGroup',N'','DEMO','2012-05-07 19:48:01',1,0)
+--INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (5,'WaterFlowRateGroup',N'水流量组','DEMO','2012-05-07 19:48:01',2,0)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (6,'WaterMassGroup',N'水质量组','DEMO','2012-05-07 19:48:01',2,1)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (7,'GasFlowRateGroup',N'天然气流量组','DEMO','2012-05-07 19:48:01',3,1)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (8,'SoftWaterMassGroup',N'软水质量组','DEMO','2012-05-07 19:48:01',4,1)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (9,'GasolineMassGroup',N'汽油质量组','DEMO','2012-05-07 19:48:01',5,1)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (10,'LowPressureSteamMassGroup',N'低压蒸汽质量组','DEMO','2012-05-07 19:48:01',6,1)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (11,'DieselOilMassGroup',N'柴油质量组','DEMO','2012-05-07 19:48:01',7,1)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (12,'HeatQEnergyGroup',N'热量能量组','DEMO','2012-05-07 19:48:01',8,1)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (13,'CoolQEnergyGroup',N'冷量能量组','DEMO','2012-05-07 19:48:01',9,1)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (14,'CoalMassGroup',N'煤质量组','DEMO','2012-05-07 19:48:01',10,1)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (15,'CoalOilMassGroup',N'煤油质量组','DEMO','2012-05-07 19:48:01',11,1)
+INSERT INTO UomGroup (Id,code,Comment,UpdateUser,UpdateTime,CommodityId,IsEnergyConsumptionGroup) VALUES (16,'OtherGroup',N'其他组','DEMO','2012-05-15 19:48:01',0,0)
 SET IDENTITY_INSERT UomGroup OFF
 
 --------UomGroupRelation--------

@@ -49,11 +49,23 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickModifyButton();
 
-            //Verify "Name", "Code" and "Type" field is disabled, only "Comment" field is enabled
+            //Verify "Name", "code" and "Type" field is disabled, only "Comment" field is enabled
             Assert.IsFalse(HierarchySettings.IsNameFieldEnabled());
-            Assert.IsFalse(HierarchySettings.IsCodeFieldEnabled());
+            Assert.IsFalse(HierarchySettings.IscodeFieldEnabled());
             Assert.IsFalse(HierarchySettings.IsTypeFieldEnabled());
             Assert.IsTrue(HierarchySettings.IsCommentFieldEnabled());
+
+            //Modify the comments for root node and save
+            HierarchySettings.FillInComment(input.InputData.Comments);
+
+            //Click "Save" button
+            TimeManager.MediumPause();
+            HierarchySettings.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            //Verify the root node comments can be edited and saved
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            Assert.AreEqual(input.ExpectedData.Comments, HierarchySettings.GetCommentValue());
         }
 
         [Test]
@@ -75,17 +87,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
-            //Verify that the "修改成功" message box popup, other is failed
-            string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            TimeManager.ShortPause();
-
-            //confirm message box
-            HierarchySettings.ConfirmCreateOKMagBox();
-
-            //Verify nodes are added as children
+            //Verify nodes are modified correctly
             Assert.AreEqual(input.ExpectedData.CommonName, HierarchySettings.GetNameValue());
-            Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetCodeValue());
+            Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetcodeValue());
             Assert.AreEqual(input.ExpectedData.Comments, HierarchySettings.GetCommentValue());
         }
 
@@ -99,22 +103,17 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickModifyButton();
 
+            //Type can't be modified
+            Assert.IsFalse(HierarchySettings.IsTypeFieldEnabled());
+
             //Click "Save" button
             TimeManager.MediumPause();
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
-            //Verify that the "修改成功" message box popup, other is failed
-            string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            TimeManager.ShortPause();
-
-            //confirm message box
-            HierarchySettings.ConfirmCreateOKMagBox();
-
-            //Verify nodes are added as children
+            //Verify nodes are same
             Assert.AreEqual(input.ExpectedData.CommonName, HierarchySettings.GetNameValue());
-            Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetCodeValue());
+            Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetcodeValue());
             Assert.AreEqual(input.ExpectedData.Comments, HierarchySettings.GetCommentValue());
         }
 
@@ -138,17 +137,63 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
-            //Verify that the "修改成功" message box popup, other is failed
-            string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            TimeManager.ShortPause();
-
-            //confirm message box
-            HierarchySettings.ConfirmCreateOKMagBox();
-            TimeManager.MediumPause();
-
             //Verify the comments not display
             Assert.IsTrue(HierarchySettings.IsCommentHidden());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Modify-101-5")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(ModifyValidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Modify-101-5")]
+        public void ModifyValidAndVerify(HierarchyData input)
+        {
+            //Select the node which need to modify
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            HierarchySettings.ClickModifyButton();
+            HierarchySettings.FillInHierarchyNode(input.InputData);
+
+            //Click "Save" button
+            TimeManager.MediumPause();
+            HierarchySettings.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            //Verify nodes are modified correctly
+            Assert.AreEqual(input.ExpectedData.CommonName, HierarchySettings.GetNameValue());
+            Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetcodeValue());
+            Assert.AreEqual(input.ExpectedData.Comments, HierarchySettings.GetCommentValue());
+
+            //Verify hierarchy node has been modified correctly everywhere
+            //1. verify on system dimension configration
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
+            JazzFunction.SystemDimensionSettings.ShowHierarchyTree();
+            TimeManager.ShortPause();
+            JazzFunction.SystemDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+
+            //2. verify on area dimension configration
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
+            JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
+            TimeManager.ShortPause();
+            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+
+            //3. verify on hierarchy for data association
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+            JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+
+            //4. verify on system dimension for data association
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationSystemDimension);
+            JazzFunction.SystemDimensionSettings.ShowHierarchyTree();
+            TimeManager.ShortPause();
+            JazzFunction.SystemDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+
+            //5. verify on system dimension for data association
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
+            JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
+            TimeManager.ShortPause();
+            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+
+            //6. verify on energy analysis on energy view
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
         }
     }
 }

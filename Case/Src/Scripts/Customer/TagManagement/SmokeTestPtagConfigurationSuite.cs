@@ -53,8 +53,8 @@ namespace Mento.Script.Customer.TagManagement
 
             PTagSettings.FocusOnPTag(testData.ExpectedData.Name);
             Assert.AreEqual(testData.ExpectedData.Name, PTagSettings.GetNameValue());
-            Assert.AreEqual(testData.InputData.Code, PTagSettings.GetCodeValue());
-            Assert.AreEqual(testData.InputData.MeterCode, PTagSettings.GetMeterCodeValue());
+            Assert.AreEqual(testData.InputData.code, PTagSettings.GetcodeValue());
+            Assert.AreEqual(testData.InputData.Metercode, PTagSettings.GetMetercodeValue());
             Assert.AreEqual(testData.InputData.ChannelId, PTagSettings.GetChannelIdValue());
             Assert.AreEqual(PTagSettings.GetCommodityExpectedValue(testData.InputData.Commodity), PTagSettings.GetCommodityValue());
             Assert.AreEqual(PTagSettings.GetUomExpectedValue(testData.InputData.Uom), PTagSettings.GetUomValue());
@@ -68,16 +68,16 @@ namespace Mento.Script.Customer.TagManagement
         public void ModifyPtag(PtagData testData)
         {
             //string tagName = "tagformodification";
-            string tagName = "Amy_Ptag1_Code";
+            string tagName = "Amy_Ptag1_code";
             PTagSettings.PrepareToModifyPtag(tagName);
-            PTagSettings.FillInCode(testData.InputData.Code);
+            PTagSettings.FillIncode(testData.InputData.code);
             PTagSettings.ClickSaveButton();
 
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
             PTagSettings.FocusOnPTag(tagName);
-            Assert.AreEqual(testData.ExpectedData.Code, PTagSettings.GetCodeValue());            
+            Assert.AreEqual(testData.ExpectedData.code, PTagSettings.GetcodeValue());            
         }
     }
 }

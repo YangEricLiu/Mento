@@ -3,8 +3,8 @@
 		"InputData":
 		{	
 			"Name":"Amy_Ptag1_名称",
-			"Code":"Amy_Ptag1_Code",
-			"MeterCode":"Amy_MeterCode1",
+			"code":"Amy_Ptag1_code",
+			"Metercode":"Amy_Metercode1",
 			"ChannelId":"1",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
@@ -20,8 +20,8 @@
 		"InputData":
 		{
 			"Name":"Amy_Ptag2_名称",
-			"Code":"Amy_Ptag2_Code",
-			"MeterCode":"Amy_MeterCode1",
+			"code":"Amy_Ptag2_code",
+			"Metercode":"Amy_Metercode1",
 			"ChannelId":"2",
 			"Commodity":"Water",
 			"Uom":"Ton",

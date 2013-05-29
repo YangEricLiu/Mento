@@ -4,12 +4,12 @@
 		{	
 			"HierarchyNodePath":["自动化测试"],
 			"CommonName":"TestSameCodewithOrg",
-			"code":"AutoOrg001",
+			"Code":"AutoOrg001",
 			"Type":"Orgnization",
 		},
 		"ExpectedData":
 		{
-		    "Message":"层级的编码重复，无法保存",
+		    "Code":"该编码已存在",
 		}
 	},
 	{
@@ -17,12 +17,12 @@
 		{	
 			"HierarchyNodePath":["自动化测试"],
 			"CommonName":"TestSameCodewithSite",
-			"code":"AutoSite001",
+			"Code":"AutoSite001",
 			"Type":"Site",
 		},
 		"ExpectedData":
 		{
-		    "Message":"层级的编码重复，无法保存",
+		    "Code":"该编码已存在",
 		}
 	},
 	{
@@ -30,12 +30,12 @@
 		{	
 			"HierarchyNodePath":["自动化测试","AutoSite002"],
 			"CommonName":"TestSameCodewithBuilding",
-			"code":"AutoBuilding001",
+			"Code":"AutoBuilding001",
 			"Type":"Building",
 		},
 		"ExpectedData":
 		{
-		    "Message":"层级的编码重复，无法保存",
+		    "Code":"该编码已存在",
 		}
 	},
 	{
@@ -43,12 +43,12 @@
 		{	
 			"HierarchyNodePath":["自动化测试","AutoOrg001"],
 			"CommonName":"TestSameCodewithSite",
-			"code":"AutoBuilding001",
+			"Code":"AutoBuilding001",
 			"Type":"Site",
 		},
 		"ExpectedData":
 		{
-		    "Message":"层级的编码重复，无法保存",
+		    "Code":"该编码已存在",
 		}
 	},
 	{
@@ -56,12 +56,12 @@
 		{	
 			"HierarchyNodePath":["自动化测试","AutoOrg001"],
 			"CommonName":"TestSameCodewithSite",
-			"code":"AutoSite001",
+			"Code":"AutoSite001",
 			"Type":"Orgnization",
 		},
 		"ExpectedData":
 		{
-		    "Message":"层级的编码重复，无法保存",
+		    "Code":"该编码已存在",
 		}
 	}
 ]

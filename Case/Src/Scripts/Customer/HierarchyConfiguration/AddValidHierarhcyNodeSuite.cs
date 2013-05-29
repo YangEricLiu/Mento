@@ -67,7 +67,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.ExpectedData.CommonName, input.InputData.HierarchyNodePath.Last()));
             HierarchySettings.SelectHierarchyNode(input.ExpectedData.CommonName);
             Assert.AreEqual(input.ExpectedData.CommonName, HierarchySettings.GetNameValue());
-            Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetCodeValue());
+            Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetcodeValue());
             Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.ExpectedData.Type), HierarchySettings.GetTypeValue());
             Assert.AreEqual(input.ExpectedData.Comments, HierarchySettings.GetCommentValue());
         }
@@ -114,7 +114,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
                 HierarchySettings.SelectHierarchyNode(input.InputData.HierarchyNodePath[i]);
                 HierarchySettings.ClickCreateChildHierarchyButton();
                 HierarchySettings.FillInName(input.InputData.HierarchyNodePath[i + 1]);
-                HierarchySettings.FillInCode(input.InputData.HierarchyNodePath[i + 1]);
+                HierarchySettings.FillIncode(input.InputData.HierarchyNodePath[i + 1]);
                 HierarchySettings.FillInType(input.InputData.Type);
 
                 Assert.IsTrue(HierarchySettings.IsTypeContainsOrgnization());

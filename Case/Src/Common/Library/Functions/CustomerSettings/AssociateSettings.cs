@@ -31,10 +31,18 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.FlashPause();
         }
 
-        public void SelectHierarchyNodePath(string[] hierarchyNamePath)
+        public Boolean SelectHierarchyNodePath(string[] hierarchyNamePath)
         {
-            HierarchyTree.SelectNode(hierarchyNamePath);
-            TimeManager.FlashPause();
+            try
+            {
+                HierarchyTree.SelectNode(hierarchyNamePath);
+                TimeManager.FlashPause();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -74,14 +82,14 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickAssociateButton()
         {
             JazzButton.AssociationSettingsAssociate.Click();
-            JazzMessageBox.LoadingMask.WaitLoading();
+            //JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         /// <summary>
         /// Judge if the associated tag is displayed
         /// </summary>
         /// <returns>True if the tag displayed, false if not</returns>
-        public Boolean IsTagOnAssociategGridView(string tagName)
+        public Boolean IsTagOnAssociatedGridView(string tagName)
         {
             return TagList.IsRowExist(3, tagName);
         }

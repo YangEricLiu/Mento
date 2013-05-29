@@ -32,7 +32,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Customer settings
         #region Hierarchy settings
         public static TextField HierarchySettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHierarchySettingsName);
-        public static TextField HierarchySettingsCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHierarchySettingsCode);
+        public static TextField HierarchySettingscodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHierarchySettingsCode);
         public static TextField HierarchySettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHierarchySettingsComment);
 
         #region Hierarchy property settings
@@ -63,22 +63,22 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region PTag settings
         public static TextField PTagSettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsName);
-        public static TextField PTagSettingsCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsCode);
-        public static TextField PTagSettingsMeterCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsMeterCode);
+        public static TextField PTagSettingscodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsCode);
+        public static TextField PTagSettingsMetercodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsMeterCode);
         public static TextField PTagSettingsChannelTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsChannel);
         public static TextField PTagSettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsComment);
         #endregion
 
         #region VTag settings
         public static TextField VTagSettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldVTagSettingsName);
-        public static TextField VTagSettingsCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldVTagSettingsCode);
+        public static TextField VTagSettingscodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldVTagSettingsCode);
         public static TextField VTagSettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldVTagSettingsComment);
         public static FormulaField VFormulaField = GetControl<FormulaField>(null);
         #endregion
 
         #region KPITag settings
         public static TextField KPITagSettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITagSettingsName);
-        public static TextField KPITagSettingsCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITagSettingsCode);
+        public static TextField KPITagSettingscodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITagSettingsCode);
         public static TextField KPITagSettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITagSettingsComment);
         public static FormulaField KPIFormulaField = GetControl<FormulaField>(null);
         public static TextField KPITargetBaselineWorkdayRuleValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineWorkdayRuleValue);
@@ -130,7 +130,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
         #region Customer settings
         public static TextField CustomerNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerName);
-        public static TextField CustomerCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerCode);
+        public static TextField CustomercodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerCode);
         public static TextField CustomerAddressTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerAddress);
         public static TextField CustomerManagerTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerManager);
         public static TextField CustomerTelephoneTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerTelephone);

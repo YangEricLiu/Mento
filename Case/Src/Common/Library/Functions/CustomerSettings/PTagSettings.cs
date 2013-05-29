@@ -31,8 +31,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DeleteButton = JazzButton.PTagSettingsDeleteButton;
 
         private static TextField NameTextField = JazzTextField.PTagSettingsNameTextField;
-        private static TextField CodeTextField = JazzTextField.PTagSettingsCodeTextField;
-        private static TextField MeterCodeTextField = JazzTextField.PTagSettingsMeterCodeTextField;
+        private static TextField codeTextField = JazzTextField.PTagSettingscodeTextField;
+        private static TextField MetercodeTextField = JazzTextField.PTagSettingsMetercodeTextField;
         private static TextField ChannelTextField = JazzTextField.PTagSettingsChannelTextField;
         private static ComboBox CommodityComboBox = JazzComboBox.PTagSettingsCommodityComboBox;
         private static ComboBox UomComboBox = JazzComboBox.PTagSettingsUomComboBox;
@@ -78,8 +78,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInPtag(PtagInputData input)
         {
             NameTextField.Fill(input.Name);
-            CodeTextField.Fill(input.Code);
-            MeterCodeTextField.Fill(input.MeterCode);
+            codeTextField.Fill(input.code);
+            MetercodeTextField.Fill(input.Metercode);
             ChannelTextField.Fill(input.ChannelId);
             CommodityComboBox.SelectItem(input.Commodity);
             UomComboBox.SelectItem(input.Uom);
@@ -87,21 +87,21 @@ namespace Mento.ScriptCommon.Library.Functions
             CommentTextField.Fill(input.Comment);
         }
 
-        public void FillInCode(string code)
+        public void FillIncode(string code)
         {
-            CodeTextField.Fill(code);
+            codeTextField.Fill(code);
         }
 
         /// <summary>
         /// Click "modify" button to modify one ptag
         /// </summary>
-        /// <param name="tagCode">Tag name</param>
+        /// <param name="tagcode">Tag name</param>
         /// <returns></returns>
-        public void PrepareToModifyPtag(string tagCode)
+        public void PrepareToModifyPtag(string tagcode)
         {
             //PTagList.FocusOnRow(1, tagName);
             //Be care that if the column is TagName, cell index should be 1
-            PTagList.FocusOnRow(2, tagCode);
+            PTagList.FocusOnRow(2, tagcode);
             ModifyButton.Click();
         }
 
@@ -115,21 +115,21 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Get the tag Code actual value
+        /// Get the tag code actual value
         /// </summary>
         /// <returns></returns>
-        public string GetCodeValue()
+        public string GetcodeValue()
         {
-            return CodeTextField.GetValue();
+            return codeTextField.GetValue();
         }
 
         /// <summary>
-        /// Get the tag MeterCode actual value
+        /// Get the tag Metercode actual value
         /// </summary>
         /// <returns></returns>
-        public string GetMeterCodeValue()
+        public string GetMetercodeValue()
         {
-            return MeterCodeTextField.GetValue();
+            return MetercodeTextField.GetValue();
         }
 
         /// <summary>

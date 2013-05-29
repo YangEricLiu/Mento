@@ -19,7 +19,7 @@ namespace Mento.Script.System.Example
         //public void Example1(PtagData data)
         //{
         //    Assert.IsFalse(String.IsNullOrEmpty(data.InputData.Name));
-        //    Assert.IsFalse(String.IsNullOrEmpty(data.InputData.Code));
+        //    Assert.IsFalse(String.IsNullOrEmpty(data.InputData.code));
         //}
 
         //[CaseID("TC-J1-Example-002")]
@@ -27,7 +27,7 @@ namespace Mento.Script.System.Example
         //public void Example2(PtagData data)
         //{
         //    Assert.IsFalse(String.IsNullOrEmpty(data.InputData.Name));
-        //    Assert.IsFalse(String.IsNullOrEmpty(data.InputData.Code));
+        //    Assert.IsFalse(String.IsNullOrEmpty(data.InputData.code));
         //}
 
         [Test]

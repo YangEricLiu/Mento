@@ -11,7 +11,7 @@ namespace Mento.Utility.Http
     {
         public string Content { get; set; }
 
-        public int StatusCode { get; set; }
+        public int Statuscode { get; set; }
 
         public string StatusName { get; set; }
 
@@ -48,7 +48,7 @@ namespace Mento.Utility.Http
             string statusLine = result[0];
             string[] statusValues = Regex.Split(statusLine, HttpCommon.SPACE);
 
-            this.StatusCode = Convert.ToInt32(statusValues[1]);
+            this.Statuscode = Convert.ToInt32(statusValues[1]);
             this.StatusName = statusValues[2];
         }
     }

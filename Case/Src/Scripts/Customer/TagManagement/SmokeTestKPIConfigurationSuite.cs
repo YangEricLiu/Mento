@@ -56,7 +56,7 @@ namespace Mento.Script.Customer.TagManagement
         {
             KPITagSettings.FocusOnKPITag(testdata.InputData.Name);
             Assert.AreEqual(testdata.InputData.Name, KPITagSettings.GetKPITagNameValue());
-            Assert.AreEqual(testdata.InputData.Code, KPITagSettings.GetKPITagCodeValue());
+            Assert.AreEqual(testdata.InputData.code, KPITagSettings.GetKPITagcodeValue());
             Assert.AreEqual(testdata.InputData.Uom, KPITagSettings.GetKPITagUOMValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationStepExpectedValue(testdata.InputData.Steps), KPITagSettings.GetKPITagCalculationStepValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationTypeExpectedValue(testdata.InputData.CalculationType), KPITagSettings.GetKPITagCalculationTypeValue());

@@ -4,7 +4,7 @@
 	{
 		"InputData":
 		{	
-			"MeterCode":"Amy_MeterCode1",
+			"Metercode":"Amy_Metercode1",
 			"ChannelId":"1",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
@@ -19,7 +19,7 @@
 	{
 		"InputData":
 		{	
-			"MeterCode":"Amy_MeterCode1",
+			"Metercode":"Amy_Metercode1",
 			"ChannelId":"1",
 			"Commodity":"Electricity",
 			"Uom":"KWH",

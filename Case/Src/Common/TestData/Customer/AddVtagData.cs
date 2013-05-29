@@ -14,7 +14,7 @@ namespace Mento.ScriptCommon.TestData.Customer
     public class VtagInputData : InputTestDataBase
     {
         public string Name { get; set; }
-        public string Code { get; set; }
+        public string code { get; set; }
         public string Commodity { get; set; }
         public string UOM { get; set; }
         public string Step { get; set; }
@@ -24,7 +24,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public VtagInputData(string name, string code, string commodity, string uom, string step, string calculationtype, string comment)
         {
             this.Name = name;
-            this.Code = code;
+            this.code = code;
             this.Commodity = commodity;
             this.UOM = uom;
             this.Step = step;

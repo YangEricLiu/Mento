@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-		    "Message":"层级的编码重复，无法保存",
+			"ErrorMessage":"该编码已存在",
 			"Code":"AutoOrg001",
 		}
 	},
@@ -19,7 +19,7 @@
 		},
 		"ExpectedData":
 		{
-		    "Message":"层级的编码重复，无法保存",
+			"ErrorMessage":"该编码已存在",
 			"Code":"AutoSite001",
 		}
 	},
@@ -31,7 +31,7 @@
 		},
 		"ExpectedData":
 		{
-		    "Message":"层级的编码重复，无法保存",
+			"ErrorMessage":"该编码已存在",
 			"Code":"AutoSite001",
 		}
 	},
@@ -43,7 +43,7 @@
 		},
 		"ExpectedData":
 		{
-		    "Message":"层级的编码重复，无法保存",
+			"ErrorMessage":"该编码已存在",
 			"Code":"AutoOrg001",
 		}
 	},
@@ -55,7 +55,7 @@
 		},
 		"ExpectedData":
 		{
-		    "Message":"层级的编码重复，无法保存",
+			"ErrorMessage":"该编码已存在",
 			"Code":"AutoBuilding001",
 		}
 	}

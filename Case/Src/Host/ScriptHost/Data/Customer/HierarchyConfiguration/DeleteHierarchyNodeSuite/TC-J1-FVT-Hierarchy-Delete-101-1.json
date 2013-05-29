@@ -2,43 +2,12 @@
 	{
 		"InputData":
 		{	
-			"HierarchyNodePath":["自动化测试", "DeleteOrg001"],
-		},
-		"ExpectedData":
-		{
-			"Message":"确认删除",
-			"ErrorMessage":"该节点包含其他子节点，无法删除",
-		}
-	},
-	{
-		"InputData":
-		{	
-			"HierarchyNodePath":["自动化测试", "DeleteOrg001","DeleteSite001"],
-		},
-		"ExpectedData":
-		{
-			"Message":"确认删除",
-			"ErrorMessage":"该节点包含其他子节点，无法删除",
-		}
-	},
-	{
-		"InputData":
-		{	
 			"HierarchyNodePath":["自动化测试", "DeleteOrg001","DeleteSite001","DeleteBuilding001"],
 		},
 		"ExpectedData":
 		{
-			"Message":"确认删除",
-		}
-	},
-	{
-		"InputData":
-		{	
-			"HierarchyNodePath":["自动化测试", "DeleteOrg001","DeleteSite001"],
-		},
-		"ExpectedData":
-		{
-			"Message":"确认删除",
+			"HierarchyNodePath":["自动化测试", "DeleteOrg001","DeleteSite001","DeleteBuilding001"],
+			"Message":"删除层级节点“DeleteBuilding001”吗？\r\n您将同时删除层级节点下所有的子节点，维度结构，数据点关联关系，以及间接关联的所有信息",
 		}
 	},
 	{
@@ -48,7 +17,8 @@
 		},
 		"ExpectedData":
 		{
-			"Message":"确认删除",
+			"HierarchyNodePath":["自动化测试", "DeleteOrg001","DeleteSite001"],
+			"Message":"删除层级节点“DeleteOrg001”吗？\r\n您将同时删除层级节点下所有的子节点，维度结构，数据点关联关系，以及间接关联的所有信息",
 		}
 	}
 ]

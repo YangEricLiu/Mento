@@ -14,7 +14,7 @@ namespace Mento.ScriptCommon.TestData.Administration
      public class CustomerInputData : InputTestDataBase
      {
          public string Name { get; set; }
-         public string Code { get; set; }
+         public string code { get; set; }
          public string LogoPath { get; set; }
          public string Address { get; set; }
          public string ResponsiblePerson { get; set; }
@@ -27,7 +27,7 @@ namespace Mento.ScriptCommon.TestData.Administration
      public class CustomerExpectedData : ExpectedTestDataBase
      {
          public string Name { get; set; }
-         public string Code { get; set; }
+         public string code { get; set; }
          public string LogoPath { get; set; }
          public string Address { get; set; }
          public string ResponsiblePerson { get; set; }

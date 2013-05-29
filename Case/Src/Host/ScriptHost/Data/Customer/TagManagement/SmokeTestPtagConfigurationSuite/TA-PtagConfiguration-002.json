@@ -2,11 +2,11 @@
 	{
 		"InputData":
 		{	
-			"Code":"tag_aftermodify",
+			"code":"tag_aftermodify",
 		},
 		"ExpectedData":
 		{
-			"Code":"tag_aftermodify",
+			"code":"tag_aftermodify",
 		}
 	}
 ]

@@ -46,8 +46,8 @@ namespace Mento.Script.Customer.TagManagement
 
         public void DeleteKPItagbutCancel()
         {
-            string tagCode = "KPI2";
-            KPITagSettings.FocusOnKPITagCode(tagCode);
+            string tagcode = "KPI2";
+            KPITagSettings.FocusOnKPITagcode(tagcode);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             KPITagSettings.ClickDeleteKPITagButton();
@@ -59,7 +59,7 @@ namespace Mento.Script.Customer.TagManagement
             KPITagSettings.CancelDeleteMagBox();
             //FunctionWrapper.WaitForLoadingDisappeared(5000);
             JazzMessageBox.LoadingMask.WaitLoading();
-            Assert.IsTrue(KPITagSettings.KPITagIsExist(tagCode));
+            Assert.IsTrue(KPITagSettings.KPITagIsExist(tagcode));
             TimeManager.ShortPause();
          }
         [Test]

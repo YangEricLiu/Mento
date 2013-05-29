@@ -100,7 +100,7 @@ namespace Mento.Framework.DataAccess
                             ScriptLog.Instance.LogInformation(result);
                             Console.WriteLine(result);
 
-                            if (Regex.Match(result, @"^{""errorCode"":""\d+""}$").Success)
+                            if (Regex.Match(result, @"^{""errorcode"":""\d+""}$").Success)
                             { 
                                 throw new ApiException(String.Format("Interface returned error: {0}",result));
                             }

@@ -46,7 +46,7 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(AddKPIData[]), typeof(ModifyKPITagSuite), "TC-J1-FVT-KPItagConfiguration-004-ModifytoValid")]
         public void ModifyKPItagtoValid(AddKPIData input)
         {
-            KPITagSettings.FocusOnKPITagCode("KPI4");
+            KPITagSettings.FocusOnKPITagcode("KPI4");
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             KPITagSettings.ClickModifyKPITagButton();
@@ -60,9 +60,9 @@ namespace Mento.Script.Customer.TagManagement
         public void ModifyKPItagtoValidResultView(AddKPIData testdata)
         {
 
-            KPITagSettings.FocusOnKPITagCode(testdata.InputData.Code);
+            KPITagSettings.FocusOnKPITagcode(testdata.InputData.code);
             Assert.AreEqual(testdata.InputData.Name, KPITagSettings.GetKPITagNameValue());
-            Assert.AreEqual(testdata.InputData.Code, KPITagSettings.GetKPITagCodeValue());
+            Assert.AreEqual(testdata.InputData.code, KPITagSettings.GetKPITagcodeValue());
             Assert.AreEqual(testdata.InputData.Uom, KPITagSettings.GetKPITagUOMValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationStepExpectedValue(testdata.InputData.Steps), KPITagSettings.GetKPITagCalculationStepValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationTypeExpectedValue(testdata.InputData.CalculationType), KPITagSettings.GetKPITagCalculationTypeValue());
@@ -78,7 +78,7 @@ namespace Mento.Script.Customer.TagManagement
 
         public void ModifyKPItagtoInvalid002(AddKPIData input)
         {
-            KPITagSettings.FocusOnKPITagCode("KPI");
+            KPITagSettings.FocusOnKPITagcode("KPI");
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             KPITagSettings.ClickModifyKPITagButton();
@@ -93,12 +93,12 @@ namespace Mento.Script.Customer.TagManagement
         public void ModifyKPItagtoInvalidResultView002(AddKPIData testdata)
         {
             Assert.AreEqual(testdata.ExpectedData.Name, KPITagSettings.GetNameErrorMessageValue());
-            Assert.AreEqual(testdata.ExpectedData.Code, KPITagSettings.GetNameErrorMessageValue());
+            Assert.AreEqual(testdata.ExpectedData.code, KPITagSettings.GetNameErrorMessageValue());
             Assert.AreEqual(testdata.ExpectedData.Uom, KPITagSettings.GetNameErrorMessageValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationStepExpectedValue(testdata.ExpectedData.Steps), KPITagSettings.GetStepErrorMessageValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationTypeExpectedValue(testdata.ExpectedData.CalculationType), KPITagSettings.GetTypeErrorMessageValue());
             Assert.AreEqual(testdata.ExpectedData.Comment, KPITagSettings.GetCommentErrorMessageValue());
-            Assert.IsFalse(KPITagSettings.KPITagIsExist(testdata.InputData.Code));
+            Assert.IsFalse(KPITagSettings.KPITagIsExist(testdata.InputData.code));
         }
 
         [Test]
@@ -108,7 +108,7 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(AddKPIData[]), typeof(ModifyKPITagSuite), "TC-J1-FVT-KPItagConfiguration-004-ModifytoInvalid-002")]
         public void ModifyKPItagtoInvalid001(AddKPIData input)
         {
-            KPITagSettings.FocusOnKPITagCode("KPI");
+            KPITagSettings.FocusOnKPITagcode("KPI");
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             KPITagSettings.ClickModifyKPITagButton();
@@ -126,9 +126,9 @@ namespace Mento.Script.Customer.TagManagement
         {
             Assert.IsTrue(KPITagSettings.KPITagIsExist("KPI"));
 
-            KPITagSettings.FocusOnKPITagCode("KPI");
+            KPITagSettings.FocusOnKPITagcode("KPI");
             Assert.AreEqual(testdata.ExpectedData.Name, KPITagSettings.GetKPITagNameValue());
-            Assert.AreEqual(testdata.ExpectedData.Code, KPITagSettings.GetKPITagCodeValue());
+            Assert.AreEqual(testdata.ExpectedData.code, KPITagSettings.GetKPITagcodeValue());
             Assert.AreEqual(testdata.ExpectedData.Uom, KPITagSettings.GetKPITagUOMValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationStepExpectedValue(testdata.ExpectedData.Steps), KPITagSettings.GetKPITagCalculationStepValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationTypeExpectedValue(testdata.ExpectedData.CalculationType), KPITagSettings.GetKPITagCalculationTypeValue());
@@ -142,7 +142,7 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(AddKPIData[]), typeof(ModifyKPITagSuite), "TC-J1-FVT-KPItagConfiguration-004-ModifybutCancel")]
         public void ModifyKPItagtoValidbutCancel(AddKPIData input)
         {
-            KPITagSettings.FocusOnKPITagCode("KPI");
+            KPITagSettings.FocusOnKPITagcode("KPI");
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             KPITagSettings.ClickModifyKPITagButton();
@@ -157,9 +157,9 @@ namespace Mento.Script.Customer.TagManagement
         public void ModifyKPItagtoValidbutCancelResultView(AddKPIData testdata)
         {
             Assert.IsTrue(KPITagSettings.KPITagIsExist("KPI"));
-            KPITagSettings.FocusOnKPITagCode("KPI");
+            KPITagSettings.FocusOnKPITagcode("KPI");
             Assert.AreEqual(testdata.ExpectedData.Name, KPITagSettings.GetKPITagNameValue());
-            Assert.AreEqual(testdata.ExpectedData.Code, KPITagSettings.GetKPITagCodeValue());
+            Assert.AreEqual(testdata.ExpectedData.code, KPITagSettings.GetKPITagcodeValue());
             Assert.AreEqual(testdata.ExpectedData.Uom, KPITagSettings.GetKPITagUOMValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationStepExpectedValue(testdata.ExpectedData.Steps), KPITagSettings.GetKPITagCalculationStepValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationTypeExpectedValue(testdata.ExpectedData.CalculationType), KPITagSettings.GetKPITagCalculationTypeValue());

@@ -4,14 +4,14 @@
 		{
 			"HierarchyNodePath":["自动化测试"],
 			"CommonName":"systemAssociate",
-			"Code":"systemAssociate",
+			"code":"systemAssociate",
 			"Type":"Orgnization",
 			"Comments":"test",
 		},
 		"ExpectedData":
 		{
 			"CommonName":"systemAssociate",
-			"Code":"systemAssociate",
+			"code":"systemAssociate",
 			"Type":"Orgnization",
 			"Comments":"test",
 			"Message":"添加成功",
@@ -22,14 +22,14 @@
 		{
 			"HierarchyNodePath":["自动化测试"],
 			"CommonName":"AddCalendarProperty",
-			"Code":"AddCalendarProperty",
+			"code":"AddCalendarProperty",
 			"Type":"Site",
 			"Comments":"test",
 		},
 		"ExpectedData":
 		{
 			"CommonName":"AddCalendarProperty",
-			"Code":"AddCalendarProperty",
+			"code":"AddCalendarProperty",
 			"Type":"Site",
 			"Comments":"test",
 			"Message":"添加成功",
@@ -40,14 +40,14 @@
 		{
 		    "HierarchyNodePath":["自动化测试", "AddCalendarProperty"],   
 			"CommonName":"AddPeopleProperty",
-			"Code":"AddPeopleProperty",
+			"code":"AddPeopleProperty",
 			"Type":"Building",
 			"Comments":"test",
 		},
 		"ExpectedData":
 		{
 			"CommonName":"AddPeopleProperty",
-			"Code":"AddPeopleProperty",
+			"code":"AddPeopleProperty",
 			"Type":"Building",
 			"Comments":"test",
 			"Message":"添加成功",

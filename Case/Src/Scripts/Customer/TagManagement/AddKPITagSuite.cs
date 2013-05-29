@@ -56,9 +56,9 @@ namespace Mento.Script.Customer.TagManagement
         public void AddKPItagResultView(AddKPIData testdata)
         {
 
-            KPITagSettings.FocusOnKPITagCode(testdata.InputData.Code);
+            KPITagSettings.FocusOnKPITagcode(testdata.InputData.code);
             Assert.AreEqual(testdata.InputData.Name, KPITagSettings.GetKPITagNameValue());
-            Assert.AreEqual(testdata.InputData.Code, KPITagSettings.GetKPITagCodeValue());
+            Assert.AreEqual(testdata.InputData.code, KPITagSettings.GetKPITagcodeValue());
             Assert.AreEqual(testdata.InputData.Uom, KPITagSettings.GetKPITagUOMValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationStepExpectedValue(testdata.InputData.Steps), KPITagSettings.GetKPITagCalculationStepValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationTypeExpectedValue(testdata.InputData.CalculationType), KPITagSettings.GetKPITagCalculationTypeValue());
@@ -86,14 +86,14 @@ namespace Mento.Script.Customer.TagManagement
 
         public void AddInvalidKPItagResultView(AddKPIData testdata)
         {
-            Assert.IsFalse(KPITagSettings.KPITagIsExist(testdata.InputData.Code));
+            Assert.IsFalse(KPITagSettings.KPITagIsExist(testdata.InputData.code));
             Assert.AreEqual(testdata.ExpectedData.Name, KPITagSettings.GetNameErrorMessageValue());
-            Assert.AreEqual(testdata.ExpectedData.Code, KPITagSettings.GetNameErrorMessageValue());
+            Assert.AreEqual(testdata.ExpectedData.code, KPITagSettings.GetNameErrorMessageValue());
             Assert.AreEqual(testdata.ExpectedData.Uom, KPITagSettings.GetNameErrorMessageValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationStepExpectedValue(testdata.ExpectedData.Steps), KPITagSettings.GetStepErrorMessageValue());
             Assert.AreEqual(KPITagSettings.GetKPITagCalculationTypeExpectedValue(testdata.ExpectedData.CalculationType), KPITagSettings.GetTypeErrorMessageValue());
             Assert.AreEqual(testdata.ExpectedData.Comment, KPITagSettings.GetCommentErrorMessageValue());
-            Assert.IsFalse(KPITagSettings.KPITagIsExist(testdata.InputData.Code));
+            Assert.IsFalse(KPITagSettings.KPITagIsExist(testdata.InputData.code));
         }
    
         [Test]

@@ -12,6 +12,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
     public class TextField : JazzControl
     {
         public TextField(Locator locator) : base(locator) { }
+        private Locator InvalidTips = new Locator("../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]", ByType.XPath);
 
         /// <summary>
         /// Judge whether the textfield and its label are hidden
@@ -78,7 +79,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns>the invalid input tooltips info</returns>
         public string GetInvalidTips()
         {
-            return this.RootElement.GetAttribute("data-errorqtip");
+            return FindChild(InvalidTips).Text;
         }
 
         /// <summary>

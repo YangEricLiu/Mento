@@ -13,7 +13,7 @@ namespace Mento.ScriptCommon.TestData.Customer
     public class KPIInputData : InputTestDataBase
     {
         public string Name { get; set; }
-        public string Code { get; set; }
+        public string code { get; set; }
         public string Uom { get; set; }
         public string Steps { get; set; }
         public string CalculationType { get; set; }
@@ -22,7 +22,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public KPIInputData(string name, string code, string uom, string steps, string calculationType, string comment)
         {
             this.Name = name;
-            this.Code = code;
+            this.code = code;
             this.Steps = steps;
             this.Uom = uom;
             this.CalculationType = calculationType;
@@ -33,7 +33,7 @@ namespace Mento.ScriptCommon.TestData.Customer
     public class KPIExpectedData : ExpectedTestDataBase
     {
         public string Name { get; set; }
-        public string Code { get; set; }
+        public string code { get; set; }
         public string Uom { get; set; }
         public string Steps { get; set; }
         public string CalculationType { get; set; }
@@ -42,7 +42,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public KPIExpectedData(string name, string code, string uom, string steps, string calculationType, string comment)
         {
             this.Name = name;
-            this.Code = code;
+            this.code = code;
             this.Steps = steps;
             this.Uom = uom;
             this.CalculationType = calculationType;

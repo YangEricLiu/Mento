@@ -35,7 +35,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button VTagSettingsFormulaSave = JazzButton.VTagSettingsFormulaSaveButton;
 
         private static TextField NameTextField = JazzTextField.VTagSettingsNameTextField;
-        private static TextField CodeTextField = JazzTextField.VTagSettingsCodeTextField;
+        private static TextField codeTextField = JazzTextField.VTagSettingscodeTextField;
         private static ComboBox CommodityComboBox = JazzComboBox.VTagSettingsCommodityComboBox;
         private static ComboBox UomComboBox = JazzComboBox.VTagSettingsUomComboBox;
         private static ComboBox CalculationTypeComboBox = JazzComboBox.VTagSettingsCalculationTypeComboBox;
@@ -123,7 +123,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInAddVTagData(VtagInputData input)
         {
             NameTextField.Fill(input.Name);
-            CodeTextField.Fill(input.Code);
+            codeTextField.Fill(input.code);
             CommodityComboBox.SelectItem(input.Commodity);
             UomComboBox.SelectItem(input.UOM);
             CalculationStepComboBox.SelectItem(input.Step);
@@ -146,9 +146,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="code">VTag code</param>
         /// <returns></returns>
-        public void FillInCode(string code)
+        public void FillIncode(string code)
         {
-            CodeTextField.Fill(code);
+            codeTextField.Fill(code);
         }
 
         /// <summary>
@@ -171,12 +171,12 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Get the VTag Code actual value
+        /// Get the VTag code actual value
         /// </summary>
         /// <returns></returns>
-        public string GetVTagCodeValue()
+        public string GetVTagcodeValue()
         {
-            return CodeTextField.GetValue();
+            return codeTextField.GetValue();
         }
 
         /// <summary>

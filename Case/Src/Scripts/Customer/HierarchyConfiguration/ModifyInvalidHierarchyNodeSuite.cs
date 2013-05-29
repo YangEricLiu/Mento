@@ -43,7 +43,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [CaseID("TC-J1-FVT-Hierarchy-Modify-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(ModifyInvalidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Modify-001-1")]
-        public void ModifywithSameCode(HierarchyData input)
+        public void ModifywithSamecode(HierarchyData input)
         {
             //Select the node which want to change
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -55,20 +55,15 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
-            //Verify that message box popup for failed
-            string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            TimeManager.ShortPause();
-
-            //confirm message box
-            HierarchySettings.ConfirmErrorMsgBox();
+            Assert.IsTrue(HierarchySettings.IscodeInvalid());
+            Assert.IsTrue(HierarchySettings.IscodeInvalidMsgCorrect(input.ExpectedData.ErrorMessage));
 
             //Click "Cancel" button
             HierarchySettings.ClickCancelButton();
             TimeManager.ShortPause();
 
             //Verify that the code is not modified
-            Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetCodeValue());
+            Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetcodeValue());
         }
 
         [Test]
@@ -87,13 +82,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
-            //Verify that message box popup for failed
-            string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            TimeManager.ShortPause();
-
-            //confirm message box
-            HierarchySettings.ConfirmErrorMsgBox();
+            Assert.IsTrue(HierarchySettings.IsNameInvalid());
+            Assert.IsTrue(HierarchySettings.IsNameInvalidMsgCorrect(input.ExpectedData.ErrorMessage));
 
             //Click "Cancel" button
             HierarchySettings.ClickCancelButton();

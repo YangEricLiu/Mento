@@ -7,7 +7,7 @@
 		"ExpectedData":
 		{
 			"CommonName":"AutoOrg001",
-			"Code":"AutoOrg001",
+			"code":"AutoOrg001",
 			"Comments":"AutoOrg001",
 		    "Message":"修改成功",
 		}
@@ -20,7 +20,7 @@
 		"ExpectedData":
 		{
 		    "CommonName":"AutoSite001",
-			"Code":"AutoSite001",
+			"code":"AutoSite001",
 			"Comments":"AutoSite001",
 		    "Message":"修改成功",
 		}
@@ -33,7 +33,7 @@
 		"ExpectedData":
 		{
 		    "CommonName":"AutoBuilding001",
-			"Code":"AutoBuilding001",
+			"code":"AutoBuilding001",
 			"Comments":"AutoBuilding001",
 		    "Message":"修改成功",
 		}

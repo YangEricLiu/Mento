@@ -55,7 +55,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <summary>
         /// Judge if the button is enabled
         /// </summary>
-        /// <returns>True if the button is enabl, false if not </returns>
+        /// <returns>True if the button is enable, false if not </returns>
         public bool IsEnabled()
         {
             return this.ButtonInput.Enabled;

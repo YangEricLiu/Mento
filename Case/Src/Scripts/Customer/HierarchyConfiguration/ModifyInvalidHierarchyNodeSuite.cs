@@ -92,5 +92,32 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Verify that the name is not modified
             Assert.AreEqual(input.ExpectedData.CommonName, HierarchySettings.GetNameValue());
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Modify-001-3")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(ModifyInvalidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Modify-001-3")]
+        public void ModifyThenCancel(HierarchyData input)
+        {
+            //Select the node which want to change
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            HierarchySettings.ClickModifyButton();
+            HierarchySettings.FillInHierarchyNode(input.InputData);
+
+            //Click "Cancel" button
+            HierarchySettings.ClickCancelButton();
+            TimeManager.ShortPause();
+
+            //veirify that no "save" and "cancel" button,but "modify" and "delete"
+            Assert.IsFalse(HierarchySettings.IsCancelButtonDisplayed());
+            Assert.IsFalse(HierarchySettings.IsSaveButtonDisplayed());
+            Assert.IsTrue(HierarchySettings.IsModifyButtonDisplayed());
+            Assert.IsTrue(HierarchySettings.IsDeleteButtonDisplayed());
+
+            //Verify that the code is not modified
+            Assert.AreEqual(input.ExpectedData.CommonName, HierarchySettings.GetNameValue());
+            Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetcodeValue());
+            Assert.AreEqual(input.ExpectedData.Comments, HierarchySettings.GetCommentValue());
+        }
     }
 }

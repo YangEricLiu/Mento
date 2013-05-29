@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoOrg001"],
+			"CommonName":"AutoOrg001_M中文",
+			"code":"AutoOrg001_M",
+			"Comments":"AutoOrg001_M中文",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"AutoOrg001",
+			"code":"AutoOrg001",
+			"Comments":"AutoOrg001",
+		}
+	}
+]

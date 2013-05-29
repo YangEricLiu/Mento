@@ -157,6 +157,10 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
+            //veirify that no "save" and "cancel" button
+            Assert.IsFalse(HierarchySettings.IsCancelButtonDisplayed());
+            Assert.IsFalse(HierarchySettings.IsSaveButtonDisplayed());
+
             //Verify nodes are modified correctly
             Assert.AreEqual(input.ExpectedData.CommonName, HierarchySettings.GetNameValue());
             Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetcodeValue());

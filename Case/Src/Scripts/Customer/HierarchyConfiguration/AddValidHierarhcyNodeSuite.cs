@@ -55,13 +55,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
-            //Verify that the "添加成功" message box popup, other is failed
-            //string msgText = HierarchySettings.GetMessageText();
-            //Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            //TimeManager.ShortPause();
-
-            //confirm message box
-            //HierarchySettings.ConfirmCreateOKMagBox();
+            //veirify that no "save" and "cancel" button
+            Assert.IsFalse(HierarchySettings.IsCancelButtonDisplayed());
+            Assert.IsFalse(HierarchySettings.IsSaveButtonDisplayed());
 
             //Verify nodes are added as children
             Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.ExpectedData.CommonName, input.InputData.HierarchyNodePath.Last()));
@@ -126,11 +122,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
                 HierarchySettings.ClickSaveButton();
                 TimeManager.ShortPause();
 
-                //Verify that the "添加成功" message box popup, other is failed
-                //string msgText = HierarchySettings.GetMessageText();
-                //Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-                TimeManager.ShortPause();
-
                 //confirm message box
                 //HierarchySettings.ConfirmCreateOKMagBox();
                 TimeManager.LongPause();
@@ -161,15 +152,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.MediumPause();
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
-
-            //Verify that the "添加成功" message box popup, other is failed
-            //string msgText = HierarchySettings.GetMessageText();
-            //Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            TimeManager.ShortPause();
-
-            //confirm message box
-            //HierarchySettings.ConfirmCreateOKMagBox();
-            TimeManager.MediumPause();
 
             //Verify the comments not display
             Assert.IsTrue(HierarchySettings.IsCommentHidden());

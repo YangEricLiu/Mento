@@ -55,6 +55,10 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ClickCancelButton();
             TimeManager.ShortPause();
 
+            //veirify that no "save" and "cancel" button
+            Assert.IsFalse(HierarchySettings.IsCancelButtonDisplayed());
+            Assert.IsFalse(HierarchySettings.IsSaveButtonDisplayed());
+
             //Verify nodes are not added as children
             Assert.IsFalse(HierarchySettings.IsNodesChildParent(input.InputData.CommonName, input.InputData.HierarchyNodePath.Last()));
         }

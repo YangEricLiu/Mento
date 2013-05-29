@@ -57,12 +57,30 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge whether "Modify" button is displayed
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsModifyButtonDisplayed()
+        {
+            return ModifyButton.IsDisplayed();
+        }
+
+        /// <summary>
         /// Click　"Delete" button
         /// </summary>
         /// <returns></returns>
         public void ClickDeleteButton()
         {
             DeleteButton.Click();
+        }
+
+        /// <summary>
+        /// Judge whether "Delete" button is displayed
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsDeleteButtonDisplayed()
+        {
+            return DeleteButton.IsDisplayed();
         }
 
         /// <summary>
@@ -115,6 +133,16 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge whether "Save" button is displayed
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsSaveButtonDisplayed()
+        {
+            return SaveButton.IsDisplayed();
+        }
+
+        /// <summary>
         /// Click cancel button to cancel add new hierarchy node
         /// </summary>
         /// <param></param>
@@ -122,6 +150,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickCancelButton()
         {
             CancelButton.Click();
+        }
+
+        /// <summary>
+        /// Judge whether "cancel" button is displayed
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsCancelButtonDisplayed()
+        {
+            return CancelButton.IsDisplayed();
         }
 
         /// <summary>

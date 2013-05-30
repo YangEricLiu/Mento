@@ -457,7 +457,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Judge whether the Comments textfield is invalid
         /// </summary>
         /// <returns>True if the Comments is invalid, false if not</returns>
-        public Boolean IsCommentsInvalid(HierarchyExpectedData output)
+        public Boolean IsCommentsInvalid()
         {
             return CommentTextField.IsTextFieldValueInvalid();
         }

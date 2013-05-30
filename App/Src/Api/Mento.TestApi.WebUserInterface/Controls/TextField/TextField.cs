@@ -13,6 +13,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
     {
         public TextField(Locator locator) : base(locator) { }
         private Locator InvalidTips = new Locator("../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]", ByType.XPath);
+        private Locator InvalidTipsForNumberField = new Locator("../../../../../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]", ByType.XPath);
 
         /// <summary>
         /// Judge whether the textfield and its label are hidden
@@ -80,6 +81,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public string GetInvalidTips()
         {
             return FindChild(InvalidTips).Text;
+        }
+
+        /// <summary>
+        /// Return the invalid input tooltips info
+        /// </summary>
+        /// <returns>the invalid input tooltips info</returns>
+        public string GetInvalidTipsForNumberField()
+        {
+            return FindChild(InvalidTipsForNumberField).Text;
         }
 
         /// <summary>

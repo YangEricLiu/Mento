@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"OriginalName":"PtagModifyNoChange001",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"PtagModifyNoChange001",
+			"Code":"PtagModifyNoChange001",
+			"Meter":"PtagModifyNoChange001",
+			"Channel":"1",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"CalculationType":"Sum",
+			"Comments":"nothing",
+		}
+	}
+]

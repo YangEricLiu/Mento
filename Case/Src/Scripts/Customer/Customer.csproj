@@ -76,6 +76,8 @@
     <Compile Include="TagManagement\CancelModifyFormNonDayNightKPI.cs" />
     <Compile Include="TagManagement\CancelModifyKPITag.cs" />
     <Compile Include="TagManagement\AddValidPtagSuite.cs" />
+    <Compile Include="TagManagement\AddInvalidPtagSuite.cs" />
+    <Compile Include="TagManagement\ModifyValidPtagSuite.cs" />
     <Compile Include="TagManagement\DeleteKPITag.cs" />
     <Compile Include="TagManagement\DeleteKPITagSuite.cs" />
     <Compile Include="TagManagement\SmokeTestKPITargetSuite.cs" />

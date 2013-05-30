@@ -465,21 +465,21 @@
         <add key="ComboBoxHourTagId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='HourTagId']]" type="XPath"/>
       </hierarchyCostproperty>
       <ptag>
-        <add key="ComboBoxPTagSettingsCommodity" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
-        <add key="ComboBoxPTagSettingsUom" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
-        <add key="ComboBoxPTagSettingsCalculationType" value="//div[@id='st-ptag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
+        <add key="ComboBoxPTagSettingsCommodity" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
+        <add key="ComboBoxPTagSettingsUom" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
+        <add key="ComboBoxPTagSettingsCalculationType" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
       </ptag>
       <vtag>
-        <add key="ComboBoxVTagSettingsCommodity" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
-        <add key="ComboBoxVTagSettingsUom" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
-        <add key="ComboBoxVTagSettingsCalculationType" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
-        <add key="ComboBoxVTagSettingsCalculationStep" value="//div[@id='st-vtag-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
+        <add key="ComboBoxVTagSettingsCommodity" value="//div[@id='st-vtag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
+        <add key="ComboBoxVTagSettingsUom" value="//div[@id='st-vtag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
+        <add key="ComboBoxVTagSettingsCalculationType" value="//div[@id='st-vtag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
+        <add key="ComboBoxVTagSettingsCalculationStep" value="//div[@id='st-vtag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
       </vtag>
 
       <kpitag>
-        <add key="ComboBoxKPITagSettingsUom" value="//div[@id='st-kpi-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
-        <add key="ComboBoxKPITagSettingsCalculationType" value="//div[@id='st-kpi-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
-        <add key="ComboBoxKPITagSettingsCalculationStep" value="//div[@id='st-kpi-form-body']//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
+        <add key="ComboBoxKPITagSettingsUom" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
+        <add key="ComboBoxKPITagSettingsCalculationType" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
+        <add key="ComboBoxKPITagSettingsCalculationStep" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
 
         <add key="ComboBoxKPITargetBaselineEffectiveYear" value="//div[@id='setting-region-east-body']//table[contains(@class,'x-autocontainer-form-item')]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input]" type="XPath"/>
         <add key="ComboBoxKPITargetBaselineWorkdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>

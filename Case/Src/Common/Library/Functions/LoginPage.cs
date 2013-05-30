@@ -159,11 +159,11 @@ namespace Mento.ScriptCommon.Library.Functions
 
             if (String.IsNullOrEmpty(customerName))
             {
-                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 150);
+                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
             }
             else
             {
-                ElementHandler.Wait(OptionWindowLocator, WaitType.ToAppear, timeout: 150);
+                ElementHandler.Wait(OptionWindowLocator, WaitType.ToAppear, timeout: 300);
                 TimeManager.ShortPause();
 
                 if (ElementHandler.Exists(OptionWindowLocator))
@@ -171,7 +171,7 @@ namespace Mento.ScriptCommon.Library.Functions
                     LoginCustomerOption.SelectItem(customerName);
                     TimeManager.ShortPause();
                     LoginCustomerOptionConfirm.Click();
-                    ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 150);
+                    ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
                     TimeManager.MediumPause();
                 }
                 else

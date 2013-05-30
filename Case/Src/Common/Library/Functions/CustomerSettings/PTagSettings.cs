@@ -217,6 +217,10 @@ namespace Mento.ScriptCommon.Library.Functions
             CodeTextField.Fill(code);
         }
 
+        #endregion
+
+        #region Get Value
+
         /// <summary>
         /// Get the tag Name actual value
         /// </summary>
@@ -319,6 +323,10 @@ namespace Mento.ScriptCommon.Library.Functions
             return CommentTextField.GetValue();
         }
 
+        #endregion       
+
+        #region Verification
+
         /// <summary>
         /// Judge whether the textfield and its label are hidden
         /// </summary>
@@ -328,6 +336,169 @@ namespace Mento.ScriptCommon.Library.Functions
             return CommentTextField.IsTextFieldHidden();
         }
 
-        #endregion        
+        /// <summary>
+        /// Return whether comment is enabled
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsCommentFieldEnabled()
+        {
+            return CommentTextField.IsFieldEnabled();
+        }
+
+        /// <summary>
+        /// Judge whether the name textfield is invalid
+        /// </summary>
+        /// <returns>True if the name is invalid, false if not</returns>
+        public Boolean IsNameInvalid()
+        {
+            return NameTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of name field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsNameInvalidMsgCorrect(PtagExpectedData output)
+        {
+            return NameTextField.GetInvalidTips().Contains(output.CommonName);
+        }
+
+        /// <summary>
+        /// Judge whether the code textfield is invalid
+        /// </summary>
+        /// <returns>True if the code is invalid, false if not</returns>
+        public Boolean IscodeInvalid()
+        {
+            return CodeTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of code field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IscodeInvalidMsgCorrect(PtagExpectedData output)
+        {
+            return CodeTextField.GetInvalidTips().Contains(output.Code);
+        }
+
+        /// <summary>
+        /// Judge whether the code textfield is invalid
+        /// </summary>
+        /// <returns>True if the code is invalid, false if not</returns>
+        public Boolean IsMeterCodeInvalid()
+        {
+            return MetercodeTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of code field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsMeterCodeInvalidMsgCorrect(PtagExpectedData output)
+        {
+            return MetercodeTextField.GetInvalidTips().Contains(output.Meter);
+        }
+
+        /// <summary>
+        /// Judge whether the channel textfield is invalid
+        /// </summary>
+        /// <returns>True if the channel is invalid, false if not</returns>
+        public Boolean IsChannelInvalid()
+        {
+            return ChannelTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of code field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsChannelInvalidMsgCorrect(PtagExpectedData output)
+        {
+            return ChannelTextField.GetInvalidTipsForNumberField().Contains(output.Channel);
+        }
+
+        /// <summary>
+        /// Judge whether the Comments textfield is invalid
+        /// </summary>
+        /// <returns>True if the Comments is invalid, false if not</returns>
+        public Boolean IsCommentsInvalid()
+        {
+            return CommentTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Comments field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is true</returns>
+        public Boolean IsCommentsInvalidMsgCorrect(PtagExpectedData output)
+        {
+            return CommentTextField.GetInvalidTips().Contains(output.Comments);
+        }
+
+        /// <summary>
+        /// Judge whether the Commodity textfield is invalid
+        /// </summary>
+        /// <returns>True if the Commodity is invalid, false if not</returns>
+        public Boolean IsCommodityInvalid()
+        {
+            return CommodityComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsCommodityInvalidMsgCorrect(PtagExpectedData output)
+        {
+            return CommodityComboBox.GetInvalidTips().Contains(output.Commodity);
+        }
+
+        /// <summary>
+        /// Judge whether the UOM textfield is invalid
+        /// </summary>
+        /// <returns>True if the UOM is invalid, false if not</returns>
+        public Boolean IsUomInvalid()
+        {
+            return UomComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsUomInvalidMsgCorrect(PtagExpectedData output)
+        {
+            return UomComboBox.GetInvalidTips().Contains(output.Uom);
+        }
+
+        /// <summary>
+        /// Judge whether the CalculationType textfield is invalid
+        /// </summary>
+        /// <returns>True if the CalculationType is invalid, false if not</returns>
+        public Boolean IsCalculationTypeInvalid()
+        {
+            return CalculationTypeComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsCalculationTypeInvalidMsgCorrect(PtagExpectedData output)
+        {
+            return CalculationTypeComboBox.GetInvalidTips().Contains(output.CalculationType);
+        }
+
+        #endregion
+        
+               
     }
 }

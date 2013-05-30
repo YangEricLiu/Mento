@@ -21,7 +21,7 @@ namespace Mento.TestApi.TestData
         public string Address { get; set; }
         public string Email { get; set; }
         public string Telephone { get; set; }
-        public string code { get; set; }
+        public string Code { get; set; }
         public string Meter { get; set; }
         public string Channel { get; set; }
         public string DataValue { get; set; }
@@ -39,7 +39,7 @@ namespace Mento.TestApi.TestData
         public string Address { get; set; }
         public string Email { get; set; }
         public string Telephone { get; set; }
-        public string code { get; set; }
+        public string Code { get; set; }
         public string Meter { get; set; }
         public string Channel { get; set; }
         public string DataValue { get; set; }

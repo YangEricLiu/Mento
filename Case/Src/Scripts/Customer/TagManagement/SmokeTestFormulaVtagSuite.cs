@@ -51,7 +51,7 @@ namespace Mento.Script.Customer.TagManagement
             string expectedFormula = "{ptag.Formula_P1}+{ptag.Formula_P2}";
 
             //Focus on vtag "Add_V1" and click "计算公式" tab, 
-            VTagSettings.PrepareToAddFormula(vtagName);
+            //VTagSettings.PrepareToAddFormula(vtagName);
 
             //Fill formula "{ptag.Add_P1}+{ptag.Amy_c_P1}", and save
             VTagSettings.FillInFormulaField("{ptag.Formula_P1}");

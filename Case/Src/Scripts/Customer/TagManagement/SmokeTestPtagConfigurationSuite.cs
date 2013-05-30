@@ -45,21 +45,21 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(PtagData[]), typeof(SmokeTestPtagConfigurationSuite), "TC-J1-SmokeTest-002-001")]
         public void AddPtag(PtagData testData)
         {
-            PTagSettings.PrepareToAddPtag();
+            PTagSettings.ClickAddPtagButton();
             PTagSettings.FillInPtag(testData.InputData);
             PTagSettings.ClickSaveButton();
 
             TimeManager.MediumPause();
 
-            PTagSettings.FocusOnPTag(testData.ExpectedData.Name);
-            Assert.AreEqual(testData.ExpectedData.Name, PTagSettings.GetNameValue());
-            Assert.AreEqual(testData.InputData.code, PTagSettings.GetcodeValue());
-            Assert.AreEqual(testData.InputData.Metercode, PTagSettings.GetMetercodeValue());
-            Assert.AreEqual(testData.InputData.ChannelId, PTagSettings.GetChannelIdValue());
+            PTagSettings.FocusOnPTagByName(testData.ExpectedData.CommonName);
+            Assert.AreEqual(testData.ExpectedData.CommonName, PTagSettings.GetNameValue());
+            Assert.AreEqual(testData.InputData.Code, PTagSettings.GetCodeValue());
+            Assert.AreEqual(testData.InputData.Meter, PTagSettings.GetMetercodeValue());
+            Assert.AreEqual(testData.InputData.Channel, PTagSettings.GetChannelIdValue());
             Assert.AreEqual(PTagSettings.GetCommodityExpectedValue(testData.InputData.Commodity), PTagSettings.GetCommodityValue());
             Assert.AreEqual(PTagSettings.GetUomExpectedValue(testData.InputData.Uom), PTagSettings.GetUomValue());
             Assert.AreEqual(PTagSettings.GetCalculationTypeExpectedValue(testData.InputData.CalculationType), PTagSettings.GetCalculationTypeValue());
-            Assert.AreEqual(testData.InputData.Comment, PTagSettings.GetCommentValue());
+            Assert.AreEqual(testData.InputData.Comments, PTagSettings.GetCommentValue());
         }
 
         [Test]
@@ -69,15 +69,14 @@ namespace Mento.Script.Customer.TagManagement
         {
             //string tagName = "tagformodification";
             string tagName = "Amy_Ptag1_code";
-            PTagSettings.PrepareToModifyPtag(tagName);
-            PTagSettings.FillIncode(testData.InputData.code);
+            PTagSettings.FillIncode(testData.InputData.Code);
             PTagSettings.ClickSaveButton();
 
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
-            PTagSettings.FocusOnPTag(tagName);
-            Assert.AreEqual(testData.ExpectedData.code, PTagSettings.GetcodeValue());            
+            PTagSettings.FocusOnPTagByName(tagName);
+            Assert.AreEqual(testData.ExpectedData.Code, PTagSettings.GetCodeValue());            
         }
     }
 }

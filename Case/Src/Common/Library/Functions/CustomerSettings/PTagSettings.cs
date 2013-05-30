@@ -21,6 +21,8 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
+        #region ptag controls
+        
         private static Grid PTagList = JazzGrid.PTagSettingsPTagList;
 
         private static Button CreatePTagButton = JazzButton.PTagSettingsCreatePTagButton;
@@ -31,14 +33,18 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DeleteButton = JazzButton.PTagSettingsDeleteButton;
 
         private static TextField NameTextField = JazzTextField.PTagSettingsNameTextField;
-        private static TextField codeTextField = JazzTextField.PTagSettingscodeTextField;
+        private static TextField CodeTextField = JazzTextField.PTagSettingsCodeTextField;
         private static TextField MetercodeTextField = JazzTextField.PTagSettingsMetercodeTextField;
         private static TextField ChannelTextField = JazzTextField.PTagSettingsChannelTextField;
         private static ComboBox CommodityComboBox = JazzComboBox.PTagSettingsCommodityComboBox;
         private static ComboBox UomComboBox = JazzComboBox.PTagSettingsUomComboBox;
         private static ComboBox CalculationTypeComboBox = JazzComboBox.PTagSettingsCalculationTypeComboBox;
         private static TextField CommentTextField = JazzTextField.PTagSettingsCommentTextField;
-        
+
+        #endregion
+
+        #region Ptag List Operation
+
         /// <summary>
         /// Navigate to Ptag Configuration Page
         /// </summary>
@@ -55,10 +61,50 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void PrepareToAddPtag()
+        public void ClickAddPtagButton()
         {
             CreatePTagButton.Click();
         }
+
+        /// <summary>
+        /// Focus ptag by name
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean FocusOnPTagByName(string ptagName)
+        {
+            try
+            {
+                PTagList.FocusOnRow(1, ptagName);
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Focus ptag by name
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean FocusOnPTagByCode(string ptagCode)
+        {
+            try
+            {
+                PTagList.FocusOnRow(2, ptagCode);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Basic Property Operations
 
         /// <summary>
         /// Click save button for ptag
@@ -71,38 +117,104 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge "Save" display
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsSaveButtonDisplayed()
+        {
+            return SaveButton.IsDisplayed();
+        }
+
+        /// <summary>
+        /// Click Delete button for ptag
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickDeleteButton()
+        {
+            DeleteButton.Click();
+        }
+
+        /// <summary>
+        /// Judge "Delete" display
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsDeleteButtonDisplayed()
+        {
+            return DeleteButton.IsDisplayed();
+        }
+
+        /// <summary>
+        /// Click Cancel button for ptag
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickCancelButton()
+        {
+            CancelButton.Click();
+        }
+
+        /// <summary>
+        /// Judge "Cancel" display
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsCancelButtonDisplayed()
+        {
+            return CancelButton.IsDisplayed();
+        }
+
+        /// <summary>
+        /// Click "modify" button 
+        /// </summary>
+        /// <param>Tag name</param>
+        /// <returns></returns>
+        public void ClickModifyButton()
+        {
+            ModifyButton.Click();
+        }
+
+        /// <summary>
+        /// Judge "Save" display 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsModifyButtonDisplayed()
+        {
+            return ModifyButton.IsDisplayed();
+        }
+
+        #endregion
+
+        #region Ptag field operations
+
+        /// <summary>
         /// Input name, code, metercode, channelid, commodityid, uomid, calculationtype and comment of the ptag
         /// </summary>
         /// <param name="input">Test data</param>
         /// <returns></returns>
         public void FillInPtag(PtagInputData input)
         {
-            NameTextField.Fill(input.Name);
-            codeTextField.Fill(input.code);
-            MetercodeTextField.Fill(input.Metercode);
-            ChannelTextField.Fill(input.ChannelId);
+            NameTextField.Fill(input.CommonName);
+            CodeTextField.Fill(input.Code);
+            MetercodeTextField.Fill(input.Meter);
+            ChannelTextField.Fill(input.Channel);
             CommodityComboBox.SelectItem(input.Commodity);
             UomComboBox.SelectItem(input.Uom);
             CalculationTypeComboBox.SelectItem(input.CalculationType);
-            CommentTextField.Fill(input.Comment);
-        }
-
-        public void FillIncode(string code)
-        {
-            codeTextField.Fill(code);
+            CommentTextField.Fill(input.Comments);
         }
 
         /// <summary>
-        /// Click "modify" button to modify one ptag
+        /// Input code of the ptag
         /// </summary>
-        /// <param name="tagcode">Tag name</param>
+        /// <param name="code">code</param>
         /// <returns></returns>
-        public void PrepareToModifyPtag(string tagcode)
+        public void FillIncode(string code)
         {
-            //PTagList.FocusOnRow(1, tagName);
-            //Be care that if the column is TagName, cell index should be 1
-            PTagList.FocusOnRow(2, tagcode);
-            ModifyButton.Click();
+            CodeTextField.Fill(code);
         }
 
         /// <summary>
@@ -118,9 +230,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Get the tag code actual value
         /// </summary>
         /// <returns></returns>
-        public string GetcodeValue()
+        public string GetCodeValue()
         {
-            return codeTextField.GetValue();
+            return CodeTextField.GetValue();
         }
 
         /// <summary>
@@ -207,9 +319,15 @@ namespace Mento.ScriptCommon.Library.Functions
             return CommentTextField.GetValue();
         }
 
-        public void FocusOnPTag(string ptagName)
+        /// <summary>
+        /// Judge whether the textfield and its label are hidden
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsCommentHidden()
         {
-            PTagList.FocusOnRow(1,ptagName);
+            return CommentTextField.IsTextFieldHidden();
         }
+
+        #endregion        
     }
 }

@@ -20,6 +20,8 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
+        #region Vtag Controls
+        
         private static Grid VTagList = JazzGrid.VTagSettingsVTagList;
 
         private static TabButton BasicPropertyTab = JazzButton.VTagSettingsBasicPropertyTabButton;
@@ -44,6 +46,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Grid FormulaPTagList = JazzGrid.VTagSettingsFormulaEditPTagList;
         private static FormulaField FormulaField = JazzTextField.VFormulaField;
+
+        #endregion
 
         #region VTag List Operations
         /// <summary>
@@ -89,9 +93,17 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="vtagName">VTag name</param>
         /// <returns></returns>
-        public void FocusOnVTag(string vtagName)
+        public Boolean FocusOnVTagByName(string vtagName)
         {
-            VTagList.FocusOnRow(1, vtagName);
+            try
+            {
+                VTagList.FocusOnRow(1, vtagName);
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
         }
         #endregion
 
@@ -266,19 +278,14 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region Formula Operations
+
         /// <summary>
-        /// Select one tag, open formula tab and click update button
+        /// Click "Modify" formula Button
         /// </summary>
-        /// <param name="tagName">Tag name</param>
+        /// <param name="tagName"></param>
         /// <returns></returns>
-        public void PrepareToAddFormula(string tagName)
+        public void ClickModifyFormulaButton()
         {
-            FocusOnVTag(tagName);
-            SwitchToFormulaTab();
-
-            JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
-            TimeManager.ShortPause();
-
             VTagSettingsFormulaUpdate.Click();
         }
 
@@ -301,6 +308,24 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             var ptagRow = FormulaPTagList.GetRow(1, ptagName);
             FormulaField.DragTagIn(ptagRow);
+        }
+
+        /// <summary>
+        /// Judge whether tag on formula tag list
+        /// </summary>
+        /// <param name="tagName"></param>
+        /// <returns></returns>
+        public Boolean IsTagNameOnFormulaTagList(string tagName)
+        {
+            try
+            {
+                FormulaPTagList.GetRow(1, tagName);
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }      
         }
 
         /// <summary>
@@ -333,6 +358,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return FormulaField.GetValue();
         }
+
         #endregion
     }
 

@@ -63,7 +63,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region PTag settings
         public static TextField PTagSettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsName);
-        public static TextField PTagSettingscodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsCode);
+        public static TextField PTagSettingsCodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsCode);
         public static TextField PTagSettingsMetercodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsMeterCode);
         public static TextField PTagSettingsChannelTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsChannel);
         public static TextField PTagSettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsComment);

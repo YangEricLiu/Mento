@@ -220,6 +220,10 @@
     <None Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddValid.json" />
     <Content Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddInvalid.json" />
     <Content Include="Data\Customer\TagManagement\AddKPITagSuite\TC-J1-FVT-KPItagConfiguration-003-AddValidbutCancel.json" />
+    <None Include="Data\Customer\TagManagement\AddValidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-101-4.json" />
+    <None Include="Data\Customer\TagManagement\AddValidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-101-3.json" />
+    <None Include="Data\Customer\TagManagement\AddValidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-101-2.json" />
+    <None Include="Data\Customer\TagManagement\AddValidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-101-1.json" />
     <None Include="Data\Customer\TagManagement\SmokeTestKPIConfigurationSuite\TA-KPItag-001.json" />
     <None Include="Data\Customer\TagManagement\SmokeTestKPItagConfiguration\TC-J1-SmokeTest-004-001.json" />
     <None Include="Data\Customer\TagManagement\SmokeTestKPITargetSuite\TC-J1-SmokeTest-022.json" />

@@ -56,7 +56,7 @@ namespace Mento.Script.Customer.TagManagement
         {
 
             string AddedVtagName = "NancyVtag";
-            VTagSettings.FocusOnVTag(AddedVtagName);
+            VTagSettings.FocusOnVTagByName(AddedVtagName);
             Assert.AreEqual(testdata.InputData.Name, VTagSettings.GetVTagNameValue());
             Assert.AreEqual(testdata.InputData.code, VTagSettings.GetVTagcodeValue());
             Assert.AreEqual(testdata.InputData.Commodity, VTagSettings.GetVTagCommodityValue());

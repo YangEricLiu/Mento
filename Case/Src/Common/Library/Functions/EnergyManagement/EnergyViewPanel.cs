@@ -84,6 +84,11 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return Chart.LegendExists();
         }
+
+        public bool IsLegendItemExists(string legendName)
+        {
+            return Chart.LegendItemExists(legendName);
+        }
         #endregion
     }
 

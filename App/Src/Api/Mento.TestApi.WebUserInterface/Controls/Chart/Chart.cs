@@ -21,7 +21,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator CurveLocator = new Locator("g.highcharts-tracker", ByType.CssSelector);
         private static Locator PieLocator = new Locator("g.highcharts-point", ByType.CssSelector);
 
-        private static Locator TitleLocator = new Locator("svg/text", ByType.XPath);
+        private static Locator TitleLocator = new Locator("svg/text[2]", ByType.XPath);
+        private static Locator UomLocator = new Locator("svg/text[1]", ByType.XPath);
 
         #region Title
         public string GetTitle()
@@ -100,6 +101,20 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return !textElement.GetAttribute("style").Contains("color:#CCC;fill:#CCC;");
         }
         #endregion
+        #endregion
+
+        #region Uom
+
+        public string GetUom()
+        {
+            var uomElement = FindChild(UomLocator);
+
+            if (uomElement == null)
+                throw new ApiException("The uom element was not found.");
+
+            return FindChild(UomLocator).Text;
+        }
+
         #endregion
 
         #region Curve (Not finished yet)

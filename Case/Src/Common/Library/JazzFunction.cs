@@ -352,5 +352,19 @@ namespace Mento.ScriptCommon.Library
             }
 
         }
+        
+        private static EnergyViewToolbarViewSplitButton _EnergyViewToolbarViewSplitButton;
+        public static EnergyViewToolbarViewSplitButton EnergyViewToolbarViewSplitButton
+        {
+            get
+            {
+                if (_EnergyViewToolbarViewSplitButton == null)
+                    _EnergyViewToolbarViewSplitButton = new EnergyViewToolbarViewSplitButton();
+
+                return _EnergyViewToolbarViewSplitButton;
+            }
+
+        }
+        
     }
 }

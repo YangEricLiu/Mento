@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"OriginalName":"PtagElecKHW001",
+			"CommonName":"PtagWater001",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"该名称已存在",
+		}
+	}
+]

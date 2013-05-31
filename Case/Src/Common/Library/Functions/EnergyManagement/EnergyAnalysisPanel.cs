@@ -87,9 +87,15 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 TagGrid.CheckRowCheckbox(2, tagName);
 
-                JazzMessageBox.LoadingMask.WaitLoading();
+                //JazzMessageBox.LoadingMask.WaitLoading();
                 TimeManager.MediumPause();
             }
+        }
+
+        public void CheckTag(string tagName)
+        {
+                TagGrid.CheckRowCheckbox(2, tagName);
+                TimeManager.ShortPause();
         }
 
         public void UncheckTags(string[] tagNames)
@@ -102,6 +108,35 @@ namespace Mento.ScriptCommon.Library.Functions
                 TimeManager.MediumPause();
             }
         }
+
+        public Boolean IsTagOnListByName(string tagName)
+        {
+            return TagGrid.IsRowExist(2, tagName);
+        }
+
+        public string GetSelectedRowData(int cellIndex)
+        {
+            return TagGrid.GetSelectedRowData(cellIndex);
+        }
+
+        public bool FocusOnRowByName(string tagName)
+        {
+            try
+            {
+                TagGrid.FocusOnRow(2, tagName);
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        public string GetUomValue()
+        {
+            return Chart.GetUom();
+        }
+
         #endregion
     }
 

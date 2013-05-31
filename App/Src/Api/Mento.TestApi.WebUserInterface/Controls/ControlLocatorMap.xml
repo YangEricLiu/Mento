@@ -2,6 +2,7 @@
 <WebElement>
   <!--Common-->
   <add key="LoadingMask" value = "mainLoadingMask" type ="ID"/>
+  <add key="SubMaskLoadingLocator" value = "//div[contains(@id, 'loadmask') and contains(@class, 'x-loading-spinner-large')]" type ="XPath"/>
   <!--<add key="CreateSuccessMessageBox" value="//div[contains(@class,'x-message-box') and div/div/div/div/em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
   <add key="CreateSuccessMessageBoxOkButton" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>-->
 
@@ -36,6 +37,7 @@
   <add key="GridHeader" value = "div.x-grid-header-ct" type ="CssSelector"/><!--not use-->
   <add key="GridFooter" value = "div[last()]" type ="XPath"/><!--not use-->
   <add key="GridRows" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]" type ="XPath"/>
+  <add key="GridRowSelected" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class, 'x-grid-row-focused')]/td[$#cellIndex]/div" type ="XPath"/>
   <add key="GridRow" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]" type ="XPath"/>
   <add key="GridRowChecker" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-checkcolumn')]/div/div" type ="XPath"/>
   <add key="GridPagingToolbar" value="div[contains(@class,'x-paging-toolbar')]" type="XPath"/>

@@ -555,9 +555,9 @@
   <!--Grid Begin-->
   <Grid>
     <energyview>
-      <add key="GridEnergyAnalysisAllTagList" value="em-energy-alltag-panel" type="ID"/>
-      <add key="GridEnergyAnalysisSystemDimensionTagList" value="em-energy-sdim-tag-grid" type="ID"/>
-      <add key="GridEnergyAnalysisAreaDimensionTagList" value="em-energy-adim-tag-grid" type="ID"/>
+      <add key="GridEnergyAnalysisAllTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridEnergyAnalysisSystemDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="ID"/>
+      <add key="GridEnergyAnalysisAreaDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="ID"/>
       <add key="GridEnergyAnalysisEnergyDataList" value="//div[@id='em-energy-chartgridpanel']//div[contains(@class,'x-grid')]" type="XPath"/>
     </energyview>
     <customersettings>

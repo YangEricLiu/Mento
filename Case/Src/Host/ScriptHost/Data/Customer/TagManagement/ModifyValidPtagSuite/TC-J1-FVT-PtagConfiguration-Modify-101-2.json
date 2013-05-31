@@ -10,7 +10,7 @@
 			"Commodity":"Water",
 			"Uom":"Ton",
 			"CalculationType":"Max",
-		}
+			"Comments":"",
 		},
 		"ExpectedData":
 		{

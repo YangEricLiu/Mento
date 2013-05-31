@@ -9,7 +9,7 @@ using Mento.ScriptCommon.TestData.EnergyView;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    internal class EnergyViewToolbarViewSplitButton
+    public class EnergyViewToolbarViewSplitButton
     {
         private static SplitButton ViewButton = JazzButton.EnergyViewViewDataButton;
 

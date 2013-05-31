@@ -1,0 +1,25 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"OriginalName":"PtagModifyCancel",
+			"CommonName":"PtagModifyCancel123",
+			"Code":"PtagModifyCancel123",
+			"Meter":"PtagModifyCancel123",
+			"Channel":"5",
+			"Commodity":"SoftWater",
+			"Uom":"Ton",
+			"CalculationType":"Min",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"PtagModifyCancel",
+			"Code":"PtagModifyCancel",
+			"Meter":"PtagModifyCancel",
+			"Channel":"2",
+			"Commodity":"Water",
+			"Uom":"Ton",
+			"CalculationType":"Max",
+		}
+	}
+]

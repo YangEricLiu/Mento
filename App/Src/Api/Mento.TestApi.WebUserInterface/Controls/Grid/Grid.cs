@@ -114,6 +114,20 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        public string GetSelectedRowData(int cellIndex)
+        {
+            return GetRow(cellIndex).Text;
+        }
+
+        public virtual IWebElement GetRow(int cellIndex)
+        {
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowSelected);
+
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex } };
+
+            return FindChild(Locator.GetVariableLocator(rowLocator, variables));
+        }
+
         public virtual IWebElement GetRow(int cellIndex, string cellText)
         {
             var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);

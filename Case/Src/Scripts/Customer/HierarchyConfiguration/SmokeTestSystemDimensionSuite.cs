@@ -58,7 +58,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //4.Associate Level 3 dimension node by select the checkbox: Select ‘供冷主机’ checkbox.
             //The Level 3 dimension node ('供冷主机') is associated.
             SystemSettings.CheckSystemDimensionNodePath(input.InputData.SystemDimensionItemPath);
-            SystemSettings.CloseSystemDimensionDialog();
+            SystemSettings.ConfirmSystemDimensionDialog();
 
             //Expand system dimension tree and verify
             SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath);
@@ -88,7 +88,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //The Level 3 dimension node ('供冷主机') is Disassociated.
 
             SystemSettings.UncheckSystemDimensionNodePath(input.InputData.SystemDimensionItemPath);
-            SystemSettings.CloseSystemDimensionDialog();
+            SystemSettings.ConfirmSystemDimensionDialog();
 
             //Expand system dimension tree and verify
             Assert.IsTrue(SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath));

@@ -179,6 +179,10 @@
     <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-1.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-1.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\SmokeTestAreaDimensionSuite\TC-J1-SmokeTest-AreaDimension-001.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AssociateSytemDimension\TC-J1-FVT-SystemDimensionConfiguration-Associate-101-1.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AssociateSytemDimension\TC-J1-FVT-SystemDimensionConfiguration-Associate-101-2.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AssociateSytemDimension\TC-J1-FVT-SystemDimensionConfiguration-Associate-101-3.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AssociateSytemDimension\TC-J1-FVT-SystemDimensionConfiguration-Associate-101-4.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-4.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-3.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-2.json" />

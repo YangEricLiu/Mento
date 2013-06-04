@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001"],
+			"SystemDimensionItemPath":["空调", "冷热源", "供冷主机"],
+		},
+		"ExpectedData":
+		{
+			"SystemDimensionPath":["SysDimAssocSite001", "空调", "冷热源", "供冷主机"],
+		}
+	}
+]

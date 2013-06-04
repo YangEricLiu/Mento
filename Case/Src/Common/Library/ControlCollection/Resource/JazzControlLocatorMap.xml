@@ -191,6 +191,8 @@
         <add key="ButtonDimensionShowHierarchyTree" value = "//div[@id='setting-region-center']//button" type ="XPath"/>
         <add key="ButtonSystemDimensionSet" value = "st-sys-tree-update-btnInnerEl" type ="ID"/>
         <add key="ButtonSystemDimensionSettingsDialogReturn" value = "st-sys-configtree-goback" type ="ID"/>
+        <add key="ButtonSystemDimensionSettingsClose" value = "//img[@class='x-tool-close']" type ="XPath"/>
+      
       </systemdimension>
       <areadimension>
         <add key="ButtonAreaDimensionSettingsCreate" value="st-area-tree-add" type="ID"/>

@@ -200,6 +200,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static Button SystemDimensionSettingsSetButton = GetControl<Button>(JazzControlLocatorKey.ButtonSystemDimensionSet);
         public static Button SystemDimensionSettingsDialogReturnButton = GetControl<Button>(JazzControlLocatorKey.ButtonSystemDimensionSettingsDialogReturn);
+        public static Button SystemDimensionSettingsCloseButton = GetControl<Button>(JazzControlLocatorKey.ButtonSystemDimensionSettingsClose);
         #endregion
 
         #region Area dimension settings buttons

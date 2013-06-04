@@ -199,6 +199,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonDimensionShowHierarchyTree = "ButtonDimensionShowHierarchyTree";
         public static string ButtonSystemDimensionSet = "ButtonSystemDimensionSet";
         public static string ButtonSystemDimensionSettingsDialogReturn = "ButtonSystemDimensionSettingsDialogReturn";
+        public static string ButtonSystemDimensionSettingsClose = "ButtonSystemDimensionSettingsClose";
         #endregion
 
         #region areadimension

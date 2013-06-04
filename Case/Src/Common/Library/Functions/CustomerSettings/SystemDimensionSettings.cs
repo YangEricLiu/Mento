@@ -11,6 +11,8 @@ namespace Mento.ScriptCommon.Library.Functions
     {
         internal SystemDimensionSettings() { }
 
+        #region Controls
+
         private static HierarchyTree DimensionHierarchyTree = JazzTreeView.HierarchySettingsDimensionHierarchyTree;
 
         private static SystemDimensionTree SystemDimensionTree = JazzTreeView.HierarchySettingsSystemDimensionTree;
@@ -21,7 +23,11 @@ namespace Mento.ScriptCommon.Library.Functions
         private static SystemDimensionTree DialogSystemDimensionTree = JazzTreeView.HierarchySettingsDialogSystemDimensionTree;
 
         private static Button DialogReturnButton = JazzButton.SystemDimensionSettingsDialogReturnButton;
+        private static Button DislogCloseButton = JazzButton.SystemDimensionSettingsCloseButton;
 
+        #endregion
+
+        #region Tree Operations
 
         public void ShowHierarchyTree()
         {
@@ -43,6 +49,10 @@ namespace Mento.ScriptCommon.Library.Functions
             DimensionHierarchyTree.SelectNode(hierarchyNodePath);
         }
 
+        #endregion
+
+        #region System Tree Operations
+
         public void ShowSystemDimensionDialog()
         {
             SetSystemDimensionButton.Click();
@@ -53,19 +63,24 @@ namespace Mento.ScriptCommon.Library.Functions
             DialogSystemDimensionTree.CheckNodePath(systemDimensionNodePath);
         }
 
+        public void CheckSystemDimensionNode(string dimensionName)
+        {
+            DialogSystemDimensionTree.CheckNode(dimensionName);
+        }
+
         public void UncheckSystemDimensionNodePath(string[] systemDimensionNodePath)
         {
             DialogSystemDimensionTree.UncheckNodePath(systemDimensionNodePath);
         }
 
-        public void CloseSystemDimensionDialog()
-        {
-            DialogReturnButton.Click();
-        }
-
         public void ExpandSystemDimensionNodePath(string[] systemDimensionNodePath)
         {
             SystemDimensionTree.ExpandNodePath(systemDimensionNodePath);
+        }
+
+        public void ExpandDialogSystemDimensionNodePath(string[] systemDimensionNodePath)
+        {
+            DialogSystemDimensionTree.ExpandNodePath(systemDimensionNodePath);
         }
 
         public void SelectSystemDimensionNode(string systemDimensionNodeName)
@@ -86,9 +101,24 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public void ConfirmSystemDimensionDialog()
+        {
+            DialogReturnButton.Click();
+        }
+
+        public void CloseSystemDimensionDialog()
+        {
+            DislogCloseButton.Click();
+        }
+
+        #endregion
+
+        #region Verification
         public Boolean IsSystemDimensionNodeDisplayed(string nodeName)
         {
             return SystemDimensionTree.IsNodeDisplayed(nodeName);
         }
+        #endregion
+        
     }
 }

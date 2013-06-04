@@ -44,34 +44,185 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(PtagData[]), typeof(DeletePtagSuite), "TC-J1-FVT-PtagConfiguration-Delete-001-1")]
         public void DeletePtagThenCancel(PtagData input)
         {
-            //Click "Modify" button and input nothing to ptag field
+            //Select the ptag
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
-            PTagSettings.ClickModifyButton();
-            PTagSettings.FillInPtag(input.InputData);
+
+            //Click "Delete" button
+            PTagSettings.ClickDeleteButton();
+            TimeManager.ShortPause();
+
+            //Verify that message box popup for confirm delete
+            string msgText = JazzMessageBox.MessageBox.GetMessage(); 
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
 
             //Click "Cancel" button
-            PTagSettings.ClickCancelButton();
+            JazzMessageBox.MessageBox.Cancel();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
             //verify modify successful
-            Assert.IsFalse(PTagSettings.IsSaveButtonDisplayed());
-            Assert.IsFalse(PTagSettings.IsCancelButtonDisplayed());
+            Assert.IsTrue(PTagSettings.IsModifyButtonDisplayed());
+            Assert.IsTrue(PTagSettings.IsDeleteButtonDisplayed());
 
-            //Verify that ptag not changed
+            //Verify that ptag not deleted
             Assert.IsTrue(PTagSettings.FocusOnPTagByName(input.InputData.OriginalName));
-            Assert.IsFalse(PTagSettings.FocusOnPTagByName(input.InputData.CommonName));
-
-            //Verify the ptag not changed
-            PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
-            Assert.AreEqual(input.ExpectedData.CommonName, PTagSettings.GetNameValue());
-            Assert.AreEqual(input.ExpectedData.Code, PTagSettings.GetCodeValue());
-            Assert.AreEqual(input.ExpectedData.Meter, PTagSettings.GetMetercodeValue());
-            Assert.AreEqual(input.ExpectedData.Channel, PTagSettings.GetChannelIdValue());
-            Assert.AreEqual(PTagSettings.GetCommodityExpectedValue(input.ExpectedData.Commodity), PTagSettings.GetCommodityValue());
-            Assert.AreEqual(PTagSettings.GetUomExpectedValue(input.ExpectedData.Uom), PTagSettings.GetUomValue());
-            Assert.AreEqual(PTagSettings.GetCalculationTypeExpectedValue(input.ExpectedData.CalculationType), PTagSettings.GetCalculationTypeValue());
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-PtagConfiguration-Delete-101-1")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(DeletePtagSuite), "TC-J1-FVT-PtagConfiguration-Delete-101-1")]
+        public void DeletePtagAndVerify(PtagData input)
+        {
+            string vtagName = "VtagForCheckPtagAll";
+
+            //Select the ptag
+            PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
+
+            //Click "Delete" button
+            PTagSettings.ClickDeleteButton();
+            TimeManager.ShortPause();
+
+            //Verify that message box popup for confirm delete
+            string msgText = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+
+            //Click "Confirm" button
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            //verify delete successful
+            Assert.IsFalse(PTagSettings.IsModifyButtonDisplayed());
+            Assert.IsFalse(PTagSettings.IsDeleteButtonDisplayed());
+
+            //1. Verify that ptag is deleted from ptag list
+            Assert.IsFalse(PTagSettings.FocusOnPTagByName(input.InputData.OriginalName));
+
+            //2. Verify ptag is deleted from formula tag list
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+            JazzFunction.VTagSettings.FocusOnVTagByName(vtagName);
+            JazzFunction.VTagSettings.SwitchToFormulaTab();
+            JazzFunction.VTagSettings.ClickModifyFormulaButton();
+            Assert.IsFalse(JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.ExpectedData.CommonName));
+
+            //3. Verify ptag is deleted from associated tag list
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+            JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            Assert.IsFalse(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.CommonName));
+            
+            //4. Verify ptag is deleted from energy analysis tag list
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
+            TimeManager.ShortPause();
+            Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.CommonName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-PtagConfiguration-Delete-101-2")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(DeletePtagSuite), "TC-J1-FVT-PtagConfiguration-Delete-101-2")]
+        public void DeletePtagUsedByCost(PtagData input)
+        {
+            //Select the ptag
+            PTagSettings.FocusOnPTagByName(input.InputData.CommonName);
+
+            //Click "Delete" button
+            PTagSettings.ClickDeleteButton();
+            TimeManager.ShortPause();
+
+            //Verify that message box popup for confirm delete
+            string msgText = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.MessageArray[0]));
+
+            //Click "Confirm" button
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            string msgText2 = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
+
+            //verify delete failed
+            Assert.IsTrue(PTagSettings.IsModifyButtonDisplayed());
+            Assert.IsTrue(PTagSettings.IsDeleteButtonDisplayed());
+            
+            //1. Verify that ptag is not deleted from ptag list
+            Assert.IsTrue(PTagSettings.FocusOnPTagByName(input.InputData.CommonName));
+
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-PtagConfiguration-Delete-101-3")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(DeletePtagSuite), "TC-J1-FVT-PtagConfiguration-Delete-101-3")]
+        public void DeletePtagUsedByAll(PtagData input)
+        {
+            //Select the ptag
+            PTagSettings.FocusOnPTagByName(input.InputData.CommonName);
+
+            //Click "Delete" button
+            PTagSettings.ClickDeleteButton();
+            TimeManager.ShortPause();
+
+            //Verify that message box popup for confirm delete
+            string msgText = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.MessageArray[0]));
+
+            //Click "Confirm" button
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            string msgText2 = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
+
+            //verify delete failed
+            Assert.IsTrue(PTagSettings.IsModifyButtonDisplayed());
+            Assert.IsTrue(PTagSettings.IsDeleteButtonDisplayed());
+            
+            //1. Verify that ptag is not deleted from ptag list
+            Assert.IsTrue(PTagSettings.FocusOnPTagByName(input.InputData.CommonName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-PtagConfiguration-Delete-101-4")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(DeletePtagSuite), "TC-J1-FVT-PtagConfiguration-Delete-101-4")]
+        public void DeletePtagUsedByFormula(PtagData input)
+        {
+            string vtagName = "VtagUsePtagKVAH002";
+            
+            //Select the ptag
+            PTagSettings.FocusOnPTagByName(input.InputData.CommonName);
+
+            //Click "Delete" button
+            PTagSettings.ClickDeleteButton();
+            TimeManager.ShortPause();
+
+            //Verify that message box popup for confirm delete
+            string msgText = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.MessageArray[0]));
+
+            //Click "Confirm" button
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            string msgText2 = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
+
+            //verify delete failed
+            Assert.IsTrue(PTagSettings.IsModifyButtonDisplayed());
+            Assert.IsTrue(PTagSettings.IsDeleteButtonDisplayed());
+
+            //1. Verify that ptag is not deleted from ptag list
+            Assert.IsTrue(PTagSettings.FocusOnPTagByName(input.InputData.CommonName));
+
+            //2. Delete the vtag which using ptag 
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+            JazzFunction.VTagSettings.FocusOnVTagByName(vtagName);
+            
+        }
     }
 }

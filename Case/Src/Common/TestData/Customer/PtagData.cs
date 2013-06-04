@@ -12,6 +12,7 @@ namespace Mento.ScriptCommon.TestData.Customer
     }
     public class PtagInputData : InputTestDataBase
     {
+        public string[] CommonNameArray { get; set; }
         public string OriginalName { get; set; }
         public string CommonName { get; set; }
         public string Code { get; set; }
@@ -34,5 +35,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Uom { get; set; }
         public string CalculationType { get; set; }
         public string Comments { get; set; }
+        public string Message { get; set; }
+        public string[] MessageArray { get; set; }
     }
 }

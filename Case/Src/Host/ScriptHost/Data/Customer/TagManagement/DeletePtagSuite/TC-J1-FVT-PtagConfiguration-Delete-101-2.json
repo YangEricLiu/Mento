@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"PtagElecKHW002",
+		},
+		"ExpectedData":
+		{
+			"MessageArray":["删除计量数据P“PtagElecKHW002”吗？", ""],
+		}
+	}
+]

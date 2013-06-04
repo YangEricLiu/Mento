@@ -143,6 +143,11 @@ namespace Mento.Script.Customer.TagManagement
             string msgText2 = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
 
+            //Click "Confirm" button
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
             //verify delete failed
             Assert.IsTrue(PTagSettings.IsModifyButtonDisplayed());
             Assert.IsTrue(PTagSettings.IsDeleteButtonDisplayed());
@@ -176,6 +181,11 @@ namespace Mento.Script.Customer.TagManagement
 
             string msgText2 = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
+
+            //Click "Confirm" button
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
 
             //verify delete failed
             Assert.IsTrue(PTagSettings.IsModifyButtonDisplayed());
@@ -211,6 +221,11 @@ namespace Mento.Script.Customer.TagManagement
 
             string msgText2 = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
+
+            //Click "Confirm" button
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
 
             //verify delete failed
             Assert.IsTrue(PTagSettings.IsModifyButtonDisplayed());

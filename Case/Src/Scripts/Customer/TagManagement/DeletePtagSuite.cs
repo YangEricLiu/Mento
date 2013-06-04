@@ -222,7 +222,27 @@ namespace Mento.Script.Customer.TagManagement
             //2. Delete the vtag which using ptag 
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
             JazzFunction.VTagSettings.FocusOnVTagByName(vtagName);
-            
+            JazzFunction.VTagSettings.ClickDeleteButton();
+            string msgText3 = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText3.Contains(input.ExpectedData.MessageArray[2]));
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+            Assert.IsFalse(JazzFunction.VTagSettings.FocusOnVTagByName(vtagName));
+
+            //delete ptag again
+            PTagSettings.NavigatorToPtagSetting();
+            PTagSettings.FocusOnPTagByName(input.InputData.CommonName);
+            PTagSettings.ClickDeleteButton();
+            TimeManager.ShortPause();
+            string msgText4 = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText4.Contains(input.ExpectedData.MessageArray[0]));
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            //1. Verify that ptag is deleted from ptag list
+            Assert.IsFalse(PTagSettings.FocusOnPTagByName(input.InputData.CommonName));
         }
     }
 }

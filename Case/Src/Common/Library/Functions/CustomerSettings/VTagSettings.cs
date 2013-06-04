@@ -118,6 +118,15 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Click Delete vtag button
+        /// </summary>
+        /// <returns></returns>
+        public void ClickDeleteButton()
+        {
+            DeleteButton.Click();
+        }
+
+        /// <summary>
         /// Click cancel button to cancel add new VTag
         /// </summary>
         /// <param></param>

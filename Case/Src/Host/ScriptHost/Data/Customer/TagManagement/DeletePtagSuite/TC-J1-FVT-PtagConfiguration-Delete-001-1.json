@@ -1,0 +1,21 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"OriginalName":"PtagDeleteCancel",
+			"CommonName":"PtagDeleteCancel",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"PtagDeleteCancel",
+			"Code":"PtagDeleteCancel",
+			"Meter":"PtagDeleteCancel",
+			"Channel":"1",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"CalculationType":"Sum",
+			"Comments":"nothing",
+			"Message":"删除计量数据P“PtagDeleteCancel”吗？",
+		}
+	}
+]

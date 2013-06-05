@@ -97,7 +97,7 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(PtagData[]), typeof(AddValidPtagSuite), "TC-J1-FVT-PtagConfiguration-Add-101-3")]
         public void AddPtagAndVerify(PtagData input)
         {
-            string vtagFormula = "VtagForCheckPtagAll";
+            string ptagFormula = "PtagForCheckPtagAll";
 
             //Click "+" button and fill ptag field
             PTagSettings.ClickAddPtagButton();
@@ -113,7 +113,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //1. verify on formula tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
-            JazzFunction.VTagSettings.FocusOnVTagByName(vtagFormula);
+            JazzFunction.PTagSettings.FocusOnPTagByName(ptagFormula);
             JazzFunction.VTagSettings.SwitchToFormulaTab();
             JazzFunction.VTagSettings.ClickModifyFormulaButton();
             TimeManager.MediumPause();

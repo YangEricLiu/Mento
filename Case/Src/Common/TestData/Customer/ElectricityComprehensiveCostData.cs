@@ -28,7 +28,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string ElectricPaddingCost { get; set; }
     }
 
-    public class ElectricComprehensiveCostExpectedData : ExpectedTestDataBase
+    public class ElectricComprehensiveCostExpectedData : VtagOuputData
     {
         public string[] HierarchyNodePath { get; set; }
         public string EffectiveDate { get; set; }

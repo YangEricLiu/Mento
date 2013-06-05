@@ -20,7 +20,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Comments { get; set; }
     }
 
-    public class HierarchyExpectedData : ExpectedTestDataBase
+    public class HierarchyExpectedData : VtagOuputData
     {
         public string[] HierarchyNodePath { get; set; }
         public string CommonName { get; set; }

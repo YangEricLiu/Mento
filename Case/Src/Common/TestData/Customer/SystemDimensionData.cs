@@ -17,7 +17,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string[] SystemDimensionItemPath { get; set; }
     }
 
-    public class SystemDimensionExpectedData : ExpectedTestDataBase
+    public class SystemDimensionExpectedData : VtagOuputData
     {
         public string[] HierarchyNodePath { get; set; }
         public string[] SystemDimensionPath { get; set; }

@@ -23,7 +23,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         }
     }
 
-    public class KPIFormulaExpectedData : ExpectedTestDataBase
+    public class KPIFormulaExpectedData : VtagOuputData
     {
        public string Name { get; set; }
         public string Formula { get; set; }

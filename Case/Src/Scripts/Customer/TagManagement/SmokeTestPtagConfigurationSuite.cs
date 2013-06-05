@@ -64,7 +64,7 @@ namespace Mento.Script.Customer.TagManagement
 
         [Test]
         [CaseID("TA-PtagConfiguration-002")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(SmokeTestPtagConfigurationSuite), "TA-PtagConfiguration-002")]
+        [MultipleTestDataSource(typeof(VtagData[]), typeof(SmokeTestPtagConfigurationSuite), "TA-PtagConfiguration-002")]
         public void ModifyPtag(PtagData testData)
         {
             //string tagName = "tagformodification";

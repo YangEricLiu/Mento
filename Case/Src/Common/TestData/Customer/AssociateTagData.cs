@@ -19,7 +19,7 @@ namespace Mento.ScriptCommon.TestData.Customer
             public string[] TagNames { get; set; }
         }
 
-        public class AssociateTagExpectedData : ExpectedTestDataBase
+        public class AssociateTagExpectedData : VtagOuputData
         {
             public string[] HierarchyNodePath { get; set; }
             public string[] SystemDimensionPath { get; set; }

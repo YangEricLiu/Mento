@@ -203,7 +203,7 @@
       </areadimension>
       <hierarchyassociation>
         <add key = "ButtonAssociationSettingsTagAssociate" value = "st-tagassoc-taggrid-assoc" type = "ID"/>
-        <add key = "ButtonAssociationSettingsAssociate" value = "st-tagassoc-taggrid-assoc-btnInnerEl" type = "ID"/>
+        <add key = "ButtonAssociationSettingsAssociate" value = "st-tagassoc-taggrid-assocaction" type = "ID"/>
       </hierarchyassociation>                                    
       <hierarchydisassociation>
         <add key = "ButtonAssociationSettingsDisassociate" value = "st-tagassoc-taggrid-unassoc-btnInnerEl" type = "ID"/>

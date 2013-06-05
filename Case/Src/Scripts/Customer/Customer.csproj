@@ -73,6 +73,7 @@
     <Compile Include="TagAssociation\SmokeTestSystemDisassociateTagSuite.cs" />
     <Compile Include="TagManagement\AddKPIFormulaSuite.cs" />
     <Compile Include="TagManagement\AddKPITagSuite.cs" />
+    <Compile Include="TagManagement\AddValidVtagSuite.cs" />
     <Compile Include="TagManagement\CancelModifyFormDayNightKPI.cs" />
     <Compile Include="TagManagement\CancelModifyFormNonDayNightKPI.cs" />
     <Compile Include="TagManagement\CancelModifyKPITag.cs" />

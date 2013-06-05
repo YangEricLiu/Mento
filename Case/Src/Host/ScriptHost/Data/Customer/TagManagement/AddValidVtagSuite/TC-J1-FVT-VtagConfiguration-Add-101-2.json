@@ -1,0 +1,27 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"1VtagForCheckOnESSite001",
+			"Code":"VtagForCheckOnESSite001",
+			"Meter":"VtagForCheckOnESSite001",
+			"Channel":"6",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"1VtagForCheckOnESSite001",
+			"Code":"VtagForCheckOnESSite001",
+			"Meter":"VtagForCheckOnESSite001",
+			"Channel":"6",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+			"HierarchyNodePath":["自动化测试","CheckOnESSite001"],
+		}
+	}
+]

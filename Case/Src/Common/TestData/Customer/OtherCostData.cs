@@ -18,7 +18,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Price { get; set; }
     }
 
-    public class OtherCostExpectedData : ExpectedTestDataBase
+    public class OtherCostExpectedData : VtagOuputData
     {
         public string[] HierarchyNodePath { get; set; }
         public string EffectiveDate { get; set; }

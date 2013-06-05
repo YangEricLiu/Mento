@@ -21,7 +21,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string PeopleNumber { get; set; }
     }
 
-    public class PeopleAreaPropertyExpectedData : ExpectedTestDataBase
+    public class PeopleAreaPropertyExpectedData : VtagOuputData
     {
         public string[] HierarchyNodePath { get; set; }
         public string TotalArea { get; set; }

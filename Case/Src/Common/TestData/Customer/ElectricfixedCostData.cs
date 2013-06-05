@@ -19,7 +19,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Price { get; set; }
     }
 
-    public class ElectricfixedCostExpectedData : ExpectedTestDataBase
+    public class ElectricfixedCostExpectedData : VtagOuputData
     {
         public string[] HierarchyNodePath { get; set; }
         public string EffectiveDate { get; set; }

@@ -231,6 +231,9 @@
     <None Include="Data\Customer\TagManagement\AddValidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-101-3.json" />
     <None Include="Data\Customer\TagManagement\AddValidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-101-2.json" />
     <None Include="Data\Customer\TagManagement\AddValidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-101-1.json" />
+    <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-4.json" />
+    <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-2.json" />
+    <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-1.json" />
     <None Include="Data\Customer\TagManagement\DeletePtagSuite\TC-J1-FVT-PtagConfiguration-Delete-101-4.json" />
     <None Include="Data\Customer\TagManagement\DeletePtagSuite\TC-J1-FVT-PtagConfiguration-Delete-101-3.json" />
     <None Include="Data\Customer\TagManagement\DeletePtagSuite\TC-J1-FVT-PtagConfiguration-Delete-101-2.json" />

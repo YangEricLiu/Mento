@@ -23,7 +23,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string DayNightCalendarName { get; set; }
     }
 
-    public class CalendarPropertExpectedData : ExpectedTestDataBase
+    public class CalendarPropertExpectedData : VtagOuputData
     {
         public string[] HierarchyNodePath { get; set; }
         public string WorkdayEffectiveDate { get; set; }

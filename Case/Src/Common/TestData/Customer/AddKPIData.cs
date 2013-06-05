@@ -30,7 +30,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         }
     }
 
-    public class KPIExpectedData : ExpectedTestDataBase
+    public class KPIExpectedData : VtagOuputData
     {
         public string Name { get; set; }
         public string code { get; set; }

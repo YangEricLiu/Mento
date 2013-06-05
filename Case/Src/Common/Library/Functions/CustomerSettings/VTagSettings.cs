@@ -126,6 +126,32 @@ namespace Mento.ScriptCommon.Library.Functions
             DeleteButton.Click();
         }
 
+
+        /// <summary>
+        /// Judge "Save" display          ---- Greenie add
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsSaveButtonDisplayed()
+        {
+            return SaveButton.IsDisplayed();
+        }
+
+
+
+        /// <summary>
+        /// Judge "Cancel" display       ---- Greenie add
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsCancelButtonDisplayed()
+        {
+            return CancelButton.IsDisplayed();
+        }
+
+
+
+
         /// <summary>
         /// Click cancel button to cancel add new VTag
         /// </summary>
@@ -143,11 +169,12 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FillInAddVTagData(VtagInputData input)
         {
-            NameTextField.Fill(input.Name);
-            codeTextField.Fill(input.code);
+            NameTextField.Fill(input.CommonName);
+            codeTextField.Fill(input.Code);
             CommodityComboBox.SelectItem(input.Commodity);
             UomComboBox.SelectItem(input.UOM);
             CalculationStepComboBox.SelectItem(input.Step);
+            //TimeManager.LongPause();
             CalculationTypeComboBox.SelectItem(input.CalculationType);
             CommentTextField.Fill(input.Comment);
         }

@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"VtagSameName001",
+			"Code":"VtagNotSameCode",
+			"Meter":"VtagSameName001",
+			"Channel":"6",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

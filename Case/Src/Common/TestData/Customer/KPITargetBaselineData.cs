@@ -70,7 +70,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         }
     }
 
-    public class KPITargetBaselineExpectedData : ExpectedTestDataBase
+    public class KPITargetBaselineExpectedData : VtagOuputData
     {
         public string AnnualCalculatedValue { get; set; }
         public string JanuaryCalculatedValue { get; set; }

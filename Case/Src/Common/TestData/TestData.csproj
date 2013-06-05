@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Common\TimeRange.cs" />
     <Compile Include="Customer\AddKPIData.cs" />
+    <Compile Include="Customer\VtagData.cs" />
     <Compile Include="Customer\AssociateTagData.cs" />
     <Compile Include="Customer\CalendarPropertyData.cs" />
     <Compile Include="Customer\AreaDimensionData.cs" />
@@ -70,9 +71,6 @@
     <Compile Include="Customer\PeopleAreaPropertyData.cs" />
     <Compile Include="Customer\PtagData.cs" />
     <Compile Include="Administration\ExampleData.cs" />
-    <Compile Include="Customer\AddVtagData.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ClientAccess\LoginData.cs" />
     <Compile Include="Customer\HierarchyData.cs" />
     <Compile Include="Customer\KPITargetBaselineData.cs" />

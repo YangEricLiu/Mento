@@ -40,8 +40,8 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TA-VtagConfigue-001")]
         [Priority("18")]
         [Type("BVT")]
-        [MultipleTestDataSource(typeof(AddVtagData[]), typeof(SmokeTestVTagManagementSuite), "TA-VtagConfigue-001")]
-        public void AddVtag(AddVtagData input)
+        [MultipleTestDataSource(typeof(VtagData[]), typeof(SmokeTestVTagManagementSuite), "TA-VtagConfigue-001")]
+        public void AddVtag(VtagData input)
         {
             VTagSettings.ClickAddVTagButton();
             VTagSettings.FillInAddVTagData(input.InputData);
@@ -52,13 +52,13 @@ namespace Mento.Script.Customer.TagManagement
         }
 
 
-        public void AddVtagResultView(AddVtagData testdata)
+        public void AddVtagResultView(VtagData testdata)
         {
 
             string AddedVtagName = "NancyVtag";
             VTagSettings.FocusOnVTagByName(AddedVtagName);
-            Assert.AreEqual(testdata.InputData.Name, VTagSettings.GetVTagNameValue());
-            Assert.AreEqual(testdata.InputData.code, VTagSettings.GetVTagcodeValue());
+            Assert.AreEqual(testdata.InputData.CommonName, VTagSettings.GetVTagNameValue());
+            Assert.AreEqual(testdata.InputData.Code, VTagSettings.GetVTagcodeValue());
             Assert.AreEqual(testdata.InputData.Commodity, VTagSettings.GetVTagCommodityValue());
             Assert.AreEqual(testdata.InputData.UOM, VTagSettings.GetVTagUOMValue());
             Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(testdata.InputData.Commodity), VTagSettings.GetVTagUOMValue());

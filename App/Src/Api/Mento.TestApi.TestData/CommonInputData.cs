@@ -24,7 +24,9 @@ namespace Mento.TestApi.TestData
         public string Code { get; set; }
         public string Meter { get; set; }
         public string Channel { get; set; }
-        public string DataValue { get; set; }
+        public string IntegerValue { get; set; }
+        public string DoubleNagtiveValue { get; set; }
+        public string DoubleNonNagtiveValue { get; set; }
         public string Comments { get; set; }
         public string FeedbackComments { get; set; }
     }
@@ -42,7 +44,9 @@ namespace Mento.TestApi.TestData
         public string Code { get; set; }
         public string Meter { get; set; }
         public string Channel { get; set; }
-        public string DataValue { get; set; }
+        public string IntegerValue { get; set; }
+        public string DoubleNagtiveValue { get; set; }
+        public string DoubleNonNagtiveValue { get; set; }
         public string Comments { get; set; }
         public string FeedbackComments { get; set; }
     }

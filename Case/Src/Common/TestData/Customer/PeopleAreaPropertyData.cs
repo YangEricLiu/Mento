@@ -19,6 +19,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string CoolingArea { get; set; }
         public string PeopleEffectiveDate { get; set; }
         public string PeopleNumber { get; set; }
+
     }
 
     public class PeopleAreaPropertyExpectedData : VtagOuputData
@@ -31,5 +32,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string PeopleNumber { get; set; }
         public string Message { get; set; }
         public string ErrorMessage { get; set; }
+
     }
 }

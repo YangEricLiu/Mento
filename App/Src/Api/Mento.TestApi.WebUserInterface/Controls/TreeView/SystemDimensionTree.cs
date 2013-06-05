@@ -60,7 +60,24 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 }
             }     
         }
-        
+
+        public void UncheckNodeWithoutConfirm(string nodeText)
+        {
+            Locator uncheckboxLocator = Locator.GetVariableLocator(CHECKBOXXPATHFORMAT, ByType.XPath, TREENODEVARIABLENAME, nodeText);
+            Locator confirmUncheckboxButton = new Locator(UNCHECKBOXCONFIRMBUTTON, ByType.XPath);
+
+            if (ElementHandler.Exists(uncheckboxLocator))
+            {
+                IWebElement checkbox = FindChild(uncheckboxLocator);
+                //Console.WriteLine("checkbox: " + nodeText + ", at point:" + checkbox.Location.X + "," + checkbox.Location.Y);
+
+                if (String.Equals(checkbox.GetAttribute("aria-checked"), "true", StringComparison.OrdinalIgnoreCase))
+                {
+                    ClickCheckbox(checkbox);
+                }
+            }
+        }
+
         public void CheckNodePath(string[] nodePath)
         {
             foreach (string nodeText in nodePath)

@@ -73,6 +73,11 @@ namespace Mento.ScriptCommon.Library.Functions
             DialogSystemDimensionTree.UncheckNodePath(systemDimensionNodePath);
         }
 
+        public void UncheckSystemDimensionNodeWithoutConfirm(string systemDimensionNode)
+        {
+            DialogSystemDimensionTree.UncheckNodeWithoutConfirm(systemDimensionNode);
+        }
+
         public void ExpandSystemDimensionNodePath(string[] systemDimensionNodePath)
         {
             SystemDimensionTree.ExpandNodePath(systemDimensionNodePath);

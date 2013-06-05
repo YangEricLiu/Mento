@@ -13,7 +13,9 @@
 			"Code":"   CAPITALCHARS ",
 			"Meter":"   CAPITALCHARS ",
 			"Channel":"1234",
-			"DataValue":"",
+			"IntegerValue":"",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"",
 			"Comments":"CAPITALCHARS",
 			"FeedbackComments":""
 		},
@@ -30,7 +32,9 @@
 			"Code":"CAPITALCHARS",
 			"Meter":"CAPITALCHARS",
 			"Channel":"1234",
-			"DataValue":"",
+			"IntegerValue":"",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"",
 			"Comments":"CAPITALCHARS",
 			"FeedbackComments":"",
 		}
@@ -49,7 +53,9 @@
 			"Code":"  onlychars  ",
 			"Meter":"  onlychars  ",
 			"Channel":"1",
-			"DataValue":"",
+			"IntegerValue":"",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"",
 			"Comments":"只有中文",
 			"FeedbackComments":""
 		},
@@ -66,7 +72,9 @@
 			"Code":"onlychars",
 			"Meter":"onlychars",
 			"Channel":"1",
-			"DataValue":"",
+			"IntegerValue":"",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"",
 			"Comments":"只有中文",
 			"FeedbackComments":"",
 		}
@@ -85,7 +93,9 @@
 			"Code":"chars1234 _F+-.#&",
 			"Meter":"chars1234 _F+-.#&",
 			"Channel":"-8",
-			"DataValue":"",
+			"IntegerValue":"",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"",
 			"Comments":"中文CAPITALchars 1234_F",
 			"FeedbackComments":""
 		},
@@ -102,7 +112,9 @@
 			"Code":"chars1234 _F+-.#&",
 			"Meter":"chars1234 _F+-.#&",
 			"Channel":"8",
-			"DataValue":"",
+			"IntegerValue":"",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"",
 			"Comments":"中文CAPITALchars 1234_F",
 			"FeedbackComments":""
 		}
@@ -121,7 +133,9 @@
 			"Code":"Wh +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F",
 			"Meter":"Wh +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F",
 			"Channel":"a6e",
-			"DataValue":"",
+			"IntegerValue":"",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"",
 			"Comments":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
 			"FeedbackComments":""
 		},
@@ -138,7 +152,9 @@
 			"Code":"Wh +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F",
 			"Meter":"Wh +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F",
 			"Channel":"6",
-			"DataValue":"",
+			"IntegerValue":"",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"",
 			"Comments":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
 			"FeedbackComments":""
 		}
@@ -157,7 +173,9 @@
 			"Code":"ch +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F000",
 			"Meter":"ch +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F000",
 			"Channel":"999999999999999",
-			"DataValue":"",
+			"IntegerValue":"",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"",
 			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F000",
 			"FeedbackComments":""
 		},
@@ -174,7 +192,9 @@
 			"Code":"ch +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F",
 			"Meter":"ch +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F",
 			"Channel":"999999999999999",
-			"DataValue":"",
+			"IntegerValue":"",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"",
 			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
 			"FeedbackComments":""
 		}

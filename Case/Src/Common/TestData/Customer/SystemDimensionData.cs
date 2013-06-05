@@ -21,6 +21,8 @@ namespace Mento.ScriptCommon.TestData.Customer
     {
         public string[] HierarchyNodePath { get; set; }
         public string[] SystemDimensionPath { get; set; }
+        public string SystemDimensionNode { get; set; }
+        public string[] SystemDimensionNodes { get; set; }
         public string Message { get; set; }
         public string ErrorMessage { get; set; }
     }

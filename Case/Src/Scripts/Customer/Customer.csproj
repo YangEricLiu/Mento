@@ -53,9 +53,11 @@
     <Compile Include="HierarchyConfiguration\AddInvalidHierarhcyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\AddValidHierarhcyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\AssociateSytemDimension.cs" />
+    <Compile Include="HierarchyConfiguration\DisassociateSytemDimension.cs" />
     <Compile Include="HierarchyConfiguration\DeleteHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\ModifyValidHierarchyNodeSuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddElectricfixedCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddElectricityCompCostPropertySuite .cs" />
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddOtherCostPropertySuite.cs" />

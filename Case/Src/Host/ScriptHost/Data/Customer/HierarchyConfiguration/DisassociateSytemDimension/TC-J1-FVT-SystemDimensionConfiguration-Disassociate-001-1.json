@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001", "SysDimAssocBuild001"],
+			"SystemDimensionItemPath":["空调", "冷热源", "供热主机"],
+		},
+		"ExpectedData":
+		{
+			"SystemDimensionPath":["SysDimAssocBuild001", "空调", "冷热源", "供热主机"],
+			"Message":"删除系统维度节点”供热主机”吗？\r\n您将同时删除系统维度节点下所有的数据点关联关系",
+		}
+	}
+]

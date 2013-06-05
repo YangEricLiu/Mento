@@ -25,6 +25,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button PeopleAreaCreate = JazzButton.PeopleAreaCreateButton;
         private static Button PeopleAreaUpdate = JazzButton.PeopleAreaUpdateButton;
         private static Button PeopleAreaSave = JazzButton.PeopleAreaSaveButton;
+        private static Button PeopleAreaCancel = JazzButton.PeopleAreaCancelButton; 
         private static TextField TotalAreaValue = JazzTextField.TotalAreaValueTextField;
         private static TextField HeatingAreaValue = JazzTextField.HeatingAreaValueTextField;
         private static TextField CoolingAreaValue = JazzTextField.CoolingAreaValueTextField;
@@ -38,6 +39,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickPeopleAreaTab()
         {
             PeopleAreaTab.Click();
+        }
+
+        public bool IsPeopleAreaTabEnable()
+        {
+            return PeopleAreaTab.IsEnabled();
+        }
+
+        public bool IsPeopleAreaCreateButtonDisplayed()
+        {
+            return PeopleAreaCreate.IsDisplayed();
         }
 
         public void ClickPeopleAreaCreateButton()
@@ -56,7 +67,12 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             PeopleAreaSave.Click();
             JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
-        }        
+        }
+
+        public void ClickCancelButton()
+        {
+            PeopleAreaCancel.Click();
+        } 
         #endregion
 
         #region Area

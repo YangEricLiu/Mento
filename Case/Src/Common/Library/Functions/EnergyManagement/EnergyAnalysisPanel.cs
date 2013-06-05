@@ -67,11 +67,20 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
-        public void SelectSystemDimension(string[] systemDimensionPath)
+        public bool SelectSystemDimension(string[] systemDimensionPath)
         {
-            SelectSystemDimensionButton.Click();
+            try
+            {
+                SelectSystemDimensionButton.Click();
 
-            SystemDimensionTree.SelectNode(systemDimensionPath);
+                SystemDimensionTree.SelectNode(systemDimensionPath);
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+            
         }
 
         public void SelectAreaDimension(string[] areaDimensionPath)

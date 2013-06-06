@@ -28,6 +28,21 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        public IWebElement[] RootElements
+        {
+            get
+            {
+                if (_RootLocator == null)
+                    return null;
+
+                if (_ParentContainer == null)
+                    return ElementHandler.FindElements(_RootLocator);
+                else
+                    return ElementHandler.FindElements(_RootLocator, _ParentContainer);
+            }
+        }
+
+
         public JazzControl(Locator rootLocator, ISearchContext parentContainer=null)
         {
             _RootLocator = rootLocator;
@@ -69,6 +84,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public virtual bool Exists(Locator locator)
         {
             return ElementHandler.Exists(locator, container: this.RootElement);
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="locator">JavaScript</param>
+        public virtual object ExecuteJavaScriptOnControl(string script)
+        {
+            return BrowserHandler.ExecuteJavaScript(script, this.RootElement);
         }
     }
 }

@@ -329,7 +329,7 @@
         <add key="TextFieldTotalAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-totalarea-container']//input[@type='text' and @name='TotalAreaValue']" type="XPath"/>
         <add key="TextFieldHeatingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-heatingarea-container']//input[@type='text' and @name='HeatingAreaValue']" type="XPath"/>
         <add key="TextFieldCoolingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-coolingarea-container']//input[@type='text' and @name='CoolingAreaValue']" type="XPath"/>
-        <add key="TextFieldPeopleNumber" value="//div[@id='st-hierarchy-dynamic-population-value-container']//table[contains(@id,'fieldcontainer')][$#positionIndex]//table[contains(@id,'numberfield') and contains(@class,'x-form-trigger-wrap')]//input[@type='text'and contains(@name,'numberfield')]" type="XPath"/>
+        <add key="TextFieldPeopleNumber" value="//table[@id='st-hierarchy-dynamic-population-value-container']//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table[contains(@id,'fieldcontainer')][$#positionIndex]//table[contains(@id,'numberfield') and contains(@class,'x-form-trigger-wrap')]//input[@type='text'and contains(@name,'numberfield')]" type="XPath"/>
         <add key="TextFieldElectricPrice" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//input[@name='Price']" type="XPath"/>
         <add key="TextFieldElectricPaddingCost" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//input[@name='PaddingCost']" type="XPath"/>
         <add key="TextFieldElectricTransformerCapacity" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//input[@name='TransformerCapacity']" type="XPath"/>
@@ -601,7 +601,7 @@
   <!--MonthPicker-->
   <MonthPicker>
     <hierarchyproperty>
-      <add key="MonthPickerPeopleEffectiveDate" value="//div[@id='st-hierarchy-dynamic-population-value-container']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'monthfield')]]" type="XPath"/>
+      <add key="MonthPickerPeopleEffectiveDate" value="//table[@id='st-hierarchy-dynamic-population-value-container']//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table[$#positionIndex]//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'monthfield')]]" type="XPath"/>
       <add key="MonthPickerElectricCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
       <add key="MonthPickerWaterCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
       <add key="MonthPickerGasCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][2]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
@@ -654,5 +654,12 @@
     <Login>
       <add key="WindowLoginOption" value="//div[contains(@class, 'x-window-default')]" type="XPath"/>
     </Login>    
-  </Window>
+  </Window> 
+
+<!--Container-->
+  <Container>
+  <hierarchypeopertysettings>
+    <add key="ContainerPeopleItems" value="//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table" type="XPath"/>
+  </hierarchypeopertysettings>
+</Container>
 </WebElement>

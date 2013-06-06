@@ -80,7 +80,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.IsTrue(PeopleAreaSetting.IsPeopleAreaCreateButtonDisplayed());
 
             //Click "+人口面积" button
-            PeopleAreaSetting.ClickPeopleAreaCreateButton();
+            PeopleAreaSetting.ClickPeopleAreaCreateButton(); 
 
             //Fill nothing and cancel
             PeopleAreaSetting.ClickCancelButton();
@@ -92,31 +92,67 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
         [Test]
         [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-3")]
-        [Type("BVT")]
+        [Type("BFT")]
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-3")]
         public void PAAddValidPupolation(PeopleAreaPropertyData input)
         {
             //Select one buidling node
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.LongPause();
 
-            //Verify the "人口面积" tab is unavailable
+            //Verify the "人口面积" tab is available and click
             PeopleAreaSetting.ClickPeopleAreaTab();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Click "+人口面积"/"修改" button
             PeopleAreaSetting.ClickPeopleAreaCreateButton();
+            TimeManager.LongPause();
 
-            //Input value and save
-            PeopleAreaSetting.FillInAreaValue(input.InputData);
-            TimeManager.ShortPause();
+            //Click "+" button at the end of population
+            if (PeopleAreaSetting.GetPeopleItemsNumber() < 1)
+            {
+                PeopleAreaSetting.ClickPeopleCreateButton();
+                TimeManager.LongPause();
+            }
+            
+            //Input population value and save
+            PeopleAreaSetting.FillInPeopleValue(input.InputData);
+            TimeManager.LongPause();
 
             PeopleAreaSetting.ClickSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Verify the input value displayed correct
-            Assert.AreEqual(PeopleAreaSetting.GetTotalAreaValue(), input.ExpectedData.TotalArea);
-            Assert.AreEqual(PeopleAreaSetting.GetHeatingAreaValue(), input.ExpectedData.HeatingArea);
-            Assert.AreEqual(PeopleAreaSetting.GetCoolingAreaValue(), input.ExpectedData.CoolingArea);
+            Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), input.ExpectedData.PeopleEffectiveDate);
+            Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), input.ExpectedData.IntegerValue);
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-4")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-4")]
+        public void PAAddEmptyAreaAndCheck(PeopleAreaPropertyData input)
+        {
+            //Select one buidling node
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.LongPause();
+
+            //Verify the "人口面积" tab is available and click
+            PeopleAreaSetting.ClickPeopleAreaTab();
+            TimeManager.LongPause();
+
+            //Click "+人口面积"/"修改" button
+            PeopleAreaSetting.ClickPeopleAreaCreateButton();
+            TimeManager.LongPause();
+
+            //Click "+" button at the end of population
+            for (int i = 0; i < 5; i++)
+            {
+                PeopleAreaSetting.ClickPeopleCreateButton();
+                TimeManager.LongPause();
+            }
+
+            PeopleAreaSetting.PeopleItemNToView(4);      
         }
     }
 }

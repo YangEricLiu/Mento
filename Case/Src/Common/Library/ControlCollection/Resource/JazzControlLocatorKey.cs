@@ -710,5 +710,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region Container
+
+        #region Hierarchy property settings
+        public static string ContainerPeopleItems = "ContainerPeopleItems";
+        #endregion
+      
+        #endregion
+
     }
 }

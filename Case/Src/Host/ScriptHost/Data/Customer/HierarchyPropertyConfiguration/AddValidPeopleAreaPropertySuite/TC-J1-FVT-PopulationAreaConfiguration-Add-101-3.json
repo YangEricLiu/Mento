@@ -1,0 +1,59 @@
+﻿/*using common.json*/
+
+[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
+			"PeopleEffectiveDate":"2031-03",
+		},
+		"ExpectedData":
+		{
+		    "PeopleEffectiveDate":"2031-03",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
+			"PeopleEffectiveDate":"2000-03",
+		},
+		"ExpectedData":
+		{
+		    "PeopleEffectiveDate":"2000-03",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
+			"PeopleEffectiveDate":"2009-03",
+		},
+		"ExpectedData":
+		{
+		    "PeopleEffectiveDate":"2009-03",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
+			"PeopleEffectiveDate":"2011-03",
+		},
+		"ExpectedData":
+		{
+		    "PeopleEffectiveDate":"2011-03",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
+			"PeopleEffectiveDate":"2012-03",
+		},
+		"ExpectedData":
+		{
+		    "PeopleEffectiveDate":"2012-03",
+		}
+	}
+]

@@ -74,6 +74,7 @@
     <Compile Include="Controls\CheckBoxField\CheckBoxField.cs" />
     <Compile Include="Controls\ComboBox\ComboBox.cs" />
     <Compile Include="Controls\ComboBox\ComboBoxItemRepository.cs" />
+    <Compile Include="Controls\Common\Container.cs" />
     <Compile Include="Controls\Common\MessageBox.cs" />
     <Compile Include="Controls\DatePicker\DatePicker.cs" />
     <Compile Include="Controls\Grid\Grid.cs" />

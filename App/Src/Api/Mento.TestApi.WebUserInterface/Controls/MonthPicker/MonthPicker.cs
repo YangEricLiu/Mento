@@ -29,6 +29,30 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public MonthPicker(Locator locator) : base(locator) { }
 
+        /// <summary>
+        /// Get the value of month picker
+        /// </summary>
+        /// <param name="key">month picker element key</param>
+        /// <returns>date picker value</returns>
+        public string GetValue()
+        {
+            return SelectInput.GetAttribute("value");
+        }
+
+        /// <summary>
+        /// Get the value of month picker, then convert to DateTime
+        /// </summary>
+        /// <returns>month picker value</returns>
+        private DateTime GetCurrentMonth()
+        {
+            string currentMonth = GetValue();
+
+            string[] date = currentMonth.Split(new char[1] { '-' });
+            int year = Convert.ToInt32(date[0]);
+            int month = Convert.ToInt32(date[1]);
+
+            return new DateTime(year, month, 1);
+        }
 
         /// <summary>
         /// Simulate the mouse open monthpicker drop down menu
@@ -37,8 +61,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public void DisplayItems()
         {
             this.SelectTrigger.Click();
-        }
-
+        }      
 
         /// <summary>
         /// Simulate the mouse select year and month item from monthpicker drop down list
@@ -130,10 +153,18 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private void ImplementNavigatorNumber(string year)
         {
             int number = Convert.ToInt32(year);
+            DateTime currentDate = GetCurrentMonth();
 
-            if (number < 2009)
+            int currentYear = 2013;
+
+            if (!String.IsNullOrEmpty(GetValue()))
             {
-                int prevNumber = ((2009 - number) / 10) + 1;
+                currentYear = Convert.ToInt32(currentDate.Year.ToString());
+            }           
+
+            if (number < currentYear)
+            {
+                int prevNumber = ((currentYear - number) / 5);
 
                 for (int i = 0; i < prevNumber; i++)
                 {
@@ -141,9 +172,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
                     TimeManager.ShortPause();
                 }
             }
-            else if (number > 2018)
+            else if (number > currentYear)
             {
-                int nextNumber = ((number - 2018) / 10) + 1;
+                int nextNumber = ((number - currentYear) / 6);
 
                 for (int i = 0; i < nextNumber; i++)
                 {
@@ -153,6 +184,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+       
         protected virtual void ClickPreviousNavigator()
         {
             var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.MonthPickerPreviousNavigator);
@@ -179,16 +211,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.MonthPickerCancel);
 
             FindChild(locator).Click();
-        }
-
-        /// <summary>
-        /// Get the value of month picker
-        /// </summary>
-        /// <param name="key">month picker element key</param>
-        /// <returns>month picker value</returns>
-        public string GetValue()
-        {
-            return SelectInput.GetAttribute("value");
         }
 
         protected virtual Locator GetMonthPickerYearLocator(string itemKey)

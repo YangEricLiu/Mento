@@ -89,7 +89,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
             PeopleAreaSetting.ClickPeopleAreaCreateButton();
 
-            //Click "人口面积" tab button
+            //Click "+" button at the end of population
             PeopleAreaSetting.ClickPeopleCreateButton();
             TimeManager.ShortPause();
 

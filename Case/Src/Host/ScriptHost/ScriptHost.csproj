@@ -206,6 +206,8 @@
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-1.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\SmokeTestSystemDimensionSuite\TC-J1-SmokeTest-SystemDimension-001.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\SmokeTestSystemDimensionSuite\TC-J1-SmokeTest-SystemDimension-002.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-3.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-4.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-2.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-1.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\SmokeTestAddCalendarPropertySuite\TC-J1-SmokeTest-017.json" />

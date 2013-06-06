@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
+			"PeopleEffectiveDate":"2031-03",
+		},
+		"ExpectedData":
+		{
+		    "PeopleEffectiveDate":"2031-03",
+		}
+	}
+]

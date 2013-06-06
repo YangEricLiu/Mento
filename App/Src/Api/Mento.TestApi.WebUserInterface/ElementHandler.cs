@@ -13,11 +13,13 @@ using Mento.Framework.Log;
 using NUnit.Framework;
 using Mento.Utility;
 
+
 namespace Mento.TestApi.WebUserInterface
 {
     public static class ElementHandler
     {
         #region Element Search
+
         public static IWebElement FindElement(Locator locator, ISearchContext container = null)
         {
             if (container == null)

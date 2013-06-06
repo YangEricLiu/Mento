@@ -33,6 +33,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Button PeopleCreate = JazzButton.PeopleCreateButton;
         private static MonthPicker PeopleEffectiveDate = JazzMonthPicker.PeopleEffectiveDateMonthPicker;
+        private static Container PeopleItems = JazzContainer.PeopleItemsContainer;
         #endregion
 
         #region People Area
@@ -136,8 +137,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInPeopleValue(PeopleAreaPropertyInputData input)
         {
             SelectEffectiveDate(input.PeopleEffectiveDate);
-            InputPeopleNumber(input.PeopleNumber);
+            InputPeopleNumber(input.IntegerValue);
         }
+
+        public void FillInOnePeopleValue(PeopleAreaPropertyInputData input, int position)
+        {
+            SelectEffectiveDate(input.PeopleEffectiveDate);
+            InputPeopleNumber(input.IntegerValue);
+        }
+
 
         public void SelectEffectiveDate(DateTime date)
         {
@@ -151,7 +159,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void InputPeopleNumber(string number)
         {
-            PeopleNumber.Append(number);
+            //PeopleNumber.Append(number);
+            PeopleNumber.Fill(number);
         }
 
         public string GetEffectiveDateValue()
@@ -162,6 +171,20 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetPeopleNumberValue()
         {
             return PeopleNumber.GetValue();
+        }
+
+        public int GetPeopleItemsNumber()
+        {
+            return PeopleItems.GetElementNumber();
+        }
+
+        public void PeopleItemNToView(int position)
+        {
+            string scriptString = "arguments[0].scrollIntoView();";
+
+            MonthPicker PeopleEffectiveDateN = JazzMonthPicker.GetOneMonthPicker(JazzControlLocatorKey.MonthPickerPeopleEffectiveDate, position);
+
+            PeopleEffectiveDateN.ExecuteJavaScriptOnControl(scriptString);
         }
         #endregion
     }

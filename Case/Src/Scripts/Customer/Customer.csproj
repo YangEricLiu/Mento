@@ -81,6 +81,7 @@
     <Compile Include="TagManagement\CancelModifyKPITag.cs" />
     <Compile Include="TagManagement\AddValidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidPtagSuite.cs" />
+    <Compile Include="TagManagement\AddInvalidVtagSuite.cs" />
     <Compile Include="TagManagement\DeletePtagSuite.cs" />
     <Compile Include="TagManagement\ModifyInvalidPtagSuite.cs" />
     <Compile Include="TagManagement\ModifyValidPtagSuite.cs" />

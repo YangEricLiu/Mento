@@ -18,8 +18,8 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Customer.TagManagement
 {
     [TestFixture]
-    [Owner("Amy")]
-    [CreateTime("2012-11-12")]
+    [Owner("Greenie")]
+    [CreateTime("2013-06-04")]
     [ManualCaseID("TC-J1-FVT-VtagConfiguration-Add-101")]
     public class AddValidVtagSuite : TestSuiteBase
     {
@@ -128,6 +128,50 @@ namespace Mento.Script.Customer.TagManagement
             //Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTrendChartDrawn());
         }
 
+        
+
+        [Test]
+        [CaseID("TC-J1-FVT-VtagConfiguration-Add-101-3")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(VtagData[]), typeof(AddValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-101-3")]
+        public void AddVtagAndCheckOnFormula(VtagData input)
+        {
+            //string vtagFormula = "VtagForCheckVtagAll";
+           
+            //Click "+" button and fill vtag field
+            VTagSettings.ClickAddVTagButton();
+            VTagSettings.FillInAddVTagData(input.InputData);
+
+            //Click "Save" button
+            VTagSettings.ClickSaveButton();
+            TimeManager.MediumPause();
+            
+            //verify add successful
+            Assert.IsFalse(VTagSettings.IsModifyButtonDisplayed());
+            Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
+
+            //1. verify on formula tag list
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+            JazzFunction.VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
+            JazzFunction.VTagSettings.SwitchToFormulaTab();
+            JazzFunction.VTagSettings.ClickModifyFormulaButton();
+            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            
+            //Assert.IsTrue(JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName));
+
+
+            //2. verify whether tag on the formula tag list
+            //    A problem here :  those tags should drag scroll bar to diplay can't drag into the formula textarea
+           /*
+            JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName);
+            JazzFunction.VTagSettings.DragTagToFormula(input.InputData.Code);
+            JazzFunction.VTagSettings.ClickSaveFormulaButton();
+            JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName);
+            */
+            
+        }
+
 
         [Test]
         [CaseID("TC-J1-FVT-VtagConfiguration-Add-101-4")]
@@ -135,18 +179,18 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(AddValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-101-4")]
         public void AddSameNameVtag(VtagData input) 
         {
-            //Click "+" button and fill ptag field
+            
+            //Click "+" button and fill vtag field
             VTagSettings.ClickAddVTagButton();
             VTagSettings.FillInAddVTagData(input.InputData);
 
             //Click "Save" button
             VTagSettings.ClickSaveButton();
-            TimeManager.MediumPause();
 
-           
-            //Verify that ptag added successfully
-            //Assert.IsTrue(VTagSettings.FocusOnVTagByName(input.InputData.CommonName));
+            //Verify that vtag added successfully
+            Assert.AreEqual(input.ExpectedData.Code, VTagSettings.GetVTagcodeValue());
+
         }   
-
+        
     }
 }

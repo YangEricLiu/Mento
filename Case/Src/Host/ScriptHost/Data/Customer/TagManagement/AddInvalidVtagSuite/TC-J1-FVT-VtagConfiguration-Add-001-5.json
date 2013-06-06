@@ -2,18 +2,17 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckAll",
-			"Code":"VtagNotSameCode",
-			"Meter":"VtagSameName001",
+			"CommonName":"PtagCancel001",
+			"Code":"PtagCancel001",
+			"Meter":"PtagCancel001",
 			"Channel":"6",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
-			"Step":"Hourly",
 			"CalculationType":"Sum",
 		},
 		"ExpectedData":
 		{
-			"Code":"VtagNotSameCode",
+			
 		}
 	}
 ]

@@ -3,8 +3,8 @@
 		"InputData":
 		{	
 			"CommonName":"VtagForCheckAll",
-			"Code":"VtagNotSameCode",
-			"Meter":"VtagSameName001",
+			"Code":"VtagForCheckAll",
+			"Meter":"VtagForCheckAll",
 			"Channel":"6",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
@@ -13,7 +13,7 @@
 		},
 		"ExpectedData":
 		{
-			"Code":"VtagNotSameCode",
+			"HierarchyNodePath":["自动化测试"],
 		}
 	}
 ]

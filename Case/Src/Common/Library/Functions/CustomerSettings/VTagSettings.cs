@@ -44,9 +44,12 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox CalculationStepComboBox = JazzComboBox.VTagSettingsCalculationStepComboBox;
         private static TextField CommentTextField = JazzTextField.VTagSettingsCommentTextField;
 
+
         private static Grid FormulaPTagList = JazzGrid.VTagSettingsFormulaEditPTagList;
+        private static Grid FormulaVTagList = JazzGrid.VTagSettingsFormulaEditPTagList;
         private static FormulaField FormulaField = JazzTextField.VFormulaField;
 
+     
         #endregion
 
         #region VTag List Operations
@@ -105,6 +108,27 @@ namespace Mento.ScriptCommon.Library.Functions
                 return false;
             }
         }
+
+
+        /// <summary>
+        /// Focus ptag by name
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean FocusOnVTagByCode(string vtagCode)
+        {
+            try
+            {
+                VTagList.FocusOnRow(2, vtagCode);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
         #endregion
 
         #region Basic Property Operations
@@ -137,7 +161,15 @@ namespace Mento.ScriptCommon.Library.Functions
             return SaveButton.IsDisplayed();
         }
 
-
+        /// <summary>
+        /// Judge "Modify" display          ---- Greenie add
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsModifyButtonDisplayed()
+        {
+            return ModifyButton.IsDisplayed();
+        }
 
         /// <summary>
         /// Judge "Cancel" display       ---- Greenie add
@@ -148,8 +180,6 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return CancelButton.IsDisplayed();
         }
-
-
 
 
         /// <summary>
@@ -396,6 +426,145 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         #endregion
+
+        #region Verification
+
+        /// <summary>
+        /// Judge whether the textfield and its label are hidden
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsCommentHidden()
+        {
+            return CommentTextField.IsTextFieldHidden();
+        }
+
+        /// <summary>
+        /// Return whether comment is enabled
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsCommentFieldEnabled()
+        {
+            return CommentTextField.IsFieldEnabled();
+        }
+
+        /// <summary>
+        /// Judge whether the name textfield is invalid
+        /// </summary>
+        /// <returns>True if the name is invalid, false if not</returns>
+        public Boolean IsNameInvalid()
+        {
+            return NameTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of name field is correct
+        /// </summary>
+        /// <param name="output">VtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsNameInvalidMsgCorrect(VtagOuputData output)
+        {
+            return NameTextField.GetInvalidTips().Contains(output.CommonName);
+        }
+
+        /// <summary>
+        /// Judge whether the code textfield is invalid
+        /// </summary>
+        /// <returns>True if the code is invalid, false if not</returns>
+        public Boolean IscodeInvalid()
+        {
+            return codeTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of code field is correct
+        /// </summary>
+        /// <param name="output">VtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IscodeInvalidMsgCorrect(VtagOuputData output)
+        {
+            return codeTextField.GetInvalidTips().Contains(output.Code);
+        }
+
+
+        /// <summary>
+        /// Judge whether the Comments textfield is invalid
+        /// </summary>
+        /// <returns>True if the Comments is invalid, false if not</returns>
+        public Boolean IsCommentsInvalid()
+        {
+            return CommentTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Comments field is correct
+        /// </summary>
+        /// <param name="output">VtagExpectedData</param>
+        /// <returns>whether the invalid message is true</returns>
+        public Boolean IsCommentsInvalidMsgCorrect(VtagOuputData output)
+        {
+            return CommentTextField.GetInvalidTips().Contains(output.Comment);
+        }
+
+        /// <summary>
+        /// Judge whether the Commodity textfield is invalid
+        /// </summary>
+        /// <returns>True if the Commodity is invalid, false if not</returns>
+        public Boolean IsCommodityInvalid()
+        {
+            return CommodityComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">VtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsCommodityInvalidMsgCorrect(VtagOuputData output)
+        {
+            return CommodityComboBox.GetInvalidTips().Contains(output.Commodity);
+        }
+
+        /// <summary>
+        /// Judge whether the UOM textfield is invalid
+        /// </summary>
+        /// <returns>True if the UOM is invalid, false if not</returns>
+        public Boolean IsUomInvalid()
+        {
+            return UomComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">VtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsUomInvalidMsgCorrect(VtagOuputData output)
+        {
+            return UomComboBox.GetInvalidTips().Contains(output.UOM);
+        }
+
+        /// <summary>
+        /// Judge whether the CalculationType textfield is invalid
+        /// </summary>
+        /// <returns>True if the CalculationType is invalid, false if not</returns>
+        public Boolean IsCalculationTypeInvalid()
+        {
+            return CalculationTypeComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">VtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsCalculationTypeInvalidMsgCorrect(VtagOuputData output)
+        {
+            return CalculationTypeComboBox.GetInvalidTips().Contains(output.CalculationType);
+        }
+
+        #endregion
+
+    
     }
 
 }

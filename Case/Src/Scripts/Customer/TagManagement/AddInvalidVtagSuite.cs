@@ -152,6 +152,8 @@ namespace Mento.Script.Customer.TagManagement
       [MultipleTestDataSource(typeof(VtagData[]), typeof(AddInvalidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-001-5")]
       public void ModifyVtagFormulaToBlank(VtagData input)
       {
+          
+          /*
           //Click "+" button and fill vtag field with same code
           VTagSettings.ClickAddVTagButton();
           VTagSettings.FillInAddVTagData(input.InputData);
@@ -163,17 +165,18 @@ namespace Mento.Script.Customer.TagManagement
           //verify add successful
           Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
           Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
-
+          
           //drag  a tag into the vtag formula
           JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName);
           JazzFunction.VTagSettings.DragTagToFormula(input.InputData.Code);
           JazzFunction.VTagSettings.ClickSaveFormulaButton();
           JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName);
-
+          */
 
 
           //  Clear formula content
           JazzFunction.VTagSettings.SwitchToFormulaTab();
+           //JazzFunction.VTagSettings
           //JazzFunction.VTagSettings
           
       }

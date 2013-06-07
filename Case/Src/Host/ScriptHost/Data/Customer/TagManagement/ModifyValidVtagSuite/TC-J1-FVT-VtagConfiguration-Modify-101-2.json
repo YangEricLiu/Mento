@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Code":"VtagForCheckOnFormula",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"1VtagForCheckOnESSite001",
+			"Code":"VtagForCheckOnFormula",
+		}
+	}
+]

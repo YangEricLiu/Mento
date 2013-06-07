@@ -1,0 +1,22 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"VtagModifyCancel123",
+			"Code":"VtagModifyCancel123",
+			"Commodity":"Coal",
+			"Uom":"Ton",
+			"Step":"Monthly",
+			"CalculationType":"Min",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"VtagModifyCancel",
+			"Code":"VtagModifyCancel",
+			"Commodity":"Water",
+			"Uom":"Ton",
+			"Step":"Monthly",
+			"CalculationType":"Sum",
+		}
+	}
+]

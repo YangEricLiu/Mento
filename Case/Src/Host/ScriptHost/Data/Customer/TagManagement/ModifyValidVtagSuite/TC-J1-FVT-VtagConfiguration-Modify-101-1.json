@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"VtagModifyNoChange001",
+			"Comment":"nothing",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"VtagModifyNoChange001",
+			"Code":"VtagModifyNoChange001",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"nothing",
+		}
+	}
+]

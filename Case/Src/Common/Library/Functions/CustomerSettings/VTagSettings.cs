@@ -286,6 +286,17 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Click "modify" button 
+        /// </summary>
+        /// <param>Tag name</param>
+        /// <returns></returns>
+        public void ClickModifyButton()
+        {
+            ModifyButton.Click();
+        }
+
+
+        /// <summary>
         /// Get the VTag expected value, for language sensitive
         /// </summary>
         /// <param name = "itemKey">VTag UOM key</param>
@@ -562,6 +573,17 @@ namespace Mento.ScriptCommon.Library.Functions
             return CalculationTypeComboBox.GetInvalidTips().Contains(output.CalculationType);
         }
 
+        /*
+        /// <summary>
+        /// Clear the FormulaField
+        /// </summary>
+        /// <param name="output">VtagExpectedData</param>
+        /// <returns>Clear FormulaField </returns>
+        public Boolean ClearFormulaBlank(VtagOuputData output)
+        {
+            //return FormulaField.GetValue().Remove();
+        }
+         */
         #endregion
 
     

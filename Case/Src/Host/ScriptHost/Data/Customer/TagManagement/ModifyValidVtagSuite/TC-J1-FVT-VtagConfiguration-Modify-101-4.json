@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"VtagForCheckOnESSite001_UOM",
+			"Code":"VtagForCheckOnESSite001_UOM",
+			"Commodity":"Water",
+			"Uom":"kg",
+		},
+		"ExpectedData":
+		{
+			"HierarchyNodePath":["自动化测试", "CheckOnESSite001"],
+			"CommonName":"VtagForCheckOnESSite001",
+			"Code":"VtagForCheckOnESSite001_UOM",
+			"Commodity":"Water",
+			"Uom":"kg",
+		}
+	}
+]

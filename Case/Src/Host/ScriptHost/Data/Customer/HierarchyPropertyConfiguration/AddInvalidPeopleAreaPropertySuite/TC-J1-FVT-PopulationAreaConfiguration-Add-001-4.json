@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddInvalidDatePeople"],
+			"PeopleEffectiveDate":"2013-06",
+			"PeopleNumber":"1234",
+		},
+		"ExpectedData":
+		{
+			"PeopleEffectiveDate":"人口属性生效日期重复",
+		}
+	}
+]

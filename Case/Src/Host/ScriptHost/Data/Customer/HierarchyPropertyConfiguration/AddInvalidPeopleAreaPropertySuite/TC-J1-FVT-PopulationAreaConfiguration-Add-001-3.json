@@ -1,0 +1,37 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddInvalidDatePeople"],
+		},
+		"ExpectedData":
+		{
+			"PeopleEffectiveDate":"必填项",
+			"PeopleNumber":"必填项",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddInvalidDatePeople"],
+			"PeopleEffectiveDate":"2050-01",
+			"PeopleNumber":"1234",
+		},
+		"ExpectedData":
+		{
+			"PeopleEffectiveDate":"该输入项的日期必须在 2049-12 之前",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddInvalidDatePeople"],
+			"PeopleEffectiveDate":"1949-12",
+			"PeopleNumber":"1234",
+		},
+		"ExpectedData":
+		{
+			"PeopleEffectiveDate":"该输入项的日期必须在 1950-01 之后",
+		}
+	}
+]

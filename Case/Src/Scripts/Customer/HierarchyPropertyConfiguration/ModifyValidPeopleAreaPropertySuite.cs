@@ -17,9 +17,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
     [TestFixture]
     [Owner("Emma")]
-    [CreateTime("2013-06-05")]
-    [ManualCaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101")]
-    public class AddValidPeopleAreaPropertySuite : TestSuiteBase
+    [CreateTime("2013-06-07")]
+    [ManualCaseID("TC-J1-FVT-PopulationAreaConfiguration-Modify-101")]
+    public class ModifyValidPeopleAreaPropertySuite : TestSuiteBase
     {
         private static HierarchySettings HierarchySetting = JazzFunction.HierarchySettings;
         private static HierarchyPeopleAreaSettings PeopleAreaSetting = JazzFunction.HierarchyPeopleAreaSettings;
@@ -37,64 +37,12 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             JazzFunction.Navigator.NavigateHome();
         }
 
-        /// <summary>
-        /// Precondition: 1. make sure there is hierarchy path "自动化测试"/"AddCalendarProperty"/"AddPeopleProperty"
-        /// </summary>  
-        /// 
-        [Test]
-        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-1")]
-        [Type("BVT")]
-        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-1")]
-        public void PANotSupportHierarchy(PeopleAreaPropertyData input)
-        {
-            //Select not buidling node
-            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-
-            //Verify the "人口面积" tab is unavailable
-            Assert.IsFalse(PeopleAreaSetting.IsPeopleAreaTabEnable());
-            
-        }
 
         [Test]
-        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-2")]
-        [Type("BVT")]
-        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-2")]
-        public void PASaveCancelWithoutInput(PeopleAreaPropertyData input)
-        {
-            //Select one buidling node
-            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-
-            //Verify the "人口面积" tab is available and click
-            Assert.IsTrue(PeopleAreaSetting.IsPeopleAreaTabEnable());
-            PeopleAreaSetting.ClickPeopleAreaTab();
-            TimeManager.ShortPause();
-
-            //Click "+人口面积" button
-            PeopleAreaSetting.ClickPeopleAreaCreateButton();
-
-            //Fill nothing and save
-            PeopleAreaSetting.ClickSaveButton();
-            TimeManager.ShortPause();
-
-            //Verify "+人口面积" button displayed 
-            Assert.IsTrue(PeopleAreaSetting.IsPeopleAreaCreateButtonDisplayed());
-
-            //Click "+人口面积" button
-            PeopleAreaSetting.ClickPeopleAreaCreateButton(); 
-
-            //Fill nothing and cancel
-            PeopleAreaSetting.ClickCancelButton();
-            TimeManager.ShortPause();
-
-            //Verify "+人口面积" button displayed 
-            Assert.IsTrue(PeopleAreaSetting.IsPeopleAreaCreateButtonDisplayed());
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-3")]
+        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Modify-101-1")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-3")]
-        public void PAAddValidPupolation(PeopleAreaPropertyData input)
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(ModifyValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Modify-101-1")]
+        public void ModifyWithoutChange(PeopleAreaPropertyData input)
         {
             //Select one buidling node
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -108,30 +56,27 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             PeopleAreaSetting.ClickPeopleAreaCreateButton();
             TimeManager.LongPause();
 
-            //Click "+" button at the end of population
-            if (PeopleAreaSetting.GetPeopleItemsNumber() < 1)
-            {
-                PeopleAreaSetting.ClickPeopleCreateButton();
-                TimeManager.LongPause();
-            }
-            
-            //Input population value and save
-            PeopleAreaSetting.FillValidOrInvalidPeopleValue(input.InputData);
-            TimeManager.LongPause();
-
+            //Modify nothing value and save
             PeopleAreaSetting.ClickSaveButton();
             TimeManager.LongPause();
 
+            //Verify save successful
+            Assert.IsFalse(PeopleAreaSetting.IsSaveButtonDisplayed());
+            Assert.IsFalse(PeopleAreaSetting.IsCancelButtonDisplayed());
+
             //Verify the input value displayed correct
             Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), input.ExpectedData.PeopleEffectiveDate);
-            Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), input.ExpectedData.IntegerValue);
+            Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), input.ExpectedData.PeopleNumber);
+            Assert.AreEqual(PeopleAreaSetting.GetTotalAreaValue(), input.ExpectedData.IntegerValue);
+            Assert.AreEqual(PeopleAreaSetting.GetHeatingAreaValue(), input.ExpectedData.IntegerValue);
+            Assert.AreEqual(PeopleAreaSetting.GetCoolingAreaValue(), input.ExpectedData.IntegerValue);
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-4")]
+        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Modify-101-2")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-4")]
-        public void PAAddEmptyAreaAndCheck(PeopleAreaPropertyData input)
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(ModifyValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Modify-101-2")]
+        public void ModifyToViewSPeopleScrollbar(PeopleAreaPropertyData input)
         {
             string areaTitle = "面积属性";
             
@@ -160,7 +105,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-5")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-5")]
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(ModifyValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-5")]
         public void PAAddValidAreaAndCheck(PeopleAreaPropertyData input)
         {
             string areaTitle = "面积属性";

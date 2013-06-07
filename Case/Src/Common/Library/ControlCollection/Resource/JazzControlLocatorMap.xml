@@ -633,6 +633,9 @@
         <add key="LabelHeatingCoolingCalendar" value="st-hierarchy-calendar-coldwarm-container" type="ID"/>
         <add key="LabelDayNightCalendar" value="st-hierarchy-calendar-daynight-container" type="ID"/>
       </HierarchyCalendar>
+      <HierarchyPopulationArea>
+        <add key="LabelAreaPropertyTitle" value="st-hierarchy-dynamicproperty-area-label-labelEl" type="ID"/>
+      </HierarchyPopulationArea>
     </CustomerSettings>
     <PlatformSettings>
       <calendar>
@@ -660,6 +663,7 @@
   <Container>
   <hierarchypeopertysettings>
     <add key="ContainerPeopleItems" value="//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table" type="XPath"/>
+    <add key="ContainerPeopleErrorTips" value="st-hierarchy-dynamic-population-value-container-errorEl" type="ID"/>
   </hierarchypeopertysettings>
 </Container>
 </WebElement>

@@ -58,6 +58,8 @@
     <Compile Include="HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\ModifyValidHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AddInvalidPeopleAreaPropertySuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\ModifyValidPeopleAreaPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddElectricfixedCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddElectricityCompCostPropertySuite .cs" />
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddOtherCostPropertySuite.cs" />

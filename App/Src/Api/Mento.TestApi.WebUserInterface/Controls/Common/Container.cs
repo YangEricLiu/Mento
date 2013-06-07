@@ -27,5 +27,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return this.RootElements.Count();
         }
 
+        public string GetContainerErrorTips()
+        {
+            return this.RootElement.Text;
+        }
+
     }
 }

@@ -679,6 +679,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Label
         #region CustomerSettings
+
         #region HierarchyCalendar
         public static string LabelWorkdayCalendar = "LabelWorkdayCalendar";
         public static string LabelWorktimeCalendar = "LabelWorktimeCalendar";
@@ -686,6 +687,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelDayNightCalendar = "LabelDayNightCalendar";
         #endregion
 
+        #region HierarchyPopulationArea
+
+        public static string LabelAreaPropertyTitle = "LabelAreaPropertyTitle";
+
+        #endregion
+        
         #endregion
 
         #region PlatformSettings
@@ -714,6 +721,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Hierarchy property settings
         public static string ContainerPeopleItems = "ContainerPeopleItems";
+        public static string ContainerPeopleErrorTips = "ContainerPeopleErrorTips";
         #endregion
       
         #endregion

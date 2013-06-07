@@ -34,6 +34,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button PeopleCreate = JazzButton.PeopleCreateButton;
         private static MonthPicker PeopleEffectiveDate = JazzMonthPicker.PeopleEffectiveDateMonthPicker;
         private static Container PeopleItems = JazzContainer.PeopleItemsContainer;
+        private static Label AreaPropertyTitle = JazzLabel.AreaPropertyTitleLabel;
+        private static Container PeopleErrorTips = JazzContainer.PeopleErrorTipsContainer;
         #endregion
 
         #region People Area
@@ -70,10 +72,20 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
         }
 
+        public bool IsSaveButtonDisplayed()
+        {
+            return PeopleAreaSave.IsDisplayed();
+        }
+
         public void ClickCancelButton()
         {
             PeopleAreaCancel.Click();
-        } 
+        }
+
+        public bool IsCancelButtonDisplayed()
+        {
+            return PeopleAreaCancel.IsDisplayed();
+        }
         #endregion
 
         #region Area
@@ -90,9 +102,31 @@ namespace Mento.ScriptCommon.Library.Functions
             InputCoolingAreaValue(input.CoolingArea);
         }
 
+        /// <summary>
+        /// Input total, heating, cooling value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillValidOrInvalidAreaValue(PeopleAreaPropertyInputData input)
+        {
+            InputTotalAreaValue(input.IntegerValue);
+            InputHeatingAreaValue(input.IntegerValue);
+            InputCoolingAreaValue(input.IntegerValue);
+        }
+
         public void InputTotalAreaValue(string value)
         {
             TotalAreaValue.Fill(value);
+        }
+
+        public bool IsTotalAreaInvalid()
+        {
+            return TotalAreaValue.IsTextFieldValueInvalid();
+        }
+
+        public bool IsTotalAreaInvalidMsgCorrect(string msg)
+        {
+            return TotalAreaValue.GetInvalidTipsForNumberField().Contains(msg);
         }
 
         public void InputHeatingAreaValue(string value)
@@ -100,9 +134,29 @@ namespace Mento.ScriptCommon.Library.Functions
             HeatingAreaValue.Fill(value);
         }
 
+        public bool IsHeatingAreaInvalid()
+        {
+            return HeatingAreaValue.IsTextFieldValueInvalid();
+        }
+
+        public bool IsHeatingAreaInvalidMsgCorrect(string msg)
+        {
+            return HeatingAreaValue.GetInvalidTipsForNumberField().Contains(msg);
+        }
+
         public void InputCoolingAreaValue(string value)
         {
             CoolingAreaValue.Fill(value);
+        }
+
+        public bool IsCoolingAreaInvalid()
+        {
+            return CoolingAreaValue.IsTextFieldValueInvalid();
+        }
+
+        public bool IsCoolingAreaInvalidMsgCorrect(string msg)
+        {
+            return CoolingAreaValue.GetInvalidTipsForNumberField().Contains(msg);
         }
 
         public string GetTotalAreaValue()
@@ -119,6 +173,11 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return CoolingAreaValue.GetValue();
         }
+
+        public bool IsAreaPropertyTitleDisplay(string title)
+        {
+            return AreaPropertyTitle.IsLabelTextExisted(title);
+        }
         #endregion
 
         #region People
@@ -134,16 +193,28 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <param name="input">Test data</param>
         /// <returns></returns>
         /// 
-        public void FillInPeopleValue(PeopleAreaPropertyInputData input)
+        public void FillValidOrInvalidPeopleValue(PeopleAreaPropertyInputData input)
         {
             SelectEffectiveDate(input.PeopleEffectiveDate);
             InputPeopleNumber(input.IntegerValue);
         }
 
-        public void FillInOnePeopleValue(PeopleAreaPropertyInputData input, int position)
+        /// <summary>
+        /// Input DayNight Calendar value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        /// 
+        public void FillInPeopleValue(PeopleAreaPropertyInputData input)
         {
             SelectEffectiveDate(input.PeopleEffectiveDate);
-            InputPeopleNumber(input.IntegerValue);
+            InputPeopleNumber(input.PeopleNumber);
+        }
+
+        public void FillInPeopleValue_N(PeopleAreaPropertyInputData input, int position)
+        {
+            SelectEffectiveDate_N(input.PeopleEffectiveDate, position);
+            InputPeopleNumber_N(input.PeopleNumber, position);
         }
 
 
@@ -157,10 +228,35 @@ namespace Mento.ScriptCommon.Library.Functions
             PeopleEffectiveDate.SelectYearMonthItem(date);
         }
 
+        public void SelectEffectiveDate_N(string date, int position)
+        {
+            MonthPicker PeopleEffectiveDateN = JazzMonthPicker.GetOneMonthPicker(JazzControlLocatorKey.MonthPickerPeopleEffectiveDate, position);
+
+            PeopleEffectiveDateN.SelectYearMonthItem(date);
+        }
+
         public void InputPeopleNumber(string number)
         {
-            //PeopleNumber.Append(number);
             PeopleNumber.Fill(number);
+        }
+
+        public void InputPeopleNumber_N(string number, int position)
+        {
+            TextField PeopleNumberN = JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldPeopleNumber, position);
+
+            PeopleNumberN.Fill(number);
+        }
+
+        public bool IsPeopleNumberInvalid()
+        {
+            return PeopleNumber.IsTextFieldValueInvalid();
+        }
+
+        public bool IsPeopleNumberInvalid_N(int position)
+        {
+            TextField PeopleNumberN = JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldPeopleNumber, position);
+
+            return PeopleNumberN.IsTextFieldValueInvalid();
         }
 
         public string GetEffectiveDateValue()
@@ -168,9 +264,35 @@ namespace Mento.ScriptCommon.Library.Functions
             return PeopleEffectiveDate.GetValue();
         }
 
+        public string GetEffectiveDateValue_N(int position)
+        {
+            MonthPicker PeopleEffectiveDateN = JazzMonthPicker.GetOneMonthPicker(JazzControlLocatorKey.MonthPickerPeopleEffectiveDate, position);
+
+            return PeopleEffectiveDateN.GetValue();
+        }
+
         public string GetPeopleNumberValue()
         {
             return PeopleNumber.GetValue();
+        }
+
+        public string GetPeopleNumberValue_N(int position)
+        {
+            TextField PeopleNumberN = JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldPeopleNumber, position);
+
+            return PeopleNumberN.GetValue();
+        }
+
+        public bool IsPeopleNumberInvalidMsgCorrect(string msg)
+        {
+            return PeopleNumber.GetInvalidTipsForNumberField().Contains(msg);
+        }
+
+        public bool IsPeopleNumberInvalidMsgCorrect_N(string msg, int position)
+        {
+            TextField PeopleNumberN = JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldPeopleNumber, position);
+
+            return PeopleNumberN.GetInvalidTipsForNumberField().Contains(msg);
         }
 
         public int GetPeopleItemsNumber()
@@ -178,13 +300,42 @@ namespace Mento.ScriptCommon.Library.Functions
             return PeopleItems.GetElementNumber();
         }
 
-        public void PeopleItemNToView(int position)
+        public void PeopleItemToView_N(int position)
         {
             string scriptString = "arguments[0].scrollIntoView();";
 
             MonthPicker PeopleEffectiveDateN = JazzMonthPicker.GetOneMonthPicker(JazzControlLocatorKey.MonthPickerPeopleEffectiveDate, position);
 
             PeopleEffectiveDateN.ExecuteJavaScriptOnControl(scriptString);
+        }
+
+        public bool IsEffectiveDateInvalid()
+        {
+            return PeopleEffectiveDate.IsMonthPickerValueInvalid();
+        }
+
+        public bool IsEffectiveDateInvalid_N(int position)
+        {
+            MonthPicker PeopleEffectiveDateN = JazzMonthPicker.GetOneMonthPicker(JazzControlLocatorKey.MonthPickerPeopleEffectiveDate, position);
+
+            return PeopleEffectiveDateN.IsMonthPickerValueInvalid();
+        }
+
+        public bool IsEffectiveDateInvalidMsgCorrect(string msg)
+        {
+            return PeopleEffectiveDate.GetInvalidTips().Contains(msg);
+        }
+
+        public bool IsEffectiveDateInvalidMsgCorrect_N(string msg, int position)
+        {
+            MonthPicker PeopleEffectiveDateN = JazzMonthPicker.GetOneMonthPicker(JazzControlLocatorKey.MonthPickerPeopleEffectiveDate, position);
+
+            return PeopleEffectiveDateN.GetInvalidTips().Contains(msg);
+        }
+
+        public string GetPeopleContainerErrorTips()
+        {
+            return PeopleErrorTips.GetContainerErrorTips();
         }
         #endregion
     }

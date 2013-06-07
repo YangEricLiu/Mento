@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddAreaProperty"],
+			"TotalArea":"999999999999999999",
+			"HeatingArea":"999999999999999999",
+			"CoolingArea":"999999999999999999",
+		},
+		"ExpectedData":
+		{
+		    "TotalArea":"该输入项的最大值是 999999999999999",
+			"HeatingArea":"该输入项的最大值是 999999999999999",
+			"CoolingArea":"该输入项的最大值是 999999999999999",
+		}
+	}
+]

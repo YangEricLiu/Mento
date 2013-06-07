@@ -15,6 +15,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Hierarchy property settings containers
 
         public static Container PeopleItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerPeopleItems);
+        public static Container PeopleErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerPeopleErrorTips);
         #endregion
 
         #endregion

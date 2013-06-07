@@ -10,6 +10,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
     public class MonthPicker : JazzControl
     {
         private const string MONTHPICKERITEMVARIABLENAME = "itemKey";
+        private Locator InvalidTips = new Locator("../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]", ByType.XPath);
 
         protected IWebElement SelectTrigger 
         {
@@ -30,6 +31,26 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public MonthPicker(Locator locator) : base(locator) { }
 
         /// <summary>
+        /// Return whether the value in text field is invalid
+        /// </summary>
+        /// <returns>True if invalid</returns>
+        public bool IsMonthPickerValueInvalid()
+        {
+            string invalid = SelectInput.GetAttribute("aria-invalid");
+
+            return String.Equals(invalid, "true", StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Return the invalid input tooltips info
+        /// </summary>
+        /// <returns>the invalid input tooltips info</returns>
+        public string GetInvalidTips()
+        {
+            return FindChild(InvalidTips).Text;
+        }
+        
+        /// <summary>
         /// Get the value of month picker
         /// </summary>
         /// <param name="key">month picker element key</param>
@@ -47,11 +68,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             string currentMonth = GetValue();
 
-            string[] date = currentMonth.Split(new char[1] { '-' });
-            int year = Convert.ToInt32(date[0]);
-            int month = Convert.ToInt32(date[1]);
+            if (!String.IsNullOrEmpty(currentMonth))
+            {
+                return ConvertStringToDateTime(currentMonth);
+            }
 
-            return new DateTime(year, month, 1);
+            return DateTime.Now;
         }
 
         /// <summary>
@@ -164,23 +186,33 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             if (number < currentYear)
             {
-                int prevNumber = ((currentYear - number) / 5);
+                int prevNumber = ((currentYear - number + 5) / 10);
+                int i = 0;
 
-                for (int i = 0; i < prevNumber; i++)
+                while (i < prevNumber)
                 {
                     ClickPreviousNavigator();
                     TimeManager.ShortPause();
+
+                    i++;
                 }
             }
             else if (number > currentYear)
             {
-                int nextNumber = ((number - currentYear) / 6);
+                int nextNumber = ((number - currentYear + 4) / 10);
+                int j = 0;
 
-                for (int i = 0; i < nextNumber; i++)
+                while (j < nextNumber)
                 {
                     ClickNextNavigator();
                     TimeManager.ShortPause();
+
+                    j++;
                 }
+            }
+            else if (number == currentYear)
+            {
+                return;
             }
         }
 

@@ -32,5 +32,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return true;
         }
+
+
+        public Boolean IsLabelTextExisted(string labelText)
+        {
+            string text = GetLabelTextValue();
+
+            if (!text.Contains(labelText))
+            {
+                Console.Out.WriteLine(text);
+                return false;
+            }
+
+            return true;
+        }
     }
 }

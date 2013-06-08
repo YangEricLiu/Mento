@@ -5,7 +5,7 @@
 			"CommonName":"VtagForCheckOnESSite001_UOM",
 			"Code":"VtagForCheckOnESSite001_UOM",
 			"Commodity":"Water",
-			"Uom":"kg",
+			"Uom":"Ton",
 		},
 		"ExpectedData":
 		{
@@ -13,7 +13,7 @@
 			"CommonName":"VtagForCheckOnESSite001",
 			"Code":"VtagForCheckOnESSite001_UOM",
 			"Commodity":"Water",
-			"Uom":"kg",
+			"Uom":"Ton",
 		}
 	}
 ]

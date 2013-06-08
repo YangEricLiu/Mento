@@ -107,7 +107,7 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Modify-101-3")]
         public void ModifyNameAndCommodity(VtagData input)
         {
-            //string vtagName = "VtagForCheckPtagAll";
+            
             
             //Click "Modify" button and input new value to Vtag field
             VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
@@ -129,27 +129,31 @@ namespace Mento.Script.Customer.TagManagement
              //1. Verify that vtag is updated on associated tag list
              JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
              JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
              Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.InputData.CommonName));
-           
            
             //2. Verify that vtag is updated on energy view tag list and  its legend name
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
             //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             // problems
-            // JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.CommonName);
-
+            JazzMessageBox.LoadingMask.WaitLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             
             //Commodity updated
-            JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.ExpectedData.CommonName);
+            JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.InputData.CommonName);
             Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.InputData.Commodity), JazzFunction.EnergyAnalysisPanel.GetSelectedRowData(3));
+            JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.CommonName);
 
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.InputData.CommonName);
             JazzFunction.EnergyViewToolbarViewSplitButton.Click();
             //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            //JazzMessageBox.LoadingMask.WaitLoading();
+            //TimeManager.MediumPause();
             TimeManager.MediumPause();
-            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("VtagForCheckOnESSite..."));
-
+            // False here
+            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("VtagForCheckOnESSite001"));
+            
         }
       
         [Test]
@@ -158,6 +162,7 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Modify-101-4")]
         public void ModifyUomAndCheck(VtagData input)
         {
+            //String vtagString = "VtagForCheckO...";
             //Click "Modify" button and input new value to Vtag field
             VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
             VTagSettings.ClickModifyButton();
@@ -172,60 +177,68 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
             Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
             VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
-
-            //3. Verify that vtag Commodity is updated on energy view tag list and  Uom updated on its chart view y-axis
+          
+            //Verify that vtag Commodity is updated on energy view tag list and  Uom updated on its chart view y-axis
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
             //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            //TimeManager.LongPause();
 
             //Uom updated
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.InputData.CommonName);
             JazzFunction.EnergyViewToolbarViewSplitButton.Click();
             //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-            Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.ExpectedData.UOM), JazzFunction.EnergyAnalysisPanel.GetUomValue());
+           
+           // Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.ExpectedData.UOM), JazzFunction.EnergyAnalysisPanel.GetUomValue());
+        }
+
+
+
+        [Test]
+        [CaseID("TC-J1-FVT-VtagConfiguration-Modify-101-5")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Modify-101-5")]
+        public void ModifyStepAndCheck(VtagData input)
+        {
+            //string vtagName = "VtagForCheckPtagAll";
+
+            //Click "Modify" button and input new value to Vtag field
+            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+            VTagSettings.ClickModifyButton();
+            VTagSettings.FillInAddVTagData(input.InputData);
+
+            //Click "Save" button
+            VTagSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+
+            TimeManager.LongPause();
+            //verify modify successful
+            Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
+            Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
+            VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
+
+            //Verify that vtag Step is updated on energy view tag list
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            //Uom updated
+            JazzFunction.EnergyAnalysisPanel.CheckTag(input.ExpectedData.CommonName);
+            JazzFunction.EnergyViewToolbarViewSplitButton.Click();
+            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
         }
 
 
 
         /*
-        [Test]
-        [CaseID("TC-J1-FVT-PtagConfiguration-Modify-101-2")]
-        [Type("BFT")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyValidPtagSuite), "TC-J1-FVT-PtagConfiguration-Modify-101-2")]
-        public void ModifyAndEmptyItemNotDisplay(PtagData input)
-        {
-            //Click "Modify" button and input value to ptag field
-            PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
-
-            //Verify comments not hidden
-            Assert.IsFalse(PTagSettings.IsCommentHidden());
-
-            PTagSettings.ClickModifyButton();
-            PTagSettings.FillInPtag(input.InputData);
-
-            //Click "Save" button
-            PTagSettings.ClickSaveButton();
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
-
-            //verify modify successful
-            Assert.IsFalse(PTagSettings.IsSaveButtonDisplayed());
-            Assert.IsFalse(PTagSettings.IsCancelButtonDisplayed());
-
-            //Verify that ptag keep the same successfully
-            PTagSettings.FocusOnPTagByName(input.ExpectedData.CommonName);
-            Assert.AreEqual(input.ExpectedData.CommonName, PTagSettings.GetNameValue());
-            Assert.AreEqual(input.ExpectedData.Code, PTagSettings.GetCodeValue());
-            Assert.AreEqual(input.ExpectedData.Meter, PTagSettings.GetMetercodeValue());
-            Assert.AreEqual(input.ExpectedData.Channel, PTagSettings.GetChannelIdValue());
-            Assert.AreEqual(PTagSettings.GetCommodityExpectedValue(input.ExpectedData.Commodity), PTagSettings.GetCommodityValue());
-            Assert.AreEqual(PTagSettings.GetUomExpectedValue(input.ExpectedData.Uom), PTagSettings.GetUomValue());
-            Assert.AreEqual(PTagSettings.GetCalculationTypeExpectedValue(input.ExpectedData.CalculationType), PTagSettings.GetCalculationTypeValue());
-            //Verify comments is hidden
-            Assert.IsTrue(PTagSettings.IsCommentHidden());
-        }
-
+       
+        
         
         [Test]
         [CaseID("TC-J1-FVT-PtagConfiguration-Modify-101-4")]

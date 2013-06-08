@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Step":"Monthly",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"VtagForCheckAll",
+			"HierarchyNodePath":["自动化测试", "AutoSite_Vtag","CheckModifyVtag"],
+			"Step":"Monthly",
+		}
+	}
+]

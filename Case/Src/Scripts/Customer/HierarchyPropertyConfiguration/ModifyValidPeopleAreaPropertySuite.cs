@@ -92,16 +92,16 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.LongPause();
 
             //modify population 
-            PeopleAreaSetting.FillInPeopleValue(input.InputData);
-            TimeManager.ShortPause(); 
+            //PeopleAreaSetting.FillInPeopleValue(input.InputData);
+            //TimeManager.ShortPause(); 
 
             //save modify
             PeopleAreaSetting.ClickSaveButton();
             TimeManager.ShortPause(); 
 
             //Verify modify success
-            Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), input.ExpectedData.PeopleEffectiveDate);
-            Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), input.ExpectedData.PeopleNumber);
+            Assert.AreEqual(input.ExpectedData.PeopleEffectiveDate, PeopleAreaSetting.GetEffectiveDateValue());
+            Assert.AreEqual(input.ExpectedData.PeopleNumber, PeopleAreaSetting.GetPeopleNumberValue());
         }
 
         [Test]
@@ -146,13 +146,13 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             //Verify the "人口面积" tab is available and click
             PeopleAreaSetting.ClickPeopleAreaTab();
             TimeManager.LongPause();
-
+            
             //Click "+人口面积"/"修改" button
             PeopleAreaSetting.ClickPeopleAreaCreateButton();
             TimeManager.LongPause();
-
+            
             PeopleAreaSetting.PeopleItemToView_N(3);
-
+            
             //delete some items and save 
             PeopleAreaSetting.ClickDeletePeopleItemButton(1);
 
@@ -162,13 +162,13 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             PeopleAreaSetting.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
+            
             //Verify not delete
             Assert.AreEqual(PeopleAreaSetting.GetPeopleItemsNumber(), 1);
 
             //Verify left value displayed correct
-            //Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), input.ExpectedData.PeopleEffectiveDate);
-            //Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), input.ExpectedData.PeopleNumber);
+            Assert.AreEqual(input.ExpectedData.PeopleEffectiveDate, PeopleAreaSetting.GetEffectiveDateValue());
+            Assert.AreEqual(input.ExpectedData.PeopleNumber, PeopleAreaSetting.GetPeopleNumberValue());
         }
 
         [Test]

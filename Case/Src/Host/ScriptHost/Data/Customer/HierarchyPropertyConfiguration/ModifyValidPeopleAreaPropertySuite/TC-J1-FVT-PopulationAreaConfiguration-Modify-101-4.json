@@ -6,7 +6,8 @@
 		},
 		"ExpectedData":
 		{
-			
+			"PeopleEffectiveDate":"2012-05",
+			"PeopleNumber":"2",
 		}
 	}
 ]

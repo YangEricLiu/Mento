@@ -174,6 +174,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonPeopleAreaCancel = "ButtonPeopleAreaCancel";
         public static string ButtonPeopleAreaUpdate = "ButtonPeopleAreaUpdate";
         public static string ButtonPeopleCreate = "ButtonPeopleCreate";
+        public static string ButtonDeletePeopleItem = "ButtonDeletePeopleItem";
         #endregion
 
         #region hierarchycost

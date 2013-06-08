@@ -214,6 +214,12 @@
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-4.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-2.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-1.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyInvalidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Modify-001-2.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyInvalidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Modify-001-1.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Modify-101-6.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Modify-101-5.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Modify-101-4.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Modify-101-3.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Modify-101-2.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Modify-101-1.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\SmokeTestAddCalendarPropertySuite\TC-J1-SmokeTest-017.json" />

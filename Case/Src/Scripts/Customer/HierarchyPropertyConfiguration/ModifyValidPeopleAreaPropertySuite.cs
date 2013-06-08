@@ -12,6 +12,7 @@ using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
 using Mento.ScriptCommon.TestData.Customer;
 using Mento.TestApi.TestData;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
@@ -107,7 +108,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Modify-101-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(ModifyValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Modify-101-3")]
-        public void ModifyToDeletePeopleItems(PeopleAreaPropertyData input)
+        public void ModifyToDeletePeopleItemsThenCancel(PeopleAreaPropertyData input)
         {
             //Select one buidling node
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -121,25 +122,94 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             PeopleAreaSetting.ClickPeopleAreaCreateButton();
             TimeManager.LongPause();
 
-            //modify population 
-            PeopleAreaSetting.FillInPeopleValue(input.InputData);
-            TimeManager.ShortPause();
+            //delete some items and cancel 
+            PeopleAreaSetting.ClickDeletePeopleItemButton(1);
+            PeopleAreaSetting.ClickDeletePeopleItemButton(2);
 
-            //save modify
-            PeopleAreaSetting.ClickSaveButton();
-            TimeManager.ShortPause();
+            PeopleAreaSetting.ClickCancelButton();
+            TimeManager.LongPause();
 
-            //Verify modify success
-            Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), input.ExpectedData.PeopleEffectiveDate);
-            Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), input.ExpectedData.PeopleNumber);
+            //Verify not delete
+            Assert.AreEqual(PeopleAreaSetting.GetPeopleItemsNumber(), 5);
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Modify-101-4")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(ModifyValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Modify-101-4")]
+        public void ModifyToDeleteSomePeopleItems(PeopleAreaPropertyData input)
+        {
+            //Select one buidling node
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.LongPause();
+
+            //Verify the "人口面积" tab is available and click
+            PeopleAreaSetting.ClickPeopleAreaTab();
+            TimeManager.LongPause();
+
+            //Click "+人口面积"/"修改" button
+            PeopleAreaSetting.ClickPeopleAreaCreateButton();
+            TimeManager.LongPause();
+
+            PeopleAreaSetting.PeopleItemToView_N(3);
+
+            //delete some items and save 
+            PeopleAreaSetting.ClickDeletePeopleItemButton(1);
+
+            int n = PeopleAreaSetting.GetPeopleItemsNumber();
+            PeopleAreaSetting.ClickDeletePeopleItemButton(n);
+
+            PeopleAreaSetting.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Verify not delete
+            Assert.AreEqual(PeopleAreaSetting.GetPeopleItemsNumber(), 1);
+
+            //Verify left value displayed correct
+            //Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), input.ExpectedData.PeopleEffectiveDate);
+            //Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), input.ExpectedData.PeopleNumber);
+        }
 
         [Test]
-        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-5")]
+        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Modify-101-5")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(ModifyValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-5")]
-        public void PAAddValidAreaAndCheck(PeopleAreaPropertyData input)
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(ModifyValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Modify-101-5")]
+        public void ModifyToDeleteAllPeopleItems(PeopleAreaPropertyData input)
+        {
+            //Select one buidling node
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.LongPause();
+
+            //Verify the "人口面积" tab is available and click
+            PeopleAreaSetting.ClickPeopleAreaTab();
+            TimeManager.LongPause();
+
+            //Click "+人口面积"/"修改" button
+            PeopleAreaSetting.ClickPeopleAreaCreateButton();
+            TimeManager.LongPause();
+
+            //delete all items and save 
+            int n = PeopleAreaSetting.GetPeopleItemsNumber();
+            int i = 0;
+            while (i < n)
+            {
+                PeopleAreaSetting.ClickDeletePeopleItemButton(1);
+                i++;
+            }
+            
+            PeopleAreaSetting.ClickSaveButton();
+            TimeManager.LongPause();
+
+            //Verify all deleted
+            Assert.IsTrue(PeopleAreaSetting.IsCreateModifyButtonDisplayed());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Modify-101-6")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(ModifyValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Modify-101-6")]
+        public void ModifyValidArea(PeopleAreaPropertyData input)
         {
             string areaTitle = "面积属性";
 
@@ -156,19 +226,17 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.LongPause();
 
             //Fill valid value to area and save
-            PeopleAreaSetting.FillValidOrInvalidAreaValue(input.InputData);
+            PeopleAreaSetting.FillInAreaValue(input.InputData);
             PeopleAreaSetting.ClickSaveButton();
+            
             TimeManager.ShortPause();
 
             //verify that area property display
             Assert.IsTrue(PeopleAreaSetting.IsAreaPropertyTitleDisplay(areaTitle));
 
             //Verify the input value displayed correct
-            Assert.AreEqual(PeopleAreaSetting.GetTotalAreaValue(), input.ExpectedData.IntegerValue);
-            Assert.AreEqual(PeopleAreaSetting.GetHeatingAreaValue(), input.ExpectedData.IntegerValue);
-            Assert.AreEqual(PeopleAreaSetting.GetCoolingAreaValue(), input.ExpectedData.IntegerValue);
-
-            //Verify it on formula, which delay to automated
+            Assert.AreEqual(PeopleAreaSetting.GetTotalAreaValue(), input.ExpectedData.TotalArea);
+            Assert.AreEqual(PeopleAreaSetting.GetCoolingAreaValue(), input.ExpectedData.CoolingArea);
         }
     }
 }

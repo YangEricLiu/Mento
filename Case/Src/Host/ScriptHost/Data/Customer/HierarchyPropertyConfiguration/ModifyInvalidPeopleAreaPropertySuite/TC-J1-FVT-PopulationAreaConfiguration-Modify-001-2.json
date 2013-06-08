@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "ModifyInvalidValue"],
+			"TotalArea":"1",
+			"HeatingArea":"2",
+			"CoolingArea":"3",
+		},
+		"ExpectedData":
+		{
+			"TotalArea":"123",
+			"HeatingArea":"456",
+			"CoolingArea":"789",
+		}
+	}
+]

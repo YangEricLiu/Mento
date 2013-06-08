@@ -66,6 +66,11 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public bool IsCreateModifyButtonDisplayed()
+        {
+            return PeopleAreaCreate.IsDisplayed() || PeopleAreaUpdate.IsDisplayed();
+        }
+
         public void ClickSaveButton()
         {
             PeopleAreaSave.Click();
@@ -185,6 +190,13 @@ namespace Mento.ScriptCommon.Library.Functions
         public void  ClickPeopleCreateButton()
         {
             PeopleCreate.Click();
+        }
+
+        public void ClickDeletePeopleItemButton(int position)
+        {
+            Button deletePeopleItemN = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonDeletePeopleItem, position);
+
+            deletePeopleItemN.Click();
         }
 
         /// <summary>

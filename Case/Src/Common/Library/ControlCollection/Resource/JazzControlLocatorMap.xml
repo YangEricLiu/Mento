@@ -168,6 +168,7 @@
         <add key="ButtonPeopleAreaCancel" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonPeopleAreaUpdate" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
         <add key="ButtonPeopleCreate" value="st-hierarchy-dynamic-population-add-toolEl" type="ID"/>
+        <add key="ButtonDeletePeopleItem" value="//table[@id='st-hierarchy-dynamic-population-value-container']//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table[contains(@id,'fieldcontainer')][$#positionIndex]//div[contains(@class,'x-tool')]/img" type="XPath"/>
       </hierarchypeoplearea>
       <hierarchycost>
         <add key="TabButtonCostProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[3]" type="XPath"/>

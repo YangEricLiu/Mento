@@ -124,6 +124,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button PeopleCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonPeopleCreate);
         public static Button PeopleAreaUpdateButton = GetControl<Button>(JazzControlLocatorKey.ButtonPeopleAreaUpdate);
         public static Button PeopleAreaCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonPeopleAreaCancel);
+        public static Button PeopleItemDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonDeletePeopleItem, 1);
 
         public static TabButton CostPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonCostProperty);
         public static Button CostCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonCostCreate);

@@ -14,9 +14,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private const string VARIABLE_LEGENDNAME = "legendname";
 
         private static Locator LegendLocator = new Locator("g.highcharts-legend", ByType.CssSelector);
-        private static Locator LegendItemLocator = new Locator("svg/g[contains(@class,'highcharts-legend')]/g/g/g[@class='highcharts-legend-item' and text[text()='@legendname']]", ByType.XPath);
-        private static Locator LegendItemCloseLocator = new Locator("svg/g[contains(@class,'highcharts-legend')]/g/g/g[@class='highcharts-legend-item' and text[text()='@legendname']]/image", ByType.XPath);
-        private static Locator LegendItemTextLocator = new Locator("svg/g[contains(@class,'highcharts-legend')]/g/g/g[@class='highcharts-legend-item']/text[text()='@legendname']", ByType.XPath);
+        private static Locator LegendItemsLocator = new Locator("g.highcharts-legend-item", ByType.CssSelector);
+        private static Locator LegendItemsCloseLocator = new Locator("svg/g[contains(@class,'highcharts-legend')]/g/g/g[@class='highcharts-legend-item' and text[text()='$#legendname']]/image", ByType.XPath);
+        private static Locator LegendItemTextLocator = new Locator("svg/g[contains(@class,'highcharts-legend')]/g/g/g[@class='highcharts-legend-item']/text[text()='$#legendname']", ByType.XPath);
 
         private static Locator CurveLocator = new Locator("g.highcharts-tracker", ByType.CssSelector);
         private static Locator PieLocator = new Locator("g.highcharts-point", ByType.CssSelector);
@@ -44,12 +44,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public bool LegendItemExists(string legendName)
         {
-            try
+            if (GetLegendItemElement(LegendItemsLocator, legendName) != null)
             {
-                GetLegendItemElement(LegendItemLocator, legendName);
                 return true;
             }
-            catch
+            else
             {
                 return false;
             }
@@ -69,14 +68,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public void CloseLegendItem(string legendName)
         {
-            var legendClose = GetLegendItemElement(LegendItemCloseLocator, legendName);
+            var legendClose = GetLegendItemElement(LegendItemsCloseLocator, legendName);
 
             legendClose.Click();
         }
 
         public void ClickLegendItem(string legendName)
         {
-            var legend = GetLegendItemElement(LegendItemLocator, legendName);
+            var legend = GetLegendItemElement(LegendItemsLocator, legendName);
 
             if (legend != null)
             {
@@ -88,10 +87,17 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region Private methods
         private IWebElement GetLegendItemElement(Locator locator, string legendName)
         {
-            var itemLocator = Locator.GetVariableLocator(locator, VARIABLE_LEGENDNAME, legendName);
-            var item = FindChild(itemLocator);
+            IWebElement[] items = FindChildren(locator);
 
-            return item;
+            foreach (IWebElement item in items)
+            {
+                if (item.Text.Contains(legendName))
+                {
+                    return item;
+                }
+            }
+
+            return null;
         }
 
         private bool IsLegendItemShown(string legendName)

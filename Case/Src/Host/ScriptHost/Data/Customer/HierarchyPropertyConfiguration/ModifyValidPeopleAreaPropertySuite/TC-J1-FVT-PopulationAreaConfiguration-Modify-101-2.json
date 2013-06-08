@@ -1,0 +1,39 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "ModifyAndChangePeople"],
+			"PeopleEffectiveDate":"2033-12",
+		},
+		"ExpectedData":
+		{
+			"PeopleEffectiveDate":"2033-12",
+			"PeopleNumber":"1234",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "ModifyAndChangePeople"],
+			"PeopleNumber":"987654345",
+		},
+		"ExpectedData":
+		{
+			"PeopleEffectiveDate":"2033-12",
+			"PeopleNumber":"987654345",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "ModifyAndChangePeople"],
+			"PeopleEffectiveDate":"1978-02",
+			"PeopleNumber":"98337",
+		},
+		"ExpectedData":
+		{
+			"PeopleEffectiveDate":"1978-02",
+			"PeopleNumber":"98337",
+		}
+	}
+]

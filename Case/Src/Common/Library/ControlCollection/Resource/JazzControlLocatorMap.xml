@@ -649,7 +649,7 @@
    
   <!--Chart-->
   <Chart>
-    <add key="ChartEnergyView" value="div.highcharts-container" type="CssSelector"/>
+    <add key="ChartEnergyView" value="svg" type="TagName"/>
   </Chart>
 
   <!--Window-->

@@ -78,8 +78,6 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(ModifyValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Modify-101-2")]
         public void ModifyToViewSPeopleScrollbar(PeopleAreaPropertyData input)
         {
-            string areaTitle = "面积属性";
-            
             //Select one buidling node
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.LongPause();
@@ -92,15 +90,50 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             PeopleAreaSetting.ClickPeopleAreaCreateButton();
             TimeManager.LongPause();
 
-            //Fill nothing to area and save
+            //modify population 
+            PeopleAreaSetting.FillInPeopleValue(input.InputData);
+            TimeManager.ShortPause(); 
+
+            //save modify
             PeopleAreaSetting.ClickSaveButton();
-            TimeManager.ShortPause();  
+            TimeManager.ShortPause(); 
 
-            //verify that area property not display
-            Assert.IsFalse(PeopleAreaSetting.IsAreaPropertyTitleDisplay(areaTitle));
-
-            //Verify it on formula, which delay to automated
+            //Verify modify success
+            Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), input.ExpectedData.PeopleEffectiveDate);
+            Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), input.ExpectedData.PeopleNumber);
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Modify-101-3")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(ModifyValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Modify-101-3")]
+        public void ModifyToDeletePeopleItems(PeopleAreaPropertyData input)
+        {
+            //Select one buidling node
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.LongPause();
+
+            //Verify the "人口面积" tab is available and click
+            PeopleAreaSetting.ClickPeopleAreaTab();
+            TimeManager.LongPause();
+
+            //Click "+人口面积"/"修改" button
+            PeopleAreaSetting.ClickPeopleAreaCreateButton();
+            TimeManager.LongPause();
+
+            //modify population 
+            PeopleAreaSetting.FillInPeopleValue(input.InputData);
+            TimeManager.ShortPause();
+
+            //save modify
+            PeopleAreaSetting.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            //Verify modify success
+            Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), input.ExpectedData.PeopleEffectiveDate);
+            Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), input.ExpectedData.PeopleNumber);
+        }
+
 
         [Test]
         [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-5")]

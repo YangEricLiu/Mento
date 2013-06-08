@@ -146,6 +146,15 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.GetUom();
         }
 
+        public bool IsLegendItemExists(string legendName)
+        {
+            return Chart.LegendItemExists(legendName);
+        }
+
+        public void ClickLegendItem(string legendName)
+        {
+            Chart.ClickLegendItem(legendName);
+        }
         #endregion
     }
 

@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"VtagForCheckAll",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"VtagForCheckAll",
+			"Message":"删除计量数据V“VtagForCheckAll”吗？",
+		}
+	}
+]

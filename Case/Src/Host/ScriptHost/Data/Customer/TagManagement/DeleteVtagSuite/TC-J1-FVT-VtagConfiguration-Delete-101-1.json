@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"VtagForCheckDelete_002",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"VtagForCheckDelete_002",
+			"Message":"删除计量数据V“VtagForCheckDelete_002”吗？",
+		}
+	}
+]

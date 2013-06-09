@@ -85,6 +85,7 @@
     <Compile Include="TagManagement\AddValidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidVtagSuite.cs" />
+    <Compile Include="TagManagement\DeleteVtagSuite.cs" />
     <Compile Include="TagManagement\ModifyInvalidVtagSuite.cs" />
     <Compile Include="TagManagement\ModifyValidVtagSuite.cs" />
     <Compile Include="TagManagement\DeletePtagSuite.cs" />

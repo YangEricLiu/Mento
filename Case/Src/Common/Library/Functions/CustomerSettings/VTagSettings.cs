@@ -170,7 +170,15 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return ModifyButton.IsDisplayed();
         }
-
+        /// <summary>
+        /// Judge "Delete" display          ---- Greenie add
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsDeleteButtonDisplayed()
+        {
+            return DeleteButton.IsDisplayed();
+        }
         /// <summary>
         /// Judge "Cancel" display       ---- Greenie add
         /// </summary>

@@ -75,7 +75,8 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(DeleteVtagSuite), "TC-J1-FVT-VtagConfiguration-Delete-101-1")]
         public void DeleteVtagAndVerify(VtagData input)
         {
-            string vtagName = "VtagForCheckDelete_002";
+
+            /*
             //Select the vtag
            VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
 
@@ -98,14 +99,31 @@ namespace Mento.Script.Customer.TagManagement
 
             //1. Verify that Vtag is deleted from Vtag list
             Assert.IsFalse(VTagSettings.FocusOnVTagByName(input.InputData.CommonName));
+            */
 
+            //3. Verify vtag is deleted from associated tag list
+
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
+            JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
+            TimeManager.MediumPause();
+            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            TimeManager.LongPause();
+            //JazzFunction.AreaDimensionSettings.ExpandAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
+            
+            JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
+            TimeManager.MediumPause();
+            Assert.IsFalse(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.CommonName));
+
+            /*
             //2. Verify Vtag is deleted from formula tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
             JazzFunction.VTagSettings.FocusOnVTagByName(vtagName);
             JazzFunction.VTagSettings.SwitchToFormulaTab();
             JazzFunction.VTagSettings.ClickModifyFormulaButton();
             Assert.IsFalse(JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.ExpectedData.CommonName));
-
+            
             //3. Verify vtag is deleted from associated tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
             JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
@@ -116,6 +134,8 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
             TimeManager.ShortPause();
             Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.CommonName));
+             */
+
         }
 
         [Test]
@@ -125,7 +145,7 @@ namespace Mento.Script.Customer.TagManagement
         public void DeleteVtagUsedByOther(VtagData input)
         {
             //Select the vtag
-            VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
+            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
 
             //Click "Delete" button
             VTagSettings.ClickDeleteButton();
@@ -133,7 +153,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Verify that message box popup for confirm delete
             string msgText = JazzMessageBox.MessageBox.GetMessage();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.MessageArray[0]));
 
             //Click "Confirm" button
             JazzMessageBox.MessageBox.Confirm();
@@ -141,7 +161,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             string msgText2 = JazzMessageBox.MessageBox.GetMessage();
-            Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageError));
+            Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
 
             
         }

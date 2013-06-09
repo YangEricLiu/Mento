@@ -7,6 +7,8 @@
 		"ExpectedData":
 		{
 			"CommonName":"VtagForCheckDelete_002",
+			"HierarchyNodePath":["自动化测试", "AutoSite_Vtag","CheckModifyVtag"],
+			"AreaNodePath":["CheckModifyVtag"," 一层"],
 			"Message":"删除计量数据V“VtagForCheckDelete_002”吗？",
 		}
 	}

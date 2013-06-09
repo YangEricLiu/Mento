@@ -2,13 +2,12 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckOnESSite001",
-			"Message":"计量数据V'VtagForCheckOnESSite001'正在被引用，无法删除。请取消所有引用后再试。",
+			"CommonName":"VtagForCheckAll",
 		},
 		"ExpectedData":
 		{
 			"CommonName":"VtagForCheckAll",
-			"Message":"删除计量数据V“VtagForCheckAll”吗？",
+			"MessageArray":["删除计量数据V“VtagForCheckAll”吗？","计量数据V\"VtagForCheckAll\"正在被引用，无法删除。请取消所有引用后再试。\r\n引用对象：层级结构:\r\nCheckModifyVtag","计量数据V\"VtagForCheckOnESSite001\"正在被引用，无法删除。请取消所有引用后再试。\r\n引用对象：计量数据V:\r\nVtagForCheckAll"],
 			
 		}
 	}

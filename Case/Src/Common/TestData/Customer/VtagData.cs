@@ -20,6 +20,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Step { get; set; }
         public string CalculationType { get; set; }
         public string Comment { get; set; }
+        public string Message { get; set; }
     }
     public class VtagOuputData : ExpectedTestDataBase
     {
@@ -33,6 +34,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string CalculationType { get; set; }
         public string Comment { get; set; }
         public string Message { get; set; }
-        public string MessageError { get; set; }
+        public string[] MessageArray { get; set; }
     }
 }

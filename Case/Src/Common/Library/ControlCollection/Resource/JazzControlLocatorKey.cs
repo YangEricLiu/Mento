@@ -723,6 +723,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Hierarchy property settings
         public static string ContainerPeopleItems = "ContainerPeopleItems";
         public static string ContainerPeopleErrorTips = "ContainerPeopleErrorTips";
+        public static string ContainerWorkdayErrorTips = "ContainerWorkdayErrorTips";
+        public static string ContainerHCErrorTips = "ContainerHCErrorTips";
+        public static string ContainerDayNightErrorTips = "ContainerDayNightErrorTips";
         #endregion
       
         #endregion

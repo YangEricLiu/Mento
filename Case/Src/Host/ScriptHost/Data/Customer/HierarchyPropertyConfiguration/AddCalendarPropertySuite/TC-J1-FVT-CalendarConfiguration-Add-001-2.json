@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "CalendarProperty"],
+		},
+		"ExpectedData":
+		{
+			"WorkdayEffectiveDate":"必填项",
+			"WorkdayCalendarName":"必填项",
+			"WorktimeCalendarName":"必填项",
+			"HeatingCoolingEffectiveDate":"必填项",
+			"HeatingCoolingCalendarName":"必填项",
+			"DayNightEffectiveDate":"必填项",
+			"DayNightCalendarName":"必填项",
+		}
+	}
+]

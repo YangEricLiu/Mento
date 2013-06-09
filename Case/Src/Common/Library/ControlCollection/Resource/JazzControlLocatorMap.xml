@@ -427,7 +427,7 @@
   <!--ComboBox-->
   <ComboBox>
     <login>
-      <add key="ComboBoxLoginCustomerOption" value="//div[contains(@class,'x-window-default')]/div[contains(@class,'x-window-body-default')]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'combobox')]]" type="XPath"/>
+      <add key="ComboBoxLoginCustomerOption" value="//div[contains(@class,'x-window-default')]/div[contains(@class,'x-window-body-default')]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'combobox')]]" type="XPath"/>
     </login>
     <User>
       <add key="ComboBoxUserType" value="st-user-usertype-triggerWrap" type="ID"/>
@@ -450,22 +450,22 @@
         <add key="ComboBoxHierarchySettingsHierarchyType" value="//div[@id='st-hier-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='Type']]" type="XPath"/>
       </hierarchy>
       <hierarchyCalendarproperty>
-		    <add key="ComboBoxWorkdayEffectiveYear" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
-    	  <add key="ComboBoxWorkdayCalendarName" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
-        <add key="ComboBoxWorktimeCalendarName" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='Worktime']]" type="XPath"/>
-        <add key="ComboBoxHeatingCoolingEffectiveYear" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
-        <add key="ComboBoxHeatingCoolingCalendarName" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
-        <add key="ComboBoxDayNightEffectiveYear" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
-        <add key="ComboBoxDayNightCalendarName" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
+		    <add key="ComboBoxWorkdayEffectiveYear" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
+    	  <add key="ComboBoxWorkdayCalendarName" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
+        <add key="ComboBoxWorktimeCalendarName" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='Worktime']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingEffectiveYear" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingCalendarName" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
+        <add key="ComboBoxDayNightEffectiveYear" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
+        <add key="ComboBoxDayNightCalendarName" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalendarName']]" type="XPath"/>
       </hierarchyCalendarproperty>
       <hierarchyCostproperty>
-        <add key="ComboBoxElectricPriceMode" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='PriceMode']]" type="XPath"/>
-        <add key="ComboBoxDemandCostType" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='DemandCostType']]" type="XPath"/>
-        <add key="ComboBoxTouTariffId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='TouTariffId']]" type="XPath"/>
-        <add key="ComboBoxFactorType" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='FactorType']]" type="XPath"/>
-        <add key="ComboBoxRealTagId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='RealTagId']]" type="XPath"/>
-        <add key="ComboBoxReactiveTagId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='ReactiveTagId']]" type="XPath"/>
-        <add key="ComboBoxHourTagId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='HourTagId']]" type="XPath"/>
+        <add key="ComboBoxElectricPriceMode" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='PriceMode']]" type="XPath"/>
+        <add key="ComboBoxDemandCostType" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='DemandCostType']]" type="XPath"/>
+        <add key="ComboBoxTouTariffId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='TouTariffId']]" type="XPath"/>
+        <add key="ComboBoxFactorType" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='FactorType']]" type="XPath"/>
+        <add key="ComboBoxRealTagId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='RealTagId']]" type="XPath"/>
+        <add key="ComboBoxReactiveTagId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='ReactiveTagId']]" type="XPath"/>
+        <add key="ComboBoxHourTagId" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='HourTagId']]" type="XPath"/>
       </hierarchyCostproperty>
       <ptag>
         <add key="ComboBoxPTagSettingsCommodity" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
@@ -484,55 +484,55 @@
         <add key="ComboBoxKPITagSettingsCalculationType" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
         <add key="ComboBoxKPITagSettingsCalculationStep" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
 
-        <add key="ComboBoxKPITargetBaselineEffectiveYear" value="//div[@id='setting-region-east-body']//table[contains(@class,'x-autocontainer-form-item')]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input]" type="XPath"/>
-        <add key="ComboBoxKPITargetBaselineWorkdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxKPITargetBaselineNonworkdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='非工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxKPITargetBaselineSpecialdayRuleStartTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxKPITargetBaselineSpecialdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']/table[4]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineEffectiveYear" value="//div[@id='setting-region-east-body']//table[contains(@class,'x-autocontainer-form-item')]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input]" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineWorkdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineNonworkdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='非工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineSpecialdayRuleStartTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineSpecialdayRuleEndTime" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']/table[4]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
       </kpitag>
     </customersettings>
     <platformsettings>
       <workday>
-        <add key="ComboBoxWorkdayCalendarSpecialDateType" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='ItemType']]" type="XPath"/>
-        <add key="ComboBoxWorkdayCalendarStartMonth" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
-        <add key="ComboBoxWorkdayCalendarStartDate" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
-        <add key="ComboBoxWorkdayCalendarEndMonth" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
-        <add key="ComboBoxWorkdayCalendarEndDate" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>
+        <add key="ComboBoxWorkdayCalendarSpecialDateType" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='ItemType']]" type="XPath"/>
+        <add key="ComboBoxWorkdayCalendarStartMonth" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
+        <add key="ComboBoxWorkdayCalendarStartDate" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
+        <add key="ComboBoxWorkdayCalendarEndMonth" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
+        <add key="ComboBoxWorkdayCalendarEndDate" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>
       </workday>
       <worktime>
-        <add key="ComboBoxWorktimeCalendarStartTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartPart']]" type="XPath"/>
-        <add key="ComboBoxWorktimeCalendarEndTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndPart']]" type="XPath"/>
+        <add key="ComboBoxWorktimeCalendarStartTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartPart']]" type="XPath"/>
+        <add key="ComboBoxWorktimeCalendarEndTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndPart']]" type="XPath"/>
       </worktime>
       <HeatingCoolingSeason>
-        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmStartMonth" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
-        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmStartDate" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
-        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmEndMonth" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
-        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmEndDate" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>
-        <add key="ComboBoxHeatingCoolingSeasonCalendarColdStartMonth" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
-        <add key="ComboBoxHeatingCoolingSeasonCalendarColdStartDate" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
-        <add key="ComboBoxHeatingCoolingSeasonCalendarColdEndMonth" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
-        <add key="ComboBoxHeatingCoolingSeasonCalendarColdEndDate" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>      
+        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmStartMonth" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmStartDate" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmEndMonth" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarWarmEndDate" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarColdStartMonth" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarColdStartDate" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarColdEndMonth" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
+        <add key="ComboBoxHeatingCoolingSeasonCalendarColdEndDate" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>      
       </HeatingCoolingSeason>
       <daynight>
-        <add key="ComboBoxDayNightCalendarStartTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartPart']]" type="XPath"/>
-        <add key="ComboBoxDayNightCalendarEndTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EndPart']]" type="XPath"/>
+        <add key="ComboBoxDayNightCalendarStartTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartPart']]" type="XPath"/>
+        <add key="ComboBoxDayNightCalendarEndTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndPart']]" type="XPath"/>
       </daynight>
       <carbonfactor>
         <add key="ComboBoxCarbonFactorSource" value="//table[@id='st-carbonfactor-source-triggerWrap' and tbody/tr/td/input[@name='SourceId']]" type="XPath"/>
         <add key="ComboBoxCarbonFactorDestination" value="//table[@id='st-carbonfactor-destination-triggerWrap' and tbody/tr/td/input[@name='DestinationUom']]" type="XPath"/>
-        <add key="ComboBoxCarbonFactorEffectiveYear" value="//td[@id='st-carbonfactor-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
+        <add key="ComboBoxCarbonFactorEffectiveYear" value="//td[@id='st-carbonfactor-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
       </carbonfactor>
       <TOU>
-        <add key="ComboBoxTOUBasicPropertyPeakStartTime" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUBasicPropertyPeakEndTime" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUBasicPropertyValleyStartTime" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUBasicPropertyValleyEndTime" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyStartMonth" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[1]//div[@class='x-column-inner']/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyStartDate" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[1]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyEndMonth" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[2]//div[@class='x-column-inner']/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyEndDate" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[2]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyStartTime" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[3]//div[@class='x-column-inner']/table[1]//table[@class='x-form-trigger-wrap']" type="XPath"/>
-        <add key="ComboBoxTOUPulsePeakPropertyEndTime" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[3]//div[@class='x-column-inner']/table[2]//table[@class='x-form-trigger-wrap']" type="XPath"/>
+        <add key="ComboBoxTOUBasicPropertyPeakStartTime" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[1]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxTOUBasicPropertyPeakEndTime" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxTOUBasicPropertyValleyStartTime" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[1]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxTOUBasicPropertyValleyEndTime" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')']" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyStartMonth" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[1]//div[@class='x-column-inner']/table[1]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyStartDate" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[1]//div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyEndMonth" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[2]//div[@class='x-column-inner']/table[1]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyEndDate" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[2]//div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyStartTime" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[3]//div[@class='x-column-inner']/table[1]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxTOUPulsePeakPropertyEndTime" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[3]//div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
       </TOU>
     </platformsettings>
   </ComboBox>
@@ -581,20 +581,20 @@
 
   <DatePicker>
     <EnergyUsage>
-      <add key="DatePickerIntervalDialogStartDate" value="//div[contains(@id,'addintervalwindow')]//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      <add key="DatePickerIntervalDialogStartDate" value="//div[contains(@id,'addintervalwindow')]//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       <add key="DatePickerIntervalDialogEndDate" value="//table[@id='em-addinterval-enddate']//table" type="XPath"/>
-      <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
-      <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
     </EnergyUsage>
     <CustomerSettings>
       <kpitag>
-        <add key="DatePickerKPITargetBaselineSpecialdayRuleStartDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][1]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
-        <add key="DatePickerKPITargetBaselineSpecialdayRuleEndDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][2]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+        <add key="DatePickerKPITargetBaselineSpecialdayRuleStartDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+        <add key="DatePickerKPITargetBaselineSpecialdayRuleEndDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       </kpitag>
     </CustomerSettings>
     <PlatformSettings>
       <customermanagement>
-        <add key="DatePickerOperationTime" value="//td[@id='st-customer-starttime-bodyEl']/table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='StartTime']]" type="XPath"/>
+        <add key="DatePickerOperationTime" value="//td[@id='st-customer-starttime-bodyEl']/table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartTime']]" type="XPath"/>
       </customermanagement>
     </PlatformSettings>
   </DatePicker>
@@ -603,17 +603,17 @@
   <MonthPicker>
     <hierarchyproperty>
       <add key="MonthPickerPeopleEffectiveDate" value="//table[@id='st-hierarchy-dynamic-population-value-container']//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table[$#positionIndex]//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'monthfield')]]" type="XPath"/>
-      <add key="MonthPickerElectricCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerWaterCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerGasCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][2]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerHeatQCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][3]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerCoolQCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][4]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerLightWaterCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][5]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerCoalCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][6]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerPetrolCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][7]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerKeroseneCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][8]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerDieselOilCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][9]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerLowPressureSteamCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][10]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[@class='x-form-trigger-wrap' and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerElectricCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerWaterCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerGasCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][2]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerHeatQCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][3]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerCoolQCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][4]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerLightWaterCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][5]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerCoalCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][6]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerPetrolCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][7]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerKeroseneCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][8]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerDieselOilCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][9]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerLowPressureSteamCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][10]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
     </hierarchyproperty>
   </MonthPicker>
  
@@ -665,6 +665,9 @@
   <hierarchypeopertysettings>
     <add key="ContainerPeopleItems" value="//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table" type="XPath"/>
     <add key="ContainerPeopleErrorTips" value="st-hierarchy-dynamic-population-value-container-errorEl" type="ID"/>
+    <add key="ContainerWorkdayErrorTips" value="st-hierarchy-calendar-workday-container-errorEl" type="ID"/>
+    <add key="ContainerHCErrorTips" value="st-hierarchy-calendar-coldwarm-container-errorEl" type="ID"/>
+    <add key="ContainerDayNightErrorTips" value="st-hierarchy-calendar-daynight-container-errorEl" type="ID"/>
   </hierarchypeopertysettings>
 </Container>
 </WebElement>

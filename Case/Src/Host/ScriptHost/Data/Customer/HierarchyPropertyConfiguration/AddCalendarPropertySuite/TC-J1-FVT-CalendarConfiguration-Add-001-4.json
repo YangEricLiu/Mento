@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "CalendarProperty", "AddCalendar", "AddDupYearCalendar"],
+			"WorkdayEffectiveDate":"2012",
+			"WorkdayCalendarName":"公休日日历二",
+			"HeatingCoolingEffectiveDate":"2011",
+			"HeatingCoolingCalendarName":"冷暖季日历二",
+			"DayNightEffectiveDate":"2010",
+			"DayNightCalendarName":"昼夜时间日历二",
+		},
+		"ExpectedData":
+		{
+			"WorkdayEffectiveDate":"时间区间重叠",
+			"HeatingCoolingEffectiveDate":"时间区间重叠",
+			"DayNightEffectiveDate":"时间区间重叠",
+		}
+	}
+]

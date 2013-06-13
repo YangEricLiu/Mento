@@ -449,7 +449,7 @@ namespace Mento.ScriptCommon.Library.Functions
             return FormulaField.GetValue();
         }
 
-        public void ViewTagByName(string tagName)
+        public void ScrollToViewTagByName(string tagName)
         {
             string scriptString = "arguments[0].scrollIntoView();";
 
@@ -458,7 +458,7 @@ namespace Mento.ScriptCommon.Library.Functions
             FormulaPTagList.ExecuteJavaScriptOnControl(scriptString, tagRow);
         }
 
-        public void ViewTagByCode(string tagCode)
+        public void ScrollToViewTagByCode(string tagCode)
         {
             string scriptString = "arguments[0].scrollIntoView();";
 

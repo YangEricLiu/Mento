@@ -118,7 +118,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.VTagSettings.SwitchToFormulaTab();
             JazzFunction.VTagSettings.ClickModifyFormulaButton();
             TimeManager.MediumPause();
-            //JazzFunction.VTagSettings.ViewTagByCode("HeatingArea");
+            //JazzFunction.VTagSettings.ScrollToViewTagByCode("HeatingArea");
             //TimeManager.LongPause();
             Assert.IsTrue(JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName));
 

@@ -95,5 +95,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return BrowserHandler.ExecuteJavaScript(script, this.RootElement);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="locator">JavaScript</param>
+        public virtual object ExecuteJavaScriptOnControl(string script, params object[] args)
+        {
+            return BrowserHandler.ExecuteJavaScript(script, args);
+        }
     }
 }

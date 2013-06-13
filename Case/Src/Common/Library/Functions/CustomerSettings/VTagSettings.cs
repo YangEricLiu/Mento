@@ -449,6 +449,24 @@ namespace Mento.ScriptCommon.Library.Functions
             return FormulaField.GetValue();
         }
 
+        public void ViewTagByName(string tagName)
+        {
+            string scriptString = "arguments[0].scrollIntoView();";
+
+            var tagRow = FormulaPTagList.GetRow(1, tagName);
+
+            FormulaPTagList.ExecuteJavaScriptOnControl(scriptString, tagRow);
+        }
+
+        public void ViewTagByCode(string tagCode)
+        {
+            string scriptString = "arguments[0].scrollIntoView();";
+
+            var tagRow = FormulaPTagList.GetRow(2, tagCode);
+
+            FormulaPTagList.ExecuteJavaScriptOnControl(scriptString, tagRow);
+        }
+
         #endregion
 
         #region Verification

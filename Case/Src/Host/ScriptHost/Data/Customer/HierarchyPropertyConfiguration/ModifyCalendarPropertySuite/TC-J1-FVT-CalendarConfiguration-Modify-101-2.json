@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"HierarchyNodePath":["自动化测试", "CalendarProperty", "AddCalendar", "ModifyWithoutChange"],
+			"HierarchyNodePath":["自动化测试", "CalendarProperty", "ModifyCalendar", "ModifyCancel"],
 		},
 		"ExpectedData":
 		{

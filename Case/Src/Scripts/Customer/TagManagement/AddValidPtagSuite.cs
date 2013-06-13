@@ -114,9 +114,12 @@ namespace Mento.Script.Customer.TagManagement
             //1. verify on formula tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
             JazzFunction.PTagSettings.FocusOnPTagByName(ptagFormula);
+            //JazzFunction.VTagSettings.FocusOnVTagByName("VtagForCheckAll");
             JazzFunction.VTagSettings.SwitchToFormulaTab();
             JazzFunction.VTagSettings.ClickModifyFormulaButton();
             TimeManager.MediumPause();
+            //JazzFunction.VTagSettings.ViewTagByCode("HeatingArea");
+            //TimeManager.LongPause();
             Assert.IsTrue(JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName));
 
             //2. verify on data association tag list
@@ -124,7 +127,8 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
             JazzFunction.AssociateSettings.ClickAssociateButton();
             TimeManager.MediumPause();
-            Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.InputData.CommonName));
+           Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.InputData.CommonName));
+
         }
 
         [Test]

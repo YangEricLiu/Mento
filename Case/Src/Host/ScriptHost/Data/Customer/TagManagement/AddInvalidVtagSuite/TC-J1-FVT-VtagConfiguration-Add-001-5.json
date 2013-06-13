@@ -2,9 +2,9 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"PtagCancel001",
-			"Code":"PtagCancel001",
-			"Meter":"PtagCancel001",
+			"CommonName":"VtagForCheckInvalid",
+			"Code":"VtagUsedByFormula",
+			"Meter":"VtagUsedByFormula",
 			"Channel":"6",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
@@ -12,7 +12,8 @@
 		},
 		"ExpectedData":
 		{
-			
+			"CommonName":"VtagForCheckOnESSite001",
+			"Message":"计算公式的格式有误，请检查。",
 		}
 	}
 ]

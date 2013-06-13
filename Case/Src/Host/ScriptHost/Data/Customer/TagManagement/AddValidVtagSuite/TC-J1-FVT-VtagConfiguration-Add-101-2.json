@@ -2,10 +2,8 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"1VtagForCheckOnESSite001",
-			"Code":"VtagForCheckOnESSite001",
-			"Meter":"VtagForCheckOnESSite001",
-			"Channel":"6",
+			"CommonName":"VtagForCheckEA",
+			"Code":"VtagForCheckEA",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
 			"Step":"Hourly",
@@ -13,10 +11,8 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"1VtagForCheckOnESSite001",
-			"Code":"VtagForCheckOnESSite001",
-			"Meter":"VtagForCheckOnESSite001",
-			"Channel":"6",
+			"CommonName":"VtagForCheckEA",
+			"Code":"VtagForCheckEA",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
 			"Step":"Hourly",

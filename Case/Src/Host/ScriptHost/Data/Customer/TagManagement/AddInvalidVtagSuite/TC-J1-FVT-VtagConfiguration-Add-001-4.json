@@ -2,10 +2,8 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckAll",
-			"Code":"VtagForCheckAll",
-			"Meter":"VtagForCheckAll",
-			"Channel":"6",
+			"CommonName":"VtagForCheckSameCode",
+			"Code":"VtagCode",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
 			"Step":"Hourly",
@@ -13,7 +11,7 @@
 		},
 		"ExpectedData":
 		{
-			"Code":"该编码已存在",
+			"Message":"该编码已存在",
 		}
 	}
 ]

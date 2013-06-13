@@ -74,58 +74,63 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(AddValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-101-2")]
         public void AddVtagAndCheckOnEA(VtagData input)
         {
-           
-            //Click "+" button and fill vtag field
-            VTagSettings.ClickAddVTagButton();
-            VTagSettings.FillInAddVTagData(input.InputData);
 
-            //Click "Save" button
-            VTagSettings.ClickSaveButton();
-            //waiting for "quanjuzhezhao" disappear
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.MediumPause();
+             //Click "+" button and fill vtag field
+             VTagSettings.ClickAddVTagButton();
+             VTagSettings.FillInAddVTagData(input.InputData);
+
+             //Click "Save" button
+             VTagSettings.ClickSaveButton();
+             //waiting for "quanjuzhezhao" disappear
+             JazzMessageBox.LoadingMask.WaitLoading();
+             TimeManager.MediumPause();
              
-            //verify add successful
-            //Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
-            //Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
+             //verify add successful
+             //Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
+             //Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
 
-            //Verify that vtag added successfully
-            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
-            Assert.AreEqual(input.ExpectedData.CommonName, VTagSettings.GetVTagNameValue());
-            Assert.AreEqual(input.ExpectedData.Code, VTagSettings.GetVTagcodeValue());
-            Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.InputData.Commodity), VTagSettings.GetVTagCommodityValue());
-            Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.InputData.UOM), VTagSettings.GetVTagUOMValue());
-            Assert.AreEqual(VTagSettings.GetVTagCalculationTypeExpectedValue(input.InputData.CalculationType), VTagSettings.GetVTagCalculationTypeValue());
-            Assert.AreEqual(VTagSettings.GetVTagCalculationStepExpectedValue(input.InputData.Step), VTagSettings.GetVTagCalculationStepValue());
+             //Verify that vtag added successfully
+             VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+             Assert.AreEqual(input.ExpectedData.CommonName, VTagSettings.GetVTagNameValue());
+             Assert.AreEqual(input.ExpectedData.Code, VTagSettings.GetVTagcodeValue());
+             Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.InputData.Commodity), VTagSettings.GetVTagCommodityValue());
+             Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.InputData.UOM), VTagSettings.GetVTagUOMValue());
+             Assert.AreEqual(VTagSettings.GetVTagCalculationTypeExpectedValue(input.InputData.CalculationType), VTagSettings.GetVTagCalculationTypeValue());
+             Assert.AreEqual(VTagSettings.GetVTagCalculationStepExpectedValue(input.InputData.Step), VTagSettings.GetVTagCalculationStepValue());
            
              
 
-            // verify on data association tag list
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
-            JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
-            JazzFunction.AssociateSettings.ClickAssociateTagButton();
-            TimeManager.LongPause();
+             // verify on data association tag list
+             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+             JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+             JazzFunction.AssociateSettings.ClickAssociateTagButton();
+             TimeManager.LongPause();
 
-            //！ can't check the vtags that need to drag the scroll bar
-            JazzFunction.AssociateSettings.CheckedTag(input.ExpectedData.CommonName);
-            //JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.MediumPause();
-            JazzFunction.AssociateSettings.ClickAssociateButton();
-            //JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
-            Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.CommonName));
-            TimeManager.ShortPause();
+             //！ can't check the vtags that need to drag the scroll bar
+             JazzFunction.AssociateSettings.CheckedTag(input.ExpectedData.CommonName);
+             //JazzMessageBox.LoadingMask.WaitLoading();
+             TimeManager.MediumPause();
+             JazzFunction.AssociateSettings.ClickAssociateButton();
+             //JazzMessageBox.LoadingMask.WaitLoading();
+             TimeManager.LongPause();
+             Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.CommonName));
+             
 
-            
             //verify the trend chart is emtpy
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
             TimeManager.MediumPause();
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.CommonName);
             JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.ExpectedData.CommonName);
+            TimeManager.MediumPause();
             JazzFunction.EnergyViewToolbarViewSplitButton.Click();
-            // ！ the interface should be update      
-            //Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTrendChartDrawn());
+            TimeManager.MediumPause();
+            // Verify is there  any trend chart display (temp method)
+            
+            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTrendChartDrawn());
+            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists(input.ExpectedData.CommonName));
         }
 
         
@@ -136,7 +141,7 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(AddValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-101-3")]
         public void AddVtagAndCheckOnFormula(VtagData input)
         {
-            //string vtagFormula = "VtagForCheckVtagAll";
+            /*
            
             //Click "+" button and fill vtag field
             VTagSettings.ClickAddVTagButton();
@@ -145,30 +150,71 @@ namespace Mento.Script.Customer.TagManagement
             //Click "Save" button
             VTagSettings.ClickSaveButton();
             TimeManager.MediumPause();
-            
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             //verify add successful
-            Assert.IsFalse(VTagSettings.IsModifyButtonDisplayed());
-            Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
+            TimeManager.MediumPause();
+            Assert.IsTrue(VTagSettings.IsModifyButtonDisplayed());
+
+            //1. verify on area node
+            
+            // Add hierarchy for verify the added vtag
+
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
+            JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
+            TimeManager.MediumPause();
+            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
+            //Click "子区域" button to add Area node.	
+            JazzFunction.AreaDimensionSettings.ClickCreateAreaDimensionButton();
+            //"Input  area name: "一层", comment ,Click ""save"" button"	
+            JazzFunction.AreaDimensionSettings.FillAreaDimensionData(input.InputData.Message, input.InputData.Comment);
+            JazzFunction.AreaDimensionSettings.ClickSaveButton();
+           
+
+            // Assosiate the vtag to Area node
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
+            JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
+            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
+            JazzFunction.AreaDimensionSettings.SelectAreaDimensionNode(input.InputData.Message);
+          
+            TimeManager.MediumPause();
+            JazzFunction.AssociateSettings.ClickAssociateTagButton();
+            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.AssociateSettings.CheckedTag(input.InputData.Code);
+            JazzFunction.AssociateSettings.ClickAssociateButton();
+            TimeManager.MediumPause();
+            JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.InputData.CommonName);
+            //JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.ExpectedData.CommonName);
+
 
             //1. verify on formula tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+            */
+
             JazzFunction.VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
             JazzFunction.VTagSettings.SwitchToFormulaTab();
             JazzFunction.VTagSettings.ClickModifyFormulaButton();
-            TimeManager.MediumPause();
-            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
             
             //Assert.IsTrue(JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName));
 
 
             //2. verify whether tag on the formula tag list
             //    A problem here :  those tags should drag scroll bar to diplay can't drag into the formula textarea
-           /*
-            JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName);
+            // Drag the vtag to the formula
+
+            //JazzFunction.VTagSettings.FillInFormulaField("");
             JazzFunction.VTagSettings.DragTagToFormula(input.InputData.Code);
             JazzFunction.VTagSettings.ClickSaveFormulaButton();
+            // Verify the tag in the formula field
             JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName);
-            */
+            
             
         }
 

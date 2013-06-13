@@ -2,12 +2,17 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckAll",
+			"CommonName":"VtagForCheckDelete001",
+			"Code":"VtagCode",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
 			
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagForCheckAll",
+			"CommonName":"VtagForCheckDelete001",
 			"Message":"删除计量数据V“VtagForCheckAll”吗？",
 		}
 	}

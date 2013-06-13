@@ -242,5 +242,25 @@
 			"CalculationType":"Avg",
 			"Step":"Monthly",
 		}
+	},
+	{
+		"InputData":
+		{	
+			"CommonName":"VtagForCheckNotSameCode",
+			"Code":"VtagNotSameCode",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"VtagForCheckNotSameCode",
+			"Code":"VtagCode",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+		}
 	}
 ]

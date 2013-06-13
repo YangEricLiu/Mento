@@ -21,11 +21,15 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string CalculationType { get; set; }
         public string Comment { get; set; }
         public string Message { get; set; }
+        public string[] HierarchyNodePath { get; set; }
+        public string[] AreaNodePath { get; set; }
+        public string[] SystemNodePath { get; set; }
     }
     public class VtagOuputData : ExpectedTestDataBase
     {
         public string[] HierarchyNodePath { get; set; }
         public string[] AreaNodePath { get; set; }
+        public string[] SystemNodePath { get; set; }
         public string CommonName { get; set; }
         public string Code { get; set; }
         public string Commodity { get; set; }

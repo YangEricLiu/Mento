@@ -2,10 +2,8 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckAll",
+			"CommonName":"VtagForCheckNotSameCode",
 			"Code":"VtagNotSameCode",
-			"Meter":"VtagSameName001",
-			"Channel":"6",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
 			"Step":"Hourly",

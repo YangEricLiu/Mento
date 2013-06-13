@@ -206,6 +206,7 @@
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-1.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\SmokeTestSystemDimensionSuite\TC-J1-SmokeTest-SystemDimension-001.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\SmokeTestSystemDimensionSuite\TC-J1-SmokeTest-SystemDimension-002.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Add-101-1.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Add-001-4.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Add-001-3.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Add-001-2.json" />
@@ -218,6 +219,8 @@
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-4.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-2.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-1.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Modify-101-2.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Modify-101-1.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyInvalidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Modify-001-2.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyInvalidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Modify-001-1.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Modify-101-6.json" />

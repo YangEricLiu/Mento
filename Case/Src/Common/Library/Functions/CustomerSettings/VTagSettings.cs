@@ -413,6 +413,11 @@ namespace Mento.ScriptCommon.Library.Functions
             }      
         }
 
+        public void GotoPageOnFormulaTaglist(int pageIndex)
+        {
+            FormulaPTagList.GotoPage(pageIndex);
+        }
+
         /// <summary>
         /// Fill the text to formula field, clear the field first, then input text
         /// </summary>

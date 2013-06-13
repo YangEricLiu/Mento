@@ -224,63 +224,69 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "+" button for '工休日', add 2 items, one of them not include worktime
             CalendarSettings.ClickWorkdayCreateButton();
+            CalendarSettings.ClickAddWorktimeLinkButton();
+            TimeManager.ShortPause();
             CalendarSettings.FillInWorkdayCalendarValue(input.InputData);
             TimeManager.ShortPause();
 
             CalendarSettings.ClickWorkdayCreateButton();
-            CalendarSettings.FillInWorkdayCalendarValue(input.InputData);
+            CalendarSettings.SelectWorkdayEffectiveYear("2049");
+            CalendarSettings.SelectWorkdayCalendarName(input.InputData.WorkdayCalendarName);
+            TimeManager.ShortPause();
+            
+            //Click "+" button for '冷暖季' and add 2 items
+            CalendarSettings.ClickHeatingCoolingCreateButton();
+            CalendarSettings.FillInHeatingCoolingCalendarValue(input.InputData);
             TimeManager.ShortPause();
 
-            //Click "+" button for '冷暖季'
             CalendarSettings.ClickHeatingCoolingCreateButton();
-            CalendarSettings.FillInHeatingCoolingCalendarValue_N(input.InputData, 1);
-            Assert.IsTrue(CalendarSettings.GetHCContainerErrorTips().Contains(input.ExpectedData.HeatingCoolingEffectiveDate));
-            CalendarSettings.ClickCancelCalendarButton();
-            TimeManager.MediumPause();
+            CalendarSettings.SelectHeatingCoolingEffectiveYear("2015");
+            CalendarSettings.SelectHeatingCoolingCalendarName(input.InputData.HeatingCoolingCalendarName);
+            TimeManager.ShortPause();
 
             //Click "+" button for '昼夜时间'
-            CalendarSettings.ClickCreateCalendarButton();
-            TimeManager.ShortPause();
             CalendarSettings.ClickDayNightCreateButton();
-            CalendarSettings.FillInDayNightCalendarValue_N(input.InputData, 1);
-            CalendarSettings.ClickSaveCalendarButton();
+            CalendarSettings.FillInDayNightCalendarValue(input.InputData);
             TimeManager.ShortPause();
 
-            Assert.IsTrue(CalendarSettings.GetDayNightContainerErrorTips().Contains(input.ExpectedData.DayNightEffectiveDate));
-        }
+            CalendarSettings.ClickDayNightCreateButton();
+            CalendarSettings.SelectDayNightEffectiveYear("2038");
+            CalendarSettings.SelectDayNightCalendarName(input.InputData.DayNightCalendarName);
+            TimeManager.ShortPause();
+            
+            //Click "Save"
+            CalendarSettings.ClickSaveCalendarButton();
+            TimeManager.LongPause();
 
+            //Verify the calendar display correct and label text is right--workday
+            Assert.AreEqual(CalendarSettings.GetWorkdayEffectiveYearValue(), "2049");
+            Assert.AreEqual(CalendarSettings.GetWorkdayCalendarNameValue(), input.ExpectedData.WorkdayCalendarName);
+            Assert.IsTrue(CalendarSettings.IsWorkdayCalendarTextCorrect(input.ExpectedData.WorkdayText));
+            
+            Assert.AreEqual(CalendarSettings.GetWorkdayEffectiveYearValue_N(2), input.ExpectedData.WorkdayEffectiveDate);
+            Assert.AreEqual(CalendarSettings.GetWorkdayCalendarNameValue_N(2), input.ExpectedData.WorkdayCalendarName);
+            Assert.AreEqual(CalendarSettings.GetWorktimeCalendarNameValue_N(2), input.ExpectedData.WorktimeCalendarName);
+            Assert.IsTrue(CalendarSettings.IsWorkdayCalendarTextCorrect_N(input.ExpectedData.WorkdayText, 2));
+            Assert.IsTrue(CalendarSettings.IsWorktimeCalendarTextCorrect_N(input.ExpectedData.WorktimeText, 2));
 
-        [Test]
-        [CaseID("TC-J1-SmokeTest-017")]
-        [Priority("34")]
-        [Type("BVT")]
-        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(SmokeTestAddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
-        public void AddCalendarforHeatingCooling(CalendarPropertyData input)
-        {
-            //Verify the calendar display correct and label text is right
-            Assert.AreEqual(CalendarSettings.GetHeatingCoolingEffectiveYearValue(), input.ExpectedData.HeatingCoolingEffectiveDate);
+            //Verify the calendar display correct and label text is right--Heating Cooling
+            Assert.AreEqual(CalendarSettings.GetHeatingCoolingEffectiveYearValue(), "2015");
             Assert.AreEqual(CalendarSettings.GetHeatingCoolingCalendarNameValue(), input.ExpectedData.HeatingCoolingCalendarName);
             Assert.IsTrue(CalendarSettings.IsHeatingCoolingCalendarTextCorrect(input.ExpectedData.HeatingCoolingText));
 
-            //Verify the calendar display correct and label text is right
-            Assert.AreEqual(CalendarSettings.GetWorkdayEffectiveYearValue(), input.ExpectedData.WorkdayEffectiveDate);
-            Assert.AreEqual(CalendarSettings.GetWorkdayCalendarNameValue(), input.ExpectedData.WorkdayCalendarName);
-            Assert.AreEqual(CalendarSettings.GetWorktimeCalendarNameValue(), input.ExpectedData.WorktimeCalendarName);
-            Assert.IsTrue(CalendarSettings.IsWorkdayCalendarTextCorrect(input.ExpectedData.WorkdayText));
-            Assert.IsTrue(CalendarSettings.IsWorktimeCalendarTextCorrect(input.ExpectedData.WorktimeText));
-        }
- 
-        [Test]
-        [CaseID("TC-J1-SmokeTest-017-003")]
-        [Priority("34")]
-        [Type("BVT")]
-        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(SmokeTestAddCalendarPropertySuite), "TC-J1-SmokeTest-017")]
-        public void AddCalendarforDayNight(CalendarPropertyData input)
-        {
-            //Verify the calendar display correct and label text is right
+            Assert.AreEqual(CalendarSettings.GetHeatingCoolingEffectiveYearValue_N(2), input.ExpectedData.HeatingCoolingEffectiveDate);
+            Assert.AreEqual(CalendarSettings.GetHeatingCoolingCalendarNameValue_N(2), input.ExpectedData.HeatingCoolingCalendarName);
+            Assert.IsTrue(CalendarSettings.IsHeatingCoolingCalendarTextCorrect_N(input.ExpectedData.HeatingCoolingText, 2));
+
+            //Verify the calendar display correct and label text is right--DayNight
             Assert.AreEqual(CalendarSettings.GetDayNightEffectiveYearValue(), input.ExpectedData.DayNightEffectiveDate);
             Assert.AreEqual(CalendarSettings.GetDayNightCalendarNameValue(), input.ExpectedData.DayNightCalendarName);
             Assert.IsTrue(CalendarSettings.IsDayNightCalendarTextCorrect(input.ExpectedData.DayNightText));
+
+            Assert.AreEqual(CalendarSettings.GetDayNightEffectiveYearValue_N(2), "2038");
+            Assert.AreEqual(CalendarSettings.GetDayNightCalendarNameValue_N(2), input.ExpectedData.DayNightCalendarName);
+            Assert.IsTrue(CalendarSettings.IsDayNightCalendarTextCorrect_N(input.ExpectedData.DayNightText, 2));
         }
+
     }
 }

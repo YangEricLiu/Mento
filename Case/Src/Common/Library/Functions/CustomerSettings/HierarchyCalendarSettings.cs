@@ -206,9 +206,23 @@ namespace Mento.ScriptCommon.Library.Functions
             return WorktimeCalendarName.GetValue();
         }
 
+        public string GetWorktimeCalendarNameValue_N(int position)
+        {
+            ComboBox OneWorktimeCalendarName = GetOneWorktimeCalendarNameComboBox(position);
+
+            return OneWorktimeCalendarName.GetValue();
+        }
+
         public string GetWorkdayEffectiveYearValue()
         {
             return WorkdayEffectiveYearAdd.GetValue();
+        }
+
+        public string GetWorkdayEffectiveYearValue_N(int position)
+        {
+            ComboBox OneWorkdayEffectiveYearAdd = GetOneWorkdayEffectiveYearComboBox(position);
+
+            return OneWorkdayEffectiveYearAdd.GetValue();
         }
 
         public string GetWorkdayCalendarNameValue()
@@ -216,9 +230,23 @@ namespace Mento.ScriptCommon.Library.Functions
             return WorkdayCalendarNameAdd.GetValue();
         }
 
+        public string GetWorkdayCalendarNameValue_N(int position)
+        {
+            ComboBox OneWorkdayCalendarNameAdd = GetOneWorkdayCalendarNameComboBox(position);
+
+            return OneWorkdayCalendarNameAdd.GetValue();
+        }
+
         public string GetWorkdayLabelValue()
         {
             return WorkdayCalendar.GetLabelTextValue();
+        }
+
+        public string GetWorkdayLabelValue_N(int position)
+        {
+            Label OneWorkdayCalendar = GetOneWorkdayCalendar(position);
+
+            return OneWorkdayCalendar.GetLabelTextValue();
         }
 
         public Boolean IsWorkdayCalendarTextCorrect(string[] texts)
@@ -226,9 +254,23 @@ namespace Mento.ScriptCommon.Library.Functions
             return WorkdayCalendar.IsLabelTextsExisted(texts);
         }
 
+        public Boolean IsWorkdayCalendarTextCorrect_N(string[] texts, int position)
+        {
+            Label OneWorkdayCalendar = GetOneWorkdayCalendar(position);
+
+            return OneWorkdayCalendar.IsLabelTextsExisted(texts);
+        }
+
         public Boolean IsWorktimeCalendarTextCorrect(string[] texts)
         {
             return WorktimeCalendar.IsLabelTextsExisted(texts);
+        }
+
+        public Boolean IsWorktimeCalendarTextCorrect_N(string[] texts, int position)
+        {
+            Label OneWorktimeCalendar = GetOneWorktimeCalendar(position);
+
+            return OneWorktimeCalendar.IsLabelTextsExisted(texts);
         }
 
         public string GetWorkdayContainerErrorTips()
@@ -317,9 +359,23 @@ namespace Mento.ScriptCommon.Library.Functions
             return HeatingCoolingEffectiveYearAdd.GetValue();
         }
 
+        public string GetHeatingCoolingEffectiveYearValue_N(int position)
+        {
+            ComboBox OneHeatingCoolingEffectiveYearAdd = GetOneHeatingCoolingEffectiveYearComboBox(position);
+
+            return OneHeatingCoolingEffectiveYearAdd.GetValue();
+        }
+
         public string GetHeatingCoolingCalendarNameValue()
         {
             return HeatingCoolingCalendarNameAdd.GetValue();
+        }
+
+        public string GetHeatingCoolingCalendarNameValue_N(int position)
+        {
+            ComboBox OneHeatingCoolingCalendarNameAdd = GetOneHeatingCoolingCalendarNameComboBox(position);
+
+            return OneHeatingCoolingCalendarNameAdd.GetValue();
         }
 
         public string GetHeatingCoolingLabelValue()
@@ -327,9 +383,23 @@ namespace Mento.ScriptCommon.Library.Functions
             return HeatingCoolingCalendar.GetLabelTextValue();
         }
 
+        public string GetHeatingCoolingLabelValue_N(int position)
+        {
+            Label OneHeatingCoolingCalendar = GetOneHCCalendar(position);
+
+            return OneHeatingCoolingCalendar.GetLabelTextValue();
+        }
+
         public Boolean IsHeatingCoolingCalendarTextCorrect(string[] texts)
         {
             return HeatingCoolingCalendar.IsLabelTextsExisted(texts);
+        }
+
+        public Boolean IsHeatingCoolingCalendarTextCorrect_N(string[] texts, int position)
+        {
+            Label OneHeatingCoolingCalendar = GetOneHCCalendar(position);
+
+            return OneHeatingCoolingCalendar.IsLabelTextsExisted(texts);
         }
 
         public string GetHCContainerErrorTips()
@@ -418,9 +488,23 @@ namespace Mento.ScriptCommon.Library.Functions
             return DayNightEffectiveYearAdd.GetValue();
         }
 
+        public string GetDayNightEffectiveYearValue_N(int position)
+        {
+            ComboBox OneDayNightEffectiveYearAdd = GetOneDayNightEffectiveYearComboBox(position);
+
+            return OneDayNightEffectiveYearAdd.GetValue();
+        }
+
         public string GetDayNightCalendarNameValue()
         {
             return DayNightCalendarNameAdd.GetValue();
+        }
+
+        public string GetDayNightCalendarNameValue_N(int position)
+        {
+            ComboBox OneDayNightCalendarNameAdd = GetOneDayNightCalendarNameComboBox(position);
+
+            return OneDayNightCalendarNameAdd.GetValue();
         }
 
         public string GetDayNightLabelValue()
@@ -428,9 +512,23 @@ namespace Mento.ScriptCommon.Library.Functions
             return DayNightCalendar.GetLabelTextValue();
         }
 
+        public string GetDayNightLabelValue_N(int position)
+        {
+            Label OneDayNightCalendar = GetOneDayNightCalendar(position);
+
+            return OneDayNightCalendar.GetLabelTextValue();
+        }
+
         public Boolean IsDayNightCalendarTextCorrect(string[] texts)
         {
             return DayNightCalendar.IsLabelTextsExisted(texts);
+        }
+
+        public Boolean IsDayNightCalendarTextCorrect_N(string[] texts, int position)
+        {
+            Label OneDayNightCalendar = GetOneDayNightCalendar(position);
+
+            return OneDayNightCalendar.IsLabelTextsExisted(texts);
         }
 
         public string GetDayNightContainerErrorTips()
@@ -474,6 +572,26 @@ namespace Mento.ScriptCommon.Library.Functions
         private ComboBox GetOneDayNightCalendarNameComboBox(int positionIndex)
         {
             return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxDayNightCalendarName, positionIndex);
+        }
+
+        private Label GetOneWorkdayCalendar(int positionIndex)
+        {
+            return JazzLabel.GetOneLabel(JazzControlLocatorKey.LabelWorkdayCalendar, positionIndex);
+        }
+
+        private Label GetOneWorktimeCalendar(int positionIndex)
+        {
+            return JazzLabel.GetOneLabel(JazzControlLocatorKey.LabelWorktimeCalendar, positionIndex);
+        }
+
+        private Label GetOneHCCalendar(int positionIndex)
+        {
+            return JazzLabel.GetOneLabel(JazzControlLocatorKey.LabelHeatingCoolingCalendar, positionIndex);
+        }
+
+        private Label GetOneDayNightCalendar(int positionIndex)
+        {
+            return JazzLabel.GetOneLabel(JazzControlLocatorKey.LabelDayNightCalendar, positionIndex);
         }
         #endregion
     }

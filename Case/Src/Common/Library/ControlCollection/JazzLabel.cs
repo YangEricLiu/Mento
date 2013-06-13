@@ -8,6 +8,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public sealed class JazzLabel : JazzControlCollection
     {
+        #region Get Position Label Method
+        public static Label GetOneLabel(string key, int positionIndex)
+        {
+            return GetControl<Label>(key, positionIndex);
+        }
+        #endregion
+
         #region customer setting
 
         #region hierarchy calendar property

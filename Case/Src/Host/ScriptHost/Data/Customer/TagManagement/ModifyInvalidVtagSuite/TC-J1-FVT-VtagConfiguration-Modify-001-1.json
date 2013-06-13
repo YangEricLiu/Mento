@@ -11,8 +11,8 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagModifyCancel",
-			"Code":"VtagModifyCancel",
+			"CommonName":"VtagForCheckAll",
+			"Code":"VtagForCheckAll",
 			"Commodity":"Water",
 			"Uom":"Ton",
 			"Step":"Monthly",

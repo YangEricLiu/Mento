@@ -11,12 +11,7 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagForCheckEA",
-			"Code":"VtagForCheckEA",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"Step":"Hourly",
-			"CalculationType":"Sum",
+			"CommonName":"PtagForCheckVTagFormula",
 			"HierarchyNodePath":["自动化测试","CheckOnESSite001"],
 		}
 	}

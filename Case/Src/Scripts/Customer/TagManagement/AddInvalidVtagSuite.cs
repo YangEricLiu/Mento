@@ -152,31 +152,17 @@ namespace Mento.Script.Customer.TagManagement
       [MultipleTestDataSource(typeof(VtagData[]), typeof(AddInvalidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-001-5")]
       public void ModifyVtagFormulaToBlank(VtagData input)
       {
-          /*
-          //Click "+" button and fill vtag field with same code
-          VTagSettings.ClickAddVTagButton();
-          VTagSettings.FillInAddVTagData(input.InputData);
 
-          //Click "Save" button
-          VTagSettings.ClickCancelButton();
+          //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+          JazzFunction.VTagSettings.FocusOnVTagByCode(input.InputData.Code);
+          TimeManager.MediumPause();
+          JazzFunction.VTagSettings.SwitchToFormulaTab();
+          TimeManager.LongPause();
+          JazzFunction.VTagSettings.ClickModifyFormulaButton();
           TimeManager.MediumPause();
 
-          //verify add successful
-          Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
-          Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
-          */
-          JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
-          JazzFunction.VTagSettings.FocusOnVTagByCode(input.InputData.CommonName);
-          JazzFunction.VTagSettings.SwitchToFormulaTab();
-          JazzFunction.VTagSettings.ClickModifyFormulaButton();
-
-          //drag  a tag into the vtag formula
-          JazzFunction.VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
-          JazzFunction.VTagSettings.SwitchToFormulaTab();
-          JazzFunction.VTagSettings.ClickModifyFormulaButton();
-
           //  Clear formula content
-          JazzFunction.VTagSettings.DragTagToFormula(null);
+          JazzFunction.VTagSettings.FillInFormulaField("  ");
           JazzFunction.VTagSettings.ClickSaveFormulaButton();
           Assert.IsTrue(VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData));
           //Problem here : no error messsge method "st-formula-text-errorEl" 

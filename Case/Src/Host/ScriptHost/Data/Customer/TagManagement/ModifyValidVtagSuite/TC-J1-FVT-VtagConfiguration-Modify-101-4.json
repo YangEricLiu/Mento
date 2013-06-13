@@ -2,16 +2,14 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckOnESSite001_UOM",
-			"Code":"VtagForCheckOnESSite001_UOM",
-			"Commodity":"Water",
+			"CommonName":"VtagForCheckAll",
 			"Uom":"Ton",
 		},
 		"ExpectedData":
 		{
 			"HierarchyNodePath":["自动化测试", "CheckOnESSite001"],
-			"CommonName":"VtagForCheckOnESSite001",
-			"Code":"VtagForCheckOnESSite001_UOM",
+			"CommonName":"VtagForCheckAll1",
+			"Code":"VtagForCheckAll",
 			"Commodity":"Water",
 			"Uom":"Ton",
 		}

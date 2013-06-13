@@ -16,9 +16,10 @@
 		},
 		"ExpectedData":
 		{
+
 			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","CheckModifyVtag"],
 			"AreaNodePath":["CheckModifyVtag","一层"],
-			"CommonName":"VtagForCheckFormula",
+			"CommonName":"VtagForCheckEA",
 		}
 	}
 ]

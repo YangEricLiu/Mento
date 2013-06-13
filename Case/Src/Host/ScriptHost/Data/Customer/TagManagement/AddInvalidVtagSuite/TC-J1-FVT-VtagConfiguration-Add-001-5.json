@@ -2,17 +2,11 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckInvalid",
-			"Code":"VtagUsedByFormula",
-			"Meter":"VtagUsedByFormula",
-			"Channel":"6",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"CalculationType":"Sum",
+			"CommonName":"VtagForCheckFormula",
+			"Code":"VtagForCheckFormula",
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagForCheckOnESSite001",
 			"Message":"计算公式的格式有误，请检查。",
 		}
 	}

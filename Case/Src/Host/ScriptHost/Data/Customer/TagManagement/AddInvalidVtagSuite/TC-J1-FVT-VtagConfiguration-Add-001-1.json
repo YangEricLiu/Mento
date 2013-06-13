@@ -4,8 +4,6 @@
 		{	
 			"CommonName":"VtagAddCancel001",
 			"Code":"VtagAddCancel001",
-			"Meter":"VtagAddCancel001",
-			"Channel":"1",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
 			"Step":"Hourly",
@@ -15,8 +13,6 @@
 		{
 			"CommonName":"VtagAddCancel001",
 			"Code":"VtagAddCancel001",
-			"Meter":"VtagAddCancel001",
-			"Channel":"1",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
 			"Step":"Hourly",

@@ -262,5 +262,27 @@
 			"Step":"Hourly",
 			"CalculationType":"Sum",
 		}
+	},
+		{
+		"InputData":
+		{	
+			"CommonName":"VtagForCheckAll",
+			"Code":"VtagForCheckAll",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"nothing",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"VtagForCheckAll",
+			"Code":"VtagForCheckAll",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+			"Comment":"nothing",
+		}
 	}
 ]

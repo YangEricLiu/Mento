@@ -57,6 +57,7 @@
     <Compile Include="HierarchyConfiguration\DeleteHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\ModifyValidHierarchyNodeSuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AddOtherCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddInvalidPeopleAreaPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddCalendarPropertySuite.cs" />

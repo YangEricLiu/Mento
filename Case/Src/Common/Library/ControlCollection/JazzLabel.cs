@@ -22,6 +22,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Label WorktimeCalendarLabel = GetControl<Label>(JazzControlLocatorKey.LabelWorktimeCalendar);
         public static Label HeatingCoolingCalendarLabel = GetControl<Label>(JazzControlLocatorKey.LabelHeatingCoolingCalendar);
         public static Label DayNightCalendarLabel = GetControl<Label>(JazzControlLocatorKey.LabelDayNightCalendar);
+
+        public static Label WorkdayLabelTitle = GetControl<Label>(JazzControlLocatorKey.LabelTitleWorkday);
+        public static Label HeatingCoolingLabelTitle = GetControl<Label>(JazzControlLocatorKey.LabelTitleHeatingCooling);
+        public static Label DayNightLabelTitle = GetControl<Label>(JazzControlLocatorKey.LabelTitleDayNight);
         #endregion
 
         #region hierarchy population area

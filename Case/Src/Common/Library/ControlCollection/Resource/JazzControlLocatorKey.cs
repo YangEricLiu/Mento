@@ -165,6 +165,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonHeatingCoolingCreate = "ButtonHeatingCoolingCreate";
         public static string ButtonDayNightCreate = "ButtonDayNightCreate";
         public static string LinkButtonWorktimeCreate = "LinkButtonWorktimeCreate";
+        public static string ButtonWorkdayDelete = "ButtonWorkdayDelete";
+        public static string ButtonHeatingCoolingDelete = "ButtonHeatingCoolingDelete";
+        public static string ButtonDayNightDelete = "ButtonDayNightDelete";
         #endregion
 
         #region hierarchypeoplearea
@@ -686,6 +689,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelWorktimeCalendar = "LabelWorktimeCalendar";
         public static string LabelHeatingCoolingCalendar = "LabelHeatingCoolingCalendar";
         public static string LabelDayNightCalendar = "LabelDayNightCalendar";
+
+        public static string LabelTitleWorkday = "LabelTitleWorkday";
+        public static string LabelTitleHeatingCooling = "LabelTitleHeatingCooling";
+        public static string LabelTitleDayNight = "LabelTitleDayNight";
         #endregion
 
         #region HierarchyPopulationArea

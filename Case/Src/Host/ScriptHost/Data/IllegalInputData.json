@@ -16,7 +16,7 @@
 			"Channel":"999999999999999999",
 			"IntegerValue":"999999999999999999",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"999999999999999999",
 			"Comments":"$%^",
 			"FeedbackComments":""
 		},
@@ -35,7 +35,7 @@
 			"Channel":"该输入项的最大值是 999999999999999",
 			"IntegerValue":"该输入项的最大值是 999999999999999",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"该输入项的最大值是 999999999.999999",
 			"Comments":"允许汉字，半角英文字母，数字，下划线和空格",
 			"FeedbackComments":"",
 		}
@@ -57,7 +57,7 @@
 			"Channel":"",
 			"IntegerValue":"",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"999999999.9999999",
 			"Comments":"$%^",
 			"FeedbackComments":""
 		},
@@ -76,7 +76,7 @@
 			"Channel":"必填项。",
 			"IntegerValue":"必填项",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"该输入项的最大值是 999999999.999999",
 			"Comments":"允许汉字，半角英文字母，数字，下划线和空格",
 			"FeedbackComments":"",
 		}
@@ -117,7 +117,7 @@
 			"Channel":"必填项。",
 			"IntegerValue":"必填项",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"必填项",
 			"Comments":"允许汉字，半角英文字母，数字，下划线和空格",
 			"FeedbackComments":"",
 		}
@@ -158,7 +158,7 @@
 			"Channel":"必填项。",
 			"IntegerValue":"必填项",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"必填项",
 			"Comments":"允许汉字，半角英文字母，数字，下划线和空格",
 			"FeedbackComments":"",
 		}

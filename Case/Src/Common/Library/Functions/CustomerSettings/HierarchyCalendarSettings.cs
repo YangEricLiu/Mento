@@ -44,6 +44,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Container WorkdayErrorTips = JazzContainer.WorkdayErrorTipsContainer;
         private static Container HCErrorTips = JazzContainer.HCErrorTipsContainer;
         private static Container DayNightErrorTips = JazzContainer.DayNightErrorTipsContainer;
+        private static Label WorkdayTitle = JazzLabel.WorkdayLabelTitle;
+        private static Label HeatingCoolingTitle = JazzLabel.HeatingCoolingLabelTitle;
+        private static Label DayNightTitle = JazzLabel.DayNightLabelTitle;
         #endregion
 
         #region Calendar 
@@ -277,6 +280,32 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return WorkdayErrorTips.GetContainerErrorTips();
         }
+
+        public void ClickDeleteWorkdayButton_N(int position)
+        {
+            Button OneWorkdayDeleteButton = GetOneWorkdayDeleteButton(position);
+
+            OneWorkdayDeleteButton.Click();
+        }
+
+        public void ClickDeleteHCButton_N(int position)
+        {
+            Button OneHCDeleteButton = GetOneHCDeleteButton(position);
+
+            OneHCDeleteButton.Click();
+        }
+
+        public void ClickDeleteDayNightButton_N(int position)
+        {
+            Button OneDayNightDeleteButton = GetOneDayNightDeleteButton(position);
+
+            OneDayNightDeleteButton.Click();
+        }
+
+        public Boolean IsWorkdayTitleDisplayed()
+        {
+            return WorkdayTitle.IsLabelDisplayed();
+        }
         #endregion
 
         #region HeatingCooling property
@@ -405,6 +434,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetHCContainerErrorTips()
         {
             return HCErrorTips.GetContainerErrorTips();
+        }
+
+        public Boolean IsHCTitleDisplayed()
+        {
+            return HeatingCoolingTitle.IsLabelDisplayed();
         }
         #endregion
 
@@ -535,6 +569,11 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return DayNightErrorTips.GetContainerErrorTips();
         }
+
+        public Boolean IsDayNightTitleDisplayed()
+        {
+            return DayNightTitle.IsLabelDisplayed();
+        }
         #endregion
 
         #region private method
@@ -592,6 +631,21 @@ namespace Mento.ScriptCommon.Library.Functions
         private Label GetOneDayNightCalendar(int positionIndex)
         {
             return JazzLabel.GetOneLabel(JazzControlLocatorKey.LabelDayNightCalendar, positionIndex);
+        }
+
+        private Button GetOneWorkdayDeleteButton(int positionIndex)
+        {
+            return JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWorkdayDelete, positionIndex);
+        }
+
+        private Button GetOneHCDeleteButton(int positionIndex)
+        {
+            return JazzButton.GetOneButton(JazzControlLocatorKey.ButtonHeatingCoolingDelete, positionIndex);
+        }
+
+        private Button GetOneDayNightDeleteButton(int positionIndex)
+        {
+            return JazzButton.GetOneButton(JazzControlLocatorKey.ButtonDayNightDelete, positionIndex);
         }
         #endregion
     }

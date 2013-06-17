@@ -16,6 +16,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string[] HierarchyNodePath { get; set; }
         public string EffectiveDate { get; set; }
         public string Price { get; set; }
+        public string DoubleNonNagtiveValue { get; set; }
     }
 
     public class OtherCostExpectedData : VtagOuputData
@@ -23,6 +24,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string[] HierarchyNodePath { get; set; }
         public string EffectiveDate { get; set; }
         public string Price { get; set; }
+        public string DoubleNonNagtiveValue { get; set; }
         public string Message { get; set; }
         public string ErrorMessage { get; set; }
     }

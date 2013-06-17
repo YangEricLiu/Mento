@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <WebElement>
+  <!--Button Begin-->
   <Button>
     <login>
       <add key="ButtonLoginSubmit" value = "btnSubmit" type="ID"/>
@@ -160,6 +161,9 @@
         <add key="ButtonHeatingCoolingCreate" value="st-hierarchy-calendar-coldwarm-add-toolEl" type="ID"/>
         <add key="ButtonDayNightCreate" value="st-hierarchy-calendar-daynight-add-toolEl" type="ID"/>
         <add key="LinkButtonWorktimeCreate" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='添加工作时间']" type="XPath"/>
+        <add key="ButtonWorkdayDelete" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
+        <add key="ButtonHeatingCoolingDelete" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
+        <add key="ButtonDayNightDelete" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
       </hierarchycalendar>
       <hierarchypeoplearea>
         <add key="TabButtonPeopleAreaProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[4]" type="XPath"/>
@@ -289,6 +293,7 @@
      </customermanagement>
     </platformsettings>
   </Button> 
+  <!--Button End-->
   
   <!--TextField Begin-->
   <TextField>
@@ -604,16 +609,16 @@
     <hierarchyproperty>
       <add key="MonthPickerPeopleEffectiveDate" value="//table[@id='st-hierarchy-dynamic-population-value-container']//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table[$#positionIndex]//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'monthfield')]]" type="XPath"/>
       <add key="MonthPickerElectricCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[@class='x-container x-container-default'][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerWaterCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerGasCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][2]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerHeatQCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][3]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerCoolQCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][4]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerLightWaterCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][5]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerCoalCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][6]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerPetrolCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][7]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerKeroseneCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][8]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerDieselOilCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][9]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
-      <add key="MonthPickerLowPressureSteamCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform')][10]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerWaterCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerGasCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][2]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerHeatQCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][3]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerCoolQCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][4]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerLightWaterCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][5]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerCoalCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][6]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerPetrolCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][7]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerKeroseneCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][8]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerDieselOilCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][9]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
+      <add key="MonthPickerLowPressureSteamCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][10]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
     </hierarchyproperty>
   </MonthPicker>
  
@@ -633,6 +638,9 @@
         <add key="LabelWorktimeCalendar" value="st-hierarchy-calendar-workday-container" type="ID"/>
         <add key="LabelHeatingCoolingCalendar" value="st-hierarchy-calendar-coldwarm-container" type="ID"/>
         <add key="LabelDayNightCalendar" value="st-hierarchy-calendar-daynight-container" type="ID"/>
+        <add key="LabelTitleWorkday" value="//div[@id='st-hier-calendar-form-body']//td[@class='x-form-item-body']/table[1]//label[text()='工休日']" type="XPath"/>
+        <add key="LabelTitleHeatingCooling" value="//div[@id='st-hier-calendar-form-body']//td[@class='x-form-item-body']/table[3]//label[text()='冷暖季']" type="XPath"/>
+        <add key="LabelTitleDayNight" value="//div[@id='st-hier-calendar-form-body']//td[@class='x-form-item-body']/table[5]//label[text()='昼夜时间']" type="XPath"/>
       </HierarchyCalendar>
       <HierarchyPopulationArea>
         <add key="LabelAreaPropertyTitle" value="st-hierarchy-dynamicproperty-area-label-labelEl" type="ID"/>

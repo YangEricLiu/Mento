@@ -46,5 +46,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return true;
         }
+
+        public Boolean IsLabelDisplayed()
+        {
+            return this.RootElement.Displayed;
+        }
     }
 }

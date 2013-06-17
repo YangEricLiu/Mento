@@ -32,6 +32,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MonthPicker ElectricCostEffectiveDate = JazzMonthPicker.ElectricCostEffectiveDateMonthPicker;
         private static TextField ElectricPrice = JazzTextField.ElectricPriceTextField;
         private static Button CostSave = JazzButton.CostSaveButton;
+        private static Button CostCancel = JazzButton.CostCancelButton;
         private static ComboBox DemandCostType = JazzComboBox.DemandCostTypeComboBox;
         private static ComboBox TouTariffId = JazzComboBox.TouTariffIdComboBox;
         private static ComboBox FactorType = JazzComboBox.FactorTypeComboBox;
@@ -62,6 +63,11 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public Boolean IsCostCreateButtonDisplayed()
+        {
+            return CostCreate.IsDisplayed();
+        }
+
         public void ClickElectricCostCreateButton()
         {
             ElectricCostCreate.Click();
@@ -72,6 +78,12 @@ namespace Mento.ScriptCommon.Library.Functions
             CostSave.Click();
             JazzMessageBox.LoadingMask.WaitLoading();
         }
+
+        public void ClickCostCancelButton()
+        {
+            CostCancel.Click();
+        }
+
         #endregion
 
         #region fill in value

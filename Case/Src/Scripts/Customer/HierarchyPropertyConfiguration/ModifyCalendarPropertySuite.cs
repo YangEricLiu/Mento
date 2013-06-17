@@ -101,11 +101,16 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CalendarSettings.ClickCreateCalendarButton();
             TimeManager.ShortPause();
 
+            //Modify Heating Cooling
+            CalendarSettings.ClickHeatingCoolingCreateButton();
+            CalendarSettings.SelectHeatingCoolingCalendarName(input.InputData.HeatingCoolingCalendarName);
 
+            //Delete workday and Daynight
+            CalendarSettings.ClickDeleteWorkdayButton_N(1);
+            CalendarSettings.ClickDeleteDayNightButton_N(1);
 
-
-            //Modify nothing and Click "Save"
-            CalendarSettings.ClickSaveCalendarButton();
+            //Modify nothing and Click "Cancel"
+            CalendarSettings.ClickCancelCalendarButton();
             TimeManager.LongPause();
 
             //Verify the calendar display correct and label text is right--workday
@@ -126,5 +131,94 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.IsTrue(CalendarSettings.IsDayNightCalendarTextCorrect(input.ExpectedData.DayNightText));
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-CalendarConfiguration-Modify-101-3")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(ModifyCalendarPropertySuite), "TC-J1-FVT-CalendarConfiguration-Modify-101-3")]
+        public void ModifyThenSave(CalendarPropertyData input)
+        {
+            //Select hierarchy 
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+
+            //Click calendar tab and create button "+日历属性"
+            CalendarSettings.ClickCalendarTab();
+            TimeManager.MediumPause();
+            CalendarSettings.ClickCreateCalendarButton();
+            TimeManager.ShortPause();
+
+            //Modify Heating Cooling
+            CalendarSettings.SelectHeatingCoolingCalendarName(input.InputData.HeatingCoolingCalendarName);
+
+            //Delete workday and Daynight
+            CalendarSettings.ClickDeleteWorkdayButton_N(1);
+            CalendarSettings.ClickDeleteDayNightButton_N(1);
+
+            //Modify nothing and Click "Save"
+            CalendarSettings.ClickSaveCalendarButton();
+            TimeManager.LongPause();
+
+            //Verify the calendar display correct and label text is right--Heating Cooling
+            Assert.AreEqual(CalendarSettings.GetHeatingCoolingEffectiveYearValue_N(1), input.ExpectedData.HeatingCoolingEffectiveDate);
+            Assert.AreEqual(CalendarSettings.GetHeatingCoolingCalendarNameValue_N(1), input.ExpectedData.HeatingCoolingCalendarName);
+            Assert.IsTrue(CalendarSettings.IsHeatingCoolingCalendarTextCorrect_N(input.ExpectedData.HeatingCoolingText, 1));
+
+            //Verify only Heating Cooling displayed
+            Assert.IsTrue(CalendarSettings.IsHCTitleDisplayed());
+            Assert.IsFalse(CalendarSettings.IsWorkdayTitleDisplayed());
+            Assert.IsFalse(CalendarSettings.IsDayNightTitleDisplayed());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CalendarConfiguration-Modify-101-4")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(ModifyCalendarPropertySuite), "TC-J1-FVT-CalendarConfiguration-Modify-101-4")]
+        public void ModifyToDeleteAll(CalendarPropertyData input)
+        {
+            //Select hierarchy 
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+
+            //Click calendar tab and create button "+日历属性"
+            CalendarSettings.ClickCalendarTab();
+            TimeManager.MediumPause();
+            CalendarSettings.ClickCreateCalendarButton();
+            TimeManager.ShortPause();
+
+            //Delete all
+            CalendarSettings.ClickDeleteWorkdayButton_N(1);
+            CalendarSettings.ClickDeleteDayNightButton_N(1);
+            CalendarSettings.ClickDeleteHCButton_N(1);
+
+            //Modify nothing and Click "Save"
+            CalendarSettings.ClickSaveCalendarButton();
+            TimeManager.LongPause();
+
+            //verify "+日历属性" displayed
+            Assert.IsTrue(CalendarSettings.IsCreateCalendarButtonDisplayed());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CalendarConfiguration-Modify-001-1")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(ModifyCalendarPropertySuite), "TC-J1-FVT-CalendarConfiguration-Modify-001-1")]
+        public void ModifyToSameYear(CalendarPropertyData input)
+        {
+            //Select hierarchy 
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+
+            //Click calendar tab and create button "+日历属性"
+            CalendarSettings.ClickCalendarTab();
+            TimeManager.MediumPause();
+            CalendarSettings.ClickCreateCalendarButton();
+            TimeManager.ShortPause();
+
+            //Modify same year for '冷暖季'
+            CalendarSettings.SelectHeatingCoolingEffectiveYear_N("2013", 2);
+            CalendarSettings.ClickSaveCalendarButton();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(CalendarSettings.GetHCContainerErrorTips().Contains(input.ExpectedData.HeatingCoolingEffectiveDate));
+            CalendarSettings.ClickCancelCalendarButton();
+            TimeManager.MediumPause();
+        }
     }
 }

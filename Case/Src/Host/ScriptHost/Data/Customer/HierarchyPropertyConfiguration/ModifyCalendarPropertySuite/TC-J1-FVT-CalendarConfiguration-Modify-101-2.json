@@ -3,6 +3,7 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试", "CalendarProperty", "ModifyCalendar", "ModifyCancel"],
+			"HeatingCoolingCalendarName":"冷暖季日历1",
 		},
 		"ExpectedData":
 		{

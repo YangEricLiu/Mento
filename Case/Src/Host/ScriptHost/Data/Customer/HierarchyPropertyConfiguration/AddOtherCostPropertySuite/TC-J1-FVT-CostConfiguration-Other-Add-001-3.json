@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoSite002", "AutoBuilding002"],
+			"EffectiveDate":"2012-12",
+			"Price":"2",
+		},
+		"ExpectedData":
+		{	
+			
+		}
+	}
+]

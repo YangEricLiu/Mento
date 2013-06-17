@@ -37,7 +37,11 @@ namespace Mento.Script.Customer.TagManagement
         {
             JazzFunction.Navigator.NavigateHome();
         }
-
+        /// <summary>
+        /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"/"AutoSite_Vtag"/"CheckModifyVtag"
+        /// Prepare Data: 1. add area dimension "一层" and system dimension "空调" for associate tag and lightened in either dimension Node
+        ///                       2. add vtag "VtagForCheckFormula" used by formula 
+        /// </summary> 
         [Test]
         [CaseID("TC-J1-FVT-VtagConfiguration-Modify-101-1")]
         [Type("BFT")]

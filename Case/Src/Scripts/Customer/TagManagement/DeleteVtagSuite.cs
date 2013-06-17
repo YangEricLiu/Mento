@@ -37,7 +37,11 @@ namespace Mento.Script.Customer.TagManagement
         {
             JazzFunction.Navigator.NavigateHome();
         }
-
+        /// <summary>
+        /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"/"AutoSite_Vtag"/"CheckModifyVtag"
+        /// Prepare Data: 1. add area dimension "一层" and system dimension "空调" for associate tag
+        ///                       2. add vtag used by formula and by cost property of building node
+        /// </summary> 
         [Test]
         [CaseID("TC-J1-FVT-VtagConfiguration-Delete-001-1")]
         [Type("BFT")]
@@ -89,22 +93,7 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(DeleteVtagSuite), "TC-J1-FVT-VtagConfiguration-Delete-101-1")]
         public void DeleteVtagAndVerify(VtagData input)
         {
-            /*
-            //Click "+" button and fill vtag field
-            VTagSettings.ClickAddVTagButton();
-            VTagSettings.FillInAddVTagData(input.InputData);
-
-            //Click "Save" button
-            VTagSettings.ClickSaveButton();
-            //waiting for "quanjuzhezhao" disappear
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.MediumPause();
-
-            //verify add successful
-            Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
-            Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
-            */
-
+           
             //Select the vtag
            VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
            TimeManager.ShortPause();
@@ -120,14 +109,11 @@ namespace Mento.Script.Customer.TagManagement
             //Click "Confirm" button
             JazzMessageBox.MessageBox.Confirm();
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
-            //verify delete successful
-            Assert.IsFalse(VTagSettings.IsModifyButtonDisplayed());
-            Assert.IsFalse(VTagSettings.IsDeleteButtonDisplayed());
-
+           
             //1. Verify that Vtag is deleted from Vtag list
-            Assert.IsFalse(VTagSettings.FocusOnVTagByName(input.InputData.CommonName));
+            Assert.IsFalse(VTagSettings.FocusOnVTagByCode(input.InputData.Code));
             
 
             //3. Verify vtag is deleted from associated tag list
@@ -143,7 +129,7 @@ namespace Mento.Script.Customer.TagManagement
             
             JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
             TimeManager.MediumPause();
-            Assert.IsFalse(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.CommonName));
+            Assert.IsFalse(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.InputData.Code));
             
             //Verify vtag is deleted from SystemDimensionNode
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationSystemDimension);
@@ -154,7 +140,7 @@ namespace Mento.Script.Customer.TagManagement
 
             JazzFunction.SystemDimensionSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemNodePath);
             TimeManager.MediumPause();
-            Assert.IsFalse(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.CommonName));
+            Assert.IsFalse(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.InputData.Code));
         }
 
         [Test]
@@ -166,14 +152,16 @@ namespace Mento.Script.Customer.TagManagement
 
             //Make sure the tag is  being used by cost property of building node manually
 
-            // how to configrate the vtag to the cost properties
+            /*
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
             JazzFunction.HierarchySettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
-            
+            TimeManager.LongPause();
+
+             */
 
             //Select the vtag
-            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
-            TimeManager.ShortPause();
+            VTagSettings.FocusOnVTagByName(input.ExpectedData.Code);
+            TimeManager.LongPause();
 
             //Click "Delete" button
             VTagSettings.ClickDeleteButton();
@@ -191,6 +179,7 @@ namespace Mento.Script.Customer.TagManagement
             string msgText2 = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
 
+            //No "Confirm" buttion here
             
         }
 

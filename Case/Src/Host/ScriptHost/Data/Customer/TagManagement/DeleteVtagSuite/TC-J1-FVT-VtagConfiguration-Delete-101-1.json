@@ -3,6 +3,7 @@
 		"InputData":
 		{	
 			"CommonName":"VtagForCheckAll",
+			"Code":"VtagForCheckAll",
 		},
 		"ExpectedData":
 		{

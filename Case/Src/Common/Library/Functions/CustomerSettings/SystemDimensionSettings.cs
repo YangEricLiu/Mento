@@ -21,7 +21,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SetSystemDimensionButton = JazzButton.SystemDimensionSettingsSetButton;
 
         private static SystemDimensionTree DialogSystemDimensionTree = JazzTreeView.HierarchySettingsDialogSystemDimensionTree;
-
+       
         private static Button DialogReturnButton = JazzButton.SystemDimensionSettingsDialogReturnButton;
         private static Button DislogCloseButton = JazzButton.SystemDimensionSettingsCloseButton;
 
@@ -116,6 +116,8 @@ namespace Mento.ScriptCommon.Library.Functions
             DislogCloseButton.Click();
         }
 
+
+   
         #endregion
 
         #region Verification

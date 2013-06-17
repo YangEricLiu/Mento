@@ -273,8 +273,9 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Modify-101-6")]
         public void ModifyCompAndCheck(VtagData input)
         {
-
+            /*
             //prepare
+
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
             JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
             JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
@@ -286,15 +287,58 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.AssociateSettings.CheckedTag(input.ExpectedData.CommonName);
             JazzFunction.AssociateSettings.ClickAssociateButton();
             TimeManager.MediumPause();
-   
+            */
+
+
+            // Assosiate the vtag to Area node
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
+            JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
+            TimeManager.MediumPause();
+            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
+            JazzFunction.AreaDimensionSettings.SelectAreaDimensionNode(input.InputData.Message);
+
+            TimeManager.MediumPause();
+            JazzFunction.AssociateSettings.ClickAssociateTagButton();
+            TimeManager.LongPause();
+            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.AssociateSettings.CheckedTag(input.ExpectedData.Code);
+            JazzFunction.AssociateSettings.ClickAssociateButton();
+            TimeManager.MediumPause();
+            JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.Code);
 
 
 
+            // node should be prepared 
 
+            // Assosiate the vtag to System dimension node
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationSystemDimension);
+            JazzFunction.SystemDimensionSettings.ShowHierarchyTree();
+            TimeManager.MediumPause();
+            JazzFunction.SystemDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.SystemDimensionSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemNodePath);
+            // !!!!!!!!!   need run by nunit
+           JazzFunction.SystemDimensionSettings.SelectSystemDimensionNode(input.ExpectedData.Message);
 
+            TimeManager.MediumPause();
+            JazzFunction.AssociateSettings.ClickAssociateTagButton();
+            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.AssociateSettings.CheckedTag(input.ExpectedData.Code);
+            JazzFunction.AssociateSettings.ClickAssociateButton();
+            TimeManager.MediumPause();
+            JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.Code);
+
+            // ligten should be opertate manually
+          
             //Click "Modify" button and input new value to Vtag field
-           
-            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+            TimeManager.LongPause();
+            VTagSettings.FocusOnVTagByName(input.ExpectedData.Code);
             VTagSettings.ClickModifyButton();
             VTagSettings.FillInAddVTagData(input.InputData);
 
@@ -307,15 +351,16 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
             Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
             Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.ExpectedData.UOM), VTagSettings.GetVTagUOMValue());
-            
+           
             //Verify that not lighten vtag Uom is updated dimension node
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
             JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
+            TimeManager.LongPause();
             JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
             TimeManager.MediumPause();
             JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
             TimeManager.MediumPause();
-            JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.ExpectedData.CommonName);
+            JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.ExpectedData.Code);
             //Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.ExpectedData.UOM), JazzFunction.EnergyAnalysisPanel.GetSelectedRowData(6));
             
         }

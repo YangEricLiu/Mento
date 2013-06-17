@@ -63,7 +63,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click "Delete" button
             VTagSettings.ClickDeleteButton();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Verify that message box popup for confirm delete
             string msgText = JazzMessageBox.MessageBox.GetMessage();
@@ -89,6 +89,7 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(DeleteVtagSuite), "TC-J1-FVT-VtagConfiguration-Delete-101-1")]
         public void DeleteVtagAndVerify(VtagData input)
         {
+            /*
             //Click "+" button and fill vtag field
             VTagSettings.ClickAddVTagButton();
             VTagSettings.FillInAddVTagData(input.InputData);
@@ -102,10 +103,11 @@ namespace Mento.Script.Customer.TagManagement
             //verify add successful
             Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
             Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
-
+            */
 
             //Select the vtag
            VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
+           TimeManager.ShortPause();
 
             //Click "Delete" button
             VTagSettings.ClickDeleteButton();
@@ -161,8 +163,17 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(DeleteVtagSuite), "TC-J1-FVT-VtagConfiguration-Delete-001-2")]
         public void DeleteVtagUsedByOther(VtagData input)
         {
+
+            //Make sure the tag is  being used by cost property of building node manually
+
+            // how to configrate the vtag to the cost properties
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+            JazzFunction.HierarchySettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            
+
             //Select the vtag
             VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+            TimeManager.ShortPause();
 
             //Click "Delete" button
             VTagSettings.ClickDeleteButton();

@@ -50,8 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HierarchyConfiguration\AddInvalidHierarhcyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\AddValidHierarhcyNodeSuite.cs" />
+    <Compile Include="HierarchyConfiguration\AddAreaCancel.cs" />
     <Compile Include="HierarchyConfiguration\AssociateSytemDimension.cs" />
     <Compile Include="HierarchyConfiguration\DisassociateSytemDimension.cs" />
     <Compile Include="HierarchyConfiguration\DeleteHierarchyNodeSuite.cs" />

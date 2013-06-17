@@ -2,15 +2,15 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckDelete_002",
+			"CommonName":"VtagForCheckAll",
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagForCheckDelete_002",
+			"CommonName":"VtagForCheckAll",
 			"HierarchyNodePath":["自动化测试", "AutoSite_Vtag","CheckModifyVtag"],
 			"AreaNodePath":["CheckModifyVtag","一层"],
 			"SystemNodePath":["CheckModifyVtag","空调"],
-			"Message":"删除计量数据V“VtagForCheckDelete_002”吗？",
+			"Message":"删除计量数据V“VtagForCheckAll”吗？",
 		}
 	}
 ]

@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "ACostProperty", "ModifyToDeleteAll"],
+		},
+		"ExpectedData":
+		{	
+			"EffectiveDate":"2013-04",
+			"Price":"201304",
+		}
+	}
+]

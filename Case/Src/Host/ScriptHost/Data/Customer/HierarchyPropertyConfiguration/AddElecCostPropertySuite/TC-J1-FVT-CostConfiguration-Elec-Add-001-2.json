@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoSite002", "AutoBuilding002"],
+			"EffectiveDate":"1949-12",
+		},
+		"ExpectedData":
+		{	
+			"EffectiveDate":"该输入项的日期必须在 1950-01 之后",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoSite002", "AutoBuilding002"],
+			"EffectiveDate":"2050-01",
+		},
+		"ExpectedData":
+		{	
+			"EffectiveDate":"该输入项的日期必须在 2049-12 之前",
+		}
+	}
+]

@@ -62,6 +62,8 @@
     <Compile Include="HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddInvalidPeopleAreaPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddCalendarPropertySuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AddElecCostPropertySuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\ModifyOtherCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\ModifyCalendarPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\ModifyInvalidPeopleAreaPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\ModifyValidPeopleAreaPropertySuite.cs" />

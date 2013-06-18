@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.TestData;
 using Mento.Utility;
+using Mento.ScriptCommon.TestData.Common;
 
 namespace Mento.ScriptCommon.TestData.Customer
 {
@@ -17,6 +18,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string EffectiveDate { get; set; }
         public string Price { get; set; }
         public string DoubleNonNagtiveValue { get; set; }
+        public DateValue[] CostDateValue { get; set; }
     }
 
     public class OtherCostExpectedData : VtagOuputData
@@ -27,5 +29,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string DoubleNonNagtiveValue { get; set; }
         public string Message { get; set; }
         public string ErrorMessage { get; set; }
+        public DateValue[] CostDateValue { get; set; }
     }
 }

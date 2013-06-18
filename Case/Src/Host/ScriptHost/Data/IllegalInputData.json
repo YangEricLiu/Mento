@@ -98,8 +98,49 @@
 			"Channel":"",
 			"IntegerValue":"",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"00.00",
 			"Comments":"$%^中文",
+			"FeedbackComments":""
+		},
+		"ExpectedData":
+		{
+		    "AccountID":"用户名只能由半角英文字母，数字和下划线组成。",
+			"Password":"",
+			"RealName":"用户名只能由半角英文字母，数字和下划线组成。",
+			"CustomerName":"",
+			"CommonName":"允许汉字，英文字母，数字，下划线和空格",
+			"Address":"",
+			"Email":"电话只能由数字和连字符组成，且不能以连字符开头或结尾, 多个连字符不能连续。",
+			"Telephone":"电话只能由数字和连字符组成，且不能以连字符开头或结尾, 多个连字符不能连续。",
+			"code":"允许英文字母，数字，下划线，+，.，-，_，#，&和空格",
+			"Meter":"允许英文字母，数字，下划线，+，.，-，_，#，&和空格",
+			"Channel":"必填项。",
+			"IntegerValue":"必填项",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"该输入项只能是正数\r\n该输入项的最小值是 0.000001",
+			"Comments":"允许汉字，半角英文字母，数字，下划线和空格",
+			"FeedbackComments":"",
+		}
+	},
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+		    "AccountID":"",
+			"Password":"",
+			"RealName":"",
+			"CustomerName":"",
+			"CommonName":"chars@",
+			"Address":"",
+			"Email":"A12@sina..com",
+			"Telephone":"",
+			"code":"chars中文",
+			"Meter":"chars中文",
+			"Channel":"",
+			"IntegerValue":"",
+			"DoubleNagtiveValue":"",
+			"DoubleNonNagtiveValue":"erty@#$%中文",
+			"Comments":"chars$%^",
 			"FeedbackComments":""
 		},
 		"ExpectedData":
@@ -139,7 +180,7 @@
 			"Channel":"",
 			"IntegerValue":"",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"1.2.3",
 			"Comments":"chars$%^",
 			"FeedbackComments":""
 		},
@@ -158,9 +199,9 @@
 			"Channel":"必填项。",
 			"IntegerValue":"必填项",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"必填项",
+			"DoubleNonNagtiveValue":"该输入项只能是正数\r\n1.2.3 不是有效数值",
 			"Comments":"允许汉字，半角英文字母，数字，下划线和空格",
 			"FeedbackComments":"",
 		}
-	},
+	}
 ]

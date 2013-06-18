@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "ACostProperty", "ModifyDeleteCancel"],
+		},
+		"ExpectedData":
+		{	
+			"CostDateValue":[{"Date":"2013-04", "Value":"201304"}, {"Date":"2012-11", "Value":"201211"}],
+		}
+	}
+]

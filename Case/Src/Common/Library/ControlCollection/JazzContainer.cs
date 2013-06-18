@@ -19,6 +19,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Container WorkdayErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerWorkdayErrorTips);
         public static Container HCErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerHCErrorTips);
         public static Container DayNightErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerDayNightErrorTips);
+        
+        #endregion
+
+        #region Hierarchy Cost Property
+
+        public static Container WaterCostValueItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerWaterCostValueItems);
+
         #endregion
 
         #endregion

@@ -46,9 +46,16 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region electric cost property
-        public void ClickCostPropertyTabButton()
+        public void ClickCostPropertyTabButton_Create()
         {
             CostProperty.Click();
+            CostCreate.WaitControlDisplayed(); 
+        }
+
+        public void ClickCostPropertyTabButton_Update()
+        {
+            CostProperty.Click();
+            CostUpdate.WaitControlDisplayed();     
         }
 
         public void ClickCostCreateButton()
@@ -88,6 +95,107 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region fill in value
 
+        #region fixed electricity
+
+        /// <summary>
+        /// Input fixed electric cost value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInFixedCost(ElectricfixedCostInputData input)
+        {
+            ElectricCostEffectiveDate.SelectYearMonthItem(input.EffectiveDate);
+            ElectricPriceMode.SelectItem(input.PriceMode);
+            ElectricPrice.Append(input.Price);
+        }
+
+        public void FillInFixedCost(ElectricfixedCostInputData input, int position)
+        {
+            SelectElectricEffectiveDate(input.EffectiveDate, position);
+            SelectElectricPriceMode(input.PriceMode, position);
+            FillElectricPrice(input.Price, position);
+        }
+
+        public void SelectElectricEffectiveDate(string date)
+        {
+            ElectricCostEffectiveDate.SelectYearMonthItem(date);
+        }
+
+        public void SelectElectricEffectiveDate(string date, int position)
+        {
+            MonthPicker OneEffectiveDate = GetOneEffectiveDate(position);
+
+            OneEffectiveDate.SelectYearMonthItem(date);
+        }
+
+        public bool IsEffectiveDateInvalid(int position)
+        {
+            MonthPicker OneEffectiveDate = GetOneEffectiveDate(position);
+
+            return OneEffectiveDate.IsMonthPickerValueInvalid();
+        }
+
+        public bool IsEffectiveDateInvalidMsgCorrect(string msg, int position)
+        {
+            MonthPicker OneEffectiveDate = GetOneEffectiveDate(position);
+
+            return OneEffectiveDate.GetInvalidTips().Contains(msg);
+        }
+
+        public void SelectElectricPriceMode(string priceMode)
+        {
+            ElectricPriceMode.SelectItem(priceMode);
+        }
+
+        public void SelectElectricPriceMode(string priceMode, int postion)
+        {
+            ComboBox OnePriceMode = GetOnePriceMode(postion);
+
+            OnePriceMode.SelectItem(priceMode);
+        }
+
+        public bool IsPriceModeInvalid(int postion)
+        {
+            ComboBox OnePriceMode = GetOnePriceMode(postion);
+
+            return OnePriceMode.IsComboBoxValueInvalid();
+        }
+
+        public bool IsPriceModeInvalidMsgCorrect(string msg, int position)
+        {
+            ComboBox OnePriceMode = GetOnePriceMode(position);
+
+            return OnePriceMode.GetInvalidTips().Contains(msg);
+        }
+
+        public void FillElectricPrice(string price)
+        {
+            ElectricPrice.Fill(price);
+        }
+
+        public void FillElectricPrice(string price, int position)
+        {
+            TextField OneElectricPrice = GetOneElectricPrice(position);
+
+            OneElectricPrice.Fill(price);
+        }
+
+        public bool IsElectricPriceInvalid(int position)
+        {
+            TextField OneElectricPrice = GetOneElectricPrice(position);
+
+            return OneElectricPrice.IsTextFieldValueInvalid();
+        }
+
+        public bool IsElectricPriceInvalidMsgCorrect(string msg, int position)
+        {
+            TextField OneElectricPrice = GetOneElectricPrice(position);
+
+            return OneElectricPrice.GetInvalidTipsForNumberField().Contains(msg);
+        }
+
+        #endregion
+
         /// <summary>
         /// Input comprehensive electric cost value
         /// </summary>
@@ -117,32 +225,7 @@ namespace Mento.ScriptCommon.Library.Functions
             ElectricPaddingCost.Append(input.ElectricPaddingCost);
         }
 
-        /// <summary>
-        /// Input fixed electric cost value
-        /// </summary>
-        /// <param name="input">Test data</param>
-        /// <returns></returns>
-        public void FillInFixedCost(ElectricfixedCostInputData input)
-        {
-            ElectricCostEffectiveDate.SelectYearMonthItem(input.EffectiveDate);
-            ElectricPriceMode.SelectItem(input.PriceMode);
-            ElectricPrice.Append(input.Price);
-        }
-
-        public void SelectElectricPriceMode(string priceMode)
-        {
-            ElectricPriceMode.SelectItem(priceMode);
-        }
-
-        public void SelectElectricEffectiveDate(DateTime date)
-        {
-            ElectricCostEffectiveDate.SelectYearMonthItem(date);
-        }
-
-        public void FillElectricPrice(string price)
-        {
-            ElectricPrice.Append(price);
-        }
+        
 
         public void SelectDemandCostType(string type)
         {
@@ -197,9 +280,19 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region get controls value
+
+        #region get fixed electricity value
+
         public string GetElectricCostEffectiveDateValue()
         {
             return ElectricCostEffectiveDate.GetValue();
+        }
+
+        public string GetElectricCostEffectiveDateValue(int position)
+        {
+            MonthPicker OneEffectiveDate = GetOneEffectiveDate(position);
+
+            return OneEffectiveDate.GetValue();
         }
 
         public string GetElectricPriceValue()
@@ -207,10 +300,27 @@ namespace Mento.ScriptCommon.Library.Functions
             return ElectricPrice.GetValue();
         }
 
+        public string GetElectricPriceValue(int position)
+        {
+            TextField OneElectricPrice = GetOneElectricPrice(position);
+
+            return OneElectricPrice.GetValue();
+        }
+
         public string GetElectricPriceMode()
         {
             return ElectricPriceMode.GetValue();
         }
+
+        public string GetElectricPriceMode(int position)
+        {
+            ComboBox OnePriceMode = GetOnePriceMode(position);
+
+            return OnePriceMode.GetValue();
+        }
+
+        #endregion
+        
 
         public string GetDemandCostTypeValue()
         {
@@ -261,6 +371,25 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return ElectricHourPrice.GetValue();
         }
+        #endregion
+
+        #region private method
+
+        private MonthPicker GetOneEffectiveDate(int positionIndex)
+        {
+            return JazzMonthPicker.GetOneMonthPicker(JazzControlLocatorKey.MonthPickerElectricCostEffectiveDate, positionIndex + 1);
+        }
+
+        private ComboBox GetOnePriceMode(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxElectricPriceMode, positionIndex + 1);
+        }
+
+        private TextField GetOneElectricPrice(int positionIndex)
+        {
+            return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldElectricPrice, positionIndex + 1);
+        }
+
         #endregion
     }
 }

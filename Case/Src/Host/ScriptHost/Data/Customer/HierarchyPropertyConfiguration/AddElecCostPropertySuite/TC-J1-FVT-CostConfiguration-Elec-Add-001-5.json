@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "ABCostProperty", "AddDupFixedRevise"],
+			"EffectiveDate":"2013-03",
+			"PriceMode":"综合电价",
+		},
+		"ExpectedData":
+		{	
+			"EffectiveDate":"必填项",
+		}
+	}
+]

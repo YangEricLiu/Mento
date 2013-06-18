@@ -27,6 +27,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button WaterCostCreate = JazzButton.WaterCostCreateButton;
         private static MonthPicker WaterCostEffectiveYear = JazzMonthPicker.WaterCostEffectiveDateMonthPicker;
         private static TextField WaterCostPrice = JazzTextField.WaterPriceTextField;
+        private static Container WaterCostItems = JazzContainer.WaterCostValueItemsContainer;
         #endregion
 
         #region Gas Cost
@@ -68,6 +69,13 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickWaterCostCreateButton()
         {
             WaterCostCreate.Click();
+        }
+
+        public void ClickWaterDeleteButton(int position)
+        {
+            Button OneWaterDeleteButton = GetOneWaterDelete(position);
+
+            OneWaterDeleteButton.Click();
         }
 
         public void FillWaterCost_N(OtherCostInputData input, int position)
@@ -118,6 +126,25 @@ namespace Mento.ScriptCommon.Library.Functions
             return OneWaterPrice.GetInvalidTipsForNumberField().Contains(msg);
         }
 
+        public string GetWaterDateValue(int position)
+        {
+            MonthPicker OneWaterEffectiveYear = GetOneWaterEffectiveYear(position);
+
+            return OneWaterEffectiveYear.GetValue();
+        }
+
+        public string GetWaterCostValue(int position)
+        {
+            TextField OneWaterPrice = GetOneWaterPrice(position);
+
+            return OneWaterPrice.GetValue();
+        }
+
+        public int GetWaterCostItemsNumber()
+        {
+            return (WaterCostItems.GetElementNumber() - 1);
+        }
+
         private MonthPicker GetOneWaterEffectiveYear(int positionIndex)
         {
             return JazzMonthPicker.GetOneMonthPicker(JazzControlLocatorKey.MonthPickerWaterCostEffectiveDate, positionIndex);
@@ -126,6 +153,11 @@ namespace Mento.ScriptCommon.Library.Functions
         private TextField GetOneWaterPrice(int positionIndex)
         {
             return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldWaterPrice, positionIndex);
+        }
+
+        private Button GetOneWaterDelete(int positionIndex)
+        {
+            return JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWaterCostDelete, positionIndex);
         }
         #endregion
     }

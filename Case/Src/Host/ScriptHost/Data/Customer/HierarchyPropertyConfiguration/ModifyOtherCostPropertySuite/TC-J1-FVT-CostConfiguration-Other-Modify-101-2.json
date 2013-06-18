@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "ACostProperty", "ModifyCancelSave"],
+			"EffectiveDate":"2013-05",
+			"Price":"2.6788",
+		},
+		"ExpectedData":
+		{	
+			"EffectiveDate":"2012-06",
+			"Price":"4568.456",
+		}
+	}
+]

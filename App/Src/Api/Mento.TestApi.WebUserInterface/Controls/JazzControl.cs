@@ -104,5 +104,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return BrowserHandler.ExecuteJavaScript(script, args);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param></param>
+        public bool WaitControlDisplayed()
+        {
+            return ElementHandler.Wait(_RootLocator, WaitType.ToAppear, _ParentContainer);        
+        }
     }
 }

@@ -52,7 +52,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //Click "成本属性" tab button
-            CostSettings.ClickCostPropertyTabButton();
+            CostSettings.ClickCostPropertyTabButton_Create();
             TimeManager.MediumPause();
 
             //Click "+成本属性" button

@@ -197,6 +197,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonKeroseneCostCreate = "ButtonKeroseneCostCreate";
         public static string ButtonDieselOilCostCreate = "ButtonDieselOilCostCreate";
         public static string ButtonLowPressureSteamCostCreate = "ButtonLowPressureSteamCostCreate";
+        public static string ButtonWaterCostDelete = "ButtonWaterCostDelete";
         #endregion
 
         #region systemdimension
@@ -734,7 +735,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ContainerHCErrorTips = "ContainerHCErrorTips";
         public static string ContainerDayNightErrorTips = "ContainerDayNightErrorTips";
         #endregion
-      
+
+        #region Hierarchy Cost Property
+        public static string ContainerWaterCostValueItems = "ContainerWaterCostValueItems";
+        #endregion
+
         #endregion
 
     }

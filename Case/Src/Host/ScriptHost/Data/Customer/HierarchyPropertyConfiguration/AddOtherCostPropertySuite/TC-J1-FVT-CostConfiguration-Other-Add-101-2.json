@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "ACostProperty", "AddDupThenRevise"],
+			"EffectiveDate":"2012-12",
+			"Price":"2",
+		},
+		"ExpectedData":
+		{	
+			"EffectiveDate":"时间段冲突",
+		}
+	}
+]

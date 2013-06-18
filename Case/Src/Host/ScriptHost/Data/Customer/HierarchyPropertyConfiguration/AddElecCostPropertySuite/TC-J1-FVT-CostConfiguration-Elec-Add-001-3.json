@@ -1,0 +1,16 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoSite002", "AutoBuilding002"],
+			"EffectiveDate":"2013-06",
+			"PriceMode":"固定电价",
+		},
+		"ExpectedData":
+		{	
+			"EffectiveDate":"必填项",
+			"PriceMode":"必填项",
+			"Price":"必填项",
+		}
+	}
+]

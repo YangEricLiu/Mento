@@ -50,8 +50,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //Click "成本属性" tab button
-            CostSettings.ClickCostPropertyTabButton();
-            TimeManager.MediumPause();
+            CostSettings.ClickCostPropertyTabButton_Create();
+            TimeManager.ShortPause();
 
             //Click "+成本属性" button
             CostSettings.ClickCostCreateButton();
@@ -84,8 +84,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //Click "成本属性" tab button
-            CostSettings.ClickCostPropertyTabButton();
-            TimeManager.MediumPause();
+            CostSettings.ClickCostPropertyTabButton_Create();
+            TimeManager.ShortPause();
 
             //Click "+成本属性" button
             CostSettings.ClickCostCreateButton();
@@ -116,8 +116,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //Click "成本属性" tab button
-            CostSettings.ClickCostPropertyTabButton();
-            TimeManager.MediumPause();
+            CostSettings.ClickCostPropertyTabButton_Create();
+            TimeManager.ShortPause();
 
             //Click "+成本属性" button
             CostSettings.ClickCostCreateButton();
@@ -134,6 +134,110 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Verify "+成本属性" button displayed
             Assert.IsTrue(CostSettings.IsCostCreateButtonDisplayed());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostConfiguration-Other-Add-001-4")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(OtherCostData[]), typeof(AddOtherCostPropertySuite), "TC-J1-FVT-CostConfiguration-Other-Add-001-4")]
+        public void AddExceedDate(OtherCostData input)
+        {
+            //Select buidling node "AddPeopleProperty"
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.ShortPause();
+
+            //Click "成本属性" tab button
+            CostSettings.ClickCostPropertyTabButton_Create();
+            TimeManager.ShortPause();
+
+            //Click "+成本属性" button
+            CostSettings.ClickCostCreateButton();
+            TimeManager.ShortPause();
+
+            //Click "+" before "水"
+            OtherCostSettings.ClickWaterCostCreateButton();
+            OtherCostSettings.FillInWaterDate_N(input.InputData.EffectiveDate, 2);
+            TimeManager.ShortPause();
+
+            //Input Nothing and save
+            CostSettings.ClickCostSaveButton();
+            TimeManager.MediumPause();
+
+            //Verify the error message displayed
+            Assert.IsTrue(OtherCostSettings.IsWaterEffectiveYearInvalid_N(2));
+            Assert.IsTrue(OtherCostSettings.IsWaterEffectiveYearInvalidMsgCorrect_N(input.ExpectedData.EffectiveDate, 2));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostConfiguration-Other-Add-101-1")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(OtherCostData[]), typeof(AddOtherCostPropertySuite), "TC-J1-FVT-CostConfiguration-Other-Add-101-1")]
+        public void AddValidCost(OtherCostData input)
+        {
+            //Select buidling node "AddPeopleProperty"
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.ShortPause();
+
+            //Click "成本属性" tab button
+            CostSettings.ClickCostPropertyTabButton_Create();
+            TimeManager.ShortPause();
+
+            //Click "+成本属性" button
+            CostSettings.ClickCostCreateButton();
+            TimeManager.ShortPause();
+
+            //Click "+" before "水"
+            OtherCostSettings.ClickWaterCostCreateButton();
+            OtherCostSettings.FillWaterCost_N(input.InputData, 2);
+            TimeManager.ShortPause();
+
+            //Input Nothing and save
+            CostSettings.ClickCostSaveButton();
+            TimeManager.MediumPause();
+
+            //Verify the cost is displayed correctly
+            Assert.AreEqual(input.ExpectedData.EffectiveDate, OtherCostSettings.GetWaterDateValue(2));
+            Assert.AreEqual(input.ExpectedData.Price, OtherCostSettings.GetWaterCostValue(2));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostConfiguration-Other-Add-101-2")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(OtherCostData[]), typeof(AddOtherCostPropertySuite), "TC-J1-FVT-CostConfiguration-Other-Add-101-2")]
+        public void AddDupCostThenRevise(OtherCostData input)
+        {
+            //Select buidling node "AddPeopleProperty"
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.ShortPause();
+
+            //Click "成本属性" tab button
+            CostSettings.ClickCostPropertyTabButton_Update();
+            TimeManager.ShortPause();
+
+            //Click "+成本属性" button
+            CostSettings.ClickCostCreateButton();
+            TimeManager.ShortPause();
+
+            //Click "+" before "水", and input dup date
+            OtherCostSettings.ClickWaterCostCreateButton();
+            OtherCostSettings.FillInWaterDate_N("2012-11", 2);
+            TimeManager.ShortPause();
+
+            //Verify the error message displayed
+            Assert.IsTrue(OtherCostSettings.IsWaterEffectiveYearInvalid_N(2));
+            Assert.IsTrue(OtherCostSettings.IsWaterEffectiveYearInvalidMsgCorrect_N(input.ExpectedData.EffectiveDate, 2));
+
+            //Input valid date and value
+            OtherCostSettings.FillWaterCost_N(input.InputData, 2);
+            TimeManager.ShortPause();
+
+            //Input Nothing and save
+            CostSettings.ClickCostSaveButton();
+            TimeManager.MediumPause();
+
+            //Verify the cost is displayed correctly
+            Assert.AreEqual(input.InputData.EffectiveDate, OtherCostSettings.GetWaterDateValue(2));
+            Assert.AreEqual(input.InputData.Price, OtherCostSettings.GetWaterCostValue(2));
         }
     }
 }

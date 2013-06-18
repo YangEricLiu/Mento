@@ -274,7 +274,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.AreaDimensionTab);
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.SelectAreaDimension(input.ExpectedData.AreaNodePath));
             TimeManager.MediumPause();
-
+            /*
             //3. Cost view  area node added
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CostUsage);
             TimeManager.MediumPause();
@@ -283,7 +283,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             JazzFunction.CostPanel.SwitchTagTab(TagTabs.AreaDimensionTab);
             TimeManager.MediumPause();
             Assert.IsTrue(JazzFunction.CostPanel.SelectAreaDimension(input.ExpectedData.AreaNodePath));
-            
+            */
 
         }
 

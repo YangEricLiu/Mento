@@ -169,9 +169,17 @@
     <None Include="Data\Administration\User\SmokeTestUserProfileSuite\TC-J1-SmokeTest-035-3.json" />
     <None Include="Data\Administration\User\SmokeTestUserProfileSuite\TC-J1-SmokeTest-035-4.json" />
     <None Include="Data\CommonInputData.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AddInvalidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-AddInvalidAreaCancel.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-4.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-3.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-5.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AddValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-AddAreaCancel.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AddValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-AddValidAreaNode.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AddValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-FiveLevelsAreaNodes.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AddValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-AddLongestArea.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AddValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-OrgandSiteNodeAddArea.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AddValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-EmptyItemNotDisplay.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\AddValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-AddValidAndVerify.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-5.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-3.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddValidHierarhcyNodeSuite\TC-J1-FVT-Hierarchy-Add-101-4.json" />

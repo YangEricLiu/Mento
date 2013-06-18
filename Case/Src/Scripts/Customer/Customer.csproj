@@ -51,8 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HierarchyConfiguration\AddValidHierarhcyNodeSuite.cs" />
-    <Compile Include="HierarchyConfiguration\AddAreaCancel.cs" />
+    <Compile Include="HierarchyConfiguration\AddValidAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\AssociateSytemDimension.cs" />
+    <Compile Include="HierarchyConfiguration\AddInvalidAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\DisassociateSytemDimension.cs" />
     <Compile Include="HierarchyConfiguration\DeleteHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite.cs" />

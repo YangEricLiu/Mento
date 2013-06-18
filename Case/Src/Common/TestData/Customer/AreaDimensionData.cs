@@ -17,6 +17,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string[] AreaNodePath { get; set; }
         public string CommonName { get; set; }
         public string Comments { get; set; }
+
     }
 
     public class AreaDimensionExpectedData : VtagOuputData

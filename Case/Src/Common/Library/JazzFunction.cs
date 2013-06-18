@@ -365,6 +365,17 @@ namespace Mento.ScriptCommon.Library
             }
 
         }
-        
+
+        //  Greenie add 2013/06/18
+        private static CostPanel _CostPanel;
+        public static CostPanel CostPanel
+        {
+            get
+            {
+                if (_CostPanel == null)
+                    _CostPanel = new CostPanel();
+                return _CostPanel;
+            }
+        }
     }
 }

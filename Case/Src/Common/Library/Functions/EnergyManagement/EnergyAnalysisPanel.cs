@@ -83,11 +83,11 @@ namespace Mento.ScriptCommon.Library.Functions
             
         }
 
-        public void SelectAreaDimension(string[] areaDimensionPath)
+        public Boolean SelectAreaDimension(string[] areaDimensionPath)
         {
             SelectAreaDimensionButton.Click();
 
-            AreaDimensionTree.SelectNode(areaDimensionPath);
+            return AreaDimensionTree.SelectNode(areaDimensionPath);
         }
 
         public void CheckTags(string[] tagNames)

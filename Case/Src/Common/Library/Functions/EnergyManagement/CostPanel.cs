@@ -11,7 +11,7 @@ namespace Mento.ScriptCommon.Library.Functions
     {
         private static Grid CommodityGrid;
         private static Grid TotalCommotidyGrid;
-
+        
         protected override Chart Chart
         {
             get { return JazzChart.EnergyViewChart; }

@@ -19,23 +19,32 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// 2. click the node
         /// </summary>
         /// <param name="nodesText"></param>
-        public void SelectNode(string[] nodePath)
+        public Boolean SelectNode(string[] nodePath)
         {
+            // greenie modified
             List<string> parentNodes = nodePath.ToList();
             //parentNodes.Remove(nodePath.Last());
 
             ExpandNodePath(parentNodes.ToArray());
-            ClickNode(nodePath.Last());
+            return ClickNode(nodePath.Last());
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="nodeText"></param>
-        public void ClickNode(string nodeText)
+        public Boolean ClickNode(string nodeText)
         {
-            this.GetTreeNodeElement(nodeText).Click();
-
+            // Greenie modified
+            if (this.GetTreeNodeElement(nodeText).Enabled)
+            {
+                this.GetTreeNodeElement(nodeText).Click();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
             //TimeManager.PauseShort();
 
             GetControl<LoadingMask>().WaitLoading();

@@ -14,7 +14,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static HierarchyTree DimensionHierarchyTree = JazzTreeView.HierarchySettingsDimensionHierarchyTree;
 
         private static AreaDimensionTree AreaDimensionTree = JazzTreeView.HierarchySettingsAreaDimensionTree;
-
+        
         private static Button ShowHierarchyTreeButton = JazzButton.AreaDimensionShowHierarchyTreeButton;
         private static Button CreateAreaDimensionButton = JazzButton.AreaDimensionCreateButton;
 
@@ -45,7 +45,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean SelectHierarchyNodePath(string[] hierarchyNodePath)
         {
             // greenie modified
-            return DimensionHierarchyTree.SelectNode(hierarchyNodePath);
+            try
+            {
+                DimensionHierarchyTree.SelectNode(hierarchyNodePath);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public void ExpandAreaDimensionNodePath(string[] areaDimensionNodePath)
@@ -67,7 +75,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean SelectAreaDimensionNodePath(string[] areaDimensionNodePath)
         {
             // greenie modified
-            return AreaDimensionTree.SelectNode(areaDimensionNodePath);
+            try
+            {
+                AreaDimensionTree.SelectNode(areaDimensionNodePath);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public void ClickCreateAreaDimensionButton()
@@ -126,5 +142,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return CommentTextField.GetInvalidTips().Contains(correctMessage);
         }
+
+
     }
 }

@@ -46,7 +46,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
             string[] HierarchyNodePath = new string[] { "自动化测试", "测试楼宇园区", "楼宇配置测试" };
-            string[] AreaNodePath = new string[] { "楼宇配置测试" };
+            string[] AreaNodePath = new string[] { "楼宇配置测试"};
             //Select a Building node.	
             //The Area dimension is light and enable to select.
             TimeManager.ShortPause();
@@ -69,8 +69,25 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             AreaSettings.ClickCancelButton();
 
 
-            // Verify the Area Node is not added
-            Assert.AreEqual(AreaSettings.GetAreaDimensionName(), "楼宇配置测试");
+            // Verify the Area Node is not added 
+            TimeManager.MediumPause();
+
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
+            TimeManager.MediumPause();
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
+            TimeManager.LongPause();
+            AreaSettings.ShowHierarchyTree();
+            TimeManager.MediumPause();
+            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
+            string[] AreaNodePathNew = new string[2] ;
+            AreaNodePathNew[0] = "楼宇配置测试";
+            AreaNodePathNew[1] = input.InputData.CommonName;
+            Assert.AreEqual(AreaNodePathNew[1], input.InputData.CommonName);
+            Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(AreaNodePathNew));
+
+            //Assert.AreEqual(AreaSettings.GetAreaDimensionName(), "楼宇配置测试");
+
         }
 
         [Test]
@@ -103,11 +120,14 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             AreaSettings.FillAreaDimensionData(input.InputData.CommonName, input.InputData.Comments);
             // @@@@@@@@@@@@@@@@@@
             AreaSettings.ClickSaveButton();
+            
             //Assert.IsFalse(AreaSettings.IsSaveButtonEnabled());
 
             //Verify 
             Assert.IsTrue(AreaSettings.IsNameInvalidMsgCorrect(input.ExpectedData.CommonName));
             Assert.IsTrue(AreaSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData.Comments));
+
+            TimeManager.LongPause();
         }
 
         [Test]
@@ -142,7 +162,16 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             TimeManager.MediumPause();
 
-            //AreaSettings.SelectAreaDimensionNode(input.InputData.AreaNodePath);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
+            TimeManager.MediumPause();
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
+            TimeManager.LongPause();
+            AreaSettings.ShowHierarchyTree();
+            TimeManager.MediumPause();
+            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
+            AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
+
             AreaSettings.ClickCreateAreaDimensionButton();
             //"Input  area name: "AreaNode1", comment ,Click ""save"" button"	
             AreaSettings.FillAreaDimensionData(input.InputData.CommonName, input.InputData.Comments);

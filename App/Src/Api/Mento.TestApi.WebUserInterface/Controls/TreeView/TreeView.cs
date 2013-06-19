@@ -19,14 +19,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// 2. click the node
         /// </summary>
         /// <param name="nodesText"></param>
-        public Boolean SelectNode(string[] nodePath)
+        public void SelectNode(string[] nodePath)
         {
-            // greenie modified
+
             List<string> parentNodes = nodePath.ToList();
             //parentNodes.Remove(nodePath.Last());
 
             ExpandNodePath(parentNodes.ToArray());
-            return ClickNode(nodePath.Last());
+            ClickNode(nodePath.Last());
         }
 
         /// <summary>

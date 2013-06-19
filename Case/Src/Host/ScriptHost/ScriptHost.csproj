@@ -201,7 +201,12 @@
     <Content Include="Data\Customer\HierarchyConfiguration\DisassociateSytemDimension\TC-J1-FVT-SystemDimensionConfiguration-Disassociate-001-2.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\DisassociateSytemDimension\TC-J1-FVT-SystemDimensionConfiguration-Disassociate-101-1.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\DisassociateSytemDimension\TC-J1-FVT-SystemDimensionConfiguration-Disassociate-101-2.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\ModifyInvalidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-ModifyToSameAreaNodes.json" />
     <None Include="Data\Customer\HierarchyConfiguration\ModifyInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-001-3.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\ModifyValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-ModifyAreaCancel.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\ModifyValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-ModifyValidAreaNode.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\ModifyValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-ModifyThenBack.json" />
+    <Content Include="Data\Customer\HierarchyConfiguration\ModifyValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-ModifyValidAndVerify.json" />
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-5.json" />
     <None Include="Data\Customer\HierarchyConfiguration\SmokeTestHierarchySuite\TA-Hierarchy-002.json" />
     <None Include="Data\Customer\HierarchyConfiguration\SmokeTestHierarchySuite\TA-Hierarchy-003.json" />

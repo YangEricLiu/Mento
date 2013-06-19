@@ -54,6 +54,7 @@
     <Compile Include="HierarchyConfiguration\AddValidAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\AssociateSytemDimension.cs" />
     <Compile Include="HierarchyConfiguration\AddInvalidAreaDimension.cs" />
+    <Compile Include="HierarchyConfiguration\ModifyInvalidAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\ModifyValidAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\DisassociateSytemDimension.cs" />
     <Compile Include="HierarchyConfiguration\DeleteHierarchyNodeSuite.cs" />

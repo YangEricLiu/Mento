@@ -36,9 +36,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         /// <summary>
-        /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试", "测试楼宇园区", "楼宇配置测试"
-        /// Prepare Data: 1. add area dimension "FirstFloor" for associate tag
-        /// </summary> 
+        /// Precondition: make sure the hiearchy node has been added  "自动化测试", "测试楼宇园区", "楼宇配置测试"
+        /// Prepare Data:  make sure the areaDimensionNode has been added "AreaNodeEmpty",
+        /// </summary>  
         [Test]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-AddAreaCancel")]
         [Type("BFT")]
@@ -46,9 +46,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         public void AddAreaCancel(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
-
-            //Select a Building node.	
-            //The Area dimension is light and enable to select.
             TimeManager.ShortPause();
 
             //Select a Building node.	
@@ -57,18 +54,26 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
 
-            
-
             //Click "子区域" button to add Area node.	
             //The Area property display and enable to input.
             AreaSettings.ClickCreateAreaDimensionButton();
 
-            //"Input  area name: "area1", comment ,Click ""cancel"" button"	
+            //"Input  area name,comment ,Click ""cancel"" button"	
             AreaSettings.FillAreaDimensionData(input.InputData.CommonName, input.InputData.Comments);
             AreaSettings.ClickCancelButton();
             
             //Verify 
-            Assert.AreEqual(input.ExpectedData.Message,AreaSettings.GetAreaDimensionName());
+            // Verify the Area Node is not added 
+            TimeManager.MediumPause();
+
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
+            TimeManager.MediumPause();
+            AreaSettings.ShowHierarchyTree();
+            TimeManager.MediumPause();
+            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
+            Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath));
         }
 
         [Test]
@@ -78,9 +83,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         public void AddValidAreaNode(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
-
-            //Select a Building node.	
-            //The Area dimension is light and enable to select.
             TimeManager.ShortPause();
 
             //Select a Building node.	
@@ -95,8 +97,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //The Area property display and enable to input.
             AreaSettings.ClickCreateAreaDimensionButton();
 
-            //"Input  area name: "area1", comment ,Click ""Save"" button"	
+            //"Input  area name, comment ,Click ""Save"" button"	
             AreaSettings.FillAreaDimensionData(input.InputData.CommonName, input.InputData.Comments);
+            TimeManager.ShortPause();
             AreaSettings.ClickSaveButton();
             TimeManager.MediumPause();
             AreaSettings.ShowHierarchyTree();
@@ -105,9 +108,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Verify the area node has been created under the correct hierarchy path
             
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
-            TimeManager.MediumPause();
+
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
-            TimeManager.MediumPause();
+
             AreaSettings.ShowHierarchyTree();
             TimeManager.MediumPause();
             AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -127,8 +130,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
 
-            //Select a Building node.	
-            //The Area dimension is light and enable to select.
             TimeManager.ShortPause();
 
             //Select a Building node.	
@@ -171,9 +172,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         public void AddLongestArea(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
-
-            //Select a Building node.	
-            //The Area dimension is light and enable to select.
             TimeManager.ShortPause();
 
             //Select a Building node.	
@@ -187,7 +185,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //The Area property display and enable to input.
             AreaSettings.ClickCreateAreaDimensionButton();
 
-            //"Input  area name: "area1", comment ,Click ""Save"" button"	
+            //"Input  area name, comment ,Click ""Save"" button"	
             AreaSettings.FillAreaDimensionData(input.InputData.CommonName, input.InputData.Comments);
             AreaSettings.ClickSaveButton();
 
@@ -204,8 +202,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
 
-            //Select a Building node.	
-            //The Area dimension is light and enable to select.
             TimeManager.ShortPause();
 
             //Select a Building node.	
@@ -214,10 +210,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.MediumPause();
             AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
-            //Click "子区域" button to add Area node.	
-            //The Area property display and enable to input.
             Assert.IsFalse(AreaSettings.IsCreateAreaDimensionButtonEnabled());
-            //"Input  area name: "area1", comment ,Click ""Save"" button"	
         }
 
 
@@ -247,7 +240,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //The Area property display and enable to input.
             AreaSettings.ClickCreateAreaDimensionButton();
 
-            //"Input  area name: "area1", comment ,Click ""Save"" button"	
+            //"Input  area name, comment ,Click ""Save"" button"	
             AreaSettings.FillAreaDimensionData(input.InputData.CommonName, input.InputData.Comments);
             AreaSettings.ClickSaveButton();
             
@@ -314,7 +307,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //The Area property display and enable to input.
             AreaSettings.ClickCreateAreaDimensionButton();
 
-            //"Input  area name: "area1", comment ,Click ""Save"" button"	
+            //"Input  area name, comment ,Click ""Save"" button"	
             AreaSettings.FillAreaDimensionData(input.InputData.CommonName, input.InputData.Comments);
             AreaSettings.ClickSaveButton();
 

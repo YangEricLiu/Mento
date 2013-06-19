@@ -3,15 +3,13 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","测试楼宇园区","楼宇配置测试"],
-			"AreaNodePath":["楼宇配置测试"],
-			"CommonName":"area1",
+			"AreaNodePath":["楼宇配置测试","ModifyAreaNodeForCheckSame1"],
+			"CommonName":"ModifyAreaNodeForCheckSame",
 			"Comments":"test",
-			
 		},
 		"ExpectedData":
 		{
-			"AreaNodePath":["楼宇配置测试","area1"],
-			"Message":"楼宇配置测试",
+			"Message":"名称重复",
 		}
 	}
 ]

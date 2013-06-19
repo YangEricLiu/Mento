@@ -1,0 +1,47 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","测试楼宇园区","楼宇配置测试"],
+			"AreaNodePath":["楼宇配置测试","ModifyArea1"],
+			"CommonName":"AreaNode_1",
+			"Comments":"test",
+			
+		},
+		"ExpectedData":
+		{
+			"AreaNodePath":["楼宇配置测试","AreaNode_1"],
+			"Comments":"test",
+		}
+	},
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","测试楼宇园区","楼宇配置测试"],
+			"AreaNodePath":["楼宇配置测试","ModifyArea2"],
+			"CommonName":"区域2",
+			"Comments":"test",
+			
+		},
+		"ExpectedData":
+		{
+			"AreaNodePath":["楼宇配置测试","区域2"],
+			"Comments":"test",
+		}
+	},
+{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","测试楼宇园区","楼宇配置测试"],
+			"AreaNodePath":["楼宇配置测试","ModifyArea3"],
+			"CommonName":"Add区域3",
+			"Comments":"test",
+			
+		},
+		"ExpectedData":
+		{
+			"AreaNodePath":["楼宇配置测试","Add区域3"],
+			"Comments":"test",
+		}
+	}
+]

@@ -24,14 +24,14 @@
 			"Commodity":"Water",
 			"Uom":"Ton",
 			"CalculationType":"Avg",
-			"Step":"Hourly",
+			"Step":"Daily",
 		},
 		"ExpectedData":
 		{
 			"Commodity":"Water",
 			"Uom":"Ton",
 			"CalculationType":"Avg",
-			"Step":"Hourly",
+			"Step":"Daily",
 		}
 	},
 	{
@@ -40,14 +40,14 @@
 			"Commodity":"LowPressureSteam",
 			"Uom":"Ton",
 			"CalculationType":"Max",
-			"Step":"Hourly",
+			"Step":"Monthly",
 		},
 		"ExpectedData":
 		{
 			"Commodity":"LowPressureSteam",
 			"Uom":"Ton",
 			"CalculationType":"Max",
-			"Step":"Hourly",
+			"Step":"Monthly",
 		}
 	},
 	{
@@ -73,38 +73,6 @@
 			"Commodity":"Water",
 			"Uom":"Ton",
 			"CalculationType":"Avg",
-			"Step":"Hourly",
-		},
-		"ExpectedData":
-		{
-			"Commodity":"Water",
-			"Uom":"Ton",
-			"CalculationType":"Avg",
-			"Step":"Hourly",
-		}
-	},
-		{
-		"InputData":
-		{	
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"CalculationType":"Sum",
-			"Step":"Daily",
-		},
-		"ExpectedData":
-		{
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"CalculationType":"Sum",
-			"Step":"Daily",
-		}
-	},
-	{
-		"InputData":
-		{
-			"Commodity":"Water",
-			"Uom":"Ton",
-			"CalculationType":"Avg",
 			"Step":"Daily",
 		},
 		"ExpectedData":
@@ -113,134 +81,6 @@
 			"Uom":"Ton",
 			"CalculationType":"Avg",
 			"Step":"Daily",
-		}
-	},
-	{
-		"InputData":
-		{
-			"Commodity":"LowPressureSteam",
-			"Uom":"Ton",
-			"CalculationType":"Max",
-			"Step":"Daily",
-		},
-		"ExpectedData":
-		{
-			"Commodity":"LowPressureSteam",
-			"Uom":"Ton",
-			"CalculationType":"Max",
-			"Step":"Daily",
-		}
-	},
-	{
-		"InputData":
-		{
-			"Commodity":"HeatQ",
-			"Uom":"KWH",
-			"CalculationType":"Min",
-			"Step":"Daily",
-		},
-		"ExpectedData":
-		{
-			"Commodity":"HeatQ",
-			"Uom":"KWH",
-			"CalculationType":"Min",
-			"Step":"Daily",
-		}
-	},
-	{
-		"InputData":
-		{
-			"Commodity":"Water",
-			"Uom":"Ton",
-			"CalculationType":"Avg",
-			"Step":"Daily",
-		},
-		"ExpectedData":
-		{
-			"Commodity":"Water",
-			"Uom":"Ton",
-			"CalculationType":"Avg",
-			"Step":"Daily",
-		}
-	},
-	{
-		"InputData":
-		{	
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"CalculationType":"Sum",
-			"Step":"Monthly",
-		},
-		"ExpectedData":
-		{
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"CalculationType":"Sum",
-			"Step":"Monthly",
-		}
-	},
-	{
-		"InputData":
-		{
-			"Commodity":"Water",
-			"Uom":"Ton",
-			"CalculationType":"Avg",
-			"Step":"Monthly",
-		},
-		"ExpectedData":
-		{
-			"Commodity":"Water",
-			"Uom":"Ton",
-			"CalculationType":"Avg",
-			"Step":"Monthly",
-		}
-	},
-	{
-		"InputData":
-		{
-			"Commodity":"LowPressureSteam",
-			"Uom":"Ton",
-			"CalculationType":"Max",
-			"Step":"Monthly",
-		},
-		"ExpectedData":
-		{
-			"Commodity":"LowPressureSteam",
-			"Uom":"Ton",
-			"CalculationType":"Max",
-			"Step":"Monthly",
-		}
-	},
-	{
-		"InputData":
-		{
-			"Commodity":"HeatQ",
-			"Uom":"KWH",
-			"CalculationType":"Min",
-			"Step":"Monthly",
-		},
-		"ExpectedData":
-		{
-			"Commodity":"HeatQ",
-			"Uom":"KWH",
-			"CalculationType":"Min",
-			"Step":"Monthly",
-		}
-	},
-	{
-		"InputData":
-		{
-			"Commodity":"Water",
-			"Uom":"Ton",
-			"CalculationType":"Avg",
-			"Step":"Monthly",
-		},
-		"ExpectedData":
-		{
-			"Commodity":"Water",
-			"Uom":"Ton",
-			"CalculationType":"Avg",
-			"Step":"Monthly",
 		}
 	},
 	{

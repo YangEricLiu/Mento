@@ -90,7 +90,10 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             CreateAreaDimensionButton.Click();
         }
-
+        public void ClickModifyAreaDimensionButton()
+        {
+            ModifyButton.Click();
+        }
         
         public Boolean IsCreateAreaDimensionButtonEnabled()
         {

@@ -8,7 +8,7 @@
 		},
 		"ExpectedData":
 		{	
-			"EffectiveDate":"必填项",
+			"DemandCostType":"必填项",
 		}
 	}
 ]

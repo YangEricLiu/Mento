@@ -224,12 +224,14 @@
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Add-001-3.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Add-001-2.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Add-001-1.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPropertySuite\TC-J1-FVT-CostConfiguration-Elec-Add-001-6.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPropertySuite\TC-J1-FVT-CostConfiguration-Elec-Add-001-5.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPropertySuite\TC-J1-FVT-CostConfiguration-Elec-Add-101-2.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPropertySuite\TC-J1-FVT-CostConfiguration-Elec-Add-101-1.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPropertySuite\TC-J1-FVT-CostConfiguration-Elec-Add-001-3.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPropertySuite\TC-J1-FVT-CostConfiguration-Elec-Add-001-1.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPropertySuite\TC-J1-FVT-CostConfiguration-Elec-Add-001-2.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPropertySuite\TC-J1-FVT-CostConfiguration-Elec-Add-101-3.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddInvalidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-001-4.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddInvalidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-001-3.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddInvalidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-001-2.json" />

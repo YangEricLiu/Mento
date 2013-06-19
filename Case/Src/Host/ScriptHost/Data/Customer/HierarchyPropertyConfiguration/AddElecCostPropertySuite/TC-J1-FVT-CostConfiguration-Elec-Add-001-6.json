@@ -1,0 +1,32 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+		},
+		"ExpectedData":
+		{	
+			
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoOrg001"],
+		},
+		"ExpectedData":
+		{	
+			
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoOrg001", "AutoSite001"],
+		},
+		"ExpectedData":
+		{	
+			
+		}
+	}
+]

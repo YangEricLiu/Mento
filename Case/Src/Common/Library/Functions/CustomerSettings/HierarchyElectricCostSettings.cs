@@ -58,6 +58,11 @@ namespace Mento.ScriptCommon.Library.Functions
             CostUpdate.WaitControlDisplayed();     
         }
 
+        public bool IsCostPropertyTabButtonEnabled()
+        {
+            return CostProperty.IsEnabled();
+        }
+
         public void ClickCostCreateButton()
         {
             if (CostCreate.IsDisplayed())
@@ -196,6 +201,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #endregion
 
+        #region comprehensive electricity
+
         /// <summary>
         /// Input comprehensive electric cost value
         /// </summary>
@@ -217,7 +224,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 HourTagId.SelectItem(input.HourTagId);
                 ElectricHourPrice.Append(input.ElectricHourPrice);
             }
-            
+
             TouTariffId.SelectItem(input.TouTariffId);
             FactorType.SelectItem(input.FactorType);
             RealTagId.SelectItem(input.RealTagId);
@@ -225,11 +232,30 @@ namespace Mento.ScriptCommon.Library.Functions
             ElectricPaddingCost.Append(input.ElectricPaddingCost);
         }
 
-        
-
         public void SelectDemandCostType(string type)
         {
             DemandCostType.SelectItem(type);
+        }
+
+        public void SelectDemandCostType(string type, int position)
+        {
+            ComboBox OneDemandCostType = GetOneDemandCostType(position);
+
+            OneDemandCostType.SelectItem(type);
+        }
+
+        public bool IsDemandCostTypeInvalid(int position)
+        {
+            ComboBox OneDemandCostType = GetOneDemandCostType(position);
+
+            return OneDemandCostType.IsComboBoxValueInvalid();
+        }
+
+        public bool IsDemandCostTypeInvalidMsgCorrect(string msg, int position)
+        {
+            ComboBox OneDemandCostType = GetOneDemandCostType(position);
+
+            return OneDemandCostType.GetInvalidTips().Contains(msg);
         }
 
         public void SelectTouTariffId(string tariffId)
@@ -237,9 +263,23 @@ namespace Mento.ScriptCommon.Library.Functions
             TouTariffId.SelectItem(tariffId);
         }
 
+        public void SelectTouTariffId(string tariffId, int position)
+        {
+            ComboBox OneTouTariffId = GetOneTouTariffId(position);
+
+            OneTouTariffId.SelectItem(tariffId);
+        }
+
         public void SelectFactorType(string factorType)
         {
             FactorType.SelectItem(factorType);
+        }
+
+        public void SelectFactorType(string factorType, int position)
+        {
+            ComboBox OneFactorType = GetOneFactorType(position);
+
+            OneFactorType.SelectItem(factorType);
         }
 
         public void SelectRealTagId(string realTagId)
@@ -247,9 +287,23 @@ namespace Mento.ScriptCommon.Library.Functions
             RealTagId.SelectItem(realTagId);
         }
 
+        public void SelectRealTagId(string realTagId, int position)
+        {
+            ComboBox OneRealTagId = GetOneRealTagId(position);
+
+            OneRealTagId.SelectItem(realTagId);
+        }
+
         public void SelectReactiveTagId(string reactiveTagId)
         {
             ReactiveTagId.SelectItem(reactiveTagId);
+        }
+
+        public void SelectReactiveTagId(string reactiveTagId, int position)
+        {
+            ComboBox OneReactiveTagId = GetOneReactiveTagId(position);
+
+            OneReactiveTagId.SelectItem(reactiveTagId);
         }
 
         public void SelectHourTagId(string hourTagId)
@@ -257,25 +311,132 @@ namespace Mento.ScriptCommon.Library.Functions
             HourTagId.SelectItem(hourTagId);
         }
 
+        public void SelectHourTagId(string hourTagId, int position)
+        {
+            ComboBox OneHourTagId = GetOneHourTagId(position);
+
+            OneHourTagId.SelectItem(hourTagId);
+        }
+
         public void FillElectricPaddingCost(string cost)
         {
-            ElectricPaddingCost.Append(cost);
+            ElectricPaddingCost.Fill(cost);
+        }
+
+        public void FillElectricPaddingCost(string cost, int position)
+        {
+            TextField OneElectricPaddingCost = GetOneElectricPaddingCost(position);
+
+            OneElectricPaddingCost.Fill(cost);
+        }
+
+        public bool IsElectricPaddingCostInvalid(int position)
+        {
+            TextField OneElectricPaddingCost = GetOneElectricPaddingCost(position);
+
+            return OneElectricPaddingCost.IsTextFieldValueInvalid();
+        }
+
+        public bool IsElectricPaddingCostInvalidMsgCorrect(string msg, int position)
+        {
+            TextField OneElectricPaddingCost = GetOneElectricPaddingCost(position);
+
+            return OneElectricPaddingCost.GetInvalidTipsForNumberField().Contains(msg);
         }
 
         public void FillElectricTransformerCapacity(string capacity)
         {
-            ElectricTransformerCapacity.Append(capacity);
+            ElectricTransformerCapacity.Fill(capacity);
+        }
+
+        public void FillElectricTransformerCapacity(string capacity, int position)
+        {
+            TextField OneElectricTransformerCapacity = GetOneElectricTransformerCapacity(position);
+
+            OneElectricTransformerCapacity.Fill(capacity);
+        }
+
+        public bool IsElectricTransformerCapacityInvalid(int position)
+        {
+            TextField OneElectricTransformerCapacity = GetOneElectricTransformerCapacity(position);
+
+            return OneElectricTransformerCapacity.IsTextFieldValueInvalid();
+        }
+
+        public bool IsElectricTransformerCapacityInvalidMsgCorrect(string msg, int position)
+        {
+            TextField OneElectricTransformerCapacity = GetOneElectricTransformerCapacity(position);
+
+            return OneElectricTransformerCapacity.GetInvalidTipsForNumberField().Contains(msg);
         }
 
         public void FillElectricTransformerPrice(string price)
         {
-            ElectricTransformerPrice.Append(price);
+            ElectricTransformerPrice.Fill(price);
+        }
+
+        public void FillElectricTransformerPrice(string price, int position)
+        {
+            TextField OneElectricTransformerPrice = GetOneElectricTransformerPrice(position);
+            
+            ElectricTransformerPrice.Fill(price);
+        }
+
+        public bool IsElectricTransformerPriceInvalid(int position)
+        {
+            TextField OneElectricTransformerPrice = GetOneElectricTransformerPrice(position);
+
+            return ElectricTransformerPrice.IsTextFieldValueInvalid();
+        }
+
+        public bool IsElectricTransformerPriceInvalidMsgCorrect(string msg, int position)
+        {
+            TextField OneElectricTransformerPrice = GetOneElectricTransformerPrice(position);
+
+            return ElectricTransformerPrice.GetInvalidTipsForNumberField().Contains(msg);
         }
 
         public void FillElectricHourPrice(string price)
         {
-            ElectricHourPrice.Append(price);
+            ElectricHourPrice.Fill(price);
         }
+
+        public void FillElectricHourPrice(string price, int position)
+        {
+            TextField OneElectricHourPrice = GetOneElectricHourPrice(position);
+
+            OneElectricHourPrice.Fill(price);
+        }
+
+        public bool IsElectricHourPriceInvalid(int position)
+        {
+            TextField OneElectricHourPrice = GetOneElectricHourPrice(position);
+
+            return OneElectricHourPrice.IsTextFieldValueInvalid();
+        }
+
+        public bool IsElectricHourPriceInvalidMsgCorrect(string msg, int position)
+        {
+            TextField OneElectricHourPrice = GetOneElectricHourPrice(position);
+
+            return OneElectricHourPrice.GetInvalidTipsForNumberField().Contains(msg);
+        }
+
+        public bool IsFactorEnable(int position)
+        {
+            LinkButton OneFactor = GetOneFactor(position);
+
+            return OneFactor.IsEnabled();
+        }
+
+        public void ClickFactorLinkButton(int position)
+        {
+            LinkButton OneFactor = GetOneFactor(position);
+
+            OneFactor.ClickLink();
+        }
+
+        #endregion
 
         #endregion
 
@@ -390,6 +551,60 @@ namespace Mento.ScriptCommon.Library.Functions
             return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldElectricPrice, positionIndex + 1);
         }
 
+        private ComboBox GetOneDemandCostType(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxDemandCostType, positionIndex + 1);
+        }
+
+        private TextField GetOneElectricPaddingCost(int positionIndex)
+        {
+            return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldElectricPaddingCost, positionIndex + 1);
+        }
+
+        private TextField GetOneElectricTransformerCapacity(int positionIndex)
+        {
+            return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldElectricTransformerCapacity, positionIndex + 1);
+        }
+
+        private TextField GetOneElectricTransformerPrice(int positionIndex)
+        {
+            return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldElectricTransformerPrice, positionIndex + 1);
+        }
+
+        private TextField GetOneElectricHourPrice(int positionIndex)
+        {
+            return JazzTextField.GetOneTextField(JazzControlLocatorKey.TextFieldElectricHourPrice, positionIndex + 1);
+        }
+
+        private ComboBox GetOneTouTariffId(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxTouTariffId, positionIndex + 1);
+        }
+
+        private ComboBox GetOneFactorType(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxFactorType, positionIndex + 1);
+        }
+
+        private ComboBox GetOneRealTagId(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxRealTagId, positionIndex + 1);
+        }
+
+        private ComboBox GetOneReactiveTagId(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxReactiveTagId, positionIndex + 1);
+        }
+
+        private ComboBox GetOneHourTagId(int positionIndex)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxHourTagId, positionIndex + 1);
+        }
+
+        private LinkButton GetOneFactor(int positionIndex)
+        {
+            return JazzButton.GetOneLinkButton(JazzControlLocatorKey.LinkButtonFactor, positionIndex + 1);
+        }
         #endregion
     }
 }

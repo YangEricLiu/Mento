@@ -287,7 +287,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //Click "成本属性" tab button
-            CostSettings.ClickCostPropertyTabButton_Create();
+            CostSettings.ClickCostPropertyTabButton_Update();
             TimeManager.MediumPause();
 
             //Click "+成本属性" button
@@ -298,10 +298,111 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CostSettings.ClickElectricCostCreateButton();
             TimeManager.ShortPause();
             CostSettings.SelectElectricEffectiveDate(input.InputData.EffectiveDate, 1);
+            CostSettings.SelectElectricPriceMode(input.InputData.PriceMode, 1);
+
+            //Click "Save" button
+            CostSettings.ClickCostSaveButton();
+            TimeManager.ShortPause();
 
             //verify that invalid check triggered
-            Assert.IsTrue(CostSettings.IsEffectiveDateInvalid(1));
-            Assert.IsTrue(CostSettings.IsEffectiveDateInvalidMsgCorrect(input.ExpectedData.EffectiveDate, 1));
+            Assert.IsTrue(CostSettings.IsDemandCostTypeInvalid(1));
+            Assert.IsTrue(CostSettings.IsDemandCostTypeInvalidMsgCorrect(input.ExpectedData.DemandCostType, 1));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-6")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-6")]
+        public void HierarchySupportCost(ElectricityComprehensiveCostData input)
+        {
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.ShortPause();
+
+            //Click "成本属性" tab button
+            Assert.IsFalse(CostSettings.IsCostPropertyTabButtonEnabled());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-7")]
+        [Type("BFT")]
+        [IllegalInputValidation(typeof(ElectricityComprehensiveCostData[]))]
+        public void AddInvalidPriceComp(ElectricityComprehensiveCostData input)
+        {
+            string[] hierarchyNodePath = { "自动化测试", "AutoSite002", "AutoBuilding002" };
+            HierarchySetting.SelectHierarchyNodePath(hierarchyNodePath);
+            TimeManager.ShortPause();
+
+            //Click "成本属性" tab button
+            CostSettings.ClickCostPropertyTabButton_Create();
+            TimeManager.MediumPause();
+
+            //Click "+成本属性" button
+            CostSettings.ClickCostCreateButton();
+            TimeManager.ShortPause();
+
+            //Click "+" before "电力" and select "综合电价", then select "变压器容量模式"
+            CostSettings.ClickElectricCostCreateButton();
+            TimeManager.ShortPause();
+            CostSettings.SelectElectricEffectiveDate("2012-09", 1);
+            CostSettings.SelectElectricPriceMode("综合电价", 1);
+            TimeManager.MediumPause();
+            CostSettings.SelectDemandCostType("变压器容量模式", 1);
+
+            //Input invalid value to 3 textfields
+            CostSettings.FillElectricTransformerCapacity(input.InputData.DoubleNonNagtiveValue, 1);
+            TimeManager.ShortPause();
+            CostSettings.FillElectricTransformerPrice(input.InputData.DoubleNonNagtiveValue, 1);
+            TimeManager.ShortPause();
+            CostSettings.FillElectricPaddingCost(input.InputData.DoubleNonNagtiveValue, 1);
+            TimeManager.ShortPause();
+
+            //Click "Save" button
+            CostSettings.ClickCostSaveButton();
+            TimeManager.ShortPause();
+
+            //verify it's invalid
+            Assert.IsTrue(CostSettings.IsElectricTransformerCapacityInvalid(1));
+            Assert.IsTrue(CostSettings.IsElectricTransformerCapacityInvalidMsgCorrect(input.ExpectedData.DoubleNonNagtiveValue, 1));
+            Assert.IsTrue(CostSettings.IsElectricTransformerPriceInvalid(1));
+            Assert.IsTrue(CostSettings.IsElectricTransformerPriceInvalidMsgCorrect(input.ExpectedData.DoubleNonNagtiveValue, 1));
+            if (!(input.InputData.DoubleNonNagtiveValue.Contains("erty@#$%中文")))
+            {
+                Assert.IsTrue(CostSettings.IsElectricPaddingCostInvalid(1));
+                Assert.IsTrue(CostSettings.IsElectricPaddingCostInvalidMsgCorrect(input.ExpectedData.DoubleNonNagtiveValue, 1));
+            }
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-101-3")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-3")]
+        public void AddValidCompMode1(ElectricityComprehensiveCostData input)
+        {
+            HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.ShortPause();
+
+            //Click "成本属性" tab button
+            CostSettings.ClickCostPropertyTabButton_Create();
+            TimeManager.MediumPause();
+
+            //Click "+成本属性" button
+            CostSettings.ClickCostCreateButton();
+            TimeManager.ShortPause();
+
+            //Click "+" before "电力" and select "综合电价"
+            CostSettings.ClickElectricCostCreateButton();
+            TimeManager.ShortPause();
+
+            //Fill in valid value
+            CostSettings.SelectElectricEffectiveDate(input.InputData.EffectiveDate, 1);
+            CostSettings.SelectElectricPriceMode(input.InputData.PriceMode, 1);
+            CostSettings.SelectDemandCostType(input.InputData.DemandCostType, 1);
+            CostSettings.FillElectricTransformerCapacity(input.InputData.TransformerCapacity, 1);
+            CostSettings.FillElectricTransformerPrice(input.InputData.TransformerPrice, 1);
+            CostSettings.SelectTouTariffId(input.InputData.TouTariffId, 1);
+
+            Assert.IsFalse(CostSettings.IsFactorEnable(1)); 
+  
         }
     }
 }

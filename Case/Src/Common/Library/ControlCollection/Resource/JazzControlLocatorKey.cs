@@ -198,6 +198,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonDieselOilCostCreate = "ButtonDieselOilCostCreate";
         public static string ButtonLowPressureSteamCostCreate = "ButtonLowPressureSteamCostCreate";
         public static string ButtonWaterCostDelete = "ButtonWaterCostDelete";
+        public static string LinkButtonFactor = "LinkButtonFactor";
         #endregion
 
         #region systemdimension

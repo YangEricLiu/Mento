@@ -14,6 +14,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             return GetControl<Button>(key, positionIndex);
         }
+
+        public static LinkButton GetOneLinkButton(string key, int positionIndex)
+        {
+            return GetControl<LinkButton>(key, positionIndex);
+        }
         #endregion
 
         #region Login buttons

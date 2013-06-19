@@ -26,6 +26,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string RealTagId { get; set; }
         public string ReactiveTagId { get; set; }
         public string ElectricPaddingCost { get; set; }
+        public string DoubleNonNagtiveValue { get; set; }
     }
 
     public class ElectricComprehensiveCostExpectedData : VtagOuputData
@@ -45,5 +46,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string ElectricPaddingCost { get; set; }
         public string Message { get; set; }
         public string ErrorMessage { get; set; }
+        public string DoubleNonNagtiveValue { get; set; }
     }
 }

@@ -229,7 +229,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             
             var AreaSettings = JazzFunction.AreaDimensionSettings;
-/*
+
             //Select a Building node.	
             //The Area dimension is light and enable to select.
             TimeManager.ShortPause();
@@ -264,15 +264,17 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.MediumPause();
             
 
-            */
             
             //2. Energy Analysis area node added
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
             TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.AreaDimensionTab);
-            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.SelectAreaDimension(input.ExpectedData.AreaNodePath));
+            TimeManager.LongPause();
+
+            JazzFunction.EnergyAnalysisPanel.SelectAreaDimension(input.ExpectedData.AreaNodePath);
+            //Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.SelectAreaDimension(input.ExpectedData.AreaNodePath));
             TimeManager.MediumPause();
             /*
             //3. Cost view  area node added

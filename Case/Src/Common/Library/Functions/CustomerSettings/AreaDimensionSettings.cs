@@ -92,7 +92,10 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             SaveButton.Click();
         }
-
+        public bool IsSaveButtonEnabled()
+        {
+            return SaveButton.IsEnabled();
+        }
         public bool IsShownSuccessMessage()
         {
             return JazzMessageBox.MessageBox.Exists();
@@ -111,6 +114,17 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetAreaDimensionComment()
         {
             return CommentTextField.GetValue();
+        }
+
+        public Boolean IsNameInvalidMsgCorrect(string correctMessage)
+        {
+            return NameTextField.GetInvalidTips().Contains(correctMessage);
+        }
+
+
+        public Boolean IsCommentsInvalidMsgCorrect(string correctMessage)
+        {
+            return CommentTextField.GetInvalidTips().Contains(correctMessage);
         }
     }
 }

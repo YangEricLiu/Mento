@@ -47,7 +47,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
             //TimeManager.PauseShort();
 
-            GetControl<LoadingMask>().WaitLoading();
+            //GetControl<LoadingMask>().WaitLoading();
         }
 
         /// <summary>

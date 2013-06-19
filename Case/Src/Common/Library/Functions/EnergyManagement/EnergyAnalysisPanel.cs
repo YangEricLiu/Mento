@@ -15,7 +15,7 @@ namespace Mento.ScriptCommon.Library.Functions
         //Select system dimension tree button
         private static Button SelectSystemDimensionButton = JazzButton.EnergyViewSelectSystemDimensionButton;
         private static SystemDimensionTree SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
-
+        private static Button EnergyViewSelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
         //Select area dimension tree button
         private static Button SelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
         private static AreaDimensionTree AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
@@ -42,7 +42,11 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             TagGrid = JazzGrid.EnergyAnalysisAllTagList;
         }
+        public void ClickSelectAreaDimensionButton()
+        {
 
+            EnergyViewSelectAreaDimensionButton.Click();
+        }
         #region Tag operations
         public void SwitchTagTab(TagTabs tab)
         {
@@ -155,6 +159,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             Chart.ClickLegendItem(legendName);
         }
+
+
+
         #endregion
     }
 

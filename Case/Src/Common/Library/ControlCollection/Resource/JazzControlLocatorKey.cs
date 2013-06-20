@@ -214,6 +214,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonAreaDimensionSettingsCancel = "ButtonAreaDimensionSettingsCancel";
         public static string ButtonAreaDimensionSettingsModify = "ButtonAreaDimensionSettingsModify";
         public static string ButtonAreaDimensionSettingsDelete = "ButtonAreaDimensionSettingsDelete";
+        // Greenie added
+        public static string ButtonAreaDimensionSettingsConfirmDelete = "ButtonAreaDimensionSettingsConfirmDelete";
+        public static string ButtonAreaDimensionSettingsCancelDelete = "ButtonAreaDimensionSettingsCancelDelete";
         #endregion
 
         #region hierarchyassociation

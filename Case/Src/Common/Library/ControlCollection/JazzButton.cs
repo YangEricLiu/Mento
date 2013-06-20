@@ -221,6 +221,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button AreaDimensionSettingsCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonAreaDimensionSettingsCancel);
         public static Button AreaDimensionSettingsModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonAreaDimensionSettingsModify);
         public static Button AreaDimensionSettingsDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonAreaDimensionSettingsDelete);
+        // added 
+        public static Button AreaDimensionSettingsConfirmDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonAreaDimensionSettingsConfirmDelete);
+        public static Button AreaDimensionSettingsCancelDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonAreaDimensionSettingsCancelDelete);
         #endregion
 
         #region Association

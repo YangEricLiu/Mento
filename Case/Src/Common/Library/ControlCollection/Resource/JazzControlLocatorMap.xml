@@ -207,6 +207,8 @@
         <add key="ButtonAreaDimensionSettingsCancel" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonAreaDimensionSettingsModify" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
         <add key="ButtonAreaDimensionSettingsDelete" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+        <add key="ButtonAreaDimensionSettingsConfirmDelete" value="//div[contains(@class,'x-box-inner')]//div[contains(@class,'x-btn') and em/button/span[text()='确定']]"  type="XPath"/>
+        <add key="ButtonAreaDimensionSettingsCancelDelete" value="//div[contains(@class,'x-box-inner')]//div[contains(@class,'x-btn') and em/button/span[text()='取消']]"  type="XPath"/>
       </areadimension>
       <hierarchyassociation>
         <add key = "ButtonAssociationSettingsTagAssociate" value = "st-tagassoc-taggrid-assoc" type = "ID"/>

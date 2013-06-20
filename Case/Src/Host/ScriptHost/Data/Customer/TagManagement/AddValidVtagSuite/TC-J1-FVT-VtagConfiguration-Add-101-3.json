@@ -4,22 +4,17 @@
 		{	
 			"CommonName":"VtagForCheckFormula",
 			"Code":"VtagForCheckFormula",
-			"Meter":"VtagForCheckFormula",
-			"Channel":"6",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
 			"Step":"Hourly",
 			"CalculationType":"Sum",
-			"Message":"一层",
-			"AreaNodePath":["CheckModifyVtag"],
 			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","CheckModifyVtag"],
+			"AreaNodePath":["CheckModifyVtag","FirstFloor"],
 		},
 		"ExpectedData":
 		{
-
-			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","CheckModifyVtag"],
-			"AreaNodePath":["CheckModifyVtag","一层"],
-			"CommonName":"VtagForCheckEA",
+			"CommonName":"VtagForTestFormula",
+			“Code”:"PtagUseredByVtagFormula",
 		}
 	}
 ]

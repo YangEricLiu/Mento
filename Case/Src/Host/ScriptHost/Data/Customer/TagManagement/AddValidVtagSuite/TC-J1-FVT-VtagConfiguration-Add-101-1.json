@@ -82,47 +82,5 @@
 			"CalculationType":"Avg",
 			"Step":"Daily",
 		}
-	},
-	{
-		"InputData":
-		{	
-			"CommonName":"VtagForCheckNotSameCode",
-			"Code":"VtagNotSameCode",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"Step":"Hourly",
-			"CalculationType":"Sum",
-		},
-		"ExpectedData":
-		{
-			"CommonName":"VtagForCheckNotSameCode",
-			"Code":"VtagCode",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"Step":"Hourly",
-			"CalculationType":"Sum",
-		}
-	},
-		{
-		"InputData":
-		{	
-			"CommonName":"VtagForCheckAll",
-			"Code":"VtagForCheckAll",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"Step":"Hourly",
-			"CalculationType":"Sum",
-			"Comment":"nothing",
-		},
-		"ExpectedData":
-		{
-			"CommonName":"VtagForCheckAll",
-			"Code":"VtagForCheckAll",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"Step":"Hourly",
-			"CalculationType":"Sum",
-			"Comment":"nothing",
-		}
 	}
 ]

@@ -37,7 +37,12 @@ namespace Mento.Script.Customer.TagManagement
         {
             JazzFunction.Navigator.NavigateHome();
         }
-
+        /// <summary>
+        /// Precondition: 1. make sure the hiearchy node has been added  ["自动化测试", "CheckOnESSite001"] and ["自动化测试","AutoSite_Vtag","CheckModifyVtag"]
+        ///                      2. make sure the AreaDimensionNode has been added  ["CheckModifyVtag","FirstFloor"]
+        /// Prepare Data:  1. make sure the vtags have been added "VtagForCheckNotSameCode","VtagForTestFormula"
+        ///                        2. make sure the vtags have been added "PtagUseredByVtagFormula"
+        /// </summary> 
         [Test]
         [CaseID("TC-J1-FVT-VtagConfiguration-Add-101-1")]
         [Type("BFT")]
@@ -85,10 +90,6 @@ namespace Mento.Script.Customer.TagManagement
              //waiting for "quanjuzhezhao" disappear
              JazzMessageBox.LoadingMask.WaitLoading();
              TimeManager.MediumPause();
-             
-             //verify add successful
-             //Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
-             //Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
 
              //Verify that vtag added successfully
              VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
@@ -98,26 +99,22 @@ namespace Mento.Script.Customer.TagManagement
              Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.InputData.UOM), VTagSettings.GetVTagUOMValue());
              Assert.AreEqual(VTagSettings.GetVTagCalculationTypeExpectedValue(input.InputData.CalculationType), VTagSettings.GetVTagCalculationTypeValue());
              Assert.AreEqual(VTagSettings.GetVTagCalculationStepExpectedValue(input.InputData.Step), VTagSettings.GetVTagCalculationStepValue());
-           
-             
 
              // verify on data association tag list
              JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
              JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
              JazzFunction.AssociateSettings.ClickAssociateTagButton();
+             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
              TimeManager.LongPause();
-
-             //！ can't check the vtags that need to drag the scroll bar
+             TimeManager.LongPause();
              JazzFunction.AssociateSettings.CheckedTag(input.InputData.CommonName);
-             //JazzMessageBox.LoadingMask.WaitLoading();
              TimeManager.MediumPause();
              JazzFunction.AssociateSettings.ClickAssociateButton();
-             //JazzMessageBox.LoadingMask.WaitLoading();
+             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
              TimeManager.LongPause();
              Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.InputData.CommonName));
-             
-
-            //verify the trend chart is emtpy
+             TimeManager.MediumPause();
+            //verify the trend chart is drawn 
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
             TimeManager.MediumPause();
@@ -130,35 +127,10 @@ namespace Mento.Script.Customer.TagManagement
             
             TimeManager.MediumPause();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTrendChartDrawn());
+            //Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTrendChartDrawn());
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists(input.InputData.CommonName));
-
-
-            // prepare this vtag for test the formula
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
-            JazzFunction.VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
-            TimeManager.MediumPause();
-            JazzFunction.VTagSettings.SwitchToFormulaTab();
-            TimeManager.LongPause();
-            JazzFunction.VTagSettings.ClickModifyFormulaButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            JazzFunction.VTagSettings.GotoPageOnFormulaTaglist(3);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-
-            JazzFunction.VTagSettings.DragTagToFormula(input.ExpectedData.CommonName);
-            TimeManager.LongPause();
-            JazzFunction.VTagSettings.ClickSaveFormulaButton();
-            // Verify the tag in the formula field
-            TimeManager.LongPause();
-            JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.ExpectedData.CommonName);
-
-
-
         }
 
-        
 
         [Test]
         [CaseID("TC-J1-FVT-VtagConfiguration-Add-101-3")]
@@ -166,8 +138,6 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(AddValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-101-3")]
         public void AddVtagAndCheckOnFormula(VtagData input)
         {
-
-           
             //Click "+" button and fill vtag field
             VTagSettings.ClickAddVTagButton();
             VTagSettings.FillInAddVTagData(input.InputData);
@@ -183,67 +153,64 @@ namespace Mento.Script.Customer.TagManagement
             //1. verify on area node
             
             // Add hierarchy for verify the added vtag
-           
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
-            JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
+            /*
+             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
+             JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
+             TimeManager.MediumPause();
+             JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+             TimeManager.MediumPause();
+             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+             JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
+             //Click "子区域" button to add Area node.	
+             JazzFunction.AreaDimensionSettings.ClickCreateAreaDimensionButton();
+             //"Input  area name: "一层", comment ,Click ""save"" button"	
+             JazzFunction.AreaDimensionSettings.FillAreaDimensionData(input.InputData.Message, input.InputData.Comment);
+             JazzFunction.AreaDimensionSettings.ClickSaveButton();
+            */
+
+            // Prepare for testing the formula
+            VTagSettings.SwitchToFormulaTab();
+            VTagSettings.ClickModifyFormulaButton();
+            VTagSettings.GotoPageOnFormulaTaglist(3);
+            VTagSettings.ScrollToViewTagByCode("PtagWater001");
+            VTagSettings.DragTagToFormula(input.ExpectedData.Code);
+            VTagSettings.ClickSaveFormulaButton();
             TimeManager.MediumPause();
-            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.MediumPause();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
-            //Click "子区域" button to add Area node.	
-            JazzFunction.AreaDimensionSettings.ClickCreateAreaDimensionButton();
-            //"Input  area name: "一层", comment ,Click ""save"" button"	
-            JazzFunction.AreaDimensionSettings.FillAreaDimensionData(input.InputData.Message, input.InputData.Comment);
-            JazzFunction.AreaDimensionSettings.ClickSaveButton();
-           
 
             // Assosiate the vtag to Area node
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
             JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
-            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
-            TimeManager.MediumPause();
+            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.LongPause();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
-            JazzFunction.AreaDimensionSettings.SelectAreaDimensionNode(input.InputData.Message);
-          
+            //JazzFunction.AreaDimensionSettings.SelectAreaDimensionNode(input.InputData.Message);
             TimeManager.MediumPause();
             JazzFunction.AssociateSettings.ClickAssociateTagButton();
-            TimeManager.MediumPause();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             JazzFunction.AssociateSettings.CheckedTag(input.InputData.Code);
             JazzFunction.AssociateSettings.ClickAssociateButton();
             TimeManager.MediumPause();
             JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.InputData.CommonName);
             //JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.ExpectedData.CommonName);
-
+            TimeManager.MediumPause();
 
             //1. verify on formula tag list
 
-
-
-
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
-            JazzFunction.VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
+            JazzFunction.VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
             JazzFunction.VTagSettings.SwitchToFormulaTab();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
             JazzFunction.VTagSettings.ClickModifyFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            //Assert.IsTrue(JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName));
-
-
-            //2. verify whether tag on the formula tag list
-            //    A problem here :  those tags should drag scroll bar to diplay can't drag into the formula textarea
-
-            // Drag the vtag to the formula
-            // Should modify the page to the vtag you find
             JazzFunction.VTagSettings.GotoPageOnFormulaTaglist(5);
             TimeManager.MediumPause();
             TimeManager.LongPause();
             TimeManager.MediumPause();
-            JazzFunction.VTagSettings.DragTagToFormula(input.ExpectedData.CommonName);
+            JazzFunction.VTagSettings.DragTagToFormula(input.InputData.CommonName);
             TimeManager.MediumPause();
             JazzFunction.VTagSettings.ClickSaveFormulaButton();
             // Verify the tag in the formula field
@@ -264,6 +231,7 @@ namespace Mento.Script.Customer.TagManagement
             VTagSettings.ClickAddVTagButton();
             VTagSettings.FillInAddVTagData(input.InputData);
 
+            TimeManager.MediumPause();
             //Click "Save" button
             VTagSettings.ClickSaveButton();
 

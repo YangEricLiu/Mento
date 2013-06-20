@@ -22,6 +22,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button CancelButton = JazzButton.AreaDimensionSettingsCancelButton;
         private static Button ModifyButton = JazzButton.AreaDimensionSettingsModifyButton;
         private static Button DeleteButton = JazzButton.AreaDimensionSettingsDeleteButton;
+        //added
+        private static Button ConfirmDeleteButton = JazzButton.AreaDimensionSettingsConfirmDeleteButton;
+        private static Button CancelDeleteButton = JazzButton.AreaDimensionSettingsCancelDeleteButton;
 
         private static TextField NameTextField = JazzTextField.AreaDimensionSettingsNameTextField;
         private static TextField CommentTextField = JazzTextField.AreaDimensionSettingsCommentTextField;
@@ -65,6 +68,20 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickCancelButton()
         {
             CancelButton.Click();
+        }
+        public void ClickDeleteConfirmButton()
+        {
+            ConfirmDeleteButton.Click();
+        }
+
+        public void ClickDeleteButton()
+        {
+            DeleteButton.Click();
+        }
+        //greenie add
+        public void ClickCancelDeleteButton()
+        {
+            DeleteButton.Click();
         }
 
         public void SelectAreaDimensionNode(string areaDimensionNodeName)

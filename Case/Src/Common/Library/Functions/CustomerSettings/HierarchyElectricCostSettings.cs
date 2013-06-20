@@ -22,6 +22,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static string TRANSFORMERCAPACITYMODE = "变压器容量模式";
         private static string TIMECAPACITYMODE = "时间容量模式";
+        private static string FACTORTITLE = "功率因数";
 
         #region Controls
         private static TabButton CostProperty = JazzButton.CostPropertyTabButton;
@@ -43,6 +44,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField ElectricTransformerCapacity = JazzTextField.ElectricTransformerCapacityTextField;
         private static TextField ElectricTransformerPrice = JazzTextField.ElectricTransformerPriceTextField;
         private static TextField ElectricHourPrice = JazzTextField.ElectricHourPriceTextField;
+        private static Window FactorWindow = JazzWindow.FactorWindow;
         #endregion
 
         #region electric cost property
@@ -80,9 +82,19 @@ namespace Mento.ScriptCommon.Library.Functions
             return CostCreate.IsDisplayed();
         }
 
+        public Boolean IsCostUpdateButtonDisplayed()
+        {
+            return CostUpdate.IsDisplayed();
+        }
+
         public void ClickElectricCostCreateButton()
         {
             ElectricCostCreate.Click();
+        }
+
+        public bool IsCostSaveButtonDisplayed()
+        {
+            return CostSave.IsDisplayed();
         }
 
         public void ClickCostSaveButton()
@@ -96,9 +108,14 @@ namespace Mento.ScriptCommon.Library.Functions
             CostCancel.Click();
         }
 
+        public bool IsCostCancelButtonDisplayed()
+        {
+            return CostCancel.IsDisplayed();
+        }
+
         #endregion
 
-        #region fill in value
+        #region actions
 
         #region fixed electricity
 
@@ -344,6 +361,13 @@ namespace Mento.ScriptCommon.Library.Functions
             return OneElectricPaddingCost.GetInvalidTipsForNumberField().Contains(msg);
         }
 
+        public bool IsPaddingCostDisplayed(int position)
+        {
+            TextField OneElectricPaddingCost = GetOneElectricPaddingCost(position);
+
+            return OneElectricPaddingCost.IsFieldDisplayed();
+        }
+
         public void FillElectricTransformerCapacity(string capacity)
         {
             ElectricTransformerCapacity.Fill(capacity);
@@ -422,11 +446,11 @@ namespace Mento.ScriptCommon.Library.Functions
             return OneElectricHourPrice.GetInvalidTipsForNumberField().Contains(msg);
         }
 
-        public bool IsFactorEnable(int position)
+        public bool IsFactorDisable(int position)
         {
             LinkButton OneFactor = GetOneFactor(position);
 
-            return OneFactor.IsEnabled();
+            return OneFactor.IsLinkButtonDisabled();
         }
 
         public void ClickFactorLinkButton(int position)
@@ -434,6 +458,16 @@ namespace Mento.ScriptCommon.Library.Functions
             LinkButton OneFactor = GetOneFactor(position);
 
             OneFactor.ClickLink();
+        }
+
+        public bool IsFacorWindowDisplayed()
+        {
+            return FactorWindow.GetTitle().Contains(FACTORTITLE);
+        }
+
+        public void CloseFactorWindow()
+        {
+            FactorWindow.Close();
         }
 
         #endregion
@@ -481,11 +515,19 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         #endregion
-        
 
+        #region get comprehensice controls value
+        
         public string GetDemandCostTypeValue()
         {
             return DemandCostType.GetValue();
+        }
+
+        public string GetDemandCostTypeValue(int position)
+        {
+            ComboBox OneDemandCostType = GetOneDemandCostType(position);
+
+            return OneDemandCostType.GetValue();
         }
 
         public string GetTouTariffIdValue()
@@ -493,9 +535,23 @@ namespace Mento.ScriptCommon.Library.Functions
             return TouTariffId.GetValue();
         }
 
+        public string GetTouTariffIdValue(int position)
+        {
+            ComboBox OneTouTariffId = GetOneTouTariffId(position);
+
+            return OneTouTariffId.GetValue();
+        }
+
         public string GetFactorTypeValue()
         {
             return FactorType.GetValue();
+        }
+
+        public string GetFactorTypeValue(int position)
+        {
+            ComboBox OneFactorType = GetOneFactorType(position);
+
+            return OneFactorType.GetValue();
         }
 
         public string GetRealTagIdValue()
@@ -503,9 +559,23 @@ namespace Mento.ScriptCommon.Library.Functions
             return RealTagId.GetValue();
         }
 
+        public string GetRealTagIdValue(int position)
+        {
+            ComboBox OneRealTagId = GetOneRealTagId(position);
+
+            return OneRealTagId.GetValue();
+        }
+
         public string GetReactiveTagIdValue()
         {
             return ReactiveTagId.GetValue();
+        }
+
+        public string GetReactiveTagIdValue(int position)
+        {
+            ComboBox OneReactiveTagId = GetOneReactiveTagId(position);
+
+            return OneReactiveTagId.GetValue();
         }
 
         public string GetHourTagIdValue()
@@ -513,9 +583,23 @@ namespace Mento.ScriptCommon.Library.Functions
             return HourTagId.GetValue();
         }
 
+        public string GetHourTagIdValue(int position)
+        {
+            ComboBox OneHourTagId = GetOneHourTagId(position);
+
+            return OneHourTagId.GetValue();
+        }
+
         public string GetElectricPaddingCostValue()
         {
             return ElectricPaddingCost.GetValue();
+        }
+
+        public string GetElectricPaddingCostValue(int position)
+        {
+            TextField OneElectricPaddingCost = GetOneElectricPaddingCost(position);
+
+            return OneElectricPaddingCost.GetValue();
         }
 
         public string GetElectricTransformerCapacityValue()
@@ -523,15 +607,39 @@ namespace Mento.ScriptCommon.Library.Functions
             return ElectricTransformerCapacity.GetValue();
         }
 
+        public string GetElectricTransformerCapacityValue(int position)
+        {
+            TextField OneElectricTransformerCapacity = GetOneElectricTransformerCapacity(position);
+
+            return OneElectricTransformerCapacity.GetValue();
+        }
+
         public string GetElectricTransformerPriceValue()
         {
             return ElectricTransformerPrice.GetValue();
+        }
+
+        public string GetElectricTransformerPriceValue(int position)
+        {
+            TextField OneElectricTransformerPrice = GetOneElectricTransformerPrice(position);
+
+            return OneElectricTransformerPrice.GetValue();
         }
 
         public string GetElectricHourPriceValue()
         {
             return ElectricHourPrice.GetValue();
         }
+
+        public string GetElectricHourPriceValue(int position)
+        {
+            TextField OneElectricHourPrice = GetOneElectricHourPrice(position);
+
+            return OneElectricHourPrice.GetValue();
+        }
+
+        #endregion
+
         #endregion
 
         #region private method

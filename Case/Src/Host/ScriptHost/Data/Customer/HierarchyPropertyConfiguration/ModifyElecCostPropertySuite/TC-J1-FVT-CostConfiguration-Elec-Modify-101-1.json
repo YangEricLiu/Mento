@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "ABCostProperty", "ModifyThenSaveComp"],
+			"EffectiveDate":"2013-01",
+		},
+		"ExpectedData":
+		{	
+			"EffectiveDate":"时间段冲突",
+		}
+	}
+]

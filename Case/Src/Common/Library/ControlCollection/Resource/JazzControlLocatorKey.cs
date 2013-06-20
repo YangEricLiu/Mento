@@ -728,6 +728,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string WindowLoginOption = "WindowLoginOption";
         #endregion
 
+        #region Hierarchy cost property
+        public static string WindowFactor = "WindowFactor";
+        #endregion
+
         #endregion
 
         #region Container

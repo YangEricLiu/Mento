@@ -31,8 +31,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
                 pathButtons[i].Click();
 
-                JazzMessageBox.LoadingMask.WaitLoading();
-
+                //JazzMessageBox.LoadingMask.WaitLoading();
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.ShortPause();
             }
         }

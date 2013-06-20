@@ -18,9 +18,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
     [TestFixture]
     [Owner("Emma")]
-    [CreateTime("2013-06-18")]
-    [ManualCaseID("TC-J1-FVT-CostConfiguration-Elec-Add")]
-    public class AddElecCostPropertySuite : TestSuiteBase
+    [CreateTime("2013-06-20")]
+    [ManualCaseID("TC-J1-FVT-CostConfiguration-Elec-Modify")]
+    public class ModifyElecCostPropertySuite : TestSuiteBase
     {
         private static HierarchySettings HierarchySetting = JazzFunction.HierarchySettings;
         private static HierarchyElectricCostSettings CostSettings = JazzFunction.HierarchyElectricCostSettings;
@@ -39,45 +39,51 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-1")]
+        [CaseID("TC-J1-FVT-CostConfiguration-Elec-Modify-101-1")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-1")]
-        public void AddToInputNothing(ElectricityComprehensiveCostData input)
+        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(ModifyElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Modify-101-1")]
+        public void ModifyThenSave(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.ShortPause();
 
             //Click "成本属性" tab button
-            CostSettings.ClickCostPropertyTabButton_Create();
+            CostSettings.ClickCostPropertyTabButton_Update();
             TimeManager.MediumPause();
 
             //Click "+成本属性" button
             CostSettings.ClickCostCreateButton();
             TimeManager.ShortPause();
 
-            //Input nothing and save it
+            //Modify to duplicate date
+            CostSettings.SelectElectricEffectiveDate("2012-05", 1);
+
+            //verify that invalid check triggered
+            Assert.IsTrue(CostSettings.IsEffectiveDateInvalid(1));
+            Assert.IsTrue(CostSettings.IsEffectiveDateInvalidMsgCorrect(input.ExpectedData.EffectiveDate, 1));
+
+            //Can't Save
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
+            Assert.IsTrue(CostSettings.IsCostSaveButtonDisplayed());
+            Assert.IsTrue(CostSettings.IsCostCancelButtonDisplayed());
 
-            //verify that "+成本属性" button displayed
-            Assert.IsTrue(CostSettings.IsCostCreateButtonDisplayed());
+            //Modify to non duplicate date
+            CostSettings.SelectElectricEffectiveDate(input.InputData.EffectiveDate, 1);
 
-            //Click "+成本属性" button
-            CostSettings.ClickCostCreateButton();
+            //Save successful
+            CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
-
-            //Input nothing and cancel it
-            CostSettings.ClickCostCancelButton();
-            TimeManager.ShortPause();
-
-            //verify that "+成本属性" button displayed
-            Assert.IsTrue(CostSettings.IsCostCreateButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostUpdateButtonDisplayed());
+            Assert.AreEqual(input.InputData.EffectiveDate, CostSettings.GetElectricCostEffectiveDateValue(1));
         }
 
         [Test]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-2")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-2")]
+        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(ModifyElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-2")]
         public void AddExceedDate(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -104,7 +110,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-3")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-3")]
+        [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(ModifyElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-3")]
         public void EmptyFieldsForFixed(ElectricfixedCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -150,49 +156,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-4")]
-        [Type("BFT")]
-        [IllegalInputValidation(typeof(ElectricfixedCostData[]))]
-        public void AddInvalidPriceFixed(ElectricfixedCostData input)
-        {
-            string[] hierarchyNodePath = { "自动化测试", "AutoSite002", "AutoBuilding002" };
-            HierarchySetting.SelectHierarchyNodePath(hierarchyNodePath);
-            TimeManager.ShortPause();
-
-            //Click "成本属性" tab button
-            CostSettings.ClickCostPropertyTabButton_Create();
-            TimeManager.MediumPause();
-
-            //Click "+成本属性" button
-            CostSettings.ClickCostCreateButton();
-            TimeManager.ShortPause();
-
-            //Click "+" before "电力" and Add effective date
-            CostSettings.ClickElectricCostCreateButton();
-            TimeManager.ShortPause();
-
-            //click "Save" with nothing input
-            CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
-
-            //Input valid effective date and Select "固定电价" 
-            CostSettings.SelectElectricEffectiveDate("2012-09", 1);
-            CostSettings.SelectElectricPriceMode("固定电价", 1);
-            
-            //Input valid price and click "Save" button
-            CostSettings.FillElectricPrice(input.InputData.DoubleNonNagtiveValue, 1);
-            CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
-
-            //verify that invalid check triggered
-            Assert.IsTrue(CostSettings.IsElectricPriceInvalid(1));
-            Assert.IsTrue(CostSettings.IsElectricPriceInvalidMsgCorrect(input.ExpectedData.DoubleNonNagtiveValue, 1));
-        }
-
-        [Test]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-101-1")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-1")]
+        [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(ModifyElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-1")]
         public void AddCancelSaveForFixed(ElectricfixedCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -240,7 +206,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-101-2")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-2")]
+        [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(ModifyElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-2")]
         public void AddDupDateReviseForFixed(ElectricfixedCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -280,7 +246,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-5")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-5")]
+        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(ModifyElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-5")]
         public void SaveNonInputForComp(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -312,7 +278,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-6")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-6")]
+        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(ModifyElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-6")]
         public void HierarchySupportCost(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -375,7 +341,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-101-3")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-3")]
+        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(ModifyElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-3")]
         public void AddValidCompMode1(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -434,7 +400,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-101-4")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-4")]
+        [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(ModifyElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-4")]
         public void AddValidCompMode2(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);

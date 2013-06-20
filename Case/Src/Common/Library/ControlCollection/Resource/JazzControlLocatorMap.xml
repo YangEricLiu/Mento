@@ -669,6 +669,7 @@
   <Window>
     <Login>
       <add key="WindowLoginOption" value="//div[contains(@class, 'x-window-default')]" type="XPath"/>
+      <add key="WindowFactor" value="//div[contains(@class, 'x-window-default')]" type="XPath"/>
     </Login>    
   </Window> 
 

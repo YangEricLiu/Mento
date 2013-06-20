@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
-    public abstract class Window : JazzControl
+    public class Window : JazzControl
     {
         public Window(Locator locator) : base(locator) { }
         

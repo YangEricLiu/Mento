@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlCollection\JazzWindow.cs" />
     <Compile Include="ControlCollection\JazzContainer.cs" />
     <Compile Include="ControlCollection\JazzButton.cs" />
     <Compile Include="ControlCollection\JazzChart.cs" />

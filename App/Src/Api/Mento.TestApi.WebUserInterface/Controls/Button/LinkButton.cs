@@ -16,5 +16,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             ElementHandler.Click(this.RootElement);
         }
+
+        public bool IsLinkButtonDisabled()
+        {
+            return this.RootElement.GetAttribute("class").Contains("x-item-disabled");
+        }
     }
 }

@@ -70,7 +70,7 @@
   <add key="DatePickerDayItem" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//table[@class='x-datepicker-inner']/tbody//span[text()='$#itemKey']" type ="XPath"/>
 
   <!--Window-->
-  <add key="WindowTitle" value="div[contains(@class,'x-window-header')]/div/div/div/div[contains(@class,'x-window-header-text-container')]" type="XPath"/>
+  <add key="WindowTitle" value="div[contains(@class,'x-window-header-default')]/div/div/div/div[contains(@class,'x-window-header-text-container')]" type="XPath"/>
   <add key="WindowCloseButton" value="div[contains(@class,'x-window-header')]/div/div/div/div[img[@class='x-tool-close']]" type="XPath"/>
   <add key="WindowConfirmButton" value="div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
   <add key="WindowCancelButton" value="div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>

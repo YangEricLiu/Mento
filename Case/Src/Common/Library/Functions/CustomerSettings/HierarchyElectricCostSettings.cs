@@ -45,6 +45,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField ElectricTransformerPrice = JazzTextField.ElectricTransformerPriceTextField;
         private static TextField ElectricHourPrice = JazzTextField.ElectricHourPriceTextField;
         private static Window FactorWindow = JazzWindow.FactorWindow;
+        private static Container ElectricCostValueItems = JazzContainer.ElectricCostValueItemsContainer;
         #endregion
 
         #region electric cost property
@@ -113,6 +114,17 @@ namespace Mento.ScriptCommon.Library.Functions
             return CostCancel.IsDisplayed();
         }
 
+        public void ClickCostDeleteButton(int position)
+        {
+            Button OneDeleteButton = GetOneDeleteButton(position);
+
+            OneDeleteButton.Click();
+        }
+
+        public int GetElectricCostItemsNumber()
+        {
+            return (ElectricCostValueItems.GetElementNumber() - 1);
+        }
         #endregion
 
         #region actions
@@ -169,9 +181,9 @@ namespace Mento.ScriptCommon.Library.Functions
             ElectricPriceMode.SelectItem(priceMode);
         }
 
-        public void SelectElectricPriceMode(string priceMode, int postion)
+        public void SelectElectricPriceMode(string priceMode, int position)
         {
-            ComboBox OnePriceMode = GetOnePriceMode(postion);
+            ComboBox OnePriceMode = GetOnePriceMode(position);
 
             OnePriceMode.SelectItem(priceMode);
         }
@@ -402,22 +414,22 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillElectricTransformerPrice(string price, int position)
         {
             TextField OneElectricTransformerPrice = GetOneElectricTransformerPrice(position);
-            
-            ElectricTransformerPrice.Fill(price);
+
+            OneElectricTransformerPrice.Fill(price);
         }
 
         public bool IsElectricTransformerPriceInvalid(int position)
         {
             TextField OneElectricTransformerPrice = GetOneElectricTransformerPrice(position);
 
-            return ElectricTransformerPrice.IsTextFieldValueInvalid();
+            return OneElectricTransformerPrice.IsTextFieldValueInvalid();
         }
 
         public bool IsElectricTransformerPriceInvalidMsgCorrect(string msg, int position)
         {
             TextField OneElectricTransformerPrice = GetOneElectricTransformerPrice(position);
 
-            return ElectricTransformerPrice.GetInvalidTipsForNumberField().Contains(msg);
+            return OneElectricTransformerPrice.GetInvalidTipsForNumberField().Contains(msg);
         }
 
         public void FillElectricHourPrice(string price)
@@ -712,6 +724,11 @@ namespace Mento.ScriptCommon.Library.Functions
         private LinkButton GetOneFactor(int positionIndex)
         {
             return JazzButton.GetOneLinkButton(JazzControlLocatorKey.LinkButtonFactor, positionIndex + 1);
+        }
+
+        private Button GetOneDeleteButton(int positionIndex)
+        {
+            return JazzButton.GetOneLinkButton(JazzControlLocatorKey.ButtonElectricCostDelete, positionIndex + 1);
         }
         #endregion
     }

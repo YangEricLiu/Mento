@@ -117,10 +117,13 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-4")]
         public void SameNameOnlevel(HierarchyData input)
         {
-            //xxx
+            //Add same name 
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.ShortPause();
             HierarchySettings.ClickCreateChildHierarchyButton();
+            TimeManager.ShortPause();
             HierarchySettings.FillInHierarchyNode(input.InputData);
+            TimeManager.ShortPause();
 
             //Click "Save" button
             TimeManager.MediumPause();
@@ -154,7 +157,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             Assert.IsTrue(HierarchySettings.IsTypeInvalid());
             Assert.IsTrue(HierarchySettings.IsTypeInvalidMsgCorrect(input.ExpectedData));
             Assert.IsFalse(HierarchySettings.IsCommentsInvalid());
-            Assert.IsFalse(HierarchySettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
         }
     }
 }

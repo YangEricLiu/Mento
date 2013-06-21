@@ -1,0 +1,32 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "ABCostProperty", "ModifyPriceMode"],
+			"PriceMode":"综合电价",
+			"DemandCostType":"时间容量模式",
+			"HourTagId":"VtagCostModify41",
+			"ElectricHourPrice":"999999999.999999",
+			"TransformerCapacity":"55",
+			"TransformerPrice":"45",
+			"TouTariffId":"峰谷电价1",
+			"FactorType":"0.90",
+			"RealTagId":"VtagCostModify41",
+			"ReactiveTagId":"VtagCostModify42",
+			"ElectricPaddingCost":"",
+		},
+		"ExpectedData":
+		{	
+			"PriceMode":"综合电价",
+			"DemandCostType":"时间容量模式",
+			"HourTagId":"VtagCostModify41",
+			"ElectricHourPrice":"999999999.999999",
+			"TransformerCapacity":"55",
+			"TransformerPrice":"45",
+			"TouTariffId":"峰谷电价1",
+			"FactorType":"0.90",
+			"RealTagId":"VtagCostModify41",
+			"ReactiveTagId":"VtagCostModify42",
+		}
+	}
+]

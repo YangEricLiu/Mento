@@ -25,6 +25,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Hierarchy Cost Property
 
         public static Container WaterCostValueItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerWaterCostValueItems);
+        public static Container ElectricCostValueItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerElectricCostValueItems);
 
         #endregion
 

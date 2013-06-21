@@ -199,6 +199,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonLowPressureSteamCostCreate = "ButtonLowPressureSteamCostCreate";
         public static string ButtonWaterCostDelete = "ButtonWaterCostDelete";
         public static string LinkButtonFactor = "LinkButtonFactor";
+        public static string ButtonElectricCostDelete = "ButtonElectricCostDelete";    
         #endregion
 
         #region systemdimension
@@ -746,6 +747,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Hierarchy Cost Property
         public static string ContainerWaterCostValueItems = "ContainerWaterCostValueItems";
+        public static string ContainerElectricCostValueItems = "ContainerElectricCostValueItems";
+        
         #endregion
 
         #endregion

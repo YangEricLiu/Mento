@@ -47,7 +47,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             //Select the node which want to change
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.ShortPause();
             HierarchySettings.ClickModifyButton();
+            TimeManager.ShortPause();
             HierarchySettings.FillInHierarchyNode(input.InputData);
 
             //Click "Save" button

@@ -60,6 +60,11 @@ namespace Mento.ScriptCommon.Library.Functions
             BasicPropertySaveButton.Click();
         }
 
+        public Boolean IsBasicPropertySaveButtonDisplayed()
+        {
+            return BasicPropertySaveButton.IsDisplayed();
+        }
+
         public void SelectTOU(string touName)
         {
             TOUTariffsList.FocusOnRow(1, touName);
@@ -73,6 +78,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickBasicPropertyCancelButton()
         {
             BasicPropertyCancelButton.Click();
+        }
+
+        public Boolean IsBasicPropertyCancelButtonDisplayed()
+        {
+            return BasicPropertyCancelButton.IsDisplayed();
         }
 
         public void ClickBasicPropertyDeleteButton()
@@ -230,7 +240,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>whether the invalid message is ture</returns>
         public Boolean IsNameInvalidMsgCorrect(TOUBasicTariffExpectedData output)
         {
-            if (output.PeakPrice != null)
+            if (output.CommonName != null)
             {
                 return BasicPropertyNameTextField.GetInvalidTips().Contains(output.CommonName);
             }
@@ -239,9 +249,33 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge whether the Plain Price textfield is invalid
+        /// </summary>
+        /// <returns>True if the Plain Price is invalid, false if not</returns>
+        public Boolean IsPlainPriceInvalid()
+        {
+            return BasicPropertyPlainPriceValueTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Plain Price field is correct
+        /// </summary>
+        /// <param name="output">TOUBasicTariffExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsPlainPriceInvalidMsgCorrect(TOUBasicTariffExpectedData output)
+        {
+            if (output.PlainPrice != null)
+            {
+                return BasicPropertyPeakPriceValueTextField.GetInvalidTipsForNumberField().Contains(output.PlainPrice);
+            }
+            else
+                return true;
+        }
+
+        /// <summary>
         /// Judge whether the Peak Price textfield is invalid
         /// </summary>
-        /// <returns>True if the name is invalid, false if not</returns>
+        /// <returns>True if the Peak Price is invalid, false if not</returns>
         public Boolean IsPeakPriceInvalid()
         {
             return BasicPropertyPeakPriceValueTextField.IsTextFieldValueInvalid();
@@ -256,7 +290,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             if (output.PeakPrice != null)
             {
-                return BasicPropertyPeakPriceValueTextField.GetInvalidTips().Contains(output.PeakPrice);
+                return BasicPropertyPeakPriceValueTextField.GetInvalidTipsForNumberField().Contains(output.PeakPrice);
             }
             else
                 return true;
@@ -265,7 +299,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Judge whether the Valley Price textfield is invalid
         /// </summary>
-        /// <returns>True if the name is invalid, false if not</returns>
+        /// <returns>True if the Valley Price is invalid, false if not</returns>
         public Boolean IsValleyPriceInvalid()
         {
             return BasicPropertyValleyPriceValueTextField.IsTextFieldValueInvalid();
@@ -280,54 +314,53 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             if (output.ValleyPrice != null)
             {
-                return BasicPropertyValleyPriceValueTextField.GetInvalidTips().Contains(output.ValleyPrice);
+                return BasicPropertyValleyPriceValueTextField.GetInvalidTipsForNumberField().Contains(output.ValleyPrice);
             }
             else
                 return true;
         }
         
-        //Below are for new UI. but TOU is not implemented yet, Time management has been implemented.
-        ///// <summary>
-        ///// Judge whether the peak range combox is invalid
-        ///// </summary>
-        ///// <returns>True if the peak range is invalid, false if not</returns>
-        //public Boolean IsPeakRangeInvalid()
-        //{
-        //    return BasicPropertyPeakStartTimeComboBox.IsComboBoxValueInvalid();
-        //    return BasicPropertyPeakEndTimeComboBox.IsComboBoxValueInvalid();
-        //}
+        /// <summary>
+        /// Judge whether the peak range combox is invalid
+        /// </summary>
+        /// <returns>True if the peak range is invalid, false if not</returns>
+        public Boolean IsPeakRangeInvalid()
+        {
+            return BasicPropertyPeakStartTimeComboBox.IsComboBoxValueInvalid();
+            return BasicPropertyPeakEndTimeComboBox.IsComboBoxValueInvalid();
+        }
 
-        ///// <summary>
-        ///// Judge whether invalid message of peak range is correct
-        ///// </summary>
-        ///// <param name="output">TOUBasicTariffExpectedData</param>
-        ///// <returns>whether the invalid message is ture</returns>
-        //public Boolean IsPeakRangeInvalidMsgCorrect(TOUBasicTariffExpectedData output)
-        //{
-        //    return BasicPropertyPeakStartTimeComboBox.GetInvalidTips().Contains(output.PeakRange[0].StartTime);
-        //    return BasicPropertyPeakEndTimeComboBox.GetInvalidTips().Contains(output.PeakRange[0].EndTime);
-        //}
+        /// <summary>
+        /// Judge whether invalid message of peak range is correct
+        /// </summary>
+        /// <param name="output">TOUBasicTariffExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsPeakRangeInvalidMsgCorrect(TOUBasicTariffExpectedData output)
+        {
+            return BasicPropertyPeakStartTimeComboBox.GetInvalidTips().Contains(output.PeakRange[0].StartTime);
+            //return BasicPropertyPeakEndTimeComboBox.GetInvalidTips().Contains(output.PeakRange[0].EndTime);
+        }
 
-        ///// <summary>
-        ///// Judge whether the valley range combox is invalid
-        ///// </summary>
-        ///// <returns>True if the valley range is invalid, false if not</returns>
-        //public Boolean IsValleyRangeInvalid()
-        //{
-        //    return BasicPropertyValleyStartTimeComboBox.IsComboBoxValueInvalid();
-        //    return BasicPropertyValleyEndTimeComboBox.IsComboBoxValueInvalid();
-        //}
+        /// <summary>
+        /// Judge whether the valley range combox is invalid
+        /// </summary>
+        /// <returns>True if the valley range is invalid, false if not</returns>
+        public Boolean IsValleyRangeInvalid()
+        {
+            return BasicPropertyValleyStartTimeComboBox.IsComboBoxValueInvalid();
+            return BasicPropertyValleyEndTimeComboBox.IsComboBoxValueInvalid();
+        }
 
-        ///// <summary>
-        ///// Judge whether invalid message of valley range is correct
-        ///// </summary>
-        ///// <param name="output">TOUBasicTariffExpectedData</param>
-        ///// <returns>whether the invalid message is ture</returns>
-        //public Boolean IsValleyRangeInvalidMsgCorrect(TOUBasicTariffExpectedData output)
-        //{
-        //    return BasicPropertyValleyStartTimeComboBox.GetInvalidTips().Contains(output.ValleyRange[0].StartTime);
-        //    return BasicPropertyValleyEndTimeComboBox.GetInvalidTips().Contains(output.ValleyRange[0].EndTime);
-        //}
+        /// <summary>
+        /// Judge whether invalid message of valley range is correct
+        /// </summary>
+        /// <param name="output">TOUBasicTariffExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsValleyRangeInvalidMsgCorrect(TOUBasicTariffExpectedData output)
+        {
+            return BasicPropertyValleyStartTimeComboBox.GetInvalidTips().Contains(output.ValleyRange[0].StartTime);
+            //return BasicPropertyValleyEndTimeComboBox.GetInvalidTips().Contains(output.ValleyRange[0].EndTime);
+        }
 
         /// <summary>
         /// Judge whether the pop message correct

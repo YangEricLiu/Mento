@@ -21,7 +21,7 @@ namespace Mento.Script.Administration.TOU
     [Owner("Amy")]
     [CreateTime("2013-01-04")]
     [ManualCaseID("TC-J1-SmokeTest")]
-    public class TOUPulsePeakTariffAddValidSuite : TestSuiteBase
+    public class TOUPulsePeakAddValidSuite : TestSuiteBase
     {
         private static TOUPulsePeakTariffSettings TOUPulsePeakTariffSettings = JazzFunction.TOUPulsePeakTariffSettings;
         [SetUp]
@@ -36,16 +36,17 @@ namespace Mento.Script.Administration.TOU
         {
         }
 
+        #region TestCase1 AddValidPulsePeak
         /// <summary>
         /// Precondition: 1. make sure there is a TOU basic tariff with name '价格策略1'
         ///               2. make sure the TOU tariff hasn't defined Pulse Peak property yet.
         /// </summary>
         [Test]
-        [ManualCaseID("TC-J1-FVT-TOUPulsePeakTariffSetting-Add-101")]
-        [CaseID("TC-J1-FVT-TOUPulsePeakTariffSetting-Add-101")]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingPulse-Add-101")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingPulse-Add-101")]
         [Priority("7")]
-        [MultipleTestDataSource(typeof(TOUPulsePeakTariffData[]), typeof(TOUPulsePeakTariffAddValidSuite), "TC-J1-FVT-TOUPulsePeakTariffSetting-Add-101")]
-        public void AddTOUPulsePeakTariff(TOUPulsePeakTariffData testData)
+        [MultipleTestDataSource(typeof(TOUPulsePeakTariffData[]), typeof(TOUPulsePeakAddValidSuite), "TC-J1-FVT-TOUTariffSettingPulse-Add-101")]
+        public void AddValidPulsePeak(TOUPulsePeakTariffData testData)
         {
             TOUPulsePeakTariffSettings.FocusOnTOUTariff("价格策略1");
             TimeManager.ShortPause();
@@ -77,6 +78,8 @@ namespace Mento.Script.Administration.TOU
                 Assert.AreEqual(testData.InputData.PulsePeakRange[inputDataArrayPosition].StartTime, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartTimeValue(elementPosition));
                 Assert.AreEqual(testData.InputData.PulsePeakRange[inputDataArrayPosition].EndTime, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndTimeValue(elementPosition));
             }
-        }       
+        }
+        #endregion
+    
     }
 }

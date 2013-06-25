@@ -35,136 +35,105 @@ namespace Mento.Script.Administration.TOU
         {
         }
 
-        #region TestCase1 AddValid
+        #region TestCase1 AddValidTOU
         [Test]
-        [ManualCaseID("TC-J1-FVT-TOUTariffSetting-Add-101")]
-        [CaseID("TC-J1-FVT-TOUTariffSetting-Add-101")]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Add-101")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Add-101")]
         [Priority("2")]
-        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffAddValidSuite), "TC-J1-FVT-TOUTariffSetting-Add-101")]
-        public void AddValid(TOUBasicTariffData testData)
+        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffAddValidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Add-101")]
+        public void AddValidTOU(TOUBasicTariffData testData)
         {
             //Click '+峰谷电价' button
             TOUBasicTariffSettings.ClickBasicPropertyCreateButton();
             TimeManager.ShortPause();
 
-            //Fill in all fields with valid inputs
+            //Fill in text fields with valid inputs
             TOUBasicTariffSettings.FillInBasicPropertyName(testData.InputData.CommonName);
             TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
             TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
             TOUBasicTariffSettings.FillInBasicPropertyValleyPriceValue(testData.InputData.ValleyPrice);
 
-            //Click '添加峰时范围''添加谷时范围' links and also Fill in the ranges
+            //Add Peak1 and Valley1 time ranges
             TOUBasicTariffSettings.AddPeakRanges(testData);
             TOUBasicTariffSettings.AddValleyRanges(testData);
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
             TimeManager.MediumPause();
-
             JazzMessageBox.LoadingMask.WaitLoading();
 
+            //verify add successful
+            Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
+            Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
+
             //Verify all the information displayed in Modify status are samed as input when addition.            
-            TOUBasicTariffSettings.SelectTOU(testData.ExpectedData.CommonName);
-            Assert.AreEqual(testData.ExpectedData.CommonName, TOUBasicTariffSettings.GetBasicPropertyNameValue());
-            Assert.AreEqual(testData.ExpectedData.PlainPrice, TOUBasicTariffSettings.GetBasicPropertyPlainPriceValue());
-            Assert.AreEqual(testData.ExpectedData.PeakPrice, TOUBasicTariffSettings.GetBasicPropertyPeakPriceValue());
-            Assert.AreEqual(testData.ExpectedData.ValleyPrice, TOUBasicTariffSettings.GetBasicPropertyValleyPriceValue());
-
-            //需要优化时间范围的verify
-            //Verify 'Start Time' and 'End Time' of the peak record(s)
-            for (int elementPosition = 1; elementPosition <= testData.InputData.PeakRange.Length; elementPosition++)
-            {
-                int inputDataArrayPosition = elementPosition - 1;
-                Assert.AreEqual(testData.InputData.PeakRange[inputDataArrayPosition].StartTime, TOUBasicTariffSettings.GetBasicPropertyPeakStartTimeValue(elementPosition));
-                Assert.AreEqual(testData.InputData.PeakRange[inputDataArrayPosition].EndTime, TOUBasicTariffSettings.GetBasicPropertyPeakEndTimeValue(elementPosition));
-            }
-
-            //Verify 'Start Time' and 'End Time' of the valley record(s)
-            for (int elementPosition = 1; elementPosition <= testData.InputData.ValleyRange.Length; elementPosition++)
-            {
-                int inputDataArrayPosition = elementPosition - 1;
-                Assert.AreEqual(testData.InputData.ValleyRange[inputDataArrayPosition].StartTime, TOUBasicTariffSettings.GetBasicPropertyValleyStartTimeValue(elementPosition));
-                Assert.AreEqual(testData.InputData.ValleyRange[inputDataArrayPosition].EndTime, TOUBasicTariffSettings.GetBasicPropertyValleyEndTimeValue(elementPosition));
-            }
-            //需要优化时间范围的verify
-            
-        }
-        #endregion
-
-        #region TestCase2 ComplexedOperationsForTimeRanges
-        [Test]
-        [ManualCaseID("TC-J1-FVT-TOUTariffSetting-Add-102")]
-        [CaseID("TC-J1-FVT-TOUTariffSetting-Add-102")]
-        [Priority("2")]
-        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffAddValidSuite), "TC-J1-FVT-TOUTariffSetting-Add-102")]
-        public void ComplexedOperationsForTimeRanges(TOUBasicTariffData testData)
-        {
-            //Click '+峰谷电价' button
-            TOUBasicTariffSettings.ClickBasicPropertyCreateButton();
+            TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);
+            TOUBasicTariffSettings.ClickBasicPropertyModifyButton();
             TimeManager.ShortPause();
-
-            //Fill in all fields with valid inputs, especially containing complex operations for time ranges
-            TOUBasicTariffSettings.FillInBasicPropertyName(testData.InputData.CommonName);
-            TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
-            TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
-            TOUBasicTariffSettings.FillInBasicPropertyValleyPriceValue(testData.InputData.ValleyPrice);
-
-            //Click '添加峰时范围''添加谷时范围' links and also Fill in the ranges
-            TOUBasicTariffSettings.AddPeakRanges(testData);
-            TOUBasicTariffSettings.AddValleyRanges(testData);
-
-            //Click 'x' icons to delete some peak/valley items
-            TOUBasicTariffSettings.ClickDeletePeakRangeItemButton(2);
-            TOUBasicTariffSettings.ClickDeleteValleyRangeItemButton(2);
-
-            //Change a range with new start/end time
-            TOUBasicTariffSettings.SelectBasicPropertyPeakStartTime("08:00", 1);
-            TOUBasicTariffSettings.SelectBasicPropertyPeakEndTime("11:30", 1);
-
-            //Click "Save" button
-            TOUBasicTariffSettings.ClickBasicPropertySaveButton();
-            TimeManager.MediumPause();
-
-            //Start to verify
-            TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName); 
-            //Verify
             Assert.AreEqual(testData.InputData.CommonName, TOUBasicTariffSettings.GetBasicPropertyNameValue());
             Assert.AreEqual(testData.InputData.PlainPrice, TOUBasicTariffSettings.GetBasicPropertyPlainPriceValue());
             Assert.AreEqual(testData.InputData.PeakPrice, TOUBasicTariffSettings.GetBasicPropertyPeakPriceValue());
             Assert.AreEqual(testData.InputData.ValleyPrice, TOUBasicTariffSettings.GetBasicPropertyValleyPriceValue());
-                        
+
+            //Verify Peak1 and Valley1 time ranges are added successfully.
+            Assert.AreEqual(testData.InputData.PeakRange[0].StartTime, TOUBasicTariffSettings.GetBasicPropertyPeakStartTimeValue(1));
+            Assert.AreEqual(testData.InputData.PeakRange[0].EndTime, TOUBasicTariffSettings.GetBasicPropertyPeakEndTimeValue(1));                     
+            Assert.AreEqual(testData.InputData.ValleyRange[0].StartTime, TOUBasicTariffSettings.GetBasicPropertyValleyStartTimeValue(1));
+            Assert.AreEqual(testData.InputData.ValleyRange[0].EndTime, TOUBasicTariffSettings.GetBasicPropertyValleyEndTimeValue(1));            
         }
         #endregion
 
-        #region TestCase3 EmptyItemNotDisplay
+        #region TestCase2 AddTOUComplexedTimeRanges
         [Test]
-        [ManualCaseID("TC-J1-FVT-TOUTariffSetting-Add-103")]
-        [CaseID("TC-J1-FVT-TOUTariffSetting-Add-103")]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Add-102")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Add-102")]
         [Priority("2")]
-        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffAddValidSuite), "TC-J1-FVT-TOUTariffSetting-Add-103")]
-        public void EmptyItemNotDisplay(TOUBasicTariffData testData)
+        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffAddValidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Add-102")]
+        public void AddTOUComplexedTimeRanges(TOUBasicTariffData testData)
         {
             //Click '+峰谷电价' button
             TOUBasicTariffSettings.ClickBasicPropertyCreateButton();
             TimeManager.ShortPause();
 
-            //Fill in all fields with valid inputs, without plain price
+            //Fill in text fields with valid inputs
             TOUBasicTariffSettings.FillInBasicPropertyName(testData.InputData.CommonName);
+            TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
             TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
             TOUBasicTariffSettings.FillInBasicPropertyValleyPriceValue(testData.InputData.ValleyPrice);
+
+            //Add Peak1,2 and Valley1,2,3 time ranges
             TOUBasicTariffSettings.AddPeakRanges(testData);
             TOUBasicTariffSettings.AddValleyRanges(testData);
+
+            //Click 'x' icons to delete peak2, delete valley2
+            TOUBasicTariffSettings.ClickDeletePeakRangeItemButton(2);
+            TOUBasicTariffSettings.ClickDeleteValleyRangeItemButton(2);
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
             TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitLoading();
 
-            //Start to verify
-            TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);        
-            //Verify the plain price is not displayed in view mode.
-            Assert.IsTrue(TOUBasicTariffSettings.IsPlainPriceHidden());
+            //verify add successful
+            Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
+            Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
+
+            //Verify all the information displayed in Modify status are samed as input when addition.            
+            TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);
+            Assert.AreEqual(testData.InputData.CommonName, TOUBasicTariffSettings.GetBasicPropertyNameValue());
+            Assert.AreEqual(testData.InputData.PlainPrice, TOUBasicTariffSettings.GetBasicPropertyPlainPriceValue());
+            Assert.AreEqual(testData.InputData.PeakPrice, TOUBasicTariffSettings.GetBasicPropertyPeakPriceValue());
+            Assert.AreEqual(testData.InputData.ValleyPrice, TOUBasicTariffSettings.GetBasicPropertyValleyPriceValue());
+
+            //Verify Peak1 and Valley1,3 time ranges are added successfully.
+            Assert.AreEqual(testData.InputData.PeakRange[0].StartTime, TOUBasicTariffSettings.GetBasicPropertyPeakStartTimeValue(1));
+            Assert.AreEqual(testData.InputData.PeakRange[0].EndTime, TOUBasicTariffSettings.GetBasicPropertyPeakEndTimeValue(1));
+            Assert.AreEqual(testData.InputData.ValleyRange[0].StartTime, TOUBasicTariffSettings.GetBasicPropertyValleyStartTimeValue(1));
+            Assert.AreEqual(testData.InputData.ValleyRange[0].EndTime, TOUBasicTariffSettings.GetBasicPropertyValleyEndTimeValue(1));
+            Assert.AreEqual(testData.InputData.ValleyRange[2].StartTime, TOUBasicTariffSettings.GetBasicPropertyValleyStartTimeValue(2));
+            Assert.AreEqual(testData.InputData.ValleyRange[2].EndTime, TOUBasicTariffSettings.GetBasicPropertyValleyEndTimeValue(2));                          
         }
         #endregion
-        
+
     }
 }

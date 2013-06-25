@@ -35,16 +35,16 @@ namespace Mento.Script.Administration.TOU
         {
         }
 
-        #region TestCase1 DeleteSuccessful
+        #region TestCase1 DeleteTOUSuccessful
         /// <summary>
         /// Pre-condition: Prepare a TOU with name '价格未被引用For删除确认', make sure it is NOT being used by any hierarchy node.
         /// </summary>
         [Test]
-        [ManualCaseID("TC-J1-FVT-TOUTariffSetting-Delete-101")]
-        [CaseID("TC-J1-FVT-TOUTariffSetting-Delete-101")]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Delete-101")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Delete-101")]
         [Priority("2")]
-        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffDeleteSuite), "TC-J1-FVT-TOUTariffSetting-Delete-101")]
-        public void DeleteSuccessful(TOUBasicTariffData testData)
+        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffDeleteSuite), "TC-J1-FVT-TOUTariffSettingBasic-Delete-101")]
+        public void DeleteTOUSuccessful(TOUBasicTariffData testData)
         {
             //Select a TOU, make sure it is not beeing used by any hierarchy node.
             TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);
@@ -64,16 +64,16 @@ namespace Mento.Script.Administration.TOU
         }
         #endregion
 
-        #region TestCase2 DeleteCancelled
+        #region TestCase2 DeleteTOUCancelled
         /// <summary>
         /// Pre-condition: Prepare a TOU with name '价格未被引用For删除取消', make sure it is NOT being used by any hierarchy node.
         /// </summary>
         [Test]
-        [ManualCaseID("TC-J1-FVT-TOUTariffSetting-Delete-001")]
-        [CaseID("TC-J1-FVT-TOUTariffSetting-Delete-001")]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Delete-001")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Delete-001")]
         [Priority("2")]
-        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffDeleteSuite), "TC-J1-FVT-TOUTariffSetting-Delete-001")]
-        public void DeleteCancelled(TOUBasicTariffData testData)
+        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffDeleteSuite), "TC-J1-FVT-TOUTariffSettingBasic-Delete-001")]
+        public void DeleteTOUCancelled(TOUBasicTariffData testData)
         {
             //Select a TOU, make sure it is not beeing used by any hierarchy node.
             TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);        
@@ -103,16 +103,16 @@ namespace Mento.Script.Administration.TOU
         }
         #endregion
 
-        #region TestCase3 DeleteFailed
+        #region TestCase3 DeleteTOUFailed
         /// <summary>
         /// Pre-condition: Prepare a TOU with name '价格已被引用For删除', make sure it has been used by a hierarchy node.
         /// </summary>
         [Test]
-        [ManualCaseID("TC-J1-FVT-TOUTariffSetting-Delete-002")]
-        [CaseID("TC-J1-FVT-TOUTariffSetting-Delete-002")]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Delete-002")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Delete-002")]
         [Priority("2")]
-        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffDeleteSuite), "TC-J1-FVT-TOUTariffSetting-Delete-002")]
-        public void DeleteFailed(TOUBasicTariffData testData)
+        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffDeleteSuite), "TC-J1-FVT-TOUTariffSettingBasic-Delete-002")]
+        public void DeleteTOUFailed(TOUBasicTariffData testData)
         {
             //Select a TOU, make sure it is not beeing used by any hierarchy node.
             TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);

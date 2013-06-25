@@ -214,6 +214,7 @@
       <hierarchyassociation>
         <add key = "ButtonAssociationSettingsTagAssociate" value = "st-tagassoc-taggrid-assoc" type = "ID"/>
         <add key = "ButtonAssociationSettingsAssociate" value = "st-tagassoc-taggrid-assocaction" type = "ID"/>
+        <add key = "ButtonAssociatedTagRemove" value = "//div[@id='st-tagassoc-tagcontainer-container-bodyEl']/div[contains(@class, 'x-removable-item') and span[text()='$#nameIndex']]/span[contains(@class, 'x-btn-icon')]" type = "XPath"/>
       </hierarchyassociation>                                    
       <hierarchydisassociation>
         <add key = "ButtonAssociationSettingsDisassociate" value = "st-tagassoc-taggrid-unassoc-btnInnerEl" type = "ID"/>
@@ -685,5 +686,8 @@
     <add key="ContainerHCErrorTips" value="st-hierarchy-calendar-coldwarm-container-errorEl" type="ID"/>
     <add key="ContainerDayNightErrorTips" value="st-hierarchy-calendar-daynight-container-errorEl" type="ID"/>
   </hierarchypeopertysettings>
+    <Associate>
+      <add key="ContainerAssociatedTags" value="//div[@id='st-tagassoc-tagcontainer-container-bodyEl']/div" type="XPath"/>
+    </Associate>
 </Container>
 </WebElement>

@@ -106,9 +106,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
             try
             {
                 IWebElement row = GetRow(cellIndex, cellText);
-                return row != null;
+                //return row != null;
+                return true;
             }
-            catch
+            catch(Exception)
             {
                 return false;
             }

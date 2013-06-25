@@ -76,8 +76,11 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             //Select the node which want to change
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.ShortPause();
             HierarchySettings.ClickModifyButton();
+            TimeManager.ShortPause();
             HierarchySettings.FillInHierarchyNode(input.InputData);
+            TimeManager.ShortPause();
 
             //Click "Save" button
             TimeManager.MediumPause();
@@ -119,7 +122,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Verify that the code is not modified
             Assert.AreEqual(input.ExpectedData.CommonName, HierarchySettings.GetNameValue());
             Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetcodeValue());
-            Assert.AreEqual(input.ExpectedData.Comments, HierarchySettings.GetCommentValue());
         }
     }
 }

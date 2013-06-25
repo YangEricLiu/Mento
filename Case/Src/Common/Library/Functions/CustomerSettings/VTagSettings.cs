@@ -100,7 +100,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             try
             {
-                VTagList.FocusOnRow(1, vtagName);
+                VTagList.FocusOnRow(2, vtagName);
                 return true;
             }
             catch(Exception)
@@ -506,6 +506,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsNameInvalidMsgCorrect(VtagOuputData output)
         {
             return NameTextField.GetInvalidTips().Contains(output.CommonName);
+        }
+
+        public Boolean IsNameInvalidMsgCorrect(string msg)
+        {
+            return NameTextField.GetInvalidTips().Contains(msg);
         }
 
         /// <summary>

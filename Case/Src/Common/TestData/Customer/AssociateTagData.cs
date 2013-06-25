@@ -17,6 +17,7 @@ namespace Mento.ScriptCommon.TestData.Customer
             public string[] AreaDimensionPath { get; set; }
             public string TagName { get; set; }
             public string[] TagNames { get; set; }
+            public string[] RemovedTagNames { get; set; }
         }
 
         public class AssociateTagExpectedData : VtagOuputData
@@ -28,6 +29,7 @@ namespace Mento.ScriptCommon.TestData.Customer
             public string[] TagNames { get; set; }
             public string Message { get; set; }
             public string ErrorMessage { get; set; }
+            public string[] RemovedTagNames { get; set; }
         }
 
 }

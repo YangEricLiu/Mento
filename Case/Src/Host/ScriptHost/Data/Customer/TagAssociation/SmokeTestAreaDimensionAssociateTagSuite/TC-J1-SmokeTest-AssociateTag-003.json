@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["AutoTest", "AddCalendarProperty","AddPeopleProperty"],
-			"SystemDimensionPath":["AddPeopleProperty", "FirstFloor"],
+			"AreaDimensionPath":["AddPeopleProperty", "FirstFloor"],
 			"TagName":"Formula_P2",
 		},
 		"ExpectedData":

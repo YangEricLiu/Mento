@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenQA.Selenium;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
@@ -16,8 +17,18 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
+        #region controls
+
         private HierarchyTree HierarchyTree = JazzTreeView.AssociationHierarchyTree;
         private Grid TagList = JazzGrid.AssociationTagList;
+        private Button AssociationSettingsCancel = JazzButton.AssociationSettingCancel;
+        private Button Association = JazzButton.AssociationSettingsAssociate;
+        private Button AssociationTag = JazzButton.AssociationSettingsTagAssociate;
+        private Container AssociatedTags = JazzContainer.AssociatedTagsContainer;
+       
+        #endregion
+
+        #region common
 
         public void ExpandHierarchyNodePath(string[] hierarchyNodePath)
         {
@@ -56,6 +67,58 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Navigate to systemdimension associate setting
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void NavigateToSystemDimensionAssociate()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationSystemDimension);
+        }
+
+        /// <summary>
+        /// Navigate to areadimension associate setting
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void NavigateToAreaDimensionAssociate()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
+        }
+
+        /// <summary>
+        /// Click the "associate tags" button
+        /// </summary>
+        /// <returns></returns>
+        public void ClickAssociateTagButton()
+        {
+            AssociationTag.Click();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+        }
+
+        public bool IsAssociateTagButtonDisplayed()
+        {
+            return AssociationTag.IsDisplayed();
+        }
+
+        /// <summary>
+        /// Click the "Cancel" button
+        /// </summary>
+        /// <returns></returns>
+        public void ClickCancelButton()
+        {
+            AssociationSettingsCancel.Click();
+        }
+
+        public bool IsCancelButtonDisplayed()
+        {
+            return AssociationSettingsCancel.IsDisplayed();
+        }
+        #endregion
+
+        #region Actions
+
+        /// <summary>
         /// Click the check box in the front of tag
         /// </summary>
         /// <param name = "tagName">the tag name</param>
@@ -66,13 +129,21 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Click the "associate tags" button
+        /// Click the check box in the front of tags
         /// </summary>
+        /// <param name = "tagNames">the tag name</param>
         /// <returns></returns>
-        public void ClickAssociateTagButton()
+        public void CheckedTags(string[] tagNames)
         {
-            JazzButton.AssociationSettingsTagAssociate.Click();
-            JazzMessageBox.LoadingMask.WaitLoading();
+            foreach (string tagName in tagNames)
+            {
+                TagList.CheckRowCheckbox(3, tagName);
+            }          
+        }
+
+        public bool IsTagChecked(string tagName)
+        {
+            return TagList.IsRowChecked(3, tagName);
         }
 
         /// <summary>
@@ -81,9 +152,50 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickAssociateButton()
         {
-            JazzButton.AssociationSettingsAssociate.Click();
-            //JazzMessageBox.LoadingMask.WaitLoading();
+            Association.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
+
+        public bool IsAssociateButtonDisplayed()
+        {
+            return Association.IsDisplayed();
+        }
+
+        public void RemoveTag(string tagName)
+        {
+            Button tagRemoveButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonAssociatedTagRemove, tagName);
+
+            tagRemoveButton.Click();
+        }
+
+        public void RemoveTags(string[] tagNames)
+        {
+            foreach (string tagName in tagNames)
+            {
+                Button tagRemoveButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonAssociatedTagRemove, tagName);
+
+                tagRemoveButton.Click();
+            }
+        }
+
+        public bool IsRemoveTagExisted(string tagName)
+        {
+            Button tagRemoveButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonAssociatedTagRemove, tagName);
+            
+            try 
+            {   
+                tagRemoveButton.IsDisplayed();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region verification
 
         /// <summary>
         /// Judge if the associated tag is displayed
@@ -93,5 +205,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return TagList.IsRowExist(3, tagName);
         }
+
+        #endregion
     }
 }

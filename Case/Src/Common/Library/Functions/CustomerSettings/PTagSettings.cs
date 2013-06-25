@@ -75,7 +75,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             try
             {
-                PTagList.FocusOnRow(1, ptagName);
+                PTagList.FocusOnRow(2, ptagName);
                 return true;
             }
             catch(Exception)
@@ -113,6 +113,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickSaveButton()
         {
+            JazzMessageBox.LoadingMask.WaitLoading();
             SaveButton.Click();
         }
 
@@ -215,6 +216,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillIncode(string code)
         {
             CodeTextField.Fill(code);
+        }
+
+        public void FillInName(string name)
+        {
+            NameTextField.Fill(name);
         }
 
         #endregion
@@ -362,6 +368,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsNameInvalidMsgCorrect(PtagExpectedData output)
         {
             return NameTextField.GetInvalidTips().Contains(output.CommonName);
+        }
+
+        public Boolean IsNameInvalidMsgCorrect(string msg)
+        {
+            return NameTextField.GetInvalidTips().Contains(msg);
         }
 
         /// <summary>

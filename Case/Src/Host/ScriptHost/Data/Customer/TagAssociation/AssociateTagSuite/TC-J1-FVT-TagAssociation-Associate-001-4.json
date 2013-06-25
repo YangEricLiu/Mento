@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{
+			"TagNames":["P_Asso_001_4_1", "P_Asso_001_4_2", "V_Asso_001_4_1", "V_Asso_001_3_2"],		
+		},
+		"ExpectedData":
+		{
+			"Message":"该名称已存在",
+		}
+	}
+]

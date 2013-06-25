@@ -1,0 +1,48 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1"],		
+		},
+		"ExpectedData":
+		{
+			"TagName":"P_Asso_001_3_1",
+		}
+	},
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1", "AssociateTagBuild1"],
+			"SystemDimensionPath":["AssociateTagBuild1", "空调"],
+			
+		},
+		"ExpectedData":
+		{
+			"TagName":"P_Asso_001_3_2",
+		}
+	},
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1"],
+			"SystemDimensionPath":["AssociateTagSite1", "关键"],
+			
+		},
+		"ExpectedData":
+		{
+			"TagName":"V_Asso_001_3_1",
+		}
+	},
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1","AssociateTagBuild1"],
+			"AreaDimensionPath":["AssociateTagBuild1", "关联数据点一层"],
+			
+		},
+		"ExpectedData":
+		{
+			"TagName":"V_Asso_001_3_2",
+		}
+	}
+]

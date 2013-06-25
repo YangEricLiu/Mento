@@ -228,6 +228,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region hierarchydisassociation
         public static string ButtonAssociationSettingsDisassociate = "ButtonAssociationSettingsDisassociate";
         public static string ButtonAssociationSettingsCancel = "ButtonAssociationSettingsCancel";
+        public static string ButtonAssociatedTagRemove = "ButtonAssociatedTagRemove";
         #endregion
 
         #region systemdimensionassociation
@@ -748,6 +749,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Hierarchy Cost Property
         public static string ContainerWaterCostValueItems = "ContainerWaterCostValueItems";
         public static string ContainerElectricCostValueItems = "ContainerElectricCostValueItems";
+        
+        #endregion
+
+        #region Associate
+        public static string ContainerAssociatedTags = "ContainerAssociatedTags";
         
         #endregion
 

@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1", "AssociateTagBuild1"],
+			"SystemDimensionPath":["AssociateTagBuild1"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1", "AssociateTagBuild1"],
+			"AreaDimensionPath":["AssociateTagBuild1"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

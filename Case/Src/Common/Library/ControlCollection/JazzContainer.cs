@@ -29,6 +29,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region Associate
+        public static Container AssociatedTagsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerAssociatedTags);
+        
+        #endregion
+
         #endregion
 
     }

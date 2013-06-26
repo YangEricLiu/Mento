@@ -2,8 +2,8 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckSameCode",
-			"Code":"VtagCode",
+			"CommonName":"VtagForInvalidSameCode",
+			"Code":"VtagForInvalidSameCode",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
 			"Step":"Hourly",
@@ -11,7 +11,7 @@
 		},
 		"ExpectedData":
 		{
-			"Message":"该编码已存在",
+			"Code":"该编码已存在",
 		}
 	}
 ]

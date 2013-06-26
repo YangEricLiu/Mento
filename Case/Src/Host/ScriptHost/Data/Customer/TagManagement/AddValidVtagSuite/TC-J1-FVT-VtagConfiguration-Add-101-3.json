@@ -14,7 +14,7 @@
 		"ExpectedData":
 		{
 			"CommonName":"VtagForTestFormula",
-			“Code”:"PtagUseredByVtagFormula",
+			"Message":"PtagUseredByVtagFormula",
 		}
 	}
 ]

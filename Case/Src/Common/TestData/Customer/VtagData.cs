@@ -39,5 +39,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Comment { get; set; }
         public string Message { get; set; }
         public string[] MessageArray { get; set; }
+        public string FormulaMessage { get; set; }
     }
 }

@@ -37,7 +37,9 @@ namespace Mento.Script.Customer.TagManagement
         {
             JazzFunction.Navigator.NavigateHome();
         }
-
+        /// <summary>
+        /// Prepare Data:  1. make sure the vtags have been added "VtagForModifyInvalid"
+        /// </summary> 
         [Test]
         [CaseID("TC-J1-FVT-VtagConfiguration-Modify-001-1")]
         [Type("BFT")]

@@ -35,7 +35,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DeleteButton = JazzButton.VTagSettingsDeleteButton;
         private static Button VTagSettingsFormulaUpdate = JazzButton.VTagSettingsFormulaUpdateButton;
         private static Button VTagSettingsFormulaSave = JazzButton.VTagSettingsFormulaSaveButton;
-
+        private static TextField FormulaTextField = JazzTextField.VFormulaField;
         private static TextField NameTextField = JazzTextField.VTagSettingsNameTextField;
         private static TextField codeTextField = JazzTextField.VTagSettingscodeTextField;
         private static ComboBox CommodityComboBox = JazzComboBox.VTagSettingsCommodityComboBox;
@@ -119,7 +119,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             try
             {
-                VTagList.FocusOnRow(2, vtagCode);
+                VTagList.FocusOnRow(3, vtagCode);
                 return true;
             }
             catch (Exception)
@@ -508,10 +508,28 @@ namespace Mento.ScriptCommon.Library.Functions
             return NameTextField.GetInvalidTips().Contains(output.CommonName);
         }
 
-        public Boolean IsNameInvalidMsgCorrect(string msg)
+
+
+
+        /// <summary>
+        /// Judge whether the formula textfield is invalid
+        /// </summary>
+        /// <returns>True if the formula is invalid, false if not</returns>
+        public Boolean IsFormulaInvalid()
         {
-            return NameTextField.GetInvalidTips().Contains(msg);
+            return FormulaTextField.IsTextFieldValueInvalid();
         }
+
+        /// <summary>
+        /// Judge whether invalid message of Formula field is correct
+        /// </summary>
+        /// <param name="output">VtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsFormulaInvalidMsgCorrect(VtagOuputData output)
+        {
+            return FormulaTextField.GetInvalidTips().Contains(output.FormulaMessage);
+        }
+
 
         /// <summary>
         /// Judge whether the code textfield is invalid
@@ -589,6 +607,26 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return UomComboBox.GetInvalidTips().Contains(output.UOM);
         }
+
+        /// <summary>
+        /// Judge whether the Step textfield is invalid
+        /// </summary>
+        /// <returns>True if the Step is invalid, false if not</returns>
+        public Boolean IsStepInvalid()
+        {
+            return CalculationStepComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">VtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsStepInvalidMsgCorrect(VtagOuputData output)
+        {
+            return CalculationStepComboBox.GetInvalidTips().Contains(output.Step);
+        }
+
 
         /// <summary>
         /// Judge whether the CalculationType textfield is invalid

@@ -11,7 +11,6 @@
 		"ExpectedData":
 		{
 			"AreaNodePath":["楼宇配置测试","ModifyAreaNodeVerify"],
-			"CommonName":"ModifyArea4",
 		}
 	}
 ]

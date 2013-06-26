@@ -38,7 +38,9 @@ namespace Mento.Script.Customer.TagManagement
         {
             JazzFunction.Navigator.NavigateHome();
         }
-
+        /// <summary>
+        /// Prepare Data:  1. make sure the vtags have been added "VtagForInvalidSameCode","VtagForInvalidFormula" had formula "PtagByFormula";
+        /// </summary> 
         [Test]
         [CaseID("TC-J1-FVT-VtagConfiguration-Add-001-1")]
         [Type("BFT")]
@@ -79,15 +81,22 @@ namespace Mento.Script.Customer.TagManagement
             //verify add successful
             Assert.IsTrue(VTagSettings.IsSaveButtonDisplayed());
             Assert.IsTrue(VTagSettings.IsCancelButtonDisplayed());
-            
+            //problem here
             //Verify that the error message popup and the input field is invalid
             Assert.IsTrue(VTagSettings.IsNameInvalid());
             Assert.IsTrue(VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(VTagSettings.IscodeInvalid());
             Assert.IsTrue(VTagSettings.IscodeInvalidMsgCorrect(input.ExpectedData));
-            //Assert.IsTrue(VTagSettings.IsCommentsInvalid());
-            //Assert.IsTrue(VTagSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
-            
+            Assert.IsTrue(VTagSettings.IsCommodityInvalid());
+            Assert.IsTrue(VTagSettings.IsCommodityInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(VTagSettings.IsCalculationTypeInvalid());
+            Assert.IsTrue(VTagSettings.IsCalculationTypeInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(VTagSettings.IsUomInvalid());
+            Assert.IsTrue(VTagSettings.IsUomInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(VTagSettings.IsStepInvalid());
+            Assert.IsTrue(VTagSettings.IsStepInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(VTagSettings.IsCommentsInvalid());
+            Assert.IsTrue(VTagSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
         }
        
       [Test]
@@ -132,18 +141,18 @@ namespace Mento.Script.Customer.TagManagement
           //Click "+" button and fill Vtag field with same code
           VTagSettings.ClickAddVTagButton();
           VTagSettings.FillInAddVTagData(input.InputData);
-
+          TimeManager.ShortPause();
           //Click "Save" button
           VTagSettings.ClickSaveButton();
           TimeManager.MediumPause();
-
+          //Verify that the error message popup and the input field is invalid
+          Assert.IsTrue(VTagSettings.IscodeInvalid());
+          Assert.IsTrue(VTagSettings.IscodeInvalidMsgCorrect(input.ExpectedData));
           //verify add successful
           Assert.IsTrue(VTagSettings.IsSaveButtonDisplayed());
           Assert.IsTrue(VTagSettings.IsCancelButtonDisplayed());
 
-          //Verify that the error message popup and the input field is invalid
-          Assert.IsTrue(VTagSettings.IscodeInvalid());
-          Assert.IsTrue(VTagSettings.IscodeInvalidMsgCorrect(input.ExpectedData));
+
       }
 
       [Test]
@@ -159,13 +168,15 @@ namespace Mento.Script.Customer.TagManagement
           JazzFunction.VTagSettings.SwitchToFormulaTab();
           TimeManager.LongPause();
           JazzFunction.VTagSettings.ClickModifyFormulaButton();
+          JazzMessageBox.LoadingMask.WaitSubMaskLoading();
           TimeManager.MediumPause();
 
           //  Clear formula content
           JazzFunction.VTagSettings.FillInFormulaField("  ");
+          TimeManager.ShortPause();
           JazzFunction.VTagSettings.ClickSaveFormulaButton();
-          Assert.IsTrue(VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData));
-          //Problem here : no error messsge method "st-formula-text-errorEl" 
+          TimeManager.ShortPause();
+          Assert.IsTrue(VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData));
 
           
       }

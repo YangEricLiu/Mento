@@ -2,12 +2,12 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckFormula",
-			"Code":"VtagForCheckFormula",
+			"CommonName":"VtagForInvalidFormula",
+			"Code":"VtagForInvalidFormula",
 		},
 		"ExpectedData":
 		{
-			"Message":"计算公式的格式有误，请检查。",
+			"FormulaMessage":"计算公式的格式有误，请检查。",
 		}
 	}
 ]

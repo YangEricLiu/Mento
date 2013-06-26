@@ -9,6 +9,8 @@
 		"ExpectedData":
 		{
 			"AreaNodePath":["楼宇配置测试","CheckAll"],
+			"Message":"删除区域维度节点“CheckAll”吗？\r\n您将同时删除区域维度节点下所有的子节点，数据点关联关系，以及间接关联的所有信息。",
+
 		}
 	}
 ]

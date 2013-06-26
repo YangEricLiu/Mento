@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckDelete001",
+			"CommonName":"VtagForDel001",
 			"Code":"VtagCode",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
@@ -12,8 +12,8 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagForCheckDelete001",
-			"Message":"删除计量数据V“VtagForCheckDelete001”吗？",
+			"CommonName":"VtagForDel001",
+			"Message":"删除计量数据V“VtagForDel001”吗？",
 		}
 	}
 ]

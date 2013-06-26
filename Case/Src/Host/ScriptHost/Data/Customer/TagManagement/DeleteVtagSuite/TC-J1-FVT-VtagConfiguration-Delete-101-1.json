@@ -2,16 +2,16 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckAll",
-			"Code":"VtagForCheckAll",
+			"CommonName":"VtagForDel002",
+			"Code":"VtagForDel002",
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagForCheckAll",
+			"CommonName":"VtagForDel002",
 			"HierarchyNodePath":["自动化测试", "AutoSite_Vtag","CheckModifyVtag"],
-			"AreaNodePath":["CheckModifyVtag","一层"],
+			"AreaNodePath":["CheckModifyVtag","FirstFloor"],
 			"SystemNodePath":["CheckModifyVtag","空调"],
-			"Message":"删除计量数据V“VtagForCheckAll”吗？",
+			"Message":"删除计量数据V“VtagForDel002”吗？",
 		}
 	}
 ]

@@ -33,7 +33,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
                 //JazzMessageBox.LoadingMask.WaitLoading();
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.ShortPause();
+                TimeManager.MediumPause();
             }
         }
 

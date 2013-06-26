@@ -134,6 +134,8 @@
     <Folder Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUBasicTariffAddValidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUBasicTariffModifyInvalidSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffAddInvalidSuite\" />
+    <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffModifyInvalidSuite\" />
     <Folder Include="Data\Administration\User\UserManagementAddInvalid\" />
     <Folder Include="Data\Administration\User\UserManagementAddValid\" />
     <Folder Include="Data\Administration\User\UserManagementModifyValid\" />

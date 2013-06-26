@@ -23,8 +23,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button ModifyButton = JazzButton.AreaDimensionSettingsModifyButton;
         private static Button DeleteButton = JazzButton.AreaDimensionSettingsDeleteButton;
         //added
-        private static Button ConfirmDeleteButton = JazzButton.AreaDimensionSettingsConfirmDeleteButton;
-        private static Button CancelDeleteButton = JazzButton.AreaDimensionSettingsCancelDeleteButton;
+        //private static Button ConfirmDeleteButton = JazzButton.AreaDimensionSettingsConfirmDeleteButton;
+        //private static Button CancelDeleteButton = JazzButton.AreaDimensionSettingsCancelDeleteButton;
 
         private static TextField NameTextField = JazzTextField.AreaDimensionSettingsNameTextField;
         private static TextField CommentTextField = JazzTextField.AreaDimensionSettingsCommentTextField;
@@ -69,19 +69,36 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             CancelButton.Click();
         }
-        public void ClickDeleteConfirmButton()
-        {
-            ConfirmDeleteButton.Click();
-        }
+
 
         public void ClickDeleteButton()
         {
             DeleteButton.Click();
         }
         //greenie add
+        /*
         public void ClickCancelDeleteButton()
         {
             DeleteButton.Click();
+        }
+         */
+        /// <summary>
+        /// Confirm the popup error message box
+        /// </summary>
+        /// <returns></returns>
+        public void ConfirmErrorMsgBox()
+        {
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+        /// <summary>
+        /// Cancel the popup error message box
+        /// </summary>
+        /// <returns></returns>
+        public void CancelErrorMsgBox()
+        {
+            JazzMessageBox.MessageBox.Cancel();
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         public void SelectAreaDimensionNode(string areaDimensionNodeName)

@@ -11,11 +11,11 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagForCheckAll",
-			"Code":"VtagForCheckAll",
+			"CommonName":"VtagForModifyInvalid",
+			"Code":"VtagForModifyInvalid",
 			"Commodity":"Water",
 			"Uom":"Ton",
-			"Step":"Monthly",
+			"Step":"Hourly",
 			"CalculationType":"Sum",
 		}
 	}

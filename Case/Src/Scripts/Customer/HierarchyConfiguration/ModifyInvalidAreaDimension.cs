@@ -101,7 +101,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-ModifyInvalidAreaNode")]
         [Type("BFT")]
         [IllegalInputValidation(typeof(AreaDimensionData[]))]
-        public void AddInValidAreaNode(AreaDimensionData input)
+        public void ModifyInvalidAreaNode(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
             string[] HierarchyNodePath = new string[]{"自动化测试","测试楼宇园区","楼宇配置测试"};

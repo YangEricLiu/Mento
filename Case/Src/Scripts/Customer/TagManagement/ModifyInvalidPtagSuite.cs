@@ -86,12 +86,12 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click "Save" button
             PTagSettings.ClickSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //verify modify successful
             Assert.IsTrue(PTagSettings.IsSaveButtonDisplayed());
             Assert.IsTrue(PTagSettings.IsCancelButtonDisplayed());
-
+            TimeManager.LongPause();
             //Verify the error message display "该名称已存在"
             Assert.IsTrue(PTagSettings.IsNameInvalid());
             Assert.IsTrue(PTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData));

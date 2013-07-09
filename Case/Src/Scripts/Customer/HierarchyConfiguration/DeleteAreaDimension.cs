@@ -46,7 +46,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         /// <summary>
         /// Precondition: make sure the hiearchy node has been added  "自动化测试", "测试楼宇园区", "楼宇配置测试"
         /// Prepare Data: 1.[楼宇配置测试""DeleteArea1"] ,["楼宇配置测试","L1","L2","L3","L4",]   [  "楼宇配置测试","CheckAll"]
-        ///                         2. an Vtag "VtagForAreaDimensionNode" has been assosiated under   [  "楼宇配置测试","CheckAll"]
+        ///                       2. an Vtag "VtagForAreaDimensionNode" has been assosiated under   [  "楼宇配置测试","CheckAll"]
         /// </summary>  
         [Test]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-Delete-001-DeleteAreaNodeThenCancels")]

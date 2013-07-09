@@ -2,16 +2,16 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckAll",
-			"Uom":"Ton",
+			"Uom":"KVARH",
 		},
 		"ExpectedData":
 		{
-			"HierarchyNodePath":["自动化测试", "CheckOnESSite001"],
-			"CommonName":"VtagForCheckAll1",
-			"Code":"VtagForCheckAll",
-			"Commodity":"Water",
-			"Uom":"Ton",
+			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","CheckModifyVtag"],
+			"CommonName":"VtagModify004",
+			"Code":"VtagModify004",
+			"Commodity":"Electricity",
+			"Uom":"KVARH",
+			"CalculationType":"Sum",
 		}
 	}
 ]

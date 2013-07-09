@@ -3,14 +3,14 @@
 		"InputData":
 		{	
 			"Uom":"KVARH",
-			"Message":"一层",
+			"Message":"FirstFloor",
 
 		},
 		"ExpectedData":
 		{
 			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","CheckModifyVtag"],
-			"AreaNodePath":["CheckModifyVtag","一层"],
-			"CommonName":"VtagForCheckAll",
+			"AreaNodePath":["CheckModifyVtag","FirstFloor"],
+			"CommonName":"VtagModify006",
 			"Code":"VtagForCheckAll",
 			"SystemNodePath":["CheckModifyVtag"," 空调"],
 			"Uom":"KVARH",

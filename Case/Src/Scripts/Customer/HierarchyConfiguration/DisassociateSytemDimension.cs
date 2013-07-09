@@ -28,6 +28,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         public void ScriptSetUp()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
+            TimeManager.LongPause();
         }
 
         [TearDown]
@@ -44,15 +45,20 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         { 
             //Display hierarchy tree -> click hierarchy node "自动化测试"... -> open system dimension dialog
             SystemSettings.ShowHierarchyTree();
-            TimeManager.ShortPause();
-            SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            SystemSettings.ShowSystemDimensionDialog();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
+            SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.LongPause();
+            SystemSettings.ShowSystemDimensionDialog();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
 
             //2.disassociate system dimension node
             SystemSettings.ExpandDialogSystemDimensionNodePath(input.InputData.SystemDimensionItemPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             SystemSettings.UncheckSystemDimensionNodeWithoutConfirm(input.InputData.SystemDimensionItemPath.Last());
-
+            TimeManager.ShortPause();
             //Message box popup and cancel it
             string msgText = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
@@ -61,10 +67,12 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.ShortPause();
 
             SystemSettings.CloseSystemDimensionDialog();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
 
             //Expand system dimension tree and verify the node is not disassociated
             SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath);
+            TimeManager.MediumPause();
             Assert.IsTrue(SystemSettings.IsSystemDimensionNodeDisplayed(input.InputData.SystemDimensionItemPath.Last()));
         }
 
@@ -76,29 +84,37 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             //Display hierarchy tree -> click hierarchy node "自动化测试"... -> open system dimension dialog
             SystemSettings.ShowHierarchyTree();
-            TimeManager.ShortPause();
-            SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            SystemSettings.ShowSystemDimensionDialog();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
+            SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            SystemSettings.ShowSystemDimensionDialog();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
 
             //2.disassociate system dimension node
             SystemSettings.ExpandDialogSystemDimensionNodePath(input.InputData.SystemDimensionItemPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
             SystemSettings.UncheckSystemDimensionNodeWithoutConfirm(input.InputData.SystemDimensionItemPath.Last());
-
+            TimeManager.MediumPause();
             //Message box popup and confirm it
             string msgText = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             JazzMessageBox.MessageBox.OK();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             SystemSettings.CloseSystemDimensionDialog();
-            TimeManager.ShortPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
 
             //Expand system dimension tree and verify the node is not disassociated
             SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath);
+            TimeManager.LongPause();
             Assert.IsTrue(SystemSettings.IsSystemDimensionNodeDisplayed(input.ExpectedData.SystemDimensionPath.Last()));
-
+            TimeManager.MediumPause();
             if (!String.IsNullOrEmpty(input.ExpectedData.SystemDimensionNode))
             {
                 Assert.IsTrue(SystemSettings.IsSystemDimensionNodeDisplayed(input.ExpectedData.SystemDimensionNode));
@@ -113,14 +129,25 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             //Display hierarchy tree -> click hierarchy node "自动化测试"... -> open system dimension dialog
             SystemSettings.ShowHierarchyTree();
-            TimeManager.ShortPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+        
             SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            SystemSettings.ShowSystemDimensionDialog();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
+            SystemSettings.ShowSystemDimensionDialog();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
 
             //2.disassociate system dimension node
             SystemSettings.ExpandDialogSystemDimensionNodePath(input.InputData.SystemDimensionItemPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
             SystemSettings.UncheckSystemDimensionNodeWithoutConfirm(input.InputData.SystemDimensionItemPath.Last());
+            JazzMessageBox.LoadingMask.WaitLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
 
             //Message box popup and confirm it
             string msgText = JazzMessageBox.MessageBox.GetMessage();
@@ -130,10 +157,12 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.ShortPause();
 
             SystemSettings.ConfirmSystemDimensionDialog();
-            TimeManager.ShortPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
 
             //Expand system dimension tree and verify the node is not disassociated
             SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath);
+            TimeManager.LongPause();
             Assert.IsFalse(SystemSettings.IsSystemDimensionNodeDisplayed(input.ExpectedData.SystemDimensionPath.Last()));
         }
 
@@ -143,17 +172,26 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(SystemDimensionData[]), typeof(DisassociateSytemDimension), "TC-J1-FVT-SystemDimensionConfiguration-Disassociate-101-2")]
         public void DisssociateAndVerify(SystemDimensionData input)
         {
+            /*
             //Display hierarchy tree -> click hierarchy node "自动化测试"... -> open system dimension dialog
             SystemSettings.ShowHierarchyTree();
-            TimeManager.ShortPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             SystemSettings.ShowSystemDimensionDialog();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             TimeManager.MediumPause();
 
             //2.disassociate system dimension node
             SystemSettings.ExpandDialogSystemDimensionNodePath(input.InputData.SystemDimensionItemPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             SystemSettings.UncheckSystemDimensionNodeWithoutConfirm(input.InputData.SystemDimensionItemPath.Last());
-
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             //Message box popup and confirm it
             string msgText = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
@@ -162,22 +200,33 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.ShortPause();
 
             SystemSettings.ConfirmSystemDimensionDialog();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             TimeManager.ShortPause();
 
             //1. Expand system dimension tree and verify the node is not disassociated
             SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath);
+            TimeManager.LongPause();
             Assert.IsFalse(SystemSettings.IsSystemDimensionNodeDisplayed(input.ExpectedData.SystemDimensionPath.Last()));
+            TimeManager.LongPause();
 
             //2. Verify it on data association/system dimension
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationSystemDimension);
-            SystemSettings.ShowHierarchyTree();
-            TimeManager.ShortPause();
-            SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            Assert.IsFalse(SystemSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionItemPath));
+            //SystemSettings.ShowHierarchyTree();
+            TimeManager.LongPause();
+            //SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
 
+            Assert.IsFalse(SystemSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionItemPath));
+            */
             //3. Verify it on energy view
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.MediumPause();
+
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.SystemDimensionTab);
+            TimeManager.MediumPause();
             Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.SelectSystemDimension(input.ExpectedData.SystemDimensionPath));
         }
        

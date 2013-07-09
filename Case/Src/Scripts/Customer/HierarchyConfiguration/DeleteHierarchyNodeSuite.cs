@@ -31,6 +31,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             HierarchySettings.NavigatorToHierarchySetting();
             JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
         }
 
         [TearDown]
@@ -105,7 +106,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             string tag1 = "Ptag_OrgWithTags_Delete001";
             string tag2 = "Vtag_OrgWithTags_Delete001";
-
+            
             //Select one leaf node
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickDeleteButton();
@@ -120,12 +121,16 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify the node has been deleted
             Assert.IsFalse(HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
-
+            
             //verify the associated tags are on disassociated list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
             Assert.IsFalse(JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
-            JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
-            JazzFunction.AssociateSettings.ClickAssociateButton();
+            JazzFunction.AssociateSettings.SelectHierarchyNode(input.ExpectedData.HierarchyNodePath[0]);
+            //.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            JazzFunction.AssociateSettings.ClickAssociateTagButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(tag1));
             Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(tag2));
@@ -175,7 +180,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             string tag1 = "Ptag_OrgWithTags_Delete002";
             string tag2 = "Vtag_OrgWithTags_Delete002";
-
+            /*
             //Select one leaf node
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickDeleteButton();
@@ -190,12 +195,15 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify the node has been deleted
             Assert.IsFalse(HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
-
+            */
             //verify the associated tags are on disassociated list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
             Assert.IsFalse(JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
             JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
-            JazzFunction.AssociateSettings.ClickAssociateButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            JazzFunction.AssociateSettings.ClickAssociateTagButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(tag1));
             Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(tag2));

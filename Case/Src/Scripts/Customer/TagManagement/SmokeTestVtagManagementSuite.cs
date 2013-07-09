@@ -64,7 +64,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(testdata.InputData.Commodity), VTagSettings.GetVTagUOMValue());
             Assert.AreEqual(VTagSettings.GetVTagCalculationStepExpectedValue(testdata.InputData.Step), VTagSettings.GetVTagCalculationStepValue());
             Assert.AreEqual(VTagSettings.GetVTagCalculationTypeExpectedValue(testdata.InputData.CalculationType), VTagSettings.GetVTagCalculationTypeValue());
-            Assert.AreEqual(testdata.InputData.Comment, VTagSettings.GetVTagCommentValue());
+            Assert.AreEqual(testdata.InputData.Comments, VTagSettings.GetVTagCommentValue());
         }
        
     }

@@ -40,7 +40,10 @@ namespace Mento.Script.Customer.TagManagement
         /// <summary>
         /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"/"AutoSite_Vtag"/"CheckModifyVtag"
         /// Prepare Data: 1. add area dimension "一层" and system dimension "空调" for associate tag and lightened in either dimension Node
-        ///                       2. add vtag "VtagForCheckFormula" used by formula 
+        ///                       2. add vtag "VtagForCheckFormula" used by formula   "VtagModify001" ,
+        ///                       3. add vtag "VtagModify002"(formula:ptag"PtagByFormula"), "VtagFormula2"
+        ///                       4. add vtag "VtagModify003"  assosiated under ["自动化测试","AutoSite_Vtag","CheckModifyVtag"]  Need data here
+        ///                       5. add vtag "VtagModify004"  assosiated under ["自动化测试","AutoSite_Vtag","CheckModifyVtag"]  Need data here
         /// </summary> 
         [Test]
         [CaseID("TC-J1-FVT-VtagConfiguration-Modify-101-1")]
@@ -50,16 +53,18 @@ namespace Mento.Script.Customer.TagManagement
         {
 
             //Click "Modify" button and input nothing to vtag field
-            VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
+            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+            
             VTagSettings.ClickModifyButton();
-
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             //Click "Save" button
             VTagSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
             //verify modify successful
-            //Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
+            Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
             Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
 
             //Verify that vtag keep the same successfully
@@ -69,9 +74,8 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.ExpectedData.Commodity), VTagSettings.GetVTagCommodityValue());
             Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.ExpectedData.UOM), VTagSettings.GetVTagUOMValue());
             Assert.AreEqual(VTagSettings.GetVTagCalculationTypeExpectedValue(input.ExpectedData.CalculationType), VTagSettings.GetVTagCalculationTypeValue());
-            Assert.AreEqual(input.ExpectedData.Comment, VTagSettings.GetVTagCommentValue());
+            Assert.AreEqual(input.ExpectedData.Comments, VTagSettings.GetVTagCommentValue());
         }
-
 
         [Test]
         [CaseID("TC-J1-FVT-VtagConfiguration-Modify-101-2")]
@@ -79,11 +83,27 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Modify-101-2")]
         public void ModifyCodeAndCheckFormula(VtagData input)
         {
-            string vtagName = "VtagForCheckFormula";
-            string updatedFormula = "{vtag|VtagForCheckOnEA1}";
+            string vtagName = "VtagFormula2";
+            string updatedFormula = "{vtag|VtagCodeModified}";
 
             //Click "Modify" button and input new code to vtag field
-            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+
+            int i = 2;
+
+            bool flag = VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+
+            if ((!flag) & (i < 5))
+            {
+
+                VTagSettings.GotoPageOnVTagList(i);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+                flag = VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+                i = i + 1;
+            }
+
+
+            //VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
             VTagSettings.ClickModifyButton();
             VTagSettings.FillInAddVTagData(input.InputData);
 
@@ -100,10 +120,6 @@ namespace Mento.Script.Customer.TagManagement
 
             //Verify that ptag code is updated on vtag formula
 
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsP);
-            TimeManager.LongPause();
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
-            TimeManager.LongPause();
             JazzFunction.VTagSettings.FocusOnVTagByName(vtagName);
             TimeManager.MediumPause();
             JazzFunction.VTagSettings.SwitchToFormulaTab();
@@ -117,22 +133,25 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Modify-101-3")]
         public void ModifyNameAndCommodity(VtagData input)
         {
-           
-            //prepare the vtag
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
-            JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzFunction.AssociateSettings.ClickAssociateTagButton();
-            TimeManager.LongPause();
-            JazzFunction.AssociateSettings.CheckedTag(input.ExpectedData.CommonName);
-            JazzFunction.AssociateSettings.ClickAssociateButton();
-            TimeManager.MediumPause();
 
             //Click "Modify" button and input new value to Vtag field
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+
+
+            int i = 2;
+
+            bool flag = VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+
+            if ((!flag) & (i < 5))
+            {
+
+                VTagSettings.GotoPageOnVTagList(i);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+                flag = VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+                i = i + 1;
+            }
+            //VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
             TimeManager.MediumPause();
-            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
-            TimeManager.LongPause();
             VTagSettings.ClickModifyButton();
             TimeManager.LongPause();
             VTagSettings.FillInAddVTagData(input.InputData);
@@ -145,40 +164,31 @@ namespace Mento.Script.Customer.TagManagement
             //verify modify successful
             Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
             Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
-            VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
-            
+            //VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
 
+            TimeManager.MediumPause();
                        
              //1. Verify that vtag is updated on associated tag list
              JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
              JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
              JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-
-
-
-
+             TimeManager.LongPause();
              Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.InputData.CommonName));
-          
+
             //2. Verify that vtag is updated on energy view tag list and  its legend name
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
-            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           
+            TimeManager.LongPause();
             //Commodity updated
-            JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.InputData.CommonName);
-            Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.InputData.Commodity), JazzFunction.EnergyAnalysisPanel.GetSelectedRowData(3));
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.CommonName);
             
-
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.InputData.CommonName);
             JazzFunction.EnergyViewToolbarViewSplitButton.Click();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
-            
-
-            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("VtagForCheckAll1"));
+            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("VtagNameModified"));
+            //Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("水"));
             
         }
       
@@ -188,9 +198,23 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Modify-101-4")]
         public void ModifyUomAndCheck(VtagData input)
         {
- 
+
+            //VTagSettings.ScrollToViewTagByName(input.ExpectedData.CommonName);
             //Click "Modify" button and input new value to Vtag field
-            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+            int i = 2;
+
+            bool flag = VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+
+            if ((!flag) & (i < 5))
+            {
+
+                VTagSettings.GotoPageOnVTagList(i);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+                flag = VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+                i = i + 1;
+            }
+
             VTagSettings.ClickModifyButton();
             VTagSettings.FillInAddVTagData(input.InputData);
 
@@ -202,21 +226,29 @@ namespace Mento.Script.Customer.TagManagement
             //verify modify successful
             Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
             Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
-          
-            //Verify that vtag Uom is updated on energy view tag list and  Uom updated on its chart view y-axis
+
+            //Verify that vtag keep the same successfully
+            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+            Assert.AreEqual(input.ExpectedData.CommonName, VTagSettings.GetVTagNameValue());
+            Assert.AreEqual(input.ExpectedData.Code, VTagSettings.GetVTagcodeValue());
+            Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.ExpectedData.Commodity), VTagSettings.GetVTagCommodityValue());
+            Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.ExpectedData.UOM), VTagSettings.GetVTagUOMValue());
+            Assert.AreEqual(VTagSettings.GetVTagCalculationTypeExpectedValue(input.ExpectedData.CalculationType), VTagSettings.GetVTagCalculationTypeValue());
+
+             //Verify that vtag Uom is updated on energy view tag list and  Uom updated on its chart view y-axis
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
 
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Uom updated
-            JazzFunction.EnergyAnalysisPanel.CheckTag(input.InputData.CommonName);
+            JazzFunction.EnergyAnalysisPanel.CheckTag(input.ExpectedData.CommonName);
             JazzFunction.EnergyViewToolbarViewSplitButton.Click();
-            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-
-           // Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.ExpectedData.UOM), JazzFunction.EnergyAnalysisPanel.GetUomValue());
+           //Need data here
+            //Assert.AreEqual(input.InputData.UOM, JazzFunction.EnergyAnalysisPanel.GetUomValue());
         }
 
 
@@ -226,11 +258,24 @@ namespace Mento.Script.Customer.TagManagement
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Modify-101-5")]
         public void ModifyStepAndCheck(VtagData input)
-        { 
-            //string vtagName = "VtagForCheckPtagAll";
+        {
             
+            //string vtagName = "VtagForCheckPtagAll";
+            int i = 2;
+           // int lenght = JazzFunction.VTagSettings.
             //Click "Modify" button and input new value to Vtag field
-            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+            bool flag = VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+            // Temp method for find the next page vtags
+            if ((!flag)&(i<5))
+            {
+                
+                VTagSettings.GotoPageOnVTagList(i);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+                flag = VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+                i = i + 1;
+            }
+
             VTagSettings.ClickModifyButton();
             VTagSettings.FillInAddVTagData(input.InputData);
 
@@ -244,12 +289,12 @@ namespace Mento.Script.Customer.TagManagement
             //verify modify successful
             Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
             Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
-            VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
+            //VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
             
             //Verify that vtag Step is updated on energy view tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
-
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
 
             TimeManager.MediumPause();
             TimeManager.LongPause();
@@ -263,8 +308,6 @@ namespace Mento.Script.Customer.TagManagement
             //problem here 
             TimeManager.MediumPause();
             JazzMessageBox.MessageBox.Equals(input.ExpectedData.Message);
-            //Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Equals("所选数据点不支持"));
-            //Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("VtagForCheckAll"));
             TimeManager.MediumPause();
             //Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("小时"));
             //Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.ExpectedData.Step), JazzFunction.EnergyAnalysisPanel.GetUomValue());
@@ -277,72 +320,23 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Modify-101-6")]
         public void ModifyCompAndCheck(VtagData input)
         {
-            /*
-            //prepare
+            int i = 2;
 
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
-            JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
-            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
-            TimeManager.LongPause();
-            JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
-            TimeManager.LongPause();
-            JazzFunction.AssociateSettings.ClickAssociateTagButton();
-            TimeManager.LongPause();
-            JazzFunction.AssociateSettings.CheckedTag(input.ExpectedData.CommonName);
-            JazzFunction.AssociateSettings.ClickAssociateButton();
-            TimeManager.MediumPause();
-            */
+            bool flag = VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
 
+            if ((!flag) & (i < 5))
+            {
 
-            // Assosiate the vtag to Area node
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
-            JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
-            TimeManager.MediumPause();
-            JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
-            TimeManager.MediumPause();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
-            JazzFunction.AreaDimensionSettings.SelectAreaDimensionNode(input.InputData.Message);
+                VTagSettings.GotoPageOnVTagList(i);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+                flag = VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.LongPause();
+                i = i + 1;
+            }
 
-            TimeManager.MediumPause();
-            JazzFunction.AssociateSettings.ClickAssociateTagButton();
-            TimeManager.LongPause();
-            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzFunction.AssociateSettings.CheckedTag(input.ExpectedData.Code);
-            JazzFunction.AssociateSettings.ClickAssociateButton();
-            TimeManager.MediumPause();
-            JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.Code);
-
-
-
-            // node should be prepared 
-
-            // Assosiate the vtag to System dimension node
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationSystemDimension);
-            JazzFunction.SystemDimensionSettings.ShowHierarchyTree();
-            TimeManager.MediumPause();
-            JazzFunction.SystemDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
-            TimeManager.MediumPause();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzFunction.SystemDimensionSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemNodePath);
-            // !!!!!!!!!   need run by nunit
-           JazzFunction.SystemDimensionSettings.SelectSystemDimensionNode(input.ExpectedData.Message);
-
-            TimeManager.MediumPause();
-            JazzFunction.AssociateSettings.ClickAssociateTagButton();
-            TimeManager.MediumPause();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzFunction.AssociateSettings.CheckedTag(input.ExpectedData.Code);
-            JazzFunction.AssociateSettings.ClickAssociateButton();
-            TimeManager.MediumPause();
-            JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.Code);
-
-            // ligten should be opertate manually
-          
-            //Click "Modify" button and input new value to Vtag field
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
-            TimeManager.LongPause();
-            VTagSettings.FocusOnVTagByName(input.ExpectedData.Code);
+            //VTagSettings.FocusOnVTagByName(input.ExpectedData.Code);
             VTagSettings.ClickModifyButton();
             VTagSettings.FillInAddVTagData(input.InputData);
 
@@ -365,7 +359,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
             TimeManager.MediumPause();
             JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.ExpectedData.Code);
-            //Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.ExpectedData.UOM), JazzFunction.EnergyAnalysisPanel.GetSelectedRowData(6));
+            Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.ExpectedData.UOM), JazzFunction.EnergyAnalysisPanel.GetSelectedRowData(6));
             
         }
 

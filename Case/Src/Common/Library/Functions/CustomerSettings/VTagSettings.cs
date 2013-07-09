@@ -47,6 +47,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Grid FormulaPTagList = JazzGrid.VTagSettingsFormulaEditPTagList;
         private static Grid FormulaVTagList = JazzGrid.VTagSettingsFormulaEditPTagList;
+        
         private static FormulaField FormulaField = JazzTextField.VFormulaField;
 
      
@@ -214,7 +215,7 @@ namespace Mento.ScriptCommon.Library.Functions
             CalculationStepComboBox.SelectItem(input.Step);
             //TimeManager.LongPause();
             CalculationTypeComboBox.SelectItem(input.CalculationType);
-            CommentTextField.Fill(input.Comment);
+            CommentTextField.Fill(input.Comments);
         }
 
         /// <summary>
@@ -417,6 +418,10 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             FormulaPTagList.GotoPage(pageIndex);
         }
+        public void GotoPageOnVTagList(int pageIndex)
+        {
+            VTagList.GotoPage(pageIndex);
+        }
 
         /// <summary>
         /// Fill the text to formula field, clear the field first, then input text
@@ -567,7 +572,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>whether the invalid message is true</returns>
         public Boolean IsCommentsInvalidMsgCorrect(VtagOuputData output)
         {
-            return CommentTextField.GetInvalidTips().Contains(output.Comment);
+            return CommentTextField.GetInvalidTips().Contains(output.Comments);
         }
 
         /// <summary>

@@ -48,9 +48,10 @@ namespace Mento.Script.Customer.TagManagement
             //Click "+" button and fill ptag field with invalid input
             PTagSettings.ClickAddPtagButton();
             PTagSettings.FillInPtag(input.InputData);
-
+            TimeManager.MediumPause();
             //Click "Save" button
             PTagSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //verify add successful
@@ -117,11 +118,12 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click "Save" button
             PTagSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //verify add successful
-            Assert.IsTrue(PTagSettings.IsSaveButtonDisplayed());
-            Assert.IsTrue(PTagSettings.IsCancelButtonDisplayed());
+            //Assert.IsTrue(PTagSettings.IsSaveButtonDisplayed());
+           //Assert.IsTrue(PTagSettings.IsCancelButtonDisplayed());
 
             //Verify that the error message popup and the input field is invalid
             Assert.IsTrue(PTagSettings.IscodeInvalid());

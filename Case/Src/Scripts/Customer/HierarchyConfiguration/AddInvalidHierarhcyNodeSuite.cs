@@ -31,6 +31,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             HierarchySettings.NavigatorToHierarchySetting();
             JazzMessageBox.LoadingMask.WaitLoading();
+            // added for Greenie run 
+            TimeManager.LongPause();
         }
 
         [TearDown]

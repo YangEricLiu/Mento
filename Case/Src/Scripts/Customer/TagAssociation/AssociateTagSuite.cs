@@ -168,7 +168,7 @@ namespace Mento.Script.Customer.TagAssociation
             TimeManager.LongPause();
 
             //Check if message displayed
-            Assert.IsTrue(JazzFunction.PTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData.Message));
+            Assert.IsTrue(JazzFunction.PTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData.CommonName));
 
             //navigate to vtag setting
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
@@ -183,7 +183,7 @@ namespace Mento.Script.Customer.TagAssociation
             TimeManager.LongPause();
 
             //Check if message displayed
-            Assert.IsTrue(JazzFunction.VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData.Message));
+            Assert.IsTrue(JazzFunction.VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData));
         }
 
         [Test]

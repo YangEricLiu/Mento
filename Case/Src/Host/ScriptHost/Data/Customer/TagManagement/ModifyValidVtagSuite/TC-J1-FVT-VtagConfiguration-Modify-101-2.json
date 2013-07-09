@@ -2,13 +2,13 @@
 	{
 		"InputData":
 		{	
-			"Code":"VtagForCheckOnEA1",
+			"Code":"VtagCodeModified",
 
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagForCheckEA",
-			"Code":"VtagForCheckOnEA1",
+			"CommonName":"VtagModify002",
+			"Code":"VtagModify002",
 
 		}
 	}

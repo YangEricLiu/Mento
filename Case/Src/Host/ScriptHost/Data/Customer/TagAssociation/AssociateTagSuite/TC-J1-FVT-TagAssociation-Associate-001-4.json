@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"Message":"该名称已存在",
+			"CommonName":"该名称已存在",
 		}
 	}
 ]

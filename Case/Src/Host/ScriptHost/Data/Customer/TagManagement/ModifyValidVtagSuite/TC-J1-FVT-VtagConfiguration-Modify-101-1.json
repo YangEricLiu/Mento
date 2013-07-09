@@ -2,23 +2,16 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckAll",
-			"Code":"VtagForCheckAll",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"Step":"Hourly",
-			"CalculationType":"Sum",
-			"Comment":"nothing",
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagForCheckAll",
-			"Code":"VtagForCheckAll",
+			"CommonName":"VtagModify001",
+			"Code":"VtagModify001",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
 			"Step":"Hourly",
 			"CalculationType":"Sum",
-			"Comment":"nothing",
+			"Comments":"nothing",
 		}
 	}
 ]

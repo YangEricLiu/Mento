@@ -104,17 +104,25 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.VTagSettings.FocusOnVTagByName(vtagName);
             JazzFunction.VTagSettings.SwitchToFormulaTab();
             JazzFunction.VTagSettings.ClickModifyFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            //
             Assert.IsFalse(JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.ExpectedData.CommonName));
 
             //3. Verify ptag is deleted from associated tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             Assert.IsFalse(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.CommonName));
             
             //4. Verify ptag is deleted from energy analysis tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
-            TimeManager.ShortPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
             Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.CommonName));
         }
 
@@ -236,6 +244,9 @@ namespace Mento.Script.Customer.TagManagement
 
             //2. Delete the vtag which using ptag 
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+            JazzFunction.VTagSettings.GotoPageOnVTagList(2);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
             JazzFunction.VTagSettings.FocusOnVTagByName(vtagName);
             JazzFunction.VTagSettings.ClickDeleteButton();
             string msgText3 = JazzMessageBox.MessageBox.GetMessage();

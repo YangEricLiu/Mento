@@ -19,7 +19,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string UOM { get; set; }
         public string Step { get; set; }
         public string CalculationType { get; set; }
-        public string Comment { get; set; }
+        public string Comments { get; set; }
         public string Message { get; set; }
         public string[] HierarchyNodePath { get; set; }
         public string[] AreaNodePath { get; set; }
@@ -36,7 +36,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string UOM { get; set; }
         public string Step { get; set; }
         public string CalculationType { get; set; }
-        public string Comment { get; set; }
+        public string Comments { get; set; }
         public string Message { get; set; }
         public string[] MessageArray { get; set; }
         public string FormulaMessage { get; set; }

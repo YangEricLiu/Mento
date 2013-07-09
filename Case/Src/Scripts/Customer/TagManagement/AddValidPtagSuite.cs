@@ -50,11 +50,13 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click "Save" button
             PTagSettings.ClickSaveButton();
-            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
 
             //verify add successful
             Assert.IsFalse(PTagSettings.IsSaveButtonDisplayed());
             Assert.IsFalse(PTagSettings.IsCancelButtonDisplayed());
+            TimeManager.LongPause();
 
             //Verify that ptag added successfully
             PTagSettings.FocusOnPTagByName(input.ExpectedData.CommonName);
@@ -80,12 +82,13 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click "Save" button
             PTagSettings.ClickSaveButton();
-            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
 
             //verify add successful
             Assert.IsFalse(PTagSettings.IsSaveButtonDisplayed());
             Assert.IsFalse(PTagSettings.IsCancelButtonDisplayed());
-
+            TimeManager.LongPause();
             //Verify that ptag added successfully
             PTagSettings.FocusOnPTagByName(input.InputData.CommonName);
             Assert.IsTrue(PTagSettings.IsCommentHidden());
@@ -97,7 +100,7 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(PtagData[]), typeof(AddValidPtagSuite), "TC-J1-FVT-PtagConfiguration-Add-101-3")]
         public void AddPtagAndVerify(PtagData input)
         {
-            string ptagFormula = "PtagForCheckPtagAll";
+            string ptagFormula = "VtagForCheckPtagAll";
 
             //Click "+" button and fill ptag field
             PTagSettings.ClickAddPtagButton();
@@ -105,27 +108,48 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click "Save" button
             PTagSettings.ClickSaveButton();
-            TimeManager.MediumPause();
-
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
             //verify add successful
             Assert.IsFalse(PTagSettings.IsSaveButtonDisplayed());
             Assert.IsFalse(PTagSettings.IsCancelButtonDisplayed());
-
+            TimeManager.LongPause();
             //1. verify on formula tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
-            JazzFunction.PTagSettings.FocusOnPTagByName(ptagFormula);
+            JazzFunction.VTagSettings.FocusOnVTagByName(ptagFormula);
+            TimeManager.MediumPause();
             //JazzFunction.VTagSettings.FocusOnVTagByName("VtagForCheckAll");
             JazzFunction.VTagSettings.SwitchToFormulaTab();
+            TimeManager.MediumPause();
             JazzFunction.VTagSettings.ClickModifyFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             //JazzFunction.VTagSettings.ScrollToViewTagByCode("HeatingArea");
             //TimeManager.LongPause();
-            Assert.IsTrue(JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName));
+            //Assert.IsTrue(JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName));
+
+            int i = 2;
+
+            bool flag = JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.InputData.CommonName);
+
+            if ((!flag) & (i < 5))
+            {
+
+                JazzFunction.VTagSettings.GotoPageOnVTagList(i);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+                flag = JazzFunction.VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+                i = i + 1;
+            }
+
 
             //2. verify on data association tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+            TimeManager.LongPause();
             JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
-            JazzFunction.AssociateSettings.ClickAssociateButton();
+            TimeManager.LongPause();
+            JazzFunction.AssociateSettings.ClickAssociateTagButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
            Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.InputData.CommonName));
 
@@ -143,12 +167,13 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click "Save" button
             PTagSettings.ClickSaveButton();
-            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
 
             //verify add successful
             Assert.IsFalse(PTagSettings.IsSaveButtonDisplayed());
             Assert.IsFalse(PTagSettings.IsCancelButtonDisplayed());
-
+            TimeManager.LongPause();
             //Verify that ptag added successfully
             Assert.IsTrue(PTagSettings.FocusOnPTagByCode(input.InputData.Code));
         }

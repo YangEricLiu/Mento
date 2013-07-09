@@ -44,7 +44,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         /// <summary>
-        /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试", "测试楼宇园区", "楼宇配置测试"
+        /// Precondition:  1. make sure the hiearchy node has been added  "自动化测试", "测试楼宇园区", "楼宇配置测试"
+        /// Prepare Data: 1."AreaNodeForCheckSame "  added
         /// </summary> 
         [Test]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-AddInvalidAreaCancel")]

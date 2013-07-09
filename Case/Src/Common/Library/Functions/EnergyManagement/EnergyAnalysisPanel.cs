@@ -16,6 +16,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SelectSystemDimensionButton = JazzButton.EnergyViewSelectSystemDimensionButton;
         private static SystemDimensionTree SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
         private static Button EnergyViewSelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
+        
         //Select area dimension tree button
         private static Button SelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
         private static AreaDimensionTree AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
@@ -76,7 +77,7 @@ namespace Mento.ScriptCommon.Library.Functions
             try
             {
                 SelectSystemDimensionButton.Click();
-
+                TimeManager.ShortPause();              
                 SystemDimensionTree.SelectNode(systemDimensionPath);
                 return true;
             }

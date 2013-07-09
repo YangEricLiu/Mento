@@ -2,15 +2,15 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForCheckAll1",
+			"CommonName":"VtagNameModified",
 			"Commodity":"Water",
 			"UOM":"m3",
 		},
 		"ExpectedData":
 		{
-			"HierarchyNodePath":["自动化测试", "CheckOnESSite001"],
-			"CommonName":"VtagForCheckAll",
-			"Commodity":"Water",
+			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","CheckModifyVtag"],
+			"CommonName":"VtagModify003",
+			"Commodity":"Electricity",
 		}
 	}
 ]

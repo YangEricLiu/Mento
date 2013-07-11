@@ -153,7 +153,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CalendarSettings.ClickDeleteWorkdayButton_N(1);
             CalendarSettings.ClickDeleteDayNightButton_N(1);
 
-            //Modify nothing and Click "Save"
+            //Click "Save"
             CalendarSettings.ClickSaveCalendarButton();
             TimeManager.LongPause();
 

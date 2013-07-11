@@ -43,7 +43,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [CaseID("TC-J1-FVT-CostConfiguration-Other-Modify-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(OtherCostData[]), typeof(ModifyOtherCostPropertySuite), "TC-J1-FVT-CostConfiguration-Other-Modify-101-1")]
-        public void ModifyToDupDate(OtherCostData input)
+        public void ModifyThenSave(OtherCostData input)
         {
             //Select buidling node "AddPeopleProperty"
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);

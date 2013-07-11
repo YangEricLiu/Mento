@@ -2,36 +2,37 @@
 	{
 		"InputData":
 		{
-			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001", "SysDimAssocBuild001"],
-			"SystemDimensionItemPath":["空调"],
-		},
-		"ExpectedData":
-		{
-			"SystemDimensionPath":["SysDimAssocBuild001", "空调", "冷热源", "供热主机"],
-			"Message":"反勾选当前维度节点前，必须确保它的所有子节点未被勾选",
-		}
-	},
-	{
-		"InputData":
-		{
-			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001", "SysDimAssocBuild001"],
+			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001"],
 			"SystemDimensionItemPath":["空调","冷热源"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocBuild001", "空调", "冷热源", "供热主机"],
+			"SystemDimensionPath":["SysDimAssocSite001", "空调", "冷热源", "供热主机"],
 			"Message":"反勾选当前维度节点前，必须确保它的所有子节点未被勾选",
 		}
 	},
 	{
 		"InputData":
 		{
-			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001", "SysDimAssocBuild001"],
+			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001"],
+			"SystemDimensionItemPath":["空调"],
+		},
+		"ExpectedData":
+		{
+			"SystemDimensionPath":["SysDimAssocSite001", "空调", "冷热源", "供热主机"],
+			"Message":"反勾选当前维度节点前，必须确保它的所有子节点未被勾选",
+		}
+	},
+	
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001"],
 			"SystemDimensionItemPath":["空调","空调末端"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocBuild001", "空调", "空调末端", "风机盘管"],
+			"SystemDimensionPath":["SysDimAssocSite001", "空调", "空调末端", "风机盘管"],
 			"SystemDimensionNode":"排风机",
 			"Message":"反勾选当前维度节点前，必须确保它的所有子节点未被勾选",
 		}

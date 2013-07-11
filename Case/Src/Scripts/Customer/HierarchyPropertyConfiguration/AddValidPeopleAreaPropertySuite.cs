@@ -71,6 +71,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "+人口面积" button
             PeopleAreaSetting.ClickPeopleAreaCreateButton();
+            TimeManager.ShortPause();
 
             //Fill nothing and save
             PeopleAreaSetting.ClickSaveButton();
@@ -80,11 +81,12 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.IsTrue(PeopleAreaSetting.IsPeopleAreaCreateButtonDisplayed());
 
             //Click "+人口面积" button
-            PeopleAreaSetting.ClickPeopleAreaCreateButton(); 
+            PeopleAreaSetting.ClickPeopleAreaCreateButton();
+            TimeManager.ShortPause();
 
             //Fill nothing and cancel
             PeopleAreaSetting.ClickCancelButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Verify "+人口面积" button displayed 
             Assert.IsTrue(PeopleAreaSetting.IsPeopleAreaCreateButtonDisplayed());

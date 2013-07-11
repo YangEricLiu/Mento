@@ -78,7 +78,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Verify the error message displayed correctly
             Assert.IsTrue(PeopleAreaSetting.IsPeopleNumberInvalid());
-            Assert.IsTrue(PeopleAreaSetting.IsPeopleNumberInvalidMsgCorrect(input.ExpectedData.PeopleNumber));
+            Assert.IsTrue(PeopleAreaSetting.IsPeopleNumberInvalidMsgCorrect(input.ExpectedData.IntegerValue));
         }
 
         [Test]

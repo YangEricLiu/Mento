@@ -68,9 +68,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             //Verify the input value displayed correct
             Assert.AreEqual(PeopleAreaSetting.GetEffectiveDateValue(), input.ExpectedData.PeopleEffectiveDate);
             Assert.AreEqual(PeopleAreaSetting.GetPeopleNumberValue(), input.ExpectedData.PeopleNumber);
-            Assert.AreEqual(PeopleAreaSetting.GetTotalAreaValue(), input.ExpectedData.IntegerValue);
-            Assert.AreEqual(PeopleAreaSetting.GetHeatingAreaValue(), input.ExpectedData.IntegerValue);
-            Assert.AreEqual(PeopleAreaSetting.GetCoolingAreaValue(), input.ExpectedData.IntegerValue);
+            Assert.AreEqual(PeopleAreaSetting.GetTotalAreaValue(), input.ExpectedData.TotalArea);
+            Assert.AreEqual(PeopleAreaSetting.GetHeatingAreaValue(), input.ExpectedData.HeatingArea);
+            Assert.AreEqual(PeopleAreaSetting.GetCoolingAreaValue(), input.ExpectedData.CoolingArea);
         }
 
         [Test]
@@ -92,8 +92,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.LongPause();
 
             //modify population 
-            //PeopleAreaSetting.FillInPeopleValue(input.InputData);
-            //TimeManager.ShortPause(); 
+            PeopleAreaSetting.FillInPeopleValue(input.InputData);
+            TimeManager.ShortPause(); 
 
             //save modify
             PeopleAreaSetting.ClickSaveButton();

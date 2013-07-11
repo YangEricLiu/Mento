@@ -101,6 +101,41 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        public bool IsRowExistOnCurrentPage(int cellIndex, string cellText)
+        {
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
+
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+            try
+            {
+                FindChild(Locator.GetVariableLocator(rowLocator, variables));
+                //return row != null;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool IsRowExistOnCurrentPage(int cellIndex)
+        {
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
+
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex } };
+            try
+            {
+                FindChild(Locator.GetVariableLocator(rowLocator, variables));
+                //return row != null;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        
         public bool IsRowExist(int cellIndex, string cellText)
         {
             try
@@ -120,6 +155,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return GetRow(cellIndex).Text;
         }
 
+        /*
         public virtual IWebElement GetRow(int cellIndex)
         {
             var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowSelected);
@@ -128,7 +164,33 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return FindChild(Locator.GetVariableLocator(rowLocator, variables));
         }
+         */
+        
+        public virtual IWebElement GetRow(int cellIndex)
+        {
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
 
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex } };
+
+            int i = 0;
+
+            while (i < PageCount)
+            {
+                if (IsRowExistOnCurrentPage(cellIndex))
+                {
+                    break;
+                }
+                else 
+                {
+                    NextPage();
+                    i++;
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(rowLocator, variables));
+        }
+
+        /*
         public virtual IWebElement GetRow(int cellIndex, string cellText)
         {
             var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
@@ -137,12 +199,63 @@ namespace Mento.TestApi.WebUserInterface.Controls
             
             return FindChild(Locator.GetVariableLocator(rowLocator, variables));
         }
+        */
+
+        public virtual IWebElement GetRow(int cellIndex, string cellText)
+        {
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
+
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            int i = 0;
+
+            while (i < PageCount)
+            {
+                if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                {
+                    break;
+                }
+                else
+                {
+                    NextPage();
+                    i++;
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(rowLocator, variables));
+        }
+        
+        /*
+        protected virtual IWebElement GetRowChecker(int cellIndex, string cellText)
+        {
+            var checkerLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowChecker);
+
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            return FindChild(Locator.GetVariableLocator(checkerLocator, variables));
+        }
+        */
 
         protected virtual IWebElement GetRowChecker(int cellIndex, string cellText)
         {
             var checkerLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowChecker);
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            int i = 0;
+
+            while (i < PageCount)
+            {
+                if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                {
+                    break;
+                }
+                else
+                {
+                    NextPage();
+                    i++;
+                }
+            }
 
             return FindChild(Locator.GetVariableLocator(checkerLocator, variables));
         }
@@ -198,13 +311,17 @@ namespace Mento.TestApi.WebUserInterface.Controls
             Locator nextPageLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingNextPageButton);
             ElementHandler.FindElement(nextPageLocator, container: PagingToolbar).Click();
 
-            GetControl<LoadingMask>().WaitLoading();
+            //GetControl<LoadingMask>().WaitLoading();
+            GetControl<LoadingMask>().WaitSubMaskLoading();
         }
 
         public void PreviousPage()
         {
             Locator previousPageLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingPreviousPageButton);
             ElementHandler.FindElement(previousPageLocator, container: PagingToolbar).Click();
+
+            //GetControl<LoadingMask>().WaitLoading();
+            GetControl<LoadingMask>().WaitSubMaskLoading();
         }
 
         public void GotoPage(int pageIndex)

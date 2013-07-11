@@ -106,7 +106,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             JazzMessageBox.MessageBox.OK();
             TimeManager.MediumPause();
 
-            SystemSettings.CloseSystemDimensionDialog();
+            //SystemSettings.CloseSystemDimensionDialog();
+            SystemSettings.ConfirmSystemDimensionDialog();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
@@ -160,7 +161,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Expand system dimension tree and verify the node is not disassociated
+            //Expand system dimension tree and verify the node is disassociated
             SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath);
             TimeManager.LongPause();
             Assert.IsFalse(SystemSettings.IsSystemDimensionNodeDisplayed(input.ExpectedData.SystemDimensionPath.Last()));
@@ -172,7 +173,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(SystemDimensionData[]), typeof(DisassociateSytemDimension), "TC-J1-FVT-SystemDimensionConfiguration-Disassociate-101-2")]
         public void DisssociateAndVerify(SystemDimensionData input)
         {
-            /*
             //Display hierarchy tree -> click hierarchy node "自动化测试"... -> open system dimension dialog
             SystemSettings.ShowHierarchyTree();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -217,7 +217,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
 
             Assert.IsFalse(SystemSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionItemPath));
-            */
+            
             //3. Verify it on energy view
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             TimeManager.MediumPause();

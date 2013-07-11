@@ -62,6 +62,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Select one leaf node
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickDeleteButton();
+            TimeManager.ShortPause();
 
             //Verify that message box popup for confirm delete
             string msgText = HierarchySettings.GetMessageText();
@@ -84,6 +85,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Select one leaf node
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickDeleteButton();
+            TimeManager.ShortPause();
 
             //Verify that message box popup for confirm delete
             string msgText = HierarchySettings.GetMessageText();
@@ -110,6 +112,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Select one leaf node
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickDeleteButton();
+            TimeManager.ShortPause();
 
             //Verify that message box popup for confirm delete
             string msgText = HierarchySettings.GetMessageText();
@@ -142,10 +145,10 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(DeleteHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Delete-101-3")]
         public void DeleteNodeAndVerify(HierarchyData input)
         {
-
             //Select one leaf node
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickDeleteButton();
+            TimeManager.ShortPause();
 
             //Verify that message box popup for confirm delete
             string msgText = HierarchySettings.GetMessageText();
@@ -180,10 +183,11 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             string tag1 = "Ptag_OrgWithTags_Delete002";
             string tag2 = "Vtag_OrgWithTags_Delete002";
-            /*
+            
             //Select one leaf node
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickDeleteButton();
+            TimeManager.ShortPause();
 
             //Verify that message box popup for confirm delete
             string msgText = HierarchySettings.GetMessageText();
@@ -195,12 +199,11 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify the node has been deleted
             Assert.IsFalse(HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
-            */
+            
             //verify the associated tags are on disassociated list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
             Assert.IsFalse(JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath));
             JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             JazzFunction.AssociateSettings.ClickAssociateTagButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();

@@ -120,6 +120,7 @@ namespace Mento.TestApi.WebUserInterface
             {
                 case Browser.IE:
                     driver = new InternetExplorerDriver(new InternetExplorerOptions() { });
+                    //driver = new InternetExplorerDriver();
                     break;
                 case Browser.Chrome:
                     driver = new ChromeDriver(new ChromeOptions() { });

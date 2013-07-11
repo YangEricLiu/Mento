@@ -513,7 +513,15 @@ namespace Mento.ScriptCommon.Library.Functions
             return NameTextField.GetInvalidTips().Contains(output.CommonName);
         }
 
-
+        /// <summary>
+        /// Judge whether invalid message of name field is correct
+        /// </summary>
+        /// <param name="output">VtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsNameInvalidMsgCorrect(string output)
+        {
+            return NameTextField.GetInvalidTips().Contains(output);
+        }
 
 
         /// <summary>

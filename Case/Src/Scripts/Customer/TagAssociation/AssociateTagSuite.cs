@@ -183,7 +183,7 @@ namespace Mento.Script.Customer.TagAssociation
             TimeManager.LongPause();
 
             //Check if message displayed
-            Assert.IsTrue(JazzFunction.VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(JazzFunction.VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData.Message));
         }
 
         [Test]
@@ -193,7 +193,7 @@ namespace Mento.Script.Customer.TagAssociation
         public void AssociateTagsThenVerify(AssociateTagData input)
         {
             //navigate and select node
-            /*AssociateOnWhichNode(input);
+            AssociateOnWhichNode(input);
 
             //Select 3 tags and removed 2, then click "associate"
             Association.ClickAssociateTagButton();
@@ -224,10 +224,103 @@ namespace Mento.Script.Customer.TagAssociation
             Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
             Assert.IsFalse(Association.IsTagOnAssociatedGridView(input.InputData.RemovedTagNames[0]));
             Assert.IsFalse(Association.IsTagOnAssociatedGridView(input.InputData.RemovedTagNames[1]));
-            */
+            
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.TagName);
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TagAssociation-Associate-101-2")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-101-2")]
+        public void AssociatedSameTagSuccessed(AssociateTagData input)
+        {
+            //Select building node
+            Association.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
+
+            //Navigate to system dimension node and associate vtag 
+            Association.NavigateToSystemDimensionAssociate();
+            SystemSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionPath);
+            TimeManager.ShortPause();
+
+            Association.ClickAssociateTagButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            Association.CheckedTag(input.InputData.TagName);
+            TimeManager.ShortPause();
+
+            Association.ClickAssociateButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+
+            //Navigate to areadimension node and associate vtag
+            Association.NavigateToAreaDimensionAssociate();
+            AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaDimensionPath);
+            TimeManager.ShortPause();
+
+            Association.ClickAssociateTagButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            Association.CheckedTag(input.InputData.TagName);
+            TimeManager.ShortPause();
+
+            Association.ClickAssociateButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+
+            //Check the tag has been associated to these 2 node correctly
+            Association.NavigateToSystemDimensionAssociate();
+            SystemSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionPath);
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+
+            Association.NavigateToAreaDimensionAssociate();
+            AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaDimensionPath);
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TagAssociation-Associate-101-3")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-101-3")]
+        public void NoAffectOnFormulaOrChart(AssociateTagData input)
+        {
+            string formulaValue = "{ptag|PtagCheckAssoc101_3}*2}";
+
+            //Select building node
+            Association.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
+
+            //Associate ptag to this hierarchy node
+            Association.ClickAssociateTagButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            Association.CheckedTag(input.InputData.TagName);
+            TimeManager.ShortPause();
+
+            Association.ClickAssociateButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.InputData.TagName));
+
+            //Check on vtag formula
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+            TimeManager.ShortPause();
+            JazzFunction.VTagSettings.FocusOnVTagByName(input.ExpectedData.TagName);
+            TimeManager.ShortPause();
+            JazzFunction.VTagSettings.SwitchToFormulaTab();
+            TimeManager.ShortPause();
+            Assert.AreEqual(formulaValue, JazzFunction.VTagSettings.GetFormulaValue());
         }
     }
 }

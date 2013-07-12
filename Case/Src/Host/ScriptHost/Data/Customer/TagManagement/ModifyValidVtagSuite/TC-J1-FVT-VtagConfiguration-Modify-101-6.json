@@ -11,7 +11,7 @@
 			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","CheckModifyVtag"],
 			"AreaNodePath":["CheckModifyVtag","FirstFloor"],
 			"CommonName":"VtagModify006",
-			"Code":"VtagForCheckAll",
+			"Code":"VtagModify006",
 			"SystemNodePath":["CheckModifyVtag"," 空调"],
 			"Uom":"KVARH",
 			"Message":"空调",

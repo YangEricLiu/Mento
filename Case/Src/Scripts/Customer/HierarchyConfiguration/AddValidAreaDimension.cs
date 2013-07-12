@@ -45,7 +45,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
         /// <summary>
         /// Precondition: make sure the hiearchy node has been added  "自动化测试", "测试楼宇园区", "楼宇配置测试"
-        /// Prepare Data:  make sure the areaDimensionNode has been added "AreaNodeEmpty",
         /// </summary>  
         [Test]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-AddAreaCancel")]
@@ -289,12 +288,13 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             AreaSettings.FillAreaDimensionData(input.InputData.CommonName, input.InputData.Comments);
             AreaSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
-
+            TimeManager.LongPause();
             //check every where
 
             //1. Check  area node added  on AssociationAreaDimension
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
             //AreaSettings.ShowHierarchyTree();
             //TimeManager.MediumPause();
             //AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);

@@ -83,6 +83,21 @@ namespace Mento.ScriptCommon.Library.Functions
             FormulaTab.Click();
         }
 
+        public Boolean IsSwitchToFormulaTabExist()
+        {
+            try
+            {
+                FormulaTab.Click();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+
         /// <summary>
         /// Click add vtag add button
         /// </summary>
@@ -660,17 +675,25 @@ namespace Mento.ScriptCommon.Library.Functions
             return CalculationTypeComboBox.GetInvalidTips().Contains(output.CalculationType);
         }
 
-        /*
+        
         /// <summary>
-        /// Clear the FormulaField
+        /// Go to next page 
         /// </summary>
         /// <param name="output">VtagExpectedData</param>
         /// <returns>Clear FormulaField </returns>
-        public Boolean ClearFormulaBlank(VtagOuputData output)
+        public Boolean GotoNextPage(VtagOuputData output)
         {
-            //return FormulaField.GetValue().Remove();
+            if(JazzFunction.VTagSettings.FocusOnVTagByName(output.CommonName))
+            {
+                JazzFunction.VTagSettings.GotoPageOnVTagList(2);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-         */
+         
         #endregion
 
     

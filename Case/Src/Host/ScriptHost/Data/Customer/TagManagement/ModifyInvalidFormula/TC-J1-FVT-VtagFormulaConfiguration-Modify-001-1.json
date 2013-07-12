@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"AddInvalidFormula",
+			"Code":"AddInvalidFormula",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+
+		},
+		"ExpectedData":
+		{
+			"CommonName":"AddInvalidFormula",
+			"Code":"AddInvalidFormula",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"Step":"Hourly",
+			"CalculationType":"Sum",
+			"FormulaMessage":"计算公式的格式有误，请检查。"
+		}
+	}
+]

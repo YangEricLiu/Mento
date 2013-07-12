@@ -44,6 +44,8 @@ namespace Mento.Script.Customer.TagManagement
         ///                       3. add vtag "VtagModify002"(formula:ptag"PtagByFormula"), "VtagFormula2"
         ///                       4. add vtag "VtagModify003"  assosiated under ["自动化测试","AutoSite_Vtag","CheckModifyVtag"]  Need data here
         ///                       5. add vtag "VtagModify004"  assosiated under ["自动化测试","AutoSite_Vtag","CheckModifyVtag"]  Need data here
+        ///                       6. add vtag "VtagModify005"  assosiated under ["自动化测试","AutoSite_Vtag","CheckModifyVtag"]  Need data here
+        ///                       7. add vtag "VtagModify006"  assosiated under  CheckModifyVtag,空调 (Lightend) and CheckModifyVtag,FirstFloor
         /// </summary> 
         [Test]
         [CaseID("TC-J1-FVT-VtagConfiguration-Modify-101-1")]
@@ -358,7 +360,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.MediumPause();
             JazzFunction.AreaDimensionSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
             TimeManager.MediumPause();
-            JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.ExpectedData.Code);
+            JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.ExpectedData.CommonName);
             Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.ExpectedData.UOM), JazzFunction.EnergyAnalysisPanel.GetSelectedRowData(6));
             
         }

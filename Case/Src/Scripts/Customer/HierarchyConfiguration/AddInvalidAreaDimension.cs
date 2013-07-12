@@ -178,7 +178,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
 
-
+            /*
             //Click "子区域" button to add Area node.	
             //The Area property display and enable to input.
             AreaSettings.ClickCreateAreaDimensionButton();
@@ -201,6 +201,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //TimeManager.MediumPause();
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            */
             //Click "子区域" button to add same Area node.	
             AreaSettings.ClickCreateAreaDimensionButton();
 

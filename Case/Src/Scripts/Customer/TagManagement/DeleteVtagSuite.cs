@@ -196,7 +196,7 @@ namespace Mento.Script.Customer.TagManagement
             string msgText2 = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
 
-            //No "Confirm" buttion here
+            JazzMessageBox.MessageBox.Confirm();
             
         }
 

@@ -87,14 +87,6 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(VTagSettings.IscodeInvalid());
             Assert.IsTrue(VTagSettings.IscodeInvalidMsgCorrect(input.ExpectedData));
-            //Assert.IsTrue(VTagSettings.IsCommodityInvalid());
-            //Assert.IsTrue(VTagSettings.IsCommodityInvalidMsgCorrect(input.ExpectedData));
-           // Assert.IsTrue(VTagSettings.IsCalculationTypeInvalid());
-            //Assert.IsTrue(VTagSettings.IsCalculationTypeInvalidMsgCorrect(input.ExpectedData));
-            //Assert.IsTrue(VTagSettings.IsUomInvalid());
-            //Assert.IsTrue(VTagSettings.IsUomInvalidMsgCorrect(input.ExpectedData));
-            //Assert.IsTrue(VTagSettings.IsStepInvalid());
-            //Assert.IsTrue(VTagSettings.IsStepInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(VTagSettings.IsCommentsInvalid());
             Assert.IsTrue(VTagSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
         }
@@ -146,7 +138,7 @@ namespace Mento.Script.Customer.TagManagement
           VTagSettings.ClickSaveButton();
           TimeManager.MediumPause();
           //Verify that the error message popup and the input field is invalid
-          Assert.IsTrue(VTagSettings.IscodeInvalid());
+          //Assert.IsTrue(VTagSettings.IscodeInvalid());
           Assert.IsTrue(VTagSettings.IscodeInvalidMsgCorrect(input.ExpectedData));
           //verify add successful
           Assert.IsTrue(VTagSettings.IsSaveButtonDisplayed());
@@ -163,7 +155,7 @@ namespace Mento.Script.Customer.TagManagement
       {
 
           //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
-          JazzFunction.VTagSettings.FocusOnVTagByCode(input.InputData.Code);
+          JazzFunction.VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
           TimeManager.MediumPause();
           JazzFunction.VTagSettings.SwitchToFormulaTab();
           TimeManager.LongPause();

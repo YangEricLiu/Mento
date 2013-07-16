@@ -11,7 +11,7 @@
 			"Uom":"KWH",
 			"Step":"Hourly",
 			"CalculationType":"Sum",
-			"Comments":"nothing",
+			"Comments":"",
 		}
 	}
 ]

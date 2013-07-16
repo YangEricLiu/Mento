@@ -206,6 +206,32 @@ namespace Mento.ScriptCommon.Library.Functions
             return TagList.IsRowExist(3, tagName);
         }
 
+        public string GetSelectedRowData(int cellIndex)
+        {
+            return TagList.GetSelectedRowData(cellIndex);
+        }
+
+
+        /// <summary>
+        /// Select one tag
+        /// </summary>
+        /// <param name="vtagName">VTag name</param>
+        /// <returns></returns>
+        public Boolean FocusOnVTagByName(string vtagName)
+        {
+            try
+            {
+                TagList.FocusOnRow(3, vtagName);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
         #endregion
+
     }
 }

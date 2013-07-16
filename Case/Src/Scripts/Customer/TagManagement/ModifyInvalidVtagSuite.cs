@@ -63,7 +63,8 @@ namespace Mento.Script.Customer.TagManagement
 
             //Verify that vtag not changed
             Assert.IsTrue(VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName));
-            Assert.IsFalse(VTagSettings.FocusOnVTagByName(input.InputData.CommonName));
+
+
 
             //Verify the vtag not changed
             VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
@@ -72,7 +73,9 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.ExpectedData.Commodity), VTagSettings.GetVTagCommodityValue());
             Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.ExpectedData.UOM), VTagSettings.GetVTagUOMValue());
             Assert.AreEqual(VTagSettings.GetVTagCalculationTypeExpectedValue(input.ExpectedData.CalculationType), VTagSettings.GetVTagCalculationTypeValue());
-        }
+
+            Assert.IsFalse(VTagSettings.FocusOnVTagByName(input.InputData.CommonName));
+         }
         
     }
 }

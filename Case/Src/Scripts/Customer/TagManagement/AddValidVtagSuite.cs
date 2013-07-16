@@ -60,12 +60,9 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
-            //verify add successful
-            //Assert.IsFalse(VTagSettings.IsSaveButtonDisplayed());
-            //Assert.IsFalse(VTagSettings.IsCancelButtonDisplayed());
 
             //Verify that vtag added successfully
-            VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+            //VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
             Assert.AreEqual(input.ExpectedData.CommonName, VTagSettings.GetVTagNameValue());
             Assert.AreEqual(input.ExpectedData.Code, VTagSettings.GetVTagcodeValue());
             Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.InputData.Commodity), VTagSettings.GetVTagCommodityValue());
@@ -92,7 +89,7 @@ namespace Mento.Script.Customer.TagManagement
              TimeManager.MediumPause();
 
              //Verify that vtag added successfully
-             VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+             //VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
              Assert.AreEqual(input.InputData.CommonName, VTagSettings.GetVTagNameValue());
              Assert.AreEqual(input.InputData.Code, VTagSettings.GetVTagcodeValue());
              Assert.AreEqual(VTagSettings.GetVTagCommodityExpectedValue(input.InputData.Commodity), VTagSettings.GetVTagCommodityValue());

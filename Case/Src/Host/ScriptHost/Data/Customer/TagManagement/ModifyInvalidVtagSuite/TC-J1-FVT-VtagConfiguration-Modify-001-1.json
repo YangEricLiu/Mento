@@ -13,8 +13,8 @@
 		{
 			"CommonName":"VtagForModifyInvalid",
 			"Code":"VtagForModifyInvalid",
-			"Commodity":"Water",
-			"Uom":"Ton",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
 			"Step":"Hourly",
 			"CalculationType":"Sum",
 		}

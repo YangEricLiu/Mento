@@ -120,7 +120,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public bool IsRowExistOnCurrentPage(int cellIndex)
         {
-            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowSelected);
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex } };
             try

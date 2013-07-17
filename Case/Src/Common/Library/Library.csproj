@@ -69,7 +69,7 @@
     <Compile Include="Functions\CustomerSettings\AssociateSettings.cs" />
     <Compile Include="Functions\EnergyManagement\CarbonUsagePanel.cs" />
     <Compile Include="Functions\EnergyManagement\CostPanel.cs" />
-    <Compile Include="Functions\EnergyManagement\KpiPanel.cs" />
+    <Compile Include="Functions\EnergyManagement\UnitKPIPanel.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewPanel.cs" />
     <Compile Include="Functions\EnergyManagement\TabbedEnergyViewPanel.cs" />
     <Compile Include="Functions\HomePage\UserPasswordDialog.cs" />

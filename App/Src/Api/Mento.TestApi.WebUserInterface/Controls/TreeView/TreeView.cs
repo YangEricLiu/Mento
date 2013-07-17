@@ -11,6 +11,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
     {
         protected const string TREENODEVARIABLENAME = "nodeText";
         protected const string TREENODEEXPANDCLASS = "x-grid-tree-node-expanded";
+        protected const string TREENODECHECKEDCLASS = "x-tree-checkbox-checked";
 
         public TreeView(Locator rootLocator, ISearchContext parentContainer = null) : base(rootLocator, parentContainer: parentContainer) { }
 
@@ -69,6 +70,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="nodeText"></param>
+        public void CheckNode(string nodeText)
+        {
+            //if the node is not expanded, click expand icon
+            if (!IsNodeChecked(nodeText))
+            {
+                ClickNodeCheckbox(nodeText);
+
+                //pause to wait animate finish
+                TimeManager.MediumPause();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="nodesText"></param>
         public void ExpandNodePath(string[] nodesText)
         {
@@ -105,6 +122,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 TimeManager.MediumPause();
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nodeText"></param>
+        public void UncheckNode(string nodeText)
+        {
+            //if the node is expanded, click expand icon
+            if (IsNodeChecked(nodeText))
+            {
+                ClickNodeCheckbox(nodeText);
+
+                //pause to wait animate finish
+                TimeManager.MediumPause();
+            }
+        }
         
         /// <summary>
         /// 
@@ -127,6 +160,18 @@ namespace Mento.TestApi.WebUserInterface.Controls
             IWebElement node = GetTreeNodeElement(nodeText);
 
             return node.GetAttribute("class").Split(' ').Contains(TREENODEEXPANDCLASS);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nodeText"></param>
+        /// <returns></returns>
+        public bool IsNodeChecked(string nodeText)
+        {
+            IWebElement node = GetTreeNodeElement(nodeText);
+
+            return node.GetAttribute("class").Split(' ').Contains(TREENODECHECKEDCLASS);
         }
 
         /// <summary>
@@ -207,6 +252,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
             IWebElement[] imageButtons = ElementHandler.FindElements(imageButtonsLocator, nodeElement);// nodeElement.FindElements(imageButtonsLocator.ToBy()).ToArray();
 
             return imageButtons[imageButtons.Length - 2];
+        }
+
+        private void ClickNodeCheckbox(string nodeText)
+        {
+            IWebElement node = GetTreeNodeElement(nodeText);
+
+            GetCheckboxElement(node).Click();
+        }
+
+        private IWebElement GetCheckboxElement(IWebElement nodeElement)
+        {
+            Locator checkboxInputLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.TreeNodeCheckbox);
+
+            IWebElement checkboxInput = ElementHandler.FindElement(checkboxInputLocator, nodeElement);// nodeElement.FindElements(imageButtonsLocator.ToBy()).ToArray();
+
+            return checkboxInput;
         }
         #endregion
     }

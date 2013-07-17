@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocBuild001", "空调", "冷热源", "供热主机"],
+			"SystemDimensionPath":["SysDimAssocSite001", "空调", "冷热源", "供热主机"],
 			"Message":"删除系统维度节点”供热主机”吗？\r\n您将同时删除系统维度节点下所有的数据点关联关系",
 		}
 	}

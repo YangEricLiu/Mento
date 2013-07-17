@@ -117,7 +117,6 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(PTagSettings.IsCancelButtonDisplayed());
 
             //Verify the error message display "对应节点下已存在相同介质的能耗数据点。"
-            Assert.IsTrue(PTagSettings.IsCommodityInvalid());
             Assert.IsTrue(PTagSettings.IsCommodityInvalidMsgCorrect(input.ExpectedData));
         }
     }

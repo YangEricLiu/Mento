@@ -294,7 +294,7 @@ namespace Mento.Script.Customer.TagAssociation
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-101-3")]
         public void NoAffectOnFormulaOrChart(AssociateTagData input)
         {
-            string formulaValue = "{ptag|PtagCheckAssoc101_3}*2}";
+            string formulaValue = "{ptag|PtagCheckAssoc101_3}*2";
 
             //Select building node
             Association.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);

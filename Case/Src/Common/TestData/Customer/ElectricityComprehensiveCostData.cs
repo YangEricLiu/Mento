@@ -19,6 +19,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string DemandCostType { get; set; }
         public string HourTagId { get; set; }
         public string ElectricHourPrice { get; set; }
+        public string ElectricPrice { get; set; }
         public string TransformerCapacity { get; set; }
         public string TransformerPrice { get; set; }
         public string TouTariffId { get; set; }
@@ -37,6 +38,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string DemandCostType { get; set; }
         public string HourTagId { get; set; }
         public string ElectricHourPrice { get; set; }
+        public string ElectricPrice { get; set; }
         public string TransformerCapacity { get; set; }
         public string TransformerPrice { get; set; }
         public string TouTariffId { get; set; }

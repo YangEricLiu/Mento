@@ -15,7 +15,9 @@
       <add key="ButtonNavigatorEnergyAnalysis" value="em-functionPanel-eAnalysis" type="ID"/>
       <add key="ButtonNavigatorCarbonUsage" value="em-functionPanel-eCarbon" type="ID"/>
       <add key="ButtonNavigatorCost" value="em-functionPanel-eCost" type="ID"/>
-      <add key="ButtonNavigatorKPI" value="em-functionPanel-eKPI" type="ID"/>
+      <add key="ButtonNavigatorUnitKPI" value="em-functionPanel-eUnitEnergy" type="ID"/>
+      <add key="ButtonNavigatorEnergyRatio" value="em-functionPanel-eEnergyRatio" type="ID"/>
+      <add key="ButtonNavigatorRank" value="em-functionPanel-eRank" type="ID"/>
       <add key="ButtonNavigatorTimeSettings" value="st-menu-timecfg" type="ID"/>
       <add key="ButtonNavigatorCarbonSettings" value="st-menu-carbon-lv1" type="ID"/>
       <add key="ButtonNavigatorPriceSettings" value="st-menu-price-lv1" type="ID"/>
@@ -73,7 +75,13 @@
       <add key="ButtonEnergyViewSelectHierarchy" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@Common.Label.EmptyHierarchyText']]" type="XPath"/>
       <add key="ButtonEnergyViewSelectSystemDimension" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
       <add key="ButtonEnergyViewSelectAreaDimension" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
-            
+
+      <add key="MenuButtonFuncModeConvert" value="em-func-mode-btn" type="ID"/>
+      <add key="MenuButtonTagModeConvert" value="em-tag-mode-btn" type="ID"/>
+      <add key="MenuButtonUnitTypeConvert" value="//div[@id='em-unit-energy-chartpanel']/div/div/div[2]" type="XPath"/>
+      <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-ratio-chartgridpanel']/div/div/div[2]" type="XPath"/>
+      <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[2]" type="XPath"/>
+      
       <add key="TabButtonEnergyViewALLTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='全部数据点']]" type="XPath"/>
       <add key="TabButtonEnergyViewSystemDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='系统数据点']]" type="XPath"/>
       <add key="TabButtonEnergyViewAreaDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='区域数据点']]" type="XPath"/>
@@ -92,6 +100,9 @@
       <add key="LinkButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
       <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
       <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+      
+      <add key="ButtonConfirmHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
+    <add key="ButtonConfirmHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='清空']]" type="XPath"/>
     </energyview>
     <customersettings>
       <ptag>
@@ -192,7 +203,8 @@
         <add key="ButtonDieselOilCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='柴油']]/div/img" type="XPath"/>
         <add key="ButtonLowPressureSteamCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='低压蒸汽']]/div/img" type="XPath"/>
         <add key="ButtonWaterCostDelete" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//div[contains(@class, 'x-tool')]/img" type="XPath"/>
-        <add key="LinkButtonFactor" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton')]" type="XPath"/>
+        <add key="LinkButtonFactor" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton') and a[text()='查看所选功率因数']]" type="XPath"/>
+        <add key="LinkButtonTOU" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton') and a[text()='查看价格策略详情']]" type="XPath"/>
         <add key="ButtonElectricCostDelete" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform') and contains(@class, 'x-panel-body-default')]/div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@class, 'x-tool')]/img" type="XPath"/>
       </hierarchycost>
       <systemdimension>
@@ -644,9 +656,9 @@
         <add key="LabelWorktimeCalendar" value="st-hierarchy-calendar-workday-container" type="ID"/>
         <add key="LabelHeatingCoolingCalendar" value="st-hierarchy-calendar-coldwarm-container" type="ID"/>
         <add key="LabelDayNightCalendar" value="st-hierarchy-calendar-daynight-container" type="ID"/>
-        <add key="LabelTitleWorkday" value="//div[@id='st-hier-calendar-form-body']//td[@class='x-form-item-body']/table[1]//label[text()='工休日']" type="XPath"/>
-        <add key="LabelTitleHeatingCooling" value="//div[@id='st-hier-calendar-form-body']//td[@class='x-form-item-body']/table[3]//label[text()='冷暖季']" type="XPath"/>
-        <add key="LabelTitleDayNight" value="//div[@id='st-hier-calendar-form-body']//td[@class='x-form-item-body']/table[5]//label[text()='昼夜时间']" type="XPath"/>
+        <add key="LabelTitleWorkday" value="//div[@id='st-hier-calendar-form-body']//label[text()='工休日']" type="XPath"/>
+        <add key="LabelTitleHeatingCooling" value="//div[@id='st-hier-calendar-form-body']//label[text()='冷暖季']" type="XPath"/>
+        <add key="LabelTitleDayNight" value="//div[@id='st-hier-calendar-form-body']//label[text()='昼夜时间']" type="XPath"/>
       </HierarchyCalendar>
       <HierarchyPopulationArea>
         <add key="LabelAreaPropertyTitle" value="st-hierarchy-dynamicproperty-area-label-labelEl" type="ID"/>

@@ -16,7 +16,7 @@
 			"CommonName":"PtagModifyCancel",
 			"Code":"PtagModifyCancel",
 			"Meter":"PtagModifyCancel",
-			"Channel":"2",
+			"Channel":"32",
 			"Commodity":"Water",
 			"Uom":"Ton",
 			"CalculationType":"Max",

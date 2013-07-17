@@ -69,6 +69,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             //Input nothing and cancel it
             CostSettings.ClickCostCancelButton();
             TimeManager.ShortPause();
+            Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
+            Assert.IsTrue(CostSettings.IsCostCreateButtonDisplayed());
 
             //verify that "+成本属性" button displayed
             Assert.IsTrue(CostSettings.IsCostCreateButtonDisplayed());
@@ -143,6 +146,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CostSettings.SelectElectricPriceMode(input.InputData.PriceMode, 1);
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
+            Assert.IsTrue(CostSettings.IsCostSaveButtonDisplayed());
+            Assert.IsTrue(CostSettings.IsCostCancelButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostUpdateButtonDisplayed());
 
             //verify that invalid check triggered
             Assert.IsTrue(CostSettings.IsElectricPriceInvalid(1));
@@ -183,6 +189,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CostSettings.FillElectricPrice(input.InputData.DoubleNonNagtiveValue, 1);
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
+            Assert.IsTrue(CostSettings.IsCostSaveButtonDisplayed());
+            Assert.IsTrue(CostSettings.IsCostCancelButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostUpdateButtonDisplayed());
 
             //verify that invalid check triggered
             Assert.IsTrue(CostSettings.IsElectricPriceInvalid(1));
@@ -227,9 +236,12 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
             CostSettings.FillInFixedCost(input.InputData, 1);
 
-            //Click "Save" Then check add
+            //Click "Save" button and make sure save successful
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
+            Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
+            Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());
 
             //Verify the input value displayed correct
             Assert.AreEqual(CostSettings.GetElectricCostEffectiveDateValue(1), input.ExpectedData.EffectiveDate);
@@ -267,9 +279,12 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             //fill in fixed value again
             CostSettings.FillInFixedCost(input.InputData, 1);
 
-            //Click "Save" Then check add
+            //Click "Save" button and make sure save successful
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
+            Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
+            Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());
 
             //Verify the input value displayed correct
             Assert.AreEqual(CostSettings.GetElectricCostEffectiveDateValue(1), input.InputData.EffectiveDate);
@@ -300,9 +315,12 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CostSettings.SelectElectricEffectiveDate(input.InputData.EffectiveDate, 1);
             CostSettings.SelectElectricPriceMode(input.InputData.PriceMode, 1);
 
-            //Click "Save" button
+            //Click "Save" button and make sure save faled
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
+            Assert.IsTrue(CostSettings.IsCostSaveButtonDisplayed());
+            Assert.IsTrue(CostSettings.IsCostCancelButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostUpdateButtonDisplayed());
 
             //verify that invalid check triggered
             Assert.IsTrue(CostSettings.IsDemandCostTypeInvalid(1));
@@ -356,9 +374,12 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CostSettings.FillElectricPaddingCost(input.InputData.DoubleNonNagtiveValue, 1);
             TimeManager.ShortPause();
 
-            //Click "Save" button
+            //Click "Save" button and make sure save faled
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
+            Assert.IsTrue(CostSettings.IsCostSaveButtonDisplayed());
+            Assert.IsTrue(CostSettings.IsCostCancelButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostUpdateButtonDisplayed());
 
             //verify it's invalid
             Assert.IsTrue(CostSettings.IsElectricTransformerCapacityInvalid(1));
@@ -415,9 +436,12 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CostSettings.SelectRealTagId(input.InputData.RealTagId, 1);
             CostSettings.SelectReactiveTagId(input.InputData.ReactiveTagId, 1);
 
-            //Click "Save" button
+            //Click "Save" button and make sure save successful
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
+            Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
+            Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());
 
             //Verify added successful and padding cost not displayed
             Assert.AreEqual(input.ExpectedData.EffectiveDate, CostSettings.GetElectricCostEffectiveDateValue(1));
@@ -475,9 +499,12 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CostSettings.SelectReactiveTagId(input.InputData.ReactiveTagId, 1);
             CostSettings.FillElectricPaddingCost(input.InputData.ElectricPaddingCost, 1);
 
-            //Click "Save" button
+            //Click "Save" button and make sure save successful
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
+            Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
+            Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
+            Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());
 
             //Verify added successful and padding cost not displayed
             Assert.AreEqual(input.ExpectedData.EffectiveDate, CostSettings.GetElectricCostEffectiveDateValue(1));

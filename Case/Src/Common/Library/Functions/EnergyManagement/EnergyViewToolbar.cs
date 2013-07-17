@@ -71,9 +71,34 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading();
         }
 
-        public void SelectConvertTarget(CarbonConvertTarget target)
+        public void SelectCarbonConvertTarget(CarbonConvertTarget target)
         {
-            ConvertTargetButton.SwitchMenuItem(target);
+            ConvertTargetButton.SwitchCarbonMenuItem(target);
+        }
+
+        public void SelectFuncModeConvertTarget(FuncModeConvertTarget target)
+        {
+            ConvertTargetButton.SwitchFuncModeMenuItem(target);
+        }
+
+        public void SelectTagModeConvertTarget(TagModeConvertTarget target)
+        {
+            ConvertTargetButton.SwitchTagModeMenuItem(target);
+        }
+
+        public void SelectUnitTypeConvertTarget(UnitTypeConvertTarget target)
+        {
+            ConvertTargetButton.SwitchUnitTypeMenuItem(target);
+        }
+
+        public void SelectRadioTypeConvertTarget(RadioTypeConvertTarget target)
+        {
+            ConvertTargetButton.SwitchRadioTypeMenuItem(target);
+        }
+
+        public void SelectRankTypeConvertTarget(RankTypeConvertTarget target)
+        {
+            ConvertTargetButton.SwitchRankTypeMenuItem(target);
         }
 
         public void RemoveAllTags()

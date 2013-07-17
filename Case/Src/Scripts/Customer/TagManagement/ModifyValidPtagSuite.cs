@@ -142,7 +142,7 @@ namespace Mento.Script.Customer.TagManagement
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyValidPtagSuite), "TC-J1-FVT-PtagConfiguration-Modify-101-4")]
         public void ModifyAndVerify(PtagData input)
-        {/*
+        {
             string vtagName = "VtagForCheckPtagAll";
 
             //Click "Modify" button and input new value to ptag field
@@ -165,7 +165,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.VTagSettings.FocusOnVTagByName(vtagName);
             JazzFunction.VTagSettings.SwitchToFormulaTab();
             JazzFunction.VTagSettings.ClickModifyFormulaButton();
-            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(JazzFunction.VTagSettings.IsTagNameOnFormulaTagList(input.ExpectedData.CommonName));
 
@@ -173,15 +173,15 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
             JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
             JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.CommonName);
-            */
+            
             //3. Verify that ptag is updated on energy view tag list and  its legend name
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
-            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.CommonName);
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.ExpectedData.CommonName);
             JazzFunction.EnergyViewToolbarViewSplitButton.Click();
-            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("PtagForModifyCheckAl..."));
             //JazzFunction.EnergyAnalysisPanel.ClickLegendItem("PtagForModifyCheckAl...");

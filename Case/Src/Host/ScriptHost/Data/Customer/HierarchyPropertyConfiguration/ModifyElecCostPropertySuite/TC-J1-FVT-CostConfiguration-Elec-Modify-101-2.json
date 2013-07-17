@@ -3,11 +3,11 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试", "ABCostProperty", "ModifyThenSaveComp"],
-			"ElectricHourPrice":"123456789.12",
+			"ElectricPrice":"123456789.12",
 		},
 		"ExpectedData":
 		{	
-			"ElectricHourPrice":"5",
+			"ElectricPrice":"5",
 		}
 	}
 ]

@@ -117,7 +117,7 @@
 			"Channel":"必填项。",
 			"IntegerValue":"必填项",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"该输入项只能是正数\r\n该输入项的最小值是 0.000001",
+			"DoubleNonNagtiveValue":"该输入项的最小值是 0.000001",
 			"Comments":"允许汉字，半角英文字母，数字，下划线和空格",
 			"FeedbackComments":"",
 		}
@@ -199,7 +199,7 @@
 			"Channel":"必填项。",
 			"IntegerValue":"必填项",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"该输入项只能是正数\r\n1.2.3 不是有效数值",
+			"DoubleNonNagtiveValue":"1.2.3 不是有效数值",
 			"Comments":"允许汉字，半角英文字母，数字，下划线和空格",
 			"FeedbackComments":"",
 		}

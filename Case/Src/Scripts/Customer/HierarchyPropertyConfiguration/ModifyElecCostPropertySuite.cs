@@ -95,10 +95,10 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "修改" button
             CostSettings.ClickCostCreateButton();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Modify value and "Cancel"
-            CostSettings.FillElectricHourPrice(input.InputData.ElectricHourPrice, 1);
+            CostSettings.FillElectricPrice(input.InputData.ElectricPrice, 1);
             CostSettings.ClickCostCancelButton();
             TimeManager.ShortPause();
             Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
@@ -106,7 +106,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());
 
             //verify not modify
-            Assert.AreEqual(input.ExpectedData.ElectricHourPrice, CostSettings.GetElectricHourPriceValue(1));
+            Assert.AreEqual(input.ExpectedData.ElectricPrice, CostSettings.GetElectricPriceValue(1));
 
             //modify again and save
             //Click "修改" button
@@ -114,7 +114,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //Modify value and "Save"
-            CostSettings.FillElectricHourPrice(input.InputData.ElectricHourPrice, 1);
+            CostSettings.FillElectricPrice(input.InputData.ElectricPrice, 1);
             CostSettings.ClickCostSaveButton();
             TimeManager.ShortPause();
             Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
@@ -122,7 +122,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());
 
             //verify modify
-            Assert.AreEqual(input.InputData.ElectricHourPrice, CostSettings.GetElectricHourPriceValue(1));
+            Assert.AreEqual(input.InputData.ElectricPrice, CostSettings.GetElectricPriceValue(1));
         }
 
         [Test]
@@ -226,7 +226,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.AreEqual(input.ExpectedData.FactorType, CostSettings.GetFactorTypeValue(2));
             Assert.AreEqual(input.ExpectedData.RealTagId, CostSettings.GetRealTagIdValue(2));
             Assert.AreEqual(input.ExpectedData.ReactiveTagId, CostSettings.GetReactiveTagIdValue(2));
-            Assert.IsFalse(CostSettings.IsPaddingCostDisplayed(1));
+            Assert.IsFalse(CostSettings.IsPaddingCostDisplayed(2));
         }
 
         [Test]

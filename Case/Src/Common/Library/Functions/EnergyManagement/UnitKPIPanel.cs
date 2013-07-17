@@ -8,7 +8,7 @@ using Mento.TestApi.WebUserInterface;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    public class KpiPanel : EnergyViewPanel
+    public class UnitKPIPanel : EnergyViewPanel
     {
         #region Controls
         //Select system dimension tree button
@@ -53,7 +53,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
         #endregion
 
-        internal KpiPanel()
+        internal UnitKPIPanel()
         {
             TagGrid = JazzGrid.EnergyAnalysisAllTagList;
 

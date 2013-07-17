@@ -45,6 +45,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button EnergyViewAddTimeSpanButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewAddTimeSpan);
         public static Button EnergyViewRemoveAllButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewRemoveAll);
         public static MenuButton EnergyViewConvertTargetMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonEnergyViewConvertTarget);
+        public static MenuButton FuncModeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonFuncModeConvert);
+        public static MenuButton TagModeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonTagModeConvert);
+        public static MenuButton UnitTypeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonUnitTypeConvert);
+        public static MenuButton RadioTypeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonRadioTypeConvert);
+        public static MenuButton RankTypeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonRankTypeConvert);
+
         public static Button EnergyViewPeakValleyButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewPeakValley);
         public static Button ButtonModifyWidgetName = GetControl<Button>(JazzControlLocatorKey.ButtonModifyWidgetName);
         public static Button ModifyWidgetNameSaveButton = GetControl<Button>(JazzControlLocatorKey.ModifyWidgetNameSaveButton);
@@ -68,7 +74,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorEnergyAnalysisButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorEnergyAnalysis);
         public static Button NavigatorCarbonUsageButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCarbonUsage);
         public static Button NavigatorCostButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCost);
-        public static Button NavigatorKPIButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorKPI);
+        public static Button NavigatorUnitKPIButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorUnitKPI);
+        public static Button NavigatorEnergyRatioButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorEnergyRatio);
+        public static Button NavigatorRankButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorRank);
 
         public static Button NavigatorTimeSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTimeSettings);
         public static Button NavigatorCarbonSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCarbonSettings);

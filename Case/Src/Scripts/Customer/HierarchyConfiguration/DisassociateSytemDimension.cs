@@ -195,25 +195,22 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Message box popup and confirm it
             string msgText = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
             JazzMessageBox.MessageBox.Yes();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             SystemSettings.ConfirmSystemDimensionDialog();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-            TimeManager.ShortPause();
 
             //1. Expand system dimension tree and verify the node is not disassociated
-            SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath);
-            TimeManager.LongPause();
-            Assert.IsFalse(SystemSettings.IsSystemDimensionNodeDisplayed(input.ExpectedData.SystemDimensionPath.Last()));
-            TimeManager.LongPause();
+            Assert.IsFalse(SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath));
+            TimeManager.MediumPause();
 
             //2. Verify it on data association/system dimension
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationSystemDimension);
             //SystemSettings.ShowHierarchyTree();
-            TimeManager.LongPause();
+            TimeManager.MediumPause();
             //SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
 
             Assert.IsFalse(SystemSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionItemPath));

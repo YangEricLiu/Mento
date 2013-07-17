@@ -80,6 +80,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickSaveCalendarButton()
         {
             CalendarSave.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         public void ClickCancelCalendarButton()

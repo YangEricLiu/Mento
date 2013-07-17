@@ -26,6 +26,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region TreeView locators
         public static string TreeNode = "TreeNode";
         public static string TreeNodeImage = "TreeNodeImage";
+        public static string TreeNodeCheckbox = "TreeNodeCheckbox";
         #endregion
 
         #region TextField locators

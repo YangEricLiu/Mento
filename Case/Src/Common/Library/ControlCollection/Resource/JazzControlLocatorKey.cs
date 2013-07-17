@@ -21,7 +21,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorEnergyAnalysis = "ButtonNavigatorEnergyAnalysis";
         public static string ButtonNavigatorCarbonUsage = "ButtonNavigatorCarbonUsage";
         public static string ButtonNavigatorCost = "ButtonNavigatorCost";
-        public static string ButtonNavigatorKPI = "ButtonNavigatorKPI";
+        public static string ButtonNavigatorUnitKPI = "ButtonNavigatorUnitKPI";
+        public static string ButtonNavigatorEnergyRatio = "ButtonNavigatorEnergyRatio";
+        public static string ButtonNavigatorRank = "ButtonNavigatorRank";
         public static string ButtonNavigatorTimeSettings = "ButtonNavigatorTimeSettings";
         public static string ButtonNavigatorCarbonSettings = "ButtonNavigatorCarbonSettings";
         public static string ButtonNavigatorPriceSettings = "ButtonNavigatorPriceSettings";
@@ -88,6 +90,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonEnergyViewAddTimeSpan = "ButtonEnergyViewAddTimeSpan";
         public static string ButtonEnergyViewRemoveAll = "ButtonEnergyViewRemoveAll";
         public static string MenuButtonEnergyViewConvertTarget = "MenuButtonEnergyViewConvertTarget";
+        public static string MenuButtonFuncModeConvert = "MenuButtonFuncModeConvert";
+        public static string MenuButtonTagModeConvert = "MenuButtonTagModeConvert";
+        public static string MenuButtonUnitTypeConvert = "MenuButtonUnitTypeConvert";
+        public static string MenuButtonRadioTypeConvert = "MenuButtonRadioTypeConvert";
+        public static string MenuButtonRankTypeConvert = "MenuButtonRankTypeConvert";
+
         public static string ButtonEnergyViewPeakValley = "ButtonEnergyViewPeakValley";
         public static string ButtonModifyWidgetName = "ButtonModifyWidgetName";
         public static string ModifyWidgetNameSaveButton = "ModifyWidgetNameSaveButton";

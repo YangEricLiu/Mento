@@ -35,10 +35,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button EnergyViewSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectHierarchy);
         public static Button EnergyViewSelectSystemDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectSystemDimension);
         public static Button EnergyViewSelectAreaDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectAreaDimension);
+        public static Button RankSelectSystemDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonRankSelectSystemDimension);
+        public static Button RankSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonRankSelectHierarchy);
         
         public static TabButton EnergyViewALLTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewALLTagsTab);
         public static TabButton EnergyViewSystemDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewSystemDimensionTagsTab);
         public static TabButton EnergyViewAreaDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewAreaDimensionTagsTab);
+        public static TabButton RankHierarchyTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonRankHierarchyTab);
+        public static TabButton RankSystemDimensionTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonRankSystemDimensionTab);
 
         public static SplitButton EnergyViewViewDataButton = GetControl<SplitButton>(JazzControlLocatorKey.SplitButtonEnergyViewViewData);
         public static MenuButton EnergyViewMoreButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonEnergyViewMore);
@@ -58,6 +62,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button ButtonDeleteWidget = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteWidget);
         public static Button DeleteWidgetConfirmButton = GetControl<Button>(JazzControlLocatorKey.DeleteWidgetConfirmButton);
         public static Button DeleteWidgetCancelButton = GetControl<Button>(JazzControlLocatorKey.DeleteWidgetCancelButton);
+        public static Button ConfirmHierarchyRankButton = GetControl<Button>(JazzControlLocatorKey.ButtonConfirmHierarchyRank);
+        public static Button ClearHierarchyRankButton = GetControl<Button>(JazzControlLocatorKey.ButtonClearHierarchyRank);
 
         public static LinkButton EnergyViewSaveDashboardCreateDashboardButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonEnergyViewSaveDashboardCreateDashboard);
         public static LinkButton DashboardHierarchyNameButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonDashboardHierarchyName);

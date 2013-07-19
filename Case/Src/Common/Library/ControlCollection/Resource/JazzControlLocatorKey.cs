@@ -82,9 +82,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonEnergyViewSelectHierarchy = "ButtonEnergyViewSelectHierarchy";
         public static string ButtonEnergyViewSelectSystemDimension = "ButtonEnergyViewSelectSystemDimension";
         public static string ButtonEnergyViewSelectAreaDimension = "ButtonEnergyViewSelectAreaDimension";
+        public static string ButtonRankSelectSystemDimension = "ButtonRankSelectSystemDimension";
+        public static string ButtonRankSelectHierarchy = "ButtonRankSelectHierarchy";
+        
         public static string TabButtonEnergyViewALLTagsTab = "TabButtonEnergyViewALLTagsTab";
         public static string TabButtonEnergyViewSystemDimensionTagsTab = "TabButtonEnergyViewSystemDimensionTagsTab";
         public static string TabButtonEnergyViewAreaDimensionTagsTab = "TabButtonEnergyViewAreaDimensionTagsTab";
+        public static string TabButtonRankHierarchyTab = "TabButtonRankHierarchyTab";
+        public static string TabButtonRankSystemDimensionTab = "TabButtonRankSystemDimensionTab";
+
         public static string SplitButtonEnergyViewViewData = "SplitButtonEnergyViewViewData";
         public static string MenuButtonEnergyViewMore = "MenuButtonEnergyViewMore";
         public static string ButtonEnergyViewAddTimeSpan = "ButtonEnergyViewAddTimeSpan";
@@ -95,6 +101,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string MenuButtonUnitTypeConvert = "MenuButtonUnitTypeConvert";
         public static string MenuButtonRadioTypeConvert = "MenuButtonRadioTypeConvert";
         public static string MenuButtonRankTypeConvert = "MenuButtonRankTypeConvert";
+        public static string ButtonConfirmHierarchyRank = "ButtonConfirmHierarchyRank";
+        public static string ButtonClearHierarchyRank = "ButtonClearHierarchyRank";
 
         public static string ButtonEnergyViewPeakValley = "ButtonEnergyViewPeakValley";
         public static string ButtonModifyWidgetName = "ButtonModifyWidgetName";
@@ -620,6 +628,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string AreaDimensionTreeEnergyView = "AreaDimensionTreeEnergyView";
         public static string AreaDimensionTreeHierarchySettings = "AreaDimensionTreeHierarchySettings";
         public static string AreaDimensionTreeAssociation = "AreaDimensionTreeAssociation";
+        public static string HierarchyTreeRank = "HierarchyTreeRank";
         #endregion
 
         #region Grid

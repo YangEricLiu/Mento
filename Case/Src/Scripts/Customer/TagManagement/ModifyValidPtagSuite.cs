@@ -215,6 +215,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Commodity updated
             JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.ExpectedData.CommonName);
+            TimeManager.LongPause();
             Assert.AreEqual(PTagSettings.GetCommodityExpectedValue(input.ExpectedData.Commodity), JazzFunction.EnergyAnalysisPanel.GetSelectedRowData(3));
 
             //Uom updated

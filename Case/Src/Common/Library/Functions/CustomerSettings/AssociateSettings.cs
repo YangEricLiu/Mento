@@ -96,6 +96,21 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
         }
 
+        /// <summary>
+        /// Click the "associate tags" button
+        /// </summary>
+        /// <returns></returns>
+        public void ClickDisassociateButton()
+        {
+            JazzButton.AssociationSettingsDisassociate.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        public void ClickAssociatedCancel()
+        {
+            JazzButton.AssociationSettingCancel.Click();
+        }
+
         public bool IsAssociateTagButtonDisplayed()
         {
             return AssociationTag.IsDisplayed();
@@ -126,6 +141,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public void CheckedTag(string tagName)
         {
             TagList.CheckRowCheckbox(3, tagName);
+        }
+
+        /// <summary>
+        /// Click the tag in grid to select the tag
+        /// </summary>
+        /// <param name = "tagName">the tag name</param>
+        /// <returns></returns>
+        public void FocusOnTag(String tagName)
+        {
+            TagList.FocusOnRow(3, tagName);
         }
 
         /// <summary>

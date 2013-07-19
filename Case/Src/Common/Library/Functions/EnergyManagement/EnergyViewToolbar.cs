@@ -135,15 +135,5 @@ namespace Mento.ScriptCommon.Library.Functions
 
             DashboardDialog.Save(widgetName, hierarchyName, isCreateDashboard, dashboardName);
         }
-
-        public void ShowCalendar()
-        {
-            MoreMenu.CheckShowCanlendar();
-        }
-
-        public void HideCalendar()
-        {
-            MoreMenu.UncheckShowCanlendar();
-        }
     }
 }

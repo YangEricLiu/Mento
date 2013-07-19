@@ -377,5 +377,50 @@ namespace Mento.ScriptCommon.Library
                 return _CostPanel;
             }
         }
+
+        //Emma add 2013/07/18
+        private static UnitKPIPanel _UnitKPIPanel;
+        public static UnitKPIPanel UnitKPIPanel
+        {
+            get
+            {
+                if (_UnitKPIPanel == null)
+                    _UnitKPIPanel = new UnitKPIPanel();
+                return _UnitKPIPanel;
+            }
+        }
+
+        private static EnergyViewToolbar _EnergyViewToolbar;
+        public static EnergyViewToolbar EnergyViewToolbar
+        {
+            get
+            {
+                if (_EnergyViewToolbar == null)
+                    _EnergyViewToolbar = new EnergyViewToolbar();
+                return _EnergyViewToolbar;
+            }
+        }
+
+        private static RadioPanel _RadioPanel;
+        public static RadioPanel RadioPanel
+        {
+            get
+            {
+                if (_RadioPanel == null)
+                    _RadioPanel = new RadioPanel();
+                return _RadioPanel;
+            }
+        }
+
+        private static RankPanel _RankPanel;
+        public static RankPanel RankPanel
+        {
+            get
+            {
+                if (_RankPanel == null)
+                    _RankPanel = new RankPanel();
+                return _RankPanel;
+            }
+        }
     }
 }

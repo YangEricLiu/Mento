@@ -68,6 +68,8 @@
     <Compile Include="Functions\CustomerSettings\AreaDimensionSettings.cs" />
     <Compile Include="Functions\CustomerSettings\AssociateSettings.cs" />
     <Compile Include="Functions\EnergyManagement\CarbonUsagePanel.cs" />
+    <Compile Include="Functions\EnergyManagement\RankPanel.cs" />
+    <Compile Include="Functions\EnergyManagement\RadioPanel.cs" />
     <Compile Include="Functions\EnergyManagement\CostPanel.cs" />
     <Compile Include="Functions\EnergyManagement\UnitKPIPanel.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewPanel.cs" />

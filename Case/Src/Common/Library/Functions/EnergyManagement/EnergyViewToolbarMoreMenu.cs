@@ -26,7 +26,9 @@ namespace Mento.ScriptCommon.Library.Functions
 
             {EnergyViewMoreOption.ToDashboard,new string[]{"至仪表盘"}},
 
-            {EnergyViewMoreOption.ShowCalendar,new string[]{"显示日历"}},
+            {EnergyViewMoreOption.ShowCalendarNon,new string[]{"显示日历", "无"}},
+            {EnergyViewMoreOption.ShowCalendarNonWorkday,new string[]{"显示日历", "非工作时间"}},
+            {EnergyViewMoreOption.ShowCalendarHeatCool,new string[]{"显示日历", "冷暖季"}},
         };
 
         internal EnergyViewToolbarMoreMenu() { }
@@ -34,16 +36,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SwitchMenuItem(EnergyViewMoreOption moreOption)
         {
             MoreButton.SelectItem(MenuItems[moreOption]);
-        }
-
-        public void CheckShowCanlendar()
-        {
-            MoreButton.CheckItem(MenuItems[EnergyViewMoreOption.ShowCalendar][0]);
-        }
-
-        public void UncheckShowCanlendar()
-        {
-            MoreButton.UncheckItem(MenuItems[EnergyViewMoreOption.ShowCalendar][0]);
         }
     }
 
@@ -61,7 +53,9 @@ namespace Mento.ScriptCommon.Library.Functions
 
         ToDashboard,
 
-        ShowCalendar,
+        ShowCalendarNon,
+        ShowCalendarNonWorkday,
+        ShowCalendarHeatCool,
     }
 
 }

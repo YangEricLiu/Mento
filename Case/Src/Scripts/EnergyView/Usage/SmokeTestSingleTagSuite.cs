@@ -26,7 +26,7 @@ namespace Mento.Script.EnergyView.Usage
         [SetUp]
         public void CaseSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
             TimeManager.MediumPause();
         }
 
@@ -150,6 +150,31 @@ namespace Mento.Script.EnergyView.Usage
             EnergyUsageEndDate.SelectDateItem(new DateTime(2012, 7, 14));
             TimeManager.MediumPause();
             EnergyUsageStartDate.SelectDateItem(new DateTime(2012, 6, 10));
+        }
+
+        [Test]
+        [CaseID("TC-J1-SmokeTest-000")]
+        public void KPIRankRadio()
+        {
+            
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UnitKPI);
+            TimeManager.MediumPause();
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.Line);
+
+            /*
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyRadio);
+            TimeManager.MediumPause();
+
+            string[] hierarchyNodePath = { "AutoOrg001", "AutoSite001", "AutoBuilding001" };
+            string[] systemNodePath = {  "系统维度", "空调" };
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.Rank);
+            TimeManager.MediumPause();
+            JazzFunction.RankPanel.CheckHierarchyNode(hierarchyNodePath);
+            JazzFunction.RankPanel.ClickConfirmHiearchyButton();
+            JazzFunction.RankPanel.SwitchSystemDimensionTab();
+
+            JazzFunction.RankPanel.SelectSystemDimensionNode(systemNodePath);
+            */
         }
     }
 }

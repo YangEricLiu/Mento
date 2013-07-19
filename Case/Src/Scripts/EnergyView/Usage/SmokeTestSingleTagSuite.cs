@@ -156,25 +156,39 @@ namespace Mento.Script.EnergyView.Usage
         [CaseID("TC-J1-SmokeTest-000")]
         public void KPIRankRadio()
         {
-            
+            /*
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UnitKPI);
             TimeManager.MediumPause();
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.Line);
 
-            /*
+            
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyRadio);
             TimeManager.MediumPause();
-
-            string[] hierarchyNodePath = { "AutoOrg001", "AutoSite001", "AutoBuilding001" };
-            string[] systemNodePath = {  "系统维度", "空调" };
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.Rank);
-            TimeManager.MediumPause();
-            JazzFunction.RankPanel.CheckHierarchyNode(hierarchyNodePath);
-            JazzFunction.RankPanel.ClickConfirmHiearchyButton();
-            JazzFunction.RankPanel.SwitchSystemDimensionTab();
-
-            JazzFunction.RankPanel.SelectSystemDimensionNode(systemNodePath);
             */
+            //string[] hierarchyNodePath = { "AutoOrg001", "AutoSite001", "AutoBuilding001" };
+            string[] systemNodePath = {  "系统维度", "空调" };
+            string[] hierarchyNodePath = { "AutoOrg001" };
+
+            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.Rank);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.MediumPause();
+
+            JazzFunction.EnergyAnalysisPanel.SelectHierarchy(hierarchyNodePath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            JazzFunction.EnergyAnalysisPanel.CheckTag("Ptag2YNAME1");
+
+            //JazzFunction.RankPanel.CheckHierarchyNode(hierarchyNodePath);
+            //JazzFunction.RankPanel.ClickConfirmHiearchyButton();
+            //JazzFunction.RankPanel.SwitchSystemDimensionTab();
+
+            //JazzFunction.RankPanel.SelectSystemDimensionNode(systemNodePath);
+            //JazzFunction.EnergyViewToolbar.View(EnergyViewType.Line);
+            JazzFunction.EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+
+            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTrendChartDrawn());
         }
     }
 }

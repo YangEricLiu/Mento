@@ -18,8 +18,8 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Customer.TagAssociation
 {
     [TestFixture]
-    [Owner("Emma")]
-    [CreateTime("2013-07-11")]
+    [Owner("Hardy")]
+    [CreateTime("2013-07-22")]
     [ManualCaseID("TC-J1-FVT-TagAssociation-Disassociate")]
     public class DisassociateTagSuite : TestSuiteBase
     {
@@ -44,20 +44,6 @@ namespace Mento.Script.Customer.TagAssociation
         {
             Association.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
-
-            if (input.InputData.SystemDimensionPath != null)
-            {
-                //Navigate to systemdimension
-                Association.NavigateToSystemDimensionAssociate();
-                SystemSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionPath);
-            }
-
-            if (input.InputData.AreaDimensionPath != null)
-            {
-                //Navigate to areadimension
-                Association.NavigateToAreaDimensionAssociate();
-                AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaDimensionPath);
-            }       
         }
 
         private void CheckEVOnWhichNode(AssociateTagData input)
@@ -88,28 +74,26 @@ namespace Mento.Script.Customer.TagAssociation
         {
             //navigate and select node
             AssociateOnWhichNode(input);
-            
-            Association.ClickAssociateTagButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+
+            //Navigate to system dimension node and disassociate ptag 
+            JazzFunction.DisassociateSettings.FocusOnTag(input.InputData.TagNames[0]);
             TimeManager.ShortPause();
 
-            //Do not select tag and click "Cancel" button directly
-            Association.ClickCancelButton();
-            TimeManager.ShortPause();
-
-            //verify go back to the previous page
-            Assert.IsTrue(Association.IsAssociateTagButtonDisplayed());
-
-            //Select 2 tags and cancel
-            Association.ClickAssociateTagButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            Association.ClickDisassociateButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
-            Association.CheckedTags(input.InputData.TagNames);
-            Association.ClickCancelButton();
-            TimeManager.ShortPause();
+            Assert.IsFalse(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
 
-            //verify go back to the previous page
-            Assert.IsTrue(Association.IsAssociateTagButtonDisplayed());
+            Association.ClickAssociateTagButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            Association.CheckedTag(input.ExpectedData.TagName);
+            Assert.IsTrue(Association.IsTagChecked(input.ExpectedData.TagName));
+
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
+            Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.TagName));
+      
         }
     }
 }

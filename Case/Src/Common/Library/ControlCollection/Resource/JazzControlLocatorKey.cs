@@ -130,6 +130,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TabButtonVTagSettingsFormula = "TabButtonVTagSettingsFormula";
         public static string ButtonVTagSettingsFormulaUpdate = "ButtonVTagSettingsFormulaUpdate";
         public static string ButtonVTagSettingsFormulaSave = "ButtonVTagSettingsFormulaSave";
+        public static string ButtonVTagSettingsFormulaCancel = "ButtonVTagSettingsFormulaCancel";
         public static string ButtonVTagSettingsCreateVTag = "ButtonVTagSettingsCreateVTag";
         public static string ButtonVTagSettingsSave = "ButtonVTagSettingsSave";
         public static string ButtonVTagSettingsCancel = "ButtonVTagSettingsCancel";

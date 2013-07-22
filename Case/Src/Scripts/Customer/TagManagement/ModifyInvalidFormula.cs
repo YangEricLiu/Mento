@@ -48,7 +48,7 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyInvalidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-001-1")]
         public void AddInvalildFomula(VtagData input)
         {
-            
+            /*
             //Click "+" button and fill nothing
             VTagSettings.ClickAddVTagButton();
             VTagSettings.FillInAddVTagData(input.InputData);
@@ -85,7 +85,7 @@ namespace Mento.Script.Customer.TagManagement
             // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
 
-            VTagSettings.ClickCancelButton();
+            VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
             
             //2.常数(正数，负数，带2位小数)，缺少tag
@@ -102,54 +102,13 @@ namespace Mento.Script.Customer.TagManagement
             // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
 
-            /*
+            // Cancel modify the formula
+            VTagSettings.ClickCancelFormulaButton();
+           
 
            //3.多个vtag之间缺少运算符
-           VTagSettings.ClickModifyFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
 
-           VTagSettings.DragTagToFormula("VtagForFormula001");
-            
-           VTagSettings.DragTagToFormula("VtagForFormula002");
 
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-
-            // Verfied the error message
-            VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
-
-            VTagSettings.ClickCancelButton();
-            TimeManager.ShortPause();
-
-           
-
-           //4.多个vtag之间运算符多于一个
-           VTagSettings.ClickModifyFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-
-           VTagSettings.DragTagToFormula("VtagForFormula001");
-           VTagSettings.DragTagToFormula("*+");
-           VTagSettings.DragTagToFormula("VtagForFormula002");
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-           
-            // Verfied the error message
-            VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
-
-            VTagSettings.ClickCancelButton();
-            TimeManager.ShortPause();
-
-           //5.公式中包括格式不正确的P-tag或者V-tag
            VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
@@ -157,39 +116,48 @@ namespace Mento.Script.Customer.TagManagement
            VTagSettings.DragTagToFormula("VtagForFormula001");
            VTagSettings.DragTagToFormula("VtagForFormula002");
            VTagSettings.DragTagToFormula("VtagForFormula003");
+
            VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           JazzMessageBox.LoadingMask.WaitLoading();
            TimeManager.MediumPause();
 
             // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
-
-            VTagSettings.ClickCancelButton();
+            VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
+
+           //4.多个vtag之间运算符多于一个
+           VTagSettings.ClickModifyFormulaButton();
+           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           TimeManager.MediumPause();
             
-           //6.包含循环调用。Defined V1=V2，then modify V2's formula to be V2=V1, click save。
+            */
+           //VTagSettings.FillInFormulaField("{vtag|VtagForFormula001}+-{vtag|VtagForFormula002}*/{vtag|VtagForFormula003}");
+            /*
+           VTagSettings.ClickSaveFormulaButton();
+           JazzMessageBox.LoadingMask.WaitLoading();
+           TimeManager.MediumPause();
+           
+            // Verfied the error message
+            VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
+
+            VTagSettings.ClickCancelFormulaButton();
+            TimeManager.ShortPause();
+
+           //5.公式中包括格式不正确的P-tag或者V-tag
            VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
 
-           VTagSettings.DragTagToFormula("VtagForFormula001");
-            
-           VTagSettings.DragTagToFormula("VtagForFormula002");
-
+           VTagSettings.FillInFormulaField("|VtagForFormula001}");
 
            VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           JazzMessageBox.LoadingMask.WaitLoading();
            TimeManager.MediumPause();
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
+
             // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
-
-            VTagSettings.ClickCancelButton();
+            VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
 
            //7.公式中包括无效字符或者空格。“@#$-”；“Space”；“中文字符”；{abc}
@@ -198,11 +166,7 @@ namespace Mento.Script.Customer.TagManagement
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
 
-           VTagSettings.DragTagToFormula("VtagForFormula001");
-
-           VTagSettings.DragTagToFormula("VtagForFormula002");
-
-
+           VTagSettings.FillInFormulaField("@#$- 中文字符");
            VTagSettings.ClickSaveFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
@@ -212,79 +176,161 @@ namespace Mento.Script.Customer.TagManagement
             // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
 
-            VTagSettings.ClickCancelButton();
+            VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
 
+            VTagSettings.ClickModifyFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            VTagSettings.FillInFormulaField(" ");
+            VTagSettings.ClickSaveFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            VTagSettings.ClickSaveFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            // Verfied the error message
+            VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
+
+            VTagSettings.ClickCancelFormulaButton();
+            TimeManager.ShortPause();
+
+
+            VTagSettings.ClickModifyFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            VTagSettings.FillInFormulaField("中文字符");
+            VTagSettings.ClickSaveFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            VTagSettings.ClickSaveFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            // Verfied the error message
+            VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
+
+            VTagSettings.ClickCancelFormulaButton();
+            TimeManager.ShortPause();
+            
            // 8.公式中只包括动态属性，缺少tag。
 
            VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
 
-           VTagSettings.DragTagToFormula("VtagForFormula001");
-
-           VTagSettings.DragTagToFormula("VtagForFormula002");
-
+           VTagSettings.FillInFormulaField("{FormulaBuilding|prop|CoolingArea}");
 
            VTagSettings.ClickSaveFormulaButton();
+           JazzMessageBox.LoadingMask.WaitLoading();
+           TimeManager.MediumPause();
+            // Verfied the error message
+            VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
+
+            VTagSettings.ClickCancelFormulaButton();
+            TimeManager.ShortPause();
+
+            VTagSettings.ClickModifyFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            VTagSettings.FillInFormulaField("{FormulaBuilding|prop|HeatingArea}");
+
+            VTagSettings.ClickSaveFormulaButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            // Verfied the error message
+            VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
+
+            VTagSettings.ClickCancelFormulaButton();
+            TimeManager.ShortPause();
+
+            VTagSettings.ClickModifyFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            VTagSettings.FillInFormulaField("{FormulaBuilding|prop|TotalArea}");
+
+            VTagSettings.ClickSaveFormulaButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            // Verfied the error message
+            VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
+
+            VTagSettings.ClickCancelFormulaButton();
+            TimeManager.ShortPause();
+
+            VTagSettings.ClickModifyFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            VTagSettings.FillInFormulaField("{FormulaBuilding|prop|TotalPopulation}");
+
+            VTagSettings.ClickSaveFormulaButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            // Verfied the error message
+            VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
+
+            VTagSettings.ClickCancelFormulaButton();
+            TimeManager.ShortPause();
+
+            // 9.公式中包括不存在的tag( manually input V1= Pxxxxx (Pxxxxx doesn't exist in system actually))
+
+           VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
+
+           VTagSettings.FillInFormulaField("{vtag|Vtag123456789}");
+
            VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           JazzMessageBox.LoadingMask.WaitLoading();
            TimeManager.MediumPause();
              // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
 
-            VTagSettings.ClickCancelButton();
+            VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
+            
 
-           // 9.公式中包括不存在的tag( manually input V1= Pxxxxx (Pxxxxx doesn't exist in system actually))
+            
+            //11.公式中包括不存在的人口面积属性
 
            VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
 
-           VTagSettings.DragTagToFormula("VtagForFormula001");
-
-           VTagSettings.DragTagToFormula("VtagForFormula002");
-
+           VTagSettings.FillInFormulaField("{NotExistProperties|prop|CoolingArea}");
 
            VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-             // Verfied the error message
-            VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
-
-            VTagSettings.ClickCancelButton();
-            TimeManager.ShortPause();
-
-           //10.Prepare a V1 tag (V1=P1+buildingA.property)  Delete the buildingA node successfully.  View V1's formula again.
-
-           VTagSettings.ClickModifyFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-
-           VTagSettings.DragTagToFormula("VtagForFormula001");
-
-           VTagSettings.DragTagToFormula("VtagForFormula002");
-
-
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           JazzMessageBox.LoadingMask.WaitLoading();
            TimeManager.MediumPause();
             // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
 
-            VTagSettings.ClickCancelButton();
+            VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
 
-           //11.公式中包括不存在的人口面积属性
+
+            VTagSettings.ClickModifyFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            VTagSettings.FillInFormulaField("{NotExistProperties|prop|TotalPopulation}");
+
+            VTagSettings.ClickSaveFormulaButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            // Verfied the error message
+            VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
+
+            VTagSettings.ClickCancelFormulaButton();
+            TimeManager.ShortPause();
+            
+           //12.公式中包括没有数据权限的tag  
+           //  defined a V1= V2+V3, the source tag V2 is associated to hierarchynodeA, 
+           //  but user's data permission for the hierarchy node was removed, when click save button of V1's formula again.
 
            VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -296,18 +342,18 @@ namespace Mento.Script.Customer.TagManagement
 
 
            VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           JazzMessageBox.LoadingMask.WaitLoading();
            TimeManager.MediumPause();
             // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
 
-            VTagSettings.ClickCancelButton();
+            VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
+            
 
-           //12.公式中包括没有数据权限的tag   defined a V1= V2+V3, the source tag V2 is associated to hierarchynodeA, but user's data permission for the hierarchy node was removed, when he clicks save button of V1's formula again.
+            //13.公式中包括没有数据权限的人口面积属性   
+           //e.g. V1= pulation property of a hierarchy node, but user's data permission for the hierarchy node was removed, 
+           //when he clicks save button of V1's formula.
 
            VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -319,87 +365,106 @@ namespace Mento.Script.Customer.TagManagement
 
 
            VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           JazzMessageBox.LoadingMask.WaitLoading();
            TimeManager.MediumPause();
             // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
 
-            VTagSettings.ClickCancelButton();
+            VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
+            
 
-           //13.公式中包括没有数据权限的人口面积属性   e.g. V1= pulation property of a hierarchy node, but user's data permission for the hierarchy node was removed, when he clicks save button of V1's formula.
+            //14.公式中包括尚未定义公式的tag  
+           //e.g. V1= V2  The source tag V2 is a newly created one and haven't defined any formula yet, when try to save formula of V1.
 
            VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
 
-           VTagSettings.DragTagToFormula("VtagForFormula001");
-
-           VTagSettings.DragTagToFormula("VtagForFormula002");
-
+           VTagSettings.DragTagToFormula("VtagForFormula014");
 
            VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           JazzMessageBox.LoadingMask.WaitLoading();
            TimeManager.MediumPause();
             // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
 
-            VTagSettings.ClickCancelButton();
+            VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
 
-           //14.公式中包括尚未定义公式的tag  e.g. V1= V2  The source tag V2 is a newly created one and haven't defined any formula yet, when try to save formula of V1.
+           //15.公式中包括步长大于自身的tag   
+           //e.g. V1= V3+V4  V1's step is hour, source tag V3's step is day, when try to save formula of V1.
 
            VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
 
-           VTagSettings.DragTagToFormula("VtagForFormula001");
-
-           VTagSettings.DragTagToFormula("VtagForFormula002");
-
+           VTagSettings.DragTagToFormula("VtagForFormula015");
 
            VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           JazzMessageBox.LoadingMask.WaitLoading();
            TimeManager.MediumPause();
             // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
 
-            VTagSettings.ClickCancelButton();
+            VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
+             
 
-           //15.公式中包括步长大于自身的tag   e.g. V1= V3+V4  V1's step is hour, source tag V3's step is day, when try to save formula of V1.
+            //6.包含循环调用。Defined V1=V2，then modify V2's formula to be V2=V1, click save。
+            VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
+            VTagSettings.SwitchToFormulaTab();
+            VTagSettings.ClickModifyFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
 
-           VTagSettings.ClickModifyFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
+            VTagSettings.DragTagToFormula("VtagForFormula006");
 
-           VTagSettings.DragTagToFormula("VtagForFormula001");
+            VTagSettings.ClickSaveFormulaButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
 
-           VTagSettings.DragTagToFormula("VtagForFormula002");
+            VTagSettings.FocusOnVTagByName("VtagForFormula006");
+            VTagSettings.SwitchToFormulaTab();
+            VTagSettings.ClickModifyFormulaButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            VTagSettings.DragTagToFormula(input.InputData.CommonName);
 
-
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
+            VTagSettings.ClickSaveFormulaButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
             // Verfied the error message
             VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData);
 
-            VTagSettings.ClickCancelButton();
+            VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
-
-       */
+             */
+            //10.Prepare a V1 tag (V1=P1+buildingA.property)  Delete the buildingA node successfully.  View V1's formula again.
+            /*
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            JazzFunction.HierarchySettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            JazzFunction.HierarchySettings.ClickDeleteButton();
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            */
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(VTagSettings.FocusOnVTagByCode("VtagForFormula010"));
+            TimeManager.MediumPause();
+            VTagSettings.SwitchToFormulaTab();
+            TimeManager.MediumPause();
+            Assert.AreEqual(VTagSettings.GetFormulaValue(), "{ptag|PtagByFormula}+{Invalid_Prop}");
+            TimeManager.ShortPause();
+          
         }
     }
 }

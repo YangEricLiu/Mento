@@ -123,8 +123,8 @@
         <add key="TabButtonVTagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()='计算公式']]" type="XPath"/>
         <add key="ButtonVTagSettingsFormulaUpdate" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
         <add key="ButtonVTagSettingsFormulaSave" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-
-        <add key="ButtonVTagSettingsCreateVTag" value="st-vtag-grid-add" type="ID"/>
+          <add key="ButtonVTagSettingsFormulaCancel" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+          <add key="ButtonVTagSettingsCreateVTag" value="st-vtag-grid-add" type="ID"/>
         <add key="ButtonVTagSettingsSave" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
         <add key="ButtonVTagSettingsCancel" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
         <add key="ButtonVTagSettingsModify" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>

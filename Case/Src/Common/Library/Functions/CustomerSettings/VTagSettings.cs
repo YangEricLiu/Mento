@@ -35,6 +35,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DeleteButton = JazzButton.VTagSettingsDeleteButton;
         private static Button VTagSettingsFormulaUpdate = JazzButton.VTagSettingsFormulaUpdateButton;
         private static Button VTagSettingsFormulaSave = JazzButton.VTagSettingsFormulaSaveButton;
+        private static Button VTagSettingsFormulaCancel = JazzButton.VTagSettingsFormulaCancelButton;
         private static TextField FormulaTextField = JazzTextField.VFormulaField;
         private static TextField NameTextField = JazzTextField.VTagSettingsNameTextField;
         private static TextField codeTextField = JazzTextField.VTagSettingscodeTextField;
@@ -116,7 +117,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             try
             {
-                VTagList.FocusOnRow(2, vtagName);
+                VTagList.FocusOnRow(1, vtagName);
                 return true;
             }
             catch(Exception)
@@ -135,7 +136,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             try
             {
-                VTagList.FocusOnRow(3, vtagCode);
+                VTagList.FocusOnRow(2, vtagCode);
                 return true;
             }
             catch (Exception)
@@ -389,7 +390,15 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             VTagSettingsFormulaUpdate.Click();
         }
-
+        /// <summary>
+        /// Click "Cancel" formula Button
+        /// </summary>
+        /// <param name="tagName"></param>
+        /// <returns></returns>
+        public void ClickCancelFormulaButton()
+        {
+            VTagSettingsFormulaCancel.Click();
+        }
         /// <summary>
         /// Click save button for formula
         /// </summary>
@@ -693,7 +702,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 return false;
             }
         }
-         
+
         #endregion
 
     

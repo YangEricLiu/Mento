@@ -20,7 +20,7 @@ namespace Mento.Script.Customer.TagManagement
 {
     [TestFixture]
     [Owner("Greenie")]
-    [CreateTime("2013-07-09")]
+    [CreateTime("2013-07-22")]
     [ManualCaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-101")]
     public class ModifyValidFormula : TestSuiteBase
     {
@@ -39,7 +39,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.Navigator.NavigateHome();
         }
         /// <summary>
-        /// Prepare Data:  1. make sure the vtags have been added "PtagForCheckVtagFormula"
+        /// Prepare Data:  1. make sure the vtags have been added "PtagForFormula"
         /// </summary> 
         [Test]
         [CaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-101-0")]
@@ -52,7 +52,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.MediumPause();
 
             // Select a  ptag
-            JazzFunction.PTagSettings.FocusOnPTagByName("PtagForCheckVtagFormula");
+            JazzFunction.PTagSettings.FocusOnPTagByName("PtagByFormula");
             TimeManager.MediumPause();
             Assert.IsFalse(VTagSettings.IsSwitchToFormulaTabExist());
         }
@@ -64,65 +64,53 @@ namespace Mento.Script.Customer.TagManagement
         [IllegalInputValidation(typeof(VtagData[]))]
         public void AddValidFormula(VtagData input)
         {
-            //Click "+" button and fill vtag field with invalid input
-            VTagSettings.ClickAddVTagButton();
-            VTagSettings.FillInAddVTagData(input.InputData);
-            TimeManager.MediumPause();
-            //Click "Save" button
-            VTagSettings.ClickSaveButton();
-            TimeManager.LongPause();
+            //V(N)=3.05*P(M)
+            VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
+            VTagSettings.ClickModifyFormulaButton();
+           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           TimeManager.MediumPause();
 
-            //verify add successful
-            Assert.IsTrue(VTagSettings.IsSaveButtonDisplayed());
-            Assert.IsTrue(VTagSettings.IsCancelButtonDisplayed());
-            //problem here
-            //Verify that the error message popup and the input field is invalid
-            Assert.IsTrue(VTagSettings.IsNameInvalid());
-            Assert.IsTrue(VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData));
-            Assert.IsTrue(VTagSettings.IscodeInvalid());
-            Assert.IsTrue(VTagSettings.IscodeInvalidMsgCorrect(input.ExpectedData));
-            //Assert.IsTrue(VTagSettings.IsCommodityInvalid());
-            //Assert.IsTrue(VTagSettings.IsCommodityInvalidMsgCorrect(input.ExpectedData));
-           // Assert.IsTrue(VTagSettings.IsCalculationTypeInvalid());
-            //Assert.IsTrue(VTagSettings.IsCalculationTypeInvalidMsgCorrect(input.ExpectedData));
-            //Assert.IsTrue(VTagSettings.IsUomInvalid());
-            //Assert.IsTrue(VTagSettings.IsUomInvalidMsgCorrect(input.ExpectedData));
-            //Assert.IsTrue(VTagSettings.IsStepInvalid());
-            //Assert.IsTrue(VTagSettings.IsStepInvalidMsgCorrect(input.ExpectedData));
-            Assert.IsTrue(VTagSettings.IsCommentsInvalid());
-            Assert.IsTrue(VTagSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
+           VTagSettings.FillInFormulaField("3.5*{ptag|PtagByFormula}");
+           VTagSettings.ClickSaveFormulaButton();
+           JazzMessageBox.LoadingMask.WaitLoading();
+           Assert.IsTrue(VTagSettings.IsFormulaInvalid());
+           //二级运算：f(n)包括一级运算的V(N)之间以及P（M）的四则运算。
+           VTagSettings.ClickModifyFormulaButton();
+           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           TimeManager.MediumPause();
+
+           VTagSettings.FillInFormulaField("{ptag|PtagByFormula}+{Vtag|vtagForValidFormula001}/3.05");
+           VTagSettings.ClickSaveFormulaButton();
+           JazzMessageBox.LoadingMask.WaitLoading();
+           Assert.IsTrue(VTagSettings.IsFormulaInvalid());
+            //三级以上运算
+           VTagSettings.ClickModifyFormulaButton();
+           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           TimeManager.MediumPause();
+
+           VTagSettings.FillInFormulaField("{Vtag|vtagForValidFormula001}+{Vtag|vtagForValidFormula001}-{Vtag|vtagForValidFormula002}+1.05*{ptag|PtagByFormula}");
+           VTagSettings.ClickSaveFormulaButton();
+           JazzMessageBox.LoadingMask.WaitLoading();
+           Assert.IsTrue(VTagSettings.IsFormulaInvalid());
+
+            //Property参与运算
+           VTagSettings.ClickModifyFormulaButton();
+           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+           TimeManager.MediumPause();
+
+           VTagSettings.FillInFormulaField("{Vtag|vtagForValidFormula001}/{FormulaBuilding|prop|TotalPopulation}");
+           VTagSettings.ClickSaveFormulaButton();
+           JazzMessageBox.LoadingMask.WaitLoading();
+           Assert.IsTrue(VTagSettings.IsFormulaInvalid());
         }
        
       [Test]
       [CaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-101-2")]
       [Type("BFT")]
       [MultipleTestDataSource(typeof(VtagData[]), typeof(AddInvalidVtagSuite), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-2")]
-      public void AllFieldsEmpty(VtagData input)
+        public void DragTagsFormula(VtagData input)
       {
-          //Click "+" button and fill nothing
-          VTagSettings.ClickAddVTagButton();
 
-          //Click "Save" button
-          VTagSettings.ClickSaveButton();
-          TimeManager.MediumPause();
-
-          //verify add successful
-          Assert.IsTrue(VTagSettings.IsSaveButtonDisplayed());
-          Assert.IsTrue(VTagSettings.IsCancelButtonDisplayed());
-
-          //Verify that the error message popup and the input field is invalid
-          
-          Assert.IsTrue(VTagSettings.IsNameInvalid());
-          Assert.IsTrue(VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData));
-          Assert.IsTrue(VTagSettings.IscodeInvalid());
-          Assert.IsTrue(VTagSettings.IscodeInvalidMsgCorrect(input.ExpectedData));
-          Assert.IsTrue(VTagSettings.IsCommodityInvalid());
-          Assert.IsTrue(VTagSettings.IsCommodityInvalidMsgCorrect(input.ExpectedData));
-          Assert.IsTrue(VTagSettings.IsUomInvalid());
-          Assert.IsTrue(VTagSettings.IsUomInvalidMsgCorrect(input.ExpectedData));
-          Assert.IsTrue(VTagSettings.IsCalculationTypeInvalid());
-          Assert.IsTrue(VTagSettings.IsCalculationTypeInvalidMsgCorrect(input.ExpectedData));
-          Assert.IsFalse(VTagSettings.IsCommentsInvalid());
            
       }
 
@@ -132,20 +120,6 @@ namespace Mento.Script.Customer.TagManagement
       [MultipleTestDataSource(typeof(VtagData[]), typeof(AddInvalidVtagSuite), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-3")]
       public void ModifyTagCode(VtagData input)
       {
-          //Click "+" button and fill Vtag field with same code
-          VTagSettings.ClickAddVTagButton();
-          VTagSettings.FillInAddVTagData(input.InputData);
-          TimeManager.ShortPause();
-          //Click "Save" button
-          VTagSettings.ClickSaveButton();
-          TimeManager.MediumPause();
-          //Verify that the error message popup and the input field is invalid
-          Assert.IsTrue(VTagSettings.IscodeInvalid());
-          Assert.IsTrue(VTagSettings.IscodeInvalidMsgCorrect(input.ExpectedData));
-          //verify add successful
-          Assert.IsTrue(VTagSettings.IsSaveButtonDisplayed());
-          Assert.IsTrue(VTagSettings.IsCancelButtonDisplayed());
-
 
       }
 
@@ -156,23 +130,6 @@ namespace Mento.Script.Customer.TagManagement
       public void FormulaCaseInsensive(VtagData input)
       {
 
-          //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
-          JazzFunction.VTagSettings.FocusOnVTagByCode(input.InputData.Code);
-          TimeManager.MediumPause();
-          JazzFunction.VTagSettings.SwitchToFormulaTab();
-          TimeManager.LongPause();
-          JazzFunction.VTagSettings.ClickModifyFormulaButton();
-          JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-          TimeManager.MediumPause();
-
-          //  Clear formula content
-          JazzFunction.VTagSettings.FillInFormulaField("  ");
-          TimeManager.ShortPause();
-          JazzFunction.VTagSettings.ClickSaveFormulaButton();
-          TimeManager.ShortPause();
-          Assert.IsTrue(VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData));
-
-          
       }
        
        

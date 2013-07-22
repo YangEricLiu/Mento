@@ -183,6 +183,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 else 
                 {
                     NextPage();
+                    TimeManager.LongPause();
                     i++;
                 }
             }
@@ -218,6 +219,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 else
                 {
                     NextPage();
+                    TimeManager.LongPause();
                     i++;
                 }
             }
@@ -253,6 +255,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 else
                 {
                     NextPage();
+                    TimeManager.LongPause();
                     i++;
                 }
             }

@@ -34,6 +34,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region TargetBaseline
+        public static Label CalendarInfoDisplayLabel = GetControl<Label>(JazzControlLocatorKey.LabelCalendarInfoDisplay);
+        #endregion
+
         #endregion
 
 

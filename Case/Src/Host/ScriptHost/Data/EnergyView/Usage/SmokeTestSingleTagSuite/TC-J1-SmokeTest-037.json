@@ -7,7 +7,7 @@
 			"ViewType":"Line",
 			"DashboardInfo":{
 				"WigetName":"TestWiget",
-				"HierarchyName":"HierarchyEV",
+				"HierarchyName":["HierarchyEV"],
 				"IsCreateDashboard":"true",
 				"DashboardName":"仪表盘_A1",
 			}

@@ -18,7 +18,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField WidgetNameTextbox = JazzTextField.EnergyViewSaveDashboardWidgetNameTextField;
 
         //Hierarchy name select
-        private static ComboBox HierarchyComboBox = JazzComboBox.EnergyViewSaveDashboardHierarchyComboBox;
+        private static Button WidgetSaveHierarchy = JazzButton.WidgetSaveHierarchyButton;
+
+        private static HierarchyTree WidgetSaveHierarchyTree = JazzTreeView.WidgetSaveHierarchyTree;
 
         //Dashboard select
         private static ComboBox DashboardComboBox = JazzComboBox.EnergyViewSaveDashboardDashboardComboBox;
@@ -29,10 +31,11 @@ namespace Mento.ScriptCommon.Library.Functions
         //Dashboard name textbox
         private static TextField DashboardNameTextbox = JazzTextField.EnergyViewSaveDashboardDashboardNameTextField;
 
-        public void Save(string widgetName, string hierarchyName, bool isCreateDashboard, string dashboardName)
+        public void Save(string widgetName, string[] hierarchyNamePath, bool isCreateDashboard, string dashboardName)
         {
             WidgetNameTextbox.Fill(widgetName);
-            HierarchyComboBox.SelectItem(hierarchyName);
+            WidgetSaveHierarchy.Click();
+            WidgetSaveHierarchyTree.SelectNode(hierarchyNamePath);
             if (isCreateDashboard)
             {
                 CreateDashboardButton.Click();

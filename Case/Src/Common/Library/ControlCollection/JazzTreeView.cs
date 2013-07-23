@@ -16,6 +16,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static AreaDimensionTree EnergyViewAreaDimensionTree = GetControl<AreaDimensionTree>(JazzControlLocatorKey.AreaDimensionTreeEnergyView);
 
         public static HierarchyTree EnergyViewHierarchyTree = GetControl<HierarchyTree>(JazzControlLocatorKey.HierarchyTreeEnergyView);
+
+        public static HierarchyTree WidgetSaveHierarchyTree = GetControl<HierarchyTree>(JazzControlLocatorKey.WidgetSaveHierarchyTree);
         #endregion
 
         #region HierarchySettings

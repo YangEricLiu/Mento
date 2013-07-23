@@ -34,6 +34,7 @@ namespace Mento.Script.Customer.TagManagement
         [TearDown]
         public void CaseTearDown()
         {
+            JazzFunction.Navigator.NavigateHome();
         }
       
         [Test]
@@ -44,22 +45,26 @@ namespace Mento.Script.Customer.TagManagement
             if (String.Equals(input.InputData.TagType, "Ptag"))
             {
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsP);
+                PVtagTargetBaselineSettings.FocusOnPTagByName(input.InputData.TagName);
+                TimeManager.MediumPause();
             }
 
             if (String.Equals(input.InputData.TagType, "Vtag"))
             {
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+                PVtagTargetBaselineSettings.FocusOnVTagByName(input.InputData.TagName);
+                TimeManager.MediumPause();
             }
-
-            PVtagTargetBaselineSettings.FocusOnTagByName(input.InputData.TagName);
-            TimeManager.ShortPause();
+            
             PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
             PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
 
-          
+            //Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips));
+            PVtagTargetBaselineSettings.GetCalendarFieldLabelText();
         }       
     }
 }

@@ -27,7 +27,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
     public class DashboardInformation
     {
         public string WigetName { get; set; }
-        public string HierarchyName { get; set; }
+        public string[] HierarchyName { get; set; }
         public bool IsCreateDashboard { get; set; }
         public string DashboardName { get; set; }
     }

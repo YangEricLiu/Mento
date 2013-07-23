@@ -84,7 +84,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonEnergyViewSelectAreaDimension = "ButtonEnergyViewSelectAreaDimension";
         public static string ButtonRankSelectSystemDimension = "ButtonRankSelectSystemDimension";
         public static string ButtonRankSelectHierarchy = "ButtonRankSelectHierarchy";
-        
+        public static string ButtonWidgetSaveHierarchy = "ButtonWidgetSaveHierarchy";
+      
         public static string TabButtonEnergyViewALLTagsTab = "TabButtonEnergyViewALLTagsTab";
         public static string TabButtonEnergyViewSystemDimensionTagsTab = "TabButtonEnergyViewSystemDimensionTagsTab";
         public static string TabButtonEnergyViewAreaDimensionTagsTab = "TabButtonEnergyViewAreaDimensionTagsTab";
@@ -630,6 +631,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string AreaDimensionTreeHierarchySettings = "AreaDimensionTreeHierarchySettings";
         public static string AreaDimensionTreeAssociation = "AreaDimensionTreeAssociation";
         public static string HierarchyTreeRank = "HierarchyTreeRank";
+        public static string WidgetSaveHierarchyTree = "WidgetSaveHierarchyTree";
+        
         #endregion
 
         #region Grid
@@ -728,7 +731,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelAreaPropertyTitle = "LabelAreaPropertyTitle";
 
         #endregion
-        
+
+        #region TargetBaseline
+        public static string LabelCalendarInfoDisplay = "LabelCalendarInfoDisplay";
+        #endregion
+
         #endregion
 
         #region PlatformSettings

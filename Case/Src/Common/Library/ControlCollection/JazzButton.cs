@@ -37,6 +37,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button EnergyViewSelectAreaDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectAreaDimension);
         public static Button RankSelectSystemDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonRankSelectSystemDimension);
         public static Button RankSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonRankSelectHierarchy);
+        public static Button WidgetSaveHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetSaveHierarchy);
         
         public static TabButton EnergyViewALLTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewALLTagsTab);
         public static TabButton EnergyViewSystemDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewSystemDimensionTagsTab);

@@ -135,7 +135,7 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading();
         }
 
-        public void SaveToDashboard(string widgetName, string hierarchyName, bool isCreateDashboard, string dashboardName)
+        public void SaveToDashboard(string widgetName, string[] hierarchyName, bool isCreateDashboard, string dashboardName)
         {
             MoreMenu.SwitchMenuItem(EnergyViewMoreOption.ToDashboard);
             TimeManager.FlashPause();

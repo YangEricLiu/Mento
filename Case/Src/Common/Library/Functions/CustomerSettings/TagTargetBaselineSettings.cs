@@ -20,7 +20,8 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
-        private static Grid KPITagList = JazzGrid.KPITagSettingsKPITagList;
+        private static Grid PTagList = JazzGrid.PTagSettingsPTagList;
+        private static Grid VTagList = JazzGrid.VTagSettingsVTagList;
 
         private static TabButton BasicPropertyTab = JazzButton.KPITagSettingsBasicPropertyTabButton;
         private static TabButton TargetPropertyTab = JazzButton.KPITargetPropertyTabButton;
@@ -64,6 +65,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static DatePicker SpecialdayRuleStartDate = JazzDatePicker.KPITargetBaselineSpecialdayRuleStartDateDatePicker;
         private static DatePicker SpecialdayRuleEndDate = JazzDatePicker.KPITargetBaselineSpecialdayRuleEndDateDatePicker;
 
+        private static Label CalendarInfoDisplay = JazzLabel.CalendarInfoDisplayLabel;
+
         #region common
         /// <summary>
         /// Navigate to KPITag settings
@@ -77,13 +80,23 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Select one tag
+        /// Select one ptag
         /// </summary>
         /// <param name="kpitagName">kpitag name</param>
         /// <returns></returns>
-        public void FocusOnTagByName(string kpitagName)
+        public void FocusOnPTagByName(string kpitagName)
         {
-            KPITagList.FocusOnRow(1, kpitagName);
+            PTagList.FocusOnRow(1, kpitagName);
+        }
+
+        /// <summary>
+        /// Select one vtag
+        /// </summary>
+        /// <param name="kpitagName">kpitag name</param>
+        /// <returns></returns>
+        public void FocusOnVTagByName(string kpitagName)
+        {
+            VTagList.FocusOnRow(1, kpitagName);
         }
 
         /// <summary>
@@ -135,6 +148,17 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             CancelButton.Click();
         }
+
+        /// <summary>
+        /// Get calendar info display field text
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetCalendarFieldLabelText()
+        {
+            return CalendarInfoDisplay.GetLabelTextValue();
+        }
+
         #endregion
 
         #region configuration rule settings

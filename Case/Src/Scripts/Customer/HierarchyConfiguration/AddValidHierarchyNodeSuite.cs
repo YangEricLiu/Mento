@@ -22,7 +22,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [Owner("Emma")]
     [CreateTime("2013-03-12")]
     [ManualCaseID("TC-J1-FVT-Hierarchy-Add-101")]
-    public class AddValidHierarhcyNodeSuite : TestSuiteBase
+    public class AddValidHierarchyNodeSuite : TestSuiteBase
     {
         private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
 
@@ -43,7 +43,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-Hierarchy-Add-101-1")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-1")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-1")]
         public void AddValidNode(HierarchyData input)
         {
             //Add organization and site node to "自动化测试"
@@ -72,7 +72,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-Hierarchy-Add-101-2")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-2")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-2")]
         public void HierarchyType(HierarchyData input)
         {
             //Select buidling node
@@ -101,7 +101,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-Hierarchy-Add-101-3")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-3")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-3")]
         public void AddFiveOrgnization(HierarchyData input)
         {
             int hierarchyLength = input.InputData.HierarchyNodePath.Length;
@@ -141,7 +141,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-Hierarchy-Add-101-4")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-4")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-4")]
         public void EmptyItemNotDisplay(HierarchyData input)
         {
             //Select root node and add node without comments 
@@ -161,7 +161,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-Hierarchy-Add-101-5")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-5")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddValidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Add-101-5")]
         public void AddValidAndVerify(HierarchyData input)
         {
             //Add organization to "自动化测试"

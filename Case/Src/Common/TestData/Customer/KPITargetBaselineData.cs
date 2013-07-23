@@ -38,36 +38,8 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string OctoberRevisedValue { get; set; }
         public string NovemberRevisedValue { get; set; }
         public string DecemberRevisedValue { get; set; }
-
-        public KPITargetBaselineInputData(string Year, int WorkdayRuleRecordNumber, string[] WorkdayRuleEndTime, string[] WorkdayRuleValue, int NonworkdayRuleRecordNumber, string[] NonworkdayRuleEndTime, string[] NonworkdayRuleValue, int SpecialdayRuleRecordNumber, string[] SpecialdayRuleStartDate, string[] SpecialdayRuleStartTime, string[] SpecialdayRuleEndDate, string[] SpecialdayRuleEndTime, string[] SpecialdayRuleValue, string AnnualRevisedValue, string JanuaryRevisedValue, string FebruaryRevisedValue, string MarchRevisedValue, string AprilRevisedValue, string MayRevisedValue, string JuneRevisedValue, string JulyRevisedValue, string AugustRevisedValue, string SeptemberRevisedValue, string OctoberRevisedValue, string NovemberRevisedValue, string DecemberRevisedValue)
-        {
-            this.Year = Year;
-            this.WorkdayRuleRecordNumber = WorkdayRuleRecordNumber;
-            this.WorkdayRuleEndTime = WorkdayRuleEndTime;
-            this.WorkdayRuleValue = WorkdayRuleValue;
-            this.NonworkdayRuleRecordNumber = NonworkdayRuleRecordNumber;
-            this.NonworkdayRuleEndTime = NonworkdayRuleEndTime;
-            this.NonworkdayRuleValue = NonworkdayRuleValue;
-            this.SpecialdayRuleRecordNumber = SpecialdayRuleRecordNumber;
-            this.SpecialdayRuleStartDate = SpecialdayRuleStartDate;
-            this.SpecialdayRuleStartTime = SpecialdayRuleStartTime;
-            this.SpecialdayRuleEndDate = SpecialdayRuleEndDate;
-            this.SpecialdayRuleEndTime = SpecialdayRuleEndTime;
-            this.SpecialdayRuleValue = SpecialdayRuleValue;
-            this.AnnualRevisedValue = AnnualRevisedValue;
-            this.JanuaryRevisedValue = JanuaryRevisedValue;
-            this.FebruaryRevisedValue = FebruaryRevisedValue;
-            this.MarchRevisedValue = MarchRevisedValue;
-            this.AprilRevisedValue = AprilRevisedValue;
-            this.MayRevisedValue = MayRevisedValue;
-            this.JuneRevisedValue = JuneRevisedValue;
-            this.JulyRevisedValue = JulyRevisedValue;
-            this.AugustRevisedValue = AugustRevisedValue;
-            this.SeptemberRevisedValue = SeptemberRevisedValue;
-            this.OctoberRevisedValue = OctoberRevisedValue;
-            this.NovemberRevisedValue = NovemberRevisedValue;
-            this.DecemberRevisedValue = DecemberRevisedValue;
-        }
+        public string TagType { get; set; }
+        public string TagName { get; set; }
     }
 
     public class KPITargetBaselineExpectedData : VtagOuputData
@@ -85,22 +57,5 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string OctoberCalculatedValue { get; set; }
         public string NovemberCalculatedValue { get; set; }
         public string DecemberCalculatedValue { get; set; }
-
-        public KPITargetBaselineExpectedData(string AnnualCalculatedValue, string JanuaryCalculatedValue, string FebruaryCalculatedValue, string MarchCalculatedValue, string AprilCalculatedValue, string MayCalculatedValue, string JuneCalculatedValue, string JulyCalculatedValue, string AugustCalculatedValue, string SeptemberCalculatedValue, string OctoberCalculatedValue, string NovemberCalculatedValue, string DecemberCalculatedValue)
-        {
-            this.AnnualCalculatedValue = AnnualCalculatedValue;
-            this.JanuaryCalculatedValue = JanuaryCalculatedValue;
-            this.FebruaryCalculatedValue = FebruaryCalculatedValue;
-            this.MarchCalculatedValue = MarchCalculatedValue;
-            this.AprilCalculatedValue = AprilCalculatedValue;
-            this.MayCalculatedValue = MayCalculatedValue;
-            this.JuneCalculatedValue = JuneCalculatedValue;
-            this.JulyCalculatedValue = JulyCalculatedValue;
-            this.AugustCalculatedValue = AugustCalculatedValue;
-            this.SeptemberCalculatedValue = SeptemberCalculatedValue;
-            this.OctoberCalculatedValue = OctoberCalculatedValue;
-            this.NovemberCalculatedValue = NovemberCalculatedValue;
-            this.DecemberCalculatedValue = DecemberCalculatedValue;
-        }
     }
 }

@@ -14,9 +14,9 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    public class KPITargetBaselineSettings
+    public class TagTargetBaselineSettings
     {
-        internal KPITargetBaselineSettings()
+        internal TagTargetBaselineSettings()
         {
         }
 
@@ -70,9 +70,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void NavigatorToKPITagSetting()
+        public void NavigatorToTagSetting()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsKPI);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettings);
             TimeManager.ShortPause();
         }
 
@@ -81,7 +81,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="kpitagName">kpitag name</param>
         /// <returns></returns>
-        public void FocusOnKPITag(string kpitagName)
+        public void FocusOnTagByName(string kpitagName)
         {
             KPITagList.FocusOnRow(1, kpitagName);
         }

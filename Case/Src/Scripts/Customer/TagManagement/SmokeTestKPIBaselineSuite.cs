@@ -27,7 +27,7 @@ namespace Mento.Script.Customer.TagManagement
         [SetUp]
         public void CaseSetUp()
         {
-            KPITargetBaselineSettings.NavigatorToKPITagSetting();
+            KPITargetBaselineSettings.NavigatorToTagSetting();
             TimeManager.MediumPause();
         }
 

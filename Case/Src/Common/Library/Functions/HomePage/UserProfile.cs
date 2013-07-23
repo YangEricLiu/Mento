@@ -57,7 +57,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ExitJazz()
         { 
-        ExitJazzButton.Click();
+            ExitJazzButton.Click();
         }
     }
     

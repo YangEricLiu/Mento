@@ -82,7 +82,7 @@
     <Compile Include="Functions\EnergyManagement\SaveToDashboardDialog.cs" />
     <Compile Include="Functions\EnergyManagement\TimeSpanDialog.cs" />
     <Compile Include="Functions\CustomerSettings\HierarchyOtherCostPropertySettings.cs" />
-    <Compile Include="Functions\CustomerSettings\KPITargetBaselineSettings.cs" />
+    <Compile Include="Functions\CustomerSettings\TagTargetBaselineSettings.cs" />
     <Compile Include="Functions\CustomerSettings\HierarchyElectricCostSettings.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbar.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewToolbarMoreMenu.cs" />

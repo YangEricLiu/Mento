@@ -50,8 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HierarchyConfiguration\AddInvalidHierarhcyNodeSuite.cs" />
-    <Compile Include="HierarchyConfiguration\AddValidHierarhcyNodeSuite.cs" />
+    <Compile Include="HierarchyConfiguration\AddInvalidHierarchyNodeSuite.cs" />
+    <Compile Include="HierarchyConfiguration\AddValidHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\AddValidAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\AssociateSytemDimension.cs" />
     <Compile Include="HierarchyConfiguration\AddInvalidAreaDimension.cs" />
@@ -94,6 +94,7 @@
     <Compile Include="TagManagement\AddValidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidVtagSuite.cs" />
+    <Compile Include="TagManagement\ViewTargetBaselineCalendarSuite.cs" />
     <Compile Include="TagManagement\DeleteVtagSuite.cs" />
     <Compile Include="TagManagement\ModifyInvalidFormula.cs" />
     <Compile Include="TagManagement\ModifyInvalidVtagSuite.cs" />
@@ -102,8 +103,6 @@
     <Compile Include="TagManagement\DeletePtagSuite.cs" />
     <Compile Include="TagManagement\ModifyInvalidPtagSuite.cs" />
     <Compile Include="TagManagement\ModifyValidPtagSuite.cs" />
-    <Compile Include="TagManagement\SmokeTestKPITargetSuite.cs" />
-    <Compile Include="TagManagement\SmokeTestKPIBaselineSuite.cs" />
     <Compile Include="TagManagement\SmokeTestFormulaVtagSuite.cs" />
     <Compile Include="TagManagement\SmokeTestPtagConfigurationSuite.cs" />
     <Compile Include="TagAssociation\SmokeTestHierarchyAssociateTagSuite.cs" />

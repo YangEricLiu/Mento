@@ -68,8 +68,8 @@
       <add key="ButtonUserProfileCancel" value="st-userprofile-profilepanel-cancel" type="ID"/>
       <add key="ButtonUserProfileSave" value="st-userprofile-profilepanel-save" type="ID"/>
       <add key="ButtonUserProfileClose" value="//div[@id='st-userprofile-personalinfo-window_header-targetEl']/div[2]/img" type="XPath"/>
-      <add key="MenuButtonExitJazz" value="//div[id='header-btn-personalinfo']/../div[4] and a/span[text()='退出系统']]" type="XPath"/>
-      <add key="MenuButtonModifyUserPassword" value="//div[id='header-btn-personalinfo']/../div[3] and a/span[text()='修改密码']]" type="XPath"/>   
+      <add key="MenuButtonExitJazz" value="//div[contains(@id, 'menuitem') and a/span[text()='退出系统']]" type="XPath"/>
+      <add key="MenuButtonModifyUserPassword" value="//div[contains(@id, 'menuitem') and a/span[text()='修改密码']]" type="XPath"/>   
     </UserProfile>
     <energyview>
       <add key="ButtonEnergyViewSelectHierarchy" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@Common.Label.EmptyHierarchyText']]" type="XPath"/>
@@ -591,6 +591,9 @@
       <add key="GridEnergyAnalysisSystemDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="ID"/>
       <add key="GridEnergyAnalysisAreaDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="ID"/>
       <add key="GridEnergyAnalysisEnergyDataList" value="//div[@id='em-energy-chartgridpanel']//div[contains(@class,'x-grid')]" type="XPath"/>
+    
+      <add key="GridUnitKPIAllTagList" value="//div[@id='em-unit-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridRadioAllTagList" value="//div[@id='em-ratio-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
     </energyview>
     <customersettings>
       <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>

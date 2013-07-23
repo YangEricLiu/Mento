@@ -22,7 +22,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [Owner("Emma")]
     [CreateTime("2013-03-15")]
     [ManualCaseID("TC-J1-FVT-Hierarchy-Add-001")]
-    public class AddInvalidHierarhcyNodeSuite : TestCaseAttribute
+    public class AddInvalidHierarchyNodeSuite : TestCaseAttribute
     {
         private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
 
@@ -44,7 +44,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-Hierarchy-Add-001-1")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-1")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-1")]
         public void AddHierarchyCancel(HierarchyData input)
         {
             //Add organization and site node to "自动化测试"
@@ -93,7 +93,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-Hierarchy-Add-001-3")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-3")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-3")]
         public void AddSamecode(HierarchyData input)
         {
             //xxx
@@ -116,7 +116,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-Hierarchy-Add-001-4")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-4")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-4")]
         public void SameNameOnlevel(HierarchyData input)
         {
             //Add same name 
@@ -139,7 +139,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [Test]
         [CaseID("TC-J1-FVT-Hierarchy-Add-001-5")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarhcyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-5")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(AddInvalidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Add-001-5")]
         public void EmptyField(HierarchyData input)
         {
             //Add organization and site node to "自动化测试"

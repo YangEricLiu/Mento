@@ -73,15 +73,15 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        private static KPITargetBaselineSettings _KPITargetBaselineSettings;
-        public static KPITargetBaselineSettings KPITargetBaselineSettings
+        private static TagTargetBaselineSettings _TagTargetBaselineSettings;
+        public static TagTargetBaselineSettings TagTargetBaselineSettings
         {
             get
             {
-                if (_KPITargetBaselineSettings == null)
-                    _KPITargetBaselineSettings = new KPITargetBaselineSettings();
+                if (_TagTargetBaselineSettings == null)
+                    _TagTargetBaselineSettings = new TagTargetBaselineSettings();
 
-                return _KPITargetBaselineSettings;
+                return _TagTargetBaselineSettings;
             }
         }
 

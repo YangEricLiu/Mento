@@ -18,7 +18,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator LegendItemsCloseLocator = new Locator("svg/g[contains(@class,'highcharts-legend')]/g/g/g[@class='highcharts-legend-item' and text[text()='$#legendname']]/image", ByType.XPath);
         private static Locator LegendItemTextLocator = new Locator("svg/g[contains(@class,'highcharts-legend')]/g/g/g[@class='highcharts-legend-item']/text[text()='$#legendname']", ByType.XPath);
 
-        private static Locator CurveLocator = new Locator("g.highcharts-tracker", ByType.CssSelector);
+        private static Locator CurveLocator = new Locator("g.highcharts-series-group", ByType.CssSelector);
         private static Locator PieLocator = new Locator("g.highcharts-point", ByType.CssSelector);
 
         private static Locator TitleLocator = new Locator("svg/text[2]", ByType.XPath);

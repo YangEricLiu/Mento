@@ -44,7 +44,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         internal RadioPanel()
         {
-            TagGrid = JazzGrid.EnergyAnalysisAllTagList;
+            TagGrid = JazzGrid.RadioAllTagList;
 
             SelectSystemDimensionButton = JazzButton.EnergyViewSelectSystemDimensionButton;
             SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;

@@ -55,7 +55,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         internal UnitKPIPanel()
         {
-            TagGrid = JazzGrid.EnergyAnalysisAllTagList;
+            TagGrid = JazzGrid.UnitKPIAllTagList;
 
             SelectSystemDimensionButton = JazzButton.EnergyViewSelectSystemDimensionButton;
             SelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;

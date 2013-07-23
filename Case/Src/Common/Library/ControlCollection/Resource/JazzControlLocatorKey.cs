@@ -638,6 +638,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridEnergyAnalysisSystemDimensionTagList = "GridEnergyAnalysisSystemDimensionTagList";
         public static string GridEnergyAnalysisAreaDimensionTagList = "GridEnergyAnalysisAreaDimensionTagList";
         public static string GridEnergyAnalysisEnergyDataList = "GridEnergyAnalysisEnergyDataList";
+
+        public static string GridUnitKPIAllTagList = "GridUnitKPIAllTagList";
+        public static string GridRadioAllTagList = "GridRadioAllTagList";
         #endregion
 
         #region customersettings

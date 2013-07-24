@@ -60,7 +60,6 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             Assert.AreEqual(testdata.InputData.Formula, KPITagSettings.GetFormulaValue());
-            Assert.IsTrue(KPITagSettings.DayNightIsChecked());
 
         }
         [Test]
@@ -82,7 +81,6 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             Assert.AreEqual(testdata.InputData.Formula, KPITagSettings.GetFormulaValue());
-            Assert.IsFalse(KPITagSettings.DayNightIsChecked());
         }
         [Test]
         [CaseID("TC-J1-FVT-KPIFormulaConfiguration-001")]
@@ -105,7 +103,6 @@ namespace Mento.Script.Customer.TagManagement
             string msgText = KPITagSettings.GetFormulaErrorMessageValue();
             TimeManager.LongPause();
             Assert.IsTrue(msgText.Contains(testdata.ExpectedData.Formula));
-            Assert.IsTrue(KPITagSettings.DayNightIsChecked());
          }
         [Test]
         [CaseID("TC-J1-FVT-KPIFormulaConfiguration-001")]
@@ -133,7 +130,6 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             Assert.AreEqual(testdata.ExpectedData.Formula, KPITagSettings.GetFormulaValue());
-            Assert.IsTrue(KPITagSettings.DayNightIsChecked());
 
         }
         [Test]
@@ -157,7 +153,6 @@ namespace Mento.Script.Customer.TagManagement
             string msgText = KPITagSettings.GetFormulaErrorMessageValue();
             TimeManager.LongPause();
             Assert.IsTrue(msgText.Contains(testdata.ExpectedData.Formula));
-            Assert.IsTrue(KPITagSettings.DayNightIsChecked());
          }
         [Test]
         [CaseID("TC-J1-FVT-KPIFormulaConfiguration-001")]
@@ -185,7 +180,6 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             Assert.AreEqual(testdata.ExpectedData.Formula, KPITagSettings.GetFormulaValue());
-            Assert.IsFalse(KPITagSettings.DayNightIsChecked());
 
         }
         [Test]
@@ -209,7 +203,6 @@ namespace Mento.Script.Customer.TagManagement
 
             KPITagSettings.FocusOnKPITag(testdata.InputData.Name);
             Assert.AreEqual(testdata.ExpectedData.Formula, KPITagSettings.GetFormulaValue());
-            Assert.IsTrue(KPITagSettings.DayNightIsChecked());
 
         }
         [Test]
@@ -233,7 +226,6 @@ namespace Mento.Script.Customer.TagManagement
 
             KPITagSettings.FocusOnKPITag(testdata.InputData.Name);
             Assert.AreEqual(testdata.ExpectedData.Formula, KPITagSettings.GetFormulaValue());
-            Assert.IsTrue(KPITagSettings.DayNightIsChecked());
 
         } 
     }

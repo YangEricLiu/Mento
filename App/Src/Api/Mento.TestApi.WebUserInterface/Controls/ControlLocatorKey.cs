@@ -94,5 +94,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string InnerMonthPickerMonthItem = "InnerMonthPickerMonthItem";
         public static string DatePickerDayItem = "DatePickerDayItem";
         #endregion
+
+        #region CheckBoxField locators
+        public static string CheckBoxTable = "CheckBoxTable";
+        #endregion
     } 
 }

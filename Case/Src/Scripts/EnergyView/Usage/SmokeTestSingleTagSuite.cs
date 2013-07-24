@@ -193,7 +193,7 @@ namespace Mento.Script.EnergyView.Usage
             DataPanel.Toolbar.SaveToDashboard("test", hPath, true, "newname");
 
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTrendChartDrawn());
-            */
+            
             string[] hPath = { "自动化测试" };
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CarbonUsage);
             JazzFunction.CarbonUsagePanel.SelectHierarchy(hPath);
@@ -205,6 +205,17 @@ namespace Mento.Script.EnergyView.Usage
             TimeManager.MediumPause();
             JazzFunction.EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            */
+
+            string[] hPath = { "NancyCustomer1", "GreenieSite" };
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.Rank);
+            JazzFunction.RankPanel.CheckHierarchyNode(hPath);
+            TimeManager.MediumPause();
+            JazzFunction.RankPanel.ClickConfirmHiearchyButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            JazzFunction.RankPanel.SelectCommodity("电");
         }
     }
 }

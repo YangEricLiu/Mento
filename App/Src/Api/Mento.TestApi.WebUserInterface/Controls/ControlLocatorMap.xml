@@ -75,4 +75,7 @@
   <add key="WindowCloseButton" value="div[contains(@class,'x-window-header')]/div/div/div/div[img[@class='x-tool-close']]" type="XPath"/>
   <add key="WindowConfirmButton" value="div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
   <add key="WindowCancelButton" value="div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+
+  <!--CheckkBoxField-->
+  <add key="CheckBoxTable" value = "//table[contains(@id,'displayfield') and tbody/tr/td/label[text()='$#permissionName']]/../table[contains(@id,'checkboxfield')]" type ="XPath"/>
 </WebElement>

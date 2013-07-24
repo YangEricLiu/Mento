@@ -15,6 +15,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button ConfirmHiearchyRank = JazzButton.ConfirmHierarchyRankButton;
         private static Button ClearHiearchyRank = JazzButton.ClearHierarchyRankButton;
 
+        private static Grid CommodityRank = JazzGrid.CommodityRankGrid;
+
         //Select rank tree
         private static Button SelectHierarchyButton
         {
@@ -133,6 +135,12 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickClearHiearchyButton()
         {
             ClearHiearchyRank.Click();
+        }
+
+        public void SelectCommodity(string commodityName)
+        {
+            CommodityRank.CheckRowCheckbox(2, commodityName, false);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
         }
         #endregion
         

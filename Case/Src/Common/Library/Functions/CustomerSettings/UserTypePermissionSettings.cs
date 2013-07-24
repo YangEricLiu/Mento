@@ -29,6 +29,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static CheckBoxField CheckBoxFieldUserTypeCost = JazzCheckBox.CheckBoxFieldUserTypeCost;
         private static CheckBoxField CheckBoxFieldUserTypeEnergyUse = JazzCheckBox.CheckBoxFieldUserTypeEnergyUse;
+        private static CheckBoxField UserTypePermission = JazzCheckBox.UserTypePermissionCheckBoxField;
         /// <summary>
         /// Navigate to User setting
         /// </summary>
@@ -88,8 +89,15 @@ namespace Mento.ScriptCommon.Library.Functions
         
         public void FocusOnUserType(string usertypeName)
         {
-            GridUserTypePermissionList.FocusOnRow(1, usertypeName);
+            GridUserTypePermissionList.FocusOnRow(1, usertypeName, false);
         }
+
+        public void Check(string permission)
+        {
+            UserTypePermission.Check(permission);
+        }
+
+        /*
         /// <summary>
         /// uncheck the energyuse permission 
         /// </summary>
@@ -131,6 +139,6 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return CheckBoxFieldUserTypeCost.IsChecked();
         }
-
+        */
     }
 }

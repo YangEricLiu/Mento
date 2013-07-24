@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenQA.Selenium;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -10,25 +11,48 @@ namespace Mento.TestApi.WebUserInterface.Controls
     /// </summary>
     public class CheckBoxField : JazzControl
     {
-        private static string CHECKEDCLASS = "x-form-cb-checked";
+        protected const string CHECKEDCLASS = "x-form-cb-checked";
+        protected const string PERMISSIONNAME = "permissionName";
 
+        /// <summary>
+        /// locator parameter must be root element of a CheckBoxField
+        /// </summary>
+        /// <param name="locator"></param>
         public CheckBoxField(Locator locator) : base(locator) { }
 
-        public Boolean IsChecked()
+        public Boolean IsChecked(string permissionName)
         {
-            return this.RootElement.GetAttribute("class").Contains(CHECKEDCLASS);
+            IWebElement checkbox = GetPermissonFieldElement(permissionName);
+
+            return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
         }
 
-        public void Check()
+        public void Check(string permissionName)
         {
-            if (!IsChecked())
-                this.RootElement.Click();
+            IWebElement checkbox = GetPermissonFieldElement(permissionName);
+
+            if (!IsChecked(permissionName))
+                checkbox.Click();
         }
 
-        public void Uncheck()
+        public void Uncheck(string permissionName)
         {
-            if (IsChecked())
-                this.RootElement.Click();
+            IWebElement checkbox = GetPermissonFieldElement(permissionName);
+
+            if (IsChecked(permissionName))
+                checkbox.Click();
         }
+
+        #region private methods
+        protected virtual Locator GetPermissonFieldLocator(string permissionName)
+        {
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxTable), PERMISSIONNAME, permissionName);
+        }
+
+        protected virtual IWebElement GetPermissonFieldElement(string permissionName)
+        {
+            return base.FindChild(GetPermissonFieldLocator(permissionName));
+        }
+        #endregion
     }
 }

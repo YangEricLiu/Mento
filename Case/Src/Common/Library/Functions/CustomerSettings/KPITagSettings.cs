@@ -501,14 +501,6 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return KPIFormulaField.GetInvalidTips();
         }
-        /// <summary>
-        /// judge wheather the KPI is a DayNight KPI
-        /// </summary>
-        /// <returns></returns>
-        public bool DayNightIsChecked()
-        {
-            return CheckBoxFieldDayNightKPITag.IsChecked();
-        }
      
         #endregion
     }

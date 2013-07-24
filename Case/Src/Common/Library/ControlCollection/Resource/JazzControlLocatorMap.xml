@@ -608,6 +608,8 @@
       <add key="GridCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
       <add key="GridCommodityUnitCarbon" value="//div[@id='em-unit-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
       <add key="GridCommodityUnitCost" value="//div[@id='em-unit-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
+
+      <add key="GridCommodityRank" value="//div[@id='em-rank-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
     </energyview>
     <customersettings>
       <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
@@ -668,6 +670,8 @@
     <add key="CheckBoxFieldDayNightKPITag" value="st-formula-daynight" type="ID"/>
     <add key="CheckBoxFieldUserTypeEnergyUse" value="//div[@id='st-usertype-energyuse-body']//table[tbody/tr//label[text()='用能']]" type="XPath"/>
     <add key="CheckBoxFieldUserTypeCost" value="//div[@id='st-usertype-cost-body']//table[tbody/tr//label[text()='成本']]" type="XPath"/>
+
+    <add key="CheckBoxFieldUserTypePermission" value="//div[@id='st-usertype-properties-form-body']/div[contains(@id, 'privilegepanel')]/div/fieldset[legend/div/label[text()='角色权限']]/div/table[contains(@id, 'privilegeitem')]" type="XPath"/>
   </CheckBox>
   <!--CheckBoxField End-->
   

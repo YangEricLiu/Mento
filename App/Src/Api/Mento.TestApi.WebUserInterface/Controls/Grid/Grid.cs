@@ -46,9 +46,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// </summary>
         /// <param name="cellName"></param>
         /// <returns></returns>
-        public void FocusOnRow(int cellIndex,string cellText)
+        public void FocusOnRow(int cellIndex,string cellText, bool Paging = true)
         {
-            this.GetRow(cellIndex, cellText).Click();
+            this.GetRow(cellIndex, cellText, Paging).Click();
         }
 
         /// <summary>
@@ -56,9 +56,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// </summary>
         /// <param name="cellName"></param>
         /// <returns></returns>
-        public void FloatOnRow(int cellIndex, string cellText)
+        public void FloatOnRow(int cellIndex, string cellText, bool Paging = true)
         {
-            ElementHandler.Float(this.GetRow(cellIndex, cellText));
+            ElementHandler.Float(this.GetRow(cellIndex, cellText, Paging));
         }
 
         /// <summary>
@@ -169,26 +169,29 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return FindChild(Locator.GetVariableLocator(rowLocator, variables));
         }
          */
-        
-        public virtual IWebElement GetRow(int cellIndex)
+
+        public virtual IWebElement GetRow(int cellIndex, bool Paging = true)
         {
             var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowSelected);
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex } };
 
-            int i = 0;
-
-            while (i < PageCount)
+            if (Paging)
             {
-                if (IsRowExistOnCurrentPage(cellIndex))
+                int i = 0;
+
+                while (i < PageCount)
                 {
-                    break;
-                }
-                else 
-                {
-                    NextPage();
-                    TimeManager.LongPause();
-                    i++;
+                    if (IsRowExistOnCurrentPage(cellIndex))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
                 }
             }
 
@@ -206,25 +209,28 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
         */
 
-        public virtual IWebElement GetRow(int cellIndex, string cellText)
+        public virtual IWebElement GetRow(int cellIndex, string cellText, bool Paging = true)
         {
             var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
 
-            int i = 0;
-
-            while (i < PageCount)
+            if (Paging)
             {
-                if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                int i = 0;
+
+                while (i < PageCount)
                 {
-                    break;
-                }
-                else
-                {
-                    NextPage();
-                    TimeManager.LongPause();
-                    i++;
+                    if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
                 }
             }
 

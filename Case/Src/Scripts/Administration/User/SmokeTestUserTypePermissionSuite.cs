@@ -30,7 +30,7 @@ namespace Mento.Script.Administration.User
         [SetUp]
         public void CaseSetUp()
         {
-            UserTypePermissionSettings.NavigatorToUserTypePermissionSetting();
+            //UserTypePermissionSettings.NavigatorToUserTypePermissionSetting();
             TimeManager.LongPause();
         }
 
@@ -50,6 +50,7 @@ namespace Mento.Script.Administration.User
             UserTypePermissionSettings.FocusOnUserType(usertypeName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
+            /*
             Assert.IsFalse(UserTypePermissionSettings.UserTypeCostIsChecked());
             Assert.IsTrue(UserTypePermissionSettings.UserTypeEnergyUseIsChecked());
             
@@ -67,11 +68,30 @@ namespace Mento.Script.Administration.User
             
             Assert.IsTrue(UserTypePermissionSettings.UserTypeCostIsChecked());
             Assert.IsFalse(UserTypePermissionSettings.UserTypeEnergyUseIsChecked());
-            
+            */
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
+            TimeManager.ShortPause();          
+        }
 
-           
+        [Test]
+        [Priority("10")]
+        [CaseID("TC-J1-SmokeTest-034-Modify-1"), CreateTime("2013-01-09"), Owner("Nancy")]
+        //[MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserTypePermission), "TC-J1-SmokeTest-027")]
+        public void TestTypePermission()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UserManagementUserTypePermission);
+            TimeManager.LongPause();
+
+            string usertypeName = "商务人员";
+            string permissionName = "仪表盘与小组件分享";
+            UserTypePermissionSettings.FocusOnUserType(usertypeName);
+            TimeManager.LongPause();
+
+            UserTypePermissionSettings.ClickModifyButton();
+            TimeManager.LongPause();
+
+
+            UserTypePermissionSettings.Check(permissionName);
         }
     
     }

@@ -655,6 +655,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridCommodityCost = "GridCommodityCost";
         public static string GridCommodityUnitCarbon = "GridCommodityUnitCarbon";
         public static string GridCommodityUnitCost = "GridCommodityUnitCost";
+
+        public static string GridCommodityRank = "GridCommodityRank";
         #endregion
 
         #region customersettings
@@ -717,10 +719,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
-        #region CheckBox
+        #region CheckBoxField
         public static string CheckBoxFieldDayNightKPITag = "CheckBoxFieldDayNightKPITag";
         public static string CheckBoxFieldUserTypeEnergyUse = "CheckBoxFieldUserTypeEnergyUse";
         public static string CheckBoxFieldUserTypeCost = "CheckBoxFieldUserTypeCost";
+
+        public static string CheckBoxFieldUserTypePermission = "CheckBoxFieldUserTypePermission";
+        
         #endregion
 
         #region Label

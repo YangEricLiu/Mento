@@ -27,6 +27,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid CommodityCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityCost);
         public static Grid CommodityUnitCarbonGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityUnitCarbon);
         public static Grid CommodityUnitCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityUnitCost);
+
+        public static Grid CommodityRankGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityRank);
         #endregion
 
         #region Customer settings

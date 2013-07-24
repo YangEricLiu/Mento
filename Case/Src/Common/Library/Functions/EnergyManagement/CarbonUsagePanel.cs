@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,7 +37,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 TotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.ShortPause();
+                TimeManager.MediumPause();
 
                 foreach (var commodity in commodityNames)
                 {

@@ -128,7 +128,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.ShortPause();
+                TimeManager.MediumPause();
 
                 foreach (var commodity in commodityNames)
                 {
@@ -149,7 +149,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.ShortPause();
+                TimeManager.MediumPause();
 
                 foreach (var commodity in commodityNames)
                 {

@@ -26,14 +26,16 @@ namespace Mento.Script.Customer.HierarchyConfiguration
          [SetUp]
         public void ScriptSetUp()
         {
+             /*
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettings);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
+            */
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
         }
 

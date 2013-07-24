@@ -36,11 +36,8 @@ namespace Mento.Script.Customer.TagManagement
         {
             JazzFunction.Navigator.NavigateHome();
         }
-      
-        [Test]
-        [CaseID("TC-J1-FVT-TargetConfiguration-View-101-1")]
-        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ViewTargetBaselineCalendarSuite), "TC-J1-FVT-TargetConfiguration-View-101-1")]
-        public void NonAssocTagNoCalendar(KPITargetBaselineData input)
+
+        private void PickupPtagOrVtag(KPITargetBaselineData input)
         {
             if (String.Equals(input.InputData.TagType, "Ptag"))
             {
@@ -56,6 +53,15 @@ namespace Mento.Script.Customer.TagManagement
                 TimeManager.MediumPause();
             }
             
+        }
+      
+        [Test]
+        [CaseID("TC-J1-FVT-TargetConfiguration-View-101-1")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ViewTargetBaselineCalendarSuite), "TC-J1-FVT-TargetConfiguration-View-101-1")]
+        public void NonAssocTagNoCalendar(KPITargetBaselineData input)
+        {
+            PickupPtagOrVtag(input);
+
             PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
@@ -63,8 +69,46 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
 
-            //Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips));
-            PVtagTargetBaselineSettings.GetCalendarFieldLabelText();
-        }       
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips));
+            //PVtagTargetBaselineSettings.GetCalendarFieldLabelText();
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetConfiguration-View-101-2")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ViewTargetBaselineCalendarSuite), "TC-J1-FVT-TargetConfiguration-View-101-2")]
+        public void AssocTagNoCalendar(KPITargetBaselineData input)
+        {
+            PickupPtagOrVtag(input);
+
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips));
+            //PVtagTargetBaselineSettings.GetCalendarFieldLabelText();
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetConfiguration-View-101-3")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ViewTargetBaselineCalendarSuite), "TC-J1-FVT-TargetConfiguration-View-101-3")]
+        public void AssocTagWithCalendar(KPITargetBaselineData input)
+        {
+            PickupPtagOrVtag(input);
+
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            //string 
+            PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips));
+            //PVtagTargetBaselineSettings.GetCalendarFieldLabelText();
+        } 
     }
 }

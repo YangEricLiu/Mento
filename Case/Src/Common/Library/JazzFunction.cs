@@ -422,5 +422,16 @@ namespace Mento.ScriptCommon.Library
                 return _RankPanel;
             }
         }
+
+        private static CarbonUsagePanel _CarbonUsagePanel;
+        public static CarbonUsagePanel CarbonUsagePanel
+        {
+            get
+            {
+                if (_CarbonUsagePanel == null)
+                    _CarbonUsagePanel = new CarbonUsagePanel();
+                return _CarbonUsagePanel;
+            }
+        }
     }
 }

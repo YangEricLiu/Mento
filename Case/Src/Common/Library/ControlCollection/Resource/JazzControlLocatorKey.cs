@@ -112,6 +112,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string WidgetName = "WidgetName";
         public static string ButtonDeleteWidget = "ButtonDeleteWidget";
         public static string LinkButtonEnergyViewSaveDashboardCreateDashboard = "LinkButtonEnergyViewSaveDashboardCreateDashboard";
+        public static string LinkButtonEnergyViewSaveDashboardExistedDashboard = "LinkButtonEnergyViewSaveDashboardExistedDashboard";
         public static string LinkButtonDashboardHierarchyName = "LinkButtonDashboardHierarchyName";
         public static string DeleteWidgetConfirmButton = "DeleteWidgetConfirmButton";
         public static string DeleteWidgetCancelButton = "DeleteWidgetCancelButton";
@@ -644,6 +645,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string GridUnitKPIAllTagList = "GridUnitKPIAllTagList";
         public static string GridRadioAllTagList = "GridRadioAllTagList";
+
+        public static string GridTotalCommodityCarbon = "GridTotalCommodityCarbon";
+        public static string GridTotalCommodityCost = "GridTotalCommodityCost";
+        public static string GridTotalCommodityUnitCarbon = "GridTotalCommodityUnitCarbon";
+        public static string GridTotalCommodityUnitCost = "GridTotalCommodityUnitCost";
+
+        public static string GridCommodityCarbon = "GridCommodityCarbon";
+        public static string GridCommodityCost = "GridCommodityCost";
+        public static string GridCommodityUnitCarbon = "GridCommodityUnitCarbon";
+        public static string GridCommodityUnitCost = "GridCommodityUnitCost";
         #endregion
 
         #region customersettings

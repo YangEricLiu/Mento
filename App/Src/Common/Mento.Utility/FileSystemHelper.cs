@@ -11,19 +11,19 @@ namespace Mento.Utility
     {
         public static void DownloadSharedFiles(string serverDirectory, string localMappingDrive, string userName, string password, string downloadDestinationDirectory)
         {
-            ConnectServer(serverDirectory, localMappingDrive, userName, password);
+            //ConnectServer(serverDirectory, localMappingDrive, userName, password);
 
             if (Directory.Exists(downloadDestinationDirectory))
                 Directory.Delete(downloadDestinationDirectory, true);
 
             CopyDirectory(localMappingDrive + Path.DirectorySeparatorChar.ToString(), downloadDestinationDirectory);
 
-            DisconnectServer(localMappingDrive);
+            //DisconnectServer(localMappingDrive);
         }
 
         public static void UploadSharedFiles(string serverDirectory, string localMappingDrive, string userName, string password, string uploadSourceDirectory)
         {
-            ConnectServer(serverDirectory, localMappingDrive, userName, password);
+            //ConnectServer(serverDirectory, localMappingDrive, userName, password);
 
             string virtualDrive = localMappingDrive + Path.DirectorySeparatorChar.ToString();
             if (!uploadSourceDirectory.EndsWith("\\"))
@@ -38,7 +38,7 @@ namespace Mento.Utility
                 CopyDirectory(uploadSourceDirectory, virtualDrive);
             }
 
-            DisconnectServer(localMappingDrive);
+            //DisconnectServer(localMappingDrive);
         }
 
         public static void CopyDirectory(string sourceDirectory, string destinationDirectory)

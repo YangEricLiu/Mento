@@ -17,6 +17,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static Grid UnitKPIAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridUnitKPIAllTagList);
         public static Grid RadioAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridRadioAllTagList);
+
+        public static Grid TotalCommodityCarbonGrid = GetControl<Grid>(JazzControlLocatorKey.GridTotalCommodityCarbon);
+        public static Grid TotalCommodityCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridTotalCommodityCost);
+        public static Grid TotalCommodityUnitCarbonGrid = GetControl<Grid>(JazzControlLocatorKey.GridTotalCommodityUnitCarbon);
+        public static Grid TotalCommodityUnitCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridTotalCommodityUnitCost);
+
+        public static Grid CommodityCarbonGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityCarbon);
+        public static Grid CommodityCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityCost);
+        public static Grid CommodityUnitCarbonGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityUnitCarbon);
+        public static Grid CommodityUnitCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityUnitCost);
         #endregion
 
         #region Customer settings

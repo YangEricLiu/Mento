@@ -12,7 +12,7 @@ namespace Mento.ScriptCommon.TestData.Customer
     }
     public class KPITargetBaselineInputData : InputTestDataBase
     {
-        public string Year { get; set; } 
+        public string Year { get; set; }
         public int WorkdayRuleRecordNumber { get; set; }        
         public string[] WorkdayRuleEndTime { get; set; }
         public string[] WorkdayRuleValue { get; set; }

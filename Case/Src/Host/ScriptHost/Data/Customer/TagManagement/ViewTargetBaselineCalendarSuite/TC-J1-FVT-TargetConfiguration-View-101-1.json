@@ -2,8 +2,8 @@
 	{
 		"InputData":
 		{	
-			"TagType":"Ptag",
-			"TagName":"P_Asso_001_3_1",
+			"TagType":"Vtag",
+			"TagName":"V_TB_View_101_1",
 			"Year":"2010",
 		},
 		"ExpectedData":
@@ -14,13 +14,13 @@
 	{
 		"InputData":
 		{	
-			"TagType":"Vtag",
-			"TagName":"V_Asso_001_3_1",
-			"Year":"2010",
+			"TagType":"Ptag",
+			"TagName":"P_TB_View_101_1",
+			"Year":"2013",
 		},
 		"ExpectedData":
 		{
 			"CalendarInfoTips":"该数据点未关联任何层级节点。请关联后再设置，保证设置内容可被计算",
 		}
-	}
+	}	
 ]

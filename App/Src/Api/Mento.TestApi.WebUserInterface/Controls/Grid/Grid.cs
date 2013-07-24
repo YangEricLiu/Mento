@@ -36,6 +36,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <param name="locator"></param>
         public Grid(Locator locator) : base(locator) { }
 
+        private bool IsPageToolBarDisplayed()
+        {
+            return PagingToolbar.Displayed;
+        }
 
         /// <summary>
         /// Simulate mouse focus on the row which "Name" is "cellName"
@@ -63,9 +67,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <param name="cellIndex">Column index of the identifier cell</param>
         /// <param name="cellText">Text of the identifier cell</param>
         /// <returns></returns>
-        public bool IsRowChecked(int cellIndex, string cellText)
+        public bool IsRowChecked(int cellIndex, string cellText, bool Paging = true)
         {
-            var checker = this.GetRowChecker(cellIndex, cellText);
+            var checker = this.GetRowChecker(cellIndex, cellText, Paging);
 
             return checker.GetAttribute("class").Split(' ').Contains("x-grid-checkheader-checked");
         }
@@ -76,11 +80,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// </summary>
         /// <param name="cellName"></param>
         /// <returns></returns>
-        public void CheckRowCheckbox(int cellIndex, string cellText)
+        public void CheckRowCheckbox(int cellIndex, string cellText, bool Paging = true)
         {
-            var checker = this.GetRowChecker(cellIndex, cellText);
+            var checker = this.GetRowChecker(cellIndex, cellText, Paging);
 
-            if (!this.IsRowChecked(cellIndex, cellText))
+            if (!this.IsRowChecked(cellIndex, cellText, Paging))
             {
                 checker.Click();
             }
@@ -91,11 +95,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// </summary>
         /// <param name="cellName"></param>
         /// <returns></returns>
-        public void UncheckRowCheckbox(int cellIndex, string cellText)
+        public void UncheckRowCheckbox(int cellIndex, string cellText, bool Paging = true)
         {
-            var checker = this.GetRowChecker(cellIndex, cellText);
+            var checker = this.GetRowChecker(cellIndex, cellText, Paging);
 
-            if (this.IsRowChecked(cellIndex, cellText))
+            if (this.IsRowChecked(cellIndex, cellText, Paging))
             {
                 checker.Click();
             }
@@ -238,25 +242,28 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
         */
 
-        protected virtual IWebElement GetRowChecker(int cellIndex, string cellText)
+        protected virtual IWebElement GetRowChecker(int cellIndex, string cellText, bool Paging = true)
         {
             var checkerLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowChecker);
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
 
-            int i = 0;
-
-            while (i < PageCount)
+            if (Paging)
             {
-                if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                int i = 0;
+
+                while (i < PageCount)
                 {
-                    break;
-                }
-                else
-                {
-                    NextPage();
-                    TimeManager.LongPause();
-                    i++;
+                    if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
                 }
             }
 

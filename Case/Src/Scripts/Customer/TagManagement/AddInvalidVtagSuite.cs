@@ -168,7 +168,7 @@ namespace Mento.Script.Customer.TagManagement
           TimeManager.ShortPause();
           JazzFunction.VTagSettings.ClickSaveFormulaButton();
           TimeManager.ShortPause();
-          Assert.IsTrue(VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData));
+          Assert.IsTrue(VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData.FormulaMessage));
 
           
       }

@@ -562,9 +562,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="output">VtagExpectedData</param>
         /// <returns>whether the invalid message is ture</returns>
-        public Boolean IsFormulaInvalidMsgCorrect(VtagOuputData output)
+        public Boolean IsFormulaInvalidMsgCorrect(string output)
         {
-            return FormulaTextField.GetInvalidTips().Contains(output.FormulaMessage);
+            return FormulaTextField.GetInvalidTips().Contains(output);
         }
 
 

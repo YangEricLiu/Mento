@@ -24,7 +24,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button LoginCustomerOptionConfirm = JazzButton.LoginCustomerOptionConfirmButton;
         //private ComboBox comboBoxInstance = ControlAccess.GetControl<ComboBox>();
         //private static Locator HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
-
+        private static Button ButtonNavigatorSelectedCustomer = JazzButton.NavigatorSelectedCustomerButton;
         /// <summary>
         /// Login Jazz with test data
         /// </summary>
@@ -87,6 +87,15 @@ namespace Mento.ScriptCommon.Library.Functions
             var loginData = new LoginInputData() { UserName = defaultUserName, Password = defaultPassword };
 
             this.Login(loginData);
+        }
+
+        /// <summary>
+        /// Switch to a certain customer
+        /// </summary>
+        /// <returns></returns>
+        public void SwtichCustomer(string customername)
+        {
+            ButtonNavigatorSelectedCustomer.Click();
         }
 
         /// <summary>

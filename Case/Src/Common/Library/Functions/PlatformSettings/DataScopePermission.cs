@@ -12,17 +12,17 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.ScriptCommon.Library.Functions
 {
     /// <summary>
-    /// The business logic implement of User setting.
+    /// The business logic implement of User Data scope permission setting.
     /// </summary>
-    public class UserSettings
+    public class DataScopePermission
     {
-        internal UserSettings()
+        internal DataScopePermission()
         {
         }
 
         #region controls
         private static Grid GridUserList = JazzGrid.UserListGrid;
-
+        //private static Grid GridUser
         private static Button CreateButton = JazzButton.UserCreateButton;
         private static Button RefreshButton = JazzButton.UserRefreshButton;
 

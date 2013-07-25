@@ -146,7 +146,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField UserTitleTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserTitle);
         public static TextField UserCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserComment);
         #endregion
-
+        #region UserFunctionRoleType
+        public static TextField FunctionRoleTypeNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldFunctionRoleTypeName);
+        #endregion
         #region User Profile
         public static TextField UserProfileNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserProfileName);
         public static TextField UserProfileRealNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserProfileRealName);

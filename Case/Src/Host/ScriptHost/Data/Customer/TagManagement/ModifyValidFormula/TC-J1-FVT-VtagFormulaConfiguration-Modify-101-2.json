@@ -3,20 +3,12 @@
 		"InputData":
 		{	
 			"CommonName":"VtagAddCancel001",
-			"Code":"VtagAddCancel001",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"Step":"Hourly",
-			"CalculationType":"Sum",
+
 		},
 		"ExpectedData":
 		{
 			"CommonName":"VtagAddCancel001",
-			"Code":"VtagAddCancel001",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"Step":"Hourly",
-			"CalculationType":"Sum",
+
 		}
 	}
 ]

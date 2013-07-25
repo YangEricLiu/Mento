@@ -277,6 +277,17 @@ namespace Mento.ScriptCommon.Library
                 return _UserSettings;
             }
         }
+        private static FunctionRoleTypePermissionSettings _FunctionRoleTypePermissionSettings;
+        public static FunctionRoleTypePermissionSettings FunctionRoleTypePermissionSettings
+        {
+            get
+            {
+                if (_FunctionRoleTypePermissionSettings == null)
+                    _FunctionRoleTypePermissionSettings = new FunctionRoleTypePermissionSettings();
+
+                return _FunctionRoleTypePermissionSettings;
+            }
+        }
 
         private static UserTypePermissionSettings _UserTypePermissionSettings;
         public static UserTypePermissionSettings UserTypePermissionSettings

@@ -122,6 +122,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorAssociationHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAssociationHierarchy);//{NavigationTarget.AssociationHierarchy, new NavigatorItem(NavigationTarget.AssociationHierarchy, NavigationTarget.AssociationSettings,"st-menu-hierarchytags-btnEl",ByType.ID)},
         public static Button NavigatorAssociationSystemDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAssociationSystemDimension);//{NavigationTarget.AssociationSystemDimension, new NavigatorItem(NavigationTarget.AssociationSystemDimension,NavigationTarget.AssociationSettings,"st-menu-systemdtags-btnEl",ByType.ID)},
         public static Button NavigatorAssociationAreaDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAssociationAreaDimension);//{NavigationTarget.AssociationAreaDimension, new NavigatorItem(NavigationTarget.AssociationAreaDimension,NavigationTarget.AssociationSettings,"st-menu-areadtags-btnEl",ByType.ID)},
+        //select customer
+        public static Button NavigatorSelectedCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsDelete);
         #endregion
 
         #region Customer settings buttons
@@ -338,6 +340,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button UserTypePermissionSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionSave);
         public static Button UserTypePermissionCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionCancel);
         public static Button UserTypePermissionRefreshButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionRefresh);
+        public static Button TabButtonUserBasicProperties = GetControl<Button>(JazzControlLocatorKey.TabButtonUserBasicProperties);
+        public static Button TabButtonUserDataPermission = GetControl<Button>(JazzControlLocatorKey.TabButtonUserDataPermission);
         #endregion
         #region User Profile
         public static Button UserProfileButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserProfile);
@@ -347,6 +351,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button UserProfileModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserProfileModify);
         public static Button UserPasswordModifyMenuButton = GetControl<Button>(JazzControlLocatorKey.MenuButtonModifyUserPassword);
         public static Button ExitJazzMenuButton = GetControl<Button>(JazzControlLocatorKey.MenuButtonExitJazz);
+        #endregion
+        #region UserRoleType
+        public static Button CreatFunctionRoleType = GetControl<Button>(JazzControlLocatorKey.ButtonCreatFunctionRoleType);
+        public static Button ModifyFunctionRoleType = GetControl<Button>(JazzControlLocatorKey.ButtonModifyFunctionRoleType);
+        public static Button CancelFunctionRoleType = GetControl<Button>(JazzControlLocatorKey.ButtonCancelFunctionRoleType);
+        public static Button DeleteFunctionRoleType = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteFunctionRoleType);
+        public static Button SaveFunctionRoleType = GetControl<Button>(JazzControlLocatorKey.ButtonSaveFunctionRoleType);
         #endregion
         #endregion
     }

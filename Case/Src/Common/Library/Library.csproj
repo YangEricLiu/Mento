@@ -100,6 +100,8 @@
     <Compile Include="Functions\CustomerSettings\SystemDimensionSettings.cs" />
     <Compile Include="Functions\HomePage\UserProfile.cs" />
     <Compile Include="Functions\HomePage\UserProfileDialog.cs" />
+    <Compile Include="Functions\PlatformSettings\DataScopePermission.cs" />
+    <Compile Include="Functions\PlatformSettings\FunctionRoleTypePermissionSettings.cs" />
     <Compile Include="Functions\UserSettings.cs" />
     <Compile Include="Functions\CustomerSettings\UserTypePermissionSettings.cs" />
     <Compile Include="Functions\HomePage\Widget.cs" />

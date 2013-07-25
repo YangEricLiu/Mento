@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administration\CarbonFactorSettingsData.cs" />
+    <Compile Include="Administration\RoleTypePermissionData.cs" />
     <Compile Include="Administration\UserPasswordData.cs" />
     <Compile Include="Administration\TOUPulsePeakTariffSettingsData.cs" />
     <Compile Include="Administration\TOUBasicTariffSettingsData.cs" />

@@ -50,6 +50,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorAssociationHierarchy = "ButtonNavigatorAssociationHierarchy";
         public static string ButtonNavigatorAssociationSystemDimension = "ButtonNavigatorAssociationSystemDimension";
         public static string ButtonNavigatorAssociationAreaDimension = "ButtonNavigatorAssociationAreaDimension";
+        public static string ButtonNavigatorSelectedCustomer = "ButtonNavigatorSelectedCustomer";
         #endregion
 
         #region User
@@ -76,6 +77,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonUserProfileClose = "ButtonUserProfileClose";
         public static string MenuButtonExitJazz = "MenuButtonExitJazz";
         public static string MenuButtonModifyUserPassword = "MenuButtonModifyUserPassword";
+        public static string TabButtonUserDataPermission = "TabButtonUserDataPermission";
+        public static string TabButtonUserBasicProperties = "TabButtonUserBasicProperties";
+        #endregion
+
+        #region UserFunctionRoleTypePermission
+        public static string ButtonCreatFunctionRoleType = "ButtonCreatFunctinRoleType";
+        public static string ButtonSaveFunctionRoleType = "ButtonSaveFunctionRoleType";
+        public static string ButtonCancelFunctionRoleType = "ButtonCancelFunctionRoleType";
+        public static string ButtonModifyFunctionRoleType = "ButtonModifyFunctionRoleType";
+        public static string ButtonDeleteFunctionRoleType = "ButtonDeleteFunctionRoleType";
         #endregion
 
         #region energyview
@@ -485,6 +496,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldCustomerComment = "TextFieldCustomerComment";
         public static string TextFieldUploadLogo = "TextFieldUploadLogo";
         #endregion
+        #region FunctionRoleType
+        public static string TextFieldFunctionRoleTypeName = "TextFieldFunctionRoleTypeName";
+        #endregion
 
         #endregion
 
@@ -672,6 +686,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridUserList = "GridUserList";
         public static string GridUserTypePermissionList = "GridUserTypePermissionList";
         public static string GridTOUTariffsList = "GridTOUTariffsList";
+        public static string GridFunctionRoleTypeList = "GridFunctionRoleTypeList";
         #endregion
 
         #endregion

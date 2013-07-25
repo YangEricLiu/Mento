@@ -154,6 +154,7 @@
     <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_schema_data.sql" />
     <Content Include="SqlScript\TearDown\14dbo_Trigger.sql" />
     <None Include="Data\Administration\CustomerOperation\SmokeTestAddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
+    <None Include="Data\Administration\RoleTypePermission\AddRoleTypeSuite\TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-1.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSettingBasic-Delete-002.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSettingBasic-Delete-101.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSettingBasic-Delete-001.json" />
@@ -325,6 +326,10 @@
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-4.json" />
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-2.json" />
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-1.json" />
+    <None Include="Data\Customer\TagManagement\ModifyValidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-101-1.json" />
+    <None Include="Data\Customer\TagManagement\ModifyValidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-101-0.json" />
+    <None Include="Data\Customer\TagManagement\ModifyValidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-101-4.json" />
+    <None Include="Data\Customer\TagManagement\ModifyValidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-101-3.json" />
     <None Include="Data\Customer\TagManagement\ModifyInvalidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-001-1.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-101-2.json" />
     <None Include="Data\Customer\TagManagement\DeletePtagSuite\TC-J1-FVT-PtagConfiguration-Delete-101-4.json" />

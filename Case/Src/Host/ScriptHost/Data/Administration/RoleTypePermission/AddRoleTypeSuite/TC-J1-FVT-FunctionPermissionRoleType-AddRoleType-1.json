@@ -1,0 +1,13 @@
+﻿[
+	{		
+		"InputData":
+		{	
+		"RoleTypeName":"Nancy_PlatformAdminUser",
+		},
+
+		"ExpectedData":
+		{
+			"RoleTypeName":"Nancy_PlatformAdminUser",
+		}
+	},
+]

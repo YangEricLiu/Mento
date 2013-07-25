@@ -1,323 +1,342 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <WebElement>
   <!--Button Begin-->
-  <Button>
-    <login>
-      <add key="ButtonLoginSubmit" value = "btnSubmit" type="ID"/>
-      <add key="ButtonLoginCustomerOptionConfirm" value = "//div[contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
-    </login>
-    <navigator> 
-      <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
-      <add key="ButtonNavigatorEnergyView" value="header-btn-energyservice" type="ID"/>
-      <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
-      <add key="ButtonNavigatorPlatformSettings" value="header-btn-pfsetting" type="ID"/> 
+    <Button>
+        <login>
+            <add key="ButtonLoginSubmit" value = "btnSubmit" type="ID"/>
+            <add key="ButtonLoginCustomerOptionConfirm" value = "//div[contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
+        </login>
+        <navigator>
+            <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
+            <add key="ButtonNavigatorEnergyView" value="header-btn-energyservice" type="ID"/>
+            <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
+            <add key="ButtonNavigatorPlatformSettings" value="header-btn-pfsetting" type="ID"/>
 
-      <add key="ButtonNavigatorEnergyAnalysis" value="em-functionPanel-eAnalysis" type="ID"/>
-      <add key="ButtonNavigatorCarbonUsage" value="em-functionPanel-eCarbon" type="ID"/>
-      <add key="ButtonNavigatorCost" value="em-functionPanel-eCost" type="ID"/>
-      <add key="ButtonNavigatorUnitKPI" value="em-functionPanel-eUnitEnergy" type="ID"/>
-      <add key="ButtonNavigatorEnergyRatio" value="em-functionPanel-eEnergyRatio" type="ID"/>
-      <add key="ButtonNavigatorRank" value="em-functionPanel-eRank" type="ID"/>
-      <add key="ButtonNavigatorTimeSettings" value="st-menu-timecfg" type="ID"/>
-      <add key="ButtonNavigatorCarbonSettings" value="st-menu-carbon-lv1" type="ID"/>
-      <add key="ButtonNavigatorPriceSettings" value="st-menu-price-lv1" type="ID"/>
-      <add key="ButtonNavigatorCustomerManagement" value="st-menu-customer-lv1" type="ID"/>
-      <add key="ButtonNavigatorUserManagement" value="st-menu-user-lv1" type="ID"/>
-      <add key="ButtonNavigatorTagSettings" value="setting-tab-tagmgr-btn" type="ID"/>
-      <add key="ButtonNavigatorHierarchySettings" value="setting-tab-hiersetting-btn" type="ID"/>
-      <add key="ButtonNavigatorAssociationSettings" value="setting-tab-tagassoc-btn" type="ID"/>
+            <add key="ButtonNavigatorEnergyAnalysis" value="em-functionPanel-eAnalysis" type="ID"/>
+            <add key="ButtonNavigatorCarbonUsage" value="em-functionPanel-eCarbon" type="ID"/>
+            <add key="ButtonNavigatorCost" value="em-functionPanel-eCost" type="ID"/>
+            <add key="ButtonNavigatorUnitKPI" value="em-functionPanel-eUnitEnergy" type="ID"/>
+            <add key="ButtonNavigatorEnergyRatio" value="em-functionPanel-eEnergyRatio" type="ID"/>
+            <add key="ButtonNavigatorRank" value="em-functionPanel-eRank" type="ID"/>
+            <add key="ButtonNavigatorTimeSettings" value="st-menu-timecfg" type="ID"/>
+            <add key="ButtonNavigatorCarbonSettings" value="st-menu-carbon-lv1" type="ID"/>
+            <add key="ButtonNavigatorPriceSettings" value="st-menu-price-lv1" type="ID"/>
+            <add key="ButtonNavigatorCustomerManagement" value="st-menu-customer-lv1" type="ID"/>
+            <add key="ButtonNavigatorUserManagement" value="st-menu-user-lv1" type="ID"/>
+            <add key="ButtonNavigatorTagSettings" value="setting-tab-tagmgr-btn" type="ID"/>
+            <add key="ButtonNavigatorHierarchySettings" value="setting-tab-hiersetting-btn" type="ID"/>
+            <add key="ButtonNavigatorAssociationSettings" value="setting-tab-tagassoc-btn" type="ID"/>
 
-      <add key="ButtonNavigatorTimeSettingsWorkday" value="st-menu-workday" type="ID"/>
-      <add key="ButtonNavigatorTimeSettingsWorktime" value="st-menu-worktime" type="ID"/>
-      <add key="ButtonNavigatorTimeSettingsSeason" value="st-menu-coldwarm" type="ID"/>
-      <add key="ButtonNavigatorTimeSettingsDaynight" value="st-menu-daynight" type="ID"/>
-      <add key="ButtonNavigatorCarbonSettingsCarbon" value="st-menu-carbon" type="ID"/>
-      <add key="ButtonNavigatorPriceSettingsPrice" value="st-menu-price" type="ID"/>
-      <add key="ButtonNavigatorCustomerManagementCustomer" value="st-menu-customer" type="ID"/>
-      <add key="ButtonNavigatorUserManagementUser" value="st-menu-user" type="ID"/>
-      <add key="ButtonNavigatorUserManagementUserTypePermission" value="st-menu-usertype" type="ID"/>
-      <add key="ButtonNavigatorTagSettingsP" value="st-menu-ptagmgr" type="ID"/>
-      <add key="ButtonNavigatorTagSettingsV" value="st-menu-vtagmgr" type="ID"/>
-      <add key="ButtonNavigatorTagSettingsKPI" value="st-menu-kpimgr" type="ID"/>
-      <add key="ButtonNavigatorHierarchySettingsHierarchy" value="st-menu-hierarchy" type="ID"/>
-      <add key="ButtonNavigatorHierarchySettingsSystemDimension" value="st-menu-systemdimension" type="ID"/>
-      <add key="ButtonNavigatorHierarchySettingsAreaDimension" value="st-menu-areadimension" type="ID"/>
-      <add key="ButtonNavigatorAssociationHierarchy" value="st-menu-hierarchytags" type="ID"/>
-      <add key="ButtonNavigatorAssociationSystemDimension" value="st-menu-systemdtags" type="ID"/>
-      <add key="ButtonNavigatorAssociationAreaDimension" value="st-menu-areadtags" type="ID"/>
-    </navigator>
-    <!--User Management Begin-->
-    <User>
-      <add key="ButtonUserCreate" value="st-user-grid-add-btnInnerEl" type="ID"/>
-      <add key="ButtonUserRefresh" value="st-user-grid-refresh" type="ID"/>
-      <add key="ButtonUserSave" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-      <add key="ButtonUserCancel" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-      <add key="ButtonUserModify" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-      <add key="ButtonUserDelete" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
-      <add key="ButtonUserGeneratePassword" value="st-user-resetpassword-btnInnerEl" type="ID"/>
-      <add key="ButtonUserTypePermissionModify" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-      <add key="ButtonUserTypePermissionRefresh" value="st-usertype-refresh" type="ID"/>
-      <add key="ButtonUserTypePermissionSave" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-      <add key="ButtonUserTypePermissionCancel" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-      <add key="LinkButtonUserAssociatedCustomer" value="st-user-customer-add" type="ID"/>
-    </User>
-    <UserProfile>
-      <add key="ButtonUserProfile" value="//div[@id='header-userprofile-container-innerCt']/img" type="XPath"/>
-      <add key="MenuButtonUserProfileView" value="header-btn-personalinfo" type="ID"/>
-      <add key="ButtonUserProfileModify" value="st-userprofile-profilepanel-update" type="ID"/>
-      <add key="ButtonUserProfileCancel" value="st-userprofile-profilepanel-cancel" type="ID"/>
-      <add key="ButtonUserProfileSave" value="st-userprofile-profilepanel-save" type="ID"/>
-      <add key="ButtonUserProfileClose" value="//div[@id='st-userprofile-personalinfo-window_header-targetEl']/div[2]/img" type="XPath"/>
-      <add key="MenuButtonExitJazz" value="//div[contains(@id, 'menuitem') and a/span[text()='退出系统']]" type="XPath"/>
-      <add key="MenuButtonModifyUserPassword" value="//div[contains(@id, 'menuitem') and a/span[text()='修改密码']]" type="XPath"/>   
-    </UserProfile>
-    <energyview>
-      <add key="ButtonEnergyViewSelectHierarchy" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@Common.Label.EmptyHierarchyText']]" type="XPath"/>
-      <add key="ButtonEnergyViewSelectSystemDimension" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
-      <add key="ButtonEnergyViewSelectAreaDimension" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
-      <add key="ButtonRankSelectSystemDimension" value="em-rank-sdim-button" type="ID"/>
-      <add key="ButtonRankSelectHierarchy" value="em-rank-tree-btn" type="ID"/>
-      <add key="ButtonWidgetSaveHierarchy" value="//div[contains(@id, 'widgetsavewindow') and contains(@class, 'x-window-body-default')]//div[contains(@id, 'menubuttontree')]" type="XPath"/>
-
-      <add key="MenuButtonFuncModeConvert" value="em-func-mode-btn" type="ID"/>
-      <add key="MenuButtonTagModeConvert" value="em-tag-mode-btn" type="ID"/>
-      <add key="MenuButtonUnitTypeConvert" value="//div[@id='em-unit-energy-chartpanel']/div/div/div[2]" type="XPath"/>
-      <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-ratio-chartgridpanel']/div/div/div[2]" type="XPath"/>
-      <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[2]" type="XPath"/>
-      
-      <add key="TabButtonEnergyViewALLTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='全部数据点']]" type="XPath"/>
-      <add key="TabButtonEnergyViewSystemDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='系统数据点']]" type="XPath"/>
-      <add key="TabButtonEnergyViewAreaDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='区域数据点']]" type="XPath"/>
-      <add key="TabButtonRankHierarchyTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='层级']]" type="XPath"/>
-      <add key="TabButtonRankSystemDimensionTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='系统维度']]" type="XPath"/>
-      
-      <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
-      <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
-      <add key="ButtonEnergyViewAddTimeSpan" value="em-chartgrid-topbar-addInterval" type="ID"/>
-      <add key="ButtonEnergyViewRemoveAll" value="em-chartgrid-topbar-del" type="ID"/>
-      <add key="MenuButtonEnergyViewConvertTarget" value="//div[em/button/span[text()='标煤'] or em/button/span[text()='二氧化碳'] or em/button/span[text()='树']]" type="XPath"/>
-      <add key="ButtonEnergyViewPeakValley" value="//div[contains(@class,'x-btn') and em/button/span[text()='峰谷展示']]" type="XPath"/>
-      <add key="ButtonModifyWidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[3]" type="XPath"/>
-      <add key="ModifyWidgetNameSaveButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-      <add key="ModifyWidgetNameCancelButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-      <add key="WidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]//span[text()='表3']" type="XPath"/>
-      <add key="ButtonDeleteWidget" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[4]" type="XPath"/>
-      <add key="LinkButtonEnergyViewSaveDashboardExistedDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]//table[contains(@id,'radiofield') and tbody/tr/td/label[text()='已存在仪表盘']]//input" type="XPath"/>
-      <add key="LinkButtonEnergyViewSaveDashboardCreateDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]//table[contains(@id,'radiofield') and tbody/tr/td/label[text()='新建仪表盘']]//input" type="XPath"/>
-      <add key="LinkButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
-      <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
-      <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-      
-      <add key="ButtonConfirmHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
-      <add key="ButtonClearHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='清空']]" type="XPath"/>
-    </energyview>
-    <customersettings>
-      <ptag>
-        <add key="ButtonPTagSettingsCreatePTag" value="st-ptag-grid-add" type="ID"/>
-        <add key="ButtonPTagSettingsSave" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonPTagSettingsCancel" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonPTagSettingsModify" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonPTagSettingsDelete" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-      </ptag>
-      <vtag>
-        <add key="TabButtonVTagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
-        <!--text in this xpath need to be changed to a language variable-->
-        <add key="TabButtonVTagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()='计算公式']]" type="XPath"/>
-        <add key="ButtonVTagSettingsFormulaUpdate" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
-        <add key="ButtonVTagSettingsFormulaSave" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-          <add key="ButtonVTagSettingsFormulaCancel" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-          <add key="ButtonVTagSettingsCreateVTag" value="st-vtag-grid-add" type="ID"/>
-        <add key="ButtonVTagSettingsSave" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonVTagSettingsCancel" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonVTagSettingsModify" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonVTagSettingsDelete" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-      </vtag>
-
-      <kpitag>
-        <add key="TabButtonKPITagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
-        <!--text in this xpath need to be changed to a language variable-->
-        <add key="TabButtonKPITagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()='计算公式']]" type="XPath"/>
-        <add key="ButtonKPITagSettingsFormulaUpdate" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
-        <add key="ButtonKPITagSettingsFormulaSave" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonKPITagSettingsFormulaCancel" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-
-        <add key="ButtonKPITagSettingsCreateKPITag" value="st-kpi-grid-add" type="ID"/>
-        <add key="ButtonKPITagSettingsSave" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonKPITagSettingsCancel" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonKPITagSettingsModify" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonKPITagSettingsDelete" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-
-        <add key="TabButtonKPITargetProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='目标值']]" type="XPath"/>
-        <add key="TabButtonKPIBaselineProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='基准值']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineCalculationRuleView" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='update_cal_rule']/span[text()='计算规则']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineCalculationRuleCreate" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='empty']/span[text()='计算规则']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineCalculationRuleBack" value="//div[contains(@class,'x-btn') and em/button/span[text()='返回']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineCalculationRuleModify" value="//div[contains(@class,'x-btn') and em/button/span[text()='修改'] and not(contains(@style,'display: none')) and //parent::*[not(contains(@style,'display: none'))]]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineCalculateTarget" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算目标值']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineCalculateBaseline" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算基准值']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineRevise" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='修正计算值']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineSave" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineCancel" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineAddSpecialDates" value="//img[contains(@class,'x-tool-plus')]" type="XPath"/>
-        <add key="ButtonKPITargetBaselineDeleteSpecialDates" value="//img[contains(@class,'x-tool-trash')]" type="XPath"/>
-
-      </kpitag>
-      <hierarchy>
-        <add key="ButtonHierarchySettingsCreateChildHierarchy" value="st-hier-tree-add" type="ID"/>
-        <add key="ButtonHierarchySettingsSave" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonHierarchySettingsCancel" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonHierarchySettingsModify" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonHierarchySettingsDelete" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-      </hierarchy>
-      <hierarchycalendar>
-        <add key="TabButtonCalendarProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[2]" type="XPath"/>
-        <add key="ButtonCalendarCreate" value="//div[@id = 'st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.Label.HierarchyNodeCalendarProperties']]" type="XPath"/>
-        <add key="ButtonCalendarSave" value="//div[@id='st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonCalendarCancel" value="//div[@id='st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonCalendarUpdate" value="//div[@id='st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
-        <add key="ButtonWorkdayCreate" value="st-hierarchy-calendar-workday-add-toolEl" type="ID"/>
-        <add key="ButtonHeatingCoolingCreate" value="st-hierarchy-calendar-coldwarm-add-toolEl" type="ID"/>
-        <add key="ButtonDayNightCreate" value="st-hierarchy-calendar-daynight-add-toolEl" type="ID"/>
-        <add key="LinkButtonWorktimeCreate" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='添加工作时间']" type="XPath"/>
-        <add key="ButtonWorkdayDelete" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
-        <add key="ButtonHeatingCoolingDelete" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
-        <add key="ButtonDayNightDelete" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
-      </hierarchycalendar>
-      <hierarchypeoplearea>
-        <add key="TabButtonPeopleAreaProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[4]" type="XPath"/>
-        <add key="ButtonPeopleAreaCreate" value="//div[@id = 'st-hier-dynamic-property-form']//div[contains(@class, 'x-btn') and em/button/span[text() = '$@Setting.Label.HierarchyNodePopulationNAreaProperties']]" type="XPath"/>
-        <add key="ButtonPeopleAreaSave" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonPeopleAreaCancel" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonPeopleAreaUpdate" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
-        <add key="ButtonPeopleCreate" value="st-hierarchy-dynamic-population-add-toolEl" type="ID"/>
-        <add key="ButtonDeletePeopleItem" value="//table[@id='st-hierarchy-dynamic-population-value-container']//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table[contains(@id,'fieldcontainer')][$#positionIndex]//div[contains(@class,'x-tool')]/img" type="XPath"/>
-      </hierarchypeoplearea>
-      <hierarchycost>
-        <add key="TabButtonCostProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[3]" type="XPath"/>
-        <add key="ButtonCostCreate" value="//div[@id = 'st-hier-cost-form']//div[contains(@class, 'x-btn') and em/button/span[text() = '$@Setting.Label.HierarchyNodeCostProperties']]" type="XPath"/>
-        <add key="ButtonCostSave" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonCostCancel" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonCostUpdate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
-        <add key="ButtonElectricCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='电力']]/div/img" type="XPath"/>
-        <add key="ButtonGasCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='天然气']]/div/img" type="XPath"/>
-        <add key="ButtonWaterCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='自来水']]/div/img" type="XPath"/>
-        <add key="ButtonHeatQCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='热量']]/div/img" type="XPath"/>
-        <add key="ButtonCoolQCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='冷量']]/div/img" type="XPath"/>
-        <add key="ButtonLightWaterCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='软水']]/div/img" type="XPath"/>
-        <add key="ButtonCoalCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='煤']]/div/img" type="XPath"/>
-        <add key="ButtonPetrolCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='汽油']]/div/img" type="XPath"/>
-        <add key="ButtonKeroseneCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='煤油']]/div/img" type="XPath"/>
-        <add key="ButtonDieselOilCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='柴油']]/div/img" type="XPath"/>
-        <add key="ButtonLowPressureSteamCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='低压蒸汽']]/div/img" type="XPath"/>
-        <add key="ButtonWaterCostDelete" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//div[contains(@class, 'x-tool')]/img" type="XPath"/>
-        <add key="LinkButtonFactor" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton') and a[text()='查看所选功率因数']]" type="XPath"/>
-        <add key="LinkButtonTOU" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton') and a[text()='查看价格策略详情']]" type="XPath"/>
-        <add key="ButtonElectricCostDelete" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform') and contains(@class, 'x-panel-body-default')]/div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@class, 'x-tool')]/img" type="XPath"/>
-      </hierarchycost>
-      <systemdimension>
-        <add key="ButtonDimensionShowHierarchyTree" value = "//div[@id='setting-region-center']//button" type ="XPath"/>
-        <add key="ButtonSystemDimensionSet" value = "st-sys-tree-update-btnInnerEl" type ="ID"/>
-        <add key="ButtonSystemDimensionSettingsDialogReturn" value = "st-sys-configtree-goback" type ="ID"/>
-        <add key="ButtonSystemDimensionSettingsClose" value = "//img[@class='x-tool-close']" type ="XPath"/>
-      
-      </systemdimension>
-      <areadimension>
-        <add key="ButtonAreaDimensionSettingsCreate" value="st-area-tree-add" type="ID"/>
-        <add key="ButtonAreaDimensionSettingsSave" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonAreaDimensionSettingsCancel" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonAreaDimensionSettingsModify" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonAreaDimensionSettingsDelete" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="ButtonAreaDimensionSettingsConfirmDelete" value="//div[contains(@class,'x-box-inner')]//div[contains(@class,'x-btn') and em/button/span[text()='确定']]"  type="XPath"/>
-        <add key="ButtonAreaDimensionSettingsCancelDelete" value="//div[contains(@class,'x-box-inner')]//div[contains(@class,'x-btn') and em/button/span[text()='取消']]"  type="XPath"/>
-      </areadimension>
-      <hierarchyassociation>
-        <add key = "ButtonAssociationSettingsTagAssociate" value = "st-tagassoc-taggrid-assoc" type = "ID"/>
-        <add key = "ButtonAssociationSettingsAssociate" value = "st-tagassoc-taggrid-assocaction" type = "ID"/>
-        <add key = "ButtonAssociatedTagRemove" value = "//div[@id='st-tagassoc-tagcontainer-container-bodyEl']/div[contains(@class, 'x-removable-item') and span[text()='$#nameIndex']]/span[contains(@class, 'x-btn-icon')]" type = "XPath"/>
-      </hierarchyassociation>                                    
-      <hierarchydisassociation>
-        <add key = "ButtonAssociationSettingsDisassociate" value = "st-tagassoc-taggrid-unassoc-btnInnerEl" type = "ID"/>
-        <add key = "ButtonAssociationSettingsCancel" value = "st-tagassoc-taggrid-cancel" type= "ID"/>
-      </hierarchydisassociation>
-      <systemdimensionassociation>
+            <add key="ButtonNavigatorTimeSettingsWorkday" value="st-menu-workday" type="ID"/>
+            <add key="ButtonNavigatorTimeSettingsWorktime" value="st-menu-worktime" type="ID"/>
+            <add key="ButtonNavigatorTimeSettingsSeason" value="st-menu-coldwarm" type="ID"/>
+            <add key="ButtonNavigatorTimeSettingsDaynight" value="st-menu-daynight" type="ID"/>
+            <add key="ButtonNavigatorCarbonSettingsCarbon" value="st-menu-carbon" type="ID"/>
+            <add key="ButtonNavigatorPriceSettingsPrice" value="st-menu-price" type="ID"/>
+            <add key="ButtonNavigatorCustomerManagementCustomer" value="st-menu-customer" type="ID"/>
+            <add key="ButtonNavigatorUserManagementUser" value="st-menu-user" type="ID"/>
+            <add key="ButtonNavigatorUserManagementUserTypePermission" value="st-menu-usertype" type="ID"/>
+            <add key="ButtonNavigatorTagSettingsP" value="st-menu-ptagmgr" type="ID"/>
+            <add key="ButtonNavigatorTagSettingsV" value="st-menu-vtagmgr" type="ID"/>
+            <add key="ButtonNavigatorTagSettingsKPI" value="st-menu-kpimgr" type="ID"/>
+            <add key="ButtonNavigatorHierarchySettingsHierarchy" value="st-menu-hierarchy" type="ID"/>
+            <add key="ButtonNavigatorHierarchySettingsSystemDimension" value="st-menu-systemdimension" type="ID"/>
+            <add key="ButtonNavigatorHierarchySettingsAreaDimension" value="st-menu-areadimension" type="ID"/>
+            <add key="ButtonNavigatorAssociationHierarchy" value="st-menu-hierarchytags" type="ID"/>
+            <add key="ButtonNavigatorAssociationSystemDimension" value="st-menu-systemdtags" type="ID"/>
+            <add key="ButtonNavigatorAssociationAreaDimension" value="st-menu-areadtags" type="ID"/>
+            
+            <add key="ButtonNavigatorSelectedCustomer" value="header-btn-select-customer" type="ID"/>
+            
+        </navigator>
+        <!--User Management Begin-->
+        <User>
+            <add key="ButtonUserCreate" value="st-user-grid-add-btnInnerEl" type="ID"/>
+            <add key="ButtonUserRefresh" value="st-user-grid-refresh" type="ID"/>
+            <add key="ButtonUserSave" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
+            <add key="ButtonUserCancel" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+            <add key="ButtonUserModify" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+            <add key="ButtonUserDelete" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
+            <add key="ButtonUserGeneratePassword" value="st-user-resetpassword-btnInnerEl" type="ID"/>
+            <add key="ButtonUserTypePermissionModify" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+            <add key="ButtonUserTypePermissionRefresh" value="st-usertype-refresh" type="ID"/>
+            <add key="ButtonUserTypePermissionSave" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
+            <add key="ButtonUserTypePermissionCancel" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+            <add key="LinkButtonUserAssociatedCustomer" value="st-user-customer-add" type="ID"/>
+            
+        </User>
         
-      </systemdimensionassociation>
-      <areadimensionassociation>
+        <UserDataPermission>
+            <add key="TabButtonUserDataPermission" value="//div[contains(@class,'x-tab') and em/button/span[text()='客户数据权限']]" type="XPath"/>
+            <add key="TabButtonUserBasicProperties" value="//div[contains(@class,'x-tab') and em/button/span[text()='基础属性']]" type="XPath"/>
+            <add key="ButtonModifyUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+            <add key="ButtonModifyUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+        </UserDataPermission>
         
-      </areadimensionassociation>
-    </customersettings>
-    <platformsettings>
-      <workday>
-        <add key="ButtonWorkdayCalendarCreate" value="st-calendar-grid-add" type="ID"/>
-        <add key="ButtonWorkdayCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonWorkdayCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonWorkdayCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonWorkdayCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="ButtonWorkdayCalendarAddSpecialDates" value="st-calendar-workday-items-add-toolEl" type="ID"/>
-      </workday>
-      <worktime>
-        <add key="ButtonWorktimeCalendarCreate" value="st-calendar-grid-add" type="ID"/>
-        <add key="ButtonWorktimeCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonWorktimeCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonWorktimeCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonWorktimeCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="LinkButtonWorktimeCalendarAddMoreRanges" value="//div[@id='st-calendar-worktime-items-add']//a[text()='添加工作时间']" type="XPath"/>
-      </worktime>
-      <heatingcoolingseason>
-        <add key="ButtonHeatingCoolingSeasonCalendarCreate" value="st-calendar-grid-add" type="ID"/>
-        <add key="ButtonHeatingCoolingSeasonCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonHeatingCoolingSeasonCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonHeatingCoolingSeasonCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonHeatingCoolingSeasonCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges" value="st-calendar-warm-items-add-toolEl" type="ID"/>
-        <add key="ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges" value="st-calendar-cold-items-add-toolEl" type="ID"/>
-      </heatingcoolingseason>
-      <daynight>
-        <add key="ButtonDayNightCalendarCreate" value="st-calendar-grid-add" type="ID"/>
-        <add key="ButtonDayNightCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonDayNightCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonDayNightCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonDayNightCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="LinkButtonDayNightCalendarAddMoreRanges" value="//div[@id='st-calendar-daynight-items-add']//a[text()='添加白昼时间']" type="XPath"/>
-      </daynight>
-      <carbonfactor>
-        <add key="ButtonCarbonFactorCreate" value="st-carbonfactor-grid-add" type="ID"/>
-        <add key="ButtonCarbonFactorModify" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonCarbonFactorSave" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonCarbonFactorCancel" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonCarbonFactorDelete" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="ButtonCarbonFactorAddMoreRanges" value="st-carbonfactor-items-add-toolEl" type="ID"/>        
-      </carbonfactor>
-      <TOU>
-        <add key="ButtonTOUBasicPropertyCreate" value="st-priceStrategy-grid-add" type="ID"/>
-        <add key="ButtonTOUBasicPropertyModify" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonTOUBasicPropertySave" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonTOUBasicPropertyCancel" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonTOUBasicPropertyDelete" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="LinkButtonTOUBasicPropertyAddMorePeakRanges" value="//div[@id='st-tou-linkbtn-addpeaktime']//a[(text()='添加峰时范围')]" type="XPath"/>
-        <add key="LinkButtonTOUBasicPropertyAddMoreValleyRanges" value="//div[@id='st-tou-linkbtn-addvalleytime']//a[(text()='添加谷时范围')]" type="XPath"/>
-        <add key="ButtonTOUBasicPropertyDeletePeakRangeItem" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-trash')]" type="XPath"/>
-        <add key="ButtonTOUBasicPropertyDeleteValleyRangeItem" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-trash')]" type="XPath"/>
-        <add key="TabButtonTOUPulsePeakProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='峰值季节']]" type="XPath"/>
-        <add key="ButtonTOUPulsePeakPropertyCreate" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='峰值季节电价']]" type="XPath"/>
-        <add key="ButtonTOUPulsePeakPropertyPlusIcon" value="st-tou-peakproperty-addtool-toolEl" type="ID"/>
-        <add key="ButtonTOUPulsePeakPropertyModify" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-        <add key="ButtonTOUPulsePeakPropertySave" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonTOUPulsePeakPropertyCancel" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="LinkButtonTOUPulsePeakPropertyAddMoreRanges" value="//div[@id='st-tou-peakproperty-addpeakdatetime']//a[(text()='添加峰值季节时间')]" type="XPath"/>
-        <add key="ButtonTOUPulsePeakPropertyDeleteWholeRange" value="//div[@id='st-tou-peakproperty-deltool']//img[contains(@class,'x-tool-close')]" type="XPath"/>
-        <add key="ButtonTOUPulsePeakPropertyDeleteRangeItem" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-close')]" type="XPath"/>
-      </TOU>
-      <customermanagement>
-        <add key="ButtonAddCustomer" value="st-customer-grid-add" type="ID"/>
-        <add key="ButtonUploadLogo" value="st-customer-logo-upload-button-fileInputEl" type="ID"/>
-        <add key="ButtonSaveCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-        <add key="ButtonCancelCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-        <add key="ButtonDeleteCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-        <add key="ButtonUpdateCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
-     </customermanagement>
-    </platformsettings>
-  </Button> 
+        <UserProfile>
+            <add key="ButtonUserProfile" value="//div[@id='header-userprofile-container-innerCt']/img" type="XPath"/>
+            <add key="MenuButtonUserProfileView" value="header-btn-personalinfo" type="ID"/>
+            <add key="ButtonUserProfileModify" value="st-userprofile-profilepanel-update" type="ID"/>
+            <add key="ButtonUserProfileCancel" value="st-userprofile-profilepanel-cancel" type="ID"/>
+            <add key="ButtonUserProfileSave" value="st-userprofile-profilepanel-save" type="ID"/>
+            <add key="ButtonUserProfileClose" value="//div[@id='st-userprofile-personalinfo-window_header-targetEl']/div[2]/img" type="XPath"/>
+            <add key="MenuButtonExitJazz" value="//div[contains(@id, 'menuitem') and a/span[text()='退出系统']]" type="XPath"/>
+            <add key="MenuButtonModifyUserPassword" value="//div[contains(@id, 'menuitem') and a/span[text()='修改密码']]" type="XPath"/>
+        </UserProfile>
+        <energyview>
+            <add key="ButtonEnergyViewSelectHierarchy" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@Common.Label.EmptyHierarchyText']]" type="XPath"/>
+            <add key="ButtonEnergyViewSelectSystemDimension" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
+            <add key="ButtonEnergyViewSelectAreaDimension" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
+            <add key="ButtonRankSelectSystemDimension" value="em-rank-sdim-button" type="ID"/>
+            <add key="ButtonRankSelectHierarchy" value="em-rank-tree-btn" type="ID"/>
+
+            <add key="MenuButtonFuncModeConvert" value="em-func-mode-btn" type="ID"/>
+            <add key="MenuButtonTagModeConvert" value="em-tag-mode-btn" type="ID"/>
+            <add key="MenuButtonUnitTypeConvert" value="//div[@id='em-unit-energy-chartpanel']/div/div/div[2]" type="XPath"/>
+            <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-ratio-chartgridpanel']/div/div/div[2]" type="XPath"/>
+            <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[2]" type="XPath"/>
+
+            <add key="TabButtonEnergyViewALLTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='全部数据点']]" type="XPath"/>
+            <add key="TabButtonEnergyViewSystemDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='系统数据点']]" type="XPath"/>
+            <add key="TabButtonEnergyViewAreaDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='区域数据点']]" type="XPath"/>
+            <add key="TabButtonRankHierarchyTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='层级']]" type="XPath"/>
+            <add key="TabButtonRankSystemDimensionTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='系统维度']]" type="XPath"/>
+
+            <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
+            <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
+            <add key="ButtonEnergyViewAddTimeSpan" value="em-chartgrid-topbar-addInterval" type="ID"/>
+            <add key="ButtonEnergyViewRemoveAll" value="em-chartgrid-topbar-del" type="ID"/>
+            <add key="MenuButtonEnergyViewConvertTarget" value="//div[em/button/span[text()='标煤'] or em/button/span[text()='二氧化碳'] or em/button/span[text()='树']]" type="XPath"/>
+            <add key="ButtonEnergyViewPeakValley" value="//div[contains(@class,'x-btn') and em/button/span[text()='峰谷展示']]" type="XPath"/>
+            <add key="ButtonModifyWidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[3]" type="XPath"/>
+            <add key="ModifyWidgetNameSaveButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
+            <add key="ModifyWidgetNameCancelButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+            <add key="WidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]//span[text()='表3']" type="XPath"/>
+            <add key="ButtonDeleteWidget" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[4]" type="XPath"/>
+            <add key="LinkButtonEnergyViewSaveDashboardCreateDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-default')]//div[contains(@id,'remlinkbutton')]/a[text()='新增仪表盘']" type="XPath"/>
+            <add key="LinkButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
+            <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
+            <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+
+            <add key="ButtonConfirmHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
+            <add key="ButtonClearHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='清空']]" type="XPath"/>
+        </energyview>
+        <customersettings>
+            <ptag>
+                <add key="ButtonPTagSettingsCreatePTag" value="st-ptag-grid-add" type="ID"/>
+                <add key="ButtonPTagSettingsSave" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonPTagSettingsCancel" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonPTagSettingsModify" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonPTagSettingsDelete" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+            </ptag>
+            <vtag>
+                <add key="TabButtonVTagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
+                <!--text in this xpath need to be changed to a language variable-->
+                <add key="TabButtonVTagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()='计算公式']]" type="XPath"/>
+                <add key="ButtonVTagSettingsFormulaUpdate" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+                <add key="ButtonVTagSettingsFormulaSave" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonVTagSettingsFormulaCancel" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonVTagSettingsCreateVTag" value="st-vtag-grid-add" type="ID"/>
+                <add key="ButtonVTagSettingsSave" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonVTagSettingsCancel" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonVTagSettingsModify" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonVTagSettingsDelete" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+            </vtag>
+
+            <kpitag>
+                <add key="TabButtonKPITagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
+                <!--text in this xpath need to be changed to a language variable-->
+                <add key="TabButtonKPITagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()='计算公式']]" type="XPath"/>
+                <add key="ButtonKPITagSettingsFormulaUpdate" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+                <add key="ButtonKPITagSettingsFormulaSave" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonKPITagSettingsFormulaCancel" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+
+                <add key="ButtonKPITagSettingsCreateKPITag" value="st-kpi-grid-add" type="ID"/>
+                <add key="ButtonKPITagSettingsSave" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonKPITagSettingsCancel" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonKPITagSettingsModify" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonKPITagSettingsDelete" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+
+                <add key="TabButtonKPITargetProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='目标值']]" type="XPath"/>
+                <add key="TabButtonKPIBaselineProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='基准值']]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineCalculationRuleView" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='update_cal_rule']/span[text()='计算规则']]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineCalculationRuleCreate" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='empty']/span[text()='计算规则']]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineCalculationRuleBack" value="//div[contains(@class,'x-btn') and em/button/span[text()='返回']]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineCalculationRuleModify" value="//div[contains(@class,'x-btn') and em/button/span[text()='修改'] and not(contains(@style,'display: none')) and //parent::*[not(contains(@style,'display: none'))]]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineCalculateTarget" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算目标值']]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineCalculateBaseline" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算基准值']]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineRevise" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='修正计算值']]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineSave" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineCancel" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineAddSpecialDates" value="//img[contains(@class,'x-tool-plus')]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineDeleteSpecialDates" value="//img[contains(@class,'x-tool-trash')]" type="XPath"/>
+
+            </kpitag>
+            <hierarchy>
+                <add key="ButtonHierarchySettingsCreateChildHierarchy" value="st-hier-tree-add" type="ID"/>
+                <add key="ButtonHierarchySettingsSave" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonHierarchySettingsCancel" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonHierarchySettingsModify" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonHierarchySettingsDelete" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+            </hierarchy>
+            <hierarchycalendar>
+                <add key="TabButtonCalendarProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[2]" type="XPath"/>
+                <add key="ButtonCalendarCreate" value="//div[@id = 'st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.Label.HierarchyNodeCalendarProperties']]" type="XPath"/>
+                <add key="ButtonCalendarSave" value="//div[@id='st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonCalendarCancel" value="//div[@id='st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonCalendarUpdate" value="//div[@id='st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+                <add key="ButtonWorkdayCreate" value="st-hierarchy-calendar-workday-add-toolEl" type="ID"/>
+                <add key="ButtonHeatingCoolingCreate" value="st-hierarchy-calendar-coldwarm-add-toolEl" type="ID"/>
+                <add key="ButtonDayNightCreate" value="st-hierarchy-calendar-daynight-add-toolEl" type="ID"/>
+                <add key="LinkButtonWorktimeCreate" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='添加工作时间']" type="XPath"/>
+                <add key="ButtonWorkdayDelete" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
+                <add key="ButtonHeatingCoolingDelete" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
+                <add key="ButtonDayNightDelete" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
+            </hierarchycalendar>
+            <hierarchypeoplearea>
+                <add key="TabButtonPeopleAreaProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[4]" type="XPath"/>
+                <add key="ButtonPeopleAreaCreate" value="//div[@id = 'st-hier-dynamic-property-form']//div[contains(@class, 'x-btn') and em/button/span[text() = '$@Setting.Label.HierarchyNodePopulationNAreaProperties']]" type="XPath"/>
+                <add key="ButtonPeopleAreaSave" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonPeopleAreaCancel" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonPeopleAreaUpdate" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+                <add key="ButtonPeopleCreate" value="st-hierarchy-dynamic-population-add-toolEl" type="ID"/>
+                <add key="ButtonDeletePeopleItem" value="//table[@id='st-hierarchy-dynamic-population-value-container']//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table[contains(@id,'fieldcontainer')][$#positionIndex]//div[contains(@class,'x-tool')]/img" type="XPath"/>
+            </hierarchypeoplearea>
+            <hierarchycost>
+                <add key="TabButtonCostProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[3]" type="XPath"/>
+                <add key="ButtonCostCreate" value="//div[@id = 'st-hier-cost-form']//div[contains(@class, 'x-btn') and em/button/span[text() = '$@Setting.Label.HierarchyNodeCostProperties']]" type="XPath"/>
+                <add key="ButtonCostSave" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonCostCancel" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonCostUpdate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+                <add key="ButtonElectricCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='电力']]/div/img" type="XPath"/>
+                <add key="ButtonGasCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='天然气']]/div/img" type="XPath"/>
+                <add key="ButtonWaterCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='自来水']]/div/img" type="XPath"/>
+                <add key="ButtonHeatQCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='热量']]/div/img" type="XPath"/>
+                <add key="ButtonCoolQCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='冷量']]/div/img" type="XPath"/>
+                <add key="ButtonLightWaterCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='软水']]/div/img" type="XPath"/>
+                <add key="ButtonCoalCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='煤']]/div/img" type="XPath"/>
+                <add key="ButtonPetrolCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='汽油']]/div/img" type="XPath"/>
+                <add key="ButtonKeroseneCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='煤油']]/div/img" type="XPath"/>
+                <add key="ButtonDieselOilCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='柴油']]/div/img" type="XPath"/>
+                <add key="ButtonLowPressureSteamCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='低压蒸汽']]/div/img" type="XPath"/>
+                <add key="ButtonWaterCostDelete" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//div[contains(@class, 'x-tool')]/img" type="XPath"/>
+                <add key="LinkButtonFactor" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton') and a[text()='查看所选功率因数']]" type="XPath"/>
+                <add key="LinkButtonTOU" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton') and a[text()='查看价格策略详情']]" type="XPath"/>
+                <add key="ButtonElectricCostDelete" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform') and contains(@class, 'x-panel-body-default')]/div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@class, 'x-tool')]/img" type="XPath"/>
+            </hierarchycost>
+            <systemdimension>
+                <add key="ButtonDimensionShowHierarchyTree" value = "//div[@id='setting-region-center']//button" type ="XPath"/>
+                <add key="ButtonSystemDimensionSet" value = "st-sys-tree-update-btnInnerEl" type ="ID"/>
+                <add key="ButtonSystemDimensionSettingsDialogReturn" value = "st-sys-configtree-goback" type ="ID"/>
+                <add key="ButtonSystemDimensionSettingsClose" value = "//img[@class='x-tool-close']" type ="XPath"/>
+
+            </systemdimension>
+            <areadimension>
+                <add key="ButtonAreaDimensionSettingsCreate" value="st-area-tree-add" type="ID"/>
+                <add key="ButtonAreaDimensionSettingsSave" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonAreaDimensionSettingsCancel" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonAreaDimensionSettingsModify" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonAreaDimensionSettingsDelete" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+                <add key="ButtonAreaDimensionSettingsConfirmDelete" value="//div[contains(@class,'x-box-inner')]//div[contains(@class,'x-btn') and em/button/span[text()='确定']]"  type="XPath"/>
+                <add key="ButtonAreaDimensionSettingsCancelDelete" value="//div[contains(@class,'x-box-inner')]//div[contains(@class,'x-btn') and em/button/span[text()='取消']]"  type="XPath"/>
+            </areadimension>
+            <hierarchyassociation>
+                <add key = "ButtonAssociationSettingsTagAssociate" value = "st-tagassoc-taggrid-assoc" type = "ID"/>
+                <add key = "ButtonAssociationSettingsAssociate" value = "st-tagassoc-taggrid-assocaction" type = "ID"/>
+                <add key = "ButtonAssociatedTagRemove" value = "//div[@id='st-tagassoc-tagcontainer-container-bodyEl']/div[contains(@class, 'x-removable-item') and span[text()='$#nameIndex']]/span[contains(@class, 'x-btn-icon')]" type = "XPath"/>
+            </hierarchyassociation>
+            <hierarchydisassociation>
+                <add key = "ButtonAssociationSettingsDisassociate" value = "st-tagassoc-taggrid-unassoc-btnInnerEl" type = "ID"/>
+                <add key = "ButtonAssociationSettingsCancel" value = "st-tagassoc-taggrid-cancel" type= "ID"/>
+            </hierarchydisassociation>
+            <systemdimensionassociation>
+
+            </systemdimensionassociation>
+            <areadimensionassociation>
+
+            </areadimensionassociation>
+        </customersettings>
+        <platformsettings>
+            <workday>
+                <add key="ButtonWorkdayCalendarCreate" value="st-calendar-grid-add" type="ID"/>
+                <add key="ButtonWorkdayCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonWorkdayCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonWorkdayCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonWorkdayCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+                <add key="ButtonWorkdayCalendarAddSpecialDates" value="st-calendar-workday-items-add-toolEl" type="ID"/>
+            </workday>
+            <worktime>
+                <add key="ButtonWorktimeCalendarCreate" value="st-calendar-grid-add" type="ID"/>
+                <add key="ButtonWorktimeCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonWorktimeCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonWorktimeCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonWorktimeCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+                <add key="LinkButtonWorktimeCalendarAddMoreRanges" value="//div[@id='st-calendar-worktime-items-add']//a[text()='添加工作时间']" type="XPath"/>
+            </worktime>
+            <heatingcoolingseason>
+                <add key="ButtonHeatingCoolingSeasonCalendarCreate" value="st-calendar-grid-add" type="ID"/>
+                <add key="ButtonHeatingCoolingSeasonCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonHeatingCoolingSeasonCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonHeatingCoolingSeasonCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonHeatingCoolingSeasonCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+                <add key="ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges" value="st-calendar-warm-items-add-toolEl" type="ID"/>
+                <add key="ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges" value="st-calendar-cold-items-add-toolEl" type="ID"/>
+            </heatingcoolingseason>
+            <daynight>
+                <add key="ButtonDayNightCalendarCreate" value="st-calendar-grid-add" type="ID"/>
+                <add key="ButtonDayNightCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonDayNightCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonDayNightCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonDayNightCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+                <add key="LinkButtonDayNightCalendarAddMoreRanges" value="//div[@id='st-calendar-daynight-items-add']//a[text()='添加白昼时间']" type="XPath"/>
+            </daynight>
+            <carbonfactor>
+                <add key="ButtonCarbonFactorCreate" value="st-carbonfactor-grid-add" type="ID"/>
+                <add key="ButtonCarbonFactorModify" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonCarbonFactorSave" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonCarbonFactorCancel" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonCarbonFactorDelete" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+                <add key="ButtonCarbonFactorAddMoreRanges" value="st-carbonfactor-items-add-toolEl" type="ID"/>
+            </carbonfactor>
+            <TOU>
+                <add key="ButtonTOUBasicPropertyCreate" value="st-priceStrategy-grid-add" type="ID"/>
+                <add key="ButtonTOUBasicPropertyModify" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonTOUBasicPropertySave" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonTOUBasicPropertyCancel" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonTOUBasicPropertyDelete" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+                <add key="LinkButtonTOUBasicPropertyAddMorePeakRanges" value="//div[@id='st-tou-linkbtn-addpeaktime']//a[(text()='添加峰时范围')]" type="XPath"/>
+                <add key="LinkButtonTOUBasicPropertyAddMoreValleyRanges" value="//div[@id='st-tou-linkbtn-addvalleytime']//a[(text()='添加谷时范围')]" type="XPath"/>
+                <add key="ButtonTOUBasicPropertyDeletePeakRangeItem" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-trash')]" type="XPath"/>
+                <add key="ButtonTOUBasicPropertyDeleteValleyRangeItem" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-trash')]" type="XPath"/>
+                <add key="TabButtonTOUPulsePeakProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='峰值季节']]" type="XPath"/>
+                <add key="ButtonTOUPulsePeakPropertyCreate" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='峰值季节电价']]" type="XPath"/>
+                <add key="ButtonTOUPulsePeakPropertyPlusIcon" value="st-tou-peakproperty-addtool-toolEl" type="ID"/>
+                <add key="ButtonTOUPulsePeakPropertyModify" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonTOUPulsePeakPropertySave" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonTOUPulsePeakPropertyCancel" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="LinkButtonTOUPulsePeakPropertyAddMoreRanges" value="//div[@id='st-tou-peakproperty-addpeakdatetime']//a[(text()='添加峰值季节时间')]" type="XPath"/>
+                <add key="ButtonTOUPulsePeakPropertyDeleteWholeRange" value="//div[@id='st-tou-peakproperty-deltool']//img[contains(@class,'x-tool-close')]" type="XPath"/>
+                <add key="ButtonTOUPulsePeakPropertyDeleteRangeItem" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-close')]" type="XPath"/>
+            </TOU>
+            <customermanagement>
+                <add key="ButtonAddCustomer" value="st-customer-grid-add" type="ID"/>
+                <add key="ButtonUploadLogo" value="st-customer-logo-upload-button-fileInputEl" type="ID"/>
+                <add key="ButtonSaveCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+                <add key="ButtonCancelCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+                <add key="ButtonDeleteCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+                <add key="ButtonUpdateCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+            </customermanagement>
+            
+            <FunctionRoleTypePermission>
+                <add key="ButtonCreatFunctinRoleType" value="st-usertype-grid-add-btnInnerEl" type="ID"/>
+                <add key="ButtonSaveFunctinRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
+                <add key="ButtonCancelFunctinRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+                <add key="ButtonDeleteFunctinRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
+                <add key="ButtonModifyFunctinRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+            </FunctionRoleTypePermission>
+            
+        </platformsettings>
+    </Button> 
   <!--Button End-->
   
   <!--TextField Begin-->
@@ -345,6 +364,9 @@
       <add key="TextFieldUserNewPassword" value="st-userprofile-resetpassword-newpassword-inputEl" type="ID"/>
       <add key="TextFieldUserConfirmPassword" value="st-userprofile-resetpassword-confirmpassword-inputEl" type="ID"/>    
     </UserProfile>
+    <FunctionRoleType>
+          <add key="TextFieldFunctionRoleTypeName" value="//div[@id='st-usertype-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
+    </FunctionRoleType>
     <energyview>
       <add key="TextFieldEnergyViewSaveDashboardWidgetName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='小组件名称']]//input[contains(@class,'x-form-field')]" type="XPath"/>
       <add key="TextFieldEnergyViewSaveDashboardDashboardName" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]//input[@name='newDashboardField']" type="XPath"/>

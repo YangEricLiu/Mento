@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"VtagValidFormula",
+			"HierarchyNodePath":["自动化测试","AutoSite_Vtag"],
+		},
+		"ExpectedData":
+		{
+			"CommonName":"VtagForFormula",
+		}
+	}
+]

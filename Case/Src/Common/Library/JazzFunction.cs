@@ -277,6 +277,7 @@ namespace Mento.ScriptCommon.Library
                 return _UserSettings;
             }
         }
+        //Greenie added
         private static FunctionRoleTypePermissionSettings _FunctionRoleTypePermissionSettings;
         public static FunctionRoleTypePermissionSettings FunctionRoleTypePermissionSettings
         {
@@ -288,7 +289,7 @@ namespace Mento.ScriptCommon.Library
                 return _FunctionRoleTypePermissionSettings;
             }
         }
-
+        /*
         private static UserTypePermissionSettings _UserTypePermissionSettings;
         public static UserTypePermissionSettings UserTypePermissionSettings
         {
@@ -300,7 +301,7 @@ namespace Mento.ScriptCommon.Library
                 return _UserTypePermissionSettings;
             }
         }
-
+        */
 
         private static HierarchyElectricCostSettings _HierarchyElectricCostSettings;
         public static HierarchyElectricCostSettings HierarchyElectricCostSettings

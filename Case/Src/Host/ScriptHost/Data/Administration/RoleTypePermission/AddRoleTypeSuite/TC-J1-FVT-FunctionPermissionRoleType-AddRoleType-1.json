@@ -2,12 +2,12 @@
 	{		
 		"InputData":
 		{	
-		"RoleTypeName":"Nancy_PlatformAdminUser",
+			"RoleTypeName":"",
 		},
 
 		"ExpectedData":
 		{
-			"RoleTypeName":"Nancy_PlatformAdminUser",
+			"RoleTypeName":"必填项",
 		}
 	},
 ]

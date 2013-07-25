@@ -71,7 +71,6 @@
             <add key="TabButtonUserDataPermission" value="//div[contains(@class,'x-tab') and em/button/span[text()='客户数据权限']]" type="XPath"/>
             <add key="TabButtonUserBasicProperties" value="//div[contains(@class,'x-tab') and em/button/span[text()='基础属性']]" type="XPath"/>
             <add key="ButtonModifyUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-            <add key="ButtonModifyUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
         </UserDataPermission>
         
         <UserProfile>
@@ -90,6 +89,7 @@
             <add key="ButtonEnergyViewSelectAreaDimension" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
             <add key="ButtonRankSelectSystemDimension" value="em-rank-sdim-button" type="ID"/>
             <add key="ButtonRankSelectHierarchy" value="em-rank-tree-btn" type="ID"/>
+            <add key="ButtonWidgetSaveHierarchy" value="//div[contains(@id, 'widgetsavewindow') and contains(@class, 'x-window-body-default')]//div[contains(@id, 'menubuttontree')]" type="XPath"/>
 
             <add key="MenuButtonFuncModeConvert" value="em-func-mode-btn" type="ID"/>
             <add key="MenuButtonTagModeConvert" value="em-tag-mode-btn" type="ID"/>

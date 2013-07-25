@@ -82,7 +82,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region UserFunctionRoleTypePermission
-        public static string ButtonCreatFunctionRoleType = "ButtonCreatFunctinRoleType";
+        public static string ButtonCreatFunctionRoleType = "ButtonCreatFunctionRoleType";
         public static string ButtonSaveFunctionRoleType = "ButtonSaveFunctionRoleType";
         public static string ButtonCancelFunctionRoleType = "ButtonCancelFunctionRoleType";
         public static string ButtonModifyFunctionRoleType = "ButtonModifyFunctionRoleType";

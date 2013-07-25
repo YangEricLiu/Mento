@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagType":"Vtag",
+			"TagName":"V_TB_View_101_3",
+		},
+		"ExpectedData":
+		{
+			"CalendarInfoTips":{"该数据点所关联层级节点未引用任何日历模板。请引用后再设置，保证设置内容可被计算", "当前时间的工作日历已配置 "}
+		}
+	},
+	{
+		"InputData":
+		{	
+			"TagType":"Ptag",
+			"TagName":"P_TB_View_101_3",
+		},
+		"ExpectedData":
+		{
+			"CalendarInfoTips":{"该数据点所关联层级节点未引用任何日历模板。请引用后再设置，保证设置内容可被计算", "当前时间的工作日历已配置 "}
+		}
+	}
+]

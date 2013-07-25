@@ -193,20 +193,40 @@ namespace Mento.Script.EnergyView.Usage
             DataPanel.Toolbar.SaveToDashboard("test", hPath, true, "newname");
 
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTrendChartDrawn());
-            
-            string[] hPath = { "自动化测试" };
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CarbonUsage);
-            JazzFunction.CarbonUsagePanel.SelectHierarchy(hPath);
+            */
+            string[] hPath = { "NancyCustomer1", "GreenieSite" };
+            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.Rank);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UnitKPI);
+            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CarbonUsage);
+            TimeManager.LongPause();
+
+            //JazzFunction.RankPanel.CheckHierarchyNode(hPath);
+            //JazzFunction.RankPanel.ClickConfirmHiearchyButton();
+
+            JazzFunction.UnitKPIPanel.SelectHierarchy(hPath);
             TimeManager.MediumPause();
 
+            JazzFunction.EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            //JazzFunction.EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
+            //JazzFunction.UnitKPIPanel.SelectHierarchy(hPath);
+            TimeManager.LongPause();
+
+            
+
+            
             string[] commodities = { "电", "汽油" };
-            JazzFunction.CarbonUsagePanel.SelectCommodity(commodities);
+            //JazzFunction.UnitKPIPanel.SelectCommodityUnitCost(commodities);
+            //JazzFunction.CarbonUsagePanel.SelectCommodity(commodities);
+            JazzFunction.UnitKPIPanel.SelectCommodityUnitCarbon();
+            //JazzFunction.UnitKPIPanel.ClickCarbonTotal();
+            //JazzFunction.RankPanel.SelectCommodity(commodities[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             JazzFunction.EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            */
+            
 
+            /*
             string[] hPath = { "NancyCustomer1", "GreenieSite" };
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.Rank);
             JazzFunction.RankPanel.CheckHierarchyNode(hPath);
@@ -216,6 +236,7 @@ namespace Mento.Script.EnergyView.Usage
             TimeManager.MediumPause();
 
             JazzFunction.RankPanel.SelectCommodity("电");
+            */
         }
     }
 }

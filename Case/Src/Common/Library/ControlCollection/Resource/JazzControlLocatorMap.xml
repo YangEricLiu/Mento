@@ -84,7 +84,7 @@
             <add key="MenuButtonModifyUserPassword" value="//div[contains(@id, 'menuitem') and a/span[text()='修改密码']]" type="XPath"/>
         </UserProfile>
         <energyview>
-            <add key="ButtonEnergyViewSelectHierarchy" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@Common.Label.EmptyHierarchyText']]" type="XPath"/>
+            <add key="ButtonEnergyViewSelectHierarchy" value="em-hier-tree-btn" type="ID"/>
             <add key="ButtonEnergyViewSelectSystemDimension" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
             <add key="ButtonEnergyViewSelectAreaDimension" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
             <add key="ButtonRankSelectSystemDimension" value="em-rank-sdim-button" type="ID"/>
@@ -624,7 +624,7 @@
 
       <add key="GridTotalCommodityCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridTotalCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
-      <add key="GridTotalCommodityUnitCarbon" value="//div[@id='em-unit-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridTotalCommodityUnitCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridTotalCommodityUnitCost" value="//div[@id='em-unit-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
       <add key="GridCommodityCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
@@ -633,6 +633,8 @@
       <add key="GridCommodityUnitCost" value="//div[@id='em-unit-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
 
       <add key="GridCommodityRank" value="//div[@id='em-rank-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridCommodityRankCarbon" value="//div[@id='em-rank-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridCommodityRankCost" value="//div[@id='em-rank-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
     </energyview>
     <customersettings>
       <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>

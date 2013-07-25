@@ -5,6 +5,7 @@ using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.TestApi.WebUserInterface;
+using OpenQA.Selenium;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -13,9 +14,9 @@ namespace Mento.ScriptCommon.Library.Functions
         #region Controls
 
         private static Grid UnitCarbonCommodityGrid = JazzGrid.CommodityUnitCarbonGrid;
-        private static Grid UnitCarbonTotalCommotidyGrid = JazzGrid.CommodityUnitCostGrid;
+        private static Grid UnitCarbonTotalCommotidyGrid = JazzGrid.TotalCommodityUnitCarbonGrid;
 
-        private static Grid UnitCostCommodityGrid = JazzGrid.TotalCommodityUnitCarbonGrid;
+        private static Grid UnitCostCommodityGrid = JazzGrid.CommodityUnitCostGrid;
         private static Grid UnitCostTotalCommotidyGrid = JazzGrid.TotalCommodityUnitCostGrid;
 
         //Select system dimension tree button

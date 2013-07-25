@@ -69,7 +69,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
 
-            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips));
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips[0]));
             //PVtagTargetBaselineSettings.GetCalendarFieldLabelText();
         }
 
@@ -87,7 +87,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
 
-            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips));
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips[0]));
             //PVtagTargetBaselineSettings.GetCalendarFieldLabelText();
         }
 
@@ -102,13 +102,27 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
 
+            string[] years = { "2010", "2011", "2012" }; 
+
             //string 
-            PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
+            PVtagTargetBaselineSettings.SelectYear(years[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
 
-            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips));
-            //PVtagTargetBaselineSettings.GetCalendarFieldLabelText();
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips[0]));
+
+            PVtagTargetBaselineSettings.SelectYear(years[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips[1]));
+
+            PVtagTargetBaselineSettings.SelectYear(years[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips[1]));
+            
         } 
     }
 }

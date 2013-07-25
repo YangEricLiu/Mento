@@ -29,6 +29,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingToolbar));
             }
         }
+
+        public bool IsPageToolBarExisted()
+        {
+            return this.Exists(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingToolbar));
+        }
         
         /// <summary>
         /// locator parameter must be root element of a grid
@@ -176,7 +181,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex } };
 
-            if (Paging)
+            if (IsPageToolBarExisted() || Paging)
             {
                 int i = 0;
 
@@ -215,7 +220,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
 
-            if (Paging)
+            if(IsPageToolBarExisted() || Paging)
             {
                 int i = 0;
 
@@ -254,7 +259,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
 
-            if (Paging)
+            if (IsPageToolBarExisted() || Paging)
             {
                 int i = 0;
 

@@ -44,14 +44,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         #region private methods
-        protected virtual Locator GetPermissonFieldLocator(string permissionName)
+        private Locator GetPermissonFieldLocator(string permissionName)
         {
             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxTable), PERMISSIONNAME, permissionName);
         }
 
-        protected virtual IWebElement GetPermissonFieldElement(string permissionName)
+        private IWebElement GetPermissonFieldElement(string permissionName)
         {
-            return base.FindChild(GetPermissonFieldLocator(permissionName));
+            return FindChild(GetPermissonFieldLocator(permissionName));
         }
         #endregion
     }

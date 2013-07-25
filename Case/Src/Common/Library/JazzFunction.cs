@@ -386,6 +386,7 @@ namespace Mento.ScriptCommon.Library
             {
                 if (_CostPanel == null)
                     _CostPanel = new CostPanel();
+
                 return _CostPanel;
             }
         }
@@ -398,6 +399,7 @@ namespace Mento.ScriptCommon.Library
             {
                 if (_UnitKPIPanel == null)
                     _UnitKPIPanel = new UnitKPIPanel();
+
                 return _UnitKPIPanel;
             }
         }
@@ -409,6 +411,7 @@ namespace Mento.ScriptCommon.Library
             {
                 if (_EnergyViewToolbar == null)
                     _EnergyViewToolbar = new EnergyViewToolbar();
+
                 return _EnergyViewToolbar;
             }
         }
@@ -420,6 +423,7 @@ namespace Mento.ScriptCommon.Library
             {
                 if (_RadioPanel == null)
                     _RadioPanel = new RadioPanel();
+
                 return _RadioPanel;
             }
         }
@@ -431,6 +435,7 @@ namespace Mento.ScriptCommon.Library
             {
                 if (_RankPanel == null)
                     _RankPanel = new RankPanel();
+
                 return _RankPanel;
             }
         }
@@ -442,6 +447,7 @@ namespace Mento.ScriptCommon.Library
             {
                 if (_CarbonUsagePanel == null)
                     _CarbonUsagePanel = new CarbonUsagePanel();
+
                 return _CarbonUsagePanel;
             }
         }

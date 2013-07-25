@@ -289,7 +289,7 @@ namespace Mento.ScriptCommon.Library
                 return _FunctionRoleTypePermissionSettings;
             }
         }
-        /*
+
         private static UserTypePermissionSettings _UserTypePermissionSettings;
         public static UserTypePermissionSettings UserTypePermissionSettings
         {
@@ -301,7 +301,7 @@ namespace Mento.ScriptCommon.Library
                 return _UserTypePermissionSettings;
             }
         }
-        */
+
 
         private static HierarchyElectricCostSettings _HierarchyElectricCostSettings;
         public static HierarchyElectricCostSettings HierarchyElectricCostSettings

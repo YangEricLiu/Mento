@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="CarbonFactor\SmokeTestCarbonFactorSuite.cs" />
     <Compile Include="CustomerOperation\SmokeTestAddCustomerSuite.cs" />
+    <Compile Include="FunctionPermissionRoleType\AddRoleTypeSuite.cs" />
     <Compile Include="TimeManagement\SmokeTestHeatingCoolingSeasonSuite.cs" />
     <Compile Include="TimeManagement\SmokeTestDayNightSuite.cs" />
     <Compile Include="TimeManagement\SmokeTestWorktimeSuite.cs" />

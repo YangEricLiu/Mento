@@ -20,7 +20,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
-        private static JazzGrid GridUserTypePermissionList = JazzGrid.UserTypePermissionList;
+        private static Grid GridUserTypePermissionList = JazzGrid.UserTypePermissionList;
 
         private static Button ModifyButton = JazzButton.UserTypePermissionModifyButton;
         private static Button SaveButton = JazzButton.UserTypePermissionSaveButton;

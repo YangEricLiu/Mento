@@ -329,11 +329,11 @@
             </customermanagement>
             
             <FunctionRoleTypePermission>
-                <add key="ButtonCreatFunctinRoleType" value="st-usertype-grid-add-btnInnerEl" type="ID"/>
-                <add key="ButtonSaveFunctinRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-                <add key="ButtonCancelFunctinRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-                <add key="ButtonDeleteFunctinRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
-                <add key="ButtonModifyFunctinRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+                <add key="ButtonCreatFunctionRoleType" value="st-usertype-grid-add-btnInnerEl" type="ID"/>
+                <add key="ButtonSaveFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
+                <add key="ButtonCancelFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+                <add key="ButtonDeleteFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
+                <add key="ButtonModifyFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
             </FunctionRoleTypePermission>
             
         </platformsettings>

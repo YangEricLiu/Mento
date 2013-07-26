@@ -59,5 +59,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string DecemberCalculatedValue { get; set; }
         public string[] CalendarInfoTips { get; set; }
         public string[] CalendarInfoOnWindow { get; set; }
+        public string[] WorkdayRuleValue { get; set; }
     }
 }

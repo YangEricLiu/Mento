@@ -94,6 +94,7 @@
     <Compile Include="TagManagement\AddValidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidVtagSuite.cs" />
+    <Compile Include="TagManagement\ModifyValidTargetBaselineSuite.cs" />
     <Compile Include="TagManagement\ViewTargetBaselineCalendarSuite.cs" />
     <Compile Include="TagManagement\DeleteVtagSuite.cs" />
     <Compile Include="TagManagement\ModifyInvalidFormula.cs" />

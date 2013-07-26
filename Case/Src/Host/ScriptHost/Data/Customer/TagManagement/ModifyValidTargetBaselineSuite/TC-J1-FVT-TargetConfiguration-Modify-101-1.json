@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagType":"Vtag",
+			"TagName":"V_TB_View_101_4",
+			"Year":"2012",
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{	
+			"TagType":"Ptag",
+			"TagName":"P_TB_View_101_4",
+			"Year":"2012",
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

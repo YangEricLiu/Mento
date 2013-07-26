@@ -551,6 +551,11 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return TBCalendarInfoContainer.IsContainerTextsExisted(infos);
         }
+
+        public bool IsCreateCalculationRuleButtonDisplayed()
+        {
+            return CalculationRuleCreateButton.IsDisplayed();
+        }
         #endregion
 
         #region private method

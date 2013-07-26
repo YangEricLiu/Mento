@@ -20,6 +20,8 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
+        #region controls
+
         private static Grid PTagList = JazzGrid.PTagSettingsPTagList;
         private static Grid VTagList = JazzGrid.VTagSettingsVTagList;
 
@@ -67,9 +69,19 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Label CalendarInfoDisplay = JazzLabel.CalendarInfoDisplayLabel;
 
+        private static LinkButton TargetCalendarInfo = JazzButton.TargetCalendarInfoLinkButton;
+        private static LinkButton BaselineCalendarInfo = JazzButton.BaselineCalendarInfoLinkButton;
+        private static Button CloseTBCalendarWindowButton = JazzButton.CloseTBCalendarWindowButton;
+
+        private static Window TBCalendarInfoWindow = JazzWindow.TBCalendarInfoWindow;
+
+        private static Container TBCalendarInfoContainer = JazzContainer.TBCalendarInfoContainer;
+
+        #endregion
+
         #region common
         /// <summary>
-        /// Navigate to KPITag settings
+        /// Navigate to tag settings
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -80,23 +92,23 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Select one ptag
+        /// Select one ptag by ptag name
         /// </summary>
-        /// <param name="kpitagName">kpitag name</param>
+        /// <param name="ptagName">ptag name</param>
         /// <returns></returns>
-        public void FocusOnPTagByName(string kpitagName)
+        public void FocusOnPTagByName(string ptagName)
         {
-            PTagList.FocusOnRow(1, kpitagName);
+            PTagList.FocusOnRow(1, ptagName);
         }
 
         /// <summary>
-        /// Select one vtag
+        /// Select one vtag by name
         /// </summary>
-        /// <param name="kpitagName">kpitag name</param>
+        /// <param name="vtagName">vtag name</param>
         /// <returns></returns>
-        public void FocusOnVTagByName(string kpitagName)
+        public void FocusOnVTagByName(string vtagName)
         {
-            VTagList.FocusOnRow(1, kpitagName);
+            VTagList.FocusOnRow(1, vtagName);
         }
 
         /// <summary>
@@ -118,7 +130,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Select one year
+        /// Select one year for target/baseline
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -129,18 +141,18 @@ namespace Mento.ScriptCommon.Library.Functions
                
 
         /// <summary>
-        /// Click save button
+        /// Click save button on target/baseline tab
         /// </summary>
         /// <param></param>
         /// <returns></returns>
         public void ClickSaveButton()
         {
             SaveButton.Click();
-            JazzMessageBox.MessageBox.Yes();
+            //JazzMessageBox.MessageBox.Yes();
         }
 
         /// <summary>
-        /// Click cancel button
+        /// Click cancel button on target/baseline tab
         /// </summary>
         /// <param></param>
         /// <returns></returns>
@@ -159,6 +171,35 @@ namespace Mento.ScriptCommon.Library.Functions
             return CalendarInfoDisplay.GetLabelTextValue();
         }
 
+        /// <summary>
+        /// Click target Calendar Info LinkButton
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickTargetCalendarInfoLinkButton()
+        {
+            TargetCalendarInfo.Click();
+        }
+
+        /// <summary>
+        /// Click baseline Calendar Info LinkButton
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickBaselineCalendarInfoLinkButton()
+        {
+            BaselineCalendarInfo.Click();
+        }
+
+        /// <summary>
+        /// Close calendar info window
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void CloseCalendarInfoWindow()
+        {
+            CloseTBCalendarWindowButton.Click();
+        }
         #endregion
 
         #region configuration rule settings
@@ -488,7 +529,30 @@ namespace Mento.ScriptCommon.Library.Functions
             return DecemberCalculationValueTextField.GetValue();
         }
         #endregion
-                                 
+
+        #region Verification
+
+        /// <summary>
+        /// Judge if calendar info window existed
+        /// </summary>
+        /// <param></param>
+        /// <returns>true if displayed, flase if not</returns>
+        public bool IsCalendarInfoWindowDisplayed()
+        {
+            return TBCalendarInfoWindow.IsWindowExisted();
+        }
+
+        /// <summary>
+        /// Judge if calendar info window include the strings
+        /// </summary>
+        /// <param name = 'info'>calendar info texts</param>
+        /// <returns>true if contains, flase if not</returns>
+        public bool IsCalendarInfoCorrect(string[] infos)
+        {
+            return TBCalendarInfoContainer.IsContainerTextsExisted(infos);
+        }
+        #endregion
+
         #region private method
 
         private ComboBox GetOneWorkdayRuleEndTimeComboBox(int positionIndex)

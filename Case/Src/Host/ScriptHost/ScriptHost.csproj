@@ -360,6 +360,7 @@
     <None Include="Data\Customer\TagManagement\SmokeTestPtagConfigurationSuite\TC-J1-SmokeTest-002-001.json" />
     <None Include="Data\Customer\TagManagement\SmokeTestVtagManagementSuite\TA-Vtag-001.json" />
     <None Include="Data\Customer\TagManagement\SmokeTestVtagManagementSuite\TA-VtagConfigue-001.json" />
+    <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-4.json" />
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-3.json" />
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-2.json" />
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-1.json" />

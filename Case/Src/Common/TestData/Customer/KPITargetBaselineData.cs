@@ -58,5 +58,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string NovemberCalculatedValue { get; set; }
         public string DecemberCalculatedValue { get; set; }
         public string[] CalendarInfoTips { get; set; }
+        public string[] CalendarInfoOnWindow { get; set; }
     }
 }

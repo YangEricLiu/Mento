@@ -254,6 +254,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button AssociationSettingsDisassociate = GetControl<Button>(JazzControlLocatorKey.ButtonAssociationSettingsDisassociate);
         public static Button AssociationSettingCancel = GetControl<Button>(JazzControlLocatorKey.ButtonAssociationSettingsCancel);
         #endregion
+
+        #region TargetBaseline
+
+        public static LinkButton TargetCalendarInfoLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonTargetCalendarInfo);
+        public static LinkButton BaselineCalendarInfoLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonBaselineCalendarInfo);
+        public static Button CloseTBCalendarWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonCloseTBCalendarWindow);
+
+        #endregion
+
         #endregion
 
         #region Platform settings buttons

@@ -267,6 +267,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region areadimensionassociation
         #endregion
 
+        #region TargetBaseline
+
+        public static string LinkButtonTargetCalendarInfo = "LinkButtonTargetCalendarInfo";
+        public static string LinkButtonBaselineCalendarInfo = "LinkButtonBaselineCalendarInfo";
+        public static string ButtonCloseTBCalendarWindow = "ButtonCloseTBCalendarWindow";
+        
+        #endregion
+
         #endregion
 
         #region platformsettings
@@ -795,6 +803,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string WindowFactor = "WindowFactor";
         #endregion
 
+        #region TargetBaseline
+
+        public static string WindowTBCalendarInfo = "WindowTBCalendarInfo";
+
+        #endregion
+
         #endregion
 
         #region Container
@@ -816,6 +830,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Associate
         public static string ContainerAssociatedTags = "ContainerAssociatedTags";
         
+        #endregion
+
+        #region TargetBaseline
+
+        public static string ContainerTBCalendarInfo = "ContainerTBCalendarInfo";
+
         #endregion
 
         #endregion

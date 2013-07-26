@@ -53,5 +53,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             CancelButton.Click();
         }
+
+        public bool IsWindowExisted()
+        {
+            return this.Exists();
+        }
     }
 }

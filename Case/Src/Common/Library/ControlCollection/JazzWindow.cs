@@ -18,11 +18,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
-        
+        #region TargetBaseline
+
+        public static Window TBCalendarInfoWindow = GetControl<Window>(JazzControlLocatorKey.WindowTBCalendarInfo);
 
         #endregion
 
+        #endregion
 
-        
     }
 }

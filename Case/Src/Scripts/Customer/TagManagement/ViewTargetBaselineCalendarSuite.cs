@@ -51,8 +51,7 @@ namespace Mento.Script.Customer.TagManagement
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
                 PVtagTargetBaselineSettings.FocusOnVTagByName(input.InputData.TagName);
                 TimeManager.MediumPause();
-            }
-            
+            } 
         }
       
         [Test]
@@ -104,7 +103,7 @@ namespace Mento.Script.Customer.TagManagement
 
             string[] years = { "2010", "2011", "2012" }; 
 
-            //string 
+            //selelct year
             PVtagTargetBaselineSettings.SelectYear(years[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
@@ -117,12 +116,68 @@ namespace Mento.Script.Customer.TagManagement
 
             Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips[1]));
 
+            PVtagTargetBaselineSettings.ClickBaselineCalendarInfoLinkButton();
+            TimeManager.ShortPause();
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsCalendarInfoWindowDisplayed());
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsCalendarInfoCorrect(input.ExpectedData.CalendarInfoOnWindow));
+            PVtagTargetBaselineSettings.CloseCalendarInfoWindow();
+
+            PVtagTargetBaselineSettings.SelectYear(years[2]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips[1]));
+
+            PVtagTargetBaselineSettings.ClickBaselineCalendarInfoLinkButton();
+            TimeManager.ShortPause();
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsCalendarInfoWindowDisplayed());
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsCalendarInfoCorrect(input.ExpectedData.CalendarInfoOnWindow));
+            PVtagTargetBaselineSettings.CloseCalendarInfoWindow();
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetConfiguration-View-101-4")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ViewTargetBaselineCalendarSuite), "TC-J1-FVT-TargetConfiguration-View-101-4")]
+        public void AssocTagWithOtherCalendar(KPITargetBaselineData input)
+        {
+            PickupPtagOrVtag(input);
+
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            string[] years = { "2011", "2012", "2013" };
+    
+            //selelct year
+            PVtagTargetBaselineSettings.SelectYear(years[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips[0]));
+
             PVtagTargetBaselineSettings.SelectYear(years[1]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
 
             Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips[1]));
-            
+
+            PVtagTargetBaselineSettings.ClickBaselineCalendarInfoLinkButton();
+            TimeManager.ShortPause();
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsCalendarInfoWindowDisplayed());
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsCalendarInfoCorrect(input.ExpectedData.CalendarInfoOnWindow));
+            PVtagTargetBaselineSettings.CloseCalendarInfoWindow();
+
+            PVtagTargetBaselineSettings.SelectYear(years[2]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetCalendarFieldLabelText().Contains(input.ExpectedData.CalendarInfoTips[1]));
+
+            PVtagTargetBaselineSettings.ClickBaselineCalendarInfoLinkButton();
+            TimeManager.ShortPause();
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsCalendarInfoWindowDisplayed());
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsCalendarInfoCorrect(input.ExpectedData.CalendarInfoOnWindow));
+            PVtagTargetBaselineSettings.CloseCalendarInfoWindow();
         } 
     }
 }

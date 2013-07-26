@@ -171,8 +171,8 @@
                 <add key="ButtonKPITargetBaselineCancel" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
                 <add key="ButtonKPITargetBaselineAddSpecialDates" value="//img[contains(@class,'x-tool-plus')]" type="XPath"/>
                 <add key="ButtonKPITargetBaselineDeleteSpecialDates" value="//img[contains(@class,'x-tool-trash')]" type="XPath"/>
-
             </kpitag>
+            
             <hierarchy>
                 <add key="ButtonHierarchySettingsCreateChildHierarchy" value="st-hier-tree-add" type="ID"/>
                 <add key="ButtonHierarchySettingsSave" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
@@ -334,8 +334,13 @@
                 <add key="ButtonCancelFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
                 <add key="ButtonDeleteFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
                 <add key="ButtonModifyFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-            </FunctionRoleTypePermission>
-            
+            </FunctionRoleTypePermission>     
+                  
+          <TargetBaseline>
+                <add key="LinkButtonTargetCalendarInfo" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[2]//table[contains(@id,'displayfield')]//a[text()='查看日历详情']" type="XPath"/>
+                <add key="LinkButtonBaselineCalendarInfo" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[2]//table[contains(@id,'displayfield')]//a[text()='查看日历详情']" type="XPath"/>
+                <add key="ButtonCloseTBCalendarWindow" value="//div[contains(@id,'calendartemplatewindow') and contains(@class, 'x-window-header-body-default')]//img[@class='x-tool-close']" type="XPath"/>
+        </TargetBaseline>
         </platformsettings>
     </Button> 
   <!--Button End-->
@@ -740,7 +745,11 @@
     <Login>
       <add key="WindowLoginOption" value="//div[contains(@class, 'x-window-default')]" type="XPath"/>
       <add key="WindowFactor" value="//div[contains(@class, 'x-window-default')]" type="XPath"/>
-    </Login>    
+    </Login> 
+  
+    <TargetBaseline>
+      <add key="WindowTBCalendarInfo" value="//div[contains(@id,'calendartemplatewindow') and contains(@class, 'x-window-default')]" type="XPath"/>
+    </TargetBaseline> 
   </Window> 
 
 <!--Container-->
@@ -754,8 +763,13 @@
     <add key="ContainerHCErrorTips" value="st-hierarchy-calendar-coldwarm-container-errorEl" type="ID"/>
     <add key="ContainerDayNightErrorTips" value="st-hierarchy-calendar-daynight-container-errorEl" type="ID"/>
   </hierarchypeopertysettings>
+    
     <Associate>
       <add key="ContainerAssociatedTags" value="//div[@id='st-tagassoc-tagcontainer-container-bodyEl']/div" type="XPath"/>
     </Associate>
+      
+  <TargetBaseline>
+      <add key="ContainerTBCalendarInfo" value="//div[contains(@id,'calendartemplatewindow') and contains(@class, 'x-window-body-default')]//div[contains(@class,'x-window-item')]" type="XPath"/>
+    </TargetBaseline>
 </Container>
 </WebElement>

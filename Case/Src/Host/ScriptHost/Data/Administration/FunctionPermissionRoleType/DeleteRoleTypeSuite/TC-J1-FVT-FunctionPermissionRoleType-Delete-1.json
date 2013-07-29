@@ -2,12 +2,12 @@
 	{		
 		"InputData":
 		{	
-			"RoleTypeName":"",
+			"CommonName":"RoleTypeB",
 		},
 
 		"ExpectedData":
 		{
-			"RoleTypeName":"必填项",
+			"CommonName":"RoleTypeB",
 		}
 	},
 ]

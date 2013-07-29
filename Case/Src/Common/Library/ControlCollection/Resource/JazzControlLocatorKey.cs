@@ -696,7 +696,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridUserList = "GridUserList";
         public static string GridUserTypePermissionList = "GridUserTypePermissionList";
         public static string GridTOUTariffsList = "GridTOUTariffsList";
-        public static string GridFunctionRoleTypeList = "GridFunctionRoleTypeList";
         #endregion
 
         #endregion
@@ -835,6 +834,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region TargetBaseline
 
         public static string ContainerTBCalendarInfo = "ContainerTBCalendarInfo";
+
+        #endregion
+       
+        #region UserRoleType
+        public static string ContainerPermissionCustomerizeItems = "ContainerPermissionCustomerizeItems";
+        public static string ContainerPermissionPublicTypeItems = "ContainerPermissionPublicTypeItems";
+       
 
         #endregion
 

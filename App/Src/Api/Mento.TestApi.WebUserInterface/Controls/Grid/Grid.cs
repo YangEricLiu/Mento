@@ -181,7 +181,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex } };
 
-            if (IsPageToolBarExisted() || Paging)
+            if (IsPageToolBarExisted() && Paging)
             {
                 int i = 0;
 
@@ -220,7 +220,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
 
-            if(IsPageToolBarExisted() || Paging)
+            if(IsPageToolBarExisted() && Paging)
             {
                 int i = 0;
 
@@ -259,7 +259,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
 
-            if (IsPageToolBarExisted() || Paging)
+            if (IsPageToolBarExisted() && Paging)
             {
                 int i = 0;
 

@@ -54,6 +54,10 @@
     <Compile Include="CarbonFactor\SmokeTestCarbonFactorSuite.cs" />
     <Compile Include="CustomerOperation\SmokeTestAddCustomerSuite.cs" />
     <Compile Include="FunctionPermissionRoleType\AddRoleTypeSuite.cs" />
+    <Compile Include="FunctionPermissionRoleType\AddFunctionScopeSuite.cs" />
+    <Compile Include="FunctionPermissionRoleType\ModifyRoleTypeSuite.cs" />
+    <Compile Include="FunctionPermissionRoleType\DeleteRoleTypeSuite.cs" />
+    <Compile Include="FunctionPermissionRoleType\ModifyFunctionScopeSuite.cs" />
     <Compile Include="TimeManagement\SmokeTestHeatingCoolingSeasonSuite.cs" />
     <Compile Include="TimeManagement\SmokeTestDayNightSuite.cs" />
     <Compile Include="TimeManagement\SmokeTestWorktimeSuite.cs" />

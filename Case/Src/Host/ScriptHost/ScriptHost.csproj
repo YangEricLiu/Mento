@@ -154,7 +154,13 @@
     <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_schema_data.sql" />
     <Content Include="SqlScript\TearDown\14dbo_Trigger.sql" />
     <None Include="Data\Administration\CustomerOperation\SmokeTestAddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
-    <None Include="Data\Administration\RoleTypePermission\AddRoleTypeSuite\TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-1.json" />
+    <None Include="Data\Administration\FunctionPermissionRoleType\AddFunctionScopeSuite\TC-J1-FVT-FunctionPermissionRoleType-AddFunctionScope-1.json" />
+    <None Include="Data\Administration\FunctionPermissionRoleType\AddRoleTypeSuite\TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-5.json" />
+    <None Include="Data\Administration\FunctionPermissionRoleType\AddRoleTypeSuite\TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-4.json" />
+    <None Include="Data\Administration\FunctionPermissionRoleType\AddRoleTypeSuite\TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-3.json" />
+    <None Include="Data\Administration\FunctionPermissionRoleType\AddRoleTypeSuite\TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-1.json" />
+    <None Include="Data\Administration\FunctionPermissionRoleType\DeleteRoleTypeSuite\TC-J1-FVT-FunctionPermissionRoleType-Delete-2.json" />
+    <None Include="Data\Administration\FunctionPermissionRoleType\DeleteRoleTypeSuite\TC-J1-FVT-FunctionPermissionRoleType-Delete-1.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSettingBasic-Delete-002.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSettingBasic-Delete-101.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSettingBasic-Delete-001.json" />

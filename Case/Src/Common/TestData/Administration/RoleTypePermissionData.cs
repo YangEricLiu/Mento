@@ -13,18 +13,21 @@ namespace Mento.ScriptCommon.TestData.Administration
 
     public class RoleTypeInputData : InputTestDataBase
     {
-        public string RoleTypeName { get; set; }
-        public RoleTypeInputData(string roleTypeName)
+        public string CommonName { get; set; }
+        public string[] NameList { get; set; }
+        public RoleTypeInputData(string roleTypeName,string[] nameList)
         {
-            this.RoleTypeName = roleTypeName;
+            this.CommonName = roleTypeName;
+            this.NameList = nameList;
         }
     }
     public class RoleTypeExpectedData : ExpectedTestDataBase
         {
-            public string RoleTypeName { get; set; }
-            public RoleTypeExpectedData(string roleTypeName)
+            public string CommonName { get; set; }
+            public string[] NameList { get; set; }
+            public RoleTypeExpectedData(string roleTypeName, string[] nameList)
             {
-                this.RoleTypeName = roleTypeName;
+                this.CommonName = roleTypeName;
             }        
         }
 }

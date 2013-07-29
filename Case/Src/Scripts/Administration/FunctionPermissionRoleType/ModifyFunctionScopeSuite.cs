@@ -22,7 +22,7 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
     [Owner("Greenie")]
     [CreateTime("2013-07-24")]
     [ManualCaseID("TC-J1-FVT-FunctionPermissionRoleType-AddRoleType")]
-    public class AddRoleTypeSuite : TestSuiteBase
+    public class ModifyFunctionScopeSuite : TestSuiteBase
     {
         private FunctionRoleTypePermissionSettings RoleTypeSettings = JazzFunction.FunctionRoleTypePermissionSettings;
 
@@ -42,7 +42,7 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
         [Test]
         [CaseID("TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-1")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(AddRoleTypeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-1")]
+        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(ModifyFunctionScopeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-1")]
         public void AllFieldsEmpty(RoleTypePermissionData input)
         {
             // Click "+角色" to add a new role type
@@ -81,7 +81,7 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
         [Test]
         [CaseID("TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-3")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(AddRoleTypeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-3")]
+        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(ModifyFunctionScopeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-3")]
         public void AddRoleTypeAndCancel(RoleTypePermissionData input)
         {
             // Click "+角色" to add a new role type
@@ -102,7 +102,7 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
         [Test]
         [CaseID("TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-4")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(AddRoleTypeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-4")]
+        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(ModifyFunctionScopeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-4")]
         public void AddRoleTypeToExist(RoleTypePermissionData input)
         {
            
@@ -133,7 +133,7 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
         [Test]
         [CaseID("TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-5")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(AddRoleTypeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-5")]
+        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(ModifyFunctionScopeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-5")]
         public void AddRoleTypeWithDefaultFunctionScope(RoleTypePermissionData input)
         {
             int i = 0;

@@ -6,6 +6,10 @@
   <!--<add key="CreateSuccessMessageBox" value="//div[contains(@class,'x-message-box') and div/div/div/div/em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
   <add key="CreateSuccessMessageBoxOkButton" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>-->
 
+    <add key=" ContainerNotHiddenItems" value = "table[contains(@id, 'privilegeitem') and not(contains(@style, 'display:none;'))]" type ="XPath"/>
+
+    <add key=" ContainerHiddenItems" value = "table[contains(@id, 'privilegeitem') and (contains(@style, 'display:none;'))]" type ="XPath"/>
+    
   <add key="MessageBox" value="//div[contains(@class,'x-message-box')]" type="XPath"/>
   <add key="MessageBoxOkButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
   <add key="MessageBoxConfirmButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>

@@ -51,6 +51,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region platform settings
         public static Grid UserTypePermissionList = GetControl<Grid>(JazzControlLocatorKey.GridUserTypePermissionList);
+
         public static Grid TOUTariffsList = GetControl<Grid>(JazzControlLocatorKey.GridTOUTariffsList);
         #endregion
     }

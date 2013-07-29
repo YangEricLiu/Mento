@@ -27,8 +27,13 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button DeleteFunctionRoleType = JazzButton.DeleteFunctionRoleType;
         private static Button CancelFunctionRoleType = JazzButton.CancelFunctionRoleType;
 
-        private static Grid UserRoleTypeList = JazzGrid.UserTypePermissionList;
+        private static Grid UserRoleTypeGrid = JazzGrid.UserTypePermissionList;
         private static TextField NameTextField = JazzTextField.FunctionRoleTypeNameTextField;
+        private static CheckBoxField FunctionPermissionItem = JazzCheckBox.UserTypePermissionCheckBoxField;
+
+        private static Container ContainerPermissionCustomerizeItems = JazzContainer.ContainerPermissionCustomerizeItems;
+        private static Container ContainerPermissionPublicTypeItems = JazzContainer.ContainerPermissionPublicTypeItems;
+
         #endregion
 
         #region common action
@@ -93,6 +98,59 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             CancelFunctionRoleType.Click();
         }
+        /// <summary>
+        /// Focus a user type
+        /// </summary>
+        /// <param "name"="name">role type name</param>
+        /// <returns></returns>
+        public void FocusOnUserType(string roletypeName)
+        {
+            UserRoleTypeGrid.FocusOnRow(1, roletypeName, false);
+        }
+
+        /// <summary>
+        /// Verified whether the role type is existed  
+        /// </summary>
+        /// <param "name"="name">role type name</param>
+        /// <returns></returns>
+        public Boolean IsRoleTypeOnListByName(string roletypeName)
+        {
+                return UserRoleTypeGrid.IsRowExist(1, roletypeName);
+        }
+
+        public void GetRoleTypeOnListByName(string roletypeName)
+        {
+            UserRoleTypeGrid.GetRow(1, roletypeName);
+        }
+
+        /// <summary>
+        /// Check a certain function permission item
+        /// </summary>
+        /// <param "name"="name">permission name</param>
+        /// <returns></returns>
+        public void Check(string permission)
+        {
+            FunctionPermissionItem.Check(permission);
+        }
+
+        /// <summary>
+        /// Check a certain function permission item checked
+        /// </summary>
+        /// <param "name"="name">permission name</param>
+        /// <returns></returns>
+        public Boolean IsItemCheck(string permission)
+        {
+            try
+            {
+                FunctionPermissionItem.IsChecked(permission);
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+            
+        }
 
         #endregion
 
@@ -100,7 +158,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Input name of the new user 
         /// </summary>
-        /// <param name="name">user name</param>
+        /// <param name="name">role type name</param>
         /// <returns></returns>
         public void FillInName(string name)
         {
@@ -135,9 +193,41 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="output">string ErrorMessage</param>
         /// <returns>whether the invalid message is ture</returns>
-        public Boolean IsUserNameInvalidMsgCorrect(string message)
+        public Boolean IsUserNameInvalidMsgCorrect(RoleTypeExpectedData output)
         {
-            return NameTextField.GetInvalidTips().Contains(message);
+            return NameTextField.GetInvalidTips().Contains(output.CommonName);
+        }
+        /*
+        /// <summary>
+        /// Judge whether invalid message of name field is correct
+        /// </summary>
+        /// <param name="output">string ErrorMessage</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsPermissionItemChecked(string permissionItem)
+        {
+            return NotHiddenPermissionItem.GetContainerTexts().Contains(permissionItem);
+        }
+        */
+        /// <summary>
+        /// Judge whether permission item is checked
+        /// </summary>
+        /// <param name="output">string permission role type item name</param>
+        /// <returns>whether the permission item is checked</returns>
+        public Boolean IsPublicPermissionItemChecked(string permissionItem)
+        {
+            return ContainerPermissionPublicTypeItems.GetContainerTexts().Contains(permissionItem);
+        }
+
+        /// <summary>
+        /// Judge whether permission item is checked
+        /// </summary>
+        /// <param name="output">string permission role type item name</param>
+        /// <returns>whether the permission item is checked</returns>
+        public Boolean IsCustomerizePermissionItemChecked(string permissionItem)
+        {
+            //return ContainerPermissionNotHiddenItems.IsContainerTextsExisted(permissionItem[i]);
+            return ContainerPermissionCustomerizeItems.GetContainerTexts().Contains(permissionItem);
+
         }
         #endregion
     }

@@ -21,6 +21,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string MessageBoxCancelButton = "MessageBoxCancelButton";
         public static string MessageBoxDeleteButton = "MessageBoxDeleteButton";
         public static string MessageBoxCloseButton = "MessageBoxCloseButton";
+
+        public static string ContainerNotHiddenItems = "ContainerNotHiddenItems";
+        
         #endregion
 
         #region TreeView locators

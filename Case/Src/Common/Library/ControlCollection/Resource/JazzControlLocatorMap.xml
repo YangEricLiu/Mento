@@ -771,5 +771,10 @@
   <TargetBaseline>
       <add key="ContainerTBCalendarInfo" value="//div[contains(@id,'calendartemplatewindow') and contains(@class, 'x-window-body-default')]//div[contains(@class,'x-window-item')]" type="XPath"/>
     </TargetBaseline>
+
+      <UserTypeRole>
+          <add key="ContainerPermissionCustomerizeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[2]/div" type="XPath"/>
+          <add key="ContainerPermissionPublicTypeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[1]/div" type="XPath"/>
+      </UserTypeRole>
 </Container>
 </WebElement>

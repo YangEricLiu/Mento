@@ -1,0 +1,13 @@
+﻿[
+	{		
+		"InputData":
+		{	
+			"CommonName":"RoleTypeA",
+		},
+
+		"ExpectedData":
+		{
+			"CommonName":"RoleTypeA",
+		}
+	},
+]

@@ -4,11 +4,20 @@ using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 using Mento.TestApi.WebUserInterface;
+using System.Collections;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class Container : JazzControl
     {
+        protected IWebElement[] HiddenItems
+        {
+            get
+            {
+                return FindChildren(ControlLocatorRepository.GetLocator(ControlLocatorKey.ContainerNotHiddenItems));
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +72,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// get the text array list for hidden item in this container
+        /// </summary>
+        /// <param></param>
+        public ArrayList GetHiddenItemsText()
+        {
+            ArrayList items = new ArrayList();
+
+            foreach (IWebElement item in HiddenItems)
+            {
+                items.Add(item.Text);
+            }
+
+            return items;
         }
     }
 }

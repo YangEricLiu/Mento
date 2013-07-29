@@ -1,0 +1,13 @@
+﻿[
+	{		
+		"InputData":
+		{	
+			"CommonName":"",
+		},
+
+		"ExpectedData":
+		{
+			"CommonName":"必填项",
+		}
+	},
+]

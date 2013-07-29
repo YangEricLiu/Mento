@@ -11,7 +11,22 @@
 		},
 		"ExpectedData":
 		{
-			"AnnualCalculatedValue":"6264",
+			"WorkdayRuleValue":["-200.7","99.9","0"],
+		}
+	},
+	{
+		"InputData":
+		{	
+			"TagType":"Ptag",
+			"TagName":"P_TB_Modify_101_2",
+			"Year":"2012",	
+			"WorkdayRuleRecordNumber":3,
+			"WorkdayRuleEndTime":["08:30","20:00","24:00"],
+			"WorkdayRuleValue":["-200.68","99.91","0"],
+		},
+		"ExpectedData":
+		{
+			"WorkdayRuleValue":["-200.7","99.9","0"],
 		}
 	}
 ]

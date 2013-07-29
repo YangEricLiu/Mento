@@ -1,0 +1,38 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagType":"Vtag",
+			"TagName":"V_TB_Modify_101_5",
+			"Year":"2012",	
+			"SpecialdayRuleRecordNumber":1,
+			"SpecialdayRuleStartDate":["2012-5-5"],
+			"SpecialdayRuleStartTime":["06:00"],
+			"SpecialdayRuleEndDate":["2012-8-5"],
+			"SpecialdayRuleEndTime":["12:00"],
+			"SpecialdayRuleValue":["-200.68"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{	
+			"TagType":"Ptag",
+			"TagName":"P_TB_Modify_101_5",
+			"Year":"2012",	
+			"SpecialdayRuleRecordNumber":1,
+			"SpecialdayRuleStartDate":["2012-5-5"],
+			"SpecialdayRuleStartTime":["06:00"],
+			"SpecialdayRuleEndDate":["2012-8-5"],
+			"SpecialdayRuleEndTime":["12:00"],
+			"SpecialdayRuleValue":["-200.68"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

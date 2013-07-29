@@ -163,7 +163,7 @@
                 <add key="ButtonKPITargetBaselineCalculationRuleView" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='update_cal_rule']/span[text()='计算规则']]" type="XPath"/>
                 <add key="ButtonKPITargetBaselineCalculationRuleCreate" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='empty']/span[text()='计算规则']]" type="XPath"/>
                 <add key="ButtonKPITargetBaselineCalculationRuleBack" value="//div[contains(@class,'x-btn') and em/button/span[text()='返回']]" type="XPath"/>
-                <add key="ButtonKPITargetBaselineCalculationRuleModify" value="//div[contains(@class,'x-btn') and em/button/span[text()='修改'] and not(contains(@style,'display: none')) and //parent::*[not(contains(@style,'display: none'))]]" type="XPath"/>
+                <add key="ButtonKPITargetBaselineCalculationRuleModify" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//div[contains(@id,'button') and em/button/span[text()='修改']]" type="XPath"/>
                 <add key="ButtonKPITargetBaselineCalculateTarget" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算目标值']]" type="XPath"/>
                 <add key="ButtonKPITargetBaselineCalculateBaseline" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算基准值']]" type="XPath"/>
                 <add key="ButtonKPITargetBaselineRevise" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='修正计算值']]" type="XPath"/>
@@ -337,10 +337,11 @@
             </FunctionRoleTypePermission>     
                   
           <TargetBaseline>
-                <add key="LinkButtonTargetCalendarInfo" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[not contains(@style, 'display: none;')]//table[contains(@id,'displayfield')]//a[text()='查看日历详情']" type="XPath"/>
-                <add key="LinkButtonBaselineCalendarInfo" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[not contains(@style, 'display: none;']//table[contains(@id,'displayfield')]//a[text()='查看日历详情']" type="XPath"/>
+                <add key="LinkButtonTargetCalendarInfo" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//table[contains(@id,'displayfield')]//a[text()='查看日历详情']" type="XPath"/>
+                <add key="LinkButtonBaselineCalendarInfo" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//table[contains(@id,'displayfield')]//a[text()='查看日历详情']" type="XPath"/>
                 <add key="ButtonCloseTBCalendarWindow" value="//div[contains(@id,'calendartemplatewindow') and contains(@class, 'x-window-header-body-default')]//img[@class='x-tool-close']" type="XPath"/>
-        </TargetBaseline>
+                <add key="ButtonDeleteSpecialdayItem" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/div/img" type="XPath"/>
+          </TargetBaseline>
         </platformsettings>
     </Button> 
   <!--Button End-->
@@ -423,9 +424,9 @@
         <add key="TextFieldKPITagSettingsCode" value="//div[@id='st-kpi-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
         <add key="TextFieldKPITagSettingsComment" value="//div[@id='st-kpi-form-body']//textarea[@name='Comment']" type="XPath"/>
         <add key="KPIFormulaField" value="//div[@id='st-KPI-formula-body']//textarea[@name='Formula']" type="XPath"/>
-        <add key="TextFieldKPITargetBaselineWorkdayRuleValue" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[3]//input[@type='text' and @name='Value']" type="XPath"/>
-        <add key="TextFieldKPITargetBaselineNonworkdayRuleValue" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='非工作日']]/div[$#positionIndex]/div[@class='x-column-inner']/table[3]//input[@type='text' and @name='Value']" type="XPath"/>
-        <add key="TextFieldKPITargetBaselineSpecialdayRuleValue" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']/table[5]//input[@type='text' and @name='Value']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineWorkdayRuleValue" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][1]//td[contains(@class,'x-form-item-body')]/div[not(contains(@style,'display: none;'))][$#positionIndex]/div[@class='x-column-inner']/table[contains(@id,'numberfield')]//input[@type='text' and @name='Value']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineNonworkdayRuleValue" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][2]//td[contains(@class,'x-form-item-body')]/div[not(contains(@style,'display: none;'))][$#positionIndex]/div[@class='x-column-inner']/table[contains(@id,'numberfield')]//input[@type='text' and @name='Value']" type="XPath"/>
+        <add key="TextFieldKPITargetBaselineSpecialdayRuleValue" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[5]//input[@type='text' and @name='Value']" type="XPath"/>
         <add key="TextFieldKPITargetBaselineAnnualCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='Annual']" type="XPath"/>
         <add key="TextFieldKPITargetBaselineJanuaryCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='January']" type="XPath"/>
         <add key="TextFieldKPITargetBaselineFebruaryCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='February']" type="XPath"/>
@@ -543,8 +544,8 @@
         <add key="ComboBoxKPITagSettingsCalculationStep" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
 
         <add key="ComboBoxKPITargetBaselineEffectiveYear" value="//div[@id='setting-region-east-body']//table[contains(@id, 'combobox') and contains(@class,'x-tb-panel-item')]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
-        <add key="ComboBoxKPITargetBaselineWorkdayRuleEndTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][1]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
-        <add key="ComboBoxKPITargetBaselineNonworkdayRuleEndTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][2]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineWorkdayRuleEndTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][1]//td[contains(@class,'x-form-item-body')]/div[not(contains(@style,'display: none;'))][$#positionIndex]/div[@class='x-column-inner']//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="ComboBoxKPITargetBaselineNonworkdayRuleEndTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][2]//td[contains(@class,'x-form-item-body')]/div[not(contains(@style,'display: none;'))][$#positionIndex]/div[@class='x-column-inner']//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
         <add key="ComboBoxKPITargetBaselineSpecialdayRuleStartTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
         <add key="ComboBoxKPITargetBaselineSpecialdayRuleEndTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[4]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
       </kpitag>
@@ -666,8 +667,8 @@
     </EnergyUsage>
     <CustomerSettings>
       <kpitag>
-        <add key="DatePickerKPITargetBaselineSpecialdayRuleStartDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
-        <add key="DatePickerKPITargetBaselineSpecialdayRuleEndDate" value="//div[contains(@class,'x-container') and table/tbody/tr/td[1]/label[text()='补充日期']]/div[$#positionIndex]/div[@class='x-column-inner']//table[contains(@class,'x-field x-date-field')][2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+        <add key="DatePickerKPITargetBaselineSpecialdayRuleStartDate" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+        <add key="DatePickerKPITargetBaselineSpecialdayRuleEndDate" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       </kpitag>
     </CustomerSettings>
     <PlatformSettings>
@@ -770,11 +771,14 @@
       
   <TargetBaseline>
       <add key="ContainerTBCalendarInfo" value="//div[contains(@id,'calendartemplatewindow') and contains(@class, 'x-window-body-default')]//div[contains(@class,'x-window-item')]" type="XPath"/>
-    </TargetBaseline>
-
-      <UserTypeRole>
-          <add key="ContainerPermissionCustomerizeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[2]/div" type="XPath"/>
-          <add key="ContainerPermissionPublicTypeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[1]/div" type="XPath"/>
-      </UserTypeRole>
+      <add key="ContainerTBWorkdayRule" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][1]//td[contains(@class,'x-form-item-body')]/div[contains(@class,'x-container-default') and not(contains(@style,'display: none;'))]" type="XPath"/>
+      <add key="ContainerTBNonworkdayRule" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][2]//td[contains(@class,'x-form-item-body')]/div[contains(@class,'x-container-default') and not(contains(@style,'display: none;'))]" type="XPath"/>
+      <add key="ContainerTBSpecialdayRule" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[contains(@id,'additionaldateitem')]" type="XPath"/>
+  </TargetBaseline>
+  
+  <UserTypeRole>
+      <add key="ContainerPermissionCustomerizeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[2]/div" type="XPath"/>
+      <add key="ContainerPermissionPublicTypeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[1]/div" type="XPath"/>
+  </UserTypeRole>
 </Container>
 </WebElement>

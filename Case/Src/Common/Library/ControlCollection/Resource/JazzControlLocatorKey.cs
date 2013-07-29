@@ -272,6 +272,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LinkButtonTargetCalendarInfo = "LinkButtonTargetCalendarInfo";
         public static string LinkButtonBaselineCalendarInfo = "LinkButtonBaselineCalendarInfo";
         public static string ButtonCloseTBCalendarWindow = "ButtonCloseTBCalendarWindow";
+        public static string ButtonDeleteSpecialdayItem = "ButtonDeleteSpecialdayItem"; 
         
         #endregion
 
@@ -834,6 +835,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region TargetBaseline
 
         public static string ContainerTBCalendarInfo = "ContainerTBCalendarInfo";
+        public static string ContainerTBWorkdayRule = "ContainerTBWorkdayRule";
+        public static string ContainerTBNonworkdayRule = "ContainerTBNonworkdayRule";
+        public static string ContainerTBSpecialdayRule = "ContainerTBSpecialdayRule"; 
 
         #endregion
        

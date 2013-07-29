@@ -1,0 +1,48 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagType":"Vtag",
+			"TagName":"V_TB_Modify_101_4",
+			"Year":"2012",	
+			"NonworkdayRuleRecordNumber":4,
+			"NonworkdayRuleEndTime":["00:30", "08:30", "18:30", "20:00"],
+			"NonworkdayRuleValue":["", "123456789.123456", "0.0001", "-123456789.123456", ""],
+			"SpecialdayRuleRecordNumber":1,
+			"SpecialdayRuleStartDate":["2012-1-5", "2012-1-6"],
+			"SpecialdayRuleStartTime":["06:00", "07:30"],
+			"SpecialdayRuleEndDate":["2012-1-5", "2012-1-8"],
+			"SpecialdayRuleEndTime":["12:00", "24:00"],
+			"SpecialdayRuleValue":["300.0","90000.5"],
+		},
+		"ExpectedData":
+		{
+			"NonworkdayRuleEndTime":["08:30", "18:30", "20:00"],
+			"NonworkdayRuleValue":["123456789.1","0","-123456789.1"],
+			"SpecialdayRuleValue":["300","90000.5"],
+		}
+	},
+	{
+		"InputData":
+		{	
+			"TagType":"Ptag",
+			"TagName":"P_TB_Modify_101_4",
+			"Year":"2012",	
+			"NonworkdayRuleRecordNumber":4,
+			"NonworkdayRuleEndTime":["00:30", "08:30", "18:30", "20:00"],
+			"NonworkdayRuleValue":["", "123456789.123456", "0.0001", "-123456789.123456", ""],
+			"SpecialdayRuleRecordNumber":1,
+			"SpecialdayRuleStartDate":["2012-1-5", "2012-1-6"],
+			"SpecialdayRuleStartTime":["06:00", "07:30"],
+			"SpecialdayRuleEndDate":["2012-1-5", "2012-1-8"],
+			"SpecialdayRuleEndTime":["12:00", "24:00"],
+			"SpecialdayRuleValue":["300.0","90000.5"],
+		},
+		"ExpectedData":
+		{
+			"NonworkdayRuleEndTime":["08:30", "18:30", "20:00"],
+			"NonworkdayRuleValue":["123456789.1","0","-123456789.1"],
+			"SpecialdayRuleValue":["300","90000.5"],
+		}
+	}
+]

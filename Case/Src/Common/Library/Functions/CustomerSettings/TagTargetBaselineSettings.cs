@@ -76,6 +76,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Window TBCalendarInfoWindow = JazzWindow.TBCalendarInfoWindow;
 
         private static Container TBCalendarInfoContainer = JazzContainer.TBCalendarInfoContainer;
+        private static Container TBWorkdayRuleContainer = JazzContainer.TBWorkdayRuleContainer;
+        private static Container TBNonworkdayRuleContainer = JazzContainer.TBNonworkdayRuleContainer;
+        private static Container TBSpecialdayRuleContainer = JazzContainer.TBSpecialdayRuleContainer;
 
         #endregion
 
@@ -359,6 +362,12 @@ namespace Mento.ScriptCommon.Library.Functions
             TextField OneSpecialdayRuleValueValue = GetOneSpecialdayRuleValueTextField(num);
             OneSpecialdayRuleValueValue.Fill(value);
         }
+
+        public void ClickDeletepecialdayRuleButton(int num)
+        {
+            Button OneDeletepecialdayRuleButton = GetOneDeleteSpecialdayButton(num);
+            OneDeletepecialdayRuleButton.Click();
+        }
         #endregion
 
         #region calculate values
@@ -552,9 +561,99 @@ namespace Mento.ScriptCommon.Library.Functions
             return TBCalendarInfoContainer.IsContainerTextsExisted(infos);
         }
 
+        /// <summary>
+        /// Judge calculation rule button displayed
+        /// </summary>
+        /// <param></param>
+        /// <returns>true if displayed, false if not</returns>
         public bool IsCreateCalculationRuleButtonDisplayed()
         {
             return CalculationRuleCreateButton.IsDisplayed();
+        }
+
+        /// <summary>
+        /// Get the workday rule value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public string GetWorkdayRuleValue(int num)
+        {
+            TextField OneWorkdayRuleValueValue = GetOneWorkdayRuleValueTextField(num);
+            return OneWorkdayRuleValueValue.GetValue();
+        }
+
+        /// <summary>
+        /// Get the non-workday rule value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public string GetNonworkdayRuleValue(int num)
+        {
+            TextField OneNonworkdayRuleValueValue = GetOneNonworkdayRuleValueTextField(num);
+            return OneNonworkdayRuleValueValue.GetValue();
+        }
+
+        /// <summary>
+        /// Get the workday rule end time
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public string GetWorkdayEndtimeValue(int num)
+        {
+            ComboBox OneWorkdayRuleEndtimeValue = GetOneWorkdayRuleEndTimeComboBox(num);
+            return OneWorkdayRuleEndtimeValue.GetValue();
+        }
+
+        /// <summary>
+        /// Get the non-workday rule end time
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public string GetNonworkdayEndtimeValue(int num)
+        {
+            ComboBox OneNonworkdayRuleEndtimeValue = GetOneNonworkdayRuleEndTimeComboBox(num);
+            return OneNonworkdayRuleEndtimeValue.GetValue();
+        }
+
+        /// <summary>
+        /// Get the workday rule items number
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public int GetWorkdayRuleItemsNumber()
+        {
+            return TBWorkdayRuleContainer.GetElementNumber();
+        }
+
+        /// <summary>
+        /// Get the non-workday rule items number
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public int GetNonworkdayRuleItemsNumber()
+        {
+            return TBNonworkdayRuleContainer.GetElementNumber();
+        }
+
+        /// <summary>
+        /// Get the Specialday Rule value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public string GetSpecialdayRuleValue(int num)
+        {
+            TextField OneSpecialdayRuleValueTextField = GetOneSpecialdayRuleValueTextField(num);
+            return OneSpecialdayRuleValueTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get the special day rule items number
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public int GetSpecialdayRuleItemsNumber()
+        {
+            return TBSpecialdayRuleContainer.GetElementNumber();
         }
         #endregion
 
@@ -605,6 +704,10 @@ namespace Mento.ScriptCommon.Library.Functions
             return JazzDatePicker.GetOneMonthPicker(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleEndDate, positionIndex);
         }
 
+        private Button GetOneDeleteSpecialdayButton(int positionIndex)
+        {
+            return JazzButton.GetOneButton(JazzControlLocatorKey.ButtonDeleteSpecialdayItem, positionIndex);
+        }
         #endregion
 
     }

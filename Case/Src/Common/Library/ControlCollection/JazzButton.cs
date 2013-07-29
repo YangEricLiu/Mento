@@ -260,7 +260,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static LinkButton TargetCalendarInfoLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonTargetCalendarInfo);
         public static LinkButton BaselineCalendarInfoLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonBaselineCalendarInfo);
         public static Button CloseTBCalendarWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonCloseTBCalendarWindow);
-
+        public static Button DeleteSpecialdayItemButton = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteSpecialdayItem);
+        
         #endregion
 
         #endregion

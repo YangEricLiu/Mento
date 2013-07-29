@@ -59,6 +59,14 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string DecemberCalculatedValue { get; set; }
         public string[] CalendarInfoTips { get; set; }
         public string[] CalendarInfoOnWindow { get; set; }
+        public string[] WorkdayRuleEndTime { get; set; }
         public string[] WorkdayRuleValue { get; set; }
+        public string[] NonworkdayRuleEndTime { get; set; }
+        public string[] NonworkdayRuleValue { get; set; }
+        public string[] SpecialdayRuleStartDate { get; set; }
+        public string[] SpecialdayRuleStartTime { get; set; }
+        public string[] SpecialdayRuleEndDate { get; set; }
+        public string[] SpecialdayRuleEndTime { get; set; }
+        public string[] SpecialdayRuleValue { get; set; }
     }
 }

@@ -1,0 +1,34 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagType":"Vtag",
+			"TagName":"V_TB_Modify_101_3",
+			"Year":"2012",	
+			"WorkdayRuleRecordNumber":3,
+			"WorkdayRuleEndTime":["07:00","21:00"],
+			"WorkdayRuleValue":[""],
+		},
+		"ExpectedData":
+		{
+			"WorkdayRuleEndTime":["07:00","20:00","24:00", "21:00", "24:00"],
+			"WorkdayRuleValue":["-200.7","99.9","0", "-200.7","0"],
+		}
+	},
+	{
+		"InputData":
+		{	
+			"TagType":"Ptag",
+			"TagName":"P_TB_Modify_101_3",
+			"Year":"2012",	
+			"WorkdayRuleRecordNumber":3,
+			"WorkdayRuleEndTime":["07:00","21:00"],
+			"WorkdayRuleValue":[""],
+		},
+		"ExpectedData":
+		{
+			"WorkdayRuleEndTime":["07:00","20:00","24:00", "21:00", "24:00"],
+			"WorkdayRuleValue":["-200.7","99.9","0", "-200.7","0"],
+		}
+	}
+]

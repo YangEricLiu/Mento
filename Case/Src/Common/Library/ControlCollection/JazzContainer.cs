@@ -38,7 +38,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region TargetBaseline
 
         public static Container TBCalendarInfoContainer = GetControl<Container>(JazzControlLocatorKey.ContainerTBCalendarInfo);
-
+        public static Container TBWorkdayRuleContainer = GetControl<Container>(JazzControlLocatorKey.ContainerTBWorkdayRule);
+        public static Container TBNonworkdayRuleContainer = GetControl<Container>(JazzControlLocatorKey.ContainerTBNonworkdayRule);
+        public static Container TBSpecialdayRuleContainer = GetControl<Container>(JazzControlLocatorKey.ContainerTBSpecialdayRule);
+        
         #endregion
 
         #endregion

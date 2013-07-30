@@ -35,6 +35,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 checkbox.Click();
         }
 
+        /// <summary>
+        /// Judge if the checkbox item is enabled
+        /// </summary>
+        /// <returns>True if the checkbox item is enable, false if not </returns>
+        public bool IsDisabled(string permissionName)
+        {
+            IWebElement checkbox = GetPermissonFieldElement(permissionName);
+            return checkbox.GetAttribute("class").Contains("x-item-disabled");
+        }
+
         public void Uncheck(string permissionName)
         {
             IWebElement checkbox = GetPermissonFieldElement(permissionName);

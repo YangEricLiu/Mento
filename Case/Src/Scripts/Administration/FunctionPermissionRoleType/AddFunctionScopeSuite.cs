@@ -40,133 +40,71 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-1")]
+        [CaseID("TC-J1-FVT-FunctionPermissionRoleType-AddFunctionScope-1")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(AddRoleTypeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-1")]
-        public void AllFieldsEmpty(RoleTypePermissionData input)
+        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(AddFunctionScopeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddFunctionScope-1")]
+        public void AddFunctionScope(RoleTypePermissionData input)
         {
+            int i = 0;
+            int j = 0;
+            string[] publicPermission = { "仪表盘与小组件查看", "仪表盘与小组件编辑", "个人信息管理", "报警信息查看" };
             // Click "+角色" to add a new role type
             RoleTypeSettings.ClickAddFunctionRoleType();
             TimeManager.ShortPause();
+            //Fill input data
+            RoleTypeSettings.FillInName(input.InputData.CommonName);
+            TimeManager.ShortPause();
+            //Check permission items
+            while(j<input.InputData.NameList.Length)
+            {
+                RoleTypeSettings.Check(input.InputData.NameList[j]);
+                j++;
+            }
             // Click "保存" button without input FunctionRoleType and function scope.
             RoleTypeSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
-            //Verify the error message 
-            RoleTypeSettings.IsUserNameInvalid();
-            Assert.IsTrue(RoleTypeSettings.IsUserNameInvalidMsgCorrect(input.ExpectedData));
+            //Verify 
+            while (i <publicPermission.Length)
+            {
+                RoleTypeSettings.IsPublicPermissionItemChecked(publicPermission[j]);
+                i++;
+            }
+            j = 0;
+            while(j<input.InputData.NameList.Length)
+            {
+                RoleTypeSettings.IsCustomerizePermissionItemChecked(input.InputData.NameList[j]);
+                j++;
+            }
         }
         
         [Test]
-        [CaseID("TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-2")]
+        [CaseID("TC-J1-FVT-FunctionPermissionRoleType-AddFunctionScope-2")]
         [Type("BFT")]
-        [IllegalInputValidation(typeof(RoleTypePermissionData[]))]
-        public void AddInvalidRoleType(RoleTypePermissionData input)
+        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(AddFunctionScopeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddFunctionScope-2")]
+        public void AddFUnctionScopeCancel(RoleTypePermissionData input)
         {
-            // Click "+角色" to add a new role type
-            RoleTypeSettings.ClickAddFunctionRoleType();
-            TimeManager.ShortPause();
-            //Fill input data
-            RoleTypeSettings.FillInName(input.InputData.CommonName);
-            TimeManager.ShortPause();
-            // Click "保存" button without input FunctionRoleType and function scope.
-            RoleTypeSettings.ClickSaveButton();
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
-            //Verify the error message 
-            Assert.IsTrue(RoleTypeSettings.IsUserNameInvalid());
-            Assert.IsTrue(RoleTypeSettings.IsUserNameInvalidMsgCorrect(input.ExpectedData));
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-3")]
-        [Type("BFT")]
-        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(AddRoleTypeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-3")]
-        public void AddRoleTypeAndCancel(RoleTypePermissionData input)
-        {
-            // Click "+角色" to add a new role type
-            RoleTypeSettings.ClickAddFunctionRoleType();
-            TimeManager.ShortPause();
-            //Fill input data
-            RoleTypeSettings.FillInName(input.InputData.CommonName);
-            TimeManager.ShortPause();
-            // Click "放弃" button without input FunctionRoleType and function scope.
-            RoleTypeSettings.ClickCancelButton();
-            //JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
-            //Verify the error message 
-            Assert.IsTrue(RoleTypeSettings.IsUserNameInvalid());
-            Assert.IsTrue(RoleTypeSettings.IsUserNameInvalidMsgCorrect(input.ExpectedData));
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-4")]
-        [Type("BFT")]
-        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(AddRoleTypeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-4")]
-        public void AddRoleTypeToExist(RoleTypePermissionData input)
-        {
-           
-            int i=0;
-            int length = input.InputData.NameList.Length;
-            while (i < length)
+            string roleTypeName = "RoleTypeForAdd";
+            int i = 0;
+            //Check permission items
+            while (i < input.InputData.NameList.Length)
             {
                 // Click "+角色" to add a new role type
                 RoleTypeSettings.ClickAddFunctionRoleType();
                 TimeManager.ShortPause();
                 //Fill input data
-                RoleTypeSettings.FillInName(input.InputData.NameList[i]);
+                RoleTypeSettings.FillInName(input.InputData.CommonName);
                 TimeManager.ShortPause();
+                RoleTypeSettings.Check(input.InputData.NameList[i]);
                 // Click "保存" button without input FunctionRoleType and function scope.
-                RoleTypeSettings.ClickSaveButton();
-                JazzMessageBox.LoadingMask.WaitLoading();
-                TimeManager.ShortPause();
-                //Verify the error message 
-                Assert.IsTrue(RoleTypeSettings.IsUserNameInvalid());
-                Assert.IsTrue(RoleTypeSettings.IsUserNameInvalidMsgCorrect(input.ExpectedData));
-                TimeManager.ShortPause();
                 RoleTypeSettings.ClickCancelButton();
                 TimeManager.ShortPause();
-                i = i + 1;
-            }
-        }
-        
-        [Test]
-        [CaseID("TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-5")]
-        [Type("BFT")]
-        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(AddRoleTypeSuite), "TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-5")]
-        public void AddRoleTypeWithDefaultFunctionScope(RoleTypePermissionData input)
-        {
-            int i = 0;
-            int j = 0;
-            string[] publicPermission = { "仪表盘与小组件查看", "仪表盘与小组件编辑", "个人信息管理", "报警信息查看" };
-            string[] roleTypePermission = { "仪表盘与小组件分享", "“能效分析”功能", "“碳排放”功能", "“成本”功能", "“单位指标”功能", "“时段能耗比”功能", "“集团排名”功能", "数据导出", "REM平台管理", "层级结构管理", "普通数据点管理", "数据点关联", "客户信息查看", "客户信息管理" };
-            // Click "+角色" to add a new role type
-            RoleTypeSettings.ClickAddFunctionRoleType();
-            TimeManager.ShortPause();
-            //Fill input data
-            RoleTypeSettings.FillInName(input.InputData.CommonName);
-            TimeManager.ShortPause();
-            // Click "保存" button without input FunctionRoleType and function scope.
-            RoleTypeSettings.ClickSaveButton();
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
-            RoleTypeSettings.FocusOnUserType(input.InputData.CommonName);
-            TimeManager.ShortPause();
-            //Assert.IsTrue(RoleTypeSettings.IsPermissionItemChecked());
-            
-            // Verfiy the public permissions are checked
-           
-            while (i < 4)
-            {
-                Assert.IsTrue(RoleTypeSettings.IsPublicPermissionItemChecked(publicPermission[1]));
+                //Verify
+                Assert.IsFalse(RoleTypeSettings.IsRoleTypeOnListByName(roleTypeName));
                 i++;
             }
-      
-            while (j< 10)
-            {
-                Assert.IsFalse(RoleTypeSettings.IsCustomerizePermissionItemChecked(roleTypePermission[j]));
-                j++;
-            }
+            
         }
+
     }
 }

@@ -155,13 +155,13 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
             //Assert.IsTrue(RoleTypeSettings.IsPermissionItemChecked());
             
             // Verfiy the public permissions are checked
-
+           
             while (i < 4)
             {
-                Assert.IsTrue(RoleTypeSettings.IsPublicPermissionItemChecked(publicPermission[i]));
+                Assert.IsTrue(RoleTypeSettings.IsPublicPermissionItemChecked(publicPermission[1]));
                 i++;
             }
-
+      
             while (j< 10)
             {
                 Assert.IsFalse(RoleTypeSettings.IsCustomerizePermissionItemChecked(roleTypePermission[j]));

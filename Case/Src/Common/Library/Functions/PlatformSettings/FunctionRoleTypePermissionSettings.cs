@@ -118,11 +118,12 @@ namespace Mento.ScriptCommon.Library.Functions
                 return UserRoleTypeGrid.IsRowExist(1, roletypeName);
         }
 
+        /*
         public void GetRoleTypeOnListByName(string roletypeName)
         {
             UserRoleTypeGrid.GetRow(1, roletypeName);
         }
-
+        */
         /// <summary>
         /// Check a certain function permission item
         /// </summary>
@@ -133,6 +134,17 @@ namespace Mento.ScriptCommon.Library.Functions
             FunctionPermissionItem.Check(permission);
         }
 
+        /// <summary>
+        /// UnCheck a certain function permission item
+        /// </summary>
+        /// <param "name"="name">permission name</param>
+        /// <returns></returns>
+        public void UnCheck(string permission)
+        {
+            FunctionPermissionItem.Uncheck(permission);
+        }
+
+        /*
         /// <summary>
         /// Check a certain function permission item checked
         /// </summary>
@@ -151,7 +163,7 @@ namespace Mento.ScriptCommon.Library.Functions
             }
             
         }
-
+        */
         #endregion
 
         #region item operation
@@ -219,6 +231,22 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge whether public permission items are checked
+        /// </summary>
+        public Boolean ArePublicPermissionItemsChecked()
+        {
+            int i = 0;
+            Boolean flag = true;
+            string[] publicPermissions = { "仪表盘与小组件查看", "仪表盘与小组件编辑", "个人信息管理", "报警信息查看" };
+            while (i < publicPermissions.Length && flag)
+            {
+                flag= ContainerPermissionPublicTypeItems.GetContainerTexts().Contains(publicPermissions[i]);
+                i++;
+            }
+            return flag;
+        }
+
+        /// <summary>
         /// Judge whether permission item is checked
         /// </summary>
         /// <param name="output">string permission role type item name</param>
@@ -227,8 +255,18 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             //return ContainerPermissionNotHiddenItems.IsContainerTextsExisted(permissionItem[i]);
             return ContainerPermissionCustomerizeItems.GetContainerTexts().Contains(permissionItem);
-
         }
+
+        /// <summary>
+        /// Judge whether permission item is checkable
+        /// </summary>
+        /// <param name="output">string permission role type item name</param>
+        /// <returns>whether the permission item is enable</returns>
+        public Boolean IsPermissionItemDisabled(string permissionItem)
+        {
+            return JazzCheckBox.UserTypePermissionCheckBoxField.IsDisabled(permissionItem);
+        }
+        
         #endregion
     }
 }

@@ -14,7 +14,7 @@
 		},
 		"ExpectedData":
 		{
-			
+			"SpecialdayRuleValue":["-201"],
 		}
 	},
 	{
@@ -32,7 +32,7 @@
 		},
 		"ExpectedData":
 		{
-			
+			"SpecialdayRuleValue":["-201"],
 		}
 	}
 ]

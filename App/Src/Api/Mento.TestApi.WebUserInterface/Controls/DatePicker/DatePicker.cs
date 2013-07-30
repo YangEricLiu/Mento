@@ -12,6 +12,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private const string DATEPICKERITEMVARIABLENAME = "itemKey";
         private const string YEARWORD = "年";
         private const string MONTHWORD = "月";
+        private Locator InvalidTips = new Locator("../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]", ByType.XPath);
 
         protected IWebElement SelectTrigger 
         {
@@ -27,6 +28,26 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.DatePickerInput));
             }
+        }
+
+        /// <summary>
+        /// Return whether the value in date field is invalid
+        /// </summary>
+        /// <returns>True if invalid</returns>
+        public bool IsDatePickerValueInvalid()
+        {
+            string invalid = SelectInput.GetAttribute("aria-invalid");
+
+            return String.Equals(invalid, "true", StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Return the invalid input tooltips info
+        /// </summary>
+        /// <returns>the invalid input tooltips info</returns>
+        public string GetInvalidTips()
+        {
+            return FindChild(InvalidTips).Text;
         }
 
         /// <summary>

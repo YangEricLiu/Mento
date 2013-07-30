@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagType":"Vtag",
+			"TagName":"V_TB_CR_101_2",
+			"Year":"2012",	
+		},
+		"ExpectedData":
+		{
+			"AnnualCalculatedValue":"6358.5",
+			"JanuaryCalculatedValue":"540",
+			"FebruaryCalculatedValue":"499.5",
+			"MarchCalculatedValue":"540",
+			"AprilCalculatedValue":"526.5",
+			"MayCalculatedValue":"526.5",
+			"JuneCalculatedValue":"526.5",
+			"JulyCalculatedValue":"540",
+			"AugustCalculatedValue":"526.5",
+			"SeptemberCalculatedValue":"540",
+			"OctoberCalculatedValue":"526.5",
+			"NovemberCalculatedValue":"513",
+			"DecemberCalculatedValue":"553.5",
+		}
+	}
+]

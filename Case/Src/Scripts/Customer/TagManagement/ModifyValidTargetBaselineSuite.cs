@@ -272,7 +272,7 @@ namespace Mento.Script.Customer.TagManagement
             PVtagTargetBaselineSettings.ClickDeletepecialdayRuleButton(1);
             TimeManager.ShortPause();
             PVtagTargetBaselineSettings.ClickCancelButton();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
             Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[1], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1));
 
             //Delete one special day rule then save, delete successful 
@@ -283,7 +283,7 @@ namespace Mento.Script.Customer.TagManagement
             PVtagTargetBaselineSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
-            Assert.AreEqual(2, PVtagTargetBaselineSettings.GetSpecialdayRuleItemsNumber());
+            Assert.AreEqual(0, PVtagTargetBaselineSettings.GetSpecialdayRuleItemsNumber());
         }
 
         [Test]
@@ -293,7 +293,7 @@ namespace Mento.Script.Customer.TagManagement
         {
             PickupPtagOrVtag(input);
 
-            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
@@ -321,6 +321,16 @@ namespace Mento.Script.Customer.TagManagement
             PVtagTargetBaselineSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
+            Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[0], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1));
+
+            //Modify nothing and save
+            PVtagTargetBaselineSettings.ClickModifyCalculationRuleButton();
+            TimeManager.ShortPause();
+            PVtagTargetBaselineSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[0], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1));
         }
     }
 }

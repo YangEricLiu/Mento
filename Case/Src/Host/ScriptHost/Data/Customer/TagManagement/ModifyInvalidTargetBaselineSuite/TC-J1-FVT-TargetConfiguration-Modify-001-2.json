@@ -1,0 +1,38 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagType":"Vtag",
+			"TagName":"V_TB_Modify_001_2",
+			"Year":"2012",	
+			"SpecialdayRuleRecordNumber":5,
+			"SpecialdayRuleEndDate":["2012-2-17", "2012-2-16", "2012-2-16", "2012-2-16", "2012-2-15"],
+			"SpecialdayRuleEndTime":["01:00", "01:00", "03:00", "00:30", "03:00"],
+		},
+		"ExpectedData":
+		{
+			"SpecialdayRuleStartDate":["2012-02-16", "2012-02-16", "2012-02-16", "2012-02-16", "2012-02-15"],
+			"SpecialdayRuleStartTime":["03:00", "00:30", "02:30", "00:00", "02:30"],
+			"SpecialdayRuleEndDate":["2012-02-17", "2012-02-16", "2012-02-16", "2012-02-16", "2012-02-15"],
+			"SpecialdayRuleEndTime":["01:00", "01:00", "03:00", "00:30", "03:00"],
+		}
+	},
+	{
+		"InputData":
+		{	
+			"TagType":"Ptag",
+			"TagName":"P_TB_Modify_001_2",
+			"Year":"2012",	
+			"SpecialdayRuleRecordNumber":5,
+			"SpecialdayRuleEndDate":["2012-2-17", "2012-2-16", "2012-2-16", "2012-2-16", "2012-2-15"],
+			"SpecialdayRuleEndTime":["01:00", "01:00", "03:00", "00:30", "03:00"],
+		},
+		"ExpectedData":
+		{
+			"SpecialdayRuleStartDate":["2012-02-16", "2012-02-16", "2012-02-16", "2012-02-16", "2012-02-15"],
+			"SpecialdayRuleStartTime":["03:00", "00:30", "02:30", "00:00", "02:30"],
+			"SpecialdayRuleEndDate":["2012-02-17", "2012-02-16", "2012-02-16", "2012-02-16", "2012-02-15"],
+			"SpecialdayRuleEndTime":["01:00", "01:00", "03:00", "00:30", "03:00"],
+		}
+	}
+]

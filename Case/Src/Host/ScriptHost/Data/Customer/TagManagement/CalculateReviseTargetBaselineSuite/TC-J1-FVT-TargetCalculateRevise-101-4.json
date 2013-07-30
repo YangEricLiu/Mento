@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagType":"Ptag",
+			"TagName":"P_TB_CR_101_4",
+			"Year":"2012",	
+		},
+		"ExpectedData":
+		{
+			"AnnualCalculatedValue":"6",
+			"JanuaryCalculatedValue":"6",
+			"FebruaryCalculatedValue":"6",
+			"MarchCalculatedValue":"6",
+			"AprilCalculatedValue":"6",
+			"MayCalculatedValue":"6",
+			"JuneCalculatedValue":"6",
+			"JulyCalculatedValue":"6",
+			"AugustCalculatedValue":"6",
+			"SeptemberCalculatedValue":"6",
+			"OctoberCalculatedValue":"6",
+			"NovemberCalculatedValue":"6",
+			"DecemberCalculatedValue":"6",
+		}
+	}
+]

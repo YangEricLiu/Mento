@@ -378,9 +378,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickCalculateTargetButton()
         {
-            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
             CalculateTargetButton.Click();
-            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
             JazzMessageBox.MessageBox.Yes();
             JazzMessageBox.LoadingMask.WaitLoading(maxtime:30);
         }
@@ -391,8 +391,11 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickCalculateBaselineButton()
         {
-            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
             CalculateBaselineButton.Click();
+            TimeManager.MediumPause();
+            JazzMessageBox.MessageBox.Yes();
+            JazzMessageBox.LoadingMask.WaitLoading(maxtime: 30);
         }
         #endregion
 
@@ -541,6 +544,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region Verification
 
+        #region Common Verification
         /// <summary>
         /// Judge if calendar info window existed
         /// </summary>
@@ -570,6 +574,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return CalculationRuleCreateButton.IsDisplayed();
         }
+        #endregion
+
+        #region Workday Verification
 
         /// <summary>
         /// Get the workday rule value
@@ -580,17 +587,6 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             TextField OneWorkdayRuleValueValue = GetOneWorkdayRuleValueTextField(num);
             return OneWorkdayRuleValueValue.GetValue();
-        }
-
-        /// <summary>
-        /// Get the non-workday rule value
-        /// </summary>
-        /// <param name="input">Test data</param>
-        /// <returns></returns>
-        public string GetNonworkdayRuleValue(int num)
-        {
-            TextField OneNonworkdayRuleValueValue = GetOneNonworkdayRuleValueTextField(num);
-            return OneNonworkdayRuleValueValue.GetValue();
         }
 
         /// <summary>
@@ -605,6 +601,30 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Get the workday rule items number
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public int GetWorkdayRuleItemsNumber()
+        {
+            return TBWorkdayRuleContainer.GetElementNumber();
+        }
+        #endregion
+
+        #region Non-Workday Verification
+        
+        /// <summary>
+        /// Get the non-workday rule value
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public string GetNonworkdayRuleValue(int num)
+        {
+            TextField OneNonworkdayRuleValueValue = GetOneNonworkdayRuleValueTextField(num);
+            return OneNonworkdayRuleValueValue.GetValue();
+        }
+    
+        /// <summary>
         /// Get the non-workday rule end time
         /// </summary>
         /// <param name="input">Test data</param>
@@ -616,16 +636,6 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Get the workday rule items number
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public int GetWorkdayRuleItemsNumber()
-        {
-            return TBWorkdayRuleContainer.GetElementNumber();
-        }
-
-        /// <summary>
         /// Get the non-workday rule items number
         /// </summary>
         /// <param></param>
@@ -634,6 +644,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return TBNonworkdayRuleContainer.GetElementNumber();
         }
+        #endregion
+
+        #region Special Day Veirification
 
         /// <summary>
         /// Get the Specialday Rule value
@@ -655,6 +668,162 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return TBSpecialdayRuleContainer.GetElementNumber();
         }
+
+        /// <summary>
+        /// Return if Specialday Start Date field invalid
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public bool IsSpecialdayStartDateInvalid(int num)
+        {
+            DatePicker OneSpecialdayStartDate = GetOneSpecialdayRuleStartDateDatePicker(num);
+            return OneSpecialdayStartDate.IsDatePickerValueInvalid();
+        }
+
+        /// <summary>
+        /// Get Specialday Start Date field invalid message
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public string GetSpecialdayStartDateInvalidMsg(int num)
+        {
+            DatePicker OneSpecialdayStartDate = GetOneSpecialdayRuleStartDateDatePicker(num);
+            return OneSpecialdayStartDate.GetInvalidTips();
+        }
+
+        /// <summary>
+        /// Get Specialday Start Date field value
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public string GetSpecialdayStartDateValue(int num)
+        {
+            DatePicker OneSpecialdayStartDate = GetOneSpecialdayRuleStartDateDatePicker(num);
+            return OneSpecialdayStartDate.GetValue();
+        }
+
+        /// <summary>
+        /// Return if Specialday end Date field invalid
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public bool IsSpecialdayEndDateInvalid(int num)
+        {
+            DatePicker OneSpecialdayEndDate = GetOneSpecialdayRuleEndDateDatePicker(num);
+            return OneSpecialdayEndDate.IsDatePickerValueInvalid();
+        }
+
+        /// <summary>
+        /// Get Specialday end Date field invalid message
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public string GetSpecialdayEndDateInvalidMsg(int num)
+        {
+            DatePicker OneSpecialdayEndDate = GetOneSpecialdayRuleEndDateDatePicker(num);
+            return OneSpecialdayEndDate.GetInvalidTips();
+        }
+
+        /// <summary>
+        /// Get Specialday end Date field value
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public string GetSpecialdayEndDateValue(int num)
+        {
+            DatePicker OneSpecialdayEndDate = GetOneSpecialdayRuleEndDateDatePicker(num);
+            return OneSpecialdayEndDate.GetValue();
+        }
+
+        /// <summary>
+        /// Return if Specialday start time field invalid
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public bool IsSpecialdayStartTimeInvalid(int num)
+        {
+            ComboBox OneSpecialdayStartTime = GetOneSpecialdayRuleStartTimeComboBox(num);
+            return OneSpecialdayStartTime.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Get Specialday start time field invalid message
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public string GetSpecialdayStartTimeInvalidMsg(int num)
+        {
+            ComboBox OneSpecialdayStartTime = GetOneSpecialdayRuleStartTimeComboBox(num);
+            return OneSpecialdayStartTime.GetInvalidTips();
+        }
+
+        /// <summary>
+        /// Get Specialday start time field value
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public string GetSpecialdayStartTimeValue(int num)
+        {
+            ComboBox OneSpecialdayStartTime = GetOneSpecialdayRuleStartTimeComboBox(num);
+            return OneSpecialdayStartTime.GetValue();
+        }
+
+        /// <summary>
+        /// Return if Specialday end time field invalid
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public bool IsSpecialdayEndTimeInvalid(int num)
+        {
+            ComboBox OneSpecialdayEndTime = GetOneSpecialdayRuleEndTimeComboBox(num);
+            return OneSpecialdayEndTime.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Get Specialday end time field invalid message
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public string GetSpecialdayEndTimeInvalidMsg(int num)
+        {
+            ComboBox OneSpecialdayEndTime = GetOneSpecialdayRuleEndTimeComboBox(num);
+            return OneSpecialdayEndTime.GetInvalidTips();
+        }
+
+        /// <summary>
+        /// Get Specialday end time field value
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public string GetSpecialdayEndTimeValue(int num)
+        {
+            ComboBox OneSpecialdayEndTime = GetOneSpecialdayRuleEndTimeComboBox(num);
+            return OneSpecialdayEndTime.GetValue();
+        }
+
+        /// <summary>
+        /// Return if Specialday value field invalid
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public bool IsSpecialdayValueInvalid(int num)
+        {
+            TextField OneSpecialdayValue = GetOneSpecialdayRuleValueTextField(num);
+            return OneSpecialdayValue.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Get Specialday value field invalid
+        /// </summary>
+        /// <param name="num">the item number from up </param>
+        /// <returns></returns>
+        public string GetSpecialdayValueInvalidMsg(int num)
+        {
+            TextField OneSpecialdayValue = GetOneSpecialdayRuleValueTextField(num);
+            return OneSpecialdayValue.GetInvalidTipsForNumberField();
+        }
+        #endregion
+
         #endregion
 
         #region private method

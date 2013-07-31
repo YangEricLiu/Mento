@@ -6,14 +6,20 @@
 			"TagName":"V_TB_Modify_001_3",
 			"Year":"2012",	
 			"SpecialdayRuleRecordNumber":2,
-			"SpecialdayRuleStartDate":["2012-1-6", "2012-1-6"],
-			"SpecialdayRuleStartTime":["01:00", "10:00"],			
-			"SpecialdayRuleEndDate":["2012-1-7", "2012-1-9"],
-			"SpecialdayRuleEndTime":["06:00", "12:00"],
+			"SpecialdayRuleStartDate":["2012-1-6", "2012-1-6", "2012-10-6"],
+			"SpecialdayRuleStartTime":["01:00", "10:00", "10:00"],			
+			"SpecialdayRuleEndDate":["2012-1-7", "2012-1-9", "2012-10-9"],
+			"SpecialdayRuleEndTime":["06:00", "12:00", "10:00"],
+			"SpecialdayRuleValue":["999999999.9"],
+			"WorkdayRuleValue":["999999999999999999999"],
+			"NonworkdayRuleValue":["999999999999999999999"],
 		},
 		"ExpectedData":
 		{
 			"SpecialdayRuleStartDate":["时间段冲突"],
+			"SpecialdayRuleValue":["999999999.9"],
+			"WorkdayRuleValue":["该输入项的最大值是 999999999.999999"],
+			"NonworkdayRuleValue":["该输入项的最大值是 999999999.999999"],
 		}
 	},
 	{
@@ -23,14 +29,20 @@
 			"TagName":"P_TB_Modify_001_3",
 			"Year":"2012",	
 			"SpecialdayRuleRecordNumber":2,
-			"SpecialdayRuleStartDate":["2012-1-6", "2012-1-6"],
-			"SpecialdayRuleStartTime":["01:00", "10:00"],
-			"SpecialdayRuleEndDate":["2012-1-7", "2012-1-9"],
-			"SpecialdayRuleEndTime":["06:00", "12:00"],
+			"SpecialdayRuleStartDate":["2012-1-6", "2012-1-6", "2012-10-6"],
+			"SpecialdayRuleStartTime":["01:00", "10:00", "10:00"],
+			"SpecialdayRuleEndDate":["2012-1-7", "2012-1-9", "2012-10-9"],
+			"SpecialdayRuleEndTime":["06:00", "12:00", "10:00"],
+			"SpecialdayRuleValue":["999999999.9"],
+			"WorkdayRuleValue":["999999999999999999999"],
+			"NonworkdayRuleValue":["999999999999999999999"],
 		},
 		"ExpectedData":
 		{
 			"SpecialdayRuleStartDate":["时间段冲突"],
+			"SpecialdayRuleValue":["999999999.9"],
+			"WorkdayRuleValue":["该输入项的最大值是 999999999.999999"],
+			"NonworkdayRuleValue":["该输入项的最大值是 999999999.999999"],
 		}
 	}
 ]

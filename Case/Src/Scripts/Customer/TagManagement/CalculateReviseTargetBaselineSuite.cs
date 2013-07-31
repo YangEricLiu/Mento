@@ -289,5 +289,60 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual(input.ExpectedData.NovemberCalculatedValue, PVtagTargetBaselineSettings.GetNovemberValue());
             Assert.AreEqual(input.ExpectedData.DecemberCalculatedValue, PVtagTargetBaselineSettings.GetDecemberValue());
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetCalculateRevise-101-7")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-7")]
+        public void CalculationFailed(KPITargetBaselineData input)
+        {
+            PickupPtagOrVtag(input);
+
+            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            PVtagTargetBaselineSettings.ClickCalculateTargetButton();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.CalculationErrorMessages[0]));
+            JazzMessageBox.MessageBox.Confirm();
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetCalculateRevise-101-8")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-8")]
+        public void CalculationNoValue(KPITargetBaselineData input)
+        {
+            string blankValue = "";
+            
+            PickupPtagOrVtag(input);
+
+            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            PVtagTargetBaselineSettings.ClickCalculateTargetButton();
+            TimeManager.MediumPause();
+
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetAnnualValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetJanuaryValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetFebruaryValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetMarchValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetAprilValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetMayValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetJulyValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetJuneValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetAugustValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetSeptemberValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetOctoberValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetNovemberValue());
+            Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetDecemberValue());
+        }
     }
 }

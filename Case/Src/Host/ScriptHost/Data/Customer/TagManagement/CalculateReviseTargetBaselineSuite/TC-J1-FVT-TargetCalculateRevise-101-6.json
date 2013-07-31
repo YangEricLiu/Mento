@@ -10,9 +10,9 @@
 		},
 		"ExpectedData":
 		{
-			"AnnualCalculatedValue":"3523.5",
+			"AnnualCalculatedValue":"10000",
 			"JanuaryCalculatedValue":"297",
-			"FebruaryCalculatedValue":"283.5",
+			"FebruaryCalculatedValue":"4555",
 			"MarchCalculatedValue":"297",
 			"AprilCalculatedValue":"283.5",
 			"MayCalculatedValue":"310.5",

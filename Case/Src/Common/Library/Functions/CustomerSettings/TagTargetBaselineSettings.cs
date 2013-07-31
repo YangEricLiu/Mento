@@ -609,6 +609,28 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return TBWorkdayRuleContainer.GetElementNumber();
         }
+
+        /// <summary>
+        /// Jugde if text field invalid
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public bool IsWorkdayRuleValueInvalid(int num)
+        {
+            TextField OneWorkdayRuleValueValue = GetOneWorkdayRuleValueTextField(num);
+            return OneWorkdayRuleValueValue.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Get text field invalid message
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public string GetWorkdayRuleValueInvalidMsg(int num)
+        {
+            TextField OneWorkdayRuleValueValue = GetOneWorkdayRuleValueTextField(num);
+            return OneWorkdayRuleValueValue.GetInvalidTipsForNumberField();
+        }
         #endregion
 
         #region Non-Workday Verification
@@ -643,6 +665,28 @@ namespace Mento.ScriptCommon.Library.Functions
         public int GetNonworkdayRuleItemsNumber()
         {
             return TBNonworkdayRuleContainer.GetElementNumber();
+        }
+
+        /// <summary>
+        /// Judge if  the non-workday rule value invalid
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public bool IsNonworkdayRuleValueInvalid(int num)
+        {
+            TextField OneNonworkdayRuleValueValue = GetOneNonworkdayRuleValueTextField(num);
+            return OneNonworkdayRuleValueValue.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Get  the non-workday rule value invalid message
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public string GetNonworkdayRuleValueInvalidMsg(int num)
+        {
+            TextField OneNonworkdayRuleValueValue = GetOneNonworkdayRuleValueTextField(num);
+            return OneNonworkdayRuleValueValue.GetInvalidTipsForNumberField();
         }
         #endregion
 

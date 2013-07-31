@@ -149,9 +149,9 @@ namespace Mento.Script.Customer.TagManagement
 
             for (int i = 0; i < input.InputData.SpecialdayRuleRecordNumber; i++)
             {
-                PVtagTargetBaselineSettings.SelectSpecialdayRuleEndDate(input.InputData.SpecialdayRuleEndDate[i], 1);
                 PVtagTargetBaselineSettings.SelectSpecialdayRuleEndTime(input.InputData.SpecialdayRuleEndTime[i], 1);
-
+                PVtagTargetBaselineSettings.SelectSpecialdayRuleEndDate(input.InputData.SpecialdayRuleEndDate[i], 1);
+                
                 PVtagTargetBaselineSettings.ClickSaveButton();
                 JazzMessageBox.LoadingMask.WaitLoading();
                 TimeManager.MediumPause();
@@ -193,8 +193,8 @@ namespace Mento.Script.Customer.TagManagement
 
             for (int i = 0; i < input.InputData.SpecialdayRuleRecordNumber; i++)
             {
-                PVtagTargetBaselineSettings.SelectSpecialdayRuleStartDate(input.InputData.SpecialdayRuleEndDate[i], 2);
-                PVtagTargetBaselineSettings.SelectSpecialdayRuleStartTime(input.InputData.SpecialdayRuleEndTime[i], 2);
+                PVtagTargetBaselineSettings.SelectSpecialdayRuleStartDate(input.InputData.SpecialdayRuleStartDate[i], 2);
+                PVtagTargetBaselineSettings.SelectSpecialdayRuleStartTime(input.InputData.SpecialdayRuleStartTime[i], 2);
                 PVtagTargetBaselineSettings.SelectSpecialdayRuleEndDate(input.InputData.SpecialdayRuleEndDate[i], 2);
                 PVtagTargetBaselineSettings.SelectSpecialdayRuleEndTime(input.InputData.SpecialdayRuleEndTime[i], 2);
 
@@ -202,9 +202,40 @@ namespace Mento.Script.Customer.TagManagement
                 Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayStartTimeInvalid(2));
                 Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayEndDateInvalid(2));
                 Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayEndTimeInvalid(2));
-                Assert.IsFalse(PVtagTargetBaselineSettings.IsSpecialdayValueInvalid(2));
+                //Assert.IsFalse(PVtagTargetBaselineSettings.IsSpecialdayValueInvalid(2));
                 Assert.IsTrue(PVtagTargetBaselineSettings.GetSpecialdayStartDateInvalidMsg(2).Contains(input.ExpectedData.SpecialdayRuleStartDate[0]));
             }
+
+            //Fill in no overlap date 
+            PVtagTargetBaselineSettings.SelectSpecialdayRuleStartDate(input.InputData.SpecialdayRuleStartDate[2], 2);
+            PVtagTargetBaselineSettings.SelectSpecialdayRuleStartTime(input.InputData.SpecialdayRuleStartTime[2], 2);
+            PVtagTargetBaselineSettings.SelectSpecialdayRuleEndDate(input.InputData.SpecialdayRuleEndDate[2], 2);
+            PVtagTargetBaselineSettings.SelectSpecialdayRuleEndTime(input.InputData.SpecialdayRuleEndTime[2], 2);
+            PVtagTargetBaselineSettings.FillInSpecialdayRuleValue(input.InputData.SpecialdayRuleValue[0], 2);
+
+            PVtagTargetBaselineSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            
+            Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[0], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(2));
+
+            //Fill invalid workday value
+            PVtagTargetBaselineSettings.ClickModifyCalculationRuleButton();
+            TimeManager.ShortPause();
+            PVtagTargetBaselineSettings.FillInWorkdayRuleValue(input.InputData.WorkdayRuleValue[0], 1);
+            PVtagTargetBaselineSettings.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsWorkdayRuleValueInvalid(1));
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetWorkdayRuleValueInvalidMsg(1).Contains(input.ExpectedData.WorkdayRuleValue[0]));
+
+            //Fill invalid non-workday value
+            PVtagTargetBaselineSettings.FillInNonworkdayRuleValue(input.InputData.NonworkdayRuleValue[0], 1);
+            PVtagTargetBaselineSettings.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsNonworkdayRuleValueInvalid(1));
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetNonworkdayRuleValueInvalidMsg(1).Contains(input.ExpectedData.NonworkdayRuleValue[0]));
         }
     }
 }

@@ -68,5 +68,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string[] SpecialdayRuleEndDate { get; set; }
         public string[] SpecialdayRuleEndTime { get; set; }
         public string[] SpecialdayRuleValue { get; set; }
+        public string[] CalculationErrorMessages { get; set; }
     }
 }

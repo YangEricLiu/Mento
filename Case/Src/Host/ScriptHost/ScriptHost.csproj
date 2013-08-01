@@ -131,6 +131,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\Resource\cn\" />
     <Folder Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUBasicTariffAddValidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUBasicTariffModifyInvalidSuite\" />

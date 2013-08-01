@@ -8,6 +8,7 @@ using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.TestData.Administration;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using System.Collections;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -35,6 +36,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         //private static TabButton DataPermissionTab = JazzButton
 
+        private static TextField CommonNameTextField = JazzTextField.UserNameTextField;
         private static TextField NameTextField = JazzTextField.UserNameTextField;
         private static TextField RealNameTextField = JazzTextField.UserRealNameTextField;
         private static TextField TelephoneTextField = JazzTextField.UserTelephoneTextField;
@@ -45,6 +47,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox UserTypeComboBox = JazzComboBox.UserTypeComboBox;
         private static ComboBox UserAssociatedCustomerComboBox = JazzComboBox.UserAssociatedCustomerComboBox;
 
+        private static ComboBox UserTitleComboxBox = JazzComboBox.UserTitleComboxBox;
 
         #endregion
 
@@ -129,9 +132,32 @@ namespace Mento.ScriptCommon.Library.Functions
             GeneratePasswordButton.Click();
         }
 
-        public void FocusOnUser(string userName)
+        /// <summary>
+        /// focus a certain user
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean FocusOnUser(string userName)
         {
-            GridUserList.FocusOnRow(1, userName);
+            try
+            {
+                GridUserList.FocusOnRow(1, userName);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// verify whether the user exist the user list
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsUserOnList(string userName)
+        {
+           return GridUserList.IsRowExistOnCurrentPage(1,userName);
         }
 
         /// <summary>
@@ -162,15 +188,44 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInUser(UserInputData input)
         {
 
-            NameTextField.Fill(input.AccountID);
+           NameTextField.Fill(input.AccountID);
             RealNameTextField.Fill(input.RealName);
-            UserTypeComboBox.SelectItem(input.Type);
-            UserAssociatedCustomerComboBox.SelectItem(input.AssociatedCustomer);
+           UserTypeComboBox.SelectItem(input.Type);
+           UserAssociatedCustomerComboBox.SelectItem(input.AssociatedCustomer);
+            CommonNameTextField.Fill(input.CommonName);
+            RealNameTextField.Fill(input.RealName);
             TelephoneTextField.Fill(input.Telephone);
             EmailTextField.Fill(input.Email);
             TitleTextField.Fill(input.Title);
             CommentTextField.Fill(input.Comments);
 
+        }
+
+        /// <summary>
+        /// Input name, realname comments etc. of all user field
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        public void FillInAddUser(UserInputData input)
+        {
+
+            CommonNameTextField.Fill(input.CommonName);
+            RealNameTextField.Fill(input.RealName);
+            TelephoneTextField.Fill(input.Telephone);
+            EmailTextField.Fill(input.Email);
+            CommentTextField.Fill(input.Comments);
+            UserTitleComboxBox.SelectItem(input.Title);
+            UserTypeComboBox.SelectItem(input.Type);
+        }
+
+        /// <summary>
+        /// Input name of the new user 
+        /// </summary>
+        /// <param name="name">user name</param>
+        /// <returns></returns>
+        public void FillInCommonName(string name)
+        {
+            CommonNameTextField.Fill(name);
         }
 
         /// <summary>
@@ -183,8 +238,9 @@ namespace Mento.ScriptCommon.Library.Functions
             NameTextField.Fill(name);
         }
 
+
         /// <summary>
-        /// Input realname of the new user 
+        /// Input real name of the new user 
         /// </summary>
         /// <param name="realname">user realname</param>
         /// <returns></returns>
@@ -202,7 +258,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             UserTypeComboBox.SelectItem(type);
         }
-
+        
         /// <summary>
         /// Input associatedcustomer of the new user 
         /// </summary>
@@ -218,9 +274,29 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="title">user title</param>
         /// <returns></returns>
-        public void FillInTitle(string title)
+        public Boolean FillInTitle(string title)
         {
-            TitleTextField.Fill(title);
+            try 
+            {
+                UserTitleComboxBox.SelectItem(title);
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// get all the title items
+        /// </summary>
+        /// <returns></returns>
+        public Boolean AreTitleDisplayAllItem()
+        {
+            int i = 0;
+            string[] expectedTitleList = { "能源工程顾问", "技术人员", "客户管理员", "平台管理员", "能源经理", "能源工程师", "部门经理", "管理层", "业务人员", "销售人员" };
+            ArrayList titleList = UserTitleComboxBox.GetCurrentDropdownListItems();
+            return titleList.Equals(expectedTitleList);
         }
 
         /// <summary>
@@ -260,10 +336,21 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name = "name">name key</param>
         /// <returns>Name value</returns>
+        public string GetCommonNameValue()
+        {
+            return CommonNameTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get name expected value
+        /// </summary>
+        /// <param name = "name">name key</param>
+        /// <returns>Name value</returns>
         public string GetNameValue()
         {
             return NameTextField.GetValue();
         }
+
 
         /// <summary>
         /// Get the realname expected value
@@ -275,6 +362,7 @@ namespace Mento.ScriptCommon.Library.Functions
             return RealNameTextField.GetValue();
         }
 
+        
         /// <summary>
         /// Get the user type expected value
         /// </summary>
@@ -294,7 +382,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return UserAssociatedCustomerComboBox.GetValue();
         }
-
+       
         /// <summary>
         /// Get the user email expected value
         /// </summary>
@@ -314,7 +402,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return TelephoneTextField.GetValue();
         }
-
+       
         /// <summary>
         /// Get the user title expected value
         /// </summary>
@@ -324,7 +412,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return TitleTextField.GetValue();
         }
-
+        
         /// <summary>
         /// Get the comment expected value
         /// </summary>
@@ -343,20 +431,21 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Judge whether the name textfield is invalid
         /// </summary>
         /// <returns>True if the name is invalid, false if not</returns>
-        public Boolean IsUserNameInvalid()
+        public Boolean IsCommonNameInvalid()
         {
-            return NameTextField.IsTextFieldValueInvalid();
+            return CommonNameTextField.IsTextFieldValueInvalid();
         }
-
+        
         /// <summary>
         /// Judge whether invalid message of name field is correct
         /// </summary>
         /// <param name="output">UserExpectedData</param>
         /// <returns>whether the invalid message is ture</returns>
-        public Boolean IsUserNameInvalidMsgCorrect(UserExpectedData output)
+        public Boolean IsCommonNameInvalidMsgCorrect(UserExpectedData output)
         {
-            return NameTextField.GetInvalidTips().Contains(output.AccountID);
+            return NameTextField.GetInvalidTips().Contains(output.CommonName);
         }
+
 
         /// <summary>
         /// Judge whether the realname textfield is invalid
@@ -400,7 +489,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Judge whether the email textfield is invalid
         /// </summary>
         /// <returns>True if the email is invalid, false if not</returns>
-        public Boolean IsEmailInvalid()
+        public Boolean IsEmailInvalid(UserExpectedData output)
         {
             return EmailTextField.IsTextFieldValueInvalid();
         }
@@ -423,7 +512,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return UserTypeComboBox.IsComboBoxValueInvalid();
         }
-
+       
         /// <summary>
         /// Judge whether invalid message of type field is correct
         /// </summary>
@@ -438,6 +527,33 @@ namespace Mento.ScriptCommon.Library.Functions
             else
             {
                 return UserTypeComboBox.GetInvalidTips().Contains(output.Type);
+            }
+        }
+
+
+        /// <summary>
+        /// Judge whether the user title combobox is invalid
+        /// </summary>
+        /// <returns>True if the user title combobox  is invalid, false if not</returns>
+        public Boolean IsUserTitleInvalid()
+        {
+            return UserTitleComboxBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of user title combox is correct
+        /// </summary>
+        /// <param name="output">UserExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsTitleInvalidMsgCorrect(UserExpectedData output)
+        {
+            if (String.IsNullOrEmpty(output.Title))
+            {
+                return true;
+            }
+            else
+            {
+                return UserTitleComboxBox.GetInvalidTips().Contains(output.Title);
             }
         }
 

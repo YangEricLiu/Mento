@@ -521,6 +521,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region User
         public static string ComboBoxUserType = "ComboBoxUserType";
         public static string ComboBoxUserAssociatedCustomer = "ComboBoxUserAssociatedCustomer";
+
+        public static string ComboxBoxUserTitle = "ComboxBoxUserTitle";
         #endregion
 
         #region UserProfile

@@ -44,7 +44,7 @@ namespace Mento.Script.Administration.User
         //Delete user cancel and success verify.
         [Test]
         [CaseID("SR-J1-User-002-TC-J1-FVT-UserManagement"), CreateTime("2013-01-08"), Owner("Nancy")]
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementAddValid), "TC-J1-FVT-UserManagement-Add-101-2")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementDelete), "TC-J1-FVT-UserManagement-Add-101-2")]
         //Delete user cancel and success verify.
         public void DeleteUser(UserSettingsData testData)
         {

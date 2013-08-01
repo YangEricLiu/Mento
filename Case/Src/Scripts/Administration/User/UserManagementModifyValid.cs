@@ -45,7 +45,7 @@ namespace Mento.Script.Administration.User
         [CaseID("TC-J1-FVT-UserManagement-Modify-101-1"), CreateTime("2013-01-08"), Owner("Nancy")]
         [Priority("8")]
         //Modify user valid test: maxlength, not required field blank, leading and trailing space excluded verify. 
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementAddValid), "TC-J1-FVT-UserManagement-Add-101-1")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementModifyValid), "TC-J1-FVT-UserManagement-Add-101-1")]
         public void ModifyUserValid(UserSettingsData testData)
         {
 
@@ -72,7 +72,7 @@ namespace Mento.Script.Administration.User
         [Test]//TC-J1-FVT-UserManagement-Modify-101-4
         [CaseID("TC-J1-FVT-UserManagement-Modify-101-2"), CreateTime("2013-01-08"), Owner("Nancy")]
         //Add user valid test: Blank comments is valid verify. 
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementAddValid), "TC-J1-FVT-UserManagement-Add-101-2")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementModifyValid), "TC-J1-FVT-UserManagement-Add-101-2")]
         public void ModifyUserNoComments(UserSettingsData testData)
         {
 

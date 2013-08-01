@@ -36,7 +36,7 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
         }
 
         [Test]
@@ -84,7 +84,7 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
         [Test]
         [CaseID("TC-J1-FVT-FunctionPermissionRoleType-ModifyRoleType-3")]
         [Type("BFT")]
-        [IllegalInputValidation(typeof(CommonInputData[]))]
+        [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(ModifyRoleTypeSuite), "TC-J1-FVT-FunctionPermissionRoleType-ModifyRoleType-3")]
         public void ModifyRoleTypeAndCancel(RoleTypePermissionData input)
         {
             string roleTypeName = "RoleTypeForModify";
@@ -92,6 +92,7 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
             RoleTypeSettings.FocusOnUserType(roleTypeName);
             RoleTypeSettings.ClickModifyButton();
             TimeManager.ShortPause();
+            // problem here@@@@@@@@@@@@@@
             //Fill input data
             RoleTypeSettings.FillInName(input.InputData.CommonName);
             TimeManager.ShortPause();

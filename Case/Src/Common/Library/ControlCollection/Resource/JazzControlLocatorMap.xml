@@ -357,8 +357,8 @@
       <add key="TextFieldUserRealName" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='RealName']" type="XPath"/>
       <add key="TextFieldUserTitle" value="st-user-title-field-inputEl" type="ID"/>
       <add key="TextFieldUserTelephone" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='Telephone']" type="XPath"/>
-      <add key="TextFieldUserEmail" value="st-user-email-field-inputEl" type="ID"/>
-      <add key="TextFieldUserComment" value="st-user-comment-field-inputEl" type="ID"/>
+      <add key="TextFieldUserEmail" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='Email']" type="XPath"/>
+      <add key="TextFieldUserComment" value="//div[@id='st-user-properties-form-body']//textarea[@name='Comment']" type="XPath"/>
     </User>
     <UserProfile>
       <add key="TextFieldUserProfileTitle" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@id='st-userprofile-title-field-inputEl']" type="XPath"/>
@@ -489,8 +489,11 @@
       <add key="ComboBoxLoginCustomerOption" value="//div[contains(@class,'x-window-default')]/div[contains(@class,'x-window-body-default')]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'combobox')]]" type="XPath"/>
     </login>
     <User>
-      <add key="ComboBoxUserType" value="st-user-usertype-triggerWrap" type="ID"/>
+      <add key="ComboBoxUserType" value="//div[@id='st-user-properties-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='UserType']]" type="XPath"/>
       <add key="ComboBoxUserAssociatedCustomer" value="st-user-firstcustomer-triggerWrap" type="ID"/>
+
+      <add key="ComboxBoxUserTitle" value="//div[@id='st-user-properties-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='Title']]" type="XPath"/>
+        
     </User>
     <UserProfile>
       <add key="ComboBoxUserProfileType" value="st-userprofile-personalinfo-usertype-triggerWrap" type="ID"/>

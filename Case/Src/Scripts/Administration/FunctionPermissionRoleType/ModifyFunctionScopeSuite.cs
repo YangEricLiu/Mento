@@ -36,7 +36,7 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
         }
 
         [Test]
@@ -45,24 +45,27 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
         [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(ModifyFunctionScopeSuite), "TC-J1-FVT-FunctionPermissionRoleType-ModifyFunctionScope-1")]
         public void PublicFunctionUncheck(RoleTypePermissionData input)
         {
-            int i,j = 0;
+            int i,j,s = 0;
             string[] publicPermission = {"仪表盘与小组件查看","仪表盘与小组件编辑","个人信息管理","报警信息查看" };
             string[] customerizePermission = {"仪表盘与小组件分享","“能效分析”功能","“碳排放”功能","“成本”功能","“单位指标”功能","“时段能耗比”功能","“集团排名”功能","数据导出","REM平台管理","层级结构管理","普通数据点管理","数据点关联","客户信息查看","客户信息管理" };
-            // Focus a  role type
-            RoleTypeSettings.FocusOnUserType(input.InputData.NameList[0]);
-            RoleTypeSettings.ClickModifyButton();
-            TimeManager.ShortPause();
-            for (i = 0; i < 4; i++)
+            while (s < input.InputData.NameList.Length)
             {
-                Assert.IsTrue(RoleTypeSettings.IsPermissionItemDisabled(publicPermission[i]));
+                // Focus a  role type
+                RoleTypeSettings.FocusOnUserType(input.InputData.NameList[s]);
+                RoleTypeSettings.ClickModifyButton();
+                TimeManager.ShortPause();
+                for (i = 0; i < 4; i++)
+                {
+                    Assert.IsTrue(RoleTypeSettings.IsPermissionItemDisabled(publicPermission[i]));
+                }
+                for (j = 0; j < customerizePermission.Length; j++)
+                {
+                    Assert.IsFalse(RoleTypeSettings.IsPermissionItemDisabled(customerizePermission[j]));
+                }
+                RoleTypeSettings.ClickCancelButton();
+                s++;
             }
-            for (j = 0; j < customerizePermission.Length; j++)
-            {
-                Assert.IsFalse(RoleTypeSettings.IsPermissionItemDisabled(customerizePermission[j]));
-                //Assert.IsFalse(RoleTypeSettings.IsPermissionItemDisabled("数据导出"));
-                //Assert.IsFalse(RoleTypeSettings.IsPermissionItemDisabled("REM平台管理"));
-            }
-            RoleTypeSettings.ClickCancelButton();
+            
         }
 
         [Test]

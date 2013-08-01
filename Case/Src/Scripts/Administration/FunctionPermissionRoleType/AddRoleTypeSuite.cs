@@ -36,7 +36,7 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
         }
 
         [Test]
@@ -94,9 +94,8 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
             RoleTypeSettings.ClickCancelButton();
             //JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
-            //Verify the error message 
-            Assert.IsTrue(RoleTypeSettings.IsUserNameInvalid());
-            Assert.IsTrue(RoleTypeSettings.IsUserNameInvalidMsgCorrect(input.ExpectedData));
+            //Verify 
+            RoleTypeSettings.IsRoleTypeOnListByName(input.InputData.CommonName);
         }
 
         [Test]

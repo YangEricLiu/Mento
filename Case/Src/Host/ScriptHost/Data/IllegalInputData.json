@@ -5,7 +5,7 @@
 			"HierarchyNodePath":["自动化测试", "AutoOrg001"],
 		    "AccountID":"我是中文",
 			"Password":"",
-			"RealName":"IamEnglish",
+			"RealName":"I@English",
 			"CustomerName":"",
 			"CommonName":"@",
 			"Address":"",
@@ -24,7 +24,7 @@
 		{
 		    "AccountID":"用户名只能由半角英文字母，数字和下划线组成。",
 			"Password":"",
-			"RealName":"用户名只能由半角英文字母，数字和下划线组成。",
+			"RealName":"允许汉字，英文字母和空格",
 			"CustomerName":"",
 			"CommonName":"允许汉字，英文字母，数字，下划线和空格",
 			"Address":"",

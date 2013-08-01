@@ -1,8 +1,12 @@
 ﻿/*using common.json*/
+
 [
 	{		
 		"InputData":
 		{
+			"RealName":"  onlychars  ",
+			"Title":"技术人员",
+			"Type":"客户管理员"
 		},
 		"ExpectedData":
 		{
@@ -11,6 +15,7 @@
 	{		
 		"InputData":
 		{
+			"RealName":"  只有中文  ",	
 		},
 		"ExpectedData":
 		{
@@ -19,6 +24,7 @@
 	{		
 		"InputData":
 		{
+			"RealName":"m文CAPITALhars 1234_F中文CAPITALh000",
 		},
 		"ExpectedData":
 		{
@@ -27,6 +33,7 @@
 	{		
 		"InputData":
 		{
+			"RealName":"中文CAPITALchars 1234_F",	
 		},
 		"ExpectedData":
 		{
@@ -35,9 +42,10 @@
 	{		
 		"InputData":
 		{
+			"RealName":"中文CAPITALhars 1234_F中文CAPITALh",	
 		},
 		"ExpectedData":
 		{
 		}
-	},
+	}
 ]

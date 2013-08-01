@@ -45,7 +45,7 @@ namespace Mento.Script.Administration.User
         [Test]
         [CaseID("TC-J1-FVT-UserManagement-Modify-001-1"), CreateTime("2013-01-08"), Owner("Nancy")]
         //Add user failed with redline when click save button directly.
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementAddInvalid), "TC-J1-FVT-UserManagement-Add-001-1")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementModifyInvalid), "TC-J1-FVT-UserManagement-Add-001-1")]
         public void ModifyUserBlank(UserSettingsData testData)
         {
 
@@ -56,8 +56,8 @@ namespace Mento.Script.Administration.User
             UserSettings.FillInUser(testData.InputData);
             UserSettings.ClickSaveButton();
 
-            Assert.IsTrue(UserSettings.IsUserNameInvalid());
-            Assert.IsTrue(UserSettings.IsUserNameInvalidMsgCorrect(testData.ExpectedData));
+            Assert.IsTrue(UserSettings.IsCommonNameInvalid());
+            Assert.IsTrue(UserSettings.IsCommonNameInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsTrue(UserSettings.IsRealNameInvalid());
             Assert.IsTrue(UserSettings.IsRealNameInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsTrue(UserSettings.IsTelephoneInvalid());
@@ -83,8 +83,8 @@ namespace Mento.Script.Administration.User
             UserSettings.FillInUser(testData.InputData);
             UserSettings.ClickSaveButton();
 
-            Assert.IsTrue(UserSettings.IsUserNameInvalid());
-            Assert.IsTrue(UserSettings.IsUserNameInvalidMsgCorrect(testData.ExpectedData));
+            Assert.IsTrue(UserSettings.IsCommonNameInvalid());
+            Assert.IsTrue(UserSettings.IsCommonNameInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsTrue(UserSettings.IsRealNameInvalid());
             Assert.IsTrue(UserSettings.IsRealNameInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsTrue(UserSettings.IsTelephoneInvalid());
@@ -100,7 +100,7 @@ namespace Mento.Script.Administration.User
         [Test]
         [CaseID("TC-J1-FVT-UserManagement-Modify-001-3"), CreateTime("2013-01-08"), Owner("Nancy")]
         //Add user valid and canceled.
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementAddValid), "TC-J1-FVT-UserManagement-Add-101-2")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementModifyInvalid), "TC-J1-FVT-UserManagement-Add-101-2")]
         public void AddUserCancel(UserSettingsData testData)
         {
 
@@ -114,7 +114,7 @@ namespace Mento.Script.Administration.User
         [Test]
         [CaseID("TC-J1-FVT-UserManagement-Modify-001-4"), CreateTime("2013-01-08"), Owner("Nancy")]
         //Modify user accountid="Nancy_EngineerBlankComments" has already exist in user list.
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementAddValid), "TC-J1-FVT-UserManagement-Add-101-2")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserManagementModifyInvalid), "TC-J1-FVT-UserManagement-Add-101-2")]
         public void AddDuplicatedUser(UserSettingsData testData)
         {
 

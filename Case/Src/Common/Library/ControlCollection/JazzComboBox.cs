@@ -128,7 +128,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region User Setting
         public static ComboBox UserTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserType, 1);
         public static ComboBox UserAssociatedCustomerComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserAssociatedCustomer, 1);
-		#endregion
+
+        public static ComboBox UserTitleComboxBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboxBoxUserTitle, 1);
+        #endregion
 
         #region User Profile
         public static ComboBox UserProfileTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserProfileType, 1);

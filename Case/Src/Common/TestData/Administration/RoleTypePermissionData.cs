@@ -10,24 +10,20 @@ namespace Mento.ScriptCommon.TestData.Administration
     public class RoleTypePermissionData : TestDataBase<RoleTypeInputData, RoleTypeExpectedData>
     {
     }
-
     public class RoleTypeInputData : InputTestDataBase
     {
         public string CommonName { get; set; }
+        public string Code { get; set; }
+        public string Type { get; set; }
+        public string Comments { get; set; }
         public string[] NameList { get; set; }
-        public RoleTypeInputData(string roleTypeName,string[] nameList)
-        {
-            this.CommonName = roleTypeName;
-            this.NameList = nameList;
-        }
     }
     public class RoleTypeExpectedData : ExpectedTestDataBase
-        {
-            public string CommonName { get; set; }
-            public string[] NameList { get; set; }
-            public RoleTypeExpectedData(string roleTypeName, string[] nameList)
-            {
-                this.CommonName = roleTypeName;
-            }        
-        }
+    {
+        public string CommonName { get; set; }
+        public string Code { get; set; }
+        public string Type { get; set; }
+        public string Comments { get; set; }
+        public string[] NameList { get; set; }      
+     }
 }

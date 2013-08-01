@@ -1,0 +1,17 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"CommonName":"GreenieTest",
+			"RealName":"GreenieTest",
+			"Title":"技术人员",
+			"Type":"客户管理员",
+			"Telephone":"010-12345",
+			"Email":"1@1.com",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"该名称已存在",
+		}
+	},
+]

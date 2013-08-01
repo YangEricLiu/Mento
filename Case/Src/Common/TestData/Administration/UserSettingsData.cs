@@ -13,18 +13,21 @@ namespace Mento.ScriptCommon.TestData.Administration
 
     public class UserInputData : InputTestDataBase
     {
+        public string CommonName { get; set; }
         public string OriginalName { get; set; }
         public string AccountID { get; set; }
         public string RealName { get; set; }
+        public string DisplayName { get; set; }
         public string Type { get; set; }
-        public string AssociatedCustomer { get; set; }
-        public string Title { get; set; }
+       public string AssociatedCustomer { get; set; }
+       public string Title { get; set; }
         public string Telephone { get; set; }
         public string Email { get; set; }
         public string Comments { get; set; }
 
-        public UserInputData(string originalname, string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comments)
+        public UserInputData(string originalname,string commonName, string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comments)
         {
+            this.CommonName = commonName;
             this.OriginalName = originalname;
             this.AccountID = name;
             this.RealName = realname;
@@ -38,8 +41,10 @@ namespace Mento.ScriptCommon.TestData.Administration
     }
     public class UserExpectedData : ExpectedTestDataBase
         {
+            public string CommonName { get; set; }
             public string AccountID { get; set; }
             public string RealName { get; set; }
+            public string DisplayName { get; set; }
             public string Type { get; set; }
             public string AssociatedCustomer { get; set; }
             public string Title { get; set; }
@@ -48,8 +53,9 @@ namespace Mento.ScriptCommon.TestData.Administration
             public string Comments { get; set; }
             public string OriginalName { get; set; }
 
-            public UserExpectedData(string originalname, string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comments)
+            public UserExpectedData(string originalname, string commonName, string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comments)
             {
+                this.CommonName = commonName;
                 this.OriginalName = originalname;
                 this.AccountID = name;
                 this.RealName = realname;
@@ -59,6 +65,6 @@ namespace Mento.ScriptCommon.TestData.Administration
                 this.Telephone = telephone;
                 this.Email = email;
                 this.Comments = comments;
-            }        
+            }       
         }
 }

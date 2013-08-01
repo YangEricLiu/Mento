@@ -36,7 +36,8 @@ namespace Mento.Script.Administration.FunctionPermissionRoleType
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
         }
 
         [Test]

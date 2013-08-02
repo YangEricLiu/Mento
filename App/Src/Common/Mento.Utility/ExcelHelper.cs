@@ -448,7 +448,63 @@ namespace Mento.Utility
                 }
             }
 
-        } 
+        }
+        #endregion
+
+        #region Import Excel to Data Table    
+
+
+        /// <summary> 
+        /// Import Excel to Data Table
+        /// </summary> 
+        /// <remarks>To the start of worksheet</remarks> 
+        /// <param name="workSheetName"></param> 
+        public DataTable GetDataTableFromExcel(string workSheetName)
+        {
+            Excel.Worksheet mySheet = GetWorksheet(workSheetName);  //得到工作表
+
+            return this.GetDataTableFromExcel(mySheet);
+        }
+
+        /// <summary> 
+        /// Import Excel to Data Table
+        /// </summary> 
+        /// <remarks>To the start of worksheet</remarks> 
+        /// <param name="workSheetIndex"></param> 
+        public DataTable GetDataTableFromExcel(int workSheetIndex)
+        {
+            Excel.Worksheet mySheet = GetWorksheet(workSheetIndex);  //得到工作表
+
+            return this.GetDataTableFromExcel(mySheet);
+        }
+
+        /// <summary> 
+        /// Import Excel to Data Table
+        /// </summary> 
+        /// <remarks>To the start of worksheet</remarks> 
+        /// <param name="mySheet"></param> 
+        public DataTable GetDataTableFromExcel(Excel.Worksheet mySheet)
+        {
+            DataTable dt = new DataTable();
+
+            for (int j = 1; j <= mySheet.Cells.CurrentRegion.Columns.Count; j++)
+                dt.Columns.Add();
+
+            for (int i = 1; i <= mySheet.Cells.CurrentRegion.Rows.Count; i++)   //把工作表导入DataTable中
+            {
+                DataRow myRow = dt.NewRow();
+
+                for (int j = 1; j <= mySheet.Cells.CurrentRegion.Columns.Count; j++)
+                {
+                    Excel.Range temp = (Excel.Range)mySheet.Cells[i, j];
+                    string strValue = temp.Text.ToString();
+                    myRow[j - 1] = strValue;
+                }
+                dt.Rows.Add(myRow);
+            }
+
+            return dt;
+        }
 
         #endregion
 
@@ -539,6 +595,44 @@ namespace Mento.Utility
 
             handler.Save();
             handler.Dispose();
+        }
+
+        /// <summary>
+        /// Export a excel to data table
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="sheetName"></param>
+        public static DataTable ImportToDataTable(string filePath, string sheetName)
+        {
+            //Open excel file which restore data view expected data
+            ExcelHelper handler = new ExcelHelper(filePath);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
+
+            //Import data from the start
+            return handler.GetDataTableFromExcel(sheetName);
+        }
+
+        /// <summary>
+        /// Export a excel to data table
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="sheetName"></param>
+        public static DataTable ImportToDataTable(string filePath, int sheetIndex)
+        {
+            //Open excel file which restore data view expected data
+            ExcelHelper handler = new ExcelHelper(filePath);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Excel.Worksheet sheet = handler.GetWorksheet(sheetIndex);
+
+            //Import data from the start
+            return handler.GetDataTableFromExcel(sheetIndex);
         }
 
         /// <summary>

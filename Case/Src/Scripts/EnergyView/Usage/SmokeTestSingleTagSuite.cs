@@ -132,7 +132,7 @@ namespace Mento.Script.EnergyView.Usage
 
             DataPanel.CheckTags(option.InputData.TagNames);
 
-            DataPanel.Toolbar.SetTimeRange(new DateTime(2012, 1, 1), new DateTime(2012, 4, 15));
+            DataPanel.Toolbar.SetDateRange(new DateTime(2012, 1, 1), new DateTime(2012, 4, 15));
 
             DataPanel.Toolbar.View(option.InputData.ViewType);
 

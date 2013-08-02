@@ -451,5 +451,17 @@ namespace Mento.ScriptCommon.Library
                 return _CarbonUsagePanel;
             }
         }
+
+        private static DataViewOperation _DataViewOperation;
+        public static DataViewOperation DataViewOperation
+        {
+            get
+            {
+                if (_DataViewOperation == null)
+                    _DataViewOperation = new DataViewOperation();
+
+                return _DataViewOperation;
+            }
+        }
     }
 }

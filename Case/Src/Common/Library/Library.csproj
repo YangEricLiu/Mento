@@ -26,6 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Mento.ScriptCommon.Library.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -68,6 +72,7 @@
     <Compile Include="Functions\CustomerSettings\AreaDimensionSettings.cs" />
     <Compile Include="Functions\CustomerSettings\AssociateSettings.cs" />
     <Compile Include="Functions\EnergyManagement\CarbonUsagePanel.cs" />
+    <Compile Include="Functions\EnergyManagement\DataViewOperation.cs" />
     <Compile Include="Functions\EnergyManagement\RankPanel.cs" />
     <Compile Include="Functions\EnergyManagement\RadioPanel.cs" />
     <Compile Include="Functions\EnergyManagement\CostPanel.cs" />

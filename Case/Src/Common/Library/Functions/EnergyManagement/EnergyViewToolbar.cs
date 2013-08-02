@@ -48,20 +48,22 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
-        public void SetTimeRange(DateTime startTime, DateTime endTime)
+        public void SetDateRange(DateTime startTime, DateTime endTime)
         {
             int startHour = startTime.Hour, startMinute = startTime.Minute, endHour = endTime.Hour, endMinute = endTime.Minute;
 
+            /*
             if (startMinute != 0 || startMinute != 30 || endMinute != 0 || endMinute != 30)
             {
                 throw new ApiException("Start time and end time must be multiple of half hour.");
             }
+            */
 
             StartDatePicker.SelectDateItem(startTime);
-            StartTimeComboBox.SelectItem(String.Format("{0}:{1}", startHour, startMinute));
+            //StartTimeComboBox.SelectItem(String.Format("{0}:{1}", startHour, startMinute));
 
             EndDatePicker.SelectDateItem(endTime);
-            EndTimeComboBox.SelectItem(String.Format("{0}:{1}", endHour, endMinute));
+            //EndTimeComboBox.SelectItem(String.Format("{0}:{1}", endHour, endMinute));
         }
 
         public void View(EnergyViewType viewType)

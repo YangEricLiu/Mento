@@ -13,8 +13,9 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.ScriptCommon.TestData.EnergyView;
 using Mento.TestApi.TestData;
 using System.Data;
+using Mento.Utility;
 
-namespace Mento.Script.EnergyView.Usage
+namespace Mento.Script.EnergyView.EnergyAnalysis
 {
     /// <summary>
     /// 
@@ -39,23 +40,19 @@ namespace Mento.Script.EnergyView.Usage
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
 
-        /// <summary>
-        /// 1.	Navigate to Energy Management. Select the Building node in Pre-condition from Hierarchy list and go to Energy usage -> Energy Analysis. (用能->能效分析.)	"
-        ///     Successfully navigate to Energy Analysis window.
-        /// 2.	select a hierarchy node	
-        /// 3.	Go to Tag select panel, Select V(1)
-        ///     The trend chart of selected V(1) display.
-        /// 4.	Click "Save to dashboard"(保存到仪表盘), 
-        ///     Click the dashboard addtion button "新增仪表盘"
-        ///     Input valid dashboard name like "仪表盘_A1",and click save.
-        ///     The widget is saved to the new dashboard successfully
-        /// </summary>
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
         public void ViewLineChartOfTagThenClear(EnergyViewOptionData option)
         {
+
+
             EnergyAnalysis.SelectHierarchy(option.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
+            TimeManager.ShortPause();
 
             EnergyAnalysis.CheckTag(option.InputData.TagNames[0]);
 
@@ -65,6 +62,57 @@ namespace Mento.Script.EnergyView.Usage
             TimeManager.LongPause();
 
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            //EnergyViewToolbar.ClickViewButton();
+
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
+        public void TestExcelToDataTable(EnergyViewOptionData option)
+        {
+            string filePath = "D:\\data1.xls";
+            string filePath2 = "D:\\data3.xls";
+
+            DataTable test = JazzFunction.DataViewOperation.ImportToDataTable(filePath, "Sheet1");
+            Assert.IsNotNull(test);
+
+            Assert.AreEqual(2, test.Columns.Count);
+            Assert.AreEqual(7, test.Rows.Count);
+
+            
+            EnergyAnalysis.SelectHierarchy(option.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 22));
+            TimeManager.ShortPause();
+
+            EnergyAnalysis.CheckTag(option.InputData.TagNames[0]);
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            DataTable actual = EnergyAnalysis.GetAllData();
+            Assert.IsNotNull(actual);
+
+            //Assert.AreEqual(2, actual.Columns.Count);
+            //Assert.AreEqual(7, actual.Rows.Count);
+
+            JazzFunction.DataViewOperation.ExportDataTableToExcel(actual, filePath2, "SheetExpected");
+
+            Assert.IsTrue(JazzFunction.DataViewOperation.CompareDataTables(test, actual));
         }
 
     }

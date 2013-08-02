@@ -55,42 +55,114 @@ namespace Mento.ScriptCommon.Library.Functions
         #region Compare Data Tables
 
         /// <summary>
+        /// Compare 2 data table headers, export to another data table for any different
+        /// </summary>
+        /// <param name="expectedDataTable"></param>
+        /// <param name="actualDataTable"></param>
+        /// /// <param name="diversityTable"></param>
+        public bool CompareTableColumnName(DataTable expectedDataTable, DataTable actualDataTable, out DataTable diversityTable)
+        {
+            bool areEqual = true;
+
+            int com = 1;
+
+            DataTable diversityTableTemp = new DataTable();
+            DataColumn rows = new DataColumn("行数", typeof(int));
+            DataColumn expectedValue = new DataColumn("期望值", typeof(string));
+            DataColumn actualValue = new DataColumn("实际值", typeof(string));
+
+            diversityTableTemp.Columns.Add(rows);
+            diversityTableTemp.Columns.Add(expectedValue);
+            diversityTableTemp.Columns.Add(actualValue);
+
+            for (int i = 0; i < expectedDataTable.Columns.Count; i++)
+            {
+                if (!String.Equals(expectedDataTable.Columns[i].ColumnName, actualDataTable.Columns[i].ColumnName))
+                {
+                    areEqual = false;
+
+                    DataRow myRow = diversityTableTemp.NewRow();
+
+                    myRow[0] = com;
+                    myRow[1] = expectedDataTable.Columns[i].ColumnName;
+                    myRow[2] = actualDataTable.Columns[i].ColumnName;
+
+                    diversityTableTemp.Rows.Add(myRow);
+                }
+            }
+
+            diversityTable = diversityTableTemp.Copy();
+
+            return areEqual;
+            
+        }
+
+        /// <summary>
         /// Compare 2 data table, throw exception for the first not equal value
         /// </summary>
         /// <param name="expectedDataTable"></param>
         /// <param name="actualDataTable"></param>
         public bool CompareDataTables(DataTable expectedDataTable, DataTable actualDataTable)
         {
-            string formatString = "The value on row {0} column {1} not equal, expected is {2}, actual is {3}";
+            bool areEqual = true;
+            //string formatString = "The value on row {0} column {1} not equal, expected is {2}, actual is {3}";
+            DataTable diversityTable = new DataTable();
+            DataColumn rows = new DataColumn("行数", typeof(int));
+            DataColumn expectedValue = new DataColumn("期望值", typeof(string));
+            DataColumn actualValue = new DataColumn("实际值", typeof(string));
+
+            diversityTable.Columns.Add(rows);
+            diversityTable.Columns.Add(expectedValue);
+            diversityTable.Columns.Add(actualValue);
 
             if (expectedDataTable == null || actualDataTable == null) 
-            { 
-                return false; 
+            {
+                areEqual = false; 
             }
 
+            
             if (expectedDataTable.Rows.Count != actualDataTable.Rows.Count) 
-            { 
-                return false; 
+            {
+                areEqual = false;
+                throw new Exception(String.Format("The rows count not equal, expected is {0}, actual is {1}", expectedDataTable.Rows.Count, actualDataTable.Rows.Count));   
             }
 
             if (expectedDataTable.Columns.Count != actualDataTable.Columns.Count) 
-            { 
-                return false; 
+            {
+                areEqual = false;
+                throw new Exception(String.Format("The columns count not equal, expected is {0}, actual is {1}", expectedDataTable.Columns.Count, actualDataTable.Columns.Count)); 
+            }
+
+            if (!CompareTableColumnName(expectedDataTable, actualDataTable, out diversityTable))
+            {
+                areEqual = false;
             }
 
             for (int i = 0; i < expectedDataTable.Rows.Count; i++) 
             {
                 for (int j = 0; j < expectedDataTable.Columns.Count; j++) 
                 {
-                    if (expectedDataTable.Rows[i][j].ToString() != actualDataTable.Rows[i][j].ToString())
+                    if (!String.Equals(expectedDataTable.Rows[i][j].ToString(), actualDataTable.Rows[i][j].ToString()))
                     {
-                        throw new Exception(String.Format(formatString, i, j, expectedDataTable.Rows[i][j].ToString(), actualDataTable.Rows[i][j]).ToString());
-                        //return false; 
+                        areEqual = false;
+
+                        DataRow myRow = diversityTable.NewRow();
+
+                        myRow[0] = i + 2;
+                        myRow[1] = expectedDataTable.Rows[i][j].ToString();
+                        myRow[2] = actualDataTable.Rows[i][j].ToString();
+
+                        diversityTable.Rows.Add(myRow);
                     } 
                 } 
-            } 
+            }
 
-            return true; 
+            if (!areEqual)
+            {
+                ExportDataTableToExcel(diversityTable, "D:\\dataOut1.xls", "SheetNot");
+            }        
+
+            return areEqual; 
         }
 
         #endregion

@@ -6,11 +6,14 @@ using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.TestApi.WebUserInterface;
 using System.Data;
+using Mento.Framework.Configuration;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
     public class EnergyAnalysisPanel : EnergyViewPanel
     {
+
+
         #region Controls
         //Select system dimension tree button
         private static Button SelectSystemDimensionButton = JazzButton.EnergyViewSelectSystemDimensionButton;

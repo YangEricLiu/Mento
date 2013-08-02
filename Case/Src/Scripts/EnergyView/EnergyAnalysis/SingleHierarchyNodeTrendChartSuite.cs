@@ -27,7 +27,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [SetUp]
         public void CaseSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UnitKPI);
             TimeManager.MediumPause();
         }
 
@@ -77,24 +78,26 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
         public void TestExcelToDataTable(EnergyViewOptionData option)
         {
-            string filePath = "D:\\data1.xls";
-            string filePath2 = "D:\\data3.xls";
+            string filePath = "D:\\data3.xls";
+            string filePath2 = "D:\\dataExpected1.xls";
 
-            DataTable test = JazzFunction.DataViewOperation.ImportToDataTable(filePath, "Sheet1");
+            /*
+            DataTable test = JazzFunction.DataViewOperation.ImportToDataTable(filePath, "SheetExpected");
             Assert.IsNotNull(test);
 
             Assert.AreEqual(2, test.Columns.Count);
-            Assert.AreEqual(7, test.Rows.Count);
-
+            Assert.AreEqual(22, test.Rows.Count);
+            */
             
-            EnergyAnalysis.SelectHierarchy(option.InputData.Hierarchies);
+            JazzFunction.UnitKPIPanel.SelectHierarchy(option.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 22));
+            EnergyViewToolbar.SetDateRange(new DateTime(2012, 1, 1), new DateTime(2012, 12, 31));
             TimeManager.ShortPause();
 
-            EnergyAnalysis.CheckTag(option.InputData.TagNames[0]);
+            JazzFunction.UnitKPIPanel.CheckTag(option.InputData.TagNames[0]);
+            
 
             EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
@@ -108,11 +111,11 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsNotNull(actual);
 
             //Assert.AreEqual(2, actual.Columns.Count);
-            //Assert.AreEqual(7, actual.Rows.Count);
+            //Assert.AreEqual(22, actual.Rows.Count);
 
             JazzFunction.DataViewOperation.ExportDataTableToExcel(actual, filePath2, "SheetExpected");
 
-            Assert.IsTrue(JazzFunction.DataViewOperation.CompareDataTables(test, actual));
+            //Assert.IsTrue(JazzFunction.DataViewOperation.CompareDataTables(test, actual));
         }
 
     }

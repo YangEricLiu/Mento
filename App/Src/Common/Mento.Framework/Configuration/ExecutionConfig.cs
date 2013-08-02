@@ -25,10 +25,37 @@ namespace Mento.Framework.Configuration
         private const string ISREFRESHSCRIPTSONEXECUTION = "isRefreshScriptsOnExecution";
         private const string ENVIRONMENTSETUPSQLSCRIPT = "environmentSetupSqlScript";
         private const string ENVIRONMENTTEARDOWNSQLSCRIPT = "environmentTearDownSqlScript";
-
-
+        private const string ISCREATEEXPECTEDDATAVIEWEXCELFILE = "isCreateExpectedDataViewExcelFile";
+        private const string EXPECTEDDATAVIEWEXCELFILEDIRECTORY = "expectedDataViewExcelFileDirectory";
+        private const string FAILEDDATAVIEWEXCELFILEDIRECTORY = "failedDataViewExcelFileDirectory";
 
         private static string BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+        public static bool isCreateExpectedDataViewExcelFile
+        {
+            get
+            {
+                bool result = false;
+                bool.TryParse(GetExecutionConfig(ISCREATEEXPECTEDDATAVIEWEXCELFILE), out result);
+                return result;
+            }
+        }
+
+        public static string expectedDataViewExcelFileDirectory
+        {
+            get
+            {
+                return GetExecutionConfig(EXPECTEDDATAVIEWEXCELFILEDIRECTORY);
+            }
+        }
+
+        public static string failedDataViewExcelFileDirectory
+        {
+            get
+            {
+                return GetExecutionConfig(FAILEDDATAVIEWEXCELFILEDIRECTORY);
+            }
+        }
 
         public static string Browser
         {

@@ -488,9 +488,14 @@ namespace Mento.Utility
             DataTable dt = new DataTable();
 
             for (int j = 1; j <= mySheet.Cells.CurrentRegion.Columns.Count; j++)
-                dt.Columns.Add();
+            {
+                Excel.Range temp = (Excel.Range)mySheet.Cells[1, j];
+                string strValue = temp.Text.ToString();
 
-            for (int i = 1; i <= mySheet.Cells.CurrentRegion.Rows.Count; i++)   //把工作表导入DataTable中
+                dt.Columns.Add(strValue);
+            }
+
+            for (int i = 2; i <= mySheet.Cells.CurrentRegion.Rows.Count; i++)   //把工作表导入DataTable中
             {
                 DataRow myRow = dt.NewRow();
 

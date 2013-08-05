@@ -19,7 +19,7 @@ namespace Mento.Script.Administration.User
 {
     [TestFixture]
     [Owner("Greenie")]
-    [CreateTime("2013-07-31")]
+    [CreateTime("2013-08-01")]
     [ManualCaseID("TC-J1-FVT-UserManagement-Modify-001")]
     public class UserModifyInvalidSuite : TestSuiteBase
     {
@@ -39,20 +39,25 @@ namespace Mento.Script.Administration.User
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-UserManagement-Add-001-1")]
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserModifyInvalidSuite), "TC-J1-FVT-UserManagement-Add-001-1")]
+        [CaseID("TC-J1-FVT-UserManagement-Modify-001-1")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserModifyInvalidSuite), "TC-J1-FVT-UserManagement-Modify-001-1")]
         public void EmptyField(UserSettingsData input)
         {
-            //Click "+用户"
-            UserSettings.ClickAddUser();
+            //focus a user
+            UserSettings.FocusOnUser(input.InputData.CommonName);
+            UserSettings.ClickModifyButton();
+            TimeManager.ShortPause();
+            Assert.IsFalse(UserSettings.IsNameFieldEnable(input.InputData.CommonName));
+            UserSettings.FillInRealName(input.InputData.RealName);
+            UserSettings.FillInEmail(input.InputData.Email);
+            UserSettings.FillInTelephone(input.InputData.Telephone);
+            //UserSettings.FillInType(input.InputData.Type);
+            //UserSettings.FillInTitle(input.InputData.Title);
             TimeManager.ShortPause();
             UserSettings.ClickSaveButton();
             TimeManager.ShortPause();
-            //problem here @@@@@@@@@@@@@@
+         
             //Verify
-            Assert.IsTrue(UserSettings.IsCommonNameInvalid());
-            Assert.IsTrue(UserSettings.IsCommonNameInvalidMsgCorrect(input.ExpectedData));
-
             Assert.IsTrue(UserSettings.IsRealNameInvalid());
             Assert.IsTrue(UserSettings.IsRealNameInvalidMsgCorrect(input.ExpectedData));
 
@@ -61,34 +66,39 @@ namespace Mento.Script.Administration.User
 
             Assert.IsTrue(UserSettings.IsTelephoneInvalid());
             Assert.IsTrue(UserSettings.IsTelephoneInvalidMsgCorrect(input.ExpectedData));
-
+            /*
             Assert.IsTrue(UserSettings.IsUserTypeInvalid());
             Assert.IsTrue(UserSettings.IsTypeInvalidMsgCorrect(input.ExpectedData));
 
             Assert.IsTrue(UserSettings.IsUserTitleInvalid());
             Assert.IsTrue(UserSettings.IsTitleInvalidMsgCorrect(input.ExpectedData));
+             */
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-UserManagement-Add-001-2")]
+        [CaseID("TC-J1-FVT-UserManagement-Modify-001-2")]
         [IllegalInputValidation(typeof(UserSettingsData[]))]
-        public void AddInvalidInput(UserSettingsData input)
+        public void ModifyInvalidInput(UserSettingsData input)
         {
-            //Click "+用户"
-            UserSettings.ClickAddUser();
+            //focus a user
+            string userName = "UserForCheckAll";
+            UserSettings.FocusOnUser(userName);
+            UserSettings.ClickModifyButton();
             TimeManager.ShortPause();
-            UserSettings.FillInAddUser(input.InputData);
-            TimeManager.MediumPause();
+
+            Assert.IsFalse(UserSettings.IsNameFieldEnable(userName));
+            UserSettings.FillInRealName(input.InputData.RealName);
+            UserSettings.FillInEmail(input.InputData.Email);
+            UserSettings.FillInTelephone(input.InputData.Telephone);
+            //UserSettings.FillInType(input.InputData.Type);
+            //UserSettings.FillInTitle(input.InputData.Title);
+
+            TimeManager.ShortPause();
             UserSettings.ClickSaveButton();
-            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
             Assert.IsFalse(UserSettings.IsUserOnList(input.InputData.CommonName));
             //Verify
-
-            //problem here @@@@@@@@@@@@@@ error message should ask UI
-            Assert.IsTrue(UserSettings.IsCommonNameInvalid());
-            //Assert.IsTrue(UserSettings.IsCommonNameInvalidMsgCorrect(input.ExpectedData));
 
             Assert.IsTrue(UserSettings.IsRealNameInvalid());
             Assert.IsTrue(UserSettings.IsRealNameInvalidMsgCorrect(input.ExpectedData));
@@ -108,38 +118,43 @@ namespace Mento.Script.Administration.User
         }
         
         [Test]
-        [CaseID("TC-J1-FVT-UserManagement-Add-001-3")]
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserModifyInvalidSuite), "TC-J1-FVT-UserManagement-Add-001-3")]
-        public void AddUserCancel(UserSettingsData input)
+        [CaseID("TC-J1-FVT-UserManagement-Modify-001-3")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserModifyInvalidSuite), "TC-J1-FVT-UserManagement-Modify-001-3")]
+        public void ModifyUserCancel(UserSettingsData input)
         {
-            //Click "+用户"
-            UserSettings.ClickAddUser();
+            //focus a user
+            UserSettings.FocusOnUser(input.InputData.CommonName);
+            UserSettings.ClickModifyButton();
             TimeManager.ShortPause();
-            UserSettings.FillInAddUser(input.InputData);
-            TimeManager.MediumPause();
+
+            Assert.IsFalse(UserSettings.IsNameFieldEnable(input.InputData.CommonName));
+            UserSettings.FillInRealName(input.InputData.RealName);
+            UserSettings.FillInEmail(input.InputData.Email);
+            UserSettings.FillInTelephone(input.InputData.Telephone);
+            UserSettings.FillInType(input.InputData.Type);
+            UserSettings.FillInTitle(input.InputData.Title);
+
+            TimeManager.ShortPause();
             UserSettings.ClickCancelButton();
             TimeManager.ShortPause();
 
-            Assert.IsFalse(UserSettings.IsUserOnList(input.InputData.CommonName));
+            Assert.IsTrue(UserSettings.FocusOnUser(input.InputData.CommonName));
+            Assert.AreEqual(UserSettings.GetCommonNameValue(),input.ExpectedData.CommonName);
+            Assert.AreEqual(UserSettings.GetRealNameValue(),input.ExpectedData.RealName);
+            Assert.AreEqual(UserSettings.GetTitleValue(), input.ExpectedData.Title);
+            Assert.AreEqual(UserSettings.GetTypeValue(), input.ExpectedData.Type);
+            Assert.AreEqual(UserSettings.GetTelephoneValue(), input.ExpectedData.Telephone);
         }
         
         [Test]
-        [CaseID("TC-J1-FVT-UserManagement-Add-001-4")]
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserModifyInvalidSuite), "TC-J1-FVT-UserManagement-Add-001-4")]
-        public void AddUserAlreadyExist(UserSettingsData input)
+        [CaseID("TC-J1-FVT-UserManagement-Modify-001-4")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserModifyInvalidSuite), "TC-J1-FVT-UserManagement-Modify-001-4")]
+        public void ModifyUserNameFailed(UserSettingsData input)
         {
-            //Click "+用户"
-            UserSettings.ClickAddUser();
+            UserSettings.FocusOnUser(input.InputData.CommonName);
+            UserSettings.ClickModifyButton();
             TimeManager.ShortPause();
-            UserSettings.FillInAddUser(input.InputData);
-            TimeManager.MediumPause();
-            UserSettings.ClickSaveButton();
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
-            
-            //Verify
-            UserSettings.IsCommonNameInvalid();
-            UserSettings.IsCommonNameInvalidMsgCorrect(input.ExpectedData);
+            Assert.IsFalse(UserSettings.IsNameFieldEnable(input.InputData.CommonName));
         }
     }
 }

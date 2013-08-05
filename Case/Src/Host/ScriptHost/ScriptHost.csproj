@@ -187,6 +187,9 @@
     <None Include="Data\Administration\TOU\TOUPulsePeakModifyValidSuite\TC-J1-FVT-TOUTariffSettingPulse-Modify-101.json" />
     <None Include="Data\Administration\TOU\SmokeTestTOUPulsePeakTariffSuite\TC-J1-SmokeTest-026.json" />
     <None Include="Data\Administration\TOU\SmokeTestTOUBasicTariffSuite\TC-J1-SmokeTest-025.json" />
+    <None Include="Data\Administration\User\SendInitrialPassword\TC-J1-FVT-UserManagement-SendInitialPasswordLink-2.json" />
+    <None Include="Data\Administration\User\SendInitrialPassword\TC-J1-FVT-UserManagement-SendInitialPasswordLink-1.json" />
+    <None Include="Data\Administration\User\UserAddInvalidSuite\TC-J1-FVT-UserManagement-Add-001-2.json" />
     <None Include="Data\Administration\User\UserAddInvalidSuite\TC-J1-FVT-UserManagement-Add-001-4.json" />
     <None Include="Data\Administration\User\UserAddInvalidSuite\TC-J1-FVT-UserManagement-Add-001-1.json" />
     <None Include="Data\Administration\User\UserAddInvalidSuite\TC-J1-FVT-UserManagement-Add-001-3.json" />
@@ -199,6 +202,16 @@
     <None Include="Data\Administration\User\UserAddValidSuite\TC-J1-FVT-UserManagement-Add-101-3.json" />
     <None Include="Data\Administration\User\UserAddValidSuite\TC-J1-FVT-UserManagement-Add-101-2.json" />
     <None Include="Data\Administration\User\UserAddValidSuite\TC-J1-FVT-UserManagement-Add-101-1.json" />
+    <None Include="Data\Administration\User\UserDeleteSuite\TC-J1-FVT-UserManagement-Delete-3.json" />
+    <None Include="Data\Administration\User\UserDeleteSuite\TC-J1-FVT-UserManagement-Delete-2.json" />
+    <None Include="Data\Administration\User\UserDeleteSuite\TC-J1-FVT-UserManagement-Delete-1.json" />
+    <None Include="Data\Administration\User\UserModifyInValidSuite\TC-J1-FVT-UserManagement-Modify-001-4.json" />
+    <None Include="Data\Administration\User\UserModifyInValidSuite\TC-J1-FVT-UserManagement-Modify-001-1.json" />
+    <None Include="Data\Administration\User\UserModifyInValidSuite\TC-J1-FVT-UserManagement-Modify-001-2.json" />
+    <None Include="Data\Administration\User\UserModifyInValidSuite\TC-J1-FVT-UserManagement-Modify-001-3.json" />
+    <None Include="Data\Administration\User\UserModifyValidSuite\TC-J1-FVT-UserManagement-Modify-101-1.json" />
+    <None Include="Data\Administration\User\UserModifyValidSuite\TC-J1-FVT-UserManagement-Modify-101-2.json" />
+    <None Include="Data\Administration\User\UserModifyValidSuite\TC-J1-FVT-UserManagement-Modify-101-3.json" />
     <None Include="Data\CommonInputData.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\AddInvalidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-SameAreaNodes.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-4.json" />

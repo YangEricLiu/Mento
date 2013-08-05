@@ -43,6 +43,7 @@ namespace Mento.Script.Administration.User
         [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserModifyValidSuite), "TC-J1-FVT-UserManagement-Modify-101-1")]
         public void ModifyValidUser(UserSettingsData input)
         {
+            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@
             //Click "+用户"
             UserSettings.ClickAddUser();
             TimeManager.ShortPause();
@@ -51,9 +52,7 @@ namespace Mento.Script.Administration.User
             UserSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
-
             Assert.IsTrue(UserSettings.IsUserOnList(input.InputData.CommonName));
-          
         }
 
         [Test]
@@ -61,16 +60,29 @@ namespace Mento.Script.Administration.User
         [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserModifyValidSuite), "TC-J1-FVT-UserManagement-Modify-101-2")]
         public void EmptyItemNotDisplay(UserSettingsData input)
         {
-            //Click "+用户"
-            UserSettings.ClickAddUser();
+            //focus a user
+            UserSettings.FocusOnUser(input.InputData.CommonName);
+            UserSettings.ClickModifyButton();
             TimeManager.ShortPause();
-            UserSettings.FillInAddUser(input.InputData);
-            TimeManager.MediumPause();
+
+            UserSettings.FillInRealName(input.InputData.RealName);
+            UserSettings.FillInEmail(input.InputData.Email);
+            UserSettings.FillInTelephone(input.InputData.Telephone);
+            UserSettings.FillInType(input.InputData.Type);
+            UserSettings.FillInTitle(input.InputData.Title);
+            UserSettings.FillInComment(input.InputData.Comments);
+            TimeManager.ShortPause();
             UserSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
+            //Verify
+            Assert.IsTrue(UserSettings.FocusOnUser(input.InputData.CommonName));
+            Assert.AreEqual(UserSettings.GetCommonNameValue(), input.ExpectedData.CommonName);
+            Assert.AreEqual(UserSettings.GetRealNameValue(), input.ExpectedData.RealName);
+            Assert.AreEqual(UserSettings.GetTitleValue(), input.ExpectedData.Title);
+            Assert.AreEqual(UserSettings.GetTypeValue(), input.ExpectedData.Type);
+            Assert.AreEqual(UserSettings.GetTelephoneValue(), input.ExpectedData.Telephone);
             Assert.IsTrue(UserSettings.IsUserCommentHidden());
-            Assert.IsTrue(UserSettings.IsUserOnList(input.InputData.CommonName));
             
         }
         [Test]
@@ -90,6 +102,5 @@ namespace Mento.Script.Administration.User
             }
             Assert.IsTrue(UserSettings.AreTitleDisplayAllItem());
         }
-        
     }
 }

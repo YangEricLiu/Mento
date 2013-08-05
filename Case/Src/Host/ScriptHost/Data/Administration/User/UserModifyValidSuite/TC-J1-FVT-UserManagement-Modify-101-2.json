@@ -1,0 +1,24 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"CommonName":"UserForCheckAll",
+			"RealName":"UserD",
+			"Title":"技术人员",
+			"Type":"客户管理员",
+			"Telephone":"123456789",
+			"Email":"2@2.com",
+			"Comments":"",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"UserForCheckAll",
+			"RealName":"UserD",
+			"Title":"技术人员",
+			"Type":"客户管理员",
+			"Telephone":"123456789",
+			"Email":"2@2.com",
+			"Comments":"",
+		}
+	},
+]

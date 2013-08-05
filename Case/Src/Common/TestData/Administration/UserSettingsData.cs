@@ -24,8 +24,10 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string Telephone { get; set; }
         public string Email { get; set; }
         public string Comments { get; set; }
+        public string[] TypeList { get; set; }
+        public string[] FunctionScopeList { get; set; }
 
-        public UserInputData(string originalname,string commonName, string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comments)
+        public UserInputData(string originalname,string commonName, string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comments,string[] typeList,string[] functionScopeList)
         {
             this.CommonName = commonName;
             this.OriginalName = originalname;
@@ -37,6 +39,8 @@ namespace Mento.ScriptCommon.TestData.Administration
             this.Telephone = telephone;
             this.Email = email;
             this.Comments = comments;
+            this.TypeList = typeList;
+            this.FunctionScopeList = functionScopeList;
         }
     }
     public class UserExpectedData : ExpectedTestDataBase
@@ -52,8 +56,11 @@ namespace Mento.ScriptCommon.TestData.Administration
             public string Email { get; set; }
             public string Comments { get; set; }
             public string OriginalName { get; set; }
+            public string Message { get; set; }
+            public string[] TypeList { get; set; }
+            public string[] FunctionScopeList { get; set; }
 
-            public UserExpectedData(string originalname, string commonName, string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comments)
+            public UserExpectedData(string originalname, string commonName, string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comments, string message, string[] typeList, string[] functionScopeList)
             {
                 this.CommonName = commonName;
                 this.OriginalName = originalname;
@@ -65,6 +72,9 @@ namespace Mento.ScriptCommon.TestData.Administration
                 this.Telephone = telephone;
                 this.Email = email;
                 this.Comments = comments;
+                this.Message = message;
+                this.TypeList = typeList;
+                this.FunctionScopeList = functionScopeList;
             }       
         }
 }

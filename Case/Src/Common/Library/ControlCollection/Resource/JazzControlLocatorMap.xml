@@ -58,6 +58,10 @@
             <add key="ButtonUserCancel" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
             <add key="ButtonUserModify" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
             <add key="ButtonUserDelete" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
+            
+            <add key="ButtonUserSendEmail" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='发送邮件']]" type="XPath"/>
+            <add key="LinkButtonUserViewFunctionDetail" value="//div[@id='st-user-properties-form']//div[contains(@id,'remlink') and a[text()='查看权限详细']]" type="XPath"/>
+            
             <add key="ButtonUserGeneratePassword" value="st-user-resetpassword-btnInnerEl" type="ID"/>
             <add key="ButtonUserTypePermissionModify" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
             <add key="ButtonUserTypePermissionRefresh" value="st-usertype-refresh" type="ID"/>
@@ -782,6 +786,10 @@
   <UserTypeRole>
       <add key="ContainerPermissionCustomerizeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[2]/div" type="XPath"/>
       <add key="ContainerPermissionPublicTypeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[1]/div" type="XPath"/>
+      
+      <add key="ContainerDisplayPermissionPublicTypeItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset[1]/div" type="XPath"/>
+      <add key="ContainerDisplayPermissionCustomerizeItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset[2]/div" type="XPath"/>
+      
   </UserTypeRole>
 </Container>
 </WebElement>

@@ -2,8 +2,8 @@
 	{		
 		"InputData":
 		{
-			"CommonName":"UserForCheckAll",
-			"RealName":"UserForCheckAll",
+			"CommonName":"UserEmptyComments",
+			"RealName":"UserEmptyCommentss",
 			"Title":"技术人员",
 			"Type":"客户管理员",
 			"Telephone":"010-12345",
@@ -11,7 +11,6 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"该名称已存在",
 		}
 	},
 ]

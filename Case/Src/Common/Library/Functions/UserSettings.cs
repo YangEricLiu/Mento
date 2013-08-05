@@ -32,9 +32,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button CancelButton = JazzButton.UserCancelButton;
         private static Button DeleteButton = JazzButton.UserDeleteButton;
         private static Button GeneratePasswordButton = JazzButton.UserGeneratePasswordButton;
-
-
-        //private static TabButton DataPermissionTab = JazzButton
+        
+        private static Button EmailSendButton = JazzButton.UserSendEmailButton;
+        private static LinkButton ViewFunctionDetailLinkButton = JazzButton.LinkButtonUserViewFunctionDetail;
 
         private static TextField CommonNameTextField = JazzTextField.UserNameTextField;
         private static TextField NameTextField = JazzTextField.UserNameTextField;
@@ -209,7 +209,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInAddUser(UserInputData input)
         {
 
-            CommonNameTextField.Fill(input.CommonName);
+            CommonNameTextField.Fill(input.AccountID);
             RealNameTextField.Fill(input.RealName);
             TelephoneTextField.Fill(input.Telephone);
             EmailTextField.Fill(input.Email);
@@ -238,6 +238,15 @@ namespace Mento.ScriptCommon.Library.Functions
             NameTextField.Fill(name);
         }
 
+        /// <summary>
+        /// verfiy the namefield disalbe to input
+        /// </summary>
+        /// <param name="name">user name</param>
+        /// <returns></returns>
+        public Boolean IsNameFieldEnable(string name)
+        {
+           return NameTextField.IsFieldEnabled();
+        }
 
         /// <summary>
         /// Input real name of the new user 
@@ -410,7 +419,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>title value</returns>
         public string GetTitleValue()
         {
-            return TitleTextField.GetValue();
+            //return TitleTextField.GetValue();
+            return UserTitleComboxBox.GetValue();
         }
         
         /// <summary>
@@ -422,6 +432,15 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             //return comboBoxInstance.GetValue(ElementKey.HierarchyComment);
             return CommentTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Click sendEmailButton
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public void ClickEmailSendButton()
+        {
+            EmailSendButton.Click();
         }
 
         #endregion
@@ -443,9 +462,26 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>whether the invalid message is ture</returns>
         public Boolean IsCommonNameInvalidMsgCorrect(UserExpectedData output)
         {
-            return NameTextField.GetInvalidTips().Contains(output.CommonName);
+            return NameTextField.GetInvalidTips().Contains(output.AccountID);
         }
 
+        /// <summary>
+        /// Judge whether the  delete button is enabled
+        /// </summary>
+        /// <returns>True if the button is invalid, false if not</returns>
+        public Boolean IsDeleteButtonEnabled()
+        {
+            return DeleteButton.IsEnabled();
+        }
+
+        /// <summary>
+        /// Judge whether the  delete button is display
+        /// </summary>
+        /// <returns>True if the button is invalid, false if not</returns>
+        public Boolean IsDeleteButtonDisplay()
+        {
+            return DeleteButton.IsDisplayed();
+        }
 
         /// <summary>
         /// Judge whether the realname textfield is invalid
@@ -501,7 +537,13 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>whether the invalid message is ture</returns>
         public Boolean IsEmailInvalidMsgCorrect(UserExpectedData output)
         {
-            return TelephoneTextField.GetInvalidTips().Contains(output.Email);
+            string error = TelephoneTextField.GetInvalidTips();
+            return EmailTextField.GetInvalidTips().Contains(output.Email);
+        }
+
+        public string EmailInvalidMsg()
+        {
+            return EmailTextField.GetInvalidTips();
         }
 
         /// <summary>
@@ -597,6 +639,61 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return CommentTextField.IsTextFieldHidden();
         }
+
+        /// <summary>
+        /// Judge whether the sendEmailButton is enabled
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsEmailSendButtonEnabled()
+        {
+
+            return EmailSendButton.IsEnabled();
+        }
+
+        /// <summary>
+        /// Judge whether the sendEmailButton is displayed
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsEmailSendButtonDispalyed()
+        {
+
+            return EmailSendButton.IsDisplayed();
+        }
+
+        /// <summary>
+        /// Judge whether the view function permission is enabled
+        /// </summary>
+        /// <returns>True if it is enable, false if not</returns>
+        public Boolean IsViewFunctionPermissionEnabled()
+        {
+            return ViewFunctionDetailLinkButton.IsEnabled();
+        }
+
+        /// <summary>
+        /// Judge whether the view function permission is displayed
+        /// </summary>
+        /// <returns>True if it is display, false if not</returns>
+        public Boolean IsViewFunctionPermissionDispalyed()
+        {
+            return ViewFunctionDetailLinkButton.IsDisplayed();
+        }
+
+        /// <summary>
+        /// Click View function permission link button
+        /// </summary>
+        public void ClickViewFunctionPermissionLinkButton()
+        {
+            ViewFunctionDetailLinkButton.ClickLink();
+        }
+        /*
+        /// <summary>
+        /// Verify the permissions are same as permissionName
+        /// </summary>
+        public void VerifyPermission()
+        {
+            ViewFunctionDetailLinkButton.ClickLink();
+        }
+        */
         #endregion
     }
 }

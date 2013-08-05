@@ -29,12 +29,12 @@ namespace Mento.Script.Administration.User
         public void CaseSetUp()
         {
             UserSettings.NavigatorToUserSetting();
-            TimeManager.MediumPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
+            
             JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
         }
 
@@ -48,7 +48,6 @@ namespace Mento.Script.Administration.User
             TimeManager.ShortPause();
             UserSettings.ClickSaveButton();
             TimeManager.ShortPause();
-            //problem here @@@@@@@@@@@@@@
             //Verify
             Assert.IsTrue(UserSettings.IsCommonNameInvalid());
             Assert.IsTrue(UserSettings.IsCommonNameInvalidMsgCorrect(input.ExpectedData));
@@ -86,18 +85,22 @@ namespace Mento.Script.Administration.User
             Assert.IsFalse(UserSettings.IsUserOnList(input.InputData.CommonName));
             //Verify
 
-            //problem here @@@@@@@@@@@@@@ error message should ask UI
+            
             Assert.IsTrue(UserSettings.IsCommonNameInvalid());
-            //Assert.IsTrue(UserSettings.IsCommonNameInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(UserSettings.IsCommonNameInvalidMsgCorrect(input.ExpectedData));
 
             Assert.IsTrue(UserSettings.IsRealNameInvalid());
             Assert.IsTrue(UserSettings.IsRealNameInvalidMsgCorrect(input.ExpectedData));
 
             Assert.IsTrue(UserSettings.IsEmailInvalid(input.ExpectedData));
             Assert.IsTrue(UserSettings.IsEmailInvalidMsgCorrect(input.ExpectedData));
+            //Assert.AreEqual("www", UserSettings.EmailInvalidMsg());
 
             Assert.IsTrue(UserSettings.IsTelephoneInvalid());
             Assert.IsTrue(UserSettings.IsTelephoneInvalidMsgCorrect(input.ExpectedData));
+
+            Assert.IsTrue(UserSettings.IsCommentsInvalid(input.ExpectedData));
+            Assert.IsTrue(UserSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
             /*
             UserSettings.IsUserTypeInvalid();
             UserSettings.IsTypeInvalidMsgCorrect(input.ExpectedData);

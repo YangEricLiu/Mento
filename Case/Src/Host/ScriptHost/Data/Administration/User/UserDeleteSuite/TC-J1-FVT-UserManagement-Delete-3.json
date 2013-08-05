@@ -1,0 +1,12 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"CommonName":"AdminForDelete",
+		},
+		"ExpectedData":
+		{
+			"Message":"  您将同时删除该用户下的所有已配置仪表盘。\r\n确定\r\n取消",
+		}
+	}
+]

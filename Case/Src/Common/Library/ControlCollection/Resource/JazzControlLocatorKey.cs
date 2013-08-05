@@ -60,12 +60,18 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonUserCancel = "ButtonUserCancel";
         public static string ButtonUserModify = "ButtonUserModify";
         public static string ButtonUserDelete = "ButtonUserDelete";
+
+        public static string ButtonUserSendEmail = "ButtonUserSendEmail";
+        public static string LinkButtonUserViewFunctionDetail = "LinkButtonUserViewFunctionDetail";
+
         public static string ButtonUserGeneratePassword = "ButtonUserGeneratePassword";
         public static string ButtonUserTypePermissionModify = "ButtonUserTypePermissionModify";
         public static string ButtonUserTypePermissionRefresh = "ButtonUserTypePermissionRefresh";
         public static string ButtonUserTypePermissionSave = "ButtonUserTypePermissionSave";
         public static string ButtonUserTypePermissionCancel = "ButtonUserTypePermissionCancel";
         public static string LinkButtonUserAssociatedCustomer = "LinkButtonUserAssociatedCustomer";
+
+
         #endregion
 
         #region UserProfile
@@ -850,6 +856,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region User
+        public static string ContainerDisplayPermissionCustomerizeItems = "ContainerDisplayPermissionCustomerizeItems";
+        public static string ContainerDisplayPermissionPublicTypeItems = "ContainerDisplayPermissionPublicTypeItems";
+        #endregion
         #endregion
 
     }

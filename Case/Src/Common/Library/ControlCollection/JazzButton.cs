@@ -352,6 +352,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button UserTypePermissionRefreshButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionRefresh);
         public static Button TabButtonUserBasicProperties = GetControl<Button>(JazzControlLocatorKey.TabButtonUserBasicProperties);
         public static Button TabButtonUserDataPermission = GetControl<Button>(JazzControlLocatorKey.TabButtonUserDataPermission);
+
+        public static LinkButton LinkButtonUserViewFunctionDetail = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonUserViewFunctionDetail);
+        public static Button UserSendEmailButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserSendEmail);
         #endregion
         #region User Profile
         public static Button UserProfileButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserProfile);

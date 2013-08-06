@@ -3,8 +3,14 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
-			"TagNames":["V1_BuildingBC"],
+			"AreaDimensionPath":["楼宇BC", "一层"],
+			"TagNames":["V1_BuildingBC", "V2_BuildingBC"],
 			"ViewType":"Line",
+			"failedFileName":["F-SingleHierarchyNode-TrendChart-101-1-D-V1_BuildingBC.xls", "F-SingleHierarchyNode-TrendChart-101-1-D-V2_BuildingBC.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["SingleHierarchyNodeTrendChart101-1-D-V1_BuildingBC.xls", "SingleHierarchyNode-TrendChart-101-1-D-V2_BuildingBC.xls"],
 		}
 	}
 ]

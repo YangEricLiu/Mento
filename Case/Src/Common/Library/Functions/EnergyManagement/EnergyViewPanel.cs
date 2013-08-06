@@ -15,6 +15,12 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SelectHierarchyButton = JazzButton.EnergyViewSelectHierarchyButton;
         private static HierarchyTree HierarchyTree = JazzTreeView.EnergyViewHierarchyTree;
 
+        private static Button EnergyDisplayStepHourButton = JazzButton.EnergyDisplayStepHourButton;
+        private static Button EnergyDisplayStepDayButton = JazzButton.EnergyDisplayStepDayButton;
+        private static Button EnergyDisplayStepWeekButton = JazzButton.EnergyDisplayStepWeekButton;
+        private static Button EnergyDisplayStepMonthButton = JazzButton.EnergyDisplayStepMonthButton;
+        private static Button EnergyDisplayStepYearButton = JazzButton.EnergyDisplayStepYearButton;
+
         //Chart
         protected abstract Chart Chart
         {
@@ -30,6 +36,43 @@ namespace Mento.ScriptCommon.Library.Functions
 
         //Toolbar
         public EnergyViewToolbar Toolbar = new EnergyViewToolbar();
+
+        #region common
+
+        /// <summary>
+        /// Click display step button
+        /// </summary>
+        /// <param name="step"></param>
+        public void ClickDisplayStep(DisplayStep step)
+        {
+            switch (step)
+            {
+                case DisplayStep.Hour:
+                    //click "Hourly" step
+                    EnergyDisplayStepHourButton.Click();
+                    break;
+                case DisplayStep.Day:
+                    //click "Daily" step
+                    EnergyDisplayStepDayButton.Click();
+                    break;
+                case DisplayStep.Week:
+                    //click "Weekly" step
+                    EnergyDisplayStepWeekButton.Click();
+                    break;
+                case DisplayStep.Month:
+                    //click "Monthly" step
+                    EnergyDisplayStepMonthButton.Click();
+                    break;
+                case DisplayStep.Year:
+                    //click "Year" step
+                    EnergyDisplayStepYearButton.Click();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        #endregion
 
         #region Hierarchy operations
         public Boolean SelectHierarchy(string[] hierarchyNames)
@@ -80,6 +123,10 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return Chart.HasDrawnDistribute();
         }
+        public bool IsDataViewDrawn()
+        {
+            return Chart.HasDrawnDataView();
+        }
         public bool IsLegendDrawn()
         {
             return Chart.LegendExists();
@@ -93,4 +140,5 @@ namespace Mento.ScriptCommon.Library.Functions
     }
 
     public enum TagTabs { HierarchyTag, SystemDimensionTab, AreaDimensionTab, }
+    public enum DisplayStep { Hour, Day, Week, Month, Year, Default}
 }

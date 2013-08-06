@@ -6,7 +6,7 @@ using Mento.TestApi.TestData;
 
 namespace Mento.ScriptCommon.TestData.EnergyView
 {
-    public class EnergyViewOptionData : TestDataBase<EnergyViewOptionInput, ExpectedTestDataBase>
+    public class EnergyViewOptionData : TestDataBase<EnergyViewOptionInput, EnergyViewOptionOutput>
     {
     }
 
@@ -14,13 +14,24 @@ namespace Mento.ScriptCommon.TestData.EnergyView
     { 
         public string[] Hierarchies { get; set; }
 
+        public string[] AreaDimensionPath { get; set; }
+
+        public string[] SystemDimensionPath { get; set; }
+
         public string[] TagNames { get; set; }
+
+        public string[] failedFileName { get; set; }
 
         public EnergyViewType ViewType { get; set; }
 
         public DefaultTimeRange? DefaultTimeRange { get; set; }
 
         public DashboardInformation DashboardInfo { get; set; }
+    }
+
+    public class EnergyViewOptionOutput : ExpectedTestDataBase
+    {
+        public string[] expectedFileName { get; set; }
     }
 
 

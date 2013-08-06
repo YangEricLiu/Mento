@@ -3,6 +3,7 @@
   <!--Common-->
   <add key="LoadingMask" value = "mainLoadingMask" type ="ID"/>
   <add key="SubMaskLoadingLocator" value = "//div[contains(@id, 'loadmask') and contains(@class, 'x-loading-spinner-large')]" type ="XPath"/>
+  <add key="ChartMaskerLoadingLocator" value = "//div[contains(@class, 'x-mask-chart-msg-default') and not(contains(@style, 'display: none;'))]" type ="XPath"/>
   <!--<add key="CreateSuccessMessageBox" value="//div[contains(@class,'x-message-box') and div/div/div/div/em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
   <add key="CreateSuccessMessageBoxOkButton" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>-->
 

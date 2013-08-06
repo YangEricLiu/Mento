@@ -21,14 +21,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// 
     /// </summary>
     [TestFixture]
-    [ManualCaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101"), CreateTime("2013-07-31"), Owner("Emma")]
-    public class SingleHierarchyNodeTrendChartSuite : TestSuiteBase
+    [ManualCaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101"), CreateTime("2013-08-06"), Owner("Emma")]
+    public class SingleHierarchyNodeDataViewSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
-            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UnitKPI);
             TimeManager.MediumPause();
         }
 
@@ -44,25 +43,27 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
 
         [Test]
-        [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
-        public void ViewLineChartOfTagThenClear(EnergyViewOptionData input)
+        [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-1")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-1")]
+        public void ViewDataViewOfTagThenClear(EnergyViewOptionData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
+            TimeManager.MediumPause();
             
+            //Set date range
             EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
             TimeManager.ShortPause();
 
+            //Check tag and view data view
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
+            TimeManager.MediumPause();
 
-            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
+            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
 
             //Verify tag value
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
@@ -79,46 +80,31 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.LongPause();
 
             EnergyAnalysis.CheckTag(input.InputData.TagNames[1]);
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.Line);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
-            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-        }
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
+            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-        [Test]
-        [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
-        public void TestExcelToDataTable(EnergyViewOptionData input)
-        {
-            //string filePath = "D:\\data3.xls";
-            string filePath2 = "D:\\dataExpected1.xls";
-
-
-            //DataTable test = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath2, JazzFunction.DataViewOperation.sheetNameExpected);
-            //Assert.IsNotNull(test);
-
-            JazzFunction.UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies);
+            //Uncheck v2, and select another tag under system dimension
+            EnergyAnalysis.UncheckTag(input.InputData.TagNames[1]);
+            EnergyAnalysis.SwitchTagTab(TagTabs.SystemDimensionTab);
+            EnergyAnalysis.SelectSystemDimension(input.InputData.SystemDimensionPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            JazzFunction.UnitKPIPanel.SetDateRange(new DateTime(2012, 1, 1), new DateTime(2012, 12, 31));
-            TimeManager.ShortPause();
-
-            JazzFunction.UnitKPIPanel.CheckTag(input.InputData.TagNames[0]);
-            
-
-            EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[2]);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
-            DataTable actual = JazzFunction.UnitKPIPanel.GetAllData();
-            Assert.IsNotNull(actual);
+            //Uncheck v3, and clear all data
+            EnergyAnalysis.UncheckTag(input.InputData.TagNames[2]);
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
         }
 
     }

@@ -95,19 +95,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonDeleteFunctionRoleType = "ButtonDeleteFunctionRoleType";
         #endregion
 
-        #region energyview
-        public static string ButtonEnergyViewSelectHierarchy = "ButtonEnergyViewSelectHierarchy";
-        public static string ButtonEnergyViewSelectSystemDimension = "ButtonEnergyViewSelectSystemDimension";
-        public static string ButtonEnergyViewSelectAreaDimension = "ButtonEnergyViewSelectAreaDimension";
-        public static string ButtonRankSelectSystemDimension = "ButtonRankSelectSystemDimension";
-        public static string ButtonRankSelectHierarchy = "ButtonRankSelectHierarchy";
-        public static string ButtonWidgetSaveHierarchy = "ButtonWidgetSaveHierarchy";
-      
-        public static string TabButtonEnergyViewALLTagsTab = "TabButtonEnergyViewALLTagsTab";
-        public static string TabButtonEnergyViewSystemDimensionTagsTab = "TabButtonEnergyViewSystemDimensionTagsTab";
-        public static string TabButtonEnergyViewAreaDimensionTagsTab = "TabButtonEnergyViewAreaDimensionTagsTab";
-        public static string TabButtonRankHierarchyTab = "TabButtonRankHierarchyTab";
-        public static string TabButtonRankSystemDimensionTab = "TabButtonRankSystemDimensionTab";
+        #region energy management
+
+        #region common
 
         public static string SplitButtonEnergyViewViewData = "SplitButtonEnergyViewViewData";
         public static string MenuButtonEnergyViewMore = "MenuButtonEnergyViewMore";
@@ -119,9 +109,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string MenuButtonUnitTypeConvert = "MenuButtonUnitTypeConvert";
         public static string MenuButtonRadioTypeConvert = "MenuButtonRadioTypeConvert";
         public static string MenuButtonRankTypeConvert = "MenuButtonRankTypeConvert";
-        public static string ButtonConfirmHierarchyRank = "ButtonConfirmHierarchyRank";
-        public static string ButtonClearHierarchyRank = "ButtonClearHierarchyRank";
-
         public static string ButtonEnergyViewPeakValley = "ButtonEnergyViewPeakValley";
         public static string ButtonModifyWidgetName = "ButtonModifyWidgetName";
         public static string ModifyWidgetNameSaveButton = "ModifyWidgetNameSaveButton";
@@ -133,7 +120,40 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LinkButtonDashboardHierarchyName = "LinkButtonDashboardHierarchyName";
         public static string DeleteWidgetConfirmButton = "DeleteWidgetConfirmButton";
         public static string DeleteWidgetCancelButton = "DeleteWidgetCancelButton";
+
+        public static string ButtonEnergyDisplayStepHour = "ButtonEnergyDisplayStepHour";
+        public static string ButtonEnergyDisplayStepDay = "ButtonEnergyDisplayStepDay";
+        public static string ButtonEnergyDisplayStepWeek = "ButtonEnergyDisplayStepWeek";
+        public static string ButtonEnergyDisplayStepMonth = "ButtonEnergyDisplayStepMonth";
+        public static string ButtonEnergyDisplayStepYear = "ButtonEnergyDisplayStepYear";
+
         #endregion
+
+        #region energy analysis
+
+        public static string ButtonEnergyViewSelectHierarchy = "ButtonEnergyViewSelectHierarchy";
+        public static string ButtonEnergyViewSelectSystemDimension = "ButtonEnergyViewSelectSystemDimension";
+        public static string ButtonEnergyViewSelectAreaDimension = "ButtonEnergyViewSelectAreaDimension";
+
+        public static string TabButtonEnergyViewALLTagsTab = "TabButtonEnergyViewALLTagsTab";
+        public static string TabButtonEnergyViewSystemDimensionTagsTab = "TabButtonEnergyViewSystemDimensionTagsTab";
+        public static string TabButtonEnergyViewAreaDimensionTagsTab = "TabButtonEnergyViewAreaDimensionTagsTab";
+        #endregion
+
+        #region rank
+
+        public static string ButtonRankSelectSystemDimension = "ButtonRankSelectSystemDimension";
+        public static string ButtonRankSelectHierarchy = "ButtonRankSelectHierarchy";
+        public static string ButtonWidgetSaveHierarchy = "ButtonWidgetSaveHierarchy";
+
+        public static string TabButtonRankHierarchyTab = "TabButtonRankHierarchyTab";
+        public static string TabButtonRankSystemDimensionTab = "TabButtonRankSystemDimensionTab";
+        public static string ButtonConfirmHierarchyRank = "ButtonConfirmHierarchyRank";
+        public static string ButtonClearHierarchyRank = "ButtonClearHierarchyRank";
+        #endregion
+
+        #endregion
+
 
         #region customersettings
         #region ptag
@@ -690,6 +710,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridCommodityRank = "GridCommodityRank";
         public static string GridCommodityRankCarbon = "GridCommodityRankCarbon";
         public static string GridCommodityRankCost = "GridCommodityRankCost";
+
+        public static string GridUnitKPIEnergyDataList = "GridUnitKPIEnergyDataList";
         #endregion
 
         #region customersettings
@@ -715,6 +737,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string DatePickerIntervalDialogEndDate = "DatePickerIntervalDialogEndDate";
         public static string DatePickerEnergyUsageStartDate = "DatePickerEnergyUsageStartDate";
         public static string DatePickerEnergyUsageEndDate = "DatePickerEnergyUsageEndDate";
+
+        public static string DatePickerUnitKPIStartDate = "DatePickerUnitKPIStartDate";
+        public static string DatePickerUnitKPIEndDate = "DatePickerUnitKPIEndDate";
+
+
         #endregion
 
         #region CustomerSettings

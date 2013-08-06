@@ -31,20 +31,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button LoginCustomerOptionConfirmButton = GetControl<Button>(JazzControlLocatorKey.ButtonLoginCustomerOptionConfirm);
         #endregion
 
-        #region EnergyView buttons
-        public static Button EnergyViewSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectHierarchy);
-        public static Button EnergyViewSelectSystemDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectSystemDimension);
-        public static Button EnergyViewSelectAreaDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectAreaDimension);
-        public static Button RankSelectSystemDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonRankSelectSystemDimension);
-        public static Button RankSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonRankSelectHierarchy);
-        public static Button WidgetSaveHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetSaveHierarchy);
-        
-        public static TabButton EnergyViewALLTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewALLTagsTab);
-        public static TabButton EnergyViewSystemDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewSystemDimensionTagsTab);
-        public static TabButton EnergyViewAreaDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewAreaDimensionTagsTab);
-        public static TabButton RankHierarchyTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonRankHierarchyTab);
-        public static TabButton RankSystemDimensionTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonRankSystemDimensionTab);
+        #region EnergyManagement buttons
 
+        #region common
+
+        public static Button WidgetSaveHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetSaveHierarchy);
         public static SplitButton EnergyViewViewDataButton = GetControl<SplitButton>(JazzControlLocatorKey.SplitButtonEnergyViewViewData);
         public static MenuButton EnergyViewMoreButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonEnergyViewMore);
         public static Button EnergyViewAddTimeSpanButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewAddTimeSpan);
@@ -55,7 +46,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static MenuButton UnitTypeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonUnitTypeConvert);
         public static MenuButton RadioTypeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonRadioTypeConvert);
         public static MenuButton RankTypeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonRankTypeConvert);
-
         public static Button EnergyViewPeakValleyButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewPeakValley);
         public static Button ButtonModifyWidgetName = GetControl<Button>(JazzControlLocatorKey.ButtonModifyWidgetName);
         public static Button ModifyWidgetNameSaveButton = GetControl<Button>(JazzControlLocatorKey.ModifyWidgetNameSaveButton);
@@ -63,11 +53,39 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button ButtonDeleteWidget = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteWidget);
         public static Button DeleteWidgetConfirmButton = GetControl<Button>(JazzControlLocatorKey.DeleteWidgetConfirmButton);
         public static Button DeleteWidgetCancelButton = GetControl<Button>(JazzControlLocatorKey.DeleteWidgetCancelButton);
+        public static LinkButton EnergyViewSaveDashboardCreateDashboardButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonEnergyViewSaveDashboardCreateDashboard);
+        public static LinkButton DashboardHierarchyNameButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonDashboardHierarchyName);
+
+        public static Button EnergyDisplayStepHourButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepHour);
+        public static Button EnergyDisplayStepDayButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepDay);
+        public static Button EnergyDisplayStepWeekButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepWeek);
+        public static Button EnergyDisplayStepMonthButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepMonth);
+        public static Button EnergyDisplayStepYearButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepYear);
+
+        #endregion
+
+        #region Energy Analysis
+
+        public static Button EnergyViewSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectHierarchy);
+        public static Button EnergyViewSelectSystemDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectSystemDimension);
+        public static Button EnergyViewSelectAreaDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectAreaDimension);
+        public static TabButton EnergyViewALLTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewALLTagsTab);
+        public static TabButton EnergyViewSystemDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewSystemDimensionTagsTab);
+        public static TabButton EnergyViewAreaDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewAreaDimensionTagsTab);
+
+        #endregion
+
+        #region Rank
+        
+        public static Button RankSelectSystemDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonRankSelectSystemDimension);
+        public static Button RankSelectHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonRankSelectHierarchy);                
+        public static TabButton RankHierarchyTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonRankHierarchyTab);
+        public static TabButton RankSystemDimensionTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonRankSystemDimensionTab);       
         public static Button ConfirmHierarchyRankButton = GetControl<Button>(JazzControlLocatorKey.ButtonConfirmHierarchyRank);
         public static Button ClearHierarchyRankButton = GetControl<Button>(JazzControlLocatorKey.ButtonClearHierarchyRank);
 
-        public static LinkButton EnergyViewSaveDashboardCreateDashboardButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonEnergyViewSaveDashboardCreateDashboard);
-        public static LinkButton DashboardHierarchyNameButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonDashboardHierarchyName);
+        #endregion
+
         #endregion
 
         #region Navigator buttons

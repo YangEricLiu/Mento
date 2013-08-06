@@ -6,6 +6,7 @@ using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.TestApi.WebUserInterface;
 using OpenQA.Selenium;
+using System.Data;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -18,6 +19,9 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Grid UnitCostCommodityGrid = JazzGrid.CommodityUnitCostGrid;
         private static Grid UnitCostTotalCommotidyGrid = JazzGrid.TotalCommodityUnitCostGrid;
+
+        private static DatePicker UnitKPIStartDatePicker = JazzDatePicker.UnitKPIStartDatePicker;
+        private static DatePicker UnitKPIEndDatePicker = JazzDatePicker.UnitKPIEndDatePicker;
 
         //Select system dimension tree button
         private static Button SelectSystemDimensionButton
@@ -57,7 +61,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         protected override Grid EnergyDataGrid
         {
-            get { return JazzGrid.EnergyAnalysisEnergyDataList; }
+            get { return JazzGrid.UnitKPIEnergyDataListGrid; }
         }
         #endregion
 
@@ -164,6 +168,21 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             throw new NotImplementedException();
         }
+        #endregion
+
+        #region energy view
+
+        public void SetDateRange(DateTime startTime, DateTime endTime)
+        {
+            UnitKPIStartDatePicker.SelectDateItem(startTime);
+            UnitKPIEndDatePicker.SelectDateItem(endTime);
+        }
+
+        public DataTable GetAllData()
+        {
+            return EnergyDataGrid.GetAllData();
+        }
+
         #endregion
     }
 }

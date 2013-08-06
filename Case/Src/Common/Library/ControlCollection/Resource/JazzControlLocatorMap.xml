@@ -125,6 +125,12 @@
 
             <add key="ButtonConfirmHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
             <add key="ButtonClearHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='清空']]" type="XPath"/>
+
+            <add key="ButtonEnergyDisplayStepHour" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='小时']]" type="XPath"/>
+            <add key="ButtonEnergyDisplayStepDay" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='天']]" type="XPath"/>
+            <add key="ButtonEnergyDisplayStepWeek" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='周']]" type="XPath"/>
+            <add key="ButtonEnergyDisplayStepMonth" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='月']]" type="XPath"/>
+            <add key="ButtonEnergyDisplayStepYear" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='年']]" type="XPath"/>
         </energyview>
         <customersettings>
             <ptag>
@@ -627,9 +633,9 @@
   <!--Grid Begin-->
   <Grid>
     <energyview>
-      <add key="GridEnergyAnalysisAllTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
-      <add key="GridEnergyAnalysisSystemDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="ID"/>
-      <add key="GridEnergyAnalysisAreaDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="ID"/>
+      <add key="GridEnergyAnalysisAllTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@id, 'taggrid') and contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridEnergyAnalysisSystemDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridEnergyAnalysisAreaDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridEnergyAnalysisEnergyDataList" value="//div[@id='em-energy-chartgridpanel']//div[contains(@class,'x-grid')]" type="XPath"/>
     
       <add key="GridUnitKPIAllTagList" value="//div[@id='em-unit-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
@@ -648,6 +654,8 @@
       <add key="GridCommodityRank" value="//div[@id='em-rank-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridCommodityRankCarbon" value="//div[@id='em-rank-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridCommodityRankCost" value="//div[@id='em-rank-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+
+      <add key="GridUnitKPIEnergyDataList" value="//div[@id='em-unit-energy-chartpanel-body']//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     </energyview>
     <customersettings>
       <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
@@ -665,12 +673,16 @@
   </Grid>
   <!--Grid End-->
 
+  <!--Date Picker-->
   <DatePicker>
     <EnergyUsage>
       <add key="DatePickerIntervalDialogStartDate" value="//div[contains(@id,'addintervalwindow')]//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       <add key="DatePickerIntervalDialogEndDate" value="//table[@id='em-addinterval-enddate']//table" type="XPath"/>
       <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      
+      <add key="DatePickerUnitKPIStartDate" value="//div[@id='em-unit-energy-chartpanel']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      <add key="DatePickerUnitKPIEndDate" value="//div[@id='em-unit-energy-chartpanel']//table[contains(@class,'x-field x-date-field')][2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
     </EnergyUsage>
     <CustomerSettings>
       <kpitag>
@@ -684,7 +696,8 @@
       </customermanagement>
     </PlatformSettings>
   </DatePicker>
-
+  <!--Date Picker-->
+  
   <!--MonthPicker-->
   <MonthPicker>
     <hierarchyproperty>

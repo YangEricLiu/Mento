@@ -25,6 +25,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {EnergyViewMoreOption.LastYear,new string[]{"默认时间","$@Common.DateRange.LastYear"}},
 
             {EnergyViewMoreOption.ToDashboard,new string[]{"至仪表盘"}},
+            {EnergyViewMoreOption.DeleteAll,new string[]{"删除所有"}},
 
             {EnergyViewMoreOption.ShowCalendarNon,new string[]{"显示日历", "无"}},
             {EnergyViewMoreOption.ShowCalendarNonWorkday,new string[]{"显示日历", "非工作时间"}},
@@ -56,6 +57,8 @@ namespace Mento.ScriptCommon.Library.Functions
         ShowCalendarNon,
         ShowCalendarNonWorkday,
         ShowCalendarHeatCool,
+
+        DeleteAll,
     }
 
 }

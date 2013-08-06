@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnergyAnalysis\SingleHierarchyNodeDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodeTrendChartSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

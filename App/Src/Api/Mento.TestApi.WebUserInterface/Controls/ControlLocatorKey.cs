@@ -10,6 +10,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region Common locators
         public static string LoadingMask = "LoadingMask";
         public static string SubMaskLoadingLocator = "SubMaskLoadingLocator";
+        public static string ChartMaskerLoadingLocator = "ChartMaskerLoadingLocator";
         //public static string CreateSuccessMessageBox = "CreateSuccessMessageBox";
         //public static string CreateSuccessMessageBoxOkButton = "CreateSuccessMessageBoxOkButton";
 

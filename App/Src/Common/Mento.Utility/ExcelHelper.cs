@@ -607,10 +607,11 @@ namespace Mento.Utility
         /// </summary>
         /// <param name="filePath"></param>
         /// <param name="sheetName"></param>
-        public static DataTable ImportToDataTable(string filePath, string sheetName)
+        public static void ImportToDataTable(string filePath, string sheetName, out DataTable data)
         {
             //Open excel file which restore data view expected data
             ExcelHelper handler = new ExcelHelper(filePath);
+            DataTable dataOut = new DataTable();
 
             handler.OpenOrCreate();
 
@@ -618,7 +619,10 @@ namespace Mento.Utility
             Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
 
             //Import data from the start
-            return handler.GetDataTableFromExcel(sheetName);
+            dataOut = handler.GetDataTableFromExcel(sheetName);
+            data = dataOut.Copy();
+
+            handler.Dispose();
         }
 
         /// <summary>

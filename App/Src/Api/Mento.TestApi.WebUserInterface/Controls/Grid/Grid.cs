@@ -361,12 +361,33 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             DataTable data = new DataTable();
 
-            var headerLocator = new Locator("div[contains(@class,'x-grid-header-ct')]/div/div/div[contains(@class,'x-column-header')]", ByType.XPath);
+            var headerLocatorLeft = new Locator("div[contains(@class,'x-grid-header-ct')]/div/div/div[contains(@class,'x-column-header-align-left')]", ByType.XPath);
+            //var headerLocatorCenter = new Locator("div[contains(@class,'x-grid-header-ct')]/div/div/div[contains(@class,'x-column-header-align-center')]", ByType.XPath);
+            var headerLocatorItems = new Locator("div[contains(@class,'x-grid-header-ct')]//div[contains(@class,'x-column-header-first x-column-header-last') and contains(@class, 'x-column-header-align-left')]", ByType.XPath);
+
             var cellLocator = new Locator("td", ByType.TagName);
 
-            foreach (IWebElement column in FindChildren(headerLocator))
+            int j = 1;
+
+            if (ElementHandler.Exists(headerLocatorLeft, container: this.RootElement))
             {
-                data.Columns.Add(column.Text);
+                foreach (IWebElement column in FindChildren(headerLocatorLeft))
+                {
+                    string columnName1 = j + ". " + column.Text;
+
+                    data.Columns.Add(columnName1);
+
+                    j++;
+                }
+            }
+
+            foreach (IWebElement column in FindChildren(headerLocatorItems))
+            {
+                string columnName2 = j + ". " + column.Text;
+
+                data.Columns.Add(columnName2);
+
+                j++;
             }
 
             foreach (IWebElement row in CurrentRows)

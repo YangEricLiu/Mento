@@ -54,9 +54,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region User
-        public static Container ContainerDisplayPermissionCustomerizeItems = GetControl<Container>(JazzControlLocatorKey.ContainerPermissionCustomerizeItems);
+        public static Container ContainerDisplayPermissionCustomerizeItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionCustomerizeItems);
 
-        public static Container ContainerDisplayPermissionPublicTypeItems = GetControl<Container>(JazzControlLocatorKey.ContainerPermissionPublicTypeItems);
+        public static Container ContainerDisplayPermissionPublicTypeItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionPublicTypeItems);
+        public static Container ContainerDisplayPermissionItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionItems);
 
         #endregion
 

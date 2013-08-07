@@ -88,7 +88,7 @@ namespace Mento.Script.Administration.User
                 Assert.IsTrue(UserSettings.FillInTitle(titleList[i]));
                 i++;
             }
-            Assert.IsTrue(UserSettings.AreTitleDisplayAllItem());
+            //Assert.IsTrue(UserSettings.AreTitleDisplayAllItem());
         }
         
     }

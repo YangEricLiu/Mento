@@ -32,7 +32,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button CancelButton = JazzButton.UserCancelButton;
         private static Button DeleteButton = JazzButton.UserDeleteButton;
         private static Button GeneratePasswordButton = JazzButton.UserGeneratePasswordButton;
-        
+
+        private static Button FunctionCloseButton = JazzButton.UserTypePermissionDisplayCloseButton;
         private static Button EmailSendButton = JazzButton.UserSendEmailButton;
         private static LinkButton ViewFunctionDetailLinkButton = JazzButton.LinkButtonUserViewFunctionDetail;
 
@@ -48,6 +49,10 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox UserAssociatedCustomerComboBox = JazzComboBox.UserAssociatedCustomerComboBox;
 
         private static ComboBox UserTitleComboxBox = JazzComboBox.UserTitleComboxBox;
+
+        private static Container UserDisplayPermissionItems = JazzContainer.ContainerDisplayPermissionItems;
+        private static Container UserDisplayPublicPermissionItems = JazzContainer.ContainerDisplayPermissionPublicTypeItems;
+        private static Container UserDisplayRolePermissionItems = JazzContainer.ContainerDisplayPermissionCustomerizeItems;
 
         #endregion
 
@@ -91,6 +96,13 @@ namespace Mento.ScriptCommon.Library.Functions
             DeleteButton.Click();
         }
 
+       /// <summary>
+        /// Click save button to close
+        /// </summary>
+        public void ClickFunctionCloseButton()
+        {
+            FunctionCloseButton.Click();
+        }
 
         /// <summary>
         /// Click save button to save new user
@@ -177,6 +189,16 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             JazzMessageBox.MessageBox.Confirm();
         }
+
+        /// <summary>
+        /// Select certain function role
+        /// </summary>
+        /// <returns></returns>
+        public void SelectFuctionRoleType(string functionRole)
+        {
+            UserTypeComboBox.SelectItem(functionRole);
+        }
+
         #endregion
 
         #region item operation
@@ -295,7 +317,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 return false;
             }
         }
-
+        /*
         /// <summary>
         /// get all the title items
         /// </summary>
@@ -303,11 +325,17 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean AreTitleDisplayAllItem()
         {
             int i = 0;
+            Boolean flag = true;
             string[] expectedTitleList = { "能源工程顾问", "技术人员", "客户管理员", "平台管理员", "能源经理", "能源工程师", "部门经理", "管理层", "业务人员", "销售人员" };
             ArrayList titleList = UserTitleComboxBox.GetCurrentDropdownListItems();
+            while(i<expectedTitleList.Length && flag)
+            {
+                flag = titleList[i].Equals(expectedTitleList[i]);
+                i++;
+            }
             return titleList.Equals(expectedTitleList);
         }
-
+        */
         /// <summary>
         /// Input telephone of the new user 
         /// </summary>
@@ -540,12 +568,12 @@ namespace Mento.ScriptCommon.Library.Functions
             string error = TelephoneTextField.GetInvalidTips();
             return EmailTextField.GetInvalidTips().Contains(output.Email);
         }
-
+        /*
         public string EmailInvalidMsg()
         {
             return EmailTextField.GetInvalidTips();
         }
-
+        */
         /// <summary>
         /// Judge whether the usertype combobox is invalid
         /// </summary>
@@ -666,7 +694,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>True if it is enable, false if not</returns>
         public Boolean IsViewFunctionPermissionEnabled()
         {
-            return ViewFunctionDetailLinkButton.IsEnabled();
+            return !ViewFunctionDetailLinkButton.IsLinkButtonDisabled();
         }
 
         /// <summary>
@@ -683,8 +711,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickViewFunctionPermissionLinkButton()
         {
-            ViewFunctionDetailLinkButton.ClickLink();
+            ViewFunctionDetailLinkButton.Click();
         }
+
         /*
         /// <summary>
         /// Verify the permissions are same as permissionName
@@ -694,6 +723,21 @@ namespace Mento.ScriptCommon.Library.Functions
             ViewFunctionDetailLinkButton.ClickLink();
         }
         */
+
+
+        /// <summary>
+        /// Get the permission item value
+        /// </summary>
+        public string GetPermissionItemsSameAsViewItems()
+        {
+            string a = UserDisplayRolePermissionItems.GetContainerTexts();
+            string b = UserDisplayPublicPermissionItems.GetContainerTexts();
+            string c = b+a;
+           // c.Replace("/r/n","");
+
+                       return c;
+        }
+
         #endregion
     }
 }

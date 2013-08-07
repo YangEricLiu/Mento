@@ -36,6 +36,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region common
 
         public static Button WidgetSaveHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetSaveHierarchy);
+        
+        //public static TabButton EnergyViewALLTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewALLTagsTab);
+        //public static TabButton EnergyViewSystemDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewSystemDimensionTagsTab);
+        //public static TabButton EnergyViewAreaDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewAreaDimensionTagsTab);
+        //public static TabButton RankHierarchyTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonRankHierarchyTab);
+        //public static TabButton RankSystemDimensionTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonRankSystemDimensionTab);
+
         public static SplitButton EnergyViewViewDataButton = GetControl<SplitButton>(JazzControlLocatorKey.SplitButtonEnergyViewViewData);
         public static MenuButton EnergyViewMoreButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonEnergyViewMore);
         public static Button EnergyViewAddTimeSpanButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewAddTimeSpan);
@@ -368,11 +375,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button UserTypePermissionSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionSave);
         public static Button UserTypePermissionCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionCancel);
         public static Button UserTypePermissionRefreshButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionRefresh);
-        public static Button TabButtonUserBasicProperties = GetControl<Button>(JazzControlLocatorKey.TabButtonUserBasicProperties);
-        public static Button TabButtonUserDataPermission = GetControl<Button>(JazzControlLocatorKey.TabButtonUserDataPermission);
+        //public static Button TabButtonUserBasicProperties = GetControl<Button>(JazzControlLocatorKey.TabButtonUserBasicProperties);
+        //public static Button TabButtonUserDataPermission = GetControl<Button>(JazzControlLocatorKey.TabButtonUserDataPermission);
 
         public static LinkButton LinkButtonUserViewFunctionDetail = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonUserViewFunctionDetail);
         public static Button UserSendEmailButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserSendEmail);
+        public static Button UserTypePermissionDisplayCloseButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionDisplayClose);
+
         #endregion
         #region User Profile
         public static Button UserProfileButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserProfile);
@@ -389,6 +398,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button CancelFunctionRoleType = GetControl<Button>(JazzControlLocatorKey.ButtonCancelFunctionRoleType);
         public static Button DeleteFunctionRoleType = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteFunctionRoleType);
         public static Button SaveFunctionRoleType = GetControl<Button>(JazzControlLocatorKey.ButtonSaveFunctionRoleType);
+        #endregion
+
+        #region User Data Scope Permission
+        public static Button ModifyUserDataPermissionButton = GetControl<Button>(JazzControlLocatorKey.ButtonModifyUserDataPermission);
+        public static Button SaveUserDataPermissionButton = GetControl<Button>(JazzControlLocatorKey.ButtonSaveUserDataPermission);
+        public static Button CancelUserDataPermissionButton = GetControl<Button>(JazzControlLocatorKey.ButtonCancelUserDataPermission);
+        public static Button ClosePermissionTreeWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonClosePermissionTreeWindow);
+        public static Button TabButtonUserBasicProperties = GetControl<Button>(JazzControlLocatorKey.TabButtonUserBasicProperties);
+        public static Button TabButtonUserDataPermission = GetControl<Button>(JazzControlLocatorKey.TabButtonUserDataPermission);
         #endregion
         #endregion
     }

@@ -278,6 +278,19 @@ namespace Mento.ScriptCommon.Library
             }
         }
         //Greenie added
+
+        private static UserDataScopePermission _UserDataScopePermission;
+        public static UserDataScopePermission UserDataScopePermission
+        {
+            get
+            {
+                if (_UserDataScopePermission == null)
+                    _UserDataScopePermission = new UserDataScopePermission();
+
+                return _UserDataScopePermission;
+            }
+        }
+
         private static FunctionRoleTypePermissionSettings _FunctionRoleTypePermissionSettings;
         public static FunctionRoleTypePermissionSettings FunctionRoleTypePermissionSettings
         {

@@ -1,0 +1,13 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"CommonName":"UserForCheckAll",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"仪表盘与小组件查看\r\n仪表盘与小组件编辑\r\n个人信息管理\r\n报警信息查看仪表盘与小组件分享\r\n“能效分析”功能\r\n“碳排放”功能",
+			
+		}
+	},
+]

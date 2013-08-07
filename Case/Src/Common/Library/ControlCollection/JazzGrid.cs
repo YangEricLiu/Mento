@@ -32,7 +32,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid CommodityRankCarbonGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityRankCarbon);
         public static Grid CommodityRankCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityRankCost);
 
-        public static Grid UnitKPIEnergyDataListGrid = GetControl<Grid>(JazzControlLocatorKey.GridUnitKPIEnergyDataList);
+        //public static Grid UnitKPIEnergyDataListGrid = GetControl<Grid>(JazzControlLocatorKey.GridUnitKPIEnergyDataList);
         
         #endregion
 
@@ -56,6 +56,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid UserTypePermissionList = GetControl<Grid>(JazzControlLocatorKey.GridUserTypePermissionList);
 
         public static Grid TOUTariffsList = GetControl<Grid>(JazzControlLocatorKey.GridTOUTariffsList);
+
+        public static Grid DataPermissonList = GetControl<Grid>(JazzControlLocatorKey.GridDataScopePermissionList);
+
         #endregion
     }
 }

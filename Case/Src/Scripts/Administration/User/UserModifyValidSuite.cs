@@ -43,16 +43,29 @@ namespace Mento.Script.Administration.User
         [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserModifyValidSuite), "TC-J1-FVT-UserManagement-Modify-101-1")]
         public void ModifyValidUser(UserSettingsData input)
         {
-            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-            //Click "+用户"
-            UserSettings.ClickAddUser();
+            string userName = "UserForCheckAll";
+            Assert.IsTrue(UserSettings.FocusOnUser(userName));
+            UserSettings.ClickModifyButton();
             TimeManager.ShortPause();
-            UserSettings.FillInAddUser(input.InputData);
-            TimeManager.MediumPause();
+            UserSettings.FillInRealName(input.InputData.RealName);
+            UserSettings.FillInEmail(input.InputData.Email);
+            UserSettings.FillInTelephone(input.InputData.Telephone);
+            //UserSettings.FillInType(input.InputData.Type);
+            //UserSettings.FillInTitle(input.InputData.Title);
+            UserSettings.FillInComment(input.InputData.Comments);
+            TimeManager.ShortPause();
             UserSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
-            Assert.IsTrue(UserSettings.IsUserOnList(input.InputData.CommonName));
+            Assert.IsTrue(UserSettings.IsUserOnList(userName));
+            //Verify
+            Assert.AreEqual(UserSettings.GetCommonNameValue(),userName);
+            Assert.AreEqual(UserSettings.GetRealNameValue(), input.ExpectedData.RealName);
+            //Assert.AreEqual(UserSettings.GetTitleValue(), input.ExpectedData.Title);
+            //Assert.AreEqual(UserSettings.GetTypeValue(), input.ExpectedData.Type);
+            Assert.AreEqual(UserSettings.GetEmailValue(),input.ExpectedData.Email);
+            Assert.AreEqual(UserSettings.GetTelephoneValue(), input.ExpectedData.Telephone);
+            Assert.AreEqual(UserSettings.GetCommentValue(), input.ExpectedData.Comments);
         }
 
         [Test]
@@ -100,7 +113,7 @@ namespace Mento.Script.Administration.User
                 Assert.IsTrue(UserSettings.FillInTitle(titleList[i]));
                 i++;
             }
-            Assert.IsTrue(UserSettings.AreTitleDisplayAllItem());
+            //@@ Assert.IsTrue(UserSettings.AreTitleDisplayAllItem());
         }
     }
 }

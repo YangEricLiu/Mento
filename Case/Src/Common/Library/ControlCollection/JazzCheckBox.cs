@@ -16,6 +16,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static CheckBoxField CheckBoxFieldUserTypeEnergyUse = GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxFieldUserTypeEnergyUse);
 
         public static CheckBoxField UserTypePermissionCheckBoxField = GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxFieldUserTypePermission);
+        public static CheckBoxField UserSelectAllDataPermissionCheckBoxField = GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxFieldUserSelectAllDataPermission);
+        public static CheckBoxField UserAllDataPermissionsCheckBoxField = GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxFieldUserAllDataPermissions);    
         #endregion
     }
 }

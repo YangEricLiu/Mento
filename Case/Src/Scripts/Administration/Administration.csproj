@@ -75,6 +75,7 @@
     <Compile Include="TOU\TOUBasicTariffAddValidSuite.cs" />
     <Compile Include="TOU\SmokeTestTOUPulsePeakTariffSuite.cs" />
     <Compile Include="TOU\SmokeTestTOUBasicTariffSuite.cs" />
+    <Compile Include="User\AddDataScopeSuite.cs" />
     <Compile Include="User\ViewRoleTypeSuite.cs" />
     <Compile Include="User\SendInitrialPassword.cs" />
     <Compile Include="User\UserDeleteSuite.cs" />
@@ -82,16 +83,6 @@
     <Compile Include="User\UserModifyValidSuite.cs" />
     <Compile Include="User\UserAddInvalidSuite.cs" />
     <Compile Include="User\UserAddValidSuite.cs" />
-    <Compile Include="User\SmokeTestExitJazzSuite.cs" />
-    <Compile Include="User\SmokeTestModifyUserPasswordSuite.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="User\SmokeTestUserConfigurationSuite.cs" />
-    <Compile Include="User\SmokeTestUserProfileSuite.cs" />
-    <Compile Include="User\SmokeTestUserTypePermissionSuite.cs" />
-    <Compile Include="User\UserManagementDelete.cs" />
-    <Compile Include="User\UserManagementModifyInvalid.cs" />
-    <Compile Include="User\UserManagementModifyValid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Example\" />

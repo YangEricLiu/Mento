@@ -41,5 +41,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static AreaDimensionTree AssociationAreaDimensionTree = GetControl<AreaDimensionTree>(JazzControlLocatorKey.AreaDimensionTreeAssociation);
         #endregion
+
+        #region UserDataPermission
+        public static HierarchyTree DataPermissionHierarchyTree = GetControl<HierarchyTree>(JazzControlLocatorKey.DataPermissionHierarchyTree);
+
+        #endregion
     }
 }

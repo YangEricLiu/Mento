@@ -212,6 +212,9 @@
     <None Include="Data\Administration\User\UserModifyValidSuite\TC-J1-FVT-UserManagement-Modify-101-1.json" />
     <None Include="Data\Administration\User\UserModifyValidSuite\TC-J1-FVT-UserManagement-Modify-101-2.json" />
     <None Include="Data\Administration\User\UserModifyValidSuite\TC-J1-FVT-UserManagement-Modify-101-3.json" />
+    <None Include="Data\Administration\User\ViewRoleTypeSuite\TC-J1-FVT-UserManagement-ViewRoleType-3.json" />
+    <None Include="Data\Administration\User\ViewRoleTypeSuite\TC-J1-FVT-UserManagement-ViewRoleType-2.json" />
+    <None Include="Data\Administration\User\ViewRoleTypeSuite\TC-J1-FVT-UserManagement-ViewRoleType-1.json" />
     <None Include="Data\CommonInputData.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\AddInvalidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-SameAreaNodes.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-4.json" />

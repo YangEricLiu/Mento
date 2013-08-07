@@ -102,6 +102,9 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,JazzButton.NavigatorHierarchySettingsButton)},
             {NavigationTarget.AssociationSettings, new NavigatorItem(NavigationTarget.AssociationSettings,NavigationTarget.Settings,JazzButton.NavigatorAssociationSettingsButton)},
 
+            {NavigationTarget.MyFavirate, new NavigatorItem(NavigationTarget.MyFavirate,NavigationTarget.HomePage,JazzButton.NavigatorMyFavirateButton)},
+            {NavigationTarget.AllDashboards, new NavigatorItem(NavigationTarget.AllDashboards,NavigationTarget.HomePage,JazzButton.NavigatorAllDashboardsButton)},
+            {NavigationTarget.RecentView, new NavigatorItem(NavigationTarget.RecentView,NavigationTarget.HomePage,JazzButton.NavigatorRecentViewButton)},
             //level 3
             //--Time
             {NavigationTarget.TimeSettingsWorkday, new NavigatorItem(NavigationTarget.TimeSettingsWorkday,NavigationTarget.TimeSettings,JazzButton.NavigatorTimeSettingsWorkdayButton)},
@@ -176,6 +179,9 @@ namespace Mento.ScriptCommon.Library.Functions
         UnitKPI = 204,
         EnergyRadio = 205,
         Rank = 206,
+        MyFavirate = 207,
+        AllDashboards = 208,
+        RecentView = 209,
         TimeSettings = 5,
         CarbonSettings = 6,
         PriceSettings = 7,

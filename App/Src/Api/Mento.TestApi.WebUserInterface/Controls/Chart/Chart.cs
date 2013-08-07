@@ -18,12 +18,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator LegendItemsCloseLocator = new Locator("svg/g[contains(@class,'highcharts-legend')]/g/g/g[@class='highcharts-legend-item' and text[text()='$#legendname']]/image", ByType.XPath);
         private static Locator LegendItemTextLocator = new Locator("svg/g[contains(@class,'highcharts-legend')]/g/g/g[@class='highcharts-legend-item']/text[text()='$#legendname']", ByType.XPath);
 
-        private static Locator CurveLocator = new Locator("g.highcharts-series-group", ByType.CssSelector);
+        private static Locator CurveLocator = new Locator("g.highcharts-scrollbar", ByType.CssSelector);
         private static Locator PieLocator = new Locator("//div[contains(@id, 'piechartcomponent')]", ByType.CssSelector);
 
         private static Locator TitleLocator = new Locator("svg/text[2]", ByType.XPath);
         private static Locator UomLocator = new Locator("svg/text[1]", ByType.XPath);
-        private static Locator DataViewLocator = new Locator("//div[contains(@id, 'taggridcomponent')]", ByType.XPath);
+        private static Locator NavigatorLocator = new Locator("g.highcharts-navigator", ByType.CssSelector);
+        private static Locator ScrollbarLocator = new Locator("g.highcharts-scrollbar", ByType.CssSelector);
 
         #region Title
         public string GetTitle()
@@ -41,6 +42,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool LegendExists()
         {
             return ChildExists(LegendLocator);
+        }
+
+        public bool IsNavigatorExists()
+        {
+            return ChildExists(NavigatorLocator);
+        }
+
+        public bool IsScrollbarExists()
+        {
+            return ChildExists(ScrollbarLocator);
         }
 
         public bool LegendItemExists(string legendName)
@@ -133,11 +144,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool HasDrawnDistribute()
         {
             return ChildExists(PieLocator);
-        }
-
-        public bool HasDrawnDataView()
-        {
-            return ElementHandler.Exists(DataViewLocator);
         }
         #endregion
         

@@ -32,6 +32,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
     public class EnergyViewOptionOutput : ExpectedTestDataBase
     {
         public string[] expectedFileName { get; set; }
+        public string ClearAllMessage { get; set; }
     }
 
 

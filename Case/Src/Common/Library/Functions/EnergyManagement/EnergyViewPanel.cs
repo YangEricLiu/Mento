@@ -93,6 +93,14 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region Data view operations
+        /// <summary>
+        /// Judge if no data in energy data grid
+        /// </summary>
+        public bool IsNoDataInEnergyGrid()
+        {
+            return EnergyDataGrid.IsNoRowOnGrid();
+        }
+
         public int GetRecordCount()
         {
             return EnergyDataGrid.RecordCount;
@@ -125,7 +133,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
         public bool IsDataViewDrawn()
         {
-            return Chart.HasDrawnDataView();
+            return EnergyDataGrid.HasDrawnDataView();
         }
         public bool IsLegendDrawn()
         {

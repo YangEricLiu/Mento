@@ -127,6 +127,14 @@ namespace Mento.ScriptCommon.Library.Functions
         #region Tag operations
 
         /// <summary>
+        /// Judge if all the grid tags unchecked
+        /// </summary>
+        public bool IsAllGridTagsUnchecked()
+        {
+            return TagGrid.IsAllGridTagsUnchecked();
+        }
+
+        /// <summary>
         /// Check the tags on left region
         /// </summary>
         /// <param name="tagNames"></param>

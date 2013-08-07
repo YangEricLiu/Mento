@@ -40,8 +40,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
 
-
-
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-1")]
@@ -54,7 +52,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Set date range
             EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
             TimeManager.ShortPause();
-
+            
             //Check tag and view data view
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
@@ -64,11 +62,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
             //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-
-            //Verify tag value
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
 
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
@@ -93,19 +86,64 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.SelectSystemDimension(input.InputData.SystemDimensionPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
-
+            
             EnergyAnalysis.CheckTag(input.InputData.TagNames[2]);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
-            //Uncheck v3, and clear all data
-            EnergyAnalysis.UncheckTag(input.InputData.TagNames[2]);
+            //Uncheck v3 with clear all data
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
+            TimeManager.ShortPause();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
+            JazzMessageBox.MessageBox.Clear();
+            TimeManager.ShortPause();
+            Assert.IsTrue(EnergyAnalysis.IsAllGridTagsUnchecked());
         }
 
+
+        [Test]
+        [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-2")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-2")]
+        public void DataViewSaveToDashBoard(EnergyViewOptionData input)
+        {
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Set date range
+            EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
+            TimeManager.ShortPause();
+
+            //Check tag V_Null_BuildingBC and view data view
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
+            Assert.IsTrue(EnergyAnalysis.IsNoDataInEnergyGrid());
+
+            //Uncheck tag V_Null_BuildingBC, and select another tag v14
+            EnergyAnalysis.UncheckTag(input.InputData.TagNames[0]);
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[1]);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Save to dashboard
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+        
+        }
     }
 }

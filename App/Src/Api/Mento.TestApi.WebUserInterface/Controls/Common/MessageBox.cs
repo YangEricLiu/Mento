@@ -20,6 +20,28 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        private IWebElement _ClearButton;
+        protected IWebElement ClearButton
+        {
+            get
+            {
+                if (this._ClearButton == null)
+                    this._ClearButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxClearButton));
+                return this._ClearButton;
+            }
+        }
+
+        private IWebElement _GiveUpButton;
+        protected IWebElement GiveUpButton
+        {
+            get
+            {
+                if (this._GiveUpButton == null)
+                    this._GiveUpButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxGiveUpButton));
+                return this._GiveUpButton;
+            }
+        }
+
         private IWebElement _ConfirmButton;
         protected IWebElement ConfirmButton
         {
@@ -146,6 +168,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 throw new ApiException("Close button can not be clicked because it is not enabled in the messagebox.");
 
             this.CloseButton.Click();
+        }
+
+        public void Clear()
+        {
+            if (!this.ClearButton.Enabled)
+                throw new ApiException("Clear button can not be clicked because it is not enabled in the messagebox.");
+
+            this.ClearButton.Click();
+        }
+
+        public void GiveUp()
+        {
+            if (!this.GiveUpButton.Enabled)
+                throw new ApiException("GiveUp button can not be clicked because it is not enabled in the messagebox.");
+
+            this.GiveUpButton.Click();
         }
 
         public string GetMessage()

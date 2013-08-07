@@ -18,6 +18,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorEnergyView = "ButtonNavigatorEnergyView";
         public static string ButtonNavigatorSettings = "ButtonNavigatorSettings";
         public static string ButtonNavigatorPlatformSettings = "ButtonNavigatorPlatformSettings";
+
         public static string ButtonNavigatorEnergyAnalysis = "ButtonNavigatorEnergyAnalysis";
         public static string ButtonNavigatorCarbonUsage = "ButtonNavigatorCarbonUsage";
         public static string ButtonNavigatorCost = "ButtonNavigatorCost";
@@ -31,6 +32,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorUserManagement = "ButtonNavigatorUserManagement";
         public static string ButtonNavigatorTagSettings = "ButtonNavigatorTagSettings";
         public static string ButtonNavigatorHierarchySettings = "ButtonNavigatorHierarchySettings";
+        public static string ButtonNavigatorMyFavirate = "ButtonNavigatorMyFavirate";
+        public static string ButtonNavigatorAllDashboards = "ButtonNavigatorAllDashboards";
+        public static string ButtonNavigatorRecentView = "ButtonNavigatorRecentView";
+
         public static string ButtonNavigatorAssociationSettings = "ButtonNavigatorAssociationSettings";
         public static string ButtonNavigatorTimeSettingsWorkday = "ButtonNavigatorTimeSettingsWorkday";
         public static string ButtonNavigatorTimeSettingsWorktime = "ButtonNavigatorTimeSettingsWorktime";
@@ -94,22 +99,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonDeleteFunctionRoleType = "ButtonDeleteFunctionRoleType";
         #endregion
 
+        #region energy management
 
-
-
-        #region energyview
-        public static string ButtonEnergyViewSelectHierarchy = "ButtonEnergyViewSelectHierarchy";
-        public static string ButtonEnergyViewSelectSystemDimension = "ButtonEnergyViewSelectSystemDimension";
-        public static string ButtonEnergyViewSelectAreaDimension = "ButtonEnergyViewSelectAreaDimension";
-        public static string ButtonRankSelectSystemDimension = "ButtonRankSelectSystemDimension";
-        public static string ButtonRankSelectHierarchy = "ButtonRankSelectHierarchy";
-        public static string ButtonWidgetSaveHierarchy = "ButtonWidgetSaveHierarchy";
-
-        public static string TabButtonEnergyViewALLTagsTab = "TabButtonEnergyViewALLTagsTab";
-        public static string TabButtonEnergyViewSystemDimensionTagsTab = "TabButtonEnergyViewSystemDimensionTagsTab";
-        public static string TabButtonEnergyViewAreaDimensionTagsTab = "TabButtonEnergyViewAreaDimensionTagsTab";
-        public static string TabButtonRankHierarchyTab = "TabButtonRankHierarchyTab";
-        public static string TabButtonRankSystemDimensionTab = "TabButtonRankSystemDimensionTab";
+        #region common
 
         public static string SplitButtonEnergyViewViewData = "SplitButtonEnergyViewViewData";
         public static string MenuButtonEnergyViewMore = "MenuButtonEnergyViewMore";
@@ -121,9 +113,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string MenuButtonUnitTypeConvert = "MenuButtonUnitTypeConvert";
         public static string MenuButtonRadioTypeConvert = "MenuButtonRadioTypeConvert";
         public static string MenuButtonRankTypeConvert = "MenuButtonRankTypeConvert";
-        public static string ButtonConfirmHierarchyRank = "ButtonConfirmHierarchyRank";
-        public static string ButtonClearHierarchyRank = "ButtonClearHierarchyRank";
-
         public static string ButtonEnergyViewPeakValley = "ButtonEnergyViewPeakValley";
         public static string ButtonModifyWidgetName = "ButtonModifyWidgetName";
         public static string ModifyWidgetNameSaveButton = "ModifyWidgetNameSaveButton";
@@ -135,6 +124,38 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LinkButtonDashboardHierarchyName = "LinkButtonDashboardHierarchyName";
         public static string DeleteWidgetConfirmButton = "DeleteWidgetConfirmButton";
         public static string DeleteWidgetCancelButton = "DeleteWidgetCancelButton";
+
+        public static string ButtonEnergyDisplayStepHour = "ButtonEnergyDisplayStepHour";
+        public static string ButtonEnergyDisplayStepDay = "ButtonEnergyDisplayStepDay";
+        public static string ButtonEnergyDisplayStepWeek = "ButtonEnergyDisplayStepWeek";
+        public static string ButtonEnergyDisplayStepMonth = "ButtonEnergyDisplayStepMonth";
+        public static string ButtonEnergyDisplayStepYear = "ButtonEnergyDisplayStepYear";
+
+        #endregion
+
+        #region energy analysis
+
+        public static string ButtonEnergyViewSelectHierarchy = "ButtonEnergyViewSelectHierarchy";
+        public static string ButtonEnergyViewSelectSystemDimension = "ButtonEnergyViewSelectSystemDimension";
+        public static string ButtonEnergyViewSelectAreaDimension = "ButtonEnergyViewSelectAreaDimension";
+
+        public static string TabButtonEnergyViewALLTagsTab = "TabButtonEnergyViewALLTagsTab";
+        public static string TabButtonEnergyViewSystemDimensionTagsTab = "TabButtonEnergyViewSystemDimensionTagsTab";
+        public static string TabButtonEnergyViewAreaDimensionTagsTab = "TabButtonEnergyViewAreaDimensionTagsTab";
+        #endregion
+
+        #region rank
+
+        public static string ButtonRankSelectSystemDimension = "ButtonRankSelectSystemDimension";
+        public static string ButtonRankSelectHierarchy = "ButtonRankSelectHierarchy";
+        public static string ButtonWidgetSaveHierarchy = "ButtonWidgetSaveHierarchy";
+
+        public static string TabButtonRankHierarchyTab = "TabButtonRankHierarchyTab";
+        public static string TabButtonRankSystemDimensionTab = "TabButtonRankSystemDimensionTab";
+        public static string ButtonConfirmHierarchyRank = "ButtonConfirmHierarchyRank";
+        public static string ButtonClearHierarchyRank = "ButtonClearHierarchyRank";
+        #endregion
+
         #endregion
 
         #region customersettings
@@ -237,7 +258,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonLowPressureSteamCostCreate = "ButtonLowPressureSteamCostCreate";
         public static string ButtonWaterCostDelete = "ButtonWaterCostDelete";
         public static string LinkButtonFactor = "LinkButtonFactor";
-        public static string ButtonElectricCostDelete = "ButtonElectricCostDelete";
+        public static string ButtonElectricCostDelete = "ButtonElectricCostDelete";    
         #endregion
 
         #region systemdimension
@@ -280,8 +301,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LinkButtonTargetCalendarInfo = "LinkButtonTargetCalendarInfo";
         public static string LinkButtonBaselineCalendarInfo = "LinkButtonBaselineCalendarInfo";
         public static string ButtonCloseTBCalendarWindow = "ButtonCloseTBCalendarWindow";
-        public static string ButtonDeleteSpecialdayItem = "ButtonDeleteSpecialdayItem";
-
+        public static string ButtonDeleteSpecialdayItem = "ButtonDeleteSpecialdayItem"; 
+        
         #endregion
 
         #endregion
@@ -372,6 +393,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonDeleteCustomer = "ButtonDeleteCustomer";
         public static string ButtonUpdateCustomer = "ButtonUpdateCustomer";
         #endregion
+
+        #endregion
+
+        #region Home page
+
+        public static string ButtonAllDashboardsHierarchyTree = "ButtonAllDashboardsHierarchyTree";
 
         #endregion
 
@@ -703,6 +730,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridCommodityRank = "GridCommodityRank";
         public static string GridCommodityRankCarbon = "GridCommodityRankCarbon";
         public static string GridCommodityRankCost = "GridCommodityRankCost";
+
+        public static string GridUnitKPIEnergyDataList = "GridUnitKPIEnergyDataList";
         #endregion
 
         #region customersettings
@@ -729,6 +758,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string DatePickerIntervalDialogEndDate = "DatePickerIntervalDialogEndDate";
         public static string DatePickerEnergyUsageStartDate = "DatePickerEnergyUsageStartDate";
         public static string DatePickerEnergyUsageEndDate = "DatePickerEnergyUsageEndDate";
+
+        public static string DatePickerUnitKPIStartDate = "DatePickerUnitKPIStartDate";
+        public static string DatePickerUnitKPIEndDate = "DatePickerUnitKPIEndDate";
+
+
         #endregion
 
         #region CustomerSettings
@@ -848,12 +882,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Hierarchy Cost Property
         public static string ContainerWaterCostValueItems = "ContainerWaterCostValueItems";
         public static string ContainerElectricCostValueItems = "ContainerElectricCostValueItems";
-
+        
         #endregion
 
         #region Associate
         public static string ContainerAssociatedTags = "ContainerAssociatedTags";
-
+        
         #endregion
 
         #region TargetBaseline
@@ -861,14 +895,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ContainerTBCalendarInfo = "ContainerTBCalendarInfo";
         public static string ContainerTBWorkdayRule = "ContainerTBWorkdayRule";
         public static string ContainerTBNonworkdayRule = "ContainerTBNonworkdayRule";
-        public static string ContainerTBSpecialdayRule = "ContainerTBSpecialdayRule";
+        public static string ContainerTBSpecialdayRule = "ContainerTBSpecialdayRule"; 
 
         #endregion
-
+       
         #region UserRoleType
         public static string ContainerPermissionCustomerizeItems = "ContainerPermissionCustomerizeItems";
         public static string ContainerPermissionPublicTypeItems = "ContainerPermissionPublicTypeItems";
-
+       
 
         #endregion
 

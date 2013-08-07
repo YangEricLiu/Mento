@@ -51,7 +51,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
-
             
             EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
             TimeManager.ShortPause();
@@ -59,17 +58,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
+            TimeManager.MediumPause();
 
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-
-            //Verify tag value
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Uncheck v1, and select another tag under area dimension
             EnergyAnalysis.UncheckTag(input.InputData.TagNames[0]);
@@ -79,12 +70,31 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.LongPause();
 
             EnergyAnalysis.CheckTag(input.InputData.TagNames[1]);
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.Line);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+
+            //Uncheck v2, and select another tag under system dimension
+            EnergyAnalysis.UncheckTag(input.InputData.TagNames[1]);
+            EnergyAnalysis.SwitchTagTab(TagTabs.SystemDimensionTab);
+            EnergyAnalysis.SelectSystemDimension(input.InputData.SystemDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[2]);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+
+            //Uncheck v3 with clear all data
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
+            TimeManager.ShortPause();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
+            JazzMessageBox.MessageBox.Clear();
+            TimeManager.ShortPause();
+            Assert.IsTrue(EnergyAnalysis.IsAllGridTagsUnchecked());
         }
 
         [Test]

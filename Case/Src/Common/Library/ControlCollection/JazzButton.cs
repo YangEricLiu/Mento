@@ -120,6 +120,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorHierarchySettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorHierarchySettings);//{NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,"setting-tab-hiersetting-btn-btnEl",ByType.ID)},
         public static Button NavigatorAssociationSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAssociationSettings);//{NavigationTarget.AssociationSettings, new NavigatorItem(NavigationTarget.AssociationSettings,NavigationTarget.Settings,"setting-tab-tagassoc-btn-btnEl",ByType.ID)},
 
+        public static Button NavigatorMyFavirateButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorMyFavirate);
+        public static Button NavigatorAllDashboardsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAllDashboards);
+        public static Button NavigatorRecentViewButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorRecentView);
+
         //level 3
         //--Time
         public static Button NavigatorTimeSettingsWorkdayButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTimeSettingsWorkday);//{NavigationTarget.PlatformWorkday, new NavigatorItem(NavigationTarget.PlatformWorkday,NavigationTarget.PlatformSettings,"st-menu-workday-btnEl",ByType.ID)},
@@ -409,5 +413,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button TabButtonUserDataPermission = GetControl<Button>(JazzControlLocatorKey.TabButtonUserDataPermission);
         #endregion
         #endregion
+
+
     }
 }

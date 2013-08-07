@@ -13,6 +13,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
     {
         private static string CELLINDEXVARIABLE = "cellIndex";
         private static string CELLTEXTVARIABLE = "cellText";
+        private static Locator IsGridRowCheckedLocator = new Locator("//td/div/div[contains(@class, 'x-grid-checkheader-checked')]", ByType.XPath);
+        //private static Locator IsNoDataOnGridLocator = new Locator("div/div/div/div[text()='没有数据']", ByType.XPath);
+        private static Locator IsNoRowOnGridLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]", ByType.XPath);
+        private static Locator DataViewLocator = new Locator("//div[contains(@id, 'taggridcomponent')]", ByType.XPath);
 
         protected IWebElement[] CurrentRows
         {
@@ -34,7 +38,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return this.Exists(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingToolbar));
         }
-        
+
+        public bool IsAllGridTagsUnchecked()
+        {
+            return !(ElementHandler.Exists(IsGridRowCheckedLocator));
+        }
+
+        public bool IsNoRowOnGrid()
+        {
+            return !ChildExists(IsNoRowOnGridLocator);
+        }
+
+        public bool HasDrawnDataView()
+        {
+            return ElementHandler.Exists(DataViewLocator);
+        }
+
         /// <summary>
         /// locator parameter must be root element of a grid
         /// </summary>
@@ -424,5 +443,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return data;
         }
+
+        #region Common
+        private bool ChildExists(Locator locator)
+        {
+            return FindChildren(locator).Count() > 0;
+        }
+        #endregion
     }
 }

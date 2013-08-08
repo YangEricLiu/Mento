@@ -22,7 +22,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
-        private static LinkButton DashboardHierarchyNameButton = JazzButton.DashboardHierarchyNameButton;
+        private static Button DashboardHierarchyNameButton = JazzButton.DashboardHierarchyNameButton;
         private static Button ModifyWidgetNameButton = JazzButton.ButtonModifyWidgetName;
         private static Button ModifyWidgetNameSaveButton = JazzButton.ModifyWidgetNameSaveButton;
         private static Button ModifyWidgetNameCancelButton = JazzButton.ModifyWidgetNameCancelButton;
@@ -47,7 +47,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
          public void ClickDashboardHierarchyNameButton()
          {
-             DashboardHierarchyNameButton.ClickLink();
+             DashboardHierarchyNameButton.Click();
          }
 
         

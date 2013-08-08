@@ -13,6 +13,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             return GetControl<Label>(key, positionIndex);
         }
+
+        public static Label GetOneLabelByName(string key, string nameIndex)
+        {
+            return GetControl<Label>(key, nameIndex);
+        }
         #endregion
 
         #region customer setting
@@ -40,7 +45,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
-
         #region platform setting
 
         #region calendar
@@ -49,6 +53,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Label PlatformDayNightCalendarLabel = GetControl<Label>(JazzControlLocatorKey.LabelPlatformDayNightCalendar);
         public static Label WidgetName = GetControl<Label>(JazzControlLocatorKey.WidgetName);
         #endregion
+
+        #endregion
+
+        #region home page
+
+        public static Label DashboardHeaderNameLabel = GetControl<Label>(JazzControlLocatorKey.LabelDashboardHeaderName);
+        public static Label WidgetNameMinLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetNameMin);
 
         #endregion
     }

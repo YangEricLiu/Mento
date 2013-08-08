@@ -416,8 +416,10 @@
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-3.json" />
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-2.json" />
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-1.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionDataViewSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-1.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1.json" />
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-040.json" />
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-037.json" />

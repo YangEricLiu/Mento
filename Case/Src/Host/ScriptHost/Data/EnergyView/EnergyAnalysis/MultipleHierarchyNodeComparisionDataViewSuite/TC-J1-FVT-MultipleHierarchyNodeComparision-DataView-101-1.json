@@ -1,0 +1,23 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"AreaDimensionPath":["楼宇BC", "一层"],
+			"SystemDimensionPath":["楼宇BC", "空调"],
+			"TagNames":["V_Null_BuildingBC", "V14_BuildingBC"],
+			"failedFileName":["F-SingleHierarchyNodeDataView101-2-D-V14_BuildingBC.xls"],
+			"DashboardInfo":{
+				"WigetName":"SingleDataView1012",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_V14",
+			}
+		},
+		"ExpectedData":
+		{
+			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
+			"expectedFileName":["SingleHierarchyNodeDataView101-2-D-V14_BuildingBC.xls"],
+		}
+	}
+]

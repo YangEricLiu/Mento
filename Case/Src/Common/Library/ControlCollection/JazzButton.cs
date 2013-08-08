@@ -15,12 +15,17 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             return GetControl<Button>(key, positionIndex);
         }
 
+        public static Button GetOneButton(string key, string nameIndex)
+        {
+            return GetControl<Button>(key, nameIndex);
+        }
+
         public static LinkButton GetOneLinkButton(string key, int positionIndex)
         {
             return GetControl<LinkButton>(key, positionIndex);
         }
 
-        public static LinkButton GetOneButton(string key, string nameIndex)
+        public static LinkButton GetOneLinkButton(string key, string nameIndex)
         {
             return GetControl<LinkButton>(key, nameIndex);
         }
@@ -60,14 +65,17 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button ButtonDeleteWidget = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteWidget);
         public static Button DeleteWidgetConfirmButton = GetControl<Button>(JazzControlLocatorKey.DeleteWidgetConfirmButton);
         public static Button DeleteWidgetCancelButton = GetControl<Button>(JazzControlLocatorKey.DeleteWidgetCancelButton);
-        public static LinkButton EnergyViewSaveDashboardCreateDashboardButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonEnergyViewSaveDashboardCreateDashboard);
-        public static LinkButton DashboardHierarchyNameButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonDashboardHierarchyName);
+        public static Button CreateNewDashboardButton = GetControl<Button>(JazzControlLocatorKey.ButtonCreateNewDashboard);
+        public static Button DashboardHierarchyNameButton = GetControl<Button>(JazzControlLocatorKey.ButtonDashboardHierarchyName);
+        public static Button ExistedDashboardButton = GetControl<Button>(JazzControlLocatorKey.ButtonExistedDashboard);
 
         public static Button EnergyDisplayStepHourButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepHour);
         public static Button EnergyDisplayStepDayButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepDay);
         public static Button EnergyDisplayStepWeekButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepWeek);
         public static Button EnergyDisplayStepMonthButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepMonth);
         public static Button EnergyDisplayStepYearButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepYear);
+
+        public static Button MultipleHierarchyTreeButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchyTree);
 
         #endregion
 
@@ -414,6 +422,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
         #endregion
 
+        #region Home page buttons
 
+        #region all dashboards
+
+        public static Button AllDashboardsHierarchyTreeButton = GetControl<Button>(JazzControlLocatorKey.ButtonAllDashboardsHierarchyTree);
+
+        #endregion
+        #endregion
     }
 }

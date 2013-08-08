@@ -39,6 +39,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
+        private static HomePage HomePagePanel = JazzFunction.HomePage;
 
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-1")]
@@ -136,14 +137,25 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            Assert.IsTrue(EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]));
 
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-        
+            
+            //On homepage, check the dashboard
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.MediumPause();
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+           
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+            Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(EnergyAnalysis.EAPath, input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0], dashboard.WigetName));
         }
     }
 }

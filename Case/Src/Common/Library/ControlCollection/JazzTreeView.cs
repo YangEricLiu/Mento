@@ -46,5 +46,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static HierarchyTree DataPermissionHierarchyTree = GetControl<HierarchyTree>(JazzControlLocatorKey.DataPermissionHierarchyTree);
 
         #endregion
+
+        #region HomePage
+
+        public static HierarchyTree AllDashboardsTree = GetControl<HierarchyTree>(JazzControlLocatorKey.AllDashboardsTree);
+
+        #endregion
     }
 }

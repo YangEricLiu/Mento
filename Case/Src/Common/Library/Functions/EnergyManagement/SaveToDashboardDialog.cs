@@ -26,7 +26,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox DashboardComboBox = JazzComboBox.EnergyViewSaveDashboardDashboardComboBox;
 
         //Create dashboard link
-        private static LinkButton CreateDashboardButton = JazzButton.EnergyViewSaveDashboardCreateDashboardButton;
+        private static Button CreateDashboardButton = JazzButton.CreateNewDashboardButton;
 
         //Dashboard name textbox
         private static TextField DashboardNameTextbox = JazzTextField.EnergyViewSaveDashboardDashboardNameTextField;
@@ -36,6 +36,7 @@ namespace Mento.ScriptCommon.Library.Functions
             WidgetNameTextbox.Fill(widgetName);
             WidgetSaveHierarchy.Click();
             WidgetSaveHierarchyTree.SelectNode(hierarchyNamePath);
+            TimeManager.LongPause();
             if (isCreateDashboard)
             {
                 CreateDashboardButton.Click();

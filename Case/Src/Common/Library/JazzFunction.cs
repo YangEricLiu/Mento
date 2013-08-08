@@ -476,5 +476,17 @@ namespace Mento.ScriptCommon.Library
                 return _DataViewOperation;
             }
         }
+
+        private static HomePage _HomePage;
+        public static HomePage HomePage
+        {
+            get
+            {
+                if (_HomePage == null)
+                    _HomePage = new HomePage();
+
+                return _HomePage;
+            }
+        }
     }
 }

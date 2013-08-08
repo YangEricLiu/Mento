@@ -40,8 +40,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
-
-
+        private static HomePage HomePagePanel = JazzFunction.HomePage;
 
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
@@ -98,37 +97,49 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
-        public void TestExcelToDataTable(EnergyViewOptionData input)
+        [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-2")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-2")]
+        public void LineChartSaveToDashBoard(EnergyViewOptionData input)
         {
-            //string filePath = "D:\\data3.xls";
-            string filePath2 = "D:\\dataExpected1.xls";
-
-
-            //DataTable test = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath2, JazzFunction.DataViewOperation.sheetNameExpected);
-            //Assert.IsNotNull(test);
-
-            JazzFunction.UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies);
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
+            TimeManager.MediumPause();
 
-            JazzFunction.UnitKPIPanel.SetDateRange(new DateTime(2012, 1, 1), new DateTime(2012, 12, 31));
+            //Set date range
+            EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
             TimeManager.ShortPause();
 
-            JazzFunction.UnitKPIPanel.CheckTag(input.InputData.TagNames[0]);
-            
-
-            EnergyViewToolbar.View(EnergyViewType.List);
+            //Check tag V_Null_BuildingBC and view data view
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+
+            //Uncheck tag V_Null_BuildingBC, and select another tag v14
+            EnergyAnalysis.UncheckTag(input.InputData.TagNames[0]);
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[1]);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
+
+            //Save to dashboard
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
-            DataTable actual = JazzFunction.UnitKPIPanel.GetAllData();
-            Assert.IsNotNull(actual);
+            //On homepage, check the dashboard
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.LongPause();
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
         }
 
     }

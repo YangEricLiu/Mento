@@ -8,6 +8,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public sealed class JazzGrid : JazzControlCollection
     {
+        #region get one grid
+
+        public static Grid GetOneGrid(string key, string nameIndex)
+        {
+            return GetControl<Grid>(key, nameIndex);
+        }
+
+        #endregion
+
         #region Energy view
         public static Grid EnergyAnalysisAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridEnergyAnalysisAllTagList);
         public static Grid EnergyAnalysisSystemDimensionTagList = GetControl<Grid>(JazzControlLocatorKey.GridEnergyAnalysisSystemDimensionTagList);
@@ -58,6 +67,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid TOUTariffsList = GetControl<Grid>(JazzControlLocatorKey.GridTOUTariffsList);
 
         public static Grid DataPermissonList = GetControl<Grid>(JazzControlLocatorKey.GridDataScopePermissionList);
+
+        #endregion
+
+        #region home page
+
+        public static Grid HomepageMinWidgetDataViewGrid = GetControl<Grid>(JazzControlLocatorKey.GridHomepageMinWidgetDataView);
 
         #endregion
     }

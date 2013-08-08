@@ -144,6 +144,11 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return Chart.LegendItemExists(legendName);
         }
+
+        public bool IsScrollbarExist()
+        {
+            return Chart.IsScrollbarExists();
+        }
         #endregion
     }
 

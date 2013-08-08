@@ -54,6 +54,7 @@
       
       <HomePage>
             <add key="ButtonAllDashboardsHierarchyTree" value="hp-menu-tree-btn" type="ID"/>
+            <add key="ButtonHomePageDashboard" value="//div[@id='hp-dashboard-list-targetEl']/div/span[text()='$#nameIndex']" type="XPath"/>
         </HomePage>
         <!--User Management Begin-->
         <User>
@@ -119,8 +120,9 @@
             <add key="ModifyWidgetNameCancelButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
             <add key="WidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]//span[text()='表3']" type="XPath"/>
             <add key="ButtonDeleteWidget" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[4]" type="XPath"/>
-            <add key="LinkButtonEnergyViewSaveDashboardCreateDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-default')]//div[contains(@id,'remlinkbutton')]/a[text()='新增仪表盘']" type="XPath"/>
-            <add key="LinkButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
+            <add key="ButtonCreateNewDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='新建仪表盘']]/input" type="XPath"/>
+            <add key="ButtonExistedDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='已存在仪表盘']]/input" type="XPath"/>            
+            <add key="ButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
             <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
             <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
 
@@ -132,6 +134,9 @@
             <add key="ButtonEnergyDisplayStepWeek" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='周']]" type="XPath"/>
             <add key="ButtonEnergyDisplayStepMonth" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='月']]" type="XPath"/>
             <add key="ButtonEnergyDisplayStepYear" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='年']]" type="XPath"/>
+        
+            <add key="ButtonMultipleHierarchyTree" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='请选择层级结构']]" type="XPath"/>
+   
         </energyview>
         <customersettings>
             <ptag>
@@ -640,8 +645,10 @@
   
     <add key="WidgetSaveHierarchyTree" value="//div[contains(@id, 'hierarchytreepanel') and contains(@class, 'x-panel-body-default')]/div/table" type="XPath"/>
   
-	<add key="DataPermissionHierarchyTree" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-panel-body')]//div//table" type="XPath"/>
+	  <add key="DataPermissionHierarchyTree" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-panel-body')]//div//table" type="XPath"/>
 
+    <add key="AllDashboardsTree" value="//div[@id='hp-hier-tree-body']/div/table" type="XPath"/>
+  
 </TreeView>
   
   <!--Grid Begin-->
@@ -686,6 +693,10 @@
     
        <add key="GridDataScopePermissionList" value="//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]" type="XPath"/>
 </platformsettings>
+  
+  <Homepage>
+    <add key="GridHomepageMinWidgetDataView" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[div/div/div/div/div/span[text()='$#nameIndex']]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+    </Homepage>
   </Grid>
   <!--Grid End-->
 
@@ -773,6 +784,10 @@
         <add key="LabelPlatformDayNightCalendar" value="st-calendar-properties-form-body" type="ID"/>
       </calendar>
     </PlatformSettings>
+  <HomePage>
+    <add key="LabelDashboardHeaderName" value="hp-dashboard-ct_hd-textEl" type="ID"/>
+    <add key="LabelWidgetNameMin" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']" type="XPath"/>
+    </HomePage>
   </Label>
   <!--Label End-->
    
@@ -824,5 +839,11 @@
       <add key="ContainerDisplayPermissionCustomerizeItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset[2]/div" type="XPath"/>
       <add key="ContainerDisplayPermissionItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset/div" type="XPath"/>
   </UserTypeRole>
+  
+<Homopage>
+      <add key="ContainerWidgetsToDashboard" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]" type="XPath"/>
+
+  </Homopage>
+  
 </Container>
 </WebElement>

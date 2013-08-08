@@ -119,9 +119,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ModifyWidgetNameCancelButton = "ModifyWidgetNameCancelButton";
         public static string WidgetName = "WidgetName";
         public static string ButtonDeleteWidget = "ButtonDeleteWidget";
-        public static string LinkButtonEnergyViewSaveDashboardCreateDashboard = "LinkButtonEnergyViewSaveDashboardCreateDashboard";
-        public static string LinkButtonEnergyViewSaveDashboardExistedDashboard = "LinkButtonEnergyViewSaveDashboardExistedDashboard";
-        public static string LinkButtonDashboardHierarchyName = "LinkButtonDashboardHierarchyName";
+        public static string ButtonCreateNewDashboard = "ButtonCreateNewDashboard";
+        public static string ButtonExistedDashboard = "ButtonExistedDashboard";
+        public static string ButtonDashboardHierarchyName = "ButtonDashboardHierarchyName";
         public static string DeleteWidgetConfirmButton = "DeleteWidgetConfirmButton";
         public static string DeleteWidgetCancelButton = "DeleteWidgetCancelButton";
 
@@ -131,6 +131,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonEnergyDisplayStepMonth = "ButtonEnergyDisplayStepMonth";
         public static string ButtonEnergyDisplayStepYear = "ButtonEnergyDisplayStepYear";
 
+        public static string ButtonMultipleHierarchyTree = "ButtonMultipleHierarchyTree";
         #endregion
 
         #region energy analysis
@@ -307,7 +308,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
-
         #region User Data Scope Permission
         public static string ButtonModifyUserDataPermission = "ButtonModifyUserDataPermission";
         public static string ButtonSaveUserDataPermission = "ButtonSaveUserDataPermission";
@@ -399,6 +399,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Home page
 
         public static string ButtonAllDashboardsHierarchyTree = "ButtonAllDashboardsHierarchyTree";
+        public static string ButtonHomePageDashboard = "ButtonHomePageDashboard";
 
         #endregion
 
@@ -705,6 +706,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string WidgetSaveHierarchyTree = "WidgetSaveHierarchyTree";
 
         public static string DataPermissionHierarchyTree = "DataPermissionHierarchyTree";
+
+        public static string AllDashboardsTree = "AllDashboardsTree";
         #endregion
 
         #region Grid
@@ -748,6 +751,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridUserTypePermissionList = "GridUserTypePermissionList";
         public static string GridTOUTariffsList = "GridTOUTariffsList";
         public static string GridDataScopePermissionList = "GridDataScopePermissionList";
+        #endregion
+
+        #region home page
+
+        public static string GridHomepageMinWidgetDataView = "GridHomepageMinWidgetDataView";
+
         #endregion
 
         #endregion
@@ -846,6 +855,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region Homepage
+
+        public static string LabelDashboardHeaderName = "LabelDashboardHeaderName";
+        public static string LabelWidgetNameMin = "LabelWidgetNameMin";
+        
+        #endregion
+
         #endregion
 
         #region Chart
@@ -911,6 +927,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ContainerDisplayPermissionPublicTypeItems = "ContainerDisplayPermissionPublicTypeItems";
         public static string ContainerDisplayPermissionItems = "ContainerDisplayPermissionItems";
         #endregion
+
+        #region HomePage
+
+        public static string ContainerWidgetsToDashboard = "ContainerWidgetsToDashboard";
+
+        #endregion
+
         #endregion
 
     }

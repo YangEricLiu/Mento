@@ -108,6 +108,24 @@ namespace Mento.ScriptCommon.Library.Functions
             DataPermissonList.CheckRowCheckbox(1,customerName,page);
         }
 
+        /// <summary>
+        /// Switch to basic properties tab
+        /// </summary>
+        /// <returns></returns>
+        public void SwitchToBasicPropertiesTab()
+        {
+            UserBasicPropertiesTab.Click();
+        }
+
+        /// <summary>
+        /// Switch to  Data Permission  tab
+        /// </summary>
+        /// <returns></returns>
+        public void SwitchToDataPermissionTab()
+        {
+            UserDataPermissionTab.Click();
+        }
+
         #endregion
 
         #region get value

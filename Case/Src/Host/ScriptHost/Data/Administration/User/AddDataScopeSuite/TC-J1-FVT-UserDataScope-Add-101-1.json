@@ -1,0 +1,12 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"CommonName":"UserForCheckAll",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"UserForCheckAll",
+		}
+	}
+]

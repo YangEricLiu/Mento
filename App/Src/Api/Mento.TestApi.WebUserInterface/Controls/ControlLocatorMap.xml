@@ -48,6 +48,7 @@
   <add key="GridRowSelected" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class, 'x-grid-row-focused')]/td[$#cellIndex]/div" type ="XPath"/>
   <add key="GridRow" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]" type ="XPath"/>
   <add key="GridRowChecker" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-checkcolumn')]/div/div" type ="XPath"/>
+  
   <add key="GridPagingToolbar" value="div[contains(@class,'x-paging-toolbar')]" type="XPath"/>
   <add key="GridPagingPreviousPageButton" value="div/div/div[em/button/span[contains(text(),'上一页')]]" type="XPath"/>
   <add key="GridPagingNextPageButton" value="div/div/div[em/button/span[text()='下一页>']]" type="XPath"/>

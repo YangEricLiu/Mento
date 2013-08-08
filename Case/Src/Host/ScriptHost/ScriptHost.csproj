@@ -139,7 +139,6 @@
     <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffModifyInvalidSuite\" />
     <Folder Include="Data\Administration\User\UserManagementAddInvalid\" />
     <Folder Include="Data\Administration\User\UserManagementAddValid\" />
-    <Folder Include="Data\Administration\User\UserManagementModifyValid\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestFormulaVtagSmokeTestSuite\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestKPIBaselineSuite\" />
     <Folder Include="Resource\en\" />
@@ -187,6 +186,7 @@
     <None Include="Data\Administration\TOU\TOUPulsePeakModifyValidSuite\TC-J1-FVT-TOUTariffSettingPulse-Modify-101.json" />
     <None Include="Data\Administration\TOU\SmokeTestTOUPulsePeakTariffSuite\TC-J1-SmokeTest-026.json" />
     <None Include="Data\Administration\TOU\SmokeTestTOUBasicTariffSuite\TC-J1-SmokeTest-025.json" />
+    <None Include="Data\Administration\User\AddDataScopeSuite\TC-J1-FVT-UserDataScope-Add-101-1.json" />
     <None Include="Data\Administration\User\SendInitrialPassword\TC-J1-FVT-UserManagement-SendInitialPasswordLink-2.json" />
     <None Include="Data\Administration\User\SendInitrialPassword\TC-J1-FVT-UserManagement-SendInitialPasswordLink-1.json" />
     <None Include="Data\Administration\User\UserAddInvalidSuite\TC-J1-FVT-UserManagement-Add-001-2.json" />

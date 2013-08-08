@@ -44,7 +44,14 @@ namespace Mento.Script.Administration.User
         [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(AddDataScopeSuite), "TC-J1-FVT-UserDataScope-Add-101-1")]
         public void AddAndViewRootNode(UserSettingsData input)
         {
-          
+            JazzFunction.UserSettings.FocusOnUser(input.InputData.CommonName);
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.ShortPause();
+            UserDataPermissionSettings.ClickModifyButton();
+            UserDataPermissionSettings.CheckAllCumstomerNames();
+            UserDataPermissionSettings.CheckAllCustomerDatas();
+            //UserDataPermissionSettings.CheckCustomerName("NancyCustomer1");
+            //UserDataPermissionSettings
         }
     }
 }

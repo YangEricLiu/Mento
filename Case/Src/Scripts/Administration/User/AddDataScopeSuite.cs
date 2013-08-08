@@ -25,7 +25,7 @@ namespace Mento.Script.Administration.User
     public class AddDataScopeSuite : TestSuiteBase
     {
         private UserDataScopePermission UserDataPermissionSettings = JazzFunction.UserDataScopePermission;
-
+        private JazzTreeView DataPermissionHierarchyTree = JazzTreeView.DataPermissionHierarchyTree;
         [SetUp]
         public void CaseSetUp()
         {
@@ -48,9 +48,14 @@ namespace Mento.Script.Administration.User
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
             UserDataPermissionSettings.ClickModifyButton();
-            UserDataPermissionSettings.CheckAllCumstomerNames();
-            UserDataPermissionSettings.CheckAllCustomerDatas();
-            //UserDataPermissionSettings.CheckCustomerName("NancyCustomer1");
+            //UserDataPermissionSettings.CheckAllCumstomerNames();
+            //UserDataPermissionSettings.CheckAllCustomerDatas();
+            UserDataPermissionSettings.CheckCustomer("NancyCustomer1");
+            UserDataPermissionSettings.ClickEditDataPermission("NancyCustomer1");
+
+            UserDataPermissionSettings.CloseHierarchyTreeView();
+            JazzTreeView.DataPermissionHierarchyTree.ExpandNodePath(input.InputData.FunctionScopeList);
+            
             //UserDataPermissionSettings
         }
     }

@@ -115,6 +115,47 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
+        /// Simulate mouse checked Data permission checkbox in the front of one grid row
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public void CheckDataPermissionRowCheckbox(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checker = this.GetDataPermissionRowChecker(cellIndex, cellText, Paging);
+
+            if (this.IsDataPermissionRowUnChecked(4, cellText, Paging))
+            {
+                checker.Click();
+            }
+        }
+
+        /// <summary>
+        /// Check whether the specified Data permission row is checked
+        /// </summary>
+        /// <param name="cellIndex">Column index of the identifier cell</param>
+        /// <param name="cellText">Text of the identifier cell</param>
+        /// <returns></returns>
+        public bool IsDataPermissionRowUnChecked(int cellIndex, string cellText, bool Paging = true)
+        {
+            //var checker = this.GetDataPermissionRowChecker(cellIndex, cellText, Paging);
+            IWebElement checkerText = this.GetDataPermissionRowCheckerText(4,cellText,Paging);
+            
+            return checkerText.GetAttribute("type").Contains("disableEdit");
+        }
+
+        /// <summary>
+        /// Click the edit data permisson 
+        /// </summary>
+        /// <param name="cellIndex">Column index of the identifier cell</param>
+        /// <param name="cellText">Text of the identifier cell</param>
+        /// <returns></returns>
+        public void ClickDataPermissionRow(int cellIndex, string cellText, bool Paging = true)
+        {
+            IWebElement checkerText = this.GetDataPermissionRowCheckerText(4, cellText, Paging);
+            checkerText.Click();
+        }
+
+        /// <summary>
         /// Simulate mouse unchecked checkbox in the front of one grid row
         /// </summary>
         /// <param name="cellName"></param>
@@ -299,6 +340,64 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return FindChild(Locator.GetVariableLocator(checkerLocator, variables));
         }
+
+        // Data permission special checker 
+        protected virtual IWebElement GetDataPermissionRowChecker(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checkerLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowDataPermissionChecker);
+
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(checkerLocator, variables));
+        }
+
+        protected virtual IWebElement GetDataPermissionRowCheckerText(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checkerLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowDataPermissionCheckerTextRow);
+
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(checkerLocator, variables));
+        }
+
 
         public int PageCount
         {

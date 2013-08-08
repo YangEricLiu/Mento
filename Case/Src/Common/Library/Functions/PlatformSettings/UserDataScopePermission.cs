@@ -26,6 +26,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button ModifyButton = JazzButton.ModifyUserDataPermissionButton;
         private static Button SaveButton = JazzButton.SaveUserDataPermissionButton;
         private static Button CancelButton = JazzButton.CancelUserDataPermissionButton;
+        private static Button CloseTreeViewButton = JazzButton.ClosePermissionTreeWindowButton;
         private static Button UserBasicPropertiesTab = JazzButton.TabButtonUserBasicProperties;
         private static Button UserDataPermissionTab = JazzButton.TabButtonUserDataPermission;
 
@@ -102,11 +103,40 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param>Cumtomer name</param>
         /// <returns></returns>
-        public void CheckCustomerName(string customerName)
+        public void CheckCustomer(string customerName)
         {
             Boolean page = true;
-            DataPermissonList.CheckRowCheckbox(1,customerName,page);
+            DataPermissonList.CheckDataPermissionRowCheckbox(4,customerName,page);
         }
+
+        /// <summary>
+        /// Click Edit Data Permission  scope  link button
+        /// </summary>
+        /// <param>Cumtomer name</param>
+        /// <returns></returns>
+        public void ClickEditDataPermission(string customerName)
+        {
+            Boolean page = true;
+            DataPermissonList.ClickDataPermissionRow(4, customerName, page);
+        }
+
+        /// <summary>
+        /// Click Close hierarchy tree view button
+        /// </summary>
+        /// <returns></returns>
+        public void CloseHierarchyTreeView()
+        {
+            CloseTreeViewButton.Click();
+        }
+
+        /// <summary>
+        /// Click Close hierarchy tree view button
+        /// </summary>
+        /// <returns></returns>
+        public void SelectHierarchyNodes(string[] hierarchNodePaths)
+        {
+        }
+
 
         /// <summary>
         /// Switch to basic properties tab

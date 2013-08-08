@@ -65,6 +65,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string GridPagingTotalPageLabel = "GridPagingTotalPageLabel";
         public static string GridPagingTotalRecordLabel = "GridPagingTotalRecordLabel";
 
+        public static string GridRowDataPermissionChecker = "GridRowDataPermissionChecker";
+        public static string GridRowDataPermissionCheckerTextRow = "GridRowDataPermissionCheckerTextRow";
 
         #endregion
 

@@ -132,6 +132,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonEnergyDisplayStepYear = "ButtonEnergyDisplayStepYear";
 
         public static string ButtonMultipleHierarchyTree = "ButtonMultipleHierarchyTree";
+        public static string TabButtonMultipleHierarchyAllTagsTab = "TabButtonMultipleHierarchyAllTagsTab";
+        public static string TabButtonMultipleHierarchyAreaDimensionTab = "TabButtonMultipleHierarchyAreaDimensionTab";
+        public static string TabButtonMultipleHierarchySystemDimensionTab = "TabButtonMultipleHierarchySystemDimensionTab";
+        public static string ButtonMultipleHierarchySelectSystemDimension = "ButtonMultipleHierarchySelectSystemDimension";
+        public static string ButtonMultipleHierarchySelectAreaDimension = "ButtonMultipleHierarchySelectAreaDimension";
+        public static string ButtonMultipleHierarchyConfirm = "ButtonMultipleHierarchyConfirm";
+        public static string ButtonMultipleHierarchyGiveUp = "ButtonMultipleHierarchyGiveUp";
+        public static string ButtonMultipleHierarchyAddTags = "ButtonMultipleHierarchyAddTags";
         #endregion
 
         #region energy analysis
@@ -712,34 +720,59 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string AllDashboardsTree = "AllDashboardsTree";
         public static string MultipleHierarchyTree = "MultipleHierarchyTree";
-        
+        public static string MultipleSystemDimensionTree = "MultipleSystemDimensionTree";
+        public static string MultipleAreaDimensionTree = "MultipleAreaDimensionTree";
         #endregion
 
         #region Grid
+
         #region energyview
+
+        #region common
+
+        public static string GridMultiHierarchyAllTagList = "GridMultiHierarchyAllTagList";
+        public static string GridMultiHierarchySystemDimensionTagList = "GridMultiHierarchySystemDimensionTagList";
+        public static string GridMultiHierarchyAreaDimensionTagList = "GridMultiHierarchyAreaDimensionTagList";
+
+        #endregion
+
+        #region energy analysis
+
         public static string GridEnergyAnalysisAllTagList = "GridEnergyAnalysisAllTagList";
         public static string GridEnergyAnalysisSystemDimensionTagList = "GridEnergyAnalysisSystemDimensionTagList";
         public static string GridEnergyAnalysisAreaDimensionTagList = "GridEnergyAnalysisAreaDimensionTagList";
         public static string GridEnergyAnalysisEnergyDataList = "GridEnergyAnalysisEnergyDataList";
 
-        public static string GridUnitKPIAllTagList = "GridUnitKPIAllTagList";
-        public static string GridRadioAllTagList = "GridRadioAllTagList";
+        #endregion
 
-        public static string GridTotalCommodityCarbon = "GridTotalCommodityCarbon";
-        public static string GridTotalCommodityCost = "GridTotalCommodityCost";
+        #region unit KPI
+
+        public static string GridUnitKPIAllTagList = "GridUnitKPIAllTagList";
         public static string GridTotalCommodityUnitCarbon = "GridTotalCommodityUnitCarbon";
         public static string GridTotalCommodityUnitCost = "GridTotalCommodityUnitCost";
-
-        public static string GridCommodityCarbon = "GridCommodityCarbon";
-        public static string GridCommodityCost = "GridCommodityCost";
         public static string GridCommodityUnitCarbon = "GridCommodityUnitCarbon";
         public static string GridCommodityUnitCost = "GridCommodityUnitCost";
+        public static string GridTotalCommodityCarbon = "GridTotalCommodityCarbon";
+        public static string GridTotalCommodityCost = "GridTotalCommodityCost";
+        public static string GridCommodityCarbon = "GridCommodityCarbon";
+        public static string GridCommodityCost = "GridCommodityCost";
+        public static string GridUnitKPIEnergyDataList = "GridUnitKPIEnergyDataList";
+        #endregion
+
+        #region radio
+
+        public static string GridRadioAllTagList = "GridRadioAllTagList";
+
+        #endregion
+
+        #region rank
 
         public static string GridCommodityRank = "GridCommodityRank";
         public static string GridCommodityRankCarbon = "GridCommodityRankCarbon";
         public static string GridCommodityRankCost = "GridCommodityRankCost";
 
-        public static string GridUnitKPIEnergyDataList = "GridUnitKPIEnergyDataList";
+        #endregion
+      
         #endregion
 
         #region customersettings

@@ -91,8 +91,8 @@
         </UserProfile>
         <energyview>
             <add key="ButtonEnergyViewSelectHierarchy" value="em-hier-tree-btn" type="ID"/>
-            <add key="ButtonEnergyViewSelectSystemDimension" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
-            <add key="ButtonEnergyViewSelectAreaDimension" value="//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
+            <add key="ButtonEnergyViewSelectSystemDimension" value="//div[@id='em-energy-tagfilter']//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
+            <add key="ButtonEnergyViewSelectAreaDimension" value="//div[@id='em-energy-tagfilter']//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
             <add key="ButtonRankSelectSystemDimension" value="em-rank-sdim-button" type="ID"/>
             <add key="ButtonRankSelectHierarchy" value="em-rank-tree-btn" type="ID"/>
             <add key="ButtonWidgetSaveHierarchy" value="//div[contains(@id, 'widgetsavewindow') and contains(@class, 'x-window-body-default')]//div[contains(@id, 'menubuttontree')]" type="XPath"/>
@@ -136,6 +136,16 @@
             <add key="ButtonEnergyDisplayStepYear" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='年']]" type="XPath"/>
         
             <add key="ButtonMultipleHierarchyTree" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tree-btn') and em/button/span[text()='请选择层级结构']]" type="XPath"/>
+            <add key="TabButtonMultipleHierarchyAllTagsTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='全部数据点']]" type="XPath"/>
+            <add key="TabButtonMultipleHierarchyAreaDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='区域数据点']]" type="XPath"/>
+            <add key="TabButtonMultipleHierarchySystemDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='系统数据点']]" type="XPath"/>
+
+            <add key="ButtonMultipleHierarchySelectSystemDimension" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
+            <add key="ButtonMultipleHierarchySelectAreaDimension" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
+            <add key="ButtonMultipleHierarchyConfirm" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
+            <add key="ButtonMultipleHierarchyGiveUp" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+            <add key="ButtonMultipleHierarchyAddTags" value="em-multi-hier-add" type="ID"/>
+
         </energyview>
         <customersettings>
             <ptag>
@@ -650,7 +660,8 @@
 
     <add key="AllDashboardsTree" value="//div[@id='hp-hier-tree-body']/div/table" type="XPath"/>
     <add key="MultipleHierarchyTree" value="//div[@id='em-multi-hier-tree-body']/div/table" type="XPath"/>
-  
+    <add key="MultipleSystemDimensionTree" value="//div[contains(@id,'menu') and contains(@class,'x-panel-default') and not(contains(@style,'visibility: hidden;'))]//div[contains(@id,'systemdimensiontree') and contains(@class,'x-panel-body')]/div/table" type="XPath"/>
+    <add key="MultipleAreaDimensionTree" value="//div[contains(@id,'menu') and contains(@class,'x-panel-default') and not(contains(@style,'visibility: hidden;'))]//div[contains(@id,'areadimensiontree') and contains(@class,'x-panel-body')]/div/table" type="XPath"/>
 </TreeView>
   
   <!--Grid Begin-->
@@ -679,6 +690,11 @@
       <add key="GridCommodityRankCost" value="//div[@id='em-rank-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
       <add key="GridUnitKPIEnergyDataList" value="//div[@id='em-unit-energy-chartpanel-body']//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+      
+      <add key="GridMultiHierarchyAllTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@id, 'taggrid') and contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridMultiHierarchySystemDimensionTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridMultiHierarchyAreaDimensionTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+
     </energyview>
     <customersettings>
       <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>

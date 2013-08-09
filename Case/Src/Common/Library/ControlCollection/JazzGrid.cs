@@ -18,14 +18,25 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region Energy view
+
+        #region common
+
+        public static Grid MultiHierarchySystemDimensionTagList = GetControl<Grid>(JazzControlLocatorKey.GridMultiHierarchySystemDimensionTagList);
+        public static Grid MultiHierarchyAreaDimensionTagList = GetControl<Grid>(JazzControlLocatorKey.GridMultiHierarchyAreaDimensionTagList);
+        public static Grid MultiHierarchyAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridMultiHierarchyAllTagList);
+
+        #endregion
+
+        #region energy analysis
+
         public static Grid EnergyAnalysisAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridEnergyAnalysisAllTagList);
         public static Grid EnergyAnalysisSystemDimensionTagList = GetControl<Grid>(JazzControlLocatorKey.GridEnergyAnalysisSystemDimensionTagList);
         public static Grid EnergyAnalysisAreaDimensionTagList = GetControl<Grid>(JazzControlLocatorKey.GridEnergyAnalysisAreaDimensionTagList);
-
         public static Grid EnergyAnalysisEnergyDataList = GetControl<Grid>(JazzControlLocatorKey.GridEnergyAnalysisEnergyDataList);
 
-        public static Grid UnitKPIAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridUnitKPIAllTagList);
-        public static Grid RadioAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridRadioAllTagList);
+        #endregion
+
+        #region unit KPI
 
         public static Grid TotalCommodityCarbonGrid = GetControl<Grid>(JazzControlLocatorKey.GridTotalCommodityCarbon);
         public static Grid TotalCommodityCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridTotalCommodityCost);
@@ -37,11 +48,24 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid CommodityUnitCarbonGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityUnitCarbon);
         public static Grid CommodityUnitCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityUnitCost);
 
+        public static Grid UnitKPIAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridUnitKPIAllTagList);
+        public static Grid UnitKPIEnergyDataListGrid = GetControl<Grid>(JazzControlLocatorKey.GridUnitKPIEnergyDataList);
+        
+        #endregion
+
+        #region radio
+
+        public static Grid RadioAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridRadioAllTagList);
+
+        #endregion
+
+        #region rank
+
         public static Grid CommodityRankGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityRank);
         public static Grid CommodityRankCarbonGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityRankCarbon);
         public static Grid CommodityRankCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityRankCost);
 
-        public static Grid UnitKPIEnergyDataListGrid = GetControl<Grid>(JazzControlLocatorKey.GridUnitKPIEnergyDataList);
+        #endregion
         
         #endregion
 

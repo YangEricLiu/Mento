@@ -42,12 +42,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static Button WidgetSaveHierarchyButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetSaveHierarchy);
         
-        //public static TabButton EnergyViewALLTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewALLTagsTab);
-        //public static TabButton EnergyViewSystemDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewSystemDimensionTagsTab);
-        //public static TabButton EnergyViewAreaDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonEnergyViewAreaDimensionTagsTab);
-        //public static TabButton RankHierarchyTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonRankHierarchyTab);
-        //public static TabButton RankSystemDimensionTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonRankSystemDimensionTab);
-
         public static SplitButton EnergyViewViewDataButton = GetControl<SplitButton>(JazzControlLocatorKey.SplitButtonEnergyViewViewData);
         public static MenuButton EnergyViewMoreButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonEnergyViewMore);
         public static Button EnergyViewAddTimeSpanButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewAddTimeSpan);
@@ -76,7 +70,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button EnergyDisplayStepYearButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepYear);
 
         public static Button MultipleHierarchyTreeButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchyTree);
-
+        public static TabButton MultipleHierarchyAllTags = GetControl<TabButton>(JazzControlLocatorKey.TabButtonMultipleHierarchyAllTagsTab);
+        public static TabButton MultipleHierarchySystemDimensionTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonMultipleHierarchySystemDimensionTab);
+        public static TabButton MultipleHierarchyAreaDimensionTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonMultipleHierarchyAreaDimensionTab);
+        public static Button MultipleHierarchySelectSystemDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchySelectSystemDimension);
+        public static Button MultipleHierarchySelectAreaDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchySelectAreaDimension);
+        public static Button MultipleHierarchyConfirmButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchyConfirm);
+        public static Button MultipleHierarchyGiveUpButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchyGiveUp);
+        public static Button MultipleHierarchyAddTagsButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchyAddTags);
+       
         #endregion
 
         #region Energy Analysis

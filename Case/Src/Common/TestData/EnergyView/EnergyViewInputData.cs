@@ -27,6 +27,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public DefaultTimeRange? DefaultTimeRange { get; set; }
 
         public DashboardInformation DashboardInfo { get; set; }
+
+        public string[] MultiHieTagNames { get; set; }
     }
 
     public class EnergyViewOptionOutput : ExpectedTestDataBase

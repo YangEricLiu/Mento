@@ -5,19 +5,20 @@
 			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
 			"AreaDimensionPath":["楼宇BC", "一层"],
 			"SystemDimensionPath":["楼宇BC", "空调"],
-			"TagNames":["V_Null_BuildingBC", "V14_BuildingBC"],
-			"failedFileName":["F-SingleHierarchyNodeDataView101-2-D-V14_BuildingBC.xls"],
+			"TagNames":["V2_BuildingBC", "V1_BuildingBC", "V11_BuildingBC", "V_Null_BuildingBC"],
+			"MultiHieTagNames":["V13_BuildingBC", "V14_BuildingBC", "V15_BuildingBC", "V16_BuildingBC", "V17_BuildingBC", "V18_BuildingBC"],
+			"failedFileName":["F-MultiHierarchyNodeDataView101-1-D-V2_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-V2V1_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-V11V2V1_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-9VBuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-10NullVBuildingBC.xls"],
 			"DashboardInfo":{
-				"WigetName":"SingleDataView1012",
-				"HierarchyName":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+				"WigetName":"MultiDataView1012",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级", "楼宇BAD"],
 				"IsCreateDashboard":"true",
-				"DashboardName":"Dashboard_V14",
+				"DashboardName":"Dashboard_Multi",
 			}
 		},
 		"ExpectedData":
 		{
 			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
-			"expectedFileName":["SingleHierarchyNodeDataView101-2-D-V14_BuildingBC.xls"],
+			"expectedFileName":["SingleHierarchyNodeDataView101-1-D-V2_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-V2V1_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-V11V2V1_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-9VBuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-10NullVBuildingBC.xls"],
 		}
 	}
 ]

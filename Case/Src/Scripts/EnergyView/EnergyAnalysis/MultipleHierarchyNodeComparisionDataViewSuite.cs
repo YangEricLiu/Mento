@@ -53,6 +53,127 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.LongPause();
 
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies);
+
+            //Switch to "area dimension" and pick V2_BuildingBC
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.AreaDimensionTab);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            MultiHieCompareWindow.SelectAreaDimension(input.InputData.AreaDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[0]);
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.ShortPause();
+
+            //Set date range
+            EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
+            TimeManager.ShortPause();
+
+            //Check tag and view data view
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
+            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Open "多层级数据点" again
+            EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
+            TimeManager.MediumPause();
+
+            //Pick V2 from default all tags and confirm,then check the data view
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[1]);
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.ShortPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
+            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+            //Open "多层级数据点" again
+            EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
+            TimeManager.MediumPause();
+
+            //Pick V11 from default all tags and confirm,then check the data view
+            string[] hierarchyPath2 = { "NancyCustomer1", "园区测试多层级", "楼宇BAD" };
+            MultiHieCompareWindow.SelectHierarchyNode(hierarchyPath2);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[2]);
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.ShortPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
+            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+
+            //Open "多层级数据点" again
+            EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
+            TimeManager.MediumPause();
+
+            //Pick other 6 tags from default all tags and confirm,then check the data view
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            MultiHieCompareWindow.CheckTags(input.InputData.MultiHieTagNames);
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.ShortPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
+            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+
+            //Open "多层级数据点" again
+            EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
+            TimeManager.MediumPause();
+
+            //Pick one more tag without data from default all tags and confirm,then check the data view
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[3]);
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.ShortPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+
+            //Open "多层级数据点" again
+            EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
+            TimeManager.MediumPause();
+
+            //verify all left tags in this hierarchy or other hierarchy, can't check one more
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
         }
     }
 }

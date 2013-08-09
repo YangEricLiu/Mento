@@ -20,6 +20,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button EnergyDisplayStepWeekButton = JazzButton.EnergyDisplayStepWeekButton;
         private static Button EnergyDisplayStepMonthButton = JazzButton.EnergyDisplayStepMonthButton;
         private static Button EnergyDisplayStepYearButton = JazzButton.EnergyDisplayStepYearButton;
+        private static Button MultipleHierarchyAddTagsButton = JazzButton.MultipleHierarchyAddTagsButton;
 
         //Chart
         protected abstract Chart Chart
@@ -70,6 +71,14 @@ namespace Mento.ScriptCommon.Library.Functions
                 default:
                     break;
             }
+        }
+
+        /// <summary>
+        /// Click Multiple Hierarchy Add Tags button
+        /// </summary>
+        public void ClickMultipleHierarchyAddTagsButton()
+        {
+            MultipleHierarchyAddTagsButton.Click();
         }
 
         #endregion

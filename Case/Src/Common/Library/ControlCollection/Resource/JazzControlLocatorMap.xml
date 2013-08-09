@@ -358,6 +358,8 @@
                 <add key="ButtonSaveUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
                 <add key="ButtonCancelUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
                 <add key="ButtonClosePermissionTreeWindow" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-window-header')]//div[contains(@class,'x-tool')]" type="XPath"/>
+                <add key="ButtonTreeWindowSave" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
+                <add key="ButtonTreeWindowCancel" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
 
             </UserDataPermission>
 
@@ -644,7 +646,7 @@
   
     <add key="WidgetSaveHierarchyTree" value="//div[contains(@id, 'hierarchytreepanel') and contains(@class, 'x-panel-body-default')]/div/table" type="XPath"/>
   
-	  <add key="DataPermissionHierarchyTree" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-panel-body')]//div//table" type="XPath"/>
+	<add key="DataPermissionHierarchyTree" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-panel-body')]//div//table" type="XPath"/>
 
     <add key="AllDashboardsTree" value="//div[@id='hp-hier-tree-body']/div/table" type="XPath"/>
     <add key="MultipleHierarchyTree" value="//div[@id='em-multi-hier-tree-body']/div/table" type="XPath"/>

@@ -315,6 +315,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonClosePermissionTreeWindow = "ButtonClosePermissionTreeWindow";
         public static string TabButtonUserDataPermission = "TabButtonUserDataPermission";
         public static string TabButtonUserBasicProperties = "TabButtonUserBasicProperties";
+        public static string ButtonTreeWindowSave = "ButtonTreeWindowSave";
+        public static string ButtonTreeWindowCancel = "ButtonTreeWindowCancel";
+
         #endregion
 
         #region platformsettings

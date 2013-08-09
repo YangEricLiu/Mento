@@ -419,6 +419,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button ClosePermissionTreeWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonClosePermissionTreeWindow);
         public static Button TabButtonUserBasicProperties = GetControl<Button>(JazzControlLocatorKey.TabButtonUserBasicProperties);
         public static Button TabButtonUserDataPermission = GetControl<Button>(JazzControlLocatorKey.TabButtonUserDataPermission);
+        public static Button TreeWindowSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonTreeWindowSave);
+        public static Button TreeWindowCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonTreeWindowCancel);
         #endregion
         #endregion
 

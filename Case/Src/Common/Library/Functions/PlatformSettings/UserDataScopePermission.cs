@@ -29,11 +29,18 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button CloseTreeViewButton = JazzButton.ClosePermissionTreeWindowButton;
         private static Button UserBasicPropertiesTab = JazzButton.TabButtonUserBasicProperties;
         private static Button UserDataPermissionTab = JazzButton.TabButtonUserDataPermission;
-
+        private static Button TreeWindowSaveButton = JazzButton.TreeWindowSaveButton;
+        private static Button TreeWindowCancelButton = JazzButton.TreeWindowCancelButton;
         private static TreeView UserDataPermissionTree = JazzTreeView.DataPermissionHierarchyTree;
 
         private static CheckBoxField SelectAllDataPermission = JazzCheckBox.UserSelectAllDataPermissionCheckBoxField;
         private static CheckBoxField CustomerName = JazzCheckBox.UserAllDataPermissionsCheckBoxField;
+
+        private static HierarchyTree HierarchyTree
+        {
+            get;
+            set;
+        }
 
         #endregion
 
@@ -121,22 +128,71 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Click Close hierarchy tree view button
+        /// Check Whether the view and edit link button is enable 
         /// </summary>
+        /// <param>Cumtomer name</param>
         /// <returns></returns>
-        public void CloseHierarchyTreeView()
+        public Boolean IsEditDataPermissionEnable(string customerName)
         {
-            CloseTreeViewButton.Click();
+            Boolean page = true;
+            return DataPermissonList.IsDataPermissionRowUnChecked(4,customerName,page);
         }
 
         /// <summary>
         /// Click Close hierarchy tree view button
         /// </summary>
         /// <returns></returns>
-        public void SelectHierarchyNodes(string[] hierarchNodePaths)
+        public void CloseTreeWindow()
         {
+            CloseTreeViewButton.Click();
         }
 
+        /// <summary>
+        /// Check  certain hierarchy node
+        /// </summary>
+        /// <returns></returns>
+        public Boolean CheckHierarchyNode(string[] hierarchNodePaths)
+        {
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(hierarchNodePaths);
+                UserDataPermissionTree.CheckNode(hierarchNodePaths.Last());
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Verify whether the node is checked
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsHierarchyNodeChecked(string[] hierarchNodePaths)
+        {
+            UserDataPermissionTree.SelectNode(hierarchNodePaths);
+            return UserDataPermissionTree.IsNodeChecked(hierarchNodePaths.Last());
+        }
+
+        /// <summary>
+        /// Click tree window save button
+        /// </summary>
+        /// <returns></returns>
+        public void SaveTreeWindow()
+        {
+            TreeWindowSaveButton.Click();
+        }
+
+        /// <summary>
+        /// Click tree window  cancel button
+        /// </summary>
+        /// <returns></returns>
+        public void CancelTreeWindow()
+        {
+            TreeWindowCancelButton.Click();
+        }
 
         /// <summary>
         /// Switch to basic properties tab

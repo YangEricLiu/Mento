@@ -163,6 +163,10 @@ namespace Mento.ScriptCommon.Library.Functions
              TimeManager.MediumPause();           
         }
 
+        public bool IsNoEnabledCheckbox()
+        {
+            return TagGrid.IsNoEnabledCheckbox();
+        }
         #endregion
     }
 }

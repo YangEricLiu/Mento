@@ -17,6 +17,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         //private static Locator IsNoDataOnGridLocator = new Locator("div/div/div/div[text()='没有数据']", ByType.XPath);
         private static Locator IsNoRowOnGridLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]", ByType.XPath);
         private static Locator DataViewLocator = new Locator("//div[contains(@id, 'taggridcomponent')]", ByType.XPath);
+        private static Locator IsNoEnabledCheckboxLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[contains(@class, 'x-grid-cell-checkcolumn')]/div/div[@class='x-grid-checkheader']", ByType.XPath);
 
         protected IWebElement[] CurrentRows
         {
@@ -37,6 +38,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool IsPageToolBarExisted()
         {
             return this.Exists(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingToolbar));
+        }
+
+        public bool IsNoEnabledCheckbox()
+        {
+            return !ChildExists(IsNoEnabledCheckboxLocator);
         }
 
         public bool IsAllGridTagsUnchecked()

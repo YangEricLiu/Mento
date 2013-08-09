@@ -41,19 +41,34 @@ namespace Mento.Script.Administration.User
 
         [Test]
         [CaseID("TC-J1-FVT-UserDataScope-Add-101-1")]
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(AddDataScopeSuite), "TC-J1-FVT-UserDataScope-Add-101-1")]
-        public void AddAndViewRootNode(UserSettingsData input)
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeSuite), "TC-J1-FVT-UserDataScope-Add-101-1")]
+        public void AddAndViewRootNode(UserDataPermissionData input)
         {
             string[] hierarchyNode = {"NancyCustomer1","GreenieSite","GreenieBuilding"};
 
-            JazzFunction.UserSettings.FocusOnUser(input.InputData.CommonName);
+            // Focus on a new created user, open datascope tab. 
+            //JazzFunction.UserSettings.FocusOnUser(input.InputData.);
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
+            //Verify all customers checkbox is unchecked and "编辑数据权限" link is gray out
+            Assert.IsTrue(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
+            
+            //UserDataPermissionSettings.IsHierarchyNodeChecked();
+            
+            /*
             UserDataPermissionSettings.ClickModifyButton();
 
-            //UserDataPermissionSettings.CheckAllCumstomerNames();
+            Assert.IsTrue(UserDataPermissionSettings.IsSelectAllCustomerNamesButtonEnable());
+
+            UserDataPermissionSettings.CheckAllCumstomerNames();
+            TimeManager.LongPause();
+
+            UserDataPermissionSettings.ClickCancelButton();
+
+            Assert.IsFalse(UserDataPermissionSettings.IsSelectAllCustomerNamesButtonEnable());
             //UserDataPermissionSettings.CheckAllCustomerDatas();
 
+           
             UserDataPermissionSettings.CheckCustomer("NancyCustomer1");
             UserDataPermissionSettings.ClickEditDataPermission("NancyCustomer1");
 
@@ -62,7 +77,7 @@ namespace Mento.Script.Administration.User
             UserDataPermissionSettings.SaveTreeWindow();
             TimeManager.ShortPause();
             
-
+            
             UserDataPermissionSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
@@ -72,7 +87,9 @@ namespace Mento.Script.Administration.User
             UserDataPermissionSettings.ClickEditDataPermission("NancyCustomer1");
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(hierarchyNode));
             UserDataPermissionSettings.CloseTreeWindow();
-
+            */
         }
+
+
     }
 }

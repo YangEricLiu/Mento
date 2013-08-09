@@ -853,9 +853,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string CheckBoxFieldUserTypeCost = "CheckBoxFieldUserTypeCost";
 
         public static string CheckBoxFieldUserTypePermission = "CheckBoxFieldUserTypePermission";
-        public static string CheckBoxFieldUserSelectAllDataPermission = "CheckBoxFieldUserSelectAllDataPermission";
-        public static string CheckBoxFieldUserAllDataPermissions = "CheckBoxFieldUserAllDataPermissions";
-        //public static string CheckBoxFieldUserDataPermissions = "CheckBoxFieldUserDataPermissions";
+
+        public static string ButtonUserSelectAllDataPermission = "ButtonUserSelectAllDataPermission";
+        public static string ButtonCustomerNames = "ButtonCustomerNames";
+        public static string ButtonCustomerNamesViewStatus = "ButtonCustomerNamesViewStatus";
         #endregion
 
         #region Label

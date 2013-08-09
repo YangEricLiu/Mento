@@ -371,6 +371,12 @@
                 <add key="ButtonTreeWindowSave" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
                 <add key="ButtonTreeWindowCancel" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
 
+                <add key="ButtonUserSelectAllDataPermission" value="//div[@id='st-user-tab-panel-body']//div[@id='st-user-datarange-form']/table/tbody/tr/td/table[contains(@id,'checkboxfield')]/tbody/tr/td[2]/input" type="XPath"/>
+
+                <add key="ButtonCustomerNames" value="//div[@id='st-user-datarange-form-body']//div[@id='st-user-datarange-form-targetEl']//div[contains(@id,'datapermissiongrid')]//div[contains(@class,'x-column-header-checkbox')]/div[1]/span" type="XPath"/>
+                <add key="ButtonCustomerNamesViewStatus" value="//div[@id='st-user-datarange-form-body']//div[@id='st-user-datarange-form-targetEl']//div[contains(@id,'datapermissiongrid')]//div[contains(@class,'x-column-header-checkbox')]/div[1]/span" type="XPath"/>
+
+
             </UserDataPermission>
 
             <TargetBaseline>
@@ -709,8 +715,9 @@
       <add key="GridUserTypePermissionList" value="st-usertype-grid" type="ID"/>
       <add key="GridTOUTariffsList" value="st-priceStrategy-grid" type="ID"/>
     
-       <add key="GridDataScopePermissionList" value="//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]" type="XPath"/>
-</platformsettings>
+      <add key="GridDataScopePermissionList" value="//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]" type="XPath"/>
+
+    </platformsettings>
   
   <Homepage>
     <add key="GridHomepageMinWidgetDataView" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[div/div/div/div/div/span[text()='$#nameIndex']]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
@@ -768,10 +775,8 @@
     <add key="CheckBoxFieldUserTypeCost" value="//div[@id='st-usertype-cost-body']//table[tbody/tr//label[text()='成本']]" type="XPath"/>
 
     <add key="CheckBoxFieldUserTypePermission" value="//div[@id='st-usertype-properties-form-body']/div[contains(@id, 'privilegepanel')]/div/fieldset[legend/div/label[text()='角色权限']]/div/table[contains(@id, 'privilegeitem')]" type="XPath"/>
-	<add key="CheckBoxFieldUserSelectAllDataPermission" value="//div[@id='st-user-tab-panel-body']//div[@id='st-user-datarange-form']/table/tbody/tr/td/table[contains(@id,'checkboxfield')]" type="XPath"/>
-    <add key="CheckBoxFieldUserAllDataPermissions" value="//div[@id='st-user-datarange-form-targetEl']//div[contains(@id,'datapermissiongrid')]//div[contains(@id,'headercontainer') and contains(@role,'presentation')]" type="XPath"/>
-    <!--<add key="CheckBoxFieldUserDataPermissions" value="//div[@id='st-user-datarange-form-targetEl']//div[contains(@id,'datapermissiongrid')]//div[contains(@class,'x-grid-view')]" type="XPath"/>-->
-  
+	
+      
 </CheckBox>
   <!--CheckBoxField End-->
   

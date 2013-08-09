@@ -423,6 +423,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button TabButtonUserDataPermission = GetControl<Button>(JazzControlLocatorKey.TabButtonUserDataPermission);
         public static Button TreeWindowSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonTreeWindowSave);
         public static Button TreeWindowCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonTreeWindowCancel);
+
+        public static Button UserSelectAllDataPermissionButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserSelectAllDataPermission);
+        public static Button UserCustomerNamesButton = GetControl<Button>(JazzControlLocatorKey.ButtonCustomerNames);
+        public static Button CustomerNamesViewStatusButtons = GetControl<Button>(JazzControlLocatorKey.ButtonCustomerNamesViewStatus);
+        public static LinkButton UserCustomerNamesLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.ButtonCustomerNames);
+
         #endregion
         #endregion
 

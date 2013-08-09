@@ -2,11 +2,15 @@
 	{		
 		"InputData":
 		{
-			"CommonName":"UserForCheckAll",
+			"UserName":"AutoTestUserA",
+			"CustomerList":["customerA","customerB","customerC"],
+			"HierarchyNodePath":["","",""],
 		},
 		"ExpectedData":
 		{
-			"CommonName":"UserForCheckAll",
+			"UserName":"AutoTestUserA",
+			"CustomerList":["customerA","customerB","customerC"],
+			"HierarchyNodePath":["","",""],
 		}
 	}
 ]

@@ -18,6 +18,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator IsNoRowOnGridLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]", ByType.XPath);
         private static Locator DataViewLocator = new Locator("//div[contains(@id, 'taggridcomponent')]", ByType.XPath);
         private static Locator IsNoEnabledCheckboxLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[contains(@class, 'x-grid-cell-checkcolumn')]/div/div[@class='x-grid-checkheader']", ByType.XPath);
+        private static Locator IsDataPermissionEnableLocator = new Locator("//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]/div/table/tbody/tr/td[5]/div/a[@type=''disableEdit]", ByType.XPath);
 
         protected IWebElement[] CurrentRows
         {
@@ -53,6 +54,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool IsNoRowOnGrid()
         {
             return !ChildExists(IsNoRowOnGridLocator);
+        }
+
+        /// <summary>
+        /// Data permission locator to verify whether the "编辑数据权限" enabled
+        /// </summary>
+        /// <param name="locator"></param>
+        public bool AreDataPermissionEditLinkButtonDisabled()
+        {
+            //return !ChildExists(IsDataPermissionEnableLocator);
+            return ElementHandler.Exists(IsDataPermissionEnableLocator);
         }
 
         public bool HasDrawnDataView()

@@ -33,8 +33,11 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button TreeWindowCancelButton = JazzButton.TreeWindowCancelButton;
         private static TreeView UserDataPermissionTree = JazzTreeView.DataPermissionHierarchyTree;
 
-        private static CheckBoxField SelectAllDataPermission = JazzCheckBox.UserSelectAllDataPermissionCheckBoxField;
-        private static CheckBoxField CustomerName = JazzCheckBox.UserAllDataPermissionsCheckBoxField;
+        private static Button SelectAllDataPermission = JazzButton.UserSelectAllDataPermissionButton;
+        private static Button CustomerNames = JazzButton.UserCustomerNamesButton;
+        private static Button CustomerNameViewStatus = JazzButton.CustomerNamesViewStatusButtons;
+
+        //private static LinkButton CustomerNameLinkButton = JazzButton.UserCustomerNamesLinkButton;
 
         private static HierarchyTree HierarchyTree
         {
@@ -92,7 +95,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void CheckAllCustomerDatas()
         {
-            SelectAllDataPermission.Check("全部平台客户及对应数据权限");
+            SelectAllDataPermission.Click();
         }
 
         /// <summary>
@@ -102,7 +105,11 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void CheckAllCumstomerNames()
         {
-            CustomerName.Check("客户名称");
+            CustomerNames.Click();
+            TimeManager.MediumPause();
+            CustomerNames.Click();
+            //TimeManager.LongPause();
+            //CustomerNameLinkButton.Click();
         }
 
         /// <summary>
@@ -166,14 +173,57 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        /*
+        /// <summary>
+        /// Verify whether the node is checked
+        /// </summary>
+        /// <returns></returns>
+        public Boolean AreAllCustomerListUncheck()
+        {
+            //Locator ss = new Locator();
+
+            //ElementHandler.Exists();
+            int i = 0;
+            // string[] Customer = new ;
+            Boolean page = true;
+            Boolean flag = true;
+            int rows = DataPermissonList.GetAllData().Rows.Count;
+            while (i < rows && flag)
+            {
+                flag = DataPermissonList.IsDataPermissionRowUnChecked(4,DataPermissonList.GetRow(i).Text, page);
+                DataPermissonList.GetRow(i).
+                i++;
+            }
+            return flag;
+        }
+        */
+
+        /// <summary>
+        /// Verify whether all the linkbutton disabled
+        /// </summary>
+        /// <returns></returns>
+        public Boolean AreAllEditDataPermissionLinkButtonDisable()
+        {
+            return DataPermissonList.AreDataPermissionEditLinkButtonDisabled();
+        }
+
         /// <summary>
         /// Verify whether the node is checked
         /// </summary>
         /// <returns></returns>
         public Boolean IsHierarchyNodeChecked(string[] hierarchNodePaths)
         {
-            UserDataPermissionTree.SelectNode(hierarchNodePaths);
-            return UserDataPermissionTree.IsNodeChecked(hierarchNodePaths.Last());
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(hierarchNodePaths);
+                UserDataPermissionTree.IsNodeChecked(hierarchNodePaths.Last());
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -235,6 +285,24 @@ namespace Mento.ScriptCommon.Library.Functions
             return SaveButton.IsEnabled();
         }
 
+        /// <summary>
+        /// Verify whether the Select all Customer names button enable
+        /// </summary>
+        public Boolean IsSelectAllCustomerNamesButtonEnable()
+        {
+            //@@@@@@@@@@@ problem here
+            return SelectAllDataPermission.IsEnabled();
+        }
+
+        /// <summary>
+        /// Verify whether the Customer names button enable
+        /// </summary>
+        public Boolean IsAllCustomerNamesButtonEnable()
+        {
+            //@@@@@@@@@@@ problem here
+            CustomerNameViewStatus.IsEnabled();
+            return SelectAllDataPermission.IsEnabled();
+        }
 
         #endregion
     }

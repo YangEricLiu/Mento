@@ -708,6 +708,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string DataPermissionHierarchyTree = "DataPermissionHierarchyTree";
 
         public static string AllDashboardsTree = "AllDashboardsTree";
+        public static string MultipleHierarchyTree = "MultipleHierarchyTree";
+        
         #endregion
 
         #region Grid

@@ -25,7 +25,7 @@ namespace Mento.Script.Administration.User
     public class AddDataScopeSuite : TestSuiteBase
     {
         private UserDataScopePermission UserDataPermissionSettings = JazzFunction.UserDataScopePermission;
-        private JazzTreeView DataPermissionHierarchyTree = JazzTreeView.DataPermissionHierarchyTree;
+        //private JazzTreeView DataPermissionHierarchyTree = JazzTreeView.DataPermissionHierarchyTree;
         [SetUp]
         public void CaseSetUp()
         {

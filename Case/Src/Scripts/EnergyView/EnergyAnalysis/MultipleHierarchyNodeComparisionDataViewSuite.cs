@@ -40,6 +40,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
+        private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
+        //private static 
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-1")]
@@ -48,6 +50,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         {
             //Switch to "多层级数据点"
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
+            TimeManager.LongPause();
+
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies);
         }
     }
 }

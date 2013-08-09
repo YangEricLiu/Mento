@@ -488,5 +488,17 @@ namespace Mento.ScriptCommon.Library
                 return _HomePage;
             }
         }
+
+        private static MutipleHierarchyCompareWindow _MutipleHierarchyCompareWindow;
+        public static MutipleHierarchyCompareWindow MutipleHierarchyCompareWindow
+        {
+            get
+            {
+                if (_MutipleHierarchyCompareWindow == null)
+                    _MutipleHierarchyCompareWindow = new MutipleHierarchyCompareWindow();
+
+                return _MutipleHierarchyCompareWindow;
+            }
+        }
     }
 }

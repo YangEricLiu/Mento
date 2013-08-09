@@ -135,8 +135,7 @@
             <add key="ButtonEnergyDisplayStepMonth" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='月']]" type="XPath"/>
             <add key="ButtonEnergyDisplayStepYear" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='年']]" type="XPath"/>
         
-            <add key="ButtonMultipleHierarchyTree" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='请选择层级结构']]" type="XPath"/>
-   
+            <add key="ButtonMultipleHierarchyTree" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tree-btn') and em/button/span[text()='请选择层级结构']]" type="XPath"/>
         </energyview>
         <customersettings>
             <ptag>
@@ -648,6 +647,7 @@
 	  <add key="DataPermissionHierarchyTree" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-panel-body')]//div//table" type="XPath"/>
 
     <add key="AllDashboardsTree" value="//div[@id='hp-hier-tree-body']/div/table" type="XPath"/>
+    <add key="MultipleHierarchyTree" value="//div[@id='em-multi-hier-tree-body']/div/table" type="XPath"/>
   
 </TreeView>
   

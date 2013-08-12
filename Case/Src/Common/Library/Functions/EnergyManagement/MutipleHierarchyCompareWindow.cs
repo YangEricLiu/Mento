@@ -51,6 +51,14 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             MultipleHierarchyGiveUpButton.Click();
         }
+
+        /// <summary>
+        /// Judge if the confirm button enabled
+        /// </summary>
+        public bool IsConfirmButtonEnable()
+        {
+            return MultipleHierarchyConfirmButton.IsEnabled();
+        }
         #endregion
 
         #region tree operation
@@ -163,10 +171,136 @@ namespace Mento.ScriptCommon.Library.Functions
              TimeManager.MediumPause();           
         }
 
+        /// <summary>
+        /// Uncheck the tags on left region
+        /// </summary>
+        /// <param name="tagNames"></param>
+        public void UncheckTags(string[] tagNames)
+        {
+            foreach (var tagName in tagNames)
+            {
+                TagGrid.UncheckRowCheckbox(2, tagName);
+
+                TimeManager.MediumPause();
+            }
+        }
+
+        /// <summary>
+        /// Uncheck the tag on left region
+        /// </summary>
+        /// <param name="tagName"></param>
+        public void UncheckTag(string tagName)
+        {
+            TagGrid.UncheckRowCheckbox(2, tagName);
+            TimeManager.ShortPause();
+        }
+
+        /// <summary>
+        /// Judge if the tag is checked
+        /// </summary>
+        /// <param name="tagName"></param>
+        public bool IsTagChecked(string tagName)
+        {
+            return TagGrid.IsRowChecked(2, tagName);
+        }
+
+        /// <summary>
+        /// Judge if the tags are checked
+        /// </summary>
+        /// <param name="tagNames"></param>
+        public bool IsTagsChecked(string[] tagNames)
+        {
+            bool isChecked = true;
+            
+            foreach (var tagName in tagNames)
+            {
+                isChecked = TagGrid.IsRowChecked(2, tagName);
+            }
+
+            return isChecked;
+        }
+
+        /// <summary>
+        ///Judge if there is not enabled check box
+        /// </summary>
         public bool IsNoEnabledCheckbox()
         {
             return TagGrid.IsNoEnabledCheckbox();
         }
+
+        /// <summary>
+        ///Judge if there is not disabled check box
+        /// </summary>
+        public bool IsAllEnabledCheckbox()
+        {
+            return TagGrid.IsAllEnabledCheckbox();
+        }
+
+        /// <summary>
+        /// Judge if the tag on the special container tag list
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="tagName"></param>
+        public bool IsTagExistedOnSpecialContainer(string title, string tagName)
+        {
+            Grid oneSpecialGrid = GetSpecialGrid(title);
+
+            return oneSpecialGrid.IsRowExist(1, tagName);
+        
+        }
+
+        /// <summary>
+        /// Judge if the tags on the special container tag list
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="tagNames"></param>
+        public bool IsTagsExistedOnSpecialContainer(string title, string[] tagNames)
+        {
+            Grid oneSpecialGrid = GetSpecialGrid(title);
+            bool isTrue = true;
+
+            foreach (string tagName in tagNames)
+            {
+                isTrue = oneSpecialGrid.IsRowExist(1, tagName);
+            }
+
+            return isTrue;
+        }
+
+        /// <summary>
+        /// Delete tag on the right container of multiple hierarchy window
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="tagName"></param>
+        public void ClickDeleteXButton(string title, string tagName)
+        {
+            Grid oneSpecialGrid = GetSpecialGrid(title);
+            oneSpecialGrid.ClickDeleteRowXButton(1, tagName);
+        }
+
+        /// <summary>
+        /// Delete tags on the right container of multiple hierarchy window
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="tagNames"></param>
+        public void ClickDeleteXButtons(string title, string[] tagNames)
+        {
+            Grid oneSpecialGrid = GetSpecialGrid(title);
+
+            foreach (string tagName in tagNames)
+            {
+                oneSpecialGrid.ClickDeleteRowXButton(1, tagName);
+            }
+        }
+        #endregion
+
+        #region private method
+
+        public Grid GetSpecialGrid(string title)
+        {
+            return JazzGrid.GetOneGrid(JazzControlLocatorKey.GridMultiSelectedTagsList, title);
+        }
+
         #endregion
     }
 }

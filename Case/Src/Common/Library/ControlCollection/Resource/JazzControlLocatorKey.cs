@@ -325,6 +325,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TabButtonUserBasicProperties = "TabButtonUserBasicProperties";
         public static string ButtonTreeWindowSave = "ButtonTreeWindowSave";
         public static string ButtonTreeWindowCancel = "ButtonTreeWindowCancel";
+        public static string ButtonCustomerNamesViewStatus = "ButtonCustomerNamesViewStatus";
 
         #endregion
 
@@ -733,6 +734,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridMultiHierarchyAllTagList = "GridMultiHierarchyAllTagList";
         public static string GridMultiHierarchySystemDimensionTagList = "GridMultiHierarchySystemDimensionTagList";
         public static string GridMultiHierarchyAreaDimensionTagList = "GridMultiHierarchyAreaDimensionTagList";
+        public static string GridMultiSelectedTagsList = "GridMultiSelectedTagsList";
 
         #endregion
 
@@ -742,6 +744,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridEnergyAnalysisSystemDimensionTagList = "GridEnergyAnalysisSystemDimensionTagList";
         public static string GridEnergyAnalysisAreaDimensionTagList = "GridEnergyAnalysisAreaDimensionTagList";
         public static string GridEnergyAnalysisEnergyDataList = "GridEnergyAnalysisEnergyDataList";
+        public static string GridEASelectedTagsList = "GridEASelectedTagsList";
 
         #endregion
 
@@ -856,7 +859,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ButtonUserSelectAllDataPermission = "ButtonUserSelectAllDataPermission";
         public static string ButtonCustomerNames = "ButtonCustomerNames";
-        public static string ButtonCustomerNamesViewStatus = "ButtonCustomerNamesViewStatus";
+        public static string MenuButtonSelectCustomer = "MenuButtonSelectCustomer";
         #endregion
 
         #region Label

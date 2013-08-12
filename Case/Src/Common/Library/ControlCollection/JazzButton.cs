@@ -314,6 +314,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button WorkdayCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCalendarDelete);
         public static Button WorkdayCalendarAddSpecialDatesButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCalendarAddSpecialDates);
         #endregion
+
         #region Worktime buttons
         public static Button WorktimeCalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarCreate);
         public static Button WorktimeCalendarModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarModify);
@@ -322,6 +323,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button WorktimeCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorktimeCalendarDelete);
         public static LinkButton WorktimeCalendarAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonWorktimeCalendarAddMoreRanges);
         #endregion
+
         #region HeatingCoolingSeason buttons
         public static Button HeatingCoolingSeasonCalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarCreate);
         public static Button HeatingCoolingSeasonCalendarModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarModify);
@@ -331,6 +333,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button HeatingCoolingSeasonCalendarAddMoreWarmRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges);
         public static Button HeatingCoolingSeasonCalendarAddMoreColdRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges);
         #endregion
+
         #region DayNight buttons
         public static Button DayNightCalendarCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarCreate);
         public static Button DayNightCalendarModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarModify);
@@ -339,6 +342,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button DayNightCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonDayNightCalendarDelete);
         public static LinkButton DayNightCalendarAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonDayNightCalendarAddMoreRanges);
         #endregion
+
         #region Carbonfactor buttons
         public static Button CarbonFactorCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorCreate);
         public static Button CarbonFactorModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorModify);
@@ -348,6 +352,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button CarbonFactorAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.ButtonCarbonFactorAddMoreRanges);
         
         #endregion
+
         #region TOU buttons
         public static Button TOUBasicPropertyCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUBasicPropertyCreate);
         public static Button TOUBasicPropertyModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUBasicPropertyModify);
@@ -368,6 +373,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button TOUPulsePeakPropertyDeleteRangeItemButton = GetControl<Button>(JazzControlLocatorKey.ButtonTOUPulsePeakPropertyDeleteRangeItem);
         public static LinkButton TOUPulsePeakPropertyAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonTOUPulsePeakPropertyAddMoreRanges);        
         #endregion
+
         #region Customer settings buttons
         public static Button AddCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonAddCustomer);
         public static Button UploadLogoButton = GetControl<Button>(JazzControlLocatorKey.ButtonUploadLogo);
@@ -376,6 +382,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button DeleteCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteCustomer);
         public static Button UpdateCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonUpdateCustomer);
         #endregion
+
         #region User setting
         public static Button UserCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserCreate);
         public static Button UserRefreshButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserRefresh);
@@ -397,6 +404,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button UserTypePermissionDisplayCloseButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserTypePermissionDisplayClose);
 
         #endregion
+
         #region User Profile
         public static Button UserProfileButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserProfile);
         public static Button UserProfileViewMenuButton = GetControl<Button>(JazzControlLocatorKey.MenuButtonUserProfileView);
@@ -406,6 +414,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button UserPasswordModifyMenuButton = GetControl<Button>(JazzControlLocatorKey.MenuButtonModifyUserPassword);
         public static Button ExitJazzMenuButton = GetControl<Button>(JazzControlLocatorKey.MenuButtonExitJazz);
         #endregion
+
         #region UserRoleType
         public static Button CreatFunctionRoleType = GetControl<Button>(JazzControlLocatorKey.ButtonCreatFunctionRoleType);
         public static Button ModifyFunctionRoleType = GetControl<Button>(JazzControlLocatorKey.ButtonModifyFunctionRoleType);
@@ -437,6 +446,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region all dashboards
 
         public static Button AllDashboardsHierarchyTreeButton = GetControl<Button>(JazzControlLocatorKey.ButtonAllDashboardsHierarchyTree);
+        public static MenuButton SelectCustomerMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonSelectCustomer);
 
         #endregion
         #endregion

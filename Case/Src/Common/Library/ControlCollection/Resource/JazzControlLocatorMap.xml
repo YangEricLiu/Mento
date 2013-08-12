@@ -55,7 +55,8 @@
       <HomePage>
             <add key="ButtonAllDashboardsHierarchyTree" value="hp-menu-tree-btn" type="ID"/>
             <add key="ButtonHomePageDashboard" value="//div[@id='hp-dashboard-list-targetEl']/div/span[text()='$#nameIndex']" type="XPath"/>
-        </HomePage>
+            <add key="MenuButtonSelectCustomer" value="header-btn-select-customer" type="ID"/>
+      </HomePage>
         <!--User Management Begin-->
         <User>
             <add key="ButtonUserCreate" value="st-user-grid-add-btnInnerEl" type="ID"/>
@@ -76,8 +77,6 @@
             <add key="LinkButtonUserAssociatedCustomer" value="st-user-customer-add" type="ID"/>
             <add key="ButtonUserTypePermissionDisplayClose" value="//div[@id='st-user-privilegeinfo-form']//div[@id='st-user-privilegeinfo-form_header-innerCt']//div[contains(@class,'x-tool')]" type="XPath"/>
         </User>
-
-
 
         <UserProfile>
             <add key="ButtonUserProfile" value="//div[@id='header-userprofile-container-innerCt']/img" type="XPath"/>
@@ -700,6 +699,8 @@
       <add key="GridMultiHierarchyAllTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@id, 'taggrid') and contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridMultiHierarchySystemDimensionTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridMultiHierarchyAreaDimensionTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridMultiSelectedTagsList" value="//div[contains(@id,'energymultihiertagpanel') and contains(@class,'x-container-default')]/div[label[text()='$#nameIndex']]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridEASelectedTagsList" value="//div[@id='em-energy-multi-hier-panel']/div[label[text()='$#nameIndex']]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
     </energyview>
     <customersettings>

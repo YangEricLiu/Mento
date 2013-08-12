@@ -19,6 +19,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator DataViewLocator = new Locator("//div[contains(@id, 'taggridcomponent')]", ByType.XPath);
         private static Locator IsNoEnabledCheckboxLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[contains(@class, 'x-grid-cell-checkcolumn')]/div/div[@class='x-grid-checkheader']", ByType.XPath);
         private static Locator IsDataPermissionEnableLocator = new Locator("//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]/div/table/tbody/tr/td[5]/div/a[@type=''disableEdit]", ByType.XPath);
+        private static Locator IAllEnabledCheckboxLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[contains(@class, 'x-grid-cell-checkcolumn')]/div/div[contains(@class,'x-grid-checkheader-disabled')]", ByType.XPath);
 
         protected IWebElement[] CurrentRows
         {
@@ -39,6 +40,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool IsPageToolBarExisted()
         {
             return this.Exists(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingToolbar));
+        }
+
+        public bool IsAllEnabledCheckbox()
+        {
+            return !ChildExists(IAllEnabledCheckboxLocator);
         }
 
         public bool IsNoEnabledCheckbox()
@@ -118,6 +124,17 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         /// <summary>
         /// Simulate mouse checked checkbox in the front of one grid row
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public void ClickDeleteRowXButton(int cellIndex, string cellText, bool Paging = true)
+        {
+            var deleteX = this.GetRowDeleteX(cellIndex, cellText, Paging);
+            deleteX.Click();
+        }
+
+        /// <summary>
+        /// Simulate mouse click the "X" button on the tail of grid row on multiple hierarchy window
         /// </summary>
         /// <param name="cellName"></param>
         /// <returns></returns>
@@ -329,6 +346,34 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return FindChild(Locator.GetVariableLocator(checkerLocator, variables));
         }
         */
+
+        protected virtual IWebElement GetRowDeleteX(int cellIndex, string cellText, bool Paging = true)
+        {
+            var deleteXLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowDeleteX);
+
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(deleteXLocator, variables));
+        }
 
         protected virtual IWebElement GetRowChecker(int cellIndex, string cellText, bool Paging = true)
         {

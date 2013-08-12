@@ -183,6 +183,15 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge if tag on the tag list checked
+        /// </summary>
+        /// <param name="tagName"></param>
+        public Boolean IsTagChecked(string tagName)
+        {
+            return TagGrid.IsRowChecked(2, tagName);
+        }
+
+        /// <summary>
         /// Judge if tag on the tag list of left region
         /// </summary>
         /// <param name="tagName"></param>
@@ -218,6 +227,39 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge if the tag on the special container tag list
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="tagName"></param>
+        public bool IsTagExistedOnSpecialContainer(string title, string tagName)
+        {
+            Grid oneSpecialGrid = GetSpecialGrid(title);
+
+            return oneSpecialGrid.IsRowExist(1, tagName);
+
+        }
+
+        /// <summary>
+        /// Judge if the tags on the special container tag list
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="tagNames"></param>
+        public bool IsTagsExistedOnSpecialContainer(string title, string[] tagNames)
+        {
+            Grid oneSpecialGrid = GetSpecialGrid(title);
+            bool isTrue = true;
+
+            foreach (string tagName in tagNames)
+            {
+                isTrue = oneSpecialGrid.IsRowExist(1, tagName);
+            }
+
+            return isTrue;
+        }
+
+        #region chart
+
+        /// <summary>
         /// Get the value of UOM
         /// </summary>
         public string GetUomValue()
@@ -242,6 +284,8 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             Chart.ClickLegendItem(legendName);
         }
+
+        #endregion
 
         #endregion
 
@@ -284,6 +328,15 @@ namespace Mento.ScriptCommon.Library.Functions
             DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
 
             return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+        }
+
+        #endregion
+
+        #region private mothod
+
+        public Grid GetSpecialGrid(string title)
+        {
+            return JazzGrid.GetOneGrid(JazzControlLocatorKey.GridEASelectedTagsList, title);
         }
 
         #endregion

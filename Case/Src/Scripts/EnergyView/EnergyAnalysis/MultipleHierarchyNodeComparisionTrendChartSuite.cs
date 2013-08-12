@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101"), CreateTime("2013-08-08"), Owner("Emma")]
-    public class MultipleHierarchyNodeComparisionDataViewSuite : TestSuiteBase
+    public class MultipleHierarchyNodeComparisionTrendChartSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -44,9 +44,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         //private static 
 
         [Test]
-        [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-1")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionDataViewSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-1")]
-        public void MultipleHierarchyNodeComparisionDataView(EnergyViewOptionData input)
+        [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-TrendChart-101-1")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionTrendChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-TrendChart-101-1")]
+        public void MultipleHierarchyNodeComparisionTrendChart(EnergyViewOptionData input)
         {
             //Switch to "多层级数据点"
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
@@ -71,14 +71,12 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
             TimeManager.ShortPause();
 
-            //Check tag and view data view
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            //Check tag and view line chart
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-            Assert.IsTrue(EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]));
+            Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -96,10 +94,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-            TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]));
+            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -118,10 +114,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
-            TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]));
+            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -139,10 +133,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
-            TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]));
+            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -160,10 +152,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
-            TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]));
+            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -203,10 +193,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
-            TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]));
+            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
@@ -221,7 +209,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
-            Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(EnergyAnalysis.EAPath, input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5], dashboard.WigetName));
         }
     }
 }

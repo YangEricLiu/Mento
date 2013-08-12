@@ -29,6 +29,10 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public DashboardInformation DashboardInfo { get; set; }
 
         public string[] MultiHieTagNames { get; set; }
+
+        public string[] MultiSelectedHiearchyPath { get; set; }
+
+        public string[][] MultipleHiearchyPath { get; set; }
     }
 
     public class EnergyViewOptionOutput : ExpectedTestDataBase

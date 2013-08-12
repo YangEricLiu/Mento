@@ -27,6 +27,18 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        public void SelectOneItem(string itemPath)
+        {
+            this.Click();
+            TimeManager.FlashPause();
+
+            Locator itemLocator = GetMenuItemLocator(itemPath);
+
+            ElementHandler.Click(FindChild(itemLocator));
+
+            TimeManager.ShortPause();
+        }
+
         public void CheckItem(string itemText)
         {
             this.Click();

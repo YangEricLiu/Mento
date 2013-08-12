@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagNames":["V2_BuildingBC", "V4_BuildingBC", "V3_BuildingBC", "V11_BuildingBC", "V22_BuildingBC", "V21_BuildingBC", "V38_BuildingBC", "CalculationTypeAvg"],
+			"MultiSelectedHiearchyPath":["NancyCustomer1/园区测试多层级/楼宇BC"],
+			"MultipleHiearchyPath":[["NancyCustomer1", "园区测试多层级", "楼宇BC"], ["楼宇BC", "一层"],["楼宇BC", "空调"],["NancyCustomer1", "园区测试多层级", "楼宇BAD"],["楼宇BAD", "空调"],["NancyCustomer1", "园区测试多层级"],["园区测试多层级", "动力"],["NancyCustomer1", "园区测试多层级", "BuildingMulCalculationType"]]
+		},
+		"ExpectedData":
+		{
+
+		}
+	}
+]

@@ -90,6 +90,11 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             RankTypeConvertTargetButton.SelectItem(RankTypeMenuItems[target]);
         }
+
+        public string GetCurrentTagModeButtonValue()
+        {
+            return TagModeConvertTargetButton.GetText();
+        }
     }
 
     public enum CarbonConvertTarget

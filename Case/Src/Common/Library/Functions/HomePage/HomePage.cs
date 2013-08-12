@@ -34,10 +34,16 @@ namespace Mento.ScriptCommon.Library.Functions
         private static HierarchyTree AllDashboardsTree = JazzTreeView.AllDashboardsTree;
         private static Container WidgetsOnOneDashboard = JazzContainer.ContainerWidgetsToDashboard;
         private static Label DashboardHeaderName = JazzLabel.DashboardHeaderNameLabel;
+        private static MenuButton SelectCustmerMenuButton = JazzButton.SelectCustomerMenuButton;
 
         #endregion
 
         #region common
+
+        public void SelectCustomer(string customerName)
+        {
+            SelectCustmerMenuButton.SelectOneItem(customerName);
+        }
 
         public bool IsTrendDrawnOnWidgetMin()
         {

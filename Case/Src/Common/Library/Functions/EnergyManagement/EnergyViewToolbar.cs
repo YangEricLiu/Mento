@@ -110,6 +110,11 @@ namespace Mento.ScriptCommon.Library.Functions
             ConvertTargetButton.SwitchRankTypeMenuItem(target);
         }
 
+        public string GetCurrentTagModeButtonValue()
+        {
+            return ConvertTargetButton.GetCurrentTagModeButtonValue();
+        }
+
         public void RemoveAllTags()
         {
             RemoveAllButton.Click();

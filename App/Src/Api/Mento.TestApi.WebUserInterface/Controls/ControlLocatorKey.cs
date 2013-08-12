@@ -68,7 +68,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public static string GridRowDataPermissionChecker = "GridRowDataPermissionChecker";
         public static string GridRowDataPermissionCheckerTextRow = "GridRowDataPermissionCheckerTextRow";
-
+        public static string GridRowDeleteX = "GridRowDeleteX";
         #endregion
 
         #region MonthPicker locators

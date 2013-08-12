@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagNames":["V2_BuildingBC"],
+			"MultiSelectedHiearchyPath":["NancyCustomer1/园区测试多层级/楼宇BC"],
+		},
+		"ExpectedData":
+		{
+
+		}
+	}
+]

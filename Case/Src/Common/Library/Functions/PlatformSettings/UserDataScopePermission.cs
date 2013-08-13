@@ -22,6 +22,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region controls
         private static Grid DataPermissonList = JazzGrid.DataPermissonList;
+        private static Grid CustomerList = JazzGrid.CustomerList;
 
         private static Button ModifyButton = JazzButton.ModifyUserDataPermissionButton;
         private static Button SaveButton = JazzButton.SaveUserDataPermissionButton;
@@ -302,6 +303,20 @@ namespace Mento.ScriptCommon.Library.Functions
             //@@@@@@@@@@@ problem here
             CustomerNameViewStatus.IsEnabled();
             return SelectAllDataPermission.IsEnabled();
+        }
+
+
+        /// <summary>
+        /// Verify whether the All the Customer names display
+        /// </summary>
+        public Boolean AreAllCustomerNamesListed()
+        {
+            //@@@@@@@@@@@@@@
+            //int i = 0;
+            //i = DataPermissonList.GetAllData().Rows;
+           // i.Equals(CustomerList.GetAllData().Rows);
+            //int i = CustomerList.get;
+            return true;
         }
 
         #endregion

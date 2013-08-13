@@ -91,7 +91,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid TOUTariffsList = GetControl<Grid>(JazzControlLocatorKey.GridTOUTariffsList);
 
         public static Grid DataPermissonList = GetControl<Grid>(JazzControlLocatorKey.GridDataScopePermissionList);
-
+        public static Grid CustomerList = GetControl<Grid>(JazzControlLocatorKey.GridCustomersList);
         #endregion
 
         #region home page

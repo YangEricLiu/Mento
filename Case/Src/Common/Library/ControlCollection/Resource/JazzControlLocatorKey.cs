@@ -792,6 +792,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridUserTypePermissionList = "GridUserTypePermissionList";
         public static string GridTOUTariffsList = "GridTOUTariffsList";
         public static string GridDataScopePermissionList = "GridDataScopePermissionList";
+        public static string GridCustomersList = "GridCustomersList";
         #endregion
 
         #region home page

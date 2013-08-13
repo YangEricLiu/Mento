@@ -4,7 +4,7 @@
 		{
 			"UserName":"AutoTestUserA",
 			"CustomerList":["customerA","customerB","customerC"],
-			"HierarchyNodePath":["","",""],
+			"HierarchyNodePath":["customerA"],
 		},
 		"ExpectedData":
 		{

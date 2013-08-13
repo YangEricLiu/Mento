@@ -1,0 +1,11 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"UserName":"UserForDataInvalid",
+		},
+		"ExpectedData":
+		{
+		}
+	}
+]

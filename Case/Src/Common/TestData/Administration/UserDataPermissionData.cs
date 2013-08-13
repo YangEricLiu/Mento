@@ -7,38 +7,22 @@ using Mento.Utility;
 
 namespace Mento.ScriptCommon.TestData.Administration
 {
-    public class UserDataPermissionData : TestDataBase<UserInputData, UserExpectedData>
+    public class UserDataPermissionData : TestDataBase<DataPermissionInputData, DataPermissionExpectedData>
     {
     }
 
-    public class UserDataPermissionInputData : InputTestDataBase
+    public class DataPermissionInputData : InputTestDataBase
     {
         public string UserName { get; set; }
         public string CustomerName { get; set; }
         public string[] CustomerList { get; set; }
         public string[] HierarchyNodePath { get; set; }
-
-        public UserDataPermissionInputData(string userName, string customerName, string[] customerList, string[] hierarchNodePath)
-        {
-            this.UserName = UserName;
-            this.CustomerName = customerName;
-            this.CustomerList = customerList;
-            this.HierarchyNodePath = hierarchNodePath;
-        }
     }
-    public class UserDataPermissionExpectedData : ExpectedTestDataBase
+    public class DataPermissionExpectedData : ExpectedTestDataBase
         {
             public string UserName { get; set; }
             public string CustomerName { get; set; }
             public string[] CustomerList { get; set; }
             public string[] HierarchyNodePath { get; set; }
-
-            public UserDataPermissionExpectedData(string userName, string customerName, string[] customerList, string[] hierarchNodePath)
-            {
-                this.UserName = userName;
-                this.CustomerName = customerName;
-                this.CustomerList = customerList;
-                this.HierarchyNodePath = hierarchNodePath;
-            }       
         }
 }

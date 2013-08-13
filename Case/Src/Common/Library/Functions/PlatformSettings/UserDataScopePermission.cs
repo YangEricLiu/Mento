@@ -140,7 +140,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param>Cumtomer name</param>
         /// <returns></returns>
-        public Boolean IsEditDataPermissionEnable(string customerName)
+        public Boolean IsCustomerUnchecked(string customerName)
         {
             Boolean page = true;
             return DataPermissonList.IsDataPermissionRowUnChecked(4,customerName,page);
@@ -166,6 +166,25 @@ namespace Mento.ScriptCommon.Library.Functions
                 TimeManager.LongPause();
                 UserDataPermissionTree.ExpandNodePath(hierarchNodePaths);
                 UserDataPermissionTree.CheckNode(hierarchNodePaths.Last());
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Check  a  hierarchy node
+        /// </summary>
+        /// <returns></returns>
+        public Boolean CheckSingleHierarchyNode(string hierarchNode)
+        {
+            try
+            {
+                TimeManager.LongPause();
+                //UserDataPermissionTree.ExpandNodePath(hierarchNodePaths);
+                UserDataPermissionTree.CheckNode(hierarchNode);
                 return true;
             }
             catch (Exception)

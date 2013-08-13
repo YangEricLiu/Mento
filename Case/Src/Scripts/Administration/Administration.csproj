@@ -75,7 +75,9 @@
     <Compile Include="TOU\TOUBasicTariffAddValidSuite.cs" />
     <Compile Include="TOU\SmokeTestTOUPulsePeakTariffSuite.cs" />
     <Compile Include="TOU\SmokeTestTOUBasicTariffSuite.cs" />
-    <Compile Include="User\AddDataScopeSuite.cs" />
+    <Compile Include="User\AddDataScopeValidSuite.cs" />
+    <Compile Include="User\AddDataScopeInvalidSuite.cs" />
+    <Compile Include="User\ModifyDataScopeInvalidSuite.cs" />
     <Compile Include="User\ViewRoleTypeSuite.cs" />
     <Compile Include="User\SendInitrialPassword.cs" />
     <Compile Include="User\UserDeleteSuite.cs" />

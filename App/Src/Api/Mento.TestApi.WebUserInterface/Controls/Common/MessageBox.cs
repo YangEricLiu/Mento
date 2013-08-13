@@ -42,6 +42,17 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        private IWebElement _QuitButton;
+        protected IWebElement QuitButton
+        {
+            get
+            {
+                if (this._QuitButton == null)
+                    this._QuitButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxQuitButton));
+                return this._QuitButton;
+            }
+        }
+
         private IWebElement _ConfirmButton;
         protected IWebElement ConfirmButton
         {
@@ -184,6 +195,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 throw new ApiException("GiveUp button can not be clicked because it is not enabled in the messagebox.");
 
             this.GiveUpButton.Click();
+        }
+
+        public void Quit()
+        {
+            if (!this.QuitButton.Enabled)
+                throw new ApiException("Quit button can not be clicked because it is not enabled in the messagebox.");
+
+            this.QuitButton.Click();
         }
 
         public string GetMessage()

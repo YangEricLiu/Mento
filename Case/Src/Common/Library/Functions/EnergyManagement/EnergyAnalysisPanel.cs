@@ -25,6 +25,7 @@ namespace Mento.ScriptCommon.Library.Functions
         //Select area dimension tree button
         private static Button SelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
         private static AreaDimensionTree AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
+        private static Container MultiHierarchyPanelContainer = JazzContainer.MultiHierarchyPanelContainer;
 
         //TagGrid
         private static Grid TagGrid
@@ -125,6 +126,14 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region Tag operations
+
+        /// <summary>
+        /// Judge if no data on left multiple hierarchy tags panel
+        /// </summary>
+        public bool IsEmptyMultiHierarchyTagsPanel()
+        {
+            return MultiHierarchyPanelContainer.GetElementNumber() > 0 ? false : true;
+        }
 
         /// <summary>
         /// Judge if all the grid tags unchecked

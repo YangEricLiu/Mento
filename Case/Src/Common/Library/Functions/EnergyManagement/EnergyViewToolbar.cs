@@ -33,8 +33,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button PeakValleyButton = JazzButton.EnergyViewPeakValleyButton;
 
         //AddTimeSpanButton and add time span dialog
-        private static Button AddTimeSpanButton = JazzButton.EnergyViewAddTimeSpanButton;//em-chartgrid-topbar-addInterval
-        private static TimeSpanDialog TimeSpanDialog = new TimeSpanDialog();
+        //private static Button AddTimeSpanButton = JazzButton.EnergyViewAddTimeSpanButton;//em-chartgrid-topbar-addInterval
 
         //RemoveAllTagButton
         private static Button RemoveAllButton = JazzButton.EnergyViewRemoveAllButton; //em-chartgrid-topbar-del
@@ -42,6 +41,8 @@ namespace Mento.ScriptCommon.Library.Functions
         //MoreMenu and more dialog
         private static EnergyViewToolbarMoreMenu MoreMenu = new EnergyViewToolbarMoreMenu();
         private static SaveToDashboardDialog DashboardDialog = new SaveToDashboardDialog();
+        private static TimeSpanDialog TimeSpanDialog = new TimeSpanDialog();
+
         #endregion
 
         internal EnergyViewToolbar()
@@ -75,7 +76,36 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickViewButton()
         {
-            ViewButton.Click();
+            ViewButton.ClickView();
+
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        public bool IsTimeSpanButtonEnable()
+        {
+            return !ViewButton.IsTimeSpanButtonDisabled();
+        }
+
+        public void ClickTimeSpanButton()
+        {
+            ViewButton.ClickTimeSpan();
+
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        public void TimeSpan(TimeSpans span)
+        {
+            ViewButton.SwitchTimeSpans(span);
+
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        public void AddTimeSpan(DateTime startTime)
+        {
+            ViewButton.ClickTimeSpan();
+
+            TimeSpanDialog.InputStartTime(startTime);
+            TimeSpanDialog.Confirm();
 
             JazzMessageBox.LoadingMask.WaitLoading();
         }
@@ -123,16 +153,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ShowPeakValley()
         {
             PeakValleyButton.Click();
-        }
-
-        public void AddTimeSpan(DateTime startTime)
-        {
-            AddTimeSpanButton.Click();
-
-            TimeSpanDialog.InputStartTime(startTime);
-            TimeSpanDialog.Confirm();
-
-            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         public void SelectMoreOption(EnergyViewMoreOption moreOption)

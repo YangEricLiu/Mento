@@ -181,7 +181,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.CommonName);
             
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.InputData.CommonName);
-            JazzFunction.EnergyViewToolbarViewSplitButton.Click();
+            JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             // No data now 
@@ -242,7 +242,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Uom updated
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.ExpectedData.CommonName);
-            JazzFunction.EnergyViewToolbarViewSplitButton.Click();
+            JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
            //Need data here
@@ -300,7 +300,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Step updated
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.ExpectedData.CommonName);
-            JazzFunction.EnergyViewToolbarViewSplitButton.Click();
+            JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
             //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             
             //problem here 

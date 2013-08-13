@@ -81,6 +81,14 @@ namespace Mento.ScriptCommon.Library.Functions
             MultipleHierarchyAddTagsButton.Click();
         }
 
+        /// <summary>
+        /// Judge if this button displayed
+        /// </summary>
+        public bool IsMultipleHierarchyAddTagsButtonDisplayed()
+        {
+            return MultipleHierarchyAddTagsButton.IsDisplayed();
+        }
+
         #endregion
 
         #region Hierarchy operations

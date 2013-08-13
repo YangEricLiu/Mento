@@ -140,6 +140,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonMultipleHierarchyConfirm = "ButtonMultipleHierarchyConfirm";
         public static string ButtonMultipleHierarchyGiveUp = "ButtonMultipleHierarchyGiveUp";
         public static string ButtonMultipleHierarchyAddTags = "ButtonMultipleHierarchyAddTags";
+
+        public static string LinkButtonIntervalDialogAddTimeSpan = "LinkButtonIntervalDialogAddTimeSpan";
         #endregion
 
         #region energy analysis
@@ -804,6 +806,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region DatePicker
+
         #region EnergyUsage
         public static string DatePickerIntervalDialogStartDate = "DatePickerIntervalDialogStartDate";
         public static string DatePickerIntervalDialogEndDate = "DatePickerIntervalDialogEndDate";
@@ -813,7 +816,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string DatePickerUnitKPIStartDate = "DatePickerUnitKPIStartDate";
         public static string DatePickerUnitKPIEndDate = "DatePickerUnitKPIEndDate";
 
-
+        public static string DatePickerIntervalDialogStartTime = "DatePickerIntervalDialogStartTime";
+        public static string DatePickerIntervalDialogEndTime = "DatePickerIntervalDialogEndTime";
         #endregion
 
         #region CustomerSettings
@@ -977,6 +981,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region EnergyView
+
+        #region Energy Analysis
+
+        public static string ContainerMultiHierarchyPanel = "ContainerMultiHierarchyPanel";
+
+        #endregion
+
+        #endregion
         #endregion
 
     }

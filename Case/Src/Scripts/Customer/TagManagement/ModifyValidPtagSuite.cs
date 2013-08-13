@@ -180,7 +180,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.CommonName);
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.ExpectedData.CommonName);
-            JazzFunction.EnergyViewToolbarViewSplitButton.Click();
+            JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("PtagForModifyCheckAl..."));
@@ -220,7 +220,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Uom updated
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.ExpectedData.CommonName);
-            JazzFunction.EnergyViewToolbarViewSplitButton.Click();
+            JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
             //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             Assert.AreEqual(PTagSettings.GetUomExpectedValue(input.ExpectedData.Uom), JazzFunction.EnergyAnalysisPanel.GetUomValue());

@@ -6,11 +6,11 @@ using Mento.TestApi.TestData;
 
 namespace Mento.ScriptCommon.TestData.EnergyView
 {
-    public class EnergyViewOptionData : TestDataBase<EnergyViewOptionInput, EnergyViewOptionOutput>
+    public class TimeSpansData : TestDataBase<TimeSpansInputData, TimeSpansOutputData>
     {
     }
 
-    public class EnergyViewOptionInput : InputTestDataBase
+    public class TimeSpansInputData : InputTestDataBase
     { 
         public string[] Hierarchies { get; set; }
 
@@ -35,41 +35,15 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[][] MultipleHiearchyPath { get; set; }
     }
 
-    public class EnergyViewOptionOutput : ExpectedTestDataBase
+    public class TimeSpansOutputData : ExpectedTestDataBase
     {
         public string[] expectedFileName { get; set; }
         public string ClearAllMessage { get; set; }
         public string QuitMultipleMessage { get; set; }
     }
 
-
-    public class DashboardInformation
+    public enum TimeSpans
     {
-        public string WigetName { get; set; }
-        public string[] HierarchyName { get; set; }
-        public bool IsCreateDashboard { get; set; }
-        public string DashboardName { get; set; }
-    }
-
-    
-    public enum EnergyViewType 
-    { 
-        Line, 
-        Column, 
-        List, 
-        Distribute 
-    }
-        
-    public enum DefaultTimeRange
-    {
-        Last7Days,
-        Today,
-        Yesterday,
-        ThisWeek,
-        LastWeek,
-        ThisMonth,
-        LastMonth,
-        ThisYear,
-        LastYear,
+        DeleteAllTimeSpans,
     }
 }

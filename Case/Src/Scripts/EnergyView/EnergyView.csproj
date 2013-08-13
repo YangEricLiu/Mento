@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionTrendChartSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionDataViewSuite.cs" />

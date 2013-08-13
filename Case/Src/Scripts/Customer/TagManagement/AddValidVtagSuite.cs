@@ -118,7 +118,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.CommonName);
             JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.InputData.CommonName);
             TimeManager.MediumPause();
-            JazzFunction.EnergyViewToolbarViewSplitButton.Click();
+            JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
             TimeManager.MediumPause();
             // Verify is there  any trend chart display (temp method)
             

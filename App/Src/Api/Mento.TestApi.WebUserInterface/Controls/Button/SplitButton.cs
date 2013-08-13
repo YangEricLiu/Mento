@@ -32,6 +32,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        public bool IsSplitButtonDisabled()
+        {
+            return this.RootElement.GetAttribute("class").Contains("x-btn-disabled");
+        }
+
         private Locator GetMenuItemLocator(string itemResourceVariable)
         {
             return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(MenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);

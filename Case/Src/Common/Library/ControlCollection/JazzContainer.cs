@@ -66,5 +66,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Container ContainerWidgetsToDashboard = GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsToDashboard);
 
         #endregion
+
+        #region EnergyView
+
+        #region energy analysis
+
+        public static Container MultiHierarchyPanelContainer = GetControl<Container>(JazzControlLocatorKey.ContainerMultiHierarchyPanel);
+
+        #endregion
+
+        #endregion
     }
 }

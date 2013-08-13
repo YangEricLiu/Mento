@@ -46,12 +46,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public bool IsNavigatorExists()
         {
-            return ChildExists(NavigatorLocator);
+            return ElementHandler.Exists(NavigatorLocator);
         }
 
         public bool IsScrollbarExists()
         {
-            return ChildExists(ScrollbarLocator);
+            return ElementHandler.Exists(ScrollbarLocator);
         }
 
         public bool LegendItemExists(string legendName)
@@ -138,7 +138,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region Curve (Not finished yet)
         public bool HasDrawnTrend()
         {
-            return ChildExists(CurveLocator);
+            return ElementHandler.Exists(CurveLocator);
         }
 
         public bool HasDrawnDistribute()

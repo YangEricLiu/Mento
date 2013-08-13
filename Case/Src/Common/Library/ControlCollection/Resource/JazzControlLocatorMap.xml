@@ -110,7 +110,7 @@
 
           <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
           <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
-          <add key="ButtonEnergyViewAddTimeSpan" value="em-chartgrid-topbar-addInterval" type="ID"/>
+          <add key="ButtonEnergyViewAddTimeSpan" value="//div[contains(@id,'splitbutton') and em/button/span[text()='+时间段']]" type="XPath"/>
           <add key="ButtonEnergyViewRemoveAll" value="em-chartgrid-topbar-del" type="ID"/>
           <add key="MenuButtonEnergyViewConvertTarget" value="//div[em/button/span[text()='标煤'] or em/button/span[text()='二氧化碳'] or em/button/span[text()='树']]" type="XPath"/>
           <add key="ButtonEnergyViewPeakValley" value="//div[contains(@class,'x-btn') and em/button/span[text()='峰谷展示']]" type="XPath"/>
@@ -134,7 +134,7 @@
           <add key="ButtonEnergyDisplayStepMonth" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='月']]" type="XPath"/>
           <add key="ButtonEnergyDisplayStepYear" value="//div[contains(@id, 'stepselectorcomponent')]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='年']]" type="XPath"/>
 
-          <add key="ButtonMultipleHierarchyTree" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tree-btn') and em/button/span[text()='请选择层级结构']]" type="XPath"/>
+          <add key="ButtonMultipleHierarchyTree" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-body-default')]/div/div/div/div/div/div/div[contains(@class,'x-tree-btn')]" type="XPath"/>
           <add key="TabButtonMultipleHierarchyAllTagsTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='全部数据点']]" type="XPath"/>
           <add key="TabButtonMultipleHierarchyAreaDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='区域数据点']]" type="XPath"/>
           <add key="TabButtonMultipleHierarchySystemDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='系统数据点']]" type="XPath"/>
@@ -144,6 +144,8 @@
           <add key="ButtonMultipleHierarchyConfirm" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
           <add key="ButtonMultipleHierarchyGiveUp" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
           <add key="ButtonMultipleHierarchyAddTags" value="em-multi-hier-add" type="ID"/>
+
+          <add key="LinkButtonIntervalDialogAddTimeSpan" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[6]/tr/td/div/a" type="XPath"/>
 
       </energyview>
       <customersettings>
@@ -546,8 +548,8 @@
           <add key="ComboBoxEnergyViewEndTime" value="//div[@id='em-energy-chartgridpanel']/div/div/div/div/table[contains(@id,'combobox') and position()=2]" type="XPath"/>
           <add key="ComboBoxEnergyViewSaveDashboardHierarchy" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='层级结点']]//table[contains(@id,'combobox')]" type="XPath"/>
           <add key="ComboBoxEnergyViewSaveDashboardDashboard" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body-default')]//table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
-          <add key="ComboBoxEnergyViewIntervalDialogStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body')]//table[contains(@id,'combobox') and position()=1]" type="XPath"/>
-          <add key="ComboBoxEnergyViewIntervalDialogEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body')]//table[contains(@id,'combobox') and position()=2]" type="XPath"/>
+          <add key="ComboBoxEnergyViewIntervalDialogStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
+          <add key="ComboBoxEnergyViewIntervalDialogEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[4]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
       </energyview>
       <customersettings>
           <hierarchy>
@@ -737,6 +739,10 @@
       
       <add key="DatePickerUnitKPIStartDate" value="//div[@id='em-unit-energy-chartpanel']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       <add key="DatePickerUnitKPIEndDate" value="//div[@id='em-unit-energy-chartpanel']//table[contains(@class,'x-field x-date-field')][2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+
+      <add key="DatePickerIntervalDialogStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      <add key="DatePickerIntervalDialogEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+
     </EnergyUsage>
     <CustomerSettings>
       <kpitag>
@@ -867,8 +873,11 @@
   
 <Homopage>
       <add key="ContainerWidgetsToDashboard" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]" type="XPath"/>
-
   </Homopage>
+    
+  <EnergyView>
+      <add key="ContainerMultiHierarchyPanel" value="//div[@id='hp-dashboard-ctem-energy-multi-hier-panel']/div[contains(@class,'x-container-default')]" type="XPath"/>
+  </EnergyView>
   
 </Container>
 </WebElement>

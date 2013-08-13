@@ -31,7 +31,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static AreaDimensionTree MultiAreaDimensionTree = JazzTreeView.MultipleAreaDimensionTree;
         private static Button MultipleHierarchyConfirmButton = JazzButton.MultipleHierarchyConfirmButton;
         private static Button MultipleHierarchyGiveUpButton = JazzButton.MultipleHierarchyGiveUpButton;
-
+        
         #endregion
 
         #region common
@@ -62,6 +62,14 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region tree operation
+
+        /// <summary>
+        /// Get hierarchy button value
+        /// </summary>
+        public string GetHierarchyButtonValue()
+        {
+            return MultipleHierarchyTreeButton.GetText();
+        }
 
         /// <summary>
         /// Select the hierarchy node path
@@ -244,9 +252,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsTagExistedOnSpecialContainer(string title, string tagName)
         {
             Grid oneSpecialGrid = GetSpecialGrid(title);
-
-            return oneSpecialGrid.IsRowExist(1, tagName);
-        
+            return oneSpecialGrid.IsRowExist(1, tagName);    
         }
 
         /// <summary>

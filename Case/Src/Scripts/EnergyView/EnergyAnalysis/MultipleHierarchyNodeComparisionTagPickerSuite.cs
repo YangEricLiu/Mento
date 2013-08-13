@@ -112,7 +112,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionTagPickerSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-2")]
         public void MultiCheckMultipleTagsAndVerify(EnergyViewOptionData input)
         {
-            //Switch to "多层级数据点"
+            //Switch to "多层级数据点" and pick up 10 tags then verify its on the correct position
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
             TimeManager.LongPause();
 
@@ -121,8 +121,163 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
             MultiHieCompareWindow.CheckTag(input.InputData.TagNames[0]);
-            Assert.IsTrue(MultiHieCompareWindow.IsTagExistedOnSpecialContainer(input.InputData.MultiSelectedHiearchyPath[0], input.InputData.TagNames[0]));
 
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.AreaDimensionTab);
+            MultiHieCompareWindow.SelectAreaDimension(input.InputData.MultipleHiearchyPath[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[1]);
+
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.SystemDimensionTab);
+            MultiHieCompareWindow.SelectSystemDimension(input.InputData.MultipleHiearchyPath[2]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[2]);
+
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHiearchyPath[3]);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[3]);
+
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.SystemDimensionTab);
+            MultiHieCompareWindow.SelectSystemDimension(input.InputData.MultipleHiearchyPath[4]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[4]);
+
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHiearchyPath[5]);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[5]);
+
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.SystemDimensionTab);
+            MultiHieCompareWindow.SelectSystemDimension(input.InputData.MultipleHiearchyPath[6]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[6]);
+
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHiearchyPath[7]);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[7]);
+
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHiearchyPath[8]);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[8]);
+
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.SystemDimensionTab);
+            MultiHieCompareWindow.SelectSystemDimension(input.InputData.MultipleHiearchyPath[9]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[9]);
+
+            for (int i = 0; i < 10; i++)
+            {
+               Assert.IsTrue(MultiHieCompareWindow.IsTagExistedOnSpecialContainer(input.InputData.MultiSelectedHiearchyPath[i], input.InputData.TagNames[i]));
+            }
+
+            //Confirm and draw line chart
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.MediumPause();
+            //Set date range
+            EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
+            TimeManager.ShortPause();
+            EnergyViewToolbar.ClickViewButton();
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+
+            //back to "多层级数据点", the hierarchy button is display "请选择层级结构"
+            EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
+            TimeManager.MediumPause();
+            Assert.IsTrue(MultiHieCompareWindow.GetHierarchyButtonValue().Contains("请选择层级结构"));
+
+            //The tags are still on the right part list
+            for (int i = 0; i < 10; i++)
+            {
+                Assert.IsTrue(MultiHieCompareWindow.IsTagExistedOnSpecialContainer(input.InputData.MultiSelectedHiearchyPath[i], input.InputData.TagNames[i]));
+            }
+
+            //Uncheck one tag, the tag will not display from right part
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHiearchyPath[0]);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.UncheckTag(input.InputData.TagNames[0]);
+            Assert.IsFalse(MultiHieCompareWindow.IsTagExistedOnSpecialContainer(input.InputData.MultiSelectedHiearchyPath[0], input.InputData.TagNames[0]));
+            
+
+            //uncheck one tag on area/system dimension and the tag will not display from right part
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.AreaDimensionTab);
+            MultiHieCompareWindow.SelectAreaDimension(input.InputData.MultipleHiearchyPath[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.UncheckTag(input.InputData.TagNames[1]);
+            Assert.IsFalse(MultiHieCompareWindow.IsTagExistedOnSpecialContainer(input.InputData.MultiSelectedHiearchyPath[1], input.InputData.TagNames[1]));
+
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.SystemDimensionTab);
+            MultiHieCompareWindow.SelectSystemDimension(input.InputData.MultipleHiearchyPath[2]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.UncheckTag(input.InputData.TagNames[2]);
+            Assert.IsFalse(MultiHieCompareWindow.IsTagExistedOnSpecialContainer(input.InputData.MultiSelectedHiearchyPath[2], input.InputData.TagNames[2]));
+
+            MultiHieCompareWindow.ClickGiveUpButton();
+            TimeManager.MediumPause();
+
+            //Switch to "单层级数据点" and cancel/confirm
+            EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.SingleHierarchyTag);
+            TimeManager.MediumPause();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.QuitMultipleMessage));
+            JazzMessageBox.MessageBox.GiveUp();
+            TimeManager.MediumPause();
+            Assert.IsTrue(EnergyViewToolbar.GetCurrentTagModeButtonValue().Contains("多层级数据点"));
+
+            EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.SingleHierarchyTag);
+            TimeManager.MediumPause();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.QuitMultipleMessage));
+            JazzMessageBox.MessageBox.Quit();
+            TimeManager.MediumPause();
+
+            //"单层级数据点" display and  "+数据点" not displayed
+            Assert.IsTrue(EnergyViewToolbar.GetCurrentTagModeButtonValue().Contains("单层级数据点"));
+            Assert.IsFalse(EnergyAnalysis.IsMultipleHierarchyAddTagsButtonDisplayed());
+
+            //Pick up one tag from "多层级数据点"
+            EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHiearchyPath[0]);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[0]);
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.MediumPause();
+            EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
+            TimeManager.ShortPause();
+            EnergyViewToolbar.ClickViewButton();
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+
+            //Delete all from "more" then cancel
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
+            TimeManager.MediumPause();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
+            JazzMessageBox.MessageBox.GiveUp();
+            TimeManager.MediumPause();
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+
+            //Delete all from "more" then confirm
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
+            TimeManager.MediumPause();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
+            JazzMessageBox.MessageBox.Clear();
+            TimeManager.MediumPause();
+            Assert.IsFalse(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.IsTrue(EnergyViewToolbar.GetCurrentTagModeButtonValue().Contains("多层级数据点"));
+            Assert.IsTrue(EnergyAnalysis.IsMultipleHierarchyAddTagsButtonDisplayed());
+            Assert.IsTrue(EnergyAnalysis.IsEmptyMultiHierarchyTagsPanel());
         }
     }
 }

@@ -23,6 +23,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static DatePicker UnitKPIStartDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerUnitKPIStartDate);
         public static DatePicker UnitKPIEndDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerUnitKPIEndDate);
+
+        public static DatePicker IntervalDialogStartTimeDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogStartTime);
+        public static DatePicker IntervalDialogEndTimeDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogEndTime);
+
         #endregion
 
         #region Customer settings

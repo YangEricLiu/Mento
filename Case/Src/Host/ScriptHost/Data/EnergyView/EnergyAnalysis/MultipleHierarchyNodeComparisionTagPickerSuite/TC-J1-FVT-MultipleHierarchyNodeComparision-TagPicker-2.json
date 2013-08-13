@@ -3,13 +3,14 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
-			"TagNames":["V2_BuildingBC", "V4_BuildingBC", "V3_BuildingBC", "V11_BuildingBC", "V22_BuildingBC", "V21_BuildingBC", "V38_BuildingBC", "CalculationTypeAvg"],
-			"MultiSelectedHiearchyPath":["NancyCustomer1/园区测试多层级/楼宇BC"],
-			"MultipleHiearchyPath":[["NancyCustomer1", "园区测试多层级", "楼宇BC"], ["楼宇BC", "一层"],["楼宇BC", "空调"],["NancyCustomer1", "园区测试多层级", "楼宇BAD"],["楼宇BAD", "空调"],["NancyCustomer1", "园区测试多层级"],["园区测试多层级", "动力"],["NancyCustomer1", "园区测试多层级", "BuildingMulCalculationType"]]
+			"TagNames":["V2_BuildingBC", "V4_BuildingBC", "V3_BuildingBC", "V11_BuildingBC", "V22_BuildingBC", "V21_BuildingBC", "V38_BuildingBC", "CalculationTypeAvg","V37_BuildingBC", "V9_BuildingBC"],
+			"MultiSelectedHiearchyPath":["NancyCustomer1/园区测试多层级/楼宇BC", "NancyCustomer1/园区测试多层级/楼宇BC","NancyCustomer1/园区测试多层级/楼宇BC","NancyCustomer1/园区测试多层级/楼宇BAD", "NancyCustomer1/园区测试多层级/楼宇BAD", "NancyCustomer1/园区测试多层级", "NancyCustomer1/园区测试多层级", "...cyCustomer1/园区测试多层级/BuildingMulCalculationType", "NancyCustomer1", "NancyCustomer1"],
+			"MultipleHiearchyPath":[["NancyCustomer1", "园区测试多层级", "楼宇BC"], ["楼宇BC", "一层"],["楼宇BC", "空调"],["NancyCustomer1", "园区测试多层级", "楼宇BAD"],["楼宇BAD", "空调"],["NancyCustomer1", "园区测试多层级"],["园区测试多层级", "动力"],["NancyCustomer1", "园区测试多层级", "BuildingMulCalculationType"],["NancyCustomer1"],["NancyCustomer1", "动力"]]
 		},
 		"ExpectedData":
 		{
-
+			"QuitMultipleMessage":"退出多层级数据点查看情景并清空已选数据点吗？",
+			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
 		}
 	}
 ]

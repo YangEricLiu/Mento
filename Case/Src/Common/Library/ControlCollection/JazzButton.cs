@@ -44,7 +44,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         
         public static SplitButton EnergyViewViewDataButton = GetControl<SplitButton>(JazzControlLocatorKey.SplitButtonEnergyViewViewData);
         public static MenuButton EnergyViewMoreButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonEnergyViewMore);
-        public static Button EnergyViewAddTimeSpanButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewAddTimeSpan);
+        public static SplitButton EnergyViewAddTimeSpanButton = GetControl<SplitButton>(JazzControlLocatorKey.ButtonEnergyViewAddTimeSpan);
         public static Button EnergyViewRemoveAllButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewRemoveAll);
         public static MenuButton EnergyViewConvertTargetMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonEnergyViewConvertTarget);
         public static MenuButton FuncModeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonFuncModeConvert);
@@ -78,7 +78,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button MultipleHierarchyConfirmButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchyConfirm);
         public static Button MultipleHierarchyGiveUpButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchyGiveUp);
         public static Button MultipleHierarchyAddTagsButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchyAddTags);
-       
+
+        public static LinkButton IntervalDialogAddTimeSpanLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonIntervalDialogAddTimeSpan);
         #endregion
 
         #region Energy Analysis

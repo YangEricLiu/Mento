@@ -21,6 +21,8 @@
   <add key="MessageBoxCloseButton" value="//div[contains(@class,'x-message-box')]//img" type="XPath"/>
   <add key="MessageBoxClearButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='清空']]" type="XPath"/>
   <add key="MessageBoxGiveUpButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+  <add key="MessageBoxQuitButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='退出']]" type="XPath"/>
+
 
   <!--TreeView-->
   <add key = "TreeNode" value = "tbody/tr[contains(@class,'x-grid-row') and td/div[text()='$#nodeText']]" type = "XPath"/>

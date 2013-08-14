@@ -783,9 +783,10 @@
     <add key="CheckBoxFieldUserTypeCost" value="//div[@id='st-usertype-cost-body']//table[tbody/tr//label[text()='成本']]" type="XPath"/>
 
     <add key="CheckBoxFieldUserTypePermission" value="//div[@id='st-usertype-properties-form-body']/div[contains(@id, 'privilegepanel')]/div/fieldset[legend/div/label[text()='角色权限']]/div/table[contains(@id, 'privilegeitem')]" type="XPath"/>
-	
-      
-</CheckBox>
+    
+    <add key="CheckBoxFieldUserDataAllHierarchyNode" value="//div[contains(@id,'datapermissiontreewindow')]//div//div//table[1]" type="XPath"/>  
+
+  </CheckBox>
   <!--CheckBoxField End-->
   
   <!--Label Begin-->

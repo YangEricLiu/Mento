@@ -38,7 +38,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button CustomerNames = JazzButton.UserCustomerNamesButton;
         private static Button CustomerNameViewStatus = JazzButton.CustomerNamesViewStatusButtons;
 
-        //private static LinkButton CustomerNameLinkButton = JazzButton.UserCustomerNamesLinkButton;
+        private static CheckBoxField CheckAllHierarchyNodesCheckBox = JazzCheckBox.UserDataAllHierarchyNodeCheckBoxField;
 
         private static HierarchyTree HierarchyTree
         {
@@ -106,7 +106,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void CheckAllCumstomerNames()
         {
-            CustomerNames.Click();
+            //CustomerNames.Click();
             TimeManager.MediumPause();
             CustomerNames.Click();
             //TimeManager.LongPause();
@@ -133,6 +133,15 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             Boolean page = true;
             DataPermissonList.ClickDataPermissionRow(4, customerName, page);
+        }
+
+        /// <summary>
+        /// Click All hierarchy nodes 
+        /// </summary>
+        /// <returns></returns>
+        public void CheckAllHierarchyNode()
+        {
+            CheckAllHierarchyNodesCheckBox.Check("全部层级节点数据权限");
         }
 
         /// <summary>
@@ -237,13 +246,40 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 TimeManager.LongPause();
                 UserDataPermissionTree.ExpandNodePath(hierarchNodePaths);
-                UserDataPermissionTree.IsNodeChecked(hierarchNodePaths.Last());
-                return true;
+                return UserDataPermissionTree.IsNodeChecked(hierarchNodePaths.Last());
             }
             catch (Exception)
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Verify whether the all the hierarchy node path is checked
+        /// </summary>
+        /// <returns></returns>
+        public Boolean AreAllHierarchyNodesChecked(string[] hierarchyNodePaths)
+        {
+            TimeManager.LongPause();
+            int i = 0;
+            int j = 0;
+            Boolean flag = true;
+            try
+            {
+                while (i < hierarchyNodePaths.Length & flag)
+                {
+                    UserDataPermissionTree.ExpandNodePath(hierarchyNodePaths);
+                    flag = UserDataPermissionTree.IsNodeChecked(hierarchyNodePaths.Last());
+                    hierarchyNodePaths[hierarchyNodePaths.Length - 1] = null;
+                    i = i + 1;
+                }
+                return flag;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
 
         /// <summary>

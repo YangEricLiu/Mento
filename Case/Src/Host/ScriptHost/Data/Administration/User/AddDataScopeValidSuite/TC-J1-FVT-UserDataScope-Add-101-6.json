@@ -1,0 +1,14 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"UserName":"UserForAllCustomers",
+			"CustomerName":"customerA",
+			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],
+		},
+		"ExpectedData":
+		{
+			"UserName":"UserForAllCustomers",
+		}
+	}
+]

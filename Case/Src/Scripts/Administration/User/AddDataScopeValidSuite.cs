@@ -125,5 +125,220 @@ namespace Mento.Script.Administration.User
             // energy analysis
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-UserDataScope-Add-101-3")]
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-3")]
+        public void CheckAllCustomerNamesThenView(UserDataPermissionData input)
+        {
+
+            // Focus on a new created user, open datascope tab. 
+            JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.ShortPause();
+                        /*
+            // check "客户名称"
+            UserDataPermissionSettings.CheckAllCumstomerNames();
+
+            // Select 配置数据权限 link from customerA ,view 客户数据权限 
+            Assert.False(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            // All hierarchy nodes are unchecked
+            Assert.IsFalse(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
+            UserDataPermissionSettings.ClickSaveButton();
+            */
+            //Verify 
+            string[] path = { "customerA", "organizationA", "siteA"};
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(path));
+
+            //Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-UserDataScope-Add-101-4")]
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-4")]
+        public void CheckAllDataScopeThenView(UserDataPermissionData input)
+        {
+            // Focus on a new created user, open datascope tab. 
+            JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.ShortPause();
+
+            // check "全部平台客户及对应数据权限"
+            UserDataPermissionSettings.CheckAllCustomerDatas();
+            Assert.IsTrue(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
+            UserDataPermissionSettings.ClickSaveButton();
+            // Select 配置数据权限 link from customerA ,view status of created user 客户数据权限 
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            // All hierarchy nodes are unchecked
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();         
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-UserDataScope-Add-101-5")]
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-5")]
+        public void CheckSingleThenCheckAll(UserDataPermissionData input)
+        {
+            // Focus on a new created user, open datascope tab. 
+            JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.ShortPause();
+            // Select 配置数据权限 link from customerA ,view status of created user 客户数据权限 
+            UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+
+            UserDataPermissionSettings.CheckHierarchyNode(input.InputData.HierarchyNodePath);
+            UserDataPermissionSettings.CheckHierarchyNode(input.ExpectedData.HierarchyNodePath);
+            UserDataPermissionSettings.SaveTreeWindow();
+
+            //Check "全部平台客户及对应数据权限"
+            UserDataPermissionSettings.CheckAllCustomerDatas();
+            UserDataPermissionSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            // Verify the hierarchy nodes are checked
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-UserDataScope-Add-101-6")]
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-6")]
+        public void CheckSingleThenUnCheckAll(UserDataPermissionData input)
+        {
+            // Focus on a new created user, open datascope tab. 
+            JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.ShortPause();
+            // Select 配置数据权限 link from customerA ,view status of created user 客户数据权限 
+            UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+
+            UserDataPermissionSettings.CheckHierarchyNode(input.InputData.HierarchyNodePath);
+            UserDataPermissionSettings.CheckHierarchyNode(input.ExpectedData.HierarchyNodePath);
+            UserDataPermissionSettings.SaveTreeWindow();
+
+            //Check then uncheck "全部平台客户及对应数据权限"
+            UserDataPermissionSettings.CheckAllCustomerDatas();
+            UserDataPermissionSettings.CheckAllCustomerDatas();
+            UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+
+            // Verify the hierarchy nodes are checked
+            Assert.IsFalse(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
+        }
+        
+        [Test]
+        [CaseID("TC-J1-FVT-UserDataScope-Add-101-7")]
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-7")]
+        public void CheckAllNamesThenUncheck(UserDataPermissionData input)
+        {
+            // Focus on a new created user, open datascope tab. 
+            JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.ShortPause();
+            //Check the hierarchy node all uncheck
+            UserDataPermissionSettings.CheckAllCumstomerNames();
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+
+            UserDataPermissionSettings.CheckHierarchyNode(input.InputData.HierarchyNodePath);
+            UserDataPermissionSettings.CheckHierarchyNode(input.ExpectedData.HierarchyNodePath);
+            UserDataPermissionSettings.SaveTreeWindow();
+
+            //Check then uncheck "全部平台客户及对应数据权限"
+            UserDataPermissionSettings.CheckAllCustomerDatas();
+ 
+            UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+
+            // Verify the hierarchy nodes are checked
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
+        }
+
+
+        [Test]
+        [CaseID("TC-J1-FVT-UserDataScope-Add-101-8")]
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-8")]
+        public void CheckDataScopeAndVerify(UserDataPermissionData input)
+        {
+     
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-UserDataScope-Add-101-9")]
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-9")]
+        public void Nine(UserDataPermissionData input)
+        {
+            // Focus on a new created user, open datascope tab. 
+            JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.ShortPause();
+            //Check the hierarchy node all uncheck
+            UserDataPermissionSettings.CheckAllCumstomerNames();
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+
+            UserDataPermissionSettings.CheckHierarchyNode(input.InputData.HierarchyNodePath);
+            UserDataPermissionSettings.CheckHierarchyNode(input.ExpectedData.HierarchyNodePath);
+            UserDataPermissionSettings.SaveTreeWindow();
+
+            //Check then uncheck "全部平台客户及对应数据权限"
+            UserDataPermissionSettings.CheckAllCustomerDatas();
+
+            UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+
+            // Verify the hierarchy nodes are checked
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-UserDataScope-Add-101-10")]
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-9")]
+        public void ten(UserDataPermissionData input)
+        {
+            // Focus on a new created user, open datascope tab. 
+            JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.ShortPause();
+            //Check the hierarchy node all uncheck
+            UserDataPermissionSettings.CheckAllCumstomerNames();
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+
+            UserDataPermissionSettings.CheckHierarchyNode(input.InputData.HierarchyNodePath);
+            UserDataPermissionSettings.CheckHierarchyNode(input.ExpectedData.HierarchyNodePath);
+            UserDataPermissionSettings.SaveTreeWindow();
+
+            //Check then uncheck "全部平台客户及对应数据权限"
+            UserDataPermissionSettings.CheckAllCustomerDatas();
+
+            UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+
+            // Verify the hierarchy nodes are checked
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-UserDataScope-Add-101-11")]
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-9")]
+        public void CheckAdminDataScope(UserDataPermissionData input)
+        {
+            // Focus on a new created user, open datascope tab. 
+            JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.ShortPause();
+        }
     }
 }

@@ -865,6 +865,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonUserSelectAllDataPermission = "ButtonUserSelectAllDataPermission";
         public static string ButtonCustomerNames = "ButtonCustomerNames";
         public static string MenuButtonSelectCustomer = "MenuButtonSelectCustomer";
+
+        public static string UserDataAllHierarchyNodeCheckBoxField = "CheckBoxFieldUserDataAllHierarchyNode";
         #endregion
 
         #region Label

@@ -171,7 +171,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             IWebElement node = GetTreeNodeElement(nodeText);
 
-            return node.GetAttribute("class").Split(' ').Contains(TREENODECHECKEDCLASS);
+            return node.GetAttribute("class").Contains(TREENODECHECKEDCLASS);
         }
 
         /// <summary>

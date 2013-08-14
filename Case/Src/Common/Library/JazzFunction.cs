@@ -500,5 +500,17 @@ namespace Mento.ScriptCommon.Library
                 return _MutipleHierarchyCompareWindow;
             }
         }
+
+        private static TimeSpanDialog _TimeSpanDialog;
+        public static TimeSpanDialog TimeSpanDialog
+        {
+            get
+            {
+                if (_TimeSpanDialog == null)
+                    _TimeSpanDialog = new TimeSpanDialog();
+
+                return _TimeSpanDialog;
+            }
+        }
     }
 }

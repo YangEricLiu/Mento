@@ -16,7 +16,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator IsGridRowCheckedLocator = new Locator("//td/div/div[contains(@class, 'x-grid-checkheader-checked')]", ByType.XPath);
         //private static Locator IsNoDataOnGridLocator = new Locator("div/div/div/div[text()='没有数据']", ByType.XPath);
         private static Locator IsNoRowOnGridLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]", ByType.XPath);
-        private static Locator DataViewLocator = new Locator("//div[contains(@id, 'taggridcomponent')]", ByType.XPath);
+        private static Locator DataViewLocator = new Locator("//div[contains(@id, 'gridview')]", ByType.XPath);
         private static Locator IsNoEnabledCheckboxLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[contains(@class, 'x-grid-cell-checkcolumn')]/div/div[@class='x-grid-checkheader']", ByType.XPath);
         private static Locator IsDataPermissionEnableLocator = new Locator("//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]/div/table/tbody/tr/td[5]/div/a[@type='disableEdit']", ByType.XPath);
         private static Locator IAllEnabledCheckboxLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[contains(@class, 'x-grid-cell-checkcolumn')]/div/div[contains(@class,'x-grid-checkheader-disabled')]", ByType.XPath);
@@ -543,7 +543,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             var headerLocatorLeft = new Locator("div[contains(@class,'x-grid-header-ct')]/div/div/div[contains(@class,'x-column-header-align-left')]", ByType.XPath);
             //var headerLocatorCenter = new Locator("div[contains(@class,'x-grid-header-ct')]/div/div/div[contains(@class,'x-column-header-align-center')]", ByType.XPath);
-            var headerLocatorItems = new Locator("div[contains(@class,'x-grid-header-ct')]//div[contains(@class,'x-column-header-first x-column-header-last') and contains(@class, 'x-column-header-align-left')]", ByType.XPath);
+            var headerLocatorItems = new Locator("div[contains(@class,'x-grid-header-ct')]//div[contains(@class, 'x-column-header-align-left')]", ByType.XPath);
 
             var cellLocator = new Locator("td", ByType.TagName);
 

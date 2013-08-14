@@ -909,12 +909,12 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private DatePicker GetOneSpecialdayRuleStartDateDatePicker(int positionIndex)
         {
-            return JazzDatePicker.GetOneMonthPicker(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleStartDate, positionIndex);
+            return JazzDatePicker.GetOneDatePicker(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleStartDate, positionIndex);
         }
 
         private DatePicker GetOneSpecialdayRuleEndDateDatePicker(int positionIndex)
         {
-            return JazzDatePicker.GetOneMonthPicker(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleEndDate, positionIndex);
+            return JazzDatePicker.GetOneDatePicker(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleEndDate, positionIndex);
         }
 
         private Button GetOneDeleteSpecialdayButton(int positionIndex)

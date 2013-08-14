@@ -7,6 +7,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class LinkButton : Button
     {
+        private static Locator linkButtonEnable = new Locator("../../div", ByType.XPath);
+
         public LinkButton(Locator locator)
             : base(locator)
         { }
@@ -19,7 +21,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public bool IsLinkButtonDisabled()
         {
-            return this.RootElement.GetAttribute("class").Contains("x-item-disabled");
+            return FindChild(linkButtonEnable).GetAttribute("class").Contains("x-item-disabled");
         }
     }
 }

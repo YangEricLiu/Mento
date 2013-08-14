@@ -9,7 +9,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
     public sealed class JazzDatePicker : JazzControlCollection
     {
         #region Get Position DatePicker Method
-        public static DatePicker GetOneMonthPicker(string key, int positionIndex)
+        public static DatePicker GetOneDatePicker(string key, int positionIndex)
         {
             return GetControl<DatePicker>(key, positionIndex);
         }
@@ -18,14 +18,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Energy View
         public static DatePicker EnergyUsageStartDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerEnergyUsageStartDate);
         public static DatePicker EnergyUsageEndDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerEnergyUsageEndDate);
-        public static DatePicker EnergyUsageIntervalDialogStartDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogStartDate);
-        public static DatePicker EnergyUsageIntervalDialogEndDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogEndDate);
 
         public static DatePicker UnitKPIStartDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerUnitKPIStartDate);
         public static DatePicker UnitKPIEndDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerUnitKPIEndDate);
 
-        public static DatePicker IntervalDialogStartTimeDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogStartTime);
-        public static DatePicker IntervalDialogEndTimeDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogEndTime);
+        public static DatePicker BaseIntervalDialogStartDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogBaseStartDate);
+        public static DatePicker BaseIntervalDialogEndDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogBaseEndDate);
 
         #endregion
 

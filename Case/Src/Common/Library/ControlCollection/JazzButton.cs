@@ -80,6 +80,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button MultipleHierarchyAddTagsButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchyAddTags);
 
         public static LinkButton IntervalDialogAddTimeSpanLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonIntervalDialogAddTimeSpan);
+        public static Button IntervalDialogConfirmButton = GetControl<Button>(JazzControlLocatorKey.ButtonIntervalDialogConfirm);
+        public static Button IntervalDialogGiveUpButton = GetControl<Button>(JazzControlLocatorKey.ButtonIntervalDialogGiveUp);
+
         #endregion
 
         #region Energy Analysis

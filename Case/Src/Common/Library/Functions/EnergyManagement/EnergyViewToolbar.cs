@@ -67,6 +67,20 @@ namespace Mento.ScriptCommon.Library.Functions
             //EndTimeComboBox.SelectItem(String.Format("{0}:{1}", endHour, endMinute));
         }
 
+        public void SetDateRange(string startTime, string endTime)
+        {
+            StartDatePicker.SelectDateItem(startTime);
+
+            EndDatePicker.SelectDateItem(endTime);
+        }
+
+        public void SetTimeRange(string startTime, string endTime)
+        {
+            StartTimeComboBox.SelectItem(startTime);
+
+            EndTimeComboBox.SelectItem(endTime);
+        }
+
         public void View(EnergyViewType viewType)
         {
             ViewButton.SwitchViewType(viewType);
@@ -96,16 +110,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void TimeSpan(TimeSpans span)
         {
             ViewButton.SwitchTimeSpans(span);
-
-            JazzMessageBox.LoadingMask.WaitLoading();
-        }
-
-        public void AddTimeSpan(DateTime startTime)
-        {
-            ViewButton.ClickTimeSpan();
-
-            TimeSpanDialog.InputStartTime(startTime);
-            TimeSpanDialog.Confirm();
 
             JazzMessageBox.LoadingMask.WaitLoading();
         }

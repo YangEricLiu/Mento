@@ -146,6 +146,9 @@
           <add key="ButtonMultipleHierarchyAddTags" value="em-multi-hier-add" type="ID"/>
 
           <add key="LinkButtonIntervalDialogAddTimeSpan" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[6]/tr/td/div/a" type="XPath"/>
+          <add key="ButtonIntervalDialogDeleteTimeSpan" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/div[contains(@id,'tool')]/img" type="XPath"/>
+          <add key="ButtonIntervalDialogConfirm" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='确定并绘图']]" type="XPath"/>
+          <add key="ButtonIntervalDialogGiveUp" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
 
       </energyview>
       <customersettings>
@@ -544,12 +547,13 @@
           <add key="ComboBoxUserProfileAssociatedCustomer" value="st-userprofile-personalinfo-firstcustomer-triggerWrap" type="ID"/>
       </UserProfile>
       <energyview>
-          <add key="ComboBoxEnergyViewStartTime" value="//div[@id='em-energy-chartgridpanel']/div/div/div/div/table[contains(@id,'combobox') and position()=1]" type="XPath"/>
-          <add key="ComboBoxEnergyViewEndTime" value="//div[@id='em-energy-chartgridpanel']/div/div/div/div/table[contains(@id,'combobox') and position()=2]" type="XPath"/>
+          <add key="ComboBoxEnergyViewStartTime" value="//div[@id='em-energy-chartgridpanel']/div/div/div/div/table[2]//table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
+          <add key="ComboBoxEnergyViewEndTime" value="//div[@id='em-energy-chartgridpanel']/div/div/div/div/table[4]//table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
           <add key="ComboBoxEnergyViewSaveDashboardHierarchy" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='层级结点']]//table[contains(@id,'combobox')]" type="XPath"/>
           <add key="ComboBoxEnergyViewSaveDashboardDashboard" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body-default')]//table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
-          <add key="ComboBoxEnergyViewIntervalDialogStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
-          <add key="ComboBoxEnergyViewIntervalDialogEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[4]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
+          <add key="ComboBoxIntervalDialogBaseStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
+          <add key="ComboBoxIntervalDialogBaseEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[4]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
+          <add key="ComboBoxIntervalDialogAdditionStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
       </energyview>
       <customersettings>
           <hierarchy>
@@ -732,16 +736,15 @@
   <!--Date Picker-->
   <DatePicker>
     <EnergyUsage>
-      <add key="DatePickerIntervalDialogStartDate" value="//div[contains(@id,'addintervalwindow')]//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
-      <add key="DatePickerIntervalDialogEndDate" value="//table[@id='em-addinterval-enddate']//table" type="XPath"/>
       <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       
       <add key="DatePickerUnitKPIStartDate" value="//div[@id='em-unit-energy-chartpanel']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       <add key="DatePickerUnitKPIEndDate" value="//div[@id='em-unit-energy-chartpanel']//table[contains(@class,'x-field x-date-field')][2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
 
-      <add key="DatePickerIntervalDialogStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
-      <add key="DatePickerIntervalDialogEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      <add key="DatePickerIntervalDialogBaseStartDate" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      <add key="DatePickerIntervalDialogBaseEndDate" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      <add key="DatePickerIntervalDialogAdditionStartDate" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
 
     </EnergyUsage>
     <CustomerSettings>
@@ -820,6 +823,11 @@
     <add key="LabelDashboardHeaderName" value="hp-dashboard-ct_hd-textEl" type="ID"/>
     <add key="LabelWidgetNameMin" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']" type="XPath"/>
     </HomePage>
+    
+    <EnergyView>
+      <add key="LabelAdditionEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/label[2]" type="XPath"/>
+    </EnergyView>
+    
   </Label>
   <!--Label End-->
    

@@ -62,5 +62,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Label WidgetNameMinLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetNameMin);
 
         #endregion
+
+        #region Energy View
+
+
+        #endregion
+
     }
 }

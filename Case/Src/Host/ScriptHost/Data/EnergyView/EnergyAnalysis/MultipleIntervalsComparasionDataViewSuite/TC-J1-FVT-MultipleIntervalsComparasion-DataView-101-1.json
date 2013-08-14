@@ -3,21 +3,19 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
-			"AreaDimensionPath":["楼宇BC", "一层"],
-			"SystemDimensionPath":["楼宇BC", "空调"],
-			"TagNames":["V2_BuildingBC", "V1_BuildingBC", "V11_BuildingBC", "V_Null_BuildingBC", "V19_BuildingBC"],
-			"failedFileName":["F-MultiHierarchyNodeDataView101-1-D-V2_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-V2V1_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-V11V2V1_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-9VBuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-10NullVBuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-10VBuildingBC.xls"],
-			"DashboardInfo":{
-				"WigetName":"MultiDataView1012",
-				"HierarchyName":["NancyCustomer1", "园区测试多层级", "楼宇BAD"],
-				"IsCreateDashboard":"true",
-				"DashboardName":"Dashboard_Multi",
-			}
+			"TagNames":["V2_BuildingBC"],
+			"failedFileName":["F-MultipleIntervalsComparasionDataView101-1-D-V2_BuildingBC.xls", "F-MultipleIntervalsComparasionDataView101-1-D-2V2_BuildingBC.xls", "F-MultipleIntervalsComparasionDataView101-1-D-22V2_BuildingBC.xls", "F-MultipleIntervalsComparasionDataView101-1-D-5V2_BuildingBC.xls"],
+			"StartDate":["2013-1-11", "2012-4-7", "2012-8-7", "2012-10-12"],
+			"StartTime":["00:00", "03:00", "12:00", "18:00"],
+			"BaseStartDate":["2013-02-01"],
+			"BaseStartTime":["23:00"],
+			"BaseEndDate":["2013-02-03"],
+			"BaseEndTime":["22:00"],
 		},
 		"ExpectedData":
 		{
-			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
-			"expectedFileName":["SingleHierarchyNodeDataView101-1-D-V2_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-V2V1_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-V11V2V1_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-9VBuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-10NullVBuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-10VBuildingBC.xls"],
+			"expectedFileName":["MultipleIntervalsComparasionDataView101-1-D-V2_BuildingBC.xls", "MultipleIntervalsComparasionDataView101-1-D-2V2_BuildingBC.xls", "MultipleIntervalsComparasionDataView101-1-D-22V2_BuildingBC.xls", "MultipleIntervalsComparasionDataView101-1-D-5V2_VBuildingBC.xls"],
+			"EndTimeValue":["2013年01月17日24点00分", "2013年01月19日 22点00分"],
 		}
 	}
 ]

@@ -8,6 +8,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
     public static class JazzControlLocatorKey
     {
         #region Button
+
         #region login
         public static string ButtonLoginSubmit = "ButtonLoginSubmit";
         public static string ButtonLoginCustomerOptionConfirm = "ButtonLoginCustomerOptionConfirm";
@@ -142,6 +143,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonMultipleHierarchyAddTags = "ButtonMultipleHierarchyAddTags";
 
         public static string LinkButtonIntervalDialogAddTimeSpan = "LinkButtonIntervalDialogAddTimeSpan";
+        public static string ButtonIntervalDialogDeleteTimeSpan = "ButtonIntervalDialogDeleteTimeSpan";
+        public static string ButtonIntervalDialogConfirm = "ButtonIntervalDialogConfirm";
+        public static string ButtonIntervalDialogGiveUp = "ButtonIntervalDialogGiveUp";
+
         #endregion
 
         #region energy analysis
@@ -595,8 +600,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxEnergyViewEndTime = "ComboBoxEnergyViewEndTime";
         public static string ComboBoxEnergyViewSaveDashboardHierarchy = "ComboBoxEnergyViewSaveDashboardHierarchy";
         public static string ComboBoxEnergyViewSaveDashboardDashboard = "ComboBoxEnergyViewSaveDashboardDashboard";
-        public static string ComboBoxEnergyViewIntervalDialogStartTime = "ComboBoxEnergyViewIntervalDialogStartTime";
-        public static string ComboBoxEnergyViewIntervalDialogEndTime = "ComboBoxEnergyViewIntervalDialogEndTime";
+        public static string ComboBoxIntervalDialogBaseStartTime = "ComboBoxIntervalDialogBaseStartTime";
+        public static string ComboBoxIntervalDialogBaseEndTime = "ComboBoxIntervalDialogBaseEndTime";
+        public static string ComboBoxIntervalDialogAdditionStartTime = "ComboBoxIntervalDialogAdditionStartTime";
         #endregion
 
         #region customersettings
@@ -808,16 +814,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region DatePicker
 
         #region EnergyUsage
-        public static string DatePickerIntervalDialogStartDate = "DatePickerIntervalDialogStartDate";
-        public static string DatePickerIntervalDialogEndDate = "DatePickerIntervalDialogEndDate";
         public static string DatePickerEnergyUsageStartDate = "DatePickerEnergyUsageStartDate";
         public static string DatePickerEnergyUsageEndDate = "DatePickerEnergyUsageEndDate";
 
         public static string DatePickerUnitKPIStartDate = "DatePickerUnitKPIStartDate";
         public static string DatePickerUnitKPIEndDate = "DatePickerUnitKPIEndDate";
 
-        public static string DatePickerIntervalDialogStartTime = "DatePickerIntervalDialogStartTime";
-        public static string DatePickerIntervalDialogEndTime = "DatePickerIntervalDialogEndTime";
+        public static string DatePickerIntervalDialogBaseStartDate = "DatePickerIntervalDialogBaseStartDate";
+        public static string DatePickerIntervalDialogBaseEndDate = "DatePickerIntervalDialogBaseEndDate";
+        public static string DatePickerIntervalDialogAdditionStartDate = "DatePickerIntervalDialogAdditionStartDate";
         #endregion
 
         #region CustomerSettings
@@ -909,6 +914,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelDashboardHeaderName = "LabelDashboardHeaderName";
         public static string LabelWidgetNameMin = "LabelWidgetNameMin";
         
+        #endregion
+
+        #region Energy View
+
+        public static string LabelAdditionEndTime = "LabelAdditionEndTime";
+
         #endregion
 
         #endregion

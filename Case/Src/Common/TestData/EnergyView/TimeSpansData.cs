@@ -28,11 +28,17 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public DashboardInformation DashboardInfo { get; set; }
 
-        public string[] MultiHieTagNames { get; set; }
+        public string[] StartDate { get; set; }
 
-        public string[] MultiSelectedHiearchyPath { get; set; }
+        public string[] StartTime { get; set; }
 
-        public string[][] MultipleHiearchyPath { get; set; }
+        public string[] BaseStartDate { get; set; }
+
+        public string[] BaseStartTime { get; set; }
+
+        public string[] BaseEndDate { get; set; }
+
+        public string[] BaseEndTime { get; set; }
     }
 
     public class TimeSpansOutputData : ExpectedTestDataBase
@@ -40,6 +46,13 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] expectedFileName { get; set; }
         public string ClearAllMessage { get; set; }
         public string QuitMultipleMessage { get; set; }
+        public string[] StartDateValue { get; set; }
+        public string[] StartTimeValue { get; set; }
+        public string[] BaseStartDateValue { get; set; }
+        public string[] BaseStartTimeValue { get; set; }
+        public string[] BaseEndDateValue { get; set; }
+        public string[] BaseEndTimeValue { get; set; }
+        public string[] EndTimeValue { get; set; }
     }
 
     public enum TimeSpans

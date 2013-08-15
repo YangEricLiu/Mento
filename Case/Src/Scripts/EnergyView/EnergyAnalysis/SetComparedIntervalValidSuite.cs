@@ -72,24 +72,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[0], 2);
             TimeManager.MediumPause();
 
-            //Change the Start Time in first date range
-            EnergyViewToolbar.ClickTimeSpanButton();
-            TimeManager.ShortPause();
-            TimeSpanDialog.InputBaseStartDate(input.InputData.BaseStartDate[0]);
-            TimeSpanDialog.InputBaseStartTime(input.InputData.BaseStartTime[0]);
-
-            //Change the End Time in first date range, 
-            EnergyViewToolbar.ClickTimeSpanButton();
-            TimeManager.ShortPause();
-            TimeSpanDialog.InputBaseEndDate(input.InputData.BaseEndDate[0]);
-            TimeSpanDialog.InputBaseEndTime(input.InputData.BaseEndTime[0]);
-
-            Assert.IsTrue(TimeSpanDialog.GetAdditionEndTimeValue(2).Contains(input.ExpectedData.EndTimeValue[1]));
-            TimeSpanDialog.ClickConfirmButton();
-
-            //Add multiple compared spans, until the number of total time spans is 5
-            EnergyViewToolbar.ClickTimeSpanButton();
-            TimeManager.ShortPause();
+            //Click 'Add Compared Interval' link button in the dialog multiple times.
+            TimeSpanDialog.ClickAddTimeSpanButton();
 
             for (int i = 1; i < 4; i++)
             {

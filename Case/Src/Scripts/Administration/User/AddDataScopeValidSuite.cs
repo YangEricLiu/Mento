@@ -130,11 +130,14 @@ namespace Mento.Script.Administration.User
         [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-3")]
         public void CheckAllCustomerNamesThenView(UserDataPermissionData input)
         {
-
             // Focus on a new created user, open datascope tab. 
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            TimeManager.LongPause();
             UserDataPermissionSettings.SwitchToDataPermissionTab();
-            TimeManager.ShortPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
                         /*
             // check "客户名称"
             UserDataPermissionSettings.CheckAllCumstomerNames();

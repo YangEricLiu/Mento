@@ -130,15 +130,12 @@ namespace Mento.Script.Administration.User
         [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-3")]
         public void CheckAllCustomerNamesThenView(UserDataPermissionData input)
         {
+
             // Focus on a new created user, open datascope tab. 
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
-            TimeManager.LongPause();
             UserDataPermissionSettings.SwitchToDataPermissionTab();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-                        /*
+            TimeManager.ShortPause();
+                 
             // check "客户名称"
             UserDataPermissionSettings.CheckAllCumstomerNames();
 
@@ -149,13 +146,13 @@ namespace Mento.Script.Administration.User
             Assert.IsFalse(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
             UserDataPermissionSettings.CloseTreeWindow();
             UserDataPermissionSettings.ClickSaveButton();
-            */
+           
             //Verify 
-            string[] path = { "customerA", "organizationA", "siteA"};
+           // string[] path = { "customerA", "organizationA", "siteA"};
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
-            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(path));
+            //IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(path));
 
-            //Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
             UserDataPermissionSettings.CloseTreeWindow();
         }
 
@@ -264,27 +261,65 @@ namespace Mento.Script.Administration.User
             UserDataPermissionSettings.CloseTreeWindow();
         }
 
-
+        /*
         [Test]
         [CaseID("TC-J1-FVT-UserDataScope-Add-101-8")]
         [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-8")]
         public void CheckDataScopeAndVerify(UserDataPermissionData input)
         {
-     
+            // login out  and login in UserOwnAdmin
+            string password = "P@ssw0rd";
+
+            JazzFunction.HomePage.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(input.InputData.UserName,password,input.InputData.CustomerName);
+            //JazzFunction.HomePage.SelectCustomer(input.InputData.CustomerName);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UserManagement);
+            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CustomerManagement);
+            //JazzFunction.CustomerManagement.ClickAddCustomerButton();
+
+            //Problem here @@@@@@@@@@@@@@@2
+            //JazzFunction.CustomerManagement.FillInCustomerInfo(data);
+
+            //Creat customerNew 
+
+            // Focus on a new created user, open datascope tab. 
+            JazzFunction.UserSettings.FocusOnUser(input.ExpectedData.UserName);
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.ShortPause();
+            //Verify  the hierarchy node all checked
+            Assert.IsFalse(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
+            Assert.IsTrue(UserDataPermissionSettings.IsCheckAllDataChecked());
+
+            JazzFunction.HomePage.ExitJazz();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            JazzFunction.LoginPage.LoginWithOption(input.ExpectedData.UserName,password,input.ExpectedData.UserName);
+            TimeManager.LongPause();
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CostUsage);
+            JazzFunction.CostPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
+
+            Assert.IsTrue(UserDataPermissionSettings.ClickEditDataPermission(input.ExpectedData.CustomerName));
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
         }
+        */
+
 
         [Test]
         [CaseID("TC-J1-FVT-UserDataScope-Add-101-9")]
         [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-9")]
-        public void Nine(UserDataPermissionData input)
+        public void CheckAllHierarchyData(UserDataPermissionData input)
         {
             // Focus on a new created user, open datascope tab. 
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
-            //Check the hierarchy node all uncheck
-            UserDataPermissionSettings.CheckAllCumstomerNames();
+            
+            UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+
+            UserDataPermissionSettings.CheckAllHierarchyNode();
+            //Check the hierarchy node all check
             Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
 
             UserDataPermissionSettings.CheckHierarchyNode(input.InputData.HierarchyNodePath);

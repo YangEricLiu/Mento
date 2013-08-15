@@ -27,6 +27,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
         }
 
+        public Boolean IsAllDataScopeItemChecked()
+        {
+            IWebElement checkbox = this.RootElement;
+
+            return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
+        }
+
         public void Check(string permissionName)
         {
             IWebElement checkbox = GetPermissonFieldElement(permissionName);
@@ -59,10 +66,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxTable), PERMISSIONNAME, permissionName);
         }
 
+
         private IWebElement GetPermissonFieldElement(string permissionName)
         {
             return FindChild(GetPermissonFieldLocator(permissionName));
         }
+            
         #endregion
     }
 }

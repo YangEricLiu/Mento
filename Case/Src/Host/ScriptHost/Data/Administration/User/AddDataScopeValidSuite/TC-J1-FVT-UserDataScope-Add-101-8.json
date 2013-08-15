@@ -2,13 +2,15 @@
 	{		
 		"InputData":
 		{
-			"UserName":"UserForAllCustomers",
-			"CustomerName":"customerA",
-			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],
+			"UserName":"UserOwnAdmin",
+			"CustomerName":"REM管理平台",
+			"HierarchyNodePath":["customerNew","organizationNew","siteNew"],
 		},
 		"ExpectedData":
 		{
-			"UserName":"UserForAllCustomers",
+			"UserName":"UserForCheckAllData008",
+			"CustomerName":"customerNew",
+			"CustomerName":"REM管理平台",
 		}
 	}
 ]

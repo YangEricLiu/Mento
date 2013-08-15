@@ -1,0 +1,16 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"CommonName":"UserCancel",
+			"RealName":"UserCancel",
+			"Title":"技术人员",
+			"Type":"客户管理员",
+			"Telephone":"010-12345",
+			"Email":"1@1.com",
+		},
+		"ExpectedData":
+		{
+		}
+	},
+]

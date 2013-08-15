@@ -872,6 +872,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string MenuButtonSelectCustomer = "MenuButtonSelectCustomer";
 
         public static string UserDataAllHierarchyNodeCheckBoxField = "CheckBoxFieldUserDataAllHierarchyNode";
+        public static string CheckBoxFieldUserAllDataScope = "CheckBoxFieldUserAllDataScope";
+        public static string CheckBoxFieldUserAllHierarchyNode = "CheckBoxFieldUserAllHierarchyNode";
+        
         #endregion
 
         #region Label

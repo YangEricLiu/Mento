@@ -37,8 +37,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SelectAllDataPermission = JazzButton.UserSelectAllDataPermissionButton;
         private static Button CustomerNames = JazzButton.UserCustomerNamesButton;
         private static Button CustomerNameViewStatus = JazzButton.CustomerNamesViewStatusButtons;
-
+        
         private static CheckBoxField CheckAllHierarchyNodesCheckBox = JazzCheckBox.UserDataAllHierarchyNodeCheckBoxField;
+        private static CheckBoxField CheckAlllDataScopeCheckBox = JazzCheckBox.UserAllDataScopeCheckBoxField;
 
         private static HierarchyTree HierarchyTree
         {
@@ -129,10 +130,19 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param>Cumtomer name</param>
         /// <returns></returns>
-        public void ClickEditDataPermission(string customerName)
+        public Boolean ClickEditDataPermission(string customerName)
         {
-            Boolean page = true;
-            DataPermissonList.ClickDataPermissionRow(4, customerName, page);
+            try
+            {
+                Boolean page = true;
+                DataPermissonList.ClickDataPermissionRow(4, customerName, page);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
 
         /// <summary>
@@ -261,6 +271,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean AreAllHierarchyNodesChecked(string[] hierarchyNodePaths)
         {
             TimeManager.LongPause();
+            string[] hierarchyPaths = new string[hierarchyNodePaths.Length];
+            //Array.Copy(hierarchyNodePaths,4,hierarchyPaths,1,4);
             int i = 0;
             int j = 0;
             Boolean flag = true;
@@ -270,7 +282,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 {
                     UserDataPermissionTree.ExpandNodePath(hierarchyNodePaths);
                     flag = UserDataPermissionTree.IsNodeChecked(hierarchyNodePaths.Last());
-                    hierarchyNodePaths[hierarchyNodePaths.Length - 1] = null;
+                    Array.Copy(hierarchyNodePaths,hierarchyPaths,hierarchyNodePaths.Length-i-1);
                     i = i + 1;
                 }
                 return flag;
@@ -360,7 +372,7 @@ namespace Mento.ScriptCommon.Library.Functions
             return SelectAllDataPermission.IsEnabled();
         }
 
-
+        /*
         /// <summary>
         /// Verify whether the All the Customer names display
         /// </summary>
@@ -372,6 +384,14 @@ namespace Mento.ScriptCommon.Library.Functions
            // i.Equals(CustomerList.GetAllData().Rows);
             //int i = CustomerList.get;
             return true;
+        }
+        */
+        /// <summary>
+        /// Verify whether the All the Customer names display
+        /// </summary>
+        public Boolean IsCheckAllDataChecked()
+        {
+            return CheckAlllDataScopeCheckBox.IsAllDataScopeItemChecked();
         }
 
         #endregion

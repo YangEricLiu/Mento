@@ -74,6 +74,19 @@ namespace Mento.ScriptCommon.Library.Functions
             return dataGrid.GetAllData();
         }
 
+          /// <summary>
+        /// Exit Jazz
+        /// </summary>
+        public void ExitJazz()
+        {
+            JazzFunction.UserProfile.NavigatorToUserProfile();
+            JazzFunction.UserProfile.ExitJazz();
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+        }      
+
         /// <summary>
         /// Import expected data file and compare to the data view currently, if not equal, export to another file
         /// </summary>

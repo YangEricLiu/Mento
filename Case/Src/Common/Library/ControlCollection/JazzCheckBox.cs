@@ -18,7 +18,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static CheckBoxField UserTypePermissionCheckBoxField = GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxFieldUserTypePermission);
         public static CheckBoxField UserDataAllHierarchyNodeCheckBoxField = GetControl<CheckBoxField>(JazzControlLocatorKey.UserDataAllHierarchyNodeCheckBoxField);
-
+        public static CheckBoxField UserAllDataScopeCheckBoxField = GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxFieldUserAllDataScope);
         #endregion
     }
 }

@@ -21,12 +21,18 @@ namespace Mento.ScriptCommon.Library.Functions
         private static LinkButton AddTimeSpanButton = JazzButton.IntervalDialogAddTimeSpanLinkButton;
         private static Button IntervalDialogConfirmButton = JazzButton.IntervalDialogConfirmButton;
         private static Button IntervalDialogGiveUpButton = JazzButton.IntervalDialogGiveUpButton;
+        private static Container ExcludeTimeIntervalsContainer = JazzContainer.ExcludeTimeIntervalsContainer;
 
         #endregion
 
         public TimeSpanDialog() : base(Locator) { }
 
         #region common       
+
+        public int GetExcludeIntervals()
+        {
+            return ExcludeTimeIntervalsContainer.GetElementNumber();
+        }
 
         public void ClickConfirmButton()
         {

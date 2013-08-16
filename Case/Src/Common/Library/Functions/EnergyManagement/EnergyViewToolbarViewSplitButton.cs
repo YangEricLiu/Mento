@@ -40,6 +40,11 @@ namespace Mento.ScriptCommon.Library.Functions
             ViewButton.Click();
         }
 
+        public bool IsMenuItemDisabled(string textName)
+        {
+            return AddTimeSpanButton.IsMenuItemDisabled(textName);
+        }
+
         public void SwitchViewType(EnergyViewType viewType)
         {
             ViewButton.Trigger();

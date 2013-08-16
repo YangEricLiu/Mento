@@ -888,6 +888,8 @@
     
   <EnergyView>
       <add key="ContainerMultiHierarchyPanel" value="//div[@id='hp-dashboard-ctem-energy-multi-hier-panel']/div[contains(@class,'x-container-default')]" type="XPath"/>
+      <add key="ContainerExcludeTimeIntervals" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody/tr/td/div[contains(@style,'display: none;')]" type="XPath"/>
+
   </EnergyView>
   
 </Container>

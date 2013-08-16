@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnergyAnalysis\SetComparedIntervalInvalidSuite.cs" />
     <Compile Include="EnergyAnalysis\SetComparedIntervalValidSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite.cs" />

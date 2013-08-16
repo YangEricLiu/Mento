@@ -100,11 +100,21 @@ namespace Mento.ScriptCommon.Library.Functions
             return !ViewButton.IsTimeSpanButtonDisabled();
         }
 
+        public bool IsTimeSpanMenuItemDisabled(string text)
+        {
+            return ViewButton.IsMenuItemDisabled(text);
+        }
+
         public void ClickTimeSpanButton()
         {
             ViewButton.ClickTimeSpan();
 
             JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        public bool IsMoreMenuItemDisabled(string text)
+        {
+            return MoreMenu.IsMenuItemDisabled(text);
         }
 
         public void TimeSpan(TimeSpans span)

@@ -144,6 +144,22 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge if all the left grid tags can not checked
+        /// </summary>
+        public bool IsNoEnabledCheckbox()
+        {
+            return TagGrid.IsNoEnabledCheckbox();
+        }
+
+        /// <summary>
+        /// Judge if all the left grid tags can be checked
+        /// </summary>
+        public bool IsAllEnabledCheckbox()
+        {
+            return TagGrid.IsAllEnabledCheckbox();
+        }
+
+        /// <summary>
         /// Check the tags on left region
         /// </summary>
         /// <param name="tagNames"></param>

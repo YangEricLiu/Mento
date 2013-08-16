@@ -1002,6 +1002,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Energy Analysis
 
         public static string ContainerMultiHierarchyPanel = "ContainerMultiHierarchyPanel";
+        public static string ContainerExcludeTimeIntervals = "ContainerExcludeTimeIntervals";
 
         #endregion
 

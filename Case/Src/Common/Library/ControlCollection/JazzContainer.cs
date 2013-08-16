@@ -72,6 +72,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region energy analysis
 
         public static Container MultiHierarchyPanelContainer = GetControl<Container>(JazzControlLocatorKey.ContainerMultiHierarchyPanel);
+        public static Container ExcludeTimeIntervalsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerExcludeTimeIntervals);
 
         #endregion
 

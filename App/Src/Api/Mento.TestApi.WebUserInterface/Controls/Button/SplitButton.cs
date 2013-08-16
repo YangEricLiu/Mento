@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using OpenQA.Selenium;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -35,6 +36,17 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool IsSplitButtonDisabled()
         {
             return this.RootElement.GetAttribute("class").Contains("x-btn-disabled");
+        }
+
+        public bool IsMenuItemDisabled(string itemText)
+        {
+            Trigger();
+            return GetMenuItem(itemText).GetAttribute("class").Contains("x-menu-item-disabled");
+        }
+
+        private IWebElement GetMenuItem(string itemResourceVariable)
+        {
+            return FindChild(GetMenuItemLocator(itemResourceVariable));
         }
 
         private Locator GetMenuItemLocator(string itemResourceVariable)

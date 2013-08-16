@@ -27,6 +27,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        public void Open()
+        {
+            this.Click();
+            TimeManager.FlashPause();
+        }
+
         public void SelectOneItem(string itemPath)
         {
             this.Click();
@@ -64,6 +70,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool IsItemChecked(string itemText)
         {
             return GetMenuItem(itemText).GetAttribute("class").Contains("x-menu-item-checked");
+        }
+
+        public bool IsMenuItemDisabled(string itemText)
+        {
+            this.Click();
+            return GetMenuItem(itemText).GetAttribute("class").Contains("x-menu-item-disabled");
         }
 
         private void ToggleCheckItem(string itemText)

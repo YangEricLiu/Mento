@@ -142,5 +142,43 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-3")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-3")]
+        public void TrendChartWithOtherCalcualtionType(EnergyViewOptionData input)
+        {
+            //On hierarchy node,NancyCustomer1/园区测试多层级/BuildingMulCalculationType
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Set date range
+            EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
+            TimeManager.ShortPause();
+
+            //Check tag V_Null_BuildingBC and view data view
+            EnergyAnalysis.CheckTags(input.InputData.TagNames);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+
+            //Save to dashboard
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //On homepage, check the dashboard
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.MediumPause();
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));        }
     }
 }

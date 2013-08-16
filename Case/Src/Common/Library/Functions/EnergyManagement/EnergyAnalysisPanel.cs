@@ -322,22 +322,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <param name="displayStep"></param>
         public void ExportExpectedDataTableToExcel(string fileName, DisplayStep displayStep)
         {
-            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
-            {
-                //display data view
-                JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
-                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-                TimeManager.LongPause();
-                
-                ClickDisplayStep(displayStep);
-
-                //Load data view and get data table
-                DataTable data = GetAllData();
-
-                //Export to excel
-                string actualFileName = Path.Combine(EAPath, fileName);
-                JazzFunction.DataViewOperation.MoveExpectedDataViewToExcel(data, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
-            }
+            ExportExpectedDataTableToExcel(fileName, displayStep, EAPath);
         }
 
         /// <summary>
@@ -347,12 +332,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// /// <param name="failedFileName"></param>
         public bool CompareDataViewOfEnergyAnalysis(string expectedFileName, string failedFileName)
         {
-            string filePath = Path.Combine(EAPath, expectedFileName);
-            DataTable actualData = GetAllData();
-
-            DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
-
-            return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+            return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, EAPath);
         }
 
         #endregion

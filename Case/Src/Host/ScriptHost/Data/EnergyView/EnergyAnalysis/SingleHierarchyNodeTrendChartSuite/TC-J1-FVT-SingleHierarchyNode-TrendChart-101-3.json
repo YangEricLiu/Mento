@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "BuildingMulCalculationType"],
+			"TagNames":["CalculationTypeAvg", "CalculationTypeMax", "CalculationTypeMin", "CalculationTypeP"],
+			"failedFileName":["F-SingleHierarchyNodeDataView101-3-D-CalculationType.xls"],
+			"DashboardInfo":{
+				"WigetName":"SingleTrendChart1013",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级", "BuildingMulCalculationType"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_CalculationTypel",
+			}
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["SingleHierarchyNodeDataView101-3-D-CalculationType.xls"],
+		}
+	}
+]

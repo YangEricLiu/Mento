@@ -5,6 +5,10 @@ using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using System.Data;
+using Mento.Framework.Configuration;
+using Mento.ScriptCommon.TestData.EnergyView;
+using Mento.TestApi.WebUserInterface;
+using System.IO;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -137,6 +141,46 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return EnergyDataGrid.GetAllData();
         }
+
+        /// <summary>
+        /// Export expected data table to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedDataTableToExcel(string fileName, DisplayStep displayStep, string path)
+        {
+            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+            {
+                //display data view
+                JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+
+                ClickDisplayStep(displayStep);
+
+                //Load data view and get data table
+                DataTable data = GetAllData();
+
+                //Export to excel
+                string actualFileName = Path.Combine(path, fileName);
+                JazzFunction.DataViewOperation.MoveExpectedDataViewToExcel(data, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
+            }
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDataViewOfEnergyAnalysis(string expectedFileName, string failedFileName, string path)
+        {
+            string filePath = Path.Combine(path, expectedFileName);
+            DataTable actualData = GetAllData();
+
+            DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
+
+            return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+        }
+
         #endregion
                 
         #region Chart view operations

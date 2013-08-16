@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织A", "园区B", "楼宇C"],
+			"commodityNames":["电"],
+			"DashboardInfo":{
+				"WigetName":"TestWiget",
+				"HierarchyName":["HierarchyEV"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"仪表盘_A1",
+			},
+			"failedFileName":["F-CostUsageDataView001-1-H-Elec.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageDataView001-1-H-Elec.xls"],
+		}
+	}
+]

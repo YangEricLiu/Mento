@@ -10,9 +10,15 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     public class CostPanel : EnergyViewPanel
     {
+        public string CostPath = @"CostUsage\";
+
+        #region controls
+
         private static Grid CommodityGrid = JazzGrid.CommodityCostGrid;
         private static Grid TotalCommotidyGrid = JazzGrid.TotalCommodityCostGrid;
         
+        #endregion
+
         protected override Chart Chart
         {
             get { return JazzChart.EnergyViewChart; }
@@ -24,6 +30,8 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         internal CostPanel() { }
+
+        #region left panel
 
         public void SwitchTagTab(TagTabs tab)
         {
@@ -73,9 +81,52 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public void SelectCommodity(string commodityNames = null)
+        {
+            //total
+            if (commodityNames == null)
+            {
+                TotalCommotidyGrid.CheckRowCheckbox(2, "介质总览", false);
+            }
+            else //specified commodity
+            {
+                TotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+
+                CommodityGrid.CheckRowCheckbox(2, commodityNames, false);
+                JazzMessageBox.LoadingMask.WaitLoading();
+            }
+        }
+
         public void DeselectCommodity(string[] commodityNames)
         {
             throw new NotImplementedException();
         }
+
+        #endregion
+
+        #region data view operation
+
+        /// <summary>
+        /// Export expected data table to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedDataTableToExcel(string fileName, DisplayStep displayStep)
+        {
+            ExportExpectedDataTableToExcel(fileName, displayStep, CostPath);
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDataViewOfCostUsage(string expectedFileName, string failedFileName)
+        {
+            return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, CostPath);
+        }
+
+        #endregion
     }
 }

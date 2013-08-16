@@ -547,8 +547,8 @@
           <add key="ComboBoxUserProfileAssociatedCustomer" value="st-userprofile-personalinfo-firstcustomer-triggerWrap" type="ID"/>
       </UserProfile>
       <energyview>
-          <add key="ComboBoxEnergyViewStartTime" value="//div[@id='em-energy-chartgridpanel']/div/div/div/div/table[2]//table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
-          <add key="ComboBoxEnergyViewEndTime" value="//div[@id='em-energy-chartgridpanel']/div/div/div/div/table[4]//table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
+          <add key="ComboBoxEnergyViewStartTime" value="//div[@id='em-content-center-region-body']/div/div/div/div/div/table[2]//table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
+          <add key="ComboBoxEnergyViewEndTime" value="//div[@id='em-content-center-region-body']/div/div/div/div/div/table[4]//table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
           <add key="ComboBoxEnergyViewSaveDashboardHierarchy" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='层级结点']]//table[contains(@id,'combobox')]" type="XPath"/>
           <add key="ComboBoxEnergyViewSaveDashboardDashboard" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body-default')]//table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
           <add key="ComboBoxIntervalDialogBaseStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
@@ -681,7 +681,7 @@
           <add key="GridEnergyAnalysisAllTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@id, 'taggrid') and contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridEnergyAnalysisSystemDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridEnergyAnalysisAreaDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
-          <add key="GridEnergyAnalysisEnergyDataList" value="//div[@id='em-energy-chartgridpanel']//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridEnergyAnalysisEnergyDataList" value="//div[@id='em-content-center-region-body']//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridUnitKPIAllTagList" value="//div[@id='em-unit-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridRadioAllTagList" value="//div[@id='em-ratio-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
@@ -736,8 +736,8 @@
   <!--Date Picker-->
   <DatePicker>
     <EnergyUsage>
-      <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
-      <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-energy-chartgridpanel']//table[contains(@class,'x-field x-date-field')][2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-content-center-region-body']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      <add key="DatePickerEnergyUsageEndDate" value="//div[@id='em-content-center-region-body']//table[contains(@class,'x-field x-date-field')][2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       
       <add key="DatePickerUnitKPIStartDate" value="//div[@id='em-unit-energy-chartpanel']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       <add key="DatePickerUnitKPIEndDate" value="//div[@id='em-unit-energy-chartpanel']//table[contains(@class,'x-field x-date-field')][2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>

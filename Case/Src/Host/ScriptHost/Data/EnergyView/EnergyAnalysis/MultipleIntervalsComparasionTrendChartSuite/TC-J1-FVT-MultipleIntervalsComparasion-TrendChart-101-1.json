@@ -1,0 +1,27 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagNames":["V2_BuildingBC"],
+			"failedFileName":["F-MultipleIntervalsComparasionDataView101-1-D-V2_BuildingBC.xls", "F-MultipleIntervalsComparasionDataView101-1-D-2V2_BuildingBC.xls", "F-MultipleIntervalsComparasionDataView101-1-D-22V2_BuildingBC.xls", "F-MultipleIntervalsComparasionDataView101-1-D-5V2_BuildingBC.xls"],
+			"StartDate":["2013-1-11", "2012-4-7", "2012-8-7", "2012-10-12"],
+			"StartTime":["00:00", "03:00", "12:00", "18:00"],
+			"BaseStartDate":["2013-02-01"],
+			"BaseStartTime":["23:00"],
+			"BaseEndDate":["2013-02-03"],
+			"BaseEndTime":["22:00"],
+			"DashboardInfo":{
+				"WigetName":"TimeSpanTrendChart1011",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级", "楼宇BAD"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_TimeSpan1011",
+			},
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["MultipleIntervalsComparasionDataView101-1-D-V2_BuildingBC.xls", "MultipleIntervalsComparasionDataView101-1-D-2V2_BuildingBC.xls", "MultipleIntervalsComparasionDataView101-1-D-22V2_BuildingBC.xls", "MultipleIntervalsComparasionDataView101-1-D-5V2_VBuildingBC.xls"],
+			"EndTimeValue":["2013年01月17日24点00分", "2013年01月19日 22点00分"],
+		}
+	}
+]

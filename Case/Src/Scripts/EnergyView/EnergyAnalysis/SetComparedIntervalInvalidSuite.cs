@@ -41,6 +41,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
         private static TimeSpanDialog TimeSpanDialog = JazzFunction.TimeSpanDialog;
+        private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-001-1")]
@@ -62,6 +63,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Select V1, click 'Add Compared Interval' button, then close it directly.
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             TimeManager.ShortPause();
+            EnergyViewToolbar.View(EnergyViewType.Line);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
             EnergyViewToolbar.View(EnergyViewType.Distribute);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
@@ -86,9 +90,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains("所选数据点介质不同，无法共同绘制饼状图！"));
             JazzMessageBox.MessageBox.Confirm();
             Assert.IsFalse(EnergyAnalysis.IsTagChecked(input.InputData.TagNames[2]));
-            Assert.IsTrue(EnergyViewToolbar.IsTimeSpanButtonEnable());
+            //Assert.IsTrue(EnergyViewToolbar.IsTimeSpanButtonEnable());
 
             //Keep V1 selected, add V_month, time range is 'previous 7 days', click '查询数据'.
+            /*
             EnergyAnalysis.CheckTag(input.InputData.TagNames[3]);
             EnergyViewToolbar.View(EnergyViewType.Line);
             TimeManager.MediumPause();
@@ -96,16 +101,55 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.MessageBox.Quit();
             Assert.IsFalse(EnergyAnalysis.IsTagChecked(input.InputData.TagNames[3]));
             Assert.IsTrue(EnergyViewToolbar.IsTimeSpanButtonEnable());
+            */
 
             //Switch to 'Multiple Hierarchy Nodes' funtion (多层级数据点)
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
             TimeManager.MediumPause();
 
             //Only select one tag, click 'Confirm' button.
-
-
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[0]);
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.ShortPause();
             Assert.IsFalse(EnergyViewToolbar.IsTimeSpanButtonEnable());
-            
+            EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.SingleHierarchyTag);
+            TimeManager.MediumPause();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ErrorMessage[0]));
+            JazzMessageBox.MessageBox.Quit();
+            TimeManager.MediumPause();
+
+            //Select multiple tags, click 'Confirm' button.
+            EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
+            TimeManager.MediumPause();
+
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[0]);
+            MultiHieCompareWindow.CheckTag(input.InputData.TagNames[1]);
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.ShortPause();
+            Assert.IsFalse(EnergyViewToolbar.IsTimeSpanButtonEnable());
+
+            //Remove other tags, only one tag is left, click 'Confirm' button.
+            EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
+            TimeManager.LongPause();
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies);
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            MultiHieCompareWindow.UncheckTag(input.InputData.TagNames[1]);
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.ShortPause();
+            Assert.IsFalse(EnergyViewToolbar.IsTimeSpanButtonEnable());
         }
 
         [Test]
@@ -113,141 +157,42 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalInvalidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-001-2")]
         public void SetCompareIntervalInvalidInput(TimeSpansData input)
         {
-            //Select one tag and view data view
+            //Open 'Single Hierarchy Node' function (单层级数据点), 
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-
-            //Set date range and pick up one tag, click "+时间段" button
-            EnergyViewToolbar.SetDateRange(input.InputData.BaseStartDate[0], input.InputData.BaseEndDate[0]);
-            EnergyViewToolbar.SetTimeRange(input.InputData.BaseStartTime[0], input.InputData.BaseEndTime[0]);
-            TimeManager.ShortPause();
             
+            //Only one tag is selected, and time range of first span is valid, Click  'Add Compared Interval' button
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             TimeManager.ShortPause();
 
             //Click  'Add Compared Interval' button
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
- 
-            //Add multiple valid compared intervals successfully.
+
+            //One compared interval is empty, click 'Yes'
+            TimeSpanDialog.ClickConfirmButton();
+            Assert.IsTrue(TimeSpanDialog.GetAdditionStartDateInvalidMsg(2).Contains(input.ExpectedData.StartDateValue[0]));
+
+            //Set Start time of compared interval to be Today, so that its End time will become future time, click 'Yes'
+            DateTime today = new DateTime();
+            today = DateTime.Now;
+            TimeSpanDialog.InputAdditionStartDate(today, 2);
+            TimeManager.ShortPause();
+            TimeSpanDialog.ClickConfirmButton();
+            TimeManager.ShortPause();
+            Assert.IsTrue(TimeSpanDialog.GetAdditionStartDateInvalidMsg(2).Contains(input.ExpectedData.StartDateValue[1]));
+
+            //the Start time of first interval so that start time of compared interval becomes earlier than 2000-01-01, click 'Yes'
             TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[0], 2);
-            TimeManager.ShortPause();
-            TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[0], 2);
             TimeManager.MediumPause();
-
-            for (int i = 1; i < 4; i++)
-            {
-                //Click 'Add Compared Interval' link button in the dialog multiple times.
-                TimeSpanDialog.ClickAddTimeSpanButton();
-                TimeManager.ShortPause();
-
-                TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[i], i + 2);
-                TimeManager.ShortPause();
-                TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[i], i + 2);
-                TimeManager.MediumPause();
-            }
-
-            Assert.IsTrue(TimeSpanDialog.IsAddTimeSpanButtonDisabled());
+            TimeSpanDialog.InputBaseStartDate(input.InputData.BaseStartDate[0]);
+            TimeManager.ShortPause();
             TimeSpanDialog.ClickConfirmButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //Click  'Add Compared Interval' button to open the dialog
-            EnergyViewToolbar.ClickTimeSpanButton();
+            Assert.IsTrue(TimeSpanDialog.GetAdditionStartDateInvalidMsg(2).Contains(input.ExpectedData.StartDateValue[2]));
+            //Click 'Cancel' after above message occurs.
+            TimeSpanDialog.ClickGiveUpButton();
             TimeManager.ShortPause();
-
-            //From the dialog, Click 'x' to delete one compared interval. Click 'Yes'
-            TimeSpanDialog.ClickDeleteTimeSpanButton(5);
-            TimeManager.ShortPause();
-            Assert.AreEqual(1, TimeSpanDialog.GetExcludeIntervals());
-
-            //From the dialog, Click 'x' to delete ALL compared intervals one by one.
-            EnergyViewToolbar.ClickTimeSpanButton();
-            TimeManager.ShortPause();
-            for (int i = 2; i < 5; i++)
-            {
-                TimeSpanDialog.ClickDeleteTimeSpanButton(i);
-                TimeManager.ShortPause();
-            }
-
-            Assert.AreEqual(4, TimeSpanDialog.GetExcludeIntervals());
-            TimeSpanDialog.ClickConfirmButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
-            //Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled("删除全部对比时间段"));
-
-            //Add multiple compared intervals successfully again.
-            TimeSpanDialog.ClickAddTimeSpanButton();
-            TimeManager.ShortPause();
-
-            TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[0], 2);
-            TimeManager.ShortPause();
-            TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[0], 2);
-            TimeManager.MediumPause();
-            TimeSpanDialog.ClickConfirmButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-            //Assert.IsFalse(EnergyViewToolbar.IsTimeSpanMenuItemDisabled("删除全部对比时间段"));
-            TimeSpanDialog.ClickAddTimeSpanButton();
-            TimeManager.ShortPause();
-
-            //Click 'Remove All Compared Intervals' button, then cancel
-            EnergyViewToolbar.TimeSpan(TimeSpans.DeleteAllTimeSpans);
-            TimeManager.ShortPause();
-            Assert.AreEqual(input.ExpectedData.ClearAllMessage, JazzMessageBox.MessageBox.GetMessage());
-            JazzMessageBox.MessageBox.GiveUp();
-
-            TimeSpanDialog.ClickAddTimeSpanButton();
-            TimeManager.ShortPause();
-            Assert.AreEqual(3, TimeSpanDialog.GetExcludeIntervals());
-
-            //Click 'Remove All Compared Intervals' button, then delete
-            EnergyViewToolbar.TimeSpan(TimeSpans.DeleteAllTimeSpans);
-            TimeManager.ShortPause();
-            Assert.AreEqual(input.ExpectedData.ClearAllMessage, JazzMessageBox.MessageBox.GetMessage());
-            JazzMessageBox.MessageBox.Delete();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
-            //Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled("删除全部对比时间段"));
-            TimeSpanDialog.ClickAddTimeSpanButton();
-            TimeManager.ShortPause();
-            Assert.AreEqual(4, TimeSpanDialog.GetExcludeIntervals());
-
-            //Add multiple compared intervals successfully again.
-            TimeSpanDialog.ClickAddTimeSpanButton();
-            TimeManager.ShortPause();
-
-            //Add multiple compared intervals successfully again.
-            TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[0], 2);
-            TimeManager.ShortPause();
-            TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[0], 2);
-            TimeManager.MediumPause();
-            TimeSpanDialog.ClickConfirmButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-            //Assert.IsFalse(EnergyViewToolbar.IsMoreMenuItemDisabled("删除所有"));
-
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
-            TimeManager.ShortPause();
-            Assert.AreEqual(input.ExpectedData.DeleteAllMessage, JazzMessageBox.MessageBox.GetMessage());
-            JazzMessageBox.MessageBox.GiveUp();
-            TimeManager.ShortPause();
-            TimeSpanDialog.ClickAddTimeSpanButton();
-            TimeManager.ShortPause();
-            Assert.AreEqual(3, TimeSpanDialog.GetExcludeIntervals());
-
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
-            TimeManager.ShortPause();
-            Assert.AreEqual(input.ExpectedData.DeleteAllMessage, JazzMessageBox.MessageBox.GetMessage());
-            JazzMessageBox.MessageBox.Clear();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-            Assert.IsFalse(EnergyViewToolbar.IsTimeSpanButtonEnable());
         }
     }
 }

@@ -176,6 +176,11 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading();
         }
 
+        public void OpenMoreButton()
+        {
+            MoreMenu.OpenMoreButton();
+        }
+
         public void SaveToDashboard(string widgetName, string[] hierarchyName, bool isCreateDashboard, string dashboardName)
         {
             MoreMenu.SwitchMenuItem(EnergyViewMoreOption.ToDashboard);

@@ -101,6 +101,14 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading();
         }
 
+        public void InputAdditionStartDate(DateTime startTime, int position)
+        {
+            DatePicker AdditionStartDatePicker = GetAdditionStartDatePicker(position);
+
+            AdditionStartDatePicker.SelectDateItem(startTime);
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
         public void InputAdditionStartTime(string time, int position)
         {
             ComboBox AdditionStartTimeComboBox = GetAdditionStartComboBox(position);
@@ -118,6 +126,13 @@ namespace Mento.ScriptCommon.Library.Functions
             DatePicker AdditionStartDatePicker = GetAdditionStartDatePicker(position);
 
             return AdditionStartDatePicker.GetValue();
+        }
+
+        public string GetAdditionStartDateInvalidMsg(int position)
+        {
+            DatePicker AdditionStartDatePicker = GetAdditionStartDatePicker(position);
+
+            return AdditionStartDatePicker.GetInvalidTips();
         }
 
         public string GetAdditionStartTimeValue(int position)

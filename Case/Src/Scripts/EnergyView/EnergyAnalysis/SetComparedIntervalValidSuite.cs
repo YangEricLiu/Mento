@@ -236,6 +236,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //Add multiple compared intervals successfully again.
             EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.MediumPause();
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
 
@@ -252,9 +253,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.ShortPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
             JazzMessageBox.MessageBox.GiveUp();
+            TimeManager.MediumPause();
 
             EnergyViewToolbar.ClickTimeSpanButton();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
             Assert.AreEqual(3, TimeSpanDialog.GetExcludeIntervals());
             TimeSpanDialog.ClickGiveUpButton();
 
@@ -269,9 +271,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
             Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled("删除全部对比时间段"));
             EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.MediumPause();
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
-            Assert.AreEqual(4, TimeSpanDialog.GetExcludeIntervals());
+            Assert.AreEqual(3, TimeSpanDialog.GetExcludeIntervals());
 
             //Add multiple compared intervals successfully again.
             TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[0], 2);
@@ -281,16 +284,20 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeSpanDialog.ClickConfirmButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            //Assert.IsFalse(EnergyViewToolbar.IsMoreMenuItemDisabled("删除所有"));
+            Assert.IsFalse(EnergyViewToolbar.IsMoreMenuItemDisabled("删除所有"));
+            EnergyViewToolbar.OpenMoreButton();
+            TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
             TimeManager.ShortPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.DeleteAllMessage));
             JazzMessageBox.MessageBox.GiveUp();
             TimeManager.ShortPause();
-            TimeSpanDialog.ClickAddTimeSpanButton();
+            EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
             Assert.AreEqual(3, TimeSpanDialog.GetExcludeIntervals());
+            TimeSpanDialog.ClickGiveUpButton();
+            TimeManager.ShortPause();
 
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
             TimeManager.ShortPause();

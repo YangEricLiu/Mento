@@ -1,0 +1,16 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagNames":["V1_BuildingBC"],
+			"StartDate":["2000-1-1"],
+			"BaseStartDate":["2013-3-9"],
+		},
+		"ExpectedData":
+		{
+			"StartDateValue":["必填项", "超出了时间范围", "该输入项的日期必须在 00年01月01日 之后"],
+			"ErrorMessage":["退出多层级数据点查看情景并清空已选数据点吗？"],
+		}
+	}
+]

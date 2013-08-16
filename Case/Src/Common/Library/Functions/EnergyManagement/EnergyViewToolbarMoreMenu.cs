@@ -43,6 +43,11 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return MoreButton.IsMenuItemDisabled(text);
         }
+
+        public void OpenMoreButton()
+        {
+            MoreButton.Open();
+        }
     }
 
     public enum EnergyViewMoreOption

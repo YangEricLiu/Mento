@@ -314,28 +314,29 @@ namespace Mento.Script.Administration.User
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
-            
+            UserDataPermissionSettings.ClickModifyButton();
+
             UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
-
+            //Check "全部层级节点数据权限"
             UserDataPermissionSettings.CheckAllHierarchyNode();
-            //Check the hierarchy node all check
-            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
-
-            UserDataPermissionSettings.CheckHierarchyNode(input.InputData.HierarchyNodePath);
-            UserDataPermissionSettings.CheckHierarchyNode(input.ExpectedData.HierarchyNodePath);
             UserDataPermissionSettings.SaveTreeWindow();
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            //Verify the hierarchy node all checked
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
 
-            //Check then uncheck "全部平台客户及对应数据权限"
-            UserDataPermissionSettings.CheckAllCustomerDatas();
-
+            // verify after save hierarchy tree
+            TimeManager.MediumPause();
+            Assert.IsTrue(UserDataPermissionSettings.UnCheckCustomer(input.InputData.CustomerName));
+            TimeManager.LongPause();
             UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
 
-            // Verify the hierarchy nodes are checked
-            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
-            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.HierarchyNodePath));
+            //Verify the hierarchy node all checked
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
             UserDataPermissionSettings.CloseTreeWindow();
+            UserDataPermissionSettings.ClickCancelButton();
         }
 
         [Test]

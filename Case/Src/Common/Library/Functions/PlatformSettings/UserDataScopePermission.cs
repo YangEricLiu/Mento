@@ -126,6 +126,29 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Verify Customer Name Data Permission checked
+        /// </summary>
+        /// <param>Cumtomer name</param>
+        /// <returns></returns>
+        public Boolean UnCheckCustomer(string customerName)
+        {
+            try{
+                Boolean page = true;
+                if (!(DataPermissonList.IsDataPermissionRowUnChecked(4, customerName, page)))
+                {
+                    TimeManager.MediumPause();
+                    //page = !(DataPermissonList.IsDataPermissionRowUnChecked(4, customerName, page));
+                    DataPermissonList.CheckDataPermissionRowCheckbox(4, customerName, page);
+                }
+                return DataPermissonList.IsDataPermissionRowUnChecked(4, customerName, page);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Click Edit Data Permission  scope  link button
         /// </summary>
         /// <param>Cumtomer name</param>
@@ -151,7 +174,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void CheckAllHierarchyNode()
         {
-            CheckAllHierarchyNodesCheckBox.Check("全部层级节点数据权限");
+            CheckAllHierarchyNodesCheckBox.DataAllHierarchyCheck();
         }
 
         /// <summary>
@@ -392,6 +415,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsCheckAllDataChecked()
         {
             return CheckAlllDataScopeCheckBox.IsAllDataScopeItemChecked();
+        }
+
+        /// <summary>
+        /// Verify  All hierarchy nodes  check box checked 
+        /// </summary>
+        /// <returns></returns>
+        public void IsAllHierarchyNodeCheck()
+        {
+            CheckAllHierarchyNodesCheckBox.IsDataAllhierarchyBoxChecked();
         }
 
         #endregion

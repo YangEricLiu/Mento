@@ -42,6 +42,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 checkbox.Click();
         }
 
+        public void DataAllHierarchyCheck()
+        {
+            IWebElement checkbox =this.RootElement;
+            if (!IsDataAllhierarchyBoxChecked())
+                checkbox.Click();
+        }
+
+         public Boolean IsDataAllhierarchyBoxChecked()
+        {
+            IWebElement checkbox =this.RootElement;
+            return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
+        }
+
         /// <summary>
         /// Judge if the checkbox item is enabled
         /// </summary>

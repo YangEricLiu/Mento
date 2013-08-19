@@ -2,13 +2,13 @@
 	{		
 		"InputData":
 		{
-			"UserName":"UserForAllCustomers",
+			"UserName":"UserForCheckAll",
 			"CustomerName":"customerA",
 			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],
 		},
 		"ExpectedData":
 		{
-			"UserName":"UserForAllCustomers",
+			"UserName":"UserForCheckAll",
 		}
 	}
 ]

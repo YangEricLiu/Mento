@@ -21,8 +21,8 @@ namespace Mento.Script.EnergyView.CostUsage
     /// 
     /// </summary>
     [TestFixture]
-    [ManualCaseID("TC-J1-FVT-CostUsage-DataView-001"), CreateTime("2013-08-16"), Owner("Emma")]
-    public class CostUsageDataViewSuite : TestSuiteBase
+    [ManualCaseID("TC-J1-FVT-CostUsage-TrendChar-002"), CreateTime("2013-08-19"), Owner("Emma")]
+    public class CostUsageTrendChartSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -43,9 +43,9 @@ namespace Mento.Script.EnergyView.CostUsage
         private static HomePage HomePagePanel = JazzFunction.HomePage;
 
         [Test]
-        [CaseID("TC-J1-FVT-CostUsage-DataView-001-1")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-001-1")]
-        public void CostUsageDataView(CostUsageData input)
+        [CaseID("TC-J1-FVT-CostUsage-TrendChar-002-1")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTrendChartSuite), "TC-J1-FVT-CostUsage-TrendChar-002-1")]
+        public void CostUsageTrendChart(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -57,7 +57,6 @@ namespace Mento.Script.EnergyView.CostUsage
             
             //Check tag and view data view, hourly
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -66,10 +65,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsDataViewDrawn());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Hour);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
 
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
@@ -86,7 +82,6 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
-            Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(CostUsage.CostPath, input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0], dashboard.WigetName));
         
             //Uncheck "electricity" and check "water"
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CostUsage);
@@ -102,7 +97,6 @@ namespace Mento.Script.EnergyView.CostUsage
             
             //Check tag and view data view, hourly
             CostUsage.SelectCommodity(input.InputData.commodityNames[1]);
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -111,10 +105,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsDataViewDrawn());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Hour);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
 
             //Uncheck "water" and check "coal"
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[1]);
@@ -127,10 +118,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsDataViewDrawn());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Hour);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
         
             //Check "介质总览"
             CostUsage.SelectCommodity();
@@ -142,12 +130,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsDataViewDrawn());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Hour);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
         }
-
-
     }
 }

@@ -63,11 +63,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button DashboardHierarchyNameButton = GetControl<Button>(JazzControlLocatorKey.ButtonDashboardHierarchyName);
         public static Button ExistedDashboardButton = GetControl<Button>(JazzControlLocatorKey.ButtonExistedDashboard);
 
-        public static Button EnergyDisplayStepHourButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepHour);
-        public static Button EnergyDisplayStepDayButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepDay);
-        public static Button EnergyDisplayStepWeekButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepWeek);
-        public static Button EnergyDisplayStepMonthButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepMonth);
-        public static Button EnergyDisplayStepYearButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyDisplayStepYear);
+        public static ToggleButton EnergyDisplayStepHourButton = GetControl<ToggleButton>(JazzControlLocatorKey.ButtonEnergyDisplayStepHour);
+        public static ToggleButton EnergyDisplayStepDayButton = GetControl<ToggleButton>(JazzControlLocatorKey.ButtonEnergyDisplayStepDay);
+        public static ToggleButton EnergyDisplayStepWeekButton = GetControl<ToggleButton>(JazzControlLocatorKey.ButtonEnergyDisplayStepWeek);
+        public static ToggleButton EnergyDisplayStepMonthButton = GetControl<ToggleButton>(JazzControlLocatorKey.ButtonEnergyDisplayStepMonth);
+        public static ToggleButton EnergyDisplayStepYearButton = GetControl<ToggleButton>(JazzControlLocatorKey.ButtonEnergyDisplayStepYear);
 
         public static Button MultipleHierarchyTreeButton = GetControl<Button>(JazzControlLocatorKey.ButtonMultipleHierarchyTree);
         public static TabButton MultipleHierarchyAllTags = GetControl<TabButton>(JazzControlLocatorKey.TabButtonMultipleHierarchyAllTagsTab);
@@ -104,6 +104,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TabButton RankSystemDimensionTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonRankSystemDimensionTab);       
         public static Button ConfirmHierarchyRankButton = GetControl<Button>(JazzControlLocatorKey.ButtonConfirmHierarchyRank);
         public static Button ClearHierarchyRankButton = GetControl<Button>(JazzControlLocatorKey.ButtonClearHierarchyRank);
+
+        #endregion
+
+        #region cost
+
+        public static Button CostAreaDimensionTabButton = GetControl<Button>(JazzControlLocatorKey.TabButtonCostAreaDimensionTab);       
 
         #endregion
 

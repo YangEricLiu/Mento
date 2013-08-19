@@ -10,7 +10,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator LoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.LoadingMask);
         private static Locator SubMaskLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.SubMaskLoadingLocator);
         private static Locator ChartMaskerLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.ChartMaskerLoadingLocator);
-        private static Locator DashboardHeaderLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.DashboardHeaderLoadingLocator);      
+        private static Locator DashboardHeaderLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.DashboardHeaderLoadingLocator);
+        private static Locator WidgetsContainerLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.WidgetsContainerLoadingLocator);  
 
         public LoadingMask()
             : base(LoadingLocator)
@@ -89,5 +90,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        public void WaitWidgetsLoading(int maxtime = 0)
+        {
+            try
+            {
+                ElementHandler.Wait(WidgetsContainerLoadingLocator, WaitType.ToAppear, timeout: maxtime <= 0 ? 1 : maxtime);
+
+                TimeManager.ShortPause();
+
+                ElementHandler.Wait(WidgetsContainerLoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 5 : maxtime);
+
+                TimeManager.ShortPause();
+            }
+            catch (Exception ex)
+            {
+                //throw;
+            }
+        }
     }
 }

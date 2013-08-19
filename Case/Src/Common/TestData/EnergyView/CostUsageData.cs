@@ -34,5 +34,6 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] expectedFileName { get; set; }
         public string ClearAllMessage { get; set; }
         public string QuitMultipleMessage { get; set; }
+        public string[] StepMessage { get; set; }
     }
 }

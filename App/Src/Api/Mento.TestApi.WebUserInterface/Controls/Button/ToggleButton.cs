@@ -20,7 +20,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns>True if the toggle button is pressed, false if not</returns>
         public Boolean IsButtonPressed()
         {
-            return true;
+            return this.RootElement.GetAttribute("class").Contains("x-pressed x-btn-pressed");
         }
     }
 }

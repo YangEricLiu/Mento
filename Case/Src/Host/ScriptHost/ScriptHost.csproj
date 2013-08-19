@@ -433,6 +433,10 @@
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-2.json" />
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataViewSuite\TC-J1-FVT-CostUsage-DataView-001-1.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-DataView-005-3.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-DataView-005-2.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-DataView-005-1.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageTrendChartSuite\TC-J1-FVT-CostUsage-TrendChar-002-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTrendChartSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TrendChart-101-1.json" />

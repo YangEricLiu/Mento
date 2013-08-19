@@ -541,9 +541,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             DataTable data = new DataTable();
 
-            var headerLocatorLeft = new Locator("div[contains(@class,'x-grid-header-ct')]/div/div/div[contains(@class,'x-column-header-align-left')]", ByType.XPath);
+            var headerLocatorLeft = new Locator("div[contains(@class,'x-grid-header-ct')]/div/div/div[contains(@class,'x-column-header-align-left') and not(contains(@class,'x-group-sub-header'))]", ByType.XPath);
             //var headerLocatorCenter = new Locator("div[contains(@class,'x-grid-header-ct')]/div/div/div[contains(@class,'x-column-header-align-center')]", ByType.XPath);
-            var headerLocatorItems = new Locator("div[contains(@class,'x-grid-header-ct')]//div[contains(@class, 'x-column-header-align-left')]", ByType.XPath);
+            var headerLocatorItems = new Locator("div[contains(@class,'x-grid-header-ct')]//div[contains(@class,'x-column-header-align-center')]//div[contains(@class, 'x-column-header-align-left x-group-sub-header')]", ByType.XPath);
 
             var cellLocator = new Locator("td", ByType.TagName);
 

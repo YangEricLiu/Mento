@@ -170,6 +170,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TabButtonRankSystemDimensionTab = "TabButtonRankSystemDimensionTab";
         public static string ButtonConfirmHierarchyRank = "ButtonConfirmHierarchyRank";
         public static string ButtonClearHierarchyRank = "ButtonClearHierarchyRank";
+        
+        #endregion
+
+        #region cost
+
+        public static string TabButtonCostAreaDimensionTab = "TabButtonCostAreaDimensionTab";
+
         #endregion
 
         #endregion
@@ -783,7 +790,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridCommodityRankCost = "GridCommodityRankCost";
 
         #endregion
-      
+
+        #region cost
+
+        public static string GridTotalOtherCommodityCost = "GridTotalOtherCommodityCost";
+        public static string GridOtherCommodityCost = "GridOtherCommodityCost";
+
+        #endregion
+
         #endregion
 
         #region customersettings
@@ -873,7 +887,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string CheckBoxFieldUserAllHierarchyNode = "CheckBoxFieldUserDataAllHierarchyNode";
         public static string CheckBoxFieldUserAllDataScope = "CheckBoxFieldUserAllDataScope";
-        
         
         #endregion
 

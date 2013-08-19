@@ -1,0 +1,188 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using NUnit.Framework;
+using Mento.Framework.Attributes;
+using Mento.ScriptCommon.Library;
+using Mento.ScriptCommon.Library.Functions;
+using Mento.TestApi.WebUserInterface;
+using Mento.Framework.Script;
+using Mento.TestApi.WebUserInterface.Controls;
+using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.ScriptCommon.TestData.EnergyView;
+using Mento.TestApi.TestData;
+using System.Data;
+using Mento.Utility;
+
+namespace Mento.Script.EnergyView.CostUsage
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    [TestFixture]
+    [ManualCaseID("TC-J1-FVT-CostUsage-TOU-005"), CreateTime("2013-08-16"), Owner("Emma")]
+    public class CostUsageTOUSuite : TestSuiteBase
+    {
+        [SetUp]
+        public void CaseSetUp()
+        {
+            JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CostUsage);
+            TimeManager.MediumPause();
+        }
+
+        [TearDown]
+        public void CaseTearDown()
+        {
+            JazzFunction.Navigator.NavigateHome();
+        }
+
+        private static CostPanel CostUsage = JazzFunction.CostPanel;
+        private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
+        private static HomePage HomePagePanel = JazzFunction.HomePage;
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-1")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-DataView-005-1")]
+        public void TOUDataViewWeek(CostUsageData input)
+        {
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            CostUsage.SwitchTagTab(TagTabs.AreaDimensionTab);
+            CostUsage.SelectAreaDimension(input.InputData.AreaDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            
+            //Set date range
+            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 4), new DateTime(2012, 9, 3));
+            TimeManager.MediumPause();
+            
+            //Check tag and view data view, hourly
+            CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
+            EnergyViewToolbar.ShowPeakValley();
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(CostUsage.IsDataViewDrawn());
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Week);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Uncheck "电" and check "自来水"
+            CostUsage.DeSelectCommodity(input.InputData.commodityNames[0]);
+            CostUsage.SelectCommodity(input.InputData.commodityNames[1]);
+            Assert.IsFalse(EnergyViewToolbar.IsPeakValleyButtonEnable());
+
+            //Uncheck "自来水" and check "煤"
+            CostUsage.DeSelectCommodity(input.InputData.commodityNames[1]);
+            CostUsage.SelectCommodity(input.InputData.commodityNames[2]);
+            Assert.IsFalse(EnergyViewToolbar.IsPeakValleyButtonEnable());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-2")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-DataView-005-2")]
+        public void TOUDataViewMonth(CostUsageData input)
+        {
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            CostUsage.SwitchTagTab(TagTabs.AreaDimensionTab);
+            CostUsage.SelectAreaDimension(input.InputData.AreaDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Set date range
+            EnergyViewToolbar.SetDateRange(new DateTime(2012, 6, 1), new DateTime(2012, 9, 1));
+            TimeManager.MediumPause();
+
+            //Check tag and view data view, hourly
+            CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
+            EnergyViewToolbar.ShowPeakValley();
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(CostUsage.IsDataViewDrawn());
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Week);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Uncheck "电" and check "煤"
+            CostUsage.DeSelectCommodity(input.InputData.commodityNames[0]);
+            CostUsage.SelectCommodity(input.InputData.commodityNames[2]);
+            Assert.IsFalse(EnergyViewToolbar.IsPeakValleyButtonEnable());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-3")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-DataView-005-3")]
+        public void TOUDataViewDisable(CostUsageData input)
+        {
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            CostUsage.SwitchTagTab(TagTabs.AreaDimensionTab);
+            CostUsage.SelectAreaDimension(input.InputData.AreaDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Set date range
+            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 23), new DateTime(2012, 7, 30));
+            TimeManager.MediumPause();
+
+            //Check tag and view data view, hourly
+            CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
+            Assert.IsTrue(EnergyViewToolbar.IsPeakValleyButtonEnable());
+            EnergyViewToolbar.ShowPeakValley();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+
+            //Save to dashboard
+            var dashboard = input.InputData.DashboardInfo;
+            //EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+
+            //Set date range less than 7 days
+            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 23), new DateTime(2012, 7, 28));
+            TimeManager.MediumPause();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
+            JazzMessageBox.MessageBox.Confirm();
+
+            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 23), new DateTime(2012, 7, 23));
+            EnergyViewToolbar.SetTimeRange("10:00", "24:00");
+            TimeManager.MediumPause();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
+            JazzMessageBox.MessageBox.Confirm();
+
+            //Pick up another node which not set TOU
+            string[] hierarhcyPath = { "NancyCostCustomer2", "组织A", "园区A", "楼宇A" };
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
+            Assert.IsTrue(EnergyViewToolbar.IsPeakValleyButtonEnable());
+            EnergyViewToolbar.ShowPeakValley();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[1]));
+            JazzMessageBox.MessageBox.Confirm();
+
+            //On homepage, check the dashboard
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+        }
+    }
+}

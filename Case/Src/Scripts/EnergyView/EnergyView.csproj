@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CostUsage\CostUsageTOUSuite.cs" />
+    <Compile Include="CostUsage\CostUsageTrendChartSuite.cs" />
     <Compile Include="CostUsage\CostUsageDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionTrendChartSuite.cs" />
     <Compile Include="EnergyAnalysis\SetComparedIntervalInvalidSuite.cs" />

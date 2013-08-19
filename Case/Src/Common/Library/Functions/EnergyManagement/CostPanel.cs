@@ -13,11 +13,20 @@ namespace Mento.ScriptCommon.Library.Functions
         public string CostPath = @"CostUsage\";
 
         #region controls
-
-        private static Grid CommodityGrid = JazzGrid.CommodityCostGrid;
-        private static Grid TotalCommotidyGrid = JazzGrid.TotalCommodityCostGrid;
         
         #endregion
+
+        private Grid CommodityGrid
+        {
+            get;
+            set;
+        }
+
+        private Grid TotalCommotidyGrid
+        {
+            get;
+            set;
+        }
 
         protected override Chart Chart
         {
@@ -33,34 +42,39 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region left panel
 
+        /// <summary>
+        /// Switch among "层级", "系统维度", "区域维度"
+        /// </summary>
         public void SwitchTagTab(TagTabs tab)
         {
             switch (tab)
             {
                 case TagTabs.SystemDimensionTab:
                     //click system tab
+                    JazzButton.RankSystemDimensionTab.Click();
+                    CommodityGrid = JazzGrid.OtherCommodityCostGrid;
+                    TotalCommotidyGrid = JazzGrid.TotalOtherCommodityCostGrid;
                     break;
                 case TagTabs.AreaDimensionTab:
                     //click area tab
+                    JazzButton.CostAreaDimensionTabButton.Click();
+                    CommodityGrid = JazzGrid.OtherCommodityCostGrid;
+                    TotalCommotidyGrid = JazzGrid.TotalOtherCommodityCostGrid;
                     break;
                 case TagTabs.HierarchyTag:
+                    CommodityGrid = JazzGrid.CommodityCostGrid;
+                    TotalCommotidyGrid = JazzGrid.TotalCommodityCostGrid;
+                    break;
                 default:
                     //click all tab
+                    JazzButton.RankHierarchyTab.Click();
+                    CommodityGrid = JazzGrid.CommodityCostGrid;
+                    TotalCommotidyGrid = JazzGrid.TotalCommodityCostGrid;
                     break;
             }
         }
 
-        public void SelectSystemDimension(string[] systemDimensionPath)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SelectAreaDimension(string[] areaDimensionPath)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SelectCommodity(string[] commodityNames = null)
+        public void SelectCommodity(string[] commodityNames)
         {
             //total
             if (commodityNames == null || commodityNames.Length <= 0)
@@ -99,9 +113,43 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
-        public void DeselectCommodity(string[] commodityNames)
+        public void DeSelectCommodity(string[] commodityNames)
         {
-            throw new NotImplementedException();
+            //total
+            if (commodityNames == null || commodityNames.Length <= 0)
+            {
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质总览", false);
+            }
+            else //specified commodity
+            {
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质单项", false);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+
+                foreach (var commodity in commodityNames)
+                {
+                    CommodityGrid.UncheckRowCheckbox(2, commodity, false);
+                    JazzMessageBox.LoadingMask.WaitLoading();
+                }
+            }
+        }
+
+        public void DeSelectCommodity(string commodityNames = null)
+        {
+            //total
+            if (commodityNames == null)
+            {
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质总览", false);
+            }
+            else //specified commodity
+            {
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质单项", false);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+
+                CommodityGrid.UncheckRowCheckbox(2, commodityNames, false);
+                JazzMessageBox.LoadingMask.WaitLoading();
+            }
         }
 
         #endregion

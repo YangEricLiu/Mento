@@ -3,18 +3,54 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2","组织A", "园区B", "楼宇C"],
-			"commodityNames":["电"],
+			"commodityNames":["电", "自来水","煤"],
 			"DashboardInfo":{
-				"WigetName":"TestWiget",
-				"HierarchyName":["HierarchyEV"],
+				"WigetName":"CostSingleElec1",
+				"HierarchyName":["NancyCostCustomer2","组织A", "园区B", "楼宇C"],
 				"IsCreateDashboard":"true",
-				"DashboardName":"仪表盘_A1",
+				"DashboardName":"CostSingle",
 			},
-			"failedFileName":["F-CostUsageDataView001-1-H-Elec.xls"],
+			"failedFileName":["F-CostUsageDataView001-1-H-Elec.xls", "F-CostUsageDataView001-1-H-Water.xls", "F-CostUsageDataView001-1-H-Coal.xls", "F-CostUsageDataView001-1-H-Total.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["CostUsageDataView001-1-H-Elec.xls"],
+			"expectedFileName":["CostUsageDataView001-1-H-Elec.xls", "CostUsageDataView001-1-H-Water.xls", "CostUsageDataView001-1-H-Coal.xls", "CostUsageDataView001-1-H-Total.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织A", "园区B"],
+			"commodityNames":["电", "自来水","煤"],
+			"DashboardInfo":{
+				"WigetName":"CostSingleElec1",
+				"HierarchyName":["NancyCostCustomer2","组织A", "园区B"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"CostSingle",
+			},
+			"failedFileName":["F-CostUsageDataView001-2-H-Elec.xls", "F-CostUsageDataView001-2-H-Water.xls", "F-CostUsageDataView001-2-H-Coal.xls", "F-CostUsageDataView001-2-H-Total.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageDataView001-2-H-Elec.xls", "CostUsageDataView001-2-H-Water.xls", "CostUsageDataView001-2-H-Coal.xls", "CostUsageDataView001-2-H-Total.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2"],
+			"commodityNames":["电", "自来水","煤"],
+			"DashboardInfo":{
+				"WigetName":"CostSingleElec1",
+				"HierarchyName":["NancyCostCustomer2"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"CostSingle",
+			},
+			"failedFileName":["F-CostUsageDataView001-3-H-Elec.xls", "F-CostUsageDataView001-3-H-Water.xls", "F-CostUsageDataView001-3-H-Coal.xls", "F-CostUsageDataView001-3-H-Total.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageDataView001-3-H-Elec.xls", "CostUsageDataView001-3-H-Water.xls", "CostUsageDataView001-3-H-Coal.xls", "CostUsageDataView001-3-H-Total.xls"],
 		}
 	}
 ]

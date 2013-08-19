@@ -17,14 +17,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public string EAPath = @"EA\";
 
         #region Controls
-        //Select system dimension tree button
-        private static Button SelectSystemDimensionButton = JazzButton.EnergyViewSelectSystemDimensionButton;
-        private static SystemDimensionTree SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
-        private static Button EnergyViewSelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
-        
-        //Select area dimension tree button
-        private static Button SelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
-        private static AreaDimensionTree AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
         private static Container MultiHierarchyPanelContainer = JazzContainer.MultiHierarchyPanelContainer;
 
         //TagGrid
@@ -52,14 +44,6 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region common
 
-        /// <summary>
-        /// Click "请选择区域维度" button in "区域数据点"
-        /// </summary>
-        public void ClickSelectAreaDimensionButton()
-        {
-
-            EnergyViewSelectAreaDimensionButton.Click();
-        }
 
         /// <summary>
         /// Switch among "全部数据点", "系统数据点", "区域数据点"
@@ -86,43 +70,7 @@ namespace Mento.ScriptCommon.Library.Functions
                     break;
             }
         }
-
-        /// <summary>
-        /// Select system dimension tree
-        /// </summary>
-        public bool SelectSystemDimension(string[] systemDimensionPath)
-        {
-            try
-            {
-                SelectSystemDimensionButton.Click();
-                TimeManager.ShortPause();              
-                SystemDimensionTree.SelectNode(systemDimensionPath);
-                return true;
-            }
-            catch(Exception)
-            {
-                return false;
-            }
-            
-        }
-
-        /// <summary>
-        /// Select area dimension tree
-        /// </summary>
-        public bool SelectAreaDimension(string[] areaDimensionPath)
-        {
-            SelectAreaDimensionButton.Click();
-            try
-            {
-                AreaDimensionTree.SelectNode(areaDimensionPath);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
+        
         #endregion
 
         #region Tag operations

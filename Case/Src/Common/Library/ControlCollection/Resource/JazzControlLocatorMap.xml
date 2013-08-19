@@ -90,8 +90,8 @@
       </UserProfile>
       <energyview>
           <add key="ButtonEnergyViewSelectHierarchy" value="em-hier-tree-btn" type="ID"/>
-          <add key="ButtonEnergyViewSelectSystemDimension" value="//div[@id='em-energy-tagfilter']//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
-          <add key="ButtonEnergyViewSelectAreaDimension" value="//div[@id='em-energy-tagfilter']//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
+          <add key="ButtonEnergyViewSelectSystemDimension" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
+          <add key="ButtonEnergyViewSelectAreaDimension" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
           <add key="ButtonRankSelectSystemDimension" value="em-rank-sdim-button" type="ID"/>
           <add key="ButtonRankSelectHierarchy" value="em-rank-tree-btn" type="ID"/>
           <add key="ButtonWidgetSaveHierarchy" value="//div[contains(@id, 'widgetsavewindow') and contains(@class, 'x-window-body-default')]//div[contains(@id, 'menubuttontree')]" type="XPath"/>
@@ -102,11 +102,12 @@
           <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-ratio-chartgridpanel']/div/div/div[2]" type="XPath"/>
           <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[2]" type="XPath"/>
 
-          <add key="TabButtonEnergyViewALLTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='全部数据点']]" type="XPath"/>
-          <add key="TabButtonEnergyViewSystemDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='系统数据点']]" type="XPath"/>
-          <add key="TabButtonEnergyViewAreaDimensionTagsTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='区域数据点']]" type="XPath"/>
-          <add key="TabButtonRankHierarchyTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='层级']]" type="XPath"/>
-          <add key="TabButtonRankSystemDimensionTab" value="//div[contains(@class,'x-tab') and em/button/span[text()='系统维度']]" type="XPath"/>
+          <add key="TabButtonEnergyViewALLTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='全部数据点']]" type="XPath"/>
+          <add key="TabButtonEnergyViewSystemDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='系统数据点']]" type="XPath"/>
+          <add key="TabButtonEnergyViewAreaDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='区域数据点']]" type="XPath"/>
+          <add key="TabButtonRankHierarchyTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='层级']]" type="XPath"/>
+          <add key="TabButtonRankSystemDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='系统维度']]" type="XPath"/>
+          <add key="TabButtonCostAreaDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='区域维度']]" type="XPath"/>
 
           <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
           <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
@@ -690,13 +691,15 @@
           <add key="GridTotalCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridTotalCommodityUnitCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridTotalCommodityUnitCost" value="//div[@id='em-unit-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridTotalOtherCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class,'x-panel x-tabpanel-child x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridCommodityCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
           <add key="GridCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
           <add key="GridCommodityUnitCarbon" value="//div[@id='em-unit-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
           <add key="GridCommodityUnitCost" value="//div[@id='em-unit-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
+          <add key="GridOtherCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class,'x-panel x-tabpanel-child x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
 
-          <add key="GridCommodityRank" value="//div[@id='em-rank-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+        <add key="GridCommodityRank" value="//div[@id='em-rank-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridCommodityRankCarbon" value="//div[@id='em-rank-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridCommodityRankCost" value="//div[@id='em-rank-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 

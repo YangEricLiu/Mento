@@ -1,0 +1,23 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织B", "园区C", "楼宇D"],
+			"AreaDimensionPath":["楼宇D", "一层"],
+			"commodityNames":["电", "自来水","煤"],
+			"DashboardInfo":{
+				"WigetName":"CostTOUElec1",
+				"HierarchyName":["NancyCostCustomer2","组织B", "园区C", "楼宇D"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"CostTOU",
+			},
+			"failedFileName":["F-CostUsageTOUDataView001-3-Week-Elec.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageTOUDataView001-3-Week2-Elec.xls"],
+			"StepMessage":["峰谷平电价展示不支持按小时展示", "该节点未设置峰谷时段，无法展示
+"],
+		}
+	}
+]

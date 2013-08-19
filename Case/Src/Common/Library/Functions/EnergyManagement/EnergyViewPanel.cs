@@ -19,12 +19,19 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SelectHierarchyButton = JazzButton.EnergyViewSelectHierarchyButton;
         private static HierarchyTree HierarchyTree = JazzTreeView.EnergyViewHierarchyTree;
 
-        private static Button EnergyDisplayStepHourButton = JazzButton.EnergyDisplayStepHourButton;
-        private static Button EnergyDisplayStepDayButton = JazzButton.EnergyDisplayStepDayButton;
-        private static Button EnergyDisplayStepWeekButton = JazzButton.EnergyDisplayStepWeekButton;
-        private static Button EnergyDisplayStepMonthButton = JazzButton.EnergyDisplayStepMonthButton;
-        private static Button EnergyDisplayStepYearButton = JazzButton.EnergyDisplayStepYearButton;
+        private static ToggleButton EnergyDisplayStepHourButton = JazzButton.EnergyDisplayStepHourButton;
+        private static ToggleButton EnergyDisplayStepDayButton = JazzButton.EnergyDisplayStepDayButton;
+        private static ToggleButton EnergyDisplayStepWeekButton = JazzButton.EnergyDisplayStepWeekButton;
+        private static ToggleButton EnergyDisplayStepMonthButton = JazzButton.EnergyDisplayStepMonthButton;
+        private static ToggleButton EnergyDisplayStepYearButton = JazzButton.EnergyDisplayStepYearButton;
         private static Button MultipleHierarchyAddTagsButton = JazzButton.MultipleHierarchyAddTagsButton;
+        //Select system dimension tree button
+        private static Button SelectSystemDimensionButton = JazzButton.EnergyViewSelectSystemDimensionButton;
+        private static SystemDimensionTree SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
+
+        //Select area dimension tree button
+        private static Button SelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
+        private static AreaDimensionTree AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
 
         //Chart
         protected abstract Chart Chart
@@ -78,6 +85,34 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Is display step button pressed
+        /// </summary>
+        /// <param name="step"></param>
+        public bool IsDisplayStepPressed(DisplayStep step)
+        {
+            switch (step)
+            {
+                case DisplayStep.Hour:
+                    //"Hourly" step
+                    return EnergyDisplayStepHourButton.IsButtonPressed();
+                case DisplayStep.Day:
+                    //"Daily" step
+                    return EnergyDisplayStepDayButton.IsButtonPressed();
+                case DisplayStep.Week:
+                    //"Weekly" step
+                    return EnergyDisplayStepWeekButton.IsButtonPressed();
+                case DisplayStep.Month:
+                    //"Monthly" step
+                    return EnergyDisplayStepMonthButton.IsButtonPressed();
+                case DisplayStep.Year:
+                    //"Year" step
+                    return EnergyDisplayStepYearButton.IsButtonPressed();
+                default:
+                    return true;
+            }
+        }
+
+        /// <summary>
         /// Click Multiple Hierarchy Add Tags button
         /// </summary>
         public void ClickMultipleHierarchyAddTagsButton()
@@ -107,10 +142,57 @@ namespace Mento.ScriptCommon.Library.Functions
             catch (Exception)
             {
                 return false;
-            }
-            
-            
+            }    
         }
+
+        /// <summary>
+        /// Select system dimension tree
+        /// </summary>
+        public bool SelectSystemDimension(string[] systemDimensionPath)
+        {
+            try
+            {
+                SelectSystemDimensionButton.Click();
+                TimeManager.ShortPause();
+                SystemDimensionTree.SelectNode(systemDimensionPath);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
+
+
+        /// <summary>
+        /// Select area dimension tree
+        /// </summary>
+        public bool SelectAreaDimension(string[] areaDimensionPath)
+        {
+            SelectAreaDimensionButton.Click();
+            try
+            {
+                AreaDimensionTree.SelectNode(areaDimensionPath);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// Click "请选择区域维度" button in "区域数据点"
+        /// </summary>
+        public void ClickSelectAreaDimensionButton()
+        {
+
+            SelectAreaDimensionButton.Click();
+        }
+
         #endregion
 
         #region Data view operations

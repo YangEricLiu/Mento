@@ -66,7 +66,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid CommodityRankCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityRankCost);
 
         #endregion
-        
+
+        #region cost
+
+        public static Grid TotalOtherCommodityCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridTotalOtherCommodityCost);
+        public static Grid OtherCommodityCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridOtherCommodityCost);
+
+        #endregion
+
         #endregion
 
         #region Customer settings

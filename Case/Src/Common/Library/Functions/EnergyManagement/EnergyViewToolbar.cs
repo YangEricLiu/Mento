@@ -169,6 +169,11 @@ namespace Mento.ScriptCommon.Library.Functions
             PeakValleyButton.Click();
         }
 
+        public bool IsPeakValleyButtonEnable()
+        {
+            return PeakValleyButton.IsEnabled();
+        }
+
         public void SelectMoreOption(EnergyViewMoreOption moreOption)
         {
             MoreMenu.SwitchMenuItem(moreOption);

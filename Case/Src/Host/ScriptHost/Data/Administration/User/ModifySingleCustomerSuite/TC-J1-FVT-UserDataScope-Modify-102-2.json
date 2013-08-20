@@ -2,11 +2,11 @@
 	{		
 		"InputData":
 		{
-			"UserName":"PlatformAdmin",
+			"UserName":"UserForCheckSingle1",
+			"CustomerName":"customerC",
 		},
 		"ExpectedData":
 		{
-			"UserName":"PlatformAdmin",
 		}
 	}
 ]

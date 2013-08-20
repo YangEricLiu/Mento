@@ -39,7 +39,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button CustomerNameViewStatus = JazzButton.CustomerNamesViewStatusButtons;
         
         private static CheckBoxField CheckAllHierarchyNodesCheckBox = JazzCheckBox.UserDataAllHierarchyNodeCheckBoxField;
-        private static CheckBoxField CheckAlllDataScopeCheckBox = JazzCheckBox.UserAllDataScopeCheckBoxField;
+        private static CheckBoxField CheckAllDataScopeCheckBox = JazzCheckBox.UserAllDataScopeCheckBoxField;
 
         private static HierarchyTree HierarchyTree
         {
@@ -130,22 +130,10 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param>Cumtomer name</param>
         /// <returns></returns>
-        public Boolean UnCheckCustomer(string customerName)
+        public void UnCheckCustomer(string customerName)
         {
-            try{
-                Boolean page = true;
-                if (!(DataPermissonList.IsDataPermissionRowUnChecked(4, customerName, page)))
-                {
-                    TimeManager.MediumPause();
-                    //page = !(DataPermissonList.IsDataPermissionRowUnChecked(4, customerName, page));
-                    DataPermissonList.CheckDataPermissionRowCheckbox(4, customerName, page);
-                }
-                return DataPermissonList.IsDataPermissionRowUnChecked(4, customerName, page);
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            Boolean page = true;
+            DataPermissonList.UnCheckDataPermissionRowCheckbox(4, customerName, page);
         }
 
         /// <summary>
@@ -169,6 +157,15 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// No Hierarchy nodes 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsHierarchyNodesExist(string hierarchyNode)
+        {
+            return CheckAllHierarchyNodesCheckBox.ToString().Contains(hierarchyNode);
+        }
+
+        /// <summary>
         /// Click All hierarchy nodes 
         /// </summary>
         /// <returns></returns>
@@ -187,7 +184,17 @@ namespace Mento.ScriptCommon.Library.Functions
             Boolean page = true;
             return DataPermissonList.IsDataPermissionRowUnChecked(4,customerName,page);
         }
-
+        /*
+        /// <summary>
+        /// Check Whether the view and edit link button is enable 
+        /// </summary>
+        /// <param>Cumtomer name</param>
+        /// <returns></returns>
+        public Boolean IsCustomerDisplayed(string customerName)
+        {
+            return DataPermissonList.GetAllRowText().Contains(customerName);
+        }
+        */
         /// <summary>
         /// Click Close hierarchy tree view button
         /// </summary>
@@ -401,20 +408,16 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public Boolean AreAllCustomerNamesListed()
         {
-            //@@@@@@@@@@@@@@
-            //int i = 0;
-            //i = DataPermissonList.GetAllData().Rows;
-           // i.Equals(CustomerList.GetAllData().Rows);
-            //int i = CustomerList.get;
+            
             return true;
         }
         */
         /// <summary>
         /// Verify whether the All the Customer names display
         /// </summary>
-        public Boolean IsCheckAllDataChecked()
+        public Boolean IsAllDataCheckboxChecked()
         {
-            return CheckAlllDataScopeCheckBox.IsAllDataScopeItemChecked();
+            return CheckAllDataScopeCheckBox.IsAllDataScopeItemChecked();
         }
 
         /// <summary>
@@ -425,6 +428,16 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             CheckAllHierarchyNodesCheckBox.IsDataAllhierarchyBoxChecked();
         }
+
+        /// <summary>
+        /// Verify  All hierarchy nodes  check box checked 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsAllDataScopeCheckBoxDisabled()
+        {
+            return CheckAllDataScopeCheckBox.IsAllDataScopeItemDisabled();
+        }
+
 
         #endregion
     }

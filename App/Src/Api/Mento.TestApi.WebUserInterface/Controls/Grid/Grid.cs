@@ -164,6 +164,21 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
+        /// UnCheck the data scope permission item
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public void UnCheckDataPermissionRowCheckbox(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checker = this.GetDataPermissionRowChecker(cellIndex, cellText, Paging);
+
+            if (!(this.IsDataPermissionRowUnChecked(4, cellText, Paging)))
+            {
+                checker.Click();
+            }
+        }
+
+        /// <summary>
         /// Check whether the specified Data permission row is checked
         /// </summary>
         /// <param name="cellIndex">Column index of the identifier cell</param>

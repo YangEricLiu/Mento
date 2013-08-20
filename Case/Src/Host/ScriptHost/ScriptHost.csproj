@@ -200,9 +200,16 @@
     <None Include="Data\Administration\User\AddDataScopeValidSuite\TC-J1-FVT-UserDataScope-Add-101-1.json" />
     <None Include="Data\Administration\User\AddDataScopeInvalidSuite\TC-J1-FVT-UserDataScope-Add-001-1.json" />
     <None Include="Data\Administration\User\AddDataScopeInvalidSuite\TC-J1-FVT-UserDataScope-Add-001-2.json" />
+    <None Include="Data\Administration\User\AddSingleCustomersValidSuite\TC-J1-FVT-UserDataScope-Add-102-AddDataScope-2.json" />
+    <None Include="Data\Administration\User\AddSingleCustomersValidSuite\TC-J1-FVT-UserDataScope-Add-102-AddDataScope-3.json" />
+    <None Include="Data\Administration\User\AddSingleCustomersValidSuite\TC-J1-FVT-UserDataScope-Add-102-AddDataScope-1.json" />
+    <None Include="Data\Administration\User\ModifyDataMultiCustomerSuite\TC-J1-FVT-UserDataScope-Modify-102-1.json" />
+    <None Include="Data\Administration\User\ModifyDataMultiCustomerSuite\TC-J1-FVT-UserDataScope-Modify-102-2.json" />
     <None Include="Data\Administration\User\ModifyDataScopeInvalidSuite\TC-J1-FVT-UserDataScope-Modify-001-3.json" />
     <None Include="Data\Administration\User\ModifyDataScopeInvalidSuite\TC-J1-FVT-UserDataScope-Modify-001-2.json" />
     <None Include="Data\Administration\User\ModifyDataScopeInvalidSuite\TC-J1-FVT-UserDataScope-Modify-001-1.json" />
+    <None Include="Data\Administration\User\ModifySingleCustomerSuite\TC-J1-FVT-UserDataScope-Modify-102-1.json" />
+    <None Include="Data\Administration\User\ModifySingleCustomerSuite\TC-J1-FVT-UserDataScope-Modify-102-2.json" />
     <None Include="Data\Administration\User\SendInitrialPassword\TC-J1-FVT-UserManagement-SendInitialPasswordLink-2.json" />
     <None Include="Data\Administration\User\SendInitrialPassword\TC-J1-FVT-UserManagement-SendInitialPasswordLink-1.json" />
     <None Include="Data\Administration\User\UserAddInvalidSuite\TC-J1-FVT-UserManagement-Add-001-2.json" />

@@ -34,6 +34,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
         }
 
+        public Boolean IsAllDataScopeItemDisabled()
+        {
+            IWebElement checkbox = this.RootElement;
+
+            return checkbox.GetAttribute("class").Contains("x-item-disabled");
+        }
+
         public void Check(string permissionName)
         {
             IWebElement checkbox = GetPermissonFieldElement(permissionName);

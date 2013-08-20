@@ -26,6 +26,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox EnergyViewSaveDashboardDashboardComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewSaveDashboardDashboard);
         public static ComboBox BaseIntervalDialogStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxIntervalDialogBaseStartTime);
         public static ComboBox BaseIntervalDialogEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxIntervalDialogBaseEndTime);
+        public static ComboBox WidgetMaxDialogDefaultTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWidgetMaxDialogDefaultTime);
 
         #endregion
 
@@ -138,6 +139,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox UserProfileAssociatedCustomerComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserProfileAssociatedCustomer, 1);
         #endregion
 
+
+        #endregion
+
+        #region Home Page
+
+        public static ComboBox WidgetMaxDialogStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWidgetMaxDialogStartTime);
+        public static ComboBox WidgetMaxDialogEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWidgetMaxDialogEndTime);
 
         #endregion
     }

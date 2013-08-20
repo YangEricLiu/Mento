@@ -427,6 +427,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonAllDashboardsHierarchyTree = "ButtonAllDashboardsHierarchyTree";
         public static string ButtonHomePageDashboard = "ButtonHomePageDashboard";
 
+        public static string ButtonWidgetMaxDialogView = "ButtonWidgetMaxDialogView";
+        public static string ButtonWidgetMaxDialogClose = "ButtonWidgetMaxDialogClose";
+        public static string ButtonWidgetMaxDialogPrev = "ButtonWidgetMaxDialogPrev";
+        public static string ButtonWidgetMaxDialogNext = "ButtonWidgetMaxDialogNext";
+
+        public static string ButtonWidgetMax = "ButtonWidgetMax";
+        public static string ButtonWidgetShare = "ButtonWidgetShare";
+        public static string ButtonWidgetRename = "ButtonWidgetRename";
+        public static string ButtonWidgetDelete = "ButtonWidgetDelete";
+
         #endregion
 
         #endregion
@@ -610,6 +620,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxIntervalDialogBaseStartTime = "ComboBoxIntervalDialogBaseStartTime";
         public static string ComboBoxIntervalDialogBaseEndTime = "ComboBoxIntervalDialogBaseEndTime";
         public static string ComboBoxIntervalDialogAdditionStartTime = "ComboBoxIntervalDialogAdditionStartTime";
+        public static string ComboBoxWidgetMaxDialogDefaultTime = "ComboBoxWidgetMaxDialogDefaultTime";
         #endregion
 
         #region customersettings
@@ -711,6 +722,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxTOUPulsePeakPropertyStartTime = "ComboBoxTOUPulsePeakPropertyStartTime";
         public static string ComboBoxTOUPulsePeakPropertyEndTime = "ComboBoxTOUPulsePeakPropertyEndTime";
         #endregion
+
+        #endregion
+
+        #region HomePage
+
+        public static string ComboBoxWidgetMaxDialogStartTime = "ComboBoxWidgetMaxDialogStartTime";
+        public static string ComboBoxWidgetMaxDialogEndTime = "ComboBoxWidgetMaxDialogEndTime";
 
         #endregion
 
@@ -837,6 +855,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string DatePickerIntervalDialogBaseStartDate = "DatePickerIntervalDialogBaseStartDate";
         public static string DatePickerIntervalDialogBaseEndDate = "DatePickerIntervalDialogBaseEndDate";
         public static string DatePickerIntervalDialogAdditionStartDate = "DatePickerIntervalDialogAdditionStartDate";
+
+        public static string DatePickerWidgetMaxDialogStartDate = "DatePickerWidgetMaxDialogStartDate";
+        public static string DatePickerWidgetMaxDialogEndDate = "DatePickerWidgetMaxDialogEndDate";
+
         #endregion
 
         #region CustomerSettings

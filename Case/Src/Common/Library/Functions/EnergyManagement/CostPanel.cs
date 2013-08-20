@@ -62,6 +62,8 @@ namespace Mento.ScriptCommon.Library.Functions
                     TotalCommotidyGrid = JazzGrid.TotalOtherCommodityCostGrid;
                     break;
                 case TagTabs.HierarchyTag:
+                    //click all tab
+                    JazzButton.RankHierarchyTab.Click();
                     CommodityGrid = JazzGrid.CommodityCostGrid;
                     TotalCommotidyGrid = JazzGrid.TotalCommodityCostGrid;
                     break;

@@ -25,6 +25,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static DatePicker BaseIntervalDialogStartDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogBaseStartDate);
         public static DatePicker BaseIntervalDialogEndDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogBaseEndDate);
 
+        public static DatePicker WidgetMaxDialogStartDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerWidgetMaxDialogStartDate);
+        public static DatePicker WidgetMaxDialogEndDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerWidgetMaxDialogEndDate);
+
         #endregion
 
         #region Customer settings

@@ -512,5 +512,17 @@ namespace Mento.ScriptCommon.Library
                 return _TimeSpanDialog;
             }
         }
+
+        private static WidgetMaxChartDialog _WidgetMaxChartDialog;
+        public static WidgetMaxChartDialog WidgetMaxChartDialog
+        {
+            get
+            {
+                if (_WidgetMaxChartDialog == null)
+                    _WidgetMaxChartDialog = new WidgetMaxChartDialog();
+
+                return _WidgetMaxChartDialog;
+            }
+        }
     }
 }

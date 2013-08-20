@@ -458,6 +458,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button AllDashboardsHierarchyTreeButton = GetControl<Button>(JazzControlLocatorKey.ButtonAllDashboardsHierarchyTree);
         public static MenuButton SelectCustomerMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonSelectCustomer);
 
+        public static Button WidgetMaxDialogViewButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetMaxDialogView);
+        public static Button WidgetMaxDialogCloseButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetMaxDialogClose);
+        public static Button WidgetMaxDialogPrevButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetMaxDialogPrev);
+        public static Button WidgetMaxDialogNextButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetMaxDialogNext);
+
         #endregion
         #endregion
     }

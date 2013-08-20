@@ -138,6 +138,17 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #endregion
 
+        #region widget
+
+        public void MaximizeWidget(string name)
+        {
+            Button maxButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWidgetMax, name);
+
+            maxButton.Click();
+        }
+
+        #endregion
+
         #region private method
 
 

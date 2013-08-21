@@ -743,6 +743,7 @@
     
       <add key="GridDataScopePermissionList" value="//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]" type="XPath"/>
       <add key="GridCustomersList" value="'st-customer-grid" type="ID"/>
+      <add key="GridDataScopePermissionCustomerList" value="//div[@id='st-user-datarange-form']//div[@id='st-user-datarange-form-innerCt']//div[contains(@id,'gridview')]/table/tbody/tr/td[4]" type="XPath"/>
 
     </platformsettings>
   

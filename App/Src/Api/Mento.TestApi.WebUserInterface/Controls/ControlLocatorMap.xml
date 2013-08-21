@@ -57,6 +57,7 @@
   <add key="GridRowDataPermissionChecker" value = "//div[2]/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-first')]/div/div" type ="XPath"/>
   <add key="GridRowDataPermissionCheckerTextRow" value = "//div[2]/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[5]/div/a" type ="XPath"/>
 
+    
     <add key="GridPagingToolbar" value="div[contains(@class,'x-paging-toolbar')]" type="XPath"/>
   <add key="GridPagingPreviousPageButton" value="div/div/div[em/button/span[contains(text(),'上一页')]]" type="XPath"/>
   <add key="GridPagingNextPageButton" value="div/div/div[em/button/span[text()='下一页>']]" type="XPath"/>

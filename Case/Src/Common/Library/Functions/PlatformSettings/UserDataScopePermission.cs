@@ -23,6 +23,7 @@ namespace Mento.ScriptCommon.Library.Functions
         #region controls
         private static Grid DataPermissonList = JazzGrid.DataPermissonList;
         private static Grid CustomerList = JazzGrid.CustomerList;
+        private static Grid DataPermissionCustomerList = JazzGrid.DataPermissionCustomerList;
 
         private static Button ModifyButton = JazzButton.ModifyUserDataPermissionButton;
         private static Button SaveButton = JazzButton.SaveUserDataPermissionButton;
@@ -137,6 +138,30 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Uncheck all datas
+        /// </summary>
+        /// <returns></returns>
+        public void UnCheckAllData()
+        {
+            if (CheckAllDataScopeCheckBox.IsAllDataScopeItemChecked())
+            {
+                SelectAllDataPermission.Click();
+            }
+        }
+
+        /// <summary>
+        /// Get customer lists
+        /// </summary>
+        /// <param>Cumtomer name</param>
+        /// <returns></returns>
+        public Boolean IsCustomerView(string customerName)
+        {
+            return DataPermissionCustomerList.GetAllData().ToString().Contains(customerName);
+
+        }
+
+
+        /// <summary>
         /// Click Edit Data Permission  scope  link button
         /// </summary>
         /// <param>Cumtomer name</param>
@@ -223,6 +248,90 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+
+        /// <summary>
+        /// Check  hierarchy building node.
+        /// </summary>
+        /// <returns></returns>
+        public Boolean CheckHierarchyBuildingNode(string[] hierarchNodePaths)
+        {
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(hierarchNodePaths);
+                UserDataPermissionTree.CheckNode(hierarchNodePaths.Last());
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Check  hierarchy Site node. 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean CheckHierarchySiteNode(string[] hierarchFullNodePaths)
+        {
+             string[] sitePath = new string[hierarchFullNodePaths.Length];
+             Array.Copy(hierarchFullNodePaths,sitePath,2);
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(sitePath);
+                UserDataPermissionTree.CheckNode(sitePath.Last());
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Check  hierarchy Orz node. 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean CheckHierarchyOrzNode(string[] hierarchFullNodePaths)
+        {
+            string[] OrzPath = new string[hierarchFullNodePaths.Length];
+            Array.Copy(hierarchFullNodePaths, OrzPath, 1);
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(OrzPath);
+                UserDataPermissionTree.CheckNode(OrzPath.Last());
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Check  hierarchy customer node. 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean CheckHierarchyCustomerNode(string[] hierarchFullNodePaths)
+        {
+            string[] CustomerPath = new string[hierarchFullNodePaths.Length];
+            Array.Copy(hierarchFullNodePaths, CustomerPath, 0);
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(CustomerPath);
+                UserDataPermissionTree.CheckNode(CustomerPath[0]);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
         /// <summary>
         /// Check  a  hierarchy node
         /// </summary>
@@ -293,6 +402,68 @@ namespace Mento.ScriptCommon.Library.Functions
                 return false;
             }
         }
+
+        /// <summary>
+        /// Verify whether the customer node is checked
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsHierarchCustomerNodeChecked(string[] hierarchNodePaths)
+        {
+            string[] customerPath = new string[1];
+            Array.Copy(hierarchNodePaths,customerPath,1);
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(customerPath);
+                return UserDataPermissionTree.IsNodeChecked(customerPath.Last());
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Verify whether the customer node is checked
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsHierarchOrzNodeChecked(string[] hierarchNodePaths)
+        {
+            string[] orzPath = new string[2];
+            Array.Copy(hierarchNodePaths, orzPath, 2);
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(orzPath);
+                return UserDataPermissionTree.IsNodeChecked(orzPath.Last());
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Verify whether the customer node is checked
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsHierarchSiteNodeChecked(string[] hierarchNodePaths)
+        {
+            string[] sitePath = new string[3];
+            Array.Copy(hierarchNodePaths, sitePath, 3);
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(sitePath);
+                return UserDataPermissionTree.IsNodeChecked(sitePath.Last());
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
 
         /// <summary>
         /// Verify whether the all the hierarchy node path is checked

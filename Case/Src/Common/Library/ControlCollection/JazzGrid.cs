@@ -99,6 +99,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static Grid DataPermissonList = GetControl<Grid>(JazzControlLocatorKey.GridDataScopePermissionList);
         public static Grid CustomerList = GetControl<Grid>(JazzControlLocatorKey.GridCustomersList);
+
+        public static Grid DataPermissionCustomerList = GetControl<Grid>(JazzControlLocatorKey.GridRowDataCustomerTextRow);
         #endregion
 
         #region home page

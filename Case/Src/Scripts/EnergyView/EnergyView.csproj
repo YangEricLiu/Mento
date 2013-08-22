@@ -49,9 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarbonUsage\CarbonUsageDataViewSuite.cs" />
+    <Compile Include="CarbonUsage\CarbonUsageTrendChartSuite.cs" />
     <Compile Include="CostUsage\CostUsageTOUSuite.cs" />
     <Compile Include="CostUsage\CostUsageTrendChartSuite.cs" />
     <Compile Include="CostUsage\CostUsageDataViewSuite.cs" />
+    <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsTrendChartSuite.cs" />
+    <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionTrendChartSuite.cs" />
     <Compile Include="EnergyAnalysis\SetComparedIntervalInvalidSuite.cs" />
     <Compile Include="EnergyAnalysis\SetComparedIntervalValidSuite.cs" />

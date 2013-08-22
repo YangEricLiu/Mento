@@ -33,6 +33,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] MultiSelectedHiearchyPath { get; set; }
 
         public string[][] MultipleHiearchyPath { get; set; }
+
+        public string[] MoreTagNames { get; set; }
     }
 
     public class EnergyViewOptionOutput : ExpectedTestDataBase

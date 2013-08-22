@@ -10,7 +10,7 @@
 				"HierarchyName":["NancyCustomer1", "园区测试多层级", "BuildingMulCalculationType"],
 				"IsCreateDashboard":"true",
 				"DashboardName":"Dashboard_CalculationType",
-			}
+			},
 		},
 		"ExpectedData":
 		{

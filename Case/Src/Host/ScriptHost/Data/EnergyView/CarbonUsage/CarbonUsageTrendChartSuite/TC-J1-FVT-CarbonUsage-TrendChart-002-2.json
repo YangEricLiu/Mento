@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+			"DashboardInfo":[{
+				"WigetName":"CarbonSingleTrendChart2Tree",
+				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"TotalEnergyConsumptionTC",
+			}],
+		},
+		"ExpectedData":
+		{
+
+		}
+	}
+]

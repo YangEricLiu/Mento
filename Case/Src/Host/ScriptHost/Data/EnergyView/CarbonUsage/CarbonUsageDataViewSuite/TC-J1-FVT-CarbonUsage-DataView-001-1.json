@@ -1,0 +1,32 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+			"commodityNames":["电", "汽油", "煤", "天然气", "热量", "自来水"],
+			"DashboardInfo":[{
+				"WigetName":"CarbonSingleCoal1",
+				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CarbonWidgetHierarchyDataview",
+			},
+			{
+				"WigetName":"CarbonSingleCO21",
+				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CarbonWidgetHierarchyDataview",
+			},
+			{
+				"WigetName":"CarbonSingleTree1",
+				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CarbonWidgetHierarchyDataview",
+			}],
+			"failedFileName":["F-CarbonUsageDataView001-1-H-Elec.xls", "F-CarbonUsageDataView001-1-H-ElecOil.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2Coal.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2Gas.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2GasTree.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2GasTreeHot.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2GasTreeHotWater.xls", "F-CarbonUsageDataView001-1-H-ElecOilGasHotWater.xls", "F-CarbonUsageDataView001-1-H-ElecOilGasHotWaterCO2.xls", "F-CarbonUsageDataView001-1-H-ElecOilGasHotWaterTree.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CarbonUsageDataView001-1-H-Elec.xls", "CarbonUsageDataView001-1-H-ElecOil.xls", "CarbonUsageDataView001-1-H-ElecOilCO2.xls", "CarbonUsageDataView001-1-H-ElecOilCO2Coal.xls", "CarbonUsageDataView001-1-H-ElecOilCO2CoalGas.xls", "CarbonUsageDataView001-1-H-ElecOilCO2GasTree.xls", "CarbonUsageDataView001-1-H-ElecOilCO2GasTreeHot.xls", "CarbonUsageDataView001-1-H-ElecOilCO2GasTreeHotWater.xls", "CarbonUsageDataView001-1-H-ElecOilGasHotWater.xls", "CarbonUsageDataView001-1-H-ElecOilGasHotWaterCO2.xls", "CarbonUsageDataView001-1-H-ElecOilGasHotWaterTree.xls"],
+		}
+	}
+]

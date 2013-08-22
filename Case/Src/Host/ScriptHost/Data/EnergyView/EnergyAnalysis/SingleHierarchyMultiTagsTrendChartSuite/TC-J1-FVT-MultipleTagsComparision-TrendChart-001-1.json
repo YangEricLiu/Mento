@@ -1,0 +1,22 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"AreaDimensionPath":["楼宇BC", "一层"],
+			"SystemDimensionPath":["楼宇BC", "空调"],
+			"TagNames":["V6_BuildingBC", "V1_BuildingBC", "V2_BuildingBC", "P1_BuildingBC", "V_Null_BuildingBC", "V20_BuildingBC"],
+			"MoreTagNames":["V13_BuildingBC", "V14_BuildingBC", "V15_BuildingBC", "P16_BuildingBC", "P17_BuildingBC"],
+			"DashboardInfo":{
+				"WigetName":"SingleMultiTagsTC1011",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级", "园区测试多层级"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_MultiTagsTC",
+			},
+		},
+		"ExpectedData":
+		{
+			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
+		}
+	}
+]

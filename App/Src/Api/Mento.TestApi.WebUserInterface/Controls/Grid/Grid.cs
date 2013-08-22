@@ -56,7 +56,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public bool IsAllGridTagsUnchecked()
         {
-            return !(ElementHandler.Exists(IsGridRowCheckedLocator));
+            return !ElementHandler.Exists(IsGridRowCheckedLocator);
         }
 
         public bool IsNoRowOnGrid()

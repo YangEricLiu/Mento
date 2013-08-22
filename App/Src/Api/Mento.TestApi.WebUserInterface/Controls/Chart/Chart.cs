@@ -20,7 +20,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         private static Locator CurveLocator = new Locator("g.highcharts-series", ByType.CssSelector);
         private static Locator PieLocator = new Locator("//div[contains(@id, 'piechartcomponent')]", ByType.CssSelector);
-
+        private static Locator ColumnLocator = new Locator("g.highcharts-series highcharts-tracker", ByType.CssSelector);
+        
         private static Locator TitleLocator = new Locator("svg/text[2]", ByType.XPath);
         private static Locator UomLocator = new Locator("svg/text[1]", ByType.XPath);
         private static Locator NavigatorLocator = new Locator("g.highcharts-navigator", ByType.CssSelector);
@@ -144,6 +145,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool HasDrawnDistribute()
         {
             return ChildExists(PieLocator);
+        }
+
+        public bool HasDrawnColumn()
+        {
+            return ElementHandler.Exists(ColumnLocator);
         }
         #endregion
         

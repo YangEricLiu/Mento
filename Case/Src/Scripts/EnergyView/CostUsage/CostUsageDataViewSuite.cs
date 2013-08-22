@@ -57,7 +57,7 @@ namespace Mento.Script.EnergyView.CostUsage
             
             //Check tag and view data view, hourly
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -102,7 +102,7 @@ namespace Mento.Script.EnergyView.CostUsage
             
             //Check tag and view data view, hourly
             CostUsage.SelectCommodity(input.InputData.commodityNames[1]);
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -147,7 +147,6 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
-
 
     }
 }

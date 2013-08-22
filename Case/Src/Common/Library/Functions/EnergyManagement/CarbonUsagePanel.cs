@@ -11,6 +11,8 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     public class CarbonUsagePanel : EnergyViewPanel
     {
+        public string CarbonPath = @"CarbonUsage\";
+
         private static Grid CommodityGrid = JazzGrid.CommodityCarbonGrid;
         private static Grid TotalCommotidyGrid = JazzGrid.TotalCommodityCarbonGrid;
 
@@ -26,7 +28,9 @@ namespace Mento.ScriptCommon.Library.Functions
 
         internal CarbonUsagePanel() { }
 
-        public void SelectCommodity(string[] commodityNames = null)
+        #region left region
+        
+        public void SelectCommodity(string[] commodityNames)
         {
             //total
             if (commodityNames == null || commodityNames.Length <= 0)
@@ -47,9 +51,86 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
-        public void DeselectCommodity(string[] commodityNames)
+        public void SelectCommodity(string commodityNames = null)
         {
-            throw new NotImplementedException();
+            //total
+            if (commodityNames == null)
+            {
+                TotalCommotidyGrid.CheckRowCheckbox(2, "介质总览", false);
+            }
+            else //specified commodity
+            {
+                TotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+
+                CommodityGrid.CheckRowCheckbox(2, commodityNames, false);
+                JazzMessageBox.LoadingMask.WaitLoading();
+            }
         }
+
+        public void DeSelectCommodity(string[] commodityNames)
+        {
+            //total
+            if (commodityNames == null || commodityNames.Length <= 0)
+            {
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质总览", false);
+            }
+            else //specified commodity
+            {
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质单项", false);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+
+                foreach (var commodity in commodityNames)
+                {
+                    CommodityGrid.UncheckRowCheckbox(2, commodity, false);
+                    JazzMessageBox.LoadingMask.WaitLoading();
+                }
+            }
+        }
+
+        public void DeSelectCommodity(string commodityNames = null)
+        {
+            //total
+            if (commodityNames == null)
+            {
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质总览", false);
+            }
+            else //specified commodity
+            {
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质单项", false);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+
+                CommodityGrid.UncheckRowCheckbox(2, commodityNames, false);
+                JazzMessageBox.LoadingMask.WaitLoading();
+            }
+        }
+
+        #endregion
+
+        #region data view operation
+
+        /// <summary>
+        /// Export expected data table to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedDataTableToExcel(string fileName, DisplayStep displayStep)
+        {
+            ExportExpectedDataTableToExcel(fileName, displayStep, CarbonPath);
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDataViewOfCostUsage(string expectedFileName, string failedFileName)
+        {
+            return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, CarbonPath);
+        }
+
+        #endregion
     }
 }

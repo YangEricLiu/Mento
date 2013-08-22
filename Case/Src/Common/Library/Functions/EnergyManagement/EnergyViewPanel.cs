@@ -266,18 +266,27 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
                 
         #region Chart view operations
+
+        public bool IsColumnDrawn()
+        {
+            return Chart.HasDrawnColumn();
+        }
+
         public bool IsTrendChartDrawn()
         {
             return Chart.HasDrawnTrend();
         }
+
         public bool IsDistributionChartDrawn()
         {
             return Chart.HasDrawnDistribute();
         }
+
         public bool IsDataViewDrawn()
         {
             return EnergyDataGrid.HasDrawnDataView();
         }
+
         public bool IsLegendDrawn()
         {
             return Chart.LegendExists();

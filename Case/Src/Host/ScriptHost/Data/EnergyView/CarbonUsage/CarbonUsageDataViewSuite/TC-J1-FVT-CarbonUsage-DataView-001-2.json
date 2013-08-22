@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+			"DashboardInfo":[{
+				"WigetName":"CarbonSingle2Tree",
+				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"TotalEnergyConsumptionDataview",
+			}],
+			"failedFileName":["F-CarbonUsageDataView001-2-H-total.xls", "F-CarbonUsageDataView001-2-H-TotalCO2.xls", "F-CarbonUsageDataView001-2-H-TotalTree.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CarbonUsageDataView001-2-H-total.xls", "CarbonUsageDataView001-2-H-TotalCO2.xls", "CarbonUsageDataView001-2-H-TotalTree.xls"],
+		}
+	}
+]

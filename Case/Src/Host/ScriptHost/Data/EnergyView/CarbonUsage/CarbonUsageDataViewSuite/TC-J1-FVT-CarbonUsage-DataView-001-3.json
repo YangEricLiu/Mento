@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+			"commodityNames":["煤"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

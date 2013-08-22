@@ -2,15 +2,14 @@
 	{		
 		"InputData":
 		{
-			"UserName":"UserForMultiCustomer",
-			"CustomerList":["customerA","customerB","customerC","customerD"],
-			"CustomerName":"customerC",
-			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],
+			"UserName":"UserForVerifyNodetree",
+			"CustomerName":"customerD",
+			"HierarchyNodePath":["customerD","organizationA","siteB","buildingC"],
+			"CustomerList":["tagC"],
 		},
 		"ExpectedData":
 		{
-			"CustomerList":["customerA","organizationA"],
-			"HierarchyNodePath":["customerB","organizationB","siteB","buildingB"]],
+			"UserName":"P@ssw0rd",
 		}
 	}
 ]

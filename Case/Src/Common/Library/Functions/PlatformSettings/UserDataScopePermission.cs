@@ -200,6 +200,33 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Uncheck All hierarchy nodes 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean UnCheckAllHierarchyNode()
+        {
+            Boolean flag =  true;
+            try
+            {
+                if (CheckAllHierarchyNodesCheckBox.IsDataAllhierarchyBoxChecked())
+                {
+                    CheckAllHierarchyNodesCheckBox.DataAllHierarchyCheck();
+                    flag = true;
+                }
+                else
+                {
+                    flag = false;
+                }
+                return flag;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
+        }
+
+        /// <summary>
         /// Check Whether the view and edit link button is enable 
         /// </summary>
         /// <param>Cumtomer name</param>

@@ -247,6 +247,7 @@ namespace Mento.Script.Administration.User
             Assert.IsFalse(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
             Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
         }
 
         [Test]
@@ -259,38 +260,102 @@ namespace Mento.Script.Administration.User
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
             UserDataPermissionSettings.ClickModifyButton();
+            TimeManager.ShortPause();
+            //Check 全部层级节点数据权限 option and click "Cancel" from 配置数据权限 window.Then click “数据权限” of CustomerD again to check the hierarchy node checker.Close.
+            UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            UserDataPermissionSettings.CheckAllHierarchyNode();
+            UserDataPermissionSettings.CancelTreeWindow();
+            TimeManager.ShortPause();
+            //The datascope isn't modified and the same as before modify.
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchCustomerNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsFalse(UserDataPermissionSettings.IsHierarchOrzNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsFalse(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsFalse(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.HierarchyNodePath));
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.CustomerList));
+            Assert.IsFalse(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.CustomerList));
 
-            //Check "全部平台客户及对应数据权限"
-            UserDataPermissionSettings.CheckAllCustomerDatas();
+            //Check 全部层级节点数据权限 option and click "确定" and go to 配置数据权限. 
+            UserDataPermissionSettings.CheckAllHierarchyNode();
+            UserDataPermissionSettings.SaveTreeWindow();
+            TimeManager.ShortPause();
+            //Click "Cancel" button from customer selection window to "save" datascope of user.
+            //Go to view status of exist user 客户数据权限. Click 查看数据权限 of customerD.
+            UserDataPermissionSettings.ClickCancelButton();
+            TimeManager.MediumPause();
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            //The datascope isn't modified and the same as before modify.
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchCustomerNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsFalse(UserDataPermissionSettings.IsHierarchOrzNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsFalse(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsFalse(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.HierarchyNodePath));
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.CustomerList));
+            Assert.IsFalse(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.CustomerList));
+            UserDataPermissionSettings.CloseTreeWindow();
+            //Modify again. Check 全部层级节点数据权限 option and click "确定". Click "Save" button.
+            UserDataPermissionSettings.ClickModifyButton();
+            UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            UserDataPermissionSettings.CheckAllHierarchyNode();
+            UserDataPermissionSettings.SaveTreeWindow();
             UserDataPermissionSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
-            // verify 
-            Assert.IsFalse(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
+            //Click 查看数据权限 of customerD.
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
-            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.CustomerList);
+            UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath);
+            UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.ExpectedData.HierarchyNodePath);
+            UserDataPermissionSettings.CloseTreeWindow();
         }
 
         [Test]
         [CaseID("TC-J1-FVT-UserDataScope-Modify-101-9")]
         [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(ModifyMultiCustomerSuite), "TC-J1-FVT-UserDataScope-Modify-101-9")]
-        public void SaveTreeThenCancel(UserDataPermissionData input)
+        public void ModifyNodeTreeAndVerify(UserDataPermissionData input)
         {
+            
             // Focus on a new created user, open datascope tab. 
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
             UserDataPermissionSettings.ClickModifyButton();
 
-            //Check "全部平台客户及对应数据权限"
-            UserDataPermissionSettings.CheckAllCustomerDatas();
+            //Select customerD and select 全部层级节点数据权限 option and saved datascope successfully.
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+            UserDataPermissionSettings.CheckAllHierarchyNode();
+            UserDataPermissionSettings.SaveTreeWindow();
+            TimeManager.ShortPause();
             UserDataPermissionSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
-            // verify 
-            Assert.IsFalse(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
-            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
-            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            
+            //Login with UserD.  Verify userD can select organizationA:siteA: from hierarchy tree and own datascope of buildingC: tagC:
+            JazzFunction.UserProfile.NavigatorToUserProfile();
+            JazzFunction.UserProfile.ExitJazz();
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+            JazzFunction.LoginPage.LoginWithOption(input.InputData.UserName,input.ExpectedData.UserName,input.InputData.CustomerName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CostUsage);
+            Assert.IsTrue(JazzFunction.CostPanel.SelectHierarchy(input.InputData.HierarchyNodePath));
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+            JazzFunction.AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            Assert.IsTrue(JazzFunction.AssociateSettings.IsTagOnAssociatedGridView(input.InputData.CustomerList[0]));
+            JazzFunction.UserProfile.NavigatorToUserProfile();
+            JazzFunction.UserProfile.ExitJazz();
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+            JazzFunction.LoginPage.LoginToAdmin();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();                      
         }
 
     }

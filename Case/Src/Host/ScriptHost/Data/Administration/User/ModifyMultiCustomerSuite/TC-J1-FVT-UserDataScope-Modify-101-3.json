@@ -9,7 +9,7 @@
 		"ExpectedData":
 		{
 			"CustomerList":["customerA","organizationA"],
-			"HierarchyNodePath":["customerB","organizationB","siteB","buildingB"]],
+			"HierarchyNodePath":["customerB","organizationB","siteB","buildingB"],
 		}
 	}
 ]

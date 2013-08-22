@@ -18,19 +18,19 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Customer.TagAssociation
 {
     [TestFixture]
-    [Owner("Hardy")]
-    [CreateTime("2013-07-22")]
-    [ManualCaseID("TC-J1-FVT-TagAssociation-Disassociate")]
+    [Owner("Greenie")]
+    [CreateTime("2013-08-21")]
+    [ManualCaseID("TC-J1-FVT-TagAssociation-Disassociate-101")]
     public class DisassociateTagSuite : TestSuiteBase
     {
-        private static AssociateSettings Association = JazzFunction.AssociateSettings;
+        private AssociateSettings AssociateSettings = JazzFunction.AssociateSettings;
         private static AreaDimensionSettings AreaSettings = JazzFunction.AreaDimensionSettings;
         private static SystemDimensionSettings SystemSettings = JazzFunction.SystemDimensionSettings;
 
         [SetUp]
         public void CaseSetUp()
         {
-            Association.NavigateToHierarchyAssociate();
+            AssociateSettings.NavigateToHierarchyAssociate();
             TimeManager.MediumPause();
         }
 
@@ -40,32 +40,6 @@ namespace Mento.Script.Customer.TagAssociation
             JazzFunction.Navigator.NavigateHome();
         }
 
-        private void AssociateOnWhichNode(AssociateTagData input)
-        {
-            Association.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.MediumPause();
-        }
-
-        private void CheckEVOnWhichNode(AssociateTagData input)
-        {
-            JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
-            TimeManager.MediumPause();
-
-            if (input.InputData.SystemDimensionPath != null)
-            {
-                //Navigate to systemdimension
-                //JazzFunction.EnergyAnalysisPanel.
-                SystemSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionPath);
-            }
-
-            if (input.InputData.AreaDimensionPath != null)
-            {
-                //Navigate to areadimension
-                Association.NavigateToAreaDimensionAssociate();
-                AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaDimensionPath);
-            }
-        }
-
         [Test]
         [CaseID("TC-J1-FVT-TagAssociation-Disassociate-101-1")]
         [Type("BFT")]
@@ -73,27 +47,111 @@ namespace Mento.Script.Customer.TagAssociation
         public void DisassociateTagVerify(AssociateTagData input)
         {
             //navigate and select node
-            AssociateOnWhichNode(input);
+            AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            string[] HierarchyNewPath = new string[input.InputData.HierarchyNodePath.Length];
+            Array.Copy(input.InputData.HierarchyNodePath,HierarchyNewPath,input.InputData.HierarchyNodePath.Length);
+            int i =3;
+            while (i>0)
+            {
+                AssociateSettings.SelectHierarchyNodePath(HierarchyNewPath);
+                AssociateSettings.SelectHierarchyNode(input.InputData.HierarchyNodePath[i]);
+                //Navigate to system dimension node and disassociate ptag 
+                //Select one hierarchy building node, select a associated tag and click  '解除关联'  button.
+                AssociateSettings.FocusOnTag(input.InputData.TagNames[i]);
+                AssociateSettings.ClickDisassociateButton();
+                JazzMessageBox.LoadingMask.WaitLoading();
+                TimeManager.ShortPause();
+                // It disappears from the associated grid and it appears in the unassociated grid;
+                Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagNames[i]));
+                AssociateSettings.ClickAssociateTagButton();
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+                Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagNames[i]));
+                //Associate this tag again
+                AssociateSettings.CheckedTag(input.InputData.TagNames[i]);
+                AssociateSettings.ClickAssociateButton();
+                JazzMessageBox.LoadingMask.WaitLoading();
+                TimeManager.MediumPause();
+                Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagNames[i]));
+                AssociateSettings.ClickAssociateTagButton();
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+                Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagNames[i]));
+                AssociateSettings.ClickCancelButton();
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+                //Go to Energy Usage Analysis, select above hierarchy node then select ‘全部数据点’ try to find the above tag.
+                Array.Copy(input.InputData.HierarchyNodePath, HierarchyNewPath, i+1);
+                JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+                Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.SelectHierarchy(HierarchyNewPath));
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+                Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[i]));
+                AssociateSettings.NavigateToHierarchyAssociate();
+                i--;
+            }
+
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TagAssociation-Disassociate-101-2")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(DisassociateTagSuite), "TC-J1-FVT-TagAssociation-Disassociate-101-2")]
+        public void DisassociateOnDimension(AssociateTagData input)
+        {
+            //navigate and select node
+            AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
 
             //Navigate to system dimension node and disassociate ptag 
-            JazzFunction.DisassociateSettings.FocusOnTag(input.InputData.TagNames[0]);
+            AssociateSettings.FocusOnTag(input.InputData.TagNames[0]);
             TimeManager.ShortPause();
 
-            Association.ClickDisassociateButton();
+            AssociateSettings.ClickDisassociateButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
-            Assert.IsFalse(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+            Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
 
-            Association.ClickAssociateTagButton();
+            AssociateSettings.ClickAssociateTagButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
-            Association.CheckedTag(input.ExpectedData.TagName);
-            Assert.IsTrue(Association.IsTagChecked(input.ExpectedData.TagName));
+            AssociateSettings.CheckedTag(input.ExpectedData.TagName);
+            Assert.IsTrue(AssociateSettings.IsTagChecked(input.ExpectedData.TagName));
 
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
             Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.TagName));
-      
+
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TagAssociation-Disassociate-101-3")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(DisassociateTagSuite), "TC-J1-FVT-TagAssociation-Disassociate-101-3")]
+        public void DisassociateMoreTags(AssociateTagData input)
+        {
+            //navigate and select node
+            AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+
+            //Navigate to system dimension node and disassociate ptag 
+            AssociateSettings.FocusOnTag(input.InputData.TagNames[0]);
+            TimeManager.ShortPause();
+
+            AssociateSettings.ClickDisassociateButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+
+            AssociateSettings.ClickAssociateTagButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            AssociateSettings.CheckedTag(input.ExpectedData.TagName);
+            Assert.IsTrue(AssociateSettings.IsTagChecked(input.ExpectedData.TagName));
+
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
+            Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.TagName));
+
+        }
+    
     }
 }

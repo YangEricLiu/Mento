@@ -54,6 +54,9 @@
   <add key="GridRow" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]" type ="XPath"/>
   <add key="GridRowChecker" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-checkcolumn')]/div/div" type ="XPath"/>
   <add key="GridRowDeleteX" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-last')]/div/img" type ="XPath"/>
+  
+  <add key="GridRowLight" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-first')]/div/img" type ="XPath"/>
+
   <add key="GridRowDataPermissionChecker" value = "//div[2]/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-first')]/div/div" type ="XPath"/>
   <add key="GridRowDataPermissionCheckerTextRow" value = "//div[2]/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[5]/div/a" type ="XPath"/>
 

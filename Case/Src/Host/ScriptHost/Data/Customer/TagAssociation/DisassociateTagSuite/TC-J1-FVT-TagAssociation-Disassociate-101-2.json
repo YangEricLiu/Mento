@@ -2,13 +2,14 @@
 	{
 		"InputData":
 		{
-			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1", "AssociateTagBuild1"],
-			"SystemDimensionPath":["AssociateTagBuild1", "空调"],
-			"TagNames":["P_Asso_001_1_1", "P_Asso_001_1_2"],
+			"HierarchyNodePath":["自动化测试", "DisassociateTagAuto", "DisassociateTagSite", "DisassociateTagBuild"],
+			"SystemDimensionPath":["DisassociateTagBuild", "空调"],
+			"AreaDimensionPath":["DisassociateTagBuild","AreaNode"],
+			"TagNames":["P_Disassociate"],
 		},
 		"ExpectedData":
 		{
-			"TagName":"P_Asso_001_1_1",
+
 		}
 	}
 ]

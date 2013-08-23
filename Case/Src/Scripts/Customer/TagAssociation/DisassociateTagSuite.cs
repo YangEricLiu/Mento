@@ -24,8 +24,8 @@ namespace Mento.Script.Customer.TagAssociation
     public class DisassociateTagSuite : TestSuiteBase
     {
         private AssociateSettings AssociateSettings = JazzFunction.AssociateSettings;
-        private static AreaDimensionSettings AreaSettings = JazzFunction.AreaDimensionSettings;
-        private static SystemDimensionSettings SystemSettings = JazzFunction.SystemDimensionSettings;
+        private static AreaDimensionSettings AreaNodeSettings = JazzFunction.AreaDimensionSettings;
+        private static SystemDimensionSettings SystemNodeSettings = JazzFunction.SystemDimensionSettings;
 
         [SetUp]
         public void CaseSetUp()
@@ -99,28 +99,42 @@ namespace Mento.Script.Customer.TagAssociation
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(DisassociateTagSuite), "TC-J1-FVT-TagAssociation-Disassociate-101-2")]
         public void DisassociateOnDimension(AssociateTagData input)
         {
-            //navigate and select node
-            AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            //Find a tag which has been associated with a system dimension node and a area dimension node.
+            AssociateSettings.NavigateToAreaDimensionAssociate();
+            AreaNodeSettings.ShowHierarchyTree();
+            AreaNodeSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            AreaNodeSettings.SelectAreaDimensionNodePath(input.InputData.AreaDimensionPath);
+            Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagNames[0]));
 
-            //Navigate to system dimension node and disassociate ptag 
+            //Disassociate the tag on the condition of the system dimension node only.
+            AssociateSettings.NavigateToSystemDimensionAssociate();
+            SystemNodeSettings.ShowHierarchyTree();
+            SystemNodeSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            SystemNodeSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionPath);
             AssociateSettings.FocusOnTag(input.InputData.TagNames[0]);
-            TimeManager.ShortPause();
-
             AssociateSettings.ClickDisassociateButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
-            Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+            Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));
 
-            AssociateSettings.ClickAssociateTagButton();
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.MediumPause();
-            AssociateSettings.CheckedTag(input.ExpectedData.TagName);
-            Assert.IsTrue(AssociateSettings.IsTagChecked(input.ExpectedData.TagName));
-
+            //Check if the tag disassociation can be inflected in tag chart
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
-            Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.TagName));
-
+            TimeManager.MediumPause();
+            //select ‘全部数据点’ try to find the above tag.
+            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[0]));
+            //Select '区域数据点' try to find the above tag.
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.AreaDimensionTab);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            JazzFunction.EnergyAnalysisPanel.SelectAreaDimension(input.InputData.AreaDimensionPath);
+            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[0]));
+            //select '系统数据点' try to find the above tag.
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.SystemDimensionTab);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            JazzFunction.EnergyAnalysisPanel.SelectSystemDimension(input.InputData.SystemDimensionPath);
+            Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[0]));
         }
 
         [Test]
@@ -133,24 +147,26 @@ namespace Mento.Script.Customer.TagAssociation
             AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
 
             //Navigate to system dimension node and disassociate ptag 
-            AssociateSettings.FocusOnTag(input.InputData.TagNames[0]);
-            TimeManager.ShortPause();
-
-            AssociateSettings.ClickDisassociateButton();
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.MediumPause();
-            Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
-
-            AssociateSettings.ClickAssociateTagButton();
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.MediumPause();
-            AssociateSettings.CheckedTag(input.ExpectedData.TagName);
-            Assert.IsTrue(AssociateSettings.IsTagChecked(input.ExpectedData.TagName));
-
+            int i = 0;
+            while (i < input.InputData.TagNames.Length)
+            {
+                AssociateSettings.FocusOnTag(input.InputData.TagNames[i]);
+                TimeManager.ShortPause();
+                AssociateSettings.ClickDisassociateButton();
+                JazzMessageBox.LoadingMask.WaitLoading();
+                TimeManager.MediumPause();
+                Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagNames[i]));
+                i++;
+            }
+          
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
-            Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.TagName));
-
+            i = 0;
+            while (i < input.InputData.TagNames.Length)
+            {
+                Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[i]));
+                i++;
+            }
         }
     
     }

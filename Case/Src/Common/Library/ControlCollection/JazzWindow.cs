@@ -8,7 +8,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public sealed class JazzWindow : JazzControlCollection
     {
-        
+        #region energy view
+
+        public static Window WindowMessageInfos = GetControl<Window>(JazzControlLocatorKey.WindowMessageInfos);
+
+        #endregion
 
         #region customer setting
 

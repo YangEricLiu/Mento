@@ -477,6 +477,7 @@
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-3.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1.json" />
+    <None Include="Data\EnergyView\EnergyManagement\SetDisplayStepSuite\TC-J1-FVT-SetDisplayStep-001-1.json" />
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-040.json" />
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-037.json" />
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-038.json" />

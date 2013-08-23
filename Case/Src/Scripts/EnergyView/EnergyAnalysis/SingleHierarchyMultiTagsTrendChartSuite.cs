@@ -101,15 +101,15 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //can't check any tags checkbox on All Tag list/System dimension/Area dimension tab
-            Assert.IsTrue(EnergyAnalysis.IsAllGridTagsUnchecked());
+            Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());
             EnergyAnalysis.SwitchTagTab(TagTabs.SystemDimensionTab);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsAllGridTagsUnchecked());
+            Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());
             EnergyAnalysis.SwitchTagTab(TagTabs.AreaDimensionTab);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsAllGridTagsUnchecked());
+            Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());
 
             //Remove selection vtag V(14) from checkbox, The checkbox can be checked 
             EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);

@@ -34,6 +34,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
             get { return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.WindowCancelButton)); }
         }
 
+        //Cancel button
+        private IWebElement QuitButton
+        {
+            get { return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.WindowQuitButton)); }
+        }
+
         public string GetTitle()
         {
             return Title.Text;
@@ -54,9 +60,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
             CancelButton.Click();
         }
 
+        public void Quit()
+        {
+            QuitButton.Click();
+        }
+
         public bool IsWindowExisted()
         {
             return this.Exists();
+        }
+
+        public string GetContentValue()
+        {
+            return this.RootElement.Text;
         }
     }
 }

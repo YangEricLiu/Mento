@@ -161,6 +161,8 @@
           <add key="ButtonIntervalDialogConfirm" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='确定并绘图']]" type="XPath"/>
           <add key="ButtonIntervalDialogGiveUp" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
 
+          <add key="ButtonDisplayStepWindow" value="//div[contains(@id,'window') and contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$#nameIndex']]" type="XPath"/>
+
       </energyview>
       <customersettings>
           <ptag>
@@ -870,7 +872,11 @@
   
     <TargetBaseline>
       <add key="WindowTBCalendarInfo" value="//div[contains(@id,'calendartemplatewindow') and contains(@class, 'x-window-default')]" type="XPath"/>
-    </TargetBaseline> 
+    </TargetBaseline>
+
+    <EnergyView>
+      <add key="WindowMessageInfos" value="//div[contains(@id,'window') and contains(@class, 'x-window-default')]" type="XPath"/>
+    </EnergyView>
   </Window> 
 
 <!--Container-->

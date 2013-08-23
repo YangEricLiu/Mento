@@ -59,13 +59,14 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Select V(6) under Area dimension node to draw Data view.
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
-            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
+            TimeManager.LongPause();
+            
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Hour);
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
             TimeManager.MediumPause();
@@ -77,7 +78,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Hour);
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
@@ -91,7 +92,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Hour);
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
@@ -102,7 +103,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Hour);
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
@@ -115,20 +116,20 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Hour);
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
 
             //can't check any tags checkbox on All Tag list/System dimension/Area dimension tab
-            Assert.IsTrue(EnergyAnalysis.IsAllGridTagsUnchecked());
+            Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());
             EnergyAnalysis.SwitchTagTab(TagTabs.SystemDimensionTab);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsAllGridTagsUnchecked());
+            Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());
             EnergyAnalysis.SwitchTagTab(TagTabs.AreaDimensionTab);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsAllGridTagsUnchecked());
+            Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());
 
             //Remove selection vtag V(14) from checkbox, The checkbox can be checked 
             EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);
@@ -144,7 +145,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Hour);
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
 
@@ -160,7 +161,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.MessageBox.GiveUp();
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
-
+            
             //Click  "删除所有" option then confirm
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
             TimeManager.MediumPause();
@@ -168,7 +169,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.MessageBox.Clear();
             TimeManager.MediumPause();
             Assert.IsFalse(EnergyAnalysis.IsDataViewDrawn());
-            Assert.IsFalse(EnergyAnalysis.IsAllGridTagsUnchecked());
+            Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
 
             //On homepage, check the dashboard
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);

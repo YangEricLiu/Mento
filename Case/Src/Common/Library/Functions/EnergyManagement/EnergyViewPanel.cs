@@ -33,6 +33,15 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
         private static AreaDimensionTree AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
 
+        private static Dictionary<DisplayStep, string> DisplayStepItem = new Dictionary<DisplayStep, string>()
+        {
+            {DisplayStep.Hour, "按小时"},
+            {DisplayStep.Day, "按天"},
+            {DisplayStep.Week, "按周"},
+            {DisplayStep.Month, "按月"},
+            {DisplayStep.Year, "按年"},
+        };
+
         //Chart
         protected abstract Chart Chart
         {
@@ -50,6 +59,28 @@ namespace Mento.ScriptCommon.Library.Functions
         public EnergyViewToolbar Toolbar = new EnergyViewToolbar();
 
         #region common
+
+        /// <summary>
+        /// Judge if supported display step button displayed on window
+        /// </summary>
+        /// <param name="step"></param>
+        public bool IsStepButtonOnWindow(DisplayStep step)
+        {
+            Button stepButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonDisplayStepWindow, DisplayStepItem[step]);
+
+            return stepButton.Exists();
+        }
+
+        /// <summary>
+        /// Click display step button displayed on window
+        /// </summary>
+        /// <param name="name"></param>
+        public void ClickStepButtonOnWindow(DisplayStep step)
+        {
+            Button stepButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonDisplayStepWindow, DisplayStepItem[step]);
+
+            stepButton.Click();
+        }
 
         /// <summary>
         /// Click display step button
@@ -113,6 +144,35 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Is display step button displayed
+        /// </summary>
+        /// <param name="step"></param>
+        public bool IsDisplayStepDisplayed(DisplayStep step)
+        {
+            switch (step)
+            {
+                case DisplayStep.Hour:
+                    //"Hourly" step
+                    return EnergyDisplayStepHourButton.Exists();
+                case DisplayStep.Day:
+                    //"Daily" step
+                    return EnergyDisplayStepDayButton.Exists();
+                case DisplayStep.Week:
+                    //"Weekly" step
+                    return EnergyDisplayStepWeekButton.Exists();
+                case DisplayStep.Month:
+                    //"Monthly" step
+                    return EnergyDisplayStepMonthButton.Exists();
+                case DisplayStep.Year:
+                    //"Year" step
+                    return EnergyDisplayStepYearButton.Exists();
+                default:
+                    return true;
+            }
+        }
+
+
+        /// <summary>
         /// Click Multiple Hierarchy Add Tags button
         /// </summary>
         public void ClickMultipleHierarchyAddTagsButton()
@@ -131,6 +191,7 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region Hierarchy operations
+
         public Boolean SelectHierarchy(string[] hierarchyNames)
         {
             try
@@ -164,8 +225,6 @@ namespace Mento.ScriptCommon.Library.Functions
 
         }
 
-
-
         /// <summary>
         /// Select area dimension tree
         /// </summary>
@@ -182,7 +241,6 @@ namespace Mento.ScriptCommon.Library.Functions
                 return false;
             }
         }
-
 
         /// <summary>
         /// Click "请选择区域维度" button in "区域数据点"

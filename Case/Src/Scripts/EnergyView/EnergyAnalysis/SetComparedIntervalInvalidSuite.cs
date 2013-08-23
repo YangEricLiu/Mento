@@ -93,15 +93,15 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Assert.IsTrue(EnergyViewToolbar.IsTimeSpanButtonEnable());
 
             //Keep V1 selected, add V_month, time range is 'previous 7 days', click '查询数据'.
-            /*
+            
             EnergyAnalysis.CheckTag(input.InputData.TagNames[3]);
             EnergyViewToolbar.View(EnergyViewType.Line);
             TimeManager.MediumPause();
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
-            JazzMessageBox.MessageBox.Quit();
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            JazzWindow.WindowMessageInfos.Quit();
             Assert.IsFalse(EnergyAnalysis.IsTagChecked(input.InputData.TagNames[3]));
             Assert.IsTrue(EnergyViewToolbar.IsTimeSpanButtonEnable());
-            */
+            
 
             //Switch to 'Multiple Hierarchy Nodes' funtion (多层级数据点)
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);

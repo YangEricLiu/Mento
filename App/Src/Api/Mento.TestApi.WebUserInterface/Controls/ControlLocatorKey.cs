@@ -92,6 +92,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string WindowCloseButton = "WindowCloseButton";
         public static string WindowConfirmButton = "WindowConfirmButton";
         public static string WindowCancelButton = "WindowCancelButton";
+        public static string WindowQuitButton = "WindowQuitButton";
         #endregion
 
         #region DatePicker locators

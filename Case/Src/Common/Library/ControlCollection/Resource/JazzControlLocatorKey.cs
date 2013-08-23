@@ -147,6 +147,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonIntervalDialogConfirm = "ButtonIntervalDialogConfirm";
         public static string ButtonIntervalDialogGiveUp = "ButtonIntervalDialogGiveUp";
 
+        public static string ButtonDisplayStepWindow = "ButtonDisplayStepWindow";
+
         #endregion
 
         #region energy analysis
@@ -980,6 +982,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region TargetBaseline
 
         public static string WindowTBCalendarInfo = "WindowTBCalendarInfo";
+
+        #endregion
+
+        #region Energy view
+
+        public static string WindowMessageInfos = "WindowMessageInfos";
 
         #endregion
 

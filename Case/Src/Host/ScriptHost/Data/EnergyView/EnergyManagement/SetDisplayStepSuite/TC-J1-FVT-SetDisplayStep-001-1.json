@@ -3,8 +3,6 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingMultipleSteps"],
-			"AreaDimensionPath":["楼宇BC", "一层"],
-			"SystemDimensionPath":["楼宇BC", "空调"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-7-29",
 				"EndDate":"2012-8-3",
@@ -22,14 +20,45 @@
 			{
 				"StartDate":"2012-7-15",
 				"EndDate":"2012-12-15",	
+			},
+			{
+				"StartDate":"2012-7-1",
+				"StartTime":"03:00",
+				"EndDate":"2012-7-1",
+				"EndTime":"15:00",
+			},
+			{
+				"StartDate":"2012-7-29",
+				"EndDate":"2012-8-3",	
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-7-31",	
+			},
+			{
+				"StartDate":"2012-6-1",
+				"EndDate":"2012-8-31",	
+			},
+			{
+				"StartDate":"2012-1-1",
+				"EndDate":"2012-12-31",	
+			},
+			{
+				"StartDate":"2008-1-1",
+				"EndDate":"2013-1-1",	
+			},
+			{
+				"StartDate":"2012-7-10",
+				"EndDate":"2012-8-5",	
 			}],
+
 			"TagNames":["VM_SiteS1", "VD_SiteS1", "VH_SiteS1"],
-			"failedFileName":["F-SetDisplayStep-001-1-D-VD_Site1.xls", "F-SingleHierarchyNodeDataView101-1-D-V2_BuildingBC.xls", "F-SingleHierarchyNodeDataView101-1-D-V3_BuildingBC.xls"],
+			"failedFileName":["F-SetDisplayStep-001-1-D-VD_Site1.xls", "F-SetDisplayStep-001-1-D-VM_Site1.xls"],
 		},
 		"ExpectedData":
 		{
 			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
-			"expectedFileName":["SetDisplayStep-001-1-D-VD_Site1.xls", "SingleHierarchyNodeDataView101-1-D-V2_BuildingBC.xls", "SingleHierarchyNodeDataView101-1-D-V3_BuildingBC.xls"],
+			"expectedFileName":["SetDisplayStep-001-1-D-VD_Site1.xls", "SetDisplayStep-001-1-D-VM_Site1.xls"],
 		}
 	}
 ]

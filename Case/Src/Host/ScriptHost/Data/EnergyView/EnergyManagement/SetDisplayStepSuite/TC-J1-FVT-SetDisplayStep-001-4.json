@@ -1,0 +1,34 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingMultipleSteps"],
+			"TagNames":["VM_SiteS1", "VH_SiteS1", "PH_SiteS1", "VD_SiteS1"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-8-1",	
+			},
+			{
+				"StartDate":"2012-7-29",
+				"EndDate":"2012-8-3",	
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-7-31",	
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-7-7",	
+			},
+			{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-1-1",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
+			"StepMessage":["峰谷平电价展示不支持按小时展示"],
+		}
+	}
+]

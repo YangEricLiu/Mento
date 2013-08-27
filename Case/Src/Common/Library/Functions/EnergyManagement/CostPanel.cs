@@ -38,7 +38,11 @@ namespace Mento.ScriptCommon.Library.Functions
             get { return JazzGrid.EnergyAnalysisEnergyDataList; }
         }
 
-        internal CostPanel() { }
+        internal CostPanel()
+        {  
+            CommodityGrid = JazzGrid.CommodityCostGrid;
+            TotalCommotidyGrid = JazzGrid.TotalCommodityCostGrid;
+        }
 
         #region left panel
 

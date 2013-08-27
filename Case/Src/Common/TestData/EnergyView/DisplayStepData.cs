@@ -33,6 +33,10 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public ManualTimeRange[] ManualTimeRange { get; set; }
 
         public string[] DisplayStep { get; set; }
+
+        public string[] commodityNames { get; set; }
+
+        public string[] OtherHierarchies { get; set; }
     }
 
     public class DisplayStepOnput : ExpectedTestDataBase

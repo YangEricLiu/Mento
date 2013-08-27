@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"OtherHierarchies":["NancyCostCustomer2", "组织A", "园区A"],
+			"commodityNames":["电", "煤", "自来水"],
+			"TagNames":["BAV1Root", "BAV2Root", "BAV3Root"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-8-2",
+				"EndDate":"2012-8-6",	
+			},
+			{
+				"StartDate":"2012-6-1",
+				"EndDate":"2012-8-31",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
+			"StepMessage":["峰谷平电价展示不支持按小时展示"],
+		}
+	}
+]

@@ -104,6 +104,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             JazzButton.AssociationSettingsDisassociate.Click();
             JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
         }
 
         public void ClickAssociatedCancel()
@@ -166,6 +167,62 @@ namespace Mento.ScriptCommon.Library.Functions
             }          
         }
 
+        /// <summary>
+        /// Click lighten button
+        /// </summary>
+        /// <param name = "tagNames">the tag name</param>
+        /// <returns></returns>
+        public Boolean LightenTag(string tagName)
+        {
+            try{
+               if (TagList.IsRowUnLightened(3, tagName))
+               {
+                    TagList.ClickLightenButton(3, tagName);
+                    JazzMessageBox.LoadingMask.WaitLoading();
+                    TimeManager.ShortPause();
+                    return true;
+                }
+               return false;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Darken the light button
+        /// </summary>
+        /// <param name = "tagNames">the tag name</param>
+        /// <returns></returns>
+        public Boolean DarkenTag(string tagName)
+        {
+  
+                if (TagList.IsRowLightened(3, tagName))
+                {
+                    TagList.ClickLightenButton(3, tagName);
+                    JazzMessageBox.LoadingMask.WaitLoading();
+                    TimeManager.ShortPause();
+                    return true;
+                }
+               
+                else
+                {
+                    return false;
+                }
+        }
+
+        // Verify just one row no lilght
+        public bool NoLight(string tagName)
+        {
+            return TagList.IsLightenedNotExist(3, tagName);
+        }
+
+        public bool IsTagLighted(string tagName)
+        {
+            return TagList.IsRowLightened(3, tagName);
+        }
+
         public bool IsTagChecked(string tagName)
         {
             return TagList.IsRowChecked(3, tagName);
@@ -185,6 +242,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return Association.IsDisplayed();
         }
+
 
         public void RemoveTag(string tagName)
         {

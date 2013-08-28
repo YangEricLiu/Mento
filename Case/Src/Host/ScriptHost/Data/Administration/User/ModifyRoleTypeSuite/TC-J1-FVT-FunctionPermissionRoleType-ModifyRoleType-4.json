@@ -1,0 +1,14 @@
+﻿[
+	{		
+		"InputData":
+		{	
+			"CommonName":"RoleTypeForModify",
+			"NameList":["平台管理员","客户管理员","咨询人员","工程人员","商务人员","销售人员"],
+		},
+
+		"ExpectedData":
+		{
+			"CommonName":"该名称已存在",
+		}
+	},
+]

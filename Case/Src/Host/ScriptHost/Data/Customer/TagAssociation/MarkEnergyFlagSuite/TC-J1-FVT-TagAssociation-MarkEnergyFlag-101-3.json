@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "DisassociateTagAuto", "DisassociateTagSite","DisassociateTagBuild"],
+			"TagNames":["P_Mark004","P_Mark005"],
+			"SystemDimensionPath":["DisassociateTagBuild", "空调"],
+			"TagName":"  对应节点下已存在相同介质的能耗数据点。\r\n确定",
+		},
+		"ExpectedData":
+		{
+		}
+	}
+]

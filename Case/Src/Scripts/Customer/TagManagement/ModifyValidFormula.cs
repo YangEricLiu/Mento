@@ -99,6 +99,7 @@ namespace Mento.Script.Customer.TagManagement
            Assert.AreEqual(VTagSettings.GetFormulaValue(), "{vtag|VtagForValidFormula001}+{vtag|VtagForValidFormula001}-{vtag|VtagForValidFormula002}+1.05*{ptag|PtagByFormula}");
 
             //Property参与运算
+            /*
            VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
@@ -108,15 +109,17 @@ namespace Mento.Script.Customer.TagManagement
            JazzMessageBox.LoadingMask.WaitLoading();
            Assert.IsFalse(VTagSettings.IsFormulaInvalid());
            Assert.AreEqual(VTagSettings.GetFormulaValue(), "{vtag|VtagForValidFormula001}/{FormulaBuilding|prop|TotalPopulation}");
+           */
         }
-       
+
+       /*
       [Test]
       [CaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-101-2")]
       [Type("BFT")]
       [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-2")]
         public void DragTagsFormula(VtagData input)
       {
-          /*
+
           JazzFunction.LoginPage.LoginToCustomer();
           VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
           VTagSettings.ClickModifyFormulaButton();
@@ -124,7 +127,7 @@ namespace Mento.Script.Customer.TagManagement
           TimeManager.MediumPause();
 
           VTagSettings.DragTagToFormula("");
-          */
+
            
       }
 
@@ -192,6 +195,6 @@ namespace Mento.Script.Customer.TagManagement
           JazzMessageBox.LoadingMask.WaitLoading();
           TimeManager.ShortPause();
       }
-       
+       */
     }
 }

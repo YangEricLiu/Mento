@@ -18,7 +18,6 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region Controls
         private static Container MultiHierarchyPanelContainer = JazzContainer.MultiHierarchyPanelContainer;
-
         //TagGrid
         private static Grid TagGrid
         {

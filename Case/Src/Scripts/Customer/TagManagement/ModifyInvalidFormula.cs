@@ -46,9 +46,9 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyInvalidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-001-1")]
-        public void AddInvalildFomula(VtagData input)
+        public void FormulaInvalidInputs(VtagData input)
         {
-            /*
+
             //Click "+" button and fill nothing
             VTagSettings.ClickAddVTagButton();
             VTagSettings.FillInAddVTagData(input.InputData);
@@ -113,9 +113,8 @@ namespace Mento.Script.Customer.TagManagement
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
 
-           VTagSettings.DragTagToFormula("VtagForFormula001");
-           VTagSettings.DragTagToFormula("VtagForFormula002");
-           VTagSettings.DragTagToFormula("VtagForFormula003");
+           VTagSettings.FillInFormulaField("{vtag|VtagForValidFormula001}{vtag|VtagForValidFormula002}");
+           //VTagSettings.DragTagToFormula("VtagForValidFormula001");
 
            VTagSettings.ClickSaveFormulaButton();
            JazzMessageBox.LoadingMask.WaitLoading();
@@ -131,9 +130,9 @@ namespace Mento.Script.Customer.TagManagement
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
             
-            */
-           //VTagSettings.FillInFormulaField("{vtag|VtagForFormula001}+-{vtag|VtagForFormula002}*/{vtag|VtagForFormula003}");
-            /*
+
+           VTagSettings.FillInFormulaField("{vtag|VtagForFormula001}+-{vtag|VtagForFormula002}*/{vtag|VtagForFormula003}");
+
            VTagSettings.ClickSaveFormulaButton();
            JazzMessageBox.LoadingMask.WaitLoading();
            TimeManager.MediumPause();
@@ -165,11 +164,7 @@ namespace Mento.Script.Customer.TagManagement
            VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
-
            VTagSettings.FillInFormulaField("@#$- 中文字符");
-           VTagSettings.ClickSaveFormulaButton();
-           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-           TimeManager.MediumPause();
            VTagSettings.ClickSaveFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
@@ -178,7 +173,7 @@ namespace Mento.Script.Customer.TagManagement
 
             VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
-
+            // Space null
             VTagSettings.ClickModifyFormulaButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -327,7 +322,7 @@ namespace Mento.Script.Customer.TagManagement
 
             VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
-            */
+            /*
            //12.公式中包括没有数据权限的tag  
            //  defined a V1= V2+V3, the source tag V2 is associated to hierarchynodeA, 
            //  but user's data permission for the hierarchy node was removed, when click save button of V1's formula again.
@@ -377,7 +372,7 @@ namespace Mento.Script.Customer.TagManagement
             VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
 
-            /*
+            
             //14.公式中包括尚未定义公式的tag  
            //e.g. V1= V2  The source tag V2 is a newly created one and haven't defined any formula yet, when try to save formula of V1.
 

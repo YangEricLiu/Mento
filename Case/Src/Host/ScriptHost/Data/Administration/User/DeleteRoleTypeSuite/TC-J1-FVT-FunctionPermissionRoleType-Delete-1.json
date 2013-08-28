@@ -1,0 +1,12 @@
+﻿[
+	{		
+		"InputData":
+		{	
+			"CommonName":"FunctionRoleTypeA",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"FunctionRoleTypeA",
+		}
+	},
+]

@@ -622,6 +622,108 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return data;
         }
 
+        // Get row light
+
+        /// <summary>
+        /// Check the specified row is not lightened.
+        /// </summary>
+        /// <param name="cellIndex">Column index of the identifier cell</param>
+        /// <param name="cellText">Text of the identifier cell</param>
+        /// <returns></returns>
+        public bool IsRowUnLightened(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checker = this.GetRowLight(cellIndex, cellText, Paging);
+
+            return checker.GetAttribute("class").Contains("not-energy-consump-icon");
+        }
+
+        /// <summary>
+        /// Check whether the specified row is lightened.
+        /// </summary>
+        /// <param name="cellIndex">Column index of the identifier cell</param>
+        /// <param name="cellText">Text of the identifier cell</param>
+        /// <returns></returns>
+        public bool IsRowLightened(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checker = this.GetRowLight(cellIndex, cellText, Paging);
+
+            return checker.GetAttribute("class").Split(' ').Contains("is-energy-consump-icon");
+        }
+
+        /// <summary>
+        /// Check whether the specified row of a building has a light.
+        /// </summary>
+        /// <param name="cellIndex">Column index of the identifier cell</param>
+        /// <param name="cellText">Text of the identifier cell</param>
+        /// <returns></returns>
+        public bool IsBuildingLightNull(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checker = this.GetRowLight(cellIndex, cellText, Paging);
+
+            return checker.GetAttribute("class").Split(' ').Contains("none-energy-consump-icon");
+        }
+
+        /// <summary>
+        /// Click lighten button
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public void ClickLightenButton(int cellIndex, string cellText, bool Paging = true)
+        {
+            var lighter = this.GetRowLight(cellIndex, cellText, Paging);
+
+            if (this.IsRowUnLightened(cellIndex, cellText))
+            {
+                lighter.Click();
+            }
+        }
+
+        // Get the lights row
+        protected virtual IWebElement GetRowLight(int cellIndex, string cellText, bool Paging = true)
+        {
+            var lightLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowLight);
+
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(lightLocator, variables));
+        }
+
+        /// <summary>
+        /// Check the specified row is not lightened.
+        /// </summary>
+        /// <param name="cellIndex">Column index of the identifier cell</param>
+        /// <param name="cellText">Text of the identifier cell</param>
+        /// <returns></returns>
+        public bool IsLightenedNotExist(int cellIndex, string cellText, bool Paging = true)
+        {
+            var lightLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowLight);
+
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            return FindChild(Locator.GetVariableLocator(lightLocator, variables)).Displayed.Equals(false);
+
+        }
+
+
         #region Common
         private bool ChildExists(Locator locator)
         {

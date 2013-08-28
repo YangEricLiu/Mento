@@ -213,6 +213,17 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="code">code</param>
         /// <returns></returns>
+        public void FillInCommodityAndUom(string commodity,string uom)
+        {
+            CommodityComboBox.SelectItem(commodity);
+            UomComboBox.SelectItem(uom);
+        }
+
+        /// <summary>
+        /// Input code of the ptag
+        /// </summary>
+        /// <param name="code">code</param>
+        /// <returns></returns>
         public void FillIncode(string code)
         {
             CodeTextField.Fill(code);
@@ -468,6 +479,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsCommodityInvalidMsgCorrect(PtagExpectedData output)
         {
             return CommodityComboBox.GetInvalidTips().Contains(output.Commodity);
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsCommodityInvalidMsgCorrectByCommodity(string commodity)
+        {
+            return CommodityComboBox.GetInvalidTips().Contains(commodity);
         }
 
         /// <summary>

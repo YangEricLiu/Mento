@@ -2,11 +2,11 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagForFormula",
+			"CommonName":"VtagForValidFormula",
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagForFormula",
+			"CommonName":"VtagForValidFormula",
 		}
 	}
 ]

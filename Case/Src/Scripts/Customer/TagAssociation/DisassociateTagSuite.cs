@@ -47,14 +47,16 @@ namespace Mento.Script.Customer.TagAssociation
         public void DisassociateTagVerify(AssociateTagData input)
         {
             //navigate and select node
-            AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            string[] HierarchyNewPath = new string[input.InputData.HierarchyNodePath.Length];
-            Array.Copy(input.InputData.HierarchyNodePath,HierarchyNewPath,input.InputData.HierarchyNodePath.Length);
-            int i =3;
-            while (i>0)
+            //AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            
+            int i =1;
+            while (i<=3)
             {
-                AssociateSettings.SelectHierarchyNodePath(HierarchyNewPath);
-                AssociateSettings.SelectHierarchyNode(input.InputData.HierarchyNodePath[i]);
+                AssociateSettings.NavigateToHierarchyAssociate();
+                string[] HierarchyNewPath = new string[i+1];
+                Array.Copy(input.InputData.HierarchyNodePath, HierarchyNewPath, i + 1);
+                Assert.IsTrue(AssociateSettings.SelectHierarchyNodePath(HierarchyNewPath));
+                //AssociateSettings.SelectHierarchyNode(input.InputData.HierarchyNodePath[i]);
                 //Navigate to system dimension node and disassociate ptag 
                 //Select one hierarchy building node, select a associated tag and click  '解除关联'  button.
                 AssociateSettings.FocusOnTag(input.InputData.TagNames[i]);
@@ -81,14 +83,14 @@ namespace Mento.Script.Customer.TagAssociation
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.MediumPause();
                 //Go to Energy Usage Analysis, select above hierarchy node then select ‘全部数据点’ try to find the above tag.
-                Array.Copy(input.InputData.HierarchyNodePath, HierarchyNewPath, i+1);
+
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
                 Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.SelectHierarchy(HierarchyNewPath));
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.MediumPause();
                 Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[i]));
-                AssociateSettings.NavigateToHierarchyAssociate();
-                i--;
+
+                i++;
             }
 
         }

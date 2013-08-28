@@ -2,11 +2,11 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"PtagByFormula",
+			"CommonName":"PtagForCheckVtagFormula",
 		},
 		"ExpectedData":
 		{
-			"CommonName":"PtagByFormula",
+			"CommonName":"PtagForCheckVtagFormula",
 			
 		}
 	}

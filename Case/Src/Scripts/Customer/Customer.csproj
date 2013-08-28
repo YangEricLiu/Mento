@@ -78,6 +78,7 @@
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddPeopleAreaPropertySuite.cs" />
     <Compile Include="TagAssociation\AssociateTagSuite.cs" />
     <Compile Include="TagAssociation\DisassociateTagSuite.cs" />
+    <Compile Include="TagAssociation\MarkEnergyFlagSuite.cs" />
     <Compile Include="TagAssociation\SmokeTestAreaDimensionDisassociateTagSuite.cs" />
     <Compile Include="TagAssociation\SmokeTestHierarchyDisassociateTagSuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddCalendarPropertySuite.cs" />
@@ -140,6 +141,7 @@
   <ItemGroup>
     <None Include="..\..\Host\ScriptHost\App.config">
       <Link>App.config</Link>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup />

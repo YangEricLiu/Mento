@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "DisassociateTagAuto", "DisassociateTagSite"],
+			"SystemDimensionPath":["DisassociateTagSite", "空调"],
+			"TagNames":["P_Disassociate_Site","P_Mark001"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

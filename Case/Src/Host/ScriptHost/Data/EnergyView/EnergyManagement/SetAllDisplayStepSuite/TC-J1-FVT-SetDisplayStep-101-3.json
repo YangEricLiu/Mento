@@ -1,0 +1,23 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-7-31",
+			},
+			{
+				"StartDate":"2012-7-10",
+				"EndDate":"2012-7-17",
+			}],
+
+			"TagNames":["P1_YearToDay"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

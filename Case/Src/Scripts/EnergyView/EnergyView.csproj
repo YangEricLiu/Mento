@@ -65,6 +65,8 @@
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodeDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodeTrendChartSuite.cs" />
+    <Compile Include="EnergyManagement\SetTimeRangeValidSuite.cs" />
+    <Compile Include="EnergyManagement\SetAllDisplayStepSuite.cs" />
     <Compile Include="EnergyManagement\SetDisplayStepSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

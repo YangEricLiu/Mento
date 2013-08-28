@@ -263,8 +263,8 @@
               <add key="ButtonDieselOilCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='柴油']]/div/img" type="XPath"/>
               <add key="ButtonLowPressureSteamCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='低压蒸汽']]/div/img" type="XPath"/>
               <add key="ButtonWaterCostDelete" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//div[contains(@class, 'x-tool')]/img" type="XPath"/>
-              <add key="LinkButtonFactor" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton') and a[text()='查看所选功率因数']]" type="XPath"/>
-              <add key="LinkButtonTOU" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton') and a[text()='查看价格策略详情']]" type="XPath"/>
+              <add key="LinkButtonFactor" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='查看所选功率因数']" type="XPath"/>
+              <add key="LinkButtonTOU" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='查看价格策略详情']" type="XPath"/>
               <add key="ButtonElectricCostDelete" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform') and contains(@class, 'x-panel-body-default')]/div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@class, 'x-tool')]/img" type="XPath"/>
           </hierarchycost>
           <systemdimension>

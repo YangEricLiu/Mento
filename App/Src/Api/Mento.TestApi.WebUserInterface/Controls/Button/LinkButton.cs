@@ -7,7 +7,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class LinkButton : Button
     {
-        private static Locator linkButtonEnable = new Locator("../../div", ByType.XPath);
+        private static Locator linkButtonEnable = new Locator("../../div[contains(@id,'remlinkbutton')]", ByType.XPath);
 
         public LinkButton(Locator locator)
             : base(locator)

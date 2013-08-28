@@ -137,7 +137,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-SetDisplayStep-001-1")]
+        [CaseID("TC-J1-FVT-SetDisplayStep-001-2")]
         [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-1")]
         public void EnergyAnalysisSetDisplayStep4(DisplayStepData input)
         {
@@ -190,7 +190,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-SetDisplayStep-001-1")]
+        [CaseID("TC-J1-FVT-SetDisplayStep-001-3")]
         [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-1")]
         public void EnergyAnalysisSetDisplayStep5(DisplayStepData input)
         {
@@ -296,6 +296,8 @@ namespace Mento.Script.EnergyView.EnergyManagement
             Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-SetDisplayStep-001-4")]
         [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-1")]
         public void EnergyAnalysisSetDisplayStep6(DisplayStepData input)
         {
@@ -368,7 +370,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-SetDisplayStep-001-2")]
+        [CaseID("TC-J1-FVT-SetDisplayStep-001-5")]
         [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-2")]
         public void CostSetDisplayStep8(DisplayStepData input)
         {
@@ -430,7 +432,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-SetDisplayStep-001-3")]
+        [CaseID("TC-J1-FVT-SetDisplayStep-001-6")]
         [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-3")]
         public void CostSetDisplayStep9(DisplayStepData input)
         {
@@ -551,7 +553,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-SetDisplayStep-001-4")]
+        [CaseID("TC-J1-FVT-SetDisplayStep-001-7")]
         [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-4")]
         public void CostSetDisplayStep10To16(DisplayStepData input)
         {
@@ -686,7 +688,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-SetDisplayStep-001-5")]
+        [CaseID("TC-J1-FVT-SetDisplayStep-001-8")]
         [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-5")]
         public void CostSetDisplayStep17(DisplayStepData input)
         {
@@ -723,14 +725,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-SetDisplayStep-101-1")]
-        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-5")]
-        public void SetDisplayStep1011(DisplayStepData input)
-        {
-
         }
     }
 }

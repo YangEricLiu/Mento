@@ -1,0 +1,22 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2012-7-1",
+				"StartTime":"03:00",
+				"EndDate":"2012-7-1",
+				"EndTime":"15:00",
+			}],
+
+			"TagNames":["P1_YearToDay"],
+			"failedFileName":["F-SetDisplayStep-101-2-H-P1_YearToDay.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["SetDisplayStep-101-2-H-P1_YearToDay.xls"],
+		}
+	}
+]

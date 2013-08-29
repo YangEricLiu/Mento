@@ -2,11 +2,13 @@
 	{
 		"InputData":
 		{	
-			"PlainPrice":"",
+			"CommonName":"价格ForModifyToDeleteTime",
+			"PeakRange":[{"StartTime": "00:00", "EndTime": "08:00"}, {"StartTime": "22:30", "EndTime": "23:00"}, {"StartTime": "08:30", "EndTime": "10:00"}],
+			"ValleyRange":[{"StartTime": "21:30", "EndTime": "22:00"}, {"StartTime": "15:30", "EndTime": "17:00"}, {"StartTime": "12:00", "EndTime": "12:30"}],	
 		},
 		"ExpectedData":
 		{
-		    
+		    	
 		}		
-	}
+	},
 ]

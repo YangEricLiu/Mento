@@ -46,21 +46,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
-        #region UserRoleType
-        public static Container ContainerPermissionCustomerizeItems = GetControl<Container>(JazzControlLocatorKey.ContainerPermissionCustomerizeItems);
-
-        public static Container ContainerPermissionPublicTypeItems = GetControl<Container>(JazzControlLocatorKey.ContainerPermissionPublicTypeItems);
-       
-        #endregion
-
-        #region User
-        public static Container ContainerDisplayPermissionCustomerizeItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionCustomerizeItems);
-
-        public static Container ContainerDisplayPermissionPublicTypeItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionPublicTypeItems);
-        public static Container ContainerDisplayPermissionItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionItems);
-
-        #endregion
-
         #region HomePage
 
         public static Container ContainerWidgetsToDashboard = GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsToDashboard);
@@ -73,6 +58,36 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static Container MultiHierarchyPanelContainer = GetControl<Container>(JazzControlLocatorKey.ContainerMultiHierarchyPanel);
         public static Container ExcludeTimeIntervalsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerExcludeTimeIntervals);
+
+        #endregion
+
+        #endregion
+
+        #region platform setting
+
+        #region TimeManagment containers
+        public static Container CalendarItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerCalendarItems);
+        public static Container CalendarWarmItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerCalendarWarmItems);
+        public static Container CalendarColdItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerCalendarColdItems);
+        
+        #endregion
+
+        #region TOU containers
+        public static Container TOU24HoursErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerTOU24HoursErrorTips);
+        #endregion
+        
+        #region UserRoleType
+        public static Container ContainerPermissionCustomerizeItems = GetControl<Container>(JazzControlLocatorKey.ContainerPermissionCustomerizeItems);
+
+        public static Container ContainerPermissionPublicTypeItems = GetControl<Container>(JazzControlLocatorKey.ContainerPermissionPublicTypeItems);
+
+        #endregion
+
+        #region User
+        public static Container ContainerDisplayPermissionCustomerizeItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionCustomerizeItems);
+
+        public static Container ContainerDisplayPermissionPublicTypeItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionPublicTypeItems);
+        public static Container ContainerDisplayPermissionItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionItems);
 
         #endregion
 

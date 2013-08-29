@@ -20,7 +20,6 @@ namespace Mento.Script.Administration.TOU
     [TestFixture]
     [Owner("Amy")]
     [CreateTime("2013-01-04")]
-    [ManualCaseID("TC-J1-SmokeTest")]
     public class TOUPulsePeakAddValidSuite : TestSuiteBase
     {
         private static TOUPulsePeakTariffSettings TOUPulsePeakTariffSettings = JazzFunction.TOUPulsePeakTariffSettings;
@@ -38,7 +37,7 @@ namespace Mento.Script.Administration.TOU
 
         #region TestCase1 AddValidPulsePeak
         /// <summary>
-        /// Precondition: 1. make sure there is a TOU basic tariff with name '价格策略1'
+        /// Precondition: 1. make sure there is a TOU basic tariff
         ///               2. make sure the TOU tariff hasn't defined Pulse Peak property yet.
         /// </summary>
         [Test]
@@ -48,7 +47,7 @@ namespace Mento.Script.Administration.TOU
         [MultipleTestDataSource(typeof(TOUPulsePeakTariffData[]), typeof(TOUPulsePeakAddValidSuite), "TC-J1-FVT-TOUTariffSettingPulse-Add-101")]
         public void AddValidPulsePeak(TOUPulsePeakTariffData testData)
         {
-            TOUPulsePeakTariffSettings.FocusOnTOUTariff("价格策略1");
+            TOUPulsePeakTariffSettings.FocusOnTOUTariff(testData.InputData.CommonName);
             TimeManager.ShortPause();
             TOUPulsePeakTariffSettings.SwitchToPulsePeakPropertyTab();
             TimeManager.ShortPause();
@@ -59,8 +58,12 @@ namespace Mento.Script.Administration.TOU
             TOUPulsePeakTariffSettings.FillInPulsePeakPropertyPriceValue(testData.InputData.Price);
 
             //Click '添加峰值季节时间' link and also Fill in the ranges
-            TOUPulsePeakTariffSettings.AddPulsePeakRanges(testData);
+            TOUPulsePeakTariffSettings.AddPulsePeakRanges(testData);            
 
+            //Click the 'X' icon near one added range, to delete one range (e.g. delete range2).
+            TOUPulsePeakTariffSettings.ClickDeletePulsePeakRangeItemButton(2);
+
+            //Click Save button.
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertySaveButton();
             TimeManager.ShortPause();
 
@@ -68,15 +71,15 @@ namespace Mento.Script.Administration.TOU
             Assert.AreEqual(testData.InputData.Price, TOUPulsePeakTariffSettings.GetPulsePeakPropertyPriceValue());
 
             //Verify 'Start Month', 'Start Date', 'End Month', 'End Date', 'Start Time' and 'End Time' of the record(s)
-            for (int elementPosition = 1; elementPosition <= testData.InputData.PulsePeakRange.Length; elementPosition++)
+            for (int elementPosition = 1; elementPosition <= testData.ExpectedData.PulsePeakRange.Length; elementPosition++)
             {
                 int inputDataArrayPosition = elementPosition - 1;
-                Assert.AreEqual(testData.InputData.PulsePeakRange[inputDataArrayPosition].StartMonth, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartMonthValue(elementPosition));
-                Assert.AreEqual(testData.InputData.PulsePeakRange[inputDataArrayPosition].StartDate, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartDateValue(elementPosition));
-                Assert.AreEqual(testData.InputData.PulsePeakRange[inputDataArrayPosition].EndMonth, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndMonthValue(elementPosition));
-                Assert.AreEqual(testData.InputData.PulsePeakRange[inputDataArrayPosition].EndDate, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndDateValue(elementPosition));
-                Assert.AreEqual(testData.InputData.PulsePeakRange[inputDataArrayPosition].StartTime, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartTimeValue(elementPosition));
-                Assert.AreEqual(testData.InputData.PulsePeakRange[inputDataArrayPosition].EndTime, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndTimeValue(elementPosition));
+                Assert.AreEqual(testData.ExpectedData.PulsePeakRange[inputDataArrayPosition].StartMonth, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartMonthValue(elementPosition));
+                Assert.AreEqual(testData.ExpectedData.PulsePeakRange[inputDataArrayPosition].StartDate, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartDateValue(elementPosition));
+                Assert.AreEqual(testData.ExpectedData.PulsePeakRange[inputDataArrayPosition].EndMonth, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndMonthValue(elementPosition));
+                Assert.AreEqual(testData.ExpectedData.PulsePeakRange[inputDataArrayPosition].EndDate, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndDateValue(elementPosition));
+                Assert.AreEqual(testData.ExpectedData.PulsePeakRange[inputDataArrayPosition].StartTime, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartTimeValue(elementPosition));
+                Assert.AreEqual(testData.ExpectedData.PulsePeakRange[inputDataArrayPosition].EndTime, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndTimeValue(elementPosition));
             }
         }
         #endregion

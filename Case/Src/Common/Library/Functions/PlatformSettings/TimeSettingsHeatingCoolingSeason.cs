@@ -21,10 +21,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
-        //private static Grid PTagList = JazzGrid.PTagSettingsPTagList;
-
+        #region Controls
+        private static Grid CalendarsList = JazzGrid.CalendarsList;
         private static Button CreateHeatingCoolingSeasonCalendarButton = JazzButton.HeatingCoolingSeasonCalendarCreateButton;
-
         private static Button ModifyButton = JazzButton.HeatingCoolingSeasonCalendarModifyButton;
         private static Button SaveButton = JazzButton.HeatingCoolingSeasonCalendarSaveButton;
         private static Button CancelButton = JazzButton.HeatingCoolingSeasonCalendarCancelButton;
@@ -42,6 +41,12 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox ColdEndMonthComboBox = JazzComboBox.HeatingCoolingSeasonCalendarColdEndMonthComboBox;
         private static ComboBox ColdEndDateComboBox = JazzComboBox.HeatingCoolingSeasonCalendarColdEndDateComboBox;
 
+        private static Container CalendarWarmItemsContainer = JazzContainer.CalendarWarmItemsContainer;
+        private static Container CalendarColdItemsContainer = JazzContainer.CalendarColdItemsContainer;
+
+        #endregion
+
+        #region common action
         /// <summary>
         /// Navigate to HeatingCoolingSeason Calendar Setting Page
         /// </summary>
@@ -62,7 +67,80 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             CreateHeatingCoolingSeasonCalendarButton.Click();
         }
-        
+
+        /// <summary>
+        /// Select a calendar
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void SelectCalendar(string calendarName)
+        {
+            CalendarsList.FocusOnRow(1, calendarName, false);
+        }
+
+        /// <summary>
+        /// Click save button
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickSaveButton()
+        {
+            SaveButton.Click();
+        }
+
+        /// <summary>
+        /// Click cancel button
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickCancelButton()
+        {
+            CancelButton.Click();
+        }
+
+        /// <summary>
+        /// Click modify button
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickModifyButton()
+        {
+            ModifyButton.Click();
+        }
+
+        /// <summary>
+        /// Click delete button
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickDeleteButton()
+        {
+            DeleteButton.Click();
+        }
+
+        public void ClickMsgBoxConfirmButton()
+        {
+            JazzMessageBox.MessageBox.Confirm();
+        }
+
+        public void ClickMsgBoxCancelButton()
+        {
+            JazzMessageBox.MessageBox.Cancel();
+        }
+
+        public void ClickMsgBoxCloseButton()
+        {
+            JazzMessageBox.MessageBox.Close();
+        }
+
+        public void ClickMsgBoxOKButton()
+        {
+            JazzMessageBox.MessageBox.OK();
+        }
+
+        #endregion
+
+        #region item operation
         /// <summary>
         /// Click "add more warm ranges" button
         /// </summary>
@@ -83,6 +161,7 @@ namespace Mento.ScriptCommon.Library.Functions
             AddMoreColdRangesButton.Click();
         }
         
+        
         /// <summary>
         /// Fill in name field
         /// </summary>
@@ -91,6 +170,48 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInName(string name)
         {
             NameTextField.Fill(name);
+        }
+
+        public void AddWarmRanges(HeatingCoolingSeasonCalendarData testData)
+        {                       
+            //Click '+' button if more than one warm record need to be entered
+            //Amy's note: due to the order of dynamic element will be different if click the '+' icon after the first record has been input. That is why click + icon multiple times continuaslly here..       
+            for (int elementPosition = 1; elementPosition < testData.InputData.WarmRange.Length; elementPosition++)
+            {
+                ClickAddMoreWarmRangesButton();
+                TimeManager.ShortPause();
+            }
+
+            //Input warm record(s) based on the input data file
+            for (int elementPosition = 1; elementPosition <= testData.InputData.WarmRange.Length; elementPosition++)
+            {
+                int inputDataArrayPosition = elementPosition - 1;
+                SelectWarmStartMonth(testData.InputData.WarmRange[inputDataArrayPosition].StartMonth, elementPosition);
+                SelectWarmStartDate(testData.InputData.WarmRange[inputDataArrayPosition].StartDate, elementPosition);
+                SelectWarmEndMonth(testData.InputData.WarmRange[inputDataArrayPosition].EndMonth, elementPosition);
+                SelectWarmEndDate(testData.InputData.WarmRange[inputDataArrayPosition].EndDate, elementPosition);
+            }
+        }
+
+        public void AddColdRanges(HeatingCoolingSeasonCalendarData testData)
+        {
+            //Click '+' button if more than one warm record need to be entered
+            //Amy's note: due to the order of dynamic element will be different if click the '+' icon after the first record has been input. That is why click + icon multiple times continuaslly here..       
+            for (int elementPosition = 1; elementPosition < testData.InputData.ColdRange.Length; elementPosition++)
+            {
+                ClickAddMoreColdRangesButton();
+                TimeManager.ShortPause();
+            }
+
+            //Input cold record(s) based on the input data file
+            for (int elementPosition = 1; elementPosition <= testData.InputData.ColdRange.Length; elementPosition++)
+            {
+                int inputDataArrayPosition = elementPosition - 1;
+                SelectColdStartMonth(testData.InputData.ColdRange[inputDataArrayPosition].StartMonth, elementPosition);
+                SelectColdStartDate(testData.InputData.ColdRange[inputDataArrayPosition].StartDate, elementPosition);
+                SelectColdEndMonth(testData.InputData.ColdRange[inputDataArrayPosition].EndMonth, elementPosition);
+                SelectColdEndDate(testData.InputData.ColdRange[inputDataArrayPosition].EndDate, elementPosition);
+            }
         }
 
         /// <summary>
@@ -181,16 +302,118 @@ namespace Mento.ScriptCommon.Library.Functions
             OneEndDate.SelectItem(date);
         }
 
-        /// <summary>
-        /// Click save button
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public void ClickSaveButton()
+        public void ClickDeleteWarmRangeItemButton(int num)
         {
-            SaveButton.Click();
+            Button OneDeleteRangeIcon = GetOneWarmDeleteRangeItemButton(num);
+            OneDeleteRangeIcon.Click();
         }
-       
+
+        public void ClickDeleteColdRangeItemButton(int num)
+        {
+            Button OneDeleteRangeIcon = GetOneColdDeleteRangeItemButton(num);
+            OneDeleteRangeIcon.Click();
+        }
+        #endregion
+
+        #region verification
+        public Boolean IsSaveButtonDisplayed()
+        {
+            return SaveButton.IsDisplayed();
+        }
+
+        public Boolean IsCancelButtonDisplayed()
+        {
+            return CancelButton.IsDisplayed();
+        }
+
+        public Boolean IsModifyButtonDisplayed()
+        {
+            return ModifyButton.IsDisplayed();
+        }
+
+        public Boolean IsDeleteButtonDisplayed()
+        {
+            return DeleteButton.IsDisplayed();
+        }
+
+        public Boolean IsCalendarExist(string calendarName)
+        {
+            return CalendarsList.IsRowExist(1, calendarName);
+        }
+
+        public Boolean IsWarmRangeItemDeleteButtonDisplayed(int num)
+        {
+            Button OneDeleteRangeIcon = GetOneWarmDeleteRangeItemButton(num);
+            return OneDeleteRangeIcon.IsDisplayed();
+        }
+
+        public Boolean IsColdRangeItemDeleteButtonDisplayed(int num)
+        {
+            Button OneDeleteRangeIcon = GetOneColdDeleteRangeItemButton(num);
+            return OneDeleteRangeIcon.IsDisplayed();
+        }
+
+        public Boolean IsNameInvalidMsgCorrect(HeatingCoolingSeasonCalendarExpectedData output)
+        {
+            if (output.CommonName != null)
+            {
+                return NameTextField.GetInvalidTips().Contains(output.CommonName);
+            }
+            else
+                return true;
+        }
+
+        public Boolean IsWarmRangeInvalidMsgCorrect(HeatingCoolingSeasonCalendarExpectedData output, int position)
+        {
+            int arrayPosition = position - 1;
+            ComboBox OneEndMonthComboBox = GetOneWarmEndMonthComboBox(position);
+            if (output.WarmRange != null)
+            {
+                return OneEndMonthComboBox.GetInvalidTips().Contains(output.WarmRange[arrayPosition].EndMonth);
+            }
+            else
+                return true;
+        }
+
+        public Boolean IsColdRangeInvalidMsgCorrect(HeatingCoolingSeasonCalendarExpectedData output, int position)
+        {
+            int arrayPosition = position - 1;
+            ComboBox OneEndMonthComboBox = GetOneColdEndMonthComboBox(position);
+            if (output.ColdRange != null)
+            {
+                return OneEndMonthComboBox.GetInvalidTips().Contains(output.ColdRange[arrayPosition].EndMonth);
+            }
+            else
+                return true;
+        }
+
+        /// <summary>
+        /// Judge whether the pop message correct
+        /// </summary>
+        /// <param name="output">TOUBasicTariffExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsPopMsgCorrect(HeatingCoolingSeasonCalendarExpectedData output)
+        {
+            if (output.PopMessage != null)
+            {
+                return GetMessageText().Contains(output.PopMessage);
+            }
+            else
+                return true;
+        }
+        #endregion
+
+        #region Get value
+        /// <summary>
+        /// Get message in the pop up message box. 
+        /// </summary>
+        /// <returns></returns>
+        public string GetMessageText()
+        {
+            JazzMessageBox.LoadingMask.WaitLoading();
+            return JazzMessageBox.MessageBox.GetMessage();
+        }
+
         /// <summary>
         /// Get the Name actual value
         /// </summary>
@@ -198,6 +421,24 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetNameValue()
         {
             return NameTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get the number of the warm ranges
+        /// </summary>
+        /// <returns></returns>
+        public int GetWarmRangeItemsNumber()
+        {
+            return CalendarWarmItemsContainer.GetElementNumber();
+        }
+
+        /// <summary>
+        /// Get the number of the cold ranges
+        /// </summary>
+        /// <returns></returns>
+        public int GetColdRangeItemsNumber()
+        {
+            return CalendarColdItemsContainer.GetElementNumber();
         }
 
         /// <summary>
@@ -288,6 +529,8 @@ namespace Mento.ScriptCommon.Library.Functions
             return OneEndDate.GetValue();
         }
 
+        #endregion
+
         #region private method
 
         private ComboBox GetOneWarmStartMonthComboBox(int positionIndex)
@@ -329,6 +572,17 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdEndDate, positionIndex);
         }
+
+        private Button GetOneWarmDeleteRangeItemButton(int positionIndex)
+        {
+            return JazzButton.GetOneButton(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarWarmDeleteRangeItem, positionIndex);
+        }
+
+        private Button GetOneColdDeleteRangeItemButton(int positionIndex)
+        {
+            return JazzButton.GetOneButton(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarColdDeleteRangeItem, positionIndex);
+        }
+
         #endregion
     }
 }

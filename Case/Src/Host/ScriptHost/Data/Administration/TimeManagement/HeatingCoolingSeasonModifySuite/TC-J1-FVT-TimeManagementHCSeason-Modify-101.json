@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"冷暖季未被引用ForModifyValid",
+			"WarmRange":[{"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}],
+			"ColdRange":[{"StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "31"}],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"冷暖季未被引用AfterModifyValid",				
+		}		
+	},
+	{
+		"InputData":
+		{	
+			"CommonName":"冷暖季已被引用ForModifyValid",
+			"WarmRange":[{"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}],
+			"ColdRange":[{"StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "31"}],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"冷暖季已被引用AfterModifyValid",				
+		}		
+	},
+]

@@ -353,6 +353,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonWorkdayCalendarCancel = "ButtonWorkdayCalendarCancel";
         public static string ButtonWorkdayCalendarDelete = "ButtonWorkdayCalendarDelete";
         public static string ButtonWorkdayCalendarAddSpecialDates = "ButtonWorkdayCalendarAddSpecialDates";
+        public static string ButtonWorkdayDeleteRangeItem = "ButtonWorkdayDeleteRangeItem";
         #endregion
 
         #region worktime
@@ -362,6 +363,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonWorktimeCalendarCancel = "ButtonWorktimeCalendarCancel";
         public static string ButtonWorktimeCalendarDelete = "ButtonWorktimeCalendarDelete";
         public static string LinkButtonWorktimeCalendarAddMoreRanges = "LinkButtonWorktimeCalendarAddMoreRanges";
+        public static string ButtonWorktimeDeleteRangeItem = "ButtonWorktimeDeleteRangeItem";
         #endregion
 
         #region heatingcoolingseason
@@ -372,6 +374,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonHeatingCoolingSeasonCalendarDelete = "ButtonHeatingCoolingSeasonCalendarDelete";
         public static string ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges = "ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges";
         public static string ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges = "ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges";
+        public static string ButtonHeatingCoolingSeasonCalendarWarmDeleteRangeItem = "ButtonHeatingCoolingSeasonCalendarWarmDeleteRangeItem";
+        public static string ButtonHeatingCoolingSeasonCalendarColdDeleteRangeItem = "ButtonHeatingCoolingSeasonCalendarColdDeleteRangeItem";
         #endregion
 
         #region daynight
@@ -381,6 +385,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonDayNightCalendarCancel = "ButtonDayNightCalendarCancel";
         public static string ButtonDayNightCalendarDelete = "ButtonDayNightCalendarDelete";
         public static string LinkButtonDayNightCalendarAddMoreRanges = "LinkButtonDayNightCalendarAddMoreRanges";
+        public static string ButtonDayNightDeleteRangeItem = "ButtonDayNightDeleteRangeItem";
         #endregion
 
         #region carbonfactor
@@ -832,6 +837,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region platformsettings
         public static string GridUserList = "GridUserList";
         public static string GridUserTypePermissionList = "GridUserTypePermissionList";
+        public static string GridCalendarsList = "GridCalendarsList";
         public static string GridTOUTariffsList = "GridTOUTariffsList";
         public static string GridDataScopePermissionList = "GridDataScopePermissionList";
         public static string GridCustomersList = "GridCustomersList";
@@ -1023,19 +1029,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
        
-        #region UserRoleType
-        public static string ContainerPermissionCustomerizeItems = "ContainerPermissionCustomerizeItems";
-        public static string ContainerPermissionPublicTypeItems = "ContainerPermissionPublicTypeItems";
-       
-
-        #endregion
-
-        #region User
-        public static string ContainerDisplayPermissionCustomerizeItems = "ContainerDisplayPermissionCustomerizeItems";
-        public static string ContainerDisplayPermissionPublicTypeItems = "ContainerDisplayPermissionPublicTypeItems";
-        public static string ContainerDisplayPermissionItems = "ContainerDisplayPermissionItems";
-        #endregion
-
         #region HomePage
 
         public static string ContainerWidgetsToDashboard = "ContainerWidgetsToDashboard";
@@ -1052,6 +1045,32 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #endregion
+
+        #region Platform setting
+
+        #region TimeManagment
+        public static string ContainerCalendarItems = "ContainerCalendarItems";
+        public static string ContainerCalendarWarmItems = "ContainerCalendarWarmItems";
+        public static string ContainerCalendarColdItems = "ContainerCalendarColdItems";
+        #endregion
+
+        #region TOU
+        public static string ContainerTOU24HoursErrorTips = "ContainerTOU24HoursErrorTips";
+        #endregion
+        
+        #region UserRoleType
+        public static string ContainerPermissionCustomerizeItems = "ContainerPermissionCustomerizeItems";
+        public static string ContainerPermissionPublicTypeItems = "ContainerPermissionPublicTypeItems";
+        #endregion
+
+        #region User
+        public static string ContainerDisplayPermissionCustomerizeItems = "ContainerDisplayPermissionCustomerizeItems";
+        public static string ContainerDisplayPermissionPublicTypeItems = "ContainerDisplayPermissionPublicTypeItems";
+        public static string ContainerDisplayPermissionItems = "ContainerDisplayPermissionItems";
+        #endregion
+        
+        #endregion
+
         #endregion
 
     }

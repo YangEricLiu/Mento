@@ -2,12 +2,12 @@
 	{
 		"InputData":
 		{	
-			"Price":"8.6",	
-			"PulsePeakRange":[{"StartMonth": "05", "StartDate": "01", "EndMonth": "06", "EndDate": "15", "StartTime": "08:30", "EndTime": "12:00"}, {"StartMonth": "07", "StartDate": "15", "EndMonth": "08", "EndDate": "31", "StartTime": "13:00", "EndTime": "13:30"}],
+			"CommonName":"价格ForModifyValidPulsePeak",							
 		},
 		"ExpectedData":
 		{
-		    
+		    "Price":"100.9",
+			"PulsePeakRange":[{"StartMonth": "04", "StartDate": "02", "EndMonth": "05", "EndDate": "31", "StartTime": "00:30", "EndTime": "23:30"}, {"StartMonth": "03", "StartDate": "28", "EndMonth": "03", "EndDate": "28", "StartTime": "08:00", "EndTime": "08:30"}, {"StartMonth": "07", "StartDate": "01", "EndMonth": "07", "EndDate": "10", "StartTime": "10:30", "EndTime": "11:00"},	{"StartMonth": "09", "StartDate": "01", "EndMonth": "09", "EndDate": "01", "StartTime": "22:30", "EndTime": "23:00"}, {"StartMonth": "08", "StartDate": "31", "EndMonth": "08", "EndDate": "31", "StartTime": "07:30", "EndTime": "08:00"}],
 		}		
 	},
 ]

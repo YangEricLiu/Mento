@@ -45,32 +45,32 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorkday.PrepareToAddWorkdayCalendar();
             TimeManager.ShortPause();
 
-            TimeSettingsWorkday.FillInName(testData.InputData.Name);
+            TimeSettingsWorkday.FillInName(testData.InputData.CommonName);
 
             //Click '+' icon each time when add a special date record
             //Amy's note: due to the order of dynamic element will be different if click the '+' icon after the first record has been input. That is why click + icon multiple times continuaslly here..        
-            for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
-            {
-                TimeSettingsWorkday.ClickAddSpecialDateButton();
-                TimeManager.ShortPause();
-            }
+            //for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
+            //{
+            //    TimeSettingsWorkday.ClickAddSpecialDateButton();
+            //    TimeManager.ShortPause();
+            //}
 
             //Input record(s) based on the input data file
-            for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
-            {
-                int inputDataArrayPosition = elementPosition - 1;
-                TimeSettingsWorkday.SelectSpecialDateType(testData.InputData.SpecialDateType[inputDataArrayPosition], elementPosition);
-                TimeSettingsWorkday.SelectStartMonth(testData.InputData.StartMonth[inputDataArrayPosition], elementPosition);
-                TimeSettingsWorkday.SelectStartDate(testData.InputData.StartDate[inputDataArrayPosition], elementPosition);
-                TimeSettingsWorkday.SelectEndMonth(testData.InputData.EndMonth[inputDataArrayPosition], elementPosition);
-                TimeSettingsWorkday.SelectEndDate(testData.InputData.EndDate[inputDataArrayPosition], elementPosition);
-            }
+            //for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
+            //{
+            //    int inputDataArrayPosition = elementPosition - 1;
+            //    TimeSettingsWorkday.SelectSpecialDateType(testData.InputData.SpecialDateType[inputDataArrayPosition], elementPosition);
+            //    TimeSettingsWorkday.SelectStartMonth(testData.InputData.StartMonth[inputDataArrayPosition], elementPosition);
+            //    TimeSettingsWorkday.SelectStartDate(testData.InputData.StartDate[inputDataArrayPosition], elementPosition);
+            //    TimeSettingsWorkday.SelectEndMonth(testData.InputData.EndMonth[inputDataArrayPosition], elementPosition);
+            //    TimeSettingsWorkday.SelectEndDate(testData.InputData.EndDate[inputDataArrayPosition], elementPosition);
+            //}
 
             TimeSettingsWorkday.ClickSaveButton();
             TimeManager.MediumPause();
 
             //Verify the name
-            Assert.AreEqual(testData.InputData.Name, TimeSettingsWorkday.GetNameValue());
+            Assert.AreEqual(testData.InputData.CommonName, TimeSettingsWorkday.GetNameValue());
 
             //Verify the label text
             Assert.IsTrue(TimeSettingsWorkday.IsWorkdayCalendarTextCorrect(testData.ExpectedData.LabelText));

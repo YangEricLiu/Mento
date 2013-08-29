@@ -2,14 +2,27 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"价格AfterModify名称",	
-			"PlainPrice":"0.8",	
-			"PeakPrice":"1.12",	
-			"ValleyPrice":"0.5",
+			"CommonName":"价格未被引用ForModifyValid",
 		},
 		"ExpectedData":
 		{
-		    
+		    "CommonName":"价格未被引用AfterModifyValid",	
+			"PlainPrice":"99.99",	
+			"PeakPrice":"100",	
+			"ValleyPrice":"20",
+		}		
+	},
+	{
+		"InputData":
+		{	
+			"CommonName":"价格已被引用ForModifyValid",
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"价格已被引用AfterModifyValid",	
+			"PlainPrice":"99.99",	
+			"PeakPrice":"100",	
+			"ValleyPrice":"20",
 		}		
 	},
 ]

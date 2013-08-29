@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"昼夜时间ForModifyTimeRange",							
+		},
+		"ExpectedData":
+		{
+		    "TimeRange":[{"StartTime": "08:00", "EndTime": "08:30"}, {"StartTime": "23:30", "EndTime": "24:00"}, {"StartTime": "21:00", "EndTime": "21:30"}, {"StartTime": "12:30", "EndTime": "13:00"}, {"StartTime": "11:30", "EndTime": "12:30"}],
+		}		
+	},
+]

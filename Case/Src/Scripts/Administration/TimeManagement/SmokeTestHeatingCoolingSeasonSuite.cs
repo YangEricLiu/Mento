@@ -45,49 +45,49 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsHeatingCoolingSeason.PrepareToAddHeatingCoolingSeasonCalendar();
             TimeManager.ShortPause();
 
-            TimeSettingsHeatingCoolingSeason.FillInName(testData.InputData.Name);
+            TimeSettingsHeatingCoolingSeason.FillInName(testData.InputData.CommonName);
 
             //Click '+' button if more than one warm record need to be entered
             //Amy's note: due to the order of dynamic element will be different if click the '+' icon after the first record has been input. That is why click + icon multiple times continuaslly here..       
-            for (int elementPosition = 1; elementPosition < testData.InputData.WarmRecordNumber; elementPosition++)
+            for (int elementPosition = 1; elementPosition < testData.InputData.WarmRange.Length; elementPosition++)
             {
                 TimeSettingsHeatingCoolingSeason.ClickAddMoreWarmRangesButton();
                 TimeManager.ShortPause();
             }
 
             //Input warm record(s) based on the input data file
-            for (int elementPosition = 1; elementPosition <= testData.InputData.WarmRecordNumber; elementPosition++)
+            for (int elementPosition = 1; elementPosition <= testData.InputData.WarmRange.Length; elementPosition++)
             {
                 int inputDataArrayPosition = elementPosition - 1;
-                TimeSettingsHeatingCoolingSeason.SelectWarmStartMonth(testData.InputData.WarmStartMonth[inputDataArrayPosition], elementPosition);
-                TimeSettingsHeatingCoolingSeason.SelectWarmStartDate(testData.InputData.WarmStartDate[inputDataArrayPosition], elementPosition);
-                TimeSettingsHeatingCoolingSeason.SelectWarmEndMonth(testData.InputData.WarmEndMonth[inputDataArrayPosition], elementPosition);
-                TimeSettingsHeatingCoolingSeason.SelectWarmEndDate(testData.InputData.WarmEndDate[inputDataArrayPosition], elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectWarmStartMonth(testData.InputData.WarmRange[inputDataArrayPosition].StartMonth, elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectWarmStartDate(testData.InputData.WarmRange[inputDataArrayPosition].StartDate, elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectWarmEndMonth(testData.InputData.WarmRange[inputDataArrayPosition].EndMonth, elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectWarmEndDate(testData.InputData.WarmRange[inputDataArrayPosition].EndDate, elementPosition);
             }
 
             //Click '+' button if more than one cold record need to be entered
             //Amy's note: due to the order of dynamic element will be different if click the '+' icon after the first record has been input. That is why click + icon multiple times continuaslly here..       
-            for (int elementPosition = 1; elementPosition < testData.InputData.ColdRecordNumber; elementPosition++)
+            for (int elementPosition = 1; elementPosition < testData.InputData.ColdRange.Length; elementPosition++)
             {
                 TimeSettingsHeatingCoolingSeason.ClickAddMoreColdRangesButton();
                 TimeManager.ShortPause();
             }
 
             //Input cold record(s) based on the input data file
-            for (int elementPosition = 1; elementPosition <= testData.InputData.ColdRecordNumber; elementPosition++)
+            for (int elementPosition = 1; elementPosition <= testData.InputData.ColdRange.Length; elementPosition++)
             {                
                 int inputDataArrayPosition = elementPosition - 1;
-                TimeSettingsHeatingCoolingSeason.SelectColdStartMonth(testData.InputData.ColdStartMonth[inputDataArrayPosition], elementPosition);
-                TimeSettingsHeatingCoolingSeason.SelectColdStartDate(testData.InputData.ColdStartDate[inputDataArrayPosition], elementPosition);
-                TimeSettingsHeatingCoolingSeason.SelectColdEndMonth(testData.InputData.ColdEndMonth[inputDataArrayPosition], elementPosition);
-                TimeSettingsHeatingCoolingSeason.SelectColdEndDate(testData.InputData.ColdEndDate[inputDataArrayPosition], elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectColdStartMonth(testData.InputData.ColdRange[inputDataArrayPosition].StartMonth, elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectColdStartDate(testData.InputData.ColdRange[inputDataArrayPosition].StartDate, elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectColdEndMonth(testData.InputData.ColdRange[inputDataArrayPosition].EndMonth, elementPosition);
+                TimeSettingsHeatingCoolingSeason.SelectColdEndDate(testData.InputData.ColdRange[inputDataArrayPosition].EndDate, elementPosition);
             }
 
             TimeSettingsHeatingCoolingSeason.ClickSaveButton();
             TimeManager.MediumPause();
 
             //Verify the name
-            Assert.AreEqual(testData.InputData.Name, TimeSettingsHeatingCoolingSeason.GetNameValue());
+            Assert.AreEqual(testData.InputData.CommonName, TimeSettingsHeatingCoolingSeason.GetNameValue());
 
             //Verify the warm record(s)
             //for (int elementPosition = 1; elementPosition <= testData.InputData.WarmRecordNumber; elementPosition++)

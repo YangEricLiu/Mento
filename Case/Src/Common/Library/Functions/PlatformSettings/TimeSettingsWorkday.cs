@@ -21,24 +21,28 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
-        //private static Grid PTagList = JazzGrid.PTagSettingsPTagList;
-
+        #region Controls
+        private static Grid CalendarsList = JazzGrid.CalendarsList;
         private static Button CreateWorkdayCalendarButton = JazzButton.WorkdayCalendarCreateButton;
-
         private static Button ModifyButton = JazzButton.WorkdayCalendarModifyButton;
         private static Button SaveButton = JazzButton.WorkdayCalendarSaveButton;
         private static Button CancelButton = JazzButton.WorkdayCalendarCancelButton;
         private static Button DeleteButton = JazzButton.WorkdayCalendarDeleteButton;
-
-        private static TextField NameTextField = JazzTextField.WorkdayCalendarNameTextField;
-        private static Button AddSpecialDateButton = JazzButton.WorkdayCalendarAddSpecialDatesButton;
+        private static Button AddSpecialDateButton = JazzButton.WorkdayCalendarAddSpecialDatesButton;        
+        
         private static ComboBox SpecialDateTypeComboBox = JazzComboBox.WorkdayCalendarSpecialDateTypeComboBox;
         private static ComboBox StartMonthComboBox = JazzComboBox.WorkdayCalendarStartMonthComboBox;
         private static ComboBox StartDateComboBox = JazzComboBox.WorkdayCalendarStartDateComboBox;
         private static ComboBox EndMonthComboBox = JazzComboBox.WorkdayCalendarEndMonthComboBox;
         private static ComboBox EndDateComboBox = JazzComboBox.WorkdayCalendarEndDateComboBox;
-        private static Label WorkdayCalendarLabel = JazzLabel.PlatformWorkdayCalendarLabel;
 
+        private static Label WorkdayCalendarLabel = JazzLabel.PlatformWorkdayCalendarLabel;
+        private static TextField NameTextField = JazzTextField.WorkdayCalendarNameTextField;
+        private static Container CalendarItemsContainer = JazzContainer.CalendarItemsContainer;
+
+        #endregion
+
+        #region common action
         /// <summary>
         /// Navigate to Workday Calendar Setting Page
         /// </summary>
@@ -59,17 +63,80 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             CreateWorkdayCalendarButton.Click();
         }
-        
+
         /// <summary>
-        /// Click "add special dates" icon
+        /// Select a calendar
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void ClickAddSpecialDateButton()
+        public void SelectCalendar(string calendarName)
         {
-            AddSpecialDateButton.Click();             
+            CalendarsList.FocusOnRow(1, calendarName, false);
         }
-        
+
+        /// <summary>
+        /// Click save button
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickSaveButton()
+        {
+            SaveButton.Click();
+        }
+
+        /// <summary>
+        /// Click cancel button
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickCancelButton()
+        {
+            CancelButton.Click();
+        }
+
+        /// <summary>
+        /// Click modify button
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickModifyButton()
+        {
+            ModifyButton.Click();
+        }
+
+        /// <summary>
+        /// Click delete button
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickDeleteButton()
+        {
+            DeleteButton.Click();
+        }
+
+        public void ClickMsgBoxConfirmButton()
+        {
+            JazzMessageBox.MessageBox.Confirm();
+        }
+
+        public void ClickMsgBoxCancelButton()
+        {
+            JazzMessageBox.MessageBox.Cancel();
+        }
+
+        public void ClickMsgBoxCloseButton()
+        {
+            JazzMessageBox.MessageBox.Close();
+        }
+
+        public void ClickMsgBoxOKButton()
+        {
+            JazzMessageBox.MessageBox.OK();
+        }
+
+        #endregion
+
+        #region item operation
         /// <summary>
         /// Fill in name field
         /// </summary>
@@ -78,6 +145,39 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInName(string name)
         {
             NameTextField.Fill(name);
+        }
+
+        /// <summary>
+        /// Click "add special dates" icon
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickAddSpecialDateButton()
+        {
+            AddSpecialDateButton.Click();
+        }
+
+        public void AddSpecialDates(WorkdayCalendarData testData)
+        {
+            //Click '+' icon each time when add a special date record
+            //Amy's note: due to the order of dynamic element will be different if click the '+' icon after the first record has been input. That is why click + icon multiple times continuaslly here..        
+            for (int elementPosition = 1; elementPosition <= testData.InputData.SpecialDate.Length; elementPosition++)
+            {
+                ClickAddSpecialDateButton();
+                TimeManager.ShortPause();
+            }
+
+            //Input record(s) based on the input data file
+            for (int elementPosition = 1; elementPosition <= testData.InputData.SpecialDate.Length; elementPosition++)
+            {
+                int inputDataArrayPosition = elementPosition - 1;
+                SelectSpecialDateType(testData.InputData.SpecialDate[inputDataArrayPosition].Type, elementPosition);
+                SelectStartMonth(testData.InputData.SpecialDate[inputDataArrayPosition].StartMonth, elementPosition);
+                SelectStartDate(testData.InputData.SpecialDate[inputDataArrayPosition].StartDate, elementPosition);
+                SelectEndMonth(testData.InputData.SpecialDate[inputDataArrayPosition].EndMonth, elementPosition);
+                SelectEndDate(testData.InputData.SpecialDate[inputDataArrayPosition].EndDate, elementPosition);
+                TimeManager.ShortPause();
+            }
         }
 
         /// <summary>
@@ -135,16 +235,113 @@ namespace Mento.ScriptCommon.Library.Functions
             OneEndDate.SelectItem(date);
         }
 
-        /// <summary>
-        /// Click save button
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public void ClickSaveButton()
+        public void ClickDeleteRangeItemButton(int num)
         {
-            SaveButton.Click();
+            Button OneDeleteRangeIcon = GetOneDeleteRangeItemButton(num);
+            OneDeleteRangeIcon.Click();
+        }        
+
+        #endregion
+
+        #region verification
+        public Boolean IsWorkdayCalendarTextCorrect(string[] texts)
+        {
+            return WorkdayCalendarLabel.IsLabelTextsExisted(texts);
         }
-       
+
+        public Boolean IsSaveButtonDisplayed()
+        {
+            return SaveButton.IsDisplayed();
+        }
+
+        public Boolean IsCancelButtonDisplayed()
+        {
+            return CancelButton.IsDisplayed();
+        }
+
+        public Boolean IsModifyButtonDisplayed()
+        {
+            return ModifyButton.IsDisplayed();
+        }
+
+        public Boolean IsDeleteButtonDisplayed()
+        {
+            return DeleteButton.IsDisplayed();
+        }
+
+        public Boolean IsCalendarExist(string calendarName)
+        {
+            return CalendarsList.IsRowExist(1, calendarName);
+        }
+
+        public Boolean IsRangeItemDeleteButtonDisplayed(int num)
+        {
+            Button OneDeleteRangeIcon = GetOneDeleteRangeItemButton(num);
+            return OneDeleteRangeIcon.IsDisplayed();
+        }
+
+        public Boolean IsNameInvalidMsgCorrect(WorkdayCalendarExpectedData output)
+        {
+            if (output.CommonName != null)
+            {
+                return NameTextField.GetInvalidTips().Contains(output.CommonName);
+            }
+            else
+                return true;
+        }
+
+        public Boolean IsTypeInvalidMsgCorrect(WorkdayCalendarExpectedData output, int position)
+        {
+            int arrayPosition = position - 1;
+            ComboBox OneSpecialDateTypeComboBox = GetOneSpecialDateTypeComboBox(position);
+            if (output.SpecialDate != null)
+            {
+                return OneSpecialDateTypeComboBox.GetInvalidTips().Contains(output.SpecialDate[arrayPosition].Type);
+            }
+            else
+                return true;            
+        }
+
+        public Boolean IsRangeInvalidMsgCorrect(WorkdayCalendarExpectedData output, int position)
+        {
+            int arrayPosition = position - 1;
+            ComboBox OneEndMonthComboBox = GetOneEndMonthComboBox(position);
+            if (output.SpecialDate != null)
+            {
+                return OneEndMonthComboBox.GetInvalidTips().Contains(output.SpecialDate[arrayPosition].EndMonth);
+            }
+            else
+                return true;
+        }
+
+        /// <summary>
+        /// Judge whether the pop message correct
+        /// </summary>
+        /// <param name="output">TOUBasicTariffExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsPopMsgCorrect(WorkdayCalendarExpectedData output)
+        {
+            if (output.PopMessage != null)
+            {
+                return GetMessageText().Contains(output.PopMessage);
+            }
+            else
+                return true;
+        }
+
+        #endregion
+
+        #region Get value
+        /// <summary>
+        /// Get message in the pop up message box. 
+        /// </summary>
+        /// <returns></returns>
+        public string GetMessageText()
+        {
+            JazzMessageBox.LoadingMask.WaitLoading();
+            return JazzMessageBox.MessageBox.GetMessage();
+        }
+
         /// <summary>
         /// Get the Name actual value
         /// </summary>
@@ -152,6 +349,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetNameValue()
         {
             return NameTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get the number of the Date ranges
+        /// </summary>
+        /// <returns></returns>
+        public int GetSpecialDateItemsNumber()
+        {
+            return CalendarItemsContainer.GetElementNumber();
         }
 
         /// <summary>
@@ -212,12 +418,9 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetWorkdayLabelValue()
         {
             return WorkdayCalendarLabel.GetLabelTextValue();
-        }
+        }      
 
-        public Boolean IsWorkdayCalendarTextCorrect(string[] texts)
-        {
-            return WorkdayCalendarLabel.IsLabelTextsExisted(texts);
-        }
+        #endregion
 
         #region private method
         private ComboBox GetOneSpecialDateTypeComboBox(int positionIndex)
@@ -243,6 +446,11 @@ namespace Mento.ScriptCommon.Library.Functions
         private ComboBox GetOneEndDateComboBox(int positionIndex)
         {
             return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxWorkdayCalendarEndDate, positionIndex);
+        }
+
+        private Button GetOneDeleteRangeItemButton(int positionIndex)
+        {
+            return JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWorkdayDeleteRangeItem, positionIndex);
         }
 
         #endregion

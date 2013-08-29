@@ -2,12 +2,25 @@
 	{
 		"InputData":
 		{	
-			"Price":"6",	
-			"PulsePeakRange":[{"StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15", "StartTime": "08:30", "EndTime": "12:00"}, {"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31", "StartTime": "13:00", "EndTime": "13:30"}],
+			"CommonName":"价格未被引用ForAddValidPulsePeak1",
+			"Price":"123456789.12",	
+			"PulsePeakRange":[{"StartMonth": "01", "StartDate": "31", "EndMonth": "06", "EndDate": "30", "StartTime": "00:00", "EndTime": "00:30"}, {"StartMonth": "01", "StartDate": "31", "EndMonth": "06", "EndDate": "30", "StartTime": "00:30", "EndTime": "22:00"}, {"StartMonth": "01", "StartDate": "01", "EndMonth": "01", "EndDate": "30", "StartTime": "00:00", "EndTime": "00:30"}, {"StartMonth": "02", "StartDate": "28", "EndMonth": "02", "EndDate": "28", "StartTime": "23:00", "EndTime": "24:00"}],
 		},
 		"ExpectedData":
 		{
-			
+			"PulsePeakRange":[{"StartMonth": "01", "StartDate": "31", "EndMonth": "06", "EndDate": "30", "StartTime": "00:00", "EndTime": "00:30"}, {"StartMonth": "01", "StartDate": "01", "EndMonth": "01", "EndDate": "30", "StartTime": "00:00", "EndTime": "00:30"}, {"StartMonth": "02", "StartDate": "28", "EndMonth": "02", "EndDate": "28", "StartTime": "23:00", "EndTime": "24:00"}],
 		}
-	}
+	},
+	{
+		"InputData":
+		{	
+			"CommonName":"价格已被引用ForAddValidPulsePeak2",
+			"Price":"123456789.12",	
+			"PulsePeakRange":[{"StartMonth": "01", "StartDate": "31", "EndMonth": "06", "EndDate": "30", "StartTime": "00:00", "EndTime": "00:30"}, {"StartMonth": "01", "StartDate": "31", "EndMonth": "06", "EndDate": "30", "StartTime": "00:30", "EndTime": "22:00"}, {"StartMonth": "01", "StartDate": "01", "EndMonth": "01", "EndDate": "30", "StartTime": "00:00", "EndTime": "00:30"}, {"StartMonth": "02", "StartDate": "28", "EndMonth": "02", "EndDate": "28", "StartTime": "23:00", "EndTime": "24:00"}],
+		},
+		"ExpectedData":
+		{
+			"PulsePeakRange":[{"StartMonth": "01", "StartDate": "31", "EndMonth": "06", "EndDate": "30", "StartTime": "00:00", "EndTime": "00:30"}, {"StartMonth": "01", "StartDate": "01", "EndMonth": "01", "EndDate": "30", "StartTime": "00:00", "EndTime": "00:30"}, {"StartMonth": "02", "StartDate": "28", "EndMonth": "02", "EndDate": "28", "StartTime": "23:00", "EndTime": "24:00"}],
+		}
+	},
 ]

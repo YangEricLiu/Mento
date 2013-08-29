@@ -323,6 +323,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button WorkdayCalendarCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCalendarCancel);
         public static Button WorkdayCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCalendarDelete);
         public static Button WorkdayCalendarAddSpecialDatesButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayCalendarAddSpecialDates);
+        public static Button WorkdayCalendarDeleteRangeItemButton = GetControl<Button>(JazzControlLocatorKey.ButtonWorkdayDeleteRangeItem);
         #endregion
 
         #region Worktime buttons

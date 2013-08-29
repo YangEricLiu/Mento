@@ -43,51 +43,135 @@ namespace Mento.Script.Administration.TOU
         [MultipleTestDataSource(typeof(TOUPulsePeakTariffData[]), typeof(TOUPulsePeakAddInvalidSuite), "TC-J1-FVT-TOUTariffSettingPulse-Add-001")]
         public void AddPulsePeakCancelled(TOUPulsePeakTariffData testData)
         {
-            TOUPulsePeakTariffSettings.FocusOnTOUTariff("价格策略1");
+            //Select a TOU which doesn't set pulse peak yet, and go to PulsePeak property tab.
+            TOUPulsePeakTariffSettings.FocusOnTOUTariff(testData.InputData.CommonName);
             TimeManager.ShortPause();
             TOUPulsePeakTariffSettings.SwitchToPulsePeakPropertyTab();
             TimeManager.ShortPause();
+
+            //Click '+ 峰值季节电价' button
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCreateButton();
-            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyPlusIcon();
+            //Click Cancel button directly.
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCancelButton();
             TimeManager.ShortPause();
 
-            TOUPulsePeakTariffSettings.FillInPulsePeakPropertyPriceValue(testData.InputData.Price);
-
-            //Click '添加峰值季节时间' link and also Fill in the ranges
-            TOUPulsePeakTariffSettings.AddPulsePeakRanges(testData);
-
+            //Click '+ 峰值季节电价' button
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCreateButton();
+            //Click Save button directly.
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertySaveButton();
             TimeManager.ShortPause();
 
-            //Verify the price
-            Assert.AreEqual(testData.InputData.Price, TOUPulsePeakTariffSettings.GetPulsePeakPropertyPriceValue());
+            //Click '+ 峰值季节电价' button
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCreateButton();
+            //Click '+' icon
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyPlusIcon();
+            TimeManager.ShortPause();
+            //Input valid price and valid range
+            TOUPulsePeakTariffSettings.FillInPulsePeakPropertyPriceValue(testData.InputData.Price);
+            TOUPulsePeakTariffSettings.AddPulsePeakRanges(testData);
+            //Click Cancel button.
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCancelButton();
+            TimeManager.ShortPause();
+
+            //Click '+ 峰值季节电价' button
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCreateButton();
+            //Click '+' icon
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyPlusIcon();
+            TimeManager.ShortPause();
+            //Input valid price and valid range
+            TOUPulsePeakTariffSettings.FillInPulsePeakPropertyPriceValue(testData.InputData.Price);
+            TOUPulsePeakTariffSettings.AddPulsePeakRanges(testData);
+            //Click 'X' icon near '峰值季节电价(元/千瓦时)' field;
+            TOUPulsePeakTariffSettings.ClickDeletePulsePeakWholeRangeButton();
+            //Click '+' icon and Input valid price and valid range again
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyPlusIcon();
+            TimeManager.ShortPause();
+            TOUPulsePeakTariffSettings.FillInPulsePeakPropertyPriceValue(testData.InputData.Price);
+            TOUPulsePeakTariffSettings.AddPulsePeakRanges(testData);
+            //Click 'X' icon near '峰值季节电价(元/千瓦时)' field again;
+            TOUPulsePeakTariffSettings.ClickDeletePulsePeakWholeRangeButton();
+            //Click Save button.
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertySaveButton();
+            TimeManager.ShortPause();
+            //Verify that '+峰值季节电价' button is displayed and 'Modify' button is NOT displayed.
+            Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakPropertyCreateButtonDisplayed());
+            Assert.IsFalse(TOUPulsePeakTariffSettings.IsPulsePeakPropertyModifyButtonDisplayed());
         }
         #endregion
 
-        #region TestCase2 AddInvalidPulsePeak
+        #region TestCase2 AddWithRequiredFieldsEmpty
         [Test]
         [ManualCaseID("TC-J1-FVT-TOUTariffSettingPulse-Add-002")]
         [CaseID("TC-J1-FVT-TOUTariffSettingPulse-Add-002")]
         [Priority("2")]
         [MultipleTestDataSource(typeof(TOUPulsePeakTariffData[]), typeof(TOUPulsePeakAddInvalidSuite), "TC-J1-FVT-TOUTariffSettingPulse-Add-002")]
-        public void AddInvalidPulsePeak(TOUPulsePeakTariffData testData)
+        public void AddWithRequiredFieldsEmpty(TOUPulsePeakTariffData testData)
         {
-            TOUPulsePeakTariffSettings.FocusOnTOUTariff("价格策略1");
+            //Select a TOU which doesn't set pulse peak yet, and go to PulsePeak property tab.
+            TOUPulsePeakTariffSettings.FocusOnTOUTariff(testData.InputData.CommonName);
             TimeManager.ShortPause();
             TOUPulsePeakTariffSettings.SwitchToPulsePeakPropertyTab();
             TimeManager.ShortPause();
+
+            //Click '+ 峰值季节电价' button
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCreateButton();
+            //Click '+' icon
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertyPlusIcon();
             TimeManager.ShortPause();
+            //Without any input, click Save button directly.
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertySaveButton();
+            TimeManager.ShortPause();
+            
+            //Verify that error messages are displayed under required fields.
+            Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakPriceInvalid());
+            Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakRangeInvalidMsgCorrect(testData.ExpectedData, 1));
+        }
+        #endregion
 
-            TOUPulsePeakTariffSettings.FillInPulsePeakPropertyPriceValue(testData.InputData.Price);
+        #region TestCase3 AddWithConflictedRanges
+        [Test]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingPulse-Add-003")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingPulse-Add-003")]
+        [Priority("2")]
+        [MultipleTestDataSource(typeof(TOUPulsePeakTariffData[]), typeof(TOUPulsePeakAddInvalidSuite), "TC-J1-FVT-TOUTariffSettingPulse-Add-003")]
+        public void AddWithConflictedRanges(TOUPulsePeakTariffData testData)
+        {
+            //Select a TOU which doesn't set pulse peak yet, and go to PulsePeak property tab.
+            TOUPulsePeakTariffSettings.FocusOnTOUTariff(testData.InputData.CommonName);
+            TimeManager.ShortPause();
+            TOUPulsePeakTariffSettings.SwitchToPulsePeakPropertyTab();
+            TimeManager.ShortPause();
 
-            //Click '添加峰值季节时间' link and also Fill in the ranges
+            //Click '+ 峰值季节电价' button
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCreateButton();
+            //Click '+' icon
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyPlusIcon();
+            TimeManager.ShortPause();
+            //Input valid price
+            TOUPulsePeakTariffSettings.FillInPulsePeakPropertyPriceValue(testData.InputData.Price);            
+            //Click '添加峰值季节时间' link and Input invalid overlapped time ranges
             TOUPulsePeakTariffSettings.AddPulsePeakRanges(testData);
 
+            //Click Save button.
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertySaveButton();
             TimeManager.ShortPause();
 
+            //Verify that error messages are displayed under overlapped time ranges.
+            Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakRangeInvalidMsgCorrect(testData.ExpectedData, 1));
+            Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakRangeInvalidMsgCorrect(testData.ExpectedData, 2));
+
+            //Revise one of the range, so that no overlap, e.g. change starttime of range2 to be same as endtime of range1, and click Save.
+            TOUPulsePeakTariffSettings.SelectPulsePeakPropertyStartTime(testData.InputData.PulsePeakRange[0].EndTime, 2);
+
+            //Click Save button.
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertySaveButton();
+            TimeManager.LongPause();
+
+            //Verify saved successfull and 'Modify' button is displayed.
+            Assert.IsFalse(TOUPulsePeakTariffSettings.IsPulsePeakPropertySaveButtonDisplayed());
+            Assert.IsFalse(TOUPulsePeakTariffSettings.IsPulsePeakPropertyCancelButtonDisplayed());
+            Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakPropertyModifyButtonDisplayed());
+            Assert.IsFalse(TOUPulsePeakTariffSettings.IsPulsePeakPropertyCreateButtonDisplayed());
         }
         #endregion
     }

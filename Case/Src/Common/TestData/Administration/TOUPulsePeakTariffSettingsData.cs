@@ -13,11 +13,13 @@ namespace Mento.ScriptCommon.TestData.Administration
     }
     public class TOUPulsePeakTariffInputData : InputTestDataBase
     {
+        public string CommonName { get; set; }
         public string Price { get; set; }
         public TimeRange[] PulsePeakRange { get; set; }
 
-        public TOUPulsePeakTariffInputData(string price, TimeRange[] PulsePeakRange)
+        public TOUPulsePeakTariffInputData(string CommonName, string price, TimeRange[] PulsePeakRange)
         {
+            this.CommonName = CommonName;
             this.Price = price;
             this.PulsePeakRange = PulsePeakRange;
         }
@@ -25,11 +27,13 @@ namespace Mento.ScriptCommon.TestData.Administration
 
     public class TOUPulsePeakTariffExpectedData : ExpectedTestDataBase
     {
+        public string CommonName { get; set; }
         public string Price { get; set; }
         public TimeRange[] PulsePeakRange { get; set; }
 
-        public TOUPulsePeakTariffExpectedData(string price, TimeRange[] PulsePeakRange)
+        public TOUPulsePeakTariffExpectedData(string CommonName, string price, TimeRange[] PulsePeakRange)
         {
+            this.CommonName = CommonName;
             this.Price = price;
             this.PulsePeakRange = PulsePeakRange;
         }

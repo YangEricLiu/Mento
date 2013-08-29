@@ -52,7 +52,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 
         public void FocusOnTOUTariff(string touTariffName)
         {
-            TOUTariffsList.FocusOnRow(1, touTariffName);
+            TOUTariffsList.FocusOnRow(1, touTariffName, false);
         }
 
         public void SwitchToPulsePeakPropertyTab()
@@ -65,6 +65,11 @@ namespace Mento.ScriptCommon.Library.Functions
             PulsePeakPropertyCreateButton.Click();
         }
 
+        public Boolean IsPulsePeakPropertyCreateButtonDisplayed()
+        {
+            return PulsePeakPropertyCreateButton.IsDisplayed();
+        }
+
         public void ClickPulsePeakPropertyPlusIcon()
         {
             PulsePeakPropertyPlusIconButton.Click();
@@ -74,16 +79,38 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             PulsePeakPropertyModifyButton.Click();
         }
+
+        public Boolean IsPulsePeakPropertyModifyButtonDisplayed()
+        {
+            return PulsePeakPropertyModifyButton.IsDisplayed();
+        }
         
         public void ClickPulsePeakPropertySaveButton()
         {
             PulsePeakPropertySaveButton.Click();
         }
 
+        public Boolean IsPulsePeakPropertySaveButtonDisplayed()
+        {
+            return PulsePeakPropertySaveButton.IsDisplayed();
+        }
+
         public void ClickPulsePeakPropertyCancelButton()
         {
             PulsePeakPropertyCancelButton.Click();
-        }        
+        }
+
+        public Boolean IsPulsePeakPropertyCancelButtonDisplayed()
+        {
+            return PulsePeakPropertyCancelButton.IsDisplayed();
+        }
+
+        public Boolean IsPulsePeakPropertyRangeItemDeleteButtonDisplayed(int num)
+        {
+            Button OneDeleteRangeIcon = GetOneDeletePulsePeakRangeItemButton(num);
+            return OneDeleteRangeIcon.IsDisplayed();
+        }
+
         #endregion
 
         #region item operation
@@ -167,6 +194,43 @@ namespace Mento.ScriptCommon.Library.Functions
         }
         #endregion
 
+        #region verification
+        /// <summary>
+        /// Judge whether the Pulse Peak Price textfield is invalid
+        /// </summary>
+        /// <returns>True if the Pulse Peak Price is invalid, false if not</returns>
+        public Boolean IsPulsePeakPriceInvalid()
+        {
+            return PulsePeakPropertyPriceValueTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Pulse Peak Price field is correct
+        /// </summary>
+        /// <param name="output">TOUPulse PeakTariffExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsPulsePeakPriceInvalidMsgCorrect(TOUPulsePeakTariffExpectedData output)
+        {
+            if (output.Price != null)
+            {
+                return PulsePeakPropertyPriceValueTextField.GetInvalidTipsForNumberField().Contains(output.Price);
+            }
+            else
+                return true;
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of pulse peak range is correct
+        /// </summary>
+        /// <param name="output">TOUPulsePeakTariffExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsPulsePeakRangeInvalidMsgCorrect(TOUPulsePeakTariffExpectedData output, int position)
+        {
+            int arrayPosition = position - 1;
+            ComboBox OnePulsePeakPropertyStartTimeComboBox = GetOnePulsePeakPropertyStartTimeComboBox(position);
+            return OnePulsePeakPropertyStartTimeComboBox.GetInvalidTips().Contains(output.PulsePeakRange[arrayPosition].StartTime);
+        }
+        #endregion
         #region Get value
         public string GetPulsePeakPropertyPriceValue()
         {

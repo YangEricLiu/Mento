@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.TestData;
 using Mento.Utility;
+using Mento.ScriptCommon.TestData.Common;
 
 namespace Mento.ScriptCommon.TestData.Administration
 {
@@ -12,61 +13,31 @@ namespace Mento.ScriptCommon.TestData.Administration
     }
     public class HeatingCoolingSeasonCalendarInputData : InputTestDataBase
     {
-        public string Name { get; set; }
-        public int WarmRecordNumber { get; set; }
-        public int ColdRecordNumber { get; set; }
-        public string[] WarmStartMonth { get; set; }
-        public string[] WarmStartDate { get; set; }
-        public string[] WarmEndMonth { get; set; }
-        public string[] WarmEndDate { get; set; }
-        public string[] ColdStartMonth { get; set; }
-        public string[] ColdStartDate { get; set; }
-        public string[] ColdEndMonth { get; set; }
-        public string[] ColdEndDate { get; set; }
+        public string CommonName { get; set; }
+        public TimeRange[] WarmRange { get; set; }
+        public TimeRange[] ColdRange { get; set; }
 
-        public HeatingCoolingSeasonCalendarInputData(string name, int warmRecordNumber, int coldRecordNumber, string[] warmStartMonth, string[] warmStartDate, string[] warmEndMonth, string[] warmEndDate, string[] coldStartMonth, string[] coldStartDate, string[] coldEndMonth, string[] coldEndDate)
+        public HeatingCoolingSeasonCalendarInputData(string CommonName, TimeRange[] WarmRange, TimeRange[] ColdRange)
         {
-            this.Name = name;
-            this.WarmRecordNumber = warmRecordNumber;
-            this.ColdRecordNumber = coldRecordNumber;
-            this.WarmStartMonth = warmStartMonth;
-            this.WarmStartDate = warmStartDate;
-            this.WarmEndMonth = warmEndMonth;
-            this.WarmEndDate = warmEndDate;
-            this.ColdStartMonth = coldStartMonth;
-            this.ColdStartDate = coldStartDate;
-            this.ColdEndMonth = coldEndMonth;
-            this.ColdEndDate = coldEndDate;
+            this.CommonName = CommonName;
+            this.WarmRange = WarmRange;
+            this.ColdRange = ColdRange;
         }
     }
 
     public class HeatingCoolingSeasonCalendarExpectedData : ExpectedTestDataBase
     {
-        public string Name { get; set; }
-        public int WarmRecordNumber { get; set; }
-        public int ColdRecordNumber { get; set; }
-        public string[] WarmStartMonth { get; set; }
-        public string[] WarmStartDate { get; set; }
-        public string[] WarmEndMonth { get; set; }
-        public string[] WarmEndDate { get; set; }
-        public string[] ColdStartMonth { get; set; }
-        public string[] ColdStartDate { get; set; }
-        public string[] ColdEndMonth { get; set; }
-        public string[] ColdEndDate { get; set; }
+        public string CommonName { get; set; }
+        public TimeRange[] WarmRange { get; set; }
+        public TimeRange[] ColdRange { get; set; }
+        public string PopMessage { get; set; }
 
-        public HeatingCoolingSeasonCalendarExpectedData(string name, int warmRecordNumber, int coldRecordNumber, string[] warmStartMonth, string[] warmStartDate, string[] warmEndMonth, string[] warmEndDate, string[] coldStartMonth, string[] coldStartDate, string[] coldEndMonth, string[] coldEndDate)
+        public HeatingCoolingSeasonCalendarExpectedData(string CommonName, TimeRange[] WarmRange, TimeRange[] ColdRange, string PopMessage)
         {
-            this.Name = name;
-            this.WarmRecordNumber = warmRecordNumber;
-            this.ColdRecordNumber = coldRecordNumber;
-            this.WarmStartMonth = warmStartMonth;
-            this.WarmStartDate = warmStartDate;
-            this.WarmEndMonth = warmEndMonth;
-            this.WarmEndDate = warmEndDate;
-            this.ColdStartMonth = coldStartMonth;
-            this.ColdStartDate = coldStartDate;
-            this.ColdEndMonth = coldEndMonth;
-            this.ColdEndDate = coldEndDate;
+            this.CommonName = CommonName;
+            this.WarmRange = WarmRange;
+            this.ColdRange = ColdRange;
+            this.PopMessage = PopMessage;
         }
     }
 }

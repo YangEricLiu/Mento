@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.TestData;
 using Mento.Utility;
+using Mento.ScriptCommon.TestData.Common;
 
 namespace Mento.ScriptCommon.TestData.Administration
 {
@@ -12,35 +13,29 @@ namespace Mento.ScriptCommon.TestData.Administration
     }
     public class WorkdayCalendarInputData : InputTestDataBase
     {
-        public string Name { get; set; }
-        public int RecordNumber { get; set; }
-        public string[] SpecialDateType { get; set; }
-        public string[] StartMonth { get; set; }
-        public string[] StartDate { get; set; }
-        public string[] EndMonth { get; set; }
-        public string[] EndDate { get; set; }
+        public string CommonName { get; set; }
+        public TimeRange[] SpecialDate { get; set; }
 
-        public WorkdayCalendarInputData(string name, int recordNumber, string[] specialDateType, string[] startMonth, string[] startDate, string[] endMonth, string[] endDate)
+        public WorkdayCalendarInputData(string CommonName, TimeRange[] SpecialDate)
         {
-            this.Name = name;
-            this.RecordNumber = recordNumber;
-            this.SpecialDateType = specialDateType;
-            this.StartMonth = startMonth;
-            this.StartDate = startDate;
-            this.EndMonth = endMonth;
-            this.EndDate = endDate;
+            this.CommonName = CommonName;
+            this.SpecialDate = SpecialDate;
         }
     }
 
     public class WorkdayCalendarExpectedData : ExpectedTestDataBase
     {
-        public string Name { get; set; }
+        public string CommonName { get; set; }
+        public TimeRange[] SpecialDate { get; set; }
         public string[] LabelText { get; set; }
+        public string PopMessage { get; set; }
 
-        public WorkdayCalendarExpectedData(string name, string[] labelText)
+        public WorkdayCalendarExpectedData(string CommonName, TimeRange[] SpecialDate, string[] labelText, string PopMessage)
         {
-            this.Name = name;
+            this.CommonName = CommonName;            
+            this.SpecialDate = SpecialDate;
             this.LabelText = labelText;
+            this.PopMessage = PopMessage;
         }
     }
 }

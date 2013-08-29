@@ -7,6 +7,8 @@ namespace Mento.ScriptCommon.TestData.Common
 {
     public class TimeRange
     {
+        //'Type' is used for workday calendar special date type.
+        public string Type { get; set; }
         public string StartMonth { get; set; }
         public string EndMonth { get; set; }
         public string StartDate { get; set; }

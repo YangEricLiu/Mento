@@ -2,11 +2,11 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"价格已被引用For删除",	
+			"CommonName":"价格已被引用ForDeleteFailed",	
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"价格策略已被引用，不可修改或删除",
+		    "PopMessage":"价格策略已被引用，不可删除",
 		}		
 	}
 ]

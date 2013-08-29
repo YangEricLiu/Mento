@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"工休日ForModifyTimeRanges",							
+		},
+		"ExpectedData":
+		{
+		    "SpecialDate":[{"Type": "非工作日", "StartMonth": "11", "StartDate": "29", "EndMonth": "11", "EndDate": "29"}, {"Type": "工作日", "StartMonth": "09", "StartDate": "30", "EndMonth": "09", "EndDate": "30"}, {"Type": "工作日", "StartMonth": "09", "StartDate": "01", "EndMonth": "09", "EndDate": "29"}, {"Type": "工作日", "StartMonth": "07", "StartDate": "31", "EndMonth": "07", "EndDate": "31"}, {"Type": "工作日", "StartMonth": "05", "StartDate": "30", "EndMonth": "05", "EndDate": "31"}],
+		}		
+	},
+]

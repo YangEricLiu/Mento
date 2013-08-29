@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"New",
+			"TimeRange":[{"StartTime": "08:00", "EndTime": "11:30"},{"StartTime": "13:30", "EndTime": "17:00"}],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"工作时间ForModifyCancelled",				
+		}		
+	},
+]

@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"工休日ForAddValid1",
+			"SpecialDate":[{"Type": "非工作日", "StartMonth": "01", "StartDate": "01", "EndMonth": "12", "EndDate": "31"}],
+		},
+		"ExpectedData":
+		{
+			"LabelText":["默认工作日：周一至周五"],
+		}
+	},	
+	{
+		"InputData":
+		{	
+			"CommonName":"工休日ForAddValid2",
+			"SpecialDate":[{"Type": "工作日", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "28"}, {"Type": "非工作日", "StartMonth": "09", "StartDate": "30", "EndMonth": "10", "EndDate": "07"}],
+		},
+		"ExpectedData":
+		{
+			"LabelText":["默认工作日：周一至周五"],
+		}
+	},	
+]

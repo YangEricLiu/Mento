@@ -1,0 +1,28 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"冷暖季For重名验证",
+			"WarmRange":[{"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}],		
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"该名称已存在",			
+			"WarmRange":[{"EndMonth": ""}],	
+			"ColdRange":[{"EndMonth": ""}],		
+		}		
+	},
+	{
+		"InputData":
+		{	
+			"CommonName":"",
+			"WarmRange":[{"StartMonth": "05", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"必填项。",		
+			"WarmRange":[{"EndMonth": "时间段冲突"}],	
+			"ColdRange":[{"EndMonth": "时间段冲突"}],	
+		}		
+	},
+]

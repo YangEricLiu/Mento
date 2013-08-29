@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"冷暖季ForAddCancelled",
+			"WarmRange":[{"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}],
+			"ColdRange":[{"StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}],
+		},
+		"ExpectedData":
+		{
+			"CommonName":"",
+		}
+	},	
+]

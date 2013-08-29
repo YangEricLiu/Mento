@@ -2,11 +2,12 @@
 	{
 		"InputData":
 		{	
-			"PlainPrice":"",
+			"CommonName":"价格ForModifyToAddMoreTime",
 		},
 		"ExpectedData":
 		{
-		    
+		    "PeakRange":[{"StartTime": "08:00", "EndTime": "11:30"}, {"StartTime": "19:30", "EndTime": "20:00"}, {"StartTime": "14:00", "EndTime": "16:30"}],
+			"ValleyRange":[{"StartTime": "21:30", "EndTime": "24:00"}, {"StartTime": "00:00", "EndTime": "04:30"}],	
 		}		
-	}
+	},
 ]

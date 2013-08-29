@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"工作时间ForModifyToDeleteTime",			
+			"TimeRange":[{"StartTime": "08:00", "EndTime": "11:30"}, {"StartTime": "13:30", "EndTime": "17:00"}, {"StartTime": "19:30", "EndTime": "20:30"}],				
+		},
+		"ExpectedData":
+		{
+		    
+		}		
+	},
+]

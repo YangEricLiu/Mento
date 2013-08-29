@@ -42,11 +42,11 @@ namespace Mento.Script.Administration.TOU
         /// </summary>
         [Test]
         [CaseID("TC-J1-SmokeTest-026")]
-        [Priority("7")]
+        [Priority("8")]
         [MultipleTestDataSource(typeof(TOUPulsePeakTariffData[]), typeof(SmokeTestTOUPulsePeakTariffSuite), "TC-J1-SmokeTest-026")]
         public void AddTOUPulsePeakTariff(TOUPulsePeakTariffData testData)
         {
-            TOUPulsePeakTariffSettings.FocusOnTOUTariff("价格策略1");
+            TOUPulsePeakTariffSettings.FocusOnTOUTariff(testData.InputData.CommonName);
             TimeManager.ShortPause();
             TOUPulsePeakTariffSettings.SwitchToPulsePeakPropertyTab();
             TimeManager.ShortPause();

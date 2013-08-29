@@ -43,39 +43,90 @@ namespace Mento.Script.Administration.TOU
         [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffModifyInvalidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Modify-001")]
         public void ModifyTOUCancelled(TOUBasicTariffData testData)
         {
-            //Select a TOU, using the one '价格ForModify无效' prepared in other case
-            TOUBasicTariffSettings.SelectTOU("价格ForModify无效");
+            //Select a TOU
+            TOUBasicTariffSettings.SelectTOU(testData.ExpectedData.CommonName);
             TimeManager.ShortPause();
 
             //Click 'Modify' button
             TOUBasicTariffSettings.ClickBasicPropertyModifyButton();
             TimeManager.ShortPause();
 
-            ///Fill in fields with valid inputs，
+            //Click "Save" button directly without any change
+            TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            TimeManager.ShortPause();
+
+            //Click 'Modify' button
+            TOUBasicTariffSettings.ClickBasicPropertyModifyButton();
+            TimeManager.ShortPause();
+
+            ///Change name with valid input
             TOUBasicTariffSettings.FillInBasicPropertyName(testData.InputData.CommonName);
-            TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
-            TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
-            TOUBasicTariffSettings.FillInBasicPropertyValleyPriceValue(testData.InputData.ValleyPrice);
+
+            //Click 'x' icon to delete valley2
+            TOUBasicTariffSettings.ClickDeleteValleyRangeItemButton(2);
 
             //Click "Cancel" button
             TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
             TimeManager.MediumPause();
 
-            //verify that the modification is cancelled and original name still exists in the list.
-            Assert.IsTrue(TOUBasicTariffSettings.IsTOUExist("价格ForModify无效"));            
+            //verify that the modification is cancelled and original information still displayes.
+            Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
+            Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
+            Assert.IsTrue(TOUBasicTariffSettings.IsBasicPropertyModifyButtonDisplayed());
+            Assert.IsTrue(TOUBasicTariffSettings.IsTOUExist(testData.ExpectedData.CommonName));
+            Assert.AreEqual(testData.InputData.ValleyRange[1].StartTime, TOUBasicTariffSettings.GetBasicPropertyValleyStartTimeValue(2));
+            Assert.AreEqual(testData.InputData.ValleyRange[1].EndTime, TOUBasicTariffSettings.GetBasicPropertyValleyEndTimeValue(2));          
         }
         #endregion
 
-        #region TestCase2 ModifyInvalidTOU
+        #region TestCase2 ModifyWithRequiredFieldsEmpty
         [Test]
         [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Modify-002")]
         [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Modify-002")]
         [Priority("2")]
         [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffModifyInvalidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Modify-002")]
-        public void ModifyInvalidTOU(TOUBasicTariffData testData)
+        public void ModifyWithRequiredFieldsEmpty(TOUBasicTariffData testData)
         {
-            //Select a TOU, using the one '价格ForModify无效' prepared in other case
-            TOUBasicTariffSettings.SelectTOU("价格ForModify无效");
+            //Select a TOU
+            TOUBasicTariffSettings.SelectTOU("价格ForModifyInvalid");
+            TimeManager.ShortPause();
+
+            //Click 'Modify' button            
+            TOUBasicTariffSettings.ClickBasicPropertyModifyButton();
+            TimeManager.ShortPause();
+
+            //Change required fields to be empty.
+            TOUBasicTariffSettings.FillInBasicPropertyName(testData.InputData.CommonName);
+            TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
+            TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
+            TOUBasicTariffSettings.FillInBasicPropertyValleyPriceValue(testData.InputData.ValleyPrice);
+
+            //Click "Save" button
+            TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            TimeManager.MediumPause();
+
+            //Verify that Error message '必填项' is displayed below each required fields: '名称',  '峰时电价',  '谷时电价'. There is no message below '平时电价'.
+            Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalid());
+            Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalidMsgCorrect(testData.ExpectedData));
+            Assert.IsFalse(TOUBasicTariffSettings.IsPlainPriceInvalid());
+            Assert.IsTrue(TOUBasicTariffSettings.IsPlainPriceInvalidMsgCorrect(testData.ExpectedData));
+            Assert.IsTrue(TOUBasicTariffSettings.IsPeakPriceInvalid());
+            Assert.IsTrue(TOUBasicTariffSettings.IsPeakPriceInvalidMsgCorrect(testData.ExpectedData));
+            Assert.IsTrue(TOUBasicTariffSettings.IsValleyPriceInvalid());
+            Assert.IsTrue(TOUBasicTariffSettings.IsValleyPriceInvalidMsgCorrect(testData.ExpectedData));
+        }
+        #endregion
+
+        #region TestCase3 ModifyWithDuplicatedName
+        [Test]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Modify-003")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Modify-003")]
+        [Priority("2")]
+        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffModifyInvalidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Modify-003")]
+        public void ModifyWithDuplicatedName(TOUBasicTariffData testData)
+        {
+            //Select a TOU
+            TOUBasicTariffSettings.SelectTOU("价格ForModifyInvalid");
             TimeManager.ShortPause();
 
             //Click 'Modify' button            
@@ -90,50 +141,116 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();  
 
-            //Verify the pop message. 
-            Assert.IsTrue(TOUBasicTariffSettings.IsPopMsgCorrect(testData.ExpectedData));
-            TimeManager.MediumPause();
-
-            //Click 'x' icon to close the pop message box.
-            TOUBasicTariffSettings.ClickMsgBoxCloseButton();
+            //Verify that Error message is displayed below '名称' field.
+            Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalid());
+            Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalidMsgCorrect(testData.ExpectedData));
         }
         #endregion
 
-        #region TestCase3 ModifyWithInvalidTimeRanges
+        #region TestCase4 ModifyWithConflictedRanges
         [Test]
-        [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Modify-003")]
-        [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Modify-003")]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Modify-004")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Modify-004")]
         [Priority("2")]
-        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffModifyInvalidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Modify-003")]
-        public void ModifyWithInvalidTimeRanges(TOUBasicTariffData testData)
+        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffModifyInvalidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Modify-004")]
+        public void ModifyWithConflictedRanges(TOUBasicTariffData testData)
         {
-            //Select a TOU, using the one '价格ForModify无效' prepared in other case
-            TOUBasicTariffSettings.SelectTOU("价格ForModify无效");
+            //Select a TOU
+            TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);
             TimeManager.ShortPause();
 
             //Click 'Modify' button            
             TOUBasicTariffSettings.ClickBasicPropertyModifyButton();
             TimeManager.ShortPause();
 
-            //Input required fields as empty
-            TOUBasicTariffSettings.FillInBasicPropertyName(testData.InputData.CommonName);
-            TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
-            TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
-            TOUBasicTariffSettings.FillInBasicPropertyValleyPriceValue(testData.InputData.ValleyPrice);
+            //modify end time of peak range1 so that it is overlapped with valley range1.
+            TOUBasicTariffSettings.SelectBasicPropertyPeakEndTime(testData.InputData.PeakRange[0].EndTime, 1);
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
             TimeManager.MediumPause();
 
-            //Verify that Error message '必输项' is displayed below each required fields: '名称',  '峰时电价',  '谷时电价'.
-            Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalidMsgCorrect(testData.ExpectedData));
-            Assert.IsTrue(TOUBasicTariffSettings.IsPeakPriceInvalidMsgCorrect(testData.ExpectedData));
-            Assert.IsTrue(TOUBasicTariffSettings.IsValleyPriceInvalidMsgCorrect(testData.ExpectedData));
+            //Verify the messages below the fields. 
+            Assert.IsTrue(TOUBasicTariffSettings.IsPeakRangeInvalidMsgCorrect(testData.ExpectedData, 1));
+            Assert.IsTrue(TOUBasicTariffSettings.IsValleyRangeInvalidMsgCorrect(testData.ExpectedData, 1));
+        }
+        #endregion
 
-            //verify that the modification failed and original TOU name still exists in the list.
-            Assert.IsTrue(TOUBasicTariffSettings.IsTOUExist("价格ForModify无效"));
+        #region TestCase5 ModifyToNotCover24Hours
+        [Test]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Modify-005")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Modify-005")]
+        [Priority("2")]
+        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffModifyInvalidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Modify-005")]
+        public void ModifyToNotCover24Hours(TOUBasicTariffData testData)
+        {
+            //Select TOU1
+            TOUBasicTariffSettings.SelectTOU("价格ForModifyToNotCover24h1");
+            TimeManager.ShortPause();
+
+            //Click 'Modify' button            
+            TOUBasicTariffSettings.ClickBasicPropertyModifyButton();
+            TimeManager.ShortPause();
+
+            //Change plain price to be empty
+            TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
+
+            //Click "Save" button
+            TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            TimeManager.MediumPause();
+
+            //Verify that Error message is displayed below time range field.
+            Assert.IsTrue(TOUBasicTariffSettings.IsTOU24HoursMsgCorrect(testData.ExpectedData.PlainPrice));
+
+            //Click "Cancel" button
+            TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
+            TimeManager.MediumPause();
+
+            //Select TOU2
+            TOUBasicTariffSettings.SelectTOU("价格ForModifyToNotCover24h2");
+            TimeManager.ShortPause();
+
+            //Click 'Modify' button            
+            TOUBasicTariffSettings.ClickBasicPropertyModifyButton();
+            TimeManager.ShortPause();
+
+            //Click 'x' icons to delete some ranges (e.g. delete valley2)
+            TOUBasicTariffSettings.ClickDeleteValleyRangeItemButton(2);
+
+            //Click "Save" button
+            TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            TimeManager.MediumPause();
+
+            //Verify that Error message is displayed below time range field.
+            Assert.IsTrue(TOUBasicTariffSettings.IsTOU24HoursMsgCorrect(testData.ExpectedData.PlainPrice));
+
+            //Click "Cancel" button
+            TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
+            TimeManager.MediumPause();
+
+            //Select TOU2 again
+            TOUBasicTariffSettings.SelectTOU("价格ForModifyToNotCover24h2");
+            TimeManager.ShortPause();
+
+            //Click 'Modify' button            
+            TOUBasicTariffSettings.ClickBasicPropertyModifyButton();
+            TimeManager.ShortPause();
+
+            //Change one range with new time so that all ranges didn't cover 24 hours. (e.g. Change start time of peak1)
+            TOUBasicTariffSettings.SelectBasicPropertyPeakStartTime(testData.InputData.PeakRange[0].StartTime, 1);
+
+            //Click "Save" button
+            TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            TimeManager.MediumPause();
+
+            //Verify that Error message is displayed below time range field.
+            Assert.IsTrue(TOUBasicTariffSettings.IsTOU24HoursMsgCorrect(testData.ExpectedData.PlainPrice));
+
+            //Click "Cancel" button
+            TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
+            TimeManager.MediumPause();
         }
         #endregion
 

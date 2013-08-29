@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"冷暖季ForAddValid1",
+			"WarmRange":[{"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}],
+			"ColdRange":[{"StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},	
+	{
+		"InputData":
+		{	
+			"CommonName":"冷暖季ForAddValid2",
+			"WarmRange":[{"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}],
+			"ColdRange":[{"StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"StartMonth": "10", "StartDate": "01", "EndMonth": "10", "EndDate": "15"}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},	
+]

@@ -2,17 +2,9 @@
 	{
 		"InputData":
 		{	
-			"Name":"冷暖季日历1",
-			"WarmRecordNumber":2,
-			"WarmStartMonth":["01","11"],
-			"WarmStartDate":["01","15"],
-			"WarmEndMonth":["03","12"],
-			"WarmEndDate":["15","31"],
-			"ColdRecordNumber":1,
-			"ColdStartMonth":["05"],
-			"ColdStartDate":["31"],
-			"ColdEndMonth":["08"],
-			"ColdEndDate":["31"],
+			"CommonName":"冷暖季日历SmokeAdd",
+			"WarmRange":[{"StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}, {"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}],
+			"ColdRange":[{"StartMonth": "05", "StartDate": "31", "EndMonth": "08", "EndDate": "31"}],
 		},
 		"ExpectedData":
 		{

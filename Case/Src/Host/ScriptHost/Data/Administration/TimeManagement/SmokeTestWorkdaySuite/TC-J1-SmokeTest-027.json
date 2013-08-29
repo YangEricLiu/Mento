@@ -2,13 +2,8 @@
 	{
 		"InputData":
 		{	
-			"Name":"工休日日历1",
-			"SpecialDateType":["非工作日","工作日"],
-			"RecordNumber":2,
-			"StartMonth":["05","10"],
-			"StartDate":["01","25"],
-			"EndMonth":["05","10"],
-			"EndDate":["07","31"],
+			"CommonName":"工休日日历SmokeAdd",
+			"SpecialDate":[{"Type": "非工作日", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "07"}, {"Type": "工作日", "StartMonth": "10", "StartDate": "25", "EndMonth": "10", "EndDate": "31"}],			
 		},
 		"ExpectedData":
 		{

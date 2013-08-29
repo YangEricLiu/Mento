@@ -33,7 +33,8 @@
 
   <!--TextField-->
   <add key = "FormulaTextBox" value="//textarea[contains(@id,'st-formula-text') and @name='Formula']" type = "XPath"/>
-  <add key = "TextFieldHiddenTable" value="ancestor::*[local-name()='table' and contains(@style, 'display: none')]" type = "XPath"/>
+  <add key = "TextFieldHiddenTable" value="ancestor::*[contains(@style, 'display: none')]" type = "XPath"/>
+  <!--<add key = "TextFieldHiddenTable" value="ancestor::*[local-name()='table' and contains(@style, 'display: none')]" type = "XPath"/>-->
   
   <!--Button-->
   <add key = "ButtonInput" value = "em/button" type = "XPath"/>

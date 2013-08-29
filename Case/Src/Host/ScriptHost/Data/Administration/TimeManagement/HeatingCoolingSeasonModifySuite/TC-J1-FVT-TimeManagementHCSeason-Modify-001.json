@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"New",
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"冷暖季ForModifyCancelled",				
+		}		
+	},
+]

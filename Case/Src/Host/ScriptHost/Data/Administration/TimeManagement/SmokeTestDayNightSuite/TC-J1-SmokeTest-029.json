@@ -2,10 +2,8 @@
 	{
 		"InputData":
 		{	
-			"Name":"昼夜时间日历1",	
-			"RecordNumber":1,
-			"StartTime":["05:30"],
-			"EndTime":["18:00"],		
+			"CommonName":"昼夜时间日历SmokeAdd",	
+			"TimeRange":[{"StartTime": "05:30", "EndTime": "18:00"}],
 		},
 		"ExpectedData":
 		{

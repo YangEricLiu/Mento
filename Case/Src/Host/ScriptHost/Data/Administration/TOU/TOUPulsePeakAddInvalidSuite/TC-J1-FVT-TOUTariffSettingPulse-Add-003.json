@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"价格ForAddConflictedPulsePeak",
+			"Price":"6",	
+			"PulsePeakRange":[{"StartMonth": "01", "StartDate": "31", "EndMonth": "06", "EndDate": "30", "StartTime": "00:00", "EndTime": "14:00"}, {"StartMonth": "05", "StartDate": "01", "EndMonth": "06", "EndDate": "01", "StartTime": "10:00", "EndTime": "18:00"}],
+		},
+		"ExpectedData":
+		{
+			"Price":"",
+			"PulsePeakRange":[{"StartTime": "时间段冲突。"}, {"StartTime": "时间段冲突。"}],
+		}
+	},
+]

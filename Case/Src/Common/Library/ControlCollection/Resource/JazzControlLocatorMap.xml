@@ -307,6 +307,7 @@
               <add key="ButtonWorkdayCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonWorkdayCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
               <add key="ButtonWorkdayCalendarAddSpecialDates" value="st-calendar-workday-items-add-toolEl" type="ID"/>
+              <add key="ButtonWorkdayDeleteRangeItem" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//img[contains(@class,'x-tool-trash')]" type="XPath"/>
           </workday>
           <worktime>
               <add key="ButtonWorktimeCalendarCreate" value="st-calendar-grid-add" type="ID"/>
@@ -315,6 +316,7 @@
               <add key="ButtonWorktimeCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonWorktimeCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
               <add key="LinkButtonWorktimeCalendarAddMoreRanges" value="//div[@id='st-calendar-worktime-items-add']//a[text()='添加工作时间']" type="XPath"/>
+              <add key="ButtonWorktimeDeleteRangeItem" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//img[contains(@class,'x-tool-trash')]" type="XPath"/>
           </worktime>
           <heatingcoolingseason>
               <add key="ButtonHeatingCoolingSeasonCalendarCreate" value="st-calendar-grid-add" type="ID"/>
@@ -324,6 +326,8 @@
               <add key="ButtonHeatingCoolingSeasonCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
               <add key="ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges" value="st-calendar-warm-items-add-toolEl" type="ID"/>
               <add key="ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges" value="st-calendar-cold-items-add-toolEl" type="ID"/>
+              <add key="ButtonHeatingCoolingSeasonCalendarWarmDeleteRangeItem" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//img[contains(@class,'x-tool-trash')]" type="XPath"/>
+              <add key="ButtonHeatingCoolingSeasonCalendarColdDeleteRangeItem" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//img[contains(@class,'x-tool-trash')]" type="XPath"/>
           </heatingcoolingseason>
           <daynight>
               <add key="ButtonDayNightCalendarCreate" value="st-calendar-grid-add" type="ID"/>
@@ -332,6 +336,7 @@
               <add key="ButtonDayNightCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonDayNightCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
               <add key="LinkButtonDayNightCalendarAddMoreRanges" value="//div[@id='st-calendar-daynight-items-add']//a[text()='添加白昼时间']" type="XPath"/>
+              <add key="ButtonDayNightDeleteRangeItem" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//img[contains(@class,'x-tool-trash')]" type="XPath"/>
           </daynight>
           <carbonfactor>
               <add key="ButtonCarbonFactorCreate" value="st-carbonfactor-grid-add" type="ID"/>
@@ -741,8 +746,8 @@
     <platformsettings>
       <add key="GridUserList" value="st-user-grid" type="ID"/>
       <add key="GridUserTypePermissionList" value="st-usertype-grid" type="ID"/>
-      <add key="GridTOUTariffsList" value="st-priceStrategy-grid" type="ID"/>
-    
+      <add key="GridCalendarsList" value="st-calendar-grid" type="ID"/>
+      <add key="GridTOUTariffsList" value="st-priceStrategy-grid" type="ID"/>      
       <add key="GridDataScopePermissionList" value="//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]" type="XPath"/>
       <add key="GridCustomersList" value="'st-customer-grid" type="ID"/>
       <add key="GridDataScopePermissionCustomerList" value="//div[@id='st-user-datarange-form']//div[@id='st-user-datarange-form-innerCt']//div[contains(@id,'gridview')]/table/tbody/tr/td[4]" type="XPath"/>
@@ -900,18 +905,9 @@
       <add key="ContainerTBWorkdayRule" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][1]//td[contains(@class,'x-form-item-body')]/div[contains(@class,'x-container-default') and not(contains(@style,'display: none;'))]" type="XPath"/>
       <add key="ContainerTBNonworkdayRule" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][2]//td[contains(@class,'x-form-item-body')]/div[contains(@class,'x-container-default') and not(contains(@style,'display: none;'))]" type="XPath"/>
       <add key="ContainerTBSpecialdayRule" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[contains(@id,'additionaldateitem')]" type="XPath"/>
-  </TargetBaseline>
+  </TargetBaseline>  
   
-  <UserTypeRole>
-      <add key="ContainerPermissionCustomerizeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[2]/div" type="XPath"/>
-      <add key="ContainerPermissionPublicTypeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[1]/div" type="XPath"/>
-      
-      <add key="ContainerDisplayPermissionPublicTypeItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset[1]/div" type="XPath"/>
-      <add key="ContainerDisplayPermissionCustomerizeItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset[2]/div" type="XPath"/>
-      <add key="ContainerDisplayPermissionItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset/div" type="XPath"/>
-  </UserTypeRole>
-  
-<Homopage>
+  <Homopage>
       <add key="ContainerWidgetsToDashboard" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]" type="XPath"/>
   </Homopage>
     
@@ -920,6 +916,24 @@
       <add key="ContainerExcludeTimeIntervals" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody/tr/td/div[contains(@style,'display: none;')]" type="XPath"/>
 
   </EnergyView>
+  <platformsettings>
+    <TimeManagment>
+      <add key="ContainerCalendarItems" value="//td[@id='st-calendar-items-container-bodyEl']/table" type="XPath"/>
+      <add key="ContainerCalendarWarmItems" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table" type="XPath"/>
+      <add key="ContainerCalendarColdItems" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table" type="XPath"/>
+    </TimeManagment>
+    <TOU>
+        <add key="ContainerTOU24HoursErrorTips" value="st-tou-24hours-message" type="ID"/>
+    </TOU>
+    <UserTypeRole>
+      <add key="ContainerPermissionCustomerizeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[2]/div" type="XPath"/>
+      <add key="ContainerPermissionPublicTypeItems" value="//div[@id='st-usertype-properties-form-body']/div/div/fieldset[1]/div" type="XPath"/>
+
+      <add key="ContainerDisplayPermissionPublicTypeItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset[1]/div" type="XPath"/>
+      <add key="ContainerDisplayPermissionCustomerizeItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset[2]/div" type="XPath"/>
+      <add key="ContainerDisplayPermissionItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset/div" type="XPath"/>
+    </UserTypeRole>
+  </platformsettings>
   
 </Container>
 </WebElement>

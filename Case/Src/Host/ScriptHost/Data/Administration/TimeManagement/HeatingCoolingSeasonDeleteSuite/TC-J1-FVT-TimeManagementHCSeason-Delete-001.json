@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"冷暖季未被引用ForDeleteCancelled",	
+		},
+		"ExpectedData":
+		{
+		    
+		}		
+	}
+]

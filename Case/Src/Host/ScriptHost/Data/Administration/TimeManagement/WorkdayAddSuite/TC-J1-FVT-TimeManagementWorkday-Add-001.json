@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"工休日ForAddCancelled",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"",
+		}
+	},	
+]

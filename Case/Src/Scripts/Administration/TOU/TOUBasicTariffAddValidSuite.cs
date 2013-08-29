@@ -65,8 +65,9 @@ namespace Mento.Script.Administration.TOU
             //verify add successful
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
+            Assert.IsTrue(TOUBasicTariffSettings.IsBasicPropertyModifyButtonDisplayed());
 
-            //Verify all the information displayed in Modify status are samed as input when addition.            
+            //Verify all the information displayed in Modify status are same as input when addition.            
             TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);
             TOUBasicTariffSettings.ClickBasicPropertyModifyButton();
             TimeManager.ShortPause();
@@ -117,8 +118,9 @@ namespace Mento.Script.Administration.TOU
             //verify add successful
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
+            Assert.IsTrue(TOUBasicTariffSettings.IsBasicPropertyModifyButtonDisplayed());
 
-            //Verify all the information displayed in Modify status are samed as input when addition.            
+            //Verify all the information displayed in View status are same as input when addition.            
             TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);
             Assert.AreEqual(testData.InputData.CommonName, TOUBasicTariffSettings.GetBasicPropertyNameValue());
             Assert.AreEqual(testData.InputData.PlainPrice, TOUBasicTariffSettings.GetBasicPropertyPlainPriceValue());

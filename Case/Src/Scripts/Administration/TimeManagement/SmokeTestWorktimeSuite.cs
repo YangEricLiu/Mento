@@ -45,10 +45,10 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorktime.PrepareToAddWorktimeCalendar();
             TimeManager.ShortPause();
 
-            TimeSettingsWorktime.FillInName(testData.InputData.Name);
+            TimeSettingsWorktime.FillInName(testData.InputData.CommonName);
 
             //Input 'Start Time' and 'End Time' for the record(s) based on the input data file
-            for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
+            for (int elementPosition = 1; elementPosition <= testData.InputData.TimeRange.Length; elementPosition++)
             {
                 //Click '添加工作时间' button if more than one record need to be entered
                 if (elementPosition > 1)
@@ -58,8 +58,8 @@ namespace Mento.Script.Administration.TimeManagement
                 }
 
                 int inputDataArrayPosition = elementPosition - 1;
-                TimeSettingsWorktime.SelectStartTime(testData.InputData.StartTime[inputDataArrayPosition], elementPosition);
-                TimeSettingsWorktime.SelectEndTime(testData.InputData.EndTime[inputDataArrayPosition], elementPosition);
+                TimeSettingsWorktime.SelectStartTime(testData.InputData.TimeRange[inputDataArrayPosition].StartTime, elementPosition);
+                TimeSettingsWorktime.SelectEndTime(testData.InputData.TimeRange[inputDataArrayPosition].EndTime, elementPosition);
                 TimeManager.ShortPause();
             }
 
@@ -67,17 +67,17 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.MediumPause();
 
             //Verify the name
-            Assert.AreEqual(testData.InputData.Name, TimeSettingsWorktime.GetNameValue());
+            Assert.AreEqual(testData.InputData.CommonName, TimeSettingsWorktime.GetNameValue());
 
             //Verify the label text
             Assert.IsTrue(TimeSettingsWorktime.IsWorktimeCalendarTextCorrect(testData.ExpectedData.LabelText));
 
             //Verify 'Start Time' and 'End Time' of the record(s)
-            for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
+            for (int elementPosition = 1; elementPosition <= testData.InputData.TimeRange.Length; elementPosition++)
             {
                 int inputDataArrayPosition = elementPosition - 1;
-                Assert.AreEqual(testData.InputData.StartTime[inputDataArrayPosition], TimeSettingsWorktime.GetStartTimeValue(elementPosition));
-                Assert.AreEqual(testData.InputData.EndTime[inputDataArrayPosition], TimeSettingsWorktime.GetEndTimeValue(elementPosition));
+                Assert.AreEqual(testData.InputData.TimeRange[inputDataArrayPosition].StartTime, TimeSettingsWorktime.GetStartTimeValue(elementPosition));
+                Assert.AreEqual(testData.InputData.TimeRange[inputDataArrayPosition].EndTime, TimeSettingsWorktime.GetEndTimeValue(elementPosition));
             }
         }       
     }

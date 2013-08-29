@@ -36,12 +36,13 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField BasicPropertyNameTextField = JazzTextField.TOUBasicPropertyNameTextField;
         private static TextField BasicPropertyPlainPriceValueTextField = JazzTextField.TOUBasicPropertyPlainPriceValueTextField;
         private static TextField BasicPropertyPeakPriceValueTextField = JazzTextField.TOUBasicPropertyPeakPriceValueTextField;
-        private static TextField BasicPropertyValleyPriceValueTextField = JazzTextField.TOUBasicPropertyValleyPriceValueTextField;
-        
+        private static TextField BasicPropertyValleyPriceValueTextField = JazzTextField.TOUBasicPropertyValleyPriceValueTextField;        
         private static ComboBox BasicPropertyPeakStartTimeComboBox = JazzComboBox.TOUBasicPropertyPeakStartTimeComboBox;
         private static ComboBox BasicPropertyPeakEndTimeComboBox = JazzComboBox.TOUBasicPropertyPeakEndTimeComboBox;
         private static ComboBox BasicPropertyValleyStartTimeComboBox = JazzComboBox.TOUBasicPropertyValleyStartTimeComboBox;
         private static ComboBox BasicPropertyValleyEndTimeComboBox = JazzComboBox.TOUBasicPropertyValleyEndTimeComboBox;
+        private static Container TOU24HoursErrorTips = JazzContainer.TOU24HoursErrorTipsContainer;
+
         #endregion
 
         #region common action
@@ -67,12 +68,17 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SelectTOU(string touName)
         {
-            TOUTariffsList.FocusOnRow(1, touName);
+            TOUTariffsList.FocusOnRow(1, touName, false);
         }
 
         public void ClickBasicPropertyModifyButton()
         {
             BasicPropertyModifyButton.Click();
+        }
+
+        public Boolean IsBasicPropertyModifyButtonDisplayed()
+        {
+            return BasicPropertyModifyButton.IsDisplayed();
         }
 
         public void ClickBasicPropertyCancelButton()
@@ -240,14 +246,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>whether the invalid message is ture</returns>
         public Boolean IsNameInvalidMsgCorrect(TOUBasicTariffExpectedData output)
         {
-            if (output.CommonName != null)
-            {
-                return BasicPropertyNameTextField.GetInvalidTips().Contains(output.CommonName);
-            }
-            else
-                return true;
+            return BasicPropertyNameTextField.GetInvalidTips().Contains(output.CommonName);            
         }
-
+        
         /// <summary>
         /// Judge whether the Plain Price textfield is invalid
         /// </summary>
@@ -321,34 +322,15 @@ namespace Mento.ScriptCommon.Library.Functions
         }
         
         /// <summary>
-        /// Judge whether the peak range combox is invalid
-        /// </summary>
-        /// <returns>True if the peak range is invalid, false if not</returns>
-        public Boolean IsPeakRangeInvalid()
-        {
-            return BasicPropertyPeakStartTimeComboBox.IsComboBoxValueInvalid();
-            return BasicPropertyPeakEndTimeComboBox.IsComboBoxValueInvalid();
-        }
-
-        /// <summary>
         /// Judge whether invalid message of peak range is correct
         /// </summary>
         /// <param name="output">TOUBasicTariffExpectedData</param>
         /// <returns>whether the invalid message is ture</returns>
-        public Boolean IsPeakRangeInvalidMsgCorrect(TOUBasicTariffExpectedData output)
+        public Boolean IsPeakRangeInvalidMsgCorrect(TOUBasicTariffExpectedData output, int position)
         {
-            return BasicPropertyPeakStartTimeComboBox.GetInvalidTips().Contains(output.PeakRange[0].StartTime);
-            //return BasicPropertyPeakEndTimeComboBox.GetInvalidTips().Contains(output.PeakRange[0].EndTime);
-        }
-
-        /// <summary>
-        /// Judge whether the valley range combox is invalid
-        /// </summary>
-        /// <returns>True if the valley range is invalid, false if not</returns>
-        public Boolean IsValleyRangeInvalid()
-        {
-            return BasicPropertyValleyStartTimeComboBox.IsComboBoxValueInvalid();
-            return BasicPropertyValleyEndTimeComboBox.IsComboBoxValueInvalid();
+            int arrayPosition = position - 1;
+            ComboBox OneBasicPropertyPeakStartTimeComboBox = GetOneBasicPropertyPeakStartTimeComboBox(position);
+            return OneBasicPropertyPeakStartTimeComboBox.GetInvalidTips().Contains(output.PeakRange[arrayPosition].StartTime);
         }
 
         /// <summary>
@@ -356,10 +338,21 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="output">TOUBasicTariffExpectedData</param>
         /// <returns>whether the invalid message is ture</returns>
-        public Boolean IsValleyRangeInvalidMsgCorrect(TOUBasicTariffExpectedData output)
+        public Boolean IsValleyRangeInvalidMsgCorrect(TOUBasicTariffExpectedData output, int position)
         {
-            return BasicPropertyValleyStartTimeComboBox.GetInvalidTips().Contains(output.ValleyRange[0].StartTime);
-            //return BasicPropertyValleyEndTimeComboBox.GetInvalidTips().Contains(output.ValleyRange[0].EndTime);
+            int arrayPosition = position - 1;
+            ComboBox OneBasicPropertyValleyStartTimeComboBox = GetOneBasicPropertyValleyStartTimeComboBox(position);
+            return OneBasicPropertyValleyStartTimeComboBox.GetInvalidTips().Contains(output.ValleyRange[arrayPosition].StartTime);
+        }
+
+        /// <summary>
+        /// Judge whether invalid message is correct when TOU didn't cover 24 hours and plain price is empty.
+        /// </summary>
+        /// <param name="output">TOUBasicTariffExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsTOU24HoursMsgCorrect(string output)
+        {
+            return TOU24HoursErrorTips.GetContainerErrorTips().Contains(output);
         }
 
         /// <summary>

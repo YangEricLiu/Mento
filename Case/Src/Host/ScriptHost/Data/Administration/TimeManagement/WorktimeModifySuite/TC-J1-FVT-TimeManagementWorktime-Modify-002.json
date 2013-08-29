@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"工作时间For重名验证",
+			"TimeRange":[{"StartTime": "08:00", "EndTime": "11:30"},{"StartTime": "13:30", "EndTime": "17:00"}],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"该名称已存在",			
+			"TimeRange":[{"StartTime": ""}, {"StartTime": ""}],		
+		}		
+	},
+	{
+		"InputData":
+		{	
+			"CommonName":"",
+			"TimeRange":[{"StartTime": "08:00", "EndTime": "14:00"},{"StartTime": "13:30", "EndTime": "17:00"}],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"必填项。",		
+			"TimeRange":[{"StartTime": "时间段冲突"}, {"StartTime": "时间段冲突"}],		
+		}		
+	},
+]

@@ -61,12 +61,11 @@ namespace Mento.Script.Administration.TOU
             //verify that the previous input has been cleared.
             Assert.AreEqual(testData.ExpectedData.CommonName, TOUBasicTariffSettings.GetBasicPropertyNameValue());
 
-            //Fill in fields with valid inputs，
+            //Fill in fields with valid inputs
             TOUBasicTariffSettings.FillInBasicPropertyName(testData.InputData.CommonName);
             TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
             TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
             TOUBasicTariffSettings.FillInBasicPropertyValleyPriceValue(testData.InputData.ValleyPrice);
-
             TOUBasicTariffSettings.AddPeakRanges(testData);
             TOUBasicTariffSettings.AddValleyRanges(testData);
 
@@ -102,7 +101,6 @@ namespace Mento.Script.Administration.TOU
             TimeManager.MediumPause();
 
             //Verify that Error message '必填项' is displayed below each required fields: '名称',  '峰时电价',  '谷时电价',  '峰时范围',  '谷时范围'. There is no message below '平时电价'.
-
             Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalid());
             Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsFalse(TOUBasicTariffSettings.IsPlainPriceInvalid());
@@ -111,31 +109,31 @@ namespace Mento.Script.Administration.TOU
             Assert.IsTrue(TOUBasicTariffSettings.IsPeakPriceInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsTrue(TOUBasicTariffSettings.IsValleyPriceInvalid());
             Assert.IsTrue(TOUBasicTariffSettings.IsValleyPriceInvalidMsgCorrect(testData.ExpectedData));
-            Assert.IsTrue(TOUBasicTariffSettings.IsPeakRangeInvalid());            
-            Assert.IsTrue(TOUBasicTariffSettings.IsPeakRangeInvalidMsgCorrect(testData.ExpectedData));
-            Assert.IsTrue(TOUBasicTariffSettings.IsValleyRangeInvalid());   
-            Assert.IsTrue(TOUBasicTariffSettings.IsValleyRangeInvalidMsgCorrect(testData.ExpectedData));
-            
+            Assert.IsTrue(TOUBasicTariffSettings.IsPeakRangeInvalidMsgCorrect(testData.ExpectedData, 1));
+            Assert.IsTrue(TOUBasicTariffSettings.IsValleyRangeInvalidMsgCorrect(testData.ExpectedData, 1));
+
+            //Click "Cancel" button
+            TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
+            TimeManager.MediumPause();
+
             //verify that the addition failed and NOT exists in the list.
             Assert.IsFalse(TOUBasicTariffSettings.IsTOUExist(testData.InputData.CommonName));
-            Assert.IsTrue(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
-            Assert.IsTrue(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
         }
         #endregion
 
-        #region TestCase3 AddInvalidTOU
+        #region TestCase3 AddWithDuplicatedName
         [Test]
         [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Add-003")]
         [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Add-003")]
         [Priority("2")]
         [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffAddInvalidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Add-003")]
-        public void AddInvalidTOU(TOUBasicTariffData testData)
+        public void AddWithDuplicatedName(TOUBasicTariffData testData)
         {
             //Click '+峰谷电价' button
             TOUBasicTariffSettings.ClickBasicPropertyCreateButton();
             TimeManager.ShortPause();
 
-            //Input invalid inputs: 1. same Name just as the existing one; 2. overlapped.
+            //Input duplicated Name just as the existing one
             TOUBasicTariffSettings.FillInBasicPropertyName(testData.InputData.CommonName);
             TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
             TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
@@ -145,28 +143,51 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
-            TimeManager.MediumPause();                      
+            TimeManager.LongPause();                      
 
+            //Verify the message below the field. 
+            Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalid());
+            Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalidMsgCorrect(testData.ExpectedData));                      
 
-            //重名时message验证结果为False。。。实际上message确实已经出现。稍后检查问题。
-            //重名及时间段冲突以后会改成下方显示而非弹窗。
-            //Cancel应该每次都生效，而不是最后一个input结束后。。。。
+            //verify that the addition failed.
+            Assert.IsTrue(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
+            Assert.IsTrue(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
+            Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyModifyButtonDisplayed());
 
+            //Click "Cancel" button
+            TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
+            TimeManager.MediumPause();
+        }
+        #endregion
 
-            ////Verify the pop message. 
-            //Assert.IsTrue(TOUBasicTariffSettings.IsPopMsgCorrect(testData.ExpectedData));
-            //TimeManager.MediumPause();
+        #region TestCase4 AddWithConflictedRanges
+        [Test]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Add-004")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Add-004")]
+        [Priority("2")]
+        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffAddInvalidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Add-004")]
+        public void AddWithConflictedRanges(TOUBasicTariffData testData)
+        {
+            //Click '+峰谷电价' button
+            TOUBasicTariffSettings.ClickBasicPropertyCreateButton();
+            TimeManager.ShortPause();
 
-            ////Click 'x' icon to close the pop message box.
-            //TOUBasicTariffSettings.ClickMsgBoxCloseButton();
+            //Input Conflicted Ranges
+            TOUBasicTariffSettings.FillInBasicPropertyName(testData.InputData.CommonName);
+            TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
+            TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
+            TOUBasicTariffSettings.FillInBasicPropertyValleyPriceValue(testData.InputData.ValleyPrice);
+            TOUBasicTariffSettings.AddPeakRanges(testData);
+            TOUBasicTariffSettings.AddValleyRanges(testData);
 
-            ////Verify the message below the field. 
-            //Assert.IsTrue(TOUBasicTariffSettings.IsPeakRangeInvalid());
-            //Assert.IsTrue(TOUBasicTariffSettings.IsPeakRangeInvalidMsgCorrect(testData.ExpectedData));
-            //Assert.IsTrue(TOUBasicTariffSettings.IsValleyRangeInvalid());
-            //Assert.IsTrue(TOUBasicTariffSettings.IsValleyRangeInvalidMsgCorrect(testData.ExpectedData));
-            //TimeManager.MediumPause();
-
+            //Click "Save" button
+            TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            TimeManager.MediumPause();
+                        
+            //Verify the message below the field. 
+            Assert.IsTrue(TOUBasicTariffSettings.IsPeakRangeInvalidMsgCorrect(testData.ExpectedData, 2));
+            Assert.IsTrue(TOUBasicTariffSettings.IsValleyRangeInvalidMsgCorrect(testData.ExpectedData, 2));
+            
             //Click "Cancel" button
             TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
             TimeManager.MediumPause();
@@ -175,7 +196,50 @@ namespace Mento.Script.Administration.TOU
             Assert.IsFalse(TOUBasicTariffSettings.IsTOUExist(testData.InputData.CommonName));
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
+            Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyModifyButtonDisplayed());
+
         }
         #endregion
+
+        #region TestCase5 AddTOUNotCover24Hours
+        [Test]
+        [ManualCaseID("TC-J1-FVT-TOUTariffSettingBasic-Add-005")]
+        [CaseID("TC-J1-FVT-TOUTariffSettingBasic-Add-005")]
+        [Priority("2")]
+        [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffAddInvalidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Add-005")]
+        public void AddTOUNotCover24Hours(TOUBasicTariffData testData)
+        {
+            //Click '+峰谷电价' button
+            TOUBasicTariffSettings.ClickBasicPropertyCreateButton();
+            TimeManager.ShortPause();
+
+            //Input time range not cover 24 hours, and plain price is empty
+            TOUBasicTariffSettings.FillInBasicPropertyName(testData.InputData.CommonName);
+            TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
+            TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
+            TOUBasicTariffSettings.FillInBasicPropertyValleyPriceValue(testData.InputData.ValleyPrice);
+            TOUBasicTariffSettings.AddPeakRanges(testData);
+            TOUBasicTariffSettings.AddValleyRanges(testData);
+
+            //Click "Save" button
+            TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            TimeManager.MediumPause();
+                     
+
+            //Verify the message below the field. 
+            Assert.IsTrue(TOUBasicTariffSettings.IsTOU24HoursMsgCorrect(testData.ExpectedData.PlainPrice));
+            
+            //Click "Cancel" button
+            TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
+            TimeManager.MediumPause();
+
+            //verify that the addition failed and NOT exists in the list.
+            Assert.IsFalse(TOUBasicTariffSettings.IsTOUExist(testData.InputData.CommonName));
+            Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
+            Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
+            Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyModifyButtonDisplayed());
+        }
+        #endregion
+    
     }
 }

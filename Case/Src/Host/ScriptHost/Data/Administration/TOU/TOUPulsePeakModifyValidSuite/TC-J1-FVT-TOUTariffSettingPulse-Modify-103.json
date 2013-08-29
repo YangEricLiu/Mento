@@ -2,12 +2,11 @@
 	{
 		"InputData":
 		{	
-			"Price":"8.6",	
-			"PulsePeakRange":[{"StartMonth": "05", "StartDate": "01", "EndMonth": "06", "EndDate": "15", "StartTime": "08:30", "EndTime": "12:00"}, {"StartMonth": "07", "StartDate": "15", "EndMonth": "08", "EndDate": "31", "StartTime": "13:00", "EndTime": "13:30"}],
+			"CommonName":"价格ForDeleteOnePulsePeak",				
 		},
 		"ExpectedData":
 		{
-		    
+		    "PulsePeakRange":[{"StartMonth": "01", "StartDate": "10", "EndMonth": "02", "EndDate": "28", "StartTime": "00:00", "EndTime": "08:00"}, {"StartMonth": "05", "StartDate": "10", "EndMonth": "05", "EndDate": "28", "StartTime": "00:00", "EndTime": "08:00"}],
 		}		
 	},
 ]

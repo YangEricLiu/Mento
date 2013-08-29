@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.TestData;
 using Mento.Utility;
+using Mento.ScriptCommon.TestData.Common;
 
 namespace Mento.ScriptCommon.TestData.Administration
 {
@@ -12,29 +13,30 @@ namespace Mento.ScriptCommon.TestData.Administration
     }
     public class DayNightCalendarInputData : InputTestDataBase
     {
-        public string Name { get; set; }
-        public int RecordNumber { get; set; }
-        public string[] StartTime { get; set; }
-        public string[] EndTime { get; set; }
+        public string CommonName { get; set; }
+        public TimeRange[] TimeRange { get; set; }
 
-        public DayNightCalendarInputData(string name, int recordNumber, string[] startTime, string[] endTime)
+        public DayNightCalendarInputData(string CommonName, TimeRange[] TimeRange)
         {
-            this.Name = name;
-            this.RecordNumber = recordNumber;
-            this.StartTime = startTime;
-            this.EndTime = endTime;
+            this.CommonName = CommonName;
+            this.TimeRange = TimeRange;
         }
     }
 
     public class DayNightCalendarExpectedData : ExpectedTestDataBase
     {
-        public string Name { get; set; }
+        public string CommonName { get; set; }
+        public TimeRange[] TimeRange { get; set; }
         public string[] LabelText { get; set; }
+        public string PopMessage { get; set; }
 
-        public DayNightCalendarExpectedData(string name, string[] labelText)
+        public DayNightCalendarExpectedData(string CommonName, TimeRange[] TimeRange, string[] labelText, string PopMessage)
         {
-            this.Name = name;
+            this.CommonName = CommonName;
+            this.TimeRange = TimeRange;
             this.LabelText = labelText;
+            this.PopMessage = PopMessage;
+
         }
     }
 }

@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"价格未被引用For删除取消",	
+			"CommonName":"价格未被引用ForDeleteCancelled",	
 		},
 		"ExpectedData":
 		{

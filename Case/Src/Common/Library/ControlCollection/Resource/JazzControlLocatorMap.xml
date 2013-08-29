@@ -339,12 +339,14 @@
               <add key="ButtonDayNightDeleteRangeItem" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//img[contains(@class,'x-tool-trash')]" type="XPath"/>
           </daynight>
           <carbonfactor>
-              <add key="ButtonCarbonFactorCreate" value="st-carbonfactor-grid-add" type="ID"/>
+              <add key="ButtonCarbonFactorCreate" value="st-carbonfactor-grid-add-btnEl" type="ID"/>
               <add key="ButtonCarbonFactorModify" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
               <add key="ButtonCarbonFactorSave" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonCarbonFactorCancel" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonCarbonFactorDelete" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-              <add key="ButtonCarbonFactorAddMoreRanges" value="st-carbonfactor-items-add-toolEl" type="ID"/>
+              <add key="ButtonCarbonFactorAddMoreRanges" value="//div[@id='st-carbonfactor-properties-form-body']/table[3]/tbody/tr/td[2]/table[1]/tbody/tr/td[2]/div/div/img" type="XPath"/>
+              <add key="ButtonCarbonFactorRangeDelete" value="//div[@id='st-carbonfactor-properties-form-body']/table[3]/tbody/tr/td[2]/table[2]//table[$#positionIndex]/tbody/tr/td[2]//div/img" type="XPath"/>
+
           </carbonfactor>
           <TOU>
               <add key="ButtonTOUBasicPropertyCreate" value="st-priceStrategy-grid-add" type="ID"/>
@@ -525,7 +527,7 @@
               <add key="TextFieldDayNightCalendarName" value="//div[@id='st-calendar-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
           </daynight>
           <carbonfactor>
-              <add key="TextFieldCarbonFactorValue" value="//td[@id='st-carbonfactor-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[2]//input" type="XPath"/>
+              <add key="TextFieldCarbonFactorValue" value="//div[@id='st-carbonfactor-properties-form-body']/table[3]/tbody/tr/td[2]/table[2]/tbody/tr/td[2]/table[$#positionIndex]//table[2]//table[1]//input[@type='text']" type="XPath"/>
           </carbonfactor>
           <TOU>
               <add key="TextFieldTOUBasicPropertyName" value="//div[@id='st-priceStrategy-basicproperty']//input[@type='text' and @name='Name']" type="XPath"/>
@@ -652,9 +654,9 @@
               <add key="ComboBoxDayNightCalendarEndTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndPart']]" type="XPath"/>
           </daynight>
           <carbonfactor>
-              <add key="ComboBoxCarbonFactorSource" value="//table[@id='st-carbonfactor-source-triggerWrap' and tbody/tr/td/input[@name='SourceId']]" type="XPath"/>
-              <add key="ComboBoxCarbonFactorDestination" value="//table[@id='st-carbonfactor-destination-triggerWrap' and tbody/tr/td/input[@name='DestinationUom']]" type="XPath"/>
-              <add key="ComboBoxCarbonFactorEffectiveYear" value="//td[@id='st-carbonfactor-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
+              <add key="ComboBoxCarbonFactorSource" value="//div[@id='st-carbonfactor-properties-form-body']/table[1]/tbody/tr/td[2]/table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='SourceId']]" type="XPath"/>
+              <add key="ComboBoxCarbonFactorDestination" value="//div[@id='st-carbonfactor-properties-form-body']/table[2]/tbody/tr/td[2]/table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='DestinationUom']]" type="XPath"/>
+              <add key="ComboBoxCarbonFactorEffectiveYear" value="//div[@id='st-carbonfactor-properties-form-body']/table[3]/tbody/tr/td[2]/table[2]/tbody/tr/td[2]/table[$#positionIndex]/tbody/tr/td[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'EffectiveYear')]]" type="XPath"/>
           </carbonfactor>
           <TOU>
               <add key="ComboBoxTOUBasicPropertyPeakStartTime" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']/table[1]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
@@ -733,6 +735,7 @@
           <add key="GridMultiHierarchyAreaDimensionTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridMultiSelectedTagsList" value="//div[contains(@id,'energymultihiertagpanel') and contains(@class,'x-container-default')]/div[label[text()='$#nameIndex']]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridEASelectedTagsList" value="//div[@id='em-energy-multi-hier-panel']/div[label[text()='$#nameIndex']]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridCarbonFactorsList" value="st-carbonfactor-grid" type="ID"/>
 
       </energyview>
     <customersettings>

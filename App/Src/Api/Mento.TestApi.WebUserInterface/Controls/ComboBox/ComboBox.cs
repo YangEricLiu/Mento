@@ -110,6 +110,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxItem), COMBOBOXITEMVARIABLENAME, itemRealValue); 
         }
+
+        public bool IsComboBoxItemExisted(string itemKey)
+        {
+            Locator itemLocator = GetComboBoxItemLocator(itemKey);
+            
+            return ElementHandler.Exists(itemLocator);
+        }
+
         /// <summary>
         /// Return whether the value in text field is invalid
         /// </summary>

@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{			
+		},
+		"ExpectedData":
+		{	
+			"EffectiveYear":"必填项",
+			"FactorValue":"必填项",	
+		}
+	}
+]

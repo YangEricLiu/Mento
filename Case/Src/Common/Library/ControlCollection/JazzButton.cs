@@ -361,6 +361,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button CarbonFactorCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorCancel);
         public static Button CarbonFactorDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonCarbonFactorDelete);
         public static Button CarbonFactorAddMoreRangesButton = GetControl<LinkButton>(JazzControlLocatorKey.ButtonCarbonFactorAddMoreRanges);
+        public static Button CarbonFactorRangeDeleteButton = GetControl<LinkButton>(JazzControlLocatorKey.ButtonCarbonFactorRangeDelete);
         
         #endregion
 

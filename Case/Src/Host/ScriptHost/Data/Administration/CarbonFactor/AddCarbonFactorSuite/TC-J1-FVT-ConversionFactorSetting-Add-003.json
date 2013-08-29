@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Source":"低压蒸汽(千克)",
+			"EffectiveYear":"2013",
+			"FactorValue":"4",			
+		},
+		"ExpectedData":
+		{
+			"Source":"低压蒸汽(千克)",
+			"Destination":"标煤",	
+		    "EffectiveYear":"2013",
+			"FactorValue":"4",	
+		}
+	}
+]

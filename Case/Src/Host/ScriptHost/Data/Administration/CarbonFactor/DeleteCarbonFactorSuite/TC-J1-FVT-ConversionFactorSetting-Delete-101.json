@@ -1,0 +1,16 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Source":"煤(千克)",
+		    "EffectiveYear":"2012",
+			"FactorValue":"2",		
+		},
+		"ExpectedData":
+		{
+			"Source":"煤(千克)",
+		    "EffectiveYear":"2012",
+			"FactorValue":"2",	
+		}
+	}
+]

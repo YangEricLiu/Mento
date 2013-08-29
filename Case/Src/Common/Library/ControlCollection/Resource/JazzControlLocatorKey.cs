@@ -395,6 +395,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonCarbonFactorCancel = "ButtonCarbonFactorCancel";
         public static string ButtonCarbonFactorDelete = "ButtonCarbonFactorDelete";
         public static string ButtonCarbonFactorAddMoreRanges = "ButtonCarbonFactorAddMoreRanges";
+        public static string ButtonCarbonFactorRangeDelete = "ButtonCarbonFactorRangeDelete";
         #endregion
 
         #region TOU
@@ -843,6 +844,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridCustomersList = "GridCustomersList";
 
         public static string GridRowDataCustomerTextRow = "GridDataScopePermissionCustomerList";
+        public static string GridCarbonFactorsList = "GridCarbonFactorsList";
         #endregion
 
         #region home page

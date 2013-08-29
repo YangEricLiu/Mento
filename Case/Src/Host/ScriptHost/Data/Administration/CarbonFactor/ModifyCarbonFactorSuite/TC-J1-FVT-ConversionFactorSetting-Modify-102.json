@@ -1,0 +1,16 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"EffectiveYear":"2013",
+			"FactorValue":"4",			
+		},
+		"ExpectedData":
+		{
+			"Source":"天然气(立方米)",
+			"Destination":"标煤",	
+		    "EffectiveYear":"2013",
+			"FactorValue":"4",	
+		}
+	}
+]

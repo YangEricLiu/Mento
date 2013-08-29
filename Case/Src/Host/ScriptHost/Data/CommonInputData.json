@@ -15,7 +15,7 @@
 			"Channel":"1234",
 			"IntegerValue":"1234",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"0.000001",
 			"Comments":"CAPITALCHARS",
 			"FeedbackComments":""
 		},
@@ -34,7 +34,7 @@
 			"Channel":"1234",
 			"IntegerValue":"1234",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"0.000001",
 			"Comments":"CAPITALCHARS",
 			"FeedbackComments":"",
 		}
@@ -55,7 +55,7 @@
 			"Channel":"1",
 			"IntegerValue":"1",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"999999999.999999",
 			"Comments":"只有中文",
 			"FeedbackComments":""
 		},
@@ -74,7 +74,7 @@
 			"Channel":"1",
 			"IntegerValue":"1",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"999999999.999999",
 			"Comments":"只有中文",
 			"FeedbackComments":"",
 		}
@@ -95,7 +95,7 @@
 			"Channel":"-8",
 			"IntegerValue":"-8",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"1.000",
 			"Comments":"中文CAPITALchars 1234_F",
 			"FeedbackComments":""
 		},
@@ -114,7 +114,7 @@
 			"Channel":"8",
 			"IntegerValue":"8",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"1",
 			"Comments":"中文CAPITALchars 1234_F",
 			"FeedbackComments":""
 		}
@@ -135,7 +135,7 @@
 			"Channel":"a6e",
 			"IntegerValue":"a6e",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"999999999",
 			"Comments":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
 			"FeedbackComments":""
 		},
@@ -154,7 +154,7 @@
 			"Channel":"6",
 			"IntegerValue":"6",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"999999999",
 			"Comments":"中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
 			"FeedbackComments":""
 		}
@@ -175,7 +175,7 @@
 			"Channel":"999999999999999",
 			"IntegerValue":"999999999999999",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"100000009.000006",
 			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F000",
 			"FeedbackComments":""
 		},
@@ -194,7 +194,7 @@
 			"Channel":"999999999999999",
 			"IntegerValue":"999999999999999",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"",
+			"DoubleNonNagtiveValue":"100000009.000006",
 			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
 			"FeedbackComments":""
 		}

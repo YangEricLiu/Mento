@@ -15,16 +15,21 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string Source { get; set; }
         public string Destination { get; set; }
         public int RecordNumber { get; set; }
-        public string[] EffectiveYear { get; set; }
-        public string[] FactorValue { get; set; }
+        public string EffectiveYear { get; set; }
+        public string FactorValue { get; set; }
+        public string DoubleNonNagtiveValue { get; set; }
+        public string Message { get; set; }
 
-        public CarbonFactorInputData(string source, string destination, int recordNumber, string[] effectiveYear, string[] factorValue)
+        public CarbonFactorInputData(string source, string destination, int recordNumber, string effectiveYear, string factorValue, string doublenonnagitivevalue, string message)
         {
             this.Source = source;
             this.Destination = destination;
             this.RecordNumber = recordNumber;
             this.EffectiveYear = effectiveYear;
             this.FactorValue = factorValue;
+            this.DoubleNonNagtiveValue = doublenonnagitivevalue;
+            this.Message = message;
+
         }
     }
 
@@ -33,16 +38,20 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string Source { get; set; }
         public string Destination { get; set; }
         public int RecordNumber { get; set; }
-        public string[] EffectiveYear { get; set; }
-        public string[] FactorValue { get; set; }
+        public string EffectiveYear { get; set; }
+        public string FactorValue { get; set; }
+        public string DoubleNonNagtiveValue { get; set; }
+        public string Message { get; set; }
 
-        public CarbonFactorExpectedData(string source, string destination, int recordNumber, string[] effectiveYear, string[] factorValue)
+        public CarbonFactorExpectedData(string source, string destination, int recordNumber, string effectiveYear, string factorValue, string doublenonnagitivevalue, string message)
         {
             this.Source = source;
             this.Destination = destination;
             this.RecordNumber = recordNumber;
             this.EffectiveYear = effectiveYear;
             this.FactorValue = factorValue;
+            this.DoubleNonNagtiveValue = doublenonnagitivevalue;
+            this.Message = message;
         }
     }
 }

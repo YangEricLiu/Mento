@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"EffectiveYear":"2013",
+			"FactorValue":"4",			
+		},
+		"ExpectedData":
+		{
+		    "EffectiveYear":"2012",
+			"FactorValue":"5",	
+		}
+	}
+]

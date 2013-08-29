@@ -1,0 +1,11 @@
+﻿[
+	{
+		"InputData":
+		{				
+		},
+		"ExpectedData":
+		{
+			"EffectiveYear":"时间区间重叠",	
+		}
+	}
+]

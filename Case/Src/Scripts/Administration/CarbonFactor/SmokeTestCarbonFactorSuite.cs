@@ -60,8 +60,8 @@ namespace Mento.Script.Administration.CarbonFactor
             for (int elementPosition = 1; elementPosition <= testData.InputData.RecordNumber; elementPosition++)
             {
                 int inputDataArrayPosition = elementPosition - 1;
-                CarbonFactorSettings.SelectEffectiveYear(testData.InputData.EffectiveYear[inputDataArrayPosition], elementPosition);
-                CarbonFactorSettings.FillInFactorValue(testData.InputData.FactorValue[inputDataArrayPosition], elementPosition);                
+                //CarbonFactorSettings.SelectEffectiveYear(testData.InputData.EffectiveYear[inputDataArrayPosition], elementPosition);
+                //CarbonFactorSettings.FillInFactorValue(testData.InputData.FactorValue[inputDataArrayPosition], elementPosition);                
             }
 
             CarbonFactorSettings.ClickSaveButton();

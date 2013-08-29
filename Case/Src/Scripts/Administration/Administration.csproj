@@ -51,7 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarbonFactor\SmokeTestCarbonFactorSuite.cs" />
+    <Compile Include="CarbonFactor\AddCarbonFactorSuite.cs" />
+    <Compile Include="CarbonFactor\DeleteCarbonFactorSuite.cs" />
+    <Compile Include="CarbonFactor\ModifyCarbonFactorSuite.cs" />
+    <Compile Include="CarbonFactor\SmokeTestCarbonFactorSuite.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CustomerOperation\SmokeTestAddCustomerSuite.cs" />
     <Compile Include="FunctionPermissionRoleType\AddFunctionScopeSuite.cs" />
     <Compile Include="FunctionPermissionRoleType\AddRoleTypeSuite.cs" />

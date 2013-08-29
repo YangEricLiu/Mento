@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Source":"软水(吨)",
+			"EffectiveYear":"1950",
+			"FactorValue":"4",			
+		},
+		"ExpectedData":
+		{
+			"Source":"软水(吨)",
+			"Destination":"标煤",	
+		    "EffectiveYear":"1950",
+			"FactorValue":"4",	
+		}
+	}
+]

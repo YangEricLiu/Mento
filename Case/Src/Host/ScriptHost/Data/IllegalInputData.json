@@ -63,7 +63,7 @@
 		},
 		"ExpectedData":
 		{
-		    "AccountID":"用户名只能由半角英文字母，数字和下划线组成。",
+		    "AccountID":"允许英文字母，数字，下划线和句点",
 			"Password":"",
 			"RealName":"允许汉字，英文字母和空格",
 			"CustomerName":"",
@@ -87,7 +87,7 @@
 			"HierarchyNodePath":["自动化测试","AutoOrg001","AutoSite001"],
 		    "AccountID":"123-45",
 			"Password":"",
-			"RealName":"一",
+			"RealName":"m文CAPITALhars 1234_F中文CAPITALh000",
 			"CustomerName":"",
 			"CommonName":"中文@",
 			"Address":"",
@@ -104,7 +104,7 @@
 		},
 		"ExpectedData":
 		{
-		    "AccountID":"用户名只能由半角英文字母，数字和下划线组成。",
+		    "AccountID":"允许英文字母，数字，下划线和句点",
 			"Password":"",
 			"RealName":"允许汉字，英文字母和空格",
 			"CustomerName":"",
@@ -126,14 +126,14 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","AutoOrg001"],
-		    "AccountID":"",
+		    "AccountID":"chars@",
 			"Password":"",
-			"RealName":"",
+			"RealName":"中文CAPITALchars 1234_F",
 			"CustomerName":"",
 			"CommonName":"chars@",
 			"Address":"",
 			"Email":"A12@sina..com",
-			"Telephone":"",
+			"Telephone":"-01012345",
 			"code":"chars中文",
 			"Meter":"chars中文",
 			"Channel":"",
@@ -145,7 +145,7 @@
 		},
 		"ExpectedData":
 		{
-		    "AccountID":"用户名只能由半角英文字母，数字和下划线组成。",
+		    "AccountID":"允许英文字母，数字，下划线和句点",
 			"Password":"",
 			"RealName":"允许汉字，英文字母和空格",
 			"CustomerName":"",
@@ -167,14 +167,14 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","AutoOrg001"],
-		    "AccountID":"",
+		    "AccountID":"中文CAPITALhars 1234_F中文CAPITALh",
 			"Password":"",
-			"RealName":"",
+			"RealName":"中文CAPITALhars 1234_F中文CAPITALh",
 			"CustomerName":"",
 			"CommonName":"chars@",
 			"Address":"",
 			"Email":"A12@sina..com",
-			"Telephone":"",
+			"Telephone":"01012345-",
 			"code":"chars中文",
 			"Meter":"chars中文",
 			"Channel":"",
@@ -186,7 +186,7 @@
 		},
 		"ExpectedData":
 		{
-		    "AccountID":"用户名只能由半角英文字母，数字和下划线组成。",
+		    "AccountID":"允许英文字母，数字，下划线和句点",
 			"Password":"",
 			"RealName":"允许汉字，英文字母和空格",
 			"CustomerName":"",

@@ -47,12 +47,21 @@ namespace Mento.Script.Administration.User
             UserSettings.ClickAddUser();
             TimeManager.ShortPause();
             UserSettings.FillInAddUser(input.InputData);
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
             UserSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
-            Assert.IsTrue(UserSettings.IsUserOnList(input.InputData.CommonName));
+            Assert.AreEqual(input.ExpectedData.AccountID,UserSettings.GetNameValue());
+            Assert.AreEqual(input.ExpectedData.RealName,UserSettings.GetRealNameValue());
+            Assert.AreEqual(input.ExpectedData.Type,UserSettings.GetTypeValue());
+            Assert.AreEqual(input.ExpectedData.Email,UserSettings.GetEmailValue());
+            Assert.AreEqual(input.ExpectedData.Telephone,UserSettings.GetTelephoneValue());
+            Assert.AreEqual(input.ExpectedData.Comments,UserSettings.GetCommentValue());
+            Assert.AreEqual(input.ExpectedData.Title,UserSettings.GetTitleValue());
+     
+            Assert.IsTrue(UserSettings.IsUserOnList(input.InputData.AccountID));
           
         }
 
@@ -70,7 +79,7 @@ namespace Mento.Script.Administration.User
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
             Assert.IsTrue(UserSettings.IsUserCommentHidden());
-            Assert.IsTrue(UserSettings.IsUserOnList(input.InputData.CommonName));
+            Assert.IsTrue(UserSettings.IsUserOnList(input.InputData.Comments));
             
         }
         [Test]

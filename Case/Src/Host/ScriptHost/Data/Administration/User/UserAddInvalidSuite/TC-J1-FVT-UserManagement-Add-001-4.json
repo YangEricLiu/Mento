@@ -2,6 +2,7 @@
 	{		
 		"InputData":
 		{
+			"AccountID":"UserForCheckAll",
 			"CommonName":"UserForCheckAll",
 			"RealName":"UserForCheckAll",
 			"Title":"技术人员",
@@ -11,6 +12,7 @@
 		},
 		"ExpectedData":
 		{
+			"AccountID":"",
 			"CommonName":"该名称已存在",
 		}
 	},

@@ -2,7 +2,7 @@
 	{		
 		"InputData":
 		{
-			"UserName":"UserForCheckSingle3",
+			"UserName":"UserNullDataScope",
 			"CustomerName":"customerLong",
 			"HierarchyNodePath":["customerLong","SiteLongLongLongLongLongLongLo"],
 		},

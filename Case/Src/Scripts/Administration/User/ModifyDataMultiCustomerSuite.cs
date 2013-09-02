@@ -332,7 +332,7 @@ namespace Mento.Script.Administration.User
             UserDataPermissionSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
-            
+            /*
             //Login with UserD.  Verify userD can select organizationA:siteA: from hierarchy tree and own datascope of buildingC: tagC:
             JazzFunction.UserProfile.NavigatorToUserProfile();
             JazzFunction.UserProfile.ExitJazz();
@@ -355,7 +355,8 @@ namespace Mento.Script.Administration.User
             TimeManager.LongPause();
             JazzFunction.LoginPage.LoginToAdmin();
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();                      
+            TimeManager.LongPause();   
+             */
         }
 
     }

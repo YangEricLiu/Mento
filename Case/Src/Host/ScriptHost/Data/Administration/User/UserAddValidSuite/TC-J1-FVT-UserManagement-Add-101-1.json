@@ -4,7 +4,18 @@
 	{		
 		"InputData":
 		{
-			"RealName":"  onlychars  ",
+			"Title":"技术人员",
+			"Type":"客户管理员"
+		},
+		"ExpectedData":
+		{
+			"Title":"技术人员",
+			"Type":"客户管理员"	
+		}
+	},
+	{		
+		"InputData":
+		{
 			"Title":"技术人员",
 			"Type":"客户管理员"
 		},
@@ -15,37 +26,38 @@
 	{		
 		"InputData":
 		{
-			"RealName":"  只有中文  ",	
+			"Title":"技术人员",
+			"Type":"客户管理员"
 		},
 		"ExpectedData":
 		{
+			"Title":"技术人员",
+			"Type":"客户管理员"	
 		}
 	},
 	{		
 		"InputData":
 		{
-			"RealName":"m文CAPITALhars 1234_F中文CAPITALh000",
+			"Title":"技术人员",
+			"Type":"客户管理员"	
 		},
 		"ExpectedData":
 		{
+			"Title":"技术人员",
+			"Type":"客户管理员"	
 		}
 	},
 	{		
 		"InputData":
 		{
-			"RealName":"中文CAPITALchars 1234_F",	
+			"Title":"技术人员",
+			"Type":"客户管理员"	
+	
 		},
 		"ExpectedData":
 		{
-		}
-	},
-	{		
-		"InputData":
-		{
-			"RealName":"中文CAPITALhars 1234_F中文CAPITALh",	
-		},
-		"ExpectedData":
-		{
+			"Title":"技术人员",
+			"Type":"客户管理员"	
 		}
 	}
 ]

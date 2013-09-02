@@ -2,13 +2,13 @@
 	{		
 		"InputData":
 		{
-			"UserName":"UserForAllCustomers",
+			"UserName":"UserNullDataScope",
 			"CustomerName":"customerA",
 			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],
 		},
 		"ExpectedData":
 		{
-			"UserName":"UserForAllCustomers",
+			"UserName":"UserNullDataScope",
 		}
 	}
 ]

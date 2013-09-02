@@ -2,6 +2,7 @@
 	{		
 		"InputData":
 		{
+			"AccountID":"UserCancel",
 			"CommonName":"UserCancel",
 			"RealName":"UserCancel",
 			"Title":"技术人员",

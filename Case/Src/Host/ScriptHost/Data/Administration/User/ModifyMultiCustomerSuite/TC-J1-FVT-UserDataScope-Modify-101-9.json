@@ -2,7 +2,7 @@
 	{		
 		"InputData":
 		{
-			"UserName":"UserForVerifyNodetree",
+			"UserName":"UserForVerifyTree",
 			"CustomerName":"customerD",
 			"HierarchyNodePath":["customerD","organizationA","siteB","buildingC"],
 			"CustomerList":["tagC"],

@@ -26,7 +26,7 @@
 			"RealName":"onlychars",
 			"CustomerName":"",
 			"CommonName":"onlychars",
-			"Address":"",
+			"Address":"010-12345678",
 			"Email":"mg_mg-mg@163.com",
 			"Telephone":"010-12345678",
 			"Code":"CAPITALCHARS",
@@ -122,7 +122,7 @@
 	{
 		"InputData":
 		{
-			"AccountID":"  Nancya_Z.0_9.Account  ",
+			"AccountID":"只有中文",
 			"Password":"",
 			"RealName":"中文CAPITALhars 中文CAPI",
 			"CustomerName":"",
@@ -141,7 +141,7 @@
 		},
 		"ExpectedData":
 		{
-			"AccountID":"Nancya_Z.0_9.Account",
+			"AccountID":"只有中文",
 			"Password":"",
 			"RealName":"中文CAPITALhars 中文CAPI",
 			"CustomerName":"",
@@ -162,7 +162,7 @@
 	{
 		"InputData":
 		{
-			"AccountID":"",
+			"AccountID":"中文CAPITALchars F",
 			"Password":"",
 			"RealName":"中文CAPITALchars F",
 			"CustomerName":"",
@@ -181,7 +181,7 @@
 		},
 		"ExpectedData":
 		{
-			"AccountID":"",
+			"AccountID":"中文CAPITALchars F",
 			"Password":"",
 			"RealName":"中文CAPITALchars F",
 			"CustomerName":"",

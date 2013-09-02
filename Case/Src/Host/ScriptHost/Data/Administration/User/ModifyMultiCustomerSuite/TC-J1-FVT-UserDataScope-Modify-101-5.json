@@ -2,7 +2,7 @@
 	{		
 		"InputData":
 		{
-			"UserName":"UserNodeTreeNotChanged",
+			"UserName":"UserNullDataScope",
 			"CustomerList":["customerA","customerB","customerC","customerD"],
 			"CustomerName":"customerC",
 			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],

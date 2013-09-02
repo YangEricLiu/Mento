@@ -2,7 +2,7 @@
 	{		
 		"InputData":
 		{
-			"UserName":"UserForCheckSingle1",
+			"UserName":"UserForCheckSingle",
 			"CustomerList":["customerA","customerB"],
 			"CustomerName":"customerC",
 			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],

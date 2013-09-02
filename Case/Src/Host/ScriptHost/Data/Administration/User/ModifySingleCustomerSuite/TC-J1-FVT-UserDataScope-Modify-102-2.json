@@ -2,7 +2,7 @@
 	{		
 		"InputData":
 		{
-			"UserName":"UserForCheckSingle1",
+			"UserName":"UserForCheckSingle",
 			"CustomerName":"customerC",
 		},
 		"ExpectedData":

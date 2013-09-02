@@ -2,7 +2,7 @@
 	{		
 		"InputData":
 		{
-			"UserName":"UserForCheckSingle1",
+			"UserName":"UserMultiToSingle",
 			"CustomerList":["customerA","customerB","customerC"],
 			"CustomerName":"customerC",
 			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],

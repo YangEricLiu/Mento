@@ -58,6 +58,7 @@ namespace Mento.Script.Administration.User
             TimeManager.MediumPause();
             Assert.AreEqual(input.ExpectedData.Message,JazzMessageBox.MessageBox.GetMessage());
             JazzMessageBox.MessageBox.OK();
+            // Login to emailbox and click the link from the received email.  need test manaully
         }
         
         [Test]

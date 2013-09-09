@@ -9,6 +9,7 @@ using System.IO;
 using Mento.Framework.Configuration;
 using Mento.Framework.Execution;
 using System.Configuration;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.ScriptCommon.Library
 {
@@ -24,6 +25,16 @@ namespace Mento.ScriptCommon.Library
             //JazzFunction.LoginPage.LoginWithOption("Admin", "P@ssw0rd", "REM管理平台");
         }
 
+        public static void InitializePlatformWithOption(string userName, string passWord, string customer)
+        {
+            InitializeExecutionContext();
+
+            JazzBrowseManager.OpenJazz();
+
+            JazzFunction.LoginPage.LoginWithOption(userName, passWord, customer);
+
+        }
+
         public static void InitializeWithOption(string userName, string passWord, string customer)
         {
             InitializeExecutionContext();
@@ -31,6 +42,10 @@ namespace Mento.ScriptCommon.Library
             JazzBrowseManager.OpenJazz();
 
             JazzFunction.LoginPage.LoginWithOption(userName, passWord, customer);
+
+            // Ali pop window
+            //JazzMessageBox.MessageBox.Close();
+            
         }
 
         public static void Desctuct()

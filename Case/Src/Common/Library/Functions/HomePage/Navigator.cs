@@ -46,6 +46,8 @@ namespace Mento.ScriptCommon.Library.Functions
             NavigateToTarget(NavigationTarget.HomePage);
 
             JazzMessageBox.LoadingMask.WaitLoading();
+
+            //JazzMessageBox.MessageBox.Close();
         }
 
         /// <summary>

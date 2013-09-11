@@ -222,5 +222,12 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return ElementHandler.Exists(OptionWindowLocator);
         }
+
+        public void RefreshJazz()
+        {
+            JazzBrowseManager.RefreshJazz();
+            ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
+            TimeManager.MediumPause();
+        }
     }
 }

@@ -302,10 +302,10 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.MediumPause();
             PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             PVtagTargetBaselineSettings.ClickCalculateTargetButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.CalculationErrorMessages[0]));
             JazzMessageBox.MessageBox.Confirm();

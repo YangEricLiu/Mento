@@ -5,11 +5,11 @@
 			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1", "Associatebuild1012"],
 			"SystemDimensionPath":["Associatebuild1012", "空调"],
 			"AreaDimensionPath":["Associatebuild1012", "LEVELAssoc1012"],
-			"TagName":"VtagUseV",	
+			"TagName":"V_Asso_101_2",	
 		},
 		"ExpectedData":
 		{
-			"TagName":"VtagUseV",
+			"TagName":"V_Asso_101_2",
 		}
 	}
 ]

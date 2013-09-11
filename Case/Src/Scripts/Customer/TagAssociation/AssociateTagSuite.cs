@@ -183,7 +183,7 @@ namespace Mento.Script.Customer.TagAssociation
             TimeManager.LongPause();
 
             //Check if message displayed
-            Assert.IsTrue(JazzFunction.VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData.Message));
+            Assert.IsTrue(JazzFunction.VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData.CommonName));
         }
 
         [Test]

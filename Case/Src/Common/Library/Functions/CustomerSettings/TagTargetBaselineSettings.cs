@@ -378,9 +378,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickCalculateTargetButton()
         {
-            TimeManager.MediumPause();
             CalculateTargetButton.Click();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
             JazzMessageBox.MessageBox.Yes();
             JazzMessageBox.LoadingMask.WaitLoading(maxtime:30);
         }

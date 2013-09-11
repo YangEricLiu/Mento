@@ -46,8 +46,11 @@ namespace Mento.ScriptCommon.Library.Functions
             NavigateToTarget(NavigationTarget.HomePage);
 
             JazzMessageBox.LoadingMask.WaitLoading();
-
-            //JazzMessageBox.MessageBox.Close();
+            if(JazzMessageBox.MessageBox.Exists())
+            {
+                JazzMessageBox.MessageBox.Close();
+            }
+            
         }
 
         /// <summary>

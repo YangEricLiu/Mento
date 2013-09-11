@@ -43,9 +43,7 @@ namespace Mento.ScriptCommon.Library
 
             JazzFunction.LoginPage.LoginWithOption(userName, passWord, customer);
 
-            // Ali pop window
-            //JazzMessageBox.MessageBox.Close();
-            
+            // Ali pop window 
         }
 
         public static void Desctuct()

@@ -168,10 +168,20 @@ namespace Mento.ScriptCommon.Library.Functions
 
             if (String.IsNullOrEmpty(customerName))
             {
-                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
+                if (JazzMessageBox.MessageBox.Exists())
+                {
+                    JazzMessageBox.MessageBox.Close();
+                }
+
+                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300); 
             }
             else
             {
+                if (JazzMessageBox.MessageBox.Exists())
+                {
+                    JazzMessageBox.MessageBox.Close();
+                }
+
                 ElementHandler.Wait(OptionWindowLocator, WaitType.ToAppear, timeout: 300);
                 TimeManager.ShortPause();
 

@@ -46,7 +46,8 @@ namespace Mento.Script.Administration.User
         {
            
             // Focus on a new created user, open datascope tab. 
-            JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            TimeManager.MediumPause();
+            Assert.IsTrue(JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName));
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
             //Verify all customers checkbox is unchecked and "编辑数据权限" link is gray out and save button disable

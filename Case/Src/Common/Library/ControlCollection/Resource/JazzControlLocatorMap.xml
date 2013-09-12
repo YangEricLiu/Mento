@@ -10,7 +10,7 @@
             <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
             <add key="ButtonNavigatorEnergyView" value="header-btn-energyservice" type="ID"/>
             <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
-            <add key="ButtonNavigatorPlatformSettings" value="header-btn-pfsetting" type="ID"/>
+            <add key="ButtonNavigatorPlatformSettings" value="header-btn-spsetting" type="ID"/>
 
             <add key="ButtonNavigatorEnergyAnalysis" value="em-functionPanel-eAnalysis" type="ID"/>
             <add key="ButtonNavigatorCarbonUsage" value="em-functionPanel-eCarbon" type="ID"/>

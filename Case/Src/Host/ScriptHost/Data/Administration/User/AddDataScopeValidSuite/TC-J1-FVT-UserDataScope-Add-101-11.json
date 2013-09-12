@@ -2,11 +2,11 @@
 	{		
 		"InputData":
 		{
-			"UserName":"PlatformAdmin",
+			"UserName":"SchneiderElectricChina",
 		},
 		"ExpectedData":
 		{
-			"UserName":"PlatformAdmin",
+			"UserName":"SchneiderElectricChina",
 		}
 	}
 ]

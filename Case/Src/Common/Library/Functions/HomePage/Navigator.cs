@@ -46,11 +46,16 @@ namespace Mento.ScriptCommon.Library.Functions
             NavigateToTarget(NavigationTarget.HomePage);
 
             JazzMessageBox.LoadingMask.WaitLoading();
-            if(JazzMessageBox.MessageBox.Exists())
+
+            if (JazzMessageBox.MessageBox.Exists())
             {
-                JazzMessageBox.MessageBox.Close();
+                if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用"))
+                {
+                    JazzMessageBox.MessageBox.Confirm();
+                }
             }
-            
+
+            TimeManager.MediumPause();
         }
 
         /// <summary>

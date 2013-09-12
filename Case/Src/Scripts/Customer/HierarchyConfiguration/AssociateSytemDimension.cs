@@ -58,13 +58,13 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //The Level 1 dimension node ('动力') is associated.
             SystemSettings.CheckSystemDimensionNodePath(input.InputData.SystemDimensionItemPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
             SystemSettings.CloseSystemDimensionDialog();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Expand system dimension tree and verify
-            SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath);
-            Assert.IsTrue(SystemSettings.IsSystemDimensionNodeDisplayed(input.InputData.SystemDimensionItemPath.Last()));
+            Assert.IsTrue(SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath));
+            //Assert.IsTrue(SystemSettings.IsSystemDimensionNodeDisplayed(input.InputData.SystemDimensionItemPath.Last()));
         }
 
         [Test]

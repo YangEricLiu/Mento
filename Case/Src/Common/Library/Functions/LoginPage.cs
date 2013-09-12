@@ -168,22 +168,31 @@ namespace Mento.ScriptCommon.Library.Functions
 
             if (String.IsNullOrEmpty(customerName))
             {
+                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
+                TimeManager.MediumPause();
+
                 if (JazzMessageBox.MessageBox.Exists())
                 {
-                    JazzMessageBox.MessageBox.Close();
+                    if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用"))
+                    {
+                        JazzMessageBox.MessageBox.Confirm();
+                    }
                 }
 
-                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300); 
+                TimeManager.ShortPause();
             }
             else
             {
                 if (JazzMessageBox.MessageBox.Exists())
                 {
-                    JazzMessageBox.MessageBox.Close();
+                    if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用"))
+                    {
+                        JazzMessageBox.MessageBox.Confirm();
+                    }
                 }
 
                 ElementHandler.Wait(OptionWindowLocator, WaitType.ToAppear, timeout: 300);
-                TimeManager.ShortPause();
+                TimeManager.MediumPause();
 
                 if (ElementHandler.Exists(OptionWindowLocator))
                 {

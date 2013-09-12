@@ -168,9 +168,6 @@ namespace Mento.ScriptCommon.Library.Functions
 
             if (String.IsNullOrEmpty(customerName))
             {
-                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
-                TimeManager.MediumPause();
-
                 if (JazzMessageBox.MessageBox.Exists())
                 {
                     if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用"))
@@ -180,17 +177,12 @@ namespace Mento.ScriptCommon.Library.Functions
                 }
 
                 TimeManager.ShortPause();
+
+                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
+                TimeManager.MediumPause();       
             }
             else
             {
-                if (JazzMessageBox.MessageBox.Exists())
-                {
-                    if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用"))
-                    {
-                        JazzMessageBox.MessageBox.Confirm();
-                    }
-                }
-
                 ElementHandler.Wait(OptionWindowLocator, WaitType.ToAppear, timeout: 300);
                 TimeManager.MediumPause();
 
@@ -199,6 +191,17 @@ namespace Mento.ScriptCommon.Library.Functions
                     LoginCustomerOption.SelectItem(customerName);
                     TimeManager.ShortPause();
                     LoginCustomerOptionConfirm.Click();
+
+                    if (JazzMessageBox.MessageBox.Exists())
+                    {
+                        if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用"))
+                        {
+                            JazzMessageBox.MessageBox.Confirm();
+                        }
+                    }
+
+                    TimeManager.ShortPause();
+
                     ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
                     TimeManager.MediumPause();
                 }

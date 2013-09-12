@@ -164,7 +164,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
             JazzButton.LoginSubmitButton.Click();
             TimeManager.LongPause();
-            
+            TimeManager.Pause(15000);
 
             if (String.IsNullOrEmpty(customerName))
             {

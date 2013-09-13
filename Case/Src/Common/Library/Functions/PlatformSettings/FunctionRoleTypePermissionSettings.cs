@@ -237,7 +237,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             int i = 0;
             Boolean flag = true;
-            string[] publicPermissions = { "仪表盘与小组件查看", "仪表盘与小组件编辑", "个人信息管理", "报警信息查看" };
+            string[] publicPermissions = { "仪表盘与小组件查看", "仪表盘与小组件编辑", "个人信息管理", "地图信息查看" };
             while (i < publicPermissions.Length && flag)
             {
                 flag= ContainerPermissionPublicTypeItems.GetContainerTexts().Contains(publicPermissions[i]);

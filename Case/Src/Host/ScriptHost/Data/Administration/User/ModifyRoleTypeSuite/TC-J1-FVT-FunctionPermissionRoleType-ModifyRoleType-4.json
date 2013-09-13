@@ -3,7 +3,7 @@
 		"InputData":
 		{	
 			"CommonName":"RoleTypeForModify",
-			"NameList":["平台管理员","客户管理员","咨询人员","工程人员","商务人员","销售人员"],
+			"NameList":["服务商管理员","客户管理员","咨询人员","工程人员","商务人员"],
 		},
 
 		"ExpectedData":

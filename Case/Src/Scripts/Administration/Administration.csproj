@@ -58,11 +58,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CustomerOperation\SmokeTestAddCustomerSuite.cs" />
-    <Compile Include="FunctionPermissionRoleType\AddFunctionScopeSuite.cs" />
-    <Compile Include="FunctionPermissionRoleType\AddRoleTypeSuite.cs" />
-    <Compile Include="FunctionPermissionRoleType\ModifyFunctionScopeSuite.cs" />
-    <Compile Include="FunctionPermissionRoleType\DeleteRoleTypeSuite.cs" />
-    <Compile Include="FunctionPermissionRoleType\ModifyRoleTypeSuite.cs" />
     <Compile Include="TimeManagement\HeatingCoolingSeasonModifySuite.cs" />
     <Compile Include="TimeManagement\HeatingCoolingSeasonAddSuite.cs" />
     <Compile Include="TimeManagement\HeatingCoolingSeasonDeleteSuite.cs" />

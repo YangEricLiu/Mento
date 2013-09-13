@@ -48,7 +48,7 @@ namespace Mento.Script.Administration.User
         {
             int i = 0;
             int j = 0;
-            string[] publicPermission = { "仪表盘与小组件查看", "仪表盘与小组件编辑", "个人信息管理", "报警信息查看" };
+            string[] publicPermission = { "仪表盘与小组件查看", "仪表盘与小组件编辑", "个人信息管理", "地图信息查看" };
             // Click "+角色" to add a new role type
             RoleTypeSettings.ClickAddFunctionRoleType();
             TimeManager.ShortPause();

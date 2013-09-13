@@ -137,8 +137,8 @@ namespace Mento.Script.Administration.User
         {
             int i = 0;
             int j = 0;
-            string[] publicPermission = { "仪表盘与小组件查看", "仪表盘与小组件编辑", "个人信息管理", "报警信息查看" };
-            string[] roleTypePermission = { "仪表盘与小组件分享", "“能效分析”功能", "“碳排放”功能", "“成本”功能", "“单位指标”功能", "“时段能耗比”功能", "“集团排名”功能", "数据导出", "REM平台管理", "层级结构管理", "普通数据点管理", "数据点关联", "客户信息查看", "客户信息管理" };
+            string[] publicPermission = { "仪表盘与小组件查看", "仪表盘与小组件编辑", "个人信息管理", "地图信息查看" };
+            string[] roleTypePermission = { "仪表盘与小组件分享", "“能效分析”功能", "“碳排放”功能", "“成本”功能", "“单位指标”功能", "“时段能耗比”功能", "“集团排名”功能", "数据导出", "EMOP系统管理", "层级结构管理", "普通数据点管理", "数据点关联", "客户信息查看", "客户信息管理" };
             // Click "+角色" to add a new role type
             RoleTypeSettings.ClickAddFunctionRoleType();
             TimeManager.ShortPause();

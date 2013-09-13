@@ -52,7 +52,7 @@ namespace Mento.Script.Administration.User
                 Assert.IsTrue(UserSettings.IsViewFunctionPermissionDispalyed());
                 Assert.IsTrue(UserSettings.IsViewFunctionPermissionEnabled());
                 UserSettings.ClickViewFunctionPermissionLinkButton();
-                //string a = "仪表盘与小组件查看\r\n仪表盘与小组件编辑\r\n个人信息管理\r\n报警信息查看仪表盘与小组件分享\r\n“能效分析”功能\r\n“碳排放”功能\r\n“成本”功能\r\n“单位指标”功能\r\n“时段能耗比”功能\r\n“集团排名”功能\r\n数据导出\r\nREM平台管理\r\n层级结构管理\r\n普通数据点管理\r\n数据点关联\r\n客户信息查看\r\n客户信息管理";
+                //string a = "仪表盘与小组件查看\r\n仪表盘与小组件编辑\r\n个人信息管理\r\n报警信息查看仪表盘与小组件分享\r\n“能效分析”功能\r\n“碳排放”功能\r\n“成本”功能\r\n“单位指标”功能\r\n“时段能耗比”功能\r\n“集团排名”功能\r\n数据导出\r\nEMOP系统管理\r\n层级结构管理\r\n普通数据点管理\r\n数据点关联\r\n客户信息查看\r\n客户信息管理";
                 Assert.AreEqual(input.ExpectedData.FunctionScopeList[i], UserSettings.GetPermissionItemsSameAsViewItems());
                 UserSettings.ClickFunctionCloseButton();
                 i++;

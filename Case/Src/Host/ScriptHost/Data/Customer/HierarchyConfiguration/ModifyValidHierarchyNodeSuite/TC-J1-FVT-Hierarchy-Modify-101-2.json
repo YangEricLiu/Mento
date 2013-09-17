@@ -46,5 +46,37 @@
 			"Comments":"AutoModifyBuilding001_M中文",
 		    "Message":"修改成功",
 		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoMRootBuilding001"],
+			"CommonName":"AutoMRootBuilding001_M中文",
+			"code":"AutoMRootBuilding001_M",
+			"Comments":"AutoMRootBuilding001_M中文",
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"AutoMRootBuilding001_M中文",
+			"code":"AutoMRootBuilding001_M",
+			"Comments":"AutoMRootBuilding001_M中文",
+		    "Message":"修改成功",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoModifyOrg002", "AutoMOrgBuilding001"],
+			"CommonName":"AutoMOrgBuilding001_M中文",
+			"code":"AutoMOrgBuilding001_M",
+			"Comments":"AutoMOrgBuilding001_M中文",
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"AutoMOrgBuilding001_M中文",
+			"code":"AutoMOrgBuilding001_M",
+			"Comments":"AutoMOrgBuilding001_M中文",
+		    "Message":"修改成功",
+		}
 	}
 ]

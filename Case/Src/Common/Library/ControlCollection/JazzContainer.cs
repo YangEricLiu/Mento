@@ -19,7 +19,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Container WorkdayErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerWorkdayErrorTips);
         public static Container HCErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerHCErrorTips);
         public static Container DayNightErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerDayNightErrorTips);
-        
+        public static Container HierarchyBuildingPictureContainer = GetControl<Container>(JazzControlLocatorKey.ContainerHierarchyBuildingPicture);
+
         #endregion
 
         #region Hierarchy Cost Property

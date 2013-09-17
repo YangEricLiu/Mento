@@ -33,6 +33,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Customer settings
         #region Hierarchy property settings
         public static ComboBox HierarchySettingsHierarchyTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchySettingsHierarchyType);
+        public static ComboBox HierarchyIndustryIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchyIndustryId);
+        public static ComboBox HierarchyZoneIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchyZoneId);
 
         public static ComboBox WorkdayEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayEffectiveYear, 1);
         public static ComboBox WorkdayCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarName, 1);

@@ -34,6 +34,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField NameTextField = JazzTextField.HierarchySettingsNameTextField;
         private static TextField codeTextField = JazzTextField.HierarchySettingscodeTextField;
         private static ComboBox HierarchyTypeComboBox = JazzComboBox.HierarchySettingsHierarchyTypeComboBox;
+        private static ComboBox HierarchyIndustryIdComboBox = JazzComboBox.HierarchyIndustryIdComboBox;
+        private static ComboBox HierarchyZoneIdComboBox = JazzComboBox.HierarchyZoneIdComboBox;
         private static TextField CommentTextField = JazzTextField.HierarchySettingsCommentTextField;
         #endregion
 
@@ -119,6 +121,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public void NavigatorToHierarchySetting()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+        }
+
+        /// <summary>
+        /// Navigate to hierarchy setting
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void NavigatorToNonHierarchy()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettings);
         }
 
         /// <summary>
@@ -252,6 +264,13 @@ namespace Mento.ScriptCommon.Library.Functions
             NameTextField.Fill(input.CommonName);
             codeTextField.Fill(input.Code);
             HierarchyTypeComboBox.SelectItem(input.Type);
+            TimeManager.LongPause();
+            if (0 == String.Compare(input.Type, "Building"))
+            {
+                HierarchyIndustryIdComboBox.SelectItem(input.Industry);
+                HierarchyZoneIdComboBox.SelectItem(input.Zone);
+            }
+            
             CommentTextField.Fill(input.Comments);
         }
 
@@ -276,13 +295,37 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Input type of the new hierarchy node 
+        /// Input industry of the new hierarchy node 
         /// </summary>
-        /// <param name="type">Hierarchy node type</param>
+        /// <param name="type">Hierarchy node industry</param>
         /// <returns></returns>
         public void FillInType(string type)
         {
-            HierarchyTypeComboBox.SelectItem(type);
+            if (!String.IsNullOrEmpty(type))
+            {
+                HierarchyTypeComboBox.SelectItem(type);
+            }
+            
+        }
+
+        /// <summary>
+        /// Input industry of the new hierarchy node 
+        /// </summary>
+        /// <param name="type">Hierarchy node industry</param>
+        /// <returns></returns>
+        public void FillInIndustry(string industry)
+        {
+            HierarchyIndustryIdComboBox.SelectItem(industry);
+        }
+
+        /// <summary>
+        /// Input zone of the new hierarchy node 
+        /// </summary>
+        /// <param name="type">Hierarchy node zone</param>
+        /// <returns></returns>
+        public void FillInZone(string zone)
+        {
+            HierarchyZoneIdComboBox.SelectItem(zone);
         }
 
         /// <summary>
@@ -305,6 +348,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsCommentHidden()
         {
             return CommentTextField.IsTextFieldHidden();
+        }
+
+        /// <summary>
+        /// Judge whether the picture and its label are hidden
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsPictureHidden()
+        {
+            return JazzContainer.HierarchyBuildingPictureContainer.Exists();
         }
 
         /// <summary>
@@ -483,6 +535,64 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge whether the Industry is invalid
+        /// </summary>
+        /// <returns>True if the node is invalid, false if not</returns>
+        public Boolean IsIndustryInvalid()
+        {
+            return HierarchyIndustryIdComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Industry field is correct
+        /// </summary>
+        /// <param name="output">HierarchyExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsIndustryInvalidMsgCorrect(HierarchyExpectedData output)
+        {
+            return HierarchyIndustryIdComboBox.GetInvalidTips().Contains(output.Type);
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Industry field is correct
+        /// </summary>
+        /// <param name="output">string</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsIndustryInvalidMsgCorrect(string output)
+        {
+            return HierarchyIndustryIdComboBox.GetInvalidTips().Contains(output);
+        }
+
+        /// <summary>
+        /// Judge whether the zone is invalid
+        /// </summary>
+        /// <returns>True if the node is invalid, false if not</returns>
+        public Boolean IsZoneInvalid()
+        {
+            return HierarchyZoneIdComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Zone field is correct
+        /// </summary>
+        /// <param name="output">HierarchyExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsZoneInvalidMsgCorrect(HierarchyExpectedData output)
+        {
+            return HierarchyZoneIdComboBox.GetInvalidTips().Contains(output.Type);
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Industry field is correct
+        /// </summary>
+        /// <param name="output">string</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsZoneInvalidMsgCorrect(string output)
+        {
+            return HierarchyZoneIdComboBox.GetInvalidTips().Contains(output);
+        }
+
+        /// <summary>
         /// Return whether Name is enabled
         /// </summary>
         /// <returns>True if enabled</returns>
@@ -507,6 +617,24 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsTypeFieldEnabled()
         {
             return HierarchyTypeComboBox.IsComboBoxTextEnabled();
+        }
+
+        /// <summary>
+        /// Return whether industry is enabled
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsIndustryFieldEnabled()
+        {
+            return HierarchyIndustryIdComboBox.IsComboBoxTextEnabled();
+        }
+
+        /// <summary>
+        /// Return whether zone is enabled
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsZoneFieldEnabled()
+        {
+            return HierarchyZoneIdComboBox.IsComboBoxTextEnabled();
         }
 
         /// <summary>
@@ -573,6 +701,24 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetTypeValue()
         {
             return HierarchyTypeComboBox.GetValue();
+        }
+
+        /// <summary>
+        /// Get the hierarchy industry expected value
+        /// </summary>
+        /// <returns>industry value</returns>
+        public string GetIndustryValue()
+        {
+            return HierarchyIndustryIdComboBox.GetValue();
+        }
+
+        /// <summary>
+        /// Get the hierarchy zone expected value
+        /// </summary>
+        /// <returns>zone value</returns>
+        public string GetZoneValue()
+        {
+            return HierarchyZoneIdComboBox.GetValue();
         }
 
         /// <summary>

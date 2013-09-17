@@ -25,11 +25,12 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     public class AssociateSytemDimension : TestSuiteBase
     {
         private static SystemDimensionSettings SystemSettings = JazzFunction.SystemDimensionSettings;
+        private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
 
         [SetUp]
         public void ScriptSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
+            SystemSettings.NavigateToSystemDimension();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
         }
@@ -37,7 +38,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void ScriptTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            HierarchySettings.NavigatorToNonHierarchy();
         }
 
         [Test]

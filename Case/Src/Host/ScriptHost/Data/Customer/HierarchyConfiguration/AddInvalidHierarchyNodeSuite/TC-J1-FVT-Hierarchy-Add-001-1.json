@@ -32,6 +32,38 @@
 			"CommonName":"BuildCancel",
 			"Code":"BuildCancel",
 			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+		},
+		"ExpectedData":
+		{
+		    
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoOrg001"],
+			"CommonName":"BuildCancel2",
+			"Code":"BuildCancel2",
+			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+		},
+		"ExpectedData":
+		{
+		    
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"CommonName":"BuildCancel3",
+			"Code":"BuildCancel3",
+			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
 		},
 		"ExpectedData":
 		{

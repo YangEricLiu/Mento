@@ -10,9 +10,9 @@
 			"Code":"PtagModifyNoChange001",
 			"Meter":"PtagModifyNoChange001",
 			"Channel":"1",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"CalculationType":"Sum",
+			"Commodity":"Gas",
+			"Uom":"m3",
+			"CalculationType":"Max",
 			"Comments":"nothing",
 		}
 	}

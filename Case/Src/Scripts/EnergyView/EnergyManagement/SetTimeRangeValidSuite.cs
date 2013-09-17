@@ -29,8 +29,8 @@ namespace Mento.Script.EnergyView.EnergyManagement
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.MediumPause();
-            
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+
+            EnergyAnalysis.NavigateToEnergyAnalysis();
             TimeManager.MediumPause();
         }
 

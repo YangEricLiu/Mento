@@ -53,7 +53,18 @@ namespace Mento.ScriptCommon.Library.Functions
         public void NavigatorToPtagSetting()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsP);
-            //TimeManager.ShortPause();
+            TimeManager.ShortPause();
+        }
+
+        /// <summary>
+        /// Navigate to Ptag Configuration Page
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void NavigatorToEnergyView()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
+            TimeManager.ShortPause();
         }
 
         /// <summary>

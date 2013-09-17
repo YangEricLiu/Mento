@@ -27,6 +27,15 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #endregion
 
+        #region common
+
+        public void NavigateToSystemDimension()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
+        }
+
+        #endregion
+
         #region Tree Operations
 
         public void ShowHierarchyTree()

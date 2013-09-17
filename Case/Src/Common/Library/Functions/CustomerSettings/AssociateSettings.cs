@@ -67,6 +67,16 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Navigate to hierarchy associate setting
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void NavigateToNonAssociate()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
+        }
+
+        /// <summary>
         /// Navigate to systemdimension associate setting
         /// </summary>
         /// <param></param>

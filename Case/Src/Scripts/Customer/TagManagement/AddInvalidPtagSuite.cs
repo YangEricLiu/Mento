@@ -36,7 +36,7 @@ namespace Mento.Script.Customer.TagManagement
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            PTagSettings.NavigatorToEnergyView();
         }
 
         [Test]

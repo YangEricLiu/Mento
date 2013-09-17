@@ -32,6 +32,8 @@
 			"CommonName":"TestSameCodewithBuilding",
 			"Code":"AutoBuilding001",
 			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
 		},
 		"ExpectedData":
 		{
@@ -58,6 +60,36 @@
 			"CommonName":"TestSameCodewithSite",
 			"Code":"AutoSite001",
 			"Type":"Orgnization",
+		},
+		"ExpectedData":
+		{
+		    "Code":"该编码已存在",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"CommonName":"TestSameCodewithBuilding1",
+			"Code":"AutoBuilding001",
+			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+		},
+		"ExpectedData":
+		{
+		    "Code":"该编码已存在",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+			"CommonName":"TestSameCodewithBuilding2",
+			"Code":"AutoBuilding001",
+			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
 		},
 		"ExpectedData":
 		{

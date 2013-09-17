@@ -162,7 +162,7 @@ namespace Mento.Script.Customer.TagManagement
       [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-4")]
       public void FormulaCaseInsensive(VtagData input)
       {
-          JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+          HierarchySettings.NavigatorToHierarchySetting();
           JazzFunction.HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
           JazzFunction.HierarchySettings.ClickCreateChildHierarchyButton();
           JazzFunction.HierarchySettings.FillInName("Building1");

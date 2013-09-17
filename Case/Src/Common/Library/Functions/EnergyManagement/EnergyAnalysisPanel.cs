@@ -43,6 +43,10 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region common
 
+        public void NavigateToEnergyAnalysis()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+        }
 
         /// <summary>
         /// Switch among "全部数据点", "系统数据点", "区域数据点"

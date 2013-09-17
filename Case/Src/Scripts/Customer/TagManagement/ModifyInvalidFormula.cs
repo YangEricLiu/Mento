@@ -411,7 +411,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //10.Prepare a V1 tag (V1=P1+buildingA.property)  Delete the buildingA node successfully.  View V1's formula again.
 
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+            HierarchySettings.NavigatorToHierarchySetting();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             JazzFunction.HierarchySettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);

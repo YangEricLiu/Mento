@@ -37,5 +37,31 @@
 			"Comments":"AutoBuilding001",
 		    "Message":"修改成功",
 		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","RootBuilding001"],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"RootBuilding001",
+			"code":"RootBuilding001",
+			"Comments":"RootBuilding001",
+		    "Message":"修改成功",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001", "OrgBuilding001"],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"OrgBuilding001",
+			"code":"OrgBuilding001",
+			"Comments":"RootBuilding001",
+		    "Message":"修改成功",
+		}
 	}
 ]

@@ -72,25 +72,11 @@
     <Compile Include="HierarchyPropertyConfiguration\ModifyCalendarPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\ModifyInvalidPeopleAreaPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\ModifyValidPeopleAreaPropertySuite.cs" />
-    <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddElectricfixedCostPropertySuite.cs" />
-    <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddElectricityCompCostPropertySuite .cs" />
-    <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddOtherCostPropertySuite.cs" />
-    <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddPeopleAreaPropertySuite.cs" />
     <Compile Include="TagAssociation\AssociateTagSuite.cs" />
     <Compile Include="TagAssociation\DisassociateTagSuite.cs" />
     <Compile Include="TagAssociation\MarkEnergyFlagSuite.cs" />
-    <Compile Include="TagAssociation\SmokeTestAreaDimensionDisassociateTagSuite.cs" />
-    <Compile Include="TagAssociation\SmokeTestHierarchyDisassociateTagSuite.cs" />
-    <Compile Include="HierarchyPropertyConfiguration\SmokeTestAddCalendarPropertySuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
-    <Compile Include="HierarchyConfiguration\SmokeTestAreaDimensionSuite.cs" />
-    <Compile Include="HierarchyConfiguration\SmokeTestSystemDimensionSuite.cs" />
-    <Compile Include="HierarchyConfiguration\SmokeTestHierarchySuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TagAssociation\SmokeTestAreaDimensionAssociateTagSuite.cs" />
-    <Compile Include="TagAssociation\SmokeTestSystemAssociateTagSuite.cs" />
-    <Compile Include="TagAssociation\SmokeTestSystemDisassociateTagSuite.cs" />
-    <Compile Include="TagManagement\AddKPIFormulaSuite.cs" />
     <Compile Include="TagManagement\AddValidVtagSuite.cs" />
     <Compile Include="TagManagement\AddValidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidPtagSuite.cs" />
@@ -107,10 +93,6 @@
     <Compile Include="TagManagement\DeletePtagSuite.cs" />
     <Compile Include="TagManagement\ModifyInvalidPtagSuite.cs" />
     <Compile Include="TagManagement\ModifyValidPtagSuite.cs" />
-    <Compile Include="TagManagement\SmokeTestFormulaVtagSuite.cs" />
-    <Compile Include="TagManagement\SmokeTestPtagConfigurationSuite.cs" />
-    <Compile Include="TagAssociation\SmokeTestHierarchyAssociateTagSuite.cs" />
-    <Compile Include="TagManagement\SmokeTestVtagManagementSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">

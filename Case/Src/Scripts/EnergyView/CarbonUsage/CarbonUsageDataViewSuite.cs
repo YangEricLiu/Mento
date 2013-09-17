@@ -27,7 +27,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [SetUp]
         public void CaseSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CarbonUsage);
+            CarbonUsage.NavigateToCarbonUsage();
             TimeManager.MediumPause();
         }
 

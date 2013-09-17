@@ -27,7 +27,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [SetUp]
         public void CaseSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            EnergyAnalysis.NavigateToEnergyAnalysis();
             TimeManager.MediumPause();
         }
 

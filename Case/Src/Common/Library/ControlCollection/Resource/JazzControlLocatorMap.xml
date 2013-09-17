@@ -584,6 +584,8 @@
       <customersettings>
           <hierarchy>
               <add key="ComboBoxHierarchySettingsHierarchyType" value="//div[@id='st-hier-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='Type']]" type="XPath"/>
+              <add key="ComboBoxHierarchyIndustryId" value="//div[@id='st-hier-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='IndustryId']]" type="XPath"/>
+              <add key="ComboBoxHierarchyZoneId" value="//div[@id='st-hier-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='ZoneId']]" type="XPath"/>
           </hierarchy>
           <hierarchyCalendarproperty>
               <add key="ComboBoxWorkdayEffectiveYear" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveYear']]" type="XPath"/>
@@ -936,6 +938,9 @@
       <add key="ContainerDisplayPermissionCustomerizeItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset[2]/div" type="XPath"/>
       <add key="ContainerDisplayPermissionItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset/div" type="XPath"/>
     </UserTypeRole>
+    <TOU>
+      <add key="ContainerHierarchyBuildingPicture" value="//div[@id='st-hier-properties-form-body']/div[contains(@id,'form') and contains(@style,'display: none;')]//label[text()='移动建筑封面图']" type="XPath"/>
+    </TOU>  
   </platformsettings>
   
 </Container>

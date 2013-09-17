@@ -170,7 +170,7 @@ namespace Mento.Script.Customer.TagManagement
              //Make sure the tag is  being used by cost property of building node manually
 
              /*
-             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+             HierarchySettings.NavigatorToHierarchySetting();
              JazzFunction.HierarchySettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
              TimeManager.LongPause();
 

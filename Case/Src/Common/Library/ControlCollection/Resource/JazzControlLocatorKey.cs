@@ -634,6 +634,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region customersettings
         #region hierarchy
         public static string ComboBoxHierarchySettingsHierarchyType = "ComboBoxHierarchySettingsHierarchyType";
+        public static string ComboBoxHierarchyIndustryId = "ComboBoxHierarchyIndustryId";
+        public static string ComboBoxHierarchyZoneId = "ComboBoxHierarchyZoneId";
         #endregion
 
         #region hierarchyCalendarproperty
@@ -1009,6 +1011,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ContainerWorkdayErrorTips = "ContainerWorkdayErrorTips";
         public static string ContainerHCErrorTips = "ContainerHCErrorTips";
         public static string ContainerDayNightErrorTips = "ContainerDayNightErrorTips";
+        public static string ContainerHierarchyBuildingPicture = "ContainerHierarchyBuildingPicture";
         #endregion
 
         #region Hierarchy Cost Property

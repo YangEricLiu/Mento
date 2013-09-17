@@ -37,7 +37,7 @@ namespace Mento.Script.Customer.TagAssociation
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            AssociateSettings.NavigateToNonAssociate();
         }
 
         [Test]

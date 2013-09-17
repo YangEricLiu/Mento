@@ -23,18 +23,19 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     public class DisassociateSytemDimension : TestSuiteBase
     {
         private static SystemDimensionSettings SystemSettings = JazzFunction.SystemDimensionSettings;
+        private static HierarchySettings HierarchySetting = JazzFunction.HierarchySettings;
 
         [SetUp]
         public void ScriptSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
+            SystemSettings.NavigateToSystemDimension();
             TimeManager.LongPause();
         }
 
         [TearDown]
         public void ScriptTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            HierarchySetting.NavigatorToNonHierarchy();
         }
 
         [Test]

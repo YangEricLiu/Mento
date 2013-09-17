@@ -32,6 +32,38 @@
 			"CommonName":"AutoBuilding002",
 			"Code":"AutoBuilding002_1",
 			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"该名称已存在",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoOrg001"],
+			"CommonName":"OrgBuilding",
+			"Code":"AutoBuilding002_2",
+			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"该名称已存在",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"CommonName":"RootBuilding",
+			"Code":"AutoBuilding002_3",
+			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
 		},
 		"ExpectedData":
 		{

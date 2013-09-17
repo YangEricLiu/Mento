@@ -38,7 +38,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            HierarchySettings.NavigatorToNonHierarchy();
         }
 
         [Test]
@@ -145,6 +145,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Add organization and site node to "自动化测试"
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickCreateChildHierarchyButton();
+            HierarchySettings.FillInType(input.InputData.Type);
+            TimeManager.LongPause();
 
             //Input nothing and click "Save" button
             TimeManager.MediumPause();
@@ -156,8 +158,20 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             Assert.IsTrue(HierarchySettings.IsNameInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(HierarchySettings.IscodeInvalid());
             Assert.IsTrue(HierarchySettings.IscodeInvalidMsgCorrect(input.ExpectedData));
-            Assert.IsTrue(HierarchySettings.IsTypeInvalid());
-            Assert.IsTrue(HierarchySettings.IsTypeInvalidMsgCorrect(input.ExpectedData));
+            if (0 != String.Compare(input.InputData.Type, "Building"))
+            {
+                Assert.IsTrue(HierarchySettings.IsTypeInvalid());
+                Assert.IsTrue(HierarchySettings.IsTypeInvalidMsgCorrect(input.ExpectedData));
+            }
+            
+            if (0 == String.Compare(input.InputData.Type, "Building"))
+            {
+                Assert.IsTrue(HierarchySettings.IsIndustryInvalid());
+                Assert.IsTrue(HierarchySettings.IsIndustryInvalidMsgCorrect(input.ExpectedData));
+                Assert.IsTrue(HierarchySettings.IsZoneInvalid());
+                Assert.IsTrue(HierarchySettings.IsZoneInvalidMsgCorrect(input.ExpectedData));
+            }
+            
             Assert.IsFalse(HierarchySettings.IsCommentsInvalid());
         }
     }

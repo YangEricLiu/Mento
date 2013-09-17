@@ -11,5 +11,20 @@
 		{
 		    "Message":"添加成功",
 		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"CommonName":"EmptyCommentBuilding",
+			"Code":"EmptyCommentBuilding",
+			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+		},
+		"ExpectedData":
+		{
+		    "Message":"添加成功",
+		}
 	}
 ]

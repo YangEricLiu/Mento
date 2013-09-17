@@ -28,6 +28,11 @@ namespace Mento.ScriptCommon.Library.Functions
 
         internal CarbonUsagePanel() { }
 
+        public void NavigateToCarbonUsage()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CarbonUsage);
+        }
+
         #region left region
         
         public void SelectCommodity(string[] commodityNames)

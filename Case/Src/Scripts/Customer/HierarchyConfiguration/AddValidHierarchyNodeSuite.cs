@@ -37,7 +37,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            HierarchySettings.NavigatorToNonHierarchy();
         }
 
         [Test]
@@ -116,7 +116,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
                 Assert.IsTrue(HierarchySettings.IsTypeContainsOrgnization());
                 Assert.IsTrue(HierarchySettings.IsTypeContainsSite());
-                Assert.IsFalse(HierarchySettings.IsTypeContainsBuilding());
+                Assert.IsTrue(HierarchySettings.IsTypeContainsBuilding());
 
                 //Click "Save" button
                 TimeManager.MediumPause();
@@ -154,8 +154,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.ClickSaveButton();
             TimeManager.ShortPause();
 
-            //Verify the comments not display
+            //Verify the comments and picture not display
             Assert.IsTrue(HierarchySettings.IsCommentHidden());
+            Assert.IsTrue(HierarchySettings.IsPictureHidden());
         }
 
         [Test]

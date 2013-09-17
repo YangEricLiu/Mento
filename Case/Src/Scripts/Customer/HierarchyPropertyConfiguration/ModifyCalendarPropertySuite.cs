@@ -27,14 +27,14 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [SetUp]
         public void CaseSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+            HierarchySettings.NavigatorToHierarchySetting();
             TimeManager.MediumPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            HierarchySettings.NavigatorToNonHierarchy();
         }
 
         [Test]

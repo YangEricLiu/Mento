@@ -30,10 +30,14 @@
 		{	
 			"HierarchyNodePath":["自动化测试", "AutoOrg001", "AutoSite001"],
 			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
 		},
 		"ExpectedData":
 		{
 		    "Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
 			"Message":"添加成功",
 		}
 	},
@@ -59,6 +63,72 @@
 		{
 		    "Type":"Site",
 			"Message":"添加成功",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"CommonName":"newadd1",
+			"Code":"newadd1",
+			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+			"Comments":"newadd1",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"newadd1",
+			"Code":"newadd1",
+		    "Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+			"Message":"添加成功",
+			"Comments":"newadd1",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试","AutoOrg001"],
+			"CommonName":"newadd2",
+			"Code":"newadd2",
+			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+			"Comments":"newadd2",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"newadd2",
+			"Code":"newadd2",
+		    "Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+			"Message":"添加成功",
+			"Comments":"newadd2",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试", "AutoOrg001", "AutoSite001"],
+			"CommonName":"newadd3",
+			"Code":"newadd3",
+			"Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+			"Comments":"newadd3",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"newadd3",
+			"Code":"newadd3",
+		    "Type":"Building",
+			"Industry":"数据中心",
+			"Zone":"温和地区",
+			"Message":"添加成功",
+			"Comments":"newadd3",
 		}
 	}
 ]

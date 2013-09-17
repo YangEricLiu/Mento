@@ -44,6 +44,11 @@ namespace Mento.ScriptCommon.Library.Functions
             TotalCommotidyGrid = JazzGrid.TotalCommodityCostGrid;
         }
 
+        public void NavigateToCostUsage()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CostUsage);
+        }
+
         #region left panel
 
         /// <summary>

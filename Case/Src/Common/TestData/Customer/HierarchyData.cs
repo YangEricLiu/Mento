@@ -17,6 +17,8 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string CommonName { get; set; }
         public string Code { get; set; }
         public string Type { get; set; }
+        public string Industry { get; set; }
+        public string Zone { get; set; }
         public string Comments { get; set; }
     }
 
@@ -26,6 +28,8 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string CommonName { get; set; }
         public string Code { get; set; }
         public string Type { get; set; }
+        public string Industry { get; set; }
+        public string Zone { get; set; }
         public string Comments { get; set; }
         public string Message { get; set; }
         public string ErrorMessage { get; set; }

@@ -36,7 +36,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            HierarchySettings.NavigatorToNonHierarchy();
         }
 
         [Test]

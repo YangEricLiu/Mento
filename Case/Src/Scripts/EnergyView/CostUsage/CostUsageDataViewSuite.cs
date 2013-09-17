@@ -28,7 +28,7 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CaseSetUp()
         {
             JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CostUsage);
+            CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
         }
 

@@ -3,6 +3,21 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试"],
+			"Type":"Building",
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"必填项",
+			"code":"必填项",
+			"Type":"必填项",
+			"Industry":"必填项",
+			"Zone":"必填项",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
 		},
 		"ExpectedData":
 		{

@@ -27,7 +27,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [SetUp]
         public void CaseSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            EnergyAnalysis.NavigateToEnergyAnalysis();
             TimeManager.MediumPause();
         }
 
@@ -41,7 +41,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
-        //private static 
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-1")]

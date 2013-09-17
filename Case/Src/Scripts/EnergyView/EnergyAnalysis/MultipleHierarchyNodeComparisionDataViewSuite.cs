@@ -24,10 +24,15 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     [ManualCaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101"), CreateTime("2013-08-08"), Owner("Emma")]
     public class MultipleHierarchyNodeComparisionDataViewSuite : TestSuiteBase
     {
+        private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
+        private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
+        private static HomePage HomePagePanel = JazzFunction.HomePage;
+        private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
+
         [SetUp]
         public void CaseSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            EnergyAnalysis.NavigateToEnergyAnalysis();
             TimeManager.MediumPause();
         }
 
@@ -36,12 +41,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         {
             JazzFunction.Navigator.NavigateHome();
         }
-
-        private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
-        private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
-        private static HomePage HomePagePanel = JazzFunction.HomePage;
-        private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
-        //private static 
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-1")]

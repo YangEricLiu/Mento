@@ -24,6 +24,8 @@ namespace Mento.Script.Customer.TagManagement
     public class ViewTargetBaselineCalendarSuite : TestSuiteBase
     {
         private static TagTargetBaselineSettings PVtagTargetBaselineSettings = JazzFunction.TagTargetBaselineSettings;
+        private static PTagSettings PtagSettings = JazzFunction.PTagSettings;
+
         [SetUp]
         public void CaseSetUp()
         {
@@ -34,7 +36,7 @@ namespace Mento.Script.Customer.TagManagement
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            PtagSettings.NavigatorToEnergyView();
         }
 
         private void PickupPtagOrVtag(KPITargetBaselineData input)

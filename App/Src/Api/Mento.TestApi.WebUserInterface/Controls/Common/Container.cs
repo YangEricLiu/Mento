@@ -89,5 +89,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return items;
         }
+
+        /// <summary>
+        /// Judge if the container existed
+        /// </summary>
+        /// <param></param>
+        public bool IsContainerExisted()
+        {
+            return ElementHandler.Exists(this._RootLocator);
+        }
     }
 }

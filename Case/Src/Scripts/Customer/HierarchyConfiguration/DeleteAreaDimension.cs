@@ -30,7 +30,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettings);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+            HierarchySettings.NavigatorToHierarchySetting();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
              */

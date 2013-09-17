@@ -24,6 +24,8 @@ namespace Mento.Script.Customer.TagManagement
     public class ModifyInvalidTargetBaselineSuite : TestSuiteBase
     {
         private static TagTargetBaselineSettings PVtagTargetBaselineSettings = JazzFunction.TagTargetBaselineSettings;
+        private static PTagSettings PTagSettings  = JazzFunction.PTagSettings;
+
         [SetUp]
         public void CaseSetUp()
         {
@@ -34,7 +36,7 @@ namespace Mento.Script.Customer.TagManagement
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            PTagSettings.NavigatorToEnergyView();
         }
 
         private void PickupPtagOrVtag(KPITargetBaselineData input)
@@ -88,10 +90,10 @@ namespace Mento.Script.Customer.TagManagement
             PVtagTargetBaselineSettings.ClickSaveButton();
             TimeManager.MediumPause();
 
-            Assert.IsFalse(PVtagTargetBaselineSettings.IsSpecialdayStartDateInvalid(1));
-            Assert.IsFalse(PVtagTargetBaselineSettings.IsSpecialdayStartTimeInvalid(1));
-            Assert.IsFalse(PVtagTargetBaselineSettings.IsSpecialdayEndDateInvalid(1));       
-            Assert.IsFalse(PVtagTargetBaselineSettings.IsSpecialdayEndTimeInvalid(1));
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayStartDateInvalid(1));
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayStartTimeInvalid(1));
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayEndDateInvalid(1));
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayEndTimeInvalid(1));
 
             Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayValueInvalid(1));
             Assert.IsTrue(PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1).Contains(input.ExpectedData.SpecialdayRuleValue[0]));

@@ -24,6 +24,7 @@ namespace Mento.Script.Customer.TagManagement
     public class CalculateReviseTargetBaselineSuite : TestSuiteBase
     {
         private static TagTargetBaselineSettings PVtagTargetBaselineSettings = JazzFunction.TagTargetBaselineSettings;
+        private static PTagSettings PTagSettings = JazzFunction.PTagSettings;
         private string CalculationMessage = "本次操作时间较长，您确定要继续吗";
 
         [SetUp]
@@ -36,7 +37,7 @@ namespace Mento.Script.Customer.TagManagement
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            PTagSettings.NavigatorToEnergyView();
         }
 
         private void PickupPtagOrVtag(KPITargetBaselineData input)

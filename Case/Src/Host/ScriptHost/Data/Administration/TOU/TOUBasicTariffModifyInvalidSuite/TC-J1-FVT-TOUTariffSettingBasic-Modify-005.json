@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"PlainPrice":"",
+			"PeakRange":[{"StartTime": "02:00", "EndTime": "08:00"}],
+		},
+		"ExpectedData":
+		{
+		    "PlainPrice":"峰谷电价时间未充满24小时。请重新配置或添加“平时电价”。",
+		}	
+	},
+]

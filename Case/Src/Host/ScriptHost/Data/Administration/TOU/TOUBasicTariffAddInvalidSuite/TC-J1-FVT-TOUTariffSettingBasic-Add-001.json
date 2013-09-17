@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"策略abcForAddCancelled",	
+			"PlainPrice":"1",	
+			"PeakPrice":"1.5",	
+			"ValleyPrice":"0.8",
+			"PeakRange":[{"StartTime": "08:00", "EndTime": "10:30"}],
+			"ValleyRange":[{"StartTime": "00:00", "EndTime": "04:00"}],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"",
+			"PlainPrice":"",	
+			"PeakPrice":"",	
+			"ValleyPrice":"",
+		}	
+	},
+]

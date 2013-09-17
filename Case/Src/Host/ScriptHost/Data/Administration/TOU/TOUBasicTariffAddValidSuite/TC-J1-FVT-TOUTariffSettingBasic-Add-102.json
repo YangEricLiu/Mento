@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"价格AddComplexRanges",	
+			"PlainPrice":"0.8",	
+			"PeakPrice":"1.12",	
+			"ValleyPrice":"0.5",
+			"PeakRange":[{"StartTime": "00:00", "EndTime": "08:00"}, {"StartTime": "00:00", "EndTime": "08:00"}],
+			"ValleyRange":[{"StartTime": "23:00", "EndTime": "24:00"}, {"StartTime": "23:00", "EndTime": "24:00"}, {"StartTime": "16:00", "EndTime": "17:00"}],		
+		}
+	},	
+]

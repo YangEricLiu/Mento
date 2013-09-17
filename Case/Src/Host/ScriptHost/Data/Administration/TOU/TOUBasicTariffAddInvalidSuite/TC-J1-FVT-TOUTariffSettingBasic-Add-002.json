@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{	
+			
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"必填项。",
+			"PlainPrice":"",
+			"PeakPrice":"必填项。",	
+			"ValleyPrice":"必填项。",
+			"PeakRange":[{"StartTime": "必填项。"},{"StartTime": "必填项。"}],
+			"ValleyRange":[{"StartTime": "必填项。"},{"StartTime": "必填项。"}],
+		}	
+	},
+]

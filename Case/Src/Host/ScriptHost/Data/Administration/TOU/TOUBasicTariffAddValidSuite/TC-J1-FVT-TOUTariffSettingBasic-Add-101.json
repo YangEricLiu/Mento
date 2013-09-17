@@ -1,0 +1,35 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"价格AddValid1",	
+			"PlainPrice":"",	
+			"PeakPrice":"1.12",	
+			"ValleyPrice":"0.5",				
+			"PeakRange":[{"StartTime": "08:30", "EndTime": "24:00"}],
+			"ValleyRange":[{"StartTime": "00:00", "EndTime": "08:30"}],
+		}
+	},	
+	{
+		"InputData":
+		{	
+			"CommonName":"价格AddValid2",	
+			"PlainPrice":"2",	
+			"PeakPrice":"5",	
+			"ValleyPrice":"1",				
+			"PeakRange":[{"StartTime": "10:00", "EndTime": "13:00"}],
+			"ValleyRange":[{"StartTime": "23:30", "EndTime": "24:00"}],
+		}
+	},	
+	{
+		"InputData":
+		{	
+			"CommonName":"价格AddValid3",	
+			"PlainPrice":"5.1",	
+			"PeakPrice":"12.5",	
+			"ValleyPrice":"0.01",				
+			"PeakRange":[{"StartTime": "10:30", "EndTime": "24:00"}],
+			"ValleyRange":[{"StartTime": "00:00", "EndTime": "10:30"}],
+		}
+	},	
+]

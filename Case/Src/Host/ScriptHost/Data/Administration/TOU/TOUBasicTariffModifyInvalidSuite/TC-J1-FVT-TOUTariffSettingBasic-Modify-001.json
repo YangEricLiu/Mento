@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"New",	
+			"PeakRange":[{"StartTime": "00:00", "EndTime": "08:00"}],
+			"ValleyRange":[{"StartTime": "23:00", "EndTime": "24:00"}, {"StartTime": "12:30", "EndTime": "13:30"}, {"StartTime": "15:00", "EndTime": "16:30"}],	
+		},
+		"ExpectedData":
+		{
+			"CommonName":"价格ForModifyInvalid",	
+		}	
+	},
+]

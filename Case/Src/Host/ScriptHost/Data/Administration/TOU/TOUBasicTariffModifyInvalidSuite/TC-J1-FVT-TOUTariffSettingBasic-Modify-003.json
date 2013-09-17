@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"价格For重名验证",
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"该名称已存在",
+		}	
+	},
+]

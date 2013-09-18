@@ -122,7 +122,7 @@
 	{
 		"InputData":
 		{
-			"AccountID":"只有中文",
+			"AccountID":"_Test_",
 			"Password":"",
 			"RealName":"中文CAPITALhars 中文CAPI",
 			"CustomerName":"",
@@ -141,7 +141,7 @@
 		},
 		"ExpectedData":
 		{
-			"AccountID":"只有中文",
+			"AccountID":"_Test_",
 			"Password":"",
 			"RealName":"中文CAPITALhars 中文CAPI",
 			"CustomerName":"",
@@ -162,7 +162,7 @@
 	{
 		"InputData":
 		{
-			"AccountID":"中文CAPITALchars F",
+			"AccountID":"CAPITALchars_F",
 			"Password":"",
 			"RealName":"中文CAPITALchars F",
 			"CustomerName":"",
@@ -181,7 +181,7 @@
 		},
 		"ExpectedData":
 		{
-			"AccountID":"中文CAPITALchars F",
+			"AccountID":"CAPITALchars_F",
 			"Password":"",
 			"RealName":"中文CAPITALchars F",
 			"CustomerName":"",

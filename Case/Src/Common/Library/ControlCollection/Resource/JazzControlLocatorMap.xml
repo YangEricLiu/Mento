@@ -77,7 +77,7 @@
           <add key="ButtonUserDelete" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
 
           <add key="ButtonUserSendEmail" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='发送邮件']]" type="XPath"/>
-          <add key="LinkButtonUserViewFunctionDetail" value="//div[@id='st-user-properties-form']//div[contains(@id,'remlink') and a[text()='查看权限详细']]" type="XPath"/>
+          <add key="LinkButtonUserViewFunctionDetail" value="//div[@id='st-user-properties-form-body']//div[contains(@id,'remlinkbutton') and a[text()='查看权限详细']]/a" type="XPath"/>
 
           <add key="ButtonUserGeneratePassword" value="st-user-resetpassword-btnInnerEl" type="ID"/>
           <add key="ButtonUserTypePermissionModify" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>

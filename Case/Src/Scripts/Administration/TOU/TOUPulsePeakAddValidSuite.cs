@@ -53,9 +53,10 @@ namespace Mento.Script.Administration.TOU
             TimeManager.ShortPause();
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCreateButton();  
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertyPlusIcon();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             TOUPulsePeakTariffSettings.FillInPulsePeakPropertyPriceValue(testData.InputData.Price);
+            TimeManager.MediumPause();
 
             //Click '添加峰值季节时间' link and also Fill in the ranges
             TOUPulsePeakTariffSettings.AddPulsePeakRanges(testData);            

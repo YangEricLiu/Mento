@@ -13,10 +13,10 @@
 		{
 			"CommonName":"UserForCheckAll",
 			"RealName":"UserForCheckAll",
-			"Title":"技术人员",
+			"Title":"客户管理员",
 			"Type":"RoleTypeUsed",
-			"Telephone":"1",
-			"Email":"1@1.com",
+			"Telephone":"2",
+			"Email":"2@2.com",
 		}
 	},
 ]

@@ -67,7 +67,6 @@ namespace Mento.Script.Administration.User
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
 
             // View the data permission 
-            //@@@@@@@@@@@@@@@@
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.HierarchyNodePath));
             UserDataPermissionSettings.CloseTreeWindow();

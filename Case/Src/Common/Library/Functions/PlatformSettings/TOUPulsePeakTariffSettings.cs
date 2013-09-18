@@ -57,6 +57,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SwitchToPulsePeakPropertyTab()
         {
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             PulsePeakPropertyTab.Click();
         }
 
@@ -88,6 +90,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickPulsePeakPropertySaveButton()
         {
             PulsePeakPropertySaveButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
         }
 
         public Boolean IsPulsePeakPropertySaveButtonDisplayed()

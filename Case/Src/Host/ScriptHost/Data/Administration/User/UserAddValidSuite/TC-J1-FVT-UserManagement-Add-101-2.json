@@ -2,8 +2,7 @@
 	{		
 		"InputData":
 		{
-			"CommonName":"AccountID",
-			"CommonName":"UserEmptyComments",
+			"AccountID":"UserEmptyComments",
 			"RealName":"UserEmptyCommentss",
 			"Title":"技术人员",
 			"Type":"客户管理员",

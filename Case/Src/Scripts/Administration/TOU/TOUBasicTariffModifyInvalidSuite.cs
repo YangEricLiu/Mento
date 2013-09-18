@@ -53,6 +53,7 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button directly without any change
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
             //Click 'Modify' button
@@ -103,6 +104,7 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //Verify that Error message '必填项' is displayed below each required fields: '名称',  '峰时电价',  '谷时电价'. There is no message below '平时电价'.
@@ -141,6 +143,7 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();  
 
             //Verify that Error message is displayed below '名称' field.
@@ -170,6 +173,7 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //Verify the messages below the fields. 
@@ -199,6 +203,7 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //Verify that Error message is displayed below time range field.
@@ -221,6 +226,7 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //Verify that Error message is displayed below time range field.
@@ -243,6 +249,7 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //Verify that Error message is displayed below time range field.

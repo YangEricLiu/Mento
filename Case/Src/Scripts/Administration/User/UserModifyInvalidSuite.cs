@@ -136,7 +136,7 @@ namespace Mento.Script.Administration.User
 
             TimeManager.ShortPause();
             UserSettings.ClickCancelButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             Assert.IsTrue(UserSettings.FocusOnUser(input.InputData.CommonName));
             Assert.AreEqual(UserSettings.GetCommonNameValue(),input.ExpectedData.CommonName);

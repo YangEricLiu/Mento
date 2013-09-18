@@ -62,6 +62,7 @@ namespace Mento.Script.Administration.TimeManagement
             //Click "Save" button
             TimeSettingsDayNight.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
 
             //verify modification is successful
             Assert.IsFalse(TimeSettingsDayNight.IsSaveButtonDisplayed());
@@ -104,6 +105,7 @@ namespace Mento.Script.Administration.TimeManagement
             //Click 'Save' button
             TimeSettingsDayNight.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
 
             //Verify modification is saved successfully.
             Assert.IsFalse(TimeSettingsDayNight.IsSaveButtonDisplayed());
@@ -148,6 +150,7 @@ namespace Mento.Script.Administration.TimeManagement
             //Click 'Save' button
             TimeSettingsDayNight.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
 
             //Verify modification is saved successfully, and only two ranges left.
             Assert.IsFalse(TimeSettingsDayNight.IsSaveButtonDisplayed());
@@ -174,6 +177,7 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Click "Save" button directly without any change
             TimeSettingsDayNight.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
             //Click 'Modify' button again
@@ -213,7 +217,7 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Click 'Modify' button.
             TimeSettingsDayNight.ClickModifyButton();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
             
             //Change the end time of range1 so that it is overlapped with range2
             TimeSettingsDayNight.SelectEndTime(testData.InputData.TimeRange[0].EndTime, 1);
@@ -223,12 +227,14 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Click "Save" button.
             TimeSettingsDayNight.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();            
 
             //verify that the saving is failed and error messages are displayed below the fields.
             Assert.IsTrue(TimeSettingsDayNight.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsDayNight.IsCancelButtonDisplayed());
             Assert.IsFalse(TimeSettingsDayNight.IsModifyButtonDisplayed());
+            TimeManager.MediumPause();
             Assert.IsTrue(TimeSettingsDayNight.IsNameInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsTrue(TimeSettingsDayNight.IsRangeInvalidMsgCorrect(testData.ExpectedData, 1));
 

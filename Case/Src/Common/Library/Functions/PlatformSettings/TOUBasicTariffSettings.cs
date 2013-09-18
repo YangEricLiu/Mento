@@ -59,6 +59,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickBasicPropertySaveButton()
         {
             BasicPropertySaveButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
         }
 
         public Boolean IsBasicPropertySaveButtonDisplayed()

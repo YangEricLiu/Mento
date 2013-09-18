@@ -147,12 +147,14 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Click "Save" button.
             TimeSettingsDayNight.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();            
 
             //verify that the saving is failed and error messages are displayed below the fields.
             Assert.IsTrue(TimeSettingsDayNight.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsDayNight.IsCancelButtonDisplayed());
             Assert.IsFalse(TimeSettingsDayNight.IsModifyButtonDisplayed());
+
             Assert.IsTrue(TimeSettingsDayNight.IsNameInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsTrue(TimeSettingsDayNight.IsRangeInvalidMsgCorrect(testData.ExpectedData, 1));
 

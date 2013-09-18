@@ -61,7 +61,7 @@ namespace Mento.Script.Administration.User
             Assert.AreEqual(input.ExpectedData.Comments,UserSettings.GetCommentValue());
             Assert.AreEqual(input.ExpectedData.Title,UserSettings.GetTitleValue());
      
-            Assert.IsTrue(UserSettings.IsUserOnList(input.InputData.AccountID));
+            Assert.IsTrue(UserSettings.IsUserOnList(input.ExpectedData.AccountID));
           
         }
 
@@ -79,7 +79,7 @@ namespace Mento.Script.Administration.User
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
             Assert.IsTrue(UserSettings.IsUserCommentHidden());
-            Assert.IsTrue(UserSettings.IsUserOnList(input.InputData.Comments));
+            Assert.IsTrue(UserSettings.IsUserOnList(input.InputData.AccountID));
             
         }
         [Test]

@@ -132,9 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\Resource\cn\" />
-    <Folder Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\" />
-    <Folder Include="Data\Administration\TOU\TOUBasicTariffAddValidSuite\" />
-    <Folder Include="Data\Administration\TOU\TOUBasicTariffModifyInvalidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffAddInvalidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffModifyInvalidSuite\" />
     <Folder Include="Data\Administration\User\UserManagementAddInvalid\" />
@@ -213,9 +210,22 @@
     <None Include="Data\Administration\TimeManagement\WorkdayModifySuite\TC-J1-FVT-TimeManagementWorkday-Modify-103.json" />
     <None Include="Data\Administration\TimeManagement\WorkdayModifySuite\TC-J1-FVT-TimeManagementWorkday-Modify-101.json" />
     <None Include="Data\Administration\TimeManagement\WorkdayModifySuite\TC-J1-FVT-TimeManagementWorkday-Modify-102.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\TC-J1-FVT-TOUTariffSettingBasic-Add-001.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\TC-J1-FVT-TOUTariffSettingBasic-Add-002.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\TC-J1-FVT-TOUTariffSettingBasic-Add-003.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\TC-J1-FVT-TOUTariffSettingBasic-Add-004.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffAddInvalidSuite\TC-J1-FVT-TOUTariffSettingBasic-Add-005.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffAddValidSuite\TC-J1-FVT-TOUTariffSettingBasic-Add-101.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffAddValidSuite\TC-J1-FVT-TOUTariffSettingBasic-Add-102.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSettingBasic-Delete-002.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSettingBasic-Delete-101.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffDeleteSuite\TC-J1-FVT-TOUTariffSettingBasic-Delete-001.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffModifyInvalidSuite\TC-J1-FVT-TOUTariffSettingBasic-Modify-001.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffModifyInvalidSuite\TC-J1-FVT-TOUTariffSettingBasic-Modify-002.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffModifyInvalidSuite\TC-J1-FVT-TOUTariffSettingBasic-Modify-003.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffModifyInvalidSuite\TC-J1-FVT-TOUTariffSettingBasic-Modify-004.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffModifyInvalidSuite\TC-J1-FVT-TOUTariffSettingBasic-Modify-005.json" />
+    <None Include="Data\Administration\TOU\TOUBasicTariffModifyValidSuite\TC-J1-FVT-TOUTariffSettingBasic-Modify-102.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffModifyValidSuite\TC-J1-FVT-TOUTariffSettingBasic-Modify-105.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffModifyValidSuite\TC-J1-FVT-TOUTariffSettingBasic-Modify-104.json" />
     <None Include="Data\Administration\TOU\TOUBasicTariffModifyValidSuite\TC-J1-FVT-TOUTariffSettingBasic-Modify-101.json" />
@@ -232,6 +242,7 @@
     <None Include="Data\Administration\TOU\TOUPulsePeakModifyValidSuite\TC-J1-FVT-TOUTariffSettingPulse-Modify-101.json" />
     <None Include="Data\Administration\TOU\SmokeTestTOUPulsePeakTariffSuite\TC-J1-SmokeTest-026.json" />
     <None Include="Data\Administration\TOU\SmokeTestTOUBasicTariffSuite\TC-J1-SmokeTest-025.json" />
+    <None Include="Data\Administration\TOU\TOUPulsePeakTariffSuite\TC-J1-SmokeTest-026.json" />
     <None Include="Data\Administration\User\AddDataScopeInvalidSuite\TC-J1-FVT-UserDataScope-Add-001-3.json" />
     <None Include="Data\Administration\User\AddDataScopeValidSuite\TC-J1-FVT-UserDataScope-Add-101-11.json" />
     <None Include="Data\Administration\User\AddDataScopeValidSuite\TC-J1-FVT-UserDataScope-Add-101-9.json" />

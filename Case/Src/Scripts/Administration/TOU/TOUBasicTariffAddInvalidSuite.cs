@@ -98,6 +98,7 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button directly without any input
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //Verify that Error message '必填项' is displayed below each required fields: '名称',  '峰时电价',  '谷时电价',  '峰时范围',  '谷时范围'. There is no message below '平时电价'.
@@ -143,6 +144,7 @@ namespace Mento.Script.Administration.TOU
 
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();                      
 
             //Verify the message below the field. 

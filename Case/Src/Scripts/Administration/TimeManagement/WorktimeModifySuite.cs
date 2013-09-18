@@ -223,12 +223,14 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Click "Save" button.
             TimeSettingsWorktime.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();            
 
             //verify that the saving is failed and error messages are displayed below the fields.
             Assert.IsTrue(TimeSettingsWorktime.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsWorktime.IsCancelButtonDisplayed());
             Assert.IsFalse(TimeSettingsWorktime.IsModifyButtonDisplayed());
+            TimeManager.MediumPause();
             Assert.IsTrue(TimeSettingsWorktime.IsNameInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsTrue(TimeSettingsWorktime.IsRangeInvalidMsgCorrect(testData.ExpectedData, 1));
 

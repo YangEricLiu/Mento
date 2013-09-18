@@ -121,6 +121,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SwitchToBaselinePropertyTab()
         {
             BaselinePropertyTab.Click();
+            TimeManager.Pause(5000);
         }              
                        
         /// <summary>
@@ -130,6 +131,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SwitchToTargetPropertyTab()
         {
             TargetPropertyTab.Click();
+            TimeManager.Pause(5000);
         }
 
         /// <summary>

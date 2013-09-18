@@ -13,6 +13,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string ChartMaskerLoadingLocator = "ChartMaskerLoadingLocator";
         public static string DashboardHeaderLoadingLocator = "DashboardHeaderLoadingLocator";
         public static string WidgetsContainerLoadingLocator = "WidgetsContainerLoadingLocator";
+        public static string CalendarLoadingLocator = "CalendarLoadingLocator";
         //public static string CreateSuccessMessageBox = "CreateSuccessMessageBox";
         //public static string CreateSuccessMessageBoxOkButton = "CreateSuccessMessageBoxOkButton";
 

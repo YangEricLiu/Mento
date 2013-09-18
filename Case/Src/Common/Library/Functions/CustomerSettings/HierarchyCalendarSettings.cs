@@ -53,6 +53,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickCalendarTab()
         {
             CalendarTab.Click();
+            JazzMessageBox.LoadingMask.WaitCalendarPropertyLoading();
         }
 
         public bool IsCalendarTabEnable()
@@ -86,6 +87,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickCancelCalendarButton()
         {
             CalendarCancel.Click();
+            JazzMessageBox.LoadingMask.WaitCalendarPropertyLoading();
         }
         #endregion
 

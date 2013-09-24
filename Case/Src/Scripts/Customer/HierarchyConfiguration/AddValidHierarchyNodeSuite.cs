@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -131,11 +132,12 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Click the level 5 orgnization
             HierarchySettings.SelectHierarchyNode(input.InputData.HierarchyNodePath.Last());
             HierarchySettings.ClickCreateChildHierarchyButton();
+            TimeManager.MediumPause();
 
-            //Verify the type list not contain "org" and "building", only "site"
+            //Verify the type list not contain "org", only "site", "building"
             Assert.IsFalse(HierarchySettings.IsTypeContainsOrgnization());
             Assert.IsTrue(HierarchySettings.IsTypeContainsSite());
-            Assert.IsFalse(HierarchySettings.IsTypeContainsBuilding());
+            Assert.IsTrue(HierarchySettings.IsTypeContainsBuilding());
         }
 
         [Test]

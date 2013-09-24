@@ -48,6 +48,18 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
         }
 
+        public void NavigateToAllDashBoards()
+        {
+            JazzFunction.Navigator.NavigateHome();
+            TimeManager.MediumPause();
+
+            JazzButton.HomepageToDashboardButton.Click();
+            TimeManager.MediumPause();
+
+            JazzButton.NavigatorAllDashboardsButton.Click();
+            TimeManager.MediumPause();
+        }
+
         /// <summary>
         /// Switch among "全部数据点", "系统数据点", "区域数据点"
         /// </summary>

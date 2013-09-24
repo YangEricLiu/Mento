@@ -40,6 +40,16 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region common action
+
+        /// <summary>
+        /// Open type combobox list
+        /// </summary>
+        /// <returns></returns>
+        public void DisplayTypeItems()
+        {
+            HierarchyTypeComboBox.DisplayItems();
+        }
+
         /// <summary>
         /// Click one hierarchy node then click "add hierarchy" button
         /// </summary>

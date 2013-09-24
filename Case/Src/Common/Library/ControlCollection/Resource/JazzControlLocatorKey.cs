@@ -444,6 +444,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonWidgetShare = "ButtonWidgetShare";
         public static string ButtonWidgetRename = "ButtonWidgetRename";
         public static string ButtonWidgetDelete = "ButtonWidgetDelete";
+        public static string ButtonHomepageToDashboard = "ButtonHomepageToDashboard";
 
         #endregion
 

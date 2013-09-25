@@ -96,9 +96,18 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void CheckAllCustomerDatas()
+        public Boolean CheckAllCustomerDatas()
         {
-            SelectAllDataPermission.Click();
+            try
+            {
+                TimeManager.MediumPause();
+                SelectAllDataPermission.Click();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         /// <summary>

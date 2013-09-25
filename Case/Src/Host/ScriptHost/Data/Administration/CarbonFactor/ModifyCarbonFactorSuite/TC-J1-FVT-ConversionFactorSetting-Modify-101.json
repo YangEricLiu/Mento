@@ -10,6 +10,7 @@
 			"Source":"天然气(立方米)",
 		    "EffectiveYear":"1950",
 			"FactorValue":"5",	
+			"Destination":"标煤",
 		}
 	}
 ]

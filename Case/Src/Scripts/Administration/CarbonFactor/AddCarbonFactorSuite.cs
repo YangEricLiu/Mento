@@ -71,6 +71,7 @@ namespace Mento.Script.Administration.CarbonFactor
             TimeManager.ShortPause();
             JazzComboBox.CarbonFactorSourceComboBox.DisplayItems();
             Assert.False(JazzComboBox.CarbonFactorSourceComboBox.IsComboBoxItemExisted(testData.InputData.Source));
+            CarbonFactorSettings.ClickCancelButton();
         }
 
         [Test]
@@ -121,6 +122,8 @@ namespace Mento.Script.Administration.CarbonFactor
             //Verify the 'Factor Source'.
             Assert.IsTrue(CarbonFactorSettings.IsFactorSourceInvalid());
             Assert.IsTrue(CarbonFactorSettings.IsFactorSourceInvalidMsgCorrect(testData.ExpectedData.Source));
+
+            CarbonFactorSettings.ClickCancelButton();
         }
 
         [Test]
@@ -153,6 +156,8 @@ namespace Mento.Script.Administration.CarbonFactor
             Assert.IsTrue(CarbonFactorSettings.IsFactorValueInvalid_N(2));
             Assert.IsTrue(CarbonFactorSettings.IsFactorEffectiveYearInvalidMsgCorrect_N(testData.ExpectedData.FactorValue, 1));
             Assert.IsTrue(CarbonFactorSettings.IsFactorEffectiveYearInvalidMsgCorrect_N(testData.ExpectedData.FactorValue, 2));
+
+            CarbonFactorSettings.ClickCancelButton();
         }
 
         [Test]
@@ -184,8 +189,11 @@ namespace Mento.Script.Administration.CarbonFactor
             TimeManager.ShortPause();
             JazzComboBox.CarbonFactorSourceComboBox.DisplayItems();
             Assert.IsTrue(JazzComboBox.CarbonFactorSourceComboBox.IsComboBoxItemExisted(testData.InputData.Source));
+
+            CarbonFactorSettings.ClickCancelButton();
         }
 
+        /*
         [Test]
         [CaseID("TC-J1-FVT-ConversionFactorSetting-Add-004")]
         [Type("BFT")]
@@ -210,7 +218,10 @@ namespace Mento.Script.Administration.CarbonFactor
             //验证输入不正确的的转换因子后出现错误提示信息.
             Assert.IsTrue(CarbonFactorSettings.IsFactorValueInvalid_N(1));
             Assert.IsTrue(CarbonFactorSettings.IsFactorValueInvalidMsgCorrect_N(testData.ExpectedData.DoubleNonNagtiveValue, 1));
+
+            //CarbonFactorSettings.ClickCancelButton();
         }
+        */
 
         [Test]
         [CaseID("TC-J1-FVT-ConversionFactorSetting-Add-005")]
@@ -218,6 +229,7 @@ namespace Mento.Script.Administration.CarbonFactor
         [MultipleTestDataSource(typeof(CarbonFactorData[]), typeof(AddCarbonFactorSuite), "TC-J1-FVT-ConversionFactorSetting-Add-005")]
         public void AddDuplicatedEffectiveYear(CarbonFactorData testData)
         {
+
             //Click "+转换因子" button
             CarbonFactorSettings.PrepareToAddCarbonFactor();
             TimeManager.ShortPause();

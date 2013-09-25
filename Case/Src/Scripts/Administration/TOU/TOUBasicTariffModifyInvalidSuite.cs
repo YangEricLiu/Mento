@@ -33,6 +33,8 @@ namespace Mento.Script.Administration.TOU
         [TearDown]
         public void CaseTearDown()
         {
+            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
+            //TimeManager.MediumPause();
         }
 
         #region TestCase1 ModifyTOUCancelled
@@ -116,6 +118,8 @@ namespace Mento.Script.Administration.TOU
             Assert.IsTrue(TOUBasicTariffSettings.IsPeakPriceInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsTrue(TOUBasicTariffSettings.IsValleyPriceInvalid());
             Assert.IsTrue(TOUBasicTariffSettings.IsValleyPriceInvalidMsgCorrect(testData.ExpectedData));
+
+            TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
         }
         #endregion
 
@@ -149,6 +153,8 @@ namespace Mento.Script.Administration.TOU
             //Verify that Error message is displayed below '名称' field.
             Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalid());
             Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalidMsgCorrect(testData.ExpectedData));
+
+            TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
         }
         #endregion
 

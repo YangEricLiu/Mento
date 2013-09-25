@@ -33,6 +33,8 @@ namespace Mento.Script.Administration.TOU
         [TearDown]
         public void CaseTearDown()
         {
+            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
+            //TimeManager.MediumPause();
         }
 
         #region TestCase1 AddValidPulsePeak
@@ -56,7 +58,8 @@ namespace Mento.Script.Administration.TOU
             TimeManager.MediumPause();
 
             TOUPulsePeakTariffSettings.FillInPulsePeakPropertyPriceValue(testData.InputData.Price);
-            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
 
             //Click '添加峰值季节时间' link and also Fill in the ranges
             TOUPulsePeakTariffSettings.AddPulsePeakRanges(testData);            
@@ -66,6 +69,7 @@ namespace Mento.Script.Administration.TOU
 
             //Click Save button.
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertySaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
             //Verify the price

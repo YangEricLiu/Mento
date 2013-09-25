@@ -33,6 +33,8 @@ namespace Mento.Script.Administration.TOU
         [TearDown]
         public void CaseTearDown()
         {
+            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
+            //TimeManager.MediumPause();
         }
 
         #region TestCase1 AddValidTOU
@@ -60,7 +62,7 @@ namespace Mento.Script.Administration.TOU
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
             TimeManager.MediumPause();
-            JazzMessageBox.LoadingMask.WaitLoading();
+            
 
             //verify add successful
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
@@ -113,7 +115,6 @@ namespace Mento.Script.Administration.TOU
             //Click "Save" button
             TOUBasicTariffSettings.ClickBasicPropertySaveButton();
             TimeManager.MediumPause();
-            JazzMessageBox.LoadingMask.WaitLoading();
 
             //verify add successful
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());

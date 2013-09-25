@@ -151,8 +151,9 @@ namespace Mento.Script.Administration.User
            // string[] path = { "customerA", "organizationA", "siteA"};
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
             //IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(path));
+            TimeManager.MediumPause();
 
-            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            Assert.IsFalse(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
             UserDataPermissionSettings.CloseTreeWindow();
         }
 
@@ -164,12 +165,16 @@ namespace Mento.Script.Administration.User
             // Focus on a new created user, open datascope tab. 
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
             UserDataPermissionSettings.SwitchToDataPermissionTab();
-            TimeManager.ShortPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
 
             // check "全部平台客户及对应数据权限"
-            UserDataPermissionSettings.CheckAllCustomerDatas();
+            Assert.IsTrue(UserDataPermissionSettings.CheckAllCustomerDatas());
+            TimeManager.LongPause();
             Assert.IsTrue(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
             UserDataPermissionSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             // Select 配置数据权限 link from customerA ,view status of created user 客户数据权限 
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
             // All hierarchy nodes are unchecked
@@ -193,11 +198,12 @@ namespace Mento.Script.Administration.User
             UserDataPermissionSettings.CheckHierarchyNode(input.InputData.HierarchyNodePath);
             UserDataPermissionSettings.CheckHierarchyNode(input.ExpectedData.HierarchyNodePath);
             UserDataPermissionSettings.SaveTreeWindow();
-
+            TimeManager.ShortPause();
             //Check "全部平台客户及对应数据权限"
             UserDataPermissionSettings.CheckAllCustomerDatas();
             UserDataPermissionSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
             // Verify the hierarchy nodes are checked
             Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
             UserDataPermissionSettings.CloseTreeWindow();
@@ -243,15 +249,14 @@ namespace Mento.Script.Administration.User
             //Check the hierarchy node all uncheck
             UserDataPermissionSettings.CheckAllCumstomerNames();
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
-            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            Assert.IsFalse(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
 
             UserDataPermissionSettings.CheckHierarchyNode(input.InputData.HierarchyNodePath);
             UserDataPermissionSettings.CheckHierarchyNode(input.ExpectedData.HierarchyNodePath);
             UserDataPermissionSettings.SaveTreeWindow();
 
             //Check then uncheck "全部平台客户及对应数据权限"
-            UserDataPermissionSettings.CheckAllCustomerDatas();
- 
+            UserDataPermissionSettings.CheckAllCumstomerNames();
             UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
 
@@ -259,6 +264,7 @@ namespace Mento.Script.Administration.User
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.HierarchyNodePath));
             UserDataPermissionSettings.CloseTreeWindow();
+
         }
 
         /*

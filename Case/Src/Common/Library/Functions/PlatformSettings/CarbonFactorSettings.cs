@@ -109,6 +109,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickSaveButton()
         {
             SaveButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
         }
 
         /// <summary>

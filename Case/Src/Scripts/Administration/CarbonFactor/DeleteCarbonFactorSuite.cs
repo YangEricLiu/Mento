@@ -65,6 +65,8 @@ namespace Mento.Script.Administration.CarbonFactor
             Assert.AreEqual(testData.ExpectedData.Destination, CarbonFactorSettings.GetFactorDestinationValue());
             Assert.AreEqual(testData.ExpectedData.EffectiveYear, CarbonFactorSettings.GetCarbonFactorEffectiveYear(1));
             Assert.AreEqual(testData.ExpectedData.FactorValue, CarbonFactorSettings.GetCarbonFactorValue(1));
+
+            CarbonFactorSettings.ClickCancelButton();
         }
 
         [Test]
@@ -89,6 +91,8 @@ namespace Mento.Script.Administration.CarbonFactor
             Assert.AreEqual(testData.ExpectedData.Destination, CarbonFactorSettings.GetFactorDestinationValue());
             Assert.AreEqual(testData.ExpectedData.EffectiveYear, CarbonFactorSettings.GetCarbonFactorEffectiveYear(1));
             Assert.AreEqual(testData.ExpectedData.FactorValue, CarbonFactorSettings.GetCarbonFactorValue(1));
+
+            CarbonFactorSettings.ClickCancelButton();
         }
 
         [Test]

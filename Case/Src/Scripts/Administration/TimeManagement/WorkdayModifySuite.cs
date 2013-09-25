@@ -33,6 +33,9 @@ namespace Mento.Script.Administration.TimeManagement
         [TearDown]
         public void CaseTearDown()
         {
+            //For flag end
+            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorktime);
+            //TimeManager.MediumPause();
         }
 
         #region TestCase1 ModifyValidWorkday
@@ -257,6 +260,7 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsTrue(TimeSettingsWorkday.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsWorkday.IsCancelButtonDisplayed());
             Assert.IsFalse(TimeSettingsWorkday.IsModifyButtonDisplayed());
+            TimeManager.MediumPause();
             Assert.IsTrue(TimeSettingsWorkday.IsNameInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsTrue(TimeSettingsWorkday.IsRangeInvalidMsgCorrect(testData.ExpectedData, 1));
 

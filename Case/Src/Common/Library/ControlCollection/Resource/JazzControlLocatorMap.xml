@@ -396,7 +396,7 @@
               <add key="ButtonTreeWindowSave" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
               <add key="ButtonTreeWindowCancel" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
 
-              <add key="ButtonUserSelectAllDataPermission" value="//div[@id='st-user-tab-panel-body']//div[@id='st-user-datarange-form']/table/tbody/tr/td/table[contains(@id,'checkboxfield')]/tbody/tr/td[2]/input" type="XPath"/>
+              <add key="ButtonUserSelectAllDataPermission" value="//div[@id='st-user-datarange-form']/table/tbody/tr/td/table[contains(@id,'checkboxfield')]/tbody/tr/td[2]/input" type="XPath"/>
 
               <add key="ButtonCustomerNames" value="//div[@id='st-user-datarange-form-body']//div[@id='st-user-datarange-form-targetEl']//div[contains(@id,'datapermissiongrid')]//div[contains(@class,'x-column-header-checkbox')]/div[1]/span" type="XPath"/>
               <add key="ButtonCustomerNamesViewStatus" value="//div[@id='st-user-datarange-form-body']//div[@id='st-user-datarange-form-targetEl']//div[contains(@id,'datapermissiongrid')]//div[contains(@class,'x-column-header-checkbox')]/div[1]/span" type="XPath"/>

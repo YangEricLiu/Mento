@@ -80,6 +80,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 checkbox.Click();
         }
 
+        /*
+        public void CommonCheck(string item)
+        {
+            IWebElement checkbox = get
+
+            if (IsChecked(permissionName))
+                checkbox.Click();
+        }
+        */
+
         #region private methods
         private Locator GetPermissonFieldLocator(string permissionName)
         {

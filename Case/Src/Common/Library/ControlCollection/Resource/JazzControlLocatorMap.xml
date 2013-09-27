@@ -376,6 +376,13 @@
               <add key="ButtonCancelCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonDeleteCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
               <add key="ButtonUpdateCustomer" value="//div[@id='st-customer-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+              
+              <add key="ButtonSaveCustomerMapProperty" value="//div[@id='st-map-consumption-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+              <add key="ButtonCancelCustomerMapProperty" value="//div[@id='st-map-consumption-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+              <add key="ButtonModifyCustomerMapProperty" value="//div[@id='st-map-consumption-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="TabButtonCustomerMapPageProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='地图页信息']]" type="XPath"/>
+              <add key="TabButtonCustomerBasicProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='基础属性']]" type="XPath"/>
+
           </customermanagement>
 
           <FunctionRoleTypePermission>
@@ -755,9 +762,8 @@
       <add key="GridCalendarsList" value="st-calendar-grid" type="ID"/>
       <add key="GridTOUTariffsList" value="st-priceStrategy-grid" type="ID"/>      
       <add key="GridDataScopePermissionList" value="//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]" type="XPath"/>
-      <add key="GridCustomersList" value="'st-customer-grid" type="ID"/>
       <add key="GridDataScopePermissionCustomerList" value="//div[@id='st-user-datarange-form']//div[@id='st-user-datarange-form-innerCt']//div[contains(@id,'gridview')]/table/tbody/tr/td[4]" type="XPath"/>
-
+      <add key="GridCustomersList" value="st-customer-grid" type="ID"/>
     </platformsettings>
   
   <Homepage>
@@ -826,7 +832,7 @@
     <add key="CheckBoxFieldUserDataAllHierarchyNode" value="//div[contains(@id,'datapermissiontreewindow')]//div//div//table[1]" type="XPath"/>
     <add key="CheckBoxFieldUserAllDataScope" value="//div[@id='st-user-datarange-form']/table/tbody/tr/td/table[contains(@id,'checkboxfield')]" type="XPath"/>
 
-      
+    <add key="CheckBoxFieldCustomerMapProperty" value="//div[@id='st-map-consumption-form-targetEl']//table[contains(@id,'checkboxfield')]" type="XPath"/>
   </CheckBox>
   <!--CheckBoxField End-->
   

@@ -393,6 +393,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button CancelCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonCancelCustomer);
         public static Button DeleteCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteCustomer);
         public static Button UpdateCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonUpdateCustomer);
+
+        public static Button SaveCustomerMapPropertyButton = GetControl<Button>(JazzControlLocatorKey.ButtonSaveCustomerMapProperty);
+        public static Button CancelCustomerMapPropertyButton = GetControl<Button>(JazzControlLocatorKey.ButtonCancelCustomerMapProperty);
+        public static Button ModifyCustomerMapPropertyButton = GetControl<Button>(JazzControlLocatorKey.ButtonModifyCustomerMapProperty);
+        public static TabButton BasicPropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonCustomerBasicProperty);
+        public static TabButton MapPagePropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonCustomerMapPageProperty);
         #endregion
 
         #region User setting

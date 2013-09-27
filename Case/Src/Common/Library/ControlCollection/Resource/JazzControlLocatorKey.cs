@@ -426,6 +426,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonCancelCustomer = "ButtonCancelCustomer";
         public static string ButtonDeleteCustomer = "ButtonDeleteCustomer";
         public static string ButtonUpdateCustomer = "ButtonUpdateCustomer";
+
+        public static string ButtonSaveCustomerMapProperty = "ButtonSaveCustomerMapProperty";
+        public static string ButtonCancelCustomerMapProperty = "ButtonCancelCustomerMapProperty";
+        public static string ButtonModifyCustomerMapProperty = "ButtonModifyCustomerMapProperty";
+        public static string TabButtonCustomerBasicProperty = "TabButtonCustomerBasicProperty";
+        public static string TabButtonCustomerMapPageProperty = "TabButtonCustomerMapPageProperty";
         #endregion
 
         #endregion
@@ -848,6 +854,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string GridRowDataCustomerTextRow = "GridDataScopePermissionCustomerList";
         public static string GridCarbonFactorsList = "GridCarbonFactorsList";
+        
         #endregion
 
         #region home page
@@ -924,6 +931,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string CheckBoxFieldUserAllHierarchyNode = "CheckBoxFieldUserDataAllHierarchyNode";
         public static string CheckBoxFieldUserAllDataScope = "CheckBoxFieldUserAllDataScope";
+        public static string CheckBoxFieldCustomerMapProperty = "CheckBoxFieldCustomerMapProperty";
+        
         
         #endregion
 

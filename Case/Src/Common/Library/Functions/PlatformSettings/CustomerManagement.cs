@@ -45,6 +45,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Grid CustomerList = JazzGrid.CustomerList;
 
         private static CheckBoxField CustomerMapInfoCheckBoxField = JazzCheckBox.CustomerMapPropertyCheckBoxField;
+
+        private static Container CustomerMapInfoContainer = JazzContainer.ContainerCustomerMapInfo;
+
         #endregion
 
         #region Common
@@ -95,9 +98,32 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void CheckMapInformation(string mapInfoType)
         {
-            CustomerMapInfoCheckBoxField.Check(mapInfoType);
+            CustomerMapInfoCheckBoxField.CommonCheck(mapInfoType);
         }
 
+        public void UnCheckMapInformation(string mapInfoType)
+        {
+            CustomerMapInfoCheckBoxField.CommonUnCheck(mapInfoType);
+        }
+
+        /// <summary>
+        /// UnCheck Map Information items
+        /// </summary>
+        public Boolean UnCheckMapInformations(string[] mapInfoType)
+        {
+            int i = 0;
+            while (i < mapInfoType.Length)
+            {
+                if (CustomerMapInfoCheckBoxField.CommonUnCheck(mapInfoType[i]))
+                {
+                    i++;
+                }
+                else
+                    return false;
+                
+            }
+            return true;
+        }
         #endregion
 
 
@@ -133,5 +159,156 @@ namespace Mento.ScriptCommon.Library.Functions
         }
         #endregion
 
+        #region Verify
+        /// <summary>
+        /// Verfiy whether the default map info options checked
+        /// </summary>
+        public Boolean AreDefaultOptionsChecked()
+        {
+            string[] publicOption = { "上月二氧化碳排放总量", "上月成本总量", "上月用电总量", "上月用水总量" };
+            int i = publicOption.Length, j;
+            for (j = 0; j < i; j++)
+            {
+                if (!(CustomerMapInfoCheckBoxField.IsCommonChecked(publicOption[j])))
+                    return false;
+            }
+            return CustomerMapInfoCheckBoxField.IsCommonChecked(publicOption[j - 1]);
+        }
+
+        /// <summary>
+        /// Verfiy whether the check box all disabled
+        /// </summary>
+        public Boolean AreCheckBoxOptionDisabled()
+        {
+            return CustomerMapInfoCheckBoxField.IsAllItemDisabled();
+        }
+        /// <summary>
+        /// Verfiy whether a certain item Checked
+        /// </summary>
+        public Boolean IsItemChecked(string itemName)
+        {
+            return CustomerMapInfoCheckBoxField.IsCommonChecked(itemName);
+        }
+
+        /// <summary>
+        /// Verfiy whether a certain item UnChecked
+        /// </summary>
+        public Boolean IsItemUnChecked(string itemName)
+        {
+            return CustomerMapInfoCheckBoxField.IsCommonUnChecked(itemName);
+        }
+
+        /// <summary>
+        /// Verfiy whether some  items Checked
+        /// </summary>
+        public Boolean AreItemsChecked(string[] itemNames)
+        {
+            int i = 0;
+            while (i < itemNames.Length)
+            {
+                if (!(CustomerMapInfoCheckBoxField.IsCommonChecked(itemNames[i])))
+                    return false;
+                i++;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Verfiy whether some  items UnChecked
+        /// </summary>
+        public Boolean AreItemsUnChecked(string[] itemNames)
+        {
+            int i = 0;
+            while (i < itemNames.Length)
+            {
+                if ((CustomerMapInfoCheckBoxField.IsCommonChecked(itemNames[i])))
+                    return false;
+                i++;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Verfiy whether  items disabled
+        /// </summary>
+        public Boolean AreItemsDisabled(string[] itemNames)
+        {
+            int i = 0;
+            while (i < itemNames.Length)
+            {
+                if (!(CustomerMapInfoCheckBoxField.IsCommonDisabled(itemNames[i])))
+                    return false;
+                i++;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Verfiy whether  a item  disabled
+        /// </summary>
+        public Boolean IsItemDisabled(string itemName)
+        {
+            if ((CustomerMapInfoCheckBoxField.IsCommonDisabled(itemName)))
+                return false;
+            return true;
+        }
+
+        /// <summary>
+        /// Verfiy whether  a item  disabled
+        /// </summary>
+        public Boolean AreAllOfItemsAbled()
+        {
+            string[] items = {"上月二氧化碳排放总量", "上月成本总量", "上月用电总量", "上月用水总量", "上月天然气总量", "上月软水总量", "上月汽油总量", "上月低压蒸汽总量", "上月柴油总量", "上月热量总量", "上月冷量总量", "上月煤总量", "上月煤油总量"};
+            int i = 0;
+            while (i < items.Length)
+            {
+                if (CustomerMapInfoCheckBoxField.IsCommonDisabled(items[i]))
+                    return false;
+                i++;
+            }
+            return true;
+        }
+
+        /*
+        /// <summary>
+        /// Verfiy whether All the check box all displayed
+        /// </summary>
+        public Boolean AreCheckBoxOptionDisplayed()
+        {
+            return CustomerMapInfoCheckBoxField.IsCommonChecked();
+        }
+         */
+        /// <summary>
+        /// Verfiy whether cancel button display
+        /// </summary>
+        public Boolean IsCancelMapPropertyButtonDisplayed()
+        {
+            return CancelCustomerMapProperty.IsDisplayed();
+        }
+        #endregion
+
+        /// <summary>
+        /// Verfiy whether 'Please select one option at least' displayed.
+        /// </summary>
+        public Boolean IsInvalidMessageCorrect(string errorTips)
+        {
+            return CustomerMapInfoContainer.GetContainerErrorTips().Equals(errorTips);
+        }
+
+        /// <summary>
+        /// Verfiy whether 'Please select one option at least' displayed.
+        /// </summary>
+        public Boolean IsInvalidMessageDisplayed()
+        {
+            return CustomerMapInfoContainer.IsMapInfoContainerDisplayed();
+        }
+
+        /// <summary>
+        /// Verfiy whether Save button displayed.
+        /// </summary>
+        public Boolean IsMapSaveButtonDisplayed()
+        {
+            return SaveCustomerMapProperty.IsDisplayed();
+        }
     }
 }

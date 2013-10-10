@@ -383,8 +383,13 @@
               <add key="TabButtonCustomerMapPageProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='地图页信息']]" type="XPath"/>
               <add key="TabButtonCustomerBasicProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='基础属性']]" type="XPath"/>
 
-          </customermanagement>
 
+
+          </customermanagement>
+          <BenchMark>
+              <add key="ButtonAddBenchMark" value="st-benchmark-grid-add" type="ID"/>
+              
+          </BenchMark>
           <FunctionRoleTypePermission>
               <add key="ButtonCreatFunctionRoleType" value="st-usertype-grid-add-btnInnerEl" type="ID"/>
               <add key="ButtonSaveFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
@@ -417,6 +422,7 @@
               <add key="ButtonCloseTBCalendarWindow" value="//div[contains(@id,'calendartemplatewindow') and contains(@class, 'x-window-header-body-default')]//img[@class='x-tool-close']" type="XPath"/>
               <add key="ButtonDeleteSpecialdayItem" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/div/img" type="XPath"/>
           </TargetBaseline>
+          
       </platformsettings>
   </Button>
   <!--Button End-->
@@ -680,6 +686,9 @@
               <add key="ComboBoxTOUPulsePeakPropertyStartTime" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[3]//div[@class='x-column-inner']/table[1]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
               <add key="ComboBoxTOUPulsePeakPropertyEndTime" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//table[@class='x-form-layout-table']/tbody[3]//div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
           </TOU>
+          <BenchMark>
+              <add key="ComboBoxBenchmark" value="" type="XPath"/>
+          </BenchMark>
       </platformsettings>
   </ComboBox>
 
@@ -764,6 +773,7 @@
       <add key="GridDataScopePermissionList" value="//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]" type="XPath"/>
       <add key="GridDataScopePermissionCustomerList" value="//div[@id='st-user-datarange-form']//div[@id='st-user-datarange-form-innerCt']//div[contains(@id,'gridview')]/table/tbody/tr/td[4]" type="XPath"/>
       <add key="GridCustomersList" value="st-customer-grid" type="ID"/>
+      <add key="GridIndustryBenchmarkList" value="st-benchmark-grid" type="ID"/>
     </platformsettings>
   
   <Homepage>
@@ -947,7 +957,10 @@
     </UserTypeRole>
     <TOU>
       <add key="ContainerHierarchyBuildingPicture" value="//div[@id='st-hier-properties-form-body']/div[contains(@id,'form') and contains(@style,'display: none;')]//label[text()='移动建筑封面图']" type="XPath"/>
-    </TOU>  
+    </TOU>
+    <CustomerManagement>
+        <add key="ContainerCustomerMapInfo" value="//div[@id='st-map-consumption-form-targetEl']/div[contains(@id,'container')]//label[text()='请至少选择1项。']" type="XPath"/>
+    </CustomerManagement>
   </platformsettings>
   
 </Container>

@@ -98,5 +98,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return ElementHandler.Exists(this._RootLocator);
         }
+
+        /// <summary>
+        /// Whether container displayed
+        /// </summary>
+        /// <param></param>
+        public bool IsMapInfoContainerDisplayed()
+        {
+            return this.RootElement.GetAttribute("style").Contains("display: none;");
+        }
     }
 }

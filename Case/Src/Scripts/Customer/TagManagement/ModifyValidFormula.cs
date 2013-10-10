@@ -36,7 +36,7 @@ namespace Mento.Script.Customer.TagManagement
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
         }
         /// <summary>
         /// Prepare Data:  1. make sure the vtags have been added "PtagForFormula"
@@ -68,6 +68,7 @@ namespace Mento.Script.Customer.TagManagement
             //V(N)=3.05*P(M)
             VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
             VTagSettings.SwitchToFormulaTab();
+            TimeManager.ShortPause();
             VTagSettings.ClickModifyFormulaButton();
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
@@ -112,23 +113,37 @@ namespace Mento.Script.Customer.TagManagement
            */
         }
 
-       /*
+
       [Test]
       [CaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-101-2")]
       [Type("BFT")]
       [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-2")]
         public void DragTagsFormula(VtagData input)
       {
-
           JazzFunction.LoginPage.LoginToCustomer();
           VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
+          VTagSettings.SwitchToFormulaTab();
+          TimeManager.ShortPause();
           VTagSettings.ClickModifyFormulaButton();
           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
           TimeManager.MediumPause();
+          //1. common vtag
+          VTagSettings.DragTagToFormula("VtagForValidFormula001");
+          VTagSettings.ClickSaveFormulaButton();
+          JazzMessageBox.LoadingMask.WaitLoading();
+          TimeManager.ShortPause();
+          Assert.IsFalse(VTagSettings.IsFormulaInvalid());
+          VTagSettings.ClickModifyFormulaButton();
+          JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+          TimeManager.MediumPause();
+          VTagSettings.FillInFormulaField("");
 
-          VTagSettings.DragTagToFormula("");
-
-           
+          //2.common ptag
+          VTagSettings.DragTagToFormula("PtagByFormula");
+          VTagSettings.ClickSaveFormulaButton();
+          JazzMessageBox.LoadingMask.WaitLoading();
+          TimeManager.ShortPause();
+          Assert.IsFalse(VTagSettings.IsFormulaInvalid());
       }
 
       [Test]
@@ -138,11 +153,19 @@ namespace Mento.Script.Customer.TagManagement
       public void ModifyTagCode(VtagData input)
       {
           VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
-          VTagSettings.ClickModifyFormulaButton();
+          VTagSettings.SwitchToFormulaTab();
+          TimeManager.ShortPause();
+          Assert.AreEqual("{vtag|VtagForCodeModify}", VTagSettings.GetFormulaValue());
+          VTagSettings.SwitchToBasicPropertyTab();
+          TimeManager.ShortPause();
+          //The source tag code is changed.
+          VTagSettings.FocusOnVTagByName(input.ExpectedData.Code);
+          VTagSettings.ClickModifyButton();
           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
           TimeManager.MediumPause();
           VTagSettings.FillInAddVTagData(input.InputData);
-          VTagSettings.ClickSaveFormulaButton();
+          TimeManager.ShortPause();
+          VTagSettings.ClickSaveButton();
           JazzMessageBox.LoadingMask.WaitLoading();
           TimeManager.ShortPause();
 
@@ -150,9 +173,10 @@ namespace Mento.Script.Customer.TagManagement
           TimeManager.MediumPause();
           JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
           TimeManager.MediumPause();
-          VTagSettings.FocusOnVTagByName("VtagValidFormula");
+          VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
           VTagSettings.SwitchToFormulaTab();
-          Assert.AreEqual(VTagSettings.GetFormulaValue(), "{vtag|CodeModified}");
+          Assert.AreEqual(VTagSettings.GetFormulaValue(), "{vtag|VtagCodeModified}");
+          TimeManager.ShortPause();
 
       }
 
@@ -162,7 +186,7 @@ namespace Mento.Script.Customer.TagManagement
       [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-4")]
       public void FormulaCaseInsensive(VtagData input)
       {
-          HierarchySettings.NavigatorToHierarchySetting();
+          //HierarchySettings.NavigatorToHierarchySetting();
           JazzFunction.HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
           JazzFunction.HierarchySettings.ClickCreateChildHierarchyButton();
           JazzFunction.HierarchySettings.FillInName("Building1");
@@ -195,6 +219,6 @@ namespace Mento.Script.Customer.TagManagement
           JazzMessageBox.LoadingMask.WaitLoading();
           TimeManager.ShortPause();
       }
-       */
+
     }
 }

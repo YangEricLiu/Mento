@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试","测试楼宇园区","楼宇配置测试"],
+			"AreaNodePath":["楼宇配置测试"],
+			"CommonName":"AreaNodeEmpty",
+			
+		},
+		"ExpectedData":
+		{
+			"Comments":"AreaNodeEmpty",
+		}
+	}
+]

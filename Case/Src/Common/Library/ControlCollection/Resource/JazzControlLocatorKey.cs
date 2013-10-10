@@ -419,6 +419,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonTOUPulsePeakPropertyDeleteRangeItem = "ButtonTOUPulsePeakPropertyDeleteRangeItem";
         #endregion
 
+        #region BenchMark
+        public static string ButtonAddBenchMark = "ButtonAddBenchMark";
+
+        #endregion
+
         #region customermanagement
         public static string ButtonAddCustomer = "ButtonAddCustomer";
         public static string ButtonUploadLogo = "ButtonUploadLogo";
@@ -432,6 +437,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonModifyCustomerMapProperty = "ButtonModifyCustomerMapProperty";
         public static string TabButtonCustomerBasicProperty = "TabButtonCustomerBasicProperty";
         public static string TabButtonCustomerMapPageProperty = "TabButtonCustomerMapPageProperty";
+
+
         #endregion
 
         #endregion
@@ -854,7 +861,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string GridRowDataCustomerTextRow = "GridDataScopePermissionCustomerList";
         public static string GridCarbonFactorsList = "GridCarbonFactorsList";
-        
+
+        public static string GridIndustryBenchmarkList = "GridIndustryBenchmarkList";
         #endregion
 
         #region home page
@@ -1083,7 +1091,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ContainerDisplayPermissionPublicTypeItems = "ContainerDisplayPermissionPublicTypeItems";
         public static string ContainerDisplayPermissionItems = "ContainerDisplayPermissionItems";
         #endregion
-        
+
+        #region Customer Management
+        public static string ContainerCustomerMapInfo = "ContainerCustomerMapInfo";
+        #endregion
+
         #endregion
 
         #endregion

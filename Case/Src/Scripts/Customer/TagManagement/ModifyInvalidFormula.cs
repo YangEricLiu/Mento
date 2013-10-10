@@ -278,7 +278,7 @@ namespace Mento.Script.Customer.TagManagement
            TimeManager.MediumPause();
 
            VTagSettings.FillInFormulaField("{vtag|Vtag123456789}");
-
+           TimeManager.ShortPause();
            VTagSettings.ClickSaveFormulaButton();
            JazzMessageBox.LoadingMask.WaitLoading();
            TimeManager.MediumPause();
@@ -289,7 +289,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
             
 
-            
+            /*
             //11.公式中包括不存在的人口面积属性
 
            VTagSettings.ClickModifyFormulaButton();
@@ -322,7 +322,7 @@ namespace Mento.Script.Customer.TagManagement
 
             VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
-            /*
+           
            //12.公式中包括没有数据权限的tag  
            //  defined a V1= V2+V3, the source tag V2 is associated to hierarchynodeA, 
            //  but user's data permission for the hierarchy node was removed, when click save button of V1's formula again.
@@ -354,7 +354,6 @@ namespace Mento.Script.Customer.TagManagement
             VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
             
-
             //13.公式中包括没有数据权限的人口面积属性   
            //e.g. V1= pulation property of a hierarchy node, but user's data permission for the hierarchy node was removed, 
            //when he clicks save button of V1's formula.
@@ -371,7 +370,7 @@ namespace Mento.Script.Customer.TagManagement
             VTagSettings.IsFormulaInvalidMsgCorrect(input.InputData.Message);
             VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
-
+            */
             
             //14.公式中包括尚未定义公式的tag  
            //e.g. V1= V2  The source tag V2 is a newly created one and haven't defined any formula yet, when try to save formula of V1.
@@ -380,7 +379,7 @@ namespace Mento.Script.Customer.TagManagement
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
 
-           VTagSettings.DragTagToFormula("VtagForFormula014");
+           VTagSettings.FillInFormulaField("VtagNotExisted0000000");
 
            VTagSettings.ClickSaveFormulaButton();
            JazzMessageBox.LoadingMask.WaitLoading();
@@ -398,8 +397,8 @@ namespace Mento.Script.Customer.TagManagement
            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
            TimeManager.MediumPause();
 
-           VTagSettings.DragTagToFormula("VtagForFormula015");
-
+           VTagSettings.FillInFormulaField("{vtag|Vtag1_Hour_Step}+{vtag|Vtag1_Day_Step}");
+           TimeManager.ShortPause();
            VTagSettings.ClickSaveFormulaButton();
            JazzMessageBox.LoadingMask.WaitLoading();
            TimeManager.MediumPause();
@@ -409,6 +408,7 @@ namespace Mento.Script.Customer.TagManagement
             VTagSettings.ClickCancelFormulaButton();
             TimeManager.ShortPause();
 
+            /*
             //10.Prepare a V1 tag (V1=P1+buildingA.property)  Delete the buildingA node successfully.  View V1's formula again.
 
             HierarchySettings.NavigatorToHierarchySetting();

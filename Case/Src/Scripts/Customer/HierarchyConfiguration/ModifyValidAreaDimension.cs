@@ -20,7 +20,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [TestFixture]
     [Owner("greenie")]
     [CreateTime("2013-06-19")]
-    [ManualCaseID("TC-J1-FVT-AreaDimensionConfiguration-001")]
+    [ManualCaseID("TC-J1-FVT-AreaDimensionConfiguration-101")]
     public class ModifyValidAreaDimension : TestSuiteBase
     {
         [SetUp]
@@ -50,9 +50,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         /// Prepare Data: 1. add area dimension "ModifyArea1" ,"ModifyArea2" ,"ModifyArea3","ModifyArea4" ,"AreaNodeVerify" For the test
         /// </summary> 
         [Test]
-        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-ModifyAreaCancel")]
+        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-ModifyAreaCancel")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-ModifyAreaCancel")]
+        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-ModifyAreaCancel")]
         public void ModifyAreaCancel(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
@@ -89,9 +89,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-ModifyValidAreaNode")]
+        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-ModifyValidAreaNode")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-ModifyValidAreaNode")]
+        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-ModifyValidAreaNode")]
         public void ModifyValidAreaNode(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
@@ -133,9 +133,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-ModifyThenBack")]
+        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-ModifyThenBack")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-ModifyThenBack")]
+        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-ModifyThenBack")]
         public void ModifyThenBack(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
@@ -184,9 +184,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-ModifyValidAndVerify")]
+        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-ModifyValidAndVerify")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-ModifyValidAndVerify")]
+        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-ModifyValidAndVerify")]
         public void ModifyValidAndVerify(AreaDimensionData input)
         {
             

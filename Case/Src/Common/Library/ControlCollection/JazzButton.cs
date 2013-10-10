@@ -401,6 +401,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TabButton MapPagePropertyTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonCustomerMapPageProperty);
         #endregion
 
+        #region BenchMark
+        public static Button AddBenchMarkButton = GetControl<Button>(JazzControlLocatorKey.ButtonAddBenchMark);
+
+        #endregion
+
         #region User setting
         public static Button UserCreateButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserCreate);
         public static Button UserRefreshButton = GetControl<Button>(JazzControlLocatorKey.ButtonUserRefresh);

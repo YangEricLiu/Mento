@@ -22,6 +22,7 @@ namespace Mento.ScriptCommon.TestData.Administration
          public string Email { get; set; }
          public string OperationTime { get; set; }
          public string Comment { get; set; }
+         public string[] MapOptions { get; set; }
      }
 
      public class CustomerExpectedData : ExpectedTestDataBase
@@ -37,5 +38,6 @@ namespace Mento.ScriptCommon.TestData.Administration
          public string Comment { get; set; }
          public string Message { get; set; }
          public string ErrorMessage { get; set; }
+         public string[] MapOptions { get; set; }
      }
 }

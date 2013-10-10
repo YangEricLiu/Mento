@@ -20,7 +20,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [TestFixture]
     [Owner("greenie")]
     [CreateTime("2013-06-17")]
-    [ManualCaseID("TC-J1-FVT-AreaDimensionConfiguration-001")]
+    [ManualCaseID("TC-J1-FVT-AreaDimensionConfiguration-101")]
     public class AddValidAreaDimension : TestSuiteBase
     {
         [SetUp]
@@ -92,9 +92,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-AddValidAreaNode")]
+        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-AddValidAreaNode")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-AddValidAreaNode")]
+        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-AddValidAreaNode")]
         public void AddValidAreaNode(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
@@ -141,9 +141,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-FiveLevelsAreaNodes")]
+        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-FiveLevelsAreaNodes")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-FiveLevelsAreaNodes")]
+        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-FiveLevelsAreaNodes")]
         public void FiveLevelsAreaNodes(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
@@ -195,9 +195,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
 
         [Test]
-        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-AddLongestArea")]
+        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-AddLongestArea")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-AddLongestArea")]
+        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-AddLongestArea")]
         public void AddLongestArea(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
@@ -240,9 +240,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
 
         [Test]
-        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-OrgandSiteNodeAddArea")]
+        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-OrgandSiteNodeAddArea")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-OrgandSiteNodeAddArea")]
+        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-OrgandSiteNodeAddArea")]
         public void OrgandSiteNodeAddArea(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;
@@ -260,9 +260,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
 
         [Test]
-        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-AddValidAndVerify")]
+        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-AddValidAndVerify")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-AddValidAndVerify")]
+        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-AddValidAndVerify")]
         public void AddValidAndVerify(AreaDimensionData input)
         {
             
@@ -323,9 +323,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
 
         [Test]
-        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-EmptyItemNotDisplay")]
+        [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-EmptyItemNotDisplay")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-EmptyItemNotDisplay")]
+        [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-EmptyItemNotDisplay")]
         public void EmptyItemNotDisplay(AreaDimensionData input)
         {
             var AreaSettings = JazzFunction.AreaDimensionSettings;

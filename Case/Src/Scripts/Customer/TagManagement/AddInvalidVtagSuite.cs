@@ -164,13 +164,12 @@ namespace Mento.Script.Customer.TagManagement
           TimeManager.MediumPause();
 
           //  Clear formula content
-          JazzFunction.VTagSettings.FillInFormulaField("  ");
+          JazzFunction.VTagSettings.FillInFormulaField("");
           TimeManager.ShortPause();
           JazzFunction.VTagSettings.ClickSaveFormulaButton();
           TimeManager.ShortPause();
           Assert.IsTrue(VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData.FormulaMessage));
 
-          
       }
        
        

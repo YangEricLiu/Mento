@@ -2,12 +2,12 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"VtagAddCancel001",
+			"CommonName":"VtagForDragTags",
 
 		},
 		"ExpectedData":
 		{
-			"CommonName":"VtagAddCancel001",
+			"CommonName":"VtagForDragTags",
 
 		}
 	}

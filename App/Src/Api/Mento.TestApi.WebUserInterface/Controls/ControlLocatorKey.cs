@@ -112,7 +112,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #endregion
 
         #region CheckBoxField locators
+        public static string PermissionCheckBoxTable = "PermissionCheckBoxTable";
         public static string CheckBoxTable = "CheckBoxTable";
+        #endregion
+
+        #region Container locators
+        public static string CustomerManageMapInfo = "CustomerMapInfoSetMesaage";
         #endregion
     } 
 }

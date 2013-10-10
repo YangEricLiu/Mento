@@ -33,16 +33,16 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
-            TimeManager.MediumPause();
+            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
+            //TimeManager.MediumPause();
         }
 
         #region TestCase1 ViewCustomerConsumptionSetting
         [Test]
         [ManualCaseID("TC-J1-FVT-CustomerConsumptionSettingView-View-101")]
-        [CaseID("TC-J1-FVT-CustomerConsumptionSettingView-View-101")]
+        [CaseID("TC-J1-FVT-CustomerConsumptionSettingView-View-101-1")]
         [Priority("4")]
-        [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(CustomerConsumptionSettingView), "TC-J1-FVT-CustomerConsumptionSettingView-View-101")]
+        [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(CustomerConsumptionSettingView), "TC-J1-FVT-CustomerConsumptionSettingView-View-101-1")]
         public void ViewCustomerConsumptionSetting(CustomerManagementData input)
         {
             //1.Select an old existing customer which didn't defined consumption setting for map before.
@@ -51,14 +51,40 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
             //Open 'Consumption Setting For Map' (地图页信息) tab.
             CustomerManageSetting.NavigateToCustmerMapPageInfoSetting();
             TimeManager.MediumPause();
-            CustomerManageSetting.ClickModifyMapPropertyButton();
             
             //Four options are checked by default.All checkboxes are disabled in View mode.
-            CustomerManageSetting.CheckMapInformation("上月天然气总量");
+            Assert.IsTrue(CustomerManageSetting.AreDefaultOptionsChecked());
+            Assert.IsTrue(CustomerManageSetting.AreCheckBoxOptionDisabled());
+
+            //2.Create a new customer successfully    Do not auto now.
+            
+            //Select the newly created customer
+
+            //Open 'Consumption Setting For Map' (地图页信息) tab.
 
         }
         #endregion
 
-       
+        #region TestCase2 ViewSettedCustomerConsumptionSetting
+        [Test]
+        [ManualCaseID("TC-J1-FVT-CustomerConsumptionSettingView-View-101")]
+        [CaseID("TC-J1-FVT-CustomerConsumptionSettingView-View-101-2")]
+        [Priority("4")]
+        [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(CustomerConsumptionSettingView), "TC-J1-FVT-CustomerConsumptionSettingView-View-101-2")]
+        public void ViewSettedCustomerConsumptionSetting(CustomerManagementData input)
+        {
+            //1.Select a customer which has already defined consumption setting for map successfully.
+            CustomerManageSetting.FocusOnCustomer(input.InputData.Name);
+
+            //Open 'Consumption Setting For Map' (地图页信息) tab.
+            CustomerManageSetting.NavigateToCustmerMapPageInfoSetting();
+            TimeManager.MediumPause();
+
+            //Relevant selected options are displayed as checked correctly.
+            //All checkboxes are disabled in View mode.
+            Assert.IsTrue(CustomerManageSetting.AreItemsChecked(input.InputData.MapOptions));
+            Assert.IsTrue(CustomerManageSetting.AreCheckBoxOptionDisabled());
+        }
+        #endregion
     }
 }

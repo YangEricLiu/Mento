@@ -1,0 +1,9 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Industry":"学校",
+			"ClimaticRegions":["全部区域","严寒地区A区","严寒地区B区","寒冷地区"],
+		},
+	}
+]

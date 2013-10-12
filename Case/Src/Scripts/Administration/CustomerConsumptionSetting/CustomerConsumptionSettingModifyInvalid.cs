@@ -20,7 +20,7 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
     [TestFixture]
     [Owner("Greenie")]
     [CreateTime("2013-09-27")]
-    public class BenchmarkViewSuite : TestSuiteBase
+    public class CustomerConsumptionSettingModifyInvalid : TestSuiteBase
     {
         private static CustomerManagement CustomerManageSetting = JazzFunction.CustomerManagement;
         [SetUp]
@@ -39,10 +39,10 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
 
         #region TestCase1 ModifyCustomerConsumptionSettingCancelled
         [Test]
-        [ManualCaseID("TC-J1-FVT-IndustryBenchmarkSetting-View-101")]
-        [CaseID("TC-J1-FVT-IndustryBenchmarkSetting-View-101-1")]
+        [ManualCaseID("TC-J1-FVT-CustomerConsumptionSetting-Modify-001")]
+        [CaseID("TC-J1-FVT-CustomerConsumptionSetting-Modify-001-1")]
         [Priority("4")]
-        [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(BenchmarkViewSuite), "TC-J1-FVT-IndustryBenchmarkSetting-View-101-1")]
+        [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(CustomerConsumptionSettingModifyInvalid), "TC-J1-FVT-CustomerConsumptionSetting-Modify-001-1")]
         public void ModifyCustomerConsumptionSettingCancelled(CustomerManagementData input)
         {
             //Select an existing customer.

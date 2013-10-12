@@ -37,6 +37,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorAllDashboards = "ButtonNavigatorAllDashboards";
         public static string ButtonNavigatorRecentView = "ButtonNavigatorRecentView";
 
+        public static string ButtonNavigatorBenchMarkSettings = "ButtonNavigatorBenchMarkSettings";
+        
         public static string ButtonNavigatorAssociationSettings = "ButtonNavigatorAssociationSettings";
         public static string ButtonNavigatorTimeSettingsWorkday = "ButtonNavigatorTimeSettingsWorkday";
         public static string ButtonNavigatorTimeSettingsWorktime = "ButtonNavigatorTimeSettingsWorktime";
@@ -422,7 +424,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region BenchMark
         public static string ButtonAddBenchMark = "ButtonAddBenchMark";
-
+        public static string ButtonSaveBenchMark = "ButtonSaveBenchMark";
+        public static string ButtonCancelBenchMark = "ButtonCancelBenchMark";
+        public static string ButtonModifyBenchMark = "ButtonModifyBenchMark";
+        public static string ButtonDeleteBenchMark = "ButtonDeleteBenchMark";
         #endregion
 
         #region customermanagement
@@ -762,6 +767,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxTOUPulsePeakPropertyEndDate = "ComboBoxTOUPulsePeakPropertyEndDate";
         public static string ComboBoxTOUPulsePeakPropertyStartTime = "ComboBoxTOUPulsePeakPropertyStartTime";
         public static string ComboBoxTOUPulsePeakPropertyEndTime = "ComboBoxTOUPulsePeakPropertyEndTime";
+        #endregion
+
+        #region BenchMark
+        public static string ComboBoxBenchmark = "ComboBoxBenchmark";
+
         #endregion
 
         #endregion
@@ -1121,6 +1131,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Customer Management
         public static string ContainerCustomerMapInfo = "ContainerCustomerMapInfo";
+        #endregion
+
+        #region IndustryBenchMark
+        public static string CheckBoxBenchMark = "CheckBoxBenchMark";
         #endregion
 
         #endregion

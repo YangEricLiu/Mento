@@ -107,6 +107,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.PriceSettings, new NavigatorItem(NavigationTarget.PriceSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorPriceSettingsButton)},
             {NavigationTarget.CustomerManagement, new NavigatorItem(NavigationTarget.CustomerManagement,NavigationTarget.PlatformSettings,JazzButton.NavigatorCustomerManagementButton)},
             {NavigationTarget.UserManagement, new NavigatorItem(NavigationTarget.UserManagement,NavigationTarget.PlatformSettings,JazzButton.NavigatorUserManagementButton)},
+            {NavigationTarget.BenchMarkSettings, new NavigatorItem(NavigationTarget.BenchMarkSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorBenchMarkSettingButton)},
 
             {NavigationTarget.TagSettings, new NavigatorItem(NavigationTarget.TagSettings,NavigationTarget.Settings,JazzButton.NavigatorTagSettingsButton)},
             {NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,JazzButton.NavigatorHierarchySettingsButton)},
@@ -200,8 +201,8 @@ namespace Mento.ScriptCommon.Library.Functions
         TagSettings = 10,
         HierarchySettings = 11,
         AssociationSettings = 12,
-        Dashboards = 300,
-        
+        BenchMarkSettings = 113,
+		Dashboards = 300,
         //level 3
         //--Time
         TimeSettingsWorkday = 13,

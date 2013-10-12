@@ -206,6 +206,18 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static IndustryBenchmarkSetting _IndustryBenchmarkSetting;
+        public static IndustryBenchmarkSetting IndustryBenchmarkSetting
+        {
+            get
+            {
+                if (_IndustryBenchmarkSetting == null)
+                    _IndustryBenchmarkSetting = new IndustryBenchmarkSetting();
+
+                return _IndustryBenchmarkSetting;
+            }
+        }
+
         private static CarbonFactorSettings _CarbonFactorSettings;
         public static CarbonFactorSettings CarbonFactorSettings
         {

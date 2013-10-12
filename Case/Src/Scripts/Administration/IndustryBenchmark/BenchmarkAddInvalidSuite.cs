@@ -19,8 +19,8 @@ namespace Mento.Script.Administration.IndustryBenchmark
 {
     [TestFixture]
     [Owner("Greenie")]
-    [CreateTime("2013-10-10")]
-    public class BenchmarkViewSuite : TestSuiteBase
+    [CreateTime("2013-10-12")]
+    public class BenchmarkAddInvalidSuite : TestSuiteBase
     {
         private static IndustryBenchmarkSetting IndustryBenchmarkSetting = JazzFunction.IndustryBenchmarkSetting;
         [SetUp]
@@ -37,27 +37,38 @@ namespace Mento.Script.Administration.IndustryBenchmark
             //TimeManager.MediumPause();
         }
 
-        #region TestCase1 ViewMapAndLocation
+        #region TestCase1 AddIndustryBenchmarkCancelled
         [Test]
-        [ManualCaseID("TC-J1-FVT-IndustryBenchmarkSetting-View-101")]
-        [CaseID("TC-J1-FVT-IndustryBenchmarkSetting-View-101-1")]
+        [ManualCaseID("TC-J1-FVT-IndustryBenchmarkSetting-Add-001")]
+        [CaseID("TC-J1-FVT-IndustryBenchmarkSetting-Add-001-1")]
         [Priority("4")]
-        [MultipleTestDataSource(typeof(IndustryBenchmarkData[]), typeof(BenchmarkViewSuite), "TC-J1-FVT-IndustryBenchmarkSetting-View-101-1")]
-        public void ViewMapAndLocation(IndustryBenchmarkData input)
+        [MultipleTestDataSource(typeof(IndustryBenchmarkData[]), typeof(BenchmarkAddInvalidSuite), "TC-J1-FVT-IndustryBenchmarkSetting-Add-001-1")]
+        public void AddIndustryBenchmarkCancelled(IndustryBenchmarkData input)
         {
-            //·Display blank benchmark list, when there isn't any Benchmark defind.
-            //· Display Add System buttons.
 
-            Assert.IsTrue(IndustryBenchmarkSetting.IsAddButtonDisplay());
-
+            //Click +行业对标 buttons.
             IndustryBenchmarkSetting.ClickAddBenchMark();
 
+            //Select 行业=酒店 from dropdown list.
             IndustryBenchmarkSetting.SelectIndustryCombox(input.InputData.Industry);
-            IndustryBenchmarkSetting.CheckClimateRegion(input.InputData.ClimaticRegions[0]);
 
-            IndustryBenchmarkSetting.ClickCancelBenchMark();
+        }
+        #endregion
 
-            //Verify benchmark list column filter and sort.
+        #region TestCase2 AddIndustryBenchmarkInvalid
+        [Test]
+        [ManualCaseID("TC-J1-FVT-IndustryBenchmarkSetting-Add-001")]
+        [CaseID("TC-J1-FVT-IndustryBenchmarkSetting-Add-001-2")]
+        [Priority("4")]
+        [MultipleTestDataSource(typeof(IndustryBenchmarkData[]), typeof(BenchmarkAddInvalidSuite), "TC-J1-FVT-IndustryBenchmarkSetting-Add-001-2")]
+        public void AddIndustryBenchmarkInvalid(IndustryBenchmarkData input)
+        {
+
+            //Click +行业对标 buttons.
+            IndustryBenchmarkSetting.ClickAddBenchMark();
+
+            //Select 行业=酒店 from dropdown list.
+            IndustryBenchmarkSetting.SelectIndustryCombox(input.InputData.Industry);
 
         }
         #endregion

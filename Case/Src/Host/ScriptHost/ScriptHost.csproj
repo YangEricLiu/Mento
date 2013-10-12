@@ -172,6 +172,9 @@
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingView\TC-J1-FVT-CustomerConsumptionSettingView-View-101-2.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingView\TC-J1-FVT-CustomerConsumptionSettingView-View-101-1.json" />
     <None Include="Data\Administration\CustomerOperation\SmokeTestAddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
+    <None Include="Data\Administration\IndustryBenchmark\BenchmarkAddValidgSuite\TC-J1-FVT-IndustryBenchmarkSetting-Add-101-1.json" />
+    <None Include="Data\Administration\IndustryBenchmark\BenchmarkDeleteInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Delete-001-1.json" />
+    <None Include="Data\Administration\IndustryBenchmark\BenchmarkViewSuite\TC-J1-FVT-IndustryBenchmarkSetting-View-101-1.json" />
     <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonModifySuite\TC-J1-FVT-TimeManagementHCSeason-Modify-001.json" />
     <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonModifySuite\TC-J1-FVT-TimeManagementHCSeason-Modify-002.json" />
     <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonModifySuite\TC-J1-FVT-TimeManagementHCSeason-Modify-101.json" />

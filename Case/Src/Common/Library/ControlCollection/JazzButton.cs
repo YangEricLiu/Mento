@@ -142,6 +142,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorCustomerManagementButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCustomerManagement);
         public static Button NavigatorUserManagementButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorUserManagement);
 
+        public static Button NavigatorBenchMarkSettingButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorBenchMarkSettings);
+
+
         public static Button NavigatorTagSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTagSettings);//{NavigationTarget.TagSettings, new NavigatorItem(NavigationTarget.TagSettings,NavigationTarget.Settings,"setting-tab-tagmrg-btn-btnEl",ByType.ID)},
         public static Button NavigatorHierarchySettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorHierarchySettings);//{NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,"setting-tab-hiersetting-btn-btnEl",ByType.ID)},
         public static Button NavigatorAssociationSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAssociationSettings);//{NavigationTarget.AssociationSettings, new NavigatorItem(NavigationTarget.AssociationSettings,NavigationTarget.Settings,"setting-tab-tagassoc-btn-btnEl",ByType.ID)},
@@ -409,6 +412,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region BenchMark
         public static Button AddBenchMarkButton = GetControl<Button>(JazzControlLocatorKey.ButtonAddBenchMark);
+        public static Button SaveBenchMarkButton = GetControl<Button>(JazzControlLocatorKey.ButtonSaveBenchMark);
+        public static Button ModifyBenchMarkButton = GetControl<Button>(JazzControlLocatorKey.ButtonModifyBenchMark);
+        public static Button CancelBenchMarkButton = GetControl<Button>(JazzControlLocatorKey.ButtonCancelBenchMark);
+        public static Button DeleteBenchMarkButton = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteBenchMark);
 
         #endregion
 
@@ -500,7 +507,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TabButton ShareInfoSendedTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonShareInfoSended);
 
         #endregion
-
         #endregion
     }
 }

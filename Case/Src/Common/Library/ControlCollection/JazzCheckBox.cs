@@ -23,5 +23,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         
         #endregion
+
+        #region CheckBox of BenchMark
+        public static CheckBoxField CheckBoxBenchMark = GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxBenchMark);
+        #endregion
+
     }
 }

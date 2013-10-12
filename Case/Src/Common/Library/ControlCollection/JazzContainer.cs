@@ -93,8 +93,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
-        #region User
+        #region CustomerMapInfo
         public static Container ContainerCustomerMapInfo = GetControl<Container>(JazzControlLocatorKey.ContainerCustomerMapInfo);
+        #endregion
+
+        #region BenchMark
+        
         #endregion
 
         #endregion

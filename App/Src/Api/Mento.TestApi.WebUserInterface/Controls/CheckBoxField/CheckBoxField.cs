@@ -139,6 +139,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return checkbox.GetAttribute("class").Contains("x-item-disabled");
         }
 
+        /// <summary>
+        /// Judge if the common checkbox item is displayed
+        /// </summary>
+        /// <returns>True if the checkbox item is enable, false if not </returns>
+        public bool IsCommonNotDisplayed(string itemName)
+        {
+            IWebElement checkbox = GetCheckBoxFieldElement(itemName);
+            return checkbox.GetAttribute("style").Contains("display: none");
+        }
 
         public void Uncheck(string permissionName)
         {

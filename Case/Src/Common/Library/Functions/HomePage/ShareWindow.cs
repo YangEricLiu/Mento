@@ -17,10 +17,10 @@ namespace Mento.ScriptCommon.Library.Functions
         #region controls
 
         //window title
-        private static Label ShareWindowTitle = JazzLabel.ShareWindowTitleLabel;
+        //private static Label ShareWindowTitle = JazzLabel.ShareWindowTitleLabel;
 
         //Close window button
-        private static Button ShareWindowClose = JazzButton.ShareWindowCloseButton;
+        //private static Button ShareWindowClose = JazzButton.ShareWindowCloseButton;
 
         //Share button
         private static Button ShareButton = JazzButton.ShareWindowShareButton;
@@ -28,10 +28,16 @@ namespace Mento.ScriptCommon.Library.Functions
         //Giveup button
         private static Button GiveupButton = JazzButton.ShareWindowGiveupButton;
 
+        //Share users contains
+        private static Container ShareWindowTo = JazzContainer.ShareWindowToContainer;
+
+        //Share grid
+        private static Grid ShareUserList = JazzGrid.ShareUserListGrid;
+
         #endregion
 
         #region operation
-
+        /*
         public string GetShareWindowTitle()
         {
             return ShareWindowTitle.GetLabelTextValue();
@@ -41,7 +47,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             ShareWindowClose.Click();
         }
-
+        */
         public void ClickShareButton()
         {
             ShareButton.Click();
@@ -52,6 +58,44 @@ namespace Mento.ScriptCommon.Library.Functions
             GiveupButton.Click();
         }
 
+        public void ClickRemoveShareUserButton(string name)
+        {
+            Button ShareUser = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonShareToUserRemove, name);
+
+            ShareUser.Click();
+        }
+
+        public bool IsShareUserInContainer(string name)
+        {
+            Button ShareUser = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonShareToUserRemove, name);
+
+            return ShareUser.IsExisted();
+        }
+
+        public void CheckShareUser(string userName)
+        {
+            ShareUserList.CheckRowCheckbox(2, userName, false);
+        }
+
+        public bool IsShareUserChecked(string userName)
+        {
+            return ShareUserList.IsRowChecked(2, userName, false);
+        }
+
+        public void CheckAllShareUsers()
+        {
+            ShareUserList.CheckShareHeaderCheckbox();
+        }
+
+        public bool IsShareHeaderChecked()
+        {
+            return ShareUserList.IsShareHeaderChecked();
+        }
+
+        public int GetShareUserNumber()
+        {
+            return ShareWindowTo.GetElementNumber();
+        }
         #endregion
 
     }

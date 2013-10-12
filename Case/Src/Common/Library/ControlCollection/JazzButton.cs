@@ -495,8 +495,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static Button ShareWindowShareButton = GetControl<Button>(JazzControlLocatorKey.ButtonShareWindowShare);
         public static Button ShareWindowGiveupButton = GetControl<Button>(JazzControlLocatorKey.ButtonShareWindowGiveup);
-      
+
+        public static TabButton ShareInfoReceivedTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonShareInfoReceived);
+        public static TabButton ShareInfoSendedTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonShareInfoSended);
+
         #endregion
+
         #endregion
     }
 }

@@ -39,6 +39,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        protected IWebElement ShareHeaderCheckbox
+        {
+            get
+            {
+                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowHeaderShare));
+            }
+        }
+
         public bool IsPageToolBarExisted()
         {
             return this.Exists(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingToolbar));
@@ -148,6 +156,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 checker.Click();
             }
+        }
+
+        /// <summary>
+        /// Check share window header check box
+        /// </summary>
+        /// <returns></returns>
+        public void CheckShareHeaderCheckbox()
+        {
+            ShareHeaderCheckbox.Click();
+        }
+
+        public bool IsShareHeaderChecked()
+        {
+            var HeaderCheckedLocator = new Locator("../../../div[contains(@class,'x-receiver-grid-action-header-checked')]", ByType.XPath);
+
+            return ElementHandler.Exists(HeaderCheckedLocator, ShareHeaderCheckbox);
         }
 
         /// <summary>

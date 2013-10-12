@@ -145,5 +145,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return this.SelectInput.Enabled;
         }
+
+        /// <summary>
+        /// Return whether combobox list is empty
+        /// </summary>
+        /// <returns>True if enabled</returns>
+        public Boolean IsComboxListEmpty()
+        {
+            return ElementHandler.Exists(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxDropdownListItems), this.RootElement);
+        }
     }
 }

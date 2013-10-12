@@ -470,6 +470,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonDashboardFavoriteLevel = "ButtonDashboardFavoriteLevel";
         public static string ButtonDashboardShareInfo = "ButtonDashboardShareInfo";
         public static string ButtonDashboardShareResource = "ButtonDashboardShareResource";
+        public static string ButtonShareToUserRemove = "ButtonShareToUserRemove";
+
+        public static string TabButtonShareInfoReceived = "TabButtonShareInfoReceived";
+        public static string TabButtonShareInfoSended = "TabButtonShareInfoSended";
 
         #endregion
 
@@ -881,6 +885,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region home page
 
         public static string GridHomepageMinWidgetDataView = "GridHomepageMinWidgetDataView";
+        public static string GridShareUserList = "GridShareUserList";
 
         #endregion
 

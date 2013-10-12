@@ -112,7 +112,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region home page
 
         public static Grid HomepageMinWidgetDataViewGrid = GetControl<Grid>(JazzControlLocatorKey.GridHomepageMinWidgetDataView);
-
+        public static Grid ShareUserListGrid = GetControl<Grid>(JazzControlLocatorKey.GridShareUserList);
         #endregion
     }
 }

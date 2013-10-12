@@ -10,44 +10,34 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     internal class ShareInfoWindow : Window
     {
-        private static Locator Locator = new Locator("//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window')]", ByType.XPath);
+        private static Locator Locator = new Locator("//div[contains(@id,'window') and contains(@class,'x-window-default')]", ByType.XPath);
 
         internal ShareInfoWindow() : base(Locator) { }
 
-        //Widget name textbox
-        private static TextField WidgetNameTextbox = JazzTextField.EnergyViewSaveDashboardWidgetNameTextField;
+        #region controls
 
-        //Hierarchy name select
-        private static Button WidgetSaveHierarchy = JazzButton.WidgetSaveHierarchyButton;
+        //Received Share info tab
+        private static TabButton ShareInfoReceived = JazzButton.ShareInfoReceivedTabButton;
 
-        private static HierarchyTree WidgetSaveHierarchyTree = JazzTreeView.WidgetSaveHierarchyTree;
+        //Sended Share info tab
+        private static TabButton ShareInfoSended = JazzButton.ShareInfoSendedTabButton;
 
-        //Dashboard select
-        private static ComboBox DashboardComboBox = JazzComboBox.EnergyViewSaveDashboardDashboardComboBox;
+        #endregion
 
-        //Create dashboard link
-        private static Button CreateDashboardButton = JazzButton.CreateNewDashboardButton;
+        #region operation
 
-        //Dashboard name textbox
-        private static TextField DashboardNameTextbox = JazzTextField.EnergyViewSaveDashboardDashboardNameTextField;
-
-        public void Save(string widgetName, string[] hierarchyNamePath, bool isCreateDashboard, string dashboardName)
+        public void ClickShareInfoReceivedButton()
         {
-            WidgetNameTextbox.Fill(widgetName);
-            WidgetSaveHierarchy.Click();
-            WidgetSaveHierarchyTree.SelectNode(hierarchyNamePath);
-            TimeManager.LongPause();
-            if (isCreateDashboard)
-            {
-                CreateDashboardButton.Click();
-                DashboardNameTextbox.Fill(dashboardName);
-            }
-            else
-            {
-                DashboardComboBox.SelectItem(dashboardName);
-            }
-
-            base.Confirm();
+            ShareInfoReceived.Click();
         }
+
+        public void ClickShareInfoSendedButton()
+        {
+            ShareInfoSended.Click();
+        }
+
+
+        #endregion
+
     }
 }

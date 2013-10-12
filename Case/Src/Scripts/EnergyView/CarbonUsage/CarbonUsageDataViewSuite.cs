@@ -64,7 +64,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
@@ -78,7 +79,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
@@ -89,7 +91,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[1]);
@@ -100,7 +103,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
@@ -111,7 +114,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
@@ -122,7 +126,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
@@ -133,7 +138,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
@@ -144,7 +150,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[7], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
@@ -155,7 +162,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
@@ -170,7 +178,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[9], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[9], input.InputData.failedFileName[9]);
@@ -182,14 +191,15 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[10], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
             EnergyViewToolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
 
             //On homepage, check the dashboards
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            CarbonUsage.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
             TimeManager.MediumPause();
 
@@ -231,7 +241,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
@@ -245,7 +256,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
@@ -259,7 +271,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsDataViewDrawn());
+            //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
@@ -269,7 +282,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
 
             //On homepage, check the dashboards
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            CarbonUsage.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
             TimeManager.MediumPause();
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
@@ -278,7 +291,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard[0].DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(CarbonUsage.CarbonPath, input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0], dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(CarbonUsage.CarbonPath, input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2], dashboard[0].WigetName));
         }
 
         [Test]
@@ -323,6 +336,10 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //No data is displayed in Data view.
             Assert.IsTrue(CarbonUsage.IsNoDataInEnergyGrid());
 
+            //Set date range and change to data view
+            EnergyViewToolbar.SetDateRange(new DateTime(2012, 4, 1), new DateTime(2012, 4, 5));
+            TimeManager.ShortPause();
+
             //Check commodity=煤, Since that commodity=煤 defined Convert factor to "标煤" in 2011Year.
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.StandardCoal);
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[0]);
@@ -333,23 +350,27 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //Data is displayed in Data view.
             Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
 
-            //Change "标煤" to "CO2", Select "TotalEnergyConsumption(总览)" option
+            //Change "标煤" to "CO2"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //No data is displayed in Data view.
-            Assert.IsTrue(CarbonUsage.IsNoDataInEnergyGrid());
+            //data is displayed in Data view.
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
 
-            //Change "CO2" to "Tree", Select "TotalEnergyConsumption(总览)" option
+            //Change "CO2" to "Tree"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
             //No data is displayed in Data view.
-            Assert.IsTrue(CarbonUsage.IsNoDataInEnergyGrid());
+            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
+            CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Day);
+            TimeManager.MediumPause();
+            CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
         }
     }
 }

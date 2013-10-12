@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WigetNames":["Widget_Rename_101_1_4"],
+				"HierarchyName":["NancyCustomer1", "RenameWidgetSuiteOrg"],
+				"DashboardName":"Widget_Rename_101_1",
+			}],
+			"newWidgetName":["Widget_Rename_101_1_4_M", "", "&@#$%*(", "chars-+="],
+		},
+		"ExpectedData":
+		{
+			"newWidgetName":["Widget_Rename_101_1_4_M", "必填项", "允许汉字，英文字母，数字，下划线和空格", "允许汉字，英文字母，数字，下划线和空格"],
+		}
+	}
+]

@@ -7,7 +7,8 @@
   <add key="DashboardHeaderLoadingLocator" value = "//div[@id='hp-dashboard-ct_hd-spinnerEl' and not(contains(@style, 'display: none;'))]" type ="XPath"/>
   <add key="WidgetsContainerLoadingLocator" value = "//div[@id='hp-dashboard-root-cmp']/div[@class='x-loading-spinner-ct']" type ="XPath"/>
   <add key="CalendarLoadingLocator" value = "//div[@id='st-hier-calendar-form-body']/div[contains(@class,'x-component x-component-default') and not(contains(@style, 'display: none;'))]/div/div[@class='x-loading-spinner-large']" type ="XPath"/>
-  
+  <add key="JumpLoadingLocator" value = "//div[contains(@id,'jumpingwindow') and text()='跳转中，请稍候']" type ="XPath"/>
+
   <!--<add key="CreateSuccessMessageBox" value="//div[contains(@class,'x-message-box') and div/div/div/div/em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
   <add key="CreateSuccessMessageBoxOkButton" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>-->
 

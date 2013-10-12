@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WigetNames":["Widget_Delete_101_1_1", "Widget_Delete_101_1_2", "Widget_Delete_101_1_3", "Widget_Delete_101_1_4"],
+				"HierarchyName":["NancyCustomer1", "RenameWidgetSuiteOrg", "DeleteWidgetSuiteSite"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Widget_Delete_101_1",
+			}],
+			"Hierarchies":["NancyCustomer1", "园区测试多层级"],
+			"TagName":"V21_BuildingBC",
+		},
+		"ExpectedData":
+		{
+
+		}
+	}
+]

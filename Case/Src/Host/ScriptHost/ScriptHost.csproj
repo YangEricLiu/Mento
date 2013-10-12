@@ -138,6 +138,7 @@
     <Folder Include="Data\Administration\User\UserManagementAddValid\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestFormulaVtagSmokeTestSuite\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestKPIBaselineSuite\" />
+    <Folder Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\" />
     <Folder Include="Resource\en\" />
   </ItemGroup>
   <ItemGroup>
@@ -363,6 +364,7 @@
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-101-ModifyValidAndVerify.json" />
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-101-ModifyValidAreaNode.json" />
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-5.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\PerfAddHierarchysSuite\TC-J1-FVT-Hierarchy-Perf-101-1.json" />
     <None Include="Data\Customer\HierarchyConfiguration\SmokeTestHierarchySuite\TA-Hierarchy-002.json" />
     <None Include="Data\Customer\HierarchyConfiguration\SmokeTestHierarchySuite\TA-Hierarchy-003.json" />
     <None Include="Data\Customer\HierarchyConfiguration\SmokeTestHierarchySuite\TC-J1-SmokeTest-Hierarchy-001.json" />
@@ -616,6 +618,21 @@
     <None Include="Data\Customer\TagManagement\SmokeTestPtagConfigurationSuite\TA-PtagConfiguration-002.json" />
     <None Include="Data\Customer\TagManagement\SmokeTestVtagManagementSuite\TA-Vtag-001.json" />
     <None Include="Data\IllegalInputData.json" />
+    <None Include="Data\Information\Dashboard\DeleteDashboardSuite\TC-J1-FVT-Dashboard-Delete-101-2.json" />
+    <None Include="Data\Information\Dashboard\DeleteDashboardSuite\TC-J1-FVT-Dashboard-Delete-101-1.json" />
+    <None Include="Data\Information\Dashboard\MarkFavoriteDashboardSuite\TC-J1-FVT-Dashboard-MarkFavorite-101-1.json" />
+    <None Include="Data\Information\Dashboard\RenameDashboardSuite\TC-J1-FVT-Dashboard-Rename-101-3.json" />
+    <None Include="Data\Information\Dashboard\RenameDashboardSuite\TC-J1-FVT-Dashboard-Rename-101-2.json" />
+    <None Include="Data\Information\Dashboard\RenameDashboardSuite\TC-J1-FVT-Dashboard-Rename-101-1.json" />
+    <None Include="Data\Information\Share\TC-J1-FVT-Dashboard-MarkRead-101-1.json" />
+    <None Include="Data\Information\Widgets\DeleteWidgetSuite\TC-J1-FVT-Widget-Delete-101-1.json" />
+    <None Include="Data\Information\Widgets\MaximizeWidgetSuite\TC-J1-FVT-Widget-Maximize-101-5.json" />
+    <None Include="Data\Information\Widgets\MaximizeWidgetSuite\TC-J1-FVT-Widget-Maximize-101-4.json" />
+    <None Include="Data\Information\Widgets\MaximizeWidgetSuite\TC-J1-FVT-Widget-Maximize-101-3.json" />
+    <None Include="Data\Information\Widgets\MaximizeWidgetSuite\TC-J1-FVT-Widget-Maximize-101-2.json" />
+    <None Include="Data\Information\Widgets\MaximizeWidgetSuite\TC-J1-FVT-Widget-Maximize-101-1.json" />
+    <None Include="Data\Information\Widgets\RenameWidgetSuite\TC-J1-FVT-Widget-Rename-101-2.json" />
+    <None Include="Data\Information\Widgets\RenameWidgetSuite\TC-J1-FVT-Widget-Rename-101-1.json" />
     <None Include="Data\System\Example\IllegalTestSuite\TC-J1-Example-002.json" />
   </ItemGroup>
   <ItemGroup>

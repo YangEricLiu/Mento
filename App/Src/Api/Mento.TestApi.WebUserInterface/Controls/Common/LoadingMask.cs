@@ -12,7 +12,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator ChartMaskerLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.ChartMaskerLoadingLocator);
         private static Locator DashboardHeaderLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.DashboardHeaderLoadingLocator);
         private static Locator WidgetsContainerLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.WidgetsContainerLoadingLocator);
-        private static Locator CalendarLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.CalendarLoadingLocator);  
+        private static Locator CalendarLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.CalendarLoadingLocator);
+        private static Locator JumpLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.JumpLoadingLocator);  
 
         public LoadingMask()
             : base(LoadingLocator)
@@ -118,6 +119,24 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 TimeManager.ShortPause();
 
                 ElementHandler.Wait(CalendarLoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 5 : maxtime);
+
+                TimeManager.ShortPause();
+            }
+            catch (Exception ex)
+            {
+                //throw;
+            }
+        }
+
+        public void WaitJumpFavoriteLoading(int maxtime = 0)
+        {
+            try
+            {
+                ElementHandler.Wait(JumpLoadingLocator, WaitType.ToAppear, timeout: maxtime <= 0 ? 1 : maxtime);
+
+                TimeManager.ShortPause();
+
+                ElementHandler.Wait(JumpLoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 5 : maxtime);
 
                 TimeManager.ShortPause();
             }

@@ -132,9 +132,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.LongPause();
 
             //On homepage, check the dashboard
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            EnergyAnalysis.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
-            TimeManager.LongPause();
+            TimeManager.Pause(8000);
             HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
             TimeManager.MediumPause();
@@ -171,9 +171,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.LongPause();
 
             //On homepage, check the dashboard
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            EnergyAnalysis.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
-            TimeManager.MediumPause();
+            TimeManager.Pause(8000);
             HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
             TimeManager.MediumPause();

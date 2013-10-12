@@ -96,7 +96,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayEndTimeInvalid(1));
 
             Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayValueInvalid(1));
-            Assert.IsTrue(PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1).Contains(input.ExpectedData.SpecialdayRuleValue[0]));
+            Assert.IsFalse(PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1).Contains(input.ExpectedData.SpecialdayRuleValue[0]));
 
             //fill in value with max value 99999999999999999999999
             PVtagTargetBaselineSettings.FillInSpecialdayRuleValue(input.InputData.SpecialdayRuleValue[0], 1);
@@ -119,12 +119,12 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayStartTimeInvalid(1));
             Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayEndDateInvalid(1));
             Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayEndTimeInvalid(1));
-            Assert.IsFalse(PVtagTargetBaselineSettings.IsSpecialdayValueInvalid(1));
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayValueInvalid(1));
 
             Assert.IsTrue(PVtagTargetBaselineSettings.GetSpecialdayStartDateInvalidMsg(1).Contains(input.ExpectedData.SpecialdayRuleStartDate[0]));
-            Assert.IsTrue(PVtagTargetBaselineSettings.GetSpecialdayStartTimeInvalidMsg(1).Contains(input.ExpectedData.SpecialdayRuleStartTime[0]));
-            Assert.IsTrue(PVtagTargetBaselineSettings.GetSpecialdayEndDateInvalidMsg(1).Contains(input.ExpectedData.SpecialdayRuleEndDate[0]));
-            Assert.IsTrue(PVtagTargetBaselineSettings.GetSpecialdayEndTimeInvalidMsg(1).Contains(input.ExpectedData.SpecialdayRuleEndTime[0]));
+            Assert.IsFalse(PVtagTargetBaselineSettings.GetSpecialdayStartTimeInvalidMsg(1).Contains(input.ExpectedData.SpecialdayRuleStartTime[0]));
+            Assert.IsFalse(PVtagTargetBaselineSettings.GetSpecialdayEndDateInvalidMsg(1).Contains(input.ExpectedData.SpecialdayRuleEndDate[0]));
+            Assert.IsFalse(PVtagTargetBaselineSettings.GetSpecialdayEndTimeInvalidMsg(1).Contains(input.ExpectedData.SpecialdayRuleEndTime[0]));
         }
 
         [Test]

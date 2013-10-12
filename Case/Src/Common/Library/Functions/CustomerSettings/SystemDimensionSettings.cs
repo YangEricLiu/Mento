@@ -34,6 +34,14 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
         }
 
+        public void CloseSystemDimensionDialogIfNot()
+        {
+            if (DialogSystemDimensionTree.Exists())
+            {
+                ConfirmSystemDimensionDialog();
+            }     
+        }
+
         #endregion
 
         #region Tree Operations

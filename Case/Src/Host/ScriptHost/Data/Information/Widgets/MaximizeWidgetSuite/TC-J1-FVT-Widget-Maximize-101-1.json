@@ -1,0 +1,51 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WigetNames":["Widget_Maximize_101_1_1", "Widget_Maximize_101_1_2", "Widget_Maximize_101_1_3", "Widget_Maximize_101_1_4", "Widget_Maximize_101_1_5", "Widget_Maximize_101_1_6", "Widget_Maximize_101_1_7"],
+				"HierarchyName":["NancyCustomer1", "MaximizeWidgetSuiteOrg"],
+				"DashboardName":"Widget_Maximize_101_1",
+			},
+			{
+				"WigetNames":["Widget_Maximize_101_1_11"],
+				"HierarchyName":["NancyCustomer1", "MaximizeWidgetSuiteOrg"],
+				"DashboardName":"Widget_Maximize_101_1_",
+			}],
+			"TimeIntervalList":[{
+				"StartDate":"2012-10-01",
+				"StartTime":"00:00",
+				"EndDate":"2012-10-07",
+				"EndTime":"24:00",
+			},
+			{
+				"StartDate":"2012-02-28",
+				"StartTime":"00:00",
+				"EndDate":"2012-03-06",
+				"EndTime":"24:00",
+			},
+			{
+				"StartDate":"2012-01-01",
+				"StartTime":"00:00",
+				"EndDate":"2012-04-02",
+				"EndTime":"24:00",
+			},
+			{
+				"StartDate":"2009-01-01",
+				"StartTime":"23:00",
+				"EndDate":"2012-04-02",
+				"EndTime":"23:00",
+			},
+			{
+				"StartDate":"2007-10-01",
+				"StartTime":"23:00",
+				"EndDate":"2012-09-29",
+				"EndTime":"01:00",
+			}]
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

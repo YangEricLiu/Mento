@@ -1,0 +1,22 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WigetNames":["Widget_Rename_101_1_1", "Widget_Rename_101_1_2", "Widget_Rename_101_1_3"],
+				"HierarchyName":["NancyCustomer1", "RenameWidgetSuiteOrg"],
+				"DashboardName":"Widget_Rename_101_1",
+			},
+			{
+				"WigetNames":["Widget_Rename_101_1_11", "Widget_Rename_101_1_12"],
+				"HierarchyName":["NancyCustomer1", "RenameWidgetSuiteOrg"],
+				"DashboardName":"Widget_Rename_101_1_",
+			}],
+			"newWidgetName":["Widget_Rename_101_1_1_M", "  onlychars  ", "  只有中文  ", "中文CAPITALchars 1234_F", "m文CAPITALhars 1234_F中文CAPITALh000"],
+		},
+		"ExpectedData":
+		{
+			"newWidgetName":["Widget_Rename_101_1_1_M", "onlychars", "只有中文", "中文CAPITALchars 1234_F", "m文CAPITALhars 1234_F中文CAPITALh"],
+		}
+	}
+]

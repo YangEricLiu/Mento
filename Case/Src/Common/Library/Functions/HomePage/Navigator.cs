@@ -112,9 +112,8 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,JazzButton.NavigatorHierarchySettingsButton)},
             {NavigationTarget.AssociationSettings, new NavigatorItem(NavigationTarget.AssociationSettings,NavigationTarget.Settings,JazzButton.NavigatorAssociationSettingsButton)},
 
-            {NavigationTarget.MyFavirate, new NavigatorItem(NavigationTarget.MyFavirate,NavigationTarget.HomePage,JazzButton.NavigatorMyFavirateButton)},
-            {NavigationTarget.AllDashboards, new NavigatorItem(NavigationTarget.AllDashboards,NavigationTarget.HomePage,JazzButton.NavigatorAllDashboardsButton)},
-            {NavigationTarget.RecentView, new NavigatorItem(NavigationTarget.RecentView,NavigationTarget.HomePage,JazzButton.NavigatorRecentViewButton)},
+            {NavigationTarget.Dashboards, new NavigatorItem(NavigationTarget.Dashboards,NavigationTarget.HomePage,JazzButton.HomepageToDashboardButton)},
+
             //level 3
             //--Time
             {NavigationTarget.TimeSettingsWorkday, new NavigatorItem(NavigationTarget.TimeSettingsWorkday,NavigationTarget.TimeSettings,JazzButton.NavigatorTimeSettingsWorkdayButton)},
@@ -142,6 +141,10 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.AssociationHierarchy, new NavigatorItem(NavigationTarget.AssociationHierarchy, NavigationTarget.AssociationSettings,JazzButton.NavigatorAssociationHierarchyButton)},
             {NavigationTarget.AssociationSystemDimension, new NavigatorItem(NavigationTarget.AssociationSystemDimension,NavigationTarget.AssociationSettings,JazzButton.NavigatorAssociationSystemDimensionButton)},
             {NavigationTarget.AssociationAreaDimension, new NavigatorItem(NavigationTarget.AssociationAreaDimension,NavigationTarget.AssociationSettings,JazzButton.NavigatorAssociationAreaDimensionButton)},
+            //Dashboard
+            {NavigationTarget.MyFavirate, new NavigatorItem(NavigationTarget.MyFavirate,NavigationTarget.Dashboards,JazzButton.NavigatorMyFavirateButton)},
+            {NavigationTarget.AllDashboards, new NavigatorItem(NavigationTarget.AllDashboards,NavigationTarget.Dashboards,JazzButton.NavigatorAllDashboardsButton)},
+            {NavigationTarget.RecentView, new NavigatorItem(NavigationTarget.RecentView,NavigationTarget.Dashboards,JazzButton.NavigatorRecentViewButton)},    
         };
 
         public NavigationTarget? Parent
@@ -189,9 +192,6 @@ namespace Mento.ScriptCommon.Library.Functions
         UnitKPI = 204,
         EnergyRadio = 205,
         Rank = 206,
-        MyFavirate = 207,
-        AllDashboards = 208,
-        RecentView = 209,
         TimeSettings = 5,
         CarbonSettings = 6,
         PriceSettings = 7,
@@ -200,6 +200,7 @@ namespace Mento.ScriptCommon.Library.Functions
         TagSettings = 10,
         HierarchySettings = 11,
         AssociationSettings = 12,
+        Dashboards = 300,
         
         //level 3
         //--Time
@@ -228,5 +229,9 @@ namespace Mento.ScriptCommon.Library.Functions
         AssociationHierarchy = 28,
         AssociationSystemDimension = 29,
         AssociationAreaDimension = 30,
+        //Dashboard
+        MyFavirate = 207,
+        AllDashboards = 208,
+        RecentView = 209,
     }
 }

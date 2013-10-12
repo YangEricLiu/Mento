@@ -155,7 +155,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             EnergyViewToolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
 
             //On homepage, check the dashboards
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            CarbonUsage.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
             TimeManager.MediumPause();
 
@@ -224,7 +224,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
 
             //On homepage, check the dashboards
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            CarbonUsage.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
             TimeManager.MediumPause();
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);

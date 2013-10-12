@@ -7,7 +7,7 @@
 			"DashboardInfo":[{
 				"WigetName":"CarbonSingleCoal1",
 				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
-				"IsCreateDashboard":"false",
+				"IsCreateDashboard":"true",
 				"DashboardName":"CarbonWidgetHierarchyDataview",
 			},
 			{

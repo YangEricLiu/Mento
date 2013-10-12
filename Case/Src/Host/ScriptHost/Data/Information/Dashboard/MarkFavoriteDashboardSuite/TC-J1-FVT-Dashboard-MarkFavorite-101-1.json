@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"DashboardInfo":[{
+				"WigetNames":["Dashboard_Delete_101_2_ABC"],
+				"HierarchyName":["NancyCostCustomer2", "MarkedDashboardSuiteOrg"],
+				"IsCreateDashboard":"true",
+				"DashboardNames":["Dashboard_MarkFavorite_101_1_A", "Dashboard_MarkFavorite_101_1_B"],
+			}],
+			"CustomerName":"NancyCostCustomer2",
+			"TagName":"BAV1A11",
+		},
+		"ExpectedData":
+		{
+			"NoneWidgetMessage":"目前该仪表盘没有小组件",
+		}
+	}
+]

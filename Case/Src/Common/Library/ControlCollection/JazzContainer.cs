@@ -50,6 +50,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region HomePage
 
         public static Container ContainerWidgetsToDashboard = GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsToDashboard);
+        public static Container ShareWindowToContainer = GetControl<Container>(JazzControlLocatorKey.ContainerShareWindowTo);
 
         #endregion
 

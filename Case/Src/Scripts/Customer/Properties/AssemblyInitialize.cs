@@ -14,7 +14,7 @@ namespace Mento.Script.Customer
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.InitializeWithOption("PerfTestCustomer", "123456Qq", null);
+            TestAssemblyInitializer.InitializeWithOption("PerfCustomerTest", "123456Qq", null);
         }
 
         [TearDown]

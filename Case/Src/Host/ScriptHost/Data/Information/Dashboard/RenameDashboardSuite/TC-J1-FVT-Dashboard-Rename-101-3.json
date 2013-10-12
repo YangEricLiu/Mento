@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WigetNames":["Dashboard_Rename_101_1_E"],
+				"HierarchyName":["NancyCostCustomer2", "RenameDashboardSuiteOrg"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Dashboard_Rename_101_1_E",
+				"newDashboardName":"Dashboard_Rename_101_1_E_M",
+			}],
+			"CustomerName":"NancyCostCustomer2",
+			"DashboardNames":["Dashboard_Rename_101_1_A", "", "   ","&@#$%*(", "chars-+="],
+		},
+		"ExpectedData":
+		{
+			"newDashboardNames":["重命名仪表盘“Dashboard_Rename_101_1_E”失败，无法将名称改为“Dashboard_Rename_101_1_A”，该名称已存在", "必填项", "必填项", "允许汉字，英文字母，数字，下划线和空格", "允许汉字，英文字母，数字，下划线和空格"],
+		}
+	}
+]

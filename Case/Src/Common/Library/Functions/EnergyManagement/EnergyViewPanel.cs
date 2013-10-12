@@ -61,6 +61,15 @@ namespace Mento.ScriptCommon.Library.Functions
         #region common
 
         /// <summary>
+        /// Navigate to all dashboard
+        /// </summary>
+        /// <param name="step"></param>
+        public void NavigateToAllDashBoards()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+        }
+
+        /// <summary>
         /// Judge if supported display step button displayed on window
         /// </summary>
         /// <param name="step"></param>
@@ -80,6 +89,15 @@ namespace Mento.ScriptCommon.Library.Functions
             Button stepButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonDisplayStepWindow, DisplayStepItem[step]);
 
             stepButton.Click();
+        }
+
+        /// <summary>
+        /// Click giveup button displayed on window
+        /// </summary>
+        /// <param name="name"></param>
+        public void ClickGiveupButtonOnWindow()
+        {
+            JazzButton.GiveUpStepWindowButton.Click();
         }
 
         /// <summary>

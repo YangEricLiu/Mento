@@ -61,6 +61,8 @@ namespace Mento.Script.EnergyView.CostUsage
             //Check tag and view data view, hourly
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.ShowPeakValley();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -68,8 +70,11 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsDataViewDrawn());
+            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Week);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
@@ -103,6 +108,8 @@ namespace Mento.Script.EnergyView.CostUsage
             //Check tag and view data view, hourly
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.ShowPeakValley();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -110,8 +117,11 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsDataViewDrawn());
+            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Week);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
@@ -186,7 +196,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.MessageBox.Confirm();
             
             //On homepage, check the dashboard
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            CostUsage.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
             TimeManager.LongPause();
             TimeManager.LongPause();

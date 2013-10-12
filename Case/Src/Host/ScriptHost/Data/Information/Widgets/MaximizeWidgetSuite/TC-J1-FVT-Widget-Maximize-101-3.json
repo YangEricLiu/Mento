@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{
+			"CustomerName":"NancyOtherCustomer3",
+			"DashboardInfo":[{
+				"WigetNames":["Widget_Maximize_101_3_1"],
+				"HierarchyName":["NancyOtherCustomer3", "MaximizeWidgetSuiteOrg"],
+				"DashboardName":"Widget_Maximize_101_3",
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

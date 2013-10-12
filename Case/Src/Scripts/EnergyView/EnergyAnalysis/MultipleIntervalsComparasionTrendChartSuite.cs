@@ -128,7 +128,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
 
             //On homepage, check the dashboard
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            EnergyAnalysis.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
             TimeManager.MediumPause();
             HomePagePanel.ClickDashboardButton(dashboard.DashboardName);

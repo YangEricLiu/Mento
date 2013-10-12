@@ -138,7 +138,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //Pick one more tag without data from default all tags and confirm,then check the data view
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies);
@@ -200,7 +200,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
 
             //On homepage, check the dashboard
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            EnergyAnalysis.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
             TimeManager.MediumPause();
             HomePagePanel.ClickDashboardButton(dashboard.DashboardName);

@@ -45,7 +45,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void AddToInputNothing(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton_Create();
@@ -84,7 +84,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void AddExceedDate(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton_Create();
@@ -111,7 +111,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void EmptyFieldsForFixed(ElectricfixedCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton_Create();
@@ -163,7 +163,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         {
             string[] hierarchyNodePath = { "自动化测试", "AutoSite002", "AutoBuilding002" };
             HierarchySetting.SelectHierarchyNodePath(hierarchyNodePath);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton_Create();
@@ -205,7 +205,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void AddCancelSaveForFixed(ElectricfixedCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton_Create();
@@ -256,7 +256,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void AddDupDateReviseForFixed(ElectricfixedCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton_Update();
@@ -299,7 +299,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void SaveNonInputForComp(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton_Update();
@@ -334,7 +334,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void HierarchySupportCost(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Click "成本属性" tab button
             Assert.IsFalse(CostSettings.IsCostPropertyTabButtonEnabled());
@@ -348,7 +348,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         {
             string[] hierarchyNodePath = { "自动化测试", "AutoSite002", "AutoBuilding002" };
             HierarchySetting.SelectHierarchyNodePath(hierarchyNodePath);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton_Create();
@@ -400,7 +400,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void AddValidCompMode1(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton_Create();
@@ -462,7 +462,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void AddValidCompMode2(ElectricityComprehensiveCostData input)
         {
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Click "成本属性" tab button
             CostSettings.ClickCostPropertyTabButton_Create();

@@ -40,7 +40,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             if (!text.Contains(labelText))
             {
-                Console.Out.WriteLine(text);
+                //Console.Out.WriteLine(text);
                 return false;
             }
 
@@ -55,6 +55,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool IsLabelExisted()
         {
             return ElementHandler.Exists(this._RootLocator);
+        }
+
+        public void Float()
+        {
+            ElementHandler.Float(this.RootElement);
         }
     }
 }

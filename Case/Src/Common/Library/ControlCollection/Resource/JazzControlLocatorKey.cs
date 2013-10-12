@@ -148,6 +148,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonIntervalDialogGiveUp = "ButtonIntervalDialogGiveUp";
 
         public static string ButtonDisplayStepWindow = "ButtonDisplayStepWindow";
+        public static string ButtonGiveUpStepWindow = "ButtonGiveUpStepWindow";
 
         #endregion
 
@@ -459,6 +460,17 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonWidgetDelete = "ButtonWidgetDelete";
         public static string ButtonHomepageToDashboard = "ButtonHomepageToDashboard";
 
+        public static string ButtonDashboardFavorite = "ButtonDashboardFavorite";
+        public static string ButtonDashboardShare = "ButtonDashboardShare";
+        public static string ButtonDashboardRename = "ButtonDashboardRename";
+        public static string ButtonDashboardDelete = "ButtonDashboardDelete";
+
+        public static string ButtonRenameDashboardSave = "ButtonRenameDashboardSave";
+        public static string ButtonRenameDashboardCancel = "ButtonRenameDashboardCancel";
+        public static string ButtonDashboardFavoriteLevel = "ButtonDashboardFavoriteLevel";
+        public static string ButtonDashboardShareInfo = "ButtonDashboardShareInfo";
+        public static string ButtonDashboardShareResource = "ButtonDashboardShareResource";
+
         #endregion
 
         #endregion
@@ -494,6 +506,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldEnergyViewSaveDashboardWidgetName = "TextFieldEnergyViewSaveDashboardWidgetName";
         public static string TextFieldEnergyViewSaveDashboardDashboardName = "TextFieldEnergyViewSaveDashboardDashboardName";
         public static string TextFieldModifyWidgetName = "TextFieldModifyWidgetName";
+        public static string TextFieldModifyDashboardName = "TextFieldModifyDashboardName";
         #endregion
 
         #region customersettings
@@ -983,7 +996,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string LabelDashboardHeaderName = "LabelDashboardHeaderName";
         public static string LabelWidgetNameMin = "LabelWidgetNameMin";
-        
+        public static string LabelWidgetNameMax = "LabelWidgetNameMax";
+        public static string LabelEmptyDashboard = "LabelEmptyDashboard";
+        public static string LabelPopNotes = "LabelPopNotes";
+        public static string LabelDashboardFavoriteLevel = "LabelDashboardFavoriteLevel";
+        public static string LabelShareResourceCommon = "LabelShareResourceCommon";
+        public static string LabelShareResourceTime = "LabelShareResourceTime";
+        public static string LabelShareWindowTitle = "LabelShareWindowTitle";
+        public static string ButtonShareWindowClose = "ButtonShareWindowClose";
+        public static string ButtonShareWindowShare = "ButtonShareWindowShare";
+        public static string ButtonShareWindowGiveup = "ButtonShareWindowGiveup";
         #endregion
 
         #region Energy View
@@ -1055,7 +1077,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region HomePage
 
         public static string ContainerWidgetsToDashboard = "ContainerWidgetsToDashboard";
-
+        public static string ContainerShareWindowTo = "ContainerShareWindowTo";
         #endregion
 
         #region EnergyView

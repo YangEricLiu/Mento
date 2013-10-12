@@ -1,0 +1,31 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"DashboardInfo":[{
+				"HierarchyName":["NancyCostCustomer2", "RenameDashboardSuiteOrg"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Dashboard_Rename_101_1_B",
+				"newDashboardName":"  onlychars  ",
+			},
+			{
+				"HierarchyName":["NancyCostCustomer2", "RenameDashboardSuiteOrg", "RenameDashboardSuiteSite"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Dashboard_Rename_101_1_C",
+				"newDashboardName":" 中文CAPITALchars 1234_F",
+			},
+			{
+				"HierarchyName":["NancyCostCustomer2", "RenameDashboardSuiteOrg", "RenameDashboardSuiteSite"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Dashboard_Rename_101_1_D",
+				"newDashboardName":"m文CAPITALhars 1234_F中文CAPITALh000",
+			}],
+			"CustomerName":"NancyCostCustomer2",
+		},
+		"ExpectedData":
+		{
+			"newDashboardNames":["onlychars", "中文CAPITALchars 1234_F", "m文CAPITALhars 1234_F中文CAPITALh"],
+		}
+	}
+]

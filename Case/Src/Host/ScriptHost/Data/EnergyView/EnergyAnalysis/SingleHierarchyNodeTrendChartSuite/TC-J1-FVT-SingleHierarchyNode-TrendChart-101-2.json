@@ -9,8 +9,8 @@
 			"DashboardInfo":{
 				"WigetName":"SingleLineChart1012",
 				"HierarchyName":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
-				"IsCreateDashboard":"false",
-				"DashboardName":"Dashboard_V14",
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_V14_2",
 			}
 		},
 		"ExpectedData":

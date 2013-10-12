@@ -65,5 +65,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return this.RootElement.Displayed;
         }
+
+        public bool IsExisted()
+        {
+            return ElementHandler.Exists(this._RootLocator);
+        }
     }
 }

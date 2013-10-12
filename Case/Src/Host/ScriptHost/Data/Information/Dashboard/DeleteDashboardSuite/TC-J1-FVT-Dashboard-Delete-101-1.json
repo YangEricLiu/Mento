@@ -1,0 +1,23 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"DashboardInfo":[{
+				"WigetNames":["Dashboard_Delete_101_1_ABC"],
+				"HierarchyName":["NancyCostCustomer2", "RenameDashboardSuiteOrg", "DeleteDashboardSuiteSite"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_Delete_101_1",
+			}],
+			"CustomerName":"NancyCostCustomer2",
+			"DashboardNames":["Delete_Dashboard_101_1_B"],
+			"TagName":"BAV1A11",
+		},
+		"ExpectedData":
+		{
+			"DeleteMessages":["删除仪表盘“Dashboard_Delete_101_1”吗？"],
+			"DeleteCommonMessage":"您将同时删除仪表盘下所有的小组件。",
+			"NoFocusDashboardMessage":"请选择一个仪表盘",
+		}
+	}
+]

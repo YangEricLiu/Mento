@@ -84,10 +84,12 @@
     <Compile Include="EnergyView\CostUsageData.cs" />
     <Compile Include="EnergyView\TimeSpansData.cs" />
     <Compile Include="EnergyView\EnergyViewInputData.cs" />
+    <Compile Include="Information\ShareDashboardData.cs" />
+    <Compile Include="Information\RenameDashboardData.cs" />
+    <Compile Include="Information\MaximizeWidgetData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Information\" />
     <Folder Include="Platform\" />
   </ItemGroup>
   <ItemGroup>

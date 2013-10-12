@@ -29,6 +29,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             return GetControl<LinkButton>(key, nameIndex);
         }
+
+        public static DashboardButton GetOneDashboardButton(string key, string nameIndex)
+        {
+            return GetControl<DashboardButton>(key, nameIndex);
+        }
         #endregion
 
         #region Login buttons
@@ -83,6 +88,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button IntervalDialogConfirmButton = GetControl<Button>(JazzControlLocatorKey.ButtonIntervalDialogConfirm);
         public static Button IntervalDialogGiveUpButton = GetControl<Button>(JazzControlLocatorKey.ButtonIntervalDialogGiveUp);
 
+        public static Button GiveUpStepWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonGiveUpStepWindow);
         #endregion
 
         #region Energy Analysis
@@ -476,6 +482,20 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button WidgetMaxDialogPrevButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetMaxDialogPrev);
         public static Button WidgetMaxDialogNextButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetMaxDialogNext);
         public static Button HomepageToDashboardButton = GetControl<Button>(JazzControlLocatorKey.ButtonHomepageToDashboard);
+
+        public static Button DashboardShareButton = GetControl<Button>(JazzControlLocatorKey.ButtonDashboardShare);
+        public static Button DashboardRenameButton = GetControl<Button>(JazzControlLocatorKey.ButtonDashboardRename);
+        public static Button DashboardDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonDashboardDelete);
+
+        public static Button RenameDashboardSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonRenameDashboardSave);
+        public static Button RenameDashboardCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonRenameDashboardCancel);
+        public static DashboardButton DashboardFavoriteLevelButton = GetControl<DashboardButton>(JazzControlLocatorKey.ButtonDashboardFavoriteLevel);
+        public static DashboardButton DashboardShareInfoButton = GetControl<DashboardButton>(JazzControlLocatorKey.ButtonDashboardShareInfo);
+        public static Button ShareWindowCloseButton = GetControl<Button>(JazzControlLocatorKey.ButtonShareWindowClose);
+
+        public static Button ShareWindowShareButton = GetControl<Button>(JazzControlLocatorKey.ButtonShareWindowShare);
+        public static Button ShareWindowGiveupButton = GetControl<Button>(JazzControlLocatorKey.ButtonShareWindowGiveup);
+      
         #endregion
         #endregion
     }

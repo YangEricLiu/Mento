@@ -147,7 +147,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsFalse(EnergyAnalysis.IsTrendChartDrawn());
 
             //On homepage, check the dashboard
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+            EnergyAnalysis.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
             TimeManager.MediumPause();
             HomePagePanel.ClickDashboardButton(dashboard.DashboardName);

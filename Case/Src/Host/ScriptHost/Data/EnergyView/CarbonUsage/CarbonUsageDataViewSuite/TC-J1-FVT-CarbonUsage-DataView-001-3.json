@@ -4,10 +4,11 @@
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
 			"commodityNames":["煤"],
+			"failedFileName":["F-CarbonUsageDataView001-3-D-Coal.xls"],
 		},
 		"ExpectedData":
 		{
-			
+			"expectedFileName":["CarbonUsageDataView001-3-D-Coal.xls"],
 		}
 	}
 ]

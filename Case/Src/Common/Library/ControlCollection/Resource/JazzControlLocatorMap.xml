@@ -58,14 +58,27 @@
             <add key="MenuButtonSelectCustomer" value="header-btn-select-customer" type="ID"/>
             <add key="ButtonWidgetMaxDialogView" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]/div/div/div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
             <add key="ButtonWidgetMaxDialogClose" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[contains(@id,'panel')]//div[contains(@class,'x-tool-default')]/img" type="XPath"/>
-            <add key="ButtonWidgetMaxDialogPrev" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[1]/div/div/div/em/button/span[1]" type="XPath"/>
-            <add key="ButtonWidgetMaxDialogNext" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[3]/div/div/div/em/button/span[1]" type="XPath"/>
+            <add key="ButtonWidgetMaxDialogPrev" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[1]/div/div/div[contains(@class,'x-btn') and em/button/span[contains(@class,'x-btn-inner')]]" type="XPath"/>
+            <add key="ButtonWidgetMaxDialogNext" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[3]/div/div/div[contains(@class,'x-btn') and em/button/span[contains(@class,'x-btn-inner')]]" type="XPath"/>
 
             <add key="ButtonWidgetMax" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-max-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetShare" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-share-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetRename" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-rename-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetDelete" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-close-tool')]/img" type="XPath"/>
             <add key="ButtonHomepageToDashboard" value="//div[@id='hp-to-dsboard-button-container']/div[contains(@class,'x-btn') and em/button/span[text()='仪表盘 >']]" type="XPath"/>
+
+            <add key="ButtonDashboardFavorite" value="//div[@id='hp-dashboard-list-targetEl']/div[span[text()='$#nameIndex']]/span[@class='x-dsbd-btn-icon']" type="XPath"/>
+            <add key="ButtonDashboardShare" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[1]/img" type="XPath"/>
+            <add key="ButtonDashboardRename" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[2]/img" type="XPath"/>
+            <add key="ButtonDashboardDelete" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[3]/img" type="XPath"/>
+            <add key="ButtonRenameDashboardSave" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
+            <add key="ButtonRenameDashboardCancel" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+            <add key="ButtonDashboardFavoriteLevel" value="//div[@id='hp-dashboard-ct_hd-hierCtEl']/a" type="XPath"/>
+            <add key="ButtonDashboardShareInfo" value="hp-share-info-btn-btnEl" type="ID"/>
+            <add key="ButtonDashboardShareResource" value="hp-dashboard-ct_hd-sharerEl" type="ID"/>
+            <add key="ButtonShareWindowClose" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-header-body-default')]/div/div/div[contains(@id,'tool')]/img" type="XPath"/>
+            <add key="ButtonShareWindowShare" value="//div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='分享']]" type="XPath"/>
+            <add key="ButtonShareWindowGiveup" value="//div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
 
       </HomePage>
       <!--User Management Begin-->
@@ -163,6 +176,7 @@
           <add key="ButtonIntervalDialogGiveUp" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
 
           <add key="ButtonDisplayStepWindow" value="//div[contains(@id,'window') and contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$#nameIndex']]" type="XPath"/>
+          <add key="ButtonGiveUpStepWindow" value="//div[contains(@id,'window') and contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
 
       </energyview>
       <customersettings>
@@ -458,7 +472,9 @@
       <energyview>
           <add key="TextFieldEnergyViewSaveDashboardWidgetName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='小组件名称']]//input[contains(@class,'x-form-field')]" type="XPath"/>
           <add key="TextFieldEnergyViewSaveDashboardDashboardName" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]//input[@name='newDashboardField']" type="XPath"/>
-          <add key="TextFieldModifyWidgetName" value="//div[contains(@id,'dashboardwindow')]//input[@type='text' and @name='Name']" type="XPath"/>
+          <add key="TextFieldModifyWidgetName" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]//input[@type='text' and @name='Name']" type="XPath"/>
+          <add key="TextFieldModifyDashboardName" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]//input[@type='text' and @name='Name']" type="XPath"/>
+
       </energyview>
       <customersettings>
           <hierarchysettings>
@@ -570,8 +586,6 @@
           <add key="ComboBoxLoginCustomerOption" value="//div[contains(@class,'x-window-default')]/div[contains(@class,'x-window-body-default')]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'combobox')]]" type="XPath"/>
       </login>
     <HomePage>
-          <add key="ComboBoxWidgetMaxDialogStartTime" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@id,'dateselector')]/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
-          <add key="ComboBoxWidgetMaxDialogEndTime" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@id,'dateselector')]/div/table[4]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
       </HomePage>
     <User>
           <add key="ComboBoxUserType" value="//div[@id='st-user-properties-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='UserType']]" type="XPath"/>
@@ -592,7 +606,6 @@
           <add key="ComboBoxIntervalDialogBaseStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
           <add key="ComboBoxIntervalDialogBaseEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[4]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
           <add key="ComboBoxIntervalDialogAdditionStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
-          <add key="ComboBoxWidgetMaxDialogDefaultTime" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]/div/div/div/div/div/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'combobox')]]" type="XPath"/>
   
     </energyview>
       <customersettings>
@@ -690,6 +703,11 @@
               <add key="ComboBoxBenchmark" value="" type="XPath"/>
           </BenchMark>
       </platformsettings>
+   <Widget>
+     <add key="ComboBoxWidgetMaxDialogDefaultTime" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]/div/div/div/div/div/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'combobox')]]" type="XPath"/>
+     <add key="ComboBoxWidgetMaxDialogStartTime" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@id,'dateselector')]/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
+     <add key="ComboBoxWidgetMaxDialogEndTime" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@id,'dateselector')]/div/table[4]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
+   </Widget>
   </ComboBox>
 
   <!--TreeView-->
@@ -794,10 +812,6 @@
       <add key="DatePickerIntervalDialogBaseStartDate" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       <add key="DatePickerIntervalDialogBaseEndDate" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       <add key="DatePickerIntervalDialogAdditionStartDate" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
-
-      <add key="DatePickerWidgetMaxDialogStartDate" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@id,'dateselector')]/div/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
-      <add key="DatePickerWidgetMaxDialogEndDate" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@id,'dateselector')]/div/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
-
     </EnergyUsage>
     <CustomerSettings>
       <kpitag>
@@ -810,6 +824,11 @@
         <add key="DatePickerOperationTime" value="//td[@id='st-customer-starttime-bodyEl']/table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartTime']]" type="XPath"/>
       </customermanagement>
     </PlatformSettings>
+
+    <Widget>
+    <add key="DatePickerWidgetMaxDialogStartDate" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@id,'dateselector')]/div/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+    <add key="DatePickerWidgetMaxDialogEndDate" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@id,'dateselector')]/div/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      </Widget>
   </DatePicker>
   <!--Date Picker-->
   
@@ -874,9 +893,19 @@
       </calendar>
     </PlatformSettings>
   <HomePage>
+    
     <add key="LabelDashboardHeaderName" value="hp-dashboard-ct_hd-textEl" type="ID"/>
     <add key="LabelWidgetNameMin" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']" type="XPath"/>
-    </HomePage>
+    <add key="LabelWidgetNameMax" value="//span[@class='x-window-header-text x-window-header-text-default']" type="XPath"/>
+    <add key="LabelEmptyDashboard" value="hp-msg-ct" type="ID"/>
+    <add key="LabelPopNotes" value="//div[@id='popnotes-div']/div[@class='msg']/p" type="XPath"/>
+    <add key="LabelDashboardFavoriteLevel" value="//div[@id='hp-dashboard-ct_hd-hierCtEl']/label" type="XPath"/>
+    <add key="LabelShareResourceCommon" value="//div[@id='hp-dashboard-ct_hd-shareCtEl']/label[1]" type="XPath"/>
+    <add key="LabelShareResourceTime" value="hp-dashboard-ct_hd-shareTimeEl" type="ID"/>
+    <add key="LabelDashboardFavoriteLevel" value="//div[@id='hp-dashboard-ct_hd-hierCtEl']/label" type="XPath"/>
+    <add key="LabelShareWindowTitle" value="//div[contains(@id, 'receiverwindow') and contains(@class,'x-window-header-text-container')]/span" type="XPath"/>
+
+  </HomePage>
     
     <EnergyView>
       <add key="LabelAdditionEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/label[2]" type="XPath"/>
@@ -931,6 +960,8 @@
   
   <Homopage>
       <add key="ContainerWidgetsToDashboard" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]" type="XPath"/>
+      <add key="ContainerShareWindowTo" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div/div[contains(@id,'tagcontainer')]" type="XPath"/>
+
   </Homopage>
     
   <EnergyView>

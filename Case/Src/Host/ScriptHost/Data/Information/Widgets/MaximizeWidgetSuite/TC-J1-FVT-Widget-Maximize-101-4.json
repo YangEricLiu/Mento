@@ -1,0 +1,35 @@
+﻿[
+	{
+		"InputData":
+		{
+			"CustomerName":"NancyOtherCustomer3",
+			"DashboardInfo":[{
+				"WigetNames":["Widget_Maximize_101_4_1"],
+				"HierarchyName":["NancyOtherCustomer3", "MaximizeWidgetSuiteOrg"],
+				"DashboardName":"Widget_Maximize_101_4",
+			}],
+			"TimeIntervalList":[{
+				"StartDate":"2012-07-01",
+				"StartTime":"00:00",
+				"EndDate":"2012-07-31",
+				"EndTime":"24:00",
+			},
+			{
+				"StartDate":"2012-07-29",
+				"StartTime":"00:00",
+				"EndDate":"2012-08-03",
+				"EndTime":"24:00",
+			},
+			{
+				"StartDate":"2012-07-01",
+				"StartTime":"03:00",
+				"EndDate":"2012-07-01",
+				"EndTime":"15:00",
+			}]
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

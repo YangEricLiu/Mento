@@ -22,16 +22,63 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
+        #region controls
+        
         private static Button DashboardHierarchyNameButton = JazzButton.DashboardHierarchyNameButton;
         private static Button ModifyWidgetNameButton = JazzButton.ButtonModifyWidgetName;
         private static Button ModifyWidgetNameSaveButton = JazzButton.ModifyWidgetNameSaveButton;
         private static Button ModifyWidgetNameCancelButton = JazzButton.ModifyWidgetNameCancelButton;
-        private static Button DeleteWidgetButton = JazzButton.ButtonDeleteWidget;
         private static Button DeleteWidgetCancelButton = JazzButton.DeleteWidgetCancelButton;
         private static Button DeleteWidgetConfirmButton = JazzButton.DeleteWidgetConfirmButton;
      
         private static TextField ModifyWidgetNameTextField = JazzTextField.TextFieldModifyWidgetName;
 
+        private static ComboBox WidgetMaxDialogDefaultTime = JazzComboBox.WidgetMaxDialogDefaultTimeComboBox;
+        private static ComboBox WidgetMaxDialogStartTime = JazzComboBox.WidgetMaxDialogStartTimeComboBox;
+        private static ComboBox WidgetMaxDialogEndTime = JazzComboBox.WidgetMaxDialogEndTimeComboBox;
+
+        private static DatePicker WidgetMaxDialogStartDate = JazzDatePicker.WidgetMaxDialogStartDatePicker;
+        private static DatePicker WidgetMaxDialogEndDate = JazzDatePicker.WidgetMaxDialogEndDatePicker;
+
+        private static Button WidgetMaxDialogViewButton = JazzButton.WidgetMaxDialogViewButton;
+        private static Button WidgetMaxDialogCloseButton = JazzButton.WidgetMaxDialogCloseButton;
+        private static Button WidgetMaxDialogPrevButton = JazzButton.WidgetMaxDialogPrevButton;
+        private static Button WidgetMaxDialogNextButton = JazzButton.WidgetMaxDialogNextButton;
+
+        private static Label WidgetMaxDialogName = JazzLabel.WidgetNameMaxLabel;
+        #endregion
+
+        #region common
+
+        /// <summary>
+        /// Navigate To AllDashboard
+        /// </summary>
+        /// <returns></returns>
+        public void NavigateToAllDashboard()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AllDashboards);
+        }
+
+        /// <summary>
+        /// Navigate To MyFavorite
+        /// </summary>
+        /// <returns></returns>
+        public void NavigateToMyFavorite()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.MyFavirate);
+        }
+
+        /// <summary>
+        /// Navigate To Energy View
+        /// </summary>
+        /// <returns></returns>
+        public void NavigateToEnergyView()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
+        }
+        #endregion
+
+        #region min widget operation
 
         /// <summary>
         /// check a widget is or no exist
@@ -55,29 +102,44 @@ namespace Mento.ScriptCommon.Library.Functions
         /// modify widget name and save it,expected is the new widget name
         /// </summary>
         /// <param name="expected"></param>
-        public void SaveModifyWidgetName(string expected)
+        public void FillNewWidgetName(string name)
          {
-             ModifyWidgetNameButton.Click();
-             ModifyWidgetNameTextField.Fill(expected);
-             TimeManager.LongPause();
-             ModifyWidgetNameSaveButton.Click();
+             ModifyWidgetNameTextField.Fill(name);
          }
-        
+
+        /// <summary>
+        /// Judge if the name field invalid
+        /// </summary>
+        /// <param name="expected"></param>
+        public bool IsWidgetNameFieldInvalid()
+        {
+            return ModifyWidgetNameTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Get name field invalid message
+        /// </summary>
+        public string GetWidgetNameFieldInvalidMsg()
+        {
+            return ModifyWidgetNameTextField.GetInvalidTips();
+        }
+
+        /// <summary>
+        /// click save
+        /// </summary>
+        public void ClickSaveWidgetNameButton()
+        {
+            ModifyWidgetNameSaveButton.Click();
+        }
+
         /// <summary>
         /// modify widget name but cancel it
         /// </summary>
          public void CancelModifyWidgetName()
          {
-             ModifyWidgetNameButton.Click();
              ModifyWidgetNameCancelButton.Click();
          }
-        /// <summary>
-        /// delete widget
-        /// </summary>
-         public void DeleteWidget()
-         {
-             DeleteWidgetButton.Click();
-         }
+        
         /// <summary>
         /// Cancel delete widget
         /// </summary>
@@ -92,6 +154,74 @@ namespace Mento.ScriptCommon.Library.Functions
          {
              DeleteWidgetConfirmButton.Click();
          }
+        #endregion
 
+        #region max widget operation
+
+        public void SelectStartDate(string startDate)
+        {
+            WidgetMaxDialogStartDate.SelectDateItem(startDate);
+        }
+
+        public string GetStartDate()
+        {
+            return WidgetMaxDialogStartDate.GetValue();
+        }
+
+        public void SelectEndDate(string endDate)
+        {
+            WidgetMaxDialogEndDate.SelectDateItem(endDate);
+        }
+
+        public string GetEndDate()
+        {
+            return WidgetMaxDialogEndDate.GetValue();
+        }
+
+        public void SelectStartTime(string startTime)
+        {
+            WidgetMaxDialogStartTime.SelectItem(startTime);
+        }
+
+        public void SelectEndTime(string endTime)
+        {
+            WidgetMaxDialogEndTime.SelectItem(endTime);
+        }
+
+        public void ClickViewDataButton()
+        {
+            WidgetMaxDialogViewButton.Click();
+        }
+
+        public void ClickPrevButton()
+        {
+            WidgetMaxDialogPrevButton.Click();
+        }
+
+        public void ClickNextButton()
+        {
+            WidgetMaxDialogNextButton.Click();
+        }
+
+        public void ClickCloseMaxDialogButton()
+        {
+            WidgetMaxDialogCloseButton.Click();
+        }
+
+        public string GetMaxWidgetName()
+        {
+            return WidgetMaxDialogName.GetLabelTextValue();
+        }
+
+        public bool IsPrevButtonEnable()
+        {
+            return WidgetMaxDialogPrevButton.IsEnabled();
+        }
+
+        public bool IsNextButtonEnable()
+        {
+            return WidgetMaxDialogNextButton.IsEnabled();
+        }
+        #endregion
     }
 }

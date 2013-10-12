@@ -186,6 +186,14 @@ namespace Mento.ScriptCommon.Library.Functions
             return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, CostPath);
         }
 
+        /// <summary>
+        /// Judge if there is data in data view
+        /// </summary>
+        public bool IsNoDataInEnergyGrid()
+        {
+            return EnergyDataGrid.IsNoRowOnGrid();
+        }
+
         #endregion
     }
 }

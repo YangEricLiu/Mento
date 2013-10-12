@@ -8,7 +8,7 @@
 				"WigetName":"CostSingleElec1",
 				"HierarchyName":["NancyCostCustomer2","组织A", "园区B", "楼宇C"],
 				"IsCreateDashboard":"true",
-				"DashboardName":"CostSingle2",
+				"DashboardName":"CostSingleTC1",
 			},
 		},
 		"ExpectedData":
@@ -22,10 +22,10 @@
 			"Hierarchies":["NancyCostCustomer2","组织A", "园区B"],
 			"commodityNames":["电", "自来水","煤"],
 			"DashboardInfo":{
-				"WigetName":"CostSingleElec1",
+				"WigetName":"CostSingleElec2",
 				"HierarchyName":["NancyCostCustomer2","组织A", "园区B"],
 				"IsCreateDashboard":"true",
-				"DashboardName":"CostSingle2",
+				"DashboardName":"CostSingleTC2",
 			},
 		},
 		"ExpectedData":
@@ -39,10 +39,10 @@
 			"Hierarchies":["NancyCostCustomer2"],
 			"commodityNames":["电", "自来水","煤"],
 			"DashboardInfo":{
-				"WigetName":"CostSingleElec1",
+				"WigetName":"CostSingleElec3",
 				"HierarchyName":["NancyCostCustomer2"],
 				"IsCreateDashboard":"true",
-				"DashboardName":"CostSingle2",
+				"DashboardName":"CostSingleTC3",
 			},
 		},
 		"ExpectedData":

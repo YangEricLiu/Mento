@@ -1,0 +1,16 @@
+﻿/*using common.json*/
+
+[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["自动化测试"],
+			"Type":"Orgnization",
+		},
+		"ExpectedData":
+		{
+		    "Type":"Orgnization",
+			"Message":"添加成功",
+		}
+	}
+]

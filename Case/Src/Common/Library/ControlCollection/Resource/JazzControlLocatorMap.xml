@@ -887,6 +887,7 @@
   
   <!--Label Begin-->
   <Label>
+    
     <CustomerSettings>
       <HierarchyCalendar>
         <add key="LabelWorkdayCalendar" value="st-hierarchy-calendar-workday-container" type="ID"/>
@@ -905,6 +906,7 @@
       </TargetBaseline>
       
     </CustomerSettings>
+    
     <PlatformSettings>
       <calendar>
         <add key="LabelPlatformWorkdayCalendar" value="st-calendar-properties-form-body" type="ID"/>
@@ -924,7 +926,8 @@
         </customerMapInfo>
         
     </PlatformSettings>
-  <HomePage>
+    
+    <HomePage>
     
     <add key="LabelDashboardHeaderName" value="hp-dashboard-ct_hd-textEl" type="ID"/>
     <add key="LabelWidgetNameMin" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']" type="XPath"/>
@@ -932,10 +935,14 @@
     <add key="LabelEmptyDashboard" value="hp-msg-ct" type="ID"/>
     <add key="LabelPopNotes" value="//div[@id='popnotes-div']/div[@class='msg']/p" type="XPath"/>
     <add key="LabelDashboardFavoriteLevel" value="//div[@id='hp-dashboard-ct_hd-hierCtEl']/label" type="XPath"/>
+    <add key="LabelShareWindowTitle" value="//div[contains(@id, 'receiverwindow') and contains(@class,'x-window-header-text-container')]/span" type="XPath"/>
     <add key="LabelDashboardShareResourceCommon" value="//div[@id='hp-dashboard-ct_hd-shareCtEl']/label[1]" type="XPath"/>
     <add key="LabelDashboardShareResourceTime" value="hp-dashboard-ct_hd-shareTimeEl" type="ID"/>
-    <add key="LabelShareWindowTitle" value="//div[contains(@id, 'receiverwindow') and contains(@class,'x-window-header-text-container')]/span" type="XPath"/>
     <add key="LabelDashboardShareResourceUser" value="hp-dashboard-ct_hd-sharerEl" type="ID"/>
+
+    <add key="LabelWidgetShareResourceCommon" value="//div[contains(@id,'widgetmaxchart') and contains(@id,'share-shareCtEl')]/label[1]" type="XPath"/>
+    <add key="LabelWidgetShareResourceTime" value="//div[contains(@id,'widgetmaxchart') and contains(@id,'share-shareCtEl')]/label[2]" type="XPath"/>
+    <add key="LabelWidgetShareResourceUser" value="//div[contains(@id,'widgetmaxchart') and contains(@id,'share-shareCtEl')]/a" type="XPath"/>
   </HomePage>
     
     <EnergyView>
@@ -944,7 +951,13 @@
     
   </Label>
   <!--Label End-->
-   
+
+  <!--Tooltip Begin-->
+
+  <add key="TooltipShareUser" value="//div[contains(@id,'tooltip') and contains(@class,'x-tip-default') and not(contains(@style,'display: none;'))]/div[contains(@class,'x-tip-body-default')]" type="XPath"/>
+
+  <!--Tooltip End-->
+
   <!--Chart-->
   <Chart>
     <add key="ChartEnergyView" value="svg" type="TagName"/>

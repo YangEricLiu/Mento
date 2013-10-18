@@ -77,6 +77,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Label DashboardShareResourceUserLabel = GetControl<Label>(JazzControlLocatorKey.LabelDashboardShareResourceUser);
         public static Label ShareWindowTitleLabel = GetControl<Label>(JazzControlLocatorKey.LabelShareWindowTitle);
 
+        public static Label WidgetShareResourceCommonLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetShareResourceCommon);
+        public static Label WidgetShareResourceTimeLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetShareResourceTime);
+        public static Label WidgetShareResourceUserLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetShareResourceUser);
+
         #endregion
 
         #region Energy View

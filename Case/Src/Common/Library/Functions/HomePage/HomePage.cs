@@ -51,6 +51,12 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Label DashboardFavoriteLevelLabel = JazzLabel.DashboardFavoriteLevelLabel;
         private static DashboardButton DashboardFavoriteLevelButton = JazzButton.DashboardFavoriteLevelButton;
         private static DashboardButton DashboardShareInfoButton = JazzButton.DashboardShareInfoButton;
+
+        private static Label ShareResoureCommon = JazzLabel.DashboardShareResourceCommonLabel;
+        private static Label ShareResoureTime = JazzLabel.DashboardShareResourceTimeLabel;
+        private static Label ShareResoureUser = JazzLabel.DashboardShareResourceUserLabel;
+        private static Tooltip ShareUserInfo = JazzTooltip.ShareUserTooltip;
+  
         #endregion
 
         #region common
@@ -351,7 +357,41 @@ namespace Mento.ScriptCommon.Library.Functions
             return dsButton.IsDashboardUnread();
         }
 
-        
+        public bool IsShareResoureCommonExisted()
+        {
+            return ShareResoureCommon.IsLabelExisted();
+        }
+
+        public bool IsShareResoureTimeExisted()
+        {
+            return ShareResoureTime.IsLabelExisted();
+        }
+
+        public bool IsShareResoureUserExisted()
+        {
+            return ShareResoureUser.IsLabelExisted();
+        }
+
+        public string GetShareResoureUser()
+        {
+            return ShareResoureUser.GetLabelTextValue();
+        }
+
+        public string GetShareResoureTooltipTexts()
+        {
+            return ShareUserInfo.GetTooltipTexts();
+        }
+
+        public bool IsTextsExisted(string[] texts)
+        {
+            return ShareUserInfo.IsTooltipTextsExisted(texts);
+        }
+
+        public void FloatOnShareResoureUser()
+        {
+            ShareResoureUser.Float();
+            TimeManager.ShortPause();
+        }
         #endregion
 
         #region widget

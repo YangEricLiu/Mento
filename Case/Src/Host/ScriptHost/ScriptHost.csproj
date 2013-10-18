@@ -656,6 +656,9 @@
     <None Include="Data\Information\Share\ShareDashboard1ValidSuite\TC-J1-FVT-Dashboard-Share-101-3.json" />
     <None Include="Data\Information\Share\ShareDashboard1ValidSuite\TC-J1-FVT-Dashboard-Share-101-2.json" />
     <None Include="Data\Information\Share\ShareDashboard1ValidSuite\TC-J1-FVT-Dashboard-Share-101-1.json" />
+    <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-3.json" />
+    <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-2.json" />
+    <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-1.json" />
     <None Include="Data\Information\Share\ShareDashboardInvalidSuite\TC-J1-FVT-Dashboard-Share-001-5.json" />
     <None Include="Data\Information\Share\ShareDashboardInvalidSuite\TC-J1-FVT-Dashboard-Share-001-4.json" />
     <None Include="Data\Information\Share\ShareDashboardInvalidSuite\TC-J1-FVT-Dashboard-Share-001-3.json" />

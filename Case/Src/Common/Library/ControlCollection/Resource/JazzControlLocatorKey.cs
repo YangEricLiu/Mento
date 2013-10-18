@@ -1032,6 +1032,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelDashboardShareResourceCommon = "LabelDashboardShareResourceCommon";
         public static string LabelDashboardShareResourceTime = "LabelDashboardShareResourceTime";
         public static string LabelDashboardShareResourceUser = "LabelDashboardShareResourceUser";
+
+        public static string LabelWidgetShareResourceCommon = "LabelWidgetShareResourceCommon";
+        public static string LabelWidgetShareResourceTime = "LabelWidgetShareResourceTime";
+        public static string LabelWidgetShareResourceUser = "LabelWidgetShareResourceUser";
         #endregion
 
         #region Energy View
@@ -1149,6 +1153,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #endregion
+
+        #endregion
+
+        #region Tooltip
+
+        public static string TooltipShareUser = "TooltipShareUser";
 
         #endregion
 

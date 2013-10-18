@@ -1,0 +1,22 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"Dashboard_Share_104_1_A",
+				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareDashboardInfoSuite"],
+				"ShareUsers":["ShareUserA"],
+				"ReceiveUsers":["PerfTestCustomer"],
+				"DashboardName":"Dashboard_Share_104_1",
+				"Receivers":[{
+					"LoginName":"ShareUserA",
+					"Password":"123456Qq",
+					}],
+			}],
+		},
+		"ExpectedData":
+		{
+			"TooltipTexts":["客户管理员", "010-99999999"],
+		}
+	}
+]

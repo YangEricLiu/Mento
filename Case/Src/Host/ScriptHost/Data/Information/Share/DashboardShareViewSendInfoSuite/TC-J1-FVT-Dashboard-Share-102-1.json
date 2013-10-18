@@ -21,16 +21,6 @@
 					"LoginName":"ShareUserA",
 					"Password":"123456Qq",
 					}],
-			},
-			{
-				"WidgetName":"Dashboard_Share_102_1_C",
-				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "DashboardShareViewSendInfo"],
-				"ShareUsers":["ShareUserA"],
-				"DashboardName":"Dashboard_Share_102_1_3",
-				"Receivers":[{
-					"LoginName":"ShareUserA",
-					"Password":"123456Qq",
-					}],
 			}],
 		},
 		"ExpectedData":

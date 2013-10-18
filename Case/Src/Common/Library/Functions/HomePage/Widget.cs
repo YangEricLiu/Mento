@@ -20,7 +20,7 @@ namespace Mento.ScriptCommon.Library.Functions
     {
         internal Widget()
         {
-        }
+        } 
 
         #region controls
         
@@ -45,6 +45,11 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button WidgetMaxDialogNextButton = JazzButton.WidgetMaxDialogNextButton;
 
         private static Label WidgetMaxDialogName = JazzLabel.WidgetNameMaxLabel;
+        private static Label WidgetShareResourceCommon = JazzLabel.WidgetShareResourceCommonLabel;
+        private static Label WidgetShareResourceTime = JazzLabel.WidgetShareResourceTimeLabel;
+        private static Label WidgetShareResourceUser = JazzLabel.WidgetShareResourceUserLabel;
+        private static Tooltip ShareUserInfo = JazzTooltip.ShareUserTooltip;
+
         #endregion
 
         #region common
@@ -220,6 +225,42 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsNextButtonEnable()
         {
             return WidgetMaxDialogNextButton.IsEnabled();
+        }
+
+        public bool IsShareResoureCommonExisted()
+        {
+            return WidgetShareResourceCommon.IsLabelExisted();
+        }
+
+        public bool IsShareResoureTimeExisted()
+        {
+            return WidgetShareResourceTime.IsLabelExisted();
+        }
+
+        public bool IsShareResoureUserExisted()
+        {
+            return WidgetShareResourceUser.IsLabelExisted();
+        }
+
+        public string GetShareResoureUser()
+        {
+            return WidgetShareResourceUser.GetLabelTextValue();
+        }
+
+        public string GetShareResoureTooltipTexts()
+        {
+            return ShareUserInfo.GetTooltipTexts();
+        }
+
+        public bool IsTextsExisted(string[] texts)
+        {
+            return ShareUserInfo.IsTooltipTextsExisted(texts);
+        }
+
+        public void FloatOnShareResoureUser()
+        {
+            WidgetShareResourceUser.Float();
+            TimeManager.ShortPause();
         }
         #endregion
     }

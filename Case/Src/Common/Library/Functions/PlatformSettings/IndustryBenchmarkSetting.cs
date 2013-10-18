@@ -33,6 +33,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public static CheckBoxField ClimateRegionsCheckBox = JazzCheckBox.CheckBoxBenchMark;
 
+        public static Label AtLeastSelectLabel = JazzLabel.PlatformBenchMarkLabel;
+
         #endregion
 
         #region common action
@@ -110,13 +112,28 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Check climatic regions checkbox
+        /// Check climatic region checkbox
         /// </summary>
         /// <param></param>
         /// <returns></returns>
         public void CheckClimateRegion(string itemName)
         {
             ClimateRegionsCheckBox.CommonCheck(itemName);
+        }
+
+        /// <summary>
+        /// Check climatic regions checkbox
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void CheckClimateRegions(string[] itemName)
+        {
+            int i = 0;
+            while (i < itemName.Length)
+            {
+                ClimateRegionsCheckBox.CommonCheck(itemName[i]);
+                i++;
+            }
         }
 
         /// <summary>
@@ -130,13 +147,28 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// UnCheck climatic region checkbox
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void UnCheckClimateRegion(string itemName)
+        {
+            ClimateRegionsCheckBox.CommonUnCheck(itemName);
+        }
+
+        /// <summary>
         /// UnCheck climatic regions checkbox
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void UnCheckClimateRegions(string itemName)
+        public void UnCheckClimateRegions(string[] itemName)
         {
-            ClimateRegionsCheckBox.CommonUnCheck(itemName);
+            int i = 0;
+            while (i < itemName.Length)
+            {
+                ClimateRegionsCheckBox.CommonUnCheck(itemName[i]);
+                i++;
+            }
         }
 
         /// <summary>
@@ -147,6 +179,24 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FocusOnBenchMark(string benchMarkName)
         {
             BenchMarkList.FocusOnRow(1, benchMarkName);
+        }
+
+         /// <summary>
+        /// Verify Is Climate regions Message Displayed
+        /// </summary>
+        public Boolean IsCliamteRegionsMessageDisplayed()
+        {
+            return AtLeastSelectLabel.IsLabelDisplayed();
+            
+        }
+
+        /// <summary>
+        /// Verify Is Industry Add Message Displayed
+        /// </summary>
+        public Boolean IsIndustrysAddMessageDisplayed()
+        {
+            return BenchMarkComboBox.GetInvalidTips().Contains("必填项。");
+
         }
 
         #endregion
@@ -238,9 +288,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Verify whether combox list exist dropdown items 
         /// </summary>
         /// <returns></returns>
-        public Boolean IsDropdownItemsExist()
+        public Boolean IsDropdownItemExist(string item)
         {
-            return BenchMarkComboBox.Exists();
+            return BenchMarkComboBox.GetCurrentDropdownListItems().Contains(item);
         }
 
 
@@ -254,6 +304,38 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Check whether the the climate regions display. 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean AreClimateRegionsDisplay(string[] climaticRegions)
+        {
+            int i = 0;
+            while (i < climaticRegions.Length)
+            {
+                if (ClimateRegionsCheckBox.IsCommonNotDisplayed(climaticRegions[i]))
+                    return false;
+                i++;
+            }
+            return !(ClimateRegionsCheckBox.IsCommonNotDisplayed(climaticRegions[i-1]));
+        }
+
+        /// <summary>
+        /// Check whether the the climate regions Not display. 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean AreClimateRegionsNotDisplay(string[] climaticRegions)
+        {
+            int i = 0;
+            while (i < climaticRegions.Length)
+            {
+                if (!(ClimateRegionsCheckBox.IsCommonNotDisplayed(climaticRegions[i])))
+                    return false;
+                i++;
+            }
+            return ClimateRegionsCheckBox.IsCommonNotDisplayed(climaticRegions[i - 1]);
+        }
+
+        /// <summary>
         /// Check whether the industry list include the industry.  
         /// </summary>
         /// <returns></returns>
@@ -263,12 +345,82 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Check whether the industrys list include the industry.  
+        /// </summary>
+        /// <returns></returns>
+        public Boolean AreIndustrysInDropdownList(string[] industryNames)
+        {
+            int i = 0;
+            while (i < industryNames.Length)
+            {
+                if (!(BenchMarkComboBox.GetCurrentDropdownListItems().Contains(industryNames[i])))
+                    return false;
+                i++;
+            }
+            return BenchMarkComboBox.GetCurrentDropdownListItems().Contains(industryNames[i - 1]);
+        }
+
+        /// <summary>
         /// Check whether the benchmark list in the BenchMark List.  
         /// </summary>
         /// <returns></returns>
         public Boolean IsRowExistBenchMarkList(string regionName)
         {
             return BenchMarkList.IsRowExist(1,regionName);
+        }
+
+        /// <summary>
+        /// Check whether the benchmark combox could not be modified.  
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsIndustryComboxEnabled()
+        {
+            return BenchMarkComboBox.IsComboBoxTextEnabled();
+        }
+
+        /// <summary>
+        /// Verify whether  climatic regions checkbox unchecked.
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean AreClimateRegionsUnChecked(string[] itemName)
+        {
+            int i = 0;
+            while (i < itemName.Length)
+            {
+                if (ClimateRegionsCheckBox.IsCommonChecked(itemName[i]))
+                    return false;
+                i++;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Verify whether  climatic region checkbox checked.
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsClimateRegionUnChecked(string itemName)
+        {
+            
+            return ClimateRegionsCheckBox.IsCommonChecked(itemName);
+        }
+
+        /// <summary>
+        /// Verify whether  climatic regions checkbox checked.
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean AreClimateRegionsChecked(string[] itemName)
+        {
+            int i = 0;
+            while (i < itemName.Length)
+            {
+                if (ClimateRegionsCheckBox.IsCommonUnChecked(itemName[i]))
+                    return false;
+                i++;
+            }
+            return true;
         }
 
         #endregion

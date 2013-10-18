@@ -124,7 +124,7 @@
           <add key="ButtonEnergyViewSelectSystemDimension" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
           <add key="ButtonEnergyViewSelectAreaDimension" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
           <add key="ButtonRankSelectSystemDimension" value="em-rank-sdim-button" type="ID"/>
-          <add key="ButtonRankSelectHierarchy" value="em-rank-tree-btn" type="ID"/>
+          <add key="ButtonRankSelectHierarchy" value="em-rank-tree-btn-btnEl" type="ID"/>
           <add key="ButtonWidgetSaveHierarchy" value="//div[contains(@id, 'widgetsavewindow') and contains(@class, 'x-window-body-default')]//div[contains(@id, 'menubuttontree')]" type="XPath"/>
 
           <add key="MenuButtonFuncModeConvert" value="em-func-mode-btn" type="ID"/>
@@ -912,6 +912,18 @@
         <add key="LabelPlatformWorktimeCalendar" value="st-calendar-properties-form-body" type="ID"/>
         <add key="LabelPlatformDayNightCalendar" value="st-calendar-properties-form-body" type="ID"/>
       </calendar>
+        
+        <benckMark>
+            <add key="LabelPlatformBenchMarkSetting" value="//div[@id='st-benchmark-properties-form-targetEl']/table/tbody/tr/td/div/div/label[text()='请至少选择一项。']" type="XPath"/>
+            <!--R1.4 need use the below label-->
+            <!--<add key="LabelPlatformBenchMarkSetting" value="//div[@id='st-benchmark-properties-form-targetEl']/table/tbody/tr/td/div/div/label[text()='请至少选择1项。']" type="XPath"/>-->
+        
+        </benckMark>
+        
+        <customerMapInfo>
+            <add key="LabelPlatformCustomerMapInfo" value="//div[@id='st-map-consumption-form-targetEl']/div/label[text()='请至少选择1项。']" type="XPath"/>
+        </customerMapInfo>
+        
     </PlatformSettings>
   <HomePage>
     
@@ -923,7 +935,6 @@
     <add key="LabelDashboardFavoriteLevel" value="//div[@id='hp-dashboard-ct_hd-hierCtEl']/label" type="XPath"/>
     <add key="LabelShareResourceCommon" value="//div[@id='hp-dashboard-ct_hd-shareCtEl']/label[1]" type="XPath"/>
     <add key="LabelShareResourceTime" value="hp-dashboard-ct_hd-shareTimeEl" type="ID"/>
-    <add key="LabelDashboardFavoriteLevel" value="//div[@id='hp-dashboard-ct_hd-hierCtEl']/label" type="XPath"/>
     <add key="LabelShareWindowTitle" value="//div[contains(@id, 'receiverwindow') and contains(@class,'x-window-header-text-container')]/span" type="XPath"/>
 
   </HomePage>

@@ -79,7 +79,7 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
         }
         #endregion
 
-        #region TestCase2 ModifyCustomerConsumptionSettingCancelled
+        #region TestCase2 ModifyWithSelectNoOption
         [Test]
         [ManualCaseID("TC-J1-FVT-CustomerConsumptionSetting-Modify-001")]
         [CaseID("TC-J1-FVT-CustomerConsumptionSetting-Modify-001-2")]
@@ -100,23 +100,23 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
 
             //Uncheck all selected options.
             Assert.IsTrue(CustomerManageSetting.UnCheckMapInformations(input.InputData.MapOptions));
-
+            CustomerManageSetting.UnCheckMapInformations(input.ExpectedData.MapOptions);
             // Click Save button.
             CustomerManageSetting.ClickSaveMapPropertyButton();
             TimeManager.MediumPause();
 
-            // Error message 'Please select one option at least' is displayed.   Not fininshed now
+            // Error message 'Please select one option at least' is displayed.   
             //Assert.IsTrue(CustomerManageSetting.IsInvalidMessageCorrect("请至少选择一项。"));
             //  The error message disappeared.
-            //Assert.IsTrue(CustomerManageSetting.IsInvalidMessageDisplayed());
+            Assert.IsTrue(CustomerManageSetting.IsMapInfoCheckBoxInvalidTipsDisplayed());
 
             //Check one option.
             CustomerManageSetting.CheckMapInformation(input.InputData.MapOptions[0]);
-
+            Assert.IsFalse(CustomerManageSetting.IsMapInfoCheckBoxInvalidTipsDisplayed());
             // Saved successfully and no 'Save' button on the page after saved.
             CustomerManageSetting.ClickSaveMapPropertyButton();
             TimeManager.MediumPause();
-            Assert.IsTrue(CustomerManageSetting.IsMapSaveButtonDisplayed());
+            Assert.IsFalse(CustomerManageSetting.IsMapSaveButtonDisplayed());
         }
         #endregion
 

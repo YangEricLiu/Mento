@@ -45,19 +45,23 @@ namespace Mento.Script.Administration.IndustryBenchmark
         [MultipleTestDataSource(typeof(IndustryBenchmarkData[]), typeof(BenchmarkViewSuite), "TC-J1-FVT-IndustryBenchmarkSetting-View-101-1")]
         public void ViewMapAndLocation(IndustryBenchmarkData input)
         {
-            //·Display blank benchmark list, when there isn't any Benchmark defind.
-            //· Display Add System buttons.
+            //Click one Benchmark from Benchmark List.
+            IndustryBenchmarkSetting.FocusOnBenchMark(input.InputData.Industry);
 
-            Assert.IsTrue(IndustryBenchmarkSetting.IsAddButtonDisplay());
+            //·Display properties 行业 and 区域 of selected benchmark in View mode. 
+            //· Only the checked 区域 display in view mode.The checkboxes are disabled in View mode.
 
-            IndustryBenchmarkSetting.ClickAddBenchMark();
+            Assert.AreEqual(input.InputData.Industry,IndustryBenchmarkSetting.GetSelectedIndustry());
+            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[0]));
+            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[1]));
 
-            IndustryBenchmarkSetting.SelectIndustryCombox(input.InputData.Industry);
-            IndustryBenchmarkSetting.CheckClimateRegion(input.InputData.ClimaticRegions[0]);
+            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[2]));
+            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[3]));
+            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[4]));
+            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[5]));
+            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[6]));
 
-            IndustryBenchmarkSetting.ClickCancelBenchMark();
-
-            //Verify benchmark list column filter and sort.
+            //Verify benchmark list column filter and sort.Not support filter and sort for any column.
 
         }
         #endregion

@@ -1005,6 +1005,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelPlatformDayNightCalendar = "LabelPlatformDayNightCalendar";
         #endregion
 
+        #region BenchMarkSetting
+        public static string LabelPlatformBenchMarkSetting = "LabelPlatformBenchMarkSetting";
+        
+        #endregion
+
+        #region CustomerMapInfo
+        public static string LabelPlatformCustomerMapInfo = "LabelPlatformCustomerMapInfo";
+        #endregion
+
         #endregion
 
         #region Homepage

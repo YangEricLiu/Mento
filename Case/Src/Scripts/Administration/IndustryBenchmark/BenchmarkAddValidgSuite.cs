@@ -45,7 +45,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
         [MultipleTestDataSource(typeof(IndustryBenchmarkData[]), typeof(BenchmarkAddValidgSuite), "TC-J1-FVT-IndustryBenchmarkSetting-Add-101-1")]
         public void AddIndustryBenchmarkValid(IndustryBenchmarkData input)
         {
-            /*
+
             //Click +行业对标 buttons.
             IndustryBenchmarkSetting.ClickAddBenchMark();
 
@@ -103,22 +103,28 @@ namespace Mento.Script.Administration.IndustryBenchmark
             Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.ExpectedData.ClimaticRegions[2]));
             Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.ExpectedData.ClimaticRegions[3]));
             Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.ExpectedData.ClimaticRegions[4]));
-            */
+            
             //Add all 行业 from dropdown list. Click +行业对标 buttons. 21 Industrys
             int i = 0;
             while (i < input.InputData.Industrys.Length)
             {
                 IndustryBenchmarkSetting.ClickAddBenchMark();
-                IndustryBenchmarkSetting.SelectIndustryCombox(input.InputData.Industrys[i]);
-                IndustryBenchmarkSetting.CheckClimateRegion(input.InputData.ClimaticRegions[0]);
-                IndustryBenchmarkSetting.ClickSaveBenchMark();
+                Boolean IndustryExisted = IndustryBenchmarkSetting.IsRowExistBenchMarkList(input.InputData.Industrys[i]);
+                if (IndustryBenchmarkSetting.GetIndustryLists().Contains(input.InputData.Industrys[i]) && IndustryExisted)
+                {
+                    IndustryBenchmarkSetting.SelectIndustryCombox(input.InputData.Industrys[i]);
+                    IndustryBenchmarkSetting.CheckClimateRegion(input.InputData.ClimaticRegions[0]);
+                    IndustryBenchmarkSetting.ClickSaveBenchMark();
+                }
                 i++;
             }
             IndustryBenchmarkSetting.ClickAddBenchMark();
             //· There isn't any 行业 item can be selected from dropdown list.
             //· 行业=全部；区域=全部区域 can be selected and save successfully.
-
+            Assert.AreEqual(IndustryBenchmarkSetting.GetIndustryLists(),input.InputData.Industry);
             //Assert.IsTrue(IndustryBenchmarkSetting.GetIndustryLists().Equals(""));
+
+
         }
         #endregion
 

@@ -37,27 +37,28 @@ namespace Mento.Script.Administration.IndustryBenchmark
             //TimeManager.MediumPause();
         }
 
-        #region TestCase1 ViewMapAndLocation
+        #region TestCase1 DeleteIndustryBenchmarkValid
         [Test]
         [ManualCaseID("TC-J1-FVT-IndustryBenchmarkSetting-Delete-101")]
         [CaseID("TC-J1-FVT-IndustryBenchmarkSetting-Delete-101-1")]
         [Priority("4")]
         [MultipleTestDataSource(typeof(IndustryBenchmarkData[]), typeof(BenchmarkDeleteValidSuite), "TC-J1-FVT-IndustryBenchmarkSetting-Delete-101-1")]
-        public void DeleteIndustryBenchmarkCancelled(IndustryBenchmarkData input)
+        public void DeleteIndustryBenchmarkValid(IndustryBenchmarkData input)
         {
             //Click a benchmark(行业=酒店; 区域=全部地区+严寒地区A区 ) from list and click 删除 button.
             //·Pop up window show 是否删除.
             IndustryBenchmarkSetting.FocusOnBenchMark(input.InputData.Industry);
             IndustryBenchmarkSetting.ClickDeleteBenchMark();
 
-            //After click confirmation Cancel button.
-            JazzMessageBox.MessageBox.Cancel();
-
-            //The benchmark still display in menchmark list.
+            //After click confirmation 确定 button.Delete benchmark successfully.
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+            //· Deleted benchmark can't display in benchmark list correctly.
             Assert.IsFalse(IndustryBenchmarkSetting.IsRowExistBenchMarkList(input.InputData.Industry));
 
             //Click +行业对标 buttons.
-            IndustryBenchmarkSetting.ClickDeleteBenchMark();
+            IndustryBenchmarkSetting.ClickAddBenchMark();
 
             //Select 行业=酒店 and check 区域=全部地区+严寒地区A区. Click Save button.
             IndustryBenchmarkSetting.SelectIndustryCombox(input.InputData.Industry);

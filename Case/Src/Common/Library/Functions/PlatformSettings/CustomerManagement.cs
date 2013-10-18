@@ -48,6 +48,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Container CustomerMapInfoContainer = JazzContainer.ContainerCustomerMapInfo;
 
+        private static Label CustomerMapInfoLabel = JazzLabel.PlatformCustomerMapInfoLabel;
+
         #endregion
 
         #region Common
@@ -104,6 +106,14 @@ namespace Mento.ScriptCommon.Library.Functions
         public void UnCheckMapInformation(string mapInfoType)
         {
             CustomerMapInfoCheckBoxField.CommonUnCheck(mapInfoType);
+        }
+
+        /// <summary>
+        /// Verify Is customer map info check box invalid Message Displayed
+        /// </summary>
+        public Boolean IsMapInfoCheckBoxInvalidTipsDisplayed()
+        {
+            return CustomerMapInfoLabel.IsLabelDisplayed();
         }
 
         /// <summary>

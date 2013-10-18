@@ -49,8 +49,46 @@ namespace Mento.Script.Administration.IndustryBenchmark
             //Click +行业对标 buttons.
             IndustryBenchmarkSetting.ClickAddBenchMark();
 
-            //Select 行业=酒店 from dropdown list.
+            //Click Cancel button before select any 行业 and 区域.
+            IndustryBenchmarkSetting.ClickCancelBenchMark();
+
+            //·Cancel and there isn't any beachmark added to list.
+            int i = 0;
+            while (i < input.InputData.Industrys.Length)
+            {
+                Assert.IsFalse(IndustryBenchmarkSetting.IsRowExistBenchMarkList(input.InputData.Industrys[i]));
+                i++;
+            }
+            
+            //Click +行业对标 buttons. Select 行业=酒店五星级 and click Save button. 
+            IndustryBenchmarkSetting.ClickAddBenchMark();
             IndustryBenchmarkSetting.SelectIndustryCombox(input.InputData.Industry);
+            IndustryBenchmarkSetting.ClickSaveBenchMark();
+
+            //After note show "请至少选择一项。", Click Cancel button.
+            Assert.IsTrue(IndustryBenchmarkSetting.IsCliamteRegionsMessageDisplayed());
+            IndustryBenchmarkSetting.ClickCancelBenchMark();
+
+            //Click +行业对标 buttons.
+            IndustryBenchmarkSetting.ClickAddBenchMark();
+
+            //·There isn't pop up note at 区域 "请至少选择一项。" when add agin.
+            Assert.IsFalse(IndustryBenchmarkSetting.IsCliamteRegionsMessageDisplayed());
+
+            //Select 行业=酒店五星级  and check one 区域=严寒地区B区. 
+            //Click Cancel button.
+            IndustryBenchmarkSetting.SelectIndustryCombox(input.InputData.Industry);
+            IndustryBenchmarkSetting.CheckClimateRegions(input.InputData.ClimaticRegions);
+            IndustryBenchmarkSetting.ClickCancelBenchMark();
+
+            //Then click +行业对标 buttons.
+            //·Cancel and there isn't any beachmark added to list.
+            //· The dropdown list can still select 行业=酒店五星级  and there isn't any 区域 is checked.
+            IndustryBenchmarkSetting.ClickAddBenchMark();
+            Assert.IsTrue(IndustryBenchmarkSetting.IsIndustryInDropdownList(input.InputData.Industry));
+            Assert.IsTrue(IndustryBenchmarkSetting.AreClimateRegionsUnChecked(input.ExpectedData.ClimaticRegions));
+            IndustryBenchmarkSetting.ClickCancelBenchMark();
+            Assert.IsFalse(IndustryBenchmarkSetting.IsRowExistBenchMarkList(input.InputData.Industry));
 
         }
         #endregion
@@ -67,9 +105,17 @@ namespace Mento.Script.Administration.IndustryBenchmark
             //Click +行业对标 buttons.
             IndustryBenchmarkSetting.ClickAddBenchMark();
 
-            //Select 行业=酒店 from dropdown list.
-            IndustryBenchmarkSetting.SelectIndustryCombox(input.InputData.Industry);
+            //Click Save button before select any 行业 and 区域.
+            IndustryBenchmarkSetting.ClickSaveBenchMark();
 
+            //·Red line display at 行业.
+            Assert.IsTrue(IndustryBenchmarkSetting.IsIndustrysAddMessageDisplayed());
+
+            //Select 行业=酒店五星级 and Click Save button.
+            //·Save failed with pop up note at 区域 "请至少选择一项。"
+            IndustryBenchmarkSetting.SelectIndustryCombox(input.InputData.Industry);
+            IndustryBenchmarkSetting.ClickSaveBenchMark();
+            Assert.IsTrue(IndustryBenchmarkSetting.IsCliamteRegionsMessageDisplayed());
         }
         #endregion
 

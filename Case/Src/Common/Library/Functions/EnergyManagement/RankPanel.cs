@@ -51,6 +51,12 @@ namespace Mento.ScriptCommon.Library.Functions
             set;
         }
 
+        public void NavigateToCorporateRanking()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.Rank);
+        }
+
+
         protected override Chart Chart
         {
             get { return JazzChart.EnergyViewChart; }
@@ -158,6 +164,13 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
         }
         #endregion
-        
+
+
+        #region ranking panel
+
+
+
+        #endregion
+
     }
 }

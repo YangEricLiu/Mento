@@ -37,7 +37,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
             //TimeManager.MediumPause();
         }
 
-        #region TestCase1 ViewMapAndLocation
+        #region TestCase1 DeleteIndustryBenchmarkCancelled
         [Test]
         [ManualCaseID("TC-J1-FVT-IndustryBenchmarkSetting-Delete-001")]
         [CaseID("TC-J1-FVT-IndustryBenchmarkSetting-Delete-001-1")]
@@ -58,7 +58,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
 
             //After click confirmation "X" button.
             IndustryBenchmarkSetting.ClickDeleteBenchMark();
-            JazzMessageBox.MessageBox.Cancel();
+            JazzMessageBox.MessageBox.Close();
 
             //The benchmark still display in menchmark list.
             Assert.IsTrue(IndustryBenchmarkSetting.IsRowExistBenchMarkList(input.InputData.Industry));

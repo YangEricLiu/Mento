@@ -170,5 +170,43 @@ namespace Mento.Script.Customer.HierarchyConfiguration
                 TimeManager.ShortPause();
             }
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Hierarchy-Perf-101-1")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(HierarchyData[]), typeof(PerfAddHierarchysSuite), "TC-J1-FVT-Hierarchy-Perf-101-1")]
+        public void Add20BuidlingSite(HierarchyData input)
+        {
+            //Add 10 sites to each org
+            string[] path1 = {"NancyOtherCustomer3", "园区能耗标识"};
+            string building = "BuildingLabelling";
+
+                HierarchySettings.SelectHierarchyNodePath(path1);
+                TimeManager.MediumPause();
+
+                for (int i = 18; i < 21; i++)
+                {
+                    string iString = i.ToString();
+                    string buildName = building + iString;
+
+                        HierarchySettings.ClickCreateChildHierarchyButton();
+                        TimeManager.MediumPause();
+
+                        HierarchySettings.FillInName(buildName);
+                        HierarchySettings.FillIncode(buildName);
+                        HierarchySettings.FillInType("Building");
+                        TimeManager.ShortPause();
+                        HierarchySettings.FillInIndustry("酒店（三星级）");
+                        HierarchySettings.FillInZone("夏热冬暖地区");
+                        TimeManager.ShortPause();
+
+                        //Click "Save" button
+                        TimeManager.MediumPause();
+                        HierarchySettings.ClickSaveButton();
+                        TimeManager.Pause(3000);
+
+                        HierarchySettings.SelectHierarchyNode("园区能耗标识");
+                }
+        }
     } 
 }

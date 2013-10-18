@@ -25,7 +25,6 @@ namespace Mento.ScriptCommon.Library.Functions
         #region controls
         
         private static Button DashboardHierarchyNameButton = JazzButton.DashboardHierarchyNameButton;
-        private static Button ModifyWidgetNameButton = JazzButton.ButtonModifyWidgetName;
         private static Button ModifyWidgetNameSaveButton = JazzButton.ModifyWidgetNameSaveButton;
         private static Button ModifyWidgetNameCancelButton = JazzButton.ModifyWidgetNameCancelButton;
         private static Button DeleteWidgetCancelButton = JazzButton.DeleteWidgetCancelButton;
@@ -97,7 +96,6 @@ namespace Mento.ScriptCommon.Library.Functions
              DashboardHierarchyNameButton.Click();
          }
 
-        
         /// <summary>
         /// modify widget name and save it,expected is the new widget name
         /// </summary>
@@ -147,6 +145,7 @@ namespace Mento.ScriptCommon.Library.Functions
          {
              DeleteWidgetCancelButton.Click();
          }
+
         /// <summary>
         /// confirm delete widget
         /// </summary>

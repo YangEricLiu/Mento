@@ -1,0 +1,21 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetNames":["Widget_MarkRead_101_7_A", "Widget_MarkRead_101_7_B", "Widget_MarkRead_101_7_C", "Widget_MarkRead_101_7_D", "Widget_MarkRead_101_7_E", "Widget_MarkRead_101_7_F"],
+				"HierarchyName":["NancyCustomer1", "MarkDashboardReadValidSuiteOrg", "MarkWidgetReadValidSuiteOrg"],
+				"ShareUsers":["ShareUserA"],
+				"DashboardName":"Widget_MarkRead_101_7",
+				"Receivers":[{
+					"LoginName":"ShareUserA",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

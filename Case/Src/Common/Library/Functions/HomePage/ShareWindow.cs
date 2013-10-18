@@ -8,11 +8,11 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    internal class ShareWindow : Window
+    public class ShareWindow : Window
     {
         private static Locator Locator = new Locator("//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]", ByType.XPath);
 
-        internal ShareWindow() : base(Locator) { }
+        public ShareWindow() : base(Locator) { }
 
         #region controls
 
@@ -53,6 +53,11 @@ namespace Mento.ScriptCommon.Library.Functions
             ShareButton.Click();
         }
 
+        public bool IsShareButtonEnable()
+        {
+            return ShareButton.IsEnabled();
+        }
+
         public void ClickGiveupButton()
         {
             GiveupButton.Click();
@@ -74,17 +79,35 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void CheckShareUser(string userName)
         {
-            ShareUserList.CheckRowCheckbox(2, userName, false);
+            ShareUserList.CheckShareWindowRowCheckbox(2, userName, false);
+        }
+
+        public void UncheckShareUser(string userName)
+        {
+            ShareUserList.UncheckShareWindowRowCheckbox(2, userName, false);
+        }
+
+        public bool IsShareUserExistedOnWindow(string userName)
+        {
+            return ShareUserList.IsRowExist(2, userName);
         }
 
         public bool IsShareUserChecked(string userName)
         {
-            return ShareUserList.IsRowChecked(2, userName, false);
+            return ShareUserList.IsShareWindowRowChecked(2, userName, false);
         }
 
         public void CheckAllShareUsers()
         {
-            ShareUserList.CheckShareHeaderCheckbox();
+            ShareUserList.CheckShareHeaderCheckbox();    
+        }
+
+        public void UncheckAllShareUsers()
+        {
+            if (IsShareHeaderChecked())
+            {
+                ShareUserList.CheckShareHeaderCheckbox();
+            }
         }
 
         public bool IsShareHeaderChecked()

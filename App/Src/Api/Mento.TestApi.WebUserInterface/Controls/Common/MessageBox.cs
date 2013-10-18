@@ -20,6 +20,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        protected IWebElement ConfirmButton
+        {
+            get
+            {
+                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxConfirmButton));
+            }
+        }
+
         private IWebElement _ClearButton;
         protected IWebElement ClearButton
         {
@@ -50,17 +58,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 if (this._QuitButton == null)
                     this._QuitButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxQuitButton));
                 return this._QuitButton;
-            }
-        }
-
-        private IWebElement _ConfirmButton;
-        protected IWebElement ConfirmButton
-        {
-            get
-            {
-                if (this._ConfirmButton == null)
-                    this._ConfirmButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxConfirmButton));
-                return this._ConfirmButton;
             }
         }
 
@@ -142,10 +139,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public void Confirm()
         {
-            if (!this.ConfirmButton.Enabled)
+            if (!ConfirmButton.Enabled)
                 throw new ApiException("Confirm button can not be clicked because it is not enabled in the messagebox.");
 
-            this.ConfirmButton.Click();
+            ConfirmButton.Click();
         }
 
         public void Yes()

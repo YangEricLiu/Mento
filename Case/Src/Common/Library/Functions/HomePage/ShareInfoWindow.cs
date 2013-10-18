@@ -8,11 +8,11 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    internal class ShareInfoWindow : Window
+    public class ShareInfoWindow : Window
     {
         private static Locator Locator = new Locator("//div[contains(@id,'window') and contains(@class,'x-window-default')]", ByType.XPath);
 
-        internal ShareInfoWindow() : base(Locator) { }
+        public ShareInfoWindow() : base(Locator) { }
 
         #region controls
 
@@ -21,6 +21,9 @@ namespace Mento.ScriptCommon.Library.Functions
 
         //Sended Share info tab
         private static TabButton ShareInfoSended = JazzButton.ShareInfoSendedTabButton;
+
+        //Share info grid
+        private static Grid GridShareInfoList = JazzGrid.GridShareInfoList;
 
         #endregion
 
@@ -36,7 +39,20 @@ namespace Mento.ScriptCommon.Library.Functions
             ShareInfoSended.Click();
         }
 
+        public bool IsRowExisted(int cellIndex, string cellString)
+        {
+            return GridShareInfoList.IsRowExist(cellIndex, cellString);
+        }
 
+        public bool IsRowBold(int cellIndex, string cellString)
+        {
+            return GridShareInfoList.IsGridRowBold(cellIndex, cellString);
+        }
+
+        public void ClickRowColumn(int cellIndex, string cellString)
+        {
+            GridShareInfoList.ClickShareInfoWindowRowColumn(cellIndex, cellString);
+        }
         #endregion
 
     }

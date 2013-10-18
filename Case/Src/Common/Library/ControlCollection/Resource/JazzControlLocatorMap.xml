@@ -57,7 +57,7 @@
       
       <HomePage>
             <add key="ButtonAllDashboardsHierarchyTree" value="hp-menu-tree-btn" type="ID"/>
-            <add key="ButtonHomePageDashboard" value="//div[@id='hp-dashboard-list-targetEl']/div/span[text()='$#nameIndex']" type="XPath"/>
+            <add key="ButtonHomePageDashboard" value="//div[@id='hp-dashboard-list-targetEl']/div[span[text()='$#nameIndex']]" type="XPath"/>
             <add key="MenuButtonSelectCustomer" value="header-btn-select-customer" type="ID"/>
             <add key="ButtonWidgetMaxDialogView" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]/div/div/div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
             <add key="ButtonWidgetMaxDialogClose" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[contains(@id,'panel')]//div[contains(@class,'x-tool-default')]/img" type="XPath"/>
@@ -78,10 +78,9 @@
             <add key="ButtonRenameDashboardCancel" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
             <add key="ButtonDashboardFavoriteLevel" value="//div[@id='hp-dashboard-ct_hd-hierCtEl']/a" type="XPath"/>
             <add key="ButtonDashboardShareInfo" value="hp-share-info-btn-btnEl" type="ID"/>
-            <add key="ButtonDashboardShareResource" value="hp-dashboard-ct_hd-sharerEl" type="ID"/>
             <add key="ButtonShareWindowClose" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-header-body-default')]/div/div/div[contains(@id,'tool')]/img" type="XPath"/>
-            <add key="ButtonShareWindowShare" value="//div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='分享']]" type="XPath"/>
-            <add key="ButtonShareWindowGiveup" value="//div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+            <add key="ButtonShareWindowShare" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='分享']]" type="XPath"/>
+            <add key="ButtonShareWindowGiveup" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
             <add key="ButtonShareToUserRemove" value = "//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div/div[contains(@id,'tagcontainer')]/div[contains(@class, 'x-removable-item') and span[text()='$#nameIndex']]/span[contains(@class, 'x-btn-icon-cancel')]" type = "XPath"/>
             <add key="TabButtonShareInfoReceived" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='我收到的']]" type = "XPath"/>
             <add key="TabButtonShareInfoSended" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='我发出的']]" type = "XPath"/>
@@ -812,7 +811,7 @@
   <Homepage>
     <add key="GridHomepageMinWidgetDataView" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[div/div/div/div/div/span[text()='$#nameIndex']]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridShareUserList" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
-    <add key="GridShareInfoList" value="//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+    <add key="GridShareInfoList" value="//div[contains(@id,'window') and contains(@class,'x-window-body-default')]//div[contains(@id,'shareinfogrid') and not(contains(@style,'display: none;')) and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 
   </Homepage>
   </Grid>
@@ -929,14 +928,14 @@
     
     <add key="LabelDashboardHeaderName" value="hp-dashboard-ct_hd-textEl" type="ID"/>
     <add key="LabelWidgetNameMin" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']" type="XPath"/>
-    <add key="LabelWidgetNameMax" value="//span[@class='x-window-header-text x-window-header-text-default']" type="XPath"/>
+    <add key="LabelWidgetNameMax" value="//div[contains(@id,'widgetmaxwindow')]//span[@class='x-window-header-text x-window-header-text-default']" type="XPath"/>
     <add key="LabelEmptyDashboard" value="hp-msg-ct" type="ID"/>
     <add key="LabelPopNotes" value="//div[@id='popnotes-div']/div[@class='msg']/p" type="XPath"/>
     <add key="LabelDashboardFavoriteLevel" value="//div[@id='hp-dashboard-ct_hd-hierCtEl']/label" type="XPath"/>
-    <add key="LabelShareResourceCommon" value="//div[@id='hp-dashboard-ct_hd-shareCtEl']/label[1]" type="XPath"/>
-    <add key="LabelShareResourceTime" value="hp-dashboard-ct_hd-shareTimeEl" type="ID"/>
+    <add key="LabelDashboardShareResourceCommon" value="//div[@id='hp-dashboard-ct_hd-shareCtEl']/label[1]" type="XPath"/>
+    <add key="LabelDashboardShareResourceTime" value="hp-dashboard-ct_hd-shareTimeEl" type="ID"/>
     <add key="LabelShareWindowTitle" value="//div[contains(@id, 'receiverwindow') and contains(@class,'x-window-header-text-container')]/span" type="XPath"/>
-
+    <add key="LabelDashboardShareResourceUser" value="hp-dashboard-ct_hd-sharerEl" type="ID"/>
   </HomePage>
     
     <EnergyView>

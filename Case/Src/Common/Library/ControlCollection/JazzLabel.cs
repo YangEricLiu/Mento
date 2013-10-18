@@ -72,8 +72,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Label EmptyDashboardLabel = GetControl<Label>(JazzControlLocatorKey.LabelEmptyDashboard);
         public static Label PopNotesLabel = GetControl<Label>(JazzControlLocatorKey.LabelPopNotes);
         public static Label DashboardFavoriteLevelLabel = GetControl<Label>(JazzControlLocatorKey.LabelDashboardFavoriteLevel);
-        public static Label ShareResourceCommonLabel = GetControl<Label>(JazzControlLocatorKey.LabelShareResourceCommon);
-        public static Label ShareResourceTimeLabel = GetControl<Label>(JazzControlLocatorKey.LabelShareResourceTime);
+        public static Label DashboardShareResourceCommonLabel = GetControl<Label>(JazzControlLocatorKey.LabelDashboardShareResourceCommon);
+        public static Label DashboardShareResourceTimeLabel = GetControl<Label>(JazzControlLocatorKey.LabelDashboardShareResourceTime);
+        public static Label DashboardShareResourceUserLabel = GetControl<Label>(JazzControlLocatorKey.LabelDashboardShareResourceUser);
         public static Label ShareWindowTitleLabel = GetControl<Label>(JazzControlLocatorKey.LabelShareWindowTitle);
 
         #endregion

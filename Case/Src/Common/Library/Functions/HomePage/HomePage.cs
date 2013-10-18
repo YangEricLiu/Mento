@@ -24,9 +24,14 @@ namespace Mento.ScriptCommon.Library.Functions
     public class HomePage
     {
         internal HomePage()
-
         {
         }
+
+        #region contant
+
+        public int WAITSHAREWINDOWTIME = 5000;
+
+        #endregion
 
         #region controls
 
@@ -103,7 +108,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickDashboardButton(string dsName)
         {
-            Button dsButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonHomePageDashboard, dsName);
+            DashboardButton dsButton = JazzButton.GetOneDashboardButton(JazzControlLocatorKey.ButtonHomePageDashboard, dsName);
 
             dsButton.Click();
         }
@@ -139,9 +144,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             JazzFunction.UserProfile.NavigatorToUserProfile();
             JazzFunction.UserProfile.ExitJazz();
+            TimeManager.MediumPause();
             JazzMessageBox.MessageBox.Confirm();
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitLoading(15);
             TimeManager.LongPause();
         }      
 
@@ -182,6 +187,13 @@ namespace Mento.ScriptCommon.Library.Functions
             return WidgetNameMin.IsLabelExisted();
         }
 
+        public bool IsShareWidgetUnread(string name)
+        {
+            Label WidgetNameMin = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelWidgetNameMin, name);
+
+            return WidgetNameMin.IsShareWidgetUnread();
+        }
+
         public void FloatOnDashboardNameButton(string name)
         {
             Button dsButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonHomePageDashboard, name);
@@ -202,6 +214,13 @@ namespace Mento.ScriptCommon.Library.Functions
             FloatOnDashboardNameButton(name);
 
             return RenameDashboardButton.IsExisted();
+        }
+
+        public void ClickDeleteDashboardButton(string name)
+        {
+            FloatOnDashboardNameButton(name);
+
+            DeleteDashboardButton.Click();
         }
 
         public bool IsDeleteDashboardButtonExisted(string name)
@@ -256,9 +275,24 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             FloatOnDashboardNameButton(name);
 
-            DashboardButton FavoriteDashboardButton = JazzButton.GetOneDashboardButton(JazzControlLocatorKey.ButtonDashboardFavorite, name);
+            if (!IsDashboardFavorited(name))
+            { 
+                DashboardButton FavoriteDashboardButton = JazzButton.GetOneDashboardButton(JazzControlLocatorKey.ButtonDashboardFavorite, name);
 
-            FavoriteDashboardButton.Click();
+                FavoriteDashboardButton.Click();
+            }
+        }
+
+        public void ClickUnFavoriteDashboardButton(string name)
+        {
+            FloatOnDashboardNameButton(name);
+
+            if (IsDashboardFavorited(name))
+            {
+                DashboardButton FavoriteDashboardButton = JazzButton.GetOneDashboardButton(JazzControlLocatorKey.ButtonDashboardFavorite, name);
+
+                FavoriteDashboardButton.Click();
+            }
         }
 
         public bool IsDashboardFavorited(string name)
@@ -300,22 +334,24 @@ namespace Mento.ScriptCommon.Library.Functions
             return ShareDashboardButton.IsExisted();
         }
 
-        public void ClickDeleteDashboardButton(string name)
-        {
-            FloatOnDashboardNameButton(name);
-
-            DeleteDashboardButton.Click();
-        }
-
         public void ClickShareInfoButton()
         {
             DashboardShareInfoButton.ClickLink();
         }
 
-        public bool IsShareDashboardUnread()
+        public bool IsShareInfoUnread()
         {
             return DashboardShareInfoButton.IsDashboardUnread();
         }
+
+        public bool IsShareDashboardUnread(string dsName)
+        {
+            DashboardButton dsButton = JazzButton.GetOneDashboardButton(JazzControlLocatorKey.ButtonHomePageDashboard, dsName);
+
+            return dsButton.IsDashboardUnread();
+        }
+
+        
         #endregion
 
         #region widget
@@ -373,6 +409,16 @@ namespace Mento.ScriptCommon.Library.Functions
             return JazzLabel.EmptyDashboardLabel.Exists();
         }
 
+
+        public void ClickShareWidgetButton(string name)
+        {
+            FloatOnWidget(name);
+            TimeManager.ShortPause();
+
+            Button shareButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWidgetShare, name);
+
+            shareButton.Click();
+        }
         #endregion
 
         #region private method

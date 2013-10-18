@@ -1,0 +1,21 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"Widget_MarkRead_101_5_A",
+				"HierarchyName":["NancyCustomer1", "MarkDashboardReadValidSuiteOrg", "MarkWidgetReadValidSuiteOrg"],
+				"ShareUsers":["ShareUserA"],
+				"DashboardName":"Widget_MarkRead_101_5",
+				"Receivers":[{
+					"LoginName":"ShareUserA",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

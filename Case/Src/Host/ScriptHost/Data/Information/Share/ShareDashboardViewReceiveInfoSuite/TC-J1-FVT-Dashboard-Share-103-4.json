@@ -1,0 +1,33 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"Dashboard_Share_103_4_1_A",
+				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareDashboardViewReceiveInfo"],
+				"ShareUsers":["ShareUserA"],
+				"ReceiveUsers":["PerfTestCustomer"],
+				"DashboardName":"Dashboard_Share_103_4_1",
+				"Receivers":[{
+					"LoginName":"ShareUserA",
+					"Password":"123456Qq",
+					}],
+			},
+			{
+				"WidgetName":"Dashboard_Share_103_4_2_B",
+				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareDashboardViewReceiveInfo"],
+				"ShareUsers":["ShareUserA"],
+				"ReceiveUsers":["PerfTestCustomer"],
+				"DashboardName":"Dashboard_Share_103_4_2",
+				"Receivers":[{
+					"LoginName":"ShareUserA",
+					"Password":"123456Qq",
+					}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

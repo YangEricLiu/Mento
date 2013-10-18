@@ -1,0 +1,21 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"Dashboard_Share_001_2_A",
+				"HierarchyName":["NancyCustomer1", "ShareDashboardInvalidSuiteOrg"],
+				"ShareUsers":["ShareUserD"],
+				"DashboardName":"Dashboard_Share_001_2",
+				"Receivers":[{
+					"LoginName":"ShareUserA",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

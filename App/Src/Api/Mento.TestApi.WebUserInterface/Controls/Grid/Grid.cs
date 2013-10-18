@@ -20,6 +20,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator IsNoEnabledCheckboxLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[contains(@class, 'x-grid-cell-checkcolumn')]/div/div[@class='x-grid-checkheader']", ByType.XPath);
         private static Locator IsDataPermissionEnableLocator = new Locator("//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]/div/table/tbody/tr/td[5]/div/a[@type='disableEdit']", ByType.XPath);
         private static Locator IAllEnabledCheckboxLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[contains(@class, 'x-grid-cell-checkcolumn')]/div/div[contains(@class,'x-grid-checkheader-disabled')]", ByType.XPath);
+        private static Locator ShareWindowGridRowChecker = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img", ByType.XPath);
+        private static Locator ShareWindowGridRowColumn = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr/td[$#cellIndex]/div[text()='$#cellText']", ByType.XPath);
 
         private static Locator IDataScopeCustomerListLocator = new Locator("/tbody/tr/td[4]", ByType.XPath);
 
@@ -70,6 +72,38 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool IsNoRowOnGrid()
         {
             return !ChildExists(IsNoRowOnGridLocator);
+        }
+
+        /// <summary>
+        /// Check share info window column name
+        /// </summary>
+        /// <param name="cellIndex">Column index of the identifier cell</param>
+        /// <param name="cellText">Text of the identifier cell</param>
+        /// <returns></returns>
+        public void ClickShareInfoWindowRowColumn(int cellIndex, string cellText, bool Paging = true)
+        {
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPage(cellIndex))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            FindChild(Locator.GetVariableLocator(ShareWindowGridRowColumn, variables)).Click();
         }
 
         /// <summary>
@@ -131,6 +165,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return checker.GetAttribute("class").Split(' ').Contains("x-grid-checkheader-checked");
         }
 
+        /// <summary>
+        /// Check whether the specified row is checked
+        /// </summary>
+        /// <param name="cellIndex">Column index of the identifier cell</param>
+        /// <param name="cellText">Text of the identifier cell</param>
+        /// <returns></returns>
+        public bool IsShareWindowRowChecked(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checker = this.GetShareWindowRowChecker(cellIndex, cellText, Paging);
+
+            return checker.GetAttribute("class").Contains("x-checked");
+        }
+
 
         /// <summary>
         /// Simulate mouse checked checkbox in the front of one grid row
@@ -153,6 +200,31 @@ namespace Mento.TestApi.WebUserInterface.Controls
             var checker = this.GetRowChecker(cellIndex, cellText, Paging);
 
             if (!this.IsRowChecked(cellIndex, cellText, Paging))
+            {
+                checker.Click();
+            }
+        }
+
+        /// <summary>
+        /// Simulate mouse click the "X" button on the tail of grid row on multiple hierarchy window
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public void CheckShareWindowRowCheckbox(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checker = this.GetShareWindowRowChecker(cellIndex, cellText, Paging);
+
+            if (!this.IsShareWindowRowChecked(cellIndex, cellText, Paging))
+            {
+                checker.Click();
+            }
+        }
+
+        public void UncheckShareWindowRowCheckbox(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checker = this.GetShareWindowRowChecker(cellIndex, cellText, Paging);
+
+            if (this.IsShareWindowRowChecked(cellIndex, cellText, Paging))
             {
                 checker.Click();
             }
@@ -243,6 +315,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 checker.Click();
             }
+        }
+
+        //Emma add on 2013/10/17
+        public bool IsGridRowBold(int cellIndex, string cellText)
+        {
+            IWebElement row = GetRow(cellIndex, cellText);
+
+            return row.GetAttribute("class").Contains("x-grid-row-bold");
         }
 
         public bool IsRowExistOnCurrentPage(int cellIndex, string cellText)
@@ -442,6 +522,32 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
 
             return FindChild(Locator.GetVariableLocator(checkerLocator, variables));
+        }
+
+        protected virtual IWebElement GetShareWindowRowChecker(int cellIndex, string cellText, bool Paging = true)
+        {
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(ShareWindowGridRowChecker, variables));
         }
 
         // Data permission special checker 

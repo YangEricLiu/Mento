@@ -13,7 +13,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.ScriptCommon.TestData.EnergyView;
 using Mento.TestApi.TestData;
 
-namespace Mento.Script.Information.Share
+namespace Mento.Script.Information.Dashboard
 {
     /// <summary>
     /// 

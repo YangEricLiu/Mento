@@ -30,9 +30,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return this.RootElement.Text;
         }
 
-        public bool IsDashboardUnread()
+        public bool IsShareInfoUnread()
         {
             return FindChild(DashboardUnreadIcon).GetAttribute("class").Contains("x-button-unread");
+        }
+
+        public bool IsDashboardUnread()
+        {
+            return this.RootElement.GetAttribute("class").Contains("x-button-unread");
         }
     }
 }

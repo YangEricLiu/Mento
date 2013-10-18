@@ -11,10 +11,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
     public class Label : JazzControl
     {
         public Label(Locator locator) : base(locator) { }
+        private Locator WidgetShareIconLocator = new Locator("../../../../../../self::node()", ByType.XPath);
 
         public string GetLabelTextValue()
         {
             return this.RootElement.Text;
+        }
+
+        public bool IsShareWidgetUnread()
+        {
+            return FindChild(WidgetShareIconLocator).GetAttribute("class").Contains("x-widget-unread");
         }
 
         public Boolean IsLabelTextsExisted(string[] labelTexts)

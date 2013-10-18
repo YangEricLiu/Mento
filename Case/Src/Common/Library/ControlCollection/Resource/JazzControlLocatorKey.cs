@@ -474,7 +474,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonRenameDashboardCancel = "ButtonRenameDashboardCancel";
         public static string ButtonDashboardFavoriteLevel = "ButtonDashboardFavoriteLevel";
         public static string ButtonDashboardShareInfo = "ButtonDashboardShareInfo";
-        public static string ButtonDashboardShareResource = "ButtonDashboardShareResource";
         public static string ButtonShareToUserRemove = "ButtonShareToUserRemove";
 
         public static string TabButtonShareInfoReceived = "TabButtonShareInfoReceived";
@@ -896,6 +895,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string GridHomepageMinWidgetDataView = "GridHomepageMinWidgetDataView";
         public static string GridShareUserList = "GridShareUserList";
+        public static string GridShareInfoList = "GridShareInfoList";
 
         #endregion
 
@@ -1024,12 +1024,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelEmptyDashboard = "LabelEmptyDashboard";
         public static string LabelPopNotes = "LabelPopNotes";
         public static string LabelDashboardFavoriteLevel = "LabelDashboardFavoriteLevel";
-        public static string LabelShareResourceCommon = "LabelShareResourceCommon";
-        public static string LabelShareResourceTime = "LabelShareResourceTime";
         public static string LabelShareWindowTitle = "LabelShareWindowTitle";
         public static string ButtonShareWindowClose = "ButtonShareWindowClose";
         public static string ButtonShareWindowShare = "ButtonShareWindowShare";
         public static string ButtonShareWindowGiveup = "ButtonShareWindowGiveup";
+
+        public static string LabelDashboardShareResourceCommon = "LabelDashboardShareResourceCommon";
+        public static string LabelDashboardShareResourceTime = "LabelDashboardShareResourceTime";
+        public static string LabelDashboardShareResourceUser = "LabelDashboardShareResourceUser";
         #endregion
 
         #region Energy View

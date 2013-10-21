@@ -51,6 +51,8 @@
     <Compile Include="Dashboard\MarkFavoriteDashboardSuite.cs" />
     <Compile Include="Dashboard\DeleteDashboardSuite.cs" />
     <Compile Include="Dashboard\RenameDashboardSuite.cs" />
+    <Compile Include="Share\ShareWidgetInvalidSuite.cs" />
+    <Compile Include="Share\ViewShareDashboardWidgetGridSuite.cs" />
     <Compile Include="Share\ShareDashboardInfoSuite.cs" />
     <Compile Include="Share\ShareDashboardViewReceiveInfoSuite.cs" />
     <Compile Include="Share\DashboardShareViewSendInfoSuite.cs" />

@@ -85,7 +85,7 @@ namespace Mento.Script.Information.Share
             //Mouse over to the sender realname.
             HomePagePanel.FloatOnShareResoureUser();
             HomePagePanel.FloatOnShareResoureUser();;
-            Assert.IsTrue(HomePagePanel.IsTextsExisted(input.ExpectedData.TooltipTexts));
+            Assert.IsTrue(HomePagePanel.IsTextsExisted(input.ExpectedData.TooltipTexts[0]));
         }
 
         [Test]
@@ -130,7 +130,7 @@ namespace Mento.Script.Information.Share
             //Mouse over to the sender realname.
             HomePagePanel.FloatOnShareResoureUser();
             HomePagePanel.FloatOnShareResoureUser();
-            Assert.IsTrue(HomePagePanel.IsTextsExisted(input.ExpectedData.TooltipTexts));
+            Assert.IsTrue(HomePagePanel.IsTextsExisted(input.ExpectedData.TooltipTexts[0]));
         }
 
         [Test]
@@ -142,6 +142,10 @@ namespace Mento.Script.Information.Share
 
             HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
             TimeManager.MediumPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
 
             //UserA Share widgetA to UserB
             HomePagePanel.ClickShareWidgetButton(dashboard[0].WidgetName);
@@ -178,7 +182,145 @@ namespace Mento.Script.Information.Share
             //Mouse over to the sender realname.
             Widget.FloatOnShareResoureUser();
             Widget.FloatOnShareResoureUser();
-            Assert.IsTrue(Widget.IsTextsExisted(input.ExpectedData.TooltipTexts));
+            Assert.IsTrue(Widget.IsTextsExisted(input.ExpectedData.TooltipTexts[0]));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Dashboard-Share-104-4")]
+        [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(ShareDashboardInfoSuite), "TC-J1-FVT-Dashboard-Share-104-4")]
+        public void ViewSharerInfo04(ShareDashboardData input)
+        {
+            var dashboard = input.InputData.DashboardInfo;
+
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.MediumPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            //UserA Share widgetA to UserB
+            HomePagePanel.ClickShareWidgetButton(dashboard[0].WidgetName);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+
+            //Check UserA
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[0]);
+            ShareWindow.ClickShareButton();
+            JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
+
+            Assert.AreEqual("分享小组件“Dashboard_Share_104_4_A”成功。", HomePagePanel.GetPopNotesValue());
+            TimeManager.LongPause();
+
+            //Login with userA. Navigate to homepage to select the hierarchynodeA.
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, dashboard[0].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            HomePagePanel.MaximizeWidget(dashboard[0].WidgetName);
+            TimeManager.MediumPause();
+
+            //Check there is "分享来源" display at the dashboard right header.
+            Assert.IsTrue(Widget.IsShareResoureCommonExisted());
+            Assert.IsTrue(Widget.IsShareResoureTimeExisted());
+            Assert.IsTrue(Widget.IsShareResoureUserExisted());
+            Assert.AreEqual(dashboard[0].ReceiveUsers[0], Widget.GetShareResoureUser());
+
+            //Mouse over to the sender realname.
+            Widget.FloatOnShareResoureUser();
+            Widget.FloatOnShareResoureUser();
+            Assert.IsTrue(Widget.IsTextsExisted(input.ExpectedData.TooltipTexts[0]));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-Dashboard-Share-104-6")]
+        [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(ShareDashboardInfoSuite), "TC-J1-FVT-Dashboard-Share-104-6")]
+        public void ViewSharerInfo06(ShareDashboardData input)
+        {
+            var dashboard = input.InputData.DashboardInfo;
+
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.MediumPause();
+
+            //UserA Share dashboard to UserB
+            HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+
+            //Check UserA
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[0]);
+            ShareWindow.ClickShareButton();
+            JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
+
+            Assert.AreEqual("分享仪表盘“Dashboard_Share_104_5_2”成功。", HomePagePanel.GetPopNotesValue());
+            TimeManager.LongPause();
+
+            //Login with userA. Navigate to homepage to select the hierarchynodeA.
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, dashboard[0].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+            HomePagePanel.SelectHierarchyNode(dashboard[1].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            //UserA Share widgetA to UserB
+            HomePagePanel.ClickShareWidgetButton(dashboard[1].WidgetName);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+
+            //Check UserA
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[0]);
+            ShareWindow.ClickShareButton();
+            JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
+
+            Assert.AreEqual("分享小组件“Dashboard_Share_104_5_1_A”成功。", HomePagePanel.GetPopNotesValue());
+            TimeManager.LongPause();
+
+            //Login with userC. Navigate to homepage to select the hierarchynodeA.
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[1].Receivers[0].LoginName, dashboard[1].Receivers[0].Password, dashboard[1].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            //Check there is "分享来源" display at the dashboard right header.
+            Assert.IsTrue(HomePagePanel.IsShareResoureCommonExisted());
+            Assert.IsTrue(HomePagePanel.IsShareResoureTimeExisted());
+            Assert.IsTrue(HomePagePanel.IsShareResoureUserExisted());
+            Assert.AreEqual(dashboard[0].ReceiveUsers[0], HomePagePanel.GetShareResoureUser());
+
+            //Mouse over to the sender realname.
+            HomePagePanel.FloatOnShareResoureUser();
+            HomePagePanel.FloatOnShareResoureUser(); ;
+            Assert.IsTrue(HomePagePanel.IsTextsExisted(input.ExpectedData.TooltipTexts[0]));
+
+            HomePagePanel.ClickDashboardButton(dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            HomePagePanel.MaximizeWidget(dashboard[1].WidgetName);
+            TimeManager.MediumPause();
+
+            //Check there is "分享来源" display at the dashboard right header.
+            Assert.IsTrue(Widget.IsShareResoureCommonExisted());
+            Assert.IsTrue(Widget.IsShareResoureTimeExisted());
+            Assert.IsTrue(Widget.IsShareResoureUserExisted());
+            Assert.AreEqual(dashboard[1].ReceiveUsers[0], Widget.GetShareResoureUser());
+
+            //Mouse over to the sender realname.
+            Widget.FloatOnShareResoureUser();
+            Widget.FloatOnShareResoureUser();
+            Assert.IsTrue(Widget.IsTextsExisted(input.ExpectedData.TooltipTexts[1]));
         }
     }
 }

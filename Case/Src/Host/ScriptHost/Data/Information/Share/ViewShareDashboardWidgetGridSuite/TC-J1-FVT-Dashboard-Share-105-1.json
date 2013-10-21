@@ -3,11 +3,11 @@
 		"InputData":
 		{
 			"DashboardInfo":[{
-				"WidgetName":"Dashboard_Share_104_3_A",
-				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareDashboardInfoSuite"],
-				"ShareUsers":["ShareUserA"],
+				"WidgetName":"Dashboard_Share_105_1_A",
+				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ViewShareDashboardWidgetGrid"],
+				"ShareUsers":["ShareUserA", "ShareUserD", "ShareUserE"],
 				"ReceiveUsers":["PerfTestCustomer"],
-				"DashboardName":"Dashboard_Share_104_3",
+				"DashboardName":"Dashboard_Share_105_1",
 				"Receivers":[{
 					"LoginName":"ShareUserA",
 					"Password":"123456Qq",

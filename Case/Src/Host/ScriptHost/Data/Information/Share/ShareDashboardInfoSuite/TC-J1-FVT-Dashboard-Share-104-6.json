@@ -1,0 +1,33 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"Dashboard_Share_104_5_2_A",
+				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareDashboardInfoSuite"],
+				"ShareUsers":["ShareUserD"],
+				"ReceiveUsers":["PerfTestCustomer"],
+				"DashboardName":"Dashboard_Share_104_5_2",
+				"Receivers":[{
+					"LoginName":"ShareUserA",
+					"Password":"123456Qq",
+					}],
+			},
+			{
+				"WidgetName":"Dashboard_Share_104_5_1_A",
+				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareDashboardInfoSuite"],
+				"ShareUsers":["ShareUserD"],
+				"ReceiveUsers":["ShareUserA"],
+				"DashboardName":"Dashboard_Share_104_5_1",
+				"Receivers":[{
+					"LoginName":"ShareUserD",
+					"Password":"123456Qq",
+					}],
+			}],
+		},
+		"ExpectedData":
+		{
+			"TooltipTexts":[["客户管理员", "010-99999999"], ["客户管理员", "111111111"]],
+		}
+	}
+]

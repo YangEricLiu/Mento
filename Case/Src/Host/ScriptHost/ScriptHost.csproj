@@ -656,6 +656,8 @@
     <None Include="Data\Information\Share\ShareDashboard1ValidSuite\TC-J1-FVT-Dashboard-Share-101-3.json" />
     <None Include="Data\Information\Share\ShareDashboard1ValidSuite\TC-J1-FVT-Dashboard-Share-101-2.json" />
     <None Include="Data\Information\Share\ShareDashboard1ValidSuite\TC-J1-FVT-Dashboard-Share-101-1.json" />
+    <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-6.json" />
+    <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-4.json" />
     <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-3.json" />
     <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-2.json" />
     <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-1.json" />
@@ -665,6 +667,13 @@
     <None Include="Data\Information\Share\ShareDashboardInvalidSuite\TC-J1-FVT-Dashboard-Share-001-2.json" />
     <None Include="Data\Information\Share\ShareDashboardInvalidSuite\TC-J1-FVT-Dashboard-Share-001-1.json" />
     <None Include="Data\Information\Share\ShareDashboardViewReceiveInfoSuite\TC-J1-FVT-Dashboard-Share-103-4.json" />
+    <None Include="Data\Information\Share\ShareWidgetInvalidSuite\TC-J1-FVT-Widget-Share-001-7.json" />
+    <None Include="Data\Information\Share\ShareWidgetInvalidSuite\TC-J1-FVT-Widget-Share-001-5.json" />
+    <None Include="Data\Information\Share\ShareWidgetInvalidSuite\TC-J1-FVT-Widget-Share-001-4.json" />
+    <None Include="Data\Information\Share\ShareWidgetInvalidSuite\TC-J1-FVT-Widget-Share-001-3.json" />
+    <None Include="Data\Information\Share\ShareWidgetInvalidSuite\TC-J1-FVT-Widget-Share-001-2.json" />
+    <None Include="Data\Information\Share\ShareWidgetInvalidSuite\TC-J1-FVT-Widget-Share-001-1.json" />
+    <None Include="Data\Information\Share\ViewShareDashboardWidgetGridSuite\TC-J1-FVT-Dashboard-Share-105-1.json" />
     <None Include="Data\Information\Widgets\DeleteWidgetSuite\TC-J1-FVT-Widget-Delete-101-1.json" />
     <None Include="Data\Information\Widgets\MaximizeWidgetSuite\TC-J1-FVT-Widget-Maximize-101-5.json" />
     <None Include="Data\Information\Widgets\MaximizeWidgetSuite\TC-J1-FVT-Widget-Maximize-101-4.json" />

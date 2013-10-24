@@ -105,7 +105,56 @@ namespace Mento.Script.Information.Share
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(MarkDashboardReadValidSuite), "TC-J1-FVT-Dashboard-MarkRead-101-2")]
         public void MarkDashboardRead02(ShareDashboardData input)
         {
+            //Click on a Hierarchy node that contains dashboard.
+            var dashboard = input.InputData.DashboardInfo;
 
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            //Share dashboardA to userB successfully, 2 times
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[0]);
+            TimeManager.MediumPause();
+            ShareWindow.ClickShareButton();
+            TimeManager.LongPause();
+
+            Assert.AreEqual("分享仪表盘“DM2”成功。", HomePagePanel.GetPopNotesValue());
+            TimeManager.Pause(60000);
+
+            HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[0]);
+            TimeManager.MediumPause();
+            ShareWindow.ClickShareButton();
+            TimeManager.LongPause();
+
+            Assert.AreEqual("分享仪表盘“DM2”成功。", HomePagePanel.GetPopNotesValue());
+            TimeManager.LongPause();
+
+            //Login with userB. Navigate to homepage to select the hierarchynodeA.
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, dashboard[0].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            //There is new dashboardA+timestamp is unread dashboard with mark icon . 
+            Assert.IsTrue(HomePagePanel.IsShareDashboardUnreadPosition(2));
+            string newName = dashboard[0].DashboardName + "_" + HomePagePanel.GetShareCurrentTime();
+            Assert.IsTrue(HomePagePanel.GetOneDashboardNamePosition(2).Contains(newName));
+
+            //Click the dashboardA+timestamp name from dashboard list.
+            HomePagePanel.ClickDashboardButtonPosition(2);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+            Assert.IsFalse(HomePagePanel.IsShareDashboardUnreadPosition(2));
         }
 
         [Test]
@@ -200,6 +249,7 @@ namespace Mento.Script.Information.Share
             Assert.IsFalse(HomePagePanel.IsShareDashboardUnread(dashboard[0].DashboardName));
 
             //Remove the unread mark of share info
+            //TimeManager.Pause(60000);
             //Assert.IsFalse(HomePagePanel.IsShareInfoUnread());
         }
 
@@ -289,7 +339,60 @@ namespace Mento.Script.Information.Share
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(MarkDashboardReadValidSuite), "TC-J1-FVT-Dashboard-MarkRead-101-6")]
         public void MarkDashboardRead06(ShareDashboardData input)
         {
+            var dashboard = input.InputData.DashboardInfo;
 
+            //Go to chart view to save multiple dashboards to hierarchynodeA and add multiple dashboars to favorite.
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Check tag and view data view
+            EnergyAnalysis.CheckTag(input.InputData.TagName);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            for (int i = 0; i < dashboard.Length; i++)
+            {
+                EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[i].WidgetName, dashboard[i].HierarchyName, dashboard[i].IsCreateDashboard, dashboard[i].DashboardName);
+                JazzMessageBox.LoadingMask.WaitLoading();
+                TimeManager.LongPause();
+                TimeManager.LongPause();
+            }
+
+            HomePagePanel.NavigateToAllDashboard();
+            TimeManager.MediumPause();
+
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            //Default open the hierarchy node first dashboard in dashboard list.
+            Assert.IsTrue(HomePagePanel.IsDashboardButtonPressed(1));
+
+            //Go to homepage to select hierarchynodeA to view dashboard list sequence.
+            for (int j = 1; j < (dashboard.Length + 1); j++)
+            {
+                Assert.AreEqual(dashboard[dashboard.Length - j].DashboardName, HomePagePanel.GetOneDashboardNamePosition(j));
+                TimeManager.ShortPause();
+            }
+
+            //Go to favorite to select hierarchynodeA to view dashboard list sequence.
+            for (int k = 0; k < dashboard.Length; k++)
+            {
+                HomePagePanel.ClickDashboardButton(dashboard[k].DashboardName);
+                JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+                TimeManager.LongPause();
+
+                HomePagePanel.ClickFavoriteDashboardButton(dashboard[k].DashboardName);
+                TimeManager.LongPause();
+            }
+
+            HomePagePanel.NavigateToMyFavorite();
+            TimeManager.LongPause();
+
+            //Default open the hierarchy node first dashboard in dashboard list.
+            Assert.IsTrue(HomePagePanel.IsDashboardButtonPressed(1));
         }
     }
 }

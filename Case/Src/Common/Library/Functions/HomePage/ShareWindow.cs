@@ -102,6 +102,11 @@ namespace Mento.ScriptCommon.Library.Functions
             ShareUserList.CheckShareHeaderCheckbox();    
         }
 
+        public bool IsAllShareUsersChecked()
+        {
+            return ShareUserList.IsShareWindowRowsAllChecked();
+        }
+
         public void UncheckAllShareUsers()
         {
             if (IsShareHeaderChecked())

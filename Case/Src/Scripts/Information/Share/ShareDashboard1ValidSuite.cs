@@ -98,7 +98,82 @@ namespace Mento.Script.Information.Share
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(ShareDashboard1ValidSuite), "TC-J1-FVT-Dashboard-Share-101-2")]
         public void ShareDashboardSuccess02(ShareDashboardData input)
         {
+            var dashboard = input.InputData.DashboardInfo;
+            
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, dashboard[0].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
 
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.MediumPause();
+
+            //Click "share dashboard" button
+            HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+
+            //Check UserB and D
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[0]);
+            ShareWindow.ClickShareButton();
+            JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
+
+            Assert.AreEqual("分享仪表盘“D2”成功。", HomePagePanel.GetPopNotesValue());
+            TimeManager.LongPause();
+
+            //login userD and get new dashboard name
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, dashboard[0].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            //Make sure dashboard name field is renamed to originaldashboardname+timestamp.Click "share" again.
+            string newName1 = HomePagePanel.GetOneDashboardNamePosition(1);
+            
+            //login back again
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, dashboard[0].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.MediumPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            TimeManager.MediumPause();
+
+            HomePagePanel.ClickRenameDashboardButton(dashboard[0].DashboardName);
+            TimeManager.MediumPause();
+
+            HomePagePanel.FillInNewDashboardName(newName1);
+            TimeManager.ShortPause();
+
+            //Input the valid  and click save
+            HomePagePanel.ClickRenameDashboardSave();
+            TimeManager.ShortPause();
+
+            //Click "share dashboard" button
+            HomePagePanel.ClickShareDashboardButton(newName1);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+
+            //Check UserB and D
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[0]);
+            ShareWindow.ClickShareButton();
+            JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
+
+            string tmp = "分享仪表盘“" + newName1 + "”成功。";
+
+            Assert.AreEqual(tmp, HomePagePanel.GetPopNotesValue());
+            TimeManager.LongPause();
+            
+            //login userD and check
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, dashboard[0].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            string newname2 = newName1 + "_" + HomePagePanel.GetShareCurrentTime();
+            Assert.IsTrue(HomePagePanel.GetOneDashboardNamePosition(1).Contains(newname2));
+            Assert.IsTrue(HomePagePanel.GetOneDashboardNamePosition(2).Contains(newName1));
+            Assert.IsTrue(HomePagePanel.GetOneDashboardNamePosition(3).Contains(dashboard[0].DashboardName));
         }
 
         [Test]
@@ -217,7 +292,13 @@ namespace Mento.Script.Information.Share
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(ShareDashboard1ValidSuite), "TC-J1-FVT-Dashboard-Share-101-5")]
         public void ShareDashboardSuccess05(ShareDashboardData input)
         {
+            var dashboard = input.InputData.DashboardInfo;
 
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, dashboard[0].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+            TimeManager.LongPause();
+
+            Assert.AreEqual("请选择层级结构", HomePagePanel.GetHierarchyText());
         }
     }
 }

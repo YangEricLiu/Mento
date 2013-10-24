@@ -84,6 +84,7 @@
             <add key="ButtonShareToUserRemove" value = "//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div/div[contains(@id,'tagcontainer')]/div[contains(@class, 'x-removable-item') and span[text()='$#nameIndex']]/span[contains(@class, 'x-btn-icon-cancel')]" type = "XPath"/>
             <add key="TabButtonShareInfoReceived" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='我收到的']]" type = "XPath"/>
             <add key="TabButtonShareInfoSended" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='我发出的']]" type = "XPath"/>
+            <add key="ButtonDashboardPosition" value="//div[@id='hp-dashboard-list-targetEl']/div[contains(@id,'dashboardbutton')][$#positionIndex]" type="XPath"/>
 
       </HomePage>
       <!--User Management Begin-->
@@ -404,8 +405,6 @@
               <add key="ButtonModifyCustomerMapProperty" value="//div[@id='st-map-consumption-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
               <add key="TabButtonCustomerMapPageProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='地图页信息']]" type="XPath"/>
               <add key="TabButtonCustomerBasicProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='基础属性']]" type="XPath"/>
-
-
 
           </customermanagement>
           
@@ -881,6 +880,7 @@
     <add key="CheckBoxFieldCustomerMapProperty" value="//div[@id='st-map-consumption-form-targetEl']//table[contains(@id,'checkboxfield')]" type="XPath"/>
 
     <add key="CheckBoxBenchMark" value="//div[@id='st-benchmark-properties-form-targetEl']//table[contains(@id,'checkboxfield')]" type="XPath"/>
+    <add key="CheckBoxPtagIsAccumulated" value="//div[@id='st-ptag-form-body']/table[contains(@id,'checkboxfield')]" type="XPath"/>
 
   </CheckBox>
   <!--CheckBoxField End-->
@@ -943,7 +943,11 @@
     <add key="LabelWidgetShareResourceCommon" value="//div[contains(@id,'widgetmaxchart') and contains(@id,'share-shareCtEl')]/label[1]" type="XPath"/>
     <add key="LabelWidgetShareResourceTime" value="//div[contains(@id,'widgetmaxchart') and contains(@id,'share-shareCtEl')]/label[2]" type="XPath"/>
     <add key="LabelWidgetShareResourceUser" value="//div[contains(@id,'widgetmaxchart') and contains(@id,'share-shareCtEl')]/a" type="XPath"/>
-  </HomePage>
+  
+    <add key="LabelWidgetMinTitlePosition" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')][$#positionIndex]//div[contains(@class,'x-widget-header-text-container')]/span" type="XPath"/>
+    <add key="LabelDashboardTitlePosition" value="//div[@id='hp-dashboard-list-targetEl']/div[contains(@id,'dashboardbutton')][$#positionIndex]/span[contains(@class,'x-dsbd-btn-text')]" type="XPath"/>
+
+    </HomePage>
     
     <EnergyView>
       <add key="LabelAdditionEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/label[2]" type="XPath"/>
@@ -1005,6 +1009,7 @@
   <Homopage>
       <add key="ContainerWidgetsToDashboard" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]" type="XPath"/>
       <add key="ContainerShareWindowTo" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div/div[contains(@id,'tagcontainer')]/div[contains(@id,'removableitem')]" type="XPath"/>
+      <add key="ContainerDashboards" value="//div[@id='hp-dashboard-list-targetEl']/div[contains(@id,'dashboardbutton')]" type="XPath"/>
 
   </Homopage>
     

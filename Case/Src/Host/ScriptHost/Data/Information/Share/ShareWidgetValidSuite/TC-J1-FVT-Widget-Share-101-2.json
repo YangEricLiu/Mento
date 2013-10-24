@@ -1,0 +1,42 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagName":"V1_BuildingBC",
+			"DashboardInfo":[{
+				"WidgetName":"WidgetShare1012A",
+				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareWidgetValidSuite"],
+				"ShareUsers":["ShareUserB"],
+				"DashboardName":"WidgetShare1012",
+				"Receivers":[{
+					"LoginName":"ShareUserA",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserB",
+					"Password":"123456Qq",
+				}],
+			},
+			{
+				"WidgetName":"WidgetShare1012B",
+				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareWidgetValidSuite"],
+				"ShareUsers":["ShareUserB"],
+				"DashboardName":"WidgetShare1012",
+				"IsCreateDashboard":"false",
+				"Receivers":[{
+					"LoginName":"ShareUserA",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserB",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

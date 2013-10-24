@@ -39,5 +39,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return this.RootElement.GetAttribute("class").Contains("x-button-unread");
         }
+
+        public bool IsDashboardPressed()
+        {
+            return this.RootElement.GetAttribute("class").Contains("x-dsbd-btn-pressed");
+        }
     }
 }

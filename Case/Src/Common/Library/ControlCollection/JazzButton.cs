@@ -34,6 +34,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             return GetControl<DashboardButton>(key, nameIndex);
         }
+
+        public static DashboardButton GetOneDashboardButton(string key, int positionIndex)
+        {
+            return GetControl<DashboardButton>(key, positionIndex);
+        }
         #endregion
 
         #region Login buttons

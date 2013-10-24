@@ -477,6 +477,7 @@
     <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Invalid-redline.json" />
     <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForDayNightKPI-Invalid-messagebox.json" />
     <Content Include="Data\Customer\TagManagement\AddKPIFormulaSuite\AddFormulaForNonDayNightKPI-Invalid-messagebox.json" />
+    <None Include="Data\Customer\TagManagement\AddValidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-101-5.json" />
     <None Include="Data\Customer\TagManagement\AddValidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-101-4.json" />
     <None Include="Data\Customer\TagManagement\AddValidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-101-3.json" />
     <None Include="Data\Customer\TagManagement\AddValidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-101-2.json" />
@@ -514,6 +515,7 @@
     <None Include="Data\Customer\TagManagement\ModifyValidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-101-2.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-101-3.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-101-4.json" />
+    <None Include="Data\Customer\TagManagement\ModifyValidPtagSuite\TC-J1-FVT-PtagConfiguration-Modify-101-6.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidPtagSuite\TC-J1-FVT-PtagConfiguration-Modify-101-5.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidPtagSuite\TC-J1-FVT-PtagConfiguration-Modify-101-4.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidPtagSuite\TC-J1-FVT-PtagConfiguration-Modify-101-3.json" />
@@ -562,6 +564,7 @@
     <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalInvalidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-001-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalValidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalValidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-101-1.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite\TC-J1-FVT-MultipleTagsComparision-DataView-001-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite\TC-J1-FVT-MultipleTagsComparision-DataView-001-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyMultiTagsTrendChartSuite\TC-J1-FVT-MultipleTagsComparision-TrendChart-001-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-3.json" />
@@ -656,6 +659,7 @@
     <None Include="Data\Information\Share\ShareDashboard1ValidSuite\TC-J1-FVT-Dashboard-Share-101-3.json" />
     <None Include="Data\Information\Share\ShareDashboard1ValidSuite\TC-J1-FVT-Dashboard-Share-101-2.json" />
     <None Include="Data\Information\Share\ShareDashboard1ValidSuite\TC-J1-FVT-Dashboard-Share-101-1.json" />
+    <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-5.json" />
     <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-6.json" />
     <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-4.json" />
     <None Include="Data\Information\Share\ShareDashboardInfoSuite\TC-J1-FVT-Dashboard-Share-104-3.json" />
@@ -673,6 +677,8 @@
     <None Include="Data\Information\Share\ShareWidgetInvalidSuite\TC-J1-FVT-Widget-Share-001-3.json" />
     <None Include="Data\Information\Share\ShareWidgetInvalidSuite\TC-J1-FVT-Widget-Share-001-2.json" />
     <None Include="Data\Information\Share\ShareWidgetInvalidSuite\TC-J1-FVT-Widget-Share-001-1.json" />
+    <None Include="Data\Information\Share\ShareWidgetValidSuite\TC-J1-FVT-Widget-Share-101-2.json" />
+    <None Include="Data\Information\Share\ShareWidgetValidSuite\TC-J1-FVT-Widget-Share-101-1.json" />
     <None Include="Data\Information\Share\ViewShareDashboardWidgetGridSuite\TC-J1-FVT-Dashboard-Share-105-1.json" />
     <None Include="Data\Information\Widgets\DeleteWidgetSuite\TC-J1-FVT-Widget-Delete-101-1.json" />
     <None Include="Data\Information\Widgets\MaximizeWidgetSuite\TC-J1-FVT-Widget-Maximize-101-5.json" />

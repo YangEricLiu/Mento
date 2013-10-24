@@ -98,6 +98,26 @@ namespace Mento.Script.Information.Share
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(MarkWidgetReadValidSuite), "TC-J1-FVT-Widget-MarkRead-101-2")]
         public void MarkWidgetRead02(ShareDashboardData input)
         {
+            //Share widgetA to userB successfully with new name dashboardA+timestamp.
+            var dashboard = input.InputData.DashboardInfo;
+
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            //Share dashboardA to userB successfully.
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickShareWidgetButton(dashboard[0].WidgetName);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[0]);
+            TimeManager.MediumPause();
+            ShareWindow.ClickShareButton();
+            TimeManager.LongPause();
+
+            Assert.AreEqual("分享小组件“Widget_MarkRead_101_1_B”成功。", HomePagePanel.GetPopNotesValue());
 
         }
 

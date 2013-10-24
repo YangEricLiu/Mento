@@ -478,6 +478,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string TabButtonShareInfoReceived = "TabButtonShareInfoReceived";
         public static string TabButtonShareInfoSended = "TabButtonShareInfoSended";
+        public static string ButtonDashboardPosition = "ButtonDashboardPosition";
 
         #endregion
 
@@ -968,8 +969,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string CheckBoxFieldUserAllHierarchyNode = "CheckBoxFieldUserDataAllHierarchyNode";
         public static string CheckBoxFieldUserAllDataScope = "CheckBoxFieldUserAllDataScope";
         public static string CheckBoxFieldCustomerMapProperty = "CheckBoxFieldCustomerMapProperty";
-        
-        
+
+        public static string CheckBoxPtagIsAccumulated = "CheckBoxPtagIsAccumulated";
         #endregion
 
         #region Label
@@ -1036,6 +1037,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelWidgetShareResourceCommon = "LabelWidgetShareResourceCommon";
         public static string LabelWidgetShareResourceTime = "LabelWidgetShareResourceTime";
         public static string LabelWidgetShareResourceUser = "LabelWidgetShareResourceUser";
+
+        public static string LabelWidgetMinTitlePosition = "LabelWidgetMinTitlePosition";
+        public static string LabelDashboardTitlePosition = "LabelDashboardTitlePosition";
+
         #endregion
 
         #region Energy View
@@ -1108,6 +1113,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ContainerWidgetsToDashboard = "ContainerWidgetsToDashboard";
         public static string ContainerShareWindowTo = "ContainerShareWindowTo";
+        public static string ContainerDashboards = "ContainerDashboards";
+
         #endregion
 
         #region EnergyView

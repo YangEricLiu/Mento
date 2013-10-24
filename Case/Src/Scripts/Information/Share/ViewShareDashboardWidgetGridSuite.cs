@@ -92,6 +92,16 @@ namespace Mento.Script.Information.Share
             //The realname disappear in sent to textfield.
             Assert.IsFalse(ShareWindow.IsShareUserInContainer(dashboard[0].ShareUsers[1]));
             Assert.AreEqual(1, ShareWindow.GetShareUserNumber());
+
+            //Click CheckAll checkbox.
+            ShareWindow.CheckAllShareUsers();
+            TimeManager.MediumPause();
+
+            //All receivers are checked and display in send to textfield.
+            Assert.IsTrue(ShareWindow.IsAllShareUsersChecked());
+
+            ShareWindow.ClickGiveupButton();
+            TimeManager.ShortPause();
         }
 
     }

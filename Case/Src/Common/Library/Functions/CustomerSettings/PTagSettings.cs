@@ -220,6 +220,46 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Check the IsAccumulated checkbox
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <returns></returns>
+        public void CheckIsAccumulatedCheckbox(string name)
+        {
+            JazzCheckBox.PtagIsAccumulatedCheckBox.CommonCheck(name);
+        }
+
+        /// <summary>
+        /// Check the IsAccumulated checkbox
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <returns></returns>
+        public void UncheckIsAccumulatedCheckbox(string name)
+        {
+            JazzCheckBox.PtagIsAccumulatedCheckBox.CommonUnCheck(name);
+        }
+
+        /// <summary>
+        /// Is IsAccumulated checkbox checked
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <returns></returns>
+        public bool IsAccumulatedChecked(string name)
+        {
+            return JazzCheckBox.PtagIsAccumulatedCheckBox.IsCommonChecked(name);
+        }
+
+        /// <summary>
+        /// Is IsAccumulated checkbox checked
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <returns></returns>
+        public bool IsAccumulatedNotDisplayed(string name)
+        {
+            return JazzCheckBox.PtagIsAccumulatedCheckBox.IsCommonNotDisplayed(name);
+        }
+
+        /// <summary>
         /// Input code of the ptag
         /// </summary>
         /// <param name="code">code</param>

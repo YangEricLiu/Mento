@@ -2,14 +2,31 @@
 	{
 		"InputData":
 		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagName":"V1_BuildingBC",
 			"DashboardInfo":[{
-				"HierarchyName":["NancyCustomer1", "MarkDashboardReadValidSuiteOrg"],
-				"ShareUsers":["ShareUserA"],
-				"DashboardName":"D5",
-				"Receivers":[{
-					"LoginName":"ShareUserA",
-					"Password":"123456Qq",
-				}],
+				"HierarchyName":["NancyCustomer1", "MarkDashboardReadValidSuiteOrg", "MarkDashboardRead06"],
+				"WidgetName":"Dashboard_MarkRead_101_6_A",
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_MarkRead_101_6_4",
+			},
+			{
+				"HierarchyName":["NancyCustomer1", "MarkDashboardReadValidSuiteOrg", "MarkDashboardRead06"],
+				"WidgetName":"Dashboard_MarkRead_101_6_B",
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_MarkRead_101_6_3",
+			},
+			{
+				"HierarchyName":["NancyCustomer1", "MarkDashboardReadValidSuiteOrg", "MarkDashboardRead06"],
+				"WidgetName":"Dashboard_MarkRead_101_6_C",
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_MarkRead_101_6_2",
+			},
+			{
+				"HierarchyName":["NancyCustomer1", "MarkDashboardReadValidSuiteOrg", "MarkDashboardRead06"],
+				"WidgetName":"Dashboard_MarkRead_101_6_D",
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_MarkRead_101_6_1",
 			}],
 		},
 		"ExpectedData":

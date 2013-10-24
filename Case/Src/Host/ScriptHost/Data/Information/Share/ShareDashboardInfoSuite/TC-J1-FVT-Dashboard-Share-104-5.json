@@ -1,0 +1,47 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagName":"V1_BuildingBC",
+			"DashboardInfo":[{
+				"WidgetName":"Dashboard_Share_104_5_1_A",
+				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareDashboardInfoSuite"],
+				"ShareUsers":["ShareUserD"],
+				"ReceiveUsers":["PerfTestCustomer"],
+				"DashboardName":"Dashboard_Share_104_5_1",
+				"Receivers":[{
+					"LoginName":"ShareUserD",
+					"Password":"123456Qq",
+					}],
+			},
+			{
+				"WidgetName":"Dashboard_Share_104_5_2_B",
+				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareDashboardInfoSuite"],
+				"ShareUsers":["ShareUserD"],
+				"ReceiveUsers":["PerfTestCustomer"],
+				"DashboardName":"Dashboard_Share_104_5_2",
+				"Receivers":[{
+					"LoginName":"ShareUserD",
+					"Password":"123456Qq",
+					}],
+			},
+			{
+				"WidgetName":"Dashboard_Share_104_5_1_B",
+				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareDashboardInfoSuite"],
+				"ShareUsers":["ShareUserD"],
+				"ReceiveUsers":["PerfTestCustomer"],
+				"DashboardName":"Dashboard_Share_104_5_1M1",
+				"IsCreateDashboard":"false",
+				"Receivers":[{
+					"LoginName":"ShareUserD",
+					"Password":"123456Qq",
+					}],
+			}],
+		},
+		"ExpectedData":
+		{
+			"TooltipTexts":[["客户管理员", "010-99999999"]],
+		}
+	}
+]

@@ -177,5 +177,31 @@ namespace Mento.Script.Customer.TagManagement
             //Verify that ptag added successfully
             Assert.IsTrue(PTagSettings.FocusOnPTagByCode(input.InputData.Code));
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-PtagConfiguration-Add-101-5")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(AddValidPtagSuite), "TC-J1-FVT-PtagConfiguration-Add-101-5")]
+        public void AddPtagWithIsAccumulated(PtagData input)
+        {
+            //Click "+" button and fill ptag field
+            PTagSettings.ClickAddPtagButton();
+            PTagSettings.FillInPtag(input.InputData);
+            PTagSettings.CheckIsAccumulatedCheckbox("使用累积值计算");
+
+            //Click "Save" button
+            PTagSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //verify add successful
+            Assert.IsFalse(PTagSettings.IsSaveButtonDisplayed());
+            Assert.IsFalse(PTagSettings.IsCancelButtonDisplayed());
+            TimeManager.LongPause();
+
+            //Verify that ptag added successfully and IsAccumulated displayed
+            Assert.IsTrue(PTagSettings.FocusOnPTagByCode(input.InputData.Code));
+            Assert.IsFalse(PTagSettings.IsAccumulatedNotDisplayed("使用累积值计算"));
+        }
     }
 }

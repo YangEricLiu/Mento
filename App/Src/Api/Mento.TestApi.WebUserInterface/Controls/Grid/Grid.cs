@@ -22,6 +22,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator IAllEnabledCheckboxLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[contains(@class, 'x-grid-cell-checkcolumn')]/div/div[contains(@class,'x-grid-checkheader-disabled')]", ByType.XPath);
         private static Locator ShareWindowGridRowChecker = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img", ByType.XPath);
         private static Locator ShareWindowGridRowColumn = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr/td[$#cellIndex]/div[text()='$#cellText']", ByType.XPath);
+        private static Locator ShareWindowRowsNotChecker = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img[not(contains(@class,'x-checked'))]", ByType.XPath);
 
         private static Locator IDataScopeCustomerListLocator = new Locator("/tbody/tr/td[4]", ByType.XPath);
 
@@ -237,6 +238,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public void CheckShareHeaderCheckbox()
         {
             ShareHeaderCheckbox.Click();
+        }
+
+        public bool IsShareWindowRowsAllChecked()
+        {
+            return FindChildren(ShareWindowRowsNotChecker).Length < 1;
         }
 
         public bool IsShareHeaderChecked()

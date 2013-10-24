@@ -11,6 +11,16 @@
 					"LoginName":"ShareUserA",
 					"Password":"123456Qq",
 				}],
+			},
+			{
+
+				"HierarchyName":["NancyCustomer1", "ShareDashboardInvalidSuiteOrg", "ShareDashboardInvalidSuite0014"],
+				"ShareUsers":["ShareUserE"],
+				"DashboardName":"Dashboard_Share_001_4_1",
+				"Receivers":[{
+					"LoginName":"ShareUserE",
+					"Password":"123456Qq",
+				}],
 			}],
 		},
 		"ExpectedData":

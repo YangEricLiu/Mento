@@ -163,6 +163,67 @@ namespace Mento.Script.Information.Share
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
             Assert.AreEqual("分享仪表盘“DS0014”失败，无法分享给这些人：ShareUserE。", HomePagePanel.GetPopNotesValue());
+
+            //Delete a dashboard from UserE(Not delete dashboardA).Click "share" again.
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[1].Receivers[0].LoginName, dashboard[1].Receivers[0].Password, dashboard[1].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+            HomePagePanel.SelectHierarchyNode(dashboard[1].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDeleteDashboardButton(dashboard[1].DashboardName);
+            TimeManager.ShortPause();
+            JazzMessageBox.MessageBox.Delete();
+            TimeManager.LongPause();
+
+            //Share dashboard successfully UserE again
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, dashboard[0].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            //Check UserE checkbox and click "share" directly.
+            HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[3]);
+            TimeManager.ShortPause();
+
+            ShareWindow.ClickShareButton();
+            JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
+
+            Assert.AreEqual("分享仪表盘“DS0014”成功。", HomePagePanel.GetPopNotesValue());
+
+            //Click "Cancel" button in share dashboard window.
+            HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[3]);
+            TimeManager.ShortPause();
+
+            ShareWindow.ClickGiveupButton();
+            TimeManager.ShortPause();
+
+            //Click "Close" button in share dashboard window.
+            HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[3]);
+            TimeManager.ShortPause();
+
+            ShareWindow.Close();
+            TimeManager.ShortPause();
+
+            //UserE dashboard include dashboardA and dashboardA+timestamp.
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[1].Receivers[0].LoginName, dashboard[1].Receivers[0].Password, dashboard[1].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+            HomePagePanel.SelectHierarchyNode(dashboard[1].HierarchyName);
+            TimeManager.LongPause();
+
+            string newName = dashboard[0].DashboardName + "_" + HomePagePanel.GetShareCurrentTime();
+            Assert.IsTrue(HomePagePanel.GetOneDashboardNamePosition(1).Contains(newName));
+            Assert.IsTrue(HomePagePanel.GetOneDashboardNamePosition(2).Contains(dashboard[0].DashboardName));
+            Assert.IsFalse(HomePagePanel.GetOneDashboardNamePosition(3).Contains(dashboard[0].DashboardName));
         }
 
         [Test]

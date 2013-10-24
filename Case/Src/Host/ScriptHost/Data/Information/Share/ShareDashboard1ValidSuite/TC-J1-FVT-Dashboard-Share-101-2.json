@@ -3,16 +3,12 @@
 		"InputData":
 		{
 			"DashboardInfo":[{
-				"WidgetName":"Dashboard_Share_101_1_A",
+				"WidgetName":"Dashboard_Share_101_2_A",
 				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg"],
-				"ShareUsers":["ShareUserB", "ShareUserD"],
-				"DashboardName":"Dashboard_Share_101_1",
+				"ShareUsers":["ShareUserD"],
+				"DashboardName":"D2",
 				"Receivers":[{
 					"LoginName":"ShareUserA",
-					"Password":"123456Qq",
-				},
-				{
-					"LoginName":"ShareUserB",
 					"Password":"123456Qq",
 				},
 				{

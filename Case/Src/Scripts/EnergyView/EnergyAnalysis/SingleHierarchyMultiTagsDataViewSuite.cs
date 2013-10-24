@@ -183,5 +183,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
             Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(EnergyAnalysis.EAPath, input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5], dashboard.WigetName));
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-MultipleTagsComparision-DataView-001-2")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyMultiTagsDataViewSuite), "TC-J1-FVT-MultipleTagsComparision-DataView-001-2")]
+        public void ChangeTagListBetweenHierarchy(EnergyViewOptionData input)
+        {
+            HomePagePanel.SelectCustomer("");
+        }
     }
 }

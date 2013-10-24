@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"AreaDimensionPath":["楼宇BC", "一层"],
+			"SystemDimensionPath":["楼宇BC", "空调"],
+			"TagNames":["V6_BuildingBC", "V1_BuildingBC", "V2_BuildingBC", "P1_BuildingBC", "V_Null_BuildingBC", "VEmpty_BuildingBC"],
+			"MoreTagNames":["V3_BuildingBC", "V4_BuildingBC", "V7_BuildingBC", "V8_BuildingBC", "V10_BuildingBC"],
+			"DashboardInfo":{
+				"WigetName":"SingleMultiTags1011",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级", "园区测试多层级"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_MultiTagsDataView",
+			},
+			"failedFileName":["F-MultipleTagsDataView101-1-H-V6_BuildingBC.xls", "F-MultipleTagsDataView101-1-H-V6V1_BuildingBC.xls", "F-MultipleTagsDataView101-1-H-V6V1V2_BuildingBC.xls", "F-MultipleTagsDataView101-1-H-V6V1V2P1_BuildingBC.xls", "F-MultipleTagsDataView101-1-H-V10_BuildingBC.xls", "F-MultipleTagsDataView101-1-H-2V10_BuildingBC.xls"],
+		},
+		"ExpectedData":
+		{
+			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
+			"expectedFileName":["MultipleTagsDataView101-1-H-V6_BuildingBC.xls", "MultipleTagsDataView101-1-H-V6V1_BuildingBC.xls", "MultipleTagsDataView101-1-H-V6V1V2_BuildingBC.xls", "MultipleTagsDataView101-1-H-V6V1V2P1_BuildingBC.xls", "MultipleTagsDataView101-1-H-V10_BuildingBC.xls", "MultipleTagsDataView101-1-H-2V10_BuildingBC.xls"],
+		}
+	}
+]

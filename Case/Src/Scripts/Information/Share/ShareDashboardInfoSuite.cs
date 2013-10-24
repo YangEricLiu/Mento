@@ -238,6 +238,133 @@ namespace Mento.Script.Information.Share
         }
 
         [Test]
+        [CaseID("TC-J1-FVT-Dashboard-Share-104-5")]
+        [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(ShareDashboardInfoSuite), "TC-J1-FVT-Dashboard-Share-104-5")]
+        public void ViewSharerInfo05(ShareDashboardData input)
+        {
+            var dashboard = input.InputData.DashboardInfo;
+
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.MediumPause();
+
+            //Add a shared dashboardA to favorite.
+            //HomePagePanel.ClickFavoriteDashboardButton(dashboard[0].DashboardName);
+            //TimeManager.LongPause();
+
+            //HomePagePanel.ClickFavoriteDashboardButton(dashboard[1].DashboardName);
+            //TimeManager.LongPause();
+
+            HomePagePanel.NavigateToMyFavorite();
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            //The "分享来源" of dashboard still display.
+            Assert.IsTrue(HomePagePanel.IsShareResoureCommonExisted());
+
+            HomePagePanel.NavigateToAllDashboard();
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            HomePagePanel.MaximizeWidget(dashboard[1].WidgetName);
+            TimeManager.MediumPause();
+
+            //The "分享来源" of widget still display.
+            Assert.IsTrue(Widget.IsShareResoureCommonExisted());
+            Widget.ClickCloseMaxDialogButton();
+            TimeManager.ShortPause();
+
+            HomePagePanel.NavigateToAllDashboard();
+            TimeManager.LongPause();
+
+            //Rename the received dashboardA. Go to favorite to check.
+            HomePagePanel.ClickRenameDashboardButton(dashboard[0].DashboardName);
+            TimeManager.MediumPause();
+
+            string newDashboard1 = dashboard[0].DashboardName + "M1";
+
+            HomePagePanel.FillInNewDashboardName(newDashboard1);
+            HomePagePanel.ClickRenameDashboardSave();
+            TimeManager.MediumPause();
+
+            HomePagePanel.NavigateToMyFavorite();
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(newDashboard1);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            //The "分享来源" of dashboard in favorite  still display
+            Assert.IsTrue(HomePagePanel.IsShareResoureCommonExisted());
+
+            HomePagePanel.NavigateToAllDashboard();
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            //Rename the received widgetA. Go to favorite to check.
+            HomePagePanel.RenameWidgetOpen(dashboard[1].WidgetName);
+            TimeManager.MediumPause();
+
+            string newWidget1 = dashboard[1].WidgetName + "M2";
+
+            Widget.FillNewWidgetName(newWidget1);
+            Widget.ClickSaveWidgetNameButton();
+            TimeManager.MediumPause();
+
+            HomePagePanel.NavigateToMyFavorite();
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            HomePagePanel.MaximizeWidget(newWidget1);
+            TimeManager.MediumPause();
+
+            //The "分享来源" of widget still display.
+            Assert.IsTrue(Widget.IsShareResoureCommonExisted());
+            Widget.ClickCloseMaxDialogButton();
+            TimeManager.ShortPause();
+
+            //Go to hierarchynodeA chart view, add new widgetB to dashboardA
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Check tag and view data view
+            EnergyAnalysis.CheckTag(input.InputData.TagName);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WidgetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            HomePagePanel.NavigateToAllDashboard();
+            TimeManager.LongPause();
+
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.MediumPause();
+
+            HomePagePanel.ClickDashboardButton(newDashboard1);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            //The "分享来源" of dashboard in favorite  still display
+            Assert.IsTrue(HomePagePanel.IsShareResoureCommonExisted());
+        }
+
+        [Test]
         [CaseID("TC-J1-FVT-Dashboard-Share-104-6")]
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(ShareDashboardInfoSuite), "TC-J1-FVT-Dashboard-Share-104-6")]
         public void ViewSharerInfo06(ShareDashboardData input)
@@ -256,7 +383,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享仪表盘“Dashboard_Share_104_5_2”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual("分享仪表盘“Dashboard_Share_104_6_2”成功。", HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Login with userA. Navigate to homepage to select the hierarchynodeA.
@@ -279,7 +406,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“Dashboard_Share_104_5_1_A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual("分享小组件“Dashboard_Share_104_6_1_A”成功。", HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Login with userC. Navigate to homepage to select the hierarchynodeA.

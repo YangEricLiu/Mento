@@ -225,5 +225,40 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.MediumPause();
             Assert.AreEqual(PTagSettings.GetUomExpectedValue(input.ExpectedData.Uom), JazzFunction.EnergyAnalysisPanel.GetUomValue());
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-PtagConfiguration-Modify-101-6")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyValidPtagSuite), "TC-J1-FVT-PtagConfiguration-Modify-101-6")]
+        public void ModifyPtagIsAccumulatedCheckbox(PtagData input)
+        {
+            //Select a p-tag from the p-tags list area(Pick a tag which have checked IsAccumulated)and then Click '修改' button on ‘基础属性' tab
+            PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
+            PTagSettings.ClickModifyButton();
+            TimeManager.ShortPause();
+
+            //Modify ptag to uncheck "IsAccumulated" and save 
+            PTagSettings.UncheckIsAccumulatedCheckbox("使用累积值计算");
+            TimeManager.ShortPause();
+            PTagSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(PTagSettings.IsAccumulatedNotDisplayed("使用累积值计算"));
+
+            //Select the same ptag and then Click '修改' button on ‘基础属性' tab
+            PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
+            PTagSettings.ClickModifyButton();
+            TimeManager.ShortPause();
+
+            //Modify ptag to check "IsAccumulated" and save 
+            PTagSettings.CheckIsAccumulatedCheckbox("使用累积值计算");
+            TimeManager.ShortPause();
+            PTagSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            Assert.IsFalse(PTagSettings.IsAccumulatedNotDisplayed("使用累积值计算"));
+        }
     }
 }

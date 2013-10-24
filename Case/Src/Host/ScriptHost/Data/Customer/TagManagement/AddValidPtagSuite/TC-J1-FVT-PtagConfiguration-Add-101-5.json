@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"PtagIsAccumulated",
+			"Code":"PtagIsAccumulated",
+			"Meter":"PtagIsAccumulated",
+			"Channel":"1",
+			"Commodity":"Electricity",
+			"Uom":"KWH",
+			"CalculationType":"Sum",
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

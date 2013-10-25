@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboard\SaveWidgetToDashboardSuite.cs" />
     <Compile Include="Dashboard\MarkFavoriteDashboardSuite.cs" />
     <Compile Include="Dashboard\DeleteDashboardSuite.cs" />
     <Compile Include="Dashboard\RenameDashboardSuite.cs" />

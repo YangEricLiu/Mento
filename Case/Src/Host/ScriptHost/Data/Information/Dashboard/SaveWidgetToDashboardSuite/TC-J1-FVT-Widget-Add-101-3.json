@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A"],
+			"DashboardInfo":[{
+				"DashboardName":"Widget_Add_101_3",
+			}],
+			"TagName":"BAV1A11",
+		},
+		"ExpectedData":
+		{
+			"NoneDashboardMessage":"必填项",
+			"DashboardMessage":["该名称已存在"],
+		}
+	}
+]

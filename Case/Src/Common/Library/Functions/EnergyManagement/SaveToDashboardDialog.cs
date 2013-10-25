@@ -8,11 +8,11 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    internal class SaveToDashboardDialog : Window
+    public class SaveToDashboardDialog : Window
     {
         private static Locator Locator = new Locator("//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window')]", ByType.XPath);
         
-        internal SaveToDashboardDialog() : base(Locator) { }
+        public SaveToDashboardDialog() : base(Locator) { }
 
         //Widget name textbox
         private static TextField WidgetNameTextbox = JazzTextField.EnergyViewSaveDashboardWidgetNameTextField;
@@ -48,6 +48,63 @@ namespace Mento.ScriptCommon.Library.Functions
             }
 
             base.Confirm();
+        }
+
+        public void FillWidgetName(string widgetName)
+        {
+            WidgetNameTextbox.Fill(widgetName);
+        }
+
+        public bool IsWidgetNameInvalid()
+        {
+            return WidgetNameTextbox.IsTextFieldValueInvalid();
+        }
+
+        public string GetWidgetNameInvalidMsg()
+        {
+            return WidgetNameTextbox.GetInvalidTips();
+        }
+
+        public void SelectSaveHierarhcyNode(string[] hierarchyNamePath)
+        {
+            WidgetSaveHierarchy.Click();
+            WidgetSaveHierarchyTree.SelectNode(hierarchyNamePath);
+            TimeManager.LongPause();
+        }
+
+        public void ClickCreateNewDashboardButton()
+        {
+            CreateDashboardButton.Click();
+        }
+
+        public void FillDashboard(string dashboardName)
+        {
+            DashboardNameTextbox.Fill(dashboardName);
+        }
+
+        public string GetNewDashboardMsg()
+        {
+            return DashboardNameTextbox.GetInvalidTips();
+        }
+
+        public void SelectDashboard(string dashboardName)
+        {
+            DashboardComboBox.SelectItem(dashboardName);
+        }
+
+        public string GetExistedDashboardMsg()
+        {
+            return DashboardComboBox.GetInvalidTips();
+        }
+
+        public void ClickSaveButton()
+        {
+            base.Confirm();
+        }
+
+        public void ClickCancelButton()
+        {
+            base.Cancel();
         }
     }
 }

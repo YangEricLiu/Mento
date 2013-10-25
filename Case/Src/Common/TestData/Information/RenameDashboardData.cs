@@ -31,5 +31,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string NoneDashboardMessage { get; set; }
         public string NoFocusDashboardMessage { get; set; }
         public string NoneWidgetMessage { get; set; }
+        public string[] WidgetMessage { get; set; }
+        public string[] DashboardMessage { get; set; }
     }
 }

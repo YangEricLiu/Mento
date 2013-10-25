@@ -189,7 +189,27 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyMultiTagsDataViewSuite), "TC-J1-FVT-MultipleTagsComparision-DataView-001-2")]
         public void ChangeTagListBetweenHierarchy(EnergyViewOptionData input)
         {
-            HomePagePanel.SelectCustomer("");
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.ShortPause();
+
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            TimeManager.MediumPause();
+
+            //select the last page tags
+            EnergyAnalysis.SelectHierarchy(input.InputData.MultipleHiearchyPath[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+
+            //change to another hierarchy and check other tags
+            EnergyAnalysis.SelectHierarchy(input.InputData.MultipleHiearchyPath[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(EnergyAnalysis.IsTagOnListByName(input.InputData.TagNames[1]));
+            Assert.IsTrue(EnergyAnalysis.IsTagOnListByName(input.InputData.TagNames[2]));
+            Assert.IsTrue(EnergyAnalysis.IsTagOnListByName(input.InputData.TagNames[3]));
         }
     }
 }

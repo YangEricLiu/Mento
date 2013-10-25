@@ -1,0 +1,58 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"DashboardInfo":[{
+				"WidgetName":"Widget_Add_101_2_9",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Widget_Add_101_2",
+			},
+			{
+				"WidgetName":"Widget_Add_101_2_10",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Widget_Add_101_2",
+			},
+			{
+				"WidgetName":"Widget_Add_101_2_11",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Widget_Add_101_2",
+			},
+			{
+				"WidgetName":"Widget_Add_101_2_12",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Widget_Add_101_2",
+			},
+			{
+				"WidgetName":"Widget_Add_101_2_13",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Widget_Add_101_2",
+			},
+			{
+				"WidgetName":"Widget_Add_101_2_13",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Widget_Add_101_2_1",
+			},
+			{
+				"WidgetName":"Widget_Add_101_2_14",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Widget_Add_101_2",
+			}],
+			"DashboardNames":["Widget_Add_101_2"],
+			"TagName":"BAV1A11",
+		},
+		"ExpectedData":
+		{
+			"NoneWidgetMessage":"必填项",
+			"WidgetMessage":["该名称已存在"],
+			"DashboardMessage":["当前的仪表盘的小组件数量已达上限，无法创建新的小组件。"],
+		}
+	}
+]

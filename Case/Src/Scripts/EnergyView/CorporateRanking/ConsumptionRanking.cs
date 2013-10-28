@@ -190,43 +190,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
         }
 
-
-
-    }
-
-    [TestFixture]
-    [ManualCaseID("TC-J1-FVT-ConsumptionRanking-View-101"), CreateTime("2013-10-25"), Owner("Greenie")]
-    public class ConsumptionRanking : TestSuiteBase
-    {
-        [SetUp]
-        public void CaseSetUp()
-        {
-            JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
-            CorporateRanking.NavigateToCorporateRanking();
-            TimeManager.MediumPause();
-        }
-
-        [TearDown]
-        public void CaseTearDown()
-        {
-            //JazzFunction.Navigator.NavigateHome();
-        }
-
-        private static RankPanel CorporateRanking = JazzFunction.RankPanel;
-        private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
-        private static HomePage HomePagePanel = JazzFunction.HomePage;
-
-        [Test]
-        [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-2")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-View-101-2")]
-        public void SaveRankingToDashboard(CorporateRankingData input)
-        {
-
-            
-        }
-
-
-
     }
 
 }

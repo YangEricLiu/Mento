@@ -10,6 +10,7 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     public class RankPanel : EnergyViewPanel
     {
+        public string RankingPath = @"ConsumptionRanking\";
         #region Controls
 
         private static Button ConfirmHiearchyRank = JazzButton.ConfirmHierarchyRankButton;
@@ -18,6 +19,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Grid CommodityRank = JazzGrid.CommodityRankGrid;
         private static Grid CommodityRankCarbon = JazzGrid.CommodityRankCarbonGrid;
         private static Grid CommodityRankCost = JazzGrid.CommodityRankCostGrid;
+
+        private static Grid SystemCommodityRank = JazzGrid.SystemCommodityRankCostGrid;
 
         //Select rank tree
         private static Button SelectHierarchyButton
@@ -87,6 +90,26 @@ namespace Mento.ScriptCommon.Library.Functions
                 SelectHierarchyButton.Click();
                 TimeManager.LongPause();
                 HierarchyTree.ExpandNodePath(hierarchyNames);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+                HierarchyTree.CheckNode(hierarchyNames.Last());
+                TimeManager.ShortPause();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public Boolean UnCheckHierarchyNode(string[] hierarchyNames)
+        {
+            try
+            {
+                SelectHierarchyButton.Click();
+                //if(JazzCheckBox.UserDataAllHierarchyNodeCheckBoxField.IsChecked())
+                TimeManager.LongPause();
+                HierarchyTree.ExpandNodePath(hierarchyNames);
                 HierarchyTree.CheckNode(hierarchyNames.Last());
                 return true;
             }
@@ -102,6 +125,19 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 SelectSystemDimensionButton.Click();
                 SystemDimensionTree.SelectNode(systemDimensionPath);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public Boolean ClickSelectSystemDimensionButton()
+        {
+            try
+            {
+                SelectSystemDimensionButton.Click();
                 return true;
             }
             catch (Exception)
@@ -152,6 +188,12 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
         }
 
+        public void SelectSystemCommodity(string commodityName)
+        {
+            SystemCommodityRank.CheckRowCheckbox(2, commodityName, false);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+        }
+
         public void SelectCommodityCarbon(string commodityName)
         {
             CommodityRankCarbon.CheckRowCheckbox(2, commodityName, false);
@@ -163,12 +205,85 @@ namespace Mento.ScriptCommon.Library.Functions
             CommodityRankCost.CheckRowCheckbox(2, commodityName, false);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
         }
+
         #endregion
 
 
         #region ranking panel
 
+        public Boolean IsHierarchyNodeChecked(string hierarchyNode)
+        {
+            return HierarchyTree.IsNodeChecked(hierarchyNode);
+        }
 
+
+        public Boolean IsCommoditySelected(string commodityName)
+        {
+            return CommodityRank.IsRowSelected(2, commodityName);
+        }
+
+
+        public Boolean IsCommodityChecked(string commodityName)
+        {
+            return CommodityRank.IsRankingCommodityRowChecked(2, commodityName);
+        }
+
+        public Boolean IsCommodityExist(string commodityName)
+        {
+            return CommodityRankCost.IsRowExist(2,commodityName);
+        }
+
+        public void ClickSelectHierarchyButton()
+        {
+            SelectHierarchyButton.Click();
+        }
+
+        public Boolean IsNodeDisabled(string systemHierarchyNode)
+        {
+            return SystemDimensionTree.IsNodeDisabled(systemHierarchyNode);
+        }
+
+        public Boolean AreCommoditiesOnTheGrid(string[] commodityNames)
+        {
+            int i = 0;
+            while(i<commodityNames.Length)
+            {
+                if(!(CommodityRank.IsRowExist(2, commodityNames[i])))
+                {
+                     return false;
+                }
+                i++;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Export expected data table to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportRankingExpectedDataTableToExcel(string fileName)
+        {
+            //ExportExpectedDataTableToExcel(fileName, displayStep, RankingPath);
+            ExportRankingExpectedDataTableToExcel(fileName, RankingPath);
+        }
+
+        /// <summary>
+        /// Judge if there is data in data view
+        /// </summary>
+        public bool IsNoDataInEnergyGrid()
+        {
+            return EnergyDataGrid.IsNoRowOnGrid();
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDataViewOfCostUsage(string expectedFileName, string failedFileName)
+        {
+            return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, RankingPath);
+        }
 
         #endregion
 

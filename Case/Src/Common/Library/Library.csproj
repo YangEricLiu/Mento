@@ -80,7 +80,7 @@
     <Compile Include="Functions\EnergyManagement\MutipleHierarchyCompareWindow.cs" />
     <Compile Include="Functions\EnergyManagement\DataViewOperation.cs" />
     <Compile Include="Functions\EnergyManagement\RankPanel.cs" />
-    <Compile Include="Functions\EnergyManagement\RadioPanel.cs" />
+    <Compile Include="Functions\EnergyManagement\RatioPanel.cs" />
     <Compile Include="Functions\EnergyManagement\CostPanel.cs" />
     <Compile Include="Functions\EnergyManagement\UnitKPIPanel.cs" />
     <Compile Include="Functions\EnergyManagement\EnergyViewPanel.cs" />

@@ -64,7 +64,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string GridRow = "GridRow";
         public static string GridRowSelected = "GridRowSelected";
         public static string GridRowChecker = "GridRowChecker";
-
+        //public static string GridRowSelector = "GridRowSelector";
         public static string GridRowLight = "GridRowLight";
 
         public static string GridPagingToolbar = "GridPagingToolbar";

@@ -325,6 +325,28 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Export Ranking expected data table to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportRankingExpectedDataTableToExcel(string fileName, string path)
+        {
+            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+            {
+                //display data view
+                JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+
+                //Load data view and get data table
+                DataTable data = GetAllData();
+
+                //Export to excel
+                string actualFileName = Path.Combine(path, fileName);
+                JazzFunction.DataViewOperation.MoveExpectedDataViewToExcel(data, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
+            }
+        }
+
+        /// <summary>
         /// Import expected data file and compare to the data view currently, if not equal, export to another file
         /// </summary>
         /// <param name="expectedFileName"></param>

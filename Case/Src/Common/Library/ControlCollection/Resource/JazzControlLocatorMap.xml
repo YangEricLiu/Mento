@@ -131,7 +131,8 @@
           <add key="MenuButtonTagModeConvert" value="em-tag-mode-btn" type="ID"/>
           <add key="MenuButtonUnitTypeConvert" value="//div[@id='em-unit-energy-chartpanel']/div/div/div[2]" type="XPath"/>
           <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-ratio-chartgridpanel']/div/div/div[2]" type="XPath"/>
-          <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[2]" type="XPath"/>
+          <!--Greenie modified at 2013.10.28-->
+          <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[3]" type="XPath"/>
 
           <add key="TabButtonEnergyViewALLTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='全部数据点']]" type="XPath"/>
           <add key="TabButtonEnergyViewSystemDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='系统数据点']]" type="XPath"/>
@@ -749,6 +750,8 @@
       <add key="MultipleHierarchyTree" value="//div[@id='em-multi-hier-tree-body']/div/table" type="XPath"/>
       <add key="MultipleSystemDimensionTree" value="//div[contains(@id,'menu') and contains(@class,'x-panel-default') and not(contains(@style,'visibility: hidden;'))]//div[contains(@id,'systemdimensiontree') and contains(@class,'x-panel-body')]/div/table" type="XPath"/>
       <add key="MultipleAreaDimensionTree" value="//div[contains(@id,'menu') and contains(@class,'x-panel-default') and not(contains(@style,'visibility: hidden;'))]//div[contains(@id,'areadimensiontree') and contains(@class,'x-panel-body')]/div/table" type="XPath"/>
+      
+      <add key="HierarchyTreeCoperateRanking" value="//div[@id='em-rank-hier-tree-body']/div/table" type="XPath"/>
   </TreeView>
 
   <!--Grid Begin-->
@@ -775,6 +778,10 @@
           <add key="GridOtherCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class,'x-panel x-tabpanel-child x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
 
         <add key="GridCommodityRank" value="//div[@id='em-rank-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+
+          <add key="GridSystemDimensionCommodityRank" value="//div[@id='em-rank-energy-leftpanel']//div[div[@id='em-rank-sdim-button']]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+
+
           <add key="GridCommodityRankCarbon" value="//div[@id='em-rank-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridCommodityRankCost" value="//div[@id='em-rank-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 

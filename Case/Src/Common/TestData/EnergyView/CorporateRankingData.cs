@@ -25,9 +25,11 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
     public class RankingOutput : ExpectedTestDataBase
     {
+        public string[] Hierarchies { get; set; }
         public string[] expectedFileName { get; set; }
         public string ClearAllMessage { get; set; }
         public string QuitMultipleMessage { get; set; }
         public string[] StepMessage { get; set; }
+        public string[] commodityNames { get; set; }
     }
 }

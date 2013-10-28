@@ -167,6 +167,32 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
+        /// Check whether the specified ranking commodify row is checked
+        /// </summary>
+        /// <param name="cellIndex">Column index of the identifier cell</param>
+        /// <param name="cellText">Text of the identifier cell</param>
+        /// <returns></returns>
+        public bool IsRankingCommodityRowChecked(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checker = this.GetRowChecker(cellIndex, cellText, Paging);
+
+            return checker.GetAttribute("class").Split(' ').Contains("x-grid-radioheader-checked");
+        }
+
+        /// <summary>
+        /// Check whether the specified row is selected
+        /// </summary>
+        /// <param name="cellIndex">Column index of the identifier cell</param>
+        /// <param name="cellText">Text of the identifier cell</param>
+        /// <returns></returns>
+        public bool IsRowSelected(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checker = this.GetRowChecker(cellIndex, cellText, Paging);
+
+            return checker.GetAttribute("class").Contains("x-grid-radioheader-checked");
+        }
+
+        /// <summary>
         /// Check whether the specified row is checked
         /// </summary>
         /// <param name="cellIndex">Column index of the identifier cell</param>
@@ -201,6 +227,21 @@ namespace Mento.TestApi.WebUserInterface.Controls
             var checker = this.GetRowChecker(cellIndex, cellText, Paging);
 
             if (!this.IsRowChecked(cellIndex, cellText, Paging))
+            {
+                checker.Click();
+            }
+        }
+
+        /// <summary>
+        /// Check commodity radio button
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public void SelectRowRadioBox(int cellIndex, string cellText, bool Paging = true)
+        {
+            var checker = this.GetRowChecker(cellIndex, cellText, Paging);
+
+            if (!this.IsRankingCommodityRowChecked(cellIndex, cellText, Paging))
             {
                 checker.Click();
             }

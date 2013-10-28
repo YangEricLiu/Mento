@@ -441,15 +441,15 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        private static RadioPanel _RadioPanel;
-        public static RadioPanel RadioPanel
+        private static RatioPanel _RatioPanel;
+        public static RatioPanel RatioPanel
         {
             get
             {
-                if (_RadioPanel == null)
-                    _RadioPanel = new RadioPanel();
+                if (_RatioPanel == null)
+                    _RatioPanel = new RatioPanel();
 
-                return _RadioPanel;
+                return _RatioPanel;
             }
         }
 

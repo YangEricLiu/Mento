@@ -186,6 +186,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return ElementHandler.Displayed(nodeLocator, container: RootElement);
         }
 
+        public bool IsNodeDisabled(string nodeText)
+        {
+            IWebElement nodeElement= GetTreeNodeElement(nodeText);
+
+            return nodeElement.GetAttribute("class").Contains("x-grid-tree-node-disabled");
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -269,6 +276,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return checkboxInput;
         }
+
+
         #endregion
     }
 }

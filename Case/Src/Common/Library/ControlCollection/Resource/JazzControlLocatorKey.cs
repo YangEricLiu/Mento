@@ -807,6 +807,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string MultipleHierarchyTree = "MultipleHierarchyTree";
         public static string MultipleSystemDimensionTree = "MultipleSystemDimensionTree";
         public static string MultipleAreaDimensionTree = "MultipleAreaDimensionTree";
+
+        public static string CoperateRankingTree = "HierarchyTreeCoperateRanking";
+
         #endregion
 
         #region Grid
@@ -857,6 +860,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridCommodityRank = "GridCommodityRank";
         public static string GridCommodityRankCarbon = "GridCommodityRankCarbon";
         public static string GridCommodityRankCost = "GridCommodityRankCost";
+
+        public static string GridSystemDimensionCommodityRank = "GridSystemDimensionCommodityRank";
 
         #endregion
 

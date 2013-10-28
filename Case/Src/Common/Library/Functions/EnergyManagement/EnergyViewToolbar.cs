@@ -124,6 +124,17 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading();
         }
 
+        public void ClickFuncModeConvertTarget()
+        {
+            ConvertTargetButton.ClickFuncModeConvertTargetButton();
+        }
+
+        public void ClickRankTypeConvertTarget()
+        {
+            ConvertTargetButton.ClickRankTypeConvertTargetButton();
+        }
+        
+
         public void SelectCarbonConvertTarget(CarbonConvertTarget target)
         {
             ConvertTargetButton.SwitchCarbonMenuItem(target);

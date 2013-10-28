@@ -66,6 +66,11 @@ namespace Mento.ScriptCommon.Library.Functions
             CarbonConvertTargetButton.SelectItem(CarbonMenuItems[target]);
         }
 
+        public void ClickFuncModeConvertTargetButton()
+        {
+            FuncModeConvertTargetButton.Click();
+        }
+
         public void SwitchFuncModeMenuItem(FuncModeConvertTarget target)
         {
             FuncModeConvertTargetButton.SelectItem(FuncModeMenuItems[target]);
@@ -90,6 +95,12 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             RankTypeConvertTargetButton.SelectItem(RankTypeMenuItems[target]);
         }
+
+        public void ClickRankTypeConvertTargetButton()
+        {
+            RankTypeConvertTargetButton.Click();
+        }
+        
 
         public string GetCurrentTagModeButtonValue()
         {

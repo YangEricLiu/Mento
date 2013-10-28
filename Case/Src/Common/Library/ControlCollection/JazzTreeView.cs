@@ -24,6 +24,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static SystemDimensionTree MultipleSystemDimensionTree = GetControl<SystemDimensionTree>(JazzControlLocatorKey.MultipleSystemDimensionTree);
         public static AreaDimensionTree MultipleAreaDimensionTree = GetControl<AreaDimensionTree>(JazzControlLocatorKey.MultipleAreaDimensionTree);
 
+        public static HierarchyTree RankingHierarchyTree = GetControl<HierarchyTree>(JazzControlLocatorKey.CoperateRankingTree);
+        
         #endregion
 
         #region HierarchySettings

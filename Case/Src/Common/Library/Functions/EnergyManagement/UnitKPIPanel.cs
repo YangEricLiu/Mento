@@ -74,7 +74,18 @@ namespace Mento.ScriptCommon.Library.Functions
 
             SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
             AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
+
         }
+
+        #region Unit KPI common function
+
+        public void NavigateToUnitKPI()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UnitKPI);
+            
+        }
+
+        #endregion
 
         #region Tag operations
         public void SwitchTagTab(TagTabs tab)

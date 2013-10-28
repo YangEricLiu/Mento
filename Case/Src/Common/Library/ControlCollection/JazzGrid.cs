@@ -55,7 +55,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region radio
 
-        public static Grid RadioAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridRadioAllTagList);
+        public static Grid RatioAllTagList = GetControl<Grid>(JazzControlLocatorKey.GridRatioAllTagList);
 
         #endregion
 
@@ -64,6 +64,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid CommodityRankGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityRank);
         public static Grid CommodityRankCarbonGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityRankCarbon);
         public static Grid CommodityRankCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridCommodityRankCost);
+
+        public static Grid SystemCommodityRankCostGrid = GetControl<Grid>(JazzControlLocatorKey.GridSystemDimensionCommodityRank);
 
         #endregion
 

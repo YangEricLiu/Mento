@@ -83,4 +83,20 @@
 			"ColdRange":[{"EndMonth": "时间段冲突"}, {"EndMonth": ""}],
 		}	
 	},
+	{
+		"InputData":
+		{ 
+			"CommonName":"冷暖季ForAddInvalid", 
+			"WarmRange":[{"StartMonth": "01", "StartDate": "10", "EndMonth": "02", "EndDate": "27"}, {"StartMonth": "05", "StartDate": "10", "EndMonth": "05", "EndDate": "31"}],
+			"ColdRange":[{"StartMonth": "03", "StartDate": "06", "EndMonth": "03", "EndDate": "09"}, {"StartMonth": "06", "StartDate": "06", "EndMonth": "06", "EndDate": "30"}],
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"",
+			"WarmRange":[{"EndMonth": ""}, {"EndMonth": "时间段冲突"}],
+		    "ColdRange":[{"EndMonth": ""}, {"EndMonth": "时间段冲突"}],
+		} 
+	},
 ]
+
+

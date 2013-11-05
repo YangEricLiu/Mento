@@ -138,6 +138,7 @@
     <Folder Include="Data\Administration\User\UserManagementAddValid\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestFormulaVtagSmokeTestSuite\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestKPIBaselineSuite\" />
+    <Folder Include="Data\EnergyView\UnitIndicator\ViewConsumptionUnitIndicatorSuite\" />
     <Folder Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\" />
     <Folder Include="Resource\en\" />
   </ItemGroup>
@@ -555,9 +556,9 @@
     <None Include="Data\EnergyView\CorporateRanking\SelectHierarchyNodesForRanking\TC-J1-FVT-SelectHierarchyNodesForRanking-101-2.json" />
     <None Include="Data\EnergyView\CorporateRanking\SelectHierarchyNodesForRanking\TC-J1-FVT-SelectHierarchyNodesForRanking-101-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataViewSuite\TC-J1-FVT-CostUsage-DataView-001-1.json" />
-    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-DataView-005-3.json" />
-    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-DataView-005-2.json" />
-    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-DataView-005-1.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-DataColumniew-005-3.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-2.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTrendChartSuite\TC-J1-FVT-CostUsage-TrendChar-002-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-1.json" />

@@ -35,7 +35,7 @@ namespace Mento.Script.Administration.User
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            JazzFunction.LoginPage.RefreshJazz("EMOP系统管理");
         }
 
         [Test]
@@ -247,7 +247,7 @@ namespace Mento.Script.Administration.User
             Assert.IsFalse(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
             Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
-            UserDataPermissionSettings.CloseTreeWindow();
+            //UserDataPermissionSettings.CloseTreeWindow();
         }
 
         [Test]
@@ -309,7 +309,7 @@ namespace Mento.Script.Administration.User
             UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.CustomerList);
             UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath);
             UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.ExpectedData.HierarchyNodePath);
-            UserDataPermissionSettings.CloseTreeWindow();
+            //UserDataPermissionSettings.CloseTreeWindow();
         }
 
         [Test]

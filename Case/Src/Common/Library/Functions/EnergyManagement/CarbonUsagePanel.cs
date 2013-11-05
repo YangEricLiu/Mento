@@ -18,12 +18,12 @@ namespace Mento.ScriptCommon.Library.Functions
 
         protected override Chart Chart
         {
-            get { return JazzChart.EnergyViewChart; }
+            get { return JazzChart.CarbonChart; }
         }
 
         protected override Grid EnergyDataGrid
         {
-            get { return JazzGrid.EnergyAnalysisEnergyDataList; }
+            get { return JazzGrid.CarbonDataListGrid; }
         }
 
         internal CarbonUsagePanel() { }
@@ -136,6 +136,47 @@ namespace Mento.ScriptCommon.Library.Functions
             return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, CarbonPath);
         }
 
+        public bool IsDataViewExisted()
+        {
+            return EnergyDataGrid.HasDrawnDataView();
+        }
+
         #endregion
+
+        #region carbon chart
+
+        public bool IsTrendChartDrawn()
+        {
+            return Chart.HasDrawnTrend();
+        }
+
+        public int GetTrendChartLines()
+        {
+            return Chart.GetTrendChartLines();
+        }
+
+        public bool IsColumnChartDrawn()
+        {
+            return Chart.HasDrawnColumn();
+        }
+
+        public int GetColumnChartColumns()
+        {
+            return Chart.GetColumnChartColumns();
+        }
+
+        public bool IsPieChartDrawn()
+        {
+            return Chart.HasDrawnPie();
+        }
+
+        public int GetPies()
+        {
+            return Chart.GetPieDistributions();
+        }
+
+        #endregion
+
+
     }
 }

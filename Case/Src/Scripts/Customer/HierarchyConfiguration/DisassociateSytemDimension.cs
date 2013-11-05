@@ -35,10 +35,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void ScriptTearDown()
         {
-            //SystemSettings.CloseSystemDimensionDialogIfNot();
-            //TimeManager.MediumPause();
-
-            HierarchySetting.NavigatorToNonHierarchy();
+            JazzFunction.LoginPage.RefreshJazz();
         }
 
         [Test]
@@ -78,9 +75,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath);
             TimeManager.MediumPause();
             Assert.IsTrue(SystemSettings.IsSystemDimensionNodeDisplayed(input.InputData.SystemDimensionItemPath.Last()));
-
-            SystemSettings.CloseSystemDimensionDialogIfNot();
-            TimeManager.MediumPause();
         }
 
         [Test]

@@ -69,9 +69,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button ButtonDeleteWidget = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteWidget);
         public static Button DeleteWidgetConfirmButton = GetControl<Button>(JazzControlLocatorKey.DeleteWidgetConfirmButton);
         public static Button DeleteWidgetCancelButton = GetControl<Button>(JazzControlLocatorKey.DeleteWidgetCancelButton);
-        public static Button CreateNewDashboardButton = GetControl<Button>(JazzControlLocatorKey.ButtonCreateNewDashboard);
+        public static RadioButton CreateNewDashboardButton = GetControl<RadioButton>(JazzControlLocatorKey.RadioButtonCreateNewDashboard);
         public static Button DashboardHierarchyNameButton = GetControl<Button>(JazzControlLocatorKey.ButtonDashboardHierarchyName);
-        public static Button ExistedDashboardButton = GetControl<Button>(JazzControlLocatorKey.ButtonExistedDashboard);
+        public static RadioButton ExistedDashboardButton = GetControl<RadioButton>(JazzControlLocatorKey.RadioButtonExistedDashboard);
 
         public static ToggleButton EnergyDisplayStepHourButton = GetControl<ToggleButton>(JazzControlLocatorKey.ButtonEnergyDisplayStepHour);
         public static ToggleButton EnergyDisplayStepDayButton = GetControl<ToggleButton>(JazzControlLocatorKey.ButtonEnergyDisplayStepDay);

@@ -44,9 +44,9 @@ namespace Mento.Script.EnergyView.CostUsage
         private static WidgetMaxChartDialog WidgetMaxChart = JazzFunction.WidgetMaxChartDialog;
 
         [Test]
-        [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-1")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-DataView-005-1")]
-        public void TOUDataViewWeek(CostUsageData input)
+        [CaseID("TC-J1-FVT-CostUsage-TOU-Column-005-1")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-1")]
+        public void TOUColumnWeek(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             CostUsage.SwitchTagTab(TagTabs.AreaDimensionTab);
@@ -58,26 +58,28 @@ namespace Mento.Script.EnergyView.CostUsage
             EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 4), new DateTime(2012, 9, 3));
             TimeManager.MediumPause();
             
-            //Check tag and view data view, hourly
+            //Check tag and view trendchart, hourly
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.ShowPeakValley();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            JazzFunction.EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            Assert.AreEqual(1, CostUsage.GetTrendChartLines());
+
+            EnergyViewToolbar.ShowPeakValley();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
+            Assert.AreEqual(1, CostUsage.GetTrendChartLines());
 
             CostUsage.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
 
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Week);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
 
             //Uncheck "电" and check "自来水"
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[0]);
@@ -91,9 +93,9 @@ namespace Mento.Script.EnergyView.CostUsage
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-2")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-DataView-005-2")]
-        public void TOUDataViewMonth(CostUsageData input)
+        [CaseID("TC-J1-FVT-CostUsage-TOU-Column-005-2")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-2")]
+        public void TOUColumnMonth(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             CostUsage.SwitchTagTab(TagTabs.AreaDimensionTab);
@@ -105,26 +107,23 @@ namespace Mento.Script.EnergyView.CostUsage
             EnergyViewToolbar.SetDateRange(new DateTime(2012, 6, 1), new DateTime(2012, 9, 1));
             TimeManager.MediumPause();
 
-            //Check tag and view data view, hourly
+            //Check tag and view chart, hourly
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.ShowPeakValley();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            JazzFunction.EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
             CostUsage.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            JazzFunction.EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Week);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            Assert.IsFalse(CostUsage.IsColumnChartDrawn());
 
             //Uncheck "电" and check "煤"
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[0]);
@@ -133,9 +132,9 @@ namespace Mento.Script.EnergyView.CostUsage
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-3")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-DataView-005-3")]
-        public void TOUDataViewDisable(CostUsageData input)
+        [CaseID("TC-J1-FVT-CostUsage-TOU-Column-005-3")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-3")]
+        public void TOUColumnDisable(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             CostUsage.SwitchTagTab(TagTabs.AreaDimensionTab);
@@ -158,7 +157,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
-            //EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
             TimeManager.MediumPause();
 
             //Set date range less than 7 days

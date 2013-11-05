@@ -3,24 +3,24 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
-			"commodityNames":["电", "汽油", "煤", "天然气", "热量", "自来水"],
+			"commodityNames":["电", "汽油", "煤", "冷量", "热量", "自来水"],
 			"DashboardInfo":[{
 				"WigetName":"CarbonSingleTrendChartCoal1",
 				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
-				"IsCreateDashboard":"false",
-				"DashboardName":"CarbonWidgetHierarchyTrendChar",
+				"IsCreateDashboard":"true",
+				"DashboardName":"CarbonWidgetTrendChart",
 			},
 			{
 				"WigetName":"CarbonSingleTrendChartCO21",
 				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"CarbonWidgetHierarchyTrendChar",
+				"DashboardName":"CarbonWidgetTrendChart",
 			},
 			{
 				"WigetName":"CarbonSingleTrendChartTree1",
 				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"CarbonWidgetHierarchyTrendChar",
+				"DashboardName":"CarbonWidgetTrendChart",
 			}],
 		},
 		"ExpectedData":

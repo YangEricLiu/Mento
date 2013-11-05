@@ -30,12 +30,12 @@ namespace Mento.ScriptCommon.Library.Functions
 
         protected override Chart Chart
         {
-            get { return JazzChart.EnergyViewChart; }
+            get { return JazzChart.CostChart; }
         }
 
         protected override Grid EnergyDataGrid
         {
-            get { return JazzGrid.EnergyAnalysisEnergyDataList; }
+            get { return JazzGrid.CarbonDataListGrid; }
         }
 
         internal CostPanel()
@@ -192,6 +192,48 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsNoDataInEnergyGrid()
         {
             return EnergyDataGrid.IsNoRowOnGrid();
+        }
+
+        /// <summary>
+        /// Judge if there is data view
+        /// </summary>
+        public bool IsDataViewExisted()
+        {
+            return EnergyDataGrid.HasDrawnDataView();
+        }
+
+        #endregion
+
+        #region cost chart
+
+        public bool IsTrendChartDrawn()
+        {
+            return Chart.HasDrawnTrend();
+        }
+
+        public int GetTrendChartLines()
+        {
+            return Chart.GetTrendChartLines();
+        }
+
+        public bool IsColumnChartDrawn()
+        {
+            return Chart.HasDrawnColumn();
+        }
+
+        public int GetColumnChartColumns()
+        {
+            return Chart.GetColumnChartColumns();
+        }
+
+        public bool IsPieChartDrawn()
+        {
+            return Chart.HasDrawnPie();
+        }
+
+        public int GetPies()
+        {
+            return Chart.GetPieDistributions();
         }
 
         #endregion

@@ -15,6 +15,7 @@ using Mento.Framework.Script;
 using Mento.ScriptCommon.TestData.EnergyView;
 using System.Data;
 using System.IO;
+using Mento.Framework.Configuration;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -191,12 +192,19 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <param name="widgetName"></param>
         public bool CompareMinWidgetDataView(string basePath, string expectedFileName, string failedFileName, string widgetName)
         {
-            string filePath = Path.Combine(basePath, expectedFileName);
-            DataTable actualData = GetWidgetMinDataViewAllData(widgetName);
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(basePath, expectedFileName);
+                DataTable actualData = GetWidgetMinDataViewAllData(widgetName);
 
-            DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
+                DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
 
-            return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public string GetPopNotesValue()

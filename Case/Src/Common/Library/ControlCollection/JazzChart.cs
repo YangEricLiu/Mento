@@ -16,5 +16,21 @@ namespace Mento.ScriptCommon.Library
                 return GetControl<Chart>(JazzControlLocatorKey.ChartEnergyView);
             }
         }
+
+        public static Chart CarbonChart
+        {
+            get
+            {
+                return GetControl<Chart>(JazzControlLocatorKey.ChartCarbonUsage);
+            }
+        }
+
+        public static Chart CostChart
+        {
+            get
+            {
+                return GetControl<Chart>(JazzControlLocatorKey.ChartCostUsage);
+            }
+        }
     }
 }

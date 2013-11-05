@@ -108,7 +108,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
-            //Add "Gas"
+            //Add "Cool"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[3]);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -257,7 +257,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
-            Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Hour);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);

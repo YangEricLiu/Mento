@@ -156,7 +156,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //Click  "删除所有" option then cancel
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
             JazzMessageBox.MessageBox.GiveUp();
             TimeManager.MediumPause();

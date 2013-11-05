@@ -122,8 +122,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ModifyWidgetNameCancelButton = "ModifyWidgetNameCancelButton";
         public static string WidgetName = "WidgetName";
         public static string ButtonDeleteWidget = "ButtonDeleteWidget";
-        public static string ButtonCreateNewDashboard = "ButtonCreateNewDashboard";
-        public static string ButtonExistedDashboard = "ButtonExistedDashboard";
+        public static string RadioButtonCreateNewDashboard = "RadioButtonCreateNewDashboard";
+        public static string RadioButtonExistedDashboard = "RadioButtonExistedDashboard";
         public static string ButtonDashboardHierarchyName = "ButtonDashboardHierarchyName";
         public static string DeleteWidgetConfirmButton = "DeleteWidgetConfirmButton";
         public static string DeleteWidgetCancelButton = "DeleteWidgetCancelButton";
@@ -847,11 +847,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridCommodityCarbon = "GridCommodityCarbon";
         public static string GridCommodityCost = "GridCommodityCost";
         public static string GridUnitKPIEnergyDataList = "GridUnitKPIEnergyDataList";
+
+        public static string GridUnitDataList = "GridUnitDataList";
         #endregion
 
         #region radio
 
         public static string GridRadioAllTagList = "GridRadioAllTagList";
+        public static string GridRadioDataList = "GridRadioDataList";
 
         #endregion
 
@@ -869,6 +872,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string GridTotalOtherCommodityCost = "GridTotalOtherCommodityCost";
         public static string GridOtherCommodityCost = "GridOtherCommodityCost";
+        public static string GridCostDataList = "GridCostDataList";
+
+        #endregion
+
+        #region carbon
+
+        public static string GridCarbonDataList = "GridCarbonDataList";
 
         #endregion
 
@@ -1058,6 +1068,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Chart
         public static string ChartEnergyView = "ChartEnergyView";
+        public static string ChartCarbonUsage = "ChartCarbonUsage";
+        public static string ChartCostUsage = "ChartCostUsage";
         #endregion
 
         #region Window

@@ -120,7 +120,7 @@ namespace Mento.Script.Customer.TagManagement
       [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-2")]
         public void DragTagsFormula(VtagData input)
       {
-          JazzFunction.LoginPage.LoginToCustomer();
+          //JazzFunction.LoginPage.LoginToCustomer();
           VTagSettings.FocusOnVTagByName(input.InputData.CommonName);
           VTagSettings.SwitchToFormulaTab();
           TimeManager.ShortPause();
@@ -175,7 +175,7 @@ namespace Mento.Script.Customer.TagManagement
           TimeManager.MediumPause();
           VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
           VTagSettings.SwitchToFormulaTab();
-          Assert.AreEqual(VTagSettings.GetFormulaValue(), "{vtag|VtagCodeModified}");
+          Assert.AreEqual(VTagSettings.GetFormulaValue(), "{vtag|VtagForCodeModified}");
           TimeManager.ShortPause();
 
       }
@@ -186,12 +186,15 @@ namespace Mento.Script.Customer.TagManagement
       [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-4")]
       public void FormulaCaseInsensive(VtagData input)
       {
-          //HierarchySettings.NavigatorToHierarchySetting();
+          JazzFunction.HierarchySettings.NavigatorToHierarchySetting();
           JazzFunction.HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
           JazzFunction.HierarchySettings.ClickCreateChildHierarchyButton();
           JazzFunction.HierarchySettings.FillInName("Building1");
           JazzFunction.HierarchySettings.FillIncode("Building1");
           JazzFunction.HierarchySettings.FillInType("Building");
+          TimeManager.MediumPause();
+          JazzFunction.HierarchySettings.FillInIndustry("办公建筑");
+          JazzFunction.HierarchySettings.FillInZone("寒冷地区");
 
           JazzFunction.HierarchySettings.ClickSaveButton();
           JazzMessageBox.LoadingMask.WaitLoading();
@@ -214,10 +217,12 @@ namespace Mento.Script.Customer.TagManagement
           VTagSettings.ClickModifyFormulaButton();
           JazzMessageBox.LoadingMask.WaitSubMaskLoading();
           TimeManager.ShortPause();
-          VTagSettings.FillInFormulaField("{Building1|prop|CoolingArea}");
+          VTagSettings.FillInFormulaField("{Building1|prop|CoolingArea}*{ptag|P_Asso_001_1_1}");
           VTagSettings.ClickSaveFormulaButton();
           JazzMessageBox.LoadingMask.WaitLoading();
-          TimeManager.ShortPause();
+          TimeManager.LongPause();
+
+          Assert.IsTrue(VTagSettings.IsModifyFormulaButtonDisplayed());
       }
 
     }

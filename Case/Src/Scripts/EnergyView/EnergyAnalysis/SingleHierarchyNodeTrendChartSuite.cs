@@ -115,7 +115,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
 
             //Uncheck tag V_Null_BuildingBC, and select another tag v14
             EnergyAnalysis.UncheckTag(input.InputData.TagNames[0]);

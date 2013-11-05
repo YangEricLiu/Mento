@@ -35,7 +35,7 @@ namespace Mento.Script.Administration.User
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            JazzFunction.LoginPage.RefreshJazz("EMOP系统管理");
         }
 
         [Test]

@@ -87,7 +87,7 @@ namespace Mento.Script.Customer.TagAssociation
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
                 Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.SelectHierarchy(HierarchyNewPath));
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.MediumPause();
+                TimeManager.LongPause();
                 Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[i]));
 
                 i++;

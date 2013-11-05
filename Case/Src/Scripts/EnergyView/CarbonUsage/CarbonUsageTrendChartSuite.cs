@@ -64,6 +64,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.AreEqual(1, CarbonUsage.GetTrendChartLines());
         
             //Add select "汽油"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[1]);
@@ -75,6 +76,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.AreEqual(2, CarbonUsage.GetTrendChartLines());
         
             //Change to "CO2"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
@@ -83,6 +85,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.AreEqual(2, CarbonUsage.GetTrendChartLines());
 
             //Add "Coal"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[2]);
@@ -91,6 +94,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.AreEqual(3, CarbonUsage.GetTrendChartLines());
 
             //Add "Gas"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[3]);
@@ -99,6 +103,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.AreEqual(4, CarbonUsage.GetTrendChartLines());
 
             //Change from "CO2" to "Tree"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
@@ -106,7 +111,9 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
+            //Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            //Assert.AreEqual(4, CarbonUsage.GetTrendChartLines());
 
             //Add "heating"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[4]);
@@ -114,7 +121,9 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
+            //Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            //Assert.AreEqual(4, CarbonUsage.GetTrendChartLines());
 
             //Add "Water"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[5]);
@@ -122,7 +131,9 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
+            //Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            //Assert.AreEqual(4, CarbonUsage.GetTrendChartLines());
 
             //Change from "Tree" to "StandardCoal"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.StandardCoal);
@@ -131,6 +142,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.AreEqual(6, CarbonUsage.GetTrendChartLines());
 
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;
@@ -143,6 +155,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.AreEqual(6, CarbonUsage.GetTrendChartLines());
             EnergyViewToolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
 
             //Change from "CO2" to "Tree"
@@ -151,7 +164,9 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
+            //Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            //Assert.AreEqual(4, CarbonUsage.GetTrendChartLines());
             EnergyViewToolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
 
             //On homepage, check the dashboards
@@ -196,6 +211,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.AreEqual(1, CarbonUsage.GetTrendChartLines());
 
             //Change from default display "标煤" to "二氧化碳"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
@@ -207,6 +223,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.AreEqual(1, CarbonUsage.GetTrendChartLines());
 
             //Change from default display "二氧化碳" to "树"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
@@ -217,7 +234,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
+            //Assert.AreEqual(1, CarbonUsage.GetTrendChartLines());
 
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;
@@ -244,10 +262,9 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //Set date range and change to data view
+            //Set date range 
             EnergyViewToolbar.SetDateRange(new DateTime(2011, 4, 1), new DateTime(2011, 4, 5));
             TimeManager.ShortPause();
-            EnergyViewToolbar.View(EnergyViewType.List);
 
             //Select display chart type is "标煤", Select "TotalEnergyConsumption(总览)" option
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.StandardCoal);
@@ -285,7 +302,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             //No trend chart
-            Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
+            Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
 
             //Change "标煤" to "CO2", Select "TotalEnergyConsumption(总览)" option
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);

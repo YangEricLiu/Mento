@@ -4,9 +4,43 @@
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A"],
 			"DashboardInfo":[{
-				"DashboardName":"Widget_Add_101_3",
+				"DashboardName":"Widget_Add_101_3_6",
+			},
+			{
+				"WidgetName":"Widget_Add_101_3_7_A",
+				"DashboardName":"Widget_Add_101_3_7",
+			},
+			{
+				"WidgetName":"Widget_Add_101_3_8_A",
+				"DashboardName":"Widget_Add_101_3_8",
+				"IsCreateDashboard":"true",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
+			},
+			{
+				"WidgetName":"Widget_Add_101_3_9_A",
+				"DashboardName":"Widget_Add_101_3_9",
+				"IsCreateDashboard":"true",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
+			},
+			{
+				"WidgetName":"Widget_Add_101_3_10_A",
+				"DashboardName":"Widget_Add_101_3_10",
+				"IsCreateDashboard":"true",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
+			},
+			{
+				"WidgetName":"Widget_Add_101_3_11_B",
+				"DashboardName":"Widget_Add_101_3_11",
+				"IsCreateDashboard":"false",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区B"],
+			},
+			{
+				"WidgetName":"Widget_Add_101_3_12_A",
+				"DashboardName":"Widget_Add_101_3_12",
+				"IsCreateDashboard":"true",
+				"HierarchyName":["NancyCostCustomer2", "组织B", "园区C"],
 			}],
-			"TagName":"BAV1A11",
+			"TagName":"SV2Root",
 		},
 		"ExpectedData":
 		{

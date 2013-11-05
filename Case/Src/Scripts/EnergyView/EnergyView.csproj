@@ -73,6 +73,7 @@
     <Compile Include="EnergyManagement\SetDisplayStepSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitIndicator\ViewConsumptionUnitIndicatorSuite.cs" />
     <Compile Include="Usage\SmokeTestSingleTagSuite.cs" />
   </ItemGroup>
   <ItemGroup>

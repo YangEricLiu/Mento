@@ -353,12 +353,19 @@ namespace Mento.ScriptCommon.Library.Functions
         /// /// <param name="failedFileName"></param>
         public bool CompareDataViewOfEnergyAnalysis(string expectedFileName, string failedFileName, string path)
         {
-            string filePath = Path.Combine(path, expectedFileName);
-            DataTable actualData = GetAllData();
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(path, expectedFileName);
+                DataTable actualData = GetAllData();
 
-            DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
+                DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
 
-            return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+            }
+            else
+            {
+                return true;
+            }
         }
 
         #endregion
@@ -377,7 +384,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public bool IsDistributionChartDrawn()
         {
-            return Chart.HasDrawnDistribute();
+            return Chart.HasDrawnPie();
         }
 
         public bool IsDataViewDrawn()

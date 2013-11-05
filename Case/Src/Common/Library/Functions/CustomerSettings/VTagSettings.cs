@@ -390,6 +390,16 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             VTagSettingsFormulaUpdate.Click();
         }
+
+        /// <summary>
+        /// Judge if "Modify" formula Button displayed
+        /// </summary>
+        /// <returns></returns>
+        public bool IsModifyFormulaButtonDisplayed()
+        {
+            return VTagSettingsFormulaUpdate.IsDisplayed();
+        }
+
         /// <summary>
         /// Click "Cancel" formula Button
         /// </summary>

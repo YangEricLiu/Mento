@@ -68,7 +68,7 @@
             <add key="ButtonWidgetShare" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-share-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetRename" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-rename-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetDelete" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-close-tool')]/img" type="XPath"/>
-            <add key="ButtonHomepageToDashboard" value="//div[@id='hp-to-dsboard-button-container']/div[contains(@class,'x-btn') and em/button/span[text()='仪表盘 >']]" type="XPath"/>
+            <add key="ButtonHomepageToDashboard" value="//div[@id='map-to-dsboard-button-container']/div[contains(@class,'x-btn') and em/button/span[text()='仪表盘 >']]" type="XPath"/>
 
             <add key="ButtonDashboardFavorite" value="//div[@id='hp-dashboard-list-targetEl']/div[span[text()='$#nameIndex']]/span[@class='x-dsbd-btn-icon']" type="XPath"/>
             <add key="ButtonDashboardShare" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[1]/img" type="XPath"/>
@@ -152,8 +152,8 @@
           <add key="ModifyWidgetNameCancelButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
           <add key="WidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]//span[text()='表3']" type="XPath"/>
           <add key="ButtonDeleteWidget" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[4]" type="XPath"/>
-          <add key="ButtonCreateNewDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='新建仪表盘']]/input" type="XPath"/>
-          <add key="ButtonExistedDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='已存在仪表盘']]/input" type="XPath"/>
+          <add key="RadioButtonCreateNewDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='新建仪表盘']]/input" type="XPath"/>
+          <add key="RadioButtonExistedDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='已存在仪表盘']]/input" type="XPath"/>
           <add key="ButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
           <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
           <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
@@ -762,7 +762,12 @@
           <add key="GridEnergyAnalysisAreaDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridEnergyAnalysisEnergyDataList" value="//div[@id='em-content-center-region-body']//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 
-          <add key="GridUnitKPIAllTagList" value="//div[@id='em-unit-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridCarbonDataList" value="//div[@id='em-carbon-chartgridpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridCostDataList" value="//div[@id='em-cost-chartgridpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridUnitDataList" value="//div[@id='em-unit-energy-chartpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridRadioDataList" value="//div[@id='em-ratio-chartgridpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>        
+
+        <add key="GridUnitKPIAllTagList" value="//div[@id='em-unit-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridRadioAllTagList" value="//div[@id='em-ratio-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridTotalCommodityCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
@@ -793,7 +798,7 @@
           <add key="GridMultiSelectedTagsList" value="//div[contains(@id,'energymultihiertagpanel') and contains(@class,'x-container-default')]/div[label[text()='$#nameIndex']]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridEASelectedTagsList" value="//div[@id='em-energy-multi-hier-panel']/div[label[text()='$#nameIndex']]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridCarbonFactorsList" value="st-carbonfactor-grid" type="ID"/>
-
+        
       </energyview>
     <customersettings>
       <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
@@ -964,14 +969,18 @@
   <!--Label End-->
 
   <!--Tooltip Begin-->
-
-  <add key="TooltipShareUser" value="//div[contains(@id,'tooltip') and contains(@class,'x-tip-default') and not(contains(@style,'display: none;'))]/div[contains(@class,'x-tip-body-default')]" type="XPath"/>
-
+  <Tooltip>
+    <add key="TooltipShareUser" value="//div[contains(@id,'tooltip') and contains(@class,'x-tip-default') and not(contains(@style,'display: none;'))]/div[contains(@class,'x-tip-body-default')]" type="XPath"/>
+    </Tooltip>
   <!--Tooltip End-->
 
   <!--Chart-->
   <Chart>
+    
     <add key="ChartEnergyView" value="svg" type="TagName"/>
+    <add key="ChartCarbonUsage" value="//div[@id='em-carbon-chartgridpanel-body']/div/div[contains(@id,'linechartcomponent')]/div[@class='highcharts-container']" type="XPath"/>
+    <add key="ChartCostUsage" value="//div[@id='em-cost-chartgridpanel-body']/div/div[contains(@id,'linechartcomponent')]/div[@class='highcharts-container']" type="XPath"/>
+
   </Chart>
 
   <!--Window-->

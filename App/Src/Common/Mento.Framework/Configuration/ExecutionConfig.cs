@@ -28,6 +28,7 @@ namespace Mento.Framework.Configuration
         private const string ISCREATEEXPECTEDDATAVIEWEXCELFILE = "isCreateExpectedDataViewExcelFile";
         private const string EXPECTEDDATAVIEWEXCELFILEDIRECTORY = "expectedDataViewExcelFileDirectory";
         private const string FAILEDDATAVIEWEXCELFILEDIRECTORY = "failedDataViewExcelFileDirectory";
+        private const string ISCOMPAREEXPECTEDDATAVIEWEXCELFILE = "isCompareExpectedDataViewExcelFile";
 
         private static string BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
@@ -37,6 +38,16 @@ namespace Mento.Framework.Configuration
             {
                 bool result = false;
                 bool.TryParse(GetExecutionConfig(ISCREATEEXPECTEDDATAVIEWEXCELFILE), out result);
+                return result;
+            }
+        }
+
+        public static bool isCompareExpectedDataViewExcelFile
+        {
+            get
+            {
+                bool result = false;
+                bool.TryParse(GetExecutionConfig(ISCOMPAREEXPECTEDDATAVIEWEXCELFILE), out result);
                 return result;
             }
         }

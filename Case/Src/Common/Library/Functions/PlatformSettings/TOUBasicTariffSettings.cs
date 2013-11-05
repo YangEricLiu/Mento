@@ -46,6 +46,12 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region common action
+
+        public void NavigatorToTimeSettings()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettings);
+        }
+
         public void NavigatorToPriceSettings()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.PriceSettingsPrice);

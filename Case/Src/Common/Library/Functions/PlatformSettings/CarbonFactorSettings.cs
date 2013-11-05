@@ -37,6 +37,17 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button ButtonCarbonFactorRangeDelete = JazzButton.CarbonFactorRangeDeleteButton;
 
         #region Action
+
+        /// <summary>
+        /// Navigate to Time setting
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void NavigatorToTimeSettings()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettings);
+        }
+
         /// <summary>
         /// Navigate to Carbon Factor Settings Page
         /// </summary>
@@ -45,7 +56,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void NavigatorToCarbonFactorSettings()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CarbonSettingsCarbon);
-            //TimeManager.ShortPause();
         }
 
         /// <summary>

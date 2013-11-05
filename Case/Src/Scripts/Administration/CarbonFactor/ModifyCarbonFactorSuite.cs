@@ -35,7 +35,7 @@ namespace Mento.Script.Administration.CarbonFactor
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            CarbonFactorSettings.NavigatorToTimeSettings();
         }
                 
         [Test]

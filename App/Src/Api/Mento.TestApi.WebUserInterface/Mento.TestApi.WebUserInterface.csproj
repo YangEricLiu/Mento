@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrowserHandler.cs" />
+    <Compile Include="Controls\Button\RadioButton.cs" />
     <Compile Include="Controls\Button\DashboardButton.cs" />
     <Compile Include="Controls\Button\LinkButton.cs" />
     <Compile Include="Controls\Button\MenuButton.cs" />

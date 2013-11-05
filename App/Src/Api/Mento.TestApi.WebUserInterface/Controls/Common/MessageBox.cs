@@ -66,7 +66,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             get
             {
-                if (this._YesButton == null)
+                //if (this._YesButton == null)
                     this._YesButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxYesButton));
                 return this._YesButton;
             }

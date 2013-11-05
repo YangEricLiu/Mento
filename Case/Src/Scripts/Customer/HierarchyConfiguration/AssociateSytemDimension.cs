@@ -38,10 +38,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void ScriptTearDown()
         {
-            //SystemSettings.CloseSystemDimensionDialogIfNot();
-            //TimeManager.MediumPause();
-
-            HierarchySettings.NavigatorToNonHierarchy();
+            JazzFunction.LoginPage.RefreshJazz();
         }
 
         [Test]

@@ -211,7 +211,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
 
             //On homepage, check the dashboard
-            EnergyAnalysis.NavigateToAllDashBoards();
+            HomePagePanel.NavigateToAllDashboard();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
             TimeManager.MediumPause();
             HomePagePanel.ClickDashboardButton(dashboard.DashboardName);

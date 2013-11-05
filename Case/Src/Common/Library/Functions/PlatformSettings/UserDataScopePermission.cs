@@ -51,6 +51,7 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region common action
+
         /// <summary>
         /// Navigate to User setting
         /// </summary>

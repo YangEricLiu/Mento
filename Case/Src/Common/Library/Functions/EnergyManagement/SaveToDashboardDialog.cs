@@ -26,7 +26,10 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox DashboardComboBox = JazzComboBox.EnergyViewSaveDashboardDashboardComboBox;
 
         //Create dashboard link
-        private static Button CreateDashboardButton = JazzButton.CreateNewDashboardButton;
+        private static RadioButton CreateDashboardButton = JazzButton.CreateNewDashboardButton;
+
+        //Existed dashboard link
+        private static RadioButton ExistedDashboardButton = JazzButton.ExistedDashboardButton;
 
         //Dashboard name textbox
         private static TextField DashboardNameTextbox = JazzTextField.EnergyViewSaveDashboardDashboardNameTextField;
@@ -105,6 +108,21 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickCancelButton()
         {
             base.Cancel();
+        }
+
+        public bool IsCreateNewDashboardButtonDisabled()
+        {
+            return CreateDashboardButton.IsRadioButtonDisabled();
+        }
+
+        public bool IsExistedDashboardButtonChecked()
+        {
+            return ExistedDashboardButton.IsRadioButtonChecked();
+        }
+
+        public string GetCreateNewDashboardText()
+        {
+            return CreateDashboardButton.GetRadioButtonLabel();
         }
     }
 }

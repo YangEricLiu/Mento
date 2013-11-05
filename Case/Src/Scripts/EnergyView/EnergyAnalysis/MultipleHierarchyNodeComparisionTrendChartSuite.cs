@@ -94,7 +94,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //Open "多层级数据点" again
@@ -114,7 +114,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //Open "多层级数据点" again
@@ -133,7 +133,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //Open "多层级数据点" again
@@ -152,7 +152,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //Open "多层级数据点" again
@@ -193,7 +193,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsFalse(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             var dashboard = input.InputData.DashboardInfo;

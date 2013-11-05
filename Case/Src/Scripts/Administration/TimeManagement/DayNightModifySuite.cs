@@ -202,6 +202,9 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsTrue(TimeSettingsDayNight.IsModifyButtonDisplayed());
             Assert.AreEqual(testData.InputData.TimeRange.Length, TimeSettingsDayNight.GetTimeRangeItemsNumber());
             Assert.IsTrue(TimeSettingsDayNight.IsCalendarExist(testData.ExpectedData.CommonName));
+
+            //Emma added on 2013/10/30
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CarbonSettings);
         }
         #endregion
 

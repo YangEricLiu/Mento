@@ -236,11 +236,32 @@ namespace Mento.ScriptCommon.Library.Functions
             return ElementHandler.Exists(OptionWindowLocator);
         }
 
-        public void RefreshJazz()
+        public void RefreshJazz(string customerName = null)
         {
             JazzBrowseManager.RefreshJazz();
-            ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
-            TimeManager.MediumPause();
+            if (String.IsNullOrEmpty(customerName))
+            {
+                TimeManager.ShortPause();
+
+                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
+                TimeManager.MediumPause();
+            }
+            else
+            {
+                ElementHandler.Wait(OptionWindowLocator, WaitType.ToAppear, timeout: 300);
+                TimeManager.MediumPause();
+
+                if (ElementHandler.Exists(OptionWindowLocator))
+                {
+                    LoginCustomerOption.SelectItem(customerName);
+                    TimeManager.ShortPause();
+                    LoginCustomerOptionConfirm.Click();
+                    TimeManager.Pause(5000);
+
+                    ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
+                    TimeManager.MediumPause();
+                }
+            }
         }
     }
 }

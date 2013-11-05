@@ -35,7 +35,7 @@ namespace Mento.Script.Administration.User
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            UserSettings.NavigatorToTimeSetting();
         }
 
         [Test]

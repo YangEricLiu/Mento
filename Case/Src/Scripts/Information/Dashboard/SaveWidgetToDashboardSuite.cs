@@ -173,7 +173,7 @@ namespace Mento.Script.Information.Dashboard
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-
+            
             //Check '新建仪表盘' radio button
             EnergyAnalysis.Toolbar.SelectMoreOption(EnergyViewMoreOption.ToDashboard);
             TimeManager.MediumPause();
@@ -186,6 +186,105 @@ namespace Mento.Script.Information.Dashboard
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(SaveToDs.GetNewDashboardMsg().Contains(input.ExpectedData.DashboardMessage[0]));
+
+            //Blank
+            SaveToDs.FillDashboard("");
+            SaveToDs.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(SaveToDs.GetNewDashboardMsg().Contains(input.ExpectedData.NoneDashboardMessage));
+
+            //Input valid Dashboard name (e.g. 新仪表盘1) and click '取消'.
+            SaveToDs.FillDashboard(dashboard[1].DashboardName);
+            SaveToDs.ClickCancelButton();
+
+            //Input valid Dashboard name (e.g. '新仪表盘Dash 1') and click '保存'.
+            EnergyAnalysis.Toolbar.SelectMoreOption(EnergyViewMoreOption.ToDashboard);
+            TimeManager.MediumPause();
+            SaveToDs.ClickCreateNewDashboardButton();
+            SaveToDs.FillWidgetName(dashboard[1].WidgetName);
+            SaveToDs.FillDashboard(dashboard[1].DashboardName);
+            SaveToDs.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+
+            Assert.AreEqual("Widget_Add_101_3_7_A已保存", HomePagePanel.GetPopNotesValue());
+
+            //For the same hierarchy node, create several new dashboards and save widget to it one by one, until the total dashboard number of the node is 10.
+            for (int i = 2; i < 5; i++)
+            {
+                EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[i].WidgetName, dashboard[i].HierarchyName, dashboard[i].IsCreateDashboard, dashboard[i].DashboardName);
+                JazzMessageBox.LoadingMask.WaitLoading();
+                TimeManager.LongPause();
+            }
+            
+            //Radio button '新建仪表盘' becomes disabled and unchecked, message '仪表盘数目已满' is displayed. radio button '已存在仪表盘' becomes checked automatically.
+            EnergyAnalysis.Toolbar.SelectMoreOption(EnergyViewMoreOption.ToDashboard);
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(SaveToDs.IsCreateNewDashboardButtonDisabled());
+            Assert.IsTrue(SaveToDs.IsExistedDashboardButtonChecked());
+            Assert.AreEqual("仪表盘数目已满", SaveToDs.GetCreateNewDashboardText());
+            SaveToDs.ClickCancelButton();
+
+            //Delete a dashboard from above hierarchy node,
+            HomePagePanel.NavigateToAllDashboard();
+            TimeManager.MediumPause();
+
+            HomePagePanel.SelectHierarchyNode(dashboard[3].HierarchyName);
+            TimeManager.MediumPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[3].DashboardName);
+            JazzMessageBox.LoadingMask.WaitWidgetsLoading(30);
+            TimeManager.MediumPause();
+
+            HomePagePanel.ClickDeleteDashboardButton(dashboard[3].DashboardName);
+            TimeManager.ShortPause();
+            JazzMessageBox.MessageBox.Delete();
+            TimeManager.MediumPause();
+
+            //Check '新建仪表盘' radio button,Input valid Dashboard name, and click '保存' again.
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.CheckTag(input.InputData.TagName);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WidgetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Select another hierarchy node which doesn't related to selected tags, Check '新建仪表盘' radio button,Input valid Dashboard name, and click '保存'.
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[5].WidgetName, dashboard[5].HierarchyName, dashboard[5].IsCreateDashboard, dashboard[5].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Select above hierarchy node which doesn't related to selected tags,Select an existing dashboard, click '保存'.
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[6].WidgetName, dashboard[6].HierarchyName, dashboard[6].IsCreateDashboard, dashboard[6].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //check 
+            HomePagePanel.NavigateToAllDashboard();
+            TimeManager.MediumPause();
+
+            HomePagePanel.SelectHierarchyNode(dashboard[5].HierarchyName);
+            TimeManager.MediumPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[5].DashboardName);
+            JazzMessageBox.LoadingMask.WaitWidgetsLoading(30);
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[5].WidgetName));
+
+            HomePagePanel.SelectHierarchyNode(dashboard[6].HierarchyName);
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(HomePagePanel.IsDashboardButtonExisted(dashboard[6].DashboardName));
         }
     }
 }

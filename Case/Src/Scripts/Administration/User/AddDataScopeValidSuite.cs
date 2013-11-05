@@ -36,7 +36,7 @@ namespace Mento.Script.Administration.User
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            JazzFunction.LoginPage.RefreshJazz("EMOP系统管理");
         }
 
         [Test]
@@ -120,7 +120,7 @@ namespace Mento.Script.Administration.User
 
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[1]);
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.CustomerList));
-            UserDataPermissionSettings.CloseTreeWindow();
+            //UserDataPermissionSettings.CloseTreeWindow();
 
             // energy analysis
         }
@@ -154,7 +154,7 @@ namespace Mento.Script.Administration.User
             TimeManager.MediumPause();
 
             Assert.IsFalse(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
-            UserDataPermissionSettings.CloseTreeWindow();
+            //UserDataPermissionSettings.CloseTreeWindow();
         }
 
         [Test]
@@ -179,7 +179,7 @@ namespace Mento.Script.Administration.User
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
             // All hierarchy nodes are unchecked
             Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
-            UserDataPermissionSettings.CloseTreeWindow();         
+            //UserDataPermissionSettings.CloseTreeWindow();         
         }
 
         [Test]
@@ -206,7 +206,7 @@ namespace Mento.Script.Administration.User
             TimeManager.ShortPause();
             // Verify the hierarchy nodes are checked
             Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
-            UserDataPermissionSettings.CloseTreeWindow();
+            //UserDataPermissionSettings.CloseTreeWindow();
         }
 
         [Test]
@@ -234,7 +234,7 @@ namespace Mento.Script.Administration.User
 
             // Verify the hierarchy nodes are checked
             Assert.IsFalse(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
-            UserDataPermissionSettings.CloseTreeWindow();
+            //UserDataPermissionSettings.CloseTreeWindow();
         }
         
         [Test]
@@ -263,7 +263,7 @@ namespace Mento.Script.Administration.User
             // Verify the hierarchy nodes are checked
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.HierarchyNodePath));
-            UserDataPermissionSettings.CloseTreeWindow();
+            //UserDataPermissionSettings.CloseTreeWindow();
 
         }
 
@@ -323,7 +323,7 @@ namespace Mento.Script.Administration.User
             Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
             //Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.ExpectedData.CustomerList));
             Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.ExpectedData.HierarchyNodePath));
-            UserDataPermissionSettings.CloseTreeWindow();
+            //UserDataPermissionSettings.CloseTreeWindow();
         }
         /*
         [Test]

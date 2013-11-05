@@ -66,6 +66,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            Assert.AreEqual(1, CostUsage.GetTrendChartLines());
 
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
@@ -106,6 +107,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            Assert.AreEqual(1, CostUsage.GetTrendChartLines());
 
             //Uncheck "water" and check "coal"
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[1]);
@@ -119,6 +121,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            Assert.AreEqual(1, CostUsage.GetTrendChartLines());
         
             //Check "介质总览"
             CostUsage.SelectCommodity();
@@ -131,6 +134,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            Assert.AreEqual(1, CostUsage.GetTrendChartLines());
         }
     }
 }

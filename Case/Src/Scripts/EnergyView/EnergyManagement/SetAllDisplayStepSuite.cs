@@ -272,10 +272,10 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Week));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
-                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Month));
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Month));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
 
-                //click "week"
+                //click "day"
                 EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
                 JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
                 TimeManager.LongPause();
@@ -283,7 +283,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
-                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Month));
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Month));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
 
                 //back to intinial
@@ -389,7 +389,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
 
                 //click "year"
-                EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+                EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
                 JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
                 TimeManager.LongPause();
                 Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
@@ -418,9 +418,58 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             //1. Selected Time Range
             var timeRange = input.InputData.ManualTimeRange;
-            for (int i = 0; i < timeRange.Length; i++)
-            {
-                EnergyViewToolbar.SetDateRange(timeRange[i].StartDate, timeRange[i].EndDate);
+
+            //i = 0
+                EnergyViewToolbar.SetDateRange(timeRange[0].StartDate, timeRange[0].EndDate);
+                TimeManager.ShortPause();
+
+                //Check tag and view data view
+                EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+                EnergyViewToolbar.View(EnergyViewType.List);
+                EnergyViewToolbar.ClickViewButton();
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+
+                //Default is month
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
+
+                //Click all Optional Steps to change chart view.
+                EnergyViewToolbar.View(EnergyViewType.Line);
+                EnergyViewToolbar.ClickViewButton();
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+
+                Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+                //Default is month 
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
+
+                //click "year"
+                EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+                Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Year));
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Month));
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
+
+                //back to intinial
+                EnergyAnalysis.UncheckTag(input.InputData.TagNames[0]);
+                EnergyViewToolbar.ClickViewButton();
+                TimeManager.LongPause();
+
+                //i = 1
+                EnergyViewToolbar.SetDateRange(timeRange[1].StartDate, timeRange[1].EndDate);
                 TimeManager.ShortPause();
 
                 //Check tag and view data view
@@ -452,7 +501,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
 
                 //click "year"
-                EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+                EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
                 JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
                 TimeManager.LongPause();
                 Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
@@ -467,7 +516,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 EnergyAnalysis.UncheckTag(input.InputData.TagNames[0]);
                 EnergyViewToolbar.ClickViewButton();
                 TimeManager.LongPause();
-            }
         }
     }
 }

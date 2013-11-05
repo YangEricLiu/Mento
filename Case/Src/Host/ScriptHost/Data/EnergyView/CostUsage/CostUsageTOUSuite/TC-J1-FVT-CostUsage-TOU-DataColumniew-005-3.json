@@ -8,7 +8,7 @@
 			"DashboardInfo":{
 				"WigetName":"CostTOUElec1",
 				"HierarchyName":["NancyCostCustomer2","组织B", "园区C", "楼宇D"],
-				"IsCreateDashboard":"false",
+				"IsCreateDashboard":"true",
 				"DashboardName":"CostTOU",
 			},
 			"failedFileName":["F-CostUsageTOUDataView001-3-Week-Elec.xls"],

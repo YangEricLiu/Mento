@@ -95,7 +95,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
         {
             //Navigate to Energy Consumption Unit  (单位能耗指标) module.
             //Click Function Type button.
-            UnitIndicator.NavigateToUnitKPI();
+            UnitIndicator.NavigateToUnitIndicator();
             EnergyViewToolbar.ClickFuncModeConvertTarget();
 
             //Options 'Energy Consumption','Carbon Emission' and 'Cost' are displayed in dropdown list.

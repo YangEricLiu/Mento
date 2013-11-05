@@ -33,7 +33,7 @@ namespace Mento.Script.Administration.TOU
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
+            //TOUBasicTariffSettings.NavigatorToTimeSettings();
             //TimeManager.MediumPause();
         }
 

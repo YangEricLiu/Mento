@@ -9,10 +9,10 @@
 			"MultiHieTagNames":["V13_BuildingBC", "V14_BuildingBC", "V15_BuildingBC", "V6_BuildingBC", "V7_BuildingBC", "V8_BuildingBC"],
 			"failedFileName":["F-MultiHierarchyNodeDataView101-1-D-V2_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-V2V1_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-V11V2V1_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-9VBuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-10NullVBuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-10VBuildingBC.xls"],
 			"DashboardInfo":{
-				"WigetName":"MultiDataView1012",
+				"WigetName":"UnitComp1011",
 				"HierarchyName":["NancyCustomer1", "园区测试多层级", "楼宇BAD"],
 				"IsCreateDashboard":"true",
-				"DashboardName":"Dashboard_Multi1012",
+				"DashboardName":"UnitComp1011",
 			}
 		},
 		"ExpectedData":

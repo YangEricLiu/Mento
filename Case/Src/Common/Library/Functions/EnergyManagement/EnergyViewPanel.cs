@@ -53,6 +53,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             get;
         }
+
         #endregion
 
         //Toolbar
@@ -356,6 +357,10 @@ namespace Mento.ScriptCommon.Library.Functions
             if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
             {
                 string filePath = Path.Combine(path, expectedFileName);
+                JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+
                 DataTable actualData = GetAllData();
 
                 DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
@@ -372,9 +377,19 @@ namespace Mento.ScriptCommon.Library.Functions
                 
         #region Chart view operations
 
+        public bool EntirelyNoChartDrawn()
+        {
+            return Chart.EntirelyNoChartDrawn();
+        }
+
         public bool IsColumnDrawn()
         {
             return Chart.HasDrawnColumn();
+        }
+
+        public int GetColumnChartColumns()
+        {
+            return Chart.GetColumnChartColumns();
         }
 
         public bool IsTrendChartDrawn()
@@ -382,9 +397,19 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.HasDrawnTrend();
         }
 
+        public int GetTrendChartLines()
+        {
+            return Chart.GetTrendChartLines();
+        }
+
         public bool IsDistributionChartDrawn()
         {
             return Chart.HasDrawnPie();
+        }
+
+        public int GetPiesNumber()
+        {
+            return Chart.GetPieDistributions();
         }
 
         public bool IsDataViewDrawn()
@@ -392,7 +417,14 @@ namespace Mento.ScriptCommon.Library.Functions
             return EnergyDataGrid.HasDrawnDataView();
         }
 
-        public bool IsLegendDrawn()
+        public bool IsScrollbarExist()
+        {
+            return Chart.IsScrollbarExists();
+        }
+
+        #region legend
+        
+        public bool IsLegendExists()
         {
             return Chart.LegendExists();
         }
@@ -402,11 +434,54 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.LegendItemExists(legendName);
         }
 
-        public bool IsScrollbarExist()
+        public void ClickLegendItem(string legendName)
         {
-            return Chart.IsScrollbarExists();
+            Chart.ClickLegendItem(legendName);
         }
+
+        public void CloseLegendItem(string legendName)
+        {
+            Chart.CloseLegendItem(legendName);
+        }
+
+        public void HideLineCurveLegend(string legendName)
+        {
+            Chart.HideLineCurve(legendName);
+        }
+
+        public void ShowLineCurveLegend(string legendName)
+        {
+            Chart.ShowLineCurve(legendName);
+        }
+
+        public void HideColumnCurveLegend(string legendName)
+        {
+            Chart.HideColumnCurve(legendName);
+        }
+
+        public void ShowColumnCurveLegend(string legendName)
+        {
+            Chart.ShowColumnCurve(legendName);
+        }
+
+        public bool IsColumnLegendItemShown(string legendName)
+        {
+            return Chart.IsColumnLegendItemShown(legendName);
+        }
+
+        public bool IsLineLegendItemShown(string legendName)
+        {
+            return Chart.IsLineLegendItemShown(legendName);
+        }
+
+        public bool IsCloseLegendButtonExist(string legendName)
+        {
+            return Chart.IsCloseLegendButtonExist(legendName);
+        }
+
         #endregion
+        #endregion
+    
     }
 
     public enum TagTabs { HierarchyTag, SystemDimensionTab, AreaDimensionTab, }

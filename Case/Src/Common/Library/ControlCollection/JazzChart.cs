@@ -32,5 +32,21 @@ namespace Mento.ScriptCommon.Library
                 return GetControl<Chart>(JazzControlLocatorKey.ChartCostUsage);
             }
         }
+
+        public static Chart UnitIndicatorChart
+        {
+            get
+            {
+                return GetControl<Chart>(JazzControlLocatorKey.ChartUnitIndicator);
+            }
+        }
+
+        public static Chart RadioChart
+        {
+            get
+            {
+                return GetControl<Chart>(JazzControlLocatorKey.ChartRadio);
+            }
+        }
     }
 }

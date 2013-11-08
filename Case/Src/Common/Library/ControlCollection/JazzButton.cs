@@ -124,6 +124,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region unit
+
+        public static MenuButton IndustryConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonIndustryConvert);       
+
+        #endregion
+
         #endregion
 
         #region Navigator buttons

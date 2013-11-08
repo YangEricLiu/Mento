@@ -15,6 +15,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MenuButton UnitTypeConvertTargetButton = JazzButton.UnitTypeConvertMenuButton;
         private static MenuButton RadioTypeConvertTargetButton = JazzButton.RadioTypeConvertMenuButton;
         private static MenuButton RankTypeConvertTargetButton = JazzButton.RankTypeConvertMenuButton;
+        private static MenuButton IndustryConvertTargetButton = JazzButton.IndustryConvertMenuButton;
 
         private static Dictionary<CarbonConvertTarget, string[]> CarbonMenuItems = new Dictionary<CarbonConvertTarget, string[]>()
         {
@@ -61,6 +62,16 @@ namespace Mento.ScriptCommon.Library.Functions
 
         internal EnergyViewToolbarConvertTargetMenu() { }
 
+        public void SwitchIndustryMenuItem(string industry)
+        {
+            IndustryConvertTargetButton.SelectOneItem(industry);
+        }
+
+        public string GetIndustryButtonText()
+        {
+            return IndustryConvertTargetButton.GetText();
+        }
+
         public void SwitchCarbonMenuItem(CarbonConvertTarget target)
         {
             CarbonConvertTargetButton.SelectItem(CarbonMenuItems[target]);
@@ -84,6 +95,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SwitchUnitTypeMenuItem(UnitTypeConvertTarget target)
         {
             UnitTypeConvertTargetButton.SelectItem(UnitTypeMenuItems[target]);
+        }
+
+        public string GetUnitTypeButtonText()
+        {
+            return UnitTypeConvertTargetButton.GetText();
         }
 
         public void SwitchRadioTypeMenuItem(RadioTypeConvertTarget target)

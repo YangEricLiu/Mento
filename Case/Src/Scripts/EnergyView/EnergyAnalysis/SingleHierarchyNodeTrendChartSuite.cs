@@ -60,6 +60,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(1, EnergyAnalysis.GetTrendChartLines());
 
             //Uncheck v1, and select another tag under area dimension
             EnergyAnalysis.UncheckTag(input.InputData.TagNames[0]);
@@ -73,6 +74,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(1, EnergyAnalysis.GetTrendChartLines());
 
             //Uncheck v2, and select another tag under system dimension
             EnergyAnalysis.UncheckTag(input.InputData.TagNames[1]);
@@ -86,6 +88,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(1, EnergyAnalysis.GetTrendChartLines());
 
             //Uncheck v3 with clear all data
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
@@ -116,6 +119,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsFalse(EnergyAnalysis.IsTrendChartDrawn());
 
             //Uncheck tag V_Null_BuildingBC, and select another tag v14
             EnergyAnalysis.UncheckTag(input.InputData.TagNames[0]);
@@ -124,6 +128,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(1, EnergyAnalysis.GetTrendChartLines());
 
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
@@ -163,6 +169,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(4, EnergyAnalysis.GetTrendChartLines());
 
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;

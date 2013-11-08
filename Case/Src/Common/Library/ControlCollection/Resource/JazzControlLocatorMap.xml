@@ -87,7 +87,9 @@
             <add key="ButtonDashboardPosition" value="//div[@id='hp-dashboard-list-targetEl']/div[contains(@id,'dashboardbutton')][$#positionIndex]" type="XPath"/>
 
       </HomePage>
+      
       <!--User Management Begin-->
+      
       <User>
           <add key="ButtonUserCreate" value="st-user-grid-add-btnInnerEl" type="ID"/>
           <add key="ButtonUserRefresh" value="st-user-grid-refresh" type="ID"/>
@@ -131,7 +133,9 @@
           <add key="MenuButtonTagModeConvert" value="em-tag-mode-btn" type="ID"/>
           <add key="MenuButtonUnitTypeConvert" value="//div[@id='em-unit-energy-chartpanel']/div/div/div[2]" type="XPath"/>
           <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-ratio-chartgridpanel']/div/div/div[2]" type="XPath"/>
-          <!--Greenie modified at 2013.10.28-->
+          <add key="MenuButtonIndustryConvert" value="//div[@id='em-unit-energy-chartpanel']/div/div/div[3]" type="XPath"/>
+
+        <!--Greenie modified at 2013.10.28-->
           <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[3]" type="XPath"/>
 
           <add key="TabButtonEnergyViewALLTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='全部数据点']]" type="XPath"/>
@@ -757,9 +761,9 @@
   <!--Grid Begin-->
   <Grid>
       <energyview>
-          <add key="GridEnergyAnalysisAllTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@id, 'taggrid') and contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
-          <add key="GridEnergyAnalysisSystemDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
-          <add key="GridEnergyAnalysisAreaDimensionTagList" value="//div[@id='em-energy-tagfilter']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridEnergyAnalysisAllTagList" value="//div[@id='em-content-west-region-body']//div[contains(@id, 'taggrid') and contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridEnergyAnalysisSystemDimensionTagList" value="//div[@id='em-content-west-region-body']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridEnergyAnalysisAreaDimensionTagList" value="//div[@id='em-content-west-region-body']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridEnergyAnalysisEnergyDataList" value="//div[@id='em-content-center-region-body']//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridCarbonDataList" value="//div[@id='em-carbon-chartgridpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
@@ -978,8 +982,10 @@
   <Chart>
     
     <add key="ChartEnergyView" value="svg" type="TagName"/>
-    <add key="ChartCarbonUsage" value="//div[@id='em-carbon-chartgridpanel-body']/div/div[contains(@id,'linechartcomponent')]/div[@class='highcharts-container']" type="XPath"/>
-    <add key="ChartCostUsage" value="//div[@id='em-cost-chartgridpanel-body']/div/div[contains(@id,'linechartcomponent')]/div[@class='highcharts-container']" type="XPath"/>
+    <add key="ChartCarbonUsage" value="//div[@id='em-carbon-chartgridpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
+    <add key="ChartCostUsage" value="//div[@id='em-cost-chartgridpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
+    <add key="ChartUnitIndicator" value="//div[@id='em-unit-energy-chartpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
+    <add key="ChartRadio" value="//div[@id='em-ratio-chartgridpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
 
   </Chart>
 

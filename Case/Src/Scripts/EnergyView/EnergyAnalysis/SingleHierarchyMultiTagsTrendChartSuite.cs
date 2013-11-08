@@ -64,6 +64,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(1, EnergyAnalysis.GetTrendChartLines());
 
             //Keep V(6) checked, and select V(1) to draw Data view.
             EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);
@@ -72,6 +73,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
 
             //Check one more vtag V(2) on system dimension
             EnergyAnalysis.SwitchTagTab(TagTabs.SystemDimensionTab);
@@ -81,6 +83,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(3, EnergyAnalysis.GetTrendChartLines());
 
             //checked one more ptag P(1) checkbox.
             EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);
@@ -89,6 +92,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(4, EnergyAnalysis.GetTrendChartLines());
 
             //Check other 5 vtags.
             EnergyAnalysis.CheckTags(input.InputData.MoreTagNames);
@@ -99,6 +103,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(10, EnergyAnalysis.GetTrendChartLines());
 
             //can't check any tags checkbox on All Tag list/System dimension/Area dimension tab
             Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());
@@ -125,6 +130,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(10, EnergyAnalysis.GetTrendChartLines());
 
             //Click "Save to dashboard"to save the Data view to Hierarchy node dashboard
             var dashboard = input.InputData.DashboardInfo;
@@ -144,7 +150,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
             JazzMessageBox.MessageBox.Clear();
             TimeManager.MediumPause();
-            Assert.IsFalse(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.IsTrue(EnergyAnalysis.EntirelyNoChartDrawn());
 
             //On homepage, check the dashboard
             EnergyAnalysis.NavigateToAllDashBoards();

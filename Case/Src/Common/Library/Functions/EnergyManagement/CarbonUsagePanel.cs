@@ -170,7 +170,7 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.HasDrawnPie();
         }
 
-        public int GetPies()
+        public int GetPiesNumber()
         {
             return Chart.GetPieDistributions();
         }

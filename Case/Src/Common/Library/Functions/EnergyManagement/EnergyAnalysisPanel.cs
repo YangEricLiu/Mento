@@ -18,12 +18,6 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region Controls
         private static Container MultiHierarchyPanelContainer = JazzContainer.MultiHierarchyPanelContainer;
-        //TagGrid
-        private static Grid TagGrid
-        {
-            get;
-            set;
-        }
 
         protected override Chart Chart
         {
@@ -33,6 +27,13 @@ namespace Mento.ScriptCommon.Library.Functions
         protected override Grid EnergyDataGrid
         {
             get { return JazzGrid.EnergyAnalysisEnergyDataList; }
+        }
+
+        //TagGrid
+        private static Grid TagGrid
+        {
+            get;
+            set;
         }
         #endregion
 

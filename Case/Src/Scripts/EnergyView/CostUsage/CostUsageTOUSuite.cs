@@ -60,9 +60,6 @@ namespace Mento.Script.EnergyView.CostUsage
             
             //Check tag and view trendchart, hourly
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
-            EnergyViewToolbar.ShowPeakValley();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
             JazzFunction.EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -73,17 +70,21 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(CostUsage.IsColumnChartDrawn());
-            Assert.AreEqual(1, CostUsage.GetTrendChartLines());
+            Assert.AreEqual(3, CostUsage.GetColumnChartColumns());
 
             CostUsage.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
             Assert.IsTrue(CostUsage.IsColumnChartDrawn());
+            Assert.AreEqual(3, CostUsage.GetColumnChartColumns());
 
             //Uncheck "电" and check "自来水"
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[0]);
             CostUsage.SelectCommodity(input.InputData.commodityNames[1]);
+            EnergyViewToolbar.ShowPeakValley();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
             Assert.IsFalse(EnergyViewToolbar.IsPeakValleyButtonEnable());
 
             //Uncheck "自来水" and check "煤"
@@ -112,22 +113,21 @@ namespace Mento.Script.EnergyView.CostUsage
             EnergyViewToolbar.ShowPeakValley();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            JazzFunction.EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
+            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
+            Assert.AreEqual(3, CostUsage.GetColumnChartColumns());
 
             CostUsage.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            JazzFunction.EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsColumnChartDrawn());
+            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
+            Assert.AreEqual(3, CostUsage.GetColumnChartColumns());
 
             //Uncheck "电" and check "煤"
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[0]);
             CostUsage.SelectCommodity(input.InputData.commodityNames[2]);
+            EnergyViewToolbar.ShowPeakValley();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
             Assert.IsFalse(EnergyViewToolbar.IsPeakValleyButtonEnable());
         }
 
@@ -153,7 +153,8 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
+            Assert.AreEqual(3, CostUsage.GetColumnChartColumns());
 
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;

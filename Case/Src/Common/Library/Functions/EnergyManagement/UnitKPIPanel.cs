@@ -12,6 +12,8 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     public class UnitKPIPanel : EnergyViewPanel
     {
+        public string UnitIndicatorPath = @"UnitIndicator\";
+
         #region Controls
 
         private static Grid UnitCarbonCommodityGrid = JazzGrid.CommodityUnitCarbonGrid;
@@ -56,7 +58,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         protected override Chart Chart
         {
-            get { return JazzChart.EnergyViewChart; }
+            get { return JazzChart.UnitIndicatorChart; }
         }
 
         protected override Grid EnergyDataGrid
@@ -131,6 +133,14 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.MediumPause();
         }
 
+        public void CheckTags(string[] tagNames)
+        {
+            foreach (string tagName in tagNames)
+            {
+                TagGrid.CheckRowCheckbox(2, tagName);
+            }
+        }
+
         public void SelectCommodityUnitCarbon(string[] commodityNames = null)
         {
             //total
@@ -190,6 +200,73 @@ namespace Mento.ScriptCommon.Library.Functions
         public DataTable GetAllData()
         {
             return EnergyDataGrid.GetAllData();
+        }
+
+        #endregion
+
+        #region unit chart
+
+        public bool IsTrendChartDrawn()
+        {
+            return Chart.HasDrawnTrend();
+        }
+
+        public int GetTrendChartLines()
+        {
+            return Chart.GetTrendChartLines();
+        }
+
+        public bool IsColumnChartDrawn()
+        {
+            return Chart.HasDrawnColumn();
+        }
+
+        public int GetColumnChartColumns()
+        {
+            return Chart.GetColumnChartColumns();
+        }
+
+        public bool IsPieChartDrawn()
+        {
+            return Chart.HasDrawnPie();
+        }
+
+        public int GetPies()
+        {
+            return Chart.GetPieDistributions();
+        }
+
+        public bool EntirelyNoChartDrawn()
+        {
+            return Chart.EntirelyNoChartDrawn();
+        }
+
+        #endregion
+
+        #region data view operation
+
+        /// <summary>
+        /// Export expected data table to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedDataTableToExcel(string fileName, DisplayStep displayStep)
+        {
+            ExportExpectedDataTableToExcel(fileName, displayStep, UnitIndicatorPath);
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDataViewOfCostUsage(string expectedFileName, string failedFileName)
+        {
+            return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, UnitIndicatorPath);
+        }
+
+        public bool IsDataViewExisted()
+        {
+            return EnergyDataGrid.HasDrawnDataView();
         }
 
         #endregion

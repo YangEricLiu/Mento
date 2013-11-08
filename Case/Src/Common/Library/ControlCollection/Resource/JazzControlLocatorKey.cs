@@ -184,6 +184,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region unit
+
+        public static string MenuButtonIndustryConvert = "MenuButtonIndustryConvert";
+
+        #endregion
+
         #endregion
 
         #region customersettings
@@ -1070,6 +1076,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ChartEnergyView = "ChartEnergyView";
         public static string ChartCarbonUsage = "ChartCarbonUsage";
         public static string ChartCostUsage = "ChartCostUsage";
+
+        public static string ChartUnitIndicator = "ChartUnitIndicator";
+        public static string ChartRadio = "ChartRadio";
         #endregion
 
         #region Window

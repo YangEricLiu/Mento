@@ -65,6 +65,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(1, EnergyAnalysis.GetTrendChartLines());
 
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
@@ -76,6 +77,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
 
             //Change the Start Time in first date range
             EnergyViewToolbar.ClickTimeSpanButton();
@@ -88,6 +90,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
 
             //Change the End Time in first date range, 
             EnergyViewToolbar.ClickTimeSpanButton();
@@ -100,6 +103,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
 
             //Add multiple compared spans, until the number of total time spans is 5
             EnergyViewToolbar.ClickTimeSpanButton();
@@ -122,6 +126,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(5, EnergyAnalysis.GetTrendChartLines());
             
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;

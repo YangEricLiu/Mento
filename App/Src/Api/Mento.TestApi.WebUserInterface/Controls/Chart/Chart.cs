@@ -15,13 +15,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         private static Locator LegendLocator = new Locator("g.highcharts-legend", ByType.CssSelector);
         private static Locator LegendItemsLocator = new Locator("g.highcharts-legend-item", ByType.CssSelector);
-        private static Locator LegendItemsCloseLocator = new Locator("svg/g[contains(@class,'highcharts-legend')]/g/g/g[@class='highcharts-legend-item' and text[text()='$#legendname']]/image", ByType.XPath);
-        private static Locator LegendItemTextLocator = new Locator("svg/g[contains(@class,'highcharts-legend')]/g/g/g[@class='highcharts-legend-item']/text[text()='$#legendname']", ByType.XPath);
+        private static Locator LegendItemsCloseLocator = new Locator("rect", ByType.TagName);
+        private static Locator LegendItemtspanLocator = new Locator("tspan", ByType.TagName);
+        private static Locator LegendItemTextLocator = new Locator("text", ByType.TagName);
 
         private static Locator CurveLocator = new Locator("g.highcharts-series", ByType.CssSelector);
         private static Locator ColumnLocator = new Locator("g.highcharts-tracker", ByType.CssSelector);
         private static Locator PieLocator = new Locator("g.highcharts-tracker", ByType.CssSelector);
-        private static Locator PiePathLocator = new Locator("path", ByType.TagName);
+        private static Locator PathLocator = new Locator("path", ByType.TagName);
+        private static Locator RectLocator = new Locator("rect", ByType.TagName);
         
         private static Locator TitleLocator = new Locator("svg/text[2]", ByType.XPath);
         private static Locator UomLocator = new Locator("svg/text[1]", ByType.XPath);
@@ -46,19 +48,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return ChildExists(LegendLocator);
         }
 
-        public bool IsNavigatorExists()
+        public bool IsCloseLegendButtonExist(string legendName)
         {
-            return ElementHandler.Exists(NavigatorLocator);
-        }
+            IWebElement LegendElement = GetLegendItemElement(legendName);
 
-        public bool IsScrollbarExists()
-        {
-            return ElementHandler.Exists(ScrollbarLocator);
+            return ChildExists(LegendItemsCloseLocator, LegendElement); 
         }
 
         public bool LegendItemExists(string legendName)
         {
-            if (GetLegendItemElement(LegendItemsLocator, legendName) != null)
+            if (GetLegendItemElement(legendName) != null)
             {
                 return true;
             }
@@ -68,40 +67,83 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
-        public void ShowCurve(string legendName)
+        public bool LegendItemsExists(string[] legendNames)
         {
-            if (!IsLegendItemShown(legendName))
+            bool allExisted = true;
+
+            foreach (string legendName in legendNames)
+            {
+                if (GetLegendItemElement(legendName) == null)
+                {
+                    allExisted = false;
+                }
+            }
+
+            return allExisted;
+        }
+
+        public void ShowLineCurve(string legendName)
+        {
+            if (!IsLineLegendItemShown(legendName))
                 ClickLegendItem(legendName);
         }
 
-        public void HideCurve(string legendName)
+        public void HideLineCurve(string legendName)
         {
-            if (IsLegendItemShown(legendName))
+            if (IsLineLegendItemShown(legendName))
                 ClickLegendItem(legendName);
         }
+
+        public void ShowColumnCurve(string legendName)
+        {
+            if (!IsColumnLegendItemShown(legendName))
+                ClickLegendItem(legendName);
+        }
+
+        public void HideColumnCurve(string legendName)
+        {
+            if (IsColumnLegendItemShown(legendName))
+                ClickLegendItem(legendName);
+        }
+
 
         public void CloseLegendItem(string legendName)
         {
-            var legendClose = GetLegendItemElement(LegendItemsCloseLocator, legendName);
+            IWebElement LegendElement = GetLegendItemElement(legendName);
+            IWebElement closeLegend = FindChild(LegendItemsCloseLocator, LegendElement);
 
-            legendClose.Click();
+            closeLegend.Click();
         }
 
         public void ClickLegendItem(string legendName)
         {
-            var legend = GetLegendItemElement(LegendItemsLocator, legendName);
+            IWebElement LegendElement = GetLegendItemElement(legendName);
+            IWebElement legendText = FindChild(LegendItemtspanLocator, LegendElement);
 
-            if (legend != null)
-            {
-                legend.Click();
-            }
+            legendText.Click();
         }
 
+        public bool IsColumnLegendItemShown(string legendName)
+        {
+            IWebElement LegendElement = GetLegendItemElement(legendName);
+            IWebElement rectLegend = FindChild(RectLocator, LegendElement);
+
+            return !rectLegend.GetAttribute("fill").Contains("#CCC");
+        }
+
+        public bool IsLineLegendItemShown(string legendName)
+        {
+            IWebElement LegendElement = GetLegendItemElement(legendName);
+            IWebElement pathLegend = FindChild(PathLocator, LegendElement);
+
+            return !pathLegend.GetAttribute("stroke").Contains("#CCC");
+        }
 
         #region Private methods
-        private IWebElement GetLegendItemElement(Locator locator, string legendName)
+
+        private IWebElement GetLegendItemElement(string legendName)
         {
-            IWebElement[] items = FindChildren(locator);
+            IWebElement[] items = FindChildren(LegendItemsLocator);
 
             foreach (IWebElement item in items)
             {
@@ -113,13 +155,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return null;
         }
-
-        private bool IsLegendItemShown(string legendName)
-        {
-            var textElement = GetLegendItemElement(LegendItemTextLocator, legendName);
-
-            return !textElement.GetAttribute("style").Contains("color:#CCC;fill:#CCC;");
-        }
+        
         #endregion
         #endregion
 
@@ -147,11 +183,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             foreach (IWebElement line in lines)
             {
+                //bool pathExisted = ChildExists(PathLocator, line);
+                bool isVisible = line.GetAttribute("visibility").Contains("visible");
+
                 if (line.GetAttribute("transform").Contains("translate(0,100)"))
                 {
                     noLine++;
                 }
-                else
+                else if (isVisible)
                 {
                     haveLine++;
                 }
@@ -168,11 +207,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             foreach (IWebElement line in lines)
             {
+                //bool pathExisted = ChildExists(PathLocator, line);
+                bool isVisible = line.GetAttribute("visibility").Contains("visible");
+
                 if (line.GetAttribute("transform").Contains("translate(0,100)"))
                 {
                     noLine++;
                 }
-                else
+                else if (isVisible)
                 {
                     haveLine++;
                 }
@@ -193,11 +235,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             foreach (IWebElement line in lines)
             {
+                bool rectExisted = ChildExists(RectLocator, line);
+                bool isVisible = line.GetAttribute("visibility").Contains("visible");
+
                 if (line.GetAttribute("transform").Contains("translate(0,100)"))
                 {
                     noColumn++;
                 }
-                else
+                else if (rectExisted && isVisible)
                 {
                     haveColumn++;
                 }
@@ -214,11 +259,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             foreach (IWebElement line in lines)
             {
+                bool rectExisted = ChildExists(RectLocator, line);
+                bool isVisible = line.GetAttribute("visibility").Contains("visible");
+
                 if (line.GetAttribute("transform").Contains("translate(0,100)"))
                 {
                     noColumn++;
                 }
-                else
+                else if (rectExisted && isVisible)
                 {
                     haveColumn++;
                 }
@@ -233,7 +281,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool HasDrawnPie()
         {
             IWebElement pie = FindChild(PieLocator);
-            IWebElement[] piePaths = ElementHandler.FindElements(PiePathLocator, pie).ToArray();
+            IWebElement[] piePaths = ElementHandler.FindElements(PathLocator, pie).ToArray();
             int pieNumbers = piePaths.Length / 2;
 
             return pieNumbers > 0;
@@ -242,7 +290,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public int GetPieDistributions()
         {
             IWebElement pie = FindChild(PieLocator);
-            IWebElement[] piePaths = ElementHandler.FindElements(PiePathLocator, pie).ToArray();
+            IWebElement[] piePaths = ElementHandler.FindElements(PathLocator, pie).ToArray();
             int pieNumbers = piePaths.Length / 2;
 
             return pieNumbers;
@@ -251,9 +299,35 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #endregion
 
         #region Common
+
+        public bool IsNavigatorExists()
+        {
+            return ElementHandler.Exists(NavigatorLocator);
+        }
+
+        public bool IsScrollbarExists()
+        {
+            return ElementHandler.Exists(ScrollbarLocator);
+        }
+
         private bool ChildExists(Locator locator)
         {
             return FindChildren(locator).Count() > 0;
+        }
+
+        private bool ChildExists(Locator locator, IWebElement parent)
+        {
+            return ElementHandler.FindElements(locator, parent).ToArray().Length > 0;
+        }
+
+        private IWebElement[] FindChildren(Locator locator, IWebElement parent)
+        {
+            return ElementHandler.FindElements(locator, parent).ToArray();
+        }
+
+        private IWebElement FindChild(Locator locator, IWebElement parent)
+        {
+            return ElementHandler.FindElement(locator, parent);
         }
 
         public bool EntirelyNoChartDrawn()

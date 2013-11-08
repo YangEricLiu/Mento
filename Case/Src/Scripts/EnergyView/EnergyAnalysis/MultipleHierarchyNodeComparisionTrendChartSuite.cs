@@ -77,6 +77,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(1, EnergyAnalysis.GetTrendChartLines());
 
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -96,6 +97,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
 
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -116,6 +118,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(3, EnergyAnalysis.GetTrendChartLines());
 
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -135,6 +138,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(9, EnergyAnalysis.GetTrendChartLines());
 
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -154,6 +158,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(10, EnergyAnalysis.GetTrendChartLines());
 
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -195,6 +200,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.AreEqual(10, EnergyAnalysis.GetTrendChartLines());
 
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);

@@ -138,7 +138,7 @@
     <Folder Include="Data\Administration\User\UserManagementAddValid\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestFormulaVtagSmokeTestSuite\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestKPIBaselineSuite\" />
-    <Folder Include="Data\EnergyView\UnitIndicator\ViewConsumptionUnitIndicatorSuite\" />
+    <Folder Include="Data\EnergyView\Radio\" />
     <Folder Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\" />
     <Folder Include="Resource\en\" />
   </ItemGroup>
@@ -556,7 +556,7 @@
     <None Include="Data\EnergyView\CorporateRanking\SelectHierarchyNodesForRanking\TC-J1-FVT-SelectHierarchyNodesForRanking-101-2.json" />
     <None Include="Data\EnergyView\CorporateRanking\SelectHierarchyNodesForRanking\TC-J1-FVT-SelectHierarchyNodesForRanking-101-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataViewSuite\TC-J1-FVT-CostUsage-DataView-001-1.json" />
-    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-DataColumniew-005-3.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-3.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-2.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTrendChartSuite\TC-J1-FVT-CostUsage-TrendChar-002-1.json" />
@@ -592,6 +592,9 @@
     <None Include="Data\EnergyView\EnergyManagement\SetDisplayStepSuite\TC-J1-FVT-SetDisplayStep-001-3.json" />
     <None Include="Data\EnergyView\EnergyManagement\SetDisplayStepSuite\TC-J1-FVT-SetDisplayStep-001-2.json" />
     <None Include="Data\EnergyView\EnergyManagement\SetDisplayStepSuite\TC-J1-FVT-SetDisplayStep-001-1.json" />
+    <None Include="Data\EnergyView\UnitIndicator\ViewConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-View-101-3.json" />
+    <None Include="Data\EnergyView\UnitIndicator\ViewConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-View-101-2.json" />
+    <None Include="Data\EnergyView\UnitIndicator\ViewConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-View-101-1.json" />
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-040.json" />
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-037.json" />
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-038.json" />

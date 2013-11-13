@@ -60,6 +60,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static MenuButton FuncModeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonFuncModeConvert);
         public static MenuButton TagModeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonTagModeConvert);
         public static MenuButton UnitTypeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonUnitTypeConvert);
+        public static MenuButton CarbonUnitTypeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonCarbonUnitTypeConvert);
         public static MenuButton RadioTypeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonRadioTypeConvert);
         public static MenuButton RankTypeConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonRankTypeConvert);
         public static Button EnergyViewPeakValleyButton = GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewPeakValley);

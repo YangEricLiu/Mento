@@ -792,8 +792,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 else
                     data.Merge(GetCurrentPageData());
 
-                NextPage();
-                GetControl<LoadingMask>().WaitLoading();
+                if (PageCount > 1)
+                {
+                    NextPage();
+                    GetControl<LoadingMask>().WaitLoading();
+                }     
             }
 
             return data;

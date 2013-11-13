@@ -2,12 +2,12 @@
 <WebElement>
   <!--Button Begin-->
     <Button>
-        <login>
+      <login>
             <add key="ButtonLoginSubmit" value = "btnSubmit" type="ID"/>
             <add key="ButtonLoginCustomerOptionConfirm" value = "//div[contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
         </login>
       
-        <navigator>
+      <navigator>
             <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
             <add key="ButtonNavigatorEnergyView" value="header-btn-energyservice" type="ID"/>
             <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
@@ -132,6 +132,7 @@
           <add key="MenuButtonFuncModeConvert" value="em-func-mode-btn" type="ID"/>
           <add key="MenuButtonTagModeConvert" value="em-tag-mode-btn" type="ID"/>
           <add key="MenuButtonUnitTypeConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[2]" type="XPath"/>
+          <add key="MenuButtonCarbonUnitTypeConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[3]" type="XPath"/>
           <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-content-center-region-body']//div/div/div/div[2]" type="XPath"/>
           <add key="MenuButtonIndustryConvert" value="//div[@id='em-unit-energy-chartpanel']/div/div/div[3]" type="XPath"/>
 
@@ -766,7 +767,7 @@
 
   <!--Grid Begin-->
   <Grid>
-      <energyview>
+    <energyview>
           <add key="GridEnergyAnalysisAllTagList" value="//div[@id='em-content-west-region-body']//div[contains(@id, 'taggrid') and contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridEnergyAnalysisSystemDimensionTagList" value="//div[@id='em-content-west-region-body']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridEnergyAnalysisAreaDimensionTagList" value="//div[@id='em-content-west-region-body']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
@@ -800,7 +801,7 @@
           <add key="GridCommodityRankCarbon" value="//div[@id='em-rank-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridCommodityRankCost" value="//div[@id='em-rank-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
-          <add key="GridUnitKPIEnergyDataList" value="//div[@id='em-unit-energy-chartpanel-body']//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridUnitKPIEnergyDataList" value="//div[@id='em-content-center-region-body']/div/div[contains(@class,'x-panel-body-default')]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridMultiHierarchyAllTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@id, 'taggrid') and contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridMultiHierarchySystemDimensionTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
@@ -810,6 +811,7 @@
           <add key="GridCarbonFactorsList" value="st-carbonfactor-grid" type="ID"/>
         
       </energyview>
+    
     <customersettings>
       <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
       <add key="GridVTagSettingsVTagList" value="st-vtag-grid" type="ID"/>
@@ -818,6 +820,7 @@
       <add key="GridAssociationTagList" value="//div[@id='st-tag-assoc-form-body']//div[contains(@class,'x-grid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
     </customersettings>
+    
     <platformsettings>
       <add key="GridUserList" value="st-user-grid" type="ID"/>
       <add key="GridUserTypePermissionList" value="st-usertype-grid" type="ID"/>
@@ -829,7 +832,7 @@
       <add key="GridIndustryBenchmarkList" value="st-benchmark-grid" type="ID"/>
     </platformsettings>
   
-  <Homepage>
+    <Homepage>
     <add key="GridHomepageMinWidgetDataView" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[div/div/div/div/div/span[text()='$#nameIndex']]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridShareUserList" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridShareInfoList" value="//div[contains(@id,'window') and contains(@class,'x-window-body-default')]//div[contains(@id,'shareinfogrid') and not(contains(@style,'display: none;')) and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
@@ -994,6 +997,7 @@
     <add key="ChartUnitIndicator" value="//div[@id='em-content-center-region-body']/div/div[contains(@class,'x-panel-body-default')]/div/div/div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartRadio" value="//div[@id='em-ratio-chartgridpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartWidgetMaxDialog" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[@class='highcharts-container']" type="XPath"/>
+    <add key="ChartSuperWidget" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../../../../../self::node()/div[contains(@class,'x-widget-body-default')]//div[@class='highcharts-container']" type="XPath"/>
 
   </Chart>
 

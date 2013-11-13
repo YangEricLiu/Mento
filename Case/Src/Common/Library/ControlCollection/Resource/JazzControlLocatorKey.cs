@@ -114,6 +114,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string MenuButtonFuncModeConvert = "MenuButtonFuncModeConvert";
         public static string MenuButtonTagModeConvert = "MenuButtonTagModeConvert";
         public static string MenuButtonUnitTypeConvert = "MenuButtonUnitTypeConvert";
+        public static string MenuButtonCarbonUnitTypeConvert = "MenuButtonCarbonUnitTypeConvert";
         public static string MenuButtonRadioTypeConvert = "MenuButtonRadioTypeConvert";
         public static string MenuButtonRankTypeConvert = "MenuButtonRankTypeConvert";
         public static string ButtonEnergyViewPeakValley = "ButtonEnergyViewPeakValley";
@@ -1083,6 +1084,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ChartUnitIndicator = "ChartUnitIndicator";
         public static string ChartRadio = "ChartRadio";
         public static string ChartWidgetMaxDialog = "ChartWidgetMaxDialog";
+        public static string ChartSuperWidget = "ChartSuperWidget";
         #endregion
 
         #region Window

@@ -2,13 +2,22 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"]],
 			"Commodity":["电", "自来水"],
 			"DashboardInfo":[{
 				"WigetName":"UnitCost1013",
 				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
 				"IsCreateDashboard":"true",
 				"DashboardName":"UnitCost1013",
+			}],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2012-1-1",
+				"EndDate":"2012-12-31",
+			},
+			{
+				"StartDate":"2011-1-1",
+				"EndDate":"2012-12-1",
 			}],
 		},
 		"ExpectedData":

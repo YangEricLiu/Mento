@@ -13,6 +13,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MenuButton FuncModeConvertTargetButton = JazzButton.FuncModeConvertMenuButton;
         private static MenuButton TagModeConvertTargetButton = JazzButton.TagModeConvertMenuButton;
         private static MenuButton UnitTypeConvertTargetButton = JazzButton.UnitTypeConvertMenuButton;
+        private static MenuButton CarbonUnitTypeConvertTargetButton = JazzButton.CarbonUnitTypeConvertMenuButton;
         private static MenuButton RadioTypeConvertTargetButton = JazzButton.RadioTypeConvertMenuButton;
         private static MenuButton RankTypeConvertTargetButton = JazzButton.RankTypeConvertMenuButton;
         private static MenuButton IndustryConvertTargetButton = JazzButton.IndustryConvertMenuButton;
@@ -99,7 +100,14 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SwitchUnitTypeMenuItem(UnitTypeConvertTarget target)
         {
-            UnitTypeConvertTargetButton.SelectItem(UnitTypeMenuItems[target]);
+            if (GetFuncModeConvertTargetButtonText().Contains("碳排放"))
+            {
+                CarbonUnitTypeConvertTargetButton.SelectItem(UnitTypeMenuItems[target]);
+            }
+            else
+            {
+                UnitTypeConvertTargetButton.SelectItem(UnitTypeMenuItems[target]);
+            }        
         }
 
         public string GetUnitTypeButtonText()

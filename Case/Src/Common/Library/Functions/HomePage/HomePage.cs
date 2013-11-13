@@ -24,6 +24,7 @@ namespace Mento.ScriptCommon.Library.Functions
     /// </summary>
     public class HomePage
     {
+
         internal HomePage()
         {
         }
@@ -163,13 +164,6 @@ namespace Mento.ScriptCommon.Library.Functions
             return DashboardHeaderName.GetLabelTextValue();
         }
 
-        public DataTable GetWidgetMinDataViewAllData(string widgetName)
-        {
-            Grid dataGrid = JazzGrid.GetOneGrid(JazzControlLocatorKey.GridHomepageMinWidgetDataView, widgetName);
-
-            return dataGrid.GetAllData();
-        }
-
           /// <summary>
         /// Exit Jazz
         /// </summary>
@@ -182,30 +176,6 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading(15);
             TimeManager.LongPause();
         }      
-
-        /// <summary>
-        /// Import expected data file and compare to the data view currently, if not equal, export to another file
-        /// </summary>
-        /// <param name="expectedFileName"></param>
-        /// <param name="failedFileName"></param>
-        /// /// <param name="basePath"></param>
-        /// <param name="widgetName"></param>
-        public bool CompareMinWidgetDataView(string basePath, string expectedFileName, string failedFileName, string widgetName)
-        {
-            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
-            {
-                string filePath = Path.Combine(basePath, expectedFileName);
-                DataTable actualData = GetWidgetMinDataViewAllData(widgetName);
-
-                DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
-
-                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
-            }
-            else
-            {
-                return true;
-            }
-        }
 
         public string GetPopNotesValue()
         {
@@ -527,6 +497,66 @@ namespace Mento.ScriptCommon.Library.Functions
 
             shareButton.Click();
         }
+
+        public DataTable GetWidgetMinDataViewAllData(string widgetName)
+        {
+            Grid dataGrid = JazzGrid.GetOneGrid(JazzControlLocatorKey.GridHomepageMinWidgetDataView, widgetName);
+
+            return dataGrid.GetAllData();
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// <param name="failedFileName"></param>
+        /// /// <param name="basePath"></param>
+        /// <param name="widgetName"></param>
+        public bool CompareMinWidgetDataView(string basePath, string expectedFileName, string failedFileName, string widgetName)
+        {
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(basePath, expectedFileName);
+                DataTable actualData = GetWidgetMinDataViewAllData(widgetName);
+
+                DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
+
+                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool IsTrendChartDrawn(string widgetName)
+        {
+            Chart superWidgetChart = GetOneWidgetChart(widgetName);
+
+            return superWidgetChart.HasDrawnTrend();
+        }
+
+        public int GetTrendChartLines(string widgetName)
+        {
+            Chart superWidgetChart = GetOneWidgetChart(widgetName);
+
+            return superWidgetChart.GetTrendChartLines() + 1;
+        }
+
+        public int GetTrendChartLinesMarkers(string widgetName)
+        {
+            Chart superWidgetChart = GetOneWidgetChart(widgetName);
+
+            return superWidgetChart.GetTrendChartLinesMarkers();
+        }
+
+        private Chart GetOneWidgetChart(string widgetName)
+        {
+            Chart superWidgetChart = JazzChart.GetOneChart(JazzControlLocatorKey.ChartSuperWidget, widgetName);
+
+            return superWidgetChart;
+        }
+
         #endregion
 
         #region private method

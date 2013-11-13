@@ -9,6 +9,15 @@ namespace Mento.ScriptCommon.Library
 {
     public sealed class JazzChart : JazzControlCollection
     {
+        #region get one chart
+
+        public static Chart GetOneChart(string key, string nameIndex)
+        {
+            return GetControl<Chart>(key, nameIndex);
+        }
+
+        #endregion
+
         public static Chart EnergyViewChart
         {
             get

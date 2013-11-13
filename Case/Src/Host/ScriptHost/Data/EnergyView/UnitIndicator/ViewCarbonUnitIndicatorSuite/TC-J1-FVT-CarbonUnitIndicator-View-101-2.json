@@ -1,0 +1,42 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", " BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"]],
+			"Commodity":["电", "自来水", "煤"],
+			"DashboardInfo":[{
+				"WigetName":"UnitCarbon1012",
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"UnitCarbon1012",
+			}],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2012-1-1",
+				"EndDate":"2012-1-31",
+			},
+			{
+				"StartDate":"2011-5-1",
+				"EndDate":"2013-12-31",
+			}],
+			"failedFileName":["F-CarbonUnitIndicator101-2-W-P-1.xls", "F-CarbonUnitIndicator101-2-W-P-2.xls", "F-CarbonUnitIndicator101-2-W-P-3.xls", "F-CarbonUnitIndicator101-2-W-P-4.xls", "F-CarbonUnitIndicator101-2-W-P-5.xls", "F-CarbonUnitIndicator101-2-W-P-6.xls", "F-CarbonUnitIndicator101-2-W-P-7.xls", "F-CarbonUnitIndicator101-2-W-P-8.xls", "F-CarbonUnitIndicator101-2-W-P-9.xls", "F-CarbonUnitIndicator101-2-W-P-10.xls"],
+		},
+		"ExpectedData":
+		{
+			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试", "对比数据点已选满"],
+			"expectedFileName":["CarbonUnitIndicator101-2-W-P-1.xls", "CarbonUnitIndicator101-2-W-P-2.xls", "CarbonUnitIndicator101-2-W-P-3.xls", "CarbonUnitIndicator101-2-W-P-4.xls", "CarbonUnitIndicator101-2-W-P-5.xls", "CarbonUnitIndicator101-2-W-P-6.xls", "CarbonUnitIndicator101-2-W-P-7.xls", "CarbonUnitIndicator101-2-W-P-8.xls", "CarbonUnitIndicator101-2-W-P-9.xls", "CarbonUnitIndicator101-2-W-P-10.xls"],
+			"UnitIndicatorLegend":[{
+				"CaculationValue":"电计算值",
+				"OriginalValue":"电原始值",
+			},
+			{
+				"CaculationValue":"自来水计算值",
+				"OriginalValue":"自来水原始值",
+			},
+			{
+				"CaculationValue":"煤计算值",
+				"OriginalValue":"煤原始值",
+			}],
+		}
+	}
+]

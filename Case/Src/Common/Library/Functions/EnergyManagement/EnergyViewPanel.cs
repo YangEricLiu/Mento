@@ -315,6 +315,8 @@ namespace Mento.ScriptCommon.Library.Functions
                 TimeManager.LongPause();
 
                 ClickDisplayStep(displayStep);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
 
                 //Load data view and get data table
                 DataTable data = GetAllData();

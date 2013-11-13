@@ -228,6 +228,11 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading();
         }
 
+        public bool IsCostSingleCommodityExisted()
+        {
+            return UnitCostCommodityGrid.IsNoRowOnGrid();
+        }
+
         public void SelectCommodityUnitCost(string[] commodityNames = null)
         {
             //total

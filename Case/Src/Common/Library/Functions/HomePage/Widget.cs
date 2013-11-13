@@ -13,6 +13,9 @@ using Mento.ScriptCommon.Library;
 using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.TestData.EnergyView;
+using System.Data;
+using System.IO;
+using Mento.Framework.Configuration;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -271,6 +274,31 @@ namespace Mento.ScriptCommon.Library.Functions
             WidgetShareResourceUser.Float();
             TimeManager.ShortPause();
         }
+
+        public DataTable GetWidgetMaxDataViewAllData()
+        {
+            Grid dataGrid = JazzGrid.MaxWidgetDataViewGrid;
+
+            return dataGrid.GetAllData();
+        }
+
+        public bool CompareMaxWidgetDataView(string basePath, string expectedFileName, string failedFileName)
+        {
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(basePath, expectedFileName);
+                DataTable actualData = GetWidgetMaxDataViewAllData();
+
+                DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
+
+                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         #endregion
     }
 }

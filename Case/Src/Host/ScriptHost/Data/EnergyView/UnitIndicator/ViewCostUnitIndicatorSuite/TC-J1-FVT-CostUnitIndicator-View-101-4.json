@@ -1,0 +1,30 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNoTag"]],
+			"Commodity":["煤", "自来水", "电"],
+			"failedFileName":["F-CostUnitIndicator101-4-MPeople-CostToYear1.xls", "F-CostUnitIndicator101-4-MPeople-CostToYear2.xls", "F-CostUnitIndicator101-4-MPeople-CostToYear3.xls"],
+			"DashboardInfo":[{
+				"WigetName":"UnitCost1013",
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"UnitCost1013",
+			}],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2011-1-1",
+				"EndDate":"2013-5-4",
+			},
+			{
+				"StartDate":"2013-3-1",
+				"EndDate":"2013-5-4",
+			}],
+		},
+		"ExpectedData":
+		{
+			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试"],
+			"expectedFileName":["CostUnitIndicator101-4-MPeople-CostToYear1.xls", "CostUnitIndicator101-4-MPeople-CostToYear2.xls", "CostUnitIndicator101-4-MPeople-CostToYear3.xls"],
+		}
+	}
+]

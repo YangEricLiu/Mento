@@ -19,9 +19,6 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Grid UnitCarbonCommodityGrid = JazzGrid.CommodityUnitCarbonGrid;
         private static Grid UnitCarbonTotalCommotidyGrid = JazzGrid.TotalCommodityUnitCarbonGrid;
 
-        private static Grid UnitCostCommodityGrid = JazzGrid.CommodityUnitCostGrid;
-        private static Grid UnitCostTotalCommotidyGrid = JazzGrid.TotalCommodityUnitCostGrid;
-
         private static DatePicker UnitKPIStartDatePicker = JazzDatePicker.UnitKPIStartDatePicker;
         private static DatePicker UnitKPIEndDatePicker = JazzDatePicker.UnitKPIEndDatePicker;
 
@@ -65,6 +62,19 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             get { return JazzGrid.UnitKPIEnergyDataListGrid; }
         }
+
+        private Grid UnitCostCommodityGrid
+        {
+            get;
+            set;
+        }
+
+        private Grid UnitCostTotalCommotidyGrid
+        {
+            get;
+            set;
+        }
+
         #endregion
 
         internal UnitKPIPanel()
@@ -76,6 +86,9 @@ namespace Mento.ScriptCommon.Library.Functions
 
             SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
             AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
+
+            UnitCostCommodityGrid = JazzGrid.CommodityUnitCostGrid;
+            UnitCostTotalCommotidyGrid = JazzGrid.TotalCommodityUnitCostGrid;
         }
 
         #region Unit KPI common function
@@ -88,24 +101,67 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region Tag operations
+
         public void SwitchTagTab(TagTabs tab)
         {
+            bool IsEnergyConsumption = JazzFunction.EnergyViewToolbar.GetFuncModeConvertTargetText().Contains("能耗");
+
             switch (tab)
             {
                 case TagTabs.SystemDimensionTab:
                     //click system tab
-                    JazzButton.EnergyViewSystemDimensionTagsTab.Click();
+                    if (IsEnergyConsumption)
+                    {
+                        JazzButton.EnergyViewSystemDimensionTagsTab.Click();
+                    }
+                    else
+                    {
+                        JazzButton.UnitIndicatorSystemDimensionTagsTab.Click();
+                    }
+                    UnitCostCommodityGrid = JazzGrid.OtherCommodityCostGrid;
+                    UnitCostTotalCommotidyGrid = JazzGrid.TotalOtherCommodityCostGrid;
                     TagGrid = JazzGrid.EnergyAnalysisSystemDimensionTagList;
                     break;
                 case TagTabs.AreaDimensionTab:
                     //click area tab
-                    JazzButton.EnergyViewAreaDimensionTagsTab.Click();
+                    if (IsEnergyConsumption)
+                    {
+                        JazzButton.EnergyViewAreaDimensionTagsTab.Click();
+                    }
+                    else
+                    { 
+                        JazzButton.UnitIndicatorAreaDimensionTagsTab.Click();
+                    }
+                    UnitCostCommodityGrid = JazzGrid.OtherCommodityCostGrid;
+                    UnitCostTotalCommotidyGrid = JazzGrid.TotalOtherCommodityCostGrid;
                     TagGrid = JazzGrid.EnergyAnalysisAreaDimensionTagList;
                     break;
                 case TagTabs.HierarchyTag:
+                    //click all tab
+                    if (IsEnergyConsumption)
+                    {
+                        JazzButton.EnergyViewALLTagsTab.Click();
+                    }
+                    else
+                    {
+                        JazzButton.UnitIndicatorALLTagsTab.Click();
+                    }
+                    UnitCostCommodityGrid = JazzGrid.CommodityUnitCostGrid;
+                    UnitCostTotalCommotidyGrid = JazzGrid.TotalCommodityUnitCostGrid;
+                    TagGrid = JazzGrid.EnergyAnalysisAllTagList;
+                    break;
                 default:
                     //click all tab
-                    JazzButton.EnergyViewALLTagsTab.Click();
+                    if (IsEnergyConsumption)
+                    {
+                        JazzButton.EnergyViewALLTagsTab.Click();
+                    }
+                    else
+                    {
+                        JazzButton.UnitIndicatorALLTagsTab.Click();
+                    }
+                    UnitCostCommodityGrid = JazzGrid.CommodityUnitCostGrid;
+                    UnitCostTotalCommotidyGrid = JazzGrid.TotalCommodityUnitCostGrid;
                     TagGrid = JazzGrid.EnergyAnalysisAllTagList;
                     break;
             }
@@ -162,6 +218,16 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public void SelectSingleCommodityUnitCarbon(string commodity)
+        {
+            UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            UnitCarbonCommodityGrid.CheckRowCheckbox(2, commodity, false);
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
         public void SelectCommodityUnitCost(string[] commodityNames = null)
         {
             //total
@@ -181,6 +247,17 @@ namespace Mento.ScriptCommon.Library.Functions
                     JazzMessageBox.LoadingMask.WaitLoading();
                 }
             }
+        }
+
+        public void SelectSingleCommodityUnitCost(string commodity)
+        {
+            UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            UnitCostCommodityGrid.CheckRowCheckbox(2, commodity, false);
+            JazzMessageBox.LoadingMask.WaitLoading();
+
         }
 
         public void DeselectCommodity(string[] commodityNames)

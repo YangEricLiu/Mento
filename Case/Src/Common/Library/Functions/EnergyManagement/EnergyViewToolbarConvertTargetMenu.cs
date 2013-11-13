@@ -82,6 +82,11 @@ namespace Mento.ScriptCommon.Library.Functions
             FuncModeConvertTargetButton.Click();
         }
 
+        public string GetFuncModeConvertTargetButtonText()
+        {
+            return FuncModeConvertTargetButton.GetText();
+        }
+
         public void SwitchFuncModeMenuItem(FuncModeConvertTarget target)
         {
             FuncModeConvertTargetButton.SelectItem(FuncModeMenuItems[target]);
@@ -117,13 +122,14 @@ namespace Mento.ScriptCommon.Library.Functions
             RankTypeConvertTargetButton.Click();
         }
         
-
         public string GetCurrentTagModeButtonValue()
         {
             return TagModeConvertTargetButton.GetText();
         }
     }
 
+    #region enum items
+    
     public enum CarbonConvertTarget
     { 
         StandardCoal,
@@ -166,4 +172,6 @@ namespace Mento.ScriptCommon.Library.Functions
         UnitHeatAreaRank,
         UnitCoolAreaRank,
     }
+
+    #endregion
 }

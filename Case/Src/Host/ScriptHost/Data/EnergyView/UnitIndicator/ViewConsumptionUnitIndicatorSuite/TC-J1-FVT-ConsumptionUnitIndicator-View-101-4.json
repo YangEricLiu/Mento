@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "楼宇BC"]],
+			"tagNames":["P1_BuildingBC"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2011-10-31",
+				"EndDate":"2012-1-1",		
+			}],
+			"DashboardInfo":[{
+				"WigetName":"UnitComp1014",
+				"HierarchyName":["NancyCustomer1"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"UnitComp1014",
+			}],
+		},
+		"ExpectedData":
+		{
+			"popupNotes":["UnitComp1014已保存"],
+		}
+	}
+]

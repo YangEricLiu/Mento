@@ -403,7 +403,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
+            Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //Column
             EnergyViewToolbar.View(EnergyViewType.Column);
@@ -424,7 +424,212 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             //select tag PtagMissing. Time rang="去年
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
+            TimeManager.ShortPause();
 
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[2]);
+            TimeManager.ShortPause();
+
+            //Data View
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Month);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+            //Line chart
+            EnergyViewToolbar.View(EnergyViewType.Line);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
+            Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
+
+            //Column
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(UnitKPIPanel.IsColumnChartDrawn());
+            //Assert.AreEqual(1, UnitKPIPanel.GetColumnChartColumns());
+
+            //Select the BuildingMultipleSteps from Hierarchy Tree. Select V(H)+V(D)+V(M) to display 单位人口.
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[3]);
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[4]);
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[5]);
+            TimeManager.ShortPause();
+
+            //Select time range, 去年
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
+            TimeManager.ShortPause();
+
+            //Line chart
+            EnergyViewToolbar.View(EnergyViewType.Line);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+
+            Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
+            Assert.AreEqual(0, UnitKPIPanel.GetTrendChartLines());
+
+            //Column
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+
+            Assert.IsFalse(UnitKPIPanel.IsColumnChartDrawn());
+            Assert.AreEqual(0, UnitKPIPanel.GetColumnChartColumns());
+
+            //Data View
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Month);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+
+            //Select 1 tag V(12) from hierarchy node BuildingBAD, Unit=单位供冷面积 to display chart view.
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[3]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[6]);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitCoolArea);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
+            Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
+            Assert.AreEqual(7, UnitKPIPanel.GetTrendChartLinesMarkers());
+
+            //Select 1 tag V(1) select time range =2012/01/01-2012/12/31, optional step=month, unit=单位人口 to view chart.
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[4]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[7]);
+            TimeManager.ShortPause();
+
+            //Select time range, 去年
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitPopulation);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+
+            Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
+            Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
+            Assert.AreEqual(14, UnitKPIPanel.GetTrendChartLinesMarkers());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-4")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-4")]
+        public void ViewConsumptionUnitIndicator04(UnitIndicatorData input)
+        {
+            //Go to NancyCustomer1. Go to Function Unit indicator. Select the BuildingBC from Hierarchy Tree. Click Function Type button, select Energy Consumption.
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[0]);
+            TimeManager.ShortPause();
+
+            //select tag "P1_BuildingBC", time range="2011/10/31 00:00-2012/01/01 24:00",Unit= "单位面积", click to display trend chart view.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitArea);
+            TimeManager.ShortPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //.show 3 optional steps: 天，周，月.
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
+            Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
+
+            //·default step is "月".
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
+
+            //·display the chart as expected.
+            Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
+            Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
+            Assert.AreEqual(3, UnitKPIPanel.GetTrendChartLinesMarkers());
+
+            //change optional steps. From 月->天->周 to view different charts.
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //we should see chart with data under these 3 steps.
+            Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
+            Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
+            Assert.AreEqual(63, UnitKPIPanel.GetTrendChartLinesMarkers());
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //we should see chart with data under these 3 steps.
+            Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
+            Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
+            Assert.AreEqual(9, UnitKPIPanel.GetTrendChartLinesMarkers());
+
+            //change optional step to "月"，click “更多”->”至仪表盘”, select “层级节点” =” NancyCustomer1”
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-5")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-5")]
+        public void ViewConsumptionUnitIndicator05(UnitIndicatorData input)
+        {
+            //Select one node “NancyCustomer1/园区测试多层级/楼宇BAD”  from Hierarchy Tree.  
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //In "全部数据点", select tag "V11_BuildingBC".
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[0]);
+            TimeManager.ShortPause();
+
+            //Time range ="去年", Unit= "单位采暖面积", click to display trend chart view.
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
+            TimeManager.ShortPause();
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitHeatArea);
+            TimeManager.ShortPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //In step 6, warning message should popup "缺少供暖面积属性". 
+            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
         }
     }
 }

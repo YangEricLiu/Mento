@@ -1,0 +1,45 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"], ["NancyCostCustomer2"], ["NancyCostCustomer2", "空调"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
+			"SystemDimensionPath":["楼宇D", "空调"],
+			"AreaDimensionPath":["楼宇D", "一层"],
+			"Commodity":["电"],
+			"UnitIndicatorLegend":[{
+				"CaculationValue":"V1_BuildingBC计算值",
+				"OriginalValue":"V1_BuildingBC原始值",
+				"TargetValue":"V1_BuildingBC目标值",
+				"BaselineValue":"V1_BuildingBC基准值",
+			}],
+			"ManualTimeRange":[{
+				"StartDate":"2012-7-1",
+				"StartTime":"03:00",
+				"EndDate":"2012-7-1",
+				"EndTime":"15:00",	
+			},
+			{
+				"StartDate":"2012-7-1",
+				"StartTime":"03:00",
+				"EndDate":"2012-7-3",
+				"EndTime":"23:00",	
+			},
+			{
+				"StartDate":"2012-7-10",
+				"EndDate":"2012-8-5",
+			},
+			{
+				"StartDate":"2012-1-1",
+				"EndDate":"2012-12-31",
+			},
+			{
+				"StartDate":"2011-1-1",
+				"EndDate":"2013-5-30",
+			}],
+		},
+		"ExpectedData":
+		{
+			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试"],
+		}
+	}
+]

@@ -2,66 +2,14 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"]],
-			"SystemDimensionPath":["楼宇BC", "空调"],
-			"tagNames":["PtestPrecision", "VtestPrecision"],
-			"failedFileName":["F-ConsumptionUnitIndicatorView101-2-MPeople-2tags.xls"],
-			"UnitIndicatorLegend":[{
-				"CaculationValue":"PtestPrecision计算值",
-				"OriginalValue":"PtestPrecision原始值",
-				"TargetValue":"PtestPrecision目标值",
-				"BaselineValue":"PtestPrecision基准值",
-			}],
-			"ManualTimeRange":[{
-				"StartDate":"2012-7-1",
-				"StartTime":"03:00",
-				"EndDate":"2012-7-1",
-				"EndTime":"15:00",	
-			},
-			{
-				"StartDate":"2012-7-1",
-				"StartTime":"03:00",
-				"EndDate":"2012-7-3",
-				"EndTime":"23:00",		
-			},
-			{
-				"StartDate":"2012-7-10",
-				"EndDate":"2012-8-5",		
-			},
-			{
-				"StartDate":"2012-1-1",
-				"EndDate":"2012-12-31",		
-			},
-			{
-				"StartDate":"2011-1-1",
-				"EndDate":"2013-11-6",		
-			}],
-			"DashboardInfo":[{
-				"WigetName":"UnitComp1011",
-				"HierarchyName":["NancyCustomer1", "园区测试多层级", "楼宇BAD"],
-				"IsCreateDashboard":"true",
-				"DashboardName":"UnitComp1011",
-			}],
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMultipleSteps"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"], ["NancyCustomer1", "园区测试多层级", "楼宇BC"]],
+			"tagNames":["PtestPrecision", "VtestPrecision", "PtagMissing", "VD_SiteS1", "VH_SiteS1", "VM_SiteS1", "V12_BuildingBC", "V1_BuildingBC"],
+			"failedFileName":["F-ConsumptionUnitIndicatorView101-3-M-Precision.xls", "F-ConsumptionUnitIndicatorView101-3-M-Missing.xls", "F-ConsumptionUnitIndicatorView101-3-M-step.xls"],
 		},
 		"ExpectedData":
 		{
-			"UnitTypeValue":"单位面积",
-			"IndustryValue":"行业基准值",
-			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试", "对比数据点已选满"],
-			"expectedFileName":["ConsumptionUnitIndicatorView101-2-MPeople-2tags.xls"],
-			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
-			"UnitIndicatorLegend":[{
-				"CaculationValue":"V1_BuildingBC计算值",
-				"OriginalValue":"V1_BuildingBC原始值",
-			},
-			{
-				"CaculationValue":"V2_BuildingBC计算值",
-				"OriginalValue":"V2_BuildingBC原始值",
-			},
-			{
-				"CaculationValue":"V11_BuildingBC计算值",
-				"OriginalValue":"V11_BuildingBC原始值",
-			}],
+			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试"],
+			"expectedFileName":["ConsumptionUnitIndicatorView101-3-M-Precision.xls", "ConsumptionUnitIndicatorView101-3-M-Missing.xls", "ConsumptionUnitIndicatorView101-3-M-step.xls"],
 		}
 	}
 ]

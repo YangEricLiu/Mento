@@ -126,7 +126,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region unit
 
-        public static MenuButton IndustryConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonIndustryConvert);       
+        public static MenuButton IndustryConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonIndustryConvert);
+        public static TabButton UnitIndicatorALLTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonUnitIndicatorALLTagsTab);
+        public static TabButton UnitIndicatorSystemDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonUnitIndicatorSystemDimensionTagsTab);
+        public static TabButton UnitIndicatorAreaDimensionTagsTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonUnitIndicatorAreaDimensionTagsTab);
 
         #endregion
 

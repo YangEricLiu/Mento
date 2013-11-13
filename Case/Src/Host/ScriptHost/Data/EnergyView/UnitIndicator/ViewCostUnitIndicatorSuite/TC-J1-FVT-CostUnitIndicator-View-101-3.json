@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"Commodity":["电", "自来水"],
+			"DashboardInfo":[{
+				"WigetName":"UnitCost1013",
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"UnitCost1013",
+			}],
+		},
+		"ExpectedData":
+		{
+			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试"],
+		}
+	}
+]

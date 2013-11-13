@@ -392,6 +392,11 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.GetColumnChartColumns();
         }
 
+        public int GetTotalColumns()
+        {
+            return Chart.GetTotalColumns();
+        }
+
         public bool IsTrendChartDrawn()
         {
             return Chart.HasDrawnTrend();
@@ -400,6 +405,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public int GetTrendChartLines()
         {
             return Chart.GetTrendChartLines();
+        }
+
+        public int GetTrendChartLinesMarkers()
+        {
+            return Chart.GetTrendChartLinesMarkers();
         }
 
         public bool IsDistributionChartDrawn()
@@ -480,6 +490,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         #endregion
+
         #endregion
     
     }

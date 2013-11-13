@@ -48,5 +48,13 @@ namespace Mento.ScriptCommon.Library
                 return GetControl<Chart>(JazzControlLocatorKey.ChartRadio);
             }
         }
+
+        public static Chart WidgetMaxDialogChart
+        {
+            get
+            {
+                return GetControl<Chart>(JazzControlLocatorKey.ChartWidgetMaxDialog);
+            }
+        }
     }
 }

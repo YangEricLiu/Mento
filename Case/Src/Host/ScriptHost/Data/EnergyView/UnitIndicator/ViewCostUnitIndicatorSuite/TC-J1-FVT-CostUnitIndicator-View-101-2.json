@@ -1,0 +1,32 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
+			"SystemDimensionPath":["楼宇A", "空调"],
+			"Commodity":["电", "自来水", "煤"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2013-11-1",
+			}],
+			
+		},
+		"ExpectedData":
+		{
+			"popupNotes":["对比数据点已选满"],
+			"UnitIndicatorLegend":[{
+				"CaculationValue":"电计算值",
+				"OriginalValue":"电原始值",
+			},
+			{
+				"CaculationValue":"自来水计算值",
+				"OriginalValue":"自来水原始值",
+			},
+			{
+				"CaculationValue":"煤计算值",
+				"OriginalValue":"煤原始值",
+			}],
+		}
+	}
+]

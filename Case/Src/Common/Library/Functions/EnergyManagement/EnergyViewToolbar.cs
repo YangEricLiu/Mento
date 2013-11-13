@@ -129,6 +129,11 @@ namespace Mento.ScriptCommon.Library.Functions
             ConvertTargetButton.ClickFuncModeConvertTargetButton();
         }
 
+        public string GetFuncModeConvertTargetText()
+        {
+            return ConvertTargetButton.GetFuncModeConvertTargetButtonText();
+        }
+
         public void ClickRankTypeConvertTarget()
         {
             ConvertTargetButton.ClickRankTypeConvertTargetButton();

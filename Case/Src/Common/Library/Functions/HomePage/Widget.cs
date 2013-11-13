@@ -16,7 +16,7 @@ using Mento.ScriptCommon.TestData.EnergyView;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
-    public class Widget
+    public class Widget : EnergyViewPanel
     {
         internal Widget()
         {
@@ -50,6 +50,15 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Label WidgetShareResourceUser = JazzLabel.WidgetShareResourceUserLabel;
         private static Tooltip ShareUserInfo = JazzTooltip.ShareUserTooltip;
 
+        protected override Chart Chart
+        {
+            get { return JazzChart.WidgetMaxDialogChart; }
+        }
+
+        protected override Grid EnergyDataGrid
+        {
+            get { return JazzGrid.MaxWidgetDataViewGrid; }
+        }
         #endregion
 
         #region common

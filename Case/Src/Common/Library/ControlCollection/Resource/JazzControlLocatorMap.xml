@@ -131,8 +131,8 @@
 
           <add key="MenuButtonFuncModeConvert" value="em-func-mode-btn" type="ID"/>
           <add key="MenuButtonTagModeConvert" value="em-tag-mode-btn" type="ID"/>
-          <add key="MenuButtonUnitTypeConvert" value="//div[@id='em-unit-energy-chartpanel']/div/div/div[2]" type="XPath"/>
-          <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-ratio-chartgridpanel']/div/div/div[2]" type="XPath"/>
+          <add key="MenuButtonUnitTypeConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[2]" type="XPath"/>
+          <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-content-center-region-body']//div/div/div/div[2]" type="XPath"/>
           <add key="MenuButtonIndustryConvert" value="//div[@id='em-unit-energy-chartpanel']/div/div/div[3]" type="XPath"/>
 
         <!--Greenie modified at 2013.10.28-->
@@ -145,7 +145,12 @@
           <add key="TabButtonRankSystemDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='系统维度']]" type="XPath"/>
           <add key="TabButtonCostAreaDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='区域维度']]" type="XPath"/>
 
-          <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
+        <!--emma add at 2013.11.11 for UnitIndicator-->
+          <add key="TabButtonUnitIndicatorALLTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='层级']]" type="XPath"/>
+          <add key="TabButtonUnitIndicatorSystemDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='系统维度']]" type="XPath"/>
+          <add key="TabButtonEUnitIndicatorAreaDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='区域维度']]" type="XPath"/>
+
+        <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
           <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
           <add key="ButtonEnergyViewAddTimeSpan" value="//div[contains(@id,'splitbutton') and em/button/span[text()='+时间段']]" type="XPath"/>
           <add key="ButtonEnergyViewRemoveAll" value="em-chartgrid-topbar-del" type="ID"/>
@@ -771,20 +776,20 @@
           <add key="GridUnitDataList" value="//div[@id='em-unit-energy-chartpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridRadioDataList" value="//div[@id='em-ratio-chartgridpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>        
 
-        <add key="GridUnitKPIAllTagList" value="//div[@id='em-unit-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridUnitKPIAllTagList" value="//div[@id='em-unit-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridRadioAllTagList" value="//div[@id='em-ratio-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridTotalCommodityCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridTotalCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridTotalCommodityUnitCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridTotalCommodityUnitCost" value="//div[@id='em-unit-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
-          <add key="GridTotalOtherCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class,'x-panel x-tabpanel-child x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridTotalOtherCommodityCost" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-panel x-tabpanel-child x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridCommodityCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
           <add key="GridCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
           <add key="GridCommodityUnitCarbon" value="//div[@id='em-unit-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
           <add key="GridCommodityUnitCost" value="//div[@id='em-unit-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
-          <add key="GridOtherCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class,'x-panel x-tabpanel-child x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
+          <add key="GridOtherCommodityCost" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-panel x-tabpanel-child x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
 
         <add key="GridCommodityRank" value="//div[@id='em-rank-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
@@ -827,6 +832,7 @@
     <add key="GridHomepageMinWidgetDataView" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[div/div/div/div/div/span[text()='$#nameIndex']]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridShareUserList" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridShareInfoList" value="//div[contains(@id,'window') and contains(@class,'x-window-body-default')]//div[contains(@id,'shareinfogrid') and not(contains(@style,'display: none;')) and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+    <add key="GridMaxWidgetDataView" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 
   </Homepage>
   </Grid>
@@ -984,8 +990,9 @@
     <add key="ChartEnergyView" value="svg" type="TagName"/>
     <add key="ChartCarbonUsage" value="//div[@id='em-carbon-chartgridpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartCostUsage" value="//div[@id='em-cost-chartgridpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
-    <add key="ChartUnitIndicator" value="//div[@id='em-unit-energy-chartpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
+    <add key="ChartUnitIndicator" value="//div[@id='em-content-center-region-body']/div/div[contains(@class,'x-panel-body-default')]/div/div/div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartRadio" value="//div[@id='em-ratio-chartgridpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
+    <add key="ChartWidgetMaxDialog" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[@class='highcharts-container']" type="XPath"/>
 
   </Chart>
 

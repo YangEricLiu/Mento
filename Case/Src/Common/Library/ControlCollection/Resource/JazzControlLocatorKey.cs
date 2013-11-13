@@ -187,6 +187,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region unit
 
         public static string MenuButtonIndustryConvert = "MenuButtonIndustryConvert";
+        public static string TabButtonUnitIndicatorALLTagsTab = "TabButtonUnitIndicatorALLTagsTab";
+        public static string TabButtonUnitIndicatorSystemDimensionTagsTab = "TabButtonUnitIndicatorSystemDimensionTagsTab";
+        public static string TabButtonUnitIndicatorAreaDimensionTagsTab = "TabButtonEUnitIndicatorAreaDimensionTagsTab";
 
         #endregion
 
@@ -918,7 +921,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridHomepageMinWidgetDataView = "GridHomepageMinWidgetDataView";
         public static string GridShareUserList = "GridShareUserList";
         public static string GridShareInfoList = "GridShareInfoList";
-
+        public static string GridMaxWidgetDataView = "GridMaxWidgetDataView";
         #endregion
 
         #endregion
@@ -1079,6 +1082,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ChartUnitIndicator = "ChartUnitIndicator";
         public static string ChartRadio = "ChartRadio";
+        public static string ChartWidgetMaxDialog = "ChartWidgetMaxDialog";
         #endregion
 
         #region Window

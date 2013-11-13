@@ -123,6 +123,10 @@ namespace Mento.Script.Information.Widgets
             //'Previous’ and ‘Next’ buttons are both unavailable on the widget.
             Assert.IsFalse(Widget.IsNextButtonEnable());
             Assert.IsFalse(Widget.IsPrevButtonEnable());
+
+            //Close the max dialog
+            Widget.ClickCloseMaxDialogButton();
+            TimeManager.MediumPause();
         }
 
         [Test]

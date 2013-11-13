@@ -27,6 +27,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public UnitIndicatorLegend[] UnitIndicatorLegend { get; set; }
 
         public ManualTimeRange[] ManualTimeRange { get; set; }
+
+        public string[] Commodity { get; set; }
     }
 
     public class UnitIndicatorOutput : ExpectedTestDataBase

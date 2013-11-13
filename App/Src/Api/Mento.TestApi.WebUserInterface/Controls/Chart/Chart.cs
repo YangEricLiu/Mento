@@ -24,6 +24,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator PieLocator = new Locator("g.highcharts-tracker", ByType.CssSelector);
         private static Locator PathLocator = new Locator("path", ByType.TagName);
         private static Locator RectLocator = new Locator("rect", ByType.TagName);
+        private static Locator MarkersLocator = new Locator("g.highcharts-markers", ByType.CssSelector);
         
         private static Locator TitleLocator = new Locator("svg/text[2]", ByType.XPath);
         private static Locator UomLocator = new Locator("svg/text[1]", ByType.XPath);
@@ -178,25 +179,32 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool HasDrawnTrend()
         {
             IWebElement[] lines = FindChildren(CurveLocator);
+            IWebElement[] markers = FindChildren(MarkersLocator);
             int haveLine = 0;
             int noLine = 0;
+            int haveMarkers = 0;
 
-            foreach (IWebElement line in lines)
+            for (int i = 0; i < lines.Length; i++)
             {
-                //bool pathExisted = ChildExists(PathLocator, line);
-                bool isVisible = line.GetAttribute("visibility").Contains("visible");
+                bool pathExisted = ChildExists(PathLocator, lines[i]);
+                bool isVisible = lines[i].GetAttribute("visibility").Contains("visible");
+                bool markersExisted = IsMarkersExisted(PathLocator, markers[i]);
 
-                if (line.GetAttribute("transform").Contains("translate(0,100)"))
+                if (lines[i].GetAttribute("transform").Contains("translate(0,100)"))
                 {
                     noLine++;
                 }
-                else if (isVisible)
+                else if (pathExisted&&isVisible)
                 {
                     haveLine++;
                 }
+                else if (markersExisted&&isVisible)
+                {
+                    haveMarkers++;
+                }
             }
 
-            return haveLine > 1;
+            return (haveLine > 1) || (haveMarkers > 0);
         }
 
         public int GetTrendChartLines()
@@ -207,20 +215,40 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             foreach (IWebElement line in lines)
             {
-                //bool pathExisted = ChildExists(PathLocator, line);
+                bool pathExisted = ChildExists(PathLocator, line);
                 bool isVisible = line.GetAttribute("visibility").Contains("visible");
 
                 if (line.GetAttribute("transform").Contains("translate(0,100)"))
                 {
                     noLine++;
                 }
-                else if (isVisible)
+                else if (pathExisted&&isVisible)
                 {
                     haveLine++;
                 }
             }
 
             return haveLine - 1 - noLine;
+        }
+
+        public int GetTrendChartLinesMarkers()
+        {
+            IWebElement[] lines = FindChildren(CurveLocator);
+            IWebElement[] markers = FindChildren(MarkersLocator);
+            int haveMarkers = 0;
+            int markersLine = 0;
+
+            for (int i = 0; i < lines.Length - 1; i++)
+            {
+                bool isVisible = lines[i].GetAttribute("visibility").Contains("visible");
+                if (isVisible)
+                {
+                    markersLine = GetLineMarkers(PathLocator, markers[i]);
+                    haveMarkers = haveMarkers + markersLine;
+                }    
+            }
+
+            return haveMarkers;
         }
 
         #endregion
@@ -273,6 +301,21 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
 
             return haveColumn - noColumn;
+        }
+
+        public int GetTotalColumns()
+        {
+            IWebElement[] lines = FindChildren(ColumnLocator);
+            int haveColumn = 0;
+            int lineColumns = 0;
+
+            foreach (IWebElement line in lines)
+            {
+                lineColumns = FindChildren(RectLocator, line).Length;
+                haveColumn = haveColumn + lineColumns;
+            }
+
+            return haveColumn;
         }
         #endregion
 
@@ -328,6 +371,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private IWebElement FindChild(Locator locator, IWebElement parent)
         {
             return ElementHandler.FindElement(locator, parent);
+        }
+
+        private bool IsMarkersExisted(Locator locator, IWebElement parent)
+        {
+            return FindChildren(locator, parent).Length > 1;
+        }
+
+        private int GetLineMarkers(Locator locator, IWebElement parent)
+        {
+            return FindChildren(locator, parent).Length - 1;
         }
 
         public bool EntirelyNoChartDrawn()

@@ -92,7 +92,7 @@ namespace Mento.Script.Administration.User
             RoleTypeSettings.FocusOnUserType(roleTypeName);
             RoleTypeSettings.ClickModifyButton();
             TimeManager.ShortPause();
-            // problem here@@@@@@@@@@@@@@
+            // problem here @@@@@@@@@@@@@@ Problem  here
             //Fill input data
             RoleTypeSettings.FillInName(input.InputData.CommonName);
             TimeManager.ShortPause();

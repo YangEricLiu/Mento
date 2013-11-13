@@ -15,7 +15,7 @@ using Mento.ScriptCommon.TestData.Administration;
 using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.TestApi.TestData.Attribute;
-namespace Mento.Script.Administration.User
+namespace Mento.Script.Administration.UserDataScope
 {
     [TestFixture]
     [Owner("Greenie")]

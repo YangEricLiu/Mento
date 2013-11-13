@@ -175,7 +175,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public Boolean AreDefaultOptionsChecked()
         {
-            string[] publicOption = { "上月二氧化碳排放总量", "上月成本总量", "上月用电总量", "上月用水总量" };
+            string[] publicOption = { "本月二氧化碳排放总量", "本月成本总量", "本月用电总量", "本月用水总量" };
             int i = publicOption.Length, j;
             for (j = 0; j < i; j++)
             {
@@ -268,7 +268,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public Boolean AreAllOfItemsAbled()
         {
-            string[] items = {"上月二氧化碳排放总量", "上月成本总量", "上月用电总量", "上月用水总量", "上月天然气总量", "上月软水总量", "上月汽油总量", "上月低压蒸汽总量", "上月柴油总量", "上月热量总量", "上月冷量总量", "上月煤总量", "上月煤油总量"};
+            string[] items = {"本月二氧化碳排放总量", "本月成本总量", "本月用电总量", "本月用水总量", "本月天然气总量", "本月软水总量", "本月汽油总量", "本月低压蒸汽总量", "本月柴油总量", "本月热量总量", "本月冷量总量", "本月煤总量", "本月煤油总量"};
             int i = 0;
             while (i < items.Length)
             {

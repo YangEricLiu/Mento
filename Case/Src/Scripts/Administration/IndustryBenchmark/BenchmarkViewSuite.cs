@@ -52,14 +52,14 @@ namespace Mento.Script.Administration.IndustryBenchmark
             //· Only the checked 区域 display in view mode.The checkboxes are disabled in View mode.
 
             Assert.AreEqual(input.InputData.Industry,IndustryBenchmarkSetting.GetSelectedIndustry());
-            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[0]));
             Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[1]));
-
-            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[2]));
-            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[3]));
-            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[4]));
-            Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[5]));
             Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[6]));
+
+            Assert.IsTrue(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[2]));
+            Assert.IsTrue(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[3]));
+            Assert.IsTrue(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[4]));
+            Assert.IsTrue(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[5]));
+            Assert.IsTrue(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.InputData.ClimaticRegions[0]));
 
             //Verify benchmark list column filter and sort.Not support filter and sort for any column.
 

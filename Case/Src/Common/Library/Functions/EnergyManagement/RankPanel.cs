@@ -16,6 +16,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button ConfirmHiearchyRank = JazzButton.ConfirmHierarchyRankButton;
         private static Button ClearHiearchyRank = JazzButton.ClearHierarchyRankButton;
 
+        private static MenuButton CountSelectRank = JazzButton.CountSelectorRankingButton;
+
         private static Grid CommodityRank = JazzGrid.CommodityRankGrid;
         private static Grid CommodityRankCarbon = JazzGrid.CommodityRankCarbonGrid;
         private static Grid CommodityRankCost = JazzGrid.CommodityRankCostGrid;
@@ -83,6 +85,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         #region Hierarchy operations
+
         public Boolean CheckHierarchyNode(string[] hierarchyNames)
         {
             try
@@ -100,6 +103,15 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 return false;
             }
+        }
+
+        public void OnlyCheckHierarchyNode(string[] hierarchyNames)
+        {
+            HierarchyTree.ExpandNodePath(hierarchyNames);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            HierarchyTree.CheckNode(hierarchyNames.Last());
+            TimeManager.ShortPause();
         }
 
         public Boolean UnCheckHierarchyNode(string[] hierarchyNames)
@@ -284,6 +296,18 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, RankingPath);
         }
+
+        /*
+         /// <summary>
+        /// Select Count Rank ,such as 10,20,50
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public void SelectCountRank(string countNum)
+        {
+            //CountSelectRank.RootElement.FindElement();
+        }
+        */
 
         #endregion
 

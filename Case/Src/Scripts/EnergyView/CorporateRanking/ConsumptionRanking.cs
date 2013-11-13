@@ -47,7 +47,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-View-101-1")]
         public void ViewRankingData(CorporateRankingData input)
         {
-
             //Select the 楼宇A from Hierarchy Tree.Click Function Type button, select Energy Consumption.
             TimeManager.MediumPause();
             CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies);
@@ -85,7 +84,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            //Select 人均排名 and view data.·Change chart display 人均排名.
+            //Select 人均排名 and view data.Change chart display 人均排名.
             EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.AverageRank);
             TimeManager.ShortPause();
             EnergyViewToolbar.ClickViewButton();
@@ -188,6 +187,138 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.MediumPause();
             CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
             TimeManager.LongPause();
+            //·Export chart/data view display as expected.
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-2")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-View-101-2")]
+        public void SaveToDashboard(CorporateRankingData input)
+        {
+            
+
+            //Click "Save to dashboard"（保存到仪表盘）to save the Trend chart to dashboard.
+
+            //·All chart, time range, rank order, 4 different column number buttons. 
+
+            //Go to widget maximize view. Change time range, display order(ASC->DSEC) or set different display Column Numbers.
+
+            //· Chart display as expected.
+
+            //Change hierarchy node selection from H-tree again when chart view display. When click 确定.
+
+            //· Commody radio buttons all unchecked.The chart will not redraw until click view chart button.
+
+            //Click "清空" from hierarchy tree.
+
+            //·All checked hierarchy node change to uncheck.
+            //· The chart will not redraw to display blank until click view chart button.
+
+            //Verify column chart x-aris display.
+
+
+            //·Hierarchy node name display for each column.
+            //When hierarchy node name to long, change to display short+"……"
+
+        }
+
+
+        [Test]
+        [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-3")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-View-101-3")]
+        public void ConsumptionTotalRanking(CorporateRankingData input)
+        {
+            //Go to NancyOtherCustomer3. Go to Function "Corporate Ranking". 
+            //Select the BuildingRanking1 to BuildingRanking50 from Hierarchy Tree. 
+            
+            JazzFunction.HomePage.SelectCustomer("NancyOtherCustomer3");
+            CorporateRanking.NavigateToCorporateRanking();
+            TimeManager.MediumPause();
+            int i = 1;
+            string[] NodePath = {"NancyOtherCustomer3","NancyOtherSite","" };
+            CorporateRanking.ClickSelectHierarchyButton();
+    
+            while (i <= 50)
+            {
+                if(i!=10)
+                {
+                    NodePath[2] = "BuildingRankin10";
+                    CorporateRanking.CheckHierarchyNode(NodePath);
+    
+                }
+                else
+                {
+                    NodePath[2] = "BuildingRanking" + i;
+                    CorporateRanking.CheckHierarchyNode(NodePath);
+
+                }
+                i++;
+            }
+            
+
+            //Click Ranking Type button, select Energy Consumption, 
+            //check Commodity=电,rank type="总排名"，time range="今年", to view data.
+            EnergyViewToolbar.ClickFuncModeConvertTarget();
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Energy);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisYear);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            //Ranking chart display.All first 20 columns show in 1 page.Default selected 20 button from chart.
+            //·Ranking chart display.
+            Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
+            CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0]);
+            TimeManager.MediumPause();
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            TimeManager.LongPause();
+            EnergyViewToolbar.TimeSpan(TimeSpans.DeleteAllTimeSpans);
+
+            //Click 50 button from chart.·All 1 to 50 columns show in 1 page.
+
+
+            //Click 10 button from chart.· All 1 to 10 columns show in 1 page.
+
+
+            //Drag scroll bar to begining.· All first 10 columns(1-10) show in 1 page.
+
+            //Drag scroll bar to end.· All last 10 columns(41-50) show in 1 page.
+
+            //Drag scroll bar to start from 40. Then click 20 button.· 20 columns(31-50) display. 
+
+
+            //Drag scroll bar to let BuildingRanking3 be the first one on the focus page
+            //( BuildingRanking3-BuildingRanking22).Click 10 button.
+
+
+            //·Ranking chart display. 
+            //The focus page should cover 10 buildings (BuildingRanking3 - BuildingRanking12).
+
+
+            //Verify tooltip display.
+            //· For the first column, the tooltip shows 4 things (ranking info, building name, commodity and UOM):
+            //·"排名:1/50"
+            //·BuildingRanking1.
+            //·电:80.00KWH
+
+
+            //Verify ASC/DESC order.
+
+
+            //· Default display ASC order.· BuildingRanking1 first and BuildingRanking50 last.
+
+
+            //Click DESC order button.
+
+
+            //· Change to display DESC order.BuildingRanking50 first and BuildingRanking1 last.
         }
 
     }

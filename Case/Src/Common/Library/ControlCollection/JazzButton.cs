@@ -116,6 +116,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button ConfirmHierarchyRankButton = GetControl<Button>(JazzControlLocatorKey.ButtonConfirmHierarchyRank);
         public static Button ClearHierarchyRankButton = GetControl<Button>(JazzControlLocatorKey.ButtonClearHierarchyRank);
 
+        public static MenuButton CountSelectorRankingButton = GetControl<MenuButton>(JazzControlLocatorKey.ButtonCountSelectorRanking);
+
         #endregion
 
         #region cost

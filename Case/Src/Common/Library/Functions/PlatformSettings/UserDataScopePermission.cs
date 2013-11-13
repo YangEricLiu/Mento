@@ -263,7 +263,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void CloseTreeWindow()
         {
+            TimeManager.ShortPause();
             CloseTreeViewButton.Click();
+            TimeManager.ShortPause();
         }
 
         /// <summary>
@@ -509,27 +511,44 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean AreAllHierarchyNodesChecked(string[] hierarchyNodePaths)
         {
             TimeManager.LongPause();
-            string[] hierarchyPaths = new string[hierarchyNodePaths.Length];
+            string[] hierarchyPaths = hierarchyNodePaths;
             //Array.Copy(hierarchyNodePaths,4,hierarchyPaths,1,4);
             int i = 0;
-            int j = 0;
-            Boolean flag = true;
-            try
+            while (i < hierarchyNodePaths.Length)
             {
-                while (i < hierarchyNodePaths.Length & flag)
+                UserDataPermissionTree.ExpandNodePath(hierarchyPaths);
+                if (!(UserDataPermissionTree.IsNodeChecked(hierarchyPaths.Last())))
                 {
-                    UserDataPermissionTree.ExpandNodePath(hierarchyNodePaths);
-                    flag = UserDataPermissionTree.IsNodeChecked(hierarchyNodePaths.Last());
-                    Array.Copy(hierarchyNodePaths,hierarchyPaths,hierarchyNodePaths.Length-i-1);
-                    i = i + 1;
+                    return false;
                 }
-                return flag;
+                Array.Copy(hierarchyNodePaths, hierarchyPaths, hierarchyNodePaths.Length - i - 1);
+                i = i + 1;
             }
-            catch (Exception)
-            {
-                return false;
-            }
+            return true;
+        }
 
+
+        /// <summary>
+        /// Verify whether the all the hierarchy node path is checked
+        /// </summary>
+        /// <returns></returns>
+        public Boolean AreAllHierarchyNodesUnChecked(string[] hierarchyNodePaths)
+        {
+            TimeManager.LongPause();
+            string[] hierarchyPaths = hierarchyNodePaths;
+            //Array.Copy(hierarchyNodePaths,4,hierarchyPaths,1,4);
+            int i = 0;
+            while (i < hierarchyNodePaths.Length)
+            {
+                UserDataPermissionTree.ExpandNodePath(hierarchyPaths);
+                if (UserDataPermissionTree.IsNodeChecked(hierarchyPaths.Last()))
+                {
+                    return false;
+                }
+                Array.Copy(hierarchyNodePaths, hierarchyPaths, hierarchyNodePaths.Length - i - 1);
+                i = i + 1;
+            }
+            return true;
         }
 
         /// <summary>

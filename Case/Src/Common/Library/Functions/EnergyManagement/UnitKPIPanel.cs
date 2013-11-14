@@ -189,12 +189,29 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.MediumPause();
         }
 
+        public void UncheckTag(string tagName)
+        {
+            TagGrid.UncheckRowCheckbox(2, tagName);
+
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+        }
+
         public void CheckTags(string[] tagNames)
         {
             foreach (string tagName in tagNames)
             {
                 TagGrid.CheckRowCheckbox(2, tagName);
             }
+        }
+
+        public bool IsCarbonSingleCommodityNotExisted()
+        {
+            UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            return UnitCarbonCommodityGrid.IsNoRowOnGrid();
         }
 
         public void SelectCommodityUnitCarbon(string[] commodityNames = null)
@@ -228,8 +245,18 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading();
         }
 
-        public bool IsCostSingleCommodityExisted()
+        public void UnselectSingleCommodityUnitCarbon(string commodity)
         {
+            UnitCarbonCommodityGrid.UncheckRowCheckbox(2, commodity, false);
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        public bool IsCostSingleCommodityNotExisted()
+        {
+            UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
             return UnitCostCommodityGrid.IsNoRowOnGrid();
         }
 
@@ -265,9 +292,10 @@ namespace Mento.ScriptCommon.Library.Functions
 
         }
 
-        public void DeselectCommodity(string[] commodityNames)
+        public void UnselectSingleCommodityUnitCost(string commodity)
         {
-            throw new NotImplementedException();
+            UnitCostCommodityGrid.UncheckRowCheckbox(2, commodity, false);
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
         #endregion
 

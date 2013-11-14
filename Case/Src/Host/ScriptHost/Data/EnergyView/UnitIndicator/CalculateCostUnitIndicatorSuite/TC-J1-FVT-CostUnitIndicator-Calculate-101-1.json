@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
+			"Commodity":["电", "自来水", "煤"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-7-29",
+				"EndDate":"2012-8-4",	
+			}],
+			"failedFileName":["F-CostUnitIndicatorCalculate101-1-P-1.xls", "F-CostUnitIndicatorCalculate101-1-P-2.xls", "F-CostUnitIndicatorCalculate101-1-P-3.xls", "F-CostUnitIndicatorCalculate101-1-P-4.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUnitIndicatorCalculate101-1-P-1.xls", "CostUnitIndicatorCalculate101-1-P-2.xls", "CostUnitIndicatorCalculate101-1-P-3.xls", "CostUnitIndicatorCalculate101-1-P-4.xls"],
+		}
+	}
+]

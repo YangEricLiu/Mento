@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
-			"Commodity":["电", "自来水", "煤炭"],
+			"Commodity":["电", "自来水", "煤"],
 			"UnitIndicatorLegend":[{
 				"CaculationValue":"总览计算值",
 				"OriginalValue":"总览原始值",

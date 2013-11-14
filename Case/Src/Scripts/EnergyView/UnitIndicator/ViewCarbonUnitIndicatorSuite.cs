@@ -76,7 +76,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
             Assert.AreEqual(15, UnitKPIPanel.GetTrendChartLinesMarkers());
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Week);
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
@@ -101,11 +109,23 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
             Assert.AreEqual(4, UnitKPIPanel.GetTrendChartLinesMarkers());
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Hour);
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Day);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
@@ -121,11 +141,23 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
             Assert.AreEqual(17, UnitKPIPanel.GetTrendChartLinesMarkers());
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Hour);
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Day);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
@@ -175,11 +207,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
 
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Hour);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
 
@@ -187,11 +223,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             TimeManager.ShortPause();
 
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Day);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
 
@@ -199,11 +239,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
             TimeManager.ShortPause();
 
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Week);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
 
@@ -211,11 +255,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SetDateRange(ManualTimeRange[4].StartDate, ManualTimeRange[4].EndDate);
             TimeManager.ShortPause();
 
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[7], DisplayStep.Month);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[7], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
 
@@ -223,11 +271,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SetDateRange(ManualTimeRange[5].StartDate, ManualTimeRange[5].EndDate);
             TimeManager.ShortPause();
 
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8], DisplayStep.Year);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
 
@@ -251,7 +303,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.ExpectedData.UnitIndicatorLegend[2].CaculationValue));
             Assert.IsFalse(UnitKPIPanel.IsColumnLegendItemShown(input.ExpectedData.UnitIndicatorLegend[2].OriginalValue));
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[9], DisplayStep.Year);
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[9], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[9], input.InputData.failedFileName[9]);
         }
@@ -262,7 +322,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         public void ViewCarbonUnitIndicator02(UnitIndicatorData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Unit indicator. Select the BuildingCostYearToDay from Hierarchy Tree. Click Function Type button, select Carbon.
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.ShortPause();
             UnitKPIPanel.NavigateToUnitIndicator();
             TimeManager.MediumPause();
@@ -279,10 +339,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
 
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Week);
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
@@ -295,6 +360,11 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Month);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
@@ -317,18 +387,24 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Hour);
-            TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            EnergyAnalysis.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            Assert.IsTrue(UnitKPIPanel.EntirelyNoChartDrawn());
 
+            UnitKPIPanel.SelectCommodityUnitCarbon(input.InputData.Commodity);
+            TimeManager.MediumPause();
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Yesterday);
             TimeManager.ShortPause();
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Hour);
-            TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            EnergyAnalysis.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            Assert.IsTrue(UnitKPIPanel.EntirelyNoChartDrawn());
 
             //b. This week/Last week
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisWeek);
@@ -336,37 +412,56 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Day);
-            TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            EnergyAnalysis.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            Assert.IsTrue(UnitKPIPanel.EntirelyNoChartDrawn());
 
+            UnitKPIPanel.SelectCommodityUnitCarbon(input.InputData.Commodity);
+            TimeManager.MediumPause();
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastWeek);
             TimeManager.ShortPause();
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Day);
-            TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
+
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            EnergyAnalysis.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            Assert.IsTrue(UnitKPIPanel.EntirelyNoChartDrawn());
 
             //c. This year/Last year
+            UnitKPIPanel.SelectCommodityUnitCarbon(input.InputData.Commodity);
+            TimeManager.MediumPause();
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisYear);
             TimeManager.ShortPause();
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Month);
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
             TimeManager.ShortPause();
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[7], DisplayStep.Month);
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
             //Click "Save to dashboard"（保存到仪表盘）to save the Trend chart to dashboard. 
             var dashboard = input.InputData.DashboardInfo;
@@ -383,13 +478,52 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard[0].DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
 
-            Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView("UnitIndicator\\", input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7], dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView("UnitIndicator\\", input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3], dashboard[0].WigetName));
 
             //Go to widget maximize view. Change optional step.
             HomePagePanel.MaximizeWidget(dashboard[0].WigetName);
             TimeManager.LongPause();
 
-            Assert.IsTrue(Widget.CompareMaxWidgetDataView("UnitIndicator\\", input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]));
+            Assert.IsTrue(Widget.CompareMaxWidgetDataView("UnitIndicator\\", input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]));
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
+            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
+            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
+            EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
+            Assert.IsTrue(Widget.CompareMaxWidgetDataView("UnitIndicator\\", input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]));
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
+            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
+            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
+            EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
+            Assert.IsTrue(Widget.CompareMaxWidgetDataView("UnitIndicator\\", input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]));
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
+            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
+            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
+            EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
+            Assert.IsTrue(Widget.CompareMaxWidgetDataView("UnitIndicator\\", input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]));
 
             Widget.ClickCloseMaxDialogButton();
             TimeManager.ShortPause();
@@ -400,7 +534,206 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-View-101-3")]
         public void ViewCarbonUnitIndicator03(UnitIndicatorData input)
         {
-            //Go to NancyOtherCustomer3. Go to Function Unit indicator. Select the BuildingCostYearToDay from Hierarchy Tree. Click Function Type button, select Carbon, Commodity=煤, predefined time range=之前七天 to view chart.
+            //Go to NancyOtherCustomer3. Go to Function Unit indicator. Select the BuildingCostYearToDay from Hierarchy Tree. 
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.ShortPause();
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Click Function Type button, select Carbon, Commodity=煤, predefined time range=之前七天 to view chart.
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[0]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            EnergyAnalysis.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            Assert.IsTrue(UnitKPIPanel.EntirelyNoChartDrawn());
+
+            //Change time range to 昨天 and check Commodity=水.
+            UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[1]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Yesterday);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\"的步长显示，换个步长试试。"));
+            EnergyAnalysis.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            Assert.IsTrue(UnitKPIPanel.EntirelyNoChartDrawn());
+
+            //Select the BuildingNoTag from Hierarchy Tree. 
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Select 总览/单项 to display 单位人口.
+            UnitKPIPanel.SelectCommodityUnitCarbon();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            Assert.IsTrue(UnitKPIPanel.EntirelyNoChartDrawn());
+            Assert.IsTrue(UnitKPIPanel.IsCarbonSingleCommodityNotExisted());
+
+            //Go to NancyOtherCustomer3. Go to Function Unit indicator. Select the BuildingCostYearToDay from Hierarchy Tree. Click Function Type button, select Carbon, then go to 介质单项.
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Change manually defined time range to 2010/01/01-2013/05/04; Select Commodity=电 ; Optional step=year; Unit=单位人口.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[2]);
+            TimeManager.MediumPause();
+
+            //·the part before 2011 November can't display chart since that 单位人口 start from 2011/11=100
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Change manually defined time range to 2011/01/01-2013/05/04; Select Commodity=水 ; Optional step=year; Unit=单位人口.
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[1]);
+            TimeManager.MediumPause();
+
+            //·the part before 2011 November can't display chart since that 单位人口 start from 2011/11=100
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+            //Switch to 标煤 to CO2 view chart of Commodity=水.
+            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
+            TimeManager.MediumPause();
+
+            //·2012 year can display chart of CO2 since that Carbon factor of CO2 to Tree start from 2012.
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+
+            //Switch to 树 to view chart of Commodity=水.
+            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+
+            //Go to 介质总览 to display trend chart; Optional step=year; Unit=单位人口.
+            UnitKPIPanel.SelectCommodityUnitCarbon();
+            TimeManager.MediumPause();
+
+            //·2012 year can display chart since that Carbon factor of CO2 to Tree start from 201201.
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+            
+            //Select one node NancyCostCustomer2/组织A/园区A/楼宇B from Hierarchy Tree. Select Commodity=电 or 总览, time range 2010/01/01 to 2013/01/01, optional step=year.
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.ShortPause();
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.SelectCommodityUnitCarbon();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //· 2012Y has Carbon data in grid view.
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+
+            UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[2]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //· 2012Y has Carbon data in grid view.
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
+
         }
     }
 }

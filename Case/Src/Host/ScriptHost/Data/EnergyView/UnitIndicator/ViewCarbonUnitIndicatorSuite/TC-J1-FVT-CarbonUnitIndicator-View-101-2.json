@@ -2,10 +2,10 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", " BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"]],
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"]],
 			"Commodity":["电", "自来水", "煤"],
 			"DashboardInfo":[{
-				"WigetName":"UnitCarbon1012",
+				"WigetName":"UnitCarbon1012_1",
 				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
 				"IsCreateDashboard":"true",
 				"DashboardName":"UnitCarbon1012",
@@ -17,7 +17,7 @@
 			},
 			{
 				"StartDate":"2011-5-1",
-				"EndDate":"2013-12-31",
+				"EndDate":"2013-11-10",
 			}],
 			"failedFileName":["F-CarbonUnitIndicator101-2-W-P-1.xls", "F-CarbonUnitIndicator101-2-W-P-2.xls", "F-CarbonUnitIndicator101-2-W-P-3.xls", "F-CarbonUnitIndicator101-2-W-P-4.xls", "F-CarbonUnitIndicator101-2-W-P-5.xls", "F-CarbonUnitIndicator101-2-W-P-6.xls", "F-CarbonUnitIndicator101-2-W-P-7.xls", "F-CarbonUnitIndicator101-2-W-P-8.xls", "F-CarbonUnitIndicator101-2-W-P-9.xls", "F-CarbonUnitIndicator101-2-W-P-10.xls"],
 		},

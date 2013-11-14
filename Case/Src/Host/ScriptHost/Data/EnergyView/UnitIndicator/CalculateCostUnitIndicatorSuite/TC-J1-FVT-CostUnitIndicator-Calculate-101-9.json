@@ -1,0 +1,23 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A"], [["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]]],
+			"Commodity":["电", "自来水", "煤"],
+			"SystemDimensionPath":["楼宇B", "空调"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-8-31",	
+			},
+			{
+				"StartDate":"2012-8-1",
+				"EndDate":"2012-8-2",	
+			}],
+			"failedFileName":["F-CostUnitIndicatorCalculate101-9-P-1.xls", "F-CostUnitIndicatorCalculate101-9-P-2.xls", "F-CostUnitIndicatorCalculate101-9-P-3.xls", "F-CostUnitIndicatorCalculate101-9-P-4.xls", "F-CostUnitIndicatorCalculate101-9-P-5.xls", "F-CostUnitIndicatorCalculate101-9-P-6.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUnitIndicatorCalculate101-9-P-1.xls", "CostUnitIndicatorCalculate101-9-P-2.xls", "CostUnitIndicatorCalculate101-9-P-3.xls", "CostUnitIndicatorCalculate101-9-P-4.xls", "CostUnitIndicatorCalculate101-9-P-5.xls", "CostUnitIndicatorCalculate101-9-P-6.xls"],
+		}
+	}
+]

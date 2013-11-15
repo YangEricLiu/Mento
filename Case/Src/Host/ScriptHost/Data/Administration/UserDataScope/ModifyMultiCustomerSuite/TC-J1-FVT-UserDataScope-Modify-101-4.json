@@ -1,0 +1,16 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"UserName":"UserMoidfyToAll",
+			"CustomerName":"customerC",
+			"HierarchyNodePath":["customerC"],
+			"CustomerList":["customerA","customerB","customerC","customerD"],
+		},
+		"ExpectedData":
+		{
+			"CustomerList":["customerA","organizationA"],
+			"HierarchyNodePath":["customerB","organizationB","siteB","buildingB"],
+		}
+	}
+]

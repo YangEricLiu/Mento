@@ -1,0 +1,13 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"UserName":"UserForDataInvalid",
+			"CustomerList":["customerA","customerB"],
+			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],
+		},
+		"ExpectedData":
+		{
+		}
+	}
+]

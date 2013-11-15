@@ -19,8 +19,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MenuButton CountSelectRank = JazzButton.CountSelectorRankingButton;
 
         private static Grid CommodityRank = JazzGrid.CommodityRankGrid;
-        private static Grid CommodityRankCarbon = JazzGrid.CommodityRankCarbonGrid;
-        private static Grid CommodityRankCost = JazzGrid.CommodityRankCostGrid;
+        //private static Grid CommodityRankCarbon = JazzGrid.CommodityRankCarbonGrid;
+        //private static Grid CommodityRankCost = JazzGrid.CommodityRankCostGrid;
 
         private static Grid SystemCommodityRank = JazzGrid.SystemCommodityRankCostGrid;
 
@@ -205,10 +205,10 @@ namespace Mento.ScriptCommon.Library.Functions
             SystemCommodityRank.CheckRowCheckbox(2, commodityName, false);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
         }
-
+        /*
         public void SelectCommodityCarbon(string commodityName)
         {
-            CommodityRankCarbon.CheckRowCheckbox(2, commodityName, false);
+            CommodityRank.CheckRowCheckbox(2, commodityName, false);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
         }
 
@@ -217,7 +217,7 @@ namespace Mento.ScriptCommon.Library.Functions
             CommodityRankCost.CheckRowCheckbox(2, commodityName, false);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
         }
-
+        */
         #endregion
 
 
@@ -242,7 +242,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public Boolean IsCommodityExist(string commodityName)
         {
-            return CommodityRankCost.IsRowExist(2,commodityName);
+            return CommodityRank.IsRowExist(2,commodityName);
         }
 
         public void ClickSelectHierarchyButton()

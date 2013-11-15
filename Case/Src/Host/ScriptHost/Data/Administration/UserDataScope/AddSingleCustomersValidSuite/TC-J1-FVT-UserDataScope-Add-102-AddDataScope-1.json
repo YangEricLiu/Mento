@@ -1,0 +1,14 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"UserName":"UserForCheckSingle1",
+			"CustomerName":"customerC",
+			"HierarchyNodePath":["customerC"],
+		},
+		"ExpectedData":
+		{
+			"UserName":"UserForCheckSingle1",
+		}
+	}
+]

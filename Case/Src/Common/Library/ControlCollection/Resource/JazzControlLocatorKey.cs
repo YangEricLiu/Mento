@@ -871,8 +871,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region rank
 
         public static string GridCommodityRank = "GridCommodityRank";
-        public static string GridCommodityRankCarbon = "GridCommodityRankCarbon";
-        public static string GridCommodityRankCost = "GridCommodityRankCost";
+        //public static string GridCommodityRankCarbon = "GridCommodityRankCarbon";
+        //public static string GridCommodityRankCost = "GridCommodityRankCost";
 
         public static string GridSystemDimensionCommodityRank = "GridSystemDimensionCommodityRank";
 

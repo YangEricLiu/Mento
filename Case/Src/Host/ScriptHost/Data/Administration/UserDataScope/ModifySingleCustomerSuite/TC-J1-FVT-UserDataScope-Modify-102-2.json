@@ -1,0 +1,12 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"UserName":"UserForCheckSingle",
+			"CustomerName":"customerC",
+		},
+		"ExpectedData":
+		{
+		}
+	}
+]

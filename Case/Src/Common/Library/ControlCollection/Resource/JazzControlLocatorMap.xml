@@ -793,15 +793,15 @@
           <add key="GridCommodityUnitCost" value="//div[@id='em-unit-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
           <add key="GridOtherCommodityCost" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-panel x-tabpanel-child x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
 
-        <add key="GridCommodityRank" value="//div[@id='em-rank-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+        <add key="GridCommodityRank" value="//div[@id='em-content-west-region-body']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
-          <add key="GridSystemDimensionCommodityRank" value="//div[@id='em-rank-energy-leftpanel']//div[div[@id='em-rank-sdim-button']]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridSystemDimensionCommodityRank" value="//div[@id='em-content-west-region-body']//div[div[@id='em-rank-sdim-button']]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
-
+           <!--
           <add key="GridCommodityRankCarbon" value="//div[@id='em-rank-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridCommodityRankCost" value="//div[@id='em-rank-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
-
-          <add key="GridUnitKPIEnergyDataList" value="//div[@id='em-content-center-region-body']/div/div[contains(@class,'x-panel-body-default')]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+            -->
+          <add key="GridUnitKPIEnergyDataList" value="//div[@id='em-unit-energy-chartpanel-body']//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridMultiHierarchyAllTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@id, 'taggrid') and contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridMultiHierarchySystemDimensionTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>

@@ -1,0 +1,16 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"UserName":"AutoTestUserB",
+			"CustomerList":["customerA","customerB"],
+			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],
+		},
+		"ExpectedData":
+		{
+			"UserName":"AutoTestUserB",
+			"CustomerList":["customerB","organizationB","siteB"],
+			"HierarchyNodePath":["customerA","organizationA",],
+		}
+	}
+]

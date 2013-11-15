@@ -1,0 +1,16 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"],
+			"commodityNames":["煤","电"],
+			"failedFileName":["F-CostRankingDataView003-1-Elec.xls","F-CostRankingDataView003-2-Elec.xls","F-CostRankingDataView003-3-Elec.xls","F-CostRankingDataView003-4-Elec.xls","F-CostRankingDataView003-5-Elec.xls","F-CostRankingDataView003-6-Elec.xls"],
+			"SystemDimensionPath":["系统维度","空调"],
+		},
+		"ExpectedData":
+		{
+			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingNoTag"],
+			"expectedFileName":["CostRankingDataView003-1-Elec.xls","CostRankingDataView003-2-Elec.xls","CostRankingDataView003-3-Elec.xls","CostRankingDataView003-4-Elec.xls","CostRankingDataView003-5-Elec.xls","CostRankingDataView003-6-Elec.xls"],
+		}
+	}
+]

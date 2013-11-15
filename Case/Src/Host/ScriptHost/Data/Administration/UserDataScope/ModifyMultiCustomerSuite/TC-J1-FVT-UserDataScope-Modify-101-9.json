@@ -1,0 +1,15 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"UserName":"UserForVerifyTree",
+			"CustomerName":"customerD",
+			"HierarchyNodePath":["customerD","organizationA","siteB","buildingC"],
+			"CustomerList":["tagC"],
+		},
+		"ExpectedData":
+		{
+			"UserName":"P@ssw0rd",
+		}
+	}
+]

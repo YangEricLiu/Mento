@@ -1,0 +1,14 @@
+﻿[
+	{		
+		"InputData":
+		{
+			"UserName":"UserNullDataScope",
+			"CustomerName":"customerLong",
+			"HierarchyNodePath":["customerLong","SiteLongLongLongLongLongLongLo"],
+		},
+		"ExpectedData":
+		{
+			"UserName":"UserForCheckSingle3",
+		}
+	}
+]

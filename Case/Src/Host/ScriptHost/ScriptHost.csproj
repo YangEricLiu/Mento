@@ -548,6 +548,10 @@
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageTrendChartSuite\TC-J1-FVT-CarbonUsage-TrendChart-002-1.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageTrendChartSuite\TC-J1-FVT-CarbonUsage-TrendChart-002-2.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageTrendChartSuite\TC-J1-FVT-CarbonUsage-TrendChart-002-3.json" />
+    <None Include="Data\EnergyView\CorporateRanking\CarbonRanking\TC-J1-FVT-CarbonRanking-View-101-3.json" />
+    <None Include="Data\EnergyView\CorporateRanking\CarbonRanking\TC-J1-FVT-CarbonRanking-View-101-4.json" />
+    <None Include="Data\EnergyView\CorporateRanking\CarbonRanking\TC-J1-FVT-CarbonRanking-View-101-5.json" />
+    <None Include="Data\EnergyView\CorporateRanking\CarbonRanking\TC-J1-FVT-CarbonRanking-View-101-6.json" />
     <None Include="Data\EnergyView\CorporateRanking\ConsumptionRanking\TC-J1-FVT-ConsumptionRanking-View-101-5.json" />
     <None Include="Data\EnergyView\CorporateRanking\ConsumptionRanking\TC-J1-FVT-ConsumptionRanking-View-101-4.json" />
     <None Include="Data\EnergyView\CorporateRanking\ConsumptionRanking\TC-J1-FVT-ConsumptionRanking-View-101-3.json" />
@@ -555,6 +559,10 @@
     <None Include="Data\EnergyView\CorporateRanking\ConsumptionRanking\TC-J1-FVT-ConsumptionRanking-View-101-1.json" />
     <None Include="Data\EnergyView\CorporateRanking\CarbonRanking\TC-J1-FVT-CarbonRanking-View-101-1.json" />
     <None Include="Data\EnergyView\CorporateRanking\CarbonRanking\TC-J1-FVT-CarbonRanking-View-101-2.json" />
+    <None Include="Data\EnergyView\CorporateRanking\CostRanking\TC-J1-FVT-CostRanking-View-101-6.json" />
+    <None Include="Data\EnergyView\CorporateRanking\CostRanking\TC-J1-FVT-CostRanking-View-101-5.json" />
+    <None Include="Data\EnergyView\CorporateRanking\CostRanking\TC-J1-FVT-CostRanking-View-101-4.json" />
+    <None Include="Data\EnergyView\CorporateRanking\CostRanking\TC-J1-FVT-CostRanking-View-101-3.json" />
     <None Include="Data\EnergyView\CorporateRanking\CostRanking\TC-J1-FVT-CostRanking-View-101-2.json" />
     <None Include="Data\EnergyView\CorporateRanking\CostRanking\TC-J1-FVT-CostRanking-View-101-1.json" />
     <None Include="Data\EnergyView\CorporateRanking\SelectHierarchyNodesForRanking\TC-J1-FVT-SelectHierarchyNodesForRanking-101-4.json" />

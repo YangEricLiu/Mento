@@ -1,0 +1,16 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"],
+			"commodityNames":["电"],
+			"failedFileName":["F-CostRankingDataView006-1-Elec.xls"],
+			"SystemDimensionPath":["系统维度","空调"],
+		},
+		"ExpectedData":
+		{
+			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingNoTag"],
+			"expectedFileName":["CostRankingDataView006-1-Elec.xls"],
+		}
+	}
+]

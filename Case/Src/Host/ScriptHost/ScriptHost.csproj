@@ -608,6 +608,12 @@
     <None Include="Data\EnergyView\EnergyManagement\SetDisplayStepSuite\TC-J1-FVT-SetDisplayStep-001-3.json" />
     <None Include="Data\EnergyView\EnergyManagement\SetDisplayStepSuite\TC-J1-FVT-SetDisplayStep-001-2.json" />
     <None Include="Data\EnergyView\EnergyManagement\SetDisplayStepSuite\TC-J1-FVT-SetDisplayStep-001-1.json" />
+    <None Include="Data\EnergyView\UnitIndicator\CalculateCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-Calculate-101-6.json" />
+    <None Include="Data\EnergyView\UnitIndicator\CalculateCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-Calculate-101-5.json" />
+    <None Include="Data\EnergyView\UnitIndicator\CalculateCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-Calculate-101-4.json" />
+    <None Include="Data\EnergyView\UnitIndicator\CalculateCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-Calculate-101-3.json" />
+    <None Include="Data\EnergyView\UnitIndicator\CalculateCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-Calculate-101-2.json" />
+    <None Include="Data\EnergyView\UnitIndicator\CalculateCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-Calculate-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\CalculateConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\CalculateCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-Calculate-101-9.json" />
     <None Include="Data\EnergyView\UnitIndicator\CalculateCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-Calculate-101-8.json" />

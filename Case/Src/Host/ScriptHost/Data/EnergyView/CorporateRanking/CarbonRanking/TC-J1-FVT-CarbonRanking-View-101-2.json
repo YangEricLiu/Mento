@@ -2,8 +2,8 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":["NancyCostCustomer2","组织B","园区C","楼宇D"],
-			"commodityNames":["电","自来水"],
+			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"],
+			"commodityNames":["煤","自来水"],
 			"failedFileName":["F-CostRankingDataView001-1-H-Elec.xls"],
 			"SystemDimensionPath":["系统维度","空调"],
 		},

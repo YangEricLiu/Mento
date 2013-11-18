@@ -4,13 +4,13 @@
 		{
 			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingNullTest"],
 			"commodityNames":["电"],
-			"failedFileName":["F-CostRankingDataView005-1-Elec.xls","F-CostRankingDataView005-2-Elec.xls","F-CostRankingDataView005-3-Elec.xls","F-CostRankingDataView005-4-Elec.xls","F-CostRankingDataView005-5-Elec.xls","F-CostRankingDataView005-6-Elec.xls"],
+			"failedFileName":["F-CarbonRankingDataView005-1-Elec.xls","F-CarbonRankingDataView005-2-Elec.xls","F-CarbonRankingDataView005-3-Elec.xls","F-CarbonRankingDataView005-4-Elec.xls","F-CarbonRankingDataView005-5-Elec.xls","F-CarbonRankingDataView005-6-Elec.xls"],
 			"SystemDimensionPath":["系统维度","空调"],
 		},
 		"ExpectedData":
 		{
 			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingNoTag"],
-			"expectedFileName":["CostRankingDataView005-1-Elec.xls","CostRankingDataView005-2-Elec.xls","CostRankingDataView005-3-Elec.xls","CostRankingDataView005-4-Elec.xls","CostRankingDataView005-5-Elec.xls","CostRankingDataView005-6-Elec.xls"],
+			"expectedFileName":["CarbonRankingDataView005-1-Elec.xls","CarbonRankingDataView005-2-Elec.xls","CarbonRankingDataView005-3-Elec.xls","CarbonRankingDataView005-4-Elec.xls","CarbonRankingDataView005-5-Elec.xls","CarbonRankingDataView005-6-Elec.xls"],
 		}
 	}
 ]

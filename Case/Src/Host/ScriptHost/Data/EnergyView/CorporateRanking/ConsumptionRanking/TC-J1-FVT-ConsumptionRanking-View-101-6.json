@@ -4,13 +4,13 @@
 		{
 			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingNoCalendarNoCost"],
 			"commodityNames":["电"],
-			"failedFileName":["F-CostRankingDataView005-1-Elec.xls"],
+			"failedFileName":["F-CostRankingDataView006-1-Elec.xls"],
 			"SystemDimensionPath":["系统维度","空调"],
 		},
 		"ExpectedData":
 		{
 			"Hierarchies":["NancyOtherCustomer3","NancyNoCalendarSite"],
-			"expectedFileName":["CostRankingDataView005-1-Elec.xls"],
+			"expectedFileName":["CostRankingDataView006-1-Elec.xls"],
 		}
 	}
 ]

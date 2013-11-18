@@ -587,7 +587,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CostRanking), "TC-J1-FVT-CostRanking-View-101-6")]
         public void ViewCostYearBuildingData(CorporateRankingData input)
         {
-
             //Go to NancyOtherCustomer3. Go to Function "Corporate Ranking". 
             JazzFunction.HomePage.SelectCustomer("NancyOtherCustomer3");
             CorporateRanking.NavigateToCorporateRanking();
@@ -595,20 +594,15 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //Select the BuildingCostYeartoday from Hierarchy Tree.  
             CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies);
-
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Click Ranking Type button, select Cost, check Commodity=电,rank type="总排名"，
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
-            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-
+            //Commodity=电,rank type="总能耗"
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            
+            TimeManager.ShortPause();
 
             //Time range="2010/01/01-2012/12/31 to view data.
             EnergyViewToolbar.SetDateRange(new DateTime(2010, 1, 1), new DateTime(2012,12,31));
@@ -623,6 +617,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //· Ranking chart display successfully.
+            //The Ranking building should display value BuildingCostYeartoday even if 2010/01 to 2012/05 not defined 成本电价.
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0]);
             TimeManager.MediumPause();

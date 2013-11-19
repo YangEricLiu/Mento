@@ -40,7 +40,7 @@ namespace Mento.Script.Administration.User
 
         [Test]
         [CaseID("TC-J1-FVT-UserManagement-View-101-1")]
-        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserDeleteSuite), "TC-J1-FVT-UserManagement-View-101-1")]
+        [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserViewSuite), "TC-J1-FVT-UserManagement-View-101-1")]
         public void ViewUser(UserSettingsData input)
         {
             //(1) All users related to this specific service provider are displayed.
@@ -49,7 +49,7 @@ namespace Mento.Script.Administration.User
             //Assert.IsFalse(UserSettings.IsUserOnList("PlatfromAdmin"));
 
             //(3) Built-in platform administrator is NOT visiable in the list as well.
-            Assert.IsFalse(UserSettings.IsUserOnList("PlatfromAdmin"));
+            Assert.IsFalse(UserSettings.IsUserOnList(input.InputData.CommonName));
         }
     }
 }

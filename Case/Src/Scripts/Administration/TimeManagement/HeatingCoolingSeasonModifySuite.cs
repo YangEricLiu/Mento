@@ -33,6 +33,8 @@ namespace Mento.Script.Administration.TimeManagement
         [TearDown]
         public void CaseTearDown()
         {
+
+            TimeManager.MediumPause();
             //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
             //TimeManager.MediumPause();
         }

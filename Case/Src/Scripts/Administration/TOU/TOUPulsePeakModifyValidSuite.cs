@@ -111,6 +111,7 @@ namespace Mento.Script.Administration.TOU
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[4].StartDate, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartDateValue(5));
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[4].StartTime, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartTimeValue(5));
 
+            TimeManager.MediumPause();
         }
         #endregion
 
@@ -156,6 +157,7 @@ namespace Mento.Script.Administration.TOU
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[2].StartTime, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartTimeValue(3));
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[2].EndTime, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndTimeValue(3));
 
+            TimeManager.MediumPause();
         }
         #endregion
 
@@ -195,6 +197,8 @@ namespace Mento.Script.Administration.TOU
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[1].EndDate, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndDateValue(2));
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[1].StartTime, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartTimeValue(2));
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[1].EndTime, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndTimeValue(2));
+
+            TimeManager.MediumPause();
         }
         #endregion
 

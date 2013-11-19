@@ -71,7 +71,9 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Verify warm and cold ranges are added successfully.        
             Assert.AreEqual(testData.InputData.WarmRange.Length, TimeSettingsHeatingCoolingSeason.GetWarmRangeItemsNumber());
-            Assert.AreEqual(testData.InputData.ColdRange.Length, TimeSettingsHeatingCoolingSeason.GetColdRangeItemsNumber()); 
+            Assert.AreEqual(testData.InputData.ColdRange.Length, TimeSettingsHeatingCoolingSeason.GetColdRangeItemsNumber());
+
+            TimeManager.MediumPause();
         }
         #endregion
 
@@ -120,6 +122,8 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsHeatingCoolingSeason.ClickCancelButton();
             TimeManager.ShortPause();
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsCancelButtonDisplayed());
+
+            TimeManager.MediumPause();
         }
         #endregion
 
@@ -157,7 +161,7 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Click 'Cancel' button to quit the addition.
             TimeSettingsHeatingCoolingSeason.ClickCancelButton();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
         }
         #endregion
     }

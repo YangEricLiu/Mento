@@ -62,6 +62,8 @@ namespace Mento.Script.Administration.TOU
             //Click Save button directly.
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertySaveButton();
             TimeManager.ShortPause();
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCancelButton();
+            TimeManager.ShortPause();
 
             //Click '+ 峰值季节电价' button
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCreateButton();
@@ -98,6 +100,8 @@ namespace Mento.Script.Administration.TOU
             //Verify that '+峰值季节电价' button is displayed and 'Modify' button is NOT displayed.
             Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakPropertyCreateButtonDisplayed());
             Assert.IsFalse(TOUPulsePeakTariffSettings.IsPulsePeakPropertyModifyButtonDisplayed());
+
+            TimeManager.MediumPause();
         }
         #endregion
 
@@ -127,6 +131,10 @@ namespace Mento.Script.Administration.TOU
             //Verify that error messages are displayed under required fields.
             Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakPriceInvalid());
             Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakRangeInvalidMsgCorrect(testData.ExpectedData, 1));
+
+            TOUPulsePeakTariffSettings.ClickPulsePeakPropertyCancelButton();
+            TimeManager.MediumPause();
+
         }
         #endregion
 
@@ -174,6 +182,9 @@ namespace Mento.Script.Administration.TOU
             Assert.IsFalse(TOUPulsePeakTariffSettings.IsPulsePeakPropertyCancelButtonDisplayed());
             Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakPropertyModifyButtonDisplayed());
             Assert.IsFalse(TOUPulsePeakTariffSettings.IsPulsePeakPropertyCreateButtonDisplayed());
+
+            TimeManager.MediumPause();
+
         }
         #endregion
     }

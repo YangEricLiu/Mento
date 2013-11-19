@@ -79,6 +79,9 @@ namespace Mento.Script.Administration.TOU
             Assert.IsFalse(TOUBasicTariffSettings.IsTOUExist(testData.InputData.CommonName));
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
+
+            TimeManager.ShortPause();
+
         }
         #endregion
 
@@ -121,6 +124,8 @@ namespace Mento.Script.Administration.TOU
 
             //verify that the addition failed and NOT exists in the list.
             Assert.IsFalse(TOUBasicTariffSettings.IsTOUExist(testData.InputData.CommonName));
+
+            TimeManager.MediumPause();
         }
         #endregion
 
@@ -202,6 +207,7 @@ namespace Mento.Script.Administration.TOU
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyModifyButtonDisplayed());
 
+            TimeManager.MediumPause();
         }
         #endregion
 
@@ -242,6 +248,8 @@ namespace Mento.Script.Administration.TOU
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertySaveButtonDisplayed());
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyModifyButtonDisplayed());
+
+            TimeManager.MediumPause();
         }
         #endregion
     

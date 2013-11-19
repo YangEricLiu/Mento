@@ -56,6 +56,7 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
             TimeManager.MediumPause();
             //Display all the 13 available selections including
             Assert.IsTrue(CustomerManageSetting.AreDefaultOptionsChecked());
+            //CustomerManageSetting.AreItemsChecked(input.InputData.MapOptions);
             Assert.IsTrue(CustomerManageSetting.AreItemsUnChecked(input.ExpectedData.MapOptions));
             //Check one option.Uncheck one option.
             CustomerManageSetting.CheckMapInformation(input.InputData.MapOptions[0]);

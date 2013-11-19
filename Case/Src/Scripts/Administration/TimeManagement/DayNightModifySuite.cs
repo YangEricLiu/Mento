@@ -33,6 +33,7 @@ namespace Mento.Script.Administration.TimeManagement
         [TearDown]
         public void CaseTearDown()
         {
+            TimeManager.MediumPause();
             //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
             //TimeManager.MediumPause();
         }
@@ -245,7 +246,7 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Click 'Cancel' button to quit the modification.
             TimeSettingsDayNight.ClickCancelButton();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
         }
         #endregion
     }

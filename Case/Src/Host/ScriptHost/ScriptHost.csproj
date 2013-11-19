@@ -261,7 +261,7 @@
     <None Include="Data\Administration\TOU\SmokeTestTOUPulsePeakTariffSuite\TC-J1-SmokeTest-026.json" />
     <None Include="Data\Administration\TOU\SmokeTestTOUBasicTariffSuite\TC-J1-SmokeTest-025.json" />
     <None Include="Data\Administration\TOU\TOUPulsePeakTariffSuite\TC-J1-SmokeTest-026.json" />
-    <None Include="Data\Administration\UserDataScope\AddDataPermissionInvalidSuite\TC-J1-FVT-UserDataScope-Add-001-3.json" />
+    <None Include="Data\Administration\UserDataScope\AddDataScopeInvalidSuite\TC-J1-FVT-UserDataScope-Add-001-3.json" />
     <None Include="Data\Administration\UserDataScope\AddDataScopeValidSuite\TC-J1-FVT-UserDataScope-Add-101-11.json" />
     <None Include="Data\Administration\UserDataScope\AddDataScopeValidSuite\TC-J1-FVT-UserDataScope-Add-101-9.json" />
     <None Include="Data\Administration\UserDataScope\AddDataScopeValidSuite\TC-J1-FVT-UserDataScope-Add-101-7.json" />
@@ -271,8 +271,8 @@
     <None Include="Data\Administration\UserDataScope\AddDataScopeValidSuite\TC-J1-FVT-UserDataScope-Add-101-3.json" />
     <None Include="Data\Administration\UserDataScope\AddDataScopeValidSuite\TC-J1-FVT-UserDataScope-Add-101-2.json" />
     <None Include="Data\Administration\UserDataScope\AddDataScopeValidSuite\TC-J1-FVT-UserDataScope-Add-101-1.json" />
-    <None Include="Data\Administration\UserDataScope\AddDataPermissionInvalidSuite\TC-J1-FVT-UserDataScope-Add-001-1.json" />
-    <None Include="Data\Administration\UserDataScope\AddDataPermissionInvalidSuite\TC-J1-FVT-UserDataScope-Add-001-2.json" />
+    <None Include="Data\Administration\UserDataScope\AddDataScopeInvalidSuite\TC-J1-FVT-UserDataScope-Add-001-1.json" />
+    <None Include="Data\Administration\UserDataScope\AddDataScopeInvalidSuite\TC-J1-FVT-UserDataScope-Add-001-2.json" />
     <None Include="Data\Administration\User\AddFunctionScopeSuite\TC-J1-FVT-FunctionPermissionRoleType-AddFunctionScope-1.json" />
     <None Include="Data\Administration\User\AddFunctionScopeSuite\TC-J1-FVT-FunctionPermissionRoleType-AddFunctionScope-2.json" />
     <None Include="Data\Administration\User\AddRoleTypeSuite\TC-J1-FVT-FunctionPermissionRoleType-AddRoleType-1.json" />
@@ -328,6 +328,7 @@
     <None Include="Data\Administration\User\UserModifyValidSuite\TC-J1-FVT-UserManagement-Modify-101-1.json" />
     <None Include="Data\Administration\User\UserModifyValidSuite\TC-J1-FVT-UserManagement-Modify-101-2.json" />
     <None Include="Data\Administration\User\UserModifyValidSuite\TC-J1-FVT-UserManagement-Modify-101-3.json" />
+    <None Include="Data\Administration\User\UserViewSuite\TC-J1-FVT-UserManagement-View-101-1.json" />
     <None Include="Data\Administration\User\ViewRoleTypeSuite\TC-J1-FVT-UserManagement-ViewRoleType-3.json" />
     <None Include="Data\Administration\User\ViewRoleTypeSuite\TC-J1-FVT-UserManagement-ViewRoleType-2.json" />
     <None Include="Data\Administration\User\ViewRoleTypeSuite\TC-J1-FVT-UserManagement-ViewRoleType-1.json" />

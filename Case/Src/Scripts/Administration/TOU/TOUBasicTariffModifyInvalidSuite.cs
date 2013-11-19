@@ -78,7 +78,10 @@ namespace Mento.Script.Administration.TOU
             Assert.IsTrue(TOUBasicTariffSettings.IsBasicPropertyModifyButtonDisplayed());
             Assert.IsTrue(TOUBasicTariffSettings.IsTOUExist(testData.ExpectedData.CommonName));
             Assert.AreEqual(testData.InputData.ValleyRange[1].StartTime, TOUBasicTariffSettings.GetBasicPropertyValleyStartTimeValue(2));
-            Assert.AreEqual(testData.InputData.ValleyRange[1].EndTime, TOUBasicTariffSettings.GetBasicPropertyValleyEndTimeValue(2));          
+            Assert.AreEqual(testData.InputData.ValleyRange[1].EndTime, TOUBasicTariffSettings.GetBasicPropertyValleyEndTimeValue(2));
+
+            TimeManager.MediumPause();
+
         }
         #endregion
 
@@ -120,6 +123,7 @@ namespace Mento.Script.Administration.TOU
             Assert.IsTrue(TOUBasicTariffSettings.IsValleyPriceInvalidMsgCorrect(testData.ExpectedData));
 
             TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
+            TimeManager.ShortPause();
         }
         #endregion
 
@@ -155,6 +159,8 @@ namespace Mento.Script.Administration.TOU
             Assert.IsTrue(TOUBasicTariffSettings.IsNameInvalidMsgCorrect(testData.ExpectedData));
 
             TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
+            TimeManager.ShortPause();
+
         }
         #endregion
 
@@ -185,6 +191,10 @@ namespace Mento.Script.Administration.TOU
             //Verify the messages below the fields. 
             Assert.IsTrue(TOUBasicTariffSettings.IsPeakRangeInvalidMsgCorrect(testData.ExpectedData, 1));
             Assert.IsTrue(TOUBasicTariffSettings.IsValleyRangeInvalidMsgCorrect(testData.ExpectedData, 1));
+
+            TOUBasicTariffSettings.ClickBasicPropertyCancelButton();
+            TimeManager.ShortPause();
+
         }
         #endregion
 

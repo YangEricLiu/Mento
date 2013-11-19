@@ -33,6 +33,8 @@ namespace Mento.Script.Administration.TimeManagement
         [TearDown]
         public void CaseTearDown()
         {
+
+            TimeManager.MediumPause();
             //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
             //TimeManager.MediumPause();
         }
@@ -63,6 +65,8 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Verify that the Calendar is deleted successfully and NOT exists in the list.
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.InputData.CommonName));
+
+        
         }
         #endregion
 

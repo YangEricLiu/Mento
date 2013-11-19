@@ -309,6 +309,25 @@ namespace Mento.ScriptCommon.Library.Functions
         }
         */
 
+
+        /// <summary>
+        /// Check whether the clear hierarchy button is enabled
+        /// </summary>
+        public Boolean IsClearHiearchyButtonEnabled()
+        {
+            return ClearHiearchyRank.IsEnabled();
+        }
+        /*
+
+        /// <summary>
+        /// Check whether the customer hiearchy node can be checked.
+        /// </summary>
+        public Boolean IsCustomerNodeEnabled(string[] HierarchyNode)
+        {
+            //HierarchyNode.
+           
+        }
+         */
         #endregion
 
     }

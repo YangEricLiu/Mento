@@ -164,6 +164,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsDayNight.ClickCancelButton();
             TimeManager.ShortPause();
             Assert.IsFalse(TimeSettingsDayNight.IsCancelButtonDisplayed());
+            TimeManager.ShortPause();
         }
         #endregion
     }

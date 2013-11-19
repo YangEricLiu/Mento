@@ -34,7 +34,7 @@ namespace Mento.Script.Administration.TOU
         public void CaseTearDown()
         {
             //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
-            //TimeManager.MediumPause();
+            TimeManager.MediumPause();
         }
 
         #region TestCase1 DeleteTOUSuccessful

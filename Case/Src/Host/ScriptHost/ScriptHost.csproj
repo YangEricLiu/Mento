@@ -626,6 +626,8 @@
     <None Include="Data\EnergyView\UnitIndicator\CalculateCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-Calculate-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\CalculateCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-Calculate-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\CalculateCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-Calculate-101-2.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorOfflineCalculateSuite\TC-J1-FVT-UnitIndicator-OfflineCalculate-101-2.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorOfflineCalculateSuite\TC-J1-FVT-UnitIndicator-OfflineCalculate-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-View-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-View-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-View-101-1.json" />

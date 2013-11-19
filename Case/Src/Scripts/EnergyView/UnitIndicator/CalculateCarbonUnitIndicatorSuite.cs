@@ -554,13 +554,20 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitArea);
             TimeManager.ShortPause();
 
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
+            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Year));
+            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
+            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
+            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Week));
+            EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
             TimeManager.MediumPause();

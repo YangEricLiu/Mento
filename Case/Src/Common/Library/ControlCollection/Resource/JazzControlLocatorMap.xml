@@ -775,8 +775,8 @@
 
           <add key="GridCarbonDataList" value="//div[@id='em-carbon-chartgridpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridCostDataList" value="//div[@id='em-cost-chartgridpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
-          <add key="GridUnitDataList" value="//div[@id='em-unit-energy-chartpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
-          <add key="GridRadioDataList" value="//div[@id='em-ratio-chartgridpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>        
+          <add key="GridUnitDataList" value="//div[@id='em-content-center-region-body']/div/div[contains(@class,'x-panel-body-default')]/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridRadioDataList" value="//div[@id='em-content-center-region-body']/div/div[contains(@class,'x-panel-body-default')]/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>        
 
           <add key="GridUnitKPIAllTagList" value="//div[@id='em-unit-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridRadioAllTagList" value="//div[@id='em-ratio-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
@@ -801,7 +801,7 @@
           <add key="GridCommodityRankCarbon" value="//div[@id='em-rank-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridCommodityRankCost" value="//div[@id='em-rank-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
             -->
-          <add key="GridUnitKPIEnergyDataList" value="//div[@id='em-unit-energy-chartpanel-body']//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridUnitKPIEnergyDataList" value="//div[@id='em-content-center-region-body']//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridMultiHierarchyAllTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@id, 'taggrid') and contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridMultiHierarchySystemDimensionTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>

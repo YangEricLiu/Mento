@@ -98,6 +98,11 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UnitKPI);
         }
 
+        public void NavigateToRanking()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.Rank);
+        }
+
         #endregion
 
         #region Tag operations

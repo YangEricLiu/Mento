@@ -8,27 +8,27 @@
 				"DashboardName":"Widget_Maximize_101_2",
 			}],
 			"TimeIntervalList":[{
-				"StartDate":"2013-10-02",
+				"StartDate":"2013-11-14",
 				"StartTime":"00:00",
-				"EndDate":"2013-10-08",
+				"EndDate":"2013-11-20",
 				"EndTime":"24:00",
 			},
 			{
-				"StartDate":"2013-10-09",
+				"StartDate":"2013-11-21",
 				"StartTime":"00:00",
-				"EndDate":"2013-10-09",
+				"EndDate":"2013-11-21",
 				"EndTime":"24:00",
 			},
 			{
-				"StartDate":"2013-10-08",
+				"StartDate":"2013-11-20",
 				"StartTime":"00:00",
-				"EndDate":"2013-10-08",
+				"EndDate":"2013-11-20",
 				"EndTime":"24:00",
 			},
 			{
-				"StartDate":"2013-10-07",
+				"StartDate":"2013-11-18",
 				"StartTime":"23:00",
-				"EndDate":"2013-10-09",
+				"EndDate":"2013-11-21",
 				"EndTime":"23:00",
 			},
 			{
@@ -50,9 +50,9 @@
 				"EndTime":"01:00",
 			},
 			{
-				"StartDate":"2013-09-01",
+				"StartDate":"2013-10-01",
 				"StartTime":"23:00",
-				"EndDate":"2013-09-30",
+				"EndDate":"2013-10-31",
 				"EndTime":"01:00",
 			}]
 		},

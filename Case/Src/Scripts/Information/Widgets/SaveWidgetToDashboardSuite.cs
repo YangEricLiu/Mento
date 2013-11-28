@@ -47,8 +47,6 @@ namespace Mento.Script.Information.Widgets
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(SaveWidgetToDashboardSuite), "TC-J1-FVT-Widget-Add-101-1")]
         public void SaveWidgetToExistingDashboard(MaximizeWidgetData input)
         {
-            string[] deleteMessage = { "删除小组件“Widget_Delete_101_1_1”吗？", "删除小组件“Widget_Delete_101_1_2”吗？", "删除小组件“Widget_Delete_101_1_3”吗？", "删除小组件“Widget_Delete_101_1_4”吗？" };
-
             var dashboard = input.InputData.DashboardInfo;
 
             //Add a widget whose name is the same as the deleted widget for the same dashboard of the Hiearchy node. 
@@ -77,7 +75,7 @@ namespace Mento.Script.Information.Widgets
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
             TimeManager.LongPause();
 
-            Assert.AreEqual(1, HomePagePanel.GetWidgetsNumberOfDashboard());
+            Assert.AreEqual(12, HomePagePanel.GetWidgetsNumberOfDashboard());
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetNames[0]));            
         }
     }

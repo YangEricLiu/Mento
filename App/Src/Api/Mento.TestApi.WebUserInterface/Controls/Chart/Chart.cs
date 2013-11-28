@@ -24,7 +24,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator PieLocator = new Locator("g.highcharts-tracker", ByType.CssSelector);
         private static Locator PathLocator = new Locator("path", ByType.TagName);
         private static Locator RectLocator = new Locator("rect", ByType.TagName);
-        private static Locator MarkersLocator = new Locator("g.highcharts-markers", ByType.CssSelector);
+        private static Locator MarkersLocator = new Locator("g.highcharts-tracker", ByType.CssSelector);
         
         private static Locator TitleLocator = new Locator("svg/text[2]", ByType.XPath);
         private static Locator UomLocator = new Locator("svg/text[1]", ByType.XPath);
@@ -184,27 +184,28 @@ namespace Mento.TestApi.WebUserInterface.Controls
             int noLine = 0;
             int haveMarkers = 0;
 
-            for (int i = 0; i < lines.Length; i++)
+            for (int i = 0; i < markers.Length; i++)
             {
-                bool pathExisted = ChildExists(PathLocator, lines[i]);
-                bool isVisible = lines[i].GetAttribute("visibility").Contains("visible");
+                bool pathExisted = LineChartPathChildExists(PathLocator, lines[i]);
+                bool isLineVisible = lines[i].GetAttribute("visibility").Contains("visible");
+                bool isMarkersVisible = markers[i].GetAttribute("visibility").Contains("visible");
                 bool markersExisted = IsMarkersExisted(PathLocator, markers[i]);
 
                 if (lines[i].GetAttribute("transform").Contains("translate(0,100)"))
                 {
                     noLine++;
                 }
-                else if (pathExisted&&isVisible)
+                else if (pathExisted && isLineVisible)
                 {
                     haveLine++;
                 }
-                else if (markersExisted&&isVisible)
+                else if (markersExisted && isMarkersVisible)
                 {
                     haveMarkers++;
                 }
             }
 
-            return (haveLine > 1) || (haveMarkers > 0);
+            return (haveLine > 0) || (haveMarkers > 0);
         }
 
         public int GetTrendChartLines()
@@ -215,7 +216,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             foreach (IWebElement line in lines)
             {
-                bool pathExisted = ChildExists(PathLocator, line);
+                bool pathExisted = LineChartPathChildExists(PathLocator, line);
                 bool isVisible = line.GetAttribute("visibility").Contains("visible");
 
                 if (line.GetAttribute("transform").Contains("translate(0,100)"))
@@ -228,7 +229,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 }
             }
 
-            return haveLine - 1 - noLine;
+            return haveLine - 1 - noLine;   
         }
 
         public int GetTrendChartLinesMarkers()
@@ -238,7 +239,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             int haveMarkers = 0;
             int markersLine = 0;
 
-            for (int i = 0; i < lines.Length - 1; i++)
+            for (int i = 0; i < markers.Length; i++)
             {
                 bool isVisible = lines[i].GetAttribute("visibility").Contains("visible");
                 if (isVisible)
@@ -363,6 +364,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return ElementHandler.FindElements(locator, parent).ToArray().Length > 0;
         }
 
+        private bool LineChartPathChildExists(Locator locator, IWebElement parent)
+        {
+            return ElementHandler.FindElements(locator, parent).ToArray().Length > 1;
+        }
+
         private IWebElement[] FindChildren(Locator locator, IWebElement parent)
         {
             return ElementHandler.FindElements(locator, parent).ToArray();
@@ -375,12 +381,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         private bool IsMarkersExisted(Locator locator, IWebElement parent)
         {
-            return FindChildren(locator, parent).Length > 1;
+            return FindChildren(locator, parent).Length > 0;
         }
 
         private int GetLineMarkers(Locator locator, IWebElement parent)
         {
-            return FindChildren(locator, parent).Length - 1;
+            return FindChildren(locator, parent).Length;
         }
 
         public bool EntirelyNoChartDrawn()

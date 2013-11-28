@@ -78,7 +78,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
 
-            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
@@ -94,7 +94,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
 
-            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
@@ -110,7 +110,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
 
-            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
@@ -136,7 +136,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
 
-            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }

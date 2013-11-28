@@ -22,11 +22,11 @@
 				"IsCreateDashboard":"false",
 				"DashboardName":"CarbonWidgetHierarchyDataview",
 			}],
-			"failedFileName":["F-CarbonUsageDataView001-1-H-Elec.xls", "F-CarbonUsageDataView001-1-H-ElecOil.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2Coal.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2Gas.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2GasTree.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2GasTreeHot.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2GasTreeHotWater.xls", "F-CarbonUsageDataView001-1-H-ElecOilGasHotWater.xls", "F-CarbonUsageDataView001-1-H-ElecOilGasHotWaterCO2.xls", "F-CarbonUsageDataView001-1-H-ElecOilGasHotWaterTree.xls"],
+			"failedFileName":["F-CarbonUsageDataView001-1-H-Elec.xls", "F-CarbonUsageDataView001-1-H-ElecOil.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2Coal.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2Cool.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2CoolTree.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2CoolTreeHot.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2CoolTreeHotWater.xls", "F-CarbonUsageDataView001-1-H-ElecOilCoolHotWater.xls", "F-CarbonUsageDataView001-1-H-ElecOilCoolHotWaterCO2.xls", "F-CarbonUsageDataView001-1-H-ElecOilCoolHotWaterTree.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["CarbonUsageDataView001-1-H-Elec.xls", "CarbonUsageDataView001-1-H-ElecOil.xls", "CarbonUsageDataView001-1-H-ElecOilCO2.xls", "CarbonUsageDataView001-1-H-ElecOilCO2Coal.xls", "CarbonUsageDataView001-1-H-ElecOilCO2CoalGas.xls", "CarbonUsageDataView001-1-H-ElecOilCO2GasTree.xls", "CarbonUsageDataView001-1-H-ElecOilCO2GasTreeHot.xls", "CarbonUsageDataView001-1-H-ElecOilCO2GasTreeHotWater.xls", "CarbonUsageDataView001-1-H-ElecOilGasHotWater.xls", "CarbonUsageDataView001-1-H-ElecOilGasHotWaterCO2.xls", "CarbonUsageDataView001-1-H-ElecOilGasHotWaterTree.xls"],
+			"expectedFileName":["CarbonUsageDataView001-1-H-Elec.xls", "CarbonUsageDataView001-1-H-ElecOil.xls", "CarbonUsageDataView001-1-H-ElecOilCO2.xls", "CarbonUsageDataView001-1-H-ElecOilCO2Coal.xls", "CarbonUsageDataView001-1-H-ElecOilCO2CoalCool.xls", "CarbonUsageDataView001-1-H-ElecOilCO2CoolTree.xls", "CarbonUsageDataView001-1-H-ElecOilCO2CoolTreeHot.xls", "CarbonUsageDataView001-1-H-ElecOilCO2CoolTreeHotWater.xls", "CarbonUsageDataView001-1-H-ElecOilCoolHotWater.xls", "CarbonUsageDataView001-1-H-ElecOilCoolHotWaterCO2.xls", "CarbonUsageDataView001-1-H-ElecOilCoolHotWaterTree.xls"],
 		}
 	}
 ]

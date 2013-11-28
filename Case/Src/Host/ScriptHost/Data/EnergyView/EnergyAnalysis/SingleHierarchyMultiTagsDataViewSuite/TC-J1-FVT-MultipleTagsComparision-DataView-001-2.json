@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"MultipleHiearchyPath":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"], ["NancyCostCustomer2", "组织A", "园区B"]],
+			"MultipleHiearchyPath":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"], ["NancyCostCustomer2", "组织A", "园区B", "楼宇C"]],
 			"TagNames":["BAV3KT", "BCV1KT", "BCV2KT", "BCV3KT"],
 		},
 		"ExpectedData":

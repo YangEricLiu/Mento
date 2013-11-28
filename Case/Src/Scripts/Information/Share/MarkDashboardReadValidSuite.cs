@@ -39,7 +39,7 @@ namespace Mento.Script.Information.Share
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            HomePagePanel.NavigateToEnergyView();
         }
 
         [Test]

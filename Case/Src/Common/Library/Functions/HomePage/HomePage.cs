@@ -92,6 +92,15 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Navigate To AllDashboard
+        /// </summary>
+        /// <returns></returns>
+        public void NavigateToEnergyView()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
+        }
+
+        /// <summary>
         /// Navigate To MyFavorite
         /// </summary>
         /// <returns></returns>

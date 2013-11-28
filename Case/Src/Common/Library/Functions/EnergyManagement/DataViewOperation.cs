@@ -70,7 +70,12 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <param name="sheetName"></param>
         public void ExportFailedDataToExcel(DataTable data, string fileName, string sheetName)
         {
-            string filePath = Path.Combine(ExecutionConfig.failedDataViewExcelFileDirectory, fileName);
+            DateTime today = new DateTime();
+            today = DateTime.Now.ToLocalTime();
+            string dashPath = today.ToString("yyyyMMddHHmmss");
+
+            string failTimePath = Path.Combine(ExecutionConfig.failedDataViewExcelFileDirectory, dashPath);
+            string filePath = Path.Combine(failTimePath, fileName);
 
             ExcelHelper.ExportToExcel(data, filePath, sheetName);
         }

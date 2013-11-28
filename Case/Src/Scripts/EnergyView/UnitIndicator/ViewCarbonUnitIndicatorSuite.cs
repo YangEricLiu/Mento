@@ -113,7 +113,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -192,7 +192,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
             Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
 
-            //Change different time range, 楼宇A
+            //Change different time range, 楼宇B
             //a. 2012/07/01 3:30-2012/07/01 15:30 hour
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -259,7 +259,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 

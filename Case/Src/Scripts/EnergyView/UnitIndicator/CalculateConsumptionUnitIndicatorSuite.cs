@@ -274,7 +274,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[10], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
+            //UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
 
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();

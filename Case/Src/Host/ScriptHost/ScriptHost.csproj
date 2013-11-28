@@ -139,7 +139,6 @@
     <Folder Include="Data\Customer\TagManagement\SmokeTestFormulaVtagSmokeTestSuite\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestKPIBaselineSuite\" />
     <Folder Include="Data\EnergyView\Radio\" />
-    <Folder Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\" />
     <Folder Include="Resource\en\" />
   </ItemGroup>
   <ItemGroup>
@@ -746,6 +745,7 @@
     <None Include="Data\Information\Widgets\MaximizeWidgetSuite\TC-J1-FVT-Widget-Maximize-101-1.json" />
     <None Include="Data\Information\Widgets\RenameWidgetSuite\TC-J1-FVT-Widget-Rename-101-2.json" />
     <None Include="Data\Information\Widgets\RenameWidgetSuite\TC-J1-FVT-Widget-Rename-101-1.json" />
+    <None Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\TC-J1-FVT-Widget-Add-101-1.json" />
     <None Include="Data\System\Example\IllegalTestSuite\TC-J1-Example-002.json" />
   </ItemGroup>
   <ItemGroup>

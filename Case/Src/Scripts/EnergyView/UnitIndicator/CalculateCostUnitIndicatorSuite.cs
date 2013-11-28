@@ -76,7 +76,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 

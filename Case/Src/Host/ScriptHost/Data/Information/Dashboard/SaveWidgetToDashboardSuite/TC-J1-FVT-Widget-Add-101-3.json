@@ -37,7 +37,7 @@
 			{
 				"WidgetName":"Widget_Add_101_3_12_A",
 				"DashboardName":"Widget_Add_101_3_12",
-				"IsCreateDashboard":"true",
+				"IsCreateDashboard":"false",
 				"HierarchyName":["NancyCostCustomer2", "组织B", "园区C"],
 			}],
 			"TagName":"SV2Root",

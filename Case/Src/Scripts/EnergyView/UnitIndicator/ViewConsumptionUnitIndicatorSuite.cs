@@ -500,7 +500,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
 
             Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
-            Assert.AreEqual(0, UnitKPIPanel.GetTrendChartLines());
 
             //Column
             EnergyViewToolbar.View(EnergyViewType.Column);
@@ -510,7 +509,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
 
             Assert.IsFalse(UnitKPIPanel.IsColumnChartDrawn());
-            Assert.AreEqual(0, UnitKPIPanel.GetColumnChartColumns());
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();

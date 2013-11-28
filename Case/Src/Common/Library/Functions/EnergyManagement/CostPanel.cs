@@ -35,7 +35,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         protected override Grid EnergyDataGrid
         {
-            get { return JazzGrid.CarbonDataListGrid; }
+            get { return JazzGrid.CostDataListGrid; }
         }
 
         internal CostPanel()

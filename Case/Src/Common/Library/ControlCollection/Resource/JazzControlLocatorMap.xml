@@ -244,7 +244,7 @@
               <add key="ButtonKPITargetBaselineCalculateTarget" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算目标值']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineCalculateBaseline" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算基准值']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineRevise" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='修正计算值']]" type="XPath"/>
-              <add key="ButtonKPITargetBaselineSave" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+              <add key="ButtonKPITargetBaselineSave" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@class,'x-tb-panel-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineCancel" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineAddSpecialDates" value="//img[contains(@class,'x-tool-plus')]" type="XPath"/>
               <add key="ButtonKPITargetBaselineDeleteSpecialDates" value="//img[contains(@class,'x-tool-trash')]" type="XPath"/>

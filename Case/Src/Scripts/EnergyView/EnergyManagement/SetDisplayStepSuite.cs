@@ -70,7 +70,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             //Display original view before selection. Uncheck V(M)
             Assert.IsFalse(EnergyAnalysis.IsTagChecked(input.InputData.TagNames[0]));
-            Assert.IsFalse(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.IsTrue(EnergyAnalysis.EntirelyNoChartDrawn());
 
             //Set date range "2012/07/01-2012/07/31"
             EnergyViewToolbar.SetDateRange(timeRange[1].StartDate, timeRange[1].EndDate);
@@ -86,7 +86,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             //Display original view before selection. Uncheck V(M)
             Assert.IsFalse(EnergyAnalysis.IsTagChecked(input.InputData.TagNames[0]));
-            Assert.IsFalse(EnergyAnalysis.IsTrendChartDrawn());
+            Assert.IsTrue(EnergyAnalysis.EntirelyNoChartDrawn());
 
             //For multiple data sources, one step in Optional Steps is not supported by one source.VD and VH
             EnergyViewToolbar.SetDateRange(timeRange[0].StartDate, timeRange[0].EndDate);

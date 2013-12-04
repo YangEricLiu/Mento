@@ -11,7 +11,7 @@
 		{
 			"AreaNodePath":["楼宇配置测试","DeleteArea1"],
 			"CommonName":"DeleteArea1",
-			"Message":"删除区域维度节点“DeleteArea1”吗？\r\n您将同时删除区域维度节点下所有的子节点，数据点关联关系，以及间接关联的所有信息。",
+			"Messages":["删除区域维度节点 “DeleteArea1” 吗？", "您将同时删除区域维度节点下所有的子节点，数据点关联关系，以及间接关联的所有信息。"],
 		}
 	}
 ]

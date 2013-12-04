@@ -121,14 +121,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-            TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
-
             //Select 单项 Commodity=电 to display trend chart view.
             UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[0]);
             TimeManager.MediumPause();
@@ -139,7 +131,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
             Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            Assert.AreEqual(17, UnitKPIPanel.GetTrendChartLinesMarkers());
+            Assert.AreEqual(18, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();

@@ -13,7 +13,7 @@
 		"ExpectedData":
 		{
 			"CommonName":"VtagForDel001",
-			"Message":"删除计量数据V“VtagForDel001”吗？",
+			"Message":"删除计量数据V “VtagForDel001” 吗？",
 		}
 	}
 ]

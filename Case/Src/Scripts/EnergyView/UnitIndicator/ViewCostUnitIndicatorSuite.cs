@@ -73,7 +73,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
             Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            Assert.AreEqual(14, UnitKPIPanel.GetTrendChartLinesMarkers());
+            Assert.AreEqual(13, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //Select Unit=单位面积 and view data.
             EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitArea);
@@ -85,7 +85,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
             Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            Assert.AreEqual(14, UnitKPIPanel.GetTrendChartLinesMarkers());
+            Assert.AreEqual(13, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //Select 单项 Commodity=电 to display trend chart view.
             UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[0]);
@@ -98,7 +98,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
             Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            Assert.AreEqual(14, UnitKPIPanel.GetTrendChartLinesMarkers());
+            Assert.AreEqual(13, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //Select 楼宇D 单项 Commodity=电 , Unit= 单位人口 to display trend chart view. Select time range="去年"
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[1]);

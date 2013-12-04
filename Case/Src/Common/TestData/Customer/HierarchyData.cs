@@ -31,6 +31,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Industry { get; set; }
         public string Zone { get; set; }
         public string Comments { get; set; }
+        public string[] Messages { get; set; }
         public string Message { get; set; }
         public string ErrorMessage { get; set; }
     }

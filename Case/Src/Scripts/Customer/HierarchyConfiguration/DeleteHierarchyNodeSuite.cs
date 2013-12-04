@@ -67,7 +67,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify that message box popup for confirm delete
             string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[0]));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[1]));
             TimeManager.ShortPause();
 
             //confirm message box
@@ -90,7 +91,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify that message box popup for confirm delete
             string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[0]));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[1]));
             TimeManager.ShortPause();
 
             //confirm message box
@@ -117,7 +119,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify that message box popup for confirm delete
             string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[0]));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[1]));
             TimeManager.ShortPause();
 
             //confirm message box
@@ -153,7 +156,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify that message box popup for confirm delete
             string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[0]));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[1]));
             TimeManager.ShortPause();
 
             //confirm message box
@@ -192,7 +196,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify that message box popup for confirm delete
             string msgText = HierarchySettings.GetMessageText();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[0]));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[1]));
             TimeManager.ShortPause();
 
             //confirm message box

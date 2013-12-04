@@ -11,7 +11,7 @@
 			"HierarchyNodePath":["自动化测试", "AutoSite_Vtag","CheckModifyVtag"],
 			"AreaNodePath":["CheckModifyVtag","FirstFloor"],
 			"SystemNodePath":["CheckModifyVtag","空调"],
-			"Message":"删除计量数据V“VtagForDel002”吗？",
+			"Message":"删除计量数据V “VtagForDel002” 吗？",
 		}
 	}
 ]

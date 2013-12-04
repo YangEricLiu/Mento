@@ -74,7 +74,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify that message box popup for confirm delete
             string msgText = JazzMessageBox.MessageBox.GetMessage();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[0]));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[1]));
             
             AreaSettings.CancelErrorMsgBox();
 
@@ -107,7 +108,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             AreaSettings.ClickDeleteButton();
             //Verify that message box popup for confirm delete
             string msgText1 = JazzMessageBox.MessageBox.GetMessage();
-            Assert.IsTrue(msgText1.Contains(input.ExpectedData.Message));
+            Assert.IsTrue(msgText1.Contains(input.ExpectedData.Messages[0]));
+            Assert.IsTrue(msgText1.Contains(input.ExpectedData.Messages[1]));
 
             AreaSettings.ConfirmErrorMsgBox();
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -139,7 +141,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.ShortPause();
             string[] AreaNode2 = new string[] {"楼宇配置测试","L1","L2" };
             string[] AreaNode1 = new string[] {"楼宇配置测试","L1"};
-            string Message = "删除区域维度节点“L1”吗？\r\n您将同时删除区域维度节点下所有的子节点，数据点关联关系，以及间接关联的所有信息。";
+            string[] Message = new string[] {"删除区域维度节点 “L1” 吗？", "您将同时删除区域维度节点下所有的子节点，数据点关联关系，以及间接关联的所有信息。"};
 
             AreaSettings.ShowHierarchyTree();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -153,7 +155,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             AreaSettings.ClickDeleteButton();
             //Verify that message box popup for confirm delete
             string msgText3= JazzMessageBox.MessageBox.GetMessage();
-            Assert.IsTrue(msgText3.Contains(input.ExpectedData.Message));
+            Assert.IsTrue(msgText3.Contains(input.ExpectedData.Messages[0]));
+            Assert.IsTrue(msgText3.Contains(input.ExpectedData.Messages[1]));
 
             AreaSettings.ConfirmErrorMsgBox();
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -203,7 +206,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             AreaSettings.ClickDeleteButton();
             //Verify that message box popup for confirm delete
             string msgText = JazzMessageBox.MessageBox.GetMessage();
-            Assert.IsTrue(msgText.Contains(Message));
+            Assert.IsTrue(msgText.Contains(Message[0]));
+            Assert.IsTrue(msgText.Contains(Message[1]));
             /*
             TimeManager.MediumPause();
             JazzMessageBox.MessageBox.GetMessage().Equals(Message);
@@ -268,7 +272,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             AreaSettings.ClickDeleteButton();
             //Verify that message box popup for confirm delete
             string msgText = JazzMessageBox.MessageBox.GetMessage();
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[0]));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[1]));
             AreaSettings.ConfirmErrorMsgBox();
             JazzMessageBox.LoadingMask.WaitLoading();
 

@@ -24,7 +24,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator PieLocator = new Locator("g.highcharts-tracker", ByType.CssSelector);
         private static Locator PathLocator = new Locator("path", ByType.TagName);
         private static Locator RectLocator = new Locator("rect", ByType.TagName);
-        private static Locator MarkersLocator = new Locator("g.highcharts-tracker", ByType.CssSelector);
+        private static Locator MarkersLocator = new Locator("g.highcharts-markers", ByType.CssSelector);
         
         private static Locator TitleLocator = new Locator("svg/text[2]", ByType.XPath);
         private static Locator UomLocator = new Locator("svg/text[1]", ByType.XPath);
@@ -184,9 +184,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
             int noLine = 0;
             int haveMarkers = 0;
 
-            for (int i = 0; i < markers.Length; i++)
+            for (int i = 0; i < lines.Length; i++)
             {
-                bool pathExisted = LineChartPathChildExists(PathLocator, lines[i]);
+                bool pathExisted = ChildExists(PathLocator, lines[i]);
                 bool isLineVisible = lines[i].GetAttribute("visibility").Contains("visible");
                 bool isMarkersVisible = markers[i].GetAttribute("visibility").Contains("visible");
                 bool markersExisted = IsMarkersExisted(PathLocator, markers[i]);
@@ -205,7 +205,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 }
             }
 
-            return (haveLine > 0) || (haveMarkers > 0);
+            return (haveLine > 1) || (haveMarkers > 0);
         }
 
         public int GetTrendChartLines()
@@ -216,7 +216,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             foreach (IWebElement line in lines)
             {
-                bool pathExisted = LineChartPathChildExists(PathLocator, line);
+                bool pathExisted = ChildExists(PathLocator, line);
                 bool isVisible = line.GetAttribute("visibility").Contains("visible");
 
                 if (line.GetAttribute("transform").Contains("translate(0,100)"))
@@ -241,8 +241,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             for (int i = 0; i < markers.Length; i++)
             {
-                bool isVisible = lines[i].GetAttribute("visibility").Contains("visible");
-                if (isVisible)
+                bool isVisible = markers[i].GetAttribute("visibility").Contains("visible");
+                bool markersExisted = IsMarkersExisted(PathLocator, markers[i]);
+                if (isVisible && markersExisted)
                 {
                     markersLine = GetLineMarkers(PathLocator, markers[i]);
                     haveMarkers = haveMarkers + markersLine;
@@ -381,12 +382,21 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         private bool IsMarkersExisted(Locator locator, IWebElement parent)
         {
-            return FindChildren(locator, parent).Length > 0;
+            return FindChildren(locator, parent).Length > 1;
         }
 
         private int GetLineMarkers(Locator locator, IWebElement parent)
         {
-            return FindChildren(locator, parent).Length;
+            int markersNum = 0;
+            IWebElement[] paths = FindChildren(locator, parent);
+
+            foreach (IWebElement path in paths)
+            {
+                if (path.GetAttribute("visibility").Contains("inherit"))
+                    markersNum++;
+            }
+
+            return markersNum;
         }
 
         public bool EntirelyNoChartDrawn()

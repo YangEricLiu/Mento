@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"MessageArray":["删除计量数据P“PtagElecKHW003”吗？", "计量数据P\"PtagElecKHW003\"正在被引用，无法删除。请取消所有引用后再试。\r\n引用对象：计量数据V:\r\nVtagUsePtagKWH003\r\n层级结构:\r\nCheckTagsAssoBuild2"],
+			"MessageArray":["删除计量数据P “PtagElecKHW003” 吗？", "计量数据P\"PtagElecKHW003\"正在被引用，无法删除。请取消所有引用后再试。\r\n引用对象：计量数据V:\r\nVtagUsePtagKWH003\r\n层级结构:\r\nCheckTagsAssoBuild2"],
 		}
 	}
 ]

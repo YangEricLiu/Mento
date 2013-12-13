@@ -39,7 +39,11 @@ namespace Mento.Script.Information.Share
         [TearDown]
         public void CaseTearDown()
         {
-            HomePagePanel.NavigateToEnergyView();
+            //logout Jazz
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("PerfTestCustomer", "123456Qq", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         [Test]
@@ -69,6 +73,9 @@ namespace Mento.Script.Information.Share
 
             // "share" button is gary out and disabled
             Assert.IsFalse(ShareWindow.IsShareButtonEnable());
+
+            //Close share window
+            ShareWindow.Close();
         }
 
         [Test]
@@ -107,6 +114,9 @@ namespace Mento.Script.Information.Share
 
             // "share" button is gary out and disabled
             Assert.IsFalse(ShareWindow.IsShareButtonEnable());
+
+            //Close share window
+            ShareWindow.Close();
         }
 
         [Test]
@@ -266,7 +276,7 @@ namespace Mento.Script.Information.Share
             HomePagePanel.NavigateToAllDashboard();
 
             HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
@@ -282,7 +292,7 @@ namespace Mento.Script.Information.Share
 
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
-            Assert.AreEqual("分享小组件“Widget_Share_001_7_A”失败，无法分享给这些人：ShareUserF。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual("分享小组件“Widget_Share_001_7_1_A”失败，无法分享给这些人：ShareUserF。", HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Click "share widget" button

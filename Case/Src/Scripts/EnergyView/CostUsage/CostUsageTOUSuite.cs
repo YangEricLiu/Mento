@@ -35,7 +35,9 @@ namespace Mento.Script.EnergyView.CostUsage
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
         }
 
         private static CostPanel CostUsage = JazzFunction.CostPanel;
@@ -91,6 +93,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[1]);
             CostUsage.SelectCommodity(input.InputData.commodityNames[2]);
             Assert.IsFalse(EnergyViewToolbar.IsPeakValleyButtonEnable());
+            TimeManager.MediumPause();
         }
 
         [Test]

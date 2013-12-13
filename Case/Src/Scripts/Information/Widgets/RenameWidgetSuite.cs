@@ -74,6 +74,17 @@ namespace Mento.Script.Information.Widgets
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(input.ExpectedData.newWidgetName[0]));
             Assert.IsFalse(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetNames[0]));
 
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.LongPause();
+
+            //Mouse over a dashboard which hasn't been marked as favorite,
+            //Click the 'star' icon which is unlighted now.
+            HomePagePanel.ClickFavoriteDashboardButton(dashboard[0].DashboardName);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            Assert.IsTrue(HomePagePanel.IsDashboardFavorited(dashboard[0].DashboardName));
+
             //Switch to 'My Favorite' (我的收藏) tab.
             Widget.NavigateToMyFavorite();
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);

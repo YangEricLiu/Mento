@@ -65,8 +65,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
                 TimeManager.ShortPause();
 
-                ElementHandler.Wait(ChartMaskerLoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 5 : maxtime);
-
+                ElementHandler.Wait(ChartMaskerLoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 30 : maxtime);
+                //ElementHandler.Wait(ChartMaskerLoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 5 : maxtime);
                 TimeManager.ShortPause();
             }
             catch (Exception ex)

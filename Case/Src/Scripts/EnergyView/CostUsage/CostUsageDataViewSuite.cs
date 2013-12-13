@@ -35,7 +35,8 @@ namespace Mento.Script.EnergyView.CostUsage
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
         }
 
         private static CostPanel CostUsage = JazzFunction.CostPanel;
@@ -150,5 +151,74 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-DataView-001-3842")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-001-3842")]
+        public void CostUsageDataView3842(CostUsageData input)
+        {
+            //goto "NancyCostCustomer2/组织A/园区A/楼宇A"
+            CostUsage.SelectHierarchy(input.InputData.HierarchiesArray[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Set date range 2013-11-18 to 2013-11-24
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //Check "介质总览"
+            CostUsage.SelectCommodity();
+            EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ClickDisplayStep(DisplayStep.Hour);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Select "NancyOtherCustomer3"
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.ShortPause();
+
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
+
+            CostUsage.SelectHierarchy(input.InputData.HierarchiesArray[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Set date range 2012-1-1 to 2013-12-10
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
+            TimeManager.ShortPause();
+
+            //Check "介质总览"
+            CostUsage.SelectCommodity();
+            EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+            CostUsage.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+
+        }
     }
 }

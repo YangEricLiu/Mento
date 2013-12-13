@@ -34,7 +34,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
         }
 
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
@@ -90,7 +92,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
+            Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLinesMarkers());
 
             //Change the End Time in first date range, 
             EnergyViewToolbar.ClickTimeSpanButton();

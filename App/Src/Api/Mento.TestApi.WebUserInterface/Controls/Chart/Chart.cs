@@ -392,7 +392,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             foreach (IWebElement path in paths)
             {
-                if (path.GetAttribute("visibility").Contains("inherit"))
+                if (!path.GetAttribute("fill").Contains("none"))
                     markersNum++;
             }
 

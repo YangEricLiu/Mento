@@ -224,6 +224,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void CheckRowCheckbox(int cellIndex, string cellText, bool Paging = true)
         {
+            //Emma add on 2013-12-10
+            if (IsPageToolBarExisted()&&(CurrentPage > 1))
+            {
+                GotoPage(1);
+                TimeManager.LongPause();
+            }
+
             var checker = this.GetRowChecker(cellIndex, cellText, Paging);
 
             if (!this.IsRowChecked(cellIndex, cellText, Paging))
@@ -548,7 +555,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             var checkerLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowChecker);
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
-
+                
             if (IsPageToolBarExisted() && Paging)
             {
                 int i = 0;

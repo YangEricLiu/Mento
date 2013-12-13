@@ -37,7 +37,8 @@ namespace Mento.Script.Information.Dashboard
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
         }
 
         [Test]
@@ -172,7 +173,7 @@ namespace Mento.Script.Information.Dashboard
             EnergyAnalysis.CheckTag(input.InputData.TagName);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
             
             //Check '新建仪表盘' radio button
             EnergyAnalysis.Toolbar.SelectMoreOption(EnergyViewMoreOption.ToDashboard);

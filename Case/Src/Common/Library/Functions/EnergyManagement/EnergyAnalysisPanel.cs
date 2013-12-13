@@ -67,6 +67,10 @@ namespace Mento.ScriptCommon.Library.Functions
                     TagGrid = JazzGrid.EnergyAnalysisAreaDimensionTagList;
                     break;
                 case TagTabs.HierarchyTag:
+                    //click all tab
+                    JazzButton.EnergyViewALLTagsTab.Click();
+                    TagGrid = JazzGrid.EnergyAnalysisAllTagList;
+                    break;
                 default:
                     //click all tab
                     JazzButton.EnergyViewALLTagsTab.Click();

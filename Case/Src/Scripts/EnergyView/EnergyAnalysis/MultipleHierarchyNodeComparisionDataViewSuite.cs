@@ -39,7 +39,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
         }
 
         [Test]

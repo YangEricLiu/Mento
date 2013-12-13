@@ -123,7 +123,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region cost
 
-        public static Button CostAreaDimensionTabButton = GetControl<Button>(JazzControlLocatorKey.TabButtonCostAreaDimensionTab);       
+        public static TabButton CostAreaDimensionTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonCostAreaDimensionTab);
+        public static TabButton CostHierarchyTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonCostHierarchyTab);
+        public static TabButton CostSystemDimensionTab = GetControl<TabButton>(JazzControlLocatorKey.TabButtonCostSystemDimensionTab);       
 
         #endregion
 

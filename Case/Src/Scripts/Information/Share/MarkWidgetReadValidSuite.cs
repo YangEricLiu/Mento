@@ -39,7 +39,11 @@ namespace Mento.Script.Information.Share
         [TearDown]
         public void CaseTearDown()
         {
-            HomePagePanel.NavigateToEnergyView();
+            //logout Jazz
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("PerfTestCustomer", "123456Qq", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         [Test]
@@ -117,7 +121,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“Widget_MarkRead_101_1_B”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual("分享小组件“Widget_MarkRead_101_2_B”成功。", HomePagePanel.GetPopNotesValue());
 
         }
 
@@ -196,7 +200,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“Widget_MarkRead_101_4_A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual("分享小组件“WidgetMark1014A”成功。", HomePagePanel.GetPopNotesValue());
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
             HomePagePanel.ExitJazz();
@@ -356,7 +360,21 @@ namespace Mento.Script.Information.Share
             HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
             TimeManager.LongPause();
 
-            //Share widgetC/E to userB successfully.
+            //Share widgetA/C/E to userB successfully.
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickShareWidgetButton(dashboard[0].WidgetNames[0]);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[0]);
+            TimeManager.MediumPause();
+            ShareWindow.ClickShareButton();
+            TimeManager.LongPause();
+
+            Assert.AreEqual("分享小组件“Widget_MarkRead_101_7_A”成功。", HomePagePanel.GetPopNotesValue());
+
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
             TimeManager.LongPause();
@@ -403,23 +421,22 @@ namespace Mento.Script.Information.Share
             HomePagePanel.MaximizeWidget(dashboard[0].WidgetNames[0]);
             TimeManager.ShortPause();
             Widget.ClickNextButton();
-            Widget.ClickNextButton();
 
             //Back to click dashboardA again.
             Widget.ClickCloseMaxDialogButton();
             TimeManager.ShortPause();
 
-            //The widget3 unread mark is removed.
-            Assert.IsTrue(HomePagePanel.IsShareWidgetUnread(dashboard[0].WidgetNames[2]));
+            //The widget5 unread mark is removed.
+            Assert.IsFalse(HomePagePanel.IsShareWidgetUnread(dashboard[0].WidgetNames[2]));
 
-            //Delete a widget4.
-            HomePagePanel.DeleteWidgetOpen(dashboard[0].WidgetNames[3]);
+            //Delete a widget2.
+            HomePagePanel.DeleteWidgetOpen(dashboard[0].WidgetNames[2]);
             TimeManager.ShortPause();
             JazzMessageBox.MessageBox.Delete();
             TimeManager.MediumPause();
 
-            //Widget5 and widget6 localtion is moved ahead
-            Assert.AreEqual(5, HomePagePanel.GetWidgetsNumberOfDashboard());
+            //Widget5 localtion is moved ahead
+            Assert.AreEqual(2, HomePagePanel.GetWidgetsNumberOfDashboard());
 
             //Verify the widget5 unread mark,still display unread mark.
             Assert.IsTrue(HomePagePanel.IsShareWidgetUnread(dashboard[0].WidgetNames[4]));

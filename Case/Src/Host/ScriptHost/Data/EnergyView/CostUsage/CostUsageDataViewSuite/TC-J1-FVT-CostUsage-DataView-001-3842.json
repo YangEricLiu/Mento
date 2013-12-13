@@ -1,0 +1,21 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchiesArray":[["NancyCostCustomer2","组织A", "园区A", "楼宇A"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"ManualTimeRange":[{
+				"StartDate":"2013-11-18",
+				"EndDate":"2013-11-24",	
+			},
+			{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-10",	
+			}],
+			"failedFileName":["F-CostUsageDataView001-3842-1.xls", "F-CostUsageDataView001-3842-2.xls", "F-CostUsageDataView001-3842-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageDataView001-3842-1.xls", "CostUsageDataView001-3842-2.xls", "CostUsageDataView001-3842-3.xls"],
+		}
+	}
+]

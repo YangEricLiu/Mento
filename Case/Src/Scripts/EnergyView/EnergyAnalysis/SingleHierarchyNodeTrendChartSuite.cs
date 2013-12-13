@@ -54,6 +54,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
             TimeManager.ShortPause();
 
+            EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.MediumPause();
+
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -112,6 +115,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
             TimeManager.ShortPause();
 
+            EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.MediumPause();
+
             //Check tag V_Null_BuildingBC and view data view
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             EnergyViewToolbar.ClickViewButton();
@@ -161,6 +167,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Set date range
             EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
             TimeManager.ShortPause();
+
+            EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.MediumPause();
 
             //Check tag V_Null_BuildingBC and view data view
             EnergyAnalysis.CheckTags(input.InputData.TagNames);

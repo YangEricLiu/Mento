@@ -27,6 +27,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [SetUp]
         public void CaseSetUp()
         {
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.LongPause();
             EnergyAnalysis.NavigateToEnergyAnalysis();
             TimeManager.MediumPause();
         }
@@ -47,7 +49,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         public void MultipleTagsSingleHieDataView(EnergyViewOptionData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
             EnergyAnalysis.SwitchTagTab(TagTabs.AreaDimensionTab);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
             EnergyAnalysis.SelectAreaDimension(input.InputData.AreaDimensionPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();

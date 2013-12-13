@@ -36,7 +36,8 @@ namespace Mento.Script.Information.Dashboard
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
         }
 
         [Test]
@@ -87,6 +88,14 @@ namespace Mento.Script.Information.Dashboard
 
             Assert.IsTrue(HomePagePanel.IsDashboardButtonExisted(input.InputData.DashboardNames[0]));
             Assert.AreEqual(input.InputData.DashboardNames[0], HomePagePanel.GetDashboardHeaderName());
+
+            HomePagePanel.ClickDashboardButton(input.InputData.DashboardNames[0]);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.LongPause();
+
+            //Mouse over a dashboard which hasn't been marked as favorite, 
+            //Click the 'star' icon which is unlighted now.
+            HomePagePanel.ClickFavoriteDashboardButton(input.InputData.DashboardNames[0]);
 
             //Switch to 'My favorite' from the left corner of Homepage, select the same dashboard as above
             HomePagePanel.NavigateToMyFavorite();
@@ -215,7 +224,7 @@ namespace Mento.Script.Information.Dashboard
 
             //Input the valid  and click save
             HomePagePanel.ClickRenameDashboardSave();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.newDashboardNames[0]));
             TimeManager.MediumPause();

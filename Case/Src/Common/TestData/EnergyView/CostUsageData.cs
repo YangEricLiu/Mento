@@ -14,6 +14,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
     { 
         public string[] Hierarchies { get; set; }
 
+        public string[][] HierarchiesArray { get; set; }
+
         public string[] AreaDimensionPath { get; set; }
 
         public string[] SystemDimensionPath { get; set; }
@@ -27,6 +29,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public DefaultTimeRange? DefaultTimeRange { get; set; }
 
         public DashboardInformation DashboardInfo { get; set; }
+
+        public ManualTimeRange[] ManualTimeRange { get; set; }
     }
 
     public class CostUsageOutput : ExpectedTestDataBase

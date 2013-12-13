@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"DashboardInfo":[{
-				"WidgetName":"Dashboard_Share_102_1_A",
+				"WidgetName":"Dashboard_Share_102_1_1_A",
 				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "DashboardShareViewSendInfo"],
 				"ShareUsers":["ShareUserA"],
 				"DashboardName":"Dashboard_Share_102_1_1",
@@ -13,7 +13,7 @@
 					}],
 			},
 			{
-				"WidgetName":"Dashboard_Share_102_1_B",
+				"WidgetName":"Dashboard_Share_102_1_2_B",
 				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "DashboardShareViewSendInfo"],
 				"ShareUsers":["ShareUserA"],
 				"DashboardName":"Dashboard_Share_102_1_2",

@@ -40,7 +40,7 @@
 				"IsCreateDashboard":"false",
 				"HierarchyName":["NancyCostCustomer2", "组织B", "园区C"],
 			}],
-			"TagName":"SV2Root",
+			"TagName":"P_SiteA",
 		},
 		"ExpectedData":
 		{

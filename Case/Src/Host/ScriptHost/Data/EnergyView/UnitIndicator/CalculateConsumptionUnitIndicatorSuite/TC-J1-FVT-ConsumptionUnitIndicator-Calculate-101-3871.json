@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking2"]],
+			"TagNames":["Rankingtag2"],
+			"failedFileName":["F-ConsumptionUnitIndicatorCalculate101-3871-M.xls", "F-ConsumptionUnitIndicatorCalculate101-3871-Y.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-11-29",
+				"EndDate":"2013-12-10",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionUnitIndicatorCalculate101-3871-M.xls", "ConsumptionUnitIndicatorCalculate101-3871-Y.xls"],
+		}
+	}
+]

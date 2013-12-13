@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"DashboardInfo":[{
-				"WidgetName":"Dashboard_Share_001_5_A",
-				"HierarchyName":["NancyCustomer1", "ShareDashboardInvalidSuiteOrg"],
+				"WidgetName":"之前7天能效分析查看",
+				"HierarchyName":["NancyCustomer1", "ShareDashboardInvalidSuiteOrg", "ShareDashboardInvalidSuite0014"],
 				"ShareUsers":["ShareUserD"],
 				"DashboardName":"Dashboard_Share_001_5123456789",
 				"Receivers":[{

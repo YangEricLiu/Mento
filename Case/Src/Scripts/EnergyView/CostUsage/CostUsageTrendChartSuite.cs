@@ -54,7 +54,10 @@ namespace Mento.Script.EnergyView.CostUsage
             //Set date range
             EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 29), new DateTime(2012, 8, 4));
             TimeManager.ShortPause();
-            
+
+            CostUsage.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.MediumPause();
+
             //Check tag and view data view, hourly
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.ClickViewButton();

@@ -40,7 +40,11 @@ namespace Mento.Script.Information.Share
         [TearDown]
         public void CaseTearDown()
         {
-            HomePagePanel.NavigateToEnergyView();
+            //logout Jazz
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("PerfTestCustomer", "123456Qq", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         [Test]
@@ -74,11 +78,11 @@ namespace Mento.Script.Information.Share
             TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
 
             //Check UserA
-            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[0]);
+            ShareWindow.CheckShareUser(dashboard[1].ShareUsers[0]);
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“Dashboard_Share_102_1_B”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual("分享小组件“Dashboard_Share_102_1_2_B”成功。", HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Click "Share info" link.

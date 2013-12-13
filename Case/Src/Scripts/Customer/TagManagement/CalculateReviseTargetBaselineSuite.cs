@@ -345,5 +345,13 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetNovemberValue());
             Assert.AreEqual(blankValue, PVtagTargetBaselineSettings.GetDecemberValue());
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetCalculateRevise-101-3913")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-3913")]
+        public void CheckRevisionWord3913(KPITargetBaselineData input)
+        {
+
+        }
     }
 }

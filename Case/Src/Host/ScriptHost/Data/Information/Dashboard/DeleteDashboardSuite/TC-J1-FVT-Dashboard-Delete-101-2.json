@@ -10,11 +10,11 @@
 				"DashboardNames":["Dashboard_Delete_101_2_A", "Dashboard_Delete_101_2_B", "Dashboard_Delete_101_2_C"],
 			}],
 			"CustomerName":"NancyCostCustomer2",
-			"TagName":"BAV1A11",
+			"TagName":"P2_Water",
 		},
 		"ExpectedData":
 		{
-			"DeleteMessages":["删除仪表盘“Dashboard_Delete_101_2_A”吗？", "删除仪表盘“Dashboard_Delete_101_2_B”吗？", "删除仪表盘“Dashboard_Delete_101_2_C”吗？"],
+			"DeleteMessages":["删除仪表盘 “Dashboard_Delete_101_2_A” 吗？", "删除仪表盘 “Dashboard_Delete_101_2_B” 吗？", "删除仪表盘 “Dashboard_Delete_101_2_C” 吗？"],
 			"DeleteCommonMessage":"您将同时删除仪表盘下所有的小组件。",
 			"NoneDashboardMessage":"目前该节点下没有仪表盘",
 		}

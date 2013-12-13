@@ -37,7 +37,9 @@ namespace Mento.Script.Information.Widgets
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
         }
 
         private static EnergyAnalysisPanel DataPanel = JazzFunction.EnergyAnalysisPanel;

@@ -35,6 +35,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
+
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.LongPause();
         }
 
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;
@@ -399,6 +402,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
+
+            UnitKPIPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.LongPause();
 
             //Click Function Type button, select Energy Consumption. Verify precision display for Unit display.
             UnitKPIPanel.CheckTag(input.InputData.tagNames[0]);

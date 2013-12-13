@@ -46,7 +46,7 @@ namespace Mento.Script.Information.Widgets
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(DeleteWidgetSuite), "TC-J1-FVT-Widget-Delete-101-1")]
         public void DeleteWidget(MaximizeWidgetData input)
         {
-            string[] deleteMessage = { "删除小组件“Widget_Delete_101_1_1”吗？", "删除小组件“Widget_Delete_101_1_2”吗？", "删除小组件“Widget_Delete_101_1_3”吗？", "删除小组件“Widget_Delete_101_1_4”吗？" };
+            string[] deleteMessage = { "删除小组件 “Widget_Delete_101_1_1” 吗？", "删除小组件 “Widget_Delete_101_1_2” 吗？", "删除小组件 “Widget_Delete_101_1_3” 吗？", "删除小组件 “Widget_Delete_101_1_4” 吗？" };
 
             //Click on a Hierarchy node that contains dashboard.
             var dashboard = input.InputData.DashboardInfo;
@@ -83,7 +83,6 @@ namespace Mento.Script.Information.Widgets
             Assert.AreEqual(3, HomePagePanel.GetWidgetsNumberOfDashboard());
             Assert.IsFalse(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetNames[0]));
             
-            
             //Swtich to other dashboard/function, back to the dashboard.
             Widget.NavigateToEnergyView();
             TimeManager.ShortPause();
@@ -98,6 +97,17 @@ namespace Mento.Script.Information.Widgets
             //The widget deletion is saved successfully.The dashboard and locations of the widgets are dispalyed correctly.
             Assert.AreEqual(3, HomePagePanel.GetWidgetsNumberOfDashboard());
             Assert.IsFalse(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetNames[0]));
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.LongPause();
+
+            //Mouse over a dashboard which hasn't been marked as favorite,
+            //Click the 'star' icon which is unlighted now.
+            HomePagePanel.ClickFavoriteDashboardButton(dashboard[0].DashboardName);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            Assert.IsTrue(HomePagePanel.IsDashboardFavorited(dashboard[0].DashboardName));
 
             //Switch to 'My Favorite' (我的收藏) tab.
             Widget.NavigateToMyFavorite();

@@ -60,7 +60,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 case TagTabs.SystemDimensionTab:
                     //click system tab
-                    JazzButton.RankSystemDimensionTab.Click();
+                    JazzButton.CostSystemDimensionTab.Click();
                     CommodityGrid = JazzGrid.OtherCommodityCostGrid;
                     TotalCommotidyGrid = JazzGrid.TotalOtherCommodityCostGrid;
                     break;
@@ -72,13 +72,13 @@ namespace Mento.ScriptCommon.Library.Functions
                     break;
                 case TagTabs.HierarchyTag:
                     //click all tab
-                    JazzButton.RankHierarchyTab.Click();
+                    JazzButton.CostHierarchyTab.Click();
                     CommodityGrid = JazzGrid.CommodityCostGrid;
                     TotalCommotidyGrid = JazzGrid.TotalCommodityCostGrid;
                     break;
                 default:
                     //click all tab
-                    JazzButton.RankHierarchyTab.Click();
+                    JazzButton.CostHierarchyTab.Click();
                     CommodityGrid = JazzGrid.CommodityCostGrid;
                     TotalCommotidyGrid = JazzGrid.TotalCommodityCostGrid;
                     break;

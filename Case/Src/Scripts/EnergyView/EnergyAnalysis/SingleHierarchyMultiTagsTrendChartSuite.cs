@@ -27,6 +27,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [SetUp]
         public void CaseSetUp()
         {
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.LongPause();
             EnergyAnalysis.NavigateToEnergyAnalysis();
             TimeManager.MediumPause();
         }
@@ -103,7 +105,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            Assert.AreEqual(10, EnergyAnalysis.GetTrendChartLines());
+            Assert.AreEqual(9, EnergyAnalysis.GetTrendChartLines());
 
             //can't check any tags checkbox on All Tag list/System dimension/Area dimension tab
             Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());

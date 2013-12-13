@@ -19,7 +19,7 @@
 				}],
 			},
 			{
-				"WidgetName":"WidgetShare1012B",
+				"WidgetName":"WidgetShare1012A",
 				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg", "ShareWidgetValidSuite"],
 				"ShareUsers":["ShareUserB"],
 				"DashboardName":"WidgetShare1012",

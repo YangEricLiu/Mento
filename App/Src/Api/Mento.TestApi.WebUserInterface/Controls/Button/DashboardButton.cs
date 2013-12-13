@@ -7,7 +7,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class DashboardButton : Button
     {
-        private static Locator DashboardFavorite = new Locator("../../div[contains(@id,'dashboardbutton')]", ByType.XPath);
+        private static Locator DashboardFavorite = new Locator("../self::node()[contains(@id,'dashboardbutton')]", ByType.XPath);
         private static Locator DashboardUnreadIcon = new Locator("../../div[@id='hp-share-info-btn']", ByType.XPath);
 
         public DashboardButton(Locator locator)

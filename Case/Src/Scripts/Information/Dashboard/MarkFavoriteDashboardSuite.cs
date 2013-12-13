@@ -63,6 +63,7 @@ namespace Mento.Script.Information.Dashboard
             //Click the 'star' icon which is unlighted now.
             HomePagePanel.ClickFavoriteDashboardButton(dashboard[0].DashboardNames[0]);
             TimeManager.LongPause();
+            TimeManager.LongPause();
             Assert.IsTrue(HomePagePanel.IsDashboardFavorited(dashboard[0].DashboardNames[0]));
 
             //The favorite dashboards list is displayed on the page.
@@ -97,6 +98,7 @@ namespace Mento.Script.Information.Dashboard
             TimeManager.LongPause();
 
             Assert.AreEqual(dashboard[0].DashboardNames[1], HomePagePanel.GetDashboardHeaderName());
+            TimeManager.LongPause();
             Assert.AreEqual(input.ExpectedData.NoneWidgetMessage, HomePagePanel.GetDashboardPanelValue());
         }
 

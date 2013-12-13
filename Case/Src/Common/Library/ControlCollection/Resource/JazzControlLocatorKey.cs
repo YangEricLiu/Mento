@@ -182,6 +182,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region cost
 
         public static string TabButtonCostAreaDimensionTab = "TabButtonCostAreaDimensionTab";
+        public static string TabButtonCostHierarchyTab = "TabButtonCostHierarchyTab";
+        public static string TabButtonCostSystemDimensionTab = "TabButtonCostSystemDimensionTab";
 
         #endregion
 

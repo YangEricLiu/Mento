@@ -34,7 +34,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
         }
 
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
@@ -161,6 +163,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
                 Assert.AreEqual(input.ExpectedData.StartTimeValue[k+2], TimeSpanDialog.GetAdditionStartTimeValue(k + 2));
                 Assert.AreEqual(input.ExpectedData.EndTimeValue[k+4], TimeSpanDialog.GetAdditionEndTimeValue(k + 2));
             }
+
+            TimeSpanDialog.ClickGiveUpButton();
+            TimeManager.LongPause();
         }
 
         [Test]

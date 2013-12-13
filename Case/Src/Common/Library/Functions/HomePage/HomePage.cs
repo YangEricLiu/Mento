@@ -92,7 +92,7 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Navigate To AllDashboard
+        /// Navigate To EnergyView
         /// </summary>
         /// <returns></returns>
         public void NavigateToEnergyView()

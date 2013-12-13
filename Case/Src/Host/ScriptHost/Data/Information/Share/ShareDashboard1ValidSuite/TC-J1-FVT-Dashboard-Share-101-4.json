@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"DashboardInfo":[{
-				"WidgetName":"DS_Widget_101_4_AAA",
+				"WidgetName":"DS_Widget_101_4_A",
 				"HierarchyName":["NancyCustomer1", "ShareDashboard1ValidSuiteOrg"],
 				"ShareUsers":["ShareUserB", "ShareUserD"],
 				"DashboardName":"Dashboard_Share_101_4",

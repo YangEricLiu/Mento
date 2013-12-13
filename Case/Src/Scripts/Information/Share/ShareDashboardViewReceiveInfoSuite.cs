@@ -40,7 +40,11 @@ namespace Mento.Script.Information.Share
         [TearDown]
         public void CaseTearDown()
         {
-            HomePagePanel.NavigateToEnergyView();
+            //logout Jazz
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("PerfTestCustomer", "123456Qq", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         [Test]

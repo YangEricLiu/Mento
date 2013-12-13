@@ -39,7 +39,11 @@ namespace Mento.Script.Information.Share
         [TearDown]
         public void CaseTearDown()
         {
-            HomePagePanel.NavigateToEnergyView();
+            //logout Jazz
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("PerfTestCustomer", "123456Qq", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         [Test]
@@ -148,7 +152,7 @@ namespace Mento.Script.Information.Share
             //There is new dashboardA+timestamp is unread dashboard with mark icon . 
             Assert.IsTrue(HomePagePanel.IsShareDashboardUnreadPosition(2));
             string newName = dashboard[0].DashboardName + "_" + HomePagePanel.GetShareCurrentTime();
-            Assert.IsTrue(HomePagePanel.GetOneDashboardNamePosition(2).Contains(newName));
+            Assert.IsTrue(HomePagePanel.GetOneDashboardNamePosition(1).Contains(newName));
 
             //Click the dashboardA+timestamp name from dashboard list.
             HomePagePanel.ClickDashboardButtonPosition(2);

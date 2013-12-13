@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"DashboardInfo":[{
-				"WidgetName":"Widget_MarkRead_101_4_A",
+				"WidgetName":"WidgetMark1014A",
 				"HierarchyName":["NancyCustomer1", "MarkDashboardReadValidSuiteOrg", "MarkWidgetReadValidSuiteOrg"],
 				"ShareUsers":["ShareUserA"],
 				"DashboardName":"Widget_MarkRead_101_4",

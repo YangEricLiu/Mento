@@ -146,6 +146,8 @@
           <add key="TabButtonRankHierarchyTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='层级']]" type="XPath"/>
           <add key="TabButtonRankSystemDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='系统维度']]" type="XPath"/>
           <add key="TabButtonCostAreaDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='区域维度']]" type="XPath"/>
+          <add key="TabButtonCostHierarchyTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='层级']]" type="XPath"/>
+          <add key="TabButtonCostSystemDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='系统维度']]" type="XPath"/>
 
         <!--emma add at 2013.11.11 for UnitIndicator-->
           <add key="TabButtonUnitIndicatorALLTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='层级']]" type="XPath"/>
@@ -769,8 +771,8 @@
   <Grid>
     <energyview>
           <add key="GridEnergyAnalysisAllTagList" value="//div[@id='em-content-west-region-body']//div[contains(@id, 'taggrid') and contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
-          <add key="GridEnergyAnalysisSystemDimensionTagList" value="//div[@id='em-content-west-region-body']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
-          <add key="GridEnergyAnalysisAreaDimensionTagList" value="//div[@id='em-content-west-region-body']//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridEnergyAnalysisSystemDimensionTagList" value="//div[@id='em-content-west-region-body']//div[contains(@class, 'x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridEnergyAnalysisAreaDimensionTagList" value="//div[@id='em-content-west-region-body']//div[contains(@class, 'x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridEnergyAnalysisEnergyDataList" value="//div[@id='em-content-center-region-body']//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridCarbonDataList" value="//div[@id='em-carbon-chartgridpanel-body']/div/div/div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
@@ -785,13 +787,13 @@
           <add key="GridTotalCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridTotalCommodityUnitCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridTotalCommodityUnitCost" value="//div[@id='em-unit-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
-          <add key="GridTotalOtherCommodityCost" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-panel x-tabpanel-child x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridTotalOtherCommodityCost" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tabpanel-child') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridCommodityCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
           <add key="GridCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
           <add key="GridCommodityUnitCarbon" value="//div[@id='em-unit-carbon-leftpanel']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
           <add key="GridCommodityUnitCost" value="//div[@id='em-unit-cost-leftpanel']//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
-          <add key="GridOtherCommodityCost" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-panel x-tabpanel-child x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
+          <add key="GridOtherCommodityCost" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tabpanel-child') and not(contains(@style,'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines') and contains(@class, 'x-grid-header-hidden')]" type="XPath"/>
 
         <add key="GridCommodityRank" value="//div[@id='em-content-west-region-body']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 

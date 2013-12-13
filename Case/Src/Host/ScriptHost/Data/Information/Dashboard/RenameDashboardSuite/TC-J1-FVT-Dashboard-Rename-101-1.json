@@ -4,14 +4,14 @@
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
 			"DashboardInfo":[{
-				"WigetNames":["Dashboard_Rename_101_1_A_1"],
+				"WigetNames":["Dashboard_Rename_101_1_A_2"],
 				"HierarchyName":["NancyCostCustomer2", "RenameDashboardSuiteOrg"],
 				"IsCreateDashboard":"false",
 				"DashboardName":"Dashboard_Rename_101_1_A",
 			}],
 			"CustomerName":"NancyCostCustomer2",
 			"DashboardNames":["Dashboard_Rename_101_1_A_M"],
-			"TagName":"BAV1A11",
+			"TagName":"P2_Water",
 		},
 		"ExpectedData":
 		{

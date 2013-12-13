@@ -39,7 +39,11 @@ namespace Mento.Script.Information.Share
         [TearDown]
         public void CaseTearDown()
         {
-            HomePagePanel.NavigateToEnergyView();
+            //logout Jazz
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("PerfTestCustomer", "123456Qq", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         [Test]
@@ -108,7 +112,7 @@ namespace Mento.Script.Information.Share
 
             //Add a widgetA display at the end of dashboardA.
             HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WidgetName);
-            Assert.AreEqual(2, HomePagePanel.GetWidgetsNumberOfDashboard());
+            Assert.AreEqual(1, HomePagePanel.GetWidgetsNumberOfDashboard());
         }
 
         [Test]
@@ -201,6 +205,10 @@ namespace Mento.Script.Information.Share
             //Share dashboardA successfully to userB name with timestamp.
             Assert.AreEqual(2, HomePagePanel.GetDashboardsNumber());
 
+            HomePagePanel.ClickFavoriteDashboardButton(dashboard[0].DashboardName);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
             //Share widget successfully without error, the widgetA is share to dashboardA with name widgetA+timestamp.
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
@@ -222,7 +230,6 @@ namespace Mento.Script.Information.Share
             //There isn't dashbardA+timestamp added in favorite
             string newName = dashboard[0].DashboardName + "_" + HomePagePanel.GetShareCurrentTime();
             Assert.IsFalse(HomePagePanel.GetOneDashboardNamePosition(1).Contains(newName));
-            Assert.IsFalse(HomePagePanel.GetOneDashboardNamePosition(2).Contains(newName));
 
             //There is widgetA+timestamp added in favorite.
             string newWidgetName = dashboard[0].WidgetName + "_" + HomePagePanel.GetShareCurrentTime();

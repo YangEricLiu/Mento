@@ -33,7 +33,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             get
             {
-                if (this._ClearButton == null)
+                //if (this._ClearButton == null)
                     this._ClearButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxClearButton));
                 return this._ClearButton;
             }
@@ -44,7 +44,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             get
             {
-                if (this._GiveUpButton == null)
+                //if (this._GiveUpButton == null)
                     this._GiveUpButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxGiveUpButton));
                 return this._GiveUpButton;
             }
@@ -55,7 +55,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             get
             {
-                if (this._QuitButton == null)
+                //if (this._QuitButton == null)
                     this._QuitButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxQuitButton));
                 return this._QuitButton;
             }
@@ -77,7 +77,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             get
             {
-                if (this._NoButton == null)
+                //if (this._NoButton == null)
                     this._NoButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxNoButton));
                 return this._NoButton;
             }
@@ -88,7 +88,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             get
             {
-                if (this._DeleteButton == null)
+                //if (this._DeleteButton == null)
                     this._DeleteButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxDeleteButton));
                 return this._DeleteButton;
             }
@@ -99,7 +99,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             get
             {
-                if (this._CancelButton == null)
+                //if (this._CancelButton == null)
                     this._CancelButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxCancelButton));
                 return this._CancelButton;
             }
@@ -110,7 +110,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             get
             {
-                if (this._CloseButton == null)
+                //if (this._CloseButton == null)
                     this._CloseButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxCloseButton));
                 return this._CloseButton;
             }

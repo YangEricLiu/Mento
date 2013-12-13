@@ -147,6 +147,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Change from "StandardCoal" to "CO2"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
@@ -157,6 +159,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsTrue(CarbonUsage.IsTrendChartDrawn());
             Assert.AreEqual(5, CarbonUsage.GetTrendChartLines());
             EnergyViewToolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Change from "CO2" to "Tree"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
@@ -165,8 +169,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
-            //Assert.AreEqual(3, CarbonUsage.GetTrendChartLines());
-            //EnergyViewToolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            //Assert.AreEqual(5, CarbonUsage.GetTrendChartLines());
+            EnergyViewToolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
 
             //On homepage, check the dashboards
             CarbonUsage.NavigateToAllDashBoards();

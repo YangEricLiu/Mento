@@ -3,10 +3,10 @@
 		"InputData":
 		{
 			"DashboardInfo":[{
-				"WidgetName":"Widget_Share_001_7_A",
+				"WidgetName":"Widget_Share_001_7_1_A",
 				"HierarchyName":["NancyCustomer1", "ShareDashboardInvalidSuiteOrg", "ShareWidgetInvalidSuite0017"],
 				"ShareUsers":["ShareUserF"],
-				"DashboardName":"Widget_Share_001_7",
+				"DashboardName":"Widget_Share_001_7_1",
 				"Receivers":[{
 					"LoginName":"ShareUserA",
 					"Password":"123456Qq",

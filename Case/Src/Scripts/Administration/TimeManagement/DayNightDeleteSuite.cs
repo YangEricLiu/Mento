@@ -59,7 +59,8 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
             TimeSettingsDayNight.ClickMsgBoxConfirmButton();
 
-            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
 
             //Verify that the Calendar is deleted successfully and NOT exists in the list.
             Assert.IsFalse(TimeSettingsDayNight.IsCalendarExist(testData.InputData.CommonName));

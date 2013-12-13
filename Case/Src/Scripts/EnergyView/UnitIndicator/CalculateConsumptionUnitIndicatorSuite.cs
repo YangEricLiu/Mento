@@ -34,7 +34,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
         }
 
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;
@@ -298,6 +299,54 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[11], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[11], input.InputData.failedFileName[11]);
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-3871")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-3871")]
+        public void CalculateConsumptionUnitIndicator3871(UnitIndicatorData input)
+        {
+            //Goto "NancyOtherCustomer3/NancyOtherSite/BuildingRanking2"
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[0]);
+            TimeManager.ShortPause();
+
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Step is "Month"
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Step is "Year"
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
     }
 }

@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织A","园区A","楼宇A"],
+			"commodityNames":["电","介质总览"],
+			"failedFileName":["F-TC-J1-FVT-CostRanking-Calculate-101-4-Elec-TotalRank-Custom.xls","F-TC-J1-FVT-CostRanking-Calculate-101-4-Total-TotalRank-Custom.xls","F-TC-J1-FVT-CostRanking-Calculate-101-4-Total-TotalRank-Custom-Month.xls","F-TC-J1-FVT-CostRanking-Calculate-101-4-Total-AverageRank-Custom-Month.xls"],
+		},
+		"ExpectedData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织A","园区A","楼宇A"],
+			"expectedFileName":["TC-J1-FVT-CostRanking-Calculate-101-4-Elec-TotalRank-Custom.xls","TC-J1-FVT-CostRanking-Calculate-101-4-Total-TotalRank-Custom.xls","TC-J1-FVT-CostRanking-Calculate-101-4-Total-TotalRank-Custom-Month.xls","TC-J1-FVT-CostRanking-Calculate-101-4-Total-AverageRank-Custom-Month.xls"],
+		}
+	}
+]

@@ -118,8 +118,12 @@ namespace Mento.Script.Administration.UserDataScope
             UserDataPermissionSettings.CheckHierarchyNode(input.ExpectedData.CustomerList);
 
             UserDataPermissionSettings.SaveTreeWindow();
+            TimeManager.ShortPause();
             UserDataPermissionSettings.ClickCancelButton();
+            TimeManager.LongPause();
+
             UserDataPermissionSettings.ClickModifyButton();
+            TimeManager.MediumPause();
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
             // View the data permission 
             //@@@@@@@@@@@@@@@@  lost a verify whole

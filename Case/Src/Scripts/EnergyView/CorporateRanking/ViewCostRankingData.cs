@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-CostRanking-View-101"), CreateTime("2013-10-25"), Owner("Nancy")]
-    public class CostRanking: TestSuiteBase
+    public class ViewCostRankingData: TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -46,7 +46,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-CostRanking-View-101-1")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CostRanking), "TC-J1-FVT-CostRanking-View-101-1")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewCostRankingData), "TC-J1-FVT-CostRanking-View-101-1")]
         public void ViewTotalCostRankingData(CorporateRankingData input)
         {
             
@@ -266,7 +266,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-CostRanking-View-101-2")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CostRanking), "TC-J1-FVT-CostRanking-View-101-2")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewCostRankingData), "TC-J1-FVT-CostRanking-View-101-2")]
         public void ViewUnitAreaRankingData(CorporateRankingData input)
         {
             //Select 楼宇A+楼宇B+楼宇C, time range 2012/07/02 -2012/08/03, Commodity=电, Ranking type="单位面积" to view data.
@@ -324,7 +324,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-CostRanking-View-101-3")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CostRanking), "TC-J1-FVT-CostRanking-View-101-3")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewCostRankingData), "TC-J1-FVT-CostRanking-View-101-3")]
         public void ViewUnitAreaCoalRankingData(CorporateRankingData input)
         {
             string[] extendNodes = { "NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight" };
@@ -465,7 +465,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-CostRanking-View-101-4")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CostRanking), "TC-J1-FVT-CostRanking-View-101-4")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewCostRankingData), "TC-J1-FVT-CostRanking-View-101-4")]
         public void ViewFiftyBuildingData(CorporateRankingData input)
         {
             
@@ -515,7 +515,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-CostRanking-View-101-5")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CostRanking), "TC-J1-FVT-CostRanking-View-101-5")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewCostRankingData), "TC-J1-FVT-CostRanking-View-101-5")]
         public void ViewNullTestBuildingData(CorporateRankingData input)
         {
             string[] extendNodes = { "NancyOtherCustomer3", "NancyOtherSite", "BuildingConvertStandardUOM" };
@@ -584,7 +584,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-CostRanking-View-101-6")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CostRanking), "TC-J1-FVT-CostRanking-View-101-6")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewCostRankingData), "TC-J1-FVT-CostRanking-View-101-6")]
         public void ViewCostYearBuildingData(CorporateRankingData input)
         {
             //Go to NancyOtherCustomer3. Go to Function "Corporate Ranking". 

@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingRanking1"],
+			"commodityNames":["电","介质总览"],
+			"failedFileName":["F-TC-J1-FVT-CostRanking-Calculate-101-1-Elec-TotalRank-Custom.xls","F-TC-J1-FVT-CostRanking-Calculate-101-1-Elec-TotalRank-ThisYear.xls","F-TC-J1-FVT-CostRanking-Calculate-101-1-Total-TotalRank-ThisYear.xls","F-TC-J1-FVT-CostRanking-Calculate-101-1-Total-AverageRank-ThisYear.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["TC-J1-FVT-CostRanking-Calculate-101-1-Elec-TotalRank-Custom.xls","TC-J1-FVT-CostRanking-Calculate-101-1-Elec-TotalRank-ThisYear.xls","TC-J1-FVT-CostRanking-Calculate-101-1-Total-TotalRank-ThisYear.xls","TC-J1-FVT-CostRanking-Calculate-101-1-Total-AverageRank-ThisYear.xls"],
+			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingRanking2"],
+		}
+	}
+]

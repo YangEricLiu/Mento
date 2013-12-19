@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-ConsumptionRanking-View-101"), CreateTime("2013-10-25"), Owner("Greenie")]
-    public class ConsumptionRanking : TestSuiteBase
+    public class ViewConsumptionRankingData : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -44,7 +44,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-1")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-View-101-1")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-1")]
         public void ViewRankingData(CorporateRankingData input)
         {
             //Select the 楼宇A from Hierarchy Tree.Click Function Type button, select Energy Consumption.
@@ -192,7 +192,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-2")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-View-101-2")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-2")]
         public void SaveToDashboard(CorporateRankingData input)
         {
             
@@ -225,7 +225,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-3")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-View-101-3")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-3")]
         public void ConsumptionTotalRanking(CorporateRankingData input)
         {
             //Go to NancyOtherCustomer3. Go to Function "Corporate Ranking". 
@@ -325,7 +325,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-4")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-View-101-4")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-4")]
         public void ViewCostYearBuildingData(CorporateRankingData input)
         {
             //·Change Ranking type=人均排名. Time range= "2013/01/03-2013/02/03".
@@ -370,7 +370,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-5")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-View-101-5")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-5")]
         public void ViewZxhUserAConsumption(CorporateRankingData input)
         {
             string[] extendNode = { "NancyOtherCustomer3", "NancyNoCalendarSite", "BuildingNoPeopleProperty" };
@@ -466,7 +466,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-6")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-View-101-6")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-6")]
         public void ViewLastYearConsumption(CorporateRankingData input)
         {
             string[] extendNode = { "NancyOtherCustomer3", "NancyNoCalendarSite", "BuildingNoPeopleProperty" };
@@ -562,7 +562,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-7")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-View-101-7")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-7")]
         public void ViewNullTestBuildingData(CorporateRankingData input)
         {
             //Go to NancyOtherCustomer3. Go to Function "Corporate Ranking". 

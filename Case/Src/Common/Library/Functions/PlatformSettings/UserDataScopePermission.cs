@@ -159,6 +159,7 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        /*
         /// <summary>
         /// Get customer lists
         /// </summary>
@@ -170,7 +171,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         }
 
-
+        */
         /// <summary>
         /// Click Edit Data Permission  scope  link button
         /// </summary>
@@ -287,6 +288,16 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        /// <summary>
+        /// UnCheck  certain hierarchy node
+        /// </summary>
+        /// <returns></returns>
+        public void UnCheckHierarchyNode(string[] hierarchNodePaths)
+        {
+            TimeManager.LongPause();
+            UserDataPermissionTree.ExpandNodePath(hierarchNodePaths);
+            UserDataPermissionTree.UncheckNode(hierarchNodePaths.Last());
+        }
 
         /// <summary>
         /// Check  hierarchy building node.
@@ -314,12 +325,33 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean CheckHierarchySiteNode(string[] hierarchFullNodePaths)
         {
              string[] sitePath = new string[hierarchFullNodePaths.Length];
-             Array.Copy(hierarchFullNodePaths,sitePath,2);
+             Array.Copy(hierarchFullNodePaths,sitePath,3);
             try
             {
                 TimeManager.LongPause();
                 UserDataPermissionTree.ExpandNodePath(sitePath);
                 UserDataPermissionTree.CheckNode(sitePath.Last());
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// UnCheck  hierarchy Site node. 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean UnCheckHierarchySiteNode(string[] hierarchFullNodePaths)
+        {
+            string[] sitePath = new string[hierarchFullNodePaths.Length];
+            Array.Copy(hierarchFullNodePaths, sitePath, 3);
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(sitePath);
+                UserDataPermissionTree.UncheckNode(sitePath.Last());
                 return true;
             }
             catch (Exception)
@@ -335,12 +367,34 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean CheckHierarchyOrzNode(string[] hierarchFullNodePaths)
         {
             string[] OrzPath = new string[hierarchFullNodePaths.Length];
-            Array.Copy(hierarchFullNodePaths, OrzPath, 1);
+            Array.Copy(hierarchFullNodePaths, OrzPath, 2);
             try
             {
                 TimeManager.LongPause();
                 UserDataPermissionTree.ExpandNodePath(OrzPath);
                 UserDataPermissionTree.CheckNode(OrzPath.Last());
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        ///UnCheck  hierarchy Orz node. 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean UnCheckHierarchyOrzNode(string[] hierarchFullNodePaths)
+        {
+            string[] OrzPath = new string[hierarchFullNodePaths.Length];
+            Array.Copy(hierarchFullNodePaths, OrzPath, 2);
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(OrzPath);
+                UserDataPermissionTree.UncheckNode(OrzPath.Last());
                 return true;
             }
             catch (Exception)
@@ -356,7 +410,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean CheckHierarchyCustomerNode(string[] hierarchFullNodePaths)
         {
             string[] CustomerPath = new string[hierarchFullNodePaths.Length];
-            Array.Copy(hierarchFullNodePaths, CustomerPath, 0);
+            Array.Copy(hierarchFullNodePaths, CustomerPath, 1);
             try
             {
                 TimeManager.LongPause();
@@ -370,6 +424,26 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        /// <summary>
+        /// UnCheck  hierarchy customer node. 
+        /// </summary>
+        /// <returns></returns>
+        public Boolean UnCheckHierarchyCustomerNode(string[] hierarchFullNodePaths)
+        {
+            string[] CustomerPath = new string[hierarchFullNodePaths.Length];
+            Array.Copy(hierarchFullNodePaths, CustomerPath, 1);
+            try
+            {
+                TimeManager.LongPause();
+                UserDataPermissionTree.ExpandNodePath(CustomerPath);
+                UserDataPermissionTree.UncheckNode(CustomerPath[0]);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         /// <summary>
         /// Check  a  hierarchy node

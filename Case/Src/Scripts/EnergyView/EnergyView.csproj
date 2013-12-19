@@ -51,9 +51,16 @@
   <ItemGroup>
     <Compile Include="CarbonUsage\CarbonUsageDataViewSuite.cs" />
     <Compile Include="CarbonUsage\CarbonUsageTrendChartSuite.cs" />
-    <Compile Include="CorporateRanking\ConsumptionRanking.cs" />
-    <Compile Include="CorporateRanking\CarbonRanking.cs" />
-    <Compile Include="CorporateRanking\CostRanking.cs" />
+    <Compile Include="CorporateRanking\ViewConsumptionRankingData.cs" />
+    <Compile Include="CorporateRanking\ViewCarbonRankingData.cs" />
+    <Compile Include="CorporateRanking\CalculateCostRanking.cs" />
+    <Compile Include="CorporateRanking\CalculateCarbonEmissionRanking.cs" />
+    <Compile Include="CorporateRanking\CalculateConsumptionRanking.cs" />
+    <Compile Include="CorporateRanking\CommonCostRankingCalculationDataView.cs" />
+    <Compile Include="CorporateRanking\CommonCarbonRankingCalculationDataView.cs" />
+    <Compile Include="CorporateRanking\CommonConsumptionRankingCalculationDataView.cs" />
+    <Compile Include="CorporateRanking\RankingDataviewAddForBug.cs" />
+    <Compile Include="CorporateRanking\ViewCostRankingData.cs" />
     <Compile Include="CostUsage\CostUsageTOUSuite.cs" />
     <Compile Include="CostUsage\CostUsageTrendChartSuite.cs" />
     <Compile Include="CostUsage\CostUsageDataViewSuite.cs" />
@@ -111,6 +118,7 @@
   <ItemGroup>
     <None Include="..\..\Host\ScriptHost\App.config">
       <Link>App.config</Link>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>

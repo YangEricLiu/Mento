@@ -42,6 +42,11 @@ namespace Mento.Script.Information.Share
             //refresh Jazz
             JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
+
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("PerfTestCustomer", "123456Qq", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         [Test]

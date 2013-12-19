@@ -1,0 +1,23 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"], ["NancyCustomer1", "园区测试多层级", "BuildingMulCalculationType"]],
+			"tagNames":["WorkNotworkP", "CalculationTypeMinIs0"],
+			"Industries":["严寒地区B区办公建筑", "严寒地区B区全行业", "夏热冬暖地区商场"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-9-11",
+				"EndDate":"2013-4-21",	
+			},
+			{
+				"StartDate":"2012-10-1",
+				"EndDate":"2012-10-31",	
+			}],
+			"failedFileName":["F-BenchmarkConsumptionWorkNonworkRatio-101-2-M-0.xls", "F-BenchmarkConsumptionWorkNonworkRatio-101-2-W-1.xls", "F-BenchmarkConsumptionWorkNonworkRatio-101-2-W-2.xls", "F-BenchmarkConsumptionWorkNonworkRatio-101-2-W-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkConsumptionWorkNonworkRatio-101-2-M-0.xls", "BenchmarkConsumptionWorkNonworkRatio-101-2-W-1.xls", "BenchmarkConsumptionWorkNonworkRatio-101-2-W-2.xls", "BenchmarkConsumptionWorkNonworkRatio-101-2-W-3.xls"],
+		}
+	}
+]

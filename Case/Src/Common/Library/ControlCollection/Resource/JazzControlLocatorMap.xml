@@ -133,8 +133,9 @@
           <add key="MenuButtonTagModeConvert" value="em-tag-mode-btn" type="ID"/>
           <add key="MenuButtonUnitTypeConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[2]" type="XPath"/>
           <add key="MenuButtonCarbonUnitTypeConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[3]" type="XPath"/>
-          <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-content-center-region-body']//div/div/div/div[2]" type="XPath"/>
-          <add key="MenuButtonIndustryConvert" value="//div[@id='em-unit-energy-chartpanel']/div/div/div[3]" type="XPath"/>
+          <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[2]" type="XPath"/>
+          <add key="MenuButtonIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[3]" type="XPath"/>
+          <add key="MenuButtonCarbonIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[4]" type="XPath"/>
 
         <!--Greenie modified at 2013.10.28-->
           <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[3]" type="XPath"/>
@@ -931,6 +932,7 @@
       </HierarchyPopulationArea>
       <TargetBaseline>
         <add key="LabelCalendarInfoDisplay" value="//div[@id='setting-region-east-body']//table[contains(@id, 'displayfield')]/tbody/tr/td/label" type="XPath"/>
+        <add key="LabelRevisionText" value="//div[@id='setting-region-east-body']//td[contains(@class,'x-form-item-body numberfield') and table/tbody/tr/td/input[@type='text' and @name='$#nameIndex']]/../td/label/span[text()='修正值']" type="XPath"/>
       </TargetBaseline>
       
     </CustomerSettings>

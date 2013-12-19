@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
+			"Commodity":["电", "自来水", "煤"],
+			"Industry":"严寒地区B区通讯营业厅",
+			"ManualTimeRange":[{
+				"StartDate":"2012-7-29",
+				"EndDate":"2012-8-4",	
+			}],
+			"failedFileName":["F-BenchmarkCostCalculate101-2-H-0.xls", "F-BenchmarkCostCalculate101-2-H-1.xls", "F-BenchmarkCostCalculate101-2-H-2.xls", "F-BenchmarkCostCalculate101-2-H-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCostCalculate101-2-H-0.xls", "BenchmarkCostCalculate101-2-H-1.xls", "BenchmarkCostCalculate101-2-H-2.xls", "BenchmarkCostCalculate101-2-H-3.xls"],
+		}
+	}
+]

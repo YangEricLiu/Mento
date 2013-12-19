@@ -74,7 +74,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //b. 2012/07/01 3:30-2012/07/03 23:30 day
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
@@ -91,7 +91,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //c. 2012/07/10-2012/08/05 week
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
@@ -107,7 +107,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Select Unit=单位面积 and view data.
             EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitArea);
@@ -128,7 +128,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
             //b. 2012/07/01 3:30-2012/07/03 23:30 day
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
@@ -145,7 +145,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
 
             //c. 2012/07/10-2012/08/05 week
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
@@ -161,7 +161,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
 
             //Select multiple tags V(1) and V(3) from BuildingBC node and Dimension node to display column chart view. Unit=单位人口.
             UnitKPIPanel.SwitchTagTab(TagTabs.SystemDimensionTab);
@@ -189,7 +189,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
 
             //e. 2011/01/01-2013/05/30 year
             EnergyViewToolbar.SetDateRange(ManualTimeRange[4].StartDate, ManualTimeRange[4].EndDate);
@@ -205,7 +205,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[7], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
 
             //Uncheck V(1) to view chart.
             UnitKPIPanel.SwitchTagTab(TagTabs.HierarchyTag);
@@ -226,7 +226,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
 
             //e. 2011/01/01-2013/05/30 year
             EnergyViewToolbar.SetDateRange(ManualTimeRange[4].StartDate, ManualTimeRange[4].EndDate);
@@ -242,7 +242,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[9], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[9], input.InputData.failedFileName[9]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[9], input.InputData.failedFileName[9]);
 
             //Go to NancyOtherCustomer3. Go to Function Unit indicator. Select the BuildingPrecision from Hierarchy Tree. Click Function Type button, select Energy Consumption. Verify precision display for Unit display.
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -275,7 +275,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[10], DisplayStep.Default);
             TimeManager.MediumPause();
-            //UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
+            //UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
 
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -298,7 +298,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[11], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[11], input.InputData.failedFileName[11]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[11], input.InputData.failedFileName[11]);
         }
 
         [Test]
@@ -337,7 +337,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Step is "Month"
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -346,7 +346,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Step is "Year"
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
     }
 }

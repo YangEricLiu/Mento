@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
+			"tagNames":["Rankingtag1"],
+			"Industries":["全部区域全行业"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-12-1",	
+			}],
+			"failedFileName":["F-BenchmarkConsumptionWorkNonworkRatio-101-1-M-0.xls", "F-BenchmarkConsumptionWorkNonworkRatio-101-1-W-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkConsumptionWorkNonworkRatio-101-1-M-0.xls", "BenchmarkConsumptionWorkNonworkRatio-101-1-W-1.xls"],
+		}
+	}
+]

@@ -82,7 +82,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select Unit=单位面积 and view data.
             EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitArea);
@@ -96,7 +96,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[0]);
 
             EnergyViewToolbar.View(EnergyViewType.Line);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -442,7 +442,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Data View
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select the BuildingMissingData from Hierarchy Tree. 
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
@@ -468,7 +468,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Data View
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Line chart
             EnergyViewToolbar.View(EnergyViewType.Line);
@@ -528,7 +528,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Data View
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Select 1 tag V(12) from hierarchy node BuildingBAD, Unit=单位供冷面积 to display chart view.
             HomePagePanel.SelectCustomer("NancyCustomer1");

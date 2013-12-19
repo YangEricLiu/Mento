@@ -17,6 +17,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MenuButton RadioTypeConvertTargetButton = JazzButton.RadioTypeConvertMenuButton;
         private static MenuButton RankTypeConvertTargetButton = JazzButton.RankTypeConvertMenuButton;
         private static MenuButton IndustryConvertTargetButton = JazzButton.IndustryConvertMenuButton;
+        private static MenuButton CarbonIndustryConvertTargetButton = JazzButton.CarbonIndustryConvertMenuButton;
 
         private static Dictionary<CarbonConvertTarget, string[]> CarbonMenuItems = new Dictionary<CarbonConvertTarget, string[]>()
         {
@@ -65,8 +66,21 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SwitchIndustryMenuItem(string industry)
         {
+            if (GetFuncModeConvertTargetButtonText().Contains("碳排放"))
+            {
+                CarbonIndustryConvertTargetButton.SelectOneItem(industry);
+            }
+            else
+            {
+                IndustryConvertTargetButton.SelectOneItem(industry);
+            }      
+        }
+
+        public void SwitchRatioIndustryMenuItem(string industry)
+        {
             IndustryConvertTargetButton.SelectOneItem(industry);
         }
+
 
         public string GetIndustryButtonText()
         {

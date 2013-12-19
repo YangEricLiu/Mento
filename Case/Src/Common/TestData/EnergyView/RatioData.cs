@@ -6,11 +6,11 @@ using Mento.TestApi.TestData;
 
 namespace Mento.ScriptCommon.TestData.EnergyView
 {
-    public class UnitIndicatorData : TestDataBase<UnitIndicatorInput, UnitIndicatorOutput>
+    public class RatioData : TestDataBase<RatioInput, RatioOutput>
     {
     }
 
-    public class UnitIndicatorInput : InputTestDataBase
+    public class RatioInput : InputTestDataBase
     { 
         public string[][] Hierarchies { get; set; }
 
@@ -28,12 +28,10 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public ManualTimeRange[] ManualTimeRange { get; set; }
 
-        public string[] Commodity { get; set; }
-
-        public string Industry { get; set; }
+        public string[] Industries { get; set; }
     }
 
-    public class UnitIndicatorOutput : ExpectedTestDataBase
+    public class RatioOutput : ExpectedTestDataBase
     {
         public string[] expectedFileName { get; set; }
         public string UnitTypeValue { get; set; }
@@ -41,13 +39,5 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public UnitIndicatorLegend[] UnitIndicatorLegend { get; set; }
         public string[] popupNotes { get; set; }
         public string ClearAllMessage { get; set; }
-    }
-
-    public class UnitIndicatorLegend
-    {
-        public string CaculationValue { get; set; }
-        public string OriginalValue { get; set; }
-        public string TargetValue { get; set; }
-        public string BaselineValue { get; set; }
     }
 }

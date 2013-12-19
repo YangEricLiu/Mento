@@ -79,7 +79,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view, · 500/1000=0.5
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select Cost, select time range=2013/01/01-2013/01/02, check Commodity=电 to view chart; optional step=hour; Unit=人口.
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
@@ -100,7 +100,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view, · 500*10/1000=5
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Select Carbon, select time range=2013/01/01-2013/01/02, check Commodity=电 to view chart; optional step=hour; Unit=人口.
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
@@ -118,7 +118,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //check on data view· 500*7/1000=0.7
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Go to Function Ranking. Select the BuildingRanking1,BuildingRanking2 and BuildingRanking50 from Hierarchy Tree. Click Ranking Type button, select Energy consumption/Carbon/Cost, check Commodity=电, Ranking type=总排名/人口排名/总面积排名.
             UnitKPIPanel.NavigateToRanking();

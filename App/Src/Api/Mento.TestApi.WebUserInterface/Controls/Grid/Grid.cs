@@ -713,8 +713,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
             Locator nextPageLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingNextPageButton);
             ElementHandler.FindElement(nextPageLocator, container: PagingToolbar).Click();
 
-            //GetControl<LoadingMask>().WaitLoading();
-            GetControl<LoadingMask>().WaitSubMaskLoading();
+            GetControl<LoadingMask>().WaitChartMaskerLoading();
+            TimeManager.MediumPause();
         }
 
         public void PreviousPage()
@@ -722,8 +722,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
             Locator previousPageLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridPagingPreviousPageButton);
             ElementHandler.FindElement(previousPageLocator, container: PagingToolbar).Click();
 
-            //GetControl<LoadingMask>().WaitLoading();
-            GetControl<LoadingMask>().WaitSubMaskLoading();
+            GetControl<LoadingMask>().WaitChartMaskerLoading();
+            TimeManager.MediumPause();
         }
 
         public void GotoPage(int pageIndex)
@@ -802,7 +802,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 if (PageCount > 1)
                 {
                     NextPage();
-                    GetControl<LoadingMask>().WaitLoading();
+                    TimeManager.LongPause();
                 }     
             }
 

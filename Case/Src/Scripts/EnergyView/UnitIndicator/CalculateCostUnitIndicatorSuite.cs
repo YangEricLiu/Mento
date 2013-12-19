@@ -82,7 +82,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select Commodity=水 to display trend chart; Optional step=hour; Unit=单位人口.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[0]);
@@ -99,7 +99,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Select Commodity=煤 to display trend chart; Optional step=hour; Unit=单位人口.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[1]);
@@ -116,7 +116,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Go to 介质总览 to display trend chart; Optional step=hour; Unit=单位人口.
             UnitKPIPanel.SelectCommodityUnitCost();
@@ -132,7 +132,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
 
         [Test]
@@ -175,7 +175,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select Commodity=水 to display trend chart; Optional step=hour; Unit=单位人口/单位面积（人口=面积）.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[0]);
@@ -192,7 +192,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Select Commodity=煤 to display trend chart; Optional step=hour; Unit=单位人口/单位面积（人口=面积）.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[1]);
@@ -209,7 +209,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Go to 介质总览 to display trend chart; Optional step=hour; Unit=单位人口/单位面积（人口=面积）.
             UnitKPIPanel.SelectCommodityUnitCost();
@@ -225,7 +225,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
 
         [Test]
@@ -265,7 +265,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select Commodity=水 to display trend chart; Optional step=hour; Unit=单位人口.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[0]);
@@ -282,7 +282,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Select Commodity=煤 to display trend chart; Optional step=hour; Unit=单位人口.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[1]);
@@ -299,7 +299,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Go to 介质总览 to display trend chart; Optional step=hour; Unit=单位人口.
             UnitKPIPanel.SelectCommodityUnitCost();
@@ -315,7 +315,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
 
         [Test]
@@ -470,7 +470,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -478,7 +478,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -486,7 +486,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Select Commodity=水 to display trend chart; Optional step=hour; Unit=单位人口.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[0]);
@@ -503,7 +503,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
             //Select Commodity=煤 to display trend chart; Optional step=hour; Unit=单位人口.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[1]);
@@ -520,7 +520,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
 
             //Go to 一层 总览.
             UnitKPIPanel.SelectCommodityUnitCost();
@@ -536,7 +536,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
         }
 
         [Test]
@@ -582,7 +582,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -590,7 +590,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -598,7 +598,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Select Commodity=水 to display trend chart; Optional step=hour; Unit=单位人口.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[0]);
@@ -615,7 +615,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
             //Select Commodity=煤 to display trend chart; Optional step=hour; Unit=单位人口.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[1]);
@@ -632,7 +632,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
 
             //Go to 一层 总览.
             UnitKPIPanel.SelectCommodityUnitCost();
@@ -648,7 +648,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
         }
 
         [Test]
@@ -688,7 +688,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Go to 介质总览 to display trend chart; Optional step=Week; Unit=单位人口.
             UnitKPIPanel.SelectCommodityUnitCost();
@@ -704,7 +704,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
 
         [Test]
@@ -744,7 +744,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select Commodity=水 to display trend chart; Optional step=week; Unit=单位人口.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[0]);
@@ -761,7 +761,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Select Commodity=煤 to display trend chart; Optional step=week; Unit=单位人口.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[1]);
@@ -778,7 +778,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Go to 介质总览 to display trend chart; Optional step=Week; Unit=单位人口.
             UnitKPIPanel.SelectCommodityUnitCost();
@@ -794,7 +794,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
             //Select 楼宇B-〉空调. Select 总览， select time range 2012/08/01 to 2012/08/02, optional step=hour.To view chart,
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
@@ -823,7 +823,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
         }
     }
 }

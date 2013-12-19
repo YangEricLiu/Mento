@@ -1,0 +1,128 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
+			"TagNames":["Rankingtag1"],
+			"Industry":"全部区域全行业",
+			"failedFileName":["F-BenckmarkConsumption全部区域全行业-101-1-0-Y.xls", "F-BenckmarkConsumption全部区域全行业-101-1-1-M.xls", "F-BenckmarkConsumption全部区域全行业-101-1-2-W.xls", "F-BenckmarkConsumption全部区域全行业-101-1-3-D.xls", "F-BenckmarkConsumption全部区域全行业-101-1-4-H.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenckmarkConsumption全部区域全行业-101-1-0-Y.xls", "BenckmarkConsumption全部区域全行业-101-1-1-M.xls", "BenckmarkConsumption全部区域全行业-101-1-2-W.xls", "BenckmarkConsumption全部区域全行业-101-1-3-D.xls", "BenckmarkConsumption全部区域全行业-101-1-4-H.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
+			"TagNames":["Rankingtag1"],
+			"Industry":"严寒地区A区酒店",
+			"failedFileName":["F-BenckmarkConsumption严寒地区A区酒店-101-1-0-Y.xls", "F-BenckmarkConsumption严寒地区A区酒店-101-1-1-M.xls", "F-BenckmarkConsumption严寒地区A区酒店-101-1-2-W.xls", "F-BenckmarkConsumption严寒地区A区酒店-101-1-3-D.xls", "F-BenckmarkConsumption严寒地区A区酒店-101-1-4-H.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenckmarkConsumption严寒地区A区酒店-101-1-0-Y.xls", "BenckmarkConsumption严寒地区A区酒店-101-1-1-M.xls", "BenckmarkConsumption严寒地区A区酒店-101-1-2-W.xls", "BenckmarkConsumption严寒地区A区酒店-101-1-3-D.xls", "BenckmarkConsumption严寒地区A区酒店-101-1-4-H.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"]],
+			"TagNames":["Rankingtag5"],
+			"Industry":"严寒地区A区酒店（三星级）",
+			"failedFileName":["F-BenckmarkConsumption严寒地区A区酒店三星级-101-1-0-Y.xls", "F-BenckmarkConsumption严寒地区A区酒店三星级-101-1-1-M.xls", "F-BenckmarkConsumption严寒地区A区酒店三星级-101-1-2-W.xls", "F-BenckmarkConsumption严寒地区A区酒店三星级-101-1-3-D.xls", "F-BenckmarkConsumption严寒地区A区酒店三星级-101-1-4-H.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenckmarkConsumption严寒地区A区酒店三星级-101-1-0-Y.xls", "BenckmarkConsumption严寒地区A区酒店三星级-101-1-1-M.xls", "BenckmarkConsumption严寒地区A区酒店三星级-101-1-2-W.xls", "BenckmarkConsumption严寒地区A区酒店三星级-101-1-3-D.xls", "BenckmarkConsumption严寒地区A区酒店三星级-101-1-4-H.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"]],
+			"TagNames":["Rankingtag5"],
+			"Industry":"严寒地区A区酒店",
+			"failedFileName":["F-BenckmarkConsumption严寒地区A区酒店-101-1-0-Y.xls", "F-BenckmarkConsumption严寒地区A区酒店-101-1-1-M.xls", "F-BenckmarkConsumption严寒地区A区酒店-101-1-2-W.xls", "F-BenckmarkConsumption严寒地区A区酒店-101-1-3-D.xls", "F-BenckmarkConsumption严寒地区A区酒店-101-1-4-H.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenckmarkConsumption严寒地区A区酒店-101-1-0-Y.xls", "BenckmarkConsumption严寒地区A区酒店-101-1-1-M.xls", "BenckmarkConsumption严寒地区A区酒店-101-1-2-W.xls", "BenckmarkConsumption严寒地区A区酒店-101-1-3-D.xls", "BenckmarkConsumption严寒地区A区酒店-101-1-4-H.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"]],
+			"TagNames":["Rankingtag5"],
+			"Industry":"严寒地区A区全行业",
+			"failedFileName":["F-BenckmarkConsumption严寒地区A区全行业-101-1-0-Y.xls", "F-BenckmarkConsumption严寒地区A区全行业-101-1-1-M.xls", "F-BenckmarkConsumption严寒地区A区全行业-101-1-2-W.xls", "F-BenckmarkConsumption严寒地区A区全行业-101-1-3-D.xls", "F-BenckmarkConsumption严寒地区A区全行业-101-1-4-H.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenckmarkConsumption严寒地区A区全行业-101-1-0-Y.xls", "BenckmarkConsumption严寒地区A区全行业-101-1-1-M.xls", "BenckmarkConsumption严寒地区A区全行业-101-1-2-W.xls", "BenckmarkConsumption严寒地区A区全行业-101-1-3-D.xls", "BenckmarkConsumption严寒地区A区全行业-101-1-4-H.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
+			"TagNames":["DayNightP"],
+			"Industry":"严寒地区B区数据中心",
+			"failedFileName":["F-BenckmarkConsumption严寒地区B区数据中心-101-1-0-Y.xls", "F-BenckmarkConsumption严寒地区B区数据中心-101-1-1-M.xls", "F-BenckmarkConsumption严寒地区B区数据中心-101-1-2-W.xls", "F-BenckmarkConsumption严寒地区B区数据中心-101-1-3-D.xls", "F-BenckmarkConsumption严寒地区B区数据中心-101-1-4-H.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenckmarkConsumption严寒地区B区数据中心-101-1-0-Y.xls", "BenckmarkConsumption严寒地区B区数据中心-101-1-1-M.xls", "BenckmarkConsumption严寒地区B区数据中心-101-1-2-W.xls", "BenckmarkConsumption严寒地区B区数据中心-101-1-3-D.xls", "BenckmarkConsumption严寒地区B区数据中心-101-1-4-H.xls"],
+		}
+	}
+]

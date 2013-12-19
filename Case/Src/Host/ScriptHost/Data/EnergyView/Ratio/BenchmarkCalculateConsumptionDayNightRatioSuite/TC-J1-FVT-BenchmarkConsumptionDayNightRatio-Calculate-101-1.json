@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
+			"tagNames":["Rankingtag1"],
+			"Industries":["全部区域全行业"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-12-1",	
+			}],
+			"failedFileName":["F-BenchmarkConsumptionDayNightRatio-101-1-M-0.xls", "F-BenchmarkConsumptionDayNightRatio-101-1-W-1.xls", "F-BenchmarkConsumptionDayNightRatio-101-1-D-2.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkConsumptionDayNightRatio-101-1-M-0.xls", "BenchmarkConsumptionDayNightRatio-101-1-W-1.xls", "BenchmarkConsumptionDayNightRatio-101-1-D-2.xls"],
+		}
+	}
+]

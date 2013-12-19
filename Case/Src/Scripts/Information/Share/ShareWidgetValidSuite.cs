@@ -203,7 +203,7 @@ namespace Mento.Script.Information.Share
             TimeManager.LongPause();
 
             //Share dashboardA successfully to userB name with timestamp.
-            Assert.AreEqual(2, HomePagePanel.GetDashboardsNumber());
+            Assert.AreEqual(3, HomePagePanel.GetDashboardsNumber());
 
             HomePagePanel.ClickFavoriteDashboardButton(dashboard[0].DashboardName);
             TimeManager.LongPause();

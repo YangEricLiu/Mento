@@ -351,7 +351,108 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-3913")]
         public void CheckRevisionWord3913(KPITargetBaselineData input)
         {
+            //Get a vtag/ptag which have "修正值" word, navigate to "基准值" tab
+            PickupPtagOrVtag(input);
 
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            //"修正值" word display correctly on "六月"
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsReviseTextDisplay("June"));
+
+            //Switch between '目标值''基准值''基础属性' tabs, when back to "基准值" tab 
+            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //"修正值" word still display correctly on "六月"
+            Assert.IsTrue(PVtagTargetBaselineSettings.IsReviseTextDisplay("June"));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetCalculateRevise-101-4012")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-4012")]
+        public void CheckRevisionWord4012(KPITargetBaselineData input)
+        {
+            //Get a vtag/ptag which have associate calendar
+            PickupPtagOrVtag(input);
+
+            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            //then config calculation rule 
+            PVtagTargetBaselineSettings.ClickViewCalculationRuleButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            PVtagTargetBaselineSettings.ClickCreateCalculationRuleButton();
+            TimeManager.ShortPause();
+
+            PVtagTargetBaselineSettings.FillInWorkdayRuleValue("1", 1);
+            PVtagTargetBaselineSettings.FillInNonworkdayRuleValue("1", 1);
+
+            PVtagTargetBaselineSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            PVtagTargetBaselineSettings.ClickBackFromCalculationRuleButton();
+            TimeManager.MediumPause();
+
+            PVtagTargetBaselineSettings.ClickCalculateTargetButton();
+            TimeManager.LongPause();
+
+            //"目标值" calculated correctly
+            Assert.AreEqual(input.ExpectedData.AnnualCalculatedValue, PVtagTargetBaselineSettings.GetAnnualValue());
+            Assert.AreEqual(input.ExpectedData.JanuaryCalculatedValue, PVtagTargetBaselineSettings.GetJanuaryValue());
+            Assert.AreEqual(input.ExpectedData.FebruaryCalculatedValue, PVtagTargetBaselineSettings.GetFebruaryValue());
+            Assert.AreEqual(input.ExpectedData.MarchCalculatedValue, PVtagTargetBaselineSettings.GetMarchValue());
+            Assert.AreEqual(input.ExpectedData.AprilCalculatedValue, PVtagTargetBaselineSettings.GetAprilValue());
+            Assert.AreEqual(input.ExpectedData.MayCalculatedValue, PVtagTargetBaselineSettings.GetMayValue());
+            Assert.AreEqual(input.ExpectedData.JulyCalculatedValue, PVtagTargetBaselineSettings.GetJulyValue());
+            Assert.AreEqual(input.ExpectedData.JuneCalculatedValue, PVtagTargetBaselineSettings.GetJuneValue());
+            Assert.AreEqual(input.ExpectedData.AugustCalculatedValue, PVtagTargetBaselineSettings.GetAugustValue());
+            Assert.AreEqual(input.ExpectedData.SeptemberCalculatedValue, PVtagTargetBaselineSettings.GetSeptemberValue());
+            Assert.AreEqual(input.ExpectedData.OctoberCalculatedValue, PVtagTargetBaselineSettings.GetOctoberValue());
+            Assert.AreEqual(input.ExpectedData.NovemberCalculatedValue, PVtagTargetBaselineSettings.GetNovemberValue());
+            Assert.AreEqual(input.ExpectedData.DecemberCalculatedValue, PVtagTargetBaselineSettings.GetDecemberValue());
+
+            //Switch between '目标值''基准值''基础属性' tabs, when back to "基准值" tab 
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //"目标值" calculated value still display
+            Assert.AreEqual(input.ExpectedData.AnnualCalculatedValue, PVtagTargetBaselineSettings.GetAnnualValue());
+            Assert.AreEqual(input.ExpectedData.JanuaryCalculatedValue, PVtagTargetBaselineSettings.GetJanuaryValue());
+            Assert.AreEqual(input.ExpectedData.FebruaryCalculatedValue, PVtagTargetBaselineSettings.GetFebruaryValue());
+            Assert.AreEqual(input.ExpectedData.MarchCalculatedValue, PVtagTargetBaselineSettings.GetMarchValue());
+            Assert.AreEqual(input.ExpectedData.AprilCalculatedValue, PVtagTargetBaselineSettings.GetAprilValue());
+            Assert.AreEqual(input.ExpectedData.MayCalculatedValue, PVtagTargetBaselineSettings.GetMayValue());
+            Assert.AreEqual(input.ExpectedData.JulyCalculatedValue, PVtagTargetBaselineSettings.GetJulyValue());
+            Assert.AreEqual(input.ExpectedData.JuneCalculatedValue, PVtagTargetBaselineSettings.GetJuneValue());
+            Assert.AreEqual(input.ExpectedData.AugustCalculatedValue, PVtagTargetBaselineSettings.GetAugustValue());
+            Assert.AreEqual(input.ExpectedData.SeptemberCalculatedValue, PVtagTargetBaselineSettings.GetSeptemberValue());
+            Assert.AreEqual(input.ExpectedData.OctoberCalculatedValue, PVtagTargetBaselineSettings.GetOctoberValue());
+            Assert.AreEqual(input.ExpectedData.NovemberCalculatedValue, PVtagTargetBaselineSettings.GetNovemberValue());
+            Assert.AreEqual(input.ExpectedData.DecemberCalculatedValue, PVtagTargetBaselineSettings.GetDecemberValue());
         }
     }
 }

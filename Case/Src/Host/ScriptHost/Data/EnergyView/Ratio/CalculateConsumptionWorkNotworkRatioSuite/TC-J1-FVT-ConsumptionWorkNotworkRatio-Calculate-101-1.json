@@ -1,0 +1,30 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMultipleSteps"]],
+			"tagNames":["WorkNotworkP", "PH_SiteS1"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-10-27",
+				"EndDate":"2013-2-10",	
+			},
+			{
+				"StartDate":"2012-8-23",
+				"EndDate":"2012-10-20",	
+			},
+			{
+				"StartDate":"2013-2-10",
+				"EndDate":"2013-6-21",	
+			},
+			{
+				"StartDate":"2012-9-21",
+				"EndDate":"2013-2-10",	
+			}],
+			"failedFileName":["F-ConsumptionWorKNonworkRatio-101-1-M-0.xls", "F-ConsumptionWorKNonworkRatio-101-1-W-1.xls", "F-ConsumptionWorKNonworkRatio-101-1-W-2.xls", "F-ConsumptionWorKNonworkRatio-101-1-W-3.xls", "F-ConsumptionWorKNonworkRatio-101-1-M-4.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionWorKNonworkRatio-101-1-M-0.xls", "ConsumptionWorKNonworkRatio-101-1-W-1.xls", "ConsumptionWorKNonworkRatio-101-1-W-2.xls", "ConsumptionWorKNonworkRatio-101-1-W-3.xls", "ConsumptionWorKNonworkRatio-101-1-M-4.xls"],
+		}
+	}
+]

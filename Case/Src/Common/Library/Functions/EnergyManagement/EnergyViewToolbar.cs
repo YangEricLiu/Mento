@@ -144,6 +144,11 @@ namespace Mento.ScriptCommon.Library.Functions
             ConvertTargetButton.SwitchIndustryMenuItem(industry);
         }
 
+        public void SelectRatioIndustryConvertTarget(string industry)
+        {
+            ConvertTargetButton.SwitchRatioIndustryMenuItem(industry);
+        }
+
         public string GetIndustryButtonText()
         {
             return ConvertTargetButton.GetIndustryButtonText();

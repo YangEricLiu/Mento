@@ -193,6 +193,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TabButtonUnitIndicatorALLTagsTab = "TabButtonUnitIndicatorALLTagsTab";
         public static string TabButtonUnitIndicatorSystemDimensionTagsTab = "TabButtonUnitIndicatorSystemDimensionTagsTab";
         public static string TabButtonUnitIndicatorAreaDimensionTagsTab = "TabButtonEUnitIndicatorAreaDimensionTagsTab";
+        public static string MenuButtonCarbonIndustryConvert = "MenuButtonCarbonIndustryConvert";
 
         #endregion
 
@@ -1001,6 +1002,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region Label
+
         #region CustomerSettings
 
         #region HierarchyCalendar
@@ -1022,6 +1024,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region TargetBaseline
         public static string LabelCalendarInfoDisplay = "LabelCalendarInfoDisplay";
+        public static string LabelRevisionText = "LabelRevisionText";
         #endregion
 
         #endregion

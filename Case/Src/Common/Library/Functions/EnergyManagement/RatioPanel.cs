@@ -10,6 +10,8 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     public class RatioPanel : EnergyViewPanel
     {
+        public string RatioPath = @"RatioPath\";
+
         #region Controls
         //Select system dimension tree button
         private static Button SelectSystemDimensionButton
@@ -50,7 +52,7 @@ namespace Mento.ScriptCommon.Library.Functions
             SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
         }
 
-        public void NavigateToUnitIndicator()
+        public void NavigateToRatio()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyRadio);
         }
@@ -95,6 +97,62 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 return false;
             }
+        }
+
+        #endregion
+
+        #region Tag operations
+        
+        public void CheckTag(string tagName)
+        {
+            TagGrid.CheckRowCheckbox(2, tagName);
+
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+        }
+
+        public void UncheckTag(string tagName)
+        {
+            TagGrid.UncheckRowCheckbox(2, tagName);
+
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+        }
+
+        public void CheckTags(string[] tagNames)
+        {
+            foreach (string tagName in tagNames)
+            {
+                TagGrid.CheckRowCheckbox(2, tagName);
+            }
+        }
+
+        #endregion
+
+        #region data operation
+
+        /// <summary>
+        /// Export expected data table to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedDataTableToExcel(string fileName, DisplayStep displayStep)
+        {
+            ExportExpectedDataTableToExcel(fileName, displayStep, RatioPath);
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDataViewRatio(string expectedFileName, string failedFileName)
+        {
+            return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, RatioPath);
+        }
+
+        public bool IsDataViewExisted()
+        {
+            return EnergyDataGrid.HasDrawnDataView();
         }
 
         #endregion

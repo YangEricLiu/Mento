@@ -448,6 +448,7 @@ namespace Mento.Utility
                 }
             }
 
+            sheet.get_Range("A1","M1").ColumnWidth = 30;
         }
         #endregion
 

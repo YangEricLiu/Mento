@@ -1,0 +1,128 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
+			"Commodity":["电"],
+			"Industry":"全部区域全行业",
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+			"failedFileName":["F-BenchmarkCostCalculate全部区域全行业101-1-M-0.xls", "F-BenchmarkCostCalculate全部区域全行业101-1-W-1.xls", "F-BenchmarkCostCalculate全部区域全行业101-1-D-2.xls", "F-BenchmarkCostCalculate全部区域全行业101-1-H-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCostCalculate全部区域全行业101-1-M-0.xls", "BenchmarkCostCalculate全部区域全行业101-1-W-1.xls", "BenchmarkCostCalculate全部区域全行业101-1-D-2.xls", "BenchmarkCostCalculate全部区域全行业101-1-H-3.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
+			"Commodity":["电"],
+			"Industry":"严寒地区A区酒店",
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+			"failedFileName":["F-BenchmarkCostCalculate严寒地区A区酒店101-1-M-0.xls", "F-BenchmarkCostCalculate严寒地区A区酒店101-1-W-1.xls", "F-BenchmarkCostCalculate严寒地区A区酒店101-1-D-2.xls", "F-BenchmarkCostCalculate严寒地区A区酒店101-1-H-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCostCalculate严寒地区A区酒店101-1-M-0.xls", "BenchmarkCostCalculate严寒地区A区酒店101-1-W-1.xls", "BenchmarkCostCalculate严寒地区A区酒店101-1-D-2.xls", "BenchmarkCostCalculate严寒地区A区酒店101-1-H-3.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"]],
+			"Commodity":["电"],
+			"Industry":"严寒地区A区酒店（三星级）",
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+			"failedFileName":["F-BenchmarkCostCalculate严寒地区A区酒店三星级101-1-M-0.xls", "F-BenchmarkCostCalculate严寒地区A区酒店三星级101-1-W-1.xls", "F-BenchmarkCostCalculate严寒地区A区酒店三星级101-1-D-2.xls", "F-BenchmarkCostCalculate严寒地区A区酒店三星级101-1-H-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCostCalculate严寒地区A区酒店三星级101-1-M-0.xls", "BenchmarkCostCalculate严寒地区A区酒店三星级101-1-W-1.xls", "BenchmarkCostCalculate严寒地区A区酒店三星级101-1-D-2.xls", "BenchmarkCostCalculate严寒地区A区酒店三星级101-1-H-3.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"]],
+			"Commodity":["电"],
+			"Industry":"严寒地区A区酒店",
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+			"failedFileName":["F-BenchmarkCostCalculate严寒地区A区酒店5101-1-M-0.xls", "F-BenchmarkCostCalculate严寒地区A区酒店5101-1-W-1.xls", "F-BenchmarkCostCalculate严寒地区A区酒店5101-1-D-2.xls", "F-BenchmarkCostCalculate严寒地区A区酒店5101-1-H-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCostCalculate严寒地区A区酒店5101-1-M-0.xls", "BenchmarkCostCalculate严寒地区A区酒店5101-1-W-1.xls", "BenchmarkCostCalculate严寒地区A区酒店5101-1-D-2.xls", "BenchmarkCostCalculate严寒地区A区酒店5101-1-H-3.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"]],
+			"Commodity":["电"],
+			"Industry":"严寒地区A区全行业",
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+			"failedFileName":["F-BenchmarkCostCalculate严寒地区A区全行业101-1-M-0.xls", "F-BenchmarkCostCalculate严寒地区A区全行业101-1-W-1.xls", "F-BenchmarkCostCalculate严寒地区A区全行业101-1-D-2.xls", "F-BenchmarkCostCalculate严寒地区A区全行业101-1-H-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCostCalculate严寒地区A区全行业101-1-M-0.xls", "BenchmarkCostCalculate严寒地区A区全行业101-1-W-1.xls", "BenchmarkCostCalculate严寒地区A区全行业101-1-D-2.xls", "BenchmarkCostCalculate严寒地区A区全行业101-1-H-3.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
+			"Commodity":["电"],
+			"Industry":"严寒地区B区数据中心",
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-10-10",
+				"EndDate":"2013-3-15",	
+			}],
+			"failedFileName":["F-BenchmarkCostCalculate严寒地区B区数据中心101-1-M-0.xls", "F-BenchmarkCostCalculate严寒地区B区数据中心101-1-W-1.xls", "F-BenchmarkCostCalculate严寒地区B区数据中心101-1-D-2.xls", "F-BenchmarkCostCalculate严寒地区B区数据中心101-1-H-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCostCalculate严寒地区B区数据中心101-1-M-0.xls", "BenchmarkCostCalculate严寒地区B区数据中心101-1-W-1.xls", "BenchmarkCostCalculate严寒地区B区数据中心101-1-D-2.xls", "BenchmarkCostCalculate严寒地区B区数据中心101-1-H-3.xls"],
+		}
+	}
+]

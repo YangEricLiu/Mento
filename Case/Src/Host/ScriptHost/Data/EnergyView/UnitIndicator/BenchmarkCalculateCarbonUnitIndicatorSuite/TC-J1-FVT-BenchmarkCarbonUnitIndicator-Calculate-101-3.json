@@ -1,0 +1,27 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"Commodity":["电", "自来水", "煤"],
+			"Industry":"夏热冬冷地区轨道交通",
+			"ManualTimeRange":[{
+				"StartDate":"2010-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-7-29",
+				"EndDate":"2012-8-4",	
+			},
+			{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			}],
+			"failedFileName":["F-BenchmarkCarbonCalculate101-3-Y-0.xls", "F-BenchmarkCarbonCalculate101-3-Y-1.xls", "F-BenchmarkCarbonCalculate101-3-H-2.xls", "F-BenchmarkCarbonCalculate101-3-H-3.xls", "F-BenchmarkCarbonCalculate101-3-H-4.xls", "F-BenchmarkCarbonCalculate101-3-M-5.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCarbonCalculate101-3-Y-0.xls", "BenchmarkCarbonCalculate101-3-Y-1.xls", "BenchmarkCarbonCalculate101-3-H-2.xls", "BenchmarkCarbonCalculate101-3-H-3.xls", "BenchmarkCarbonCalculate101-3-H-4.xls", "BenchmarkCarbonCalculate101-3-M-5.xls"],
+		}
+	}
+]

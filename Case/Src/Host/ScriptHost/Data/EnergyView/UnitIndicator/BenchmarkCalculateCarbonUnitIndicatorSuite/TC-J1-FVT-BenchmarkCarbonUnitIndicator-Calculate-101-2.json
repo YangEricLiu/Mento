@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
+			"Commodity":["电", "自来水", "煤"],
+			"Industry":"严寒地区B区通讯营业厅",
+			"ManualTimeRange":[{
+				"StartDate":"2012-7-29",
+				"EndDate":"2012-8-4",	
+			}],
+			"failedFileName":["F-BenchmarkCarbonCalculate101-2-H-0.xls", "F-BenchmarkCarbonCalculate101-2-H-1.xls", "F-BenchmarkCarbonCalculate101-2-H-2.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCarbonCalculate101-2-H-0.xls", "BenchmarkCarbonCalculate101-2-H-1.xls", "BenchmarkCarbonCalculate101-2-H-2.xls"],
+		}
+	}
+]

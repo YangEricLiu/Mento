@@ -411,6 +411,17 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading();
             ReviseButton.Click();
         }
+
+        /// <summary>
+        /// Judge if the "修正值" display on the end
+        /// </summary>
+        /// <returns></returns>
+        public bool IsReviseTextDisplay(string monthName)
+        {
+            Label monthLabel = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelRevisionText, monthName);
+
+            return monthLabel.Exists();
+        }
                 
         public void FillInAnnualRevisedValue(string value)
         {

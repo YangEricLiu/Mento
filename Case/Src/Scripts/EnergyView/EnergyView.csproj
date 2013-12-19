@@ -64,6 +64,7 @@
     <Compile Include="CostUsage\CostUsageTOUSuite.cs" />
     <Compile Include="CostUsage\CostUsageTrendChartSuite.cs" />
     <Compile Include="CostUsage\CostUsageDataViewSuite.cs" />
+    <Compile Include="EnergyAnalysis\MultiTagsDataVerificationSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsTrendChartSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionTrendChartSuite.cs" />
@@ -80,8 +81,15 @@
     <Compile Include="EnergyManagement\SetDisplayStepSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Radio\CalculateConsumptionDayNightRatioSuite.cs" />
+    <Compile Include="Radio\CalculateConsumptionWorkNotworkRatioSuite.cs" />
+    <Compile Include="Radio\BenchmarkCalculateConsumptionDayNightRatioSuite.cs" />
+    <Compile Include="Radio\BenchmarkCalculateConsumptionWorkNotworkRatioSuite.cs" />
     <Compile Include="UnitIndicator\CalculateCostUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\CalculateCarbonUnitIndicatorSuite.cs" />
+    <Compile Include="UnitIndicator\BenchmarkCalculateConsumptionUnitIndicatorSuite.cs" />
+    <Compile Include="UnitIndicator\BenchmarkCalculateCostUnitIndicatorSuite.cs" />
+    <Compile Include="UnitIndicator\BenchmarkCalculateCarbonUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\UnitIndicatorOfflineCalculateSuite.cs" />
     <Compile Include="UnitIndicator\ViewConsumptionUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\ViewCarbonUnitIndicatorSuite.cs" />
@@ -123,7 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Emission\Cost\" />
-    <Folder Include="Radio\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

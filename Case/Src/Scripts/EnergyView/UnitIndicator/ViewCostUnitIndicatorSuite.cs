@@ -635,7 +635,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Go to 介质总览 to display trend chart; Optional step=year; Unit=单位人口.
             UnitKPIPanel.SelectCommodityUnitCost();
@@ -657,7 +657,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //·2011 year can't display chart since that 单位人口 start from 2011/11=100
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Go to 介质总览/(Or V(M) commodity) to display trend chart; Optional step=day/hour/week; Unit=单位人口.
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);

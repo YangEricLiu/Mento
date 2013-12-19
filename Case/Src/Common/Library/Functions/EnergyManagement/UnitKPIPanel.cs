@@ -374,7 +374,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="expectedFileName"></param>
         /// /// <param name="failedFileName"></param>
-        public bool CompareDataViewOfCostUsage(string expectedFileName, string failedFileName)
+        public bool CompareDataViewUnitIndicator(string expectedFileName, string failedFileName)
         {
             return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, UnitIndicatorPath);
         }

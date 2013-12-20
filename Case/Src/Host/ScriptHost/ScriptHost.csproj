@@ -610,7 +610,7 @@
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionDataViewSuite\TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionDataViewSuite\TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionTrendChartSuite\TC-J1-FVT-MultipleIntervalsComparasion-TrendChart-101-1.json" />
-    <None Include="Data\EnergyView\EnergyAnalysis\MultiTagsDataViewVerificationSuite\TC-J1-FVT-MultiTagsDataViewVerification-DataView-101-1.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\MultiTagsDataVerificationSuite\TC-J1-FVT-MultiTagsDataVerification-DataView-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalInvalidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-001-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalInvalidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-001-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalValidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-101-2.json" />

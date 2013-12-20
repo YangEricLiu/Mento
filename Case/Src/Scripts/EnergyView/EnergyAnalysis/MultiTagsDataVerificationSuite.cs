@@ -49,6 +49,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.LongPause();
 
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            TimeManager.MediumPause();
+
             //Hierarchy = NancyOtherCustomer3/NancyOtherSite/BuildingCostYearToDay
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();

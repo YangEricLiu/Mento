@@ -103,26 +103,5 @@
 		{
 			"expectedFileName":["BenchmarkCarbonCalculate严寒地区A区全行业101-1-M-0.xls", "BenchmarkCarbonCalculate严寒地区A区全行业101-1-W-1.xls", "BenchmarkCarbonCalculate严寒地区A区全行业101-1-D-2.xls", "BenchmarkCarbonCalculate严寒地区A区全行业101-1-H-3.xls"],
 		}
-	},
-	{
-		"InputData":
-		{
-			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
-			"Commodity":["电"],
-			"Industry":"严寒地区B区数据中心",
-			"ManualTimeRange":[{
-				"StartDate":"2013-1-1",
-				"EndDate":"2013-12-16",	
-			},
-			{
-				"StartDate":"2012-10-10",
-				"EndDate":"2013-3-15",	
-			}],
-			"failedFileName":["F-BenchmarkCarbonCalculate严寒地区B区数据中心101-1-M-0.xls", "F-BenchmarkCarbonCalculate严寒地区B区数据中心101-1-W-1.xls", "F-BenchmarkCarbonCalculate严寒地区B区数据中心101-1-D-2.xls", "F-BenchmarkCarbonCalculate严寒地区B区数据中心101-1-H-3.xls"],
-		},
-		"ExpectedData":
-		{
-			"expectedFileName":["BenchmarkCarbonCalculate严寒地区B区数据中心101-1-M-0.xls", "BenchmarkCarbonCalculate严寒地区B区数据中心101-1-W-1.xls", "BenchmarkCarbonCalculate严寒地区B区数据中心101-1-D-2.xls", "BenchmarkCarbonCalculate严寒地区B区数据中心101-1-H-3.xls"],
-		}
 	}
 ]

@@ -192,7 +192,7 @@ namespace Mento.Script.EnergyView.Ratio
             EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[2]);
             TimeManager.ShortPause();
 
-            //Time range 2012-10-1 to 2012-10-31
+            //Time range 2012-12-20 to 2013-2-8
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
 

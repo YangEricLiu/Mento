@@ -261,12 +261,12 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-            //"煤"， Change time range=2012-7-29 to 2012-8-4. Select Commodity=电 to display trend chart; Optional step=hour; Unit=单位人口; 标煤.
+            //"电"， Change time range=2012-7-29 to 2012-8-4. Select Commodity=电 to display trend chart; Optional step=hour; Unit=单位人口; 标煤.
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
             UnitKPIPanel.UnselectSingleCommodityUnitCarbon(input.InputData.Commodity[1]);
             TimeManager.ShortPause();
-            UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[2]);
+            UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[0]);
             TimeManager.MediumPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
@@ -282,11 +282,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //"电"， Change to CO2 to view data
-            UnitKPIPanel.UnselectSingleCommodityUnitCarbon(input.InputData.Commodity[2]);
-            TimeManager.ShortPause();
-            UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[0]);
-            TimeManager.MediumPause();
-
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
             TimeManager.ShortPause();
 
@@ -335,16 +330,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
-
         }
     }
 }

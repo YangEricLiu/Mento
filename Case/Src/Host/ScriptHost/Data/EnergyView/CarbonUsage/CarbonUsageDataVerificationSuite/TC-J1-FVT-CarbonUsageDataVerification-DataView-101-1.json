@@ -1,0 +1,30 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
+			"commodityNames":["电", "自来水", "天然气"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",	
+			},
+			{
+				"StartDate":"2012-1-1",
+				"EndDate":"2012-2-1",	
+			},
+			{
+				"StartDate":"2012-12-1",
+				"EndDate":"2012-12-31",	
+			},
+			{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-2-1",	
+			}],
+			"failedFileName":["F-CarbonUsageDataView001-1-H-Elec.xls", "F-CarbonUsageDataView001-1-H-ElecOil.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2Coal.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2Cool.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2CoolTree.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2CoolTreeHot.xls", "F-CarbonUsageDataView001-1-H-ElecOilCO2CoolTreeHotWater.xls", "F-CarbonUsageDataView001-1-H-ElecOilCoolHotWater.xls", "F-CarbonUsageDataView001-1-H-ElecOilCoolHotWaterCO2.xls", "F-CarbonUsageDataView001-1-H-ElecOilCoolHotWaterTree.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CarbonUsageDataView001-1-H-Elec.xls", "CarbonUsageDataView001-1-H-ElecOil.xls", "CarbonUsageDataView001-1-H-ElecOilCO2.xls", "CarbonUsageDataView001-1-H-ElecOilCO2Coal.xls", "CarbonUsageDataView001-1-H-ElecOilCO2CoalCool.xls", "CarbonUsageDataView001-1-H-ElecOilCO2CoolTree.xls", "CarbonUsageDataView001-1-H-ElecOilCO2CoolTreeHot.xls", "CarbonUsageDataView001-1-H-ElecOilCO2CoolTreeHotWater.xls", "CarbonUsageDataView001-1-H-ElecOilCoolHotWater.xls", "CarbonUsageDataView001-1-H-ElecOilCoolHotWaterCO2.xls", "CarbonUsageDataView001-1-H-ElecOilCoolHotWaterTree.xls"],
+		}
+	}
+]

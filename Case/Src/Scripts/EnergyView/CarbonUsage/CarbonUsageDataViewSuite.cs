@@ -67,7 +67,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Hour);
             TimeManager.MediumPause();
-            CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
         
             //Add select "汽油"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[1]);
@@ -81,7 +81,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Hour);
             TimeManager.MediumPause();
-            CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         
             //Change to "CO2"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
@@ -92,7 +92,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Hour);
             TimeManager.MediumPause();
-            CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[1]);
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[1]);
 
             //Add "Coal"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[2]);
@@ -103,7 +103,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Hour);
             TimeManager.MediumPause();
-            CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
             //Add "Cool"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[3]);
@@ -114,7 +114,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Hour);
             TimeManager.MediumPause();
-            CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
 
             //Change from "CO2" to "Tree"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
@@ -125,7 +125,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsTrue(CarbonUsage.IsNoDataInEnergyGrid());
             //CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Hour);
             //TimeManager.MediumPause();
-            //CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
+            //CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
 
             //Add "heating"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[4]);
@@ -136,7 +136,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsTrue(CarbonUsage.IsNoDataInEnergyGrid());
             //CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Hour);
             //TimeManager.MediumPause();
-            //CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
+            //CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
 
             //Add "Water"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[5]);
@@ -147,7 +147,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsTrue(CarbonUsage.IsNoDataInEnergyGrid());
             //CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[7], DisplayStep.Hour);
             //TimeManager.MediumPause();
-            //CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
+            //CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
 
             //Change from "Tree" to "StandardCoal"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.StandardCoal);
@@ -158,7 +158,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8], DisplayStep.Hour);
             TimeManager.MediumPause();
-            CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
 
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;
@@ -173,7 +173,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[9], DisplayStep.Hour);
             TimeManager.MediumPause();
-            CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[9], input.InputData.failedFileName[9]);
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[9], input.InputData.failedFileName[9]);
             EnergyViewToolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
 
             //Change from "CO2" to "Tree"
@@ -185,7 +185,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[10], DisplayStep.Hour);
             TimeManager.MediumPause();
-            CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
             EnergyViewToolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
 
             //On homepage, check the dashboards
@@ -235,7 +235,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Hour);
             TimeManager.MediumPause();
-            CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Change from default display "标煤" to "二氧化碳"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
@@ -249,7 +249,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //Assert.IsFalse(CarbonUsage.IsNoDataInEnergyGrid());
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Hour);
             TimeManager.MediumPause();
-            CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Change from default display "二氧化碳" to "树"
             EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
@@ -263,7 +263,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsTrue(CarbonUsage.IsNoDataInEnergyGrid());
             //CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Hour);
             //TimeManager.MediumPause();
-            //CarbonUsage.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            //CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;

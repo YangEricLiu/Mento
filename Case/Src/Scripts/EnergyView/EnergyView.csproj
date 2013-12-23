@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="CarbonUsage\CarbonUsageDataViewSuite.cs" />
     <Compile Include="CarbonUsage\CarbonUsageTrendChartSuite.cs" />
+    <Compile Include="CarbonUsage\CarbonUsageDataVerificationSuite.cs" />
     <Compile Include="CorporateRanking\ViewConsumptionRankingData.cs" />
     <Compile Include="CorporateRanking\ViewCarbonRankingData.cs" />
     <Compile Include="CorporateRanking\CalculateCostRanking.cs" />

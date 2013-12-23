@@ -546,6 +546,7 @@
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-3.json" />
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-2.json" />
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-1.json" />
+    <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataVerificationSuite\TC-J1-FVT-CarbonUsageDataVerification-DataView-101-1.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataViewSuite\TC-J1-FVT-CarbonUsage-DataView-001-3.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataViewSuite\TC-J1-FVT-CarbonUsage-DataView-001-1.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataViewSuite\TC-J1-FVT-CarbonUsage-DataView-001-2.json" />

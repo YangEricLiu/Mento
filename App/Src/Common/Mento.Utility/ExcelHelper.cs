@@ -449,6 +449,10 @@ namespace Mento.Utility
             }
 
             sheet.get_Range("A1","M1").ColumnWidth = 30;
+
+            //Excel.Range temp = (Excel.Range)sheet.Cells[rows, 1];
+
+            //temp.NumberFormat(); 
         }
         #endregion
 
@@ -503,6 +507,7 @@ namespace Mento.Utility
                 for (int j = 1; j <= mySheet.Cells.CurrentRegion.Columns.Count; j++)
                 {
                     Excel.Range temp = (Excel.Range)mySheet.Cells[i, j];
+
                     string strValue = temp.Text.ToString();
                     myRow[j - 1] = strValue;
                 }

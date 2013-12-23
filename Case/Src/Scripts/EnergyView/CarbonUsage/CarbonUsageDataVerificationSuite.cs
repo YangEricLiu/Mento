@@ -35,6 +35,9 @@ namespace Mento.Script.EnergyView.CarbonUsage
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
+
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         private static CarbonUsagePanel CarbonUsage = JazzFunction.CarbonUsagePanel;

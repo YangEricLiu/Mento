@@ -596,6 +596,7 @@
     <None Include="Data\EnergyView\CorporateRanking\SelectHierarchyNodesForRanking\TC-J1-FVT-SelectHierarchyNodesForRanking-101-3.json" />
     <None Include="Data\EnergyView\CorporateRanking\SelectHierarchyNodesForRanking\TC-J1-FVT-SelectHierarchyNodesForRanking-101-2.json" />
     <None Include="Data\EnergyView\CorporateRanking\SelectHierarchyNodesForRanking\TC-J1-FVT-SelectHierarchyNodesForRanking-101-1.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageDataVerificationSuite\TC-J1-FVT-CostUsageDataVerification-DataView-101-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataViewSuite\TC-J1-FVT-CostUsage-DataView-001-3842.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataViewSuite\TC-J1-FVT-CostUsage-DataView-001-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-3.json" />

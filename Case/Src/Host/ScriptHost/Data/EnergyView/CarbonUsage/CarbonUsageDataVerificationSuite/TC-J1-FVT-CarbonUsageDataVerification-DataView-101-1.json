@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
-			"commodityNames":["电", "自来水", "天然气"],
+			"commodityNames":["电", "自来水", "煤"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-18",	

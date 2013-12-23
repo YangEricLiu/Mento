@@ -62,6 +62,7 @@
     <Compile Include="CorporateRanking\CommonConsumptionRankingCalculationDataView.cs" />
     <Compile Include="CorporateRanking\RankingDataviewAddForBug.cs" />
     <Compile Include="CorporateRanking\ViewCostRankingData.cs" />
+    <Compile Include="CostUsage\CostUsageDataVerificationSuite.cs" />
     <Compile Include="CostUsage\CostUsageTOUSuite.cs" />
     <Compile Include="CostUsage\CostUsageTrendChartSuite.cs" />
     <Compile Include="CostUsage\CostUsageDataViewSuite.cs" />

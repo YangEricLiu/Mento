@@ -1,0 +1,30 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A","楼宇B"],
+			"commodityNames":["电", "自来水", "煤"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",	
+			},
+			{
+				"StartDate":"2012-6-1",
+				"EndDate":"2012-6-20",	
+			},
+			{
+				"StartDate":"2013-1-6",
+				"EndDate":"2013-1-20",	
+			},
+			{
+				"StartDate":"2013-6-1",
+				"EndDate":"2013-6-20",	
+			}],
+			"failedFileName":["F-CarbonUsageDataView001-3-Y-Total-0.xls", "F-CarbonUsageDataView001-3-M-Total-1.xls", "F-CarbonUsageDataView001-3-Y-ElecWaterCoal-2.xls", "F-CarbonUsageDataView001-3-M-ElecWaterCoal-3.xls", "F-CarbonUsageDataView001-3-W-ElecWaterCoal-4.xls", "F-CarbonUsageDataView001-3-D-ElecWaterCoal-5.xls", "F-CarbonUsageDataView001-3-H-ElecWaterCoal-6.xls", "F-CarbonUsageDataView001-3-H-ElecWaterCoal-7.xls", "F-CarbonUsageDataView001-3-H-ElecWaterCoal-8.xls", "F-CarbonUsageDataView001-3-H-ElecWaterCoal-9.xls", "F-CarbonUsageDataView001-3-H-ElecWaterCoal-10.xls", "F-CarbonUsageDataView001-3-H-ElecWaterCoal-11.xls", "F-CarbonUsageDataView001-3-H-ElecWaterCoal-12.xls", "F-CarbonUsageDataView001-3-H-ElecWaterCoal-13.xls" ],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CarbonUsageDataView001-3-Y-Total-0.xls", "CarbonUsageDataView001-3-M-Total-1.xls", "CarbonUsageDataView001-3-Y-ElecWaterCoal-2.xls", "CarbonUsageDataView001-3-M-ElecWaterCoal-3.xls", "CarbonUsageDataView001-3-W-ElecWaterCoal-4.xls", "CarbonUsageDataView001-3-D-ElecWaterCoal-5.xls", "CarbonUsageDataView001-3-H-ElecWaterCoal-6.xls", "CarbonUsageDataView001-3-H-ElecWaterCoal-7.xls", "CarbonUsageDataView001-3-H-ElecWaterCoal-8.xls", "CarbonUsageDataView001-3-H-ElecWaterCoal-9.xls", "CarbonUsageDataView001-3-H-ElecWaterCoal-10.xls", "CarbonUsageDataView001-3-H-ElecWaterCoal-11.xls", "CarbonUsageDataView001-3-H-ElecWaterCoal-12.xls", "CarbonUsageDataView001-3-H-ElecWaterCoal-13.xls" ],
+		}
+	}
+]

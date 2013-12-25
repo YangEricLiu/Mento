@@ -52,6 +52,7 @@
     <Compile Include="CarbonUsage\CarbonUsageDataViewSuite.cs" />
     <Compile Include="CarbonUsage\CarbonUsageTrendChartSuite.cs" />
     <Compile Include="CarbonUsage\CarbonUsageDataVerificationSuite.cs" />
+    <Compile Include="CarbonUsage\AdditionalCarbonUsageDataVerificationSuite.cs" />
     <Compile Include="CorporateRanking\ViewConsumptionRankingData.cs" />
     <Compile Include="CorporateRanking\ViewCarbonRankingData.cs" />
     <Compile Include="CorporateRanking\CalculateCostRanking.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="CorporateRanking\CommonConsumptionRankingCalculationDataView.cs" />
     <Compile Include="CorporateRanking\RankingDataviewAddForBug.cs" />
     <Compile Include="CorporateRanking\ViewCostRankingData.cs" />
+    <Compile Include="CostUsage\AdditionalCostUsageDataVerificationSuite.cs" />
     <Compile Include="CostUsage\CostUsageDataVerificationSuite.cs" />
     <Compile Include="CostUsage\CostUsageTOUSuite.cs" />
     <Compile Include="CostUsage\CostUsageTrendChartSuite.cs" />

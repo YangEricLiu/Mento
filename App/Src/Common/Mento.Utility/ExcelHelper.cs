@@ -443,17 +443,65 @@ namespace Mento.Utility
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
-                {
+                {               
                     sheet.Cells[headerRowIndex + i + 1, j + columnNumber] = table.Rows[i][j];
-                }
+
+                    ////小数点位数验证
+                    //if (j > 0 && String.IsNullOrEmpty(table.Rows[i][j].ToString()))
+                    //{ 
+                    //    Excel.Range tmp = (Excel.Range)sheet.Cells[headerRowIndex + i + 1, j + columnNumber];
+
+                    //    string value = table.Rows[i][j].ToString();
+
+                    //    //if (Math.Floor(value.Value) < value.Value) //has decimals
+                    //    if (value.Contains("."))
+                    //    {
+                    //        var numbers = value.Split('.');
+
+                    //        if (numbers[1].Length == 1)
+                    //        {
+                    //            tmp.NumberFormat = "0.0";
+                    //        }
+                    //    }
+
+                    //    //SetCellNumberFormat(tmp, (decimal?)table.Rows[i][j]);
+                    //}              
+                }             
             }
 
-            sheet.get_Range("A1","M1").ColumnWidth = 30;
+            for (int k = 2; k < rows + 2; k++)
+            {
+                Excel.Range temp = (Excel.Range)sheet.Cells[k, 1];
 
-            //Excel.Range temp = (Excel.Range)sheet.Cells[rows, 1];
+                temp.NumberFormat = "yyyy年mm月";
+            }
 
-            //temp.NumberFormat(); 
+            sheet.get_Range("A1", "M1").ColumnWidth = 30;         
         }
+
+        private void SetCellNumberFormat(Excel.Range cell, decimal? value)
+        {
+            if (!value.HasValue)
+            {
+                return;
+            }
+
+            if (Math.Floor(value.Value) < value.Value) //has decimals
+            {
+                var numbers = value.Value.ToString().Split('.');
+
+                if (numbers[1].Length == 1)
+                {
+                    cell.NumberFormat = "0.0";
+                }          
+            }
+            else //int
+            {
+                cell.NumberFormat = "0";
+            }
+        }
+
+
         #endregion
 
         #region Import Excel to Data Table    

@@ -458,8 +458,12 @@ namespace Mento.Utility
             for (int k = 2; k < rows + 2; k++)
             {
                 Excel.Range temp = (Excel.Range)sheet.Cells[k, 1];
+                string strValue = temp.Text.ToString();
 
-                temp.NumberFormat = "yyyy年mm月";
+                if (strValue.Contains("年") && strValue.Contains("月"))
+                {
+                   temp.NumberFormat = "yyyy年mm月"; 
+                }         
             }
 
             sheet.get_Range("A1", "M1").ColumnWidth = 30;         

@@ -20,11 +20,11 @@
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-2-1",	
 			}],
-			"failedFileName":["F-CostUsageDataVerification-101-1-Total-Y-0.xls", "F-CostUsageDataVerification-101-1-Total-M-1.xls", "F-CostUsageDataVerification-101-1-Y-2.xls", "F-CostUsageDataVerification-101-1-M-3.xls", "F-CostUsageDataVerification-101-1-W-4.xls", "F-CostUsageDataVerification-101-1-D-5.xls", "F-CostUsageDataVerification-101-1-H-6.xls", "F-CostUsageDataVerification-101-1-H-7.xls", "F-CostUsageDataVerification-101-1-H-8.xls"],
+			"failedFileName":["F-CostUsageDataVerification-101-1-Total-Y-0.xls", "F-CostUsageDataVerification-101-1-Total-M-1.xls", "F-CostUsageDataVerification-101-1-ElecWaterCoal-Y-2.xls", "F-CostUsageDataVerification-101-1-ElecWaterCoal-M-3.xls", "F-CostUsageDataVerification-101-1-ElecWater-W-4.xls", "F-CostUsageDataVerification-101-1-ElecWater-D-5.xls", "F-CostUsageDataVerification-101-1-Elec-H-6.xls", "F-CostUsageDataVerification-101-1-Elec-H-7.xls", "F-CostUsageDataVerification-101-1-Elec-H-8.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["CostUsageDataVerification-101-1-Total-Y-0.xls", "CostUsageDataVerification-101-1-Total-M-1.xls", "CostUsageDataVerification-101-1-Y-2.xls", "CostUsageDataVerification-101-1-M-3.xls", "CostUsageDataVerification-101-1-W-4.xls", "CostUsageDataVerification-101-1-D-5.xls", "CostUsageDataVerification-101-1-H-6.xls", "CostUsageDataVerification-101-1-H-7.xls", "CostUsageDataVerification-101-1-H-8.xls"],
+			"expectedFileName":["CostUsageDataVerification-101-1-Total-Y-0.xls", "CostUsageDataVerification-101-1-Total-M-1.xls", "CostUsageDataVerification-101-1-ElecWaterCoal-Y-2.xls", "CostUsageDataVerification-101-1-ElecWaterCoal-M-3.xls", "CostUsageDataVerification-101-1-ElecWater-W-4.xls", "CostUsageDataVerification-101-1-ElecWater-D-5.xls", "CostUsageDataVerification-101-1-Elec-H-6.xls", "CostUsageDataVerification-101-1-Elec-H-7.xls", "CostUsageDataVerification-101-1-Elec-H-8.xls"],
 		}
 	}
 ]

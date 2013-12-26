@@ -29,6 +29,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public DashboardInformation[] DashboardInfo { get; set; }
 
         public ManualTimeRange[] ManualTimeRange { get; set; }
+
+        public string CarbonType { get; set; }
     }
 
     public class CarbonUsageOutput : ExpectedTestDataBase

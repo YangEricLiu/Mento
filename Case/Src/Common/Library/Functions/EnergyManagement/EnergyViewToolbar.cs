@@ -159,6 +159,11 @@ namespace Mento.ScriptCommon.Library.Functions
             ConvertTargetButton.SwitchCarbonMenuItem(target);
         }
 
+        public void SelectCarbonConvertTarget(string target)
+        {
+            ConvertTargetButton.SwitchCarbonMenuItem(target);
+        }
+
         public void SelectFuncModeConvertTarget(FuncModeConvertTarget target)
         {
             ConvertTargetButton.SwitchFuncModeMenuItem(target);

@@ -92,6 +92,11 @@ namespace Mento.ScriptCommon.Library.Functions
             CarbonConvertTargetButton.SelectItem(CarbonMenuItems[target]);
         }
 
+        public void SwitchCarbonMenuItem(string target)
+        {
+            CarbonConvertTargetButton.SelectOneItem(target);
+        }
+
         public void ClickFuncModeConvertTargetButton()
         {
             FuncModeConvertTargetButton.Click();

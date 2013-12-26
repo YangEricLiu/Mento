@@ -36,8 +36,8 @@ namespace Mento.Script.EnergyView.CostUsage
         {
             JazzFunction.Navigator.NavigateHome();
 
-            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
-            TimeManager.LongPause();
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         private static CostPanel CostUsage = JazzFunction.CostPanel;
@@ -49,7 +49,7 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-1")]
         public void CostUsageDataVerification01(CostUsageData input)
         {
-            JazzFunction.LoginPage.RefreshJazz("NancyOtherCustomer3");
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.LongPause();
 
             CostUsage.NavigateToCostUsage();
@@ -208,7 +208,7 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-2")]
         public void CostUsageDataVerification02(CostUsageData input)
         {
-            JazzFunction.LoginPage.RefreshJazz("NancyCostCustomer2");
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();
 
             CostUsage.NavigateToCostUsage();
@@ -437,7 +437,7 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-3")]
         public void CostUsageDataVerification03(CostUsageData input)
         {
-            JazzFunction.LoginPage.RefreshJazz("NancyCostCustomer2");
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();
 
             CostUsage.NavigateToCostUsage();

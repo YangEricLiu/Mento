@@ -1,0 +1,44 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
+			"tagNames":["BBV1Root"],
+			"Industry":"严寒地区B区机房",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",		
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-8-4",		
+			}],
+		    "failedFileName":["F-UnitIndicatorConsumptionVerification机房-101-2-B1-Y-0.xls", "F-UnitIndicatorConsumptionVerification机房-101-2-B1-M-1.xls", "F-UnitIndicatorConsumptionVerification机房-101-2-B1-W-2.xls", "F-UnitIndicatorConsumptionVerification机房-101-2-B1-D-3.xls", "F-UnitIndicatorConsumptionVerification机房-101-2-B1-H-4.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorConsumptionVerification机房-101-2-B1-Y-0.xls", "UnitIndicatorConsumptionVerification机房-101-2-B1-M-1.xls", "UnitIndicatorConsumptionVerification机房-101-2-B1-W-2.xls", "UnitIndicatorConsumptionVerification机房-101-2-B1-D-3.xls", "UnitIndicatorConsumptionVerification机房-101-2-B1-H-4.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
+			"tagNames":["BBV2Root"],
+			"Industry":"全部区域全行业",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",		
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-8-4",		
+			}],
+		    "failedFileName":["F-UnitIndicatorConsumptionVerification全行业-101-2-B2-Y-0.xls", "F-UnitIndicatorConsumptionVerification全行业-101-2-B2-M-1.xls", "F-UnitIndicatorConsumptionVerification全行业-101-2-B2-W-2.xls", "F-UnitIndicatorConsumptionVerification全行业-101-2-B2-D-3.xls", "F-UnitIndicatorConsumptionVerification全行业-101-2-B2-H-4.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorConsumptionVerification全行业-101-2-B2-Y-0.xls", "UnitIndicatorConsumptionVerification全行业-101-2-B2-M-1.xls", "UnitIndicatorConsumptionVerification全行业-101-2-B2-W-2.xls", "UnitIndicatorConsumptionVerification全行业-101-2-B2-D-3.xls", "UnitIndicatorConsumptionVerification全行业-101-2-B2-H-4.xls"],
+		}
+	}
+]

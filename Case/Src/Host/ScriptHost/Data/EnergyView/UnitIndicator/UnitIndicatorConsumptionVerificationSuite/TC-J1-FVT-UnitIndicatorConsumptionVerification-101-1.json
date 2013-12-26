@@ -1,0 +1,134 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"tagNames":["P1_YearToDay"],
+			"Industry":"夏热冬冷地区轨道交通",
+			"UnitIndicatorType":"单位人口",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",		
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-8-4",		
+			}],
+		    "failedFileName":["F-UnitIndicatorConsumptionVerification交通人口-101-1-P1-Y-0.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-P1-M-1.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-P1-W-2.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-P1-D-3.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-P1-H-4.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorConsumptionVerification交通人口-101-1-P1-Y-0.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-P1-M-1.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-P1-W-2.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-P1-D-3.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-P1-H-4.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"tagNames":["P1_YearToDay"],
+			"Industry":"全部区域全行业",
+			"UnitIndicatorType":"单位面积",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",		
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-8-4",		
+			}],
+		    "failedFileName":["F-UnitIndicatorConsumptionVerification全行业面积-101-1-P1-Y-0.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-P1-M-1.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-P1-W-2.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-P1-D-3.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-P1-H-4.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorConsumptionVerification全行业面积-101-1-P1-Y-0.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-P1-M-1.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-P1-W-2.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-P1-D-3.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-P1-H-4.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"tagNames":["V1_YearToDay"],
+			"Industry":"夏热冬冷地区轨道交通",
+			"UnitIndicatorType":"单位人口",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",		
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-8-4",		
+			}],
+		    "failedFileName":["F-UnitIndicatorConsumptionVerification交通人口-101-1-V1-Y-0.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-V1-M-1.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-V1-W-2.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-V1-D-3.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-V1-H-4.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorConsumptionVerification交通人口-101-1-V1-Y-0.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-V1-M-1.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-V1-W-2.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-V1-D-3.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-V1-H-4.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"tagNames":["V1_YearToDay"],
+			"Industry":"全部区域全行业",
+			"UnitIndicatorType":"单位面积",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",		
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-8-4",		
+			}],
+		    "failedFileName":["F-UnitIndicatorConsumptionVerification全行业面积-101-1-V1-Y-0.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-V1-M-1.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-V1-W-2.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-V1-D-3.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-V1-H-4.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorConsumptionVerification全行业面积-101-1-V1-Y-0.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-V1-M-1.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-V1-W-2.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-V1-D-3.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-V1-H-4.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"tagNames":["V2_YearToDay"],
+			"Industry":"夏热冬冷地区轨道交通",
+			"UnitIndicatorType":"单位人口",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",		
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-8-4",		
+			}],
+		    "failedFileName":["F-UnitIndicatorConsumptionVerification交通人口-101-1-V2-Y-0.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-V2-M-1.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-V2-W-2.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-V2-D-3.xls", "F-UnitIndicatorConsumptionVerification交通人口-101-1-V2-H-4.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorConsumptionVerification交通人口-101-1-V2-Y-0.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-V2-M-1.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-V2-W-2.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-V2-D-3.xls", "UnitIndicatorConsumptionVerification交通人口-101-1-V2-H-4.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"tagNames":["V2_YearToDay"],
+			"Industry":"全部区域全行业",
+			"UnitIndicatorType":"单位面积",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",		
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-8-4",		
+			}],
+		    "failedFileName":["F-UnitIndicatorConsumptionVerification全行业面积-101-1-V2-Y-0.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-V2-M-1.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-V2-W-2.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-V2-D-3.xls", "F-UnitIndicatorConsumptionVerification全行业面积-101-1-V2-H-4.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorConsumptionVerification全行业面积-101-1-V2-Y-0.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-V2-M-1.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-V2-W-2.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-V2-D-3.xls", "UnitIndicatorConsumptionVerification全行业面积-101-1-V2-H-4.xls"],
+		}
+	}
+]

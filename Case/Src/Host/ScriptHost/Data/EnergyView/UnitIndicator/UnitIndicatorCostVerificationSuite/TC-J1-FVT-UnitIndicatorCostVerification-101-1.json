@@ -1,0 +1,65 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
+			"Commodity":["电"],
+			"Industry":"严寒地区B区机房",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2013-7-1",
+				"EndDate":"2013-8-4",	
+			}],
+			"failedFileName":["F-UnitIndicatorCostVerification电-101-1-总览-Y-0.xls", "F-UnitIndicatorCostVerification电-101-1-总览-M-1.xls", "F-UnitIndicatorCostVerification电-101-1-总览-W-2.xls", "F-UnitIndicatorCostVerification电-101-1-总览-D-3.xls", "F-UnitIndicatorCostVerification电-101-1-总览-H-4.xls", "F-UnitIndicatorCostVerification电-101-1-Y-5.xls", "F-UnitIndicatorCostVerification电-101-1-M-6.xls", "F-UnitIndicatorCostVerification电-101-1-W-7.xls", "F-UnitIndicatorCostVerification电-101-1-D-8.xls", "F-UnitIndicatorCostVerification电-101-1-H-9.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorCostVerification电-101-1-总览-Y-0.xls", "UnitIndicatorCostVerification电-101-1-总览-M-1.xls", "UnitIndicatorCostVerification电-101-1-总览-W-2.xls", "UnitIndicatorCostVerification电-101-1-总览-D-3.xls", "UnitIndicatorCostVerification电-101-1-总览-H-4.xls", "UnitIndicatorCostVerification电-101-1-Y-5.xls", "UnitIndicatorCostVerification电-101-1-M-6.xls", "UnitIndicatorCostVerification电-101-1-W-7.xls", "UnitIndicatorCostVerification电-101-1-D-8.xls", "UnitIndicatorCostVerification电-101-1-H-9.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
+			"Commodity":["自来水"],
+			"Industry":"严寒地区B区机房",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2013-7-1",
+				"EndDate":"2013-8-4",
+			}],
+			"failedFileName":["F-UnitIndicatorCostVerification自来水-101-1-总览-Y-0.xls", "F-UnitIndicatorCostVerification自来水-101-1-总览-M-1.xls", "F-UnitIndicatorCostVerification自来水-101-1-总览-W-2.xls", "F-UnitIndicatorCostVerification自来水-101-1-总览-D-3.xls", "F-UnitIndicatorCostVerification自来水-101-1-总览-H-4.xls", "F-UnitIndicatorCostVerification自来水-101-1-Y-5.xls", "F-UnitIndicatorCostVerification自来水-101-1-M-6.xls", "F-UnitIndicatorCostVerification自来水-101-1-W-7.xls", "F-UnitIndicatorCostVerification自来水-101-1-D-8.xls", "F-UnitIndicatorCostVerification自来水-101-1-H-9.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorCostVerification自来水-101-1-总览-Y-0.xls", "UnitIndicatorCostVerification自来水-101-1-总览-M-1.xls", "UnitIndicatorCostVerification自来水-101-1-总览-W-2.xls", "UnitIndicatorCostVerification自来水-101-1-总览-D-3.xls", "UnitIndicatorCostVerification自来水-101-1-总览-H-4.xls", "UnitIndicatorCostVerification自来水-101-1-Y-5.xls", "UnitIndicatorCostVerification自来水-101-1-M-6.xls", "UnitIndicatorCostVerification自来水-101-1-W-7.xls", "UnitIndicatorCostVerification自来水-101-1-D-8.xls", "UnitIndicatorCostVerification自来水-101-1-H-9.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
+			"Commodity":["煤"],
+			"Industry":"严寒地区B区机房",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			},
+			{
+				"StartDate":"2012-8-1",
+				"EndDate":"2012-9-4",	
+			}],
+			"failedFileName":["F-UnitIndicatorCostVerification煤-101-1-总览-Y-0.xls", "F-UnitIndicatorCostVerification煤-101-1-总览-M-1.xls", "F-UnitIndicatorCostVerification煤-101-1-总览-W-2.xls", "F-UnitIndicatorCostVerification煤-101-1-总览-D-3.xls", "F-UnitIndicatorCostVerification煤-101-1-总览-H-4.xls", "F-UnitIndicatorCostVerification煤-101-1-Y-5.xls", "F-UnitIndicatorCostVerification煤-101-1-M-6.xls", "F-UnitIndicatorCostVerification煤-101-1-W-7.xls", "F-UnitIndicatorCostVerification煤-101-1-D-8.xls", "F-UnitIndicatorCostVerification煤-101-1-H-9.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorCostVerification煤-101-1-总览-Y-0.xls", "UnitIndicatorCostVerification煤-101-1-总览-M-1.xls", "UnitIndicatorCostVerification煤-101-1-总览-W-2.xls", "UnitIndicatorCostVerification煤-101-1-总览-D-3.xls", "UnitIndicatorCostVerification煤-101-1-总览-H-4.xls", "UnitIndicatorCostVerification煤-101-1-Y-5.xls", "UnitIndicatorCostVerification煤-101-1-M-6.xls", "UnitIndicatorCostVerification煤-101-1-W-7.xls", "UnitIndicatorCostVerification煤-101-1-D-8.xls", "UnitIndicatorCostVerification煤-101-1-H-9.xls"],
+		}
+	}
+]

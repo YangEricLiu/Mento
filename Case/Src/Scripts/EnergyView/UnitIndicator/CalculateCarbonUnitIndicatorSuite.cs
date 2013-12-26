@@ -35,6 +35,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
+
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;

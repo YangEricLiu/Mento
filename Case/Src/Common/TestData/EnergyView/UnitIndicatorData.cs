@@ -31,6 +31,10 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] Commodity { get; set; }
 
         public string Industry { get; set; }
+
+        public string CarbonType { get; set; }
+
+        public string UnitIndicatorType { get; set; }
     }
 
     public class UnitIndicatorOutput : ExpectedTestDataBase

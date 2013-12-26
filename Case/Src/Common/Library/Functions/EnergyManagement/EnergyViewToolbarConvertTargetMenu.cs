@@ -129,6 +129,18 @@ namespace Mento.ScriptCommon.Library.Functions
             }        
         }
 
+        public void SwitchUnitTypeMenuItem(string target)
+        {
+            if (GetFuncModeConvertTargetButtonText().Contains("碳排放"))
+            {
+                CarbonUnitTypeConvertTargetButton.SelectOneItem(target);
+            }
+            else
+            {
+                UnitTypeConvertTargetButton.SelectOneItem(target);
+            }
+        }
+
         public string GetUnitTypeButtonText()
         {
             return UnitTypeConvertTargetButton.GetText();

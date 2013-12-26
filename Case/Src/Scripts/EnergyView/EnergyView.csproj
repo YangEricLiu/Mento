@@ -95,6 +95,9 @@
     <Compile Include="UnitIndicator\BenchmarkCalculateConsumptionUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\BenchmarkCalculateCostUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\BenchmarkCalculateCarbonUnitIndicatorSuite.cs" />
+    <Compile Include="UnitIndicator\UnitIndicatorCostVerificationSuite.cs" />
+    <Compile Include="UnitIndicator\UnitIndicatorCarbonVerificationSuite.cs" />
+    <Compile Include="UnitIndicator\UnitIndicatorConsumptionVerificationSuite.cs" />
     <Compile Include="UnitIndicator\UnitIndicatorOfflineCalculateSuite.cs" />
     <Compile Include="UnitIndicator\ViewConsumptionUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\ViewCarbonUnitIndicatorSuite.cs" />

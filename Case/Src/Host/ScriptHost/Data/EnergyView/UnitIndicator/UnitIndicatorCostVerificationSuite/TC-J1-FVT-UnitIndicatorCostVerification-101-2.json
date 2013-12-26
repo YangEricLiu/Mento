@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"]],
+			"Commodity":["电"],
+			"Industry":"严寒地区B区办公建筑",
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-2-10",	
+			}],
+			"failedFileName":["F-UnitIndicatorCostVerification-101-2-电-W-0.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorCostVerification-101-2-电-W-0.xls"],
+		}
+	}
+]

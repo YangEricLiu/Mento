@@ -179,6 +179,11 @@ namespace Mento.ScriptCommon.Library.Functions
             ConvertTargetButton.SwitchUnitTypeMenuItem(target);
         }
 
+        public void SelectUnitTypeConvertTarget(string target)
+        {
+            ConvertTargetButton.SwitchUnitTypeMenuItem(target);
+        }
+
         public string GetUnitTypeButtonText()
         {
             return ConvertTargetButton.GetUnitTypeButtonText();

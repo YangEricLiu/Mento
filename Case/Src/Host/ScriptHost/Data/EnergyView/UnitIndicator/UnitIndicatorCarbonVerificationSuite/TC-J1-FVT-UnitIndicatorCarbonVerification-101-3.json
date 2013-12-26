@@ -1,0 +1,38 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
+			"Commodity":["电"],
+			"Industry":"严寒地区B区数据中心",
+			"CarbonType":"标煤",
+			"ManualTimeRange":[{
+				"StartDate":"2012-8-25",
+				"EndDate":"2013-2-10",	
+			}],
+			"failedFileName":["F-UnitIndicatorCarbonVerification电-101-3-W-0.xls", "F-UnitIndicatorCarbonVerification电-101-3-D-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorCarbonVerification电-101-3-W-0.xls", "UnitIndicatorCarbonVerification电-101-3-D-1.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"]],
+			"Commodity":["电"],
+			"Industry":"严寒地区B区办公建筑",
+			"CarbonType":"二氧化碳",
+			"ManualTimeRange":[{
+				"StartDate":"2012-8-25",
+				"EndDate":"2013-2-10",	
+			}],
+			"failedFileName":["F-UnitIndicatorCarbonVerification电-101-3-W-0.xls", "F-UnitIndicatorCarbonVerification电-101-3-D-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorCarbonVerification电-101-3-W-0.xls", "UnitIndicatorCarbonVerification电-101-3-D-1.xls"],
+		}
+	}
+]

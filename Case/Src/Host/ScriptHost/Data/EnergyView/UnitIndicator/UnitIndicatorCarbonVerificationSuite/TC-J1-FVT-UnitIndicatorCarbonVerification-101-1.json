@@ -1,0 +1,56 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"Commodity":["煤"],
+			"Industry":"夏热冬冷地区轨道交通",
+			"CarbonType":"标煤",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			}],
+			"failedFileName":["F-UnitIndicatorCarbonVerification标煤-101-1-总览-Y-0.xls", "F-UnitIndicatorCarbonVerification标煤-101-1-总览-M-1.xls", "F-UnitIndicatorCarbonVerification标煤-101-1-煤-Y-2.xls", "F-UnitIndicatorCarbonVerification标煤-101-1-煤-M-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorCarbonVerification标煤-101-1-总览-Y-0.xls", "UnitIndicatorCarbonVerification标煤-101-1-总览-M-1.xls", "UnitIndicatorCarbonVerification标煤-101-1-煤-Y-2.xls", "UnitIndicatorCarbonVerification标煤-101-1-煤-M-3.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"Commodity":["煤"],
+			"Industry":"夏热冬冷地区轨道交通",
+			"CarbonType":"二氧化碳",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			}],
+			"failedFileName":["F-UnitIndicatorCarbonVerification二氧化碳-101-1-总览-Y-0.xls", "F-UnitIndicatorCarbonVerification二氧化碳-101-1-总览-M-1.xls", "F-UnitIndicatorCarbonVerification二氧化碳-101-1-煤-Y-2.xls", "F-UnitIndicatorCarbonVerification二氧化碳-101-1-煤-M-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorCarbonVerification二氧化碳-101-1-总览-Y-0.xls", "UnitIndicatorCarbonVerification二氧化碳-101-1-总览-M-1.xls", "UnitIndicatorCarbonVerification二氧化碳-101-1-煤-Y-2.xls", "UnitIndicatorCarbonVerification二氧化碳-101-1-煤-M-3.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"Commodity":["煤"],
+			"Industry":"夏热冬冷地区轨道交通",
+			"CarbonType":"树",
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-16",	
+			}],
+			"failedFileName":["F-UnitIndicatorCarbonVerification树-101-1-总览-Y-0.xls", "F-UnitIndicatorCarbonVerification树-101-1-总览-M-1.xls", "F-UnitIndicatorCarbonVerification树-101-1-煤-Y-2.xls", "F-UnitIndicatorCarbonVerification树-101-1-煤-M-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorCarbonVerification树-101-1-总览-Y-0.xls", "UnitIndicatorCarbonVerification树-101-1-总览-M-1.xls", "UnitIndicatorCarbonVerification树-101-1-煤-Y-2.xls", "UnitIndicatorCarbonVerification树-101-1-煤-M-3.xls"],
+		}
+	}
+]

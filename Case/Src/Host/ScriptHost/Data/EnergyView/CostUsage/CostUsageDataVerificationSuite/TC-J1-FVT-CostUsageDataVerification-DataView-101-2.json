@@ -13,8 +13,8 @@
 				"EndDate":"2012-7-30",	
 			},
 			{
-			    "StartDate":"2013-1-19",
-				"EndDate":"2013-2-10",	
+			    "StartDate":"2013-6-19",
+				"EndDate":"2013-7-10",	
 			},
 			{
 				"StartDate":"2013-7-19",
@@ -25,6 +25,34 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["CostUsageDataVerification-101-2-Total-Y-0.xls", "CostUsageDataVerification-101-2-Total-M-1.xls", "CostUsageDataVerification-101-2-Total-W-2.xls", "F-CostUsageDataVerification-101-2-Total-D-3.xls", "CostUsageDataVerification-101-2-Total-H-4.xls", "CostUsageDataVerification-101-2-Total-H-5.xls", "CostUsageDataVerification-101-2-Total-H-6.xls", "CostUsageDataVerification-101-2-Y-ElecWaterCoal-7.xls", "CostUsageDataVerification-101-2-M-ElecWaterCoal-8.xls", "CostUsageDataVerification-101-2-W-ElecWaterCoal-9.xls", "CostUsageDataVerification-101-2-D-ElecWaterCoal-10.xls", "CostUsageDataVerification-101-2-H-ElecWaterCoal-11.xls", "CostUsageDataVerification-101-2-H-ElecWaterCoal-12.xls", "CostUsageDataVerification-101-2-H-ElecWaterCoal-13.xls"],
+		}
+	},
+		{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A","楼宇B"],
+			"commodityNames":["电", "自来水", "煤"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",	
+			},
+			{
+				"StartDate":"2012-7-5",
+				"EndDate":"2012-7-30",	
+			},
+			{
+				"StartDate":"2013-6-19",
+				"EndDate":"2013-7-10",	
+			},
+			{
+				"StartDate":"2013-7-19",
+				"EndDate":"2013-8-19",		
+			}],
+			"failedFileName":["F-CostUsageDataVerification-101-3-Total-Y-0.xls", "F-CostUsageDataVerification-101-3-Total-M-1.xls", "F-CostUsageDataVerification-101-3-Total-W-2.xls", "F-CostUsageDataVerification-101-3-Total-D-3.xls", "F-CostUsageDataVerification-101-3-Total-H-4.xls", "F-CostUsageDataVerification-101-3-Total-H-5.xls", "F-CostUsageDataVerification-101-3-Total-H-6.xls", "F-CostUsageDataVerification-101-3-Y-ElecWaterCoal-7.xls", "F-CostUsageDataVerification-101-3-M-ElecWaterCoal-8.xls", "F-CostUsageDataVerification-101-3-W-ElecWaterCoal-9.xls", "F-CostUsageDataVerification-101-3-D-ElecWaterCoal-10.xls", "F-CostUsageDataVerification-101-3-H-ElecWaterCoal-11.xls", "F-CostUsageDataVerification-101-3-H-ElecWaterCoal-12.xls", "F-CostUsageDataVerification-101-3-H-ElecWaterCoal-13.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageDataVerification-101-3-Total-Y-0.xls", "CostUsageDataVerification-101-3-Total-M-1.xls", "CostUsageDataVerification-101-3-Total-W-2.xls", "F-CostUsageDataVerification-101-3-Total-D-3.xls", "CostUsageDataVerification-101-3-Total-H-4.xls", "CostUsageDataVerification-101-3-Total-H-5.xls", "CostUsageDataVerification-101-3-Total-H-6.xls", "CostUsageDataVerification-101-3-Y-ElecWaterCoal-7.xls", "CostUsageDataVerification-101-3-M-ElecWaterCoal-8.xls", "CostUsageDataVerification-101-3-W-ElecWaterCoal-9.xls", "CostUsageDataVerification-101-3-D-ElecWaterCoal-10.xls", "CostUsageDataVerification-101-3-H-ElecWaterCoal-11.xls", "CostUsageDataVerification-101-3-H-ElecWaterCoal-12.xls", "CostUsageDataVerification-101-3-H-ElecWaterCoal-13.xls"],
 		}
 	}
 ]

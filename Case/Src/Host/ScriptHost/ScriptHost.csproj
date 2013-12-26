@@ -546,10 +546,6 @@
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-3.json" />
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-2.json" />
     <None Include="Data\Customer\TagManagement\ViewTargetBaselineCalendarSuite\TC-J1-FVT-TargetConfiguration-View-101-1.json" />
-    <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataVerificationSuite\TC-J1-FVT-CarbonUsageDataVerification-DataView-101-6.json" />
-    <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataVerificationSuite\TC-J1-FVT-CarbonUsageDataVerification-DataView-101-5.json" />
-    <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataVerificationSuite\TC-J1-FVT-CarbonUsageDataVerification-DataView-101-4.json" />
-    <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataVerificationSuite\TC-J1-FVT-CarbonUsageDataVerification-DataView-101-3.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataVerificationSuite\TC-J1-FVT-CarbonUsageDataVerification-DataView-101-2.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataVerificationSuite\TC-J1-FVT-CarbonUsageDataVerification-DataView-101-1.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataViewSuite\TC-J1-FVT-CarbonUsage-DataView-001-3.json" />
@@ -604,7 +600,6 @@
     <None Include="Data\EnergyView\CostUsage\AdditionalCostUsageDataVerificationSuite\TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataVerificationSuite\TC-J1-FVT-CostUsageDataVerification-DataView-101-5.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataVerificationSuite\TC-J1-FVT-CostUsageDataVerification-DataView-101-4.json" />
-    <None Include="Data\EnergyView\CostUsage\CostUsageDataVerificationSuite\TC-J1-FVT-CostUsageDataVerification-DataView-101-3.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataVerificationSuite\TC-J1-FVT-CostUsageDataVerification-DataView-101-2.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataVerificationSuite\TC-J1-FVT-CostUsageDataVerification-DataView-101-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataViewSuite\TC-J1-FVT-CostUsage-DataView-001-3842.json" />
@@ -625,7 +620,6 @@
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionTrendChartSuite\TC-J1-FVT-MultipleIntervalsComparasion-TrendChart-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultiTagsDataVerificationSuite\TC-J1-FVT-MultiTagsDataVerification-DataView-101-5.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultiTagsDataVerificationSuite\TC-J1-FVT-MultiTagsDataVerification-DataView-101-4.json" />
-    <None Include="Data\EnergyView\EnergyAnalysis\MultiTagsDataVerificationSuite\TC-J1-FVT-MultiTagsDataVerification-DataView-101-3.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultiTagsDataVerificationSuite\TC-J1-FVT-MultiTagsDataVerification-DataView-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultiTagsDataVerificationSuite\TC-J1-FVT-MultiTagsDataVerification-DataView-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalInvalidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-001-2.json" />

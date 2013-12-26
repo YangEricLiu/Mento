@@ -194,7 +194,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
 
-            //Tags = BAV1Root + BAV2Root + BAV3Root
+            //楼宇A：Tags = BAV1Root + BAV2Root + BAV3Root；楼宇B：Tags = BBV1Root+BBV2Root+BBV3Root    
             EnergyAnalysis.CheckTags(input.InputData.TagNames);
             TimeManager.ShortPause();
 
@@ -294,123 +294,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [CaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101-3")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataVerificationSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-3")]
         public void MultiTagsDataVerification03(EnergyViewOptionData input)
-        {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
-
-            EnergyAnalysis.NavigateToEnergyAnalysis();
-            TimeManager.MediumPause();
-
-            //Hierarchy = NancyCostCustomer2/组织A/园区A/楼宇B
-            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-
-            //Time range = 2012-1-1 to 2013-12-18
-            var ManualTimeRange = input.InputData.ManualTimeRange;
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
-
-            //Tags = BBV1Root+BBV2Root+BBV3Root
-            EnergyAnalysis.CheckTags(input.InputData.TagNames);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //"Year"
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
-
-            //"Month"
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
-
-            //"Week"
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
-
-            //"Day"
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
-
-            //Time range = 2012-5-28 to 2012-7-3
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //"Hour"
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
-
-            //Time range = 2012-11-28 to 2012-1-3
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //"Hour"
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
-
-            //Time range = 2013-5-29 to 2013-7-3
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //"Hour"
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Default);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101-4")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataVerificationSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-4")]
-        public void MultiTagsDataVerification04(EnergyViewOptionData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();
@@ -532,9 +415,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
        
         [Test]
-        [CaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101-5")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataVerificationSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-5")]
-        public void MultiTagsDataVerification05(EnergyViewOptionData input)
+        [CaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101-4")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataVerificationSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-4")]
+        public void MultiTagsDataVerification04(EnergyViewOptionData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();

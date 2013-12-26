@@ -214,236 +214,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
 
-            //Hierarchy = NancyCostCustomer2/组织A/园区A/楼宇A
-            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-
-            //Time range = 2012-1-1 to 2013-12-18
-            var ManualTimeRange = input.InputData.ManualTimeRange;
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
-
-            //"总览"
-            CostUsage.SelectCommodity();
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //"Year"
-            CostUsage.ClickDisplayStep(DisplayStep.Year);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
-
-            //"Month"
-            CostUsage.ClickDisplayStep(DisplayStep.Month);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
-
-            //"Week"
-            CostUsage.ClickDisplayStep(DisplayStep.Week);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
-
-            //"Day"
-            CostUsage.ClickDisplayStep(DisplayStep.Day);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
-
-            //Time range = 2012-7-5 to 2012-7-30
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //"Hour"
-            CostUsage.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
-
-            //Time range = 2013-1-19 to 2013-2-10
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //"Hour"
-            CostUsage.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
-
-            //Time range = 2013-7-19 to 2013-8-19
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //"Hour"
-            CostUsage.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
-
-            //Time range = 2012-1-1 to 2013-12-18
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
-
-            //"单项" = 电 +　自来水 + 煤
-            CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
-            CostUsage.SelectCommodity(input.InputData.commodityNames[1]);
-            CostUsage.SelectCommodity(input.InputData.commodityNames[2]);
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //"Year"
-            CostUsage.ClickDisplayStep(DisplayStep.Year);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[7], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
-
-            //"Month"
-            CostUsage.ClickDisplayStep(DisplayStep.Month);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
-            
-            //"Week"
-            CostUsage.ClickDisplayStep(DisplayStep.Week);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[9], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[9], input.InputData.failedFileName[9]);
-
-            //"Day"
-            CostUsage.ClickDisplayStep(DisplayStep.Day);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[10], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
-
-            //Time range = 2012-7-5 to 2012-7-30
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //"Hour"
-            CostUsage.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[11], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[11], input.InputData.failedFileName[11]);
-
-            //Time range = 2013-1-19 to 2013-2-10
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //"Hour"
-            CostUsage.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[12], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[12], input.InputData.failedFileName[12]);
-
-            //Time range = 2013-7-19 to 2013-8-19
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //"Hour"
-            CostUsage.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[13], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[13], input.InputData.failedFileName[13]);
-
-        }
-        
-        [Test]
-        [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-3")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-3")]
-        public void CostUsageDataVerification03(CostUsageData input)
-        {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
-
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
-            
-            //Hierarchy = NancyCostCustomer2/组织A/园区A/楼宇B
+            //Hierarchy = NancyCostCustomer2/组织A/园区A/楼宇A or B
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -584,7 +355,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8], DisplayStep.Default);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
-
+            
             //"Week"
             CostUsage.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -623,7 +394,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[11], input.InputData.failedFileName[11]);
 
-            //Time range = 2013-1-19 to 2013-2-10
+            //Time range = 2013-6-19 to 2013-7-10
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             TimeManager.ShortPause();
 
@@ -660,11 +431,11 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[13], input.InputData.failedFileName[13]);
 
         }
-
+        
         [Test]
-        [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-4")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-4")]
-       public void MultiTagsDataVerification04(CostUsageData input)
+        [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-3")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-3")]
+       public void MultiTagsDataVerification03(CostUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();
@@ -885,9 +656,9 @@ namespace Mento.Script.EnergyView.CostUsage
         }
         
         [Test]
-        [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-5")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-5")]
-        public void MultiTagsDataVerification05(CostUsageData input)
+        [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-4")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-4")]
+        public void MultiTagsDataVerification04(CostUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();

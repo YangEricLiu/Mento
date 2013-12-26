@@ -683,6 +683,7 @@
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCarbonVerificationSuite\TC-J1-FVT-UnitIndicatorCarbonVerification-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCarbonVerificationSuite\TC-J1-FVT-UnitIndicatorCarbonVerification-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCarbonVerificationSuite\TC-J1-FVT-UnitIndicatorCarbonVerification-101-1.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCostVerificationSuite\TC-J1-FVT-UnitIndicatorCostVerification-101-2.json" />

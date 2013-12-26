@@ -308,6 +308,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             //Select "NancyOtherCustomer3/NancyOtherSite/BuildingDayNight"
+            //Select "NancyOtherCustomer3/NancyOtherSite/BuildingWorkNonwork"
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();

@@ -221,6 +221,60 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-3")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-3")]
+        public void UnitIndicatorConsumptionVerification03(UnitIndicatorData input)
+        {
+            //Select "NancyOtherCustomer3"
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            //Select "NancyOtherCustomer3/NancyOtherSite/BuildingDayNight"
+            //Select "NancyOtherCustomer3/NancyOtherSite/BuildingWorkNonwork"
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //select Benchmark = "严寒地区B区数据中心"/"严寒地区B区办公建筑"
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industry);
+            TimeManager.ShortPause();
+
+            //Time range = 2012-8-25 to 2013-2-10
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //Tags = DayNightP/WorkNotworkP
+            EnergyAnalysis.CheckTags(input.InputData.tagNames);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            //"Week"
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //"Day"
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+        }
     }
 }
 

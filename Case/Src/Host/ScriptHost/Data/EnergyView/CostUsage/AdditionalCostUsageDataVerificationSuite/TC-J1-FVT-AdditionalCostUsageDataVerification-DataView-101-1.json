@@ -2,11 +2,95 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A""],
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A"],
+			"commodityNames":["电", "自来水","煤"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",
+			},
+			{
+				"StartDate":"2012-6-1",
+				"EndDate":"2012-7-2",	
+			},
+			{
+				"StartDate":"2012-12-1",
+				"EndDate":"2012-12-31",	
+			},
+			{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-2-1",	
+			}],
+			"failedFileName":["F-CostUsageDataVerification-101-1-Total-Y-0.xls", "F-CostUsageDataVerification-101-1-Total-M-1.xls", "F-CostUsageDataVerification-101-1-Y-2.xls", "F-CostUsageDataVerification-101-1-M-3.xls", "F-CostUsageDataVerification-101-1-W-4.xls", "F-CostUsageDataVerification-101-1-D-5.xls", "F-CostUsageDataVerification-101-1-H-6.xls", "F-CostUsageDataVerification-101-1-H-7.xls", "F-CostUsageDataVerification-101-1-H-8.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageDataVerification-101-1-Total-Y-0.xls", "CostUsageDataVerification-101-1-Total-M-1.xls", "CostUsageDataVerification-101-1-Y-2.xls", "CostUsageDataVerification-101-1-M-3.xls", "CostUsageDataVerification-101-1-W-4.xls", "CostUsageDataVerification-101-1-D-5.xls", "CostUsageDataVerification-101-1-H-6.xls", "CostUsageDataVerification-101-1-H-7.xls", "CostUsageDataVerification-101-1-H-8.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区B"],
 			"commodityNames":["电", "自来水","煤"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-18",	
+			},
+			{
+				"StartDate":"2012-6-1",
+				"EndDate":"2012-7-2",	
+			},
+			{
+				"StartDate":"2012-12-1",
+				"EndDate":"2012-12-31",	
+			},
+			{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-2-1",	
+			}],
+			"failedFileName":["F-CostUsageDataVerification-101-1-Total-Y-0.xls", "F-CostUsageDataVerification-101-1-Total-M-1.xls", "F-CostUsageDataVerification-101-1-Y-2.xls", "F-CostUsageDataVerification-101-1-M-3.xls", "F-CostUsageDataVerification-101-1-W-4.xls", "F-CostUsageDataVerification-101-1-D-5.xls", "F-CostUsageDataVerification-101-1-H-6.xls", "F-CostUsageDataVerification-101-1-H-7.xls", "F-CostUsageDataVerification-101-1-H-8.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageDataVerification-101-1-Total-Y-0.xls", "CostUsageDataVerification-101-1-Total-M-1.xls", "CostUsageDataVerification-101-1-Y-2.xls", "CostUsageDataVerification-101-1-M-3.xls", "CostUsageDataVerification-101-1-W-4.xls", "CostUsageDataVerification-101-1-D-5.xls", "CostUsageDataVerification-101-1-H-6.xls", "CostUsageDataVerification-101-1-H-7.xls", "CostUsageDataVerification-101-1-H-8.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A"],
+			"commodityNames":["电", "自来水","煤"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",	
+			},
+			{
+				"StartDate":"2012-6-1",
+				"EndDate":"2012-7-2",	
+			},
+			{
+				"StartDate":"2012-12-1",
+				"EndDate":"2012-12-31",	
+			},
+			{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-2-1",	
+			}],
+			"failedFileName":["F-CostUsageDataVerification-101-1-Total-Y-0.xls", "F-CostUsageDataVerification-101-1-Total-M-1.xls", "F-CostUsageDataVerification-101-1-Y-2.xls", "F-CostUsageDataVerification-101-1-M-3.xls", "F-CostUsageDataVerification-101-1-W-4.xls", "F-CostUsageDataVerification-101-1-D-5.xls", "F-CostUsageDataVerification-101-1-H-6.xls", "F-CostUsageDataVerification-101-1-H-7.xls", "F-CostUsageDataVerification-101-1-H-8.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageDataVerification-101-1-Total-Y-0.xls", "CostUsageDataVerification-101-1-Total-M-1.xls", "CostUsageDataVerification-101-1-Y-2.xls", "CostUsageDataVerification-101-1-M-3.xls", "CostUsageDataVerification-101-1-W-4.xls", "CostUsageDataVerification-101-1-D-5.xls", "CostUsageDataVerification-101-1-H-6.xls", "CostUsageDataVerification-101-1-H-7.xls", "CostUsageDataVerification-101-1-H-8.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2"],
+			"commodityNames":["电", "自来水","煤"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",
 			},
 			{
 				"StartDate":"2012-6-1",

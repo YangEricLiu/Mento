@@ -435,7 +435,7 @@ namespace Mento.Script.EnergyView.CostUsage
         [Test]
         [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-3")]
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-3")]
-       public void MultiTagsDataVerification03(CostUsageData input)
+        public void CostUsageDataVerification03(CostUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();
@@ -658,7 +658,7 @@ namespace Mento.Script.EnergyView.CostUsage
         [Test]
         [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-4")]
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-4")]
-        public void MultiTagsDataVerification04(CostUsageData input)
+        public void CostUsageDataVerification04(CostUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();

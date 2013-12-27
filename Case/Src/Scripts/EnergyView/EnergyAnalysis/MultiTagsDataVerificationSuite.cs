@@ -21,7 +21,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// 
     /// </summary>
     [TestFixture]
-    [ManualCaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101"), CreateTime("2013-12-19"), Owner("Emma")]
+    [ManualCaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101"), CreateTime("2013-12-19"), Owner("Amber")]
     public class MultiTagsDataVerificationSuite : TestSuiteBase
     {
         [SetUp]

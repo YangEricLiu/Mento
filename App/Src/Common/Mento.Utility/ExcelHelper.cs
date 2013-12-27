@@ -419,6 +419,7 @@ namespace Mento.Utility
             int titleRowIndex = rowNumber;
             int headerRowIndex = rowNumber;
             Excel.Range titleRange = null;
+            decimal tmp;
 
             if (showTitle)
             {
@@ -448,22 +449,17 @@ namespace Mento.Utility
 
                     Excel.Range temp2 = (Excel.Range)sheet.Cells[headerRowIndex + i + 1, j + columnNumber];
                     string value = table.Rows[i][j].ToString();
-                    if (!String.IsNullOrEmpty(value))
+
+                    if (value.Contains("年") && value.Contains("月"))
                     {
+                        temp2.NumberFormat = "yyyy年mm月";
+                    }
+
+                    if (decimal.TryParse(value, out tmp))
+                    {                       
                         SetCellNumberFormat(temp2, value);
                     }  
                 }             
-            }
-
-            for (int k = 2; k < rows + 2; k++)
-            {
-                Excel.Range temp = (Excel.Range)sheet.Cells[k, 1];
-                string strValue = temp.Text.ToString();
-
-                if (strValue.Contains("年") && strValue.Contains("月"))
-                {
-                   temp.NumberFormat = "yyyy年mm月"; 
-                }         
             }
 
             sheet.get_Range("A1", "M1").ColumnWidth = 30;         
@@ -479,10 +475,6 @@ namespace Mento.Utility
                 {
                     cell.NumberFormat = "#,##0.0";
                 }
-            }
-            else //int
-            {
-                cell.NumberFormat = "0";
             }
         }
 

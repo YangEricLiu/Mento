@@ -86,10 +86,11 @@
     <Compile Include="EnergyManagement\SetDisplayStepSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Radio\CalculateConsumptionDayNightRatioSuite.cs" />
-    <Compile Include="Radio\CalculateConsumptionWorkNotworkRatioSuite.cs" />
-    <Compile Include="Radio\BenchmarkCalculateConsumptionDayNightRatioSuite.cs" />
-    <Compile Include="Radio\BenchmarkCalculateConsumptionWorkNotworkRatioSuite.cs" />
+    <Compile Include="Ratio\CalculateConsumptionDayNightRatioSuite.cs" />
+    <Compile Include="Ratio\CalculateConsumptionWorkNotworkRatioSuite.cs" />
+    <Compile Include="Ratio\BenchmarkCalculateConsumptionDayNightRatioSuite.cs" />
+    <Compile Include="Ratio\BenchmarkCalculateConsumptionWorkNotworkRatioSuite.cs" />
+    <Compile Include="Ratio\ViewConsumptionDayNightRatioSuite.cs" />
     <Compile Include="UnitIndicator\CalculateCostUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\CalculateCarbonUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\BenchmarkCalculateConsumptionUnitIndicatorSuite.cs" />

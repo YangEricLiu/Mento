@@ -9,11 +9,10 @@
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-12-4",
 			}],
-			"failedFileName":["F-CarbonUnitIndicator101-3923.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["CarbonUnitIndicator101-3923.xls"],
+			
 		}
 	}
 ]

@@ -26,7 +26,7 @@ namespace Mento.Script.EnergyView.Usage
         [SetUp]
         public void CaseSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
             TimeManager.MediumPause();
         }
 
@@ -37,6 +37,7 @@ namespace Mento.Script.EnergyView.Usage
         }
 
         private static EnergyAnalysisPanel DataPanel = JazzFunction.EnergyAnalysisPanel;
+        private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
 
         /// <summary>
         /// 1.	Navigate to Energy Management. Select the Building node in Pre-condition from Hierarchy list and go to Energy usage -> Energy Analysis. (用能->能效分析.)	"
@@ -143,13 +144,18 @@ namespace Mento.Script.EnergyView.Usage
         [CaseID("TC-J1-SmokeTest-041")]
         public void TestDatePicker()
         {
-            DatePicker EnergyUsageStartDate = JazzDatePicker.EnergyUsageStartDateDatePicker;
-            DatePicker EnergyUsageEndDate = JazzDatePicker.EnergyUsageEndDateDatePicker;
+            //DatePicker EnergyUsageStartDate = JazzDatePicker.EnergyUsageStartDateDatePicker;
+            //DatePicker EnergyUsageEndDate = JazzDatePicker.EnergyUsageEndDateDatePicker;
 
             
-            EnergyUsageEndDate.SelectDateItem(new DateTime(2012, 7, 14));
-            TimeManager.MediumPause();
-            EnergyUsageStartDate.SelectDateItem(new DateTime(2012, 6, 10));
+            //EnergyUsageEndDate.SelectDateItem(new DateTime(2012, 7, 14));
+            //TimeManager.MediumPause();
+            //EnergyUsageStartDate.SelectDateItem(new DateTime(2012, 6, 10));
+
+
+            EnergyViewToolbar.SetDateRange("2012-7-20", "2013-9-1");
+            TimeManager.LongPause();
+            EnergyViewToolbar.SetDateRange("2012-7-5", "2012-8-25");
         }
 
         [Test]

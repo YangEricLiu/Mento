@@ -6,7 +6,7 @@
 			"Commodity":["电", "自来水", "煤"],
 			"SystemDimensionPath":["楼宇A", "空调"],
 			"ManualTimeRange":[{
-				"StartDate":"2012-6-29",
+				"StartDate":"2012-7-20",
 				"EndDate":"2012-9-1",	
 			}],
 			"failedFileName":["F-CostUnitIndicatorCalculate101-7-P-1.xls", "F-CostUnitIndicatorCalculate101-7-P-2.xls", "F-CostUnitIndicatorCalculate101-7-P-3.xls", "F-CostUnitIndicatorCalculate101-7-P-4.xls", "F-CostUnitIndicatorCalculate101-7-P-5.xls", "F-CostUnitIndicatorCalculate101-7-P-6.xls"],

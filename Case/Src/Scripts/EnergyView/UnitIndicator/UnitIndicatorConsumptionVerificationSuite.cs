@@ -34,6 +34,13 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [TearDown]
         public void CaseTearDown()
         {
+            TimeManager.LongPause();
+            if (JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持"))
+            {
+                JazzWindow.WindowMessageInfos.Quit();
+                TimeManager.ShortPause();
+            }
+            
             JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
         }

@@ -431,6 +431,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.MediumPause();
         }
 
+        /*
         [Test]
         [CaseID("TC-J1-FVT-SetDisplayStep-001-6")]
         [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-3")]
@@ -551,6 +552,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
         }
+        */
 
         [Test]
         [CaseID("TC-J1-FVT-SetDisplayStep-001-7")]
@@ -687,6 +689,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             Assert.IsTrue(EnergyAnalysis.IsTagChecked(input.InputData.TagNames[1]));
         }
 
+        /*
         [Test]
         [CaseID("TC-J1-FVT-SetDisplayStep-001-8")]
         [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-5")]
@@ -726,5 +729,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
         }
+        */
     }
 }

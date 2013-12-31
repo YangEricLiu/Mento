@@ -6,7 +6,7 @@
 			"tagNames":["DayNightP", "PH_SiteS1"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
-				"EndDate":"2013-12-16",	
+				"EndDate":"2013-12-5",	
 			}],
 			"failedFileName":["F-ConsumptionDayNightRatio-101-1-M-0.xls", "F-ConsumptionDayNightRatio-101-1-D-1.xls", "F-ConsumptionDayNightRatio-101-1-Y-2.xls", "F-ConsumptionDayNightRatio-101-1-W-3.xls", "F-ConsumptionDayNightRatio-101-1-M-4.xls", "F-ConsumptionDayNightRatio-101-1-D-5.xls", "F-ConsumptionDayNightRatio-101-1-Y-6.xls", "F-ConsumptionDayNightRatio-101-1-W-7.xls"],
 		},

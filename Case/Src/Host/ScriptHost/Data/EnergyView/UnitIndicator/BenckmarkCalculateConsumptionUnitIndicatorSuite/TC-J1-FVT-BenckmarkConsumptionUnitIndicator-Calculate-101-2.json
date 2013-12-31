@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "楼宇BC"]],
 			"TagNames":["V1_BuildingBC"],
 			"Industry":"夏热冬暖地区医院",
-			"failedFileName":["F-BenckmarkConsumption夏热冬暖地区医院-101-2-0-H.xls", "F-BenckmarkConsumption夏热冬暖地区医院-101-2-1-D.xls", "F-BenckmarkConsumption夏热冬暖地区医院-101-2-2-W.xls", "F-BenckmarkConsumption夏热冬暖地区医院-101-2-3-Y.xls", "F-BenckmarkConsumption夏热冬暖地区医院-101-2-4-D.xls", "F-BenckmarkConsumption夏热冬暖地区医院-101-2-5-W.xls", "F-BenckmarkConsumption夏热冬暖地区医院-101-2-6-H.xls"],
+			"failedFileName":["F-BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-0-H.xls", "F-BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-1-D.xls", "F-BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-2-W.xls", "F-BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-3-Y.xls", "F-BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-4-D.xls", "F-BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-5-W.xls", "F-BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-6-H.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-12-31",
 				"StartTime":"03:00",
@@ -33,7 +33,7 @@
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["BenckmarkConsumption夏热冬暖地区医院-101-2-0-H.xls", "BenckmarkConsumption夏热冬暖地区医院-101-2-1-D.xls", "BenckmarkConsumption夏热冬暖地区医院-101-2-2-W.xls", "BenckmarkConsumption夏热冬暖地区医院-101-2-3-Y.xls", "BenckmarkConsumption夏热冬暖地区医院-101-2-4-D.xls", "BenckmarkConsumption夏热冬暖地区医院-101-2-5-W.xls", "BenckmarkConsumption夏热冬暖地区医院-101-2-6-H.xls"],
+			"expectedFileName":["BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-0-H.xls", "BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-1-D.xls", "BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-2-W.xls", "BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-3-Y.xls", "BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-4-D.xls", "BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-5-W.xls", "BenckmarkConsumptionCalculate夏热冬暖地区医院-101-2-6-H.xls"],
 		}
 	}
 ]

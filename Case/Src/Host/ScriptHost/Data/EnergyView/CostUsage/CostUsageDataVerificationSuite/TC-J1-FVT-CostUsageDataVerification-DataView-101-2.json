@@ -27,7 +27,7 @@
 			"expectedFileName":["CostUsageDataVerification-101-2-Total-Y-0.xls", "CostUsageDataVerification-101-2-Total-M-1.xls", "CostUsageDataVerification-101-2-Total-W-2.xls", "F-CostUsageDataVerification-101-2-Total-D-3.xls", "CostUsageDataVerification-101-2-Total-H-4.xls", "CostUsageDataVerification-101-2-Total-H-5.xls", "CostUsageDataVerification-101-2-Total-H-6.xls", "CostUsageDataVerification-101-2-Y-ElecWaterCoal-7.xls", "CostUsageDataVerification-101-2-M-ElecWaterCoal-8.xls", "CostUsageDataVerification-101-2-W-ElecWaterCoal-9.xls", "CostUsageDataVerification-101-2-D-ElecWaterCoal-10.xls", "CostUsageDataVerification-101-2-H-ElecWaterCoal-11.xls", "CostUsageDataVerification-101-2-H-ElecWaterCoal-12.xls", "CostUsageDataVerification-101-2-H-ElecWaterCoal-13.xls"],
 		}
 	},
-		{
+	{
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A","楼宇B"],

@@ -162,7 +162,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Select "总览"
             UnitKPIPanel.SelectCommodityUnitCarbon();
             TimeManager.MediumPause();
-
+            
             //Time range = 2012-1-1 to 2013-12-18
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
@@ -207,7 +207,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
-
+            
             //Time range = 2013-7-1 to 2013-8-4
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
@@ -228,7 +228,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Select "电"/"自来水"/"煤"
             UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[0]);
             TimeManager.MediumPause();
-
+            
             //Time range = 2012-1-1 to 2013-12-18
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
@@ -276,7 +276,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
-
+            
             //Time range = 2013-7-1 to 2013-8-4
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();

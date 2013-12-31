@@ -4,13 +4,13 @@
 		{
 			"Hierarchies":["NancyCostCustomer2","组织A","园区A","楼宇A"],
 			"commodityNames":["电","自来水"],
-			"failedFileName":["F-CostRankingDataView001-1-H-Elec.xls", "F-CostRankingDataView002-1-H-Elec.xls", "F-CostRankingDataView003-1-H-Elec.xls", "F-CostRankingDataView004-1-H-Elec.xls", "F-CostRankingDataView005-1-H-Elec.xls"],
+			"failedFileName":["F-TC-J1-FVT-ConsumptionRanking-View-101-1-1-Elec-TotalRank-Custom.xls", "F-TC-J1-FVT-ConsumptionRanking-View-101-1-2-Elec-AverageRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-1-3-Water-TotalRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-1-4-Elec-TotalRank-Custom-BuildABCD.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-1-5-Elec-TotalRank-Custom-SystemNode.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-1-6-Elec-TotalRank-Custom-SystemNode.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-1-7-Elec-TotalRank-Custom-SystemNode.xls"],
 			"SystemDimensionPath":["系统维度","空调"],
 		},
 		"ExpectedData":
 		{
 			"Hierarchies":["NancyCostCustomer2","组织A","园区A","楼宇B"],
-			"expectedFileName":["CostRankingDataView001-1-H-Elec.xls", "CostRankingDataView002-1-H-Elec.xls", "CostRankingDataView003-1-H-Elec.xls", "CostRankingDataView004-1-H-Elec.xls","CostRankingDataView005-1-H-Elec.xls"],
+			"expectedFileName":["TC-J1-FVT-ConsumptionRanking-View-101-1-1-Elec-TotalRank-Custom.xls", "TC-J1-FVT-ConsumptionRanking-View-101-1-2-Elec-AverageRank-Custom.xls","TC-J1-FVT-ConsumptionRanking-View-101-1-3-Water-TotalRank-Custom.xls","TC-J1-FVT-ConsumptionRanking-View-101-1-4-Elec-TotalRank-Custom-BuildABCD.xls","TC-J1-FVT-ConsumptionRanking-View-101-1-5-Elec-TotalRank-Custom-SystemNode.xls","TC-J1-FVT-ConsumptionRanking-View-101-1-6-Elec-TotalRank-Custom-SystemNode.xls","TC-J1-FVT-ConsumptionRanking-View-101-1-7-Elec-TotalRank-Custom-SystemNode.xls"],
 
 		}
 	}

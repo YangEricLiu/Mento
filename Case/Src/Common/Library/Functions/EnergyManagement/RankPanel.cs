@@ -21,7 +21,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Grid CommodityRank = JazzGrid.CommodityRankGrid;
         //private static Grid CommodityRankCarbon = JazzGrid.CommodityRankCarbonGrid;
         //private static Grid CommodityRankCost = JazzGrid.CommodityRankCostGrid;
-
+        private static Button CommodityRankTen = JazzButton.CountSelectorRankingButtonTen;
         private static Grid SystemCommodityRank = JazzGrid.SystemCommodityRankCostGrid;
 
         //Select rank tree
@@ -189,6 +189,11 @@ namespace Mento.ScriptCommon.Library.Functions
             ConfirmHiearchyRank.Click();
         }
 
+        public void ClickTenRankButton()
+        {
+            CommodityRankTen.Click();
+        }
+
         public void ClickClearHiearchyButton()
         {
             ClearHiearchyRank.Click();
@@ -293,6 +298,26 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <param name="expectedFileName"></param>
         /// /// <param name="failedFileName"></param>
         public bool CompareDataViewOfCostUsage(string expectedFileName, string failedFileName)
+        {
+            return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, RankingPath);
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDataViewOfCarbonUsage(string expectedFileName, string failedFileName)
+        {
+            return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, RankingPath);
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDataViewOfEnergyAnalysis(string expectedFileName, string failedFileName)
         {
             return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, RankingPath);
         }

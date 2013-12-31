@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingNoCalendarNoCost"],
+			"Hierarchies":["NancyOtherCustomer3","NancyNoCalendarSite","BuildingNullTest"],
 			"commodityNames":["电"],
 			"failedFileName":["F-CostRankingDataView006-1-Elec.xls"],
 			"SystemDimensionPath":["系统维度","空调"],

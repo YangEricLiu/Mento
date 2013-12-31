@@ -177,6 +177,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonConfirmHierarchyRank = "ButtonConfirmHierarchyRank";
         public static string ButtonClearHierarchyRank = "ButtonClearHierarchyRank";
         public static string ButtonCountSelectorRanking = "ButtonCountSelectorRanking";
+
+        public static string ButtonRankingTen = "TabButtonRankingTen";
+
         #endregion
 
         #region cost

@@ -20,6 +20,10 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public string[] failedFileName { get; set; }
 
+        // added by greenie
+        public DefaultTimeRange? DefaultTimeRange { get; set; }
+        public ManualTimeRange[] ManualTimeRange { get; set; }
+
         public EnergyViewType ViewType { get; set; }
     }
 

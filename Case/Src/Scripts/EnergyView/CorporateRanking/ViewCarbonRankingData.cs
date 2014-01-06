@@ -21,7 +21,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// 
     /// </summary>
     [TestFixture]
-    [ManualCaseID("TC-J1-FVT-CarbonRanking-View-101"), CreateTime("2013-10-25"), Owner("Nancy")]
+    [ManualCaseID("TC-J1-FVT-CarbonRanking-View-101"), CreateTime("2013-10-25"), Owner("Greenie")]
     public class ViewCarbonRankingData: TestSuiteBase
     {
         [SetUp]
@@ -200,42 +200,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
             TimeManager.LongPause();
             TimeManager.LongPause();
-
-
-            //Check 1 more the BuildingNoTag from Hierarchy Tree,Commodity=电,click to view chart.
-
-
-            //·display one column(BuildingCostYearToDay), BuildingNoTag do not included in ranking.
-
-
-            //Select 总览 to display 人均排名.
-
-
-            //·display one column(BuildingCostYearToDay), BuildingNoTag do not included in ranking.
-
-
-            //Switch to 标煤 to CO2 view chart of Commodity=水.
-
-
-            //·Ranking chart redraw successfully.
-
-
-            //Switch to 树 to view chart of Commodity=水.
-
-
-            //·Ranking chart redraw successfully.
-
-
-
-            //Check 1 more the BuildingNoCalendarNoCost from Hierarchy Tree,
-            //. Commodity selection list display 1 more commodity=冷量.
-
-
-            //Commodity="冷量", click to view chart.
-
-
-            //·No warning message and ranking chart display the blank chart .since that 冷量 not define Carbon factor
-
 
         }
 

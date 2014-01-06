@@ -21,7 +21,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// 
     /// </summary>
     [TestFixture]
-    [ManualCaseID("TC-J1-FVT-CostRanking-View-101"), CreateTime("2013-10-25"), Owner("Nancy")]
+    [ManualCaseID("TC-J1-FVT-CostRanking-View-101"), CreateTime("2013-10-25"), Owner("Greenie")]
     public class ViewCostRankingData: TestSuiteBase
     {
         [SetUp]

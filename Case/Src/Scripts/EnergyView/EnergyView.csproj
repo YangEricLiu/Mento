@@ -59,9 +59,6 @@
     <Compile Include="CorporateRanking\CalculateCostRanking.cs" />
     <Compile Include="CorporateRanking\CalculateCarbonEmissionRanking.cs" />
     <Compile Include="CorporateRanking\CalculateConsumptionRanking.cs" />
-    <Compile Include="CorporateRanking\CommonCostRankingCalculationDataView.cs" />
-    <Compile Include="CorporateRanking\CommonCarbonRankingCalculationDataView.cs" />
-    <Compile Include="CorporateRanking\CommonConsumptionRankingCalculationDataView.cs" />
     <Compile Include="CorporateRanking\RankingDataviewAddForBug.cs" />
     <Compile Include="CorporateRanking\ViewCostRankingData.cs" />
     <Compile Include="CostUsage\AdditionalCostUsageDataVerificationSuite.cs" />

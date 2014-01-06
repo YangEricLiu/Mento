@@ -10,7 +10,7 @@
 			},
 			{
 				"StartDate":"2014-1-1",
-				"EndDate":"2014-12-31",	
+				"EndDate":"2014-1-5",	
 			},
 			{
 				"StartDate":"2012-8-1",
@@ -18,7 +18,7 @@
 			},
 			{
 				"StartDate":"2014-1-1",
-				"EndDate":"2014-1-31",	
+				"EndDate":"2014-1-5",	
 			},
 			{
 				"StartDate":"2012-8-1",
@@ -32,11 +32,11 @@
 				"StartDate":"2013-12-31",
 				"EndDate":"2014-1-1",	
 			}],
-			"failedFileName":["F-RankingAdditionalDataview-Carbon-002-Elec-1-Y-Total-0.xls","F-RankingAdditionalDataview-Carbon-002-Elec-1-Y-Total-1.xls","F-RankingAdditionalDataview-Carbon-002-Elec-1-M-Total-0.xls","F-RankingAdditionalDataview-Carbon-002-Elec-1-M-Total-1.xls","F-RankingAdditionalDataview-Carbon-002-Elec-1-D-Total-0.xls","F-RankingAdditionalDataview-Carbon-002-Elec-1-D-Total-1.xls","F-RankingAdditionalDataview-Carbon-002-Elec-1-S-Total-0.xls"],
+			"failedFileName":["F-RankingAdditionalDataview-Carbon-102-1-Coal-2-Y-Total-0.xls","F-RankingAdditionalDataview-Carbon-102-1-Coal-2-Y-Total-1.xls","F-RankingAdditionalDataview-Carbon-102-1-Coal-2-M-Total-0.xls","F-RankingAdditionalDataview-Carbon-102-1-Coal-2-M-Total-1.xls","F-RankingAdditionalDataview-Carbon-102-1-Coal-2-D-Total-0.xls","F-RankingAdditionalDataview-Carbon-102-1-Coal-2-D-Total-1.xls","F-RankingAdditionalDataview-Carbon-102-1-Coal-2-S-Total-0.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["RankingAdditionalDataview-Carbon-002-Elec-1-Y-Total-0.xls","RankingAdditionalDataview-Carbon-002-Elec-1-Y-Total-1.xls","RankingAdditionalDataview-Carbon-002-Elec-1-M-Total-0.xls","RankingAdditionalDataview-Carbon-002-Elec-1-M-Total-1.xls","RankingAdditionalDataview-Carbon-002-Elec-1-D-Total-0.xls","RankingAdditionalDataview-Carbon-002-Elec-1-D-Total-1.xls","RankingAdditionalDataview-Carbon-002-Elec-1-S-Total-0.xls"],
+			"expectedFileName":["RankingAdditionalDataview-Carbon-102-1-Coal-2-Y-Total-0.xls","RankingAdditionalDataview-Carbon-102-1-Coal-2-Y-Total-1.xls","RankingAdditionalDataview-Carbon-102-1-Coal-2-M-Total-0.xls","RankingAdditionalDataview-Carbon-102-1-Coal-2-M-Total-1.xls","RankingAdditionalDataview-Carbon-102-1-Coal-2-D-Total-0.xls","RankingAdditionalDataview-Carbon-102-1-Coal-2-D-Total-1.xls","RankingAdditionalDataview-Carbon-102-1-Coal-2-S-Total-0.xls"],
 		}
 	}
 ]

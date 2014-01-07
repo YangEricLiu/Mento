@@ -1,0 +1,21 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区B","楼宇C"],
+			"commodityNames":["电"],
+			"ManualTimeRange":[
+			{
+			    "StartDate":"2013-7-19",
+				"StartTime":"00:00",
+				"EndDate":"2013-8-10",
+				"EndTime":"24:00",		
+			}],
+			"failedFileName":["F-CostUsageDataVerification-101-6-Total-D-0.xls", "F-CostUsageDataVerification-101-6-Total-H-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageDataVerification-101-6-Total-D-0.xls", "CostUsageDataVerification-101-6-Total-H-1.xls"],
+		}
+	}
+]

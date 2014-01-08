@@ -1,0 +1,34 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingAccumulate"]],
+			"tagNames":["P1_Accumulate"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-12-26",
+				"EndDate":"2013-1-5",		
+			}],
+		    "failedFileName":["F-UnitIndicatorConsumptionVerification-101-4-P1-D-0.xls", "F-UnitIndicatorConsumptionVerification-101-4-P1-H-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorConsumptionVerification-101-4-P1-D-0.xls", "UnitIndicatorConsumptionVerification-101-4-P1-H-1.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingAccumulate"]],
+			"tagNames":["V1_Accumulate"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-12-26",
+				"EndDate":"2013-1-5",		
+			}],
+		    "failedFileName":["F-UnitIndicatorConsumptionVerification-101-4-V1-D-0.xls", "F-UnitIndicatorConsumptionVerification-101-4-V1-H-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorConsumptionVerification-101-4-V1-D-0.xls", "UnitIndicatorConsumptionVerification-101-4-V1-H-1.xls"],
+		}
+	}
+]

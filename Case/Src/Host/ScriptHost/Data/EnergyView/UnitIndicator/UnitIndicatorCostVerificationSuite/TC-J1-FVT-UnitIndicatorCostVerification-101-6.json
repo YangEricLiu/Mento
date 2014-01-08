@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区B", "楼宇C"]],
+			"AreaDimensionPath":["楼宇C", "一层"],
+			"Commodity":["电"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-11-26",
+				"EndDate":"2013-12-25",	
+			}],
+			"failedFileName":["F-UnitIndicatorCostVerification-101-6-总览-Y-0.xls", "F-UnitIndicatorCostVerification-101-6-总览-M-1.xls", "F-UnitIndicatorCostVerification-101-6-总览-W-2.xls", "F-UnitIndicatorCostVerification-101-6-总览-D-3.xls", "F-UnitIndicatorCostVerification电-101-6-Y-4.xls", "F-UnitIndicatorCostVerification电-101-6-M-5.xls", "F-UnitIndicatorCostVerification电-101-6-W-6.xls", "F-UnitIndicatorCostVerification电-101-6-D-7.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["UnitIndicatorCostVerification-101-6-总览-Y-0.xls", "UnitIndicatorCostVerification-101-6-总览-M-1.xls", "UnitIndicatorCostVerification-101-6-总览-W-2.xls", "UnitIndicatorCostVerification-101-6-总览-D-3.xls", "UnitIndicatorCostVerification电-101-6-Y-4.xls", "UnitIndicatorCostVerification电-101-6-M-5.xls", "UnitIndicatorCostVerification电-101-6-W-6.xls", "UnitIndicatorCostVerification电-101-6-D-7.xls"],
+		}
+	}
+]

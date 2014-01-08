@@ -188,6 +188,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
 
+            //goto "NancyOtherCustomer3/NancyOtherSite/BuildingCostYearToDay"
             CostUsage.SelectHierarchy(input.InputData.HierarchiesArray[1]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();

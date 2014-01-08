@@ -624,6 +624,7 @@
     <None Include="Data\EnergyView\CostUsage\CostUsageDataVerificationSuite\TC-J1-FVT-CostUsageDataVerification-DataView-101-4.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataViewSuite\TC-J1-FVT-CostUsage-DataView-001-3842.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataViewSuite\TC-J1-FVT-CostUsage-DataView-001-1.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageTOUDataViewSuite\TC-J1-FVT-CostUsage-TOU-DataView-101-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-3.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-2.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-1.json" />
@@ -704,9 +705,15 @@
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCarbonVerificationSuite\TC-J1-FVT-UnitIndicatorCarbonVerification-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCarbonVerificationSuite\TC-J1-FVT-UnitIndicatorCarbonVerification-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCarbonVerificationSuite\TC-J1-FVT-UnitIndicatorCarbonVerification-101-1.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-5.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-4.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCostVerificationSuite\TC-J1-FVT-UnitIndicatorCostVerification-101-6.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCostVerificationSuite\TC-J1-FVT-UnitIndicatorCostVerification-101-5.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCostVerificationSuite\TC-J1-FVT-UnitIndicatorCostVerification-101-4.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCostVerificationSuite\TC-J1-FVT-UnitIndicatorCostVerification-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCostVerificationSuite\TC-J1-FVT-UnitIndicatorCostVerification-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCostVerificationSuite\TC-J1-FVT-UnitIndicatorCostVerification-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorOfflineCalculateSuite\TC-J1-FVT-UnitIndicator-OfflineCalculate-101-2.json" />

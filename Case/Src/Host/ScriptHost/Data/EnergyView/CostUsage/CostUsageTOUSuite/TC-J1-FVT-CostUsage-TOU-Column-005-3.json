@@ -11,7 +11,7 @@
 				"IsCreateDashboard":"true",
 				"DashboardName":"CostTOU",
 			},
-			"failedFileName":["F-CostUsageTOUDataView001-3-Week-Elec.xls"],
+			"failedFileName":["F-CostUsageTOUDataView001-3-Week2-Elec.xls"],
 		},
 		"ExpectedData":
 		{

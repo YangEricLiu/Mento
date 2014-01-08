@@ -5,7 +5,7 @@
 			"Hierarchies":["NancyCostCustomer2","组织B", "园区C", "楼宇D"],
 			"AreaDimensionPath":["楼宇D", "一层"],
 			"commodityNames":["电", "自来水","煤"],
-			"failedFileName":["F-CostUsageTOUDataView001-2-Week-Elec.xls"],
+			"failedFileName":["F-CostUsageTOUDataView001-2-Week2-Elec.xls"],
 		},
 		"ExpectedData":
 		{

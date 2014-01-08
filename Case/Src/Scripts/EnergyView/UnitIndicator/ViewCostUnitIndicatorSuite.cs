@@ -666,7 +666,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
+            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
+            Assert.AreEqual(3, UnitKPIPanel.GetTrendChartLines());
             Assert.AreEqual(6, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
@@ -683,7 +684,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.LongPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
+            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
+            Assert.AreEqual(3, UnitKPIPanel.GetTrendChartLines());
             Assert.AreEqual(6, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
@@ -700,7 +702,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.LongPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
+            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
+            Assert.AreEqual(3, UnitKPIPanel.GetTrendChartLines());
             Assert.AreEqual(6, UnitKPIPanel.GetTrendChartLinesMarkers());
         }
     }

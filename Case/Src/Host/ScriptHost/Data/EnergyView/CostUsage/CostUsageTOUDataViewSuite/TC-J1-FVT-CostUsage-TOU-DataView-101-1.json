@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织A", "园区A", "楼宇B"],
+			"commodityNames":["电"],
+			"failedFileName":["F-CostUsageTOUDataView-101-Day-电-0.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageTOUDataView-101-Day-电-0.xls"],
+		}
+	}
+]

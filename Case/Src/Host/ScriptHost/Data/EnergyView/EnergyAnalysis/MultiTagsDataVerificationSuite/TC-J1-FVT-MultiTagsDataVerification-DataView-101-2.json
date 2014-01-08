@@ -20,11 +20,11 @@
 				"StartDate":"2013-5-15",
 				"EndDate":"2013-7-3",	
 			}],
-			"failedFileName":["F-MultiTagsDataVerification-101-2-BAV1V2V3-Y-0.xls", "F-MultiTagsDataVerification-101-2-BAV1V2V3-M-1.xls", "F-MultiTagsDataVerification-101-2-BAV1V2V3-W-2.xls", "F-MultiTagsDataVerification-101-2-BAV1V2V3-D-3.xls", "F-MultiTagsDataVerification-101-2-BAV1V2V3-H-4.xls", "F-MultiTagsDataVerification-101-2-BAV1V2V3-H-5.xls", "F-MultiTagsDataVerification-101-2-BAV1V2V3-H-6.xls"],
+			"failedFileName":["F-MultiTagsDataVerification-A-101-2-BAV1V2V3-Y-0.xls", "F-MultiTagsDataVerification-A-101-2-BAV1V2V3-M-1.xls", "F-MultiTagsDataVerification-A-101-2-BAV1V2V3-W-2.xls", "F-MultiTagsDataVerification-A-101-2-BAV1V2V3-D-3.xls", "F-MultiTagsDataVerification-A-101-2-BAV1V2V3-H-4.xls", "F-MultiTagsDataVerification-A-101-2-BAV1V2V3-H-5.xls", "F-MultiTagsDataVerification-A-101-2-BAV1V2V3-H-6.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["MultiTagsDataVerification-101-2-BAV1V2V3-Y-0.xls", "MultiTagsDataVerification-101-2-BAV1V2V3-M-1.xls", "MultiTagsDataVerification-101-2-BAV1V2V3-W-2.xls", "MultiTagsDataVerification-101-2-BAV1V2V3-D-3.xls", "MultiTagsDataVerification-101-2-BAV1V2V3-H-4.xls", "MultiTagsDataVerification-101-2-BAV1V2V3-H-5.xls", "MultiTagsDataVerification-101-2-BAV1V2V3-H-6.xls"],
+			"expectedFileName":["MultiTagsDataVerification-A-101-2-BAV1V2V3-Y-0.xls", "MultiTagsDataVerification-A-101-2-BAV1V2V3-M-1.xls", "MultiTagsDataVerification-A-101-2-BAV1V2V3-W-2.xls", "MultiTagsDataVerification-A-101-2-BAV1V2V3-D-3.xls", "MultiTagsDataVerification-A-101-2-BAV1V2V3-H-4.xls", "MultiTagsDataVerification-A-101-2-BAV1V2V3-H-5.xls", "MultiTagsDataVerification-A-101-2-BAV1V2V3-H-6.xls"],
 		}
 	},
 	{
@@ -48,11 +48,11 @@
 				"StartDate":"2013-5-15",
 				"EndDate":"2013-7-3",
 			}],
-			"failedFileName":["F-MultiTagsDataVerification-101-3-BBV1V2V3-Y-0.xls", "F-MultiTagsDataVerification-101-3-BBV1V2V3-M-1.xls", "F-MultiTagsDataVerification-101-3-BBV1V2V3-W-2.xls", "F-MultiTagsDataVerification-101-3-BBV1V2V3-D-3.xls", "F-MultiTagsDataVerification-101-3-BBV1V2V3-H-4.xls", "F-MultiTagsDataVerification-101-3-BBV1V2V3-H-5.xls", "F-MultiTagsDataVerification-101-3-BBV1V2V3-H-6.xls"],
+			"failedFileName":["F-MultiTagsDataVerification-B-101-2-BBV1V2V3-Y-0.xls", "F-MultiTagsDataVerification-B-101-2-BBV1V2V3-M-1.xls", "F-MultiTagsDataVerification-B-101-2-BBV1V2V3-W-2.xls", "F-MultiTagsDataVerification-B-101-2-BBV1V2V3-D-3.xls", "F-MultiTagsDataVerification-B-101-2-BBV1V2V3-H-4.xls", "F-MultiTagsDataVerification-B-101-2-BBV1V2V3-H-5.xls", "F-MultiTagsDataVerification-B-101-2-BBV1V2V3-H-6.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["MultiTagsDataVerification-101-3-BBV1V2V3-Y-0.xls", "MultiTagsDataVerification-101-3-BBV1V2V3-M-1.xls", "MultiTagsDataVerification-101-3-BBV1V2V3-W-2.xls", "MultiTagsDataVerification-101-3-BBV1V2V3-D-3.xls", "MultiTagsDataVerification-101-3-BBV1V2V3-H-4.xls", "MultiTagsDataVerification-101-3-BBV1V2V3-H-5.xls", "MultiTagsDataVerification-101-3-BBV1V2V3-H-6.xls"],
+			"expectedFileName":["MultiTagsDataVerification-B-101-2-BBV1V2V3-Y-0.xls", "MultiTagsDataVerification-B-101-2-BBV1V2V3-M-1.xls", "MultiTagsDataVerification-B-101-2-BBV1V2V3-W-2.xls", "MultiTagsDataVerification-B-101-2-BBV1V2V3-D-3.xls", "MultiTagsDataVerification-B-101-2-BBV1V2V3-H-4.xls", "MultiTagsDataVerification-B-101-2-BBV1V2V3-H-5.xls", "MultiTagsDataVerification-B-101-2-BBV1V2V3-H-6.xls"],
 		}
 	}
 ]

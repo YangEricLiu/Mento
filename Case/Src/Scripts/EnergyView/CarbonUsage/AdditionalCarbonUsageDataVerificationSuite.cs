@@ -21,7 +21,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
     /// 
     /// </summary>
     [TestFixture]
-    [ManualCaseID("TC-J1-FVT-AdditionalCarbonUsageDataVerification-DataView-101"), CreateTime("2013-12-25"), Owner("Amber")]
+    [ManualCaseID("TC-J1-FVT-AdditionalCarbonUsageDataVerification-DataView-101"), CreateTime("2013-12-25"), Owner("Cathy")]
     public class AdditionalCarbonUsageDataVerificationSuite : TestSuiteBase
     {
         [SetUp]
@@ -49,6 +49,12 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(AdditionalCarbonUsageDataVerificationSuite), "TC-J1-FVT-AdditionalCarbonUsageDataVerification-DataView-101-1")]
         public void AdditionalCarbonUsageDataVerification01(CarbonUsageData input)
         {
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.MediumPause();
+
+            CarbonUsage.NavigateToCarbonUsage();
+            TimeManager.MediumPause();
+
             //select "NancyCustomer1/GreenieSite/GreenieBuilding"
             CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -58,6 +64,10 @@ namespace Mento.Script.EnergyView.CarbonUsage
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
+
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonType);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
 
            //Select "介质总览"
             CarbonUsage.SelectCommodity();

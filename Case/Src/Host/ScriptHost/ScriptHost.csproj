@@ -628,8 +628,6 @@
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-2.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTrendChartSuite\TC-J1-FVT-CostUsage-TrendChar-002-1.json" />
-    <None Include="Data\EnergyView\EnergyAnalysis\AdditionalTagsDataVerificationSuite\TC-J1-FVT-AdditionalTagsDataVerification-DataView-101-4.json" />
-    <None Include="Data\EnergyView\EnergyAnalysis\AdditionalTagsDataVerificationSuite\TC-J1-FVT-AdditionalTagsDataVerification-DataView-101-3.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\AdditionalTagsDataVerificationSuite\TC-J1-FVT-AdditionalTagsDataVerification-DataView-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\AdditionalTagsDataVerificationSuite\TC-J1-FVT-AdditionalTagsDataVerification-DataView-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-2.json" />

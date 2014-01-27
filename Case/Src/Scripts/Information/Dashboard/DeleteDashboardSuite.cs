@@ -71,6 +71,10 @@ namespace Mento.Script.Information.Dashboard
             JazzMessageBox.MessageBox.GiveUp();
             TimeManager.ShortPause();
 
+            //Click cancel or 'x' icon of rename.
+            HomePagePanel.ClickRenameDashboardCancel();
+            TimeManager.ShortPause();
+
             //The deletion is cancelled and the dashboard is still displayed in the dashboards tab list of this node.
             Assert.IsTrue(HomePagePanel.IsDashboardButtonExisted(dashboard[0].DashboardName));
             Assert.AreEqual(dashboard[0].DashboardName, HomePagePanel.GetDashboardHeaderName());

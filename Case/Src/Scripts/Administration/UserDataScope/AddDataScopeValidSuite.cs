@@ -36,7 +36,7 @@ namespace Mento.Script.Administration.UserDataScope
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.LoginPage.RefreshJazz("EMOP系统管理");
+            JazzFunction.LoginPage.RefreshJazz("“云能效”系统管理");
         }
 
         [Test]

@@ -49,7 +49,7 @@ namespace Mento.Script.Information.Share
         [Test]
         [CaseID("TC-J1-FVT-Dashboard-Share-101-1")]
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(ShareDashboard1ValidSuite), "TC-J1-FVT-Dashboard-Share-101-1")]
-        public void ShareDashboardSuccess01(ShareDashboardData input)
+        public void ShareDashboardSuccess02(ShareDashboardData input)
         {
             var dashboard = input.InputData.DashboardInfo;
             
@@ -100,7 +100,7 @@ namespace Mento.Script.Information.Share
         [Test]
         [CaseID("TC-J1-FVT-Dashboard-Share-101-2")]
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(ShareDashboard1ValidSuite), "TC-J1-FVT-Dashboard-Share-101-2")]
-        public void ShareDashboardSuccess02(ShareDashboardData input)
+        public void ShareDashboardSuccess01(ShareDashboardData input)
         {
             var dashboard = input.InputData.DashboardInfo;
             

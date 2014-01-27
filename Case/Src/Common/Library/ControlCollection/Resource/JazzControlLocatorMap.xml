@@ -65,21 +65,22 @@
             <add key="ButtonWidgetMaxDialogNext" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[3]/div/div/div[contains(@class,'x-btn') and em/button/span[contains(@class,'x-btn-inner')]]" type="XPath"/>
 
             <add key="ButtonWidgetMax" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-max-tool')]/img" type="XPath"/>
-            <add key="ButtonWidgetShare" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-share-tool')]/img" type="XPath"/>
+            <add key="ButtonWidgetShare" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-sendcopy-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetRename" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-rename-tool')]/img" type="XPath"/>
-            <add key="ButtonWidgetDelete" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-close-tool')]/img" type="XPath"/>
-            <add key="ButtonHomepageToDashboard" value="//div[@id='map-to-dsboard-button-container']/div[contains(@class,'x-btn') and em/button/span[text()='仪表盘 >']]" type="XPath"/>
+            <add key="ButtonWidgetEnjoy" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-share-tool')]/img" type="XPath"/>
+            <add key="ButtonHomepageToDashboard" value="//div[@id='map-canvas-container']/div/div[contains(@class,'x-btn') and em/button/span[text()='仪表盘 >']]" type="XPath"/>
 
             <add key="ButtonDashboardFavorite" value="//div[@id='hp-dashboard-list-targetEl']/div[span[text()='$#nameIndex']]/span[@class='x-dsbd-btn-icon']" type="XPath"/>
             <add key="ButtonDashboardShare" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[1]/img" type="XPath"/>
             <add key="ButtonDashboardRename" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[2]/img" type="XPath"/>
-            <add key="ButtonDashboardDelete" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[3]/img" type="XPath"/>
+            <add key="ButtonDashboardDelete" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='删除仪表盘']" type="XPath"/>
             <add key="ButtonRenameDashboardSave" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
             <add key="ButtonRenameDashboardCancel" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
             <add key="ButtonDashboardFavoriteLevel" value="//div[@id='hp-dashboard-ct_hd-hierCtEl']/a" type="XPath"/>
             <add key="ButtonDashboardShareInfo" value="hp-share-info-btn-btnEl" type="ID"/>
             <add key="ButtonShareWindowClose" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-header-body-default')]/div/div/div[contains(@id,'tool')]/img" type="XPath"/>
-            <add key="ButtonShareWindowShare" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='分享']]" type="XPath"/>
+            <add key="ButtonShareWindowShare" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='发送']]" type="XPath"/>
+            <add key="ButtonShareWindowEnjoy" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='共享']]" type="XPath"/>
             <add key="ButtonShareWindowGiveup" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
             <add key="ButtonShareToUserRemove" value = "//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div/div[contains(@id,'tagcontainer')]/div[contains(@class, 'x-removable-item') and span[text()='$#nameIndex']]/span[contains(@class, 'x-btn-icon-cancel')]" type = "XPath"/>
             <add key="TabButtonShareInfoReceived" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='我收到的']]" type = "XPath"/>
@@ -167,7 +168,7 @@
           <add key="ModifyWidgetNameSaveButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
           <add key="ModifyWidgetNameCancelButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
           <add key="WidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]//span[text()='表3']" type="XPath"/>
-          <add key="ButtonDeleteWidget" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[4]" type="XPath"/>
+          <add key="ButtonDeleteWidget" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='删除小组件']" type="XPath"/>
           <add key="RadioButtonCreateNewDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='新建仪表盘']]/input" type="XPath"/>
           <add key="RadioButtonExistedDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='已存在仪表盘']]/input" type="XPath"/>
           <add key="ButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
@@ -553,7 +554,7 @@
               <add key="KPIFormulaField" value="//div[@id='st-KPI-formula-body']//textarea[@name='Formula']" type="XPath"/>
               <add key="TextFieldKPITargetBaselineWorkdayRuleValue" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][1]//td[contains(@class,'x-form-item-body')]/div[not(contains(@style,'display: none;'))][$#positionIndex]/div[@class='x-column-inner']/table[contains(@id,'numberfield')]//input[@type='text' and @name='Value']" type="XPath"/>
               <add key="TextFieldKPITargetBaselineNonworkdayRuleValue" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][2]//td[contains(@class,'x-form-item-body')]/div[not(contains(@style,'display: none;'))][$#positionIndex]/div[@class='x-column-inner']/table[contains(@id,'numberfield')]//input[@type='text' and @name='Value']" type="XPath"/>
-              <add key="TextFieldKPITargetBaselineSpecialdayRuleValue" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[5]//input[@type='text' and @name='Value']" type="XPath"/>
+              <add key="TextFieldKPITargetBaselineSpecialdayRuleValue" value="//div[contains(@id,'targetbaselinerulepanel') and contains(@class,'x-panel-body-default')]/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[5]//input[@type='text' and @name='Value']" type="XPath"/>
               <add key="TextFieldKPITargetBaselineAnnualCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='Annual']" type="XPath"/>
               <add key="TextFieldKPITargetBaselineJanuaryCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='January']" type="XPath"/>
               <add key="TextFieldKPITargetBaselineFebruaryCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='February']" type="XPath"/>
@@ -839,7 +840,7 @@
   
     <Homepage>
     <add key="GridHomepageMinWidgetDataView" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[div/div/div/div/div/span[text()='$#nameIndex']]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
-    <add key="GridShareUserList" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+    <add key="GridShareUserList" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div[2]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridShareInfoList" value="//div[contains(@id,'window') and contains(@class,'x-window-body-default')]//div[contains(@id,'shareinfogrid') and not(contains(@style,'display: none;')) and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridMaxWidgetDataView" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 

@@ -478,7 +478,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonWidgetMax = "ButtonWidgetMax";
         public static string ButtonWidgetShare = "ButtonWidgetShare";
         public static string ButtonWidgetRename = "ButtonWidgetRename";
-        public static string ButtonWidgetDelete = "ButtonWidgetDelete";
+        public static string ButtonWidgetEnjoy = "ButtonWidgetEnjoy";
         public static string ButtonHomepageToDashboard = "ButtonHomepageToDashboard";
 
         public static string ButtonDashboardFavorite = "ButtonDashboardFavorite";
@@ -1061,6 +1061,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelShareWindowTitle = "LabelShareWindowTitle";
         public static string ButtonShareWindowClose = "ButtonShareWindowClose";
         public static string ButtonShareWindowShare = "ButtonShareWindowShare";
+        public static string ButtonShareWindowEnjoy = "ButtonShareWindowEnjoy";
         public static string ButtonShareWindowGiveup = "ButtonShareWindowGiveup";
 
         public static string LabelDashboardShareResourceCommon = "LabelDashboardShareResourceCommon";

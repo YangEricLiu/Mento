@@ -25,6 +25,9 @@ namespace Mento.ScriptCommon.Library.Functions
         //Share button
         private static Button ShareButton = JazzButton.ShareWindowShareButton;
 
+        //Enjoy button
+        private static Button EnjoyButton = JazzButton.ShareWindowEnjoyButton;
+
         //Giveup button
         private static Button GiveupButton = JazzButton.ShareWindowGiveupButton;
 
@@ -51,6 +54,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickShareButton()
         {
             ShareButton.Click();
+        }
+
+        public void ClickEnjoyButton()
+        {
+            EnjoyButton.Click();
         }
 
         public bool IsShareButtonEnable()

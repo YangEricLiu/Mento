@@ -14,8 +14,8 @@ namespace Mento.Script.Administration
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.InitializeWithOption("SchneiderElectricChina", "P@ssw0rd", "EMOP系统管理");
-            //TestAssemblyInitializer.InitializeWithOption("PlatformAdmin", "P@ssw0rd", "EMOP系统管理");
+            TestAssemblyInitializer.InitializeWithOption("SchneiderElectricChina", "P@ssw0rd", "“云能效”系统管理");
+            //TestAssemblyInitializer.InitializeWithOption("PlatformAdmin", "P@ssw0rd", "“云能效”系统管理");
         }
 
         [TearDown]

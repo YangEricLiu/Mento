@@ -7,7 +7,7 @@
 			"commodityNames":["电", "自来水", "煤"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
-				"EndDate":"2013-12-18",	
+				"EndDate":"2013-12-1",	
 			},
 			{
 				"StartDate":"2012-7-10",
@@ -36,7 +36,7 @@
 			"commodityNames":["电", "自来水", "煤"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
-				"EndDate":"2013-12-18",	
+				"EndDate":"2013-12-1",	
 			},
 			{
 				"StartDate":"2012-6-10",
@@ -65,7 +65,7 @@
 			"commodityNames":["电", "自来水", "煤"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
-				"EndDate":"2013-12-18",	
+				"EndDate":"2013-12-1",	
 			},
 			{
 				"StartDate":"2012-6-10",
@@ -94,7 +94,7 @@
 			"commodityNames":["电", "自来水", "煤"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
-				"EndDate":"2013-12-18",	
+				"EndDate":"2013-12-1",	
 			},
 			{
 				"StartDate":"2012-6-10",

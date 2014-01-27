@@ -386,7 +386,7 @@ namespace Mento.Script.Customer.TagManagement
             //Get a vtag/ptag which have associate calendar
             PickupPtagOrVtag(input);
 
-            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
@@ -412,7 +412,7 @@ namespace Mento.Script.Customer.TagManagement
             PVtagTargetBaselineSettings.ClickBackFromCalculationRuleButton();
             TimeManager.MediumPause();
 
-            PVtagTargetBaselineSettings.ClickCalculateTargetButton();
+            PVtagTargetBaselineSettings.ClickCalculateBaselineButton();
             TimeManager.LongPause();
 
             //"目标值" calculated correctly

@@ -177,7 +177,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
             int number = Convert.ToInt32(year);
             DateTime currentDate = GetCurrentMonth();
 
-            int currentYear = 2013;
+            //Have to modify it to current year, will fix this before 2014/03/01
+            int currentYear = 2014;
 
             if (!String.IsNullOrEmpty(GetValue()))
             {

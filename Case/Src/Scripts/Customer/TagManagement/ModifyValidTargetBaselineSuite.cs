@@ -275,7 +275,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
             PVtagTargetBaselineSettings.ClickCancelButton();
             TimeManager.MediumPause();
-            Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[1], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1));
+            Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[0], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1));
 
             //Delete one special day rule then save, delete successful 
             PVtagTargetBaselineSettings.ClickModifyCalculationRuleButton();

@@ -53,6 +53,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Label DashboardFavoriteLevelLabel = JazzLabel.DashboardFavoriteLevelLabel;
         private static DashboardButton DashboardFavoriteLevelButton = JazzButton.DashboardFavoriteLevelButton;
         private static DashboardButton DashboardShareInfoButton = JazzButton.DashboardShareInfoButton;
+        private static Button DeleteWidgetButton = JazzButton.ButtonDeleteWidget;
 
         private static Label ShareResoureCommon = JazzLabel.DashboardShareResourceCommonLabel;
         private static Label ShareResoureTime = JazzLabel.DashboardShareResourceTimeLabel;
@@ -69,7 +70,7 @@ namespace Mento.ScriptCommon.Library.Functions
             DateTime now = DateTime.Now;
 
             string year = now.Year.ToString();
-            string month = now.Month.ToString();
+            string month = now.Month.ToString().PadLeft(2, '0');
             string day = now.Day.ToString();
 
             string time = year + month + day;
@@ -242,7 +243,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickDeleteDashboardButton(string name)
         {
-            FloatOnDashboardNameButton(name);
+            ClickRenameDashboardButton(name);
+            TimeManager.MediumPause();
 
             DeleteDashboardButton.Click();
         }
@@ -479,7 +481,9 @@ namespace Mento.ScriptCommon.Library.Functions
             FloatOnWidget(name);
             TimeManager.ShortPause();
 
-            Button DeleteWidgetButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWidgetDelete, name);
+            Button renameButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWidgetRename, name);
+            renameButton.Click();
+            TimeManager.ShortPause();
 
             DeleteWidgetButton.Click();
         }
@@ -505,6 +509,16 @@ namespace Mento.ScriptCommon.Library.Functions
             Button shareButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWidgetShare, name);
 
             shareButton.Click();
+        }
+
+        public void ClickEnjoyWidgetButton(string name)
+        {
+            FloatOnWidget(name);
+            TimeManager.ShortPause();
+
+            Button EnjoyButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWidgetEnjoy, name);
+
+            EnjoyButton.Click();
         }
 
         public DataTable GetWidgetMinDataViewAllData(string widgetName)

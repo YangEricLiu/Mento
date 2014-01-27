@@ -101,7 +101,7 @@ namespace Mento.Script.Customer.TagManagement
             //fill in value with max value 99999999999999999999999
             PVtagTargetBaselineSettings.FillInSpecialdayRuleValue(input.InputData.SpecialdayRuleValue[0], 1);
             Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayValueInvalid(1));
-            Assert.IsTrue(PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1).Contains(input.ExpectedData.SpecialdayRuleValue[1]));
+            Assert.IsTrue(PVtagTargetBaselineSettings.GetSpecialdayStartDateInvalidMsg(1).Contains(input.ExpectedData.SpecialdayRuleValue[1]));
 
             //Cancel, then add one item, only input value, then save
             PVtagTargetBaselineSettings.ClickCancelButton();

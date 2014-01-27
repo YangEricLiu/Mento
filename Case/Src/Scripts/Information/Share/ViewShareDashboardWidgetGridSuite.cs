@@ -62,7 +62,7 @@ namespace Mento.Script.Information.Share
             TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
 
             //Check there is title in the window.
-            Assert.AreEqual("分享小组件", ShareWindow.GetTitle());
+            Assert.AreEqual("以副本发送小组件", ShareWindow.GetTitle());
 
             //Check UserA, UserD, UserE. Check receivers realname checkbox.
             //Exclude userA in user list.

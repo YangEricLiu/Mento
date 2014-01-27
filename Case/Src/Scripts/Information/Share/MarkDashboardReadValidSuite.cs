@@ -317,6 +317,10 @@ namespace Mento.Script.Information.Share
             //The dashboard unread mark can't removed.
             Assert.IsTrue(HomePagePanel.IsShareDashboardUnread(dashboard[0].DashboardName));
 
+            //Click cancel or 'x' icon of rename.
+            HomePagePanel.ClickRenameDashboardCancel();
+            TimeManager.ShortPause();
+
             //Select the unread dashboard to share
             HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
             TimeManager.MediumPause();

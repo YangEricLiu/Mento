@@ -929,6 +929,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridShareUserList = "GridShareUserList";
         public static string GridShareInfoList = "GridShareInfoList";
         public static string GridMaxWidgetDataView = "GridMaxWidgetDataView";
+        public static string GridSendedUserList = "GridSendedUserList";
+
         #endregion
 
         #endregion

@@ -73,16 +73,16 @@ namespace Mento.Script.Information.Share
 
             //The realname display in share to textfield.
             Assert.AreEqual(3, ShareWindow.GetShareUserNumber());
-            Assert.IsTrue(ShareWindow.IsShareUserInContainer(dashboard[0].ShareUsers[0]));
-            Assert.IsTrue(ShareWindow.IsShareUserInContainer(dashboard[0].ShareUsers[1]));
-            Assert.IsTrue(ShareWindow.IsShareUserInContainer(dashboard[0].ShareUsers[2]));
+            Assert.IsTrue(ShareWindow.IsShareUserInSendedList(dashboard[0].ShareUsers[0]));
+            Assert.IsTrue(ShareWindow.IsShareUserInSendedList(dashboard[0].ShareUsers[1]));
+            Assert.IsTrue(ShareWindow.IsShareUserInSendedList(dashboard[0].ShareUsers[2]));
 
             //Uncheck receivers realname checkbox.
             ShareWindow.UncheckShareUser(dashboard[0].ShareUsers[0]);
             TimeManager.ShortPause();
 
             //The realname disappear in sent to textfield.
-            Assert.IsFalse(ShareWindow.IsShareUserInContainer(dashboard[0].ShareUsers[0]));
+            Assert.IsFalse(ShareWindow.IsShareUserInSendedList(dashboard[0].ShareUsers[0]));
             Assert.AreEqual(2, ShareWindow.GetShareUserNumber());
 
             //Click "X" button from the send to textfield.
@@ -90,7 +90,7 @@ namespace Mento.Script.Information.Share
             TimeManager.ShortPause();
 
             //The realname disappear in sent to textfield.
-            Assert.IsFalse(ShareWindow.IsShareUserInContainer(dashboard[0].ShareUsers[1]));
+            Assert.IsFalse(ShareWindow.IsShareUserInSendedList(dashboard[0].ShareUsers[1]));
             Assert.AreEqual(1, ShareWindow.GetShareUserNumber());
 
             //Click CheckAll checkbox.

@@ -23,6 +23,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator ShareWindowGridRowChecker = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img", ByType.XPath);
         private static Locator ShareWindowGridRowColumn = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr/td[$#cellIndex]/div[text()='$#cellText']", ByType.XPath);
         private static Locator ShareWindowRowsNotChecker = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img[not(contains(@class,'x-checked'))]", ByType.XPath);
+        private static Locator SendedListRemoveButton = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img[not(contains(@class,'x-checked'))]", ByType.XPath);
 
         private static Locator IDataScopeCustomerListLocator = new Locator("/tbody/tr/td[4]", ByType.XPath);
 
@@ -48,6 +49,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowHeaderShare));
             }
+        }
+
+        public int GetCurrentRowsNumber()
+        {
+            return CurrentRows.Count();
         }
 
         public bool IsPageToolBarExisted()
@@ -521,6 +527,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return FindChild(Locator.GetVariableLocator(checkerLocator, variables));
         }
         */
+
+        public IWebElement GetSendedListRowDeleteX(int cellIndex, string cellText, bool Paging = true)
+        {
+            return GetRowDeleteX(cellIndex, cellText, false);
+        }
 
         protected virtual IWebElement GetRowDeleteX(int cellIndex, string cellText, bool Paging = true)
         {

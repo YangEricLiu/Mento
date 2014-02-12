@@ -90,6 +90,8 @@
     <Compile Include="Ratio\BenchmarkCalculateConsumptionDayNightRatioSuite.cs" />
     <Compile Include="Ratio\BenchmarkCalculateConsumptionWorkNotworkRatioSuite.cs" />
     <Compile Include="Ratio\ViewConsumptionDayNightRatioSuite.cs" />
+    <Compile Include="Ratio\ViewConsumptionWorkNotworkRatioIndustryBenchmarkSuite.cs" />
+    <Compile Include="Ratio\ViewConsumptionDayNightRatioIndustryBenchmarkSuite.cs" />
     <Compile Include="UnitIndicator\CalculateCostUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\CalculateCarbonUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\BenchmarkCalculateConsumptionUnitIndicatorSuite.cs" />

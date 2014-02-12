@@ -840,9 +840,10 @@
   
     <Homepage>
     <add key="GridHomepageMinWidgetDataView" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[div/div/div/div/div/span[text()='$#nameIndex']]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
-    <add key="GridShareUserList" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div[2]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+    <add key="GridShareUserList" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[1]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridShareInfoList" value="//div[contains(@id,'window') and contains(@class,'x-window-body-default')]//div[contains(@id,'shareinfogrid') and not(contains(@style,'display: none;')) and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridMaxWidgetDataView" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+    <add key="GridSendedUserList" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[2]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 
   </Homepage>
   </Grid>

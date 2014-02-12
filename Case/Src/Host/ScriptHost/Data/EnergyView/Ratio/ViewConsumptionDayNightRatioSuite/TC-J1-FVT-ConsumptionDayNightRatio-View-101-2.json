@@ -2,14 +2,20 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
-			"tagNames":["DayNightP"],
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingMultipleSteps"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"]],
+			"tagNames":["VH_SiteS1", "VD_SiteS1", "VM_SiteS1", "V11_BuildingBC"],
 			"Industries":["严寒地区B区数据中心"],
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"DayNightP计算值",
-				"OriginalValue":"DayNightP原始值",
-				"TargetValue":"DayNightP目标值",
-				"BaselineValue":"DayNightP基准值",
+				"CaculationValue":"VH_SiteS1计算值",
+				"OriginalValue":"VH_SiteS1原始值",
+			},
+			{
+				"CaculationValue":"VD_SiteS1计算值",
+				"OriginalValue":"VD_SiteS1原始值",
+			},
+	        {
+				"CaculationValue":"VM_SiteS1计算值",
+				"OriginalValue":"VM_SiteS1原始值",
 			}],
 			"ManualTimeRange":[{
 				"StartDate":"2013-7-1",

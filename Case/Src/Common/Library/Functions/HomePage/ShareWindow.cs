@@ -32,10 +32,13 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button GiveupButton = JazzButton.ShareWindowGiveupButton;
 
         //Share users contains
-        private static Container ShareWindowTo = JazzContainer.ShareWindowToContainer;
+        //private static Container ShareWindowTo = JazzContainer.ShareWindowToContainer;
 
         //Share grid
         private static Grid ShareUserList = JazzGrid.ShareUserListGrid;
+
+        //Sended list grid
+        private static Grid SendedUserList = JazzGrid.SendedUserListGrid;
 
         #endregion
 
@@ -73,16 +76,14 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickRemoveShareUserButton(string name)
         {
-            Button ShareUser = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonShareToUserRemove, name);
+            SendedUserList.FloatOnRow(1, name, false);
 
-            ShareUser.Click();
+            SendedUserList.GetSendedListRowDeleteX(1, name, false).Click();
         }
 
-        public bool IsShareUserInContainer(string name)
+        public bool IsShareUserInSendedList(string name)
         {
-            Button ShareUser = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonShareToUserRemove, name);
-
-            return ShareUser.IsExisted();
+            return SendedUserList.IsRowExist(1, name);
         }
 
         public void CheckShareUser(string userName)
@@ -130,7 +131,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public int GetShareUserNumber()
         {
-            return ShareWindowTo.GetElementNumber();
+            return SendedUserList.GetCurrentRowsNumber();
         }
         #endregion
 

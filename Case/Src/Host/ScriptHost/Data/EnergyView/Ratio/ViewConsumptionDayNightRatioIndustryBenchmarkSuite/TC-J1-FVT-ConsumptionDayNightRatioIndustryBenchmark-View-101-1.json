@@ -1,0 +1,31 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
+			"tagNames":["DayNightP"],
+			"Industries":["严寒地区B区数据中心"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-7-1",
+				"EndDate":"2013-7-3",	
+			},
+			{
+				"StartDate":"2013-9-10",
+				"EndDate":"2013-11-5",	
+			},
+			{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-12-31",	
+			},
+			{
+				"StartDate":"2011-1-1",
+				"EndDate":"2013-12-31",	
+			}],
+		    "failedFileName":["F-ConsumptionDayNightRatioIndustryBenchmark-View-101-1-D-0.xls", "F-ConsumptionDayNightRatioIndustryBenchmark-View-101-1-W-1.xls", "F-ConsumptionDayNightRatioIndustryBenchmark-View-101-1-M-2.xls", "F-ConsumptionDayNightRatioIndustryBenchmark-View-101-1-Y-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionDayNightRatioIndustryBenchmark-View-101-1-D-0.xls", "ConsumptionDayNightRatioIndustryBenchmark-View-101-1-W-1.xls", "ConsumptionDayNightRatioIndustryBenchmark-View-101-1-M-2.xls", "ConsumptionDayNightRatioIndustryBenchmark-View-101-1-Y-3.xls"],
+		}
+	}
+]

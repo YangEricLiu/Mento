@@ -1,0 +1,23 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNullTest"]],
+			"tagNames":["P1_YearToDay", "V1_YearToDay", "V2_YearToDay", "V11_BuildingBC", "WorkNotworkP", "NullTestTag1", "DayNightPNotlighten"],
+			"Industries":["夏热冬暖地区轨学校行业", "严寒地区B区地区办公建筑行业", "夏热冬冷地区机场行业", "严寒地区B区地区数据中心"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-1-7",	
+			},
+			{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-4-28",	
+			}],
+		    "failedFileName":["F-ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-2-D-0.xls", "F-ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-2-W-1.xls", "F-ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-1-W-2.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-2-D-0.xls", "ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-2-W-1.xls", "ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-1-W-2.xls"],
+		}
+	}
+]

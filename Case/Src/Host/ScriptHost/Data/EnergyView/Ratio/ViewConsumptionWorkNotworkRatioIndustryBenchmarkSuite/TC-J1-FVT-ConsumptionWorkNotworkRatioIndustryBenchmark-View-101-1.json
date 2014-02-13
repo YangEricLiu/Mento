@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"]],
 			"tagNames":["WorkNotworkP"],
-			"Industries":["严寒地区B区地区办公建筑行业"],
+			"Industries":["严寒地区B区办公建筑"],
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-3-30",	

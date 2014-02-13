@@ -194,6 +194,11 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.MediumPause();
         }
 
+        public bool IsTagChecked(string tagName)
+        {
+            return TagGrid.IsRowChecked(2, tagName);
+        }
+
         public void UncheckTag(string tagName)
         {
             TagGrid.UncheckRowCheckbox(2, tagName);
@@ -208,6 +213,11 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 TagGrid.CheckRowCheckbox(2, tagName);
             }
+        }
+
+        public bool IsAllTagsDisabled()
+        {
+            return TagGrid.IsNoEnabledCheckbox();
         }
 
         public bool IsCarbonSingleCommodityNotExisted()

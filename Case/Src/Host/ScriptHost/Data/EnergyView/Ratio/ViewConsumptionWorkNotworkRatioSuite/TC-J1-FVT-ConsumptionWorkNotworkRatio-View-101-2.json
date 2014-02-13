@@ -2,16 +2,31 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNullTest"]],
-			"tagNames":["P1_YearToDay", "V1_YearToDay", "V2_YearToDay", "V11_BuildingBC", "WorkNotworkP", "NullTestTag1", "DayNightPNotlighten"],
-			"Industries":["无", "严寒地区B区办公建筑", "夏热冬冷地区机场业", "严寒地区B区数据中心"],
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingMultipleSteps"], ["NancyCustomer1", "GreenieSite", "GreenieBuilding"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNullTest"]],
+			"tagNames":["VH_SiteS1", "VD_SiteS1", "VM_SiteS1", "V_GreeineBuilding_Ele", "NullTestTag1"],
+			"UnitIndicatorLegend":[{
+				"CaculationValue":"VH_SiteS1计算值",
+				"OriginalValue":"VH_SiteS1原始值",
+			},
+			{
+				"CaculationValue":"VD_SiteS1计算值",
+				"OriginalValue":"VD_SiteS1原始值",
+			},
+	        {
+				"CaculationValue":"VM_SiteS1计算值",
+				"OriginalValue":"VM_SiteS1原始值",
+			}],
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
-				"EndDate":"2013-1-7",	
+				"EndDate":"2013-12-31",	
 			},
 			{
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-4-28",	
+			},
+			{
+				"StartDate":"2014-1-11",
+				"EndDate":"2014-2-11",	
 			}],
 		    "failedFileName":["F-ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-2-D-0.xls", "F-ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-2-W-1.xls", "F-ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-1-W-2.xls"],
 		},

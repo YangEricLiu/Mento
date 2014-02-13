@@ -4,7 +4,6 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
 			"tagNames":["DayNightP"],
-			"Industries":["严寒地区B区数据中心"],
 			"UnitIndicatorLegend":[{
 				"CaculationValue":"DayNightP计算值",
 				"OriginalValue":"DayNightP原始值",

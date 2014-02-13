@@ -32,6 +32,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public string Industry { get; set; }
 
+        public string[] Industries { get; set; }
+
         public string CarbonType { get; set; }
 
         public string UnitIndicatorType { get; set; }
@@ -53,5 +55,6 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string OriginalValue { get; set; }
         public string TargetValue { get; set; }
         public string BaselineValue { get; set; }
+        public string BenchmarkValue { get; set; }
     }
 }

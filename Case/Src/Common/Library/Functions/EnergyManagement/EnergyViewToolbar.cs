@@ -81,11 +81,17 @@ namespace Mento.ScriptCommon.Library.Functions
             EndTimeComboBox.SelectItem(endTime);
         }
 
-        public void View(EnergyViewType viewType)
+        public bool View(EnergyViewType viewType)
         {
-            ViewButton.SwitchViewType(viewType);
-
-            JazzMessageBox.LoadingMask.WaitLoading();
+            try
+            {
+                ViewButton.SwitchViewType(viewType);
+                return true;
+            }
+            catch (Exception x)
+            {
+                return false;
+            }
         }
 
         public void ClickViewButton()

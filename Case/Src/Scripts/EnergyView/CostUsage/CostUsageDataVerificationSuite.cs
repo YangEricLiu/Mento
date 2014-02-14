@@ -59,7 +59,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //Time range = 2012-1-1 to 2013-12-18
+            //Time range = 2012-1-1 to 2013-12-15
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
@@ -147,7 +147,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //"单项" = 电
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[1]);
 
-            //Time range = 2012-6-1 to 2012-7-1
+            //ManualTimeRange[1]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
 
@@ -165,7 +165,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
 
-            //Time range = 2012-12-1 to 2012-12-31
+            //ManualTimeRange[2]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             TimeManager.ShortPause();
 
@@ -183,7 +183,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
 
-            //Time range = 2013-1-1 to 2013-2-1
+            //ManualTimeRange[3]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
             TimeManager.ShortPause();
 
@@ -218,48 +218,48 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-
-            //Time range = 2012-1-1 to 2013-12-18
+            
+            //Time range = 2012-1-1 to 2013-12-15
              var ManualTimeRange = input.InputData.ManualTimeRange;
              EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
              TimeManager.ShortPause();
+             
+              //"总览"
+              CostUsage.SelectCommodity();
+              EnergyViewToolbar.View(EnergyViewType.List);
+              JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+              TimeManager.MediumPause();
+              
+                //"Year"
+                CostUsage.ClickDisplayStep(DisplayStep.Year);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
 
-             //"总览"
-             CostUsage.SelectCommodity();
-             EnergyViewToolbar.View(EnergyViewType.List);
-             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-             TimeManager.MediumPause();
+                Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
+                CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+                TimeManager.MediumPause();
+                CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
-             //"Year"
-             CostUsage.ClickDisplayStep(DisplayStep.Year);
-             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-             TimeManager.MediumPause();
+                //"Month"
+                CostUsage.ClickDisplayStep(DisplayStep.Month);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
 
-             Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-             TimeManager.MediumPause();
-             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+                Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
+                CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+                TimeManager.MediumPause();
+                CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-             //"Month"
-             CostUsage.ClickDisplayStep(DisplayStep.Month);
-             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-             TimeManager.MediumPause();
+                //"Week"
+                CostUsage.ClickDisplayStep(DisplayStep.Week);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
 
-             Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-             TimeManager.MediumPause();
-             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
-
-             //"Week"
-             CostUsage.ClickDisplayStep(DisplayStep.Week);
-             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-             TimeManager.MediumPause();
-
-             Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
-             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
-             TimeManager.MediumPause();
-             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
-
+                Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
+                CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+                TimeManager.MediumPause();
+                CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            
              //"Day"
              CostUsage.ClickDisplayStep(DisplayStep.Day);
              JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -270,7 +270,7 @@ namespace Mento.Script.EnergyView.CostUsage
              TimeManager.MediumPause();
              CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
-             //Time range = 2012-7-5 to 2012-7-30
+             //TManualTimeRange[1]
              EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
              TimeManager.ShortPause();
 
@@ -287,8 +287,8 @@ namespace Mento.Script.EnergyView.CostUsage
              CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
              TimeManager.MediumPause();
              CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
-             
-            //Time range = 2013-6-19 to 2013-7-10
+
+             //ManualTimeRange[2]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             TimeManager.ShortPause();
 
@@ -306,7 +306,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
 
-            //Time range = 2013-7-19 to 2013-8-19
+            //ManualTimeRange[3]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
             TimeManager.ShortPause();
 
@@ -324,7 +324,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
 
-            //Time range = 2012-1-1 to 2013-12-18
+            //Time range = 2012-1-1 to 2013-12-15
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
            
@@ -376,7 +376,7 @@ namespace Mento.Script.EnergyView.CostUsage
            TimeManager.MediumPause();
            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
 
-           //Time range = 2012-7-5 to 2012-7-30
+           //ManualTimeRange[1]
            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
            TimeManager.ShortPause();
 
@@ -393,8 +393,8 @@ namespace Mento.Script.EnergyView.CostUsage
            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[11], DisplayStep.Default);
            TimeManager.MediumPause();
            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[11], input.InputData.failedFileName[11]);
-         
-            //Time range = 2013-1-19 to 2013-2-10
+
+           //ManualTimeRange[2]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             TimeManager.ShortPause();
 
@@ -411,8 +411,8 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[12], DisplayStep.Default);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[12], input.InputData.failedFileName[12]);
-           
-           //Time range = 2013-7-19 to 2013-8-19
+
+            //ManualTimeRange[3]
            EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
            TimeManager.ShortPause();
 
@@ -433,9 +433,9 @@ namespace Mento.Script.EnergyView.CostUsage
         }
         
         [Test]
-        [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-3")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-3")]
-        public void CostUsageDataVerification03(CostUsageData input)
+        [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-4")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-4")]
+        public void CostUsageDataVerification04(CostUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();
@@ -455,7 +455,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //Time range = 2012-1-1 to 2013-12-18
+            //Time range = 2012-1-1 to 2013-12-15
             var ManualTimeRange = input.InputData.ManualTimeRange;
              EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
              TimeManager.ShortPause();
@@ -504,7 +504,7 @@ namespace Mento.Script.EnergyView.CostUsage
              TimeManager.MediumPause();
              CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
-             //Time range = 2012-7-5 to 2012-7-30
+             //TimeRange = 2012-7-15  to 2012-8-15
              EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
              TimeManager.ShortPause();
 
@@ -520,8 +520,8 @@ namespace Mento.Script.EnergyView.CostUsage
              CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
              TimeManager.MediumPause();
              CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
-           
-             //Time range = 2013-1-10 to 2013-2-1
+
+             //TimeRange = 2013-1-10  to 2013-2-10
              EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
              EnergyViewToolbar.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
              TimeManager.ShortPause();
@@ -538,8 +538,8 @@ namespace Mento.Script.EnergyView.CostUsage
              CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
              TimeManager.MediumPause();
              CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
-             
-             //Time range = 2013-7-19 to 2013-8-19
+
+             //TimeRange = 2013-7-20  to 2013-8-20
              EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
              TimeManager.ShortPause();
 
@@ -556,7 +556,7 @@ namespace Mento.Script.EnergyView.CostUsage
              TimeManager.MediumPause();
              CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
             
-             //Time range = 2012-1-1 to 2013-12-18
+             //Time range = 2012-1-1 to 2013-12-15
              EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
              TimeManager.ShortPause();
              
@@ -604,7 +604,7 @@ namespace Mento.Script.EnergyView.CostUsage
            TimeManager.MediumPause();
            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
 
-           //Time range = 2012-7-5 to 2012-7-30
+           //TimeRange = 2012-7-15  to 2012-8-15
            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
            TimeManager.ShortPause();
 
@@ -620,8 +620,8 @@ namespace Mento.Script.EnergyView.CostUsage
            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[11], DisplayStep.Default);
            TimeManager.MediumPause();
            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[11], input.InputData.failedFileName[11]);
-           
-            //Time range = 2013-1-10 to 2013-2-1
+
+           //TimeRange = 2013-1-10  to 2013-2-10
            EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
            EnergyViewToolbar.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
            TimeManager.ShortPause();
@@ -638,8 +638,8 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[12], DisplayStep.Default);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[12], input.InputData.failedFileName[12]);
-            
-           //Time range = 2013-7-19 to 2013-8-19
+
+            //TimeRange = 2013-7-20  to 2013-8-20
            EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
            TimeManager.ShortPause();
 
@@ -659,9 +659,9 @@ namespace Mento.Script.EnergyView.CostUsage
         }
         
         [Test]
-        [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-4")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-4")]
-        public void CostUsageDataVerification04(CostUsageData input)
+        [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-5")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-5")]
+        public void CostUsageDataVerification05(CostUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();
@@ -681,7 +681,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //Time range = 2012-1-1 to 2013-12-18
+            //Time range = 2012-1-1 to 2013-12-15
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
            TimeManager.ShortPause();
@@ -730,7 +730,7 @@ namespace Mento.Script.EnergyView.CostUsage
           TimeManager.MediumPause();
           CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
-          //Time range = 2012-7-5 to 2012-7-30
+          //Time range = 2012-7-15 to 2012-8-15
           EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
           TimeManager.ShortPause();
 
@@ -747,7 +747,7 @@ namespace Mento.Script.EnergyView.CostUsage
           TimeManager.MediumPause();
           CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
            
-           //Time range = 2013-1-10 to 2013-2-1
+           //Time range = 2013-1-15 to 2013-2-15
           EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
           EnergyViewToolbar.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
           TimeManager.ShortPause();
@@ -765,7 +765,7 @@ namespace Mento.Script.EnergyView.CostUsage
            TimeManager.MediumPause();
            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
         
-         //Time range = 2013-7-19 to 2013-8-19
+         //Time range = 2013-7-20 to 2013-8-20
          EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
          TimeManager.ShortPause();
 
@@ -782,7 +782,7 @@ namespace Mento.Script.EnergyView.CostUsage
          TimeManager.MediumPause();
          CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
 
-         //Time range = 2012-1-1 to 2013-12-18
+         //Time range = 2012-1-1 to 2013-12-15
          EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
          TimeManager.ShortPause();
          
@@ -830,7 +830,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
 
-            //Time range = 2012-7-5 to 2012-7-30
+            //Time range = 2012-7-15 to 2012-8-15
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
 
@@ -847,7 +847,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[11], input.InputData.failedFileName[11]);
            
-            //Time range = 2013-1-10 to 2013-2-1
+            //Time range = 2013-1-15 to 2013-2-15
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             EnergyViewToolbar.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
             TimeManager.ShortPause();
@@ -865,7 +865,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[12], input.InputData.failedFileName[12]);
             
-            //Time range = 2013-7-19 to 2013-8-19
+            //Time range = 2013-7-20 to 2013-8-20
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
             TimeManager.ShortPause();
 
@@ -885,9 +885,9 @@ namespace Mento.Script.EnergyView.CostUsage
         }
         
         [Test]
-        [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-5")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-5")]
-        public void CostUsageDataVerification05(CostUsageData input)
+        [CaseID("TC-J1-FVT-CostUsageDataVerification-DataView-101-6")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-6")]
+        public void CostUsageDataVerification06(CostUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();
@@ -920,7 +920,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
-            //Time range = 2013-7-19 to 2013-8-10
+            //Time range = 2013-7-15 to 2013-8-15
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             EnergyViewToolbar.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.ShortPause();

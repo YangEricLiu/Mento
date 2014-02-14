@@ -59,7 +59,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //ManualTimeRange[0]
+            //Time range = 2012-1-1 to 2013-12-15
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
@@ -228,7 +228,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //TManualTimeRange[0]
+            //Time range = 2012-1-1 to 2013-12-15
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
@@ -265,7 +265,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-            //"Week"
+            //"Week" 
             CarbonUsage.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -287,6 +287,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //ManualTimeRange[1]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
@@ -305,6 +306,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //ManualTimeRange[2]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
@@ -323,6 +325,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //ManualTimeRange[3]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[3].StartTime, ManualTimeRange[3].EndTime);
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
@@ -411,6 +414,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //ManualTimeRange[2]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
@@ -429,6 +433,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //ManualTimeRange[3]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[3].StartTime, ManualTimeRange[3].EndTime);
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);

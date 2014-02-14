@@ -6,9 +6,9 @@
 			"commodityNames":["电"],
 			"ManualTimeRange":[
 			{
-			    "StartDate":"2013-7-19",
+			    "StartDate":"2013-7-15",
 				"StartTime":"00:00",
-				"EndDate":"2013-8-10",
+				"EndDate":"2013-8-15",
 				"EndTime":"24:00",		
 			}],
 			"failedFileName":["F-CostUsageDataVerification-101-6-Total-D-0.xls", "F-CostUsageDataVerification-101-6-Total-H-1.xls"],

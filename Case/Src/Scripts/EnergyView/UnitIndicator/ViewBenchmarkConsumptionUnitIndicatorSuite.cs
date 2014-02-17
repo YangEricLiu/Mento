@@ -123,7 +123,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             //·Warining message show not defined 单位人口."缺少人口属性的部分无法绘制，请设置后再试".
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
-            Assert.AreEqual(0, UnitKPIPanel.GetTrendChartLines());
+            Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
 
             //Select the BuildingBC from Hierarchy Tree.time range="去年", 行业基准值=寒冷地区服装零售. Select multiple tag V（1）+V(2) +V(3) with the same commodity to display trend chart view
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
@@ -252,6 +252,10 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
+            //寒冷地区服装零售
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industries[0]);
+            TimeManager.MediumPause();
+
             UnitKPIPanel.CheckTag(input.InputData.tagNames[0]);
             TimeManager.ShortPause();
 
@@ -361,7 +365,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             //·Chart display 单位人口.
             Assert.IsTrue(UnitKPIPanel.IsColumnChartDrawn());
-            Assert.AreEqual(3, UnitKPIPanel.GetColumnChartColumns());
+            Assert.AreEqual(2, UnitKPIPanel.GetColumnChartColumns());
 
             //· 目标值/基准值 chart and legand will not display in chart.
             Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.ExpectedData.UnitIndicatorLegend[0].CaculationValue));
@@ -459,7 +463,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsFalse(UnitKPIPanel.IsColumnChartDrawn());
+            Assert.IsTrue(UnitKPIPanel.IsColumnChartDrawn());
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -598,10 +602,10 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             //严寒地区B区办公建筑
-            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industries[2]);
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industries[3]);
             TimeManager.MediumPause();
 
-            //WorkNonworkP
+            //WorkNotworkP
             UnitKPIPanel.CheckTag(input.InputData.tagNames[5]);
             TimeManager.ShortPause();
 

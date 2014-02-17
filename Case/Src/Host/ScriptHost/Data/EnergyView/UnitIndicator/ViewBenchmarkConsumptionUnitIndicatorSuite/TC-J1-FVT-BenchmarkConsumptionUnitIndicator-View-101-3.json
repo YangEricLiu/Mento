@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"]],
-			"tagNames":["VtestPrecision", "PtagMissing", "V12_BuildingBC", "V2_YearToDay", "V1_YearToDay", "WorkNonworkP", "WorkNotworkPNotlighten"],
+			"tagNames":["VtestPrecision", "PtagMissing", "V12_BuildingBC", "V2_YearToDay", "V1_YearToDay", "WorkNotworkP", "WorkNotworkPNotlighten"],
 			"Industries":["夏热冬冷地区制造业", "夏热冬冷地区机场", "夏热冬冷地区轨道交通", "严寒地区B区办公建筑"],
 			"failedFileName":["F-BenchmarkConsumptionUnitIndicator-View-101-3-M-0.xls", "F-BenchmarkConsumptionUnitIndicator-View-101-3-M-1.xls", "F-BenchmarkConsumptionUnitIndicator-View-101-3-M-2.xls", "F-BenchmarkConsumptionUnitIndicator-View-101-3-M-3.xls"],
 		},

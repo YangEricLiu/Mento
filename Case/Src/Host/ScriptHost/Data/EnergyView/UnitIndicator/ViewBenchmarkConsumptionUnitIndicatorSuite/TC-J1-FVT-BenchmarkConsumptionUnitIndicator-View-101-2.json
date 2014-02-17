@@ -43,7 +43,7 @@
 		},
 		"ExpectedData":
 		{
-			"UnitTypeValue":"单位面积",
+			"UnitTypeValue":"单位人口",
 			"IndustryValue":"行业基准值",
 			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试"],
 			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -181,7 +182,7 @@ namespace Mento.Script.EnergyView.Ratio
             Assert.IsFalse(RadioPanel.IsTagChecked(input.InputData.tagNames[2]));
             Assert.IsTrue(RadioPanel.EntirelyNoChartDrawn());
 
-            //Go to NancyCustomer1, select BuildingBAD which is not define calendar. Select V(11) to display 公休比.
+            //Go to NancyCustomer1, select GreenieBuilding which is not define calendar. Select V(11) to display 公休比.
             HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.ShortPause();
 
@@ -197,6 +198,9 @@ namespace Mento.Script.EnergyView.Ratio
 
             RadioPanel.CheckTag(input.InputData.tagNames[3]);
             TimeManager.ShortPause();
+
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
 
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -225,8 +229,7 @@ namespace Mento.Script.EnergyView.Ratio
             EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[1]);
             TimeManager.ShortPause();
 
-            //Select time range 2013/01/01 to 2013/01/07; Optional step=Day.
-            var ManualTimeRange = input.InputData.ManualTimeRange;
+            //Select time range 2013/01/01 to 2013/02/07; Optional step=Day.
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
 
@@ -234,11 +237,11 @@ namespace Mento.Script.EnergyView.Ratio
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //Step is "Day"
+            //Step is "Week"
             RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
@@ -252,9 +255,6 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.ShortPause();
 
             RadioPanel.CheckTag(input.InputData.tagNames[5]);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[2]);
             TimeManager.ShortPause();
 
             //Select time range 2013/01/01 to 2013/04/28; Optional step=Week.
@@ -274,7 +274,7 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-            //Select a not lighten tag DayNightPNotlighten under BuildingWorkNonwork, 行业基准值=严寒地区B区地区数据中心行业 to view chart.
+            //Select a not lighten tag WorkNonworkPNotlighten under BuildingWorkNonwork, 行业基准值=严寒地区B区办公建筑 to view chart.
             RadioPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -285,7 +285,7 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.CheckTag(input.InputData.tagNames[6]);
             TimeManager.ShortPause();
 
-            EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[3]);
+            EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[1]);
             TimeManager.ShortPause();
 
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);

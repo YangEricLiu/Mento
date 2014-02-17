@@ -1,0 +1,29 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"]],
+			"Commodity":["煤", "自来水"],
+			"Industries":["夏热冬冷地区轨道交通"],
+			"DashboardInfo":[{
+				"WigetName":"UnitCost1013",
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"UnitCost1013",
+			}],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-12-31",
+			},
+			{
+				"StartDate":"2011-1-1",
+				"EndDate":"2013-12-1",
+			}],
+		},
+		"ExpectedData":
+		{
+			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试"],
+		}
+	}
+]

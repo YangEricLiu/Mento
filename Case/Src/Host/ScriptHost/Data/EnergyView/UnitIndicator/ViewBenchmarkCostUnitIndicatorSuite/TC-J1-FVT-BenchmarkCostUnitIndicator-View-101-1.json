@@ -14,24 +14,24 @@
 				"BaselineValue":"V1_BuildingBC基准值",
 			}],
 			"ManualTimeRange":[{
-				"StartDate":"2012-7-1",
-				"EndDate":"2012-7-1",	
+				"StartDate":"2013-7-1",
+				"EndDate":"2013-7-1",	
 			},
 			{
-				"StartDate":"2012-7-1",
-				"EndDate":"2012-7-3",	
+				"StartDate":"2013-7-1",
+				"EndDate":"2013-7-3",	
 			},
 			{
-				"StartDate":"2012-7-10",
-				"EndDate":"2012-8-5",
+				"StartDate":"2013-7-10",
+				"EndDate":"2013-8-5",
 			},
 			{
-				"StartDate":"2012-1-1",
-				"EndDate":"2012-12-31",
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-12-31",
 			},
 			{
 				"StartDate":"2011-1-1",
-				"EndDate":"2013-5-30",
+				"EndDate":"2013-12-31",
 			}],
 		},
 		"ExpectedData":

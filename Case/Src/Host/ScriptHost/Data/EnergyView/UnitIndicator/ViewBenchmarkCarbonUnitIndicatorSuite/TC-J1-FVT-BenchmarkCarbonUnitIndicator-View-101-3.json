@@ -1,0 +1,25 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"Commodity":["煤", "自来水"],
+			"Industries":["夏热冬冷地区轨道交通"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2013-9-1",
+				"EndDate":"2013-11-28",
+			},
+			{
+				"StartDate":"2013-5-1",
+				"EndDate":"2013-12-31",
+			}],
+			"failedFileName":["F-BenchmarkCarbonUnitIndicator-View-101-3-0.xls", "F-BenchmarkCarbonUnitIndicator-View-101-3-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试", "对比数据点已选满"],
+			"expectedFileName":["BenchmarkCarbonUnitIndicator-View-101-3-0.xls", "BenchmarkCarbonUnitIndicator-View-101-3-1.xls"],
+		}
+	}
+]

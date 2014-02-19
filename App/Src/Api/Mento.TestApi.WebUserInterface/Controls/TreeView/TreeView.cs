@@ -173,7 +173,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return GetCheckboxElement(node).GetAttribute("class").Contains(TREENODECHECKEDCLASS);
         }
+        /*
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nodeText"></param>
+        /// <returns></returns>
+        public bool IsNodeCheckerExisted(string nodeText)
+        {
+            IWebElement node = GetTreeNodeElement(nodeText);
 
+            return GetCheckboxElement(node).GetAttribute("class").Contains(TREENODECHECKEDCLASS);
+        }
+        */
         /// <summary>
         /// 
         /// </summary>

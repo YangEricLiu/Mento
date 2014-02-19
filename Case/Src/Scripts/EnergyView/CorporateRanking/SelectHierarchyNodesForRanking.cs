@@ -44,48 +44,52 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
-
+        
         [Test]
         [CaseID("TC-J1-FVT-SelectHierarchyNodesForRanking-101-1")]
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(SelectHierarchyNodesForRanking), "TC-J1-FVT-SelectHierarchyNodesForRanking-101-1")]
         public void SelectHierarchyNodesForCoperateRanking(CorporateRankingData input)
         {
-            //Click Hierarchy Node Selector.
-            //•  Popup the hierarchy tree.
-            //•  In default, no hierarchy node is checked. And all checkboxes are enabled.
-            //•  ‘清空’ button is unavailable since no any nodes selected.    @@@@@@@@@
-            //•  Customer node is disabled for selection.                             @@@@@@@@@
-            //•  Check the hierarchy node in checkbox.Uncheck one hierarchy node.
-            //•  Uncheck the hierarchy node in checkbox.
-            //Repeat above steps.
-            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies);
-            CorporateRanking.CheckHierarchyNode(input.ExpectedData.Hierarchies);
-            CorporateRanking.UnCheckHierarchyNode(input.ExpectedData.Hierarchies);
+            CorporateRanking.ClickSelectHierarchyButton();
+            TimeManager.LongPause();
+            //Click Hierarchy Node Selector. ‘清空’ button is available since no any nodes selected.    
+            Assert.IsFalse(CorporateRanking.IsClearHiearchyButtonEnabled());
 
+            //•  Customer node is disabled for selection.  
+
+            //•  Check the hierarchy node in checkbox.Uncheck one hierarchy node.
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies);
+            Assert.IsTrue(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies.Last()));
+            CorporateRanking.OnlyUnCheckHierarchyNode(input.InputData.Hierarchies);
+            Assert.IsFalse(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies.Last()));
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies);
             //Click '确定' button.
             CorporateRanking.ClickConfirmHiearchyButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
 
-            //•  The hierarchy tree is hidden.
             //•  Display Total Consumption and all available Commodities under all selected hierarchy nodes with Radio Button.
-            Assert.IsTrue(CorporateRanking.AreCommoditiesOnTheGrid(input.InputData.commodityNames));
-
+            Assert.IsTrue(CorporateRanking.IsCommodityOnRankingPanel(input.InputData.commodityNames[0]));
+            Assert.IsTrue(CorporateRanking.IsCommodityOnRankingPanel(input.InputData.commodityNames[1]));
             //Click Hierarchy Node Selector again.
-            //•  Checkboxes of selected hierarchy nodes are displayed as checked.
-            //•  Other checkboxes are displayed as are unchecked.
-            CorporateRanking.ClickClearHiearchyButton();
+            //•  Checkboxes of selected hierarchy nodes are displayed as checked.Other checkboxes are displayed as are unchecked.
+            CorporateRanking.ClickSelectHierarchyButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
             Assert.IsTrue(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies.Last()));
+            Assert.IsFalse(CorporateRanking.IsHierarchyNodeChecked("园区测试多层级"));
 
             //Click '清空' button.
             CorporateRanking.ClickClearHiearchyButton();
-
             //•  All hierarchy nodes are unchecked.The popup of hierarchy tree is still displayed.
             Assert.IsFalse(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies.Last()));
 
             //Click '确定' button.
-            //•  The hierarchy tree is hidden.
-            //•  NO Total Consumption option and NO Commodities options displayed.
+            //•  The hierarchy tree is hidden.NO Total Consumption option and NO Commodities options displayed.
             CorporateRanking.ClickConfirmHiearchyButton();
-            //CorporateRanking
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
         }
 
         [Test]
@@ -93,22 +97,35 @@ namespace Mento.Script.EnergyView.CorporateRanking
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(SelectHierarchyNodesForRanking), "TC-J1-FVT-SelectHierarchyNodesForRanking-101-2")]
         public void SelectFunctionType(CorporateRankingData input)
         {
-            //Navigate to Energy Consumption Unit  (单位能耗指标) module.
-            //Click Function Type button.
+            //Navigate to Energy Consumption Unit  (单位能耗指标) module.Click Function Type button.
             UnitIndicator.NavigateToUnitIndicator();
+            TimeManager.LongPause();
             EnergyViewToolbar.ClickFuncModeConvertTarget();
-
+            TimeManager.LongPause();
             //Options 'Energy Consumption','Carbon Emission' and 'Cost' are displayed in dropdown list.
-            //Selected option is Highlighted. 'Energy Consumption' is selected by default.   
+            //Selected option is Highlighted. 'Energy Consumption' is selected by default.
+            //Select ‘Energy Consumption’ option.Display Hierarchy Mode button (SingleHierarchyNode is selected by default).
+            //Display Hierarchy Tree Selector.Display tag selector which support tags under hierarchy node, system node, and area node.
+
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(),FuncModeConvertTarget.Energy);
+            UnitIndicator.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            UnitIndicator.CheckTag(input.InputData.commodityNames[0]);
 
 
-            //Select one option. Dropdown list is hidden.   Set Function type as selected.
-            // Chart is not redrawn when switching the function type option.
 
 
-            //Select ‘Energy Consumption’ option.•  Display Hierarchy Mode button (SingleHierarchyNode is selected by default).
-            //Display Hierarchy Tree Selector.•  Display tag selector which support tags under hierarchy node, system node, and area node.
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            TimeManager.LongPause();
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), FuncModeConvertTarget.Carbon);
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), FuncModeConvertTarget.Cost);
 
+            // Chart is not redrawn when switching the function type option.@@@@@ not finish
+           
+
+            
 
             //Select ‘Carbon Emission’ option.•  Display Hierarchy Tree Selector.
             //•  Display Commodity selector which only support commodity under hierarchy node.

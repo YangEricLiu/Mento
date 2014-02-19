@@ -131,6 +131,22 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public Boolean OnlyUnCheckHierarchyNode(string[] hierarchyNames)
+        {
+            try
+            {
+                //if(JazzCheckBox.UserDataAllHierarchyNodeCheckBoxField.IsChecked())
+                TimeManager.LongPause();
+                HierarchyTree.ExpandNodePath(hierarchyNames);
+                HierarchyTree.UncheckNode(hierarchyNames.Last());
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public Boolean SelectSystemDimensionNode(string[] systemDimensionPath)
         {
             try
@@ -236,9 +252,13 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public Boolean IsCommoditySelected(string commodityName)
         {
-            return CommodityRank.IsRowSelected(2, commodityName);
+            return CommodityRank.IsRankingCommodityRowChecked(2, commodityName);
         }
 
+        public Boolean IsSystemCommoditySelected(string commodityName)
+        {
+            return SystemCommodityRank.IsRankingCommodityRowChecked(2, commodityName);
+        }
 
         public Boolean IsCommodityChecked(string commodityName)
         {
@@ -273,6 +293,16 @@ namespace Mento.ScriptCommon.Library.Functions
             }
             return true;
         }
+
+        public Boolean IsCommodityOnRankingPanel(string commodityName)
+        {
+            if (!(CommodityRank.IsRowExist(2, commodityName)))
+            {
+                return false;
+            }
+            return true;
+        }
+
 
         /// <summary>
         /// Export expected data table to excel file
@@ -342,17 +372,19 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return ClearHiearchyRank.IsEnabled();
         }
-        /*
 
+        /*
         /// <summary>
         /// Check whether the customer hiearchy node can be checked.
         /// </summary>
-        public Boolean IsCustomerNodeEnabled(string[] HierarchyNode)
+        public Boolean IsCustomerCheckEnabled(string[] HierarchyNode)
         {
-            //HierarchyNode.
+
+            
+            return true;
            
         }
-         */
+        */
         #endregion
 
     }

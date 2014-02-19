@@ -164,7 +164,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorUserManagementButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorUserManagement);
 
         public static Button NavigatorBenchMarkSettingButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorBenchMarkSettings);
-
+        public static Button NavigatorIndustryLabelingSettingButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorIndustryLabelingSettings);
 
         public static Button NavigatorTagSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTagSettings);//{NavigationTarget.TagSettings, new NavigatorItem(NavigationTarget.TagSettings,NavigationTarget.Settings,"setting-tab-tagmrg-btn-btnEl",ByType.ID)},
         public static Button NavigatorHierarchySettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorHierarchySettings);//{NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,"setting-tab-hiersetting-btn-btnEl",ByType.ID)},
@@ -438,6 +438,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button CancelBenchMarkButton = GetControl<Button>(JazzControlLocatorKey.ButtonCancelBenchMark);
         public static Button DeleteBenchMarkButton = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteBenchMark);
 
+        #endregion
+
+        #region BenchMark
+        public static Button AddLabelingButton = GetControl<Button>(JazzControlLocatorKey.ButtonAddLabeling);
         #endregion
 
         #region User setting

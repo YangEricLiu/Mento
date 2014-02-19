@@ -68,7 +68,7 @@ namespace Mento.Script.Administration.UserDataScope
         [Test]
         [CaseID("TC-J1-FVT-UserDataScope-Modify-101-2")]
         [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(ModifyMultiCustomerSuite), "TC-J1-FVT-UserDataScope-Modify-101-2")]
-        public void ModifyMultiCustomer(UserDataPermissionData input)
+        public void ModifyMultiCustomer(UserDataPermissionData input)   
         {
             // Focus on an exist userA, open datascope tab.
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);

@@ -54,6 +54,8 @@
     <Compile Include="CarbonUsage\CarbonUsageDataVerificationSuite.cs" />
     <Compile Include="CarbonUsage\AdditionalCarbonUsageDataVerificationSuite.cs" />
     <Compile Include="CorporateRanking\AdditionalCorporateRankingVerificationSuite.cs" />
+    <Compile Include="CorporateRanking\SelectCommodityForRanking.cs" />
+    <Compile Include="CorporateRanking\SelectHierarchyNodesForRanking.cs" />
     <Compile Include="CorporateRanking\ViewConsumptionRankingData.cs" />
     <Compile Include="CorporateRanking\ViewCarbonRankingData.cs" />
     <Compile Include="CorporateRanking\CalculateCostRanking.cs" />

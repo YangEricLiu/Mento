@@ -65,6 +65,7 @@
     <Compile Include="IndustryBenchmark\BenchmarkDeleteInvalidSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkModifyValidSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkModifyInvalidSuite.cs" />
+    <Compile Include="IndustryLabeling\LabelingAddInvalidSuite.cs" />
     <Compile Include="TimeManagement\HeatingCoolingSeasonModifySuite.cs" />
     <Compile Include="TimeManagement\HeatingCoolingSeasonAddSuite.cs" />
     <Compile Include="TimeManagement\HeatingCoolingSeasonDeleteSuite.cs" />

@@ -38,7 +38,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorRecentView = "ButtonNavigatorRecentView";
 
         public static string ButtonNavigatorBenchMarkSettings = "ButtonNavigatorBenchMarkSettings";
-        
+        public static string ButtonNavigatorIndustryLabelingSettings = "ButtonNavigatorIndustryLabelingSetting";
         public static string ButtonNavigatorAssociationSettings = "ButtonNavigatorAssociationSettings";
         public static string ButtonNavigatorTimeSettingsWorkday = "ButtonNavigatorTimeSettingsWorkday";
         public static string ButtonNavigatorTimeSettingsWorktime = "ButtonNavigatorTimeSettingsWorktime";
@@ -444,6 +444,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonCancelBenchMark = "ButtonCancelBenchMark";
         public static string ButtonModifyBenchMark = "ButtonModifyBenchMark";
         public static string ButtonDeleteBenchMark = "ButtonDeleteBenchMark";
+        #endregion
+
+
+        #region Labeling
+        public static string ButtonAddLabeling = "ButtonAddLabeling";
+
         #endregion
 
         #region customermanagement

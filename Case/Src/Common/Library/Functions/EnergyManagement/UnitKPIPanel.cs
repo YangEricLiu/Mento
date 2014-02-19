@@ -312,6 +312,9 @@ namespace Mento.ScriptCommon.Library.Functions
             UnitCostCommodityGrid.UncheckRowCheckbox(2, commodity, false);
             JazzMessageBox.LoadingMask.WaitLoading();
         }
+
+
+
         #endregion
 
         #region energy view

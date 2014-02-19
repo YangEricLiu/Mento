@@ -52,7 +52,8 @@
             <add key="ButtonNavigatorAssociationSystemDimension" value="st-menu-systemdtags" type="ID"/>
             <add key="ButtonNavigatorAssociationAreaDimension" value="st-menu-areadtags" type="ID"/>
             
-            <add key="ButtonNavigatorSelectedCustomer" value="header-btn-select-customer" type="ID"/>       
+            <add key="ButtonNavigatorSelectedCustomer" value="header-btn-select-customer" type="ID"/>
+          <add key="ButtonNavigatorIndustryLabelingSetting" value="st-menu-labeling-lv1-btnInnerEl" type="ID"/>
         </navigator>
       
       <HomePage>
@@ -427,7 +428,7 @@
           </customermanagement>
           
           <BenchMark>
-              <add key="ButtonAddBenchMark" value="st-benchmark-grid-add" type="ID"/>
+              <add key="ButtonAddBenchMark" value="st-benchmark-grid-add-btnEl" type="ID"/>
               <add key="ButtonSaveBenchMark" value="//div[@id='st-benchmark-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
               <add key="ButtonCancelBenchMark" value="//div[@id='st-benchmark-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
               <add key="ButtonModifyBenchMark" value="//div[@id='st-benchmark-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
@@ -466,7 +467,11 @@
               <add key="ButtonCloseTBCalendarWindow" value="//div[contains(@id,'calendartemplatewindow') and contains(@class, 'x-window-header-body-default')]//img[@class='x-tool-close']" type="XPath"/>
               <add key="ButtonDeleteSpecialdayItem" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/div/img" type="XPath"/>
           </TargetBaseline>
-          
+
+          <labeling>
+              <add key="ButtonAddLabeling" value="st-labeling-grid-add-btnEl" type="ID"/>
+              
+          </labeling>
       </platformsettings>
       
   </Button>

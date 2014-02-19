@@ -218,6 +218,18 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static LabelingSetting _LabelingSetting;
+        public static LabelingSetting LabelingSetting
+        {
+            get
+            {
+                if (_LabelingSetting == null)
+                    _LabelingSetting = new LabelingSetting();
+
+                return _LabelingSetting;
+            }
+        }
+
         private static CarbonFactorSettings _CarbonFactorSettings;
         public static CarbonFactorSettings CarbonFactorSettings
         {

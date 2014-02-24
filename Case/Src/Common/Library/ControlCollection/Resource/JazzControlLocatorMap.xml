@@ -30,7 +30,7 @@
             <add key="ButtonNavigatorMyFavirate" value="hp-menu-my-fav-btn" type="ID"/>
             <add key="ButtonNavigatorAllDashboards" value="hp-menu-all-dsbd-btn" type="ID"/>
             <add key="ButtonNavigatorRecentView" value="hp-menu-my-recent-btn" type="ID"/>
-
+            <add key="ButtonNavigatorMyShare" value="hp-menu-my-share-btn" type="ID"/>
             <add key="ButtonNavigatorBenchMarkSettings" value="st-menu-benchmark-lv1" type="ID"/>
             
           <add key="ButtonNavigatorTimeSettingsWorkday" value="st-menu-workday" type="ID"/>
@@ -87,6 +87,11 @@
             <add key="TabButtonShareInfoReceived" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='我收到的']]" type = "XPath"/>
             <add key="TabButtonShareInfoSended" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='我发出的']]" type = "XPath"/>
             <add key="ButtonDashboardPosition" value="//div[@id='hp-dashboard-list-targetEl']/div[contains(@id,'dashboardbutton')][$#positionIndex]" type="XPath"/>
+            <add key="LinkButtonAnnotationEdit" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[2]/div/a[text()='编辑']" type="XPath"/>
+            <add key="LinkButtonAnnotationAdd" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[2]/div/a[text()='添加']" type="XPath"/>
+            <add key="ButtonMyShareWidgetRename" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-rename-tool')]/img" type="XPath"/>
+        
+            <add key="LinkButtonWidgetMaxWidgetEditComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='编辑']]" type="XPath"/>
 
       </HomePage>
       
@@ -170,6 +175,7 @@
           <add key="ModifyWidgetNameCancelButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
           <add key="WidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]//span[text()='表3']" type="XPath"/>
           <add key="ButtonDeleteWidget" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='删除小组件']" type="XPath"/>
+          <add key="ButtonCancelShareWidget" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='取消共享小组件']" type="XPath"/>
           <add key="RadioButtonCreateNewDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='新建仪表盘']]/input" type="XPath"/>
           <add key="RadioButtonExistedDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='已存在仪表盘']]/input" type="XPath"/>
           <add key="ButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
@@ -205,6 +211,14 @@
           <add key="ButtonGiveUpStepWindow" value="//div[contains(@id,'window') and contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
 
       </energyview>
+      
+      <homepage>
+        <add key="ButtonSaveAnnotationWindow" value="//div[contains(@id,'annotationwindow') and contains(@class,'x-window-default')]/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
+        <add key="ButtonQuitAnnotationWindow" value="//div[contains(@id,'annotationwindow') and contains(@class,'x-window-default')]/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+        <add key="ButtonInviteOther" value="//div[contains(@id,'shareduserlist') and contains(@class,'x-window-body-default')]/div[2]/div[contains(@class,'x-btn') and em/button/span[text()='邀请其他人']]" type="XPath"/>
+        <add key="ButtonCloseSubcribeWindow" value="//div[contains(@id,'shareduserlist') and contains(@class,'x-window-header-body-default')]/div/div/div[2]/img" type="XPath"/>
+
+      </homepage>
       
       <customersettings>
           <ptag>
@@ -508,9 +522,7 @@
       <energyview>
           <add key="TextFieldEnergyViewSaveDashboardWidgetName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='小组件名称']]//input[contains(@class,'x-form-field')]" type="XPath"/>
           <add key="TextFieldEnergyViewSaveDashboardDashboardName" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]//input[@name='newDashboardField']" type="XPath"/>
-          <add key="TextFieldModifyWidgetName" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]//input[@type='text' and @name='Name']" type="XPath"/>
-          <add key="TextFieldModifyDashboardName" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]//input[@type='text' and @name='Name']" type="XPath"/>
-
+          <add key="TextFieldWidgetAnnotation" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]//textarea[@name='Comment']" type="XPath"/>
       </energyview>
       <customersettings>
           <hierarchysettings>
@@ -613,10 +625,18 @@
               <add key="TextFieldUploadLogo" value="st-customer-logo-upload-button-fileInputEl" type="ID"/>
           </customersetting>
       </platformsettings>
+    <homepage>
+      <add key="TextFieldShareReceiveWindowComment" value="//div[contains(@id,'sharereceiverwindow')]/div[contains(@class,'x-window-body-default')]/table/tbody/tr/td/textarea[@name='Comment']" type="XPath"/>
+      <add key="TextFieldReceiveWindowComment" value="//div[contains(@id,'receiverwindow')]/div[contains(@class,'x-window-body-default')]/table/tbody/tr/td/textarea[@name='Comment']" type="XPath"/>
+      <add key="TextFieldModifyWidgetName" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]//input[@type='text' and @name='Name']" type="XPath"/>
+      <add key="TextFieldModifyDashboardName" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]//input[@type='text' and @name='Name']" type="XPath"/>
+      <add key="TextFieldEditModifyComment" value="//div[contains(@id,'annotationwindow') and contains(@class,'x-window-body-default')]/table/tbody/tr/td/textarea[@name='Annotation']" type="XPath"/>
+
+    </homepage>
   </TextField>
   <!--TextField End-->
 
-  <!--ComboBox-->
+  <!--ComboBox Begin-->
   <ComboBox>
       <login>
           <add key="ComboBoxLoginCustomerOption" value="//div[contains(@class,'x-window-default')]/div[contains(@class,'x-window-body-default')]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'combobox')]]" type="XPath"/>
@@ -745,8 +765,9 @@
      <add key="ComboBoxWidgetMaxDialogEndTime" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@id,'dateselector')]/div/table[4]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
    </Widget>
   </ComboBox>
+  <!--ComboBox End-->
 
-  <!--TreeView-->
+  <!--TreeView Begin-->
   <TreeView>
       <add key="HierarchyTreeEnergyView" value="//div[@id='em-hier-tree-body']/div/table" type="XPath"/>
       <add key="HierarchyTreeHierarchySettings" value="//div[@id='st-hier-tree-body']/div/table" type="XPath"/>
@@ -775,6 +796,7 @@
       
       <add key="HierarchyTreeCoperateRanking" value="//div[@id='em-rank-hier-tree-body']/div/table" type="XPath"/>
   </TreeView>
+  <!--TreeView End-->
 
   <!--Grid Begin-->
   <Grid>
@@ -849,12 +871,15 @@
     <add key="GridShareInfoList" value="//div[contains(@id,'window') and contains(@class,'x-window-body-default')]//div[contains(@id,'shareinfogrid') and not(contains(@style,'display: none;')) and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridMaxWidgetDataView" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridSendedUserList" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[2]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+    <add key="GridTrueShareUserList" value="//div[contains(@id,'sharereceiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[1]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+    <add key="GridTrueSendedUserList" value="//div[contains(@id,'sharereceiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[2]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+    <add key="GridSubscribeUserList" value="//div[contains(@id,'shareduserlist') and contains(@class,'x-window-body-default')]/div[3]/div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
 
-  </Homepage>
+    </Homepage>
   </Grid>
   <!--Grid End-->
 
-  <!--Date Picker-->
+  <!--Date Picker Begin-->
   <DatePicker>
     <EnergyUsage>
       <add key="DatePickerEnergyUsageStartDate" value="//div[@id='em-content-center-region-body']//table[contains(@class,'x-field x-date-field')][1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
@@ -884,9 +909,9 @@
     <add key="DatePickerWidgetMaxDialogEndDate" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]//div[contains(@id,'dateselector')]/div/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       </Widget>
   </DatePicker>
-  <!--Date Picker-->
+  <!--Date Picker End-->
   
-  <!--MonthPicker-->
+  <!--MonthPicker Begin-->
   <MonthPicker>
     <hierarchyproperty>
       <add key="MonthPickerPeopleEffectiveDate" value="//table[@id='st-hierarchy-dynamic-population-value-container']//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table[$#positionIndex]//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'monthfield')]]" type="XPath"/>
@@ -903,6 +928,7 @@
       <add key="MonthPickerLowPressureSteamCostEffectiveDate" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][10]/div/div[contains(@class,'x-container x-container-default')][$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EffectiveDate']]" type="XPath"/>
     </hierarchyproperty>
   </MonthPicker>
+  <!--MonthPicker End-->
  
   <!--CheckBoxField Begin-->
   <CheckBox>
@@ -985,6 +1011,10 @@
   
     <add key="LabelWidgetMinTitlePosition" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')][$#positionIndex]//div[contains(@class,'x-widget-header-text-container')]/span" type="XPath"/>
     <add key="LabelDashboardTitlePosition" value="//div[@id='hp-dashboard-list-targetEl']/div[contains(@id,'dashboardbutton')][$#positionIndex]/span[contains(@class,'x-dsbd-btn-text')]" type="XPath"/>
+    <add key="LabelWidgetMinAnnotationIcon" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']/../span[contains(@class,'x-widget-header-annotation')]" type="XPath"/>
+    <add key="LabelAnnotationText" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[1]/label" type="XPath"/>
+
+    <add key="LabelMaxWidgetComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='编辑']]/../../div[2]/label" type="XPath"/>
 
     </HomePage>
     
@@ -1001,7 +1031,7 @@
     </Tooltip>
   <!--Tooltip End-->
 
-  <!--Chart-->
+  <!--Chart Begin-->
   <Chart>
     
     <add key="ChartEnergyView" value="svg" type="TagName"/>
@@ -1013,8 +1043,9 @@
     <add key="ChartSuperWidget" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../../../../../self::node()/div[contains(@class,'x-widget-body-default')]//div[@class='highcharts-container']" type="XPath"/>
 
   </Chart>
+  <!--Chart End-->
 
-  <!--Window-->
+  <!--Window Begin-->
   <Window>
     <Login>
       <add key="WindowLoginOption" value="//div[contains(@class, 'x-window-default')]" type="XPath"/>
@@ -1028,9 +1059,10 @@
     <EnergyView>
       <add key="WindowMessageInfos" value="//div[contains(@id,'window') and contains(@class, 'x-window-default')]" type="XPath"/>
     </EnergyView>
-  </Window> 
+  </Window>
+  <!--Window End-->
 
-<!--Container-->
+  <!--Container Begin-->
   <Container>
   <hierarchypeopertysettings>
     <add key="ContainerPeopleItems" value="//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table" type="XPath"/>
@@ -1091,4 +1123,6 @@
   </platformsettings>
   
 </Container>
+  <!--Container End-->
+  
 </WebElement>

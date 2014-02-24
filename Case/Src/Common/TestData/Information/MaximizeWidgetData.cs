@@ -37,6 +37,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string DashboardName { get; set; }
         public string newDashboardName { get; set; }
         public string[] DashboardNames { get; set; }
+        public string Comment { get; set; }
     }
 
     public class TimeInterval

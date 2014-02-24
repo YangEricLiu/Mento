@@ -36,6 +36,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorMyFavirate = "ButtonNavigatorMyFavirate";
         public static string ButtonNavigatorAllDashboards = "ButtonNavigatorAllDashboards";
         public static string ButtonNavigatorRecentView = "ButtonNavigatorRecentView";
+        public static string ButtonNavigatorMyShare = "ButtonNavigatorMyShare";
 
         public static string ButtonNavigatorBenchMarkSettings = "ButtonNavigatorBenchMarkSettings";
         public static string ButtonNavigatorIndustryLabelingSettings = "ButtonNavigatorIndustryLabelingSetting";
@@ -501,7 +502,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TabButtonShareInfoReceived = "TabButtonShareInfoReceived";
         public static string TabButtonShareInfoSended = "TabButtonShareInfoSended";
         public static string ButtonDashboardPosition = "ButtonDashboardPosition";
-
+        public static string LinkButtonAnnotationEdit = "LinkButtonAnnotationEdit";
+        public static string LinkButtonAnnotationAdd = "LinkButtonAnnotationAdd";
+        public static string ButtonMyShareWidgetRename = "ButtonMyShareWidgetRename";
+        public static string ButtonCancelShareWidget = "ButtonCancelShareWidget";
+        public static string LinkButtonWidgetMaxWidgetEditComment = "LinkButtonWidgetMaxWidgetEditComment";
+        public static string ButtonSaveAnnotationWindow = "ButtonSaveAnnotationWindow";
+        public static string ButtonQuitAnnotationWindow = "ButtonQuitAnnotationWindow";
+        public static string ButtonInviteOther = "ButtonInviteOther";
+        public static string ButtonCloseSubcribeWindow = "ButtonCloseSubcribeWindow";
         #endregion
 
         #endregion
@@ -538,6 +547,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldEnergyViewSaveDashboardDashboardName = "TextFieldEnergyViewSaveDashboardDashboardName";
         public static string TextFieldModifyWidgetName = "TextFieldModifyWidgetName";
         public static string TextFieldModifyDashboardName = "TextFieldModifyDashboardName";
+        public static string TextFieldWidgetAnnotation = "TextFieldWidgetAnnotation";
         #endregion
 
         #region customersettings
@@ -653,10 +663,18 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldCustomerComment = "TextFieldCustomerComment";
         public static string TextFieldUploadLogo = "TextFieldUploadLogo";
         #endregion
+
         #region FunctionRoleType
         public static string TextFieldFunctionRoleTypeName = "TextFieldFunctionRoleTypeName";
         #endregion
 
+        #endregion
+
+        #region homepage
+
+        public static string TextFieldShareReceiveWindowComment = "TextFieldShareReceiveWindowComment";
+        public static string TextFieldReceiveWindowComment = "TextFieldReceiveWindowComment";
+        public static string TextFieldEditModifyComment = "TextFieldEditModifyComment";
         #endregion
 
         #endregion
@@ -936,6 +954,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridShareInfoList = "GridShareInfoList";
         public static string GridMaxWidgetDataView = "GridMaxWidgetDataView";
         public static string GridSendedUserList = "GridSendedUserList";
+        public static string GridTrueShareUserList = "GridTrueShareUserList";
+        public static string GridTrueSendedUserList = "GridTrueSendedUserList";
+        public static string GridSubscribeUserList = "GridSubscribeUserList";
 
         #endregion
 
@@ -1082,6 +1103,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string LabelWidgetMinTitlePosition = "LabelWidgetMinTitlePosition";
         public static string LabelDashboardTitlePosition = "LabelDashboardTitlePosition";
+        public static string LabelWidgetMinAnnotationIcon = "LabelWidgetMinAnnotationIcon";
+        public static string LabelAnnotationText = "LabelAnnotationText";
+
+        public static string LabelMaxWidgetComment = "LabelMaxWidgetComment";
 
         #endregion
 

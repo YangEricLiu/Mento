@@ -107,20 +107,17 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Select ‘Energy Consumption’ option.Display Hierarchy Mode button (SingleHierarchyNode is selected by default).
             //Display Hierarchy Tree Selector.Display tag selector which support tags under hierarchy node, system node, and area node.
 
-            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(),FuncModeConvertTarget.Energy);
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(),"能耗");
             UnitIndicator.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
-            UnitIndicator.CheckTag(input.InputData.commodityNames[0]);
-
-
-
 
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             TimeManager.LongPause();
-            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), FuncModeConvertTarget.Carbon);
+
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "碳排放");
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
-            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), FuncModeConvertTarget.Cost);
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "成本");
 
             // Chart is not redrawn when switching the function type option.@@@@@ not finish
            

@@ -61,6 +61,17 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        private IWebElement _CancelShareButton;
+        protected IWebElement CancelShareButton
+        {
+            get
+            {
+                //if (this._QuitShareButton == null)
+                this._CancelShareButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.MessageBoxCancelShareButton));
+                return this._CancelShareButton;
+            }
+        }
+
         private IWebElement _YesButton;
         protected IWebElement YesButton
         {

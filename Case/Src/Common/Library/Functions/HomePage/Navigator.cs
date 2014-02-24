@@ -146,6 +146,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.MyFavirate, new NavigatorItem(NavigationTarget.MyFavirate,NavigationTarget.Dashboards,JazzButton.NavigatorMyFavirateButton)},
             {NavigationTarget.AllDashboards, new NavigatorItem(NavigationTarget.AllDashboards,NavigationTarget.Dashboards,JazzButton.NavigatorAllDashboardsButton)},
             {NavigationTarget.RecentView, new NavigatorItem(NavigationTarget.RecentView,NavigationTarget.Dashboards,JazzButton.NavigatorRecentViewButton)},    
+            {NavigationTarget.MyShare, new NavigatorItem(NavigationTarget.MyShare,NavigationTarget.Dashboards,JazzButton.NavigatorMyShareButton)},    
         };
 
         public NavigationTarget? Parent
@@ -235,5 +236,6 @@ namespace Mento.ScriptCommon.Library.Functions
         MyFavirate = 207,
         AllDashboards = 208,
         RecentView = 209,
+        MyShare = 210,
     }
 }

@@ -163,7 +163,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
             TimeManager.LongPause();
             //Select Commodity=电 to display trend chart; Unit=单位人口.
-            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            CorporateRanking.SelectSystemCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.ClickRankTypeConvertTarget();
             EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.AverageRank);
 

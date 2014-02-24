@@ -28,6 +28,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField EnergyViewSaveDashboardDashboardNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldEnergyViewSaveDashboardDashboardName);
         public static TextField TextFieldModifyWidgetName = GetControl<TextField>(JazzControlLocatorKey.TextFieldModifyWidgetName);
         public static TextField ModifyDashboardNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldModifyDashboardName);
+        public static TextField WidgetAnnotationTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldWidgetAnnotation);
 
         #endregion
 
@@ -111,18 +112,23 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Workday
         public static TextField WorkdayCalendarNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldWorkdayCalendarName);
         #endregion
+
         #region Worktime
         public static TextField WorktimeCalendarNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldWorktimeCalendarName);
         #endregion
+
         #region HeatingCoolingSeason
         public static TextField HeatingCoolingSeasonCalendarNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldHeatingCoolingSeasonCalendarName);
         #endregion
+
         #region Daynight
         public static TextField DayNightCalendarNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldDayNightCalendarName);
         #endregion
+
         #region Carbonfactor
         public static TextField CarbonFactorValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCarbonFactorValue, 1);
         #endregion
+
         #region TOU
         public static TextField TOUBasicPropertyNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTOUBasicPropertyName, 1);
         public static TextField TOUBasicPropertyPlainPriceValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTOUBasicPropertyPlainPriceValue, 1);
@@ -130,6 +136,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField TOUBasicPropertyValleyPriceValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTOUBasicPropertyValleyPriceValue, 1);
         public static TextField TOUPulsePeakPropertyPriceValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTOUPulsePeakPropertyPriceValue, 1);        
         #endregion
+
         #region Customer settings
         public static TextField CustomerNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerName);
         public static TextField CustomercodeTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerCode);
@@ -140,6 +147,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField CustomerCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerComment);
         public static TextField UploadLogoTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUploadLogo);
         #endregion
+
         #region User Setting
         public static TextField UserNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserName);
         public static TextField UserRealNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserRealName);
@@ -148,9 +156,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField UserTitleTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserTitle);
         public static TextField UserCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserComment);
         #endregion
+
         #region UserFunctionRoleType
         public static TextField FunctionRoleTypeNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldFunctionRoleTypeName);
         #endregion
+
         #region User Profile
         public static TextField UserProfileNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserProfileName);
         public static TextField UserProfileRealNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserProfileRealName);
@@ -162,6 +172,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField UserNewPasswordTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserNewPassword);
         public static TextField UserConfirmPasswordTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldUserConfirmPassword);
         #endregion
+        #endregion
+
+        #region homepage
+
+        public static TextField ShareReceiveWindowCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldShareReceiveWindowComment);
+        public static TextField ReceiveWindowCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldReceiveWindowComment);
+        public static TextField EditModifyCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldEditModifyComment);
+
         #endregion
     }
 }

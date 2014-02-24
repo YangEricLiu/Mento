@@ -80,6 +80,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Label WidgetShareResourceCommonLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetShareResourceCommon);
         public static Label WidgetShareResourceTimeLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetShareResourceTime);
         public static Label WidgetShareResourceUserLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetShareResourceUser);
+        public static Label AnnotationTextLabel = GetControl<Label>(JazzControlLocatorKey.LabelAnnotationText);
+        public static Label MaxWidgetCommentLabel = GetControl<Label>(JazzControlLocatorKey.LabelMaxWidgetComment);
 
         #endregion
 

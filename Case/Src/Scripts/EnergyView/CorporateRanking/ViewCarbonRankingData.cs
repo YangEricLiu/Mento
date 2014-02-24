@@ -66,7 +66,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Click Function Type button, select Carbon.
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -173,7 +172,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Click Function Type button, select Carbon, Commodity=煤, time range=2012/01/01-2012/12/31 to view chart.
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -225,7 +223,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Click Function Type button, select Carbon.  Commodity=煤
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -327,13 +324,14 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.MediumPause();
 
             //·Ranking chart redraw successfully.
+            /*no data for tree
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4]);
             TimeManager.MediumPause();
             CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
             TimeManager.LongPause();
             TimeManager.LongPause();
-
+            */
             //Check 1 more the BuildingNoCalendarNoCost from Hierarchy Tree,
             string[] extendNode = { "NancyOtherCustomer3", "NancyOtherSite", "BuildingNoCalendarNoCost" };
             CorporateRanking.CheckHierarchyNode(extendNode);
@@ -384,7 +382,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Click Function Type button, select Carbon, Commodity=柴油, time range=2013/01/01-2013/01/03 to view chart.
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -433,7 +430,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Click Ranking Type button, select Cost, check Commodity=电,rank type="总排名"，
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -477,15 +473,15 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //· Ranking chart display successfully.
             // True here 
-            Assert.IsTrue(CorporateRanking.IsNoDataInEnergyGrid());
-            /*
+            // Assert.IsTrue(CorporateRanking.IsNoDataInEnergyGrid());
+            
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1]);
             TimeManager.MediumPause();
             CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
             TimeManager.LongPause();
             TimeManager.LongPause();
-            */
+            
         }
 
 
@@ -509,7 +505,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Click Ranking Type button, select Carbon, check Commodity=电,rank type="总排名"，
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();

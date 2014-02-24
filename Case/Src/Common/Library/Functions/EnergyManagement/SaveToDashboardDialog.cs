@@ -34,6 +34,9 @@ namespace Mento.ScriptCommon.Library.Functions
         //Dashboard name textbox
         private static TextField DashboardNameTextbox = JazzTextField.EnergyViewSaveDashboardDashboardNameTextField;
 
+        //Widget annotation
+        private static TextField WidgetAnnotationTextArea = JazzTextField.WidgetAnnotationTextField;
+
         public void Save(string widgetName, string[] hierarchyNamePath, bool isCreateDashboard, string dashboardName)
         {
             WidgetNameTextbox.Fill(widgetName);
@@ -49,6 +52,28 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 DashboardComboBox.SelectItem(dashboardName);
             }
+
+            base.Confirm();
+        }
+
+        public void SaveWithAnnotation(string widgetName, string[] hierarchyNamePath, bool isCreateDashboard, string dashboardName, string comment)
+        {
+            WidgetNameTextbox.Fill(widgetName);
+            WidgetSaveHierarchy.Click();
+            WidgetSaveHierarchyTree.SelectNode(hierarchyNamePath);
+            TimeManager.LongPause();
+            if (isCreateDashboard)
+            {
+                CreateDashboardButton.Click();
+                DashboardNameTextbox.Fill(dashboardName);
+            }
+            else
+            {
+                DashboardComboBox.SelectItem(dashboardName);
+            }
+
+            WidgetAnnotationTextArea.Fill(comment);
+            TimeManager.ShortPause();
 
             base.Confirm();
         }

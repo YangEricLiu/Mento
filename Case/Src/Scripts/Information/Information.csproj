@@ -64,6 +64,7 @@
     <Compile Include="Share\ShareDashboard1ValidSuite.cs" />
     <Compile Include="Share\ShareDashboardInvalidSuite.cs" />
     <Compile Include="Share\MarkWidgetReadValidSuite.cs" />
+    <Compile Include="Widgets\AnnotationViewSuite.cs" />
     <Compile Include="Widgets\SaveWidgetToDashboardSuite.cs" />
     <Compile Include="Widgets\MaximizeWidgetSuite.cs" />
     <Compile Include="Widgets\DeleteWidgetSuite.cs" />

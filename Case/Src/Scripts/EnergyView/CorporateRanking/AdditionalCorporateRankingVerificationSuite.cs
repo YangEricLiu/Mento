@@ -495,8 +495,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Function type  = "Energy analysis"
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
+            //Function type  = "Carbon"
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -631,8 +630,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Function type  = "Energy analysis"
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
+            //Function type  = "Carbon"
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -763,8 +761,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Function type  = "Energy analysis"
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
+            //Function type  = "Carbon"
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -899,8 +896,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Function type  = "Energy analysis"
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
+            //Function type  = "Cost"
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -1035,8 +1031,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Function type  = "Energy analysis"
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
+            //Function type  = "Cost"
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -1167,8 +1162,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Function type  = "Energy analysis"
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
+            //Function type  = "Cost"
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -1290,7 +1284,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-AdditionalCorporateRankingVerificationSuite-DataView-102-1")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(AdditionalCorporateRankingVerificationSuite), "TC-J1-FVT-AdditionalCorporateRankingVerificationSuite-DataView-101-1")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(AdditionalCorporateRankingVerificationSuite), "TC-J1-FVT-AdditionalCorporateRankingVerificationSuite-DataView-102-1")]
         public void SystemRankingEnergyAnalysisAdditional(CorporateRankingData input)
         {
             CorporateRanking.NavigateToCorporateRanking();
@@ -1298,9 +1292,9 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //Hierarchy = Select the 楼宇C from Hierarchy Tree.
             CorporateRanking.ClickSelectHierarchyButton();
-            //CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies);
             //CorporateRanking.OnlyCheckHierarchyNode(extendHierarchyNode1);
-            CorporateRanking.OnlyCheckHierarchyNode(extendHierarchyNode2);
+            //CorporateRanking.OnlyCheckHierarchyNode(extendHierarchyNode2);
             //CorporateRanking.OnlyCheckHierarchyNode(extendHierarchyNode3);
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -1312,16 +1306,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            //Function type  = "Energy analysis"
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
-            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Energy);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
-            TimeManager.LongPause();
-
             #region   Electricity ranking
 
             //Year
@@ -1331,7 +1315,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.ShortPause();
 
             //Commodity='电'
-            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            CorporateRanking.SelectSystemCommodity(input.InputData.commodityNames[0]);
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
@@ -1415,7 +1399,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
         #region  Total Ranking   energy analysis
         [Test]
         [CaseID("TC-J1-FVT-AdditionalCorporateRankingVerificationSuite-DataView-103-1")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(AdditionalCorporateRankingVerificationSuite), "TC-J1-FVT-AdditionalCorporateRankingVerificationSuite-DataView-101-1")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(AdditionalCorporateRankingVerificationSuite), "TC-J1-FVT-AdditionalCorporateRankingVerificationSuite-DataView-103-1")]
         public void BuildingABCDERankingAdditional(CorporateRankingData input)
         {
             CorporateRanking.NavigateToCorporateRanking();

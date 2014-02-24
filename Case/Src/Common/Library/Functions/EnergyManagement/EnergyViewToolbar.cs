@@ -244,5 +244,13 @@ namespace Mento.ScriptCommon.Library.Functions
 
             DashboardDialog.Save(widgetName, hierarchyName, isCreateDashboard, dashboardName);
         }
+
+        public void SaveToDashboardwithAnnotation(string widgetName, string[] hierarchyName, bool isCreateDashboard, string dashboardName, string comment)
+        {
+            MoreMenu.SwitchMenuItem(EnergyViewMoreOption.ToDashboard);
+            TimeManager.FlashPause();
+
+            DashboardDialog.SaveWithAnnotation(widgetName, hierarchyName, isCreateDashboard, dashboardName, comment);
+        }
     }
 }

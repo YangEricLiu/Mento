@@ -25,6 +25,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string MessageBoxYesButton = "MessageBoxYesButton";
         public static string MessageBoxNoButton = "MessageBoxNoButton";
         public static string MessageBoxCancelButton = "MessageBoxCancelButton";
+        public static string MessageBoxCancelShareButton = "MessageBoxCancelShareButton";
         public static string MessageBoxDeleteButton = "MessageBoxDeleteButton";
         public static string MessageBoxCloseButton = "MessageBoxCloseButton";
         public static string MessageBoxClearButton = "MessageBoxClearButton";

@@ -453,6 +453,13 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
 
+        public void FloatOnEditCommentButton(string name)
+        {
+            Label WidgetMinAnnotationIcon = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelWidgetMinAnnotationIcon, name);
+
+            WidgetMinAnnotationIcon.Float();
+        }
+
         public void MaximizeWidget(string name)
         {
             FloatOnWidget(name);

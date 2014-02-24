@@ -170,10 +170,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorHierarchySettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorHierarchySettings);//{NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,"setting-tab-hiersetting-btn-btnEl",ByType.ID)},
         public static Button NavigatorAssociationSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAssociationSettings);//{NavigationTarget.AssociationSettings, new NavigatorItem(NavigationTarget.AssociationSettings,NavigationTarget.Settings,"setting-tab-tagassoc-btn-btnEl",ByType.ID)},
 
-        public static Button NavigatorMyFavirateButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorMyFavirate);
-        public static Button NavigatorAllDashboardsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAllDashboards);
-        public static Button NavigatorRecentViewButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorRecentView);
-
         //level 3
         //--Time
         public static Button NavigatorTimeSettingsWorkdayButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTimeSettingsWorkday);//{NavigationTarget.PlatformWorkday, new NavigatorItem(NavigationTarget.PlatformWorkday,NavigationTarget.PlatformSettings,"st-menu-workday-btnEl",ByType.ID)},
@@ -203,6 +199,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorAssociationAreaDimensionButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAssociationAreaDimension);//{NavigationTarget.AssociationAreaDimension, new NavigatorItem(NavigationTarget.AssociationAreaDimension,NavigationTarget.AssociationSettings,"st-menu-areadtags-btnEl",ByType.ID)},
         //select customer
         public static Button NavigatorSelectedCustomerButton = GetControl<Button>(JazzControlLocatorKey.ButtonVTagSettingsDelete);
+
+        //Dashboards
+        public static Button NavigatorMyFavirateButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorMyFavirate);
+        public static Button NavigatorAllDashboardsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAllDashboards);
+        public static Button NavigatorRecentViewButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorRecentView);
+        public static Button NavigatorMyShareButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorMyShare);
+
         #endregion
 
         #region Customer settings buttons
@@ -532,7 +535,24 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TabButton ShareInfoReceivedTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonShareInfoReceived);
         public static TabButton ShareInfoSendedTabButton = GetControl<TabButton>(JazzControlLocatorKey.TabButtonShareInfoSended);
 
+        public static LinkButton AnnotationEditLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonAnnotationEdit);
+        public static LinkButton AnnotationAddLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonAnnotationAdd);
+
+        public static LinkButton WidgetMaxWidgetEditCommentLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonWidgetMaxWidgetEditComment);
+        public static Button SaveAnnotationWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonSaveAnnotationWindow);
+        public static Button QuitAnnotationWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonQuitAnnotationWindow);
+        public static Button InviteOtherButton = GetControl<Button>(JazzControlLocatorKey.ButtonInviteOther);
+        public static Button CloseSubcribeWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonCloseSubcribeWindow);
+
         #endregion
+
+        #region My Share
+
+        public static Button MyShareWidgetRenameButton = GetControl<Button>(JazzControlLocatorKey.ButtonMyShareWidgetRename);
+        public static Button CancelShareWidgetButton = GetControl<Button>(JazzControlLocatorKey.ButtonCancelShareWidget);
+
+        #endregion
+
         #endregion
     }
 }

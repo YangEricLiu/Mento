@@ -450,6 +450,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Labeling
         public static string ButtonAddLabeling = "ButtonAddLabeling";
+        public static string ButtonCancelLabeling = "ButtonCancelLabeling";
+        public static string ButtonSaveLabeling = "ButtonSaveLabeling";
+        public static string ButtonModifyLabeling = "ButtonModifyLabeling";
+        public static string ButtonDeleteLabeling = "ButtonDeleteLabeling";
 
         #endregion
 
@@ -814,6 +818,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region Labeling
+        public static string ComboBoxLabelingIndustry = "ComboBoxLabelingIndustry";
+        public static string ComboBoxLabelingClimateRegion = "ComboBoxLabelingClimateRegion";
+        public static string ComboBoxLabelingEnergyEfficiencyLabelingLevel = "ComboBoxLabelingEnergyEfficiencyLabelingLevel";
+
+
+        #endregion
         #endregion
 
         #region HomePage
@@ -945,6 +956,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridCarbonFactorsList = "GridCarbonFactorsList";
 
         public static string GridIndustryBenchmarkList = "GridIndustryBenchmarkList";
+        public static string GridIndustryLabelingList = "GridIndustryLabelingList";
         #endregion
 
         #region home page
@@ -1071,6 +1083,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region BenchMarkSetting
         public static string LabelPlatformBenchMarkSetting = "LabelPlatformBenchMarkSetting";
         
+        #endregion
+
+        #region LabelingSetting
+        public static string LabelPlatformLabelingSetting = "LabelPlatformLabelingSetting";
+
         #endregion
 
         #region CustomerMapInfo
@@ -1231,6 +1248,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region IndustryBenchMark
         public static string CheckBoxBenchMark = "CheckBoxBenchMark";
+        #endregion
+
+        #region IndustryLabeling
+        public static string CheckBoxLabeling = "CheckBoxLabeling";
         #endregion
 
         #endregion

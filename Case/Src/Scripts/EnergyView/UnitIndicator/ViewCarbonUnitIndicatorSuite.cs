@@ -733,7 +733,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-View-101-3923")]
         public void ViewCarbonUnitIndicator3923(UnitIndicatorData input)
         {
-            //1. Go Unit Carbon, go to NancyOtherCustomer3=> BuildingLabelling1->Commodity=天然气.
+            //1. Go Unit Carbon, go to NancyOtherCustomer3=> BuildingLabeling1->Commodity=天然气.
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.ShortPause();
             UnitKPIPanel.NavigateToUnitIndicator();

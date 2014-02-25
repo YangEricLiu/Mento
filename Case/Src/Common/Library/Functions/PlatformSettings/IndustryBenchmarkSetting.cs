@@ -52,7 +52,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         /// <summary>
         /// Click Add button
-        /// </summary>
+        /// </summary> 
         /// <param></param>
         /// <returns></returns>
         public void ClickAddBenchMark()

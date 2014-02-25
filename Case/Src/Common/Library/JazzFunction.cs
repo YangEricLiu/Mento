@@ -218,15 +218,15 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        private static LabelingSetting _LabelingSetting;
-        public static LabelingSetting LabelingSetting
+        private static IndustryLabelingSetting _IndustryLabelingSetting;
+        public static IndustryLabelingSetting IndustryLabelingSetting
         {
             get
             {
-                if (_LabelingSetting == null)
-                    _LabelingSetting = new LabelingSetting();
+                if (_IndustryLabelingSetting == null)
+                    _IndustryLabelingSetting = new IndustryLabelingSetting();
 
-                return _LabelingSetting;
+                return _IndustryLabelingSetting;
             }
         }
 

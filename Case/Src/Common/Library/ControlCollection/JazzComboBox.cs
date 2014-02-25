@@ -87,7 +87,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox WorkdayCalendarStartDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarStartDate, 1);
         public static ComboBox WorkdayCalendarEndMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarEndMonth, 1);
         public static ComboBox WorkdayCalendarEndDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarEndDate, 1);
-        #endregion
+        #endregion 
 
         #region Worktime
         public static ComboBox WorktimeCalendarStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorktimeCalendarStartTime, 1);
@@ -143,6 +143,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region BenchMark
         public static ComboBox BenchmarkComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxBenchmark, 1);
+
+        #endregion
+
+        #region Labeling
+        public static ComboBox IndustryComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingIndustry, 1);
+        public static ComboBox ClimateRegionComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingClimateRegion, 1);
+        public static ComboBox EnergyEfficiencyLabelingLevelComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingEnergyEfficiencyLabelingLevel, 1);
 
         #endregion
 

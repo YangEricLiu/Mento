@@ -58,6 +58,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Label PlatformBenchMarkLabel = GetControl<Label>(JazzControlLocatorKey.LabelPlatformBenchMarkSetting);
         #endregion
 
+        # region labelingseting
+        public static Label PlatformLabelingLabel = GetControl<Label>(JazzControlLocatorKey.LabelPlatformLabelingSetting);
+        #endregion
         #region CustomerMapInfo
         public static Label PlatformCustomerMapInfoLabel = GetControl<Label>(JazzControlLocatorKey.LabelPlatformCustomerMapInfo);
         #endregion

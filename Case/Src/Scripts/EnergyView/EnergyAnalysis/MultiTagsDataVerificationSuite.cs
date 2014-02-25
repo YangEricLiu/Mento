@@ -111,7 +111,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //"Day"
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
+            TimeManager.LongPause(); 
 
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();

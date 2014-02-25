@@ -119,6 +119,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static Grid BenchMarkList = GetControl<Grid>(JazzControlLocatorKey.GridIndustryBenchmarkList);
 
+        public static Grid LabelingList = GetControl<Grid>(JazzControlLocatorKey.GridIndustryLabelingList);
+
         #endregion
 
         #region home page

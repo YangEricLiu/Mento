@@ -443,8 +443,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
-        #region BenchMark
+        #region Labeling
         public static Button AddLabelingButton = GetControl<Button>(JazzControlLocatorKey.ButtonAddLabeling);
+        public static Button CancelLabelingButton = GetControl<Button>(JazzControlLocatorKey.ButtonCancelLabeling);
+        public static Button SaveLabelingButton = GetControl<Button>(JazzControlLocatorKey.ButtonSaveLabeling);
+        public static Button ModifyLabelingButton = GetControl<Button>(JazzControlLocatorKey.ButtonModifyLabeling);
+        public static Button DeleteLabelingButton = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteLabeling);
+
         #endregion
 
         #region User setting

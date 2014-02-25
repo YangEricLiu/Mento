@@ -87,7 +87,7 @@
     <Compile Include="Functions\EnergyManagement\TabbedEnergyViewPanel.cs" />
     <Compile Include="Functions\HomePage\HomePage.cs" />
     <Compile Include="Functions\HomePage\UserPasswordDialog.cs" />
-    <Compile Include="Functions\PlatformSettings\LabelingSetting.cs" />
+    <Compile Include="Functions\PlatformSettings\IndustryLabelingSetting.cs" />
     <Compile Include="Functions\PlatformSettings\IndustryBenchmarkSetting.cs" />
     <Compile Include="Functions\PlatformSettings\TOUPulsePeakTariffSettings.cs" />
     <Compile Include="Functions\PlatformSettings\TOUBasicTariffSettings.cs" />

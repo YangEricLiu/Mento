@@ -183,7 +183,8 @@
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkModifyValidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Modify-101-1.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkViewSuite\TC-J1-FVT-IndustryBenchmarkSetting-View-101-1.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkDeleteValidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Delete-101-1.json" />
-    <None Include="Data\Administration\IndustryLabeling\LabelingAddInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Add-001-1.json" />
+    <None Include="Data\Administration\IndustryLabeling\LabelingAddInvalidSuite\TC-J1-FVT-IndustrylabelingSetting-Add-002.json" />
+    <None Include="Data\Administration\IndustryLabeling\LabelingAddInvalidSuite\TC-J1-FVT-IndustryLabelingSetting-Add-001.json" />
     <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonModifySuite\TC-J1-FVT-TimeManagementHCSeason-Modify-001.json" />
     <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonModifySuite\TC-J1-FVT-TimeManagementHCSeason-Modify-002.json" />
     <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonModifySuite\TC-J1-FVT-TimeManagementHCSeason-Modify-101.json" />

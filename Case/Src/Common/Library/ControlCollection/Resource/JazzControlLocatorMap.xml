@@ -19,6 +19,8 @@
             <add key="ButtonNavigatorUnitKPI" value="em-functionPanel-eUnitEnergy" type="ID"/>
             <add key="ButtonNavigatorEnergyRatio" value="em-functionPanel-eEnergyRatio" type="ID"/>
             <add key="ButtonNavigatorRank" value="em-functionPanel-eRank" type="ID"/>
+            <add key="ButtonNavigatorLabeling" value="em-functionPanel-eEnergyLabeling" type="ID"/>
+
             <add key="ButtonNavigatorTimeSettings" value="st-menu-timecfg" type="ID"/>
             <add key="ButtonNavigatorCarbonSettings" value="st-menu-carbon-lv1" type="ID"/>
             <add key="ButtonNavigatorPriceSettings" value="st-menu-price-lv1" type="ID"/>
@@ -668,8 +670,10 @@
           <add key="ComboBoxIntervalDialogBaseStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
           <add key="ComboBoxIntervalDialogBaseEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[4]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
           <add key="ComboBoxIntervalDialogAdditionStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
-  
-    </energyview>
+          <add key="ComboBoxLabelingYear" value="//div[@id='eem-labeling-chartgridpanel']/div/div/table[1]/tbody/tr/td[contains(@class, 'x-form-trigger-wrap-focus')]/table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
+          <add key="ComboBoxLabelingMonth" value="//div[@id='eem-labeling-chartgridpanel']/div/div/table[2]/tbody/tr/td[contains(@class, 'x-form-trigger-wrap-focus')]/table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
+
+      </energyview>
       <customersettings>
           <hierarchy>
               <add key="ComboBoxHierarchySettingsHierarchyType" value="//div[@id='st-hier-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='Type']]" type="XPath"/>

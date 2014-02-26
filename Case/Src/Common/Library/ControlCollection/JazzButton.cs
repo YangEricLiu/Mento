@@ -156,7 +156,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorUnitKPIButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorUnitKPI);
         public static Button NavigatorEnergyRatioButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorEnergyRatio);
         public static Button NavigatorRankButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorRank);
-
+        public static Button NavigatorLabelingButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorLabeling);
+       
         public static Button NavigatorTimeSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTimeSettings);
         public static Button NavigatorCarbonSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorCarbonSettings);
         public static Button NavigatorPriceSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorPriceSettings);

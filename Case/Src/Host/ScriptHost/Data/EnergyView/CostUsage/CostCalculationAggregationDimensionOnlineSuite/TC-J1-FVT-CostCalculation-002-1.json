@@ -1,0 +1,128 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"SystemDimensionPath":["楼宇A", "空调"],
+			"commodityNames":["电", "自来水", "煤"],
+			"DisplayStep":"Hour",
+			"ManualTimeRange":[{
+				"StartDate":"2012-6-25",
+				"EndDate":"2012-7-4",	
+			}],
+			"failedFileName":["F-CostCalculation-002-1-楼宇A-H-0.xls", "F-CostCalculation-002-1-楼宇A-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-1-楼宇A-H-0.xls", "CostCalculation-002-1-楼宇A-Total-1.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
+			"commodityNames":["电", "自来水", "煤"],
+			"SystemDimensionPath":["楼宇B", "空调"],
+			"DisplayStep":"Hour",
+			"ManualTimeRange":[{
+				"StartDate":"2012-6-25",
+				"EndDate":"2012-7-4",	
+			}],
+			"failedFileName":["F-CostCalculation-002-1-楼宇B-H-0.xls", "F-CostCalculation-002-1-楼宇B-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-1-楼宇B-H-0.xls", "CostCalculation-002-1-楼宇B-Total-1.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区B", "楼宇C"],
+			"commodityNames":["电", "自来水", "煤"],
+			"SystemDimensionPath":["楼宇C", "空调"],
+			"DisplayStep":"Day",
+			"ManualTimeRange":[{
+				"StartDate":"2012-7-4",
+				"EndDate":"2012-8-3",	
+			}],
+			"failedFileName":["F-CostCalculation-002-1-楼宇C-D-0.xls", "F-CostCalculation-002-1-楼宇C-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-1-楼宇C-D-0.xls", "CostCalculation-002-1-楼宇C-Total-1.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织B", "园区C", "楼宇D"],
+			"commodityNames":["电", "自来水", "煤"],
+			"SystemDimensionPath":["楼宇D", "空调"],
+			"DisplayStep":"Day",
+			"ManualTimeRange":[{
+				"StartDate":"2012-7-4",
+				"EndDate":"2012-8-3",	
+			}],
+			"failedFileName":["F-CostCalculation-002-1-楼宇D-D-0.xls", "F-CostCalculation-002-1-楼宇D-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-1-楼宇D-D-0.xls", "CostCalculation-002-1-楼宇D-Total-1.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A"],
+			"commodityNames":["电", "自来水", "煤"],
+			"SystemDimensionPath":["园区A", "空调"],
+			"DisplayStep":"Hour",
+			"ManualTimeRange":[{
+				"StartDate":"2012-6-25",
+				"EndDate":"2012-7-4",	
+			}],
+			"failedFileName":["F-CostCalculation-002-1-园区A-H-0.xls", "F-CostCalculation-002-1-园区A-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-1-园区A-H-0.xls", "CostCalculation-002-1-园区A-Total-1.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A"],
+			"commodityNames":["电", "自来水", "煤"],
+			"SystemDimensionPath":["组织A", "空调"],
+			"DisplayStep":"Hour",
+			"ManualTimeRange":[{
+				"StartDate":"2012-6-25",
+				"EndDate":"2012-7-4",	
+			}],
+			"failedFileName":["F-CostCalculation-002-1-组织A-H-0.xls", "F-CostCalculation-002-1-组织A-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-1-组织A-H-0.xls", "CostCalculation-002-1-组织A-Total-1.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2"],
+			"commodityNames":["电", "自来水", "煤"],
+			"SystemDimensionPath":["NancyCostCustomer2", "空调"],
+			"DisplayStep":"Hour",
+			"ManualTimeRange":[{
+				"StartDate":"2012-6-25",
+				"EndDate":"2012-7-4",	
+			}],
+			"failedFileName":["F-CostCalculation-002-1-NancyCostCustomer2-H-0.xls", "F-CostCalculation-002-1-NancyCostCustomer2-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-1-NancyCostCustomer2-H-0.xls", "F-CostCalculation-002-1-NancyCostCustomer2-Total-1.xls"],
+		}
+	}
+]

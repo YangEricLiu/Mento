@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"]],
+			"tagNames":["Labellingtag1"],
+			"Industries":["夏热冬暖地区酒店（三星级）"],
+			"ManualTimeRange":[{
+				"StartDate":"2009-1-1",
+				"EndDate":"2013-12-31",	
+			}],
+			"failedFileName":["F-ConsumptionWorKNonworkRatio-101-2-M-0.xls", "F-ConsumptionWorKNonworkRatio-101-2-Y-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionWorKNonworkRatio-101-2-M-0.xls", "ConsumptionWorKNonworkRatio-101-2-Y-1.xls"],
+		}
+	}
+]

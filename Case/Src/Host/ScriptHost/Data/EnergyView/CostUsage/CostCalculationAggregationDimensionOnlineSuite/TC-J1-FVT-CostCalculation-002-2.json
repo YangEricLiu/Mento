@@ -1,0 +1,74 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"AreaDimensionPath":["楼宇A", "一层"],
+			"commodityNames":["电", "自来水", "煤"],
+			"DisplayStep":"Hour",
+			"ManualTimeRange":[{
+				"StartDate":"2012-6-25",
+				"EndDate":"2012-7-4",	
+			}],
+			"failedFileName":["F-CostCalculation-002-2-楼宇A-H-0.xls", "F-CostCalculation-002-2-楼宇A-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-2-楼宇A-H-0.xls", "CostCalculation-002-2-楼宇A-Total-1.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
+			"commodityNames":["电", "自来水", "煤"],
+			"AreaDimensionPath":["楼宇B", "一层"],
+			"DisplayStep":"Hour",
+			"ManualTimeRange":[{
+				"StartDate":"2012-6-25",
+				"EndDate":"2012-7-4",	
+			}],
+			"failedFileName":["F-CostCalculation-002-2-楼宇B-H-0.xls", "F-CostCalculation-002-2-楼宇B-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-2-楼宇B-H-0.xls", "CostCalculation-002-2-楼宇B-Total-1.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区B", "楼宇C"],
+			"commodityNames":["电", "自来水", "煤"],
+			"AreaDimensionPath":["楼宇C", "一层"],
+			"DisplayStep":"Week",
+			"ManualTimeRange":[{
+				"StartDate":"2012-7-4",
+				"EndDate":"2012-9-3",	
+			}],
+			"failedFileName":["F-CostCalculation-002-2-楼宇C-W-0.xls", "F-CostCalculation-002-2-楼宇C-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-2-楼宇C-W-0.xls", "CostCalculation-002-2-楼宇C-Total-1.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织B", "园区C", "楼宇D"],
+			"commodityNames":["电", "自来水", "煤"],
+			"AreaDimensionPath":["楼宇D", "一层"],
+			"DisplayStep":"Month",
+			"ManualTimeRange":[{
+				"StartDate":"2012-6-1",
+				"EndDate":"2012-9-1",	
+			}],
+			"failedFileName":["F-CostCalculation-002-2-楼宇D-M-0.xls", "F-CostCalculation-002-2-楼宇D-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-2-楼宇D-M-0.xls", "CostCalculation-002-2-楼宇D-Total-1.xls"],
+		}
+	}
+]

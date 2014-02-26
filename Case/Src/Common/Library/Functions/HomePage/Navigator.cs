@@ -101,6 +101,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.UnitKPI, new NavigatorItem(NavigationTarget.UnitKPI,NavigationTarget.EnergyView,JazzButton.NavigatorUnitKPIButton)},
             {NavigationTarget.EnergyRadio, new NavigatorItem(NavigationTarget.EnergyRadio,NavigationTarget.EnergyView,JazzButton.NavigatorEnergyRatioButton)},
             {NavigationTarget.Rank, new NavigatorItem(NavigationTarget.Rank,NavigationTarget.EnergyView,JazzButton.NavigatorRankButton)},
+            {NavigationTarget.Labeling, new NavigatorItem(NavigationTarget.Labeling,NavigationTarget.EnergyView,JazzButton.NavigatorLabelingButton)},
 
             {NavigationTarget.TimeSettings, new NavigatorItem(NavigationTarget.TimeSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorTimeSettingsButton)},
             {NavigationTarget.CarbonSettings, new NavigatorItem(NavigationTarget.CarbonSettings,NavigationTarget.PlatformSettings,JazzButton.NavigatorCarbonSettingsButton)},
@@ -194,6 +195,7 @@ namespace Mento.ScriptCommon.Library.Functions
         UnitKPI = 204,
         EnergyRadio = 205,
         Rank = 206,
+        Labeling = 221,
         TimeSettings = 5,
         CarbonSettings = 6,
         PriceSettings = 7,

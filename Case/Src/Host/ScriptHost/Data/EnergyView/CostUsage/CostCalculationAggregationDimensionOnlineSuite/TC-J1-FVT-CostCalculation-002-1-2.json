@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"SystemDimensionPaths":[["楼宇A", "特殊"], ],
+			"commodityNames":["电", "自来水", "煤"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-6-29",
+				"EndDate":"2012-7-4",	
+			}],
+			"failedFileName":["F-CostCalculation-002-1-楼宇A-H-0.xls", "F-CostCalculation-002-1-楼宇A-Total-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-1-楼宇A-H-0.xls", "CostCalculation-002-1-楼宇A-Total-1.xls"],
+		}
+	}
+]

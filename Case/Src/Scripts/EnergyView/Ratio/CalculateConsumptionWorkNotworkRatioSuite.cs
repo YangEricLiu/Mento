@@ -153,6 +153,64 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-2")]
+        [MultipleTestDataSource(typeof(RatioData[]), typeof(CalculateConsumptionWorkNotworkRatioSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-2")]
+        public void CalculateConsumptionWorkNotworkRatio02(RatioData input)
+        {
+            //Go to 时段能耗比-〉昼夜比. 
+            //SP1->NancyOtherCustomer3->园区能耗标识-〉BuildingLabelling1. 
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.ShortPause();
+
+            RadioPanel.NavigateToRatio();
+            TimeManager.MediumPause();
+
+            RadioPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //公休比
+            EnergyViewToolbar.SelectRadioTypeConvertTarget(RadioTypeConvertTarget.WorkNonRadio);
+            TimeManager.ShortPause();
+
+            //Labellingtag1
+            RadioPanel.CheckTag(input.InputData.tagNames[0]);
+            TimeManager.ShortPause();
+
+            //select "夏热冬暖地区酒店（三星级）"
+            EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[0]);
+            TimeManager.ShortPause();
+
+            //Time range=2009/01/01 to 2013/12/31.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //Optional step=月.
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Step is "Month"
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Step is "Year"
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+        }
     }
 }
 

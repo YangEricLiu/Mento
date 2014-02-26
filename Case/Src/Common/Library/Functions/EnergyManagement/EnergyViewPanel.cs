@@ -104,7 +104,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Click display step button
         /// </summary>
-        /// <param name="step"></param>
+        /// <param name="step">enum</param>
         public void ClickDisplayStep(DisplayStep step)
         {
             switch (step)
@@ -126,6 +126,39 @@ namespace Mento.ScriptCommon.Library.Functions
                     EnergyDisplayStepMonthButton.Click();
                     break;
                 case DisplayStep.Year:
+                    //click "Year" step
+                    EnergyDisplayStepYearButton.Click();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Click display step button
+        /// </summary>
+        /// <param name="step">string</param>
+        public void ClickDisplayStep(string step)
+        {
+            switch (step)
+            {
+                case "Hour":
+                    //click "Hourly" step
+                    EnergyDisplayStepHourButton.Click();
+                    break;
+                case "Day":
+                    //click "Daily" step
+                    EnergyDisplayStepDayButton.Click();
+                    break;
+                case "Week":
+                    //click "Weekly" step
+                    EnergyDisplayStepWeekButton.Click();
+                    break;
+                case "Month":
+                    //click "Monthly" step
+                    EnergyDisplayStepMonthButton.Click();
+                    break;
+                case "Year":
                     //click "Year" step
                     EnergyDisplayStepYearButton.Click();
                     break;

@@ -26,6 +26,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorUnitKPI = "ButtonNavigatorUnitKPI";
         public static string ButtonNavigatorEnergyRatio = "ButtonNavigatorEnergyRatio";
         public static string ButtonNavigatorRank = "ButtonNavigatorRank";
+        public static string ButtonNavigatorLabeling = "ButtonNavigatorLabeling";
         public static string ButtonNavigatorTimeSettings = "ButtonNavigatorTimeSettings";
         public static string ButtonNavigatorCarbonSettings = "ButtonNavigatorCarbonSettings";
         public static string ButtonNavigatorPriceSettings = "ButtonNavigatorPriceSettings";
@@ -701,6 +702,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region energyview
+
         public static string ComboBoxEnergyViewStartTime = "ComboBoxEnergyViewStartTime";
         public static string ComboBoxEnergyViewEndTime = "ComboBoxEnergyViewEndTime";
         public static string ComboBoxEnergyViewSaveDashboardHierarchy = "ComboBoxEnergyViewSaveDashboardHierarchy";
@@ -709,6 +711,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxIntervalDialogBaseEndTime = "ComboBoxIntervalDialogBaseEndTime";
         public static string ComboBoxIntervalDialogAdditionStartTime = "ComboBoxIntervalDialogAdditionStartTime";
         public static string ComboBoxWidgetMaxDialogDefaultTime = "ComboBoxWidgetMaxDialogDefaultTime";
+        public static string ComboBoxLabelingYear = "ComboBoxLabelingYear";
+        public static string ComboBoxLabelingMonth = "ComboBoxLabelingMonth";
+
         #endregion
 
         #region customersettings

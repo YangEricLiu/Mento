@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "BuildingMulCalculationType"],
+			"TagNames":["CalculationTypeAvg", "CalculationTypeMax", "CalculationTypeMin", "CalculationTypeMinIs0"],
+			"failedFileName":["F-MultiHierarchyNodeDataView-101-2-M-0.xls", "F-MultiHierarchyNodeDataView-101-2-W-1.xls", "F-MultiHierarchyNodeDataView-101-2-D-2.xls", "F-MultiHierarchyNodeDataView-101-2-H-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["MultiHierarchyNodeDataView-101-2-M-0.xls", "MultiHierarchyNodeDataView-101-2-Ws-1.xls", "MultiHierarchyNodeDataView-101-2-D-2.xls", "MultiHierarchyNodeDataView-101-2-H-3.xls"],
+		}
+	}
+]

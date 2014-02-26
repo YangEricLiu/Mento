@@ -20,6 +20,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public string[] SystemDimensionPath { get; set; }
 
+        public string[][] SystemDimensionPaths { get; set; }
+
         public string[] commodityNames { get; set; }
 
         public string[] failedFileName { get; set; }
@@ -31,6 +33,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public DashboardInformation DashboardInfo { get; set; }
 
         public ManualTimeRange[] ManualTimeRange { get; set; }
+
+        public string DisplayStep { get; set; }
     }
 
     public class CostUsageOutput : ExpectedTestDataBase

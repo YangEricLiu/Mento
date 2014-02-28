@@ -827,6 +827,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxLabelingIndustry = "ComboBoxLabelingIndustry";
         public static string ComboBoxLabelingClimateRegion = "ComboBoxLabelingClimateRegion";
         public static string ComboBoxLabelingEnergyEfficiencyLabelingLevel = "ComboBoxLabelingEnergyEfficiencyLabelingLevel";
+        public static string ComboBoxLabelingStartYear = "ComboBoxLabelingStartYear";
+        public static string ComboBoxLabelingEndYear = "ComboBoxLabelingEndYear";
 
 
         #endregion

@@ -769,9 +769,12 @@
               <add key="ComboBoxBenchmark" value="//div[@id='st-benchmark-properties-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='industry']]" type="XPath"/>
           </BenchMark>
           <Labeling>
-             <add key="ComboBoxLabelingIndustry" value="//div[@id='st-labeling-industry']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='industry']]" type="XPath"/>
-             <add key="ComboBoxLabelingClimateRegion" value="//div[@id='st-labeling-zone']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='ClimateRegion]]" type="XPath"/>
-             <add key="ComboBoxLabelingEnergyEfficiencyLabelingLevel" value="//div[@id='st-labeling-grade']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EnergyEfficiencyLabelingLevel']]" type="XPath"/>
+             <add key="ComboBoxLabelingIndustry" value="//div[@id='st-labeling-industry']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='IndustryId']]" type="XPath"/>
+             <add key="ComboBoxLabelingClimateRegion" value="//div[@id='st-labeling-zone']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='ZoneId]]" type="XPath"/>
+             <add key="ComboBoxLabelingEnergyEfficiencyLabelingLevel" value="//div[@id='st-labeling-grade']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='Grade']]" type="XPath"/>
+             <add key="ComboBoxLabelingStartYear" value="//div[@id='st-labeling-startyear']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartYear']]" type="XPath"/>
+             <add key="ComboBoxLabelingEndYear" value="//div[@id='st-labeling-endyear']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndYear']]" type="XPath"/>
+
 
           </Labeling>
       </platformsettings>

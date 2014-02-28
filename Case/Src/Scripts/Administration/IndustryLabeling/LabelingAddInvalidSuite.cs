@@ -84,6 +84,9 @@ namespace Mento.Script.Administration.IndustryLabeling
             Assert.IsTrue(IndustryLabelingSetting.IsIndustrysAddMessageDisplayed());
             Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionAddMessageDisplayed());
             Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
+            IndustryLabelingSetting.IsStartYearInDropdownList(input.ExpectedData.StartYear);
+            IndustryLabelingSetting.IsEndYearInDropdownList(input.ExpectedData.EndYear);
+
 
             // Click Cancel button,Click +能效标识 buttons
             IndustryLabelingSetting.ClickCancelLabeling();
@@ -98,14 +101,11 @@ namespace Mento.Script.Administration.IndustryLabeling
 
             //Then click +能效标识 buttons.
             //·Cancel and there isn't any beachmark added to list.
-            //· The dropdown list can still select 行业=酒店五星级  and there isn't any 气候分区 is checked.
+            //· The dropdown list can still select 行业=酒店五星级  and here is 严寒地区B区 can be selected..
             IndustryLabelingSetting.ClickAddLabeling();
             Assert.IsTrue(IndustryLabelingSetting.IsIndustryInDropdownList(input.InputData.Industry));
             Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimaticRegion));
-            Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelInDropdownList(input.InputData.EnergyEfficiencyLabellingLevel));
             IndustryLabelingSetting.ClickCancelLabeling();
-            Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingList(input.InputData.Industry));
-
         }
         #endregion
 
@@ -132,6 +132,9 @@ namespace Mento.Script.Administration.IndustryLabeling
             Assert.IsTrue(IndustryLabelingSetting.IsIndustrysAddMessageDisplayed());
             Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionAddMessageDisplayed());
             Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
+            IndustryLabelingSetting.IsStartYearInDropdownList(input.ExpectedData.StartYear);
+            IndustryLabelingSetting.IsEndYearInDropdownList(input.ExpectedData.EndYear);
+
 
             //Select 行业=酒店五星级 and Click Save button.
             //Save failed with pop up note at 气候分区 & 能效标识级别，show "请至少选择一项。"

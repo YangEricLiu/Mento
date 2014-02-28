@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"Industrys":["酒店","酒店(三星级)"]
+			"ClimaticRegion":"严寒地区A区",
+			"ClimaticRegions":["全部区域","严寒地区A区","严寒地区B区","寒冷地区","夏热冬冷地区","夏热冬暖地区","温和地区"],
+			"EnergyEfficiencyLabellingLevel":"3级"，
+			"StartYear":"2012",
+			"EndYear":"2014",
+		},
+	}
+]

@@ -33,6 +33,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public static ComboBox IndustryComboBox = JazzComboBox.IndustryComboBox;
         public static ComboBox ClimateRegionComboBox = JazzComboBox.ClimateRegionComboBox;
         public static ComboBox EnergyEfficiencyLabelingLevelComboBox = JazzComboBox.EnergyEfficiencyLabelingLevelComboBox;
+        public static ComboBox StartYearComboBox = JazzComboBox.StartYearComboBox;
+        public static ComboBox EndYearComboBox = JazzComboBox.EndYearComboBox;
 
         //public static CheckBoxField ClimateRegionCheckBox = JazzCheckBox.CheckBoxLabeling;
         
@@ -134,6 +136,26 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Select StartYear  combox
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void SelectStartYearCombox(string itemName)
+        {
+            StartYearComboBox.SelectItem(itemName);
+        }
+
+        /// <summary>
+        /// Select EndYear combox
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void SelectEndYearCombox(string itemName)
+        {
+            EndYearComboBox.SelectItem(itemName);
+        }
+
+        /// <summary>
         /// Click Industry combox
         /// </summary>
         /// <param></param>
@@ -161,6 +183,25 @@ namespace Mento.ScriptCommon.Library.Functions
         public void DisplayEnergyEfficiencyLabelingLevelItems()
         {
             EnergyEfficiencyLabelingLevelComboBox.DisplayItems();
+        }
+        /// <summary>
+        /// Click StartYear combox
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void DisplayStartYearItems()
+        {
+            StartYearComboBox.DisplayItems();
+        }  
+        
+        /// <summary>
+        /// Click EndYear combox
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void DisplayEndYearItems()
+        {
+            EndYearComboBox.DisplayItems();
         }
 
         /// <summary>
@@ -251,9 +292,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return ModifyLabelingButton.IsDisplayed();
         }
-
-
-        #endregion
+       #endregion
 
         #region Get value
         /// <summary>
@@ -320,12 +359,48 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return string.Join(",", EnergyEfficiencyLabelingLevelComboBox.GetCurrentDropdownListItems());
         }
+        
+        /// <summary>
+        /// Get message in the StartYear combox. 
+        /// </summary>
+        /// <returns></returns>
+        public string GetSelectedStartYear()
+        {
+            return StartYearComboBox.GetValue();
+        }
 
         /// <summary>
+        /// Get StartYears in the StartYear combox lists. 
+        /// </summary>
+        /// <returns></returns>
+        public string GetStartYearLists()
+        {
+            return string.Join(",", StartYearComboBox.GetCurrentDropdownListItems());
+        }       
+        
+        /// <summary>
+        /// Get message in the EndYear combox. 
+        /// </summary>
+        /// <returns></returns>
+        public string GetSelectedEndYear()
+        {
+            return EndYearComboBox.GetValue();
+        }
+
+        /// <summary>
+        /// Get EndYears in the EndYear combox lists. 
+        /// </summary>
+        /// <returns></returns>
+        public string GetEndYearLists()
+        {
+            return string.Join(",", EndYearComboBox.GetCurrentDropdownListItems());
+        }
+
+        /*/// <summary>
         /// Verify whether combox list exist dropdown items 
         /// </summary>
         /// <returns></returns>
-       /* public Boolean IsDropdownItemExist(string item)
+       public Boolean IsDropdownItemExist(string item)
         {
             return LabelingComboBox.GetCurrentDropdownListItems().Contains(item);
         }
@@ -413,9 +488,55 @@ namespace Mento.ScriptCommon.Library.Functions
             }
             return EnergyEfficiencyLabelingLevelComboBox.GetCurrentDropdownListItems().Contains(EnergyEfficiencyLabelingLevelNames[k - 1]);
         }
+        
+        /// <summary>
+        /// Check whether the StartYear list include the StartYear.  
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsStartYearInDropdownList(string regionName)
+        {
+            return StartYearComboBox.GetCurrentDropdownListItems().Contains(regionName);
+        }
+
+        /// <summary>
+        /// Check whether the StartYears list include the StartYear.  
+        /// </summary>
+        /// <returns></returns>
+        public Boolean AreStartYearsInDropdownList(string[] StartYearNames)
+        {
+            int x = 0;
+            while (x < StartYearNames.Length)
+            {
+                if (!(StartYearComboBox.GetCurrentDropdownListItems().Contains(StartYearNames[x])))
+                    return false;
+                x++;
+            }
+            return ClimateRegionComboBox.GetCurrentDropdownListItems().Contains(StartYearNames[x - 1]);
+        }
+
+        public Boolean IsEndYearInDropdownList(string regionName)
+        {
+            return EndYearComboBox.GetCurrentDropdownListItems().Contains(regionName);
+        }
+
+        /// <summary>
+        /// Check whether the EndYears list include the EndYear.  
+        /// </summary>
+        /// <returns></returns>
+        public Boolean AreEndYearsInDropdownList(string[] EndYearNames)
+        {
+            int y = 0;
+            while (y < EndYearNames.Length)
+            {
+                if (!(EndYearComboBox.GetCurrentDropdownListItems().Contains(EndYearNames[y])))
+                    return false;
+                y++;
+            }
+            return EndYearComboBox.GetCurrentDropdownListItems().Contains(EndYearNames[y - 1]);
+        }
 
        /// <summary>
-        /// Check whether the Labeling combox could not be modified.  
+        /// Check whether the industry combox could not be modified.  
         /// </summary>
         /// <returns></returns>
          public Boolean IsIndustryComboxEnabled()
@@ -423,16 +544,41 @@ namespace Mento.ScriptCommon.Library.Functions
             return IndustryComboBox.IsComboBoxTextEnabled();
         }
 
+         /// <summary>
+         /// Check whether the ClimateRegion combox could not be modified.  
+         /// </summary>
+         /// <returns></returns>
         public Boolean IsClimateRegionComboxEnabled()
         {
             return ClimateRegionComboBox.IsComboBoxTextEnabled();
         }
 
+      /*  /// <summary>
+        /// Check whether the EnergyEfficiencyLabelingLevel combox could not be modified.  
+        /// </summary>
+        /// <returns></returns>
         public Boolean IsEnergyEfficiencyLabelingLevelComboxEnabled()
         {
             return EnergyEfficiencyLabelingLevelComboBox.IsComboBoxTextEnabled();
         }
 
+        /// <summary>
+        /// Check whether the StartYear combox could not be modified.  
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsStartYearComboxEnabled()
+        {
+            return StartYearComboBox.IsComboBoxTextEnabled();
+        }
+
+        /// <summary>
+        /// Check whether the EndYear combox could not be modified.  
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsEndYearComboxEnabled()
+        {
+            return EndYearComboBox.IsComboBoxTextEnabled();
+        }*/
       #endregion
     }
 }

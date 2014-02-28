@@ -152,6 +152,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox IndustryComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingIndustry, 1);
         public static ComboBox ClimateRegionComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingClimateRegion, 1);
         public static ComboBox EnergyEfficiencyLabelingLevelComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingEnergyEfficiencyLabelingLevel, 1);
+        public static ComboBox StartYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingStartYear, 1);
+        public static ComboBox EndYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingEndYear, 1);
 
         #endregion
 
@@ -165,3 +167,4 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
     }
 }
+ 

@@ -65,6 +65,12 @@
     <Compile Include="IndustryBenchmark\BenchmarkDeleteInvalidSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkModifyValidSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkModifyInvalidSuite.cs" />
+    <Compile Include="IndustryLabeling\LabelingViewSuite.cs" />
+    <Compile Include="IndustryLabeling\LabelingDeleteValidSuite.cs" />
+    <Compile Include="IndustryLabeling\LabelingDeleteInvalidSuite.cs" />
+    <Compile Include="IndustryLabeling\LabelingModifyValidSuite.cs" />
+    <Compile Include="IndustryLabeling\LabelingModifyInvalidSuite.cs" />
+    <Compile Include="IndustryLabeling\LabelingAddValidSuite.cs" />
     <Compile Include="IndustryLabeling\LabelingAddInvalidSuite.cs" />
     <Compile Include="TimeManagement\HeatingCoolingSeasonModifySuite.cs" />
     <Compile Include="TimeManagement\HeatingCoolingSeasonAddSuite.cs" />

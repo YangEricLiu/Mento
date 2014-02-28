@@ -47,7 +47,8 @@ namespace Mento.Script.Administration.IndustryLabeling
         {
             //Click a Labeling(气候分区=严寒地区A区 ) from list and click 删除 button.
             //·Pop up window show 是否删除.
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabeling2(input.InputData.ClimaticRegion);
+            TimeManager.LongPause();
             IndustryLabelingSetting.ClickDeleteLabeling();
 
             //After click confirmation Cancel button.

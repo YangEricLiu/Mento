@@ -85,9 +85,8 @@ namespace Mento.Script.Administration.IndustryLabeling
                 
             //Click the saved Labeling from list.
             IndustryLabelingSetting.ClickSaveLabeling();
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry);
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.ClimaticRegion);
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.EnergyEfficiencyLabellingLevel);
+            IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industry);
+            IndustryLabelingSetting.FocusOnLabeling2(input.InputData.ClimaticRegion);
 
             //Click +能效标识 buttons. Go to 行业 dropdown list to check.
             IndustryLabelingSetting.ClickAddLabeling();

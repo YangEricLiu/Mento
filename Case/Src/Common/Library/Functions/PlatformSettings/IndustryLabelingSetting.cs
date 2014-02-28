@@ -209,9 +209,19 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void FocusOnLabeling(string labelingName)
+        public void FocusOnLabeling1(string labelingName)
         {
             LabelingList.FocusOnRow(1, labelingName);
+        }
+
+        /// <summary>
+        /// Focus Labeling
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void FocusOnLabeling2(string labelingName)
+        {
+            LabelingList.FocusOnRow(2, labelingName);
         }
 
         /// <summary>

@@ -47,8 +47,8 @@ namespace Mento.Script.Administration.IndustryLabeling
         {
             //Click a Labeling(行业=酒店; 气候分区=严寒地区A区 ) from list and click 删除 button.
             //·Pop up window show 是否删除.
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry);
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industry);
+            IndustryLabelingSetting.FocusOnLabeling2(input.InputData.ClimaticRegion);
             IndustryLabelingSetting.ClickDeleteLabeling();
 
             //After click confirmation 确定 button.Delete Labeling successfully.
@@ -74,7 +74,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             int i = 0;
             while (i < IndustryLabelingSetting.LabelingList.GetCurrentRowsNumber())
             {
-                IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry);
+                IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industry);
                 IndustryLabelingSetting.ClickDeleteLabeling();
                 i++;
             }

@@ -46,8 +46,8 @@ namespace Mento.Script.Administration.IndustryLabeling
         public void ViewMapAndLocation(IndustryLabelingData input)
         {
             //Click one Labeling from Labeling List.
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industrys[0]);
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industrys[0]);
+            IndustryLabelingSetting.FocusOnLabeling2(input.InputData.ClimaticRegion);
 
             //Display properties行业，气候分区， 能耗标识级别 and 数据来源 start&end year of selected Labeling in View mode. 
             Assert.AreEqual(input.InputData.Industry,IndustryLabelingSetting.GetSelectedIndustry());
@@ -57,7 +57,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             Assert.AreEqual(input.InputData.EndYear, IndustryLabelingSetting.GetSelectedEndYear());
 
             //Switch from labeling list.
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industrys[1]);
+            IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industrys[1]);
             
             //Display properties行业，气候分区， 能耗标识级别 and 数据来源 start&end year of selected Labeling in View mode. 
             Assert.AreEqual(input.InputData.Industrys[1], IndustryLabelingSetting.GetSelectedIndustry());

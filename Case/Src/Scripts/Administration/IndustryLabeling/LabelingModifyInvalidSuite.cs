@@ -46,7 +46,7 @@ namespace Mento.Script.Administration.IndustryLabeling
         public void ModifyIndustryLabelingCancelled(IndustryLabelingData input)
         {
             //Click a labeling(气候分区=严寒地区A区 ) from list and click 修改 button.
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabeling2(input.InputData.ClimaticRegion);
             IndustryLabelingSetting.ClickModifyLabeling();
             
             //Click Cancel button directly.
@@ -59,7 +59,7 @@ namespace Mento.Script.Administration.IndustryLabeling
 
             //Click a labeling from list and click 修改 button. 
             // Change 级别 or 数据来源. Click Cancel button.
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry);
+            IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industry);
             IndustryLabelingSetting.ClickModifyLabeling();
             IndustryLabelingSetting.SelectEnergyEfficiencyLabelingLevelCombox(input.InputData.EnergyEfficiencyLabellingLevel);
             //IndustryLabelingSetting.SelectStartYearCombox(input.InputData.StartYear);
@@ -82,7 +82,7 @@ namespace Mento.Script.Administration.IndustryLabeling
         public void ModifyIndustryLabelingInvalid(IndustryLabelingData input)
         {
             //Click a Labeling(行业=酒店; 气候分区=严寒地区A区) from list and click 修改 button.
-            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry);
+            IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industry);
             IndustryLabelingSetting.ClickModifyLabeling();
 
             //·The 行业 & 气候分区 is gray out and can't be modified.

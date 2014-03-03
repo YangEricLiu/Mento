@@ -18,6 +18,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MenuButton RankTypeConvertTargetButton = JazzButton.RankTypeConvertMenuButton;
         private static MenuButton IndustryConvertTargetButton = JazzButton.IndustryConvertMenuButton;
         private static MenuButton CarbonIndustryConvertTargetButton = JazzButton.CarbonIndustryConvertMenuButton;
+        private static MenuButton LabellingIndustryConvertTargetButton = JazzButton.LabellingIndustryConvertMenuButton;
 
         private static Dictionary<CarbonConvertTarget, string[]> CarbonMenuItems = new Dictionary<CarbonConvertTarget, string[]>()
         {
@@ -81,10 +82,19 @@ namespace Mento.ScriptCommon.Library.Functions
             IndustryConvertTargetButton.SelectOneItem(industry);
         }
 
+        public void SwitchLabellingIndustryMenuItem(string industry)
+        {
+            LabellingIndustryConvertTargetButton.SelectOneItem(industry);
+        }
 
         public string GetIndustryButtonText()
         {
             return IndustryConvertTargetButton.GetText();
+        }
+
+        public string GetIndustryLabellingButtonText()
+        {
+            return LabellingIndustryConvertTargetButton.GetText();
         }
 
         public void SwitchCarbonMenuItem(CarbonConvertTarget target)
@@ -139,6 +149,11 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 UnitTypeConvertTargetButton.SelectOneItem(target);
             }
+        }
+
+        public void SwitchLabellingUnitTypeMenuItem(string target)
+        {
+            UnitTypeConvertTargetButton.SelectOneItem(target);
         }
 
         public string GetUnitTypeButtonText()

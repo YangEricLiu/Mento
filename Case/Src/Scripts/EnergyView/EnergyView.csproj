@@ -88,6 +88,7 @@
     <Compile Include="EnergyManagement\SetTimeRangeValidSuite.cs" />
     <Compile Include="EnergyManagement\SetAllDisplayStepSuite.cs" />
     <Compile Include="EnergyManagement\SetDisplayStepSuite.cs" />
+    <Compile Include="IndustryLabelling\ViewIndustryLabellingConsumptionSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ratio\CalculateConsumptionDayNightRatioSuite.cs" />

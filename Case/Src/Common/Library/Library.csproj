@@ -74,6 +74,7 @@
     <Compile Include="Functions\CustomerSettings\AreaDimensionSettings.cs" />
     <Compile Include="Functions\CustomerSettings\AssociateSettings.cs" />
     <Compile Include="Functions\EnergyManagement\CarbonUsagePanel.cs" />
+    <Compile Include="Functions\EnergyManagement\IndustryLabellingPanel.cs" />
     <Compile Include="Functions\HomePage\ShareInfoWindow.cs" />
     <Compile Include="Functions\HomePage\ShareWindow.cs" />
     <Compile Include="Functions\EnergyManagement\WidgetMaxChartDialog.cs" />

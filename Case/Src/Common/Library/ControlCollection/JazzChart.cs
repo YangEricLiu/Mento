@@ -58,6 +58,22 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        public static Chart IndustryLabellingChart
+        {
+            get
+            {
+                return GetControl<Chart>(JazzControlLocatorKey.ChartIndustryLabelling);
+            }
+        }
+
+        public static Chart MaxWidgetLabellingChart
+        {
+            get
+            {
+                return GetControl<Chart>(JazzControlLocatorKey.ChartMaxWidgetLabelling);
+            }
+        }
+
         public static Chart WidgetMaxDialogChart
         {
             get

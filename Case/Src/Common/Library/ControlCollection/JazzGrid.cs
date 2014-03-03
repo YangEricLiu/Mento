@@ -83,6 +83,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region carbon
 
         public static Grid CarbonDataListGrid = GetControl<Grid>(JazzControlLocatorKey.GridCarbonDataList);
+        
+        #endregion
+
+        #region Labelling
+
+        public static Grid LabellingAllTagListGrid = GetControl<Grid>(JazzControlLocatorKey.GridLabellingAllTagList);
 
         #endregion
 

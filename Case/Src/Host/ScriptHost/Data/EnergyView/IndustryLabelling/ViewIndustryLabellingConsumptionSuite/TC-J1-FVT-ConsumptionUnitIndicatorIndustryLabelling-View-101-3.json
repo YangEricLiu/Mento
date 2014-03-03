@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingConvertStandardUOM"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNotConvertStandardUOM"]],
+			"tagNames":["V2_YearToDay", "WorkNotworkPNotlighten", "WorkNotworkP", "StandardUOMTon", "NotStandardUOMkg"],
+			"Industries":["夏热冬冷地区轨道交通", "严寒地区B区办公建筑", "温和地区超市"],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			}],
+		},
+		"ExpectedData":
+		{
+			"LabellingTooltips":[["<= 297,600kg/人", "297,600kg/人 - 595,200kg/人", "> 595,200kg/人", "V2_YearToDay: 576kg/人", "V2_YearToDay: 576kg/人"], ["<= 496KWH/人", "496KWH/人 - 496KWH/人", "496KWH/人 - 496KWH/人", "> 496KWH/人"], ["<= 7,440,000kg/人", "7,440,000kg/人 - 7,440,000kg/人", "> 7,440,000kg/人", "StandardUOMTon: 7,440kg/人", "NotStandardUOMkg: 7,440kg/人"]],
+		}
+	}
+]

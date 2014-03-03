@@ -202,6 +202,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region Labelling
+
+        public static string MenuButtonLabellingIndustryConvert = "MenuButtonLabellingIndustryConvert";
+
+        #endregion
+
         #endregion
 
         #region customersettings
@@ -486,6 +492,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonWidgetMaxDialogClose = "ButtonWidgetMaxDialogClose";
         public static string ButtonWidgetMaxDialogPrev = "ButtonWidgetMaxDialogPrev";
         public static string ButtonWidgetMaxDialogNext = "ButtonWidgetMaxDialogNext";
+        public static string ButtonMaxWidgetLabellingView = "ButtonMaxWidgetLabellingView";
 
         public static string ButtonWidgetMax = "ButtonWidgetMax";
         public static string ButtonWidgetShare = "ButtonWidgetShare";
@@ -839,6 +846,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxWidgetMaxDialogStartTime = "ComboBoxWidgetMaxDialogStartTime";
         public static string ComboBoxWidgetMaxDialogEndTime = "ComboBoxWidgetMaxDialogEndTime";
 
+        public static string ComboBoxMaxWidgetLabelingYear = "ComboBoxMaxWidgetLabelingYear";
+        public static string ComboBoxMaxWidgetLabelingMonth = "ComboBoxMaxWidgetLabelingMonth";
+
         #endregion
 
         #endregion
@@ -937,6 +947,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region carbon
 
         public static string GridCarbonDataList = "GridCarbonDataList";
+
+        #endregion
+
+        #region Labelling
+
+        public static string GridLabellingAllTagList = "GridLabellingAllTagList";
 
         #endregion
 
@@ -1149,8 +1165,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ChartUnitIndicator = "ChartUnitIndicator";
         public static string ChartRadio = "ChartRadio";
+        public static string ChartIndustryLabelling = "ChartIndustryLabelling";
         public static string ChartWidgetMaxDialog = "ChartWidgetMaxDialog";
         public static string ChartSuperWidget = "ChartSuperWidget";
+        public static string ChartMaxWidgetLabelling = "ChartMaxWidgetLabelling";
         #endregion
 
         #region Window

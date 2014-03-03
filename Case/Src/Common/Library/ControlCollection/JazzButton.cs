@@ -140,6 +140,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region Labelling
+
+        public static MenuButton LabellingIndustryConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonLabellingIndustryConvert);
+
+        #endregion
+
         #endregion
 
         #region Navigator buttons
@@ -523,6 +529,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button WidgetMaxDialogPrevButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetMaxDialogPrev);
         public static Button WidgetMaxDialogNextButton = GetControl<Button>(JazzControlLocatorKey.ButtonWidgetMaxDialogNext);
         public static Button HomepageToDashboardButton = GetControl<Button>(JazzControlLocatorKey.ButtonHomepageToDashboard);
+        public static Button MaxWidgetLabellingViewButton = GetControl<Button>(JazzControlLocatorKey.ButtonMaxWidgetLabellingView);
 
         public static Button DashboardShareButton = GetControl<Button>(JazzControlLocatorKey.ButtonDashboardShare);
         public static Button DashboardRenameButton = GetControl<Button>(JazzControlLocatorKey.ButtonDashboardRename);

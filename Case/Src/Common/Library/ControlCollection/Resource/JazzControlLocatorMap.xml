@@ -66,6 +66,7 @@
             <add key="ButtonWidgetMaxDialogClose" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[contains(@id,'panel')]//div[contains(@class,'x-tool-default')]/img" type="XPath"/>
             <add key="ButtonWidgetMaxDialogPrev" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[1]/div/div/div[contains(@class,'x-btn') and em/button/span[contains(@class,'x-btn-inner')]]" type="XPath"/>
             <add key="ButtonWidgetMaxDialogNext" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[3]/div/div/div[contains(@class,'x-btn') and em/button/span[contains(@class,'x-btn-inner')]]" type="XPath"/>
+            <add key="ButtonMaxWidgetLabellingView" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
 
             <add key="ButtonWidgetMax" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-max-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetShare" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-sendcopy-tool')]/img" type="XPath"/>
@@ -145,6 +146,7 @@
           <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[2]" type="XPath"/>
           <add key="MenuButtonIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[3]" type="XPath"/>
           <add key="MenuButtonCarbonIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[4]" type="XPath"/>
+          <add key="MenuButtonLabellingIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[1]" type="XPath"/>
 
         <!--Greenie modified at 2013.10.28-->
           <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[3]" type="XPath"/>
@@ -670,8 +672,10 @@
           <add key="ComboBoxIntervalDialogBaseStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
           <add key="ComboBoxIntervalDialogBaseEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[1]/tr/td/div/div/table[4]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
           <add key="ComboBoxIntervalDialogAdditionStartTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'Type')]]" type="XPath"/>
-          <add key="ComboBoxLabelingYear" value="//div[@id='eem-labeling-chartgridpanel']/div/div/table[1]/tbody/tr/td[contains(@class, 'x-form-trigger-wrap-focus')]/table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
-          <add key="ComboBoxLabelingMonth" value="//div[@id='eem-labeling-chartgridpanel']/div/div/table[2]/tbody/tr/td[contains(@class, 'x-form-trigger-wrap-focus')]/table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
+          <add key="ComboBoxLabelingYear" value="//div[@id='em-labeling-chartgridpanel']/div/div/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'yearCombo')]]" type="XPath"/>
+          <add key="ComboBoxLabelingMonth" value="//div[@id='em-labeling-chartgridpanel']/div/div/table[2]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'monthCombo')]]" type="XPath"/>
+          <add key="ComboBoxMaxWidgetLabelingYear" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id,'labelingchartpanel')]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='yearCombo']]" type="XPath"/>
+          <add key="ComboBoxMaxWidgetLabelingMonth" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id,'labelingchartpanel')]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='monthCombo']]" type="XPath"/>
 
       </energyview>
       <customersettings>
@@ -832,6 +836,7 @@
 
           <add key="GridUnitKPIAllTagList" value="//div[@id='em-unit-energy-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridRadioAllTagList" value="//div[@id='em-ratio-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridLabellingAllTagList" value="//div[@id='em-labeling-leftpanel']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
 
           <add key="GridTotalCommodityCarbon" value="//div[@id='carbon-tab-body']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridTotalCommodityCost" value="//div[@id='em-cost-commodityfilter']//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
@@ -1003,7 +1008,7 @@
             <add key="LabelPlatformBenchMarkSetting" value="//div[@id='st-benchmark-properties-form-targetEl']/table/tbody/tr/td/div/div/label[text()='请至少选择一项。']" type="XPath"/>
             <!--R1.4 need use the below label-->
             <!--<add key="LabelPlatformBenchMarkSetting" value="//div[@id='st-benchmark-properties-form-targetEl']/table/tbody/tr/td/div/div/label[text()='请至少选择1项。']" type="XPath"/>-->
-        
+          <add key="LabelPlatformLabelingSetting" value="//div" type="XPath"/>
         </benckMark>
 
         <customerMapInfo>
@@ -1058,9 +1063,11 @@
     <add key="ChartCarbonUsage" value="//div[@id='em-carbon-chartgridpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartCostUsage" value="//div[@id='em-cost-chartgridpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartUnitIndicator" value="//div[@id='em-content-center-region-body']/div/div[contains(@class,'x-panel-body-default')]/div/div/div[@class='highcharts-container']" type="XPath"/>
+    <add key="ChartIndustryLabelling" value="//div[@id='em-labeling-chartgridpanel-body']/div[contains(@class,'x-container-default')]" type="XPath"/>
     <add key="ChartRadio" value="//div[@id='em-ratio-chartgridpanel-body']/div/div/div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartWidgetMaxDialog" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartSuperWidget" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../../../../../self::node()/div[contains(@class,'x-widget-body-default')]//div[@class='highcharts-container']" type="XPath"/>
+    <add key="ChartMaxWidgetLabelling" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id, 'labelingchartpanel') and contains(@class, 'x-panel-body-default')]/div[contains(@id, 'container')]" type="XPath"/>
 
   </Chart>
   <!--Chart End-->

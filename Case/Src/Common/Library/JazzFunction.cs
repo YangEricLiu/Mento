@@ -439,6 +439,21 @@ namespace Mento.ScriptCommon.Library
 
                 return _UnitKPIPanel;
             }
+        
+        }
+
+        //Emma add 2014/02/28
+        private static IndustryLabellingPanel _IndustryLabellingPanel;
+        public static IndustryLabellingPanel IndustryLabellingPanel
+        {
+            get
+            {
+                if (_IndustryLabellingPanel == null)
+                    _IndustryLabellingPanel = new IndustryLabellingPanel();
+
+                return _IndustryLabellingPanel;
+            }
+
         }
 
         private static EnergyViewToolbar _EnergyViewToolbar;

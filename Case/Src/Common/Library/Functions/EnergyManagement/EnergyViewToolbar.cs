@@ -155,9 +155,19 @@ namespace Mento.ScriptCommon.Library.Functions
             ConvertTargetButton.SwitchRatioIndustryMenuItem(industry);
         }
 
+        public void SelectLabellingIndustryConvertTarget(string industry)
+        {
+            ConvertTargetButton.SwitchLabellingIndustryMenuItem(industry);
+        }
+
         public string GetIndustryButtonText()
         {
             return ConvertTargetButton.GetIndustryButtonText();
+        }
+
+        public string GetIndustryLabellingButtonText()
+        {
+            return ConvertTargetButton.GetIndustryLabellingButtonText();
         }
 
         public void SelectCarbonConvertTarget(CarbonConvertTarget target)
@@ -188,6 +198,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectUnitTypeConvertTarget(string target)
         {
             ConvertTargetButton.SwitchUnitTypeMenuItem(target);
+        }
+
+        public void SelectLabellingUnitTypeConvertTarget(string target)
+        {
+            ConvertTargetButton.SwitchLabellingUnitTypeMenuItem(target);
         }
 
         public string GetUnitTypeButtonText()

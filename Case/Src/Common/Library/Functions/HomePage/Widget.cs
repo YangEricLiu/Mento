@@ -38,6 +38,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox WidgetMaxDialogDefaultTime = JazzComboBox.WidgetMaxDialogDefaultTimeComboBox;
         private static ComboBox WidgetMaxDialogStartTime = JazzComboBox.WidgetMaxDialogStartTimeComboBox;
         private static ComboBox WidgetMaxDialogEndTime = JazzComboBox.WidgetMaxDialogEndTimeComboBox;
+        private static ComboBox MaxWidgetLabelingYearComboBox = JazzComboBox.MaxWidgetLabelingYearComboBox;
+        private static ComboBox MaxWidgetLabelingMonthComboBox = JazzComboBox.MaxWidgetLabelingMonthComboBox;
 
         private static DatePicker WidgetMaxDialogStartDate = JazzDatePicker.WidgetMaxDialogStartDatePicker;
         private static DatePicker WidgetMaxDialogEndDate = JazzDatePicker.WidgetMaxDialogEndDatePicker;
@@ -46,12 +48,14 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button WidgetMaxDialogCloseButton = JazzButton.WidgetMaxDialogCloseButton;
         private static Button WidgetMaxDialogPrevButton = JazzButton.WidgetMaxDialogPrevButton;
         private static Button WidgetMaxDialogNextButton = JazzButton.WidgetMaxDialogNextButton;
+        private static Button MaxWidgetLabellingViewButton = JazzButton.MaxWidgetLabellingViewButton;
 
         private static Label WidgetMaxDialogName = JazzLabel.WidgetNameMaxLabel;
         private static Label WidgetShareResourceCommon = JazzLabel.WidgetShareResourceCommonLabel;
         private static Label WidgetShareResourceTime = JazzLabel.WidgetShareResourceTimeLabel;
         private static Label WidgetShareResourceUser = JazzLabel.WidgetShareResourceUserLabel;
         private static Tooltip ShareUserInfo = JazzTooltip.ShareUserTooltip;
+        private static Chart MaxWidgetLabellingChart = JazzChart.MaxWidgetLabellingChart;
 
         protected override Chart Chart
         {
@@ -204,9 +208,30 @@ namespace Mento.ScriptCommon.Library.Functions
             WidgetMaxDialogEndTime.SelectItem(endTime);
         }
 
+        public void SetYearAndMonth(string year, string month)
+        {
+            MaxWidgetLabelingYearComboBox.SelectItem(year);
+            MaxWidgetLabelingMonthComboBox.SelectItem(month);
+        }
+
+        public void SetYear(string year)
+        {
+            MaxWidgetLabelingYearComboBox.SelectItem(year);
+        }
+
+        public void SetMonth(string month)
+        {
+            MaxWidgetLabelingMonthComboBox.SelectItem(month);
+        }
+
         public void ClickViewDataButton()
         {
             WidgetMaxDialogViewButton.Click();
+        }
+
+        public void ClickViewLabellingDataButton()
+        {
+            MaxWidgetLabellingViewButton.Click();
         }
 
         public void ClickPrevButton()
@@ -280,6 +305,26 @@ namespace Mento.ScriptCommon.Library.Functions
             Grid dataGrid = JazzGrid.MaxWidgetDataViewGrid;
 
             return dataGrid.GetAllData();
+        }
+
+        public bool IsLabellingChartDrawn()
+        {
+            return MaxWidgetLabellingChart.HasLabellingChartDrawn();
+        }
+
+        public bool EntirelyNoLabellingChartDrawn()
+        {
+            return MaxWidgetLabellingChart.EntirelyNoLabellingChartDrawn();
+        }
+
+        public int GetLabellingNumber()
+        {
+            return MaxWidgetLabellingChart.GetLabellingNumber();
+        }
+
+        public string GetLabellingTooltip(int position)
+        {
+            return MaxWidgetLabellingChart.GetLabellingTooltip(position);
         }
 
         public bool CompareMaxWidgetDataView(string basePath, string expectedFileName, string failedFileName)

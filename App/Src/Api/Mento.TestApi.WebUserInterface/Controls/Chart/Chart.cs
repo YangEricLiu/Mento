@@ -30,6 +30,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator UomLocator = new Locator("svg/text[1]", ByType.XPath);
         private static Locator NavigatorLocator = new Locator("g.highcharts-navigator", ByType.CssSelector);
         private static Locator ScrollbarLocator = new Locator("g.highcharts-scrollbar", ByType.CssSelector);
+        private static Locator LabelTooltipLocator = new Locator("g.highcharts-labeltooltip", ByType.CssSelector);
+        private static Locator LabelSVGLocator = new Locator("svg", ByType.TagName);
+        private static Locator LabelTooltipTextLocator = new Locator("tspan", ByType.TagName);
 
         #region Title
         public string GetTitle()
@@ -206,6 +209,30 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
 
             return (haveLine > 1) || (haveMarkers > 0);
+        }
+
+        public bool HasLabellingChartDrawn()
+        {
+            IWebElement[] labeltooltips = FindChildren(LabelTooltipLocator);
+
+            return (labeltooltips.Length > 0);
+        }
+
+        public int GetLabellingNumber()
+        {
+            IWebElement[] labeltooltips = FindChildren(LabelTooltipLocator);
+
+            return labeltooltips.Length;
+        }
+
+        public string GetLabellingTooltip(int position)
+        {
+            string scriptString = "arguments[0].setAttribute('visibility','visible')";
+
+            IWebElement[] labeltooltips = FindChildren(LabelTooltipLocator);
+            BrowserHandler.ExecuteJavaScript(scriptString, labeltooltips[position]);
+
+            return labeltooltips[position].Text;
         }
 
         public int GetTrendChartLines()
@@ -403,6 +430,20 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return !(ElementHandler.Exists(this._RootLocator));
         }
+
+        public bool EntirelyNoLabellingChartDrawn()
+        {
+            try
+            {
+                FindChild(LabelSVGLocator);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }             
+        }
+
         #endregion
     }
 }

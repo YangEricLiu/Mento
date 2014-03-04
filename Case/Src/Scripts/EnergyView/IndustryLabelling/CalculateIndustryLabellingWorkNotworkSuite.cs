@@ -139,7 +139,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.AreEqual(5, IndustryLabellingPanel.GetLabellingNumber());
             for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
             {
                 Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
@@ -175,7 +174,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
             for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
             {
                 Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
@@ -216,7 +214,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.AreEqual(4, IndustryLabellingPanel.GetLabellingNumber());
             for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
             {
                 Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));

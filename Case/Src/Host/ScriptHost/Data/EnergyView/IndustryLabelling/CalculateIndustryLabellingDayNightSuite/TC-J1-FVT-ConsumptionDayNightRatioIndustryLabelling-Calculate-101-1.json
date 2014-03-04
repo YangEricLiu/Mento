@@ -21,7 +21,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabellingTooltips":[["> 2.41", "1.71 - 2.41", "1.01 - 1.71", "0.31 - 1.01", "<= 0.31", "Labellingtag1: 0.25"], ["> 1", "1 - 1", "<= 1", "StandardUOMTon: 1", "NotStandardUOMkg: 1"], ["> 2.41", "1.71 - 2.41", "1.01 - 1.71", "0.31 - 1.01", "<= 0.31", "Labellingtag1: 0.25"]],
+			"LabellingTooltips":[["> 2.41", "1.71 - 2.41", "1.01 - 1.71", "0.31 - 1.01", "<= 0.31", "Labellingtag1: 0.25"], ["> 1", "1 - 1", "<= 1", "StandardUOMTon: 1", "NotStandardUOMkg: 1"], ["> 2.41", "1.71 - 2.41", "1.01 - 1.71", "0.31 - 1.01", "<= 0.31", "Labellingtag21: 0.25"]],
 		}
 	}
 ]

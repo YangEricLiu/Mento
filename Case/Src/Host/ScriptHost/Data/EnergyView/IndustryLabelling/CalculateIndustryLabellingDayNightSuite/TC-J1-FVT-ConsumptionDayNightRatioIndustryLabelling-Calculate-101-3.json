@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling19"]],
+			"TagNames":["Labellingtag19"],
+			"UnitTypeValue":"昼夜比",
+			"Industries":["夏热冬暖地区酒店（三星级）"],
+			"YearAndMonth":[{
+				"year":"2012",
+				"month":"10",
+			}],
+		},
+		"ExpectedData":
+		{
+			"LabellingTooltips":[["> 2.67", "1.75 - 2.67", "0.83 - 1.75", "<= 0.83", "Labellingtag19: 0.25"]],
+		}
+	}
+]

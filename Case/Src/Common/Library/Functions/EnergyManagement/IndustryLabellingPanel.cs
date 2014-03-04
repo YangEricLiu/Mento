@@ -101,12 +101,12 @@ namespace Mento.ScriptCommon.Library.Functions
                     break;
                 case TagTabs.HierarchyTag:
                     //click all tab
-                    JazzButton.UnitIndicatorALLTagsTab.Click();
+                    JazzButton.EnergyViewALLTagsTab.Click();
                     TagGrid = JazzGrid.EnergyAnalysisAllTagList;
                     break;
                 default:
                     //click all tab
-                    JazzButton.UnitIndicatorALLTagsTab.Click();
+                    JazzButton.EnergyViewALLTagsTab.Click();
                     TagGrid = JazzGrid.EnergyAnalysisAllTagList;
                     break;
             }

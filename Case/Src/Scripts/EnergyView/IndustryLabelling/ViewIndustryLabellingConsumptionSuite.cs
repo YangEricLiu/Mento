@@ -194,7 +194,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             //· Display blank chart.
-            Assert.IsTrue(EnergyAnalysis.EntirelyNoChartDrawn());
+            Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
 
             //Select 1 tag V(12) from hierarchy node BuildingBAD, Unit=单位供冷面积 to display Labelling chart view.
             //Open "多层级数据点" again
@@ -422,7 +422,11 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[2].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[2].month);
 
-            Assert.IsTrue(IndustryLabellingPanel.EntirelyNoChartDrawn());
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
 
             //Select Labellingtag2, select 行业区域=夏热冬暖酒店三星级行业;time range=2013/10 to view chart.
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
@@ -456,7 +460,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(IndustryLabellingPanel.EntirelyNoChartDrawn());
+            Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
             /*
             Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
             for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
@@ -466,7 +470,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             */
 
             //Change to NancyCostCustomer2, select 楼宇B-> system dimension=空调 to select BBV1KT(Or area dimension=一层 to select BBV1A1)select a 行业区域=严寒地区B区机场行业 option to view chart. 
-            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.ShortPause();
 
             IndustryLabellingPanel.NavigateToIndustryLabelling();
@@ -510,7 +514,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(IndustryLabellingPanel.EntirelyNoChartDrawn());
+            Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
         }
     }
 }

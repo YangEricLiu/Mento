@@ -88,6 +88,11 @@
     <Compile Include="EnergyManagement\SetTimeRangeValidSuite.cs" />
     <Compile Include="EnergyManagement\SetAllDisplayStepSuite.cs" />
     <Compile Include="EnergyManagement\SetDisplayStepSuite.cs" />
+    <Compile Include="IndustryLabelling\CalculateIndustryLabellingConsumptionSuite.cs" />
+    <Compile Include="IndustryLabelling\CalculateIndustryLabellingDayNightSuite.cs" />
+    <Compile Include="IndustryLabelling\CalculateIndustryLabellingWorkNotworkSuite.cs" />
+    <Compile Include="IndustryLabelling\ViewIndustryLabellingDayNightSuite.cs" />
+    <Compile Include="IndustryLabelling\ViewIndustryLabellingWorkNotworkSuite.cs" />
     <Compile Include="IndustryLabelling\ViewIndustryLabellingConsumptionSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling11"]],
+			"TagNames":["Labellingtag11"],
+			"UnitTypeValue":"工休比",
+			"Industries":["夏热冬暖地区酒店（三星级）"],
+			"YearAndMonth":[{
+				"year":"2012",
+				"month":"10",
+			}],
+		},
+		"ExpectedData":
+		{
+			"LabellingTooltips":[["> 4", "4 - 4", "4 - 4", "4 - 4", "4 - 4", "<= 4"]],
+		}
+	}
+]

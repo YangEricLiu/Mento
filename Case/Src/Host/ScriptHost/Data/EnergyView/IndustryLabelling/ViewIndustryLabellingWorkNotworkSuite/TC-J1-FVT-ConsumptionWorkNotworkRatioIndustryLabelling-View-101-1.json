@@ -1,0 +1,33 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
+			"TagNames":["DayNightP"],
+			"UnitTypeValue":"工休比",
+			"Industries":["严寒地区B区数据中心"],
+			"YearAndMonth":[{
+				"year":"2013",
+				"month":"全年",
+			},
+			{
+			    "year":"2012",
+				"month":"10",
+			},
+			{
+			    "year":"2012",
+				"month":"全年",
+			}],
+			"DashboardInfo":[{
+				"WigetName":"LabellingWorkNotwork1011_1",
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"LabellingWorkNotwork1011",
+			}],
+		},
+		"ExpectedData":
+		{
+			"LabellingTooltips":[["> 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "<= 1.2"], ["> 1.58", "1.58 - 1.58", "1.58 - 1.58", "1.58 - 1.58", "1.58 - 1.58", "1.58 - 1.58", "<= 1.58", "DayNightP: 1.58"], ["> 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "<= 1.2", "DayNightP: 1.2"]],
+		}
+	}
+]

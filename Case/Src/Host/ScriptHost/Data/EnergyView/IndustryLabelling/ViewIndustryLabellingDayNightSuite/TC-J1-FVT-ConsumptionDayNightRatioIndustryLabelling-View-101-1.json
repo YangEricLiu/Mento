@@ -1,0 +1,33 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
+			"TagNames":["DayNightP"],
+			"UnitTypeValue":"昼夜比",
+			"Industries":["严寒地区B区数据中心"],
+			"YearAndMonth":[{
+				"year":"2013",
+				"month":"全年",
+			},
+			{
+			    "year":"2012",
+				"month":"10",
+			},
+			{
+			    "year":"2012",
+				"month":"全年",
+			}],
+			"DashboardInfo":[{
+				"WigetName":"LabellingDayNight1011_1",
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"LabellingDayNight1011",
+			}],
+		},
+		"ExpectedData":
+		{
+			"LabellingTooltips":[["> 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "<= 1.06"], ["> 1.13", "1.13 - 1.13", "1.13 - 1.13", "1.13 - 1.13", "1.13 - 1.13", "1.13 - 1.13", "<= 1.13", "DayNightP: 1.13"], ["> 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "<= 1.06", "DayNightP: 1.06"]],
+		}
+	}
+]

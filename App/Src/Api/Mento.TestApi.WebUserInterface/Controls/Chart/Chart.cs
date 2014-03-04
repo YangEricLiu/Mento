@@ -436,11 +436,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
             try
             {
                 FindChild(LabelSVGLocator);
-                return true;
+                return false;
             }
             catch (Exception)
             {
-                return false;
+                return true;
             }             
         }
 

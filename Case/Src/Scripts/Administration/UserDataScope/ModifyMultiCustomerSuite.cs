@@ -60,7 +60,7 @@ namespace Mento.Script.Administration.UserDataScope
             //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@获取客户时的问题
             //Assert.IsTrue(UserDataPermissionSettings.IsCustomerView(input.InputData.CustomerList[2]));
             //Assert.IsFalse(UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[0]));
-            //Assert.IsFalse(UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[1]));
+            //Assert.IsFalse(UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[Industry]));
             //UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[2]);
 
         }
@@ -109,7 +109,7 @@ namespace Mento.Script.Administration.UserDataScope
 
             // View the data permission  
              //Assert.IsTrue(UserDataPermissionSettings.IsCustomerView(input.InputData.CustomerList[0]));
-             //Assert.IsTrue(UserDataPermissionSettings.IsCustomerView(input.InputData.CustomerList[1]));
+             //Assert.IsTrue(UserDataPermissionSettings.IsCustomerView(input.InputData.CustomerList[Industry]));
              //Assert.IsTrue(UserDataPermissionSettings.IsCustomerView(input.InputData.CustomerList[2]));
              //Assert.IsFalse(UserDataPermissionSettings.IsCustomerView(input.InputData.CustomerList[3]));
              

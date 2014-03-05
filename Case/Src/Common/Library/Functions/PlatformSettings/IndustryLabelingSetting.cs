@@ -209,7 +209,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void FocusOnLabeling1(string labelingName)
+        public void FocusOnLabelingIndustry(string labelingName)
         {
             LabelingList.FocusOnRow(1, labelingName);
         }
@@ -219,7 +219,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void FocusOnLabeling2(string labelingName)
+        public void FocusOnLabelingClimateRegion(string labelingName)
         {
             LabelingList.FocusOnRow(2, labelingName);
         }
@@ -419,7 +419,16 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Check whether the labeling list in the labeling List.  
         /// </summary>
         /// <returns></returns>
-        public Boolean IsRowExistLabelingList(string regionName)
+        public Boolean IsRowExistLabelingListIndustry(string regionName)
+        {
+            return LabelingList.IsRowExist(1, regionName);
+        }
+
+        /// <summary>
+        /// Check whether the labeling list in the labeling List.  
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsRowExistLabelingListClimateRegion(string regionName)
         {
             return LabelingList.IsRowExist(1, regionName);
         }

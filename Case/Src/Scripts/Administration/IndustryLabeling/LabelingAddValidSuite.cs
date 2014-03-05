@@ -19,7 +19,7 @@ namespace Mento.Script.Administration.IndustryLabeling
 {
     [TestFixture]
     [Owner("Amber")]
-    [CreateTime("2014-2-25")]
+    [CreateTime("20Industry4-2-25")]
     public class LabelingAddValidSuite : TestSuiteBase
     {
         private static IndustryLabelingSetting IndustryLabelingSetting = JazzFunction.IndustryLabelingSetting;
@@ -42,7 +42,7 @@ namespace Mento.Script.Administration.IndustryLabeling
         [ManualCaseID("TC-J1-FVT-IndustrylabelingSetting-Add-101")]
         [CaseID("TC-J1-FVT-IndustrylabelingSetting-Add-101")]
         [Priority("4")]
-        [MultipleTestDataSource(typeof(IndustryBenchmarkData[]), typeof(LabelingAddValidSuite), "TC-J1-FVT-IndustrylabelingSetting-Add-101")]
+        [MultipleTestDataSource(typeof(IndustryLabelingData[]), typeof(LabelingAddValidSuite), "TC-J1-FVT-IndustrylabelingSetting-Add-101")]
         public void AddIndustryLabelingValid(IndustryLabelingData input)
         {
      
@@ -67,15 +67,15 @@ namespace Mento.Script.Administration.IndustryLabeling
             //Display properties of selected Labeling in add mode. 
             Assert.AreEqual(input.InputData.EnergyEfficiencyLabellingLevel, IndustryLabelingSetting.GetSelectedEnergyEfficiencyLabelingLevel());
 
-            //·Default display recent 3 years. (2012-2014);The Year range from 1950-2049.
+            //·Default display recent 3 years. (20Industry2-20Industry4);The Year range from Industry950-2049.
             IndustryLabelingSetting.DisplayStartYearItems();
             IndustryLabelingSetting.DisplayEndYearItems();
             
             //Select  数据来源  from dropdown list.
             //Try to select 数据来源 start>end time from dropdown list.
             //The time auto round up/down to start=end time
-            IndustryLabelingSetting.SelectStartYearCombox(input.InputData.StartYears[0]);
-            IndustryLabelingSetting.SelectEndYearCombox(input.InputData.EndYears[0]);
+            IndustryLabelingSetting.SelectStartYearCombox(input.InputData.StartYears[1]);
+            IndustryLabelingSetting.SelectEndYearCombox(input.InputData.EndYears[1]);
             string aaa=IndustryLabelingSetting.GetSelectedStartYear();
             string bbb=IndustryLabelingSetting.GetSelectedEndYear();
             if (Convert.ToInt32(aaa) > Convert.ToInt32(bbb))
@@ -85,8 +85,8 @@ namespace Mento.Script.Administration.IndustryLabeling
                 
             //Click the saved Labeling from list.
             IndustryLabelingSetting.ClickSaveLabeling();
-            IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industry);
-            IndustryLabelingSetting.FocusOnLabeling2(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabelingIndustry(input.InputData.Industry);
+            IndustryLabelingSetting.FocusOnLabelingClimateRegion(input.InputData.ClimaticRegion);
 
             //Click +能效标识 buttons. Go to 行业 dropdown list to check.
             IndustryLabelingSetting.ClickAddLabeling();
@@ -99,7 +99,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             //Select 行业=酒店 from dropdown list, Select all 气候分区=全部区域，能耗标识级别=3级，数据来源=2013 -2013
             //.Click Save button.
             int i = 0;
-            while (i <= input.InputData.ClimaticRegions.Length)
+            while (i < input.InputData.ClimaticRegions.Length)
             {
                 IndustryLabelingSetting.ClickAddLabeling();
                 IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
@@ -108,9 +108,9 @@ namespace Mento.Script.Administration.IndustryLabeling
                 TimeManager.ShortPause();
                 IndustryLabelingSetting.SelectEnergyEfficiencyLabelingLevelCombox(input.InputData.EnergyEfficiencyLabellingLevel);
                 TimeManager.ShortPause();
-                IndustryLabelingSetting.SelectStartYearCombox(input.InputData.StartYear);
+                IndustryLabelingSetting.SelectStartYearCombox(input.InputData.StartYears[0]);
                 TimeManager.ShortPause();
-                IndustryLabelingSetting.SelectEndYearCombox(input.InputData.EndYear);
+                IndustryLabelingSetting.SelectEndYearCombox(input.InputData.EndYears[0]);
                 TimeManager.ShortPause();
                 IndustryLabelingSetting.ClickSaveLabeling();
                 TimeManager.ShortPause();

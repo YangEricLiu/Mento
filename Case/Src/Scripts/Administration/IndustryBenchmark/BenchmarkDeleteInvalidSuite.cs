@@ -19,7 +19,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
 {
     [TestFixture]
     [Owner("Greenie")]
-    [CreateTime("2013-10-10")]
+    [CreateTime("2013-10-1y0")]
     public class BenchmarkDeleteInvalidSuite : TestSuiteBase
     {
         private static IndustryBenchmarkSetting IndustryBenchmarkSetting = JazzFunction.IndustryBenchmarkSetting;

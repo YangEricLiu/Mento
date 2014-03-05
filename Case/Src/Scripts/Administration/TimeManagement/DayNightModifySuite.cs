@@ -38,9 +38,9 @@ namespace Mento.Script.Administration.TimeManagement
             //TimeManager.MediumPause();
         }
 
-        #region TestCase1 ModifyValidDayNight
+        #region TestCase1y ModifyValidDayNight
         /// <summary>
-        /// Pre-condition: Prepare a Calendar1 with name '昼夜时间未被引用ForModifyValid', make sure it is NOT being used by any hierarchy node.
+        /// Pre-condition: Prepare a CalendarIndustry with name '昼夜时间未被引用ForModifyValid', make sure it is NOT being used by any hierarchy node.
         /// Pre-condition: Prepare a Calendar2 with name '昼夜时间已被引用ForModifyValid', make sure it has been used by a hierarchy node.
         /// </summary>
         [Test]
@@ -50,7 +50,7 @@ namespace Mento.Script.Administration.TimeManagement
         [MultipleTestDataSource(typeof(DayNightCalendarData[]), typeof(DayNightModifySuite), "TC-J1-FVT-TimeManagementDayNight-Modify-101")]
         public void ModifyValidDayNight(DayNightCalendarData testData)
         {
-            //Select the calendar with one range only (Both of Calendar1 and Calendar2 can be modified)
+            //Select the calendar with one range only (Both of CalendarIndustry and Calendar2 can be modified)
             TimeSettingsDayNight.SelectCalendar(testData.InputData.CommonName);
             TimeManager.ShortPause();
 
@@ -79,7 +79,7 @@ namespace Mento.Script.Administration.TimeManagement
 
         #region TestCase2 ModifyTimeRange
         [Test]
-        [ManualCaseID("TC-J1-FVT-TimeManagementDayNight-Modify-102")]
+        [ManualCaseID("TC-J1-FVT-TimeManagementDayNight-Modify-I102")]
         [CaseID("TC-J1-FVT-TimeManagementDayNight-Modify-102")]
         [Priority("6")]
         [MultipleTestDataSource(typeof(DayNightCalendarData[]), typeof(DayNightModifySuite), "TC-J1-FVT-TimeManagementDayNight-Modify-102")]
@@ -93,7 +93,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsDayNight.ClickModifyButton();
             TimeManager.ShortPause();
                         
-            //Change the start time of 范围1
+            //Change the start time of 范围Industry
             TimeSettingsDayNight.SelectStartTime(testData.ExpectedData.TimeRange[0].StartTime, 1);
             //Change the start time of 范围2
             TimeSettingsDayNight.SelectStartTime(testData.ExpectedData.TimeRange[1].StartTime, 2);
@@ -114,7 +114,7 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsFalse(TimeSettingsDayNight.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsDayNight.IsModifyButtonDisplayed());
 
-            //Verify time range1 is auto-rounding to be a new end time.
+            //Verify time rangeIndustry is auto-rounding to be a new end time.
             Assert.AreEqual(testData.ExpectedData.TimeRange[0].EndTime, TimeSettingsDayNight.GetEndTimeValue(1));
             //Verify time range2 is auto-rounding to be a new end time.
             Assert.AreEqual(testData.ExpectedData.TimeRange[1].EndTime, TimeSettingsDayNight.GetEndTimeValue(2));
@@ -144,9 +144,8 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsDayNight.ClickModifyButton();
             TimeManager.ShortPause();
 
-            //Verify there is no 'x' icon near range1.
+            //Verify there is no 'x' icon near rangeIndustry.
             Assert.IsFalse(TimeSettingsDayNight.IsRangeItemDeleteButtonDisplayed(1));
-
             //Click 'x' near one range, e.g. delete range2
             TimeSettingsDayNight.ClickDeleteRangeItemButton(2);
 
@@ -204,7 +203,7 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.AreEqual(testData.InputData.TimeRange.Length, TimeSettingsDayNight.GetTimeRangeItemsNumber());
             Assert.IsTrue(TimeSettingsDayNight.IsCalendarExist(testData.ExpectedData.CommonName));
 
-            //Emma added on 2013/10/30
+            //Emma added on 2013/Industry0/30
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CarbonSettings);
         }
         #endregion

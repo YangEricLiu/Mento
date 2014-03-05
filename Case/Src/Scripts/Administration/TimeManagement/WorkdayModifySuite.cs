@@ -42,7 +42,7 @@ namespace Mento.Script.Administration.TimeManagement
 
         #region TestCase1 ModifyValidWorkday
         /// <summary>
-        /// Pre-condition: Prepare a Calendar1 with name '工休日未被引用ForModifyValid', make sure it is NOT being used by any hierarchy node.
+        /// Pre-condition: Prepare a CalendarIndustry with name '工休日未被引用ForModifyValid', make sure it is NOT being used by any hierarchy node.
         /// Pre-condition: Prepare a Calendar2 with name '工休日已被引用ForModifyValid', make sure it has been used by a hierarchy node.
         /// </summary>
         [Test]
@@ -52,7 +52,7 @@ namespace Mento.Script.Administration.TimeManagement
         [MultipleTestDataSource(typeof(WorkdayCalendarData[]), typeof(WorkdayModifySuite), "TC-J1-FVT-TimeManagementWorkday-Modify-101")]
         public void ModifyValidWorkday(WorkdayCalendarData testData)
         {
-            //Select the calendar (Both of Calendar1 and Calendar2 can be modified).
+            //Select the calendar (Both of CalendarIndustry and Calendar2 can be modified).
             TimeSettingsWorkday.SelectCalendar(testData.InputData.CommonName);
             TimeManager.ShortPause();
 
@@ -94,10 +94,10 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorkday.ClickModifyButton();
             TimeManager.ShortPause();
 
-            //Change the type of 时间1 to be '非工作日'
+            //Change the type of 时间Industry to be '非工作日'
             TimeSettingsWorkday.SelectSpecialDateType(testData.ExpectedData.SpecialDate[0].Type, 1);
 
-            //Change the end date of 范围1
+            //Change the end date of 范围Industry
             TimeSettingsWorkday.SelectEndDate(testData.ExpectedData.SpecialDate[0].EndDate, 1);
 
             //Change the end month of 范围2
@@ -123,11 +123,11 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsTrue(TimeSettingsWorkday.IsModifyButtonDisplayed());
 
             //工休日日历每次保存后顺序都不同。。和开发协调优化。
-            ////Verify time range1 remains as before.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[0].StartDate, TimeSettingsWorkday.GetStartDateValue(1));
+            ////Verify time rangeIndustry remains as before.
+            //Assert.AreEqual(testData.ExpectedData.SpecialDate[0].StartDate, TimeSettingsWorkday.GetStartDateValue(Industry));
             ////Verify time range2 is auto-rounding to be a new startmonth, startdate.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[1].StartMonth, TimeSettingsWorkday.GetStartMonthValue(2));
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[1].StartDate, TimeSettingsWorkday.GetStartDateValue(2));
+            //Assert.AreEqual(testData.ExpectedData.SpecialDate[Industry].StartMonth, TimeSettingsWorkday.GetStartMonthValue(2));
+            //Assert.AreEqual(testData.ExpectedData.SpecialDate[Industry].StartDate, TimeSettingsWorkday.GetStartDateValue(2));
             ////Verify time range3 is auto-rounding to be a new endmonth, enddate.
             //Assert.AreEqual(testData.ExpectedData.SpecialDate[2].EndMonth, TimeSettingsWorkday.GetEndMonthValue(3));
             //Assert.AreEqual(testData.ExpectedData.SpecialDate[2].EndDate, TimeSettingsWorkday.GetEndDateValue(3));
@@ -154,7 +154,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorkday.ClickModifyButton();
             TimeManager.ShortPause();
 
-            //Click 'x' near one range, e.g. delete range1
+            //Click 'x' near one range, e.g. delete rangeIndustry
             TimeSettingsWorkday.ClickDeleteRangeItemButton(1);
 
             //Click 'Save' button
@@ -246,7 +246,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorkday.ClickModifyButton();
             TimeManager.ShortPause();
             
-            //Change the end month, end date of range1 so that it is overlapped with range2
+            //Change the end month, end date of rangeIndustry so that it is overlapped with range2
             TimeSettingsWorkday.SelectEndMonth(testData.InputData.SpecialDate[0].EndMonth, 1);
             TimeSettingsWorkday.SelectEndDate(testData.InputData.SpecialDate[0].EndDate, 1);
 

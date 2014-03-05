@@ -104,7 +104,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
             Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.ExpectedData.ClimaticRegions[3]));
             Assert.IsFalse(IndustryBenchmarkSetting.IsClimateRegionNotDisplay(input.ExpectedData.ClimaticRegions[4]));
             
-            //Add all 行业 from dropdown list. Click +行业对标 buttons. 21 Industrys
+            //Add all 行业 from dropdown list. Click +行业对标 buttons. 2Industry Industrys
             int i = 0;
             while (i < input.InputData.Industrys.Length)
             {

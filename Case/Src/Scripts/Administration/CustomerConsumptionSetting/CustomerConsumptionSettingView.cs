@@ -45,7 +45,7 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
         [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(CustomerConsumptionSettingView), "TC-J1-FVT-CustomerConsumptionSettingView-View-101-1")]
         public void ViewCustomerConsumptionSetting(CustomerManagementData input)
         {
-            //1.Select an old existing customer which didn't defined consumption setting for map before.
+            //Industry.Select an old existing customer which didn't defined consumption setting for map before.
             CustomerManageSetting.FocusOnCustomer(input.InputData.Name);
 
             //Open 'Consumption Setting For Map' (地图页信息) tab.
@@ -73,7 +73,7 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
         [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(CustomerConsumptionSettingView), "TC-J1-FVT-CustomerConsumptionSettingView-View-101-2")]
         public void ViewSettedCustomerConsumptionSetting(CustomerManagementData input)
         {
-            //1.Select a customer which has already defined consumption setting for map successfully.
+            //Industry.Select a customer which has already defined consumption setting for map successfully.
             CustomerManageSetting.FocusOnCustomer(input.InputData.Name);
 
             //Open 'Consumption Setting For Map' (地图页信息) tab.

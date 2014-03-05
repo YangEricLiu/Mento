@@ -62,14 +62,14 @@ namespace Mento.Script.Administration.IndustryLabeling
             int i = 0;
             while (i < input.InputData.Industrys.Length)
             {
-                Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingList(input.InputData.Industrys[i]));
+                Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingListIndustry(input.InputData.Industrys[i]));
                 i++;
             }
 
             int j = 0;
             while (j < input.InputData.ClimaticRegions.Length)
             {
-                Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingList(input.InputData.ClimaticRegions[j]));
+                Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingListClimateRegion(input.InputData.ClimaticRegions[j]));
                 j++;
             }
 
@@ -82,29 +82,41 @@ namespace Mento.Script.Administration.IndustryLabeling
             //Red line display at 行业 & 气候分区 &  能效标识级别
             //After note show "必输项",
             Assert.IsTrue(IndustryLabelingSetting.IsIndustrysAddMessageDisplayed());
+            TimeManager.LongPause();
             Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionAddMessageDisplayed());
+            TimeManager.LongPause();
             Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
+            TimeManager.LongPause();
             IndustryLabelingSetting.IsStartYearInDropdownList(input.ExpectedData.StartYear);
+            TimeManager.LongPause();
             IndustryLabelingSetting.IsEndYearInDropdownList(input.ExpectedData.EndYear);
-
+            TimeManager.LongPause();
 
             // Click Cancel button,Click +能效标识 buttons
             IndustryLabelingSetting.ClickCancelLabeling();
             TimeManager.LongPause();
             IndustryLabelingSetting.ClickAddLabeling();
+            TimeManager.LongPause();
+
 
             //Select 行业=酒店五星级  and check one 气候分区=严寒地区B区. 
             //Click Cancel button.
             IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
+            TimeManager.LongPause();
             IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimaticRegion);
+            TimeManager.LongPause();
             IndustryLabelingSetting.ClickCancelLabeling();
+            TimeManager.LongPause();
 
             //Then click +能效标识 buttons.
-            //·Cancel and there isn't any beachmark added to list.
+            //·Cancel and there isn't any labeling added to list.
             //· The dropdown list can still select 行业=酒店五星级  and here is 严寒地区B区 can be selected..
             IndustryLabelingSetting.ClickAddLabeling();
-            Assert.IsTrue(IndustryLabelingSetting.IsIndustryInDropdownList(input.InputData.Industry));
-            Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimaticRegion));
+            TimeManager.LongPause();
+            IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
+            TimeManager.LongPause();
+            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimaticRegion);
+            TimeManager.LongPause();
             IndustryLabelingSetting.ClickCancelLabeling();
         }
         #endregion

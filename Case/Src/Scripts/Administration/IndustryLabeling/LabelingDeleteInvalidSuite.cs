@@ -19,7 +19,7 @@ namespace Mento.Script.Administration.IndustryLabeling
 {
     [TestFixture]
     [Owner("Amber")]
-    [CreateTime("2014-2-26")]
+    [CreateTime("20Industry4-2-26")]
     public class LabelingDeleteInvalidSuite : TestSuiteBase
     {
         private static IndustryLabelingSetting IndustryLabelingSetting = JazzFunction.IndustryLabelingSetting;
@@ -47,22 +47,26 @@ namespace Mento.Script.Administration.IndustryLabeling
         {
             //Click a Labeling(气候分区=严寒地区A区 ) from list and click 删除 button.
             //·Pop up window show 是否删除.
-            IndustryLabelingSetting.FocusOnLabeling2(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabelingClimateRegion(input.InputData.ClimaticRegion);
             TimeManager.LongPause();
             IndustryLabelingSetting.ClickDeleteLabeling();
 
             //After click confirmation Cancel button.
             JazzMessageBox.MessageBox.Cancel();
+            TimeManager.LongPause();
 
-            //The Labeling still display in menchmark list.
-            Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingList(input.InputData.ClimaticRegion));
+            //The Labeling still display in Labeling list.
+            Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingListClimateRegion(input.InputData.ClimaticRegion));
+            TimeManager.LongPause();
 
             //After click confirmation "X" button.
             IndustryLabelingSetting.ClickDeleteLabeling();
             JazzMessageBox.MessageBox.Close();
+            TimeManager.LongPause();
 
-            //The Labeling still display in menchmark list.
-            Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingList(input.InputData.ClimaticRegion));
+            //The Labeling still display in Labeling list.
+            Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingListClimateRegion(input.InputData.ClimaticRegion));
+            TimeManager.LongPause();
         }
         #endregion
 

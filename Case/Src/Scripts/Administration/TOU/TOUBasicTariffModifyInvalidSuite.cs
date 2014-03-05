@@ -180,7 +180,7 @@ namespace Mento.Script.Administration.TOU
             TOUBasicTariffSettings.ClickBasicPropertyModifyButton();
             TimeManager.ShortPause();
 
-            //modify end time of peak range1 so that it is overlapped with valley range1.
+            //modify end time of peak rangeIndustry so that it is overlapped with valley rangeIndustry.
             TOUBasicTariffSettings.SelectBasicPropertyPeakEndTime(testData.InputData.PeakRange[0].EndTime, 1);
 
             //Click "Save" button
@@ -206,7 +206,7 @@ namespace Mento.Script.Administration.TOU
         [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffModifyInvalidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Modify-005")]
         public void ModifyToNotCover24Hours(TOUBasicTariffData testData)
         {
-            //Select TOU1
+            //Select TOUIndustry
             TOUBasicTariffSettings.SelectTOU("价格ForModifyToNotCover24h1");
             TimeManager.ShortPause();
 

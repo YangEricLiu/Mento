@@ -44,7 +44,7 @@ namespace Mento.Script.Administration.UserDataScope
         [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-1")]
         public void AddAndViewRootNode(UserDataPermissionData input)
         {
-            //string[] hierarchyNode = {"NancyCustomer1","GreenieSite","GreenieBuilding"};
+            //string[] hierarchyNode = {"NancyCustomerIndustry","GreenieSite","GreenieBuilding"};
             string[] hierarchyNode = {""};
             // Focus on a new created user, open datascope tab. 
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
@@ -345,7 +345,7 @@ namespace Mento.Script.Administration.UserDataScope
         }
         /*
         [Test]
-        [CaseID("TC-J1-FVT-UserDataScope-Add-101-10")]
+        [CaseID("TC-J1-FVT-UserDataScope-Add-101-Industry0")]
         [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-9")]
         public void AllHierarchyCheckedNewCreated(UserDataPermissionData input)
         {

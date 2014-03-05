@@ -19,7 +19,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
 {
     [TestFixture]
     [Owner("Greenie")]
-    [CreateTime("2013-10-12")]
+    [CreateTime("2013-10-1y2")]
     public class BenchmarkModifyValidSuite : TestSuiteBase
     {
         private static IndustryBenchmarkSetting IndustryBenchmarkSetting = JazzFunction.IndustryBenchmarkSetting;
@@ -45,7 +45,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
         [MultipleTestDataSource(typeof(IndustryBenchmarkData[]), typeof(BenchmarkModifyValidSuite), "TC-J1-FVT-IndustryBenchmarkSetting-Modify-101-1")]
         public void ModifyIndustryBenchmarkValid(IndustryBenchmarkData input)
         {
-            //1. Click a benchmark(行业=酒店; 区域=全部地区+严寒地区A区 ) from list and click 修改 button.
+            //Industry. Click a benchmark(行业=酒店; 区域=全部地区+严寒地区A区 ) from list and click 修改 button.
             IndustryBenchmarkSetting.FocusOnBenchMark(input.InputData.Industry);
             IndustryBenchmarkSetting.ClickModifyBenchMark();
             TimeManager.ShortPause();
@@ -98,7 +98,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
         [MultipleTestDataSource(typeof(IndustryBenchmarkData[]), typeof(BenchmarkModifyValidSuite), "TC-J1-FVT-IndustryBenchmarkSetting-Modify-101-2")]
         public void SaveBenchmarkWithoutModify(IndustryBenchmarkData input)
         {
-            //1. Click a benchmark(行业=全行业; 区域=全部地区 ) from list and click 修改 button.
+            //Industry. Click a benchmark(行业=全行业; 区域=全部地区 ) from list and click 修改 button.
             IndustryBenchmarkSetting.FocusOnBenchMark(input.InputData.Industry);
             IndustryBenchmarkSetting.ClickModifyBenchMark();
             TimeManager.ShortPause();

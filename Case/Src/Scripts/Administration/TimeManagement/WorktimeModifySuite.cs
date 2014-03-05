@@ -49,7 +49,7 @@ namespace Mento.Script.Administration.TimeManagement
         [MultipleTestDataSource(typeof(WorktimeCalendarData[]), typeof(WorktimeModifySuite), "TC-J1-FVT-TimeManagementWorktime-Modify-101")]
         public void ModifyValidWorktime(WorktimeCalendarData testData)
         {
-            //Select the calendar with one range only (Both of Calendar1 and Calendar2 can be modified)
+            //Select the calendar with one range only (Both of CalendarIndustry and Calendar2 can be modified)
             TimeSettingsWorktime.SelectCalendar(testData.InputData.CommonName);
             TimeManager.ShortPause();
 
@@ -91,7 +91,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorktime.ClickModifyButton();
             TimeManager.ShortPause();
                         
-            //Change the start time of 范围1
+            //Change the start time of 范围Industry
             TimeSettingsWorktime.SelectStartTime(testData.ExpectedData.TimeRange[0].StartTime, 1);
             //Change the start time of 范围2
             TimeSettingsWorktime.SelectStartTime(testData.ExpectedData.TimeRange[1].StartTime, 2);
@@ -111,7 +111,7 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsFalse(TimeSettingsWorktime.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsWorktime.IsModifyButtonDisplayed());
 
-            //Verify time range1 is auto-rounding to be a new end time.
+            //Verify time rangeIndustry is auto-rounding to be a new end time.
             Assert.AreEqual(testData.ExpectedData.TimeRange[0].EndTime, TimeSettingsWorktime.GetEndTimeValue(1));
             //Verify time range2 is auto-rounding to be a new end time.
             Assert.AreEqual(testData.ExpectedData.TimeRange[1].EndTime, TimeSettingsWorktime.GetEndTimeValue(2));
@@ -127,8 +127,8 @@ namespace Mento.Script.Administration.TimeManagement
 
         #region TestCase3 ModifyToDeleteTimeRange
         [Test]
-        [ManualCaseID("TC-J1-FVT-TimeManagementWorktime-Modify-103")]
-        [CaseID("TC-J1-FVT-TimeManagementWorktime-Modify-103")]
+        [ManualCaseID("TC-J1-FVT-TimeManagementWorktime-Modify-Industry03")]
+        [CaseID("TC-J1-FVT-TimeManagementWorktime-Modify-Industry03")]
         [Priority("6")]
         [MultipleTestDataSource(typeof(WorktimeCalendarData[]), typeof(WorktimeModifySuite), "TC-J1-FVT-TimeManagementWorktime-Modify-103")]
         public void ModifyToDeleteTimeRange(WorktimeCalendarData testData)
@@ -141,7 +141,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorktime.ClickModifyButton();
             TimeManager.ShortPause();
 
-            //Verify there is no 'x' icon near range1.
+            //Verify there is no 'x' icon near rangeIndustry.
             Assert.IsFalse(TimeSettingsWorktime.IsRangeItemDeleteButtonDisplayed(1));
 
             //Click 'x' near one range, e.g. delete range2
@@ -217,7 +217,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorktime.ClickModifyButton();
             TimeManager.ShortPause();
             
-            //Change the end time of range1 so that it is overlapped with range2
+            //Change the end time of rangeIndustry so that it is overlapped with range2
             TimeSettingsWorktime.SelectEndTime(testData.InputData.TimeRange[0].EndTime, 1);
 
             //Change name to be a duplicated name; or null 

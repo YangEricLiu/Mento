@@ -57,7 +57,7 @@ namespace Mento.Script.Administration.TOU
             //Change the price with a valid input.
             TOUPulsePeakTariffSettings.FillInPulsePeakPropertyPriceValue(testData.ExpectedData.Price);
 
-            //Change  范围1 to be '4月2日 - 5月31日 00:30-23:30'
+            //Change  范围Industry to be '4月2日 - 5月31日 00:30-23:30'
             TOUPulsePeakTariffSettings.SelectPulsePeakPropertyStartMonth(testData.ExpectedData.PulsePeakRange[0].StartMonth, 1);
             TOUPulsePeakTariffSettings.SelectPulsePeakPropertyStartDate(testData.ExpectedData.PulsePeakRange[0].StartDate, 1);
             TOUPulsePeakTariffSettings.SelectPulsePeakPropertyEndMonth(testData.ExpectedData.PulsePeakRange[0].EndMonth, 1);
@@ -91,7 +91,7 @@ namespace Mento.Script.Administration.TOU
             Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakPropertyModifyButtonDisplayed());
             //Verify price is changed to be new.
             Assert.AreEqual(testData.ExpectedData.Price, TOUPulsePeakTariffSettings.GetPulsePeakPropertyPriceValue());
-            //Verify time range1 is changed to be new.
+            //Verify time rangeIndustry is changed to be new.
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[0].StartMonth, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartMonthValue(1));
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[0].StartDate, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartDateValue(1));
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[0].EndMonth, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndMonthValue(1));
@@ -143,7 +143,7 @@ namespace Mento.Script.Administration.TOU
             //Verify modification is saved successfully.
             Assert.IsFalse(TOUPulsePeakTariffSettings.IsPulsePeakPropertySaveButtonDisplayed());
             Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakPropertyModifyButtonDisplayed());
-            //Verify time range2，and 3 are added below original time range1.
+            //Verify time range2，and 3 are added below original time rangeIndustry.
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[1].StartMonth, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartMonthValue(2));
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[1].StartDate, TOUPulsePeakTariffSettings.GetPulsePeakPropertyStartDateValue(2));
             Assert.AreEqual(testData.ExpectedData.PulsePeakRange[1].EndMonth, TOUPulsePeakTariffSettings.GetPulsePeakPropertyEndMonthValue(2));
@@ -177,7 +177,7 @@ namespace Mento.Script.Administration.TOU
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertyModifyButton();
             TimeManager.ShortPause();
 
-            //Verify there is no 'x' icon near range1.
+            //Verify there is no 'x' icon near rangeIndustry.
             Assert.IsFalse(TOUPulsePeakTariffSettings.IsPulsePeakPropertyRangeItemDeleteButtonDisplayed(1));
 
             //Click 'x' icon to delete some pulse peak items, e.g. delete range2
@@ -218,7 +218,7 @@ namespace Mento.Script.Administration.TOU
             TOUPulsePeakTariffSettings.ClickPulsePeakPropertyModifyButton();
             TimeManager.ShortPause();
 
-            //Verify there is no 'x' icon near range1.
+            //Verify there is no 'x' icon near rangeIndustry.
             Assert.IsFalse(TOUPulsePeakTariffSettings.IsPulsePeakPropertyRangeItemDeleteButtonDisplayed(1));
 
             //Click 'x' icons to delete whole pulse peak range

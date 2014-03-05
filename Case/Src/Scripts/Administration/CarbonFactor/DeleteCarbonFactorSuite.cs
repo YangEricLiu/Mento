@@ -72,7 +72,7 @@ namespace Mento.Script.Administration.CarbonFactor
         [Test]
         [CaseID("TC-J1-FVT-ConversionFactorSetting-Delete-002")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(CarbonFactorData[]), typeof(DeleteCarbonFactorSuite), "TC-J1-FVT-ConversionFactorSetting-Delete-001")]
+        [MultipleTestDataSource(typeof(CarbonFactorData[]), typeof(DeleteCarbonFactorSuite), "TC-J1-FVT-ConversionFactorSetting-Delete-002")]
         public void DeleteAndClose(CarbonFactorData testData)
         {
             //选择一条转换因子， Click "修改" button

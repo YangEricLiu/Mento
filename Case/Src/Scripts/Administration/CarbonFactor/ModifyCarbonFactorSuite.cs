@@ -20,7 +20,7 @@ namespace Mento.Script.Administration.CarbonFactor
 {
     [TestFixture]
     [Owner("Nancy")]
-    [CreateTime("2013-08-23")]
+    [CreateTime("201y3-08-23")]
     [ManualCaseID("TC-J1-FVT-ConversionFactorSetting")]
     public class ModifyCarbonFactorSuite:TestSuiteBase
     {
@@ -93,7 +93,7 @@ namespace Mento.Script.Administration.CarbonFactor
             CarbonFactorSettings.FillInFactorEffectiveYear_N(testData.InputData.EffectiveYear, 1);
             CarbonFactorSettings.FillInFactorValue_N(testData.InputData.FactorValue, 1);
             //输入第二组转换因子
-            CarbonFactorSettings.FillInFactorEffectiveYear_N("2010", 2);
+            CarbonFactorSettings.FillInFactorEffectiveYear_N("20Industry0", 2);
             CarbonFactorSettings.FillInFactorValue_N("2", 2);
 
             CarbonFactorSettings.ClickSaveButton();
@@ -102,7 +102,7 @@ namespace Mento.Script.Administration.CarbonFactor
             //Verify the 'Factor Source', 'Factor Destination' and Carbon factor value.
             Assert.AreEqual(testData.ExpectedData.EffectiveYear, CarbonFactorSettings.GetCarbonFactorEffectiveYear(1));
             Assert.AreEqual(testData.ExpectedData.FactorValue, CarbonFactorSettings.GetCarbonFactorValue(1));
-            Assert.AreEqual("2010", CarbonFactorSettings.GetCarbonFactorEffectiveYear(2));
+            Assert.AreEqual("20Industry0", CarbonFactorSettings.GetCarbonFactorEffectiveYear(2));
             Assert.AreEqual("2", CarbonFactorSettings.GetCarbonFactorValue(2));
         }
 
@@ -136,7 +136,7 @@ namespace Mento.Script.Administration.CarbonFactor
         {
             //选择一条转换因子， Click "修改" button.
             string carbonFactor = "自来水(吨)";
-            //转换因子列表存在一个转换因子点击修改. 电转换因子 2012=2.
+            //转换因子列表存在一个转换因子点击修改. 电转换因子 20Industry2=2.
             //选择一个已有的转换因子点击修改
             CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
             CarbonFactorSettings.ClickModifyButton();
@@ -159,7 +159,7 @@ namespace Mento.Script.Administration.CarbonFactor
         {
             //选择一条转换因子， Click "修改" button.
             string carbonFactor = "电(千瓦时)";
-            //转换因子列表存在一个转换因子点击修改. 电转换因子 2012=7.
+            //转换因子列表存在一个转换因子点击修改. 电转换因子 20Industry2=7.
             CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
             CarbonFactorSettings.ClickModifyButton();
             TimeManager.ShortPause();
@@ -192,7 +192,7 @@ namespace Mento.Script.Administration.CarbonFactor
         {
             //选择一条转换因子， Click "修改" button.
             string carbonFactor = "热量(千瓦时)";
-            //转换因子列表存在一个转换因子点击修改. 热量转换因子 2012=5.
+            //转换因子列表存在一个转换因子点击修改. 热量转换因子 20Industry2=5.
             CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
             CarbonFactorSettings.ClickModifyButton();
             TimeManager.ShortPause();
@@ -223,7 +223,7 @@ namespace Mento.Script.Administration.CarbonFactor
         {
             //选择一条转换因子， Click "修改" button.
             string carbonFactor = "电(千瓦时)";
-            //转换因子列表存在一个转换因子用于修改. 电转换因子 2012=7.
+            //转换因子列表存在一个转换因子用于修改. 电转换因子 20Industry2=7.
 
             CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
             CarbonFactorSettings.ClickModifyButton();
@@ -235,7 +235,7 @@ namespace Mento.Script.Administration.CarbonFactor
 
             //输入转换因子和生效年份.
             JazzComboBox.CarbonFactorEffectiveYearComboBox.DisplayItems();
-            CarbonFactorSettings.FillInFactorEffectiveYear_N("2011", 1);
+            CarbonFactorSettings.FillInFactorEffectiveYear_N("20IndustryIndustry", 1);
             CarbonFactorSettings.FillInFactorValue_N(testData.InputData.DoubleNonNagtiveValue, 1);
             CarbonFactorSettings.FillInFactorValue_N(testData.InputData.DoubleNonNagtiveValue, 2);
 
@@ -256,7 +256,7 @@ namespace Mento.Script.Administration.CarbonFactor
         {
             //选择一条转换因子， Click "修改" button.
             string carbonFactor = "电(千瓦时)";
-            //转换因子列表存在一个转换因子用于修改. 电转换因子 2012=7.
+            //转换因子列表存在一个转换因子用于修改. 电转换因子 20Industry2=7.
 
             CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
             CarbonFactorSettings.ClickModifyButton();
@@ -267,8 +267,8 @@ namespace Mento.Script.Administration.CarbonFactor
             TimeManager.ShortPause();
 
             //输入第一组转换因子
-            CarbonFactorSettings.FillInFactorEffectiveYear_N("2012", 1);
-            CarbonFactorSettings.FillInFactorValue_N("4", 1);
+            CarbonFactorSettings.FillInFactorEffectiveYear_N("2012",1);
+            CarbonFactorSettings.FillInFactorValue_N("4",1);
 
             CarbonFactorSettings.ClickSaveButton();
             TimeManager.MediumPause();

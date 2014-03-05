@@ -41,7 +41,7 @@ namespace Mento.Script.Administration.TimeManagement
 
         #region TestCase1 ModifyValidHCSeason
         /// <summary>
-        /// Pre-condition: Prepare a Calendar1 with name '冷暖季未被引用ForModifyValid', make sure it is NOT being used by any hierarchy node.
+        /// Pre-condition: Prepare a CalendarIndustry with name '冷暖季未被引用ForModifyValid', make sure it is NOT being used by any hierarchy node.
         /// Pre-condition: Prepare a Calendar2 with name '冷暖季已被引用ForModifyValid', make sure it has been used by a hierarchy node.
         /// </summary>
         [Test]
@@ -51,7 +51,7 @@ namespace Mento.Script.Administration.TimeManagement
         [MultipleTestDataSource(typeof(HeatingCoolingSeasonCalendarData[]), typeof(HeatingCoolingSeasonModifySuite), "TC-J1-FVT-TimeManagementHCSeason-Modify-101")]
         public void ModifyValidHCSeason(HeatingCoolingSeasonCalendarData testData)
         {
-            //Select the calendar (Both of Calendar1 and Calendar2 can be modified).
+            //Select the calendar (Both of CalendarIndustry and Calendar2 can be modified).
             TimeSettingsHeatingCoolingSeason.SelectCalendar(testData.InputData.CommonName);
             TimeManager.ShortPause();
 
@@ -95,12 +95,12 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsHeatingCoolingSeason.ClickModifyButton();
             TimeManager.ShortPause();
 
-            //Change the start date of 采暖季1
+            //Change the start date of 采暖季Industry
             TimeSettingsHeatingCoolingSeason.SelectWarmStartDate(testData.ExpectedData.WarmRange[0].StartDate, 1);
             //Change the start month, start date of 采暖季2
             TimeSettingsHeatingCoolingSeason.SelectWarmStartMonth(testData.ExpectedData.WarmRange[1].StartMonth, 2);
             TimeSettingsHeatingCoolingSeason.SelectWarmStartDate(testData.ExpectedData.WarmRange[1].StartDate, 2);
-            //Change the end date of 供冷季1
+            //Change the end date of 供冷季Industry
             TimeSettingsHeatingCoolingSeason.SelectColdEndDate(testData.ExpectedData.ColdRange[0].EndDate, 1);
             //Change the end month, end date of 供冷季2
             TimeSettingsHeatingCoolingSeason.SelectColdEndMonth(testData.ExpectedData.ColdRange[1].EndMonth, 2);
@@ -115,11 +115,11 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsModifyButtonDisplayed());
 
             //工休日和冷暖季日历每次保存后顺序都不同。。和开发协调优化。
-            ////Verify time range1 remains as before.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[0].StartDate, TimeSettingsHeatingCoolingSeason.GetStartDateValue(1));
+            ////Verify time rangeIndustry remains as before.
+            //Assert.AreEqual(testData.ExpectedData.SpecialDate[0].StartDate, TimeSettingsHeatingCoolingSeason.GetStartDateValue(Industry));
             ////Verify time range2 is auto-rounding to be a new startmonth, startdate.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[1].StartMonth, TimeSettingsHeatingCoolingSeason.GetStartMonthValue(2));
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[1].StartDate, TimeSettingsHeatingCoolingSeason.GetStartDateValue(2));
+            //Assert.AreEqual(testData.ExpectedData.SpecialDate[Industry].StartMonth, TimeSettingsHeatingCoolingSeason.GetStartMonthValue(2));
+            //Assert.AreEqual(testData.ExpectedData.SpecialDate[Industry].StartDate, TimeSettingsHeatingCoolingSeason.GetStartDateValue(2));
             ////Verify time range3 is auto-rounding to be a new endmonth, enddate.
             //Assert.AreEqual(testData.ExpectedData.SpecialDate[2].EndMonth, TimeSettingsHeatingCoolingSeason.GetEndMonthValue(3));
             //Assert.AreEqual(testData.ExpectedData.SpecialDate[2].EndDate, TimeSettingsHeatingCoolingSeason.GetEndDateValue(3));
@@ -146,7 +146,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsHeatingCoolingSeason.ClickModifyButton();
             TimeManager.ShortPause();
 
-            //Verify there is no 'x' icon near range1.
+            //Verify there is no 'x' icon near rangeIndustry.
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsWarmRangeItemDeleteButtonDisplayed(1));
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsColdRangeItemDeleteButtonDisplayed(1));
 

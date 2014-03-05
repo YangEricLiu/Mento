@@ -170,7 +170,7 @@ namespace Mento.Script.Administration.TOU
             Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakRangeInvalidMsgCorrect(testData.ExpectedData, 1));
             Assert.IsTrue(TOUPulsePeakTariffSettings.IsPulsePeakRangeInvalidMsgCorrect(testData.ExpectedData, 2));
 
-            //Revise one of the range, so that no overlap, e.g. change starttime of range2 to be same as endtime of range1, and click Save.
+            //Revise one of the range, so that no overlap, e.g. change starttime of range2 to be same as endtime of rangeIndustry, and click Save.
             TOUPulsePeakTariffSettings.SelectPulsePeakPropertyStartTime(testData.InputData.PulsePeakRange[0].EndTime, 2);
 
             //Click Save button.

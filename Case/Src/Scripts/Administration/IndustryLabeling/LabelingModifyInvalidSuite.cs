@@ -19,7 +19,7 @@ namespace Mento.Script.Administration.IndustryLabeling
 {
     [TestFixture]
     [Owner("Amber")]
-    [CreateTime("2014-2-26")]
+    [CreateTime("20Industry4-2-26")]
     public class LabelingModifyInvalidSuite : TestSuiteBase
     {
         private static IndustryLabelingSetting IndustryLabelingSetting = JazzFunction.IndustryLabelingSetting;
@@ -46,8 +46,9 @@ namespace Mento.Script.Administration.IndustryLabeling
         public void ModifyIndustryLabelingCancelled(IndustryLabelingData input)
         {
             //Click a labeling(气候分区=严寒地区A区 ) from list and click 修改 button.
-            IndustryLabelingSetting.FocusOnLabeling2(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabelingClimateRegion(input.InputData.ClimaticRegion);
             IndustryLabelingSetting.ClickModifyLabeling();
+            TimeManager.LongPause();
             
             //Click Cancel button directly.
             IndustryLabelingSetting.ClickCancelLabeling();
@@ -59,7 +60,7 @@ namespace Mento.Script.Administration.IndustryLabeling
 
             //Click a labeling from list and click 修改 button. 
             // Change 级别 or 数据来源. Click Cancel button.
-            IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industry);
+            IndustryLabelingSetting.FocusOnLabelingClimateRegion(input.InputData.ClimaticRegion);
             IndustryLabelingSetting.ClickModifyLabeling();
             IndustryLabelingSetting.SelectEnergyEfficiencyLabelingLevelCombox(input.InputData.EnergyEfficiencyLabellingLevel);
             //IndustryLabelingSetting.SelectStartYearCombox(input.InputData.StartYear);
@@ -82,8 +83,10 @@ namespace Mento.Script.Administration.IndustryLabeling
         public void ModifyIndustryLabelingInvalid(IndustryLabelingData input)
         {
             //Click a Labeling(行业=酒店; 气候分区=严寒地区A区) from list and click 修改 button.
-            IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industry);
+            IndustryLabelingSetting.FocusOnLabelingIndustry(input.InputData.Industry);
+            IndustryLabelingSetting.FocusOnLabelingClimateRegion(input.InputData.ClimaticRegion);
             IndustryLabelingSetting.ClickModifyLabeling();
+            TimeManager.LongPause();
 
             //·The 行业 & 气候分区 is gray out and can't be modified.
             IndustryLabelingSetting.IsIndustryComboxEnabled();

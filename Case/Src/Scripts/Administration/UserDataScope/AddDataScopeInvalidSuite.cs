@@ -85,7 +85,7 @@ namespace Mento.Script.Administration.UserDataScope
 
         [Test]
         [CaseID("TC-J1-FVT-UserDataScope-Add-001-3")]
-        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeInvalidSuite), "TC-J1-FVT-UserDataScope-Add-001-3")]
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeInvalidSuite), "TC-J1-FVT-UserDataScope-Add-00Industry-3")]
         public void AddThenCancel(UserDataPermissionData input)
         {
 

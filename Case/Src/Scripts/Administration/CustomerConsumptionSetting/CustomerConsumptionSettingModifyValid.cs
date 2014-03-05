@@ -54,7 +54,7 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
             //Click 'Modify' button.
             CustomerManageSetting.ClickModifyMapPropertyButton();
             TimeManager.MediumPause();
-            //Display all the 13 available selections including
+            //Display all the Industry3 available selections including
             Assert.IsTrue(CustomerManageSetting.AreDefaultOptionsChecked());
             //CustomerManageSetting.AreItemsChecked(input.InputData.MapOptions);
             Assert.IsTrue(CustomerManageSetting.AreItemsUnChecked(input.ExpectedData.MapOptions));

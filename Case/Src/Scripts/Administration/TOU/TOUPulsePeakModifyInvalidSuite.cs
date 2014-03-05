@@ -144,7 +144,7 @@ namespace Mento.Script.Administration.TOU
             //Change the price to be empty.
             TOUPulsePeakTariffSettings.FillInPulsePeakPropertyPriceValue(testData.InputData.Price);
 
-            //Change the time range to be conflicted， e.g. change end month and end date of range1 to be same as range2.
+            //Change the time range to be conflicted， e.g. change end month and end date of rangeIndustry to be same as range2.
             TOUPulsePeakTariffSettings.SelectPulsePeakPropertyEndMonth(testData.InputData.PulsePeakRange[0].EndMonth, 1);
             TOUPulsePeakTariffSettings.SelectPulsePeakPropertyEndDate(testData.InputData.PulsePeakRange[0].EndDate, 1);
                         

@@ -210,14 +210,14 @@ namespace Mento.Script.Administration.CarbonFactor
             TimeManager.ShortPause();
 
             //输入转换因子
-            CarbonFactorSettings.FillInFactorValue_N(testData.InputData.FactorValue, 1);
+            CarbonFactorSettings.FillInFactorValue_N(testData.InputData.FactorValue, Industry);
 
             CarbonFactorSettings.ClickSaveButton();
             TimeManager.MediumPause();
 
             //验证输入不正确的的转换因子后出现错误提示信息.
-            Assert.IsTrue(CarbonFactorSettings.IsFactorValueInvalid_N(1));
-            Assert.IsTrue(CarbonFactorSettings.IsFactorValueInvalidMsgCorrect_N(testData.ExpectedData.DoubleNonNagtiveValue, 1));
+            Assert.IsTrue(CarbonFactorSettings.IsFactorValueInvalid_N(Industry));
+            Assert.IsTrue(CarbonFactorSettings.IsFactorValueInvalidMsgCorrect_N(testData.ExpectedData.DoubleNonNagtiveValue, Industry));
 
             //CarbonFactorSettings.ClickCancelButton();
         }

@@ -43,7 +43,7 @@ namespace Mento.Script.Administration.User
         [MultipleTestDataSource(typeof(UserSettingsData[]), typeof(UserViewSuite), "TC-J1-FVT-UserManagement-View-101-1")]
         public void ViewUser(UserSettingsData input)
         {
-            //(1) All users related to this specific service provider are displayed.
+            //(Industry) All users related to this specific service provider are displayed.
 
             //(2) Users of other service provider are NOT displayed in the list.
             //Assert.IsFalse(UserSettings.IsUserOnList("PlatfromAdmin"));

@@ -166,11 +166,6 @@
     <None Include="Data\Administration\CarbonFactor\ModifyCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Modify-004.json" />
     <None Include="Data\Administration\CarbonFactor\ModifyCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Modify-101.json" />
     <None Include="Data\Administration\CarbonFactor\ModifyCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Modify-102.json" />
-    <None Include="Data\Administration\Copy of IndustryLabeling\LabelingAddInvalidSuite\TC-J1-FVT-IndustryLabelingSetting-Add-001.json" />
-    <None Include="Data\Administration\Copy of IndustryLabeling\LabelingAddInvalidSuite\TC-J1-FVT-IndustrylabelingSetting-Add-002.json" />
-    <None Include="Data\Administration\Copy of IndustryLabeling\LabelingAddInvalidSuite\TC-J1-FVT-IndustrylabelingSetting-Add-101.json" />
-    <None Include="Data\Administration\Copy of IndustryLabeling\LabelingModifyInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Modify-001-2.json" />
-    <None Include="Data\Administration\Copy of IndustryLabeling\LabelingModifyInvalidSuite\TC-J1-FVT-IndustrylabelingSetting-Modify-101.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingModifyInvalid\TC-J1-FVT-CustomerConsumptionSetting-Modify-001-3.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingModifyInvalid\TC-J1-FVT-CustomerConsumptionSetting-Modify-001-2.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingModifyInvalid\TC-J1-FVT-CustomerConsumptionSetting-Modify-001-1.json" />
@@ -180,7 +175,7 @@
     <None Include="Data\Administration\CustomerOperation\SmokeTestAddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkAddInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Add-001-1.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkAddInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Add-001-2.json" />
-    <None Include="Data\Administration\IndustryBenchmark\BenchmarkAddValidgSuite\TC-J1-FVT-IndustryBenchmarkSetting-Add-101-1.json" />
+    <None Include="Data\Administration\IndustryBenchmark\BenchmarkAddValidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Add-101-1.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkDeleteInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Delete-001-1.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkModifyInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Modify-001.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkModifyInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Modify-002.json" />
@@ -194,7 +189,7 @@
     <None Include="Data\Administration\IndustryLabeling\LabelingModifyInvalidSuite\TC-J1-FVT-IndustrylabelingSetting-Modify-001.json" />
     <None Include="Data\Administration\IndustryLabeling\LabelingModifyValidSuite\TC-J1-FVT-IndustrylabelingSetting-Modify-101.json" />
     <None Include="Data\Administration\IndustryLabeling\LabelingModifyInvalidSuite\TC-J1-FVT-IndustrylabelingSetting-Modify-002.json" />
-    <None Include="Data\Administration\IndustryLabeling\LabelingAddValidgSuite\TC-J1-FVT-IndustrylabelingSetting-Add-101.json" />
+    <None Include="Data\Administration\IndustryLabeling\LabelingAddValidSuite\TC-J1-FVT-IndustrylabelingSetting-Add-101.json" />
     <None Include="Data\Administration\IndustryLabeling\LabelingAddInvalidSuite\TC-J1-FVT-IndustrylabelingSetting-Add-002.json" />
     <None Include="Data\Administration\IndustryLabeling\LabelingAddInvalidSuite\TC-J1-FVT-IndustryLabelingSetting-Add-001.json" />
     <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonModifySuite\TC-J1-FVT-TimeManagementHCSeason-Modify-001.json" />

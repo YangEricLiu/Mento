@@ -457,8 +457,8 @@
               <add key="ButtonAddLabeling" value="st-labeling-grid-add-btnEl" type="ID"/>
               <add key="ButtonCancelLabeling" value="//div[@id='st-labeling-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
               <add key="ButtonSaveLabeling" value="//div[@id='st-labeling-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-              <add key="ButtonModifyLabeling" value="//div[@id='st-Labeling-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-              <add key="ButtonDeleteLabeling" value="//div[@id='st-Labeling-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
+              <add key="ButtonModifyLabeling" value="//div[@id='st-labeling-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonDeleteLabeling" value="//div[contains(@class, 'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
 
         </Labeling>
         
@@ -773,11 +773,12 @@
               <add key="ComboBoxBenchmark" value="//div[@id='st-benchmark-properties-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='industry']]" type="XPath"/>
           </BenchMark>
           <Labeling>
-             <add key="ComboBoxLabelingIndustry" value="//div[@id='st-labeling-industry']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='IndustryId']]" type="XPath"/>
-             <add key="ComboBoxLabelingClimateRegion" value="//div[@id='st-labeling-zone']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='ZoneId]]" type="XPath"/>
-             <add key="ComboBoxLabelingEnergyEfficiencyLabelingLevel" value="//div[@id='st-labeling-grade']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='Grade']]" type="XPath"/>
-             <add key="ComboBoxLabelingStartYear" value="//div[@id='st-labeling-startyear']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartYear']]" type="XPath"/>
-             <add key="ComboBoxLabelingEndYear" value="//div[@id='st-labeling-endyear']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndYear']]" type="XPath"/>
+             
+            <add key="ComboBoxLabelingIndustry" value="st-labeling-industry-triggerWrap" type="ID"/>
+             <add key="ComboBoxLabelingClimateRegion" value="st-labeling-zone-triggerWrap" type="ID"/>
+             <add key="ComboBoxLabelingEnergyEfficiencyLabelingLevel" value="st-labeling-grade-triggerWrap" type="ID"/>
+             <add key="ComboBoxLabelingStartYear" value="st-labeling-startyear-triggerWrap" type="ID"/>
+             <add key="ComboBoxLabelingEndYear" value="st-labeling-endyear-triggerWrap" type="ID"/>
 
 
           </Labeling>

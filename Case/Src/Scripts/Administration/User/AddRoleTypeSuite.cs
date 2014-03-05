@@ -161,7 +161,7 @@ namespace Mento.Script.Administration.User
                 i++;
             }
       
-            while (j< 10)
+            while (j< 1)
             {
                 Assert.IsFalse(RoleTypeSettings.IsCustomerizePermissionItemChecked(roleTypePermission[j]));
                 j++;

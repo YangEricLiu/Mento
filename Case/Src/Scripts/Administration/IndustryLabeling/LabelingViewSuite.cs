@@ -46,25 +46,25 @@ namespace Mento.Script.Administration.IndustryLabeling
         public void ViewMapAndLocation(IndustryLabelingData input)
         {
             //Click one Labeling from Labeling List.
-            IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industrys[0]);
-            IndustryLabelingSetting.FocusOnLabeling2(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabelingIndustry(input.InputData.Industrys[0]);
+            IndustryLabelingSetting.FocusOnLabelingClimateRegion(input.InputData.ClimaticRegion);
 
             //Display properties行业，气候分区， 能耗标识级别 and 数据来源 start&end year of selected Labeling in View mode. 
-            Assert.AreEqual(input.InputData.Industry,IndustryLabelingSetting.GetSelectedIndustry());
-            Assert.AreEqual(input.InputData.ClimaticRegion, IndustryLabelingSetting.GetSelectedClimateRegion());
-            Assert.AreEqual(input.InputData.EnergyEfficiencyLabellingLevel, IndustryLabelingSetting.GetSelectedEnergyEfficiencyLabelingLevel());
-            Assert.AreEqual(input.InputData.StartYear, IndustryLabelingSetting.GetSelectedStartYear());
-            Assert.AreEqual(input.InputData.EndYear, IndustryLabelingSetting.GetSelectedEndYear());
+            Assert.AreEqual(input.ExpectedData.Industrys[0],IndustryLabelingSetting.GetSelectedIndustry());
+            Assert.AreEqual(input.ExpectedData.ClimaticRegion, IndustryLabelingSetting.GetSelectedClimateRegion());
+            Assert.AreEqual(input.ExpectedData.EnergyEfficiencyLabellingLevels[0], IndustryLabelingSetting.GetSelectedEnergyEfficiencyLabelingLevel());
+            Assert.AreEqual(input.ExpectedData.StartYears[0], IndustryLabelingSetting.GetSelectedStartYear());
+            Assert.AreEqual(input.ExpectedData.EndYears[0], IndustryLabelingSetting.GetSelectedEndYear());
 
             //Switch from labeling list.
-            IndustryLabelingSetting.FocusOnLabeling1(input.InputData.Industrys[1]);
+            IndustryLabelingSetting.FocusOnLabelingIndustry(input.InputData.Industrys[1]);
             
             //Display properties行业，气候分区， 能耗标识级别 and 数据来源 start&end year of selected Labeling in View mode. 
-            Assert.AreEqual(input.InputData.Industrys[1], IndustryLabelingSetting.GetSelectedIndustry());
-            Assert.AreEqual(input.InputData.ClimaticRegion, IndustryLabelingSetting.GetSelectedClimateRegion());
-            Assert.AreEqual(input.InputData.EnergyEfficiencyLabellingLevel, IndustryLabelingSetting.GetSelectedEnergyEfficiencyLabelingLevel());
-            Assert.AreEqual(input.InputData.StartYear, IndustryLabelingSetting.GetSelectedStartYear());
-            Assert.AreEqual(input.InputData.EndYear, IndustryLabelingSetting.GetSelectedEndYear());
+            Assert.AreEqual(input.ExpectedData.Industrys[1], IndustryLabelingSetting.GetSelectedIndustry());
+            Assert.AreEqual(input.ExpectedData.ClimaticRegion, IndustryLabelingSetting.GetSelectedClimateRegion());
+            Assert.AreEqual(input.ExpectedData.EnergyEfficiencyLabellingLevels[1], IndustryLabelingSetting.GetSelectedEnergyEfficiencyLabelingLevel());
+            Assert.AreEqual(input.ExpectedData.StartYears[1], IndustryLabelingSetting.GetSelectedStartYear());
+            Assert.AreEqual(input.ExpectedData.EndYears[1], IndustryLabelingSetting.GetSelectedEndYear());
 
 
         }

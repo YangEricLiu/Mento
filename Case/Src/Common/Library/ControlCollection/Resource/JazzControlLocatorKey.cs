@@ -518,7 +518,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LinkButtonAnnotationAdd = "LinkButtonAnnotationAdd";
         public static string ButtonMyShareWidgetRename = "ButtonMyShareWidgetRename";
         public static string ButtonCancelShareWidget = "ButtonCancelShareWidget";
-        public static string LinkButtonWidgetMaxWidgetEditComment = "LinkButtonWidgetMaxWidgetEditComment";
+        public static string LinkButtonMaxWidgetEditComment = "LinkButtonMaxWidgetEditComment";
+        public static string LinkButtonMaxWidgetAddComment = "LinkButtonMaxWidgetAddComment";
         public static string ButtonSaveAnnotationWindow = "ButtonSaveAnnotationWindow";
         public static string ButtonQuitAnnotationWindow = "ButtonQuitAnnotationWindow";
         public static string ButtonInviteOther = "ButtonInviteOther";

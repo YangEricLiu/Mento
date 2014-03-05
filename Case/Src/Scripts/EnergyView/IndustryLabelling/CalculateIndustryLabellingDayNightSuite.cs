@@ -218,7 +218,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             {
                 Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
             }
-   
         }
     }
 }

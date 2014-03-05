@@ -94,7 +94,8 @@
             <add key="LinkButtonAnnotationAdd" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[2]/div/a[text()='添加']" type="XPath"/>
             <add key="ButtonMyShareWidgetRename" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-rename-tool')]/img" type="XPath"/>
         
-            <add key="LinkButtonWidgetMaxWidgetEditComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='编辑']]" type="XPath"/>
+            <add key="LinkButtonMaxWidgetEditComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='编辑']]" type="XPath"/>
+            <add key="LinkButtonMaxWidgetAddComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='添加']]" type="XPath"/>
 
       </HomePage>
       

@@ -56,6 +56,12 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Label WidgetShareResourceUser = JazzLabel.WidgetShareResourceUserLabel;
         private static Tooltip ShareUserInfo = JazzTooltip.ShareUserTooltip;
         private static Chart MaxWidgetLabellingChart = JazzChart.MaxWidgetLabellingChart;
+        private static LinkButton MaxWidgetAddCommentLinkButton = JazzButton.MaxWidgetAddCommentLinkButton;
+        private static LinkButton MaxWidgetEditCommentLinkButton = JazzButton.MaxWidgetEditCommentLinkButton;
+        private static TextField EditModifyCommentTextField = JazzTextField.EditModifyCommentTextField;
+        private static Button SaveAnnotationWindowButton = JazzButton.SaveAnnotationWindowButton;
+        private static Button QuitAnnotationWindowButton = JazzButton.QuitAnnotationWindowButton;
+        private static Label MaxWidgetCommentLabel = JazzLabel.MaxWidgetCommentLabel;
 
         protected override Chart Chart
         {
@@ -342,6 +348,36 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 return true;
             }
+        }
+
+        public void ClickAddMaxWidgetCommentButton()
+        {
+            MaxWidgetAddCommentLinkButton.ClickLink();
+        }
+
+        public void ClickEditMaxWidgetCommentButton()
+        {
+            MaxWidgetEditCommentLinkButton.ClickLink();
+        }
+
+        public void EditAnnotationWindow(string comment)
+        {
+            EditModifyCommentTextField.Fill(comment);
+        }
+
+        public void ClickSaveAnnotationWindowButton()
+        {
+            SaveAnnotationWindowButton.Click();
+        }
+
+        public void ClickQuitAnnotationWindowButton()
+        {
+            QuitAnnotationWindowButton.Click();
+        }
+
+        public string GetMaxWidgetComment()
+        {
+            return MaxWidgetCommentLabel.GetLabelTextValue();
         }
 
         #endregion

@@ -4,17 +4,17 @@
 		{
 			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
 			"DashboardInfo":[{
-				"WigetNames":["Widget_Annotation_101_1_1"],
+				"WigetNames":["Widget_Annotation_101_2_1"],
 				"HierarchyName":["NancyCustomer1", "MaximizeWidgetSuiteOrg", "MaximizeWidgetSuiteSite", "SaveWidgetToDashboard"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"Widget_Annotation_101_1",
-				"Comment":"Widget_Annotation_101_1_1",
+				"DashboardName":"Widget_Annotation_101_2",
+				"Comment":"Widget_Annotation_101_2_1",
 			}],
 			"TagName":"P1_BuildingBC",
 		},
 		"ExpectedData":
 		{
-			"widgetComment":["Widget_Annotation_101_1_1"],
+			"widgetComment":["Widget_Annotation_101_2_1", "Widget_Annotation_101_2_1ToModify", ""],
 		}
 	}
 ]

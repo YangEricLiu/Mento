@@ -60,7 +60,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Label ShareResoureUser = JazzLabel.DashboardShareResourceUserLabel;
         private static Tooltip ShareUserInfo = JazzTooltip.ShareUserTooltip;
         private static Container DashboardsContainer = JazzContainer.DashboardsContainer;
-
+        private static Label WidgetMinComment = JazzLabel.AnnotationTextLabel;
         #endregion
 
         #region common
@@ -452,12 +452,16 @@ namespace Mento.ScriptCommon.Library.Functions
             WidgetNameMin.Float();
         }
 
-
         public void FloatOnEditCommentButton(string name)
         {
             Label WidgetMinAnnotationIcon = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelWidgetMinAnnotationIcon, name);
 
             WidgetMinAnnotationIcon.Float();
+        }
+
+        public string GetExistedCommentMinWdiget()
+        {
+            return WidgetMinComment.GetLabelTextValue();
         }
 
         public void MaximizeWidget(string name)

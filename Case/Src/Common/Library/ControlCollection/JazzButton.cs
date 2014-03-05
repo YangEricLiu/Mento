@@ -551,7 +551,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static LinkButton AnnotationEditLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonAnnotationEdit);
         public static LinkButton AnnotationAddLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonAnnotationAdd);
 
-        public static LinkButton WidgetMaxWidgetEditCommentLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonWidgetMaxWidgetEditComment);
+        public static LinkButton MaxWidgetEditCommentLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonMaxWidgetEditComment);
+        public static LinkButton MaxWidgetAddCommentLinkButton = GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonMaxWidgetAddComment);     
         public static Button SaveAnnotationWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonSaveAnnotationWindow);
         public static Button QuitAnnotationWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonQuitAnnotationWindow);
         public static Button InviteOtherButton = GetControl<Button>(JazzControlLocatorKey.ButtonInviteOther);

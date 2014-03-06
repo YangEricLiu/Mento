@@ -2,13 +2,17 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling19"]],
-			"TagNames":["Labellingtag19"],
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling19"], ["NancyOtherCustomer3", "BuildingRanking3"]],
+			"TagNames":["Labellingtag19", "Rankingtag3"],
 			"UnitTypeValue":"工休比",
-			"Industries":["夏热冬暖地区酒店（三星级）"],
+			"Industries":["夏热冬暖地区酒店（三星级）", "严寒地区A区酒店（五星级）"],
 			"YearAndMonth":[{
 				"year":"2012",
 				"month":"10",
+			},
+			{
+				"year":"2013",
+				"month":"01",
 			}],
 		},
 		"ExpectedData":

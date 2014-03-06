@@ -52,6 +52,7 @@
     <Compile Include="Dashboard\MarkFavoriteDashboardSuite.cs" />
     <Compile Include="Dashboard\DeleteDashboardSuite.cs" />
     <Compile Include="Dashboard\RenameDashboardSuite.cs" />
+    <Compile Include="Share\WidgetCopyAnnotationViewSuite.cs" />
     <Compile Include="Share\MarkDashboardReadValidSuite.cs">
       <SubType>Code</SubType>
     </Compile>

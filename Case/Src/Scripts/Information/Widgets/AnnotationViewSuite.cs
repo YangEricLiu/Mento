@@ -132,6 +132,9 @@ namespace Mento.Script.Information.Widgets
             Widget.NavigateToAllDashboard();
             TimeManager.LongPause();
 
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
             //Click the dashboard and click the widget.Widget display in maximum size.
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
@@ -174,6 +177,9 @@ namespace Mento.Script.Information.Widgets
             Widget.NavigateToAllDashboard();
             TimeManager.LongPause();
 
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
             //Click the dashboard and click the widget.Widget display in maximum size.
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
@@ -189,7 +195,7 @@ namespace Mento.Script.Information.Widgets
             TimeManager.MediumPause();
 
             //The annotation can be modified properly.
-            Assert.AreEqual(input.ExpectedData.widgetComment[0], Widget.GetMaxWidgetComment());
+            Assert.AreEqual(input.ExpectedData.widgetComment[1], Widget.GetMaxWidgetComment());
             Widget.ClickCloseMaxDialogButton();
             TimeManager.ShortPause();
 
@@ -210,6 +216,9 @@ namespace Mento.Script.Information.Widgets
             Widget.NavigateToAllDashboard();
             TimeManager.LongPause();
 
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
             TimeManager.LongPause();
@@ -220,7 +229,7 @@ namespace Mento.Script.Information.Widgets
             Widget.ClickEditMaxWidgetCommentButton();
             TimeManager.ShortPause();
 
-            Widget.EditAnnotationWindow(input.ExpectedData.widgetComment[1]);
+            Widget.EditAnnotationWindow(input.ExpectedData.widgetComment[2]);
             Widget.ClickSaveAnnotationWindowButton();
             TimeManager.MediumPause();
 
@@ -228,8 +237,6 @@ namespace Mento.Script.Information.Widgets
             TimeManager.ShortPause();
             Widget.ClickQuitAnnotationWindowButton();
             TimeManager.MediumPause();
-
-            Assert.AreEqual(input.ExpectedData.widgetComment[2], Widget.GetMaxWidgetComment());
             Widget.ClickCloseMaxDialogButton();
             TimeManager.ShortPause();
 
@@ -244,7 +251,14 @@ namespace Mento.Script.Information.Widgets
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetNames[0]));
             HomePagePanel.FloatOnEditCommentButton(dashboard[0].WigetNames[0]);
             TimeManager.ShortPause();
-            Assert.AreEqual(input.ExpectedData.widgetComment[2], HomePagePanel.GetExistedCommentMinWdiget());
+
+            HomePagePanel.FloatOnEditCommentButton(dashboard[0].WigetNames[0]);
+            TimeManager.ShortPause();
+
+            HomePagePanel.ClickAddAnnotationButton();
+            TimeManager.ShortPause();
+            Widget.ClickQuitAnnotationWindowButton();
+            TimeManager.MediumPause();
         }
     }
 }

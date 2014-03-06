@@ -78,8 +78,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.AreEqual(5, IndustryLabellingPanel.GetLabellingNumber());
-
             for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
             {
                 Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
@@ -105,7 +103,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
             for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
             {
                 Assert.AreEqual(input.ExpectedData.LabellingTooltips[2][i], IndustryLabellingPanel.GetLabellingTooltip(i));
@@ -178,6 +175,28 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             {
                 Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
             }
+
+            //Select SP2-> Rankingtag1 from BuildingRanking1, select 行业&区域=夏热冬暖酒店行业; time range=2013/1 to view chart.  
+            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //夏热冬暖酒店四星级行业
+            EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
+
+            //time 2013/01
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
+            {
+                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
+            }
         }
 
         [Test]
@@ -190,11 +209,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.ShortPause();
 
             IndustryLabellingPanel.NavigateToIndustryLabelling();
-            TimeManager.MediumPause();
-
-            //Select SP3->Rankingtag3 from BuildingRanking3（UOM=KW）, select 行业&区域=夏热冬暖酒店行业;time range=2013/1 to view chart.  
-            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
             //Select Labellingtag19/OR Labellingtag20 select  行业&区域=夏热冬暖酒店三星级行业;time range=2012/10 to view chart. 
@@ -218,7 +232,28 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             {
                 Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
             }
-   
+
+            //Select SP3->Rankingtag3 from BuildingRanking3（UOM=KW）, select 行业&区域=夏热冬暖酒店行业;time range=2013/1 to view chart.  
+            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //夏热冬暖酒店五星级行业
+            EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
+
+            //time 2012/10 
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
+            {
+                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
+            }
         }
     }
 }

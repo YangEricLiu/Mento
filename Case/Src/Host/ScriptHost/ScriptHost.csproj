@@ -883,6 +883,7 @@
     <None Include="Data\Information\Share\ShareWidgetValidSuite\TC-J1-FVT-Widget-Share-101-2.json" />
     <None Include="Data\Information\Share\ShareWidgetValidSuite\TC-J1-FVT-Widget-Share-101-1.json" />
     <None Include="Data\Information\Share\ViewShareDashboardWidgetGridSuite\TC-J1-FVT-Dashboard-Share-105-1.json" />
+    <None Include="Data\Information\Share\WidgetCopyAnnotationViewSuite\TC-J1-FVT-WidgetCopy-Annotation-101-4.json" />
     <None Include="Data\Information\Share\WidgetCopyAnnotationViewSuite\TC-J1-FVT-WidgetCopy-Annotation-101-3.json" />
     <None Include="Data\Information\Share\WidgetCopyAnnotationViewSuite\TC-J1-FVT-WidgetCopy-Annotation-101-2.json" />
     <None Include="Data\Information\Share\WidgetCopyAnnotationViewSuite\TC-J1-FVT-WidgetCopy-Annotation-101-1.json" />

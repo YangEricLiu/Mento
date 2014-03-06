@@ -315,6 +315,107 @@ namespace Mento.Script.Information.Share
             //.The annotation is display properly.
             Assert.AreEqual(dashboard[0].widgetComments[1], HomePagePanel.GetExistedCommentMinWdiget());
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-WidgetCopy-Annotation-101-4")]
+        [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(WidgetCopyAnnotationViewSuite), "TC-J1-FVT-WidgetCopy-Annotation-101-4")]
+        public void OriginalAnnotationDisplayAndEmptySuccess(ShareDashboardData input)
+        {
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Login to Jazz with userA. Navigate to homepage, then to hierarchynodeA.  Click the dashboardA name from dashboard list.
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
+            HomePagePanel.NavigateToAllDashboard();
+
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.MediumPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            //.Modify the annotation then share
+            HomePagePanel.FloatOnEditCommentButton(dashboard[0].WidgetName);
+            TimeManager.ShortPause();
+
+            //.The annotation is display properly.
+            Assert.AreEqual(dashboard[0].widgetComments[0], HomePagePanel.GetExistedCommentMinWdiget());
+
+            HomePagePanel.ClickEditAnnotationButton();
+            TimeManager.ShortPause();
+            Widget.EditAnnotationWindow(dashboard[0].widgetComments[1]);
+            Widget.ClickSaveAnnotationWindowButton();
+            TimeManager.MediumPause();
+
+            //Select widgetA and click "share Copy of widget" button.
+            HomePagePanel.ClickShareWidgetButton(dashboard[0].WidgetName);
+            TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
+
+            //·There is userB and UserD display in receivers list.
+            Assert.IsTrue(ShareWindow.IsShareUserExistedOnWindow(dashboard[0].ShareUsers[0]));
+            Assert.IsTrue(ShareWindow.IsShareUserExistedOnWindow(dashboard[0].ShareUsers[1]));
+
+            //There isn't userC display in receivers list.
+            Assert.IsFalse(ShareWindow.IsShareUserExistedOnWindow(dashboard[0].ShareUsers[2]));
+
+            //Check UserB and UserD checkbox, with modify annotation in annotation field and click "share".
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[0]);
+            ShareWindow.CheckShareUser(dashboard[0].ShareUsers[1]);
+
+            //·Share widget successfully to userB and userD with empty annotation.
+            ShareWindow.ClickShareButton();
+            JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
+            //Pop up note show share successfully and disappear in little seconds.
+            Assert.AreEqual("分享小组件“WidgetCopyAnnotation_101_4_1”成功。", HomePagePanel.GetPopNotesValue());
+
+            //Login to Jazz with userB. Navigate to homepage, then to hierarchynodeA.  
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
+            HomePagePanel.NavigateToAllDashboard();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            //Click dashboardA.
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            //·Only 1 widgetA display in dashboard.
+            Assert.AreEqual(1, HomePagePanel.GetWidgetsNumberOfDashboard());
+
+            //Check the annotation in widgetA.The annotation is blank.
+            HomePagePanel.FloatOnEditCommentButton(dashboard[0].WidgetName);
+            TimeManager.ShortPause();
+
+            HomePagePanel.ClickAddAnnotationButton();
+            TimeManager.ShortPause();
+            Widget.ClickQuitAnnotationWindowButton();
+            TimeManager.MediumPause();
+
+            //Login to Jazz with userD. Navigate to homepage, then to hierarchynodeA.  
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[2].LoginName, dashboard[0].Receivers[2].Password, dashboard[0].HierarchyName[0]);
+            HomePagePanel.NavigateToAllDashboard();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            //Click dashboardA.
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            //·Only 1 widgetA display in dashboard.
+            Assert.AreEqual(1, HomePagePanel.GetWidgetsNumberOfDashboard());
+
+            //Check the annotation in widgetA.The annotation is blank.
+            HomePagePanel.FloatOnEditCommentButton(dashboard[0].WidgetName);
+            TimeManager.ShortPause();
+
+            HomePagePanel.ClickAddAnnotationButton();
+            TimeManager.ShortPause();
+            Widget.ClickQuitAnnotationWindowButton();
+            TimeManager.MediumPause();
+        }
     }
 }
 

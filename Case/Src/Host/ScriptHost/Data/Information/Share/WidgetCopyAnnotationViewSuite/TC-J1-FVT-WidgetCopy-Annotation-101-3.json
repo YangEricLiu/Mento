@@ -1,0 +1,30 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"WidgetCopyAnnotation_101_3_1",
+				"HierarchyName":["NancyCustomer1", "WidgetCopyAnnotationOrg", "WidgetCopyAnnotationSite", "WidgetCopyAnnotation1013"],
+				"ShareUsers":["ShareUserF", "ShareUserD", "ShareUserC"],
+				"DashboardName":"WidgetCopyAnnotation_101_3",
+				"widgetComments":["WidgetCopyAnnotation_101_3_1", "WidgetCopyAnnotation_101_3_1_tomodify"],
+				"Receivers":[{
+					"LoginName":"ShareUserB",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserF",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserD",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

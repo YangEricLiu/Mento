@@ -548,7 +548,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public virtual IWebElement GetRow(string cellText1, string cellText2, bool Paging = true)
         {
-            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowLabelling);
 
             Hashtable variables = new Hashtable() { { CELLTEXTVARIABLE1, cellText1 }, { CELLTEXTVARIABLE2, cellText2 } };
 

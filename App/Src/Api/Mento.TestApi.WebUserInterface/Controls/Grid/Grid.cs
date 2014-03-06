@@ -13,6 +13,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
     {
         private static string CELLINDEXVARIABLE = "cellIndex";
         private static string CELLTEXTVARIABLE = "cellText";
+        private static string CELLTEXTVARIABLE1 = "cellText1";
+        private static string CELLTEXTVARIABLE2 = "cellText2";
         private static Locator IsGridRowCheckedLocator = new Locator("//td/div/div[contains(@class, 'x-grid-checkheader-checked')]", ByType.XPath);
         //private static Locator IsNoDataOnGridLocator = new Locator("div/div/div/div[text()='没有数据']", ByType.XPath);
         private static Locator IsNoRowOnGridLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]", ByType.XPath);
@@ -147,6 +149,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public void FocusOnRow(int cellIndex,string cellText, bool Paging = true)
         {
             this.GetRow(cellIndex, cellText, Paging).Click();
+        }
+
+        /// <summary>
+        /// Simulate mouse focus on the row which "Name" is "cellName1" and "cellName2"
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public void FocusOnRow(string cellText1, string cellText2, bool Paging = true)
+        {
+            this.GetRow(cellText1, cellText2, Paging).Click();
         }
 
         /// <summary>
@@ -402,6 +414,23 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        public bool IsRowExistOnCurrentPage(string cellText1, string cellText2)
+        {
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowLabelling);
+
+            Hashtable variables = new Hashtable() { { CELLTEXTVARIABLE1, cellText1 }, { CELLTEXTVARIABLE2, cellText2 } };
+            try
+            {
+                FindChild(Locator.GetVariableLocator(rowLocator, variables));
+                //return row != null;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool IsRowExistOnCurrentPage(int cellIndex)
         {
             var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowSelected);
@@ -502,6 +531,34 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 while (i < PageCount)
                 {
                     if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(rowLocator, variables));
+        }
+
+        public virtual IWebElement GetRow(string cellText1, string cellText2, bool Paging = true)
+        {
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
+
+            Hashtable variables = new Hashtable() { { CELLTEXTVARIABLE1, cellText1 }, { CELLTEXTVARIABLE2, cellText2 } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPage(cellText1, cellText2))
                     {
                         break;
                     }

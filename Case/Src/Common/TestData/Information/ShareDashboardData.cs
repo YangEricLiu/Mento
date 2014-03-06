@@ -34,6 +34,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] ReceiveUsers { get; set; }
         public ReceiverUsersInfo[] Receivers { get; set; }
         public bool IsCreateDashboard { get; set; }
+        public string[] widgetComments { get; set; }
     }
 
     public class ReceiverUsersInfo

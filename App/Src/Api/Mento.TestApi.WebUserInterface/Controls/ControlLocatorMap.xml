@@ -57,6 +57,7 @@
   <add key="GridRows" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]" type ="XPath"/>
   <add key="GridRowSelected" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class, 'x-grid-row-focused')]/td[$#cellIndex]/div" type ="XPath"/>
   <add key="GridRow" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]" type ="XPath"/>
+  <add key="GridRowLabelling" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td/div[text()='$#cellText1'] and td/[text()='$#cellText2']]" type ="XPath"/>
   <add key="GridRowChecker" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-checkcolumn')]/div/div" type ="XPath"/>
   <!--For get ranking radio button-->
     <!--<add key="GridRowSelector" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]" type ="XPath"/>

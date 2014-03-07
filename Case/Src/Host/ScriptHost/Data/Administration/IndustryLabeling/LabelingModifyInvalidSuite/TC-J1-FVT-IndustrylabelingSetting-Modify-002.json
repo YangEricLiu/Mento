@@ -2,8 +2,10 @@
 	{
 		"InputData":
 		{	
-			"Industry":"酒店",
-			"ClimaticRegion":"严寒地区A区",
+			"Industry":"全行业",
+			"ClimateRegion":"严寒地区B区",
+			"EnergyEfficiencyLabellingLevel":"3级",
+			"StartYear":"2012",
 		},
 	}
 ]

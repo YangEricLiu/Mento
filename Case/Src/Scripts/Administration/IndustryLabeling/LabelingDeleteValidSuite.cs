@@ -45,10 +45,9 @@ namespace Mento.Script.Administration.IndustryLabeling
         [MultipleTestDataSource(typeof(IndustryLabelingData[]), typeof(LabelingDeleteValidSuite), "TC-J1-FVT-IndustrylabelingSetting-Delete-101")]
         public void DeleteIndustryLabelingValid(IndustryLabelingData input)
         {
-            //Click a Labeling(行业=酒店; 气候分区=严寒地区A区 ) from list and click 删除 button.
+            //Click a Labeling(行业=学校; 气候分区=温和地区 ) from list and click 删除 button.
             //·Pop up window show 是否删除.
-            IndustryLabelingSetting.FocusOnLabelingIndustry(input.InputData.Industry);
-            IndustryLabelingSetting.FocusOnLabelingClimateRegion(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry, input.InputData.ClimateRegion);
             IndustryLabelingSetting.ClickDeleteLabeling();
 
             //After click confirmation 确定 button.Delete Labeling successfully.
@@ -57,28 +56,32 @@ namespace Mento.Script.Administration.IndustryLabeling
             TimeManager.ShortPause();
 
             //Deleted Labeling can't display in Labeling list correctly,display in IndustryLabeling list correctly
-            Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingListIndustry(input.InputData.Industry));
+            Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingList(input.InputData.Industry, input.InputData.ClimateRegion));
+            //Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingListIndustry(input.InputData.Industry));
+           // Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingListClimateRegion(input.InputData.ClimateRegion));
 
             //Click +能效标识 buttons.
             IndustryLabelingSetting.ClickAddLabeling();
+            TimeManager.LongPause();
 
             //Select 行业=酒店 and  气候分区=严寒地区A区. Click Save button.
             IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
-            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimateRegion);
             IndustryLabelingSetting.SelectEnergyEfficiencyLabelingLevelCombox(input.InputData.EnergyEfficiencyLabellingLevel);
             IndustryLabelingSetting.ClickSaveLabeling();
 
             //The Labeling the same as deleted one save to labeling list successfully.
             Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingListIndustry(input.InputData.Industry));
+            Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingListClimateRegion(input.InputData.ClimateRegion));
             TimeManager.LongPause();
 
-            //Delete all labeling settings whose industry is 酒店.
+            //Delete all labeling settings whose industry is 学校.
             int i =IndustryLabelingSetting.LabelingList.GetCurrentRowsNumber();
             while (i >=0)
             {
                 if (IndustryLabelingSetting.IsRowExistLabelingListIndustry(input.InputData.Industry))
                 {
-                    IndustryLabelingSetting.FocusOnLabelingIndustry(input.InputData.Industry);
+                    IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry);
                     IndustryLabelingSetting.ClickDeleteLabeling();
                     JazzMessageBox.MessageBox.Confirm();
                     JazzMessageBox.LoadingMask.WaitLoading();
@@ -88,8 +91,8 @@ namespace Mento.Script.Administration.IndustryLabeling
                 else    { break; }
             }
 
-            //酒店 will become available and can be selected when addition
-            //All zones will become available and can be selected for 酒店.'
+            //学校 will become available and can be selected when addition;
+            //All zones will become available and can be selected for 学校.
             IndustryLabelingSetting.ClickAddLabeling();
             IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
             IndustryLabelingSetting.ClimateRegionComboBox.DisplayItems();

@@ -209,9 +209,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void FocusOnLabelingIndustry(string labelingName)
+        public void FocusOnLabeling(string labelingName,string climateregion)
         {
-            LabelingList.FocusOnRow(1, labelingName);
+            LabelingList.FocusOnRow(labelingName, climateregion);
         }
 
         /// <summary>
@@ -219,9 +219,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void FocusOnLabelingClimateRegion(string labelingName)
+        public void FocusOnLabeling(string labelingName)
         {
-            LabelingList.FocusOnRow(2, labelingName);
+            LabelingList.FocusOnRow(1, labelingName);
         }
 
         /// <summary>
@@ -424,13 +424,17 @@ namespace Mento.ScriptCommon.Library.Functions
             return LabelingList.IsRowExist(1, regionName);
         }
 
+        public Boolean IsRowExistLabelingList(string labelingName, string climateregion)
+        {
+           return  LabelingList.IsRowExist(labelingName, climateregion);
+        }
         /// <summary>
         /// Check whether the labeling list in the labeling List.  
         /// </summary>
         /// <returns></returns>
         public Boolean IsRowExistLabelingListClimateRegion(string regionName)
         {
-            return LabelingList.IsRowExist(1, regionName);
+            return LabelingList.IsRowExist(2, regionName);
         }
 
         /// <summary>
@@ -572,32 +576,6 @@ namespace Mento.ScriptCommon.Library.Functions
             return ClimateRegionComboBox.IsComboBoxTextEnabled();
         }
 
-      /*  /// <summary>
-        /// Check whether the EnergyEfficiencyLabelingLevel combox could not be modified.  
-        /// </summary>
-        /// <returns></returns>
-        public Boolean IsEnergyEfficiencyLabelingLevelComboxEnabled()
-        {
-            return EnergyEfficiencyLabelingLevelComboBox.IsComboBoxTextEnabled();
-        }
-
-        /// <summary>
-        /// Check whether the StartYear combox could not be modified.  
-        /// </summary>
-        /// <returns></returns>
-        public Boolean IsStartYearComboxEnabled()
-        {
-            return StartYearComboBox.IsComboBoxTextEnabled();
-        }
-
-        /// <summary>
-        /// Check whether the EndYear combox could not be modified.  
-        /// </summary>
-        /// <returns></returns>
-        public Boolean IsEndYearComboxEnabled()
-        {
-            return EndYearComboBox.IsComboBoxTextEnabled();
-        }*/
       #endregion
     }
 }

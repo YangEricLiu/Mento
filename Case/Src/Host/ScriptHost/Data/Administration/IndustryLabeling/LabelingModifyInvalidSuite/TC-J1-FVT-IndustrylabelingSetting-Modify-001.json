@@ -2,9 +2,11 @@
 	{
 		"InputData":
 		{	
-			"ClimaticRegion":"严寒地区A区",
-			"EnergyEfficiencyLabellingLevel":"3级",
-			"StartYear":"2012",
+			"Industry":"全行业",
+			"ClimateRegion":"严寒地区A区",
+			"EnergyEfficiencyLabellingLevels":["3级","5级"],
+			"StartYears":["2012","2013"],
+			"StartYear":"2014",
 		},
 	}
 ]

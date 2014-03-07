@@ -45,9 +45,9 @@ namespace Mento.Script.Administration.IndustryLabeling
         [MultipleTestDataSource(typeof(IndustryLabelingData[]), typeof(LabelingDeleteInvalidSuite), "TC-J1-FVT-IndustrylabelingSetting-Delete-001")]
         public void DeleteIndustryLabelingCancelled(IndustryLabelingData input)
         {
-            //Click a Labeling(气候分区=严寒地区A区 ) from list and click 删除 button.
+            //Click a Labeling(行业=学校，气候分区=温和地区 ) from list and click 删除 button.
             //·Pop up window show 是否删除.
-            IndustryLabelingSetting.FocusOnLabelingClimateRegion(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry,input.InputData.ClimateRegion);
             TimeManager.LongPause();
             IndustryLabelingSetting.ClickDeleteLabeling();
 
@@ -56,7 +56,8 @@ namespace Mento.Script.Administration.IndustryLabeling
             TimeManager.LongPause();
 
             //The Labeling still display in Labeling list.
-            Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingListClimateRegion(input.InputData.ClimaticRegion));
+            Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingListIndustry(input.InputData.Industry));
+            Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingListClimateRegion(input.InputData.ClimateRegion));
             TimeManager.LongPause();
 
             //After click confirmation "X" button.
@@ -65,7 +66,8 @@ namespace Mento.Script.Administration.IndustryLabeling
             TimeManager.LongPause();
 
             //The Labeling still display in Labeling list.
-            Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingListClimateRegion(input.InputData.ClimaticRegion));
+            Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingListIndustry(input.InputData.Industry));
+            Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingListClimateRegion(input.InputData.ClimateRegion));
             TimeManager.LongPause();
         }
         #endregion

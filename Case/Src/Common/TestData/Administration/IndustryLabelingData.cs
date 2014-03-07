@@ -16,8 +16,8 @@ namespace Mento.ScriptCommon.TestData.Administration
      {
          public string   Industry { get; set; }
          public string[] Industrys { get; set; }
-         public string   ClimaticRegion { get; set; }
-         public string[] ClimaticRegions { get; set; }
+         public string   ClimateRegion { get; set; }
+         public string[] ClimateRegions { get; set; }
          public string   EnergyEfficiencyLabellingLevel { get; set; }
          public string[] EnergyEfficiencyLabellingLevels { get; set; }
          public string   StartYear { get; set; }
@@ -31,8 +31,8 @@ namespace Mento.ScriptCommon.TestData.Administration
      {
          public string   Industry { get; set; }
          public string[] Industrys { get; set; }
-         public string   ClimaticRegion { get; set; }
-         public string[] ClimaticRegions { get; set; }
+         public string   ClimateRegion { get; set; }
+         public string[] ClimateRegions { get; set; }
          public string   EnergyEfficiencyLabellingLevel { get; set; }
          public string[] EnergyEfficiencyLabellingLevels { get; set; }
          public string   StartYear { get; set; }

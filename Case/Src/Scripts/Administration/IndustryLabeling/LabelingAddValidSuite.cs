@@ -56,10 +56,10 @@ namespace Mento.Script.Administration.IndustryLabeling
             Assert.AreEqual(input.InputData.Industry, IndustryLabelingSetting.GetSelectedIndustry());
 
             //Select 气候分区=严寒地区A区 from dropdown list.
-            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimateRegion);
 
             //Display properties of selected Labeling in add mode. 
-            Assert.AreEqual(input.InputData.ClimaticRegion, IndustryLabelingSetting.GetSelectedClimateRegion());
+            Assert.AreEqual(input.InputData.ClimateRegion, IndustryLabelingSetting.GetSelectedClimateRegion());
 
             //Select 能效标识级别=3级 from dropdown list.
             IndustryLabelingSetting.SelectEnergyEfficiencyLabelingLevelCombox(input.InputData.EnergyEfficiencyLabellingLevel);
@@ -85,8 +85,7 @@ namespace Mento.Script.Administration.IndustryLabeling
                 
             //Click the saved Labeling from list.
             IndustryLabelingSetting.ClickSaveLabeling();
-            IndustryLabelingSetting.FocusOnLabelingIndustry(input.InputData.Industry);
-            IndustryLabelingSetting.FocusOnLabelingClimateRegion(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry, input.InputData.ClimateRegion);
 
             //Click +能效标识 buttons. Go to 行业 dropdown list to check.
             IndustryLabelingSetting.ClickAddLabeling();
@@ -99,12 +98,12 @@ namespace Mento.Script.Administration.IndustryLabeling
             //Select 行业=酒店 from dropdown list, Select all 气候分区=全部区域，能耗标识级别=3级，数据来源=2013 -2013
             //.Click Save button.
             int i = 0;
-            while (i < input.InputData.ClimaticRegions.Length)
+            while (i < input.InputData.ClimateRegions.Length)
             {
                 IndustryLabelingSetting.ClickAddLabeling();
                 IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
                 TimeManager.ShortPause();
-                IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimaticRegions[i]);
+                IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimateRegions[i]);
                 TimeManager.ShortPause();
                 IndustryLabelingSetting.SelectEnergyEfficiencyLabelingLevelCombox(input.InputData.EnergyEfficiencyLabellingLevel);
                 TimeManager.ShortPause();
@@ -118,7 +117,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             }
 
             //The Labeling with all 区域 save to Labeling list successfully.
-            Assert.IsFalse(IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimaticRegion));
+            Assert.IsFalse(IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimateRegion));
 
             //· There isn't any 行业 item can be selected from dropdown list.
             //· 行业=全部；区域=全部区域 can be selected and save successfully.@@@@

@@ -2,8 +2,9 @@
 	{
 		"InputData":
 		{	
-			"Industry":"酒店",
-			"ClimaticRegion":"严寒地区A区",
+			"Industry":"学校",
+			"ClimateRegion":"温和地区",
+
 		},
 
 	}

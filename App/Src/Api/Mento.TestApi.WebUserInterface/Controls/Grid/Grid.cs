@@ -463,6 +463,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        public bool IsRowExist(string cellText1, string cellText2, bool Paging = true)
+        {
+            try
+            {
+                IWebElement row = GetRow(cellText1, cellText2);
+                //return row != null;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         public string GetSelectedRowData(int cellIndex)
         {
             return GetRow(cellIndex).Text;

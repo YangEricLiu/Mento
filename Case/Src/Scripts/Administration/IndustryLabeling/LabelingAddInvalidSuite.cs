@@ -49,7 +49,7 @@ namespace Mento.Script.Administration.IndustryLabeling
         [MultipleTestDataSource(typeof(IndustryLabelingData[]), typeof(LabelingAddInvalidSuite), "TC-J1-FVT-IndustryLabelingSetting-Add-001")]
         public void AddIndustryLabelingCancelled(IndustryLabelingData input)
         {
-
+            int i=IndustryLabelingSetting.LabelingList.GetCurrentRowsNumber();
             //Click +能效标识 buttons.
             IndustryLabelingSetting.ClickAddLabeling();
             TimeManager.LongPause();
@@ -59,19 +59,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             TimeManager.LongPause();
     
             //·Cancel and there isn't any labeling added to list.
-            int i = 0;
-            while (i < input.InputData.Industrys.Length)
-            {
-                Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingListIndustry(input.InputData.Industrys[i]));
-                i++;
-            }
-
-            int j = 0;
-            while (j < input.InputData.ClimaticRegions.Length)
-            {
-                Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingListClimateRegion(input.InputData.ClimaticRegions[j]));
-                j++;
-            }
+            Assert.AreEqual(i, IndustryLabelingSetting.LabelingList.GetCurrentRowsNumber());
 
             //Click +能效标识 buttons. click Save button directly not input any field. 
             IndustryLabelingSetting.ClickAddLabeling();
@@ -87,10 +75,8 @@ namespace Mento.Script.Administration.IndustryLabeling
             TimeManager.LongPause();
             Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
             TimeManager.LongPause();
-            IndustryLabelingSetting.IsStartYearInDropdownList(input.ExpectedData.StartYear);
-            TimeManager.LongPause();
-            IndustryLabelingSetting.IsEndYearInDropdownList(input.ExpectedData.EndYear);
-            TimeManager.LongPause();
+            Assert.AreEqual("2012", input.ExpectedData.StartYear);
+            Assert.AreEqual("2014", input.ExpectedData.EndYear);
 
             // Click Cancel button,Click +能效标识 buttons
             IndustryLabelingSetting.ClickCancelLabeling();
@@ -103,7 +89,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             //Click Cancel button.
             IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
             TimeManager.LongPause();
-            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimateRegion);
             TimeManager.LongPause();
             IndustryLabelingSetting.ClickCancelLabeling();
             TimeManager.LongPause();
@@ -115,7 +101,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             TimeManager.LongPause();
             IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
             TimeManager.LongPause();
-            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimateRegion);
             TimeManager.LongPause();
             IndustryLabelingSetting.ClickCancelLabeling();
         }
@@ -144,21 +130,26 @@ namespace Mento.Script.Administration.IndustryLabeling
             Assert.IsTrue(IndustryLabelingSetting.IsIndustrysAddMessageDisplayed());
             Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionAddMessageDisplayed());
             Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
-            IndustryLabelingSetting.IsStartYearInDropdownList(input.ExpectedData.StartYear);
-            IndustryLabelingSetting.IsEndYearInDropdownList(input.ExpectedData.EndYear);
+            Assert.AreEqual("2012", input.ExpectedData.StartYear);
+            Assert.AreEqual("2014", input.ExpectedData.EndYear);
 
 
             //Select 行业=酒店五星级 and Click Save button.
             //Save failed with pop up note at 气候分区 & 能效标识级别，show "请至少选择一项。"
             IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
             IndustryLabelingSetting.ClickSaveLabeling();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionAddMessageDisplayed());
             Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
 
+
             //Select 气候分区=严寒地区B区 , 能耗标识级别=3级.
             //Click Save button.
-            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimaticRegion);
             IndustryLabelingSetting.SelectEnergyEfficiencyLabelingLevelCombox(input.InputData.EnergyEfficiencyLabellingLevel);
+
+            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimateRegion);
             IndustryLabelingSetting.ClickSaveLabeling();
 
             }

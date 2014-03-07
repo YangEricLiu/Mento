@@ -46,8 +46,7 @@ namespace Mento.Script.Administration.IndustryLabeling
         public void ModifyIndustryLabelingValid(IndustryLabelingData input)
         {
             //Click a Labeling(行业=酒店（三星级）; 气候分区=严寒地区A区 ) from list and click 修改 button.
-            IndustryLabelingSetting.FocusOnLabelingIndustry(input.InputData.Industry);
-            IndustryLabelingSetting.FocusOnLabelingClimateRegion(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry,input.InputData.ClimateRegion);
             IndustryLabelingSetting.ClickModifyLabeling();
             TimeManager.ShortPause();
 
@@ -59,7 +58,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             //Display old view status.
             IndustryLabelingSetting.ClickSaveLabeling();
             IndustryLabelingSetting.IsIndustryInDropdownList(input.InputData.Industry);
-            IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimateRegion);
             IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelInDropdownList(input.InputData.EnergyEfficiencyLabellingLevel);
             IndustryLabelingSetting.IsStartYearInDropdownList(input.InputData.StartYear);
             IndustryLabelingSetting.IsEndYearInDropdownList(input.InputData.EndYear);
@@ -79,10 +78,9 @@ namespace Mento.Script.Administration.IndustryLabeling
 
             //Click the modified labeling from list.
             //Go to view status . 
-            IndustryLabelingSetting.FocusOnLabelingIndustry(input.InputData.Industry);
-            IndustryLabelingSetting.FocusOnLabelingClimateRegion(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry, input.InputData.ClimateRegion);
             IndustryLabelingSetting.IsIndustryInDropdownList(input.InputData.Industry);
-            IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimaticRegion);
+            IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimateRegion);
             IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelInDropdownList(input.InputData.EnergyEfficiencyLabellingLevel);
             IndustryLabelingSetting.IsStartYearInDropdownList(input.InputData.StartYear);
             IndustryLabelingSetting.IsEndYearInDropdownList(input.InputData.EndYear);
@@ -101,7 +99,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             //Select 行业=酒店（三星级）, then select 气候分区.
             //There isn't 气候分区=严寒地区A区 can be selected from dropdown list.
             IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
-            Assert.IsFalse(IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimaticRegion));
+            Assert.IsFalse(IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimateRegion));
 
         }
         #endregion

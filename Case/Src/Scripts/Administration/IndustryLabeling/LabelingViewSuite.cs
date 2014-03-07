@@ -54,16 +54,20 @@ namespace Mento.Script.Administration.IndustryLabeling
             Assert.AreEqual(input.ExpectedData.EnergyEfficiencyLabellingLevels[0], IndustryLabelingSetting.GetSelectedEnergyEfficiencyLabelingLevel());
             Assert.AreEqual(input.ExpectedData.StartYears[0], IndustryLabelingSetting.GetSelectedStartYear());
             Assert.AreEqual(input.ExpectedData.EndYears[0], IndustryLabelingSetting.GetSelectedEndYear());
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Switch from labeling list.
-            //IndustryLabelingSetting.FocusOnLabelingIndustry(input.InputData.Industrys[1]);
-            
+            IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industrys[1], input.InputData.ClimateRegion);
+
             //Display properties行业，气候分区， 能耗标识级别 and 数据来源 start&end year of selected Labeling in View mode. 
             Assert.AreEqual(input.ExpectedData.Industrys[1], IndustryLabelingSetting.GetSelectedIndustry());
             Assert.AreEqual(input.ExpectedData.ClimateRegion, IndustryLabelingSetting.GetSelectedClimateRegion());
             Assert.AreEqual(input.ExpectedData.EnergyEfficiencyLabellingLevels[1], IndustryLabelingSetting.GetSelectedEnergyEfficiencyLabelingLevel());
             Assert.AreEqual(input.ExpectedData.StartYears[1], IndustryLabelingSetting.GetSelectedStartYear());
             Assert.AreEqual(input.ExpectedData.EndYears[1], IndustryLabelingSetting.GetSelectedEndYear());
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
 
         }

@@ -406,17 +406,9 @@ namespace Mento.ScriptCommon.Library.Functions
             return string.Join(",", EndYearComboBox.GetCurrentDropdownListItems());
         }
 
-        /*/// <summary>
-        /// Verify whether combox list exist dropdown items 
-        /// </summary>
-        /// <returns></returns>
-       public Boolean IsDropdownItemExist(string item)
-        {
-            return LabelingComboBox.GetCurrentDropdownListItems().Contains(item);
-        }
-        */
+
         /// <summary>
-        /// Check whether the labeling list in the labeling List.  
+        /// Check whether the labelingIndustry list in the labeling List.  
         /// </summary>
         /// <returns></returns>
         public Boolean IsRowExistLabelingListIndustry(string regionName)
@@ -424,12 +416,8 @@ namespace Mento.ScriptCommon.Library.Functions
             return LabelingList.IsRowExist(1, regionName);
         }
 
-        public Boolean IsRowExistLabelingList(string labelingName, string climateregion)
-        {
-           return  LabelingList.IsRowExist(labelingName, climateregion);
-        }
         /// <summary>
-        /// Check whether the labeling list in the labeling List.  
+        /// Check whether the labelingClimateRegion list in the labeling List.  
         /// </summary>
         /// <returns></returns>
         public Boolean IsRowExistLabelingListClimateRegion(string regionName)
@@ -437,6 +425,22 @@ namespace Mento.ScriptCommon.Library.Functions
             return LabelingList.IsRowExist(2, regionName);
         }
 
+        /// <summary>
+        /// Check whether the labeling list in the labeling List.  
+        /// </summary>
+        /// <returns></returns>
+        public Boolean IsRowExistLabelingList(string labelingName, string climateregion)
+        {
+            try
+            {
+                LabelingList.FocusOnRow(labelingName, climateregion);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         /// <summary>
         /// Check whether the industry list include the industry.  
         /// </summary>

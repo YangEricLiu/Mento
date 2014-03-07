@@ -57,14 +57,12 @@ namespace Mento.Script.Administration.IndustryLabeling
 
             //Deleted Labeling can't display in Labeling list correctly,display in IndustryLabeling list correctly
             Assert.IsFalse(IndustryLabelingSetting.IsRowExistLabelingList(input.InputData.Industry, input.InputData.ClimateRegion));
-            //Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingListIndustry(input.InputData.Industry));
-           // Assert.IsTrue(IndustryLabelingSetting.IsRowExistLabelingListClimateRegion(input.InputData.ClimateRegion));
 
             //Click +能效标识 buttons.
             IndustryLabelingSetting.ClickAddLabeling();
             TimeManager.LongPause();
 
-            //Select 行业=酒店 and  气候分区=严寒地区A区. Click Save button.
+            //Select 行业=学校 and  气候分区=温和地区. Click Save button.
             IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
             IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimateRegion);
             IndustryLabelingSetting.SelectEnergyEfficiencyLabelingLevelCombox(input.InputData.EnergyEfficiencyLabellingLevel);

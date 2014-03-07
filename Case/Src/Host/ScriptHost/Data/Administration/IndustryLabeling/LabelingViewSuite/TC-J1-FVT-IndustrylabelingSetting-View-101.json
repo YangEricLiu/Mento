@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Industrys":["酒店","酒店（三星级）"],
+			"Industrys":["办公建筑","数据中心"],
 			"ClimateRegion":"严寒地区A区",
 			"EnergyEfficiencyLabellingLevels":["5级","3级"],
 			"StartYears":["2008","2012"],
@@ -10,7 +10,7 @@
 		},
 		"ExpectedData":
 		{
-			"Industrys":["酒店","酒店（三星级）"],
+			"Industrys":["办公建筑","数据中心"],
 			"ClimateRegion":"严寒地区A区",
 			"EnergyEfficiencyLabellingLevels":["5级","3级"],
 			"StartYears":["2008","2012"],

@@ -186,6 +186,7 @@
           <add key="ButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
           <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
           <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+          <add key="WidgetConfirmCancelShareButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='取消共享']]" type="XPath"/>
 
           <add key="ButtonConfirmHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
           <add key="ButtonClearHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='清空']]" type="XPath"/>
@@ -1042,6 +1043,8 @@
     <add key="LabelAnnotationText" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[1]/label" type="XPath"/>
 
     <add key="LabelMaxWidgetComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='编辑']]/../../div[2]/label" type="XPath"/>
+    
+    <add key="LabelEnjoyWidgetNameMin" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']" type="XPath"/>
 
     </HomePage>
     
@@ -1118,6 +1121,8 @@
       <add key="ContainerWidgetsToDashboard" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]" type="XPath"/>
       <add key="ContainerShareWindowTo" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div/div[contains(@id,'tagcontainer')]/div[contains(@id,'removableitem')]" type="XPath"/>
       <add key="ContainerDashboards" value="//div[@id='hp-dashboard-list-targetEl']/div[contains(@id,'dashboardbutton')]" type="XPath"/>
+      <add key="ContainerWidgetsToMyShare" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]" type="XPath"/>
+      <add key="ContainerWidgetsNamesToMyShare" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class, 'x-widget-header-text-container')]/span" type="XPath"/>
 
   </Homopage>
     

@@ -26,10 +26,10 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button ShareButton = JazzButton.ShareWindowShareButton;
 
         //Enjoy button
-        private static Button EnjoyButton = JazzButton.ShareWindowEnjoyButton;
+        private static Button ShareWindowEnjoyButton = JazzButton.ShareWindowEnjoyButton;
 
         //Giveup button
-        private static Button GiveupButton = JazzButton.ShareWindowGiveupButton;
+        private static Button ShareWindowGiveupButton = JazzButton.ShareWindowGiveupButton;
 
         //Share users contains
         //private static Container ShareWindowTo = JazzContainer.ShareWindowToContainer;
@@ -40,9 +40,15 @@ namespace Mento.ScriptCommon.Library.Functions
         //Sended list grid
         private static Grid SendedUserList = JazzGrid.SendedUserListGrid;
 
+        //Enjoy grid
+        private static Grid TrueShareUserList = JazzGrid.TrueShareUserListGrid;
+
+        //Enjoy Sended list grid
+        private static Grid TrueSendedUserList = JazzGrid.TrueSendedUserListGrid;
+
         #endregion
 
-        #region operation
+        #region share operation
         /*
         public string GetShareWindowTitle()
         {
@@ -59,11 +65,6 @@ namespace Mento.ScriptCommon.Library.Functions
             ShareButton.Click();
         }
 
-        public void ClickEnjoyButton()
-        {
-            EnjoyButton.Click();
-        }
-
         public bool IsShareButtonEnable()
         {
             return ShareButton.IsEnabled();
@@ -71,7 +72,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickGiveupButton()
         {
-            GiveupButton.Click();
+            ShareWindowGiveupButton.Click();
         }
 
         public void ClickRemoveShareUserButton(string name)
@@ -84,7 +85,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsShareUserInSendedList(string name)
         {
             return SendedUserList.IsRowExist(1, name);
-        }
+        }   
 
         public void CheckShareUser(string userName)
         {
@@ -99,7 +100,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsShareUserExistedOnWindow(string userName)
         {
             return ShareUserList.IsRowExist(2, userName);
-        }
+        }    
 
         public bool IsShareUserChecked(string userName)
         {
@@ -114,7 +115,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsAllShareUsersChecked()
         {
             return ShareUserList.IsShareWindowRowsAllChecked();
-        }
+        }   
 
         public void UncheckAllShareUsers()
         {
@@ -133,6 +134,86 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return SendedUserList.GetCurrentRowsNumber();
         }
+
+        #endregion
+
+        #region Enjoy operation
+
+        public void ClickEnjoyButton()
+        {
+            ShareWindowEnjoyButton.Click();
+        }
+
+        public void ClickGiveUpEnjoyButton()
+        {
+            ShareWindowGiveupButton.Click();
+        }
+
+        public bool IsEnjoyButtonEnable()
+        {
+            return ShareWindowEnjoyButton.IsEnabled();
+        }
+
+        public bool IsEnjoyUserInSendedList(string name)
+        {
+            return TrueSendedUserList.IsRowExist(1, name);
+        }
+
+        public void ClickRemoveEnjoyUserButton(string name)
+        {
+            TrueSendedUserList.FloatOnRow(1, name, false);
+
+            TrueSendedUserList.GetSendedListRowDeleteX(1, name, false).Click();
+        }
+
+        public void CheckEnjoyUser(string userName)
+        {
+            TrueShareUserList.CheckShareWindowRowCheckbox(2, userName, false);
+        }
+
+        public void UncheckEnjoyUser(string userName)
+        {
+            TrueShareUserList.UncheckShareWindowRowCheckbox(2, userName, false);
+        }
+
+        public bool IsEnjoyUserExistedOnWindow(string userName)
+        {
+            return TrueShareUserList.IsRowExist(2, userName);
+        }
+
+        public bool IsEnjoyUserChecked(string userName)
+        {
+            return TrueShareUserList.IsShareWindowRowChecked(2, userName, false);
+        }
+
+        public void CheckAllEnjoyUsers()
+        {
+            TrueShareUserList.CheckShareHeaderCheckbox();
+        }
+
+        public bool IsAllEnjoyUsersChecked()
+        {
+            return TrueShareUserList.IsShareWindowRowsAllChecked();
+        }
+
+        public void UncheckAllEnjoyUsers()
+        {
+            if (IsEnjoyHeaderChecked())
+            {
+                TrueShareUserList.CheckShareHeaderCheckbox();
+            }
+        }
+
+        public bool IsEnjoyHeaderChecked()
+        {
+            return TrueShareUserList.IsShareHeaderChecked();
+        }
+
+        public int GetEnjoyUserNumber()
+        {
+            return TrueSendedUserList.GetCurrentRowsNumber();
+        }
+
         #endregion
 
     }

@@ -37,6 +37,25 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
+        /// get the items number which equal to parameter string text
+        /// </summary>
+        /// <param name="text">text</param>
+        public int GetSameItemNumber(string text)
+        {
+            int num = 0;
+
+            foreach (IWebElement item in this.RootElements)
+            {
+                if (text.Equals(item.Text))
+                {
+                    num++;
+                }
+            }
+
+            return num;
+        }
+
+        /// <summary>
         /// get the error tips  of this container
         /// </summary>
         /// <param></param>

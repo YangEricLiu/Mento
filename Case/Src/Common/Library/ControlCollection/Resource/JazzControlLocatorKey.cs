@@ -524,6 +524,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonQuitAnnotationWindow = "ButtonQuitAnnotationWindow";
         public static string ButtonInviteOther = "ButtonInviteOther";
         public static string ButtonCloseSubcribeWindow = "ButtonCloseSubcribeWindow";
+
+        public static string WidgetConfirmCancelShareButton = "WidgetConfirmCancelShareButton";
         #endregion
 
         #endregion
@@ -1149,6 +1151,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string LabelMaxWidgetComment = "LabelMaxWidgetComment";
 
+        public static string LabelEnjoyWidgetNameMin = "LabelEnjoyWidgetNameMin";
         #endregion
 
         #region Energy View
@@ -1231,6 +1234,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ContainerWidgetsToDashboard = "ContainerWidgetsToDashboard";
         public static string ContainerShareWindowTo = "ContainerShareWindowTo";
         public static string ContainerDashboards = "ContainerDashboards";
+        public static string ContainerWidgetsToMyShare = "ContainerWidgetsToMyShare";
+        public static string ContainerWidgetsNamesToMyShare = "ContainerWidgetsNamesToMyShare";
 
         #endregion
 

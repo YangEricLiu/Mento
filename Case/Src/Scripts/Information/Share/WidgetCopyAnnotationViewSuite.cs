@@ -585,6 +585,9 @@ namespace Mento.Script.Information.Share
             Widget.EditAnnotationWindow(dashboard[0].widgetComments[0]);
             Widget.ClickSaveAnnotationWindowButton();
             TimeManager.MediumPause();
+
+            HomePagePanel.FloatOnEditCommentButton(dashboard[0].WidgetName);
+            TimeManager.ShortPause();
             Assert.AreEqual(dashboard[0].widgetComments[0], HomePagePanel.GetExistedCommentMinWdiget());
 
             HomePagePanel.FloatOnEditCommentButton(dashboard[0].WidgetName);
@@ -595,6 +598,9 @@ namespace Mento.Script.Information.Share
             Widget.EditAnnotationWindow(dashboard[0].widgetComments[1]);
             Widget.ClickSaveAnnotationWindowButton();
             TimeManager.MediumPause();
+
+            HomePagePanel.FloatOnEditCommentButton(dashboard[0].WidgetName);
+            TimeManager.ShortPause();
             Assert.AreEqual(dashboard[0].widgetComments[1], HomePagePanel.GetExistedCommentMinWdiget());
         }
 

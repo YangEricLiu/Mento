@@ -181,6 +181,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
             this.CancelButton.Click();
         }
 
+        public void CancelShare()
+        {
+            if (!this.CancelButton.Enabled)
+                throw new ApiException("Cancel share button can not be clicked because it is not enabled in the messagebox.");
+
+            this.CancelShareButton.Click();
+        }
+
         public void Close()
         {
             if (!this.CloseButton.Enabled)

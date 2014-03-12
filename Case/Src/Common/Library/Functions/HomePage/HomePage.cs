@@ -40,6 +40,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button AllDashboardsHierarchyTreeButton = JazzButton.AllDashboardsHierarchyTreeButton;
         private static HierarchyTree AllDashboardsTree = JazzTreeView.AllDashboardsTree;
         private static Container WidgetsOnOneDashboard = JazzContainer.ContainerWidgetsToDashboard;
+        private static Container WidgetsToMyShare = JazzContainer.ContainerWidgetsToMyShare;
         private static Label DashboardHeaderName = JazzLabel.DashboardHeaderNameLabel;
         private static MenuButton SelectCustmerMenuButton = JazzButton.SelectCustomerMenuButton;
         private static Button RenameDashboardButton = JazzButton.DashboardRenameButton;
@@ -63,6 +64,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Label WidgetMinComment = JazzLabel.AnnotationTextLabel;
         private static LinkButton AnnotationAddLinkButton = JazzButton.AnnotationAddLinkButton;
         private static LinkButton AnnotationEditLinkButton = JazzButton.AnnotationEditLinkButton;
+        private static Button WidgetConfirmCancelShareButton = JazzButton.WidgetConfirmCancelShareButton;
+        private static Button CancelShareWidgetButton = JazzButton.CancelShareWidgetButton;
+        private static Container WidgetsNamesToMyShareContainer = JazzContainer.WidgetsNamesToMyShareContainer;
 
         #endregion
 
@@ -111,6 +115,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public void NavigateToMyFavorite()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.MyFavirate);
+        }
+
+        /// <summary>
+        /// Navigate To MyShare
+        /// </summary>
+        /// <returns></returns>
+        public void NavigateToMyShare()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.MyShare);
         }
 
 
@@ -172,6 +185,11 @@ namespace Mento.ScriptCommon.Library.Functions
             return WidgetsOnOneDashboard.GetElementNumber();
         }
 
+        public int GetWidgetsNumberOfMyShare()
+        {
+            return WidgetsToMyShare.GetElementNumber();
+        }
+
         public string GetDashboardHeaderName()
         {
             return DashboardHeaderName.GetLabelTextValue();
@@ -213,6 +231,13 @@ namespace Mento.ScriptCommon.Library.Functions
             Label WidgetNameMin = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelWidgetNameMin, name);
             
             return WidgetNameMin.IsLabelExisted();
+        }
+
+        public bool IsWidgetExistedOnMyShare(string name)
+        {
+            Label EnjoyWidgetNameMin = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelEnjoyWidgetNameMin, name);
+
+            return EnjoyWidgetNameMin.IsLabelExisted();
         }
 
         public bool IsShareWidgetUnread(string name)
@@ -430,6 +455,15 @@ namespace Mento.ScriptCommon.Library.Functions
             ShareResoureUser.Float();
             TimeManager.ShortPause();
         }
+
+        #region Enjoy
+
+        public int GetSameWidgetNameNumberofMyShare(string widgetName)
+        {
+            return WidgetsNamesToMyShareContainer.GetSameItemNumber(widgetName);
+        }
+
+        #endregion
         #endregion
 
         #region widget
@@ -453,6 +487,13 @@ namespace Mento.ScriptCommon.Library.Functions
             Label WidgetNameMin = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelWidgetNameMin, name);
 
             WidgetNameMin.Float();
+        }
+
+        public void FloatOnMyShareWidget(string name)
+        {
+            Label EnjoyWidgetNameMin = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelEnjoyWidgetNameMin, name);
+
+            EnjoyWidgetNameMin.Float();
         }
 
         public void FloatOnEditCommentButton(string name)
@@ -497,6 +538,16 @@ namespace Mento.ScriptCommon.Library.Functions
             renameButton.Click();
         }
 
+        public void RenameMyShareWidgetOpen(string name)
+        {
+            FloatOnMyShareWidget(name);
+            TimeManager.ShortPause();
+
+            Button MyShareRenameButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonMyShareWidgetRename, name);
+
+            MyShareRenameButton.Click();
+        }
+
         /// <summary>
         /// delete widget
         /// </summary>
@@ -510,6 +561,21 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
 
             DeleteWidgetButton.Click();
+        }
+
+        /// <summary>
+        /// cancel share widget
+        /// </summary>
+        public void CancelMyShareWidgetOpen(string name)
+        {
+            FloatOnMyShareWidget(name);
+            TimeManager.ShortPause();
+
+            Button MyShareWidgetRenameButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonMyShareWidgetRename, name);
+            MyShareWidgetRenameButton.Click();
+            TimeManager.ShortPause();
+
+            CancelShareWidgetButton.Click();
         }
 
         public bool IsRenameButtonDisplayed(string name)

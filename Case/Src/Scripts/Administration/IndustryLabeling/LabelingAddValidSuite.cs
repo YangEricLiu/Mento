@@ -83,6 +83,8 @@ namespace Mento.Script.Administration.IndustryLabeling
                 aaa = bbb;
             }
                 
+            
+
             //Click the saved Labeling from list.
             IndustryLabelingSetting.ClickSaveLabeling();
             IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry, input.InputData.ClimateRegion);

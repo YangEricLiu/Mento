@@ -1,0 +1,39 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"WidgetCollaborativeShare1013_1",
+				"HierarchyName":["NancyCustomer1", "WidgetCollaborativeShareOrg", "WidgetCollaborativeShareSiteA", "WidgetCollaborativeShare1013A"],
+				"ShareUsers":["ShareUserF"],
+				"DashboardName":"WidgetCollaborativeShare_1013A",
+				"Receivers":[{
+					"LoginName":"ShareUserB",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserF",
+					"Password":"123456Qq",
+				}],
+			},
+			{
+				"WidgetName":"WidgetCollaborativeShare1013_1",
+				"HierarchyName":["NancyCustomer1", "WidgetCollaborativeShareOrg", "WidgetCollaborativeShareSiteA", "WidgetCollaborativeShare1013A"],
+				"ShareUsers":["ShareUserF"],
+				"DashboardName":"WidgetCollaborativeShare_1013B",
+				"Receivers":[{
+					"LoginName":"ShareUserB",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserF",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

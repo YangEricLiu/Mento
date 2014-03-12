@@ -1,0 +1,21 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"WidgetCollaShareInvalid1013_1",
+				"HierarchyName":["NancyCustomer1", "WidgetCollaborativeShareOrg", "WidgetCollaShareInvalidSiteA", "WidgetCollaShareInvalid1013A"],
+				"ShareUsers":["ShareUserC", "ShareUserI"],
+				"DashboardName":"WidgetCollaShareInvalid_1013A",
+				"Receivers":[{
+					"LoginName":"ShareUserB",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

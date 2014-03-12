@@ -887,6 +887,8 @@
     <None Include="Data\Information\Share\WidgetCopyAnnotationViewSuite\TC-J1-FVT-WidgetCopy-Annotation-101-3.json" />
     <None Include="Data\Information\Share\WidgetCopyAnnotationViewSuite\TC-J1-FVT-WidgetCopy-Annotation-101-2.json" />
     <None Include="Data\Information\Share\WidgetCopyAnnotationViewSuite\TC-J1-FVT-WidgetCopy-Annotation-101-1.json" />
+    <None Include="Data\Information\WidgetCollaborativeShare\WidgetCollaborativeRenameDeleteSuite\TC-J1-FVT-WidgetCollaborative-Rename-001-1.json" />
+    <None Include="Data\Information\WidgetCollaborativeShare\WidgetCollaborativeRenameDeleteSuite\TC-J1-FVT-WidgetCollaborative-Rename-101-1.json" />
     <None Include="Data\Information\WidgetCollaborativeShare\WidgetCollaborativeShareInvalidSuite\TC-J1-FVT-WidgetCollaborative-Share-001-3.json" />
     <None Include="Data\Information\WidgetCollaborativeShare\WidgetCollaborativeShareInvalidSuite\TC-J1-FVT-WidgetCollaborative-Share-001-2.json" />
     <None Include="Data\Information\WidgetCollaborativeShare\WidgetCollaborativeShareInvalidSuite\TC-J1-FVT-WidgetCollaborative-Share-001-1.json" />

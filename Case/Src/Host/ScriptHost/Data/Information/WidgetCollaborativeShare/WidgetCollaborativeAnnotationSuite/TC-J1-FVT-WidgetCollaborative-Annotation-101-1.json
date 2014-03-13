@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"WidgetCollaAnnotation1011_1",
+				"HierarchyName":["NancyCustomer1", "WidgetCollaAnnotationOrg", "WidgetCollaAnnotationSiteA", "WidgetCollaAnnotation1011A"],
+				"ShareUsers":["ShareUserF"],
+				"DashboardName":"WidgetCollaAnnotation_1011",
+				"widgetComments":["addnew"],
+				"Receivers":[{
+					"LoginName":"ShareUserB",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserF",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

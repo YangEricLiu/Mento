@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"WidgetCollaRenameDelete1014_1",
+				"HierarchyName":["NancyCustomer1", "WidgetCollaRenameDeleteOrg", "WidgetCollaRenameDeleteSiteA", "WidgetCollaRenameDelete1014A"],
+				"ShareUsers":["ShareUserF"],
+				"DashboardName":"WidgetCollaRenameDelete_1014",
+				"widgetComments":["ModifyRenameDelete1014"],
+				"Receivers":[{
+					"LoginName":"ShareUserB",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserF",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

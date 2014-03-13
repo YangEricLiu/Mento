@@ -22,6 +22,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
     public class ShareDashboardOutput : ExpectedTestDataBase
     {
         public string[][] TooltipTexts { get; set; }
+        public string[] messages { get; set; }
     }
 
     public class DashboardShareList

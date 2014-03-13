@@ -46,6 +46,9 @@ namespace Mento.ScriptCommon.Library.Functions
         //Enjoy Sended list grid
         private static Grid TrueSendedUserList = JazzGrid.TrueSendedUserListGrid;
 
+        //Enjoy window comment
+        private static TextField EnjoyWindowComment = JazzTextField.ShareReceiveWindowCommentTextField;
+
         #endregion
 
         #region share operation
@@ -212,6 +215,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public int GetEnjoyUserNumber()
         {
             return TrueSendedUserList.GetCurrentRowsNumber();
+        }
+
+        public void FillEnjoyWindowComment(string comment)
+        {
+            EnjoyWindowComment.Fill(comment);
+        }
+
+        public string GetEnjoyWindowComment()
+        {
+            return EnjoyWindowComment.GetValue();
         }
 
         #endregion

@@ -526,6 +526,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonCloseSubcribeWindow = "ButtonCloseSubcribeWindow";
 
         public static string WidgetConfirmCancelShareButton = "WidgetConfirmCancelShareButton";
+        public static string ButtonCloseWidgetRenameWindow = "ButtonCloseWidgetRenameWindow";
+
+        public static string ButtonMyShareWidgetMaximize = "ButtonMyShareWidgetMaximize";
+        public static string ButtonMyShareWidgetShare = "ButtonMyShareWidgetShare";
+
         #endregion
 
         #endregion
@@ -1152,6 +1157,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelMaxWidgetComment = "LabelMaxWidgetComment";
 
         public static string LabelEnjoyWidgetNameMin = "LabelEnjoyWidgetNameMin";
+        public static string LabelMyShareWidgetMinAnnotationIcon = "LabelMyShareWidgetMinAnnotationIcon";
         #endregion
 
         #region Energy View

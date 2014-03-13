@@ -1,0 +1,34 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"WidgetCollaRenameDelete1015_1",
+				"HierarchyName":["NancyCustomer1", "WidgetCollaRenameDeleteOrg", "WidgetCollaRenameDeleteSiteA", "WidgetCollaRenameDelete1015A"],
+				"ShareUsers":["ShareUserF", "ShareUserE", "ShareUserG"],
+				"DashboardName":"WidgetCollaRenameDelete_1015",
+				"widgetComments":["ModifyRenameDelete1015"],
+				"Receivers":[{
+					"LoginName":"ShareUserB",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserF",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserE",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserG",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			"messages":["取消小组件 “WidgetCollaRenameDelete1015_1” 的共享吗？"],
+		}
+	}
+]

@@ -93,7 +93,9 @@
             <add key="LinkButtonAnnotationEdit" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[2]/div/a[text()='编辑']" type="XPath"/>
             <add key="LinkButtonAnnotationAdd" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[2]/div/a[text()='添加']" type="XPath"/>
             <add key="ButtonMyShareWidgetRename" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-rename-tool')]/img" type="XPath"/>
-        
+            <add key="ButtonMyShareWidgetMaximize" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-max-tool')]/img" type="XPath"/>
+            <add key="ButtonMyShareWidgetShare" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-share-tool')]/img" type="XPath"/>
+
             <add key="LinkButtonMaxWidgetEditComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='编辑']]" type="XPath"/>
             <add key="LinkButtonMaxWidgetAddComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='添加']]" type="XPath"/>
 
@@ -223,6 +225,7 @@
         <add key="ButtonQuitAnnotationWindow" value="//div[contains(@id,'annotationwindow') and contains(@class,'x-window-default')]/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
         <add key="ButtonInviteOther" value="//div[contains(@id,'shareduserlist') and contains(@class,'x-window-body-default')]/div[2]/div[contains(@class,'x-btn') and em/button/span[text()='邀请其他人']]" type="XPath"/>
         <add key="ButtonCloseSubcribeWindow" value="//div[contains(@id,'shareduserlist') and contains(@class,'x-window-header-body-default')]/div/div/div[2]/img" type="XPath"/>
+        <add key="ButtonCloseWidgetRenameWindow" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-header-body-default')]//div[contains(@class, 'x-tool-default')]/img" type="XPath"/>
 
       </homepage>
       
@@ -1040,6 +1043,7 @@
     <add key="LabelWidgetMinTitlePosition" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')][$#positionIndex]//div[contains(@class,'x-widget-header-text-container')]/span" type="XPath"/>
     <add key="LabelDashboardTitlePosition" value="//div[@id='hp-dashboard-list-targetEl']/div[contains(@id,'dashboardbutton')][$#positionIndex]/span[contains(@class,'x-dsbd-btn-text')]" type="XPath"/>
     <add key="LabelWidgetMinAnnotationIcon" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']/../span[contains(@class,'x-widget-header-annotation')]" type="XPath"/>
+    <add key="LabelMyShareWidgetMinAnnotationIcon" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']/../span[contains(@class,'x-widget-header-annotation')]" type="XPath"/>
     <add key="LabelAnnotationText" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[1]/label" type="XPath"/>
 
     <add key="LabelMaxWidgetComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='编辑']]/../../div[2]/label" type="XPath"/>

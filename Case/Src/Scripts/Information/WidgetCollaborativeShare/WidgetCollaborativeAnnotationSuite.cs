@@ -80,7 +80,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             TimeManager.Pause(15);
 
             //There is a widgetA appear in "Collaborative Widget " with the blank annotation.
-            HomePagePanel.FloatOnEditCommentButton(dashboard[0].WidgetName);
+            HomePagePanel.FloatOnMyShareEditCommentButton(dashboard[0].WidgetName);
             TimeManager.ShortPause();
 
             HomePagePanel.ClickAddAnnotationButton();
@@ -117,7 +117,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             Assert.AreEqual(dashboard[0].widgetComments[0], Widget.GetMaxWidgetComment());
 
             //The annotation window  without Edit button
-            Assert.IsFalse(Widget.IsEditMaxWidgetCommentButtonExisted());
+            Assert.IsFalse(Widget.IsEditMaxWidgetCommentButtonDisplayed());
             Widget.ClickCloseMaxDialogButton();
             TimeManager.ShortPause();
         }
@@ -206,10 +206,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             ShareWindow.ClickEnjoyButton();
             TimeManager.ShortPause();
 
-            HomePagePanel.FloatOnEditCommentButton(dashboard[0].WidgetName);
-            TimeManager.ShortPause();
-            Assert.AreEqual(dashboard[0].widgetComments[0], HomePagePanel.GetExistedCommentMinWdiget());
-
             //Navigate to homepage, then to "Collaborative Widget " tab.
             HomePagePanel.NavigateToMyShare();
             TimeManager.Pause(15);
@@ -250,14 +246,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             TimeManager.ShortPause();
             ShareWindow.ClickEnjoyButton();
             TimeManager.ShortPause();
-
-            HomePagePanel.FloatOnEditCommentButton(dashboard[0].WidgetName);
-            TimeManager.ShortPause();
-
-            HomePagePanel.ClickAddAnnotationButton();
-            TimeManager.ShortPause();
-            Widget.ClickQuitAnnotationWindowButton();
-            TimeManager.MediumPause();
 
             //Navigate to homepage, then to "Collaborative Widget " tab.
             HomePagePanel.NavigateToMyShare();
@@ -311,6 +299,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             TimeManager.ShortPause();
 
             //Login to Jazz with UserB. Navigate to homepage->Dashboard->Widget Mirror tab.
+            HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
             TimeManager.Pause(15);
@@ -321,6 +310,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             Assert.AreEqual(dashboard[0].widgetComments[1], HomePagePanel.GetExistedCommentMinWdiget());
 
             //Login to Jazz with UserA. Navigate to homepage->Dashboard->Widget Mirror tab.
+            HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
             TimeManager.Pause(15);
@@ -352,7 +342,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
         public void VerifyAnnotationInMaximizeWindow(ShareDashboardData input)
         {
             var dashboard = input.InputData.DashboardInfo;
-
+            
             //Login to Jazz with UserB. Navigate to homepage->Dashboard->Widget Mirror tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
@@ -360,7 +350,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //Click the schema picture area in widgetA.Go to verify annotation.The annotation is blank.
             HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);
-            Assert.AreEqual("", Widget.GetMaxWidgetComment());
+            Assert.IsFalse(Widget.IsAddMaxWidgetCommentButtonDisplayed());
             Widget.ClickCloseMaxDialogButton();
             TimeManager.ShortPause();
 
@@ -386,6 +376,8 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             Widget.EditAnnotationWindow(dashboard[0].widgetComments[1]);
             Widget.ClickSaveAnnotationWindowButton();
             TimeManager.MediumPause();
+            Widget.ClickCloseMaxDialogButton();
+            TimeManager.ShortPause();
 
             //Login to Jazz with UserB. Navigate to homepage->Dashboard->Widget Mirror tab.
             HomePagePanel.ExitJazz();
@@ -396,13 +388,13 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.FloatOnMyShareEditCommentButton(dashboard[0].WidgetName);
             TimeManager.ShortPause();
             Assert.AreEqual(dashboard[0].widgetComments[1], HomePagePanel.GetExistedCommentMinWdiget());
-
+            
             //Login to Jazz with UserA. Navigate to homepage->Dashboard->Widget Mirror tab.
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
             TimeManager.Pause(15);
-
+            
             //Click the schema picture area in widgetA.Click Edit button in annotation.
             HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);
             Widget.ClickEditMaxWidgetCommentButton();
@@ -412,8 +404,9 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             TimeManager.MediumPause();
             Widget.ClickCloseMaxDialogButton();
             TimeManager.ShortPause();
-
+            
             //The annotation is blank with Add button available.
+            TimeManager.LongPause();
             HomePagePanel.FloatOnMyShareEditCommentButton(dashboard[0].WidgetName);
             TimeManager.ShortPause();
 
@@ -431,13 +424,12 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             var dashboard = input.InputData.DashboardInfo;
 
             //Login to Jazz with userB. Navigate to homepage,then to "Collaborative Widget " tab.
-            HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
 
             //Click schema picture of blank field.The annotation field is gray and cannot be edit.
             HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);
-            Assert.IsFalse(Widget.IsEditMaxWidgetCommentButtonExisted());
+            Assert.IsFalse(Widget.IsEditMaxWidgetCommentButtonDisplayed());
             Widget.ClickCloseMaxDialogButton();
             TimeManager.ShortPause();
         }

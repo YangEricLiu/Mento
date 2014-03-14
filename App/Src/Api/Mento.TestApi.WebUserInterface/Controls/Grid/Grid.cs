@@ -236,6 +236,18 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
+        /// Click the remove or quit subcriber button
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public void ClickRemoveorQuitRowButton(int cellIndex, string cellText)
+        {
+            var RemoveorQuit = this.GetRowRemoveorQuit(cellIndex, cellText, false);
+            //RemoveorQuit.Click();
+            ElementHandler.Click(RemoveorQuit);
+        }
+
+        /// <summary>
         /// Simulate mouse click the "X" button on the tail of grid row on multiple hierarchy window
         /// </summary>
         /// <param name="cellName"></param>
@@ -630,6 +642,40 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return FindChild(Locator.GetVariableLocator(deleteXLocator, variables));
         }
+
+        public string GetRowRemoveorQuitText(int cellIndex, string cellText)
+        {
+            return GetRowRemoveorQuit(cellIndex, cellText, false).Text;
+        }
+
+        protected virtual IWebElement GetRowRemoveorQuit(int cellIndex, string cellText, bool Paging = true)
+        {
+            var RemoveorQuitLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowQuitSubscriber);
+
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(RemoveorQuitLocator, variables));
+        }
+
 
         protected virtual IWebElement GetRowChecker(int cellIndex, string cellText, bool Paging = true)
         {

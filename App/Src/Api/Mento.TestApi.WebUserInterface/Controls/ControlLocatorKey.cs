@@ -81,6 +81,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string GridRowHeaderShare = "GridRowHeaderShare";
 
         public static string GridRowLabelling = "GridRowLabelling";
+        public static string GridRowQuitSubscriber = "GridRowQuitSubscriber";
         #endregion
 
         #region MonthPicker locators

@@ -31,6 +31,12 @@ namespace Mento.ScriptCommon.Library.Functions
         //Giveup button
         private static Button ShareWindowGiveupButton = JazzButton.ShareWindowGiveupButton;
 
+        //Invite Other button
+        private static Button InviteOtherButton = JazzButton.InviteOtherButton;
+
+        //close subcriber list window
+        private static Button CloseSubcribeWindowButton = JazzButton.CloseSubcribeWindowButton;
+
         //Share users contains
         //private static Container ShareWindowTo = JazzContainer.ShareWindowToContainer;
 
@@ -45,6 +51,9 @@ namespace Mento.ScriptCommon.Library.Functions
 
         //Enjoy Sended list grid
         private static Grid TrueSendedUserList = JazzGrid.TrueSendedUserListGrid;
+
+        //Subscribe user list grid
+        private static Grid SubscribeUserList = JazzGrid.SubscribeUserListGrid;
 
         //Enjoy window comment
         private static TextField EnjoyWindowComment = JazzTextField.ShareReceiveWindowCommentTextField;
@@ -142,6 +151,16 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region Enjoy operation
 
+        public void CloseSubcriberListWindow()
+        {
+            CloseSubcribeWindowButton.Click();
+        }
+
+        public void ClickInviteOtherButton()
+        {
+            InviteOtherButton.Click();
+        }
+
         public void ClickEnjoyButton()
         {
             ShareWindowEnjoyButton.Click();
@@ -162,11 +181,37 @@ namespace Mento.ScriptCommon.Library.Functions
             return TrueSendedUserList.IsRowExist(1, name);
         }
 
+        public bool IsEnjoyUserInShareList(string name)
+        {
+            return TrueShareUserList.IsRowExist(1, name);
+        }
+
+        public bool IsEnjoyUserInSubscribeUserList(string name)
+        {
+            return SubscribeUserList.IsRowExist(1, name);
+        }
+
+        public void FloatOnSubscriberUser(string name)
+        {
+            SubscribeUserList.FloatOnRow(1, name, false);
+            TimeManager.ShortPause();
+        }
+
+        public string GetRemoveorQuitSubcriberText(string name)
+        {
+            return SubscribeUserList.GetRowRemoveorQuitText(1, name);
+        }
+
         public void ClickRemoveEnjoyUserButton(string name)
         {
             TrueSendedUserList.FloatOnRow(1, name, false);
 
             TrueSendedUserList.GetSendedListRowDeleteX(1, name, false).Click();
+        }
+
+        public void ClickRemoveorQuitSubcriberButton(string name)
+        {
+            SubscribeUserList.ClickRemoveorQuitRowButton(1, name);
         }
 
         public void CheckEnjoyUser(string userName)

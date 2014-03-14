@@ -489,8 +489,6 @@
 
               <add key="ButtonCustomerNames" value="//div[@id='st-user-datarange-form-body']//div[@id='st-user-datarange-form-targetEl']//div[contains(@id,'datapermissiongrid')]//div[contains(@class,'x-column-header-checkbox')]/div[1]/span" type="XPath"/>
               <add key="ButtonCustomerNamesViewStatus" value="//div[@id='st-user-datarange-form-body']//div[@id='st-user-datarange-form-targetEl']//div[contains(@id,'datapermissiongrid')]//div[contains(@class,'x-column-header-checkbox')]/div[1]/span" type="XPath"/>
-
-
           </UserDataPermission>
 
           <TargetBaseline>
@@ -498,9 +496,7 @@
               <add key="LinkButtonBaselineCalendarInfo" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//table[contains(@id,'displayfield')]//a[text()='查看日历详情']" type="XPath"/>
               <add key="ButtonCloseTBCalendarWindow" value="//div[contains(@id,'calendartemplatewindow') and contains(@class, 'x-window-header-body-default')]//img[@class='x-tool-close']" type="XPath"/>
               <add key="ButtonDeleteSpecialdayItem" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/div/img" type="XPath"/>
-          </TargetBaseline>
-
-          
+          </TargetBaseline>    
       </platformsettings>
       
   </Button>

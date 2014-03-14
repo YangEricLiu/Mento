@@ -63,7 +63,8 @@
     <!--<add key="GridRowSelector" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]" type ="XPath"/>
        -->
     <add key="GridRowDeleteX" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-last')]/div/img" type ="XPath"/>
-  
+    <add key="GridRowQuitSubscriber" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-last')]/div/a[@type='removeSubscriber']" type ="XPath"/>
+
   <add key="GridRowLight" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-first')]/div/img" type ="XPath"/>
   <add key="GridRowHeaderShare" value = "div[contains(@id,'headercontainer') and contains(@class,'x-grid-header-ct-default')]/div/div/div/div/span[contains(@id,'actioncolumn')]" type ="XPath"/>
 

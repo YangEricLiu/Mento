@@ -65,6 +65,8 @@
     <Compile Include="Share\ShareDashboard1ValidSuite.cs" />
     <Compile Include="Share\ShareDashboardInvalidSuite.cs" />
     <Compile Include="Share\MarkWidgetReadValidSuite.cs" />
+    <Compile Include="WidgetCollaborativeShare\WidgetCollaborativeInviteSuite.cs" />
+    <Compile Include="WidgetCollaborativeShare\WidgetCollaborativeMaximizeViewSuite.cs" />
     <Compile Include="WidgetCollaborativeShare\WidgetCollaborativeAnnotationSuite.cs" />
     <Compile Include="WidgetCollaborativeShare\WidgetCollaborativeRenameDeleteSuite.cs" />
     <Compile Include="WidgetCollaborativeShare\WidgetCollaborativeShareInvalidSuite.cs" />

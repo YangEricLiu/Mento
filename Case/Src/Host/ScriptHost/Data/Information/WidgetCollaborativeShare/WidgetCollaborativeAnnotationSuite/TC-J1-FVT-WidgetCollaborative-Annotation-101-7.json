@@ -3,11 +3,10 @@
 		"InputData":
 		{
 			"DashboardInfo":[{
-				"WidgetName":"WidgetCollaAnnotation1013_1",
-				"HierarchyName":["NancyCustomer1", "WidgetCollaAnnotationOrg", "WidgetCollaAnnotationSiteA", "WidgetCollaAnnotation1013A"],
+				"WidgetName":"WidgetCollaAnnotation1017_1",
+				"HierarchyName":["NancyCustomer1", "WidgetCollaAnnotationOrg", "WidgetCollaAnnotationSiteA", "WidgetCollaAnnotation1017A"],
 				"ShareUsers":["ShareUserF"],
-				"DashboardName":"WidgetCollaAnnotation_1013",
-				"widgetComments":["modifynew3"],
+				"DashboardName":"WidgetCollaAnnotation_1017",
 				"Receivers":[{
 					"LoginName":"ShareUserB",
 					"Password":"123456Qq",

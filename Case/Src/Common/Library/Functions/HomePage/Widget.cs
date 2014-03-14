@@ -361,9 +361,9 @@ namespace Mento.ScriptCommon.Library.Functions
             MaxWidgetAddCommentLinkButton.ClickLink();
         }
 
-        public bool IsAddMaxWidgetCommentButtonExisted()
+        public bool IsAddMaxWidgetCommentButtonDisplayed()
         {
-            return MaxWidgetAddCommentLinkButton.IsExisted();
+            return MaxWidgetAddCommentLinkButton.IsDisplayed();
         }
 
         public void ClickEditMaxWidgetCommentButton()
@@ -371,9 +371,9 @@ namespace Mento.ScriptCommon.Library.Functions
             MaxWidgetEditCommentLinkButton.ClickLink();
         }
 
-        public bool IsEditMaxWidgetCommentButtonExisted()
+        public bool IsEditMaxWidgetCommentButtonDisplayed()
         {
-            return MaxWidgetEditCommentLinkButton.IsExisted();
+            return MaxWidgetEditCommentLinkButton.IsDisplayed();
         }
 
         public void EditAnnotationWindow(string comment)

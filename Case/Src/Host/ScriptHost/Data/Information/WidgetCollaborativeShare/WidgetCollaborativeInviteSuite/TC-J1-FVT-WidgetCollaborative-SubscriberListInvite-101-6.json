@@ -1,0 +1,33 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"WidgetCollaborativeInvite10161",
+				"HierarchyName":["NancyCustomer1", "WidgetCollaborativeInviteOrg", "WidgetCollaborativeInviteSiteA", "WidgetCollaborativeInvite1016A"],
+				"ShareUsers":["ShareUserB", "ShareUserF", "ShareUserD", "ShareUserK"],
+				"DashboardName":"WidgetCollaborativeInvite_1016",
+				"Receivers":[{
+					"LoginName":"ShareUserB",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserF",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserD",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserK",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

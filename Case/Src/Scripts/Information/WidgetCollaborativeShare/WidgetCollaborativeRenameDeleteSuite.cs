@@ -29,6 +29,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
         private static ShareWindow ShareWindow = new ShareWindow();
         private static ShareInfoWindow ShareInfoWindow = new ShareInfoWindow();
         private static int WAITSHAREINFOTAB = 5000;
+        private UserSettings UserSettings = JazzFunction.UserSettings;
         
         [SetUp]
         public void CaseSetUp()
@@ -349,6 +350,46 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //Verify buttons in the toolbar.The Edit button doesn't exist for subscriber
             Assert.IsFalse(HomePagePanel.IsRenameMyShareWidgetButtonExisted(dashboard[0].WidgetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-WidgetCollaborative-Delete-101-5")]
+        [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(WidgetCollaborativeRenameDeleteSuite), "TC-J1-FVT-WidgetCollaborative-Delete-101-5")]
+        public void VerifyMirrorDeleteAfterSponsorDelete(ShareDashboardData input)
+        {
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Login to Jazz with UserD and then delete userA.
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[3].LoginName, dashboard[0].Receivers[3].Password, "“云能效”系统管理");
+            UserSettings.NavigatorToUserSetting();
+            TimeManager.MediumPause();
+
+            UserSettings.FocusOnUser(dashboard[0].ShareUsers[0]);
+            UserSettings.DeleteUser();
+            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            //·UserA delete successfully.
+            Assert.IsFalse(UserSettings.IsUserOnList(dashboard[0].ShareUsers[0]));
+
+            //Login to Jazz with UserB.Navigate to homepage->Dashboard->Collaborative Widget  tab.
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
+            HomePagePanel.NavigateToMyShare();
+            TimeManager.Pause(15);
+
+            //.WidgetA disappear in thumbnail list.Collaborative Widget  delete successfully.
+            Assert.IsFalse(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
+
+            //Login to Jazz with UserC.Navigate to homepage->Dashboard->Collaborative Widget  tab.
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[2].LoginName, dashboard[0].Receivers[2].Password, dashboard[0].HierarchyName[0]);
+            HomePagePanel.NavigateToMyShare();
+            TimeManager.Pause(15);
+
+            //.WidgetA disappear in thumbnail list.Collaborative Widget  delete successfully.
+            Assert.IsFalse(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
         }
     }
 }

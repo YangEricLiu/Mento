@@ -1,0 +1,30 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"WidgetCollaMaximizeView1018_1",
+				"HierarchyName":["NancyCustomer1", "WidgetCollaMaximizeViewOrg", "WidgetCollaMaximizeViewSiteA", "WidgetCollaMaximizeView1018A"],
+				"ShareUsers":["ShareUserB", "ShareUserF", "ShareUserE"],
+				"DashboardName":"WidgetCollaMaximizeView_1018",
+				"widgetComments":["Addnew8"],
+				"Receivers":[{
+					"LoginName":"ShareUserB",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserF",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserE",
+					"Password":"123456Qq",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

@@ -1,0 +1,34 @@
+﻿[
+	{
+		"InputData":
+		{
+			"DashboardInfo":[{
+				"WidgetName":"WidgetCollaRenameDelete1017_1",
+				"HierarchyName":["NancyCustomer1", "WidgetCollaRenameDeleteOrg", "WidgetCollaRenameDeleteSiteA", "WidgetCollaRenameDelete1017A"],
+				"ShareUsers":["ShareUserDeleteB", "ShareUserF", "ShareUserE"],
+				"DashboardName":"WidgetCollaRenameDelete_1017",
+				"widgetComments":["ModifyRenameDelete1017"],
+				"Receivers":[{
+					"LoginName":"ShareUserDeleteB",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserF",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"ShareUserE",
+					"Password":"123456Qq",
+				},
+				{
+					"LoginName":"SchneiderElectricChina",
+					"Password":"P@ssw0rd",
+				}],
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

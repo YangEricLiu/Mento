@@ -62,11 +62,11 @@
             <add key="ButtonAllDashboardsHierarchyTree" value="hp-menu-tree-btn" type="ID"/>
             <add key="ButtonHomePageDashboard" value="//div[@id='hp-dashboard-list-targetEl']/div[span[text()='$#nameIndex']]" type="XPath"/>
             <add key="MenuButtonSelectCustomer" value="header-btn-select-customer" type="ID"/>
-            <add key="ButtonWidgetMaxDialogView" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]/div/div/div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
+            <add key="ButtonWidgetMaxDialogView" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id,'widgetmaxchart') and contains(@class,'x-panel x-fit-item x-panel-default') and not(contains(@style,'display: none;'))]/div/div/div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.SearchData']]" type="XPath"/>
             <add key="ButtonWidgetMaxDialogClose" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[contains(@id,'panel')]//div[contains(@class,'x-tool-default')]/img" type="XPath"/>
             <add key="ButtonWidgetMaxDialogPrev" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[1]/div/div/div[contains(@class,'x-btn') and em/button/span[contains(@class,'x-btn-inner')]]" type="XPath"/>
             <add key="ButtonWidgetMaxDialogNext" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]/div/div/div[3]/div/div/div[contains(@class,'x-btn') and em/button/span[contains(@class,'x-btn-inner')]]" type="XPath"/>
-            <add key="ButtonMaxWidgetLabellingView" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
+            <add key="ButtonMaxWidgetLabellingView" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.SearchData']]" type="XPath"/>
 
             <add key="ButtonWidgetMax" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-max-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetShare" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-sendcopy-tool')]/img" type="XPath"/>
@@ -78,26 +78,27 @@
             <add key="ButtonDashboardShare" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[1]/img" type="XPath"/>
             <add key="ButtonDashboardRename" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[2]/img" type="XPath"/>
             <add key="ButtonDashboardDelete" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='删除仪表盘']" type="XPath"/>
-            <add key="ButtonRenameDashboardSave" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-            <add key="ButtonRenameDashboardCancel" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+            <add key="ButtonRenameDashboardSave" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+            <add key="ButtonRenameDashboardCancel" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
             <add key="ButtonDashboardFavoriteLevel" value="//div[@id='hp-dashboard-ct_hd-hierCtEl']/a" type="XPath"/>
             <add key="ButtonDashboardShareInfo" value="hp-share-info-btn-btnEl" type="ID"/>
             <add key="ButtonShareWindowClose" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-header-body-default')]/div/div/div[contains(@id,'tool')]/img" type="XPath"/>
-            <add key="ButtonShareWindowShare" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='发送']]" type="XPath"/>
-            <add key="ButtonShareWindowEnjoy" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='共享']]" type="XPath"/>
-            <add key="ButtonShareWindowGiveup" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+            <add key="ButtonShareWindowShare" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Send']]" type="XPath"/>
+            <add key="ButtonShareWindowEnjoy" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Dashboard.Label.Share']]" type="XPath"/>
+            <add key="ButtonShareWindowGiveup" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
             <add key="ButtonShareToUserRemove" value = "//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div/div[contains(@id,'tagcontainer')]/div[contains(@class, 'x-removable-item') and span[text()='$#nameIndex']]/span[contains(@class, 'x-btn-icon-cancel')]" type = "XPath"/>
             <add key="TabButtonShareInfoReceived" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='我收到的']]" type = "XPath"/>
             <add key="TabButtonShareInfoSended" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='我发出的']]" type = "XPath"/>
             <add key="ButtonDashboardPosition" value="//div[@id='hp-dashboard-list-targetEl']/div[contains(@id,'dashboardbutton')][$#positionIndex]" type="XPath"/>
-            <add key="LinkButtonAnnotationEdit" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[2]/div/a[text()='编辑']" type="XPath"/>
-            <add key="LinkButtonAnnotationAdd" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[2]/div/a[text()='添加']" type="XPath"/>
+            <add key="LinkButtonAnnotationEdit" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[2]/div/a[text()='$@Dashboard.Edit']" type="XPath"/>
+            <add key="LinkButtonAnnotationAdd" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[2]/div/a[text()='$@Dashboard.Add']" type="XPath"/>
             <add key="ButtonMyShareWidgetRename" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-rename-tool')]/img" type="XPath"/>
             <add key="ButtonMyShareWidgetMaximize" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-max-tool')]/img" type="XPath"/>
             <add key="ButtonMyShareWidgetShare" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-share-tool')]/img" type="XPath"/>
 
-            <add key="LinkButtonMaxWidgetEditComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='编辑']]" type="XPath"/>
-            <add key="LinkButtonMaxWidgetAddComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='添加']]" type="XPath"/>
+            <add key="LinkButtonMaxWidgetEditComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='$@Dashboard.Edit']]" type="XPath"/>
+            <add key="LinkButtonMaxWidgetAddComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='$@Dashboard.Add']]" type="XPath"/>
+            <add key="ButtonMaxWidgetRightComment" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id, 'commentcontainer')]/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Dashboard.Label.Comment']]" type="XPath"/>
 
       </HomePage>
       
@@ -106,19 +107,19 @@
       <User>
           <add key="ButtonUserCreate" value="st-user-grid-add-btnInnerEl" type="ID"/>
           <add key="ButtonUserRefresh" value="st-user-grid-refresh" type="ID"/>
-          <add key="ButtonUserSave" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-          <add key="ButtonUserCancel" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-          <add key="ButtonUserModify" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-          <add key="ButtonUserDelete" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
+          <add key="ButtonUserSave" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+          <add key="ButtonUserCancel" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+          <add key="ButtonUserModify" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+          <add key="ButtonUserDelete" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
 
-          <add key="ButtonUserSendEmail" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='发送邮件']]" type="XPath"/>
-          <add key="LinkButtonUserViewFunctionDetail" value="//div[@id='st-user-properties-form-body']//div[contains(@id,'remlinkbutton') and a[text()='查看权限详细']]/a" type="XPath"/>
+          <add key="ButtonUserSendEmail" value="//div[@id='st-user-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.User.CreatePasswrod']]" type="XPath"/>
+          <add key="LinkButtonUserViewFunctionDetail" value="//div[@id='st-user-properties-form-body']//div[contains(@id,'remlinkbutton') and a[text()='$@Setting.User.ViewFunction']]/a" type="XPath"/>
 
           <add key="ButtonUserGeneratePassword" value="st-user-resetpassword-btnInnerEl" type="ID"/>
-          <add key="ButtonUserTypePermissionModify" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+          <add key="ButtonUserTypePermissionModify" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
           <add key="ButtonUserTypePermissionRefresh" value="st-usertype-refresh" type="ID"/>
-          <add key="ButtonUserTypePermissionSave" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-          <add key="ButtonUserTypePermissionCancel" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+          <add key="ButtonUserTypePermissionSave" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+          <add key="ButtonUserTypePermissionCancel" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
           <add key="LinkButtonUserAssociatedCustomer" value="st-user-customer-add" type="ID"/>
           <add key="ButtonUserTypePermissionDisplayClose" value="//div[@id='st-user-privilegeinfo-form']//div[@id='st-user-privilegeinfo-form_header-innerCt']//div[contains(@class,'x-tool')]" type="XPath"/>
       </User>
@@ -130,8 +131,8 @@
           <add key="ButtonUserProfileCancel" value="st-userprofile-profilepanel-cancel" type="ID"/>
           <add key="ButtonUserProfileSave" value="st-userprofile-profilepanel-save" type="ID"/>
           <add key="ButtonUserProfileClose" value="//div[@id='st-userprofile-personalinfo-window_header-targetEl']/div[2]/img" type="XPath"/>
-          <add key="MenuButtonExitJazz" value="//div[contains(@id, 'menuitem') and a/span[text()='退出系统']]" type="XPath"/>
-          <add key="MenuButtonModifyUserPassword" value="//div[contains(@id, 'menuitem') and a/span[text()='修改密码']]" type="XPath"/>
+          <add key="MenuButtonExitJazz" value="//div[contains(@id, 'menuitem') and a/span[text()='$@Setting.UserProfile.Logout']]" type="XPath"/>
+          <add key="MenuButtonModifyUserPassword" value="//div[contains(@id, 'menuitem') and a/span[text()='$@Setting.UserProfile.ChangePassword']]" type="XPath"/>
       </UserProfile>
       
       <energyview>
@@ -157,73 +158,73 @@
 
           <add key="TabButtonRankingTen" value="//div[contains(@id,'ordersizeselector')]//div[em/button/span[text()='$#nameIndex']]" type="XPath"/>
 
-          <add key="TabButtonEnergyViewALLTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='全部数据点']]" type="XPath"/>
-          <add key="TabButtonEnergyViewSystemDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='系统数据点']]" type="XPath"/>
-          <add key="TabButtonEnergyViewAreaDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='区域数据点']]" type="XPath"/>
-          <add key="TabButtonRankHierarchyTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='层级']]" type="XPath"/>
-          <add key="TabButtonRankSystemDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='系统维度']]" type="XPath"/>
-          <add key="TabButtonCostAreaDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='区域维度']]" type="XPath"/>
-          <add key="TabButtonCostHierarchyTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='层级']]" type="XPath"/>
-          <add key="TabButtonCostSystemDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='系统维度']]" type="XPath"/>
+          <add key="TabButtonEnergyViewALLTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@EM.AllTags']]" type="XPath"/>
+          <add key="TabButtonEnergyViewSystemDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@EM.SystemTag']]" type="XPath"/>
+          <add key="TabButtonEnergyViewAreaDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@EM.AreaTag']]" type="XPath"/>
+          <add key="TabButtonRankHierarchyTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.Hierarchy']]" type="XPath"/>
+          <add key="TabButtonRankSystemDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.SystemDimension']]" type="XPath"/>
+          <add key="TabButtonCostAreaDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.AreaDimension']]" type="XPath"/>
+          <add key="TabButtonCostHierarchyTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.Hierarchy']]" type="XPath"/>
+          <add key="TabButtonCostSystemDimensionTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.SystemDimension']]" type="XPath"/>
 
         <!--emma add at 2013.11.11 for UnitIndicator-->
-          <add key="TabButtonUnitIndicatorALLTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='层级']]" type="XPath"/>
-          <add key="TabButtonUnitIndicatorSystemDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='系统维度']]" type="XPath"/>
-          <add key="TabButtonEUnitIndicatorAreaDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='区域维度']]" type="XPath"/>
+          <add key="TabButtonUnitIndicatorALLTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.Hierarchy']]" type="XPath"/>
+          <add key="TabButtonUnitIndicatorSystemDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.SystemDimension']]" type="XPath"/>
+          <add key="TabButtonEUnitIndicatorAreaDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.AreaDimension']]" type="XPath"/>
 
-        <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='查看数据']]" type="XPath"/>
+        <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.SearchData']]" type="XPath"/>
           <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
           <add key="ButtonEnergyViewAddTimeSpan" value="//div[contains(@id,'splitbutton') and em/button/span[text()='+时间段']]" type="XPath"/>
           <add key="ButtonEnergyViewRemoveAll" value="em-chartgrid-topbar-del" type="ID"/>
-          <add key="MenuButtonEnergyViewConvertTarget" value="//div[em/button/span[text()='标煤'] or em/button/span[text()='二氧化碳'] or em/button/span[text()='树']]" type="XPath"/>
-          <add key="ButtonEnergyViewPeakValley" value="//div[contains(@class,'x-btn') and em/button/span[text()='峰谷展示']]" type="XPath"/>
+          <add key="MenuButtonEnergyViewConvertTarget" value="//div[em/button/span[text()='$@Common.CarbonUomType.StandardCoal'] or em/button/span[text()='$@Common.CarbonUomType.CO2'] or em/button/span[text()='$@Common.CarbonUomType.Tree']]" type="XPath"/>
+          <add key="ButtonEnergyViewPeakValley" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@EM.TouCompare']]" type="XPath"/>
           <add key="ButtonModifyWidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[3]" type="XPath"/>
-          <add key="ModifyWidgetNameSaveButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-          <add key="ModifyWidgetNameCancelButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+          <add key="ModifyWidgetNameSaveButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+          <add key="ModifyWidgetNameCancelButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
           <add key="WidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]//span[text()='表3']" type="XPath"/>
           <add key="ButtonDeleteWidget" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='删除小组件']" type="XPath"/>
-          <add key="ButtonCancelShareWidget" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='取消共享小组件']" type="XPath"/>
+          <add key="ButtonCancelShareWidget" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='$@Dashboard.Label.CancelShareWidget']" type="XPath"/>
           <add key="RadioButtonCreateNewDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='新建仪表盘']]/input" type="XPath"/>
           <add key="RadioButtonExistedDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='已存在仪表盘']]/input" type="XPath"/>
           <add key="ButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
-          <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
-          <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-          <add key="WidgetConfirmCancelShareButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='取消共享']]" type="XPath"/>
+          <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+          <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+          <add key="WidgetConfirmCancelShareButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Dashboard.Label.CancelShare']]" type="XPath"/>
 
-          <add key="ButtonConfirmHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
-          <add key="ButtonClearHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='清空']]" type="XPath"/>
+          <add key="ButtonConfirmHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
+          <add key="ButtonClearHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Clear']]" type="XPath"/>
 
-          <add key="ButtonEnergyDisplayStepHour" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='小时']]" type="XPath"/>
-          <add key="ButtonEnergyDisplayStepDay" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='天']]" type="XPath"/>
-          <add key="ButtonEnergyDisplayStepWeek" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='周']]" type="XPath"/>
-          <add key="ButtonEnergyDisplayStepMonth" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='月']]" type="XPath"/>
-          <add key="ButtonEnergyDisplayStepYear" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='年']]" type="XPath"/>
+          <add key="ButtonEnergyDisplayStepHour" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='$@EM.Hour']]" type="XPath"/>
+          <add key="ButtonEnergyDisplayStepDay" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='$@EM.Day']]" type="XPath"/>
+          <add key="ButtonEnergyDisplayStepWeek" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='$@EM.Week']]" type="XPath"/>
+          <add key="ButtonEnergyDisplayStepMonth" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='$@EM.Month']]" type="XPath"/>
+          <add key="ButtonEnergyDisplayStepYear" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='$@EM.Year']]" type="XPath"/>
 
           <add key="ButtonMultipleHierarchyTree" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-body-default')]/div/div/div/div/div/div/div[contains(@class,'x-tree-btn')]" type="XPath"/>
-          <add key="TabButtonMultipleHierarchyAllTagsTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='全部数据点']]" type="XPath"/>
-          <add key="TabButtonMultipleHierarchyAreaDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='区域数据点']]" type="XPath"/>
-          <add key="TabButtonMultipleHierarchySystemDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='系统数据点']]" type="XPath"/>
+          <add key="TabButtonMultipleHierarchyAllTagsTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='$@EM.AllTags']]" type="XPath"/>
+          <add key="TabButtonMultipleHierarchyAreaDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='$@EM.SystemTag']]" type="XPath"/>
+          <add key="TabButtonMultipleHierarchySystemDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='$@EM.AreaTag']]" type="XPath"/>
 
           <add key="ButtonMultipleHierarchySelectSystemDimension" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
           <add key="ButtonMultipleHierarchySelectAreaDimension" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
-          <add key="ButtonMultipleHierarchyConfirm" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
-          <add key="ButtonMultipleHierarchyGiveUp" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+          <add key="ButtonMultipleHierarchyConfirm" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
+          <add key="ButtonMultipleHierarchyGiveUp" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
           <add key="ButtonMultipleHierarchyAddTags" value="em-multi-hier-add" type="ID"/>
 
           <add key="LinkButtonIntervalDialogAddTimeSpan" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[6]/tr/td/div/a" type="XPath"/>
           <add key="ButtonIntervalDialogDeleteTimeSpan" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/div[contains(@id,'tool')]/img" type="XPath"/>
-          <add key="ButtonIntervalDialogConfirm" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='确定并绘图']]" type="XPath"/>
-          <add key="ButtonIntervalDialogGiveUp" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+          <add key="ButtonIntervalDialogConfirm" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@EM.OKAndDraw']]" type="XPath"/>
+          <add key="ButtonIntervalDialogGiveUp" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
 
           <add key="ButtonDisplayStepWindow" value="//div[contains(@id,'window') and contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$#nameIndex']]" type="XPath"/>
-          <add key="ButtonGiveUpStepWindow" value="//div[contains(@id,'window') and contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+          <add key="ButtonGiveUpStepWindow" value="//div[contains(@id,'window') and contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
 
       </energyview>
       
       <homepage>
-        <add key="ButtonSaveAnnotationWindow" value="//div[contains(@id,'annotationwindow') and contains(@class,'x-window-default')]/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-        <add key="ButtonQuitAnnotationWindow" value="//div[contains(@id,'annotationwindow') and contains(@class,'x-window-default')]/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-        <add key="ButtonInviteOther" value="//div[contains(@id,'shareduserlist') and contains(@class,'x-window-body-default')]/div[2]/div[contains(@class,'x-btn') and em/button/span[text()='邀请其他人']]" type="XPath"/>
+        <add key="ButtonSaveAnnotationWindow" value="//div[contains(@id,'annotationwindow') and contains(@class,'x-window-default')]/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+        <add key="ButtonQuitAnnotationWindow" value="//div[contains(@id,'annotationwindow') and contains(@class,'x-window-default')]/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+        <add key="ButtonInviteOther" value="//div[contains(@id,'shareduserlist') and contains(@class,'x-window-body-default')]/div[2]/div[contains(@class,'x-btn') and em/button/span[text()='$@Dashboard.Label.InviteOthers']]" type="XPath"/>
         <add key="ButtonCloseSubcribeWindow" value="//div[contains(@id,'shareduserlist') and contains(@class,'x-window-header-body-default')]/div/div/div[2]/img" type="XPath"/>
         <add key="ButtonCloseWidgetRenameWindow" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-header-body-default')]//div[contains(@class, 'x-tool-default')]/img" type="XPath"/>
 
@@ -234,27 +235,27 @@
               <add key="ButtonPTagSettingsCreatePTag" value="st-ptag-grid-add" type="ID"/>
               <add key="ButtonPTagSettingsSave" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonPTagSettingsCancel" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-              <add key="ButtonPTagSettingsModify" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonPTagSettingsModify" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonPTagSettingsDelete" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
           </ptag>
           <vtag>
               <add key="TabButtonVTagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
               <!--text in this xpath need to be changed to a language variable-->
-              <add key="TabButtonVTagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()='计算公式']]" type="XPath"/>
+              <add key="TabButtonVTagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.Formula']]" type="XPath"/>
               <add key="ButtonVTagSettingsFormulaUpdate" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonVTagSettingsFormulaSave" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonVTagSettingsFormulaCancel" value="//div[@id='st-vtag-formula']//div[em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonVTagSettingsCreateVTag" value="st-vtag-grid-add" type="ID"/>
               <add key="ButtonVTagSettingsSave" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonVTagSettingsCancel" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-              <add key="ButtonVTagSettingsModify" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonVTagSettingsModify" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonVTagSettingsDelete" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
           </vtag>
 
           <kpitag>
               <add key="TabButtonKPITagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
               <!--text in this xpath need to be changed to a language variable-->
-              <add key="TabButtonKPITagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()='计算公式']]" type="XPath"/>
+              <add key="TabButtonKPITagSettingsFormula" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.Formula']]" type="XPath"/>
               <add key="ButtonKPITagSettingsFormulaUpdate" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonKPITagSettingsFormulaSave" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonKPITagSettingsFormulaCancel" value="//div[@id='st-KPI-formula']//div[em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
@@ -262,18 +263,18 @@
               <add key="ButtonKPITagSettingsCreateKPITag" value="st-kpi-grid-add" type="ID"/>
               <add key="ButtonKPITagSettingsSave" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonKPITagSettingsCancel" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-              <add key="ButtonKPITagSettingsModify" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonKPITagSettingsModify" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonKPITagSettingsDelete" value="//div[@id='st-kpi-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
 
-              <add key="TabButtonKPITargetProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='目标值']]" type="XPath"/>
-              <add key="TabButtonKPIBaselineProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='基准值']]" type="XPath"/>
-              <add key="ButtonKPITargetBaselineCalculationRuleView" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='update_cal_rule']/span[text()='计算规则']]" type="XPath"/>
-              <add key="ButtonKPITargetBaselineCalculationRuleCreate" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='empty']/span[text()='计算规则']]" type="XPath"/>
-              <add key="ButtonKPITargetBaselineCalculationRuleBack" value="//div[contains(@class,'x-btn') and em/button/span[text()='返回']]" type="XPath"/>
-              <add key="ButtonKPITargetBaselineCalculationRuleModify" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//div[contains(@id,'button') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="TabButtonKPITargetProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.Target']]" type="XPath"/>
+              <add key="TabButtonKPIBaselineProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.Baseline']]" type="XPath"/>
+              <add key="ButtonKPITargetBaselineCalculationRuleView" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='update_cal_rule']/span[text()='$@Setting.TargetBaseline.CalculationRule']]" type="XPath"/>
+              <add key="ButtonKPITargetBaselineCalculationRuleCreate" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='empty']/span[text()='$@Setting.TargetBaseline.CalculationRule']]" type="XPath"/>
+              <add key="ButtonKPITargetBaselineCalculationRuleBack" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.GoBack']]" type="XPath"/>
+              <add key="ButtonKPITargetBaselineCalculationRuleModify" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//div[contains(@id,'button') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineCalculateTarget" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算目标值']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineCalculateBaseline" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算基准值']]" type="XPath"/>
-              <add key="ButtonKPITargetBaselineRevise" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='修正计算值']]" type="XPath"/>
+              <add key="ButtonKPITargetBaselineRevise" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.TargetBaseline.EditCalculationBtnText']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineSave" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@class,'x-tb-panel-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineCancel" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineAddSpecialDates" value="//img[contains(@class,'x-tool-plus')]" type="XPath"/>
@@ -284,7 +285,7 @@
               <add key="ButtonHierarchySettingsCreateChildHierarchy" value="st-hier-tree-add" type="ID"/>
               <add key="ButtonHierarchySettingsSave" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonHierarchySettingsCancel" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-              <add key="ButtonHierarchySettingsModify" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonHierarchySettingsModify" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonHierarchySettingsDelete" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
           </hierarchy>
           <hierarchycalendar>
@@ -296,7 +297,7 @@
               <add key="ButtonWorkdayCreate" value="st-hierarchy-calendar-workday-add-toolEl" type="ID"/>
               <add key="ButtonHeatingCoolingCreate" value="st-hierarchy-calendar-coldwarm-add-toolEl" type="ID"/>
               <add key="ButtonDayNightCreate" value="st-hierarchy-calendar-daynight-add-toolEl" type="ID"/>
-              <add key="LinkButtonWorktimeCreate" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='添加工作时间']" type="XPath"/>
+              <add key="LinkButtonWorktimeCreate" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='$@Setting.Calendar.AddWorkTime']" type="XPath"/>
               <add key="ButtonWorkdayDelete" value="//td[@id='st-hierarchy-calendar-workday-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
               <add key="ButtonHeatingCoolingDelete" value="//td[@id='st-hierarchy-calendar-coldwarm-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
               <add key="ButtonDayNightDelete" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
@@ -328,8 +329,8 @@
               <add key="ButtonDieselOilCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='柴油']]/div/img" type="XPath"/>
               <add key="ButtonLowPressureSteamCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='低压蒸汽']]/div/img" type="XPath"/>
               <add key="ButtonWaterCostDelete" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costbasicform') and contains(@class, 'x-panel-default')][1]//div[contains(@class,'x-container x-container-default')][$#positionIndex]//div[contains(@class, 'x-tool')]/img" type="XPath"/>
-              <add key="LinkButtonFactor" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='查看所选功率因数']" type="XPath"/>
-              <add key="LinkButtonTOU" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='查看价格策略详情']" type="XPath"/>
+              <add key="LinkButtonFactor" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='$@Setting.Cost.Label.SearchPowerFactor']" type="XPath"/>
+              <add key="LinkButtonTOU" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform')]//div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@id, 'remlinkbutton')]/a[text()='$@Setting.Cost.Label.SearchTouDetail']" type="XPath"/>
               <add key="ButtonElectricCostDelete" value="//div[@id='st-hier-cost-form-body']//div[contains(@id,'costelectricityform') and contains(@class, 'x-panel-body-default')]/div[contains(@class, 'x-container x-container-default')][$#positionIndex]//div[contains(@class, 'x-tool')]/img" type="XPath"/>
           </hierarchycost>
           <systemdimension>
@@ -343,10 +344,10 @@
               <add key="ButtonAreaDimensionSettingsCreate" value="st-area-tree-add" type="ID"/>
               <add key="ButtonAreaDimensionSettingsSave" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonAreaDimensionSettingsCancel" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-              <add key="ButtonAreaDimensionSettingsModify" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonAreaDimensionSettingsModify" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonAreaDimensionSettingsDelete" value="//div[@id='st-area-form-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-              <add key="ButtonAreaDimensionSettingsConfirmDelete" value="//div[contains(@class,'x-box-inner')]//div[contains(@class,'x-btn') and em/button/span[text()='确定']]"  type="XPath"/>
-              <add key="ButtonAreaDimensionSettingsCancelDelete" value="//div[contains(@class,'x-box-inner')]//div[contains(@class,'x-btn') and em/button/span[text()='取消']]"  type="XPath"/>
+              <add key="ButtonAreaDimensionSettingsConfirmDelete" value="//div[contains(@class,'x-box-inner')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]"  type="XPath"/>
+              <add key="ButtonAreaDimensionSettingsCancelDelete" value="//div[contains(@class,'x-box-inner')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel2']]"  type="XPath"/>
           </areadimension>
           <tagassociation>
               <add key = "ButtonAssociationSettingsTagAssociate" value = "st-tagassoc-taggrid-assoc" type = "ID"/>
@@ -368,7 +369,7 @@
       <platformsettings>
           <workday>
               <add key="ButtonWorkdayCalendarCreate" value="st-calendar-grid-add" type="ID"/>
-              <add key="ButtonWorkdayCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonWorkdayCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonWorkdayCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonWorkdayCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonWorkdayCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
@@ -377,16 +378,16 @@
           </workday>
           <worktime>
               <add key="ButtonWorktimeCalendarCreate" value="st-calendar-grid-add" type="ID"/>
-              <add key="ButtonWorktimeCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonWorktimeCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonWorktimeCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonWorktimeCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonWorktimeCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-              <add key="LinkButtonWorktimeCalendarAddMoreRanges" value="//div[@id='st-calendar-worktime-items-add']//a[text()='添加工作时间']" type="XPath"/>
+              <add key="LinkButtonWorktimeCalendarAddMoreRanges" value="//div[@id='st-calendar-worktime-items-add']//a[text()='$@Setting.Calendar.AddWorkTime']" type="XPath"/>
               <add key="ButtonWorktimeDeleteRangeItem" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//img[contains(@class,'x-tool-trash')]" type="XPath"/>
           </worktime>
           <heatingcoolingseason>
               <add key="ButtonHeatingCoolingSeasonCalendarCreate" value="st-calendar-grid-add" type="ID"/>
-              <add key="ButtonHeatingCoolingSeasonCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonHeatingCoolingSeasonCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonHeatingCoolingSeasonCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonHeatingCoolingSeasonCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonHeatingCoolingSeasonCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
@@ -397,16 +398,16 @@
           </heatingcoolingseason>
           <daynight>
               <add key="ButtonDayNightCalendarCreate" value="st-calendar-grid-add" type="ID"/>
-              <add key="ButtonDayNightCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonDayNightCalendarModify" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonDayNightCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonDayNightCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonDayNightCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-              <add key="LinkButtonDayNightCalendarAddMoreRanges" value="//div[@id='st-calendar-daynight-items-add']//a[text()='添加白昼时间']" type="XPath"/>
+              <add key="LinkButtonDayNightCalendarAddMoreRanges" value="//div[@id='st-calendar-daynight-items-add']//a[text()='$@Setting.Calendar.AddDay']" type="XPath"/>
               <add key="ButtonDayNightDeleteRangeItem" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//img[contains(@class,'x-tool-trash')]" type="XPath"/>
           </daynight>
           <carbonfactor>
               <add key="ButtonCarbonFactorCreate" value="st-carbonfactor-grid-add-btnEl" type="ID"/>
-              <add key="ButtonCarbonFactorModify" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonCarbonFactorModify" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonCarbonFactorSave" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonCarbonFactorCancel" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonCarbonFactorDelete" value="//div[@id='st-carbonfactor-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
@@ -416,21 +417,21 @@
           </carbonfactor>
           <TOU>
               <add key="ButtonTOUBasicPropertyCreate" value="st-priceStrategy-grid-add" type="ID"/>
-              <add key="ButtonTOUBasicPropertyModify" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonTOUBasicPropertyModify" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonTOUBasicPropertySave" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonTOUBasicPropertyCancel" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonTOUBasicPropertyDelete" value="//div[@id='st-priceStrategy-basicproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-              <add key="LinkButtonTOUBasicPropertyAddMorePeakRanges" value="//div[@id='st-tou-linkbtn-addpeaktime']//a[(text()='添加峰时范围')]" type="XPath"/>
-              <add key="LinkButtonTOUBasicPropertyAddMoreValleyRanges" value="//div[@id='st-tou-linkbtn-addvalleytime']//a[(text()='添加谷时范围')]" type="XPath"/>
+              <add key="LinkButtonTOUBasicPropertyAddMorePeakRanges" value="//div[@id='st-tou-linkbtn-addpeaktime']//a[(text()='$@Setting.TOUTariff.AddPeakTimeRange')]" type="XPath"/>
+              <add key="LinkButtonTOUBasicPropertyAddMoreValleyRanges" value="//div[@id='st-tou-linkbtn-addvalleytime']//a[(text()='$@Setting.TOUTariff.AddValleyTimeRange')]" type="XPath"/>
               <add key="ButtonTOUBasicPropertyDeletePeakRangeItem" value="//div[@id='st-tou-peakTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-trash')]" type="XPath"/>
               <add key="ButtonTOUBasicPropertyDeleteValleyRangeItem" value="//div[@id='st-tou-valleyTimeRange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-trash')]" type="XPath"/>
-              <add key="TabButtonTOUPulsePeakProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='峰值季节']]" type="XPath"/>
-              <add key="ButtonTOUPulsePeakPropertyCreate" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='峰值季节电价']]" type="XPath"/>
+              <add key="TabButtonTOUPulsePeakProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.PulsePeak']]" type="XPath"/>
+              <add key="ButtonTOUPulsePeakPropertyCreate" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.TOUTariff.PulsePeakPrice']]" type="XPath"/>
               <add key="ButtonTOUPulsePeakPropertyPlusIcon" value="st-tou-peakproperty-addtool-toolEl" type="ID"/>
-              <add key="ButtonTOUPulsePeakPropertyModify" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonTOUPulsePeakPropertyModify" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonTOUPulsePeakPropertySave" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonTOUPulsePeakPropertyCancel" value="//div[@id='st-priceStrategy-pulsepeakproperty']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-              <add key="LinkButtonTOUPulsePeakPropertyAddMoreRanges" value="//div[@id='st-tou-peakproperty-addpeakdatetime']//a[(text()='添加峰值季节时间')]" type="XPath"/>
+              <add key="LinkButtonTOUPulsePeakPropertyAddMoreRanges" value="//div[@id='st-tou-peakproperty-addpeakdatetime']//a[(text()='$@Setting.TOUTariff.AddPulsePeakDateTime')]" type="XPath"/>
               <add key="ButtonTOUPulsePeakPropertyDeleteWholeRange" value="//div[@id='st-tou-peakproperty-deltool']//img[contains(@class,'x-tool-close')]" type="XPath"/>
               <add key="ButtonTOUPulsePeakPropertyDeleteRangeItem" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-close')]" type="XPath"/>
           </TOU>
@@ -444,46 +445,46 @@
               
               <add key="ButtonSaveCustomerMapProperty" value="//div[@id='st-map-consumption-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonCancelCustomerMapProperty" value="//div[@id='st-map-consumption-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-              <add key="ButtonModifyCustomerMapProperty" value="//div[@id='st-map-consumption-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-              <add key="TabButtonCustomerMapPageProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='地图页信息']]" type="XPath"/>
-              <add key="TabButtonCustomerBasicProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='基础属性']]" type="XPath"/>
+              <add key="ButtonModifyCustomerMapProperty" value="//div[@id='st-map-consumption-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+              <add key="TabButtonCustomerMapPageProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.CustomerManagement.Label.MapPageInfo']]" type="XPath"/>
+              <add key="TabButtonCustomerBasicProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
 
           </customermanagement>
           
           <BenchMark>
               <add key="ButtonAddBenchMark" value="st-benchmark-grid-add-btnEl" type="ID"/>
-              <add key="ButtonSaveBenchMark" value="//div[@id='st-benchmark-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-              <add key="ButtonCancelBenchMark" value="//div[@id='st-benchmark-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-              <add key="ButtonModifyBenchMark" value="//div[@id='st-benchmark-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-              <add key="ButtonDeleteBenchMark" value="//div[@id='st-benchmark-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
+              <add key="ButtonSaveBenchMark" value="//div[@id='st-benchmark-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+              <add key="ButtonCancelBenchMark" value="//div[@id='st-benchmark-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+              <add key="ButtonModifyBenchMark" value="//div[@id='st-benchmark-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+              <add key="ButtonDeleteBenchMark" value="//div[@id='st-benchmark-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
           </BenchMark>
           
         <Labeling>
               <add key="ButtonAddLabeling" value="st-labeling-grid-add-btnEl" type="ID"/>
-              <add key="ButtonCancelLabeling" value="//div[@id='st-labeling-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-              <add key="ButtonSaveLabeling" value="//div[@id='st-labeling-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-              <add key="ButtonModifyLabeling" value="//div[@id='st-labeling-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-              <add key="ButtonDeleteLabeling" value="//div[contains(@class, 'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
+              <add key="ButtonCancelLabeling" value="//div[@id='st-labeling-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+              <add key="ButtonSaveLabeling" value="//div[@id='st-labeling-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+              <add key="ButtonModifyLabeling" value="//div[@id='st-labeling-properties-form']//div[contains(@class, 'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+              <add key="ButtonDeleteLabeling" value="//div[contains(@class, 'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
 
         </Labeling>
         
           <FunctionRoleTypePermission>
               <add key="ButtonCreatFunctionRoleType" value="st-usertype-grid-add-btnInnerEl" type="ID"/>
-              <add key="ButtonSaveFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-              <add key="ButtonCancelFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-              <add key="ButtonDeleteFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
-              <add key="ButtonModifyFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
+              <add key="ButtonSaveFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+              <add key="ButtonCancelFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+              <add key="ButtonDeleteFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+              <add key="ButtonModifyFunctionRoleType" value="//div[@id='st-usertype-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
           </FunctionRoleTypePermission>
 
           <UserDataPermission>
-              <add key="TabButtonUserDataPermission" value="//div[contains(@class,'x-tab') and em/button/span[text()='客户数据权限']]" type="XPath"/>
-              <add key="TabButtonUserBasicProperties" value="//div[contains(@class,'x-tab') and em/button/span[text()='基础属性']]" type="XPath"/>
-              <add key="ButtonModifyUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='修改']]" type="XPath"/>
-              <add key="ButtonSaveUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='保存']]" type="XPath"/>
-              <add key="ButtonCancelUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+              <add key="TabButtonUserDataPermission" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.CustomerDataPermission']]" type="XPath"/>
+              <add key="TabButtonUserBasicProperties" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
+              <add key="ButtonModifyUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+              <add key="ButtonSaveUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+              <add key="ButtonCancelUserDataPermission" value="//div[@id='st-user-datarange-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonClosePermissionTreeWindow" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-window-header')]//div[contains(@class,'x-tool')]" type="XPath"/>
-              <add key="ButtonTreeWindowSave" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
-              <add key="ButtonTreeWindowCancel" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+              <add key="ButtonTreeWindowSave" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
+              <add key="ButtonTreeWindowCancel" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
 
               <add key="ButtonUserSelectAllDataPermission" value="//div[@id='st-user-datarange-form']/table/tbody/tr/td/table[contains(@id,'checkboxfield')]/tbody/tr/td[2]/input" type="XPath"/>
 
@@ -492,8 +493,8 @@
           </UserDataPermission>
 
           <TargetBaseline>
-              <add key="LinkButtonTargetCalendarInfo" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//table[contains(@id,'displayfield')]//a[text()='查看日历详情']" type="XPath"/>
-              <add key="LinkButtonBaselineCalendarInfo" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//table[contains(@id,'displayfield')]//a[text()='查看日历详情']" type="XPath"/>
+              <add key="LinkButtonTargetCalendarInfo" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//table[contains(@id,'displayfield')]//a[text()='$@Setting.Calendar.ViewCalendarDetail']" type="XPath"/>
+              <add key="LinkButtonBaselineCalendarInfo" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//table[contains(@id,'displayfield')]//a[text()='$@Setting.Calendar.ViewCalendarDetail']" type="XPath"/>
               <add key="ButtonCloseTBCalendarWindow" value="//div[contains(@id,'calendartemplatewindow') and contains(@class, 'x-window-header-body-default')]//img[@class='x-tool-close']" type="XPath"/>
               <add key="ButtonDeleteSpecialdayItem" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/div/img" type="XPath"/>
           </TargetBaseline>    
@@ -642,6 +643,7 @@
       <add key="TextFieldModifyWidgetName" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]//input[@type='text' and @name='Name']" type="XPath"/>
       <add key="TextFieldModifyDashboardName" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]//input[@type='text' and @name='Name']" type="XPath"/>
       <add key="TextFieldEditModifyComment" value="//div[contains(@id,'annotationwindow') and contains(@class,'x-window-body-default')]/table/tbody/tr/td/textarea[@name='Annotation']" type="XPath"/>
+      <add key="TextFieldMaxWidgetRightComment" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id, 'commentcontainer')]//textarea[@name='comment']" type="XPath"/>
 
     </homepage>
   </TextField>
@@ -1042,9 +1044,10 @@
     <add key="LabelMyShareWidgetMinAnnotationIcon" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']/../span[contains(@class,'x-widget-header-annotation')]" type="XPath"/>
     <add key="LabelAnnotationText" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[1]/label" type="XPath"/>
 
-    <add key="LabelMaxWidgetComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='编辑']]/../../div[2]/label" type="XPath"/>
+    <add key="LabelMaxWidgetComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='$@Dashboard.Edit']]/../../div[2]/label" type="XPath"/>
     
     <add key="LabelEnjoyWidgetNameMin" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']" type="XPath"/>
+    <add key="LabelMyShareWidgetShareUser" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../../../../../div[contains(@class,'x-widget-body-defaul')]/div/div/div/div[2]" type="XPath"/>
 
     </HomePage>
     
@@ -1123,6 +1126,7 @@
       <add key="ContainerDashboards" value="//div[@id='hp-dashboard-list-targetEl']/div[contains(@id,'dashboardbutton')]" type="XPath"/>
       <add key="ContainerWidgetsToMyShare" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]" type="XPath"/>
       <add key="ContainerWidgetsNamesToMyShare" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class, 'x-widget-header-text-container')]/span" type="XPath"/>
+      <add key="ContainerCommentsOnMaxwidget" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id, 'commentcontainer')]/div[2]/div/div/div[2]/div[contains(@id, 'commentwidget')]" type="XPath"/>
 
   </Homopage>
     

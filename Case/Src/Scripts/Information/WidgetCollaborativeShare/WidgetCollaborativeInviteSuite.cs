@@ -322,7 +322,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
         public void VerifyUnsubscriberOneUserCanBeAddAgain(ShareDashboardData input)
         {
             var dashboard = input.InputData.DashboardInfo;
-
+            
             //Login to Jazz with UserA. Navigate to homepage->Dashboard->Widget Mirror tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
@@ -339,10 +339,10 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             Assert.IsTrue(ShareWindow.IsEnjoyUserInSubscribeUserList(dashboard[0].ShareUsers[3]));
 
             //Mouse over the UserB and UserD, Click RemoveSubscriber button.
-            ShareWindow.FloatOnSubscriberUser(dashboard[0].ShareUsers[1]);
+            ShareWindow.FocusOnSubscriberUser(dashboard[0].ShareUsers[1]);
             ShareWindow.ClickRemoveorQuitSubcriberButton(dashboard[0].ShareUsers[1]);
             TimeManager.ShortPause();
-            ShareWindow.FloatOnSubscriberUser(dashboard[0].ShareUsers[3]);
+            ShareWindow.FocusOnSubscriberUser(dashboard[0].ShareUsers[3]);
             ShareWindow.ClickRemoveorQuitSubcriberButton(dashboard[0].ShareUsers[3]);
             TimeManager.ShortPause();
 
@@ -358,7 +358,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //WidgetA is disappear in thumbnail list of UserB.
             Assert.IsFalse(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
-
+            
             //Login to Jazz with UserC. Navigate to homepage->Dashboard->Collaborative Widget  tab.
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[2].LoginName, dashboard[0].Receivers[2].Password, dashboard[0].HierarchyName[0]);
@@ -373,7 +373,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             Assert.IsTrue(ShareWindow.IsEnjoyUserInSubscribeUserList(dashboard[0].ShareUsers[0]));
             Assert.IsTrue(ShareWindow.IsEnjoyUserInSubscribeUserList(dashboard[0].ShareUsers[2]));
 
-            //Click "Invitation" button..UserB and UserD become available in left panel.
+            //Click "Invitation" button.UserB and UserD become available in left panel.
             ShareWindow.ClickInviteOtherButton();
             TimeManager.ShortPause();
             Assert.IsTrue(ShareWindow.IsEnjoyUserInShareList(dashboard[0].ShareUsers[1]));
@@ -456,34 +456,15 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
             TimeManager.Pause(15);
-
+            
             //Click "Subscriber User List" button in widgetA.
             HomePagePanel.ClickShareMyShareWidgetButton(dashboard[0].WidgetName);
             TimeManager.ShortPause();
-
+            
             //Mouse over the UserB  and click Quitsubscriber button.
             ShareWindow.FloatOnSubscriberUser(dashboard[0].ShareUsers[1]);
             ShareWindow.ClickRemoveorQuitSubcriberButton(dashboard[0].ShareUsers[1]);
             TimeManager.ShortPause();
-
-            //Click Invitation button.
-            ShareWindow.ClickInviteOtherButton();
-            TimeManager.ShortPause();
-
-            //A dialog pops up and UserB, UserD available in the left panel and UserA UserD display in the right panel.
-            Assert.IsTrue(ShareWindow.IsEnjoyUserInShareList(dashboard[0].ShareUsers[1]));
-            Assert.IsTrue(ShareWindow.IsEnjoyUserInShareList(dashboard[0].ShareUsers[3]));
-            Assert.IsTrue(ShareWindow.IsEnjoyUserInSendedList(dashboard[0].ShareUsers[0]));
-            Assert.IsTrue(ShareWindow.IsEnjoyUserInSendedList(dashboard[0].ShareUsers[2]));
-
-            ShareWindow.Close();
-            TimeManager.ShortPause();
-
-            //Login to Jazz with UserB. Navigate to homepage->Dashboard->Collaborative Widget  tab.
-            HomePagePanel.ExitJazz();
-            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
-            HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //.WidgetA is disappear in thumbnail list of UserB.
             Assert.IsFalse(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));

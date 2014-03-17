@@ -54,6 +54,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Container DashboardsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerDashboards);
         public static Container ContainerWidgetsToMyShare = GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsToMyShare);
         public static Container WidgetsNamesToMyShareContainer = GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsNamesToMyShare);
+        public static Container CommentsOnMaxwidgetContainer = GetControl<Container>(JazzControlLocatorKey.ContainerCommentsOnMaxwidget);
         
         #endregion
 

@@ -63,6 +63,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button QuitAnnotationWindowButton = JazzButton.QuitAnnotationWindowButton;
         private static Label MaxWidgetCommentLabel = JazzLabel.MaxWidgetCommentLabel;
         private static Button CloseWidgetRenameWindowButton = JazzButton.CloseWidgetRenameWindowButton;
+        private static TextField MaxWidgetRightCommentTextField = JazzTextField.MaxWidgetRightCommentTextField;
+        private static Button MaxWidgetRightCommentButton = JazzButton.MaxWidgetRightCommentButton;
+        private static Container CommentsOnMaxwidgetContainer = JazzContainer.CommentsOnMaxwidgetContainer;
 
         protected override Chart Chart
         {
@@ -401,6 +404,30 @@ namespace Mento.ScriptCommon.Library.Functions
             return MaxWidgetCommentLabel.GetLabelTextValue();
         }
 
+        public void FillMaxWidgetRightComment(string text)
+        {
+            MaxWidgetRightCommentTextField.Fill(text);
+        }
+
+        public void ClickMaxWidgetRightCommentButton()
+        {
+            MaxWidgetRightCommentButton.Click();
+        }
+
+        public bool IsMaxWidgetRightCommentButtonEnable()
+        {
+            return MaxWidgetRightCommentButton.IsEnabled();
+        }
+
+        public int GetCommentNumberOnMaxWidgetRight()
+        {
+            return CommentsOnMaxwidgetContainer.GetElementNumber();
+        }
+
+        public string GetCommentOfOnePosition(int position)
+        {
+            return CommentsOnMaxwidgetContainer.GetSpecialElementText(position);
+        }
         #endregion
     }
 }

@@ -456,6 +456,9 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
         }
 
+       
+        #endregion
+
         #region Enjoy
 
         public int GetSameWidgetNameNumberofMyShare(string widgetName)
@@ -532,7 +535,13 @@ namespace Mento.ScriptCommon.Library.Functions
             CancelShareWidgetButton.Click();
         }
 
-        #endregion
+        public string GetMyShareWidgetShareUser(string name)
+        {
+            Label MyShareWidgetShareUser = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelMyShareWidgetShareUser, name);
+
+            return MyShareWidgetShareUser.GetLabelTextValue();
+        }
+
         #endregion
 
         #region widget

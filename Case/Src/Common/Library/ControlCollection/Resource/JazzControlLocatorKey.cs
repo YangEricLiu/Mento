@@ -530,7 +530,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ButtonMyShareWidgetMaximize = "ButtonMyShareWidgetMaximize";
         public static string ButtonMyShareWidgetShare = "ButtonMyShareWidgetShare";
-
+        public static string ButtonMaxWidgetRightComment = "ButtonMaxWidgetRightComment";
         #endregion
 
         #endregion
@@ -695,6 +695,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldShareReceiveWindowComment = "TextFieldShareReceiveWindowComment";
         public static string TextFieldReceiveWindowComment = "TextFieldReceiveWindowComment";
         public static string TextFieldEditModifyComment = "TextFieldEditModifyComment";
+        public static string TextFieldMaxWidgetRightComment = "TextFieldMaxWidgetRightComment";
         #endregion
 
         #endregion
@@ -1158,6 +1159,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string LabelEnjoyWidgetNameMin = "LabelEnjoyWidgetNameMin";
         public static string LabelMyShareWidgetMinAnnotationIcon = "LabelMyShareWidgetMinAnnotationIcon";
+        public static string LabelMyShareWidgetShareUser = "LabelMyShareWidgetShareUser";
         #endregion
 
         #region Energy View
@@ -1242,6 +1244,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ContainerDashboards = "ContainerDashboards";
         public static string ContainerWidgetsToMyShare = "ContainerWidgetsToMyShare";
         public static string ContainerWidgetsNamesToMyShare = "ContainerWidgetsNamesToMyShare";
+        public static string ContainerCommentsOnMaxwidget = "ContainerCommentsOnMaxwidget";
 
         #endregion
 

@@ -183,7 +183,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public bool IsEnjoyUserInShareList(string name)
         {
-            return TrueShareUserList.IsRowExist(1, name);
+            return TrueShareUserList.IsRowExist(2, name);
         }
 
         public bool IsEnjoyUserInSubscribeUserList(string name)
@@ -194,7 +194,13 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FloatOnSubscriberUser(string name)
         {
             SubscribeUserList.FloatOnRow(1, name, false);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
+        }
+
+        public void FocusOnSubscriberUser(string name)
+        {
+            SubscribeUserList.FocusOnRow(1, name, false);
+            TimeManager.LongPause();
         }
 
         public string GetRemoveorQuitSubcriberText(string name)

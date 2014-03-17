@@ -37,6 +37,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
+        /// get the element text for special position
+        /// </summary>
+        /// <param name="text">text</param>
+        public string GetSpecialElementText(int num)
+        {
+            return this.RootElements[num - 1].Text;
+        }
+
+        /// <summary>
         /// get the items number which equal to parameter string text
         /// </summary>
         /// <param name="text">text</param>

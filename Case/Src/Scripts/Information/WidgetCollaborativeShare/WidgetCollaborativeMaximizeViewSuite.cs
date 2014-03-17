@@ -29,6 +29,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
         private static ShareWindow ShareWindow = new ShareWindow();
         private static ShareInfoWindow ShareInfoWindow = new ShareInfoWindow();
         private static int WAITSHAREINFOTAB = 5000;
+        private UserSettings UserSettings = JazzFunction.UserSettings;
         
         [SetUp]
         public void CaseSetUp()
@@ -48,43 +49,108 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-WidgetCollaborative-MaximizeView-101-1")]
-        [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(WidgetCollaborativeMaximizeViewSuite), "TC-J1-FVT-WidgetCollaborative-MaximizeView-101-1")]
-        public void MaximizeDialogCheck(ShareDashboardData input)
-        {
-            //Manual Test for UI
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-WidgetCollaborative-MaximizeView-101-2")]
-        [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(WidgetCollaborativeMaximizeViewSuite), "TC-J1-FVT-WidgetCollaborative-MaximizeView-101-2")]
-        public void VerifyPageButtonInMaximizeDialog(ShareDashboardData input)
-        {
-            //Manual Test for UI
-        }
-
-        [Test]
         [CaseID("TC-J1-FVT-WidgetCollaborative-MaximizeView-101-3")]
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(WidgetCollaborativeMaximizeViewSuite), "TC-J1-FVT-WidgetCollaborative-MaximizeView-101-3")]
         public void CommentWindowViewAndWorkWell(ShareDashboardData input)
         {
-            //Manual Test for UI
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Login to Jazz with UserA. Navigate to homepage->Dashboard->Widget Mirror tab.
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
+            HomePagePanel.NavigateToMyShare();
+            TimeManager.Pause(15);
+
+            //Click the schema picture for widgetA.
+            HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);
+            TimeManager.ShortPause();
+
+            //Verify Comment window.Comment box and Confirm button display at the top. The Confirm button is gray.
+            Assert.IsFalse(Widget.IsMaxWidgetRightCommentButtonEnable());
+
+            //Add comments in comment field and click "Confirm" button.
+            Widget.FillMaxWidgetRightComment(dashboard[0].widgetComments[0]);
+            TimeManager.ShortPause();
+            Widget.ClickMaxWidgetRightCommentButton();
+            TimeManager.ShortPause();
+
+            Assert.AreEqual(1, Widget.GetCommentNumberOnMaxWidgetRight());
+            Assert.IsTrue(Widget.GetCommentOfOnePosition(1).Contains(dashboard[0].widgetComments[0]));
+
+            Widget.ClickCloseMaxDialogButton();
+            TimeManager.ShortPause();
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-WidgetCollaborative-MaximizeView-101-4")]
-        [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(WidgetCollaborativeMaximizeViewSuite), "TC-J1-FVT-WidgetCollaborative-MaximizeView-101-4")]
-        public void VerifyRefreshPreviousComment(ShareDashboardData input)
+        [CaseID("TC-J1-FVT-WidgetCollaborative-MaximizeView-101-7")]
+        [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(WidgetCollaborativeMaximizeViewSuite), "TC-J1-FVT-WidgetCollaborative-MaximizeView-101-7")]
+        public void SponsorNameWillNotBeUpdateOnCommentField(ShareDashboardData input)
         {
-            //Manual Test for UI
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Login to Jazz with UserD. Change the UserA name to UserAA.
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[3].LoginName, dashboard[0].Receivers[3].Password, "“云能效”系统管理");
+            UserSettings.NavigatorToUserSetting();
+            TimeManager.MediumPause();
+
+            UserSettings.FocusOnUser(dashboard[0].ShareUsers[0]);
+            UserSettings.ClickModifyButton();
+            TimeManager.ShortPause();
+            UserSettings.FillInRealName(dashboard[0].ShareUsers[4]);
+            TimeManager.ShortPause();
+            UserSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            //Login to Jazz with UserAA. Navigate to homepage, then to Collaborative Widget tab.
+            HomePagePanel.ExitJazz();
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
+            HomePagePanel.NavigateToMyShare();
+            TimeManager.Pause(15);
+
+            //.The info in widgetA of "由UserA共享" cannot change to "由UserAA共享"。
+            Assert.AreEqual("由ShareUserB共享", HomePagePanel.GetMyShareWidgetShareUser(dashboard[0].WidgetName));
+
+            //Verify the comment send by UserA.The user's name cannot be change.
+            HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);
+            TimeManager.ShortPause();
+
+            Assert.IsTrue(Widget.GetCommentOfOnePosition(1).Contains(dashboard[0].widgetComments[0]));
+            Widget.ClickCloseMaxDialogButton();
+            TimeManager.ShortPause();
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-WidgetCollaborative-MaximizeView-101-5")]
-        [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(WidgetCollaborativeMaximizeViewSuite), "TC-J1-FVT-WidgetCollaborative-MaximizeView-101-5")]
-        public void VerifyRefreshNewComment(ShareDashboardData input)
+        [CaseID("TC-J1-FVT-WidgetCollaborative-MaximizeView-101-8")]
+        [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(WidgetCollaborativeMaximizeViewSuite), "TC-J1-FVT-WidgetCollaborative-MaximizeView-101-8")]
+        public void VerifyCloseButtonInMaximizeDialog(ShareDashboardData input)
         {
-            //Manual Test for UI
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Login to Jazz with UserA. Navigate to homepage->Dashboard->Collaborative Widget  tab.
+            JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
+            HomePagePanel.NavigateToMyShare();
+            TimeManager.Pause(15);
+
+            //.Display the Collaborative Widget  in maximized size.
+            HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);
+            TimeManager.ShortPause();
+
+            //Add annotation in the top-right annotation box without click Confirm button..The Confirm button active.
+            Widget.FillMaxWidgetRightComment(dashboard[0].widgetComments[0]);
+            TimeManager.ShortPause();
+            Assert.IsTrue(Widget.IsMaxWidgetRightCommentButtonEnable());
+
+            //Click Close button..The dialog can be closed properly without error.
+            Widget.ClickCloseMaxDialogButton();
+            TimeManager.ShortPause();
+
+            //Click the schema picture..Display the Collaborative Widget  in maximized size and the new annotation doesn't display in the annotation list.
+            HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);
+            TimeManager.ShortPause();
+
+            Assert.AreEqual(0, Widget.GetCommentNumberOnMaxWidgetRight());
+            Widget.ClickCloseMaxDialogButton();
+            TimeManager.ShortPause();
         }
     }
 }

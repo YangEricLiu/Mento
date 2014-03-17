@@ -242,9 +242,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void ClickRemoveorQuitRowButton(int cellIndex, string cellText)
         {
-            var RemoveorQuit = this.GetRowRemoveorQuit(cellIndex, cellText, false);
-            //RemoveorQuit.Click();
-            ElementHandler.Click(RemoveorQuit);
+            IWebElement RemoveorQuit = this.GetRowRemoveorQuit(cellIndex, cellText, false);
+
+            string scriptString = "arguments[0].click()";
+            BrowserHandler.ExecuteJavaScript(scriptString, RemoveorQuit);
         }
 
         /// <summary>

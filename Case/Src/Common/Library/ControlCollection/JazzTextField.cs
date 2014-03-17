@@ -179,7 +179,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField ShareReceiveWindowCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldShareReceiveWindowComment);
         public static TextField ReceiveWindowCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldReceiveWindowComment);
         public static TextField EditModifyCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldEditModifyComment);
-
+        public static TextField MaxWidgetRightCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldMaxWidgetRightComment);
+        
         #endregion
     }
 }

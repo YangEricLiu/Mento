@@ -565,6 +565,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static Button CancelShareWidgetButton = GetControl<Button>(JazzControlLocatorKey.ButtonCancelShareWidget);
         public static Button CloseWidgetRenameWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonCloseWidgetRenameWindow);
+        public static Button MaxWidgetRightCommentButton = GetControl<Button>(JazzControlLocatorKey.ButtonMaxWidgetRightComment);
 
         #endregion
 

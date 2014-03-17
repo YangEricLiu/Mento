@@ -1,8 +1,9 @@
-﻿[
+﻿/*using common.json*/
+
+[
 	{
 		"InputData":
 		{	
-			"CommonName":"冷暖季ForAddValid1",
 			"WarmRange":[{"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}],
 			"ColdRange":[{"StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}],
 		},
@@ -14,7 +15,6 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"冷暖季ForAddValid2",
 			"WarmRange":[{"StartMonth": "02", "StartDate": "01", "EndMonth": "02", "EndDate": "28"}],
 			"ColdRange":[{"StartMonth": "03", "StartDate": "07", "EndMonth": "03", "EndDate": "07"}],
 		},
@@ -26,9 +26,28 @@
 	{
 		"InputData":
 		{	
-			"CommonName":"冷暖季ForAddValid3",
 			"WarmRange":[{"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}],
 			"ColdRange":[{"StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"StartMonth": "10", "StartDate": "01", "EndMonth": "10", "EndDate": "15"}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},	
+	{
+		"InputData":
+		{	
+			"WarmRange":[{"StartMonth": "11", "StartDate": "01", "EndMonth": "12", "EndDate": "28"}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},	
+	{
+		"InputData":
+		{	
+			"ColdRange":[{"StartMonth": "07", "StartDate": "31", "EndMonth": "08", "EndDate": "30"}, {"StartMonth": "08", "StartDate": "31", "EndMonth": "10", "EndDate": "31"}],
 		},
 		"ExpectedData":
 		{

@@ -72,7 +72,7 @@
             <add key="ButtonWidgetShare" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-sendcopy-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetRename" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-rename-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetEnjoy" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-share-tool')]/img" type="XPath"/>
-            <add key="ButtonHomepageToDashboard" value="//div[@id='map-canvas-container']/div/div[contains(@class,'x-btn') and em/button/span[text()='仪表盘 >']]" type="XPath"/>
+            <add key="ButtonHomepageToDashboard" value="//div[@id='map-canvas-container']/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Dashboard.Label.ToMainDashboard']]" type="XPath"/>
 
             <add key="ButtonDashboardFavorite" value="//div[@id='hp-dashboard-list-targetEl']/div[span[text()='$#nameIndex']]/span[@class='x-dsbd-btn-icon']" type="XPath"/>
             <add key="ButtonDashboardShare" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[1]/img" type="XPath"/>
@@ -174,7 +174,7 @@
 
         <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.SearchData']]" type="XPath"/>
           <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
-          <add key="ButtonEnergyViewAddTimeSpan" value="//div[contains(@id,'splitbutton') and em/button/span[text()='+时间段']]" type="XPath"/>
+          <add key="ButtonEnergyViewAddTimeSpan" value="//div[contains(@id,'splitbutton') and em/button/span[text()='$@EM.AddCompareTime']]" type="XPath"/>
           <add key="ButtonEnergyViewRemoveAll" value="em-chartgrid-topbar-del" type="ID"/>
           <add key="MenuButtonEnergyViewConvertTarget" value="//div[em/button/span[text()='$@Common.CarbonUomType.StandardCoal'] or em/button/span[text()='$@Common.CarbonUomType.CO2'] or em/button/span[text()='$@Common.CarbonUomType.Tree']]" type="XPath"/>
           <add key="ButtonEnergyViewPeakValley" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@EM.TouCompare']]" type="XPath"/>
@@ -962,10 +962,10 @@
   <!--CheckBoxField Begin-->
   <CheckBox>
     <add key="CheckBoxFieldDayNightKPITag" value="st-formula-daynight" type="ID"/>
-    <add key="CheckBoxFieldUserTypeEnergyUse" value="//div[@id='st-usertype-energyuse-body']//table[tbody/tr//label[text()='用能']]" type="XPath"/>
-    <add key="CheckBoxFieldUserTypeCost" value="//div[@id='st-usertype-cost-body']//table[tbody/tr//label[text()='成本']]" type="XPath"/>
+    <add key="CheckBoxFieldUserTypeEnergyUse" value="//div[@id='st-usertype-energyuse-body']//table[tbody/tr//label[text()='$@CenterBar.Button.EnergyUse']]" type="XPath"/>
+    <add key="CheckBoxFieldUserTypeCost" value="//div[@id='st-usertype-cost-body']//table[tbody/tr//label[text()='$@EM.CenterBar.Button.Cost']]" type="XPath"/>
 
-    <add key="CheckBoxFieldUserTypePermission" value="//div[@id='st-usertype-properties-form-body']/div[contains(@id, 'privilegepanel')]/div/fieldset[legend/div/label[text()='角色权限']]/div/table[contains(@id, 'privilegeitem')]" type="XPath"/>
+    <add key="CheckBoxFieldUserTypePermission" value="//div[@id='st-usertype-properties-form-body']/div[contains(@id, 'privilegepanel')]/div/fieldset[legend/div/label[text()='$@Setting.Role.Role']]/div/table[contains(@id, 'privilegeitem')]" type="XPath"/>
     
     <add key="CheckBoxFieldUserDataAllHierarchyNode" value="//div[contains(@id,'datapermissiontreewindow')]//div//div//table[1]" type="XPath"/>
     <add key="CheckBoxFieldUserAllDataScope" value="//div[@id='st-user-datarange-form']/table/tbody/tr/td/table[contains(@id,'checkboxfield')]" type="XPath"/>
@@ -987,16 +987,16 @@
         <add key="LabelWorktimeCalendar" value="st-hierarchy-calendar-workday-container" type="ID"/>
         <add key="LabelHeatingCoolingCalendar" value="st-hierarchy-calendar-coldwarm-container" type="ID"/>
         <add key="LabelDayNightCalendar" value="st-hierarchy-calendar-daynight-container" type="ID"/>
-        <add key="LabelTitleWorkday" value="//div[@id='st-hier-calendar-form-body']//label[text()='工休日']" type="XPath"/>
-        <add key="LabelTitleHeatingCooling" value="//div[@id='st-hier-calendar-form-body']//label[text()='冷暖季']" type="XPath"/>
-        <add key="LabelTitleDayNight" value="//div[@id='st-hier-calendar-form-body']//label[text()='昼夜时间']" type="XPath"/>
+        <add key="LabelTitleWorkday" value="//div[@id='st-hier-calendar-form-body']//label[text()='$@Setting.Label.WorkdaySetting']" type="XPath"/>
+        <add key="LabelTitleHeatingCooling" value="//div[@id='st-hier-calendar-form-body']//label[text()='$@Setting.Label.ColdwarmSetting']" type="XPath"/>
+        <add key="LabelTitleDayNight" value="//div[@id='st-hier-calendar-form-body']//label[text()='$@Setting.Label.DaynightSetting']" type="XPath"/>
       </HierarchyCalendar>
       <HierarchyPopulationArea>
         <add key="LabelAreaPropertyTitle" value="st-hierarchy-dynamicproperty-area-label-labelEl" type="ID"/>
       </HierarchyPopulationArea>
       <TargetBaseline>
         <add key="LabelCalendarInfoDisplay" value="//div[@id='setting-region-east-body']//table[contains(@id, 'displayfield')]/tbody/tr/td/label" type="XPath"/>
-        <add key="LabelRevisionText" value="//div[@id='setting-region-east-body']//td[contains(@class,'x-form-item-body numberfield') and table/tbody/tr/td/input[@type='text' and @name='$#nameIndex']]/../td/label/span[text()='修正值']" type="XPath"/>
+        <add key="LabelRevisionText" value="//div[@id='setting-region-east-body']//td[contains(@class,'x-form-item-body numberfield') and table/tbody/tr/td/input[@type='text' and @name='$#nameIndex']]/../td/label/span[text()='$@Common.Glossary.CorrectionValue']" type="XPath"/>
       </TargetBaseline>
       
     </CustomerSettings>
@@ -1009,14 +1009,14 @@
       </calendar>
         
         <benckMark>
-            <add key="LabelPlatformBenchMarkSetting" value="//div[@id='st-benchmark-properties-form-targetEl']/table/tbody/tr/td/div/div/label[text()='请至少选择一项。']" type="XPath"/>
+            <add key="LabelPlatformBenchMarkSetting" value="//div[@id='st-benchmark-properties-form-targetEl']/table/tbody/tr/td/div/div/label[text()='$@Setting.Benchmark.Label.AtleastOneZone']" type="XPath"/>
             <!--R1.4 need use the below label-->
             <!--<add key="LabelPlatformBenchMarkSetting" value="//div[@id='st-benchmark-properties-form-targetEl']/table/tbody/tr/td/div/div/label[text()='请至少选择1项。']" type="XPath"/>-->
           <add key="LabelPlatformLabelingSetting" value="//div" type="XPath"/>
         </benckMark>
 
         <customerMapInfo>
-            <add key="LabelPlatformCustomerMapInfo" value="//div[@id='st-map-consumption-form-targetEl']/div/label[text()='请至少选择1项。']" type="XPath"/>
+            <add key="LabelPlatformCustomerMapInfo" value="//div[@id='st-map-consumption-form-targetEl']/div/label[text()='$@Setting.Benchmark.Label.AtleastOneZone']" type="XPath"/>
         </customerMapInfo>
         
     </PlatformSettings>
@@ -1153,10 +1153,10 @@
       <add key="ContainerDisplayPermissionItems" value="//div[@id='st-user-privilegeinfo-form-body']/div/div/fieldset/div" type="XPath"/>
     </UserTypeRole>
     <TOU>
-      <add key="ContainerHierarchyBuildingPicture" value="//div[@id='st-hier-properties-form-body']/div[contains(@id,'form') and contains(@style,'display: none;')]//label[text()='移动建筑封面图']" type="XPath"/>
+      <add key="ContainerHierarchyBuildingPicture" value="//div[@id='st-hier-properties-form-body']/div[contains(@id,'form') and contains(@style,'display: none;')]//label[text()='$@Setting.Hierarchy.Label.Picture']" type="XPath"/>
     </TOU>
     <CustomerManagement>
-        <add key="ContainerCustomerMapInfo" value="//div[@id='st-map-consumption-form-targetEl']/div[contains(@id,'container')]//label[text()='请至少选择1项。']" type="XPath"/>
+        <add key="ContainerCustomerMapInfo" value="//div[@id='st-map-consumption-form-targetEl']/div[contains(@id,'container')]//label[text()='$@Setting.Benchmark.Label.AtleastOneZone']" type="XPath"/>
     </CustomerManagement>
   </platformsettings>
   

@@ -43,14 +43,6 @@ namespace Mento.Script.Information.Widgets
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-Widget-Annotation-101-1")]
-        [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(AnnotationViewSuite), "TC-J1-FVT-Widget-Annotation-101-1")]
-        public void SaveWidgetWithBlankAnnotation(MaximizeWidgetData input)
-        {
-            //nothing      
-        }
-
-        [Test]
         [CaseID("TC-J1-FVT-Widget-Annotation-101-2")]
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(AnnotationViewSuite), "TC-J1-FVT-Widget-Annotation-101-2")]
         public void SaveWidgetWithAnnotation(MaximizeWidgetData input)

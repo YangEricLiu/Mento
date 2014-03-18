@@ -78,7 +78,7 @@
   <add key = "$@12" value = "$@Data.MonthName.December"/>
 
   <!--Default Time-->
-  <add key = "Latest7Day" value = "$@Common.DateRange.Latest7Day"/>
+  <add key = "Latest7Day" value = "$@Common.DateRange.Last7Day"/>
   <add key = "Today" value = "$@Common.DateRange.Today"/>
   <add key = "Yesterday" value = "$@Common.DateRange.Yesterday"/>
   <add key = "ThisWeek" value = "$@Common.DateRange.ThisWeek"/>

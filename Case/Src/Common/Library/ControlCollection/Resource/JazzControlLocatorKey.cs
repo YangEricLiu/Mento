@@ -1291,7 +1291,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region IndustryLabeling
-        public static string CheckBoxLabeling = "CheckBoxLabeling";
         #endregion
 
         #endregion

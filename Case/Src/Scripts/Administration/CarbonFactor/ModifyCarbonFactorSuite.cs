@@ -93,7 +93,7 @@ namespace Mento.Script.Administration.CarbonFactor
             CarbonFactorSettings.FillInFactorEffectiveYear_N(testData.InputData.EffectiveYear, 1);
             CarbonFactorSettings.FillInFactorValue_N(testData.InputData.FactorValue, 1);
             //输入第二组转换因子
-            CarbonFactorSettings.FillInFactorEffectiveYear_N("20Industry0", 2);
+            CarbonFactorSettings.FillInFactorEffectiveYear_N("2010", 2);
             CarbonFactorSettings.FillInFactorValue_N("2", 2);
 
             CarbonFactorSettings.ClickSaveButton();
@@ -102,8 +102,8 @@ namespace Mento.Script.Administration.CarbonFactor
             //Verify the 'Factor Source', 'Factor Destination' and Carbon factor value.
             Assert.AreEqual(testData.ExpectedData.EffectiveYear, CarbonFactorSettings.GetCarbonFactorEffectiveYear(1));
             Assert.AreEqual(testData.ExpectedData.FactorValue, CarbonFactorSettings.GetCarbonFactorValue(1));
-            Assert.AreEqual("20Industry0", CarbonFactorSettings.GetCarbonFactorEffectiveYear(2));
-            Assert.AreEqual("2", CarbonFactorSettings.GetCarbonFactorValue(2));
+            Assert.AreEqual("2010", CarbonFactorSettings.GetCarbonFactorEffectiveYear(3));
+            Assert.AreEqual("2", CarbonFactorSettings.GetCarbonFactorValue(3));
         }
 
         [Test]
@@ -235,7 +235,7 @@ namespace Mento.Script.Administration.CarbonFactor
 
             //输入转换因子和生效年份.
             JazzComboBox.CarbonFactorEffectiveYearComboBox.DisplayItems();
-            CarbonFactorSettings.FillInFactorEffectiveYear_N("20IndustryIndustry", 1);
+            CarbonFactorSettings.FillInFactorEffectiveYear_N("2013", 1);
             CarbonFactorSettings.FillInFactorValue_N(testData.InputData.DoubleNonNagtiveValue, 1);
             CarbonFactorSettings.FillInFactorValue_N(testData.InputData.DoubleNonNagtiveValue, 2);
 

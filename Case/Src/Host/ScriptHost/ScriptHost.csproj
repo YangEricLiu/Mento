@@ -156,6 +156,7 @@
     <None Include="Data\Administration\CarbonFactor\AddCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Add-001.json" />
     <None Include="Data\Administration\CarbonFactor\AddCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Add-102.json" />
     <None Include="Data\Administration\CarbonFactor\AddCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Add-101.json" />
+    <None Include="Data\Administration\CarbonFactor\DeleteCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Delete-002.json" />
     <None Include="Data\Administration\CarbonFactor\DeleteCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Delete-001.json" />
     <None Include="Data\Administration\CarbonFactor\DeleteCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Delete-101.json" />
     <None Include="Data\Administration\CarbonFactor\ModifyCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Modify-104.json" />

@@ -202,8 +202,8 @@
 
           <add key="ButtonMultipleHierarchyTree" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-body-default')]/div/div/div/div/div/div/div[contains(@class,'x-tree-btn')]" type="XPath"/>
           <add key="TabButtonMultipleHierarchyAllTagsTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='$@EM.AllTags']]" type="XPath"/>
-          <add key="TabButtonMultipleHierarchyAreaDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='$@EM.SystemTag']]" type="XPath"/>
-          <add key="TabButtonMultipleHierarchySystemDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='$@EM.AreaTag']]" type="XPath"/>
+          <add key="TabButtonMultipleHierarchyAreaDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='$@EM.AreaTag']]" type="XPath"/>
+          <add key="TabButtonMultipleHierarchySystemDimensionTab" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tab-default') and em/button/span[text()='$@EM.SystemTag']]" type="XPath"/>
 
           <add key="ButtonMultipleHierarchySelectSystemDimension" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
           <add key="ButtonMultipleHierarchySelectAreaDimension" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
@@ -962,7 +962,7 @@
   <!--CheckBoxField Begin-->
   <CheckBox>
     <add key="CheckBoxFieldDayNightKPITag" value="st-formula-daynight" type="ID"/>
-    <add key="CheckBoxFieldUserTypeEnergyUse" value="//div[@id='st-usertype-energyuse-body']//table[tbody/tr//label[text()='$@CenterBar.Button.EnergyUse']]" type="XPath"/>
+    <add key="CheckBoxFieldUserTypeEnergyUse" value="//div[@id='st-usertype-energyuse-body']//table[tbody/tr//label[text()='$@EM.CenterBar.Button.EnergyUse']]" type="XPath"/>
     <add key="CheckBoxFieldUserTypeCost" value="//div[@id='st-usertype-cost-body']//table[tbody/tr//label[text()='$@EM.CenterBar.Button.Cost']]" type="XPath"/>
 
     <add key="CheckBoxFieldUserTypePermission" value="//div[@id='st-usertype-properties-form-body']/div[contains(@id, 'privilegepanel')]/div/fieldset[legend/div/label[text()='$@Setting.Role.Role']]/div/table[contains(@id, 'privilegeitem')]" type="XPath"/>

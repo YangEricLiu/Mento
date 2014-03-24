@@ -363,7 +363,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3371")]
         [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3371")]
-        public void CheckStepDayDisplayMissingData3371(TimeSpansData input)
+        public void VerifyTheRecordsWithNullData3371(TimeSpansData input)
         {
             //From SP2, select Customer 'NancyOtherCustomer3' , 
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");

@@ -29,7 +29,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region CheckBox of Labeling
-        public static CheckBoxField CheckBoxLabeling = GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxLabeling);
         #endregion
         #region CheckBox of Ptag
 

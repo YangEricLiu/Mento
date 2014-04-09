@@ -5,7 +5,7 @@
 			"UserName":"UserForVerifyTree",
 			"CustomerName":"customerD",
 			"HierarchyNodePath":["customerD","organizationA","siteB","buildingC"],
-			"CustomerList":["tagC"],
+			"CustomerList":["customerD"],
 		},
 		"ExpectedData":
 		{

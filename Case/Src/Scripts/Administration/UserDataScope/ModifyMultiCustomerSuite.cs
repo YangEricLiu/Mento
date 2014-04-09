@@ -65,6 +65,7 @@ namespace Mento.Script.Administration.UserDataScope
             Assert.IsFalse(UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[1]));
             
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[2]);
+            TimeManager.ShortPause();
             UserDataPermissionSettings.CloseTreeWindow();
             TimeManager.ShortPause();
 
@@ -189,7 +190,7 @@ namespace Mento.Script.Administration.UserDataScope
             // check hierarchy nodes of customerA.
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[0]);
             UserDataPermissionSettings.CheckHierarchyOrzNode(input.InputData.HierarchyNodePath);
-            UserDataPermissionSettings.CheckHierarchyBuildingNode(input.InputData.HierarchyNodePath);
+            UserDataPermissionSettings.CheckHierarchyBuildingNode(input.ExpectedData.HierarchyNodePath);
             UserDataPermissionSettings.SaveTreeWindow();
 
             //Check "全部平台客户及对应数据权限"

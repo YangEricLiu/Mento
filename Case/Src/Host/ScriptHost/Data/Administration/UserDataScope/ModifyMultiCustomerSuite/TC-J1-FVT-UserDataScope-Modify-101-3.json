@@ -3,13 +3,13 @@
 		"InputData":
 		{
 			"UserName":"UserForMultiCustomer",
-			"CustomerName":"customerC",
+			"CustomerName":"customerB",
 			"HierarchyNodePath":["customerC"],
 		},
 		"ExpectedData":
 		{
 			"CustomerList":["customerA","organizationA"],
-			"HierarchyNodePath":["customerB","organizationB","siteB","buildingB"],
+			"HierarchyNodePath":["customerB","organizationB","siteB"],
 		}
 	}
 ]

@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇A"],["NancyOtherCustomer3","NancyNoCalendarSite"]],
+			"commodityNames":["电"],
+			"failedFileName":["F-ConsumptionRankingDataView008-1-Elec.xls","F-ConsumptionRankingDataView008-2-Elec.xls"],
+			"SystemDimensionPath":["系统维度","空调"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-1-7",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionRankingDataView008-1-Elec.xls","ConsumptionRankingDataView008-2-Elec.xls"],
+		}
+	}
+]

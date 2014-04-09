@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
+			"commodityNames":["电"],
+			"failedFileName":["F-CostRankingDataView006-1-Elec.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2010-1-1",
+				"EndDate":"2012-12-31",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostRankingDataView006-1-Elec.xls"],
+		}
+	}
+]

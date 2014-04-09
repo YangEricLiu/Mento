@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingRanking"]],
+			"commodityNames":["电","自来水"],
+			"failedFileName":["F-ConsumptionRankingDataView001-1-H-Elec.xls", "F-ConsumptionRankingDataView002-1-H-Elec.xls", "F-ConsumptionRankingDataView003-1-H-Elec.xls", "F-ConsumptionRankingDataView004-1-H-Elec.xls", "F-ConsumptionRankingDataView005-1-H-Elec.xls"],
+			"SystemDimensionPath":["系统维度","空调"],
+		},
+		"ExpectedData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织A","园区A","楼宇B"],
+			"expectedFileName":["ConsumptionRankingDataView001-1-H-Elec.xls", "ConsumptionRankingDataView002-1-H-Elec.xls", "ConsumptionRankingDataView003-1-H-Elec.xls", "ConsumptionRankingDataView004-1-H-Elec.xls","ConsumptionRankingDataView005-1-H-Elec.xls"],
+
+		}
+	}
+]

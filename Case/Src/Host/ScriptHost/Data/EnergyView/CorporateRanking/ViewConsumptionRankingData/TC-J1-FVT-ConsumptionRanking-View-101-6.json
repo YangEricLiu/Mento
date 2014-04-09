@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingNullTest"],["NancyOtherCustomer3","NancyNoCalendarSite"]],
+			"commodityNames":["电"],
+			"failedFileName":["F-ConsumptionRankingDataView006-1-Elec.xls"],
+			"SystemDimensionPath":["系统维度","空调"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-1-7",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionRankingDataView006-1-Elec.xls"],
+		}
+	}
+]

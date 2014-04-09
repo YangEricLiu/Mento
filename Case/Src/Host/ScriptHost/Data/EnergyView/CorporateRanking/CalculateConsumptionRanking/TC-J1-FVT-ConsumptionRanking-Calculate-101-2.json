@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇A"]],
+			"SystemDimensionPath":["系统维度","空调"],
+			"commodityNames":["电","介质总览"],
+			"failedFileName":["F-TC-J1-FVT-ConsumptionRanking-Calculate-101-2-1-Elec-Average-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-2-2-Total-Average-Custom.xls"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2013-11-1",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["TC-J1-FVT-ConsumptionRanking-Calculate-101-2-1-Elec-Average-Custom.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-2-2-Total-Average-Custom.xls"],
+		}
+	}
+]

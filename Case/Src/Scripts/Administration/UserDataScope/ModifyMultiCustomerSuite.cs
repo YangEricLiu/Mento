@@ -48,20 +48,25 @@ namespace Mento.Script.Administration.UserDataScope
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
             UserDataPermissionSettings.ClickModifyButton();
+            TimeManager.ShortPause();
             // Check multiple customers 
             UserDataPermissionSettings.UnCheckCustomer(input.InputData.CustomerList[0]);
+            TimeManager.ShortPause();
             UserDataPermissionSettings.UnCheckCustomer(input.InputData.CustomerList[1]);
+            TimeManager.ShortPause();
             UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerList[2]);
+            TimeManager.ShortPause();
             UserDataPermissionSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
-           // View the data permission  
+            TimeManager.LongPause();
 
-            //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@获取客户时的问题
-            //Assert.IsTrue(UserDataPermissionSettings.IsCustomerView(input.InputData.CustomerList[2]));
-            //Assert.IsFalse(UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[0]));
-            //Assert.IsFalse(UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[Industry]));
-            //UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[2]);
+           // View the data permission  
+            Assert.IsFalse(UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[0]));
+            Assert.IsFalse(UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[1]));
+            
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[2]);
+            UserDataPermissionSettings.CloseTreeWindow();
+            TimeManager.ShortPause();
 
         }
 
@@ -184,7 +189,7 @@ namespace Mento.Script.Administration.UserDataScope
             // check hierarchy nodes of customerA.
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[0]);
             UserDataPermissionSettings.CheckHierarchyOrzNode(input.InputData.HierarchyNodePath);
-            UserDataPermissionSettings.CheckHierarchyNode(input.InputData.HierarchyNodePath);
+            UserDataPermissionSettings.CheckHierarchyBuildingNode(input.InputData.HierarchyNodePath);
             UserDataPermissionSettings.SaveTreeWindow();
 
             //Check "全部平台客户及对应数据权限"
@@ -195,8 +200,9 @@ namespace Mento.Script.Administration.UserDataScope
             // verify 
             Assert.IsTrue(UserDataPermissionSettings.IsAllDataCheckboxChecked());
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
-            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
-
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.ExpectedData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
+            TimeManager.ShortPause();
         }
 
         [Test]
@@ -216,8 +222,7 @@ namespace Mento.Script.Administration.UserDataScope
 
             // check hierarchy nodes of customerA.
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[0]);
-            UserDataPermissionSettings.CheckHierarchyOrzNode(input.InputData.HierarchyNodePath);
-            UserDataPermissionSettings.CheckHierarchyNode(input.InputData.HierarchyNodePath);
+            UserDataPermissionSettings.CheckAllHierarchyNode();
             UserDataPermissionSettings.SaveTreeWindow();
             //Check "全部平台客户及对应数据权限"
             UserDataPermissionSettings.CheckAllCustomerDatas();
@@ -226,11 +231,11 @@ namespace Mento.Script.Administration.UserDataScope
 
             UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerList[0]);
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[0]);
-            // verify 
-            Assert.IsFalse(UserDataPermissionSettings.IsAllDataCheckboxChecked());
-            Assert.IsTrue(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
-            
-            Assert.IsFalse(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.HierarchyNodePath));
+
+            // verify 全部层级节点数据权限 checkbox is checked and all customer hierarchy tree is checked.
+            Assert.IsFalse(UserDataPermissionSettings.IsAllDataCheckboxChecked());                       
+
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchOrzNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
             
@@ -248,21 +253,28 @@ namespace Mento.Script.Administration.UserDataScope
             UserDataPermissionSettings.ClickModifyButton();
 
             //Click Checkall(全选). Then select 配置数据权限 link from customerA.
-            UserDataPermissionSettings.CheckAllCumstomerNames();
+            //UserDataPermissionSettings.CheckAllCumstomerNames();
            //@@@@ ·All customers checked.·全部平台客户及对应数据权限 is unchecked.
-            Assert.IsFalse(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
+            Assert.IsTrue(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
 
-            // Expand the hierarchy tree of customerA.
-
-            //Check "全部平台客户及对应数据权限"
-            UserDataPermissionSettings.CheckAllCustomerDatas();
-            UserDataPermissionSettings.ClickSaveButton();
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
-            // verify 
-            Assert.IsFalse(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
+            //Uncheck 全选 then 选择CustomerA, Then select 配置数据权限 link from customerA.
+            UserDataPermissionSettings.UnCheckAllData();
+            UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerList[0]);
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
-            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            UserDataPermissionSettings.CheckHierarchyOrzNode(input.InputData.HierarchyNodePath);
+            UserDataPermissionSettings.SaveTreeWindow();
+            TimeManager.ShortPause();
+
+            //全选 then Uncheck全选, 选择CustomerA Then select 配置数据权限 link from customerA again.
+            //之前选择的hierarchy node of customerA still checked.
+            UserDataPermissionSettings.CheckAllCumstomerNames();
+            UserDataPermissionSettings.UnCheckAllData();
+            UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerList[0]);
+            UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
+
+            // verify 之前选择的hierarchy node of customerA still checked.
+            Assert.IsFalse(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
+            Assert.IsTrue(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.HierarchyNodePath));
             UserDataPermissionSettings.CloseTreeWindow();
         }
 
@@ -285,13 +297,11 @@ namespace Mento.Script.Administration.UserDataScope
             TimeManager.ShortPause();
             //The datascope isn't modified and the same as before modify.
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
-            Assert.IsTrue(UserDataPermissionSettings.IsHierarchCustomerNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsFalse(UserDataPermissionSettings.IsHierarchCustomerNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsFalse(UserDataPermissionSettings.IsHierarchOrzNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsFalse(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsFalse(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.HierarchyNodePath));
-            Assert.IsTrue(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.CustomerList));
-            Assert.IsFalse(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.CustomerList));
 
             //Check 全部层级节点数据权限 option and click "确定" and go to 配置数据权限. 
             UserDataPermissionSettings.CheckAllHierarchyNode();
@@ -303,14 +313,15 @@ namespace Mento.Script.Administration.UserDataScope
             TimeManager.MediumPause();
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
             //The datascope isn't modified and the same as before modify.
-            Assert.IsTrue(UserDataPermissionSettings.IsHierarchCustomerNodeChecked(input.InputData.HierarchyNodePath));
+            Assert.IsFalse(UserDataPermissionSettings.IsHierarchCustomerNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsFalse(UserDataPermissionSettings.IsHierarchOrzNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsFalse(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsTrue(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.HierarchyNodePath));
             Assert.IsFalse(UserDataPermissionSettings.IsHierarchyNodeChecked(input.ExpectedData.HierarchyNodePath));
-            Assert.IsTrue(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.CustomerList));
-            Assert.IsFalse(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.CustomerList));
+            //Assert.IsTrue(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.InputData.CustomerList));
+            //Assert.IsFalse(UserDataPermissionSettings.IsHierarchyNodeChecked(input.InputData.CustomerList));
             UserDataPermissionSettings.CloseTreeWindow();
+            
             //Modify again. Check 全部层级节点数据权限 option and click "确定". Click "Save" button.
             UserDataPermissionSettings.ClickModifyButton();
             UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerName);
@@ -319,7 +330,7 @@ namespace Mento.Script.Administration.UserDataScope
             UserDataPermissionSettings.SaveTreeWindow();
             UserDataPermissionSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             //Click 查看数据权限 of customerD.
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
             UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.CustomerList);

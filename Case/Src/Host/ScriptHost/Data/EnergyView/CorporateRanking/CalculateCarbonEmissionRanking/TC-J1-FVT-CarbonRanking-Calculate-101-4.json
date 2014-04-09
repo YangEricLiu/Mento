@@ -1,0 +1,23 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇A"]],
+			"commodityNames":["电","介质总览"],
+			"failedFileName":["F-TC-J1-FVT-CarbonRanking-Calculate-101-4-1-Elec-TotalRank-Custom.xls","F-TC-J1-FVT-CarbonRanking-Calculate-101-4-2-Total-TotalRank-Custom.xls","F-TC-J1-FVT-CarbonRanking-Calculate-101-4-3-Total-TotalRank-Custom-Month.xls","F-TC-J1-FVT-CarbonRanking-Calculate-101-4-4-Total-AverageRank-Custom-Month.xls"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-9-30",	
+			},
+			{
+				"StartDate":"2012-8-1",
+				"EndDate":"2012-8-30",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["TC-J1-FVT-CarbonRanking-Calculate-101-4-1-Elec-TotalRank-Custom.xls","TC-J1-FVT-CarbonRanking-Calculate-101-4-2-Total-TotalRank-Custom.xls","TC-J1-FVT-CarbonRanking-Calculate-101-4-3-Total-TotalRank-Custom-Month.xls","TC-J1-FVT-CarbonRanking-Calculate-101-4-4-Total-AverageRank-Custom-Month.xls"],
+		}
+	}
+]

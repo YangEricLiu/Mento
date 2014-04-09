@@ -159,7 +159,7 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
-        /*
+        
         /// <summary>
         /// Get customer lists
         /// </summary>
@@ -170,8 +170,9 @@ namespace Mento.ScriptCommon.Library.Functions
             return DataPermissionCustomerList.GetAllData().ToString().Contains(customerName);
 
         }
+         
 
-        */
+        
         /// <summary>
         /// Click Edit Data Permission  scope  link button
         /// </summary>

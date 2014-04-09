@@ -3,14 +3,14 @@
 		"InputData":
 		{
 			"UserName":"UserMoidfyToAll",
-			"CustomerName":"customerC",
-			"HierarchyNodePath":["customerC"],
+			"CustomerName":"customerA",
+			"HierarchyNodePath":["organizationA","buildingA"],
 			"CustomerList":["customerA","customerB","customerC","customerD"],
 		},
 		"ExpectedData":
 		{
 			"CustomerList":["customerA","organizationA"],
-			"HierarchyNodePath":["customerB","organizationB","siteB","buildingB"],
+			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],
 		}
 	}
 ]

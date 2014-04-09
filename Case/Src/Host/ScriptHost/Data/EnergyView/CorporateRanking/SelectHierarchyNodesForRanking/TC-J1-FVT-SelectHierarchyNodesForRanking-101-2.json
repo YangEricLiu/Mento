@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "楼宇BC"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"]],
+			"commodityNames":["电","自来水"],
+			"AreaDimensionPath":["楼宇BC", "一层"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

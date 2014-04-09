@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingNullTest"]],
+			"commodityNames":["电"],
+			"failedFileName":["F-CostRankingDataView005-1-Elec.xls","F-CostRankingDataView005-2-Elec.xls","F-CostRankingDataView005-3-Elec.xls","F-CostRankingDataView005-4-Elec.xls","F-CostRankingDataView005-5-Elec.xls","F-CostRankingDataView005-6-Elec.xls"],
+			"SystemDimensionPath":["系统维度","空调"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-1-1",
+				"EndDate":"2013-1-7",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostRankingDataView005-1-Elec.xls","CostRankingDataView005-2-Elec.xls","CostRankingDataView005-3-Elec.xls","CostRankingDataView005-4-Elec.xls","CostRankingDataView005-5-Elec.xls","CostRankingDataView005-6-Elec.xls"],
+		}
+	}
+]

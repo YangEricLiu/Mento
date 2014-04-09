@@ -4,7 +4,7 @@
 		{
 			"UserName":"UserNodeTreeChanged",
 			"CustomerList":["customerA","customerB","customerC","customerD"],
-			"CustomerName":"customerC",
+			"CustomerName":"customerA",
 			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],
 		},
 		"ExpectedData":

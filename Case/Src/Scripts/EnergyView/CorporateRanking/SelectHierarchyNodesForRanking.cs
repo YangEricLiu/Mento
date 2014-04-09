@@ -114,26 +114,32 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             TimeManager.LongPause();
-
             Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "碳排放");
+            //Select ‘Carbon Emission’ option.•  Display Hierarchy Tree Selector.
+            //•  Display Commodity selector which only support commodity under hierarchy node--电，自来水
+            UnitIndicator.SelectSingleCommodityUnitCarbon(input.InputData.commodityNames[0]);
+            UnitIndicator.SelectSingleCommodityUnitCarbon(input.InputData.commodityNames[1]);
+
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
             Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "成本");
+            UnitIndicator.SelectSingleCommodityUnitCost(input.InputData.commodityNames[0]);
+            UnitIndicator.SelectSingleCommodityUnitCost(input.InputData.commodityNames[1]);
 
-            // Chart is not redrawn when switching the function type option.@@@@@ not finish
-           
-
-            
-
-            //Select ‘Carbon Emission’ option.•  Display Hierarchy Tree Selector.
-            //•  Display Commodity selector which only support commodity under hierarchy node.
+            // Chart is not redrawn when switching the function type option.which no chart at all.s
+            Assert.IsTrue(CorporateRanking.EntirelyNoChartDrawn());
 
 
             //Select ‘Cost’ option.•  Display Hierarchy Tree Selector.
             //•  Display Commodity selector which support commodity under hierarchy node, system node, and area node.
-
-
+            UnitIndicator.SwitchTagTab(TagTabs.AreaDimensionTab);
+            TimeManager.ShortPause();
+            UnitIndicator.SelectAreaDimension(input.InputData.AreaDimensionPath);
+            TimeManager.MediumPause();
+            UnitIndicator.SelectSingleCommodityUnitCost(input.InputData.commodityNames[0]);
+            
             //Navigate to Energy Ratio Indicator (时段能耗比) module.
-
+            RatioIndicator.NavigateToRatio();
+            TimeManager.MediumPause();
 
             //•  No function type dropdown list.•  Display Hierarchy Mode button (SingleHierarchyNode is selected by default).
             //•  Display Hierarchy Tree Selector.
@@ -141,27 +147,44 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
 
             //Navigate to Corporate Ranking (集团排名) module.•  Successfully navigate to the module.
-
+            CorporateRanking.NavigateToCorporateRanking();
+            TimeManager.MediumPause();
 
             //Click Function Type button.
             //•  Options 'Energy Consumption', 'Carbon Emission' and 'Cost' are displayed in dropdown list.
             //•  Selected option is Highlighted.
             //•  'Energy Consumption' is selected by default.
 
-
             //Select ‘Energy Consumption’ option.•  Display Hierarchy Tree Selector.
             //Display Commodity selector which support commodity under hierarchy node, system node, and area node..
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "能耗");
+            CorporateRanking.ClickSelectHierarchyButton();
+            TimeManager.LongPause();
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[0]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[1]);
+            CorporateRanking.ClickConfirmHiearchyButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[1]);
 
             //Select ‘Carbon Emission’ option.
             //•  Display Hierarchy Tree Selector.
             //•  Display Commodity selector which only support commodity under hierarchy node.
             //•  Display Carbon Emission Type selector.
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            TimeManager.LongPause();
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "碳排放");
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[1]);
 
             //Select ‘Cost’ option.•  Display Hierarchy Tree Selector.
             //•  Display Commodity selector which only support commodity under hierarchy node and system node (without area node).
-        
-        
-        
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "成本");
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[1]);     
         }
 
         [Test]
@@ -170,25 +193,33 @@ namespace Mento.Script.EnergyView.CorporateRanking
         public void SelectCarbonEmissionType(CorporateRankingData input)
         {
             //Navigate to Energy Consumption Unit Indicator(单位能耗指标) module.•  Successfully navigate to the module.
-            
+            UnitIndicator.NavigateToUnitIndicator();
+            TimeManager.LongPause();
 
             //Select ‘Carbon Emission’ option from 'Function Type'.
-
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            TimeManager.LongPause();
 
             //Click Carbon Consumption Type dropdown list.
             //•  Display options as 'Standard Coal Consumption', 'CO2 Emission' and 'Tree Consumption' in dropdown list.
             //•  'Standard Coal Consumption' option is selected by default.
             //•  Current selected option should be highlighted.
-
-
+            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.StandardCoal);
+            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
+            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
             //Select one option.•  Set consumption type as selected option.
 
-
             //Navigate to Corporate Ranking (集团排名) module.•  Successfully navigate to the module.
+            CorporateRanking.NavigateToCorporateRanking();
+            TimeManager.MediumPause();
 
             //Repeat steps as above.•  Carbon Consumption Type can be selected correctly.
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            TimeManager.LongPause();
 
-
+            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.StandardCoal);
+            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
+            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
         }
 
         [Test]
@@ -197,15 +228,18 @@ namespace Mento.Script.EnergyView.CorporateRanking
         public void SelectUnitIndicatorType(CorporateRankingData input)
         {
             //Navigate to Energy Consumption Unit Indicator(单位能耗指标) module.•  Successfully navigate to the module.
+            UnitIndicator.NavigateToUnitIndicator();
+            TimeManager.LongPause();
 
             //Click Indicator Type dropdown list.
-
             //•  Display options as Unit Person, Unit Total Area, Unit Cooling Area, and Unit Heating Area in dropdown list.
             //•  ‘Unit Person’ option is selected by default.
-
             //Select one option.•  Set indicator type as selected option.
             //•  Current selected option should be highlighted.
-
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitArea);
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitCoolArea);
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitHeatArea);
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitPopulation);
         }
 
         [Test]
@@ -214,13 +248,16 @@ namespace Mento.Script.EnergyView.CorporateRanking
         public void SelectRatioIndicatorType(CorporateRankingData input)
         {
             //Navigate to Energy Ratio Indicator(时段能耗比) module.
+            RatioIndicator.NavigateToRatio();
+            TimeManager.MediumPause();
 
             //Click Ratio Type dropdown list.
             //•  Display options as Day/Night Ratio and Workday/NonWorkDay Ratio in dropdown list.
             //•  ‘Day/Night Ratio’ option is selected by default.
-
             //Select one option.•  Set ratio type as selected option.
             //•  Current selected option should be highlighted.
+            EnergyViewToolbar.SelectRadioTypeConvertTarget(RadioTypeConvertTarget.DayNightRadio);
+            EnergyViewToolbar.SelectRadioTypeConvertTarget(RadioTypeConvertTarget.WorkNonRadio);
         }
 
         [Test]
@@ -229,13 +266,18 @@ namespace Mento.Script.EnergyView.CorporateRanking
         public void SelectRankingType(CorporateRankingData input)
         {
             //Navigate to Corporate Ranking (集团排名) module.
+            CorporateRanking.NavigateToCorporateRanking();
+            TimeManager.MediumPause();
 
             //Click Ranking Type dropdown list.
-
             //•  Display options as Total Ranking, Unit Person Ranking, Unit Area Ranking, Unit Cooling Area Ranking and Unit Heating Area Ranking.
             //•  ‘Total Ranking’ option is selected by default.
-
             //Select one option.Set Ranking type as selected option.Current selected option should be highlighted.
+            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.AverageRank);
+            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
+            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.UnitAreaRank);
+            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.UnitCoolAreaRank);
+            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.UnitHeatAreaRank);
         }
 
     }

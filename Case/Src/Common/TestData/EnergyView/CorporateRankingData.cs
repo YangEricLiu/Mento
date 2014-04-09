@@ -16,6 +16,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public string[] SystemDimensionPath { get; set; }
 
+        public string[] AreaDimensionPath { get; set; }
+
         public string[] commodityNames { get; set; }
 
         public string[] failedFileName { get; set; }

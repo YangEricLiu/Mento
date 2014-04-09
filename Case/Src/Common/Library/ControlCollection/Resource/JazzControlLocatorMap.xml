@@ -72,7 +72,8 @@
             <add key="ButtonWidgetShare" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-sendcopy-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetRename" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-rename-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetEnjoy" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-share-tool')]/img" type="XPath"/>
-            <add key="ButtonHomepageToDashboard" value="//div[@id='map-canvas-container']/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Dashboard.Label.ToMainDashboard']]" type="XPath"/>
+            <add key="ButtonHomepageToDashboard" value="//div[@id='map-canvas-container']/div/div[contains(@class,'x-btn') and em/button/span[text()='仪表盘 >']]" type="XPath"/>
+            <!--<add key="ButtonHomepageToDashboard" value="//div[@id='map-canvas-container']/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Dashboard.Label.ToMainDashboard']]" type="XPath"/>-->
 
             <add key="ButtonDashboardFavorite" value="//div[@id='hp-dashboard-list-targetEl']/div[span[text()='$#nameIndex']]/span[@class='x-dsbd-btn-icon']" type="XPath"/>
             <add key="ButtonDashboardShare" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[1]/img" type="XPath"/>
@@ -154,7 +155,7 @@
 
         <!--Greenie modified at 2013.10.28-->
           <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[3]" type="XPath"/>
-          <add key="ButtonCountSelectorRanking" value="//div[@id='//div[contains(@id,'ordersizeselector')]/div/div/em/button[span[text()='$#nameIndex']]" type="XPath"/>
+          <add key="ButtonCountSelectorRanking" value="//div[contains(@id,'ordersizeselector')]/div/div/em/button[span[text()='$#nameIndex']]" type="XPath"/>
 
           <add key="TabButtonRankingTen" value="//div[contains(@id,'ordersizeselector')]//div[em/button/span[text()='$#nameIndex']]" type="XPath"/>
 
@@ -176,7 +177,8 @@
           <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
           <add key="ButtonEnergyViewAddTimeSpan" value="//div[contains(@id,'splitbutton') and em/button/span[text()='$@EM.AddCompareTime']]" type="XPath"/>
           <add key="ButtonEnergyViewRemoveAll" value="em-chartgrid-topbar-del" type="ID"/>
-          <add key="MenuButtonEnergyViewConvertTarget" value="//div[em/button/span[text()='$@Common.CarbonUomType.StandardCoal'] or em/button/span[text()='$@Common.CarbonUomType.CO2'] or em/button/span[text()='$@Common.CarbonUomType.Tree']]" type="XPath"/>
+          <add key="MenuButtonEnergyViewConvertTarget" value="//div[em/button/span[text()='标煤'] or em/button/span[text()='二氧化碳'] or em/button/span[text()='树']]" type="XPath"/>
+          <!--<add key="MenuButtonEnergyViewConvertTarget" value="//div[@id='em-content-center-region-body']/div/div/div/div[2]" type="XPath"/>-->
           <add key="ButtonEnergyViewPeakValley" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@EM.TouCompare']]" type="XPath"/>
           <add key="ButtonModifyWidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[3]" type="XPath"/>
           <add key="ModifyWidgetNameSaveButton" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>

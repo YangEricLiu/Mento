@@ -3,8 +3,12 @@
 		"InputData":
 		{	
 			"Industry":"酒店",
-			"ClimaticRegion":"严寒地区A区",
+			"ClimaticRegions":["严寒地区A区", "温和地区"],
 		},
-
+		"ExpectedData":
+		{	
+			"Industrys":["酒店"],
+			"ClimaticRegions":["严寒地区A区", "温和地区"],
+		}
 	}
 ]

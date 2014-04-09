@@ -49,19 +49,14 @@ namespace Mento.Script.EnergyView.CorporateRanking
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewCostRankingData), "TC-J1-FVT-CostRanking-View-101-1")]
         public void ViewTotalCostRankingData(CorporateRankingData input)
         {
-            
-            string[] noTagBuildingHierarchyNode= { "NancyCostCustomer2","RenameDashboardSuiteOrg","DeleteDashboardSuiteSite", "DeleteDashboardSuiteBuild"};
-            string[] extendHierarchyNode = { "NancyCostCustomer2", "组织A", "园区A"};
-            string[] notagHierarchyNode = { "NancyCostCustomer2", "MarkedDashboardSuiteOrg" };
-
             //Select the 楼宇A+楼宇B+楼宇C+楼宇D from Hierarchy Tree. 
             
             CorporateRanking.ClickSelectHierarchyButton();
             TimeManager.MediumPause();
-            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies);
-            CorporateRanking.OnlyCheckHierarchyNode(input.ExpectedData.Hierarchies);
-            CorporateRanking.OnlyCheckHierarchyNode(extendHierarchyNode1);
-            CorporateRanking.OnlyCheckHierarchyNode(extendHierarchyNode2);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[0]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[1]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[2]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[3]);
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -78,7 +73,8 @@ namespace Mento.Script.EnergyView.CorporateRanking
             
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[2]);
             TimeManager.LongPause();
-            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 2), new DateTime(2012, 7, 3));
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate); 
 
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -97,10 +93,9 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //·"楼宇B" and "楼宇D" can not attend ranking since they have not define cost for the tags they light.
             //use "DeleteDashboardSuiteBuild" instead  since this building have no tags.
-            CorporateRanking.CheckHierarchyNode(noTagBuildingHierarchyNode);
+            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[4]);
             CorporateRanking.ClickConfirmHiearchyButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
             TimeManager.MediumPause();
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.ClickViewButton();
@@ -115,7 +110,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Select 单项 Commodity=电 to view data.·Ranking chart display.
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
             TimeManager.LongPause();
-            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 2), new DateTime(2012, 7, 3));
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate); 
 
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -128,12 +123,12 @@ namespace Mento.Script.EnergyView.CorporateRanking
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2]);
             TimeManager.MediumPause();
-            //CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
             //Click Hierarchy tree to add 1 more hierarchy node NancyCostCustomer2/组织A/园区A
-            CorporateRanking.CheckHierarchyNode(extendHierarchyNode);
+            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[5]);
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -141,7 +136,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //select Commodity=电, to view data.
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
-            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 2), new DateTime(2012, 7, 3));
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate); 
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -153,7 +148,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3]);
             TimeManager.MediumPause();
-            //Assert.IsTrue(CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]));
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -180,69 +175,73 @@ namespace Mento.Script.EnergyView.CorporateRanking
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2]);
             TimeManager.MediumPause();
-            //Assert.IsTrue(CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]));
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
             //Change different time range to view data. 
-            //a. 2012/07/01 -2012/07/01    b. 2012/07/01 -2012/07/03 
-            //c. 2012/07/10-2012/08/05     d. 2012/01/01-2012/12/31 lastyear   e. 2011/01/01-2013/05/30
-            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 1), new DateTime(2012, 7, 1));
+            //a. 2012/07/01 -2012/07/01      
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate); 
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3]);
             TimeManager.MediumPause();
-            //Assert.IsTrue(CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]));
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 1), new DateTime(2012, 7, 3));
+            //b. 2012/07/01 -2012/07/03 
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate); 
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4]);
             TimeManager.MediumPause();
-            //Assert.IsTrue(CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]));
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 10), new DateTime(2012, 8, 5));
+            //c. 2012/07/10-2012/08/05 
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5]);
             TimeManager.MediumPause();
-            //Assert.IsTrue(CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]));
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            EnergyViewToolbar.SetDateRange(new DateTime(2012, 1, 1), new DateTime(2012, 12, 31));
+            //d. 2012/01/01-2012/12/31 lastyear 
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[4].StartDate, ManualTimeRange[4].EndDate);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6]);
             TimeManager.MediumPause();
-            //Assert.IsTrue(CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]));
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            EnergyViewToolbar.SetDateRange(new DateTime(2011, 1, 1), new DateTime(2013, 5, 30));
+            //e. 2011/01/01-2013/05/30
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[5].StartDate, ManualTimeRange[5].EndDate);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[7]);
             TimeManager.MediumPause();
-            //Assert.IsTrue(CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]));
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
             //楼宇C's population property is 201301.time range="2012/07/02 -2012/07/03",Change Ranking type=人均排名 to view chart.
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate); 
             EnergyViewToolbar.ClickRankTypeConvertTarget();
             EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.AverageRank);
             TimeManager.ShortPause();
@@ -251,14 +250,13 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
             //@@@@@@@@@@@@@@@@@@@@@@2
-            /*
+            
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8]);
             TimeManager.MediumPause();
-            //Assert.IsTrue(CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]));
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
             TimeManager.LongPause();
             TimeManager.LongPause();
-             */
         }
 
 
@@ -270,8 +268,8 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Select 楼宇A+楼宇B+楼宇C, time range 2012/07/02 -2012/08/03, Commodity=电, Ranking type="单位面积" to view data.
             CorporateRanking.ClickSelectHierarchyButton();
             TimeManager.MediumPause();
-            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies);
-            CorporateRanking.OnlyCheckHierarchyNode(input.ExpectedData.Hierarchies);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[0]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[1]);
             CorporateRanking.OnlyCheckHierarchyNode(extendHierarchyNode1);
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -288,7 +286,8 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
             TimeManager.LongPause();
-            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 2), new DateTime(2012, 7, 3));
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate); 
 
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -305,7 +304,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0]);
             TimeManager.MediumPause();
-            //CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -324,18 +323,15 @@ namespace Mento.Script.EnergyView.CorporateRanking
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewCostRankingData), "TC-J1-FVT-CostRanking-View-101-3")]
         public void ViewUnitAreaCoalRankingData(CorporateRankingData input)
         {
-            string[] extendNodes = { "NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight" };
-            string[] extendNodes2 = { "NancyOtherCustomer3", "NancyNoCalendarSite", "BuildingNoCalendarNoCost" };
             //Go to NancyOtherCustomer3. Go to Function "Corporate Ranking". 
             JazzFunction.HomePage.SelectCustomer("NancyOtherCustomer3");
             CorporateRanking.NavigateToCorporateRanking();
             TimeManager.LongPause();
 
             //Select the BuildingCostYearToDay from Hierarchy Tree. 
-            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies);
+            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[0]);
             CorporateRanking.ClickConfirmHiearchyButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
             TimeManager.LongPause();
 
             //Click Function Type button, select Cost, Commodity=煤, predefined time range="2012/06/01-2013/07/01" to view chart.
@@ -345,8 +341,8 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
-
-            EnergyViewToolbar.SetDateRange(new DateTime(2012, 6, 1), new DateTime(2013, 7, 1));
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate); 
             EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.AverageRank);
             TimeManager.ShortPause();
 
@@ -368,7 +364,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Check 1 more the BuildingNoTag from Hierarchy Tree, Commodity=煤, click to view chart.
-            CorporateRanking.CheckHierarchyNode(input.ExpectedData.Hierarchies);
+            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[1]);
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -399,7 +395,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Click Hierarchy tree to add 1 more Building node BuildingDayNight to view Ranking.  
-            CorporateRanking.CheckHierarchyNode(extendNodes);
+            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[2]);
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -407,7 +403,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //Commodity=电, predefined time range="2012/06/01-2013/07/01"，ranking type="总排名" to view chart.
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[1]);
-            EnergyViewToolbar.SetDateRange(new DateTime(2012, 6, 1), new DateTime(2013, 7, 1));
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate); 
             EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
             TimeManager.ShortPause();
             EnergyViewToolbar.ClickViewButton();
@@ -437,10 +433,9 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //Click Hierarchy tree to add 1 more Building node BuildingNoCalendarNoCost
             //Commodity=电, predefined time range="2012/06/01-2013/07/01"，ranking type="总排名" to view chart.
-            CorporateRanking.CheckHierarchyNode(extendNodes2);
+            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[3]);
             CorporateRanking.ClickConfirmHiearchyButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
             TimeManager.LongPause();
 
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
@@ -471,11 +466,10 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Select the BuildingConvertStandardUOM and BuildingRanking50 from Hierarchy Tree. 
-            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies);
-            CorporateRanking.OnlyCheckHierarchyNode(input.ExpectedData.Hierarchies);
+            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[0]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[1]);
             CorporateRanking.ClickConfirmHiearchyButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
             TimeManager.LongPause();
 
             //Click Function Type button, select Cost, Commodity=柴油, time range=2013/01/01-2013/01/03 to view chart.
@@ -486,7 +480,8 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
 
-            EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 3));
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
@@ -513,19 +508,16 @@ namespace Mento.Script.EnergyView.CorporateRanking
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewCostRankingData), "TC-J1-FVT-CostRanking-View-101-5")]
         public void ViewNullTestBuildingData(CorporateRankingData input)
         {
-            string[] extendNodes = { "NancyOtherCustomer3", "NancyOtherSite", "BuildingConvertStandardUOM" };
-            string[] extendNodes2 = { "NancyOtherCustomer3", "NancyNoCalendarSite", "BuildingNoCalendarNoCost" };
             //Go to NancyOtherCustomer3. Go to Function "Corporate Ranking". 
             JazzFunction.HomePage.SelectCustomer("NancyOtherCustomer3");
             CorporateRanking.NavigateToCorporateRanking();
             TimeManager.LongPause();
 
             //Select the BuildingNullTest from Hierarchy Tree.  
-             CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies);
+             CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[0]);
 
             CorporateRanking.ClickConfirmHiearchyButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
             TimeManager.LongPause();
 
             //Click Ranking Type button, select Cost, check Commodity=电,rank type="总排名"，
@@ -537,7 +529,8 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
 
             //time range="今年"/2013/01/01-2013/01/07, to view data.
-            EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 7));
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
@@ -555,7 +548,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
             TimeManager.LongPause();
             TimeManager.LongPause();
-
 
             //check Commodity=电,rank type="单位面积"，time range="今年"/2013/01/01-2013/01/07, to view data.
             EnergyViewToolbar.ClickRankTypeConvertTarget();
@@ -571,10 +563,8 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //· Ranking chart display successfully.
-            Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
-           
+            Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());   
          }
-
 
         [Test]
         [CaseID("TC-J1-FVT-CostRanking-View-101-6")]
@@ -587,24 +577,22 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Select the BuildingCostYeartoday from Hierarchy Tree.  
-            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies);
+            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[0]);
             CorporateRanking.ClickConfirmHiearchyButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
             TimeManager.LongPause();
 
             //Commodity=电,rank type="总能耗"
-            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
-            
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);      
             TimeManager.ShortPause();
 
             //Time range="2010/01/01-2012/12/31 to view data.
-            EnergyViewToolbar.SetDateRange(new DateTime(2010, 1, 1), new DateTime(2012,12,31));
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
-
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -619,7 +607,5 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
             TimeManager.LongPause();
         }
-
     }
-
 }

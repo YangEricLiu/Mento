@@ -21,7 +21,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Grid CommodityRank = JazzGrid.CommodityRankGrid;
         //private static Grid CommodityRankCarbon = JazzGrid.CommodityRankCarbonGrid;
         //private static Grid CommodityRankCost = JazzGrid.CommodityRankCostGrid;
-        private static Button CommodityRankTen = JazzButton.CountSelectorRankingButtonTen;
+        //private static Button CommodityRankTen = JazzButton.CountSelectorRankingButtonTen;
         private static Grid SystemCommodityRank = JazzGrid.SystemCommodityRankCostGrid;
 
         //Select rank tree
@@ -207,6 +207,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickTenRankButton()
         {
+            Button CommodityRankTen = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonCountSelectorRanking, "10");
+
             CommodityRankTen.Click();
         }
 

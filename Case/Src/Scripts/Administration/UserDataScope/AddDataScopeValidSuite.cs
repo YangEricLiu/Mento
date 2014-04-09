@@ -345,8 +345,8 @@ namespace Mento.Script.Administration.UserDataScope
         }
         /*
         [Test]
-        [CaseID("TC-J1-FVT-UserDataScope-Add-101-Industry0")]
-        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-9")]
+        [CaseID("TC-J1-FVT-UserDataScope-Add-101-10")]
+        [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddDataScopeValidSuite), "TC-J1-FVT-UserDataScope-Add-101-10")]
         public void AllHierarchyCheckedNewCreated(UserDataPermissionData input)
         {
             

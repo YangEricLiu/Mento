@@ -385,6 +385,7 @@
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-101-ModifyValidAreaNode.json" />
     <None Include="Data\Customer\HierarchyConfiguration\ModifyValidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Modify-101-5.json" />
     <None Include="Data\Customer\HierarchyConfiguration\PerfAddHierarchysSuite\TC-J1-FVT-Hierarchy-Perf-101-1.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\PerformanceModifyBuildSuite\TC-J1-FVT-PerformanceHierarchy-Modify-101-1.json" />
     <None Include="Data\Customer\HierarchyConfiguration\SmokeTestHierarchySuite\TA-Hierarchy-002.json" />
     <None Include="Data\Customer\HierarchyConfiguration\SmokeTestHierarchySuite\TA-Hierarchy-003.json" />
     <None Include="Data\Customer\HierarchyConfiguration\SmokeTestHierarchySuite\TC-J1-SmokeTest-Hierarchy-001.json" />
@@ -401,6 +402,7 @@
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Add-001-3.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Add-001-2.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Add-001-1.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPerformanceSuite\TC-J1-FVT-CostPerformance-Elec-Add-101-1.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPropertySuite\TC-J1-FVT-CostConfiguration-Elec-Add-101-4.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPropertySuite\TC-J1-FVT-CostConfiguration-Elec-Add-001-6.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddElecCostPropertySuite\TC-J1-FVT-CostConfiguration-Elec-Add-001-5.json" />
@@ -597,9 +599,9 @@
     <None Include="Data\EnergyView\CorporateRanking\CalculateCostRanking\TC-J1-FVT-CostRanking-Calculate-101-3.json" />
     <None Include="Data\EnergyView\CorporateRanking\CalculateCostRanking\TC-J1-FVT-CostRanking-Calculate-101-2.json" />
     <None Include="Data\EnergyView\CorporateRanking\CalculateCostRanking\TC-J1-FVT-CostRanking-Calculate-101-1.json" />
-    <None Include="Data\EnergyView\CorporateRanking\SelectCommodityForRanking\TC-J1-FVT-SelectCommodityForRanking-101-3.json" />
-    <None Include="Data\EnergyView\CorporateRanking\SelectCommodityForRanking\TC-J1-FVT-SelectCommodityForRanking-101-2.json" />
     <None Include="Data\EnergyView\CorporateRanking\SelectCommodityForRanking\TC-J1-FVT-SelectCommodityForRanking-101-1.json" />
+    <None Include="Data\EnergyView\CorporateRanking\SelectCommodityForRanking\TC-J1-FVT-SelectCommodityForRanking-101-2.json" />
+    <None Include="Data\EnergyView\CorporateRanking\SelectCommodityForRanking\TC-J1-FVT-SelectCommodityForRanking-101-3.json" />
     <None Include="Data\EnergyView\CorporateRanking\ViewCarbonRankingData\TC-J1-FVT-CarbonRanking-View-101-3.json" />
     <None Include="Data\EnergyView\CorporateRanking\ViewCarbonRankingData\TC-J1-FVT-CarbonRanking-View-101-4.json" />
     <None Include="Data\EnergyView\CorporateRanking\ViewCarbonRankingData\TC-J1-FVT-CarbonRanking-View-101-5.json" />

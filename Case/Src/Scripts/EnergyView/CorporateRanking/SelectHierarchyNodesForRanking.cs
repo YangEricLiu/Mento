@@ -58,11 +58,11 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //•  Customer node is disabled for selection.  
 
             //•  Check the hierarchy node in checkbox.Uncheck one hierarchy node.
-            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies);
-            Assert.IsTrue(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies.Last()));
-            CorporateRanking.OnlyUnCheckHierarchyNode(input.InputData.Hierarchies);
-            Assert.IsFalse(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies.Last()));
-            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[0]);
+            Assert.IsTrue(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies[0].Last()));
+            CorporateRanking.OnlyUnCheckHierarchyNode(input.InputData.Hierarchies[0]);
+            Assert.IsFalse(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies[0].Last()));
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[0]);
             //Click '确定' button.
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -77,13 +77,13 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            Assert.IsTrue(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies.Last()));
-            Assert.IsFalse(CorporateRanking.IsHierarchyNodeChecked("园区测试多层级"));
+            Assert.IsTrue(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies[0].Last()));
+            Assert.IsFalse(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies[0][1]));
 
             //Click '清空' button.
             CorporateRanking.ClickClearHiearchyButton();
             //•  All hierarchy nodes are unchecked.The popup of hierarchy tree is still displayed.
-            Assert.IsFalse(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies.Last()));
+            Assert.IsFalse(CorporateRanking.IsHierarchyNodeChecked(input.InputData.Hierarchies[0].Last()));
 
             //Click '确定' button.
             //•  The hierarchy tree is hidden.NO Total Consumption option and NO Commodities options displayed.
@@ -108,7 +108,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Display Hierarchy Tree Selector.Display tag selector which support tags under hierarchy node, system node, and area node.
 
             Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(),"能耗");
-            UnitIndicator.SelectHierarchy(input.InputData.Hierarchies);
+            UnitIndicator.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 

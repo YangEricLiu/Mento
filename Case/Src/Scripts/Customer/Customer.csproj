@@ -55,6 +55,7 @@
     <Compile Include="HierarchyConfiguration\AddValidAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\AssociateSytemDimension.cs" />
     <Compile Include="HierarchyConfiguration\AddInvalidAreaDimension.cs" />
+    <Compile Include="HierarchyConfiguration\PerformanceModifyBuildSuite.cs" />
     <Compile Include="HierarchyConfiguration\DeleteAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\ModifyInvalidAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\ModifyValidAreaDimension.cs" />
@@ -67,6 +68,8 @@
     <Compile Include="HierarchyPropertyConfiguration\AddInvalidPeopleAreaPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddCalendarPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddElecCostPropertySuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AddElecCostPerformanceSuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AddPerformancePeopleAreaSuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\ModifyElecCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\ModifyOtherCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\ModifyCalendarPropertySuite.cs" />

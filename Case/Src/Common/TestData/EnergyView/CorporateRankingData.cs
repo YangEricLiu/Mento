@@ -12,7 +12,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
     public class RankingInput : InputTestDataBase
     { 
-        public string[] Hierarchies { get; set; }
+        public string[][] Hierarchies { get; set; }
 
         public string[] SystemDimensionPath { get; set; }
 
@@ -29,7 +29,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
     public class RankingOutput : ExpectedTestDataBase
     {
-        public string[] Hierarchies { get; set; }
+        public string[][] Hierarchies { get; set; }
         public string[] expectedFileName { get; set; }
         public string ClearAllMessage { get; set; }
         public string QuitMultipleMessage { get; set; }

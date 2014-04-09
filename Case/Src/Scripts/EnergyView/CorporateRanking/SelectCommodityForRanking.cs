@@ -50,11 +50,10 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Click Hierarchy Node Selector to select multiple hierarchy nodes, click 确定.
             CorporateRanking.ClickSelectHierarchyButton();
             TimeManager.LongPause();
-            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies);
-            CorporateRanking.OnlyCheckHierarchyNode(input.ExpectedData.Hierarchies);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[0]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[1]);
             CorporateRanking.ClickConfirmHiearchyButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
             TimeManager.LongPause();
 
             //Take Cost function type for example to verify below steps.
@@ -65,7 +64,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //•  Display Total Consumption and all available Commodities under all selected hierarchy nodes with Radio Button.
             //•  In default, No any option is selected. 
-            //Assert.IsTrue(CorporateRanking.AreCommoditiesOnTheGrid(input.InputData.commodityNames));
             int i = 0;
             while (i < input.InputData.commodityNames.Length)
             {
@@ -86,13 +84,10 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //Click System Dimension tab.Click System Dimension Node Selector.
             CorporateRanking.SwitchSystemDimensionTab();
-            TimeManager.ShortPause();
-            //CorporateRanking.ClickSelectSystemDimensionButton();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
             //•  Popup a system dimension tree which contains all available system dimension nodes under all selected hierarchy nodes.
             //•  In default, No any system dimension node is selected.Root node of System Dimension tree cannot be selected.
             //    not finish here
-            //Assert.IsTrue(CorporateRanking.IsNodeDisabled(input.InputData.Hierarchies.First()));
 
             //Select one system dimension node.
             CorporateRanking.SelectSystemDimensionNode(input.InputData.SystemDimensionPath);
@@ -101,7 +96,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //•  Display Total Consumption and all available commodities under all selected hierarchy nodes with same dimension node with radio button.
             //•  In default, No any option is selected.
-            //CorporateRanking.AreCommoditiesOnTheGrid(input.ExpectedData.commodityNames);
             int j = 0;
             while (j < input.InputData.commodityNames.Length)
             {
@@ -112,8 +106,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             }
 
             Assert.IsFalse(CorporateRanking.IsCommoditySelected(input.InputData.commodityNames[0]));
-            TimeManager.ShortPause();
-            //Assert.IsFalse(CorporateRanking.IsCommoditySelected(input.InputData.commodityNames[1]));
             TimeManager.ShortPause();
             Assert.IsFalse(CorporateRanking.IsCommoditySelected(input.InputData.commodityNames[2]));
             TimeManager.ShortPause();
@@ -142,11 +134,10 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Click Hierarchy Node Selector to select multiple hierarchy nodes, click 确定.
             CorporateRanking.ClickSelectHierarchyButton();
             TimeManager.LongPause();
-            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies);
-            CorporateRanking.OnlyCheckHierarchyNode(input.ExpectedData.Hierarchies);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[0]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[1]);
             CorporateRanking.ClickConfirmHiearchyButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
             TimeManager.LongPause();
 
             //2.Take carbon  function type for example to verify below steps.
@@ -156,8 +147,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //•  Display Total Consumption and all available Commodities under all selected hierarchy nodes with Radio Button.
             //•  In default, No any option is selected. 
-            //Assert.IsTrue(CorporateRanking.AreCommoditiesOnTheGrid(input.InputData.commodityNames));
-
             int k = 0;
             while (k < input.InputData.commodityNames.Length)
             {
@@ -190,11 +179,10 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Click Hierarchy Node Selector to select multiple hierarchy nodes, click 确定.
             CorporateRanking.ClickSelectHierarchyButton();
             TimeManager.LongPause();
-            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies);
-            CorporateRanking.OnlyCheckHierarchyNode(input.ExpectedData.Hierarchies);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[0]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[1]);
             CorporateRanking.ClickConfirmHiearchyButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
             TimeManager.LongPause();
 
             //3. Repeat above verifications for Energy  function type.
@@ -204,8 +192,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //•  Display Total Consumption and all available Commodities under all selected hierarchy nodes with Radio Button.
             //•  In default, No any option is selected. 
-            //Assert.IsTrue(CorporateRanking.AreCommoditiesOnTheGrid(input.InputData.commodityNames));
-            TimeManager.ShortPause();
             Assert.IsFalse(CorporateRanking.IsCommodityOnRankingPanel(input.InputData.commodityNames[0]));
             Assert.IsTrue(CorporateRanking.IsCommodityOnRankingPanel(input.InputData.commodityNames[1]));
             Assert.IsTrue(CorporateRanking.IsCommodityOnRankingPanel(input.InputData.commodityNames[2]));
@@ -232,8 +218,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //•  Popup a system dimension tree which contains all available system dimension nodes under all selected hierarchy nodes.
             //•  In default, No any system dimension node is selected.Root node of System Dimension tree cannot be selected.
             //    not finish here
-            //Assert.IsTrue(CorporateRanking.IsNodeDisabled(input.InputData.Hierarchies.First()));
-
             //Select one system dimension node.
             CorporateRanking.SelectSystemDimensionNode(input.InputData.SystemDimensionPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -241,7 +225,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //•  Display Total Consumption and all available commodities under all selected hierarchy nodes with same dimension node with radio button.
             //•  In default, No any option is selected.
-            //CorporateRanking.AreCommoditiesOnTheGrid(input.ExpectedData.commodityNames);
             int l = 1;
             Assert.IsFalse(CorporateRanking.IsCommodityOnRankingPanel(input.InputData.commodityNames[0]));
             Assert.IsFalse(CorporateRanking.IsCommodityOnRankingPanel("准确"));

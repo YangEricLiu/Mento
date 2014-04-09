@@ -111,14 +111,12 @@ namespace Mento.Script.Administration.IndustryBenchmark
 
             //· checked区域=全部地区 and other regions are unchecked.
             Assert.IsTrue(IndustryBenchmarkSetting.AreClimateRegionsChecked(input.InputData.ClimaticRegions));
-            Assert.IsTrue(IndustryBenchmarkSetting.AreClimateRegionsUnChecked(input.ExpectedData.Industrys));
 
             //Click save directly without modification.
             //· Go to view status and the 行业=全行业 and checked 区域=全部地区 display.
             IndustryBenchmarkSetting.ClickSaveBenchMark();
             TimeManager.ShortPause();
             Assert.IsTrue(IndustryBenchmarkSetting.AreClimateRegionsChecked(input.InputData.ClimaticRegions));
-            Assert.IsTrue(IndustryBenchmarkSetting.AreClimateRegionsUnChecked(input.ExpectedData.Industrys));
         }
         #endregion
     }

@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2","组织A","园区B","楼宇C"],["NancyCostCustomer2","组织B","园区C","楼宇D"]],
+			"commodityNames":["介质总览","电","自来水","煤"],
+			"SystemDimensionPath":["系统维度","空调"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

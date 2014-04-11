@@ -168,13 +168,14 @@ namespace Mento.Script.Administration.UserDataScope
             //Check "全部平台客户及对应数据权限"
             UserDataPermissionSettings.CheckAllCustomerDatas();
             Assert.IsTrue(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
-            Assert.IsTrue(UserDataPermissionSettings.IsAllDataCheckboxChecked());
             UserDataPermissionSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
             // verify 
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
             Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            UserDataPermissionSettings.CloseTreeWindow();
+            TimeManager.ShortPause();
         }
 
         [Test]

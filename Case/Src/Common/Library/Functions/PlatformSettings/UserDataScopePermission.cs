@@ -118,10 +118,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void CheckAllCumstomerNames()
         {
-            //CustomerNames.Click();
             TimeManager.MediumPause();
             CustomerNames.Click();
-            //TimeManager.LongPause();
+            TimeManager.LongPause();
             //CustomerNameLinkButton.Click();
         }
 
@@ -325,7 +324,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public Boolean CheckHierarchySiteNode(string[] hierarchFullNodePaths)
         {
-             string[] sitePath = new string[hierarchFullNodePaths.Length];
+             string[] sitePath = new string[hierarchFullNodePaths.Length - 1];
              Array.Copy(hierarchFullNodePaths,sitePath,3);
             try
             {
@@ -548,8 +547,10 @@ namespace Mento.ScriptCommon.Library.Functions
             try
             {
                 TimeManager.LongPause();
-                UserDataPermissionTree.ExpandNodePath(orzPath);
+                //UserDataPermissionTree.ExpandNodePath(orzPath);
+                UserDataPermissionTree.ExpandNodePath(hierarchNodePaths);
                 return UserDataPermissionTree.IsNodeChecked(orzPath.Last());
+                //return UserDataPermissionTree.IsNodeChecked(hierarchNodePaths[hierarchNodePaths.Length - 3]);
             }
             catch (Exception)
             {

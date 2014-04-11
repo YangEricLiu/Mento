@@ -35,7 +35,9 @@ namespace Mento.Script.Administration.UserDataScope
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            //JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            JazzFunction.LoginPage.RefreshJazz("“云能效”系统管理");
+            TimeManager.LongPause();
         }
 
         [Test]
@@ -76,7 +78,7 @@ namespace Mento.Script.Administration.UserDataScope
         [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(ModifyMultiCustomerSuite), "TC-J1-FVT-UserDataScope-Modify-101-2")]
         public void ModifyMultiCustomer(UserDataPermissionData input)   
         {
-            // Focus on an exist userA, open datascope tab.
+            // Focus on an exist UserForMultiCustomer, open datascope tab.
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
@@ -112,14 +114,10 @@ namespace Mento.Script.Administration.UserDataScope
              UserDataPermissionSettings.ClickSaveButton();
              JazzMessageBox.LoadingMask.WaitLoading();
              TimeManager.LongPause();
-
-            // View the data permission  
-             //Assert.IsTrue(UserDataPermissionSettings.IsCustomerView(input.InputData.CustomerList[0]));
-             //Assert.IsTrue(UserDataPermissionSettings.IsCustomerView(input.InputData.CustomerList[Industry]));
-             //Assert.IsTrue(UserDataPermissionSettings.IsCustomerView(input.InputData.CustomerList[2]));
-             //Assert.IsFalse(UserDataPermissionSettings.IsCustomerView(input.InputData.CustomerList[3]));
              
             // view customer A 
+             UserDataPermissionSettings.ClickModifyButton();
+             TimeManager.LongPause();
              UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[0]);
              TimeManager.MediumPause();
              Assert.IsTrue(UserDataPermissionSettings.IsHierarchOrzNodeChecked(input.InputData.HierarchyNodePath));
@@ -128,24 +126,32 @@ namespace Mento.Script.Administration.UserDataScope
              UserDataPermissionSettings.CloseTreeWindow();
 
              // view customer B 
-             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[0]);
-             //Assert.IsFalse(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.ExpectedData.HierarchyNodePath));
-             Assert.IsTrue(UserDataPermissionSettings.IsHierarchOrzNodeChecked(input.ExpectedData.HierarchyNodePath));
-             Assert.IsTrue(UserDataPermissionSettings.IsHierarchCustomerNodeChecked(input.ExpectedData.HierarchyNodePath));
+             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[1]);
+             Assert.IsTrue(UserDataPermissionSettings.IsHierarchSiteNodeChecked(input.ExpectedData.HierarchyNodePath));
+             Assert.IsFalse(UserDataPermissionSettings.IsHierarchOrzNodeChecked(input.ExpectedData.HierarchyNodePath));
+             Assert.IsFalse(UserDataPermissionSettings.IsHierarchCustomerNodeChecked(input.ExpectedData.HierarchyNodePath));
              UserDataPermissionSettings.CloseTreeWindow();
             // Tag association@@@@@@@@@@@@@@@@@@@  not finish
 
+             //Save 
+             UserDataPermissionSettings.ClickCancelButton();
+             JazzMessageBox.LoadingMask.WaitLoading();
+             TimeManager.LongPause();
+
             // Check 客户名称 to check all the customerr names
+             UserDataPermissionSettings.ClickModifyButton();
+             TimeManager.LongPause();
+             TimeManager.LongPause();
              UserDataPermissionSettings.CheckAllCumstomerNames();
              UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerList[2]);
-             UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.ExpectedData.HierarchyNodePath);
+             Assert.IsFalse(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePathsArray[0]));
+             UserDataPermissionSettings.CloseTreeWindow();
+             TimeManager.ShortPause();
              UserDataPermissionSettings.ClickSaveButton();
              JazzMessageBox.LoadingMask.WaitLoading();
              TimeManager.ShortPause();
-             Assert.IsFalse(UserDataPermissionSettings.IsAllCustomerNamesButtonEnable());
              Assert.IsFalse(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
             // @@@@@@@@@@@@@@@@@@@@@@@@@ check null  hierarchy node
-
         }
 
         [Test]
@@ -334,9 +340,9 @@ namespace Mento.Script.Administration.UserDataScope
             TimeManager.LongPause();
             //Click 查看数据权限 of customerD.
             UserDataPermissionSettings.ClickEditDataPermission(input.InputData.CustomerName);
-            UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.CustomerList);
-            UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath);
-            UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.ExpectedData.HierarchyNodePath);
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.CustomerList));
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.InputData.HierarchyNodePath));
+            Assert.IsTrue(UserDataPermissionSettings.AreAllHierarchyNodesChecked(input.ExpectedData.HierarchyNodePath));
             UserDataPermissionSettings.CloseTreeWindow();
         }
 

@@ -816,7 +816,7 @@
 
       <add key="WidgetSaveHierarchyTree" value="//div[contains(@id, 'hierarchytreepanel') and contains(@class, 'x-panel-body-default')]/div/table" type="XPath"/>
 
-      <add key="DataPermissionHierarchyTree" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-panel-body')]//div//table" type="XPath"/>
+      <add key="DataPermissionHierarchyTree" value="//div[contains(@id,'datapermissiontreewindow')]//div[contains(@class,'x-panel-body')]/div/table" type="XPath"/>
 
       <add key="AllDashboardsTree" value="//div[@id='hp-hier-tree-body']/div/table" type="XPath"/>
       <add key="MultipleHierarchyTree" value="//div[@id='em-multi-hier-tree-body']/div/table" type="XPath"/>

@@ -17,6 +17,7 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string CustomerName { get; set; }
         public string[] CustomerList { get; set; }
         public string[] HierarchyNodePath { get; set; }
+        public string[][] HierarchyNodePathsArray { get; set; }
     }
     public class DataPermissionExpectedData : ExpectedTestDataBase
         {

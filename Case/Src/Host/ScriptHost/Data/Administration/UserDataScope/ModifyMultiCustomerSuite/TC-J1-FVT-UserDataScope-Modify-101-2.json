@@ -6,6 +6,7 @@
 			"CustomerList":["customerA","customerB","customerC","customerD"],
 			"CustomerName":"customerC",
 			"HierarchyNodePath":["customerA","organizationA","siteA","buildingA"],
+			"HierarchyNodePathsArray":[["customerC"]],
 		},
 		"ExpectedData":
 		{

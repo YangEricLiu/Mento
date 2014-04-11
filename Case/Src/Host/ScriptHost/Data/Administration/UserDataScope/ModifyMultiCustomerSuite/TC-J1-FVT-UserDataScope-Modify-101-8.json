@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"UserName":"UserForCheckNodetree",
-			"CustomerList":["customerD","organizationA","siteA","buildingC"],
+			"CustomerList":["customerD","organizationA","siteB","buildingC"],
 			"CustomerName":"customerD",
 			"HierarchyNodePath":["customerD","organizationA","siteA","buildingA"],
 		},

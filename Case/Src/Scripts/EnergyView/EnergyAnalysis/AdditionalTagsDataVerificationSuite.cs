@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// 
     /// </summary>
     [TestFixture]
+    [Ignore("ignore")]
     [ManualCaseID("TC-J1-FVT-AdditionalTagsDataVerification-DataView-101"), CreateTime("2013-12-25"), Owner("Cathy")]
     public class AdditionalTagsDataVerificationSuite : TestSuiteBase
     {
@@ -34,10 +35,14 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
 
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.LongPause();
+            //HomePagePanel.SelectCustomer("NancyCustomer1");
+            //TimeManager.LongPause();
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;

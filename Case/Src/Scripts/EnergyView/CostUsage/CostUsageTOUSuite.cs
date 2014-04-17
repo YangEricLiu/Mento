@@ -38,6 +38,11 @@ namespace Mento.Script.EnergyView.CostUsage
             //JazzFunction.Navigator.NavigateHome();
             JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
+
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         private static CostPanel CostUsage = JazzFunction.CostPanel;

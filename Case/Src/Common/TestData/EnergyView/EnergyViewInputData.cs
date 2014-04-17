@@ -44,6 +44,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] expectedFileName { get; set; }
         public string ClearAllMessage { get; set; }
         public string QuitMultipleMessage { get; set; }
+        public string Last7DaysValue { get; set; }
+        public string LastMonthValue { get; set; }
     }
 
 

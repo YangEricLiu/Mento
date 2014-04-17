@@ -352,6 +352,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 TimeManager.LongPause();
 
                 //Load data view and get data table
+
                 DataTable data = GetAllData();
 
                 //Export to excel
@@ -547,7 +548,70 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #endregion
-    
+
+        #region predefined time data verification
+
+        private string[] GetDataRange()
+        {
+            DataTable data = GetAllData();
+            var list = new List<string>();
+
+            int rangeLength = data.Rows.Count;
+
+            for (int i = rangeLength - 1; i >= 0; i--)
+            {
+                list.Add(data.Rows[i][1].ToString());
+            }
+
+            return list.ToArray();
+        }
+
+        public bool IsLast7DaysDataCorrect(string expectedValue)
+        {
+            var values = GetDataRange();
+            int correctNum = 0;
+
+            foreach (var value in values)
+            {
+                if (String.Equals(expectedValue, value))
+                {
+                    correctNum++;
+                }
+            }
+
+            return correctNum > 1;
+        }
+
+        public bool IsLastMonthMonthlyDataCorrect(string expectedValue)
+        {
+            var values = GetDataRange();
+
+            if (values.Length == 1)
+            {
+                throw new Exception("今年只有一个月，请手动验证去年12月的值");
+            }
+
+            return String.Equals(expectedValue, values[1]);
+        }
+
+        public bool IsLastMonthDailyDataCorrect(string expectedValue)
+        {
+            var values = GetDataRange();
+            int correctNum = 0;
+
+            foreach (var value in values)
+            {
+                if (String.Equals(expectedValue, value))
+                {
+                    correctNum++;
+                }
+            }
+
+            return correctNum == 27;
+        }
+
+        #endregion
+
     }
 
     public enum TagTabs { HierarchyTag, SystemDimensionTab, AreaDimensionTab, }

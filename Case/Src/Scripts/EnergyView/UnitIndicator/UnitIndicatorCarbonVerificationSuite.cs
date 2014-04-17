@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     /// 
     /// </summary>
     [TestFixture]
+    [Ignore("ignore")]
     [ManualCaseID("TC-J1-FVT-UnitIndicatorCarbonVerification-101"), CreateTime("2013-12-26"), Owner("Emma")]
     public class UnitIndicatorCarbonVerificationSuite : TestSuiteBase
     {
@@ -34,9 +35,13 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            
+            //HomePagePanel.SelectCustomer("NancyCustomer1");
+            //TimeManager.MediumPause();
+            HomePagePanel.ExitJazz();
 
-            HomePagePanel.SelectCustomer("NancyCustomer1");
+            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
             TimeManager.MediumPause();
         }
 

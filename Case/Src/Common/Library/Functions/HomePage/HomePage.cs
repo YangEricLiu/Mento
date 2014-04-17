@@ -567,6 +567,13 @@ namespace Mento.ScriptCommon.Library.Functions
             WidgetNameMin.Float();
         }
 
+        public void ClickOnWidget(string name)
+        {
+            Label WidgetNameMin = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelWidgetNameMin, name);
+
+            WidgetNameMin.Click();
+        }
+
         public void FloatOnEditCommentButton(string name)
         {
             Label WidgetMinAnnotationIcon = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelWidgetMinAnnotationIcon, name);
@@ -594,9 +601,7 @@ namespace Mento.ScriptCommon.Library.Functions
             FloatOnWidget(name);
             TimeManager.ShortPause();
 
-            Button maxButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWidgetMax, name);
-
-            maxButton.Click();
+            ClickOnWidget(name);
         }
 
         public void RenameWidgetOpen(string name)

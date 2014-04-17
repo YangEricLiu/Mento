@@ -67,5 +67,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             ElementHandler.Float(this.RootElement);
         }
+
+        public void Click()
+        {
+            ElementHandler.Click(this.RootElement);
+        }
+
+        public void DoubleClick()
+        {
+            ElementHandler.DoubleClick(this.RootElement);
+        }
     }
 }

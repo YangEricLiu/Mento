@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"commodityNames":["电"],
+		},
+		"ExpectedData":
+		{
+			"Last7DaysValue":"840",
+			"LastMonthValue":"22,960",
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区B", "楼宇C"],
+			"commodityNames":["电"],
+		},
+		"ExpectedData":
+		{
+			"Last7DaysValue":"2,520",
+			"LastMonthValue":"68,880",
+		}
+	}
+]

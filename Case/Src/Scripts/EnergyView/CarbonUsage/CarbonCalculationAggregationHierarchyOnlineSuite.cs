@@ -34,9 +34,13 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
 
-            HomePagePanel.SelectCustomer("NancyCustomer1");
+            //HomePagePanel.SelectCustomer("NancyCustomer1");
+            //TimeManager.MediumPause();
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
             TimeManager.MediumPause();
         }
 

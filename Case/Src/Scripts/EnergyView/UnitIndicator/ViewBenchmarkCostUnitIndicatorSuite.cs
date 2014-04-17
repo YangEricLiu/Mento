@@ -36,6 +36,11 @@ namespace Mento.Script.EnergyView.UnitIndicator
         {
             JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
+
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;
@@ -77,8 +82,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            Assert.AreEqual(4, UnitKPIPanel.GetTrendChartLines());
+            Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
 
             //Change select 楼宇D 单项 Commodity=电 , Unit= 单位人口 to display Benchmark trend chart view. Select time range="去年"
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
@@ -209,6 +213,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
         }
 
+        /*
         [Test]
         [CaseID("TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewBenchmarkCostUnitIndicatorSuite), "TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-2")]
@@ -216,6 +221,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         {
             //nothing
         }
+        */
 
         [Test]
         [CaseID("TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-3")]
@@ -261,7 +267,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             //·Basic chart view display as expected.
-            Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
+            Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
 
             //Select the BuildingCostYearToDay from Hierarchy Tree. Click Function Type button, select Cost, , predefined time range=之前七天, 行业基准值=夏热冬冷地区轨道交通行业 to view chart.
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);

@@ -34,7 +34,11 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;
@@ -225,6 +229,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
         }
 
+        /*
         [Test]
         [CaseID("TC-J1-FVT-BenchmarkCarbonUnitIndicator-View-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewBenchmarkCarbonUnitIndicatorSuite), "TC-J1-FVT-BenchmarkCarbonUnitIndicator-View-101-2")]
@@ -232,6 +237,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         {
             //nothing
         }
+        */
 
         [Test]
         [CaseID("TC-J1-FVT-BenchmarkCarbonUnitIndicator-View-101-3")]

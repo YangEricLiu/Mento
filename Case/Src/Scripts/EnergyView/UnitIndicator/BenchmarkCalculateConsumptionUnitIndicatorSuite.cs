@@ -36,6 +36,11 @@ namespace Mento.Script.EnergyView.UnitIndicator
         {
             JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
+
+            HomePagePanel.ExitJazz();
+
+            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            TimeManager.MediumPause();
         }
 
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;
@@ -153,7 +158,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.CheckTag(input.InputData.tagNames[0]);
             TimeManager.ShortPause();
 
-            //select a 行业基准值=夏热冬暖医院行业 to data view
+            //select a 行业基准值=寒冷地区服装零售行业 to data view
             EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industry);
             TimeManager.MediumPause();
 

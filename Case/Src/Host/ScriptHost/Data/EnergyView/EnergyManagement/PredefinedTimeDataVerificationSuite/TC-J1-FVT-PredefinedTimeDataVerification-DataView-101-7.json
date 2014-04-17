@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"TagNames":["BAV1Root"],
+		},
+		"ExpectedData":
+		{
+			"Last7DaysValue":"1",
+			"LastMonthValue":"1",
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区B", "楼宇C"],
+			"TagNames":["BCV1Root"],
+		},
+		"ExpectedData":
+		{
+			"Last7DaysValue":"1",
+			"LastMonthValue":"1",
+		}
+	}
+]

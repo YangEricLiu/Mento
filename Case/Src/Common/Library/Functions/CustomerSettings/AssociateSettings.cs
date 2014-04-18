@@ -110,11 +110,10 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Click the "associate tags" button
         /// </summary>
         /// <returns></returns>
-        public void ClickDisassociateButton()
+        public void ClickDisassociateButton(string tagName)
         {
-            JazzButton.AssociationSettingsDisassociate.Click();
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
+            TagList.ClickDisassociateTagIcon(3, tagName);
+            TimeManager.MediumPause();
         }
 
         public void ClickAssociatedCancel()

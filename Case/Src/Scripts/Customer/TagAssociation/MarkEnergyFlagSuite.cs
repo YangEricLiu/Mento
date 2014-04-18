@@ -81,12 +81,12 @@ namespace Mento.Script.Customer.TagAssociation
             TimeManager.ShortPause();
             //Disassociate Ptag1, then light Ptag2 again.
             AssociateSettings.FocusOnVTagByName(input.InputData.TagNames[0]);
-            AssociateSettings.ClickDisassociateButton();
+            AssociateSettings.ClickDisassociateButton(input.InputData.TagNames[0]);
             AssociateSettings.LightenTag(input.InputData.TagNames[1]);
             Assert.IsTrue(AssociateSettings.IsTagLighted(input.InputData.TagNames[1]));
             //Disassociate Ptag2, then associate Ptag2 to one system dimension node under this building node.
             AssociateSettings.FocusOnVTagByName(input.InputData.TagNames[1]);
-            AssociateSettings.ClickDisassociateButton();
+            AssociateSettings.ClickDisassociateButton(input.InputData.TagNames[1]);
             AssociateSettings.NavigateToSystemDimensionAssociate();
             //SystemNodeSettings.ShowHierarchyTree();
             //SystemNodeSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -151,7 +151,7 @@ namespace Mento.Script.Customer.TagAssociation
             AssociateSettings.DarkenTag(input.InputData.TagName);
             Assert.IsTrue(AssociateSettings.IsTagLighted(input.InputData.TagName));
             AssociateSettings.FocusOnVTagByName(input.InputData.TagName);
-            AssociateSettings.ClickDisassociateButton();
+            AssociateSettings.ClickDisassociateButton(input.InputData.TagName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
             Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));

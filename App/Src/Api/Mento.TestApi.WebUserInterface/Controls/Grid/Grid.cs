@@ -27,6 +27,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator ShareWindowRowsNotChecker = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img[not(contains(@class,'x-checked'))]", ByType.XPath);
         private static Locator SendedListRemoveButton = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img[not(contains(@class,'x-checked'))]", ByType.XPath);
 
+        private static Locator DisassociatedTagicon = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img[contains(@class,'has-associated-icon')]", ByType.XPath);
+
         private static Locator IDataScopeCustomerListLocator = new Locator("/tbody/tr/td[4]", ByType.XPath);
 
         protected IWebElement[] CurrentRows
@@ -308,6 +310,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 checker.Click();
             }
+        }
+
+        public void ClickDisassociateTagIcon(int cellIndex, string cellText, bool Paging = true)
+        {
+            var icon = this.GetDisassociateTagIcon(cellIndex, cellText, Paging);
+            icon.Click();
         }
 
         /// <summary>
@@ -730,6 +738,32 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
 
             return FindChild(Locator.GetVariableLocator(ShareWindowGridRowChecker, variables));
+        }
+
+        protected virtual IWebElement GetDisassociateTagIcon(int cellIndex, string cellText, bool Paging = true)
+        {
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPage(cellIndex, cellText))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(DisassociatedTagicon, variables));
         }
 
         // Data permission special checker 

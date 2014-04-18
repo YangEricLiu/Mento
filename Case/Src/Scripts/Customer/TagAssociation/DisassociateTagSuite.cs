@@ -60,7 +60,7 @@ namespace Mento.Script.Customer.TagAssociation
                 //Navigate to system dimension node and disassociate ptag 
                 //Select one hierarchy building node, select a associated tag and click  '解除关联'  button.
                 AssociateSettings.FocusOnTag(input.InputData.TagNames[i]);
-                AssociateSettings.ClickDisassociateButton();
+                AssociateSettings.ClickDisassociateButton(input.InputData.TagNames[i]);
                 JazzMessageBox.LoadingMask.WaitLoading();
                 TimeManager.ShortPause();
                 // It disappears from the associated grid and it appears in the unassociated grid;
@@ -92,7 +92,6 @@ namespace Mento.Script.Customer.TagAssociation
 
                 i++;
             }
-
         }
 
         [Test]
@@ -114,7 +113,7 @@ namespace Mento.Script.Customer.TagAssociation
             SystemNodeSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             SystemNodeSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionPath);
             AssociateSettings.FocusOnTag(input.InputData.TagNames[0]);
-            AssociateSettings.ClickDisassociateButton();
+            AssociateSettings.ClickDisassociateButton(input.InputData.TagNames[0]);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
             Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));
@@ -130,6 +129,8 @@ namespace Mento.Script.Customer.TagAssociation
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             JazzFunction.EnergyAnalysisPanel.SelectAreaDimension(input.InputData.AreaDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[0]));
             //select '系统数据点' try to find the above tag.
             JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.SystemDimensionTab);
@@ -154,7 +155,7 @@ namespace Mento.Script.Customer.TagAssociation
             {
                 AssociateSettings.FocusOnTag(input.InputData.TagNames[i]);
                 TimeManager.ShortPause();
-                AssociateSettings.ClickDisassociateButton();
+                AssociateSettings.ClickDisassociateButton(input.InputData.TagNames[i]);
                 JazzMessageBox.LoadingMask.WaitLoading();
                 TimeManager.MediumPause();
                 Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagNames[i]));

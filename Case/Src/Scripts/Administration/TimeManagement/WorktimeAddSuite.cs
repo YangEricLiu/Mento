@@ -58,17 +58,14 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Click "Save" button
             TimeSettingsWorktime.ClickSaveButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
             JazzMessageBox.LoadingMask.WaitLoading();
 
             //Verify saved successfully.
             Assert.IsFalse(TimeSettingsWorktime.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsWorktime.IsModifyButtonDisplayed());
-            Assert.IsTrue(TimeSettingsWorktime.IsCalendarExist(testData.InputData.CommonName));
-
-            //Verify the name
-            Assert.AreEqual(testData.InputData.CommonName, TimeSettingsWorktime.GetNameValue());
-
+            Assert.IsTrue(TimeSettingsWorktime.IsCalendarExist(testData.ExpectedData.CommonName));
+                        
             //Verify the label text
             Assert.IsTrue(TimeSettingsWorktime.IsWorktimeCalendarTextCorrect(testData.ExpectedData.LabelText));
 
@@ -146,7 +143,10 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Input invalid inputs, e.g. required fields are null; duplicated name;  overlapped ranges
             TimeSettingsWorktime.AddTimeRanges(testData);
-            TimeSettingsWorktime.FillInName(testData.InputData.CommonName);            
+            TimeManager.ShortPause();
+
+            TimeSettingsWorktime.FillInName(testData.InputData.CommonName);
+            TimeManager.ShortPause();
 
             //Click "Save" button.
             TimeSettingsWorktime.ClickSaveButton();

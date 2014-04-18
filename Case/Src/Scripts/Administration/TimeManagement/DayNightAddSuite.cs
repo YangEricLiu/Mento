@@ -63,10 +63,7 @@ namespace Mento.Script.Administration.TimeManagement
             //Verify saved successfully.
             Assert.IsFalse(TimeSettingsDayNight.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsDayNight.IsModifyButtonDisplayed());
-            Assert.IsTrue(TimeSettingsDayNight.IsCalendarExist(testData.InputData.CommonName));
-
-            //Verify the name
-            Assert.AreEqual(testData.InputData.CommonName, TimeSettingsDayNight.GetNameValue());
+            Assert.IsTrue(TimeSettingsDayNight.IsCalendarExist(testData.ExpectedData.CommonName));
 
             //Verify the label text
             Assert.IsTrue(TimeSettingsDayNight.IsDayNightCalendarTextCorrect(testData.ExpectedData.LabelText));

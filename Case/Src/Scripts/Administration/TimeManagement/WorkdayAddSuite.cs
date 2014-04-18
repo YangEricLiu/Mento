@@ -65,10 +65,7 @@ namespace Mento.Script.Administration.TimeManagement
             //Verify saved successfully.
             Assert.IsFalse(TimeSettingsWorkday.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsWorkday.IsModifyButtonDisplayed());
-            Assert.IsTrue(TimeSettingsWorkday.IsCalendarExist(testData.InputData.CommonName));
-
-            //Verify the name
-            Assert.AreEqual(testData.InputData.CommonName, TimeSettingsWorkday.GetNameValue());
+            Assert.IsTrue(TimeSettingsWorkday.IsCalendarExist(testData.ExpectedData.CommonName));                      
 
             //Verify the label text
             Assert.IsTrue(TimeSettingsWorkday.IsWorkdayCalendarTextCorrect(testData.ExpectedData.LabelText));
@@ -111,10 +108,7 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsFalse(TimeSettingsWorkday.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsWorkday.IsModifyButtonDisplayed());
             Assert.IsTrue(TimeSettingsWorkday.IsCalendarExist(testData.InputData.CommonName));
-
-            //Verify the name
-            Assert.AreEqual(testData.InputData.CommonName, TimeSettingsWorkday.GetNameValue());
-
+            
             //Verify the label text
             Assert.IsTrue(TimeSettingsWorkday.IsWorkdayCalendarTextCorrect(testData.ExpectedData.LabelText));
             
@@ -181,9 +175,12 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorkday.PrepareToAddWorkdayCalendar();
             TimeManager.ShortPause();
 
-            //Input invalid inputs, e.g. required fields are null; duplicated name;  overlapped ranges
-            TimeSettingsWorkday.FillInName(testData.InputData.CommonName);
+            //Input invalid inputs, e.g. required fields are null; duplicated name;  overlapped ranges            
             TimeSettingsWorkday.AddSpecialDates(testData);
+            TimeManager.ShortPause();
+
+            TimeSettingsWorkday.FillInName(testData.InputData.CommonName);
+            TimeManager.ShortPause();
 
             //Click "Save" button.
             TimeSettingsWorkday.ClickSaveButton();

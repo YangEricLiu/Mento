@@ -3,98 +3,84 @@
 		"InputData":
 		{	
 			"CommonName":"",
-			"WarmRange":[{"StartMonth": "", "StartDate": "", "EndMonth": "", "EndDate": ""}, {"StartMonth": "05", "StartDate": "", "EndMonth": "", "EndDate": ""}],
-			"ColdRange":[{"StartMonth": "", "StartDate": "", "EndMonth": "", "EndDate": ""}, {"StartMonth": "", "StartDate": "", "EndMonth": "07", "EndDate": ""}],
+			"ColdWarmRange":[{"Type": "", "StartMonth": "", "StartDate": "", "EndMonth": "", "EndDate": ""}, {"Type": "采暖季", "StartMonth": "05", "StartDate": "", "EndMonth": "", "EndDate": ""}, {"Type": "供冷季", "StartMonth": "", "StartDate": "", "EndMonth": "", "EndDate": ""}, {"Type": "供冷季", "StartMonth": "", "StartDate": "", "EndMonth": "07", "EndDate": ""}],
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"必填项。",
-			"WarmRange":[{"EndMonth": "必填项。"}, {"EndMonth": "必填项。"}],
-			"ColdRange":[{"EndMonth": "必填项。"}, {"EndMonth": "必填项。"}],
+			"ColdWarmRange":[{"Type": "必填项。", "EndMonth": "必填项。"}, {"EndMonth": "必填项。"}, {"EndMonth": "必填项。"}, {"EndMonth": "必填项。"}],
 		}	
 	},
 	{
 		"InputData":
 		{	
 			"CommonName":"冷暖季",	
-			"WarmRange":[{"StartMonth": "01", "StartDate": "01", "EndMonth": "02", "EndDate": "02"}, {"StartMonth": "05", "StartDate": "", "EndMonth": "", "EndDate": ""}],
-			"ColdRange":[{"StartMonth": "", "StartDate": "", "EndMonth": "", "EndDate": ""}, {"StartMonth": "08", "StartDate": "08", "EndMonth": "09", "EndDate": "09"}],
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "01", "StartDate": "01", "EndMonth": "02", "EndDate": "02"}, {"Type": "采暖季", "StartMonth": "05", "StartDate": "", "EndMonth": "", "EndDate": ""}, {"Type": "供冷季", "StartMonth": "", "StartDate": "", "EndMonth": "", "EndDate": ""}, {"Type": "供冷季", "StartMonth": "08", "StartDate": "08", "EndMonth": "09", "EndDate": "09"}],
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"",
-			"WarmRange":[{"EndMonth": ""}, {"EndMonth": "必填项。"}],
-			"ColdRange":[{"EndMonth": "必填项。"}, {"EndMonth": ""}],
+			"ColdWarmRange":[{"EndMonth": ""}, {"EndMonth": "必填项。"}, {"EndMonth": "必填项。"}, {"EndMonth": ""}],
 		}	
 	},
 	{
 		"InputData":
 		{	
 			"CommonName":"冷暖季For重名验证",	
-			"WarmRange":[{"StartMonth": "01", "StartDate": "01", "EndMonth": "02", "EndDate": "28"}, {"StartMonth": "11", "StartDate": "30", "EndMonth": "12", "EndDate": "31"}],
-			"ColdRange":[{"StartMonth": "05", "StartDate": "31", "EndMonth": "06", "EndDate": "15"}, {"StartMonth": "07", "StartDate": "01", "EndMonth": "08", "EndDate": "31"}],
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "01", "StartDate": "01", "EndMonth": "02", "EndDate": "28"}, {"Type": "采暖季", "StartMonth": "11", "StartDate": "30", "EndMonth": "12", "EndDate": "31"}, {"Type": "供冷季", "StartMonth": "05", "StartDate": "31", "EndMonth": "06", "EndDate": "15"}, {"Type": "供冷季", "StartMonth": "07", "StartDate": "01", "EndMonth": "08", "EndDate": "31"}],
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"该名称已存在",
-			"WarmRange":[{"EndMonth": ""}, {"EndMonth": ""}],
-			"ColdRange":[{"EndMonth": ""}, {"EndMonth": ""}],
+			"ColdWarmRange":[{"EndMonth": ""}, {"EndMonth": ""}, {"EndMonth": ""}, {"EndMonth": ""}],
 		}	
 	},
 	{
 		"InputData":
 		{	
 			"CommonName":"冷暖季ForAddInvalid",	
-			"WarmRange":[{"StartMonth": "01", "StartDate": "10", "EndMonth": "04", "EndDate": "15"}, {"StartMonth": "02", "StartDate": "10", "EndMonth": "03", "EndDate": "05"}],
-			"ColdRange":[{"StartMonth": "05", "StartDate": "31", "EndMonth": "06", "EndDate": "15"}, {"StartMonth": "07", "StartDate": "01", "EndMonth": "08", "EndDate": "31"}],
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "01", "StartDate": "10", "EndMonth": "04", "EndDate": "15"}, {"Type": "采暖季", "StartMonth": "02", "StartDate": "10", "EndMonth": "03", "EndDate": "05"}, {"Type": "供冷季", "StartMonth": "05", "StartDate": "31", "EndMonth": "06", "EndDate": "15"}, {"Type": "供冷季", "StartMonth": "07", "StartDate": "01", "EndMonth": "08", "EndDate": "31"}],
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"",
-			"WarmRange":[{"EndMonth": "时间段冲突"}, {"EndMonth": "时间段冲突"}],
-			"ColdRange":[{"EndMonth": ""}, {"EndMonth": ""}],
+			"ColdWarmRange":[{"EndMonth": "时间段冲突"}, {"EndMonth": "时间段冲突"}, {"EndMonth": ""}, {"EndMonth": ""}],
 		}	
 	},
 	{
 		"InputData":
 		{	
 			"CommonName":"冷暖季ForAddInvalid",	
-			"WarmRange":[{"StartMonth": "01", "StartDate": "10", "EndMonth": "03", "EndDate": "15"}, {"StartMonth": "11", "StartDate": "30", "EndMonth": "12", "EndDate": "31"}],
-			"ColdRange":[{"StartMonth": "03", "StartDate": "31", "EndMonth": "04", "EndDate": "30"}, {"StartMonth": "07", "StartDate": "01", "EndMonth": "08", "EndDate": "31"}],
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "01", "StartDate": "10", "EndMonth": "03", "EndDate": "15"}, {"Type": "采暖季", "StartMonth": "11", "StartDate": "30", "EndMonth": "12", "EndDate": "31"}, {"Type": "供冷季", "StartMonth": "03", "StartDate": "31", "EndMonth": "04", "EndDate": "30"}, {"Type": "供冷季", "StartMonth": "07", "StartDate": "01", "EndMonth": "08", "EndDate": "31"}],
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"",
-			"WarmRange":[{"EndMonth": "时间段冲突"}, {"EndMonth": ""}],
-			"ColdRange":[{"EndMonth": "时间段冲突"}, {"EndMonth": ""}],
+			"ColdWarmRange":[{"EndMonth": "时间段冲突"}, {"EndMonth": ""}, {"EndMonth": "时间段冲突"}, {"EndMonth": ""}],
 		}	
 	},
 	{
 		"InputData":
 		{	
 			"CommonName":"冷暖季ForAddInvalid",	
-			"WarmRange":[{"StartMonth": "01", "StartDate": "10", "EndMonth": "02", "EndDate": "28"}, {"StartMonth": "11", "StartDate": "30", "EndMonth": "12", "EndDate": "31"}],
-			"ColdRange":[{"StartMonth": "03", "StartDate": "06", "EndMonth": "03", "EndDate": "09"}, {"StartMonth": "07", "StartDate": "01", "EndMonth": "08", "EndDate": "31"}],
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "01", "StartDate": "10", "EndMonth": "02", "EndDate": "28"}, {"Type": "采暖季", "StartMonth": "11", "StartDate": "30", "EndMonth": "12", "EndDate": "31"}, {"Type": "供冷季", "StartMonth": "03", "StartDate": "06", "EndMonth": "03", "EndDate": "09"}, {"Type": "供冷季", "StartMonth": "07", "StartDate": "01", "EndMonth": "08", "EndDate": "31"}],
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"",
-			"WarmRange":[{"EndMonth": "时间段冲突"}, {"EndMonth": ""}],
-			"ColdRange":[{"EndMonth": "时间段冲突"}, {"EndMonth": ""}],
+			"ColdWarmRange":[{"EndMonth": "时间段冲突"}, {"EndMonth": ""}, {"EndMonth": "时间段冲突"}, {"EndMonth": ""}],
 		}	
 	},
 	{
 		"InputData":
 		{ 
 			"CommonName":"冷暖季ForAddInvalid", 
-			"WarmRange":[{"StartMonth": "01", "StartDate": "10", "EndMonth": "02", "EndDate": "27"}, {"StartMonth": "05", "StartDate": "10", "EndMonth": "05", "EndDate": "31"}],
-			"ColdRange":[{"StartMonth": "03", "StartDate": "06", "EndMonth": "03", "EndDate": "09"}, {"StartMonth": "06", "StartDate": "06", "EndMonth": "06", "EndDate": "30"}],
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "01", "StartDate": "10", "EndMonth": "02", "EndDate": "27"}, {"Type": "采暖季", "StartMonth": "05", "StartDate": "10", "EndMonth": "05", "EndDate": "31"}, {"Type": "供冷季", "StartMonth": "03", "StartDate": "06", "EndMonth": "03", "EndDate": "09"}, {"Type": "供冷季", "StartMonth": "06", "StartDate": "06", "EndMonth": "06", "EndDate": "30"}],
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"",
-			"WarmRange":[{"EndMonth": ""}, {"EndMonth": "时间段冲突"}],
-		    "ColdRange":[{"EndMonth": ""}, {"EndMonth": "时间段冲突"}],
+			"ColdWarmRange":[{"EndMonth": ""}, {"EndMonth": "时间段冲突"}, {"EndMonth": ""}, {"EndMonth": "时间段冲突"}],
 		} 
 	},
 ]

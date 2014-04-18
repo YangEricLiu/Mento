@@ -399,10 +399,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonHeatingCoolingSeasonCalendarSave = "ButtonHeatingCoolingSeasonCalendarSave";
         public static string ButtonHeatingCoolingSeasonCalendarCancel = "ButtonHeatingCoolingSeasonCalendarCancel";
         public static string ButtonHeatingCoolingSeasonCalendarDelete = "ButtonHeatingCoolingSeasonCalendarDelete";
-        public static string ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges = "ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges";
-        public static string ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges = "ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges";
-        public static string ButtonHeatingCoolingSeasonCalendarWarmDeleteRangeItem = "ButtonHeatingCoolingSeasonCalendarWarmDeleteRangeItem";
-        public static string ButtonHeatingCoolingSeasonCalendarColdDeleteRangeItem = "ButtonHeatingCoolingSeasonCalendarColdDeleteRangeItem";
+        public static string LinkButtonHeatingCoolingSeasonCalendarAddMoreColdWarmRanges = "LinkButtonHeatingCoolingSeasonCalendarAddMoreColdWarmRanges";
+        public static string ButtonHeatingCoolingSeasonCalendarDeleteRangeItem = "ButtonHeatingCoolingSeasonCalendarDeleteRangeItem";
         #endregion
 
         #region daynight
@@ -800,14 +798,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region HeatingCoolingSeason
-        public static string ComboBoxHeatingCoolingSeasonCalendarWarmStartMonth = "ComboBoxHeatingCoolingSeasonCalendarWarmStartMonth";
-        public static string ComboBoxHeatingCoolingSeasonCalendarWarmStartDate = "ComboBoxHeatingCoolingSeasonCalendarWarmStartDate";
-        public static string ComboBoxHeatingCoolingSeasonCalendarWarmEndMonth = "ComboBoxHeatingCoolingSeasonCalendarWarmEndMonth";
-        public static string ComboBoxHeatingCoolingSeasonCalendarWarmEndDate = "ComboBoxHeatingCoolingSeasonCalendarWarmEndDate";
-        public static string ComboBoxHeatingCoolingSeasonCalendarColdStartMonth = "ComboBoxHeatingCoolingSeasonCalendarColdStartMonth";
-        public static string ComboBoxHeatingCoolingSeasonCalendarColdStartDate = "ComboBoxHeatingCoolingSeasonCalendarColdStartDate";
-        public static string ComboBoxHeatingCoolingSeasonCalendarColdEndMonth = "ComboBoxHeatingCoolingSeasonCalendarColdEndMonth";
-        public static string ComboBoxHeatingCoolingSeasonCalendarColdEndDate = "ComboBoxHeatingCoolingSeasonCalendarColdEndDate";
+        public static string ComboBoxHeatingCoolingSeasonCalendarColdWarmType = "ComboBoxHeatingCoolingSeasonCalendarColdWarmType";
+        public static string ComboBoxHeatingCoolingSeasonCalendarColdWarmStartMonth = "ComboBoxHeatingCoolingSeasonCalendarColdWarmStartMonth";
+        public static string ComboBoxHeatingCoolingSeasonCalendarColdWarmStartDate = "ComboBoxHeatingCoolingSeasonCalendarColdWarmStartDate";
+        public static string ComboBoxHeatingCoolingSeasonCalendarColdWarmEndMonth = "ComboBoxHeatingCoolingSeasonCalendarColdWarmEndMonth";
+        public static string ComboBoxHeatingCoolingSeasonCalendarColdWarmEndDate = "ComboBoxHeatingCoolingSeasonCalendarColdWarmEndDate";        
         #endregion
 
         #region daynight
@@ -1263,8 +1258,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region TimeManagment
         public static string ContainerCalendarItems = "ContainerCalendarItems";
-        public static string ContainerCalendarWarmItems = "ContainerCalendarWarmItems";
-        public static string ContainerCalendarColdItems = "ContainerCalendarColdItems";
+        public static string ContainerColdWarmCalendarItems = "ContainerColdWarmCalendarItems";
         #endregion
 
         #region TOU

@@ -97,14 +97,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region HeatingCoolingSeason
-        public static ComboBox HeatingCoolingSeasonCalendarWarmStartMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarWarmStartMonth, 1);
-        public static ComboBox HeatingCoolingSeasonCalendarWarmStartDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarWarmStartDate, 1);
-        public static ComboBox HeatingCoolingSeasonCalendarWarmEndMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarWarmEndMonth, 1);
-        public static ComboBox HeatingCoolingSeasonCalendarWarmEndDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarWarmEndDate, 1);
-        public static ComboBox HeatingCoolingSeasonCalendarColdStartMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdStartMonth, 1);
-        public static ComboBox HeatingCoolingSeasonCalendarColdStartDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdStartDate, 1);
-        public static ComboBox HeatingCoolingSeasonCalendarColdEndMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdEndMonth, 1);
-        public static ComboBox HeatingCoolingSeasonCalendarColdEndDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdEndDate, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarColdWarmTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmType, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarColdWarmStartMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmStartMonth, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarColdWarmStartDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmStartDate, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarColdWarmEndMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmEndMonth, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarColdWarmEndDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmEndDate, 1);
         #endregion
 
         #region DayNight

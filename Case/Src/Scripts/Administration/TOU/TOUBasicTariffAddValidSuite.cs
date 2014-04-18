@@ -55,7 +55,7 @@ namespace Mento.Script.Administration.TOU
             TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
             TOUBasicTariffSettings.FillInBasicPropertyValleyPriceValue(testData.InputData.ValleyPrice);
 
-            //Add PeakIndustry and ValleyIndustry time ranges
+            //Add Peak1 and Valley1 time ranges
             TOUBasicTariffSettings.AddPeakRanges(testData);
             TOUBasicTariffSettings.AddValleyRanges(testData);
 
@@ -78,7 +78,7 @@ namespace Mento.Script.Administration.TOU
             Assert.AreEqual(testData.InputData.PeakPrice, TOUBasicTariffSettings.GetBasicPropertyPeakPriceValue());
             Assert.AreEqual(testData.InputData.ValleyPrice, TOUBasicTariffSettings.GetBasicPropertyValleyPriceValue());
 
-            //Verify PeakIndustry and ValleyIndustry time ranges are added successfully.
+            //Verify Peak1 and Valley1 time ranges are added successfully.
             Assert.AreEqual(testData.InputData.PeakRange[0].StartTime, TOUBasicTariffSettings.GetBasicPropertyPeakStartTimeValue(1));
             Assert.AreEqual(testData.InputData.PeakRange[0].EndTime, TOUBasicTariffSettings.GetBasicPropertyPeakEndTimeValue(1));                     
             Assert.AreEqual(testData.InputData.ValleyRange[0].StartTime, TOUBasicTariffSettings.GetBasicPropertyValleyStartTimeValue(1));
@@ -104,7 +104,7 @@ namespace Mento.Script.Administration.TOU
             TOUBasicTariffSettings.FillInBasicPropertyPeakPriceValue(testData.InputData.PeakPrice);
             TOUBasicTariffSettings.FillInBasicPropertyValleyPriceValue(testData.InputData.ValleyPrice);
 
-            //Add PeakIndustry,2 and ValleyIndustry,2,3 time ranges
+            //Add Peak1,2 and Valley1,2,3 time ranges
             TOUBasicTariffSettings.AddPeakRanges(testData);
             TOUBasicTariffSettings.AddValleyRanges(testData);
 
@@ -128,7 +128,7 @@ namespace Mento.Script.Administration.TOU
             Assert.AreEqual(testData.InputData.PeakPrice, TOUBasicTariffSettings.GetBasicPropertyPeakPriceValue());
             Assert.AreEqual(testData.InputData.ValleyPrice, TOUBasicTariffSettings.GetBasicPropertyValleyPriceValue());
 
-            //Verify PeakIndustry and ValleyIndustry,3 time ranges are added successfully.
+            //Verify Peak1 and Valley1,3 time ranges are added successfully.
             Assert.AreEqual(testData.InputData.PeakRange[0].StartTime, TOUBasicTariffSettings.GetBasicPropertyPeakStartTimeValue(1));
             Assert.AreEqual(testData.InputData.PeakRange[0].EndTime, TOUBasicTariffSettings.GetBasicPropertyPeakEndTimeValue(1));
             Assert.AreEqual(testData.InputData.ValleyRange[0].StartTime, TOUBasicTariffSettings.GetBasicPropertyValleyStartTimeValue(1));

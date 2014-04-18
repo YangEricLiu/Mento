@@ -381,8 +381,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button HeatingCoolingSeasonCalendarSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarSave);
         public static Button HeatingCoolingSeasonCalendarCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarCancel);
         public static Button HeatingCoolingSeasonCalendarDeleteButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarDelete);
-        public static Button HeatingCoolingSeasonCalendarAddMoreWarmRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges);
-        public static Button HeatingCoolingSeasonCalendarAddMoreColdRangesButton = GetControl<Button>(JazzControlLocatorKey.ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges);
+        public static Button HeatingCoolingSeasonCalendarAddMoreColdWarmRangesButton = GetControl<Button>(JazzControlLocatorKey.LinkButtonHeatingCoolingSeasonCalendarAddMoreColdWarmRanges);
         #endregion
 
         #region DayNight buttons

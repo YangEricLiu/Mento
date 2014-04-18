@@ -61,8 +61,7 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Modify the Name, add more ranges
             TimeSettingsHeatingCoolingSeason.FillInName(testData.ExpectedData.CommonName);
-            TimeSettingsHeatingCoolingSeason.AddWarmRanges(testData);
-            TimeSettingsHeatingCoolingSeason.AddColdRanges(testData);
+            TimeSettingsHeatingCoolingSeason.AddColdWarmRanges(testData);
 
             //Click "Save" button
             TimeSettingsHeatingCoolingSeason.ClickSaveButton();
@@ -74,8 +73,7 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsModifyButtonDisplayed());
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.ExpectedData.CommonName));
             //Verify warm and cold ranges are added successfully.        
-            Assert.AreEqual(testData.InputData.WarmRange.Length, TimeSettingsHeatingCoolingSeason.GetWarmRangeItemsNumber());
-            Assert.AreEqual(testData.InputData.ColdRange.Length, TimeSettingsHeatingCoolingSeason.GetColdRangeItemsNumber()); 
+            Assert.AreEqual(testData.InputData.ColdWarmRange.Length, TimeSettingsHeatingCoolingSeason.GetColdWarmRangeItemsNumber());
         }
         #endregion
 
@@ -95,17 +93,20 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsHeatingCoolingSeason.ClickModifyButton();
             TimeManager.ShortPause();
 
-            //Change the start date of 采暖季Industry
-            TimeSettingsHeatingCoolingSeason.SelectWarmStartDate(testData.ExpectedData.WarmRange[0].StartDate, 1);
-            //Change the start month, start date of 采暖季2
-            TimeSettingsHeatingCoolingSeason.SelectWarmStartMonth(testData.ExpectedData.WarmRange[1].StartMonth, 2);
-            TimeSettingsHeatingCoolingSeason.SelectWarmStartDate(testData.ExpectedData.WarmRange[1].StartDate, 2);
-            //Change the end date of 供冷季Industry
-            TimeSettingsHeatingCoolingSeason.SelectColdEndDate(testData.ExpectedData.ColdRange[0].EndDate, 1);
-            //Change the end month, end date of 供冷季2
-            TimeSettingsHeatingCoolingSeason.SelectColdEndMonth(testData.ExpectedData.ColdRange[1].EndMonth, 2);
-            TimeSettingsHeatingCoolingSeason.SelectColdEndDate(testData.ExpectedData.ColdRange[1].EndDate, 2);
-                        
+            //Change the start date of 时间1
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmStartDate(testData.ExpectedData.ColdWarmRange[0].StartDate, 1);
+            //Change the start month, start date of 时间2
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmStartMonth(testData.ExpectedData.ColdWarmRange[1].StartMonth, 2);
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmStartDate(testData.ExpectedData.ColdWarmRange[1].StartDate, 2);
+            //Change the end date of 时间3
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmEndDate(testData.ExpectedData.ColdWarmRange[2].EndDate, 3);
+            //Change the end month, end date of 时间4
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmEndMonth(testData.ExpectedData.ColdWarmRange[3].EndMonth, 4);
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmEndDate(testData.ExpectedData.ColdWarmRange[3].EndDate, 4);
+
+            //Change type of 时间2 to be '供冷季'
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmType(testData.ExpectedData.ColdWarmRange[1].Type, 2);
+
             //Click 'Save' button
             TimeSettingsHeatingCoolingSeason.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -138,7 +139,7 @@ namespace Mento.Script.Administration.TimeManagement
         [MultipleTestDataSource(typeof(HeatingCoolingSeasonCalendarData[]), typeof(HeatingCoolingSeasonModifySuite), "TC-J1-FVT-TimeManagementHCSeason-Modify-103")]
         public void ModifyToDeleteTimeRange(HeatingCoolingSeasonCalendarData testData)
         {
-            //Select a calendar which has two warm ranges, two cold ranges.
+            //Select a calendar which has four cold warm ranges.
             TimeSettingsHeatingCoolingSeason.SelectCalendar(testData.InputData.CommonName);
             TimeManager.ShortPause();
 
@@ -146,24 +147,26 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsHeatingCoolingSeason.ClickModifyButton();
             TimeManager.ShortPause();
 
-            //Verify there is no 'x' icon near rangeIndustry.
-            Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsWarmRangeItemDeleteButtonDisplayed(1));
-            Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsColdRangeItemDeleteButtonDisplayed(1));
+            //Verify there is no 'x' icon near range1.
+            Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsColdWarmRangeItemDeleteButtonDisplayed(1));
 
-            //Click 'x' near some ranges, e.g. delete warm2, cold2.
-            TimeSettingsHeatingCoolingSeason.ClickDeleteWarmRangeItemButton(2);
-            TimeSettingsHeatingCoolingSeason.ClickDeleteColdRangeItemButton(2);
+            //Click 'x' near some ranges, e.g. delete range2,3,4.
+            TimeSettingsHeatingCoolingSeason.ClickDeleteColdWarmRangeItemButton(4);
+            TimeManager.ShortPause();
+            TimeSettingsHeatingCoolingSeason.ClickDeleteColdWarmRangeItemButton(3);
+            TimeManager.ShortPause();
+            TimeSettingsHeatingCoolingSeason.ClickDeleteColdWarmRangeItemButton(2);
+            TimeManager.ShortPause();
 
             //Click 'Save' button
             TimeSettingsHeatingCoolingSeason.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
 
-            //Verify modification is saved successfully, and only one warm range, one cold range left.
+            //Verify modification is saved successfully, and only one range left.
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsModifyButtonDisplayed());
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.InputData.CommonName));
-            Assert.AreEqual(1, TimeSettingsHeatingCoolingSeason.GetWarmRangeItemsNumber());
-            Assert.AreEqual(1, TimeSettingsHeatingCoolingSeason.GetColdRangeItemsNumber());
+            Assert.AreEqual(1, TimeSettingsHeatingCoolingSeason.GetColdWarmRangeItemsNumber());
         }
         #endregion
 
@@ -194,19 +197,21 @@ namespace Mento.Script.Administration.TimeManagement
             ///Change name with valid input
             TimeSettingsHeatingCoolingSeason.FillInName(testData.InputData.CommonName);
 
-            //Click 'x' icon to delete one range, e.g. delete warm2
-            TimeSettingsHeatingCoolingSeason.ClickDeleteWarmRangeItemButton(2);
+            //Click 'x' icon to delete one range, e.g. delete range2
+            TimeSettingsHeatingCoolingSeason.ClickDeleteColdWarmRangeItemButton(2);
+
+            //Change type of 时间1 to be '供冷季'
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmType(testData.InputData.ColdWarmRange[0].Type, 1);
 
             //Click "Cancel" button
             TimeSettingsHeatingCoolingSeason.ClickCancelButton();
             TimeManager.ShortPause();
 
-            //verify that the modification is cancelled and original information still displayes， there are still two warm ranges, one cold range.
+            //verify that the modification is cancelled and original information still displayes， there are still three cold warm ranges.
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsSaveButtonDisplayed());
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsCancelButtonDisplayed());
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsModifyButtonDisplayed());
-            Assert.AreEqual(2, TimeSettingsHeatingCoolingSeason.GetWarmRangeItemsNumber());
-            Assert.AreEqual(1, TimeSettingsHeatingCoolingSeason.GetColdRangeItemsNumber());
+            Assert.AreEqual(3, TimeSettingsHeatingCoolingSeason.GetColdWarmRangeItemsNumber());
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.ExpectedData.CommonName));
         }
         #endregion
@@ -219,19 +224,26 @@ namespace Mento.Script.Administration.TimeManagement
         [MultipleTestDataSource(typeof(HeatingCoolingSeasonCalendarData[]), typeof(HeatingCoolingSeasonModifySuite), "TC-J1-FVT-TimeManagementHCSeason-Modify-002")]
         public void ModifyInvalidHCSeason(HeatingCoolingSeasonCalendarData testData)
         {
-            //Select a calendar which has one warm range, one cold range.
+            //Select a calendar which has two warm ranges.
             TimeSettingsHeatingCoolingSeason.SelectCalendar("冷暖季ForModifyInvalid");
             TimeManager.ShortPause();
 
             //Click 'Modify' button.
             TimeSettingsHeatingCoolingSeason.ClickModifyButton();
-            TimeManager.ShortPause();
+            TimeManager.ShortPause();                      
             
-            //Change the start month of warm range so that it is overlapped with cold range
-            TimeSettingsHeatingCoolingSeason.SelectWarmStartMonth(testData.InputData.WarmRange[0].StartMonth, 1);
+            //Change the end month and end date of range1 so that it is overlapped with cold range
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmEndMonth(testData.InputData.ColdWarmRange[0].EndMonth, 1);
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmEndDate(testData.InputData.ColdWarmRange[0].EndDate, 1);
+            TimeManager.ShortPause();
+
+            //Change the type of range2 to be ‘供冷季’ so that range2 will be conflict with range1 (interval less than 7 days)
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmType(testData.InputData.ColdWarmRange[1].Type, 2);
+            TimeManager.ShortPause();
 
             //Change name to be a duplicated name; or null 
             TimeSettingsHeatingCoolingSeason.FillInName(testData.InputData.CommonName);
+            TimeManager.ShortPause();
 
             //Click "Save" button.
             TimeSettingsHeatingCoolingSeason.ClickSaveButton();
@@ -242,8 +254,8 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCancelButtonDisplayed());
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsModifyButtonDisplayed());
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsNameInvalidMsgCorrect(testData.ExpectedData));
-            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsWarmRangeInvalidMsgCorrect(testData.ExpectedData, 1));
-            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsColdRangeInvalidMsgCorrect(testData.ExpectedData, 1));
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsColdWarmRangeInvalidMsgCorrect(testData.ExpectedData, 1));
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsColdWarmRangeInvalidMsgCorrect(testData.ExpectedData, 2));
 
             //Click 'Cancel' button to quit the modification.
             TimeSettingsHeatingCoolingSeason.ClickCancelButton();

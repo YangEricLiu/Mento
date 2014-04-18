@@ -4,8 +4,7 @@
 	{
 		"InputData":
 		{	
-			"WarmRange":[{"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}],
-			"ColdRange":[{"StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}],
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "供冷季", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}],
 		},
 		"ExpectedData":
 		{
@@ -15,8 +14,7 @@
 	{
 		"InputData":
 		{	
-			"WarmRange":[{"StartMonth": "02", "StartDate": "01", "EndMonth": "02", "EndDate": "28"}],
-			"ColdRange":[{"StartMonth": "03", "StartDate": "07", "EndMonth": "03", "EndDate": "07"}],
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "02", "StartDate": "01", "EndMonth": "02", "EndDate": "28"}, {"Type": "供冷季", "StartMonth": "03", "StartDate": "07", "EndMonth": "03", "EndDate": "07"}],
 		},
 		"ExpectedData":
 		{
@@ -26,8 +24,7 @@
 	{
 		"InputData":
 		{	
-			"WarmRange":[{"StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}],
-			"ColdRange":[{"StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"StartMonth": "10", "StartDate": "01", "EndMonth": "10", "EndDate": "15"}],
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "采暖季", "StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}, {"Type": "供冷季", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"Type": "供冷季", "StartMonth": "10", "StartDate": "01", "EndMonth": "10", "EndDate": "15"}],
 		},
 		"ExpectedData":
 		{
@@ -37,7 +34,7 @@
 	{
 		"InputData":
 		{	
-			"WarmRange":[{"StartMonth": "11", "StartDate": "01", "EndMonth": "12", "EndDate": "28"}],
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "11", "StartDate": "01", "EndMonth": "12", "EndDate": "28"}], 
 		},
 		"ExpectedData":
 		{
@@ -47,11 +44,11 @@
 	{
 		"InputData":
 		{	
-			"ColdRange":[{"StartMonth": "07", "StartDate": "31", "EndMonth": "08", "EndDate": "30"}, {"StartMonth": "08", "StartDate": "31", "EndMonth": "10", "EndDate": "31"}],
+			"ColdWarmRange":[{"Type": "供冷季", "StartMonth": "07", "StartDate": "31", "EndMonth": "08", "EndDate": "30"}, {"Type": "供冷季", "StartMonth": "08", "StartDate": "31", "EndMonth": "10", "EndDate": "31"}],
 		},
 		"ExpectedData":
 		{
-			
+
 		}
 	},	
 ]

@@ -61,7 +61,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
             TimeSettingsHeatingCoolingSeason.ClickMsgBoxConfirmButton();
 
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //Verify that the Calendar is deleted successfully and NOT exists in the list.
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.InputData.CommonName));

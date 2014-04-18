@@ -39,7 +39,7 @@ namespace Mento.Script.Administration.TOU
 
         #region TestCase1 AddValidPulsePeak
         /// <summary>
-        /// Precondition: Industry. make sure there is a TOU basic tariff
+        /// Precondition: 1. make sure there is a TOU basic tariff
         ///               2. make sure the TOU tariff hasn't defined Pulse Peak property yet.
         /// </summary>
         [Test]

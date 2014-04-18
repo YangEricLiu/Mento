@@ -6,8 +6,7 @@
 		},
 		"ExpectedData":
 		{
-		    "WarmRange":[{"StartMonth": "05", "StartDate": "31", "EndMonth": "05", "EndDate": "31"}, {"StartMonth": "09", "StartDate": "01", "EndMonth": "09", "EndDate": "29"}],
-			"ColdRange":[{"StartMonth": "10", "StartDate": "28", "EndMonth": "10", "EndDate": "28"}, {"StartMonth": "11", "StartDate": "30", "EndMonth": "11", "EndDate": "30"}],							
+		    "ColdWarmRange":[{"Type": "采暖季", "StartMonth": "05", "StartDate": "31", "EndMonth": "05", "EndDate": "31"}, {"Type": "供冷季", "StartMonth": "09", "StartDate": "01", "EndMonth": "09", "EndDate": "29"}, {"Type": "供冷季", "StartMonth": "10", "StartDate": "28", "EndMonth": "10", "EndDate": "28"}, {"Type": "供冷季", "StartMonth": "11", "StartDate": "30", "EndMonth": "11", "EndDate": "30"}],							
 		}		
 	},
 ]

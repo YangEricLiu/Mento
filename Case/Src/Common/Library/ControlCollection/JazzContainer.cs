@@ -73,9 +73,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region TimeManagment containers
         public static Container CalendarItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerCalendarItems);
-        public static Container CalendarWarmItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerCalendarWarmItems);
-        public static Container CalendarColdItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerCalendarColdItems);
-        
+        public static Container CalendarColdWarmItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerColdWarmCalendarItems);
         #endregion
 
         #region TOU containers

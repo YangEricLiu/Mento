@@ -14,29 +14,25 @@ namespace Mento.ScriptCommon.TestData.Administration
     public class HeatingCoolingSeasonCalendarInputData : InputTestDataBase
     {
         public string CommonName { get; set; }
-        public TimeRange[] WarmRange { get; set; }
-        public TimeRange[] ColdRange { get; set; }
+        public TimeRange[] ColdWarmRange { get; set; }
 
-        public HeatingCoolingSeasonCalendarInputData(string CommonName, TimeRange[] WarmRange, TimeRange[] ColdRange)
+        public HeatingCoolingSeasonCalendarInputData(string CommonName, TimeRange[] ColdWarmRange)
         {
             this.CommonName = CommonName;
-            this.WarmRange = WarmRange;
-            this.ColdRange = ColdRange;
+            this.ColdWarmRange = ColdWarmRange;
         }
     }
 
     public class HeatingCoolingSeasonCalendarExpectedData : ExpectedTestDataBase
     {
         public string CommonName { get; set; }
-        public TimeRange[] WarmRange { get; set; }
-        public TimeRange[] ColdRange { get; set; }
+        public TimeRange[] ColdWarmRange { get; set; }
         public string PopMessage { get; set; }
 
-        public HeatingCoolingSeasonCalendarExpectedData(string CommonName, TimeRange[] WarmRange, TimeRange[] ColdRange, string PopMessage)
+        public HeatingCoolingSeasonCalendarExpectedData(string CommonName, TimeRange[] ColdWarmRange, string PopMessage)
         {
             this.CommonName = CommonName;
-            this.WarmRange = WarmRange;
-            this.ColdRange = ColdRange;
+            this.ColdWarmRange = ColdWarmRange;
             this.PopMessage = PopMessage;
         }
     }

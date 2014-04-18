@@ -393,10 +393,8 @@
               <add key="ButtonHeatingCoolingSeasonCalendarSave" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonHeatingCoolingSeasonCalendarCancel" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonHeatingCoolingSeasonCalendarDelete" value="//div[@id='st-calendar-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-              <add key="ButtonHeatingCoolingSeasonCalendarAddMoreWarmRanges" value="st-calendar-warm-items-add-toolEl" type="ID"/>
-              <add key="ButtonHeatingCoolingSeasonCalendarAddMoreColdRanges" value="st-calendar-cold-items-add-toolEl" type="ID"/>
-              <add key="ButtonHeatingCoolingSeasonCalendarWarmDeleteRangeItem" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//img[contains(@class,'x-tool-trash')]" type="XPath"/>
-              <add key="ButtonHeatingCoolingSeasonCalendarColdDeleteRangeItem" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//img[contains(@class,'x-tool-trash')]" type="XPath"/>
+              <add key="LinkButtonHeatingCoolingSeasonCalendarAddMoreColdWarmRanges" value="//div[@id='st-calendar-cold-warm-items-add']//a[text()='$@Setting.Calendar.AddColdWarm']" type="XPath"/>  
+              <add key="ButtonHeatingCoolingSeasonCalendarDeleteRangeItem" value="//td[@id='st-calendar-cold-warm-items-container-bodyEl']/table[$#positionIndex]//img[contains(@class,'x-tool-delete')]" type="XPath"/>              
           </heatingcoolingseason>
           <daynight>
               <add key="ButtonDayNightCalendarCreate" value="st-calendar-grid-add" type="ID"/>
@@ -744,14 +742,11 @@
               <add key="ComboBoxWorktimeCalendarEndTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndPart']]" type="XPath"/>
           </worktime>
           <HeatingCoolingSeason>
-              <add key="ComboBoxHeatingCoolingSeasonCalendarWarmStartMonth" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
-              <add key="ComboBoxHeatingCoolingSeasonCalendarWarmStartDate" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
-              <add key="ComboBoxHeatingCoolingSeasonCalendarWarmEndMonth" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
-              <add key="ComboBoxHeatingCoolingSeasonCalendarWarmEndDate" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>
-              <add key="ComboBoxHeatingCoolingSeasonCalendarColdStartMonth" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
-              <add key="ComboBoxHeatingCoolingSeasonCalendarColdStartDate" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
-              <add key="ComboBoxHeatingCoolingSeasonCalendarColdEndMonth" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
-              <add key="ComboBoxHeatingCoolingSeasonCalendarColdEndDate" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>
+              <add key="ComboBoxHeatingCoolingSeasonCalendarColdWarmType" value="//td[@id='st-calendar-cold-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='ItemType']]" type="XPath"/>
+              <add key="ComboBoxHeatingCoolingSeasonCalendarColdWarmStartMonth" value="//td[@id='st-calendar-cold-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartFirstPart']]" type="XPath"/>
+              <add key="ComboBoxHeatingCoolingSeasonCalendarColdWarmStartDate" value="//td[@id='st-calendar-cold-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartSecondPart']]" type="XPath"/>
+              <add key="ComboBoxHeatingCoolingSeasonCalendarColdWarmEndMonth" value="//td[@id='st-calendar-cold-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndFirstPart']]" type="XPath"/>
+              <add key="ComboBoxHeatingCoolingSeasonCalendarColdWarmEndDate" value="//td[@id='st-calendar-cold-warm-items-container-bodyEl']/table[$#positionIndex]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='EndSecondPart']]" type="XPath"/>              
           </HeatingCoolingSeason>
           <daynight>
               <add key="ComboBoxDayNightCalendarStartTime" value="//td[@id='st-calendar-items-container-bodyEl']/table[$#positionIndex]//div[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartPart']]" type="XPath"/>
@@ -1140,8 +1135,7 @@
   <platformsettings>
     <TimeManagment>
       <add key="ContainerCalendarItems" value="//td[@id='st-calendar-items-container-bodyEl']/table" type="XPath"/>
-      <add key="ContainerCalendarWarmItems" value="//td[@id='st-calendar-warm-items-container-bodyEl']/table" type="XPath"/>
-      <add key="ContainerCalendarColdItems" value="//td[@id='st-calendar-cold-items-container-bodyEl']/table" type="XPath"/>
+      <add key="ContainerColdWarmCalendarItems" value="//td[@id='st-calendar-cold-warm-items-container-bodyEl']/table" type="XPath"/>
     </TimeManagment>
     <TOU>
         <add key="ContainerTOU24HoursErrorTips" value="st-tou-24hours-message" type="ID"/>

@@ -39,7 +39,7 @@ namespace Mento.Script.Administration.TOU
 
         #region TestCase1 ModifyTOUBasicFields
         /// <summary>
-        /// Pre-condition: Prepare a TOUIndustry with name '价格未被引用ForModifyValid', make sure it is NOT being used by any hierarchy node.
+        /// Pre-condition: Prepare a TOU1 with name '价格未被引用ForModifyValid', make sure it is NOT being used by any hierarchy node.
         /// Pre-condition: Prepare a TOU2 with name '价格已被引用ForModifyValid', make sure it has been used by a hierarchy node.
         /// </summary>
         [Test]
@@ -49,7 +49,7 @@ namespace Mento.Script.Administration.TOU
         [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffModifyValidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Modify-101")]
         public void ModifyTOUBasicFields(TOUBasicTariffData testData)
         {
-            //Select the TOU (Both of TOUIndustry and TOU2 can be modified).
+            //Select the TOU (Both of TOU1 and TOU2 can be modified).
             TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);
             TimeManager.ShortPause();
 
@@ -226,7 +226,7 @@ namespace Mento.Script.Administration.TOU
         [MultipleTestDataSource(typeof(TOUBasicTariffData[]), typeof(TOUBasicTariffModifyValidSuite), "TC-J1-FVT-TOUTariffSettingBasic-Modify-105")]
         public void ModifyTOUToDeleteTimeRange(TOUBasicTariffData testData)
         {
-            //Select the TOU with ranges like peakIndustry,2,3 and valleyIndustry,2,3.
+            //Select the TOU with ranges like peak1,2,3 and valley1,2,3.
             TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);
             TimeManager.ShortPause();
 

@@ -53,25 +53,20 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsHeatingCoolingSeason.FillInName(testData.InputData.CommonName);
 
             //Add warm and cold ranges.
-            TimeSettingsHeatingCoolingSeason.AddWarmRanges(testData);
-            TimeSettingsHeatingCoolingSeason.AddColdRanges(testData);
+            TimeSettingsHeatingCoolingSeason.AddColdWarmRanges(testData);
 
             //Click "Save" button
             TimeSettingsHeatingCoolingSeason.ClickSaveButton();
             TimeManager.MediumPause();
             JazzMessageBox.LoadingMask.WaitLoading();
 
-            //Verify saved successfully.
+            //Verify added successfully.
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsModifyButtonDisplayed());
-            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.InputData.CommonName));
-
-            //Verify the name
-            Assert.AreEqual(testData.InputData.CommonName, TimeSettingsHeatingCoolingSeason.GetNameValue());
-
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.ExpectedData.CommonName));
+            
             //Verify warm and cold ranges are added successfully.        
-            Assert.AreEqual(testData.InputData.WarmRange.Length, TimeSettingsHeatingCoolingSeason.GetWarmRangeItemsNumber());
-            Assert.AreEqual(testData.InputData.ColdRange.Length, TimeSettingsHeatingCoolingSeason.GetColdRangeItemsNumber());
+            Assert.AreEqual(testData.InputData.ColdWarmRange.Length, TimeSettingsHeatingCoolingSeason.GetColdWarmRangeItemsNumber());
 
             TimeManager.MediumPause();
         }
@@ -99,8 +94,7 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Input valid input
             TimeSettingsHeatingCoolingSeason.FillInName(testData.InputData.CommonName);
-            TimeSettingsHeatingCoolingSeason.AddWarmRanges(testData);
-            TimeSettingsHeatingCoolingSeason.AddColdRanges(testData);
+            TimeSettingsHeatingCoolingSeason.AddColdWarmRanges(testData);
 
             //Click "Cancel" button
             TimeSettingsHeatingCoolingSeason.ClickCancelButton();
@@ -140,8 +134,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
 
             //Input invalid inputs, e.g. required fields are null; duplicated name;  overlapped ranges            
-            TimeSettingsHeatingCoolingSeason.AddWarmRanges(testData);
-            TimeSettingsHeatingCoolingSeason.AddColdRanges(testData);
+            TimeSettingsHeatingCoolingSeason.AddColdWarmRanges(testData);
             TimeSettingsHeatingCoolingSeason.FillInName(testData.InputData.CommonName);
 
             //Click "Save" button.
@@ -154,10 +147,10 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCancelButtonDisplayed());
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsModifyButtonDisplayed());
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsNameInvalidMsgCorrect(testData.ExpectedData));
-            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsWarmRangeInvalidMsgCorrect(testData.ExpectedData, 1));
-            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsWarmRangeInvalidMsgCorrect(testData.ExpectedData, 2));
-            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsColdRangeInvalidMsgCorrect(testData.ExpectedData, 1));
-            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsColdRangeInvalidMsgCorrect(testData.ExpectedData, 2));
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsColdWarmRangeInvalidMsgCorrect(testData.ExpectedData, 1));
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsColdWarmRangeInvalidMsgCorrect(testData.ExpectedData, 2));
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsColdWarmRangeInvalidMsgCorrect(testData.ExpectedData, 3));
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsColdWarmRangeInvalidMsgCorrect(testData.ExpectedData, 4));
 
             //Click 'Cancel' button to quit the addition.
             TimeSettingsHeatingCoolingSeason.ClickCancelButton();

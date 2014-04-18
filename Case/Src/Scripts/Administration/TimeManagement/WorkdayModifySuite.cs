@@ -121,20 +121,7 @@ namespace Mento.Script.Administration.TimeManagement
             //Verify modification is saved successfully.
             Assert.IsFalse(TimeSettingsWorkday.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsWorkday.IsModifyButtonDisplayed());
-
-            //工休日日历每次保存后顺序都不同。。和开发协调优化。
-            ////Verify time range1 remains as before.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[0].StartDate, TimeSettingsWorkday.GetStartDateValue(1));
-            ////Verify time range2 is auto-rounding to be a new startmonth, startdate.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[1].StartMonth, TimeSettingsWorkday.GetStartMonthValue(2));
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[1].StartDate, TimeSettingsWorkday.GetStartDateValue(2));
-            ////Verify time range3 is auto-rounding to be a new endmonth, enddate.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[2].EndMonth, TimeSettingsWorkday.GetEndMonthValue(3));
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[2].EndDate, TimeSettingsWorkday.GetEndDateValue(3));
-            ////Verify time range4 remains as before.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[3].EndDate, TimeSettingsWorkday.GetEndDateValue(4));
-            ////Verify time range5 remains as before.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[4].EndDate, TimeSettingsWorkday.GetEndDateValue(5));
+                        
         }
         #endregion
 

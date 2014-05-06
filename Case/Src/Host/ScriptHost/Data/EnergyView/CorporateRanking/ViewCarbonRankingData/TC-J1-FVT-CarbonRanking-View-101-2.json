@@ -2,10 +2,9 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"], ["NancyCostCustomer2","组织A","园区A","楼宇B"]],
-			"commodityNames":["煤","自来水"],
-			"failedFileName":["F-CarbonRankingDataView001-1-H-Elec.xls"],
-			"SystemDimensionPath":["系统维度","空调"],
+			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"]],
+			"commodityNames":["煤"],
+			"failedFileName":["F-CarbonRankingDataView002-1-H-Elec.xls"],
 			"ManualTimeRange":[
 			{
 				"StartDate":"2012-1-1",
@@ -14,7 +13,7 @@
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["CarbonRankingDataView001-1-H-Elec.xls"],
+			"expectedFileName":["CarbonRankingDataView002-1-H-Elec.xls"],
 
 		}
 	}

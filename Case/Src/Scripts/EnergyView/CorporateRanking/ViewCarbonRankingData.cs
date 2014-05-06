@@ -35,7 +35,11 @@ namespace Mento.Script.EnergyView.CorporateRanking
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
+            JazzFunction.Navigator.NavigateHome();
+            //HomePagePanel.ExitJazz();
+
+            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            //TimeManager.MediumPause();
         }
 
         private static RankPanel CorporateRanking = JazzFunction.RankPanel;
@@ -173,6 +177,9 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
             TimeManager.LongPause();
+
+            EnergyViewToolbar.ClickRankTypeConvertTarget();
+            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.AverageRank);
 
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
             var ManualTimeRange = input.InputData.ManualTimeRange;

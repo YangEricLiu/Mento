@@ -80,6 +80,24 @@ namespace Mento.ScriptCommon.Library.Functions
             ExcelHelper.ExportToExcel(data, filePath, sheetName);
         }
 
+        /// <summary>
+        /// Export failed data table to excel file with new header sheet
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="fileName"></param>
+        /// <param name="sheetName"></param>
+        public void ExportFailedDataToExcelWithHeaderSheet(DataTable data, string fileName, string sheetName, ExcelHelper.CellsValue[] headersSheet2)
+        {
+            DateTime today = new DateTime();
+            today = DateTime.Now.ToLocalTime();
+            string dashPath = today.ToString("yyyyMMddHH");
+
+            string failTimePath = Path.Combine(ExecutionConfig.failedDataViewExcelFileDirectory, dashPath);
+            string filePath = Path.Combine(failTimePath, fileName);
+
+            ExcelHelper.ExportToExcelWithHeaderSheet(data, filePath, sheetName, headersSheet2);
+        }
+
         #endregion
 
         #region Compare Data Tables
@@ -89,7 +107,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="expectedDataTable"></param>
         /// <param name="actualDataTable"></param>
-        public bool CompareDataTables(DataTable expectedDataTable, DataTable actualDataTable, string fileName)
+        public bool CompareDataTables(DataTable expectedDataTable, DataTable actualDataTable, string fileName, ExcelHelper.CellsValue[] headersSheet)
         {
             bool areEqual = true;
             DataTable diversityTable = new DataTable();
@@ -140,7 +158,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
             if (!areEqual)
             {
-                ExportFailedDataToExcel(diversityTable, fileName, sheetNameFailed);
+                //ExportFailedDataToExcel(diversityTable, fileName, sheetNameFailed);
+                ExportFailedDataToExcelWithHeaderSheet(diversityTable, fileName, sheetNameFailed, headersSheet);
             }        
 
             return areEqual; 
@@ -195,6 +214,8 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         #endregion
+
+        
 
     }
 }

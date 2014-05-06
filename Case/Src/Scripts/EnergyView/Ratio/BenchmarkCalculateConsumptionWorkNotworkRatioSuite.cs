@@ -37,10 +37,10 @@ namespace Mento.Script.EnergyView.Ratio
             JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
 
-            HomePagePanel.ExitJazz();
+            //HomePagePanel.ExitJazz();
 
-            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            TimeManager.MediumPause();
+            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            //TimeManager.MediumPause();
         }
 
         private static RatioPanel RadioPanel = JazzFunction.RatioPanel;
@@ -130,7 +130,7 @@ namespace Mento.Script.EnergyView.Ratio
             EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[0]);
             TimeManager.ShortPause();
 
-            //Time range 2012-10-1 to 2013-4-1
+            //Time range 2012-9-11 to 2013-4-21
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();

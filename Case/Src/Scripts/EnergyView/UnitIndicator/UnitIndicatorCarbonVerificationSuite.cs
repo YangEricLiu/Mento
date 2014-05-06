@@ -21,7 +21,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     /// 
     /// </summary>
     [TestFixture]
-    [Ignore("ignore")]
+    //[Ignore("ignore")]
     [ManualCaseID("TC-J1-FVT-UnitIndicatorCarbonVerification-101"), CreateTime("2013-12-26"), Owner("Emma")]
     public class UnitIndicatorCarbonVerificationSuite : TestSuiteBase
     {
@@ -35,14 +35,14 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
-            
-            //HomePagePanel.SelectCustomer("NancyCustomer1");
-            //TimeManager.MediumPause();
-            HomePagePanel.ExitJazz();
+            JazzFunction.Navigator.NavigateHome();
 
-            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.MediumPause();
+            //HomePagePanel.ExitJazz();
+
+            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            //TimeManager.MediumPause();
         }
 
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;

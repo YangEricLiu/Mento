@@ -34,15 +34,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
+            JazzFunction.Navigator.NavigateHome();
 
-            //HomePagePanel.SelectCustomer("NancyCustomer1");
-            //TimeManager.LongPause();
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.LongPause();
 
-            HomePagePanel.ExitJazz();
+            //HomePagePanel.ExitJazz();
 
-            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            TimeManager.MediumPause();
+            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            //TimeManager.MediumPause();
         }
 
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;

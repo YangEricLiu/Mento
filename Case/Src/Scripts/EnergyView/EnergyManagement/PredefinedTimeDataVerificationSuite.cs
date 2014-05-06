@@ -102,7 +102,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            Assert.IsTrue(EnergyAnalysis.IsLastMonthMonthlyDataCorrect(input.ExpectedData.LastMonthValue));
+            Assert.AreEqual(input.ExpectedData.LastMonthValue, EnergyAnalysis.IsLastMonthMonthlyDataCorrect());
         }
 
         [Test]
@@ -162,7 +162,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            Assert.IsTrue(EnergyAnalysis.IsLastMonthMonthlyDataCorrect(input.ExpectedData.LastMonthValue));
+            Assert.AreEqual(input.ExpectedData.LastMonthValue, EnergyAnalysis.IsLastMonthMonthlyDataCorrect());
         }
 
         [Test]
@@ -222,7 +222,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            Assert.IsTrue(EnergyAnalysis.IsLastMonthMonthlyDataCorrect(input.ExpectedData.LastMonthValue));
+            Assert.AreEqual(input.ExpectedData.LastMonthValue, EnergyAnalysis.IsLastMonthMonthlyDataCorrect());
         }
 
         [Test]
@@ -282,7 +282,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            Assert.IsTrue(EnergyAnalysis.IsLastMonthMonthlyDataCorrect(input.ExpectedData.LastMonthValue));
+            Assert.AreEqual(input.ExpectedData.LastMonthValue, EnergyAnalysis.IsLastMonthMonthlyDataCorrect());
         }
 
         [Test]
@@ -345,7 +345,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            Assert.IsTrue(EnergyAnalysis.IsLastMonthMonthlyDataCorrect(input.ExpectedData.LastMonthValue));
+            Assert.AreEqual(input.ExpectedData.LastMonthValue, EnergyAnalysis.IsLastMonthMonthlyDataCorrect());
         }
 
         [Test]
@@ -408,7 +408,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            Assert.IsTrue(EnergyAnalysis.IsLastMonthMonthlyDataCorrect(input.ExpectedData.LastMonthValue));
+            Assert.AreEqual(input.ExpectedData.LastMonthValue, EnergyAnalysis.IsLastMonthMonthlyDataCorrect());
         }
 
         [Test]
@@ -468,7 +468,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            Assert.IsTrue(EnergyAnalysis.IsLastMonthMonthlyDataCorrect(input.ExpectedData.LastMonthValue));
+            Assert.AreEqual(input.ExpectedData.LastMonthValue, EnergyAnalysis.IsLastMonthMonthlyDataCorrect());
         }
 
     }

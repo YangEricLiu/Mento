@@ -38,10 +38,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
 
-            HomePagePanel.ExitJazz();
+            //HomePagePanel.ExitJazz();
 
-            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            TimeManager.MediumPause();
+            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            //TimeManager.MediumPause();
         }
 
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
@@ -171,24 +171,24 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
             TimeManager.MediumPause();
 
-            //verify all left tags in this hierarchy or other hierarchy, can't check one more
+            //verify all left tags in this hierarchy or other hierarchy, can check more, until 30 tags
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies);
             MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(MultiHieCompareWindow.IsNoEnabledCheckbox());
+            Assert.IsFalse(MultiHieCompareWindow.IsNoEnabledCheckbox());
 
             MultiHieCompareWindow.SwitchTagTab(TagTabs.SystemDimensionTab);
             MultiHieCompareWindow.SelectSystemDimension(input.InputData.SystemDimensionPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(MultiHieCompareWindow.IsNoEnabledCheckbox());
+            Assert.IsFalse(MultiHieCompareWindow.IsNoEnabledCheckbox());
 
             MultiHieCompareWindow.SwitchTagTab(TagTabs.AreaDimensionTab);
             MultiHieCompareWindow.SelectAreaDimension(input.InputData.AreaDimensionPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(MultiHieCompareWindow.IsNoEnabledCheckbox());
+            Assert.IsFalse(MultiHieCompareWindow.IsNoEnabledCheckbox());
 
             //uncheck "V_Null_BuildingBC" and veirfy that all chechbox are enabled
             MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
@@ -207,7 +207,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            Assert.AreEqual(10, EnergyAnalysis.GetTrendChartLines());
 
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);

@@ -35,7 +35,11 @@ namespace Mento.Script.EnergyView.CorporateRanking
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
+            JazzFunction.Navigator.NavigateHome();
+            //HomePagePanel.ExitJazz();
+
+            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            //TimeManager.MediumPause();
         }
 
         private static RankPanel CorporateRanking = JazzFunction.RankPanel;
@@ -867,7 +871,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Click Function Type button, select Cost, then go to 介质单项.
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Energy);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -913,7 +916,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Click Function Type button, select Cost, then go to 介质单项.
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Energy);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();

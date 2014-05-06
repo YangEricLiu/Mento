@@ -385,6 +385,21 @@ namespace Mento.Utility
         }
 
         /// <summary> 
+        /// Import header Data to Excel 
+        /// </summary> 
+        /// <remarks>To the start of worksheet, not display title</remarks> 
+        /// <param name="sheet"></param> 
+        /// <param name="headers"></param> 
+        /// <param name="table"></param> 
+        public void ExportHeaderToExcelSheet(Excel.Worksheet sheet, CellsValue[] headers)
+        {          
+            foreach (CellsValue cellValue in headers)
+            {
+                this.SetCellValue(sheet, cellValue.cellsIndex.firstRowIndex, cellValue.cellsIndex.firstColumnIndex, cellValue.cellsValue);
+            }
+        }
+
+        /// <summary> 
         /// Import Scripts Data to Excel
         /// </summary> 
         /// <remarks>For each column, title is the same with</remarks> 
@@ -656,6 +671,45 @@ namespace Mento.Utility
         }
 
         /// <summary>
+        /// Export a data table to excel file with new header sheet
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="fileName"></param>
+        /// <param name="sheetName"></param>
+        /// <param name="headers"></param>
+        public static void ExportToExcelWithHeaderSheet(DataTable data, string fileName, string sheetName, CellsValue[] headersSheet2, string[] headersSheet1 = null)
+        {
+            if (headersSheet1 == null || headersSheet1.Length <= 0)
+            {
+                var columns = new List<string>();
+                foreach (DataColumn column in data.Columns)
+                    columns.Add(column.ColumnName);
+
+                headersSheet1 = columns.ToArray();
+            }
+
+            FileInfo excelFile = new FileInfo(fileName);
+            if (!excelFile.Directory.Exists)
+                excelFile.Directory.Create();
+
+            //Open excel file which restore scripts data
+            ExcelHelper handler = new ExcelHelper(fileName, true);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Microsoft.Office.Interop.Excel.Worksheet sheet1 = handler.AddWorksheet(sheetName);
+            Microsoft.Office.Interop.Excel.Worksheet sheet2 = handler.AddWorksheet("Header");
+
+            //Import data from the start
+            handler.ImportDataTable(sheet1, headersSheet1, data);
+            handler.ExportHeaderToExcelSheet(sheet2, headersSheet2);
+
+            handler.Save();
+            handler.Dispose();
+        }
+
+        /// <summary>
         /// Export a excel to data table
         /// </summary>
         /// <param name="filePath"></param>
@@ -727,5 +781,23 @@ namespace Mento.Utility
 
             ExportToExcel(table, fileName, sheetName, headers);
         }
+
+        #region for failed excel file header
+        
+        public struct MergeCellsIndex
+        {
+            public int firstColumnIndex;
+            public int firstRowIndex;
+            public int lastColumnIndex;
+            public int lastRowIndex;
+        }
+
+        public struct CellsValue
+        {
+            public MergeCellsIndex cellsIndex;
+            public string cellsValue;
+        }
+
+        #endregion
     }
 }

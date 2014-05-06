@@ -34,11 +34,11 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
-            HomePagePanel.ExitJazz();
+            JazzFunction.Navigator.NavigateHome();
+            //HomePagePanel.ExitJazz();
 
-            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            TimeManager.MediumPause();
+            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            //TimeManager.MediumPause();
         }
 
         private static CarbonUsagePanel CarbonUsage = JazzFunction.CarbonUsagePanel;
@@ -205,8 +205,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
                 Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard[i].DashboardName));
                 Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[i].WigetName));
-                //Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(CarbonUsage.CarbonPath, input.ExpectedData.expectedFileName[i+8], input.InputData.failedFileName[i+8], dashboard[i].WigetName));
-                HomePagePanel.CompareMinWidgetDataView(CarbonUsage.CarbonPath, input.ExpectedData.expectedFileName[i + 8], input.InputData.failedFileName[i + 8], dashboard[i].WigetName);
+                //HomePagePanel.CompareMinWidgetDataView(CarbonUsage.CarbonPath, input.ExpectedData.expectedFileName[i + 8], input.InputData.failedFileName[i + 8], dashboard[i].WigetName);
             }
         }
 
@@ -283,7 +282,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard[0].DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            //Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(CarbonUsage.CarbonPath, input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2], dashboard[0].WigetName));
         }
 
         [Test]

@@ -4,12 +4,11 @@
 		{
 			"UserName":"UserForMultiCustomer",
 			"CustomerName":"customerB",
-			"HierarchyNodePath":["customerC"],
+			"HierarchyNodePath":["customerB","organizationB","siteB","buildingB"],
 		},
 		"ExpectedData":
 		{
 			"CustomerList":["customerA","organizationA"],
-			"HierarchyNodePath":["customerB","organizationB","siteB"],
 		}
 	}
 ]

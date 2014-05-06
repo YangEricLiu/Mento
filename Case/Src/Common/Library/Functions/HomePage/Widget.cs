@@ -348,10 +348,11 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 string filePath = Path.Combine(basePath, expectedFileName);
                 DataTable actualData = GetWidgetMaxDataViewAllData();
+                Grid dataGrid = JazzGrid.MaxWidgetDataViewGrid;
 
                 DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
 
-                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName, dataGrid.GetGridHeaderDraft());
             }
             else
             {

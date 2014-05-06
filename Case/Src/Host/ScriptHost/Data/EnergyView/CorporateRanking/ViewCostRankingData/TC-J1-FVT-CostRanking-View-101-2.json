@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyCostCustomer2","组织B","园区C","楼宇D"],["NancyCostCustomer2","组织A","园区A","楼宇B"]],
 			"commodityNames":["电","自来水"],
-			"failedFileName":["F-CostRankingDataView002-1-Elec.xls","F-CostRankingDataView002-2-Elec.xls"],
+			"failedFileName":["F-CostRankingDataView002-1-Elec.xls"],
 			"SystemDimensionPath":["系统维度","空调"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-7-2",
@@ -13,7 +13,7 @@
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["CostRankingDataView002-1-Elec.xls","CostRankingDataView002-2-Elec.xls"],
+			"expectedFileName":["CostRankingDataView002-1-Elec.xls"],
 		}
 	}
 ]

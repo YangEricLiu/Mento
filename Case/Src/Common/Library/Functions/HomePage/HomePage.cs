@@ -473,6 +473,13 @@ namespace Mento.ScriptCommon.Library.Functions
             EnjoyWidgetNameMin.Float();
         }
 
+        public void ClickOnMyShareWidget(string name)
+        {
+            Label EnjoyWidgetNameMin = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelEnjoyWidgetNameMin, name);
+
+            EnjoyWidgetNameMin.Click();
+        }
+
         public void FloatOnMyShareEditCommentButton(string name)
         {
             Label WidgetMinAnnotationIcon = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelMyShareWidgetMinAnnotationIcon, name);
@@ -505,9 +512,7 @@ namespace Mento.ScriptCommon.Library.Functions
             FloatOnMyShareWidget(name);
             TimeManager.ShortPause();
 
-            Button MyShareMaximizeButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonMyShareWidgetMaximize, name);
-
-            MyShareMaximizeButton.Click();
+            ClickOnMyShareWidget(name);
         }
 
         public void ClickShareMyShareWidgetButton(string name)
@@ -683,10 +688,12 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 string filePath = Path.Combine(basePath, expectedFileName);
                 DataTable actualData = GetWidgetMinDataViewAllData(widgetName);
+                Grid dataGrid = JazzGrid.GetOneGrid(JazzControlLocatorKey.GridHomepageMinWidgetDataView, widgetName);
+
 
                 DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
 
-                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName, dataGrid.GetGridHeaderDraft());
             }
             else
             {

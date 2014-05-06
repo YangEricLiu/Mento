@@ -35,7 +35,11 @@ namespace Mento.Script.EnergyView.CorporateRanking
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
+            JazzFunction.Navigator.NavigateHome();
+            //HomePagePanel.ExitJazz();
+
+            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
+            //TimeManager.MediumPause();
         }
 
         private static RankPanel CorporateRanking = JazzFunction.RankPanel;
@@ -72,7 +76,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.MediumPause();
 
-            //Select Commodity=介质总览 to display data view. Unit=单位人口.
+            //Select Commodity=电 to display data view. Unit=单位人口.
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.ClickRankTypeConvertTarget();
             EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.AverageRank);
@@ -93,7 +97,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //2.Change tima range to 2011/1/1-2012/12/31 to display Data view.
-            EnergyViewToolbar.SetDateRange(new DateTime(2011, 1, 1), new DateTime(2012, 12, 31));
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
 
             EnergyViewToolbar.ClickViewButton();

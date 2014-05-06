@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -218,7 +219,7 @@ namespace Mento.Script.Information.Share
             Assert.AreEqual(3, HomePagePanel.GetWidgetsNumberOfDashboard());
 
             HomePagePanel.NavigateToMyFavorite();
-            Assert.AreEqual(1, HomePagePanel.GetDashboardsNumber());
+            Assert.AreEqual(3, HomePagePanel.GetDashboardsNumber());
 
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);

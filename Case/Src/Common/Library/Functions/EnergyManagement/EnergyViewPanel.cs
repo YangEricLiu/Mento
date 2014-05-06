@@ -9,6 +9,7 @@ using Mento.Framework.Configuration;
 using Mento.ScriptCommon.TestData.EnergyView;
 using Mento.TestApi.WebUserInterface;
 using System.IO;
+using Mento.Utility;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -334,6 +335,13 @@ namespace Mento.ScriptCommon.Library.Functions
             return EnergyDataGrid.GetAllData();
         }
 
+        public ExcelHelper.CellsValue[] GetHeaderData()
+        {
+            ExcelHelper.CellsValue[] headersSheet = EnergyDataGrid.GetGridHeaderDraft();
+
+            return headersSheet;
+        }
+
         /// <summary>
         /// Export expected data table to excel file
         /// </summary>
@@ -418,10 +426,11 @@ namespace Mento.ScriptCommon.Library.Functions
                 TimeManager.LongPause();
 
                 DataTable actualData = GetAllData();
+                ExcelHelper.CellsValue[] headersSheet = GetHeaderData();
 
                 DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
 
-                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName);
+                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName, headersSheet);
             }
             else
             {
@@ -582,7 +591,7 @@ namespace Mento.ScriptCommon.Library.Functions
             return correctNum > 1;
         }
 
-        public bool IsLastMonthMonthlyDataCorrect(string expectedValue)
+        public string IsLastMonthMonthlyDataCorrect()
         {
             var values = GetDataRange();
 
@@ -591,7 +600,8 @@ namespace Mento.ScriptCommon.Library.Functions
                 throw new Exception("今年只有一个月，请手动验证去年12月的值");
             }
 
-            return String.Equals(expectedValue, values[1]);
+            //return String.Equals(expectedValue, values[1]);
+            return values[1];
         }
 
         public bool IsLastMonthDailyDataCorrect(string expectedValue)
@@ -607,7 +617,8 @@ namespace Mento.ScriptCommon.Library.Functions
                 }
             }
 
-            return correctNum == 27;
+            return correctNum >= 27;
+            //return correctNum == 27;
         }
 
         #endregion

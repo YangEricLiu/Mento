@@ -6,6 +6,7 @@ using OpenQA.Selenium;
 using System.Collections;
 using System.Data;
 using System.Text.RegularExpressions;
+using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -1072,6 +1073,133 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         }
 
+        public void GetGridHeader()
+        {
+            int headerRowIndex = 1;
+            int headerTotalRowNumber = 1;
+            int headerColumnNumber = 1;
+            int headerColumnLeftIndex = 1;
+            var list = new List<ExcelHelper.CellsValue>();
+            var cellValue = new ExcelHelper.CellsValue();
+
+            var headerColumnLeft = new Locator("div[contains(@id,'headercontainer') and contains(@id,'targetEl')]/div[contains(@class, 'x-column-header-align-left')]/div[@class='x-column-header-inner']", ByType.XPath);
+            var headerColumnCenter = new Locator("div[contains(@id,'headercontainer') and contains(@id,'targetEl')]/div[contains(@class, 'x-column-header-align-center')]", ByType.XPath);
+            var headerSubInner = new Locator("div[@class='x-box-inner']", ByType.XPath);
+            var headerSubTitle = new Locator("div[@class='x-column-header-inner']", ByType.XPath);
+            var headerColumnSubCenter = new Locator("div/div[contains(@class, 'x-column-header-align-center') and contains(@class, 'x-group-sub-header')]", ByType.XPath);
+            var headerColumnCenterSubCenter = new Locator("div/div/div[contains(@class, 'x-column-header-align-center') and contains(@class, 'x-group-sub-header')]", ByType.XPath);
+            var headerColumnSubLeft = new Locator("div/div[contains(@class, 'x-column-header-align-left') and contains(@class, 'x-group-sub-header')]", ByType.XPath);
+
+            //Confirm the total header row number
+            if (ElementHandler.Exists(headerColumnCenter, container: this.RootElement))
+            {
+                IWebElement oneCenter = FindChild(headerColumnCenter);
+                
+                if (ElementHandler.Exists(headerSubInner, container: oneCenter))
+                {
+                    IWebElement oneheaderSubInner = ElementHandler.FindElement(headerSubInner, container: oneCenter);
+                    headerTotalRowNumber++;
+
+                    while (ElementHandler.Exists(headerColumnSubCenter, container: oneheaderSubInner))
+                    {
+                        IWebElement oneheaderColumnSubCenter = ElementHandler.FindElement(headerColumnSubCenter, container: oneheaderSubInner);
+                        oneheaderSubInner = ElementHandler.FindElement(headerSubInner, container: oneheaderColumnSubCenter);
+                        headerTotalRowNumber++;
+                    } 
+                }
+                
+            }
+
+            //If there is "时间" header title
+            if (ElementHandler.Exists(headerColumnLeft, container: this.RootElement))
+            {
+                cellValue.cellsValue = FindChild(headerColumnLeft).Text;
+                cellValue.cellsIndex.firstRowIndex = headerRowIndex;
+                cellValue.cellsIndex.firstColumnIndex = headerColumnNumber;
+                cellValue.cellsIndex.lastRowIndex = headerTotalRowNumber;
+                cellValue.cellsIndex.lastColumnIndex = headerColumnNumber;
+
+                list.Add(cellValue);
+                headerColumnLeftIndex++;
+            }
+
+            IWebElement[] headerColumnCenters = FindChildren(headerColumnCenter);
+
+            for (int i = 0; i < headerColumnCenters.Length; i++ )
+            {
+                cellValue.cellsValue = ElementHandler.FindElement(headerSubTitle, container: headerColumnCenters[i]).Text;
+
+                IWebElement[] headerColumnSubCenters = ElementHandler.FindElements(headerColumnCenterSubCenter, container: headerColumnCenters[0]);
+                cellValue.cellsIndex.firstRowIndex = headerRowIndex;
+                cellValue.cellsIndex.firstColumnIndex = headerColumnLeftIndex;
+                cellValue.cellsIndex.lastRowIndex = headerRowIndex;
+                cellValue.cellsIndex.lastColumnIndex = headerColumnNumber + headerColumnSubCenters.Length;
+
+                list.Add(cellValue);
+
+                if (ElementHandler.Exists(headerSubInner, container: headerColumnCenters[i]))
+                {
+                    IWebElement headerColumnCenter2 = headerColumnCenters[i];
+                    headerRowIndex++;
+
+                    while (ElementHandler.Exists(headerSubInner, container: headerColumnCenter2))
+                    {
+                        IWebElement oneheaderSubInner2 = ElementHandler.FindElement(headerSubInner, container: headerColumnCenter2);
+                        IWebElement oneheaderColumnSubCenter2 = ElementHandler.FindElement(headerColumnSubCenter, container: oneheaderSubInner2);
+                        cellValue.cellsValue = ElementHandler.FindElement(headerSubTitle, container: oneheaderColumnSubCenter2).Text;
+                        IWebElement[] headerColumnSubCenters2 = ElementHandler.FindElements(headerColumnCenterSubCenter, container: oneheaderColumnSubCenter2);
+                        cellValue.cellsIndex.firstRowIndex = headerRowIndex;
+                        cellValue.cellsIndex.firstColumnIndex = headerColumnLeftIndex;
+                        cellValue.cellsIndex.lastRowIndex = headerRowIndex;
+                        cellValue.cellsIndex.lastColumnIndex = headerColumnNumber + headerColumnSubCenters2.Length;
+                        list.Add(cellValue);
+
+                        headerColumnCenter2 = ElementHandler.FindElement(headerSubInner, container: oneheaderColumnSubCenter2);
+                    }
+                }
+            }
+        }
+
+        public ExcelHelper.CellsValue[] GetGridHeaderDraft()
+        {
+            int headerRowIndex = 1;
+            int headerColumnLeftIndex = 1;
+            var list = new List<ExcelHelper.CellsValue>();
+            var cellValue = new ExcelHelper.CellsValue();
+
+            var headerColumnLeft = new Locator("div/div/div[contains(@id,'headercontainer') and contains(@id,'targetEl')]/div[contains(@class, 'x-column-header-align-left')]/div[@class='x-column-header-inner']", ByType.XPath);
+            var headerColumnCenter = new Locator("div/div/div[contains(@id,'headercontainer') and contains(@id,'targetEl')]/div[contains(@class, 'x-column-header-align-center')]", ByType.XPath);
+
+            //If there is "时间" header title
+            if (ElementHandler.Exists(headerColumnLeft, container: this.RootElement))
+            {
+                cellValue.cellsValue = FindChild(headerColumnLeft).Text;
+                cellValue.cellsIndex.firstRowIndex = headerRowIndex;
+                cellValue.cellsIndex.firstColumnIndex = headerColumnLeftIndex;
+                cellValue.cellsIndex.lastRowIndex = headerRowIndex;
+                cellValue.cellsIndex.lastColumnIndex = headerColumnLeftIndex;
+
+                list.Add(cellValue);
+                headerColumnLeftIndex++;
+            }
+
+            IWebElement[] headerColumnCenters = FindChildren(headerColumnCenter);
+
+            for (int i = 0; i < headerColumnCenters.Length; i++)
+            {
+                cellValue.cellsValue = headerColumnCenters[i].Text;
+
+                cellValue.cellsIndex.firstRowIndex = headerRowIndex;
+                cellValue.cellsIndex.firstColumnIndex = headerColumnLeftIndex;
+                cellValue.cellsIndex.lastRowIndex = headerRowIndex;
+                cellValue.cellsIndex.lastColumnIndex = headerColumnLeftIndex;
+                list.Add(cellValue);
+
+                headerColumnLeftIndex++;
+            }
+
+            return list.ToArray();
+        }
 
         #region Common
         private bool ChildExists(Locator locator)

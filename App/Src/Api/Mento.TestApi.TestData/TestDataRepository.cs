@@ -181,6 +181,12 @@ namespace Mento.TestApi.TestData
             {
                 string content = File.ReadAllText(fileName, Encoding.UTF8);
 
+                //replace happens here
+                //language key replace, if language resource has place holder, replace with parameter
+                //commodity key replace
+//$@common.message.test
+//$@common.message.test|(a),(b),(c)
+
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(content);
             }
             else

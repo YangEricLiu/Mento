@@ -23,6 +23,7 @@ namespace Mento.Script.Administration.TimeManagement
     public class DayNightDeleteSuite : TestSuiteBase
     {
         private static TimeSettingsDayNight TimeSettingsDayNight = JazzFunction.TimeSettingsDayNight;
+        private static TimeSettingsWorkday TimeSettingsWorkday = JazzFunction.TimeSettingsWorkday;
         [SetUp]
         public void CaseSetUp()
         {
@@ -55,14 +56,20 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
             TimeSettingsDayNight.ClickDeleteButton();
 
-            //Click 'Confirm' button on the confirmation window.
+            //Click 'Delete' button on the confirmation window.
             TimeManager.ShortPause();
-            TimeSettingsDayNight.ClickMsgBoxConfirmButton();
+            TimeSettingsDayNight.ClickMsgBoxDeleteButton();
 
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
             //Verify that the Calendar is deleted successfully and NOT exists in the list.
+            Assert.IsFalse(TimeSettingsDayNight.IsCalendarExist(testData.InputData.CommonName));
+
+            //Go to other tab(e.g. workday tab), then back again, verify that the deleted calendar NOT exists in the list.
+            TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            TimeSettingsDayNight.NavigatorToDaynightCalendarSetting();
+            TimeManager.MediumPause();
             Assert.IsFalse(TimeSettingsDayNight.IsCalendarExist(testData.InputData.CommonName));
         }
         #endregion
@@ -85,9 +92,9 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
             TimeSettingsDayNight.ClickDeleteButton();
 
-            //Click 'Cancel' button to cancel the deletion.
+            //Click 'Give Up' button to cancel the deletion.
             TimeManager.ShortPause();
-            TimeSettingsDayNight.ClickMsgBoxCancelButton();
+            TimeSettingsDayNight.ClickMsgBoxGiveUpButton();
 
             //Select the Calendar again.
             TimeSettingsDayNight.SelectCalendar(testData.InputData.CommonName);
@@ -102,6 +109,12 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Verify that the Calendar is not deleted when cancel or close the window, and still exists in the list.
             TimeManager.ShortPause();
+            Assert.IsTrue(TimeSettingsDayNight.IsCalendarExist(testData.InputData.CommonName));
+
+            //Go to other tab(e.g. workday tab), then back again, verify that the calendar still exists in the list.
+            TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            TimeSettingsDayNight.NavigatorToDaynightCalendarSetting();
+            TimeManager.MediumPause();
             Assert.IsTrue(TimeSettingsDayNight.IsCalendarExist(testData.InputData.CommonName));
         }
         #endregion
@@ -124,21 +137,27 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
             TimeSettingsDayNight.ClickDeleteButton();
 
-            //Click 'Confirm' button to confirm the deletion.
+            //Click 'Delete' button to confirm the deletion.
             TimeManager.ShortPause();
-            TimeSettingsDayNight.ClickMsgBoxConfirmButton();
+            TimeSettingsDayNight.ClickMsgBoxDeleteButton();
             TimeManager.LongPause();
 
             //Verify that error message like "Calendar has been used and can't be deleted" pops up.
             Assert.IsTrue(TimeSettingsDayNight.IsPopMsgCorrect(testData.ExpectedData));
             TimeManager.ShortPause();
 
-            //Click 'Confirm' button to close the deletion failed message box.
+            //Click 'OK' button to close the deletion failed message box.
             TimeManager.ShortPause();
-            TimeSettingsDayNight.ClickMsgBoxConfirmButton();
+            TimeSettingsDayNight.ClickMsgBoxOKButton();
             
             //Verify that the Calendar is not deleted and still exists in the list.
             TimeManager.ShortPause();
+            Assert.IsTrue(TimeSettingsDayNight.IsCalendarExist(testData.InputData.CommonName));
+
+            //Go to other tab(e.g. workday tab), then back again, verify that the calendar still exists in the list.
+            TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            TimeSettingsDayNight.NavigatorToDaynightCalendarSetting();
+            TimeManager.MediumPause();
             Assert.IsTrue(TimeSettingsDayNight.IsCalendarExist(testData.InputData.CommonName));
         }
         #endregion

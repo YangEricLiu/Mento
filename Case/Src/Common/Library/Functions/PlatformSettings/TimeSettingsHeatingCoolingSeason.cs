@@ -124,6 +124,16 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.MessageBox.Cancel();
         }
 
+        public void ClickMsgBoxDeleteButton()
+        {
+            JazzMessageBox.MessageBox.Delete();
+        }
+
+        public void ClickMsgBoxGiveUpButton()
+        {
+            JazzMessageBox.MessageBox.GiveUp();
+        }
+
         public void ClickMsgBoxCloseButton()
         {
             JazzMessageBox.MessageBox.Close();

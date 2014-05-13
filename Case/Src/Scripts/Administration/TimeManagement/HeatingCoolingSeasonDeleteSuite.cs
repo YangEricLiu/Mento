@@ -23,6 +23,7 @@ namespace Mento.Script.Administration.TimeManagement
     public class HeatingCoolingSeasonDeleteSuite : TestSuiteBase
     {
         private static TimeSettingsHeatingCoolingSeason TimeSettingsHeatingCoolingSeason = JazzFunction.TimeSettingsHeatingCoolingSeason;
+        private static TimeSettingsWorkday TimeSettingsWorkday = JazzFunction.TimeSettingsWorkday;
         [SetUp]
         public void CaseSetUp()
         {
@@ -57,15 +58,20 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
             TimeSettingsHeatingCoolingSeason.ClickDeleteButton();
 
-            //Click 'Confirm' button on the confirmation window.
+            //Click 'Delete' button on the confirmation window.
             TimeManager.ShortPause();
-            TimeSettingsHeatingCoolingSeason.ClickMsgBoxConfirmButton();
+            TimeSettingsHeatingCoolingSeason.ClickMsgBoxDeleteButton();
 
             TimeManager.LongPause();
 
             //Verify that the Calendar is deleted successfully and NOT exists in the list.
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.InputData.CommonName));
 
+            //Go to other tab(e.g. workday tab), then back again, verify that the deleted calendar NOT exists in the list.
+            TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            TimeSettingsHeatingCoolingSeason.NavigatorToHeatingCoolingSeasonCalendarSetting();
+            TimeManager.MediumPause();
+            Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.InputData.CommonName));
         
         }
         #endregion
@@ -88,9 +94,9 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
             TimeSettingsHeatingCoolingSeason.ClickDeleteButton();
 
-            //Click 'Cancel' button to cancel the deletion.
+            //Click 'Give Up' button to cancel the deletion.
             TimeManager.ShortPause();
-            TimeSettingsHeatingCoolingSeason.ClickMsgBoxCancelButton();
+            TimeSettingsHeatingCoolingSeason.ClickMsgBoxGiveUpButton();
 
             //Select the Calendar again.
             TimeSettingsHeatingCoolingSeason.SelectCalendar(testData.InputData.CommonName);
@@ -105,6 +111,12 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Verify that the Calendar is not deleted when cancel or close the window, and still exists in the list.
             TimeManager.ShortPause();
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.InputData.CommonName));
+
+            //Go to other tab(e.g. workday tab), then back again, verify that the calendar still exists in the list.
+            TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            TimeSettingsHeatingCoolingSeason.NavigatorToHeatingCoolingSeasonCalendarSetting();
+            TimeManager.MediumPause();
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.InputData.CommonName));
         }
         #endregion
@@ -127,21 +139,27 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
             TimeSettingsHeatingCoolingSeason.ClickDeleteButton();
 
-            //Click 'Confirm' button to confirm the deletion.
+            //Click 'Delete' button to confirm the deletion.
             TimeManager.ShortPause();
-            TimeSettingsHeatingCoolingSeason.ClickMsgBoxConfirmButton();
+            TimeSettingsHeatingCoolingSeason.ClickMsgBoxDeleteButton();
             TimeManager.LongPause();
 
             //Verify that error message like "Calendar has been used and can't be deleted" pops up.
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsPopMsgCorrect(testData.ExpectedData));
             TimeManager.ShortPause();
 
-            //Click 'Confirm' button to close the deletion failed message box.
+            //Click 'OK' button to close the deletion failed message box.
             TimeManager.ShortPause();
-            TimeSettingsHeatingCoolingSeason.ClickMsgBoxConfirmButton();
+            TimeSettingsHeatingCoolingSeason.ClickMsgBoxOKButton();
             
             //Verify that the Calendar is not deleted and still exists in the list.
             TimeManager.ShortPause();
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.InputData.CommonName));
+
+            //Go to other tab(e.g. workday tab), then back again, verify that the calendar still exists in the list.
+            TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
+            TimeSettingsHeatingCoolingSeason.NavigatorToHeatingCoolingSeasonCalendarSetting();
+            TimeManager.MediumPause();
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCalendarExist(testData.InputData.CommonName));
         }
         #endregion

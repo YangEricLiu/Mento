@@ -13,6 +13,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
     public class Grade : JazzControl
     {
         private static Locator GradeItemFrontLabel = new Locator("div/label[1]", ByType.XPath);
+        private static Locator GradeItemUOMLabel = new Locator("div/label[last()]", ByType.XPath);
         private static Locator GradeItemLeftNumberField = new Locator("div/table[contains(@id,'numberfield')][1]", ByType.XPath);
         private static Locator GradeItemRightNumberField = new Locator("div/table[contains(@id,'numberfield')][2]", ByType.XPath);
         private static Locator GradeItemNumberFieldLabel = new Locator("tbody/tr/td[contains(@id,'numberfield') and contains(@id,'labelCell')]/label", ByType.XPath);
@@ -52,9 +53,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return LastGradeItemLabel.Text;
         }
 
+        public string GetGradeItemUOMValue(int num)
+        {
+            IWebElement GradeItemUOM = ElementHandler.FindElement(GradeItemUOMLabel, container: GradeItems[num - 1]);
+
+            return GradeItemUOM.Text;
+        }
+
         public string GetGradeItemLeftNumberValue(int num)
         {
-            IWebElement GradeItemLeftNumber = ElementHandler.FindElement(GradeItemLeftNumberField, container: GradeItems[num]);
+            IWebElement GradeItemLeftNumber = ElementHandler.FindElement(GradeItemLeftNumberField, container: GradeItems[num - 1]);
             IWebElement GradeItemLeftNumberInput = ElementHandler.FindElement(GradeItemNumberFieldInput, container: GradeItemLeftNumber);
 
             return GradeItemLeftNumberInput.Text;
@@ -62,7 +70,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public string GetGradeItemRightNumberValue(int num)
         {
-            IWebElement GradeItemRightNumber = ElementHandler.FindElement(GradeItemRightNumberField, container: GradeItems[num]);
+            IWebElement GradeItemRightNumber = ElementHandler.FindElement(GradeItemRightNumberField, container: GradeItems[num - 1]);
             IWebElement GradeItemRightNumberInput = ElementHandler.FindElement(GradeItemNumberFieldInput, container: GradeItemRightNumber);
 
             return GradeItemRightNumberInput.Text;
@@ -70,7 +78,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public string GetGradeItemMiddleLabelValue(int num)
         {
-            IWebElement GradeItemRightNumber = ElementHandler.FindElement(GradeItemRightNumberField, container: GradeItems[num]);
+            IWebElement GradeItemRightNumber = ElementHandler.FindElement(GradeItemRightNumberField, container: GradeItems[num - 1]);
             IWebElement GradeItemMiddleLabel = ElementHandler.FindElement(GradeItemNumberFieldLabel, container: GradeItemRightNumber);
 
             return GradeItemMiddleLabel.Text;
@@ -78,7 +86,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public void FillGradeItemLeftNumberValue(int num, string value)
         {
-            IWebElement GradeItemLeftNumber = ElementHandler.FindElement(GradeItemLeftNumberField, container: GradeItems[num]);
+            IWebElement GradeItemLeftNumber = ElementHandler.FindElement(GradeItemLeftNumberField, container: GradeItems[num - 1]);
             IWebElement GradeItemLeftNumberInput = ElementHandler.FindElement(GradeItemNumberFieldInput, container: GradeItemLeftNumber);
 
             GradeItemLeftNumberInput.Clear();
@@ -87,7 +95,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public void FillGradeItemRightNumberValue(int num, string value)
         {
-            IWebElement GradeItemRightNumber = ElementHandler.FindElement(GradeItemRightNumberField, container: GradeItems[num]);
+            IWebElement GradeItemRightNumber = ElementHandler.FindElement(GradeItemRightNumberField, container: GradeItems[num - 1]);
             IWebElement GradeItemRightNumberInput = ElementHandler.FindElement(GradeItemNumberFieldInput, container: GradeItemRightNumber);
 
             GradeItemRightNumberInput.Clear();
@@ -96,14 +104,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public bool IsGradeItemLeftNumberFieldDisabled(int num)
         {
-            IWebElement GradeItemLeftNumber = ElementHandler.FindElement(GradeItemLeftNumberField, container: GradeItems[num]);
+            IWebElement GradeItemLeftNumber = ElementHandler.FindElement(GradeItemLeftNumberField, container: GradeItems[num - 1]);
 
             return GradeItemLeftNumber.GetCssValue("class").Contains("x-item-disabled");
         }
 
         public bool IsGradeItemRightNumberFieldDisabled(int num)
         {
-            IWebElement GradeItemRightNumber = ElementHandler.FindElement(GradeItemRightNumberField, container: GradeItems[num]);
+            IWebElement GradeItemRightNumber = ElementHandler.FindElement(GradeItemRightNumberField, container: GradeItems[num - 1]);
 
             return GradeItemRightNumber.GetCssValue("class").Contains("x-item-disabled");
         }

@@ -126,5 +126,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region Container locators
         public static string CustomerManageMapInfo = "CustomerMapInfoSetMesaage";
         #endregion
+
+        #region Grade locators
+        public static string GradeItems = "GradeItems";
+        #endregion
     } 
 }

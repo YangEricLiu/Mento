@@ -202,8 +202,8 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             JazzFunction.UserProfile.NavigatorToUserProfile();
             JazzFunction.UserProfile.ExitJazz();
-            TimeManager.MediumPause();
-            JazzMessageBox.MessageBox.Confirm();
+            TimeManager.LongPause();
+            JazzMessageBox.MessageBox.Quit();
             JazzMessageBox.LoadingMask.WaitLoading(15);
             TimeManager.LongPause();
         }      
@@ -693,7 +693,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
                 DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
 
-                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName, dataGrid.GetGridHeaderDraft());
+                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName, dataGrid.GetGridHeader());
             }
             else
             {

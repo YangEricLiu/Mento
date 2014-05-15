@@ -312,7 +312,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <param name="displayStep"></param>
         public void ExportRankingExpectedDataTableToExcel(string fileName)
         {
-            //ExportExpectedDataTableToExcel(fileName, displayStep, RankingPath);
             ExportRankingExpectedDataTableToExcel(fileName, RankingPath);
         }
 

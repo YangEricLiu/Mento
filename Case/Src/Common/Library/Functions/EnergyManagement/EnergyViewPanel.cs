@@ -337,7 +337,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public ExcelHelper.CellsValue[] GetHeaderData()
         {
-            ExcelHelper.CellsValue[] headersSheet = EnergyDataGrid.GetGridHeaderDraft();
+            ExcelHelper.CellsValue[] headersSheet = EnergyDataGrid.GetGridHeader();
 
             return headersSheet;
         }
@@ -362,37 +362,19 @@ namespace Mento.ScriptCommon.Library.Functions
                 //Load data view and get data table
 
                 DataTable data = GetAllData();
+                ExcelHelper.CellsValue[] headersSheet = GetHeaderData();
 
                 //Export to excel
                 string actualFileName = Path.Combine(path, fileName);
-                JazzFunction.DataViewOperation.MoveExpectedDataViewToExcel(data, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
+                JazzFunction.DataViewOperation.MoveExpectedDataViewToExcelWithHeaderSheet(data, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected, headersSheet);
             }
         }
 
-
-        public void ExportRankingExpectedDataTableToExcel(string fileName, string path)
-        {
-            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
-            {
-                //display data view
-                JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
-                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-                TimeManager.LongPause();
-
-                //Load data view and get data table
-                DataTable data = GetAllData();
-
-                //Export to excel
-                string actualFileName = Path.Combine(path, fileName);
-                JazzFunction.DataViewOperation.MoveExpectedDataViewToExcel(data, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
-            }
-        }
-
-        /*
         /// <summary>
-        /// Export Ranking expected data table to excel file
+        /// Export expected data table to excel file
         /// </summary>
-        /// <param name="displayStep"></param>
+        /// <param name="displayStep">fileName</param>
+        /// <param name="displayStep">path</param>
         public void ExportRankingExpectedDataTableToExcel(string fileName, string path)
         {
             if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
@@ -404,13 +386,14 @@ namespace Mento.ScriptCommon.Library.Functions
 
                 //Load data view and get data table
                 DataTable data = GetAllData();
+                ExcelHelper.CellsValue[] headersSheet = GetHeaderData();
 
                 //Export to excel
                 string actualFileName = Path.Combine(path, fileName);
-                JazzFunction.DataViewOperation.MoveExpectedDataViewToExcel(data, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
+                JazzFunction.DataViewOperation.MoveExpectedDataViewToExcelWithHeaderSheet(data, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected, headersSheet);
             }
         }
-*/
+
         /// <summary>
         /// Import expected data file and compare to the data view currently, if not equal, export to another file
         /// </summary>

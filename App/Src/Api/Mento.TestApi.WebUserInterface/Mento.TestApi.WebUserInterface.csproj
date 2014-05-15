@@ -84,6 +84,7 @@
     <Compile Include="Controls\Common\Tooltip.cs" />
     <Compile Include="Controls\Common\MessageBox.cs" />
     <Compile Include="Controls\DatePicker\DatePicker.cs" />
+    <Compile Include="Controls\Grade\Grade.cs" />
     <Compile Include="Controls\Grid\Grid.cs" />
     <Compile Include="Controls\Label\Label.cs" />
     <Compile Include="Controls\MonthPicker\MonthPicker.cs" />

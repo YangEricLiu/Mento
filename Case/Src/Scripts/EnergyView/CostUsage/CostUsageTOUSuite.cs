@@ -178,7 +178,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
             TimeManager.MediumPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.OK();
 
             EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 23), new DateTime(2012, 7, 23));
             EnergyViewToolbar.SetTimeRange("10:00", "24:00");
@@ -186,7 +186,7 @@ namespace Mento.Script.EnergyView.CostUsage
             EnergyViewToolbar.ClickViewButton();
             TimeManager.MediumPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.OK();
             TimeManager.MediumPause();
 
             //Pick up another node which not set TOU
@@ -201,7 +201,7 @@ namespace Mento.Script.EnergyView.CostUsage
             EnergyViewToolbar.ShowPeakValley();
             TimeManager.LongPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[1]));
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.OK();
             
             //On homepage, check the dashboard
             CostUsage.NavigateToAllDashBoards();
@@ -227,7 +227,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
             TimeManager.MediumPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.OK();
             TimeManager.MediumPause();
 
             WidgetMaxChart.InputEndDate(new DateTime(2012, 7, 23));
@@ -236,7 +236,7 @@ namespace Mento.Script.EnergyView.CostUsage
             WidgetMaxChart.ClickViewButton();
             TimeManager.MediumPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.OK();
             TimeManager.MediumPause();
 
             WidgetMaxChart.ClickCloseButton();

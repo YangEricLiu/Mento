@@ -392,11 +392,25 @@ namespace Mento.Utility
         /// <param name="headers"></param> 
         /// <param name="table"></param> 
         public void ExportHeaderToExcelSheet(Excel.Worksheet sheet, CellsValue[] headers)
-        {          
+        {
+            Excel.Range range;
+            //int i = 1;
+
             foreach (CellsValue cellValue in headers)
             {
-                this.SetCellValue(sheet, cellValue.cellsIndex.firstRowIndex, cellValue.cellsIndex.firstColumnIndex, cellValue.cellsValue);
+                range = sheet.Range[sheet.Cells[cellValue.cellsIndex.firstRowIndex, cellValue.cellsIndex.firstColumnIndex], sheet.Cells[cellValue.cellsIndex.lastRowIndex, cellValue.cellsIndex.lastColumnIndex]];
+                range.Merge(false);
+                range.Value = cellValue.cellsValue;
+                //this.SetCellValue(sheet, i, 1, cellValue.cellsIndex.firstRowIndex);
+                //this.SetCellValue(sheet, i, 2, cellValue.cellsIndex.firstColumnIndex);
+                //this.SetCellValue(sheet, i, 3, cellValue.cellsIndex.lastRowIndex);
+                //this.SetCellValue(sheet, i, 4, cellValue.cellsIndex.lastColumnIndex);
+                //this.SetCellValue(sheet, i, 5, cellValue.cellsValue);
+
+                //i++;
             }
+
+            sheet.get_Range("A1", "M1").ColumnWidth = 30;
         }
 
         /// <summary> 

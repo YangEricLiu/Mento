@@ -382,7 +382,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             CalculateTargetButton.Click();
             TimeManager.LongPause();
-            JazzMessageBox.MessageBox.Yes();
+            JazzMessageBox.MessageBox.OK();
             JazzMessageBox.LoadingMask.WaitLoading(maxtime:30);
         }
 
@@ -395,7 +395,7 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.MediumPause();
             CalculateBaselineButton.Click();
             TimeManager.MediumPause();
-            JazzMessageBox.MessageBox.Yes();
+            JazzMessageBox.MessageBox.OK();
             JazzMessageBox.LoadingMask.WaitLoading(maxtime: 30);
         }
         #endregion

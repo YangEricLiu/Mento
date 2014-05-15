@@ -115,4 +115,6 @@
   <!--Container-->
   <add key="CustomerMapInfoSetMesaage"  value="//div[@id='st-map-consumption-form-targetEl']/div[contains(@id,'container')]//label[text()='请至少选择1项。']" type="XPath"/>
 
+  
+  
 </WebElement>

@@ -218,7 +218,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ConfirmErrorMsgBox()
         {
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitLoading();
         }
 
@@ -228,7 +228,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void CancelErrorMsgBox()
         {
-            JazzMessageBox.MessageBox.Cancel();
+            JazzMessageBox.MessageBox.GiveUp();
         }
 
         /// <summary>

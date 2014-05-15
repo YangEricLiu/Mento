@@ -10,27 +10,8 @@ using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
-    public class Grid : JazzControl
+    public class Grade : JazzControl
     {
-        private static string CELLINDEXVARIABLE = "cellIndex";
-        private static string CELLTEXTVARIABLE = "cellText";
-        private static string CELLTEXTVARIABLE1 = "cellText1";
-        private static string CELLTEXTVARIABLE2 = "cellText2";
-        private static Locator IsGridRowCheckedLocator = new Locator("//td/div/div[contains(@class, 'x-grid-checkheader-checked')]", ByType.XPath);
-        //private static Locator IsNoDataOnGridLocator = new Locator("div/div/div/div[text()='没有数据']", ByType.XPath);
-        private static Locator IsNoRowOnGridLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]", ByType.XPath);
-        private static Locator DataViewLocator = new Locator("div[contains(@id, 'headercontainer') and contains(@class,'x-grid-header-ct')]", ByType.XPath);
-        private static Locator IsNoEnabledCheckboxLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[contains(@class, 'x-grid-cell-checkcolumn')]/div/div[@class='x-grid-checkheader']", ByType.XPath);
-        private static Locator IsDataPermissionEnableLocator = new Locator("//div[@id='st-user-datarange-form-innerCt']//div//div[contains(@id,'datapermissiongrid')]/div[2]/div/table/tbody/tr/td[5]/div/a[@type='disableEdit']", ByType.XPath);
-        private static Locator IAllEnabledCheckboxLocator = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[contains(@class, 'x-grid-cell-checkcolumn')]/div/div[contains(@class,'x-grid-checkheader-disabled')]", ByType.XPath);
-        private static Locator ShareWindowGridRowChecker = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img", ByType.XPath);
-        private static Locator ShareWindowGridRowColumn = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr/td[$#cellIndex]/div[text()='$#cellText']", ByType.XPath);
-        private static Locator ShareWindowRowsNotChecker = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img[not(contains(@class,'x-checked'))]", ByType.XPath);
-        private static Locator SendedListRemoveButton = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img[not(contains(@class,'x-checked'))]", ByType.XPath);
-
-        private static Locator DisassociatedTagicon = new Locator("div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-actioncolumn')]/div/img[contains(@class,'has-associated-icon')]", ByType.XPath);
-
-        private static Locator IDataScopeCustomerListLocator = new Locator("/tbody/tr/td[4]", ByType.XPath);
 
         protected IWebElement[] CurrentRows
         {

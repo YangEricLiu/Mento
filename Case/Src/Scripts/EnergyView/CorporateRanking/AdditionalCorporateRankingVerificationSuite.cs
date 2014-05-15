@@ -691,7 +691,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
             TimeManager.LongPause();
 
-            //B.Time range = 2012-4-1
+            //B.Time range = 2014-4-1
             EnergyViewToolbar.SetDateRange(ManualTimeRange[5].StartDate, ManualTimeRange[5].EndDate);
             TimeManager.ShortPause();
 

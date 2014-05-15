@@ -78,7 +78,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //Select Commodity=电 to display data view. Unit=单位人口.
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
-            EnergyViewToolbar.ClickRankTypeConvertTarget();
+            //EnergyViewToolbar.ClickRankTypeConvertTarget();
             EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.AverageRank);
 
             EnergyViewToolbar.ClickViewButton();

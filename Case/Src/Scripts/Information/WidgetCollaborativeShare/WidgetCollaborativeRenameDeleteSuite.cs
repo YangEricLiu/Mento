@@ -366,7 +366,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             UserSettings.FocusOnUser(dashboard[0].ShareUsers[0]);
             UserSettings.DeleteUser();
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
 

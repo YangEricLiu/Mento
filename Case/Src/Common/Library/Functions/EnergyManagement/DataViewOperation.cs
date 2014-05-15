@@ -63,6 +63,20 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Export expected data table to excel file with header sheet
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="fileName"></param>
+        /// <param name="sheetName"></param>
+        /// <param name="headers"></param>
+        public void MoveExpectedDataViewToExcelWithHeaderSheet(DataTable data, string fileName, string sheetName, ExcelHelper.CellsValue[] headersSheet2)
+        {
+            string filePath = Path.Combine(ExecutionConfig.expectedDataViewExcelFileDirectory, fileName);
+
+            ExcelHelper.ExportToExcelWithHeaderSheet(data, filePath, sheetName, headersSheet2);
+        }
+
+        /// <summary>
         /// Export failed data table to excel file
         /// </summary>
         /// <param name="data"></param>
@@ -145,6 +159,11 @@ namespace Mento.ScriptCommon.Library.Functions
                         myRow[0] = i + 2;
 
                         if ((j != 0) && (expectedDataTable.Columns[0].ColumnName.Contains("时间")))
+                        {
+                            myRow[1] = expectedDataTable.Rows[i][0].ToString();
+                        }
+
+                        if ((j != 0) && (expectedDataTable.Columns[0].ColumnName.Contains("名称")))
                         {
                             myRow[1] = expectedDataTable.Rows[i][0].ToString();
                         }

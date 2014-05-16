@@ -116,7 +116,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickMsgBoxConfirmButton()
         {
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.Delete();
         }
 
         public void ClickMsgBoxCancelButton()

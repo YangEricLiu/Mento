@@ -123,7 +123,7 @@ namespace Mento.Script.Customer.TagAssociation
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
             //select ‘全部数据点’ try to find the above tag.
-            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[0]));
+            Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[0]));
             //Select '区域数据点' try to find the above tag.
             JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.AreaDimensionTab);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -131,7 +131,7 @@ namespace Mento.Script.Customer.TagAssociation
             JazzFunction.EnergyAnalysisPanel.SelectAreaDimension(input.InputData.AreaDimensionPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[0]));
+            Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[0]));
             //select '系统数据点' try to find the above tag.
             JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.SystemDimensionTab);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();

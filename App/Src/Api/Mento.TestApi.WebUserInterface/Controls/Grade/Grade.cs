@@ -113,7 +113,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             IWebElement GradeItemRightNumber = ElementHandler.FindElement(GradeItemRightNumberField, container: GradeItems[num - 1]);
 
-            return GradeItemRightNumber.GetCssValue("class").Contains("x-item-disabled");
+            return GradeItemRightNumber.GetAttribute("class").Contains("x-item-disabled");
         }
     }
 }

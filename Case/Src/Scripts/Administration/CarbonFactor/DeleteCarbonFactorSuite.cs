@@ -58,7 +58,7 @@ namespace Mento.Script.Administration.CarbonFactor
             Assert.IsTrue(msgText.Contains(testData.ExpectedData.Source));
 
             //在确认消息框点击取消.
-            JazzMessageBox.MessageBox.Cancel();
+            JazzMessageBox.MessageBox.GiveUp();
 
             //Verify carbon factor still exist and the 'Factor Source', 'Factor Destination' and Carbon factor value keep.
             Assert.AreEqual(testData.ExpectedData.Source, CarbonFactorSettings.GetFactorSourceValue());
@@ -110,7 +110,7 @@ namespace Mento.Script.Administration.CarbonFactor
             CarbonFactorSettings.ClickDeleteButton();
 
             //在确认消息框点击确认.
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 

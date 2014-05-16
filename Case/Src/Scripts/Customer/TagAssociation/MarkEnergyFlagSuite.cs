@@ -145,11 +145,13 @@ namespace Mento.Script.Customer.TagAssociation
             SystemNodeSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionPath);
             AssociateSettings.LightenTag(input.InputData.TagName);
             Assert.IsTrue(AssociateSettings.IsTagLighted(input.InputData.TagName));
+            TimeManager.LongPause();
 
             //Darken the associated tag in the system dimension. Doing nothing to the other dimension.
             //The first energy consumption flag turn dark.
             AssociateSettings.DarkenTag(input.InputData.TagName);
-            Assert.IsTrue(AssociateSettings.IsTagLighted(input.InputData.TagName));
+            TimeManager.MediumPause();
+            Assert.IsFalse(AssociateSettings.IsTagLighted(input.InputData.TagName));
             AssociateSettings.FocusOnVTagByName(input.InputData.TagName);
             AssociateSettings.ClickDisassociateButton(input.InputData.TagName);
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -161,8 +163,7 @@ namespace Mento.Script.Customer.TagAssociation
             AreaNodeSettings.ShowHierarchyTree();
             AreaNodeSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             AreaNodeSettings.SelectAreaDimensionNodePath(input.InputData.AreaDimensionPath);
-            Assert.IsTrue(AssociateSettings.IsTagLighted(input.InputData.TagName));
-            Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));
+            Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));
         }
 
         [Test]

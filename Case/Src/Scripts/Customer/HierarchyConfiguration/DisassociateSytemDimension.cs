@@ -64,7 +64,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             string msgText = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
             TimeManager.ShortPause();
-            JazzMessageBox.MessageBox.No();
+            JazzMessageBox.MessageBox.GiveUp();
             TimeManager.ShortPause();
 
             SystemSettings.CloseSystemDimensionDialog();
@@ -104,7 +104,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             string msgText = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
             TimeManager.LongPause();
-            JazzMessageBox.MessageBox.OK();
+            JazzMessageBox.MessageBox.Delete();
             TimeManager.MediumPause();
 
             //SystemSettings.CloseSystemDimensionDialog();
@@ -155,7 +155,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             string msgText = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
             TimeManager.ShortPause();
-            JazzMessageBox.MessageBox.Yes();
+            JazzMessageBox.MessageBox.Delete();
             TimeManager.ShortPause();
 
             SystemSettings.ConfirmSystemDimensionDialog();
@@ -197,7 +197,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             string msgText = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
             TimeManager.MediumPause();
-            JazzMessageBox.MessageBox.Yes();
+            JazzMessageBox.MessageBox.Delete();
             TimeManager.MediumPause();
 
             SystemSettings.ConfirmSystemDimensionDialog();

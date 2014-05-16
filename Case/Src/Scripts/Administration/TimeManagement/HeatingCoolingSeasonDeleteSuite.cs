@@ -60,7 +60,7 @@ namespace Mento.Script.Administration.TimeManagement
 
             //Click 'Delete' button on the confirmation window.
             TimeManager.ShortPause();
-            TimeSettingsHeatingCoolingSeason.ClickMsgBoxDeleteButton();
+            TimeSettingsHeatingCoolingSeason.ClickMsgBoxConfirmButton();
 
             TimeManager.LongPause();
 

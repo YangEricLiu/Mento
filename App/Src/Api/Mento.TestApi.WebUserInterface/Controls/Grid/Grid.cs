@@ -997,7 +997,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             var checker = this.GetRowLight(cellIndex, cellText, Paging);
 
-            return checker.GetAttribute("class").Split(' ').Contains("is-energy-consump-icon");
+            return checker.GetAttribute("class").Contains("is-energy-consump-icon");
         }
 
         /// <summary>
@@ -1021,11 +1021,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public void ClickLightenButton(int cellIndex, string cellText, bool Paging = true)
         {
             var lighter = this.GetRowLight(cellIndex, cellText, Paging);
-
-            if (this.IsRowUnLightened(cellIndex, cellText))
-            {
-                lighter.Click();
-            }
+            lighter.Click();
         }
 
         // Get the lights row

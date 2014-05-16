@@ -24,6 +24,30 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static DemoAccessSetting _Demo;
+        public static DemoAccessSetting Demo
+        {
+            get
+            {
+                if (_Demo == null)
+                    _Demo = new DemoAccessSetting();
+
+                return _Demo;
+            }
+        }
+
+        private static ContactUsSetting _ContactUsPage;
+        public static ContactUsSetting ContactUsPage
+        {
+            get
+            {
+                if (_ContactUsPage == null)
+                    _ContactUsPage = new ContactUsSetting();
+
+                return _ContactUsPage;
+            }
+        }
+
         private static Navigator _Navigator;
         public static Navigator Navigator
         {
@@ -36,6 +60,17 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static CustomizedLabellingSettings _CustomizedLabellingSettings;
+        public static CustomizedLabellingSettings CustomizedLabellingSettings
+        {
+            get
+            {
+                if (_CustomizedLabellingSettings == null)
+                    _CustomizedLabellingSettings = new CustomizedLabellingSettings();
+
+                return _CustomizedLabellingSettings;
+            }
+        }
 
         private static PTagSettings _PTagSettings;
         public static PTagSettings PTagSettings

@@ -67,6 +67,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region DemoAccess
+        public static Label LabelEmailSendedSuccessTips = GetControl<Label>(JazzControlLocatorKey.LabelEmailSendedSuccessTips);
+        #endregion
+
         #region home page
 
         public static Label DashboardHeaderNameLabel = GetControl<Label>(JazzControlLocatorKey.LabelDashboardHeaderName);

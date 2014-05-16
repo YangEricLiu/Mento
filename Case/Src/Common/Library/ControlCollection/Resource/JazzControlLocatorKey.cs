@@ -14,7 +14,20 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonLoginCustomerOptionConfirm = "ButtonLoginCustomerOptionConfirm";
         #endregion
 
-        #region navigator
+        #region DemoAccess
+        public static string ButtonDemoAccess = "ButtonDemoAccess";
+        public static string ButtonSendDemoAccessEmail = "ButtonSendDemoAccessEmail";
+        public static string ButtonReturnHomepage = "ButtonReturnHomepage";
+        #endregion
+
+        #region ContactUs
+        public static string ButtonContactUs = "ButtonContactUs";
+        public static string ButtonContactUsConfirm = "ButtonContactUsConfirm";
+        public static string ButtonContactUsCancel = "ButtonContactUsCancel";
+        public static string ButtonContactUsClose = "ButtonContactUsClose";
+        #endregion
+
+        #region navigatorBu
         public static string ButtonNavigatorHomePage = "ButtonNavigatorHomePage";
         public static string ButtonNavigatorEnergyView = "ButtonNavigatorEnergyView";
         public static string ButtonNavigatorSettings = "ButtonNavigatorSettings";
@@ -357,6 +370,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         
         #endregion
 
+        #region CustomizedLabellingSetting
+        public static string ButtonCustomizedLabellingCreat = "ButtonCustomizedLabellingCreat";
+        public static string ButtonCustomizedLabellingSave = "ButtonCustomizedLabellingSave";
+        public static string ButtonCustomizedLabellingUpdate = "ButtonCustomizedLabellingUpdate";
+        public static string ButtonCustomizedLabellingModify = "ButtonCustomizedLabellingModify";
+        public static string ButtonCustomizedLabellingDelete = "ButtonCustomizedLabellingDelete";
+        public static string ButtonCustomizedLabellingAscending = "ButtonCustomizedLabellingAscending";
+
+        #endregion
+        
         #endregion
 
         #region User Data Scope Permission
@@ -539,6 +562,18 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldLoginPassword = "TextFieldLoginPassword";
         #endregion
 
+        #region DemoAccess
+        public static string TextFieldDemoAccessEmailAddress = "TextFieldDemoAccessEmailAddress";
+        #endregion
+
+        #region ContactUs
+        public static string TextFieldContactUsName = "TextFieldContactUsName";
+        public static string TextFieldContactUsTelephone = "TextFieldContactUsTelephone";
+        public static string TextFieldContactUsCompany = "TextFieldContactUsCompany";
+        public static string TextFieldContactUsTitle = "TextFieldContactUsTitle";
+        public static string TextFieldContactUsDescriptionFields = "TextFieldContactUsDescriptionFields";
+        #endregion
+
         #region User
         public static string TextFieldUserName = "TextFieldUserName";
         public static string TextFieldUserRealName = "TextFieldUserRealName";
@@ -640,6 +675,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldAreaDimensionSettingsComment = "TextFieldAreaDimensionSettingsComment";
         #endregion
 
+        #region  CustomizedLabellingSetting
+        public static string TextFieldCustomizedLabellingName = "TextFieldCustomizedLabellingName";
+        #endregion
         #endregion
 
         #region platformsettings
@@ -702,6 +740,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region login
         public static string ComboBoxLoginCustomerOption = "ComboBoxLoginCustomerOption";
         #endregion
+
 
         #region User
         public static string ComboBoxUserType = "ComboBoxUserType";
@@ -781,6 +820,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxKPITargetBaselineSpecialdayRuleEndTime = "ComboBoxKPITargetBaselineSpecialdayRuleEndTime";
         #endregion
 
+        #region CustomizedLabellingSetting
+        public static string ComboBoxCustomizedLabellingCommodity = "CustomizedLabellingCommodity";
+        public static string ComboBoxCustomizedLabellingType = "CustomizedLabellingType";
+        public static string ComboBoxCustomizedLabellingLevel = "CustomizedLabellingLevel";
+
+        #endregion
+
         #endregion
 
         #region platformsettings
@@ -840,8 +886,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxLabelingEnergyEfficiencyLabelingLevel = "ComboBoxLabelingEnergyEfficiencyLabelingLevel";
         public static string ComboBoxLabelingStartYear = "ComboBoxLabelingStartYear";
         public static string ComboBoxLabelingEndYear = "ComboBoxLabelingEndYear";
-
-
         #endregion
         #endregion
 
@@ -1001,6 +1045,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region Grade
+        #region customersettings
+        public static string GradeCustomizedLabellingFrontLabel = " GradeCustomizedLabellingFrontLabel";
+        public static string GradeCustomizedLabellingLeftNumberField = "GradeCustomizedLabellingLeftNumberField";
+        public static string GradeCustomizedLabellingRightNumberField = "GradeCustomizedLabellingrightNumberField";
+        public static string GradeCustomizedLabellingNumberFieldLabel = "GradeCustomizedLabellingNumberFieldLabel";
+        public static string GradeCustomizedLabellingNumberFieldInput = "GradeCustomizedLabellingNumberFieldInput";
+        #endregion
+        #endregion
+
         #region DatePicker
 
         #region EnergyUsage
@@ -1114,8 +1168,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region LabelingSetting
         public static string LabelPlatformLabelingSetting = "LabelPlatformLabelingSetting";
-
         #endregion
+
 
         #region CustomerMapInfo
         public static string LabelPlatformCustomerMapInfo = "LabelPlatformCustomerMapInfo";
@@ -1161,6 +1215,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string LabelAdditionEndTime = "LabelAdditionEndTime";
 
+        #endregion
+
+        #region DemoAccess
+        public static string LabelEmailSendedSuccessTips = "LabelEmailSendedSuccessTips";
         #endregion
 
         #endregion
@@ -1282,9 +1340,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region IndustryBenchMark
         public static string CheckBoxBenchMark = "CheckBoxBenchMark";
-        #endregion
-
-        #region IndustryLabeling
         #endregion
 
         #endregion

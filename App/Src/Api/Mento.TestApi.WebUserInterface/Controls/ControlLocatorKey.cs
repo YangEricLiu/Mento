@@ -51,6 +51,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         #region Button locators
         public static string ButtonInput = "ButtonInput";
+        public static string AscendingCustomizedLabellingButton = "AscendingCustomizedLabellingButton";
         #endregion
 
         #region ComboBox locators

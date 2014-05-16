@@ -7,6 +7,19 @@
             <add key="ButtonLoginCustomerOptionConfirm" value = "//div[contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
         </login>
       
+        <DemoAccess>
+            <add key="ButtonDemoAccess" value = "demoLoginBtn" type="ID"/>
+            <add key="ButtonSendDemoAccessEmail" value = "btnSubmit" type="ID"/>
+            <add key="ButtonReturnHomepage" value = "//a[text()='返回首页']" type="XPath"/>
+        </DemoAccess>
+
+      <ContactUs>
+        <add key="ButtonContactUs" value="header-contactus-button" type="ID"/>
+        <add key="ButtonContactUsConfirm" value="//div[contains(@id, 'contactuspanel') and contains(@class, 'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
+        <add key="ButtonContactUsCancel" value="//div[contains(@id, 'contactuspanel') and contains(@class, 'x-window-default')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel2']]" type="XPath"/>
+        <add key="ButtonContactUsClose" value="//div[contains(@id, 'contactuspanel') and contains(@class, 'x-window-default')]//img[@class='x-tool-close']" type="XPath"/>
+      </ContactUs>
+            
       <navigator>
             <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
             <add key="ButtonNavigatorEnergyView" value="header-btn-energyservice" type="ID"/>
@@ -366,6 +379,15 @@
           <areadimensionassociation>
 
           </areadimensionassociation>
+      
+          <CustomizedLabellingSetting>
+              <add key = "ButtonCustomizedLabellingCreat" value = "st-customized-labeling-grid-add" type= "ID"/>
+              <add key="ButtonCustomizedLabellingSave" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+              <add key="ButtonCustomizedLabellingUpdate" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+              <add key="ButtonCustomizedLabellingModify" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+              <add key="ButtonCustomizedLabellingDelete" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+              <add key="ButtonCustomizedLabellingAscending" value="//div[@id='st-customized-labeling-properties-form-body']/table[@class,'x-container']/tbody/tr/td[2]/div/div/table[1]/tbody/tr/td[2]/label" type="XPath"/>
+          </CustomizedLabellingSetting>
       </customersettings>
       
       <platformsettings>
@@ -509,6 +531,20 @@
           <add key="TextFieldLoginUserName" value = "username" type = "ID"/>
           <add key="TextFieldLoginPassword" value="password" type="ID"/>
       </login>
+    
+      <DemoAccess>
+          <add key="TextFieldDemoAccessEmailAddress" value="email" type="ID"/>      
+      </DemoAccess>
+
+      <ContactUs>
+      <add key="TextFieldContactUsName" value="//div[contains(@id,'contactuspanel') and contains(@class,'x-window-default')]//input[@type='text'and @name='Name']" type="XPath"/>
+      <add key="TextFieldContactUsTelephone" value="//div[contains(@id,'contactuspanel') and contains(@class,'x-window-default')]//input[@type='text'and @name='Telephone']" type="XPath"/>
+      <add key="TextFieldContactUsCompany" value="//div[contains(@id,'contactuspanel') and contains(@class,'x-window-default')]//input[@type='text'and @name='CustomerName']" type="XPath"/>
+      <add key="TextFieldContactUsTitle" value="//div[contains(@id,'contactuspanel') and contains(@class,'x-window-default')]//input[@type='text'and @name='Title']" type="XPath"/>
+      <add key="TextFieldContactUsDescriptionFields" value="//div[contains(@id,'contactuspanel') and contains(@class,'x-window-default')]//textarea[@name='Comment']" type="XPath"/>
+      </ContactUs>
+    
+        
       <User>
           <add key="TextFieldUserName" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
           <add key="TextFieldUserRealName" value="//div[@id='st-user-properties-form-body']//input[@type='text' and @name='RealName']" type="XPath"/>
@@ -602,6 +638,9 @@
               <add key="TextFieldAreaDimensionSettingsName" value="//div[@id='st-area-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
               <add key="TextFieldAreaDimensionSettingsComment" value="//div[@id='st-area-properties-form-body']//textarea[@name='Comment']" type="XPath"/>
           </areadimensionsettings>
+          <CustomizedLabellingSetting>
+              <add key="TextFieldCustomizedLabellingName" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class, 'x-field') and tbody/tr/td/input[@name='Name']]" type="XPath"/>
+          </CustomizedLabellingSetting>
       </customersettings>
       <platformsettings>
           <workday>
@@ -646,6 +685,8 @@
       <add key="TextFieldMaxWidgetRightComment" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id, 'commentcontainer')]//textarea[@name='comment']" type="XPath"/>
 
     </homepage>
+  
+
   </TextField>
   <!--TextField End-->
 
@@ -654,6 +695,8 @@
       <login>
           <add key="ComboBoxLoginCustomerOption" value="//div[contains(@class,'x-window-default')]/div[contains(@class,'x-window-body-default')]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'combobox')]]" type="XPath"/>
       </login>
+    
+    
     <HomePage>
       </HomePage>
     <User>
@@ -728,6 +771,12 @@
               <add key="ComboBoxKPITargetBaselineSpecialdayRuleStartTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
               <add key="ComboBoxKPITargetBaselineSpecialdayRuleEndTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[4]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
           </kpitag>
+      
+    <CustomizedLabellingSetting>
+              <add key="CustomizedLabellingCommodity" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class, 'x-field') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
+              <add key="CustomizedLabellingType" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class, 'x-field') and tbody/tr/td/input[@name='LabellingType']]" type="XPath"/>
+              <add key="CustomizedLabellingLevel" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class, 'x-field') and tbody/tr/td/input[@name='Grade']]" type="XPath"/>     
+    </CustomizedLabellingSetting>
       </customersettings>
       <platformsettings>
           <workday>
@@ -904,6 +953,15 @@
     </Homepage>
   </Grid>
   <!--Grid End-->
+  
+  <!--Grade Begin-->
+    <customersettings>
+      <add key="GradeCustomizedLabellingFrontLabel" value="//div[@id='st-customized-labeling-properties-form-body']/div[contains(@id,'container') and contains(@class,'x-container')]/div[contains(@class,'x-column-inner')]/table/tbody/tr/td[2]/div[contains(@id,'gradeitem') and contains(@class,'x-container')]" type="XPath"/>
+      <add key="GradeCustomizedLabellingLeftNumberField" value="//div[@id='st-customized-labeling-properties-form-body']/div[contains(@class,'x-container')]/div[contains(@class,'x-column-inner')]/table/tbody/tr/td[2]/div[2]" type="XPath"/> 
+      <add key="GradeCustomizedLabellingRightNumberField" value="//div[@id='st-customized-labeling-properties-form-body']/div[contains(@class,'x-container')]/div[contains(@class,'x-column-inner')]/table/tbody/tr/td[2]/div[2]" type="XPath"/> 
+    
+    </customersettings>
+  <!--Grid End-->
 
   <!--Date Picker Begin-->
   <DatePicker>
@@ -988,9 +1046,11 @@
         <add key="LabelTitleHeatingCooling" value="//div[@id='st-hier-calendar-form-body']//label[text()='$@Setting.Label.ColdwarmSetting']" type="XPath"/>
         <add key="LabelTitleDayNight" value="//div[@id='st-hier-calendar-form-body']//label[text()='$@Setting.Label.DaynightSetting']" type="XPath"/>
       </HierarchyCalendar>
+      
       <HierarchyPopulationArea>
         <add key="LabelAreaPropertyTitle" value="st-hierarchy-dynamicproperty-area-label-labelEl" type="ID"/>
       </HierarchyPopulationArea>
+      
       <TargetBaseline>
         <add key="LabelCalendarInfoDisplay" value="//div[@id='setting-region-east-body']//table[contains(@id, 'displayfield')]/tbody/tr/td/label" type="XPath"/>
         <add key="LabelRevisionText" value="//div[@id='setting-region-east-body']//td[contains(@class,'x-form-item-body numberfield') and table/tbody/tr/td/input[@type='text' and @name='$#nameIndex']]/../td/label/span[text()='$@Common.Glossary.CorrectionValue']" type="XPath"/>
@@ -1016,6 +1076,10 @@
             <add key="LabelPlatformCustomerMapInfo" value="//div[@id='st-map-consumption-form-targetEl']/div/label[text()='$@Setting.Benchmark.Label.AtleastOneZone']" type="XPath"/>
         </customerMapInfo>
         
+      <demoaccess>
+        <add key="LabelEmailSendedSuccessTips" value="main_cctRep" type="ID"/>
+
+      </demoaccess>
     </PlatformSettings>
     
     <HomePage>

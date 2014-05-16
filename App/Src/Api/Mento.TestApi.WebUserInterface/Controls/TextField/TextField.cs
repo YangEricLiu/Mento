@@ -15,6 +15,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private Locator InvalidTips = new Locator("../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]", ByType.XPath);
         private Locator InvalidTipsForNumberField = new Locator("../../../../../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]", ByType.XPath);
 
+        #region DemoAccess
+        private Locator EmailInvalidTips = new Locator("//div[@id='main_emailHit']", ByType.XPath);
+        private Locator EmailSendedTips = new Locator("//div[@id='main_cctRep']", ByType.XPath);
+        #endregion
+
         /// <summary>
         /// Judge whether the textfield and its label are hidden
         /// </summary>
@@ -92,6 +97,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return FindChild(InvalidTipsForNumberField).Text;
         }
 
+        
         /// <summary>
         /// Return whether the text field displayed 
         /// </summary>
@@ -109,6 +115,28 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return this.RootElement.Enabled;
         }
+
+        #region   Verify DemoAccessEmailAddress
+        
+        /// <summary>
+        /// Return the email invalid input tooltips info
+        /// </summary>
+        /// <returns>the email invalid input tooltips info</returns>
+        public string GetEmailInvalidTips()
+        {
+            return FindChild(EmailInvalidTips).Text;
+        }
+
+        /// <summary>
+        /// Return the Valid input tooltips info
+        /// </summary>
+        /// <returns>the Valid input tooltips info</returns>
+        public string GetEmailSendedTips()
+        {
+            return FindChild(EmailSendedTips).Text;
+        }
+
+        #endregion
 
     }
 }

@@ -27,11 +27,8 @@ namespace Mento.Script.Administration.IndustryLabeling
         public void CaseSetUp()
         {
             IndustryLabelingSetting.NavigatorToLabelingSetting();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            TimeManager.MediumPause();
+
         }
 
         [TearDown]
@@ -49,7 +46,8 @@ namespace Mento.Script.Administration.IndustryLabeling
         [MultipleTestDataSource(typeof(IndustryLabelingData[]), typeof(LabelingAddInvalidSuite), "TC-J1-FVT-IndustryLabelingSetting-Add-001")]
         public void AddIndustryLabelingCancelled(IndustryLabelingData input)
         {
-            int i=IndustryLabelingSetting.LabelingList.GetCurrentRowsNumber();
+            int OriginalRowsNumber=IndustryLabelingSetting.LabelingList.GetCurrentRowsNumber();
+
             //Click +能效标识 buttons.
             IndustryLabelingSetting.ClickAddLabeling();
             TimeManager.LongPause();
@@ -59,7 +57,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             TimeManager.LongPause();
     
             //·Cancel and there isn't any labeling added to list.
-            Assert.AreEqual(i, IndustryLabelingSetting.LabelingList.GetCurrentRowsNumber());
+            Assert.AreEqual(OriginalRowsNumber, IndustryLabelingSetting.LabelingList.GetCurrentRowsNumber());
 
             //Click +能效标识 buttons. click Save button directly not input any field. 
             IndustryLabelingSetting.ClickAddLabeling();
@@ -75,8 +73,8 @@ namespace Mento.Script.Administration.IndustryLabeling
             TimeManager.LongPause();
             Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
             TimeManager.LongPause();
-            Assert.AreEqual("2012", input.ExpectedData.StartYear);
-            Assert.AreEqual("2014", input.ExpectedData.EndYear);
+            Assert.AreEqual(input.ExpectedData.StartYear,IndustryLabelingSetting.GetSelectedStartYear());
+            Assert.AreEqual(input.ExpectedData.EndYear, IndustryLabelingSetting.GetSelectedEndYear());
 
             // Click Cancel button,Click +能效标识 buttons
             IndustryLabelingSetting.ClickCancelLabeling();
@@ -130,8 +128,8 @@ namespace Mento.Script.Administration.IndustryLabeling
             Assert.IsTrue(IndustryLabelingSetting.IsIndustrysAddMessageDisplayed());
             Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionAddMessageDisplayed());
             Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
-            Assert.AreEqual("2012", input.ExpectedData.StartYear);
-            Assert.AreEqual("2014", input.ExpectedData.EndYear);
+            Assert.AreEqual(input.ExpectedData.StartYear, IndustryLabelingSetting.GetSelectedStartYear());
+            Assert.AreEqual(input.ExpectedData.EndYear, IndustryLabelingSetting.GetSelectedEndYear());
 
 
             //Select 行业=酒店五星级 and Click Save button.
@@ -139,17 +137,14 @@ namespace Mento.Script.Administration.IndustryLabeling
             IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
             IndustryLabelingSetting.ClickSaveLabeling();
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionAddMessageDisplayed());
             Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
 
 
             //Select 气候分区=严寒地区B区 , 能耗标识级别=3级.
-            //Click Save button.
+            //Click Save button.  
+            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimateRegion);//此处不管用例整体调试还是单独调试，总是选不上.
             IndustryLabelingSetting.SelectEnergyEfficiencyLabelingLevelCombox(input.InputData.EnergyEfficiencyLabellingLevel);
-
-            IndustryLabelingSetting.SelectClimateRegionCombox(input.InputData.ClimateRegion);
             IndustryLabelingSetting.ClickSaveLabeling();
 
             }

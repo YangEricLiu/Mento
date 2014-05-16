@@ -15,17 +15,17 @@ namespace Mento.Script.ClientAccess
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.InitializeExecutionContext();
-
+            TestAssemblyInitializer.InitializeExecutionContext();         
             JazzBrowseManager.OpenJazz();
+
         }
 
         [TearDown]
         public void RunAfterAnyTests()
-        {
+        {            
             JazzBrowseManager.CloseJazz();
-
             ExecutionContext.Destruct();
         }
+
     }
 }

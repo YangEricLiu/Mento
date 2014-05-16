@@ -59,7 +59,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             IndustryLabelingSetting.ClickSaveLabeling();
             IndustryLabelingSetting.IsIndustryInDropdownList(input.InputData.Industry);
             IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimateRegion);
-            IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelInDropdownList(input.InputData.EnergyEfficiencyLabellingLevel);
+            IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelInDropdownList(input.InputData.EnergyEfficiencyLabellingLevels[0]);
             IndustryLabelingSetting.IsStartYearInDropdownList(input.InputData.StartYear);
             IndustryLabelingSetting.IsEndYearInDropdownList(input.InputData.EndYear);
 
@@ -81,7 +81,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry, input.InputData.ClimateRegion);
             IndustryLabelingSetting.IsIndustryInDropdownList(input.InputData.Industry);
             IndustryLabelingSetting.IsClimateRegionInDropdownList(input.InputData.ClimateRegion);
-            IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelInDropdownList(input.InputData.EnergyEfficiencyLabellingLevel);
+            IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelInDropdownList(input.InputData.EnergyEfficiencyLabellingLevels[2]);
             IndustryLabelingSetting.IsStartYearInDropdownList(input.InputData.StartYear);
             IndustryLabelingSetting.IsEndYearInDropdownList(input.InputData.EndYear);
 

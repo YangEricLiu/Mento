@@ -48,6 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContactUs\ContactUsInvalidSuite.cs" />
+    <Compile Include="ContactUs\ContactUsValidSuite.cs" />
+    <Compile Include="DemoAccess\DemoAccessInvalidSuite.cs" />
+    <Compile Include="DemoAccess\DemoAccessValidSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Login\SmokeTestCommonUserLoginSuite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

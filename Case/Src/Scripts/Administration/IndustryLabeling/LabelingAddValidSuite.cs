@@ -76,15 +76,12 @@ namespace Mento.Script.Administration.IndustryLabeling
             //The time auto round up/down to start=end time
             IndustryLabelingSetting.SelectStartYearCombox(input.InputData.StartYears[1]);
             IndustryLabelingSetting.SelectEndYearCombox(input.InputData.EndYears[1]);
-            string aaa=IndustryLabelingSetting.GetSelectedStartYear();
-            string bbb=IndustryLabelingSetting.GetSelectedEndYear();
-            if (Convert.ToInt32(aaa) > Convert.ToInt32(bbb))
+            string SelectedStartYear = IndustryLabelingSetting.GetSelectedStartYear();
+            string SelectedEndYear = IndustryLabelingSetting.GetSelectedEndYear();
+            if (Convert.ToInt32(SelectedStartYear) > Convert.ToInt32(SelectedEndYear))
             {
-                aaa = bbb;
+                Assert.AreEqual(SelectedStartYear, SelectedEndYear);
             }
-                
-            
-
             //Click the saved Labeling from list.
             IndustryLabelingSetting.ClickSaveLabeling();
             IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry, input.InputData.ClimateRegion);
@@ -101,7 +98,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             //.Click Save button.
             int i = 0;
             while (i < input.InputData.ClimateRegions.Length)
-            {
+            { 
                 IndustryLabelingSetting.ClickAddLabeling();
                 IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
                 TimeManager.ShortPause();

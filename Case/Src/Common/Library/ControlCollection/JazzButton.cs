@@ -46,6 +46,20 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button LoginCustomerOptionConfirmButton = GetControl<Button>(JazzControlLocatorKey.ButtonLoginCustomerOptionConfirm);
         #endregion
 
+        #region DemoAccess buttons
+        public static Button DemoAccessButton = GetControl<Button>(JazzControlLocatorKey.ButtonDemoAccess);
+        public static Button SendDemoAccessEmailButton = GetControl<Button>(JazzControlLocatorKey.ButtonSendDemoAccessEmail);
+        public static Button ReturnHomepageButton = GetControl<Button>(JazzControlLocatorKey.ButtonReturnHomepage);
+        #endregion
+
+        #region ContactUs buttons
+        public static Button ContactUsButton = GetControl<Button>(JazzControlLocatorKey.ButtonContactUs);
+        public static Button ContactUsConfirmButton = GetControl<Button>(JazzControlLocatorKey.ButtonContactUsConfirm);
+        public static Button ContactUsCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonContactUsCancel);
+        public static Button ContactUsCloseButton = GetControl<Button>(JazzControlLocatorKey.ButtonContactUsClose);
+
+        #endregion
+
         #region EnergyManagement buttons
 
         #region common
@@ -351,6 +365,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button CloseTBCalendarWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonCloseTBCalendarWindow);
         public static Button DeleteSpecialdayItemButton = GetControl<Button>(JazzControlLocatorKey.ButtonDeleteSpecialdayItem);
         
+        #endregion
+        #region CustomizedLabellingSetting
+        public static Button CreatCustomizedLabellingButton = GetControl<Button>(JazzControlLocatorKey.ButtonCustomizedLabellingCreat);
+        public static Button SaveCustomizedLabellingButton = GetControl<Button>(JazzControlLocatorKey.ButtonCustomizedLabellingSave);
+        public static Button UpdateCustomizedLabellingButton = GetControl<Button>(JazzControlLocatorKey.ButtonCustomizedLabellingUpdate);
+        public static Button DeleteCustomizedLabellingButton = GetControl<Button>(JazzControlLocatorKey.ButtonCustomizedLabellingDelete);
+        public static Button ModifyCustomizedLabellingButton = GetControl<Button>(JazzControlLocatorKey.ButtonCustomizedLabellingModify);
+        public static RadioButton AscendingCustomizedLabellingButton = GetControl<RadioButton>(JazzControlLocatorKey.ButtonCustomizedLabellingAscending);  
         #endregion
 
         #endregion

@@ -234,6 +234,9 @@ namespace Mento.ScriptCommon.Library.Functions
         AssociationHierarchy = 28,
         AssociationSystemDimension = 29,
         AssociationAreaDimension = 30,
+        //CustomizedLabelling
+        CustomizedLabelling=31,
+
         //Dashboard
         MyFavirate = 207,
         AllDashboards = 208,

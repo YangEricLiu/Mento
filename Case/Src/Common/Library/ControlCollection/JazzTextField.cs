@@ -23,6 +23,18 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField LoginPasswordTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldLoginPassword);
         #endregion
 
+        #region DemoAccess
+        public static TextField DemoAccessEmailAddressTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldDemoAccessEmailAddress);
+        #endregion
+
+        #region ContactUs
+        public static TextField TextFieldContactUsName = GetControl<TextField>(JazzControlLocatorKey.TextFieldContactUsName);
+        public static TextField TextFieldContactUsTelephone = GetControl<TextField>(JazzControlLocatorKey.TextFieldContactUsTelephone);
+        public static TextField TextFieldContactUsCompany = GetControl<TextField>(JazzControlLocatorKey.TextFieldContactUsCompany);
+        public static TextField TextFieldContactUsTitle = GetControl<TextField>(JazzControlLocatorKey.TextFieldContactUsTitle);
+        public static TextField TextFieldContactUsDescriptionFields = GetControl<TextField>(JazzControlLocatorKey.TextFieldContactUsDescriptionFields);
+        #endregion
+
         #region Energy view
         public static TextField EnergyViewSaveDashboardWidgetNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldEnergyViewSaveDashboardWidgetName);
         public static TextField EnergyViewSaveDashboardDashboardNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldEnergyViewSaveDashboardDashboardName);
@@ -106,6 +118,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField AreaDimensionSettingsNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldAreaDimensionSettingsName);
         public static TextField AreaDimensionSettingsCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldAreaDimensionSettingsComment);
         #endregion
+
+        #region CustomizedLabellingSetting
+        public static TextField TextFieldCustomizedLabellingName = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomizedLabellingName);
+        #endregion
         #endregion
 
         #region Platform settings
@@ -182,5 +198,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField MaxWidgetRightCommentTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldMaxWidgetRightComment);
         
         #endregion
+
     }
 }

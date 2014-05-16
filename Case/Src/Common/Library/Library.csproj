@@ -71,8 +71,11 @@
     <Compile Include="ControlCollection\JazzTreeView.cs" />
     <Compile Include="ControlCollection\Resource\JazzControlLocatorKey.cs" />
     <Compile Include="ControlCollection\Resource\JazzControlLocatorRepository.cs" />
+    <Compile Include="Functions\ClientAccess\ContactUsSetting.cs" />
     <Compile Include="Functions\CustomerSettings\AreaDimensionSettings.cs" />
     <Compile Include="Functions\CustomerSettings\AssociateSettings.cs" />
+    <Compile Include="Functions\ClientAccess\DemoAccessSetting.cs" />
+    <Compile Include="Functions\CustomerSettings\CustomizedLabellingSettings.cs" />
     <Compile Include="Functions\EnergyManagement\CarbonUsagePanel.cs" />
     <Compile Include="Functions\EnergyManagement\IndustryLabellingPanel.cs" />
     <Compile Include="Functions\HomePage\ShareInfoWindow.cs" />

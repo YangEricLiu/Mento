@@ -80,6 +80,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox KPITargetBaselineSpecialdayRuleStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineSpecialdayRuleStartTime);
         public static ComboBox KPITargetBaselineSpecialdayRuleEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineSpecialdayRuleEndTime);        
         #endregion
+
+        #region CustomizedLabellingSetting
+        public static ComboBox CustomizedLabellingCommodityComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingCommodity);
+        public static ComboBox CustomizedLabellingTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingType);
+        public static ComboBox CustomizedLabellingLevelComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingLevel);
+        #endregion
         #endregion
 
         #region Platform settings

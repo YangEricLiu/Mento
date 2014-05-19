@@ -23,7 +23,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button UpdateButton = JazzButton.UpdateCustomizedLabellingButton;
         private static Button ModifyButton = JazzButton.ModifyCustomizedLabellingButton;
         private static Button DeleteButton = JazzButton.DeleteCustomizedLabellingButton;
-        private static RadioButton ArrangementButton = JazzButton.AscendingCustomizedLabellingButton;
+        private static RadioButton ArrangementButton = JazzButton.CustomizedLabellingOrderButton;
         #endregion
 
         #region combox
@@ -32,10 +32,18 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox LabellingLevelComboBox = JazzComboBox.CustomizedLabellingLevelComboBox;
         #endregion
 
+
+        public static Grid CustomizedLabellingList = JazzGrid.CustomizedLabellingListGrid;
+        #region grade
+        private static Grade CustomizedLabellingGrade = JazzGrade.CustomizedLabellingGrade;
+        #endregion
+
         #region textfield
         private static TextField NameTextField = JazzTextField.TextFieldCustomizedLabellingName;
         #endregion
         #endregion
+
+        
 
         #region operation
         /// <summary>
@@ -116,7 +124,21 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetAscendingCustomizedLabellingButton()
         {
-            return JazzButton.AscendingCustomizedLabellingButton.GetRadioButtonLabel();
+            return JazzButton.CustomizedLabellingOrderButton.GetRadioButtonLabel();
+        }
+
+
+        #endregion
+
+        #region verify
+        /// <summary>
+        /// Focus Labeling
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void IslabelingNameExist(string labelingName)
+        {
+            CustomizedLabellingList.FocusOnRow(1, labelingName);
         }
         #endregion
 
@@ -129,6 +151,46 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetNameTextFieldValue()
         {
             return NameTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get CustomizedLabellingLevelLeftValue 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetLabellingLevelLeftValue(int num)
+        {
+           return CustomizedLabellingGrade.GetGradeItemLeftNumberValue(num);
+        }
+
+        /// <summary>
+        /// FillIn CustomizedLabellingLevelLeftValue 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void FillInLabellingLevelLeftValue(int num, string value)
+        {
+             CustomizedLabellingGrade.FillGradeItemLeftNumberValue(num, value);
+        }
+
+        /// <summary>
+        /// Get CustomizedLabellingLevelRightValue 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetLabellingLevelRightValue(int num)
+        {
+            return CustomizedLabellingGrade.GetGradeItemRightNumberValue(num);
+        }
+
+        /// <summary>
+        /// FillIn CustomizedLabellingLevelRightValue 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void FillInLabellingLevelRightValue(int num, string value)
+        {
+            CustomizedLabellingGrade.FillGradeItemRightNumberValue(num, value);
         }
         #endregion
     }

@@ -14,7 +14,7 @@ namespace Mento.Script.Customer
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.InitializeWithOption("CustomerConfigUser", "123456Qq", null);
+            TestAssemblyInitializer.InitializeWithOption("Wangxin", "123456qq", null);
         }
 
         [TearDown]

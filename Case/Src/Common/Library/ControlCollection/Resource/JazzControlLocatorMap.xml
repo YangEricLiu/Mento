@@ -956,9 +956,7 @@
   
   <!--Grade Begin-->
     <customersettings>
-      <add key="GradeCustomizedLabellingFrontLabel" value="//div[@id='st-customized-labeling-properties-form-body']/div[contains(@id,'container') and contains(@class,'x-container')]/div[contains(@class,'x-column-inner')]/table/tbody/tr/td[2]/div[contains(@id,'gradeitem') and contains(@class,'x-container')]" type="XPath"/>
-      <add key="GradeCustomizedLabellingLeftNumberField" value="//div[@id='st-customized-labeling-properties-form-body']/div[contains(@class,'x-container')]/div[contains(@class,'x-column-inner')]/table/tbody/tr/td[2]/div[2]" type="XPath"/> 
-      <add key="GradeCustomizedLabellingRightNumberField" value="//div[@id='st-customized-labeling-properties-form-body']/div[contains(@class,'x-container')]/div[contains(@class,'x-column-inner')]/table/tbody/tr/td[2]/div[2]" type="XPath"/> 
+      <add key="GradeCustomizedLabelling" value="//div[@id='st-customized-labeling-properties-form-body']/div[contains(@id,'container') and contains(@class,'x-container')]" type="XPath"/>
     
     </customersettings>
   <!--Grid End-->

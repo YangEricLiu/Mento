@@ -1013,6 +1013,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridKPITagSettingsKPITagList = "GridKPITagSettingsKPITagList";
         public static string GridAssociationTagList = "GridAssociationTagList";
         public static string GridPTagSettingsPTagList = "GridPTagSettingsPTagList";
+        public static string GridCustomizedLabellingList = "GridCustomizedLabellingList";
+
         #endregion
 
         #region platformsettings
@@ -1047,11 +1049,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Grade
         #region customersettings
-        public static string GradeCustomizedLabellingFrontLabel = " GradeCustomizedLabellingFrontLabel";
-        public static string GradeCustomizedLabellingLeftNumberField = "GradeCustomizedLabellingLeftNumberField";
-        public static string GradeCustomizedLabellingRightNumberField = "GradeCustomizedLabellingrightNumberField";
-        public static string GradeCustomizedLabellingNumberFieldLabel = "GradeCustomizedLabellingNumberFieldLabel";
-        public static string GradeCustomizedLabellingNumberFieldInput = "GradeCustomizedLabellingNumberFieldInput";
+        public static string GradeCustomizedLabelling = " GradeCustomizedLabelling";
         #endregion
         #endregion
 

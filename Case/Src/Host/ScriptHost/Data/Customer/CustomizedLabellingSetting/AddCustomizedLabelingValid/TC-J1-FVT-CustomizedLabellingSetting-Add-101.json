@@ -2,18 +2,20 @@
 	{
 		"InputData":
 		{
-			"Names":["  onlychars  ","  只有中文  ","中文CAPITALchars 1234_F","中文CAPITALhars 1234_F中文CAPITALh","m文CAPITALhars 1234_F中文CAPITALh000"],
+			"CommonName":"  onlychars  ",
 			"Commodity":"水",
 			"KPITypes":["昼夜比","单位人口"],
 			"LabellingLevel":"3",
-			
+			"LabellingValue":[{5.144},{5.144,10},{10}],
 		},
 		"ExpectedData":
 		{
-			"Name":["onlychars","只有中文","中文CAPITALchars 1234_F","中文CAPITALhars 1234_F中文CAPITALh","m文CAPITALhars 1234_F中文CAPITALh"],
+			"CommonName":"onlychars",
 			"Commodity":"水",
 			"KPITypes":["昼夜比","单位人口"],
 			"LabellingLevel":"3",
+			"LabellingValue":[{5.14},{5.14,10},{10}],
+			"Order":["正序"],
 		}
 	}
 ]

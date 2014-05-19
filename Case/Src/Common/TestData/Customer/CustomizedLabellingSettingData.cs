@@ -12,24 +12,25 @@ namespace Mento.ScriptCommon.TestData.Customer
     }
     public class CustomizedLabellingSettingInputData : InputTestDataBase
     {
-        public string Name { get; set; }
+        public string CommonName { get; set; }
+        public string[] Order { get; set; }
         public string Commodity { get; set; }
-        public string KPIType { get; set; }
-        public string LabellingLevel { get; set; }
-        public string[] Names { get; set; }
-        public string[] Commoditys { get; set; }
         public string[] KPITypes { get; set; }
         public string[] LabellingLevels { get; set; }
+        public LabellingValue[] LabellingValue { get; set; }
     }
-    public class CustomizedLabellingSettingExpectedData : InputTestDataBase
+    public class CustomizedLabellingSettingExpectedData : ExpectedTestDataBase
     {
-        public string Name { get; set; }
+        public string CommonName { get; set; }
+        public string[] Order { get; set; }
         public string Commodity { get; set; }
-        public string KPIType { get; set; }
-        public string LabellingLevel { get; set; }
-        public string[] Names { get; set; }
-        public string[] Commoditys { get; set; }
         public string[] KPITypes { get; set; }
         public string[] LabellingLevels { get; set; }
+        public LabellingValue[] LabellingValue { get; set; }
+    }
+    public class LabellingValue
+    {
+        public string[] LabellingLeftValue { get; set; }
+        public string[] LabellingRightValue { get; set; }
     }
 }

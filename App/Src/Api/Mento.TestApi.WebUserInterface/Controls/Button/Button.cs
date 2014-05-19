@@ -71,6 +71,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return ElementHandler.Exists(this._RootLocator);
         }
 
-        #endregion
+        
     }
 }

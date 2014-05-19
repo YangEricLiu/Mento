@@ -58,7 +58,7 @@ namespace Mento.Script.Administration.User
             Assert.IsTrue(RoleTypeSettings.IsRoleTypeOnListByName(input.InputData.CommonName));
             // Delete the role type 
             RoleTypeSettings.ClickDeleteButton();
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
@@ -76,7 +76,7 @@ namespace Mento.Script.Administration.User
             TimeManager.ShortPause();
             //Delete the role type
             RoleTypeSettings.ClickDeleteButton();
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 

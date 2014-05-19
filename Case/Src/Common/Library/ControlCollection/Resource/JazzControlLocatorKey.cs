@@ -1049,7 +1049,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Grade
         #region customersettings
-        public static string GradeCustomizedLabelling = " GradeCustomizedLabelling";
+        public static string GradeCustomizedLabelling = "GradeCustomizedLabelling";
         #endregion
         #endregion
 

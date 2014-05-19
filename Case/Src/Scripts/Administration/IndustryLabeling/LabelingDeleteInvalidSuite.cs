@@ -52,7 +52,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             IndustryLabelingSetting.ClickDeleteLabeling();
 
             //After click confirmation Cancel button.
-            JazzMessageBox.MessageBox.Cancel();
+            JazzMessageBox.MessageBox.GiveUp();
             TimeManager.LongPause();
 
             //The Labeling still display in Labeling list.

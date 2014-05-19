@@ -6,7 +6,10 @@
 			"Commodity":"水",
 			"KPITypes":["昼夜比","单位人口"],
 			"LabellingLevel":"3",
-			"LabellingValue":[{5.144},{5.144,10},{10}],
+			"LabellingValue":[{
+				"LabellingLeftValue":["5.144"],
+				"LabellingRightValue":["10"],
+			}],
 		},
 		"ExpectedData":
 		{
@@ -14,7 +17,10 @@
 			"Commodity":"水",
 			"KPITypes":["昼夜比","单位人口"],
 			"LabellingLevel":"3",
-			"LabellingValue":[{5.14},{5.14,10},{10}],
+			"LabellingValue":[{
+				"LabellingLeftValue":["5.14"],
+				"LabellingRightValue":["10"],
+			}],
 			"Order":["正序"],
 		}
 	}

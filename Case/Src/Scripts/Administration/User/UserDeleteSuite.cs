@@ -47,7 +47,7 @@ namespace Mento.Script.Administration.User
             UserSettings.FocusOnUser(input.InputData.CommonName);
             UserSettings.DeleteUser();
             Assert.AreEqual(JazzMessageBox.MessageBox.GetMessage(),input.ExpectedData.Message);
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
             Assert.IsFalse(UserSettings.IsUserOnList(input.InputData.CommonName));
@@ -72,11 +72,10 @@ namespace Mento.Script.Administration.User
             UserSettings.FocusOnUser(input.InputData.CommonName);
             UserSettings.DeleteUser();
             Assert.AreEqual(JazzMessageBox.MessageBox.GetMessage(), input.ExpectedData.Message);
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
             Assert.IsFalse(UserSettings.IsUserOnList(input.InputData.CommonName));
-
         }
     }
 }

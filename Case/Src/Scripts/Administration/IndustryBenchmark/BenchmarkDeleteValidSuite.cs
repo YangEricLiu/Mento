@@ -51,7 +51,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
             IndustryBenchmarkSetting.ClickDeleteBenchMark();
 
             //After click confirmation 确定 button.Delete benchmark successfully.
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
             //· Deleted benchmark can't display in benchmark list correctly.

@@ -322,5 +322,26 @@ namespace Mento.Script.Customer.TagAssociation
             TimeManager.ShortPause();
             Assert.AreEqual(formulaValue, JazzFunction.VTagSettings.GetFormulaValue());
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TagAssociation-Associate-101-4")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-101-4")]
+        public void FilterTagsWhileAssociatingTags(AssociateTagData input)
+        {
+            //Select one hierarchy node. 
+            Association.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
+
+            //Click  '关联数据点'  button.
+            Association.ClickAssociateTagButton();
+
+            //Select some tags
+            Association.CheckedTags(input.InputData.TagNames);
+            TimeManager.ShortPause();
+
+            //The tags can be display in 已选数据点.
+
+        }
     }
 }

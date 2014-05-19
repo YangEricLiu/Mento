@@ -51,7 +51,7 @@ namespace Mento.Script.Administration.IndustryLabeling
             IndustryLabelingSetting.ClickDeleteLabeling();
 
             //After click confirmation 确定 button.Delete Labeling successfully.
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
@@ -81,7 +81,7 @@ namespace Mento.Script.Administration.IndustryLabeling
                 {
                     IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry);
                     IndustryLabelingSetting.ClickDeleteLabeling();
-                    JazzMessageBox.MessageBox.Confirm();
+                    JazzMessageBox.MessageBox.Delete();
                     JazzMessageBox.LoadingMask.WaitLoading();
                     TimeManager.ShortPause();
                     i--;

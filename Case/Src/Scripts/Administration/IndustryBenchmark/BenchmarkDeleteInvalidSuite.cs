@@ -51,7 +51,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
             IndustryBenchmarkSetting.ClickDeleteBenchMark();
 
             //After click confirmation Cancel button.
-            JazzMessageBox.MessageBox.Cancel();
+            JazzMessageBox.MessageBox.GiveUp();
 
             //The benchmark still display in menchmark list.
             Assert.IsTrue(IndustryBenchmarkSetting.IsRowExistBenchMarkList(input.InputData.Industry));

@@ -39,7 +39,7 @@ namespace Mento.Script.Administration.TimeManagement
             //TimeManager.MediumPause();
         }
 
-        #region TestCase1 ModifyValidHCSeason
+        #region TestCase1 ModifyHCSeasonToAddTimeRangeValid
         /// <summary>
         /// Pre-condition: Prepare a CalendarIndustry with name '冷暖季未被引用ForModifyValid', make sure it is NOT being used by any hierarchy node.
         /// Pre-condition: Prepare a Calendar2 with name '冷暖季已被引用ForModifyValid', make sure it has been used by a hierarchy node.
@@ -49,7 +49,7 @@ namespace Mento.Script.Administration.TimeManagement
         [CaseID("TC-J1-FVT-TimeManagementHCSeason-Modify-101")]
         [Priority("6")]
         [MultipleTestDataSource(typeof(HeatingCoolingSeasonCalendarData[]), typeof(HeatingCoolingSeasonModifySuite), "TC-J1-FVT-TimeManagementHCSeason-Modify-101")]
-        public void ModifyValidHCSeason(HeatingCoolingSeasonCalendarData testData)
+        public void ModifyHCSeasonToAddTimeRangeValid(HeatingCoolingSeasonCalendarData testData)
         {
             //Select the calendar (Both of CalendarIndustry and Calendar2 can be modified).
             TimeSettingsHeatingCoolingSeason.SelectCalendar(testData.InputData.CommonName);
@@ -77,13 +77,13 @@ namespace Mento.Script.Administration.TimeManagement
         }
         #endregion
 
-        #region TestCase2 ModifyTimeRange
+        #region TestCase2 ModifyTypeAndTimeRangeValid
         [Test]
         [ManualCaseID("TC-J1-FVT-TimeManagementHCSeason-Modify-102")]
         [CaseID("TC-J1-FVT-TimeManagementHCSeason-Modify-102")]
         [Priority("6")]
         [MultipleTestDataSource(typeof(HeatingCoolingSeasonCalendarData[]), typeof(HeatingCoolingSeasonModifySuite), "TC-J1-FVT-TimeManagementHCSeason-Modify-102")]
-        public void ModifyTimeRange(HeatingCoolingSeasonCalendarData testData)
+        public void ModifyTypeAndTimeRangeValid(HeatingCoolingSeasonCalendarData testData)
         {
             //Select a calendar which has special date ranges.
             TimeSettingsHeatingCoolingSeason.SelectCalendar(testData.InputData.CommonName);
@@ -114,20 +114,7 @@ namespace Mento.Script.Administration.TimeManagement
             //Verify modification is saved successfully.
             Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsModifyButtonDisplayed());
-
-            //工休日和冷暖季日历每次保存后顺序都不同。。和开发协调优化。
-            ////Verify time rangeIndustry remains as before.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[0].StartDate, TimeSettingsHeatingCoolingSeason.GetStartDateValue(Industry));
-            ////Verify time range2 is auto-rounding to be a new startmonth, startdate.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[Industry].StartMonth, TimeSettingsHeatingCoolingSeason.GetStartMonthValue(2));
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[Industry].StartDate, TimeSettingsHeatingCoolingSeason.GetStartDateValue(2));
-            ////Verify time range3 is auto-rounding to be a new endmonth, enddate.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[2].EndMonth, TimeSettingsHeatingCoolingSeason.GetEndMonthValue(3));
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[2].EndDate, TimeSettingsHeatingCoolingSeason.GetEndDateValue(3));
-            ////Verify time range4 remains as before.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[3].EndDate, TimeSettingsHeatingCoolingSeason.GetEndDateValue(4));
-            ////Verify time range5 remains as before.
-            //Assert.AreEqual(testData.ExpectedData.SpecialDate[4].EndDate, TimeSettingsHeatingCoolingSeason.GetEndDateValue(5));
+            
         }
         #endregion
 
@@ -216,13 +203,13 @@ namespace Mento.Script.Administration.TimeManagement
         }
         #endregion
 
-        #region TestCase2 ModifyInvalidHCSeason
+        #region TestCase2 ModifyRequiredFieldAndTimeRangeInvalid
         [Test]
         [ManualCaseID("TC-J1-FVT-TimeManagementHCSeason-Modify-002")]
         [CaseID("TC-J1-FVT-TimeManagementHCSeason-Modify-002")]
         [Priority("6")]
         [MultipleTestDataSource(typeof(HeatingCoolingSeasonCalendarData[]), typeof(HeatingCoolingSeasonModifySuite), "TC-J1-FVT-TimeManagementHCSeason-Modify-002")]
-        public void ModifyInvalidHCSeason(HeatingCoolingSeasonCalendarData testData)
+        public void ModifyRequiredFieldAndTimeRangeInvalid(HeatingCoolingSeasonCalendarData testData)
         {
             //Select a calendar which has two warm ranges.
             TimeSettingsHeatingCoolingSeason.SelectCalendar("冷暖季ForModifyInvalid");
@@ -260,6 +247,76 @@ namespace Mento.Script.Administration.TimeManagement
             //Click 'Cancel' button to quit the modification.
             TimeSettingsHeatingCoolingSeason.ClickCancelButton();
             TimeManager.ShortPause();
+        }
+        #endregion
+
+        #region TestCase3 ReviseInvalidTimeRangeToBeValid
+        [Test]
+        [ManualCaseID("TC-J1-FVT-TimeManagementHCSeason-Modify-003")]
+        [CaseID("TC-J1-FVT-TimeManagementHCSeason-Modify-003")]
+        [Priority("6")]
+        [MultipleTestDataSource(typeof(HeatingCoolingSeasonCalendarData[]), typeof(HeatingCoolingSeasonModifySuite), "TC-J1-FVT-TimeManagementHCSeason-Modify-003")]
+        public void ReviseInvalidTimeRangeToBeValid(HeatingCoolingSeasonCalendarData testData)
+        {
+            //Select a calendar.
+            TimeSettingsHeatingCoolingSeason.SelectCalendar(testData.InputData.CommonName);
+            TimeManager.ShortPause();
+
+            //Click 'Modify' button.
+            TimeSettingsHeatingCoolingSeason.ClickModifyButton();
+            TimeManager.ShortPause();
+
+            //Change 时间1 to be invalid so that 时间1 and 时间2 fall into one same month.start month of 时间1 (e.g. Change 时间1 to be '5月15日-12月31日'),  
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmStartMonth(testData.InputData.ColdWarmRange[0].StartMonth, 1);
+            TimeManager.ShortPause();
+
+            //Click "Save" button.
+            TimeSettingsHeatingCoolingSeason.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            //Verify saving failed, and 'Save' button still displayed there.
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsSaveButtonDisplayed());
+
+            //Revise 时间1 so that no any conflict between all timeranges (e.g. Change 时间1 to be '6月15日-12月31日')
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmStartMonth(testData.ExpectedData.ColdWarmRange[0].StartMonth, 1);
+            TimeManager.ShortPause();
+
+            //Click "Save" button again.
+            TimeSettingsHeatingCoolingSeason.ClickSaveButton();
+            TimeManager.LongPause();
+
+            //Verify saving successfully, and 'Save' button is not displayed now.
+            Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsSaveButtonDisplayed());
+
+            //Select the calendar again.
+            TimeSettingsHeatingCoolingSeason.SelectCalendar(testData.InputData.CommonName);
+            TimeManager.ShortPause();
+
+            //Click 'Modify' button.
+            TimeSettingsHeatingCoolingSeason.ClickModifyButton();
+            TimeManager.ShortPause();
+
+            //Change 时间1 to be invalid so that 时间1 and 时间2 fall into one same month.start month of 时间1 (e.g. Change 时间1 to be '5月15日-12月31日'),  
+            TimeSettingsHeatingCoolingSeason.SelectColdWarmStartMonth(testData.InputData.ColdWarmRange[0].StartMonth, 1);
+            TimeManager.ShortPause();
+
+            //Click "Save" button.
+            TimeSettingsHeatingCoolingSeason.ClickSaveButton();
+            TimeManager.ShortPause();
+
+            //Verify saving failed, and 'Save' button still displayed there.
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsSaveButtonDisplayed());
+
+            //Delete one of the conflicted ranges so that no any conflict now (e.g. delete 时间2)
+            TimeSettingsHeatingCoolingSeason.ClickDeleteColdWarmRangeItemButton(2);
+            TimeManager.ShortPause();
+
+            //Click "Save" button again.
+            TimeSettingsHeatingCoolingSeason.ClickSaveButton();
+            TimeManager.LongPause();
+
+            //Verify saving successfully, and 'Save' button is not displayed now.
+            Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsSaveButtonDisplayed());
         }
         #endregion
     }

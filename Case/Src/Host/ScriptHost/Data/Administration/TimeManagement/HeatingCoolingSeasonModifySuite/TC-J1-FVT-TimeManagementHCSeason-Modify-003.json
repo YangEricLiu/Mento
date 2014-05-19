@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonName":"冷暖季ForReviseInvalidToBeValid",
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "05", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "供冷季", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "02"}, {"Type": "供冷季", "StartMonth": "04", "StartDate": "01", "EndMonth": "04", "EndDate": "30"}],		
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"冷暖季ForReviseInvalidToBeValid",			
+			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "06", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "供冷季", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "02"}, {"Type": "供冷季", "StartMonth": "04", "StartDate": "01", "EndMonth": "04", "EndDate": "30"}],
+		}		
+	},
+]

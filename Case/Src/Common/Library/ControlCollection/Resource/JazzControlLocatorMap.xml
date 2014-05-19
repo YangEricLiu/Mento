@@ -926,6 +926,7 @@
       <add key="GridKPITagSettingsKPITagList" value="st-kpi-grid" type="ID"/>
       <add key="GridAssociationTagList" value="//div[@id='st-tag-assoc-form-body']//div[contains(@class,'x-grid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
+      <add key="GridCustomizedLabellingList" value="st-customized-labeling-grid" type="ID"/>
     </customersettings>
     
     <platformsettings>

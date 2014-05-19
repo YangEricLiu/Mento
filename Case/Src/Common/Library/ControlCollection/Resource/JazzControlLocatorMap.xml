@@ -641,7 +641,7 @@
               <add key="TextFieldAreaDimensionSettingsComment" value="//div[@id='st-area-properties-form-body']//textarea[@name='Comment']" type="XPath"/>
           </areadimensionsettings>
           <CustomizedLabellingSetting>
-              <add key="TextFieldCustomizedLabellingName" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class, 'x-field') and tbody/tr/td/input[@name='Name']]" type="XPath"/>
+              <add key="TextFieldCustomizedLabellingName" value="//div[@id='st-customized-labeling-properties-form-body']/table[contains(@class, 'x-field')]/tbody/tr/td/input[@name='Name']" type="XPath"/>
           </CustomizedLabellingSetting>
       </customersettings>
       <platformsettings>
@@ -775,9 +775,9 @@
           </kpitag>
       
     <CustomizedLabellingSetting>
-              <add key="CustomizedLabellingCommodity" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class, 'x-field') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
-              <add key="CustomizedLabellingType" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class, 'x-field') and tbody/tr/td/input[@name='LabellingType']]" type="XPath"/>
-              <add key="CustomizedLabellingLevel" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class, 'x-field') and tbody/tr/td/input[@name='Grade']]" type="XPath"/>     
+              <add key="CustomizedLabellingCommodity" value="//div[@id='st-customized-labeling-properties-form-body']/table[contains(@id, 'combobox')][2]/tbody/tr/td[contains(@id,'x-form-item-body')]/table/tbody/tr/td/input[@name='CommodityId']" type="XPath"/>
+              <add key="CustomizedLabellingType" value="//div[@id='st-customized-labeling-properties-form-body']/table[contains(@id, 'combobox')][3]/tbody/tr/td[2]/table/tbody/tr/td/input[@name='LabellingType']" type="XPath"/>
+              <add key="CustomizedLabellingLevel" value="//div[@id='st-customized-labeling-properties-form-body']/table[contains(@id, 'combobox')][4]/tbody/tr/td[2]/table/tbody/tr/td/input[@name='Grade']" type="XPath"/>     
     </CustomizedLabellingSetting>
       </customersettings>
       <platformsettings>

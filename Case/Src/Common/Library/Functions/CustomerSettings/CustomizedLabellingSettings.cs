@@ -88,13 +88,43 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Select CustomizedLabellingCommodity combox
+        /// FillIn CustomizedLabellingLevelLeftValue 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void FillInLabellingLevelLeftValue(int num, string value)
+        {
+            CustomizedLabellingGrade.FillGradeItemLeftNumberValue(num, value);
+        }
+
+        /// <summary>
+        /// FillIn CustomizedLabellingLevelRightValue 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void FillInLabellingLevelRightValue(int num, string value)
+        {
+            CustomizedLabellingGrade.FillGradeItemRightNumberValue(num, value);
+        }
+
+        /// <summary>
+        /// Change CustomizedLabellingCommodity combox
         /// </summary>
         /// <param></param>
         /// <returns></returns>
         public void SelectCommodityComboBox(string ItemName)
         {
             CommodityComboBox.SelectItem(ItemName);
+        }
+
+        /// <summary>
+        /// Select CustomizedLabellingLevel combox
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void SelectCustomizedLabellingLevelComboBox(string ItemName)
+        {
+            LabellingLevelComboBox.SelectItem(ItemName);
         }
 
         /// <summary>
@@ -154,6 +184,56 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Get CustomizedLabellingCommodityComboBox 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetCommodityComboBoxValue()
+        {
+            return CommodityComboBox.GetValue();
+        }
+
+        /// <summary>
+        /// Get CustomizedLabellingKPITypeComboBox 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetKPITypeComboBoxValue()
+        {
+            return KPITypeComboBox.GetValue();
+        }
+
+        /// <summary>
+        /// Get CustomizedLabellingLabellingLevelComboBox 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetLabellingLevelComboBoxValue()
+        {
+            return LabellingLevelComboBox.GetValue();
+        }
+
+        /// <summary>
+        /// Get CustomizedLabellingFrontLabel 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetLabellingLevelFrontLabel()
+        {
+            return CustomizedLabellingGrade.GetFirstGradeItemLabel();
+        }
+
+        /// <summary>
+        /// Get CustomizedLabellingLastLabel 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetLabellingLevelLastLabel()
+        {
+            return CustomizedLabellingGrade.GetLastGradeItemLabel();
+        }
+
+        /// <summary>
         /// Get CustomizedLabellingLevelLeftValue 
         /// </summary>
         /// <param></param>
@@ -161,16 +241,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetLabellingLevelLeftValue(int num)
         {
            return CustomizedLabellingGrade.GetGradeItemLeftNumberValue(num);
-        }
-
-        /// <summary>
-        /// FillIn CustomizedLabellingLevelLeftValue 
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public void FillInLabellingLevelLeftValue(int num, string value)
-        {
-             CustomizedLabellingGrade.FillGradeItemLeftNumberValue(num, value);
         }
 
         /// <summary>
@@ -184,14 +254,16 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// FillIn CustomizedLabellingLevelRightValue 
+        /// Get CustomizedLabellingUOMValue
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void FillInLabellingLevelRightValue(int num, string value)
+        public string GetLabellingUOMValue(int num)
         {
-            CustomizedLabellingGrade.FillGradeItemRightNumberValue(num, value);
+            return CustomizedLabellingGrade.GetGradeItemUOMValue(num);
         }
+
+        
         #endregion
     }
 }

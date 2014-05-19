@@ -960,7 +960,7 @@
       <add key="GradeCustomizedLabelling" value="//div[@id='st-customized-labeling-properties-form-body']/div[contains(@id,'container') and contains(@class,'x-container')]" type="XPath"/>
     
     </customersettings>
-  <!--Grid End-->
+  <!--Grade End-->
 
   <!--Date Picker Begin-->
   <DatePicker>

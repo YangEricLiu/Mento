@@ -190,6 +190,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorTagSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTagSettings);//{NavigationTarget.TagSettings, new NavigatorItem(NavigationTarget.TagSettings,NavigationTarget.Settings,"setting-tab-tagmrg-btn-btnEl",ByType.ID)},
         public static Button NavigatorHierarchySettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorHierarchySettings);//{NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,"setting-tab-hiersetting-btn-btnEl",ByType.ID)},
         public static Button NavigatorAssociationSettingsButton = GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAssociationSettings);//{NavigationTarget.AssociationSettings, new NavigatorItem(NavigationTarget.AssociationSettings,NavigationTarget.Settings,"setting-tab-tagassoc-btn-btnEl",ByType.ID)},
+        public static Button CustomerLabellingButton = GetControl<Button>(JazzControlLocatorKey.ButtonCustomerLabelling);//{NavigationTarget.CustomizedLabelling, new NavigatorItem(NavigationTarget.CustomizedLabelling,NavigationTarget.Settings,JazzButton.CustomerLabellingButton)},
 
         //level 3
         //--Time

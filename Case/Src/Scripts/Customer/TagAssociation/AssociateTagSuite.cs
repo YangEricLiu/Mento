@@ -341,7 +341,12 @@ namespace Mento.Script.Customer.TagAssociation
             TimeManager.ShortPause();
 
             //The tags can be display in 已选数据点.
+            foreach (string tagName in input.InputData.TagNames)
+            {
+                Assert.IsFalse(Association.IsRemoveTagExisted(tagName));
+            }
 
+            //Click 关联状态 button.
         }
     }
 }

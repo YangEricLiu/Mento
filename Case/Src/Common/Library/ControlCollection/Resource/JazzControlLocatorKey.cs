@@ -51,6 +51,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorAllDashboards = "ButtonNavigatorAllDashboards";
         public static string ButtonNavigatorRecentView = "ButtonNavigatorRecentView";
         public static string ButtonNavigatorMyShare = "ButtonNavigatorMyShare";
+        public static string ButtonCustomerLabelling = "ButtonCustomerLabelling";
 
         public static string ButtonNavigatorBenchMarkSettings = "ButtonNavigatorBenchMarkSettings";
         public static string ButtonNavigatorIndustryLabelingSettings = "ButtonNavigatorIndustryLabelingSetting";

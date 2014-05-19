@@ -47,6 +47,7 @@
             <add key="ButtonNavigatorRecentView" value="hp-menu-my-recent-btn" type="ID"/>
             <add key="ButtonNavigatorMyShare" value="hp-menu-my-share-btn" type="ID"/>
             <add key="ButtonNavigatorBenchMarkSettings" value="st-menu-benchmark-lv1" type="ID"/>
+            <add key="ButtonCustomerLabelling" value="setting-tab-customized-labelling-btn" type="ID"/>
             
           <add key="ButtonNavigatorTimeSettingsWorkday" value="st-menu-workday" type="ID"/>
             <add key="ButtonNavigatorTimeSettingsWorktime" value="st-menu-worktime" type="ID"/>

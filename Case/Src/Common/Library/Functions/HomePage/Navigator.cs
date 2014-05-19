@@ -113,6 +113,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.TagSettings, new NavigatorItem(NavigationTarget.TagSettings,NavigationTarget.Settings,JazzButton.NavigatorTagSettingsButton)},
             {NavigationTarget.HierarchySettings, new NavigatorItem(NavigationTarget.HierarchySettings,NavigationTarget.Settings,JazzButton.NavigatorHierarchySettingsButton)},
             {NavigationTarget.AssociationSettings, new NavigatorItem(NavigationTarget.AssociationSettings,NavigationTarget.Settings,JazzButton.NavigatorAssociationSettingsButton)},
+            {NavigationTarget.CustomizedLabelling, new NavigatorItem(NavigationTarget.CustomizedLabelling,NavigationTarget.Settings,JazzButton.CustomerLabellingButton)},
 
             {NavigationTarget.Dashboards, new NavigatorItem(NavigationTarget.Dashboards,NavigationTarget.HomePage,JazzButton.HomepageToDashboardButton)},
 
@@ -204,6 +205,7 @@ namespace Mento.ScriptCommon.Library.Functions
         TagSettings = 10,
         HierarchySettings = 11,
         AssociationSettings = 12,
+        CustomizedLabelling = 31,
         BenchMarkSettings = 113,
         IndustryLabelingSettings=114,
 		Dashboards = 300,
@@ -234,8 +236,6 @@ namespace Mento.ScriptCommon.Library.Functions
         AssociationHierarchy = 28,
         AssociationSystemDimension = 29,
         AssociationAreaDimension = 30,
-        //CustomizedLabelling
-        CustomizedLabelling=31,
 
         //Dashboard
         MyFavirate = 207,

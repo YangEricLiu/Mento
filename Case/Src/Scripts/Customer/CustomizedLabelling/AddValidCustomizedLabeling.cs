@@ -17,7 +17,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.CustomizedLabelling
 {
-   public class AddCustomizedLabelingValid
+   public class AddValidCustomizedLabeling
     {
         private CustomizedLabellingSettings CustomizedLabellingSettings = JazzFunction.CustomizedLabellingSettings;
 
@@ -37,8 +37,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-101")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddCustomizedLabelingValid), "TC-J1-FVT-CustomizedLabellingSetting-Add-101")]
-        public void AddCustomizedLabelingValidSuite01(CustomizedLabellingSettingData input)
+        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-101")]
+        public void AddCustomizedLabelingValid(CustomizedLabellingSettingData input)
         {
             //Click "+能效标识" button 
             CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();
@@ -54,9 +54,12 @@ namespace Mento.Script.Customer.CustomizedLabelling
             //Select 能效标识级别 from dropdown list.
             CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevel);
 
+            //check labelingGrade count
+           Assert.AreEqual(input.InputData.LabellingLevel,CustomizedLabellingSettings.GetCustomizedLabellingListCount());
+
             //Select KPI type=昼夜比.
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[0]);
-            Assert.AreSame(input.ExpectedData.KPITypes[0], input.InputData.KPITypes[0]);
+            Assert.AreEqual(input.ExpectedData.KPITypes[0], input.InputData.KPITypes[0]);
 
             //Check AscendingCustomizedLabellingButton is "正序"
             Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetAscendingCustomizedLabellingButton());

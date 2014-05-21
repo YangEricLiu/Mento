@@ -50,7 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomizedLabelling\AddCustomizedLabelingValid.cs" />
+    <Compile Include="CustomizedLabelling\AddInvalidCustomized Labelling.cs" />
+    <Compile Include="CustomizedLabelling\AddValidCustomizedLabeling.cs" />
     <Compile Include="HierarchyConfiguration\AddInvalidHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\AddValidHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\AddValidAreaDimension.cs" />

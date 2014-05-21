@@ -13,6 +13,7 @@ namespace Mento.ScriptCommon.TestData.Customer
     public class CustomizedLabellingSettingInputData : InputTestDataBase
     {
         public string CommonName { get; set; }
+        public string[] CommonNames { get; set; }
         public string[] Order { get; set; }
         public string Commodity { get; set; }
         public string[] Commodities { get; set; }       
@@ -25,6 +26,7 @@ namespace Mento.ScriptCommon.TestData.Customer
     public class CustomizedLabellingSettingExpectedData : ExpectedTestDataBase
     {
         public string CommonName { get; set; }
+        public string[] CommonNames { get; set; }
         public string[] Order { get; set; }
         public string Commodity { get; set; }
         public string[] Commodities { get; set; }       
@@ -35,6 +37,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Firstlabel { get; set; }
         public string Lastlabel { get; set; }
         public string UOM { get; set; }
+        public string[] UOMs { get; set; }
         public LabellingValue[][] LabellingValue { get; set; }
     }
     public class LabellingValue

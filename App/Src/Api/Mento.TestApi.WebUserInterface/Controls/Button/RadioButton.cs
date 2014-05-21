@@ -9,6 +9,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
     {
         private static Locator RadioField = new Locator("../../../../self::node()", ByType.XPath);
         private static Locator RadioFieldLabel = new Locator("../../../../../self::node()/label", ByType.XPath);
+        private static Locator RadioText = new Locator("../self::node()/label", ByType.XPath);
 
         public RadioButton(Locator locator)
             : base(locator)
@@ -28,6 +29,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public string GetRadioButtonLabel()
         {
             return FindChild(RadioFieldLabel).Text;
+        }
+
+        public string GetRadioButtonText()
+        {
+            return FindChild(RadioText).Text;
         }
     }
 }

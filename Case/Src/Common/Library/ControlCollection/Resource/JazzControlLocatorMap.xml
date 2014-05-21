@@ -388,7 +388,8 @@
               <add key="ButtonCustomizedLabellingUpdate" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonCustomizedLabellingModify" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonCustomizedLabellingDelete" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
-              <add key="ButtonCustomizedLabellingAscending" value="//div[@id='st-customized-labeling-properties-form-body']/table[@class,'x-container']/tbody/tr/td[2]/div/div/table[1]/tbody/tr/td[2]/label" type="XPath"/>
+              <add key="ButtonCustomizedLabellingAscendingOrder" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='正序']]/input" type="XPath"/>
+              <add key="ButtonCustomizedLabellingDescendingOrder" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='倒序']]/input" type="XPath"/>
           </CustomizedLabellingSetting>
       </customersettings>
       
@@ -775,9 +776,9 @@
           </kpitag>
       
     <CustomizedLabellingSetting>
-              <add key="CustomizedLabellingCommodity" value="//div[@id='st-customized-labeling-properties-form-body']/table[contains(@id, 'combobox')][2]/tbody/tr/td[contains(@id,'x-form-item-body')]/table/tbody/tr/td/input[@name='CommodityId']" type="XPath"/>
-              <add key="CustomizedLabellingType" value="//div[@id='st-customized-labeling-properties-form-body']/table[contains(@id, 'combobox')][3]/tbody/tr/td[2]/table/tbody/tr/td/input[@name='LabellingType']" type="XPath"/>
-              <add key="CustomizedLabellingLevel" value="//div[@id='st-customized-labeling-properties-form-body']/table[contains(@id, 'combobox')][4]/tbody/tr/td[2]/table/tbody/tr/td/input[@name='Grade']" type="XPath"/>     
+              <add key="CustomizedLabellingCommodity" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
+              <add key="CustomizedLabellingType" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='LabellingType']]" type="XPath"/>
+              <add key="CustomizedLabellingLevel" value="//div[@id='st-customized-labeling-properties-form-body']//table[@id='st-labeling-level-triggerWrap']" type="XPath"/>     
     </CustomizedLabellingSetting>
       </customersettings>
       <platformsettings>

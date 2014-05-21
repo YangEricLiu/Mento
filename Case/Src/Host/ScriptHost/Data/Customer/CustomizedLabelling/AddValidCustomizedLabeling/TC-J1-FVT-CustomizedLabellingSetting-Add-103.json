@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"CommonName":"自定义能效标识5",
-			"Commodities":["水","天燃气"],
+			"Commodities":["自来水","天燃气"],
 			"KPITypes":["单位面积","公休比"],
-			"LabellingLevels":["8","6"],
+			"LabellingLevels":["8级","6级"],
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
 			},
@@ -57,7 +57,7 @@
 			},					
 			{
 				"LabellingLeftValue":"6",
-			}],
+			}],		
 			[{
 				"LabellingLeftValue":"1",
 			},
@@ -79,20 +79,14 @@
 			},					
 			{
 				"LabellingLeftValue":"6",
-			}],
-			[{
-				"LabellingLeftValue":"-1234567890",
-			 }
-			{
-				"LabellingLeftValue":"1234567890",
 			}]]
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"自定义能效标识5",
-			"Commodities":["水","天燃气"],
-			"KPITypes":["单位面积","公休比"],
-			"LabellingLevels":["8","6"],
+			"Commodity":"天燃气",
+			"KPIType":"公休比",
+			"LabellingLevel":"6级",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
 			},
@@ -166,18 +160,33 @@
 			},					
 			{
 				"LabellingLeftValue":"6",
-			}],
+			}],			
 			[{
-				"该输入项的最小值是 -999999999.999999",
-			 },
+				"LabellingLeftValue":"1",
+			},
 			{
-				"该输入项的最大值是 999999999.999999",
-			}
-			]],
+				"LabellingLeftValue":"1",
+				"LabellingRightValue":"2",
+			},
+			{
+				"LabellingLeftValue":"2",
+				"LabellingRightValue":"3",
+			},
+			{
+				"LabellingLeftValue":"3",
+				"LabellingRightValue":"4",
+			},
+			{
+				"LabellingLeftValue":"4",
+				"LabellingRightValue":"5",
+			},					
+			{
+				"LabellingLeftValue":"6",
+			}]],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
-			"UOM":"千瓦时/人",
-			"Order":["正序"],
+			"UOMs":["吨/人","立方米/人"],
+			"Order":["正序","倒序"],
 		}
 	}
 ]

@@ -83,7 +83,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Get the message about ContactUsInvalidName
         /// </summary>
         /// <returns></returns>
-        public string getContactUsInvalidName()
+        public string getContactUsInvalidNameMessage()
         {
             return TextFieldContactUsName.GetInvalidTips();
         }
@@ -92,7 +92,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Get the message about ContactUsInvalidTelephone
         /// </summary>
         /// <returns></returns>
-        public string getContactUsInvalidTelephone()
+        public string getContactUsInvalidTelephoneMessage()
         {
             return TextFieldContactUsTelephone.GetInvalidTips();
         }
@@ -101,7 +101,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Get the message about ContactUsInvalidCompany
         /// </summary>
         /// <returns></returns>
-        public string getContactUsInvalidCompany()
+        public string getContactUsInvalidCompanyMessage()
         {
             return TextFieldContactUsCompany.GetInvalidTips();
         }       
@@ -110,7 +110,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Get the message about ContactUsInvalidTitle
         /// </summary>
         /// <returns></returns>
-        public string getContactUsInvalidTitle()
+        public string getContactUsInvalidTitleMessage()
         {
             return TextFieldContactUsTitle.GetInvalidTips();
         }      
@@ -119,7 +119,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Get the message about ContactUsInvalidDescriptionFields
         /// </summary>
         /// <returns></returns>
-        public string getContactUsInvalidDescriptionFields()
+        public string getContactUsInvalidDescriptionFieldsMessage()
         {
             return TextFieldContactUsDescriptionFields.GetInvalidTips();
         }

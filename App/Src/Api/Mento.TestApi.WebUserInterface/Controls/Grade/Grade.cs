@@ -115,5 +115,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return GradeItemRightNumber.GetAttribute("class").Contains("x-item-disabled");
         }
+        
     }
 }

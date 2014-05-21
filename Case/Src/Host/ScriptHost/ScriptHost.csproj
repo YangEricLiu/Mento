@@ -354,9 +354,12 @@
     <None Include="Data\ClientAccess\DemoAccess\DemoAccessValidSuite\TC-J1-FVT-DemoAccess-101.json" />
     <None Include="Data\CommonInputData.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\AddInvalidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-SameAreaNodes.json" />
-    <Content Include="Data\Customer\CustomizedLabelling\AddCustomizedLabelingValid\TC-J1-FVT-CustomizedLabellingSetting-Add-101.json" />
-    <Content Include="Data\Customer\CustomizedLabelling\AddCustomizedLabelingValid\TC-J1-FVT-CustomizedLabellingSetting-Add-102.json" />
-    <Content Include="Data\Customer\CustomizedLabelling\AddCustomizedLabelingValid\TC-J1-FVT-CustomizedLabellingSetting-Add-103.json" />
+    <Content Include="Data\Customer\CustomizedLabelling\AddValidCustomizedLabeling\TC-J1-FVT-CustomizedLabellingSetting-Add-101.json" />
+    <Content Include="Data\Customer\CustomizedLabelling\AddValidCustomizedLabeling\TC-J1-FVT-CustomizedLabellingSetting-Add-102.json" />
+    <Content Include="Data\Customer\CustomizedLabelling\AddValidCustomizedLabeling\TC-J1-FVT-CustomizedLabellingSetting-Add-103.json" />
+    <Content Include="Data\Customer\CustomizedLabelling\AddValidCustomizedLabeling\TC-J1-FVT-CustomizedLabellingSetting-Add-104.json" />
+    <Content Include="Data\Customer\CustomizedLabelling\AddInvalidCustomizedLabeling\TC-J1-FVT-CustomizedLabellingSetting-Add-001.json" />
+    <Content Include="Data\Customer\CustomizedLabelling\AddInvalidCustomizedLabeling\TC-J1-FVT-CustomizedLabellingSetting-Add-002.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-4.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-3.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-5.json" />

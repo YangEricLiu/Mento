@@ -23,7 +23,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button UpdateButton = JazzButton.UpdateCustomizedLabellingButton;
         private static Button ModifyButton = JazzButton.ModifyCustomizedLabellingButton;
         private static Button DeleteButton = JazzButton.DeleteCustomizedLabellingButton;
-        private static RadioButton ArrangementButton = JazzButton.CustomizedLabellingOrderButton;
+        private static RadioButton AscendingButton = JazzButton.CustomizedLabellingAscendingOrderButton;
+        private static RadioButton DescendingButton = JazzButton.CustomizedLabellingDescendingOrderButton;
         #endregion
 
         #region combox
@@ -75,6 +76,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickSaveButton()
         {
             SaveButton.Click();
+        }
+
+        /// <summary>
+        /// Click Update button 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickUpdateButton()
+        {
+            UpdateButton.Click();
         }
 
         /// <summary>
@@ -154,22 +165,39 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetAscendingCustomizedLabellingButton()
         {
-            return JazzButton.CustomizedLabellingOrderButton.GetRadioButtonLabel();
+            return AscendingButton.GetRadioButtonText();
         }
 
+        /// <summary>
+        /// Get DecendingCustomizedLabellingButton 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetDescendingCustomizedLabellingButton()
+        {
+            return DescendingButton.GetRadioButtonText();
+        }
 
         #endregion
 
         #region verify
         /// <summary>
-        /// Focus Labeling
+        /// Verify if labeling exist in the labeling list.
         /// </summary>
         /// <param></param>
         /// <returns></returns>
         public void IslabelingNameExist(string labelingName)
         {
-            CustomizedLabellingList.FocusOnRow(1, labelingName);
+            CustomizedLabellingList.IsRowExist(1, labelingName);
         }
+
+
+        /// <summary>
+        ///check grade is empty
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+
         #endregion
 
         #region GetValue
@@ -218,7 +246,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public string GetLabellingLevelFrontLabel()
+        public string GetLabellingGradeFrontLabel()
         {
             return CustomizedLabellingGrade.GetFirstGradeItemLabel();
         }
@@ -228,9 +256,19 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public string GetLabellingLevelLastLabel()
+        public string GetLabellingGradeLastLabel()
         {
             return CustomizedLabellingGrade.GetLastGradeItemLabel();
+        }
+
+        /// <summary>
+        /// Get CustomizedLabelling count 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public int GetLabellingGradeCount()
+        {
+            return CustomizedLabellingGrade.GetCurrentGradeItemsNumber();
         }
 
         /// <summary>
@@ -238,7 +276,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public string GetLabellingLevelLeftValue(int num)
+        public string GetLabellingGradeLeftValue(int num)
         {
            return CustomizedLabellingGrade.GetGradeItemLeftNumberValue(num);
         }
@@ -248,7 +286,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public string GetLabellingLevelRightValue(int num)
+        public string GetLabellingGradeRightValue(int num)
         {
             return CustomizedLabellingGrade.GetGradeItemRightNumberValue(num);
         }
@@ -263,7 +301,35 @@ namespace Mento.ScriptCommon.Library.Functions
             return CustomizedLabellingGrade.GetGradeItemUOMValue(num);
         }
 
-        
+        /// <summary>
+        /// Get CustomizedLabellingList's count
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public int GetCustomizedLabellingListCount()
+        {
+            return CustomizedLabellingList.GetCurrentRowsNumber();
+        }
+
+        /// <summary>
+        /// Get CustomizedLabellingName  Invalid tips
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetLabellingNameInvalidTips()
+        {
+            return NameTextField.GetInvalidTips();
+        }
+
+        /// <summary>
+        /// Get CustomizedLabellingGrade  Invalid tips
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+       /* public string GetLabellingGradeInvalidTips()
+        {
+            return CustomizedLabellingGrade.GetInvalidTips();
+        }*/
         #endregion
     }
 }

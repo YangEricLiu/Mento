@@ -105,7 +105,7 @@ namespace Mento.Script.ClientAccess.ContactUs
                 ContactUsSetting.FillInContactUsNameInfo(input.InputData.Names[i]);
                 TimeManager.ShortPause();
                 ContactUsSetting.ContactUsConfirmButton.Click();
-                Assert.AreEqual(input.ExpectedData.Name,ContactUsSetting.getContactUsInvalidName());
+                Assert.AreEqual(input.ExpectedData.Name, ContactUsSetting.getContactUsInvalidNameMessage());
                 TimeManager.ShortPause();
 
                 //Add invalid information for Telephone and Click Send button.
@@ -114,28 +114,28 @@ namespace Mento.Script.ClientAccess.ContactUs
                 TimeManager.ShortPause();
                 ContactUsSetting.ContactUsConfirmButton.Click();
                 // Assert.IsTrue(ContactUsSetting.IsTextFieldContactUsTelephoneDisplayed());
-                Assert.AreEqual(input.ExpectedData.Telephone, ContactUsSetting.getContactUsInvalidTelephone());
+                Assert.AreEqual(input.ExpectedData.Telephone, ContactUsSetting.getContactUsInvalidTelephoneMessage());
 
                 //Add invalid information for Company and Click Send button.
                 //The message showing that Company is invalid.
                 ContactUsSetting.FillInContactUsCompanyInfo(input.InputData.Companys[i]);
                 TimeManager.ShortPause();
                 ContactUsSetting.ContactUsConfirmButton.Click();
-                Assert.AreEqual(input.ExpectedData.Company, ContactUsSetting.getContactUsInvalidCompany());
+                Assert.AreEqual(input.ExpectedData.Company, ContactUsSetting.getContactUsInvalidCompanyMessage());
 
                 //Add invalid information for Title and Click Send button.
                 //The message showing that Title is invalid.
                 ContactUsSetting.FillInContactUsTitleInfo(input.InputData.Titles[i]);
                 TimeManager.ShortPause();
                 ContactUsSetting.ContactUsConfirmButton.Click();
-                Assert.AreEqual(input.ExpectedData.Title, ContactUsSetting.getContactUsInvalidTitle());
+                Assert.AreEqual(input.ExpectedData.Title, ContactUsSetting.getContactUsInvalidTitleMessage());
 
                 //Add invalid information for Description fields and Click Send button.
                 //The message showing that Description fields is invalid.
                 ContactUsSetting.FillInContactUsDescriptionFieldsInfo(input.InputData.DescriptionFieldss[i]);
                 TimeManager.ShortPause();
                 ContactUsSetting.ContactUsConfirmButton.Click();
-                Assert.AreEqual(input.ExpectedData.DescriptionFields, ContactUsSetting.getContactUsInvalidDescriptionFields());
+                Assert.AreEqual(input.ExpectedData.DescriptionFields, ContactUsSetting.getContactUsInvalidDescriptionFieldsMessage());
             }
             
             //Add valid information for Name, Telephone, Company, Title and Description fields. And then click Send button.

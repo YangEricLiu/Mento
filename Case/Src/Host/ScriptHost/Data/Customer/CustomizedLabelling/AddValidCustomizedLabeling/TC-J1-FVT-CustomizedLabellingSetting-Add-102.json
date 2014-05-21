@@ -27,7 +27,7 @@
 			"CommonName":"自定义能效标识4",
 			"Commodity":"电",
 			"KPIType":"单位人口",
-			"LabellingLevel":"5",
+			"LabellingLevel":"5级",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5",
 			},

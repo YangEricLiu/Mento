@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"CommonName":"  onlychars  ",
-			"Commodity":"水",
+			"Commodity":"自来水",
 			"KPITypes":["昼夜比","单位人口"],
-			"LabellingLevel":"3",
+			"LabellingLevel":"3级",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5.144",
 			},
@@ -20,20 +20,23 @@
 		"ExpectedData":
 		{
 			"CommonName":"onlychars",
-			"Commodity":"水",
+			"Commodity":"自来水",
 			"KPITypes":["昼夜比","单位人口"],
-			"LabellingLevel":"3",
+			"LabellingLevel":"3级",
 			"LabellingValue":[[{
-				"LabellingLeftValue":"5.144",
+				"LabellingLeftValue":"5.14",
 			},
 			{
-				"LabellingLeftValue":"5.144",
+				"LabellingLeftValue":"5.14",
 				"LabellingRightValue":"10",
 			},
 			{
 				"LabellingLeftValue":"10",
 			}]],
-			"Order":["正序"],
+			"Order":["倒序","正序"],
+			"Firstlabel":"<=",
+			"Lastlabel":">",
+			"UOM":"吨/人",
 		}
 	}
 ]

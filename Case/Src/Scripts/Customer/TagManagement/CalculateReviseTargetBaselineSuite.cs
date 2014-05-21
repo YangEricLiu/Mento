@@ -309,7 +309,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.CalculationErrorMessages[0]));
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.OK();
         }
 
         [Test]

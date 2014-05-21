@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1", "AssociatedTagBuild1014"],	
+			"TagNames":["PtagForAssociated1014"],	
+			"TagName":"VtagForAssociated1014",	
+			"HeaderName":["可关联", "不可关联"],
+		},
+		"ExpectedData":
+		{
+			"TagName":"PtagForAddCostElecComp1",
+		}
+	}
+]

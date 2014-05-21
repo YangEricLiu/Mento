@@ -473,6 +473,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         
         public bool IsRowExist(int cellIndex, string cellText)
         {
+            //Emma add on 2013-12-10
+            if (IsPageToolBarExisted() && (CurrentPage > 1))
+            {
+                GotoPage(1);
+                TimeManager.LongPause();
+            }
+
             try
             {
                 IWebElement row = GetRow(cellIndex, cellText);

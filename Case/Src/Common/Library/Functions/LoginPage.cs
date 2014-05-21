@@ -172,7 +172,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 {
                     if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用"))
                     {
-                        JazzMessageBox.MessageBox.Confirm();
+                        JazzMessageBox.MessageBox.OK();
                     }
                 }
 
@@ -197,7 +197,7 @@ namespace Mento.ScriptCommon.Library.Functions
                     {
                         if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用"))
                         {
-                            JazzMessageBox.MessageBox.Confirm();
+                            JazzMessageBox.MessageBox.OK();
                         }
                     }
 

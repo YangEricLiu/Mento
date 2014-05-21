@@ -18,6 +18,7 @@ namespace Mento.ScriptCommon.TestData.Customer
             public string TagName { get; set; }
             public string[] TagNames { get; set; }
             public string[] RemovedTagNames { get; set; }
+            public string[] HeaderName { get; set; }
         }
 
         public class AssociateTagExpectedData : VtagOuputData

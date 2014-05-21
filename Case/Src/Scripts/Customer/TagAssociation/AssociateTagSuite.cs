@@ -343,10 +343,35 @@ namespace Mento.Script.Customer.TagAssociation
             //The tags can be display in 已选数据点.
             foreach (string tagName in input.InputData.TagNames)
             {
-                Assert.IsFalse(Association.IsRemoveTagExisted(tagName));
+                Assert.IsTrue(Association.IsRemoveTagExisted(tagName));
             }
 
-            //Click 关联状态 button.
+            //Click 关联状态 button.可关联 checkbox is checked and all the available tag is list.
+            Assert.IsTrue(Association.IsCheckedAssociated(input.InputData.HeaderName[0]));
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.InputData.TagName));
+
+            //Check 不可关联 checkbox.
+            Association.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);
+            Association.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
+
+            //• Loading icon appear and check box is gray and cannot be select.
+            TimeManager.LongPause();
+            Association.IsAllTagsDisabled();
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+
+            //Check 可关联 checkbox again.
+            Association.CheckAssociatedCheckbox(input.InputData.HeaderName[0]);
+            Association.UncheckAssociatedCheckbox(input.InputData.HeaderName[1]);       
+            TimeManager.LongPause();
+
+            //• Checkboxes of the tags selected in step3 are still checked.
+            Assert.IsTrue(Association.IsTagChecked(input.InputData.TagNames[0]));
+
+            //Select one tag of 可关联 and then click 关联 button.
+            Association.ClickAssociateButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.InputData.TagNames[0]));
         }
     }
 }

@@ -1,0 +1,16 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "DisassociateTagAuto", "DisassociateTagSite", "DisassociateTagBuild1014"],
+			"SystemDimensionPath":["DisassociateTagBuild1014", "空调"],
+			"AreaDimensionPath":["DisassociateTagBuild1014","一层"],
+			"TagName":"PtagForDisassociated1014",
+			"HeaderName":["可关联", "不可关联"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

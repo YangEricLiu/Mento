@@ -78,6 +78,7 @@
     <Compile Include="Controls\Button\ToggleButton.cs" />
     <Compile Include="Controls\Chart\Chart.cs" />
     <Compile Include="Controls\CheckBoxField\CheckBoxField.cs" />
+    <Compile Include="Controls\MenuCheckItem\MenuCheckItem.cs" />
     <Compile Include="Controls\ComboBox\ComboBox.cs" />
     <Compile Include="Controls\ComboBox\ComboBoxItemRepository.cs" />
     <Compile Include="Controls\Common\Container.cs" />

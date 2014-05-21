@@ -151,8 +151,8 @@ namespace Mento.Script.Customer.TagManagement
             string msgText2 = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
 
-            //Click "Confirm" button
-            JazzMessageBox.MessageBox.Delete();
+            //Click "OK" button
+            JazzMessageBox.MessageBox.OK();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
@@ -190,8 +190,8 @@ namespace Mento.Script.Customer.TagManagement
             string msgText2 = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
 
-            //Click "Confirm" button
-            JazzMessageBox.MessageBox.Delete();
+            //Click "OK" button
+            JazzMessageBox.MessageBox.OK();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
@@ -230,8 +230,8 @@ namespace Mento.Script.Customer.TagManagement
             string msgText2 = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
 
-            //Click "Confirm" button
-            JazzMessageBox.MessageBox.Delete();
+            //Click "OK" button
+            JazzMessageBox.MessageBox.OK();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 

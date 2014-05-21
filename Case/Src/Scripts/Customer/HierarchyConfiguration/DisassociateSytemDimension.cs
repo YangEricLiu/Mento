@@ -104,10 +104,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             string msgText = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Message));
             TimeManager.LongPause();
-            JazzMessageBox.MessageBox.Delete();
+            JazzMessageBox.MessageBox.OK();
             TimeManager.MediumPause();
 
-            //SystemSettings.CloseSystemDimensionDialog();
             SystemSettings.ConfirmSystemDimensionDialog();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();

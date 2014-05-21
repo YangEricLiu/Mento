@@ -171,6 +171,113 @@ namespace Mento.Script.Customer.TagAssociation
                 i++;
             }
         }
-    
+
+        [Test]
+        [CaseID("TC-J1-FVT-TagAssociation-Disassociate-101-4")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(DisassociateTagSuite), "TC-J1-FVT-TagAssociation-Disassociate-101-4")]
+        public void DisassociateTagWhichAssociatedToMultipleNodes(AssociateTagData input)
+        {
+            //select a tag which has been associated to two nodes (system node and area node)，click 解除关联 button.
+            AssociateSettings.NavigateToSystemDimensionAssociate();
+            SystemNodeSettings.ShowHierarchyTree();
+            SystemNodeSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            SystemNodeSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionPath);
+            TimeManager.MediumPause();
+
+            AssociateSettings.FocusOnTag(input.InputData.TagName);
+            AssociateSettings.ClickDisassociateButton(input.InputData.TagName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            //Go to the Area Dimension and select 可关联 checkbox.
+            AssociateSettings.NavigateToAreaDimensionAssociate();
+            AreaNodeSettings.SelectAreaDimensionNodePath(input.InputData.AreaDimensionPath);
+            TimeManager.MediumPause();
+
+            //Click  '关联数据点'  button.
+            AssociateSettings.ClickAssociateTagButton();
+            Assert.IsTrue(AssociateSettings.IsCheckedAssociated(input.InputData.HeaderName[0]));
+
+            //The tag is list in there.
+            Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));
+
+            //Select 不可关联 checkbox.
+            AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
+            AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);
+
+            //The tag is not list in there.
+            Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));
+            TimeManager.LongPause();
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TagAssociation-Disassociate-101-5")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(DisassociateTagSuite), "TC-J1-FVT-TagAssociation-Disassociate-101-5")]
+        public void DisassociateTagWhileOnAssociatingTagsPage(AssociateTagData input)
+        {
+            //Select one hierarchy node. 
+            AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
+
+            //Click  '关联数据点'  button.
+            AssociateSettings.ClickAssociateTagButton();
+
+            //Select some tags
+            AssociateSettings.CheckedTags(input.InputData.TagNames);
+            TimeManager.ShortPause();
+
+            //The tags can be display in 已选数据点.
+            foreach (string tagName in input.InputData.TagNames)
+            {
+                Assert.IsTrue(AssociateSettings.IsRemoveTagExisted(tagName));
+            }
+
+            //Click 关联状态 button.可关联 checkbox is checked and all the available tag is list.
+            Assert.IsTrue(AssociateSettings.IsCheckedAssociated(input.InputData.HeaderName[0]));
+            Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));
+
+            //Check 不可关联 checkbox.
+            AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
+            AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);      
+            TimeManager.LongPause();
+
+            //• Loading icon appear and check box is gray and cannot be select.
+            TimeManager.LongPause();
+            AssociateSettings.IsAllTagsDisabled();
+            Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+
+            //Click 解除关联 button in one tag which is associatied with one node.
+            AssociateSettings.FocusOnTag(input.ExpectedData.TagName);
+            TimeManager.ShortPause();
+            AssociateSettings.ClickDisassociateButton(input.ExpectedData.TagName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+
+            //Select checkbox of the tag disassociated in step6
+            AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[0]);
+            AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[1]);
+            TimeManager.LongPause();
+
+            AssociateSettings.CheckedTag(input.ExpectedData.TagName);
+            TimeManager.ShortPause();
+
+            //The tag is displayed in '已选数据点' as well.
+            Assert.IsTrue(AssociateSettings.IsRemoveTagExisted(input.ExpectedData.TagName));
+
+            //Refresh the tag list or switch to other pages then switch back. The tag which was dissociated in step6 disappeared from '不可关联' list now.
+            AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
+            AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);      
+            TimeManager.LongPause();
+            Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+
+            //Click 关联 button.
+            AssociateSettings.ClickAssociateButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+            Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagNames[0]));
+        }
     }
 }

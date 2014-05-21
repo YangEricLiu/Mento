@@ -118,4 +118,10 @@
   <!--Grade-->
   <add key="GradeItems"  value="div/table/tbody/tr/td[@class='x-form-item-body ']/div[contains(@id,'gradeitem')]" type="XPath"/>
 
+  <!--MenuCheckItem-->
+  <add key="MenuCheckItemItem"  value="div[contains(@id,'headercontainer')]/div/div/div[contains(@class,'x-column-header')]/div[contains(@class,'x-column-header-inner') and span[text()= '$#itemName']]" type="XPath"/>
+  <add key="MenuCheckSearching"  value="//div[contains(@id,'menu') and not(contains(@style,'visibility: hidden;'))]//div[contains(@id,'menucheckitem') and a/span[text()='$@Common.Label.Filters']]" type="XPath"/>
+  <add key="MenuCheckExtraComp"  value="//div[contains(@id,'ext-comp') and not(contains(@style,'visibility: hidden;'))]//div[contains(@id,'menucheckitem') and a/span[text()='$#itemName']]" type="XPath"/>
+  <add key="MenuAssociateStatusItem"  value="div[contains(@id,'headercontainer')]/div/div/div[contains(@class,'x-column-header')]/div[contains(@class,'x-column-header-inner') and span[text()= '$@Setting.TagAssociation.AssociatedStatus']]" type="XPath"/>
+
 </WebElement>

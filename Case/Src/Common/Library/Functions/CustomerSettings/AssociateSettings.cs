@@ -25,6 +25,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private Button Association = JazzButton.AssociationSettingsAssociate;
         private Button AssociationTag = JazzButton.AssociationSettingsTagAssociate;
         private Container AssociatedTags = JazzContainer.AssociatedTagsContainer;
+        private MenuCheckItem AssociatedStatus = JazzMenuCheckItem.AssociateStatus;
        
         #endregion
 
@@ -144,6 +145,36 @@ namespace Mento.ScriptCommon.Library.Functions
         #region Actions
 
         /// <summary>
+        /// Click the check box of "关联状态"/"可关联"/"不可关联"
+        /// </summary>
+        /// <param name = "item">item name</param>
+        /// <returns></returns>
+        public void CheckAssociatedCheckbox(string item)
+        {
+            AssociatedStatus.CheckMenuAssociateItem(item);
+        }
+
+        /// <summary>
+        /// Click the check box of "关联状态"/"可关联"/"不可关联"
+        /// </summary>
+        /// <param name = "item">item name</param>
+        /// <returns></returns>
+        public void UncheckAssociatedCheckbox(string item)
+        {
+            AssociatedStatus.UncheckMenuAssociateItem(item);
+        }
+
+        /// <summary>
+        /// Check if the check box of "关联状态"/"可关联"/"不可关联" is checked
+        /// </summary>
+        /// <param name = "item">item name</param>
+        /// <returns></returns>
+        public bool IsCheckedAssociated(string item)
+        {
+            return AssociatedStatus.IsMenuAssociateItemChecked(item);
+        }
+
+        /// <summary>
         /// Click the check box in the front of tag
         /// </summary>
         /// <param name = "tagName">the tag name</param>
@@ -235,6 +266,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsTagChecked(string tagName)
         {
             return TagList.IsRowChecked(3, tagName);
+        }
+
+        public bool IsAllTagsDisabled()
+        {
+            return TagList.IsNoEnabledCheckbox();
         }
 
         /// <summary>

@@ -67,20 +67,20 @@ namespace Mento.Script.Customer.CustomizedLabelling
             //Input Labelling level A<=5.144.
             Assert.AreSame(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingLevelFrontLabel());
             Assert.AreSame(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingLevelLastLabel());
-            CustomizedLabellingSettings.FillInLabellingLevelLeftValue(1, "5.144");
+            CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, "5.144");
 
             //Auto change level B left border=5.14,Auto round level A<=5.14
             Assert.AreEqual(input.ExpectedData.LabellingValue[0][0].LabellingLeftValue,CustomizedLabellingSettings.GetLabellingLevelLeftValue(1));
             Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelLeftValue(1));
 
             //Input Labelling level C=10.
-            CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, "10");
+            //CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, "10");
 
             //Auto change level B right border=10.
             Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingRightValue,CustomizedLabellingSettings.GetLabellingLevelLeftValue(3));
             
             //Check UOM
-            for (int i = 0; i < Convert.ToInt32(input.InputData.LabellingLevel); i++)
+            for (int i = 0; i < Convert.ToInt32(input.InputData.LabellingLevel.ToString()); i++)
             {
                 Assert.AreSame(input.ExpectedData.UOM, CustomizedLabellingSettings.GetLabellingUOMValue(i + 1));
             }

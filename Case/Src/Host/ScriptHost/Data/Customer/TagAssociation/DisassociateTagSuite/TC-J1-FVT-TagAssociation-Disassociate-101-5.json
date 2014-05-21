@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{
+			"HierarchyNodePath":["自动化测试", "DisassociateTagAuto", "DisassociateTagSite", "DisassociateTagBuild1015"],
+			"TagNames":["PtagForDisassociated1015"],
+			"HeaderName":["可关联", "不可关联"],
+			"TagName":"PtagForDisassociated1015_2",
+		},
+		"ExpectedData":
+		{
+			"TagName":"VtagForDisassociated1015",
+		}
+	}
+]

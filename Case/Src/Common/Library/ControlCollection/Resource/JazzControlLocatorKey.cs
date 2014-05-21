@@ -1351,5 +1351,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region MenuCheckItem
+        public static string AssociateStatusMenuCheckItem = "AssociateStatusMenuCheckItem";   
+        #endregion
+
     }
 }

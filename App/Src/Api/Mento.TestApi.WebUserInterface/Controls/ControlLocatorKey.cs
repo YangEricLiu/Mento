@@ -131,5 +131,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region Grade locators
         public static string GradeItems = "GradeItems";
         #endregion
+
+        #region MenuCheckItem locators
+
+        public static string MenuCheckItemItem = "MenuCheckItemItem";
+        public static string MenuCheckSearching = "MenuCheckSearching";
+        public static string MenuCheckExtraComp = "MenuCheckExtraComp";
+        public static string MenuAssociateStatusItem = "MenuAssociateStatusItem";
+
+        #endregion
     } 
 }

@@ -129,6 +129,18 @@ namespace Mento.TestApi.WebUserInterface
             action.MoveToElement(element).Perform();
         }
 
+        public static void ClickAndHold(IWebElement element)
+        {
+            Actions action = new Actions(DriverFactory.Instance);
+            action.ClickAndHold(element).Perform();
+        }
+
+        public static void Release(IWebElement element)
+        {
+            Actions action = new Actions(DriverFactory.Instance);
+            action.Release(element).Perform();
+        }
+
         public static void DragAndDrop(IWebElement source, IWebElement desination)
         {
             Actions action = new Actions(DriverFactory.Instance);

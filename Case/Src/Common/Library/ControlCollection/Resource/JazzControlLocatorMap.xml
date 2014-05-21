@@ -369,7 +369,7 @@
               <add key = "ButtonAssociationSettingsTagAssociate" value = "st-tagassoc-taggrid-assoc" type = "ID"/>
               <add key = "ButtonAssociationSettingsAssociate" value = "st-tagassoc-taggrid-assocaction" type = "ID"/>
               <add key = "ButtonAssociatedTagRemove" value = "//div[@id='st-tagassoc-tagcontainer-container-bodyEl']/div[contains(@class, 'x-removable-item') and span[text()='$#nameIndex']]/span[contains(@class, 'x-btn-icon')]" type = "XPath"/>
-            
+
           </tagassociation>
           <tagdisassociation>
               <add key = "ButtonAssociationSettingsDisassociate" value = "st-tagassoc-taggrid-unassoc-btnInnerEl" type = "ID"/>
@@ -1223,5 +1223,10 @@
   
 </Container>
   <!--Container End-->
-  
+
+  <!--MenuCheckItem Begin-->
+  <Associate>
+    <add key="AssociateStatusMenuCheckItem" value="//div[@id='st-tag-assoc-form-targetEl']/div[contains(@id,'taggrid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+  </Associate>
+  <!--MenuCheckItem End-->
 </WebElement>

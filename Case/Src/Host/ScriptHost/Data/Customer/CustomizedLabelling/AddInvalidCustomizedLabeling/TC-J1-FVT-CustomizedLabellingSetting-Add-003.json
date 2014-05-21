@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"CommonName":"自定义能效标识2",
+			"CommonName":"自定义能效标识1",
 			"Commodity":"电",
 			"KPIType":""单位人口",
 			"LabellingLevel":"4级",
@@ -27,28 +27,7 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"",
-			"Commodity":"电",
-			"KPIType":""单位人口",
-			"LabellingLevel":"5级",
-			"LabellingValue":[[{
-				"LabellingLeftValue":"",
-			},
-			{
-				"LabellingLeftValue":"",
-				"LabellingRightValue":"",
-			},		
-			{
-				"LabellingLeftValue":"",
-				"LabellingRightValue":"",
-			},			
-			{
-				"LabellingLeftValue":"",
-				"LabellingRightValue":"",
-			},
-			{
-				"LabellingLeftValue":"",
-			}]],
+		    "CommonName":"自定义能耗标识在该客户下已经存在，请使用其它名字。",
 			"Order":["正序"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",

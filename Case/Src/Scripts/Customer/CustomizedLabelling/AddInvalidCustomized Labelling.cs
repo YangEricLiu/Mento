@@ -98,7 +98,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-002")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddInvalidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-002")]
-        public void AddCustomizedLabelingInvalid(CustomizedLabellingSettingData input)
+        public void AddCustomizedLabelingInvalid01(CustomizedLabellingSettingData input)
         {
             //Click "+能效标识" button 
             CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();
@@ -110,6 +110,9 @@ namespace Mento.Script.Customer.CustomizedLabelling
             //·Red line and error message display at 名称.
             //Red line and error message display at A-E Levels value input fields.
             Assert.AreEqual(input.ExpectedData.CommonNames[1],CustomizedLabellingSettings.GetLabellingNameInvalidTips());
+
+
+
 
 
             //Click Cancel button.Click "+能效标识" button 
@@ -143,11 +146,10 @@ namespace Mento.Script.Customer.CustomizedLabelling
             CustomizedLabellingSettings.ClickSaveButton();
 
             //· All redline disappeared.The Labelling save successfully.
-            //Go to view status display Labelling successfully the same as before save.
             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
             Assert.AreEqual(input.ExpectedData.Commodity, input.InputData.Commodity);
             Assert.AreEqual(input.ExpectedData.LabellingLevel, input.InputData.LabellingLevel);
-            Assert.AreEqual(input.ExpectedData.KPITypes[1], input.InputData.KPITypes[1]);
+            Assert.AreEqual(input.ExpectedData.KPIType, input.InputData.KPIType);
 
             //Check lalelling level's right border 
             for (int m = 1; m < 5; m++)
@@ -155,16 +157,48 @@ namespace Mento.Script.Customer.CustomizedLabelling
                 Assert.AreEqual(input.ExpectedData.LabellingValue[0][m + 1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(m + 1));
             }
 
-
             //The labelling name/create user/create time display in labelling grid. 
             CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName);
-
-
-
-
-
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-003")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddInvalidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-003")]
+        public void AddCustomizedLabelingInvalid02(CustomizedLabellingSettingData input)
+        {
+            //Click "+能效标识" button 
+            CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();
+            TimeManager.LongPause();
+
+            //Input all fields :CommonName="自定义能效标识1"，Commdodity=电，能效标识级别=4，KPI type=单位人口.
+            CustomizedLabellingSettings.FillInNameTextField(input.InputData.CommonName);
+            TimeManager.MediumPause();
+            CustomizedLabellingSettings.SelectCommodityComboBox(input.InputData.Commodity);
+            CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPIType);
+            CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevel);
+
+            //check labelingGrade count
+            Assert.AreEqual(input.InputData.LabellingLevel, CustomizedLabellingSettings.GetCustomizedLabellingListCount());
+
+            //Check AscendingCustomizedLabellingButton is "正序"
+            Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetDescendingCustomizedLabellingButton());
+
+            //Input Labelling Left Value
+            int count = 0;
+            //count = Int32.Parse(input.ExpectedData.LabellingLevel);
+            //Convert.ToInt32(input.ExpectedData.LabellingLevel);
+            for (int n = 1; n < 4; n++)
+            {
+                CustomizedLabellingSettings.FillInLabellingLevelLeftValue(n + 1, input.InputData.LabellingValue[0][n].LabellingLeftValue);
+            }
+
+            //Click Save button.
+            CustomizedLabellingSettings.ClickSaveButton();
+
+            //Red line and error message display at 名称.
+            Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetLabellingNameInvalidTips());
+        }
 
     }
 }

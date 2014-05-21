@@ -27,7 +27,7 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"自定义能效标识1",
+			"CommonNames":["自定义能效标识1","必填项。"],
 			"Commodity":"电",
 			"KPIType":""单位人口",
 			"LabellingLevel":"4级",

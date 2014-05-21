@@ -68,19 +68,19 @@ namespace Mento.Script.Customer.CustomizedLabelling
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[1]);
 
             //Input Labelling level A<=5.144.
-            Assert.AreSame(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingLevelFrontLabel());
-            Assert.AreSame(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingLevelLastLabel());
+            Assert.AreSame(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+            Assert.AreSame(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
             CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, "5.144");
 
             //Auto change level B left border=5.14,Auto round level A<=5.14
-            Assert.AreEqual(input.ExpectedData.LabellingValue[0][0].LabellingLeftValue,CustomizedLabellingSettings.GetLabellingLevelLeftValue(1));
-            Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelLeftValue(1));
+            Assert.AreEqual(input.ExpectedData.LabellingValue[0][0].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
+            Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
 
             //Input Labelling level C=10.
             //CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, "10");
 
             //Auto change level B right border=10.
-            Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingRightValue,CustomizedLabellingSettings.GetLabellingLevelLeftValue(3));
+            Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(3));
             
             //Check UOM
             for (int i = 0; i < Convert.ToInt32(input.InputData.LabellingLevel.ToString()); i++)
@@ -104,7 +104,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
          [Test]
          [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-102")]
          [Type("BFT")]
-         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddCustomizedLabelingValid), "TC-J1-FVT-CustomizedLabellingSetting-Add-102")]
+         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-102")]
          public void AddCustomizedLabelingValidSuite02(CustomizedLabellingSettingData input)
          {
              //Click "+能效标识" button 
@@ -115,30 +115,30 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
 
              //Input Labelling level A<=5.
-             Assert.AreSame(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingLevelFrontLabel());
-             Assert.AreSame(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingLevelLastLabel());
+             Assert.AreSame(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+             Assert.AreSame(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
              CustomizedLabellingSettings.FillInLabellingLevelLeftValue(1, "5");
 
              //Auto change level B left border=5
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelLeftValue(1));
+             Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
 
              //Input Labelling level B right border=10.
              CustomizedLabellingSettings.FillInLabellingLevelRightValue(2, "10");
 
              //Auto change level C left border=10
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][2].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelRightValue(2));
+             Assert.AreEqual(input.ExpectedData.LabellingValue[0][2].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(2));
 
              //Input Labelling level C right border=20.
              CustomizedLabellingSettings.FillInLabellingLevelRightValue(3, "20");
 
              //Auto change level D left border=20
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][3].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelRightValue(3));
+             Assert.AreEqual(input.ExpectedData.LabellingValue[0][3].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(3));
 
              //Input Labelling level E=40. 
              CustomizedLabellingSettings.FillInLabellingLevelLeftValue(5, "40");
 
              //Auto change level D right border=40
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][3].LabellingRightValue, CustomizedLabellingSettings.GetLabellingLevelLeftValue(5));
+             Assert.AreEqual(input.ExpectedData.LabellingValue[0][3].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(5));
 
              //Save
              CustomizedLabellingSettings.ClickSaveButton();
@@ -159,7 +159,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
          [Test]
          [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-103")]
          [Type("BFT")]
-         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddCustomizedLabelingValid), "TC-J1-FVT-CustomizedLabellingSetting-Add-103")]
+         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-103")]
          public void AddCustomizedLabelingValidSuite03(CustomizedLabellingSettingData input)
          {
              //Click "+能效标识" button 
@@ -178,48 +178,48 @@ namespace Mento.Script.Customer.CustomizedLabelling
              CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevels[0]);
 
              //Input Labelling level A<=1.
-             Assert.AreSame(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingLevelFrontLabel());
-             Assert.AreSame(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingLevelLastLabel());
+             Assert.AreSame(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+             Assert.AreSame(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
              CustomizedLabellingSettings.FillInLabellingLevelLeftValue(1, "1");
 
              //Auto change level B left border=1
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelLeftValue(1));
+             Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
 
              //Input Labelling level B right border=2.
              CustomizedLabellingSettings.FillInLabellingLevelRightValue(2, "2");
 
              //Auto change level C left border=2
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][2].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelRightValue(2));
+             Assert.AreEqual(input.ExpectedData.LabellingValue[0][2].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(2));
 
              //Input Labelling level C right border=3.
              CustomizedLabellingSettings.FillInLabellingLevelRightValue(3, "3");
 
              //Auto change level D left border=3
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][3].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelRightValue(3));
+             Assert.AreEqual(input.ExpectedData.LabellingValue[0][3].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(3));
 
              //Input Labelling level D right border=4. 
              CustomizedLabellingSettings.FillInLabellingLevelRightValue(4, "4");
 
              //Auto change level E left border=4
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][4].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelRightValue(4));
+             Assert.AreEqual(input.ExpectedData.LabellingValue[0][4].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(4));
 
              //Input Labelling level E right border=5. 
              CustomizedLabellingSettings.FillInLabellingLevelRightValue(5, "5");
 
              //Auto change level F left border=5
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][5].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelRightValue(5));
+             Assert.AreEqual(input.ExpectedData.LabellingValue[0][5].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(5));
             
              //Input Labelling level F right border=6. 
              CustomizedLabellingSettings.FillInLabellingLevelRightValue(6, "6");
 
              //Auto change level G left border=6
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][6].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelRightValue(6));
+             Assert.AreEqual(input.ExpectedData.LabellingValue[0][6].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(6));
 
              //Input Labelling level G right border=7. 
              CustomizedLabellingSettings.FillInLabellingLevelLeftValue(7, "7");
 
              //Auto change level H left border=7
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][7].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingLevelRightValue(7));
+             Assert.AreEqual(input.ExpectedData.LabellingValue[0][7].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(7));
 
 
              //Save

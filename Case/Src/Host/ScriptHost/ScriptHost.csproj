@@ -360,6 +360,7 @@
     <Content Include="Data\Customer\CustomizedLabelling\AddValidCustomizedLabeling\TC-J1-FVT-CustomizedLabellingSetting-Add-104.json" />
     <Content Include="Data\Customer\CustomizedLabelling\AddInvalidCustomizedLabeling\TC-J1-FVT-CustomizedLabellingSetting-Add-001.json" />
     <Content Include="Data\Customer\CustomizedLabelling\AddInvalidCustomizedLabeling\TC-J1-FVT-CustomizedLabellingSetting-Add-002.json" />
+    <Content Include="Data\Customer\CustomizedLabelling\AddInvalidCustomizedLabeling\TC-J1-FVT-CustomizedLabellingSetting-Add-003.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-4.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-3.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-5.json" />
@@ -491,9 +492,6 @@
     <Content Include="Data\Customer\TagAssociation\MarkEnergyFlagSuite\TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-3.json" />
     <Content Include="Data\Customer\TagAssociation\MarkEnergyFlagSuite\TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-4.json" />
     <Content Include="Data\Customer\TagAssociation\MarkEnergyFlagSuite\TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-5.json" />
-    <Content Include="Data\Customer\TagAssociation\AssociateTagSuite\TC-J1-FVT-TagAssociation-Associate-101-4.json" />
-    <Content Include="Data\Customer\TagAssociation\DisassociateTagSuite\TC-J1-FVT-TagAssociation-Disassociate-101-4.json" />
-    <Content Include="Data\Customer\TagAssociation\DisassociateTagSuite\TC-J1-FVT-TagAssociation-Disassociate-101-5.json" />
     <None Include="Data\Customer\TagAssociation\MarkEnergyFlagSuite\TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-1.json" />
     <None Include="Data\Customer\TagManagement\AddInvalidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-001-4.json" />
     <None Include="Data\Customer\TagManagement\AddInvalidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-001-2.json" />

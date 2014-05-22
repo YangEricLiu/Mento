@@ -526,6 +526,46 @@ namespace Mento.Script.EnergyView.CorporateRanking
         #endregion
         */
 
+        [Test]
+        [CaseID("TC-J1-FVT-CarbonRanking-Calculate-101-7")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateCarbonEmissionRanking), "TC-J1-FVT-CarbonRanking-Calculate-101-7")]
+        public void MissingTreeValue_5113(CorporateRankingData input)
+        {
+            JazzFunction.HomePage.SelectCustomer("NancyOtherCustomer3");
+            CorporateRanking.NavigateToCorporateRanking();
+            TimeManager.MediumPause();
+
+            //select NancyOtherCustomer3->BuildingDayNight
+            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[0]);
+            CorporateRanking.ClickConfirmHiearchyButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Click Function Type button, select Carbon, then go to 介质单项/自來水
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            //time range is 2012-01-01 to 2013-12-31
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
+            CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0]);
+            TimeManager.MediumPause();
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+        }
     }
 
 }

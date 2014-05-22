@@ -282,6 +282,16 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Get GetLabellingGradeLeftInvalidMassage 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetLabellingGradeLeftInvalidMassage(int num)
+        {
+            return CustomizedLabellingGrade.GetGradeLeftNumberFieldInvalidMessage(num);
+        }
+
+        /// <summary>
         /// Get CustomizedLabellingLevelRightValue 
         /// </summary>
         /// <param></param>
@@ -289,6 +299,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetLabellingGradeRightValue(int num)
         {
             return CustomizedLabellingGrade.GetGradeItemRightNumberValue(num);
+        }
+
+        /// <summary>
+        /// Get GetLabellingGradeRightInvalidMassage 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetLabellingGradeRightInvalidMassage(int num)
+        {
+            return CustomizedLabellingGrade.GetGradeRightNumberFieldInvalidMessage(num);
         }
 
         /// <summary>

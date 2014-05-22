@@ -78,7 +78,9 @@ namespace Mento.Script.Customer.CustomizedLabelling
             //Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
 
             //Input Labelling level C=10.
-            CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, "10");
+            CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, "10000000000000000000000");
+            TimeManager.ShortPause();
+            Assert.AreEqual("", CustomizedLabellingSettings.GetLabellingGradeLeftInvalidMassage(3));
 
             //Auto change level B right border=10.
             //Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(3));

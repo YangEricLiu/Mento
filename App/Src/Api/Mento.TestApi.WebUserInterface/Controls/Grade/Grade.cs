@@ -18,6 +18,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator GradeItemRightNumberField = new Locator("div/table[contains(@id,'numberfield')][2]", ByType.XPath);
         private static Locator GradeItemNumberFieldLabel = new Locator("tbody/tr/td[contains(@id,'numberfield') and contains(@id,'labelCell')]/label", ByType.XPath);
         private static Locator GradeItemNumberFieldInput = new Locator("tbody/tr/td[contains(@id,'numberfield') and contains(@id,'bodyEl')]/table/tbody/tr/td/input", ByType.XPath);
+        private static Locator GradeItemLeftNumberFieldInvalidErrorMessage = new Locator("div/table[contains(@id,'numberfield')][1]//td[contains(@class,'x-form-invalid-under')]/ul/li", ByType.XPath);
+        private static Locator GradeItemRightNumberFieldInvalidErrorMessage = new Locator("div/table[contains(@id,'numberfield')][2]//td[contains(@class,'x-form-invalid-under')]/ul/li", ByType.XPath);
 
         /// <summary>
         /// locator parameter must be root element of a grid
@@ -31,6 +33,20 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 return FindChildren(ControlLocatorRepository.GetLocator(ControlLocatorKey.GradeItems));
             }
+        }
+
+        public string  GetGradeLeftNumberFieldInvalidMessage(int num)
+        {
+            IWebElement GradeLeftNumberInvalidMessage = ElementHandler.FindElement(GradeItemLeftNumberFieldInvalidErrorMessage, container: GradeItems[num - 1]);
+
+            return GradeLeftNumberInvalidMessage.Text;
+        }
+
+        public string GetGradeRightNumberFieldInvalidMessage(int num)
+        {
+            IWebElement GradeRightNumberInvalidMessage = ElementHandler.FindElement(GradeItemRightNumberFieldInvalidErrorMessage, container: GradeItems[num - 1]);
+
+            return GradeRightNumberInvalidMessage.Text;
         }
 
         public int GetCurrentGradeItemsNumber()

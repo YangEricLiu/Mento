@@ -53,62 +53,68 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
             //Select 能效标识级别 from dropdown list.
             CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevel);
-            TimeManager.MediumPause();
 
             //check labelingGrade count
-            Assert.AreEqual(3, CustomizedLabellingSettings.GetLabellingGradeCount());
+            int count = Convert.ToInt32(input.InputData.LabellingLevelValue);
+            Assert.AreEqual(count,CustomizedLabellingSettings.GetCustomizedLabellingListCount());
 
             //Select KPI type=昼夜比.
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[0]);
             Assert.AreEqual(input.ExpectedData.KPITypes[0], input.InputData.KPITypes[0]);
 
             //Check AscendingCustomizedLabellingButton is "正序"
-            //Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetAscendingCustomizedLabellingButton());
+            Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetDescendingCustomizedLabellingButton());
 
             //Change to select KPI type=单位人口.
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[1]);
 
-            //Input Labelling level A<=5.144.
+            //check labelingGrade Firstlabel&Lastlabel.
             Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
             Assert.AreEqual(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
-            CustomizedLabellingSettings.FillInLabellingLevelLeftValue(1, "5.144");
 
-            //Auto change level B left border=5.14,Auto round level A<=5.14
-            //Assert.AreEqual(input.ExpectedData.LabellingValue[0][0].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
-            //Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
+            //Check UOM
+            for (int num = 0; num < Convert.ToInt32(input.InputData.LabellingLevelValue.ToString()); num++)
+            {
+                Assert.AreEqual(input.ExpectedData.UOM, CustomizedLabellingSettings.GetLabellingUOMValue(num + 1));
+            }
+
+            //Input Labelling level A<=5.144.
+            CustomizedLabellingSettings.FillInLabellingLevelLeftValue(1, input.InputData.LabellingValue[0][0].LabellingLeftValue);
+
+            //Input Labelling level C=10000000000000000000000.
+            CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, input.InputData.LabellingValue[1][0].LabellingLeftValue);
+            TimeManager.ShortPause();
+            Assert.AreEqual(input.ExpectedData.LabellingValue[1][0].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftInvalidMassage(3));
 
             //Input Labelling level C=10.
-            CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, "10000000000000000000000");
-            TimeManager.ShortPause();
-            Assert.AreEqual("", CustomizedLabellingSettings.GetLabellingGradeLeftInvalidMassage(3));
-
-            //Auto change level B right border=10.
-            //Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(3));
-            
-            //Check UOM
-            for (int i = 0; i < Convert.ToInt32(input.InputData.LabellingLevel.ToString()); i++)
-            {
-                Assert.AreSame(input.ExpectedData.UOM, CustomizedLabellingSettings.GetLabellingUOMValue(i + 1));
-            }
+            CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, "");
+            CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, input.InputData.LabellingValue[0][2].LabellingLeftValue);
 
             //Save
             CustomizedLabellingSettings.ClickSaveButton();
 
+            //Auto change level B left border=5.14,Auto round level A<=5.14
+            Assert.AreEqual(input.ExpectedData.LabellingValue[0][0].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(1));
+            Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
+
+            //Auto change level B right border=10.
+            Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(3));
+            
             //Go to view status display Labelling successfully the same as before save.
-            Assert.AreSame(input.ExpectedData.CommonName,CustomizedLabellingSettings.GetNameTextFieldValue());
-            Assert.AreSame(input.ExpectedData.Commodity, input.InputData.Commodity);
-            Assert.AreSame(input.ExpectedData.LabellingLevel, input.InputData.LabellingLevel);
-            Assert.AreSame(input.ExpectedData.KPITypes[1], input.InputData.KPITypes[1]);
+            Assert.AreEqual(input.ExpectedData.CommonName,CustomizedLabellingSettings.GetNameTextFieldValue());
+            Assert.AreEqual(input.ExpectedData.Commodity, input.InputData.Commodity);
+            Assert.AreEqual(input.ExpectedData.LabellingLevel, input.InputData.LabellingLevel);
+            Assert.AreEqual(input.ExpectedData.KPITypes[1], input.InputData.KPITypes[1]);
 
             //The labelling name/create user/create time display in labelling grid. 
-            CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName);
+            Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
         }
          
          [Test]
          [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-102")]
          [Type("BFT")]
          [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-102")]
-         public void AddCustomizedLabelingValidSuite02(CustomizedLabellingSettingData input)
+        public void AddCustomizedLabelingDefault(CustomizedLabellingSettingData input)
          {
              //Click "+能效标识" button 
              CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();
@@ -116,54 +122,53 @@ namespace Mento.Script.Customer.CustomizedLabelling
              //Input valid Labelling name. 
              CustomizedLabellingSettings.FillInNameTextField(input.InputData.CommonName);
 
+             //check labelingGrade Firstlabel&Lastlabel.
+             Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+             Assert.AreEqual(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
-             //Input Labelling level A<=5.
-             Assert.AreSame(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
-             Assert.AreSame(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
-             CustomizedLabellingSettings.FillInLabellingLevelLeftValue(1, "5");
+             //Check AscendingCustomizedLabellingButton is "正序"
+             Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetAscendingCustomizedLabellingButton());
 
-             //Auto change level B left border=5
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
+             //check labelingGrade count
+             int count = Convert.ToInt32(input.InputData.LabellingLevelValue);
+             Assert.AreEqual(count, CustomizedLabellingSettings.GetCustomizedLabellingListCount());
 
-             //Input Labelling level B right border=10.
-             CustomizedLabellingSettings.FillInLabellingLevelRightValue(2, "10");
+            //Check UOM
+            for (int num = 0; num < Convert.ToInt32(input.InputData.LabellingLevelValue.ToString()); num++)
+            {
+                Assert.AreEqual(input.ExpectedData.UOM, CustomizedLabellingSettings.GetLabellingUOMValue(num + 1));
+            }
 
-             //Auto change level C left border=10
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][2].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(2));
-
-             //Input Labelling level C right border=20.
-             CustomizedLabellingSettings.FillInLabellingLevelRightValue(3, "20");
-
-             //Auto change level D left border=20
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][3].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(3));
-
-             //Input Labelling level E=40. 
-             CustomizedLabellingSettings.FillInLabellingLevelLeftValue(5, "40");
-
-             //Auto change level D right border=40
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][3].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(5));
+             //Input Labelling Left Value
+             for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevelValue); num++)
+             {
+                 CustomizedLabellingSettings.FillInLabellingLevelLeftValue(num + 1, input.InputData.LabellingValue[0][num].LabellingLeftValue);
+             }
 
              //Save
              CustomizedLabellingSettings.ClickSaveButton();
 
              //Go to view status display Labelling successfully the same as before save.
-             Assert.AreSame(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
-             Assert.AreSame(input.ExpectedData.Commodity, CustomizedLabellingSettings.GetCommodityComboBoxValue());
-             Assert.AreSame(input.ExpectedData.KPIType, CustomizedLabellingSettings.GetKPITypeComboBoxValue());
-             Assert.AreSame(input.ExpectedData.LabellingLevel, CustomizedLabellingSettings.GetLabellingLevelComboBoxValue());
-
-             //Check AscendingCustomizedLabellingButton is "正序"
-             Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetAscendingCustomizedLabellingButton());
+             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
+             Assert.AreEqual(input.ExpectedData.Commodity, CustomizedLabellingSettings.GetCommodityComboBoxValue());
+             Assert.AreEqual(input.ExpectedData.KPIType, CustomizedLabellingSettings.GetKPITypeComboBoxValue());
+             Assert.AreEqual(input.ExpectedData.LabellingLevel, CustomizedLabellingSettings.GetLabellingLevelComboBoxValue());
+             
+             //Check lalelling level's right border 
+             for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevelValue); num++)
+             {
+                 Assert.AreEqual(input.ExpectedData.LabellingValue[0][num + 1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num + 1));
+             }
 
              //The labelling name/create user/create time display in labelling grid. 
-             CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName);
+             Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
          }
         
          [Test]
          [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-103")]
          [Type("BFT")]
          [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-103")]
-         public void AddCustomizedLabelingValidSuite03(CustomizedLabellingSettingData input)
+         public void AddCustomizedLabellingChangeLevels(CustomizedLabellingSettingData input)
          {
              //Click "+能效标识" button 
              CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();
@@ -179,66 +184,147 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
              //Select 能耗标识级别=8 from dropdown list.
              CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevels[0]);
+             
+             //Check AscendingCustomizedLabellingButton is "正序"
+             Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetAscendingCustomizedLabellingButton());
 
-             //Input Labelling level A<=1.
-             Assert.AreSame(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
-             Assert.AreSame(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
-             CustomizedLabellingSettings.FillInLabellingLevelLeftValue(1, "1");
+             //check labelingGrade Firstlabel&Lastlabel.
+             Assert.AreEqual(input.ExpectedData.Firstlabels[0], CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+             Assert.AreEqual(input.ExpectedData.Lastlabels[0], CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
-             //Auto change level B left border=1
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
+             //check labelingGrade count
+             int count = Convert.ToInt32(input.InputData.LabellingLevelValue);
+             Assert.AreEqual(count, CustomizedLabellingSettings.GetCustomizedLabellingListCount());
 
-             //Input Labelling level B right border=2.
-             CustomizedLabellingSettings.FillInLabellingLevelRightValue(2, "2");
+             //Input Labelling Left Value
+             for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevels[0]); num++)
+             {
+                 CustomizedLabellingSettings.FillInLabellingLevelLeftValue(num + 1, input.InputData.LabellingValue[0][num].LabellingLeftValue);
+             }
 
-             //Auto change level C left border=2
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][2].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(2));
+             //Select 能耗标识级别=6 from dropdown list.
+             CustomizedLabellingSettings.SelectLabellingLevelComboBox(input.InputData.LabellingLevels[1]);
 
-             //Input Labelling level C right border=3.
-             CustomizedLabellingSettings.FillInLabellingLevelRightValue(3, "3");
+             //Input Labelling Left Value
+             for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevels[1]); num++)
+             {
+                 Assert.AreEqual(input.ExpectedData.LabellingValue[1][num - 1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(num));
+                 Assert.AreEqual(input.ExpectedData.LabellingValue[1][num - 1].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num));
+                 CustomizedLabellingSettings.FillInLabellingLevelLeftValue(num + 1, input.InputData.LabellingValue[1][num].LabellingLeftValue);
+             }
 
-             //Auto change level D left border=3
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][3].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(3));
+             //Change select other commodity=天然气 from dropdown list.
+             CustomizedLabellingSettings.SelectCommodityComboBox(input.InputData.Commodities[1]);
 
-             //Input Labelling level D right border=4. 
-             CustomizedLabellingSettings.FillInLabellingLevelRightValue(4, "4");
+             //Check AscendingCustomizedLabellingButton is "正序"
+             Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetAscendingCustomizedLabellingButton());
 
-             //Auto change level E left border=4
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][4].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(4));
+             //Input Labelling Left Value
+             for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevels[1]); num++)
+             {
+                 Assert.AreEqual(input.ExpectedData.LabellingValue[2][num - 1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(num));
+                 Assert.AreEqual(input.ExpectedData.LabellingValue[2][num - 1].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num));
+                 CustomizedLabellingSettings.FillInLabellingLevelLeftValue(num + 1, input.InputData.LabellingValue[2][num].LabellingLeftValue);
+             }
 
-             //Input Labelling level E right border=5. 
-             CustomizedLabellingSettings.FillInLabellingLevelRightValue(5, "5");
+             //Change select other KPI type=公休比 from dropdown list.
+             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[1]);
 
-             //Auto change level F left border=5
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][5].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(5));
-            
-             //Input Labelling level F right border=6. 
-             CustomizedLabellingSettings.FillInLabellingLevelRightValue(6, "6");
+             //Check AscendingCustomizedLabellingButton is "倒序"
+             Assert.AreEqual(input.ExpectedData.Order[1], CustomizedLabellingSettings.GetAscendingCustomizedLabellingButton());
 
-             //Auto change level G left border=6
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][6].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(6));
+             //check labelingGrade Firstlabel&Lastlabel.
+             Assert.AreEqual(input.ExpectedData.Firstlabels[3], CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+             Assert.AreEqual(input.ExpectedData.Lastlabels[3], CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
-             //Input Labelling level G right border=7. 
-             CustomizedLabellingSettings.FillInLabellingLevelLeftValue(7, "7");
-
-             //Auto change level H left border=7
-             Assert.AreEqual(input.ExpectedData.LabellingValue[0][7].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(7));
-
+             //Input Labelling Left Value
+             for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevels[1]); num++)
+             {
+                 Assert.AreEqual(input.ExpectedData.LabellingValue[3][num - 1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(num));
+                 Assert.AreEqual(input.ExpectedData.LabellingValue[3][num - 1].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num));
+                 CustomizedLabellingSettings.FillInLabellingLevelLeftValue(num + 1, input.InputData.LabellingValue[3][num].LabellingLeftValue);
+             }
 
              //Save
              CustomizedLabellingSettings.ClickSaveButton();
 
              //Go to view status display Labelling successfully the same as before save.
-             Assert.AreSame(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
-             Assert.AreSame(input.ExpectedData.Commodity, CustomizedLabellingSettings.GetCommodityComboBoxValue());
-             Assert.AreSame(input.ExpectedData.KPIType, CustomizedLabellingSettings.GetKPITypeComboBoxValue());
-             Assert.AreSame(input.ExpectedData.LabellingLevel, CustomizedLabellingSettings.GetLabellingLevelComboBoxValue());
+             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
+             Assert.AreEqual(input.ExpectedData.Commodity, CustomizedLabellingSettings.GetCommodityComboBoxValue());
+             Assert.AreEqual(input.ExpectedData.KPIType, CustomizedLabellingSettings.GetKPITypeComboBoxValue());
+             Assert.AreEqual(input.ExpectedData.LabellingLevel, CustomizedLabellingSettings.GetLabellingLevelComboBoxValue());
+
+             //Check lalelling level's right border 
+             for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevels[1]); num++)
+             {
+                 Assert.AreEqual(input.ExpectedData.LabellingValue[1][num + 1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num + 1));
+             }
+
+             //The labelling name/create user/create time display in labelling grid. 
+             Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
+         }
+
+         [Test]
+         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-104")]
+         [Type("BFT")]
+         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-104")]
+         public void AddCustomizedLabelling8Levels(CustomizedLabellingSettingData input)
+         {
+             //Click "+能效标识" button 
+             CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();
+
+             //Input valid Labelling name. 
+             CustomizedLabellingSettings.FillInNameTextField(input.InputData.CommonName);
+
+             //Change Commodity from dropdown list.
+             CustomizedLabellingSettings.SelectCommodityComboBox(input.InputData.Commodity);
+
+             //Change to select KPI type=单位面积.
+             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPIType);
+
+             //Select 能耗标识级别=8 from dropdown list.
+             CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevels[0]);
+
+             //check labelingGrade Firstlabel&Lastlabel.
+             Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+             Assert.AreEqual(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
              //Check AscendingCustomizedLabellingButton is "正序"
              Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetAscendingCustomizedLabellingButton());
 
+             //check labelingGrade count
+             int count = Convert.ToInt32(input.InputData.LabellingLevelValue);
+             Assert.AreEqual(count, CustomizedLabellingSettings.GetCustomizedLabellingListCount());
+
+             //Check UOM
+             for (int num = 0; num < Convert.ToInt32(input.InputData.LabellingLevelValue.ToString()); num++)
+             {
+                 Assert.AreEqual(input.ExpectedData.UOM, CustomizedLabellingSettings.GetLabellingUOMValue(num + 1));
+             }
+
+             //Input Labelling Left Value
+             for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevel); num++)
+             {
+                 CustomizedLabellingSettings.FillInLabellingLevelLeftValue(num + 1, input.InputData.LabellingValue[3][num].LabellingLeftValue);
+             }
+
+             //Save
+             CustomizedLabellingSettings.ClickSaveButton();
+
+             //Go to view status display Labelling successfully the same as before save.
+             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
+             Assert.AreEqual(input.ExpectedData.Commodity, CustomizedLabellingSettings.GetCommodityComboBoxValue());
+             Assert.AreEqual(input.ExpectedData.KPIType, CustomizedLabellingSettings.GetKPITypeComboBoxValue());
+             Assert.AreEqual(input.ExpectedData.LabellingLevel, CustomizedLabellingSettings.GetLabellingLevelComboBoxValue());
+
+             //Check lalelling level's right border 
+             for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevelValue); num++)
+             {
+                 Assert.AreEqual(input.ExpectedData.LabellingValue[0][num + 1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num + 1));
+             }
+
              //The labelling name/create user/create time display in labelling grid. 
-             CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName);
+             Assert.IsTrue( CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
          }
 
    }

@@ -3,6 +3,7 @@
 		"InputData":
 		{
 			"CommonName":"自定义能效标识4",
+			"LabellingLevelValue":"5",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5",
 			},

@@ -89,6 +89,27 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Click modify button 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickModifyButton()
+        {
+            ModifyButton.Click();
+        }
+
+        /// <summary>
+        /// Click delete button 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickDeleteButton()
+        {
+            DeleteButton.Click();
+        }
+
+
+        /// <summary>
         /// FillIn CustomizedLabellingName TextField
         /// </summary>
         /// <param></param>
@@ -186,17 +207,10 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void IslabelingNameExist(string labelingName)
+        public bool IslabelingNameExist(string labelingName)
         {
-            CustomizedLabellingList.IsRowExist(1, labelingName);
+          return  CustomizedLabellingList.IsRowExist(1, labelingName);
         }
-
-
-        /// <summary>
-        ///check grade is empty
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
 
         #endregion
 
@@ -302,16 +316,6 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Get GetLabellingGradeRightInvalidMassage 
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public string GetLabellingGradeRightInvalidMassage(int num)
-        {
-            return CustomizedLabellingGrade.GetGradeRightNumberFieldInvalidMessage(num);
-        }
-
-        /// <summary>
         /// Get CustomizedLabellingUOMValue
         /// </summary>
         /// <param></param>
@@ -342,14 +346,14 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Get CustomizedLabellingGrade  Invalid tips
+        /// Focus Labeling
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-       /* public string GetLabellingGradeInvalidTips()
+        public void FocusOnCustomizedLabelling(string labelingName)
         {
-            return CustomizedLabellingGrade.GetInvalidTips();
-        }*/
+            CustomizedLabellingList.FocusOnRow(1,labelingName);
+        }
         #endregion
     }
 }

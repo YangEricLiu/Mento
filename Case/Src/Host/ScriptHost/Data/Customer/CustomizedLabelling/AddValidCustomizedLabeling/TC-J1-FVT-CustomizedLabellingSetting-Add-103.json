@@ -3,9 +3,10 @@
 		"InputData":
 		{
 			"CommonName":"自定义能效标识5",
-			"Commodities":["自来水","天燃气"],
+			"Commodities":["自来水","天然气"],
 			"KPITypes":["单位面积","公休比"],
 			"LabellingLevels":["8级","6级"],
+			"LabellingLevelValues":["8","6"],
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
 			},
@@ -56,7 +57,7 @@
 				"LabellingRightValue":"5",
 			},					
 			{
-				"LabellingLeftValue":"6",
+				"LabellingLeftValue":"5",
 			}],		
 			[{
 				"LabellingLeftValue":"1",
@@ -78,66 +79,59 @@
 				"LabellingRightValue":"5",
 			},					
 			{
-				"LabellingLeftValue":"6",
+				"LabellingLeftValue":"5",
+			}],
+			[{
+				"LabellingLeftValue":"5",
+			},
+			{
+				"LabellingLeftValue":"5",
+				"LabellingRightValue":"4",
+			},
+			{
+				"LabellingLeftValue":"4",
+				"LabellingRightValue":"3",
+			},
+			{
+				"LabellingLeftValue":"3",
+				"LabellingRightValue":"2",
+			},
+			{
+				"LabellingLeftValue":"2",
+				"LabellingRightValue":"1",
+			},					
+			{
+				"LabellingLeftValue":"1",
 			}]]
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"自定义能效标识5",
-			"Commodity":"天燃气",
+			"Commodity":"天然气",
 			"KPIType":"公休比",
 			"LabellingLevel":"6级",
-			"LabellingValue":[[{
-				"LabellingLeftValue":"1",
-			},
-			{
-				"LabellingLeftValue":"1",
-				"LabellingRightValue":"2",
-			},
-			{
-				"LabellingLeftValue":"2",
-				"LabellingRightValue":"3",
-			},
-			{
-				"LabellingLeftValue":"3",
-				"LabellingRightValue":"4",
-			},
-			{
-				"LabellingLeftValue":"4",
-				"LabellingRightValue":"5",
-			},
-			{
-				"LabellingLeftValue":"5",
-				"LabellingRightValue":"6",
-			},			
-			{
-				"LabellingLeftValue":"6",
-				"LabellingRightValue":"7",
-			},
-			{
-				"LabellingLeftValue":"7",
-			}],			
+			"LabellingValue":[
 			[{
-				"LabellingLeftValue":"1",
+				"LabellingLeftValue":"",
 			},
 			{
-				"LabellingLeftValue":"1",
-				"LabellingRightValue":"2",
+				"LabellingLeftValue":"",
+				"LabellingRightValue":"",
 			},
 			{
-				"LabellingLeftValue":"2",
-				"LabellingRightValue":"3",
+				"LabellingLeftValue":"",
+				"LabellingRightValue":"",
 			},
 			{
-				"LabellingLeftValue":"3",
-				"LabellingRightValue":"4",
+				"LabellingLeftValue":"",
+				"LabellingRightValue":"",
 			},
 			{
-				"LabellingLeftValue":"4",
-				"LabellingRightValue":"5",
+				"LabellingLeftValue":"",
+				"LabellingRightValue":"",
 			},					
 			{
-				"LabellingLeftValue":"6",
+				"LabellingLeftValue":"",
 			}],
 			[{
 				"LabellingLeftValue":"1",
@@ -159,7 +153,7 @@
 				"LabellingRightValue":"5",
 			},					
 			{
-				"LabellingLeftValue":"6",
+				"LabellingLeftValue":"5",
 			}],			
 			[{
 				"LabellingLeftValue":"1",
@@ -181,10 +175,29 @@
 				"LabellingRightValue":"5",
 			},					
 			{
-				"LabellingLeftValue":"6",
+				"LabellingLeftValue":"5",
+			},			
+			{
+				"LabellingLeftValue":"5",
+				"LabellingRightValue":"4",
+			},
+			{
+				"LabellingLeftValue":"4",
+				"LabellingRightValue":"3",
+			},
+			{
+				"LabellingLeftValue":"3",
+				"LabellingRightValue":"2",
+			},
+			{
+				"LabellingLeftValue":"2",
+				"LabellingRightValue":"1",
+			},					
+			{
+				"LabellingLeftValue":"1",
 			}]],
-			"Firstlabel":"<=",
-			"Lastlabel":">",
+			"Firstlabels":["<=",">"],
+			"Lastlabels":[">","<="]
 			"UOMs":["吨/人","立方米/人"],
 			"Order":["正序","倒序"],
 		}

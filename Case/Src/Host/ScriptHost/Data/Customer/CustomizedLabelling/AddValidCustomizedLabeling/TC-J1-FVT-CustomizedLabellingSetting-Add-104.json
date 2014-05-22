@@ -5,8 +5,8 @@
 			"CommonName":"自定义能效标识6",
 			"Commodity":"空气",
 			"LabellingLevel":"8级",
+			"LabellingLevelValue":"8",
 			"KPIType":"单位面积",
-			"UOM":"微克每立方米/平方米",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
 			},

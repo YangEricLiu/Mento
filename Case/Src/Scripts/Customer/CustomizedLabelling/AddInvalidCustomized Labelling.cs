@@ -72,12 +72,9 @@ namespace Mento.Script.Customer.CustomizedLabelling
             Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetDescendingCustomizedLabellingButton());
 
             //Input Labelling Left Value
-            int count = 0;
-            //count = Int32.Parse(input.ExpectedData.LabellingLevel);
-            //Convert.ToInt32(input.ExpectedData.LabellingLevel);
-            for (int m = 1; m < 4; m++)
+            for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevelValue); num++)
             {
-                CustomizedLabellingSettings.FillInLabellingLevelLeftValue(m+ 1, input.InputData.LabellingValue[0][m].LabellingLeftValue);
+                CustomizedLabellingSettings.FillInLabellingLevelLeftValue(num + 1, input.InputData.LabellingValue[0][num].LabellingLeftValue);
             }
 
             //Click Cancel button.
@@ -134,12 +131,9 @@ namespace Mento.Script.Customer.CustomizedLabelling
             Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetDescendingCustomizedLabellingButton());
 
             //Input Labelling Left Value
-            int count = 0;
-            //count = Int32.Parse(input.ExpectedData.LabellingLevel);
-            //Convert.ToInt32(input.ExpectedData.LabellingLevel);
-            for (int m = 1; m < 4; m++)
+            for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevelValue); num++)
             {
-                CustomizedLabellingSettings.FillInLabellingLevelLeftValue(m + 1, input.InputData.LabellingValue[0][m].LabellingLeftValue);
+                CustomizedLabellingSettings.FillInLabellingLevelLeftValue(num + 1, input.InputData.LabellingValue[0][num].LabellingLeftValue);
             }
 
             //Click Save button.
@@ -152,9 +146,9 @@ namespace Mento.Script.Customer.CustomizedLabelling
             Assert.AreEqual(input.ExpectedData.KPIType, input.InputData.KPIType);
 
             //Check lalelling level's right border 
-            for (int m = 1; m < 5; m++)
+            for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevelValue); num++)
             {
-                Assert.AreEqual(input.ExpectedData.LabellingValue[0][m + 1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(m + 1));
+                Assert.AreEqual(input.ExpectedData.LabellingValue[0][num + 1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num + 1));
             }
 
             //The labelling name/create user/create time display in labelling grid. 
@@ -185,12 +179,9 @@ namespace Mento.Script.Customer.CustomizedLabelling
             Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetDescendingCustomizedLabellingButton());
 
             //Input Labelling Left Value
-            int count = 0;
-            //count = Int32.Parse(input.ExpectedData.LabellingLevel);
-            //Convert.ToInt32(input.ExpectedData.LabellingLevel);
-            for (int n = 1; n < 4; n++)
+            for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevelValue); num++)
             {
-                CustomizedLabellingSettings.FillInLabellingLevelLeftValue(n + 1, input.InputData.LabellingValue[0][n].LabellingLeftValue);
+                CustomizedLabellingSettings.FillInLabellingLevelLeftValue(num + 1, input.InputData.LabellingValue[0][num].LabellingLeftValue);
             }
 
             //Click Save button.

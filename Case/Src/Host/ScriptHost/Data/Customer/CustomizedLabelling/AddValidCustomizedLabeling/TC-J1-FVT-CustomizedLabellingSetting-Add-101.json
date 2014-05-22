@@ -6,6 +6,7 @@
 			"Commodity":"自来水",
 			"KPITypes":["昼夜比","单位人口"],
 			"LabellingLevel":"3级",
+			"LabellingLevelValue":"3",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5.144",
 			},
@@ -15,6 +16,9 @@
 			},
 			{
 				"LabellingLeftValue":"10",
+			}],
+			[{
+			"LabellingLeftValue":"10000000000000000000000",
 			}]]
 		},
 		"ExpectedData":
@@ -32,6 +36,9 @@
 			},
 			{
 				"LabellingLeftValue":"10",
+			}],
+			[{
+			"LabellingLeftValue":"该输入项的最大值是 999999999.999999",
 			}]],
 			"Order":["倒序","正序"],
 			"Firstlabel":"<=",

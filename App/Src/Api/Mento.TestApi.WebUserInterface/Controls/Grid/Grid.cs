@@ -313,10 +313,27 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        /// <summary>
+        /// Click disassciated icon
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
         public void ClickDisassociateTagIcon(int cellIndex, string cellText, bool Paging = true)
         {
             var icon = this.GetDisassociateTagIcon(cellIndex, cellText, Paging);
             icon.Click();
+        }
+
+        /// <summary>
+        /// Mouse over on disassciated icon
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public void FloatOnDisassociateTagIcon(int cellIndex, string cellText, bool Paging = true)
+        {
+            var icon = this.GetDisassociateTagIcon(cellIndex, cellText, Paging);
+
+            ElementHandler.Float(icon);    
         }
 
         /// <summary>

@@ -1349,6 +1349,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Tooltip
 
         public static string TooltipShareUser = "TooltipShareUser";
+        public static string TooltipAssociatedInfo = "TooltipAssociatedInfo";
 
         #endregion
 

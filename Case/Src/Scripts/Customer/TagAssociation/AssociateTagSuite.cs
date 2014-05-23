@@ -373,5 +373,50 @@ namespace Mento.Script.Customer.TagAssociation
             TimeManager.MediumPause();
             Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.InputData.TagNames[0]));
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TagAssociation-Associate-101-5")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-101-5")]
+        public void VerifyTooltipOfAssociatedTags(AssociateTagData input)
+        {
+            //Select one hierarchy node. 
+            Association.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
+
+            Association.FloatOnDisassociateButton(input.InputData.TagName);
+            Assert.AreEqual(input.ExpectedData.AssociatedTooltips[0], Association.GetAssociateInfo());
+
+            //Change the Tag1 from unlight to light.
+            Association.LightenTag(input.InputData.TagName);
+            TimeManager.MediumPause();
+
+            //The tooltip can be display with "解除与以下节点的关联关系xxx/xxx." well.
+            Association.FloatOnDisassociateButton(input.InputData.TagName);
+            Assert.AreEqual(input.ExpectedData.AssociatedTooltips[0], Association.GetAssociateInfo());
+
+            //Change the Tag1 from light to unlight.
+            Association.DarkenTag(input.InputData.TagName);
+            TimeManager.MediumPause();
+
+            //The tooltip can be display with "解除与以下节点的关联关系xxx/xxx." well.
+            Association.FloatOnDisassociateButton(input.InputData.TagName);
+            Assert.AreEqual(input.ExpectedData.AssociatedTooltips[0], Association.GetAssociateInfo());
+
+            //Mouse over the 关联状态 button of Tag2.
+            Association.NavigateToAreaDimensionAssociate();
+            AreaSettings.ShowHierarchyTree();
+            AreaSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaDimensionPath);
+            TimeManager.MediumPause();
+            Association.FloatOnDisassociateButton(input.InputData.TagNames[0]);
+            Assert.AreEqual(input.ExpectedData.AssociatedTooltips[1], Association.GetAssociateInfo());
+
+            Association.NavigateToSystemDimensionAssociate();
+            SystemSettings.SelectSystemDimensionNodePath(input.InputData.SystemDimensionPath);
+            TimeManager.MediumPause();
+            Association.FloatOnDisassociateButton(input.InputData.TagNames[0]);
+            Assert.AreEqual(input.ExpectedData.AssociatedTooltips[1], Association.GetAssociateInfo());
+        }
     }
 }

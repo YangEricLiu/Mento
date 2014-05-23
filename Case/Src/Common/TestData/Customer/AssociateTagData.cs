@@ -31,6 +31,7 @@ namespace Mento.ScriptCommon.TestData.Customer
             public string Message { get; set; }
             public string ErrorMessage { get; set; }
             public string[] RemovedTagNames { get; set; }
+            public string[] AssociatedTooltips { get; set; }
         }
 
 }

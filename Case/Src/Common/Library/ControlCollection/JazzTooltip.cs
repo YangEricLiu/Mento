@@ -15,5 +15,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region Associate
+
+        public static Tooltip AssociatedInfoTooltip = GetControl<Tooltip>(JazzControlLocatorKey.TooltipAssociatedInfo);
+
+        #endregion
+
     }
 }

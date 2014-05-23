@@ -26,7 +26,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private Button AssociationTag = JazzButton.AssociationSettingsTagAssociate;
         private Container AssociatedTags = JazzContainer.AssociatedTagsContainer;
         private MenuCheckItem AssociatedStatus = JazzMenuCheckItem.AssociateStatus;
-       
+        private Tooltip AssociatedInfo = JazzTooltip.AssociatedInfoTooltip;
+
         #endregion
 
         #region common
@@ -115,6 +116,24 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             TagList.ClickDisassociateTagIcon(3, tagName);
             TimeManager.MediumPause();
+        }
+
+        /// <summary>
+        /// Mouse over "associate tags" button
+        /// </summary>
+        /// <returns></returns>
+        public void FloatOnDisassociateButton(string tagName)
+        {
+            TagList.FloatOnDisassociateTagIcon(3, tagName);
+        }
+
+        /// <summary>
+        /// Get associated info
+        /// </summary>
+        /// <returns></returns>
+        public string GetAssociateInfo()
+        {
+            return AssociatedInfo.GetTooltipTexts();
         }
 
         public void ClickAssociatedCancel()

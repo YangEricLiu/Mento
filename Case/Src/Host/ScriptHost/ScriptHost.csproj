@@ -492,6 +492,8 @@
     <Content Include="Data\Customer\TagAssociation\MarkEnergyFlagSuite\TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-3.json" />
     <Content Include="Data\Customer\TagAssociation\MarkEnergyFlagSuite\TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-4.json" />
     <Content Include="Data\Customer\TagAssociation\MarkEnergyFlagSuite\TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-5.json" />
+    <None Include="Data\Customer\TagAssociation\AssociateTagSuite\TC-J1-FVT-TagAssociation-Associate-101-5.json" />
+    <None Include="Data\Customer\TagAssociation\AssociateTagSuite\TC-J1-FVT-TagAssociation-Associate-101-4.json" />
     <None Include="Data\Customer\TagAssociation\MarkEnergyFlagSuite\TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-1.json" />
     <None Include="Data\Customer\TagManagement\AddInvalidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-001-4.json" />
     <None Include="Data\Customer\TagManagement\AddInvalidPtagSuite\TC-J1-FVT-PtagConfiguration-Add-001-2.json" />

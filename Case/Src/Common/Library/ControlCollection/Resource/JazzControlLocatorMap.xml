@@ -1124,7 +1124,8 @@
   <!--Tooltip Begin-->
   <Tooltip>
     <add key="TooltipShareUser" value="//div[contains(@id,'tooltip') and contains(@class,'x-tip-default') and not(contains(@style,'display: none;'))]/div[contains(@class,'x-tip-body-default')]" type="XPath"/>
-    </Tooltip>
+    <add key="TooltipAssociatedInfo" value="//div[contains(@id,'tooltip') and contains(@class,'x-tip-default') and not(contains(@style,'display: none;'))]/div[contains(@class,'x-tip-body-default')]" type="XPath"/> 
+  </Tooltip>
   <!--Tooltip End-->
 
   <!--Chart Begin-->

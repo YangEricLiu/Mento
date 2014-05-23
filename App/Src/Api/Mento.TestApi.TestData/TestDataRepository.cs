@@ -9,6 +9,7 @@ using System.Xml.Linq;
 using Mento.Utility;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using Mento.TestApi.WebUserInterface;
 
 namespace Mento.TestApi.TestData
 {
@@ -25,7 +26,7 @@ namespace Mento.TestApi.TestData
         private static Dictionary<string, string> _dataMapping;
         private static Dictionary<string, string> DataMapping
         {
-            get 
+            get
             {
                 if (_dataMapping == null)
                 {
@@ -62,7 +63,7 @@ namespace Mento.TestApi.TestData
         /// <param name="testCaseID">Test case id of the current test script</param>
         /// <param name="testScriptFullName">The acquiring test script full name.</param>
         /// <returns>The test data instance</returns>
-        public static T GetTestData<T>(string testCaseID,string testScriptFullName)
+        public static T GetTestData<T>(string testCaseID, string testScriptFullName)
         {
             //search dictionary first, if not exist mapping relation, search test data using the input test case id
             string testDataID = testCaseID;
@@ -92,12 +93,12 @@ namespace Mento.TestApi.TestData
         public static object[] GetTestDataElement(Type testDataType, Type testSuiteType, string testCaseID, int dataIndex)
         {
             object[] parameters = new object[] { /*testCaseID*/testCaseID, /*testScriptFullName*/String.Format("{0}.{1}", testSuiteType.FullName, testCaseID) };
-                        
-            object testData = DynamicCall(GETTESTDATAMETHODNAME,testDataType,parameters);
+
+            object testData = DynamicCall(GETTESTDATAMETHODNAME, testDataType, parameters);
 
             return new object[] { ((Array)testData).GetValue(dataIndex) };
         }
-        
+
         /// <summary>
         /// Load all test data from a test data file
         /// </summary>
@@ -165,7 +166,7 @@ namespace Mento.TestApi.TestData
 
                 return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, pathBuilder.ToString());
             }
-            
+
             return String.Empty;
         }
 
@@ -177,15 +178,21 @@ namespace Mento.TestApi.TestData
         /// <returns>Test data instance</returns>
         private static T Deserialize<T>(string fileName)
         {
+            Console.WriteLine(fileName);
             if (File.Exists(fileName))
             {
                 string content = File.ReadAllText(fileName, Encoding.UTF8);
 
+                //throw new Exception(LanguageResourceRepository.ResourceDictionary.Keys.First());
+
                 //replace happens here
                 //language key replace, if language resource has place holder, replace with parameter
                 //commodity key replace
-//$@common.message.test
-//$@common.message.test|(a),(b),(c)
+                //$@common.message.test
+                //$@common.message.test|(a),(b),(c)
+                //content = .ReplaceLanguageVariables(content);
+
+                content = LanguageHelper.ReplaceRawTestData(content);
 
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(content);
             }
@@ -203,7 +210,7 @@ namespace Mento.TestApi.TestData
         /// <param name="genericType"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        private static object DynamicCall(string methodName, Type genericType, object[] parameters,BindingFlags flags = BindingFlags.Public | BindingFlags.Static)
+        private static object DynamicCall(string methodName, Type genericType, object[] parameters, BindingFlags flags = BindingFlags.Public | BindingFlags.Static)
         {
             return ReflectionHelper.MakeGenericDynamicCall(typeof(TestDataRepository), methodName, flags, genericType, parameters: parameters);
         }
@@ -229,14 +236,14 @@ namespace Mento.TestApi.TestData
             return dataList.ToArray();
         }
 
-        private static void SetCommonData<T>(string testDataFileName,T instance)
-        { 
+        private static void SetCommonData<T>(string testDataFileName, T instance)
+        {
             string usingPhrase = GetFirstUsingLine(testDataFileName);
             string[] testDataPropertyNames = new string[] { "InputData", "ExpectedData" };
 
             if (String.IsNullOrEmpty(usingPhrase))
                 return;
-            
+
             string commonDataFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Data\CommonInputData.json");
             CommonTestData[] commonTestData = Deserialize<CommonTestData[]>(commonDataFile);
 
@@ -316,5 +323,75 @@ namespace Mento.TestApi.TestData
             return result;
         }
         #endregion
+    }
+
+    public static class LanguageHelper
+    {
+        private const string KEYFORMATSIMPLE = "\\$\\@(.+)\""; //$@common.message.test
+        private const string KEYFORMATPARAMETERED = "\\$\\@(.+)\\|(\\(.+\\),?)+"; //$@common.message.test|(a),(b),(c)
+        private const string INRESOURCEKEY = @"##(\w|\.)+##"; //##Common.Glossary.Dashboard##
+
+        public static string ReplaceRawTestData(string raw)
+        {
+            MatchCollection parameteredMatches = MatchLanguageKeys(raw, KEYFORMATPARAMETERED);
+
+            foreach (Match match in parameteredMatches)
+            {
+                string key = match.Groups[1].Value;
+                string value = ResolveResourceValue(key);
+
+                string[] parameters = match.Groups[2].Value.Split(',');
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    string paramValue = parameters[i].Replace("(", "").Replace(")", "").Replace("\"", "\\\"");
+                    value = Regex.Replace(value, @"\{" + i.ToString() + @"\}", paramValue);
+                }
+
+                raw = raw.Replace(match.Groups[0].Value, value);
+            }
+
+            MatchCollection simpleMatches = MatchLanguageKeys(raw, KEYFORMATSIMPLE);
+
+            foreach (Match match in simpleMatches)
+            {
+                string key = match.Groups[1].Value;
+                string value = ResolveResourceValue(key); //process value if it contains recursive definitions
+
+                value = value.Replace("\"", "\\\"");
+
+                raw = raw.Replace("$@" + key, value);
+            }
+
+            //throw new Exception(raw);
+            return raw;
+        }
+
+        private static MatchCollection MatchLanguageKeys(string raw,string regex)
+        {
+            MatchCollection matches = Regex.Matches(raw, regex, RegexOptions.Multiline);
+
+            return matches;
+        }
+
+        private static string ResolveResourceValue(string key)
+        {
+            string value = Lookup(key);
+
+            MatchCollection matches = Regex.Matches(value, INRESOURCEKEY);
+
+            foreach (Match match in matches)
+            {
+                string innerKey = match.Value.Replace("#", String.Empty);
+
+                value = value.Replace(match.Value, ResolveResourceValue(innerKey));
+            }
+
+            return value;
+        }
+
+        private static string Lookup(string key)
+        {
+            return LanguageResourceRepository.ResourceDictionary[key.Replace("I18N.", String.Empty)]; 
+        }
     }
 }

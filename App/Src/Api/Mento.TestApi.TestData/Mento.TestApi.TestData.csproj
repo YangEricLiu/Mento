@@ -73,6 +73,10 @@
       <Project>{C3EC8BE0-F643-4126-9CE6-DEB029AE1564}</Project>
       <Name>Mento.Utility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Mento.TestApi.WebUserInterface\Mento.TestApi.WebUserInterface.csproj">
+      <Project>{fcbefbbd-ad47-4c0c-8a56-773b0b328edd}</Project>
+      <Name>Mento.TestApi.WebUserInterface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

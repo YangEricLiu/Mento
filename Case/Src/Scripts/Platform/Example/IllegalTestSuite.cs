@@ -22,13 +22,14 @@ namespace Mento.Script.System.Example
         //    Assert.IsFalse(String.IsNullOrEmpty(data.InputData.code));
         //}
 
-        //[CaseID("TC-J1-Example-002")]
-        //[MultipleTestDataSource(typeof(PtagData[]), typeof(IllegalTestSuite), "TC-J1-Example-002")]
-        //public void Example2(PtagData data)
-        //{
-        //    Assert.IsFalse(String.IsNullOrEmpty(data.InputData.Name));
-        //    Assert.IsFalse(String.IsNullOrEmpty(data.InputData.code));
-        //}
+        [CaseID("TC-J1-Example-002")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(IllegalTestSuite), "TC-J1-Example-002")]
+        public void Example2(PtagData data)
+        {
+            //Assert.IsTrue(data.InputData.Comments == "正在进行多时间段对比，请删除该数据点后重新选取");
+            Assert.IsFalse(String.IsNullOrEmpty(data.InputData.Comments));
+            //Assert.IsFalse(String.IsNullOrEmpty(data.InputData.Code));
+        }
 
         [Test]
         public void AAAA()

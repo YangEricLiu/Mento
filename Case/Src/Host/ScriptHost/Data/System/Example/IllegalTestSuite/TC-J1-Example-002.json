@@ -1,34 +1,17 @@
-﻿/*using common.json*/
-
-[
+﻿[
 	{
 		"InputData":
 		{	
-			"Metercode":"Amy_Metercode1",
-			"ChannelId":"1",
+			"Meter":"Amy_Metercode1",
+			"Channel":"1",
 			"Commodity":"Electricity",
 			"Uom":"KWH",
 			"CalculationType":"Sum",
-			"Comment":"描述1",
+			"Comments":"$@I18N.Setting.TargetBaseline.TargetWindowTitle|(aaa),(vvv),(ccc)",
 		},
 		"ExpectedData":
 		{
-			"Name":"Amy_Ptag1_名称",
-		}
-	},
-	{
-		"InputData":
-		{	
-			"Metercode":"Amy_Metercode1",
-			"ChannelId":"1",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"CalculationType":"Sum",
-			"Comment":"描述1",
-		},
-		"ExpectedData":
-		{
-			"Name":"",
+			"CommonName":"$@I18N.Setting.Hierarchy.Menu.CreateAreaLv1",
 		}
 	}
 ]

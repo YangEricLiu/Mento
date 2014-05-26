@@ -33,6 +33,33 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator LabelTooltipLocator = new Locator("g.highcharts-labeltooltip", ByType.CssSelector);
         private static Locator LabelSVGLocator = new Locator("svg", ByType.TagName);
         private static Locator LabelTooltipTextLocator = new Locator("tspan", ByType.TagName);
+        private static Locator PieDataLabelLocator = new Locator("g.highcharts-data-labels", ByType.CssSelector);
+        private static Locator TextLocator = new Locator("text", ByType.TagName);
+        private static Locator gLocator = new Locator("g", ByType.TagName);
+
+        protected IWebElement[] LegendItems
+        {
+            get
+            {
+                return FindChildren(LegendItemsLocator);
+            }
+        }
+
+        protected IWebElement PieDataLabel
+        {
+            get
+            {
+                return FindChild(PieDataLabelLocator);
+            }
+        }
+
+        protected IWebElement[] PieDataLabelTexts
+        {
+            get
+            {
+                return ElementHandler.FindElements(TextLocator, container: PieDataLabel);
+            }
+        }
 
         #region Title
         public string GetTitle()
@@ -47,6 +74,24 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #endregion
 
         #region Legend
+
+        public int GetLegendNumber()
+        {
+            return LegendItems.Count();
+        }
+
+        public string[] GetLegendItemsTexts()
+        {
+            var list = new List<string>();
+
+            foreach (IWebElement LegendItem in LegendItems)
+            {
+                list.Add(LegendItem.Text);
+            }
+
+            return list.ToArray();
+        }
+
         public bool LegendExists()
         {
             return ChildExists(LegendLocator);
@@ -366,6 +411,18 @@ namespace Mento.TestApi.WebUserInterface.Controls
             int pieNumbers = piePaths.Length / 2;
 
             return pieNumbers;
+        }
+
+        public string[] GetPieDataLabelTexts()
+        {
+            var list = new List<string>();
+
+            foreach (IWebElement PieDataLabel in PieDataLabelTexts)
+            {
+                list.Add(PieDataLabel.Text);
+            }
+
+            return list.ToArray();
         }
 
         #endregion

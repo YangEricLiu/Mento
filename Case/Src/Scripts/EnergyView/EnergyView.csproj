@@ -73,6 +73,7 @@
     <Compile Include="CostUsage\CostUsageTrendChartSuite.cs" />
     <Compile Include="CostUsage\CostUsageDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\AdditionalTagsDataVerificationSuite.cs" />
+    <Compile Include="EnergyAnalysis\SingleHierarchyNodePieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\MultiTagsDataVerificationSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsTrendChartSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite.cs" />

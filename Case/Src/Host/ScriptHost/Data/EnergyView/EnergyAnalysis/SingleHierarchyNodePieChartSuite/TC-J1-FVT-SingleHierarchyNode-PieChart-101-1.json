@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagNames":["V1_BuildingBC", "V2_BuildingBC", "V3_BuildingBC"],
+		},
+		"ExpectedData":
+		{
+			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
+		}
+	}
+]

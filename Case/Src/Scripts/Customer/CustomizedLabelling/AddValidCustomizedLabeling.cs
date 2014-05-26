@@ -56,7 +56,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
             //check labelingGrade count
             int count = Convert.ToInt32(input.InputData.LabellingLevelValue);
-            Assert.AreEqual(count,CustomizedLabellingSettings.GetCustomizedLabellingListCount());
+            Assert.AreEqual(count,CustomizedLabellingSettings.GetLabellingGradeCount());
 
             //Select KPI type=昼夜比.
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[0]);
@@ -92,13 +92,14 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
             //Save
             CustomizedLabellingSettings.ClickSaveButton();
+            TimeManager.LongPause();
 
             //Auto change level B left border=5.14,Auto round level A<=5.14
-            Assert.AreEqual(input.ExpectedData.LabellingValue[0][0].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(1));
-            Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
+            Assert.AreEqual(input.ExpectedData.LabellingValue[0][0].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(1));
+            Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(2));
 
             //Auto change level B right border=10.
-            Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(3));
+            Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(2));
             
             //Go to view status display Labelling successfully the same as before save.
             Assert.AreEqual(input.ExpectedData.CommonName,CustomizedLabellingSettings.GetNameTextFieldValue());
@@ -107,7 +108,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             Assert.AreEqual(input.ExpectedData.KPITypes[1], input.InputData.KPITypes[1]);
 
             //The labelling name/create user/create time display in labelling grid. 
-            Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
+            Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.ExpectedData.CommonName));
         }
          
          [Test]

@@ -813,5 +813,22 @@ namespace Mento.Utility
         }
 
         #endregion
+
+        #region for pie chart distributionvalue
+
+        public struct PieChartInfo
+        {
+            public string hierarchy;
+            public string timeRange;
+            public PieChartValue[] pieChartValues;
+        }
+
+        public struct PieChartValue
+        {
+            public string tagOrCommodity;
+            public string valueAndUOM;
+        }
+
+        #endregion
     }
 }

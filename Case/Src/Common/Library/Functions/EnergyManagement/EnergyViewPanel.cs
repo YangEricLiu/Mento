@@ -470,6 +470,11 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.GetPieDistributions();
         }
 
+        public string[] GetPieDataLabelTexts()
+        {
+            return Chart.GetPieDataLabelTexts();
+        }
+
         public bool IsDataViewDrawn()
         {
             return EnergyDataGrid.HasDrawnDataView();
@@ -481,6 +486,11 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         #region legend
+
+        public string[] GetLegendItemTexts()
+        {
+            return Chart.GetLegendItemsTexts();
+        }
         
         public bool IsLegendExists()
         {

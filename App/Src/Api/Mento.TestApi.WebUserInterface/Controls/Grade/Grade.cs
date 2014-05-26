@@ -81,7 +81,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             IWebElement GradeItemLeftNumber = ElementHandler.FindElement(GradeItemLeftNumberField, container: GradeItems[num - 1]);
             IWebElement GradeItemLeftNumberInput = ElementHandler.FindElement(GradeItemNumberFieldInput, container: GradeItemLeftNumber);
 
-            return GradeItemLeftNumberInput.Text;
+            return GradeItemLeftNumberInput.GetAttribute("value");
         }
 
         public string GetGradeItemRightNumberValue(int num)
@@ -89,7 +89,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             IWebElement GradeItemRightNumber = ElementHandler.FindElement(GradeItemRightNumberField, container: GradeItems[num - 1]);
             IWebElement GradeItemRightNumberInput = ElementHandler.FindElement(GradeItemNumberFieldInput, container: GradeItemRightNumber);
 
-            return GradeItemRightNumberInput.Text;
+            return GradeItemRightNumberInput.GetAttribute("value");
         }
 
         public string GetGradeItemMiddleLabelValue(int num)

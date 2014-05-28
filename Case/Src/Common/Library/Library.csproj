@@ -79,6 +79,7 @@
     <Compile Include="Functions\ClientAccess\DemoAccessSetting.cs" />
     <Compile Include="Functions\CustomerSettings\CustomizedLabellingSettings.cs" />
     <Compile Include="Functions\EnergyManagement\CarbonUsagePanel.cs" />
+    <Compile Include="Functions\EnergyManagement\ChartViewOperation.cs" />
     <Compile Include="Functions\EnergyManagement\IndustryLabellingPanel.cs" />
     <Compile Include="Functions\HomePage\ShareInfoWindow.cs" />
     <Compile Include="Functions\HomePage\ShareWindow.cs" />

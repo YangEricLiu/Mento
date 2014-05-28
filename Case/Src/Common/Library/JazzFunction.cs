@@ -551,6 +551,18 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static ChartViewOperation _ChartViewOperation;
+        public static ChartViewOperation ChartViewOperation
+        {
+            get
+            {
+                if (_ChartViewOperation == null)
+                    _ChartViewOperation = new ChartViewOperation();
+
+                return _ChartViewOperation;
+            }
+        }
+
         private static HomePage _HomePage;
         public static HomePage HomePage
         {

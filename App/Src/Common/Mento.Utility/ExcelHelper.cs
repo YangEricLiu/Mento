@@ -394,20 +394,12 @@ namespace Mento.Utility
         public void ExportHeaderToExcelSheet(Excel.Worksheet sheet, CellsValue[] headers)
         {
             Excel.Range range;
-            //int i = 1;
 
             foreach (CellsValue cellValue in headers)
             {
                 range = sheet.Range[sheet.Cells[cellValue.cellsIndex.firstRowIndex, cellValue.cellsIndex.firstColumnIndex], sheet.Cells[cellValue.cellsIndex.lastRowIndex, cellValue.cellsIndex.lastColumnIndex]];
                 range.Merge(false);
                 range.Value = cellValue.cellsValue;
-                //this.SetCellValue(sheet, i, 1, cellValue.cellsIndex.firstRowIndex);
-                //this.SetCellValue(sheet, i, 2, cellValue.cellsIndex.firstColumnIndex);
-                //this.SetCellValue(sheet, i, 3, cellValue.cellsIndex.lastRowIndex);
-                //this.SetCellValue(sheet, i, 4, cellValue.cellsIndex.lastColumnIndex);
-                //this.SetCellValue(sheet, i, 5, cellValue.cellsValue);
-
-                //i++;
             }
 
             sheet.get_Range("A1", "M1").ColumnWidth = 30;
@@ -462,13 +454,16 @@ namespace Mento.Utility
             }
 
             //add table header
-            int m = 0;
-            foreach (string header in headers)
+            if (headers != null)
             {
-                this.SetCellValue(sheet, headerRowIndex, columnNumber + m, header);
-                m++;
+                int m = 0;
+                foreach (string header in headers)
+                {
+                    this.SetCellValue(sheet, headerRowIndex, columnNumber + m, header);
+                    m++;
+                }
             }
-
+            
             //add data for each row
             for (int i = 0; i < rows; i++)
             {
@@ -595,6 +590,60 @@ namespace Mento.Utility
 
         #endregion
 
+        #region Import data table to dictionary
+
+        /// <summary> 
+        /// Import data table to dictionary
+        /// </summary> 
+        /// <remarks>To the start of worksheet</remarks> 
+        /// <param name="workSheetName"></param> 
+        public Dictionary<string, string> GetDictionaryFromDataTable(DataTable table)
+        {
+            int rows = table.Rows.Count;
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
+            //add data for dictionary
+            for (int i = 0; i < rows; i++)
+            {
+                string key = table.Rows[i][0].ToString();
+                string value = table.Rows[i][1].ToString();
+
+                dict.Add(key, value);
+            }
+
+            return dict;
+        }
+
+        #endregion
+
+        #region Import dictionary to data table
+
+        /// <summary> 
+        /// Import data table to dictionary
+        /// </summary> 
+        /// <remarks>To the start of worksheet</remarks> 
+        /// <param name="workSheetName"></param> 
+        public DataTable GetDataTableFromDictionary(Dictionary<string, string> dicts)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("KEY");
+            dt.Columns.Add("VALUE");
+
+            foreach (KeyValuePair<string, string> dict in dicts)
+            {
+                DataRow myRow = dt.NewRow();
+                myRow["KEY"] = dict.Key;
+                myRow["VALUE"] = dict.Value;
+
+                dt.Rows.Add(myRow);
+            }
+
+            return dt;
+        }
+
+        #endregion
+
         #region Save Excel file
 
         /// <summary> 
@@ -647,6 +696,8 @@ namespace Mento.Utility
 
         #endregion 
 
+        #region Export data table to excel file
+        
         /// <summary>
         /// Export a data table to excel file
         /// </summary>
@@ -722,7 +773,10 @@ namespace Mento.Utility
             handler.Save();
             handler.Dispose();
         }
+        #endregion
 
+        #region Export excel file to data table
+        
         /// <summary>
         /// Export a excel to data table
         /// </summary>
@@ -795,9 +849,87 @@ namespace Mento.Utility
 
             ExportToExcel(table, fileName, sheetName, headers);
         }
+        #endregion
+
+        #region Export excel to dictionary
+
+        /// <summary>
+        /// Export a excel to dictionary
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="sheetName"></param>
+        public static void ImportToDictionary(string filePath, string sheetName, out Dictionary<string, string> dict)
+        {
+            //Open excel file which restore data view expected data
+            ExcelHelper handler = new ExcelHelper(filePath);
+            DataTable dataOut = new DataTable();
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
+
+            //Import data from the start
+            dataOut = handler.GetDataTableFromExcel(sheetName);
+            dict = handler.GetDictionaryFromDataTable(dataOut);
+
+            handler.Dispose();
+        }
+
+        /// <summary>
+        /// Export a excel to dictionary
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="sheetName"></param>
+        public static Dictionary<string, string> ImportToDictionary(string filePath, int sheetName)
+        {
+            //Open excel file which restore data view expected data
+            ExcelHelper handler = new ExcelHelper(filePath);
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            DataTable dataOut = new DataTable();
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
+
+            //Import data from the start
+            dataOut = handler.GetDataTableFromExcel(sheetName);
+            return handler.GetDictionaryFromDataTable(dataOut);
+        }
+
+        #endregion
+
+        #region Export dictionary to Excel
+
+        public static void ImportDictionaryToExcel(Dictionary<string, string> dict, string fileName, string sheetName, string[] headers = null)
+        {
+            FileInfo excelFile = new FileInfo(fileName);
+            if (!excelFile.Directory.Exists)
+                excelFile.Directory.Create();
+
+            //Open excel file which restore scripts data
+            ExcelHelper handler = new ExcelHelper(fileName, true);
+
+            DataTable dt = new DataTable();
+            dt = handler.GetDataTableFromDictionary(dict);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Microsoft.Office.Interop.Excel.Worksheet sheet = handler.AddWorksheet(sheetName);
+
+            //Import data from the start
+            handler.ImportDataTable(sheet, headers, dt);
+
+            handler.Save();
+            handler.Dispose();
+        }
+
+        #endregion
 
         #region for failed excel file header
-        
+
         public struct MergeCellsIndex
         {
             public int firstColumnIndex;
@@ -810,23 +942,6 @@ namespace Mento.Utility
         {
             public MergeCellsIndex cellsIndex;
             public string cellsValue;
-        }
-
-        #endregion
-
-        #region for pie chart distributionvalue
-
-        public struct PieChartInfo
-        {
-            public string hierarchy;
-            public string timeRange;
-            public PieChartValue[] pieChartValues;
-        }
-
-        public struct PieChartValue
-        {
-            public string tagOrCommodity;
-            public string valueAndUOM;
         }
 
         #endregion

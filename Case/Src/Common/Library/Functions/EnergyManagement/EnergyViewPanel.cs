@@ -33,6 +33,7 @@ namespace Mento.ScriptCommon.Library.Functions
         //Select area dimension tree button
         private static Button SelectAreaDimensionButton = JazzButton.EnergyViewSelectAreaDimensionButton;
         private static AreaDimensionTree AreaDimensionTree = JazzTreeView.EnergyViewAreaDimensionTree;
+        private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
 
         private static Dictionary<DisplayStep, string> DisplayStepItem = new Dictionary<DisplayStep, string>()
         {
@@ -425,10 +426,21 @@ namespace Mento.ScriptCommon.Library.Functions
                 
         #region Chart view operations
 
+        #region common
+
         public bool EntirelyNoChartDrawn()
         {
             return Chart.EntirelyNoChartDrawn();
         }
+
+        public bool IsScrollbarExist()
+        {
+            return Chart.IsScrollbarExists();
+        }
+
+        #endregion
+
+        #region column chart
 
         public bool IsColumnDrawn()
         {
@@ -445,6 +457,10 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.GetTotalColumns();
         }
 
+        #endregion
+
+        #region Trend chart 
+
         public bool IsTrendChartDrawn()
         {
             return Chart.HasDrawnTrend();
@@ -459,6 +475,10 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return Chart.GetTrendChartLinesMarkers();
         }
+
+        #endregion
+
+        #region Pie chart
 
         public bool IsDistributionChartDrawn()
         {
@@ -475,15 +495,16 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.GetPieDataLabelTexts();
         }
 
+        #endregion
+
+        #region Data view
+        
         public bool IsDataViewDrawn()
         {
             return EnergyDataGrid.HasDrawnDataView();
         }
 
-        public bool IsScrollbarExist()
-        {
-            return Chart.IsScrollbarExists();
-        }
+        #endregion
 
         #region legend
 
@@ -545,6 +566,113 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsCloseLegendButtonExist(string legendName)
         {
             return Chart.IsCloseLegendButtonExist(legendName);
+        }
+
+        #endregion
+
+        #region for pie chart verification
+
+        public string GetActualHierarchyPath()
+        {
+            return SelectHierarchyButton.GetText();
+        }
+
+        public string GetExpectedHierarchyPath(string[] hierarchyPaths)
+        {
+            int hierarchyNum = hierarchyPaths.Length;
+            string ExpectedHierarchyPath = hierarchyPaths[0];
+
+            for (int i = 1; i < hierarchyNum; i++)
+            {
+                ExpectedHierarchyPath = ExpectedHierarchyPath + "/" + hierarchyPaths[i];
+            }
+
+            return ExpectedHierarchyPath;
+        }
+
+        public string GetActualTimeRange()
+        {
+            string ActualTimeRange = EnergyViewToolbar.GetStartDate() + " to " + EnergyViewToolbar.GetEndDate();
+
+            return ActualTimeRange;
+        }
+
+        public string GetExpectedTimeRange(ManualTimeRange manualTimeRange)
+        {
+            string ExpectedTimeRange = manualTimeRange.StartDate + " to " + manualTimeRange.EndDate;
+
+            return ExpectedTimeRange;
+        }
+
+        public Dictionary<string, string> GetActualPieData()
+        {
+            Dictionary<string, string> actualPieDict = new Dictionary<string, string>();
+            var pieValues = Chart.GetPieDataLegendAndTexts();
+
+            actualPieDict.Add("Hierarchy", GetActualHierarchyPath());
+            actualPieDict.Add("TimeRange", GetActualTimeRange());
+
+            foreach (var pieValue in pieValues)
+            {
+                actualPieDict.Add(pieValue.tagOrCommodity, pieValue.valueAndUOM);
+            }
+
+            return actualPieDict;
+        }
+
+        public Dictionary<string, string> GetExpecedPieData(string[] hierarchyPaths, ManualTimeRange manualTimeRange)
+        {
+            Dictionary<string, string> actualPieDict = new Dictionary<string, string>();
+            var pieValues = Chart.GetPieDataLegendAndTexts();
+
+            actualPieDict.Add("Hierarchy", GetExpectedHierarchyPath(hierarchyPaths));
+            actualPieDict.Add("TimeRange", GetExpectedTimeRange(manualTimeRange));
+
+            foreach (var pieValue in pieValues)
+            {
+                actualPieDict.Add(pieValue.tagOrCommodity, pieValue.valueAndUOM);
+            }
+
+            return actualPieDict;
+        }
+
+        /// <summary>
+        /// Export expected data to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedDictionaryToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName, string path)
+        {
+            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+            {
+                Dictionary<string, string> expectedactualPieDict = GetExpecedPieData(hierarchyPaths, manualTimeRange);
+
+                //Export to excel
+                string actualFileName = Path.Combine(path, fileName);
+                JazzFunction.ChartViewOperation.MoveExpectedDataToExcel(expectedactualPieDict, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
+            }
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDictionaryDataOfEnergyAnalysis(string expectedFileName, string failedFileName, string path)
+        {
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(path, expectedFileName);
+
+                Dictionary<string, string> actualDict = GetActualPieData();
+
+                Dictionary<string, string> expectedDict = JazzFunction.ChartViewOperation.ImportExpectedFileToDictionary(filePath, JazzFunction.ChartViewOperation.sheetNameExpected);
+
+                return JazzFunction.ChartViewOperation.CompareDictionarys(expectedDict, actualDict, failedFileName);
+            }
+            else
+            {
+                return true;
+            }
         }
 
         #endregion

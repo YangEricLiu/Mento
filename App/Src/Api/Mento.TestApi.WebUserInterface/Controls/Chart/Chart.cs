@@ -25,7 +25,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator PathLocator = new Locator("path", ByType.TagName);
         private static Locator RectLocator = new Locator("rect", ByType.TagName);
         private static Locator MarkersLocator = new Locator("g.highcharts-markers", ByType.CssSelector);
-        
+
         private static Locator TitleLocator = new Locator("svg/text[2]", ByType.XPath);
         private static Locator UomLocator = new Locator("svg/text[1]", ByType.XPath);
         private static Locator NavigatorLocator = new Locator("g.highcharts-navigator", ByType.CssSelector);
@@ -101,7 +101,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             IWebElement LegendElement = GetLegendItemElement(legendName);
 
-            return ChildExists(LegendItemsCloseLocator, LegendElement); 
+            return ChildExists(LegendItemsCloseLocator, LegendElement);
         }
 
         public bool LegendItemExists(string legendName)
@@ -204,7 +204,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return null;
         }
-        
+
         #endregion
         #endregion
 
@@ -295,13 +295,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 {
                     noLine++;
                 }
-                else if (pathExisted&&isVisible)
+                else if (pathExisted && isVisible)
                 {
                     haveLine++;
                 }
             }
 
-            return haveLine - 1 - noLine;   
+            return haveLine - 1 - noLine;
         }
 
         public int GetTrendChartLinesMarkers()
@@ -319,7 +319,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 {
                     markersLine = GetLineMarkers(PathLocator, markers[i]);
                     haveMarkers = haveMarkers + markersLine;
-                }    
+                }
             }
 
             return haveMarkers;
@@ -425,6 +425,36 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return list.ToArray();
         }
 
+        public PieChartValue[] GetPieDataLegendAndTexts()
+        {
+            var list = new List<PieChartValue>();
+            int legendItemsNum = LegendItems.Length;
+            PieChartValue pieValue = new PieChartValue();
+
+            for (int i = 0; i < legendItemsNum; i++)
+            {
+                pieValue.tagOrCommodity = LegendItems[i].Text;
+                pieValue.valueAndUOM = PieDataLabelTexts[i].Text;
+
+                list.Add(pieValue);
+            }
+
+            return list.ToArray();
+        }
+
+        public Dictionary<string, string> GetPieDataLegendAndTextsToDictionary()
+        {
+            Dictionary<string, string> pieDict = new Dictionary<string, string>();
+            int legendItemsNum = LegendItems.Length;
+
+            for (int i = 0; i < legendItemsNum; i++)
+            {
+                pieDict.Add(LegendItems[i].Text, PieDataLabelTexts[i].Text);
+            }
+
+            return pieDict;
+        }
+
         #endregion
 
         #region Common
@@ -498,7 +528,24 @@ namespace Mento.TestApi.WebUserInterface.Controls
             catch (Exception)
             {
                 return true;
-            }             
+            }
+        }
+
+        #endregion
+
+        #region for pie chart distributionvalue
+
+        public struct PieChartInfo
+        {
+            public string hierarchy;
+            public string timeRange;
+            public PieChartValue[] pieChartValues;
+        }
+
+        public struct PieChartValue
+        {
+            public string tagOrCommodity;
+            public string valueAndUOM;
         }
 
         #endregion

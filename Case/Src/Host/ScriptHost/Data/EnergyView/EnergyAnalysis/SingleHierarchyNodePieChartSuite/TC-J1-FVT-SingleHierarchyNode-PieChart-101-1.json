@@ -4,10 +4,15 @@
 		{
 			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
 			"TagNames":["V1_BuildingBC", "V2_BuildingBC", "V3_BuildingBC"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-11-01",
+				"EndDate":"2013-11-07",	
+			}],
+			"failedFileName":["F-SingleHierarchyNode-PieChart-101-1-0.xls"],
 		},
 		"ExpectedData":
 		{
-			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
+			"expectedFileName":["SingleHierarchyNode-PieChart-101-1-0.xls"],
 		}
 	}
 ]

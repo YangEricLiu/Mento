@@ -15,6 +15,7 @@ namespace Mento.ScriptCommon.Library.Functions
     public class EnergyAnalysisPanel : EnergyViewPanel
     {
         public string EAPath = @"EA\";
+        public string EAPiePath = @"EA\Pie\";
 
         #region Controls
         private static Container MultiHierarchyPanelContainer = JazzContainer.MultiHierarchyPanelContainer;
@@ -289,6 +290,29 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool CompareDataViewOfEnergyAnalysis(string expectedFileName, string failedFileName)
         {
             return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, EAPath);
+        }
+
+        #endregion
+
+        #region Chart view operation
+
+        /// <summary>
+        /// Export expected dictionary data to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedDictionaryToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName)
+        {
+            ExportExpectedDictionaryToExcel(hierarchyPaths, manualTimeRange, fileName, EAPiePath);
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDictionaryDataOfEnergyAnalysis(string expectedFileName, string failedFileName)
+        {
+            return CompareDictionaryDataOfEnergyAnalysis(expectedFileName, failedFileName, EAPiePath);
         }
 
         #endregion

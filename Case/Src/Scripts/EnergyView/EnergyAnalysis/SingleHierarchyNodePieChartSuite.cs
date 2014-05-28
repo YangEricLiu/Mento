@@ -49,8 +49,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
-            
-            EnergyViewToolbar.SetDateRange(new DateTime(2013, 11, 1), new DateTime(2013, 11, 7));
+
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
 
             EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);
@@ -62,8 +63,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             Assert.IsTrue(EnergyAnalysis.IsDistributionChartDrawn());
-            Assert.AreEqual(input.InputData.TagNames.Length, EnergyAnalysis.GetPiesNumber());
-            Assert.AreEqual(input.InputData.TagNames, EnergyAnalysis.GetPieDataLabelTexts());
+
+            EnergyAnalysis.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);       
         }
 
     }

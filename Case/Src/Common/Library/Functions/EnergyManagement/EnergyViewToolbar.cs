@@ -49,6 +49,26 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
+        public string GetStartDate()
+        {
+            return StartDatePicker.GetValue();
+        }
+
+        public string GetEndDate()
+        {
+            return EndDatePicker.GetValue();
+        }
+
+        public string GetStartTime()
+        {
+            return StartTimeComboBox.GetValue();
+        }
+
+        public string GetEndTime()
+        {
+            return EndTimeComboBox.GetValue();
+        }
+
         public void SetDateRange(DateTime startTime, DateTime endTime)
         {
             int startHour = startTime.Hour, startMinute = startTime.Minute, endHour = endTime.Hour, endMinute = endTime.Minute;

@@ -65,6 +65,7 @@
     <Compile Include="CorporateRanking\RankingDataviewAddForBug.cs" />
     <Compile Include="CorporateRanking\ViewCostRankingData.cs" />
     <Compile Include="CostUsage\AdditionalCostUsageDataVerificationSuite.cs" />
+    <Compile Include="CostUsage\CostUsagePieChartSuite.cs" />
     <Compile Include="CostUsage\CostCalculationAggregationDimensionOnlineSuite.cs" />
     <Compile Include="CostUsage\CostCalculationAggregationHierarchyOnlineSuite .cs" />
     <Compile Include="CostUsage\CostUsageTOUDataViewSuite.cs" />

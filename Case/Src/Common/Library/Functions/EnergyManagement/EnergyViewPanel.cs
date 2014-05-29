@@ -574,10 +574,22 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public string GetActualHierarchyPath()
         {
-            return SelectHierarchyButton.GetText();
+            string dimendionPath = null;
+
+            if (SelectSystemDimensionButton.Exists())
+            {
+                dimendionPath = SelectSystemDimensionButton.GetText();
+            }
+
+            if (SelectAreaDimensionButton.Exists())
+            {
+                dimendionPath = SelectAreaDimensionButton.GetText();
+            }
+
+            return SelectHierarchyButton.GetText() + "/" + dimendionPath;
         }
 
-        public string GetExpectedHierarchyPath(string[] hierarchyPaths)
+        public string GetExpectedHierarchyPath(string[] hierarchyPaths, string[] dimensionPaths = null)
         {
             int hierarchyNum = hierarchyPaths.Length;
             string ExpectedHierarchyPath = hierarchyPaths[0];
@@ -587,19 +599,37 @@ namespace Mento.ScriptCommon.Library.Functions
                 ExpectedHierarchyPath = ExpectedHierarchyPath + "/" + hierarchyPaths[i];
             }
 
+            if (dimensionPaths != null)
+            {
+                for (int j = 0; j < dimensionPaths.Length; j++)
+                {
+                    ExpectedHierarchyPath = ExpectedHierarchyPath + "/" + dimensionPaths[j];
+                }
+            }
+
             return ExpectedHierarchyPath;
         }
 
         public string GetActualTimeRange()
         {
-            string ActualTimeRange = EnergyViewToolbar.GetStartDate() + " to " + EnergyViewToolbar.GetEndDate();
+            string ActualTimeRange = EnergyViewToolbar.GetStartDate() + " " + EnergyViewToolbar.GetStartTime() + " to " + EnergyViewToolbar.GetEndTime() + " " + EnergyViewToolbar.GetEndDate();
 
             return ActualTimeRange;
         }
 
         public string GetExpectedTimeRange(ManualTimeRange manualTimeRange)
         {
-            string ExpectedTimeRange = manualTimeRange.StartDate + " to " + manualTimeRange.EndDate;
+            string ExpectedTimeRange = null;
+            
+            if (String.IsNullOrEmpty(manualTimeRange.StartTime) || String.IsNullOrEmpty(manualTimeRange.EndTime))
+            {
+                ExpectedTimeRange = manualTimeRange.StartDate + " 00:00" + " to " +"24:00 " + manualTimeRange.EndDate;
+
+            }
+            else 
+            {
+                ExpectedTimeRange = manualTimeRange.StartDate + " " + manualTimeRange.StartTime + " to " + manualTimeRange.EndTime + " " + manualTimeRange.EndDate;
+            }
 
             return ExpectedTimeRange;
         }
@@ -620,12 +650,12 @@ namespace Mento.ScriptCommon.Library.Functions
             return actualPieDict;
         }
 
-        public Dictionary<string, string> GetExpecedPieData(string[] hierarchyPaths, ManualTimeRange manualTimeRange)
+        public Dictionary<string, string> GetExpecedPieData(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string[] dimensionPaths = null)
         {
             Dictionary<string, string> actualPieDict = new Dictionary<string, string>();
             var pieValues = Chart.GetPieDataLegendAndTexts();
 
-            actualPieDict.Add("Hierarchy", GetExpectedHierarchyPath(hierarchyPaths));
+            actualPieDict.Add("Hierarchy", GetExpectedHierarchyPath(hierarchyPaths, dimensionPaths));
             actualPieDict.Add("TimeRange", GetExpectedTimeRange(manualTimeRange));
 
             foreach (var pieValue in pieValues)
@@ -640,11 +670,11 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Export expected data to excel file
         /// </summary>
         /// <param name="displayStep"></param>
-        public void ExportExpectedDictionaryToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName, string path)
+        public void ExportExpectedDictionaryToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName, string path, string[] dimensionPaths = null)
         {
             if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
             {
-                Dictionary<string, string> expectedactualPieDict = GetExpecedPieData(hierarchyPaths, manualTimeRange);
+                Dictionary<string, string> expectedactualPieDict = GetExpecedPieData(hierarchyPaths, manualTimeRange, dimensionPaths);
 
                 //Export to excel
                 string actualFileName = Path.Combine(path, fileName);

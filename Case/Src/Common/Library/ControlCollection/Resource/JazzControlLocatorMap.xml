@@ -152,8 +152,8 @@
       
       <energyview>
           <add key="ButtonEnergyViewSelectHierarchy" value="em-hier-tree-btn" type="ID"/>
-          <add key="ButtonEnergyViewSelectSystemDimension" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.SystemDimension.TreeButton']]" type="XPath"/>
-          <add key="ButtonEnergyViewSelectAreaDimension" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tree-btn') and em/button/span[text()='$@EM.AreaDimension.TreeButton']]" type="XPath"/>
+          <add key="ButtonEnergyViewSelectSystemDimension" value="//div[@id='em-content-west-region-body']//div[starts-with(@id,'panel') and contains(@class,'x-tabpanel-child') and not(contains(@style,'display: none;'))]//div[starts-with(@id,'menubuttontree') and em/button/span]" type="XPath"/>
+          <add key="ButtonEnergyViewSelectAreaDimension" value="//div[@id='em-content-west-region-body']//div[starts-with(@id,'panel') and contains(@class,'x-tabpanel-child') and not(contains(@style,'display: none;'))]//div[starts-with(@id,'menubuttontree') and em/button/span]" type="XPath"/>
           <add key="ButtonRankSelectSystemDimension" value="em-rank-sdim-button" type="ID"/>
           <add key="ButtonRankSelectHierarchy" value="em-rank-tree-btn-btnEl" type="ID"/>
           <add key="ButtonWidgetSaveHierarchy" value="//div[contains(@id, 'widgetsavewindow') and contains(@class, 'x-window-body-default')]//div[contains(@id, 'menubuttontree')]" type="XPath"/>

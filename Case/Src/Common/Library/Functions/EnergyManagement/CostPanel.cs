@@ -5,12 +5,14 @@ using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.TestApi.WebUserInterface;
+using Mento.ScriptCommon.TestData.EnergyView;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
     public class CostPanel : EnergyViewPanel
     {
         public string CostPath = @"CostUsage\";
+        public string CostPiePath = @"CostUsage\Pie\";
 
         #region controls
         
@@ -200,6 +202,29 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsDataViewExisted()
         {
             return EnergyDataGrid.HasDrawnDataView();
+        }
+
+        #endregion
+
+        #region pie chart operation
+
+        /// <summary>
+        /// Export expected data table to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedDictionaryToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName, string[] dimensionPaths = null)
+        {
+            ExportExpectedDictionaryToExcel(hierarchyPaths, manualTimeRange, fileName, CostPiePath, dimensionPaths);
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDictionaryDataOfCostUsage(string expectedFileName, string failedFileName)
+        {
+            return CompareDictionaryDataOfEnergyAnalysis(expectedFileName, failedFileName, CostPiePath);
         }
 
         #endregion

@@ -388,6 +388,7 @@
               <add key="ButtonCustomizedLabellingUpdate" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonCustomizedLabellingModify" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonCustomizedLabellingDelete" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+              <add key="ButtonCustomizedLabellingClose" value="//div[contains(@class,'x-message-box')]//div[contains(@class,'x-tool')]//img[@class='x-tool-close']"  type="XPath"/>
               <add key="ButtonCustomizedLabellingAscendingOrder" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='正序']]/input" type="XPath"/>
               <add key="ButtonCustomizedLabellingDescendingOrder" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='倒序']]/input" type="XPath"/>
           </CustomizedLabellingSetting>
@@ -953,7 +954,6 @@
     <add key="GridTrueShareUserList" value="//div[contains(@id,'sharereceiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[1]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridTrueSendedUserList" value="//div[contains(@id,'sharereceiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[2]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridSubscribeUserList" value="//div[contains(@id,'shareduserlist') and contains(@class,'x-window-body-default')]/div[3]/div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
-
     </Homepage>
   </Grid>
   <!--Grid End-->
@@ -1058,6 +1058,10 @@
         <add key="LabelRevisionText" value="//div[@id='setting-region-east-body']//td[contains(@class,'x-form-item-body numberfield') and table/tbody/tr/td/input[@type='text' and @name='$#nameIndex']]/../td/label/span[text()='$@Common.Glossary.CorrectionValue']" type="XPath"/>
       </TargetBaseline>
       
+      <CustomizedLabellingSetting>
+         <add key="LabelInputValueErrTips" value="//div[@id='st-customized-labeling-properties-form-body']/label[text()='*请确保输入的右区间大于左区间']" type="XPath"/>
+      </CustomizedLabellingSetting>
+
     </CustomerSettings>
     
     <PlatformSettings>

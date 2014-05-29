@@ -14,6 +14,7 @@ namespace Mento.ScriptCommon.TestData.Customer
     {
         public string CommonName { get; set; }
         public string[] CommonNames { get; set; }
+        public string ConfigurationUser { get; set; }
         public string[] Order { get; set; }
         public string Commodity { get; set; }
         public string[] Commodities { get; set; }       
@@ -29,6 +30,7 @@ namespace Mento.ScriptCommon.TestData.Customer
     {
         public string CommonName { get; set; }
         public string[] CommonNames { get; set; }
+        public string ConfigurationUser { get; set; }
         public string[] Order { get; set; }
         public string Commodity { get; set; }
         public string[] Commodities { get; set; }       

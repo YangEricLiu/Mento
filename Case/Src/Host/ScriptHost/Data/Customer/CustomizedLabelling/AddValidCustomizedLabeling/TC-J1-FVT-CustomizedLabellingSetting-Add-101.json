@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"CommonName":"  onlychars  ",
+			"CommonName":"自定义能效标识3",
 			"Commodity":"自来水",
 			"KPITypes":["昼夜比","单位人口"],
 			"LabellingLevel":"3级",
@@ -23,7 +23,7 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"onlychars",
+			"CommonName":"自定义能效标识3",
 			"Commodity":"自来水",
 			"KPITypes":["昼夜比","单位人口"],
 			"LabellingLevel":"3级",

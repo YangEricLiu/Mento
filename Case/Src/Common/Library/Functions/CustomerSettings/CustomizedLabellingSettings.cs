@@ -23,6 +23,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button UpdateButton = JazzButton.UpdateCustomizedLabellingButton;
         private static Button ModifyButton = JazzButton.ModifyCustomizedLabellingButton;
         private static Button DeleteButton = JazzButton.DeleteCustomizedLabellingButton;
+        private static Button CloseButton = JazzButton.CloseCustomizedLabellingButton;
         private static RadioButton AscendingButton = JazzButton.CustomizedLabellingAscendingOrderButton;
         private static RadioButton DescendingButton = JazzButton.CustomizedLabellingDescendingOrderButton;
         #endregion
@@ -33,8 +34,10 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox LabellingLevelComboBox = JazzComboBox.CustomizedLabellingLevelComboBox;
         #endregion
 
-
+        #region gird
         public static Grid CustomizedLabellingList = JazzGrid.CustomizedLabellingListGrid;
+        #endregion
+
         #region grade
         private static Grade CustomizedLabellingGrade = JazzGrade.CustomizedLabellingGrade;
         #endregion
@@ -42,10 +45,12 @@ namespace Mento.ScriptCommon.Library.Functions
         #region textfield
         private static TextField NameTextField = JazzTextField.TextFieldCustomizedLabellingName;
         #endregion
+
+        #region label
+        public static Label InputValueErrTips = JazzLabel.InputValueErrTipsLabel;
         #endregion
 
-        
-
+        #endregion
         #region operation
         /// <summary>
         /// Navigate to CustomizedLabelling Page
@@ -108,6 +113,16 @@ namespace Mento.ScriptCommon.Library.Functions
             DeleteButton.Click();
         }
 
+        /// <summary>
+        /// Click Close button 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickCloseButton()
+        {
+            CloseButton.Click();
+        }
+
 
         /// <summary>
         /// FillIn CustomizedLabellingName TextField
@@ -137,6 +152,26 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInLabellingLevelRightValue(int num, string value)
         {
             CustomizedLabellingGrade.FillGradeItemRightNumberValue(num, value);
+        }
+
+        /// <summary>
+        /// Focus Labeling
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void FocusOnCustomizedLabelling(string labelingName)
+        {
+            CustomizedLabellingList.FocusOnRow(1, labelingName);
+        }
+
+        /// <summary>
+        /// Focus Labeling
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void FocusOnCustomizedLabelling(string labelingName, string ConfigurationUser)
+        {
+            CustomizedLabellingList.FocusOnRow(labelingName, ConfigurationUser);
         }
 
         /// <summary>
@@ -178,27 +213,6 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             LabellingLevelComboBox.SelectItem(ItemName);
         }
-
-        /// <summary>
-        /// Get AscendingCustomizedLabellingButton 
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public string GetAscendingCustomizedLabellingButton()
-        {
-            return AscendingButton.GetRadioButtonText();
-        }
-
-        /// <summary>
-        /// Get DecendingCustomizedLabellingButton 
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public string GetDescendingCustomizedLabellingButton()
-        {
-            return DescendingButton.GetRadioButtonText();
-        }
-
         #endregion
 
         #region verify
@@ -209,7 +223,17 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public bool IslabelingNameExist(string labelingName)
         {
-          return  CustomizedLabellingList.IsRowExist(1, labelingName);
+            return CustomizedLabellingList.IsRowExist(1, labelingName);
+        }
+
+        /// <summary>
+        /// Verify if InputValueErrTips displayed in the labeling bottom.
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public bool IsInputValueErrTipsDisplayed()
+        {
+            return InputValueErrTips.IsLabelDisplayed();
         }
 
         #endregion
@@ -292,7 +316,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public string GetLabellingGradeLeftValue(int num)
         {
-           return CustomizedLabellingGrade.GetGradeItemLeftNumberValue(num);
+            return CustomizedLabellingGrade.GetGradeItemLeftNumberValue(num);
         }
 
         /// <summary>
@@ -313,6 +337,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetLabellingGradeRightValue(int num)
         {
             return CustomizedLabellingGrade.GetGradeItemRightNumberValue(num);
+        }
+
+        /// <summary>
+        /// Get GetLabellingGradeRightInvalidMassage 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetLabellingGradeRightInvalidMassage(int num)
+        {
+            return CustomizedLabellingGrade.GetGradeRightNumberFieldInvalidMessage(num);
         }
 
         /// <summary>
@@ -346,14 +380,25 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Focus Labeling
+        /// Get AscendingCustomizedLabellingButton 
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void FocusOnCustomizedLabelling(string labelingName)
+        public string GetAscendingCustomizedLabellingButton()
         {
-            CustomizedLabellingList.FocusOnRow(1,labelingName);
+            return AscendingButton.GetRadioButtonText();
         }
+
+        /// <summary>
+        /// Get DecendingCustomizedLabellingButton 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetDescendingCustomizedLabellingButton()
+        {
+            return DescendingButton.GetRadioButtonText();
+        }
+
         #endregion
     }
 }

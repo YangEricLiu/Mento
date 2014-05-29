@@ -377,6 +377,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonCustomizedLabellingUpdate = "ButtonCustomizedLabellingUpdate";
         public static string ButtonCustomizedLabellingModify = "ButtonCustomizedLabellingModify";
         public static string ButtonCustomizedLabellingDelete = "ButtonCustomizedLabellingDelete";
+        public static string ButtonCustomizedLabellingClose = "ButtonCustomizedLabellingClose";
         public static string ButtonCustomizedLabellingAscendingOrder = "ButtonCustomizedLabellingAscendingOrder";
         public static string ButtonCustomizedLabellingDescendingOrder = "ButtonCustomizedLabellingDescendingOrder";
 
@@ -1150,6 +1151,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region TargetBaseline
         public static string LabelCalendarInfoDisplay = "LabelCalendarInfoDisplay";
         public static string LabelRevisionText = "LabelRevisionText";
+        #endregion
+
+        #region CustomizedLabellingSetting
+        public static string LabelInputValueErrTips = "LabelInputValueErrTips";
         #endregion
 
         #endregion

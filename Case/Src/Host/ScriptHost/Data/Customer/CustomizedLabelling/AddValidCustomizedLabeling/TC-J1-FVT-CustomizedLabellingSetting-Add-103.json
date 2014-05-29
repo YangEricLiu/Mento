@@ -4,7 +4,7 @@
 		{
 			"CommonName":"自定义能效标识5",
 			"Commodities":["自来水","天然气"],
-			"KPITypes":["单位面积","公休比"],
+			"KPITypes":["单位面积","工休比"],
 			"LabellingLevels":["8级","6级"],
 			"LabellingLevelValues":["8","6"],
 			"LabellingValue":[[{
@@ -102,13 +102,13 @@
 			},					
 			{
 				"LabellingLeftValue":"1",
-			}]]
+			}]],
 		},
 		"ExpectedData":
 		{
 		    "CommonName":"自定义能效标识5",
 			"Commodity":"天然气",
-			"KPIType":"公休比",
+			"KPIType":"工休比",
 			"LabellingLevel":"6级",
 			"LabellingValue":[
 			[{
@@ -176,8 +176,8 @@
 			},					
 			{
 				"LabellingLeftValue":"5",
-			},			
-			{
+			}],			
+			[{
 				"LabellingLeftValue":"5",
 				"LabellingRightValue":"4",
 			},
@@ -197,7 +197,7 @@
 				"LabellingLeftValue":"1",
 			}]],
 			"Firstlabels":["<=",">"],
-			"Lastlabels":[">","<="]
+			"Lastlabels":[">","<="],
 			"UOMs":["吨/人","立方米/人"],
 			"Order":["正序","倒序"],
 		}

@@ -590,6 +590,7 @@
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataViewSuite\TC-J1-FVT-CarbonUsage-DataView-001-3.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataViewSuite\TC-J1-FVT-CarbonUsage-DataView-001-1.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataViewSuite\TC-J1-FVT-CarbonUsage-DataView-001-2.json" />
+    <None Include="Data\EnergyView\CarbonUsage\CarbonUsagePieChartSuite\TC-J1-FVT-CarbonUsage-PieChart-003-2.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageTrendChartSuite\TC-J1-FVT-CarbonUsage-TrendChart-002-1.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageTrendChartSuite\TC-J1-FVT-CarbonUsage-TrendChart-002-2.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageTrendChartSuite\TC-J1-FVT-CarbonUsage-TrendChart-002-3.json" />
@@ -670,6 +671,7 @@
     <None Include="Data\EnergyView\CostUsage\CostUsageDataVerificationSuite\TC-J1-FVT-CostUsageDataVerification-DataView-101-5.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataViewSuite\TC-J1-FVT-CostUsage-DataView-001-3842.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageDataViewSuite\TC-J1-FVT-CostUsage-DataView-001-1.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsagePieChartSuite\TC-J1-FVT-CostUsage-Pie-101-2.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsagePieChartSuite\TC-J1-FVT-CostUsage-Pie-101-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUDataViewSuite\TC-J1-FVT-CostUsage-TOU-DataView-101-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-3.json" />
@@ -679,6 +681,7 @@
     <None Include="Data\EnergyView\EnergyAnalysis\AdditionalTagsDataVerificationSuite\TC-J1-FVT-AdditionalTagsDataVerification-DataView-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\AdditionalTagsDataVerificationSuite\TC-J1-FVT-AdditionalTagsDataVerification-DataView-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionDataViewSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-2.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionPieChartSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTrendChartSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TrendChart-101-1.json" />
@@ -703,6 +706,7 @@
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-3.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-1.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodePieChartSuite\TC-J1-FVT-SingleHierarchyNode-PieChart-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodePieChartSuite\TC-J1-FVT-SingleHierarchyNode-PieChart-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-3.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-2.json" />

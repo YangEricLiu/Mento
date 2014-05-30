@@ -40,6 +40,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingValid), "TC-J1-FVT-CustomizedLabellingSetting-Modify-101")]
         public void ModifyCustomizedLabelingValid01(CustomizedLabellingSettingData input)
         {
+            
             //Click an exist labelling.
             TimeManager.LongPause();
             TimeManager.LongPause();
@@ -107,6 +108,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             CustomizedLabellingSettings.ClickSaveButton();
             TimeManager.LongPause();
             TimeManager.LongPause();
+            
 
             //Go to select "Modify to 自定义能效标识8"
             CustomizedLabellingSettings.FocusOnCustomizedLabelling(input.InputData.CommonNames[1]);
@@ -117,6 +119,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
             //Click Save button.
             CustomizedLabellingSettings.ClickSaveButton();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
             Assert.IsTrue(CustomizedLabellingSettings.IsInputValueErrTipsDisplayed());

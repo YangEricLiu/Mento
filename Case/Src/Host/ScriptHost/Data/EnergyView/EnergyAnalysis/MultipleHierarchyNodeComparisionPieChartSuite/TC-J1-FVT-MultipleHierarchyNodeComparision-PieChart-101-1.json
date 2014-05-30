@@ -1,0 +1,30 @@
+﻿[
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+				"TagsName":["V2_BuildingBC"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "楼宇BAD"],
+				"TagsName":["V11_BuildingBC", "V22_BuildingBC"],
+			}],
+			"TagNames":["V13_BuildingBC"],
+			"AreaDimensionPath":["楼宇BC", "一层"],
+			"SystemDimensionPath":["楼宇BC", "空调"],
+			"failedFileName":["F-MultipleHierarchyNodeComparision-PieChart-101-1-0.xls", "F-MultipleHierarchyNodeComparision-PieChart-101-1-1.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-01-01",
+				"EndDate":"2013-01-07",	
+				"StartTime":"07:00",
+				"EndTime":"16:00",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"NotDrawPieMessage":"所选数据点介质不同，无法共同绘制饼状图！",
+			"expectedFileName":["MultipleHierarchyNodeComparision-PieChart-101-1-0.xls", "MultipleHierarchyNodeComparision-PieChart-101-1-1.xls"],
+		}
+	}
+]

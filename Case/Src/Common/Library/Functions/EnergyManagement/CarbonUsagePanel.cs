@@ -6,12 +6,15 @@ using System.Text;
 using Mento.TestApi.WebUserInterface;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.ScriptCommon.TestData.EnergyView;
+
 
 namespace Mento.ScriptCommon.Library.Functions
 {
     public class CarbonUsagePanel : EnergyViewPanel
     {
         public string CarbonPath = @"CarbonUsage\";
+        public string CarbonPiePath = @"CarbonUsage\Pie\";
 
         private static Grid CommodityGrid = JazzGrid.CommodityCarbonGrid;
         private static Grid TotalCommotidyGrid = JazzGrid.TotalCommodityCarbonGrid;
@@ -139,6 +142,29 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsDataViewExisted()
         {
             return EnergyDataGrid.HasDrawnDataView();
+        }
+
+        #endregion
+
+        #region pie chart operation
+
+        /// <summary>
+        /// Export expected data table to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedDictionaryToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName, string[] dimensionPaths = null)
+        {
+            ExportExpectedDictionaryToExcel(hierarchyPaths, manualTimeRange, fileName, CarbonPiePath, dimensionPaths);
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDictionaryDataOfCarbonUsage(string expectedFileName, string failedFileName)
+        {
+            return CompareDictionaryDataOfEnergyAnalysis(expectedFileName, failedFileName, CarbonPiePath);
         }
 
         #endregion

@@ -64,7 +64,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static Container MultiHierarchyPanelContainer = GetControl<Container>(JazzControlLocatorKey.ContainerMultiHierarchyPanel);
         public static Container ExcludeTimeIntervalsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerExcludeTimeIntervals);
+        public static Container MultiHierarchysContainer = GetControl<Container>(JazzControlLocatorKey.ContainerMultiHierarchys);
 
+        
         #endregion
 
         #endregion

@@ -294,7 +294,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #endregion
 
-        #region Chart view operation
+        #region Chart view operation 
 
         /// <summary>
         /// Export expected dictionary data to excel file
@@ -314,6 +314,28 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return CompareDictionaryDataOfEnergyAnalysis(expectedFileName, failedFileName, EAPiePath);
         }
+
+        #region pie chart operation for mutiple hierarchy nodes
+
+        /// <summary>
+        /// Export expected dictionary data to excel file with data view header
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedDictionaryForMultipleHierarchyToExcel(MultipleHierarchyAndtags[] expectedHierarchyDatas, ManualTimeRange manualTimeRange, string fileName)
+        {
+            ExportExpectedDictionaryToExcelMultiHiearachy(expectedHierarchyDatas, manualTimeRange, fileName, EAPiePath);
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDictionaryDataForMultipleHierarchyOfEnergyAnalysis(string expectedFileName, string failedFileName)
+        {
+            return CompareDictionaryDataMultipleHierarchyOfEnergyAnalysis(expectedFileName, failedFileName, EAPiePath);
+        }
+        #endregion
 
         #endregion
 

@@ -14,6 +14,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             return GetControl<Grid>(key, nameIndex);
         }
+        public static Grid GetOneGrid(string key, int positionIndex)
+        {
+            return GetControl<Grid>(key, positionIndex);
+        }
 
         #endregion
 

@@ -920,8 +920,10 @@
           <add key="GridMultiSelectedTagsList" value="//div[contains(@id,'energymultihiertagpanel') and contains(@class,'x-container-default')]/div[label[text()='$#nameIndex']]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridEASelectedTagsList" value="//div[@id='em-energy-multi-hier-panel']/div[label[text()='$#nameIndex']]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridCarbonFactorsList" value="st-carbonfactor-grid" type="ID"/>
-        
-      </energyview>
+
+          <add key="GridMultiHieararchyTagsList" value="//div[@id='em-content-west-region-body']/div/div[starts-with(@id,'container')][$#positionIndex]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+
+    </energyview>
     
     <customersettings>
       <add key="GridVTagSettingsFormulaEditPTagList" value="ptaglist_formula" type="ID"/>
@@ -1120,6 +1122,8 @@
     
     <EnergyView>
       <add key="LabelAdditionEndTime" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody[$#positionIndex]/tr/td/div[not(contains(@style,'display: none;'))]/div/label[2]" type="XPath"/>
+      <add key="LabelMultiHieararchy" value="//div[@id='em-content-west-region-body']/div/div[starts-with(@id,'container')][$#positionIndex]/Label" type="XPath"/>
+
     </EnergyView>
     
   </Label>
@@ -1201,6 +1205,7 @@
   <EnergyView>
       <add key="ContainerMultiHierarchyPanel" value="//div[@id='hp-dashboard-ctem-energy-multi-hier-panel']/div[contains(@class,'x-container-default')]" type="XPath"/>
       <add key="ContainerExcludeTimeIntervals" value="//div[contains(@id,'addintervalwindow') and contains(@class,'x-window-body-default')]/table/tbody/tr/td/div[contains(@style,'display: none;')]" type="XPath"/>
+      <add key="ContainerMultiHierarchys" value="//div[@id='em-content-west-region-body']/div/div[starts-with(@id,'container')]" type="XPath"/>
 
   </EnergyView>
   <platformsettings>

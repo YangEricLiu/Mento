@@ -926,6 +926,30 @@ namespace Mento.Utility
             handler.Dispose();
         }
 
+        public static void ImportDictionaryToExcelwithHeaderSheet(Dictionary<string, string> dict, string fileName, string sheetName, string[] headers = null)
+        {
+            FileInfo excelFile = new FileInfo(fileName);
+            if (!excelFile.Directory.Exists)
+                excelFile.Directory.Create();
+
+            //Open excel file which restore scripts data
+            ExcelHelper handler = new ExcelHelper(fileName, true);
+
+            DataTable dt = new DataTable();
+            dt = handler.GetDataTableFromDictionary(dict);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Microsoft.Office.Interop.Excel.Worksheet sheet = handler.AddWorksheet(sheetName);
+
+            //Import data from the start
+            handler.ImportDataTable(sheet, headers, dt);
+
+            handler.Save();
+            handler.Dispose();
+        }
+
         #endregion
 
         #region for failed excel file header

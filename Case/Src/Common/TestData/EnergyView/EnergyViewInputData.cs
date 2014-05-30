@@ -37,6 +37,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] MoreTagNames { get; set; }
 
         public ManualTimeRange[] ManualTimeRange { get; set; }
+
+        public MultipleHierarchyAndtags[] MultipleHierarchyAndtags { get; set; }
     }
 
     public class EnergyViewOptionOutput : ExpectedTestDataBase
@@ -46,6 +48,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string QuitMultipleMessage { get; set; }
         public string Last7DaysValue { get; set; }
         public string LastMonthValue { get; set; }
+        public string NotDrawPieMessage { get; set; }
     }
 
 
@@ -57,6 +60,11 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string DashboardName { get; set; }
     }
 
+    public class MultipleHierarchyAndtags
+    {
+        public string[] HierarchyPath { get; set; }
+        public string[] TagsName { get; set; }
+    }
     
     public enum EnergyViewType 
     { 

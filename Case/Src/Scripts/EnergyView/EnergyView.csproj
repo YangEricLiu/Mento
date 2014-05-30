@@ -54,6 +54,7 @@
     <Compile Include="CarbonUsage\CarbonUsageDataVerificationSuite.cs" />
     <Compile Include="CarbonUsage\AdditionalCarbonUsageDataVerificationSuite.cs" />
     <Compile Include="CarbonUsage\CarbonCalculationAggregationHierarchyOnlineSuite.cs" />
+    <Compile Include="CarbonUsage\CarbonUsagePieChartSuite.cs" />
     <Compile Include="CorporateRanking\AdditionalCorporateRankingVerificationSuite.cs" />
     <Compile Include="CorporateRanking\SelectCommodityForRanking.cs" />
     <Compile Include="CorporateRanking\SelectHierarchyNodesForRanking.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="CostUsage\CostUsageTrendChartSuite.cs" />
     <Compile Include="CostUsage\CostUsageDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\AdditionalTagsDataVerificationSuite.cs" />
+    <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionPieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodePieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\MultiTagsDataVerificationSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsTrendChartSuite.cs" />

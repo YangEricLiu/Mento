@@ -939,7 +939,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridMultiHierarchySystemDimensionTagList = "GridMultiHierarchySystemDimensionTagList";
         public static string GridMultiHierarchyAreaDimensionTagList = "GridMultiHierarchyAreaDimensionTagList";
         public static string GridMultiSelectedTagsList = "GridMultiSelectedTagsList";
-
+        public static string GridMultiHieararchyTagsList = "GridMultiHieararchyTagsList";
         #endregion
 
         #region energy analysis
@@ -1217,6 +1217,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Energy View
 
         public static string LabelAdditionEndTime = "LabelAdditionEndTime";
+        public static string LabelMultiHieararchy = "LabelMultiHieararchy";
 
         #endregion
 
@@ -1310,7 +1311,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string ContainerMultiHierarchyPanel = "ContainerMultiHierarchyPanel";
         public static string ContainerExcludeTimeIntervals = "ContainerExcludeTimeIntervals";
-
+        public static string ContainerMultiHierarchys = "ContainerMultiHierarchys";
         #endregion
 
         #endregion

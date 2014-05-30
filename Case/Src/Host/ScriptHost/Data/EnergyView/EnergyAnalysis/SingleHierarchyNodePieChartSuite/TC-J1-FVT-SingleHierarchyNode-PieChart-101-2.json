@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "BuildingPieVerify"],
+			"TagNames":["Vpie1", "Vpie2", "Vpie3", "Vpie4", "Vpie5", "Vpie6", "Vpie7", "Vpie8", "Vpie9", "Vpie10", "Vpie11", "Vpie12", "Vpie13", "Vpie14", "Vpie15", "Vpie16", "Vpie17", "Vpie18", "Vpie19", "Vpie20", "Vpie21", "Vpie22", "Vpie23", "Vpie24", "Vpie25", "Vpie26", "Vpie27", "Vpie28", "Vpie29", "Vpie30"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-11-01",
+				"EndDate":"2013-11-07",	
+			}],
+			"failedFileName":["F-SingleHierarchyNode-PieChart-101-2-0.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["SingleHierarchyNode-PieChart-101-2-0.xls"],
+		}
+	}
+]

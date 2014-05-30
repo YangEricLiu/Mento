@@ -1,0 +1,33 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "BuildingMultipleCommodities"], 
+			"commodityNames":["电", "自来水", "天然气", "软水", "汽油", "低压蒸汽", "柴油", "热量", "冷量", "煤", "煤油"],
+			"ManualTimeRange":[{
+				"StartDate":"2010-12-29",
+				"EndDate":"2011-02-20",	
+				"StartTime":"00:00",
+				"EndTime":"08:00",	
+			},
+			{
+				"StartDate":"2011-02-21",
+				"EndDate":"2012-07-04",	
+				"StartTime":"08:00",
+				"EndTime":"16:00",	
+			},
+			{
+				"StartDate":"2013-11-29",
+				"EndDate":"2014-05-04",	
+				"StartTime":"16:00",
+				"EndTime":"24:00",	
+			}
+			],
+			"failedFileName":["F-CostUsage-Pie-101-2-0.xls", "F-CostUsage-Pie-101-2-1.xls", "F-CostUsage-Pie-101-2-2.xls", "F-CostUsage-Pie-101-2-3.xls", "F-CostUsage-Pie-101-2-4.xls", "F-CostUsage-Pie-101-2-5.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsage-Pie-101-2-0.xls", "CostUsage-Pie-101-2-1.xls", "CostUsage-Pie-101-2-2.xls", "CostUsage-Pie-101-2-3.xls", "CostUsage-Pie-101-2-4.xls", "CostUsage-Pie-101-2-5.xls"],
+		}
+	}
+]

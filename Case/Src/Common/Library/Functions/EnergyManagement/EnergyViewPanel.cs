@@ -26,6 +26,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ToggleButton EnergyDisplayStepMonthButton = JazzButton.EnergyDisplayStepMonthButton;
         private static ToggleButton EnergyDisplayStepYearButton = JazzButton.EnergyDisplayStepYearButton;
         private static Button MultipleHierarchyAddTagsButton = JazzButton.MultipleHierarchyAddTagsButton;
+        private static Container MultiHierarchysContainer = JazzContainer.MultiHierarchysContainer;
         //Select system dimension tree button
         private static Button SelectSystemDimensionButton = JazzButton.EnergyViewSelectSystemDimensionButton;
         private static SystemDimensionTree SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
@@ -374,8 +375,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Export expected data table to excel file
         /// </summary>
-        /// <param name="displayStep">fileName</param>
-        /// <param name="displayStep">path</param>
+        /// <param name="fileName">fileName</param>
+        /// <param name="path">path</param>
         public void ExportRankingExpectedDataTableToExcel(string fileName, string path)
         {
             if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
@@ -578,15 +579,15 @@ namespace Mento.ScriptCommon.Library.Functions
 
             if (SelectSystemDimensionButton.Exists())
             {
-                dimendionPath = SelectSystemDimensionButton.GetText();
+                dimendionPath = "/" + SelectSystemDimensionButton.GetText();
             }
 
             if (SelectAreaDimensionButton.Exists())
             {
-                dimendionPath = SelectAreaDimensionButton.GetText();
+                dimendionPath = "/" + SelectAreaDimensionButton.GetText();
             }
 
-            return SelectHierarchyButton.GetText() + "/" + dimendionPath;
+            return SelectHierarchyButton.GetText() + dimendionPath;
         }
 
         public string GetExpectedHierarchyPath(string[] hierarchyPaths, string[] dimensionPaths = null)
@@ -669,7 +670,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Export expected data to excel file
         /// </summary>
-        /// <param name="displayStep"></param>
+        /// <param name="hierarchyPaths"></param>
         public void ExportExpectedDictionaryToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName, string path, string[] dimensionPaths = null)
         {
             if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
@@ -704,6 +705,162 @@ namespace Mento.ScriptCommon.Library.Functions
                 return true;
             }
         }
+
+        #region Multiple hierarchy left region
+
+        public HierarchysAndTags[] GetActualHierarchysAndTags()
+        {
+            int hierarchyNum = MultiHierarchysContainer.GetElementNumber();
+            var hietagsList = new List<HierarchysAndTags>();
+            var hietagsVlaue = new HierarchysAndTags();
+
+            for (int i = 1; i < hierarchyNum + 1; i++)
+            {
+                Label hierarchys = JazzLabel.GetOneLabel(JazzControlLocatorKey.LabelMultiHieararchy, i);
+                Grid hierarchyTags = JazzGrid.GetOneGrid(JazzControlLocatorKey.GridMultiHieararchyTagsList, i);    
+
+                hietagsVlaue.Hieararchy = hierarchys.GetLabelTextValue();
+                hietagsVlaue.tags = hierarchyTags.GetRowsData(1);
+
+                hietagsList.Add(hietagsVlaue);
+            }
+
+            return hietagsList.ToArray();
+        }
+
+        public HierarchysAndTags[] GetExpectedHierarchysAndTags(MultipleHierarchyAndtags[] expectedHierarchyDatas)
+        {
+            var hietagsList = new List<HierarchysAndTags>();
+            var hietagsVlaue = new HierarchysAndTags();
+            
+            foreach (MultipleHierarchyAndtags expectedHierarchyData in expectedHierarchyDatas)
+            {
+                hietagsVlaue.Hieararchy = GetExpectedHierarchyPath(expectedHierarchyData.HierarchyPath);
+                hietagsVlaue.tags = expectedHierarchyData.TagsName;
+
+                hietagsList.Add(hietagsVlaue);
+            }
+
+            return hietagsList.ToArray();
+        }
+
+        public Dictionary<string, string> GetActualMultipleHierarchyPieData()
+        {
+            Dictionary<string, string> actualPieDict = new Dictionary<string, string>();
+            var pieValues = Chart.GetPieDataLegendAndTexts();
+            HierarchysAndTags[] HierarchysAndTagsLists = GetActualHierarchysAndTags();
+         
+            actualPieDict.Add("TimeRange", GetActualTimeRange());
+            for (int i = 0; i < HierarchysAndTagsLists.Length; i++)
+            {
+                string taglist = ConvertTagsArrayToString(HierarchysAndTagsLists[i].tags);
+
+                if (actualPieDict.ContainsKey(HierarchysAndTagsLists[i].Hieararchy))
+                {
+                    actualPieDict[HierarchysAndTagsLists[i].Hieararchy] = taglist;
+                }
+                else
+                {
+                    actualPieDict.Add(HierarchysAndTagsLists[i].Hieararchy, taglist);
+                }
+            }       
+
+            foreach (var pieValue in pieValues)
+            {
+                actualPieDict.Add(pieValue.tagOrCommodity, pieValue.valueAndUOM);
+            }
+
+            return actualPieDict;
+        }
+
+        public Dictionary<string, string> GetExpecedMultipleHierarchyPieData(MultipleHierarchyAndtags[] expectedHierarchyDatas, ManualTimeRange manualTimeRange, string[] dimensionPaths = null)
+        {
+            Dictionary<string, string> expectedPieDict = new Dictionary<string, string>();
+            var pieValues = Chart.GetPieDataLegendAndTexts();
+            HierarchysAndTags[] HierarchysAndTagsLists = GetExpectedHierarchysAndTags(expectedHierarchyDatas);
+
+            expectedPieDict.Add("TimeRange", GetExpectedTimeRange(manualTimeRange));
+            for (int i = 0; i < HierarchysAndTagsLists.Length; i++)
+            {
+                string taglist = ConvertTagsArrayToString(HierarchysAndTagsLists[i].tags);
+
+                if (expectedPieDict.ContainsKey(HierarchysAndTagsLists[i].Hieararchy))
+                {
+                    expectedPieDict[HierarchysAndTagsLists[i].Hieararchy] = taglist;
+                }
+                else
+                {
+                    expectedPieDict.Add(HierarchysAndTagsLists[i].Hieararchy, taglist);
+                }
+            }   
+
+            foreach (var pieValue in pieValues)
+            {
+                expectedPieDict.Add(pieValue.tagOrCommodity, pieValue.valueAndUOM);
+            }
+
+            return expectedPieDict;
+        }
+
+
+        /// <summary>
+        /// Export expected data of multiple hierarchy nodes data to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedDictionaryToExcelMultiHiearachy(MultipleHierarchyAndtags[] expectedHierarchyDatas, ManualTimeRange manualTimeRange, string fileName, string path, string[] dimensionPaths = null)
+        {
+            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+            {
+                Dictionary<string, string> expectedactualPieDict = GetExpecedMultipleHierarchyPieData(expectedHierarchyDatas, manualTimeRange);
+
+                //Export to excel
+                string actualFileName = Path.Combine(path, fileName);
+                JazzFunction.ChartViewOperation.MoveExpectedDataToExcel(expectedactualPieDict, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
+            }
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDictionaryDataMultipleHierarchyOfEnergyAnalysis(string expectedFileName, string failedFileName, string path)
+        {
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(path, expectedFileName);
+
+                Dictionary<string, string> actualDict = GetActualMultipleHierarchyPieData();
+
+                Dictionary<string, string> expectedDict = JazzFunction.ChartViewOperation.ImportExpectedFileToDictionary(filePath, JazzFunction.ChartViewOperation.sheetNameExpected);
+
+                return JazzFunction.ChartViewOperation.CompareDictionarys(expectedDict, actualDict, failedFileName);
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private string ConvertTagsArrayToString(string[] tags)
+        {
+            string tagstring = tags[0];
+
+            for (int i = 1; i < tags.Length; i++)
+            {
+                tagstring = tagstring + "," + tags[i];
+            }
+
+            return tagstring;
+        }
+
+        public struct HierarchysAndTags
+        {
+            public string Hieararchy;
+            public string[] tags;
+        }
+
+        #endregion
 
         #endregion
 

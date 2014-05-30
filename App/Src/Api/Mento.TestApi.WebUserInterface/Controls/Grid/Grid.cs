@@ -527,16 +527,20 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return GetRow(cellIndex).Text;
         }
 
-        /*
-        public virtual IWebElement GetRow(int cellIndex)
+        
+        public string[] GetRowsData(int cellIndex)
         {
-            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowSelected);
+            List<string> rowsList = new List<string>();
+            IWebElement[] rows = GetRows(cellIndex);
 
-            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex } };
+            foreach (IWebElement row in rows)
+            {
+                rowsList.Add(row.Text);
+            }
 
-            return FindChild(Locator.GetVariableLocator(rowLocator, variables));
+            return rowsList.ToArray();
         }
-         */
+         
 
         public virtual IWebElement GetRow(int cellIndex, bool Paging = true)
         {
@@ -566,16 +570,35 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return FindChild(Locator.GetVariableLocator(rowLocator, variables));
         }
 
-        /*
-        public virtual IWebElement GetRow(int cellIndex, string cellText)
+        
+        public virtual IWebElement[] GetRows(int cellIndex, bool Paging = true)
         {
-            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRow);
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridAllRows);
 
-            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex }, { CELLTEXTVARIABLE, cellText } };
-            
-            return FindChild(Locator.GetVariableLocator(rowLocator, variables));
+            Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPage(cellIndex))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            return FindChildren(Locator.GetVariableLocator(rowLocator, variables));
         }
-        */
+        
 
         public virtual IWebElement GetRow(int cellIndex, string cellText, bool Paging = true)
         {

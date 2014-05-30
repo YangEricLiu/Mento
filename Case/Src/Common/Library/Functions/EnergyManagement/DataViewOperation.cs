@@ -177,7 +177,6 @@ namespace Mento.ScriptCommon.Library.Functions
 
             if (!areEqual)
             {
-                //ExportFailedDataToExcel(diversityTable, fileName, sheetNameFailed);
                 ExportFailedDataToExcelWithHeaderSheet(diversityTable, fileName, sheetNameFailed, headersSheet);
             }        
 

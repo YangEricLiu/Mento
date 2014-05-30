@@ -374,10 +374,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region CustomizedLabellingSetting
         public static string ButtonCustomizedLabellingCreat = "ButtonCustomizedLabellingCreat";
         public static string ButtonCustomizedLabellingSave = "ButtonCustomizedLabellingSave";
-        public static string ButtonCustomizedLabellingUpdate = "ButtonCustomizedLabellingUpdate";
         public static string ButtonCustomizedLabellingModify = "ButtonCustomizedLabellingModify";
         public static string ButtonCustomizedLabellingDelete = "ButtonCustomizedLabellingDelete";
-        public static string ButtonCustomizedLabellingClose = "ButtonCustomizedLabellingClose";
         public static string ButtonCustomizedLabellingAscendingOrder = "ButtonCustomizedLabellingAscendingOrder";
         public static string ButtonCustomizedLabellingDescendingOrder = "ButtonCustomizedLabellingDescendingOrder";
 

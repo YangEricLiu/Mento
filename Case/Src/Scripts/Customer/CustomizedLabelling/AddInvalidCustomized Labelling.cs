@@ -48,7 +48,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             int i=CustomizedLabellingSettings.GetCustomizedLabellingListCount();
 
             //Click Cancel button before input.
-            CustomizedLabellingSettings.ClickUpdateButton();
+            CustomizedLabellingSettings.ClickCancelButton();
 
             //Cancel and there isn't any labeling added to list.
             int j = CustomizedLabellingSettings.GetCustomizedLabellingListCount();
@@ -63,7 +63,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             TimeManager.MediumPause();
             CustomizedLabellingSettings.SelectCommodityComboBox(input.InputData.Commodity);
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPIType);
-            CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevel);
+            CustomizedLabellingSettings.SelectLabellingLevelComboBox(input.InputData.LabellingLevel);
 
             //check labelingGrade count
             Assert.AreEqual(Convert.ToUInt32(input.InputData.LabellingLevelValue),CustomizedLabellingSettings.GetLabellingGradeCount());
@@ -78,10 +78,30 @@ namespace Mento.Script.Customer.CustomizedLabelling
             }
 
             //Click Cancel button.
-            CustomizedLabellingSettings.ClickUpdateButton();
+            CustomizedLabellingSettings.ClickCancelButton();
 
             //·Cancel and there isn't any labeling added to list.
             Assert.AreEqual(j, CustomizedLabellingSettings.GetCustomizedLabellingListCount());
+
+            //Click "+能效标识" button 
+            CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();
+            TimeManager.LongPause();
+
+            //· All input field cleared.
+            Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
+
+            //Check lalelling level's left value 
+            for (int num = 0; num < Convert.ToInt32(input.InputData.LabellingLevelValue); num++)
+            {
+                Assert.AreEqual(input.ExpectedData.LabellingValue[0][num].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(num + 1));
+            }
+
+            //check Labelling right Value
+            for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevelValue) - 1; num++)
+            {
+                Assert.AreEqual(input.ExpectedData.LabellingValue[0][num].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num + 1));
+            }
+
         }
 
         [Test]
@@ -110,7 +130,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             }
  
             //Click Cancel button.Click "+能效标识" button 
-            CustomizedLabellingSettings.ClickUpdateButton();
+            CustomizedLabellingSettings.ClickCancelButton();
             CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();
             TimeManager.LongPause();
 
@@ -119,7 +139,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             TimeManager.MediumPause();
             CustomizedLabellingSettings.SelectCommodityComboBox(input.InputData.Commodity);
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPIType);
-            CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevel);
+            CustomizedLabellingSettings.SelectLabellingLevelComboBox(input.InputData.LabellingLevel);
 
             //check labelingGrade count
             Assert.AreEqual(Convert.ToUInt32(input.InputData.LabellingLevelValue), CustomizedLabellingSettings.GetLabellingGradeCount());
@@ -173,7 +193,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             TimeManager.MediumPause();
             CustomizedLabellingSettings.SelectCommodityComboBox(input.InputData.Commodity);
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPIType);
-            CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevel);
+            CustomizedLabellingSettings.SelectLabellingLevelComboBox(input.InputData.LabellingLevel);
 
             //check labelingGrade count
             Assert.AreEqual(Convert.ToUInt32(input.InputData.LabellingLevelValue), CustomizedLabellingSettings.GetLabellingGradeCount());

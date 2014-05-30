@@ -47,6 +47,8 @@ namespace Mento.Script.Administration.IndustryBenchmark
         {
             //Click a benchmark(行业=酒店; 区域=全部地区+严寒地区A区 ) from list and click 删除 button.
             //·Pop up window show 是否删除.
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             IndustryBenchmarkSetting.FocusOnBenchMark(input.InputData.Industry);
             IndustryBenchmarkSetting.ClickDeleteBenchMark();
 

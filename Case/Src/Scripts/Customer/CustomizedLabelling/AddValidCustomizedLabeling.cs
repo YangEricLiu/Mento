@@ -52,7 +52,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             CustomizedLabellingSettings.SelectCommodityComboBox(input.InputData.Commodity);
 
             //Select 能效标识级别 from dropdown list.
-            CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevel);
+            CustomizedLabellingSettings.SelectLabellingLevelComboBox(input.InputData.LabellingLevel);
 
             //check labelingGrade count
             int count = Convert.ToInt32(input.InputData.LabellingLevelValue);
@@ -69,7 +69,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[1]);
 
             //check labelingGrade Firstlabel&Lastlabel.
-            Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+            Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFirstLabel());
             Assert.AreEqual(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
             //Check UOM
@@ -124,7 +124,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
              CustomizedLabellingSettings.FillInNameTextField(input.InputData.CommonName);
 
              //check labelingGrade Firstlabel&Lastlabel.
-             Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+             Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFirstLabel());
              Assert.AreEqual(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
              //Check AscendingCustomizedLabellingButton is "正序"
@@ -190,13 +190,13 @@ namespace Mento.Script.Customer.CustomizedLabelling
              CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[0]);
 
              //Select 能耗标识级别=8 from dropdown list.
-             CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevels[0]);
+             CustomizedLabellingSettings.SelectLabellingLevelComboBox(input.InputData.LabellingLevels[0]);
              
              //Check AscendingCustomizedLabellingButton is "正序"
              Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetAscendingCustomizedLabellingButton());
 
              //check labelingGrade Firstlabel&Lastlabel.
-             Assert.AreEqual(input.ExpectedData.Firstlabels[0], CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+             Assert.AreEqual(input.ExpectedData.Firstlabels[0], CustomizedLabellingSettings.GetLabellingGradeFirstLabel());
              Assert.AreEqual(input.ExpectedData.Lastlabels[0], CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
              //check labelingGrade count
@@ -249,7 +249,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
              Assert.AreEqual(input.ExpectedData.Order[1], CustomizedLabellingSettings.GetDescendingCustomizedLabellingButton());
 
              //check labelingGrade Firstlabel&Lastlabel.
-             Assert.AreEqual(input.ExpectedData.Firstlabels[1], CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+             Assert.AreEqual(input.ExpectedData.Firstlabels[1], CustomizedLabellingSettings.GetLabellingGradeFirstLabel());
              Assert.AreEqual(input.ExpectedData.Lastlabels[1], CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
              //Check Labelling right Value
@@ -310,10 +310,10 @@ namespace Mento.Script.Customer.CustomizedLabelling
              CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPIType);
 
              //Select 能耗标识级别=8 from dropdown list.
-             CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevel);
+             CustomizedLabellingSettings.SelectLabellingLevelComboBox(input.InputData.LabellingLevel);
 
              //check labelingGrade Firstlabel&Lastlabel.
-             Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+             Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFirstLabel());
              Assert.AreEqual(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
              //Check AscendingCustomizedLabellingButton is "正序"

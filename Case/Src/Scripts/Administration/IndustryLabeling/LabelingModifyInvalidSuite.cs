@@ -45,6 +45,8 @@ namespace Mento.Script.Administration.IndustryLabeling
         [MultipleTestDataSource(typeof(IndustryLabelingData[]), typeof(LabelingModifyInvalidSuite), "TC-J1-FVT-IndustrylabelingSetting-Modify-001")]
         public void ModifyIndustryLabelingCancelled(IndustryLabelingData input)
         {
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             //Click a labeling(行业=全行业，气候分区=严寒地区A区 ) from list and click 修改 button.
             IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry,input.InputData.ClimateRegion);
             IndustryLabelingSetting.ClickModifyLabeling();
@@ -84,6 +86,8 @@ namespace Mento.Script.Administration.IndustryLabeling
         [MultipleTestDataSource(typeof(IndustryLabelingData[]), typeof(LabelingModifyInvalidSuite), "TC-J1-FVT-IndustrylabelingSetting-Modify-002")]
         public void ModifyIndustryLabelingInvalid(IndustryLabelingData input)
         {
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             //Click a Labeling(行业=全行业; 气候分区=严寒地区B区) from list and click 修改 button.
             IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry, input.InputData.ClimateRegion);
             IndustryLabelingSetting.ClickModifyLabeling();

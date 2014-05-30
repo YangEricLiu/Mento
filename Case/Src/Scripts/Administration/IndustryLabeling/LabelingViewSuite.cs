@@ -45,6 +45,8 @@ namespace Mento.Script.Administration.IndustryLabeling
         [MultipleTestDataSource(typeof(IndustryLabelingData[]), typeof(LabelingViewSuite), "TC-J1-FVT-IndustrylabelingSetting-View-101")]
         public void ViewMapAndLocation(IndustryLabelingData input)
         {
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             //Click one Labeling from Labeling List.
             IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industrys[0], input.InputData.ClimateRegion);
 

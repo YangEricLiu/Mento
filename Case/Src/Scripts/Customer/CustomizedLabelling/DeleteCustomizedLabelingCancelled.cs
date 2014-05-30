@@ -52,16 +52,33 @@ namespace Mento.Script.Customer.CustomizedLabelling
             TimeManager.LongPause();
 
             //After click confirmation 取消 button.
-            CustomizedLabellingSettings.ClickUpdateButton();
+            CustomizedLabellingSettings.ClickCancelButton();
 
             //· The labeling still display in labeling list.
             Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
+
+
+            //click 删除 button.
+            CustomizedLabellingSettings.ClickDeleteButton();
+            TimeManager.LongPause();
 
             //After click confirmation "X" button.
             CustomizedLabellingSettings.ClickCloseButton();
 
             // The labeling still display in labeling list.
             Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
+
+            //Go to other page (e.g. HomePage) then back to customized labeling page to view.
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HomePage);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            CustomizedLabellingSettings.NavigatorToCustomizedLabelling();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //· The labeling still display in labeling list correctly.
+            Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
+
 
         }
     }

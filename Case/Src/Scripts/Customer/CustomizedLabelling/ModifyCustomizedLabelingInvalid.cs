@@ -45,7 +45,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             TimeManager.LongPause();
 
             //Click Cancel button directly.
-            CustomizedLabellingSettings.ClickUpdateButton();
+            CustomizedLabellingSettings.ClickCancelButton();
 
             //check the labeling's data
             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
@@ -54,7 +54,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             Assert.AreEqual(input.ExpectedData.LabellingLevel, CustomizedLabellingSettings.GetLabellingLevelComboBoxValue());
 
             //check labelingGrade Firstlabel&Lastlabel.
-            Assert.AreEqual(input.ExpectedData.Firstlabels[0], CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+            Assert.AreEqual(input.ExpectedData.Firstlabels[0], CustomizedLabellingSettings.GetLabellingGradeFirstLabel());
             Assert.AreEqual(input.ExpectedData.Lastlabels[0], CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
             //Check AscendingCustomizedLabellingButton is "正序"
@@ -89,7 +89,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             // Change all fields as TestData. 
             CustomizedLabellingSettings.FillInNameTextField(input.InputData.CommonNames[1]);
             CustomizedLabellingSettings.SelectCommodityComboBox(input.InputData.Commodities[1]);
-            CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevels[1]);
+            CustomizedLabellingSettings.SelectLabellingLevelComboBox(input.InputData.LabellingLevels[1]);
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[1]);
 
             //Input Labelling Left Value
@@ -99,7 +99,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             }
 
             //Click Cancel button directly.
-            CustomizedLabellingSettings.ClickUpdateButton();
+            CustomizedLabellingSettings.ClickCancelButton();
 
             //Go to select "Modify to 自定义能效标识9"
             CustomizedLabellingSettings.FocusOnCustomizedLabelling(input.InputData.CommonNames[0]);
@@ -148,7 +148,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             Assert.AreEqual(input.ExpectedData.LabellingLevel, CustomizedLabellingSettings.GetLabellingLevelComboBoxValue());
 
             //check labelingGrade Firstlabel&Lastlabel.
-            Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+            Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFirstLabel());
             Assert.AreEqual(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
             //Check AscendingCustomizedLabellingButton is "正序"

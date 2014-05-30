@@ -41,6 +41,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
         public void ModifyCustomizedLabelingValid01(CustomizedLabellingSettingData input)
         {
             //Click an exist labelling.
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             CustomizedLabellingSettings.FocusOnCustomizedLabelling(input.InputData.CommonNames[0],input.ExpectedData.ConfigurationUser);
             TimeManager.LongPause();
             
@@ -51,7 +53,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             Assert.AreEqual(input.InputData.LabellingLevels[0], CustomizedLabellingSettings.GetLabellingLevelComboBoxValue());
 
             //check labelingGrade Firstlabel&Lastlabel.
-            Assert.AreEqual(input.ExpectedData.Firstlabels[0], CustomizedLabellingSettings.GetLabellingGradeFrontLabel());
+            Assert.AreEqual(input.ExpectedData.Firstlabels[0], CustomizedLabellingSettings.GetLabellingGradeFirstLabel());
             Assert.AreEqual(input.ExpectedData.Lastlabels[0], CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
             //Check AscendingCustomizedLabellingButton is "正序"
@@ -87,7 +89,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             CustomizedLabellingSettings.SelectCommodityComboBox(input.InputData.Commodities[1]);
 
             //Change 能耗标识级别=4 from dropdown list.
-            CustomizedLabellingSettings.SelectCustomizedLabellingLevelComboBox(input.InputData.LabellingLevels[1]);
+            CustomizedLabellingSettings.SelectLabellingLevelComboBox(input.InputData.LabellingLevels[1]);
 
             //Change to select KPI type=公休比.
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[1]);
@@ -139,13 +141,13 @@ namespace Mento.Script.Customer.CustomizedLabelling
             //Check lalelling level's left value 
             for (int num = 0; num < Convert.ToInt32(input.ExpectedData.LabellingLevelValue); num++)
             {
-                Assert.AreEqual(input.ExpectedData.LabellingValue[0][num].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(num + 1));
+                Assert.AreEqual(input.ExpectedData.LabellingValue[1][num].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(num + 1));
             }
 
             //Check lalelling level's right value 
             for (int num = 1; num < Convert.ToInt32(input.ExpectedData.LabellingLevelValue) - 1; num++)
             {
-                Assert.AreEqual(input.ExpectedData.LabellingValue[0][num].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num + 1));
+                Assert.AreEqual(input.ExpectedData.LabellingValue[1][num].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num + 1));
             }
         }
     }

@@ -46,6 +46,8 @@ namespace Mento.Script.Administration.IndustryLabeling
         [MultipleTestDataSource(typeof(IndustryLabelingData[]), typeof(LabelingAddInvalidSuite), "TC-J1-FVT-IndustryLabelingSetting-Add-001")]
         public void AddIndustryLabelingCancelled(IndustryLabelingData input)
         {
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             int OriginalRowsNumber=IndustryLabelingSetting.LabelingList.GetCurrentRowsNumber();
 
             //Click +能效标识 buttons.

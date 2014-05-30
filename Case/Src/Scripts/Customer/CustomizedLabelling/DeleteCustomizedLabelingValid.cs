@@ -60,7 +60,16 @@ namespace Mento.Script.Customer.CustomizedLabelling
             // Deleted labeling can't display in labeling list correctly.
             Assert.IsFalse(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonNames[0]));
 
+            //Go to other page (e.g. HomePage) then back to customized labeling page to view.
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HomePage);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            CustomizedLabellingSettings.NavigatorToCustomizedLabelling();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
+            //· The labeling still display in labeling list correctly.
+            Assert.IsFalse(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
 
         }
 

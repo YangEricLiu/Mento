@@ -20,10 +20,8 @@ namespace Mento.ScriptCommon.Library.Functions
         #region button
         private static Button CreatButton = JazzButton.CreatCustomizedLabellingButton;
         private static Button SaveButton = JazzButton.SaveCustomizedLabellingButton;
-        private static Button UpdateButton = JazzButton.UpdateCustomizedLabellingButton;
         private static Button ModifyButton = JazzButton.ModifyCustomizedLabellingButton;
         private static Button DeleteButton = JazzButton.DeleteCustomizedLabellingButton;
-        private static Button CloseButton = JazzButton.CloseCustomizedLabellingButton;
         private static RadioButton AscendingButton = JazzButton.CustomizedLabellingAscendingOrderButton;
         private static RadioButton DescendingButton = JazzButton.CustomizedLabellingDescendingOrderButton;
         #endregion
@@ -88,9 +86,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void ClickUpdateButton()
+        public void ClickCancelButton()
         {
-            UpdateButton.Click();
+            JazzMessageBox.MessageBox.GiveUp();
         }
 
         /// <summary>
@@ -120,7 +118,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickCloseButton()
         {
-            CloseButton.Click();
+            JazzMessageBox.MessageBox.Close();
         }
 
 
@@ -182,16 +180,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectCommodityComboBox(string ItemName)
         {
             CommodityComboBox.SelectItem(ItemName);
-        }
-
-        /// <summary>
-        /// Select CustomizedLabellingLevel combox
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public void SelectCustomizedLabellingLevelComboBox(string ItemName)
-        {
-            LabellingLevelComboBox.SelectItem(ItemName);
         }
 
         /// <summary>
@@ -280,11 +268,11 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Get CustomizedLabellingFrontLabel 
+        /// Get CustomizedLabellingFirstLabel 
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public string GetLabellingGradeFrontLabel()
+        public string GetLabellingGradeFirstLabel()
         {
             return CustomizedLabellingGrade.GetFirstGradeItemLabel();
         }

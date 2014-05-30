@@ -47,6 +47,8 @@ namespace Mento.Script.Administration.IndustryLabeling
         {
             //Click a Labeling(行业=学校，气候分区=温和地区 ) from list and click 删除 button.
             //·Pop up window show 是否删除.
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             IndustryLabelingSetting.FocusOnLabeling(input.InputData.Industry,input.InputData.ClimateRegion);
             TimeManager.LongPause();
             IndustryLabelingSetting.ClickDeleteLabeling();

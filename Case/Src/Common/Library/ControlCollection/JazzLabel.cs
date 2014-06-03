@@ -93,7 +93,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Label WidgetShareResourceUserLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetShareResourceUser);
         public static Label AnnotationTextLabel = GetControl<Label>(JazzControlLocatorKey.LabelAnnotationText);
         public static Label MaxWidgetCommentLabel = GetControl<Label>(JazzControlLocatorKey.LabelMaxWidgetComment);
-
+        public static Label SaveDashboardDialogHierarchyLabel = GetControl<Label>(JazzControlLocatorKey.LabelSaveDashboardDialogHierarchy);
         #endregion
 
         #region Energy View

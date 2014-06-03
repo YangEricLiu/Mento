@@ -272,12 +272,22 @@ namespace Mento.ScriptCommon.Library.Functions
             MoreMenu.OpenMoreButton();
         }
 
+        #region Dashboard
+
         public void SaveToDashboard(string widgetName, string[] hierarchyName, bool isCreateDashboard, string dashboardName)
         {
             MoreMenu.SwitchMenuItem(EnergyViewMoreOption.ToDashboard);
             TimeManager.FlashPause();
 
             DashboardDialog.Save(widgetName, hierarchyName, isCreateDashboard, dashboardName);
+        }
+
+        public void SaveToDashboardThenCancel(string widgetName, string[] hierarchyName, bool isCreateDashboard, string dashboardName)
+        {
+            MoreMenu.SwitchMenuItem(EnergyViewMoreOption.ToDashboard);
+            TimeManager.FlashPause();
+
+            DashboardDialog.SaveThenCancel(widgetName, hierarchyName, isCreateDashboard, dashboardName);
         }
 
         public void SaveToDashboardwithAnnotation(string widgetName, string[] hierarchyName, bool isCreateDashboard, string dashboardName, string comment)
@@ -287,5 +297,26 @@ namespace Mento.ScriptCommon.Library.Functions
 
             DashboardDialog.SaveWithAnnotation(widgetName, hierarchyName, isCreateDashboard, dashboardName, comment);
         }
+
+        public bool IsWidgetNameInvalid()
+        {
+            return DashboardDialog.IsWidgetNameInvalid();
+        }
+
+        public string GetWidgetNameInvalidMsg()
+        {
+            return DashboardDialog.GetWidgetNameInvalidMsg();
+        }
+
+        public void ClickCloseDashboardDialog()
+        {
+            DashboardDialog.Close();
+        }
+
+        public string GetExistedDashboardInvalidMsg()
+        {
+            return DashboardDialog.GetNewDashboardMsg();
+        }
+        #endregion
     }
 }

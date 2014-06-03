@@ -1212,6 +1212,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelEnjoyWidgetNameMin = "LabelEnjoyWidgetNameMin";
         public static string LabelMyShareWidgetMinAnnotationIcon = "LabelMyShareWidgetMinAnnotationIcon";
         public static string LabelMyShareWidgetShareUser = "LabelMyShareWidgetShareUser";
+
+        public static string LabelSaveDashboardDialogHierarchy = "LabelSaveDashboardDialogHierarchy";
         #endregion
 
         #region Energy View

@@ -1118,6 +1118,8 @@
     <add key="LabelEnjoyWidgetNameMin" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')]/span[text()='$#nameIndex']" type="XPath"/>
     <add key="LabelMyShareWidgetShareUser" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../../../../../div[contains(@class,'x-widget-body-defaul')]/div/div/div/div[2]" type="XPath"/>
 
+    <add key="LabelSaveDashboardDialogHierarchy" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[starts-with(@id,'fieldcontainer')]/tbody/tr/td[contains(@class,'x-form-invalid-under') and not(contains(@style,'display: none;'))]" type="XPath"/>
+
     </HomePage>
     
     <EnergyView>

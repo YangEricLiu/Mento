@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"DashboardInfo":[
+			{
+				"WidgetName":"Widget_Add_101_4_1",
+				"DashboardName":"Widget_Add_101_4",
+				"IsCreateDashboard":"true",
+			}],
+		},
+		"ExpectedData":
+		{
+			"invalidMessage":["必填项。"],
+		}
+	}
+]

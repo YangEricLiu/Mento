@@ -37,7 +37,32 @@ namespace Mento.ScriptCommon.Library.Functions
         //Widget annotation
         private static TextField WidgetAnnotationTextArea = JazzTextField.WidgetAnnotationTextField;
 
+        //no hierarchy selected txt
+        private static Label SaveDashboardDialogHierarchy = JazzLabel.SaveDashboardDialogHierarchyLabel;
+
         public void Save(string widgetName, string[] hierarchyNamePath, bool isCreateDashboard, string dashboardName)
+        {
+            WidgetNameTextbox.Fill(widgetName);
+            WidgetSaveHierarchy.Click();
+            if (hierarchyNamePath != null)
+            {
+                WidgetSaveHierarchyTree.SelectNode(hierarchyNamePath); 
+            }   
+            TimeManager.LongPause();
+            if (isCreateDashboard)
+            {
+                CreateDashboardButton.Click();
+                DashboardNameTextbox.Fill(dashboardName);
+            }
+            else
+            {
+                DashboardComboBox.SelectItem(dashboardName);
+            }
+
+            base.Confirm();
+        }
+
+        public void SaveThenCancel(string widgetName, string[] hierarchyNamePath, bool isCreateDashboard, string dashboardName)
         {
             WidgetNameTextbox.Fill(widgetName);
             WidgetSaveHierarchy.Click();
@@ -53,7 +78,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 DashboardComboBox.SelectItem(dashboardName);
             }
 
-            base.Confirm();
+            base.Cancel();
         }
 
         public void SaveWithAnnotation(string widgetName, string[] hierarchyNamePath, bool isCreateDashboard, string dashboardName, string comment)
@@ -148,6 +173,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetCreateNewDashboardText()
         {
             return CreateDashboardButton.GetRadioButtonLabel();
+        }
+
+        public string GetUnselectHierarchyMsg()
+        {
+            return SaveDashboardDialogHierarchy.GetLabelTextValue();
         }
     }
 }

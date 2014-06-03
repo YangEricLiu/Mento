@@ -203,6 +203,42 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.GetLabellingTooltip(position);
         }
 
+        public string[] GetAllLabellingTooltips()
+        { 
+            var allTooltips = new List<string>();
+            int tooltipsNum = GetLabellingNumber();
+
+            for (int i = 0; i < tooltipsNum; i++)
+            {
+                allTooltips.Add(GetLabellingTooltip(i));
+            }
+
+            return allTooltips.ToArray();
+        }
+
+        #endregion
+
+        #region compare labelling tooltips value
+
+        /// <summary>
+        /// Export expected string data to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportExpectedStringToExcel(string fileName)
+        {
+            ExportExpectedStringToExcel(GetAllLabellingTooltips(), fileName, IndustryLabellingPath);
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareStringsOfEnergyAnalysis(string expectedFileName, string failedFileName)
+        {
+            return CompareStringDataOfEnergyAnalysis(GetAllLabellingTooltips(), expectedFileName, failedFileName, IndustryLabellingPath);
+        }
+
         #endregion
 
     }

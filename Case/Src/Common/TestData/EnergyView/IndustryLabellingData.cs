@@ -27,6 +27,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string UnitTypeValue { get; set; }
 
         public YearAndMonth[] YearAndMonth { get; set; }
+
+        public string[] failedFileName { get; set; }
     }
 
     public class IndustryLabellingOutput : ExpectedTestDataBase
@@ -36,6 +38,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] popupNotes { get; set; }
         public string ClearAllMessage { get; set; }
         public string[][] LabellingTooltips { get; set; }
+        public string[] expectedFileName { get; set; }
     }
 
     public class YearAndMonth

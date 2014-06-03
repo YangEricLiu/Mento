@@ -708,6 +708,44 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        #region for labelling verification
+
+        /// <summary>
+        /// Export expected string data to excel file
+        /// </summary>
+        /// <param name="hierarchyPaths"></param>
+        public void ExportExpectedStringToExcel(string[] datas, string fileName, string path)
+        {
+            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+            {
+               //Export to excel
+                string actualFileName = Path.Combine(path, fileName);
+                JazzFunction.ChartViewOperation.MoveExpectedDataToExcel(datas, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
+            }
+        }
+
+        /// <summary>
+        /// Import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareStringDataOfEnergyAnalysis(string[] actualDatas, string expectedFileName, string failedFileName, string path)
+        {
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(path, expectedFileName);
+
+                string[] expectedStringDatas = JazzFunction.ChartViewOperation.ImportExpectedFileToString(filePath, JazzFunction.ChartViewOperation.sheetNameExpected);
+
+                return JazzFunction.ChartViewOperation.CompareStrings(expectedStringDatas, actualDatas, failedFileName);
+            }
+            else
+            {
+                return true;
+            }
+        }
+        #endregion
+
         #region Multiple hierarchy left region
 
         public HierarchysAndTags[] GetActualHierarchysAndTags()

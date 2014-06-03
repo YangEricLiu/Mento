@@ -655,6 +655,31 @@ namespace Mento.Utility
 
         #endregion
 
+        #region Import data table to string
+
+        /// <summary> 
+        /// Import data table to dictionary
+        /// </summary> 
+        /// <remarks>To the start of worksheet</remarks> 
+        /// <param name="workSheetName"></param> 
+        public string[] GetStringFromDataTable(DataTable table)
+        {
+            int rows = table.Rows.Count;
+            var datas = new List<string>();
+
+            //add data for dictionary
+            for (int i = 0; i < rows; i++)
+            {
+                string value = table.Rows[i][0].ToString();
+
+                datas.Add(value);
+            }
+
+            return datas.ToArray();
+        }
+
+        #endregion
+
         #region Import dictionary to data table
 
         /// <summary> 
@@ -674,6 +699,31 @@ namespace Mento.Utility
                 DataRow myRow = dt.NewRow();
                 myRow["KEY"] = dict.Key;
                 myRow["VALUE"] = dict.Value;
+
+                dt.Rows.Add(myRow);
+            }
+
+            return dt;
+        }
+
+        #endregion
+
+        #region Import string to data table
+
+        /// <summary> 
+        /// Import data table to string
+        /// </summary> 
+        /// <remarks>To the start of worksheet</remarks> 
+        /// <param name="workSheetName"></param> 
+        public DataTable GetDataTableFromString(string[] strDatas)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("VALUE");
+
+            foreach (string strData in strDatas)
+            {
+                DataRow myRow = dt.NewRow();
+                myRow["VALUE"] = strData;
 
                 dt.Rows.Add(myRow);
             }
@@ -945,7 +995,6 @@ namespace Mento.Utility
         {
             //Open excel file which restore data view expected data
             ExcelHelper handler = new ExcelHelper(filePath);
-            Dictionary<string, string> dict = new Dictionary<string, string>();
             DataTable dataOut = new DataTable();
 
             handler.OpenOrCreate();
@@ -956,6 +1005,54 @@ namespace Mento.Utility
             //Import data from the start
             dataOut = handler.GetDataTableFromExcel(sheetName);
             return handler.GetDictionaryFromDataTable(dataOut);
+        }
+   
+        #endregion
+
+        #region Export excel to string
+
+        /// <summary>
+        /// Export a excel to string
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="sheetName"></param>
+        public static void ImportToString(string filePath, string sheetName, out string[] datas)
+        {
+            //Open excel file which restore data view expected data
+            ExcelHelper handler = new ExcelHelper(filePath);
+            DataTable dataOut = new DataTable();
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
+
+            //Import data from the start
+            dataOut = handler.GetDataTableFromExcel(sheetName);
+            datas = handler.GetStringFromDataTable(dataOut);
+
+            handler.Dispose();
+        }
+
+        /// <summary>
+        /// Export a excel to string
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="sheetName"></param>
+        public static string[] ImportToString(string filePath, int sheetName)
+        {
+            //Open excel file which restore data view expected data
+            ExcelHelper handler = new ExcelHelper(filePath);
+            DataTable dataOut = new DataTable();
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
+
+            //Import data from the start
+            dataOut = handler.GetDataTableFromExcel(sheetName);
+            return handler.GetStringFromDataTable(dataOut);
         }
 
         #endregion
@@ -997,6 +1094,34 @@ namespace Mento.Utility
 
             DataTable dt = new DataTable();
             dt = handler.GetDataTableFromDictionary(dict);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Microsoft.Office.Interop.Excel.Worksheet sheet = handler.AddWorksheet(sheetName);
+
+            //Import data from the start
+            handler.ImportDataTable(sheet, headers, dt);
+
+            handler.Save();
+            handler.Dispose();
+        }
+
+        #endregion
+
+        #region Export string to excel file
+
+        public static void ImportStringToExcel(string[] datas, string fileName, string sheetName, string[] headers = null)
+        {
+            FileInfo excelFile = new FileInfo(fileName);
+            if (!excelFile.Directory.Exists)
+                excelFile.Directory.Create();
+
+            //Open excel file which restore scripts data
+            ExcelHelper handler = new ExcelHelper(fileName, true);
+
+            DataTable dt = new DataTable();
+            dt = handler.GetDataTableFromString(datas);
 
             handler.OpenOrCreate();
 

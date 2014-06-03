@@ -11,6 +11,7 @@
 			    "year":"2012",
 				"month":"全年",
 			}],
+			"failedFileName":["F-ConsumptionUnitIndicatorIndustryLabelling-View-101-1-0.xls"],
 		},
 		"ExpectedData":
 		{
@@ -18,6 +19,7 @@
 			"IndustryValue":"寒冷地区全行业",
 			"LabellingTooltips":[["<= -283.8KWH/人", "-283.8KWH/人 - 987.4KWH/人", "987.4KWH/人 - 2,258.5KWH/人", "2,258.5KWH/人 - 3,529.7KWH/人", "> 3,529.7KWH/人", "V1_BuildingBC: 16KWH/人"], ["<= 7,378.8KWH/人", "7,378.8KWH/人 - 13,904.6KWH/人", "13,904.6KWH/人 - 20,430.5KWH/人", "20,430.5KWH/人 - 26,956.3KWH/人", "> 26,956.3KWH/人", "V2_BuildingBC: 41,088KWH/人", "V3_BuildingBC: 61,632KWH/人", "V1_BuildingBC: 20,544KWH/人"]],
 			"popupNotes":["该节点为非楼宇节点，请重新选择节点", "缺少人口属性的部分无法绘图。请设置后再试", "对比数据点已选满"],
+			"expectedFileName":["ConsumptionUnitIndicatorIndustryLabelling-View-101-1-0.xls"],
 		}
 	}
 ]

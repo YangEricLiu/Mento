@@ -73,6 +73,11 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
             Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
 
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0]);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            /*
             for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
             {
                 Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
@@ -108,6 +113,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             {
                 Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
             }
+            */
         }
 
         [Test]

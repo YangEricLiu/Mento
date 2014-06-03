@@ -15,6 +15,7 @@ namespace Mento.ScriptCommon.Library.Functions
     {
         public string sheetNameFailed = "SheetNot";
         public string sheetNameExpected = "SheetExpected";
+        public string sheetNameHeader = "Header";
 
         #region Import Excel to Data Table
 
@@ -31,6 +32,18 @@ namespace Mento.ScriptCommon.Library.Functions
             ExcelHelper.ImportToDataTable(filePath, sheetName, out data);
 
             return data;
+        }
+
+        /// <summary>
+        /// Export a excel header data to cells value
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="sheetName"></param>
+        public ExcelHelper.CellsValue[] ImportExpectedFileHeaderDataToCellsValue(string fileName, string sheetName, ExcelHelper.CellsValue[] actualHeaderDatas)
+        {
+            string filePath = Path.Combine(ExecutionConfig.expectedDataViewExcelFileDirectory, fileName);
+
+            return ExcelHelper.ImportHeaderDataToCellsValue(filePath, sheetName, actualHeaderDatas);
         }
 
         /// <summary>
@@ -183,6 +196,37 @@ namespace Mento.ScriptCommon.Library.Functions
             return areEqual; 
         }
 
+        /// <summary>
+        /// Compare 2 header data, throw exception for the first not equal value
+        /// </summary>
+        /// <param name="expectedDataTable"></param>
+        /// <param name="actualDataTable"></param>
+        public ExcelHelper.CellsValue[] CompareHeaderDatas(ExcelHelper.CellsValue[] expectedHeaderData, ExcelHelper.CellsValue[] actualHeaderDatas)
+        {
+            var newActualHeaderData = new List<ExcelHelper.CellsValue>();
+            ExcelHelper.CellsValue tmpData = new ExcelHelper.CellsValue();
+
+            for (int i = 0; i < expectedHeaderData.Length; i++)
+            {
+                tmpData.cellsIndex.firstRowIndex = expectedHeaderData[i].cellsIndex.firstRowIndex;
+                tmpData.cellsIndex.firstColumnIndex = expectedHeaderData[i].cellsIndex.firstColumnIndex;
+                tmpData.cellsIndex.lastRowIndex = expectedHeaderData[i].cellsIndex.lastRowIndex;
+                tmpData.cellsIndex.lastColumnIndex = expectedHeaderData[i].cellsIndex.lastColumnIndex;
+
+                if (expectedHeaderData[i].cellsValue != actualHeaderDatas[i].cellsValue)
+                {
+                    tmpData.cellsValue = "期望值:" + expectedHeaderData[i].cellsValue + "\n" + "实际值:" + actualHeaderDatas[i].cellsValue;
+                }
+                else
+                {
+                    tmpData.cellsValue = expectedHeaderData[i].cellsValue;
+                }
+
+                newActualHeaderData.Add(tmpData);
+            }
+
+            return newActualHeaderData.ToArray();
+        }
         #endregion
 
         #region use access enginine and not work and signed as private

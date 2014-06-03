@@ -543,6 +543,18 @@ namespace Mento.Utility
         }
 
         /// <summary> 
+        /// Import Excel header data to CellsValue
+        /// </summary> 
+        /// <remarks>To the start of worksheet</remarks> 
+        /// <param name="workSheetName"></param> 
+        public CellsValue[] GetHeaderDataFromExcel(string workSheetName, CellsValue[] actualHeaderDatas)
+        {
+            Excel.Worksheet mySheet = GetWorksheet(workSheetName);  //得到工作表
+
+            return this.GetHeaderDataFromExcel(mySheet, actualHeaderDatas);
+        }
+
+        /// <summary> 
         /// Import Excel to Data Table
         /// </summary> 
         /// <remarks>To the start of worksheet</remarks> 
@@ -586,6 +598,33 @@ namespace Mento.Utility
             }
 
             return dt;
+        }
+
+        /// <summary> 
+        /// Import Excel header data to CellsValue
+        /// </summary> 
+        /// <remarks>To the start of worksheet</remarks> 
+        /// <param name="mySheet"></param> 
+        public CellsValue[] GetHeaderDataFromExcel(Excel.Worksheet mySheet, CellsValue[] actualHeaderDatas)
+        {
+            var hdt = new List<CellsValue>();
+            CellsValue tmphdt = new CellsValue();
+
+            foreach (CellsValue actualHeaderData in actualHeaderDatas)
+            {
+                Excel.Range temp = (Excel.Range)mySheet.Cells[actualHeaderData.cellsIndex.firstRowIndex, actualHeaderData.cellsIndex.firstColumnIndex];
+                string strValue = temp.Text.ToString();
+
+                tmphdt.cellsIndex.firstRowIndex = actualHeaderData.cellsIndex.firstRowIndex;
+                tmphdt.cellsIndex.firstColumnIndex = actualHeaderData.cellsIndex.firstColumnIndex;
+                tmphdt.cellsIndex.lastRowIndex = actualHeaderData.cellsIndex.lastRowIndex;
+                tmphdt.cellsIndex.lastColumnIndex = actualHeaderData.cellsIndex.lastColumnIndex;
+                tmphdt.cellsValue = strValue;
+
+                hdt.Add(tmphdt);
+            }
+
+            return hdt.ToArray();
         }
 
         #endregion
@@ -817,6 +856,27 @@ namespace Mento.Utility
 
             //Import data from the start
             return handler.GetDataTableFromExcel(sheetIndex);
+        }
+
+        /// <summary>
+        /// Export a excel Header Data to CellsValue
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="sheetName"></param>
+        public static CellsValue[] ImportHeaderDataToCellsValue(string filePath, string sheetName, CellsValue[] actualHeaderDatas)
+        {
+            //Open excel file which restore data view expected data
+            ExcelHelper handler = new ExcelHelper(filePath);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
+
+            //Import data from the start
+            return handler.GetHeaderDataFromExcel(sheetName, actualHeaderDatas);
+
+            //handler.Dispose();
         }
 
         /// <summary>

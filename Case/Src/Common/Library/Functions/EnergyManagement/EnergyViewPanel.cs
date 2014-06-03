@@ -414,8 +414,10 @@ namespace Mento.ScriptCommon.Library.Functions
                 ExcelHelper.CellsValue[] headersSheet = GetHeaderData();
 
                 DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
+                ExcelHelper.CellsValue[] expectedHeadersSheet = JazzFunction.DataViewOperation.ImportExpectedFileHeaderDataToCellsValue(filePath, JazzFunction.DataViewOperation.sheetNameHeader, headersSheet);
+                ExcelHelper.CellsValue[] resultHeadersSheet = JazzFunction.DataViewOperation.CompareHeaderDatas(expectedHeadersSheet, headersSheet);
 
-                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName, headersSheet);
+                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName, resultHeadersSheet);
             }
             else
             {

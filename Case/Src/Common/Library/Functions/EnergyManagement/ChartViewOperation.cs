@@ -202,6 +202,10 @@ namespace Mento.ScriptCommon.Library.Functions
 
                     compareStr.Add(failedValue);
                 }
+                else 
+                {
+                    compareStr.Add(expectedStr[i]);
+                }
             }
 
             if (!areEqual)

@@ -17,7 +17,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.CustomizedLabelling
 {
-    public class ModifyCustomizedLabelingInvalid
+    public class ModifyCustomizedLabelingInvalidSuite
     {
         private CustomizedLabellingSettings CustomizedLabellingSettings = JazzFunction.CustomizedLabellingSettings;
 
@@ -37,7 +37,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Modify-001")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalid), "TC-J1-FVT-CustomizedLabellingSetting-Modify-001")]
+        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalidSuite), "TC-J1-FVT-CustomizedLabellingSetting-Modify-001")]
         public void ModifyCustomizedLabelingCancelled(CustomizedLabellingSettingData input)
         {
             //Click a labeling  from list and click 修改 button.
@@ -131,7 +131,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Modify-002")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalid), "TC-J1-FVT-CustomizedLabellingSetting-Modify-002")]
+        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalidSuite), "TC-J1-FVT-CustomizedLabellingSetting-Modify-002")]
         public void ModifyCustomizedLabellingWithoutChange(CustomizedLabellingSettingData input)
         {
             //Click an exist labeling from list and click 修改 button.
@@ -180,7 +180,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Modify-003")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalid), "TC-J1-FVT-CustomizedLabellingSetting-Modify-003")]
+        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalidSuite), "TC-J1-FVT-CustomizedLabellingSetting-Modify-003")]
         public void ModifyCustomizedLabelingInvalid(CustomizedLabellingSettingData input)
         {
             //Click an exist labeling from list and click 修改 button.
@@ -204,7 +204,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Modify-004")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalid), "TC-J1-FVT-CustomizedLabellingSetting-Modify-004")]
+        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalidSuite), "TC-J1-FVT-CustomizedLabellingSetting-Modify-004")]
         public void ModifyCustomizedLabellingDuplicatedName(CustomizedLabellingSettingData input)
         {
             //Click an exist labeling from list and click 修改 button.

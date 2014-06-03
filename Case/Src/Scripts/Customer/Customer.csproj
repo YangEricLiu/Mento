@@ -50,12 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomizedLabelling\AddInvalidCustomized Labelling.cs" />
-    <Compile Include="CustomizedLabelling\AddValidCustomizedLabeling.cs" />
-    <Compile Include="CustomizedLabelling\DeleteCustomizedLabelingCancelled.cs" />
-    <Compile Include="CustomizedLabelling\DeleteCustomizedLabelingValid.cs" />
-    <Compile Include="CustomizedLabelling\ModifyCustomizedLabelingInvalid.cs" />
-    <Compile Include="CustomizedLabelling\ModifyCustomizedLabelingValid.cs" />
+    <Compile Include="CustomizedLabelling\AddInvalidCustomizedLabellingSuite.cs" />
+    <Compile Include="CustomizedLabelling\AddValidCustomizedLabelingSuite.cs" />
+    <Compile Include="CustomizedLabelling\DeleteCustomizedLabelingCancelledSuite.cs" />
+    <Compile Include="CustomizedLabelling\DeleteCustomizedLabelingValidSuite.cs" />
+    <Compile Include="CustomizedLabelling\ModifyCustomizedLabelingInvalidSuite.cs" />
+    <Compile Include="CustomizedLabelling\ModifyCustomizedLabelingValidSuite.cs" />
     <Compile Include="HierarchyConfiguration\AddInvalidHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\AddValidHierarchyNodeSuite.cs" />
     <Compile Include="HierarchyConfiguration\AddValidAreaDimension.cs" />

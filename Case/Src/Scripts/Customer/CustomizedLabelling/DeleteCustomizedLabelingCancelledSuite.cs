@@ -17,7 +17,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.CustomizedLabelling
 {
-    public class DeleteCustomizedLabelingValid
+    public class DeleteCustomizedLabelingCancelledSuite
     {
         private CustomizedLabellingSettings CustomizedLabellingSettings = JazzFunction.CustomizedLabellingSettings;
 
@@ -35,14 +35,14 @@ namespace Mento.Script.Customer.CustomizedLabelling
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Delete-101")]
+        [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Delete-001")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(DeleteCustomizedLabelingValid), "TC-J1-FVT-CustomizedLabellingSetting-Delete-101")]
-        public void DeleteCustomizedLabelingValid01(CustomizedLabellingSettingData input)
+        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(DeleteCustomizedLabelingCancelledSuite), "TC-J1-FVT-CustomizedLabellingSetting-Delete-001")]
+        public void DeleteCustomizedLabelingCancelled01(CustomizedLabellingSettingData input)
         {
             //Click a labeling from list 
-            CustomizedLabellingSettings.FocusOnCustomizedLabelling(input.InputData.CommonNames[0]);
-            Assert.AreEqual(input.ExpectedData.CommonNames[0], CustomizedLabellingSettings.GetNameTextFieldValue());
+            CustomizedLabellingSettings.FocusOnCustomizedLabelling(input.InputData.CommonName);
+            Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
             Assert.AreEqual(input.ExpectedData.Commodity, input.InputData.Commodity);
             Assert.AreEqual(input.ExpectedData.LabellingLevel, input.InputData.LabellingLevel);
 
@@ -51,14 +51,22 @@ namespace Mento.Script.Customer.CustomizedLabelling
             CustomizedLabellingSettings.ClickDeleteButton();
             TimeManager.LongPause();
 
-            //After click confirmation 确定 button.
-            JazzMessageBox.MessageBox.Delete();
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
+            //After click confirmation 取消 button.
+            CustomizedLabellingSettings.ClickCancelButton();
 
-            //Go to labeling list to check.
-            // Deleted labeling can't display in labeling list correctly.
-            Assert.IsFalse(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonNames[0]));
+            //· The labeling still display in labeling list.
+            Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
+
+
+            //click 删除 button.
+            CustomizedLabellingSettings.ClickDeleteButton();
+            TimeManager.LongPause();
+
+            //After click confirmation "X" button.
+            CustomizedLabellingSettings.ClickCloseButton();
+
+            // The labeling still display in labeling list.
+            Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
 
             //Go to other page (e.g. HomePage) then back to customized labeling page to view.
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HomePage);
@@ -69,10 +77,9 @@ namespace Mento.Script.Customer.CustomizedLabelling
             TimeManager.LongPause();
 
             //· The labeling still display in labeling list correctly.
-            Assert.IsFalse(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
+            Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
+
 
         }
-
-
     }
 }

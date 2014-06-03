@@ -17,7 +17,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.CustomizedLabelling
 {
-    public class AddInvalidCustomizedLabeling
+    public class AddInvalidCustomizedLabellingSuite
     {
         private CustomizedLabellingSettings CustomizedLabellingSettings = JazzFunction.CustomizedLabellingSettings;
 
@@ -37,7 +37,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-001")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddInvalidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-001")]
+        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddInvalidCustomizedLabellingSuite), "TC-J1-FVT-CustomizedLabellingSetting-Add-001")]
         public void AddCustomizedLabelingCancelled(CustomizedLabellingSettingData input)
         {
             //Click "+能效标识" button 
@@ -107,7 +107,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-002")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddInvalidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-002")]
+        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddInvalidCustomizedLabellingSuite), "TC-J1-FVT-CustomizedLabellingSetting-Add-002")]
         public void AddCustomizedLabellingInvalid(CustomizedLabellingSettingData input)
         {
             //Click "+能效标识" button 
@@ -181,7 +181,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-003")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddInvalidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-003")]
+        [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddInvalidCustomizedLabellingSuite), "TC-J1-FVT-CustomizedLabellingSetting-Add-003")]
         public void AddCustomizedLabellingDuplicatedName(CustomizedLabellingSettingData input)
         {
             //Click "+能效标识" button 

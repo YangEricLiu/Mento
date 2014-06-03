@@ -108,7 +108,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-002")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddInvalidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-002")]
-        public void AddCustomizedLabelingInvalid01(CustomizedLabellingSettingData input)
+        public void AddCustomizedLabellingInvalid(CustomizedLabellingSettingData input)
         {
             //Click "+能效标识" button 
             CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();
@@ -182,7 +182,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-003")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddInvalidCustomizedLabeling), "TC-J1-FVT-CustomizedLabellingSetting-Add-003")]
-        public void AddCustomizedLabelingInvalid02(CustomizedLabellingSettingData input)
+        public void AddCustomizedLabellingDuplicatedName(CustomizedLabellingSettingData input)
         {
             //Click "+能效标识" button 
             CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();

@@ -2,12 +2,19 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "楼宇BC"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"]],
-			"tagNames":["V1_BuildingBC", "V2_BuildingBC", "V11_BuildingBC", "V22_BuildingBC", "V12_BuildingBC"],
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+				"TagsName":["V1_BuildingBC", "V2_BuildingBC"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "楼宇BAD"],
+				"TagsName":["V11_BuildingBC", "V22_BuildingBC", "V12_BuildingBC"],
+			}],
 			"SystemDimensionPath":[["楼宇BC", "空调"]],
-			"Industries":["寒冷地区全行业", "夏热冬暖地区全行业"],
+			"Industries":[["行业能效标识", "寒冷地区全行业"], ["行业能效标识", "夏热冬暖地区全行业"]],
 			"UnitTypeValue":"单位供冷面积",
 			"YearAndMonth":[{
+				"year":"2014",
 				"month":"01",
 			},
 			{
@@ -20,14 +27,15 @@
 				"IsCreateDashboard":"true",
 				"DashboardName":"LabellingConsumption1012",
 			}],
+			"failedFileName":["F-ConsumptionUnitIndicatorIndustryLabelling-View-101-2-0.xls", "F-ConsumptionUnitIndicatorIndustryLabelling-View-101-2-1.xls", "F-ConsumptionUnitIndicatorIndustryLabelling-View-101-2-2.xls"],
 		},
 		"ExpectedData":
 		{
 			"UnitTypeValue":"单位人口",
 			"IndustryValue":"寒冷地区全行业",
-			"LabellingTooltips":[["<= -283.8KWH/人", "-283.8KWH/人 - 987.4KWH/人", "987.4KWH/人 - 2,258.5KWH/人", "2,258.5KWH/人 - 3,529.7KWH/人", "> 3,529.7KWH/人", "V2_BuildingBC: 32KWH/人", "V1_BuildingBC: 16KWH/人"], ["<= 81,840KWH/人", "81,840KWH/人 - 81,840KWH/人", "81,840KWH/人 - 81,840KWH/人", "81,840KWH/人 - 81,840KWH/人", "> 81,840KWH/人", "V2_BuildingBC: 32KWH/人", "V1_BuildingBC: 16KWH/人"], ["<= 1.6Ton/M²", "1.6Ton/M² - 1.9Ton/M²", "1.9Ton/M² - 2.3Ton/M²", "2.3Ton/M² - 2.7Ton/M²", "> 2.7Ton/M²", "V12_BuildingBC: 384Ton/M²"], ["<= 412,359.3KWH/人", "412,359.3KWH/人 - 412,393KWH/人", "412,393KWH/人 - 412,426.8KWH/人", "412,426.8KWH/人 - 412,460.5KWH/人", "> 412,460.5KWH/人", "V2_BuildingBC: 41,088KWH/人", "V1_BuildingBC: 20,544KWH/人"]],
 			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试", "对比数据点已选满"],
 			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
+			"expectedFileName":["ConsumptionUnitIndicatorIndustryLabelling-View-101-2-0.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-2-1.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-2-2.xls"],
 		}
 	}
 ]

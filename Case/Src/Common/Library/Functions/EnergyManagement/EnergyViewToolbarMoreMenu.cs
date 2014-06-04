@@ -11,7 +11,10 @@ namespace Mento.ScriptCommon.Library.Functions
     internal class EnergyViewToolbarMoreMenu
     {
         private static MenuButton MoreButton = JazzButton.EnergyViewMoreButton;
+        private static MenuButton LabellingIndustryConvertButton = JazzButton.LabellingIndustryConvertMenuButton;
 
+        #region more button
+        
         private static Dictionary<EnergyViewMoreOption, string[]> MenuItems = new Dictionary<EnergyViewMoreOption, string[]>()
         {
             {EnergyViewMoreOption.Last7Days,new string[]{"默认时间","之前7天"}},
@@ -48,6 +51,21 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             MoreButton.Open();
         }
+
+        #endregion
+
+        #region Labelling industry menu button
+        
+        public void OpenIndustryConvertButton()
+        {
+            LabellingIndustryConvertButton.Open();
+        }
+
+        public void SwitchLabellingIndustryMenuItem(string[] menuItems)
+        {
+            LabellingIndustryConvertButton.SelectItemLabelling(menuItems);
+        }
+        #endregion
     }
 
     public enum EnergyViewMoreOption

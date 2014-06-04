@@ -368,6 +368,7 @@
     <Content Include="Data\Customer\CustomizedLabelling\ModifyCustomizedLabelingInvalid\TC-J1-FVT-CustomizedLabellingSetting-Modify-002.json" />
     <Content Include="Data\Customer\CustomizedLabelling\ModifyCustomizedLabelingInvalid\TC-J1-FVT-CustomizedLabellingSetting-Modify-003.json" />
     <Content Include="Data\Customer\CustomizedLabelling\ModifyCustomizedLabelingInvalid\TC-J1-FVT-CustomizedLabellingSetting-Modify-004.json" />
+    <None Include="Data\Customer\HierarchyConfiguration\AddInvalidAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-001-AddInvalidAreaCancel.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-4.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-3.json" />
     <None Include="Data\Customer\HierarchyConfiguration\AddInvalidHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Add-001-5.json" />

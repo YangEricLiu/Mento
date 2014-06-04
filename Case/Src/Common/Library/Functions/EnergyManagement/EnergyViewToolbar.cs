@@ -175,9 +175,9 @@ namespace Mento.ScriptCommon.Library.Functions
             ConvertTargetButton.SwitchRatioIndustryMenuItem(industry);
         }
 
-        public void SelectLabellingIndustryConvertTarget(string industry)
+        public void SelectLabellingIndustryConvertTarget(string[] industry)
         {
-            ConvertTargetButton.SwitchLabellingIndustryMenuItem(industry);
+            MoreMenu.SwitchLabellingIndustryMenuItem(industry);
         }
 
         public string GetIndustryButtonText()
@@ -270,6 +270,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public void OpenMoreButton()
         {
             MoreMenu.OpenMoreButton();
+        }
+
+        public void OpenIndustryConvertButton()
+        {
+            MoreMenu.OpenIndustryConvertButton();
         }
 
         #region Dashboard

@@ -36,6 +36,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
+        /// Simulate the mouse ClickAndHold the button
+        /// </summary>
+        /// <returns></returns>
+        public void ClickAndHold()
+        {
+            ElementHandler.ClickAndHold(this.RootElement);
+        }
+
+        /// <summary>
         /// Simulate the mouse float the button
         /// </summary>
         public void Float()

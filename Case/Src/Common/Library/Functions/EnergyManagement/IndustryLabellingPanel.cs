@@ -7,6 +7,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.TestApi.WebUserInterface;
 using OpenQA.Selenium;
 using System.Data;
+using Mento.ScriptCommon.TestData.EnergyView;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -203,8 +204,23 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.GetLabellingTooltip(position);
         }
 
-        public string[] GetAllLabellingTooltips()
+        public string[] GetAllLabellingTooltips(string labellingInfo)
         { 
+            var allTooltips = new List<string>();
+            int tooltipsNum = GetLabellingNumber();
+
+            for (int i = 0; i < tooltipsNum; i++)
+            {
+                allTooltips.Add(GetLabellingTooltip(i));
+            }
+
+            allTooltips.Add(labellingInfo);
+
+            return allTooltips.ToArray();
+        }
+
+        public string[] GetAllLabellingTooltips()
+        {
             var allTooltips = new List<string>();
             int tooltipsNum = GetLabellingNumber();
 
@@ -221,12 +237,60 @@ namespace Mento.ScriptCommon.Library.Functions
         #region compare labelling tooltips value
 
         /// <summary>
+        /// Get Single Labelling Info
+        /// </summary>
+        /// <param name="hierarchyPath"></param>
+        public string GetSingleLabellingInfo(string[] hierarchyPath, YearAndMonth Time, string IndustryType, string UnitType)
+        {
+            string labellingInfo = hierarchyPath[0];
+
+            for (int i = 1; i < hierarchyPath.Length; i++)
+            {
+                labellingInfo = labellingInfo + "/" + hierarchyPath[i];
+            }
+
+            labellingInfo = "\n" + labellingInfo + "\n" + Time.year.ToString() + "-" + Time.month.ToString() + "\n" + IndustryType + "\n" + UnitType;
+            
+            return labellingInfo;
+        }
+
+        /// <summary>
+        /// Get Single Labelling Info
+        /// </summary>
+        /// <param name="hierarchyPath"></param>
+        public string GetMultiLabellingInfo(MultipleHierarchyAndtags[] multipleHierarchyAndtags, YearAndMonth Time, string IndustryType, string UnitType)
+        {
+            string labellingInfo = multipleHierarchyAndtags[0].HierarchyPath[0];
+
+            for (int j = 0; j < multipleHierarchyAndtags.Length; j++)
+            {
+                for (int i = 1; i < multipleHierarchyAndtags[j].HierarchyPath.Length; i++)
+                {
+                    labellingInfo = labellingInfo + "/" + multipleHierarchyAndtags[j].HierarchyPath[i];
+                }
+
+                labellingInfo = " : " + multipleHierarchyAndtags[j].TagsName[0];
+
+                for (int k = 1; k < multipleHierarchyAndtags[j].TagsName.Length; k++)
+                {
+                    labellingInfo = labellingInfo + "," + multipleHierarchyAndtags[j].TagsName[k];
+                }
+
+                labellingInfo = labellingInfo + "\n";
+            }
+                           
+            labellingInfo = labellingInfo + "\n" + Time.year.ToString() + "-" + Time.month.ToString() + "\n" + IndustryType + "\n" + UnitType;
+
+            return labellingInfo;
+        }
+
+        /// <summary>
         /// Export expected string data to excel file
         /// </summary>
         /// <param name="displayStep"></param>
-        public void ExportExpectedStringToExcel(string fileName)
+        public void ExportExpectedStringToExcel(string fileName, string labellingInfo)
         {
-            ExportExpectedStringToExcel(GetAllLabellingTooltips(), fileName, IndustryLabellingPath);
+            ExportExpectedStringToExcel(GetAllLabellingTooltips(labellingInfo), fileName, IndustryLabellingPath);
         }
 
         /// <summary>

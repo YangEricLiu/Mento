@@ -8,7 +8,7 @@
 		"ExpectedData":
 		{
 			"SystemDimensionPath":["SysDimAssocOrg001", "空调"],
-			"Message":"删除系统维度节点”空调”吗？\r\n您将同时删除系统维度节点下所有的数据点关联关系",
+			"Message":"$@EM.SystemDimension.UncheckNodeQuestion|(空调)",
 		}
 	},
 	{

@@ -1,3 +1,4 @@
+
 I18N.Setting = {};
 I18N.Setting.Label = {};
 I18N.Setting.Hierarchy = {};

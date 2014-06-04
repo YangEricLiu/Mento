@@ -27,6 +27,28 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        public void SelectItemLabelling(string[] itemPath)
+        {
+            this.Click();
+            TimeManager.FlashPause();
+
+            for (int i = 0; i < itemPath.Length; i++)
+            {
+                Locator itemLocator = GetMenuItemLocator(itemPath[i]);
+                if (i != (itemPath.Length - 1))
+                {
+                    ElementHandler.Float(FindChild(itemLocator));
+                    TimeManager.MediumPause();
+                }
+                else
+                {
+                    ElementHandler.Click(FindChild(itemLocator));
+                }
+                
+                TimeManager.ShortPause();
+            }
+        }
+
         public void Open()
         {
             this.Click();

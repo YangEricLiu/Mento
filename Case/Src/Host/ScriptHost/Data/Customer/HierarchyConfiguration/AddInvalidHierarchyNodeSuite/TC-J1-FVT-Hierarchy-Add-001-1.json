@@ -32,8 +32,8 @@
 			"CommonName":"BuildCancel",
 			"Code":"BuildCancel",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":
 		{
@@ -47,8 +47,8 @@
 			"CommonName":"BuildCancel2",
 			"Code":"BuildCancel2",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":
 		{
@@ -62,8 +62,8 @@
 			"CommonName":"BuildCancel3",
 			"Code":"BuildCancel3",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":
 		{

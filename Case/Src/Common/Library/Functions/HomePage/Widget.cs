@@ -342,6 +342,35 @@ namespace Mento.ScriptCommon.Library.Functions
             return MaxWidgetLabellingChart.GetLabellingTooltip(position);
         }
 
+        public string[] GetLabellingTooltip()
+        {
+            var allTooltips = new List<string>();
+            int tooltipsNum = GetLabellingNumber();
+
+            for (int i = 0; i < tooltipsNum; i++)
+            {
+                allTooltips.Add(GetLabellingTooltip(i));
+            }
+
+            return allTooltips.ToArray();
+        }
+
+        public bool CompareMaxWidgetStringData(string expectedFileName, string failedFileName, string path)
+        {
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(path, expectedFileName);
+
+                string[] expectedStringDatas = JazzFunction.ChartViewOperation.ImportExpectedFileToString(filePath, JazzFunction.ChartViewOperation.sheetNameExpected);
+
+                return JazzFunction.ChartViewOperation.CompareStrings(expectedStringDatas, GetLabellingTooltip(), failedFileName);
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public bool CompareMaxWidgetDataView(string basePath, string expectedFileName, string failedFileName)
         {
             if (ExecutionConfig.isCompareExpectedDataViewExcelFile)

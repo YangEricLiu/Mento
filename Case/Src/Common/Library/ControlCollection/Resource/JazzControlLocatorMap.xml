@@ -165,7 +165,6 @@
           <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[2]" type="XPath"/>
           <add key="MenuButtonIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[3]" type="XPath"/>
           <add key="MenuButtonCarbonIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[4]" type="XPath"/>
-          <add key="MenuButtonLabellingIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[1]" type="XPath"/>
 
         <!--Greenie modified at 2013.10.28-->
           <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[3]" type="XPath"/>
@@ -187,11 +186,13 @@
           <add key="TabButtonUnitIndicatorSystemDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.SystemDimension']]" type="XPath"/>
           <add key="TabButtonEUnitIndicatorAreaDimensionTagsTab" value="//div[@id='em-content-west-region-body']//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Glossary.AreaDimension']]" type="XPath"/>
 
-        <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.SearchData']]" type="XPath"/>
+          <add key="SplitButtonEnergyViewViewData" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.SearchData']]" type="XPath"/>
           <add key="MenuButtonEnergyViewMore" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.More']]" type="XPath"/>
+          <add key="MenuButtonLabellingIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[starts-with(@id,'button')]" type="XPath"/>
+
           <add key="ButtonEnergyViewAddTimeSpan" value="//div[contains(@id,'splitbutton') and em/button/span[text()='$@EM.AddCompareTime']]" type="XPath"/>
           <add key="ButtonEnergyViewRemoveAll" value="em-chartgrid-topbar-del" type="ID"/>
-          <add key="MenuButtonEnergyViewConvertTarget" value="//div[em/button/span[text()='标煤'] or em/button/span[text()='二氧化碳'] or em/button/span[text()='树']]" type="XPath"/>
+          <add key="MenuButtonEnergyViewConvertTarget" value="//div[@id='em-content-center-region-body']/div/div/div/div[starts-with(@id,'button')]" type="XPath"/>
           <!--<add key="MenuButtonEnergyViewConvertTarget" value="//div[@id='em-content-center-region-body']/div/div/div/div[2]" type="XPath"/>-->
           <add key="ButtonEnergyViewPeakValley" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@EM.TouCompare']]" type="XPath"/>
           <add key="ButtonModifyWidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]/div/div/div/div/div//div[3]" type="XPath"/>

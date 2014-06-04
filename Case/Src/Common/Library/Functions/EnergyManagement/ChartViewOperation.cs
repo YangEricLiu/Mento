@@ -187,13 +187,14 @@ namespace Mento.ScriptCommon.Library.Functions
                 areEqual = false;
             }
 
-            if (expectedStr.Length != actualStr.Length)
+            
+            if (expectedStr.Length != (actualStr.Length + 1))
             {
                 areEqual = false;
                 throw new Exception(String.Format("The rows count not equal, expected is {0}, actual is {1}", expectedStr.Length, actualStr.Length));
             }
-
-            for (int i = 0; i < expectedStr.Length; i++)
+            
+            for (int i = 0; i < expectedStr.Length - 1; i++)
             {
                 if (!String.Equals(expectedStr[i], actualStr[i]))
                 {
@@ -210,7 +211,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
             if (!areEqual)
             {
-
+                compareStr.Add(expectedStr[expectedStr.Length - 1]);
                 ExportFailedDataToExcel(compareStr.ToArray(), fileName, sheetNameFailed);
             }
 

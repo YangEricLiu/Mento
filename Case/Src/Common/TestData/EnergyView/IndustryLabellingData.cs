@@ -22,13 +22,15 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public DashboardInformation[] DashboardInfo { get; set; }
 
-        public string[] Industries { get; set; }
+        public string[][] Industries { get; set; }
 
         public string UnitTypeValue { get; set; }
 
         public YearAndMonth[] YearAndMonth { get; set; }
 
         public string[] failedFileName { get; set; }
+
+        public MultipleHierarchyAndtags[] MultipleHierarchyAndtags { get; set; }
     }
 
     public class IndustryLabellingOutput : ExpectedTestDataBase

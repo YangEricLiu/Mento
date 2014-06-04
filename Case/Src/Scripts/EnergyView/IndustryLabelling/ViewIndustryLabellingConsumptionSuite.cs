@@ -62,6 +62,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.ShortPause();         
 
             //time 2014-01
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
 
             EnergyViewToolbar.ClickViewButton();
@@ -73,15 +74,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
             Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
 
-            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0]);
+            string labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.ExpectedData.IndustryValue, input.ExpectedData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
             TimeManager.MediumPause();
             IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
-
-            /*
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
 
             //Go to 多层级 select BuildingBC+BuildingBAD and 确定.(待定) 
 
@@ -109,11 +105,11 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[1]));
 
             Assert.AreEqual(8, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
-            */
+
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[1], input.ExpectedData.IndustryValue, input.ExpectedData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[1], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
 
         [Test]
@@ -126,8 +122,11 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.LongPause();
 
             //Select multiple tags V(1) and V(2) from BuildingBC node and Dimension node
-            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies[0]);
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[0]);
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[0].HierarchyPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[0].TagsName[0]);
             TimeManager.ShortPause();
 
             //Switch to "system dimension" and pick V2_BuildingBC
@@ -139,24 +138,27 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
 
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[1]);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[0].TagsName[1]);
             TimeManager.ShortPause();
+
             MultiHieCompareWindow.ClickConfirmButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[0]);
 
             //time 2014-01
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
             Assert.AreEqual(7, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+
+            string labellingInfo1 = IndustryLabellingPanel.GetMultiLabellingInfo(input.InputData.MultipleHierarchyAndtags, input.InputData.YearAndMonth[0], input.InputData.Industries[0][1], input.ExpectedData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             Assert.IsTrue(EnergyViewToolbar.IsMoreMenuItemDisabled("默认时间"));
             Assert.IsTrue(EnergyViewToolbar.IsMoreMenuItemDisabled("显示日历"));
@@ -166,11 +168,11 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
             TimeManager.MediumPause();
 
-            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies[1]);
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[1].HierarchyPath);
             MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[2]);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[0]);
             TimeManager.ShortPause();
 
             MultiHieCompareWindow.ClickConfirmButton();
@@ -183,10 +185,11 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
 
             Assert.AreEqual(7, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetMultiLabellingInfo(input.InputData.MultipleHierarchyAndtags, input.InputData.YearAndMonth[0], input.InputData.Industries[1][1], input.ExpectedData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[1], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
 
             //Click "Save to dashboard"（保存到仪表盘）to save the  chart to dashboard. 
             var dashboard = input.InputData.DashboardInfo;
@@ -207,19 +210,19 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
             TimeManager.MediumPause();
 
-            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies[1]);
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[1].HierarchyPath);
             MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[4]);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[2]);
             TimeManager.ShortPause();
 
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.ShortPause();
 
             //time 2014-01
-            IndustryLabellingPanel.SetYear("2014");
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
 
             //夏热冬暖地区全行业
@@ -233,11 +236,11 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[2][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
-
+            labellingInfo1 = IndustryLabellingPanel.GetMultiLabellingInfo(input.InputData.MultipleHierarchyAndtags, input.InputData.YearAndMonth[0], input.InputData.Industries[1][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[2], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            
             //Go to widget maximize view. Change time range to 2012 全年.
             EnergyAnalysis.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
@@ -256,12 +259,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.LongPause();
 
             Assert.AreEqual(7, Widget.GetLabellingNumber());
-            for (int i = 0; i < Widget.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[3][i], Widget.GetLabellingTooltip(i));
-            }
+            Widget.CompareMaxWidgetStringData(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3], IndustryLabellingPanel.IndustryLabellingPath);
 
             Widget.ClickCloseMaxDialogButton();
+            
         }
 
         [Test]

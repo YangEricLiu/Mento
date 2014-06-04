@@ -51,7 +51,7 @@ namespace Mento.ScriptCommon.Library
         {
             JazzBrowseManager.CloseJazz();
 
-            ExecutionContext.Destruct();
+            //ExecutionContext.Destruct();
         }
 
         public static void InitializeExecutionContext()

@@ -41,6 +41,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox BasicPropertyPeakEndTimeComboBox = JazzComboBox.TOUBasicPropertyPeakEndTimeComboBox;
         private static ComboBox BasicPropertyValleyStartTimeComboBox = JazzComboBox.TOUBasicPropertyValleyStartTimeComboBox;
         private static ComboBox BasicPropertyValleyEndTimeComboBox = JazzComboBox.TOUBasicPropertyValleyEndTimeComboBox;
+        private static Label BasicPropertyLabel = JazzLabel.PlatformTOUBasicPropertyLabel;
         private static Container TOU24HoursErrorTips = JazzContainer.TOU24HoursErrorTipsContainer;
 
         #endregion
@@ -314,7 +315,7 @@ namespace Mento.ScriptCommon.Library.Functions
             else
                 return true;
         }
-
+        
         /// <summary>
         /// Judge whether the Valley Price textfield is invalid
         /// </summary>
@@ -386,6 +387,16 @@ namespace Mento.ScriptCommon.Library.Functions
             }
             else
                 return true;
+        }
+
+        /// <summary>
+        /// Judge whether the label text '若设置平时电价，平时电价将充满峰时电价和谷时电价未覆盖的时间段。' is displayed correct
+        /// </summary>
+        /// <param name="output">TOUBasicTariffExpectedData</param>
+        /// <returns>whether the label text is ture</returns>
+        public Boolean IsTOUBasicPropertyTextCorrect(string[] texts)
+        {
+            return BasicPropertyLabel.IsLabelTextsExisted(texts);
         }
 
         public Boolean IsTOUExist(string touName)

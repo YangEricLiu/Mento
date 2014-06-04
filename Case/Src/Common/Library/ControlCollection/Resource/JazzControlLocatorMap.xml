@@ -1073,21 +1073,20 @@
         <add key="LabelPlatformHeatingCoolingSeasonCalendar" value="st-calendar-properties-form-body" type="ID"/>
         <add key="LabelPlatformDayNightCalendar" value="st-calendar-properties-form-body" type="ID"/>
       </calendar>
-        
-        <benckMark>
-            <add key="LabelPlatformBenchMarkSetting" value="//div[@id='st-benchmark-properties-form-targetEl']/table/tbody/tr/td/div/div/label[text()='$@Setting.Benchmark.Label.AtleastOneZone']" type="XPath"/>
-            <!--R1.4 need use the below label-->
-            <!--<add key="LabelPlatformBenchMarkSetting" value="//div[@id='st-benchmark-properties-form-targetEl']/table/tbody/tr/td/div/div/label[text()='请至少选择1项。']" type="XPath"/>-->
-          <add key="LabelPlatformLabelingSetting" value="//div" type="XPath"/>
-        </benckMark>
-
-        <customerMapInfo>
-            <add key="LabelPlatformCustomerMapInfo" value="//div[@id='st-map-consumption-form-targetEl']/div/label[text()='$@Setting.Benchmark.Label.AtleastOneZone']" type="XPath"/>
-        </customerMapInfo>
-        
+      <TOU>
+        <add key="LabelPlatformTOUBasicProperty" value="st-priceStrategy-basicproperty-body" type="ID"/>
+      </TOU> 
+      <benckMark>
+        <add key="LabelPlatformBenchMarkSetting" value="//div[@id='st-benchmark-properties-form-targetEl']/table/tbody/tr/td/div/div/label[text()='$@Setting.Benchmark.Label.AtleastOneZone']" type="XPath"/>
+        <!--R1.4 need use the below label-->
+        <!--<add key="LabelPlatformBenchMarkSetting" value="//div[@id='st-benchmark-properties-form-targetEl']/table/tbody/tr/td/div/div/label[text()='请至少选择1项。']" type="XPath"/>-->
+        <add key="LabelPlatformLabelingSetting" value="//div" type="XPath"/>
+      </benckMark>
+      <customerMapInfo>
+        <add key="LabelPlatformCustomerMapInfo" value="//div[@id='st-map-consumption-form-targetEl']/div/label[text()='$@Setting.Benchmark.Label.AtleastOneZone']" type="XPath"/>
+      </customerMapInfo>        
       <demoaccess>
         <add key="LabelEmailSendedSuccessTips" value="main_cctRep" type="ID"/>
-
       </demoaccess>
     </PlatformSettings>
     

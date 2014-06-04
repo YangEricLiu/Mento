@@ -49,6 +49,9 @@ namespace Mento.Script.Administration.TOU
             TOUBasicTariffSettings.ClickBasicPropertyCreateButton();
             TimeManager.ShortPause();
 
+            //Verify the label text
+            Assert.IsTrue(TOUBasicTariffSettings.IsTOUBasicPropertyTextCorrect(testData.ExpectedData.LabelText));
+
             //Fill in text fields with valid inputs
             TOUBasicTariffSettings.FillInBasicPropertyName(testData.InputData.CommonName);
             TOUBasicTariffSettings.FillInBasicPropertyPlainPriceValue(testData.InputData.PlainPrice);
@@ -69,11 +72,11 @@ namespace Mento.Script.Administration.TOU
             Assert.IsFalse(TOUBasicTariffSettings.IsBasicPropertyCancelButtonDisplayed());
             Assert.IsTrue(TOUBasicTariffSettings.IsBasicPropertyModifyButtonDisplayed());
 
-            //Verify all the information displayed in Modify status are same as input when addition.            
-            TOUBasicTariffSettings.SelectTOU(testData.InputData.CommonName);
+            //Verify all the information displayed in Modify status are correct.            
+            TOUBasicTariffSettings.SelectTOU(testData.ExpectedData.CommonName);
             TOUBasicTariffSettings.ClickBasicPropertyModifyButton();
             TimeManager.ShortPause();
-            Assert.AreEqual(testData.InputData.CommonName, TOUBasicTariffSettings.GetBasicPropertyNameValue());
+            Assert.AreEqual(testData.ExpectedData.CommonName, TOUBasicTariffSettings.GetBasicPropertyNameValue());
             Assert.AreEqual(testData.InputData.PlainPrice, TOUBasicTariffSettings.GetBasicPropertyPlainPriceValue());
             Assert.AreEqual(testData.InputData.PeakPrice, TOUBasicTariffSettings.GetBasicPropertyPeakPriceValue());
             Assert.AreEqual(testData.InputData.ValleyPrice, TOUBasicTariffSettings.GetBasicPropertyValleyPriceValue());

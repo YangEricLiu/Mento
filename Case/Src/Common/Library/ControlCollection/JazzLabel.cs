@@ -54,6 +54,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region calendar
         public static Label PlatformWorkdayCalendarLabel = GetControl<Label>(JazzControlLocatorKey.LabelPlatformWorkdayCalendar);
         public static Label PlatformWorktimeCalendarLabel = GetControl<Label>(JazzControlLocatorKey.LabelPlatformWorktimeCalendar);
+        public static Label PlatformHeatingCoolingSeasonCalendarLabel = GetControl<Label>(JazzControlLocatorKey.LabelPlatformHeatingCoolingSeasonCalendar);
         public static Label PlatformDayNightCalendarLabel = GetControl<Label>(JazzControlLocatorKey.LabelPlatformDayNightCalendar);
         public static Label WidgetName = GetControl<Label>(JazzControlLocatorKey.WidgetName);
         #endregion

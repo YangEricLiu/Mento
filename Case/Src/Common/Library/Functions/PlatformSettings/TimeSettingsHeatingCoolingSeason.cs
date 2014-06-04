@@ -35,7 +35,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox ColdWarmStartDateComboBox = JazzComboBox.HeatingCoolingSeasonCalendarColdWarmStartDateComboBox;
         private static ComboBox ColdWarmEndMonthComboBox = JazzComboBox.HeatingCoolingSeasonCalendarColdWarmEndMonthComboBox;
         private static ComboBox ColdWarmEndDateComboBox = JazzComboBox.HeatingCoolingSeasonCalendarColdWarmEndDateComboBox;
-
+        private static Label HeatingCoolingSeasonCalendarLabel = JazzLabel.PlatformHeatingCoolingSeasonCalendarLabel;
         private static Container CalendarColdWarmItemsContainer = JazzContainer.CalendarColdWarmItemsContainer;
 
         #endregion
@@ -307,8 +307,7 @@ namespace Mento.ScriptCommon.Library.Functions
             }
             else
                 return true;
-        }
-               
+        }              
 
         /// <summary>
         /// Judge whether the pop message correct
@@ -323,6 +322,16 @@ namespace Mento.ScriptCommon.Library.Functions
             }
             else
                 return true;
+        }
+
+        /// <summary>
+        /// Judge whether the label text '采暖季与供冷季之间不能少于7天，且不能存在于同一月份。' is displayed correct
+        /// </summary>
+        /// <param name="output">HeatingCoolingSeasonCalendarExpectedData</param>
+        /// <returns>whether the label text is ture</returns>
+        public Boolean IsHeatingCoolingSeasonCalendarTextCorrect(string[] texts)
+        {
+            return HeatingCoolingSeasonCalendarLabel.IsLabelTextsExisted(texts);
         }
         #endregion
 
@@ -397,7 +406,8 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             ComboBox OneEndDate = GetOneColdWarmEndDateComboBox(num);
             return OneEndDate.GetValue();
-        }               
+        }             
+                
 
         #endregion
 

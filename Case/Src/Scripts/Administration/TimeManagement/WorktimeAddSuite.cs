@@ -50,6 +50,9 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorktime.PrepareToAddWorktimeCalendar();
             TimeManager.ShortPause();
 
+            //Verify the label text
+            Assert.IsTrue(TimeSettingsWorktime.IsWorktimeCalendarTextCorrect(testData.ExpectedData.LabelText));
+            
             //Input valid name
             TimeSettingsWorktime.FillInName(testData.InputData.CommonName);
 
@@ -66,9 +69,6 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsTrue(TimeSettingsWorktime.IsModifyButtonDisplayed());
             Assert.IsTrue(TimeSettingsWorktime.IsCalendarExist(testData.ExpectedData.CommonName));
                         
-            //Verify the label text
-            Assert.IsTrue(TimeSettingsWorktime.IsWorktimeCalendarTextCorrect(testData.ExpectedData.LabelText));
-
             //Verify TimeRanges are added successfully.        
             Assert.AreEqual(testData.InputData.TimeRange.Length, TimeSettingsWorktime.GetTimeRangeItemsNumber());
             for (int elementPosition = 1; elementPosition <= testData.InputData.TimeRange.Length; elementPosition++)

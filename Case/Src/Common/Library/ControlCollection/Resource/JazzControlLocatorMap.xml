@@ -1070,6 +1070,7 @@
       <calendar>
         <add key="LabelPlatformWorkdayCalendar" value="st-calendar-properties-form-body" type="ID"/>
         <add key="LabelPlatformWorktimeCalendar" value="st-calendar-properties-form-body" type="ID"/>
+        <add key="LabelPlatformHeatingCoolingSeasonCalendar" value="st-calendar-properties-form-body" type="ID"/>
         <add key="LabelPlatformDayNightCalendar" value="st-calendar-properties-form-body" type="ID"/>
       </calendar>
         

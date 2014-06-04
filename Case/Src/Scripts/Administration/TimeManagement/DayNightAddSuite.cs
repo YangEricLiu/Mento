@@ -49,6 +49,9 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsDayNight.PrepareToAddDaynightCalendar();
             TimeManager.ShortPause();
 
+            //Verify the label text
+            Assert.IsTrue(TimeSettingsDayNight.IsDayNightCalendarTextCorrect(testData.ExpectedData.LabelText));
+
             //Input valid name
             TimeSettingsDayNight.FillInName(testData.InputData.CommonName);
 
@@ -64,9 +67,6 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsFalse(TimeSettingsDayNight.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsDayNight.IsModifyButtonDisplayed());
             Assert.IsTrue(TimeSettingsDayNight.IsCalendarExist(testData.ExpectedData.CommonName));
-
-            //Verify the label text
-            Assert.IsTrue(TimeSettingsDayNight.IsDayNightCalendarTextCorrect(testData.ExpectedData.LabelText));
 
             //Verify TimeRanges are added successfully.        
             Assert.AreEqual(testData.InputData.TimeRange.Length, TimeSettingsDayNight.GetTimeRangeItemsNumber());

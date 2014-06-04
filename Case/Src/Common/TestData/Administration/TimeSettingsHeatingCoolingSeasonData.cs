@@ -27,12 +27,14 @@ namespace Mento.ScriptCommon.TestData.Administration
     {
         public string CommonName { get; set; }
         public TimeRange[] ColdWarmRange { get; set; }
+        public string[] LabelText { get; set; }
         public string PopMessage { get; set; }
 
-        public HeatingCoolingSeasonCalendarExpectedData(string CommonName, TimeRange[] ColdWarmRange, string PopMessage)
+        public HeatingCoolingSeasonCalendarExpectedData(string CommonName, TimeRange[] ColdWarmRange, string[] labelText, string PopMessage)
         {
             this.CommonName = CommonName;
             this.ColdWarmRange = ColdWarmRange;
+            this.LabelText = labelText;
             this.PopMessage = PopMessage;
         }
     }

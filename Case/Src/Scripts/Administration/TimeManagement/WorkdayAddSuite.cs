@@ -51,6 +51,9 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorkday.PrepareToAddWorkdayCalendar();
             TimeManager.ShortPause();
 
+            //Verify the label text
+            Assert.IsTrue(TimeSettingsWorkday.IsWorkdayCalendarTextCorrect(testData.ExpectedData.LabelText));
+            
             //Input valid name
             TimeSettingsWorkday.FillInName(testData.InputData.CommonName);
 
@@ -66,9 +69,6 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsFalse(TimeSettingsWorkday.IsSaveButtonDisplayed());
             Assert.IsTrue(TimeSettingsWorkday.IsModifyButtonDisplayed());
             Assert.IsTrue(TimeSettingsWorkday.IsCalendarExist(testData.ExpectedData.CommonName));                      
-
-            //Verify the label text
-            Assert.IsTrue(TimeSettingsWorkday.IsWorkdayCalendarTextCorrect(testData.ExpectedData.LabelText));
 
             //Verify special dates are added successfully.        
             Assert.AreEqual(testData.InputData.SpecialDate.Length, TimeSettingsWorkday.GetSpecialDateItemsNumber());

@@ -49,6 +49,9 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsHeatingCoolingSeason.PrepareToAddHeatingCoolingSeasonCalendar();
             TimeManager.ShortPause();
 
+            //Verify the label text
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsHeatingCoolingSeasonCalendarTextCorrect(testData.ExpectedData.LabelText));
+
             //Input valid name
             TimeSettingsHeatingCoolingSeason.FillInName(testData.InputData.CommonName);
 

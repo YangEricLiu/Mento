@@ -1161,6 +1161,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region calendar
         public static string LabelPlatformWorkdayCalendar = "LabelPlatformWorkdayCalendar";
         public static string LabelPlatformWorktimeCalendar = "LabelPlatformWorktimeCalendar";
+        public static string LabelPlatformHeatingCoolingSeasonCalendar = "LabelPlatformHeatingCoolingSeasonCalendar";
         public static string LabelPlatformDayNightCalendar = "LabelPlatformDayNightCalendar";
         #endregion
 

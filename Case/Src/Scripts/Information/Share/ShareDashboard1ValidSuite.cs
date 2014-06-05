@@ -69,7 +69,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享仪表盘“Dashboard_Share_101_1”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Login to Jazz with userB
@@ -119,7 +119,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享仪表盘“D2”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //login userD and get new dashboard name
@@ -206,7 +206,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“DS_Widget_101_3_A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Click "share dashboard" button again
@@ -264,7 +264,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“DS_Widget_101_4_A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //login userB and check
@@ -303,7 +303,7 @@ namespace Mento.Script.Information.Share
             HomePagePanel.NavigateToAllDashboard();
             TimeManager.LongPause();
 
-            Assert.AreEqual("请选择层级结构", HomePagePanel.GetHierarchyText());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetHierarchyText());
         }
     }
 }

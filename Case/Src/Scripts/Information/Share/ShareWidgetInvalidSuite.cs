@@ -146,7 +146,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“Widget_Share0013A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Select widgetA of userA. Select receiver UserB.Click "share" Button again
@@ -160,7 +160,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“Widget_Share0013A”失败，无法分享给这些人：ShareUserD。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //The widgetA is rename to widgetA+timestamp on UserD
@@ -211,7 +211,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“WidgetShare0014A”失败，无法分享给这些人：ShareUserE。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
         }
 
         [Test]
@@ -248,7 +248,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“WidgetShare0015A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Click "share widget" button
@@ -262,7 +262,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
             //Assert.AreEqual("分享小组件“WidgetShare0015A_201310210719”失败，无法分享给这些人：ShareUserD。", HomePagePanel.GetPopNotesValue());
-            Assert.AreEqual("分享小组件“WidgetShare0015A_201310210719”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
         }
 
         [Test]
@@ -292,7 +292,7 @@ namespace Mento.Script.Information.Share
 
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
-            Assert.AreEqual("分享小组件“Widget_Share_001_7_1_A”失败，无法分享给这些人：ShareUserF。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Click "share widget" button

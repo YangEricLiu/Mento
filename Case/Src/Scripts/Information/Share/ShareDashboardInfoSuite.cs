@@ -66,7 +66,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享仪表盘“Dashboard_Share_104_1”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
             
             //Login with userA. Navigate to homepage to select the hierarchynodeA.
@@ -112,7 +112,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享仪表盘“Dashboard_Share_104_2”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Login with userA. Navigate to homepage to select the hierarchynodeA.
@@ -162,7 +162,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“Dashboard_Share_104_3_A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Login with userA. Navigate to homepage to select the hierarchynodeA.
@@ -217,7 +217,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“Dashboard_Share_104_4_A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Login with userA. Navigate to homepage to select the hierarchynodeA.
@@ -396,7 +396,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享仪表盘“Dashboard_Share_104_6_2”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Login with userA. Navigate to homepage to select the hierarchynodeA.
@@ -419,7 +419,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“Dashboard_Share_104_6_1_A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Login with userC. Navigate to homepage to select the hierarchynodeA.

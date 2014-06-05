@@ -279,7 +279,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //Mouse to UserB's line.The Quitsubscriber button display.
             ShareWindow.FloatOnSubscriberUser(dashboard[0].ShareUsers[1]);
-            Assert.AreEqual("退出订阅", ShareWindow.GetRemoveorQuitSubcriberText(dashboard[0].ShareUsers[1]));
+            Assert.AreEqual(input.ExpectedData.messages[0], ShareWindow.GetRemoveorQuitSubcriberText(dashboard[0].ShareUsers[1]));
             ShareWindow.CloseSubcriberListWindow();
             TimeManager.ShortPause();
 
@@ -295,7 +295,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //Mouse to UserB's line.The Quitsubscriber button display.
             ShareWindow.FloatOnSubscriberUser(dashboard[0].ShareUsers[1]);
-            Assert.AreEqual("移除订阅者", ShareWindow.GetRemoveorQuitSubcriberText(dashboard[0].ShareUsers[1]));
+            Assert.AreEqual(input.ExpectedData.messages[1], ShareWindow.GetRemoveorQuitSubcriberText(dashboard[0].ShareUsers[1]));
 
             //Click Invitation button.Check UserC.
             ShareWindow.ClickInviteOtherButton();

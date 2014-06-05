@@ -1,5 +1,4 @@
-
-I18N.Setting = {};
+﻿I18N.Setting = {};
 I18N.Setting.Label = {};
 I18N.Setting.Hierarchy = {};
 I18N.Setting.Hierarchy.Menu = {};
@@ -134,27 +133,48 @@ I18N.HomePage.Label.ShareTo = '分享给';
 I18N.HomePage.Label.ShareItemType = '分享类型';
 I18N.HomePage.Label.Sharer = '分享者';
 I18N.HomePage.Label.FailToJump = '无法跳转到{0}“{1}”，可能已经被删除。';
-I18N.HomePage.ShareWindow = { WindowTitle: '分享信息', MyReceived: '我收到的', MySent: '我发出的' };
+//I18N.HomePage.ShareWindow = { WindowTitle: '分享信息', MyReceived: '我收到的', MySent: '我发出的' };
+I18N.HomePage.ShareWindow = {};
+I18N.HomePage.ShareWindow.WindowTitle = '分享信息';
+I18N.HomePage.ShareWindow.MyReceived = '我收到的';
+I18N.HomePage.ShareWindow.MySent = '我发出的';
 
-I18N.HomePage.Label.DashboardMessage = {
-    Jumping: '跳转中，请稍候',
-    PleaseSelectHierarchy: '请选择##Common.Glossary.HierarchyNode##进行查看',
-    PleaseSelectDashboard: '请选择一个##Common.Glossary.Dashboard##',
-    HierarchyNodeNoDashboard: '目前该节点下没有##Common.Glossary.Dashboard##',
-    DashboardWithoutWidget: '目前该##Common.Glossary.Dashboard##没有##Common.Glossary.Widget##',
-    NoRecentDashboard: {
-        Title: '目前没有浏览记录',
-        P1: '最近浏览可以为您保存最后浏览的50个##Common.Glossary.Dashboard##，方便您快速查看。',
-        P2: '点击左上方{0}在建筑层级中选择建筑查看相应##Common.Glossary.Dashboard##。查看##Common.Glossary.Dashboard##后，对应##Common.Glossary.Dashboard##将会出现在该页面。',
-        LinkText: '##HomePage.Label.AllDashboard##'
-    },
-    NoFavoriteDashboard: {
-        Title: '目前没有收藏的##Common.Glossary.Dashboard##',
-        P1: '我的收藏可以为您保存常用的##Common.Glossary.Dashboard##，方便您每次登陆系统时查看。',
-        P2: '点击左上方{0}在建筑层级中选择建筑查看相应##Common.Glossary.Dashboard##。点击##Common.Glossary.Dashboard##上的“收藏”按钮，即可将##Common.Glossary.Dashboard##加入到我的收藏。',
-        LinkText: '##HomePage.Label.AllDashboard##'
-    }
-};
+I18N.HomePage.Label.DashboardMessage = {};
+I18N.HomePage.Label.DashboardMessage.Jumping = '跳转中，请稍候';
+I18N.HomePage.Label.DashboardMessage.PleaseSelectHierarchy = '请选择##Common.Glossary.HierarchyNode##进行查看';
+I18N.HomePage.Label.DashboardMessage.PleaseSelectDashboard = '请选择一个##Common.Glossary.Dashboard##';
+I18N.HomePage.Label.DashboardMessage.HierarchyNodeNoDashboard = '目前该节点下没有##Common.Glossary.Dashboard##';
+I18N.HomePage.Label.DashboardMessage.DashboardWithoutWidget = '目前该##Common.Glossary.Dashboard##没有##Common.Glossary.Widget##'
+I18N.HomePage.Label.DashboardMessage.NoRecentDashboard = {};
+I18N.HomePage.Label.DashboardMessage.NoRecentDashboard.Title = '目前没有浏览记录';
+I18N.HomePage.Label.DashboardMessage.NoRecentDashboard.P1 = '最近浏览可以为您保存最后浏览的50个##Common.Glossary.Dashboard##，方便您快速查看。';
+I18N.HomePage.Label.DashboardMessage.NoRecentDashboard.P2 = '点击左上方{0}在建筑层级中选择建筑查看相应##Common.Glossary.Dashboard##。查看##Common.Glossary.Dashboard##后，对应##Common.Glossary.Dashboard##将会出现在该页面。';
+I18N.HomePage.Label.DashboardMessage.NoRecentDashboard.LinkText = '##HomePage.Label.AllDashboard##';
+I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard = {};
+I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard.Title = '目前没有收藏的##Common.Glossary.Dashboard##';
+I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard.P1 = '我的收藏可以为您保存常用的##Common.Glossary.Dashboard##，方便您每次登陆系统时查看。';
+I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard.P2 = '点击左上方{0}在建筑层级中选择建筑查看相应##Common.Glossary.Dashboard##。点击##Common.Glossary.Dashboard##上的“收藏”按钮，即可将##Common.Glossary.Dashboard##加入到我的收藏。';
+I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard.LinkText = '##HomePage.Label.AllDashboard##';
+
+//I18N.HomePage.Label.DashboardMessage = {
+//    Jumping: '跳转中，请稍候',
+//    PleaseSelectHierarchy: '请选择##Common.Glossary.HierarchyNode##进行查看',
+//    PleaseSelectDashboard: '请选择一个##Common.Glossary.Dashboard##',
+//    HierarchyNodeNoDashboard: '目前该节点下没有##Common.Glossary.Dashboard##',
+//    DashboardWithoutWidget: '目前该##Common.Glossary.Dashboard##没有##Common.Glossary.Widget##',
+//    NoRecentDashboard: {
+//        Title: '目前没有浏览记录',
+//        P1: '最近浏览可以为您保存最后浏览的50个##Common.Glossary.Dashboard##，方便您快速查看。',
+//        P2: '点击左上方{0}在建筑层级中选择建筑查看相应##Common.Glossary.Dashboard##。查看##Common.Glossary.Dashboard##后，对应##Common.Glossary.Dashboard##将会出现在该页面。',
+//        LinkText: '##HomePage.Label.AllDashboard##'
+//    },
+//    NoFavoriteDashboard: {
+//        Title: '目前没有收藏的##Common.Glossary.Dashboard##',
+//        P1: '我的收藏可以为您保存常用的##Common.Glossary.Dashboard##，方便您每次登陆系统时查看。',
+//        P2: '点击左上方{0}在建筑层级中选择建筑查看相应##Common.Glossary.Dashboard##。点击##Common.Glossary.Dashboard##上的“收藏”按钮，即可将##Common.Glossary.Dashboard##加入到我的收藏。',
+//        LinkText: '##HomePage.Label.AllDashboard##'
+//    }
+//};
 
 I18N.HomePage.Message = {}
 I18N.HomePage.Message.FailToDelete = '删除{0}“{1}”失败。';
@@ -220,6 +240,11 @@ I18N.Setting.Label.DataManagement = '数据管理';
 I18N.Setting.Label.TagManagement = '数据点配置';
 I18N.Setting.Label.HierarchyDimensionSetting = '层级结构配置';
 I18N.Setting.Label.TagAssociation = '数据点关联';
+I18N.Setting.Label.TagMultipleImport = '批量导入';
+I18N.Setting.Label.Reselect = '重新选择';
+I18N.Setting.Label.TagBatchImportLog = '批量导入日志';
+I18N.Setting.Label.ImportingTag = '正在从配置文件{0}导入数据点。';
+I18N.Setting.Label.IncorrectFileType = '批量导入失败。所选导入文件不符合系统规则，请重新选择后再试。';
 
 I18N.Setting.Label.TimeSetting = '时间配置';
 I18N.Setting.Label.WorkdaySetting = '工休日';
@@ -252,6 +277,7 @@ I18N.Setting.Hierarchy.LocatePosition = '标记位置';
 I18N.Setting.Hierarchy.RelocatePosition = '重新标记';
 I18N.Setting.Hierarchy.MapSettingExplaination = '标记状态下不可拖拽以移动地图显示区域。请确定要标记的位置后再点击“标记位置”按钮。';
 I18N.Setting.Hierarchy.NoMarkerSetMessage = '请标记地图位置后再保存。';
+I18N.Setting.Hierarchy.ChildArea = '子区域';
 
 I18N.Setting.Label.BasicProperties = '基础属性';
 I18N.Setting.Label.HierarchyNodeBasicProperties = '##Setting.Label.BasicProperties##';
@@ -324,6 +350,32 @@ I18N.Setting.TagConfiguration.FormulaItemType.KPI = '##Common.Glossary.KPI##';
 I18N.Setting.TagConfiguration.FormulaItemType.AdvanceProperty = '高级属性';
 I18N.Setting.TagConfiguration.InvalidFormula = '##Common.Glossary.Formula##的格式有误，请检查。';
 
+I18N.Setting.TagBatchImport = {};
+I18N.Setting.TagBatchImport.ImportDate = '导入时间';
+I18N.Setting.TagBatchImport.TagType = '数据点类型';
+I18N.Setting.TagBatchImport.Importer = '导入者';
+I18N.Setting.TagBatchImport.File = '导入文件';
+I18N.Setting.TagBatchImport.ConfigLog = '配置批量导入日志';
+I18N.Setting.TagBatchImport.ImportResult = '共成功导入{0}条（新增{1}条，修改{2}条），失败{3}条，总计{4}条。';
+I18N.Setting.TagBatchImport.DownloadLog = '下载日志文件';
+I18N.Setting.TagBatchImport.DownloadLogFile = '下载导入日志';
+I18N.Setting.TagBatchImport.ToViewLog = '以查看详细记录';
+I18N.Setting.TagBatchImport.ImportResultView = '批量导入已完成。成功导入{0}条，失败{1}条，总计{2}条。';
+
+I18N.Setting.TagBatchImport.ErrorMessage2 = '文件格式错误';
+I18N.Setting.TagBatchImport.ErrorMessage3 = '不合法的Sheet名称';
+I18N.Setting.TagBatchImport.ErrorMessage4 = '用户已被删除';
+I18N.Setting.TagBatchImport.ErrorMessage5 = '客户已被删除';
+I18N.Setting.TagBatchImport.ErrorMessage6 = 'Excel列错误(列数或者列名错误)';
+I18N.Setting.TagBatchImport.ErrorMessage7 = 'Excel行数非法(无数据或超过1000)';
+I18N.Setting.TagBatchImport.ErrorMessage8 = '您没有该功能权限'
+I18N.Setting.TagBatchImport.ErrorMessage9 = '您没有该数据权限'
+
+
+
+I18N.Setting.TagAssociation.UnassociateTip = '解除与以下节点的关联关系  ';
+I18N.Setting.TagAssociation.Associatiable = '可关联';
+I18N.Setting.TagAssociation.Unassociatiable = '不可关联';
 I18N.Setting.TagAssociation.AssociatedStatus = '关联状态';
 I18N.Setting.TagAssociation.AssociatedTags = '已关联数据点';
 I18N.Setting.TagAssociation.SelectedTags = '已选数据点';
@@ -353,9 +405,18 @@ I18N.Setting.Cost.Label.PaddingCost = '月补充成本';
 I18N.Setting.Cost.Label.TouDetail = '价格策略详情';
 I18N.Setting.Cost.Label.SearchTouDetail = '查看价格策略详情';
 
+I18N.Setting.Cost.Label.PowerFactor = {};
+I18N.Setting.Cost.Label.PowerFactor.Increase = '增收';
+I18N.Setting.Cost.Label.PowerFactor.Decrease = '减收';
+I18N.Setting.Cost.Label.PowerFactor.PowerFactor = '功率因数';
+I18N.Setting.Cost.Label.PowerFactor.MonthDecrease = '月减收比例';
+I18N.Setting.Cost.Label.PowerFactor.MonthIncrease = '月增收比例';
+I18N.Setting.Cost.Label.PowerFactor.Declare = '<={0}，每减少0.01，增加2.0';
+
 I18N.Setting.Benchmark = {};
 I18N.Setting.Benchmark.Label = {};
 I18N.Setting.Benchmark.Label.None = '无';
+I18N.Setting.Benchmark.Label.SelectLabelling = '请选择能效标识';
 I18N.Setting.Benchmark.Label.EnergyBenchmark = '能效对标配置';
 I18N.Setting.Benchmark.Label.IndustryEnegyBenchmark = '行业能效对标配置';
 I18N.Setting.Benchmark.Label.ClimateZone = '气候分区';
@@ -402,11 +463,30 @@ I18N.Setting.Labeling.Label = {};
 
 I18N.Setting.Labeling.Label.Industry = '行业';
 I18N.Setting.Labeling.Label.ClimateZone = '气候分区';
+I18N.Setting.Labeling.Label.CustomizedLabeling = '自定义能效标识';
 I18N.Setting.Labeling.Label.Labeling = '能效标识';
 I18N.Setting.Labeling.Label.LabelingSetting = '能效标识配置';
+I18N.Setting.Labeling.Label.IndustryLabeling = '行业能效标识';
 I18N.Setting.Labeling.Label.IndustryLabelingSetting = '行业能效标识配置';
 I18N.Setting.Labeling.Label.LabelingGrade = '能效标识级别';
 I18N.Setting.Labeling.Label.DataYear = '数据来源';
+
+I18N.Setting.CustomizedLabeling = {};
+I18N.Setting.CustomizedLabeling.Grade = '级';
+I18N.Setting.CustomizedLabeling.OrderMode = '排列方式';
+I18N.Setting.CustomizedLabeling.Ascending = '正序';
+I18N.Setting.CustomizedLabeling.Declining = '倒序';
+I18N.Setting.CustomizedLabeling.Configurationer = '配置人';
+I18N.Setting.CustomizedLabeling.ConfigurationDate = '配置时间';
+I18N.Setting.CustomizedLabeling.KPIType = '指标类型';
+I18N.Setting.CustomizedLabeling.ErrorMessage1 = '*请确保输入的右区间大于左区间';
+I18N.Setting.CustomizedLabeling.ErrorMessage2 = '*请确保输入的左区间大于右区间';
+I18N.Setting.CustomizedLabeling.DeleteTip = '<br/>删除后，关联该标识的仪表盘将无法正常显示。';
+
+I18N.Setting.DataFilter = {};
+I18N.Setting.DataFilter.Before = '之前';
+I18N.Setting.DataFilter.After = '之后';
+I18N.Setting.DataFilter.On = '当天';
 
 I18N.EM.ChooseFunctionMessage = '请从功能面板中选择功能以显示图表';
 I18N.EM.CenterBar.Button.DefaultDashboard = '默认';
@@ -465,6 +545,7 @@ I18N.EM.AllTags = '全部数据点';
 I18N.EM.SystemTag = '系统数据点';
 I18N.EM.AreaTag = '区域数据点';
 I18N.EM.Week = '周';
+I18N.EM.Raw = '原始';
 I18N.EM.Hour = '小时';
 I18N.EM.Day = '天';
 I18N.EM.Month = '月';
@@ -472,6 +553,10 @@ I18N.EM.Year = '年';
 I18N.EM.Clock24 = '24点';
 I18N.EM.MultiHierButton = '数据点';
 I18N.EM.TimeRangeIsWrong = '时间范围不正确';
+I18N.EM.OutTimeRange = '超出了时间范围';
+I18N.EM.TemporaryTextChart = '临时文本图表';
+I18N.EM.EnergyOverview = '用能概述';
+I18N.EM.Electric = '电力';
 
 I18N.EM.Unit = {};
 I18N.EM.Unit.UnitPopulationAlias = '人均';
@@ -505,6 +590,7 @@ I18N.EM.Title.EnergyConsumption = '能耗';
 I18N.EM.QuitMultiHier = '退出多层级数据点查看情景并清空已选数据点吗？';
 I18N.EM.SingleHier = '单层级数据点';
 I18N.EM.MultiHier = '多层级数据点';
+I18N.EM.AddMultiHier = '添加多层级数据点';
 I18N.EM.KpiModeEM = '能耗';
 I18N.EM.KpiModeCarbon = '碳排放';
 I18N.EM.KpiModeCost = '成本';
@@ -512,8 +598,8 @@ I18N.EM.Rank = {};
 I18N.EM.Rank.TotalRank = '总排名';
 I18N.EM.Rank.RankByPeople = '人均排名';
 I18N.EM.Rank.RankByArea = '单位面积排名';
-I18N.EM.Rank.RankByHeatArea = '单位供冷面积排名';
-I18N.EM.Rank.RankByCoolArea = '单位采暖面积排名';
+I18N.EM.Rank.RankByHeatArea = '单位采暖面积排名';
+I18N.EM.Rank.RankByCoolArea = '单位供冷面积排名';
 I18N.EM.Rank.HierTitle = '请选择层级节点进行排名';
 I18N.EM.Rank.RankName = '排名';
 I18N.EM.Rank.RankTooltip = '排名:{0}/{1}';
@@ -524,6 +610,11 @@ I18N.EM.Ratio.RawValue = '原始值';
 I18N.EM.Ratio.TargetValue = '目标值';
 I18N.EM.Ratio.BaseValue = '基准值';
 
+I18N.EM.Legend = {};
+I18N.EM.Legend.ToLine = '切换至线形显示';
+I18N.EM.Legend.ToColumn = '切换至柱体显示';
+I18N.EM.Legend.ToStacking = '切换至堆积柱图显示';
+
 I18N.EM.Labeling = {};
 I18N.EM.Labeling.LowEnergy = '低能耗';
 I18N.EM.Labeling.HighEnergy = '高能耗';
@@ -531,6 +622,7 @@ I18N.EM.Labeling.ViewLabeling = '能效标识查看';
 I18N.EM.Labeling.NonBuilding = '该节点为非楼宇节点，请重新选择节点';
 I18N.EM.Labeling.NonData = '该时间段没有能效标记数据。';
 I18N.EM.Labeling.DifferentCommodity = '所选数据点不是同一介质，请重新选择';
+I18N.EM.Labeling.SelectHieForSys = '选择楼宇节点以配置区域维度';
 
 I18N.Dashboard.ShareWindowTitle = '共享{0}';
 I18N.Dashboard.SendCopyWindowTitle = '以副本发送{0}';
@@ -619,8 +711,12 @@ I18N.Common.UOM.h = '小时';
 I18N.Common.UOM.m = '分钟';
 I18N.Common.UOM.oC = '摄氏度';
 I18N.Common.UOM.CO2 = '碳排放量';
+I18N.Common.UOM.MM = '分';
 
-I18N.Common.Button.Send = '发送';
+I18N.Common.Per = {};
+I18N.Common.Per.Person = '/人';
+I18N.Common.Per.m2 = '/平方米';
+
 I18N.Common.Button.Share = '共享';
 I18N.Common.Button.PieChart = '饼图';
 I18N.Common.Button.LineChart = '折线图';
@@ -646,6 +742,8 @@ I18N.Common.Button.Cancel2 = '取消';
 I18N.Common.Button.Delete = '删除';
 I18N.Common.Button.Exit = '退出';
 I18N.Common.Button.Clear = '清空';
+I18N.Common.Button.Send = '发送';
+I18N.Common.Button.Confirmed = '已确认';
 
 I18N.Common.Operation.ResetZoom = '取消放大/缩小';
 I18N.Common.Operation.ResetZoom1vs1 = '缩放至1:1';
@@ -665,6 +763,7 @@ I18N.Common.Operation.GoBackToHierarchy = '在建筑层级中查看';
 
 I18N.Common.Label.EmptyHierarchyText = '请选择层级结构';
 I18N.Common.Label.Loading = '加载中，请稍候...';
+I18N.Common.Label.Logouting = '系统正在安全退出，请稍后';
 I18N.Common.Label.UnknownError = '抱歉，发生未知错误。';
 I18N.Common.Label.DatePicker = '日期选择器';
 I18N.Common.Label.Welcome = '欢迎，';
@@ -724,6 +823,8 @@ I18N.Common.GraphType.Column = '柱状图';
 I18N.Common.GraphType.Pie = '饼状图';
 I18N.Common.GraphType.Grid = '数据表';
 
+I18N.Common.Glossary.DemoUser = '演示用户';
+
 I18N.Common.Glossary.PulsePeak = '峰值季节';
 I18N.Common.Glossary.PriceStrategy = '价格策略';
 I18N.Common.Glossary.Calendar = '日历';
@@ -738,6 +839,16 @@ I18N.Common.Glossary.Year = '年';
 I18N.Common.Glossary.Month = '月';
 I18N.Common.Glossary.Day = '日';
 I18N.Common.Glossary.Week = '周';
+
+I18N.Common.Glossary.Order = {};
+I18N.Common.Glossary.Order.Ascending = '升序';
+I18N.Common.Glossary.Order.Descending = '降序';
+I18N.Common.Glossary.Order.All = '全部';
+
+I18N.Common.Glossary.Suspend = '暂停';
+I18N.Common.Glossary.Normal = '正常';
+
+I18N.Common.Glossary.NoSelected = '未选择';
 
 I18N.Common.Glossary.WidgetCopy = '小组件副本';
 I18N.Common.Glossary.Widget = '小组件';
@@ -766,6 +877,7 @@ I18N.Common.Glossary.Name = '名称';
 I18N.Common.Glossary.WidgetName = '##Common.Glossary.Widget####Common.Glossary.Name##';
 I18N.Common.Glossary.Code = '编码';
 I18N.Common.Glossary.Time = '时间';
+I18N.Common.Glossary.Now = '现在';
 I18N.Common.Glossary.DataValue = '数值';
 I18N.Common.Glossary.DataQuality = '质量';
 I18N.Common.Glossary.Comment = '备注';
@@ -989,6 +1101,8 @@ I18N.Notify.Alarm.Priority = '优先级';
 I18N.Notify.Alarm.Operation = '操作';
 I18N.Notify.Alarm.ConfirmUser = '确认人';
 I18N.Notify.Alarm.ConfirmTime = '确认时间';
+I18N.Notify.Alarm.UpperLimit = '上限';
+I18N.Notify.Alarm.FloorLimit = '下限';
 
 I18N.Notify.Alarm.ExceedLimit = '超限报警';
 I18N.Notify.Alarm.Energy = '能耗报警';
@@ -996,7 +1110,10 @@ I18N.Notify.Alarm.Energy = '能耗报警';
 I18N.Notify.Alarm.BatchConfirm = '批量确认';
 I18N.Notify.Alarm.AllAlarm = '所有报警';
 
-
+I18N.Notify.Alarm.PriorityType = {};
+I18N.Notify.Alarm.PriorityType.Low = '低';
+I18N.Notify.Alarm.PriorityType.Medium = '中';
+I18N.Notify.Alarm.PriorityType.High = '高';
 
 //hierarchy population/area
 I18N.Setting.DynamicProperty = {};
@@ -1064,7 +1181,7 @@ I18N.Setting.CustomerManagement.Label.Address = '地址';
 I18N.Setting.CustomerManagement.Label.Principal = '负责人';
 I18N.Setting.CustomerManagement.Label.Telephone = '负责人电话';
 I18N.Setting.CustomerManagement.Label.Email = '负责人电子邮箱';
-I18N.Setting.CustomerManagement.Label.OperationStartTime = "运营时间";
+I18N.Setting.CustomerManagement.Label.OperationStartTime = '运营时间';
 I18N.Setting.CustomerManagement.Label.Administrator = '客户管理员';
 I18N.Setting.CustomerManagement.Label.NoAdministrator = '未选择';
 
@@ -1113,6 +1230,17 @@ I18N.Message.RandomPassword = '随机登录密码：';
 I18N.Setting.User.WholeCustomer = '全部层级节点数据权限';
 I18N.Setting.User.WholeCustomerTip = '建议对具备“层级结构管理”功能权限的用户勾选此项。';
 
+I18N.Setting.User.EnergyConsultant = '能源工程顾问';
+I18N.Setting.User.Technicist = '技术人员';
+I18N.Setting.User.CustomerManager = '客户管理员';
+I18N.Setting.User.EnergyManager = '能源经理';
+I18N.Setting.User.EnergyEngineer = '能源经理';
+I18N.Setting.User.DeptManager = '部门经理';
+I18N.Setting.User.Manager = '管理层';
+I18N.Setting.User.BusinessPerson = '业务人员';
+I18N.Setting.User.Sales = '销售人员';
+I18N.Setting.User.ServerManager = '服务商管理员';
+
 //usertype
 I18N.Setting.Role = {};
 
@@ -1146,6 +1274,7 @@ I18N.Setting.Role.KPIConfiguration = '关键能效指标数据点管理';
 I18N.Setting.Role.TagMapping = '数据点关联';
 I18N.Setting.Role.CustomerInfoView = '客户信息查看';
 I18N.Setting.Role.CustomerInfoManagement = '客户信息管理';
+I18N.Setting.Role.CustomLabeling = '自定义能效标识';
 
 //contact us
 I18N.Setting.ContactUs = {};
@@ -1187,6 +1316,11 @@ I18N.Setting.Feedback.CommentTip = '500字以内';
 I18N.Setting.Feedback.Upload = '上传图片';
 I18N.Setting.Feedback.UploadTip = '请上传不大于5M的图片';
 I18N.Setting.Feedback.Submit = '提交';
+I18N.Setting.Feedback.BusinessIssue = '商务问题';
+I18N.Setting.Feedback.SoftwareIssue = '软件问题';
+I18N.Setting.Feedback.Advice = '建议';
+I18N.Setting.Feedback.Bug = '缺陷';
+I18N.Setting.Feedback.Other = '其他';
 
 I18N.Setting.SPManagement = {};
 I18N.Setting.SPManagement.SP = '服务供应商';
@@ -1200,13 +1334,24 @@ I18N.Setting.SPManagement.Status = '运营状态';
 I18N.Setting.SPManagement.SendMail = '发送邮件';
 I18N.Setting.SPManagement.MailSent = '邮件已发送。';
 
+//widget template 
+I18N.Setting.Template = {};
+I18N.Setting.Template.Radio = '年逐月能耗工休比';
+I18N.Setting.Template.Cost = '年逐月成本';
+I18N.Setting.Template.PeakValley = '年逐月电峰谷用电成本';
+I18N.Setting.Template.Carbon = '年逐月碳排放';
+I18N.Setting.Template.PerMCost = '年逐月平米能耗';
+I18N.Setting.Template.Labelling = '年平米能耗标识';
+I18N.Setting.Template.Ranking = '年建筑能耗排名';
+I18N.Setting.Template.Max = '年最大需量控制';
+
 I18N.Message.MAjaxInvokeFailure = 'AJAX调用失败<br/>HTTP代码:[{0}]<br/>HTTP消息:[{1}]<br/>URL:[{2}]';
 I18N.Message.LoginTimeout = '登录超时，请重新登录。';
 I18N.Message.NetworkProblem = '操作失败，请检查您的网络后重试。';
 I18N.Message.UnassociateCustomerLogout = '当前客户已被解除关联，请退出系统后重新登录。';
 I18N.Message.UnassociateCustomer = '该客户已被解除关联，请重新选择客户。';
 I18N.Message.CurrentUserHasDeleted = '当前用户已被删除，系统将退出。';
-I18N.Message.DeleteSP = "删除服务商“{0}”吗？<br/>您将同时删除该服务商下的所有公共数据及客户数据，以及间接关联的所有信息。";
+I18N.Message.DeleteSP = '删除服务商“{0}”吗？<br/>您将同时删除该服务商下的所有公共数据及客户数据，以及间接关联的所有信息。';
 
 I18N.Message.M1 = '服务器错误。';
 I18N.Message.M8 = '您没有该功能权限。';
@@ -1284,7 +1429,8 @@ I18N.Message.M02505 = '缺少人口属性的部分无法绘图。请设置后再
 I18N.Message.M02506 = '缺少面积属性的部分无法绘图。请设置后再试。';
 I18N.Message.M02507 = '缺少采暖面积属性的部分无法绘图。请设置后再试。';
 I18N.Message.M02508 = '缺少供冷面积属性的部分无法绘图。请设置后再试。';
-
+I18N.Message.M02509 = '该能效标识已被删除，请重新选择以查看。';
+I18N.Message.M02510 = '该能效标识无数据，请重新选择以查看。';
 I18N.Message.M02701 = '所选层级部分删除，无法排名。';
 
 /******
@@ -1404,7 +1550,7 @@ I18N.Message.M06196 = '当前层级节点不包含与该数据点介质单位相
 I18N.Message.M06197 = '当前系统维度不包含与该数据点介质单位相同的数据点';
 I18N.Message.M06198 = '当前区域维度不包含与该数据点介质单位相同的数据点';
 I18N.Message.M06200 = I18N.format(I18N.Message.DeletionConcurrency, I18N.Common.Glossary.Customer);
-I18N.Message.M06201 = '无法将##Common.Glossary.CalculationStep##修改为“{0}”。本##Common.Glossary.Tag##已被其他##Common.Glossary.Tag##引用，新的##Common.Glossary.CalculationStep##必须小于等于引用##Common.Glossary.Tag##的##Common.Glossary.CalculationStep##；或者引用##Common.Glossary.Tag##已被标记为##Common.Glossary.DayNightRatio##，则本##Common.Glossary.Tag##的##Common.Glossary.CalculationStep##必须为“##Common.AggregationStep.Hourly##”。';
+I18N.Message.M06201 = '无法将##Common.Glossary.CalculationStep##修改为“{0}”。本##Common.Glossary.Tag##已被其他##Common.Glossary.Tag##引用，新的##Common.Glossary.CalculationStep##必须小于等于引用##Common.Glossary.Tag##的##Common.Glossary.CalculationStep##。';
 I18N.Message.M06202 = '对应节点下已存在相同介质的能耗数据点。';
 I18N.Message.M06203 = '该##Common.Glossary.Tag##不是能耗数据。';
 
@@ -1454,9 +1600,9 @@ I18N.Message.M10007 = '峰谷平电价展示不支持按小时展示';
 I18N.Message.M10015 = '已经存在同##Common.Glossary.HierarchyNode##的数据,界面将被刷新';
 I18N.Message.M10016 = I18N.format(I18N.Message.UpdateConcurrency, I18N.Setting.Label.HierarchyNodeCostProperties);
 I18N.Message.M10017 = I18N.format(I18N.Message.DeletionConcurrency, I18N.Common.Glossary.HierarchyNode);
-I18N.Message.M10019 = "需量成本Tag为无效数据";
-I18N.Message.M10020 = "无功电量Tag为无效数据";
-I18N.Message.M10021 = "有功电量Tag为无效数据";
+I18N.Message.M10019 = '需量成本Tag为无效数据';
+I18N.Message.M10020 = '无功电量Tag为无效数据';
+I18N.Message.M10021 = '有功电量Tag为无效数据';
 
 I18N.Message.M11012 = '该客户被层级引用，不能删除！';
 I18N.Message.M11351 = '编码重复';
@@ -1524,5 +1670,11 @@ I18N.Message.M05024 = '该用户已被删除。';
 I18N.Message.M05027 = '发起者用户已被删除。';
 I18N.Message.M05028 = '该订阅者已移除。';
 I18N.Message.M00953 = '输入非法。';
+
+I18N.Message.M11600 = '自定义能效标识在该客户下已经存在，请使用其它名字。';
+I18N.Message.M11601 = '自定义能效标识错误。';
+I18N.Message.M11602 = '自定义能效标识级别不连续。';
+I18N.Message.M11603 = '并发错误,请刷新。';
+
 I18N.Message.M05003 = '输入非法。'
 

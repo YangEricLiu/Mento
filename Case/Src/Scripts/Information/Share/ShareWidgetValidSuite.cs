@@ -80,7 +80,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“Widget_Share_101_1_A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Login to Jazz with userB. Navigate to homepage, then to hierarchynodeA.  
             HomePagePanel.ExitJazz();
@@ -139,7 +139,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享仪表盘“WidgetShare1012”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Click the widgetA. Click "share widget" button. Check UserB checkbox and click "share".
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
@@ -156,7 +156,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“WidgetShare1012A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
 
             //Go to hierarchynodeA chart view, add new widgetB to dashboardA
             EnergyAnalysis.NavigateToEnergyAnalysis();
@@ -194,7 +194,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享小组件“WidgetShare1012B”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
 
             //Login to Jazz with userB. Navigate to homepage, then to hierarchynodeA.  
             HomePagePanel.ExitJazz();

@@ -44,8 +44,9 @@
 		},
 		"ExpectedData":
 		{
-			"NoneDashboardMessage":"必填项",
-			"DashboardMessage":["该名称已存在"],
+			"NoneDashboardMessage":"$@Common.Label.MandatoryEmptyError",
+			"DashboardMessage":["$@Common.Label.DuplicatedName"],
+			"messages":["Widget_Add_101_3_7_A已保存", "$@Dashboard.ToNewDashboardFullText"],											
 		}
 	}
 ]

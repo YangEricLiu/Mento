@@ -19,7 +19,7 @@
 		},
 		"ExpectedData":
 		{
-			
+			"messages":["$@Common.Label.EmptyHierarchyText"],													
 		}
 	}
 ]

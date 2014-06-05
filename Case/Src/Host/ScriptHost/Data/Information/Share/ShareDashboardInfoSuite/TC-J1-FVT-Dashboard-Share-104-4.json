@@ -16,7 +16,8 @@
 		},
 		"ExpectedData":
 		{
-			"TooltipTexts":[["客户管理员", "010-99999999"]],
+			"TooltipTexts":[["$@Setting.CustomerManagement.Label.Administrator", "010-99999999"]],
+			"messages":["分享小组件“Dashboard_Share_104_4_A”成功。"],													
 		}
 	}
 ]

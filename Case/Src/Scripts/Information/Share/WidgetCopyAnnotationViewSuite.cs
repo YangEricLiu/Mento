@@ -84,7 +84,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
             //Pop up note show share successfully and disappear in little seconds.
-            Assert.AreEqual("分享小组件“WidgetCopyAnnotation_101_1_1”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Login to Jazz with userB. Navigate to homepage, then to hierarchynodeA.  
             HomePagePanel.ExitJazz();
@@ -172,7 +172,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
             //Pop up note show share successfully and disappear in little seconds.
-            Assert.AreEqual("分享小组件“WidgetCopyAnnotation_101_2_1”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Login to Jazz with userB. Navigate to homepage, then to hierarchynodeA.  
             HomePagePanel.ExitJazz();
@@ -269,7 +269,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
             //Pop up note show share successfully and disappear in little seconds.
-            Assert.AreEqual("分享小组件“WidgetCopyAnnotation_101_3_1”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Login to Jazz with userB. Navigate to homepage, then to hierarchynodeA.  
             HomePagePanel.ExitJazz();
@@ -366,7 +366,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
             //Pop up note show share successfully and disappear in little seconds.
-            Assert.AreEqual("分享小组件“WidgetCopyAnnotation_101_4_1”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Login to Jazz with userB. Navigate to homepage, then to hierarchynodeA.  
             HomePagePanel.ExitJazz();
@@ -454,7 +454,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
             //Pop up note show share successfully and disappear in little seconds.
-            Assert.AreEqual("分享小组件“WidgetCopyAnnotation_101_5_1”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Navigate to Homepage->Dashboard,Click the dashboard and verify the widget.Mouse over the icon.
             HomePagePanel.FloatOnEditCommentButton(dashboard[0].WidgetName);
@@ -641,7 +641,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
             //Pop up note show share successfully and disappear in little seconds.
-            Assert.AreEqual("分享小组件“WidgetCopyAnnotation_101_6_1”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Navigate to Homepage->Dashboard,Click the dashboard and verify the widget.Widget display in maximum size.
             HomePagePanel.MaximizeWidget(dashboard[0].WidgetName);

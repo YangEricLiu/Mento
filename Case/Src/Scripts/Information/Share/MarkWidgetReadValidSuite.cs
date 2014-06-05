@@ -70,7 +70,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“Widget_MarkRead_101_1_A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
             HomePagePanel.ExitJazz();
@@ -121,7 +121,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“Widget_MarkRead_101_2_B”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
         }
 
@@ -149,7 +149,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“Widget_MarkRead_101_3_B”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
             HomePagePanel.ExitJazz();
@@ -200,7 +200,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“WidgetMark1014A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
             HomePagePanel.ExitJazz();
@@ -251,7 +251,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“Widget_MarkRead_101_5_A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
             HomePagePanel.ExitJazz();
@@ -309,7 +309,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“Widget_MarkRead_101_6_B”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
             HomePagePanel.ExitJazz();
@@ -373,7 +373,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“Widget_MarkRead_101_7_A”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
@@ -387,7 +387,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“Widget_MarkRead_101_7_C”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
 
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(30);
@@ -401,7 +401,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“Widget_MarkRead_101_7_E”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[2], HomePagePanel.GetPopNotesValue());
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
             HomePagePanel.ExitJazz();
@@ -447,7 +447,7 @@ namespace Mento.Script.Information.Share
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(MarkWidgetReadValidSuite), "TC-J1-FVT-Widget-MarkRead-101-8")]
         public void MarkWidgetRead08(ShareDashboardData input)
         {
-
+            //ignore
         }
     }
 }

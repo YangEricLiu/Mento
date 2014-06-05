@@ -391,7 +391,7 @@ namespace Mento.Script.Information.Widgets
             TimeManager.LongPause();
 
             //Showing message in dialog, No Optional step=hour in dialog.
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             TimeManager.MediumPause();
             EnergyAnalysis.ClickGiveupButtonOnWindow();
@@ -423,7 +423,7 @@ namespace Mento.Script.Information.Widgets
             TimeManager.LongPause();
 
             //There is pop up warning message and no option step button display.
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             TimeManager.MediumPause();
             EnergyAnalysis.ClickGiveupButtonOnWindow();
@@ -513,7 +513,7 @@ namespace Mento.Script.Information.Widgets
             TimeManager.LongPause();
 
             //Pop up dialog and no optional step can be selected.
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\"的步长显示，换个步长试试"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
@@ -560,6 +560,5 @@ namespace Mento.Script.Information.Widgets
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
         }
-
     }
 }

@@ -108,7 +108,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             TimeManager.Pause(15);
 
             //.The info in widgetA of "由UserA共享" cannot change to "由UserAA共享"。
-            Assert.AreEqual("由ShareUserB共享", HomePagePanel.GetMyShareWidgetShareUser(dashboard[0].WidgetName));
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetMyShareWidgetShareUser(dashboard[0].WidgetName));
 
             //Verify the comment send by UserA.The user's name cannot be change.
             HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);

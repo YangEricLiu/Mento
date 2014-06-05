@@ -33,5 +33,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string NoneWidgetMessage { get; set; }
         public string[] WidgetMessage { get; set; }
         public string[] DashboardMessage { get; set; }
+        public string[] OtherMessage { get; set; }
+        public string[] messages { get; set; }
     }
 }

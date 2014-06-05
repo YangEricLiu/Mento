@@ -27,6 +27,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] newWidgetName { get; set; }
         public string[] widgetComment { get; set; }
         public string[] invalidMessage { get; set; }
+        public string[] messages { get; set; }
     }
 
 

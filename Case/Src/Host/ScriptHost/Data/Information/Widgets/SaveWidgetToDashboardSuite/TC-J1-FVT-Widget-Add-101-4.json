@@ -12,7 +12,7 @@
 		},
 		"ExpectedData":
 		{
-			"invalidMessage":["必填项。"],
+			"invalidMessage":["$@Common.Label.MandatoryEmptyError"],
 		}
 	}
 ]

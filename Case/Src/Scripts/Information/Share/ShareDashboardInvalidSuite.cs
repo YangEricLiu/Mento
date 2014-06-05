@@ -142,7 +142,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享仪表盘“Dashboard_Share_001_2”失败，无法分享给这些人：ShareUserE。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
         }
 
         [Test]
@@ -175,7 +175,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享仪表盘“DS0014”失败，无法分享给这些人：ShareUserE。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Delete a dashboard from UserE(Not delete dashboardA).Click "share" again.
             HomePagePanel.ExitJazz();
@@ -206,7 +206,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享仪表盘“DS0014”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
 
             //Click "Cancel" button in share dashboard window.
             HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
@@ -263,7 +263,7 @@ namespace Mento.Script.Information.Share
             TimeManager.LongPause();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual("分享仪表盘“Dashboard_Share_001_5123456789”失败，无法分享给这些人：ShareUserD。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
         }
     }
 }

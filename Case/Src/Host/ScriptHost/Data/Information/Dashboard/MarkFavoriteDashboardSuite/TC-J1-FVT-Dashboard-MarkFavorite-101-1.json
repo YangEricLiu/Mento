@@ -14,7 +14,8 @@
 		},
 		"ExpectedData":
 		{
-			"NoneWidgetMessage":"目前该仪表盘没有小组件",
+			"NoneWidgetMessage":"$@HomePage.Label.DashboardMessage.DashboardWithoutWidget",
+			"OtherMessage":["$@HomePage.Label.HierarchyName"],
 		}
 	}
 ]

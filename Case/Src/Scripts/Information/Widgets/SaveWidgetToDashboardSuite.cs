@@ -153,7 +153,7 @@ namespace Mento.Script.Information.Widgets
             TimeManager.LongPause();
 
             //Widget can be added to it successfully without error.
-            Assert.AreEqual("Widget_Add_101_2_13已保存", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Delete a widget from the dashboard which is full
             HomePagePanel.NavigateToAllDashboard();
@@ -186,7 +186,7 @@ namespace Mento.Script.Information.Widgets
             TimeManager.LongPause();
 
             //Widget can be added to it successfully without error.
-            Assert.AreEqual("Widget_Add_101_2_13已保存", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
 
             //Add one more, Message ‘该仪表盘已满’ is displayed again near the dashboard name.
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[6].WidgetName, dashboard[6].HierarchyName, dashboard[6].IsCreateDashboard, dashboard[6].DashboardName);
@@ -250,7 +250,7 @@ namespace Mento.Script.Information.Widgets
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
-            Assert.AreEqual("Widget_Add_101_3_7_A已保存", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //For the same hierarchy node, create several new dashboards and save widget to it one by one, until the total dashboard number of the node is 10.
             for (int i = 2; i < 5; i++)
@@ -266,7 +266,7 @@ namespace Mento.Script.Information.Widgets
 
             Assert.IsTrue(SaveToDs.IsCreateNewDashboardButtonDisabled());
             Assert.IsTrue(SaveToDs.IsExistedDashboardButtonChecked());
-            Assert.AreEqual("仪表盘数目已满", SaveToDs.GetCreateNewDashboardText());
+            Assert.AreEqual(input.ExpectedData.messages[1], SaveToDs.GetCreateNewDashboardText());
             SaveToDs.ClickCancelButton();
 
             //Delete a dashboard from above hierarchy node,

@@ -19,7 +19,7 @@
 		},
 		"ExpectedData":
 		{
-			
+			"messages":["分享小组件“Widget_Share0013A”成功。", "分享小组件“Widget_Share0013A”失败，无法分享给这些人：ShareUserD。"],																				
 		}
 	}
 ]

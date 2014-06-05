@@ -370,8 +370,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
             TimeManager.ShortPause();
         }
-
-
     }
 }
 

@@ -23,7 +23,7 @@
 		},
 		"ExpectedData":
 		{
-			
+			"messages":["$@Dashboard.Label.QuitSubscribing", "$@Dashboard.Label.RemoveSubscribers"],		
 		}
 	}
 ]

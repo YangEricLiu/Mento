@@ -50,9 +50,10 @@
 		},
 		"ExpectedData":
 		{
-			"NoneWidgetMessage":"必填项",
-			"WidgetMessage":["该名称已存在"],
-			"DashboardMessage":["当前的仪表盘的小组件数量已达上限，无法创建新的小组件。"],
+			"NoneWidgetMessage":"$@Common.Label.MandatoryEmptyError",
+			"WidgetMessage":["$@Common.Label.DuplicatedName"],
+			"DashboardMessage":["$@Message.M05016。"],
+			"messages":["Widget_Add_101_2_13已保存", "Widget_Add_101_2_13已保存"],											
 		}
 	}
 ]

@@ -70,7 +70,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享仪表盘“D”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
             TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
@@ -80,7 +80,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享仪表盘“D”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
             HomePagePanel.ExitJazz();
@@ -128,7 +128,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享仪表盘“DM2”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
             TimeManager.Pause(60000);
 
             HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
@@ -139,7 +139,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享仪表盘“DM2”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
             TimeManager.LongPause();
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
@@ -185,7 +185,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享小组件“Dashboard_MarkRead_101_3_B”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
             HomePagePanel.ExitJazz();
@@ -222,7 +222,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享仪表盘“D4”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
             TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
@@ -232,7 +232,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享仪表盘“D4”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
             HomePagePanel.ExitJazz();
@@ -281,7 +281,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享仪表盘“D5”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
             TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
@@ -291,7 +291,7 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             TimeManager.LongPause();
 
-            Assert.AreEqual("分享仪表盘“D5”成功。", HomePagePanel.GetPopNotesValue());
+            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
 
             //Login with userB. Navigate to homepage to select the hierarchynodeA.
             HomePagePanel.ExitJazz();

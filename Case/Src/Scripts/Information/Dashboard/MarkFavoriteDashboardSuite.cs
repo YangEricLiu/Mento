@@ -77,7 +77,7 @@ namespace Mento.Script.Information.Dashboard
             JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
             TimeManager.LongPause();
 
-            Assert.AreEqual("所在层级：", HomePagePanel.GetGetFavoriteLevelButtonCommonValue());
+            Assert.AreEqual(input.ExpectedData.OtherMessage[0], HomePagePanel.GetGetFavoriteLevelButtonCommonValue());
             Assert.AreEqual(dashboard[0].HierarchyName.Last(), HomePagePanel.GetFavoriteLevelButtonValue());
             HomePagePanel.ClickFavoriteLevelButton();
             JazzMessageBox.LoadingMask.WaitJumpFavoriteLoading();

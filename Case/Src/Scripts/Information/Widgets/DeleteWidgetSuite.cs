@@ -46,8 +46,6 @@ namespace Mento.Script.Information.Widgets
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(DeleteWidgetSuite), "TC-J1-FVT-Widget-Delete-101-1")]
         public void DeleteWidget(MaximizeWidgetData input)
         {
-            string[] deleteMessage = { "删除小组件 “Widget_Delete_101_1_1” 吗？", "删除小组件 “Widget_Delete_101_1_2” 吗？", "删除小组件 “Widget_Delete_101_1_3” 吗？", "删除小组件 “Widget_Delete_101_1_4” 吗？" };
-
             //Click on a Hierarchy node that contains dashboard.
             var dashboard = input.InputData.DashboardInfo;
 
@@ -63,7 +61,7 @@ namespace Mento.Script.Information.Widgets
             TimeManager.ShortPause();
 
             //Warning message is prompted to user for confirmation on the deletion.
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(deleteMessage[0]));
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.messages[0]));
 
             //Click 'Cancel' (取消) in the pop up confirmation window.
             JazzMessageBox.MessageBox.GiveUp();

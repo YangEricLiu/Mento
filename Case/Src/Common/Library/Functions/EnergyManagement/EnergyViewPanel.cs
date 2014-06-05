@@ -826,7 +826,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
                 if (expectedPieDict.ContainsKey(HierarchysAndTagsLists[i].Hieararchy))
                 {
-                    expectedPieDict[HierarchysAndTagsLists[i].Hieararchy] = taglist;
+                    expectedPieDict[HierarchysAndTagsLists[i].Hieararchy] = expectedPieDict[HierarchysAndTagsLists[i].Hieararchy] + "," + taglist;
                 }
                 else
                 {

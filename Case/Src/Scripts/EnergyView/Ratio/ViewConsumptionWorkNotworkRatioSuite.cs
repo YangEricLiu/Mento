@@ -83,7 +83,7 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             JazzWindow.WindowMessageInfos.Quit();
             TimeManager.ShortPause();
 

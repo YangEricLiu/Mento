@@ -365,8 +365,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-View-101-3")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-View-101-3")]
-        
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-View-101-3")]    
         public void ViewCostUnitIndicator03(UnitIndicatorData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Unit indicator. Select the BuildingCostYearToDay from Hierarchy Tree. Click Function Type button, select Cost.
@@ -519,7 +518,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             TimeManager.LongPause();
 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
             EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Day);
@@ -562,7 +561,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             //· Warning message display show include tag step not support. 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Week));
@@ -584,7 +583,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             //· Warning message display show include tag step not support. 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Week));
@@ -678,8 +677,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
- 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[2]));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Week));
@@ -697,7 +696,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[3]));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Week));

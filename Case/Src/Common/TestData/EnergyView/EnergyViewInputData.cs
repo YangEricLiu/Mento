@@ -39,6 +39,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public ManualTimeRange[] ManualTimeRange { get; set; }
 
         public MultipleHierarchyAndtags[] MultipleHierarchyAndtags { get; set; }
+
+        public string[] HierarchyTexts { get; set; }
     }
 
     public class EnergyViewOptionOutput : ExpectedTestDataBase

@@ -64,7 +64,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             EnergyViewToolbar.ClickViewButton();
             TimeManager.LongPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             JazzWindow.WindowMessageInfos.Quit();
             TimeManager.ShortPause();
 
@@ -80,7 +80,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             EnergyViewToolbar.ClickViewButton();
             TimeManager.LongPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             JazzWindow.WindowMessageInfos.Quit();
             TimeManager.ShortPause();
 
@@ -98,7 +98,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.LongPause();
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             TimeManager.LongPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
             EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Day);
@@ -125,7 +125,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             TimeManager.LongPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Week));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
@@ -604,7 +604,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyViewToolbar.View(EnergyViewType.Line);
             TimeManager.LongPause();
             TimeManager.LongPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             JazzWindow.WindowMessageInfos.Quit();
             TimeManager.ShortPause();
 
@@ -622,7 +622,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyViewToolbar.ClickViewButton();
             TimeManager.LongPause();
             TimeManager.LongPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             JazzWindow.WindowMessageInfos.Quit();
             TimeManager.ShortPause();
 
@@ -651,7 +651,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyViewToolbar.ClickViewButton();
             TimeManager.LongPause();
             TimeManager.LongPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Week));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
@@ -678,7 +678,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyViewToolbar.ClickViewButton();
             TimeManager.LongPause();
             TimeManager.LongPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Week));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));

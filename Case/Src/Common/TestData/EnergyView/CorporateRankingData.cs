@@ -37,5 +37,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string QuitMultipleMessage { get; set; }
         public string[] StepMessage { get; set; }
         public string[] commodityNames { get; set; }
+        public string[] messages { get; set; }
+        public string[] FuncModeConvertTargetTexts { get; set; }
     }
 }

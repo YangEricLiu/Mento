@@ -94,7 +94,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.CheckTag(input.InputData.TagNames[2]);
             EnergyViewToolbar.ClickViewButton();
             TimeManager.MediumPause();
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains("所选数据点介质不同，无法共同绘制饼状图！"));
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.messages[0]));
             JazzMessageBox.MessageBox.Confirm();
             Assert.IsFalse(EnergyAnalysis.IsTagChecked(input.InputData.TagNames[2]));
             //Assert.IsTrue(EnergyViewToolbar.IsTimeSpanButtonEnable());
@@ -104,7 +104,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.CheckTag(input.InputData.TagNames[3]);
             EnergyViewToolbar.View(EnergyViewType.Line);
             TimeManager.MediumPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
             JazzWindow.WindowMessageInfos.Quit();
             Assert.IsFalse(EnergyAnalysis.IsTagChecked(input.InputData.TagNames[3]));
             Assert.IsTrue(EnergyViewToolbar.IsTimeSpanButtonEnable());

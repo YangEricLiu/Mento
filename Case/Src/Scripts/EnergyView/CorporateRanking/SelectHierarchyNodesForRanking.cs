@@ -111,21 +111,21 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Select ‘Energy Consumption’ option.Display Hierarchy Mode button (SingleHierarchyNode is selected by default).
             //Display Hierarchy Tree Selector.Display tag selector which support tags under hierarchy node, system node, and area node.
 
-            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(),"能耗");
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(),input.ExpectedData.FuncModeConvertTargetTexts[0]);
             UnitIndicator.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             TimeManager.LongPause();
-            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "碳排放");
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), input.ExpectedData.FuncModeConvertTargetTexts[1]);
             //Select ‘Carbon Emission’ option.•  Display Hierarchy Tree Selector.
             //•  Display Commodity selector which only support commodity under hierarchy node--电，自来水
             UnitIndicator.SelectSingleCommodityUnitCarbon(input.InputData.commodityNames[0]);
             UnitIndicator.SelectSingleCommodityUnitCarbon(input.InputData.commodityNames[1]);
 
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
-            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "成本");
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), input.ExpectedData.FuncModeConvertTargetTexts[2]);
             UnitIndicator.SelectSingleCommodityUnitCost(input.InputData.commodityNames[0]);
             UnitIndicator.SelectSingleCommodityUnitCost(input.InputData.commodityNames[1]);
 
@@ -161,7 +161,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             //Select ‘Energy Consumption’ option.•  Display Hierarchy Tree Selector.
             //Display Commodity selector which support commodity under hierarchy node, system node, and area node..
-            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "能耗");
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), input.ExpectedData.FuncModeConvertTargetTexts[0]);
             CorporateRanking.ClickSelectHierarchyButton();
             TimeManager.LongPause();
             CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[0]);
@@ -179,14 +179,14 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //•  Display Carbon Emission Type selector.
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             TimeManager.LongPause();
-            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "碳排放");
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), input.ExpectedData.FuncModeConvertTargetTexts[1]);
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[1]);
 
             //Select ‘Cost’ option.•  Display Hierarchy Tree Selector.
             //•  Display Commodity selector which only support commodity under hierarchy node and system node (without area node).
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
-            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), "成本");
+            Assert.AreEqual(EnergyViewToolbar.GetFuncModeConvertTargetText(), input.ExpectedData.FuncModeConvertTargetTexts[2]);
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[1]);     
         }

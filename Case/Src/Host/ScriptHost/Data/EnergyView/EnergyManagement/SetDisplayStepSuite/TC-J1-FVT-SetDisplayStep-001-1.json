@@ -59,6 +59,7 @@
 		{
 			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
 			"expectedFileName":["SetDisplayStep-001-1-D-VD_Site1.xls", "SetDisplayStep-001-1-D-VM_Site1.xls"],
+			"messages":["所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。", "所选数据点不支持\"按小时\"的步长显示，换个步长试试。"],
 		}
 	}
 ]

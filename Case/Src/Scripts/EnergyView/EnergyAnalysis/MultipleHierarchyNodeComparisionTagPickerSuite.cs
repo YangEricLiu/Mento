@@ -81,7 +81,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Click "放弃" and back to "单层数据点"
             MultiHieCompareWindow.ClickGiveUpButton();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyViewToolbar.GetCurrentTagModeButtonValue().Contains("单层级数据点"));
+            Assert.IsTrue(EnergyViewToolbar.GetCurrentTagModeButtonValue().Contains(input.InputData.HierarchyTexts[0]));
             Assert.IsTrue(EnergyAnalysis.IsTagChecked(input.InputData.TagNames[0]));
 
             //Switch to "多层级数据点" and check the same tag again, verify that after confirm the tag is checked on left
@@ -199,7 +199,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //back to "多层级数据点", the hierarchy button is display "请选择层级结构"
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
             TimeManager.MediumPause();
-            Assert.IsTrue(MultiHieCompareWindow.GetHierarchyButtonValue().Contains("请选择层级结构"));
+            Assert.IsTrue(MultiHieCompareWindow.GetHierarchyButtonValue().Contains(input.InputData.HierarchyTexts[0]));
 
             //The tags are still on the right part list
             for (int i = 0; i < 10; i++)
@@ -240,7 +240,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.QuitMultipleMessage));
             JazzMessageBox.MessageBox.GiveUp();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyViewToolbar.GetCurrentTagModeButtonValue().Contains("多层级数据点"));
+            Assert.IsTrue(EnergyViewToolbar.GetCurrentTagModeButtonValue().Contains(input.InputData.HierarchyTexts[1]));
 
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.SingleHierarchyTag);
             TimeManager.MediumPause();
@@ -249,7 +249,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //"单层级数据点" display and  "+数据点" not displayed
-            Assert.IsTrue(EnergyViewToolbar.GetCurrentTagModeButtonValue().Contains("单层级数据点"));
+            Assert.IsTrue(EnergyViewToolbar.GetCurrentTagModeButtonValue().Contains(input.InputData.HierarchyTexts[2]));
             Assert.IsFalse(EnergyAnalysis.IsMultipleHierarchyAddTagsButtonDisplayed());
 
             //Pick up one tag from "多层级数据点"
@@ -281,7 +281,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.MessageBox.Clear();
             TimeManager.MediumPause();
             //Assert.IsFalse(EnergyAnalysis.IsTrendChartDrawn());
-            Assert.IsTrue(EnergyViewToolbar.GetCurrentTagModeButtonValue().Contains("多层级数据点"));
+            Assert.IsTrue(EnergyViewToolbar.GetCurrentTagModeButtonValue().Contains(input.InputData.HierarchyTexts[1]));
             Assert.IsTrue(EnergyAnalysis.IsMultipleHierarchyAddTagsButtonDisplayed());
             Assert.IsTrue(EnergyAnalysis.IsEmptyMultiHierarchyTagsPanel());
         }

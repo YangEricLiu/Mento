@@ -231,7 +231,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //•  In default, No any option is selected.
             int l = 1;
             Assert.IsFalse(CorporateRanking.IsCommodityOnRankingPanel(input.InputData.commodityNames[0]));
-            Assert.IsFalse(CorporateRanking.IsCommodityOnRankingPanel("准确"));
+            Assert.IsFalse(CorporateRanking.IsCommodityOnRankingPanel(input.ExpectedData.messages[0]));
             while (l < input.InputData.commodityNames.Length)
             {
                 Assert.IsTrue(CorporateRanking.IsCommodityOnRankingPanel(input.InputData.commodityNames[l]));

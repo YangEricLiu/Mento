@@ -242,7 +242,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
-            Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled("删除全部对比时间段"));
+            Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled(input.ExpectedData.DeleteMessages[0]));
 
             //Add multiple compared intervals successfully again.
             EnergyViewToolbar.ClickTimeSpanButton();
@@ -279,7 +279,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
-            Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled("删除全部对比时间段"));
+            Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled(input.ExpectedData.DeleteMessages[0]));
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.MediumPause();
             EnergyViewToolbar.ClickTimeSpanButton();
@@ -294,7 +294,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeSpanDialog.ClickConfirmButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsFalse(EnergyViewToolbar.IsMoreMenuItemDisabled("删除所有"));
+            Assert.IsFalse(EnergyViewToolbar.IsMoreMenuItemDisabled(input.ExpectedData.DeleteMessages[1]));
             EnergyViewToolbar.OpenMoreButton();
             TimeManager.MediumPause();
 

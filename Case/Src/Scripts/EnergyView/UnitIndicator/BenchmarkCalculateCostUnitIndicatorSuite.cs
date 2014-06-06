@@ -214,7 +214,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[0]);
             TimeManager.MediumPause();
 
-            EnergyViewToolbar.SelectIndustryConvertTarget("严寒地区B区机房");
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industries[0]);
             TimeManager.MediumPause();
 
             //"单位面积"

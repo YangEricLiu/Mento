@@ -160,8 +160,8 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
             IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
-            Assert.IsTrue(EnergyViewToolbar.IsMoreMenuItemDisabled("默认时间"));
-            Assert.IsTrue(EnergyViewToolbar.IsMoreMenuItemDisabled("显示日历"));
+            Assert.IsTrue(EnergyViewToolbar.IsMoreMenuItemDisabled(input.ExpectedData.texts[0]));
+            Assert.IsTrue(EnergyViewToolbar.IsMoreMenuItemDisabled(input.ExpectedData.texts[1]));
 
             //Change Unit=单位人口. Click “+数据点” to select multiple tags from hierarchy node BuildingBAD and Dimension node, 
             //Open "多层级数据点" again

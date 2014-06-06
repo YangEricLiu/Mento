@@ -45,6 +45,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string ClearAllMessage { get; set; }
         public string QuitMultipleMessage { get; set; }
         public string[] StepMessage { get; set; }
+        public string[] messages { get; set; }
     }
 
     public class ManualTimeRange

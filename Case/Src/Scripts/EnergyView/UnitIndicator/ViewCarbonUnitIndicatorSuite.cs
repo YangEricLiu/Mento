@@ -383,7 +383,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             EnergyAnalysis.ClickGiveupButtonOnWindow();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
@@ -396,7 +396,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             EnergyAnalysis.ClickGiveupButtonOnWindow();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
@@ -408,7 +408,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             EnergyAnalysis.ClickGiveupButtonOnWindow();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
@@ -422,7 +422,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             EnergyAnalysis.ClickGiveupButtonOnWindow();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
@@ -485,7 +485,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             TimeManager.LongPause();
 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
@@ -498,7 +498,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
             TimeManager.LongPause();
 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
@@ -511,7 +511,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
             TimeManager.LongPause();
 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
@@ -551,7 +551,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             EnergyAnalysis.ClickGiveupButtonOnWindow();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
@@ -568,7 +568,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
             EnergyAnalysis.ClickGiveupButtonOnWindow();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
@@ -762,9 +762,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            UnitKPIPanel.ClickLegendItem("天然气计算值");
+            UnitKPIPanel.ClickLegendItem(input.ExpectedData.LegendTexts[0]);
             TimeManager.MediumPause();
-            UnitKPIPanel.ClickLegendItem("天然气基准值");
+            UnitKPIPanel.ClickLegendItem(input.ExpectedData.LegendTexts[0]);
             TimeManager.MediumPause();
 
             //The chart start from 2013/01 correctly, only display target value

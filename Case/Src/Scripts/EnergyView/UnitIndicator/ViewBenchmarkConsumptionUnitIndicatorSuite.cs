@@ -105,7 +105,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
 
-            EnergyViewToolbar.SelectIndustryConvertTarget("无");
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industries[1]);
             TimeManager.ShortPause();
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -576,7 +576,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             JazzWindow.WindowMessageInfos.Quit();
             TimeManager.ShortPause();
 
@@ -594,7 +594,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains("所选数据点不支持\"按小时\"的步长显示，换个步长试试。"));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
             JazzWindow.WindowMessageInfos.Quit();
             TimeManager.ShortPause();
 

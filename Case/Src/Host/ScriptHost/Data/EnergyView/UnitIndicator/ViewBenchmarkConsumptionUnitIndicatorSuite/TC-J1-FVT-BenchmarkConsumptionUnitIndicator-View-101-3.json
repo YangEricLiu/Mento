@@ -11,6 +11,7 @@
 		{
 			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试"],
 			"expectedFileName":["BenchmarkConsumptionUnitIndicator-View-101-3-M-0.xls", "BenchmarkConsumptionUnitIndicator-View-101-3-M-1.xls", "BenchmarkConsumptionUnitIndicator-View-101-3-M-2.xls", "BenchmarkConsumptionUnitIndicator-View-101-3-M-3.xls"],
+			"messages":["所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。", "所选数据点不支持\"按小时\"的步长显示，换个步长试试。"],
 		}
 	}
 ]

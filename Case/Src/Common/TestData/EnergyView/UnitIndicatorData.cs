@@ -47,6 +47,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public UnitIndicatorLegend[] UnitIndicatorLegend { get; set; }
         public string[] popupNotes { get; set; }
         public string ClearAllMessage { get; set; }
+        public string[] messages { get; set; }
+        public string[] LegendTexts { get; set; }
     }
 
     public class UnitIndicatorLegend

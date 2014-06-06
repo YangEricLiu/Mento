@@ -10,6 +10,7 @@
 				"EndDate":"2012-8-4",	
 			}],
 			"failedFileName":["F-BenchmarkCostCalculate101-2-H-0.xls", "F-BenchmarkCostCalculate101-2-H-1.xls", "F-BenchmarkCostCalculate101-2-H-2.xls", "F-BenchmarkCostCalculate101-2-H-3.xls"],
+			"Industries":["严寒地区B区机房"],
 		},
 		"ExpectedData":
 		{

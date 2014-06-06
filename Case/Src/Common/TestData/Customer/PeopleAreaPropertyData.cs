@@ -21,6 +21,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string PeopleEffectiveDate { get; set; }
         public string PeopleNumber { get; set; }
         public string IntegerValue { get; set; }
+        public string areaTitle { get; set; }
     }
 
     public class PeopleAreaPropertyExpectedData : ExpectedTestDataBase

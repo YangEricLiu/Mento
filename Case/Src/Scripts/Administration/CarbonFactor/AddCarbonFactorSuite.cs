@@ -233,7 +233,7 @@ namespace Mento.Script.Administration.CarbonFactor
             //Click "+转换因子" button
             CarbonFactorSettings.PrepareToAddCarbonFactor();
             TimeManager.ShortPause();
-            CarbonFactorSettings.SelectFactorSource("柴油(千克)");
+            CarbonFactorSettings.SelectFactorSource(testData.InputData.FactorSource);
 
             //点击"+" button两下.
             CarbonFactorSettings.ClickAddMoreRangesButton();

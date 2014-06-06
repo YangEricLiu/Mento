@@ -29,7 +29,7 @@ namespace Mento.Script.ClientAccess.ContactUs
         public void ContactUsValid(ContactUsData input)
         {
             //Open the homepage via click the hyperlink send for created demo user.
-            JazzFunction.LoginPage.LoginCutomerOption("“云能效”系统管理");
+            JazzFunction.LoginPage.LoginCutomerOption(input.InputData.Customer);
             TimeManager.Pause(20000);
 
             //Go to verify Contact Us.

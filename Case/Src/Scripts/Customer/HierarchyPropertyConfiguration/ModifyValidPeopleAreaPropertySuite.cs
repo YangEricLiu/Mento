@@ -211,8 +211,6 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(ModifyValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Modify-101-6")]
         public void ModifyValidArea(PeopleAreaPropertyData input)
         {
-            string areaTitle = "面积属性";
-
             //Select one buidling node
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.LongPause();
@@ -232,7 +230,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //verify that area property display
-            Assert.IsTrue(PeopleAreaSetting.IsAreaPropertyTitleDisplay(areaTitle));
+            Assert.IsTrue(PeopleAreaSetting.IsAreaPropertyTitleDisplay(input.InputData.areaTitle));
 
             //Verify the input value displayed correct
             Assert.AreEqual(PeopleAreaSetting.GetTotalAreaValue(), input.ExpectedData.TotalArea);

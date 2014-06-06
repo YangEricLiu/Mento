@@ -5,6 +5,7 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
+			"areaTitle":"$@Setting.DynamicProperty.Area",
 		},
 		"ExpectedData":
 		{
@@ -15,6 +16,7 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],
+			"areaTitle":"$@Setting.DynamicProperty.Area",
 		},
 		"ExpectedData":
 		{
@@ -25,6 +27,7 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],		
+			"areaTitle":"$@Setting.DynamicProperty.Area",
 		},
 		"ExpectedData":
 		{
@@ -35,6 +38,7 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],	
+			"areaTitle":"$@Setting.DynamicProperty.Area",
 		},
 		"ExpectedData":
 		{
@@ -45,6 +49,7 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试", "AddCalendarProperty", "AddPeopleProperty"],		
+			"areaTitle":"$@Setting.DynamicProperty.Area",
 		},
 		"ExpectedData":
 		{

@@ -3,6 +3,7 @@
 		"InputData":
 		{
 			"CommonName":"UserForCheckAll",
+			"FunctionScopeList":["仪表盘和小组件分享与共享", "“碳排放”功能", "“能效分析”功能"],
 		},
 		"ExpectedData":
 		{

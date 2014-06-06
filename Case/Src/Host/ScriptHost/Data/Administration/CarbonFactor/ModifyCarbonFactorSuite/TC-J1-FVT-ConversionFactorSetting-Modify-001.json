@@ -1,7 +1,8 @@
 ﻿[
 	{
 		"InputData":
-		{			
+		{	
+			"FactorSource":"电(千瓦时)",			
 		},
 		"ExpectedData":
 		{	

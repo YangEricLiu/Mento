@@ -9,6 +9,7 @@
 			"Commodity":"Electricity",
 			"Uom":"KWH",
 			"CalculationType":"Sum",
+			"AccumulateText":"$@Common.Glossary.AccumulatedValueCal",
 		},
 		"ExpectedData":
 		{

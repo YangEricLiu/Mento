@@ -134,9 +134,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-4")]
         public void PAAddEmptyAreaAndCheck(PeopleAreaPropertyData input)
-        {
-            string areaTitle = "面积属性";
-            
+        {           
             //Select one buidling node
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.LongPause();
@@ -154,7 +152,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();  
 
             //verify that area property not display
-            Assert.IsFalse(PeopleAreaSetting.IsAreaPropertyTitleDisplay(areaTitle));
+            Assert.IsFalse(PeopleAreaSetting.IsAreaPropertyTitleDisplay(input.InputData.areaTitle));
 
             //Verify it on formula, which delay to automated
         }
@@ -165,8 +163,6 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-5")]
         public void PAAddValidAreaAndCheck(PeopleAreaPropertyData input)
         {
-            string areaTitle = "面积属性";
-
             //Select one buidling node
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.LongPause();
@@ -185,7 +181,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             TimeManager.ShortPause();
 
             //verify that area property display
-            Assert.IsTrue(PeopleAreaSetting.IsAreaPropertyTitleDisplay(areaTitle));
+            Assert.IsTrue(PeopleAreaSetting.IsAreaPropertyTitleDisplay(input.InputData.areaTitle));
 
             //Verify the input value displayed correct
             Assert.AreEqual(PeopleAreaSetting.GetTotalAreaValue(), input.ExpectedData.IntegerValue);

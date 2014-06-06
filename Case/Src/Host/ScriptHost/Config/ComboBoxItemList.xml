@@ -87,6 +87,6 @@
   <add key = "LastMonth" value = "$@Common.DateRange.LastMonth"/>
   <add key = "ThisYear" value = "$@Common.DateRange.ThisYear"/>
   <add key = "LastYear" value = "$@Common.DateRange.LastYear"/>
-  <add key = "ManualDefine" value = "自定义"/>
+  <add key = "ManualDefine" value = "$@Common.DateRange.Customerize"/>
   
 </ItemList>

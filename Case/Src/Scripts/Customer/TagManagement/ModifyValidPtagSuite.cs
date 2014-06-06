@@ -238,13 +238,13 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             //Modify ptag to uncheck "IsAccumulated" and save 
-            PTagSettings.UncheckIsAccumulatedCheckbox("使用累积值计算");
+            PTagSettings.UncheckIsAccumulatedCheckbox(input.InputData.AccumulateText);
             TimeManager.ShortPause();
             PTagSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
-            Assert.IsTrue(PTagSettings.IsAccumulatedNotDisplayed("使用累积值计算"));
+            Assert.IsTrue(PTagSettings.IsAccumulatedNotDisplayed(input.InputData.AccumulateText));
 
             //Select the same ptag and then Click '修改' button on ‘基础属性' tab
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
@@ -252,13 +252,13 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             //Modify ptag to check "IsAccumulated" and save 
-            PTagSettings.CheckIsAccumulatedCheckbox("使用累积值计算");
+            PTagSettings.CheckIsAccumulatedCheckbox(input.InputData.AccumulateText);
             TimeManager.ShortPause();
             PTagSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
-            Assert.IsFalse(PTagSettings.IsAccumulatedNotDisplayed("使用累积值计算"));
+            Assert.IsFalse(PTagSettings.IsAccumulatedNotDisplayed(input.InputData.AccumulateText));
         }
     }
 }

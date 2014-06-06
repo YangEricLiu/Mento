@@ -6,6 +6,7 @@
 			"TotalArea":"10",
 			"HeatingArea":"",
 			"CoolingArea":"30",
+			"areaTitle":"$@Setting.DynamicProperty.Area",
 		},
 		"ExpectedData":
 		{

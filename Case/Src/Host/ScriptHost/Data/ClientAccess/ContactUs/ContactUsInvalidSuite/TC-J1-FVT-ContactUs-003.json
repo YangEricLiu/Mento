@@ -7,6 +7,7 @@
 			"Companys":["@","&*","中文@","chars@","chars@","chars@","西门子"],
 			"Titles":["$%^","$%^","$%^中文","chars$%^","chars$%^","ab"],
 			"DescriptionFieldss":["$%^","$%^","$%^中文","chars$%^","chars$%^","ab"],
+			"Customer":"“云能效”系统管理",
 		},
 		"ExpectedData":
 		{

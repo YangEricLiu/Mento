@@ -95,9 +95,9 @@ namespace Mento.Script.Administration.User
             JazzFunction.UserTypePermissionSettings.FocusOnUserType("RoleTypeUsed");
             JazzFunction.UserTypePermissionSettings.ClickModifyButton();
             //modify the function role type
-            JazzFunction.UserTypePermissionSettings.Check("仪表盘和小组件分享与共享");
-            JazzFunction.UserTypePermissionSettings.Check("“碳排放”功能");
-            JazzFunction.UserTypePermissionSettings.Check("“能效分析”功能");
+            JazzFunction.UserTypePermissionSettings.Check(input.InputData.FunctionScopeList[0]);
+            JazzFunction.UserTypePermissionSettings.Check(input.InputData.FunctionScopeList[1]);
+            JazzFunction.UserTypePermissionSettings.Check(input.InputData.FunctionScopeList[2]);
             JazzFunction.UserTypePermissionSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();

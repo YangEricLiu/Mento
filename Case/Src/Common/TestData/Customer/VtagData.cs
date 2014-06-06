@@ -24,6 +24,9 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string[] HierarchyNodePath { get; set; }
         public string[] AreaNodePath { get; set; }
         public string[] SystemNodePath { get; set; }
+        public string Industry { get; set; }
+        public string Zone { get; set; }
+        public string HierarchyType { get; set; }
     }
     public class VtagOuputData : ExpectedTestDataBase
     {

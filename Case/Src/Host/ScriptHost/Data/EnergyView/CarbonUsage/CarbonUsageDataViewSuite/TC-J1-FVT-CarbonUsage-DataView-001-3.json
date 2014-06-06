@@ -4,6 +4,9 @@
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
 			"commodityNames":["煤"],
+			"CarbonTypeStandardCoal":"$@Common.CarbonUomType.StandardCoal",
+			"CarbonTypeCO2":"$@Common.CarbonUomType.CO2",
+			"CarbonTypeTree":"$@Common.CarbonUomType.Tree",
 		},
 		"ExpectedData":
 		{

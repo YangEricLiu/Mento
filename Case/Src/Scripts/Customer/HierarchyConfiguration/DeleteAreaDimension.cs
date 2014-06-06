@@ -189,8 +189,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //  Could select the node path
             Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath));
             //Assert.AreEqual(input.InputData.CommonName, AreaSettings.GetAreaDimensionName());
-
-            
+        
             // check  Level  1 deleted
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -206,8 +205,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             AreaSettings.ClickDeleteButton();
             //Verify that message box popup for confirm delete
             string msgText = JazzMessageBox.MessageBox.GetMessage();
-            Assert.IsTrue(msgText.Contains(Message[0]));
-            Assert.IsTrue(msgText.Contains(Message[1]));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[2]));
+            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[1]));
             /*
             TimeManager.MediumPause();
             JazzMessageBox.MessageBox.GetMessage().Equals(Message);
@@ -243,7 +242,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.MediumPause();
             //  Could select the node path
             Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(AreaNode2));
-
         }
 
 
@@ -287,8 +285,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //TimeManager.MediumPause();
             Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath));
             TimeManager.MediumPause();
-
-
 
             //2. Energy Analysis area node added
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);

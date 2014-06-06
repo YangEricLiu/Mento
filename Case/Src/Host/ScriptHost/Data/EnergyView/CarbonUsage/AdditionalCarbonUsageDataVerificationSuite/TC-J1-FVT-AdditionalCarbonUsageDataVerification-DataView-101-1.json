@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
-			"commodityNames":["电", "汽油", "煤", "热量", "自来水", "冷量"],
-			"CarbonType":"标煤",
+			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Petrol", "煤", "$@Common.Commodity.HeatQ", "$@Common.Commodity.Water", "$@Common.Commodity.CoolQ"],
+			"CarbonType":"$@Common.CarbonUomType.StandardCoal",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-18",	
@@ -32,8 +32,8 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
-			"commodityNames":["电", "汽油", "煤", "热量", "自来水", "冷量"],
-			"CarbonType":"二氧化碳",
+			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Petrol", "煤", "$@Common.Commodity.HeatQ", "$@Common.Commodity.Water", "$@Common.Commodity.CoolQ"],
+			"CarbonType":"$@Common.CarbonUomType.CO2",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-18",	
@@ -61,8 +61,8 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
-			"commodityNames":["电", "汽油", "煤", "热量", "自来水", "冷量"],
-			"CarbonType":"树",
+			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Petrol", "煤", "$@Common.Commodity.HeatQ", "$@Common.Commodity.Water", "$@Common.Commodity.CoolQ"],
+			"CarbonType":"$@Common.CarbonUomType.Tree",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-18",	

@@ -3,7 +3,8 @@
 		"InputData":
 		{	
 			"EffectiveYear":"2013",
-			"FactorValue":"4",			
+			"FactorValue":"4",	
+			"FactorSource":"天然气(立方米)",		
 		},
 		"ExpectedData":
 		{

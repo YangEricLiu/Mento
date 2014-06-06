@@ -105,13 +105,12 @@ namespace Mento.Script.Administration.User
         public void TitleDisplayItem(UserSettingsData input)
         {
             int i = 0;
-            string[] titleList = { "能源工程顾问","技术人员","客户管理员","服务商管理员","能源经理","能源工程师","部门经理","管理层","业务人员","销售人员" };
             //Click "+用户"
             UserSettings.ClickAddUser();
             TimeManager.ShortPause();
-            while (i < titleList.Length)
+            while (i < input.InputData.titleList.Length)
             {
-                Assert.IsTrue(UserSettings.FillInTitle(titleList[i]));
+                Assert.IsTrue(UserSettings.FillInTitle(input.InputData.titleList[i]));
                 i++;
             }
             //@@ Assert.IsTrue(UserSettings.AreTitleDisplayAllItem());

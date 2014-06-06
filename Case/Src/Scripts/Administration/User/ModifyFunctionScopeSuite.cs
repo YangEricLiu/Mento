@@ -46,8 +46,6 @@ namespace Mento.Script.Administration.User
         public void PublicFunctionUncheck(RoleTypePermissionData input)
         {
             int i,j,s = 0;
-            string[] publicPermission = {"仪表盘与小组件查看","仪表盘与小组件编辑","个人信息管理","地图信息查看" };
-            string[] customerizePermission = { "仪表盘和小组件分享与共享", "“能效分析”功能", "“碳排放”功能", "“成本”功能", "“单位指标”功能", "“时段能耗比”功能", "“能效标识”功能", "“集团排名”功能", "数据导出", "“云能效”系统管理", "层级结构管理", "普通数据点管理", "数据点关联", "客户信息查看", "客户信息管理", "自定义能效标识" };
             while (s < input.InputData.NameList.Length)
             {
                 // Focus a  role type
@@ -56,11 +54,11 @@ namespace Mento.Script.Administration.User
                 TimeManager.ShortPause();
                 for (i = 0; i < 4; i++)
                 {
-                    Assert.IsTrue(RoleTypeSettings.IsPermissionItemDisabled(publicPermission[i]));
+                    Assert.IsTrue(RoleTypeSettings.IsPermissionItemDisabled(input.InputData.publicPermission[i]));
                 }
-                for (j = 0; j < customerizePermission.Length; j++)
+                for (j = 0; j < input.InputData.customerizePermission.Length; j++)
                 {
-                    Assert.IsFalse(RoleTypeSettings.IsPermissionItemDisabled(customerizePermission[j]));
+                    Assert.IsFalse(RoleTypeSettings.IsPermissionItemDisabled(input.InputData.customerizePermission[j]));
                 }
                 RoleTypeSettings.ClickCancelButton();
                 s++;
@@ -74,7 +72,6 @@ namespace Mento.Script.Administration.User
         [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(ModifyFunctionScopeSuite), "TC-J1-FVT-FunctionPermissionRoleType-ModifyFunctionScope-2")]
         public void ModifyAndThenCancel(RoleTypePermissionData input)
         {
-            string[] permissions = { "“能效分析”功能", "“碳排放”功能", "“成本”功能", "“云能效”系统管理", "层级结构管理", "普通数据点管理", "数据点关联", "客户信息查看", "客户信息管理", "“集团排名”功能", "“单位指标”功能", "“时段能耗比”功能" };
             // Focus a  role type
             RoleTypeSettings.FocusOnUserType(input.InputData.CommonName);
             RoleTypeSettings.ClickModifyButton();
@@ -88,10 +85,10 @@ namespace Mento.Script.Administration.User
                 i++;
             }
             int j = 0;
-            while (j < permissions.Length)
+            while (j < input.InputData.permissions.Length)
             {
-                RoleTypeSettings.Check(permissions[j]);
-                RoleTypeSettings.UnCheck(permissions[j]);
+                RoleTypeSettings.Check(input.InputData.permissions[j]);
+                RoleTypeSettings.UnCheck(input.InputData.permissions[j]);
                 j++;
             }
             // Click "保存" button without input FunctionRoleType and function scope.
@@ -110,7 +107,7 @@ namespace Mento.Script.Administration.User
             j = 0;
             while (j < input.InputData.NameList.Length)
             {
-                Assert.IsFalse(RoleTypeSettings.IsCustomerizePermissionItemChecked(permissions[j]));
+                Assert.IsFalse(RoleTypeSettings.IsCustomerizePermissionItemChecked(input.InputData.permissions[j]));
                 j++;
             }
         }
@@ -121,7 +118,6 @@ namespace Mento.Script.Administration.User
         [MultipleTestDataSource(typeof(RoleTypePermissionData[]), typeof(ModifyFunctionScopeSuite), "TC-J1-FVT-FunctionPermissionRoleType-ModifyFunctionScope-3")]
         public void ModifyFunctionScopeSuccess(RoleTypePermissionData input)
         {
-           string[]  permissions = {"“能效分析”功能","“碳排放”功能","“成本”功能","“云能效”系统管理","层级结构管理","普通数据点管理","数据点关联","客户信息查看","客户信息管理","“集团排名”功能","“单位指标”功能","“时段能耗比”功能"};
             // Focus a  role type
             RoleTypeSettings.FocusOnUserType(input.InputData.CommonName);
             RoleTypeSettings.ClickModifyButton();
@@ -135,10 +131,10 @@ namespace Mento.Script.Administration.User
                i++;
             }
             int j = 0;
-            while(j<permissions.Length)
+            while (j < input.InputData.permissions.Length)
             {
-                RoleTypeSettings.Check(permissions[j]);
-                RoleTypeSettings.UnCheck(permissions[j]);
+                RoleTypeSettings.Check(input.InputData.permissions[j]);
+                RoleTypeSettings.UnCheck(input.InputData.permissions[j]);
                 j++;
             }
             // Click "保存" button without input FunctionRoleType and function scope.
@@ -158,7 +154,7 @@ namespace Mento.Script.Administration.User
             j = 0;
             while (j < input.InputData.NameList.Length)
             {
-                Assert.IsFalse(RoleTypeSettings.IsCustomerizePermissionItemChecked(permissions[j]));
+                Assert.IsFalse(RoleTypeSettings.IsCustomerizePermissionItemChecked(input.InputData.permissions[j]));
                 j++;
             }
         }

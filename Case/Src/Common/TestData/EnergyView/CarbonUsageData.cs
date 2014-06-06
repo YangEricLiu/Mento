@@ -31,6 +31,12 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public ManualTimeRange[] ManualTimeRange { get; set; }
 
         public string CarbonType { get; set; }
+
+        public string CarbonTypeStandardCoal { get; set; }
+
+        public string CarbonTypeCO2 { get; set; }
+
+        public string CarbonTypeTree { get; set; }
     }
 
     public class CarbonUsageOutput : ExpectedTestDataBase

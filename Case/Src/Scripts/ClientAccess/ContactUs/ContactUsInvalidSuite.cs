@@ -30,7 +30,7 @@ namespace Mento.Script.ClientAccess.ContactUs
         public void ContactUsLinkNotAvailable(ContactUsData input)
         {
             //Login in with the user that is not a demo user.Open the homepage.
-            TestAssemblyInitializer.InitializeWithOption("SchneiderElectricChina", "P@ssw0rd", "“云能效”系统管理");
+            TestAssemblyInitializer.InitializeWithOption("SchneiderElectricChina", "P@ssw0rd", input.InputData.Customer);
             TimeManager.LongPause();
 
             //Go to verify Contact Us.
@@ -46,7 +46,7 @@ namespace Mento.Script.ClientAccess.ContactUs
         public void ContactUsWithRequiredFieldsEmpty(ContactUsData input)
         {
             //Open the homepage via click the hyperlink send for created demo user.
-            JazzFunction.LoginPage.LoginCutomerOption("“云能效”系统管理");
+            JazzFunction.LoginPage.LoginCutomerOption(input.InputData.Customer);
             TimeManager.LongPause();
 
             //Click Contact Us.
@@ -89,7 +89,7 @@ namespace Mento.Script.ClientAccess.ContactUs
         public void ContactUsWithInvalid(ContactUsData input)
         {
             //Open the homepage via click the hyperlink send for created demo user.
-            JazzFunction.LoginPage.LoginCutomerOption("“云能效”系统管理");
+            JazzFunction.LoginPage.LoginCutomerOption(input.InputData.Customer);
             TimeManager.LongPause();
 
             //Click Contact Us.
@@ -163,7 +163,7 @@ namespace Mento.Script.ClientAccess.ContactUs
         public void ContactUsCancelledandClosed(ContactUsData input)
         {
             //Open the homepage via click the hyperlink send for created demo user.
-            JazzFunction.LoginPage.LoginCutomerOption("“云能效”系统管理");
+            JazzFunction.LoginPage.LoginCutomerOption(input.InputData.Customer);
             TimeManager.LongPause();
 
             //Click Contact Us.

@@ -3,7 +3,8 @@
 		"InputData":
 		{	
 			"EffectiveYear":"1950",
-			"FactorValue":"5",			
+			"FactorValue":"5",	
+			"FactorSource":"天然气(立方米)",		
 		},
 		"ExpectedData":
 		{

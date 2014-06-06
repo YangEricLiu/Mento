@@ -3,7 +3,10 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
-			"commodityNames":["电", "汽油", "煤", "冷量", "热量", "自来水"],
+			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Petrol", "煤", "$@Common.Commodity.CoolQ", "$@Common.Commodity.HeatQ", "$@Common.Commodity.Water"],
+			"CarbonTypeStandardCoal":"$@Common.CarbonUomType.StandardCoal",
+			"CarbonTypeCO2":"$@Common.CarbonUomType.CO2",
+			"CarbonTypeTree":"$@Common.CarbonUomType.Tree",
 			"DashboardInfo":[{
 				"WigetName":"CarbonSingleTrendChartCoal1",
 				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],

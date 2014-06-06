@@ -48,7 +48,6 @@ namespace Mento.Script.Administration.User
         {
             int i = 0;
             int j = 0;
-            string[] publicPermission = { "仪表盘与小组件查看", "仪表盘与小组件编辑", "个人信息管理", "地图信息查看" };
             // Click "+角色" to add a new role type
             RoleTypeSettings.ClickAddFunctionRoleType();
             TimeManager.ShortPause();
@@ -66,9 +65,9 @@ namespace Mento.Script.Administration.User
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
             //The RoleType and FunctionRoleType add to FunctionRoleType list successfully.
-            while (i <publicPermission.Length)
+            while (i < input.InputData.publicPermission.Length)
             {
-                RoleTypeSettings.IsPublicPermissionItemChecked(publicPermission[i]);
+                RoleTypeSettings.IsPublicPermissionItemChecked(input.InputData.publicPermission[i]);
                 i++;
             }
             j = 0;

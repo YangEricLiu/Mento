@@ -83,7 +83,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.AreEqual(2, CarbonUsage.GetTrendChartLines());
 
             //Change to "CO2"
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeCO2);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -111,7 +111,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.AreEqual(3, CarbonUsage.GetTrendChartLines());
 
             //Change from "CO2" to "Tree"
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeTree);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -140,7 +140,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //Assert.AreEqual(5, CarbonUsage.GetTrendChartLines());
 
             //Change from "Tree" to "StandardCoal"
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.StandardCoal);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeStandardCoal);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -155,7 +155,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.LongPause();
 
             //Change from "StandardCoal" to "CO2"
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeCO2);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -167,7 +167,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.LongPause();
 
             //Change from "CO2" to "Tree"
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeTree);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -206,7 +206,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.ShortPause();
 
             //Select display chart type is "标煤"
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.StandardCoal);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeStandardCoal);
 
             //Select "TotalEnergyConsumption(总览)" option from Energy commodity(能源介质) list to draw Data view.
             CarbonUsage.SelectCommodity();
@@ -221,7 +221,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.AreEqual(1, CarbonUsage.GetTrendChartLines());
 
             //Change from default display "标煤" to "二氧化碳"
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeCO2);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -233,7 +233,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.AreEqual(1, CarbonUsage.GetTrendChartLines());
 
             //Change from default display "二氧化碳" to "树"
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeTree);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -274,7 +274,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.ShortPause();
 
             //Select display chart type is "标煤", Select "TotalEnergyConsumption(总览)" option
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.StandardCoal);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeStandardCoal);
             CarbonUsage.SelectCommodity();
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -284,7 +284,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
 
             //Change "标煤" to "CO2", Select "TotalEnergyConsumption(总览)" option
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeCO2);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -293,7 +293,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
 
             //Change "CO2" to "Tree", Select "TotalEnergyConsumption(总览)" option
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeTree);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -302,7 +302,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
 
             //Check commodity=煤, Since that commodity=煤 defined Convert factor to "标煤" in 2011Year.
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.StandardCoal);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeStandardCoal);
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -312,7 +312,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
 
             //Change "标煤" to "CO2", Select "TotalEnergyConsumption(总览)" option
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.CO2);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeCO2);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -321,7 +321,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsFalse(CarbonUsage.IsTrendChartDrawn());
 
             //Change "CO2" to "Tree", Select "TotalEnergyConsumption(总览)" option
-            EnergyViewToolbar.SelectCarbonConvertTarget(CarbonConvertTarget.Tree);
+            EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeTree);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();

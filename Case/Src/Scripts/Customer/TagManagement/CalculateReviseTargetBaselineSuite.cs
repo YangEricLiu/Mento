@@ -25,7 +25,6 @@ namespace Mento.Script.Customer.TagManagement
     {
         private static TagTargetBaselineSettings PVtagTargetBaselineSettings = JazzFunction.TagTargetBaselineSettings;
         private static PTagSettings PTagSettings = JazzFunction.PTagSettings;
-        private string CalculationMessage = "本次操作时间较长，您确定要继续吗";
 
         [SetUp]
         public void CaseSetUp()

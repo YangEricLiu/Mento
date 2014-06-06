@@ -19,6 +19,7 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string FactorValue { get; set; }
         public string DoubleNonNagtiveValue { get; set; }
         public string Message { get; set; }
+        public string FactorSource { get; set; }
 
         public CarbonFactorInputData(string source, string destination, int recordNumber, string effectiveYear, string factorValue, string doublenonnagitivevalue, string message)
         {

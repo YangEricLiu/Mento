@@ -78,6 +78,7 @@ namespace Mento.Script.Administration.IndustryLabeling
 
        }
         #endregion
+
         #region TestCase1 ModifyIndustryLabelingInvalid
         [Test]
         [ManualCaseID("TC-J1-FVT-IndustrylabelingSetting-Modify-002")]

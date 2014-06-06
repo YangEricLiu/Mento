@@ -136,8 +136,6 @@
     <Folder Include="bin\Debug\Resource\cn\" />
     <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffAddInvalidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffModifyInvalidSuite\" />
-    <Folder Include="Data\Administration\User\UserManagementAddInvalid\" />
-    <Folder Include="Data\Administration\User\UserManagementAddValid\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestFormulaVtagSmokeTestSuite\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestKPIBaselineSuite\" />
     <Folder Include="Resource\en\" />
@@ -161,6 +159,7 @@
     <None Include="Data\Administration\CarbonFactor\DeleteCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Delete-002.json" />
     <None Include="Data\Administration\CarbonFactor\DeleteCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Delete-001.json" />
     <None Include="Data\Administration\CarbonFactor\DeleteCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Delete-101.json" />
+    <None Include="Data\Administration\CarbonFactor\ModifyCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Modify-103.json" />
     <None Include="Data\Administration\CarbonFactor\ModifyCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Modify-104.json" />
     <None Include="Data\Administration\CarbonFactor\ModifyCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Modify-001.json" />
     <None Include="Data\Administration\CarbonFactor\ModifyCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Modify-002.json" />

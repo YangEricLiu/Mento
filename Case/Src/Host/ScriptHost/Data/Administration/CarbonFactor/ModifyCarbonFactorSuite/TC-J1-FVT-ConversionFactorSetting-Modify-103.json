@@ -1,8 +1,8 @@
 ﻿[
 	{
 		"InputData":
-		{
-			"Customer":"“云能效”系统管理",
+		{		
+			"FactorSource":"电(千瓦时)",		
 		},
 		"ExpectedData":
 		{

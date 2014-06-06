@@ -22,6 +22,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Uom { get; set; }
         public string CalculationType { get; set; }
         public string Comments { get; set; }
+        public string AccumulateText { get; set; }
     }
 
     public class PtagExpectedData : ExpectedTestDataBase
@@ -37,5 +38,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Comments { get; set; }
         public string Message { get; set; }
         public string[] MessageArray { get; set; }
+        public string AccumulateText { get; set; }
     }
 }

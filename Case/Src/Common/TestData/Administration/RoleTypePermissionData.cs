@@ -17,6 +17,10 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string Type { get; set; }
         public string Comments { get; set; }
         public string[] NameList { get; set; }
+        public string[] publicPermission { get; set; }
+        public string[] roleTypePermission { get; set; }
+        public string[] customerizePermission { get; set; }
+        public string[] permissions { get; set; }
     }
     public class RoleTypeExpectedData : ExpectedTestDataBase
     {

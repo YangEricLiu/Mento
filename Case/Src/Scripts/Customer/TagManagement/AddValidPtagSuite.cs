@@ -187,7 +187,7 @@ namespace Mento.Script.Customer.TagManagement
             //Click "+" button and fill ptag field
             PTagSettings.ClickAddPtagButton();
             PTagSettings.FillInPtag(input.InputData);
-            PTagSettings.CheckIsAccumulatedCheckbox("使用累积值计算");
+            PTagSettings.CheckIsAccumulatedCheckbox(input.InputData.AccumulateText);
 
             //Click "Save" button
             PTagSettings.ClickSaveButton();
@@ -201,7 +201,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Verify that ptag added successfully and IsAccumulated displayed
             Assert.IsTrue(PTagSettings.FocusOnPTagByCode(input.InputData.Code));
-            Assert.IsFalse(PTagSettings.IsAccumulatedNotDisplayed("使用累积值计算"));
+            Assert.IsFalse(PTagSettings.IsAccumulatedNotDisplayed(input.InputData.AccumulateText));
         }
     }
 }

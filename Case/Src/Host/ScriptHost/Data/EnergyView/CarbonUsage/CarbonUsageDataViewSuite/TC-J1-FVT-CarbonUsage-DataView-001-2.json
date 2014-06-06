@@ -3,6 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+			"CarbonTypeStandardCoal":"$@Common.CarbonUomType.StandardCoal",
+			"CarbonTypeCO2":"$@Common.CarbonUomType.CO2",
+			"CarbonTypeTree":"$@Common.CarbonUomType.Tree",
 			"DashboardInfo":[{
 				"WigetName":"CarbonSingle2Tree",
 				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],

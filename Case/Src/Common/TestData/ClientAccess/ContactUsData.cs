@@ -21,7 +21,7 @@ namespace Mento.ScriptCommon.TestData.ClientAccess
         public string[] Companys { get; set; }
         public string[] Titles { get; set; }
         public string[] DescriptionFieldss { get; set; }
-
+        public string Customer { get; set; }
     }
 
     public class ContactUsExpectedData : ExpectedTestDataBase

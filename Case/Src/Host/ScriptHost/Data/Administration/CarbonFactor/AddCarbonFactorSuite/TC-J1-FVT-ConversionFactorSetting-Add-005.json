@@ -1,7 +1,8 @@
 ﻿[
 	{
 		"InputData":
-		{				
+		{		
+			"FactorSource":"柴油(千克)",		
 		},
 		"ExpectedData":
 		{

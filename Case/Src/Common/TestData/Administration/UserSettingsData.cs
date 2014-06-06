@@ -19,13 +19,14 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string RealName { get; set; }
         public string DisplayName { get; set; }
         public string Type { get; set; }
-       public string AssociatedCustomer { get; set; }
-       public string Title { get; set; }
+        public string AssociatedCustomer { get; set; }
+        public string Title { get; set; }
         public string Telephone { get; set; }
         public string Email { get; set; }
         public string Comments { get; set; }
         public string[] TypeList { get; set; }
         public string[] FunctionScopeList { get; set; }
+        public string[] titleList { get; set; }
 
         public UserInputData(string originalname,string commonName, string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comments,string[] typeList,string[] functionScopeList)
         {

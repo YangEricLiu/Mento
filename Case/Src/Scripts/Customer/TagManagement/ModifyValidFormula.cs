@@ -191,10 +191,10 @@ namespace Mento.Script.Customer.TagManagement
           JazzFunction.HierarchySettings.ClickCreateChildHierarchyButton();
           JazzFunction.HierarchySettings.FillInName("Building1");
           JazzFunction.HierarchySettings.FillIncode("Building1");
-          JazzFunction.HierarchySettings.FillInType("Building");
+          JazzFunction.HierarchySettings.FillInType(input.InputData.HierarchyType);
           TimeManager.MediumPause();
-          JazzFunction.HierarchySettings.FillInIndustry("办公建筑");
-          JazzFunction.HierarchySettings.FillInZone("寒冷地区");
+          JazzFunction.HierarchySettings.FillInIndustry(input.InputData.Industry);
+          JazzFunction.HierarchySettings.FillInZone(input.InputData.Zone);
 
           JazzFunction.HierarchySettings.ClickSaveButton();
           JazzMessageBox.LoadingMask.WaitLoading();

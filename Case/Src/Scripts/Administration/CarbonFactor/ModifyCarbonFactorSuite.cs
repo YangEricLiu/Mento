@@ -45,11 +45,10 @@ namespace Mento.Script.Administration.CarbonFactor
         public void ModifyCarbonFactor(CarbonFactorData testData)
         {
             //选择一条转换因子， Click "修改" button
-            string carbonFactor = "天然气(立方米)";
             //转换因子列表存在一个转换因子用于修改.
             //Assert.IsTrue(CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor));
             //选择一条转换因子， Click "修改" button
-            CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
+            CarbonFactorSettings.FocusOnCarbonFactor(testData.InputData.FactorSource);
             TimeManager.MediumPause();
             CarbonFactorSettings.ClickModifyButton();
             TimeManager.ShortPause();
@@ -67,7 +66,6 @@ namespace Mento.Script.Administration.CarbonFactor
             Assert.AreEqual(testData.ExpectedData.Destination, CarbonFactorSettings.GetFactorDestinationValue());
             Assert.AreEqual(testData.ExpectedData.EffectiveYear, CarbonFactorSettings.GetCarbonFactorEffectiveYear(1));
             Assert.AreEqual(testData.ExpectedData.FactorValue, CarbonFactorSettings.GetCarbonFactorValue(1));
-
         }
 
         [Test]
@@ -77,9 +75,8 @@ namespace Mento.Script.Administration.CarbonFactor
         public void ModifyMutipleCarbonFactor(CarbonFactorData testData)
         {
             //选择一条转换因子， Click "修改" button
-            string carbonFactor = "天然气(立方米)";
             //选择一个已有的转换因子点击修改
-            CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
+            CarbonFactorSettings.FocusOnCarbonFactor(testData.InputData.FactorSource);
             CarbonFactorSettings.ClickModifyButton();
             TimeManager.ShortPause();
 
@@ -113,10 +110,9 @@ namespace Mento.Script.Administration.CarbonFactor
         public void SaveBeforeModified(CarbonFactorData testData)
         {
             //选择一条转换因子， Click "修改" button.
-            string carbonFactor = "电(千瓦时)";
             //转换因子列表存在一个转换因子点击修改. 电转换因子 2012=7.
             //选择一个已有的转换因子点击修改
-            CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
+            CarbonFactorSettings.FocusOnCarbonFactor(testData.InputData.FactorSource);
             CarbonFactorSettings.ClickModifyButton();
             TimeManager.ShortPause();
 
@@ -135,10 +131,9 @@ namespace Mento.Script.Administration.CarbonFactor
         public void ModifyValidFactorValue(CarbonFactorData testData)
         {
             //选择一条转换因子， Click "修改" button.
-            string carbonFactor = "自来水(吨)";
             //转换因子列表存在一个转换因子点击修改. 电转换因子 20Industry2=2.
             //选择一个已有的转换因子点击修改
-            CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
+            CarbonFactorSettings.FocusOnCarbonFactor(testData.InputData.FactorSource);
             CarbonFactorSettings.ClickModifyButton();
             TimeManager.ShortPause();
             //按照common valid 输入各种转换因子值.
@@ -158,9 +153,8 @@ namespace Mento.Script.Administration.CarbonFactor
         public void ModifyEmptyField(CarbonFactorData testData)
         {
             //选择一条转换因子， Click "修改" button.
-            string carbonFactor = "电(千瓦时)";
             //转换因子列表存在一个转换因子点击修改. 电转换因子 20Industry2=7.
-            CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
+            CarbonFactorSettings.FocusOnCarbonFactor(testData.InputData.FactorSource);
             CarbonFactorSettings.ClickModifyButton();
             TimeManager.ShortPause();
 
@@ -191,9 +185,8 @@ namespace Mento.Script.Administration.CarbonFactor
         public void ModifyThenCancel(CarbonFactorData testData)
         {
             //选择一条转换因子， Click "修改" button.
-            string carbonFactor = "热量(千瓦时)";
             //转换因子列表存在一个转换因子点击修改. 热量转换因子 20Industry2=5.
-            CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
+            CarbonFactorSettings.FocusOnCarbonFactor(testData.InputData.FactorSource);
             CarbonFactorSettings.ClickModifyButton();
             TimeManager.ShortPause();
 
@@ -255,10 +248,9 @@ namespace Mento.Script.Administration.CarbonFactor
         public void ModifyDuplicatedEffectiveYear(CarbonFactorData testData)
         {
             //选择一条转换因子， Click "修改" button.
-            string carbonFactor = "电(千瓦时)";
             //转换因子列表存在一个转换因子用于修改. 电转换因子 20Industry2=7.
 
-            CarbonFactorSettings.FocusOnCarbonFactor(carbonFactor);
+            CarbonFactorSettings.FocusOnCarbonFactor(testData.InputData.FactorSource);
             CarbonFactorSettings.ClickModifyButton();
             TimeManager.ShortPause();
             

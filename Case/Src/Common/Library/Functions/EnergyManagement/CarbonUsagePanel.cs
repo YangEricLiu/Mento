@@ -43,11 +43,11 @@ namespace Mento.ScriptCommon.Library.Functions
             //total
             if (commodityNames == null || commodityNames.Length <= 0)
             {
-                TotalCommotidyGrid.CheckRowCheckbox(2, "介质总览", false);
+                TotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.TotalCommodity", false);
             }
             else //specified commodity
             {
-                TotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+                TotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.MediumPause();
 
@@ -64,11 +64,11 @@ namespace Mento.ScriptCommon.Library.Functions
             //total
             if (commodityNames == null)
             {
-                TotalCommotidyGrid.CheckRowCheckbox(2, "介质总览", false);
+                TotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.TotalCommodity", false);
             }
             else //specified commodity
             {
-                TotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+                TotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.MediumPause();
 
@@ -82,11 +82,11 @@ namespace Mento.ScriptCommon.Library.Functions
             //total
             if (commodityNames == null || commodityNames.Length <= 0)
             {
-                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质总览", false);
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "$@EM.TotalCommodity", false);
             }
             else //specified commodity
             {
-                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质单项", false);
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "$@EM.SingleCommodity", false);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.MediumPause();
 
@@ -103,11 +103,11 @@ namespace Mento.ScriptCommon.Library.Functions
             //total
             if (commodityNames == null)
             {
-                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质总览", false);
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "$@EM.TotalCommodity", false);
             }
             else //specified commodity
             {
-                TotalCommotidyGrid.UncheckRowCheckbox(2, "介质单项", false);
+                TotalCommotidyGrid.UncheckRowCheckbox(2, "$@EM.SingleCommodity", false);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.MediumPause();
 

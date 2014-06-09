@@ -49,6 +49,7 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #endregion
+
         #region operation
         /// <summary>
         /// Navigate to CustomizedLabelling Page

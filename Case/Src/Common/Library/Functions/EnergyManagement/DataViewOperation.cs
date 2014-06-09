@@ -171,12 +171,12 @@ namespace Mento.ScriptCommon.Library.Functions
 
                         myRow[0] = i + 2;
 
-                        if ((j != 0) && (expectedDataTable.Columns[0].ColumnName.Contains("时间")))
+                        if ((j != 0) && (expectedDataTable.Columns[0].ColumnName.Contains("时间") || expectedDataTable.Columns[0].ColumnName.Contains("Time")))
                         {
                             myRow[1] = expectedDataTable.Rows[i][0].ToString();
                         }
 
-                        if ((j != 0) && (expectedDataTable.Columns[0].ColumnName.Contains("名称")))
+                        if ((j != 0) && (expectedDataTable.Columns[0].ColumnName.Contains("名称") || expectedDataTable.Columns[0].ColumnName.Contains("Name")))
                         {
                             myRow[1] = expectedDataTable.Rows[i][0].ToString();
                         }

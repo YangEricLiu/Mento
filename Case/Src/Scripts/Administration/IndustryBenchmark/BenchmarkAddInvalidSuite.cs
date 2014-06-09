@@ -109,7 +109,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
             IndustryBenchmarkSetting.ClickSaveBenchMark();
 
             //·Red line display at 行业.
-            Assert.IsTrue(IndustryBenchmarkSetting.IsIndustrysAddMessageDisplayed());
+            Assert.AreEqual(input.ExpectedData.InvalidMessage[0], IndustryBenchmarkSetting.GetIndustrysAddMessageInvalidMsg());
 
             //Select 行业=酒店五星级 and Click Save button.
             //·Save failed with pop up note at 区域 "请至少选择一项。"

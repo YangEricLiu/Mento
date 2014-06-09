@@ -40,41 +40,41 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Verify Is ContactUsName TextField  Displayed
         /// </summary>
-        public Boolean IsTextFieldContactUsNameDisplayed()
+        public string GetTextFieldContactUsNameInvalidMsg()
         {
-            return TextFieldContactUsName.GetInvalidTips().Contains("必填项。");
+            return TextFieldContactUsName.GetInvalidTips();
         }
 
         /// <summary>
         /// Verify Is ContactUsTelephone TextField  Displayed
         /// </summary>
-        public Boolean IsTextFieldContactUsTelephoneDisplayed()
+        public string GetTextFieldContactUsTelephoneInvalidMsg()
         {
-            return TextFieldContactUsTelephone.GetInvalidTips().Contains("必填项。");
+            return TextFieldContactUsTelephone.GetInvalidTips();
         } 
         
         /// <summary>
         /// Verify Is ContactUsCompany TextField  Displayed
         /// </summary>
-        public Boolean IsTextFieldContactUsCompanyDisplayed()
+        public string GetTextFieldContactUsCompanyInvalidMsg()
         {
-            return TextFieldContactUsCompany.GetInvalidTips().Contains("必填项。");
+            return TextFieldContactUsCompany.GetInvalidTips();
         }
 
         /// <summary>
         /// Verify Is TextFieldContactUsTitle  Displayed
         /// </summary>
-        public Boolean IsTextFieldContactUsTitleDisplayed()
+        public string GetTextFieldContactUsTitleInvalidMsg()
         {
-            return TextFieldContactUsTitle.GetInvalidTips().Contains("必填项。");
+            return TextFieldContactUsTitle.GetInvalidTips();
         }
 
         /// <summary>
         /// Verify Is TextFieldContactUsDescriptionFields  Displayed
         /// </summary>
-        public Boolean IsTextFieldContactUsDescriptionFieldsDisplayed()
+        public string GetTextFieldContactUsDescriptionFieldsInvalidMsg()
         {
-            return TextFieldContactUsDescriptionFields.GetInvalidTips().Contains("必填项。");
+            return TextFieldContactUsDescriptionFields.GetInvalidTips();
         }
         #endregion
 

@@ -227,31 +227,32 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Verify Is Industry Add Message Displayed
         /// </summary>
-        public Boolean IsIndustrysAddMessageDisplayed()
+        public string GetIndustrysAddMessageInvalidMsg()
         {
-            return IndustryComboBox.GetInvalidTips().Contains("必填项。");
+            return IndustryComboBox.GetInvalidTips();
 
         }
 
         /// <summary>
         /// Verify Is ClimateRegion Add Message Displayed
         /// </summary>
-        public Boolean IsClimateRegionAddMessageDisplayed()
+        public string GetClimateRegionAddMessageInvalidMsg()
         {
-            return ClimateRegionComboBox.GetInvalidTips().Contains("必填项。");
+            return ClimateRegionComboBox.GetInvalidTips();
 
         }
 
         /// <summary>
         /// Verify Is EnergyEfficiencyLabelingLevel Add Message Displayed
         /// </summary>
-        public Boolean IsEnergyEfficiencyLabelingLevelAddMessageDisplayed()
+        public string GetEnergyEfficiencyLabelingLevelAddMessageInvalidMsg()
         {
-            return EnergyEfficiencyLabelingLevelComboBox.GetInvalidTips().Contains("必填项。");
+            return EnergyEfficiencyLabelingLevelComboBox.GetInvalidTips();
 
         }
 
         #endregion
+
         #region verification
         /// <summary>
         /// verify whether Add button display.

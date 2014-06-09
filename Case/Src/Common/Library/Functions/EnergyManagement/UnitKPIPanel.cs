@@ -109,7 +109,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SwitchTagTab(TagTabs tab)
         {
-            bool IsEnergyConsumption = JazzFunction.EnergyViewToolbar.GetFuncModeConvertTargetText().Contains("能耗");
+            bool IsEnergyConsumption = (JazzFunction.EnergyViewToolbar.GetFuncModeConvertTargetText().Contains("能耗") || JazzFunction.EnergyViewToolbar.GetFuncModeConvertTargetText().Contains("Energy consumption"));
 
             switch (tab)
             {
@@ -222,7 +222,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public bool IsCarbonSingleCommodityNotExisted()
         {
-            UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+            UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
@@ -234,11 +234,11 @@ namespace Mento.ScriptCommon.Library.Functions
             //total
             if (commodityNames == null || commodityNames.Length <= 0)
             {
-                UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "介质总览", false);
+                UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.TotalCommodity", false);
             }
             else //specified commodity
             {
-                UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+                UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.MediumPause();
 
@@ -252,7 +252,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SelectSingleCommodityUnitCarbon(string commodity)
         {
-            UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+            UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
@@ -268,7 +268,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public bool IsCostSingleCommodityNotExisted()
         {
-            UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+            UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
@@ -280,11 +280,11 @@ namespace Mento.ScriptCommon.Library.Functions
             //total
             if (commodityNames == null || commodityNames.Length <= 0)
             {
-                UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "介质总览", false);
+                UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.TotalCommodity", false);
             }
             else //specified commodity
             {
-                UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+                UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.MediumPause();
 
@@ -298,7 +298,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SelectSingleCommodityUnitCost(string commodity)
         {
-            UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "介质单项", false);
+            UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 

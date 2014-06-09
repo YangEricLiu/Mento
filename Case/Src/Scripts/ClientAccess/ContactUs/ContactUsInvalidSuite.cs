@@ -56,24 +56,24 @@ namespace Mento.Script.ClientAccess.ContactUs
             //Click Confirm button without add information. 
             //The message showing that Name, Telephone, Company should not be empty.
             ContactUsSetting.ContactUsConfirmButton.Click();
-            Assert.IsTrue(ContactUsSetting.IsTextFieldContactUsNameDisplayed());
-            Assert.IsTrue(ContactUsSetting.IsTextFieldContactUsTelephoneDisplayed());
-            Assert.IsTrue(ContactUsSetting.IsTextFieldContactUsCompanyDisplayed());
+            Assert.AreEqual(input.ExpectedData.InvalidMessages[0], ContactUsSetting.GetTextFieldContactUsNameInvalidMsg());
+            Assert.AreEqual(input.ExpectedData.InvalidMessages[0], ContactUsSetting.GetTextFieldContactUsTelephoneInvalidMsg());
+            Assert.AreEqual(input.ExpectedData.InvalidMessages[0], ContactUsSetting.GetTextFieldContactUsCompanyInvalidMsg());
 
             //Add information for Name and Click Send button.
             //The message showing that Telephone, Company should not be empty.
             TimeManager.ShortPause();
             ContactUsSetting.FillInContactUsNameInfo(input.InputData.Name);
             ContactUsSetting.ContactUsConfirmButton.Click();
-            Assert.IsTrue(ContactUsSetting.IsTextFieldContactUsTelephoneDisplayed());
-            Assert.IsTrue(ContactUsSetting.IsTextFieldContactUsCompanyDisplayed());
+            Assert.AreEqual(input.ExpectedData.InvalidMessages[0], ContactUsSetting.GetTextFieldContactUsTelephoneInvalidMsg());
+            Assert.AreEqual(input.ExpectedData.InvalidMessages[0], ContactUsSetting.GetTextFieldContactUsCompanyInvalidMsg());
 
             //Add information for Telephone and Click Send button.
             //The message showing that Company should not be empty.
             TimeManager.ShortPause();
             ContactUsSetting.FillInContactUsTelephoneInfo(input.InputData.Telephone);
             ContactUsSetting.ContactUsConfirmButton.Click();
-            Assert.IsTrue(ContactUsSetting.IsTextFieldContactUsCompanyDisplayed());
+            Assert.AreEqual(input.ExpectedData.InvalidMessages[0], ContactUsSetting.GetTextFieldContactUsCompanyInvalidMsg());
 
             //Add information for Company and Click Send button.
             TimeManager.ShortPause();

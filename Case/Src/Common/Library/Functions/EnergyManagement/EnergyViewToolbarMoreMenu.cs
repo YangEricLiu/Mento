@@ -17,22 +17,21 @@ namespace Mento.ScriptCommon.Library.Functions
         
         private static Dictionary<EnergyViewMoreOption, string[]> MenuItems = new Dictionary<EnergyViewMoreOption, string[]>()
         {
-            {EnergyViewMoreOption.Last7Days,new string[]{"默认时间","之前7天"}},
-            {EnergyViewMoreOption.Today,new string[]{"默认时间","$@Common.DateRange.Today"}},
-            {EnergyViewMoreOption.Yesterday,new string[]{"默认时间","$@Common.DateRange.Yesterday"}},
-            {EnergyViewMoreOption.ThisWeek,new string[]{"默认时间","$@Common.DateRange.ThisWeek"}},
-            {EnergyViewMoreOption.LastWeek,new string[]{"默认时间","$@Common.DateRange.LastWeek"}},
-            {EnergyViewMoreOption.ThisMonth,new string[]{"默认时间","$@Common.DateRange.ThisMonth"}},
-            {EnergyViewMoreOption.LastMonth,new string[]{"默认时间","$@Common.DateRange.LastMonth"}},
-            {EnergyViewMoreOption.ThisYear,new string[]{"默认时间","$@Common.DateRange.ThisYear"}},
-            {EnergyViewMoreOption.LastYear,new string[]{"默认时间","$@Common.DateRange.LastYear"}},
+            {EnergyViewMoreOption.Last7Days,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.Last7Day"}},
+            {EnergyViewMoreOption.Today,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.Today"}},
+            {EnergyViewMoreOption.Yesterday,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.Yesterday"}},
+            {EnergyViewMoreOption.ThisWeek,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.ThisWeek"}},
+            {EnergyViewMoreOption.LastWeek,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.LastWeek"}},
+            {EnergyViewMoreOption.ThisMonth,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.ThisMonth"}},
+            {EnergyViewMoreOption.LastMonth,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.LastMonth"}},
+            {EnergyViewMoreOption.ThisYear,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.ThisYear"}},
+            {EnergyViewMoreOption.LastYear,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.LastYear"}},
 
-            {EnergyViewMoreOption.ToDashboard,new string[]{"至仪表盘"}},
-            {EnergyViewMoreOption.DeleteAll,new string[]{"删除所有"}},
+            {EnergyViewMoreOption.ToDashboard,new string[]{"$@Common.Button.ToDashboard"}},
+            {EnergyViewMoreOption.DeleteAll,new string[]{"$@Common.Button.DeleteAll"}},
 
-            {EnergyViewMoreOption.ShowCalendarNon,new string[]{"显示日历", "无"}},
-            {EnergyViewMoreOption.ShowCalendarNonWorkday,new string[]{"显示日历", "非工作时间"}},
-            {EnergyViewMoreOption.ShowCalendarHeatCool,new string[]{"显示日历", "冷暖季"}},
+            {EnergyViewMoreOption.ShowCalendarNon,new string[]{"$@Common.Button.ShowCalendar", "$@Common.Button.Calendar.ShowNone"}},
+            {EnergyViewMoreOption.ShowCalendarNonWorkday,new string[]{"$@Common.Button.ShowCalendar", "$@Common.Button.Calendar.ShowHC"}},
         };
 
         internal EnergyViewToolbarMoreMenu() { }

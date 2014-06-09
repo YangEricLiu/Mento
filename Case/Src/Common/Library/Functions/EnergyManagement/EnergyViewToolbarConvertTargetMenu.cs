@@ -22,52 +22,52 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Dictionary<CarbonConvertTarget, string[]> CarbonMenuItems = new Dictionary<CarbonConvertTarget, string[]>()
         {
-            {CarbonConvertTarget.StandardCoal,new string[]{"标煤"}},
-            {CarbonConvertTarget.CO2,new string[]{"二氧化碳"}},
-            {CarbonConvertTarget.Tree,new string[]{"树"}},
+            {CarbonConvertTarget.StandardCoal,new string[]{"$@Common.CarbonUomType.StandardCoal"}},
+            {CarbonConvertTarget.CO2,new string[]{"$@Common.CarbonUomType.CO2"}},
+            {CarbonConvertTarget.Tree,new string[]{"$@Common.CarbonUomType.Tree"}},
         };
 
         private static Dictionary<FuncModeConvertTarget, string[]> FuncModeMenuItems = new Dictionary<FuncModeConvertTarget, string[]>()
         {
-            {FuncModeConvertTarget.Energy,new string[]{"能耗"}},
-            {FuncModeConvertTarget.Carbon,new string[]{"碳排放"}},
-            {FuncModeConvertTarget.Cost,new string[]{"成本"}},
+            {FuncModeConvertTarget.Energy,new string[]{"$@EM.Title.EnergyConsumption"}},
+            {FuncModeConvertTarget.Carbon,new string[]{"$@EM.Title.CarbonUnit"}},
+            {FuncModeConvertTarget.Cost,new string[]{"$@EM.Title.CostUnit"}},
         };
 
         private static Dictionary<TagModeConvertTarget, string[]> TagModeMenuItems = new Dictionary<TagModeConvertTarget, string[]>()
         {
-            {TagModeConvertTarget.SingleHierarchyTag,new string[]{"单层级数据点"}},
-            {TagModeConvertTarget.MultipleHierarchyTag,new string[]{"多层级数据点"}},
+            {TagModeConvertTarget.SingleHierarchyTag,new string[]{"$@EM.SingleHier"}},
+            {TagModeConvertTarget.MultipleHierarchyTag,new string[]{"$@EM.MultiHier"}},
         };
 
         private static Dictionary<UnitTypeConvertTarget, string[]> UnitTypeMenuItems = new Dictionary<UnitTypeConvertTarget, string[]>()
         {
-            {UnitTypeConvertTarget.UnitPopulation,new string[]{"单位人口"}},
-            {UnitTypeConvertTarget.UnitArea,new string[]{"单位面积"}},
-            {UnitTypeConvertTarget.UnitHeatArea,new string[]{"单位采暖面积"}},
-            {UnitTypeConvertTarget.UnitCoolArea,new string[]{"单位供冷面积"}},
+            {UnitTypeConvertTarget.UnitPopulation,new string[]{"$@EM.Unit.UnitPopulation"}},
+            {UnitTypeConvertTarget.UnitArea,new string[]{"$@EM.Unit.UnitArea"}},
+            {UnitTypeConvertTarget.UnitHeatArea,new string[]{"$@EM.Unit.UnitWarmArea"}},
+            {UnitTypeConvertTarget.UnitCoolArea,new string[]{"$@EM.Unit.UnitColdArea"}},
         };
 
         private static Dictionary<RadioTypeConvertTarget, string[]> RadioTypeMenuItems = new Dictionary<RadioTypeConvertTarget, string[]>()
         {
-            {RadioTypeConvertTarget.DayNightRadio,new string[]{"昼夜比"}},
-            {RadioTypeConvertTarget.WorkNonRadio,new string[]{"工休比"}},
+            {RadioTypeConvertTarget.DayNightRadio,new string[]{"$@EM.DayNightRatio"}},
+            {RadioTypeConvertTarget.WorkNonRadio,new string[]{"$@EM.WorkHolidayRatio"}},
         };
 
         private static Dictionary<RankTypeConvertTarget, string[]> RankTypeMenuItems = new Dictionary<RankTypeConvertTarget, string[]>()
         { 
-            {RankTypeConvertTarget.TotalRank,new string[]{"总排名"}},
-            {RankTypeConvertTarget.AverageRank,new string[]{"人均排名"}},
-            {RankTypeConvertTarget.UnitAreaRank,new string[]{"单位面积排名"}},
-            {RankTypeConvertTarget.UnitHeatAreaRank,new string[]{"单位采暖面积排名"}},
-            {RankTypeConvertTarget.UnitCoolAreaRank,new string[]{"单位供冷面积排名"}},
+            {RankTypeConvertTarget.TotalRank,new string[]{"$@EM.Rank.TotalRank"}},
+            {RankTypeConvertTarget.AverageRank,new string[]{"$@EM.Rank.RankByPeople"}},
+            {RankTypeConvertTarget.UnitAreaRank,new string[]{"$@EM.Rank.RankByArea"}},
+            {RankTypeConvertTarget.UnitHeatAreaRank,new string[]{"$@EM.Rank.RankByHeatArea"}},
+            {RankTypeConvertTarget.UnitCoolAreaRank,new string[]{"$@EM.Rank.RankByCoolArea"}},
         };
 
         internal EnergyViewToolbarConvertTargetMenu() { }
 
         public void SwitchIndustryMenuItem(string industry)
         {
-            if (GetFuncModeConvertTargetButtonText().Contains("碳排放"))
+            if (GetFuncModeConvertTargetButtonText().Contains("碳排放") || GetFuncModeConvertTargetButtonText().Contains("Carbon emission"))
             {
                 CarbonIndustryConvertTargetButton.SelectOneItem(industry);
             }
@@ -129,7 +129,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SwitchUnitTypeMenuItem(UnitTypeConvertTarget target)
         {
-            if (GetFuncModeConvertTargetButtonText().Contains("碳排放"))
+            if (GetFuncModeConvertTargetButtonText().Contains("碳排放") || GetFuncModeConvertTargetButtonText().Contains("Carbon emission"))
             {
                 CarbonUnitTypeConvertTargetButton.SelectItem(UnitTypeMenuItems[target]);
             }
@@ -141,7 +141,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SwitchUnitTypeMenuItem(string target)
         {
-            if (GetFuncModeConvertTargetButtonText().Contains("碳排放"))
+            if (GetFuncModeConvertTargetButtonText().Contains("碳排放") || GetFuncModeConvertTargetButtonText().Contains("Carbon emission"))
             {
                 CarbonUnitTypeConvertTargetButton.SelectOneItem(target);
             }

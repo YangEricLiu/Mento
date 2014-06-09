@@ -429,7 +429,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.IsFalse(CostSettings.IsFactorDisable(1));
             CostSettings.ClickFactorLinkButton(1);
             TimeManager.ShortPause();
-            Assert.IsTrue(CostSettings.IsFacorWindowDisplayed());
+            Assert.AreEqual(input.ExpectedData.WindowFactor, CostSettings.GetFacorWindowTitle());
             CostSettings.CloseFactorWindow();
             TimeManager.ShortPause();
 
@@ -491,7 +491,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.IsFalse(CostSettings.IsFactorDisable(1));
             CostSettings.ClickFactorLinkButton(1);
             TimeManager.ShortPause();
-            Assert.IsTrue(CostSettings.IsFacorWindowDisplayed());
+            Assert.AreEqual(input.ExpectedData.WindowFactor, CostSettings.GetFacorWindowTitle());
             CostSettings.CloseFactorWindow();
             TimeManager.ShortPause();
 

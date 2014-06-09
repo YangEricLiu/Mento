@@ -193,9 +193,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Verify Is Industry Add Message Displayed
         /// </summary>
-        public Boolean IsIndustrysAddMessageDisplayed()
+        public string GetIndustrysAddMessageInvalidMsg()
         {
-            return BenchMarkComboBox.GetInvalidTips().Contains("必填项。");
+            return BenchMarkComboBox.GetInvalidTips();
 
         }
 

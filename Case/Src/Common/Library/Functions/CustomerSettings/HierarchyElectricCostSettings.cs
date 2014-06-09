@@ -20,10 +20,6 @@ namespace Mento.ScriptCommon.Library.Functions
         {
         }
 
-        private static string TRANSFORMERCAPACITYMODE = "变压器容量模式";
-        private static string TIMECAPACITYMODE = "时间容量模式";
-        private static string FACTORTITLE = "功率因数";
-
         #region Controls
         private static TabButton CostProperty = JazzButton.CostPropertyTabButton;
         private static Button CostCreate = JazzButton.CostCreateButton;
@@ -231,35 +227,6 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region comprehensive electricity
-
-        /// <summary>
-        /// Input comprehensive electric cost value
-        /// </summary>
-        /// <param name="input">Test data</param>
-        /// <returns></returns>
-        public void FillInComprehensiveCost(ElectricComprehensiveCostInputData input)
-        {
-            ElectricCostEffectiveDate.SelectYearMonthItem(input.EffectiveDate);
-            ElectricPriceMode.SelectItem(input.PriceMode);
-            DemandCostType.SelectItem(input.DemandCostType);
-
-            if (String.Equals(input.DemandCostType, TRANSFORMERCAPACITYMODE))
-            {
-                ElectricTransformerCapacity.Append(input.TransformerCapacity);
-                ElectricTransformerPrice.Append(input.TransformerPrice);
-            }
-            else if (String.Equals(input.DemandCostType, TRANSFORMERCAPACITYMODE))
-            {
-                HourTagId.SelectItem(input.HourTagId);
-                ElectricHourPrice.Append(input.ElectricHourPrice);
-            }
-
-            TouTariffId.SelectItem(input.TouTariffId);
-            FactorType.SelectItem(input.FactorType);
-            RealTagId.SelectItem(input.RealTagId);
-            ReactiveTagId.SelectItem(input.ReactiveTagId);
-            ElectricPaddingCost.Append(input.ElectricPaddingCost);
-        }
 
         public void SelectDemandCostType(string type)
         {
@@ -472,9 +439,9 @@ namespace Mento.ScriptCommon.Library.Functions
             OneFactor.ClickLink();
         }
 
-        public bool IsFacorWindowDisplayed()
+        public string GetFacorWindowTitle()
         {
-            return FactorWindow.GetTitle().Contains(FACTORTITLE);
+            return FactorWindow.GetTitle();
         }
 
         public void CloseFactorWindow()

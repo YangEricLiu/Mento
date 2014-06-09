@@ -7,15 +7,15 @@
 			"Companys":["@","&*","中文@","chars@","chars@","chars@","西门子"],
 			"Titles":["$%^","$%^","$%^中文","chars$%^","chars$%^","ab"],
 			"DescriptionFieldss":["$%^","$%^","$%^中文","chars$%^","chars$%^","ab"],
-			"Customer":"“云能效”系统管理",
+			"Customer":"$@Setting.Role.SPManagement",
 		},
 		"ExpectedData":
 		{
-			"Name":"允许汉字，英文字母和空格",
-			"Telephone":"允许数字和中划线，但中划线不能连续出现或做为开头和结尾",
-			"Company":"允许汉字，英文字母，数字，空格和小括号",
-			"Title":"允许汉字，半角英文字母，数字，下划线和空格",
-			"DescriptionFields":"允许汉字，半角英文字母，数字，下划线和空格",
+			"Name":"$@Common.Label.PersonNameRegexError",
+			"Telephone":"$@Common.Label.TelephoneRegexError",
+			"Company":"$@Common.Label.CustomerNameRegexError",
+			"Title":"$@Common.Label.CommentRegexError",
+			"DescriptionFields":"$@Common.Label.CommentRegexError",
 		}
 	}
 ]

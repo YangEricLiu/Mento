@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"Customer":"“云能效”系统管理",
+			"Customer":"$@Setting.Role.SPManagement",
 		},
 		"ExpectedData":
 		{

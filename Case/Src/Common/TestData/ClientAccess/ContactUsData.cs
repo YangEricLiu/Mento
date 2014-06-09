@@ -31,5 +31,6 @@ namespace Mento.ScriptCommon.TestData.ClientAccess
         public string Company { get; set; }
         public string Title { get; set; }
         public string DescriptionFields { get; set; }
+        public string[] InvalidMessages { get; set; }
     }
 }

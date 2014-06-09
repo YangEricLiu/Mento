@@ -10,6 +10,7 @@
 		{	
 			"Industry":"酒店（三星级）",
 			"ClimaticRegions":["严寒地区B区","寒冷地区","夏热冬冷地区","夏热冬暖地区","温和地区"],
+			"InvalidMessage":["$@Common.Label.MandatoryEmptyError"],
 		}
 	}
 ]

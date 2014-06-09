@@ -23,5 +23,6 @@ namespace Mento.ScriptCommon.TestData.Administration
          public string Industry { get; set; }
          public string[] ClimaticRegions { get; set; }
          public string[] Industrys { get; set; }
+         public string[] InvalidMessage { get; set; }
      }
 }

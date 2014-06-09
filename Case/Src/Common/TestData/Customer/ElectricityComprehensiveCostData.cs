@@ -49,5 +49,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Message { get; set; }
         public string ErrorMessage { get; set; }
         public string DoubleNonNagtiveValue { get; set; }
+        public string WindowFactor { get; set; }
     }
 }

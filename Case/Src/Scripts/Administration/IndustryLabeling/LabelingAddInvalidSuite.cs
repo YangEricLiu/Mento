@@ -69,11 +69,11 @@ namespace Mento.Script.Administration.IndustryLabeling
                         
             //Red line display at 行业 & 气候分区 &  能效标识级别
             //After note show "必输项",
-            Assert.IsTrue(IndustryLabelingSetting.IsIndustrysAddMessageDisplayed());
+            Assert.AreEqual(input.ExpectedData.InvalidMessage[0],IndustryLabelingSetting.GetIndustrysAddMessageInvalidMsg());
             TimeManager.LongPause();
-            Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionAddMessageDisplayed());
+            Assert.AreEqual(input.ExpectedData.InvalidMessage[0], IndustryLabelingSetting.GetClimateRegionAddMessageInvalidMsg());
             TimeManager.LongPause();
-            Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
+            Assert.AreEqual(input.ExpectedData.InvalidMessage[0], IndustryLabelingSetting.GetEnergyEfficiencyLabelingLevelAddMessageInvalidMsg());
             TimeManager.LongPause();
             Assert.AreEqual(input.ExpectedData.StartYear,IndustryLabelingSetting.GetSelectedStartYear());
             Assert.AreEqual(input.ExpectedData.EndYear, IndustryLabelingSetting.GetSelectedEndYear());
@@ -127,9 +127,9 @@ namespace Mento.Script.Administration.IndustryLabeling
 
             //Red line display at 行业 & 气候分区 &  能效标识级别
             //After note show "必输项"
-            Assert.IsTrue(IndustryLabelingSetting.IsIndustrysAddMessageDisplayed());
-            Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionAddMessageDisplayed());
-            Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
+            Assert.AreEqual(input.ExpectedData.InvalidMessage[0], IndustryLabelingSetting.GetIndustrysAddMessageInvalidMsg());
+            Assert.AreEqual(input.ExpectedData.InvalidMessage[0], IndustryLabelingSetting.GetClimateRegionAddMessageInvalidMsg());
+            Assert.AreEqual(input.ExpectedData.InvalidMessage[0], IndustryLabelingSetting.GetEnergyEfficiencyLabelingLevelAddMessageInvalidMsg());
             Assert.AreEqual(input.ExpectedData.StartYear, IndustryLabelingSetting.GetSelectedStartYear());
             Assert.AreEqual(input.ExpectedData.EndYear, IndustryLabelingSetting.GetSelectedEndYear());
 
@@ -139,8 +139,8 @@ namespace Mento.Script.Administration.IndustryLabeling
             IndustryLabelingSetting.SelectIndustryCombox(input.InputData.Industry);
             IndustryLabelingSetting.ClickSaveLabeling();
             TimeManager.LongPause();
-            Assert.IsTrue(IndustryLabelingSetting.IsClimateRegionAddMessageDisplayed());
-            Assert.IsTrue(IndustryLabelingSetting.IsEnergyEfficiencyLabelingLevelAddMessageDisplayed());
+            Assert.AreEqual(input.ExpectedData.InvalidMessage[0], IndustryLabelingSetting.GetClimateRegionAddMessageInvalidMsg());
+            Assert.AreEqual(input.ExpectedData.InvalidMessage[0], IndustryLabelingSetting.GetEnergyEfficiencyLabelingLevelAddMessageInvalidMsg());
 
 
             //Select 气候分区=严寒地区B区 , 能耗标识级别=3级.

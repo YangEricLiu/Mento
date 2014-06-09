@@ -175,7 +175,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public Boolean AreDefaultOptionsChecked()
         {
-            string[] publicOption = { "本月二氧化碳排放总量", "本月成本总量", "本月用电总量", "本月用水总量" };
+            //string[] publicOption = { "二氧化碳排放总量", "成本总量", "用电总量", "用水总量" };
+            string[] publicOption = { "$@Setting.CustomerManagement.Label.CarbonEmission", "$@Setting.CustomerManagement.Label.Cost", "$@Setting.CustomerManagement.Label.Electricity", "$@Setting.CustomerManagement.Label.Water" };
+
             int i = publicOption.Length, j;
             for (j = 0; j < i; j++)
             {

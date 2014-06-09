@@ -39,6 +39,6 @@ namespace Mento.ScriptCommon.TestData.Administration
          public string[] StartYears { get; set; }
          public string   EndYear { get; set; }
          public string[] EndYears { get; set; }
-
+         public string[] InvalidMessage { get; set; }
      }
 }

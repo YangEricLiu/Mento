@@ -28,6 +28,7 @@
 			"FactorType":"0.85",
 			"RealTagId":"PtagForAddCostElecComp1",
 			"ReactiveTagId":"PtagForAddCostElecComp2",
+			"WindowFactor":"$@Setting.Cost.Label.PowerFactor.PowerFactor",
 		}
 	}
 ]

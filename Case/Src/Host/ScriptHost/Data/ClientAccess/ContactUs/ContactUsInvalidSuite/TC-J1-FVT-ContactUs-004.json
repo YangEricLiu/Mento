@@ -7,7 +7,7 @@
 			"Company":"西门子",
 			"Title":"ab",
 			"DescriptionFields":"ab",
-			"Customer":"“云能效”系统管理",
+			"Customer":"$@Setting.Role.SPManagement",
 		},
 		"ExpectedData":
 		{

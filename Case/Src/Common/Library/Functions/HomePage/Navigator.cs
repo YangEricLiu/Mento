@@ -49,9 +49,9 @@ namespace Mento.ScriptCommon.Library.Functions
 
             if (JazzMessageBox.MessageBox.Exists())
             {
-                if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用"))
+                if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用") || JazzMessageBox.MessageBox.GetMessage().Contains("Google map is unavailable"))
                 {
-                    JazzMessageBox.MessageBox.Confirm();
+                    JazzMessageBox.MessageBox.OK();
                 }
             }
 

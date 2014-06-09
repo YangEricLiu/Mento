@@ -19,7 +19,8 @@ namespace Mento.ScriptCommon.Library.Functions
         internal KPITagSettings()
         {
         }
-
+        #region controls
+        
         private static Grid KPITagList = JazzGrid.KPITagSettingsKPITagList;
 
         private static TabButton BasicPropertyTab = JazzButton.KPITagSettingsBasicPropertyTabButton;
@@ -43,6 +44,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Grid FormulaPTagList = JazzGrid.KPITagSettingsFormulaEditPTagList;
         private static FormulaField KPIFormulaField = JazzTextField.KPIFormulaField;
         private static CheckBoxField CheckBoxFieldDayNightKPITag = JazzCheckBox.CheckBoxFieldDayNightKPITag;
+
+        #endregion
+
         #region KPITag List Operations
         /// <summary>
         /// Navigate to KPITag settings

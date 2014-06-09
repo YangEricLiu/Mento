@@ -108,12 +108,10 @@ namespace Mento.Script.EnergyView.Usage
 
             DataPanel.CheckTags(option.InputData.TagNames);
 
-            DataPanel.Toolbar.View(option.InputData.ViewType);
-
             DataPanel.Toolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
 
-            Assert.AreEqual(12, DataPanel.GetRecordCount());
-            Assert.AreEqual(1, DataPanel.GetPageCount());
+            DataPanel.Toolbar.View(EnergyViewType.List);
+            TimeManager.LongPause();
         }
 
         /// <summary>

@@ -138,7 +138,6 @@
     <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffModifyInvalidSuite\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestFormulaVtagSmokeTestSuite\" />
     <Folder Include="Data\Customer\TagManagement\SmokeTestKPIBaselineSuite\" />
-    <Folder Include="Resource\en\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="chromedriver.exe">
@@ -148,6 +147,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="IEDriverServer.exe" />
+    <Content Include="Resource\cn\string.js" />
+    <Content Include="Resource\en\string.js" />
     <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_schema_data.sql" />
     <Content Include="SqlScript\TearDown\14dbo_Trigger.sql" />
     <None Include="Data\Administration\CarbonFactor\AddCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Add-005.json" />
@@ -834,9 +835,6 @@
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-038.json" />
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-039.json" />
     <Content Include="Resource\cn\data.js" />
-    <Content Include="Resource\cn\string.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="SqlScript\Setup\initialization.sql" />
     <Content Include="SqlScript\Setup\initialization.xml">
       <SubType>Designer</SubType>

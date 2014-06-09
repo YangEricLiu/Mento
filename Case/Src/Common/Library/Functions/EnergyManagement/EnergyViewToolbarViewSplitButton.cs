@@ -16,15 +16,15 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Dictionary<EnergyViewType, string[]> MenuItemDictionary = new Dictionary<EnergyViewType, string[]>()
         {
-            {EnergyViewType.Line,new string[] { "折线图" }},
-            {EnergyViewType.Column,new string[] { "柱状图" }},
-            {EnergyViewType.List,new string[] { "数据表" }},
-            {EnergyViewType.Distribute,new string[] { "饼状图" }},
+            {EnergyViewType.Line,new string[] { "$@Common.Button.LineChart" }},
+            {EnergyViewType.Column,new string[] { "$@Common.Button.ColumnChart" }},
+            {EnergyViewType.List,new string[] { "$@Common.Button.GridView" }},
+            {EnergyViewType.Distribute,new string[] { "$@Common.Button.PieChart" }},
         };
 
         private static Dictionary<TimeSpans, string[]> TimeSpanMenuItemDictionary = new Dictionary<TimeSpans, string[]>()
         {
-            {TimeSpans.DeleteAllTimeSpans,new string[] { "删除全部对比时间段" }},
+            {TimeSpans.DeleteAllTimeSpans,new string[] { "$@EM.DeleteAllTimespan" }},
         };
 
         //public EnergyViewType CurrentViewType

@@ -30,6 +30,7 @@
 			"RealTagId":"PtagCostComp21",
 			"ReactiveTagId":"PtagCostComp22",
 			"ElectricPaddingCost":"80",
+			"WindowFactor":"$@Setting.Cost.Label.PowerFactor.PowerFactor",
 		}
 	}
 ]

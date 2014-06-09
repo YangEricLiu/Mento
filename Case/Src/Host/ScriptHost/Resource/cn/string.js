@@ -718,7 +718,7 @@ I18N.Common.Per.Person = '/人';
 I18N.Common.Per.m2 = '/平方米';
 
 I18N.Common.Button.Share = '共享';
-I18N.Common.Button.PieChart = '饼图';
+I18N.Common.Button.PieChart = '饼状图';
 I18N.Common.Button.LineChart = '折线图';
 I18N.Common.Button.ColumnChart = '柱状图';
 I18N.Common.Button.GridView = '数据表';

@@ -13,6 +13,7 @@
 		{	
 			"StartYear":"2012",
 			"EndYear":"2014",
+			"InvalidMessage":["$@Common.Label.MandatoryEmptyError"],
 		}
 	}
 ]

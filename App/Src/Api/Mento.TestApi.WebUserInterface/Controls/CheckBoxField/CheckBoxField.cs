@@ -174,11 +174,18 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         // Get common check
+        
         private Locator GetCheckBoxFieldLocator(string itemName)
         {
             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxTable), ITEMNAME, itemName);
         }
-
+        /*
+        private Locator GetCheckBoxFieldLocator(string itemName)
+        {
+            string CheckBoxLocatorFormat = Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxTable), ITEMNAME, itemName).Value;
+            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(CheckBoxLocatorFormat, itemName)), ByType.XPath);
+        }
+        */
         private IWebElement GetPermissonFieldElement(string permissionName)
         {
             return FindChild(GetPermissonFieldLocator(permissionName));
@@ -190,5 +197,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         #endregion
+
     }
 }

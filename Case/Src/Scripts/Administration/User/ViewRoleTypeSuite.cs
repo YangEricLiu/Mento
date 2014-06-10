@@ -35,7 +35,7 @@ namespace Mento.Script.Administration.User
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.LoginPage.RefreshJazz("“云能效”系统管理");
+            JazzFunction.LoginPage.RefreshJazz("$@Login.Label.SPManagement");
         }
 
         [Test]

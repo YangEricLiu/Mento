@@ -36,7 +36,7 @@ namespace Mento.Script.Administration.UserDataScope
         public void CaseTearDown()
         {
             //JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
-            JazzFunction.LoginPage.RefreshJazz("“云能效”系统管理");
+            JazzFunction.LoginPage.RefreshJazz("$@Login.Label.SPManagement");
             TimeManager.LongPause();
         }
 

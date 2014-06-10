@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabeling1"]],
-			"Commodity":["天然气"],
+			"Commodity":["$@Common.Commodity.Gas"],
 			"ManualTimeRange":[
 			{
 				"StartDate":"2013-1-1",

@@ -23,7 +23,7 @@
 		},
 		"ExpectedData":
 		{
-			"NotDrawPieMessage":"所选数据点介质不同，无法共同绘制饼状图！",
+			"NotDrawPieMessage":"$@Message.M02023",
 			"expectedFileName":["MultipleHierarchyNodeComparision-PieChart-101-1-0.xls", "MultipleHierarchyNodeComparision-PieChart-101-1-1.xls"],
 		}
 	}

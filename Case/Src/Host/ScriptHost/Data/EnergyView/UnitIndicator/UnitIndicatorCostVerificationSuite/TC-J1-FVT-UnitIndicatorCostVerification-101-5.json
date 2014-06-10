@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区B", "楼宇C"]],
 			"SystemDimensionPath":["楼宇C", "空调"],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-11-26",
 				"EndDate":"2013-12-25",	
@@ -20,7 +20,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区B"]],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"SystemDimensionPath":["园区B", "空调"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-11-26",

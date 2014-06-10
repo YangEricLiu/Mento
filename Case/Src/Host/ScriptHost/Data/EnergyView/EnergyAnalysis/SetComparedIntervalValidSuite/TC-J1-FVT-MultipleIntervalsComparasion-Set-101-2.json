@@ -16,9 +16,9 @@
 			"EndTimeValue":["2012年05月02日 11点00分", "2012年06月30日 15点00分", "2000年06月03日 10点00分", "2000年06月03日 10点00分"],
 			"StartDateValue":["11年12月01日", "12年01月29日", "11年05月02日", "11年06月30日", "02年06月03日", "02年06月03日"],
 			"StartTimeValue":["00:00", "04:00", "11:00", "15:00", "10:00", "10:00"],
-			"ClearAllMessage":"清空全部”对比时间段”吗？",
-			"DeleteAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
-			"DeleteMessages":["删除全部对比时间段", "删除所有"],
+			"ClearAllMessage":"$@EM.DeleteCompareTime",
+			"DeleteAllMessage":"$@EM.RUClearAll",
+			"DeleteMessages":["$@EM.DeleteAllTimespan", "$@Common.Button.DeleteAll"],
 		}
 	}
 ]

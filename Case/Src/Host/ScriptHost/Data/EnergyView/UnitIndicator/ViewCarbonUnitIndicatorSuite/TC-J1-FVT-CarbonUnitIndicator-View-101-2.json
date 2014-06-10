@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"]],
-			"Commodity":["电", "自来水", "煤"],
+			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
 			"DashboardInfo":[{
 				"WigetName":"UnitCarbon1012_1",
 				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
@@ -23,7 +23,7 @@
 		},
 		"ExpectedData":
 		{
-			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试", "对比数据点已选满"],
+			"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
 			"expectedFileName":["CarbonUnitIndicator101-2-W-P-1.xls", "CarbonUnitIndicator101-2-W-P-2.xls", "CarbonUnitIndicator101-2-W-P-3.xls", "CarbonUnitIndicator101-2-W-P-4.xls"],
 			"UnitIndicatorLegend":[{
 				"CaculationValue":"电计算值",

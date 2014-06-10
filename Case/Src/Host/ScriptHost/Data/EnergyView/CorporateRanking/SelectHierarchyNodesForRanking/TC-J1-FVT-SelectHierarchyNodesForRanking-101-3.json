@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "楼宇BC"]],
-			"commodityNames":["电","自来水"],
+			"commodityNames":["$@Common.Commodity.Electric","$@Common.Commodity.Water"],
 		},
 		"ExpectedData":
 		{

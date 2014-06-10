@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2","组织A", "园区B", "楼宇C"],
-			"commodityNames":["电", "自来水","煤"],
+			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
 			"DashboardInfo":{
 				"WigetName":"CostSingleElec1",
 				"HierarchyName":["NancyCostCustomer2","组织A", "园区B", "楼宇C"],
@@ -20,7 +20,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2","组织A", "园区B"],
-			"commodityNames":["电", "自来水","煤"],
+			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
 			"DashboardInfo":{
 				"WigetName":"CostSingleElec2",
 				"HierarchyName":["NancyCostCustomer2","组织A", "园区B"],
@@ -37,7 +37,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2"],
-			"commodityNames":["电", "自来水","煤"],
+			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
 			"DashboardInfo":{
 				"WigetName":"CostSingleElec3",
 				"HierarchyName":["NancyCostCustomer2"],

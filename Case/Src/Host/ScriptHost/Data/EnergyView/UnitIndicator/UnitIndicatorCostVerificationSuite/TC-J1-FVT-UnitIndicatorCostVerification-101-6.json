@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区B", "楼宇C"]],
 			"AreaDimensionPath":["楼宇C", "一层"],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-11-26",
 				"EndDate":"2013-12-25",	

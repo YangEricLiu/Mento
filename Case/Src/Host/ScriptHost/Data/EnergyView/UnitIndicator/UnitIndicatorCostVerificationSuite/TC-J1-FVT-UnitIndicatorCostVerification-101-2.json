@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"]],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"Industry":"严寒地区B区办公建筑",
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",

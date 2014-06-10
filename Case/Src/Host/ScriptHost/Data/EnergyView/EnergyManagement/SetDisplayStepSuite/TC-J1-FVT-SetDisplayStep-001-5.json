@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
-			"commodityNames":["电"],
+			"commodityNames":["$@Common.Commodity.Electric"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-7-29",
 				"EndDate":"2012-8-3",	
@@ -11,8 +11,8 @@
 		},
 		"ExpectedData":
 		{
-			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
-			"StepMessage":["峰谷平电价展示不支持按小时展示"],
+			"ClearAllMessage":"$@EM.RUClearAll",
+			"StepMessage":["$@Message.M02407"],
 		}
 	}
 ]

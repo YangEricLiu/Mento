@@ -34,7 +34,7 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["ConsumptionUnitIndicatorCalculate101-1-H-V1.xls", "ConsumptionUnitIndicatorCalculate101-1-D-V1.xls", "ConsumptionUnitIndicatorCalculate101-1-W-V1.xls", "ConsumptionUnitIndicatorCalculate101-1-HArea-V1.xls", "ConsumptionUnitIndicatorCalculate101-1-DArea-V1.xls", "ConsumptionUnitIndicatorCalculate101-1-WArea-V1.xls", "ConsumptionUnitIndicatorCalculate101-1-M-V1V3.xls", "ConsumptionUnitIndicatorCalculate101-1-Y-V1V3.xls", "ConsumptionUnitIndicatorCalculate101-1-M-V3.xls", "ConsumptionUnitIndicatorCalculate101-1-Y-V3.xls", "ConsumptionUnitIndicatorCalculate101-1-Y-pre.xls", "ConsumptionUnitIndicatorCalculate101-1-Y-miss.xls"],
-			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试", "对比数据点已选满"],
+			"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
 		}
 	}
 ]

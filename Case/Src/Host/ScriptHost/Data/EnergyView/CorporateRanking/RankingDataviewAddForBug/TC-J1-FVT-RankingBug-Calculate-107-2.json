@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇A"], ["NancyCostCustomer2","组织A","园区A","楼宇B"]],
-			"commodityNames":["介质总览"],
+			"commodityNames":["$@EM.TotalCommodity"],
 			"failedFileName":["F-TC-J1-FVT-RankingBug-Calculate-107-2-1-Total-TotalRank-LastYear.xls","F-TC-J1-FVT-RankingBug-Calculate-107-2-2-Total-AverageRank-LastYear.xls","F-TC-J1-FVT-RankingBug-Calculate-107-2-3-Total-UnitArea-LastYear-Year.xls"],
 			"ManualTimeRange":[
 			{

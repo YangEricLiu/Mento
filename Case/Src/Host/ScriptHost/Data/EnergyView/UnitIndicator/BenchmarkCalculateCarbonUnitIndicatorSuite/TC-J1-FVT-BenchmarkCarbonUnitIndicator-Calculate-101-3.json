@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
-			"Commodity":["电", "自来水", "煤"],
+			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
 			"Industry":"夏热冬冷地区轨道交通",
 			"ManualTimeRange":[{
 				"StartDate":"2010-1-1",

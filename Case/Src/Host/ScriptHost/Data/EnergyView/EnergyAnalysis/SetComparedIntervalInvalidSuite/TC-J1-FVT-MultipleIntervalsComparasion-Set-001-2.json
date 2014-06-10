@@ -9,8 +9,8 @@
 		},
 		"ExpectedData":
 		{
-			"StartDateValue":["必填项", "超出了时间范围", "该输入项的日期必须在 00年01月01日 之后"],
-			"ErrorMessage":["退出多层级数据点查看情景并清空已选数据点吗？"],
+			"StartDateValue":["$@Common.Label.MandatoryEmptyError", "$@EM.OutTimeRange", "该输入项的日期必须在 00年01月01日 之后"],
+			"ErrorMessage":["$@EM.QuitMultiHier"],
 		}
 	}
 ]

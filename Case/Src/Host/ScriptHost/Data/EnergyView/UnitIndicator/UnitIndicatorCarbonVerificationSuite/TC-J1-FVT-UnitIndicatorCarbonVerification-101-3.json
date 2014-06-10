@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"Industry":"严寒地区B区数据中心",
-			"CarbonType":"标煤",
+			"CarbonType":"$@Common.CarbonUomType.StandardCoal",
 			"ManualTimeRange":[{
 				"StartDate":"2012-8-25",
 				"EndDate":"2013-2-10",	
@@ -21,9 +21,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"]],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"Industry":"严寒地区B区办公建筑",
-			"CarbonType":"二氧化碳",
+			"CarbonType":"$@Common.CarbonUomType.CO2",
 			"ManualTimeRange":[{
 				"StartDate":"2012-8-25",
 				"EndDate":"2013-2-10",	

@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
 			"Commodity":["煤"],
 			"Industry":"夏热冬冷地区轨道交通",
-			"CarbonType":"标煤",
+			"CarbonType":"$@Common.CarbonUomType.StandardCoal",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-5",	
@@ -23,7 +23,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
 			"Commodity":["煤"],
 			"Industry":"夏热冬冷地区轨道交通",
-			"CarbonType":"二氧化碳",
+			"CarbonType":$@Common.CarbonUomType.CO2",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-5",	
@@ -41,7 +41,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
 			"Commodity":["煤"],
 			"Industry":"夏热冬冷地区轨道交通",
-			"CarbonType":"树",
+			"CarbonType":"$@Common.CarbonUomType.Tree",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-5",	

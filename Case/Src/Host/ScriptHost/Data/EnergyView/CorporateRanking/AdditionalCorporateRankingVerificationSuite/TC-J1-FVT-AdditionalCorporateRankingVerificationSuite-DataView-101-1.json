@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇B"], ["NancyCostCustomer2", "组织A", "园区B", "楼宇C"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"]],
-			"commodityNames":["电", "自来水", "煤"],
+			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2012-12-31",	

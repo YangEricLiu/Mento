@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"]],
-			"Commodity":["煤", "自来水"],
+			"Commodity":["煤", "$@Common.Commodity.Water"],
 			"Industries":["夏热冬冷地区轨道交通"],
 			"DashboardInfo":[{
 				"WigetName":"UnitCost1013",
@@ -23,7 +23,7 @@
 		},
 		"ExpectedData":
 		{
-			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试"],
+			"popupNotes":["$@Message.M02501"],
 			"messages":["所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。", "所选数据点不支持\"按小时\"的步长显示，换个步长试试。"],
 		}
 	}

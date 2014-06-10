@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇B"]],
-			"commodityNames":["天然气"],
+			"commodityNames":["$@Common.Commodity.Gas"],
 			"failedFileName":["F-TC-J1-FVT-CarbonRanking-Calculate-101-6-1-Gas-AverageRank-Custom.xls"],
 		},
 		"ExpectedData":

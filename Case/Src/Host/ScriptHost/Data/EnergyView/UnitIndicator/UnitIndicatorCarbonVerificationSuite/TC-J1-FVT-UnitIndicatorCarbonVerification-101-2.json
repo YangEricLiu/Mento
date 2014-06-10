@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"Industry":"严寒地区B区机房",
-			"CarbonType":"标煤",
+			"CarbonType":"$@Common.CarbonUomType.StandardCoal",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-5",	
@@ -25,9 +25,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
-			"Commodity":["自来水"],
+			"Commodity":["$@Common.Commodity.Water"],
 			"Industry":"严寒地区B区机房",
-			"CarbonType":"二氧化碳",
+			"CarbonType":"$@Common.CarbonUomType.CO2",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-5",	
@@ -49,7 +49,7 @@
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
 			"Commodity":["煤"],
 			"Industry":"严寒地区B区机房",
-			"CarbonType":"树",
+			"CarbonType":"$@Common.CarbonUomType.Tree",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-5",	

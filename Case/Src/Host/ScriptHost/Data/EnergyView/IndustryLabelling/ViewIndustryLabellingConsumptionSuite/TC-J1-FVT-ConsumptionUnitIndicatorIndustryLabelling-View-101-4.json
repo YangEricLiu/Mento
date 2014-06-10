@@ -6,7 +6,7 @@
 			"tagNames":["Labellingtag1", "Labellingtag2", "BBV1KT"],
 			"Industries":["夏热冬暖地区酒店（三星级）", "严寒地区B区全行业"],
 			"SystemDimensionPath":[["楼宇B", "空调"]],
-			"UnitTypeValue":"单位面积",
+			"UnitTypeValue":"$@EM.Unit.UnitArea",
 			"YearAndMonth":[{
 				"year":"2012",
 				"month":"10",

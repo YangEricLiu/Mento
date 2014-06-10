@@ -16,7 +16,7 @@
 		},
 		"ExpectedData":
 		{
-			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
+			"ClearAllMessage":"$@EM.RUClearAll",
 			"expectedFileName":["SingleHierarchyNodeDataView101-2-D-V14_BuildingBC.xls"],
 		}
 	}

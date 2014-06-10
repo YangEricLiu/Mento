@@ -6,7 +6,7 @@
 			"HierarchiesArray":[["NancyCostCustomer2", "组织A"]],
 			"SystemDimensionPath":["组织A", "空调"],
 			"AreaDimensionPath":["楼宇A", "一层"],
-			"commodityNames":["电", "自来水", "煤"],
+			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-07-29",
 				"EndDate":"2012-08-04",	

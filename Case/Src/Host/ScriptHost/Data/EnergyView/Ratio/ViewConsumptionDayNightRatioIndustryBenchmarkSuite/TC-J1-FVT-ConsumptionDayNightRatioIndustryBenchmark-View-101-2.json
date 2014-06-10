@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNullTest"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
 			"tagNames":["P1_YearToDay", "V1_YearToDay", "V2_YearToDay", "V11_BuildingBC", "WorkNotworkP", "NullTestTag1", "DayNightPNotlighten"],
-			"Industries":["无", "严寒地区B区办公建筑", "严寒地区B区数据中心"],
+			"Industries":["$@Setting.Benchmark.Label.None", "严寒地区B区办公建筑", "严寒地区B区数据中心"],
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-1-7",	
@@ -18,7 +18,7 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["ConsumptionDayNightRatioIndustryBenchmark-View-101-2-D-0.xls", "ConsumptionDayNightRatioIndustryBenchmark-View-101-2-W-1.xls", "ConsumptionDayNightRatioIndustryBenchmark-View-101-1-W-2.xls"],
-			"popupNotes":["缺少昼夜日历的部分，无法绘图。请设置后再试。"],
+			"popupNotes":["$@Message.M02601"],
 			"messages":["所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"],
 		}
 	}

@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingConvertStandardUOM"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNotConvertStandardUOM"], ["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling21"]],
 			"TagNames":["Labellingtag1", "StandardUOMTon", "NotStandardUOMkg", "Labellingtag21"],
-			"UnitTypeValue":"工休比",
+			"UnitTypeValue":"$@EM.WorkHolidayRatio",
 			"Industries":["夏热冬暖地区酒店（三星级）", "温和地区超市", "夏热冬暖地区酒店（三星级）"],
 			"YearAndMonth":[{
 				"year":"2012",

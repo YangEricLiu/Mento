@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "楼宇BC"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"]],
 			"TagNames":["V1_BuildingBC", "V11_BuildingBC", "V2_BuildingBC", "V3_BuildingBC"],
-			"Industries":["寒冷地区服装零售", "无"],
+			"Industries":["寒冷地区服装零售", "$@Common.AggregationStep.None"],
 			"failedFileName":["F-BenchmarkConsumptionUnitIndicator-View-101-1-M-0.xls", "F-BenchmarkConsumptionUnitIndicator-View-101-1-H-1.xls", "F-BenchmarkConsumptionUnitIndicator-View-101-1-D-2.xls", "F-BenchmarkConsumptionUnitIndicator-View-101-1-W-3.xls", "F-BenchmarkConsumptionUnitIndicator-View-101-1-M-4.xls", "F-BenchmarkConsumptionUnitIndicator-View-101-1-Y-5.xls"],
 			"UnitIndicatorLegend":[{
 				"BenchmarkValue":"寒冷地区服装零售",
@@ -37,9 +37,9 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["BenchmarkConsumptionUnitIndicator-View-101-1-M-0.xls", "BenchmarkConsumptionUnitIndicator-View-101-1-H-1.xls", "BenchmarkConsumptionUnitIndicator-View-101-1-D-2.xls", "BenchmarkConsumptionUnitIndicator-View-101-1-W-3.xls", "BenchmarkConsumptionUnitIndicator-View-101-1-M-4.xls", "BenchmarkConsumptionUnitIndicator-View-101-1-Y-5.xls"],
-			"UnitTypeValue":"单位人口",
-			"IndustryValue":"行业基准值",
-			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试"],
+			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
+			"IndustryValue":"$@Setting.Benchmark.Label.IndustryBaseLineValue",
+			"popupNotes":["$@Message.M02501"],
 		}
 	}
 ]

@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
-			"Commodity":["煤", "自来水"],
+			"Commodity":["煤", "$@Common.Commodity.Water"],
 			"Industries":["夏热冬冷地区轨道交通"],
 			"ManualTimeRange":[
 			{
@@ -18,7 +18,7 @@
 		},
 		"ExpectedData":
 		{
-			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试", "对比数据点已选满"],
+			"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
 			"expectedFileName":["BenchmarkCarbonUnitIndicator-View-101-3-0.xls", "BenchmarkCarbonUnitIndicator-View-101-3-1.xls"],
 			"messages":["所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。", "所选数据点不支持\"按小时\"的步长显示，换个步长试试。"],
 		}

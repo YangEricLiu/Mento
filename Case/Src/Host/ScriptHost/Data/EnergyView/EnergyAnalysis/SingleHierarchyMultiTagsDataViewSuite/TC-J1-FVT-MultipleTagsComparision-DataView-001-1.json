@@ -17,7 +17,7 @@
 		},
 		"ExpectedData":
 		{
-			"ClearAllMessage":"清空所有已选“数据点”与“对比时间段”吗？",
+			"ClearAllMessage":"$@EM.RUClearAll",
 			"expectedFileName":["MultipleTagsDataView101-1-H-V6_BuildingBC.xls", "MultipleTagsDataView101-1-H-V6V1_BuildingBC.xls", "MultipleTagsDataView101-1-H-V6V1V2_BuildingBC.xls", "MultipleTagsDataView101-1-H-V6V1V2P1_BuildingBC.xls", "MultipleTagsDataView101-1-H-V10_BuildingBC.xls", "MultipleTagsDataView101-1-H-2V10_BuildingBC.xls"],
 		}
 	}

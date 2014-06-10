@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling19"], ["NancyOtherCustomer3", "BuildingRanking3"]],
 			"TagNames":["Labellingtag19", "Rankingtag3"],
-			"UnitTypeValue":"单位人口",
+			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
 			"Industries":["夏热冬暖地区酒店（三星级）", "严寒地区A区酒店（五星级）"],
 			"YearAndMonth":[{
 				"year":"2012",

@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A"]],
-			"Commodity":["电", "自来水", "煤"],
+			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-7-29",
 				"EndDate":"2012-8-4",	
@@ -11,7 +11,7 @@
 		},
 		"ExpectedData":
 		{
-			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试"],
+			"popupNotes":["$@Message.M02501"],
 		}
 	}
 ]

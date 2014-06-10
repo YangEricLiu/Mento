@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingRanking"]],
-			"commodityNames":["电","自来水"],
+			"commodityNames":["$@Common.Commodity.Electric","$@Common.Commodity.Water"],
 			"failedFileName":["F-ConsumptionRankingDataView001-1-H-Elec.xls", "F-ConsumptionRankingDataView002-1-H-Elec.xls", "F-ConsumptionRankingDataView003-1-H-Elec.xls", "F-ConsumptionRankingDataView004-1-H-Elec.xls", "F-ConsumptionRankingDataView005-1-H-Elec.xls"],
-			"SystemDimensionPath":["系统维度","空调"],
+			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","空调"],
 		},
 		"ExpectedData":
 		{

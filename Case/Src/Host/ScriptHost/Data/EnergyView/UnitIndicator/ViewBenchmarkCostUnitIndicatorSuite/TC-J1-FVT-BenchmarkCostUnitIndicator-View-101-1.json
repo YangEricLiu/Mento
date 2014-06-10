@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"], ["NancyCostCustomer2"], ["NancyCostCustomer2", "空调"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
 			"SystemDimensionPath":["楼宇D", "空调"],
 			"AreaDimensionPath":["楼宇D", "一层"],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"Industries":["严寒地区B区机房"],
 			"UnitIndicatorLegend":[{
 				"CaculationValue":"V1_BuildingBC计算值",
@@ -36,7 +36,7 @@
 		},
 		"ExpectedData":
 		{
-			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试"],
+			"popupNotes":["$@Message.M02501"],
 		}
 	}
 ]

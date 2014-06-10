@@ -10,15 +10,15 @@
 			},
 			{
 			    "year":"2012",
-				"month":"全年",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
 			}],
 			"failedFileName":["F-ConsumptionUnitIndicatorIndustryLabelling-View-101-1-0.xls", "F-ConsumptionUnitIndicatorIndustryLabelling-View-101-1-1.xls"],
 		},
 		"ExpectedData":
 		{
-			"UnitTypeValue":"单位人口",
+			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
 			"IndustryValue":"寒冷地区全行业",
-			"popupNotes":["该节点为非楼宇节点，请重新选择节点", "缺少人口属性的部分无法绘图。请设置后再试", "对比数据点已选满"],
+			"popupNotes":["$@EM.Labeling.NonBuilding", "$@Message.M02501", "$@EM.CompareTagsAreFull"],
 			"expectedFileName":["ConsumptionUnitIndicatorIndustryLabelling-View-101-1-0.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-1-1.xls"],
 		}
 	}

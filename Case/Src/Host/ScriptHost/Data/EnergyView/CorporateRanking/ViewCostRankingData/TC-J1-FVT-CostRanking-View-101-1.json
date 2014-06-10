@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇A"],["NancyCostCustomer2","组织A","园区A","楼宇B"], ["NancyCostCustomer2", "组织A", "园区B", "楼宇C"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"], ["NancyCostCustomer2","RenameDashboardSuiteOrg","DeleteDashboardSuiteSite", "DeleteDashboardSuiteBuild"], ["NancyCostCustomer2", "组织A", "园区A"]],
-			"commodityNames":["电","自来水","介质总览"],
+			"commodityNames":["$@Common.Commodity.Electric","$@Common.Commodity.Water","$@EM.TotalCommodity"],
 			"failedFileName":["F-CostRankingDataView001-1-H-Elec.xls","F-CostRankingDataView001-2-H-Elec.xls","F-CostRankingDataView001-3-H-Elec.xls","F-CostRankingDataView001-4-H-Elec.xls","F-CostRankingDataView001-5-H-Elec.xls","F-CostRankingDataView001-6-H-Elec.xls","F-CostRankingDataView001-7-H-Elec.xls","F-CostRankingDataView001-8-H-Elec.xls","F-CostRankingDataView001-9-H-Elec.xls"],
-			"SystemDimensionPath":["系统维度","空调"],
+			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","空调"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-7-2",
 				"EndDate":"2012-7-3",	

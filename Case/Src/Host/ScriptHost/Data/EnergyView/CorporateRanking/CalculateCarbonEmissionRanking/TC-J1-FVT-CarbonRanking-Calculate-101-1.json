@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingRanking1"], ["NancyOtherCustomer3","NancyOtherSite","BuildingRanking2"], ["NancyOtherCustomer3","NancyOtherSite","BuildingRanking3"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking4"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"]],
-			"commodityNames":["电","介质总览"],
+			"commodityNames":["$@Common.Commodity.Electric","$@EM.TotalCommodity"],
 			"failedFileName":["F-TC-J1-FVT-CarbonRanking-Calculate-101-1-1-Elec-TotalRank-Custom.xls","F-TC-J1-FVT-CarbonRanking-Calculate-101-1-2-Elec-TotalRank-ThisYear.xls","F-TC-J1-FVT-CarbonRanking-Calculate-101-1-3-Total-TotalRank-ThisYear.xls","F-TC-J1-FVT-CarbonRanking-Calculate-101-1-4-Total-TotalRank-ThisYear-CO2.xls","F-TC-J1-FVT-CarbonRanking-Calculate-101-1-5-Total-AverageRank-ThisYear-Tree.xls","F-TC-J1-FVT-CarbonRanking-Calculate-101-1-6-Total-AverageRank-ThisYear-Tree.xls"],
 			"ManualTimeRange":[
 			{

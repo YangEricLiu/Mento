@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingConvertStandardUOM"], ["NancyOtherCustomer3","NancyOtherSite","BuildingRanking50"]],
-			"commodityNames":["柴油","电"],
+			"commodityNames":["$@Common.Commodity.DieselOil","$@Common.Commodity.Electric"],
 			"failedFileName":["F-CostRankingDataView004-1-Elec.xls","F-CostRankingDataView004-2-Elec.xls","F-CostRankingDataView004-3-Elec.xls","F-CostRankingDataView004-4-Elec.xls","F-CostRankingDataView004-5-Elec.xls","F-CostRankingDataView004-6-Elec.xls"],
-			"SystemDimensionPath":["系统维度","空调"],
+			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","空调"],
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-1-3",	

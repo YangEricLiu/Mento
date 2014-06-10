@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"Industry":"全部区域全行业",
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
@@ -24,7 +24,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"Industry":"严寒地区A区酒店",
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
@@ -45,7 +45,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"]],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"Industry":"严寒地区A区酒店（三星级）",
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
@@ -66,7 +66,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"]],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"Industry":"严寒地区A区酒店",
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
@@ -87,7 +87,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"]],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"Industry":"严寒地区A区全行业",
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",

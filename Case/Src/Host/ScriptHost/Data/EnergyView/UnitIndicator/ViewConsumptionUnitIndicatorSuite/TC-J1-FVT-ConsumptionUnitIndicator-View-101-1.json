@@ -39,9 +39,9 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["ConsumptionUnitIndicatorView101-1-HPeople-V1_BuildingBC.xls", "ConsumptionUnitIndicatorView101-1-HArea-V1_BuildingBC.xls"],
-			"UnitTypeValue":"单位人口",
-			"IndustryValue":"行业基准值",
-			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试", "对比数据点已选满"],
+			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
+			"IndustryValue":"$@Setting.Benchmark.Label.IndustryBaseLineValue",
+			"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
 			"UnitIndicatorLegend":[{
 				"CaculationValue":"V1_BuildingBC计算值",
 				"OriginalValue":"V1_BuildingBC原始值",

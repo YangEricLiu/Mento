@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingRankin10"],["NancyOtherCustomer3","NancyOtherSite","BuildingMultipleSteps"]],
-			"commodityNames":["电","煤"],
+			"commodityNames":["$@Common.Commodity.Electric","煤"],
 			"failedFileName":["F-TC-J1-FVT-ConsumptionRanking-View-101-4-1-Elec-TotalRank-Custom-2012.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-4-2-Elec-AverageRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-4-3-Elec-TotalRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-4-4-Coal-TotalRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-4-5-Elec-TotalRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-4-6-Elec-TotalRank-Custom.xls"],
-			"SystemDimensionPath":["系统维度","空调"],
+			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","空调"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2012-1-31",	

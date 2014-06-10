@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
-			"Commodity":["电", "自来水", "煤"],
+			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
 			"Industries":["严寒地区B区机房"],
 			"ManualTimeRange":[
 			{
@@ -38,7 +38,7 @@
 		},
 		"ExpectedData":
 		{
-			"popupNotes":["缺少人口属性的部分无法绘图。请设置后再试", "对比数据点已选满"],
+			"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
 			"expectedFileName":["BenchmarkCarbonUnitIndicator-View-101-1-0.xls", "BenchmarkCarbonUnitIndicator-View-101-1-1.xls", "BenchmarkCarbonUnitIndicator-View-101-1-2.xls", "BenchmarkCarbonUnitIndicator-View-101-1-3.xls", "BenchmarkCarbonUnitIndicator-View-101-1-4.xls", "BenchmarkCarbonUnitIndicator-View-101-1-5.xls", "BenchmarkCarbonUnitIndicator-View-101-1-6.xls"],
 			"UnitIndicatorLegend":[{
 				"CaculationValue":"电计算值",

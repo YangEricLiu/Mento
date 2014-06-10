@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking50"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking2"]],
 			"TagNames":["Rankingtag50"],
-			"Commodity":["电", "自来水", "煤"],
+			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
 			"failedFileName":["F-UnitIndicatorOfflineCalculate101-1-H-R50-1.xls", "F-UnitIndicatorOfflineCalculate101-1-H-R50-2.xls", "F-UnitIndicatorOfflineCalculate101-1-H-R50-3.xls", "F-UnitIndicatorOfflineCalculate101-1-H-R50-4.xls", "F-UnitIndicatorOfflineCalculate101-1-H-R50-5.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",

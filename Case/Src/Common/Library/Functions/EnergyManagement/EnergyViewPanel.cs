@@ -38,11 +38,11 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Dictionary<DisplayStep, string> DisplayStepItem = new Dictionary<DisplayStep, string>()
         {
-            {DisplayStep.Hour, "按小时"},
-            {DisplayStep.Day, "按天"},
-            {DisplayStep.Week, "按周"},
-            {DisplayStep.Month, "按月"},
-            {DisplayStep.Year, "按年"},
+            {DisplayStep.Hour, "$@EM.UseHour"},
+            {DisplayStep.Day, "$@EM.UseDay"},
+            {DisplayStep.Week, "$@EM.UseWeek"},
+            {DisplayStep.Month, "$@EM.UseMonth"},
+            {DisplayStep.Year, "$@EM.UseYear"},
         };
 
         //Chart

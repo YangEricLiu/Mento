@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"]],
-			"Commodity":["电"],
+			"Commodity":["$@Common.Commodity.Electric"],
 			"Industry":"夏热冬暖地区酒店（三星级）",
 			"ManualTimeRange":[{
 				"StartDate":"2009-1-1",

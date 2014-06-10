@@ -4,11 +4,11 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
 			"TagNames":["DayNightP"],
-			"UnitTypeValue":"工休比",
+			"UnitTypeValue":"$@EM.WorkHolidayRatio",
 			"Industries":["严寒地区B区数据中心"],
 			"YearAndMonth":[{
 				"year":"2013",
-				"month":"全年",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
 			},
 			{
 			    "year":"2012",
@@ -16,7 +16,7 @@
 			},
 			{
 			    "year":"2012",
-				"month":"全年",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
 			}],
 			"DashboardInfo":[{
 				"WigetName":"LabellingWorkNotwork1011_1",

@@ -321,9 +321,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Export expected dictionary data to excel file with data view header
         /// </summary>
         /// <param name="displayStep"></param>
-        public void ExportExpectedDictionaryForMultipleHierarchyToExcel(MultipleHierarchyAndtags[] expectedHierarchyDatas, ManualTimeRange manualTimeRange, string fileName)
+        public void ExportExpectedDictionaryForMultipleHierarchyToExcel( ManualTimeRange manualTimeRange, string fileName)
         {
-            ExportExpectedDictionaryToExcelMultiHiearachy(expectedHierarchyDatas, manualTimeRange, fileName, EAPiePath);
+            ExportExpectedDictionaryToExcelMultiHiearachy(manualTimeRange, fileName, EAPiePath);
         }
 
         /// <summary>

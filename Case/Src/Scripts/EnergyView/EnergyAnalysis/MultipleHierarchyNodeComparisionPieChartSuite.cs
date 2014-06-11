@@ -82,9 +82,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            tmpMultipleHierarchyAndtags.Add(input.InputData.MultipleHierarchyAndtags[0]);
-
-            EnergyAnalysis.ExportExpectedDictionaryForMultipleHierarchyToExcel(tmpMultipleHierarchyAndtags.ToArray(), ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            EnergyAnalysis.ExportExpectedDictionaryForMultipleHierarchyToExcel(ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDictionaryDataForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
             
@@ -140,9 +138,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             TimeManager.LongPause();
 
-            tmpMultipleHierarchyAndtags.Add(input.InputData.MultipleHierarchyAndtags[1]);
-
-            EnergyAnalysis.ExportExpectedDictionaryForMultipleHierarchyToExcel(tmpMultipleHierarchyAndtags.ToArray(), ManualTimeRange[0], input.ExpectedData.expectedFileName[1]);
+            EnergyAnalysis.ExportExpectedDictionaryForMultipleHierarchyToExcel(ManualTimeRange[0], input.ExpectedData.expectedFileName[1]);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDictionaryDataForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 

@@ -2,10 +2,18 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingConvertStandardUOM"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNotConvertStandardUOM"], ["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling21"]],
-			"TagNames":["Labellingtag1", "StandardUOMTon", "NotStandardUOMkg", "Labellingtag21"],
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingConvertStandardUOM"],
+				"TagsName":["StandardUOMTon"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingNotConvertStandardUOM"],
+				"TagsName":["NotStandardUOMkg"],
+			}],
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"], ["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling21"]],
+			"TagNames":["Labellingtag1", "Labellingtag21"],
 			"UnitTypeValue":"$@EM.WorkHolidayRatio",
-			"Industries":["夏热冬暖地区酒店（三星级）", "温和地区超市", "夏热冬暖地区酒店（三星级）"],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬暖地区酒店（三星级）"], ["$@Setting.Labeling.Label.IndustryLabeling", "温和地区超市"], ["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬暖地区酒店（三星级）"]],
 			"YearAndMonth":[{
 				"year":"2012",
 				"month":"10",
@@ -18,10 +26,11 @@
 				"year":"2012",
 				"month":"10",
 			}],
+			"failedFileName":["F-ConsumptionWorkNotworkRatio-Calculate-101-1-0.xls", "F-ConsumptionWorkNotworkRatio-Calculate-101-1-1.xls", "F-ConsumptionWorkNotworkRatio-Calculate-101-1-2.xls"],
 		},
 		"ExpectedData":
 		{
-			"LabellingTooltips":[["> 4.08", "3.58 - 4.08", "3.08 - 3.58", "2.58 - 3.08", "<= 2.58"], ["> 1", "1 - 1", "<= 1", "StandardUOMTon: 1", "NotStandardUOMkg: 1"], ["> 4.08", "3.58 - 4.08", "3.08 - 3.58", "2.58 - 3.08", "<= 2.58"]],
+			"expectedFileName":["ConsumptionWorkNotworkRatio-Calculate-101-1-0.xls", "ConsumptionWorkNotworkRatio-Calculate-101-1-1.xls", "ConsumptionWorkNotworkRatio-Calculate-101-1-2.xls"],
 		}
 	}
 ]

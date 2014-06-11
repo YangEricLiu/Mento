@@ -78,17 +78,17 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            string labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select BuildingLabelling21, select 行业&区域=全行业全区域;time range=2012/10 to view chart. 
-            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[3]);
+            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[3]);
+            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[1]);
             TimeManager.ShortPause();
 
             //全部区域全行业（夏热冬暖地区酒店（三星级））
@@ -103,22 +103,22 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[2][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[1], input.InputData.YearAndMonth[2], input.InputData.Industries[2][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[1], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Go to SP1. Go to Function Labelling.
             //Select 多层级. BuildingConvertStandardUOM->StandardUOMTon,and select BuildingNotConvertStandardUOM->NotStandardUOMkg, 行业&区域=温和地区超市行业.;time range=2013/1 to view chart. 
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
             TimeManager.LongPause();
 
-            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies[1]);
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[1]);
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[0].HierarchyPath);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[0].TagsName[0]);
             TimeManager.ShortPause();
 
-            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies[2]);
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[2]);
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[1].HierarchyPath);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[0]);
             TimeManager.ShortPause();
 
             MultiHieCompareWindow.ClickConfirmButton();
@@ -136,10 +136,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetMultiLabellingInfo(input.InputData.MultipleHierarchyAndtags, input.InputData.YearAndMonth[1], input.InputData.Industries[1][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[2], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
         }
 
         [Test]
@@ -171,10 +171,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            string labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select SP2-> Rankingtag1 from BuildingRanking1, select 行业&区域=夏热冬暖酒店行业; time range=2013/1 to view chart.  
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
@@ -193,10 +193,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[1], input.InputData.YearAndMonth[1], input.InputData.Industries[1][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[1], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
 
         [Test]
@@ -228,10 +228,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            string labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select SP3->Rankingtag3 from BuildingRanking3（UOM=KW）, select 行业&区域=夏热冬暖酒店行业;time range=2013/1 to view chart.  
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
@@ -250,10 +250,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[1], input.InputData.YearAndMonth[1], input.InputData.Industries[1][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[1], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
     }
 }

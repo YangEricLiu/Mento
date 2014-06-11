@@ -2,10 +2,18 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingConvertStandardUOM"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNotConvertStandardUOM"], ["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling21"]],
-			"TagNames":["Labellingtag1", "StandardUOMTon", "NotStandardUOMkg", "Labellingtag21"],
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingConvertStandardUOM"],
+				"TagsName":["StandardUOMTon"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingNotConvertStandardUOM"],
+				"TagsName":["NotStandardUOMkg"],
+			}],
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"], ["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling21"]],
+			"TagNames":["Labellingtag1", "Labellingtag21"],
 			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
-			"Industries":["夏热冬暖地区酒店（三星级）", "温和地区超市", "夏热冬暖地区酒店（三星级）"],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬暖地区酒店（三星级）"], ["$@Setting.Labeling.Label.IndustryLabeling", "温和地区超市"], ["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬暖地区酒店（三星级）"]],
 			"YearAndMonth":[{
 				"year":"2012",
 				"month":"10",
@@ -18,10 +26,11 @@
 				"year":"2012",
 				"month":"10",
 			}],
+			"failedFileName":["F-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-1-0.xls", "F-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-1-1.xls", "F-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-1-2.xls", "F-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-1-3.xls"],
 		},
 		"ExpectedData":
 		{
-			"LabellingTooltips":[["<= 23.1KWH/人", "23.1KWH/人 - 26.8KWH/人", "26.8KWH/人 - 30.6KWH/人", "30.6KWH/人 - 34.3KWH/人", "> 34.3KWH/人", "Labellingtag1: 25KWH/人"], ["<= 7,440,000kg/人", "7,440,000kg/人 - 7,440,000kg/人", "> 7,440,000kg/人", "StandardUOMTon: 7,440kg/人", "NotStandardUOMkg: 7,440kg/人"], ["<= 257.2KWH/人", "257.2KWH/人 - 414.7KWH/人", "414.7KWH/人 - 572.2KWH/人", "572.2KWH/人 - 729.7KWH/人", "> 729.7KWH/人", "Labellingtag21: 525KWH/人"]],
+			"expectedFileName":["ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-1-0.xls", "ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-1-1.xls", "ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-1-2.xls", "ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-1-3.xls"],
 		}
 	}
 ]

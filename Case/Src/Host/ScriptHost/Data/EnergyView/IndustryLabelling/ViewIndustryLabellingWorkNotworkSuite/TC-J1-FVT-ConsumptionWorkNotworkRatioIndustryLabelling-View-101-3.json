@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"], ["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling2"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
 			"TagNames":["Labellingtag1", "Labellingtag2", "BBV1KT"],
 			"UnitTypeValue":"$@EM.WorkHolidayRatio",
-			"Industries":["夏热冬暖地区酒店（三星级）", "严寒地区B区全行业"],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬暖地区酒店（三星级）"], ["$@Setting.Labeling.Label.IndustryLabeling", "严寒地区B区全行业"]],
 			"SystemDimensionPath":[["楼宇B", "空调"]],
 			"YearAndMonth":[{
 				"year":"2012",
@@ -31,10 +31,11 @@
 				"year":"2014",
 				"month":"01",
 			}],
+			"failedFileName":["F-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-3-0.xls", "F-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-3-1.xls", "F-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-3-2.xls", "F-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-3-3.xls"],
 		},
 		"ExpectedData":
 		{
-			"LabellingTooltips":[["> 4.08", "3.58 - 4.08", "3.08 - 3.58", "2.58 - 3.08", "<= 2.58"], ["> 4.08", "3.58 - 4.08", "3.08 - 3.58", "2.58 - 3.08", "<= 2.58", "Labellingtag1: 4"], ["> 4.08", "3.58 - 4.08", "3.08 - 3.58", "2.58 - 3.08", "<= 2.58", "Labellingtag2: 4"], ["> 1", "1 - 1", "0.99 - 1", "<= 0.99", "BBV1KT: 1"]],
+			"expectedFileName":["ConsumptionWorkNotworkRatioIndustryLabelling-View-101-3-0.xls", "ConsumptionWorkNotworkRatioIndustryLabelling-View-101-3-1.xls", "ConsumptionWorkNotworkRatioIndustryLabelling-View-101-3-2.xls", "ConsumptionWorkNotworkRatioIndustryLabelling-View-101-3-3.xls"],
 		} 
 	}
 ]

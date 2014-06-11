@@ -813,11 +813,11 @@ namespace Mento.ScriptCommon.Library.Functions
             return actualPieDict;
         }
 
-        public Dictionary<string, string> GetExpecedMultipleHierarchyPieData(MultipleHierarchyAndtags[] expectedHierarchyDatas, ManualTimeRange manualTimeRange, string[] dimensionPaths = null)
+        public Dictionary<string, string> GetExpecedMultipleHierarchyPieData(ManualTimeRange manualTimeRange, string[] dimensionPaths = null)
         {
             Dictionary<string, string> expectedPieDict = new Dictionary<string, string>();
             var pieValues = Chart.GetPieDataLegendAndTexts();
-            HierarchysAndTags[] HierarchysAndTagsLists = GetExpectedHierarchysAndTags(expectedHierarchyDatas);
+            HierarchysAndTags[] HierarchysAndTagsLists = GetActualHierarchysAndTags();
 
             expectedPieDict.Add("TimeRange", GetExpectedTimeRange(manualTimeRange));
             for (int i = 0; i < HierarchysAndTagsLists.Length; i++)
@@ -847,11 +847,11 @@ namespace Mento.ScriptCommon.Library.Functions
         /// Export expected data of multiple hierarchy nodes data to excel file
         /// </summary>
         /// <param name="displayStep"></param>
-        public void ExportExpectedDictionaryToExcelMultiHiearachy(MultipleHierarchyAndtags[] expectedHierarchyDatas, ManualTimeRange manualTimeRange, string fileName, string path, string[] dimensionPaths = null)
+        public void ExportExpectedDictionaryToExcelMultiHiearachy(ManualTimeRange manualTimeRange, string fileName, string path, string[] dimensionPaths = null)
         {
             if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
             {
-                Dictionary<string, string> expectedactualPieDict = GetExpecedMultipleHierarchyPieData(expectedHierarchyDatas, manualTimeRange);
+                Dictionary<string, string> expectedactualPieDict = GetExpecedMultipleHierarchyPieData(manualTimeRange);
 
                 //Export to excel
                 string actualFileName = Path.Combine(path, fileName);

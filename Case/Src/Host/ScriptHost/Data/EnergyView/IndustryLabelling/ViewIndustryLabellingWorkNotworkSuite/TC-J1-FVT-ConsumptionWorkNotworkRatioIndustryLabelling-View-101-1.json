@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
 			"TagNames":["DayNightP"],
 			"UnitTypeValue":"$@EM.WorkHolidayRatio",
-			"Industries":["严寒地区B区数据中心"],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "严寒地区B区数据中心"]],
 			"YearAndMonth":[{
 				"year":"2013",
 				"month":"$@DateTimeFormat.HighFormat.FullYear",
@@ -24,10 +24,11 @@
 				"IsCreateDashboard":"true",
 				"DashboardName":"LabellingWorkNotwork1011",
 			}],
+			"failedFileName":["F-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-1-0.xls", "F-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-1-1.xls", "F-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-1-2.xls", "F-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-1-3.xls"],
 		},
 		"ExpectedData":
 		{
-			"LabellingTooltips":[["> 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "<= 1.2"], ["> 1.58", "1.58 - 1.58", "1.58 - 1.58", "1.58 - 1.58", "1.58 - 1.58", "1.58 - 1.58", "<= 1.58", "DayNightP: 1.58"], ["> 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "1.2 - 1.2", "<= 1.2", "DayNightP: 1.2"]],
+			"expectedFileName":["ConsumptionWorkNotworkRatioIndustryLabelling-View-101-1-0.xls", "ConsumptionWorkNotworkRatioIndustryLabelling-View-101-1-1.xls", "ConsumptionWorkNotworkRatioIndustryLabelling-View-101-1-2.xls", "ConsumptionWorkNotworkRatioIndustryLabelling-View-101-1-3.xls"],
 		}
 	}
 ]

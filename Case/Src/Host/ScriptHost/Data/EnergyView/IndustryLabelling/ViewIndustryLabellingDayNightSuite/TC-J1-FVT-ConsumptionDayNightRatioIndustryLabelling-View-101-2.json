@@ -2,8 +2,16 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingMultipleSteps"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNoTag"], ["NancyCustomer1", "GreenieSite", "GreenieBuilding"]],
-			"TagNames":["VH_SiteS1", "VD_SiteS1", "VM_SiteS1", "NoCalendarTag", "V_GreeineBuilding_Ele"],
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingMultipleSteps"],
+				"TagsName":["VH_SiteS1", "VD_SiteS1", "VM_SiteS1"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingNoTag"],
+				"TagsName":["NoCalendarTag"],
+			}],
+			"Hierarchies":[["NancyCustomer1", "GreenieSite", "GreenieBuilding"]],
+			"TagNames":["V_GreeineBuilding_Ele"],
 			"UnitTypeValue":"$@EM.DayNightRatio",
 			"YearAndMonth":[{
 				"year":"2014",

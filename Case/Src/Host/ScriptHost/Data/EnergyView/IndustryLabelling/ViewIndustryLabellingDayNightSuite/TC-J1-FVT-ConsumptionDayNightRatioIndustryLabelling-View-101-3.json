@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"], ["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling2"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
 			"TagNames":["Labellingtag1", "Labellingtag2", "BBV1KT", "BBV1Root"],
 			"UnitTypeValue":"$@EM.DayNightRatio",
-			"Industries":["夏热冬暖地区酒店（三星级）", "严寒地区B区全行业", "全部区域全行业"],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬暖地区酒店（三星级）"], ["$@Setting.Labeling.Label.IndustryLabeling", "严寒地区B区全行业"], ["$@Setting.Labeling.Label.IndustryLabeling", "全部区域全行业"]],
 			"SystemDimensionPath":[["楼宇B", "空调"]],
 			"YearAndMonth":[{
 				"year":"2012",
@@ -31,10 +31,11 @@
 				"year":"2014",
 				"month":"01",
 			}],
+			"failedFileName":["F-ConsumptionDayNightRatioIndustryLabelling-View-101-3-0.xls", "F-ConsumptionDayNightRatioIndustryLabelling-View-101-3-1.xls", "F-ConsumptionDayNightRatioIndustryLabelling-View-101-3-2.xls", "F-ConsumptionDayNightRatioIndustryLabelling-View-101-3-3.xls"],
 		},
 		"ExpectedData":
 		{
-			"LabellingTooltips":[["> 2.41", "1.71 - 2.41", "1.01 - 1.71", "0.31 - 1.01", "<= 0.31", "Labellingtag1: 0.25"], ["> 2.41", "1.71 - 2.41", "1.01 - 1.71", "0.31 - 1.01", "<= 0.31", "Labellingtag1: 2"], ["> 2.41", "1.71 - 2.41", "1.01 - 1.71", "0.31 - 1.01", "<= 0.31", "Labellingtag2: 0.2"], ["> 54.6", "1.05 - 54.6", "-52.51 - 1.05", "<= -52.51", "BBV1KT: 1"]],
+			"expectedFileName":["ConsumptionDayNightRatioIndustryLabelling-View-101-3-0.xls", "ConsumptionDayNightRatioIndustryLabelling-View-101-3-1.xls", "ConsumptionDayNightRatioIndustryLabelling-View-101-3-2.xls", "ConsumptionDayNightRatioIndustryLabelling-View-101-3-3.xls"],
 		} 
 	}
 ]

@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling11"], ["NancyOtherCustomer3", "Site", "BuildingRanking1"]],
 			"TagNames":["Labellingtag11", "RankingtagbenchmarkWater"],
 			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
-			"Industries":["夏热冬暖地区酒店（三星级）", "夏热冬暖地区酒店（四星级）"],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬暖地区酒店（三星级）"], ["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬暖地区酒店（四星级）"]],
 			"YearAndMonth":[{
 				"year":"2012",
 				"month":"10",
@@ -14,10 +14,11 @@
 				"year":"2013",
 				"month":"01",
 			}],
+			"failedFileName":["F-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-2-0.xls", "F-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-2-1.xls"],
 		},
 		"ExpectedData":
 		{
-			"LabellingTooltips":[["<= 35.7KWH/人", "35.7KWH/人 - 35.7KWH/人", "35.7KWH/人 - 35.7KWH/人", "35.7KWH/人 - 35.7KWH/人", "35.7KWH/人 - 35.7KWH/人", "> 35.7KWH/人", "Labellingtag11: 25KWH/人"], ["<= 565.9Ton/人", "565.9Ton/人 - 667.9Ton/人", "667.9Ton/人 - 769.9Ton/人", "769.9Ton/人 - 871.9Ton/人", "> 871.9Ton/人", "RankingtagbenchmarkWater: 336Ton/人"]],
+			"expectedFileName":["ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-2-0.xls", "ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-2-1.xls"],
 		}
 	}
 ]

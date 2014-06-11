@@ -96,7 +96,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[2]);
             TimeManager.ShortPause();
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[2]));
-            Assert.AreEqual(input.ExpectedData.IndustryValue, EnergyViewToolbar.GetIndustryLabellingButtonText());
+            Assert.AreEqual(input.ExpectedData.IndustryValue, EnergyViewToolbar.GetLabellingIndustryButtonText());
 
             IndustryLabellingPanel.SetYearAndMonth(input.InputData.YearAndMonth[1].year, input.InputData.YearAndMonth[1].month);
             EnergyViewToolbar.ClickViewButton();
@@ -303,10 +303,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(4, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            string labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.InputData.Industries[0][1], null);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select a not lighten tag WorkNotworkPNotlighten under BuildingWorkNonwork, 
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
@@ -329,10 +329,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(4, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.InputData.Industries[1][1], null);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[1], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //WorkNotworkP
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[2]);
@@ -343,21 +343,21 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(4, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], null, null);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[2], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Go to 多层级. Select a StandardUOMTon from BuildingConvertStandardUOM and BuildingNotConvertStandardUOM from NotStandardUOMkg to view Labelling chart.(2014-01)
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
             TimeManager.LongPause();
 
-            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies[2]);
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[3]);
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[0].HierarchyPath);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[0].TagsName[0]);
             TimeManager.ShortPause();
 
-            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies[3]);
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[4]);
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[1].HierarchyPath);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[0]);
             TimeManager.ShortPause();
 
             MultiHieCompareWindow.ClickConfirmButton();
@@ -375,10 +375,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(5, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[2][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetMultiLabellingInfo(input.InputData.MultipleHierarchyAndtags, input.InputData.YearAndMonth[0], input.InputData.Industries[2][1], null);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[3], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
 
         [Test]
@@ -412,10 +412,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            string labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             // Select time range=2010/10 to view chart.
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
@@ -426,10 +426,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[1], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[1], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Select time range=2012/09 to view chart. 
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[2].year);
@@ -460,10 +460,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[2][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[1], input.InputData.YearAndMonth[3], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[2], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //time range=2012/09 to view chart. 
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[4].year);
@@ -474,13 +474,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
-            /*
-            Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[3][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
-            */
 
             //Change to NancyCostCustomer2, select 楼宇B-> system dimension=空调 to select BBV1KT(Or area dimension=一层 to select BBV1A1)select a 行业区域=严寒地区B区机场行业 option to view chart. 
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -514,10 +507,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(5, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[3][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[2], input.InputData.YearAndMonth[5], input.InputData.Industries[1][1], null);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[3], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
             //Uncheck BBV1KT to view labelling chart again.
             IndustryLabellingPanel.UncheckTag(input.InputData.tagNames[2]);

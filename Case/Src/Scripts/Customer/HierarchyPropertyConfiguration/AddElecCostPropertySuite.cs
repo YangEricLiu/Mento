@@ -183,7 +183,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Input valid effective date and Select "固定电价" 
             CostSettings.SelectElectricEffectiveDate("2012-09", 1);
-            CostSettings.SelectElectricPriceMode("固定电价", 1);
+            CostSettings.SelectElectricPriceMode("$@Setting.Cost.Label.FixedPrice", 1);
             
             //Input valid price and click "Save" button
             CostSettings.FillElectricPrice(input.InputData.DoubleNonNagtiveValue, 1);
@@ -362,9 +362,9 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             CostSettings.ClickElectricCostCreateButton();
             TimeManager.ShortPause();
             CostSettings.SelectElectricEffectiveDate("2012-09", 1);
-            CostSettings.SelectElectricPriceMode("综合电价", 1);
+            CostSettings.SelectElectricPriceMode("$@Setting.Cost.Label.ComplexPrice", 1);
             TimeManager.MediumPause();
-            CostSettings.SelectDemandCostType("变压器容量模式", 1);
+            CostSettings.SelectDemandCostType("$@Setting.Cost.Label.TransformerMode", 1);
 
             //Input invalid value to 3 textfields
             CostSettings.FillElectricTransformerCapacity(input.InputData.DoubleNonNagtiveValue, 1);

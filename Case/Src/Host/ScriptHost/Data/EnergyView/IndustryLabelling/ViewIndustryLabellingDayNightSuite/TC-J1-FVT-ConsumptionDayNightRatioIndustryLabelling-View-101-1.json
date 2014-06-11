@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
 			"TagNames":["DayNightP"],
 			"UnitTypeValue":"$@EM.DayNightRatio",
-			"Industries":["严寒地区B区数据中心"],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "严寒地区B区数据中心"]],
 			"YearAndMonth":[{
 				"year":"2013",
 				"month":"$@DateTimeFormat.HighFormat.FullYear",
@@ -24,10 +24,11 @@
 				"IsCreateDashboard":"true",
 				"DashboardName":"LabellingDayNight1011",
 			}],
+			"failedFileName":["F-ConsumptionDayNightRatioIndustryLabelling-View-101-1-0.xls", "F-ConsumptionDayNightRatioIndustryLabelling-View-101-1-1.xls", "F-ConsumptionDayNightRatioIndustryLabelling-View-101-1-2.xls", "F-ConsumptionDayNightRatioIndustryLabelling-View-101-1-3.xls"],
 		},
 		"ExpectedData":
 		{
-			"LabellingTooltips":[["> 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "<= 1.06"], ["> 1.13", "1.13 - 1.13", "1.13 - 1.13", "1.13 - 1.13", "1.13 - 1.13", "1.13 - 1.13", "<= 1.13", "DayNightP: 1.13"], ["> 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "1.06 - 1.06", "<= 1.06", "DayNightP: 1.06"]],
+			"expectedFileName":["ConsumptionDayNightRatioIndustryLabelling-View-101-1-0.xls", "ConsumptionDayNightRatioIndustryLabelling-View-101-1-1.xls", "ConsumptionDayNightRatioIndustryLabelling-View-101-1-2.xls", "ConsumptionDayNightRatioIndustryLabelling-View-101-1-3.xls"],
 		}
 	}
 ]

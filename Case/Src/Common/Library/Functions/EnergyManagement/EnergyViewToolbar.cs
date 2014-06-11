@@ -180,16 +180,22 @@ namespace Mento.ScriptCommon.Library.Functions
             MoreMenu.SwitchLabellingIndustryMenuItem(industry);
         }
 
+        public string GetLabellingIndustryButtonText()
+        {
+            return MoreMenu.GetLabellingIndustryValue();
+        }
+
         public string GetIndustryButtonText()
         {
             return ConvertTargetButton.GetIndustryButtonText();
         }
-
+        /* 
+         * can be deleted
         public string GetIndustryLabellingButtonText()
         {
             return ConvertTargetButton.GetIndustryLabellingButtonText();
         }
-
+        */
         public void SelectCarbonConvertTarget(CarbonConvertTarget target)
         {
             ConvertTargetButton.SwitchCarbonMenuItem(target);

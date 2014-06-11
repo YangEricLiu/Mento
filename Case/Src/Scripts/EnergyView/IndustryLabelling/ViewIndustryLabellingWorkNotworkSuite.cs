@@ -80,10 +80,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
             Assert.AreEqual(7, IndustryLabellingPanel.GetLabellingNumber());
 
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            string labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Change different time range 年=2012，月=10月 to view chart.
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
@@ -95,15 +95,22 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
             Assert.AreEqual(8, IndustryLabellingPanel.GetLabellingNumber());
 
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[1], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[1], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Click "Save to dashboard"（保存到仪表盘）to save the  chart to dashboard. 
             var dashboard = input.InputData.DashboardInfo;
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
             TimeManager.LongPause();
+
+            IndustryLabellingPanel.SetYearAndMonth(input.InputData.YearAndMonth[2].year, input.InputData.YearAndMonth[2].month);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[1], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[3], labellingInfo1);
 
             //Go to widget maximize view. Change time range to 2012 全年.
             EnergyAnalysis.NavigateToAllDashBoards();
@@ -123,11 +130,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.LongPause();
 
             Assert.AreEqual(8, Widget.GetLabellingNumber());
-            for (int i = 0; i < Widget.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[2][i], Widget.GetLabellingTooltip(i));
-            }
-
+            Widget.CompareMaxWidgetStringData(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3], IndustryLabellingPanel.IndustryLabellingPath);
             Widget.ClickCloseMaxDialogButton();
         }
 
@@ -148,14 +151,14 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.LongPause();
 
             //Select the BuildingMultipleSteps from Hierarchy Tree, select 公休比 option
-            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies[0]);
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[0].HierarchyPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
             
             //Select multiple VH_SiteS1+VD_SiteS1+VM_SiteS1 to view chart.
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[0]);
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[1]);
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[2]);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[0].TagsName[0]);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[0].TagsName[1]);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[0].TagsName[2]);
             TimeManager.ShortPause();
             //对比数据点已选满
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
@@ -169,17 +172,17 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
             TimeManager.MediumPause();
 
-            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies[0]);
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[0].HierarchyPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
-            MultiHieCompareWindow.UncheckTag(input.InputData.tagNames[0]);
+            MultiHieCompareWindow.UncheckTag(input.InputData.MultipleHierarchyAndtags[0].TagsName[0]);
             Assert.IsTrue(MultiHieCompareWindow.IsAllEnabledCheckbox());
 
             //Uncheck 1 tag and select 1 more the BuildingNoTag from Hierarchy Tree. 
-            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.Hierarchies[1]);
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[1].HierarchyPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
-            MultiHieCompareWindow.CheckTag(input.InputData.tagNames[3]);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[3]);
             TimeManager.ShortPause();
 
             //对比数据点已选满
@@ -207,12 +210,12 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.NavigateToIndustryLabelling();
             TimeManager.MediumPause();
 
-            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
+            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
             //select DayNightP, select 公休比 option. select a 行业区域=严寒地区B区数据中心 option to view chart. 
-            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[4]);
+            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
             TimeManager.ShortPause();
 
             //time 2014年 01月
@@ -260,10 +263,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(5, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[0][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            string labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Select time range=2010/10 to view chart.
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
@@ -274,10 +277,11 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[1][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[1], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[1], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
 
             //Select time range=2012/09 to view chart. 
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[2].year);
@@ -308,10 +312,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[2][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[1], input.InputData.YearAndMonth[3], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[2], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Select Labellingtag2, select  行业区域=夏热冬暖酒店三星级行业;time range=2012/09 to view chart. 
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[4].year);
@@ -356,10 +360,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.AreEqual(5, IndustryLabellingPanel.GetLabellingNumber());
-            for (int i = 0; i < IndustryLabellingPanel.GetLabellingNumber(); i++)
-            {
-                Assert.AreEqual(input.ExpectedData.LabellingTooltips[3][i], IndustryLabellingPanel.GetLabellingTooltip(i));
-            }
+            labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[2], input.InputData.YearAndMonth[5], input.InputData.Industries[1][1], input.InputData.UnitTypeValue);
+            IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[3], labellingInfo1);
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
     }
 }

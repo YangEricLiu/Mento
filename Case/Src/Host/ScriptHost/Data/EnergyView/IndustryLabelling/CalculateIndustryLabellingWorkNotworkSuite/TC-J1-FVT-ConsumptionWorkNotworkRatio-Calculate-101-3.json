@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling19"], ["NancyOtherCustomer3", "BuildingRanking3"]],
 			"TagNames":["Labellingtag19", "Rankingtag3"],
 			"UnitTypeValue":"$@EM.WorkHolidayRatio",
-			"Industries":["夏热冬暖地区酒店（三星级）", "严寒地区A区酒店（五星级）"],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬暖地区酒店（三星级）"], ["$@Setting.Labeling.Label.IndustryLabeling", "严寒地区A区酒店（五星级）"]],
 			"YearAndMonth":[{
 				"year":"2012",
 				"month":"10",
@@ -14,10 +14,11 @@
 				"year":"2013",
 				"month":"01",
 			}],
+			"failedFileName":["F-ConsumptionWorkNotworkRatio-Calculate-101-3-0.xls", "F-ConsumptionWorkNotworkRatio-Calculate-101-3-1.xls"],
 		},
 		"ExpectedData":
 		{
-			"LabellingTooltips":[["> 3.67", "3 - 3.67", "2.33 - 3", "<= 2.33"]],
+			"expectedFileName":["ConsumptionWorkNotworkRatio-Calculate-101-3-0.xls", "ConsumptionWorkNotworkRatio-Calculate-101-3-1.xls"],
 		}
 	}
 ]

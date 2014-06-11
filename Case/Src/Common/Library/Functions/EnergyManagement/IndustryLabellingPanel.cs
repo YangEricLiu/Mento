@@ -243,6 +243,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetSingleLabellingInfo(string[] hierarchyPath, YearAndMonth Time, string IndustryType, string UnitType)
         {
             string labellingInfo = hierarchyPath[0];
+            if (String.IsNullOrEmpty(UnitType))
+            {
+                UnitType = "单位人口";
+            }
+
+            if (String.IsNullOrEmpty(IndustryType))
+            {
+                IndustryType = JazzFunction.EnergyViewToolbar.GetLabellingIndustryButtonText();
+            }
 
             for (int i = 1; i < hierarchyPath.Length; i++)
             {
@@ -261,6 +270,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetMultiLabellingInfo(MultipleHierarchyAndtags[] multipleHierarchyAndtags, YearAndMonth Time, string IndustryType, string UnitType)
         {
             string labellingInfo = multipleHierarchyAndtags[0].HierarchyPath[0];
+
+            if (String.IsNullOrEmpty(UnitType))
+            {
+                UnitType = "单位人口";
+            }
+
+            if (String.IsNullOrEmpty(IndustryType))
+            {
+                IndustryType = JazzFunction.EnergyViewToolbar.GetLabellingIndustryButtonText();
+            }
 
             for (int j = 0; j < multipleHierarchyAndtags.Length; j++)
             {

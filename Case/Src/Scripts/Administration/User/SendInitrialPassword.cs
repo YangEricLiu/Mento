@@ -56,7 +56,7 @@ namespace Mento.Script.Administration.User
             UserSettings.ClickEmailSendButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
-            Assert.AreEqual(input.ExpectedData.Message,JazzMessageBox.MessageBox.GetMessage());
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.Message));
             JazzMessageBox.MessageBox.OK();
             // Login to emailbox and click the link from the received email.  need test manaully
         }

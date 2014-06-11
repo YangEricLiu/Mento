@@ -64,6 +64,11 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             LabellingIndustryConvertButton.SelectItemLabelling(menuItems);
         }
+
+        public string GetLabellingIndustryValue()
+        {
+            return LabellingIndustryConvertButton.GetText();
+        }
         #endregion
     }
 

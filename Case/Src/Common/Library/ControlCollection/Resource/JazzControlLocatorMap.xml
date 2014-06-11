@@ -102,8 +102,8 @@
             <add key="ButtonShareWindowEnjoy" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Dashboard.Label.Share']]" type="XPath"/>
             <add key="ButtonShareWindowGiveup" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-default')]/div[contains(@id,'toolbar') and contains(@class,'x-toolbar-footer')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
             <add key="ButtonShareToUserRemove" value = "//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div/div[contains(@id,'tagcontainer')]/div[contains(@class, 'x-removable-item') and span[text()='$#nameIndex']]/span[contains(@class, 'x-btn-icon-cancel')]" type = "XPath"/>
-            <add key="TabButtonShareInfoReceived" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='我收到的']]" type = "XPath"/>
-            <add key="TabButtonShareInfoSended" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='我发出的']]" type = "XPath"/>
+            <add key="TabButtonShareInfoReceived" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='$@HomePage.ShareWindow.MyReceived']]" type = "XPath"/>
+            <add key="TabButtonShareInfoSended" value = "//div[contains(@id,'window') and contains(@class,'x-window-body-default')]/div/div/div/div[contains(@class,'x-horizontal-box-overflow-body')]/div/div[contains(@class,'x-tab') and em/button/span[text()='$@HomePage.ShareWindow.MySent']]" type = "XPath"/>
             <add key="ButtonDashboardPosition" value="//div[@id='hp-dashboard-list-targetEl']/div[contains(@id,'dashboardbutton')][$#positionIndex]" type="XPath"/>
             <add key="LinkButtonAnnotationEdit" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[2]/div/a[text()='$@Dashboard.Edit']" type="XPath"/>
             <add key="LinkButtonAnnotationAdd" value="//div[contains(@id,'annotationtooltip') and contains(@class,'x-tip-default') and not(contains(@style, 'display: none;'))]/div/div/div[2]/div/a[text()='$@Dashboard.Add']" type="XPath"/>
@@ -201,8 +201,8 @@
           <add key="WidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]//span[text()='表3']" type="XPath"/>
           <add key="ButtonDeleteWidget" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='删除小组件']" type="XPath"/>
           <add key="ButtonCancelShareWidget" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='$@Dashboard.Label.CancelShareWidget']" type="XPath"/>
-          <add key="RadioButtonCreateNewDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='新建仪表盘']]/input" type="XPath"/>
-          <add key="RadioButtonExistedDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='已存在仪表盘']]/input" type="XPath"/>
+          <add key="RadioButtonCreateNewDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='$@Dashboard.ToNewDashboard']]/input" type="XPath"/>
+          <add key="RadioButtonExistedDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='$@Dashboard.OriginalDashboardsTitle']]/input" type="XPath"/>
           <add key="ButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
           <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
           <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
@@ -390,8 +390,8 @@
               <add key="ButtonCustomizedLabellingModify" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonCustomizedLabellingDelete" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
               <add key="ButtonCustomizedLabellingClose" value="//div[contains(@class,'x-message-box')]//div[contains(@class,'x-tool')]//img[@class='x-tool-close']"  type="XPath"/>
-              <add key="ButtonCustomizedLabellingAscendingOrder" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='正序']]/input" type="XPath"/>
-              <add key="ButtonCustomizedLabellingDescendingOrder" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='倒序']]/input" type="XPath"/>
+              <add key="ButtonCustomizedLabellingAscendingOrder" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.CustomizedLabeling.Ascending']]/input" type="XPath"/>
+              <add key="ButtonCustomizedLabellingDescendingOrder" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.CustomizedLabeling.Declining']]/input" type="XPath"/>
           </CustomizedLabellingSetting>
       </customersettings>
       
@@ -573,7 +573,7 @@
           <add key="TextFieldFunctionRoleTypeName" value="//div[@id='st-usertype-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
       </FunctionRoleType>
       <energyview>
-          <add key="TextFieldEnergyViewSaveDashboardWidgetName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='小组件名称']]//input[contains(@class,'x-form-field')]" type="XPath"/>
+          <add key="TextFieldEnergyViewSaveDashboardWidgetName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='$@Common.Glossary.WidgetName']]//input[contains(@class,'x-form-field')]" type="XPath"/>
           <add key="TextFieldEnergyViewSaveDashboardDashboardName" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]//input[@name='newDashboardField']" type="XPath"/>
           <add key="TextFieldWidgetAnnotation" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]//textarea[@name='Comment']" type="XPath"/>
       </energyview>
@@ -1062,7 +1062,7 @@
       </TargetBaseline>
       
       <CustomizedLabellingSetting>
-         <add key="LabelInputValueErrTips" value="//div[@id='st-customized-labeling-properties-form-body']/label[text()='*请确保输入的右区间大于左区间']" type="XPath"/>
+         <add key="LabelInputValueErrTips" value="//div[@id='st-customized-labeling-properties-form-body']/label[text()='$@Setting.CustomizedLabeling.ErrorMessage1']" type="XPath"/>
       </CustomizedLabellingSetting>
 
     </CustomerSettings>

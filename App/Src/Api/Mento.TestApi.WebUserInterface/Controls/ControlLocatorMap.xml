@@ -7,7 +7,7 @@
   <add key="DashboardHeaderLoadingLocator" value = "//div[@id='hp-dashboard-ct_hd-spinnerEl' and not(contains(@style, 'display: none;'))]" type ="XPath"/>
   <add key="WidgetsContainerLoadingLocator" value = "//div[@id='hp-dashboard-root-cmp']/div[@class='x-loading-spinner-ct']" type ="XPath"/>
   <add key="CalendarLoadingLocator" value = "//div[@id='st-hier-calendar-form-body']/div[contains(@class,'x-component x-component-default') and not(contains(@style, 'display: none;'))]/div/div[@class='x-loading-spinner-large']" type ="XPath"/>
-  <add key="JumpLoadingLocator" value = "//div[contains(@id,'jumpingwindow') and text()='跳转中，请稍候']" type ="XPath"/>
+  <add key="JumpLoadingLocator" value = "//div[contains(@id,'jumpingwindow') and text()='$@HomePage.Label.DashboardMessage.Jumping']" type ="XPath"/>
   <add key="PopNotesLocator" value = "//div[@id='popnotes-div']/div[@class='msg']/p" type ="XPath"/>
   
   <!--<add key="CreateSuccessMessageBox" value="//div[contains(@class,'x-message-box') and div/div/div/div/em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
@@ -19,16 +19,16 @@
     
   <add key="MessageBox" value="//div[contains(@class,'x-message-box')]" type="XPath"/>
   <add key="MessageBoxOkButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
-  <add key="MessageBoxConfirmButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type="XPath"/>
+  <add key="MessageBoxConfirmButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
   <add key="MessageBoxYesButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='是']]" type="XPath"/>
   <add key="MessageBoxNoButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='否']]" type="XPath"/>
-  <add key="MessageBoxCancelButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='取消']]" type="XPath"/>
-  <add key="MessageBoxCancelShareButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='取消共享']]" type="XPath"/>
+  <add key="MessageBoxCancelButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel2']]" type="XPath"/>
+  <add key="MessageBoxCancelShareButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Dashboard.Label.CancelShare']]" type="XPath"/>
   <add key="MessageBoxCloseButton" value="//div[contains(@class,'x-message-box')]//img" type="XPath"/>
-  <add key="MessageBoxClearButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='清空']]" type="XPath"/>
-  <add key="MessageBoxGiveUpButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
-  <add key="MessageBoxQuitButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='退出']]" type="XPath"/>
-  <add key="MessageBoxDeleteButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='删除']]" type="XPath"/>
+  <add key="MessageBoxClearButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Clear']]" type="XPath"/>
+  <add key="MessageBoxGiveUpButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+  <add key="MessageBoxQuitButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Exit']]" type="XPath"/>
+  <add key="MessageBoxDeleteButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
 
   <!--TreeView-->
   <add key = "TreeNode" value = "tbody/tr[contains(@class,'x-grid-row') and td/div[text()='$#nodeText']]" type = "XPath"/>
@@ -86,8 +86,8 @@
   <add key="MonthPickerMonthItem" value = "//div[contains(@class,'x-monthpicker-default')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-months']/div[contains(@class, 'x-monthpicker-month')]/a[text()='$#itemKey']" type ="XPath"/>
   <add key="MonthPickerPreviousNavigator" value = "//div[contains(@class,'x-monthpicker-default')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[@class = 'x-monthpicker-yearnav']/button[contains(@id,'prevEl')]" type ="XPath"/>
   <add key="MonthPickerNextNavigator" value = "//div[contains(@class,'x-monthpicker-default')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[@class = 'x-monthpicker-yearnav']/button[contains(@id,'nextEl')]" type ="XPath"/>
-  <add key="MonthPickerConfirm" value = "//div[contains(@class,'x-monthpicker-default')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type ="XPath"/>
-  <add key="MonthPickerCancel" value = "//div[contains(@class,'x-monthpicker-defaultr')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[@class='取消']]" type ="XPath"/>
+  <add key="MonthPickerConfirm" value = "//div[contains(@class,'x-monthpicker-default')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type ="XPath"/>
+  <add key="MonthPickerCancel" value = "//div[contains(@class,'x-monthpicker-defaultr')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[@class='$@Common.Button.Cancel2']]" type ="XPath"/>
   <!--DatePicker-->
   <add key="DatePickerTrigger" value = "td.x-trigger-cell" type ="CssSelector"/>
   <add key="DatePickerInput" value = "input" type ="TagName"/>
@@ -96,8 +96,8 @@
   <add key="InnerMonthPickerButton" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class, 'x-datepicker-month')]/div[contains(@class,'x-btn') and em/button/span[contains(@class,'x-btn-inner')]]" type ="XPath"/>
   <add key="InnerMonthPickerPreviousNavigator" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[@class = 'x-monthpicker-yearnav']/button[contains(@id,'prevEl')]" type ="XPath"/>
   <add key="InnerMonthPickerNextNavigator" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[@class = 'x-monthpicker-yearnav']/button[contains(@id,'nextEl')]" type ="XPath"/>
-  <add key="InnerMonthPickerConfirm" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[text()='确定']]" type ="XPath"/>
-  <add key="InnerMonthPickerCancel" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[@class='取消']]" type ="XPath"/>
+  <add key="InnerMonthPickerConfirm" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type ="XPath"/>
+  <add key="InnerMonthPickerCancel" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[@class='$@Common.Button.Cancel2']]" type ="XPath"/>
   <add key="InnerMonthPickerYearItem" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[contains(@class, 'x-monthpicker-year')]/a[text()='$#itemKey']" type ="XPath"/>
   <add key="InnerMonthPickerMonthItem" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-months']/div[contains(@class, 'x-monthpicker-month')]/a[text()='$#itemKey']" type ="XPath"/>
   <add key="DatePickerDayItem" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]/div/table[@class='x-datepicker-inner']/tbody/tr/td/a/em/span[text()='$#itemKey']" type ="XPath"/>
@@ -107,14 +107,14 @@
   <add key="WindowCloseButton" value="div[contains(@class,'x-window-header')]/div/div/div/div[img[@class='x-tool-close']]" type="XPath"/>
   <add key="WindowConfirmButton" value="div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
   <add key="WindowCancelButton" value="div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
-  <add key="WindowQuitButton" value="div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='放弃']]" type="XPath"/>
+  <add key="WindowQuitButton" value="div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
 
   <!--CheckBoxField-->
   <add key="PermissionCheckBoxTable" value = "//table[contains(@id,'displayfield') and tbody/tr/td/label[text()='$#permissionName']]/../table[contains(@id,'checkboxfield')]" type ="XPath"/>
   <add key="CheckBoxTable" value = "//table[contains(@id,'checkboxfield') and tbody/tr/td/label[text()='$#itemName']]" type ="XPath"/>
 
   <!--Container-->
-  <add key="CustomerMapInfoSetMesaage"  value="//div[@id='st-map-consumption-form-targetEl']/div[contains(@id,'container')]//label[text()='请至少选择1项。']" type="XPath"/>
+  <add key="CustomerMapInfoSetMesaage"  value="//div[@id='st-map-consumption-form-targetEl']/div[contains(@id,'container')]//label[text()='$@Setting.CustomerManagement.Label.AtleastOneConsumption']" type="XPath"/>
 
   <!--Grade-->
   <add key="GradeItems"  value="div/table/tbody/tr/td[@class='x-form-item-body ']/div[contains(@id,'gradeitem') and not(contains(@style,'display: none;'))]" type="XPath"/>

@@ -42,35 +42,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static HomePage HomePagePanel = JazzFunction.HomePage;
 
         [Test]
-        [CaseID("TC-J1-FVT-SingleHierarchyNode-PieChart-101-1")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodePieChartSuite), "TC-J1-FVT-SingleHierarchyNode-PieChart-101-1")]
-        public void SingleHierarchyNodePieChart(EnergyViewOptionData input)
-        {
-            ////case里面的层级节点有，但是有些tags，没有，需要重新指定要测试的tags
-            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            var ManualTimeRange = input.InputData.ManualTimeRange;
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);
-            TimeManager.MediumPause();
-
-            EnergyAnalysis.CheckTags(input.InputData.TagNames);
-            EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            Assert.IsTrue(EnergyAnalysis.IsDistributionChartDrawn());
-
-            EnergyAnalysis.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);       
-        }
-
-        [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-PieChart-101-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodePieChartSuite), "TC-J1-FVT-SingleHierarchyNode-PieChart-101-2")]
         public void SingleHierarchyNodePieChart30tags(EnergyViewOptionData input)
@@ -101,6 +72,5 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);       
         }
-
     }
 }

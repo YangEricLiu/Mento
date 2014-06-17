@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"], 
+			"commodityNames":["$@Common.Commodity.Electric"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-01-01",
+				"StartTime":"23:00",
+				"EndDate":"2013-03-01",	
+				"EndTime":"03:00",	
+			}],
+			"failedFileName":["F-CarbonUsage-Pie-电-003-3-0.xls", "F-CarbonUsage-Pie-总览-003-3-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CarbonUsage-Pie-电-003-3-0.xls", "CarbonUsage-Pie-总览-003-3-1.xls"],
+		}
+	}
+]

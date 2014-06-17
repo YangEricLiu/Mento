@@ -1,0 +1,162 @@
+﻿[
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"],
+				"TagsName":["Rankingtag1"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking2"],
+				"TagsName":["Rankingtag2"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking3"],
+				"TagsName":["Rankingtag3"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking4"],
+				"TagsName":["Rankingtag4"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"],
+				"TagsName":["Rankingtag5"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking6"],
+				"TagsName":["Rankingtag6"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking7"],
+				"TagsName":["Rankingtag7"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking8"],
+				"TagsName":["Rankingtag8"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking9"],
+				"TagsName":["Rankingtag9"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking10"],
+				"TagsName":["Rankingtag10"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking11"],
+				"TagsName":["Rankingtag11"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking12"],
+				"TagsName":["Rankingtag12"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking13"],
+				"TagsName":["Rankingtag13"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking14"],
+				"TagsName":["Rankingtag14"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking15"],
+				"TagsName":["Rankingtag15"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking16"],
+				"TagsName":["Rankingtag16"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking17"],
+				"TagsName":["Rankingtag17"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking18"],
+				"TagsName":["Rankingtag18"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking19"],
+				"TagsName":["Rankingtag19"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking20"],
+				"TagsName":["Rankingtag20"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking21"],
+				"TagsName":["Rankingtag21"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking22"],
+				"TagsName":["Rankingtag22"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking23"],
+				"TagsName":["Rankingtag23"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking24"],
+				"TagsName":["Rankingtag24"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking25"],
+				"TagsName":["Rankingtag25"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking26"],
+				"TagsName":["Rankingtag26"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking27"],
+				"TagsName":["Rankingtag27"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking28"],
+				"TagsName":["Rankingtag28"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking29"],
+				"TagsName":["Rankingtag29"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking30"],
+				"TagsName":["Rankingtag30"],
+			}],
+			"failedFileName":["F-EnergyConsumption-PieChart-101-1-0.xls", "F-EnergyConsumption-PieChart-101-1-1.xls", "F-EnergyConsumption-PieChart-101-1-2.xls", "F-EnergyConsumption-PieChart-101-1-3.xls", "F-EnergyConsumption-PieChart-101-1-4.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-12-31",
+				"StartTime":"20:00",
+				"EndDate":"2013-01-01",					
+				"EndTime":"04:00",	
+			},
+			{
+				"StartDate":"2013-01-01",
+				"StartTime":"23:00",
+				"EndDate":"2013-01-05",					
+				"EndTime":"02:00",	
+			},
+			{
+				"StartDate":"2013-01-01",
+				"StartTime":"23:00",
+				"EndDate":"2013-03-01",					
+				"EndTime":"03:00",	
+			},
+			{
+				"StartDate":"2013-01-01",
+				"StartTime":"23:00",
+				"EndDate":"2014-01-01",					
+				"EndTime":"01:00",	
+			},
+			{
+				"StartDate":"2012-12-13",
+				"StartTime":"23:00",
+				"EndDate":"2014-03-01",					
+				"EndTime":"04:00",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-PieChart-101-1-0.xls", "EnergyConsumption-PieChart-101-1-1.xls", "EnergyConsumption-PieChart-101-1-2.xls", "EnergyConsumption-PieChart-101-1-3.xls", "EnergyConsumption-PieChart-101-1-4.xls"],
+		}
+	}
+]

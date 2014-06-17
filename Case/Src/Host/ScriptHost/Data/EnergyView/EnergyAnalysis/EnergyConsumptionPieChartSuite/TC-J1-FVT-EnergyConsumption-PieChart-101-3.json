@@ -1,0 +1,21 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "BuildingPieVerify"],
+			"TagNames":["Vpie1", "Vpie2", "Vpie3", "Vpie4", "Vpie5", "Vpie6", "Vpie7", "Vpie8", "Vpie9", "Vpie10"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2013-01-01",
+				"StartTime":"23:00",
+				"EndDate":"2013-03-01",					
+				"EndTime":"03:00",	
+			}],
+			"failedFileName":["F-EnergyConsumption-PieChart-101-3-0.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-PieChart-101-3-0.xls"],
+		}
+	}
+]

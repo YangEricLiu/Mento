@@ -1,0 +1,32 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "BuildingMultipleCommodities"], 
+			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "$@Common.Commodity.Gas", "软水", "$@Common.Commodity.Petrol", "$@Common.Commodity.LowPressureSteam", "$@Common.Commodity.DieselOil", "$@Common.Commodity.HeatQ", "$@Common.Commodity.CoolQ", "煤", "$@Common.Commodity.Kerosene"],
+			"ManualTimeRange":[{
+				"StartDate":"2010-12-29",
+				"EndDate":"2011-02-20",	
+				"StartTime":"00:00",
+				"EndTime":"08:00",	
+			},
+			{
+				"StartDate":"2011-02-21",
+				"EndDate":"2012-07-04",	
+				"StartTime":"08:00",
+				"EndTime":"16:00",	
+			},
+			{
+				"StartDate":"2013-11-29",
+				"EndDate":"2014-05-04",	
+				"StartTime":"16:00",
+				"EndTime":"24:00",	
+			}],
+			"failedFileName":["F-CarbonUsage-Pie-101-2-0.xls", "F-CarbonUsage-Pie-101-2-1.xls", "F-CarbonUsage-Pie-101-2-2.xls", "F-CarbonUsage-Pie-101-2-3.xls", "F-CarbonUsage-Pie-101-2-4.xls", "F-CarbonUsage-Pie-101-2-5.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CarbonUsage-Pie-101-2-0.xls", "CarbonUsage-Pie-101-2-1.xls", "CarbonUsage-Pie-101-2-2.xls", "CarbonUsage-Pie-101-2-3.xls", "CarbonUsage-Pie-101-2-4.xls", "CarbonUsage-Pie-101-2-5.xls"],
+		}
+	}
+]

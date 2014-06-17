@@ -50,7 +50,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string QuitMultipleMessage { get; set; }
         public string Last7DaysValue { get; set; }
         public string LastMonthValue { get; set; }
-        public string NotDrawPieMessage { get; set; }
+        public string[] NotDrawPieMessage { get; set; }
     }
 
 

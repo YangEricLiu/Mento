@@ -267,5 +267,234 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-RuleUpdate-Pie-101-1")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsagePieChartSuite), "TC-J1-FVT-CostUsage-RuleUpdate-Pie-101-1")]
+        public void CostUsagePieChartRuleUpdate01(CostUsageData input)
+        {
+            //Go to NancyCostCustomer2->园区A/楼宇B 系统空调/区域一层， go to Cost 总览, select time range to view pie chart
+            JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
+
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //go to 空调 System Dimension.
+            CostUsage.SwitchTagTab(TagTabs.SystemDimensionTab);
+            TimeManager.ShortPause();
+
+            CostUsage.SelectSystemDimension(input.InputData.SystemDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //总览
+            CostUsage.SelectCommodity();
+
+            //A. 2012/07/30 01:00 to 2012/08/01 23:00.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+
+            for (int i = 0; i < ManualTimeRange.Length; i++)
+            {
+                EnergyViewToolbar.SetDateRange(ManualTimeRange[i].StartDate, ManualTimeRange[i].EndDate);
+                EnergyViewToolbar.SetTimeRange(ManualTimeRange[i].StartTime, ManualTimeRange[i].EndTime);
+                TimeManager.ShortPause();
+
+                EnergyViewToolbar.View(EnergyViewType.Distribute);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
+
+                Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
+
+                CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i]);
+                TimeManager.MediumPause();
+                CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[i], input.InputData.failedFileName[i]);
+            }
+
+            //go to 一层 Area Dimension
+            CostUsage.SwitchTagTab(TagTabs.AreaDimensionTab);
+            TimeManager.ShortPause();
+
+            CostUsage.SelectAreaDimension(input.InputData.AreaDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //总览
+            CostUsage.SelectCommodity();
+
+            for (int i = 0; i < ManualTimeRange.Length; i++)
+            {
+                EnergyViewToolbar.SetDateRange(ManualTimeRange[i].StartDate, ManualTimeRange[i].EndDate);
+                EnergyViewToolbar.SetTimeRange(ManualTimeRange[i].StartTime, ManualTimeRange[i].EndTime);
+                TimeManager.ShortPause();
+
+                EnergyViewToolbar.View(EnergyViewType.Distribute);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
+
+                Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
+
+                CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i + 5]);
+                TimeManager.MediumPause();
+                CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[i + 5], input.InputData.failedFileName[i + 5]);
+            }
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-RuleUpdate-Pie-101-2")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsagePieChartSuite), "TC-J1-FVT-CostUsage-RuleUpdate-Pie-101-2")]
+        public void CostUsagePieChartRuleUpdate02(CostUsageData input)
+        {
+            //Go to NancyCostCustomer2->园区A/楼宇A 系统空调/区域一层， go to Cost 单项=电, select time range to view pie chart
+            JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
+
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //go to 空调 System Dimension.
+            CostUsage.SwitchTagTab(TagTabs.SystemDimensionTab);
+            TimeManager.ShortPause();
+
+            CostUsage.SelectSystemDimension(input.InputData.SystemDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //电
+            CostUsage.SelectCommodity(input.InputData.commodityNames);
+
+            //A. 2012/07/30 01:00 to 2012/08/01 23:00.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+
+            for (int i = 0; i < ManualTimeRange.Length; i++)
+            {
+                EnergyViewToolbar.SetDateRange(ManualTimeRange[i].StartDate, ManualTimeRange[i].EndDate);
+                EnergyViewToolbar.SetTimeRange(ManualTimeRange[i].StartTime, ManualTimeRange[i].EndTime);
+                TimeManager.ShortPause();
+
+                EnergyViewToolbar.View(EnergyViewType.Distribute);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
+
+                Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
+
+                CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i]);
+                TimeManager.MediumPause();
+                CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[i], input.InputData.failedFileName[i]);
+            }
+
+            //go to 一层 Area Dimension
+            CostUsage.SwitchTagTab(TagTabs.AreaDimensionTab);
+            TimeManager.ShortPause();
+
+            CostUsage.SelectAreaDimension(input.InputData.AreaDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //电
+            CostUsage.SelectCommodity(input.InputData.commodityNames);
+
+            for (int i = 0; i < ManualTimeRange.Length; i++)
+            {
+                EnergyViewToolbar.SetDateRange(ManualTimeRange[i].StartDate, ManualTimeRange[i].EndDate);
+                EnergyViewToolbar.SetTimeRange(ManualTimeRange[i].StartTime, ManualTimeRange[i].EndTime);
+                TimeManager.ShortPause();
+
+                EnergyViewToolbar.View(EnergyViewType.Distribute);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
+
+                Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
+
+                CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i + 5]);
+                TimeManager.MediumPause();
+                CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[i + 5], input.InputData.failedFileName[i + 5]);
+            }
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-RuleUpdate-Pie-101-3")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsagePieChartSuite), "TC-J1-FVT-CostUsage-RuleUpdate-Pie-101-3")]
+        public void CostUsagePieChartRuleUpdate03(CostUsageData input)
+        {
+            //Go to UT tool. Go to Cost.Select NancyOtherCustomer3->BuildingLabellingNull, select Commodity=电 to view pie chart
+            JazzFunction.HomePage.SelectCustomer("NancyOtherCustomer3");
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
+
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //select Commodity=电
+            CostUsage.SelectCommodity(input.InputData.commodityNames);
+
+            //Set date range A. 2012/12/31 20:00 to 2013/01/01 4:00.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsFalse(CostUsage.IsDistributionChartDrawn());
+
+            for (int i = 1; i < ManualTimeRange.Length; i++)
+            {
+                EnergyViewToolbar.SetDateRange(ManualTimeRange[i].StartDate, ManualTimeRange[i].EndDate);
+                EnergyViewToolbar.SetTimeRange(ManualTimeRange[i].StartTime, ManualTimeRange[i].EndTime);
+                TimeManager.ShortPause();
+
+                EnergyViewToolbar.View(EnergyViewType.Distribute);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
+
+                Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
+
+                CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i - 1]);
+                TimeManager.MediumPause();
+                CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[i - 1], input.InputData.failedFileName[i - 1]);
+            }
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-RuleUpdate-Pie-101-4")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsagePieChartSuite), "TC-J1-FVT-CostUsage-RuleUpdate-Pie-101-4")]
+        public void CostUsagePieChartRuleUpdate04(CostUsageData input)
+        {
+            //Go to UT tool. Go to Cost. Select NancyOtherCustomer3->BuildingMissingData, select Commodity=电， select different time range to view pie chart
+            JazzFunction.HomePage.SelectCustomer("NancyOtherCustomer3");
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
+
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //select Commodity=电
+            CostUsage.SelectCommodity(input.InputData.commodityNames);
+
+            //Set date range A. 2012/01/01 23:00 to 2013/03/01 3:00.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
+
+            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            TimeManager.MediumPause();
+            CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+        }
     }
 }

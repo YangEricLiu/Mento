@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagNames":["V1_BuildingBC", "V13_BuildingBC", "V31_BuildingBC"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2013-01-01",
+				"StartTime":"00:00",
+				"EndDate":"2013-10-26",					
+				"EndTime":"21:00",	
+			},
+			{
+				"StartDate":"2013-08-18",
+				"StartTime":"12:00",
+				"EndDate":"2013-10-18",					
+				"EndTime":"21:00",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"NotDrawPieMessage":["$@Message.M02023","$@Message.M02104"],
+		}
+	}
+]

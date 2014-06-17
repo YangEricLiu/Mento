@@ -45,14 +45,177 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsage-PieChart-003-1")]
         [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsagePieChartSuite), "TC-J1-FVT-CarbonUsage-PieChart-003-1")]
-        public void CarbonUsagePieChart(CarbonUsageData input)
+        public void CarbonUsagePieChart01(CarbonUsageData input)
         {
-            //case里面的层级节点没有，需要指定其他的层级节点
+            //Go to NancyCostCustomer2->园区A/楼宇A， go to 单项=电, select time range to pie chart. 
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
+
+            CarbonUsage.NavigateToCarbonUsage();
+            TimeManager.MediumPause();
+
+            CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            CarbonUsage.SelectCommodity(input.InputData.commodityNames[0]);
+            TimeManager.LongPause();
+
+            //Set date range A. 2012/07/30 01:00 to 2012/08/01 23:00.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+
+            for (int i = 0; i < ManualTimeRange.Length; i++)
+            {
+                EnergyViewToolbar.SetDateRange(ManualTimeRange[i].StartDate, ManualTimeRange[i].EndDate);
+                EnergyViewToolbar.SetTimeRange(ManualTimeRange[i].StartTime, ManualTimeRange[i].EndTime);
+                TimeManager.ShortPause();
+
+                EnergyViewToolbar.View(EnergyViewType.Distribute);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
+
+                Assert.IsTrue(CarbonUsage.IsDistributionChartDrawn());
+
+                CarbonUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i]);
+                TimeManager.MediumPause();
+                CarbonUsage.CompareDictionaryDataOfCarbonUsage(input.ExpectedData.expectedFileName[i], input.InputData.failedFileName[i]);
+            }
         }
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsage-PieChart-003-2")]
         [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsagePieChartSuite), "TC-J1-FVT-CarbonUsage-PieChart-003-2")]
+        public void CarbonUsagePieChart02(CarbonUsageData input)
+        {
+            //Go to UT tool. Go to Carbon.Select NancyOtherCustomer3->BuildingLabellingNull, select Commodity=电/总览/电+水+煤，to view pie chart. 
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.MediumPause();
+
+            CarbonUsage.NavigateToCarbonUsage();
+            TimeManager.MediumPause();
+
+            CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Commodity=电
+            CarbonUsage.SelectCommodity(input.InputData.commodityNames[0]);
+            TimeManager.LongPause();
+
+            //Set date range A. 2012/12/31 20:00 to 2013/01/01 4:00.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsFalse(CarbonUsage.IsDistributionChartDrawn());
+
+            for (int i = 1; i < ManualTimeRange.Length; i++)
+            {
+                EnergyViewToolbar.SetDateRange(ManualTimeRange[i].StartDate, ManualTimeRange[i].EndDate);
+                EnergyViewToolbar.SetTimeRange(ManualTimeRange[i].StartTime, ManualTimeRange[i].EndTime);
+                TimeManager.ShortPause();
+
+                EnergyViewToolbar.View(EnergyViewType.Distribute);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
+
+                Assert.IsTrue(CarbonUsage.IsDistributionChartDrawn());
+
+                CarbonUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i - 1]);
+                TimeManager.MediumPause();
+                CarbonUsage.CompareDictionaryDataOfCarbonUsage(input.ExpectedData.expectedFileName[i - 1], input.InputData.failedFileName[i - 1]);
+            }
+
+            //Commodity=总览
+            CarbonUsage.SelectCommodity();
+
+            //Set date range A. 2012/12/31 20:00 to 2013/01/01 4:00.
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsFalse(CarbonUsage.IsDistributionChartDrawn());
+
+            for (int i = 1; i < ManualTimeRange.Length; i++)
+            {
+                EnergyViewToolbar.SetDateRange(ManualTimeRange[i].StartDate, ManualTimeRange[i].EndDate);
+                EnergyViewToolbar.SetTimeRange(ManualTimeRange[i].StartTime, ManualTimeRange[i].EndTime);
+                TimeManager.ShortPause();
+
+                EnergyViewToolbar.View(EnergyViewType.Distribute);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
+
+                Assert.IsTrue(CarbonUsage.IsDistributionChartDrawn());
+
+                CarbonUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i + 3]);
+                TimeManager.MediumPause();
+                CarbonUsage.CompareDictionaryDataOfCarbonUsage(input.ExpectedData.expectedFileName[i + 3], input.InputData.failedFileName[i + 3]);
+            }
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CarbonUsage-PieChart-003-3")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsagePieChartSuite), "TC-J1-FVT-CarbonUsage-PieChart-003-3")]
+        public void CarbonUsagePieChart03(CarbonUsageData input)
+        {
+            //Go to UT tool. Go to Carbon-> Ranking. Select NancyOtherCustomer3->BuildingMissingData, select Commodity=电/总览/电+水+煤， select different time range to view pie chart.
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.MediumPause();
+
+            CarbonUsage.NavigateToCarbonUsage();
+            TimeManager.MediumPause();
+
+            CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Commodity=电
+            CarbonUsage.SelectCommodity(input.InputData.commodityNames[0]);
+            TimeManager.LongPause();
+
+            //Set date range A. 2012/01/01 23:00 to 2013/03/01 3:00.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(CarbonUsage.IsDistributionChartDrawn());
+
+            CarbonUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            TimeManager.MediumPause();
+            CarbonUsage.CompareDictionaryDataOfCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Commodity=总览
+            CarbonUsage.SelectCommodity();
+
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(CarbonUsage.IsDistributionChartDrawn());
+
+            CarbonUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[1]);
+            TimeManager.MediumPause();
+            CarbonUsage.CompareDictionaryDataOfCarbonUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CarbonUsage-PieChart-003-4")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsagePieChartSuite), "TC-J1-FVT-CarbonUsage-PieChart-003-4")]
         public void CarbontUsagePieChartForMoreTags(CarbonUsageData input)
         {
             //Go to Carbon function.Navigate to NancyCustomer1 -> BuildingMultipleCommodities to select 总览 to view pie chart.

@@ -28,11 +28,11 @@
 				"EndDate":"2014-01-01",	
 				"EndTime":"01:00",
 			}],
-			"failedFileName":["F-CarbonUsage-Pie-电-003-2-0.xls", "F-CarbonUsage-Pie-电-003-2-1.xls", "F-CarbonUsage-Pie-电-003-2-2.xls", "F-CarbonUsage-Pie-电-003-2-3.xls", "F-CarbonUsage-Pie-总览-003-2-4.xls", "F-CarbonUsage-Pie-总览-003-2-5.xls", "F-CarbonUsage-Pie-总览-003-2-6.xls", "F-CarbonUsage-Pie-总览-003-2-7.xls"],
+			"failedFileName":["F-CostUsage-RuleUpdate-Pie-101-3-0.xls", "F-CostUsage-RuleUpdate-Pie-101-3-1.xls", "F-CostUsage-RuleUpdate-Pie-101-3-2.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["CarbonUsage-Pie-电-003-2-0.xls", "CarbonUsage-Pie-电-003-2-1.xls", "CarbonUsage-Pie-电-003-2-2.xls", "CarbonUsage-Pie-电-003-2-3.xls", "CarbonUsage-Pie-总览-003-2-4.xls", "CarbonUsage-Pie-总览-003-2-5.xls", "CarbonUsage-Pie-总览-003-2-6.xls", "CarbonUsage-Pie-总览-003-2-7.xls"],
+			"expectedFileName":["CostUsage-RuleUpdate-Pie-101-3-0.xls", "CostUsage-RuleUpdate-Pie-101-3-1.xls", "CostUsage-RuleUpdate-Pie-101-3-2.xls"],
 		}
 	}
 ]

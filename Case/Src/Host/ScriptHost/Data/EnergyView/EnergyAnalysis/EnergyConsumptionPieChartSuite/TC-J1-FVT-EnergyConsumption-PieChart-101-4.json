@@ -1,0 +1,44 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"],
+			"TagNames":["Rankingtag1"],
+			"failedFileName":["F-EnergyConsumption-PieChart-101-4-0.xls", "F-EnergyConsumption-PieChart-101-4-1.xls", "F-EnergyConsumption-PieChart-101-4-2.xls", "F-EnergyConsumption-PieChart-101-4-3.xls", "F-EnergyConsumption-PieChart-101-4-4.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-12-31",
+				"StartTime":"20:00",
+				"EndDate":"2013-01-01",					
+				"EndTime":"04:00",	
+			},
+			{
+				"StartDate":"2013-01-01",
+				"StartTime":"23:00",
+				"EndDate":"2013-01-05",					
+				"EndTime":"02:00",	
+			},
+			{
+				"StartDate":"2013-01-01",
+				"StartTime":"23:00",
+				"EndDate":"2013-03-01",					
+				"EndTime":"03:00",	
+			},
+			{
+				"StartDate":"2013-01-01",
+				"StartTime":"23:00",
+				"EndDate":"2014-01-01",					
+				"EndTime":"01:00",	
+			},
+			{
+				"StartDate":"2012-12-13",
+				"StartTime":"23:00",
+				"EndDate":"2014-03-01",					
+				"EndTime":"04:00",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-PieChart-101-4-0.xls", "EnergyConsumption-PieChart-101-4-1.xls", "EnergyConsumption-PieChart-101-4-2.xls", "EnergyConsumption-PieChart-101-4-3.xls", "EnergyConsumption-PieChart-101-4-4.xls"],
+		}
+	}
+]

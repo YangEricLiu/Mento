@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"], 
+			"commodityNames":["$@Common.Commodity.Electric"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-01-01",
+				"StartTime":"23:00",
+				"EndDate":"2013-03-01",	
+				"EndTime":"03:00",	
+			}],
+			"failedFileName":["F-CostUsage-RuleUpdate-Pie-电-101-4-0.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsage-RuleUpdate-Pie-电-101-4-0.xls"],
+		}
+	}
+]

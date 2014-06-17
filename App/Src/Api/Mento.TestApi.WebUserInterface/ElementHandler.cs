@@ -37,7 +37,7 @@ namespace Mento.TestApi.WebUserInterface
                 string ImageFilePath = Path.Combine(NUnit.Framework.TestContext.CurrentContext.WorkDirectory, fileName);
                 BrowserHandler.TakeCapture(ImageFilePath);
 
-                AppLog.Instance.LogInformation("Image: " + ImageFilePath);
+                //AppLog.Instance.LogInformation("Image: " + ImageFilePath);
                 AppLog.Instance.LogError(ex.ToString());
 
                 throw new ApiException(String.Format("Can not found element with locator {0}", locator.ToString()), ex);

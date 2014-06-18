@@ -82,8 +82,6 @@ namespace Mento.Script.Administration.User
 
             JazzMessageBox.MessageBox.Close();
             Assert.IsTrue(RoleTypeSettings.IsRoleTypeOnListByName(input.InputData.CommonName));
-        }
-
-      
+        }  
     }
 }

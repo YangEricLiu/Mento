@@ -31,6 +31,8 @@ namespace Mento.Script.ClientAccess.DemoAccess
         {
             //Open the SP2 system.
             //Verify demo link(产品试用) button in homepage,There is no Demo Link button.
+            TestAssemblyInitializer.InitializeWithOption("SchneiderElectricChina", "P@ssw0rdChina", "$@Login.Label.SPManagement");
+            TimeManager.LongPause();
             Assert.IsFalse(DemoAccessSetting.DemoAccessButton.IsExisted());
         }
         #endregion

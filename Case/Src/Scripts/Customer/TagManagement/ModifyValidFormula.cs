@@ -154,7 +154,8 @@ namespace Mento.Script.Customer.TagManagement
       {
           VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
           VTagSettings.SwitchToFormulaTab();
-          TimeManager.ShortPause();
+          TimeManager.LongPause();
+          TimeManager.LongPause();
           Assert.AreEqual("{vtag|VtagForCodeModify}", VTagSettings.GetFormulaValue());
           VTagSettings.SwitchToBasicPropertyTab();
           TimeManager.ShortPause();

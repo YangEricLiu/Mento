@@ -89,6 +89,9 @@ namespace Mento.Script.Information.Widgets
         {
             var dashboard = input.InputData.DashboardInfo;
 
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
+
             //Go back to chart view
             EnergyAnalysis.NavigateToEnergyAnalysis();
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -204,6 +207,9 @@ namespace Mento.Script.Information.Widgets
         public void SaveWidgetToFullDashboards(RenameDashboardData input)
         {
             var dashboard = input.InputData.DashboardInfo;
+
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
 
             //Go back to chart view
             EnergyAnalysis.NavigateToEnergyAnalysis();
@@ -346,6 +352,9 @@ namespace Mento.Script.Information.Widgets
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            CorporateRanking.SelectCommodity(input.InputData.TagName);
             TimeManager.LongPause();
 
             EnergyViewToolbar.ClickViewButton();

@@ -9,6 +9,7 @@
 				"DashboardName":"Widget_Add_101_4",
 				"IsCreateDashboard":"true",
 			}],
+			"TagName":"$@Common.Commodity.Electric",
 		},
 		"ExpectedData":
 		{

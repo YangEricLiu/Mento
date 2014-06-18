@@ -17,7 +17,6 @@ namespace Mento.Script.ClientAccess
         {
             TestAssemblyInitializer.InitializeExecutionContext();         
             JazzBrowseManager.OpenJazz();
-
         }
 
         [TearDown]

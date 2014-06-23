@@ -34,7 +34,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
         }
 
@@ -163,9 +164,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-            Assert.IsFalse(EnergyAnalysis.IsDistributionChartDrawn());
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //·Message show 新增数据点与已绘制数据点介质不同，无法共同绘制饼状图！
             string msgText = JazzMessageBox.MessageBox.GetMessage();
@@ -175,6 +175,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.MessageBox.OK();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
+            Assert.IsTrue(EnergyAnalysis.EntirelyNoChartDrawn());
 
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             EnergyAnalysis.UncheckTag(input.InputData.TagNames[1]);
@@ -186,9 +187,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-            Assert.IsFalse(EnergyAnalysis.IsDistributionChartDrawn());
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //·Message show 新增数据点与已绘制数据点介质不同，无法共同绘制饼状图！
             msgText = JazzMessageBox.MessageBox.GetMessage();
@@ -198,6 +198,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.MessageBox.OK();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
+            Assert.IsTrue(EnergyAnalysis.EntirelyNoChartDrawn());
         }
 
         [Test]

@@ -15,7 +15,7 @@ using Mento.TestApi.TestData;
 using System.Data;
 using Mento.Utility;
 
-namespace Mento.Script.EnergyView.EnergyAnalysis
+namespace Mento.Script.EnergyView.EnergyAnalysis 
 {
     /// <summary>
     /// 

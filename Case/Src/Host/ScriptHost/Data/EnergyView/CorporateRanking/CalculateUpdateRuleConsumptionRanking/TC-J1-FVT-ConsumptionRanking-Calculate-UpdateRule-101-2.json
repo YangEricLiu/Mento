@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
+			"failedFileName":["F-ConsumptionRanking-Calculate-UpdateRule-101-2-0.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-2-1.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-01-01",
+				"EndDate":"2013-12-01",						
+			}],
+			"commodityNames":["$@Common.Commodity.Electric"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionRanking-Calculate-UpdateRule-101-2-0.xls", "ConsumptionRanking-Calculate-UpdateRule-101-2-1.xls"],
+		}
+	}
+]

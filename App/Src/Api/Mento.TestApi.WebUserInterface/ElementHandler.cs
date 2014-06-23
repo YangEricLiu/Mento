@@ -38,7 +38,7 @@ namespace Mento.TestApi.WebUserInterface
                 BrowserHandler.TakeCapture(ImageFilePath);
 
                 //AppLog.Instance.LogInformation("Image: " + ImageFilePath);
-                AppLog.Instance.LogError(ex.ToString());
+                //AppLog.Instance.LogError(ex.ToString());
 
                 throw new ApiException(String.Format("Can not found element with locator {0}", locator.ToString()), ex);
                 //throw ex;

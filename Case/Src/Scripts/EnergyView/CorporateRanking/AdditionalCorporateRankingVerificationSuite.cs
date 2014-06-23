@@ -40,11 +40,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();
-             
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
         }
 
         private static RankPanel CorporateRanking = JazzFunction.RankPanel;

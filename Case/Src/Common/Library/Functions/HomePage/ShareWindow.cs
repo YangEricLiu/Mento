@@ -47,10 +47,10 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Grid SendedUserList = JazzGrid.SendedUserListGrid;
 
         //Enjoy grid
-        private static Grid TrueShareUserList = JazzGrid.TrueShareUserListGrid;
+        private static Grid EnjoyShareUserList = JazzGrid.EnjoyShareUserListGrid;
 
         //Enjoy Sended list grid
-        private static Grid TrueSendedUserList = JazzGrid.TrueSendedUserListGrid;
+        private static Grid EnjoySendedUserList = JazzGrid.EnjoySendedUserListGrid;
 
         //Subscribe user list grid
         private static Grid SubscribeUserList = JazzGrid.SubscribeUserListGrid;
@@ -178,12 +178,12 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public bool IsEnjoyUserInSendedList(string name)
         {
-            return TrueSendedUserList.IsRowExist(1, name);
+            return EnjoySendedUserList.IsRowExist(1, name);
         }
 
         public bool IsEnjoyUserInShareList(string name)
         {
-            return TrueShareUserList.IsRowExist(2, name);
+            return EnjoyShareUserList.IsRowExist(2, name);
         }
 
         public bool IsEnjoyUserInSubscribeUserList(string name)
@@ -210,9 +210,9 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickRemoveEnjoyUserButton(string name)
         {
-            TrueSendedUserList.FloatOnRow(1, name, false);
+            EnjoySendedUserList.FloatOnRow(1, name, false);
 
-            TrueSendedUserList.GetSendedListRowDeleteX(1, name, false).Click();
+            EnjoySendedUserList.GetSendedListRowDeleteX(1, name, false).Click();
         }
 
         public void ClickRemoveorQuitSubcriberButton(string name)
@@ -222,50 +222,50 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void CheckEnjoyUser(string userName)
         {
-            TrueShareUserList.CheckShareWindowRowCheckbox(2, userName, false);
+            EnjoyShareUserList.CheckShareWindowRowCheckbox(2, userName, false);
         }
 
         public void UncheckEnjoyUser(string userName)
         {
-            TrueShareUserList.UncheckShareWindowRowCheckbox(2, userName, false);
+            EnjoyShareUserList.UncheckShareWindowRowCheckbox(2, userName, false);
         }
 
         public bool IsEnjoyUserExistedOnWindow(string userName)
         {
-            return TrueShareUserList.IsRowExist(2, userName);
+            return EnjoyShareUserList.IsRowExist(2, userName);
         }
 
         public bool IsEnjoyUserChecked(string userName)
         {
-            return TrueShareUserList.IsShareWindowRowChecked(2, userName, false);
+            return EnjoyShareUserList.IsShareWindowRowChecked(2, userName, false);
         }
 
         public void CheckAllEnjoyUsers()
         {
-            TrueShareUserList.CheckShareHeaderCheckbox();
+            EnjoyShareUserList.CheckShareHeaderCheckbox();
         }
 
         public bool IsAllEnjoyUsersChecked()
         {
-            return TrueShareUserList.IsShareWindowRowsAllChecked();
+            return EnjoyShareUserList.IsShareWindowRowsAllChecked();
         }
 
         public void UncheckAllEnjoyUsers()
         {
             if (IsEnjoyHeaderChecked())
             {
-                TrueShareUserList.CheckShareHeaderCheckbox();
+                EnjoyShareUserList.CheckShareHeaderCheckbox();
             }
         }
 
         public bool IsEnjoyHeaderChecked()
         {
-            return TrueShareUserList.IsShareHeaderChecked();
+            return EnjoyShareUserList.IsShareHeaderChecked();
         }
 
         public int GetEnjoyUserNumber()
         {
-            return TrueSendedUserList.GetCurrentRowsNumber();
+            return EnjoySendedUserList.GetCurrentRowsNumber();
         }
 
         public void FillEnjoyWindowComment(string comment)

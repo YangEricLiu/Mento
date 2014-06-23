@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"],
+			"commodityNames":["自来水","煤"],
+			"failedFileName":["F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-1-Water-Total-LastYear.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-2-Water-Total-ThisYear.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-3-Water-Total-LastMonth.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-4-Water-Total-ThisMonth.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-5-Water-Total-LastWeek.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-6-Water-Total-ThisWeek.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-7-Water-Total-Yestoday.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-8-Water-Total-Today.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-9-Water-Total-LastSevenDay.xls"],
+		},
+		"ExpectedData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织A","园区A","楼宇A"],
+			"expectedFileName":["TC-J1-FVT-ConsumptionRanking-Calculate-101-4-1-Water-Total-LastYear.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-4-2-Water-Total-ThisYear.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-4-3-Water-Total-LastMonth.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-4-4-Water-Total-ThisMonth.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-4-5-Water-Total-LastWeek.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-4-6-Water-Total-ThisWeek.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-4-7-Water-Total-Yestoday.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-4-8-Water-Total-Today.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-4-9-Water-Total-LastSevenDay.xls"],
+		}
+	}
+]

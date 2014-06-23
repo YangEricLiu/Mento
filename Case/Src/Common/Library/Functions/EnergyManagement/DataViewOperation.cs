@@ -176,14 +176,14 @@ namespace Mento.ScriptCommon.Library.Functions
                             myRow[1] = expectedDataTable.Rows[i][0].ToString();
                         }
 
-                        if ((j != 0) && (expectedDataTable.Columns[0].ColumnName.Contains("名称") || expectedDataTable.Columns[0].ColumnName.Contains("Name")))
+                        if ((j != 0) && (expectedDataTable.Columns[1].ColumnName.Contains("名称") || expectedDataTable.Columns[0].ColumnName.Contains("Name")))
                         {
-                            myRow[1] = expectedDataTable.Rows[i][0].ToString();
+                            myRow[1] = expectedDataTable.Rows[i][1].ToString();
                         }
 
                         myRow[j + 1] = "期望值:" + expectedDataTable.Rows[i][j].ToString() + "\n" + "实际值:" + actualDataTable.Rows[i][j].ToString();
 
-                        diversityTable.Rows.Add(myRow);
+                        diversityTable.Rows.Add(myRow); 
                     } 
                 } 
             }

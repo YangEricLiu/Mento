@@ -112,7 +112,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsFalse(CarbonUsage.IsDistributionChartDrawn());
+            Assert.IsTrue(CarbonUsage.IsDistributionChartDrawn());
 
             for (int i = 1; i < ManualTimeRange.Length; i++)
             {
@@ -143,7 +143,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsFalse(CarbonUsage.IsDistributionChartDrawn());
+            Assert.IsTrue(CarbonUsage.IsDistributionChartDrawn());
 
             for (int i = 1; i < ManualTimeRange.Length; i++)
             {

@@ -34,13 +34,9 @@ namespace Mento.Script.EnergyView.Ratio
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
-
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
         }
 
         private static RatioPanel RadioPanel = JazzFunction.RatioPanel;

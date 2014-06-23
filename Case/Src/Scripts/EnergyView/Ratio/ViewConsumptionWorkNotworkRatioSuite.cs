@@ -34,13 +34,9 @@ namespace Mento.Script.EnergyView.Ratio
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
-
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
         }
 
         private static RatioPanel RadioPanel = JazzFunction.RatioPanel;
@@ -206,6 +202,35 @@ namespace Mento.Script.EnergyView.Ratio
             //· Check 3 tags at most
             Assert.IsTrue(RadioPanel.IsAllTagsDisabled());
 
+            //Select the BuildingWorkNonwork from Hierarchy Tree, select 公休比 option. Select WorkNotworkP, 行业基准值=严寒地区B区地区办公建筑行业 to view chart.
+            RadioPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectRadioTypeConvertTarget(RadioTypeConvertTarget.WorkNonRadio);
+            TimeManager.ShortPause();
+
+            RadioPanel.CheckTag(input.InputData.tagNames[4]);
+            TimeManager.ShortPause();
+
+            //Select time range 2013/01/01 to 2013/04/28; Optional step=Week.
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Step is "Week"
+            RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+
             //Go to NancyCustomer1, select BuildingBAD which is not define calendar. Select V(11), 行业基准值=夏热冬暖地区轨学校行业 to display 公休比.
             HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.ShortPause();
@@ -235,40 +260,6 @@ namespace Mento.Script.EnergyView.Ratio
 
             Assert.IsFalse(EnergyViewToolbar.View(EnergyViewType.Distribute));
             TimeManager.ShortPause();
-
-            //Select the BuildingWorkNonwork from Hierarchy Tree, select 公休比 option. Select WorkNotworkP, 行业基准值=严寒地区B区地区办公建筑行业 to view chart.
-            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
-            TimeManager.ShortPause();
-
-            RadioPanel.NavigateToRatio();
-            TimeManager.MediumPause();
-            //Select BuildingNullTest from Hierarchy Tree. select 昼夜比 option. Select NullTestTag1, 行业基准值=夏热冬冷地区机场行业 to view chart
-            RadioPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-
-            EnergyViewToolbar.SelectRadioTypeConvertTarget(RadioTypeConvertTarget.WorkNonRadio);
-            TimeManager.ShortPause();
-
-            RadioPanel.CheckTag(input.InputData.tagNames[4]);
-            TimeManager.ShortPause();
-
-            //Select time range 2013/01/01 to 2013/04/28; Optional step=Week.
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //Step is "Week"
-            RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-            TimeManager.MediumPause();
-            RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
     }
 }

@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingRanking1"]],
+			"failedFileName":["F-CostRanking-Calculate-UpdateRule-101-1-0.xls", "F-CostRanking-Calculate-UpdateRule-101-1-1.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-01-01",
+				"EndDate":"2013-03-01",					
+			}],
+			"commodityNames":["$@Common.Commodity.Electric"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostRanking-Calculate-UpdateRule-101-1-0.xls", "CostRanking-Calculate-UpdateRule-101-1-1.xls"],
+		}
+	}
+]

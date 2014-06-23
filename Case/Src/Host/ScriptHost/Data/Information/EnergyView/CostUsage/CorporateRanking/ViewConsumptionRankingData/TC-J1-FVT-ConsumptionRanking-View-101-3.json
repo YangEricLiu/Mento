@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingRankin10"],
+			"commodityNames":["电","煤"],
+			"failedFileName":["F-TC-J1-FVT-ConsumptionRanking-View-101-3-1-Elec-TotalRank-Custom-2012.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-3-2-Elec-AverageRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-3-3-Elec-TotalRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-3-4-Coal-TotalRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-3-5-Elec-TotalRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-3-6-Elec-TotalRank-Custom.xls"],
+			"SystemDimensionPath":["系统维度","空调"],
+		},
+		"ExpectedData":
+		{
+			"Hierarchies":["NancyOtherCustomer3","NancyOtherSite","BuildingMultipleSteps"],
+			"expectedFileName":["TC-J1-FVT-ConsumptionRanking-View-101-3-1-Elec-TotalRank-Custom-2012.xls", "TC-J1-FVT-ConsumptionRanking-View-101-3-2-Elec-AverageRank-Custom.xls","TC-J1-FVT-ConsumptionRanking-View-101-3-3-Elec-TotalRank-Custom.xls","TC-J1-FVT-ConsumptionRanking-View-101-3-4-Coal-TotalRank-Custom.xls","TC-J1-FVT-ConsumptionRanking-View-101-3-5-Elec-TotalRank-Custom.xls","TC-J1-FVT-ConsumptionRanking-View-101-3-6-Elec-TotalRank-Custom.xls"],
+
+		}
+	}
+]

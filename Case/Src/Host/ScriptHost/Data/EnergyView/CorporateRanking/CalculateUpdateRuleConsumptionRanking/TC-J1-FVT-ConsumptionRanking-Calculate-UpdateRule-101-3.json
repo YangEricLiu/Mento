@@ -1,0 +1,69 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织B", "园区C"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇A"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"]],
+			"SystemDimensionPath":["系统维度", "空调"],
+			"failedFileName":["F-ConsumptionRanking-Calculate-UpdateRule-101-3-0.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-3-1.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-3-2.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-3-3.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-3-4.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-07-30",
+				"EndDate":"2012-08-01",						
+			},
+			{
+				"StartDate":"2012-07-29",
+				"EndDate":"2012-08-03",						
+			},
+			{
+				"StartDate":"2012-07-01",
+				"EndDate":"2013-08-01",						
+			},
+			{
+				"StartDate":"2012-01-01",
+				"EndDate":"2014-01-01",						
+			},
+			{
+				"StartDate":"2012-12-13",
+				"EndDate":"2014-03-01",						
+			}],
+			"commodityNames":["$@Common.Commodity.Electric"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionRanking-Calculate-UpdateRule-101-3-0.xls", "ConsumptionRanking-Calculate-UpdateRule-101-3-1.xls", "ConsumptionRanking-Calculate-UpdateRule-101-3-2.xls", "ConsumptionRanking-Calculate-UpdateRule-101-3-3.xls", "ConsumptionRanking-Calculate-UpdateRule-101-3-4.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A"], ["NancyCostCustomer2", "组织B", "园区C"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
+			"SystemDimensionPath":["系统维度", "空调"],
+			"failedFileName":["F-ConsumptionRanking-Calculate-UpdateRule-101-4-0.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-4-1.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-4-2.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-4-3.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-4-4.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-07-30",
+				"EndDate":"2012-08-01",						
+			},
+			{
+				"StartDate":"2012-07-29",
+				"EndDate":"2012-08-03",						
+			},
+			{
+				"StartDate":"2012-07-01",
+				"EndDate":"2013-08-01",						
+			},
+			{
+				"StartDate":"2012-01-01",
+				"EndDate":"2014-01-01",						
+			},
+			{
+				"StartDate":"2012-12-13",
+				"EndDate":"2014-03-01",						
+			}],
+			"commodityNames":["$@Common.Commodity.Electric"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionRanking-Calculate-UpdateRule-101-4-0.xls", "ConsumptionRanking-Calculate-UpdateRule-101-4-1.xls", "ConsumptionRanking-Calculate-UpdateRule-101-4-2.xls", "ConsumptionRanking-Calculate-UpdateRule-101-4-3.xls", "ConsumptionRanking-Calculate-UpdateRule-101-4-4.xls"],
+		}
+	}
+
+]

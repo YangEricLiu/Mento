@@ -443,7 +443,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsFalse(CostUsage.IsDistributionChartDrawn());
+            Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
             for (int i = 1; i < ManualTimeRange.Length; i++)
             {

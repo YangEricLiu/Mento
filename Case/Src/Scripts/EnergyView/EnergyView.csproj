@@ -56,6 +56,11 @@
     <Compile Include="CarbonUsage\CarbonCalculationAggregationHierarchyOnlineSuite.cs" />
     <Compile Include="CarbonUsage\CarbonUsagePieChartSuite.cs" />
     <Compile Include="CorporateRanking\AdditionalCorporateRankingVerificationSuite.cs" />
+    <Compile Include="CorporateRanking\CalculateUpdateRuleConsumptionRanking.cs" />
+    <Compile Include="CorporateRanking\CalculateUpdateRuleCarbonRanking.cs" />
+    <Compile Include="CorporateRanking\CalculateUpdateRuleCostRanking.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CorporateRanking\SelectCommodityForRanking.cs" />
     <Compile Include="CorporateRanking\SelectHierarchyNodesForRanking.cs" />
     <Compile Include="CorporateRanking\ViewConsumptionRankingData.cs" />

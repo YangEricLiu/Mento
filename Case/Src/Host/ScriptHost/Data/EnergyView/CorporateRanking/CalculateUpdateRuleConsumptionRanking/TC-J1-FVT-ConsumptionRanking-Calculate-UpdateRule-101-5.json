@@ -1,0 +1,34 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingLabellingNull"]],
+			"failedFileName":["F-ConsumptionRanking-Calculate-UpdateRule-101-5-0.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-5-1.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-5-2.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-5-3.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-5-4.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-12-31",
+				"EndDate":"2013-01-01",						
+			},
+			{
+				"StartDate":"2013-01-01",
+				"EndDate":"2013-01-05",						
+			},
+			{
+				"StartDate":"2013-01-01",
+				"EndDate":"2013-03-01",						
+			},
+			{
+				"StartDate":"2013-01-01",
+				"EndDate":"2014-01-01",						
+			},
+			{
+				"StartDate":"2012-12-13",
+				"EndDate":"2014-03-01",						
+			}],
+			"commodityNames":["$@Common.Commodity.Electric"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionRanking-Calculate-UpdateRule-101-5-0.xls", "ConsumptionRanking-Calculate-UpdateRule-101-5-1.xls", "ConsumptionRanking-Calculate-UpdateRule-101-5-2.xls", "ConsumptionRanking-Calculate-UpdateRule-101-5-3.xls", "ConsumptionRanking-Calculate-UpdateRule-101-5-4.xls"],
+		}
+	}
+]

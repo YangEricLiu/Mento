@@ -17,7 +17,7 @@ namespace Mento.ScriptCommon.Library.Functions
         internal LoginPage()
         {
         }
-
+        private static int WAITVERYLONGTIME = 240000;
         private static Locator HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
         private static Locator OptionWindowLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.WindowLoginOption);
         private static ComboBox LoginCustomerOption = JazzComboBox.LoginCustomerOptionComboBox;
@@ -164,7 +164,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
             JazzButton.LoginSubmitButton.Click();
             TimeManager.LongPause();
-            TimeManager.Pause(15000);
+            TimeManager.Pause(WAITVERYLONGTIME);
 
             if (String.IsNullOrEmpty(customerName))
             {
@@ -179,7 +179,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 TimeManager.ShortPause();
 
                 ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
-                TimeManager.MediumPause();       
+                TimeManager.MediumPause();
             }
             else
             {
@@ -241,6 +241,14 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzBrowseManager.RefreshJazz();
             if (String.IsNullOrEmpty(customerName))
             {
+                if (JazzMessageBox.MessageBox.Exists())
+                {
+                    if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用") || JazzMessageBox.MessageBox.GetMessage().Contains("Google map is unavailable"))
+                    {
+                        JazzMessageBox.MessageBox.OK();
+                    }
+                }
+
                 TimeManager.ShortPause();
 
                 ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
@@ -257,6 +265,16 @@ namespace Mento.ScriptCommon.Library.Functions
                     TimeManager.ShortPause();
                     LoginCustomerOptionConfirm.Click();
                     TimeManager.Pause(5000);
+
+                    if (JazzMessageBox.MessageBox.Exists())
+                    {
+                        if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用") || JazzMessageBox.MessageBox.GetMessage().Contains("Google map is unavailable"))
+                        {
+                            JazzMessageBox.MessageBox.OK();
+                        }
+                    }
+
+                    TimeManager.ShortPause();
 
                     ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
                     TimeManager.MediumPause();

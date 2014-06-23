@@ -38,6 +38,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public ComboBox(Locator locator) : base(locator) { }
 
+        /// <summary>
+        /// If combobox displayed
+        /// </summary>
+        /// <returns></returns>
+        public bool IsDisplayed()
+        {
+            return ElementHandler.Displayed(this._RootLocator);
+        }
 
         /// <summary>
         /// Simulate the mouse open combo box drop down menu

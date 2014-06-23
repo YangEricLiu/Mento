@@ -954,8 +954,8 @@
     <add key="GridShareInfoList" value="//div[contains(@id,'window') and contains(@class,'x-window-body-default')]//div[contains(@id,'shareinfogrid') and not(contains(@style,'display: none;')) and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridMaxWidgetDataView" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridSendedUserList" value="//div[contains(@id,'receiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[2]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
-    <add key="GridTrueShareUserList" value="//div[contains(@id,'sharereceiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[1]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
-    <add key="GridTrueSendedUserList" value="//div[contains(@id,'sharereceiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[2]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+    <add key="GridEnjoyShareUserList" value="//div[contains(@id,'sharereceiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[1]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+    <add key="GridEnjoySendedUserList" value="//div[contains(@id,'sharereceiverwindow') and contains(@class,'x-window-body-default')]/div[2]/div/div/div[3]//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     <add key="GridSubscribeUserList" value="//div[contains(@id,'shareduserlist') and contains(@class,'x-window-body-default')]/div[3]/div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     </Homepage>
   </Grid>

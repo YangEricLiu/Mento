@@ -152,6 +152,18 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectCustomer(string customerName)
         {
             SelectCustmerMenuButton.SelectOneItem(customerName);
+
+            JazzMessageBox.LoadingMask.WaitLoading();
+
+            if (JazzMessageBox.MessageBox.Exists())
+            {
+                if (JazzMessageBox.MessageBox.GetMessage().Contains("google地图不可用") || JazzMessageBox.MessageBox.GetMessage().Contains("Google map is unavailable"))
+                {
+                    JazzMessageBox.MessageBox.OK();
+                }
+            }
+
+            TimeManager.MediumPause();
         }
 
         public bool IsTrendDrawnOnWidgetMin()

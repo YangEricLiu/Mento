@@ -92,6 +92,11 @@ namespace Mento.ScriptCommon.Library.Functions
             StartDatePicker.SelectDateItem(startTime);
 
             EndDatePicker.SelectDateItem(endTime);
+
+            if (EndTimeComboBox.Exists() && EndTimeComboBox.IsDisplayed())
+            {
+                EndTimeComboBox.SelectItem("24:00");
+            }
         }
 
         public void SetTimeRange(string startTime, string endTime)

@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织A","园区A","楼宇A"],
+			"commodityNames":["电","自来水","煤"],
+			"failedFileName":["F-TC-J1-FVT-ConsumptionRanking-Calculate-101-6-1-Elec-Average-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-6-2-Coal-Total-ThisYear.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-6-3-Coal-Total-LastMonth.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-6-4-Coal-Total-ThisMonth.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-6-5-Coal-Total-LastWeek.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-6-6-Coal-Total-ThisWeek.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-6-7-Coal-Total-Yestoday.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-6-8-Coal-Total-Today.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-6-9-Coal-Total-LastSevenDay.xls"],
+		},
+		"ExpectedData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织A","园区A","楼宇A"],
+			"expectedFileName":["TC-J1-FVT-ConsumptionRanking-Calculate-101-6-1-Elec-Average-Custom.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-6-2-Coal-Total-ThisYear.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-6-3-Coal-Total-LastMonth.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-6-4-Coal-Total-ThisMonth.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-6-5-Coal-Total-LastWeek.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-6-6-Coal-Total-ThisWeek.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-6-7-Coal-Total-Yestoday.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-6-8-Coal-Total-Today.xls","TC-J1-FVT-ConsumptionRanking-Calculate-101-6-9-Coal-Total-LastSevenDay.xls"],
+		}
+	}
+]

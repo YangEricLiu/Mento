@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingLabellingNull"]],
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabellingNull"]],
 			"failedFileName":["F-ConsumptionRanking-Calculate-UpdateRule-101-5-0.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-5-1.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-5-2.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-5-3.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-5-4.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-12-31",

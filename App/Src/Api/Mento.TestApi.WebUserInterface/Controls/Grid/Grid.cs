@@ -997,25 +997,28 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public DataTable GetAllData()
         {
-            if (CurrentPage != 1)
-                GotoPage(1);
-
             DataTable data = null;
 
-            for (int pageIndex = 1; pageIndex <= PageCount; pageIndex++)
+            if (!this.IsNoRowOnGrid())
             {
-                if(data==null)
-                    data = GetCurrentPageData();
-                else
-                    data.Merge(GetCurrentPageData());
+                if (CurrentPage != 1)
+                    GotoPage(1);
 
-                if (PageCount > 1)
+                for (int pageIndex = 1; pageIndex <= PageCount; pageIndex++)
                 {
-                    NextPage();
-                    TimeManager.LongPause();
-                }     
-            }
+                    if (data == null)
+                        data = GetCurrentPageData();
+                    else
+                        data.Merge(GetCurrentPageData());
 
+                    if (PageCount > 1)
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                    }
+                }
+            }
+         
             return data;
         }
 

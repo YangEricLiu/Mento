@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingLabellingNull"]],
+			"Hierarchies":[["NancyOtherCustomer3","园区能耗标识","BuildingLabellingNull"]],
 			"failedFileName":["F-CostRanking-Calculate-UpdateRule-101-3-0.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-01-01",

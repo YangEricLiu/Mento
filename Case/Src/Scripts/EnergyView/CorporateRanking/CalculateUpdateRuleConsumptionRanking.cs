@@ -53,7 +53,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.NavigateToCorporateRanking();
             TimeManager.MediumPause();
 
-            string[] BuildingNames = { "BuildingRanking1", "BuildingRanking2", "BuildingRanking3", "BuildingRanking4", "BuildingRanking5", "BuildingRanking6", "BuildingRanking7", "BuildingRanking8", "BuildingRanking9", "BuildingRankin10", "BuildingRanking11", "BuildingRanking12", "BuildingRanking13", "BuildingRanking14", "BuildingRanking15", "BuildingRanking16", "BuildingRanking17", "BuildingRanking18", "BuildingRanking19", "BuildingRanking20", "BuildingRanking21", "BuildingRanking22", "BuildingRanking23", "BuildingRanking24", "BuildingRanking25", "BuildingRanking26", "BuildingRanking27", "BuildingRanking28", "BuildingRanking29", "BuildingRanking30" };
+            string[] BuildingNames = { "BuildingRanking1", "BuildingRanking2", "BuildingRanking3", "BuildingRanking4", "BuildingRanking5", "BuildingRanking6", "BuildingRanking7", "BuildingRanking8", "BuildingRanking9", "BuildingRanking10", "BuildingRanking11", "BuildingRanking12", "BuildingRanking13", "BuildingRanking14", "BuildingRanking15", "BuildingRanking16", "BuildingRanking17", "BuildingRanking18", "BuildingRanking19", "BuildingRanking20", "BuildingRanking21", "BuildingRanking22", "BuildingRanking23", "BuildingRanking24", "BuildingRanking25", "BuildingRanking26", "BuildingRanking27", "BuildingRanking28", "BuildingRanking29", "BuildingRanking30" };
             int i = 0;
             CorporateRanking.ClickSelectHierarchyButton();
             while (i < 30)
@@ -171,7 +171,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //Commodity='电'
-            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            CorporateRanking.SelectSystemCommodity(input.InputData.commodityNames[0]);
             TimeManager.ShortPause();
 
             //Time range = A. 2012/07/30 to 2012/08/01.
@@ -228,7 +228,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
                 JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
                 TimeManager.MediumPause();
 
-                Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
+                //Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
                 CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[i]);
                 TimeManager.MediumPause();
                 CorporateRanking.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[i], input.InputData.failedFileName[i]);
@@ -273,7 +273,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
                 JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
                 TimeManager.MediumPause();
 
-                Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
+                //Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
                 CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[i]);
                 TimeManager.MediumPause();
                 CorporateRanking.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[i], input.InputData.failedFileName[i]);

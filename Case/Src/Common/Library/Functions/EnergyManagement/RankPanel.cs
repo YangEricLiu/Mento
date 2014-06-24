@@ -330,7 +330,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// /// <param name="failedFileName"></param>
         public bool CompareDataViewOfCostUsage(string expectedFileName, string failedFileName)
         {
-            return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, RankingPath);
+            return CompareDataViewOfRanking(expectedFileName, failedFileName, RankingPath);
         }
 
         /// <summary>
@@ -340,7 +340,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// /// <param name="failedFileName"></param>
         public bool CompareDataViewOfCarbonUsage(string expectedFileName, string failedFileName)
         {
-            return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, RankingPath);
+            return CompareDataViewOfRanking(expectedFileName, failedFileName, RankingPath);
         }
 
         /// <summary>
@@ -350,7 +350,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// /// <param name="failedFileName"></param>
         public bool CompareDataViewOfEnergyAnalysis(string expectedFileName, string failedFileName)
         {
-            return CompareDataViewOfEnergyAnalysis(expectedFileName, failedFileName, RankingPath);
+            return CompareDataViewOfRanking(expectedFileName, failedFileName, RankingPath);
         }
 
         /*

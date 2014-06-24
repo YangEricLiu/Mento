@@ -833,7 +833,7 @@ namespace Mento.Utility
         /// <param name="headers"></param>
         public static void ExportToExcelWithHeaderSheet(DataTable data, string fileName, string sheetName, CellsValue[] headersSheet2, string[] headersSheet1 = null)
         {
-            if (headersSheet1 == null || headersSheet1.Length <= 0)
+            if ((headersSheet1 == null || headersSheet1.Length <= 0) && (data != null) )
             {
                 var columns = new List<string>();
                 foreach (DataColumn column in data.Columns)
@@ -851,12 +851,17 @@ namespace Mento.Utility
 
             handler.OpenOrCreate();
 
-            //Get Worksheet object 
-            Microsoft.Office.Interop.Excel.Worksheet sheet1 = handler.AddWorksheet(sheetName);
-            Microsoft.Office.Interop.Excel.Worksheet sheet2 = handler.AddWorksheet("Header");
+            if (data != null)
+            {
+                //Get Worksheet object 
+                Microsoft.Office.Interop.Excel.Worksheet sheet1 = handler.AddWorksheet(sheetName);
 
-            //Import data from the start
-            handler.ImportDataTable(sheet1, headersSheet1, data);
+                //Import data from the start
+                handler.ImportDataTable(sheet1, headersSheet1, data);
+            }
+
+            //Get header data
+            Microsoft.Office.Interop.Excel.Worksheet sheet2 = handler.AddWorksheet("Header");  
             handler.ExportHeaderToExcelSheet(sheet2, headersSheet2);
 
             handler.Save();
@@ -879,14 +884,22 @@ namespace Mento.Utility
 
             handler.OpenOrCreate();
 
-            //Get Worksheet object 
-            Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
-
-            //Import data from the start
-            dataOut = handler.GetDataTableFromExcel(sheetName);
-            data = dataOut.Copy();
-
-            handler.Dispose();
+            try
+            {
+                //Get Worksheet object 
+                Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
+                //Import data from the start
+                dataOut = handler.GetDataTableFromExcel(sheetName);
+                data = dataOut.Copy();
+            }
+            catch (Exception Ex)
+            {
+                data = null;
+            }
+            finally
+            {
+                handler.Dispose();
+            }     
         }
 
         /// <summary>

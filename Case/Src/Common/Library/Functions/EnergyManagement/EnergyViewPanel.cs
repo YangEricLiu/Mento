@@ -412,12 +412,43 @@ namespace Mento.ScriptCommon.Library.Functions
 
                 DataTable actualData = GetAllData();
                 ExcelHelper.CellsValue[] headersSheet = GetHeaderData();
+                bool IsHeaderEqual;
 
                 DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
                 ExcelHelper.CellsValue[] expectedHeadersSheet = JazzFunction.DataViewOperation.ImportExpectedFileHeaderDataToCellsValue(filePath, JazzFunction.DataViewOperation.sheetNameHeader, headersSheet);
-                ExcelHelper.CellsValue[] resultHeadersSheet = JazzFunction.DataViewOperation.CompareHeaderDatas(expectedHeadersSheet, headersSheet);
+                ExcelHelper.CellsValue[] resultHeadersSheet = JazzFunction.DataViewOperation.CompareHeaderDatas(expectedHeadersSheet, headersSheet, out IsHeaderEqual);
 
-                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName, resultHeadersSheet);
+                return JazzFunction.DataViewOperation.CompareDataTables(expectedDataTable, actualData, failedFileName, resultHeadersSheet, IsHeaderEqual);
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// On ranking function, import expected data file and compare to the data view currently, if not equal, export to another file
+        /// </summary>
+        /// <param name="expectedFileName"></param>
+        /// /// <param name="failedFileName"></param>
+        public bool CompareDataViewOfRanking(string expectedFileName, string failedFileName, string path)
+        {
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(path, expectedFileName);
+                JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+
+                DataTable actualData = GetAllData();
+                ExcelHelper.CellsValue[] headersSheet = GetHeaderData();
+                bool IsHeaderEqual;
+
+                DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.DataViewOperation.sheetNameExpected);
+                ExcelHelper.CellsValue[] expectedHeadersSheet = JazzFunction.DataViewOperation.ImportExpectedFileHeaderDataToCellsValue(filePath, JazzFunction.DataViewOperation.sheetNameHeader, headersSheet);
+                ExcelHelper.CellsValue[] resultHeadersSheet = JazzFunction.DataViewOperation.CompareHeaderDatas(expectedHeadersSheet, headersSheet, out IsHeaderEqual);
+
+                return JazzFunction.DataViewOperation.CompareDataTablesForRanking(expectedDataTable, actualData, failedFileName, resultHeadersSheet, IsHeaderEqual);
             }
             else
             {

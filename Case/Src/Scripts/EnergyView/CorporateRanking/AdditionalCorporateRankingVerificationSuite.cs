@@ -67,16 +67,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
-            
-            //Function type  = "Energy analysis"
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
-            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Energy);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
-            TimeManager.LongPause();
 
             #endregion
 
@@ -185,7 +175,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             #endregion
 
             #endregion
-
         }
 
         [Test]
@@ -204,16 +193,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[3]);
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //Function type  = "Energy analysis"
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
-            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Energy);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
             TimeManager.LongPause();
 
             //Year
@@ -334,16 +313,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[3]);
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //Function type  = "Energy analysis"
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
-            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Energy);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
             TimeManager.LongPause();
 
             //Year
@@ -475,10 +444,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
-            TimeManager.LongPause();
-
             #region   Electricity ranking
 
             //Year
@@ -608,10 +573,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
-            TimeManager.LongPause();
-
             //Year
             //a. Time range = 2012-1-1 to 2012-12-31
             var ManualTimeRange = input.InputData.ManualTimeRange;
@@ -735,10 +696,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Function type  = "Carbon"
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
             TimeManager.LongPause();
 
             //Year
@@ -868,10 +825,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Function type  = "Cost"
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
             TimeManager.LongPause();
 
             #region   Electricity ranking
@@ -1004,10 +957,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
-            TimeManager.LongPause();
-
             //Year
             //a. Time range = 2012-1-1 to 2012-12-31
             var ManualTimeRange = input.InputData.ManualTimeRange;
@@ -1131,10 +1080,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Function type  = "Cost"
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
             TimeManager.LongPause();
 
             //Year
@@ -1377,10 +1322,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
-            TimeManager.LongPause();
-
             //Year
             //a. Time range = 2012-1-1 to 2012-12-31
             var ManualTimeRange = input.InputData.ManualTimeRange;
@@ -1425,10 +1366,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             //Function type  = "Carbon"
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-
-            //Ranking type  = 总排名
-            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.TotalRank);
             TimeManager.LongPause();
 
             //Year

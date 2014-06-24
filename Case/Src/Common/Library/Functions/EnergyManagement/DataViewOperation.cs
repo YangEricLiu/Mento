@@ -134,30 +134,67 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="expectedDataTable"></param>
         /// <param name="actualDataTable"></param>
-        public bool CompareDataTables(DataTable expectedDataTable, DataTable actualDataTable, string fileName, ExcelHelper.CellsValue[] headersSheet)
+        public bool CompareDataTables(DataTable expectedDataTable, DataTable actualDataTable, string fileName, ExcelHelper.CellsValue[] headersSheet, bool IsHeaderEqual)
         {
             bool areEqual = true;
             DataTable diversityTable = new DataTable();
 
-            DataColumn rows = new DataColumn("行数", typeof(int));
+            if (expectedDataTable == null && actualDataTable == null && IsHeaderEqual)
+            {
+                return areEqual;
+            }
 
-            diversityTable.Columns.Add(rows);
+            if (expectedDataTable == null && actualDataTable == null && !IsHeaderEqual)
+            {
+                ExportFailedDataToExcelWithHeaderSheet(null, fileName, sheetNameFailed, headersSheet);
+                return false;
+            }
+
+            if (expectedDataTable == null && actualDataTable != null)
+            {
+                diversityTable = actualDataTable.Copy();
+
+                DataRow insertRow = diversityTable.NewRow();
+
+                foreach (DataColumn dc in diversityTable.Columns)
+                {
+                    insertRow[dc.ColumnName] = "期望数据表为空，实际不是空，值如下"; 
+                }
+
+                diversityTable.Rows.InsertAt(insertRow, 0);
+                ExportFailedDataToExcelWithHeaderSheet(diversityTable, fileName, sheetNameFailed, headersSheet);
+                return false;
+            }
+
+            if (expectedDataTable != null && actualDataTable == null)
+            {
+                diversityTable = expectedDataTable.Copy();
+
+                DataRow insertRow = diversityTable.NewRow();
+
+                foreach (DataColumn dc in diversityTable.Columns)
+                {
+                    insertRow[dc.ColumnName] = "实际数据表为空，期望不是空，值如下";
+                }
+
+                diversityTable.Rows.InsertAt(insertRow, 0);
+                ExportFailedDataToExcelWithHeaderSheet(diversityTable, fileName, sheetNameFailed, headersSheet);
+                return false;
+            }
 
             foreach (DataColumn column in expectedDataTable.Columns)
             {
                 diversityTable.Columns.Add(column.ColumnName);
             }
 
-            if (expectedDataTable == null || actualDataTable == null) 
-            {
-                areEqual = false; 
-            }
-            
             if (expectedDataTable.Rows.Count != actualDataTable.Rows.Count) 
             {
                 areEqual = false;
                 throw new Exception(String.Format("The rows count not equal, expected is {0}, actual is {1}", expectedDataTable.Rows.Count, actualDataTable.Rows.Count));   
             }
+
+            DataColumn rows = new DataColumn("行数", typeof(int));
+            diversityTable.Columns.Add(rows);
 
             for (int i = 0; i < expectedDataTable.Rows.Count; i++) 
             {
@@ -197,14 +234,119 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Compare 2 data table, throw exception for the first not equal value
+        /// </summary>
+        /// <param name="expectedDataTable"></param>
+        /// <param name="actualDataTable"></param>
+        public bool CompareDataTablesForRanking(DataTable expectedDataTable, DataTable actualDataTable, string fileName, ExcelHelper.CellsValue[] headersSheet, bool IsHeaderEqual)
+        {
+            bool areEqual = true;
+            DataTable diversityTable = new DataTable();
+
+            if (expectedDataTable == null && actualDataTable == null && IsHeaderEqual)
+            {
+                return areEqual;
+            }
+
+            if (expectedDataTable == null && actualDataTable == null && !IsHeaderEqual)
+            {
+                ExportFailedDataToExcelWithHeaderSheet(null, fileName, sheetNameFailed, headersSheet);
+                return false;
+            }
+
+            if (expectedDataTable == null && actualDataTable != null)
+            {
+                diversityTable = actualDataTable.Copy();
+
+                DataRow insertRow = diversityTable.NewRow();
+
+                foreach (DataColumn dc in diversityTable.Columns)
+                {
+                    insertRow[dc.ColumnName] = "期望数据表为空，实际不是空，值如下";
+                }
+
+                diversityTable.Rows.InsertAt(insertRow, 0);
+                ExportFailedDataToExcelWithHeaderSheet(diversityTable, fileName, sheetNameFailed, headersSheet);
+                return false;
+            }
+
+            if (expectedDataTable != null && actualDataTable == null)
+            {
+                diversityTable = expectedDataTable.Copy();
+
+                DataRow insertRow = diversityTable.NewRow();
+
+                foreach (DataColumn dc in diversityTable.Columns)
+                {
+                    insertRow[dc.ColumnName] = "实际数据表为空，期望不是空，值如下";
+                }
+
+                diversityTable.Rows.InsertAt(insertRow, 0);
+                ExportFailedDataToExcelWithHeaderSheet(diversityTable, fileName, sheetNameFailed, headersSheet);
+                return false;
+            }
+
+            foreach (DataColumn column in expectedDataTable.Columns)
+            {
+                diversityTable.Columns.Add(column.ColumnName);
+            }
+
+            if (expectedDataTable.Rows.Count != actualDataTable.Rows.Count)
+            {
+                areEqual = false;
+                throw new Exception(String.Format("The rows count not equal, expected is {0}, actual is {1}", expectedDataTable.Rows.Count, actualDataTable.Rows.Count));
+            }
+
+            DataColumn rows = new DataColumn("行数", typeof(int));
+            diversityTable.Columns.Add(rows);
+
+            for (int i = 0; i < expectedDataTable.Rows.Count; i++)
+            {
+                for (int j = 0; j < expectedDataTable.Columns.Count; j++)
+                {
+                    if (!String.Equals(expectedDataTable.Rows[i][j].ToString(), actualDataTable.Rows[i][j].ToString()))
+                    {
+                        areEqual = false;
+
+                        DataRow myRow = diversityTable.NewRow();
+
+                        myRow[0] = i + 2;
+
+                        if ((j != 0) && (expectedDataTable.Columns[0].ColumnName.Contains("时间") || expectedDataTable.Columns[0].ColumnName.Contains("Time")))
+                        {
+                            myRow[1] = expectedDataTable.Rows[i][0].ToString();
+                        }
+
+                        if ((j != 0) && (expectedDataTable.Columns[1].ColumnName.Contains("名称") || expectedDataTable.Columns[0].ColumnName.Contains("Name")))
+                        {
+                            myRow[1] = expectedDataTable.Rows[i][1].ToString();
+                        }
+
+                        myRow[j + 1] = "期望值:" + expectedDataTable.Rows[i][j].ToString() + "\n" + "实际值:" + actualDataTable.Rows[i][j].ToString();
+
+                        diversityTable.Rows.Add(myRow);
+                    }
+                }
+            }
+
+            if (!areEqual)
+            {
+                ExportFailedDataToExcelWithHeaderSheet(diversityTable, fileName, sheetNameFailed, headersSheet);
+            }
+
+            return areEqual;
+        }
+
+        /// <summary>
         /// Compare 2 header data, throw exception for the first not equal value
         /// </summary>
         /// <param name="expectedDataTable"></param>
         /// <param name="actualDataTable"></param>
-        public ExcelHelper.CellsValue[] CompareHeaderDatas(ExcelHelper.CellsValue[] expectedHeaderData, ExcelHelper.CellsValue[] actualHeaderDatas)
+        public ExcelHelper.CellsValue[] CompareHeaderDatas(ExcelHelper.CellsValue[] expectedHeaderData, ExcelHelper.CellsValue[] actualHeaderDatas, out bool IsHeaderEqual)
         {
             var newActualHeaderData = new List<ExcelHelper.CellsValue>();
             ExcelHelper.CellsValue tmpData = new ExcelHelper.CellsValue();
+            bool IsHeaderCorrect = true;
 
             for (int i = 0; i < expectedHeaderData.Length; i++)
             {
@@ -215,6 +357,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
                 if (expectedHeaderData[i].cellsValue != actualHeaderDatas[i].cellsValue)
                 {
+                    IsHeaderCorrect = false;
                     tmpData.cellsValue = "期望值:" + expectedHeaderData[i].cellsValue + "\n" + "实际值:" + actualHeaderDatas[i].cellsValue;
                 }
                 else
@@ -225,6 +368,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 newActualHeaderData.Add(tmpData);
             }
 
+            IsHeaderEqual = IsHeaderCorrect;
             return newActualHeaderData.ToArray();
         }
         #endregion

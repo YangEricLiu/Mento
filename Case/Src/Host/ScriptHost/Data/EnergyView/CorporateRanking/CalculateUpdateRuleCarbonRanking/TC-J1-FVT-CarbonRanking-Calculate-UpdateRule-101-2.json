@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingLabellingNull"]],
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabellingNull"]],
 			"failedFileName":["F-CarbonRanking-Calculate-UpdateRule-101-2-0.xls", "F-CarbonRanking-Calculate-UpdateRule-101-2-1.xls", "F-CarbonRanking-Calculate-UpdateRule-101-2-2.xls", "F-CarbonRanking-Calculate-UpdateRule-101-2-3.xls", "F-CarbonRanking-Calculate-UpdateRule-101-2-4.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-12-31",

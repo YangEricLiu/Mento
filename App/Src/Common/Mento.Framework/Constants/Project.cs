@@ -22,7 +22,8 @@ namespace Mento.Framework.Constants
 
         public static string LocalizationStringResourceName = "string.js";
 
-        public static string LocalizationDataResourceName = "data.js";
+        public static string LocalizationDatabaseResourceName = "DB.resx";
+        public static string LocalizationAppResourceName = "App.resx";
 
         /// <summary>
         /// $#

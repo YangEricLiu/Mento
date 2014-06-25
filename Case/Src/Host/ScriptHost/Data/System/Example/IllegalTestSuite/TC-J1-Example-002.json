@@ -2,16 +2,17 @@
 	{
 		"InputData":
 		{	
-			"Meter":"Amy_Metercode1",
+			"CommonNameArray":["$@Common.Commodity.Electric","$@Common.Commodity.Petrol","煤","$@Common.Commodity.HeatQ","$@Common.Commodity.Water"],
+			"Meter":"$@Customer_CEO",
 			"Channel":"1",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
-			"CalculationType":"Sum",
-			"Comments":"$@I18N.Setting.TargetBaseline.TargetWindowTitle|(aaa),(vvv),(ccc)",
+			"Commodity":"$@Common.Commodity.Electric$@EM.Ratio.CaculateValue",
+			"Uom":"test",
+			"CalculationType":"“DayNight$@EM.DashboardSaved",
+			"Comments":"$@I18N.Setting.TargetBaseline.TargetWindowTitle|(aaa),(vvv),($@I18N.Setting.Hierarchy.Menu.CreateSite)",
 		},
 		"ExpectedData":
 		{
-			"CommonName":"$@I18N.Setting.Hierarchy.Menu.CreateAreaLv1",
+			"CommonName":"$@I18N.Setting.Hierarchy.Menu.CreateAreaLv1@$$@I18N.Setting.TargetBaseline.TargetWindowTitle|(aaa),(vvv),($@I18N.Setting.Hierarchy.Menu.CreateSite)",
 		}
 	}
 ]

@@ -9,6 +9,8 @@ using System.Configuration;
 using Mento.Framework.Constants;
 using Mento.Framework.Exceptions;
 using System.Text.RegularExpressions;
+using System.Resources;
+using System.Reflection;
 
 namespace Mento.TestApi.WebUserInterface
 {
@@ -24,7 +26,13 @@ namespace Mento.TestApi.WebUserInterface
             {
                 if (_ResourceDictionary == null)
                 {
-                    _ResourceDictionary = ParseStringResource().Union(ParseDataResource()).ToDictionary(item => item.Key, item => item.Value);
+                    var stringsResource = ParseStringResource();
+                    var appResource = ParseAppResource();
+                    var databaseResource = ParseDatabaseResource();
+
+                    //_ResourceDictionary = ParseStringResource().Union(ParseDataResource()).ToDictionary(item => item.Key, item => item.Value);
+
+                    _ResourceDictionary = stringsResource.Union(appResource).Union(databaseResource).ToDictionary(item => item.Key, item => item.Value);
                 }
 
                 return _ResourceDictionary;
@@ -117,6 +125,7 @@ namespace Mento.TestApi.WebUserInterface
 
             return finalDict;
         }
+
         /// <summary>
         ///     Get the key&value from language resource JS file.
         /// </summary>
@@ -149,38 +158,76 @@ namespace Mento.TestApi.WebUserInterface
             return lineList;
         }
 
-        private static Dictionary<string, string> ParseDataResource()
+        private static Dictionary<string, string> ParseDatabaseResource()
         {
-            string filePath = Path.Combine(GetResourceFileDirectory(), Project.LocalizationDataResourceName);
+            string filePath = Path.Combine(GetResourceFileDirectory(), Project.LocalizationDatabaseResourceName);
 
             //if there is ui resource variable in data resource, replace it
-            return LoadDataResource(filePath);
+            return LoadResxResource(filePath);
         }
-        private static Dictionary<string, string> LoadDataResource(string filePath)
+
+        private static Dictionary<string, string> ParseAppResource()
         {
-            StreamReader dataReader = new StreamReader(filePath);
-            string dataLine = "";
-            string key = "";
-            string value = "";
+            string filePath = Path.Combine(GetResourceFileDirectory(), Project.LocalizationAppResourceName);
+
+            //if there is ui resource variable in data resource, replace it
+            return LoadResxResource(filePath);
+        }
+
+        private static Dictionary<string, string> LoadResxResource(string filePath)
+        {
+            Assembly assembly = Assembly.Load("Mento.ScriptHost");
+
+            string resourceName = String.Format("Mento.ScriptHost.{0}",filePath.Replace("\\",".").Replace("resx","resources"));
+            
             Dictionary<string, string> lineList = new Dictionary<string, string>();
 
-            while (!dataReader.EndOfStream)
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             {
-                dataLine = dataReader.ReadLine();
-                if (!String.IsNullOrEmpty(dataLine) && dataLine[0] != '/' && !dataLine.Contains("{}") && dataLine.Contains("="))
+
+                using (ResourceReader reader = new ResourceReader(stream))
                 {
-                    string[] tmp = dataLine.Split(new char[2] { '=', ';' });
-                    key = tmp[0].Replace(" ", "");
-                    value = tmp[1].Replace(" ", "").Replace("'", "");
-                    if (!lineList.ContainsKey(key))
+                    var cursor = reader.GetEnumerator();
+
+                    while (cursor.MoveNext())
                     {
-                        lineList.Add(key, value);
+                        string key = cursor.Key.ToString().Trim();
+                        string value = cursor.Value.ToString().Trim();
+
+                        if (!lineList.ContainsKey(key))
+                        {
+                            lineList.Add(key, value);
+                        }
                     }
                 }
             }
-            dataReader.Close();
 
             return lineList;
+
+
+            //StreamReader dataReader = new StreamReader(filePath);
+            //string dataLine = "";
+            //string key = "";
+            //string value = "";
+            //Dictionary<string, string> lineList = new Dictionary<string, string>();
+
+            //while (!dataReader.EndOfStream)
+            //{
+            //    dataLine = dataReader.ReadLine();
+            //    if (!String.IsNullOrEmpty(dataLine) && dataLine[0] != '/' && !dataLine.Contains("{}") && dataLine.Contains("="))
+            //    {
+            //        string[] tmp = dataLine.Split(new char[2] { '=', ';' });
+            //        key = tmp[0].Replace(" ", "");
+            //        value = tmp[1].Replace(" ", "").Replace("'", "");
+            //        if (!lineList.ContainsKey(key))
+            //        {
+            //            lineList.Add(key, value);
+            //        }
+            //    }
+            //}
+            //dataReader.Close();
+
+            //return lineList;
         }
 
         private static string GetResourceFileDirectory()

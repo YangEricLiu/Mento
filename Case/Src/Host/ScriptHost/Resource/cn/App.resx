@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountIsBeingCreated" xml:space="preserve">
+    <value>账号创建中，请稍候……</value>
+  </data>
+  <data name="Administration_CONSTUOM_PERSON_CODE" xml:space="preserve">
+    <value>人</value>
+  </data>
+  <data name="Administration_CONSTUOM_TREE_CODE" xml:space="preserve">
+    <value>树</value>
+  </data>
+  <data name="BLCOMMON_ProductInfo" xml:space="preserve">
+    <value>施耐德电气“云能效”管理</value>
+  </data>
+  <data name="Customer_BusinessPersonnal" xml:space="preserve">
+    <value>业务人员</value>
+  </data>
+  <data name="Customer_CEO" xml:space="preserve">
+    <value>管理层</value>
+  </data>
+  <data name="Customer_CloneDemoUserEmailBody" xml:space="preserve">
+    <value>先生/女士，您好!&lt;p&gt;
+您在{2}申请试用{3}&lt;br/&gt;
+请您于24小时内点击以下链接登录并进行试用：&lt;br/&gt;
+&lt;a href='{1}'&gt;{1}&lt;/a&gt;&lt;br/&gt;
+祝您获得愉快的试用体验。&lt;br/&gt;&lt;br/&gt;
+此致，&lt;br/&gt;{3}&lt;/p&gt;</value>
+  </data>
+  <data name="Customer_CloneDemoUserEmailHeader" xml:space="preserve">
+    <value>欢迎试用{0}</value>
+  </data>
+  <data name="Customer_CoolingArea" xml:space="preserve">
+    <value>供冷面积</value>
+  </data>
+  <data name="Customer_CustomerAdmin" xml:space="preserve">
+    <value>客户管理员</value>
+  </data>
+  <data name="Customer_DepartmentManager" xml:space="preserve">
+    <value>部门经理</value>
+  </data>
+  <data name="Customer_EEConsultant" xml:space="preserve">
+    <value>能源工程顾问</value>
+  </data>
+  <data name="Customer_EnergyEngineer" xml:space="preserve">
+    <value>能源工程师</value>
+  </data>
+  <data name="Customer_EnergyManager" xml:space="preserve">
+    <value>能源经理</value>
+  </data>
+  <data name="Customer_HeatingArea" xml:space="preserve">
+    <value>采暖面积</value>
+  </data>
+  <data name="Customer_InitPasswordEmailBody" xml:space="preserve">
+    <value> {0}，您好！&lt;p&gt;
+            欢迎您使用{7} &lt;br/&gt;
+            您的登陆账号信息如下：&lt;br/&gt;
+            登录名：{1}&lt;br/&gt;
+            真实姓名：{0}&lt;br/&gt;
+            职务：{5}&lt;br/&gt;
+            电话：{2}&lt;br/&gt;
+            电子邮箱：{3}&lt;br/&gt;
+            请点击以下链接设置您的登录密码：&lt;br/&gt;
+            &lt;a href='{4}'&gt;{4}&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
+            祝您使用愉快！&lt;br/&gt;
+            此致，&lt;br/&gt;
+            {6}
+            &lt;/p&gt;</value>
+  </data>
+  <data name="Customer_InitPasswordEmailTopic" xml:space="preserve">
+    <value>欢迎您使用{0}</value>
+  </data>
+  <data name="Customer_PlatformAdmin" xml:space="preserve">
+    <value>平台管理员</value>
+  </data>
+  <data name="Customer_ResetPasswordEmailBody" xml:space="preserve">
+    <value> {0}，您好!&lt;p&gt;
+            您在{2}申请重置您的{3}密码。&lt;br/&gt;
+            请您于24小时内登陆以下链接重置您的登录密码：&lt;br/&gt;
+            &lt;a href='{1}'&gt;{1}&lt;/a&gt;&lt;br/&gt;
+            感谢您对{3}的支持。&lt;br/&gt;
+            此致，&lt;br/&gt;
+            施耐德电气数字能源服务部
+            &lt;/p&gt;</value>
+  </data>
+  <data name="Customer_ResetPasswordTopic" xml:space="preserve">
+    <value>重置密码申请</value>
+  </data>
+  <data name="Customer_Saleman" xml:space="preserve">
+    <value>销售人员</value>
+  </data>
+  <data name="Customer_ServiceProviderAdmin" xml:space="preserve">
+    <value>服务商管理员</value>
+  </data>
+  <data name="Customer_Technician" xml:space="preserve">
+    <value>技术人员</value>
+  </data>
+  <data name="Customer_TotalArea" xml:space="preserve">
+    <value>总面积</value>
+  </data>
+  <data name="Customer_TotalPopulation" xml:space="preserve">
+    <value>总人口</value>
+  </data>
+  <data name="ENERGYCONST_CACLVAULE" xml:space="preserve">
+    <value>计算值</value>
+  </data>
+  <data name="ENERGYCONST_CARBONEXPORTTITLE" xml:space="preserve">
+    <value>碳排放</value>
+  </data>
+  <data name="ENERGYCONST_COSTEXPORTTITLE" xml:space="preserve">
+    <value>成本</value>
+  </data>
+  <data name="ENERGYCONST_ENERGYEXPORTTITLE" xml:space="preserve">
+    <value>能效分析</value>
+  </data>
+  <data name="ENERGYCONST_HIERARCHYNAME" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="ENERGYCONST_KPIBASELINEHEADER" xml:space="preserve">
+    <value>基准值</value>
+  </data>
+  <data name="ENERGYCONST_KPIEXPORTTITLE" xml:space="preserve">
+    <value>关键能效指标</value>
+  </data>
+  <data name="ENERGYCONST_KPITARGETLINEHEADER" xml:space="preserve">
+    <value>目标值</value>
+  </data>
+  <data name="ENERGYCONST_ORIGVALUE" xml:space="preserve">
+    <value>原始值</value>
+  </data>
+  <data name="ENERGYCONST_RANKING" xml:space="preserve">
+    <value>排名</value>
+  </data>
+  <data name="ENERGYCONST_TIMEHEADERSTRING" xml:space="preserve">
+    <value>时间</value>
+  </data>
+  <data name="ENERGYCONST_VALUEHEADERSTRING" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="ENERGYRANK_APDX" xml:space="preserve">
+    <value>/人</value>
+  </data>
+  <data name="Energy_CommodityName" xml:space="preserve">
+    <value>总览</value>
+  </data>
+  <data name="Energy_DataExportColumn_BaselineValue" xml:space="preserve">
+    <value>基准值</value>
+  </data>
+  <data name="Energy_DataExportColumn_CalcValue" xml:space="preserve">
+    <value>计算值</value>
+  </data>
+  <data name="Energy_DataExportColumn_Carbon" xml:space="preserve">
+    <value>碳排放</value>
+  </data>
+  <data name="Energy_DataExportColumn_Cost" xml:space="preserve">
+    <value>成本</value>
+  </data>
+  <data name="Energy_DataExportColumn_Energy" xml:space="preserve">
+    <value>能效分析</value>
+  </data>
+  <data name="Energy_DataExportColumn_HierarchyName" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Energy_DataExportColumn_OrigValue" xml:space="preserve">
+    <value>原始值</value>
+  </data>
+  <data name="Energy_DataExportColumn_Ranking" xml:space="preserve">
+    <value>排名</value>
+  </data>
+  <data name="Energy_DataExportColumn_TargetValue" xml:space="preserve">
+    <value>目标值</value>
+  </data>
+  <data name="Energy_DataExportColumn_Time" xml:space="preserve">
+    <value>时间</value>
+  </data>
+  <data name="Energy_DataExportColumn_Value" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="Energy_DataExportCommon_DateFormat" xml:space="preserve">
+    <value>yyyy-MM-dd</value>
+  </data>
+  <data name="Energy_DataExportCommon_TimeFormat" xml:space="preserve">
+    <value>HH:mm</value>
+  </data>
+  <data name="Energy_DataExportCommon_To" xml:space="preserve">
+    <value>到</value>
+  </data>
+  <data name="Energy_DataExportCommon_TotalView" xml:space="preserve">
+    <value>总览</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_H" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYY" xml:space="preserve">
+    <value>yyyy</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYM" xml:space="preserve">
+    <value>yyyy/M</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYMD" xml:space="preserve">
+    <value>yyyy/M/d</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYMDH" xml:space="preserve">
+    <value>yyyy/M/d H:00</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYMMDDHH" xml:space="preserve">
+    <value>yyyy/MM/dd</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYMMDDHHMMSS" xml:space="preserve">
+    <value>yyyy/MM/DD HH:mm:ss</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportColumn_ModifyTime" xml:space="preserve">
+    <value>ModifyTime</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportColumn_NewValue" xml:space="preserve">
+    <value>NewValue</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportColumn_OriginalValue" xml:space="preserve">
+    <value>OriginalValue</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportColumn_RecordTime" xml:space="preserve">
+    <value>RecordTime</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportColumn_TagId" xml:space="preserve">
+    <value>TagId</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportColumn_UserId" xml:space="preserve">
+    <value>UserId</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportFileNameFormat" xml:space="preserve">
+    <value>{0}_ModifyHistory.xls</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExport_DateTimeFormat" xml:space="preserve">
+    <value>yyyy-MM-dd HH:mm:ss</value>
+  </data>
+  <data name="Energy_To" xml:space="preserve">
+    <value>到</value>
+  </data>
+  <data name="HomePage_DemoIsBeingCreated" xml:space="preserve">
+    <value>账号创建中，请稍候……</value>
+  </data>
+  <data name="HomePage_Loading" xml:space="preserve">
+    <value>正在加载</value>
+  </data>
+  <data name="HomePage_WelcomeToTrail" xml:space="preserve">
+    <value>欢迎试用</value>
+  </data>
+  <data name="MobelAPI_CNStandard" xml:space="preserve">
+    <value>中国标准</value>
+  </data>
+  <data name="MobelAPI_USStandard" xml:space="preserve">
+    <value>美国标准</value>
+  </data>
+  <data name="WEBAPI_MailFeedbackBody" xml:space="preserve">
+    <value>运维管理员，您好！\r\n 反馈者：{0}\r\n姓名：{1}\r\n{2}\r\n时间：{3}\r\n 问题类型：{4}\r\n问题描述：{5}\r\n联系方式：{6}\r\n电子邮箱：{7}\r\n{8}意见反馈平台</value>
+  </data>
+  <data name="STS_BackLoginPage" xml:space="preserve">
+    <value>返回登录页</value>
+  </data>
+  <data name="STS_UserName_UserNameShouldNotBeEmpty" xml:space="preserve">
+    <value>用户名不能为空</value>
+  </data>
+  <data name="STS_Email" xml:space="preserve">
+    <value>电子邮箱地址</value>
+  </data>
+  <data name="STS_Login_ForgotPassword" xml:space="preserve">
+    <value>忘记密码</value>
+  </data>
+  <data name="STS_LinkIsExpired" xml:space="preserve">
+    <value>链接已失效!</value>
+  </data>
+  <data name="STS_LinkIsInvalid" xml:space="preserve">
+    <value>链接无效!</value>
+  </data>
+  <data name="STS_Literal_About" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="STS_Literal_Copyright" xml:space="preserve">
+    <value>版权所有</value>
+  </data>
+  <data name="STS_Literal_Login_Col1" xml:space="preserve">
+    <value>高效的管理方式</value>
+  </data>
+  <data name="STS_Literal_Login_Col1_Sub" xml:space="preserve">
+    <value>节省企业运营和投入成本</value>
+  </data>
+  <data name="STS_Literal_Login_Col2" xml:space="preserve">
+    <value>专家级咨询服务</value>
+  </data>
+  <data name="STS_Literal_Login_Col2_Sub" xml:space="preserve">
+    <value>为绿色发展之路保驾护航</value>
+  </data>
+  <data name="STS_Literal_Login_Col3" xml:space="preserve">
+    <value>规模化系统应用</value>
+  </data>
+  <data name="STS_Literal_Login_Col3_Sub" xml:space="preserve">
+    <value>不断满足您的业务扩展需要</value>
+  </data>
+  <data name="STS_Literal_Weibo" xml:space="preserve">
+    <value>施耐德电气官方微博</value>
+  </data>
+  <data name="STS_Login" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="STS_Password" xml:space="preserve">
+    <value>登录密码</value>
+  </data>
+  <data name="STS_Pwd_ResettingEmailHasBeenSent" xml:space="preserve">
+    <value>邮件已发送。请登陆您的邮箱并进行密码重置。</value>
+  </data>
+  <data name="STS_Trail_ReqDemoLogin" xml:space="preserve">
+    <value>产品试用</value>
+  </data>
+  <data name="STS_Pwd_SetPassword" xml:space="preserve">
+    <value>设置密码</value>
+  </data>
+  <data name="STS_Trail_InputEmail" xml:space="preserve">
+    <value>请输入您的电子邮箱</value>
+  </data>
+  <data name="STS_Trail_EmailHasBeenSent" xml:space="preserve">
+    <value>邮件已发送成功，请登录您的邮箱点击链接即可开始试用。</value>
+  </data>
+  <data name="STS_UserName_UserDoesNotExist" xml:space="preserve">
+    <value>用户名不存在</value>
+  </data>
+  <data name="STS_UserName_UserIsUnavailable" xml:space="preserve">
+    <value>登录失败，您的用户名暂时无法使用</value>
+  </data>
+  <data name="STS_UserName" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="WEBAPI_Company" xml:space="preserve">
+    <value>公司</value>
+  </data>
+  <data name="WEBAPI_DataExportUomName" xml:space="preserve">
+    <value>人民币</value>
+  </data>
+  <data name="WEBAPI_Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="WEBAPI_MailContactComment" xml:space="preserve">
+    <value>联系我们”信息描述：{0}\r\n</value>
+  </data>
+  <data name="WEBAPI_MailContactTitle" xml:space="preserve">
+    <value>职位：{0}\r\n</value>
+  </data>
+  <data name="WEBAPI_MailContactUsBody" xml:space="preserve">
+    <value>客户服务代表，您好！\r\n联系人姓名：{0}\r\n电话：{1}\r\n电子邮箱：{2}\r\n公司：{3}\r\n{4}{5}\r\n{6}</value>
+  </data>
+  <data name="WEBAPI_MailContactUsTopic" xml:space="preserve">
+    <value>来自{0}的“联系我们”信息</value>
+  </data>
+  <data name="WEBAPI_MailFeedbackTopic" xml:space="preserve">
+    <value>来自{0}的反馈</value>
+  </data>
+  <data name="WEBAPI_ServiceProvider" xml:space="preserve">
+    <value>所属服务商：{0}</value>
+  </data>
+  <data name="WEBAPI_Telephone" xml:space="preserve">
+    <value>电话</value>
+  </data>
+  <data name="WEBAPI_Title" xml:space="preserve">
+    <value>职位</value>
+  </data>
+  <data name="WEBAPI_UserName" xml:space="preserve">
+    <value>姓名</value>
+  </data>
+  <data name="WEBCOMMONCONST_DAY" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="WEBCOMMONCONST_HOUR" xml:space="preserve">
+    <value>点</value>
+  </data>
+  <data name="WEBCOMMONCONST_MONTH" xml:space="preserve">
+    <value>月</value>
+  </data>
+  <data name="WEBCOMMONCONST_YEAR" xml:space="preserve">
+    <value>年</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYMDHm" xml:space="preserve">
+    <value>yyyy-MM-dd HH:mm</value>
+  </data>
+  <data name="Common_EMOP" xml:space="preserve">
+    <value>“云能效”管理平台</value>
+  </data>
+  <data name="Common_SchneiderElectric" xml:space="preserve">
+    <value>施耐德电气</value>
+  </data>
+  <data name="Common_SchneiderElectricChina" xml:space="preserve">
+    <value>施耐德电气（中国）有限公司</value>
+  </data>
+  <data name="STS_Continue" xml:space="preserve">
+    <value>继续</value>
+  </data>
+  <data name="STS_Pwd_ConfirmPwd" xml:space="preserve">
+    <value>确认新密码</value>
+  </data>
+  <data name="STS_Pwd_Hello" xml:space="preserve">
+    <value>{0}，您好。</value>
+  </data>
+  <data name="STS_Pwd_InitPwdSet_Description" xml:space="preserve">
+    <value>首次使用前，请先设置您的密码。</value>
+  </data>
+  <data name="STS_Pwd_PwdReset_Title" xml:space="preserve">
+    <value>&lt;span class="hightlight"&gt;{0}&lt;/span&gt;，您好。</value>
+  </data>
+  <data name="STS_Pwd_NewPwd" xml:space="preserve">
+    <value>新密码</value>
+  </data>
+  <data name="STS_Pwd_PwdRest" xml:space="preserve">
+    <value>请重置您的密码。</value>
+  </data>
+  <data name="STS_Pwd_PwdRule" xml:space="preserve">
+    <value>允许英文字母，数字，下划线和句点</value>
+  </data>
+  <data name="STS_Pwd_RequestPwdReset_Description" xml:space="preserve">
+    <value>请输入您的用户名，及在系统中您已经填写的电子邮箱地址，然后单击“继续”。</value>
+  </data>
+  <data name="STS_Pwd_RequestPwdReset_ForgotEmail" xml:space="preserve">
+    <value>如果您忘记了系统中已填写的电子邮箱地址，请联系您的管理员。</value>
+  </data>
+  <data name="STS_Literal_ContactUs" xml:space="preserve">
+    <value>联系我们</value>
+  </data>
+  <data name="STS_Literal_ContactUs_Email" xml:space="preserve">
+    <value>联系邮箱</value>
+  </data>
+  <data name="STS_Literal_ContactUs_IfAnyQuestion" xml:space="preserve">
+    <value>如有任何问题或需要，欢迎随时联系我们。</value>
+  </data>
+  <data name="STS_Literal_ContactUs_Telephone" xml:space="preserve">
+    <value>联系电话</value>
+  </data>
+  <data name="STS_Literal_ContactUs_WechatSite" xml:space="preserve">
+    <value>微站点</value>
+  </data>
+  <data name="STS_Literal_iPadClient" xml:space="preserve">
+    <value>云能效iPad客户端</value>
+  </data>
+  <data name="STS_Literal_iPad_QRDownload" xml:space="preserve">
+    <value>使用iPad上的二维码扫描软件拍摄上方二维码即可立即下载</value>
+  </data>
+  <data name="STS_Login_InputUserName" xml:space="preserve">
+    <value>请输入用户名</value>
+  </data>
+  <data name="STS_Login_PasswordIsIncorrect" xml:space="preserve">
+    <value>登录密码错误</value>
+  </data>
+  <data name="STS_Pwd_ClickToResetPwd" xml:space="preserve">
+    <value>请点击邮件中的链接进行密码重置。</value>
+  </data>
+  <data name="STS_Pwd_ClickToTrail" xml:space="preserve">
+    <value>请点击邮件中的链接进行产品试用。</value>
+  </data>
+  <data name="STS_Pwd_EmailIncorrect" xml:space="preserve">
+    <value>电子邮箱地址错误？</value>
+  </data>
+  <data name="STS_Trail_RequestTrailAgain" xml:space="preserve">
+    <value>重新申请产品试用</value>
+  </data>
+  <data name="STS_Pwd_Send" xml:space="preserve">
+    <value>发送</value>
+  </data>
+  <data name="STS_Pwd_SendToEmail" xml:space="preserve">
+    <value>邮件已发送到&lt;span class="highlight"&gt;{0}&lt;/span&gt;</value>
+  </data>
+  <data name="STS_Literal_SwitchLanguage_ConfirmContinue" xml:space="preserve">
+    <value>“云能效”将离开当前页面以完成语言切换，是否继续？</value>
+  </data>
+  <data name="STS_Trail_Title" xml:space="preserve">
+    <value>欢迎试用施耐德电气云能效管理平台</value>
+  </data>
+  <data name="Common_HourlyFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Common_Minit" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Common_MinuteFormat_1" xml:space="preserve">
+    <value>yyyy-MM-dd HH:mm</value>
+  </data>
+  <data name="Common_MinuteFormat_2" xml:space="preserve">
+    <value>yyyyMMddHHmm</value>
+  </data>
+  <data name="Common_MinuteFormat_3" xml:space="preserve">
+    <value>yyyyMMdd2400</value>
+  </data>
+  <data name="WEBHOST_TagImportFileName" xml:space="preserve">
+    <value>配置批量导入记录表</value>
+  </data>
+  <data name="STS_Literal_ContactUs_OK" xml:space="preserve">
+    <value>好</value>
+  </data>
+  <data name="STS_Literal_ContactUs_Title" xml:space="preserve">
+    <value>施耐德电气云能效</value>
+  </data>
+  <data name="STS_Email_EmailIsIncorrect" xml:space="preserve">
+    <value>电子邮箱地址错误</value>
+  </data>
+  <data name="STS_Email_EmailShouldNotBeNull" xml:space="preserve">
+    <value>电子邮箱地址不能为空</value>
+  </data>
+  <data name="STS_Trail_WillSendTrailEmail" xml:space="preserve">
+    <value>我们会将试用账号发到您的邮箱。</value>
+  </data>
+  <data name="STS_Login_InputPassword" xml:space="preserve">
+    <value>请输入密码</value>
+  </data>
+  <data name="STS_Pwd_Pwd2ShouldNotBeNull" xml:space="preserve">
+    <value>确认密码不能为空</value>
+  </data>
+  <data name="STS_Pwd_PwdResetRule" xml:space="preserve">
+    <value>请至少包含大小写字母及数字，6-20位。不支持空格。</value>
+  </data>
+  <data name="STS_Pwd_PwdsDontMatch" xml:space="preserve">
+    <value>两次输入密码不一致</value>
+  </data>
+  <data name="STS_Pwd_PwdShouldNotBeNull" xml:space="preserve">
+    <value>密码不能为空</value>
+  </data>
+  <data name="STS_Trail_InitPwdSetting_Title" xml:space="preserve">
+    <value>&lt;span class="hightlight"&gt;{0}&lt;/span&gt;，您好。欢迎登录施耐德电气“云能效”管理平台！</value>
+  </data>
+  <data name="STS_UserName_UserHasBeenDeleted" xml:space="preserve">
+    <value>您的用户被删除了！请联系管理员。</value>
+  </data>
+  <data name="Customer_TB_DefaultBaseline" xml:space="preserve">
+    <value>基准值</value>
+  </data>
+  <data name="Customer_TB_DefaultTarget" xml:space="preserve">
+    <value>目标值</value>
+  </data>
+</root>

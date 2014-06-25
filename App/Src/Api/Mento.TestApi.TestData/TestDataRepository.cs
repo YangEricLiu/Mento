@@ -183,6 +183,12 @@ namespace Mento.TestApi.TestData
             {
                 string content = File.ReadAllText(fileName, Encoding.UTF8);
 
+                StreamWriter before = new StreamWriter("before.txt");
+                before.Write(content);
+                before.Flush();
+                before.Close();
+
+
                 //throw new Exception(LanguageResourceRepository.ResourceDictionary.Keys.First());
 
                 //replace happens here
@@ -193,6 +199,12 @@ namespace Mento.TestApi.TestData
                 //content = .ReplaceLanguageVariables(content);
 
                 content = LanguageHelper.ReplaceRawTestData(content);
+
+                StreamWriter after = new StreamWriter("after.txt");
+                after.Write(content);
+                after.Flush();
+                after.Close();
+
 
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(content);
             }
@@ -327,8 +339,8 @@ namespace Mento.TestApi.TestData
 
     public static class LanguageHelper
     {
-        private const string KEYFORMATSIMPLE = "\\$\\@(.+)\""; //$@common.message.test
-        private const string KEYFORMATPARAMETERED = "\\$\\@(.+)\\|(\\(.+\\),?)+"; //$@common.message.test|(a),(b),(c)
+        private const string KEYFORMATSIMPLE = "(\\$\\@([\\w\\.]+)(\\@\\$)?)"; //$@common.message.test
+        private const string KEYFORMATPARAMETERED = "\\$\\@([\\w\\.]+)\\|(\\(.+\\),?)+(\\@\\$)?"; //$@common.message.test|(a),(b),(c)
         private const string INRESOURCEKEY = @"##(\w|\.)+##"; //##Common.Glossary.Dashboard##
 
         public static string ReplaceRawTestData(string raw)
@@ -344,6 +356,11 @@ namespace Mento.TestApi.TestData
                 for (int i = 0; i < parameters.Length; i++)
                 {
                     string paramValue = parameters[i].Replace("(", "").Replace(")", "").Replace("\"", "\\\"");
+                    if (paramValue.Contains("$@"))
+                    {
+                        paramValue = ReplaceRawTestData(paramValue);
+                    }
+
                     value = Regex.Replace(value, @"\{" + i.ToString() + @"\}", paramValue);
                 }
 
@@ -354,7 +371,7 @@ namespace Mento.TestApi.TestData
 
             foreach (Match match in simpleMatches)
             {
-                string key = match.Groups[1].Value;
+                string key = match.Groups[2].Value;
                 string value = ResolveResourceValue(key); //process value if it contains recursive definitions
 
                 value = value.Replace("\"", "\\\"");
@@ -363,7 +380,7 @@ namespace Mento.TestApi.TestData
             }
 
             //throw new Exception(raw);
-            return raw;
+            return raw.Replace("@$", String.Empty);
         }
 
         private static MatchCollection MatchLanguageKeys(string raw,string regex)

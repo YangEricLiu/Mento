@@ -75,7 +75,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0]);
             TimeManager.MediumPause();
             CorporateRanking.CompareDataViewOfCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
@@ -122,7 +121,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
                 JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
                 TimeManager.MediumPause();
 
-                //Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
                 CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[i]);
                 TimeManager.MediumPause();
                 CorporateRanking.CompareDataViewOfCarbonUsage(input.ExpectedData.expectedFileName[i], input.InputData.failedFileName[i]);

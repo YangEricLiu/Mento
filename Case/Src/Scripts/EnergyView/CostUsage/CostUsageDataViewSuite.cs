@@ -72,7 +72,6 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Hour);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
@@ -117,7 +116,6 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             //Assert.IsTrue(CostUsage.IsDataViewDrawn());
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Hour);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
@@ -134,7 +132,6 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             //Assert.IsTrue(CostUsage.IsDataViewDrawn());
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Hour);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
@@ -150,7 +147,6 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             //Assert.IsTrue(CostUsage.IsDataViewDrawn());
-            Assert.IsFalse(CostUsage.IsNoDataInEnergyGrid());
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Hour);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);

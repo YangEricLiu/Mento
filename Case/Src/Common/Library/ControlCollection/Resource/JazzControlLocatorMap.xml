@@ -638,6 +638,9 @@
               <add key="TextFieldKPITargetBaselineOctoberCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='October']" type="XPath"/>
               <add key="TextFieldKPITargetBaselineNovemberCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='November']" type="XPath"/>
               <add key="TextFieldKPITargetBaselineDecemberCalculationValue" value="//div[@id='setting-region-east-body']//input[@type='text' and @name='December']" type="XPath"/>
+              <add key="TextFieldTargetName" value="//div[@id='setting-region-east-body']/div/div[contains(@id, 'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//input[@type='text' and @name='Name']" type="XPath"/>
+              <add key="TextFieldBaselineName" value="//div[@id='setting-region-east-body']/div/div[contains(@id, 'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//input[@type='text' and @name='Name']" type="XPath"/>
+
           </kpitagsettings>
           <areadimensionsettings>
               <add key="TextFieldAreaDimensionSettingsName" value="//div[@id='st-area-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>

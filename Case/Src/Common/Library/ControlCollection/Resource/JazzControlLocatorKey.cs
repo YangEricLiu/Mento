@@ -669,6 +669,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldKPITargetBaselineOctoberCalculationValue = "TextFieldKPITargetBaselineOctoberCalculationValue";
         public static string TextFieldKPITargetBaselineNovemberCalculationValue = "TextFieldKPITargetBaselineNovemberCalculationValue";
         public static string TextFieldKPITargetBaselineDecemberCalculationValue = "TextFieldKPITargetBaselineDecemberCalculationValue";
+
+        public static string TextFieldTargetName = "TextFieldTargetName";
+        public static string TextFieldBaselineName = "TextFieldBaselineName";
+
         #endregion
 
         #region areadimensionsettings

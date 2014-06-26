@@ -14,6 +14,7 @@ using Mento.ScriptCommon.TestData.Customer;
 using Mento.ScriptCommon.Library;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.ScriptCommon.TestData.EnergyView;
 
 namespace Mento.Script.Customer.TagManagement
 {
@@ -25,6 +26,9 @@ namespace Mento.Script.Customer.TagManagement
     {
         private static TagTargetBaselineSettings PVtagTargetBaselineSettings = JazzFunction.TagTargetBaselineSettings;
         private static PTagSettings PtagSettings = JazzFunction.PTagSettings;
+        private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
+        private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;
+        private static RatioPanel RadioPanel = JazzFunction.RatioPanel;
 
         [SetUp]
         public void CaseSetUp()
@@ -333,6 +337,336 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[0], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-6")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-6")]
+        public void ViewTargetBaselineNameForPtagOrVtagAndCheckInEnergy01(KPITargetBaselineData input)
+        {
+            //Select an exist Ptag.
+            PickupPtagOrVtag(input);
+
+            //Click 基准值.
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //."显示名称" display with an input box with default value is "基准值".
+            Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameValue());
+
+            //Input an valid name to input box again. and the name can be display correct.
+            PVtagTargetBaselineSettings.FillBaselineName(input.InputData.TargetBaselineName);
+            Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameValue());
+
+            //Navigate to 能源管理->单位指标->能耗，select the tag in step3,select time and click 查看数据 and 图表导出.
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.CheckTag(input.InputData.TagName);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
+
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            RadioPanel.NavigateToRatio();
+            TimeManager.MediumPause();
+
+            RadioPanel.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            RadioPanel.CheckTag(input.InputData.TagName);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
+
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-7")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-7")]
+        public void ViewTargetBaselineNameForPtagOrVtagAndCheckInEnergy02(KPITargetBaselineData input)
+        {
+            //Select an exist Ptag.
+            PickupPtagOrVtag(input);
+
+            //Click 基准值.
+            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //."显示名称" display with an input box with default value is "基准值".
+            Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetTargetNameValue());
+
+            //Input an valid name to input box again. and the name can be display correct.
+            PVtagTargetBaselineSettings.FillBaselineName(input.InputData.TargetBaselineName);
+            Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetTargetNameValue());
+
+            //Navigate to 能源管理->单位指标->能耗，select the tag in step3,select time and click 查看数据 and 图表导出.
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.CheckTag(input.InputData.TagName);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
+
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            RadioPanel.NavigateToRatio();
+            TimeManager.MediumPause();
+
+            RadioPanel.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            RadioPanel.CheckTag(input.InputData.TagName);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
+
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-8")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-8")]
+        public void ViewTargetBaselineNameAfterPaging(KPITargetBaselineData input)
+        {
+            //Select an exist Ptag.
+            PickupPtagOrVtag(input);
+
+            //Click 基准值.
+            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //.The name input box can be display well.
+            Assert.AreEqual(input.InputData.TargetBaselineName, PVtagTargetBaselineSettings.GetTargetNameValue());
+
+            //Select an another Ptag.
+            if (String.Equals(input.InputData.TagType, "Ptag"))
+            {
+                JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsP);
+                PVtagTargetBaselineSettings.FocusOnPTagByName(input.ExpectedData.TagName);
+                TimeManager.MediumPause();
+            }
+
+            if (String.Equals(input.InputData.TagType, "Vtag"))
+            {
+                JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+                PVtagTargetBaselineSettings.FocusOnVTagByName(input.ExpectedData.TagName);
+                TimeManager.MediumPause();
+            } 
+            TimeManager.MediumPause();
+
+            //.The name input box can be display well.
+            Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetTargetNameValue());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-9")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-9")]
+        public void CalculateAndReviseAfterTargetNameModified(KPITargetBaselineData input)
+        {
+            //Choose tag 
+            PickupPtagOrVtag(input);
+
+            //Click 基准值
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Select 2013, click 计算基准值.
+            PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            //Modify name and click blank area.
+            PVtagTargetBaselineSettings.FillBaselineName(input.InputData.TargetBaselineName);
+            Assert.AreEqual(input.InputData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameValue());
+
+            PVtagTargetBaselineSettings.ClickCalculateBaselineButton();
+            TimeManager.MediumPause();
+
+            //Click '修正计算值'(and saved), 
+            PVtagTargetBaselineSettings.ClickReviseButton();
+            TimeManager.ShortPause();
+
+            PVtagTargetBaselineSettings.FillInAnnualRevisedValue(input.InputData.AnnualRevisedValue);
+            PVtagTargetBaselineSettings.FillInFebruaryRevisedValue(input.InputData.FebruaryRevisedValue);
+
+            PVtagTargetBaselineSettings.ClickSaveButton();
+            TimeManager.MediumPause();
+
+            //Modify name and click blank area.
+            Assert.AreEqual(input.InputData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameValue());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-10")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-10")]
+        public void ModifyTargetBaselineNameForTagWithoutRule(KPITargetBaselineData input)
+        {
+            //Choose tag that is not config 计算规则.
+            PickupPtagOrVtag(input);
+
+            //Click 基准值/目标值.
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Modify target/baseline name and click blank area.
+            PVtagTargetBaselineSettings.FillBaselineName(input.InputData.TargetBaselineName);
+            Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameValue());
+
+            //Click 基准值/目标值.
+            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Modify target/baseline name and click blank area.
+            PVtagTargetBaselineSettings.FillTargetName(input.InputData.TargetBaselineName);
+            Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetTargetNameValue());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-11")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-10")]
+        public void ModifyTargetBaselineNameAfterCalculatedOrRevised(KPITargetBaselineData input)
+        {
+            //Choose tag 
+            PickupPtagOrVtag(input);
+
+            //Click 基准值
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Select 2013, click 计算基准值.
+            PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+
+            PVtagTargetBaselineSettings.ClickCalculateBaselineButton();
+            TimeManager.MediumPause();
+
+            //Modify name and click blank area.
+            PVtagTargetBaselineSettings.FillBaselineName(input.InputData.TargetBaselineName);
+            Assert.AreEqual(input.InputData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameValue());
+
+            //Click '修正计算值'(and saved), 
+            PVtagTargetBaselineSettings.ClickReviseButton();
+            TimeManager.ShortPause();
+
+            PVtagTargetBaselineSettings.FillInAnnualRevisedValue(input.InputData.AnnualRevisedValue);
+            PVtagTargetBaselineSettings.FillInFebruaryRevisedValue(input.InputData.FebruaryRevisedValue);
+
+            PVtagTargetBaselineSettings.ClickSaveButton();
+            TimeManager.MediumPause();
+
+            //Modify name and click blank area.
+            PVtagTargetBaselineSettings.FillBaselineName(input.ExpectedData.TargetBaselineName);
+            Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameValue());
         }
     }
 }

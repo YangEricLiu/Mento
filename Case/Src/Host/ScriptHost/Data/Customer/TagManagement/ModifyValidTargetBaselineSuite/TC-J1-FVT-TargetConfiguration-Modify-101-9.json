@@ -1,0 +1,32 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagType":"Ptag",
+			"TagName":"P_TB_CR_101_1",	
+			"TargetBaselineName":"P_TB_CR_101_1new2",
+			"AnnualRevisedValue":"10000",
+			"FebruaryRevisedValue":"4555",
+			"Year":"2013",
+		},
+		"ExpectedData":
+		{
+			"TargetBaselineName":"P_TB_CR_101_1new2",,	
+		}
+	},
+	{
+		"InputData":
+		{	
+			"TagType":"Vtag",
+			"TagName":"V_TB_CR_101_1",	
+			"TargetBaselineName":"V_TB_CR_101_1new2",
+			"AnnualRevisedValue":"10000",
+			"FebruaryRevisedValue":"4555",
+			"Year":"2013",
+		},
+		"ExpectedData":
+		{
+			"TargetBaselineName":"V_TB_CR_101_1new2",
+		}
+	}
+]

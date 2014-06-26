@@ -112,6 +112,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField KPITargetBaselineOctoberCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineOctoberCalculationValue);
         public static TextField KPITargetBaselineNovemberCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineNovemberCalculationValue);
         public static TextField KPITargetBaselineDecemberCalculationValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldKPITargetBaselineDecemberCalculationValue);
+
+        public static TextField TargetNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldTargetName);
+        public static TextField BaselineNameTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldBaselineName);
+
         #endregion
 
         #region Area dimension settings

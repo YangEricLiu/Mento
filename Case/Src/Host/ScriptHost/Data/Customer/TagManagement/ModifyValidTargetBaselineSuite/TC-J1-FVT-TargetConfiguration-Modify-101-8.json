@@ -1,0 +1,28 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagType":"Ptag",
+			"TagName":"P_Asso_001_1_1",	
+			"TargetBaselineName":"P_Asso_001_1_1",
+		},
+		"ExpectedData":
+		{
+			"TargetBaselineName":"P_TB_CR_101_8",
+			"TagName":"P_TB_CR_101_8",	
+		}
+	},
+	{
+		"InputData":
+		{	
+			"TagType":"Vtag",
+			"TagName":"V_Asso_001_3_1",	
+			"TargetBaselineName":"V_Asso_001_3_1",
+		},
+		"ExpectedData":
+		{
+			"TargetBaselineName":"V_TB_View_101_4",
+			"TagName":"V_TB_View_101_4",	
+		}
+	}
+]

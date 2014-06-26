@@ -239,5 +239,26 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(PVtagTargetBaselineSettings.IsNonworkdayRuleValueInvalid(1));
             Assert.IsTrue(PVtagTargetBaselineSettings.GetNonworkdayRuleValueInvalidMsg(1).Contains(input.ExpectedData.NonworkdayRuleValue[0]));
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-TargetConfiguration-Modify-001-4")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyInvalidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-001-4")]
+        public void ModifynamewithInvalidInfo(KPITargetBaselineData input)
+        {
+            //Select an exist Ptag
+            PickupPtagOrVtag(input);
+
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //make the input box empty.
+            PVtagTargetBaselineSettings.FillTargetName(input.InputData.TargetBaselineName);
+            PVtagTargetBaselineSettings.ClickViewCalculationRuleButton();
+            TimeManager.LongPause();
+
+            //The input box display with gray value of "基准值名称" to note user input the name and showing error message of "必填项".
+            Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameFieldInvalidMsg());
+        }
     }
 }

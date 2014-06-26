@@ -135,8 +135,6 @@
   <ItemGroup>
     <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffAddInvalidSuite\" />
     <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffModifyInvalidSuite\" />
-    <Folder Include="Data\Customer\TagManagement\SmokeTestFormulaVtagSmokeTestSuite\" />
-    <Folder Include="Data\Customer\TagManagement\SmokeTestKPIBaselineSuite\" />
     <Folder Include="Data\EnergyView\CostUsage\CorporateRanking\CommonCarbonRankingCalculationDataView\" />
     <Folder Include="Data\EnergyView\CostUsage\CorporateRanking\CommonConsumptionRankingCalculationDataView\" />
     <Folder Include="Data\EnergyView\CostUsage\CorporateRanking\CommonCostRankingCalculationDataView\" />
@@ -547,6 +545,7 @@
     <None Include="Data\Customer\TagManagement\ModifyInvalidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-001-3.json" />
     <None Include="Data\Customer\TagManagement\ModifyInvalidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-001-2.json" />
     <None Include="Data\Customer\TagManagement\ModifyInvalidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-001-1.json" />
+    <None Include="Data\Customer\TagManagement\ModifyInvalidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-001-4.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-101-1.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-101-0.json" />
     <None Include="Data\Customer\TagManagement\ModifyInvalidFormula\TC-J1-FVT-VtagFormulaConfiguration-Modify-001-1.json" />
@@ -571,6 +570,12 @@
     <None Include="Data\Customer\TagManagement\ModifyValidPtagSuite\TC-J1-FVT-PtagConfiguration-Modify-101-3.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidPtagSuite\TC-J1-FVT-PtagConfiguration-Modify-101-2.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidPtagSuite\TC-J1-FVT-PtagConfiguration-Modify-101-1.json" />
+    <None Include="Data\Customer\TagManagement\ModifyValidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-101-9.json" />
+    <None Include="Data\Customer\TagManagement\ModifyValidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-101-11.json" />
+    <None Include="Data\Customer\TagManagement\ModifyValidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-101-10.json" />
+    <None Include="Data\Customer\TagManagement\ModifyValidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-101-7.json" />
+    <None Include="Data\Customer\TagManagement\ModifyValidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-101-8.json" />
+    <None Include="Data\Customer\TagManagement\ModifyValidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-101-6.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-101-5.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-101-4.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-101-3.json" />

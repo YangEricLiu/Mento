@@ -80,6 +80,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Container TBNonworkdayRuleContainer = JazzContainer.TBNonworkdayRuleContainer;
         private static Container TBSpecialdayRuleContainer = JazzContainer.TBSpecialdayRuleContainer;
 
+        private static TextField TargetName = JazzTextField.TargetNameTextField;
+        private static TextField BaselineName = JazzTextField.BaselineNameTextField;
+
         #endregion
 
         #region common
@@ -143,7 +146,26 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             EffectiveYear.SelectItem(year);
         }
-               
+
+        /// <summary>
+        /// Fill target name
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void FillTargetName(string name)
+        {
+            TargetName.Fill(name);
+        }
+
+        /// <summary>
+        /// Fill baseline name
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void FillBaselineName(string name)
+        {
+            BaselineName.Fill(name);
+        }
 
         /// <summary>
         /// Click save button on target/baseline tab
@@ -585,6 +607,66 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsCreateCalculationRuleButtonDisplayed()
         {
             return CalculationRuleCreateButton.IsDisplayed();
+        }
+
+        /// <summary>
+        /// Get the value of target text field
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetTargetNameValue()
+        {
+            return TargetName.GetValue();
+        }
+
+        /// <summary>
+        /// Get the value of baseline text field
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetBaselineNameValue()
+        {
+            return BaselineName.GetValue();
+        }
+
+        /// <summary>
+        /// Judge if target text field invalid
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public bool IsTargetNameFieldInvalid()
+        {
+            return TargetName.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge if Baseline text field invalid
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public bool IsBaselineNameFieldInvalid()
+        {
+            return BaselineName.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Get target text field invalid message
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetTargetNameFieldInvalidMsg()
+        {
+            return TargetName.GetInvalidTips();
+        }
+
+        /// <summary>
+        /// Get Baseline text field invalid message
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetBaselineNameFieldInvalidMsg()
+        {
+            return BaselineName.GetInvalidTips();
         }
         #endregion
 

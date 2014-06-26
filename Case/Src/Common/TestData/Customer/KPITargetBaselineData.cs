@@ -40,6 +40,10 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string DecemberRevisedValue { get; set; }
         public string TagType { get; set; }
         public string TagName { get; set; }
+        public string TargetBaselineName { get; set; }
+        public string[] Hierarchies { get; set; }
+        public UnitIndicatorLegend[] UnitIndicatorLegend { get; set; }
+        public string[] failedFileName { get; set; }
     }
 
     public class KPITargetBaselineExpectedData : VtagOuputData
@@ -69,5 +73,17 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string[] SpecialdayRuleEndTime { get; set; }
         public string[] SpecialdayRuleValue { get; set; }
         public string[] CalculationErrorMessages { get; set; }
+        public string TargetBaselineName { get; set; }
+        public string[] expectedFileName { get; set; }
+        public string TagName { get; set; }
+    }
+
+    public class UnitIndicatorLegend
+    {
+        public string CaculationValue { get; set; }
+        public string OriginalValue { get; set; }
+        public string TargetValue { get; set; }
+        public string BaselineValue { get; set; }
+        public string BenchmarkValue { get; set; }
     }
 }

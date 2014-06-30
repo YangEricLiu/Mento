@@ -23,7 +23,8 @@ namespace Mento.Script.System.Example
         //}
 
         [CaseID("TC-J1-Example-002")]
-        [IllegalInputValidation(typeof(PtagData[]))]
+        //[IllegalInputValidation(typeof(PtagData[]))]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(IllegalTestSuite), "TC-J1-Example-002")]
         public void Example2(PtagData data)
         {
             //Assert.IsTrue(data.InputData.Comments == "正在进行多时间段对比，请删除该数据点后重新选取");

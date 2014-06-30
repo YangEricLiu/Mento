@@ -6,7 +6,7 @@
 			"Meter":"$@Customer_CEO",
 			"Channel":"1",
 			"Commodity":"$@Common.Commodity.Electric$@EM.Ratio.CaculateValue",
-			"Uom":"test",
+			"Uom":"$@I18N.EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$")",
 			"CalculationType":"“DayNight$@EM.DashboardSaved",
 			"Comments":"$@I18N.Setting.TargetBaseline.TargetWindowTitle|(aaa),(vvv),($@I18N.Setting.Hierarchy.Menu.CreateSite)",
 		},

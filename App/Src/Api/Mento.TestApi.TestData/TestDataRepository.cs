@@ -340,7 +340,7 @@ namespace Mento.TestApi.TestData
     public static class LanguageHelper
     {
         private const string KEYFORMATSIMPLE = "(\\$\\@([\\w\\.]+)(\\@\\$)?)"; //$@common.message.test
-        private const string KEYFORMATPARAMETERED = "\\$\\@([\\w\\.]+)\\|(\\(.+\\),?)+(\\@\\$)?"; //$@common.message.test|(a),(b),(c)
+        private const string KEYFORMATPARAMETERED = "\\$\\@([\\w\\.]+)\\|((\\([^)]+\\)|(\\(\\)))(,?))+(\\@\\$)?"; //$@common.message.test|(a),(b),(c)
         private const string INRESOURCEKEY = @"##(\w|\.)+##"; //##Common.Glossary.Dashboard##
 
         public static string ReplaceRawTestData(string raw)
@@ -352,7 +352,7 @@ namespace Mento.TestApi.TestData
                 string key = match.Groups[1].Value;
                 string value = ResolveResourceValue(key);
 
-                string[] parameters = match.Groups[2].Value.Split(',');
+                string[] parameters = match.Groups[0].Value.Split('|')[1].Split(',');
                 for (int i = 0; i < parameters.Length; i++)
                 {
                     string paramValue = parameters[i].Replace("(", "").Replace(")", "").Replace("\"", "\\\"");

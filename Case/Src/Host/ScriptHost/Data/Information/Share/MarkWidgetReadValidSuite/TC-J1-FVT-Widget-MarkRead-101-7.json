@@ -15,7 +15,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["分享小组件“Widget_MarkRead_101_7_A”成功。", "分享小组件“Widget_MarkRead_101_7_C”成功。", "分享小组件“Widget_MarkRead_101_7_E”成功。"],																		
+			"messages":["$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(Widget_MarkRead_101_7_A)", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(Widget_MarkRead_101_7_C)", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(Widget_MarkRead_101_7_E)"],																		
 		}
 	}
 ]

@@ -2,9 +2,9 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A","楼宇B","空调"],
-			"SystemDimensionPath":["楼宇B", "空调"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤", "$@Common.Commodity.Gas"],
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A","楼宇B","$@SystemDimensionTemplateItem_HVAC"],
+			"SystemDimensionPath":["楼宇B", "$@SystemDimensionTemplateItem_HVAC"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal", "$@Commodity_Gas"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-15",	

@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Petrol", "煤", "$@Common.Commodity.HeatQ", "$@Common.Commodity.Water", "$@Common.Commodity.CoolQ"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Petrol", "$@Commodity_Coal", "$@Commodity_HeatQ", "$@Commodity_Water", "$@Commodity_CoolQ"],
 			"CarbonType":"$@Common.CarbonUomType.StandardCoal",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -32,7 +32,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Petrol", "煤", "$@Common.Commodity.HeatQ", "$@Common.Commodity.Water", "$@Common.Commodity.CoolQ"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Petrol", "$@Commodity_Coal", "$@Commodity_HeatQ", "$@Commodity_Water", "$@Commodity_CoolQ"],
 			"CarbonType":"$@Common.CarbonUomType.CO2",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -61,7 +61,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Petrol", "煤", "$@Common.Commodity.HeatQ", "$@Common.Commodity.Water", "$@Common.Commodity.CoolQ"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Petrol", "$@Commodity_Coal", "$@Commodity_HeatQ", "$@Commodity_Water", "$@Commodity_CoolQ"],
 			"CarbonType":"$@Common.CarbonUomType.Tree",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",

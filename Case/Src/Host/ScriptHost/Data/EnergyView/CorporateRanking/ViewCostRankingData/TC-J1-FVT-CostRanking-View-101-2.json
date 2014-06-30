@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2","组织B","园区C","楼宇D"],["NancyCostCustomer2","组织A","园区A","楼宇B"]],
-			"commodityNames":["$@Common.Commodity.Electric","$@Common.Commodity.Water"],
+			"commodityNames":["$@Commodity_Electricity","$@Commodity_Water"],
 			"failedFileName":["F-CostRankingDataView002-1-Elec.xls"],
-			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","空调"],
+			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","$@SystemDimensionTemplateItem_HVAC"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-7-2",
 				"EndDate":"2012-8-3",	

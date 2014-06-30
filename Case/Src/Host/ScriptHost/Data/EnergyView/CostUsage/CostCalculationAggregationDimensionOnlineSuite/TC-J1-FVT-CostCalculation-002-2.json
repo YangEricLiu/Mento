@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
 			"AreaDimensionPath":["楼宇A", "一层"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
 			"DisplayStep":"Hour",
 			"ManualTimeRange":[{
 				"StartDate":"2012-6-25",
@@ -21,7 +21,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
 			"AreaDimensionPath":["楼宇B", "一层"],
 			"DisplayStep":"Hour",
 			"ManualTimeRange":[{
@@ -39,7 +39,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区B", "楼宇C"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
 			"AreaDimensionPath":["楼宇C", "一层"],
 			"DisplayStep":"Week",
 			"ManualTimeRange":[{
@@ -57,7 +57,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织B", "园区C", "楼宇D"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
 			"AreaDimensionPath":["楼宇D", "一层"],
 			"DisplayStep":"Month",
 			"ManualTimeRange":[{

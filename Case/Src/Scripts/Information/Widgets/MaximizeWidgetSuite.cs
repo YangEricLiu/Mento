@@ -423,7 +423,7 @@ namespace Mento.Script.Information.Widgets
             TimeManager.LongPause();
 
             //There is pop up warning message and no option step button display.
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             TimeManager.MediumPause();
             EnergyAnalysis.ClickGiveupButtonOnWindow();

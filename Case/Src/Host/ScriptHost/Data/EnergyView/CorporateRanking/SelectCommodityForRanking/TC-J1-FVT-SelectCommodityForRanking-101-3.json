@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2","组织A","园区B","楼宇C"],["NancyCostCustomer2","组织B","园区C","楼宇D"]],
-			"commodityNames":["$@EM.TotalCommodity","$@Common.Commodity.Electric","$@Common.Commodity.Water","煤"],
-			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","空调"],
+			"commodityNames":["$@EM.TotalCommodity","$@Commodity_Electricity","$@Commodity_Water","$@Commodity_Coal"],
+			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","$@SystemDimensionTemplateItem_HVAC"],
 		},
 		"ExpectedData":
 		{

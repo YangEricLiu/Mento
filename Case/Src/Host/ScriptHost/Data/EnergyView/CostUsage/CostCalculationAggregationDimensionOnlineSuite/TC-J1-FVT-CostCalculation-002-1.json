@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
-			"SystemDimensionPath":["楼宇A", "空调"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"SystemDimensionPath":["楼宇A", "$@SystemDimensionTemplateItem_HVAC"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
 			"DisplayStep":"Hour",
 			"ManualTimeRange":[{
 				"StartDate":"2012-6-25",
@@ -21,8 +21,8 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
-			"SystemDimensionPath":["楼宇B", "空调"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"SystemDimensionPath":["楼宇B", "$@SystemDimensionTemplateItem_HVAC"],
 			"DisplayStep":"Hour",
 			"ManualTimeRange":[{
 				"StartDate":"2012-6-25",
@@ -39,8 +39,8 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区B", "楼宇C"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
-			"SystemDimensionPath":["楼宇C", "空调"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"SystemDimensionPath":["楼宇C", "$@SystemDimensionTemplateItem_HVAC"],
 			"DisplayStep":"Day",
 			"ManualTimeRange":[{
 				"StartDate":"2012-7-4",
@@ -57,8 +57,8 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织B", "园区C", "楼宇D"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
-			"SystemDimensionPath":["楼宇D", "空调"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"SystemDimensionPath":["楼宇D", "$@SystemDimensionTemplateItem_HVAC"],
 			"DisplayStep":"Day",
 			"ManualTimeRange":[{
 				"StartDate":"2012-7-4",
@@ -75,8 +75,8 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
-			"SystemDimensionPath":["园区A", "空调"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"SystemDimensionPath":["园区A", "$@SystemDimensionTemplateItem_HVAC"],
 			"DisplayStep":"Hour",
 			"ManualTimeRange":[{
 				"StartDate":"2012-6-25",
@@ -93,8 +93,8 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
-			"SystemDimensionPath":["组织A", "空调"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"SystemDimensionPath":["组织A", "$@SystemDimensionTemplateItem_HVAC"],
 			"DisplayStep":"Hour",
 			"ManualTimeRange":[{
 				"StartDate":"2012-6-25",
@@ -111,8 +111,8 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
-			"SystemDimensionPath":["NancyCostCustomer2", "空调"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"SystemDimensionPath":["NancyCostCustomer2", "$@SystemDimensionTemplateItem_HVAC"],
 			"DisplayStep":"Hour",
 			"ManualTimeRange":[{
 				"StartDate":"2012-6-25",

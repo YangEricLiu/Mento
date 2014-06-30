@@ -20,7 +20,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["分享小组件“WidgetCopyAnnotation_101_5_1”成功。"],																																															
+			"messages":["$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(WidgetCopyAnnotation_101_5_1)"],																																															
 		}
 	}
 ]

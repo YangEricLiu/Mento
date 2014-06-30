@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":["NancyCostCustomer2","组织B", "园区C", "楼宇D"],
 			"AreaDimensionPath":["楼宇D", "一层"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
 			"DashboardInfo":{
 				"WigetName":"CostTOUElec1",
 				"HierarchyName":["NancyCostCustomer2","组织B", "园区C", "楼宇D"],

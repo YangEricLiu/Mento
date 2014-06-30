@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A","楼宇B"],
-			"SystemDimensionPath":["楼宇B", "空调"],
+			"SystemDimensionPath":["楼宇B", "$@SystemDimensionTemplateItem_HVAC"],
 			"TagNames":["BBV1KT", "BBV2KT", "BBV3KT","BBV4KT"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",

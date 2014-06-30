@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water", "$@Commodity_Coal"],
 			"CarbonType":"$@Common.CarbonUomType.StandardCoal",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -32,7 +32,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water", "$@Commodity_Coal"],
 			"CarbonType":"$@Common.CarbonUomType.CO2",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -61,7 +61,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water", "$@Commodity_Coal"],
 			"CarbonType":"$@Common.CarbonUomType.Tree",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",

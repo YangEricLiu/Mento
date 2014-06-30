@@ -19,7 +19,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["分享小组件“DS_Widget_101_3_A”成功。"],										
+			"messages":["$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(DS_Widget_101_3_A)"],										
 		}
 	}
 ]

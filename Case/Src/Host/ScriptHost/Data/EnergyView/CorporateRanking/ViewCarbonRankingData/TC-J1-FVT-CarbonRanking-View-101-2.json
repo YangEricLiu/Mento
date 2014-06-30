@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"]],
-			"commodityNames":["煤"],
+			"commodityNames":["$@Commodity_Coal"],
 			"failedFileName":["F-CarbonRankingDataView002-1-H-Elec.xls"],
 			"ManualTimeRange":[
 			{

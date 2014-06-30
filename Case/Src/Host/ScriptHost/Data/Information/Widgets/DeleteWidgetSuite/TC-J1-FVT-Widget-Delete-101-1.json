@@ -13,7 +13,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["删除小组件 “Widget_Delete_101_1_1” 吗？"],					
+			"messages":["$@Common.Label.ConfirmDelete|(Widget_Delete_101_1_1),($@Common.Glossary.Widget),()"],			
 		}
 	}
 ]

@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingNullTest"]],
-			"commodityNames":["$@Common.Commodity.Electric"],
+			"commodityNames":["$@Commodity_Electricity"],
 			"failedFileName":["F-CarbonRankingDataView005-1-Elec.xls","F-CarbonRankingDataView005-2-Elec.xls","F-CarbonRankingDataView005-3-Elec.xls","F-CarbonRankingDataView005-4-Elec.xls","F-CarbonRankingDataView005-5-Elec.xls","F-CarbonRankingDataView005-6-Elec.xls"],
-			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","空调"],
+			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","$@SystemDimensionTemplateItem_HVAC"],
 			"ManualTimeRange":[
 			{
 				"StartDate":"2013-1-1",

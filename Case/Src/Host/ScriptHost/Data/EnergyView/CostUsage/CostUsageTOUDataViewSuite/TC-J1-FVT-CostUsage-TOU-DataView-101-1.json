@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2","组织A", "园区A", "楼宇B"],
-			"commodityNames":["$@Common.Commodity.Electric"],
+			"commodityNames":["$@Commodity_Electricity"],
 			"failedFileName":["F-CostUsageTOUDataView-101-Day-电-0.xls"],
 		},
 		"ExpectedData":

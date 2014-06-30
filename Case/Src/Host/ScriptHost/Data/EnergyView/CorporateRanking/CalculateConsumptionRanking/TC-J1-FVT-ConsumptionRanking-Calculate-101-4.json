@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"]],
-			"commodityNames":["$@Common.Commodity.Water","煤"],
+			"commodityNames":["$@Commodity_Water","$@Commodity_Coal"],
 			"failedFileName":["F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-1-Water-Total-LastYear.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-2-Water-Total-ThisYear.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-3-Water-Total-LastMonth.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-4-Water-Total-ThisMonth.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-5-Water-Total-LastWeek.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-6-Water-Total-ThisWeek.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-7-Water-Total-Yestoday.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-8-Water-Total-Today.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-4-9-Water-Total-LastSevenDay.xls"],
 			"ManualTimeRange":[
 			{

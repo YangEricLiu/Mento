@@ -29,7 +29,7 @@
 		{
 			"ClearAllMessage":"$@EM.RUClearAll",
 			"StepMessage":["$@Message.M02407"],
-			"messages":["所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。", "所选数据点不支持\"按小时\"的步长显示，换个步长试试。"],
+			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.EM.UseWeek@$")", "$@EM.StepError|("$@EM.UseHour")"],
 		}
 	}
 ]

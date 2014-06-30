@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingDayNight"]],
-			"commodityNames":["$@Common.Commodity.Water"],
+			"commodityNames":["$@Commodity_Water"],
 			"failedFileName":["F-TC-J1-FVT-CarbonRanking-Calculate-101-7-1-Water.xls"],
 			"ManualTimeRange":[
 			{

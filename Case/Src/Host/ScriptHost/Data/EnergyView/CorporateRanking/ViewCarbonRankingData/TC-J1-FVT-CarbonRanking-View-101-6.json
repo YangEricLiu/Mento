@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"]],
-			"commodityNames":["$@Common.Commodity.Electric"],
+			"commodityNames":["$@Commodity_Electricity"],
 			"failedFileName":["F-CarbonRankingDataView006-1-Elec.xls"],
 			"ManualTimeRange":[
 			{

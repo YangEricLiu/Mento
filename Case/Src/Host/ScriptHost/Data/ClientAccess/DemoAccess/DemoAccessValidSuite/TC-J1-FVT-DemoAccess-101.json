@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-			"Email":"邮件已发送成功，请登录您的邮箱点击链接即可开始试用。",
+			"Email":"$@STS_Trail_EmailHasBeenSent",
 		}
 	}
 ]

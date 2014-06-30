@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingNoCalendarNoCost"],["NancyOtherCustomer3","NancyNoCalendarSite"], ["NancyOtherCustomer3", "NancyNoCalendarSite", "BuildingNoPeopleProperty"], ["NancyOtherCustomer3", "NancyNoCalendarSite", "BuildingDayNight"]],
-			"commodityNames":["$@Common.Commodity.Electric"],
+			"commodityNames":["$@Commodity_Electricity"],
 			"failedFileName":["F-TC-J1-FVT-ConsumptionRanking-View-101-5-1.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-5-2.xls","F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-3.xls","F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-4.xls","F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-5.xls","F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-6.xls","F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-7.xls","F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-8.xls","F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-9.xls","F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-10.xls","F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-11.xls","F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-12.xls","F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-13.xls", "F-TC-J1-FVT-ConsumptionRanking-View-Carbon-101-5-14.xls"],
-			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","空调"],
+			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","$@SystemDimensionTemplateItem_HVAC"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2012-12-31",	

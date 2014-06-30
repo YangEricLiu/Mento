@@ -15,7 +15,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["分享仪表盘“Dashboard_Share_001_2”失败，无法分享给这些人：ShareUserE。"],													
+			"messages":["$@HomePage.Message.ShareFail|($@Common.Glossary.Dashboard),(Dashboard_Share_001_2),($@Message.M05023_Sub1|(ShareUserE))"],													
 		}
 	}
 ]

@@ -14,7 +14,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["分享仪表盘“DM2”成功。", "分享仪表盘“DM2”成功。"],			
+			"messages":["$@HomePage.Message.ShareSuccess|($@Common.Glossary.Dashboard),(DM2)", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Dashboard),(DM2)"],			
 		}
 	}
 ]

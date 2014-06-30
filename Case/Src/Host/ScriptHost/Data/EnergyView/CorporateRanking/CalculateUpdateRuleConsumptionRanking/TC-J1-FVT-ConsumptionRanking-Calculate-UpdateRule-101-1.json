@@ -8,7 +8,7 @@
 				"StartDate":"2013-01-01",
 				"EndDate":"2013-01-06",					
 			}],
-			"commodityNames":["$@Common.Commodity.Electric"],
+			"commodityNames":["$@Commodity_Electricity"],
 		},
 		"ExpectedData":
 		{

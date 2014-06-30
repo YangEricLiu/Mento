@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
 			"AreaDimensionPath":["楼宇BC", "一层"],
-			"SystemDimensionPath":["楼宇BC", "空调"],
+			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
 			"TagNames":["V6_BuildingBC", "V1_BuildingBC", "V2_BuildingBC", "P1_BuildingBC", "V_Null_BuildingBC", "VEmpty_BuildingBC"],
 			"MoreTagNames":["V3_BuildingBC", "V4_BuildingBC", "V7_BuildingBC", "V10_BuildingBC", "V8_BuildingBC"],
 			"DashboardInfo":{

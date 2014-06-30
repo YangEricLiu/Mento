@@ -17,7 +17,7 @@
 		"ExpectedData":
 		{
 			"TooltipTexts":[["$@Setting.CustomerManagement.Label.Administrator", "010-99999999"]],
-			"messages":["分享仪表盘“Dashboard_Share_104_2”成功。"],													
+			"messages":["$@HomePage.Message.ShareSuccess|($@Common.Glossary.Dashboard),(Dashboard_Share_104_2)"],													
 		}
 	}
 ]

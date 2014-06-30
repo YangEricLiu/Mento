@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"]],
-			"commodityNames":["$@Common.Commodity.Electric","$@Common.Commodity.Water","煤"],
+			"commodityNames":["$@Commodity_Electricity","$@Commodity_Water","$@Commodity_Coal"],
 			"failedFileName":["F-TC-J1-FVT-ConsumptionRanking-Calculate-101-5-1-Coal-Total-LastYear.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-5-2-Coal-Total-ThisYear.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-5-3-Coal-Total-LastMonth.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-5-4-Coal-Total-ThisMonth.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-5-5-Coal-Total-LastWeek.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-5-6-Coal-Total-ThisWeek.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-5-7-Coal-Total-Yestoday.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-5-8-Coal-Total-Today.xls","F-TC-J1-FVT-ConsumptionRanking-Calculate-101-5-9-Coal-Total-LastSevenDay.xls"],
 			"ManualTimeRange":[
 			{

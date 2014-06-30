@@ -6,7 +6,7 @@
 			"CarbonTypeStandardCoal":"$@Common.CarbonUomType.StandardCoal",
 			"CarbonTypeCO2":"$@Common.CarbonUomType.CO2",
 			"CarbonTypeTree":"$@Common.CarbonUomType.Tree",
-			"commodityNames":["煤"],
+			"commodityNames":["$@Commodity_Coal"],
 		},
 		"ExpectedData":
 		{

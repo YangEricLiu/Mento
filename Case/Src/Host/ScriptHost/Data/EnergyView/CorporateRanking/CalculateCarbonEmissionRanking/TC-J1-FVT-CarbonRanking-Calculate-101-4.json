@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇A"]],
-			"commodityNames":["$@Common.Commodity.Electric","$@EM.TotalCommodity"],
+			"commodityNames":["$@Commodity_Electricity","$@EM.TotalCommodity"],
 			"failedFileName":["F-TC-J1-FVT-CarbonRanking-Calculate-101-4-1-Elec-TotalRank-Custom.xls","F-TC-J1-FVT-CarbonRanking-Calculate-101-4-2-Total-TotalRank-Custom.xls","F-TC-J1-FVT-CarbonRanking-Calculate-101-4-3-Total-TotalRank-Custom-Month.xls","F-TC-J1-FVT-CarbonRanking-Calculate-101-4-4-Total-AverageRank-Custom-Month.xls"],
 			"ManualTimeRange":[
 			{

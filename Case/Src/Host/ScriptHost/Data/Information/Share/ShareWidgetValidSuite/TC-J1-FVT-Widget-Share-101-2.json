@@ -36,7 +36,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["分享仪表盘“WidgetShare1012”成功。", "分享小组件“WidgetShare1012A”成功。", "分享小组件“WidgetShare1012B”成功。"]																																
+			"messages":["$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(WidgetShare1012)", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(WidgetShare1012A)", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(WidgetShare1012B)"]																																
 		}
 	}
 ]

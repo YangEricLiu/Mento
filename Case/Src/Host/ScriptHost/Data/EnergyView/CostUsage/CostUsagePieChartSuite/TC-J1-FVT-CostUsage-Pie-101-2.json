@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "园区测试多层级", "BuildingMultipleCommodities"], 
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "$@Common.Commodity.Gas", "软水", "$@Common.Commodity.Petrol", "$@Common.Commodity.LowPressureSteam", "$@Common.Commodity.DieselOil", "$@Common.Commodity.HeatQ", "$@Common.Commodity.CoolQ", "煤", "$@Common.Commodity.Kerosene"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water", "$@Commodity_Gas", "$@Commodity_SoftWater", "$@Commodity_Petrol", "$@Commodity_LowPressureSteam", "$@Commodity_DieselOil", "$@Commodity_HeatQ", "$@Commodity_CoolQ", "$@Commodity_Coal", "$@Commodity_CoalOil"],
 			"ManualTimeRange":[{
 				"StartDate":"2010-12-29",
 				"EndDate":"2011-02-20",	

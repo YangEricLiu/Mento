@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyOtherCustomer3", "园区能耗标识", "BuildingLabellingNull"], 
-			"commodityNames":["$@Common.Commodity.Electric"],
+			"commodityNames":["$@Commodity_Electricity"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-12-31",
 				"StartTime":"20:00",

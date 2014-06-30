@@ -15,7 +15,7 @@
 		},
 		"ExpectedData":
 		{
-			"DeleteMessages":["删除仪表盘 “Dashboard_Delete_101_1” 吗？"],
+			"DeleteMessages":["$@Common.Label.ConfirmDelete|(Dashboard_Delete_101_1),($@Common.Glossary.Dashboard),()"],
 			"DeleteCommonMessage":"$@HomePage.Label.ConfirmDeleteDashboard",
 			"NoFocusDashboardMessage":"$@HomePage.Label.DashboardMessage.HierarchyNodeNoDashboard",
 		}

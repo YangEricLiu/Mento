@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
 			"AreaDimensionPath":["楼宇BC", "一层"],
-			"SystemDimensionPath":["楼宇BC", "空调"],
+			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
 			"TagNames":["V2_BuildingBC", "V1_BuildingBC", "V11_BuildingBC", "V_Null_BuildingBC", "VEmpty_BuildingBC"],
 			"MultiHieTagNames":["V13_BuildingBC", "V14_BuildingBC", "V15_BuildingBC", "V6_BuildingBC", "V7_BuildingBC", "V8_BuildingBC"],
 			"failedFileName":["F-MultiHierarchyNodeDataView101-1-D-V2_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-V2V1_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-V11V2V1_BuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-9VBuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-10NullVBuildingBC.xls", "F-MultiHierarchyNodeDataView101-1-D-10VBuildingBC.xls"],

@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织B", "园区C"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇A"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"]],
-			"SystemDimensionPath":["系统维度", "空调"],
+			"SystemDimensionPath":["$@Common.Glossary.SystemDimension", "$@SystemDimensionTemplateItem_HVAC"],
 			"failedFileName":["F-ConsumptionRanking-Calculate-UpdateRule-101-3-0.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-3-1.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-3-2.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-3-3.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-3-4.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-07-30",
@@ -25,7 +25,7 @@
 				"StartDate":"2012-12-13",
 				"EndDate":"2014-03-01",						
 			}],
-			"commodityNames":["$@Common.Commodity.Electric"],
+			"commodityNames":["$@Commodity_Electricity"],
 		},
 		"ExpectedData":
 		{
@@ -36,7 +36,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A"], ["NancyCostCustomer2", "组织B", "园区C"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
-			"SystemDimensionPath":["系统维度", "空调"],
+			"SystemDimensionPath":["$@Common.Glossary.SystemDimension", "$@SystemDimensionTemplateItem_HVAC"],
 			"failedFileName":["F-ConsumptionRanking-Calculate-UpdateRule-101-4-0.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-4-1.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-4-2.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-4-3.xls", "F-ConsumptionRanking-Calculate-UpdateRule-101-4-4.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-07-30",
@@ -58,7 +58,7 @@
 				"StartDate":"2012-12-13",
 				"EndDate":"2014-03-01",						
 			}],
-			"commodityNames":["$@Common.Commodity.Electric"],
+			"commodityNames":["$@Commodity_Electricity"],
 		},
 		"ExpectedData":
 		{

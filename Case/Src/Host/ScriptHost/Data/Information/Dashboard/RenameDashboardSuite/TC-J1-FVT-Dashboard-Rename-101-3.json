@@ -14,7 +14,7 @@
 		},
 		"ExpectedData":
 		{
-			"newDashboardNames":["重命名仪表盘“Dashboard_Rename_101_1_E”失败，无法将名称改为“Dashboard_Rename_101_1_A”，该名称已存在", "$@Common.Label.MandatoryEmptyError", "$@Common.Label.MandatoryEmptyError", "$@Common.Label.NameRegexError", "$@Common.Label.NameRegexError"],
+			"newDashboardNames":["$@HomePage.Message.FailToRename|($@Common.Glossary.Dashboard),(Dashboard_Rename_101_1_E),(Dashboard_Rename_101_1_A),($@Common.Label.DuplicatedName)", "$@Common.Label.MandatoryEmptyError", "$@Common.Label.MandatoryEmptyError", "$@Common.Label.NameRegexError", "$@Common.Label.NameRegexError"],
 		}
 	}
 ]

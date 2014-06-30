@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
-			"SystemDimensionPaths":[["楼宇A", "特殊"], ],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"SystemDimensionPaths":[["楼宇A", "$@SystemDimensionTemplateItem_Special"], ],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-6-29",
 				"EndDate":"2012-7-4",	

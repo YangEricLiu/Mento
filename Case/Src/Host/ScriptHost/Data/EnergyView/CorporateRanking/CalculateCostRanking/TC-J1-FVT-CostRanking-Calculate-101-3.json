@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇A"]],
-			"commodityNames":["$@Common.Commodity.Electric","$@Common.Commodity.Water","煤","$@EM.TotalCommodity"],
+			"commodityNames":["$@Commodity_Electricity","$@Commodity_Water","$@Commodity_Coal","$@EM.TotalCommodity"],
 			"failedFileName":["F-TC-J1-FVT-CostRanking-Calculate-101-3-Elec-Custom.xls","F-TC-J1-FVT-CostRanking-Calculate-101-3-Water-Custom.xls","F-TC-J1-FVT-CostRanking-Calculate-101-3-Coal-Custom.xls","F-TC-J1-FVT-CostRanking-Calculate-101-3-Total-Custom.xls"],
 			"ManualTimeRange":[
 			{

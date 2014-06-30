@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
 			"OtherHierarchies":["NancyCostCustomer2", "组织A", "园区A"],
-			"commodityNames":["$@Common.Commodity.Electric", "煤", "$@Common.Commodity.Water"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Coal", "$@Commodity_Water"],
 			"TagNames":["BAV1Root", "BAV2Root", "BAV3Root"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-8-2",

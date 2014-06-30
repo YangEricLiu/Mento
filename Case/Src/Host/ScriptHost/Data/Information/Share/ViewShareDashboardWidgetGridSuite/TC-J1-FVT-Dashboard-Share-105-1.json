@@ -17,7 +17,7 @@
 		"ExpectedData":
 		{
 			"TooltipTexts":[["$@Setting.CustomerManagement.Label.Administrator", "010-99999999"]],
-			"messages":["以副本发送小组件"],																																
+			"messages":["$@Dashboard.SendCopyWindowTitle|($@Common.Glossary.Widget)"],																																
 		}
 	}
 ]

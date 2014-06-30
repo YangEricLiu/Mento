@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingConvertStandardUOM"],["NancyOtherCustomer3","NancyOtherSite","BuildingRanking50"]],
-			"commodityNames":["$@Common.Commodity.DieselOil","$@Common.Commodity.Electric"],
+			"commodityNames":["$@Commodity_DieselOil","$@Commodity_Electricity"],
 			"failedFileName":["F-CarbonRankingDataView004-1-Elec.xls","F-CarbonRankingDataView004-2-Elec.xls","F-CarbonRankingDataView004-3-Elec.xls","F-CarbonRankingDataView004-4-Elec.xls","F-CarbonRankingDataView004-5-Elec.xls","F-CarbonRankingDataView004-6-Elec.xls"],
-			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","空调"],
+			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","$@SystemDimensionTemplateItem_HVAC"],
 			"ManualTimeRange":[
 			{
 				"StartDate":"2013-1-1",

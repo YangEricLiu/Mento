@@ -28,7 +28,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["取消小组件 “WidgetCollaRenameDelete1015_1” 的共享吗？"],
+			"messages":["$@Common.Label.ConfirmCancelShare|(WidgetCollaRenameDelete1015_1),($@Common.Glossary.Widget)"], 
 		}
 	}
 ]

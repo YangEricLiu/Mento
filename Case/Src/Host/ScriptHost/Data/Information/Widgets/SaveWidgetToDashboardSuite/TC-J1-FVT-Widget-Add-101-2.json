@@ -53,7 +53,7 @@
 			"NoneWidgetMessage":"$@Common.Label.MandatoryEmptyError",
 			"WidgetMessage":["$@Common.Label.DuplicatedName"],
 			"DashboardMessage":["$@Message.M05016"],
-			"messages":["Widget_Add_101_2_13已保存", "Widget_Add_101_2_13已保存"],											
+			"messages":["Widget_Add_101_2_13$@EM.DashboardSaved", "Widget_Add_101_2_13$@EM.DashboardSaved"],											
 		}
 	}
 ]

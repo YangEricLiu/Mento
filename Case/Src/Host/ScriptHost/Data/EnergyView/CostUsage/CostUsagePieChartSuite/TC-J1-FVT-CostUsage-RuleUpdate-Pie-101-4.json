@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"], 
-			"commodityNames":["$@Common.Commodity.Electric"],
+			"commodityNames":["$@Commodity_Electricity"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-01-01",
 				"StartTime":"23:00",

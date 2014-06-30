@@ -28,7 +28,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["由ShareUserB共享"],					
+			"messages":["$@Dashboard.Label.ShareFrom@$ShareUserB$@Dashboard.Label.Share"],			
 		}
 	}
 ]

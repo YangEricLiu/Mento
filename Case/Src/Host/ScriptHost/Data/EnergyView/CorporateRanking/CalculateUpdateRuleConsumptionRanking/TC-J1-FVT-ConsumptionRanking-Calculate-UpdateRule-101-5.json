@@ -24,7 +24,7 @@
 				"StartDate":"2012-12-13",
 				"EndDate":"2014-03-01",						
 			}],
-			"commodityNames":["$@Common.Commodity.Electric"],
+			"commodityNames":["$@Commodity_Electricity"],
 		},
 		"ExpectedData":
 		{

@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
-			"commodityNames":["$@Common.Commodity.Electric", "$@Common.Commodity.Petrol", "煤", "$@Common.Commodity.CoolQ", "$@Common.Commodity.HeatQ", "$@Common.Commodity.Water"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Petrol", "$@Commodity_Coal", "$@Commodity_CoolQ", "$@Commodity_HeatQ", "$@Commodity_Water"],
 			"CarbonTypeStandardCoal":"$@Common.CarbonUomType.StandardCoal",
 			"CarbonTypeCO2":"$@Common.CarbonUomType.CO2",
 			"CarbonTypeTree":"$@Common.CarbonUomType.Tree",

@@ -14,6 +14,7 @@ I18N.Setting.TargetBaseline.DefaultBaseline = {};
 I18N.Setting.TagConfiguration = {};
 
 I18N.EM = {};
+I18N.EM.EnergyAnalyse = {};
 I18N.EM.CenterBar = {};
 I18N.EM.CenterBar.Button = {};
 I18N.EM.Hierarchy = {};
@@ -30,7 +31,7 @@ I18N.Dashboard.Label.Ranking = '集团排名 ';
 I18N.Dashboard.Label.ReachTarget = '达到目标值';
 I18N.Dashboard.Label.NotReachTarget = '未达目标值';
 I18N.Dashboard.Label.Keepconcerning = '请持续关注能耗变化。';
-I18N.Dashboard.Label.GoogleMapNotLoad = 'google地图不可用，请检查网络。';
+I18N.Dashboard.Label.GoogleMapNotLoad = '地图不可用，请检查网络。';
 I18N.Dashboard.Label.NoBuilding = '所选楼宇已被删除或者更改权限，请刷新后重试。';
 I18N.Dashboard.Label.BuildingList = '楼宇列表';
 I18N.Dashboard.Label.MoreInfo = '查看更多能耗信息 >';
@@ -108,8 +109,8 @@ I18N.DateTimeFormat.HighFormat.FullDateTime = '%Y年%m月%d日 %H点%M分%S秒';
 I18N.DateTimeFormat.HighFormat.FullDate = '%Y年%m月%d日';
 I18N.DateTimeFormat.HighFormat.FullYear = '全年';
 I18N.DateTimeFormat.IntervalFormat.Second = 'Y年m月d日 H点i分s秒';
-I18N.DateTimeFormat.IntervalFormat.Minute = 'Y年m月d日 H点i分';
-I18N.DateTimeFormat.IntervalFormat.FullMinute = 'H点i分';
+I18N.DateTimeFormat.IntervalFormat.FullMinute = 'Y年m月d日 H点i分';
+I18N.DateTimeFormat.IntervalFormat.Minute = 'H点i分';
 I18N.DateTimeFormat.IntervalFormat.FullHour = 'Y年m月d日H点';
 I18N.DateTimeFormat.IntervalFormat.Hour = 'H点';
 I18N.DateTimeFormat.IntervalFormat.FullDay = 'Y年m月d日';
@@ -488,6 +489,13 @@ I18N.Setting.DataFilter.Before = '之前';
 I18N.Setting.DataFilter.After = '之后';
 I18N.Setting.DataFilter.On = '当天';
 
+I18N.EM.EnergyAnalyse.AddIntervalWindow = {};
+I18N.EM.EnergyAnalyse.AddIntervalWindow.Title = '历史数据对比';
+I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePreviousComboLabel = '之前第';
+I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious7Day = '个7天';
+I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious30Day = '个30天';
+I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious12Month = '个12月';
+
 I18N.EM.ChooseFunctionMessage = '请从功能面板中选择功能以显示图表';
 I18N.EM.CenterBar.Button.DefaultDashboard = '默认';
 I18N.EM.CenterBar.Button.OtherDashboard = '其他';
@@ -718,7 +726,7 @@ I18N.Common.Per.Person = '/人';
 I18N.Common.Per.m2 = '/平方米';
 
 I18N.Common.Button.Share = '共享';
-I18N.Common.Button.PieChart = '饼状图';
+I18N.Common.Button.PieChart = '饼图';
 I18N.Common.Button.LineChart = '折线图';
 I18N.Common.Button.ColumnChart = '柱状图';
 I18N.Common.Button.GridView = '数据表';
@@ -807,6 +815,8 @@ I18N.Common.Label.OverValueError = '该输入项的最大值是 999999999。';
 I18N.Common.Label.UnspecifyCommodity = '不指定##Common.Glossary.Commodity##';
 
 I18N.Common.DateRange.Last7Day = '之前7天';
+I18N.Common.DateRange.Last30Day = '之前30天';
+I18N.Common.DateRange.Last12Month = '之前12月';
 I18N.Common.DateRange.Today = '今天';
 I18N.Common.DateRange.Yesterday = '昨天';
 I18N.Common.DateRange.ThisWeek = '本周';
@@ -817,6 +827,7 @@ I18N.Common.DateRange.ThisYear = '今年';
 I18N.Common.DateRange.LastYear = '去年';
 I18N.Common.DateRange.Customerize = '自定义';
 I18N.Common.DateRange.CustomerizeTime = '自定义时间';
+I18N.Common.DateRange.RelativedTime = '相对时间';
 
 I18N.Common.GraphType.Line = '折线图';
 I18N.Common.GraphType.Column = '柱状图';

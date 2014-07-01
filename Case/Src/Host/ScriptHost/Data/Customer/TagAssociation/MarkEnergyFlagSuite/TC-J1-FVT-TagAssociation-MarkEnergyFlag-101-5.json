@@ -9,7 +9,7 @@
 		},
 		"ExpectedData":
 		{
-			"TagNames":["Electricity","KWH"],
+			"TagNames":["$@Commodity_Electricity","$@Uom_KWH"],
 		}
 	}
 ]

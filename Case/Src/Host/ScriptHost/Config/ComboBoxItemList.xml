@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ItemList>  
   <!--Commodity-->
-  <!--<add key = "Other" value = "$@Data.Commodity.Other"/>-->
+  <!--<add key = "Other" value = "$@Data.Commodity.Other"/>
   <add key = "Electricity" value = "$@Data.Commodity.Electricity"/>
   <add key = "Water" value = "$@Data.Commodity.Water"/>
   <add key = "Gas" value = "$@Data.Commodity.Gas"/>
@@ -12,10 +12,10 @@
   <add key = "HeatQ" value = "$@Data.Commodity.HeatQ"/>
   <add key = "CoolQ" value = "$@Data.Commodity.CoolQ"/>
   <add key = "Coal" value = "$@Data.Commodity.Coal"/>
-  <add key = "CoalOil" value = "$@Data.Commodity.CoalOil"/>
+  <add key = "CoalOil" value = "$@Data.Commodity.CoalOil"/>-->
      
   <!--UOM-->
-  <add key = "KWH" value = "$@Data.Uom.KWH"/>
+  <!--<add key = "KWH" value = "$@Data.Uom.KWH"/>
   <add key = "KVARH" value = "$@Data.Uom.KVARH"/>
   <add key = "KVAH" value = "$@Data.Uom.KVAH"/>
   <add key = "KW" value = "$@Data.Uom.KW"/>
@@ -44,7 +44,7 @@
   <add key = "m3M2" value = "$@Data.Uom.m3M2"/>
   <add key = "kgPerson" value = "$@Data.Uom.kgPerson"/>
   <add key = "TPerson" value = "$@Data.Uom.TPerson"/>
-  <add key = "m3Person" value = "$@Data.Uom.m3Person"/>
+  <add key = "m3Person" value = "$@Data.Uom.m3Person"/>-->
 
   <!--CaculationStep-->
   <add key = "Hourly" value = "$@Common.AggregationStep.Hourly"/>
@@ -52,11 +52,10 @@
   <add key = "Monthly" value = "$@Common.AggregationStep.Monthly"/>
        
   <!--CaculationType-->
-  <add key = "Sum" value = "$@Common.Glossary.Sum"/>
-  <!--<add key = "Avg" value = "$@Common.Glossary.Avg"/>-->
-  <add key = "Avg" value = "平均值"/>
-  <add key = "Max" value = "$@Common.Glossary.Max"/>
-  <add key = "Min" value = "$@Common.Glossary.Min"/>
+  <add key = "Sum" value = "$@Common.CaculationType.Sum"/>
+  <add key = "Avg" value = "$@Common.CaculationType.Avg"/>
+  <add key = "Max" value = "$@Common.CaculationType.Max"/>
+  <add key = "Min" value = "$@Common.CaculationType.Min"/>
   
   <!--Hierarchy Type-->
   <add key = "Orgnization" value = "$@Common.Glossary.Organization"/>
@@ -64,18 +63,18 @@
   <add key = "Building" value = "$@Common.Glossary.Building"/>
 
   <!--Month Name-->
-  <add key = "$@1" value = "$@Data.MonthName.January"/>
-  <add key = "$@2" value = "$@Data.MonthName.February"/>
-  <add key = "$@3" value = "$@Data.MonthName.March"/>
-  <add key = "$@4" value = "$@Data.MonthName.April"/>
-  <add key = "$@5" value = "$@Data.MonthName.May"/>
-  <add key = "$@6" value = "$@Data.MonthName.June"/>
-  <add key = "$@7" value = "$@Data.MonthName.July"/>
-  <add key = "$@8" value = "$@Data.MonthName.August"/>
-  <add key = "$@9" value = "$@Data.MonthName.September"/>
-  <add key = "$@10" value = "$@Data.MonthName.October"/>
-  <add key = "$@11" value = "$@Data.MonthName.November"/>
-  <add key = "$@12" value = "$@Data.MonthName.December"/>
+  <add key = "$@1" value = "$@Common.Glossary.MonthName.January"/>
+  <add key = "$@2" value = "$@Common.Glossary.MonthName.February"/>
+  <add key = "$@3" value = "$@Common.Glossary.MonthName.March"/>
+  <add key = "$@4" value = "$@Common.Glossary.MonthName.April"/>
+  <add key = "$@5" value = "$@Common.Glossary.MonthName.May"/>
+  <add key = "$@6" value = "$@Common.Glossary.MonthName.June"/>
+  <add key = "$@7" value = "$@Common.Glossary.MonthName.July"/>
+  <add key = "$@8" value = "$@Common.Glossary.MonthName.August"/>
+  <add key = "$@9" value = "$@Common.Glossary.MonthName.September"/>
+  <add key = "$@10" value = "$@Common.Glossary.MonthName.October"/>
+  <add key = "$@11" value = "$@Common.Glossary.MonthName.November"/>
+  <add key = "$@12" value = "$@Common.Glossary.MonthName.December"/>
 
   <!--Default Time-->
   <add key = "Latest7Day" value = "$@Common.DateRange.Last7Day"/>

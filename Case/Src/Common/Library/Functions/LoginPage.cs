@@ -17,7 +17,7 @@ namespace Mento.ScriptCommon.Library.Functions
         internal LoginPage()
         {
         }
-        private static int WAITVERYLONGTIME = 240000;
+        private static int WAITVERYLONGTIME = 30000;
         private static Locator HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
         private static Locator OptionWindowLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.WindowLoginOption);
         private static ComboBox LoginCustomerOption = JazzComboBox.LoginCustomerOptionComboBox;

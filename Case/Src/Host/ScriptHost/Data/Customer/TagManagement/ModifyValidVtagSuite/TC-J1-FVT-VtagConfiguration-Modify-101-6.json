@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Uom":"KVARH",
+			"Uom":"$@Uom_KVARH",
 			"Message":"FirstFloor",
 
 		},
@@ -13,7 +13,7 @@
 			"CommonName":"VtagModify006",
 			"Code":"VtagModify006",
 			"SystemNodePath":["CheckModifyVtag"," 空调"],
-			"Uom":"KVARH",
+			"Uom":"$@Uom_KVARH",
 			"Message":"空调",
 		}
 	}

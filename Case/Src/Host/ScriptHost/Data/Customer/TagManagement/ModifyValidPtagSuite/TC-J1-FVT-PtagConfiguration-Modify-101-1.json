@@ -10,8 +10,8 @@
 			"Code":"PtagModifyNoChange001",
 			"Meter":"PtagModifyNoChange001",
 			"Channel":"1",
-			"Commodity":"Gas",
-			"Uom":"m3",
+			"Commodity":"$@Commodity_Gas",
+			"Uom":"$@Uom_m³",
 			"CalculationType":"Max",
 			"Comments":"nothing",
 		}

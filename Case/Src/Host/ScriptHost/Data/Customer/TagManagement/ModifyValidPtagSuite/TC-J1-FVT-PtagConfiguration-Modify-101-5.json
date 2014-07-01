@@ -7,8 +7,8 @@
 			"Code":"PtagForUomCommodity",
 			"Meter":"PtagForUomCommodity",
 			"Channel":"3",
-			"Commodity":"SoftWater",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_SoftWater",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
 		},
 		"ExpectedData":
@@ -18,8 +18,8 @@
 			"Code":"PtagForUomCommodity",
 			"Meter":"PtagForUomCommodity",
 			"Channel":"3",
-			"Commodity":"SoftWater",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_SoftWater",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
 		}
 	}

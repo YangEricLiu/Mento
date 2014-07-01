@@ -4,16 +4,16 @@
 	{
 		"InputData":
 		{	
-			"Commodity":"Electricity",
-			"Uom":"KWH",
+			"Commodity":"$@Commodity_Electricity",
+			"Uom":"$@Uom_KWH",
 			"CalculationType":"Sum",
 			"Step":"Hourly",
 			"Comment":"automation",
 		},
 		"ExpectedData":
 		{
-			"Commodity":"Electricity",
-			"Uom":"KWH",
+			"Commodity":"$@Commodity_Electricity",
+			"Uom":"$@Uom_KWH",
 			"CalculationType":"Sum",
 			"Step":"Hourly",
 		}
@@ -21,15 +21,15 @@
 	{
 		"InputData":
 		{
-			"Commodity":"Water",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_Water",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
 			"Step":"Daily",
 		},
 		"ExpectedData":
 		{
-			"Commodity":"Water",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_Water",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
 			"Step":"Daily",
 		}
@@ -37,15 +37,15 @@
 	{
 		"InputData":
 		{
-			"Commodity":"LowPressureSteam",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_LowPressureSteam",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
 			"Step":"Monthly",
 		},
 		"ExpectedData":
 		{
-			"Commodity":"LowPressureSteam",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_LowPressureSteam",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
 			"Step":"Monthly",
 		}
@@ -53,15 +53,15 @@
 	{
 		"InputData":
 		{
-			"Commodity":"HeatQ",
-			"Uom":"KWH",
+			"Commodity":"$@Commodity_HeatQ",
+			"Uom":"$@Uom_KWH",
 			"CalculationType":"Min",
 			"Step":"Hourly",
 		},
 		"ExpectedData":
 		{
-			"Commodity":"HeatQ",
-			"Uom":"KWH",
+			"Commodity":"$@Commodity_HeatQ",
+			"Uom":"$@Uom_KWH",
 			"CalculationType":"Min",
 			"Step":"Hourly",
 			"Comment":"automation",
@@ -70,15 +70,15 @@
 	{
 		"InputData":
 		{
-			"Commodity":"Water",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_Water",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
 			"Step":"Daily",
 		},
 		"ExpectedData":
 		{
-			"Commodity":"Water",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_Water",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
 			"Step":"Daily",
 		}

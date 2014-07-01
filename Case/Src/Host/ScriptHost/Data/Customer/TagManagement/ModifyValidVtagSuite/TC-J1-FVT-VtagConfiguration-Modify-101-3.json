@@ -3,14 +3,14 @@
 		"InputData":
 		{	
 			"CommonName":"VtagNameModified",
-			"Commodity":"Water",
-			"UOM":"m3",
+			"Commodity":"$@Commodity_Water",
+			"UOM":"$@Uom_m³",
 		},
 		"ExpectedData":
 		{
 			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","CheckModifyVtag"],
 			"CommonName":"VtagModify003",
-			"Commodity":"Electricity",
+			"Commodity":"$@Commodity_Electricity",
 		}
 	}
 ]

@@ -4,8 +4,8 @@
 		{	
 			"CommonName":"VtagModifyCancel123",
 			"Code":"VtagModifyCancel123",
-			"Commodity":"Coal",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_Coal",
+			"Uom":"$@Uom_Ton",
 			"Step":"Monthly",
 			"CalculationType":"Min",
 		},
@@ -13,8 +13,8 @@
 		{
 			"CommonName":"VtagForModifyInvalid",
 			"Code":"VtagForModifyInvalid",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
+			"Commodity":"$@Commodity_Electricity",
+			"Uom":"$@Uom_KWH",
 			"Step":"Hourly",
 			"CalculationType":"Sum",
 		}

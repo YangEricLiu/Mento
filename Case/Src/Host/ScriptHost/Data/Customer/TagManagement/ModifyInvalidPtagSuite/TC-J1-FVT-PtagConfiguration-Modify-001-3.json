@@ -3,8 +3,8 @@
 		"InputData":
 		{	
 			"OriginalName":"PtagElecKHW001",
-			"Commodity":"Water",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_Water",
+			"Uom":"$@Uom_Ton",
 		},
 		"ExpectedData":
 		{

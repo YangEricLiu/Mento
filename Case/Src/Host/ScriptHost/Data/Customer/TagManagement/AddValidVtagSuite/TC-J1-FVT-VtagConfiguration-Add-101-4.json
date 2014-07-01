@@ -4,8 +4,8 @@
 		{	
 			"CommonName":"VtagForCheckNotSameCode",
 			"Code":"VtagNotSameCode",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
+			"Commodity":"$@Commodity_Electricity",
+			"Uom":"$@Uom_KWH",
 			"Step":"Hourly",
 			"CalculationType":"Sum",
 		},

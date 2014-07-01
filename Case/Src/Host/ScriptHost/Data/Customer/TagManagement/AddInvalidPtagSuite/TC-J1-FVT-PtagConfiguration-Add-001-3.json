@@ -6,8 +6,8 @@
 			"Code":"PtagSameName001",
 			"Meter":"PtagSameName001",
 			"Channel":"6",
-			"Commodity":"Electricity",
-			"Uom":"KWH",
+			"Commodity":"$@Commodity_Electricity",
+			"Uom":"$@Uom_KWH",
 			"CalculationType":"Sum",
 		},
 		"ExpectedData":

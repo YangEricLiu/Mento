@@ -7,8 +7,8 @@
 			"Code":"PtagToEmptyComment_M",
 			"Meter":"PtagToEmptyComment_M",
 			"Channel":"2",
-			"Commodity":"Water",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_Water",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
 			"Comments":"",
 		},
@@ -18,8 +18,8 @@
 			"Code":"PtagToEmptyComment_M",
 			"Meter":"PtagToEmptyComment_M",
 			"Channel":"2",
-			"Commodity":"Water",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_Water",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
 		}
 	}

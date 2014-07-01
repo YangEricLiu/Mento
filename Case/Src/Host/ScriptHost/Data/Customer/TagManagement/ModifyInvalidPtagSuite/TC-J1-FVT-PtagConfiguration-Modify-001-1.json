@@ -7,8 +7,8 @@
 			"Code":"PtagModifyCancel123",
 			"Meter":"PtagModifyCancel123",
 			"Channel":"5",
-			"Commodity":"SoftWater",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_SoftWater",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Min",
 		},
 		"ExpectedData":
@@ -17,8 +17,8 @@
 			"Code":"PtagModifyCancel",
 			"Meter":"PtagModifyCancel",
 			"Channel":"32",
-			"Commodity":"Water",
-			"Uom":"Ton",
+			"Commodity":"$@Commodity_Water",
+			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
 		}
 	}

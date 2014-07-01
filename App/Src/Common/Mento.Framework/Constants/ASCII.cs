@@ -59,5 +59,7 @@ namespace Mento.Framework.Constants
         /// >
         /// </summary>
         public const char LARGERTHAN = '>';
+
+        public const char UNDERSCORE = '_';
     }
 }

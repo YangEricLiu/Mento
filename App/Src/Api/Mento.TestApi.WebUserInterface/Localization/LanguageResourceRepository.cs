@@ -194,6 +194,9 @@ namespace Mento.TestApi.WebUserInterface
                         string key = cursor.Key.ToString().Trim();
                         string value = cursor.Value.ToString().Trim();
 
+                        if (key.Contains(ASCII.SPACE))
+                            key = key.Replace(ASCII.SPACE, ASCII.UNDERSCORE);
+
                         if (!lineList.ContainsKey(key))
                         {
                             lineList.Add(key, value);

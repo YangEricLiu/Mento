@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
-			"Commodity":["$@Common.Commodity.Electric"],
-			"Industry":"严寒地区B区数据中心",
+			"Commodity":["$@Commodity_Electricity"],
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Data_Center",
 			"CarbonType":"$@Common.CarbonUomType.StandardCoal",
 			"ManualTimeRange":[{
 				"StartDate":"2012-8-25",
@@ -21,8 +21,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"]],
-			"Commodity":["$@Common.Commodity.Electric"],
-			"Industry":"严寒地区B区办公建筑",
+			"Commodity":["$@Commodity_Electricity"],
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Office_Building",
 			"CarbonType":"$@Common.CarbonUomType.CO2",
 			"ManualTimeRange":[{
 				"StartDate":"2012-8-25",

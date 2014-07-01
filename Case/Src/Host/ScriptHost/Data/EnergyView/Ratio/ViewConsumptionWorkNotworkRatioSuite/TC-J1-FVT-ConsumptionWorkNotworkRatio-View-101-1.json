@@ -5,10 +5,10 @@
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"]],
 			"tagNames":["WorkNotworkP"],
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"WorkNotworkP计算值",
-				"OriginalValue":"WorkNotworkP原始值",
-				"TargetValue":"WorkNotworkP目标值",
-				"BaselineValue":"WorkNotworkP基准值",
+				"CaculationValue":"WorkNotworkP$@EM.Ratio.CaculateValue",
+				"OriginalValue":"WorkNotworkP$@EM.Ratio.RawValue",
+				"TargetValue":"WorkNotworkP$@EM.Ratio.TargetValue",
+				"BaselineValue":"WorkNotworkP$@EM.Ratio.BaseValue",
 			}],
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
@@ -31,7 +31,7 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["ConsumptionWorkNotworkRatio-View-101-1-W-0.xls", "ConsumptionWorkNotworkRatio-View-101-1-M-1.xls", "ConsumptionWorkNotworkRatio-View-101-1-Y-2.xls"],
-			"messages":["所选数据点不支持\"按小时\",\"按天\"的步长显示，换个步长试试。"],
+			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$")"],
 		}
 	}
 ]

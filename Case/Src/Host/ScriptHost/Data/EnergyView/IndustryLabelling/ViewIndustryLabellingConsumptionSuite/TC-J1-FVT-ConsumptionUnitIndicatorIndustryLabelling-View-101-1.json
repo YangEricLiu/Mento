@@ -17,7 +17,7 @@
 		"ExpectedData":
 		{
 			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
-			"IndustryValue":"寒冷地区全行业",
+			"IndustryValue":"$@Zone_Cold_Region$@Industry_All_Industries",
 			"popupNotes":["$@EM.Labeling.NonBuilding", "$@Message.M02501", "$@EM.CompareTagsAreFull"],
 			"expectedFileName":["ConsumptionUnitIndicatorIndustryLabelling-View-101-1-0.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-1-1.xls"],
 		}

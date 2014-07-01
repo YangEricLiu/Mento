@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区B", "楼宇C"]],
-			"SystemDimensionPath":["楼宇C", "空调"],
-			"Commodity":["$@Common.Commodity.Electric"],
+			"SystemDimensionPath":["楼宇C", "$@SystemDimensionTemplateItem_HVAC"],
+			"Commodity":["$@Commodity_Electricity"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-11-26",
 				"EndDate":"2013-12-25",	
@@ -20,8 +20,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区B"]],
-			"Commodity":["$@Common.Commodity.Electric"],
-			"SystemDimensionPath":["园区B", "空调"],
+			"Commodity":["$@Commodity_Electricity"],
+			"SystemDimensionPath":["园区B", "$@SystemDimensionTemplateItem_HVAC"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-11-26",
 				"EndDate":"2013-12-25",	

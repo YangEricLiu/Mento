@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"]],
-			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"Commodity":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
 			"DashboardInfo":[{
 				"WigetName":"UnitCarbon1012_1",
 				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
@@ -26,18 +26,18 @@
 			"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
 			"expectedFileName":["CarbonUnitIndicator101-2-W-P-1.xls", "CarbonUnitIndicator101-2-W-P-2.xls", "CarbonUnitIndicator101-2-W-P-3.xls", "CarbonUnitIndicator101-2-W-P-4.xls"],
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"电计算值",
-				"OriginalValue":"电原始值",
+				"CaculationValue":"$@Commodity_Electricity$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Electricity$@EM.Ratio.RawValue",
 			},
 			{
-				"CaculationValue":"自来水计算值",
-				"OriginalValue":"自来水原始值",
+				"CaculationValue":"$@Commodity_Water$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Water$@EM.Ratio.RawValue",
 			},
 			{
-				"CaculationValue":"煤计算值",
-				"OriginalValue":"煤原始值",
+				"CaculationValue":"$@Commodity_Coal$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Coal$@EM.Ratio.RawValue",
 			}],
-			"messages":["所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。", "所选数据点不支持\"按小时\",\"按天\"的步长显示，换个步长试试。"],
+			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")", "$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$")"],
 		}
 	}
 ]

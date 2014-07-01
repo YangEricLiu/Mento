@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
 			"tagNames":["BBV1Root"],
-			"Industry":"严寒地区B区机房",
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Telecommunication_workshop",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-18",		
@@ -25,7 +25,7 @@
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
 			"tagNames":["BBV2Root"],
-			"Industry":"全部区域全行业",
+			"Industry":"$@Zone_All_Zones$@Industry_All_Industries",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-18",		

@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"], ["NancyCustomer1", "园区测试多层级", "BuildingMulCalculationType"]],
 			"tagNames":["DayNightP", "CalculationTypeMinIs0"],
-			"Industries":["严寒地区B区数据中心", "严寒地区B区全行业", "夏热冬暖地区商场"],
+			"Industries":["$@Zone_Extreme_Cold_Region_B$@Industry_Data_Center", "$@Zone_Extreme_Cold_Region_B$@Industry_All Industries", "$@Zone_Subtropical Region$@Industry_Mall"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-9-11",
 				"EndDate":"2013-4-21",	

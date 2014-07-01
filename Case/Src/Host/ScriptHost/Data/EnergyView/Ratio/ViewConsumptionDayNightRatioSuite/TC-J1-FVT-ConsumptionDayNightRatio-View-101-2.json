@@ -5,16 +5,16 @@
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingMultipleSteps"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNullTest"]],
 			"tagNames":["VH_SiteS1", "VD_SiteS1", "VM_SiteS1", "V11_BuildingBC", "WorkNotworkP", "NullTestTag1"],
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"VH_SiteS1计算值",
-				"OriginalValue":"VH_SiteS1原始值",
+				"CaculationValue":"VH_SiteS1$@EM.Ratio.CaculateValue",
+				"OriginalValue":"VH_SiteS1$@EM.Ratio.RawValue",
 			},
 			{
-				"CaculationValue":"VD_SiteS1计算值",
-				"OriginalValue":"VD_SiteS1原始值",
+				"CaculationValue":"VD_SiteS1$@EM.Ratio.CaculateValue",
+				"OriginalValue":"VD_SiteS1$@EM.Ratio.RawValue",
 			},
 	        {
-				"CaculationValue":"VM_SiteS1计算值",
-				"OriginalValue":"VM_SiteS1原始值",
+				"CaculationValue":"VM_SiteS1$@EM.Ratio.CaculateValue",
+				"OriginalValue":"VM_SiteS1$@EM.Ratio.RawValue",
 			}],
 			"ManualTimeRange":[
 			{

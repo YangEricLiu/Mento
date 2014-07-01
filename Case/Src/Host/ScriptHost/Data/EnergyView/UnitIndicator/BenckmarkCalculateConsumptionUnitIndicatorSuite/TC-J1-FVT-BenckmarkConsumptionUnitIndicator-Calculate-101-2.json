@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "楼宇BC"]],
 			"TagNames":["V1_BuildingBC"],
-			"Industry":"寒冷地区服装零售",
+			"Industry":"$@Zone_Cold_Region$@Industry_Clothing_retail",
 			"failedFileName":["F-BenckmarkConsumptionCalculate寒冷地区服装零售-101-2-0-H.xls", "F-BenckmarkConsumptionCalculate寒冷地区服装零售-101-2-1-D.xls", "F-BenckmarkConsumptionCalculate寒冷地区服装零售-101-2-2-W.xls", "F-BenckmarkConsumptionCalculate寒冷地区服装零售-101-2-3-Y.xls", "F-BenckmarkConsumptionCalculate寒冷地区服装零售-101-2-4-D.xls", "F-BenckmarkConsumptionCalculate寒冷地区服装零售-101-2-5-W.xls", "F-BenckmarkConsumptionCalculate寒冷地区服装零售-101-2-6-H.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-12-31",

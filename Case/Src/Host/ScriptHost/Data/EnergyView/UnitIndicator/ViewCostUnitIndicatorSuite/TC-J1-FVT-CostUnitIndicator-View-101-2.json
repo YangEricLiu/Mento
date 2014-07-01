@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
-			"SystemDimensionPath":["楼宇A", "空调"],
-			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"SystemDimensionPath":["楼宇A", "$@SystemDimensionTemplateItem_HVAC"],
+			"Commodity":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
 			"ManualTimeRange":[
 			{
 				"StartDate":"2012-7-1",
@@ -14,18 +14,18 @@
 		},
 		"ExpectedData":
 		{
-			"popupNotes":["对比数据点已选满"],
+			"popupNotes":["$@EM.CompareTagsAreFull"],
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"电计算值",
-				"OriginalValue":"电原始值",
+				"CaculationValue":"$@Commodity_Electricity$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Electricity$@EM.Ratio.RawValue",
 			},
 			{
-				"CaculationValue":"自来水计算值",
-				"OriginalValue":"自来水原始值",
+				"CaculationValue":"$@Commodity_Water$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Water$@EM.Ratio.RawValue",
 			},
 			{
-				"CaculationValue":"煤计算值",
-				"OriginalValue":"煤原始值",
+				"CaculationValue":"$@Commodity_Coal$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Coal$@EM.Ratio.RawValue",
 			}],
 		}
 	}

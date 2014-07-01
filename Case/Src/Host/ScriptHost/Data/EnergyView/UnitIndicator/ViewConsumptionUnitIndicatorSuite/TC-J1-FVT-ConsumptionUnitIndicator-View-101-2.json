@@ -3,13 +3,13 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "楼宇BC"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"]],
-			"SystemDimensionPath":["楼宇BC", "空调"],
+			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
 			"tagNames":["V1_BuildingBC", "V2_BuildingBC", "V11_BuildingBC"],
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"V1_BuildingBC计算值",
-				"OriginalValue":"V1_BuildingBC原始值",
-				"TargetValue":"V1_BuildingBC目标值",
-				"BaselineValue":"V1_BuildingBC基准值",
+				"CaculationValue":"V1_BuildingBC$@EM.Ratio.CaculateValue",
+				"OriginalValue":"V1_BuildingBC$@EM.Ratio.RawValue",
+				"TargetValue":"V1_BuildingBC$@EM.Ratio.TargetValue",
+				"BaselineValue":"V1_BuildingBC$@EM.Ratio.BaseValue",
 			}],
 			"ManualTimeRange":[{
 				"StartDate":"2012-7-1",
@@ -49,16 +49,16 @@
 			"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
 			"ClearAllMessage":"$@EM.RUClearAll",
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"V1_BuildingBC计算值",
-				"OriginalValue":"V1_BuildingBC原始值",
+				"CaculationValue":"V1_BuildingBC$@EM.Ratio.CaculateValue",
+				"OriginalValue":"V1_BuildingBC$@EM.Ratio.RawValue",
 			},
 			{
-				"CaculationValue":"V2_BuildingBC计算值",
-				"OriginalValue":"V2_BuildingBC原始值",
+				"CaculationValue":"V2_BuildingBC$@EM.Ratio.CaculateValue",
+				"OriginalValue":"V2_BuildingBC$@EM.Ratio.RawValue",
 			},
 			{
-				"CaculationValue":"V11_BuildingBC计算值",
-				"OriginalValue":"V11_BuildingBC原始值",
+				"CaculationValue":"V11_BuildingBC$@EM.Ratio.CaculateValue",
+				"OriginalValue":"V11_BuildingBC$@EM.Ratio.RawValue",
 			}],
 		}
 	}

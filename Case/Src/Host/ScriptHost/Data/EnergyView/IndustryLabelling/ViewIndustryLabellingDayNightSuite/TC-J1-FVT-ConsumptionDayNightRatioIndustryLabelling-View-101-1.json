@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
 			"TagNames":["DayNightP"],
 			"UnitTypeValue":"$@EM.DayNightRatio",
-			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "严寒地区B区数据中心"]],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Extreme_Cold_Region_B$@Industry_Data_Center"]],
 			"YearAndMonth":[{
 				"year":"2013",
 				"month":"$@DateTimeFormat.HighFormat.FullYear",

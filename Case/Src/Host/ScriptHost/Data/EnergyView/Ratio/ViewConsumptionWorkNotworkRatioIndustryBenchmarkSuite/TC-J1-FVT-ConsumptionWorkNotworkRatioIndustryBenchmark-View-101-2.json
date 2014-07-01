@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyCustomer1", "GreenieSite", "GreenieBuilding"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNullTest"]],
 			"tagNames":["P1_YearToDay", "V1_YearToDay", "V2_YearToDay", "V_GreeineBuilding_Ele", "WorkNotworkP", "NullTestTag1", "WorkNotworkPNotlighten"],
-			"Industries":["$@Setting.Benchmark.Label.None", "严寒地区B区办公建筑", "$@Setting.Benchmark.Label.None"],
+			"Industries":["$@Setting.Benchmark.Label.None", "$@Zone_Extreme_Cold_Region_B$@Industry_Office_Building", "$@Setting.Benchmark.Label.None"],
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-2-7",	
@@ -19,7 +19,7 @@
 		{
 			"expectedFileName":["ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-2-W-0.xls", "ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-2-W-1.xls", "ConsumptionWorkNotworkRatioIndustryBenchmark-View-101-1-W-2.xls"],
 			"popupNotes":["$@Message.M02602"],
-			"messages":["所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"],
+			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")"],
 		}
 	}
 ]

@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingPrecision"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingMissingData"]],
-			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water"],
+			"Commodity":["$@Commodity_Electricity", "$@Commodity_Water"],
 			"DashboardInfo":[{
 				"WigetName":"UnitCost1013",
 				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"],
@@ -23,7 +23,7 @@
 		"ExpectedData":
 		{
 			"popupNotes":["$@Message.M02501"],
-			"messages":["所选数据点不支持\"按小时\"的步长显示，换个步长试试。"],
+			"messages":["$@EM.StepError|("$@EM.UseHour")"],
 		}
 	}
 ]

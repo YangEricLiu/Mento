@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
 			"tagNames":["DayNightP"],
-			"Industry":"严寒地区B区数据中心",
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Data_Center",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-18",		
@@ -21,7 +21,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingWorkNonwork"]],
 			"tagNames":["WorkNotworkP"],
-			"Industry":"严寒地区B区办公建筑",
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Office_Building",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-18",		

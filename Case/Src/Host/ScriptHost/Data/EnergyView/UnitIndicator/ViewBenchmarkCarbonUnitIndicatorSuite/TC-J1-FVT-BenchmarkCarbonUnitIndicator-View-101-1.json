@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
-			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
-			"Industries":["严寒地区B区机房"],
+			"Commodity":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"Industries":["$@Zone_Extreme_Cold_Region_B$@Industry_Telecommunication_workshop"],
 			"ManualTimeRange":[
 			{
 				"StartDate":"2012-7-1",
@@ -41,16 +41,16 @@
 			"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
 			"expectedFileName":["BenchmarkCarbonUnitIndicator-View-101-1-0.xls", "BenchmarkCarbonUnitIndicator-View-101-1-1.xls", "BenchmarkCarbonUnitIndicator-View-101-1-2.xls", "BenchmarkCarbonUnitIndicator-View-101-1-3.xls", "BenchmarkCarbonUnitIndicator-View-101-1-4.xls", "BenchmarkCarbonUnitIndicator-View-101-1-5.xls", "BenchmarkCarbonUnitIndicator-View-101-1-6.xls"],
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"电计算值",
-				"OriginalValue":"电原始值",
+				"CaculationValue":"$@Commodity_Electricity$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Electricity$@EM.Ratio.RawValue",
 			},
 			{
-				"CaculationValue":"自来水计算值",
-				"OriginalValue":"自来水原始值",
+				"CaculationValue":"$@Commodity_Water$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Water$@EM.Ratio.RawValue",
 			},
 			{
-				"CaculationValue":"煤计算值",
-				"OriginalValue":"煤原始值",
+				"CaculationValue":"$@Commodity_Coal$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Coal$@EM.Ratio.RawValue",
 			}],
 		}
 	}

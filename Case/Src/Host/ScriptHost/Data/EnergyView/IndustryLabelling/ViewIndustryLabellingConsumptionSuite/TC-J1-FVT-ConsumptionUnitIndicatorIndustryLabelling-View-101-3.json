@@ -12,7 +12,7 @@
 				"TagsName":["NotStandardUOMkg"],
 			}],
 			"tagNames":["V2_YearToDay", "WorkNotworkPNotlighten", "WorkNotworkP"],
-			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬冷地区轨道交通"], ["$@Setting.Labeling.Label.IndustryLabeling", "严寒地区B区办公建筑"], ["$@Setting.Labeling.Label.IndustryLabeling", "温和地区超市"]],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Hot_Summer_and_Cold_Winter_Region$@Industry_Rail_Transit"], ["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Extreme_Cold_Region_B$@Industry_Office_Building"], ["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Temperate_Region$@Industry_Supermarket"]],
 			"YearAndMonth":[{
 				"year":"2014",
 				"month":"01",

@@ -3,12 +3,12 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
-			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
+			"Commodity":["$@Commodity_Electricity", "$@Commodity_Water", "$@Commodity_Coal"],
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"总览计算值",
-				"OriginalValue":"总览原始值",
-				"TargetValue":"总览目标值",
-				"BaselineValue":"总览基准值",
+				"CaculationValue":"$@EM.Total$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@EM.Total$@EM.Ratio.RawValue",
+				"TargetValue":"$@EM.Total$@EM.Ratio.TargetValue",
+				"BaselineValue":"$@EM.Total$@EM.Ratio.BaseValue",
 			}],
 			"ManualTimeRange":[
 			{
@@ -46,16 +46,16 @@
 			"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
 			"expectedFileName":["CarbonUnitIndicator101-1-W-P-1.xls", "CarbonUnitIndicator101-1-W-P-2.xls", "CarbonUnitIndicator101-1-W-P-3.xls", "CarbonUnitIndicator101-1-W-P-4.xls", "CarbonUnitIndicator101-1-W-P-5.xls", "CarbonUnitIndicator101-1-W-P-6.xls", "CarbonUnitIndicator101-1-W-P-7.xls", "CarbonUnitIndicator101-1-W-P-8.xls", "CarbonUnitIndicator101-1-W-P-9.xls", "CarbonUnitIndicator101-1-W-P-10.xls"],
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"电计算值",
-				"OriginalValue":"电原始值",
+				"CaculationValue":"$@Commodity_Electricity$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Electricity$@EM.Ratio.RawValue",
 			},
 			{
-				"CaculationValue":"自来水计算值",
-				"OriginalValue":"自来水原始值",
+				"CaculationValue":"$@Commodity_Water$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Water$@EM.Ratio.RawValue",
 			},
 			{
-				"CaculationValue":"煤计算值",
-				"OriginalValue":"煤原始值",
+				"CaculationValue":"$@Commodity_Coal$@EM.Ratio.CaculateValue",
+				"OriginalValue":"$@Commodity_Coal$@EM.Ratio.RawValue",
 			}],
 		}
 	}

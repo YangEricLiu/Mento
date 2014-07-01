@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingNoTag"]],
-			"Commodity":["煤", "$@Common.Commodity.Water", "$@Common.Commodity.Electric"],
+			"Commodity":["$@Commodity_Coal", "$@Commodity_Water", "$@Commodity_Electricity"],
 			"failedFileName":["F-CostUnitIndicator101-4-MPeople-CostToYear1.xls", "F-CostUnitIndicator101-4-MPeople-CostToYear2.xls"],
 			"DashboardInfo":[{
 				"WigetName":"UnitCost1013",
@@ -25,7 +25,7 @@
 		{
 			"popupNotes":["Message.M02501"],
 			"expectedFileName":["CostUnitIndicator101-4-MPeople-CostToYear1.xls", "CostUnitIndicator101-4-MPeople-CostToYear2.xls"],
-			"messages":["所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。", "所选数据点不支持\"按小时\"的步长显示，换个步长试试。", "所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。", "所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。"],
+			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")", "$@EM.StepError|("$@EM.UseHour@$")", "$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")", "$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")"],
 		}
 	}
 ]

@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
 			"tagNames":["DayNightP"],
-			"Industries":["严寒地区B区数据中心"],
+			"Industries":["$@Zone_Extreme_Cold_Region_B$@Industry_Data_Center"],
 			"ManualTimeRange":[{
 				"StartDate":"2013-7-1",
 				"EndDate":"2013-7-3",	
@@ -26,7 +26,7 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["ConsumptionDayNightRatioIndustryBenchmark-View-101-1-D-0.xls", "ConsumptionDayNightRatioIndustryBenchmark-View-101-1-W-1.xls", "ConsumptionDayNightRatioIndustryBenchmark-View-101-1-M-2.xls", "ConsumptionDayNightRatioIndustryBenchmark-View-101-1-Y-3.xls"],
-			"messages":["所选数据点不支持\"按小时\",\"按天\"的步长显示，换个步长试试。"],
+			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$")"],
 		}
 	}
 ]

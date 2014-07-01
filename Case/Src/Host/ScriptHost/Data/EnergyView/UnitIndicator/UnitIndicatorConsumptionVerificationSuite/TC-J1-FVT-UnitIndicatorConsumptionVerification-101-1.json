@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
 			"tagNames":["P1_YearToDay"],
-			"Industry":"夏热冬冷地区轨道交通",
+			"Industry":"$@Zone_Hot_Summer_and_Cold_Winter_Region$@Industry_Rail_Transit",
 			"UnitIndicatorType":"$@EM.Unit.UnitPopulation",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -26,7 +26,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
 			"tagNames":["P1_YearToDay"],
-			"Industry":"全部区域全行业",
+			"Industry":"$@Zone_All_Zones$@Industry_All_Industries",
 			"UnitIndicatorType":"$@EM.Unit.UnitArea",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -48,7 +48,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
 			"tagNames":["V1_YearToDay"],
-			"Industry":"夏热冬冷地区轨道交通",
+			"Industry":"$@Zone_Hot_Summer_and_Cold_Winter_Region$@Industry_Rail_Transit",
 			"UnitIndicatorType":"$@EM.Unit.UnitPopulation",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -70,7 +70,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
 			"tagNames":["V1_YearToDay"],
-			"Industry":"全部区域全行业",
+			"Industry":"$@Zone_All_Zones$@Industry_All_Industries",
 			"UnitIndicatorType":"$@EM.Unit.UnitArea",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -92,7 +92,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
 			"tagNames":["V2_YearToDay"],
-			"Industry":"夏热冬冷地区轨道交通",
+			"Industry":"$@Zone_Hot_Summer_and_Cold_Winter_Region$@Industry_Rail_Transit",
 			"UnitIndicatorType":"$@EM.Unit.UnitPopulation",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -114,7 +114,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
 			"tagNames":["V2_YearToDay"],
-			"Industry":"全部区域全行业",
+			"Industry":"$@Zone_All_Zones$@Industry_All_Industries",
 			"UnitIndicatorType":"$@EM.Unit.UnitArea",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",

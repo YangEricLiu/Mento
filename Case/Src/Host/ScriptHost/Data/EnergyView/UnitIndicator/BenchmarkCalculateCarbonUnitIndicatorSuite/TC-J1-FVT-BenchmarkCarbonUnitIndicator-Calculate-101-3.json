@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
-			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
-			"Industry":"夏热冬冷地区轨道交通",
+			"Commodity":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"Industry":"$@Zone_Hot_Summer_and_Cold_Winter_Region$@Industry_Rail_Transit",
 			"ManualTimeRange":[{
 				"StartDate":"2010-1-1",
 				"EndDate":"2013-12-5",	

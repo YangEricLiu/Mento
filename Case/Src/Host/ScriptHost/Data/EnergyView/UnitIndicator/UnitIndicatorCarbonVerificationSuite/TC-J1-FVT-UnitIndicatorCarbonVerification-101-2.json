@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
-			"Commodity":["$@Common.Commodity.Electric"],
-			"Industry":"严寒地区B区机房",
+			"Commodity":["$@Commodity_Electricity"],
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Telecommunication_workshop",
 			"CarbonType":"$@Common.CarbonUomType.StandardCoal",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -25,8 +25,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
-			"Commodity":["$@Common.Commodity.Water"],
-			"Industry":"严寒地区B区机房",
+			"Commodity":["$@Commodity_Water"],
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Telecommunication_workshop",
 			"CarbonType":"$@Common.CarbonUomType.CO2",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -47,8 +47,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
-			"Commodity":["煤"],
-			"Industry":"严寒地区B区机房",
+			"Commodity":["$@Commodity_Coal"],
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Telecommunication_workshop",
 			"CarbonType":"$@Common.CarbonUomType.Tree",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",

@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
-			"SystemDimensionPath":["楼宇A", "空调"],
-			"Commodity":["$@Common.Commodity.Electric", "$@Common.Commodity.Water", "煤"],
-			"Industry":"严寒地区B区通讯营业厅",
+			"SystemDimensionPath":["楼宇A", "$@SystemDimensionTemplateItem_HVAC"],
+			"Commodity":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Telecommunication_business_hall",
 			"ManualTimeRange":[{
 				"StartDate":"2012-7-29",
 				"EndDate":"2012-8-4",	

@@ -5,10 +5,10 @@
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"]],
 			"tagNames":["DayNightP"],
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"DayNightP计算值",
-				"OriginalValue":"DayNightP原始值",
-				"TargetValue":"DayNightP目标值",
-				"BaselineValue":"DayNightP基准值",
+				"CaculationValue":"DayNightP$@EM.Ratio.CaculateValue",
+				"OriginalValue":"DayNightP$@EM.Ratio.RawValue",
+				"TargetValue":"DayNightP$@EM.Ratio.TargetValue",
+				"BaselineValue":"DayNightP$@EM.Ratio.BaseValue",
 			}],
 			"ManualTimeRange":[{
 				"StartDate":"2013-7-1",

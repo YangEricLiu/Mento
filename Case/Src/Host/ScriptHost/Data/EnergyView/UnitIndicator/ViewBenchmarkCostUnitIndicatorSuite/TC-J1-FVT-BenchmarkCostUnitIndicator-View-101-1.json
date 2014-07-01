@@ -3,15 +3,15 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇B"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"], ["NancyCostCustomer2"], ["NancyCostCustomer2", "空调"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
-			"SystemDimensionPath":["楼宇D", "空调"],
+			"SystemDimensionPath":["楼宇D", "$@SystemDimensionTemplateItem_HVAC"],
 			"AreaDimensionPath":["楼宇D", "一层"],
-			"Commodity":["$@Common.Commodity.Electric"],
-			"Industries":["严寒地区B区机房"],
+			"Commodity":["$@Commodity_Electricity"],
+			"Industries":["$@Zone_Extreme_Cold_Region_B$@Industry_Telecommunication_workshop"],
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"V1_BuildingBC计算值",
-				"OriginalValue":"V1_BuildingBC原始值",
-				"TargetValue":"V1_BuildingBC目标值",
-				"BaselineValue":"V1_BuildingBC基准值",
+				"CaculationValue":"V1_BuildingBC$@EM.Ratio.CaculateValue",
+				"OriginalValue":"V1_BuildingBC$@EM.Ratio.RawValue",
+				"TargetValue":"V1_BuildingBC$@EM.Ratio.TargetValue",
+				"BaselineValue":"V1_BuildingBC$@EM.Ratio.BaseValue",
 			}],
 			"ManualTimeRange":[{
 				"StartDate":"2013-7-1",

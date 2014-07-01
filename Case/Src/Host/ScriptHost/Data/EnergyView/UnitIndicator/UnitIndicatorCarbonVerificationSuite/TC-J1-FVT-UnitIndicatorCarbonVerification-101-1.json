@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
-			"Commodity":["煤"],
-			"Industry":"夏热冬冷地区轨道交通",
+			"Commodity":["$@Commodity_Coal"],
+			"Industry":"$@Zone_Hot_Summer_and_Cold_Winter_Region$@Industry_Rail_Transit",
 			"CarbonType":"$@Common.CarbonUomType.StandardCoal",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
@@ -21,9 +21,9 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
-			"Commodity":["煤"],
-			"Industry":"夏热冬冷地区轨道交通",
-			"CarbonType":$@Common.CarbonUomType.CO2",
+			"Commodity":["$@Commodity_Coal"],
+			"Industry":"$@Zone_Hot_Summer_and_Cold_Winter_Region$@Industry_Rail_Transit",
+			"CarbonType":"$@Common.CarbonUomType.CO2",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
 				"EndDate":"2013-12-5",	
@@ -39,8 +39,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingCostYearToDay"]],
-			"Commodity":["煤"],
-			"Industry":"夏热冬冷地区轨道交通",
+			"Commodity":["$@Commodity_Coal"],
+			"Industry":"$@Zone_Hot_Summer_and_Cold_Winter_Region$@Industry_Rail_Transit",
 			"CarbonType":"$@Common.CarbonUomType.Tree",
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",

@@ -271,21 +271,6 @@ namespace Mento.ScriptCommon.Library.Functions
                 return true;
         }
 
-        /// <summary>
-        /// Judge whether the pop message correct
-        /// </summary>
-        /// <param name="output">TOUBasicTariffExpectedData</param>
-        /// <returns>whether the invalid message is ture</returns>
-        public Boolean IsPopMsgCorrect(WorktimeCalendarExpectedData output)
-        {
-            if (output.PopMessage != null)
-            {
-                return GetMessageText().Contains(output.PopMessage);
-            }
-            else
-                return true;
-        }
-
         #endregion
         
         #region Get value

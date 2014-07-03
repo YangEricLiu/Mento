@@ -137,13 +137,16 @@ namespace Mento.Script.Administration.TimeManagement
             TimeManager.ShortPause();
             TimeSettingsWorkday.ClickDeleteButton();
 
+            //Verify that the message 'Are your sure to delete it?' is displayed on message box.
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(testData.ExpectedData.PopMessage[0]));
+
             //Click 'Delete' button to confirm the deletion.
             TimeManager.ShortPause();
             TimeSettingsWorkday.ClickMsgBoxDeleteButton();
             TimeManager.LongPause();
 
             //Verify that error message like "Calendar has been used and can't be deleted" pops up.
-            Assert.IsTrue(TimeSettingsWorkday.IsPopMsgCorrect(testData.ExpectedData));
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(testData.ExpectedData.PopMessage[1]));
             TimeManager.ShortPause();
 
             //Click 'OK' button to close the deletion failed message box.

@@ -28,9 +28,9 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string CommonName { get; set; }
         public TimeRange[] TimeRange { get; set; }
         public string[] LabelText { get; set; }
-        public string PopMessage { get; set; }
+        public string[] PopMessage { get; set; }
 
-        public WorktimeCalendarExpectedData(string CommonName, TimeRange[] TimeRange, string[] labelText, string PopMessage)
+        public WorktimeCalendarExpectedData(string CommonName, TimeRange[] TimeRange, string[] labelText, string[] PopMessage)
         {
             this.CommonName = CommonName;
             this.TimeRange = TimeRange;

@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-		    "PopMessage":"日历已被引用，不可删除。",
+		    "PopMessage":["删除 “冷暖季被层级引用ForDeleteFailed” 吗？", "日历已被引用，不可删除。"],
 		}		
 	}
 ]

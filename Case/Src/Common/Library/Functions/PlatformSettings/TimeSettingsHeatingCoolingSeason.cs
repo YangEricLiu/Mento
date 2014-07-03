@@ -309,20 +309,6 @@ namespace Mento.ScriptCommon.Library.Functions
                 return true;
         }              
 
-        /// <summary>
-        /// Judge whether the pop message correct
-        /// </summary>
-        /// <param name="output">TOUBasicTariffExpectedData</param>
-        /// <returns>whether the invalid message is ture</returns>
-        public Boolean IsPopMsgCorrect(HeatingCoolingSeasonCalendarExpectedData output)
-        {
-            if (output.PopMessage != null)
-            {
-                return GetMessageText().Contains(output.PopMessage);
-            }
-            else
-                return true;
-        }
 
         /// <summary>
         /// Judge whether the label text '采暖季与供冷季之间不能少于7天，且不能存在于同一月份。' is displayed correct

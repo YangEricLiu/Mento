@@ -6,6 +6,7 @@
 		},
 		"ExpectedData":
 		{
+			"Message":["删除 “FunctionRoleTypeA” 吗？"],
 			"CommonName":"FunctionRoleTypeA",
 		}
 	},

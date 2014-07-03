@@ -40,9 +40,9 @@ namespace Mento.ScriptCommon.TestData.Administration
         public TimeRange[] PeakRange { get; set; }
         public TimeRange[] ValleyRange { get; set; }
         public string[] LabelText { get; set; }
-        public string PopMessage { get; set; }
+        public string[] PopMessage { get; set; }
 
-        public TOUBasicTariffExpectedData(string CommonName, string PlainPrice, string PeakPrice, string ValleyPrice, TimeRange[] PeakRange, TimeRange[] ValleyRange, string[] labelText, string PopMessage)
+        public TOUBasicTariffExpectedData(string CommonName, string PlainPrice, string PeakPrice, string ValleyPrice, TimeRange[] PeakRange, TimeRange[] ValleyRange, string[] labelText, string[] PopMessage)
         {
             this.CommonName = CommonName;
             this.PlainPrice = PlainPrice;

@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-		    "PopMessage":"价格策略已被引用，不可删除",
+		    "PopMessage":["删除 “价格已被引用ForDeleteFailed” 吗？", "价格策略已被引用，不可删除"],
 		}		
 	}
 ]

@@ -195,6 +195,7 @@
     <None Include="Data\Administration\IndustryLabeling\LabelingAddValidSuite\TC-J1-FVT-IndustrylabelingSetting-Add-101.json" />
     <None Include="Data\Administration\IndustryLabeling\LabelingAddInvalidSuite\TC-J1-FVT-IndustrylabelingSetting-Add-002.json" />
     <None Include="Data\Administration\IndustryLabeling\LabelingAddInvalidSuite\TC-J1-FVT-IndustryLabelingSetting-Add-001.json" />
+    <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonModifySuite\TC-J1-FVT-TimeManagementHCSeason-Modify-003.json" />
     <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonModifySuite\TC-J1-FVT-TimeManagementHCSeason-Modify-001.json" />
     <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonModifySuite\TC-J1-FVT-TimeManagementHCSeason-Modify-002.json" />
     <None Include="Data\Administration\TimeManagement\HeatingCoolingSeasonModifySuite\TC-J1-FVT-TimeManagementHCSeason-Modify-101.json" />

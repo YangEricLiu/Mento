@@ -51,17 +51,23 @@ namespace Mento.Script.Administration.User
             TimeManager.ShortPause();
             //Delete the role type
             RoleTypeSettings.ClickDeleteButton();
-            JazzMessageBox.MessageBox.Cancel();
+            //Verify that the message 'Are your sure to delete the role type?' is displayed on message box.
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.Message[0]));
+            //Click GiveUp button to cancel the deletion.
+            JazzMessageBox.MessageBox.GiveUp();
             TimeManager.ShortPause();
-            //Verify whether role type exist
+            //Verify the role type not deleted and still exists
             RoleTypeSettings.FocusOnUserType(input.InputData.CommonName);
             Assert.IsTrue(RoleTypeSettings.IsRoleTypeOnListByName(input.InputData.CommonName));
-            // Delete the role type 
+            // Delete the role type again
             RoleTypeSettings.ClickDeleteButton();
+            //Verify that the message 'Are your sure to delete the role type?' is displayed on message box.
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.Message[0]));
+            //Click Delete button to confirm the deletion.
             JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
-
+            //Verify the role type is deleted successfully and not exists
             Assert.IsFalse(RoleTypeSettings.IsRoleTypeOnListByName(input.InputData.CommonName));
         }
         
@@ -76,11 +82,17 @@ namespace Mento.Script.Administration.User
             TimeManager.ShortPause();
             //Delete the role type
             RoleTypeSettings.ClickDeleteButton();
+            //Verify that the message 'Are your sure to delete the role type?' is displayed on message box.
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.Message[0]));
+            //Click Delete button to confirm the deletion.
             JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
-
+            //Verify that the message 'The role type has been used and can't be deleted.' is displayed on message box.            
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.Message[1]));
+            //Close the message box.
             JazzMessageBox.MessageBox.Close();
+            //Verify the role type not deleted and still exists
             Assert.IsTrue(RoleTypeSettings.IsRoleTypeOnListByName(input.InputData.CommonName));
         }  
     }

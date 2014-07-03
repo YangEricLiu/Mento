@@ -374,20 +374,20 @@ namespace Mento.ScriptCommon.Library.Functions
             return TOU24HoursErrorTips.GetContainerErrorTips().Contains(output);
         }
 
-        /// <summary>
-        /// Judge whether the pop message correct
-        /// </summary>
-        /// <param name="output">TOUBasicTariffExpectedData</param>
-        /// <returns>whether the invalid message is ture</returns>
-        public Boolean IsPopMsgCorrect(TOUBasicTariffExpectedData output)
-        {
-            if (output.PopMessage != null)
-            {
-                return GetMessageText().Contains(output.PopMessage);
-            }
-            else
-                return true;
-        }
+        ///// <summary>
+        ///// Judge whether the pop message correct
+        ///// </summary>
+        ///// <param name="output">TOUBasicTariffExpectedData</param>
+        ///// <returns>whether the invalid message is ture</returns>
+        //public Boolean IsPopMsgCorrect(TOUBasicTariffExpectedData output)
+        //{
+        //    if (output.PopMessage != null)
+        //    {
+        //        return GetMessageText().Contains(output.PopMessage);
+        //    }
+        //    else
+        //        return true;
+        //}
 
         /// <summary>
         /// Judge whether the label text '若设置平时电价，平时电价将充满峰时电价和谷时电价未覆盖的时间段。' is displayed correct

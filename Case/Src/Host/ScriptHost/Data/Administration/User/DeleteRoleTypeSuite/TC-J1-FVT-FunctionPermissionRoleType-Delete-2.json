@@ -6,6 +6,7 @@
 		},
 		"ExpectedData":
 		{
+			"Message":["删除 “RoleTypeUsed” 吗？", "角色已绑定用户，无法删除。"],
 			"CommonName":"RoleTypeUsed",
 		}
 	},

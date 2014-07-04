@@ -30,6 +30,24 @@
 				"StartDate":"2013-7-1",
 				"EndDate":"2013-7-1",	
 			}],
+			"DashboardInfo":[{
+				"WigetName":"DayNightRatioView1011_1",
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"DayNightRatioView1011",
+			},
+			{
+				"WigetName":"DayNightRatioView1011_2",
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"DayNightRatioView1011",
+			},
+			{
+				"WigetName":"DayNightRatioView1011_3",
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"DayNightRatioView1011",
+			}],
 		    "failedFileName":["F-ConsumptionDayNightRatio-View-101-1-D-0.xls", "F-ConsumptionDayNightRatio-View-101-1-W-1.xls", "F-ConsumptionDayNightRatio-View-101-1-M-2.xls", "F-ConsumptionDayNightRatio-View-101-1-Y-3.xls", "F-ConsumptionDayNightRatio-View-101-1-D-4.xls"],
 		},
 		"ExpectedData":

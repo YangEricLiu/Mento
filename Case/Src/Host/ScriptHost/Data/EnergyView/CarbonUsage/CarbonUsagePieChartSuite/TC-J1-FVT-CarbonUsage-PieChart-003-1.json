@@ -34,6 +34,36 @@
 				"EndDate":"2014-03-01",	
 				"EndTime":"04:00",
 			}],
+			"DashboardInfo":[{
+				"WigetName":"CarbonPieChart0031_1",
+				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"CarbonWidgetHomeDistributionchart",
+			},
+			{
+				"WigetName":"CarbonPieChart0031_2",
+				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CarbonWidgetHomeDistributionchart",
+			},
+			{
+				"WigetName":"CarbonPieChart0031_3",
+				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CarbonWidgetHomeDistributionchart",
+			},
+			{
+				"WigetName":"CarbonPieChart0031_4",
+				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CarbonWidgetHomeDistributionchart",
+			},
+			{
+				"WigetName":"CarbonPieChart0031_5",
+				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CarbonWidgetHomeDistributionchart",
+			}],
 			"failedFileName":["F-CarbonUsage-Pie-003-1-0.xls", "F-CarbonUsage-Pie-003-1-1.xls", "F-CarbonUsage-Pie-003-1-2.xls", "F-CarbonUsage-Pie-003-1-3.xls", "F-CarbonUsage-Pie-003-1-4.xls"],
 		},
 		"ExpectedData":

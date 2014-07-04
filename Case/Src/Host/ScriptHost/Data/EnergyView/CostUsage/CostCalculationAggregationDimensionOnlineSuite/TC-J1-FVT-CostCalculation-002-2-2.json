@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"AreaDimensionPaths":[["楼宇A", "二层"], ["楼宇A", "一层", "一层A区"], ["楼宇A", "三层", "三层A区"]],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-6-29",
+				"EndDate":"2012-7-4",	
+			}],
+			"failedFileName":["F-CostCalculation-002-2-2-0.xls", "F-CostCalculation-002-2-2-1.xls", "F-CostCalculation-002-2-2-2.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-2-2-0.xls", "CostCalculation-002-2-2-1.xls", "CostCalculation-002-2-2-2.xls"],
+		}
+	}
+]

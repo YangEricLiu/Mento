@@ -202,7 +202,34 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.LongPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[1]));
             JazzMessageBox.MessageBox.OK();
-            
+
+            //Make sure 楼宇B defined 工作日 calendar.
+            //Select a tag under 楼宇B to display trend chart. 
+            //Select time range is 1 month when calendar of 工作日 is defined. Go to 峰谷展示. Select 显示日历 from 更多.
+            string[] hierarhcyPath2 = { "NancyCostCustomer2", "组织A", "园区A", "楼宇B" };
+            CostUsage.SelectHierarchy(hierarhcyPath2);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.MediumPause();
+            CostUsage.SelectCommodity();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SetDateRange(new DateTime(2014, 6, 1), new DateTime(2014, 6, 30));
+            EnergyViewToolbar.SetTimeRange("00:00", "24:00");
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ShowCalendarNonWorkday);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ShowCalendarHeatCool);
+            TimeManager.MediumPause();
+
             //On homepage, check the dashboard
             CostUsage.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);

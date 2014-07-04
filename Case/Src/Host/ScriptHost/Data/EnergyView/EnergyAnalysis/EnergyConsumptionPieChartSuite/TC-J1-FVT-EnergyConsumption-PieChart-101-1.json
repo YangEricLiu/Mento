@@ -153,6 +153,24 @@
 				"EndDate":"2014-03-01",					
 				"EndTime":"04:00",	
 			}],
+			"DashboardInfos":[{
+				"WigetName":"MultiHierarchyPie1011_1",
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"MultiHierarchyPie1011",
+			},
+			{
+				"WigetName":"MultiHierarchyPie1011_2",
+				"HierarchyName":[""NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"MultiHierarchyPie1011",
+			},
+			{
+				"WigetName":"MultiHierarchyPie1011_3",
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"MultiHierarchyPie1011",
+			}],
 		},
 		"ExpectedData":
 		{

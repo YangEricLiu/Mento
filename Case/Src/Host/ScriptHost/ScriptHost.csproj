@@ -658,6 +658,7 @@
     <None Include="Data\EnergyView\CorporateRanking\ViewCostRankingData\TC-J1-FVT-CostRanking-View-101-6.json" />
     <None Include="Data\EnergyView\CostUsage\AdditionalCostUsageDataVerificationSuite\TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101-1.json" />
     <None Include="Data\EnergyView\CostUsage\AdditionalCostUsageDataVerificationSuite\TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101-2.json" />
+    <None Include="Data\EnergyView\CostUsage\CostCalculationAggregationDimensionOnlineSuite\TC-J1-FVT-CostCalculation-002-2-2.json" />
     <None Include="Data\EnergyView\CostUsage\CostCalculationAggregationDimensionOnlineSuite\TC-J1-FVT-CostCalculation-002-1-2.json" />
     <None Include="Data\EnergyView\CostUsage\CostCalculationAggregationDimensionOnlineSuite\TC-J1-FVT-CostCalculation-002-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostCalculationAggregationDimensionOnlineSuite\TC-J1-FVT-CostCalculation-002-2.json" />

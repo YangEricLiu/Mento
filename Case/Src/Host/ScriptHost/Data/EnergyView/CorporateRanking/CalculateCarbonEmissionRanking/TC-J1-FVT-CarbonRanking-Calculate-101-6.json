@@ -4,11 +4,11 @@
 		{
 			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇B"]],
 			"commodityNames":["$@Commodity_Gas"],
-			"failedFileName":["F-TC-J1-FVT-CarbonRanking-Calculate-101-6-1-Gas-AverageRank-Custom.xls"],
+			"failedFileName":["F-TC-J1-FVT-CarbonRanking-Calculate-101-6-1-Gas-AverageRank.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["TC-J1-FVT-CarbonRanking-Calculate-101-6-1-Gas-AverageRank-Custom.xls"],
+			"expectedFileName":["TC-J1-FVT-CarbonRanking-Calculate-101-6-1-Gas-AverageRank.xls"],
 		}
 	}
 ]

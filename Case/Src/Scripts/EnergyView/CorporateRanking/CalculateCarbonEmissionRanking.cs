@@ -454,55 +454,45 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
         }
 
-        /*
+        
         #region CalcGasCarbonRankingData
         [Test]
         [CaseID("TC-J1-FVT-CarbonRanking-Calculate-101-6")]
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateCarbonEmissionRanking), "TC-J1-FVT-CarbonRanking-Calculate-101-6")]
         public void CalcGasCarbonRankingData(CorporateRankingData input)
         {
-            //1.Select the NancyCostCustomer2->园区A from Hierarchy Tree.
+            //Select NancyCostCustomer2-> 楼宇B. click 确定
+            
             JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
             CorporateRanking.NavigateToCorporateRanking();
             TimeManager.MediumPause();
-            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies);
+            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[0]);
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            //Click Function Type button, select Cost, then go to 介质单项.
-            EnergyViewToolbar.ClickFuncModeConvertTarget();
+            ////Select 介质- 天然气
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //time range is last year.
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisYear);
-
-            //Select Commodity=电 to display trend chart; Optional step=week; Unit=单位人口.
+            //Select '人均排名', time range is last year.
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
-            EnergyViewToolbar.ClickRankTypeConvertTarget();
             EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.AverageRank);
-
-            EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0]);
             TimeManager.MediumPause();
             CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
         }
 
         #endregion
-        */
+        
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonRanking-Calculate-101-7")]

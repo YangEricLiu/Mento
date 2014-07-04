@@ -106,5 +106,6 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
+
     }
 }

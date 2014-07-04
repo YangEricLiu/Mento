@@ -18,6 +18,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public string[] AreaDimensionPath { get; set; }
 
+        public string[][] AreaDimensionPaths { get; set; }
+
         public string[] SystemDimensionPath { get; set; }
 
         public string[][] SystemDimensionPaths { get; set; }
@@ -31,6 +33,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public DefaultTimeRange? DefaultTimeRange { get; set; }
 
         public DashboardInformation DashboardInfo { get; set; }
+
+        public DashboardInformation[] DashboardInfos { get; set; }
 
         public ManualTimeRange[] ManualTimeRange { get; set; }
 

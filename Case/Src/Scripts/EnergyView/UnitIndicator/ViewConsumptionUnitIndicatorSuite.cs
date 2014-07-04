@@ -141,6 +141,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.ShortPause();
 
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+            Assert.AreEqual("2012-01-01", EnergyViewToolbar.GetStartDate());
+            Assert.AreEqual("2012-03-01", EnergyViewToolbar.GetEndDate());
 
             //Select the BuildingBC from Hierarchy Tree.time range="去年". Select multiple tag V（1）+V(2) +V(3) to display trend chart view
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);

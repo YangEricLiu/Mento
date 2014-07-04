@@ -82,6 +82,11 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
+            //Save to dashboard
+            var dashboard = input.InputData.DashboardInfos;
+            EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            TimeManager.MediumPause();
+
             //Change Hierarchy list to 组织A, then go to 空调 System Dimension.
             CostUsage.SelectHierarchy(input.InputData.HierarchiesArray[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -123,6 +128,9 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
+            EnergyViewToolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            TimeManager.MediumPause();
+
             //Change Hierarchy list to 楼宇A, then go to 一层 Area Dimension.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -163,6 +171,11 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[5], input.InputData.AreaDimensionPath);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
+
+            EnergyViewToolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            TimeManager.MediumPause();
+
+
         }
 
         [Test]

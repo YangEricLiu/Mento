@@ -3,17 +3,17 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
-			"SystemDimensionPaths":[["楼宇A", "$@SystemDimensionTemplateItem_Special"], ],
+			"SystemDimensionPaths":[["楼宇A", "$@SystemDimensionTemplateItem_Special"], ["楼宇A", "$@SystemDimensionTemplateItem_HVAC", "$@SystemDimensionTemplateItem_CoolingHeatingSource"], ["楼宇A", "$@SystemDimensionTemplateItem_KeySystem"], ["楼宇A", "$@SystemDimensionTemplateItem_KeySystem", "$@SystemDimensionTemplateItem_Server"]],
 			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-6-29",
 				"EndDate":"2012-7-4",	
 			}],
-			"failedFileName":["F-CostCalculation-002-1-楼宇A-H-0.xls", "F-CostCalculation-002-1-楼宇A-Total-1.xls"],
+			"failedFileName":["F-CostCalculation-002-1-2-0.xls", "F-CostCalculation-002-1-2-1.xls", "F-CostCalculation-002-1-2-2.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["CostCalculation-002-1-楼宇A-H-0.xls", "CostCalculation-002-1-楼宇A-Total-1.xls"],
+			"expectedFileName":["CostCalculation-002-1-2-0.xls", "CostCalculation-002-1-2-1.xls", "CostCalculation-002-1-2-2.xls"],
 		}
 	}
 ]

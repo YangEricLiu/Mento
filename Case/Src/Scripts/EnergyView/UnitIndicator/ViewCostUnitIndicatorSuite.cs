@@ -625,10 +625,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
 
-            //Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(4, UnitKPIPanel.GetTrendChartLinesMarkers());
-
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -656,7 +652,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-
 
             //·2011 year can't display chart since that 单位人口 start from 2011/11=100
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
@@ -706,7 +701,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.LongPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
             Assert.AreEqual(3, UnitKPIPanel.GetTrendChartLines());
             Assert.AreEqual(6, UnitKPIPanel.GetTrendChartLinesMarkers());
         }

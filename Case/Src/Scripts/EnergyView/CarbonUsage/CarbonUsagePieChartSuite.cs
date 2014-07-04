@@ -63,6 +63,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //Set date range A. 2012/07/30 01:00 to 2012/08/01 23:00.
             var ManualTimeRange = input.InputData.ManualTimeRange;
+            var dashboard = input.InputData.DashboardInfo;
 
             for (int i = 0; i < ManualTimeRange.Length; i++)
             {
@@ -79,6 +80,9 @@ namespace Mento.Script.EnergyView.CarbonUsage
                 CarbonUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i]);
                 TimeManager.MediumPause();
                 CarbonUsage.CompareDictionaryDataOfCarbonUsage(input.ExpectedData.expectedFileName[i], input.InputData.failedFileName[i]);
+
+                EnergyViewToolbar.SaveToDashboard(dashboard[i].WigetName, dashboard[i].HierarchyName, dashboard[i].IsCreateDashboard, dashboard[i].DashboardName);
+                TimeManager.LongPause();
             }
         }
 

@@ -87,6 +87,15 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public bool IsNoSingleCommodity()
+        {
+            TotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            return CommodityGrid.IsNoRowOnGrid();
+        }
+
         public void SelectCommodity(string[] commodityNames)
         {
             //total

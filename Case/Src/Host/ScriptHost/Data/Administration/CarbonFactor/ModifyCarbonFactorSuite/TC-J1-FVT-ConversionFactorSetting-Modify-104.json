@@ -4,7 +4,7 @@
 	{
 		"InputData":
 		{	
-			"FactorSource":"自来水(吨)",			
+			"FactorSource":"$@Commodity_Water@$($@Uom_Ton@$)",			
 		},
 		"ExpectedData":
 		{
@@ -13,7 +13,7 @@
 	{
 		"InputData":
 		{	
-			"FactorSource":"自来水(吨)",			
+			"FactorSource":"$@Commodity_Water@$($@Uom_Ton@$)",			
 		},
 		"ExpectedData":
 		{
@@ -22,7 +22,7 @@
 	{
 		"InputData":
 		{		
-			"FactorSource":"自来水(吨)",		
+			"FactorSource":"$@Commodity_Water@$($@Uom_Ton@$)",		
 		},
 		"ExpectedData":
 		{
@@ -31,7 +31,7 @@
 	{
 		"InputData":
 		{	
-			"FactorSource":"自来水(吨)",			
+			"FactorSource":"$@Commodity_Water@$($@Uom_Ton@$)",			
 		},
 		"ExpectedData":
 		{
@@ -40,7 +40,7 @@
 	{
 		"InputData":
 		{	
-			"FactorSource":"自来水(吨)",			
+			"FactorSource":"$@Commodity_Water@$($@Uom_Ton@$)",			
 		},
 		"ExpectedData":
 		{

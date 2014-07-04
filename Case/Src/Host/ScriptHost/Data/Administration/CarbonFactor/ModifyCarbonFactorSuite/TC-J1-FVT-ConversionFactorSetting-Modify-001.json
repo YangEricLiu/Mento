@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"FactorSource":"电(千瓦时)",			
+			"FactorSource":"$@Commodity_Electircity@$($@Uom_KWH@$)",			
 		},
 		"ExpectedData":
 		{	

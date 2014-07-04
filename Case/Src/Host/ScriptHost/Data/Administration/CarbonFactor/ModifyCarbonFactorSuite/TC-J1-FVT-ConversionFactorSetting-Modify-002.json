@@ -4,7 +4,7 @@
 		{	
 			"EffectiveYear":"2013",
 			"FactorValue":"4",	
-			"FactorSource":"热量(千瓦时)",			
+			"FactorSource":"$@Commodity_HeatQ@$($@Uom_KWH@$)",			
 		},
 		"ExpectedData":
 		{

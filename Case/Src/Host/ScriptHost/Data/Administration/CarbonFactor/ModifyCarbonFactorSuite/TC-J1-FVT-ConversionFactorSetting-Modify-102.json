@@ -4,11 +4,11 @@
 		{	
 			"EffectiveYear":"2013",
 			"FactorValue":"4",	
-			"FactorSource":"天然气(立方米)",		
+			"FactorSource":"$@Commodity_Gas@$($@Uom_m³@$",		
 		},
 		"ExpectedData":
 		{
-			"Source":"天然气(立方米)",
+			"Source":"$@Commodity_Gas@$($@Uom_m³@$",
 			"Destination":"$@Common.CarbonUomType.StandardCoal",	
 		    "EffectiveYear":"2013",
 			"FactorValue":"4",	

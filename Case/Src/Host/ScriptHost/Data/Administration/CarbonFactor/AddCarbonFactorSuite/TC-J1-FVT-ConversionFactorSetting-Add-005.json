@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{		
-			"FactorSource":"柴油(千克)",		
+			"FactorSource":"$@Commodity_DieselOil@$($@Uom_kg@$)",		
 		},
 		"ExpectedData":
 		{

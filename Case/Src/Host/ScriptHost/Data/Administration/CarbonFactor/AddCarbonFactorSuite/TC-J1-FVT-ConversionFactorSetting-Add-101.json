@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Source":"煤油(千克)",
+			"Source":"$@Commodity_CoalOil@$($@Uom_kg@$)",
 			"EffectiveYear":"2049",
 			"FactorValue":"3",			
 		},
@@ -16,7 +16,7 @@
 	{
 		"InputData":
 		{	
-			"Source":"其他(千克标煤)",
+			"Source":"$@Commodity_Other@$($@Uom_kgce@$)",
 			"EffectiveYear":"2012",
 			"FactorValue":"0.5",			
 		},
@@ -30,7 +30,7 @@
 	{
 		"InputData":
 		{	
-			"Source":"其他(千克二氧化碳)",
+			"Source":"$@Commodity_Other@$($@Uom_kgCO₂@$)",
 			"EffectiveYear":"2013",
 			"FactorValue":"2",			
 		},

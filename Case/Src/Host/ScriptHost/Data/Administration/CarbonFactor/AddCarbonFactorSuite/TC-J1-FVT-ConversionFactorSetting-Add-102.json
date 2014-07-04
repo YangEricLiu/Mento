@@ -2,13 +2,13 @@
 	{
 		"InputData":
 		{	
-			"Source":"软水(吨)",
+			"Source":"$@Commodity_SoftWater@$($@Uom_Ton@$)",
 			"EffectiveYear":"1950",
 			"FactorValue":"4",			
 		},
 		"ExpectedData":
 		{
-			"Source":"软水(吨)",
+			"Source":"$@Commodity_SoftWater@$($@Uom_Ton@$)",
 			"Destination":"$@Common.CarbonUomType.StandardCoal",	
 		    "EffectiveYear":"1950",
 			"FactorValue":"4",	

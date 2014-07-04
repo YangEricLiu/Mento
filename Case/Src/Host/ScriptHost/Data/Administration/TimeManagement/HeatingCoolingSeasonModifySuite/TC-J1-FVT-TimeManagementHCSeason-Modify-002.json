@@ -3,11 +3,11 @@
 		"InputData":
 		{	
 			"CommonName":"冷暖季For重名验证",
-			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "06", "StartDate": "01", "EndMonth": "10", "EndDate": "28"}, {"Type": "采暖季", "StartMonth": "11", "StartDate": "01", "EndMonth": "12", "EndDate": "31"}],		
+			"ColdWarmRange":[{"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "06", "StartDate": "01", "EndMonth": "10", "EndDate": "28"}, {"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "11", "StartDate": "01", "EndMonth": "12", "EndDate": "31"}],		
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"该名称已存在",			
+		    "CommonName":"$@Common.Label.DuplicatedName",			
 			"ColdWarmRange":[{"EndMonth": ""}, {"EndMonth": ""}],
 		}		
 	},
@@ -15,24 +15,24 @@
 		"InputData":
 		{	
 			"CommonName":"",
-			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "06", "StartDate": "01", "EndMonth": "11", "EndDate": "01"}, {"Type": "采暖季", "StartMonth": "11", "StartDate": "01", "EndMonth": "12", "EndDate": "31"}],		
+			"ColdWarmRange":[{"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "06", "StartDate": "01", "EndMonth": "11", "EndDate": "01"}, {"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "11", "StartDate": "01", "EndMonth": "12", "EndDate": "31"}],		
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"必填项。",		
-			"ColdWarmRange":[{"EndMonth": "时间段冲突"}, {"EndMonth": "时间段冲突"}],	
+		    "CommonName":"$@Common.Label.MandatoryEmptyError",		
+			"ColdWarmRange":[{"EndMonth": "$@Common.Label.TimeConflict"}, {"EndMonth": "$@Common.Label.TimeConflict"}],	
 		}		
 	},
 	{
 		"InputData":
 		{	
 			"CommonName":"",
-			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "06", "StartDate": "01", "EndMonth": "10", "EndDate": "28"}, {"Type": "供冷季", "StartMonth": "11", "StartDate": "01", "EndMonth": "12", "EndDate": "31"}],		
+			"ColdWarmRange":[{"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "06", "StartDate": "01", "EndMonth": "10", "EndDate": "28"}, {"Type": "$@Setting.Calendar.ColdSeason", "StartMonth": "11", "StartDate": "01", "EndMonth": "12", "EndDate": "31"}],		
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"必填项。",		
-			"ColdWarmRange":[{"EndMonth": ""}, {"EndMonth": "时间段冲突"}],	
+		    "CommonName":"$@Common.Label.MandatoryEmptyError",		
+			"ColdWarmRange":[{"EndMonth": ""}, {"EndMonth": "$@Common.Label.TimeConflict"}],	
 		}		
 	},	
 ]

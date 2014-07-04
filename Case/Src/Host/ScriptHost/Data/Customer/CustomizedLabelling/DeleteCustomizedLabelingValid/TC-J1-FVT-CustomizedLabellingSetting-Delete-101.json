@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"CommonNames":["自定义能效标识11"],
-			"Commodity":"电",
-			"KPIType":"单位面积",
+			"Commodity":"$@Common.Commodity.Electric",
+			"KPIType":"$@EM.Unit.UnitArea",
 			"LabellingLevel":"3级",
 			"LabellingValue":[[{
 				"LabellingRightValue":"1",
@@ -20,8 +20,8 @@
 		"ExpectedData":
 		{
 			"CommonNames":["自定义能效标识11"],
-			"Commodity":"电",
-			"KPIType":"单位面积",
+			"Commodity":"$@Common.Commodity.Electric",
+			"KPIType":"$@EM.Unit.UnitArea",
 			"LabellingLevel":"3级",
 			"LabellingValue":[[{
 				"LabellingRightValue":"1",
@@ -33,7 +33,7 @@
 			{
 				"LabellingLeftValue":"2",
 			}]],
-			"Order":["正序"],
+			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
 			"UOM":"千瓦时/平方米",

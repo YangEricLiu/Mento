@@ -2,8 +2,8 @@
 	{
 		"InputData":
 		{	
-			"Industry":"酒店",
-			"ClimaticRegion":"严寒地区A区",
+			"Industry":"$@Setting.Benchmark.Industry.Hotel",
+			"ClimaticRegion":"$@Setting.Benchmark.Zone.ColdA",
 		},
 
 	}

@@ -5,7 +5,7 @@
 		},
 		"ExpectedData":
 		{
-			"Source":"必填项",	
+			"Source":"$@Common.Label.MandatoryEmptyError",	
 		}
 	}
 ]

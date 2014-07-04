@@ -6,12 +6,12 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"必填项。",
+		    "CommonName":"$@Common.Label.MandatoryEmptyError",
 			"PlainPrice":"",
-			"PeakPrice":"必填项。",	
-			"ValleyPrice":"必填项。",
-			"PeakRange":[{"StartTime": "必填项。"},{"StartTime": "必填项。"}],
-			"ValleyRange":[{"StartTime": "必填项。"},{"StartTime": "必填项。"}],
+			"PeakPrice":"$@Common.Label.MandatoryEmptyError",	
+			"ValleyPrice":"$@Common.Label.MandatoryEmptyError",
+			"PeakRange":[{"StartTime": "$@Common.Label.MandatoryEmptyError"},{"StartTime": "$@Common.Label.MandatoryEmptyError"}],
+			"ValleyRange":[{"StartTime": "$@Common.Label.MandatoryEmptyError"},{"StartTime": "$@Common.Label.MandatoryEmptyError"}],
 		}	
 	},
 ]

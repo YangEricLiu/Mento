@@ -9,7 +9,7 @@
 			"CommonName":"AutoOrg001",
 			"code":"AutoOrg001",
 			"Comments":"AutoOrg001",
-		    "Message":"修改成功",
+		    "Message":"$@Common.Label.UpdateOK",
 		}
 	},
 	{
@@ -22,7 +22,7 @@
 		    "CommonName":"AutoSite001",
 			"code":"AutoSite001",
 			"Comments":"AutoSite001",
-		    "Message":"修改成功",
+		    "Message":"$@Common.Label.UpdateOK",
 		}
 	},
 	{
@@ -35,7 +35,7 @@
 		    "CommonName":"AutoBuilding001",
 			"code":"AutoBuilding001",
 			"Comments":"AutoBuilding001",
-		    "Message":"修改成功",
+		    "Message":"$@Common.Label.UpdateOK",
 		}
 	},
 	{
@@ -48,7 +48,7 @@
 		    "CommonName":"RootBuilding001",
 			"code":"RootBuilding001",
 			"Comments":"RootBuilding001",
-		    "Message":"修改成功",
+		    "Message":"$@Common.Label.UpdateOK",
 		}
 	},
 	{
@@ -61,7 +61,7 @@
 		    "CommonName":"OrgBuilding001",
 			"code":"OrgBuilding001",
 			"Comments":"RootBuilding001",
-		    "Message":"修改成功",
+		    "Message":"$@Common.Label.UpdateOK",
 		}
 	}
 ]

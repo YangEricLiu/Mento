@@ -2,16 +2,16 @@
 	{
 		"InputData":
 		{	
-			"Industrys":["办公建筑","数据中心"],
-			"ClimateRegion":"严寒地区A区",
+			"Industrys":["办公建筑","$@Setting.Benchmark.Industry.DataCenter"],
+			"ClimateRegion":"$@Setting.Benchmark.Zone.ColdA",
 			"EnergyEfficiencyLabellingLevels":["5级","3级"],
 			"StartYears":["2008","2012"],
 			"EndYears":["2009","2014"],
 		},
 		"ExpectedData":
 		{
-			"Industrys":["办公建筑","数据中心"],
-			"ClimateRegion":"严寒地区A区",
+			"Industrys":["办公建筑","$@Setting.Benchmark.Industry.DataCenter"],
+			"ClimateRegion":"$@Setting.Benchmark.Zone.ColdA",
 			"EnergyEfficiencyLabellingLevels":["5级","3级"],
 			"StartYears":["2008","2012"],
 			"EndYears":["2009","2014"],

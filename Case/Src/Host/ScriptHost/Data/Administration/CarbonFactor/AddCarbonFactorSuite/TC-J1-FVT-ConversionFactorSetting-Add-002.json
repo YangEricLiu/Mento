@@ -5,9 +5,9 @@
 		},
 		"ExpectedData":
 		{	
-		    "Source":"必填项",
-			"EffectiveYear":"必填项",
-			"FactorValue":"必填项",	
+		    "Source":"$@Common.Label.MandatoryEmptyError",
+			"EffectiveYear":"$@Common.Label.MandatoryEmptyError",
+			"FactorValue":"$@Common.Label.MandatoryEmptyError",	
 		}
 	}
 ]

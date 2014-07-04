@@ -26,8 +26,8 @@
 		"ExpectedData":
 		{
 			"CommonName":"自定义能效标识4",
-			"Commodity":"电",
-			"KPIType":"单位人口",
+			"Commodity":"$@Common.Commodity.Electric",
+			"KPIType":"$@EM.Unit.UnitPopulation",
 			"LabellingLevel":"5级",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5",
@@ -50,7 +50,7 @@
 			"Firstlabel":"<=",
 			"Lastlabel":">",
 			"UOM":"千瓦时/人",
-			"Order":["正序"],
+			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 		}
 	}
 ]

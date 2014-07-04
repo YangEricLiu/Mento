@@ -12,9 +12,9 @@
 		},
 		"ExpectedData":
 		{
-			"WorkdayEffectiveDate":"时间区间重叠",
-			"HeatingCoolingEffectiveDate":"时间区间重叠",
-			"DayNightEffectiveDate":"时间区间重叠",
+			"WorkdayEffectiveDate":"$@Common.Label.TimeZoneConflict",
+			"HeatingCoolingEffectiveDate":"$@Common.Label.TimeZoneConflict",
+			"DayNightEffectiveDate":"$@Common.Label.TimeZoneConflict",
 		}
 	}
 ]

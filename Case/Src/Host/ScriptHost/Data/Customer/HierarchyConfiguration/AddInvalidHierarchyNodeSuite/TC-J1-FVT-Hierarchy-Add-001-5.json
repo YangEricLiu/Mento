@@ -7,11 +7,11 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"必填项",
-			"code":"必填项",
-			"Type":"必填项",
-			"Industry":"必填项",
-			"Zone":"必填项",
+		    "CommonName":"$@Common.Label.MandatoryEmptyError",
+			"code":"$@Common.Label.MandatoryEmptyError",
+			"Type":"$@Common.Label.MandatoryEmptyError",
+			"Industry":"$@Common.Label.MandatoryEmptyError",
+			"Zone":"$@Common.Label.MandatoryEmptyError",
 		}
 	},
 	{
@@ -21,9 +21,9 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"必填项",
-			"code":"必填项",
-			"Type":"必填项",
+		    "CommonName":"$@Common.Label.MandatoryEmptyError",
+			"code":"$@Common.Label.MandatoryEmptyError",
+			"Type":"$@Common.Label.MandatoryEmptyError",
 		}
 	}
 ]

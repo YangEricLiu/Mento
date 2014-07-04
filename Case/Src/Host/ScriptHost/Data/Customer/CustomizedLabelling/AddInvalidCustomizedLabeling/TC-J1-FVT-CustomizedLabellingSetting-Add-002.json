@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"CommonName":"自定义能效标识1",
-			"Commodity":"电",
-			"KPIType":"单位人口",
+			"Commodity":"$@Common.Commodity.Electric",
+			"KPIType":"$@EM.Unit.UnitPopulation",
 			"LabellingLevel":"4级",
 			"LabellingLevelValue":"4",
 			"LabellingValue":[[{
@@ -28,9 +28,9 @@
 		},
 		"ExpectedData":
 		{
-			"CommonNames":["自定义能效标识1","必填项。"],
-			"Commodity":"电",
-			"KPIType":"单位人口",
+			"CommonNames":["自定义能效标识1","$@Common.Label.MandatoryEmptyError"],
+			"Commodity":"$@Common.Commodity.Electric",
+			"KPIType":"$@EM.Unit.UnitPopulation",
 			"LabellingLevel":"4级",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
@@ -51,10 +51,10 @@
 				"LabellingLeftValue":"4",
 			}],
 			[{
-				"LabellingLeftValue":"必填项。",
-				"LabellingRightValue":"必填项。",
+				"LabellingLeftValue":"$@Common.Label.MandatoryEmptyError",
+				"LabellingRightValue":"$@Common.Label.MandatoryEmptyError",
 			}]],
-			"Order":["正序"],
+			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
 			"UOM":"千瓦时/人",

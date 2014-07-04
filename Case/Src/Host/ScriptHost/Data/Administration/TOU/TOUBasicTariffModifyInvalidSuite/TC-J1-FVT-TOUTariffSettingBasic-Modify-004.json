@@ -7,8 +7,8 @@
 		},
 		"ExpectedData":
 		{
-		    "PeakRange":[{"StartTime": "时间段冲突。"}],
-			"ValleyRange":[{"StartTime": "时间段冲突。"}],
+		    "PeakRange":[{"StartTime": "$@Common.Label.TimeConflict"}],
+			"ValleyRange":[{"StartTime": "$@Common.Label.TimeConflict"}],
 		}	
 	},
 ]

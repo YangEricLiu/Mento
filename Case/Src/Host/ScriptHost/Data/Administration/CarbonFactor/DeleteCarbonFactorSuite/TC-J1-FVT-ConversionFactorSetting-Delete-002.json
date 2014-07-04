@@ -6,7 +6,7 @@
 		"ExpectedData":
 		{	
 			"Source":"汽油(千克)",
-			"Destination":"标煤",
+			"Destination":"$@Common.CarbonUomType.StandardCoal",
 		    "EffectiveYear":"2012",
 			"FactorValue":"6",
 			"Message":"确认删除“汽油(千克)”到“其他(千克标煤)”的转换因子？"

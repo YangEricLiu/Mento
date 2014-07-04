@@ -5,15 +5,15 @@
 			"AccountID":"UserForCheckAll",
 			"CommonName":"UserForCheckAll",
 			"RealName":"UserForCheckAll",
-			"Title":"技术人员",
-			"Type":"客户管理员",
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager",
 			"Telephone":"010-12345",
 			"Email":"1@1.com",
 		},
 		"ExpectedData":
 		{
 			"AccountID":"",
-			"CommonName":"该名称已存在",
+			"CommonName":"$@Common.Label.DuplicatedName",
 		}
 	},
 ]

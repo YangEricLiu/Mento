@@ -2,8 +2,8 @@
 	{
 		"InputData":
 		{	
-			"Industry":"酒店",
-			"ClimaticRegions":["全部区域","严寒地区A区","严寒地区B区","寒冷地区","夏热冬冷地区","夏热冬暖地区","温和地区"],
+			"Industry":"$@Setting.Benchmark.Industry.Hotel",
+			"ClimaticRegions":["全部区域","$@Setting.Benchmark.Zone.ColdA","$@Setting.Benchmark.Zone.ColdB","$@Setting.Benchmark.Zone.ColdRegion","$@Setting.Benchmark.Zone.HotSummerColdWinterRegion","$@Setting.Benchmark.Zone.SubtropicalRegion","$@Setting.Benchmark.Zone.TemperateRegion"],
 		},
 	}
 ]

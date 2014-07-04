@@ -8,7 +8,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabelText":["白昼时间以外均为黑夜时间"],
+			"LabelText":["$@Setting.Calendar.DefaultDayNight"],
 		}
 	},	
 	{
@@ -18,7 +18,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabelText":["白昼时间以外均为黑夜时间"],
+			"LabelText":["$@Setting.Calendar.DefaultDayNight"],
 		}
 	},	
 	{
@@ -28,7 +28,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabelText":["白昼时间以外均为黑夜时间"],
+			"LabelText":["$@Setting.Calendar.DefaultDayNight"],
 		}
 	},
 	{
@@ -38,7 +38,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabelText":["白昼时间以外均为黑夜时间"],
+			"LabelText":["$@Setting.Calendar.DefaultDayNight"],
 		}
 	},
 	{
@@ -48,7 +48,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabelText":["白昼时间以外均为黑夜时间"],
+			"LabelText":["$@Setting.Calendar.DefaultDayNight"],
 		}
 	},
 ]

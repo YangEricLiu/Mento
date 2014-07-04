@@ -4,8 +4,8 @@
 		{	
 			"HierarchyNodePath":["自动化测试", "ABCostProperty", "AddValidCompMode2"],
 			"EffectiveDate":"2013-01",
-			"PriceMode":"综合电价",
-			"DemandCostType":"时间容量模式",
+			"PriceMode":"$@Setting.Cost.Label.ComplexPrice",
+			"DemandCostType":"$@Setting.Cost.Label.TimeMode",
 			"HourTagId":"PtagCostComp21",
 			"ElectricHourPrice":"10",
 			"TransformerCapacity":"5",
@@ -19,8 +19,8 @@
 		"ExpectedData":
 		{	
 			"EffectiveDate":"2013-01",
-			"PriceMode":"综合电价",
-			"DemandCostType":"时间容量模式",
+			"PriceMode":"$@Setting.Cost.Label.ComplexPrice",
+			"DemandCostType":"$@Setting.Cost.Label.TimeMode",
 			"HourTagId":"PtagCostComp21",
 			"ElectricHourPrice":"10",
 			"TransformerCapacity":"5",

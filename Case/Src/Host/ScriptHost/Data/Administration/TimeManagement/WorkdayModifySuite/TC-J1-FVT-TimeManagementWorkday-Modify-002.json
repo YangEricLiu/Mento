@@ -3,11 +3,11 @@
 		"InputData":
 		{	
 			"CommonName":"工休日For重名验证",
-			"SpecialDate":[{"Type": "工作日", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "28"}],
+			"SpecialDate":[{"Type": "$@Setting.Calendar.WorkDay", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "28"}],
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"该名称已存在",			
+		    "CommonName":"$@Common.Label.DuplicatedName",			
 			"SpecialDate":[{"EndMonth": ""}, {"EndMonth": ""}],		
 		}		
 	},
@@ -15,12 +15,12 @@
 		"InputData":
 		{	
 			"CommonName":"",
-			"SpecialDate":[{"Type": "工作日", "StartMonth": "05", "StartDate": "01", "EndMonth": "09", "EndDate": "30"}],
+			"SpecialDate":[{"Type": "$@Setting.Calendar.WorkDay", "StartMonth": "05", "StartDate": "01", "EndMonth": "09", "EndDate": "30"}],
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"必填项。",		
-			"SpecialDate":[{"EndMonth": "时间段冲突"}, {"EndMonth": "时间段冲突"}],		
+		    "CommonName":"$@Common.Label.MandatoryEmptyError",		
+			"SpecialDate":[{"EndMonth": "$@Common.Label.TimeConflict"}, {"EndMonth": "$@Common.Label.TimeConflict"}],		
 		}		
 	},
 ]

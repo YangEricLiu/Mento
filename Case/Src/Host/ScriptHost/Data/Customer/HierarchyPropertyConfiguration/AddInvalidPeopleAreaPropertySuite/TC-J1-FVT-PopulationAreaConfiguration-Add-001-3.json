@@ -6,8 +6,8 @@
 		},
 		"ExpectedData":
 		{
-			"PeopleEffectiveDate":"必填项",
-			"PeopleNumber":"必填项",
+			"PeopleEffectiveDate":"$@Common.Label.MandatoryEmptyError",
+			"PeopleNumber":"$@Common.Label.MandatoryEmptyError",
 		}
 	},
 	{
@@ -19,7 +19,7 @@
 		"ExpectedData":
 		{
 			"PeopleEffectiveDate":"该输入项的日期必须在 2049-12 之前",
-			"PeopleNumber":"必填项",
+			"PeopleNumber":"$@Common.Label.MandatoryEmptyError",
 		}
 	},
 	{
@@ -31,7 +31,7 @@
 		"ExpectedData":
 		{
 			"PeopleEffectiveDate":"该输入项的日期必须在 1950-01 之后",
-			"PeopleNumber":"必填项",
+			"PeopleNumber":"$@Common.Label.MandatoryEmptyError",
 		}
 	}
 ]

@@ -9,7 +9,7 @@
 		"ExpectedData":
 		{
 			"Source":"低压蒸汽(千克)",
-			"Destination":"标煤",	
+			"Destination":"$@Common.CarbonUomType.StandardCoal",	
 		    "EffectiveYear":"2013",
 			"FactorValue":"4",	
 		}

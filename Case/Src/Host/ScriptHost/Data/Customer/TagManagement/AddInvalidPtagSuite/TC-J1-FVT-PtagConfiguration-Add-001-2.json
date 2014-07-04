@@ -6,13 +6,13 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"必填项。",
-			"Code":"必填项。",
-			"Meter":"必填项。",
-			"Channel":"必填项。",
-			"Commodity":"必填项。",
-			"Uom":"必填项。",
-			"CalculationType":"必填项。",
+			"CommonName":"$@Common.Label.MandatoryEmptyError",
+			"Code":"$@Common.Label.MandatoryEmptyError",
+			"Meter":"$@Common.Label.MandatoryEmptyError",
+			"Channel":"$@Common.Label.MandatoryEmptyError",
+			"Commodity":"$@Common.Label.MandatoryEmptyError",
+			"Uom":"$@Common.Label.MandatoryEmptyError",
+			"CalculationType":"$@Common.Label.MandatoryEmptyError",
 		}
 	}
 ]

@@ -8,7 +8,7 @@
 		},
 		"ExpectedData":
 		{
-			"PeopleEffectiveDate":"人口属性生效日期重复",
+			"PeopleEffectiveDate":"$@Setting.DynamicProperty.PopulationStartDateDuplicated",
 		}
 	}
 ]

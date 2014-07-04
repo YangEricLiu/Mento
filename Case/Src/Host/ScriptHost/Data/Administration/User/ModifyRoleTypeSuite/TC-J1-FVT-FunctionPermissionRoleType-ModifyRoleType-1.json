@@ -7,7 +7,7 @@
 
 		"ExpectedData":
 		{
-			"CommonName":"必填项",
+			"CommonName":"$@Common.Label.MandatoryEmptyError",
 		}
 	},
 ]

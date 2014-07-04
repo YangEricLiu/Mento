@@ -3,11 +3,11 @@
 		"InputData":
 		{	
 			"Name":"customerE",
-			"MapOptions":["本月二氧化碳排放总量","本月成本总量","本月用电总量","本月用水总量","本月天然气总量"],
+			"MapOptions":["$@Setting.CustomerManagement.Label.CarbonEmission","$@Setting.CustomerManagement.Label.Cost","$@Setting.CustomerManagement.Label.Electricity","$@Setting.CustomerManagement.Label.Water","$@Setting.CustomerManagement.Label.Gas"],
 		},
 		"ExpectedData":
 		{	
-			"MapOptions":["本月软水总量","本月汽油总量","本月低压蒸汽总量","本月柴油总量","本月热量总量","本月冷量总量","本月煤总量","本月煤油总量"],
+			"MapOptions":["$@Setting.CustomerManagement.Label.SoftWater","$@Setting.CustomerManagement.Label.Petrol","$@Setting.CustomerManagement.Label.LowPressureSteam","$@Setting.CustomerManagement.Label.DieselOi","$@Setting.CustomerManagement.Label.HeatQ","$@Setting.CustomerManagement.Label.CoolQ ","$@Setting.CustomerManagement.Label.Coal","$@Setting.CustomerManagement.Label.CoalOil"],
 		}
 	}
 ]

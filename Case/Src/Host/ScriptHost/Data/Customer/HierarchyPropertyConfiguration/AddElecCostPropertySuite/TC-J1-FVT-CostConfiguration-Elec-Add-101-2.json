@@ -4,12 +4,12 @@
 		{	
 			"HierarchyNodePath":["自动化测试", "ABCostProperty", "AddDupFixedRevise"],
 			"EffectiveDate":"2013-02",
-			"PriceMode":"固定电价",
+			"PriceMode":"$@Setting.Cost.Label.FixedPrice",
 			"Price":"20",
 		},
 		"ExpectedData":
 		{	
-			"EffectiveDate":"时间段冲突",
+			"EffectiveDate":"$@Common.Label.TimeConflict",
 		}
 	}
 ]

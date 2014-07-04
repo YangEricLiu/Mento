@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"该名称已存在",
+			"CommonName":"$@Common.Label.DuplicatedName",
 		}
 	}
 ]

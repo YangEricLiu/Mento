@@ -3,7 +3,7 @@
 		"InputData":
 		{	
 			"CommonName":"冷暖季未被引用ForModifyValid",
-			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "供冷季", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"Type": "采暖季", "StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}, {"Type": "供冷季", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "31"}],
+			"ColdWarmRange":[{"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "$@Setting.Calendar.ColdSeason", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}, {"Type": "$@Setting.Calendar.ColdSeason", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "31"}],
 		},
 		"ExpectedData":
 		{
@@ -14,7 +14,7 @@
 		"InputData":
 		{	
 			"CommonName":"冷暖季已被引用ForModifyValid",
-			"ColdWarmRange":[{"Type": "供冷季", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"Type": "采暖季", "StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}],
+			"ColdWarmRange":[{"Type": "$@Setting.Calendar.ColdSeason", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}],
 		},
 		"ExpectedData":
 		{

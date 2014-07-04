@@ -3,12 +3,12 @@
 		"InputData":
 		{	
 			"CommonName":"RoleTypeForModify",
-			"NameList":["服务商管理员","客户管理员","咨询人员","工程人员","商务人员"],
+			"NameList":["$@Setting.User.ServerManager","$@Setting.CustomerManagement.Label.Administrator","咨询人员","工程人员","商务人员"],
 		},
 
 		"ExpectedData":
 		{
-			"CommonName":"该名称已存在",
+			"CommonName":"$@Common.Label.DuplicatedName",
 		}
 	},
 ]

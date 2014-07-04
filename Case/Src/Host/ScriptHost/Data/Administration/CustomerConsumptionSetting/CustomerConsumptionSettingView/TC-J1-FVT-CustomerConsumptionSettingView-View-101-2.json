@@ -3,7 +3,7 @@
 		"InputData":
 		{	
 			"Name":"customerB",
-			"MapOptions":["本月二氧化碳排放总量","本月成本总量","本月用电总量","本月天然气总量"],
+			"MapOptions":["$@Setting.CustomerManagement.Label.CarbonEmission","$@Setting.CustomerManagement.Label.Cost","$@Setting.CustomerManagement.Label.Electricity","$@Setting.CustomerManagement.Label.Gas"],
 		},
 	}
 ]

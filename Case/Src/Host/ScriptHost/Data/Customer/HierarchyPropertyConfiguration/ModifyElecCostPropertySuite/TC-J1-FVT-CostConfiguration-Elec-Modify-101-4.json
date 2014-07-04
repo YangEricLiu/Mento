@@ -3,8 +3,8 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试", "ABCostProperty", "ModifyPriceMode"],
-			"PriceMode":"综合电价",
-			"DemandCostType":"时间容量模式",
+			"PriceMode":"$@Setting.Cost.Label.ComplexPrice",
+			"DemandCostType":"$@Setting.Cost.Label.TimeMode",
 			"HourTagId":"VtagCostModify41",
 			"ElectricHourPrice":"999999999.999999",
 			"TransformerCapacity":"55",
@@ -17,8 +17,8 @@
 		},
 		"ExpectedData":
 		{	
-			"PriceMode":"综合电价",
-			"DemandCostType":"时间容量模式",
+			"PriceMode":"$@Setting.Cost.Label.ComplexPrice",
+			"DemandCostType":"$@Setting.Cost.Label.TimeMode",
 			"HourTagId":"VtagCostModify41",
 			"ElectricHourPrice":"999999999.999999",
 			"TransformerCapacity":"55",

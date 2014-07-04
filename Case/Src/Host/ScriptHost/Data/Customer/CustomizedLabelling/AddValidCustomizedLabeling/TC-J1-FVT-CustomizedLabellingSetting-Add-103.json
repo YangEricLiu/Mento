@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"CommonName":"自定义能效标识5",
-			"Commodities":["自来水","天然气"],
-			"KPITypes":["单位面积","工休比"],
+			"Commodities":["$@Common.Commodity.Water","$@Common.Commodity.Gas"],
+			"KPITypes":["$@EM.Unit.UnitArea","$@EM.WorkHolidayRatio"],
 			"LabellingLevels":["8级","6级"],
 			"LabellingLevelValues":["8","6"],
 			"LabellingValue":[[{
@@ -107,8 +107,8 @@
 		"ExpectedData":
 		{
 		    "CommonName":"自定义能效标识5",
-			"Commodity":"天然气",
-			"KPIType":"工休比",
+			"Commodity":"$@Common.Commodity.Gas",
+			"KPIType":"$@EM.WorkHolidayRatio",
 			"LabellingLevel":"6级",
 			"LabellingValue":[
 			[{
@@ -199,7 +199,7 @@
 			"Firstlabels":["<=",">"],
 			"Lastlabels":[">","<="],
 			"UOMs":["吨/人","立方米/人"],
-			"Order":["正序","倒序"],
+			"Order":["$@Setting.CustomizedLabeling.Ascending","$@Setting.CustomizedLabeling.Declining"],
 		}
 	}
 ]

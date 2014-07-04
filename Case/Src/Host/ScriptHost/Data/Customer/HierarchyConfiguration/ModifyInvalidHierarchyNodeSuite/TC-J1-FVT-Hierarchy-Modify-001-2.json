@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-			"ErrorMessage":"该名称已存在",
+			"ErrorMessage":"$@Common.Label.DuplicatedName",
 			"CommonName":"AutoOrg001",
 		}
 	},
@@ -19,7 +19,7 @@
 		},
 		"ExpectedData":
 		{
-			"ErrorMessage":"该名称已存在",
+			"ErrorMessage":"$@Common.Label.DuplicatedName",
 			"CommonName":"AutoSite001",
 		}
 	},
@@ -31,7 +31,7 @@
 		},
 		"ExpectedData":
 		{
-			"ErrorMessage":"该名称已存在",
+			"ErrorMessage":"$@Common.Label.DuplicatedName",
 			"CommonName":"AutoBuilding001",
 		}
 	}

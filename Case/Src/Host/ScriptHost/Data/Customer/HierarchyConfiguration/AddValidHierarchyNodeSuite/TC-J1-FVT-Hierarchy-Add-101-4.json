@@ -19,8 +19,8 @@
 			"CommonName":"EmptyCommentBuilding",
 			"Code":"EmptyCommentBuilding",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":
 		{

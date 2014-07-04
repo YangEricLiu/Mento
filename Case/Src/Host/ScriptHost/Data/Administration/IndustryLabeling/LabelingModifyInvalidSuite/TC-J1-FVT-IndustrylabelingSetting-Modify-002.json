@@ -2,8 +2,8 @@
 	{
 		"InputData":
 		{	
-			"Industry":"全行业",
-			"ClimateRegion":"严寒地区B区",
+			"Industry":"$@Setting.Benchmark.Industry.AllIndustry",
+			"ClimateRegion":"$@Setting.Benchmark.Zone.ColdB",
 			"EnergyEfficiencyLabellingLevel":"3级",
 			"StartYear":"2012",
 		},

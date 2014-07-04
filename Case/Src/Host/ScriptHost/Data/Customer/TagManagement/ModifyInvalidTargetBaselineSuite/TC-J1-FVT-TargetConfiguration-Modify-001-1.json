@@ -13,11 +13,11 @@
 		},
 		"ExpectedData":
 		{
-			"SpecialdayRuleStartDate":["必填项"],
-			"SpecialdayRuleStartTime":["必填项"],
-			"SpecialdayRuleEndDate":["必填项"],
-			"SpecialdayRuleEndTime":["必填项"],
-			"SpecialdayRuleValue":["必填项", "该输入项的最大值是 999999999"],
+			"SpecialdayRuleStartDate":["$@Common.Label.MandatoryEmptyError"],
+			"SpecialdayRuleStartTime":["$@Common.Label.MandatoryEmptyError"],
+			"SpecialdayRuleEndDate":["$@Common.Label.MandatoryEmptyError"],
+			"SpecialdayRuleEndTime":["$@Common.Label.MandatoryEmptyError"],
+			"SpecialdayRuleValue":["$@Common.Label.MandatoryEmptyError", "$@Common.Label.OverValueError "],
 		}
 	},
 	{
@@ -34,11 +34,11 @@
 		},
 		"ExpectedData":
 		{
-			"SpecialdayRuleStartDate":["必填项"],
-			"SpecialdayRuleStartTime":["必填项"],
-			"SpecialdayRuleEndDate":["必填项"],
-			"SpecialdayRuleEndTime":["必填项"],
-			"SpecialdayRuleValue":["必填项", "该输入项的最大值是 999999999"],
+			"SpecialdayRuleStartDate":["$@Common.Label.MandatoryEmptyError"],
+			"SpecialdayRuleStartTime":["$@Common.Label.MandatoryEmptyError"],
+			"SpecialdayRuleEndDate":["$@Common.Label.MandatoryEmptyError"],
+			"SpecialdayRuleEndTime":["$@Common.Label.MandatoryEmptyError"],
+			"SpecialdayRuleValue":["$@Common.Label.MandatoryEmptyError", "$@Common.Label.OverValueError "],
 		}
 	}
 ]

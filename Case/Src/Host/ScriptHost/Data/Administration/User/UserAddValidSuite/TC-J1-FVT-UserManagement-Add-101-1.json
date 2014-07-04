@@ -4,62 +4,62 @@
 	{		
 		"InputData":
 		{
-			"Title":"技术人员",
-			"Type":"客户管理员"
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager"
 		},
 		"ExpectedData":
 		{
-			"Title":"技术人员",
-			"Type":"客户管理员"	
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager"	
 		}
 	},
 	{		
 		"InputData":
 		{
-			"Title":"技术人员",
-			"Type":"客户管理员"
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager"
 		},
 		"ExpectedData":
 		{
-			"Title":"技术人员",
-			"Type":"客户管理员"
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager"
 		}
 	},
 	{		
 		"InputData":
 		{
-			"Title":"技术人员",
-			"Type":"客户管理员"
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager"
 		},
 		"ExpectedData":
 		{
-			"Title":"技术人员",
-			"Type":"客户管理员"	
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager"	
 		}
 	},
 	{		
 		"InputData":
 		{
-			"Title":"技术人员",
-			"Type":"客户管理员"	
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager"	
 		},
 		"ExpectedData":
 		{
-			"Title":"技术人员",
-			"Type":"客户管理员"	
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager"	
 		}
 	},
 	{		
 		"InputData":
 		{
-			"Title":"技术人员",
-			"Type":"客户管理员"	
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager"	
 	
 		},
 		"ExpectedData":
 		{
-			"Title":"技术人员",
-			"Type":"客户管理员"	
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager"	
 		}
 	}
 ]

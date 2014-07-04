@@ -4,8 +4,8 @@
 		{
 			"CommonName":"UserForCheckAll",
 			"RealName":"UserEmptyCommentss",
-			"Title":"技术人员",
-			"Type":"客户管理员",
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager",
 			"Telephone":"010-12345",
 			"Email":"1@1.com",
 		},
@@ -13,7 +13,7 @@
 		{
 			"CommonName":"UserForCheckAll",
 			"RealName":"UserForCheckAll",
-			"Title":"客户管理员",
+			"Title":"$@Setting.User.CustomerManager",
 			"Type":"RoleTypeUsed",
 			"Telephone":"2",
 			"Email":"2@2.com",

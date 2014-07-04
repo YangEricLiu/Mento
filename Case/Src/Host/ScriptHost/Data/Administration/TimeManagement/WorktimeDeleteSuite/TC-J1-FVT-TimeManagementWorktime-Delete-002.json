@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-		    "PopMessage":["删除 “工作时间被层级引用ForDeleteFailed” 吗？", "日历已被引用，不可删除。"],
+		    "PopMessage":"$@Message.M03058",
 		}		
 	}
 ]

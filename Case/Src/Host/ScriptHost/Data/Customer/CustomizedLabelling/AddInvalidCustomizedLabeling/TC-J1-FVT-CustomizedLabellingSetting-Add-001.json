@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"CommonName":"自定义能效标识2",
-			"Commodity":"电",
-			"KPIType":"单位人口",
+			"Commodity":"$@Common.Commodity.Electric",
+			"KPIType":"$@EM.Unit.UnitPopulation",
 			"LabellingLevel":"4级",
 			"LabellingLevelValue":"4",
 			"LabellingValue":[[{
@@ -29,8 +29,8 @@
 		"ExpectedData":
 		{
 			"CommonName":"",
-			"Commodity":"电",
-			"KPIType":"单位人口",
+			"Commodity":"$@Common.Commodity.Electric",
+			"KPIType":"$@EM.Unit.UnitPopulation",
 			"LabellingLevel":"5级",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"",
@@ -50,7 +50,7 @@
 			{
 				"LabellingLeftValue":"",
 			}]],
-			"Order":["正序"],
+			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
 			"UOM":"千瓦时/人",

@@ -11,12 +11,12 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"必填项",
-			"RealName":"必填项",
-			"Title":"必填项",
-			"Type":"必填项",
-			"Telephone":"必填项",
-			"Email":"必填项",
+			"CommonName":"$@Common.Label.MandatoryEmptyError",
+			"RealName":"$@Common.Label.MandatoryEmptyError",
+			"Title":"$@Common.Label.MandatoryEmptyError",
+			"Type":"$@Common.Label.MandatoryEmptyError",
+			"Telephone":"$@Common.Label.MandatoryEmptyError",
+			"Email":"$@Common.Label.MandatoryEmptyError",
 		}
 	},
 ]

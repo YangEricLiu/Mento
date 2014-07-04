@@ -8,7 +8,7 @@
 		},
 		"ExpectedData":
 		{	
-			"DemandCostType":"必填项",
+			"DemandCostType":"$@Common.Label.MandatoryEmptyError",
 		}
 	}
 ]

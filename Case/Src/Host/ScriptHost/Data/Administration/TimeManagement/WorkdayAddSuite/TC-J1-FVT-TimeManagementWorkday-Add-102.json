@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabelText":["默认工作日：周一至周五"],
+			"LabelText":["$@Setting.Calendar.DefaultWorkDay"],
 		}
 	},		
 ]

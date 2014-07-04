@@ -13,7 +13,7 @@
 			"CommonName":"CheckModifyOrg001_M中文",
 			"code":"CheckModifyOrg001_M",
 			"Comments":"CheckModifyOrg001_M中文",
-		    "Message":"修改成功",
+		    "Message":"$@Common.Label.UpdateOK",
 		}
 	}
 ]

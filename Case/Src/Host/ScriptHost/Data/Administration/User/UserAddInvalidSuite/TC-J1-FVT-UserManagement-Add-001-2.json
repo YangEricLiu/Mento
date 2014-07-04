@@ -5,8 +5,8 @@
 		"InputData":
 		{
 			"RealName":"  onlychars  ",
-			"Title":"技术人员",
-			"Type":"客户管理员"
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager"
 		},
 		"ExpectedData":
 		{

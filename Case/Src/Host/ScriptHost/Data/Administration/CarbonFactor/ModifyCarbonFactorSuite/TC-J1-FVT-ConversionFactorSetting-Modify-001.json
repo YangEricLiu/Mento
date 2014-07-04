@@ -6,8 +6,8 @@
 		},
 		"ExpectedData":
 		{	
-			"EffectiveYear":"必填项",
-			"FactorValue":"必填项",	
+			"EffectiveYear":"$@Common.Label.MandatoryEmptyError",
+			"FactorValue":"$@Common.Label.MandatoryEmptyError",	
 		}
 	}
 ]

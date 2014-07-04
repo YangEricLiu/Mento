@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"必填项。",
+		    "CommonName":"$@Common.Label.MandatoryEmptyError",
 			"SpecialDate":[{"Type": "", "EndMonth": ""}, {"Type": "", "EndMonth": ""}],
 		}	
 	},
@@ -19,30 +19,30 @@
 		},
 		"ExpectedData":
 		{
-		    "SpecialDate":[{"Type": "必填项", "EndMonth": "必填项"}, {"Type": "必填项", "EndMonth": "必填项"}],
+		    "SpecialDate":[{"Type": "$@Common.Label.MandatoryEmptyError", "EndMonth": "$@Common.Label.MandatoryEmptyError"}, {"Type": "$@Common.Label.MandatoryEmptyError", "EndMonth": "$@Common.Label.MandatoryEmptyError"}],
 		}	
 	},
 	{
 		"InputData":
 		{	
 			"CommonName":"",	
-			"SpecialDate":[{"Type": "工作日", "StartMonth": "05", "StartDate": "", "EndMonth": "06", "EndDate": "07"}, {"Type": "", "StartMonth": "", "StartDate": "", "EndMonth": "", "EndDate": ""}],
+			"SpecialDate":[{"Type": "$@Setting.Calendar.WorkDay", "StartMonth": "05", "StartDate": "", "EndMonth": "06", "EndDate": "07"}, {"Type": "", "StartMonth": "", "StartDate": "", "EndMonth": "", "EndDate": ""}],
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"必填项。",
-			"SpecialDate":[{"Type": "", "EndMonth": "必填项"}, {"Type": "必填项", "EndMonth": "必填项"}],
+		    "CommonName":"$@Common.Label.MandatoryEmptyError",
+			"SpecialDate":[{"Type": "", "EndMonth": "$@Common.Label.MandatoryEmptyError"}, {"Type": "$@Common.Label.MandatoryEmptyError", "EndMonth": "$@Common.Label.MandatoryEmptyError"}],
 		}	
 	},	
 	{
 		"InputData":
 		{	
 			"CommonName":"工休日For重名验证",	
-			"SpecialDate":[{"Type": "工作日", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "07"}, {"Type": "非工作日", "StartMonth": "02", "StartDate": "28", "EndMonth": "04", "EndDate": "30"}],
+			"SpecialDate":[{"Type": "$@Setting.Calendar.WorkDay", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "07"}, {"Type": "$@Setting.Calendar.Holiday", "StartMonth": "02", "StartDate": "28", "EndMonth": "04", "EndDate": "30"}],
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"该名称已存在",
+		    "CommonName":"$@Common.Label.DuplicatedName",
 			"SpecialDate":[{"Type": "", "EndMonth": ""}, {"Type": "", "EndMonth": ""}],
 		}	
 	},
@@ -50,22 +50,22 @@
 		"InputData":
 		{	
 			"CommonName":"工休日ForAddInvalid",	
-			"SpecialDate":[{"Type": "工作日", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "07"}, {"Type": "工作日", "StartMonth": "05", "StartDate": "07", "EndMonth": "05", "EndDate": "07"}],
+			"SpecialDate":[{"Type": "$@Setting.Calendar.WorkDay", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "07"}, {"Type": "$@Setting.Calendar.WorkDay", "StartMonth": "05", "StartDate": "07", "EndMonth": "05", "EndDate": "07"}],
 		},
 		"ExpectedData":
 		{
-		    "SpecialDate":[{"Type": "", "EndMonth": "时间段冲突"}, {"Type": "", "EndMonth": "时间段冲突"}],
+		    "SpecialDate":[{"Type": "", "EndMonth": "$@Common.Label.TimeConflict"}, {"Type": "", "EndMonth": "$@Common.Label.TimeConflict"}],
 		}	
 	},
 	{
 		"InputData":
 		{	
 			"CommonName":"工休日ForAddInvalid",	
-			"SpecialDate":[{"Type": "工作日", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "07"}, {"Type": "非工作日", "StartMonth": "02", "StartDate": "28", "EndMonth": "05", "EndDate": "01"}],
+			"SpecialDate":[{"Type": "$@Setting.Calendar.WorkDay", "StartMonth": "05", "StartDate": "01", "EndMonth": "05", "EndDate": "07"}, {"Type": "$@Setting.Calendar.Holiday", "StartMonth": "02", "StartDate": "28", "EndMonth": "05", "EndDate": "01"}],
 		},
 		"ExpectedData":
 		{
-		    "SpecialDate":[{"Type": "", "EndMonth": "时间段冲突"}, {"Type": "", "EndMonth": "时间段冲突"}],
+		    "SpecialDate":[{"Type": "", "EndMonth": "$@Common.Label.TimeConflict"}, {"Type": "", "EndMonth": "$@Common.Label.TimeConflict"}],
 		}	
 	},
 ]

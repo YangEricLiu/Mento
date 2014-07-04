@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-		    "Message":"修改成功",
+		    "Message":"$@Common.Label.UpdateOK",
 		}
 	},
 	{
@@ -18,7 +18,7 @@
 		},
 		"ExpectedData":
 		{
-		    "Message":"修改成功",
+		    "Message":"$@Common.Label.UpdateOK",
 		}
 	},
 	{
@@ -29,7 +29,7 @@
 		},
 		"ExpectedData":
 		{
-		    "Message":"修改成功",
+		    "Message":"$@Common.Label.UpdateOK",
 		}
 	}
 ]

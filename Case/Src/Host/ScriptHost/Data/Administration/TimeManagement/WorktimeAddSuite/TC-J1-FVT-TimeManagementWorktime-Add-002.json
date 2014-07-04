@@ -7,8 +7,8 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"必填项。",
-			"TimeRange":[{"StartTime": "必填项"}, {"StartTime": "必填项"}, {"StartTime": "必填项"}],
+		    "CommonName":"$@Common.Label.MandatoryEmptyError",
+			"TimeRange":[{"StartTime": "$@Common.Label.MandatoryEmptyError"}, {"StartTime": "$@Common.Label.MandatoryEmptyError"}, {"StartTime": "$@Common.Label.MandatoryEmptyError"}],
 		}	
 	},		
 	{
@@ -19,7 +19,7 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"该名称已存在",
+		    "CommonName":"$@Common.Label.DuplicatedName",
 			"TimeRange":[{"StartTime": ""}, {"StartTime": ""}, {"StartTime": ""}],
 		}	
 	},
@@ -31,7 +31,7 @@
 		},
 		"ExpectedData":
 		{
-		    "TimeRange":[{"StartTime": "时间段冲突"}, {"StartTime": "时间段冲突"}, {"StartTime": "时间段冲突"}],
+		    "TimeRange":[{"StartTime": "$@Common.Label.TimeConflict"}, {"StartTime": "$@Common.Label.TimeConflict"}, {"StartTime": "$@Common.Label.TimeConflict"}],
 		}	
 	},
 	{
@@ -42,7 +42,7 @@
 		},
 		"ExpectedData":
 		{
-		    "TimeRange":[{"StartTime": "时间段冲突"}, {"StartTime": ""}, {"StartTime": "时间段冲突"}],
+		    "TimeRange":[{"StartTime": "$@Common.Label.TimeConflict"}, {"StartTime": ""}, {"StartTime": "$@Common.Label.TimeConflict"}],
 		}	
 	},
 ]

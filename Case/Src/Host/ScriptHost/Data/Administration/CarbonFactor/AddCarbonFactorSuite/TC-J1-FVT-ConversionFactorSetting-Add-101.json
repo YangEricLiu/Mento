@@ -8,7 +8,7 @@
 		},
 		"ExpectedData":
 		{
-			"Destination":"标煤",	
+			"Destination":"$@Common.CarbonUomType.StandardCoal",	
 		    "EffectiveYear":"2049",
 			"FactorValue":"3",	
 		}
@@ -22,7 +22,7 @@
 		},
 		"ExpectedData":
 		{
-			"Destination":"二氧化碳",	
+			"Destination":"$@Common.CarbonUomType.CO2",	
 		    "EffectiveYear":"2012",
 			"FactorValue":"0.5",	
 		}
@@ -36,7 +36,7 @@
 		},
 		"ExpectedData":
 		{
-			"Destination":"树",	
+			"Destination":"$@Common.CarbonUomType.Tree",	
 		    "EffectiveYear":"2013",
 			"FactorValue":"2",	
 		}

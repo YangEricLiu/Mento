@@ -3,7 +3,7 @@
 		"InputData":
 		{	
 			"CommonName":"工休日未被引用ForModifyValid",
-			"SpecialDate":[{"Type": "非工作日", "StartMonth": "05", "StartDate": "10", "EndMonth": "05", "EndDate": "31"}, {"Type": "工作日", "StartMonth": "06", "StartDate": "01", "EndMonth": "07", "EndDate": "07"}],
+			"SpecialDate":[{"Type": "$@Setting.Calendar.Holiday", "StartMonth": "05", "StartDate": "10", "EndMonth": "05", "EndDate": "31"}, {"Type": "$@Setting.Calendar.WorkDay", "StartMonth": "06", "StartDate": "01", "EndMonth": "07", "EndDate": "07"}],
 		},
 		"ExpectedData":
 		{
@@ -14,7 +14,7 @@
 		"InputData":
 		{	
 			"CommonName":"工休日已被引用ForModifyValid",
-			"SpecialDate":[{"Type": "非工作日", "StartMonth": "05", "StartDate": "10", "EndMonth": "05", "EndDate": "31"}, {"Type": "工作日", "StartMonth": "06", "StartDate": "01", "EndMonth": "07", "EndDate": "07"}],
+			"SpecialDate":[{"Type": "$@Setting.Calendar.Holiday", "StartMonth": "05", "StartDate": "10", "EndMonth": "05", "EndDate": "31"}, {"Type": "$@Setting.Calendar.WorkDay", "StartMonth": "06", "StartDate": "01", "EndMonth": "07", "EndDate": "07"}],
 		},
 		"ExpectedData":
 		{

@@ -3,7 +3,7 @@
 		"InputData":
 		{	
 			"CommonName":"冷暖季ForAddCancelled",
-			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "供冷季", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}],
+			"ColdWarmRange":[{"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "$@Setting.Calendar.ColdSeason", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}],
 		},
 		"ExpectedData":
 		{

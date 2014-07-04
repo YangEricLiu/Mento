@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"EffectiveYear":"时间区间重叠",	
+			"EffectiveYear":"$@Common.Label.TimeZoneConflict",	
 		}
 	}
 ]

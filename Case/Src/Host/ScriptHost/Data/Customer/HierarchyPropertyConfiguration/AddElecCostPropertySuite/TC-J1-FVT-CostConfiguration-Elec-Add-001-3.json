@@ -8,9 +8,9 @@
 		},
 		"ExpectedData":
 		{	
-			"EffectiveDate":"必填项",
-			"PriceMode":"必填项",
-			"Price":"必填项",
+			"EffectiveDate":"$@Common.Label.MandatoryEmptyError",
+			"PriceMode":"$@Common.Label.MandatoryEmptyError",
+			"Price":"$@Common.Label.MandatoryEmptyError",
 		}
 	}
 ]

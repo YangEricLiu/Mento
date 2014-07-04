@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"CommonName":"自定义能效标识12",
-			"Commodity":"电",
-			"KPIType":"单位面积",
+			"Commodity":"$@Common.Commodity.Electric",
+			"KPIType":"$@EM.Unit.UnitArea",
 			"LabellingLevel":"3级",
 			"LabellingValue":[[{
 				"LabellingRightValue":"1",
@@ -20,8 +20,8 @@
 		"ExpectedData":
 		{
 			"CommonName":"自定义能效标识12",
-			"Commodity":"电",
-			"KPIType":"单位面积",
+			"Commodity":"$@Common.Commodity.Electric",
+			"KPIType":"$@EM.Unit.UnitArea",
 			"LabellingLevel":"3级",
 			"LabellingValue":[[{
 				"LabellingRightValue":"1",

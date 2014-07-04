@@ -6,13 +6,13 @@
 		},
 		"ExpectedData":
 		{
-			"WorkdayEffectiveDate":"必填项",
-			"WorkdayCalendarName":"必填项",
-			"WorktimeCalendarName":"必填项",
-			"HeatingCoolingEffectiveDate":"必填项",
-			"HeatingCoolingCalendarName":"必填项",
-			"DayNightEffectiveDate":"必填项",
-			"DayNightCalendarName":"必填项",
+			"WorkdayEffectiveDate":"$@Common.Label.MandatoryEmptyError",
+			"WorkdayCalendarName":"$@Common.Label.MandatoryEmptyError",
+			"WorktimeCalendarName":"$@Common.Label.MandatoryEmptyError",
+			"HeatingCoolingEffectiveDate":"$@Common.Label.MandatoryEmptyError",
+			"HeatingCoolingCalendarName":"$@Common.Label.MandatoryEmptyError",
+			"DayNightEffectiveDate":"$@Common.Label.MandatoryEmptyError",
+			"DayNightCalendarName":"$@Common.Label.MandatoryEmptyError",
 		}
 	}
 ]

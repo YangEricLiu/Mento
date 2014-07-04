@@ -2,8 +2,8 @@
 	{
 		"InputData":
 		{	
-			"Industry":"学校",
-			"ClimateRegion":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.School",
+			"ClimateRegion":"$@Setting.Benchmark.Zone.TemperateRegion",
 
 		},
 

@@ -8,8 +8,8 @@
 		},
 		"ExpectedData":
 		{
-			"Price":"必填项。",
-			"PulsePeakRange":[{"StartTime": "必填项。"}],
+			"Price":"$@Common.Label.MandatoryEmptyError",
+			"PulsePeakRange":[{"StartTime": "$@Common.Label.MandatoryEmptyError"}],
 		}
 	},
 ]

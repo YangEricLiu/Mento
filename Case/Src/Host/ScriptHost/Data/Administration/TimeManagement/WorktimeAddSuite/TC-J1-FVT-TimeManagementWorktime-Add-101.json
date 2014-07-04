@@ -8,7 +8,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabelText":["工作时间以外均为非工作时间"],
+			"LabelText":["$@Setting.Calendar.DefaultWorkTime"],
 		}
 	},	
 	{
@@ -18,7 +18,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabelText":["工作时间以外均为非工作时间"],
+			"LabelText":["$@Setting.Calendar.DefaultWorkTime"],
 		}
 	},	
 	{
@@ -28,7 +28,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabelText":["工作时间以外均为非工作时间"],
+			"LabelText":["$@Setting.Calendar.DefaultWorkTime"],
 		}
 	},
 	{
@@ -38,7 +38,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabelText":["工作时间以外均为非工作时间"],
+			"LabelText":["$@Setting.Calendar.DefaultWorkTime"],
 		}
 	},
 	{
@@ -48,7 +48,7 @@
 		},
 		"ExpectedData":
 		{
-			"LabelText":["工作时间以外均为非工作时间"],
+			"LabelText":["$@Setting.Calendar.DefaultWorkTime"],
 		}
 	},
 ]

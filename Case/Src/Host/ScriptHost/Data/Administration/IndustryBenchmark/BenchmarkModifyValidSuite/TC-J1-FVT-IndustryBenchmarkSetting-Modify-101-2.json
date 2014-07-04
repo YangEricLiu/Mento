@@ -2,13 +2,13 @@
 	{
 		"InputData":
 		{	
-			"Industry":"酒店",
-			"ClimaticRegions":["严寒地区A区", "温和地区"],
+			"Industry":"$@Setting.Benchmark.Industry.Hotel",
+			"ClimaticRegions":["$@Setting.Benchmark.Zone.ColdA", "$@Setting.Benchmark.Zone.TemperateRegion"],
 		},
 		"ExpectedData":
 		{	
-			"Industrys":["酒店"],
-			"ClimaticRegions":["严寒地区A区", "温和地区"],
+			"Industrys":["$@Setting.Benchmark.Industry.Hotel"],
+			"ClimaticRegions":["$@Setting.Benchmark.Zone.ColdA", "$@Setting.Benchmark.Zone.TemperateRegion"],
 		}
 	}
 ]

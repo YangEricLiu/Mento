@@ -11,7 +11,7 @@
 		},
 		"ExpectedData":
 		{
-		    "PlainPrice":"峰谷电价时间未充满24小时。请重新配置或添加“平时电价”。",
+		    "PlainPrice":"$@Setting.TOUTariff.BasicPropertyErrMsg",
 		}	
 	},	
 ]

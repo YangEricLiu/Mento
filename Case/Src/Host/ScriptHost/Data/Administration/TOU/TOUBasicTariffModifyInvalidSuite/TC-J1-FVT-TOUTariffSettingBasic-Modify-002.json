@@ -9,10 +9,10 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"必填项。",
+		    "CommonName":"$@Common.Label.MandatoryEmptyError",
 			"PlainPrice":"",
-			"PeakPrice":"必填项。",	
-			"ValleyPrice":"必填项。",
+			"PeakPrice":"$@Common.Label.MandatoryEmptyError",	
+			"ValleyPrice":"$@Common.Label.MandatoryEmptyError",
 		}	
 	},
 ]

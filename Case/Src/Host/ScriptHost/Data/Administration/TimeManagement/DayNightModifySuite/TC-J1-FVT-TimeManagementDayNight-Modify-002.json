@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"该名称已存在",			
+		    "CommonName":"$@Common.Label.DuplicatedName",			
 			"TimeRange":[{"StartTime": ""}, {"StartTime": ""}],		
 		}		
 	},
@@ -19,8 +19,8 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"必填项。",		
-			"TimeRange":[{"StartTime": "时间段冲突"}, {"StartTime": "时间段冲突"}],		
+		    "CommonName":"$@Common.Label.MandatoryEmptyError",		
+			"TimeRange":[{"StartTime": "$@Common.Label.TimeConflict"}, {"StartTime": "$@Common.Label.TimeConflict"}],		
 		}		
 	},
 ]

@@ -4,11 +4,11 @@
 		{
 			"AccountID":"UserEmptyComments",
 			"RealName":"UserEmptyCommentss",
-			"Title":"技术人员",
-			"Type":"客户管理员",
+			"Title":"$@Setting.User.Technicist",
+			"Type":"$@Setting.User.CustomerManager",
 			"Telephone":"010-12345",
 			"Email":"1@1.com",
-			"titleList":["能源工程顾问","技术人员","客户管理员","服务商管理员","能源经理","能源工程师","部门经理","管理层","业务人员","销售人员"],
+			"titleList":["$@Setting.User.EnergyConsultant","$@Setting.User.Technicist","$@Setting.User.CustomerManager","$@Setting.User.ServerManager","$@Setting.User.EnergyManager","$@Setting.User.EnergyEngineer","$@Setting.User.DeptManager","$@Setting.User.Manager","$@Setting.User.BusinessPerson","$@Setting.User.Sales"],
 		},
 		"ExpectedData":
 		{

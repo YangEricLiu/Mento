@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"CommonNames":["自定义能效标识7","自定义能效标识8"],
-			"Commodities":["电","自来水"],
-			"KPITypes":["单位面积","工休比"],
+			"Commodities":["$@Common.Commodity.Electric","$@Common.Commodity.Water"],
+			"KPITypes":["$@EM.Unit.UnitArea","$@EM.WorkHolidayRatio"],
 			"LabellingLevels":["3级","4级"],
 			"LabellingLevelValues":["3","4"],
 			"LabellingValue":[[{
@@ -65,8 +65,8 @@
 		{
 			"CommonName":"自定义能效标识8",
 			"ConfigurationUser":"SchneiderElectricChina",
-			"Commodity":"自来水",
-			"KPIType":"工休比",
+			"Commodity":"$@Common.Commodity.Water ",
+			"KPIType":"$@EM.WorkHolidayRatio",
 			"LabellingLevel":"4级",
 			"LabellingLevelValue":"4",
 			"LabellingValue":[[{
@@ -93,7 +93,7 @@
 			{
 				"LabellingLeftValue":"3",				
 			}]],
-			"Order":["正序","倒序"],
+			"Order":["$@Setting.CustomizedLabeling.Ascending","$@Setting.CustomizedLabeling.Declining "],
 			"Firstlabels":["<=",">"],
 			"Lastlabels":[">","<="],
 			"UOM":"千瓦时/平方米",

@@ -4,51 +4,51 @@
 	{
 		"InputData":
 		{	
-			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "供冷季", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}],
+			"ColdWarmRange":[{"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "$@Setting.Calendar.ColdSeason", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}],
 		},
 		"ExpectedData":
 		{
-			
+			"LabelText":["$@Setting.Calendar.WarmColdDeclaration"],
 		}
 	},	
 	{
 		"InputData":
 		{	
-			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "02", "StartDate": "01", "EndMonth": "02", "EndDate": "28"}, {"Type": "供冷季", "StartMonth": "03", "StartDate": "07", "EndMonth": "03", "EndDate": "07"}],
+			"ColdWarmRange":[{"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "02", "StartDate": "01", "EndMonth": "02", "EndDate": "28"}, {"Type": "$@Setting.Calendar.ColdSeason", "StartMonth": "03", "StartDate": "07", "EndMonth": "03", "EndDate": "07"}],
 		},
 		"ExpectedData":
 		{
-			
+			"LabelText":["$@Setting.Calendar.WarmColdDeclaration"],
 		}
 	},	
 	{
 		"InputData":
 		{	
-			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "采暖季", "StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}, {"Type": "供冷季", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"Type": "供冷季", "StartMonth": "10", "StartDate": "01", "EndMonth": "10", "EndDate": "15"}],
+			"ColdWarmRange":[{"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "11", "StartDate": "15", "EndMonth": "12", "EndDate": "31"}, {"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "01", "StartDate": "01", "EndMonth": "03", "EndDate": "15"}, {"Type": "$@Setting.Calendar.ColdSeason", "StartMonth": "06", "StartDate": "30", "EndMonth": "09", "EndDate": "01"}, {"Type": "供冷季", "StartMonth": "10", "StartDate": "01", "EndMonth": "10", "EndDate": "15"}],
 		},
 		"ExpectedData":
 		{
-			
+			"LabelText":["$@Setting.Calendar.WarmColdDeclaration"],
 		}
 	},	
 	{
 		"InputData":
 		{	
-			"ColdWarmRange":[{"Type": "采暖季", "StartMonth": "11", "StartDate": "01", "EndMonth": "12", "EndDate": "28"}], 
+			"ColdWarmRange":[{"Type": "$@Setting.Calendar.WarmSeason", "StartMonth": "11", "StartDate": "01", "EndMonth": "12", "EndDate": "28"}], 
 		},
 		"ExpectedData":
 		{
-			
+			"LabelText":["$@Setting.Calendar.WarmColdDeclaration"],
 		}
 	},	
 	{
 		"InputData":
 		{	
-			"ColdWarmRange":[{"Type": "供冷季", "StartMonth": "07", "StartDate": "31", "EndMonth": "08", "EndDate": "30"}, {"Type": "供冷季", "StartMonth": "08", "StartDate": "31", "EndMonth": "10", "EndDate": "31"}],
+			"ColdWarmRange":[{"Type": "$@Setting.Calendar.ColdSeason", "StartMonth": "07", "StartDate": "31", "EndMonth": "08", "EndDate": "30"}, {"Type": "$@Setting.Calendar.ColdSeason", "StartMonth": "08", "StartDate": "31", "EndMonth": "10", "EndDate": "31"}],
 		},
 		"ExpectedData":
 		{
-
+			"LabelText":["$@Setting.Calendar.WarmColdDeclaration"],
 		}
 	},	
 ]

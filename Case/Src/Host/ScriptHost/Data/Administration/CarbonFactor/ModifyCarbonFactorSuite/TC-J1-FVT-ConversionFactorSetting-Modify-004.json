@@ -2,11 +2,11 @@
 	{
 		"InputData":
 		{		
-			"FactorSource":""电(千瓦时)",		
+			"FactorSource":"电(千瓦时)",		
 		},
 		"ExpectedData":
 		{
-			"EffectiveYear":"时间区间重叠",	
+			"EffectiveYear":"$@Common.Label.TimeZoneConflict",	
 		}
 	}
 ]

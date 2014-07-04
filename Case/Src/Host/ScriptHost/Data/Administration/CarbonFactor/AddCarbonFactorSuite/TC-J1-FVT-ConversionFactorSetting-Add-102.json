@@ -9,7 +9,7 @@
 		"ExpectedData":
 		{
 			"Source":"软水(吨)",
-			"Destination":"标煤",	
+			"Destination":"$@Common.CarbonUomType.StandardCoal",	
 		    "EffectiveYear":"1950",
 			"FactorValue":"4",	
 		}

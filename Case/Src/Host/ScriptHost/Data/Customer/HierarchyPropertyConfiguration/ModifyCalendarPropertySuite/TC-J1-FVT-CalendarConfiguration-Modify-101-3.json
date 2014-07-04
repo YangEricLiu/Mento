@@ -9,7 +9,7 @@
 		{
 			"HeatingCoolingEffectiveDate":"2000",
 			"HeatingCoolingCalendarName":"冷暖季日历1",
-			"HeatingCoolingText":["采暖季区间", "1月1日到3月15日 11月15日到12月31日", "供冷季区间", "5月31日到8月31日"],
+			"HeatingCoolingText":["$@Setting.Calendar.WarmTitle", "1月1日到3月15日 11月15日到12月31日", "$@Setting.Calendar.ColdTitle", "5月31日到8月31日"],
 		}
 	}
 ]

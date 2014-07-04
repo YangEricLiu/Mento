@@ -2,15 +2,15 @@
 	{
 		"InputData":
 		{	
-			"Industry":"酒店",
-			"ClimaticRegions":["全部区域","严寒地区A区"],
-			"Industrys":["全行业","办公建筑","数据中心","酒店（二星级及以下）","酒店（四星级）","酒店（五星级）","医院","学校","零售业","超市","服装零售","商场","通讯","机房","通讯基站","通讯营业厅","轨道交通","机场","制造业"],
+			"Industry":"$@Setting.Benchmark.Industry.Hotel",
+			"ClimaticRegions":["全部区域","$@Setting.Benchmark.Zone.ColdA"],
+			"Industrys":["$@Setting.Benchmark.Industry.AllIndustry","办公建筑","$@Setting.Benchmark.Industry.DataCenter","$@Setting.Benchmark.Industry.TwoStarAndBelowHotel","$@Setting.Benchmark.Industry.FourStarHotel","$@Setting.Benchmark.Industry.FiveStarHotel","$@Setting.Benchmark.Industry.Hospital","$@Setting.Benchmark.Industry.School ","$@Setting.Benchmark.Industry.Retail","$@Setting.Benchmark.Industry.Supermarket","$@Setting.Benchmark.Industry.ClothingRetails","$@Setting.Benchmark.Industry.Mall","$@Setting.Benchmark.Industry.Communication","$@Setting.Benchmark.Industry.CommunicationRoom","$@Setting.Benchmark.Industry.BaseStation","$@Setting.Benchmark.Industry.TelecommunicationsBusinessHall","$@Setting.Benchmark.Industry.RailTransport","$@Setting.Benchmark.Industry.Airport","$@Setting.Benchmark.Industry.Manufacture"],
 		},
 		"ExpectedData":
 		{	
-			"Industry":"通讯",
-			"Industrys":["严寒地区A区","温和地区"],
-			"ClimaticRegions":["严寒地区B区","寒冷地区","夏热冬冷地区","夏热冬暖地区","温和地区"],
+			"Industry":"$@Setting.Benchmark.Industry.Communication",
+			"Industrys":["$@Setting.Benchmark.Zone.ColdA","$@Setting.Benchmark.Zone.TemperateRegion"],
+			"ClimaticRegions":["$@Setting.Benchmark.Zone.ColdB","$@Setting.Benchmark.Zone.ColdRegion","$@Setting.Benchmark.Zone.HotSummerColdWinterRegion","$@Setting.Benchmark.Zone.SubtropicalRegion","$@Setting.Benchmark.Zone.TemperateRegion"],
 		}
 	}
 ]

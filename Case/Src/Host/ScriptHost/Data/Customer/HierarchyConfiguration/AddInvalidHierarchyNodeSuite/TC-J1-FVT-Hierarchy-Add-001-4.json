@@ -9,7 +9,7 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"该名称已存在",
+		    "CommonName":"$@Common.Label.DuplicatedName",
 		}
 	},
 	{
@@ -22,7 +22,7 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"该名称已存在",
+		    "CommonName":"$@Common.Label.DuplicatedName",
 		}
 	},
 	{
@@ -32,12 +32,12 @@
 			"CommonName":"AutoBuilding002",
 			"Code":"AutoBuilding002_1",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"该名称已存在",
+		    "CommonName":"$@Common.Label.DuplicatedName",
 		}
 	},
 	{
@@ -47,12 +47,12 @@
 			"CommonName":"OrgBuilding",
 			"Code":"AutoBuilding002_2",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"该名称已存在",
+		    "CommonName":"$@Common.Label.DuplicatedName",
 		}
 	},
 	{
@@ -62,12 +62,12 @@
 			"CommonName":"RootBuilding",
 			"Code":"AutoBuilding002_3",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"该名称已存在",
+		    "CommonName":"$@Common.Label.DuplicatedName",
 		}
 	}
 ]

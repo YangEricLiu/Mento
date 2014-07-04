@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-			"CalendarInfoTips":["该数据点所关联层级节点未引用任何日历模板。请引用后再设置，保证设置内容可被计算", "当前时间的工作日历已配置"],
+			"CalendarInfoTips":["该数据点所关联层级节点未引用任何日历模板。请引用后再设置，保证设置内容可被计算", "$@Setting.Calendar.HasAssociation"],
 			"CalendarInfoOnWindow":["6月8日到6月9日"],
 		}
 	},
@@ -19,7 +19,7 @@
 		},
 		"ExpectedData":
 		{
-			"CalendarInfoTips":["该数据点所关联层级节点未引用任何日历模板。请引用后再设置，保证设置内容可被计算", "当前时间的工作日历已配置"],
+			"CalendarInfoTips":["该数据点所关联层级节点未引用任何日历模板。请引用后再设置，保证设置内容可被计算", "$@Setting.Calendar.HasAssociation"],
 			"CalendarInfoOnWindow":["6月10日到6月12日"],
 		}
 	}

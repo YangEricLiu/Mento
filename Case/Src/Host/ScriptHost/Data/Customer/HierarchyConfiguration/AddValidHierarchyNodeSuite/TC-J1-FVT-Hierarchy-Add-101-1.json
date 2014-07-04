@@ -30,14 +30,14 @@
 		{	
 			"HierarchyNodePath":["自动化测试", "AutoOrg001", "AutoSite001"],
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":
 		{
 		    "Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 			"Message":"添加成功",
 		}
 	},
@@ -72,8 +72,8 @@
 			"CommonName":"newadd1",
 			"Code":"newadd1",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 			"Comments":"newadd1",
 		},
 		"ExpectedData":
@@ -81,8 +81,8 @@
 			"CommonName":"newadd1",
 			"Code":"newadd1",
 		    "Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 			"Message":"添加成功",
 			"Comments":"newadd1",
 		}
@@ -94,8 +94,8 @@
 			"CommonName":"newadd2",
 			"Code":"newadd2",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 			"Comments":"newadd2",
 		},
 		"ExpectedData":
@@ -103,8 +103,8 @@
 			"CommonName":"newadd2",
 			"Code":"newadd2",
 		    "Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 			"Message":"添加成功",
 			"Comments":"newadd2",
 		}
@@ -116,8 +116,8 @@
 			"CommonName":"newadd3",
 			"Code":"newadd3",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 			"Comments":"newadd3",
 		},
 		"ExpectedData":
@@ -125,8 +125,8 @@
 			"CommonName":"newadd3",
 			"Code":"newadd3",
 		    "Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 			"Message":"添加成功",
 			"Comments":"newadd3",
 		}

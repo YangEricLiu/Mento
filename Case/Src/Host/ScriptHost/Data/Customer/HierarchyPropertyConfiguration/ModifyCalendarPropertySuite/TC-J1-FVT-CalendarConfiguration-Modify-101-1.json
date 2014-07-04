@@ -14,9 +14,9 @@
 			"DayNightEffectiveDate":"2048",
 			"DayNightCalendarName":"昼夜时间日历二",
 			"WorkdayText":["默认工作日", "周一至周五"],
-			"WorktimeText":["非工作时间", "工作时间以外均为非工作时间", "工作时间", "00:00-24:00"],
-			"HeatingCoolingText":["采暖季区间", "1月1日到1月31日", "供冷季区间", "12月1日到12月31日"],
-			"DayNightText":["黑夜时间", "白昼时间以外均为黑夜时间", "白昼时间", "09:00-18:00"],
+			"WorktimeText":["$@Setting.Calendar.RestTimeTitle", "$@Setting.Calendar.RestTimeContent", "$@Setting.Calendar.WorkTimeTitle", "00:00-24:00"],
+			"HeatingCoolingText":["$@Setting.Calendar.WarmTitle", "1月1日到1月31日", "$@Setting.Calendar.ColdTitle", "12月1日到12月31日"],
+			"DayNightText":["$@Setting.Calendar.NightTitle", "$@Setting.Calendar.NightContent", "$@Setting.Calendar.DayTitle", "09:00-18:00"],
 		}
 	}
 ]

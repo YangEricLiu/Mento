@@ -8,7 +8,7 @@
 		},
 		"ExpectedData":
 		{	
-			"EffectiveDate":"时间段冲突",
+			"EffectiveDate":"$@Common.Label.TimeConflict",
 		}
 	}
 ]

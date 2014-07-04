@@ -32,8 +32,8 @@
 			"CommonName":"TestSameCodewithBuilding",
 			"Code":"AutoBuilding001",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":
 		{
@@ -73,8 +73,8 @@
 			"CommonName":"TestSameCodewithBuilding1",
 			"Code":"AutoBuilding001",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":
 		{
@@ -88,8 +88,8 @@
 			"CommonName":"TestSameCodewithBuilding2",
 			"Code":"AutoBuilding001",
 			"Type":"Building",
-			"Industry":"数据中心",
-			"Zone":"温和地区",
+			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":
 		{

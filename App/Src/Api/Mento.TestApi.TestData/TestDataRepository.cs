@@ -341,6 +341,7 @@ namespace Mento.TestApi.TestData
     {
         private const string KEYFORMATSIMPLE = "(\\$\\@([\\w\\.]+)(\\@\\$)?)"; //$@common.message.test
         private const string KEYFORMATPARAMETERED = "\\$\\@([\\w\\.]+)\\|((\\([^)]+\\)|(\\(\\)))(,?))+(\\@\\$)?"; //$@common.message.test|(a),(b),(c)
+        private const string ParameterFormat = "\\(((?<Open>\\()|(?<-Open>\\))|[^()])*(?(Open)(?!))\\)";
         private const string INRESOURCEKEY = @"##(\w|\.)+##"; //##Common.Glossary.Dashboard##
 
         public static string ReplaceRawTestData(string raw)
@@ -352,16 +353,17 @@ namespace Mento.TestApi.TestData
                 string key = match.Groups[1].Value;
                 string value = ResolveResourceValue(key);
 
-                string[] parameters = match.Groups[0].Value.Split('|')[1].Split(',');
-                for (int i = 0; i < parameters.Length; i++)
+                MatchCollection parameterMatches = Regex.Matches(match.Groups[0].Value, ParameterFormat, RegexOptions.IgnoreCase);
+                for (int i = 0; i < parameterMatches.Count; i++)
                 {
-                    string paramValue = parameters[i].Replace("(", "").Replace(")", "").Replace("\"", "\\\"");
-                    if (paramValue.Contains("$@"))
+                    Match parameterMatch = parameterMatches[i];
+                    string parameter = parameterMatch.Value.Substring(1, parameterMatch.Value.Length - 2);
+                    if (parameter.Contains("$@"))
                     {
-                        paramValue = ReplaceRawTestData(paramValue);
+                        parameter = ReplaceRawTestData(parameter);
                     }
 
-                    value = Regex.Replace(value, @"\{" + i.ToString() + @"\}", paramValue);
+                    value = Regex.Replace(value, @"\{" + i.ToString() + @"\}", parameter);
                 }
 
                 raw = raw.Replace(match.Groups[0].Value, value);

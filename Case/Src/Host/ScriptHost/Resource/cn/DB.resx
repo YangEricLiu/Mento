@@ -264,16 +264,16 @@
   <data name="Industry_Hotel" xml:space="preserve">
     <value>酒店</value>
   </data>
-  <data name="Industry_Hotel (Two-star and below)" xml:space="preserve">
+  <data name="Industry_Hotel  Two-star and below " xml:space="preserve">
     <value>酒店（二星级及以下）</value>
   </data>
-  <data name="Industry_Hotel (Three-stat)" xml:space="preserve">
+  <data name="Industry_Hotel  Three-stat " xml:space="preserve">
     <value>酒店（三星级）</value>
   </data>
-  <data name="Industry_Hotel (Four-star)" xml:space="preserve">
+  <data name="Industry_Hotel  Four-star " xml:space="preserve">
     <value>酒店（四星级）</value>
   </data>
-  <data name="Industry_Hotel (Five-stat)" xml:space="preserve">
+  <data name="Industry_Hotel  Five-stat " xml:space="preserve">
     <value>酒店（五星级）</value>
   </data>
   <data name="Industry_Hospital" xml:space="preserve">

@@ -43,7 +43,7 @@
 			"Order":["$@Setting.CustomizedLabeling.Declining","$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
-			"UOM":"$@Uom_Ton$@@ENERGYRANK_APDX",
+			"UOM":"$@Uom_Ton$@ENERGYRANK_APDX",
 		}
 	}
 ]

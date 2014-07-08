@@ -15,7 +15,7 @@
 			"Uom":"$@Uom_KWH",
 			"CalculationType":"Sum",
 			"Comments":"nothing",
-			"Message":"$@$@Common.Label.ConfirmDelete|(PtagDeleteCancel),($@Setting.Label.PTagManagement),()",
+			"Message":"$@Common.Label.ConfirmDelete|(PtagDeleteCancel),($@Setting.Label.PTagManagement),()",
 		}
 	}
 ]

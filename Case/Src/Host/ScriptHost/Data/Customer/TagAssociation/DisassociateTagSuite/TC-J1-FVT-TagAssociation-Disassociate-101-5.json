@@ -4,7 +4,7 @@
 		{
 			"HierarchyNodePath":["自动化测试", "DisassociateTagAuto", "DisassociateTagSite", "DisassociateTagBuild1015"],
 			"TagNames":["PtagForDisassociated1015"],
-			"HeaderName":["可关联", "不可关联"],
+			"HeaderName":["$@Setting.TagAssociation.Associatiable", "$@Setting.TagAssociation.Unassociatiable"],
 			"TagName":"PtagForDisassociated1015_2",
 		},
 		"ExpectedData":

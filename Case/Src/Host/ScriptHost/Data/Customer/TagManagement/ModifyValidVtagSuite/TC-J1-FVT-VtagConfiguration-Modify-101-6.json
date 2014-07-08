@@ -12,7 +12,7 @@
 			"AreaNodePath":["CheckModifyVtag","FirstFloor"],
 			"CommonName":"VtagModify006",
 			"Code":"VtagModify006",
-			"SystemNodePath":["CheckModifyVtag"," $@SystemDimensionTemplateItem_HVAC
+			"SystemNodePath":["CheckModifyVtag","$@SystemDimensionTemplateItem_HVAC"],
 			"Message":"$@SystemDimensionTemplateItem_HVAC",
 		}
 	}

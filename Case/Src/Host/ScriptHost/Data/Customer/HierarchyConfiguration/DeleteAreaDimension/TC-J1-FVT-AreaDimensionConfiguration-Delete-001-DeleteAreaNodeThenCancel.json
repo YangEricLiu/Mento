@@ -10,7 +10,7 @@
 		"ExpectedData":
 		{
 			"AreaNodePath":["楼宇配置测试","DeleteArea1"],
-			"Messages":["$@Common.Label.ConfirmDelete|(DeleteArea1),($@Common.Glossary.AreaDimensionNode),()", "$@Common.Glossary.AreaDimensionNodeDeleteTip"],
+			"Messages":["$@Common.Label.ConfirmDelete|(DeleteArea1),($@Common.Glossary.AreaDimensionNode),()","$@Common.Glossary.AreaDimensionNodeDeleteTip"],
 		}
 	}
 ]

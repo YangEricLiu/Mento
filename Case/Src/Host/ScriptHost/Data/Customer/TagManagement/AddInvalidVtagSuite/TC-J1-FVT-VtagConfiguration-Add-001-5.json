@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-			"FormulaMessage":"$@TagConfiguration.InvalidFormula",
+			"FormulaMessage":"$@Setting.TagConfiguration.InvalidFormula",
 		}
 	}
 ]

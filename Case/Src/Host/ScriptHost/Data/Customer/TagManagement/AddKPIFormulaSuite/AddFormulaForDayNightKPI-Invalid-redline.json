@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-			"Formula":"计算公式不合法，请检查",
+			"Formula":"$@Setting.TagConfiguration.InvalidFormula",
 		}
 	},
 	{
@@ -18,7 +18,7 @@
 		},
 		"ExpectedData":
 		{
-			"Formula":"计算公式不合法，请检查",
+			"Formula":"$@Setting.TagConfiguration.InvalidFormula",
 			
 		}
 	},
@@ -30,7 +30,7 @@
 		},
 		"ExpectedData":
 		{
-			"Formula":"计算公式不合法，请检查",
+			"Formula":"$@Setting.TagConfiguration.InvalidFormula",
 		}
 	},
 	{
@@ -41,7 +41,7 @@
 		},
 		"ExpectedData":
 		{
-			"Formula":"计算公式不合法，请检查",
+			"Formula":"$@Setting.TagConfiguration.InvalidFormula",
 		}
 	},
 	{
@@ -52,7 +52,7 @@
 		},
 		"ExpectedData":
 		{
-			"Formula":"计算公式不合法，请检查",
+			"Formula":"$@Setting.TagConfiguration.InvalidFormula",
 		}
 	},
 	{
@@ -63,7 +63,7 @@
 		},
 		"ExpectedData":
 		{
-			"Formula":"计算公式不合法，请检查",
+			"Formula":"$@Setting.TagConfiguration.InvalidFormula",
 		}
 	},
 	{
@@ -74,7 +74,7 @@
 		},
 		"ExpectedData":
 		{
-			"Formula":"计算公式不合法，请检查",
+			"Formula":"$@Setting.TagConfiguration.InvalidFormula",
 		}
 	},
 ]

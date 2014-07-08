@@ -9,7 +9,7 @@
 		{
 			"HeatingCoolingEffectiveDate":"2000",
 			"HeatingCoolingCalendarName":"冷暖季日历1",
-			"HeatingCoolingText":["$@Setting.Calendar.WarmTitle", "1月1日到3月15日 11月15日到12月31日", "$@Setting.Calendar.ColdTitle", "@$5$@WEBCOMMONCONST_MONTH@$31$@WEBCOMMONCONST_DAY$@Setting.Calendar.To@$8$@WEBCOMMONCONST_MONTH@$31$@WEBCOMMONCONST_DAY"],
+			"HeatingCoolingText":["$@Setting.Calendar.WarmTitle", "@$1$@WEBCOMMONCONST_MONTH@$1$@WEBCOMMONCONST_DAY$@Setting.Calendar.To@$3$@WEBCOMMONCONST_MONTH@$15$@WEBCOMMONCONST_DAY@$ 11$@WEBCOMMONCONST_MONTH@$15$@WEBCOMMONCONST_DAY$@Setting.Calendar.To@$12$@WEBCOMMONCONST_MONTH@$31$@WEBCOMMONCONST_DAY", "$@Setting.Calendar.ColdTitle", "@$5$@WEBCOMMONCONST_MONTH@$31$@WEBCOMMONCONST_DAY$@Setting.Calendar.To@$8$@WEBCOMMONCONST_MONTH@$31$@WEBCOMMONCONST_DAY"],
 		}
 	}
 ]

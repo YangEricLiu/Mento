@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"MessageArray":["$@$@Common.Label.ConfirmDelete|(PtagElecKHW002),($@Setting.Label.PTagManagement),()", "$@Message.M06182"],
+			"MessageArray":["$@Common.Label.ConfirmDelete|(PtagElecKHW002),($@Setting.Label.PTagManagement),()", "$@Message.M06182|($@Setting.Label.PTagManagement),(PtagElecKHW002),(CheckTagsAssoBuild)"],
 		}
 	}
 ]

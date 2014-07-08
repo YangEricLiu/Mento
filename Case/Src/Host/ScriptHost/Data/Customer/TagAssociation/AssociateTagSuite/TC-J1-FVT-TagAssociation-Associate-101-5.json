@@ -11,7 +11,7 @@
 		"ExpectedData":
 		{
 			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1", "AssociatedTagBuild1014"],	
-			"AssociatedTooltips":["解除与以下节点的关联关系\r\n自动化测试\\AssociateTagAuto1\\AssociateTagSite1\\AssociatedTagBuild1015", "解除与以下节点的关联关系\r\n自动化测试\\AssociateTagAuto1\\AssociateTagSite1\\AssociatedTagBuild1014\\一层\r\n自动化测试\\AssociateTagAuto1\\AssociateTagSite1\\AssociatedTagBuild1014\\空调", "解除与以下节点的关联关系\r\n自动化测试\\AssociateTagAuto1\\AssociateTagSite1\\AssociatedTagBuild1014\\空调\r\n自动化测试\\AssociateTagAuto1\\AssociateTagSite1\\AssociatedTagBuild1014\\一层"],
+			"AssociatedTooltips":["$@Setting.TagAssociation.UnassociateTip@$\r\n自动化测试\\AssociateTagAuto1\\AssociateTagSite1\\AssociatedTagBuild1015", "$@Setting.TagAssociation.UnassociateTip@$\r\n自动化测试\\AssociateTagAuto1\\AssociateTagSite1\\AssociatedTagBuild1014\\一层\r\n自动化测试\\AssociateTagAuto1\\AssociateTagSite1\\AssociatedTagBuild1014\\$@SystemDimensionTemplateItem_HVAC", "$@Setting.TagAssociation.UnassociateTip@$\r\n自动化测试\\AssociateTagAuto1\\AssociateTagSite1\\AssociatedTagBuild1014\\SystemDimensionTemplateItem_HVAC\r\n自动化测试\\AssociateTagAuto1\\AssociateTagSite1\\AssociatedTagBuild1014\\一层"],
 		}
 	}
 ]

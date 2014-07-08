@@ -11,7 +11,7 @@
 		{
 			"AreaNodePath":["楼宇配置测试","DeleteArea1"],
 			"CommonName":"DeleteArea1",
-			"Messages":["删除区域维度节点 “DeleteArea1” 吗？", "$@Common.Glossary.AreaDimensionNodeDeleteTip"],
+			"Messages":["$@Common.Label.ConfirmDelete|(DeleteArea1),($@Common.Glossary.AreaDimensionNode),()", "$@Common.Glossary.AreaDimensionNodeDeleteTip"],
 		}
 	}
 ]

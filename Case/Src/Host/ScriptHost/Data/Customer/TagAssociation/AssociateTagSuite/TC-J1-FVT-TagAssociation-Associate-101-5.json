@@ -5,7 +5,7 @@
 			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1", "AssociatedTagBuild1015"],	
 			"TagNames":["PtagForAssociated1015"],	
 			"TagName":"VtagForAssociated1015",	
-			"SystemDimensionPath":["AssociatedTagBuild1014", "空调"],
+			"SystemDimensionPath":["AssociatedTagBuild1014", "$@SystemDimensionTemplateItem_HVAC"],
 			"AreaDimensionPath":["AssociatedTagBuild1014", "一层"],
 		},
 		"ExpectedData":

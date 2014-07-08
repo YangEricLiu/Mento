@@ -3,22 +3,22 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001"],
-			"SystemDimensionItemPath":["功能区域用电", "照明"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_ElectricityComsumptionInFunctionArea", "$@SystemDimensionTemplateItem_Lighting"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocSite001", "功能区域用电", "照明"],
+			"SystemDimensionPath":["SysDimAssocSite001", "$@SystemDimensionTemplateItem_ElectricityComsumptionInFunctionArea", "$@SystemDimensionTemplateItem_Lighting"],
 		}
 	},
 	{
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001"],
-			"SystemDimensionItemPath":["辅助区域用电", "信息机房", "信息设备专用空调"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_ElectricityComsumptionInSecondZone", "$@SystemDimensionTemplateItem_InformationRoom", "$@SystemDimensionTemplateItem_HVACEquipment"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocOrg001", "辅助区域用电", "信息机房", "信息设备专用空调"],
+			"SystemDimensionPath":["SysDimAssocOrg001", "$@SystemDimensionTemplateItem_ElectricityComsumptionInSecondZone", "$@SystemDimensionTemplateItem_InformationRoom", "$@SystemDimensionTemplateItem_HVACEquipment"],
 		}
 	}
 ]

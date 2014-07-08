@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"CommonNames":["自定义能效标识9","自定义能效标识10"],
-			"Commodities":["$@Common.Commodity.Electric","$@Common.Commodity.Water"],
+			"Commodities":["$@Commodity_Electricity","$@Commodity_Water"],
 			"KPITypes":["$@EM.Unit.UnitArea","$@EM.Unit.UnitPopulation"],
-			"LabellingLevels":["3级","4级"],
+			"LabellingLevels":["3$@Setting.CustomizedLabeling.Grade","4$@Setting.CustomizedLabeling.Grade"],
 			"LabellingLevelValues":["3","4"],
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
@@ -36,9 +36,9 @@
 		"ExpectedData":
 		{
 			"CommonName":"自定义能效标识9",
-			"Commodity":"$@Common.Commodity.Electric",
+			"Commodity":"$@Commodity_Electricity",
 			"KPIType":"$@EM.Unit.UnitArea",
-			"LabellingLevel":"3级",
+			"LabellingLevel":"3$@Setting.CustomizedLabeling.Grade",
 			"LabellingLevelValue":"3",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
@@ -53,7 +53,7 @@
 			"Order":["$@Setting.CustomizedLabeling.Ascending","$@Setting.CustomizedLabeling.Declining"],
 			"Firstlabels":["<=",">"],
 			"Lastlabels":[">","<="],
-			"UOM":"千瓦时/平方米",
+			"UOM":"$@Uom_KWH@$/$@Uom_m²",
 		}
 	}
 ]

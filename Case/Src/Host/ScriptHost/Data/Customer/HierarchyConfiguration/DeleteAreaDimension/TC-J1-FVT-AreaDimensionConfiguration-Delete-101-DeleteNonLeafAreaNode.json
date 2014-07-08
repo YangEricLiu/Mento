@@ -10,7 +10,7 @@
 		"ExpectedData":
 		{
 			"AreaNodePath":["楼宇配置测试","L1","L2","L3","L4"] ,
-			"Messages":["删除区域维度节点 “L3” 吗？", "$@Common.Glossary.AreaDimensionNodeDeleteTip", "删除区域维度节点 “L1” 吗？"],
+			"Messages":["$@Common.Label.ConfirmDelete|(L3),($@Common.Glossary.AreaDimensionNode),()", "$@Common.Glossary.AreaDimensionNodeDeleteTip", "$@Common.Label.ConfirmDelete|(L1),($@Common.Glossary.AreaDimensionNode),()"],
 
 		}
 	}

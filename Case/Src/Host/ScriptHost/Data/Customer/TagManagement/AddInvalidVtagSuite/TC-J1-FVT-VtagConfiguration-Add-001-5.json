@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-			"FormulaMessage":"计算公式的格式有误，请检查。",
+			"FormulaMessage":"$@TagConfiguration.InvalidFormula",
 		}
 	}
 ]

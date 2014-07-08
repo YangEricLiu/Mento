@@ -10,7 +10,7 @@
 		"ExpectedData":
 		{	
 			"EffectiveDate":"2013-01",
-			"PriceMode":"$2Setting.Cost.Label.FixedPrice",
+			"PriceMode":"$@Setting.Cost.Label.FixedPrice",
 			"Price":"50",
 		}
 	}

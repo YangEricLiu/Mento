@@ -3,11 +3,11 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001"],
-			"SystemDimensionItemPath":["空调", "冷热源", "供冷主机"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_HVAC", "$@SystemDimensionTemplateItem_CoolingHeatingSource", "$@SystemDimensionTemplateItem_CoolingMachine"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocSite001", "空调", "冷热源", "供冷主机"],
+			"SystemDimensionPath":["SysDimAssocSite001", "$@SystemDimensionTemplateItem_HVAC", "$@SystemDimensionTemplateItem_CoolingHeatingSource", "$@SystemDimensionTemplateItem_CoolingMachine"],
 		}
 	}
 ]

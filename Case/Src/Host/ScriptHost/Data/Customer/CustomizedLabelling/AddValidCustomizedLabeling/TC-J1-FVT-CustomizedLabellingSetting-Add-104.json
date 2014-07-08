@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"CommonName":"自定义能效标识6",
-			"Commodity":"$@Common.Commodity.Air",
-			"LabellingLevel":"8级",
+			"Commodity":"$@Commodity_AirQuality",
+			"LabellingLevel":"8$@Setting.CustomizedLabeling.Grade",
 			"LabellingLevelValue":"8",
 			"KPIType":"$@EM.Unit.UnitArea",
 			"LabellingValue":[[{
@@ -41,10 +41,10 @@
 		"ExpectedData":
 		{			
 			"CommonName":"自定义能效标识6",
-			"Commodity":"$@Common.Commodity.Air",
-			"LabellingLevel":"8级",
+			"Commodity":"$@Commodity_AirQuality",
+			"LabellingLevel":"8$@Setting.CustomizedLabeling.Grade",
 			"KPIType":"$@EM.Unit.UnitArea",
-			"UOM":"微克每立方米/平方米",
+			"UOM":"$@Uom_µg/m³@$/$@Uom_m²",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
 			},

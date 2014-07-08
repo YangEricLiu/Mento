@@ -9,7 +9,7 @@
 			"Step":"Hourly",
 			"CalculationType":"Sum",
 			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","FormulaBuilding"],
-			"Message":"虚拟数据点的计算公式包含非法的数据点，无法保存。",
+			"Message":"$@Message.M06134",
 		},
 		"ExpectedData":
 		{
@@ -20,7 +20,7 @@
 			"Step":"Hourly",
 			"CalculationType":"Sum",
 			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","FormulaBuilding2"],
-			"FormulaMessage":"计算公式的格式有误，请检查。"
+			"FormulaMessage":"$@Setting.TagConfiguration.InvalidFormula"
 		}
 	}
 ]

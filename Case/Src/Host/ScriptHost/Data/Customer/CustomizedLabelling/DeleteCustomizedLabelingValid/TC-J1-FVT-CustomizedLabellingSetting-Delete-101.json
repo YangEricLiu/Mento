@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"CommonNames":["自定义能效标识11"],
-			"Commodity":"$@Common.Commodity.Electric",
+			"Commodity":"$@Commodity_Electricity",
 			"KPIType":"$@EM.Unit.UnitArea",
-			"LabellingLevel":"3级",
+			"LabellingLevel":"3$@Setting.CustomizedLabeling.Grade",
 			"LabellingValue":[[{
 				"LabellingRightValue":"1",
 			},
@@ -20,9 +20,9 @@
 		"ExpectedData":
 		{
 			"CommonNames":["自定义能效标识11"],
-			"Commodity":"$@Common.Commodity.Electric",
+			"Commodity":"$@Commodity_Electricity",
 			"KPIType":"$@EM.Unit.UnitArea",
-			"LabellingLevel":"3级",
+			"LabellingLevel":"3$@Setting.CustomizedLabeling.Grade",
 			"LabellingValue":[[{
 				"LabellingRightValue":"1",
 			},
@@ -36,7 +36,7 @@
 			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
-			"UOM":"千瓦时/平方米",
+			"UOM":"$@Uom_KWH@$/$@Uom_m²",
 		}
 	}
 ]

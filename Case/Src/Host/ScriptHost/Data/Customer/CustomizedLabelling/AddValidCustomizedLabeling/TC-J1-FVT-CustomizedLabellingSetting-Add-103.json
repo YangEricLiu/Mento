@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"CommonName":"自定义能效标识5",
-			"Commodities":["$@Common.Commodity.Water","$@Common.Commodity.Gas"],
+			"Commodities":["$@Commodity_Water","$@Commodity_Gas"],
 			"KPITypes":["$@EM.Unit.UnitArea","$@EM.WorkHolidayRatio"],
-			"LabellingLevels":["8级","6级"],
+			"LabellingLevels":["8$@Setting.CustomizedLabeling.Grade","6$@Setting.CustomizedLabeling.Grade"],
 			"LabellingLevelValues":["8","6"],
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
@@ -107,9 +107,9 @@
 		"ExpectedData":
 		{
 		    "CommonName":"自定义能效标识5",
-			"Commodity":"$@Common.Commodity.Gas",
+			"Commodity":"$@Commodity_Gas",
 			"KPIType":"$@EM.WorkHolidayRatio",
-			"LabellingLevel":"6级",
+			"LabellingLevel":"6$@Setting.CustomizedLabeling.Grade",
 			"LabellingValue":[
 			[{
 				"LabellingLeftValue":"",
@@ -198,7 +198,7 @@
 			}]],
 			"Firstlabels":["<=",">"],
 			"Lastlabels":[">","<="],
-			"UOMs":["吨/人","立方米/人"],
+			"UOMs":["$@Uom_Ton$@ENERGYRANK_APDX","$@Uom_m³$@ENERGYRANK_APDX"],
 			"Order":["$@Setting.CustomizedLabeling.Ascending","$@Setting.CustomizedLabeling.Declining"],
 		}
 	}

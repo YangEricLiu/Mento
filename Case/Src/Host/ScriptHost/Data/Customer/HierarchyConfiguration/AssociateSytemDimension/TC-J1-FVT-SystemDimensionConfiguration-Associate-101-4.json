@@ -3,11 +3,11 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001", "SysDimAssocBuild001"],
-			"SystemDimensionItemPath":["辅助区域用电", "服务部门", "服务部门照明"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_ElectricityComsumptionInSecondZone", "$@SystemDimensionTemplateItem_Service", "$@SystemDimensionTemplateItem_ServiceLight"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocBuild001", "辅助区域用电", "服务部门", "服务部门照明"],
+			"SystemDimensionPath":["SysDimAssocBuild001", "$@SystemDimensionTemplateItem_ElectricityComsumptionInSecondZone", "$@SystemDimensionTemplateItem_Service", "$@SystemDimensionTemplateItem_ServiceLight"],
 		}
 	}
 ]

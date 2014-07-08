@@ -15,7 +15,7 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1", "Associatebuild101"],
-			"SystemDimensionPath":["Associatebuild101", "功能区域用电"],
+			"SystemDimensionPath":["Associatebuild101", "$@SystemDimensionTemplateItem_ElectricityComsumptionInFunctionArea"],
 			"TagNames":["P_Asso_001_1_1", "P_Asso_001_1_2", "V_Asso_101_1_1"],	
 			"RemovedTagNames":["P_Asso_001_1_1", "P_Asso_001_1_2"],	
 		},

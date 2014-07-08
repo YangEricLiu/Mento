@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试", "DisassociateTagAuto", "DisassociateTagSite","DisassociateTagBuild"],
-			"SystemDimensionPath":["DisassociateTagBuild", "空调"],
+			"SystemDimensionPath":["DisassociateTagBuild", "$@SystemDimensionTemplateItem_HVAC"],
 			"AreaDimensionPath":["DisassociateTagBuild","AreaNode"],
 			"TagName":"P_Dimension",
 		},

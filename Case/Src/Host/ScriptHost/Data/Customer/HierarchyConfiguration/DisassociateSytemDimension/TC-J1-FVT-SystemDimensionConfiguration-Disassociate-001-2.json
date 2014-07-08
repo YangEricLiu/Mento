@@ -3,24 +3,24 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001"],
-			"SystemDimensionItemPath":["空调","冷热源"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_HVAC","$@SystemDimensionTemplateItem_CoolingHeatingSource"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocSite001", "空调", "冷热源", "供热主机"],
-			"Message":"反勾选当前维度节点前，必须确保它的所有子节点未被勾选",
+			"SystemDimensionPath":["SysDimAssocSite001", "$@SystemDimensionTemplateItem_HVAC", "$@SystemDimensionTemplateItem_CoolingHeatingSource", "$@SystemDimensionTemplateItem_HeatingMachine"],
+			"Message":"$@Message.M04054",
 		}
 	},
 	{
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001"],
-			"SystemDimensionItemPath":["空调"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_HVAC"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocSite001", "空调", "冷热源", "供热主机"],
-			"Message":"反勾选当前维度节点前，必须确保它的所有子节点未被勾选",
+			"SystemDimensionPath":["SysDimAssocSite001", "$@SystemDimensionTemplateItem_HVAC", "$@SystemDimensionTemplateItem_CoolingHeatingSource", "$@SystemDimensionTemplateItem_HeatingMachine"],
+			"Message":"$@Message.M04054",
 		}
 	},
 	
@@ -28,13 +28,13 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001"],
-			"SystemDimensionItemPath":["空调","空调末端"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_HVAC","$@SystemDimensionTemplateItem_AirTerminal"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocSite001", "空调", "空调末端", "风机盘管"],
-			"SystemDimensionNode":"排风机",
-			"Message":"反勾选当前维度节点前，必须确保它的所有子节点未被勾选",
+			"SystemDimensionPath":["SysDimAssocSite001", "$@SystemDimensionTemplateItem_HVAC", "$@SystemDimensionTemplateItem_AirTerminal", "$@SystemDimensionTemplateItem_FCU"],
+			"SystemDimensionNode":"$@SystemDimensionTemplateItem_ExhausteFan",
+			"Message":"$@Message.M04054",
 		}
 	}
 ]

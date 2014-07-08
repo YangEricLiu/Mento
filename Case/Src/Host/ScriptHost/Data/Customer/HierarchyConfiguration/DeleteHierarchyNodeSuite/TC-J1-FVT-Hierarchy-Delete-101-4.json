@@ -7,7 +7,7 @@
 		"ExpectedData":
 		{
 			"HierarchyNodePath":["自动化测试", "DeleteOrg003"],
-			"Messages":["删除层级节点 “DeleteSite003” 吗？", "$@Setting.Hierarchy.Message.DeleteTip"],
+			"Messages":["$@Common.Label.ConfirmDelete|(DeleteSite003),($@Common.Glossary.HierarchyNode),()", "$@Setting.Hierarchy.Message.DeleteTip"],
 		}
 	}
 ]

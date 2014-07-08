@@ -9,7 +9,7 @@
 			"CommonName":"VtagModify005",
 			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","CheckModifyVtag"],
 			"Step":"Monthly",
-			"Message":"所选数据点不支持\"按小时\",\"按天\",\"按周\"的步长显示，换个步长试试。",
+			"Message":"$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")",
 		}
 	}
 ]

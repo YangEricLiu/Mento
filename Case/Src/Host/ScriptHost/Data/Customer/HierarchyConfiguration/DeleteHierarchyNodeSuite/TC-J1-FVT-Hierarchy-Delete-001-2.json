@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"Messages":["删除层级节点 “AutoBuilding002” 吗？", "$@Setting.Hierarchy.Message.DeleteTip"],
+			"Messages":["$@Common.Label.ConfirmDelete|(AutoBuilding002),($@Common.Glossary.HierarchyNode),()", "$@Setting.Hierarchy.Message.DeleteTip"],
 		} 
 	}
 ]

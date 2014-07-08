@@ -12,9 +12,8 @@
 			"AreaNodePath":["CheckModifyVtag","FirstFloor"],
 			"CommonName":"VtagModify006",
 			"Code":"VtagModify006",
-			"SystemNodePath":["CheckModifyVtag"," 空调"],
-			"Uom":"$@Uom_KVARH",
-			"Message":"空调",
+			"SystemNodePath":["CheckModifyVtag"," $@SystemDimensionTemplateItem_HVAC
+			"Message":"$@SystemDimensionTemplateItem_HVAC",
 		}
 	}
 ]

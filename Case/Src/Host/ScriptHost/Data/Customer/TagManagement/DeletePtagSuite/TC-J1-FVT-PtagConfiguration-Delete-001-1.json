@@ -15,7 +15,7 @@
 			"Uom":"$@Uom_KWH",
 			"CalculationType":"Sum",
 			"Comments":"nothing",
-			"Message":"删除计量数据P “PtagDeleteCancel” 吗？",
+			"Message":"$@$@Common.Label.ConfirmDelete|(PtagDeleteCancel),($@Setting.Label.PTagManagement),()",
 		}
 	}
 ]

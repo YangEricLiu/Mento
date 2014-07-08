@@ -9,7 +9,7 @@
 		{
 			"HierarchyNodePath":["自动化测试", "CheckTagsAssoSite"],
 			"CommonName":"PtagDeleteVerify",
-			"Message":"删除计量数据P “PtagDeleteVerify” 吗？",
+			"Message":"$@$@Common.Label.ConfirmDelete|(PtagDeleteVerify),($@Setting.Label.PTagManagement),()",
 		}
 	}
 ]

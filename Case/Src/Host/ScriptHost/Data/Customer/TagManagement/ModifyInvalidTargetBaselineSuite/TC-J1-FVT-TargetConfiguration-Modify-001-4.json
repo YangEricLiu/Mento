@@ -8,7 +8,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"必填项。",
+			"TargetBaselineName":"$@Common.Label.MandatoryEmptyError",
 		}
 	},
 	{
@@ -20,7 +20,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"必填项。",
+			"TargetBaselineName":"$@Common.Label.MandatoryEmptyError",
 		}
 	},
 	{
@@ -32,7 +32,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"允许汉字，英文字母，数字，下划线和空格",
+			"TargetBaselineName":"$@Common.Label.NameRegexError",
 		}
 	},
 	{
@@ -44,7 +44,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"允许汉字，英文字母，数字，下划线和空格",
+			"TargetBaselineName":"$@Common.Label.NameRegexError",
 		}
 	}
 ]

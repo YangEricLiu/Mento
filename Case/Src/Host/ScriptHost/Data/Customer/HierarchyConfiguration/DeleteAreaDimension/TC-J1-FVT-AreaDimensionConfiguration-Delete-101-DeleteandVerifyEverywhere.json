@@ -9,7 +9,7 @@
 		"ExpectedData":
 		{
 			"AreaNodePath":["楼宇配置测试","CheckAll"],
-			"Messages":["删除区域维度节点 “CheckAll” 吗？", "$@Common.Glossary.AreaDimensionNodeDeleteTip"],
+			"Messages":["$@$@Common.Label.ConfirmDelete|(CheckAll),($@Common.Glossary.AreaDimensionNode),()", "$@Common.Glossary.AreaDimensionNodeDeleteTip"],
 
 		}
 	}

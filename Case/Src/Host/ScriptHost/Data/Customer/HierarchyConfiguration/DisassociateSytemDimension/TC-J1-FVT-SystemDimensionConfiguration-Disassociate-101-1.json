@@ -3,48 +3,48 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001"],
-			"SystemDimensionItemPath":["空调"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_HVAC"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocOrg001", "空调"],
-			"Message":"$@EM.SystemDimension.UncheckNodeQuestion|(空调)",
+			"SystemDimensionPath":["SysDimAssocOrg001", "$@SystemDimensionTemplateItem_HVAC"],
+			"Message":"$@EM.SystemDimension.UncheckNodeQuestion|($@SystemDimensionTemplateItem_HVAC)",
 		}
 	},
 	{
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001"],
-			"SystemDimensionItemPath":["关键", "X光机"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_KeySystem", "$@SystemDimensionTemplateItem_XMachine"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocOrg001", "关键", "X光机"],
-			"Message":"删除系统维度节点”X光机”吗？\r\n您将同时删除系统维度节点下所有的数据点关联关系",
+			"SystemDimensionPath":["SysDimAssocOrg001", "$@SystemDimensionTemplateItem_KeySystem", "$@SystemDimensionTemplateItem_XMachine"],
+			"Message":"$@EM.SystemDimension.UncheckNodeQuestion|($@SystemDimensionTemplateItem_XMachine)",
 		}
 	},
 	{
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001"],
-			"SystemDimensionItemPath":["动力", "给排水泵", "生活水泵"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_PowerSystem", "$@SystemDimensionTemplateItem_DrainagePump", "$@SystemDimensionTemplateItem_DomesticWaterPump"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocOrg001", "动力", "给排水泵", "生活水泵"],
-			"Message":"删除系统维度节点”生活水泵”吗？\r\n您将同时删除系统维度节点下所有的数据点关联关系",
+			"SystemDimensionPath":["SysDimAssocOrg001", "$@SystemDimensionTemplateItem_PowerSystem", "$@SystemDimensionTemplateItem_DrainagePump", "$@SystemDimensionTemplateItem_DomesticWaterPump"],
+			"Message":"$@EM.SystemDimension.UncheckNodeQuestion|($@SystemDimensionTemplateItem_DomesticWaterPump)",
 		}
 	},
 	{
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001"],
-			"SystemDimensionItemPath":["动力", "电梯"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_PowerSystem", "$@SystemDimensionTemplateItem_Elevator"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocOrg001", "动力", "电梯"],
-			"Message":"删除系统维度节点”电梯”吗？\r\n您将同时删除系统维度节点下所有的数据点关联关系",
+			"SystemDimensionPath":["SysDimAssocOrg001", "$@SystemDimensionTemplateItem_PowerSystem", "$@SystemDimensionTemplateItem_Elevator"],
+			"Message":"$@EM.SystemDimension.UncheckNodeQuestion|($@SystemDimensionTemplateItem_Elevator)",
 		}
 	}
 ]

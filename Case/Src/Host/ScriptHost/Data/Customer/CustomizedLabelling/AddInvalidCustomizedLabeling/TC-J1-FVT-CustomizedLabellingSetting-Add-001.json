@@ -3,9 +3,9 @@
 		"InputData":
 		{
 			"CommonName":"自定义能效标识2",
-			"Commodity":"$@Common.Commodity.Electric",
+			"Commodity":"$@Commodity_Electricity",
 			"KPIType":"$@EM.Unit.UnitPopulation",
-			"LabellingLevel":"4级",
+			"LabellingLevel":"4$@Setting.CustomizedLabeling.Grade",
 			"LabellingLevelValue":"4",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
@@ -29,9 +29,9 @@
 		"ExpectedData":
 		{
 			"CommonName":"",
-			"Commodity":"$@Common.Commodity.Electric",
+			"Commodity":"$@Commodity_Electricity",
 			"KPIType":"$@EM.Unit.UnitPopulation",
-			"LabellingLevel":"5级",
+			"LabellingLevel":"5$@Setting.CustomizedLabeling.Grade",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"",
 			},
@@ -53,7 +53,7 @@
 			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
-			"UOM":"千瓦时/人",
+			"UOM":"$@Uom_KWH$@ENERGYRANK_APDX",
 		}
 	}
 ]

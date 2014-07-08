@@ -7,8 +7,8 @@
 		},
 		"ExpectedData":
 		{
-			"CalendarInfoTips":["该数据点所关联层级节点未引用任何日历模板。请引用后再设置，保证设置内容可被计算", "$@Setting.Calendar.HasAssociation"],
-			"CalendarInfoOnWindow":["6月8日到6月9日"],
+			"CalendarInfoTips":["$@Setting.Calendar.HierarchyNoCalendar", "$@Setting.Calendar.HasAssociation"],
+			"CalendarInfoOnWindow":["@$6$@WEBCOMMONCONST_MONTH@$8$@WEBCOMMONCONST_DAY$@Setting.Calendar.To@$6$@WEBCOMMONCONST_MONTH@$9$@WEBCOMMONCONST_DAY"],
 		}
 	},
 	{
@@ -19,8 +19,8 @@
 		},
 		"ExpectedData":
 		{
-			"CalendarInfoTips":["该数据点所关联层级节点未引用任何日历模板。请引用后再设置，保证设置内容可被计算", "$@Setting.Calendar.HasAssociation"],
-			"CalendarInfoOnWindow":["6月10日到6月12日"],
+			"CalendarInfoTips":["$@Setting.Calendar.HierarchyNoCalendar", "$@Setting.Calendar.HasAssociation"],
+			"CalendarInfoOnWindow":["@$6$@WEBCOMMONCONST_MONTH@$10$@WEBCOMMONCONST_DAY$@Setting.Calendar.To@$6$@WEBCOMMONCONST_MONTH@$12$@WEBCOMMONCONST_DAY"],
 		}
 	}
 ]

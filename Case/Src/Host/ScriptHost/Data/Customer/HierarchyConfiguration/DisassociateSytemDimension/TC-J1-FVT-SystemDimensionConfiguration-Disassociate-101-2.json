@@ -3,12 +3,12 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001"],
-			"SystemDimensionItemPath":["特殊", "洗衣房设备"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_Special", "$@SystemDimensionTemplateItem_LaundryEquipment"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocSite001", "特殊", "洗衣房设备"],
-			"Message":"删除系统维度节点”洗衣房设备”吗？\r\n您将同时删除系统维度节点下所有的数据点关联关系",
+			"SystemDimensionPath":["SysDimAssocSite001", "$@SystemDimensionTemplateItem_Special", "$@SystemDimensionTemplateItem_LaundryEquipment"],
+			"Message":"$@EM.SystemDimension.UncheckNodeQuestion|($@SystemDimensionTemplateItem_LaundryEquipment)",
 		}
 	}
 ]

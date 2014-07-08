@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试", "AssociateTagAuto1", "AssociateTagSite1", "Associatebuild1012"],
-			"SystemDimensionPath":["Associatebuild1012", "空调"],
+			"SystemDimensionPath":["Associatebuild1012", "$@SystemDimensionTemplateItem_HVAC"],
 			"AreaDimensionPath":["Associatebuild1012", "LEVELAssoc1012"],
 			"TagName":"V_Asso_101_2",	
 		},

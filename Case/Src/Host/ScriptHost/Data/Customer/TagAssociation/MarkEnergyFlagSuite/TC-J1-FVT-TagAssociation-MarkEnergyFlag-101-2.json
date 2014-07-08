@@ -4,7 +4,7 @@
 		{
 			"HierarchyNodePath":["自动化测试", "DisassociateTagAuto", "DisassociateTagSite","DisassociateTagBuild"],
 			"TagNames":["P_Mark002","P_Mark003"],
-			"SystemDimensionPath":["DisassociateTagBuild", "空调"],
+			"SystemDimensionPath":["DisassociateTagBuild", "$@SystemDimensionTemplateItem_HVAC"],
 			"TagName":"  对应节点下已存在相同介质的能耗数据点。\r\n好",
 		},
 		"ExpectedData":

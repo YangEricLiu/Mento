@@ -9,7 +9,7 @@
 		},
 		"ExpectedData":
 		{
-			"Message":"名称重复",
+			"Message":"$@Message.M08208",
 		}
 	}
 ]

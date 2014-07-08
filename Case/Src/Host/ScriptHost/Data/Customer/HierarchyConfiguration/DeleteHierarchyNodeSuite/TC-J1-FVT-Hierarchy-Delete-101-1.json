@@ -7,7 +7,7 @@
 		"ExpectedData":
 		{
 			"HierarchyNodePath":["自动化测试", "DeleteOrg001","DeleteSite001","DeleteBuilding001"],
-			"Messages":["删除层级节点 “DeleteBuilding001” 吗？", "$@Setting.Hierarchy.Message.DeleteTip"],
+			"Messages":["$@Common.Label.ConfirmDelete|(DeleteBuilding001),($@Common.Glossary.HierarchyNode),()", "$@Setting.Hierarchy.Message.DeleteTip"],
 		}
 	},
 	{
@@ -18,7 +18,7 @@
 		"ExpectedData":
 		{
 			"HierarchyNodePath":["自动化测试", "DeleteOrg001","DeleteSite001"],
-			"Messages":["删除层级节点 “DeleteOrg001” 吗？", "$@Setting.Hierarchy.Message.DeleteTip"],
+			"Messages":["$@Common.Label.ConfirmDelete|(DeleteOrg001),($@Common.Glossary.HierarchyNode),()", "$@Setting.Hierarchy.Message.DeleteTip"],
 		}
 	}
 ]

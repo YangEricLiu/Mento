@@ -11,7 +11,7 @@
 		},
 		"ExpectedData":
 		{
-			"Code":"该编码已存在",
+			"Code":"$@Message.M01006",
 		}
 	}
 ]

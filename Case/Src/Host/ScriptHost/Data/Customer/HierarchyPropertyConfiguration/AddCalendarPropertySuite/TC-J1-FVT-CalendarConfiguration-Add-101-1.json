@@ -22,7 +22,7 @@
 			"DayNightCalendarName":"昼夜时间日历二",
 			"WorkdayText":["默认工作日", "周一至周五"],
 			"WorktimeText":["$@Setting.Calendar.RestTimeTitle", "$@Setting.Calendar.RestTimeContent", "$@Setting.Calendar.WorkTimeTitle", "00:00-24:00"],
-			"HeatingCoolingText":["$@Setting.Calendar.WarmTitle", "1月1日到1月31日", "$@Setting.Calendar.ColdTitle", "12月1日到12月31日"],
+			"HeatingCoolingText":["$@Setting.Calendar.WarmTitle", "@$1$@WEBCOMMONCONST_MONTH@$1$@WEBCOMMONCONST_DAY$@Setting.Calendar.To@$1$@WEBCOMMONCONST_MONTH@$31$@WEBCOMMONCONST_DAY", "$@Setting.Calendar.ColdTitle", "@$12$@WEBCOMMONCONST_MONTH@$1$@WEBCOMMONCONST_DAY$@Setting.Calendar.To@$12$@WEBCOMMONCONST_MONTH@$31$@WEBCOMMONCONST_DAY"],
 			"DayNightText":["$@Setting.Calendar.NightTitle", "$@Setting.Calendar.NightContent", "$@Setting.Calendar.DayTitle", "09:00-18:00"],
 		}
 	}

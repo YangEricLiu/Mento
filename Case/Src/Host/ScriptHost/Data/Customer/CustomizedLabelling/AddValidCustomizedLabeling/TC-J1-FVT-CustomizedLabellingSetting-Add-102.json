@@ -26,9 +26,9 @@
 		"ExpectedData":
 		{
 			"CommonName":"自定义能效标识4",
-			"Commodity":"$@Common.Commodity.Electric",
+			"Commodity":"$@Commodity_Electricity",
 			"KPIType":"$@EM.Unit.UnitPopulation",
-			"LabellingLevel":"5级",
+			"LabellingLevel":"5$@Setting.CustomizedLabeling.Grade",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5",
 			},
@@ -49,7 +49,7 @@
 			}]],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
-			"UOM":"千瓦时/人",
+			"UOM":"$@Uom_KWH$@ENERGYRANK_APDX",
 			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 		}
 	}

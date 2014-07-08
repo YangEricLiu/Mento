@@ -5,7 +5,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
 			"Commodity":["$@Commodity_Electricity"],
-			"Industry":"严寒地区A区酒店",
+			"Industry":"$@Zone_Extreme_Cold_Region_A$@Industry_Hotel",
 			"failedFileName":["F-BenchmarkCarbonCalculate严寒地区A区酒店-101-1-0-Y.xls", "F-BenchmarkCarbonCalculate严寒地区A区酒店-101-1-1-M.xls", "F-BenchmarkCarbonCalculate严寒地区A区酒店-101-1-2-W.xls", "F-BenchmarkCarbonCalculate严寒地区A区酒店-101-1-3-D.xls", "F-BenchmarkCarbonCalculate严寒地区A区酒店-101-1-4-H.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-11-20",
@@ -26,7 +26,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking5"]],
 			"Commodity":["$@Commodity_Electricity"],
-			"Industry":"严寒地区A区酒店（三星级）",
+			"Industry":"$@Zone_Extreme_Cold_Region_A$@Industry_Hotel_Three_stat",
 			"failedFileName":["F-BenchmarkCarbonCalculate严寒地区A区酒店三星级-101-1-0-Y.xls", "F-BenchmarkCarbonCalculate严寒地区A区酒店三星级-101-1-1-M.xls", "F-BenchmarkCarbonCalculate严寒地区A区酒店三星级-101-1-2-W.xls", "F-BenchmarkCarbonCalculate严寒地区A区酒店三星级-101-1-3-D.xls", "F-BenchmarkCarbonCalculate严寒地区A区酒店三星级-101-1-4-H.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-11-20",
@@ -47,7 +47,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
 			"Commodity":["$@Commodity_Petrol"],
-			"Industry":"全部区域全行业",
+			"Industry":"$@Zone_All_Zones$@Industry_All_Industries",
 			"failedFileName":["F-BenchmarkCarbonCalculate全部区域全行业-101-1-0-Y.xls", "F-BenchmarkCarbonCalculate全部区域全行业-101-1-1-M.xls", "F-BenchmarkCarbonCalculate全部区域全行业-101-1-2-W.xls", "F-BenchmarkCarbonCalculate全部区域全行业-101-1-3-D.xls", "F-BenchmarkCarbonCalculate全部区域全行业-101-1-4-H.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-11-20",
@@ -68,7 +68,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
 			"Commodity":["$@Commodity_Petrol"],
-			"Industry":"全部区域酒店（四星级）",
+			"Industry":"$@Zone_All_Zones$@Industry_Hotel_Four_star",
 			"failedFileName":["F-BenchmarkCarbonCalculate全部区域酒店四星级-101-1-0-Y.xls", "F-BenchmarkCarbonCalculate全部区域酒店四星级-101-1-1-M.xls", "F-BenchmarkCarbonCalculate全部区域酒店四星级-101-1-2-W.xls", "F-BenchmarkCarbonCalculate全部区域酒店四星级-101-1-3-D.xls", "F-BenchmarkCarbonCalculate全部区域酒店四星级-101-1-4-H.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-11-20",
@@ -89,7 +89,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
 			"Commodity":["$@Commodity_Petrol"],
-			"Industry":"全部区域酒店",
+			"Industry":"$@Zone_All_Zones$@Industry_Hotel",
 			"failedFileName":["F-BenchmarkCarbonCalculate全部区域酒店-101-1-0-Y.xls", "F-BenchmarkCarbonCalculate全部区域酒店-101-1-1-M.xls", "F-BenchmarkCarbonCalculate全部区域酒店-101-1-2-W.xls", "F-BenchmarkCarbonCalculate全部区域酒店-101-1-3-D.xls", "F-BenchmarkCarbonCalculate全部区域酒店-101-1-4-H.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-11-20",

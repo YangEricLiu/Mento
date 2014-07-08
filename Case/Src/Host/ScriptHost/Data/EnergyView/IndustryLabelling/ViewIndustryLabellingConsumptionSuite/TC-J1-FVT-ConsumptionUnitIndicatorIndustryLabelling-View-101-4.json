@@ -4,8 +4,8 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"], ["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling2"], ["NancyCostCustomer2", "组织A", "园区A", "楼宇B"]],
 			"tagNames":["Labellingtag1", "Labellingtag2", "BBV1KT"],
-			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬暖地区酒店（三星级）"], ["$@Setting.Labeling.Label.IndustryLabeling", "严寒地区B区全行业"]],
-			"SystemDimensionPath":[["楼宇B", "空调"]],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Subtropical_Region$@Industry_Hotel_Three_stat"], ["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Extreme_Cold_Region_B$@Industry_All_Industries"]],
+			"SystemDimensionPath":[["楼宇B", "$@SystemDimensionTemplateItem_HVAC"]],
 			"UnitTypeValue":"$@EM.Unit.UnitArea",
 			"YearAndMonth":[{
 				"year":"2012",

@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"], ["NancyCustomer1", "园区测试多层级", "BuildingMulCalculationType"]],
 			"tagNames":["DayNightP", "CalculationTypeMinIs0"],
-			"Industries":["$@Zone_Extreme_Cold_Region_B$@Industry_Data_Center", "$@Zone_Extreme_Cold_Region_B$@Industry_All Industries", "$@Zone_Subtropical Region$@Industry_Mall"],
+			"Industries":["$@Zone_Extreme_Cold_Region_B$@Industry_Data_Center", "$@Zone_Extreme_Cold_Region_B$@Industry_All_Industries", "$@Zone_Subtropical_Region$@Industry_Mall"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-9-11",
 				"EndDate":"2013-4-21",	

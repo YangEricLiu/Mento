@@ -24,7 +24,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["分享仪表盘“DS0014”失败，无法分享给这些人：ShareUserE。", "分享仪表盘“DS0014”成功。"],																
+			"messages":["分享仪表盘“DS0014”失败，无法分享给这些人：ShareUserE。", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Dashboard),(DS0014)"],																
 		}
 	}
 ]

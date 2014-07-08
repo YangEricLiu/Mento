@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"]],
 			"tagNames":["Labellingtag1"],
-			"Industries":["夏热冬暖地区酒店（三星级）"],
+			"Industries":["$@Zone_Subtropical_Region$@Industry_Hotel_Three_stat"],
 			"ManualTimeRange":[{
 				"StartDate":"2009-1-1",
 				"EndDate":"2013-12-31",	

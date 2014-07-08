@@ -4,7 +4,7 @@
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
 			"tagNames":["Rankingtag1"],
-			"Industries":["严寒地区A区酒店（四星级）"],
+			"Industries":["$@Zone_Extreme_Cold_Region_A$@Industry_Hotel_Four_star"],
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-12-1",	

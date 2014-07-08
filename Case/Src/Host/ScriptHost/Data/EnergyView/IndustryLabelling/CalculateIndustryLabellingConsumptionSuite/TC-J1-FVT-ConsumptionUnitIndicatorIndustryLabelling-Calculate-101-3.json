@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling19"], ["NancyOtherCustomer3", "BuildingRanking3"]],
 			"TagNames":["Labellingtag19", "Rankingtag3"],
 			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
-			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "夏热冬暖地区酒店（三星级）"], ["$@Setting.Labeling.Label.IndustryLabeling", "严寒地区A区酒店（五星级）"]],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Subtropical_Region$@Industry_Hotel_Three_stat"], ["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel_Five_stat"]],
 			"YearAndMonth":[{
 				"year":"2012",
 				"month":"10",

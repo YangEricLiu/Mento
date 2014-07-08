@@ -50,7 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomizedLabelling\AddInvalidCustomizedLabellingSuite.cs" />
+    <Compile Include="CustomizedLabelling\AddInvalidCustomizedLabelingSuite.cs" />
     <Compile Include="CustomizedLabelling\AddValidCustomizedLabelingSuite.cs" />
     <Compile Include="CustomizedLabelling\DeleteCustomizedLabelingCancelledSuite.cs" />
     <Compile Include="CustomizedLabelling\DeleteCustomizedLabelingValidSuite.cs" />

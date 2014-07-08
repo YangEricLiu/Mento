@@ -16,7 +16,7 @@
 	{
 		"InputData":
 		{	
-			"Source":"$@Commodity_Other@$($@Uom_kgce@$)",
+			"Source":"$@Commodity_Other@$($@Uom_kg@$$@Common.CarbonUomType.StandardCoal@$)",
 			"EffectiveYear":"2012",
 			"FactorValue":"0.5",			
 		},
@@ -30,7 +30,7 @@
 	{
 		"InputData":
 		{	
-			"Source":"$@Commodity_Other@$($@Uom_kgCO₂@$)",
+			"Source":"$@Commodity_Other@$($@Uom_kg@$$@Common.CarbonUomType.CO2@$)",
 			"EffectiveYear":"2013",
 			"FactorValue":"2",			
 		},

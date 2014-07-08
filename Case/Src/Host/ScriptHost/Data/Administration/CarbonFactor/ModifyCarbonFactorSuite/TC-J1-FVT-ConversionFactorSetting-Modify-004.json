@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{		
-			"FactorSource":"$@Commodity_Electircity@$($@Uom_KWH@$)",		
+			"FactorSource":"$@Commodity_Electricity@$($@Uom_KWH@$)",		
 		},
 		"ExpectedData":
 		{

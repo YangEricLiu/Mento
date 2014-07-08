@@ -6,8 +6,8 @@
 			"TagType":"Ptag",
 			"TagName":"P_TB_CR_101_3",	
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"P_TB_CR_101_3计算值",
-				"OriginalValue":"P_TB_CR_101_3原始值",
+				"CaculationValue":"P_TB_CR_101_3$@EM.Ratio.CaculateValue",
+				"OriginalValue":"P_TB_CR_101_3$@EM.Ratio.RawValue",
 				"TargetValue":"New目标值123",
 				"BaselineValue":"基准值",
 			}],
@@ -16,7 +16,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"目标值",
+			"TargetBaselineName":"$@EM.Ratio.TargetValue",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-0.xls"],
 		}
 	},
@@ -27,8 +27,8 @@
 			"TagType":"Ptag",
 			"TagName":"P_TB_CR_101_3",	
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"P_TB_CR_101_3计算值",
-				"OriginalValue":"P_TB_CR_101_3原始值",
+				"CaculationValue":"P_TB_CR_101_3$@EM.Ratio.CaculateValue",
+				"OriginalValue":"P_TB_CR_101_3$@EM.Ratio.RawValue",
 				"TargetValue":"Change第二次New目标值123",
 				"BaselineValue":"基准值",
 			}],
@@ -37,7 +37,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"目标值",
+			"TargetBaselineName":"$@EM.Ratio.TargetValue",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-1.xls"],
 		}
 	},
@@ -48,8 +48,8 @@
 			"TagType":"Vtag",
 			"TagName":"V_TB_CR_101_3",	
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"V_TB_CR_101_3计算值",
-				"OriginalValue":"V_TB_CR_101_3原始值",
+				"CaculationValue":"V_TB_CR_101_3$@EM.Ratio.CaculateValue",
+				"OriginalValue":"V_TB_CR_101_3$@EM.Ratio.RawValue",
 				"TargetValue":"New目标值123",
 				"BaselineValue":"基准值",
 			}],
@@ -58,7 +58,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"目标值",
+			"TargetBaselineName":"$@EM.Ratio.TargetValue",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-2.xls"],
 		}
 	},
@@ -69,8 +69,8 @@
 			"TagType":"Vtag",
 			"TagName":"V_TB_CR_101_3",	
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"V_TB_CR_101_3计算值",
-				"OriginalValue":"V_TB_CR_101_3原始值",
+				"CaculationValue":"V_TB_CR_101_3$@EM.Ratio.CaculateValue",
+				"OriginalValue":"V_TB_CR_101_3$@EM.Ratio.RawValue",
 				"TargetValue":"Change第二次New目标值123",
 				"BaselineValue":"基准值",
 			}],
@@ -79,7 +79,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"目标值",
+			"TargetBaselineName":"$@EM.Ratio.TargetValue",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-3.xls"],
 		}
 	}

@@ -6,9 +6,9 @@
 			"TagType":"Ptag",
 			"TagName":"P_TB_CR_101_3",	
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"P_TB_CR_101_3计算值",
-				"OriginalValue":"P_TB_CR_101_3原始值",
-				"TargetValue":"目标值",
+				"CaculationValue":"P_TB_CR_101_3$@EM.Ratio.CaculateValue",
+				"OriginalValue":"P_TB_CR_101_3$@EM.Ratio.RawValue",
+				"TargetValue":"$@Common.Glossary.Target",
 				"BaselineValue":"New基准值123",
 			}],
 			"TargetBaselineName":"New基准值123",
@@ -16,7 +16,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"基准值",
+			"TargetBaselineName":"$@Common.Glossary.Baseline",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-0.xls"],
 		}
 	},
@@ -27,9 +27,9 @@
 			"TagType":"Ptag",
 			"TagName":"P_TB_CR_101_3",	
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"P_TB_CR_101_3计算值",
-				"OriginalValue":"P_TB_CR_101_3原始值",
-				"TargetValue":"目标值",
+				"CaculationValue":"P_TB_CR_101_3$@EM.Ratio.CaculateValue",
+				"OriginalValue":"P_TB_CR_101_3$@EM.Ratio.RawValue",
+				"TargetValue":"$@EM.Ratio.TargetValue",
 				"BaselineValue":"Change第二次New基准值123",
 			}],
 			"TargetBaselineName":"Change第二次New基准值123",
@@ -37,7 +37,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"基准值",
+			"TargetBaselineName":"$@EM.Ratio.BaseValue",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-1.xls"],
 		}
 	},
@@ -48,9 +48,9 @@
 			"TagType":"Vtag",
 			"TagName":"V_TB_CR_101_3",	
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"V_TB_CR_101_3计算值",
-				"OriginalValue":"V_TB_CR_101_3原始值",
-				"TargetValue":"目标值",
+				"CaculationValue":"V_TB_CR_101_3$@EM.Ratio.CaculateValue",
+				"OriginalValue":"V_TB_CR_101_3$@EM.Ratio.RawValue",
+				"TargetValue":"$@EM.Ratio.TargetValue",
 				"BaselineValue":"New基准值123",
 			}],
 			"TargetBaselineName":"New基准值123",
@@ -58,7 +58,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"基准值",
+			"TargetBaselineName":"$@EM.Ratio.BaseValue",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-2.xls"],
 		}
 	},
@@ -69,9 +69,9 @@
 			"TagType":"Vtag",
 			"TagName":"V_TB_CR_101_3",	
 			"UnitIndicatorLegend":[{
-				"CaculationValue":"V_TB_CR_101_3计算值",
-				"OriginalValue":"V_TB_CR_101_3原始值",
-				"TargetValue":"目标值",
+				"CaculationValue":"V_TB_CR_101_3$@EM.Ratio.CaculateValue",
+				"OriginalValue":"V_TB_CR_101_3$@EM.Ratio.RawValue",
+				"TargetValue":"$@EM.Ratio.TargetValue",
 				"BaselineValue":"Change第二次New基准值123",
 			}],
 			"TargetBaselineName":"Change第二次New基准值123",
@@ -79,7 +79,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"基准值",
+			"TargetBaselineName":"$@EM.Ratio.BaseValue",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-3.xls"],
 		}
 	}

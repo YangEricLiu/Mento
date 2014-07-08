@@ -3,8 +3,8 @@
 		"InputData":
 		{	
 			"Industry":"$@Setting.Benchmark.Industry.Hotel",
-			"ClimaticRegions":["全部区域","$@Setting.Benchmark.Zone.ColdA"],
-			"Industrys":["$@Setting.Benchmark.Industry.AllIndustry","办公建筑","$@Setting.Benchmark.Industry.DataCenter","$@Setting.Benchmark.Industry.TwoStarAndBelowHotel","$@Setting.Benchmark.Industry.FourStarHotel","$@Setting.Benchmark.Industry.FiveStarHotel","$@Setting.Benchmark.Industry.Hospital","$2Setting.Benchmark.Industry.School","$@Setting.Benchmark.Industry.Retail","$@Setting.Benchmark.Industry.Supermarket","$@Setting.Benchmark.Industry.ClothingRetails","$@Setting.Benchmark.Industry.Mall","$@Setting.Benchmark.Industry.Communication","$@Setting.Benchmark.Industry.Communication","$@Setting.Benchmark.Industry.BaseStation","$2Setting.Benchmark.Industry.TelecommunicationsBusinessHall","$2Setting.Benchmark.Industry.RailTransport","$@Setting.Benchmark.Industry.Airport","$@Setting.Benchmark.Industry.Manufacture"],
+			"ClimaticRegions":["$@Zone_All_Zones","$@Setting.Benchmark.Zone.ColdA"],
+			"Industrys":["$@Setting.Benchmark.Industry.AllIndustry","$@Industry_Office_Building","$@Setting.Benchmark.Industry.DataCenter","$@Setting.Benchmark.Industry.TwoStarAndBelowHotel","$@Setting.Benchmark.Industry.FourStarHotel","$@Setting.Benchmark.Industry.FiveStarHotel","$@Setting.Benchmark.Industry.Hospital","$2Setting.Benchmark.Industry.School","$@Setting.Benchmark.Industry.Retail","$@Setting.Benchmark.Industry.Supermarket","$@Setting.Benchmark.Industry.ClothingRetails","$@Setting.Benchmark.Industry.Mall","$@Setting.Benchmark.Industry.Communication","$@Setting.Benchmark.Industry.Communication","$@Setting.Benchmark.Industry.BaseStation","$2Setting.Benchmark.Industry.TelecommunicationsBusinessHall","$2Setting.Benchmark.Industry.RailTransport","$@Setting.Benchmark.Industry.Airport","$@Setting.Benchmark.Industry.Manufacture"],
 		},
 		"ExpectedData":
 		{	

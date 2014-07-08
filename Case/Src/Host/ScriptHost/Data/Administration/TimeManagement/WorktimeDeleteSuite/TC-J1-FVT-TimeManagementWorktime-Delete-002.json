@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-		    "PopMessage":"$@Message.M03058",
+		    "PopMessage":["$@Message.M03058"],
 		}		
 	}
 ]

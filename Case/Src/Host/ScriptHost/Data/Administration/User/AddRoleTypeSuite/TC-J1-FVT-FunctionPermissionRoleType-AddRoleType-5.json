@@ -2,7 +2,7 @@
 	{		
 		"InputData":
 		{	
-			"publicPermission":["仪表盘与小组件查看", "仪表盘与小组件编辑", "$@Setting.Role.PersonalInfoManagement", "$@Setting.Role.MapView"],
+			"publicPermission":["$@Setting.Role.DashboardView", "$@Setting.Role.DashboardManagement", "$@Setting.Role.PersonalInfoManagement", "$@Setting.Role.MapView"],
 			"CommonName":"RoleTypeA",
 			"roleTypePermission":["$@Setting.Role.DashboardSharing", "$@Setting.Role.EnergyUsage", "$@Setting.Role.CarbonEmission", "$@Setting.Role.EnergyCost", "$@Setting.Role.UnitIndicator", "$@Setting.Role.RatioIndicator", "$@Setting.Role.CorporateRanking", "$@Setting.Role.EnergyExport", "$@Setting.Role.SPManagement", "$@Setting.Role.HierarchyManagement", "$@Setting.Role.TagManagement", "$@Setting.Role.TagMapping ", "$@Setting.Role.CustomerInfoView", "$@Setting.Role.CustomerInfoManagement"],
 		},

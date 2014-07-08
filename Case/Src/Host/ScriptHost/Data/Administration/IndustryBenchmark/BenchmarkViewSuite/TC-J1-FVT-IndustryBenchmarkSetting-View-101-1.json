@@ -3,7 +3,7 @@
 		"InputData":
 		{	
 			"Industry":"$@Setting.Benchmark.Industry.Hotel",
-			"ClimaticRegions":["全部区域","$@Setting.Benchmark.Zone.ColdA","$@Setting.Benchmark.Zone.ColdB","$@Setting.Benchmark.Zone.ColdRegion","$@Setting.Benchmark.Zone.HotSummerColdWinterRegion","$@Setting.Benchmark.Zone.SubtropicalRegion","$@Setting.Benchmark.Zone.TemperateRegion"],
+			"ClimaticRegions":["$@Zone_All_Zones","$@Setting.Benchmark.Zone.ColdA","$@Setting.Benchmark.Zone.ColdB","$@Setting.Benchmark.Zone.ColdRegion","$@Setting.Benchmark.Zone.HotSummerColdWinterRegion","$@Setting.Benchmark.Zone.SubtropicalRegion","$@Setting.Benchmark.Zone.TemperateRegion"],
 		},
 	}
 ]

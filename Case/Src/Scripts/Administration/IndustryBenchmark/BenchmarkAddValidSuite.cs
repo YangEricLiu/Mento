@@ -20,7 +20,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
     [TestFixture]
     [Owner("Greenie")]
     [CreateTime("2013-10-12")]
-    public class BenchmarkAddValidgSuite : TestSuiteBase
+    public class BenchmarkAddValidSuite : TestSuiteBase
     {
         private static IndustryBenchmarkSetting IndustryBenchmarkSetting = JazzFunction.IndustryBenchmarkSetting;
         [SetUp]
@@ -42,7 +42,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
         [ManualCaseID("TC-J1-FVT-IndustryBenchmarkSetting-Add-101")]
         [CaseID("TC-J1-FVT-IndustryBenchmarkSetting-Add-101-1")]
         [Priority("4")]
-        [MultipleTestDataSource(typeof(IndustryBenchmarkData[]), typeof(BenchmarkAddValidgSuite), "TC-J1-FVT-IndustryBenchmarkSetting-Add-101-1")]
+        [MultipleTestDataSource(typeof(IndustryBenchmarkData[]), typeof(BenchmarkAddValidSuite), "TC-J1-FVT-IndustryBenchmarkSetting-Add-101-1")]
         public void AddIndustryBenchmarkValid(IndustryBenchmarkData input)
         {
      

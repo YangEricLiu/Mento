@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-		    "PopMessage":["删除 “价格未被引用ForDeleteSuccessful” 吗？"],
+		    "PopMessage":["$@Common.Label.ConfirmDelete|(价格未被引用ForDeleteSuccessful),(),()"],
 		}		
 	}
 ]

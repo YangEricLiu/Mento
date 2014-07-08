@@ -59,7 +59,7 @@
     <Compile Include="CustomerConsumptionSetting\CustomerConsumptionSettingView.cs" />
     <Compile Include="CustomerOperation\SmokeTestAddCustomerSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkViewSuite.cs" />
-    <Compile Include="IndustryBenchmark\BenchmarkAddValidgSuite.cs" />
+    <Compile Include="IndustryBenchmark\BenchmarkAddValidSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkAddInvalidSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkDeleteValidSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkDeleteInvalidSuite.cs" />

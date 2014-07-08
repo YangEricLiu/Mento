@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-		    "PlainPrice":"$@Setting.TOUTariff.BasicPropertyErrMsg ”。",
+		    "PlainPrice":"$@Setting.TOUTariff.BasicPropertyErrMsg",
 		}	
 	},
 ]

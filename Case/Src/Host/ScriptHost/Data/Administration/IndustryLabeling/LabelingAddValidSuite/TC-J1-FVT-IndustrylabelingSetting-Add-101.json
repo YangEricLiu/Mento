@@ -4,8 +4,8 @@
 		{	
 			"Industry":"$@Setting.Benchmark.Industry.Hotel",
 			"ClimateRegion":"$@Setting.Benchmark.Zone.ColdA ",
-			"ClimateRegions":["全部区域","$@Setting.Benchmark.Zone.ColdB","$@Setting.Benchmark.Zone.ColdRegion","$@Setting.Benchmark.Zone.HotSummerColdWinterRegion","$@Setting.Benchmark.Zone.SubtropicalRegion","$@Setting.Benchmark.Zone.TemperateRegion"],
-			"EnergyEfficiencyLabellingLevel":"3级",
+			"ClimateRegions":["$@Zone_All_Zones","$@Setting.Benchmark.Zone.ColdB","$@Setting.Benchmark.Zone.ColdRegion","$@Setting.Benchmark.Zone.HotSummerColdWinterRegion","$@Setting.Benchmark.Zone.SubtropicalRegion","$@Setting.Benchmark.Zone.TemperateRegion"],
+			"EnergyEfficiencyLabellingLevel":"3$@Setting.CustomizedLabeling.Grade",
 			"StartYears":["2014","2012"],
 			"EndYears":["2013","2014"],
 		},

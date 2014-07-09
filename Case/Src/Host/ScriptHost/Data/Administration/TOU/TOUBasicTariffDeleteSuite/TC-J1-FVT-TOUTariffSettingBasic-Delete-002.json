@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-		    "PopMessage":["$@Message.M03038"],
+		    "PopMessage":["$@Common.Label.ConfirmDelete|(价格已被引用ForDeleteFailed),(),()", "$@Message.M03038"],
 		}		
 	}
 ]

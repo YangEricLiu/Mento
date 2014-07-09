@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-		    "PopMessage":["$@Message.M03058"],
+		    "PopMessage":["$@Common.Label.ConfirmDelete|(昼夜时间被层级引用ForDeleteFailed),(),()", "$@Message.M03058"],
 		}		
 	}
 ]

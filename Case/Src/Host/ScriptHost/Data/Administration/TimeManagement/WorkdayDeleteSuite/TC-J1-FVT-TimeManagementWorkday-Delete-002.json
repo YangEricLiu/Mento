@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-		    "PopMessage":["$@I18N.Message.M03058"],
+		    "PopMessage":["$@Common.Label.ConfirmDelete|(工休日被层级引用ForDeleteFailed),(),()", "$@I18N.Message.M03058"],
 		}		
 	}
 ]

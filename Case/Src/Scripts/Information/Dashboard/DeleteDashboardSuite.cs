@@ -64,7 +64,8 @@ namespace Mento.Script.Information.Dashboard
             TimeManager.ShortPause();
 
             //Warning message is prompted to user for confirmation on the deletion.
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.DeleteMessages[0]));
+            //Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.DeleteMessages[0]));
+            Assert.AreEqual(input.ExpectedData.DeleteMessages[0], JazzMessageBox.MessageBox.GetMessage());
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.DeleteCommonMessage));
 
             //Click 'Cancel' (取消) or 'x' icon in the pop up confirmation window.
@@ -164,7 +165,8 @@ namespace Mento.Script.Information.Dashboard
                 TimeManager.ShortPause();
 
                 //Warning message is prompted to user for confirmation on the deletion.
-                Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.DeleteMessages[i]));
+                //Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.DeleteMessages[i]));
+                Assert.AreEqual(input.ExpectedData.DeleteMessages[i], JazzMessageBox.MessageBox.GetMessage());
                 Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.DeleteCommonMessage));
 
                 //Click "Delete"

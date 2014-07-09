@@ -244,7 +244,8 @@ namespace Mento.Script.Information.Dashboard
                 TimeManager.ShortPause();
 
                 Assert.IsTrue(HomePagePanel.IsDashboardNameFieldInvalid());
-                Assert.IsTrue(HomePagePanel.GetDashboardNameFieldInvalidMsg().Contains(input.ExpectedData.newDashboardNames[i]));
+                //Assert.IsTrue(HomePagePanel.GetDashboardNameFieldInvalidMsg().Contains(input.ExpectedData.newDashboardNames[i]));
+                Assert.AreEqual(input.ExpectedData.newDashboardNames[i], HomePagePanel.GetDashboardNameFieldInvalidMsg());
             }
 
             //Revise above invalid dashboard name to be valid, and click Save.

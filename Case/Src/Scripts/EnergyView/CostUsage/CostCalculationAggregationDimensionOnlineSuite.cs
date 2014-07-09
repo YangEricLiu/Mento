@@ -200,7 +200,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             CostUsage.SwitchTagTab(TagTabs.SystemDimensionTab);
             TimeManager.ShortPause();
-            /*
+            
             //go to 特殊 System Dimension.
             CostUsage.SelectSystemDimension(input.InputData.SystemDimensionPaths[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -249,7 +249,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
-            */
+            
             CostUsage.SelectSystemDimension(input.InputData.SystemDimensionPaths[2]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();

@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"MessageArray":["$@Common.Label.ConfirmDelete|(PtagElecKVAH002),($@Setting.Label.PTagManagement),()", "$@Message.M06182|($@Setting.Label.PTagManagement),(PtagElecKHW002),($@Setting.Label.VTagManagement@$:VtagUsePtagKVAH002)","$@Common.Label.ConfirmDelete|(VtagUsePtagKVAH002),($@Setting.Label.VTagManagement),()"],
+			"MessageArray":["$@Common.Label.ConfirmDelete|(PtagElecKVAH002),($@Setting.Label.PTagManagement),()", "计量数据P\"PtagElecKVAH002\"正在被引用，无法删除。请取消所有引用后再试。\r\n引用对象：计量数据V:\r\nVtagUsePtagKVAH002","$@Common.Label.ConfirmDelete|(VtagUsePtagKVAH002),($@Setting.Label.VTagManagement),()"],
 		}
 	}
 ]

@@ -11,7 +11,7 @@
 			"HierarchyNodePath":["自动化测试", "AutoSite_Vtag","CheckModifyVtag"],
 			"AreaNodePath":["CheckModifyVtag","FirstFloor"],
 			"SystemNodePath":["CheckModifyVtag","$@SystemDimensionTemplateItem_HVAC"],
-			"Message":"$@$@Common.Label.ConfirmDelete|(VtagForDel002),($@Setting.Label.VTagManagement),()",
+			"Message":"$@Common.Label.ConfirmDelete|(VtagForDel002),($@Setting.Label.VTagManagement),()",
 		}
 	}
 ]

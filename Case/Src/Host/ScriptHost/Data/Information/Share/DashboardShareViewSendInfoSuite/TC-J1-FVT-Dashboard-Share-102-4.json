@@ -25,7 +25,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["$@HomePage.Message.ShareSuccess|($@Common.Glossary.Dashboard),(Dashboard_Share_102_4_1_A)", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(Dashboard_Share_102_4_2_B)"],
+			"messages":["$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(Dashboard_Share_102_4_1_A)", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(Dashboard_Share_102_4_2_B)"],
 		}
 	}
 ]

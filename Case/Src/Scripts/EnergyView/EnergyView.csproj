@@ -95,6 +95,7 @@
     <Compile Include="EnergyAnalysis\SingleHierarchyNodeDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodeTrendChartSuite.cs" />
     <Compile Include="EnergyManagement\PredefinedTimeDataVerificationSuite.cs" />
+    <Compile Include="EnergyManagement\SaveToDashboardSuite.cs" />
     <Compile Include="EnergyManagement\SetTimeRangeValidSuite.cs" />
     <Compile Include="EnergyManagement\SetAllDisplayStepSuite.cs" />
     <Compile Include="EnergyManagement\SetDisplayStepSuite.cs" />

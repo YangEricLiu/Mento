@@ -1,0 +1,25 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"TagNames":["BuildingA_P1_Electricity"],
+			"DashboardInfos":[{
+				"WigetName":"EASaveDashboardLine_1",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"EASaveDashboard101",
+			},
+			{
+				"WigetName":"EASaveDashboardColumn_2",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"EASaveDashboard101",
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

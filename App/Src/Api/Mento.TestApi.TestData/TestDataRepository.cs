@@ -339,8 +339,8 @@ namespace Mento.TestApi.TestData
 
     public static class LanguageHelper
     {
-        private const string KEYFORMATSIMPLE = "(\\$\\@([\\w\\.]+)(\\@\\$)?)"; //$@common.message.test
-        private const string KEYFORMATPARAMETERED = "\\$\\@([\\w\\.]+)\\|((\\([^)]+\\)|(\\(\\)))(,?))+(\\@\\$)?"; //$@common.message.test|(a),(b),(c)
+        private const string KEYFORMATSIMPLE = "(\\$\\@([\\w\\.\\u0080-\\u00FF]+)(\\@\\$)?)"; //$@common.message.test
+        private const string KEYFORMATPARAMETERED = "\\$\\@([\\w\\.\\u0080-\\u00FF]+)\\|((\\(((?<Open>\\()|(?<-Open>\\))|[^()])*(?(Open)(?!))\\))(,?))+(\\@\\$)?"; //$@common.message.test|(a),(b),(c)
         private const string ParameterFormat = "\\(((?<Open>\\()|(?<-Open>\\))|[^()])*(?(Open)(?!))\\)";
         private const string INRESOURCEKEY = @"##(\w|\.)+##"; //##Common.Glossary.Dashboard##
 

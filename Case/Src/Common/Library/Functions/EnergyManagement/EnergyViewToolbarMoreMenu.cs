@@ -18,6 +18,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Dictionary<EnergyViewMoreOption, string[]> MenuItems = new Dictionary<EnergyViewMoreOption, string[]>()
         {
             {EnergyViewMoreOption.Last7Days,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.Last7Day"}},
+            {EnergyViewMoreOption.Last30Day,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.Last30Day"}},
+            {EnergyViewMoreOption.Last12Month,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.Last12Month"}},
             {EnergyViewMoreOption.Today,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.Today"}},
             {EnergyViewMoreOption.Yesterday,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.Yesterday"}},
             {EnergyViewMoreOption.ThisWeek,new string[]{"$@Common.Button.DefaultDate","$@Common.DateRange.ThisWeek"}},
@@ -75,6 +77,8 @@ namespace Mento.ScriptCommon.Library.Functions
     public enum EnergyViewMoreOption
     {
         Last7Days,
+        Last30Day,
+        Last12Month,
         Today,
         Yesterday,
         ThisWeek,

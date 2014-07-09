@@ -1,0 +1,43 @@
+﻿[
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"TagsName":["BuildingA_P1_Electricity"],
+			},
+			{
+				"HierarchyPath":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
+				"TagsName":["BuildingB_P1_Electricity", "BuildingB_P2_Water"],
+			}],
+			"DashboardInfos":[{
+				"WigetName":"EASaveDashboardLine_1",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"EASaveDashboard1012",
+			},
+			{
+				"WigetName":"EASaveDashboardColumn_2",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"EASaveDashboard1012",
+			},
+			{
+				"WigetName":"EASaveDashboardPie_3",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
+				"IsCreateDashboard":"True",
+				"DashboardName":"EASaveDashboard1012",
+			},
+			{
+				"WigetName":"EASaveDashboardDataView_4",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"EASaveDashboard1012",
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

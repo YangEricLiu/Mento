@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"Message":["删除 “RoleTypeUsed” 吗？", "$@Message.M07011"],
+			"Message":["$@Common.Label.ConfirmDelete|(RoleTypeUsed),(),()", "$@Message.M07011"],
 			"CommonName":"RoleTypeUsed",
 		}
 	},

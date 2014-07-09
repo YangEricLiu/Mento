@@ -4,11 +4,11 @@
 		{	
 			"EffectiveYear":"1950",
 			"FactorValue":"5",	
-			"FactorSource":"$@Commodity_Gas@$($@Uom_m³@$)",		
+			"FactorSource":"$@Commodity_Gas@$($@Common.UOM.m3@$)",		
 		},
 		"ExpectedData":
 		{
-			"Source":"$@Commodity_Gas@$($@Uom_m³@$",
+			"Source":"$@Commodity_Gas@$($@Common.UOM.m3@$)",
 		    "EffectiveYear":"1950",
 			"FactorValue":"5",	
 			"Destination":"$@Common.CarbonUomType.StandardCoal",

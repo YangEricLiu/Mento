@@ -3,7 +3,7 @@
 		"InputData":
 		{	
 			"Industry":"$@Setting.Benchmark.Industry.Hotel",
-			"ClimaticRegion":"$@Setting.Benchmark.Zone.ColdA",
+			"ClimaticRegions":["$@Setting.Benchmark.Zone.ColdA"],
 		},
 		"ExpectedData":
 		{

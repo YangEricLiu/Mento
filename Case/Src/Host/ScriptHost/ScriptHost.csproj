@@ -132,10 +132,7 @@
       <Name>Platform</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffAddInvalidSuite\" />
-    <Folder Include="Data\Administration\TOU\TOUPulsePeakTariffModifyInvalidSuite\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="bin\Debug\Resource\cn\data.js" />
     <Content Include="bin\Debug\Resource\cn\string.js">

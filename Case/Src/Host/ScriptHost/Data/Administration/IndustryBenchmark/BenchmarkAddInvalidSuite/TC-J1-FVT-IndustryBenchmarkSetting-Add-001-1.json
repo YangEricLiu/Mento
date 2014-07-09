@@ -4,12 +4,12 @@
 		{	
 			"Industry":"$@Setting.Benchmark.Industry.FiveStarHotel",
 			"ClimaticRegions":["$@Setting.Benchmark.Zone.ColdB"],
-			"Industrys":["$@Setting.Benchmark.Industry.AllIndustry ","$@Industry_Office_Building","$@Setting.Benchmark.Industry.DataCenter","$@Setting.Benchmark.Industry.TwoStarAndBelowHotel","$@Setting.Benchmark.Industry.FourStarHotel","$@Setting.Benchmark.Industry.FiveStarHotel","$@Setting.Benchmark.Industry.Hospital","$@Setting.Benchmark.Industry.School","$@Setting.Benchmark.Industry.Retail","$@Setting.Benchmark.Industry.Supermarket","$@Setting.Benchmark.Industry.ClothingRetails","$@Setting.Benchmark.Industry.Mall","$@Setting.Benchmark.Industry.Communication","$@Setting.Benchmark.Industry.CommunicationRoom","$@Setting.Benchmark.Industry.BaseStation","$@Setting.Benchmark.Industry.TelecommunicationsBusinessHall","$@Setting.Benchmark.Industry.RailTransport","$@Setting.Benchmark.Industry.Airport","$@Setting.Benchmark.Industry.Manufacture"],
+			"Industrys":["$@Setting.Benchmark.Industry.AllIndustry","$@Industry_Office_Building","$@Setting.Benchmark.Industry.DataCenter","$@Setting.Benchmark.Industry.TwoStarAndBelowHotel","$@Setting.Benchmark.Industry.FourStarHotel","$@Setting.Benchmark.Industry.FiveStarHotel","$@Setting.Benchmark.Industry.Hospital","$@Setting.Benchmark.Industry.School","$@Setting.Benchmark.Industry.Retail","$@Setting.Benchmark.Industry.Supermarket","$@Setting.Benchmark.Industry.ClothingRetails","$@Setting.Benchmark.Industry.Mall","$@Setting.Benchmark.Industry.Communication","$@Industry_Telecommunication_workshop","$@Setting.Benchmark.Industry.BaseStation","$@Setting.Benchmark.Industry.TelecommunicationsBusinessHall","$@Setting.Benchmark.Industry.RailTransport","$@Setting.Benchmark.Industry.Airport","$@Setting.Benchmark.Industry.Manufacture"],
 		},
 		"ExpectedData":
 		{	
 			"Industry":"$@Setting.Benchmark.Industry.ThreeStarHotel",
-			"ClimaticRegions":["$@Zone_All_Zones","$@Setting.Benchmark.Zone.ColdA","$@Setting.Benchmark.Zone.ColdB","$@Setting.Benchmark.Zone.ColdRegion ","$@Setting.Benchmark.Zone.HotSummerColdWinterRegion","$@Setting.Benchmark.Zone.SubtropicalRegion","$@Setting.Benchmark.Zone.TemperateRegion "],
+			"ClimaticRegions":["$@Zone_All_Zones","$@Setting.Benchmark.Zone.ColdA","$@Setting.Benchmark.Zone.ColdB","$@Setting.Benchmark.Zone.ColdRegion","$@Setting.Benchmark.Zone.HotSummerColdWinterRegion","$@Setting.Benchmark.Zone.SubtropicalRegion","$@Setting.Benchmark.Zone.TemperateRegion"],
 		}
 	}
 ]

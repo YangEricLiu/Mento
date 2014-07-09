@@ -64,6 +64,7 @@ namespace Mento.Script.Administration.TOU
             TOUBasicTariffSettings.ClickMsgBoxDeleteButton();
 
             JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
 
             //Verify that the TOU is deleted successfully and NOT exists in the list.
             Assert.IsFalse(TOUBasicTariffSettings.IsTOUExist(testData.InputData.CommonName));

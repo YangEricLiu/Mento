@@ -61,7 +61,9 @@ namespace Mento.Script.Administration.TimeManagement
             //Click 'Delete' button on the confirmation window.
             TimeManager.ShortPause();
             TimeSettingsWorkday.ClickMsgBoxDeleteButton();
-            TimeManager.MediumPause();
+            
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
 
             //Verify that the Calendar is deleted successfully and NOT exists in the list.
             Assert.IsFalse(TimeSettingsWorkday.IsCalendarExist(testData.InputData.CommonName));

@@ -17,7 +17,7 @@
 			"SpecialdayRuleStartTime":["$@Common.Label.MandatoryEmptyError"],
 			"SpecialdayRuleEndDate":["$@Common.Label.MandatoryEmptyError"],
 			"SpecialdayRuleEndTime":["$@Common.Label.MandatoryEmptyError"],
-			"SpecialdayRuleValue":["$@Common.Label.MandatoryEmptyError", "$@Common.Label.OverValueError "],
+			"SpecialdayRuleValue":["$@Common.Label.MandatoryEmptyError", "$@Common.Label.OverValueError"],
 		}
 	},
 	{
@@ -38,7 +38,7 @@
 			"SpecialdayRuleStartTime":["$@Common.Label.MandatoryEmptyError"],
 			"SpecialdayRuleEndDate":["$@Common.Label.MandatoryEmptyError"],
 			"SpecialdayRuleEndTime":["$@Common.Label.MandatoryEmptyError"],
-			"SpecialdayRuleValue":["$@Common.Label.MandatoryEmptyError", "$@Common.Label.OverValueError "],
+			"SpecialdayRuleValue":["$@Common.Label.MandatoryEmptyError", "$@Common.Label.OverValueError"],
 		}
 	}
 ]

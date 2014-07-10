@@ -33,7 +33,8 @@ namespace Mento.ScriptCommon.Library.Functions
             {EnergyViewMoreOption.DeleteAll,new string[]{"$@Common.Button.DeleteAll"}},
 
             {EnergyViewMoreOption.ShowCalendarNon,new string[]{"$@Common.Button.ShowCalendar", "$@Common.Button.Calendar.ShowNone"}},
-            {EnergyViewMoreOption.ShowCalendarNonWorkday,new string[]{"$@Common.Button.ShowCalendar", "$@Common.Button.Calendar.ShowHC"}},
+            {EnergyViewMoreOption.ShowCalendarNonWorkday,new string[]{"$@Common.Button.ShowCalendar", "$@Common.Button.Calendar.ShowHoliday"}},
+            {EnergyViewMoreOption.ShowCalendarHeatCool,new string[]{"$@Common.Button.ShowCalendar", "$@Common.Button.Calendar.ShowHC"}},
         };
 
         internal EnergyViewToolbarMoreMenu() { }

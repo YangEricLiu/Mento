@@ -1,0 +1,37 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
+			"commodityNames":["$@Commodity_Electricity"],
+			"DashboardInfos":[{
+				"WigetName":"CostSaveDashboardLine_1",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"CostSaveDashboard1012",
+			},
+			{
+				"WigetName":"CostSaveDashboardColumn_2",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CostSaveDashboard1012",
+			},
+			{
+				"WigetName":"CostSaveDashboardPie_3",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CostSaveDashboard1012",
+			},
+			{
+				"WigetName":"CostSaveDashboardDataView_4",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CostSaveDashboard1012",
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

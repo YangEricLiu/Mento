@@ -194,17 +194,12 @@ namespace Mento.Script.Information.Share
             ShareWindow.ClickShareButton();
             JazzMessageBox.LoadingMask.WaitPopNotesAppear(5);
 
-            Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
-
             //Login to Jazz with userB. Navigate to homepage, then to hierarchynodeA.  
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToAllDashboard();
             HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
             TimeManager.LongPause();
-
-            //Share dashboardA successfully to userB name with timestamp.
-            Assert.AreEqual(3, HomePagePanel.GetDashboardsNumber());
 
             HomePagePanel.ClickFavoriteDashboardButton(dashboard[0].DashboardName);
             TimeManager.LongPause();

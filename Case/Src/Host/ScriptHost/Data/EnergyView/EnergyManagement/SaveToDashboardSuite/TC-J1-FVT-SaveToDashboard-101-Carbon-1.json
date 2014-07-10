@@ -1,0 +1,36 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"DashboardInfo":[{
+				"WigetName":"CarbonSaveDashboardLine_1",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"CarbonSaveDashboard1011",
+			},
+			{
+				"WigetName":"CarbonSaveDashboardColumn_2",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CarbonSaveDashboard1011",
+			},
+			{
+				"WigetName":"CarbonSaveDashboardPie_3",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CarbonSaveDashboard1011",
+			},
+			{
+				"WigetName":"CarbonSaveDashboardDataView_4",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"CarbonSaveDashboard1011",
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

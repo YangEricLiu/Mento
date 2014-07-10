@@ -29,6 +29,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public ManualTimeRange[] ManualTimeRange { get; set; }
 
         public string[] Industries { get; set; }
+
+        public MultipleHierarchyAndtags[] MultipleHierarchyAndtags { get; set; }
     }
 
     public class RatioOutput : ExpectedTestDataBase

@@ -39,7 +39,7 @@
 		},
 		"ExpectedData":
 		{
-			"SpecialdayRuleStartDate":["$@Common.Label.TimeConflict "],
+			"SpecialdayRuleStartDate":["$@Common.Label.TimeConflict"],
 			"SpecialdayRuleValue":["999999999.9"],
 			"WorkdayRuleValue":["该输入项的最大值是 999999999.999999"],
 			"NonworkdayRuleValue":["该输入项的最大值是 999999999.999999"],

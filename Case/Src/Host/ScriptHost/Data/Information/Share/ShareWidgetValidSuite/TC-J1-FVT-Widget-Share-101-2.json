@@ -36,7 +36,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(WidgetShare1012)", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(WidgetShare1012A)", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(WidgetShare1012B)"]																																
+			"messages":["$@HomePage.Message.ShareSuccess|($@Common.Glossary.Dashboard),(WidgetShare1012)", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(WidgetShare1012A)", "$@HomePage.Message.ShareSuccess|($@Common.Glossary.Widget),(WidgetShare1012B)"]																																
 		}
 	}
 ]

@@ -16,10 +16,10 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Dictionary<EnergyViewType, string[]> MenuItemDictionary = new Dictionary<EnergyViewType, string[]>()
         {
-            {EnergyViewType.Line,new string[] { "$@Common.Button.LineChart" }},
-            {EnergyViewType.Column,new string[] { "$@Common.Button.ColumnChart" }},
-            {EnergyViewType.List,new string[] { "$@Common.Button.GridView" }},
-            {EnergyViewType.Distribute,new string[] { "$@Common.Button.PieChart" }},
+            {EnergyViewType.Line,new string[] { "$@Common.GraphType.Line" }},
+            {EnergyViewType.Column,new string[] { "$@Common.GraphType.Column" }},
+            {EnergyViewType.List,new string[] { "$@Common.GraphType.Grid" }},
+            {EnergyViewType.Distribute,new string[] { "$@Common.GraphType.Pie" }},
         };
 
         private static Dictionary<TimeSpans, string[]> TimeSpanMenuItemDictionary = new Dictionary<TimeSpans, string[]>()

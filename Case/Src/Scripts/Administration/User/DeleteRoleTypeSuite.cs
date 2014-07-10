@@ -52,7 +52,8 @@ namespace Mento.Script.Administration.User
             //Delete the role type
             RoleTypeSettings.ClickDeleteButton();
             //Verify that the message 'Are your sure to delete the role type?' is displayed on message box.
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.Message[0]));
+            //Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.Message[0]));
+            Assert.AreEqual(input.ExpectedData.Message[0], JazzMessageBox.MessageBox.GetMessage());
             //Click GiveUp button to cancel the deletion.
             JazzMessageBox.MessageBox.GiveUp();
             TimeManager.ShortPause();
@@ -83,7 +84,8 @@ namespace Mento.Script.Administration.User
             //Delete the role type
             RoleTypeSettings.ClickDeleteButton();
             //Verify that the message 'Are your sure to delete the role type?' is displayed on message box.
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.Message[0]));
+            //Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.Message[0]));
+            Assert.AreEqual(input.ExpectedData.Message[0], JazzMessageBox.MessageBox.GetMessage());
             //Click Delete button to confirm the deletion.
             JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitLoading();

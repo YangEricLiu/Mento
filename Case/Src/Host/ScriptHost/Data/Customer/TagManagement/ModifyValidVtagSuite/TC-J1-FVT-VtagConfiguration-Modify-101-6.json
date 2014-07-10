@@ -14,6 +14,7 @@
 			"Code":"VtagModify006",
 			"SystemNodePath":["CheckModifyVtag","$@SystemDimensionTemplateItem_HVAC"],
 			"Message":"$@SystemDimensionTemplateItem_HVAC",
+			"Uom":"$@Uom_KVARH",
 		}
 	}
 ]

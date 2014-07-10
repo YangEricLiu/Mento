@@ -76,7 +76,7 @@ namespace Mento.Script.Customer.TagAssociation
             Assert.IsTrue(AssociateSettings.IsTagLighted(input.InputData.TagNames[0]));
             AssociateSettings.LightenTag(input.InputData.TagNames[1]);
 
-            Assert.AreEqual(JazzMessageBox.MessageBox.GetMessage(),input.InputData.TagName);
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.InputData.TagName));
             JazzMessageBox.MessageBox.Close();
             TimeManager.ShortPause();
             //Disassociate Ptag1, then light Ptag2 again.
@@ -120,9 +120,8 @@ namespace Mento.Script.Customer.TagAssociation
             Assert.IsTrue(AssociateSettings.IsTagLighted(input.InputData.TagNames[0]));
             //select a associated Vtag whose commodity is water and light the energy consumption flag.
             AssociateSettings.LightenTag(input.InputData.TagNames[1]);
-            Assert.AreEqual(JazzMessageBox.MessageBox.GetMessage(), input.InputData.TagName);
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.InputData.TagName));
             JazzMessageBox.MessageBox.Close();         
-
         }
 
         [Test]

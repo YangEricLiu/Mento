@@ -357,7 +357,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Input an valid name to input box again. and the name can be display correct.
             PVtagTargetBaselineSettings.FillBaselineName(input.InputData.TargetBaselineName);
-            Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameValue());
+            Assert.AreEqual(input.InputData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameValue());
 
             //Navigate to 能源管理->单位指标->能耗，select the tag in step3,select time and click 查看数据 and 图表导出.
             UnitKPIPanel.NavigateToUnitIndicator();
@@ -451,7 +451,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Input an valid name to input box again. and the name can be display correct.
             PVtagTargetBaselineSettings.FillBaselineName(input.InputData.TargetBaselineName);
-            Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetTargetNameValue());
+            Assert.AreEqual(input.InputData.TargetBaselineName, PVtagTargetBaselineSettings.GetTargetNameValue());
 
             //Navigate to 能源管理->单位指标->能耗，select the tag in step3,select time and click 查看数据 and 图表导出.
             UnitKPIPanel.NavigateToUnitIndicator();
@@ -536,7 +536,7 @@ namespace Mento.Script.Customer.TagManagement
             PickupPtagOrVtag(input);
 
             //Click 基准值.
-            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 

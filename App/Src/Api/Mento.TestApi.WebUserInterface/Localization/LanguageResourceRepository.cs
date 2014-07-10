@@ -145,8 +145,8 @@ namespace Mento.TestApi.WebUserInterface
                     && (sLine.IndexOf("{}") < 0) && (sLine.IndexOf("=") > -1))
                 {
                     string[] tmp = sLine.Split(new char[2] { '=', ';' });
-                    key = tmp[0].Replace("I18N.", "").Replace(" ", "");
-                    value = tmp[1].Replace(" ", "").Replace("'", "");
+                    key = tmp[0].Replace("I18N.", "").Trim();//.Replace(" ", "");
+                    value = tmp[1].Replace("'", "").Trim();//;
                     if (!lineList.ContainsKey(key))
                     {
                         lineList.Add(key, value);

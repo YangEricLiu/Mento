@@ -1,101 +1,574 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountIsBeingCreated" xml:space="preserve">
+    <value>"The account is being created, please wait..."</value>
+  </data>
+  <data name="Administration_CONSTUOM_PERSON_CODE" xml:space="preserve">
+    <value>People</value>
+  </data>
+  <data name="Administration_CONSTUOM_TREE_CODE" xml:space="preserve">
+    <value>Tree</value>
+  </data>
+  <data name="BLCOMMON_ProductInfo" xml:space="preserve">
+    <value>Schneider Electric EnergyMost Administrator</value>
+  </data>
+  <data name="Customer_BusinessPersonnal" xml:space="preserve">
+    <value>Business personnel</value>
+  </data>
+  <data name="Customer_CEO" xml:space="preserve">
+    <value>Management level</value>
+  </data>
+  <data name="Customer_CloneDemoUserEmailBody" xml:space="preserve">
+    <value>"Dear Mr./Ms.,&lt;p&gt;
+ You are applying to try {3}&lt;br/&gt;
+ at {2}. Please click the following link within 24 hours and go for a trial:&lt;br/&gt;
+&lt;a href='{1}'&gt;{1}&lt;/a&gt;&lt;br/&gt;
+ May you have a pleasant trial experience. &lt;br/&gt;&lt;br/&gt;
+ Best regards,&lt;br/&gt;{3}&lt;/p&gt;"</value>
+  </data>
+  <data name="Customer_CloneDemoUserEmailHeader" xml:space="preserve">
+    <value>Welcome to try {0}</value>
+  </data>
+  <data name="Customer_CoolingArea" xml:space="preserve">
+    <value>Cooling area</value>
+  </data>
+  <data name="Customer_CustomerAdmin" xml:space="preserve">
+    <value>Client administrator</value>
+  </data>
+  <data name="Customer_DepartmentManager" xml:space="preserve">
+    <value>Department manager</value>
+  </data>
+  <data name="Customer_EEConsultant" xml:space="preserve">
+    <value>Energy consultant</value>
+  </data>
+  <data name="Customer_EnergyEngineer" xml:space="preserve">
+    <value>Energy engineer</value>
+  </data>
+  <data name="Customer_EnergyManager" xml:space="preserve">
+    <value>Energy manager</value>
+  </data>
+  <data name="Customer_HeatingArea" xml:space="preserve">
+    <value>Heating area</value>
+  </data>
+  <data name="Customer_InitPasswordEmailBody" xml:space="preserve">
+    <value> "Hi {0},&lt;p&gt;
+            Welcome to use{7} &lt;br/&gt;
+            Your account information is as follows: &lt;br/&gt;
+            Username: {1}&lt;br/&gt;
+            True name: {0}&lt;br/&gt;
+            Job title: {5}&lt;br/&gt;
+            Tel: {2}&lt;br/&gt;
+            E-mail: {3}&lt;br/&gt;
+            Pleas click the following link to set your login password: &lt;br/&gt;
+            &lt;a href='{4}'&gt;{4}&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
+            May you have a pleasant experience! &lt;br/&gt;
+            Best regards, &lt;br/&gt;
+            {6}
+            &lt;/p&gt;"</value>
+  </data>
+  <data name="Customer_InitPasswordEmailTopic" xml:space="preserve">
+    <value>Welcome to use{0}</value>
+  </data>
+  <data name="Customer_PlatformAdmin" xml:space="preserve">
+    <value>Platform administrator</value>
+  </data>
+  <data name="Customer_ResetPasswordEmailBody" xml:space="preserve">
+    <value> " Hi {0},&lt;p&gt;
+            You have applied to reset your{3}password at {2}.&lt;br/&gt;
+            Please click the following link within 24 hours to reset your login password. &lt;br/&gt;
+            &lt;a href='{1}'&gt;{1}&lt;/a&gt;&lt;br/&gt;
+            Thanks for your support to {3}.&lt;br/&gt;
+            Best regards, &lt;br/&gt;
+            Schneider Electric Digital Energy Service Department
+            &lt;/p&gt;"</value>
+  </data>
+  <data name="Customer_ResetPasswordTopic" xml:space="preserve">
+    <value>Apply to reset password</value>
+  </data>
+  <data name="Customer_Saleman" xml:space="preserve">
+    <value>Sales personnel</value>
+  </data>
+  <data name="Customer_ServiceProviderAdmin" xml:space="preserve">
+    <value>Service provider administrator</value>
+  </data>
+  <data name="Customer_Technician" xml:space="preserve">
+    <value>Technician</value>
+  </data>
+  <data name="Customer_TotalArea" xml:space="preserve">
+    <value>Total area</value>
+  </data>
+  <data name="Customer_TotalPopulation" xml:space="preserve">
+    <value>Total population</value>
+  </data>
+  <data name="ENERGYCONST_CACLVAULE" xml:space="preserve">
+    <value>Calculated value</value>
+  </data>
+  <data name="ENERGYCONST_CARBONEXPORTTITLE" xml:space="preserve">
+    <value>Carbon</value>
+  </data>
+  <data name="ENERGYCONST_COSTEXPORTTITLE" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="ENERGYCONST_ENERGYEXPORTTITLE" xml:space="preserve">
+    <value>Energy efficiency analysis</value>
+  </data>
+  <data name="ENERGYCONST_HIERARCHYNAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ENERGYCONST_KPIBASELINEHEADER" xml:space="preserve">
+    <value>Benchmark</value>
+  </data>
+  <data name="ENERGYCONST_KPIEXPORTTITLE" xml:space="preserve">
+    <value>Key energy efficiency indicator</value>
+  </data>
+  <data name="ENERGYCONST_KPITARGETLINEHEADER" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="ENERGYCONST_ORIGVALUE" xml:space="preserve">
+    <value>Raw data</value>
+  </data>
+  <data name="ENERGYCONST_RANKING" xml:space="preserve">
+    <value>Ranking</value>
+  </data>
+  <data name="ENERGYCONST_TIMEHEADERSTRING" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="ENERGYCONST_VALUEHEADERSTRING" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="ENERGYRANK_APDX" xml:space="preserve">
+    <value>/person</value>
+  </data>
+  <data name="Energy_CommodityName" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="Energy_DataExportColumn_BaselineValue" xml:space="preserve">
+    <value>Benchmark</value>
+  </data>
+  <data name="Energy_DataExportColumn_CalcValue" xml:space="preserve">
+    <value>Calculated value</value>
+  </data>
+  <data name="Energy_DataExportColumn_Carbon" xml:space="preserve">
+    <value>Carbon</value>
+  </data>
+  <data name="Energy_DataExportColumn_Cost" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="Energy_DataExportColumn_Energy" xml:space="preserve">
+    <value>Energy efficiency analysis</value>
+  </data>
+  <data name="Energy_DataExportColumn_HierarchyName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Energy_DataExportColumn_OrigValue" xml:space="preserve">
+    <value>Original value</value>
+  </data>
+  <data name="Energy_DataExportColumn_Ranking" xml:space="preserve">
+    <value>Ranking</value>
+  </data>
+  <data name="Energy_DataExportColumn_TargetValue" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="Energy_DataExportColumn_Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="Energy_DataExportColumn_Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="Energy_DataExportCommon_To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="Energy_DataExportCommon_TotalView" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="Energy_To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="HomePage_DemoIsBeingCreated" xml:space="preserve">
+    <value>"The account is being created, please wait..."</value>
+  </data>
+  <data name="HomePage_Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="HomePage_WelcomeToTrail" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="MobelAPI_CNStandard" xml:space="preserve">
+    <value>Chinese standards</value>
+  </data>
+  <data name="MobelAPI_USStandard" xml:space="preserve">
+    <value>American standards</value>
+  </data>
+  <data name="WEBAPI_MailFeedbackBody" xml:space="preserve">
+    <value>Dear operation and maintenance administrator!\r\n feedback provider: {0}\r\n name: {1}\r\n{2}\r\n time: {3}\r\n question type: {4}\r\n question description: {5}\r\n contact information: {6}\r\n e-mail: {7}\r\n{8}feedback platform</value>
+  </data>
+  <data name="STS_BackLoginPage" xml:space="preserve">
+    <value>Back to home page</value>
+  </data>
+  <data name="STS_UserName_UserNameShouldNotBeEmpty" xml:space="preserve">
+    <value>Username cannot be empty</value>
+  </data>
+  <data name="STS_Email" xml:space="preserve">
+    <value>E-mail address</value>
+  </data>
+  <data name="STS_Login_ForgotPassword" xml:space="preserve">
+    <value>Forget password</value>
+  </data>
+  <data name="STS_LinkIsExpired" xml:space="preserve">
+    <value>Link expired!</value>
+  </data>
+  <data name="STS_LinkIsInvalid" xml:space="preserve">
+    <value>Invalid link!</value>
+  </data>
+  <data name="STS_Literal_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="STS_Literal_Copyright" xml:space="preserve">
+    <value>Copyright. All rights reserved.</value>
+  </data>
+  <data name="STS_Literal_Login_Col1" xml:space="preserve">
+    <value>Efficient management approaches</value>
+  </data>
+  <data name="STS_Literal_Login_Col1_Sub" xml:space="preserve">
+    <value>Save enterprise operation and investment costs</value>
+  </data>
+  <data name="STS_Literal_Login_Col2" xml:space="preserve">
+    <value>Expert-level consultation service</value>
+  </data>
+  <data name="STS_Literal_Login_Col2_Sub" xml:space="preserve">
+    <value>Help to promote the green development</value>
+  </data>
+  <data name="STS_Literal_Login_Col3" xml:space="preserve">
+    <value>Large-scale application of the system</value>
+  </data>
+  <data name="STS_Literal_Login_Col3_Sub" xml:space="preserve">
+    <value>Constantly meet your needs in business expansion</value>
+  </data>
+  <data name="STS_Literal_Weibo" xml:space="preserve">
+    <value>Schneider Electric official Weibo</value>
+  </data>
+  <data name="STS_Login" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="STS_Password" xml:space="preserve">
+    <value>Login password</value>
+  </data>
+  <data name="STS_Pwd_ResettingEmailHasBeenSent" xml:space="preserve">
+    <value>Mail has been sent. Please log into your mail box to reset the password.</value>
+  </data>
+  <data name="STS_Trail_ReqDemoLogin" xml:space="preserve">
+    <value>Product trial</value>
+  </data>
+  <data name="STS_Pwd_SetPassword" xml:space="preserve">
+    <value>Set password</value>
+  </data>
+  <data name="STS_Trail_InputEmail" xml:space="preserve">
+    <value>Please enter your e-mail address</value>
+  </data>
+  <data name="STS_Trail_EmailHasBeenSent" xml:space="preserve">
+    <value>Mail has been sent successfully. Please log into your mail box to click the link and start product trial.</value>
+  </data>
+  <data name="STS_UserName_UserDoesNotExist" xml:space="preserve">
+    <value>The username does not exist.</value>
+  </data>
+  <data name="STS_UserName_UserIsUnavailable" xml:space="preserve">
+    <value>"Login failed, your username cannot be used for the moment."</value>
+  </data>
+  <data name="STS_UserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="WEBAPI_Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="WEBAPI_DataExportUomName" xml:space="preserve">
+    <value>RMB</value>
+  </data>
+  <data name="WEBAPI_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="WEBAPI_MailContactComment" xml:space="preserve">
+    <value>"Contact us "" information description:{0}\r\n"</value>
+  </data>
+  <data name="WEBAPI_MailContactTitle" xml:space="preserve">
+    <value>Job title: {0}\r\n</value>
+  </data>
+  <data name="WEBAPI_MailContactUsBody" xml:space="preserve">
+    <value>"Dear client service representative,\r\n contact name: {0}\r\n tel: {1}\r\n e-mail: {2}\r\n company: {3}\r\n{4}{5}\r\n{6}"</value>
+  </data>
+  <data name="WEBAPI_MailContactUsTopic" xml:space="preserve">
+    <value>"""Contact us"" message from {0}"</value>
+  </data>
+  <data name="WEBAPI_MailFeedbackTopic" xml:space="preserve">
+    <value>Feedback from {0}</value>
+  </data>
+  <data name="WEBAPI_ServiceProvider" xml:space="preserve">
+    <value>Service provider:{0}</value>
+  </data>
+  <data name="WEBAPI_Telephone" xml:space="preserve">
+    <value>Tel</value>
+  </data>
+  <data name="WEBAPI_Title" xml:space="preserve">
+    <value>Job title</value>
+  </data>
+  <data name="WEBAPI_UserName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="WEBCOMMONCONST_DAY" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="WEBCOMMONCONST_HOUR" xml:space="preserve">
+    <value>Hour</value>
+  </data>
+  <data name="WEBCOMMONCONST_MONTH" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="WEBCOMMONCONST_YEAR" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="Common_EMOP" xml:space="preserve">
+    <value>EnergyMost Management Platform</value>
+  </data>
+  <data name="Common_SchneiderElectric" xml:space="preserve">
+    <value>Schneider Electric</value>
+  </data>
+  <data name="Common_SchneiderElectricChina" xml:space="preserve">
+    <value>"Schneider Electric (China) Co.,Ltd."</value>
+  </data>
+  <data name="STS_Continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="STS_Pwd_ConfirmPwd" xml:space="preserve">
+    <value>Confirm new password</value>
+  </data>
+  <data name="STS_Pwd_Hello" xml:space="preserve">
+    <value>"Hi {0},"</value>
+  </data>
+  <data name="STS_Pwd_InitPwdSet_Description" xml:space="preserve">
+    <value>Please set your password before using for the first time.</value>
+  </data>
+  <data name="STS_Pwd_PwdReset_Title" xml:space="preserve">
+    <value>"Hi &lt;span class=""hightlight""&gt;{0}&lt;/span&gt;,"</value>
+  </data>
+  <data name="STS_Pwd_NewPwd" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="STS_Pwd_PwdRest" xml:space="preserve">
+    <value>Please reset your password.</value>
+  </data>
+  <data name="STS_Pwd_PwdRule" xml:space="preserve">
+    <value>"English letters, numbers, underlines and spacing are allowed."</value>
+  </data>
+  <data name="STS_Pwd_RequestPwdReset_Description" xml:space="preserve">
+    <value>"Please enter your username and the e-mail address you have already filled out in the system, and click the “Continue” button. We will send you the link to reset password through e-mail. You may re-login system after password reset."</value>
+  </data>
+  <data name="STS_Pwd_RequestPwdReset_ForgotEmail" xml:space="preserve">
+    <value>"If you forgot the e-mail address submitted before, please contact your administrator."</value>
+  </data>
+  <data name="STS_Literal_ContactUs" xml:space="preserve">
+    <value>Contact us</value>
+  </data>
+  <data name="STS_Literal_ContactUs_Email" xml:space="preserve">
+    <value>Mail box</value>
+  </data>
+  <data name="STS_Literal_ContactUs_IfAnyQuestion" xml:space="preserve">
+    <value>"If you have any questions or requirements, please feel free to contact us."</value>
+  </data>
+  <data name="STS_Literal_ContactUs_Telephone" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="STS_Literal_ContactUs_WechatSite" xml:space="preserve">
+    <value>Micro site</value>
+  </data>
+  <data name="STS_Literal_iPadClient" xml:space="preserve">
+    <value>EnergyMost iPad Client</value>
+  </data>
+  <data name="STS_Literal_iPad_QRDownload" xml:space="preserve">
+    <value>Download is available using QR code scanner on the iPad to scan the QR code above</value>
+  </data>
+  <data name="STS_Login_InputUserName" xml:space="preserve">
+    <value>Please enter your username</value>
+  </data>
+  <data name="STS_Login_PasswordIsIncorrect" xml:space="preserve">
+    <value>Wrong login password</value>
+  </data>
+  <data name="STS_Pwd_ClickToResetPwd" xml:space="preserve">
+    <value>Click the link in e-mail to reset password.</value>
+  </data>
+  <data name="STS_Pwd_ClickToTrail" xml:space="preserve">
+    <value>Click the link in e-mail to start product trial.</value>
+  </data>
+  <data name="STS_Pwd_EmailIncorrect" xml:space="preserve">
+    <value>Is e-mail address wrong?</value>
+  </data>
+  <data name="STS_Trail_RequestTrailAgain" xml:space="preserve">
+    <value>Re-apply product trial</value>
+  </data>
+  <data name="STS_Pwd_Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="STS_Pwd_SendToEmail" xml:space="preserve">
+    <value>E-mail has been sent to {0}.</value>
+  </data>
+  <data name="STS_Literal_SwitchLanguage_ConfirmContinue" xml:space="preserve">
+    <value>"EnergyMost is about to leave the current page to finish language switch, do you want to continue?"</value>
+  </data>
+  <data name="STS_Trail_Title" xml:space="preserve">
+    <value>Welcome to try Schneider Electric EnergyMost Management Platform</value>
+  </data>
+  <data name="WEBHOST_TagImportFileName" xml:space="preserve">
+    <value>Configure tag import</value>
+  </data>
+  <data name="STS_Literal_ContactUs_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="STS_Literal_ContactUs_Title" xml:space="preserve">
+    <value>Schneider Electric EnergyMost</value>
+  </data>
+  <data name="STS_Email_EmailIsIncorrect" xml:space="preserve">
+    <value>Wrong e-mail address</value>
+  </data>
+  <data name="STS_Email_EmailShouldNotBeNull" xml:space="preserve">
+    <value>E-mail address cannot be empty.</value>
+  </data>
+  <data name="STS_Trail_WillSendTrailEmail" xml:space="preserve">
+    <value>We will send the trial account to your mail box.</value>
+  </data>
+  <data name="STS_Login_InputPassword" xml:space="preserve">
+    <value>Please enter password.</value>
+  </data>
+  <data name="STS_Pwd_Pwd2ShouldNotBeNull" xml:space="preserve">
+    <value>Confirm that password cannot be empty.</value>
+  </data>
+  <data name="STS_Pwd_PwdResetRule" xml:space="preserve">
+    <value>Please at least include upper and lower case letters and numbers with 6-20 digits. Spacing is not supported.</value>
+  </data>
+  <data name="STS_Pwd_PwdsDontMatch" xml:space="preserve">
+    <value>The two passwords you entered do not match.</value>
+  </data>
+  <data name="STS_Pwd_PwdShouldNotBeNull" xml:space="preserve">
+    <value>Password cannot be empty.</value>
+  </data>
+  <data name="STS_Trail_InitPwdSetting_Title" xml:space="preserve">
+    <value>"Hi &lt;span class=""hightlight""&gt;{0}&lt;/span&gt;, welcome to log into Schneider Electric EnergyMost Management Platform! "</value>
+  </data>
+  <data name="STS_UserName_UserHasBeenDeleted" xml:space="preserve">
+    <value>Your account has been deleted! Please contact the administrator.</value>
+  </data>
 </root>

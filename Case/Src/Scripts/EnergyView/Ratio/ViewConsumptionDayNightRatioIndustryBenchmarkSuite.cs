@@ -190,34 +190,7 @@ namespace Mento.Script.EnergyView.Ratio
             Assert.IsFalse(RadioPanel.IsTagChecked(input.InputData.tagNames[2]));
             Assert.IsTrue(RadioPanel.EntirelyNoChartDrawn());
 
-            //Go to NancyCustomer1, select BuildingBAD which is not define calendar. Select V(11).
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.ShortPause();
-
-            RadioPanel.NavigateToRatio();
-            TimeManager.MediumPause();
-
-            RadioPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-
-            RadioPanel.CheckTag(input.InputData.tagNames[3]);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.ShortPause();
-
-            //· Warning message show config calendar first.
-            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
-
             //Select the BuildingWorkNonwork from Hierarchy Tree, select 昼夜比 option. Select WorkNotworkP, 行业基准值=严寒地区B区地区办公建筑 to view chart.
-            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
-            TimeManager.ShortPause();
-
-            RadioPanel.NavigateToRatio();
-            TimeManager.MediumPause();
-
             RadioPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -298,6 +271,27 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+
+            //Go to NancyCustomer1, select BuildingBAD which is not define calendar. Select V(11).
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.ShortPause();
+
+            RadioPanel.NavigateToRatio();
+            TimeManager.MediumPause();
+
+            RadioPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            RadioPanel.CheckTag(input.InputData.tagNames[3]);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.ShortPause();
+
+            //· Warning message show config calendar first.
+            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
         }
     }
 }

@@ -126,6 +126,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            /*hourly so waste time, so ignore 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -134,6 +135,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+            */
         }
 
         [Test]
@@ -254,7 +256,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            /*hourly so waste time, so ignore 
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -262,7 +265,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
-        }
+            */
+         }
     }
 }
 

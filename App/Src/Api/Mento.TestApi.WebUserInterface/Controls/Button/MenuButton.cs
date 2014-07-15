@@ -30,13 +30,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public void SelectItemLabelling(string[] itemPath)
         {
             this.Click();
-            TimeManager.FlashPause();
+            TimeManager.MediumPause();
 
             for (int i = 0; i < itemPath.Length; i++)
             {
                 Locator itemLocator = GetMenuItemLocator(itemPath[i]);
                 if (i != (itemPath.Length - 1))
                 {
+                    ElementHandler.Float(FindChild(itemLocator));
                     ElementHandler.Float(FindChild(itemLocator));
                     TimeManager.MediumPause();
                 }

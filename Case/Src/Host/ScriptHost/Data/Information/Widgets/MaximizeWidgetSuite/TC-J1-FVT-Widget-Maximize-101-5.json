@@ -29,7 +29,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\"，\"$@EM.UseDay@$\")"],									
+			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\",\"$@EM.UseDay@$\")"],									
 		}
 	}
 ]

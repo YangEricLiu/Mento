@@ -2,31 +2,31 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A"],
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A"]],
 			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water"],
-			"DashboardInfos":[{
-				"WigetName":"UNCostSaveDashboardLine_1",
+			"DashboardInfo":[{
+				"WigetName":"UNCostLine_1",
 				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
 				"IsCreateDashboard":"true",
-				"DashboardName":"UNCostSaveDashboard1013",
+				"DashboardName":"UNCost1013",
 			},
 			{
-				"WigetName":"UNCostSaveDashboardColumn_2",
+				"WigetName":"UNCostColumn_2",
 				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"UNCostSaveDashboard1013",
+				"DashboardName":"UNCost1013",
 			},
 			{
-				"WigetName":"UNCostSaveDashboardPie_3",
+				"WigetName":"UNCostPie_3",
 				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"UNCostSaveDashboard1013",
+				"DashboardName":"UNCost1013",
 			},
 			{
-				"WigetName":"UNCostSaveDashboardDataView_4",
+				"WigetName":"UNCostDV_4",
 				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"UNCostSaveDashboard1013",
+				"DashboardName":"UNCost1013",
 			}],
 		},
 		"ExpectedData":

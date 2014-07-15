@@ -115,6 +115,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            /*hourly so waste time, so ignore 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -122,6 +123,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            */
         }
 
         [Test]
@@ -195,6 +197,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            /*hourly so waste time, so ignore 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -202,6 +205,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            */
         }
 
         [Test]

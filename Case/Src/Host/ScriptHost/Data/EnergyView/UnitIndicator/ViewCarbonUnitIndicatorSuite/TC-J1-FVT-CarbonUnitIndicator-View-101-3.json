@@ -41,7 +41,7 @@
 				"CaculationValue":"$@Commodity_Coal$@EM.Ratio.CaculateValue",
 				"OriginalValue":"$@Commodity_Coal$@EM.Ratio.RawValue",
 			}],
-			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\"，\"$@EM.UseDay@$\"，\"$@EM.UseWeek@$\")", "$@EM.StepError|(\"$@EM.UseHour\")"],
+			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\",\"$@EM.UseDay@$\",\"$@EM.UseWeek@$\")", "$@EM.StepError|(\"$@EM.UseHour\")"],
 		}
 	}
 ]

@@ -84,6 +84,7 @@ namespace Mento.Script.EnergyView.Ratio
 
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            TimeManager.LongPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -133,6 +134,7 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             EnergyViewToolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            TimeManager.LongPause();
 
             //2011/01/01-2013/12/31 year
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);

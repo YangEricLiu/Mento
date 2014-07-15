@@ -59,7 +59,7 @@
 		{
 			"ClearAllMessage":"$@EM.RUClearAll",
 			"expectedFileName":["SetDisplayStep-001-1-D-VD_Site1.xls", "SetDisplayStep-001-1-D-VM_Site1.xls"],
-			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")", "$@EM.StepError|("$@EM.UseHour")"],
+			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\",\"$@EM.UseDay@$\",\"$@EM.UseWeek@$\")", "$@EM.StepError|(\"$@EM.UseHour\")"],
 		}
 	}
 ]

@@ -29,7 +29,7 @@
 		{
 			"ClearAllMessage":"$@EM.RUClearAll",
 			"StepMessage":["$@Message.M02407"],
-			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")", "$@EM.StepError|("$@EM.UseHour")"],
+			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\",\"$@EM.UseDay@$\",\"$@EM.UseWeek@$\")", "$@EM.StepError|(\"$@EM.UseHour\")"],
 		}
 	}
 ]

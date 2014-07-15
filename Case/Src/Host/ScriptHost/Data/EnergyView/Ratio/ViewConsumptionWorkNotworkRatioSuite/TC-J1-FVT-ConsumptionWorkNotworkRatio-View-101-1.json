@@ -31,7 +31,7 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["ConsumptionWorkNotworkRatio-View-101-1-W-0.xls", "ConsumptionWorkNotworkRatio-View-101-1-M-1.xls", "ConsumptionWorkNotworkRatio-View-101-1-Y-2.xls"],
-			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\"，\"$@EM.UseDay@$\")"],
+			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\",\"$@EM.UseDay@$\")"],
 		}
 	}
 ]

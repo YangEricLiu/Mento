@@ -39,7 +39,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
         [SetUp]
         public void CaseSetUp()
         {
-            Widget.NavigateToAllDashboard();
+            HomePagePanel.NavigateToEnergyView();
             TimeManager.MediumPause();
         }
 
@@ -958,10 +958,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.ShortPause();
 
-            //Select 严寒地区B区通讯营业厅
-            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industry);
-            TimeManager.MediumPause();
-
             //之前12月, line
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Last12Month);
             TimeManager.MediumPause();
@@ -981,7 +977,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Week);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
@@ -1034,10 +1030,10 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //之前七天, line chart
-            CostUsage.SelectCommodity();
+            UnitKPIPanel.SelectCommodityUnitCost();
             TimeManager.MediumPause();
 
             EnergyViewToolbar.ClickViewButton();
@@ -1063,15 +1059,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
-            //之前30天, pie
-            EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
-
             //之前30天, data view
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -1093,7 +1080,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
@@ -1115,7 +1101,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             UnitKPIPanel.SelectCommodityUnitCost(input.InputData.Commodity);
             TimeManager.MediumPause();
@@ -1151,18 +1137,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
-            //今年, pie
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisYear);
-            TimeManager.MediumPause();
-
-            EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
-
             //昨天, data view
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Yesterday);
             TimeManager.MediumPause();
@@ -1187,7 +1161,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
@@ -1237,18 +1210,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
-            //上月, pie
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastMonth);
-            TimeManager.MediumPause();
-
-            EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
-
             //去年, data view
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
             TimeManager.MediumPause();
@@ -1273,7 +1234,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
@@ -1298,7 +1258,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.ShortPause();
 
             //之前七天, line chart
-            CarbonUsage.SelectCommodity();
+            UnitKPIPanel.SelectCommodityUnitCarbon();
             TimeManager.MediumPause();
 
             EnergyViewToolbar.ClickViewButton();
@@ -1324,15 +1284,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
-            //之前30天, pie
-            EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
-
             //之前30天, data view
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -1354,7 +1305,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
@@ -1378,7 +1328,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             TimeManager.ShortPause();
 
-            UnitKPIPanel.SelectCommodityUnitCost(input.InputData.Commodity);
+            UnitKPIPanel.SelectCommodityUnitCarbon(input.InputData.Commodity);
             TimeManager.MediumPause();
 
             //Select 严寒地区B区机房
@@ -1412,18 +1362,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
-            //今年, pie
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisYear);
-            TimeManager.MediumPause();
-
-            EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
-
             //昨天, data view
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Yesterday);
             TimeManager.MediumPause();
@@ -1448,7 +1386,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
@@ -1472,7 +1409,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             TimeManager.ShortPause();
 
-            UnitKPIPanel.SelectCommodityUnitCost(input.InputData.Commodity);
+            UnitKPIPanel.SelectCommodityUnitCarbon(input.InputData.Commodity);
             TimeManager.MediumPause();
 
             //今天, line
@@ -1495,18 +1432,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.MediumPause();
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
-
-            //上月, pie
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastMonth);
-            TimeManager.MediumPause();
-
-            EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
@@ -1534,7 +1459,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
     }

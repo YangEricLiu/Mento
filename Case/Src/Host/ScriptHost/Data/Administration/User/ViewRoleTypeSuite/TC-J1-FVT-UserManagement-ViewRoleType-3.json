@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"仪表盘与小组件查看\r\n地图信息查看\r\n仪表盘与小组件编辑\r\n个人信息管理仪表盘和小组件分享与共享\r\n“能效分析”功能\r\n“碳排放”功能",
+			"CommonName":"$@Setting.Role.DashboardView@$\r\n$@Setting.Role.MapView@$\r\n$@Setting.Role.DashboardManagement@$\r\n$@Setting.Role.PersonalInfoManagement$@Setting.Role.DashboardSharing@$\r\n$@Setting.Role.EnergyUsage@$\r\n$@Setting.Role.CarbonEmission@$",
 			
 		}
 	},

@@ -771,9 +771,9 @@
           <kpitag>
               <add key="ComboBoxKPITagSettingsUom" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
               <add key="ComboBoxKPITagSettingsCalculationType" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
-              <add key="ComboBoxKPITagSettingsCalculationStep" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
-
-              <add key="ComboBoxKPITargetBaselineEffectiveYear" value="//div[@id='setting-region-east-body']//table[contains(@id, 'combobox') and contains(@class,'x-tb-panel-item')]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+              <add key="ComboBoxKPITagSettingsCalculationStep" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/> 
+            
+            <add key="ComboBoxKPITargetBaselineEffectiveYear" value="//div[@id='setting-region-east-body']/div/div[contains(@id, 'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//table[contains(@id, 'combobox') and contains(@class,'x-tb-panel-item')]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
               <add key="ComboBoxKPITargetBaselineWorkdayRuleEndTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][1]//td[contains(@class,'x-form-item-body')]/div[not(contains(@style,'display: none;'))][$#positionIndex]/div[@class='x-column-inner']//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
               <add key="ComboBoxKPITargetBaselineNonworkdayRuleEndTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][2]//td[contains(@class,'x-form-item-body')]/div[not(contains(@style,'display: none;'))][$#positionIndex]/div[@class='x-column-inner']//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
               <add key="ComboBoxKPITargetBaselineSpecialdayRuleStartTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>

@@ -7,7 +7,7 @@
 		"ExpectedData":
 		{
 			"CommonName":"VtagForDel003",
-			"MessageArray":["$@Common.Label.ConfirmDelete|(VtagForDel003),($@Setting.Label.VTagManagement),()","$@Message.M06182"],
+			"MessageArray":["$@Common.Label.ConfirmDelete|(VtagForDel003),($@Setting.Label.VTagManagement),()","计量数据V\"VtagForDel003\"正在被引用，无法删除。请取消所有引用后再试。 引用对象：计量数据V: VtagFormula 层级结构: CheckModifyVtag"],
 			"Code":"VtagFormula",
 		}
 	}

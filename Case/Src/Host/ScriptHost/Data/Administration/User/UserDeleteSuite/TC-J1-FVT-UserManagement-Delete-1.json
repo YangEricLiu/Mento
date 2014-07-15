@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"Message":"$@Message.DeleteUserWithDashboard@$\r\n$@Common.Button.Delete@$\r\n$@Common.Button.Cancel@$",
+			"Message":"$@Message.DeleteUserWithDashboard@$ $@Common.Button.Delete@$ $@Common.Button.Cancel@$",
 		}
 	}
 ]

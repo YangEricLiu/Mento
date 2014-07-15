@@ -1,0 +1,36 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"DashboardInfos":[{
+				"WigetName":"UNCostSaveDashboardLine_1",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"UNCostSaveDashboard1011",
+			},
+			{
+				"WigetName":"UNCostSaveDashboardColumn_2",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"UNCostSaveDashboard1011",
+			},
+			{
+				"WigetName":"UNCostSaveDashboardPie_3",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"UNCostSaveDashboard1011",
+			},
+			{
+				"WigetName":"UNCostSaveDashboardDataView_4",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"UNCostSaveDashboard1011",
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

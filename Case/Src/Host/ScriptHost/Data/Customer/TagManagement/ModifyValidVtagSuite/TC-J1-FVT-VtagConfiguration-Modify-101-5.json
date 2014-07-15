@@ -9,7 +9,7 @@
 			"CommonName":"VtagModify005",
 			"HierarchyNodePath":["自动化测试","AutoSite_Vtag","CheckModifyVtag"],
 			"Step":"Monthly",
-			"Message":"$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")",
+			"Message":"$@EM.StepError|(\"$@EM.UseHour@$\"，\"$@EM.UseDay@$\"，\"$@EM.UseWeek@$\")",
 		}
 	}
 ]

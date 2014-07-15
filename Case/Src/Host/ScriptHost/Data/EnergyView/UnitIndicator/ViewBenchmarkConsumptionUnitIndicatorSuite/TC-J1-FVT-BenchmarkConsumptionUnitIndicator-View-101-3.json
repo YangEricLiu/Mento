@@ -11,7 +11,7 @@
 		{
 			"popupNotes":["$@Message.M02501"],
 			"expectedFileName":["BenchmarkConsumptionUnitIndicator-View-101-3-M-0.xls", "BenchmarkConsumptionUnitIndicator-View-101-3-M-1.xls", "BenchmarkConsumptionUnitIndicator-View-101-3-M-2.xls", "BenchmarkConsumptionUnitIndicator-View-101-3-M-3.xls"],
-			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")", "$@EM.StepError|("$@EM.UseHour")"],
+			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\"，\"$@EM.UseDay@$\"，\"$@EM.UseWeek@$\")", "$@EM.StepError|(\"$@EM.UseHour\")"],
 		}
 	}
 ]

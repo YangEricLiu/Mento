@@ -151,7 +151,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.ShortPause();
 
-                MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[i].TagsName[0]);
+                MultiHieCompareWindow.CheckTags(input.InputData.MultipleHierarchyAndtags[i].TagsName);
                 TimeManager.ShortPause();
             }
 
@@ -166,10 +166,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //冷暖季
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ShowCalendarHeatCool);
-            TimeManager.LongPause();
-
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
@@ -182,18 +178,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.MediumPause();
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
-
-            //今年, pie
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisYear);
-            TimeManager.MediumPause();
-
-            EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
@@ -221,7 +205,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName)); 
         }
 
@@ -589,7 +572,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.LongPause();
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
             //本月, Column
@@ -600,7 +582,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.MediumPause();
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
-            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
             //今年, pie
@@ -612,7 +593,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.MediumPause();
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
-            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
             //昨天, data view
@@ -624,7 +604,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.MediumPause();
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
-            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
             //Add widget successfully into the dashboard and displayed in the last available space.
@@ -817,7 +796,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.ShortPause();
 
-                MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[i].TagsName[0]);
+                MultiHieCompareWindow.CheckTags(input.InputData.MultipleHierarchyAndtags[i].TagsName);
                 TimeManager.ShortPause();
             }
 
@@ -835,10 +814,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-
-            //冷暖季
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ShowCalendarHeatCool);
-            TimeManager.LongPause();
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -894,7 +869,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.MediumPause();
 
-            RadioPanel.NavigateToRatio();
+            UnitKPIPanel.NavigateToUnitIndicator();
             TimeManager.MediumPause();
 
             var dashboard = input.InputData.DashboardInfo;
@@ -910,9 +885,9 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //非工作时间
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ShowCalendarNonWorkday);
-            TimeManager.LongPause();
+            //Select 严寒地区B区通讯营业厅
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industry);
+            TimeManager.MediumPause();
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -951,6 +926,616 @@ namespace Mento.Script.EnergyView.EnergyManagement
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SaveToDashboard-101-UnitIndicator-2")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SaveToDashboardSuite), "TC-J1-FVT-SaveToDashboard-101-UnitIndicator-2")]
+        public void UnitIndicatorMultiHierarchySaveToDashboard(UnitIndicatorData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            var dashboard = input.InputData.DashboardInfo;
+
+            //B. Select Multiple Hierarchy node 楼宇A BuildingA_P1_Electricity+楼宇B BuildingB_P1_Electricity+BuildingB_P2_Water. 
+            EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
+            TimeManager.LongPause();
+
+            for (int i = 0; i < input.InputData.MultipleHierarchyAndtags.Length; i++)
+            {
+                MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[i].HierarchyPath);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.ShortPause();
+
+                MultiHieCompareWindow.CheckTags(input.InputData.MultipleHierarchyAndtags[i].TagsName);
+                TimeManager.ShortPause();
+            }
+
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.ShortPause();
+
+            //Select 严寒地区B区通讯营业厅
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industry);
+            TimeManager.MediumPause();
+
+            //之前12月, line
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Last12Month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //本月, Column
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisMonth);
+            TimeManager.MediumPause();
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //今年, data view
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisYear);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Add widget successfully into the dashboard and displayed in the last available space.
+            Widget.NavigateToAllDashboard();
+            TimeManager.LongPause();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCost-1")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SaveToDashboardSuite), "TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCost-1")]
+        public void UnitIndicatorCostBuildingATotalSaveToDashboard(UnitIndicatorData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Select 楼宇A总览, Convert to cost
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
+            TimeManager.ShortPause();
+
+            //之前七天, line chart
+            CostUsage.SelectCommodity();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //非工作时间
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ShowCalendarNonWorkday);
+            TimeManager.LongPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //之前30天, Column
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Last30Day);
+            TimeManager.MediumPause();
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //之前30天, pie
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //之前30天, data view
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Add widget successfully into the dashboard and displayed in the last available space.
+            Widget.NavigateToAllDashboard();
+            TimeManager.LongPause();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCost-2")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SaveToDashboardSuite), "TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCost-2")]
+        public void UnitIndicatorCostBuildingBElectricitySaveToDashboard(UnitIndicatorData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Select 楼宇B电, Convert to cost
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.SelectCommodityUnitCost(input.InputData.Commodity);
+            TimeManager.MediumPause();
+
+            //Select 严寒地区B区机房
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industry);
+            TimeManager.MediumPause();
+
+            //之前12月, line
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Last12Month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //冷暖季
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ShowCalendarHeatCool);
+            TimeManager.LongPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //本月, Column
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisMonth);
+            TimeManager.MediumPause();
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //今年, pie
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisYear);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //昨天, data view
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Yesterday);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Add widget successfully into the dashboard and displayed in the last available space.
+            Widget.NavigateToAllDashboard();
+            TimeManager.LongPause();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCost-3")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SaveToDashboardSuite), "TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCost-3")]
+        public void UnitIndicatorCostSiteAElecWaterTotalSaveToDashboard(UnitIndicatorData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Select 园区A电+水, Convert to cost
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.SelectCommodityUnitCost(input.InputData.Commodity);
+            TimeManager.MediumPause();
+
+            //今天, line
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Today);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //本周, Column
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisWeek);
+            TimeManager.MediumPause();
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //上月, pie
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastMonth);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //去年, data view
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Add widget successfully into the dashboard and displayed in the last available space.
+            Widget.NavigateToAllDashboard();
+            TimeManager.LongPause();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCarbon-1")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SaveToDashboardSuite), "TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCarbon-1")]
+        public void UnitIndicatorCarbonBuildingATotalSaveToDashboard(UnitIndicatorData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Select 楼宇A总览, Convert to cost
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            TimeManager.ShortPause();
+
+            //之前七天, line chart
+            CarbonUsage.SelectCommodity();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //非工作时间
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ShowCalendarNonWorkday);
+            TimeManager.LongPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //之前30天, Column
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Last30Day);
+            TimeManager.MediumPause();
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //之前30天, pie
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //之前30天, data view
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Add widget successfully into the dashboard and displayed in the last available space.
+            Widget.NavigateToAllDashboard();
+            TimeManager.LongPause();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCarbon-2")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SaveToDashboardSuite), "TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCarbon-2")]
+        public void UnitIndicatorCarbonBuildingBElectricitySaveToDashboard(UnitIndicatorData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Select 楼宇B电, Convert to cost
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.SelectCommodityUnitCost(input.InputData.Commodity);
+            TimeManager.MediumPause();
+
+            //Select 严寒地区B区机房
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industry);
+            TimeManager.MediumPause();
+
+            //之前12月, line
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Last12Month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //冷暖季
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ShowCalendarHeatCool);
+            TimeManager.LongPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //本月, Column
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisMonth);
+            TimeManager.MediumPause();
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //今年, pie
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisYear);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //昨天, data view
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Yesterday);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Add widget successfully into the dashboard and displayed in the last available space.
+            Widget.NavigateToAllDashboard();
+            TimeManager.LongPause();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCarbon-3")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SaveToDashboardSuite), "TC-J1-FVT-SaveToDashboard-101-UnitIndicatorCarbon-3")]
+        public void UnitIndicatorCarbonSiteAElecWaterTotalSaveToDashboard(UnitIndicatorData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Select 园区A电+水, Convert to cost
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.SelectCommodityUnitCost(input.InputData.Commodity);
+            TimeManager.MediumPause();
+
+            //今天, line
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Today);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //本周, Column
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisWeek);
+            TimeManager.MediumPause();
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //上月, pie
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastMonth);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //去年, data view
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Add widget successfully into the dashboard and displayed in the last available space.
+            Widget.NavigateToAllDashboard();
+            TimeManager.LongPause();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
     }
 }

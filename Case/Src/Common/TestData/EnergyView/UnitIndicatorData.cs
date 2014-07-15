@@ -37,6 +37,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string CarbonType { get; set; }
 
         public string UnitIndicatorType { get; set; }
+
+        public MultipleHierarchyAndtags[] MultipleHierarchyAndtags { get; set; }
     }
 
     public class UnitIndicatorOutput : ExpectedTestDataBase

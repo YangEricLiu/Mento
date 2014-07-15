@@ -14,7 +14,7 @@
 		},
 		"ExpectedData":
 		{
-			"DeleteMessages":["$@Common.Label.ConfirmDelete|(Dashboard_Delete_101_2_A),($@Common.Glossary.Dashboard),()", "$@Common.Label.ConfirmDelete|(Dashboard_Delete_101_2_C),($@Common.Glossary.Dashboard),()"],
+			"DeleteMessages":["$@Common.Label.ConfirmDelete|(Dashboard_Delete_101_2_A),($@Common.Glossary.Dashboard),()", "$@Common.Label.ConfirmDelete|(Dashboard_Delete_101_2_B),($@Common.Glossary.Dashboard),()", "$@Common.Label.ConfirmDelete|(Dashboard_Delete_101_2_C),($@Common.Glossary.Dashboard),()"],
 			"DeleteCommonMessage":"$@HomePage.Label.ConfirmDeleteDashboard",
 			"NoneDashboardMessage":"$@HomePage.Label.DashboardMessage.HierarchyNodeNoDashboard",
 		}

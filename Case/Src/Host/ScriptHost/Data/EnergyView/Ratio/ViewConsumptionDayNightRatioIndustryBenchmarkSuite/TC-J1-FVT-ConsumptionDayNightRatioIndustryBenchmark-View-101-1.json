@@ -44,7 +44,7 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["ConsumptionDayNightRatioIndustryBenchmark-View-101-1-D-0.xls", "ConsumptionDayNightRatioIndustryBenchmark-View-101-1-W-1.xls", "ConsumptionDayNightRatioIndustryBenchmark-View-101-1-M-2.xls", "ConsumptionDayNightRatioIndustryBenchmark-View-101-1-Y-3.xls"],
-			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$")"],
+			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\"，\"$@EM.UseDay@$\")"],
 		}
 	}
 ]

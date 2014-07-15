@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"MessageArray":["$@Common.Label.ConfirmDelete|(PtagElecKHW002),($@Setting.Label.PTagManagement),()", "计量数据P\"PtagElecKHW002\"正在被引用，无法删除。请取消所有引用后再试。\r\n引用对象：层级结构:\r\nCheckTagsAssoBuild"],
+			"MessageArray":["$@Common.Label.ConfirmDelete|(PtagElecKHW002),($@Setting.Label.PTagManagement),()", "计量数据P\"PtagElecKHW002\"正在被引用，无法删除。请取消所有引用后再试。 引用对象：层级结构: CheckTagsAssoBuild"],
 		}
 	}
 ]

@@ -223,7 +223,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public string GetMessage()
         {
-            return RootElement.Text;
+            return RootElement.Text.Replace("\r\n", " ").Trim();
             //return FindChild(MessageContainerLocator).Text;
         }
     }

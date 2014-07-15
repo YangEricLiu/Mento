@@ -24,7 +24,7 @@
 		"ExpectedData":
 		{
 			"popupNotes":["$@Message.M02501"],
-			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")", "$@EM.StepError|("$@EM.UseHour@$")"],
+			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\"，\"$@EM.UseDay@$\"，\"$@EM.UseWeek@$\")", "$@EM.StepError|(\"$@EM.UseHour@$\")"],
 		}
 	}
 ]

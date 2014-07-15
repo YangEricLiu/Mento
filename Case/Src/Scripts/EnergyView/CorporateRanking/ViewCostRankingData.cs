@@ -158,7 +158,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            CorporateRanking.SelectSystemDimension(input.InputData.SystemDimensionPath);
+            CorporateRanking.SelectSystemDimensionNode(input.InputData.SystemDimensionPath);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             TimeManager.LongPause();
@@ -547,7 +547,9 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //· Ranking chart display successfully.
-            Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());   
+            CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1]);
+            TimeManager.MediumPause();
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
          }
 
         [Test]

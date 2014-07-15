@@ -69,7 +69,7 @@ namespace Mento.Script.Information.Widgets
 
             //The deletion is cancelled and the widget is still displayed on the dashboard.
             Assert.AreEqual(4, HomePagePanel.GetWidgetsNumberOfDashboard());
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetNames[0]));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetNames[0]));
 
             //Click 'Yes' (确定) in the pop up confirmation window.
             HomePagePanel.DeleteWidgetOpen(dashboard[0].WigetNames[0]);

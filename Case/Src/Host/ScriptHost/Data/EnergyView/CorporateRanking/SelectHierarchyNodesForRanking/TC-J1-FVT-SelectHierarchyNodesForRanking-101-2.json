@@ -5,11 +5,10 @@
 			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "楼宇BC"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"]],
 			"commodityNames":["$@Commodity_Electricity","$@Commodity_Water"],
 			"AreaDimensionPath":["楼宇BC", "一层"],
-			"FuncModeConvertTargetTexts":["$@EM.Title.EnergyConsumption", "$@EM.Title.CarbonUnit", "$@EM.Title.CostUnit"],
 		},
 		"ExpectedData":
 		{
-			
+			"FuncModeConvertTargetTexts":["$@EM.Title.EnergyConsumption", "$@EM.Title.CarbonUnit", "$@EM.Title.CostUnit"],
 		}
 	}
 ]

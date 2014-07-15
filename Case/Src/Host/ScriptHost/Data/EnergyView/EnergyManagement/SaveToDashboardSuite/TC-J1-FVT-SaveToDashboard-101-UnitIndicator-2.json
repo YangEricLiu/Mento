@@ -11,23 +11,24 @@
 				"TagsName":["BuildingB_P1_Electricity", "BuildingB_P2_Water"],
 			}],
 			"DashboardInfo":[{
-				"WigetName":"RatioSaveDashboardLine_1",
+				"WigetName":"UnitIndicatorSaveDashboardLine_1",
 				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
 				"IsCreateDashboard":"true",
-				"DashboardName":"RatioSaveDashboard1012",
+				"DashboardName":"UnitIndicatorSaveDashboard1012",
 			},
 			{
-				"WigetName":"RatioSaveDashboardColumn_2",
+				"WigetName":"UnitIndicatorSaveDashboardColumn_2",
 				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"RatioSaveDashboard1012",
+				"DashboardName":"UnitIndicatorSaveDashboard1012",
 			},
 			{
-				"WigetName":"RatioSaveDashboardDataView_4",
+				"WigetName":"UnitIndicatorSaveDashboardDataView_4",
 				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"RatioSaveDashboard1012",
+				"DashboardName":"UnitIndicatorSaveDashboard1012",
 			}],
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Telecommunication_business_hall",
 		},
 		"ExpectedData":
 		{

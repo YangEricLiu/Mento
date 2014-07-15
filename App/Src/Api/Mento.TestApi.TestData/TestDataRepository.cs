@@ -366,7 +366,7 @@ namespace Mento.TestApi.TestData
                     value = Regex.Replace(value, @"\{" + i.ToString() + @"\}", parameter);
                 }
 
-                raw = raw.Replace(match.Groups[0].Value, value);
+                raw = raw.Replace(match.Groups[0].Value, value.Trim().Replace("<br/>", string.Empty));
             }
 
             MatchCollection simpleMatches = MatchLanguageKeys(raw, KEYFORMATSIMPLE);
@@ -378,7 +378,7 @@ namespace Mento.TestApi.TestData
 
                 value = value.Replace("\"", "\\\"");
 
-                raw = raw.Replace("$@" + key, value);
+                raw = raw.Replace("$@" + key, value.Trim().Replace("<br/>", string.Empty));
             }
 
             //throw new Exception(raw);

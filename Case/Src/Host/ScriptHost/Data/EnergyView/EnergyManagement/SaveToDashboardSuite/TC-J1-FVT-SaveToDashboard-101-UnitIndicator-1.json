@@ -5,23 +5,24 @@
 			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
 			"tagNames":["BuildingA_P1_Electricity"],
 			"DashboardInfo":[{
-				"WigetName":"RatioSaveDashboardLine_1",
+				"WigetName":"UnitIndicatorSaveDashboardLine_1",
 				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
 				"IsCreateDashboard":"true",
-				"DashboardName":"RatioSaveDashboard1011",
+				"DashboardName":"UnitIndicatorSaveDashboard1011",
 			},
 			{
-				"WigetName":"RatioSaveDashboardColumn_2",
+				"WigetName":"UnitIndicatorSaveDashboardColumn_2",
 				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"RatioSaveDashboard1011",
+				"DashboardName":"UnitIndicatorSaveDashboard1011",
 			},
 			{
-				"WigetName":"RatioSaveDashboardDataView_4",
+				"WigetName":"UnitIndicatorSaveDashboardDataView_4",
 				"HierarchyName":["NancyCostCustomer2", "组织A", "园区A"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"RatioSaveDashboard1011",
+				"DashboardName":"UnitIndicatorSaveDashboard1011",
 			}],
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Telecommunication_business_hall",
 		},
 		"ExpectedData":
 		{

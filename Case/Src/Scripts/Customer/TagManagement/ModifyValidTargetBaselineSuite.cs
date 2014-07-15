@@ -41,6 +41,7 @@ namespace Mento.Script.Customer.TagManagement
         public void CaseTearDown()
         {
             PtagSettings.NavigatorToEnergyView();
+            TimeManager.MediumPause();
         }
 
         private void PickupPtagOrVtag(KPITargetBaselineData input)
@@ -383,18 +384,10 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
-            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
-            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
-            Assert.IsFalse(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-            TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(UnitKPIPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
 
             RadioPanel.NavigateToRatio();
             TimeManager.MediumPause();
@@ -419,18 +412,12 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
-            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
-            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
-            Assert.IsFalse(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
+            Assert.IsTrue(RadioPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(RadioPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(RadioPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(RadioPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
 
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-            TimeManager.MediumPause();
-            RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            TimeManager.LongPause();
         }
 
         [Test]
@@ -477,18 +464,10 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
-            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
-            Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
-            Assert.IsFalse(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-            TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(UnitKPIPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
 
             RadioPanel.NavigateToRatio();
             TimeManager.MediumPause();
@@ -513,18 +492,10 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
-            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
-            Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
-            Assert.IsFalse(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-            TimeManager.MediumPause();
-            RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            Assert.IsTrue(RadioPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
+            Assert.IsTrue(RadioPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].TargetValue));
+            Assert.IsTrue(RadioPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].BaselineValue));
+            Assert.IsFalse(RadioPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
         }
 
         [Test]
@@ -631,7 +602,7 @@ namespace Mento.Script.Customer.TagManagement
 
         [Test]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-11")]
-        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-10")]
+        [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-11")]
         public void ModifyTargetBaselineNameAfterCalculatedOrRevised(KPITargetBaselineData input)
         {
             //Choose tag 

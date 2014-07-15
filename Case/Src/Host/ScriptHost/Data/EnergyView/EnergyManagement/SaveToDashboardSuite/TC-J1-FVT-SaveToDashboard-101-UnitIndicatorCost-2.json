@@ -3,31 +3,32 @@
 		"InputData":
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
-			"commodityNames":["$@Commodity_Electricity"],
-			"DashboardInfo":[{
-				"WigetName":"CarbonSaveDashboardLine_1",
+			"Commodity":["$@Commodity_Electricity"],
+			"DashboardInfos":[{
+				"WigetName":"UNCostSaveDashboardLine_1",
 				"HierarchyName":["NancyCostCustomer2", "组织A"],
 				"IsCreateDashboard":"true",
-				"DashboardName":"CarbonSaveDashboard1012",
+				"DashboardName":"UNCostSaveDashboard1012",
 			},
 			{
-				"WigetName":"CarbonSaveDashboardColumn_2",
+				"WigetName":"UNCostSaveDashboardColumn_2",
 				"HierarchyName":["NancyCostCustomer2", "组织A"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"CarbonSaveDashboard1012",
+				"DashboardName":"UNCostSaveDashboard1012",
 			},
 			{
-				"WigetName":"CarbonSaveDashboardPie_3",
+				"WigetName":"UNCostSaveDashboardPie_3",
 				"HierarchyName":["NancyCostCustomer2", "组织A"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"CarbonSaveDashboard1012",
+				"DashboardName":"UNCostSaveDashboard1012",
 			},
 			{
-				"WigetName":"CarbonSaveDashboardDataView_4",
+				"WigetName":"UNCostSaveDashboardDataView_4",
 				"HierarchyName":["NancyCostCustomer2", "组织A"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"CarbonSaveDashboard1012",
+				"DashboardName":"UNCostSaveDashboard1012",
 			}],
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Telecommunication_workshop",
 		},
 		"ExpectedData":
 		{

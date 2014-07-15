@@ -1,0 +1,38 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
+			"Commodity":["$@Commodity_Electricity"],
+			"DashboardInfos":[{
+				"WigetName":"UNCarbonSaveDashboardLine_1",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区B"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"UNCarbonSaveDashboard1012",
+			},
+			{
+				"WigetName":"UNCarbonSaveDashboardColumn_2",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区B"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"UNCarbonSaveDashboard1012",
+			},
+			{
+				"WigetName":"UNCarbonSaveDashboardPie_3",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区B"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"UNCarbonSaveDashboard1012",
+			},
+			{
+				"WigetName":"UNCarbonSaveDashboardDataView_4",
+				"HierarchyName":["NancyCostCustomer2", "组织A", "园区B"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"UNCarbonSaveDashboard1012",
+			}],
+			"Industry":"$@Zone_Extreme_Cold_Region_B$@Industry_Telecommunication_workshop",
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

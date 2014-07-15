@@ -459,7 +459,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
         [Test]
         [CaseID("TC-J1-FVT-CarbonRanking-Calculate-101-6")]
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateCarbonEmissionRanking), "TC-J1-FVT-CarbonRanking-Calculate-101-6")]
-        public void CalcGasCarbonRankingData(CorporateRankingData input)
+        public void CalcWaterCarbonRankingData(CorporateRankingData input)
         {
             //Select NancyCostCustomer2-> 楼宇B. click 确定
             
@@ -472,7 +472,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            ////Select 介质- 天然气
+            //Select 介质- 水
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -491,8 +491,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
         }
 
-        #endregion
-        
+        #endregion  
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonRanking-Calculate-101-7")]

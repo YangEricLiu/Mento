@@ -20,7 +20,7 @@
 		{
 			"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
 			"expectedFileName":["BenchmarkCarbonUnitIndicator-View-101-3-0.xls", "BenchmarkCarbonUnitIndicator-View-101-3-1.xls"],
-			"messages":["$@EM.StepError|("$@EM.UseHour@$"，"$@EM.UseDay@$"，"$@EM.UseWeek@$")", "$@EM.StepError|("$@EM.UseHour")"],
+			"messages":["$@EM.StepError|(\"$@EM.UseHour@$\"，\"$@EM.UseDay@$\"，\"$@EM.UseWeek@$\")", "$@EM.StepError|(\"$@EM.UseHour\")"],
 		}
 	}
 ]

@@ -1,0 +1,58 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"]],
+			"tagNames":["Labellingtag1"],
+			"UnitTypeValues":["单位人口","昼夜比","工休比"],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"全年",
+			},
+			{
+				"year":"2013",
+				"month":"全年",
+			}],
+			"DashboardInfo":[{
+				"WigetName":"LabellingSaveDashboardBar_14",
+				"HierarchyName":["NancyOtherCustomer3", "园区能耗标识"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"LabellingSaveDashboard1011",
+			},
+			{
+				"WigetName":"LabellingSaveDashboardBar_13",
+				"HierarchyName":["NancyOtherCustomer3", "园区能耗标识"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"LabellingSaveDashboard1011",
+			},
+			{
+				"WigetName":"LabellingSaveDashboardBar_24",
+				"HierarchyName":["NancyOtherCustomer3", "园区能耗标识"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"LabellingSaveDashboard1011",
+			},
+			{
+				"WigetName":"LabellingSaveDashboardBar_23",
+				"HierarchyName":["NancyOtherCustomer3", "园区能耗标识"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"LabellingSaveDashboard1011",
+			},
+			{
+				"WigetName":"LabellingSaveDashboardBar_34",
+				"HierarchyName":["NancyOtherCustomer3", "园区能耗标识"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"LabellingSaveDashboard1011",
+			},
+			{
+				"WigetName":"LabellingSaveDashboardBar_33",
+				"HierarchyName":["NancyOtherCustomer3", "园区能耗标识"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"LabellingSaveDashboard1011",
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

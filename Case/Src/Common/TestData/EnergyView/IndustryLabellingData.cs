@@ -26,6 +26,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public string UnitTypeValue { get; set; }
 
+        public string[] UnitTypeValues { get; set; }
+
         public YearAndMonth[] YearAndMonth { get; set; }
 
         public string[] failedFileName { get; set; }

@@ -35,6 +35,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
         private static CarbonUsagePanel CarbonUsage = JazzFunction.CarbonUsagePanel;
         private static RatioPanel RadioPanel = JazzFunction.RatioPanel;
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;
+        private static IndustryLabellingPanel IndustryLabellingPanel = JazzFunction.IndustryLabellingPanel;
 
         [SetUp]
         public void CaseSetUp()
@@ -1460,6 +1461,286 @@ namespace Mento.Script.EnergyView.EnergyManagement
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SaveToDashboard-101-Labelling-1")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(SaveToDashboardSuite), "TC-J1-FVT-SaveToDashboard-101-Labelling-1")]
+        public void LabellingSingleHierarchySaveToDashboard(IndustryLabellingData input)
+        {
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.ShortPause();
+
+            IndustryLabellingPanel.NavigateToIndustryLabelling();
+            TimeManager.MediumPause();
+
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Select 园区能耗标识 BuildingLabelling1
+            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Select Labellingtag1
+            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
+            TimeManager.ShortPause();
+
+            //单位人口 2014全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[0]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //单位人口 2013全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[0]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //昼夜比 2014全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[1]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //昼夜比 2013全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[1]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //工休比 2014全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[2]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[4].WigetName, dashboard[4].HierarchyName, dashboard[4].IsCreateDashboard, dashboard[4].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //工休比 2013全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[2]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[5].WigetName, dashboard[5].HierarchyName, dashboard[5].IsCreateDashboard, dashboard[5].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Add widget successfully into the dashboard and displayed in the last available space.
+            Widget.NavigateToAllDashboard();
+            TimeManager.LongPause();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[4].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[5].WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SaveToDashboard-101-Labelling-2")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(SaveToDashboardSuite), "TC-J1-FVT-SaveToDashboard-101-Labelling-2")]
+        public void LabellingMultiHierarchySaveToDashboard(IndustryLabellingData input)
+        {
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.ShortPause();
+
+            IndustryLabellingPanel.NavigateToIndustryLabelling();
+            TimeManager.MediumPause();
+
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Select Multiple Hierarchy node 园区能耗标识 BuildingLabelling1 Labellingtag1 + BuildingLabelling2 Labellingtag2 + BuildingLabelling3 Labellingtag3. 
+            EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
+            TimeManager.LongPause();
+
+            for (int i = 0; i < input.InputData.MultipleHierarchyAndtags.Length; i++)
+            {
+                MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[i].HierarchyPath);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.ShortPause();
+
+                MultiHieCompareWindow.CheckTags(input.InputData.MultipleHierarchyAndtags[i].TagsName);
+                TimeManager.ShortPause();
+            }
+
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.ShortPause();
+
+            //单位人口 2014全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[0]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //单位人口 2013全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[0]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //昼夜比 2014全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[1]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //昼夜比 2013全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[1]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //工休比 2014全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[2]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[4].WigetName, dashboard[4].HierarchyName, dashboard[4].IsCreateDashboard, dashboard[4].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //工休比 2013全年
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[2]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[5].WigetName, dashboard[5].HierarchyName, dashboard[5].IsCreateDashboard, dashboard[5].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Add widget successfully into the dashboard and displayed in the last available space.
+            Widget.NavigateToAllDashboard();
+            TimeManager.LongPause();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[4].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[5].WigetName));
         }
     }
 }

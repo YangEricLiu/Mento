@@ -161,7 +161,7 @@
 			},
 			{
 				"WigetName":"MultiHierarchyPie1011_2",
-				"HierarchyName":[""NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"],
+				"HierarchyName":["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"],
 				"IsCreateDashboard":"false",
 				"DashboardName":"MultiHierarchyPie1011",
 			},

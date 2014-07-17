@@ -372,6 +372,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button SaveCustomizedLabellingButton = GetControl<Button>(JazzControlLocatorKey.ButtonCustomizedLabellingSave);
         public static Button DeleteCustomizedLabellingButton = GetControl<Button>(JazzControlLocatorKey.ButtonCustomizedLabellingDelete);
         public static Button ModifyCustomizedLabellingButton = GetControl<Button>(JazzControlLocatorKey.ButtonCustomizedLabellingModify);
+        public static Button CancelCustomizedLabellingButton = GetControl<Button>(JazzControlLocatorKey.ButtonCustomizedLabellingCancel);
         public static RadioButton CustomizedLabellingAscendingOrderButton = GetControl<RadioButton>(JazzControlLocatorKey.ButtonCustomizedLabellingAscendingOrder);
         public static RadioButton CustomizedLabellingDescendingOrderButton = GetControl<RadioButton>(JazzControlLocatorKey.ButtonCustomizedLabellingDescendingOrder);
         #endregion

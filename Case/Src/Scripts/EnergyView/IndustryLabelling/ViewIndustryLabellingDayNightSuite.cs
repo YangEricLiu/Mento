@@ -183,7 +183,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[1].HierarchyPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
-            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[3]);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[0]);
             TimeManager.ShortPause();
 
             //对比数据点已选满
@@ -203,34 +203,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
-
-            //Go to NancyCustomer1, select GreenieBuilding which is not define calendar. V_GreeineBuilding_Ele to display 公休比.
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.ShortPause();
-
-            IndustryLabellingPanel.NavigateToIndustryLabelling();
-            TimeManager.MediumPause();
-
-            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-
-            //select DayNightP, select 公休比 option. select a 行业区域=严寒地区B区数据中心 option to view chart. 
-            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
-            TimeManager.ShortPause();
-
-            //time 2014年 01月
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
-            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
-            EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
-
-            EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //缺少工作日历的部分，无法绘图。请设置后再试。
-            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[1]));
-            Assert.IsTrue(IndustryLabellingPanel.IsTagChecked(input.InputData.tagNames[4]));
         }
 
         [Test]
@@ -283,7 +255,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
             IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-
             //Select time range=2012/09 to view chart. 
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[2].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[2].month);
@@ -292,6 +263,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.messages[0]));
+            JazzMessageBox.MessageBox.OK();
+            TimeManager.LongPause();
             Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
 
             //Select Labellingtag2, select 行业区域=夏热冬暖酒店三星级行业;time range=2013/10 to view chart. 
@@ -325,6 +299,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.messages[0]));
+            JazzMessageBox.MessageBox.OK();
+            TimeManager.LongPause();
 
             Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
 
@@ -382,7 +360,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
+            Assert.IsFalse(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
         }
     }
 }

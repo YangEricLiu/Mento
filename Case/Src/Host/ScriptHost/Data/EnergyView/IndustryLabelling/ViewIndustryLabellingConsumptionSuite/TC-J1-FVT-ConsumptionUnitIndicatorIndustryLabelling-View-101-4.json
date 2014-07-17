@@ -36,6 +36,7 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["ConsumptionUnitIndicatorIndustryLabelling-View-101-4-0.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-4-1.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-4-2.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-4-3.xls"],
+			"messages":["$@Message.M02510"],
 		}
 	}
 ]

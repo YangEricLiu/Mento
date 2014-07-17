@@ -302,7 +302,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.AreEqual(4, IndustryLabellingPanel.GetLabellingNumber());
+            Assert.AreEqual(5, IndustryLabellingPanel.GetLabellingNumber());
             string labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.InputData.Industries[0][1], null);
             IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
             TimeManager.MediumPause();
@@ -439,6 +439,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.messages[0]));
+            JazzMessageBox.MessageBox.OK();
+            TimeManager.LongPause();
+
             Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
 
             //Select Labellingtag2, select 行业区域=夏热冬暖酒店三星级行业;time range=2013/10 to view chart.
@@ -472,6 +476,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.messages[0]));
+            JazzMessageBox.MessageBox.OK();
+            TimeManager.LongPause();
 
             Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
 
@@ -520,7 +528,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
+            Assert.IsFalse(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
         }
     }
 }

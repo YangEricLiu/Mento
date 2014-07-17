@@ -17,7 +17,7 @@
 			{
 				"LabellingLeftValue":"2",				
 			}]],
-			"Order":["$@Setting.CustomizedLabeling.Ascending "],
+			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
 			"UOM":"$@Uom_KWH@$/$@Uom_m²",

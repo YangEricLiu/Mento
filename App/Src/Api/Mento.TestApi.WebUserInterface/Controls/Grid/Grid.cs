@@ -884,7 +884,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 if (String.IsNullOrEmpty(pageCountElement.Text))
                     return -1;
 
-                return Convert.ToInt32(pageCountElement.Text.Replace("/", "").Trim());
+                if (pageCountElement.Text.Contains("/"))
+                {
+                    return Convert.ToInt32(pageCountElement.Text.Replace("/", "").Trim()); 
+                }
+                else
+                {
+                    return Convert.ToInt32(pageCountElement.Text.Replace("of", "").Trim());  
+                }
             }
         }
 

@@ -22,6 +22,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SaveButton = JazzButton.SaveCustomizedLabellingButton;
         private static Button ModifyButton = JazzButton.ModifyCustomizedLabellingButton;
         private static Button DeleteButton = JazzButton.DeleteCustomizedLabellingButton;
+        private static Button CancelButton = JazzButton.CancelCustomizedLabellingButton;
         private static RadioButton AscendingButton = JazzButton.CustomizedLabellingAscendingOrderButton;
         private static RadioButton DescendingButton = JazzButton.CustomizedLabellingDescendingOrderButton;
         #endregion
@@ -89,7 +90,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickCancelButton()
         {
-            JazzMessageBox.MessageBox.GiveUp();
+            CancelButton.Click();
         }
 
         /// <summary>

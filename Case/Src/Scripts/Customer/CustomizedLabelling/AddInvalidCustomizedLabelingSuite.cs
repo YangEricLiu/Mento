@@ -211,6 +211,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
             CustomizedLabellingSettings.ClickSaveButton();
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
                 
             //Red line and error message display at 名称.
             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetLabellingNameInvalidTips());

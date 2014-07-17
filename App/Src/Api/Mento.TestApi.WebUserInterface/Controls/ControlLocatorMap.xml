@@ -74,10 +74,10 @@
 
     
   <add key="GridPagingToolbar" value="div[contains(@class,'x-paging-toolbar')]" type="XPath"/>
-  <add key="GridPagingPreviousPageButton" value="div/div/div[em/button/span[contains(text(),'上一页')]]" type="XPath"/>
-  <add key="GridPagingNextPageButton" value="div/div/div[em/button/span[text()='下一页>']]" type="XPath"/>
+  <add key="GridPagingPreviousPageButton" value="div/div/div[contains(@id,'button') and contains(@class,'x-btn-default-toolbar-small-noicon')][1]" type="XPath"/>
+  <add key="GridPagingNextPageButton" value="div/div/div[contains(@id,'button') and contains(@class,'x-btn-default-toolbar-small-noicon')][2]" type="XPath"/>
   <add key="GridPagingCurrentPageTextBox" value="input" type="TagName"/>
-  <add key="GridPagingTotalPageLabel" value="div/div/div[contains(text(),'/')]" type="XPath"/>
+  <add key="GridPagingTotalPageLabel" value="div/div/div[contains(@id,'tbtext')][1]" type="XPath"/>
   <add key="GridPagingTotalRecordLabel" value="div/div/div[last()]" type="XPath"/>
   <!--MonthPicker-->
   <add key="MonthPickerTrigger" value = "td.x-trigger-cell" type ="CssSelector"/>

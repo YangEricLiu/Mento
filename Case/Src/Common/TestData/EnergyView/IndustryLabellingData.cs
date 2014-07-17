@@ -44,6 +44,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[][] LabellingTooltips { get; set; }
         public string[] expectedFileName { get; set; }
         public string[] texts { get; set; }
+        public string[] messages { get; set; }
     }
 
     public class YearAndMonth

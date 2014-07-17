@@ -12,7 +12,7 @@
 			}],
 			"Hierarchies":[["NancyCustomer1", "GreenieSite", "GreenieBuilding"]],
 			"TagNames":["V_GreeineBuilding_Ele"],
-			"UnitTypeValue":"$@$@EM.WorkHolidayRatio",
+			"UnitTypeValue":"$@EM.WorkHolidayRatio",
 			"YearAndMonth":[{
 				"year":"2014",
 				"month":"01",

@@ -334,9 +334,9 @@
               <add key="ButtonCostSave" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonCostCancel" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonCostUpdate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
-              <add key="ButtonElectricCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='电力']]/div/img" type="XPath"/>
-              <add key="ButtonGasCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='天然气']]/div/img" type="XPath"/>
-              <add key="ButtonWaterCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='自来水']]/div/img" type="XPath"/>
+              <add key="ButtonElectricCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='$@EM.Electric']]/div/img" type="XPath"/>
+              <add key="ButtonGasCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='$@Common.Commodity.Gas']]/div/img" type="XPath"/>
+              <add key="ButtonWaterCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='$@Common.Commodity.Water']]/div/img" type="XPath"/>
               <add key="ButtonHeatQCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='热量']]/div/img" type="XPath"/>
               <add key="ButtonCoolQCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='冷量']]/div/img" type="XPath"/>
               <add key="ButtonLightWaterCostCreate" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-column-inner')and label[text()='软水']]/div/img" type="XPath"/>
@@ -389,6 +389,7 @@
               <add key="ButtonCustomizedLabellingUpdate" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonCustomizedLabellingModify" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonCustomizedLabellingDelete" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+              <add key="ButtonCustomizedLabellingCancel" value="//div[@id='st-customized-labeling-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonCustomizedLabellingClose" value="//div[contains(@class,'x-message-box')]//div[contains(@class,'x-tool')]//img[@class='x-tool-close']"  type="XPath"/>
               <add key="ButtonCustomizedLabellingAscendingOrder" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.CustomizedLabeling.Ascending']]/input" type="XPath"/>
               <add key="ButtonCustomizedLabellingDescendingOrder" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.CustomizedLabeling.Declining']]/input" type="XPath"/>
@@ -1065,7 +1066,7 @@
       </TargetBaseline>
       
       <CustomizedLabellingSetting>
-         <add key="LabelInputValueErrTips" value="//div[@id='st-customized-labeling-properties-form-body']/label[text()='$@Setting.CustomizedLabeling.ErrorMessage1']" type="XPath"/>
+         <add key="LabelInputValueErrTips" value="//div[@id='st-customized-labeling-properties-form-body']/label[text()='$@Setting.CustomizedLabeling.ErrorMessage2']" type="XPath"/>
       </CustomizedLabellingSetting>
 
     </CustomerSettings>

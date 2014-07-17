@@ -127,7 +127,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //Check tag and view pie chart
             EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(60);
             TimeManager.MediumPause();
 
             EnergyAnalysis.ExportExpectedDictionaryForMultipleHierarchyToExcel(ManualTimeRange[3], input.ExpectedData.expectedFileName[3]);
@@ -144,7 +144,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //Check tag and view pie chart
             EnergyViewToolbar.View(EnergyViewType.Distribute);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(60);
             TimeManager.MediumPause();
 
             EnergyAnalysis.ExportExpectedDictionaryForMultipleHierarchyToExcel(ManualTimeRange[4], input.ExpectedData.expectedFileName[4]);

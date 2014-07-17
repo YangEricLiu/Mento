@@ -1742,5 +1742,166 @@ namespace Mento.Script.EnergyView.EnergyManagement
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[4].WigetName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[5].WigetName));
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SaveToDashboard-101-CorporateRanking-1")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(SaveToDashboardSuite), "TC-J1-FVT-SaveToDashboard-101-CorporateRanking-1")]
+        public void RankingHierarchySaveToDashboard(CorporateRankingData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.ShortPause();
+
+            CorporateRanking.NavigateToCorporateRanking();
+            TimeManager.MediumPause();
+
+            var dashboard = input.InputData.DashboardInfo;
+
+            //Select the 楼宇A+B+C+D+园区A+B+组织A+B from Hierarchy Tree. 
+            CorporateRanking.ClickSelectHierarchyButton();
+            TimeManager.MediumPause();
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[0]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[1]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[2]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[3]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[4]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[5]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[6]);
+            CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[7]);
+            CorporateRanking.ClickConfirmHiearchyButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Click Function Type button, select Carbon.
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Select default Ranking type=总排名, 之前30天, 电
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            TimeManager.LongPause();
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Last30Day);
+            TimeManager.MediumPause();
+
+            //Select Column
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CorporateRanking.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Select data list
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CorporateRanking.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Click Function Type button, select Cost.
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Select default Ranking type=总排名, 之前12月, 电
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            TimeManager.LongPause();
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Last12Month);
+            TimeManager.MediumPause();
+
+            //Select Column
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CorporateRanking.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Select data list
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CorporateRanking.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Click Function Type button, select Energy.
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Energy);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Select default Ranking type=总排名, 2014年（今年）, 电
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            TimeManager.LongPause();
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ThisYear);
+            TimeManager.MediumPause();
+
+            //Select Column
+            EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CorporateRanking.Toolbar.SaveToDashboard(dashboard[4].WigetName, dashboard[4].HierarchyName, dashboard[4].IsCreateDashboard, dashboard[4].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Select data list
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CorporateRanking.Toolbar.SaveToDashboard(dashboard[5].WigetName, dashboard[5].HierarchyName, dashboard[5].IsCreateDashboard, dashboard[5].DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //Add widget successfully into the dashboard and displayed in the last available space.
+            Widget.NavigateToAllDashboard();
+            TimeManager.LongPause();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.LongPause();
+
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            TimeManager.LongPause();
+
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[4].WigetName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[5].WigetName));
+        }
     }
 }

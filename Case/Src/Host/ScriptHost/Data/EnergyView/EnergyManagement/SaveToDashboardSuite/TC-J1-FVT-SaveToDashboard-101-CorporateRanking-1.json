@@ -1,0 +1,49 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇A"], ["NancyCostCustomer2","组织A","园区A","楼宇B"], ["NancyCostCustomer2", "组织A", "园区B", "楼宇C"], ["NancyCostCustomer2", "组织B", "园区C", "楼宇D"], ["NancyCostCustomer2", "组织A", "园区A"], ["NancyCostCustomer2","组织A","园区B"], ["NancyCostCustomer2", "组织A"], ["NancyCostCustomer2", "组织B"]],
+			"commodityNames":["$@Commodity_Electricity"],
+			"DashboardInfo":[{
+				"WigetName":"RankingSaveDashboardColumn_1",
+				"HierarchyName":["NancyCostCustomer2","组织B"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"RankingSaveDashboard1011",
+			},
+			{
+				"WigetName":"RankingSaveDashboardList_1",
+				"HierarchyName":["NancyCostCustomer2","组织B"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"RankingSaveDashboard1011",
+			},
+			{
+				"WigetName":"RankingSaveDashboardColumn_2",
+				"HierarchyName":["NancyCostCustomer2","组织B"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"RankingSaveDashboard1011",
+			},
+			{
+				"WigetName":"RankingSaveDashboardBList_2",
+				"HierarchyName":["NancyCostCustomer2","组织B"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"RankingSaveDashboard1011",
+			},
+			{
+				"WigetName":"RankingSaveDashboardcolumn_3",
+				"HierarchyName":["NancyCostCustomer2","组织B"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"RankingSaveDashboard1011",
+			},
+			{
+				"WigetName":"RankingSaveDashboardList_3",
+				"HierarchyName":["NancyCostCustomer2","组织B"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"RankingSaveDashboard1011",
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

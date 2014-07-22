@@ -332,9 +332,16 @@ namespace Mento.ScriptCommon.Library.Functions
             return EnergyDataGrid.GetCurrentPageData();
         }
 
+        /*
         public DataTable GetAllData()
         {
             return EnergyDataGrid.GetAllData();
+        }
+        */
+
+        public DataTable GetAllData()
+        {
+            return EnergyDataGrid.GetAllDataWithoutNull();
         }
 
         public ExcelHelper.CellsValue[] GetHeaderData()

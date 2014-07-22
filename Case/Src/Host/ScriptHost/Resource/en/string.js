@@ -24,11 +24,11 @@ I18N.EM.Switcher.Label = {};
 I18N.Dashboard = {};
 I18N.Dashboard.Label = {};
 I18N.Dashboard.Label.ToMainDashboard = 'Dashboard >';
-I18N.Dashboard.Label.TotalElectric = 'Total electricity';
+I18N.Dashboard.Label.TotalElectric = 'Total power consumption';
 I18N.Dashboard.Label.ToMap = 'Map >';
-I18N.Dashboard.Label.Ranking = 'Group ranking ';
-I18N.Dashboard.Label.ReachTarget = 'Target value achieved';
-I18N.Dashboard.Label.NotReachTarget = 'Target value not achieved';
+I18N.Dashboard.Label.Ranking = 'Ranking ';
+I18N.Dashboard.Label.ReachTarget = 'Target achieved';
+I18N.Dashboard.Label.NotReachTarget = 'Target not achieved';
 I18N.Dashboard.Label.Keepconcerning = 'Please continue to focus on energy consumption change.';
 I18N.Dashboard.Label.GoogleMapNotLoad = 'Google map is unavailable. Please check network.';
 I18N.Dashboard.Label.NoBuilding = 'Selected building has been deleted or authority has been changed. Refresh and try again.';
@@ -89,37 +89,37 @@ I18N.HomePage.Label = {};
 I18N.Login = {};
 I18N.Login.Label = {};
 
-I18N.Message.DeletionConcurrency = 'This {0} does not exist, and will be refreshed immediately.';
-I18N.Message.UpdateConcurrency = 'This {0} has been modified, and will be refreshed immediately.';
+I18N.Message.DeletionConcurrency = '"This {0} does not exist, and will be refreshed immediately."';
+I18N.Message.UpdateConcurrency = '"This {0} has been modified, and will be refreshed immediately."';
 I18N.Message.CustomerUnavailable = 'Sorry! This client does not exist or has no access authority. Please log out and log in again.';
 
-I18N.DateTimeFormat.ExtFormat.LongDateFormat = 'm (Month) d (Day), Y (Year), Day of  the Week (D)';
+I18N.DateTimeFormat.ExtFormat.LongDateFormat = '"m (Month) d (Day), Y (Year), Day of  the Week (D)"';
 I18N.DateTimeFormat.HighFormat.Millisecond = '%H (Hour) %M (Minute) %S (Second) %L (Millisecond)';
 I18N.DateTimeFormat.HighFormat.Second = '%H (Hour) %M (Minute) %S (Second)';
 I18N.DateTimeFormat.HighFormat.Minute = '%H (Hour) %M (Minute)';
 I18N.DateTimeFormat.HighFormat.Hour = '%H (Hour)';
 I18N.DateTimeFormat.HighFormat.Day = '%m (Month) %d (Day)';
-I18N.DateTimeFormat.HighFormat.Dayhour = '%H (Hour), %m (Month) %d (Day)';
+I18N.DateTimeFormat.HighFormat.Dayhour = '"%H (Hour), %m (Month) %d (Day)"';
 I18N.DateTimeFormat.HighFormat.Week = '%m (Month) %d (Day)';
 I18N.DateTimeFormat.HighFormat.Month = '%m (Month)';
-I18N.DateTimeFormat.HighFormat.Fullmonth = '%m (Month), %Y (Year)';
+I18N.DateTimeFormat.HighFormat.Fullmonth = '"%m (Month), %Y (Year)"';
 I18N.DateTimeFormat.HighFormat.Year = '%Y (Year)';
-I18N.DateTimeFormat.HighFormat.FullDateTime = '%H (Hour) %M (Minute) %S (Second), %m (Month) %d (Day),%Y (Year)';
-I18N.DateTimeFormat.HighFormat.FullDate = '%m (Month) %d (Day), %Y (Year)';
+I18N.DateTimeFormat.HighFormat.FullDateTime = '"%H (Hour) %M (Minute) %S (Second), %m (Month) %d (Day),%Y (Year)"';
+I18N.DateTimeFormat.HighFormat.FullDate = '"%m (Month) %d (Day), %Y (Year)"';
 I18N.DateTimeFormat.HighFormat.FullYear = 'Full-year';
-I18N.DateTimeFormat.IntervalFormat.Second = 'H (Hour) i (Minute) s (Second), m (Month) d (Day), Y (Year)';
-I18N.DateTimeFormat.IntervalFormat.Minute = 'H (Hour) i (Minute), m (Month) d (Day), Y (Year)';
+I18N.DateTimeFormat.IntervalFormat.Second = '"H (Hour) i (Minute),m (Month) d (Day), Y (Year)"';
 I18N.DateTimeFormat.IntervalFormat.FullMinute = 'H (Hour) i (Minute)';
-I18N.DateTimeFormat.IntervalFormat.FullHour = 'H (Hour), m (Month) d (Day), Y (Year)';
+I18N.DateTimeFormat.IntervalFormat.Minute = '"H (Hour) i (Minute), m (Month) d (Day), Y (Year)"';
+I18N.DateTimeFormat.IntervalFormat.FullHour = '"H (Hour), m (Month) d (Day), Y (Year)"';
 I18N.DateTimeFormat.IntervalFormat.Hour = 'H (Hour)';
-I18N.DateTimeFormat.IntervalFormat.FullDay = 'm (Month) d (Day), Y (Year)';
+I18N.DateTimeFormat.IntervalFormat.FullDay = '"m (Month) d (Day), Y (Year)"';
 I18N.DateTimeFormat.IntervalFormat.Day = 'd (Day)';
-I18N.DateTimeFormat.IntervalFormat.Week = 'm (Month) d (Day), Y (Year)';
-I18N.DateTimeFormat.IntervalFormat.Month = 'm (Month), Y (Year)';
+I18N.DateTimeFormat.IntervalFormat.Week = '"m (Month) d (Day), Y (Year)"';
+I18N.DateTimeFormat.IntervalFormat.Month = '"m (Month), Y (Year)"';
 I18N.DateTimeFormat.IntervalFormat.MonthDate = 'm (Month) d (Day)';
 I18N.DateTimeFormat.IntervalFormat.Year = 'Y (Year)';
-I18N.DateTimeFormat.IntervalFormat.FullDateTime = 'H (Hour) i (Minute) s (Second), m (Month) d (Day), Y (Year)';
-I18N.DateTimeFormat.IntervalFormat.FullDate = 'm (Month) d (Day), Y (Year)';
+I18N.DateTimeFormat.IntervalFormat.FullDateTime = '"H (Hour) i (Minute) s (Second), m (Month) d (Day), Y (Year)"';
+I18N.DateTimeFormat.IntervalFormat.FullDate = '"m (Month) d (Day), Y (Year)"';
 
 I18N.HomePage.Label.Myshare = 'My sharing';
 I18N.HomePage.Label.MyFavoriteDashboardNodeName = 'My favorites';
@@ -132,7 +132,7 @@ I18N.HomePage.Label.ShareHistoryBtnText = 'Copied information';
 I18N.HomePage.Label.ShareTo = 'Copied to';
 I18N.HomePage.Label.ShareItemType = 'Copying type';
 I18N.HomePage.Label.Sharer = 'Copied by';
-I18N.HomePage.Label.FailToJump = 'Unable to jump to {0} "{1}", which may be deleted!';
+I18N.HomePage.Label.FailToJump = '"Unable to jump to {0} ""{1}"", which may be deleted!"';
 //I18N.HomePage.ShareWindow = { WindowTitle: '分享信息', MyReceived: '我收到的', MySent: '我发出的' };
 I18N.HomePage.ShareWindow = {};
 I18N.HomePage.ShareWindow.WindowTitle = 'Copied information';
@@ -147,12 +147,12 @@ I18N.HomePage.Label.DashboardMessage.HierarchyNodeNoDashboard = 'There is no ##C
 I18N.HomePage.Label.DashboardMessage.DashboardWithoutWidget = 'This ##Common.Glossary.Dashboard## has no ##Common.Glossary.Widget##'
 I18N.HomePage.Label.DashboardMessage.NoRecentDashboard = {};
 I18N.HomePage.Label.DashboardMessage.NoRecentDashboard.Title = 'No browsing history';
-I18N.HomePage.Label.DashboardMessage.NoRecentDashboard.P1 = '"Recently browsed" can save the last 50 ##Common.Glossary.Dashboard## you browsed for your quick review.';
-I18N.HomePage.Label.DashboardMessage.NoRecentDashboard.P2 = 'Click the {0} on the top left and select building in the building hierarchy to view the corresponding ##Common.Glossary.Dashboard##. After the ##Common.Glossary.Dashboard## is viewed, the corresponding ##Common.Glossary.Dashboard## will appear in this page.';
+I18N.HomePage.Label.DashboardMessage.NoRecentDashboard.P1 = 'Recently browsed can save the last 50 ##Common.Glossary.Dashboard## you browsed for your quick review.';
+I18N.HomePage.Label.DashboardMessage.NoRecentDashboard.P2 = '"Click the {0} on the top left and select building in the building hierarchy to view the corresponding ##Common.Glossary.Dashboard##. After the ##Common.Glossary.Dashboard## is viewed, the corresponding ##Common.Glossary.Dashboard## will appear in this page."';
 I18N.HomePage.Label.DashboardMessage.NoRecentDashboard.LinkText = '##HomePage.Label.AllDashboard##';
 I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard = {};
 I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard.Title = 'No ##Common.Glossary.Dashboard## is in Favorites';
-I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard.P1 = '"My favorites" can save the frequently-used ##Common.Glossary.Dashboard## for your quick review.';
+I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard.P1 = 'My favorites can save the frequently-used ##Common.Glossary.Dashboard## for your quick review.';
 I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard.P2 = 'Click the {0} on the top left and select building in building hierarchy to view the corresponding##Common.Glossary.Dashboard##. Click Favorites button on the ##Common.Glossary.Dashboard## to add the ##Common.Glossary.Dashboard## to my favorites.';
 I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard.LinkText = '##HomePage.Label.AllDashboard##';
 
@@ -177,17 +177,17 @@ I18N.HomePage.Label.DashboardMessage.NoFavoriteDashboard.LinkText = '##HomePage.
 //};
 
 I18N.HomePage.Message = {}
-I18N.HomePage.Message.FailToDelete = 'Deletion of {0} "{1}" failed.';
-I18N.HomePage.Message.FailToRename = 'Renaming of {0} "{1}" failed. {0} "{1}" cannot be renamed as "{2}", {3}.';
-I18N.HomePage.Message.FailToReannotation = 'Modification of {0} "{1}" remarks failed. The remarks cannot be modified to "{2}", {3}.';
-I18N.HomePage.Message.FailToFav = 'Adding "{0}" to Favorites failed. {1}';
-I18N.HomePage.Message.FailToUnFav = 'Deleting "{0}" from Favorites failed. {1}';
-I18N.HomePage.Message.ShareSuccess = '{0} "{1}" copying succeeded.';
-I18N.HomePage.Message.ShareFail = '{0} "{1}" copying failed. {2}';
+I18N.HomePage.Message.FailToDelete = '"Deletion of {0} ""{1}"" failed."';
+I18N.HomePage.Message.FailToRename = '"Renaming of {0} ""{1}"" failed. {0} ""{1}"" cannot be renamed as ""{2}"", {3}."';
+I18N.HomePage.Message.FailToReannotation = '"Modification of {0} ""{1}"" remarks failed. The remarks cannot be modified to ""{2}"", {3}."';
+I18N.HomePage.Message.FailToFav = '"Adding ""{0}"" to Favorites failed. {1}"';
+I18N.HomePage.Message.FailToUnFav = '"Deleting ""{0}"" from Favorites failed. {1}"';
+I18N.HomePage.Message.ShareSuccess = '"{0} ""{1}"" copying succeeded."';
+I18N.HomePage.Message.ShareFail = '"{0} ""{1}"" copying failed. {2}"';
 
-I18N.HomePage.Message.SharedSuccess = '{0} "{1}" sharing succeeded.';
-I18N.HomePage.Message.SharedFail = '{0} "{1}" sharing failed. {2}';
-I18N.HomePage.Message.SharedSuccessExcept = '{0} "{1}" sharing failed. Cannot be shared to: {2}';
+I18N.HomePage.Message.SharedSuccess = '"{0} ""{1}"" sharing succeeded."';
+I18N.HomePage.Message.SharedFail = '"{0} ""{1}"" sharing failed. {2}"';
+I18N.HomePage.Message.SharedSuccessExcept = '"{0} ""{1}"" sharing failed. Cannot be shared to: {2}"';
 
 I18N.HomePage.Label.Create = 'Quick creation';
 I18N.HomePage.Label.Title = 'Quickly create widget';
@@ -206,14 +206,14 @@ I18N.HomePage.Label.FunctionType = 'Function';
 I18N.HomePage.Label.FunctionTypeEnergyConsumption = 'Energy efficiency analysis';
 I18N.HomePage.Label.FunctionTypeUnit = 'normalization';
 I18N.HomePage.Label.FunctionTypeRatio = 'Energy efficiency ratio for different periods';
-I18N.HomePage.Label.FunctionTypeLabeling = 'Energy Labeling';
-I18N.HomePage.Label.FunctionTypeRanking = 'Group ranking';
+I18N.HomePage.Label.FunctionTypeLabeling = 'Labeling';
+I18N.HomePage.Label.FunctionTypeRanking = 'Ranking';
 I18N.HomePage.Label.FunctionTypeCost = 'Cost';
-I18N.HomePage.Label.FunctionTypeCarbon = 'Carbon emission';
+I18N.HomePage.Label.FunctionTypeCarbon = 'Carbon';
 
 I18N.HomePage.Label.EnergyObject = 'Energy consumer';
-I18N.HomePage.Label.EnergyObjectEnergyConsumption = 'Energy consumption';
-I18N.HomePage.Label.EnergyObjectCarbon = 'Carbon emission';
+I18N.HomePage.Label.EnergyObjectEnergyConsumption = 'Energy';
+I18N.HomePage.Label.EnergyObjectCarbon = 'Carbon';
 I18N.HomePage.Label.EnergyObjectCost = 'Bill of cost';
 
 I18N.HomePage.Label.ChartType = 'Type of icon';
@@ -235,18 +235,18 @@ I18N.Login.NotConfigCustomers = 'Client or data authority is not configured. Ple
 I18N.Setting.Label.PlatformSetting = 'Platform configuration';
 I18N.Setting.Label.EnergyManagementPlatform = 'Schneider Electric EnergyMost Management Platform';
 I18N.Setting.Label.EnergyManagementPlatformShort = 'EnergyMost Management Platform';
-I18N.Setting.Label.SPSetting = 'System configuration';
+I18N.Setting.Label.SPSetting = 'Platform';
 I18N.Setting.Label.DataManagement = 'Data management';
-I18N.Setting.Label.TagManagement = 'Data point configuration';
+I18N.Setting.Label.TagManagement = 'Tags';
 I18N.Setting.Label.HierarchyDimensionSetting = 'Hierarchical structure configuration';
-I18N.Setting.Label.TagAssociation = 'Data point association';
+I18N.Setting.Label.TagAssociation = 'Association';
 I18N.Setting.Label.TagMultipleImport = 'Bulk import';
 I18N.Setting.Label.Reselect = 'Re-select';
-I18N.Setting.Label.TagBatchImportLog = 'Bulk import logs';
+I18N.Setting.Label.TagBatchImportLog = 'Import';
 I18N.Setting.Label.ImportingTag = 'Data point is being imported from configuration file {0}.';
 I18N.Setting.Label.IncorrectFileType = 'Bulk import failed. The selected file does not conform to system rules. Please reselect and try again.';
 
-I18N.Setting.Label.TimeSetting = 'Time configuration';
+I18N.Setting.Label.TimeSetting = 'Time';
 I18N.Setting.Label.WorkdaySetting = 'Working day';
 I18N.Setting.Label.WorktimeSetting = 'Working time';
 I18N.Setting.Label.ColdwarmSetting = 'Cooling and heating seasons';
@@ -254,7 +254,7 @@ I18N.Setting.Label.DaynightSetting = 'Day night';
 I18N.Setting.Label.PlatformUOMSetting = 'Unit configuration';
 I18N.Setting.Label.PlatformCommoditySetting = 'commodity configuration';
 I18N.Setting.Label.CarbonSetting = 'Carbon emission configuration';
-I18N.Setting.Label.PriceSetting = 'Price configuration';
+I18N.Setting.Label.PriceSetting = 'Price';
 I18N.Setting.Label.Price = 'Price';
 I18N.Setting.Label.TOUSetting = 'Peak/valley electricity price';
 I18N.Setting.Label.PowerFactorSetting = 'Power factor reference value';
@@ -265,23 +265,24 @@ I18N.Setting.Label.MissingDataManagement = 'Missing data';
 I18N.Setting.Label.PTagManagement = 'Physical tag';
 I18N.Setting.Label.VTagManagement = 'virtual tag';
 I18N.Setting.Label.KPIManagement = '##Common.Glossary.KPI##';
-I18N.Setting.Label.HierarchySetting = 'Hierarchy configuration';
+I18N.Setting.Label.HierarchySetting = 'Building';
 I18N.Setting.Label.SystemDimensionSetting = '##Common.Glossary.SystemDimension## configuration';
 I18N.Setting.Label.AreaDimensionSetting = '##Common.Glossary.AreaDimension## configuration';
 I18N.Setting.Label.HierarchyTagsSetting = 'Hierarchy data';
 I18N.Setting.Label.SystemDimensionTagsSetting = '##Common.Glossary.SystemDimension## data';
 I18N.Setting.Label.AreaDimensionTagsSetting = '##Common.Glossary.AreaDimension## data';
-I18N.Setting.Hierarchy.Message.DeleteTip = '<br/>You will delete all the child nodes under hierarchy node, dimensional structures, data point association, and indirectly associated information simulatneously.';
-I18N.Setting.Label.MapSetting = 'Map information';
+I18N.Setting.Hierarchy.Message.DeleteTip = '"<br/>You will delete all the child nodes under hierarchy node, dimensional structures, data point association, and indirectly associated information simultaneously."';
+I18N.Setting.Label.MapSetting = 'Map';
 I18N.Setting.Hierarchy.LocatePosition = 'Label position';
 I18N.Setting.Hierarchy.RelocatePosition = 'Re-label';
 I18N.Setting.Hierarchy.MapSettingExplaination = '"Dragging to move map display area is not permitted under labeling state. Please confirm the position to be labeled and then press the ""Label Position"" button. "';
-I18N.Setting.Hierarchy.NoMarkerSetMessage = 'Please lable map position before saving.';
+I18N.Setting.Hierarchy.NoMarkerSetMessage = 'Please label map position before saving.';
+I18N.Setting.Hierarchy.ChildArea = 'Subdomain';
 
-I18N.Setting.Label.BasicProperties = 'Basic properties';
+I18N.Setting.Label.BasicProperties = 'Properties';
 I18N.Setting.Label.HierarchyNodeBasicProperties = '##Setting.Label.BasicProperties##';
-I18N.Setting.Label.HierarchyNodeCalendarProperties = 'Calendar property';
-I18N.Setting.Label.HierarchyNodeCostProperties = 'Cost property';
+I18N.Setting.Label.HierarchyNodeCalendarProperties = 'Calendar';
+I18N.Setting.Label.HierarchyNodeCostProperties = 'Cost';
 I18N.Setting.Label.HierarchyNodePopulationNAreaProperties = 'population & area';
 I18N.Setting.Label.PTagBasicProperties = '##Setting.Label.BasicProperties##';
 I18N.Setting.Label.VTagBasicProperties = '##Setting.Label.BasicProperties##';
@@ -291,9 +292,9 @@ I18N.Setting.Label.PulsePeakProperties = '##Common.Glossary.PulsePeak##';
 I18N.Setting.Label.ElectrovalenceUom = 'RMB/kwh';
 
 // data permission 
-I18N.Setting.Label.CustomerDataPermission = 'Client data authority';
+I18N.Setting.Label.CustomerDataPermission = 'Data authority';
 I18N.Setting.Label.PlatformDataPermission = 'All system clients and corresponding data authorities';
-I18N.Setting.Label.PlatformDataPermissionTip = 'It is recommended to check this option for a user having EnergyMost System Amdinistrator authority.';
+I18N.Setting.Label.PlatformDataPermissionTip = 'It is recommended to check this option for a user having EnergyMost System Administrator authority.';
 I18N.Setting.Label.AllCusomer = 'All the clients';
 I18N.Setting.Label.ViewDataPermission = 'View data authority';
 I18N.Setting.Label.EditDataPermission = 'Edit data authority';
@@ -319,26 +320,26 @@ I18N.Setting.Hierarchy.Menu.CreateMeter = '##Common.Operation.Create####Common.G
 I18N.Setting.Hierarchy.Menu.CreateTag = '##Common.Operation.Create####Common.Glossary.Tag##';
 I18N.Setting.Hierarchy.Label.CreateSubHierarchyBtn = 'Sub-hierarchy';
 I18N.Setting.Hierarchy.Label.Industry = 'Industry involved';
-I18N.Setting.Hierarchy.Label.Zone = 'Zone of climate involved';
+I18N.Setting.Hierarchy.Label.Zone = 'Zone of climate';
 I18N.Setting.Hierarchy.Label.IndustryZone = 'Industry segment';
 I18N.Setting.Hierarchy.Label.Picture = 'Building cover image';
-I18N.Setting.Hierarchy.Label.PictureInfo = 'Please upload a image file between 1024px*768px and 2048*1536 and less than 1M. Only jpg and png formats are supported. <br> For better display effect, it is advisable to upload a image with the width-to-height ratio of 4:3 and the pixel over 1600px*1200px.';
+I18N.Setting.Hierarchy.Label.PictureInfo = '"Please upload an image file between 1024px*768px and 2048*1536 and less than 1M. Only jpg and png formats are supported. <br> For better display effect, it is advisable to upload an image with the width-to-height ratio of 4:3 and the pixel over 1600px*1200px."';
 I18N.Setting.Hierarchy.Label.PictureModify = 'Change image';
 
 I18N.Setting.TargetBaseline.EmptyYearComboLabel = 'Year';
-I18N.Setting.TargetBaseline.DefaultTarget.Name = 'Target value';
+I18N.Setting.TargetBaseline.DefaultTarget.Name = 'Target';
 I18N.Setting.TargetBaseline.DefaultBaseline.Name = 'Benchmark';
-I18N.Setting.TargetBaseline.TargetDaily = 'Daily target value';
+I18N.Setting.TargetBaseline.TargetDaily = 'Daily target';
 I18N.Setting.TargetBaseline.MonthlyTB = 'Month {0}';
 I18N.Setting.TargetBaseline.YearlyTB = 'Year {0}';
 I18N.Setting.TargetBaseline.SpecialValue = 'Supplementary date';
-I18N.Setting.TargetBaseline.TargetValue = 'Target value';
+I18N.Setting.TargetBaseline.TargetValue = 'Target';
 I18N.Setting.TargetBaseline.FromDate = 'Time scope';
 I18N.Setting.TargetBaseline.ToDate = 'To';
 I18N.Setting.TargetBaseline.YearField = 'Year';
 I18N.Setting.TargetBaseline.UOMField = '{0}##Common.Glossary.UOM##';
-I18N.Setting.TargetBaseline.CalculationRule = 'Computation rule';
-I18N.Setting.TargetBaseline.EditCalculationBtnText = 'Correct calculated value';
+I18N.Setting.TargetBaseline.CalculationRule = 'Rule';
+I18N.Setting.TargetBaseline.EditCalculationBtnText = 'Correct';
 I18N.Setting.TargetBaseline.CalculatorBtnText = 'Calculate {0}';
 I18N.Setting.TargetBaseline.TargetWindowTitle = '{0} Year {1} (##Common.Glossary.UOM##: {2})';
 
@@ -355,7 +356,7 @@ I18N.Setting.TagBatchImport.TagType = 'Type of data point';
 I18N.Setting.TagBatchImport.Importer = 'Importer';
 I18N.Setting.TagBatchImport.File = 'Import a file';
 I18N.Setting.TagBatchImport.ConfigLog = 'Configure bulk import logs';
-I18N.Setting.TagBatchImport.ImportResult = '{0} pieces imported successfully ({1} pieces newly added, {2} pieces modified) and {3} pieces failed - {4} pieces in total.';
+I18N.Setting.TagBatchImport.ImportResult = '"{0} pieces imported successfully ({1} pieces newly added, {2} pieces modified) and {3} pieces failed - {4} pieces in total."';
 I18N.Setting.TagBatchImport.DownloadLog = 'Download log file';
 I18N.Setting.TagBatchImport.DownloadLogFile = 'Download import log';
 I18N.Setting.TagBatchImport.ToViewLog = 'detail records';
@@ -365,53 +366,61 @@ I18N.Setting.TagBatchImport.ErrorMessage2 = 'File format error';
 I18N.Setting.TagBatchImport.ErrorMessage3 = 'Illegal sheet name';
 I18N.Setting.TagBatchImport.ErrorMessage4 = 'User has been deleted.';
 I18N.Setting.TagBatchImport.ErrorMessage5 = 'Client has been deleted.';
-I18N.Setting.TagBatchImport.ErrorMessage6 = 'Excel column error (insufficient number of columns or column name error)';
-I18N.Setting.TagBatchImport.ErrorMessage7 = 'The number of rows in Excel exceeds 1000';
+I18N.Setting.TagBatchImport.ErrorMessage6 = 'Excel column error (wrong column number or column name)';
+I18N.Setting.TagBatchImport.ErrorMessage7 = 'Illegal Excel row number (no data or exceeding 1000)';
 I18N.Setting.TagBatchImport.ErrorMessage8 = 'You do not have this Function authority.'
-I18N.Setting.TagBatchImport.ErrorMessage9 = 'Association with the current client has been disabled. Please log out and log in again.'
+I18N.Setting.TagBatchImport.ErrorMessage9 = 'You do not have this Data authority.'
 
 
 
 I18N.Setting.TagAssociation.UnassociateTip = 'Association with the following nodes is disabled.  ';
 I18N.Setting.TagAssociation.Associatiable = 'Can be associated';
 I18N.Setting.TagAssociation.Unassociatiable = 'Cannot be associated';
-I18N.Setting.TagAssociation.AssociatedStatus = 'Association state';
-I18N.Setting.TagAssociation.AssociatedTags = 'Associated data point';
+I18N.Setting.TagAssociation.AssociatedStatus = 'Status';
+I18N.Setting.TagAssociation.AssociatedTags = 'Associated tags';
 I18N.Setting.TagAssociation.SelectedTags = 'Selected data point';
 I18N.Setting.TagAssociation.ConfirmUnassociate = 'Disable association?';
 I18N.Setting.Cost = {};
 I18N.Setting.Cost.Label = {};
-I18N.Setting.Cost.Label.PowerFactorFee = 'Adjusted fee based on power factor';
+I18N.Setting.Cost.Label.PowerFactorFee = 'Power factor fee';
 I18N.Setting.Cost.Label.TouStrategy = 'TOU';
 I18N.Setting.Cost.Label.UsageCost = 'Consumption cost';
 I18N.Setting.Cost.Label.ReactivePower = 'Reactive energy';
 I18N.Setting.Cost.Label.RealPower = 'Active energy';
 I18N.Setting.Cost.Label.ElectricityRealUOM = 'RMB/kwh';
 I18N.Setting.Cost.Label.ElectricityReactiveUOM = 'RMB/kVA';
-I18N.Setting.Cost.Label.DemandPrice = 'Demand price';
+I18N.Setting.Cost.Label.DemandPrice = 'Price';
 I18N.Setting.Cost.Label.DemandHourLabel = 'Energy consumption data';
-I18N.Setting.Cost.Label.CostRange = 'The value must be between 0 and 1,000,000,000';
+I18N.Setting.Cost.Label.CostRange = '"The value must be between 0 and 1,000,000,000"';
 I18N.Setting.Cost.Label.PriceType = 'Price type';
-I18N.Setting.Cost.Label.FixedPrice = 'Fixed rate electrity price';
+I18N.Setting.Cost.Label.FixedPrice = 'Fixed rate electricity price';
 I18N.Setting.Cost.Label.ComplexPrice = 'Integrated electricity price';
 I18N.Setting.Cost.Label.DemandCostMode = 'Demand cost mode';
 I18N.Setting.Cost.Label.DemandCost = 'Demand cost';
 I18N.Setting.Cost.Label.TransformerMode = 'Transformer capacity mode';
 I18N.Setting.Cost.Label.TimeMode = 'Demand mode';
-I18N.Setting.Cost.Label.TransformerCapacity = 'Transformer capacity';
+I18N.Setting.Cost.Label.TransformerCapacity = 'Capacity';
 I18N.Setting.Cost.Label.SearchPowerFactor = 'View selected power factor';
-I18N.Setting.Cost.Label.PaddingCost = 'Monthly supplementary cost';
+I18N.Setting.Cost.Label.PaddingCost = 'Supplement';
 I18N.Setting.Cost.Label.TouDetail = 'Details of price strategy';
 I18N.Setting.Cost.Label.SearchTouDetail = 'View details of price strategy';
+
+I18N.Setting.Cost.Label.PowerFactor = {};
+I18N.Setting.Cost.Label.PowerFactor.Increase = 'Increase income';
+I18N.Setting.Cost.Label.PowerFactor.Decrease = 'Decrease income';
+I18N.Setting.Cost.Label.PowerFactor.PowerFactor = 'Power factor';
+I18N.Setting.Cost.Label.PowerFactor.MonthDecrease = 'Monthly decrease income proportion';
+I18N.Setting.Cost.Label.PowerFactor.MonthIncrease = 'Monthly increase income proportion';
+I18N.Setting.Cost.Label.PowerFactor.Declare = '<={0}，increase by 2.0 per decrease by 0.01';
 
 I18N.Setting.Benchmark = {};
 I18N.Setting.Benchmark.Label = {};
 I18N.Setting.Benchmark.Label.None = 'None';
 I18N.Setting.Benchmark.Label.SelectLabelling = 'Please select energy labeling';
-I18N.Setting.Benchmark.Label.EnergyBenchmark = 'Labeling configuration';
-I18N.Setting.Benchmark.Label.IndustryEnegyBenchmark = 'Industry labeling configuration';
+I18N.Setting.Benchmark.Label.EnergyBenchmark = 'Benchmarking';
+I18N.Setting.Benchmark.Label.IndustryEnegyBenchmark = 'Industry labeling';
 I18N.Setting.Benchmark.Label.ClimateZone = 'Climate zone';
-I18N.Setting.Benchmark.Label.IndustryBenchmark = 'Industry labeling';
+I18N.Setting.Benchmark.Label.IndustryBenchmark = 'Industry benchmarking';
 I18N.Setting.Benchmark.Label.SelectTip = 'Please select industries and regions for which energy labeling needs to be calculated by the platform.';
 I18N.Setting.Benchmark.Label.AtleastOneZone = 'Please select at least one option.';
 I18N.Setting.Benchmark.Label.Industry = 'Industry';
@@ -442,7 +451,7 @@ I18N.Setting.Benchmark.Industry.Supermarket = 'Supermarket';
 I18N.Setting.Benchmark.Industry.ClothingRetails = 'Clothing retailing';
 I18N.Setting.Benchmark.Industry.Mall = 'Shopping mall';
 I18N.Setting.Benchmark.Industry.Communication = 'Communication';
-I18N.Setting.Benchmark.Industry.CommunicationRoom = 'Coumputer room';
+I18N.Setting.Benchmark.Industry.CommunicationRoom = 'Computer room';
 I18N.Setting.Benchmark.Industry.BaseStation = 'Communication base station';
 I18N.Setting.Benchmark.Industry.TelecommunicationsBusinessHall = 'Communication business hall';
 I18N.Setting.Benchmark.Industry.RailTransport = 'Rail transit';
@@ -454,15 +463,16 @@ I18N.Setting.Labeling.Label = {};
 
 I18N.Setting.Labeling.Label.Industry = 'Industries';
 I18N.Setting.Labeling.Label.ClimateZone = 'Climate zone';
-I18N.Setting.Labeling.Label.CustomizedLabeling = 'User-defined energy labeling';
-I18N.Setting.Labeling.Label.Labeling = 'Energy labeling';
+I18N.Setting.Labeling.Label.CustomizedLabeling = 'Customized label';
+I18N.Setting.Labeling.Label.Labeling = 'Labeling';
 I18N.Setting.Labeling.Label.LabelingSetting = 'Energy labeling configuration';
 I18N.Setting.Labeling.Label.IndustryLabeling = 'Industry energy labeling';
-I18N.Setting.Labeling.Label.IndustryLabelingSetting = 'Industry labeling configuration';
+I18N.Setting.Labeling.Label.IndustryLabelingSetting = 'Industry labeling';
 I18N.Setting.Labeling.Label.LabelingGrade = 'Labeling level';
 I18N.Setting.Labeling.Label.DataYear = 'Data source';
 
 I18N.Setting.CustomizedLabeling = {};
+I18N.Setting.CustomizedLabeling.Grade = 'Level';
 I18N.Setting.CustomizedLabeling.OrderMode = 'sequence';
 I18N.Setting.CustomizedLabeling.Ascending = 'Positive sequence';
 I18N.Setting.CustomizedLabeling.Declining = 'Inverted sequence';
@@ -470,7 +480,7 @@ I18N.Setting.CustomizedLabeling.Configurationer = 'Configured by';
 I18N.Setting.CustomizedLabeling.ConfigurationDate = 'Configured on';
 I18N.Setting.CustomizedLabeling.KPIType = 'Type of indicator';
 I18N.Setting.CustomizedLabeling.ErrorMessage1 = '*Please ensure the value to be entered in the right interval is greater than that in the left one.';
-I18N.Setting.CustomizedLabeling.ErrorMessage2 = '*Please ensure the value to be entered in the lfet interval is greater than that in the right one.';
+I18N.Setting.CustomizedLabeling.ErrorMessage2 = '*Please ensure the value to be entered in the left interval is greater than that in the right one.';
 I18N.Setting.CustomizedLabeling.DeleteTip = '<br/>Display of the Dashboard relevant to this label is abnormal after deletion.';
 
 I18N.Setting.DataFilter = {};
@@ -481,19 +491,19 @@ I18N.Setting.DataFilter.On = 'Current day';
 I18N.EM.ChooseFunctionMessage = 'Please select a function from the functional panel to display a chart.';
 I18N.EM.CenterBar.Button.DefaultDashboard = 'Default';
 I18N.EM.CenterBar.Button.OtherDashboard = 'Others';
-I18N.EM.CenterBar.Button.EnergyUse = 'Energy consumption';
-I18N.EM.CenterBar.Button.CarbonEmission = 'Carbon emission';
-I18N.EM.CenterBar.Button.EnergyAnalyse = 'Energy efficiency analysis';
+I18N.EM.CenterBar.Button.EnergyUse = 'Energy';
+I18N.EM.CenterBar.Button.CarbonEmission = 'Carbon';
+I18N.EM.CenterBar.Button.EnergyAnalyse = 'Energy';
 I18N.EM.CenterBar.Button.EnergySave = 'Energy saving';
 I18N.EM.CenterBar.Button.EnergyView = 'Energy display';
 I18N.EM.CenterBar.Button.Cost = 'Cost';
-I18N.EM.CenterBar.Button.Ratio = 'Energy efficiency ratio for different periods';
-I18N.EM.CenterBar.Button.EnergyLabeling = 'Energy labeling';
-I18N.EM.CenterBar.Button.Rank = 'Group ranking';
-I18N.EM.CenterBar.Button.UnitEnergy = 'Normalization';
+I18N.EM.CenterBar.Button.Ratio = 'Time Ratio';
+I18N.EM.CenterBar.Button.EnergyLabeling = 'Labeling';
+I18N.EM.CenterBar.Button.Rank = 'Ranking';
+I18N.EM.CenterBar.Button.UnitEnergy = 'Normalization indicator';
 I18N.EM.CenterBar.Button.KPI = '##Common.Glossary.KPI##';
 
-I18N.EM.Hierarchy.Label.PanelTitle = 'Hierarchy structure';
+I18N.EM.Hierarchy.Label.PanelTitle = 'Hierarchy';
 I18N.EM.Switcher.Label.Dashboard = '##Common.Glossary.Dashboard##';
 I18N.EM.Switcher.Label.FunctionPanel = 'Functional panel';
 
@@ -505,7 +515,7 @@ I18N.EM.SystemDimension.TreeButton = 'Please select system dimension';
 I18N.EM.AreaDimension.TreeButton = 'Please select region dimension';
 I18N.EM.CannotShowCalendarByTimeRange = 'No calendar background is seen? Change to another time and try.';
 I18N.EM.CannotShowCalendarByStep = 'The current interval does not support display of {0} background color.';
-I18N.EM.SystemDimension.UncheckNodeQuestion = 'Delete system dimension node "{0}"? <br/> You will delete all the data point association relations under system dimension node.';
+I18N.EM.SystemDimension.UncheckNodeQuestion = '"Delete system dimension node ""{0}""? <br/> You will delete all the data point association relations under system dimension node."';
 I18N.EM.CompareTagsAreFull = 'All data points for comparison have been selected.';
 I18N.EM.MultiTimeCompare = 'Multi-periods are being compared. Please delete this data point and re-select.';
 I18N.EM.TouCompare = 'Peak/valley display';
@@ -522,19 +532,20 @@ I18N.EM.OrigTime = 'Original time';
 I18N.EM.EndTime = 'Ending time';
 I18N.EM.CompareTimespan = 'Time periods for comparison';
 I18N.EM.DuplicatedTimeRange = 'Repeated time zones exist';
-I18N.EM.AddCompareTime = '+Time period';
+I18N.EM.AddCompareTime = '+period';
 I18N.EM.DayNightRatio = 'Day to night ratio';
-I18N.EM.WorkHolidayRatio = 'Workday to holiday ratio';
+I18N.EM.WorkHolidayRatio = 'Day-off ratio';
 I18N.EM.AddCompareTimespan = 'Add a period';
 I18N.EM.OKAndDraw = 'Confirm and draw';
-I18N.EM.DeleteAllTimespan = 'Delete all the periods of comparison';
-I18N.EM.DeleteCompareTime = 'Empty all the "periods of comparison"?';
+I18N.EM.DeleteAllTimespan = 'Delete all periods';
+I18N.EM.DeleteCompareTime = '"Empty all the ""periods of comparison""?"';
 I18N.EM.MaxTimeRange = 'Maximum 5 periods for comparison';
-I18N.EM.RUClearAll = 'Empty all the selected "data points" and "periods of comparison"?';
-I18N.EM.AllTags = 'All the data points';
-I18N.EM.SystemTag = 'System data points';
-I18N.EM.AreaTag = 'Region data points';
+I18N.EM.RUClearAll = '"Empty all the selected ""data points"" and ""periods of comparison""?"';
+I18N.EM.AllTags = 'All tags';
+I18N.EM.SystemTag = 'System tags';
+I18N.EM.AreaTag = 'Region tags';
 I18N.EM.Week = 'Week';
+I18N.EM.Raw = 'Raw data';
 I18N.EM.Hour = 'Hour';
 I18N.EM.Day = 'Day';
 I18N.EM.Month = 'Month';
@@ -542,6 +553,10 @@ I18N.EM.Year = 'Year';
 I18N.EM.Clock24 = '0:00:00';
 I18N.EM.MultiHierButton = 'Data points';
 I18N.EM.TimeRangeIsWrong = 'Wrong time range';
+I18N.EM.OutTimeRange = 'Exceed time range';
+I18N.EM.TemporaryTextChart = 'Temporary text and graph';
+I18N.EM.EnergyOverview = 'Energy overview';
+I18N.EM.Electric = 'Electric power';
 
 I18N.EM.Unit = {};
 I18N.EM.Unit.UnitPopulationAlias = 'per person';
@@ -561,22 +576,23 @@ I18N.EM.Title = {};
 I18N.EM.Title.Energy = 'View energy efficiency analysis';
 I18N.EM.Title.Carbon = 'View carbon emission';
 I18N.EM.Title.Cost = 'View cost';
-I18N.EM.Title.KPI = 'View key performance  indicator';
+I18N.EM.Title.KPI = 'View key energy  indicator';
 I18N.EM.Title.EnergyMultiHier = 'Comparison of cross-hierarchy nodes';
 I18N.EM.Title.EnergyMultiTimespan = 'Comparison of multi-periods';
 I18N.EM.Title.Rank = '{0} Ranking';
 I18N.EM.Title.EnergyUse = 'Energy usage';
 I18N.EM.Title.MultiHier = 'Cross-hierarchy nodes comparison';
-I18N.EM.Title.CarbonUnit = 'Carbon emission';
+I18N.EM.Title.CarbonUnit = 'Carbon';
 I18N.EM.Title.CostUnit = 'Cost';
-I18N.EM.Title.EnergyConsumption = 'Energy consumption';
+I18N.EM.Title.EnergyConsumption = 'Energy';
 
 
-I18N.EM.QuitMultiHier = 'Quit multi-hierarchy data points viewing and empty selected "data points"?';
-I18N.EM.SingleHier = 'Single-hierarchy data points';
-I18N.EM.MultiHier = 'Multi-hierarchy data points';
-I18N.EM.KpiModeEM = 'Energy consumption';
-I18N.EM.KpiModeCarbon = 'Carbon emission';
+I18N.EM.QuitMultiHier = '"Quit multi-building tags viewing and empty selected ""data points""?"';
+I18N.EM.SingleHier = 'Single-building';
+I18N.EM.MultiHier = 'Multi-buildings';
+I18N.EM.AddMultiHier = 'Add multi-building tags';
+I18N.EM.KpiModeEM = 'Energy';
+I18N.EM.KpiModeCarbon = 'Carbon';
 I18N.EM.KpiModeCost = 'Cost';
 I18N.EM.Rank = {};
 I18N.EM.Rank.TotalRank = 'Overall ranking';
@@ -591,8 +607,13 @@ I18N.EM.Rank.RankTooltip = 'Ranking: {0}/{1}';
 I18N.EM.Ratio = {};
 I18N.EM.Ratio.CaculateValue = 'Calculated value';
 I18N.EM.Ratio.RawValue = 'Original value';
-I18N.EM.Ratio.TargetValue = 'Target value';
+I18N.EM.Ratio.TargetValue = 'Target';
 I18N.EM.Ratio.BaseValue = 'Benchmark';
+
+I18N.EM.Legend = {};
+I18N.EM.Legend.ToLine = 'Switch to linear display';
+I18N.EM.Legend.ToColumn = 'Switch to cylinder display';
+I18N.EM.Legend.ToStacking = 'Switch to column display';
 
 I18N.EM.Labeling = {};
 I18N.EM.Labeling.LowEnergy = 'Low energy consumption';
@@ -601,6 +622,7 @@ I18N.EM.Labeling.ViewLabeling = 'View energy labeling';
 I18N.EM.Labeling.NonBuilding = 'This node is a non-building node. Please re-select a node.';
 I18N.EM.Labeling.NonData = 'This period has no energy labeling data.';
 I18N.EM.Labeling.DifferentCommodity = 'Selected data points are not identical commodity. Please re-select.';
+I18N.EM.Labeling.SelectHieForSys = 'Select a building node to configure the regional dimension';
 
 I18N.Dashboard.ShareWindowTitle = 'Sharing {0}';
 I18N.Dashboard.SendCopyWindowTitle = 'Sent with copies {0}';
@@ -625,8 +647,8 @@ I18N.Common.TagType.Device = 'Equipment';
 
 I18N.Common.CaculationType.Sum = 'Sum';
 I18N.Common.CaculationType.Avg = 'Average value';
-I18N.Common.CaculationType.Max = 'Maximum';
-I18N.Common.CaculationType.Min = 'Minimum';
+I18N.Common.CaculationType.Max = 'Max.';
+I18N.Common.CaculationType.Min = 'Min.';
 
 I18N.Common.AggregationStep.None = 'None';
 I18N.Common.AggregationStep.Raw = 'Metadata';
@@ -637,8 +659,8 @@ I18N.Common.AggregationStep.Yearly = 'Per year';
 
 I18N.Common.EnergyDataQuality.Good = 'OK';
 I18N.Common.EnergyDataQuality.Missing = 'Missing';
-I18N.Common.EnergyDataQuality.NegativeInfinity = 'Negative infinity';
-I18N.Common.EnergyDataQuality.PositiveInfinity = 'Positive infinity';
+I18N.Common.EnergyDataQuality.NegativeInfinity = '-∞';
+I18N.Common.EnergyDataQuality.PositiveInfinity = '+∞';
 I18N.Common.EnergyDataQuality.NaN = 'Illegal';
 I18N.Common.EnergyDataQuality.DivisionByZero = 'Divided by 0';
 
@@ -674,7 +696,7 @@ I18N.Common.CarbonUomType.CO2 = 'Carbon dioxide';
 
 I18N.Common.UOM.KWH = 'KWh';
 I18N.Common.UOM.KW = 'KW';
-I18N.Common.UOM.KVARH = 'kilovar-hour';
+I18N.Common.UOM.KVARH = 'kVh';
 I18N.Common.UOM.KVAH = 'KVAh';
 I18N.Common.UOM.m3 = 'm3';
 I18N.Common.UOM.m3PerHour = 'm3\/ hour';
@@ -688,13 +710,13 @@ I18N.Common.UOM.m2 = 'm2';
 I18N.Common.UOM.h = 'Hour';
 I18N.Common.UOM.m = 'Min';
 I18N.Common.UOM.oC = '℃';
-I18N.Common.UOM.CO2 = 'Carbon emission';
+I18N.Common.UOM.CO2 = 'Carbon';
+I18N.Common.UOM.MM = 'Cent';
 
 I18N.Common.Per = {};
 I18N.Common.Per.Person = '/person';
 I18N.Common.Per.m2 = '/m2';
 
-I18N.Common.Button.Send = 'Send';
 I18N.Common.Button.Share = 'Share';
 I18N.Common.Button.PieChart = 'Pie chart';
 I18N.Common.Button.LineChart = 'Line chart';
@@ -709,7 +731,7 @@ I18N.Common.Button.ShowCalendar = 'Display calendar';
 I18N.Common.Button.DeleteAll = 'Delete all';
 I18N.Common.Button.Calendar = {};
 I18N.Common.Button.Calendar.ShowHC = 'cooling and heating seasons';
-I18N.Common.Button.Calendar.ShowHoliday = 'Nonworking time';
+I18N.Common.Button.Calendar.ShowHoliday = 'Working time';
 I18N.Common.Button.Calendar.ShowNone = 'None';
 
 I18N.Common.Button.Comparation = 'Compare';
@@ -720,6 +742,8 @@ I18N.Common.Button.Cancel2 = 'Cancel';
 I18N.Common.Button.Delete = 'Delete';
 I18N.Common.Button.Exit = 'Exit';
 I18N.Common.Button.Clear = 'Empty';
+I18N.Common.Button.Send = 'Send';
+I18N.Common.Button.Confirmed = 'OK';
 
 I18N.Common.Operation.ResetZoom = 'Cancel Zoom in/Zoom out';
 I18N.Common.Operation.ResetZoom1vs1 = 'Zoom to 1:1';
@@ -731,45 +755,46 @@ I18N.Common.Operation.AddToFavorite = 'Add to Favorites';
 I18N.Common.Operation.RemoveFromFavorite = 'Cancel adding to Favorites';
 I18N.Common.Operation.Rename = 'Rename';
 I18N.Common.Operation.Refresh = 'Refresh';
-I18N.Common.Operation.AssociateTag = 'Associated data point';
+I18N.Common.Operation.AssociateTag = 'Associate';
 I18N.Common.Operation.Associate = 'Associate';
 I18N.Common.Operation.UnassociateTag = 'Disable association';
 I18N.Common.Operation.GoBack = 'Back';
 I18N.Common.Operation.GoBackToHierarchy = 'View in the building hierarchy';
 
 I18N.Common.Label.EmptyHierarchyText = 'Please select hierarchy structure';
-I18N.Common.Label.Loading = 'Loading, please wait...';
+I18N.Common.Label.Loading = '"Loading, please wait..."';
+I18N.Common.Label.Logouting = '"The system is logging out, please wait..."';
 I18N.Common.Label.UnknownError = 'Sorry! Unknown error!';
 I18N.Common.Label.DatePicker = 'Date picker';
 I18N.Common.Label.Welcome = 'Welcome';
 I18N.Common.Label.HomePage = 'Home';
-I18N.Common.Label.EnergyService = 'Energy management';
-I18N.Common.Label.CustomerSetting = 'Client configuration';
+I18N.Common.Label.EnergyService = 'Operation';
+I18N.Common.Label.CustomerSetting = 'Configuration';
 I18N.Common.Label.More = 'More';
 I18N.Common.Label.YourLocation = 'Your current position:';
 I18N.Common.Label.ErrorDate = 'Input time incorrect. Please check it.';
 I18N.Common.Label.EmptyData = 'No data available at the moment';
 I18N.Common.Label.Filters = 'Search';
 
-I18N.Common.Label.ConfirmCancelShare = 'Cancel {1} "{0}" sharing?';
-I18N.Common.Label.ConfirmDelete = 'Delete {1} "{0}"? {2}';
+I18N.Common.Label.ConfirmCancelShare = '"Cancel {1} ""{0}"" sharing?"';
+I18N.Common.Label.ConfirmDelete = '"Delete {1} "{0}"? {2}"';
 I18N.Common.Label.UpdateOK = 'Successful modification.';
 I18N.Common.Label.OKButton = 'OK';
 I18N.Common.Label.ConfirmLongTermOperation = 'This operation will last for a long time. Are you sure to continue?';
 I18N.Common.Label.UnExpectedData = 'Illegal data exist. Pie chart is unavailable.';
 
-I18N.Common.Label.NameRegexError = 'Chinese characters, English letters, numbers, underlines, and spacing are allowed.';
-I18N.Common.Label.CustomerNameRegexError = 'Chinese characters, English letters, numbers, spacing, and brackets are allowed.';
-I18N.Common.Label.PersonNameRegexError = 'Chinese characters, English letters, and spacing are allowed.';
-I18N.Common.Label.CodeRegexError = 'English letters, numbers, underlines, +, ., -, _, #, & and spacing are allowed.';
+I18N.Common.Label.NameRegexError = '"Chinese characters, English letters, numbers, underlines, and spacing are allowed."';
+I18N.Common.Label.CustomerNameRegexError = '"Chinese characters, English letters, numbers, spacing, and brackets are allowed."';
+I18N.Common.Label.PersonNameRegexError = '"Chinese characters, English letters, and spacing are allowed."';
+I18N.Common.Label.CodeRegexError = '"English letters, numbers, underlines, +, ., -, _, #, & and spacing are allowed."';
 
-I18N.Common.Label.UserIdRegexError = 'English letters, numbers, underlines, and period are allowed.';
-I18N.Common.Label.PasswordRegexError = 'Please at least include numbers and letters in 6-20 digits. Half-width English letters, numbers, underlines and  !, @, #, $, %, ^, &, *, (, ) are allowed.';
-I18N.Common.Label.CommentRegexError = 'Chinese characters, half-width English letters, numbers, underlines, and spacing are allowed.';
+I18N.Common.Label.UserIdRegexError = '"English letters, numbers, underlines, and period are allowed."';
+I18N.Common.Label.PasswordRegexError = '"Please at least include numbers and letters in 6-20 digits. Half-width English letters, numbers, underlines and  !, @, #, $, %, ^, &, *, (, ) are allowed."';
+I18N.Common.Label.CommentRegexError = '"Chinese characters, half-width English letters, numbers, underlines, and spacing are allowed."';
 I18N.Common.Label.FeedbackRegexError = 'Only visible characters can be used.';
-I18N.Common.Label.EmailRegexError = 'Please enter in the format of "user@example.com".';
+I18N.Common.Label.EmailRegexError = '"Please enter in the format of ""user@example.com""."';
 I18N.Common.Label.TelephoneRegexError = 'Numbers and dashes are allowed but dashes may not appear in succession or used at beginning or end.';
-I18N.Common.Label.AddressRegexError = 'Chinese characters, half-width English letters, numbers, underlines, dashes, and spacing are allowed.';
+I18N.Common.Label.AddressRegexError = '"Chinese characters, half-width English letters, numbers, underlines, dashes, and spacing are allowed."';
 I18N.Common.Label.PositiveRegexError = 'Only enter a positive value in this item.';
 
 I18N.Common.Label.TimeConflict = 'Time periods conflict.';
@@ -798,13 +823,15 @@ I18N.Common.GraphType.Column = 'Histogram';
 I18N.Common.GraphType.Pie = 'Pie chart';
 I18N.Common.GraphType.Grid = 'Data sheet';
 
+I18N.Common.Glossary.DemoUser = 'Demo account';
+
 I18N.Common.Glossary.PulsePeak = 'Peak season';
 I18N.Common.Glossary.PriceStrategy = 'Price strategy';
 I18N.Common.Glossary.Calendar = 'Calendar';
 I18N.Common.Glossary.CarbonFactor = 'Conversion factor';
 I18N.Common.Glossary.RMB = 'RMB';
-I18N.Common.Glossary.AreaDimension = 'Region dimension';
-I18N.Common.Glossary.SystemDimension = 'System dimension';
+I18N.Common.Glossary.AreaDimension = 'Region';
+I18N.Common.Glossary.SystemDimension = 'System';
 I18N.Common.Glossary.AreaDimensionNode = 'Region dimension node';
 I18N.Common.Glossary.AreaDimensionNodeDeleteTip = '"<br/>You will delete all the child nodes under the region dimension node, data point association relations, and indirectly associated information simulatneously."';
 
@@ -813,16 +840,26 @@ I18N.Common.Glossary.Month = 'Month';
 I18N.Common.Glossary.Day = 'Day';
 I18N.Common.Glossary.Week = 'Week';
 
+I18N.Common.Glossary.Order = {};
+I18N.Common.Glossary.Order.Ascending = 'Ascending';
+I18N.Common.Glossary.Order.Descending = 'Descending';
+I18N.Common.Glossary.Order.All = 'All';
+
+I18N.Common.Glossary.Suspend = 'Pause';
+I18N.Common.Glossary.Normal = 'Normal';
+
+I18N.Common.Glossary.NoSelected = 'Not selected yet';
+
 I18N.Common.Glossary.WidgetCopy = 'Widget copy';
 I18N.Common.Glossary.Widget = 'Widget';
 I18N.Common.Glossary.Dashboard = 'Dashboard';
 I18N.Common.Glossary.View = 'View';
-I18N.Common.Glossary.Hierarchy = 'Hierarchy';
+I18N.Common.Glossary.Hierarchy = 'Building';
 I18N.Common.Glossary.HierarchyNode = 'Hierarchy node';
-I18N.Common.Glossary.HierarchyTree = 'Hierarchy structure';
+I18N.Common.Glossary.HierarchyTree = 'Hierarchy';
 I18N.Common.Glossary.Dimension = 'Dimension';
-I18N.Common.Glossary.SystemDimension = 'System dimension';
-I18N.Common.Glossary.AreaDimension = 'Region dimension';
+I18N.Common.Glossary.SystemDimension = 'System';
+I18N.Common.Glossary.AreaDimension = 'Region';
 I18N.Common.Glossary.DimensionNode = 'Dimension node';
 I18N.Common.Glossary.DimensionTree = 'Dimension structure';
 I18N.Common.Glossary.System = 'System';
@@ -840,6 +877,7 @@ I18N.Common.Glossary.Name = 'Name';
 I18N.Common.Glossary.WidgetName = '##Common.Glossary.Widget####Common.Glossary.Name##';
 I18N.Common.Glossary.Code = 'Code';
 I18N.Common.Glossary.Time = 'Time';
+I18N.Common.Glossary.Now = 'Now';
 I18N.Common.Glossary.DataValue = 'Numerical value';
 I18N.Common.Glossary.DataQuality = 'Quality';
 I18N.Common.Glossary.Comment = 'Remarks';
@@ -875,28 +913,28 @@ I18N.Common.Glossary.UOM = 'Unit';
 I18N.Common.Glossary.CalculationType = 'Calculation method';
 I18N.Common.Glossary.Sum = 'Sum';
 I18N.Common.Glossary.Avg = 'Average value';
-I18N.Common.Glossary.Max = 'Maximum';
-I18N.Common.Glossary.Min = 'Minimum';
+I18N.Common.Glossary.Max = 'Max.';
+I18N.Common.Glossary.Min = 'Min.';
 I18N.Common.Glossary.Conflict = 'Conflict';
 I18N.Common.Glossary.Error = 'Error';
 I18N.Common.Glossary.Tip = 'Prompt';
 I18N.Common.Glossary.KPI = 'Key performance indication';
-I18N.Common.Glossary.Target = 'Target value';
+I18N.Common.Glossary.Target = 'Target';
 I18N.Common.Glossary.Baseline = 'Benchmark';
 I18N.Common.Glossary.DayNightRatio = 'Day to night ratio';
 
-I18N.Common.Glossary.MonthName.January = 'Jan.';
-I18N.Common.Glossary.MonthName.February = 'Feb.';
-I18N.Common.Glossary.MonthName.March = 'Mar.';
-I18N.Common.Glossary.MonthName.April = 'Apr.';
+I18N.Common.Glossary.MonthName.January = 'Jan';
+I18N.Common.Glossary.MonthName.February = 'Feb';
+I18N.Common.Glossary.MonthName.March = 'Mar';
+I18N.Common.Glossary.MonthName.April = 'Apr';
 I18N.Common.Glossary.MonthName.May = 'May';
-I18N.Common.Glossary.MonthName.June = 'June';
-I18N.Common.Glossary.MonthName.July = 'July';
-I18N.Common.Glossary.MonthName.August = 'Aug.';
-I18N.Common.Glossary.MonthName.September = 'Sept.';
-I18N.Common.Glossary.MonthName.October = 'Oct.';
-I18N.Common.Glossary.MonthName.November = 'Nov.';
-I18N.Common.Glossary.MonthName.December = 'Dec.';
+I18N.Common.Glossary.MonthName.June = 'Jun';
+I18N.Common.Glossary.MonthName.July = 'Jul';
+I18N.Common.Glossary.MonthName.August = 'Aug';
+I18N.Common.Glossary.MonthName.September = 'Sep';
+I18N.Common.Glossary.MonthName.October = 'Oct';
+I18N.Common.Glossary.MonthName.November = 'Nov';
+I18N.Common.Glossary.MonthName.December = 'Dec';
 
 I18N.Common.Glossary.ShortMonth.January = 'Jan.';
 I18N.Common.Glossary.ShortMonth.February = 'Feb.';
@@ -911,13 +949,13 @@ I18N.Common.Glossary.ShortMonth.October = 'Oct.';
 I18N.Common.Glossary.ShortMonth.November = 'Nov.';
 I18N.Common.Glossary.ShortMonth.December = 'Dec.';
 
-I18N.Common.Glossary.WeekDay.Monday = 'Monday';
-I18N.Common.Glossary.WeekDay.Tuesday = 'Tuesday';
-I18N.Common.Glossary.WeekDay.Wednesday = 'Wednesday';
-I18N.Common.Glossary.WeekDay.Thursday = 'Thursday';
-I18N.Common.Glossary.WeekDay.Friday = 'Friday';
-I18N.Common.Glossary.WeekDay.Saturday = 'Saturday';
-I18N.Common.Glossary.WeekDay.Sunday = 'Sunday';
+I18N.Common.Glossary.WeekDay.Monday = 'Mon.';
+I18N.Common.Glossary.WeekDay.Tuesday = 'Tue.';
+I18N.Common.Glossary.WeekDay.Wednesday = 'Wed.';
+I18N.Common.Glossary.WeekDay.Thursday = 'Thur.';
+I18N.Common.Glossary.WeekDay.Friday = 'Fri.';
+I18N.Common.Glossary.WeekDay.Saturday = 'Sat.';
+I18N.Common.Glossary.WeekDay.Sunday = 'Sun.';
 
 
 //auth
@@ -938,7 +976,7 @@ I18N.Setting.CarbonFactor.Target = 'Conversion target';
 I18N.Setting.CarbonFactor.EffectiveYear = 'Effective date';
 I18N.Setting.CarbonFactor.EffectiveYear = 'Effective date';
 
-I18N.Setting.CarbonFactor.ConfirmDelete = 'Are you sure to delete ##Setting.CarbonFactor.Title## from "{0}" to "{1}"?';
+I18N.Setting.CarbonFactor.ConfirmDelete = '"Are you sure to delete ##Setting.CarbonFactor.Title## from ""{0}"" to ""{1}""?"';
 
 
 //calendar
@@ -947,11 +985,11 @@ I18N.Setting.Calendar = {};
 //workday
 I18N.Setting.Calendar.WorkDay = 'Workday';
 I18N.Setting.Calendar.Holiday = 'Non-work day';
-I18N.Setting.Calendar.DefaultWorkDay = 'Default workday: Monday--Friday';
+I18N.Setting.Calendar.DefaultWorkDay = 'Default workday: Mon. -Fri.';
 I18N.Setting.Calendar.AdditionalDay = 'Supplementary date';
 I18N.Setting.Calendar.ItemType = 'Type of date';
-I18N.Setting.Calendar.StartDate = 'Starting date';
-I18N.Setting.Calendar.EndDate = 'Ending date';
+I18N.Setting.Calendar.StartDate = 'Start';
+I18N.Setting.Calendar.EndDate = 'End';
 I18N.Setting.Calendar.Month = 'Month';
 I18N.Setting.Calendar.StartMonth = 'Starting month';
 I18N.Setting.Calendar.EndMonth = 'Ending month';
@@ -991,14 +1029,14 @@ I18N.Setting.Calendar.HierarchyNoCalendar = 'No calendar template is referred to
 I18N.Setting.Calendar.HasAssociation = 'The working calendar of current time has been configured. ';
 
 //hiearchy calendar
-I18N.Setting.Calendar.TabName = 'Calendar property';
+I18N.Setting.Calendar.TabName = 'Calendar';
 I18N.Setting.Calendar.WorkHoliday = 'Working day';
 I18N.Setting.Calendar.ColdWarm = 'Cooling and heating seasons';
 I18N.Setting.Calendar.DayNight = 'Daytime and night time';
 I18N.Setting.Calendar.EffectiveDate = 'Effective date';
-I18N.Setting.Calendar.Name = 'Calendar name';
+I18N.Setting.Calendar.Name = 'Calendar template';
 I18N.Setting.Calendar.DefaultWorkDayTitle = 'Default workday:';
-I18N.Setting.Calendar.DefaultWorkDayContent = 'Through Monday to Friday';
+I18N.Setting.Calendar.DefaultWorkDayContent = 'Mon. -Fri.';
 I18N.Setting.Calendar.WorkDayTitle = 'Workday';
 I18N.Setting.Calendar.HolidayTitle = 'Non-work day:';
 I18N.Setting.Calendar.RestTimeTitle = 'Non-working time';
@@ -1047,7 +1085,7 @@ I18N.Setting.Alarm.ViewAndOpt = 'View and operate';
 
 I18N.Setting.Alarm.UserRightEmpty = 'Please configure user authority.';
 
-I18N.Setting.Alarm.WorkdayNeeded = 'When selecting time period calendar, please select workday calendar first.';
+I18N.Setting.Alarm.WorkdayNeeded = '"When selecting time period calendar, please select workday calendar first."';
 I18N.Setting.Alarm.TriggerCycleNeeded = 'Please configure triggering cycle.';
 
 I18N.Setting.Alarm.NoAlarm = 'Congratulations! There is no alarm and the system operates well!';
@@ -1063,6 +1101,8 @@ I18N.Notify.Alarm.Priority = 'Priority';
 I18N.Notify.Alarm.Operation = 'Operate';
 I18N.Notify.Alarm.ConfirmUser = 'acknowledged by';
 I18N.Notify.Alarm.ConfirmTime = 'acknowledged on';
+I18N.Notify.Alarm.UpperLimit = 'Upper limit';
+I18N.Notify.Alarm.FloorLimit = 'Lower limit';
 
 I18N.Notify.Alarm.ExceedLimit = 'Out of limit alarm';
 I18N.Notify.Alarm.Energy = 'Energy consumption alarm';
@@ -1070,14 +1110,17 @@ I18N.Notify.Alarm.Energy = 'Energy consumption alarm';
 I18N.Notify.Alarm.BatchConfirm = 'acknowledge all';
 I18N.Notify.Alarm.AllAlarm = 'All alarms';
 
-
+I18N.Notify.Alarm.PriorityType = {};
+I18N.Notify.Alarm.PriorityType.Low = 'Low';
+I18N.Notify.Alarm.PriorityType.Medium = 'Medium';
+I18N.Notify.Alarm.PriorityType.High = 'High';
 
 //hierarchy population/area
 I18N.Setting.DynamicProperty = {};
 
 I18N.Setting.DynamicProperty.PopulationArea = 'Population & area';
 
-I18N.Setting.DynamicProperty.Area = 'Area property';
+I18N.Setting.DynamicProperty.Area = 'Area';
 I18N.Setting.DynamicProperty.AAreaCode = 'Total area code';
 I18N.Setting.DynamicProperty.AArea = 'Total area';
 I18N.Setting.DynamicProperty.WAreaCode = 'Heating area code';
@@ -1086,7 +1129,7 @@ I18N.Setting.DynamicProperty.CAreaCode = 'Cooling area code';
 I18N.Setting.DynamicProperty.CArea = 'Cooling area';
 I18N.Setting.DynamicProperty.AreaUnitValue = 'm2';
 
-I18N.Setting.DynamicProperty.Population = 'Population property';
+I18N.Setting.DynamicProperty.Population = 'Population';
 I18N.Setting.DynamicProperty.PopulationCode = 'Population code';
 I18N.Setting.DynamicProperty.PopulationStartDate = 'Effective date';
 I18N.Setting.DynamicProperty.PopulationNumber = 'Population';
@@ -1099,22 +1142,22 @@ I18N.Setting.TOUTariff = {};
 I18N.Setting.TOUTariff.Month = 'Month';
 I18N.Setting.TOUTariff.Day = 'Day';
 I18N.Setting.TOUTariff.StartDate = 'Starting date';
-I18N.Setting.TOUTariff.EndDate = 'Ending date';
+I18N.Setting.TOUTariff.EndDate = 'End';
 I18N.Setting.TOUTariff.StartTime = 'Starting time';
 I18N.Setting.TOUTariff.EndTime = 'Ending time';
 I18N.Setting.TOUTariff.To = 'To';
 
-I18N.Setting.TOUTariff.PeakPrice = 'peak period price';
-I18N.Setting.TOUTariff.ValleyPrice = 'valley period price';
-I18N.Setting.TOUTariff.PlainPrice = 'normal period price';
-I18N.Setting.TOUTariff.PeakTimeRange = 'Range of peak period';
-I18N.Setting.TOUTariff.ValleyTimeRange = 'Range of valley period';
+I18N.Setting.TOUTariff.PeakPrice = 'peak price';
+I18N.Setting.TOUTariff.ValleyPrice = 'valley price';
+I18N.Setting.TOUTariff.PlainPrice = 'normal price';
+I18N.Setting.TOUTariff.PeakTimeRange = 'peak period';
+I18N.Setting.TOUTariff.ValleyTimeRange = 'valley period';
 I18N.Setting.TOUTariff.PeakValueTimeRange = 'Peak period';
 I18N.Setting.TOUTariff.AddPeakTimeRange = 'Add range of peak period';
 I18N.Setting.TOUTariff.AddValleyTimeRange = 'Add range of valley period';
 I18N.Setting.TOUTariff.PriceErr = 'Only enter a positive value in this item.';
 I18N.Setting.TOUTariff.BasicPropertyTimeNullMsg = 'Time configuration is wrong. Electricity price in peak period/valley period cannot be empty. Please check it.';
-I18N.Setting.TOUTariff.BasicPropertyErrMsg = 'The time for peak/valley electricity price does not reach 24 hours. Please re-configure it or add "normal period price".';
+I18N.Setting.TOUTariff.BasicPropertyErrMsg = '"The time for peak/valley electricity price does not reach 24 hours. Please re-configure it or add ""normal period price""."';
 I18N.Setting.TOUTariff.EndDateErr = 'Ending date must be greater than starting date.';
 I18N.Setting.TOUTariff.EndTimeErr = 'Ending time must be greater than starting time.';
 I18N.Setting.TOUTariff.PulsePeakPrice = 'Electricity price in peak period';
@@ -1125,7 +1168,7 @@ I18N.Setting.TOUTariff.DateTimeInputErr = 'Wrong time entry. Ending time must be
 I18N.Setting.TOUTariff.DateTimeUncompleteErr = 'Please enter complete date and time.';
 I18N.Setting.TOUTariff.TimeUncompleteErr = 'Please enter complete time.';
 
-I18N.Setting.TOUTariff.BasicPropertyTip = 'In case electricity price in normal period is set, it will cover the time periods uncovered by those in peak period and valley period.';
+I18N.Setting.TOUTariff.BasicPropertyTip = '"In case electricity price in normal period is set, it will cover the time periods uncovered by those in peak period and valley period."';
 
 //customer
 I18N.Setting.CustomerManagement = {};
@@ -1160,12 +1203,12 @@ I18N.Setting.CustomerManagement.Label.Coal = 'Total coal quantity';
 I18N.Setting.CustomerManagement.Label.CoalOil = 'Total kerosene quantity';
 I18N.Setting.CustomerManagement.Label.SelectTip = 'Please select energy information types to be displayed simultaneously under the node of focal building in user's map sheet.';
 I18N.Setting.CustomerManagement.Label.AtleastOneConsumption = 'Please select at least one item.';
-I18N.Setting.CustomerManagement.Label.AtleastOneAtMostFive = 'Please select at least one item, with a maximum of 5 items.'; 
+I18N.Setting.CustomerManagement.Label.AtleastOneAtMostFive = '"Please select at least one item, with a maximum of 5 items."'; 
 
 //user
 I18N.Setting.User = {};
 
-I18N.Setting.User.UserManagement = 'User management';
+I18N.Setting.User.UserManagement = 'Uesr';
 I18N.Setting.User.UserInfoManagement = 'User information management';
 I18N.Setting.User.ViewFunction = 'View authority details';
 I18N.Setting.User.UserName = 'Username';
@@ -1179,22 +1222,33 @@ I18N.Setting.User.CreatePasswrod = 'Send mail';
 I18N.Setting.User.MailSent = 'Mail has been sent.';
 I18N.Setting.User.MembershipCustomer = 'Involved client';
 I18N.Setting.User.AllCustomers = 'All clients';
-I18N.Setting.User.Privilege = 'Function authority';
+I18N.Setting.User.Privilege = 'Functions';
 
 I18N.Message.DeleteUserWithDashboard = 'You will delete all the configured ##Common.Glossary.Dashboard## under this account.';
 I18N.Message.RandomPassword = 'Random login password:';
 
 I18N.Setting.User.WholeCustomer = 'Data authority of all hierarchy nodes';
-I18N.Setting.User.WholeCustomerTip = 'It is recommended to tick check the option for a user having "Hierarchy Structure Management" function authority.';
+I18N.Setting.User.WholeCustomerTip = '"It is recommended to tick check the option for a user having ""Hierarchy Structure Management"" function authority."';
+
+I18N.Setting.User.EnergyConsultant = 'Energy consultant';
+I18N.Setting.User.Technicist = 'Technician';
+I18N.Setting.User.CustomerManager = 'Client administrator';
+I18N.Setting.User.EnergyManager = 'Energy manager';
+I18N.Setting.User.EnergyEngineer = 'Energy manager';
+I18N.Setting.User.DeptManager = 'Department manager';
+I18N.Setting.User.Manager = 'Management level';
+I18N.Setting.User.BusinessPerson = 'Business personnel';
+I18N.Setting.User.Sales = 'Sales personnel';
+I18N.Setting.User.ServerManager = 'Service provider administrator';
 
 //usertype
 I18N.Setting.Role = {};
 
 I18N.Setting.Role.AddRole = 'Role';
-I18N.Setting.Role.Function = 'Function authority role';
-I18N.Setting.Role.Type = 'Function authority role type';
+I18N.Setting.Role.Function = 'Role';
+I18N.Setting.Role.Type = 'Role configerate';
 I18N.Setting.Role.Name = 'Role name';
-I18N.Setting.Role.Privilege = 'Function authority';
+I18N.Setting.Role.Privilege = 'Functions';
 
 I18N.Setting.Role.Common = 'Public authority';
 I18N.Setting.Role.DashboardView = 'View ##Common.Glossary.Dashboard## and ##Common.Glossary.Widget##';
@@ -1213,14 +1267,14 @@ I18N.Setting.Role.RatioIndicator = 'Energy Consumption Ratio for Different Perio
 I18N.Setting.Role.LabelingIndicator = 'Energy Labeling function';
 I18N.Setting.Role.CorporateRanking = 'Group Ranking function';
 I18N.Setting.Role.EnergyExport = 'Data export';
-I18N.Setting.Role.SPManagement = 'EnergyMost Amdinistrator';
+I18N.Setting.Role.SPManagement = 'EnergyMost Administrator';
 I18N.Setting.Role.HierarchyManagement = 'Hierarchy structure management';
 I18N.Setting.Role.TagManagement = 'Normal data point management';
 I18N.Setting.Role.KPIConfiguration = 'Key performance indicator data point management';
-I18N.Setting.Role.TagMapping = 'Data point association';
+I18N.Setting.Role.TagMapping = 'Association';
 I18N.Setting.Role.CustomerInfoView = 'View client information';
 I18N.Setting.Role.CustomerInfoManagement = 'Manage client information';
-I18N.Setting.Role.CustomLabeling = 'User-defined energy labeling';
+I18N.Setting.Role.CustomLabeling = 'Customized label';
 
 //contact us
 I18N.Setting.ContactUs = {};
@@ -1236,7 +1290,7 @@ I18N.Setting.ContactUs.Failed = 'Sending failed!';
 //user profile
 I18N.Setting.UserProfile = {};
 
-I18N.Setting.UserProfile.ViewPersonalInfo = 'View personal information';
+I18N.Setting.UserProfile.ViewPersonalInfo = 'Personal information';
 I18N.Setting.UserProfile.ViewCustomerInfo = 'View client information';
 I18N.Setting.UserProfile.ChangePassword = 'Change password';
 I18N.Setting.UserProfile.Logout = 'Log out';
@@ -1244,7 +1298,7 @@ I18N.Setting.UserProfile.OriginalPassword = 'Current password';
 I18N.Setting.UserProfile.NewPassword = 'New password';
 I18N.Setting.UserProfile.ConfirmPassword = 'Confirm new password';
 I18N.Setting.UserProfile.PersonalInfo = 'Personal information';
-I18N.Setting.UserProfile.PasswordTip = 'Please include at least capital and small letters and numbers, in 6-20 digits. Spacing is not supported.';
+I18N.Setting.UserProfile.PasswordTip = '"Please include at least capital and small letters and numbers, in 6-20 digits. Spacing is not supported."';
 I18N.Setting.UserProfile.CustomerInfo = 'Client information';
 I18N.Setting.UserProfile.PlatformAdminUserType = 'Platform administrator';
 
@@ -1262,6 +1316,11 @@ I18N.Setting.Feedback.CommentTip = 'Within 500 words';
 I18N.Setting.Feedback.Upload = 'Upload images';
 I18N.Setting.Feedback.UploadTip = 'Please upload images not larger than 5M.';
 I18N.Setting.Feedback.Submit = 'Submit';
+I18N.Setting.Feedback.BusinessIssue = 'Business problem';
+I18N.Setting.Feedback.SoftwareIssue = 'Software problem';
+I18N.Setting.Feedback.Advice = 'Suggestion';
+I18N.Setting.Feedback.Bug = 'Flaw';
+I18N.Setting.Feedback.Other = 'Others';
 
 I18N.Setting.SPManagement = {};
 I18N.Setting.SPManagement.SP = 'Service provider';
@@ -1275,13 +1334,24 @@ I18N.Setting.SPManagement.Status = 'Operation state';
 I18N.Setting.SPManagement.SendMail = 'Send mail';
 I18N.Setting.SPManagement.MailSent = 'Mail has been sent.';
 
+//widget template 
+I18N.Setting.Template = {};
+I18N.Setting.Template.Radio = 'Monthly energy day-off ratio';
+I18N.Setting.Template.Cost = 'Monthly cost';
+I18N.Setting.Template.PeakValley = 'Monthly cost of peak/valley electricity';
+I18N.Setting.Template.Carbon = 'Monthly carbon emission';
+I18N.Setting.Template.PerMCost = 'Monthly energy consumption by square meters';
+I18N.Setting.Template.Labelling = 'Annual labeling by square meters';
+I18N.Setting.Template.Ranking = 'Annual energy consumption raking';
+I18N.Setting.Template.Max = 'Annual maximum demand control';
+
 I18N.Message.MAjaxInvokeFailure = 'AJAX Calling failed. <br/>HTTP code: [{0}]<br/>HTTP message: [{1}]<br/>URL:[{2}]';
 I18N.Message.LoginTimeout = 'Login time out. Please re-login.';
 I18N.Message.NetworkProblem = 'Operation failed. Please check your network and try again.';
 I18N.Message.UnassociateCustomerLogout = 'Association with the current client has been disabled. Please log out and log in again.';
 I18N.Message.UnassociateCustomer = 'Association with the client has been disabled. Please re-select a client.';
 I18N.Message.CurrentUserHasDeleted = 'The current user has been deleted and the system will exit.';
-I18N.Message.DeleteSP = 'Delete service provider "{0}"? <br/>You will delete all public data and client data under this service provider as well as all indirectly associated information .';
+I18N.Message.DeleteSP = '"Delete service provider ""{0}""? <br/>You will delete all public data and client data under this service provider as well as all indirectly associated information."';
 
 I18N.Message.M1 = 'Server error.';
 I18N.Message.M8 = 'You do not have this function authority.';
@@ -1292,14 +1362,14 @@ I18N.Message.M01006 = 'This ##Common.Glossary.Code## already exists.';
 I18N.Message.M01010 = '##Common.Label.DuplicatedName##';
 I18N.Message.M01011 = 'The father node of this hierarchy tree has been deleted and this node cannot be saved.';
 I18N.Message.M01012 = 'This hierarchy node includes child nodes and thus cannot be deleted.';
-I18N.Message.M01014 = 'This node has been modified or deleted by another user, therefore the hierarchy tree will be refreshed.';
+I18N.Message.M01014 = '"This node has been modified or deleted by another user, therefore the hierarchy tree will be refreshed."';
 I18N.Message.M01015 = 'The current hierarchy node has no child nodes.'; //for energy view single tag to pie chart
 I18N.Message.M01016 = 'Relevant ##Common.Glossary.Hierarchy## does not have effective calendar. This year's target value and benchmark are not available.';
 I18N.Message.M01051 = I18N.format(I18N.Message.DeletionConcurrency, I18N.Common.Glossary.HierarchyNode);
 I18N.Message.M01251 = 'Advanced properties of this hierarchy node have been changed by another user. The page will be refreshed.';
 I18N.Message.M01254 = 'Entries of the advanced properties are illegal and thus cannot be saved.';
 I18N.Message.M01301 = 'Calendar has been modified by another user.';
-I18N.Message.M01302 = 'Calendar has been created for this node, therefore no repeated creation is allowed.';
+I18N.Message.M01302 = '"Calendar has been created for this node, therefore no repeated creation is allowed."';
 I18N.Message.M01304 = 'This ##Common.Glossary.Tag## is not associated with any ##Common.Glossary.Hierarchy##.';
 I18N.Message.M01305 = 'Calendar property is not configured for ##Common.Glossary.Hierarchy## associated with this ##Common.Glossary.Tag## and thus calculation is impossible.';
 I18N.Message.M01306 = '##Common.Label.TimeOverlap##';
@@ -1324,8 +1394,8 @@ I18N.Message.M02004 = 'Illegal aggregation granularity';
 I18N.Message.M02007 = 'Starting time must not be greater than ending time.';
 I18N.Message.M02008 = 'Pie chart cannot be drawn due to different commodities.';
 I18N.Message.M02013 = 'This data point has been deleted and thus cannot be loaded.';
-I18N.Message.M02020 = 'Chart export failed. Please click "View data" and try again.';
-I18N.Message.M02021 = 'EXCEL export failed. Please click "View Data" and try again.';
+I18N.Message.M02020 = '"Chart export failed. Please click ""View data"" and try again."';
+I18N.Message.M02021 = '"EXCEL export failed. Please click ""View Data"" and try again."';
 I18N.Message.M02104 = 'The unit of commodity which does not belong to energy consumption group cannot be converted.';
 I18N.Message.M02105 = 'Sorry! Error! Pie chart cannot be drawn.';
 I18N.Message.M02106 = 'Sorry! Error! Pie chart cannot be drawn.';
@@ -1337,7 +1407,7 @@ I18N.Message.M02017 = 'Data point association changes and thus drawing cannot be
 I18N.Message.M02203 = 'This data point does not exist. Target value and benchmark are not available.';
 I18N.Message.M02205 = 'The key performance indicator of day to night ratio cannot be displayed by hour.';
 I18N.Message.M02301 = 'This hierarchy node does not exist.';
-I18N.Message.M02023 = 'Selected data points have different commodities, so pie charts cannot be drawn jointly.';
+I18N.Message.M02023 = '"Selected data points have different commodities, so pie charts cannot be drawn jointly."';
 I18N.Message.M02009 = 'No data authority or the authority has been modified. Data cannot be inquired.';
 I18N.Message.M02407 = 'Electricity price in peak/valley/normal period cannot be displayed by hour.';
 I18N.Message.M02408 = 'This node is not configured with peak/valley period and thus cannot be displayed.';
@@ -1401,7 +1471,7 @@ I18N.Message.M03057 = 'Ending date must be greater than starting date.';
 I18N.Message.M03058 = 'Calendar has been referred to and thus cannot be deleted.';     //--------------
 I18N.Message.M03059 = 'A date in Feb. should not be 29/30/31.';
 I18N.Message.M03060 = 'A date in a solar month of 30 or 29 days should not be 31.';
-I18N.Message.M03061 = 'Add at lease one heating season or cooling season.';
+I18N.Message.M03061 = 'Add at least one heating season or cooling season.';
 I18N.Message.M03062 = 'The heating season and cooling season cannot be present in the same month.';
 I18N.Message.M03063 = 'The interval between heating season and cooling season should be no less than 7 days.';
 I18N.Message.M03064 = I18N.format(I18N.Message.DeletionConcurrency, I18N.Common.Glossary.HierarchyNode);
@@ -1425,9 +1495,9 @@ refresh is needed.
 04051 should refresh hierarchy tree
 *******/
 I18N.Message.M04051 = I18N.format(I18N.Message.DeletionConcurrency, I18N.Common.Glossary.HierarchyNode);
-I18N.Message.M04052 = 'Before checking the current ##Common.Glossary.DimensionNode##, please ensure that its father node has been checked.';
+I18N.Message.M04052 = '"Before checking the current ##Common.Glossary.DimensionNode##, please ensure that its father node has been checked."';
 I18N.Message.M04053 = I18N.format(I18N.Message.UpdateConcurrency, I18N.Common.Glossary.DimensionNode);
-I18N.Message.M04054 = 'Before un-checking the current ##Common.Glossary.DimensionNode##, please ensure that all of its child nodes have been un-checked.';
+I18N.Message.M04054 = '"Before un-checking the current ##Common.Glossary.DimensionNode##, please ensure that all of its child nodes have been un-checked."';
 I18N.Message.M04055 = 'The current system dimension node has no child nodes.';   //for energy view single tag to pie chart
 
 /******
@@ -1439,7 +1509,7 @@ refresh is needed.
 I18N.Message.M05001 = '##Common.Label.DuplicatedName##';
 I18N.Message.M05011 = 'The ##Common.Glossary.HierarchyNode## to which this ##Common.Glossary.Dashboard## corresponds has been deleted. Refreshing will be done at once.';
 I18N.Message.M05013 = 'The quantity of the ##Common.Glossary.Dashboard## of this ##Common.Glossary.HierarchyNode## has reached the upper limit. Please delete part of the content and go on.';
-I18N.Message.M05014 = 'The content in "My Favorites" has reached the upper limit. Please delete part content and go on.';
+I18N.Message.M05014 = '"The content in ""My Favorites"" has reached the upper limit. Please delete part content and go on."';
 I18N.Message.M05015 = '##Common.Label.DuplicatedName##';
 I18N.Message.M05016 = 'The quantity of the ##Common.Glossary.Widget## of the current ##Common.Glossary.Dashboard## has reached the upper limit. New ##Common.Glossary.Widget## cannot be created.';
 I18N.Message.M05017 = 'IDs of the ##Common.Glossary.Dashboard## of all the ##Common.Glossary.Widget## are not all identical.';
@@ -1475,12 +1545,12 @@ I18N.Message.M06186 = '##Message.M06202##';
 I18N.Message.M06192 = '##Common.Glossary.CalculationStep## of ##Common.Glossary.DayNightRatio####Common.Glossary.Tag## must be greater than or equal to day.';
 I18N.Message.M06193 = 'The child node of the current hierarchy node does not include data points that have the same commodity as this data point.';
 I18N.Message.M06194 = 'The child node of the current system dimension does not include data points that have the same commodity as this data point.';
-I18N.Message.M06195 = 'Tthe child node of the current region dimension does not include data points that have the same commodity as this data point.';
+I18N.Message.M06195 = 'The child node of the current region dimension does not include data points that have the same commodity as this data point.';
 I18N.Message.M06196 = 'The current hierarchy node does not include data points that have the same commodity unit as this data point.';
 I18N.Message.M06197 = 'The current system dimension does not include data points that have the same commodity unit as this data point.';
 I18N.Message.M06198 = 'The current region dimension does not include data points that have the same commodity unit as this data point.';
 I18N.Message.M06200 = I18N.format(I18N.Message.DeletionConcurrency, I18N.Common.Glossary.Customer);
-I18N.Message.M06201 = '##Common.Glossary.CalculationStep## cannot be changed to "{0}". This ##Common.Glossary.Tag## has been referred to by another ##Common.Glossary.Tag##. A new ##Common.Glossary.CalculationStep## must be less than or equal to ##Common.Glossary.CalculationStep## of the referred to ##Common.Glossary.Tag##; or if the referred to ##Common.Glossary.Tag## is marked as ##Common.Glossary.DayNightRatio##, ##Common.Glossary.CalculationStep## of this ##Common.Glossary.Tag## must be "##Common.AggregationStep.Hourly##".';
+I18N.Message.M06201 = '"##Common.Glossary.CalculationStep## cannot be changed to ""{0}"". This ##Common.Glossary.Tag## has been referred to by another ##Common.Glossary.Tag##. A new ##Common.Glossary.CalculationStep## must be less than or equal to ##Common.Glossary.CalculationStep## of the referred to ##Common.Glossary.Tag##; or if the referred to ##Common.Glossary.Tag## is marked as ##Common.Glossary.DayNightRatio##, ##Common.Glossary.CalculationStep## of this ##Common.Glossary.Tag## must be ""##Common.AggregationStep.Hourly##""."';
 I18N.Message.M06202 = 'Energy consumption data points with the same commodity already exist under the corresponding node.';
 I18N.Message.M06203 = 'This ##Common.Glossary.Tag## is not energy consumption data.';
 
@@ -1522,7 +1592,7 @@ I18N.Message.M09114 = 'The value is outside the legal range and thus cannot be s
 I18N.Message.M09155 = I18N.format(I18N.Message.UpdateConcurrency, '计算值');
 I18N.Message.M09157 = 'The corresponding ##Common.Glossary.Tag## has been deleted. Refreshing will be done at once.';
 I18N.Message.M09158 = '##Common.Glossary.Tag## is not associated with hierarchy tree and dimension tree. Please associate ##Common.Glossary.Tag## with them.';
-I18N.Message.M09159 = 'The calendar property of the hierarchy tree assocaited with ##Common.Glossary.Tag## is empty. Please set the calendar for the hierarchy tree first.';
+I18N.Message.M09159 = 'The calendar property of the hierarchy tree associated with ##Common.Glossary.Tag## is empty. Please set the calendar for the hierarchy tree first.';
 I18N.Message.M09160 = 'The data of this year in the calendar property of the hierarchy tree associated with ##Common.Glossary.Tag## is empty. Please set the calendar property of this year for the hierarchy tree first.';
 
 //Cost concurrency error
@@ -1601,7 +1671,7 @@ I18N.Message.M05027 = 'The originator user has been deleted.';
 I18N.Message.M05028 = 'This subscriber has been removed.';
 I18N.Message.M00953 = 'Illegal entry.';
 
-I18N.Message.M11600 = 'The user-defined energy consumption mark already exists under this client. Please use another name.';
+I18N.Message.M11600 = 'The customized labeling already exists under this client. Please use another name.';
 I18N.Message.M11601 = 'Wrong user-defined energy labeling.';
 I18N.Message.M11602 = 'User-defined energy labeling levels are discontinuous.';
 I18N.Message.M11603 = 'Concurrent error. Please refresh.';

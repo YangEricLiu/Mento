@@ -1029,6 +1029,94 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return data;
         }
 
+
+        public DataTable GetCurrentPageDataWithoutNull()
+        {
+            DataTable data = new DataTable();
+
+            var headerLocatorLeft = new Locator("div[contains(@class,'x-grid-header-ct')]/div/div/div[contains(@class,'x-column-header-align-left') and not(contains(@class,'x-group-sub-header'))]", ByType.XPath);
+            //var headerLocatorCenter = new Locator("div[contains(@class,'x-grid-header-ct')]/div/div/div[contains(@class,'x-column-header-align-center')]", ByType.XPath);
+            var headerLocatorItems = new Locator("div[contains(@class,'x-grid-header-ct')]//div[contains(@class,'x-column-header-align-center')]//div[contains(@class, 'x-column-header-align-left x-group-sub-header')]", ByType.XPath);
+
+            var cellLocator = new Locator("td", ByType.TagName);
+
+            int j = 1;
+            int k = 1;
+
+            if (ElementHandler.Exists(headerLocatorLeft, container: this.RootElement))
+            {
+                foreach (IWebElement column in FindChildren(headerLocatorLeft))
+                {
+                    string columnName1 = j + ". " + column.Text;
+
+                    data.Columns.Add(columnName1);
+
+                    j++;
+                }
+            }
+
+            foreach (IWebElement column in FindChildren(headerLocatorItems))
+            {
+                string columnName2 = j + ". " + column.Text;
+
+                data.Columns.Add(columnName2);
+
+                j++;
+            }
+
+            foreach (IWebElement row in CurrentRows)
+            {
+                DataRow dataRow = data.NewRow();
+                IWebElement[] cells = ElementHandler.FindElements(cellLocator, container: row);
+
+                for (int i = 0; i < cells.Length; i++)
+                {
+                    if (i > 0 && String.IsNullOrEmpty(cells[i].Text.Trim()))
+                    {
+                        k++;
+                    }
+                        
+                    dataRow[i] = cells[i].Text;
+                }
+
+                if (k < cells.Length)
+                {
+                    data.Rows.Add(dataRow); 
+                }
+
+                k = 1;
+            }
+
+            return data;
+        }
+
+        public DataTable GetAllDataWithoutNull()
+        {
+            DataTable data = null;
+
+            if (!this.IsNoRowOnGrid())
+            {
+                if (CurrentPage != 1)
+                    GotoPage(1);
+
+                for (int pageIndex = 1; pageIndex <= PageCount; pageIndex++)
+                {
+                    if (data == null)
+                        data = GetCurrentPageDataWithoutNull();
+                    else
+                        data.Merge(GetCurrentPageDataWithoutNull());
+
+                    if (PageCount > 1)
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                    }
+                }
+            }
+
+            return data;
+        }
+
         // Get row light
 
         /// <summary>

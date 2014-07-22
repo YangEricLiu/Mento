@@ -566,6 +566,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
+            //Assert.AreEqual(input.ExpectedData.messages[0], JazzWindow.WindowMessageInfos.GetContentValue());
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Year));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));

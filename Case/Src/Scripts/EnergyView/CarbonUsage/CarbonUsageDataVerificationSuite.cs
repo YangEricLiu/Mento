@@ -38,11 +38,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.MediumPause();
-
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
         }
 
         private static CarbonUsagePanel CarbonUsage = JazzFunction.CarbonUsagePanel;
@@ -155,6 +150,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             CarbonUsage.DeSelectCommodity(input.InputData.commodityNames[1]);
             TimeManager.ShortPause();
 
+            /* hour so waste time, so ignore it
             //ManualTimeRange[1]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
@@ -205,7 +201,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8], DisplayStep.Default);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
-
+            */
         }
 
         [Test]
@@ -277,6 +273,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
+            /* hour so waste time, so ignore it
             //ManualTimeRange[1]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             EnergyViewToolbar.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
@@ -330,6 +327,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Default);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
+            */
 
             //ManualTimeRange[0]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
@@ -379,6 +377,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[10], input.InputData.failedFileName[10]);
 
+            /* hour so waste time, so ignore it
             //ManualTimeRange[1]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
@@ -431,7 +430,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[13], DisplayStep.Default);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[13], input.InputData.failedFileName[13]);
-
+            */
         }
     }
 }

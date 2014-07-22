@@ -221,8 +221,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             AreaSettings.FillAreaDimensionData(input.InputData.CommonName, input.InputData.Comments);
             AreaSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
-            Assert.AreEqual(AreaSettings.GetAreaDimensionName(), input.ExpectedData.CommonName);
-            Assert.AreEqual(AreaSettings.GetAreaDimensionComment(),input.ExpectedData.Comments);
+            Assert.AreEqual(input.ExpectedData.CommonName, AreaSettings.GetAreaDimensionName());
+            Assert.AreEqual(input.ExpectedData.Comments, AreaSettings.GetAreaDimensionComment());
 
             // Verify the correct  areaNode is successfully created
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);

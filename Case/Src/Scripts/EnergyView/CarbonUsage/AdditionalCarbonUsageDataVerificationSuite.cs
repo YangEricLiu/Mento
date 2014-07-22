@@ -155,6 +155,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             CarbonUsage.DeSelectCommodity(input.InputData.commodityNames[1]);
             TimeManager.ShortPause();
 
+            /* hour so waste time, so ignore it
             //Time range = 2012-1-1 to 2012-2-1
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
@@ -205,8 +206,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8], DisplayStep.Default);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
-
+            */
         }
-
     }
 }

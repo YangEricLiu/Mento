@@ -1,26 +1,4 @@
 ﻿[
-	
-	{
-		"InputData":
-		{
-			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
-			"TagNames":["Rankingtag1"],
-			"Industry":"$@Zone_Extreme_Cold_Region_A$@Industry_Hotel",
-			"failedFileName":["F-BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-0-Y.xls", "F-BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-1-M.xls", "F-BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-2-W.xls", "F-BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-3-D.xls", "F-BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-4-H.xls"],
-			"ManualTimeRange":[{
-				"StartDate":"2012-11-20",
-				"EndDate":"2013-12-5",			
-			},
-			{
-				"StartDate":"2012-12-20",
-				"EndDate":"2013-1-10",		
-			}],
-		},
-		"ExpectedData":
-		{
-			"expectedFileName":["BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-0-Y.xls", "BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-1-M.xls", "BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-2-W.xls", "BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-3-D.xls", "BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-4-H.xls"],
-		}
-	},
 	{
 		"InputData":
 		{
@@ -46,7 +24,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
-			"TagNames":["Buildingtag1QY1"],
+			"TagNames":["RankingtagQY1"],
 			"Industry":"$@Zone_All_Zones$@Industry_All_Industries",
 			"failedFileName":["F-BenckmarkConsumptionCalculate全部区域全行业-101-1-0-Y.xls", "F-BenckmarkConsumptionCalculat全部区域全行业-101-1-1-M.xls", "F-BenckmarkConsumptionCalculate全部区域全行业-101-1-2-W.xls", "F-BenckmarkConsumptionCalculate全部区域全行业-101-1-3-D.xls", "F-BenckmarkConsumptionCalculate全部区域全行业-101-1-4-H.xls"],
 			"ManualTimeRange":[{
@@ -67,7 +45,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
-			"TagNames":["Buildingtag1QY1"],
+			"TagNames":["RankingtagQY1"],
 			"Industry":"$@Zone_All_Zones$@Industry_Hotel_Four_star",
 			"failedFileName":["F-BenckmarkConsumptionCalculate全部区域酒店四星级-101-1-0-Y.xls", "F-BenckmarkConsumptionCalculate全部区域酒店四星级-101-1-1-M.xls", "F-BenckmarkConsumptionCalculate全部区域酒店四星级-101-1-2-W.xls", "F-BenckmarkConsumptionCalculate全部区域酒店四星级-101-1-3-D.xls", "F-BenckmarkConsumptionCalculate全部区域酒店四星级-101-1-4-H.xls"],
 			"ManualTimeRange":[{
@@ -88,7 +66,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
-			"TagNames":["Buildingtag1QY1"],
+			"TagNames":["RankingtagQY1"],
 			"Industry":"$@Zone_All_Zones$@Industry_Hotel",
 			"failedFileName":["F-BenckmarkConsumptionCalculate全部区域酒店-101-1-0-Y.xls", "F-BenckmarkConsumptionCalculate全部区域酒店-101-1-1-M.xls", "F-BenckmarkConsumptionCalculate全部区域酒店-101-1-2-W.xls", "F-BenckmarkConsumptionCalculate全部区域酒店-101-1-3-D.xls", "F-BenckmarkConsumptionCalculate全部区域酒店-101-1-4-H.xls"],
 			"ManualTimeRange":[{
@@ -103,6 +81,27 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["BenckmarkConsumptionCalculate全部区域酒店-101-1-0-Y.xls", "BenckmarkConsumptionCalculate全部区域酒店-101-1-1-M.xls", "BenckmarkConsumptionCalculate全部区域酒店-101-1-2-W.xls", "BenckmarkConsumptionCalculate全部区域酒店-101-1-3-D.xls", "BenckmarkConsumptionCalculate全部区域酒店-101-1-4-H.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
+			"TagNames":["Rankingtag1"],
+			"Industry":"$@Zone_Extreme_Cold_Region_A$@Industry_Hotel",
+			"failedFileName":["F-BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-0-Y.xls", "F-BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-1-M.xls", "F-BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-2-W.xls", "F-BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-3-D.xls", "F-BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-4-H.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-11-20",
+				"EndDate":"2013-12-5",			
+			},
+			{
+				"StartDate":"2012-12-20",
+				"EndDate":"2013-1-10",		
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-0-Y.xls", "BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-1-M.xls", "BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-2-W.xls", "BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-3-D.xls", "BenckmarkConsumptionCalculate严寒地区A区酒店-101-1-4-H.xls"],
 		}
 	}
 ]

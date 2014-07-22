@@ -100,7 +100,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.ClickConfirmHiearchyButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
             TimeManager.MediumPause();
-            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[2]);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -109,7 +109,12 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            //Select 单项 Commodity=电 to view data.·Ranking chart display.
+            //Select 单项 Commodity=电 to view data.·Ranking chart display. + 园区A
+            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[5]);
+            CorporateRanking.ClickConfirmHiearchyButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
+            TimeManager.MediumPause();
+
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
             TimeManager.LongPause();
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate); 

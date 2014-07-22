@@ -182,11 +182,6 @@ namespace Mento.ScriptCommon.Library.Functions
                 return false;
             }
 
-            foreach (DataColumn column in expectedDataTable.Columns)
-            {
-                diversityTable.Columns.Add(column.ColumnName);
-            }
-
             if (expectedDataTable.Rows.Count != actualDataTable.Rows.Count) 
             {
                 areEqual = false;
@@ -195,6 +190,11 @@ namespace Mento.ScriptCommon.Library.Functions
 
             DataColumn rows = new DataColumn("行数", typeof(int));
             diversityTable.Columns.Add(rows);
+
+            foreach (DataColumn column in expectedDataTable.Columns)
+            {
+                diversityTable.Columns.Add(column.ColumnName);
+            }
 
             for (int i = 0; i < expectedDataTable.Rows.Count; i++) 
             {
@@ -286,11 +286,6 @@ namespace Mento.ScriptCommon.Library.Functions
                 return false;
             }
 
-            foreach (DataColumn column in expectedDataTable.Columns)
-            {
-                diversityTable.Columns.Add(column.ColumnName);
-            }
-
             if (expectedDataTable.Rows.Count != actualDataTable.Rows.Count)
             {
                 areEqual = false;
@@ -299,6 +294,10 @@ namespace Mento.ScriptCommon.Library.Functions
 
             DataColumn rows = new DataColumn("行数", typeof(int));
             diversityTable.Columns.Add(rows);
+            foreach (DataColumn column in expectedDataTable.Columns)
+            {
+                diversityTable.Columns.Add(column.ColumnName);
+            }
 
             for (int i = 0; i < expectedDataTable.Rows.Count; i++)
             {

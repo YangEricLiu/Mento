@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 using Mento.Framework.Constants;
+using Mento.Framework.Configuration;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -13,6 +14,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private const string YEARWORD = "年";
         private const string MONTHWORD = "月";
         private Locator InvalidTips = new Locator("../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]", ByType.XPath);
+
+        private static Dictionary<string, string> MonthItem = new Dictionary<string, string>()
+        {
+            {"January", "1" },
+            {"February", "2" },
+            {"March", "3" },
+            {"April", "4" },
+            {"May", "5" },
+            {"June", "6" },
+            {"July", "7" },
+            {"August", "8" },
+            {"September", "9" },
+            {"October", "10" },
+            {"November", "11" },
+            {"December", "12" },
+        };
 
         protected IWebElement SelectTrigger 
         {
@@ -146,14 +163,26 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         private DateTime GetCurrentDate()
         {
-            string currentDate = GetDate();
-            string dateValue = currentDate.Replace(YEARWORD, "-").Replace(MONTHWORD,"-");
+            if (ExecutionConfig.Language == "CN")
+            {
+                string currentDate = GetDate();
+                string dateValue = currentDate.Replace(YEARWORD, "-").Replace(MONTHWORD, "-");
 
-            string[] date = dateValue.Split(new char[1] { '-' });
-            int year = Convert.ToInt32(date[0]);
-            int month = Convert.ToInt32(date[1]);
+                string[] date = dateValue.Split(new char[1] { '-' });
+                int year = Convert.ToInt32(date[0]);
+                int month = Convert.ToInt32(date[1]);
 
-            return new DateTime(year, month, 1);
+                return new DateTime(year, month, 1);
+            }
+            else
+            {
+                string currentDate = GetDate();
+                string[] date = currentDate.Split(new char[1] { ' ' });
+                int month = Convert.ToInt32(MonthItem[date[0]]);
+                int year = Convert.ToInt32(date[1]);
+
+                return new DateTime(year, month, 1);
+            }      
         }
         
         private void NavigateToMonth(DateTime date)
@@ -283,6 +312,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        #region Protect Method
+        
         protected virtual void ClickDatePickerPreviousMonthButton()
         {
             var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.DatePickerPreviousMonth);
@@ -345,5 +376,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.InnerMonthPickerMonthItem), DATEPICKERITEMVARIABLENAME, itemRealValue);
         }
+
+        #endregion
     }
 }

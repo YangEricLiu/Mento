@@ -1,26 +1,4 @@
 ﻿[
-	
-	{
-		"InputData":
-		{
-			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
-			"Commodity":["$@Common.Commodity.Electric"],
-			"Industry":"$@Zone_Extreme_Cold_Region_A$@Industry_Hotel",
-			"failedFileName":["F-BenchmarkCostCalculate严寒地区A区酒店-101-1-0-Y.xls", "F-BenchmarkCostCalculate严寒地区A区酒店-101-1-1-M.xls", "F-BenchmarkCostCalculate严寒地区A区酒店-101-1-2-W.xls", "F-BenchmarkCostCalculate严寒地区A区酒店-101-1-3-D.xls", "F-BenchmarkCostCalculate严寒地区A区酒店-101-1-4-H.xls"],
-			"ManualTimeRange":[{
-				"StartDate":"2012-11-20",
-				"EndDate":"2013-12-5",			
-			},
-			{
-				"StartDate":"2012-12-20",
-				"EndDate":"2013-1-10",		
-			}],
-		},
-		"ExpectedData":
-		{
-			"expectedFileName":["BenchmarkCostCalculate严寒地区A区酒店-101-1-0-Y.xls", "BenchmarkCostCalculate严寒地区A区酒店-101-1-1-M.xls", "BenchmarkCostCalculate严寒地区A区酒店-101-1-2-W.xls", "BenchmarkCostCalculate严寒地区A区酒店-101-1-3-D.xls", "BenchmarkCostCalculate严寒地区A区酒店-101-1-4-H.xls"],
-		}
-	},
 	{
 		"InputData":
 		{
@@ -103,6 +81,27 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["BenchmarkCostCalculate全部区域酒店-101-1-0-Y.xls", "BenchmarkCostCalculate全部区域酒店-101-1-1-M.xls", "BenchmarkCostCalculate全部区域酒店-101-1-2-W.xls", "BenchmarkCostCalculate全部区域酒店-101-1-3-D.xls", "BenchmarkCostCalculate全部区域酒店-101-1-4-H.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
+			"Commodity":["$@Common.Commodity.Electric"],
+			"Industry":"$@Zone_Extreme_Cold_Region_A$@Industry_Hotel",
+			"failedFileName":["F-BenchmarkCostCalculate严寒地区A区酒店-101-1-0-Y.xls", "F-BenchmarkCostCalculate严寒地区A区酒店-101-1-1-M.xls", "F-BenchmarkCostCalculate严寒地区A区酒店-101-1-2-W.xls", "F-BenchmarkCostCalculate严寒地区A区酒店-101-1-3-D.xls", "F-BenchmarkCostCalculate严寒地区A区酒店-101-1-4-H.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-11-20",
+				"EndDate":"2013-12-5",			
+			},
+			{
+				"StartDate":"2012-12-20",
+				"EndDate":"2013-1-10",		
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCostCalculate严寒地区A区酒店-101-1-0-Y.xls", "BenchmarkCostCalculate严寒地区A区酒店-101-1-1-M.xls", "BenchmarkCostCalculate严寒地区A区酒店-101-1-2-W.xls", "BenchmarkCostCalculate严寒地区A区酒店-101-1-3-D.xls", "BenchmarkCostCalculate严寒地区A区酒店-101-1-4-H.xls"],
 		}
 	}
 ]

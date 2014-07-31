@@ -565,6 +565,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            /* not need it on 1.7
             Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             //Assert.AreEqual(input.ExpectedData.messages[0], JazzWindow.WindowMessageInfos.GetContentValue());
             Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
@@ -576,7 +577,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
-
+            */
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);

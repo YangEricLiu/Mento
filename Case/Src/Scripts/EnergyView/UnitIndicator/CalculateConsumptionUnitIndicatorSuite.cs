@@ -54,6 +54,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-1")]
         public void CalculateConsumptionUnitIndicator01(UnitIndicatorData input)
         {
+            
             //Go to NancyCustomer1. Go to Function Unit indicator. Select the BuildingBC from Hierarchy Tree. Click Function Type button, select Energy Consumption.
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -248,10 +249,13 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[9], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[9], input.InputData.failedFileName[9]);
-
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            
             //Go to NancyOtherCustomer3. Go to Function Unit indicator. Select the BuildingPrecision from Hierarchy Tree. Click Function Type button, select Energy Consumption. Verify precision display for Unit display.
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             UnitKPIPanel.NavigateToUnitIndicator();
             TimeManager.MediumPause();

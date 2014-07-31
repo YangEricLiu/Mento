@@ -67,8 +67,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(PTagSettings.IsMeterCodeInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(PTagSettings.IsChannelInvalid());
             Assert.IsTrue(PTagSettings.IsChannelInvalidMsgCorrect(input.ExpectedData));
-            Assert.IsTrue(PTagSettings.IsCommentsInvalid());
-            Assert.IsTrue(PTagSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsFalse(PTagSettings.IsCommentsInvalid());
         }
 
         [Test]

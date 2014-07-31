@@ -616,17 +616,17 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetActualHierarchyPath()
         {
             string dimendionPath = null;
-
+            /*
             if (SelectSystemDimensionButton.Exists())
             {
                 dimendionPath = "/" + SelectSystemDimensionButton.GetText();
             }
-
+            
             if (SelectAreaDimensionButton.Exists())
             {
                 dimendionPath = "/" + SelectAreaDimensionButton.GetText();
             }
-
+            */
             return SelectHierarchyButton.GetText() + dimendionPath;
         }
 
@@ -639,7 +639,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 ExpectedHierarchyPath = ExpectedHierarchyPath + "/" + hierarchyPaths[i];
             }
-
+            /*
             if (dimensionPaths != null)
             {
                 for (int j = 0; j < dimensionPaths.Length; j++)
@@ -647,7 +647,7 @@ namespace Mento.ScriptCommon.Library.Functions
                     ExpectedHierarchyPath = ExpectedHierarchyPath + "/" + dimensionPaths[j];
                 }
             }
-
+            */
             return ExpectedHierarchyPath;
         }
 

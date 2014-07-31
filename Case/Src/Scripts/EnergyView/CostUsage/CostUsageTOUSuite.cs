@@ -161,8 +161,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
-            Assert.AreEqual(3, CostUsage.GetColumnChartColumns());
+            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
 
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;

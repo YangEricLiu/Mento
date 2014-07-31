@@ -224,7 +224,7 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.CheckTag(input.InputData.tagNames[4]);
             TimeManager.ShortPause();
 
-            //Select time range 2013/01/01 to 2013/01/07; Optional step=Day.
+            //Select time range 2013/07/01 to 2013/07/03; Optional step=Day.
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
 

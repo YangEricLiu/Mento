@@ -99,8 +99,7 @@ namespace Mento.Script.Administration.User
             Assert.IsTrue(UserSettings.IsTelephoneInvalid());
             Assert.IsTrue(UserSettings.IsTelephoneInvalidMsgCorrect(input.ExpectedData));
 
-            Assert.IsTrue(UserSettings.IsCommentsInvalid(input.ExpectedData));
-            Assert.IsTrue(UserSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsFalse(UserSettings.IsCommentsInvalid(input.ExpectedData));
             /*
             UserSettings.IsUserTypeInvalid();
             UserSettings.IsTypeInvalidMsgCorrect(input.ExpectedData);

@@ -22,18 +22,18 @@
 				"EndDate":"2013-12-31",	
 			},
 			{
-				"StartDate":"2013-1-1",
-				"EndDate":"2013-1-7",	
+				"StartDate":"2013-7-1",
+				"EndDate":"2013-7-3",	
 			},
 			{
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-2-28",	
 			}],
-		    "failedFileName":["F-ConsumptionDayNightRatio-View-101-1-D-0.xls", "F-ConsumptionDayNightRatio-View-101-1-W-1.xls"],
+		    "failedFileName":["F-ConsumptionDayNightRatio-View-101-2-D-0.xls", "F-ConsumptionDayNightRatio-View-101-2-W-1.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["ConsumptionDayNightRatio-View-101-1-D-0.xls", "ConsumptionDayNightRatio-View-101-1-W-1.xls"],
+			"expectedFileName":["ConsumptionDayNightRatio-View-101-2-D-0.xls", "ConsumptionDayNightRatio-View-101-2-W-1.xls"],
 			"popupNotes":["$@Message.M02601"],
 		}
 	}

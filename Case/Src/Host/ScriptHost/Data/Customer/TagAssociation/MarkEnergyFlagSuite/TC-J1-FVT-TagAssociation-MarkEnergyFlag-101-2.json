@@ -5,7 +5,7 @@
 			"HierarchyNodePath":["自动化测试", "DisassociateTagAuto", "DisassociateTagSite","DisassociateTagBuild"],
 			"TagNames":["P_Mark002","P_Mark003"],
 			"SystemDimensionPath":["DisassociateTagBuild", "$@SystemDimensionTemplateItem_HVAC"],
-			"TagName":"$@Message.M06202@$\r\n$@Common.EnergyDataQuality.Good",
+			"TagName":"$@Message.M06202@$",
 		},
 		"ExpectedData":
 		{

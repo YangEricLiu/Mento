@@ -139,7 +139,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Verify 
             Assert.IsTrue(AreaSettings.IsNameInvalidMsgCorrect(input.ExpectedData.CommonName));
-            Assert.IsTrue(AreaSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData.Comments));
+            Assert.AreEqual(input.ExpectedData.Comments, AreaSettings.GetAreaDimensionComment());
 
             TimeManager.LongPause();
 

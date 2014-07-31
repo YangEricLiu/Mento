@@ -135,9 +135,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //TimeManager.MediumPause();
             //  Could select the node path
             Assert.IsTrue(AreaSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath));
-            //Assert.AreEqual(input.InputData.CommonName, AreaSettings.GetAreaDimensionName());
-           
-            
+            //Assert.AreEqual(input.InputData.CommonName, AreaSettings.GetAreaDimensionName());     
         }
 
         [Test]

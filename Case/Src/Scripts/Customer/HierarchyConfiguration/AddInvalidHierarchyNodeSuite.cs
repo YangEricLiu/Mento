@@ -86,8 +86,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             Assert.IsTrue(HierarchySettings.IsNameInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(HierarchySettings.IscodeInvalid());
             Assert.IsTrue(HierarchySettings.IscodeInvalidMsgCorrect(input.ExpectedData));
-            Assert.IsTrue(HierarchySettings.IsCommentsInvalid());
-            Assert.IsTrue(HierarchySettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsFalse(HierarchySettings.IsCommentsInvalid());
         }
 
         [Test]

@@ -305,6 +305,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             //总览
             CostUsage.SelectCommodity();
+            //CostUsage.SelectCommodity(input.InputData.commodityNames);
 
             //A. 2012/07/30 01:00 to 2012/08/01 23:00.
             var ManualTimeRange = input.InputData.ManualTimeRange;
@@ -336,6 +337,9 @@ namespace Mento.Script.EnergyView.CostUsage
 
             //总览
             CostUsage.SelectCommodity();
+            //CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
+            //CostUsage.SelectCommodity(input.InputData.commodityNames[1]);
+            //CostUsage.SelectCommodity(input.InputData.commodityNames[2]);
 
             for (int i = 0; i < ManualTimeRange.Length; i++)
             {

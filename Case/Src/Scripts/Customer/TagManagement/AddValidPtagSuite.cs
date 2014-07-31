@@ -59,7 +59,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Verify that ptag added successfully
-            PTagSettings.FocusOnPTagByName(input.ExpectedData.CommonName);
+            //PTagSettings.FocusOnPTagByName(input.ExpectedData.CommonName);
             Assert.AreEqual(input.ExpectedData.CommonName, PTagSettings.GetNameValue());
             Assert.AreEqual(input.ExpectedData.Code, PTagSettings.GetCodeValue());
             Assert.AreEqual(input.ExpectedData.Meter, PTagSettings.GetMetercodeValue());

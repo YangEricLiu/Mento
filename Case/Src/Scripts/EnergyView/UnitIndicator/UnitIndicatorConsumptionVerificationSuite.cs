@@ -52,8 +52,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1")]
-        public void UnitIndicatorConsumptionVerification01(UnitIndicatorData input)
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-1")]
+        public void UnitIndicatorConsumptionVerification01_p1(UnitIndicatorData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.LongPause();
@@ -122,24 +122,138 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+        }
 
-            //Time range = 2012-7-1 to 2012-8-4
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
+        [Test]
+        [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-2")]
+        public void UnitIndicatorConsumptionVerification01_v1(UnitIndicatorData input)
+        {
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.LongPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            //Select "NancyOtherCustomer3/NancyOtherSite/BuildingCostYearToDay"
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Time range = 2012-1-1 to 2013-12-18
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //select Benchmark = "夏热冬冷地区轨道交通"/"全部区域全行业"
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industry);
+            TimeManager.ShortPause();
+
+            //select UnitIndicatorType = "单位人口"/"单位面积"
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(input.InputData.UnitIndicatorType);
+            TimeManager.ShortPause();
+
+            //Tags = P1_YearToDay/V1_YearToDay/V2_YearToDay
+            EnergyAnalysis.CheckTags(input.InputData.tagNames);
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
-            //"Hour"
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            //"Year"
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //"Month"
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+            //"Week"
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+
+            //"Day"
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-3")]
+        public void UnitIndicatorConsumptionVerification01_v2(UnitIndicatorData input)
+        {
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.LongPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            //Select "NancyOtherCustomer3/NancyOtherSite/BuildingCostYearToDay"
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Time range = 2012-1-1 to 2013-12-18
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //select Benchmark = "夏热冬冷地区轨道交通"/"全部区域全行业"
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industry);
+            TimeManager.ShortPause();
+
+            //select UnitIndicatorType = "单位人口"/"单位面积"
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(input.InputData.UnitIndicatorType);
+            TimeManager.ShortPause();
+
+            //Tags = P1_YearToDay/V1_YearToDay/V2_YearToDay
+            EnergyAnalysis.CheckTags(input.InputData.tagNames);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            //"Year"
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //"Month"
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+        }
+
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-2")]

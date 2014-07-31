@@ -59,6 +59,7 @@ namespace Mento.Script.EnergyView.CostUsage
             
             //Set date range
             EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 29), new DateTime(2012, 8, 4));
+            EnergyViewToolbar.SetTimeRange("00:00", "16:00");
             TimeManager.ShortPause();
             
             //Check tag and view data view, hourly
@@ -102,6 +103,7 @@ namespace Mento.Script.EnergyView.CostUsage
             
             //Set date range
             EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 29), new DateTime(2012, 8, 4));
+            EnergyViewToolbar.SetTimeRange("00:00", "16:00");
             TimeManager.ShortPause();
             
             //Check tag and view data view, hourly

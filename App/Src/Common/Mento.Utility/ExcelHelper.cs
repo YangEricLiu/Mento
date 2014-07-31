@@ -563,7 +563,7 @@ namespace Mento.Utility
         {
             Excel.Worksheet mySheet = GetWorksheet(workSheetIndex);  //得到工作表
 
-            return this.GetDataTableFromExcel(mySheet);
+            return this.GetDataTableFromExcelWithoutNull(mySheet);
         }
 
         /// <summary> 
@@ -595,6 +595,53 @@ namespace Mento.Utility
                     myRow[j - 1] = strValue;
                 }
                 dt.Rows.Add(myRow);
+            }
+
+            return dt;
+        }
+
+        /// <summary> 
+        /// Import Excel to Data Table
+        /// </summary> 
+        /// <remarks>To the start of worksheet</remarks> 
+        /// <param name="mySheet"></param> 
+        public DataTable GetDataTableFromExcelWithoutNull(Excel.Worksheet mySheet)
+        {
+            DataTable dt = new DataTable();
+            int k = 1;
+
+            for (int j = 1; j <= mySheet.Cells.CurrentRegion.Columns.Count; j++)
+            {
+                Excel.Range temp = (Excel.Range)mySheet.Cells[1, j];
+                string strValue = temp.Text.ToString();
+
+                dt.Columns.Add(strValue);
+            }
+
+            for (int i = 2; i <= mySheet.Cells.CurrentRegion.Rows.Count; i++)   //把工作表导入DataTable中
+            {
+                DataRow myRow = dt.NewRow();
+
+                for (int j = 1; j <= mySheet.Cells.CurrentRegion.Columns.Count; j++)
+                {
+                    Excel.Range temp = (Excel.Range)mySheet.Cells[i, j];
+
+                    string strValue = temp.Text.ToString();
+
+                    if (j > 1 && String.IsNullOrEmpty(strValue.Trim()))
+                    {
+                        k++;
+                    }
+
+                    myRow[j - 1] = strValue;
+                }
+
+                if (k < mySheet.Cells.CurrentRegion.Columns.Count)
+                {
+                    dt.Rows.Add(myRow);
+                }
+
+                k = 1;              
             }
 
             return dt;

@@ -62,8 +62,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             Assert.IsFalse(HierarchySettings.IsSaveButtonDisplayed());
 
             //Verify nodes are added as children
-            Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.ExpectedData.CommonName, input.InputData.HierarchyNodePath.Last()));
-            HierarchySettings.SelectHierarchyNode(input.ExpectedData.CommonName);
+            //Assert.IsTrue(HierarchySettings.IsNodesChildParent(input.ExpectedData.CommonName, input.InputData.HierarchyNodePath.Last()));
+            //HierarchySettings.SelectHierarchyNode(input.ExpectedData.CommonName);
             Assert.AreEqual(input.ExpectedData.CommonName, HierarchySettings.GetNameValue());
             Assert.AreEqual(input.ExpectedData.Code, HierarchySettings.GetcodeValue());
             Assert.AreEqual(HierarchySettings.GetTypeExpectedValue(input.ExpectedData.Type), HierarchySettings.GetTypeValue());

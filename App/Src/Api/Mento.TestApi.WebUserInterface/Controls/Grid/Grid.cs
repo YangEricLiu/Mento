@@ -999,6 +999,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 data.Rows.Add(dataRow);
             }
 
+            if (data.Rows.Count == 0)
+            {
+                data = null;
+            }
+
             return data;
         }
 
@@ -1086,7 +1091,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
                 k = 1;
             }
-
+            /*
+            if (data.Rows.Count == 0)
+            {
+                data = null;
+            }
+            */
             return data;
         }
 

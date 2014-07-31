@@ -87,8 +87,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(VTagSettings.IsNameInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(VTagSettings.IscodeInvalid());
             Assert.IsTrue(VTagSettings.IscodeInvalidMsgCorrect(input.ExpectedData));
-            Assert.IsTrue(VTagSettings.IsCommentsInvalid());
-            Assert.IsTrue(VTagSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsFalse(VTagSettings.IsCommentsInvalid());
         }
        
       [Test]

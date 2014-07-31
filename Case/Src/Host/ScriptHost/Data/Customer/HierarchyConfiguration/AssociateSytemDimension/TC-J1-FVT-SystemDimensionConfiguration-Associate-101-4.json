@@ -3,11 +3,11 @@
 		"InputData":
 		{
 			"HierarchyNodePath":["自动化测试","SysDimAssocOrg001", "SysDimAssocSite001", "SysDimAssocBuild001"],
-			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_ElectricityComsumptionInSecondZone", "$@SystemDimensionTemplateItem_Service", "$@SystemDimensionTemplateItem_Service$@SystemDimensionTemplateItem_Lighting"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_ElectricityComsumptionInSecondZone", "$@SystemDimensionTemplateItem_Canteen", "$@SystemDimensionTemplateItem_CookingAppliances"],
 		},
 		"ExpectedData":
 		{
-			"SystemDimensionPath":["SysDimAssocBuild001", "$@SystemDimensionTemplateItem_ElectricityComsumptionInSecondZone", "$@SystemDimensionTemplateItem_Service", "$@SystemDimensionTemplateItem_Service$@SystemDimensionTemplateItem_Lighting"],
+			"SystemDimensionPath":["SysDimAssocBuild001", "$@SystemDimensionTemplateItem_ElectricityComsumptionInSecondZone", "$@SystemDimensionTemplateItem_Canteen", "$@SystemDimensionTemplateItem_CookingAppliances"],
 		}
 	}
 ]

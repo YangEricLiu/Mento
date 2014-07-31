@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"AccountID":"Nancya_Z.0_9.Account-中文",
+			"AccountID":"Nancya_Z.0_9.Account-",
 			"Password":"",
 			"RealName":"  onlychars  ",
 			"CustomerName":"",
@@ -21,7 +21,7 @@
 		},
 		"ExpectedData":
 		{
-		    "AccountID":"Nancya_Z.0_9.Account-中文",
+		    "AccountID":"Nancya_Z.0_9.Account-",
 			"Password":"",
 			"RealName":"onlychars",
 			"CustomerName":"",
@@ -42,7 +42,7 @@
 	{
 		"InputData":
 		{
-			"AccountID":"Nancya_Z.0_9.Account-中文-._e45q",
+			"AccountID":"Nancya_Z.0_9.Account--._e45q",
 			"Password":"",
 			"RealName":"m文CAPITALhars F中文CAP",
 			"CustomerName":"",
@@ -61,7 +61,7 @@
 		},
 		"ExpectedData":
 		{
-		    "AccountID":"Nancya_Z.0_9.Account-中文-._e45q",
+		    "AccountID":"Nancya_Z.0_9.Account--._e45q",
 			"Password":"",
 			"RealName":"m文CAPITALhars F中文CAP",
 			"CustomerName":"",
@@ -82,7 +82,7 @@
 	{
 		"InputData":
 		{
-			"AccountID":"Nancya_Z.0_9.Account-中文-._e45q000",
+			"AccountID":"Nancya_Z.0_9.Account--._e45q93Nancya_Z.0_9.Account--._e45q93Nancya_Z.0_9.Account--._e45q931234567891000",
 			"Password":"",
 			"RealName":"  中文CAPITAL.chars, 1234_;F(-)[{]#&~+%}  ",
 			"CustomerName":"中文CAPITAL.chars, 1234_;F(-)[{]#&~+%}",
@@ -101,7 +101,7 @@
 		},
 		"ExpectedData":
 		{
-			"AccountID":"Nancya_Z.0_9.Account-中文-._e45q",
+			"AccountID":"Nancya_Z.0_9.Account--._e45q93Nancya_Z.0_9.Account--._e45q93Nancya_Z.0_9.Account--._e45q931234567891",
 			"Password":"",
 			"RealName":"中文CAPITAL.chars, 1234_;F(-)[{]#&~+%}",
 			"CustomerName":"中文CAPITAL.chars, 1234_;F(-)[{]#&~+%}",

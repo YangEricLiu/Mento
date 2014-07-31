@@ -258,6 +258,25 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge if special container existed
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="tagName"></param>
+        public bool IsSpecialContainerExisted(string title, string tagName)
+        {
+            try
+            {
+                Grid oneSpecialGrid = GetSpecialGrid(title);
+                oneSpecialGrid.IsRowExist(1, tagName); 
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }      
+        }
+
+        /// <summary>
         /// Judge if the tags on the special container tag list
         /// </summary>
         /// <param name="title"></param>

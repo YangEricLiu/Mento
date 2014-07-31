@@ -6,7 +6,7 @@
 				"WidgetName":"之前7天能效分析查看",
 				"HierarchyName":["NancyCustomer1", "ShareDashboardInvalidSuiteOrg", "ShareDashboardInvalidSuite0014"],
 				"ShareUsers":["ShareUserD"],
-				"DashboardName":"Dashboard_Share_001_5123456789",
+				"DashboardName":"Dashboard_Share_001_5123456789Dashboard_Share_001_5123456789Dashboard_Share_001_5123456789Dashboard0",
 				"Receivers":[{
 					"LoginName":"ShareUserA",
 					"Password":"123456Qq",
@@ -15,7 +15,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["分享仪表盘“Dashboard_Share_001_5123456789”失败，无法分享给这些人：ShareUserD。"],																	
+			"messages":["分享仪表盘“Dashboard_Share_001_5123456789Dashboard_Share_001_5123456789Dashboard_Share_001_5123456789Dashboard0”失败，无法分享给这些人：ShareUserD。"],																	
 		}
 	}
 ]

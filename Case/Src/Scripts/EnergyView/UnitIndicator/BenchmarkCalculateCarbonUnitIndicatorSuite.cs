@@ -341,9 +341,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Month);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
+            TimeManager.MediumPause();
 
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
             TimeManager.MediumPause();

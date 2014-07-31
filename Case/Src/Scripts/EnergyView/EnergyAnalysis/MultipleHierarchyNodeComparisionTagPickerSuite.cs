@@ -194,7 +194,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SetDateRange(new DateTime(2012, 4, 1), new DateTime(2012, 4, 7));
             TimeManager.ShortPause();
             EnergyViewToolbar.ClickViewButton();
-            //Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //back to "多层级数据点", the hierarchy button is display "请选择层级结构"
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -229,7 +231,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
             MultiHieCompareWindow.UncheckTag(input.InputData.TagNames[2]);
-            Assert.IsFalse(MultiHieCompareWindow.IsTagExistedOnSpecialContainer(input.InputData.MultiSelectedHiearchyPath[2], input.InputData.TagNames[2]));
+            Assert.IsFalse(MultiHieCompareWindow.IsSpecialContainerExisted(input.InputData.MultiSelectedHiearchyPath[2], input.InputData.TagNames[2]));
 
             MultiHieCompareWindow.ClickGiveUpButton();
             TimeManager.MediumPause();

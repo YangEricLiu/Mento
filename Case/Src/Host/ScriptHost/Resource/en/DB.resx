@@ -121,7 +121,7 @@
     <value>kWh</value>
   </data>
   <data name="Uom_KVARH" xml:space="preserve">
-    <value>kVh</value>
+    <value>kVarh</value>
   </data>
   <data name="Uom_KVAH" xml:space="preserve">
     <value>kVAh</value>
@@ -130,10 +130,10 @@
     <value>kW</value>
   </data>
   <data name="Uom_m³" xml:space="preserve">
-    <value>m3</value>
+    <value>m³</value>
   </data>
   <data name="Uom_m³/s" xml:space="preserve">
-    <value>m3/s</value>
+    <value>m³/s</value>
   </data>
   <data name="Uom_ppm" xml:space="preserve">
     <value>ppm</value>
@@ -154,16 +154,16 @@
     <value>RMB</value>
   </data>
   <data name="Uom_m²" xml:space="preserve">
-    <value>m2</value>
+    <value>㎡</value>
   </data>
   <data name="Uom_h" xml:space="preserve">
-    <value>Hour</value>
+    <value>h</value>
   </data>
   <data name="Uom_m" xml:space="preserve">
-    <value>Min</value>
+    <value>m</value>
   </data>
   <data name="Uom_s" xml:space="preserve">
-    <value>Sec</value>
+    <value>s</value>
   </data>
   <data name="Uom_°C" xml:space="preserve">
     <value>℃</value>
@@ -196,49 +196,49 @@
     <value>A</value>
   </data>
   <data name="Uom_µg/m³" xml:space="preserve">
-    <value>mcg/m3</value>
+    <value>mcg/m³</value>
   </data>
   <data name="Uom_Percentage" xml:space="preserve">
     <value>%</value>
   </data>
   <data name="Commodity_Other" xml:space="preserve">
-    <value>Others</value>
+    <value>Other</value>
   </data>
   <data name="Commodity_Electricity" xml:space="preserve">
     <value>Electricity</value>
   </data>
   <data name="Commodity_Water" xml:space="preserve">
-    <value>Tap water</value>
+    <value>Water</value>
   </data>
   <data name="Commodity_Gas" xml:space="preserve">
-    <value>Natural gas</value>
+    <value>Gas</value>
   </data>
   <data name="Commodity_SoftWater" xml:space="preserve">
-    <value>Soft water</value>
+    <value>SoftWater</value>
   </data>
   <data name="Commodity_Petrol" xml:space="preserve">
-    <value>Gasoline</value>
+    <value>Petrol</value>
   </data>
   <data name="Commodity_LowPressureSteam" xml:space="preserve">
-    <value>Low-pressure steam</value>
+    <value>LowPressure Steam</value>
   </data>
   <data name="Commodity_DieselOil" xml:space="preserve">
     <value>Diesel oil</value>
   </data>
   <data name="Commodity_HeatQ" xml:space="preserve">
-    <value>Heat quantity</value>
+    <value>HeatQ</value>
   </data>
   <data name="Commodity_CoolQ" xml:space="preserve">
-    <value>Cooling capacity</value>
+    <value>CoolQ</value>
   </data>
   <data name="Commodity_Coal" xml:space="preserve">
     <value>Coal</value>
   </data>
   <data name="Commodity_CoalOil" xml:space="preserve">
-    <value>Kerosene</value>
+    <value>CoalOil</value>
   </data>
   <data name="Commodity_AirQuality" xml:space="preserve">
-    <value>Air</value>
+    <value>AirQuality</value>
   </data>
   <data name="AdvancedProperty_TotalPopulation" xml:space="preserve">
     <value>Total population</value>
@@ -292,19 +292,19 @@
     <value>Clothing retailing</value>
   </data>
   <data name="Industry_Mall" xml:space="preserve">
-    <value>Shopping mall</value>
+    <value>Mall</value>
   </data>
   <data name="Industry_Telecommunication" xml:space="preserve">
-    <value>Communication</value>
+    <value>Telecommunication</value>
   </data>
   <data name="Industry_Telecommunication workshop" xml:space="preserve">
-    <value>Computer room</value>
+    <value>Telecommunication work shop</value>
   </data>
   <data name="Industry_Telecommunication base station" xml:space="preserve">
-    <value>Communication base station</value>
+    <value>Telecommunication base station</value>
   </data>
   <data name="Industry_Telecommunication business hall" xml:space="preserve">
-    <value>Communication business hall</value>
+    <value>Telecommunication business hall</value>
   </data>
   <data name="Industry_Rail Transit" xml:space="preserve">
     <value>Rail transit</value>
@@ -313,7 +313,7 @@
     <value>Airport</value>
   </data>
   <data name="Industry_Manufacturing" xml:space="preserve">
-    <value>Manufacturing industry</value>
+    <value>Manufacturing</value>
   </data>
   <data name="SystemDimensionTemplateItem_HVAC" xml:space="preserve">
     <value>Air conditioning</value>
@@ -535,24 +535,24 @@
     <value>Others</value>
   </data>
   <data name="Zone_All Zones" xml:space="preserve">
-    <value>All the regions</value>
+    <value>All zones</value>
   </data>
   <data name="Zone_Extreme Cold Region A" xml:space="preserve">
-    <value>Coldest region A</value>
+    <value>Extreme cold region A</value>
   </data>
   <data name="Zone_Extreme Cold Region B" xml:space="preserve">
-    <value>Coldest region B</value>
+    <value>Extreme code region B</value>
   </data>
   <data name="Zone_Cold Region" xml:space="preserve">
     <value>Cold region</value>
   </data>
   <data name="Zone_Hot Summer and Cold Winter Region" xml:space="preserve">
-    <value>Region with hot summer and cold winter</value>
+    <value>Hot summer and cold winter region</value>
   </data>
   <data name="Zone_Subtropical Region" xml:space="preserve">
-    <value>Region with hot summer and warm winter</value>
+    <value>Subtropical region</value>
   </data>
   <data name="Zone_Temperate Region" xml:space="preserve">
-    <value>Mild region</value>
+    <value>Temperate region</value>
   </data>
 </root>

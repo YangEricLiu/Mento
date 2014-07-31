@@ -75,7 +75,7 @@ namespace Mento.Script.Information.Widgets
             TimeManager.LongPause();
 
             HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(60);
             TimeManager.LongPause();
 
             Assert.AreEqual(12, HomePagePanel.GetWidgetsNumberOfDashboard());

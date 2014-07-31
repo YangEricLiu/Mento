@@ -121,7 +121,7 @@ namespace Mento.Script.Administration.CarbonFactor
 
             //Verify the 'Factor Source', 'Factor Destination','Effective Year' and Carbon factor value.
             Assert.AreEqual("2012", CarbonFactorSettings.GetCarbonFactorEffectiveYear(1));
-            Assert.AreEqual("7", CarbonFactorSettings.GetCarbonFactorValue(1));
+            Assert.AreEqual("3", CarbonFactorSettings.GetCarbonFactorValue(1));
         }
 
         [Test]

@@ -66,6 +66,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             
             //Set date range
             EnergyViewToolbar.SetDateRange(new DateTime(2012, 4, 1), new DateTime(2012, 4, 7));
+            EnergyViewToolbar.SetTimeRange("00:00", "16:00");
             TimeManager.ShortPause();
 
             //Select V(6) under Area dimension node to draw Data view.

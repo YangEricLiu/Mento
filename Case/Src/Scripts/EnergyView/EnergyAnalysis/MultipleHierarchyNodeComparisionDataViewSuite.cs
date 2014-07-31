@@ -241,6 +241,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //Set date range
             EnergyViewToolbar.SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 4, 1));
+            EnergyViewToolbar.SetTimeRange("00:00", "14:00");
+
             TimeManager.ShortPause();
 
             //Check tag and view data view

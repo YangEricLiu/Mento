@@ -820,7 +820,9 @@
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCarbonVerificationSuite\TC-J1-FVT-UnitIndicatorCarbonVerification-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCarbonVerificationSuite\TC-J1-FVT-UnitIndicatorCarbonVerification-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorCarbonVerificationSuite\TC-J1-FVT-UnitIndicatorCarbonVerification-101-3.json" />
-    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-3.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-2.json" />
+    <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorConsumptionVerificationSuite\TC-J1-FVT-UnitIndicatorConsumptionVerification-101-4.json" />

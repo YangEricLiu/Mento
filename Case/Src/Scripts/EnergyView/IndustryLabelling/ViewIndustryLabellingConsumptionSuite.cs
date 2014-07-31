@@ -528,7 +528,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsFalse(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
+            Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
         }
     }
 }

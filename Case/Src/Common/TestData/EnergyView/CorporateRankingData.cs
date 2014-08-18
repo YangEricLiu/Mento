@@ -20,6 +20,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public string[] commodityNames { get; set; }
 
+        public DashboardInformation[] DashboardInfo { get; set; }
+
         public string[] failedFileName { get; set; }
 
         // added by greenie

@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"OriginalName":"PtagForUomCommodity",
+			"CommonName":"PtagForUomCommodity",
+			"Code":"PtagForUomCommodity",
+			"Meter":"PtagForUomCommodity",
+			"Channel":"3",
+			"Commodity":"$@Commodity_SoftWater",
+			"Uom":"$@Uom_Ton",
+			"CalculationType":"Max",
+		},
+		"ExpectedData":
+		{
+			"HierarchyNodePath":["自动化测试", "CheckOnESSite001"],
+			"CommonName":"PtagForUomCommodity",
+			"Code":"PtagForUomCommodity",
+			"Meter":"PtagForUomCommodity",
+			"Channel":"3",
+			"Commodity":"$@Commodity_SoftWater",
+			"Uom":"$@Uom_Ton",
+			"CalculationType":"Max",
+		}
+	}
+]

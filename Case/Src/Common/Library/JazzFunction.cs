@@ -84,6 +84,18 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static PTagRawData _PTagRawData;
+        public static PTagRawData PTagRawData
+        {
+            get
+            {
+                if (_PTagRawData == null)
+                    _PTagRawData = new PTagRawData();
+
+                return PTagRawData;
+            }
+        }
+
         private static VTagSettings _VTagSettings;
         public static VTagSettings VTagSettings
         {

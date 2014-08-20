@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"OriginalName":"PtagForIsAccumulated",
+			"AccumulateText":"$@Common.Glossary.AccumulatedValueCal",
+		},
+		"ExpectedData":
+		{
+
+		}
+	}
+]

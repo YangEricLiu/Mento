@@ -744,6 +744,8 @@ I18N.Common.Button.Exit = 'Exit';
 I18N.Common.Button.Clear = 'Empty';
 I18N.Common.Button.Send = 'Send';
 I18N.Common.Button.Confirmed = 'OK';
+I18N.Common.Button.ChangeRecord = 'Change Record';
+I18N.Common.Button.Originaldata = 'Original data';
 
 I18N.Common.Operation.ResetZoom = 'Cancel Zoom in/Zoom out';
 I18N.Common.Operation.ResetZoom1vs1 = 'Zoom to 1:1';

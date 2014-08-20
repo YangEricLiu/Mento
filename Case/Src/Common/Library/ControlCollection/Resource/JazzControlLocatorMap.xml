@@ -254,6 +254,10 @@
               <add key="ButtonPTagSettingsCancel" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonPTagSettingsModify" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonPTagSettingsDelete" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+              <add key="TagButtonPTagRawData" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Button.Originaldata']]" type="XPath"/>
+              <add key="ButtonPTagRawDataSave" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+              <add key="ButtonPTagRawDataCancel" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+              <add key="ButtonPTagRawDataModify" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.ChangeRecord']]" type="XPath"/>
           </ptag>
           <vtag>
               <add key="TabButtonVTagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
@@ -611,6 +615,13 @@
               <add key="TextFieldPTagSettingsMeterCode" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='MeterCode']" type="XPath"/>
               <add key="TextFieldPTagSettingsChannel" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='ChannelId']" type="XPath"/>
               <add key="TextFieldPTagSettingsComment" value="//div[@id='st-ptag-form-body']//textarea[@name='Comment']" type="XPath"/>
+              <add key="GridPTagRawDataFirstRow" value="//div[@id='gridview-1304']//tr[@class='x-grid-row'][1]/td[contains(@class,'x-grid-cell-gridcolumn-1300')]/div[@class='x-grid-cell-inner ']" type="XPath"/>
+              <add key="GridPTagRawDataSecondRow" value="//div[@id='gridview-1304']//tr[@class='x-grid-row'][2]/td[contains(@class,'x-grid-cell-gridcolumn-1300')]/div[@class='x-grid-cell-inner ']" type="XPath"/>
+              <add key="GridPTagRawDataFirstRowState" value="//div[@id='gridview-1304']//tr[@class='x-grid-row'][1]/td[contains(@class,'x-grid-cell-gridcolumn-1302')]/div[@class='x-grid-cell-inner ' and text() = '已修改']" type="XPath"/>
+              <add key="GridPTagRawDataSecondRowState" value="//div[@id='gridview-1304']//tr[@class='x-grid-row'][2]/td[contains(@class,'x-grid-cell-gridcolumn-1302')]/div[@class='x-grid-cell-inner ' and text() = '已修改']" type="XPath"/>
+              <add key="RedTagNameInTooltip" value="//div[@class='highcharts-container']//tspan[@style='fill:red']" type="XPath"/>
+              <add key="BoldValueInTooltip" value="//div[@class='highcharts-container']//tspan[@style='font-weight:bold']" type="XPath"/>
+              <add key="BlueTagNameInTooltip" value="//div[@class='highcharts-container']//tspan[@style='fill:#3399cc']" type="XPath"/>
           </ptagsettings>
           <vtagsettings>
               <add key="TextFieldVTagSettingsName" value="//div[@id='st-vtag-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
@@ -938,6 +949,7 @@
       <add key="GridAssociationTagList" value="//div[@id='st-tag-assoc-form-body']//div[contains(@class,'x-grid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
       <add key="GridCustomizedLabellingList" value="st-customized-labeling-grid" type="ID"/>
+      <add key="GridPTagRawdata" value="//div[contains(@id,'rawdatagridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     </customersettings>
     
     <platformsettings>
@@ -1155,7 +1167,7 @@
     <add key="ChartWidgetMaxDialog" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartSuperWidget" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../../../../../self::node()/div[contains(@class,'x-widget-body-default')]//div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartMaxWidgetLabelling" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id, 'labelingchartpanel') and contains(@class, 'x-panel-body-default')]/div[contains(@id, 'container')]" type="XPath"/>
-
+    <add key="ChartPTagRawData" value="//div[contains(@id, 'highcharts-18') and contains(@class, 'highcharts-container')]" type="XPath"/>
   </Chart>
   <!--Chart End-->
 

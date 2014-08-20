@@ -231,6 +231,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonPTagSettingsCancel = "ButtonPTagSettingsCancel";
         public static string ButtonPTagSettingsModify = "ButtonPTagSettingsModify";
         public static string ButtonPTagSettingsDelete = "ButtonPTagSettingsDelete";
+        public static string TabButtonPTagRawData = "TagButtonPTagRawData";
+        public static string ButtonPTagRawDataSave = "ButtonPTagRawDataSave";
+        public static string ButtonPTagRawDataCancel = "ButtonPTagRawDataCancel";
+        public static string ButtonPTagRawDataModify = "ButtonPTagRawDataModify";
         #endregion
 
         #region vtag
@@ -640,6 +644,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldPTagSettingsMeterCode = "TextFieldPTagSettingsMeterCode";
         public static string TextFieldPTagSettingsChannel = "TextFieldPTagSettingsChannel";
         public static string TextFieldPTagSettingsComment = "TextFieldPTagSettingsComment";
+        public static string GridPTagRawDataFirstRow = "GridPTagRawDataFirstRow";
+        public static string GridPTagRawDataSecondRow = "GridPTagRawDataSecondRow";
+        public static string GridPTagRawDataFirstRowState = "GridPTagRawDataFirstRowState";
+        public static string GridPTagRawDataSecondRowState = "GridPTagRawDataSecondRowState";
+        public static string RedTagNameInTooltip = "RedTagNameInTooltip";
+        public static string BoldValueInTooltip = "BoldValueInTooltip";
+        public static string BlueTagNameInTooltip = "BlueTagNameInTooltip";
         #endregion
 
         #region vtagsettings
@@ -1020,7 +1031,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridAssociationTagList = "GridAssociationTagList";
         public static string GridPTagSettingsPTagList = "GridPTagSettingsPTagList";
         public static string GridCustomizedLabellingList = "GridCustomizedLabellingList";
-
+        public static string GridPTagRawData = "GridPTagRawData";
         #endregion
 
         #region platformsettings
@@ -1250,6 +1261,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ChartWidgetMaxDialog = "ChartWidgetMaxDialog";
         public static string ChartSuperWidget = "ChartSuperWidget";
         public static string ChartMaxWidgetLabelling = "ChartMaxWidgetLabelling";
+        public static string ChartPTagRawData = "ChartPTagRawData";
         #endregion
 
         #region Window

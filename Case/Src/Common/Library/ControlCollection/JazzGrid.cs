@@ -110,6 +110,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid PTagSettingsPTagList = GetControl<Grid>(JazzControlLocatorKey.GridPTagSettingsPTagList);
         public static Grid CustomizedLabellingListGrid = GetControl<Grid>(JazzControlLocatorKey.GridCustomizedLabellingList);
 
+        public static Grid GridPTagRawData = GetControl<Grid>(JazzControlLocatorKey.GridPTagRawData);
+
         public static Grid UserListGrid
         {
             get { return GetControl<Grid>(JazzControlLocatorKey.GridUserList); }

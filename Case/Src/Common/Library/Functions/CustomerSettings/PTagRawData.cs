@@ -1,0 +1,197 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Mento.Framework;
+using Mento.Utility;
+using Mento.TestApi.WebUserInterface;
+using Mento.ScriptCommon.TestData.Customer;
+using Mento.TestApi.WebUserInterface;
+using Mento.TestApi.WebUserInterface.Controls;
+using Mento.TestApi.WebUserInterface.ControlCollection;
+using OpenQA.Selenium;
+
+namespace Mento.ScriptCommon.Library.Functions
+{
+    /// <summary>
+    /// The business logic implement of ptag rawdata configuration.
+    /// </summary>
+    public class PTagRawData
+    {
+        internal PTagRawData()
+        {
+        }
+
+        #region ptag controls
+
+        private static Grid PTagList = JazzGrid.PTagSettingsPTagList;
+
+        //StartDatePicker
+        private static DatePicker StartDatePicker = JazzDatePicker.EnergyUsageStartDateDatePicker;
+        //StartTimeComboBox
+        private static ComboBox StartTimeComboBox = JazzComboBox.EnergyViewStartTimeComboBox;
+
+        //EndDatePicker
+        private static DatePicker EndDatePicker = JazzDatePicker.EnergyUsageEndDateDatePicker;
+        //EndTimeComboBox
+        private static ComboBox EndTimeComboBox = JazzComboBox.EnergyViewEndTimeComboBox;
+
+        private static TabButton RawDataTab = JazzButton.PTagRawDataTabButton;
+        private static Button RawDataModifyButton = JazzButton.PTagRawDataModifyButton;
+        private static Button RawDataSaveButton = JazzButton.PTagRawDataSaveButton;
+        private static Button RawDataCancelButton = JazzButton.PTagSettingsCancelButton;
+        private static Grid GridPTagRawData = JazzGrid.GridPTagRawData;
+        private static TextField PTagRawDataFirstRow = JazzTextField.PTagRawDataFirstRow;
+        private static TextField PTagRawDataSecondRow = JazzTextField.PTagRawDataSecondRow;
+        private static TextField PTagRawDataFirstRowState = JazzTextField.PTagRawDataFirstRowState;
+        private static TextField PTagRawDataSecondRowState = JazzTextField.PTagRawDataSecondRowState;
+        #endregion
+
+        #region Ptag RawData Operation
+
+        /// <summary>
+        /// Click Raw Data tab button to edit Raw data of ptag.
+        /// </summary>
+        /// <returns></returns>
+        public void SwitchToRawDataTab()
+        {
+            RawDataTab.Click();
+        }
+
+        /// <summary>
+        /// Navigate to Ptag Configuration Page
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void NavigatorToEnergyView()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
+            TimeManager.ShortPause();
+        }
+
+
+
+        /// <summary>
+        /// Navigate to Ptag Configuration Page
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void NavigatorToPtagSetting()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettings);
+            TimeManager.ShortPause();
+        }
+
+        /// <summary>
+        /// Focus ptag by name
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean FocusOnPTagByName(string ptagName)
+        {
+            try
+            {
+                PTagList.FocusOnRow(1, ptagName);
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Focus ptag by name
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean FocusOnPTagByCode(string ptagCode)
+        {
+            try
+            {
+                PTagList.FocusOnRow(2, ptagCode);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Basic Property Operations
+
+        /// <summary>
+        /// Input valid modified value
+        /// </summary>
+        /// <param name="rowID"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public void InputValue(int rowID, string value)
+        {
+            if (2 == rowID)
+                PTagRawDataFirstRow.Fill(value);
+            else //rowID = 1 by default
+                PTagRawDataFirstRow.Fill(value);
+        }
+
+        /// <summary>
+        /// Click save button for RawData modified value
+        /// </summary>
+        public void ClickSaveRawDataButton()
+        {
+            RawDataSaveButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        /// <summary>
+        /// Click "Cancel" Button
+        /// </summary>
+        public void ClickCancelRawDataButton()
+        {
+            RawDataCancelButton.Click();
+        }
+
+        /// <summary>
+        /// Click "Modify Record" Button
+        /// </summary>
+        public void ClickModifyRawDataButton()
+        {
+            RawDataModifyButton.Click();
+        }
+
+        /// <summary>
+        /// Set date range for PTag RawData
+        /// </summary>
+        public void SetDateRange(string startTime, string endTime)
+        {
+            StartDatePicker.SelectDateItem(startTime);
+
+            EndDatePicker.SelectDateItem(endTime);
+
+            if (EndTimeComboBox.Exists() && EndTimeComboBox.IsDisplayed())
+            {
+                EndTimeComboBox.SelectItem("24:00");
+            }
+        }
+
+        #endregion
+
+        #region Verification
+
+        /// <summary>
+        /// Verify whether the UI element exist
+        /// </summary>
+        /// <returns>True if the UI elemrnt exist, false if not</returns>
+        public bool IsExisted(string itemKey)
+        {
+            //Locator itemLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.GridPTagRawDataFirstRow);
+            Locator itemLocator = JazzControlLocatorRepository.GetLocator(itemKey);
+            return ElementHandler.Exists(itemLocator);
+        }
+
+        #endregion
+
+    }
+}

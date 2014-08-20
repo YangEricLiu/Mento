@@ -752,6 +752,8 @@ I18N.Common.Button.Exit = '退出';
 I18N.Common.Button.Clear = '清空';
 I18N.Common.Button.Send = '发送';
 I18N.Common.Button.Confirmed = '已确认';
+I18N.Common.Button.ChangeRecord = '修改记录';
+I18N.Common.Button.Originaldata = '原始数据';
 
 I18N.Common.Operation.ResetZoom = '取消放大/缩小';
 I18N.Common.Operation.ResetZoom1vs1 = '缩放至1:1';

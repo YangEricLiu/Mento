@@ -81,5 +81,13 @@ namespace Mento.ScriptCommon.Library
                 return GetControl<Chart>(JazzControlLocatorKey.ChartWidgetMaxDialog);
             }
         }
+
+        public static Chart PTagRawDataLineChart
+        {
+            get
+            {
+                return GetControl<Chart>(JazzControlLocatorKey.ChartPTagRawData);
+            }
+        }
     }
 }

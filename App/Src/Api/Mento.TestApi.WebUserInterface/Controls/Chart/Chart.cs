@@ -36,6 +36,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator PieDataLabelLocator = new Locator("g.highcharts-data-labels", ByType.CssSelector);
         private static Locator TextLocator = new Locator("text", ByType.TagName);
         private static Locator gLocator = new Locator("g", ByType.TagName);
+        private static Locator RawDataTooltipLocator = new Locator("g.highcharts-tooltip", ByType.CssSelector);
 
         protected IWebElement[] LegendItems
         {
@@ -278,6 +279,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
             BrowserHandler.ExecuteJavaScript(scriptString, labeltooltips[position]);
 
             return labeltooltips[position].Text;
+        }
+
+        public string GetRawDataLineChartTooltip(int position)
+        {
+            string scriptString = "arguments[0].setAttribute('visibility','visible')";
+
+            IWebElement[] rawDataTooltips = FindChildren(RawDataTooltipLocator);
+            BrowserHandler.ExecuteJavaScript(scriptString, rawDataTooltips[position]);
+
+            return rawDataTooltips[position].Text;
         }
 
         public int GetTrendChartLines()

@@ -10,7 +10,6 @@
 		{
 			"AreaNodePath":["楼宇配置测试","CheckAll"],
 			"Messages":["$@Common.Label.ConfirmDelete|(CheckAll),($@Common.Glossary.AreaDimensionNode),()", "$@Common.Glossary.AreaDimensionNodeDeleteTip"],
-
 		}
 	}
 ]

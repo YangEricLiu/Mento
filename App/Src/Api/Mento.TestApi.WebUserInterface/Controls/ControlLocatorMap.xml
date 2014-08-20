@@ -18,7 +18,7 @@
     <add key=" ContainerHiddenItems" value = "table[contains(@id, 'privilegeitem') and (contains(@style, 'display:none;'))]" type ="XPath"/>
     
   <add key="MessageBox" value="//div[contains(@class,'x-message-box')]" type="XPath"/>
-  <add key="MessageBoxOkButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
+  <add key="MessageBoxOkButton" value="div/div/div/div[not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
   <add key="MessageBoxConfirmButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
   <add key="MessageBoxYesButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='是']]" type="XPath"/>
   <add key="MessageBoxNoButton" value="div/div/div/div[contains(@class,'x-btn') and em/button/span[text()='否']]" type="XPath"/>
@@ -86,7 +86,7 @@
   <add key="MonthPickerMonthItem" value = "//div[contains(@class,'x-monthpicker-default')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-months']/div[contains(@class, 'x-monthpicker-month')]/a[text()='$#itemKey']" type ="XPath"/>
   <add key="MonthPickerPreviousNavigator" value = "//div[contains(@class,'x-monthpicker-default')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[@class = 'x-monthpicker-yearnav']/button[contains(@id,'prevEl')]" type ="XPath"/>
   <add key="MonthPickerNextNavigator" value = "//div[contains(@class,'x-monthpicker-default')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[@class = 'x-monthpicker-yearnav']/button[contains(@id,'nextEl')]" type ="XPath"/>
-  <add key="MonthPickerConfirm" value = "//div[contains(@class,'x-monthpicker-default')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type ="XPath"/>
+  <add key="MonthPickerConfirm" value = "//div[contains(@class,'x-monthpicker-default')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[text()='Common.Button.Confirm' or contains(text(),'OK')]]" type ="XPath"/>
   <add key="MonthPickerCancel" value = "//div[contains(@class,'x-monthpicker-defaultr')and not(contains(@style,'display: none'))]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[@class='$@Common.Button.Cancel2']]" type ="XPath"/>
   <!--DatePicker-->
   <add key="DatePickerTrigger" value = "td.x-trigger-cell" type ="CssSelector"/>
@@ -112,6 +112,7 @@
   <!--CheckBoxField-->
   <add key="PermissionCheckBoxTable" value = "//table[contains(@id,'displayfield') and tbody/tr/td/label[text()='$#permissionName']]/../table[contains(@id,'checkboxfield')]" type ="XPath"/>
   <add key="CheckBoxTable" value = "//table[contains(@id,'checkboxfield') and tbody/tr/td/label[text()='$#itemName']]" type ="XPath"/>
+  <add key="CheckBoxInput" value = "//table[contains(@id,'checkboxfield') and tbody/tr/td/label[text()='$#itemName']]/tbody/tr/td/input" type ="XPath"/>
 
   <!--Container-->
   <add key="CustomerMapInfoSetMesaage"  value="//div[@id='st-map-consumption-form-targetEl']/div[contains(@id,'container')]//label[text()='$@Setting.CustomerManagement.Label.AtleastOneConsumption']" type="XPath"/>

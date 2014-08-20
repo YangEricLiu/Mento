@@ -22,7 +22,7 @@ namespace Mento.Script.Customer.TagManagement
     [Owner("Linda")]
     [CreateTime("2014-08-18")]
     [ManualCaseID("TC-J1-FVT-PtagRawData-Modify")]
-    public class ModifyPtagRawData : TestSuiteBase
+    public class ModifyPtagRawDataSuite : TestSuiteBase
     {
         private PTagSettings PTagSettings = JazzFunction.PTagSettings;
         private PTagRawData PTagRawData = JazzFunction.PTagRawData;
@@ -46,7 +46,7 @@ namespace Mento.Script.Customer.TagManagement
         [Test]
         [CaseID("TC-J1-FVT-PtagRawData-Modify-101")]
         [Type("BFT")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyValidPtagSuite), "TC-J1-FVT-PtagRawData-Modify-101")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyPtagRawDataSuite), "TC-J1-FVT-PtagRawData-Modify-101")]
         public void SaveAndTooltipShowWell(PtagData input)
         {
             //Navigate to Raw Data tab

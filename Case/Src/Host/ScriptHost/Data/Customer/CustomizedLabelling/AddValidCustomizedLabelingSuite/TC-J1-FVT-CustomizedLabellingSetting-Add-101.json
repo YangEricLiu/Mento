@@ -5,7 +5,7 @@
 			"CommonName":"自定义能效标识3",
 			"Commodity":"$@Commodity_Water",
 			"KPITypes":["$@Common.Glossary.DayNightRatio","$@EM.Unit.UnitPopulation"],
-			"LabellingLevel":"3$@Setting.CustomizedLabeling.Grade",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade@$ 3",
 			"LabellingLevelValue":"3",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5.144",
@@ -26,7 +26,7 @@
 			"CommonName":"自定义能效标识3",
 			"Commodity":"$@Commodity_Water",
 			"KPITypes":["$@Common.Glossary.DayNightRatio","$@EM.Unit.UnitPopulation"],
-			"LabellingLevel":"3$@Setting.CustomizedLabeling.Grade",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade@$ 3",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5.14",
 			},

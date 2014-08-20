@@ -351,6 +351,20 @@ I18N.Setting.TagConfiguration.FormulaItemType.KPI = '##Common.Glossary.KPI##';
 I18N.Setting.TagConfiguration.FormulaItemType.AdvanceProperty = '高级属性';
 I18N.Setting.TagConfiguration.InvalidFormula = '##Common.Glossary.Formula##的格式有误，请检查。';
 
+//tag raw data
+I18N.Setting.TagConfiguration.AccumulatedValue = '能耗累计值/';
+I18N.Setting.TagConfiguration.DifferenceValue = '能耗差值/';
+I18N.Setting.TagConfiguration.Status = '修改状态';
+I18N.Setting.TagConfiguration.Modified = '已修改';
+I18N.Setting.TagConfiguration.Unmodified = '未修改';
+I18N.Setting.TagConfiguration.RawData = '原始数据';
+I18N.Setting.TagConfiguration.Preview = '预览';
+I18N.Setting.TagConfiguration.History = '修改记录';
+I18N.Setting.TagConfiguration.SaveAndSwitch = '保存并切换';
+I18N.Setting.TagConfiguration.Switch = '直接切换';
+I18N.Setting.TagConfiguration.SwitchTip = '您有未保存的修改项，切换时间段后将会放弃这些修改内容。';
+//tag raw data
+
 I18N.Setting.TagBatchImport = {};
 I18N.Setting.TagBatchImport.ImportDate = '导入时间';
 I18N.Setting.TagBatchImport.TagType = '数据点类型';
@@ -567,12 +581,14 @@ I18N.EM.EnergyOverview = '用能概述';
 I18N.EM.Electric = '电力';
 
 I18N.EM.Unit = {};
+I18N.EM.Unit.UnitOriginal = '指标原值';
 I18N.EM.Unit.UnitPopulationAlias = '人均';
 I18N.EM.Unit.UnitPopulation = '单位人口';
 I18N.EM.Unit.UnitArea = '单位面积';
 I18N.EM.Unit.UnitColdArea = '单位供冷面积';
 I18N.EM.Unit.UnitWarmArea = '单位采暖面积';
 
+I18N.EM.UseRaw = '按原始';
 I18N.EM.UseWeek = '按周';
 I18N.EM.UseHour = '按小时';
 I18N.EM.UseDay = '按天';
@@ -816,9 +832,9 @@ I18N.Common.Label.MandatoryEmptyError = '必填项。';
 I18N.Common.Label.OverValueError = '该输入项的最大值是 999999999。';
 I18N.Common.Label.UnspecifyCommodity = '不指定##Common.Glossary.Commodity##';
 
-I18N.Common.DateRange.Last7Day = '之前7天';
-I18N.Common.DateRange.Last30Day = '之前30天';
-I18N.Common.DateRange.Last12Month = '之前12月';
+I18N.Common.DateRange.Last7Day = '最近7天';
+I18N.Common.DateRange.Last30Day = '最近30天';
+I18N.Common.DateRange.Last12Month = '最近12月';
 I18N.Common.DateRange.Today = '今天';
 I18N.Common.DateRange.Yesterday = '昨天';
 I18N.Common.DateRange.ThisWeek = '本周';
@@ -833,6 +849,7 @@ I18N.Common.DateRange.RelativedTime = '相对时间';
 
 I18N.Common.GraphType.Line = '折线图';
 I18N.Common.GraphType.Column = '柱状图';
+I18N.Common.GraphType.Stack = '堆积图';
 I18N.Common.GraphType.Pie = '饼状图';
 I18N.Common.GraphType.Grid = '数据表';
 
@@ -1292,6 +1309,7 @@ I18N.Setting.Role.CustomLabeling = '自定义能效标识';
 //contact us
 I18N.Setting.ContactUs = {};
 
+I18N.Setting.ContactUs.TitleBar = '施耐德电气云能效';
 I18N.Setting.ContactUs.FunctionName = '联系我们';
 I18N.Setting.ContactUs.Name = '姓名';
 I18N.Setting.ContactUs.Telephone = '电话';
@@ -1299,6 +1317,15 @@ I18N.Setting.ContactUs.CustomerName = '公司';
 I18N.Setting.ContactUs.Title = '职务';
 I18N.Setting.ContactUs.Comment = '描述';
 I18N.Setting.ContactUs.Failed = '发送失败！';
+I18N.Setting.ContactUs.InfoLine1 = "如有任何问题或需要，";
+I18N.Setting.ContactUs.InfoLine2 = "欢迎随时联系我们。";
+I18N.Setting.ContactUs.Submit = '提交';
+I18N.Setting.ContactUs.SendMail = '发送邮件';
+I18N.Setting.ContactUs.RemTelophone = '联系电话';
+I18N.Setting.ContactUs.RemTelophone1 = '+86 10 8434 6072';
+I18N.Setting.ContactUs.RemTelophone2 = '+86 10 8434 6667';
+I18N.Setting.ContactUs.RemTelophone3 = '+86 20 8518 5169';
+I18N.Setting.ContactUs.OK = '信息已发送成功，感谢您对云能效的关注。';
 
 //user profile
 I18N.Setting.UserProfile = {};
@@ -1334,6 +1361,7 @@ I18N.Setting.Feedback.SoftwareIssue = '软件问题';
 I18N.Setting.Feedback.Advice = '建议';
 I18N.Setting.Feedback.Bug = '缺陷';
 I18N.Setting.Feedback.Other = '其他';
+I18N.Setting.Feedback.OK = '意见反馈已成功提交，感谢您对云能效的关注。';
 
 I18N.Setting.SPManagement = {};
 I18N.Setting.SPManagement.SP = '服务供应商';
@@ -1346,6 +1374,18 @@ I18N.Setting.SPManagement.StartDate = '开始运营时间';
 I18N.Setting.SPManagement.Status = '运营状态';
 I18N.Setting.SPManagement.SendMail = '发送邮件';
 I18N.Setting.SPManagement.MailSent = '邮件已发送。';
+
+//QR Code
+I18N.Setting.QRCode = {};
+I18N.Setting.QRCode.Site = "微站点";
+I18N.Setting.QRCode.iPad = "iPad客户端";
+I18N.Setting.QRCode.SiteTitle = "云能效微站点";
+I18N.Setting.QRCode.ProductName = "云能效";
+I18N.Setting.QRCode.iPad1 = "使用iPad上的二维码扫描软件";
+I18N.Setting.QRCode.iPad2 = "拍摄上方二维码即可立即下载";
+I18N.Setting.QRCode.Site1 = "使用微信扫描上方二维码";
+I18N.Setting.QRCode.Site2 = "即可添加该订阅号";
+I18N.Setting.QRCode.iPadTitle = "云能效iPad客户端";
 
 //widget template 
 I18N.Setting.Template = {};
@@ -1422,7 +1462,7 @@ I18N.Message.M02205 = '昼夜比关键能效指标不支持按小时展示';
 I18N.Message.M02301 = '该层级节点不存在。';
 I18N.Message.M02023 = '所选数据点介质不同，无法共同绘制饼状图！';
 I18N.Message.M02009 = '没有数据权限或权限已被修改，无法查询数据';
-I18N.Message.M02407 = '峰谷平电价展示不支持按小时展示';
+I18N.Message.M02407 = '峰谷平电价展示不支持按原始/小时展示';
 I18N.Message.M02408 = '该节点未设置峰谷时段，无法展示';
 
 I18N.Message.M02601 = '缺少昼夜日历的部分，无法绘图。请设置后再试。';//'{0}所对应的层级节点没有设置昼夜日历，无法查看昼夜比数据';
@@ -1598,6 +1638,8 @@ I18N.Message.M08213 = I18N.format(I18N.Message.UpdateConcurrency, I18N.Common.Gl
 I18N.Message.M08214 = '当前区域维度节点无子节点';   //for energy view single tag to pie chart
 
 
+I18N.Message.M09101 = '数据已被删除，界面将被刷新。';
+I18N.Message.M09102 = '数据已被他人修改，界面将被刷新。';
 I18N.Message.M09107 = '数据已被他人修改，请点击“确定”开始重新加载数据。';
 I18N.Message.M09112 = '对应的##Common.Glossary.Tag##已被删除，马上为您刷新。';
 I18N.Message.M09113 = '计算前请先设置计算规则。';

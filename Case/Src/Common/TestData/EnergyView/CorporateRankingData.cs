@@ -31,7 +31,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public EnergyViewType ViewType { get; set; }
         public MultipleHierarchyAndtags[] MultipleHierarchyAndtags { get; set; }
     }
-
+    
     public class RankingOutput : ExpectedTestDataBase
     {
         public string[][] Hierarchies { get; set; }

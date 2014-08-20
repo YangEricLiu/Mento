@@ -211,6 +211,7 @@
           <add key="ButtonConfirmHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
           <add key="ButtonClearHierarchyRank" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Clear']]" type="XPath"/>
 
+          <add key="ButtonEnergyDisplayStepRaw" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='$@EM.Raw']]" type="XPath"/>
           <add key="ButtonEnergyDisplayStepHour" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='$@EM.Hour']]" type="XPath"/>
           <add key="ButtonEnergyDisplayStepDay" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='$@EM.Day']]" type="XPath"/>
           <add key="ButtonEnergyDisplayStepWeek" value="//div[contains(@id, 'stepselectorcomponent') and contains(@class,'x-container-default') and not(contains(@style, 'display: none;'))]/div/div[contains(@class,'x-btn') and not(contains(@style, 'display: none;')) and em/button/span[text()='$@EM.Week']]" type="XPath"/>
@@ -293,8 +294,8 @@
               <add key="ButtonKPITargetBaselineCalculationRuleCreate" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button[@type='empty']/span[text()='$@Setting.TargetBaseline.CalculationRule']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineCalculationRuleBack" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.GoBack']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineCalculationRuleModify" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@id,'tbpanel') and not(contains(@style,'display: none;'))]//div[contains(@id,'button') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
-              <add key="ButtonKPITargetBaselineCalculateTarget" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算目标值' or text()='Calculate Target']]" type="XPath"/>
-              <add key="ButtonKPITargetBaselineCalculateBaseline" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算基准值' or text()='Calculate Benchmark']]" type="XPath"/>
+              <add key="ButtonKPITargetBaselineCalculateTarget" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算' or text()='Calculate ']]" type="XPath"/>
+              <add key="ButtonKPITargetBaselineCalculateBaseline" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='计算' or text()='Calculate ']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineRevise" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.TargetBaseline.EditCalculationBtnText']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineSave" value="//div[@id='setting-region-east-body']/div/div[contains(@id,'controllertabpanel')]/div[contains(@class,'x-tb-panel-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonKPITargetBaselineCancel" value="//div[@id='setting-region-east-body']//div[contains(@class,'x-btn') and not(contains(@style,'display: none')) and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
@@ -949,7 +950,7 @@
       <add key="GridAssociationTagList" value="//div[@id='st-tag-assoc-form-body']//div[contains(@class,'x-grid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
       <add key="GridCustomizedLabellingList" value="st-customized-labeling-grid" type="ID"/>
-      <add key="GridPTagRawdata" value="//div[contains(@id,'rawdatagridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridPTagRawData" value="//div[contains(@id,'rawdatagridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     </customersettings>
     
     <platformsettings>
@@ -1065,7 +1066,7 @@
         <add key="LabelDayNightCalendar" value="st-hierarchy-calendar-daynight-container" type="ID"/>
         <add key="LabelTitleWorkday" value="//div[@id='st-hier-calendar-form-body']//label[text()='$@Setting.Label.WorkdaySetting']" type="XPath"/>
         <add key="LabelTitleHeatingCooling" value="//div[@id='st-hier-calendar-form-body']//label[text()='$@Setting.Label.ColdwarmSetting']" type="XPath"/>
-        <add key="LabelTitleDayNight" value="//div[@id='st-hier-calendar-form-body']//label[text()='$@Setting.Label.DaynightSetting']" type="XPath"/>
+        <add key="LabelTitleDayNight" value="//div[@id='st-hier-calendar-form-body']//label[text()='$@Setting.Calendar.DayNight']" type="XPath"/>
       </HierarchyCalendar>
       
       <HierarchyPopulationArea>

@@ -2,21 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Source":"$@Commodity_CoalOil@$($@Uom_kg@$)",
-			"EffectiveYear":"2049",
-			"FactorValue":"3",			
-		},
-		"ExpectedData":
-		{
-			"Destination":"$@Common.CarbonUomType.StandardCoal",	
-		    "EffectiveYear":"2049",
-			"FactorValue":"3",	
-		}
-	},
-	{
-		"InputData":
-		{	
-			"Source":"$@Commodity_Other@$($@Uom_kg@$$@Common.CarbonUomType.StandardCoal@$)",
+			"Source":"$@Commodity_Other@$($@Uom_kgce@$)",
 			"EffectiveYear":"2012",
 			"FactorValue":"0.5",			
 		},
@@ -30,7 +16,7 @@
 	{
 		"InputData":
 		{	
-			"Source":"$@Commodity_Other@$($@Uom_kg@$$@Common.CarbonUomType.CO2@$)",
+			"Source":"$@Commodity_Other@$($@Uom_kgCO₂@$)",
 			"EffectiveYear":"2013",
 			"FactorValue":"2",			
 		},
@@ -41,4 +27,18 @@
 			"FactorValue":"2",	
 		}
 	},
+	{
+		"InputData":
+		{	
+			"Source":"$@Commodity_CoalOil@$($@Uom_kg@$)",
+			"EffectiveYear":"2049",
+			"FactorValue":"3",			
+		},
+		"ExpectedData":
+		{
+			"Destination":"$@Common.CarbonUomType.StandardCoal",	
+		    "EffectiveYear":"2049",
+			"FactorValue":"3",	
+		}
+	}
 ]

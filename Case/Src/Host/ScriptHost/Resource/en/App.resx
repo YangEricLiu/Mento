@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccountIsBeingCreated" xml:space="preserve">
-    <value>"The account is being created, please wait..."</value>
+    <value>Creating account, please wait...</value>
   </data>
   <data name="Administration_CONSTUOM_PERSON_CODE" xml:space="preserve">
     <value>People</value>
@@ -127,7 +127,7 @@
     <value>Tree</value>
   </data>
   <data name="BLCOMMON_ProductInfo" xml:space="preserve">
-    <value>Schneider Electric EnergyMost Administrator</value>
+    <value>Schneider Electric EnergyMost Platform</value>
   </data>
   <data name="Customer_BusinessPersonnal" xml:space="preserve">
     <value>Business personnel</value>
@@ -136,12 +136,11 @@
     <value>Management level</value>
   </data>
   <data name="Customer_CloneDemoUserEmailBody" xml:space="preserve">
-    <value>"Dear Mr./Ms.,&lt;p&gt;
- You are applying to try {3}&lt;br/&gt;
- at {2}. Please click the following link within 24 hours and go for a trial:&lt;br/&gt;
+    <value>Dear Mr./Ms.,&lt;p&gt;
+ You are applying to try {3} at {2}. Please click the following link within 24 hours and go for a trial:&lt;br/&gt;
 &lt;a href='{1}'&gt;{1}&lt;/a&gt;&lt;br/&gt;
  May you have a pleasant trial experience. &lt;br/&gt;&lt;br/&gt;
- Best regards,&lt;br/&gt;{3}&lt;/p&gt;"</value>
+ Best regards,&lt;br/&gt;{3}&lt;/p&gt;</value>
   </data>
   <data name="Customer_CloneDemoUserEmailHeader" xml:space="preserve">
     <value>Welcome to try {0}</value>
@@ -150,7 +149,7 @@
     <value>Cooling area</value>
   </data>
   <data name="Customer_CustomerAdmin" xml:space="preserve">
-    <value>Client administrator</value>
+    <value>Customer administrator</value>
   </data>
   <data name="Customer_DepartmentManager" xml:space="preserve">
     <value>Department manager</value>
@@ -168,20 +167,20 @@
     <value>Heating area</value>
   </data>
   <data name="Customer_InitPasswordEmailBody" xml:space="preserve">
-    <value> "Hi {0},&lt;p&gt;
-            Welcome to use{7} &lt;br/&gt;
+    <value>Hi {0},&lt;p&gt;
+            Welcome to use {7} &lt;br/&gt;
             Your account information is as follows: &lt;br/&gt;
             Username: {1}&lt;br/&gt;
-            True name: {0}&lt;br/&gt;
+            Name: {0}&lt;br/&gt;
             Job title: {5}&lt;br/&gt;
-            Tel: {2}&lt;br/&gt;
+            Tel.: {2}&lt;br/&gt;
             E-mail: {3}&lt;br/&gt;
             Pleas click the following link to set your login password: &lt;br/&gt;
             &lt;a href='{4}'&gt;{4}&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
             May you have a pleasant experience! &lt;br/&gt;
             Best regards, &lt;br/&gt;
             {6}
-            &lt;/p&gt;"</value>
+            &lt;/p&gt;</value>
   </data>
   <data name="Customer_InitPasswordEmailTopic" xml:space="preserve">
     <value>Welcome to use{0}</value>
@@ -190,14 +189,14 @@
     <value>Platform administrator</value>
   </data>
   <data name="Customer_ResetPasswordEmailBody" xml:space="preserve">
-    <value> " Hi {0},&lt;p&gt;
+    <value>Hi {0},&lt;p&gt;
             You have applied to reset your{3}password at {2}.&lt;br/&gt;
             Please click the following link within 24 hours to reset your login password. &lt;br/&gt;
             &lt;a href='{1}'&gt;{1}&lt;/a&gt;&lt;br/&gt;
             Thanks for your support to {3}.&lt;br/&gt;
             Best regards, &lt;br/&gt;
             Schneider Electric Digital Energy Service Department
-            &lt;/p&gt;"</value>
+            &lt;/p&gt;</value>
   </data>
   <data name="Customer_ResetPasswordTopic" xml:space="preserve">
     <value>Apply to reset password</value>
@@ -292,23 +291,71 @@
   <data name="Energy_DataExportColumn_Value" xml:space="preserve">
     <value>Value</value>
   </data>
+  <data name="Energy_DataExportCommon_DateFormat" xml:space="preserve">
+    <value>yyyy-MM-dd</value>
+  </data>
+  <data name="Energy_DataExportCommon_TimeFormat" xml:space="preserve">
+    <value>HH:mm</value>
+  </data>
   <data name="Energy_DataExportCommon_To" xml:space="preserve">
     <value>To</value>
   </data>
   <data name="Energy_DataExportCommon_TotalView" xml:space="preserve">
     <value>Overview</value>
   </data>
+  <data name="Energy_DataExport_DateTimeFormat_H" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYY" xml:space="preserve">
+    <value>yyyy</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYM" xml:space="preserve">
+    <value>yyyy/M</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYMD" xml:space="preserve">
+    <value>yyyy/M/d</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYMDH" xml:space="preserve">
+    <value>yyyy/M/d H:00</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYMMDDHH" xml:space="preserve">
+    <value>yyyy/MM/dd</value>
+  </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYMMDDHHMMSS" xml:space="preserve">
+    <value>yyyy/MM/DD HH:mm:ss</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportColumn_ModifyTime" xml:space="preserve">
+    <value>Modify time</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportColumn_NewValue" xml:space="preserve">
+    <value>New value</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportColumn_OriginalValue" xml:space="preserve">
+    <value>Original value</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportColumn_RecordTime" xml:space="preserve">
+    <value>Record time</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportColumn_UserId" xml:space="preserve">
+    <value>User name</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExportFileNameFormat" xml:space="preserve">
+    <value>{0}_Modify_history.xls</value>
+  </data>
+  <data name="Energy_TagDataModifyLogExport_DateTimeFormat" xml:space="preserve">
+    <value>yyyy-MM-dd HH:mm:ss</value>
+  </data>
   <data name="Energy_To" xml:space="preserve">
     <value>To</value>
   </data>
   <data name="HomePage_DemoIsBeingCreated" xml:space="preserve">
-    <value>"The account is being created, please wait..."</value>
+    <value>Creating account, please wait...</value>
   </data>
-  <data name="HomePage_Loading" xml:space="preserve">
-    <value>Loading</value>
+  <data name="HomePage_LoadingEMOP" xml:space="preserve">
+    <value>EnergyMost platform is loading</value>
   </data>
-  <data name="HomePage_WelcomeToTrail" xml:space="preserve">
-    <value>Welcome</value>
+  <data name="HomePage_WelcomeToTrailEMOP" xml:space="preserve">
+    <value>Welcome to trial use EnergyMost platform</value>
   </data>
   <data name="MobelAPI_CNStandard" xml:space="preserve">
     <value>Chinese standards</value>
@@ -320,7 +367,7 @@
     <value>Dear operation and maintenance administrator!\r\n feedback provider: {0}\r\n name: {1}\r\n{2}\r\n time: {3}\r\n question type: {4}\r\n question description: {5}\r\n contact information: {6}\r\n e-mail: {7}\r\n{8}feedback platform</value>
   </data>
   <data name="STS_BackLoginPage" xml:space="preserve">
-    <value>Back to home page</value>
+    <value>Back to login page</value>
   </data>
   <data name="STS_UserName_UserNameShouldNotBeEmpty" xml:space="preserve">
     <value>Username cannot be empty</value>
@@ -332,13 +379,13 @@
     <value>Forget password</value>
   </data>
   <data name="STS_LinkIsExpired" xml:space="preserve">
-    <value>Link expired!</value>
+    <value>Link expired.</value>
   </data>
   <data name="STS_LinkIsInvalid" xml:space="preserve">
-    <value>Invalid link!</value>
+    <value>Invalid link.</value>
   </data>
-  <data name="STS_Literal_About" xml:space="preserve">
-    <value>About</value>
+  <data name="STS_Literal_About_SE" xml:space="preserve">
+    <value>About us</value>
   </data>
   <data name="STS_Literal_Copyright" xml:space="preserve">
     <value>Copyright. All rights reserved.</value>
@@ -347,19 +394,19 @@
     <value>Efficient management approaches</value>
   </data>
   <data name="STS_Literal_Login_Col1_Sub" xml:space="preserve">
-    <value>Save enterprise operation and investment costs</value>
+    <value>operation and investment saving</value>
   </data>
   <data name="STS_Literal_Login_Col2" xml:space="preserve">
-    <value>Expert-level consultation service</value>
+    <value>Expert service</value>
   </data>
   <data name="STS_Literal_Login_Col2_Sub" xml:space="preserve">
-    <value>Help to promote the green development</value>
+    <value>helps to promote the green development</value>
   </data>
   <data name="STS_Literal_Login_Col3" xml:space="preserve">
-    <value>Large-scale application of the system</value>
+    <value>Scalable platform</value>
   </data>
   <data name="STS_Literal_Login_Col3_Sub" xml:space="preserve">
-    <value>Constantly meet your needs in business expansion</value>
+    <value>constantly meet your business expansion</value>
   </data>
   <data name="STS_Literal_Weibo" xml:space="preserve">
     <value>Schneider Electric official Weibo</value>
@@ -374,7 +421,7 @@
     <value>Mail has been sent. Please log into your mail box to reset the password.</value>
   </data>
   <data name="STS_Trail_ReqDemoLogin" xml:space="preserve">
-    <value>Product trial</value>
+    <value>Trial use</value>
   </data>
   <data name="STS_Pwd_SetPassword" xml:space="preserve">
     <value>Set password</value>
@@ -383,7 +430,7 @@
     <value>Please enter your e-mail address</value>
   </data>
   <data name="STS_Trail_EmailHasBeenSent" xml:space="preserve">
-    <value>Mail has been sent successfully. Please log into your mail box to click the link and start product trial.</value>
+    <value>Mail has been sent successfully. Please log into your mail box to click the link and start trial use.</value>
   </data>
   <data name="STS_UserName_UserDoesNotExist" xml:space="preserve">
     <value>The username does not exist.</value>
@@ -410,10 +457,10 @@
     <value>Job title: {0}\r\n</value>
   </data>
   <data name="WEBAPI_MailContactUsBody" xml:space="preserve">
-    <value>"Dear client service representative,\r\n contact name: {0}\r\n tel: {1}\r\n e-mail: {2}\r\n company: {3}\r\n{4}{5}\r\n{6}"</value>
+    <value>Dear customer service representative,\r\n contact name: {0}\r\n tel.: {1}\r\n e-mail: {2}\r\n company: {3}\r\n{4}{5}\r\n{6}</value>
   </data>
   <data name="WEBAPI_MailContactUsTopic" xml:space="preserve">
-    <value>"""Contact us"" message from {0}"</value>
+    <value>"Contact us" message from {0}</value>
   </data>
   <data name="WEBAPI_MailFeedbackTopic" xml:space="preserve">
     <value>Feedback from {0}</value>
@@ -422,7 +469,7 @@
     <value>Service provider:{0}</value>
   </data>
   <data name="WEBAPI_Telephone" xml:space="preserve">
-    <value>Tel</value>
+    <value>Tel.</value>
   </data>
   <data name="WEBAPI_Title" xml:space="preserve">
     <value>Job title</value>
@@ -442,6 +489,9 @@
   <data name="WEBCOMMONCONST_YEAR" xml:space="preserve">
     <value>Year</value>
   </data>
+  <data name="Energy_DataExport_DateTimeFormat_YYYYMDHm" xml:space="preserve">
+    <value>yyyy-MM-dd HH:mm</value>
+  </data>
   <data name="Common_EMOP" xml:space="preserve">
     <value>EnergyMost Management Platform</value>
   </data>
@@ -449,7 +499,7 @@
     <value>Schneider Electric</value>
   </data>
   <data name="Common_SchneiderElectricChina" xml:space="preserve">
-    <value>"Schneider Electric (China) Co.,Ltd."</value>
+    <value>Schneider Electric (China) Co.,Ltd.</value>
   </data>
   <data name="STS_Continue" xml:space="preserve">
     <value>Continue</value>
@@ -458,13 +508,13 @@
     <value>Confirm new password</value>
   </data>
   <data name="STS_Pwd_Hello" xml:space="preserve">
-    <value>"Hi {0},"</value>
+    <value>Hi {0},</value>
   </data>
   <data name="STS_Pwd_InitPwdSet_Description" xml:space="preserve">
     <value>Please set your password before using for the first time.</value>
   </data>
   <data name="STS_Pwd_PwdReset_Title" xml:space="preserve">
-    <value>"Hi &lt;span class=""hightlight""&gt;{0}&lt;/span&gt;,"</value>
+    <value>Hi &lt;span class=""hightlight""&gt;{0}&lt;/span&gt;,</value>
   </data>
   <data name="STS_Pwd_NewPwd" xml:space="preserve">
     <value>New password</value>
@@ -473,13 +523,13 @@
     <value>Please reset your password.</value>
   </data>
   <data name="STS_Pwd_PwdRule" xml:space="preserve">
-    <value>"English letters, numbers, underlines and spacing are allowed."</value>
+    <value>English letters, numbers, underlines and spacing are allowed.</value>
   </data>
   <data name="STS_Pwd_RequestPwdReset_Description" xml:space="preserve">
-    <value>"Please enter your username and the e-mail address you have already filled out in the system, and click the “Continue” button. We will send you the link to reset password through e-mail. You may re-login system after password reset."</value>
+    <value>Please enter your username and the e-mail address you have already filled out in the system, and click the continue button.</value>
   </data>
   <data name="STS_Pwd_RequestPwdReset_ForgotEmail" xml:space="preserve">
-    <value>"If you forgot the e-mail address submitted before, please contact your administrator."</value>
+    <value>If you forgot the e-mail address submitted before, please contact your administrator.</value>
   </data>
   <data name="STS_Literal_ContactUs" xml:space="preserve">
     <value>Contact us</value>
@@ -488,16 +538,16 @@
     <value>Mail box</value>
   </data>
   <data name="STS_Literal_ContactUs_IfAnyQuestion" xml:space="preserve">
-    <value>"If you have any questions or requirements, please feel free to contact us."</value>
+    <value>If you have any questions or requirements, please feel free to contact us.</value>
   </data>
   <data name="STS_Literal_ContactUs_Telephone" xml:space="preserve">
-    <value>Telephone</value>
+    <value>Tel.</value>
   </data>
   <data name="STS_Literal_ContactUs_WechatSite" xml:space="preserve">
     <value>Micro site</value>
   </data>
-  <data name="STS_Literal_iPadClient" xml:space="preserve">
-    <value>EnergyMost iPad Client</value>
+  <data name="STS_Literal_EMOP_iPadClient" xml:space="preserve">
+    <value>EnergyMost for iPad</value>
   </data>
   <data name="STS_Literal_iPad_QRDownload" xml:space="preserve">
     <value>Download is available using QR code scanner on the iPad to scan the QR code above</value>
@@ -512,19 +562,19 @@
     <value>Click the link in e-mail to reset password.</value>
   </data>
   <data name="STS_Pwd_ClickToTrail" xml:space="preserve">
-    <value>Click the link in e-mail to start product trial.</value>
+    <value>Click the link in e-mail to start trial use.</value>
   </data>
   <data name="STS_Pwd_EmailIncorrect" xml:space="preserve">
     <value>Is e-mail address wrong?</value>
   </data>
   <data name="STS_Trail_RequestTrailAgain" xml:space="preserve">
-    <value>Re-apply product trial</value>
+    <value>Re-apply trial use</value>
   </data>
   <data name="STS_Pwd_Send" xml:space="preserve">
     <value>Send</value>
   </data>
   <data name="STS_Pwd_SendToEmail" xml:space="preserve">
-    <value>E-mail has been sent to {0}.</value>
+    <value>E-mail has been sent to &lt;span class="highlight"&gt;{0}&lt;/span&gt;.</value>
   </data>
   <data name="STS_Literal_SwitchLanguage_ConfirmContinue" xml:space="preserve">
     <value>"EnergyMost is about to leave the current page to finish language switch, do you want to continue?"</value>
@@ -532,8 +582,23 @@
   <data name="STS_Trail_Title" xml:space="preserve">
     <value>Welcome to try Schneider Electric EnergyMost Management Platform</value>
   </data>
+  <data name="Common_HourlyFormat" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Common_Minit" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Common_MinuteFormat_1" xml:space="preserve">
+    <value>yyyy-MM-dd HH:mm</value>
+  </data>
+  <data name="Common_MinuteFormat_2" xml:space="preserve">
+    <value>yyyyMMddHHmm</value>
+  </data>
+  <data name="Common_MinuteFormat_3" xml:space="preserve">
+    <value>yyyyMMdd2400</value>
+  </data>
   <data name="WEBHOST_TagImportFileName" xml:space="preserve">
-    <value>Configure tag import</value>
+    <value>Configure_tag_import</value>
   </data>
   <data name="STS_Literal_ContactUs_OK" xml:space="preserve">
     <value>OK</value>
@@ -554,7 +619,7 @@
     <value>Please enter password.</value>
   </data>
   <data name="STS_Pwd_Pwd2ShouldNotBeNull" xml:space="preserve">
-    <value>Confirm that password cannot be empty.</value>
+    <value>Confirmed password cannot be empty.</value>
   </data>
   <data name="STS_Pwd_PwdResetRule" xml:space="preserve">
     <value>Please at least include upper and lower case letters and numbers with 6-20 digits. Spacing is not supported.</value>
@@ -569,6 +634,186 @@
     <value>"Hi &lt;span class=""hightlight""&gt;{0}&lt;/span&gt;, welcome to log into Schneider Electric EnergyMost Management Platform! "</value>
   </data>
   <data name="STS_UserName_UserHasBeenDeleted" xml:space="preserve">
-    <value>Your account has been deleted! Please contact the administrator.</value>
+    <value>Your account has been deleted. Please contact the administrator.</value>
+  </data>
+  <data name="TagImport_AccumulatedIsEmpty" xml:space="preserve">
+    <value>Accumulative value is void or illegal;</value>
+  </data>
+  <data name="TagImport_CalculationStepIsEmpty" xml:space="preserve">
+    <value>Calculated interval is void or illegal;</value>
+  </data>
+  <data name="TagImport_CalculationStepIsNotValid" xml:space="preserve">
+    <value>The value of interval is void :</value>
+  </data>
+  <data name="TagImport_CalculationStepShouldNotBreakReferredTagsRules" xml:space="preserve">
+    <value>This datapoint has been referred to by other datapoint. Newly calculated interval must be smaller or equal to the calculated interval of the datapoint referred to;</value>
+  </data>
+  <data name="TagImport_CalculationTypeIsEmpty" xml:space="preserve">
+    <value>Calculation method is void or the value is illegal;</value>
+  </data>
+  <data name="TagImport_ChannelIdIsNullOrEmpty" xml:space="preserve">
+    <value>Tag channel id is void or illegal;</value>
+  </data>
+  <data name="TagImport_ChannelIdIsOverLongMax" xml:space="preserve">
+    <value>Tag channel id exceeds (999999999999999) or is less than 1;</value>
+  </data>
+  <data name="TagImport_CodeExistNoSupportedCharcters" xml:space="preserve">
+    <value>Illegal character in tag code.</value>
+  </data>
+  <data name="TagImport_CodeIsDuplicate" xml:space="preserve">
+    <value>Repeat tag code;</value>
+  </data>
+  <data name="TagImport_CodeIsNullOrEmpty" xml:space="preserve">
+    <value>Void tag code;</value>
+  </data>
+  <data name="TagImport_CommentExistNoSupportedCharacters" xml:space="preserve">
+    <value>Illegal character in tag code.</value>
+  </data>
+  <data name="TagImport_CommodityIsEmpty" xml:space="preserve">
+    <value>Commodity is void;</value>
+  </data>
+  <data name="TagImport_EnergyConsumptionTagOfTheCommodityExists" xml:space="preserve">
+    <value>Other tags of the same commodity at node of the same level or node of the same dimension have been marked as energy consumption datapoints.</value>
+  </data>
+  <data name="TagImport_ExcelHeader_CalculationStep" xml:space="preserve">
+    <value>CalculationStep</value>
+  </data>
+  <data name="TagImport_ExcelHeader_CalculationType" xml:space="preserve">
+    <value>CalculationType</value>
+  </data>
+  <data name="TagImport_ExcelHeader_ChannelID" xml:space="preserve">
+    <value>ChannelID</value>
+  </data>
+  <data name="TagImport_ExcelHeader_Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="TagImport_ExcelHeader_Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="TagImport_ExcelHeader_Commodity" xml:space="preserve">
+    <value>Commodity</value>
+  </data>
+  <data name="TagImport_ExcelHeader_IsAccumulated" xml:space="preserve">
+    <value>IsAccumulated</value>
+  </data>
+  <data name="TagImport_ExcelHeader_MeterCode" xml:space="preserve">
+    <value>MeterCode</value>
+  </data>
+  <data name="TagImport_ExcelHeader_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="TagImport_ExcelHeader_UOM" xml:space="preserve">
+    <value>UOM</value>
+  </data>
+  <data name="TagImport_Failed" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+  <data name="TagImport_FailedReason" xml:space="preserve">
+    <value>Reason for failure</value>
+  </data>
+  <data name="TagImport_MeterCodeExistNotSupportedCharacters" xml:space="preserve">
+    <value>Illegal character in tag meter code.</value>
+  </data>
+  <data name="TagImport_MeterCodeIsNullOrEmpty" xml:space="preserve">
+    <value>Tag meter code is void;</value>
+  </data>
+  <data name="TagImport_NameExistNotSupportedCharacters" xml:space="preserve">
+    <value>Illegal character in tag name;</value>
+  </data>
+  <data name="TagImport_NameIsNullOrEmpty" xml:space="preserve">
+    <value>Tag name is void;</value>
+  </data>
+  <data name="TagImport_New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="TagImport_Operation" xml:space="preserve">
+    <value>Operate</value>
+  </data>
+  <data name="TagImport_OverCodeMaxLenth" xml:space="preserve">
+    <value>Tag code length exceeds maximum length 100;</value>
+  </data>
+  <data name="TagImport_OverCommmentMaxLenth" xml:space="preserve">
+    <value>Tag remarks exceeds maximum length 100;</value>
+  </data>
+  <data name="TagImport_OverMeterCodeMaxLenth" xml:space="preserve">
+    <value>Length of tag meter code exceeds maximum length 100;</value>
+  </data>
+  <data name="TagImport_OverNameMaxLenth" xml:space="preserve">
+    <value>Length of tag name exceeds 30;</value>
+  </data>
+  <data name="TagImport_PTagMeterCodeAndChannelIdDuplicated" xml:space="preserve">
+    <value>Tag meter code is the same with channel id;</value>
+  </data>
+  <data name="TagImport_PTagNameIsDuplicated" xml:space="preserve">
+    <value>Tag of the same name has been related to node of the same level or node of the same dimension</value>
+  </data>
+  <data name="TagImport_PTagUomIsUnsupportedForAppointedCommodity" xml:space="preserve">
+    <value>Mismatch between unit and commodity</value>
+  </data>
+  <data name="TagImport_Secquence" xml:space="preserve">
+    <value>Serial number</value>
+  </data>
+  <data name="TagImport_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TagImport_Succeed" xml:space="preserve">
+    <value>Succeed</value>
+  </data>
+  <data name="TagImport_TagIsExpired" xml:space="preserve">
+    <value>Tag out of date</value>
+  </data>
+  <data name="TagImport_UnknownFailedReason" xml:space="preserve">
+    <value>Unknown mistake</value>
+  </data>
+  <data name="TagImport_UOMIsEmpty" xml:space="preserve">
+    <value>Unit is void;</value>
+  </data>
+  <data name="TagImport_Upgrade" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="TagImport_VTagFormulaContainsInvalidTagSavingFailed" xml:space="preserve">
+    <value>The formula used to calculate virtual datapoint includes illegal datapoint so it cannot be saved</value>
+  </data>
+  <data name="Energy_DataExportColumn_Peak" xml:space="preserve">
+    <value>Peak</value>
+  </data>
+  <data name="Energy_DataExportColumn_Plain" xml:space="preserve">
+    <value>Plain</value>
+  </data>
+  <data name="Energy_DataExportColumn_Valley" xml:space="preserve">
+    <value>Valley</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hourly" xml:space="preserve">
+    <value>Hourly</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="TagImport_CaclationType_Avg" xml:space="preserve">
+    <value>Avg</value>
+  </data>
+  <data name="TagImport_CaclationType_Max" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="TagImport_CaclationType_Min" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="TagImport_CaclationType_Sum" xml:space="preserve">
+    <value>Sum</value>
+  </data>
+  <data name="TagImport_IsAccumulated_No" xml:space="preserve">
+    <value>False</value>
+  </data>
+  <data name="TagImport_IsAccumulated_Yes" xml:space="preserve">
+    <value>True</value>
+  </data>
+  <data name="STS_Literal_EMOP_s" xml:space="preserve">
+    <value>EnergyMost</value>
+  </data>
+  <data name="STS_Literal_iPadClient" xml:space="preserve">
+    <value>iPad client</value>
   </data>
 </root>

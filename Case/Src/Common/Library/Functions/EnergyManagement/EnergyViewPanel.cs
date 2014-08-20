@@ -20,6 +20,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SelectHierarchyButton = JazzButton.EnergyViewSelectHierarchyButton;
         private static HierarchyTree HierarchyTree = JazzTreeView.EnergyViewHierarchyTree;
 
+        private static ToggleButton EnergyDisplayStepRawButton = JazzButton.EnergyDisplayStepRawButton;
         private static ToggleButton EnergyDisplayStepHourButton = JazzButton.EnergyDisplayStepHourButton;
         private static ToggleButton EnergyDisplayStepDayButton = JazzButton.EnergyDisplayStepDayButton;
         private static ToggleButton EnergyDisplayStepWeekButton = JazzButton.EnergyDisplayStepWeekButton;
@@ -38,6 +39,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Dictionary<DisplayStep, string> DisplayStepItem = new Dictionary<DisplayStep, string>()
         {
+            {DisplayStep.Raw, "$@EM.UseRaw"},
             {DisplayStep.Hour, "$@EM.UseHour"},
             {DisplayStep.Day, "$@EM.UseDay"},
             {DisplayStep.Week, "$@EM.UseWeek"},
@@ -112,6 +114,10 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             switch (step)
             {
+                case DisplayStep.Raw:
+                    //click "Raw" step
+                    EnergyDisplayStepRawButton.Click();
+                    break;
                 case DisplayStep.Hour:
                     //click "Hourly" step
                     EnergyDisplayStepHourButton.Click();
@@ -1012,5 +1018,5 @@ namespace Mento.ScriptCommon.Library.Functions
     }
 
     public enum TagTabs { HierarchyTag, SystemDimensionTab, AreaDimensionTab, }
-    public enum DisplayStep { Hour, Day, Week, Month, Year, Default}
+    public enum DisplayStep { Raw, Hour, Day, Week, Month, Year, Default}
 }

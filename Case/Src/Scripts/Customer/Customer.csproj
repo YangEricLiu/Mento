@@ -88,7 +88,7 @@
     <Compile Include="TagManagement\AddInvalidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidVtagSuite.cs" />
     <Compile Include="TagManagement\CalculateReviseTargetBaselineSuite.cs" />
-    <Compile Include="TagManagement\ModifyPtagRawData.cs" />
+    <Compile Include="TagManagement\ModifyPtagRawDataSuite.cs" />
     <Compile Include="TagManagement\ModifyInvalidTargetBaselineSuite.cs" />
     <Compile Include="TagManagement\ModifyValidTargetBaselineSuite.cs" />
     <Compile Include="TagManagement\ViewTargetBaselineCalendarSuite.cs" />

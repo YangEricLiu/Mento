@@ -71,7 +71,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         // common checkbox check
         public void CommonCheck(string itemName)
         {
-            IWebElement checkbox = GetCheckBoxFieldElement(itemName);
+            IWebElement checkbox = GetCheckBoxInputElement(itemName);
 
             if (!IsCommonChecked(itemName))
                 checkbox.Click();
@@ -179,6 +179,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxTable), ITEMNAME, itemName);
         }
+
+        private Locator GetCheckBoxInputLocator(string itemName)
+        {
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxInput), ITEMNAME, itemName);
+        }
         /*
         private Locator GetCheckBoxFieldLocator(string itemName)
         {
@@ -194,6 +199,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private IWebElement GetCheckBoxFieldElement(string itemName)
         {
             return FindChild(GetCheckBoxFieldLocator(itemName));
+        }
+
+        private IWebElement GetCheckBoxInputElement(string itemName)
+        {
+            return FindChild(GetCheckBoxInputLocator(itemName));
         }
 
         #endregion

@@ -220,7 +220,7 @@
     <value>Petrol</value>
   </data>
   <data name="Commodity_LowPressureSteam" xml:space="preserve">
-    <value>LowPressure Steam</value>
+    <value>L-P Steam</value>
   </data>
   <data name="Commodity_DieselOil" xml:space="preserve">
     <value>Diesel oil</value>
@@ -267,10 +267,10 @@
   <data name="Industry_Hotel Two star and below" xml:space="preserve">
     <value>Hotel (2-star and below)</value>
   </data>
-  <data name="Industry_Hotel Three stat" xml:space="preserve">
+  <data name="Industry_Hotel Three-stat" xml:space="preserve">
     <value>Hotel (3-star)</value>
   </data>
-  <data name="Industry_Hotel Four star" xml:space="preserve">
+  <data name="Industry_Hotel Four-star" xml:space="preserve">
     <value>Hotel (4-star)</value>
   </data>
   <data name="Industry_Hotel Five stat" xml:space="preserve">
@@ -541,7 +541,7 @@
     <value>Extreme cold region A</value>
   </data>
   <data name="Zone_Extreme Cold Region B" xml:space="preserve">
-    <value>Extreme code region B</value>
+    <value>Extreme cold region B</value>
   </data>
   <data name="Zone_Cold Region" xml:space="preserve">
     <value>Cold region</value>

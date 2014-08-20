@@ -5,7 +5,7 @@
 			"CommonNames":["自定义能效标识9","自定义能效标识10"],
 			"Commodities":["$@Commodity_Electricity","$@Commodity_Water"],
 			"KPITypes":["$@EM.Unit.UnitArea","$@EM.Unit.UnitPopulation"],
-			"LabellingLevels":["3$@Setting.CustomizedLabeling.Grade","4$@Setting.CustomizedLabeling.Grade"],
+			"LabellingLevels":["$@Setting.CustomizedLabeling.Grade@$ 3","$@Setting.CustomizedLabeling.Grade@$ 4"],
 			"LabellingLevelValues":["3","4"],
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
@@ -38,7 +38,7 @@
 			"CommonName":"自定义能效标识9",
 			"Commodity":"$@Commodity_Electricity",
 			"KPIType":"$@EM.Unit.UnitArea",
-			"LabellingLevel":"3$@Setting.CustomizedLabeling.Grade",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade@$ 3",
 			"LabellingLevelValue":"3",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",

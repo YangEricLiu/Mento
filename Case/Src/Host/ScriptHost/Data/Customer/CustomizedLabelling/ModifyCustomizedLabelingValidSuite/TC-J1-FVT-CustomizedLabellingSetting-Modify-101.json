@@ -5,7 +5,7 @@
 			"CommonNames":["自定义能效标识7","自定义能效标识8"],
 			"Commodities":["$@Commodity_Electricity","$@Commodity_Water"],
 			"KPITypes":["$@EM.Unit.UnitArea","$@EM.WorkHolidayRatio"],
-			"LabellingLevels":["3$@Setting.CustomizedLabeling.Grade","4$@Setting.CustomizedLabeling.Grade"],
+			"LabellingLevels":["$@Setting.CustomizedLabeling.Grade@$ 3","$@Setting.CustomizedLabeling.Grade@$ 4"],
 			"LabellingLevelValues":["3","4"],
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
@@ -67,7 +67,7 @@
 			"ConfigurationUser":"SchneiderElectricChina",
 			"Commodity":"$@Commodity_Water",
 			"KPIType":"$@EM.WorkHolidayRatio",
-			"LabellingLevel":"4$@Setting.CustomizedLabeling.Grade",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade@$ 4",
 			"LabellingLevelValue":"4",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",

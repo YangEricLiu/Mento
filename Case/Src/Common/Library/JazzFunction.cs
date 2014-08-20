@@ -92,7 +92,7 @@ namespace Mento.ScriptCommon.Library
                 if (_PTagRawData == null)
                     _PTagRawData = new PTagRawData();
 
-                return PTagRawData;
+                return _PTagRawData;
             }
         }
 

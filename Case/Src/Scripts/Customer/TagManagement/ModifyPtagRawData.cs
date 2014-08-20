@@ -95,49 +95,6 @@ namespace Mento.Script.Customer.TagManagement
         
         }
 
-        [Test]
-        [CaseID("TC-J1-FVT-PtagRawData-Modify-102")]
-        [Type("BFT")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyValidPtagSuite), "TC-J1-FVT-PtagRawData-Modify-102")]
-        public void SaveAndQuery(PtagData input)
-        {
-           
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-PtagRawData-Modify-103")]
-        [Type("BFT")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyValidPtagSuite), "TC-J1-FVT-PtagRawData-Modify-103")]
-        public void QueryDirectly(PtagData input)
-        {
-           
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-PtagRawData-Modify-104")]
-        [Type("BFT")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyValidPtagSuite), "TC-J1-FVT-PtagRawData-Modify-104")]
-        public void CloseWindowsSaveQueryQuerydirectly(PtagData input)
-        {
-            
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-PtagRawData-Modify-105")]
-        [Type("BFT")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyValidPtagSuite), "TC-J1-FVT-PtagRawData-Modify-105")]
-        public void VerifyDifferenceValueNotEditable(PtagData input)
-        {
-            
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-PtagRawData-Modify-106")]
-        [Type("BFT")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyValidPtagSuite), "TC-J1-FVT-PtagRawData-Modify-106")]
-        public void DifferenceValueChangedAccordingly(PtagData input)
-        {
-            
-        }
+       
     }
 }

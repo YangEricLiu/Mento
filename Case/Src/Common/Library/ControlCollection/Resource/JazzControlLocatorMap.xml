@@ -616,14 +616,16 @@
               <add key="TextFieldPTagSettingsMeterCode" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='MeterCode']" type="XPath"/>
               <add key="TextFieldPTagSettingsChannel" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='ChannelId']" type="XPath"/>
               <add key="TextFieldPTagSettingsComment" value="//div[@id='st-ptag-form-body']//textarea[@name='Comment']" type="XPath"/>
-              <add key="GridPTagRawDataFirstRow" value="//div[@id='gridview-1304']//tr[@class='x-grid-row'][1]/td[contains(@class,'x-grid-cell-gridcolumn-1300')]/div[@class='x-grid-cell-inner ']" type="XPath"/>
-              <add key="GridPTagRawDataSecondRow" value="//div[@id='gridview-1304']//tr[@class='x-grid-row'][2]/td[contains(@class,'x-grid-cell-gridcolumn-1300')]/div[@class='x-grid-cell-inner ']" type="XPath"/>
-              <add key="GridPTagRawDataFirstRowState" value="//div[@id='gridview-1304']//tr[@class='x-grid-row'][1]/td[contains(@class,'x-grid-cell-gridcolumn-1302')]/div[@class='x-grid-cell-inner ' and text() = '已修改']" type="XPath"/>
-              <add key="GridPTagRawDataSecondRowState" value="//div[@id='gridview-1304']//tr[@class='x-grid-row'][2]/td[contains(@class,'x-grid-cell-gridcolumn-1302')]/div[@class='x-grid-cell-inner ' and text() = '已修改']" type="XPath"/>
+          </ptagsettings> 
+          <ptagrawdata>
+            <add key="GridPTagRawDataFirstRow" value="//div[contains(@id,'rawdatagridpanel')]//tr[2]/td[2]" type="XPath"/>
+              <add key="GridPTagRawDataSecondRow" value="//div[contains(@id,'rawdatagridpanel') and contains(@class,'x-grid-body')]//table/tbody/tr[@class='x-grid-row'][2]/td[2]/div[@class='x-grid-cell-inner ']" type="XPath"/>
+              <add key="GridPTagRawDataFirstRowState" value="//div[contains(@id,'rawdatagridpanel') and contains(@class,'x-grid-body')]//table/tbody/tr[@class='x-grid-row'][1]/td[4]/div[@class='x-grid-cell-inner ' and text() = '已修改']" type="XPath"/>
+              <add key="GridPTagRawDataSecondRowState" value="//div[contains(@id,'rawdatagridpanel') and contains(@class,'x-grid-body')]//table/tbody/tr[@class='x-grid-row'][2]/td[4]/div[@class='x-grid-cell-inner ' and text() = '已修改']" type="XPath"/>
               <add key="RedTagNameInTooltip" value="//div[@class='highcharts-container']//tspan[@style='fill:red']" type="XPath"/>
               <add key="BoldValueInTooltip" value="//div[@class='highcharts-container']//tspan[@style='font-weight:bold']" type="XPath"/>
               <add key="BlueTagNameInTooltip" value="//div[@class='highcharts-container']//tspan[@style='fill:#3399cc']" type="XPath"/>
-          </ptagsettings>
+          </ptagrawdata>
           <vtagsettings>
               <add key="TextFieldVTagSettingsName" value="//div[@id='st-vtag-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
               <add key="TextFieldVTagSettingsCode" value="//div[@id='st-vtag-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
@@ -792,7 +794,10 @@
               <add key="ComboBoxKPITargetBaselineSpecialdayRuleStartTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[2]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
               <add key="ComboBoxKPITargetBaselineSpecialdayRuleEndTime" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[4]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
           </kpitag>
-      
+          <ptagrawdata>
+            <add key="ComboBoxPTagRawDataStartTime" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]//table[2]//table[contains(@id,'combobox')]" type="XPath"/>
+            <add key="ComboBoxPTagRawDataEndTime" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]//table[4]//table[contains(@id,'combobox')]" type="XPath"/>
+          </ptagrawdata>
     <CustomizedLabellingSetting>
               <add key="CustomizedLabellingCommodity" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
               <add key="CustomizedLabellingType" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='LabellingType']]" type="XPath"/>
@@ -935,7 +940,7 @@
           <add key="GridMultiHierarchySystemDimensionTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridMultiHierarchyAreaDimensionTagList" value="//div[contains(@id,'multihierwindow') and contains(@class,'x-window-default')]//div[contains(@class, 'x-panel x-tabpanel-child') and not(contains(@style, 'display: none;'))]//div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridMultiSelectedTagsList" value="//div[contains(@id,'energymultihiertagpanel') and contains(@class,'x-container-default')]/div[label[text()='$#nameIndex']]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
-          <add key="GridEASelectedTagsList" value="//div[@id='em-energy-multi-hier-panel']/div[label[text()='$#nameIndex']]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
+          <add key="GridEASelectedTagsList" value="//div[@id='em-energy-multi-hier-panel']/div[label[text()='$#naGridPTagRawDatameIndex']]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
           <add key="GridCarbonFactorsList" value="st-carbonfactor-grid" type="ID"/>
 
           <add key="GridMultiHieararchyTagsList" value="//div[@id='em-content-west-region-body']/div/div[starts-with(@id,'container')][$#positionIndex]/div[contains(@class, 'x-grid-with-row-lines')]" type="XPath"/>
@@ -1003,6 +1008,10 @@
         <add key="DatePickerKPITargetBaselineSpecialdayRuleStartDate" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
         <add key="DatePickerKPITargetBaselineSpecialdayRuleEndDate" value="//div[contains(@id,'targetbaselinerulepanel')]/div/table[contains(@id,'fieldcontainer')][3]//td[contains(@class,'x-form-item-body')]/div[$#positionIndex]/div[@class='x-column-inner']/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       </kpitag>
+      <ptagrawdata>
+        <add key="DatePickerPTagRawDataStartDate" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+        <add key="DatePickerPTagRawDataEndDate" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      </ptagrawdata>
     </CustomerSettings>
     <PlatformSettings>
       <customermanagement>
@@ -1168,7 +1177,7 @@
     <add key="ChartWidgetMaxDialog" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartSuperWidget" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../../../../../self::node()/div[contains(@class,'x-widget-body-default')]//div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartMaxWidgetLabelling" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id, 'labelingchartpanel') and contains(@class, 'x-panel-body-default')]/div[contains(@id, 'container')]" type="XPath"/>
-    <add key="ChartPTagRawData" value="//div[contains(@id, 'highcharts-18') and contains(@class, 'highcharts-container')]" type="XPath"/>
+    <add key="ChartPTagRawData" value="//div[contains(@id,'linechartcomponent')]" type="XPath"/>
   </Chart>
   <!--Chart End-->
 

@@ -27,14 +27,14 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Grid PTagList = JazzGrid.PTagSettingsPTagList;
 
         //StartDatePicker
-        private static DatePicker StartDatePicker = JazzDatePicker.EnergyUsageStartDateDatePicker;
+        private static DatePicker StartDatePicker = JazzDatePicker.PTagRawDataStartDateDatePicker;
         //StartTimeComboBox
-        private static ComboBox StartTimeComboBox = JazzComboBox.EnergyViewStartTimeComboBox;
+        private static ComboBox StartTimeComboBox = JazzComboBox.PTagRawDataStartTimeComboBox;
 
         //EndDatePicker
-        private static DatePicker EndDatePicker = JazzDatePicker.EnergyUsageEndDateDatePicker;
+        private static DatePicker EndDatePicker = JazzDatePicker.PTagRawDataEndDateDatePicker;
         //EndTimeComboBox
-        private static ComboBox EndTimeComboBox = JazzComboBox.EnergyViewEndTimeComboBox;
+        private static ComboBox EndTimeComboBox = JazzComboBox.PTagRawDataEndTimeComboBox;
 
         private static TabButton RawDataTab = JazzButton.PTagRawDataTabButton;
         private static Button RawDataModifyButton = JazzButton.PTagRawDataModifyButton;
@@ -78,7 +78,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void NavigatorToPtagSetting()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettings);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsP);
             TimeManager.ShortPause();
         }
 
@@ -131,7 +131,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void InputValue(int rowID, string value)
         {
             if (2 == rowID)
-                PTagRawDataFirstRow.Fill(value);
+                PTagRawDataSecondRow.Fill(value);
             else //rowID = 1 by default
                 PTagRawDataFirstRow.Fill(value);
         }

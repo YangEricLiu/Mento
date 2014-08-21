@@ -47,22 +47,23 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-FVT-PtagRawData-Modify-101")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyPtagRawDataSuite), "TC-J1-FVT-PtagRawData-Modify-101")]
-        public void SaveAndTooltipShowWell(PtagData input)
+        public void ModifyAndSaveViaSaveButtonAboveLineChart(PtagData input)
         {
             //Navigate to Raw Data tab
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
             PTagRawData.SwitchToRawDataTab();
 
-            //Set time range = 2014年01月01日00点00分-2014年1月1日24点00分
+            //Set time range = 2014年01月01日00点00分-2014年1月7日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
 
             //Check the line chart and rawdata grid exist
-            Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.ChartPTagRawData));
+            //Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.ChartPTagRawData));
             Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.GridPTagRawData));
 
             //Click the first row by default (2014年01月01日00点00分-00点15分), and input a valid modified value.
+            Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.GridPTagRawDataFirstRow));
             PTagRawData.InputValue(1,"1.23");
 
             //Click another row (The second row:2014年01月01日00点15分-00点30分), and input a valid modified value.
@@ -95,6 +96,46 @@ namespace Mento.Script.Customer.TagManagement
         
         }
 
-       
+        [Test]
+        [CaseID("TC-J1-FVT-PtagRawData-Modify-102")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyPtagRawDataSuite), "TC-J1-FVT-PtagRawData-Modify-102")]
+        public void SaveAndQueryWhenContainsNotSavedModifications(PtagData input)
+        {
+            //Navigate to Raw Data tab
+            PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
+            PTagRawData.SwitchToRawDataTab();
+
+            //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //Check the line chart and rawdata grid exist
+            //Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.ChartPTagRawData));
+            Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.GridPTagRawData));
+
+            //Click the first row by default (2014年01月02日00点00分-00点15分), and input a valid modified value.
+            Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.GridPTagRawDataFirstRow));
+            PTagRawData.InputValue(1, "1.23");
+
+            //Click "Save" button
+            PTagRawData.ClickSaveRawDataButton();
+
+            //Save this changed values into database.
+            Assert.AreEqual("1.23" + input.InputData.Uom.ToString(), PTagRawDataLineChart.GetRawDataLineChartTooltip(3));
+            Assert.AreEqual("4.56" + input.InputData.Uom.ToString(), PTagRawDataLineChart.GetRawDataLineChartTooltip(3));
+
+            //Set relevant Status fields as Modified.
+            Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.GridPTagRawDataFirstRow));
+            Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.GridPTagRawDataSecondRow));
+
+            //Verify /the tooltip of this modify value from red color change to black color.
+            if (input.InputData.OriginalName == PTagRawDataLineChart.GetRawDataLineChartTooltip(2))
+            {
+                Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.BlueTagNameInTooltip));
+            }
+
+        }
     }
 }

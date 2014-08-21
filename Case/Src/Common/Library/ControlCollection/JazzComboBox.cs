@@ -86,6 +86,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox CustomizedLabellingTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingType);
         public static ComboBox CustomizedLabellingLevelComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingLevel);
         #endregion
+
+        #region PTagRawData
+        public static ComboBox PTagRawDataStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagRawDataStartTime);
+        public static ComboBox PTagRawDataEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagRawDataEndTime);
+        #endregion
         #endregion
 
         #region Platform settings

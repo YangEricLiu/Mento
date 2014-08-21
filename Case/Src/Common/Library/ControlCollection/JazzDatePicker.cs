@@ -35,6 +35,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static DatePicker KPITargetBaselineSpecialdayRuleStartDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleStartDate);
         public static DatePicker KPITargetBaselineSpecialdayRuleEndDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleEndDate);        
         #endregion
+
+        #region PTag RawData
+        public static DatePicker PTagRawDataStartDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerPTagRawDataStartDate);
+        public static DatePicker PTagRawDataEndDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerPTagRawDataEndDate);
+        #endregion
+
         #endregion
 
 		#region Platform Setting

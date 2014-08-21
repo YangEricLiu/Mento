@@ -645,6 +645,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldPTagSettingsMeterCode = "TextFieldPTagSettingsMeterCode";
         public static string TextFieldPTagSettingsChannel = "TextFieldPTagSettingsChannel";
         public static string TextFieldPTagSettingsComment = "TextFieldPTagSettingsComment";
+        #endregion
+
+        #region ptagrawdata
         public static string GridPTagRawDataFirstRow = "GridPTagRawDataFirstRow";
         public static string GridPTagRawDataSecondRow = "GridPTagRawDataSecondRow";
         public static string GridPTagRawDataFirstRowState = "GridPTagRawDataFirstRowState";
@@ -843,6 +846,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxCustomizedLabellingType = "CustomizedLabellingType";
         public static string ComboBoxCustomizedLabellingLevel = "CustomizedLabellingLevel";
 
+        #endregion
+
+        #region ptagrawdata
+        public static string ComboBoxPTagRawDataStartTime = "ComboBoxPTagRawDataStartTime";
+        public static string ComboBoxPTagRawDataEndTime = "ComboBoxPTagRawDataEndTime";
         #endregion
 
         #endregion
@@ -1093,6 +1101,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region kpitag
         public static string DatePickerKPITargetBaselineSpecialdayRuleStartDate = "DatePickerKPITargetBaselineSpecialdayRuleStartDate";
         public static string DatePickerKPITargetBaselineSpecialdayRuleEndDate = "DatePickerKPITargetBaselineSpecialdayRuleEndDate";
+        #endregion
+
+        #region PTagRawData
+        public static string DatePickerPTagRawDataStartDate = "DatePickerPTagRawDataStartDate";
+        public static string DatePickerPTagRawDataEndDate = "DatePickerPTagRawDataEndDate";
         #endregion
 
         #endregion

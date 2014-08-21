@@ -67,6 +67,7 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
         }
 
+
         /// <summary>
         /// Click "add ptag" button to add one ptag
         /// </summary>

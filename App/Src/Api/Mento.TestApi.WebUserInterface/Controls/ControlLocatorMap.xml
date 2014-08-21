@@ -60,6 +60,9 @@
   <add key="GridRow" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]" type ="XPath"/>
   <add key="GridRowLabelling" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td/div[text()='$#cellText1'] and td/div[text()='$#cellText2']]" type ="XPath"/>
   <add key="GridRowChecker" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-checkcolumn')]/div/div" type ="XPath"/>
+  <add key="GridCellText" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[$#cellIndex2]/div" type ="XPath"/>
+  <add key="GridCellIndex" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[$#rowIndex]/td[$#cellIndex2]/div" type ="XPath"/>
+  <add key="GridRowIndex" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[$#rowIndex]" type ="XPath"/>
   <!--For get ranking radio button-->
     <!--<add key="GridRowSelector" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]" type ="XPath"/>
        -->

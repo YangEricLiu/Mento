@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A"],
+			"commodityNames":["$@Commodity_Electricity"],
+			"ManualTimeRange":[{
+				"StartDate":"2010-1-1",
+				"EndDate":"2014-7-28",	
+			}],
+			"failedFileName":["F-CarbonUsageDataView101-Y-0.xls", "F-CarbonUsageDataView101-M-1.xls", "F-CarbonUsageDataView101-W-2.xls" ],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CarbonUsageDataView101-Y-0.xls", "CarbonUsageDataView101-M-1.xls", "CarbonUsageDataView101-W-2.xls" ],
+		}
+	}
+]

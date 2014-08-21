@@ -28,6 +28,7 @@ namespace Mento.Script.Customer.TagManagement
         private PTagRawData PTagRawData = JazzFunction.PTagRawData;
         private static Chart PTagRawDataLineChart = JazzChart.PTagRawDataLineChart;
         private static Grid PTagRawDataGrid = JazzGrid.GridPTagRawData;
+        private static TextField PtagRawDataValueNumberField = JazzTextField.PtagRawDataValueTextField;
 
         [SetUp]
         public void CaseSetUp()
@@ -136,6 +137,35 @@ namespace Mento.Script.Customer.TagManagement
                 Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.BlueTagNameInTooltip));
             }
 
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-PtagRawData-Modify-102")]
+        [Type("BFT")]
+        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyPtagRawDataSuite), "TC-J1-FVT-PtagRawData-Modify-102")]
+        public void InputDataValueForPtagRaw(PtagData input)
+        {
+            PTagSettings.FocusOnPTagByName("C1Org1Build1_ptag1");
+            PTagRawData.SwitchToRawDataTab();
+
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            PTagRawDataGrid.FocusOnCell(2);
+            TimeManager.LongPause();
+            PtagRawDataValueNumberField.Fill("5");
+
+            //Click "Save" button
+            PTagRawData.ClickSaveRawDataButton();
+
+            Assert.AreEqual("5", PTagRawDataGrid.GetCellValue(2));
         }
     }
 }

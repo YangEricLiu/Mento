@@ -89,6 +89,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField PTagRawDataSecondRow = GetControl<TextField>(JazzControlLocatorKey.GridPTagRawDataSecondRow);
         public static TextField PTagRawDataFirstRowState = GetControl<TextField>(JazzControlLocatorKey.GridPTagRawDataFirstRowState);
         public static TextField PTagRawDataSecondRowState = GetControl<TextField>(JazzControlLocatorKey.GridPTagRawDataSecondRowState);
+        public static TextField PtagRawDataValueTextField = GetControl<TextField>(JazzControlLocatorKey.TextFieldPtagRawDataValue);
+
         #endregion
 
         #region VTag settings

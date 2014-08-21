@@ -655,6 +655,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string RedTagNameInTooltip = "RedTagNameInTooltip";
         public static string BoldValueInTooltip = "BoldValueInTooltip";
         public static string BlueTagNameInTooltip = "BlueTagNameInTooltip";
+        public static string TextFieldPtagRawDataValue = "TextFieldPtagRawDataValue";
         #endregion
 
         #region vtagsettings

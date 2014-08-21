@@ -572,6 +572,7 @@
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataViewSuite\TC-J1-FVT-CarbonUsage-DataView-001-1.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataViewSuite\TC-J1-FVT-CarbonUsage-DataView-001-2.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataViewSuite\TC-J1-FVT-CarbonUsage-DataView-001-3.json" />
+    <None Include="Data\EnergyView\CarbonUsage\CarbonUsageDataViewSuite\TC-J1-FVT-CarbonUsage-DataView-101-1.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsagePieChartSuite\TC-J1-FVT-CarbonUsage-PieChart-003-1.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsagePieChartSuite\TC-J1-FVT-CarbonUsage-PieChart-003-2.json" />
     <None Include="Data\EnergyView\CarbonUsage\CarbonUsagePieChartSuite\TC-J1-FVT-CarbonUsage-PieChart-003-3.json" />

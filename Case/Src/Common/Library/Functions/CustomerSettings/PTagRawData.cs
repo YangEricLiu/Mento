@@ -143,6 +143,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             RawDataSaveButton.Click();
             JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
         }
 
         /// <summary>

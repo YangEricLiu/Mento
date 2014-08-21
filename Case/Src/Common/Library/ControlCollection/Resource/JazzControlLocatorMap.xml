@@ -625,6 +625,7 @@
               <add key="RedTagNameInTooltip" value="//div[@class='highcharts-container']//tspan[@style='fill:red']" type="XPath"/>
               <add key="BoldValueInTooltip" value="//div[@class='highcharts-container']//tspan[@style='font-weight:bold']" type="XPath"/>
               <add key="BlueTagNameInTooltip" value="//div[@class='highcharts-container']//tspan[@style='fill:#3399cc']" type="XPath"/>
+              <add key="TextFieldPtagRawDataValue" value="//input[@name='DataValue']" type="XPath"/>
           </ptagrawdata>
           <vtagsettings>
               <add key="TextFieldVTagSettingsName" value="//div[@id='st-vtag-form-body']//input[@type='text' and @name='Name']" type="XPath"/>

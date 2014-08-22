@@ -293,6 +293,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button PTagRawDataModifyButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataModify);
         public static Button PTagRawDataSaveButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataSave);
         public static Button PTagRawDataCancelButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataCancel);
+        public static Button PTagRawDataSaveAndSwitchButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataSaveAndSwitch);
+        public static Button PTagRawDataDirectlySwitchButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataDirectlySwitch);
+        public static Button PTagRawDataCancelSwitchButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataCancelSwitch);
+        
         #endregion
 
         #region VTag settings buttons

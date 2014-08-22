@@ -236,6 +236,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonPTagRawDataSave = "ButtonPTagRawDataSave";
         public static string ButtonPTagRawDataCancel = "ButtonPTagRawDataCancel";
         public static string ButtonPTagRawDataModify = "ButtonPTagRawDataModify";
+        public static string ButtonPTagRawDataSaveAndSwitch = "ButtonPTagRawDataSaveAndSwitch";
+        public static string ButtonPTagRawDataDirectlySwitch = "ButtonPTagRawDataDirectlySwitch";
+        public static string ButtonPTagRawDataCancelSwitch = "ButtonPTagRawDataCancelSwitch";
+
         #endregion
 
         #region vtag
@@ -648,13 +652,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region ptagrawdata
-        public static string GridPTagRawDataFirstRow = "GridPTagRawDataFirstRow";
-        public static string GridPTagRawDataSecondRow = "GridPTagRawDataSecondRow";
-        public static string GridPTagRawDataFirstRowState = "GridPTagRawDataFirstRowState";
-        public static string GridPTagRawDataSecondRowState = "GridPTagRawDataSecondRowState";
-        public static string RedTagNameInTooltip = "RedTagNameInTooltip";
-        public static string BoldValueInTooltip = "BoldValueInTooltip";
-        public static string BlueTagNameInTooltip = "BlueTagNameInTooltip";
+
         public static string TextFieldPtagRawDataValue = "TextFieldPtagRawDataValue";
         #endregion
 

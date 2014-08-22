@@ -514,6 +514,17 @@
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-3.json" />
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-2.json" />
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-1.json" />
+    <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-110.json" />
+    <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-003.json" />
+    <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-002.json" />
+    <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-001.json" />
+    <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-109.json" />
+    <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-108.json" />
+    <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-107.json" />
+    <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-106.json" />
+    <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-105.json" />
+    <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-104.json" />
+    <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-103.json" />
     <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-102.json" />
     <None Include="Data\Customer\TagManagement\ModifyPtagRawDataSuite\TC-J1-FVT-PtagRawData-Modify-101.json" />
     <None Include="Data\Customer\TagManagement\ModifyInvalidTargetBaselineSuite\TC-J1-FVT-TargetConfiguration-Modify-001-3.json" />
@@ -1032,6 +1043,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resource\cn\DB.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource\en\App.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

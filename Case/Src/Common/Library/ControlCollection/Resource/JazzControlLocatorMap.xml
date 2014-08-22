@@ -255,11 +255,17 @@
               <add key="ButtonPTagSettingsCancel" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonPTagSettingsModify" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonPTagSettingsDelete" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+           </ptag>
+           <ptagrawdata>
               <add key="TagButtonPTagRawData" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Button.Originaldata']]" type="XPath"/>
               <add key="ButtonPTagRawDataSave" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonPTagRawDataCancel" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
               <add key="ButtonPTagRawDataModify" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.ChangeRecord']]" type="XPath"/>
-          </ptag>
+              <add key="ButtonPTagRawDataSaveAndSwitch" value="//div[contains(@id,'window') and contains(@class,'x-window-closable')]/div/div/div/div[1]/em/button" type="XPath"/>
+              <add key="ButtonPTagRawDataDirectlySwitch" value="//div[contains(@id,'window') and contains(@class,'x-window-closable')]/div/div/div/div[2]/em/button" type="XPath"/>
+              <add key="ButtonPTagRawDataCancelSwitch" value="//img[@class='x-tool-close']" type="XPath"/>
+        
+          </ptagrawdata>
           <vtag>
               <add key="TabButtonVTagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
               <!--text in this xpath need to be changed to a language variable-->
@@ -618,13 +624,7 @@
               <add key="TextFieldPTagSettingsComment" value="//div[@id='st-ptag-form-body']//textarea[@name='Comment']" type="XPath"/>
           </ptagsettings> 
           <ptagrawdata>
-            <add key="GridPTagRawDataFirstRow" value="//div[contains(@id,'rawdatagridpanel')]//tr[2]/td[2]" type="XPath"/>
-              <add key="GridPTagRawDataSecondRow" value="//div[contains(@id,'rawdatagridpanel') and contains(@class,'x-grid-body')]//table/tbody/tr[@class='x-grid-row'][2]/td[2]/div[@class='x-grid-cell-inner ']" type="XPath"/>
-              <add key="GridPTagRawDataFirstRowState" value="//div[contains(@id,'rawdatagridpanel') and contains(@class,'x-grid-body')]//table/tbody/tr[@class='x-grid-row'][1]/td[4]/div[@class='x-grid-cell-inner ' and text() = '已修改']" type="XPath"/>
-              <add key="GridPTagRawDataSecondRowState" value="//div[contains(@id,'rawdatagridpanel') and contains(@class,'x-grid-body')]//table/tbody/tr[@class='x-grid-row'][2]/td[4]/div[@class='x-grid-cell-inner ' and text() = '已修改']" type="XPath"/>
-              <add key="RedTagNameInTooltip" value="//div[@class='highcharts-container']//tspan[@style='fill:red']" type="XPath"/>
-              <add key="BoldValueInTooltip" value="//div[@class='highcharts-container']//tspan[@style='font-weight:bold']" type="XPath"/>
-              <add key="BlueTagNameInTooltip" value="//div[@class='highcharts-container']//tspan[@style='fill:#3399cc']" type="XPath"/>
+                         
               <add key="TextFieldPtagRawDataValue" value="//input[@name='DataValue']" type="XPath"/>
           </ptagrawdata>
           <vtagsettings>

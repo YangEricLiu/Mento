@@ -24,6 +24,8 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Comments { get; set; }
         public string AccumulateText { get; set; }        
         public ManualTimeRange[] ManualTimeRange { get; set; }
+        public int[] RowID { get; set; }
+        public string[] TestData { get; set; }
 
     }
 
@@ -50,4 +52,6 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string EndDate;
         public string EndTime;
     }
+
+
 }

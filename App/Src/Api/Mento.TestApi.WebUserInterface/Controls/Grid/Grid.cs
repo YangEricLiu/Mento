@@ -207,6 +207,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
+        /// Get the relevant Status fields as Modified or Unmodified. 
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public string GetCellStatus(int rowIndex, int cellIndex3 = 3, bool Paging = true)
+        {
+            return this.GetCell(rowIndex, cellIndex3, Paging).Text;
+        }
+
+        /// <summary>
         /// Simulate mouse float on the row which "Name" is "cellName"
         /// </summary>
         /// <param name="cellName"></param>

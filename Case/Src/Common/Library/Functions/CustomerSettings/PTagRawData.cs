@@ -41,10 +41,10 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button RawDataSaveButton = JazzButton.PTagRawDataSaveButton;
         private static Button RawDataCancelButton = JazzButton.PTagSettingsCancelButton;
         private static Grid GridPTagRawData = JazzGrid.GridPTagRawData;
-        private static TextField PTagRawDataFirstRow = JazzTextField.PTagRawDataFirstRow;
-        private static TextField PTagRawDataSecondRow = JazzTextField.PTagRawDataSecondRow;
-        private static TextField PTagRawDataFirstRowState = JazzTextField.PTagRawDataFirstRowState;
-        private static TextField PTagRawDataSecondRowState = JazzTextField.PTagRawDataSecondRowState;
+
+        private static Button RawDataSaveAndSwitchButton = JazzButton.PTagRawDataSaveAndSwitchButton;
+        private static Button RawDataDirectlySwitchButton = JazzButton.PTagRawDataDirectlySwitchButton;
+        private static Button RawDataCancelSwitchButton = JazzButton.PTagRawDataCancelSwitchButton;
         #endregion
 
         #region Ptag RawData Operation
@@ -122,19 +122,6 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region Basic Property Operations
 
-        /// <summary>
-        /// Input valid modified value
-        /// </summary>
-        /// <param name="rowID"></param>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public void InputValue(int rowID, string value)
-        {
-            if (2 == rowID)
-                PTagRawDataSecondRow.Fill(value);
-            else //rowID = 1 by default
-                PTagRawDataFirstRow.Fill(value);
-        }
 
         /// <summary>
         /// Click save button for RawData modified value
@@ -160,6 +147,33 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickModifyRawDataButton()
         {
             RawDataModifyButton.Click();
+        }
+
+        /// <summary>
+        /// Click 'Save and switch' button in popup time span after modified value without save in rawdata
+        /// </summary>
+        public void ClickSaveAndSwitchButton()
+        {
+            RawDataSaveAndSwitchButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        /// <summary>
+        /// Click 'Directly switch' button in popup time span after modified value without save in rawdata
+        /// </summary>
+        public void ClickDirectlySwitchButton()
+        {
+            RawDataDirectlySwitchButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        /// <summary>
+        /// Click 'Cancel switch' button in popup time span after modified value without save in rawdata
+        /// </summary>
+        public void ClickCancelSwitchButton()
+        {
+            RawDataCancelSwitchButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         /// <summary>

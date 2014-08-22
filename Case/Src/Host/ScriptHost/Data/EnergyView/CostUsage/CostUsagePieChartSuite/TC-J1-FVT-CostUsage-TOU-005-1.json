@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"], 
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-07-04",
+				"EndDate":"2012-09-03",	
+			}],
+			"failedFileName":["F-CostUsage-TOU-005-1-0.xls", "F-CostUsage-TOU-005-1-1.xls", "F-CostUsage-TOU-005-1-2.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsage-TOU-005-1-0.xls", "CostUsage-TOU-005-1-1.xls", "CostUsage-TOU-005-1-2.xls"],
+			"StepMessage":["$@Message.M02407"],
+		}
+	}
+]

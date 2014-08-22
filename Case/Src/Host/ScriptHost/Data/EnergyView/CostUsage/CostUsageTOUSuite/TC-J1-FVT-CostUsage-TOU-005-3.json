@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"], 
+			"commodityNames":["$@Commodity_Electricity"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-07-29",
+				"EndDate":"2014-08-04",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"StepMessage":["$@Message.M02407"],
+		}
+	}
+]

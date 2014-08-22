@@ -74,6 +74,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
     { 
         Line, 
         Column, 
+        Stack,
         List, 
         Distribute 
     }

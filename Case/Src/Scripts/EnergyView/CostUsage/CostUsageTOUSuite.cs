@@ -53,7 +53,7 @@ namespace Mento.Script.EnergyView.CostUsage
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-TOU-Column-005-1")]
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-1")]
-        public void TOUColumnWeek(CostUsageData input)
+        public void TOUDataViewColumnWeek(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             CostUsage.SwitchTagTab(TagTabs.AreaDimensionTab);
@@ -70,21 +70,26 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzFunction.EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+
+            CostUsage.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
             Assert.IsTrue(CostUsage.IsTrendChartDrawn());
             Assert.AreEqual(1, CostUsage.GetTrendChartLines());
 
             EnergyViewToolbar.ShowPeakValley();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
-            Assert.AreEqual(3, CostUsage.GetColumnChartColumns());
+            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
 
-            CostUsage.ClickDisplayStep(DisplayStep.Week);
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
-            Assert.AreEqual(3, CostUsage.GetColumnChartColumns());
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Uncheck "电" and check "自来水"
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[0]);
@@ -104,7 +109,7 @@ namespace Mento.Script.EnergyView.CostUsage
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-TOU-Column-005-2")]
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-2")]
-        public void TOUColumnMonth(CostUsageData input)
+        public void TOUDataViewColumnMonth(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             CostUsage.SwitchTagTab(TagTabs.AreaDimensionTab);
@@ -121,14 +126,22 @@ namespace Mento.Script.EnergyView.CostUsage
             EnergyViewToolbar.ShowPeakValley();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
-            Assert.AreEqual(3, CostUsage.GetColumnChartColumns());
+            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            Assert.AreEqual(3, CostUsage.GetTrendChartLines());
 
-            CostUsage.ClickDisplayStep(DisplayStep.Week);
+            CostUsage.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
-            Assert.AreEqual(3, CostUsage.GetColumnChartColumns());
+            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            Assert.AreEqual(3, CostUsage.GetTrendChartLines());
+
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Uncheck "电" and check "煤"
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[0]);
@@ -142,7 +155,7 @@ namespace Mento.Script.EnergyView.CostUsage
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-TOU-Column-005-3")]
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-3")]
-        public void TOUColumnDisable(CostUsageData input)
+        public void TOUDataViewColumnDisable(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             CostUsage.SwitchTagTab(TagTabs.AreaDimensionTab);
@@ -266,6 +279,112 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             WidgetMaxChart.ClickCloseButton();
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-TOU-005-2")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-2")]
+        public void TOUChart(CostUsageData input)
+        {
+            //Go to NancyCostCustomer2->楼宇B， go to Cost.
+            JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
+
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Change manually defined time range to 2012/07/04-2012/09/03.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+
+            //Select Commodity=电， change to TOU pie chart.
+            CostUsage.SelectCommodity(input.InputData.commodityNames);
+
+            EnergyViewToolbar.ShowPeakValley();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
+
+            //Try to click Optional step=Raw.
+            CostUsage.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //· Warning message pop up show "峰谷不支持Raw"
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[1]));
+            JazzMessageBox.MessageBox.OK();
+            TimeManager.MediumPause();
+
+            //Change other Optional step=Day/Week/Month
+            CostUsage.ClickDisplayStep(DisplayStep.Day);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //· Pie chart display correctly. TOU pie value are calculate correctly.
+            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
+
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.Stack);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //· Pie chart display correctly. TOU pie value are calculate correctly.
+            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
+
+            CostUsage.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //· Pie chart display correctly. TOU pie value are calculate correctly.
+            Assert.IsTrue(CostUsage.IsColumnChartDrawn()); ;
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-TOU-005-3")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-3")]
+        public void TOUButtonStatus(CostUsageData input)
+        {
+            //Go to Cost in 楼B, select commodify electricity.
+            JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
+
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Change manually defined time range to 2014/07/29-2014/08/04.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+
+            //Select Commodity=电
+            CostUsage.SelectCommodity(input.InputData.commodityNames);
+
+            //In step day and click 峰谷展示 button.
+            EnergyViewToolbar.ShowPeakValley();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ClickDisplayStep(DisplayStep.Hour);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //· Warning message pop up show "峰谷不支持Raw"
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[1]));
+            JazzMessageBox.MessageBox.OK();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(EnergyViewToolbar.IsPeakValleyButtonPressed());
         }
     }
 }

@@ -18,6 +18,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             {EnergyViewType.Line,new string[] { "$@Common.GraphType.Line" }},
             {EnergyViewType.Column,new string[] { "$@Common.GraphType.Column" }},
+            {EnergyViewType.Stack,new string[] { "$@Common.GraphType.Stack" }},
             {EnergyViewType.List,new string[] { "$@Common.GraphType.Grid" }},
             {EnergyViewType.Distribute,new string[] { "$@Common.GraphType.Pie" }},
         };

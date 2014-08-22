@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1","园区测试多层级", "楼宇BC"],
+			"commodityNames":["$@Commodity_Electricity"],
+		},
+		"ExpectedData":
+		{
+
+		}
+	}
+]

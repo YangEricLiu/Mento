@@ -274,5 +274,38 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
                 EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[i], input.InputData.failedFileName[i]);
             }         
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-EnergyConsumption-PieChart-101-5")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(EnergyConsumptionPieChartSuite), "TC-J1-FVT-EnergyConsumption-PieChart-101-5")]
+        public void EnergyConsumptionPieChart05(EnergyViewOptionData input)
+        {
+            //Go to NancyOtherCustomer3->Labellingtag1.
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.ShortPause();
+
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+
+            //Select time 2013/11/26 11:00 to 12:00 view data view. 1KWH.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+
+            //Select time 2013/11/26 11:00 to 12:00 view pie view. should display 1KWH.
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+        }
     }
 }

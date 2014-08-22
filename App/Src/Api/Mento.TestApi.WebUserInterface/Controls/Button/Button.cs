@@ -75,6 +75,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return this.RootElement.Displayed;
         }
 
+        /// <summary>
+        /// Judge if the button is pressed
+        /// </summary>
+        /// <returns>True if the button is pressed, false if not </returns>
+        public bool IsPressed()
+        {
+            return this.RootElement.GetAttribute("class").Contains("x-toggle x-btn-toggle x-btn-default-medium-toggle");
+        }
+
         public bool IsExisted()
         {
             return ElementHandler.Exists(this._RootLocator);

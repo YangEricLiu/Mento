@@ -5,11 +5,11 @@
 			"Hierarchies":["NancyCostCustomer2","组织B", "园区C", "楼宇D"],
 			"AreaDimensionPath":["楼宇D", "一层"],
 			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
-			"failedFileName":["F-CostUsageTOUDataView001-2-Week2-Elec.xls"],
+			"failedFileName":["F-CostUsageTOUDataView001-2-Month-Elec.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["CostUsageTOUDataView001-2-Week2-Elec.xls"],
+			"expectedFileName":["CostUsageTOUDataView001-2-Month-Elec.xls"],
 		}
 	}
 ]

@@ -143,5 +143,30 @@ namespace Mento.Script.EnergyView.CostUsage
             Assert.IsTrue(CostUsage.IsTrendChartDrawn());
             Assert.AreEqual(1, CostUsage.GetTrendChartLines());
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-TrendChar-002-2")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTrendChartSuite), "TC-J1-FVT-CostUsage-TrendChar-002-2")]
+        public void CostUsageTrendChart02(CostUsageData input)
+        {
+            //Go to  cost usage, select NancyCustomer1/园区测试多层级/楼宇BC, commodity '电', time range is 2014-7-16 to 2014-7-23
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Set date range
+            EnergyViewToolbar.SetDateRange(new DateTime(2014, 7, 16), new DateTime(2014, 7, 23));
+            TimeManager.ShortPause();
+
+            CostUsage.SelectCommodity(input.InputData.commodityNames);
+
+            //chart type is line or column.
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.Column);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(CostUsage.IsColumnChartDrawn());
+            Assert.AreNotEqual(7, CostUsage.GetColumnChartColumns());
+        }
     }
 }

@@ -75,10 +75,14 @@ namespace Mento.Script.Customer.TagManagement
             //Click another row (The second row:2014年01月01日00点15分-00点30分), and input a valid modified value.
             PTagRawDataGrid.FocusOnCell(3);
             TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill("2"); 
+            PtagRawDataValueNumberField.Fill("2");
+            TimeManager.LongPause();
 
             //Click "Save" button
             PTagRawData.ClickSaveRawDataButton();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Verify the value 
             Assert.AreEqual("1", PTagRawDataGrid.GetCellValue(2));
@@ -197,19 +201,25 @@ namespace Mento.Script.Customer.TagManagement
             //Navigate to Raw Data tab
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
             PTagRawData.SwitchToRawDataTab();
+            TimeManager.LongPause();
 
             //Click Switch button it is Original Value now
-
-            //Click the 5th row by default (2014年01月02日00点45分-01点00分), and input a valid modified value.
-            PTagRawDataGrid.FocusOnCell(input.InputData.RowID[0] + 1);
+            if (PTagRawDataGrid.GetCellValue(1) == "能耗累积值/千瓦时")
+                PTagRawData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill(input.InputData.TestData[0]);
+
+            //Click the one row and input a valid modified value.
+            PTagRawDataGrid.FocusOnCell(2);
+            TimeManager.LongPause();
+            PtagRawDataValueNumberField.Fill("22");
+            TimeManager.LongPause();
 
             //Click "Save" button
             PTagRawData.ClickSaveRawDataButton();
+            TimeManager.LongPause();
 
             //Verify user can’t modify value if value is switched to Difference value
-            Assert.AreNotEqual(input.InputData.TestData[0], PTagRawDataGrid.GetCellValue(input.InputData.RowID[0] + 1));
+            Assert.AreNotEqual("22", PTagRawDataGrid.GetCellValue(2));
 
         }
 

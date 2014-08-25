@@ -264,7 +264,8 @@
               <add key="ButtonPTagRawDataSaveAndSwitch" value="//div[contains(@id,'window') and contains(@class,'x-window-closable')]/div/div/div/div[1]/em/button" type="XPath"/>
               <add key="ButtonPTagRawDataDirectlySwitch" value="//div[contains(@id,'window') and contains(@class,'x-window-closable')]/div/div/div/div[2]/em/button" type="XPath"/>
               <add key="ButtonPTagRawDataCancelSwitch" value="//img[@class='x-tool-close']" type="XPath"/>
-        
+              <add key="ButtonPTagRawDataSwitchDifferenceValue" value="//span[@id='accumulate_button' and @class='x-column-header-inner-button']" type="XPath"/>
+           
           </ptagrawdata>
           <vtag>
               <add key="TabButtonVTagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>

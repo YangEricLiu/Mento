@@ -240,6 +240,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonPTagRawDataDirectlySwitch = "ButtonPTagRawDataDirectlySwitch";
         public static string ButtonPTagRawDataCancelSwitch = "ButtonPTagRawDataCancelSwitch";
         public static string ButtonPTagRawDataSwitchDifferenceValue = "ButtonPTagRawDataSwitchDifferenceValue";
+        public static string ButtonPTagRawDataLeft = "ButtonPTagRawDataLeft";
+        public static string ButtonPTagRawDataRight = "ButtonPTagRawDataRight";
 
         #endregion
 

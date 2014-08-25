@@ -100,6 +100,9 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyPtagRawDataSuite), "TC-J1-FVT-PtagRawData-Modify-102")]
         public void SaveAndSwitchWhenContainsNotSavedModifications(PtagData input)
         {
+            int[] RowID = new int[] {3};
+            string[] TestData = new string[] {"3"};
+
             //Navigate to Raw Data tab
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
             PTagRawData.SwitchToRawDataTab();
@@ -112,9 +115,9 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Click the 3th row (2014年01月02日00点30分-00点45分), and input a valid modified value.
-            PTagRawDataGrid.FocusOnCell(input.InputData.RowID[0] + 1);
+            PTagRawDataGrid.FocusOnCell(RowID[0] + 1);
             TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill(input.InputData.TestData[0]);
+            PtagRawDataValueNumberField.Fill(TestData[0]);
 
             //Change Start Time or End Time with there is any modified field.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
@@ -122,9 +125,10 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click "Save and Switch" button in popup warning message with two options: Save and switch, Directly switch.
             PTagRawData.ClickSaveAndSwitchButton();
+            TimeManager.LongPause();
 
             //Save the unsaved modifications into database and then go ahead with querying data.
-            Assert.AreEqual(input.InputData.TestData[0], PTagRawDataGrid.GetCellValue(input.InputData.RowID[0] + 1));
+            Assert.AreEqual(TestData[0], PTagRawDataGrid.GetCellValue(RowID[0] + 1));
 
         }
 
@@ -141,22 +145,25 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
-
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+           
             //Click the 4th row by default (2014年01月02日00点45分-01点00分), and input a valid modified value.
             PTagRawDataGrid.FocusOnCell(input.InputData.RowID[0] + 1);
             TimeManager.LongPause();
             PtagRawDataValueNumberField.Fill(input.InputData.TestData[0]);
+            TimeManager.LongPause();
 
             //Change Start Time or End Time with there is any modified field.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Click "DirectlySwitch" button in popup warning message with two options: Save and switch, Directly switch.
             PTagRawData.ClickDirectlySwitchButton();
+            TimeManager.LongPause();
 
             //Discard the unsaved modifications will keep the original value in those cell and go ahead with querying data directly.
-            Assert.AreEqual(input.InputData.TestData[0], PTagRawDataGrid.GetCellValue(input.InputData.RowID[0] + 1));
+            Assert.AreNotEqual(input.InputData.TestData[0], PTagRawDataGrid.GetCellValue(input.InputData.RowID[0] + 1));
 
         }
 
@@ -173,19 +180,23 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Click the 5th row by default (2014年01月02日00点45分-01点00分), and input a valid modified value.
             PTagRawDataGrid.FocusOnCell(input.InputData.RowID[0] + 1);
             TimeManager.LongPause();
             PtagRawDataValueNumberField.Fill(input.InputData.TestData[0]);
+            TimeManager.LongPause();
 
             //Change Start Time or End Time with there is any modified field.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Click "DirectlySwitch" button in popup warning message with two options: Save and switch, Directly switch.
             PTagRawData.ClickCancelSwitchButton();
+            TimeManager.LongPause();
 
             //Discard the unsaved modifications will keep the original value in those cell and go ahead with querying data directly.
             Assert.AreNotEqual(input.InputData.TestData[0], PTagRawDataGrid.GetCellValue(input.InputData.RowID[0] + 1));
@@ -236,54 +247,32 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Click and input a valid modified value.
-            PTagRawDataGrid.FocusOnCell(input.InputData.RowID[0] + 1);
+            PTagRawDataGrid.FocusOnCell(7);
             TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill(input.InputData.TestData[0]);
+            PtagRawDataValueNumberField.Fill("6");
 
             //Click Switch button in Original Value now
-
+            if (PTagRawDataGrid.GetCellValue(1) == "能耗累积值/千瓦时")
+                PTagRawData.ClickSwitchDifferenceValueButton();
+            TimeManager.LongPause();
+            
             //Click Left button to change display time range
-            TimeManager.ShortPause();
+            PTagRawData.ClickLeftButton();
+            TimeManager.LongPause();
 
             //Modify one cell under Value Column
+            PTagRawDataGrid.FocusOnCell(2);
+            TimeManager.LongPause();
+            PtagRawDataValueNumberField.Fill("1");
 
             //Go to veify Save button can be used success
-
-
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-PtagRawData-Modify-107")]
-        [Type("BFT")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyPtagRawDataSuite), "TC-J1-FVT-PtagRawData-Modify-107")]
-        public void VerifyModifyHistoryInformation(PtagData input)
-        {
-            //Navigate to Raw Data tab
-            PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
-            PTagRawData.SwitchToRawDataTab();
-
-            //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
-            var ManualTimeRange = input.InputData.ManualTimeRange;
-            PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
-
-            //Click the 5th row by default (2014年01月02日00点45分-01点00分), and input a valid modified value.
-            PTagRawDataGrid.FocusOnCell(6);
+            PTagRawData.ClickSaveRawDataButton();
             TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill("5");
-
-            //Change Start Time or End Time with there is any modified field.
-            PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
-            TimeManager.ShortPause();
-
-            //Click "DirectlySwitch" button in popup warning message with two options: Save and switch, Directly switch.
-            PTagRawData.ClickCancelSwitchButton();
-
-            //Discard the unsaved modifications will keep the original value in those cell and go ahead with querying data directly.
-            Assert.AreEqual("4", PTagRawDataGrid.GetCellValue(5));
+            Assert.AreEqual("1", PTagRawDataGrid.GetCellValue(2));
 
         }
 
@@ -300,22 +289,26 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Get the original value
+            string originalValue = PTagRawDataGrid.GetCellValue(2);
 
             //Click the 5th row by default (2014年01月02日00点45分-01点00分), and input a valid modified value.
-            PTagRawDataGrid.FocusOnCell(6);
+            PTagRawDataGrid.FocusOnCell(2);
             TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill("5");
+            PtagRawDataValueNumberField.Fill("1.11");
 
-            //Change Start Time or End Time with there is any modified field.
-            PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
+            //check change value as modified.
             TimeManager.ShortPause();
+            Assert.AreEqual("1.11",PTagRawDataGrid.GetCellValue(2));
 
-            //Click "DirectlySwitch" button in popup warning message with two options: Save and switch, Directly switch.
-            PTagRawData.ClickCancelSwitchButton();
+            //Click Cancel icons in gird view to cancel the modifications.
+            //PTagRawData.ClickCancelSwitchButton();
 
-            //Discard the unsaved modifications will keep the original value in those cell and go ahead with querying data directly.
-            Assert.AreEqual("4", PTagRawDataGrid.GetCellValue(5));
+            //The modifications can be cancel successfully, the value will keep original value
+            Assert.AreEqual(originalValue, PTagRawDataGrid.GetCellValue(2));
 
         }
 

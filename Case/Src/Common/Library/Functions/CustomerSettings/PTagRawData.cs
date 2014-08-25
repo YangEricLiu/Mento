@@ -46,6 +46,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button RawDataDirectlySwitchButton = JazzButton.PTagRawDataDirectlySwitchButton;
         private static Button RawDataCancelSwitchButton = JazzButton.PTagRawDataCancelSwitchButton;
         private static Button RawDataSwitchDifferenceValueButton = JazzButton.PTagRawDataSwitchDifferenceValueButton;
+        private static Button RawDataLeftButton = JazzButton.PTagRawDataLeftButton;
+        private static Button RawDataRightButton = JazzButton.PTagRawDataRightButton;
 
         #endregion
 
@@ -151,6 +153,25 @@ namespace Mento.ScriptCommon.Library.Functions
             RawDataModifyButton.Click();
         }
 
+        /// <summary>
+        /// Click left button for reset time range
+        /// </summary>
+        public void ClickLeftButton()
+        {
+            RawDataLeftButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+        }
+
+        /// <summary>
+        /// Click right button for reset time range
+        /// </summary>
+        public void ClickRightButton()
+        {
+            RawDataRightButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+        }
 
         /// <summary>
         /// Click switch button for difference value in grid header

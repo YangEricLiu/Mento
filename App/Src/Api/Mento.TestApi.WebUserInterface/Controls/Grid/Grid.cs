@@ -213,7 +213,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public string GetCellStatus(int rowIndex, int cellIndex3 = 3, bool Paging = true)
         {
-            return this.GetCell(rowIndex, cellIndex3, Paging).Text;
+            return this.GetCell(rowIndex, 3, Paging).Text;
         }
 
         /// <summary>

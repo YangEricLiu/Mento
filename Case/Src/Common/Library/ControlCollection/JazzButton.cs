@@ -297,6 +297,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button PTagRawDataDirectlySwitchButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataDirectlySwitch);
         public static Button PTagRawDataCancelSwitchButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataCancelSwitch);
         public static Button PTagRawDataSwitchDifferenceValueButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataSwitchDifferenceValue);
+        public static Button PTagRawDataLeftButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataLeft);
+        public static Button PTagRawDataRightButton = GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataRight);
 
         #endregion
 

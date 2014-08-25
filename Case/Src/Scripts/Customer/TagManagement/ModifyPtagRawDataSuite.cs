@@ -58,32 +58,35 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月01日00点00分-2014年1月7日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Check the line chart and rawdata grid exist
             //Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.ChartPTagRawData));
             //Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.GridPTagRawData));
 
             //Click the first row (2014年01月01日00点00分-00点15分), and input a valid modified value.
-            PTagRawDataGrid.FocusOnCell(input.InputData.RowID[0] + 1);
+            PTagRawDataGrid.FocusOnCell(2);
             TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill(input.InputData.TestData[0]);
+            PtagRawDataValueNumberField.Fill("1");
+            TimeManager.LongPause();
 
             //Click another row (The second row:2014年01月01日00点15分-00点30分), and input a valid modified value.
-            PTagRawDataGrid.FocusOnCell(input.InputData.RowID[1] + 1);
+            PTagRawDataGrid.FocusOnCell(3);
             TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill(input.InputData.TestData[1]); 
+            PtagRawDataValueNumberField.Fill("2"); 
 
             //Click "Save" button
             PTagRawData.ClickSaveRawDataButton();
 
             //Verify the value 
-            Assert.AreEqual(input.InputData.TestData[0], PTagRawDataGrid.GetCellValue(input.InputData.RowID[0] + 1));
-            Assert.AreEqual(input.InputData.TestData[1], PTagRawDataGrid.GetCellValue(input.InputData.RowID[1] + 1));
+            Assert.AreEqual("1", PTagRawDataGrid.GetCellValue(2));
+            Assert.AreEqual("2", PTagRawDataGrid.GetCellValue(3));
 
             //Verify if the relevant Status fields as Modified.
-            Assert.AreEqual("已修改", PTagRawDataGrid.GetCellStatus(input.InputData.RowID[0] + 1));
-            Assert.AreEqual("已修改", PTagRawDataGrid.GetCellStatus(input.InputData.RowID[1] + 1));
+            Assert.AreEqual("已修改", PTagRawDataGrid.GetCellStatus(2));
+            Assert.AreEqual("已修改", PTagRawDataGrid.GetCellStatus(3));
         
         }
 
@@ -100,7 +103,9 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Click the 3th row (2014年01月02日00点30分-00点45分), and input a valid modified value.
             PTagRawDataGrid.FocusOnCell(input.InputData.RowID[0] + 1);
@@ -109,7 +114,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Change Start Time or End Time with there is any modified field.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Click "Save and Switch" button in popup warning message with two options: Save and switch, Directly switch.
             PTagRawData.ClickSaveAndSwitchButton();
@@ -151,7 +156,6 @@ namespace Mento.Script.Customer.TagManagement
 
         }
 
-
         [Test]
         [CaseID("TC-J1-FVT-PtagRawData-Modify-104")]
         [Type("BFT")]
@@ -180,7 +184,7 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.ClickCancelSwitchButton();
 
             //Discard the unsaved modifications will keep the original value in those cell and go ahead with querying data directly.
-            Assert.AreEqual(input.InputData.TestData[0], PTagRawDataGrid.GetCellValue(input.InputData.RowID[0] + 1));
+            Assert.AreNotEqual(input.InputData.TestData[0], PTagRawDataGrid.GetCellValue(input.InputData.RowID[0] + 1));
 
         }
 

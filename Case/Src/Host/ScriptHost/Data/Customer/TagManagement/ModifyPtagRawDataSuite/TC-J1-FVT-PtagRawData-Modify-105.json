@@ -16,11 +16,8 @@
 				"EndDate":"2014-1-7",	
 				"EndTime":"24:00",	
 			}],
-			"RawDataTestData":[
-			{
-				"RowID":"6",
-				"TestValue":"6",
-			}],
+			"RowID":["6"],
+			"TestValue":["6"],
 		},
 		"ExpectedData":
 		{

@@ -93,7 +93,7 @@ namespace Mento.Script.Customer.TagManagement
         [CaseID("TC-J1-FVT-PtagRawData-View-104")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ViewPtagRawDataSuite), "TC-J1-FVT-PtagRawData-View-104")]
-        public void VerifyCloseButtonInSaveAndQueryAndQueryDirectlyWindow(PtagData input)
+        public void ChangeTimeRangeViaTimeControlDropdown(PtagData input)
         {
             //Navigate to Raw Data tab
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
@@ -106,12 +106,23 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Display the raw data info in selected time range
+            Assert.AreEqual("2014-04-11", PTagRawData.GetBaseStartDateValue());
+            Assert.AreEqual("2014-04-15", PTagRawData.GetBaseEndDateValue());
+            Assert.AreEqual("10:00", PTagRawData.GetBaseStartTimeValue());
+            Assert.AreEqual("06:00", PTagRawData.GetBaseEndTimeValue());
             Assert.AreEqual("11",PTagRawDataGrid.GetCellValue(2));
 
             //After change Start Time to 04/06 10:00, the End Time should be changed to 04/13 10:00.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.LongPause();
             TimeManager.LongPause();
+
+            //Display the raw data info in selected time range
+            Assert.AreEqual("2014-04-06", PTagRawData.GetBaseStartDateValue());
+            Assert.AreEqual("2014-04-13", PTagRawData.GetBaseEndDateValue());
+            Assert.AreEqual("10:00", PTagRawData.GetBaseStartTimeValue());
+            Assert.AreEqual("10:00", PTagRawData.GetBaseEndTimeValue());
+            Assert.AreEqual("6", PTagRawDataGrid.GetCellValue(2));
 
             //Set Start Time is less than 2000-01-01 00:00, and end time is larger than 2049-12-31 24:00
             //(1999-12-31 23:00 ~ 2050-01-01 01:00)

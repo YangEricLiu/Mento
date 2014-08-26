@@ -171,7 +171,7 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.ClickSaveRawDataButton();
 
             //Click Switch button it is Original Value now
-            if (PTagRawDataGrid.GetCellValue(1) == "能耗累积值/千瓦时")
+            //if (PTagRawDataGrid.GetCellValue(1) == "能耗累积值/千瓦时")
                 PTagRawData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
 

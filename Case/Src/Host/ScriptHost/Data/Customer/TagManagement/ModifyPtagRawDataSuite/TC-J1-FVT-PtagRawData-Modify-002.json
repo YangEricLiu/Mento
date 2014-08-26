@@ -19,14 +19,7 @@
 		},
 		"ExpectedData":
 		{
-			"CommonName":"PTag_AutomationCase",
-			"Code":"PTag_AutomationCase",
-			"Meter":"PTag_AutomationCase",
-			"Channel":"1",
-			"Commodity":"$@Commodity_Electricity",
-			"Uom":"$@Uom_KWH",
-			"CalculationType":"Max",
-			"Comments":"nothing",
+
 		}
 	}
 ]

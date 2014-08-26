@@ -20,7 +20,7 @@ namespace Mento.Script.Customer.TagManagement
 {
     [TestFixture]
     [Owner("Linda")]
-    [CreateTime("2014-08-18")]
+    [CreateTime("2014-08-26")]
     [ManualCaseID("TC-J1-FVT-PtagRawData-View")]
     public class ViewPtagRawDataSuite : TestSuiteBase
     {
@@ -196,13 +196,13 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SwitchToRawDataTab();
 
             //The UOM display with KWH is grid view.
-            
+            //...........?
 
             //Select another tag that UOM is ton.
 
 
             //The UOM display with Ton accordingly.
-
+            //..............?
 
         }
 

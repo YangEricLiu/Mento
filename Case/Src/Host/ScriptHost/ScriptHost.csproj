@@ -514,6 +514,9 @@
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-3.json" />
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-2.json" />
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-1.json" />
+    <None Include="Data\Customer\TagManagement\DiffValueCalcPtagRawDataSuite\TC-J1-FVT-DifferenceValueCalculation-101.json" />
+    <None Include="Data\Customer\TagManagement\DiffValueCalcPtagRawDataSuite\TC-J1-FVT-DifferenceValueCalculation-102.json" />
+    <None Include="Data\Customer\TagManagement\DiffValueCalcPtagRawDataSuite\TC-J1-FVT-DifferenceValueCalculation-103.json" />
     <None Include="Data\Customer\TagManagement\ViewPtagRawDataSuite\TC-J1-FVT-PtagRawData-View-103.json" />
     <None Include="Data\Customer\TagManagement\ViewPtagRawDataSuite\TC-J1-FVT-PtagRawData-View-104.json" />
     <None Include="Data\Customer\TagManagement\ViewPtagRawDataSuite\TC-J1-FVT-PtagRawData-View-105.json" />

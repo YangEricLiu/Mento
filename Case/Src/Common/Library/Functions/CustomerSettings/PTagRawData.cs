@@ -225,6 +225,26 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public string GetBaseStartDateValue()
+        {
+            return StartDatePicker.GetValue();
+        }
+
+        public string GetBaseEndDateValue()
+        {
+            return EndDatePicker.GetValue();
+        }
+
+        public string GetBaseStartTimeValue()
+        {
+            return StartTimeComboBox.GetValue();
+        }
+
+        public string GetBaseEndTimeValue()
+        {
+            return EndTimeComboBox.GetValue();
+        }
+
         #endregion
 
         #region Verification

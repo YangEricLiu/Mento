@@ -53,40 +53,42 @@ namespace Mento.Script.Customer.TagManagement
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
             PTagRawData.SwitchToRawDataTab();
 
-            //Set Start Time is Start Time is 04/11 10:00 and End Time is 04/15 10:00
+            //Set Start Time is Start Time is 04/11 00:00 and End Time is 04/15 24:00
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
            
             //Click Left button
             PTagRawData.ClickLeftButton();
             
-            //Verify new Start Time is 04/07 10:00 and End time is 04/11 10:00..
-            Assert.AreEqual("2014-04-07",PTagRawData.GetBaseStartDateValue());
-            Assert.AreEqual("2014-04-11",PTagRawData.GetBaseEndDateValue());
-            Assert.AreEqual("10:00",PTagRawData.GetBaseStartTimeValue());
-            Assert.AreEqual("10:00",PTagRawData.GetBaseEndTimeValue());
+            //Verify new Start Time is 04/06 00:00 and End time is 04/10 24:00..
+            Assert.AreEqual("2014-04-06",PTagRawData.GetBaseStartDateValue());
+            Assert.AreEqual("2014-04-10",PTagRawData.GetBaseEndDateValue());
+            Assert.AreEqual("00:00",PTagRawData.GetBaseStartTimeValue());
+            Assert.AreEqual("24:00",PTagRawData.GetBaseEndTimeValue());
 
             //Display raw data in selected time range
-            Assert.AreEqual("7",PTagRawDataGrid.GetCellValue(2));
+            Assert.AreEqual("6",PTagRawDataGrid.GetCellValue(2));
 
-            //Set Start Time is Start Time is 04/11 10:00 and End Time is 04/15 10:00           
+            //Set Start Time is Start Time is 04/11 00:00 and End Time is 04/15 24:00           
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
             //Click Right button
             PTagRawData.ClickRightButton();
 
-            //Verify new Start Time is 04/15 10:00 and End time is 04/19 10:00.
-            Assert.AreEqual("2014-04-15", PTagRawData.GetBaseStartDateValue());
-            Assert.AreEqual("2014-04-19", PTagRawData.GetBaseEndDateValue());
-            Assert.AreEqual("10:00", PTagRawData.GetBaseStartTimeValue());
-            Assert.AreEqual("10:00", PTagRawData.GetBaseEndTimeValue());
+            //Verify new Start Time is 04/16 00:00 and End time is 04/20 24:00.
+            Assert.AreEqual("2014-04-16", PTagRawData.GetBaseStartDateValue());
+            Assert.AreEqual("2014-04-20", PTagRawData.GetBaseEndDateValue());
+            Assert.AreEqual("00:00", PTagRawData.GetBaseStartTimeValue());
+            Assert.AreEqual("24:00", PTagRawData.GetBaseEndTimeValue());
 
             //Display raw data in selected time range.
-            Assert.AreEqual("15",PTagRawDataGrid.GetCellValue(3));
+            Assert.AreEqual("16",PTagRawDataGrid.GetCellValue(3));
         }
 
         [Test]
@@ -102,6 +104,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set original Start Time is 04/11 10:00 and End Time is 04/15 06:00. 
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -114,6 +117,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //After change Start Time to 04/06 10:00, the End Time should be changed to 04/13 10:00.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -127,6 +131,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set Start Time is less than 2000-01-01 00:00, and end time is larger than 2049-12-31 24:00
             //(1999-12-31 23:00 ~ 2050-01-01 01:00)
             PTagRawData.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -165,6 +170,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年02月02日00点00分-2014年02月03日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 

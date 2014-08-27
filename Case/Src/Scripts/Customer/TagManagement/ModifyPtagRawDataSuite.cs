@@ -58,6 +58,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月01日00点00分-2014年1月7日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
@@ -110,6 +111,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
@@ -121,6 +123,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Change Start Time or End Time with there is any modified field.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
             TimeManager.LongPause();
 
             //Click "Save and Switch" button in popup warning message with two options: Save and switch, Directly switch.
@@ -145,6 +148,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
            
@@ -156,6 +160,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Change Start Time or End Time with there is any modified field.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
             TimeManager.LongPause();
 
             //Click "DirectlySwitch" button in popup warning message with two options: Save and switch, Directly switch.
@@ -180,6 +185,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
@@ -192,6 +198,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Change Start Time or End Time with there is any modified field.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
             TimeManager.LongPause();
 
             //Click "DirectlySwitch" button in popup warning message with two options: Save and switch, Directly switch.
@@ -215,7 +222,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Click Switch button it is Original Value now
-            if (PTagRawDataGrid.GetCellValue(1) == "能耗累积值/千瓦时")
+            //if (PTagRawDataGrid.GetCellValue(1) == "能耗累积值/千瓦时")
                 PTagRawData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
 
@@ -247,6 +254,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -256,7 +264,7 @@ namespace Mento.Script.Customer.TagManagement
             PtagRawDataValueNumberField.Fill("6");
 
             //Click Switch button in Original Value now
-            if (PTagRawDataGrid.GetCellValue(1) == "能耗累积值/千瓦时")
+            //if (PTagRawDataGrid.GetCellValue(1) == "能耗累积值/千瓦时")
                 PTagRawData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
             
@@ -289,6 +297,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -325,6 +334,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -354,6 +364,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -382,6 +393,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -430,6 +442,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 

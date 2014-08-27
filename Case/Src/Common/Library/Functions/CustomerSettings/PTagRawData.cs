@@ -225,6 +225,13 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public void SetTimeRange(string startTime, string endTime)
+        {
+            StartTimeComboBox.SelectItem(startTime);
+
+            EndTimeComboBox.SelectItem(endTime);
+        }
+
         public string GetBaseStartDateValue()
         {
             return StartDatePicker.GetValue();

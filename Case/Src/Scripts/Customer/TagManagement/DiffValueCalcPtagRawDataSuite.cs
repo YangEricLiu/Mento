@@ -56,6 +56,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set the time range to 2014-1-1 00:00 to 2014-1-7 24:00
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -89,6 +90,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set the time range to 2014-1-2 00:00 to 2014-1-8 24:00
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -122,6 +124,7 @@ namespace Mento.Script.Customer.TagManagement
             //Set the time range to 2014-1-3 00:00 to 2014-1-9 24:00
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
 

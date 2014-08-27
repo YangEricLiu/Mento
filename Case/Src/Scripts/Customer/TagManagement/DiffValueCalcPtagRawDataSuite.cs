@@ -63,6 +63,7 @@ namespace Mento.Script.Customer.TagManagement
             //Click Switch button when it is Original Value now.  
             PTagRawData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Switch to Difference Value and display them in both Line Chart and Grid View. Verify the Difference Value is correct.
             Assert.AreEqual("20", PTagRawDataGrid.GetCellValue(2));
@@ -97,6 +98,7 @@ namespace Mento.Script.Customer.TagManagement
             //Click Switch button when it is Original Value now.  
             PTagRawData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Switch to Difference Value and display them in both Line Chart and Grid View. Verify the Difference Value is correct.
             Assert.AreEqual("20", PTagRawDataGrid.GetCellValue(2));
@@ -130,6 +132,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click Switch button when it is Original Value now.  
             PTagRawData.ClickSwitchDifferenceValueButton();
+            TimeManager.LongPause();
             TimeManager.LongPause();
 
             //Switch to Difference Value and display them in both Line Chart and Grid View. Verify the Difference Value in  2014-1-1 00:15 is Null as the meter reaches its max value.

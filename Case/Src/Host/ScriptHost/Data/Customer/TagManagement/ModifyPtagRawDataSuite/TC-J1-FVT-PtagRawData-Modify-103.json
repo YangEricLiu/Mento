@@ -11,13 +11,11 @@
 				"EndTime":"24:00",	
 			},
 			{
-				"StartDate":"2014-1-1",
+				"StartDate":"2014-01-01",
 				"StartTime":"00:00",
-				"EndDate":"2014-1-7",	
+				"EndDate":"2014-01-07",	
 				"EndTime":"24:00",	
 			}],
-			"RowID":["4"],
-			"TestValue":["4"],
 		},
 		"ExpectedData":
 		{

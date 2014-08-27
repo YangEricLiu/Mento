@@ -78,6 +78,8 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
             PtagRawDataValueNumberField.Fill("2");
             TimeManager.LongPause();
+            PTagRawDataGrid.FocusOnCell(4);
+            TimeManager.LongPause();
 
             //Click "Save" button
             PTagRawData.ClickSaveRawDataButton();
@@ -101,9 +103,6 @@ namespace Mento.Script.Customer.TagManagement
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyPtagRawDataSuite), "TC-J1-FVT-PtagRawData-Modify-102")]
         public void SaveAndSwitchWhenContainsNotSavedModifications(PtagData input)
         {
-            int[] RowID = new int[] {3};
-            string[] TestData = new string[] {"3"};
-
             //Navigate to Raw Data tab
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
             PTagRawData.SwitchToRawDataTab();
@@ -117,9 +116,9 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Click the 3th row (2014年01月02日00点30分-00点45分), and input a valid modified value.
-            PTagRawDataGrid.FocusOnCell(RowID[0] + 1);
+            PTagRawDataGrid.FocusOnCell(4);
             TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill(TestData[0]);
+            PtagRawDataValueNumberField.Fill("3");
 
             //Change Start Time or End Time with there is any modified field.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
@@ -131,7 +130,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Save the unsaved modifications into database and then go ahead with querying data.
-            Assert.AreEqual(TestData[0], PTagRawDataGrid.GetCellValue(RowID[0] + 1));
+            Assert.AreEqual("3", PTagRawDataGrid.GetCellValue(4));
 
         }
 
@@ -153,9 +152,9 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
            
             //Click the 4th row by default (2014年01月02日00点45分-01点00分), and input a valid modified value.
-            PTagRawDataGrid.FocusOnCell(input.InputData.RowID[0] + 1);
+            PTagRawDataGrid.FocusOnCell(5);
             TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill(input.InputData.TestData[0]);
+            PtagRawDataValueNumberField.Fill("4.1");
             TimeManager.LongPause();
 
             //Change Start Time or End Time with there is any modified field.
@@ -168,7 +167,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Discard the unsaved modifications will keep the original value in those cell and go ahead with querying data directly.
-            Assert.AreNotEqual(input.InputData.TestData[0], PTagRawDataGrid.GetCellValue(input.InputData.RowID[0] + 1));
+            Assert.AreNotEqual("4.1", PTagRawDataGrid.GetCellValue(5));
 
         }
 
@@ -191,9 +190,9 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Click the 5th row by default (2014年01月02日00点45分-01点00分), and input a valid modified value.
-            PTagRawDataGrid.FocusOnCell(input.InputData.RowID[0] + 1);
+            PTagRawDataGrid.FocusOnCell(6);
             TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill(input.InputData.TestData[0]);
+            PtagRawDataValueNumberField.Fill("5");
             TimeManager.LongPause();
 
             //Change Start Time or End Time with there is any modified field.
@@ -206,7 +205,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Discard the unsaved modifications will keep the original value in those cell and go ahead with querying data directly.
-            Assert.AreNotEqual(input.InputData.TestData[0], PTagRawDataGrid.GetCellValue(input.InputData.RowID[0] + 1));
+            Assert.AreNotEqual("5", PTagRawDataGrid.GetCellValue(6));
 
         }
 
@@ -310,6 +309,7 @@ namespace Mento.Script.Customer.TagManagement
             PtagRawDataValueNumberField.Fill("1.11");
 
             //check change value as modified.
+            PTagRawDataGrid.FocusOnCell(3);
             TimeManager.ShortPause();
             Assert.AreEqual("1.11",PTagRawDataGrid.GetCellValue(2));
 
@@ -457,33 +457,5 @@ namespace Mento.Script.Customer.TagManagement
 
         }
 
-        [Test]
-        [CaseID("TC-J1-FVT-PtagRawData-Modify-test")]
-        [Type("BFT")]
-        [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyPtagRawDataSuite), "TC-J1-FVT-PtagRawData-Modify-102")]
-        public void InputDataValueForPtagRaw(PtagData input)
-        {
-            PTagSettings.FocusOnPTagByName("C1Org1Build1_ptag1");
-            PTagRawData.SwitchToRawDataTab();
-
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-
-            PTagRawDataGrid.FocusOnCell(2);
-            TimeManager.LongPause();
-            PtagRawDataValueNumberField.Fill("5");
-
-            //Click "Save" button
-            PTagRawData.ClickSaveRawDataButton();
-
-            Assert.AreEqual("5", PTagRawDataGrid.GetCellValue(2));
-        }
     }
 }

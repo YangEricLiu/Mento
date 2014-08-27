@@ -62,6 +62,10 @@ namespace Mento.Script.Customer.TagManagement
            
             //Click Left button
             PTagRawData.ClickLeftButton();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             
             //Verify new Start Time is 04/06 00:00 and End time is 04/10 24:00..
             Assert.AreEqual("2014-04-06",PTagRawData.GetBaseStartDateValue());
@@ -80,6 +84,10 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click Right button
             PTagRawData.ClickRightButton();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Verify new Start Time is 04/16 00:00 and End time is 04/20 24:00.
             Assert.AreEqual("2014-04-16", PTagRawData.GetBaseStartDateValue());
@@ -186,17 +194,24 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click save button
             PTagRawData.ClickSaveRawDataButton();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Click Switch button it is Original Value now
             //if (PTagRawDataGrid.GetCellValue(1) == "能耗累积值/千瓦时")
                 PTagRawData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+       
 
             //Switch to Difference Value and display them in both Line Chart and Grid View.
             Assert.AreEqual("能耗差值/千瓦时", PTagRawDataGrid.GetCellValue(1));
             Assert.AreEqual("12", PTagRawDataGrid.GetCellValue(2));
 
             //Click Switch button it is Difference Value now.  
+            PTagRawData.ClickSwitchDifferenceValueButton();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             Assert.AreEqual("能耗累积值/千瓦时", PTagRawDataGrid.GetCellValue(1));
             Assert.AreEqual("10", PTagRawDataGrid.GetCellValue(2));
 

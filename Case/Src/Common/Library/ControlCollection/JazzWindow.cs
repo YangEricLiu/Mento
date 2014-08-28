@@ -10,24 +10,30 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
     {
         #region energy view
 
-        public static Window WindowMessageInfos = GetControl<Window>(JazzControlLocatorKey.WindowMessageInfos);
+            public static Window WindowMessageInfos = GetControl<Window>(JazzControlLocatorKey.WindowMessageInfos);
 
         #endregion
 
         #region customer setting
 
-        #region hierarchy cost property
+            #region hierarchy cost property
 
-        public static Window FactorWindow = GetControl<Window>(JazzControlLocatorKey.WindowFactor);
+            public static Window FactorWindow = GetControl<Window>(JazzControlLocatorKey.WindowFactor);
 
-        #endregion
+            #endregion
 
-        #region TargetBaseline
+            #region TargetBaseline
 
-        public static Window TBCalendarInfoWindow = GetControl<Window>(JazzControlLocatorKey.WindowTBCalendarInfo);
+            public static Window TBCalendarInfoWindow = GetControl<Window>(JazzControlLocatorKey.WindowTBCalendarInfo);
 
-        #endregion
+            #endregion
 
+            #region RawDataSwitch
+
+            public static Window SwitchTimeWindow = GetControl<Window>(JazzControlLocatorKey.WindowSwitchTime);
+        
+            #endregion
+        
         #endregion
 
     }

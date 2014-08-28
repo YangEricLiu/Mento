@@ -6,10 +6,10 @@ using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.TestData.Customer;
-using Mento.TestApi.WebUserInterface;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using OpenQA.Selenium;
+
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -39,7 +39,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TabButton RawDataTab = JazzButton.PTagRawDataTabButton;
         private static Button RawDataModifyButton = JazzButton.PTagRawDataModifyButton;
         private static Button RawDataSaveButton = JazzButton.PTagRawDataSaveButton;
-        private static Button RawDataCancelButton = JazzButton.PTagSettingsCancelButton;
+        private static Button RawDataCancelButton = JazzButton.PTagRawDataCancelButton;
         private static Grid GridPTagRawData = JazzGrid.GridPTagRawData;
 
         private static Button RawDataSaveAndSwitchButton = JazzButton.PTagRawDataSaveAndSwitchButton;
@@ -48,6 +48,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button RawDataSwitchDifferenceValueButton = JazzButton.PTagRawDataSwitchDifferenceValueButton;
         private static Button RawDataLeftButton = JazzButton.PTagRawDataLeftButton;
         private static Button RawDataRightButton = JazzButton.PTagRawDataRightButton;
+
+        private static Window SwitchTimeWindow = JazzWindow.SwitchTimeWindow;
 
         #endregion
 
@@ -178,7 +180,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickSwitchDifferenceValueButton()
         {
-            RawDataSaveButton.Click();
+            RawDataSwitchDifferenceValueButton.Click();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
         }
@@ -251,6 +253,22 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return EndTimeComboBox.GetValue();
         }
+
+        public void ClickSwitchWindowSSBtn()
+        {
+            SwitchTimeWindow.Confirm();
+        }
+
+        public void ClickSwitchWindowDSBtn()
+        {
+            SwitchTimeWindow.Cancel();
+        }
+
+        public void CloseSwitchTimeWindow()
+        {
+            SwitchTimeWindow.Close();
+        }
+
 
         #endregion
 

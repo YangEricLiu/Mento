@@ -59,9 +59,13 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Click Switch button when it is Original Value now.  
             PTagRawData.ClickSwitchDifferenceValueButton();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -94,9 +98,13 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Click Switch button when it is Original Value now.  
             PTagRawData.ClickSwitchDifferenceValueButton();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -129,9 +137,13 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Click Switch button when it is Original Value now.  
             PTagRawData.ClickSwitchDifferenceValueButton();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
 

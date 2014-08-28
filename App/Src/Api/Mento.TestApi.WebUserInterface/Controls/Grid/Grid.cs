@@ -207,6 +207,45 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
+        /// Verify if the cell is clickable 
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public bool IsCellEdit(int rowIndex, int cellIndex2 = 2, bool Paging = true)
+        {
+            return this.GetCell(rowIndex, cellIndex2, Paging).Selected;
+        }
+
+        /// <summary>
+        /// Get the Element from the grid header 
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public virtual IWebElement GetHeaderCell(int rowIndex=1, int cellIndex2=3)
+        {
+            var cellLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridHeaderhideValueType);
+
+            Hashtable variables = new Hashtable() { { ROWINDEXVARIABLE, rowIndex }, { CELLINDEXVARIABLE2, cellIndex2 } };
+
+            return FindChild(Locator.GetVariableLocator(cellLocator, variables));
+        }
+
+        /// <summary>
+        /// Get the string of value type from the grid header
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public string GetTitleValueType(string str1, string str2)
+        {
+            IWebElement gridHeaderValueTypeControl = this.GetHeaderCell();
+            if (str1 == gridHeaderValueTypeControl.Text)
+                return str2;
+            else
+                return str1;
+
+        }
+
+        /// <summary>
         /// Get the relevant Status fields as Modified or Unmodified. 
         /// </summary>
         /// <param name="cellName"></param>

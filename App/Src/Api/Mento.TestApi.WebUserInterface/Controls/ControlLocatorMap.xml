@@ -63,6 +63,7 @@
   <add key="GridCellText" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[$#cellIndex2]/div" type ="XPath"/>
   <add key="GridCellIndex" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[$#rowIndex]/td[$#cellIndex2]/div" type ="XPath"/>
   <add key="GridRowIndex" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[$#rowIndex]" type ="XPath"/>
+  <add key="GridHeaderhideValueType" value = "//div[contains(@id, 'rawdatagridpanel') and contains(@class,'x-grid-with-row-lines')]/div/div/div/div[contains(@style,'display: none')]/div/span/span[@class='x-column-header-inner-text']" type ="XPath"/>
   <!--For get ranking radio button-->
     <!--<add key="GridRowSelector" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]" type ="XPath"/>
        -->

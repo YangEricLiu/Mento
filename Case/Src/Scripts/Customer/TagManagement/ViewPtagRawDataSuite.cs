@@ -59,9 +59,13 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
            
             //Click Left button
             PTagRawData.ClickLeftButton();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
@@ -81,9 +85,13 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Click Right button
             PTagRawData.ClickRightButton();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
@@ -115,6 +123,9 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Display the raw data info in selected time range
             Assert.AreEqual("2014-04-11", PTagRawData.GetBaseStartDateValue());
@@ -126,6 +137,9 @@ namespace Mento.Script.Customer.TagManagement
             //After change Start Time to 04/06 10:00, the End Time should be changed to 04/13 10:00.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -140,6 +154,9 @@ namespace Mento.Script.Customer.TagManagement
             //(1999-12-31 23:00 ~ 2050-01-01 01:00)
             PTagRawData.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -181,6 +198,9 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Click the 1&2 row and input two valid modified value.
             PTagRawDataGrid.FocusOnCell(2);
@@ -196,10 +216,12 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.ClickSaveRawDataButton();
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //Click Switch button it is Original Value now
             //if (PTagRawDataGrid.GetCellValue(1) == "能耗累积值/千瓦时")
                 PTagRawData.ClickSwitchDifferenceValueButton();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
        
@@ -212,6 +234,8 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+
             Assert.AreEqual("能耗累积值/千瓦时", PTagRawDataGrid.GetCellValue(1));
             Assert.AreEqual("10", PTagRawDataGrid.GetCellValue(2));
 

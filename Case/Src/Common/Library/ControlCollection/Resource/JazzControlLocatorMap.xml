@@ -259,10 +259,10 @@
            <ptagrawdata>
               <add key="TagButtonPTagRawData" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Button.Originaldata']]" type="XPath"/>
               <add key="ButtonPTagRawDataSave" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
-              <add key="ButtonPTagRawDataCancel" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+              <add key="ButtonPTagRawDataCancel" value="//div[contains(@id,'rawdatapanel') and contains(@class,'x-tabpanel-child')]/div/div/div/div[contains(@class,'x-btn')][2]/em/button" type="XPath"/>
               <add key="ButtonPTagRawDataModify" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.ChangeRecord']]" type="XPath"/>
-              <add key="ButtonPTagRawDataSaveAndSwitch" value="//div[contains(@id,'window') and contains(@class,'x-window-closable')]/div/div/div/div[1]/em/button" type="XPath"/>
-              <add key="ButtonPTagRawDataDirectlySwitch" value="//div[contains(@id,'window') and contains(@class,'x-window-closable')]/div/div/div/div[2]/em/button" type="XPath"/>
+              <add key="ButtonPTagRawDataSaveAndSwitch" value="//div[contains(@class,'x-toolbar-footer-docked-bottom')]/div/div/div[1]/em/button" type="XPath"/>
+              <add key="ButtonPTagRawDataDirectlySwitch" value="//div[contains(@class,'x-toolbar-footer-docked-bottom')]/div/div/div[2]/em/button" type="XPath"/>
               <add key="ButtonPTagRawDataCancelSwitch" value="//img[@class='x-tool-close']" type="XPath"/>
               <add key="ButtonPTagRawDataSwitchDifferenceValue" value="//span[@id='accumulate_button' and @class='x-column-header-inner-button']" type="XPath"/>
               <add key="ButtonPTagRawDataLeft" value="//div[contains(@id,'rawdatachartpanel') and contains(@id,'targetEl')]/div[contains(@class,'container')]/div[1]/em/button" type="XPath"/>
@@ -1199,6 +1199,10 @@
     <EnergyView>
       <add key="WindowMessageInfos" value="//div[contains(@id,'window') and contains(@class, 'x-window-default')]" type="XPath"/>
     </EnergyView>
+  
+    <RawData>
+      <add key="WindowSwitchTime" value="//div[contains(@id,'window') and contains(@class, 'x-window-default')]" type="XPath"/>
+    </RawData>
   </Window>
   <!--Window End-->
 

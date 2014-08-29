@@ -1017,6 +1017,7 @@
     <None Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\TC-J1-FVT-Widget-Add-101-1.json" />
     <None Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\TC-J1-FVT-Widget-Add-101-2.json" />
     <None Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\TC-J1-FVT-Widget-Add-101-3.json" />
+    <None Include="Data\OpenAPI\EnergyViewAPI\TC-J1-FVT-EnergyAnalysisOpenAPI-101-1.json" />
     <None Include="Data\System\Example\IllegalTestSuite\TC-J1-Example-002.json" />
   </ItemGroup>
   <ItemGroup>

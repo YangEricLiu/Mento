@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"url":"energy.svc/GetEnergyUsageData",
+			"failedFileName":"",
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":"",
+		}
+	}
+]

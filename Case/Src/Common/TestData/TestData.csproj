@@ -97,6 +97,7 @@
     <Compile Include="Information\ShareDashboardData.cs" />
     <Compile Include="Information\RenameDashboardData.cs" />
     <Compile Include="Information\MaximizeWidgetData.cs" />
+    <Compile Include="OpenAPI\OpenAPIData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

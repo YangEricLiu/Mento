@@ -29,7 +29,7 @@ namespace Mento.Script.Customer.TagManagement
         private static Chart PTagRawDataLineChart = JazzChart.PTagRawDataLineChart;
         private static Grid PTagRawDataGrid = JazzGrid.GridPTagRawData;
         private static TextField PtagRawDataValueNumberField = JazzTextField.PtagRawDataValueTextField;
-
+        
         [SetUp]
         public void CaseSetUp()
         {
@@ -178,10 +178,15 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Click "DirectlySwitch" button in popup warning message with two options: Save and switch, Directly switch.
-            PTagRawData.ClickDirectlySwitchButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            //if (ElementHandler.Exists(SwitchTimeWindow))
+            //{            
+            
+                PTagRawData.ClickDirectlySwitchButton();
+                TimeManager.LongPause();
+                TimeManager.LongPause();
+                TimeManager.LongPause();
+            //}
+
 
             //Discard the unsaved modifications will keep the original value in those cell and go ahead with querying data directly.
             Assert.AreNotEqual("4.1", PTagRawDataGrid.GetCellValue(7));
@@ -270,6 +275,7 @@ namespace Mento.Script.Customer.TagManagement
             //Navigate to Raw Data tab
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
             PTagRawData.SwitchToRawDataTab();
+            TimeManager.LongPause();
 
             //Set time range = 2014年01月02日00点00分-2014年1月8日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;

@@ -221,7 +221,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// </summary>
         /// <param name="cellName"></param>
         /// <returns></returns>
-        public virtual IWebElement GetHeaderCell(int rowIndex=1, int cellIndex2=3)
+        public IWebElement GetHeaderCell(int rowIndex=1, int cellIndex2=3)
         {
             var cellLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridHeaderhideValueType);
 

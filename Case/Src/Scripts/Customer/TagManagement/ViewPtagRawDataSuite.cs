@@ -144,11 +144,11 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Display the raw data info in selected time range
-            Assert.AreEqual("2014-04-06", PTagRawData.GetBaseStartDateValue());
+            Assert.AreEqual("2014-04-07", PTagRawData.GetBaseStartDateValue());
             Assert.AreEqual("2014-04-13", PTagRawData.GetBaseEndDateValue());
             Assert.AreEqual("10:00", PTagRawData.GetBaseStartTimeValue());
             Assert.AreEqual("10:00", PTagRawData.GetBaseEndTimeValue());
-            Assert.AreEqual("6", PTagRawDataGrid.GetCellValue(2));
+            Assert.AreEqual("7", PTagRawDataGrid.GetCellValue(2));
 
             //Set Start Time is less than 2000-01-01 00:00, and end time is larger than 2049-12-31 24:00
             //(1999-12-31 23:00 ~ 2050-01-01 01:00)
@@ -163,8 +163,6 @@ namespace Mento.Script.Customer.TagManagement
             //The time controller for smaller than 2000-01-01 00:00 and larger than 2049-12-31 24:00 is not available for Start time
             Assert.AreNotEqual("1999-12-31",PTagRawData.GetBaseStartDateValue());
             Assert.AreNotEqual("2050-01-01", PTagRawData.GetBaseEndDateValue());
-            Assert.AreNotEqual("23:00", PTagRawData.GetBaseStartTimeValue());
-            Assert.AreNotEqual("01:00", PTagRawData.GetBaseEndTimeValue());
 
         }
 
@@ -191,6 +189,7 @@ namespace Mento.Script.Customer.TagManagement
             //Navigate to Raw Data tab
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
             PTagRawData.SwitchToRawDataTab();
+            TimeManager.LongPause();
 
             //Set time range = 2014年02月02日00点00分-2014年02月03日24点00分
             var ManualTimeRange = input.InputData.ManualTimeRange;
@@ -219,7 +218,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Click Switch button it is Original Value now
-            //if (PTagRawDataGrid.GetCellValue(1) == "能耗累积值/千瓦时")
+            if (PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时") == "能耗累积值/千瓦时")
                 PTagRawData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
             TimeManager.LongPause();
@@ -227,16 +226,28 @@ namespace Mento.Script.Customer.TagManagement
        
 
             //Switch to Difference Value and display them in both Line Chart and Grid View.
-            Assert.AreEqual("能耗差值/千瓦时", PTagRawDataGrid.GetCellValue(1));
+            //Assert.AreEqual("能耗差值/千瓦时", PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"));
             Assert.AreEqual("12", PTagRawDataGrid.GetCellValue(2));
 
             //Click Switch button it is Difference Value now.  
-            PTagRawData.ClickSwitchDifferenceValueButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            if (PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时") == "能耗累积值/千瓦时")
+            {
+                PTagRawData.ClickSwitchDifferenceValueButton();
+                TimeManager.LongPause();
+                TimeManager.LongPause();
+                TimeManager.LongPause();
+                PTagRawData.ClickSwitchDifferenceValueButton();
+                TimeManager.LongPause();
+                TimeManager.LongPause();
+                TimeManager.LongPause();
+            }
+            else
+            {
 
-            Assert.AreEqual("能耗累积值/千瓦时", PTagRawDataGrid.GetCellValue(1));
+
+            }
+                
+            //Assert.AreEqual("能耗累积值/千瓦时", PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"));
             Assert.AreEqual("10", PTagRawDataGrid.GetCellValue(2));
 
         }
@@ -252,13 +263,18 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SwitchToRawDataTab();
 
             //The UOM display with KWH is grid view.
-            //...........?
+            Assert.Greater(PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"),"/千瓦时");
+            TimeManager.LongPause();
 
             //Select another tag that UOM is ton.
-
+            PTagSettings.FocusOnPTagByName("CalculationTypeMinIs0");
+            PTagRawData.SwitchToRawDataTab();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //The UOM display with Ton accordingly.
-            //..............?
+            Assert.Greater(PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"), "/吨");
 
         }
 

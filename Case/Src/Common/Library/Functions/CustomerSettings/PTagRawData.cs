@@ -49,7 +49,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button RawDataLeftButton = JazzButton.PTagRawDataLeftButton;
         private static Button RawDataRightButton = JazzButton.PTagRawDataRightButton;
 
-        private static Window SwitchTimeWindow = JazzWindow.SwitchTimeWindow;
+        //private static Window SwitchTimeWindow = JazzWindow.SwitchTimeWindow;
+        private static Locator SwitchTimeWindow = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.WindowSwitchTime);
 
         #endregion
 
@@ -190,8 +191,12 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickSaveAndSwitchButton()
         {
-            RawDataSaveAndSwitchButton.Click();
-            JazzMessageBox.LoadingMask.WaitLoading();
+            if (ElementHandler.Exists(SwitchTimeWindow))
+            {
+                RawDataSaveAndSwitchButton.Click();
+                JazzMessageBox.LoadingMask.WaitLoading();
+            }
+
         }
 
         /// <summary>
@@ -199,8 +204,12 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickDirectlySwitchButton()
         {
-            RawDataDirectlySwitchButton.Click();
-            JazzMessageBox.LoadingMask.WaitLoading();
+            if(ElementHandler.Exists(SwitchTimeWindow))
+            {
+                RawDataDirectlySwitchButton.Click();
+                JazzMessageBox.LoadingMask.WaitLoading();
+            }
+
         }
 
         /// <summary>
@@ -208,8 +217,12 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickCancelSwitchButton()
         {
-            RawDataCancelSwitchButton.Click();
-            JazzMessageBox.LoadingMask.WaitLoading();
+            if (ElementHandler.Exists(SwitchTimeWindow))
+            {
+                RawDataCancelSwitchButton.Click();
+                JazzMessageBox.LoadingMask.WaitLoading();
+            }
+
         }
 
         /// <summary>
@@ -256,17 +269,29 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickSwitchWindowSSBtn()
         {
-            SwitchTimeWindow.Confirm();
+            if (ElementHandler.Exists(SwitchTimeWindow))
+            {
+                RawDataSaveAndSwitchButton.Click();
+                JazzMessageBox.LoadingMask.WaitLoading();
+            }
         }
 
         public void ClickSwitchWindowDSBtn()
         {
-            SwitchTimeWindow.Cancel();
+            if (ElementHandler.Exists(SwitchTimeWindow))
+            {
+                RawDataDirectlySwitchButton.Click();
+                JazzMessageBox.LoadingMask.WaitLoading();
+            }
         }
 
         public void CloseSwitchTimeWindow()
         {
-            SwitchTimeWindow.Close();
+            if (ElementHandler.Exists(SwitchTimeWindow))
+            {
+                RawDataCancelButton.Click();
+                JazzMessageBox.LoadingMask.WaitLoading();
+            }
         }
 
 

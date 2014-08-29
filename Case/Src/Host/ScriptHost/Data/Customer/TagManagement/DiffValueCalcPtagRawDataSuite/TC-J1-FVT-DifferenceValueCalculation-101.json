@@ -5,9 +5,9 @@
 			"OriginalName":"PTag_AutomationTest",
 			"ManualTimeRange":[
 			{
-				"StartDate":"2014-01-01",
+				"StartDate":"2014-05-01",
 				"StartTime":"00:00",
-				"EndDate":"2014-01-07",	
+				"EndDate":"2014-05-07",	
 				"EndTime":"24:00",	
 			}],
 		},

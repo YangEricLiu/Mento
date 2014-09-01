@@ -74,13 +74,9 @@ namespace Mento.Script.OpenAPI
                         {
                             string outString = ConvertJson.String2Json(sr.ReadToEnd().ToString());
 
-                            //Console.Out.Write(outString);
-                            StreamWriter sw = new StreamWriter(@"D:\ac.txt");
-                            sw.WriteLine(outString);
-                            sw.Close();
-                            sw.Dispose();
+                            ExportToTextFiles.ExportDestinationTextFiles("ex.txt", outString);
 
-                            CompareTxtFiles.CompareTextFiles(@"D:\ac.txt", @"D:\ex.txt");
+                            ExportToTextFiles.CompareSDTextFiles("ac.txt", "ex.txt", "2.txt", outString);
                         }
                     }
                 }

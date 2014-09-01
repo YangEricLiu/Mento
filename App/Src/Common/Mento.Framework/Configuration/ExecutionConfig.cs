@@ -29,8 +29,57 @@ namespace Mento.Framework.Configuration
         private const string EXPECTEDDATAVIEWEXCELFILEDIRECTORY = "expectedDataViewExcelFileDirectory";
         private const string FAILEDDATAVIEWEXCELFILEDIRECTORY = "failedDataViewExcelFileDirectory";
         private const string ISCOMPAREEXPECTEDDATAVIEWEXCELFILE = "isCompareExpectedDataViewExcelFile";
+        private const string ISCREATEREPONSEBODYTEXTFILE = "isCreateResponseBodyTextFile";
+        private const string ISCOMPARERESPONSETEXTFILE = "isCompareResponseTextFile";
+        private const string DESTINATIONEXPECTEDRESPONSEBODYDIRECTORY = "destinationExpectedResponseBodyDirectory";
+        private const string FAILEDRESPONSEBODYDIRECTORY = "failedResponseBodyDirectory";
+        private const string SOURCERESPONSEBODYDIRECTORY = "sourceResponseBodyDirectory";
 
         private static string BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+        public static bool isCreateResponseBodyTextFile
+        {
+            get
+            {
+                bool result = false;
+                bool.TryParse(GetExecutionConfig(ISCREATEREPONSEBODYTEXTFILE), out result);
+                return result;
+            }
+        }
+
+        public static bool isCompareResponseTextFile
+        {
+            get
+            {
+                bool result = false;
+                bool.TryParse(GetExecutionConfig(ISCOMPARERESPONSETEXTFILE), out result);
+                return result;
+            }
+        }
+
+        public static string destinationExpectedResponseBodyDirectory
+        {
+            get
+            {
+                return GetExecutionConfig(DESTINATIONEXPECTEDRESPONSEBODYDIRECTORY);
+            }
+        }
+
+        public static string failedResponseBodyDirectory
+        {
+            get
+            {
+                return GetExecutionConfig(FAILEDRESPONSEBODYDIRECTORY);
+            }
+        }
+
+        public static string sourceResponseBodyDirectory
+        {
+            get
+            {
+                return GetExecutionConfig(SOURCERESPONSEBODYDIRECTORY);
+            }
+        }
 
         public static bool isCreateExpectedDataViewExcelFile
         {

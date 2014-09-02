@@ -46,6 +46,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button RawDataDirectlySwitchButton = JazzButton.PTagRawDataDirectlySwitchButton;
         private static Button RawDataCancelSwitchButton = JazzButton.PTagRawDataCancelSwitchButton;
         private static Button RawDataSwitchDifferenceValueButton = JazzButton.PTagRawDataSwitchDifferenceValueButton;
+        private static Button RawDataSwitchOriginalValueButton = JazzButton.PTagRawDataSwitchOriginalValueButton;
         private static Button RawDataLeftButton = JazzButton.PTagRawDataLeftButton;
         private static Button RawDataRightButton = JazzButton.PTagRawDataRightButton;
 
@@ -187,6 +188,16 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Click switch button for original value in grid header
+        /// </summary>
+        public void ClickSwitchOriginalValueButton()
+        {
+            RawDataSwitchOriginalValueButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+        }
+
+        /// <summary>
         /// Click 'Save and switch' button in popup time span after modified value without save in rawdata
         /// </summary>
         public void ClickSaveAndSwitchButton()
@@ -230,9 +241,10 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void SetDateRange(string startTime, string endTime)
         {
-            StartDatePicker.SelectDateItem(startTime);
-
-            EndDatePicker.SelectDateItem(endTime);
+            if (" " != startTime)
+            { StartDatePicker.SelectDateItem(startTime); }
+            if (" " != endTime)
+            { EndDatePicker.SelectDateItem(endTime); }
 
             if (EndTimeComboBox.Exists() && EndTimeComboBox.IsDisplayed())
             {
@@ -242,9 +254,10 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SetTimeRange(string startTime, string endTime)
         {
-            StartTimeComboBox.SelectItem(startTime);
-
-            EndTimeComboBox.SelectItem(endTime);
+            if (" " != startTime)
+            { StartTimeComboBox.SelectItem(startTime); }
+            if (" " != endTime)
+            { EndTimeComboBox.SelectItem(endTime); }
         }
 
         public string GetBaseStartDateValue()
@@ -289,7 +302,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             if (ElementHandler.Exists(SwitchTimeWindow))
             {
-                RawDataCancelButton.Click();
+                RawDataCancelSwitchButton.Click();
                 JazzMessageBox.LoadingMask.WaitLoading();
             }
         }

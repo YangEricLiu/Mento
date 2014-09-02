@@ -26,9 +26,7 @@ namespace Mento.Script.Customer.TagManagement
     {
         private PTagSettings PTagSettings = JazzFunction.PTagSettings;
         private PTagRawData PTagRawData = JazzFunction.PTagRawData;
-        private static Chart PTagRawDataLineChart = JazzChart.PTagRawDataLineChart;
         private static Grid PTagRawDataGrid = JazzGrid.GridPTagRawData;
-        private static TextField PtagRawDataValueNumberField = JazzTextField.PtagRawDataValueTextField;
 
         [SetUp]
         public void CaseSetUp()

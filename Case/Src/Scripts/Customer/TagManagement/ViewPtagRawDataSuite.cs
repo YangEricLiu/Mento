@@ -128,10 +128,10 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Display the raw data info in selected time range
-            Assert.AreEqual("2014-04-11", PTagRawData.GetBaseStartDateValue());
-            Assert.AreEqual("2014-04-15", PTagRawData.GetBaseEndDateValue());
-            Assert.AreEqual("10:00", PTagRawData.GetBaseStartTimeValue());
-            Assert.AreEqual("06:00", PTagRawData.GetBaseEndTimeValue());
+            Assert.AreEqual(ManualTimeRange[0].StartDate, PTagRawData.GetBaseStartDateValue());
+            Assert.AreEqual(ManualTimeRange[0].EndDate, PTagRawData.GetBaseEndDateValue());
+            Assert.AreEqual(ManualTimeRange[0].StartTime, PTagRawData.GetBaseStartTimeValue());
+            Assert.AreEqual(ManualTimeRange[0].EndTime, PTagRawData.GetBaseEndTimeValue());
             Assert.AreEqual("11",PTagRawDataGrid.GetCellValue(2));
 
             //After change Start Time to 04/06 10:00, the End Time should be changed to 04/13 10:00.
@@ -144,10 +144,10 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Display the raw data info in selected time range
-            Assert.AreEqual("2014-04-07", PTagRawData.GetBaseStartDateValue());
-            Assert.AreEqual("2014-04-13", PTagRawData.GetBaseEndDateValue());
-            Assert.AreEqual("10:00", PTagRawData.GetBaseStartTimeValue());
-            Assert.AreEqual("10:00", PTagRawData.GetBaseEndTimeValue());
+            Assert.AreEqual(ManualTimeRange[1].StartDate, PTagRawData.GetBaseStartDateValue());
+            Assert.AreEqual(ManualTimeRange[1].EndDate, PTagRawData.GetBaseEndDateValue());
+            Assert.AreEqual(ManualTimeRange[1].StartTime, PTagRawData.GetBaseStartTimeValue());
+            Assert.AreEqual(ManualTimeRange[1].EndTime, PTagRawData.GetBaseEndTimeValue());
             Assert.AreEqual("7", PTagRawDataGrid.GetCellValue(2));
 
             //Set Start Time is less than 2000-01-01 00:00, and end time is larger than 2049-12-31 24:00
@@ -161,8 +161,8 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //The time controller for smaller than 2000-01-01 00:00 and larger than 2049-12-31 24:00 is not available for Start time
-            Assert.AreNotEqual("1999-12-31",PTagRawData.GetBaseStartDateValue());
-            Assert.AreNotEqual("2050-01-01", PTagRawData.GetBaseEndDateValue());
+            Assert.AreNotEqual(ManualTimeRange[2].StartDate, PTagRawData.GetBaseStartDateValue());
+            Assert.AreNotEqual(ManualTimeRange[2].EndDate, PTagRawData.GetBaseEndDateValue());
 
         }
 
@@ -176,7 +176,15 @@ namespace Mento.Script.Customer.TagManagement
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
             PTagRawData.SwitchToRawDataTab();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
+            //Ensure that missed records will be filled for displaying with TimeStamp is "Filled value based on selected type", Value is Null and Status is Null
+            Assert.AreEqual(" ", PTagRawDataGrid.GetCellValue(2));
+            Assert.AreEqual(" ", PTagRawDataGrid.GetCellValue(3));
+            Assert.AreEqual(" ", PTagRawDataGrid.GetCellValue(4));
+            Assert.AreEqual(" ", PTagRawDataGrid.GetCellValue(5));
+            Assert.AreEqual(" ", PTagRawDataGrid.GetCellValue(6));
 
         }
 
@@ -214,42 +222,22 @@ namespace Mento.Script.Customer.TagManagement
             //Click save button
             PTagRawData.ClickSaveRawDataButton();
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
 
-            //Click Switch button it is Original Value now
-            if (PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时") == "能耗累积值/千瓦时")
-                PTagRawData.ClickSwitchDifferenceValueButton();
+            //Switch to Difference Value and display them in both Line Chart and Grid View. 
+            PTagRawData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
             TimeManager.LongPause();
-            TimeManager.LongPause();
-       
-
-            //Switch to Difference Value and display them in both Line Chart and Grid View.
-            //Assert.AreEqual("能耗差值/千瓦时", PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"));
+            TimeManager.LongPause();                              
             Assert.AreEqual("12", PTagRawDataGrid.GetCellValue(2));
-
+            //Assert.AreEqual("能耗差值/千瓦时", PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"));
+            
             //Click Switch button it is Difference Value now.  
-            if (PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时") == "能耗累积值/千瓦时")
-            {
-                PTagRawData.ClickSwitchDifferenceValueButton();
-                TimeManager.LongPause();
-                TimeManager.LongPause();
-                TimeManager.LongPause();
-                PTagRawData.ClickSwitchDifferenceValueButton();
-                TimeManager.LongPause();
-                TimeManager.LongPause();
-                TimeManager.LongPause();
-            }
-            else
-            {
-
-
-            }
-                
-            //Assert.AreEqual("能耗累积值/千瓦时", PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"));
+            PTagRawData.ClickSwitchOriginalValueButton();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             Assert.AreEqual("10", PTagRawDataGrid.GetCellValue(2));
-
+            //Assert.AreEqual("能耗累积值/千瓦时", PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"));
         }
 
         [Test]

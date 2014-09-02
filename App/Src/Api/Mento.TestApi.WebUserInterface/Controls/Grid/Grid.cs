@@ -187,6 +187,41 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
+        /// Simulate mouse focus on the Delete "X" in grid view cell 
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public void ClickDeleteXBtnInRowDataGrid(int rowIndex, int cellIndex5 = 5, bool Paging = true)
+        {
+            var cellLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridCellIndex5);
+
+            Hashtable variables = new Hashtable() { { ROWINDEXVARIABLE, rowIndex }, { CELLINDEXVARIABLE2, cellIndex5 } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPageWithIndex(rowIndex))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            FindChild(Locator.GetVariableLocator(cellLocator, variables)).Click();
+            //this.GetCell(rowIndex, cellIndex5, Paging).Click();
+        }
+
+
+        /// <summary>
         /// Get the value from the cell 
         /// </summary>
         /// <param name="cellName"></param>
@@ -217,31 +252,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
-        /// Get the Element from the grid header 
-        /// </summary>
-        /// <param name="cellName"></param>
-        /// <returns></returns>
-        public IWebElement GetHeaderCell(int rowIndex=1, int cellIndex2=3)
-        {
-            var cellLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridHeaderhideValueType);
-
-            Hashtable variables = new Hashtable() { { ROWINDEXVARIABLE, rowIndex }, { CELLINDEXVARIABLE2, cellIndex2 } };
-
-            return FindChild(Locator.GetVariableLocator(cellLocator, variables));
-        }
-
-        /// <summary>
         /// Get the string of value type from the grid header
         /// </summary>
         /// <param name="cellName"></param>
         /// <returns></returns>
         public string GetTitleValueType(string str1, string str2)
         {
-            IWebElement gridHeaderValueTypeControl = this.GetHeaderCell();
+           
+            var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridHeaderhideValueType);
+            IWebElement gridHeaderValueTypeControl = ElementHandler.FindElement(locator, container: this.RootElement);
             if (str1 == gridHeaderValueTypeControl.Text)
-                return str2;
+            { return str2; }
             else
-                return str1;
+            { return str1; }
 
         }
 

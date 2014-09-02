@@ -5,16 +5,16 @@
 			"OriginalName":"PTag_AutomationCase",
 			"ManualTimeRange":[
 			{
-				"StartDate":"2014-03-02",
+				"StartDate":"2014-01-03",
 				"StartTime":"01:00",
-				"EndDate":"2014-03-07",	
-				"EndTime":"23:00",	
+				"EndDate":"2014-01-03",	
+				"EndTime":"02:00",		
 			},
 			{
-				"StartDate":"2014-03-02",
-				"StartTime":"02:00",
-				"EndDate":"2014-03-08",	
-				"EndTime":"24:00",	
+				"StartDate":"2014-01-03",
+				"StartTime":" ",
+				"EndDate":"2014-01-03",	
+				"EndTime":"03:00",		
 			}],
 		},
 		"ExpectedData":

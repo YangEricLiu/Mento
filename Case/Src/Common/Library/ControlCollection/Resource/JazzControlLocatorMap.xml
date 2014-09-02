@@ -265,6 +265,7 @@
               <add key="ButtonPTagRawDataDirectlySwitch" value="//div[contains(@class,'x-toolbar-footer-docked-bottom')]/div/div/div[2]/em/button" type="XPath"/>
               <add key="ButtonPTagRawDataCancelSwitch" value="//img[@class='x-tool-close']" type="XPath"/>
               <add key="ButtonPTagRawDataSwitchDifferenceValue" value="//span[@id='accumulate_button' and @class='x-column-header-inner-button']" type="XPath"/>
+              <add key="ButtonPTagRawDataSwitchOriginalValue" value="//span[@id='difference_button' and @class='x-column-header-inner-button']" type="XPath"/>
               <add key="ButtonPTagRawDataLeft" value="//div[contains(@id,'rawdatachartpanel') and contains(@id,'targetEl')]/div[contains(@class,'container')]/div[1]/em/button" type="XPath"/>
               <add key="ButtonPTagRawDataRight" value="//div[contains(@id,'rawdatachartpanel') and contains(@id,'targetEl')]/div[contains(@class,'container')]/div[2]/em/button" type="XPath"/>
              

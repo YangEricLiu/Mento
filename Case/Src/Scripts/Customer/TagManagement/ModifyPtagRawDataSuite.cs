@@ -66,8 +66,8 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
 
             //Check the line chart and rawdata grid exist
-            //Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.ChartPTagRawData));
-            //Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.GridPTagRawData));
+            Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.ChartPTagRawData));
+            Assert.IsTrue(PTagRawData.IsExisted(JazzControlLocatorKey.GridPTagRawData));
 
             //Click the first row (2014年01月01日00点00分-00点15分), and input a valid modified value.
             PTagRawDataGrid.FocusOnCell(2);

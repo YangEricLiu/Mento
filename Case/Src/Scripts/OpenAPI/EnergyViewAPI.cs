@@ -77,13 +77,34 @@ namespace Mento.Script.OpenAPI
                         {
                             string outString = ConvertJson.String2Json(sr.ReadToEnd().ToString());
 
-                            TargetEnergyDataDto[] testja = EnergyViewDataDtoConvertor.EnergyViewDataGroups(outString);
+                            //JArray testja = JsonHelper.Deserialize2Array(outString);
 
-                            foreach (TargetEnergyDataDto j in testja)
+                            //JArray testja2 = (JArray)testja[0]["TargetEnergyData"];
+
+                            //Console.Out.WriteLine(testja[0].ToString());
+                            //Console.Out.WriteLine(testja2[0]["EnergyData"].ToString());
+
+                            //JObject testja3 = (JObject)testja2[0]["EnergyData"];
+
+                            //Console.Out.WriteLine(testja3.ToString());
+
+                            EnergyViewDataBody[] jds = EnergyViewDataDtoConvertor.GetEnergyViewDataDtoGroups(outString);
+
+                            foreach (EnergyViewDataBody jd in jds)
                             {
-                                Console.Out.WriteLine(j.Target.Name); 
+                                Console.Out.WriteLine(jd.EnergyViewDatas);
+                                Console.Out.WriteLine("\n\n");
+
+                                Console.Out.WriteLine(jd.TargetEnergyData);
+                                Console.Out.WriteLine("\n\n");
+
+                                Console.Out.WriteLine(jd.EnergyData);
+                                Console.Out.WriteLine("\n\n");
+
+                                Console.Out.WriteLine(jd.Target);
+                                Console.Out.WriteLine("\n\n");
                             }
-                                                                      
+                                  
                             //ExportToTextFiles.ExportDestinationTextFiles("ex.txt", outString);
 
                             //ExportToTextFiles.CompareSDTextFiles("ac.txt", "ex.txt", "2.txt", outString);

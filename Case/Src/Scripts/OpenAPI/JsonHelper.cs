@@ -117,5 +117,19 @@ namespace Mento.Script.OpenAPI
                 return (T)serializer.ReadObject(ms);
             }
         }
+
+        public static JArray Deserialize2Array(string source)
+        {
+            JArray ja = (JArray)JsonConvert.DeserializeObject(source);
+
+            return ja;
+        }
+
+        public static JObject Deserialize2Object(string source)
+        {
+            JObject ja = (JObject)JsonConvert.DeserializeObject(source);
+
+            return ja;
+        }
     }
 }

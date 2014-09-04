@@ -71,7 +71,7 @@ namespace Mento.Script.OpenAPI
                 prevChar = cha[0];
             }
 
-            return result;
+            return result.Replace("\\", "");
         } 
     }
 }

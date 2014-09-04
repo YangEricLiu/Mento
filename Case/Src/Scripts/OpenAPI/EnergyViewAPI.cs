@@ -11,6 +11,9 @@ using System.IO;
 using Mento.Framework.Configuration;
 using Mento.TestApi.TestData;
 using Mento.ScriptCommon.TestData.OpenAPI;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Schneider.REM.BL.Energy.DataContract;
 
 namespace Mento.Script.OpenAPI
 {
@@ -74,9 +77,16 @@ namespace Mento.Script.OpenAPI
                         {
                             string outString = ConvertJson.String2Json(sr.ReadToEnd().ToString());
 
-                            ExportToTextFiles.ExportDestinationTextFiles("ex.txt", outString);
+                            TargetEnergyDataDto[] testja = EnergyViewDataDtoConvertor.EnergyViewDataGroups(outString);
 
-                            ExportToTextFiles.CompareSDTextFiles("ac.txt", "ex.txt", "2.txt", outString);
+                            foreach (TargetEnergyDataDto j in testja)
+                            {
+                                Console.Out.WriteLine(j.Target.Name); 
+                            }
+                                                                      
+                            //ExportToTextFiles.ExportDestinationTextFiles("ex.txt", outString);
+
+                            //ExportToTextFiles.CompareSDTextFiles("ac.txt", "ex.txt", "2.txt", outString);
                         }
                     }
                 }

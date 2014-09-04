@@ -1214,5 +1214,113 @@ namespace Mento.Utility
         }
 
         #endregion
+
+        #region Import excel to OpenAPI cases
+
+        public static OpenAPICases[] ImportToOpenAPICases(string filePath, string sheetName)
+        {
+            //Open excel file which restore data view expected data
+            ExcelHelper handler = new ExcelHelper(filePath);
+
+            var oac = new List<OpenAPICases>();
+            OpenAPICases tmpoac = new OpenAPICases();
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Microsoft.Office.Interop.Excel.Worksheet mySheet = handler.AddWorksheet(sheetName);
+
+            for (int i = 2; i <= mySheet.Cells.CurrentRegion.Rows.Count; i++)
+            {
+                tmpoac = ImportToOpenAPICase(mySheet, i);
+
+                oac.Add(tmpoac);
+            }
+
+            return oac.ToArray();
+        }
+
+        public static OpenAPICases ImportToOpenAPICase(Excel.Worksheet mySheet, int rowIndex)
+        {
+            int columnNum = 13;
+
+            OpenAPICases tmpoac = new OpenAPICases();
+
+            Excel.Range temp = (Excel.Range)mySheet.Cells[2, columnNum];
+            string strValue = temp.Text.ToString();
+            tmpoac.url = "strValue";
+
+            temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 1];
+            strValue = temp.Text.ToString();
+            tmpoac.requestBody = strValue;
+
+            temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 2];
+            strValue = temp.Text.ToString();
+            tmpoac.expectedResponseBody = strValue;
+
+            temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 3];
+            strValue = temp.Text.ToString();
+            tmpoac.actualResponseBody = strValue;
+            
+            temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
+            strValue = temp.Text.ToString();
+            tmpoac.result = strValue;
+
+            temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
+            strValue = temp.Text.ToString();
+            tmpoac.resultReport = strValue;
+
+            return tmpoac;
+        }
+
+        #endregion
+
+        #region Import OpenAPI cases to excel
+
+        public static void ImportOpenAPICasesToExcel(OpenAPICases data, string fileName, string sheetName, int rowIndex)
+        {
+            FileInfo excelFile = new FileInfo(fileName);
+            if (!excelFile.Directory.Exists)
+                excelFile.Directory.Create();
+
+            //Open excel file which restore scripts data
+            ExcelHelper handler = new ExcelHelper(fileName, true);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Microsoft.Office.Interop.Excel.Worksheet sheet = handler.AddWorksheet(sheetName);
+            ImportOpenAPICaseToExcel(data, sheet, rowIndex);
+
+            handler.Save();
+            handler.Dispose();
+        }
+
+        public static void ImportOpenAPICaseToExcel(OpenAPICases data, Excel.Worksheet sheet, int rowIndex)
+        {
+            int columnIndex = 13;
+
+            sheet.Cells[rowIndex, columnIndex] = data.url;
+            sheet.Cells[rowIndex, columnIndex + 1] = data.requestBody;
+            sheet.Cells[rowIndex, columnIndex + 2] = data.expectedResponseBody;
+            sheet.Cells[rowIndex, columnIndex + 3] = data.actualResponseBody;
+            sheet.Cells[rowIndex, columnIndex + 4] = data.result;
+            sheet.Cells[rowIndex, columnIndex + 5] = data.resultReport;
+        }
+
+        #endregion
+
+        #region For OpenAPI anylaze cases
+
+        public struct OpenAPICases
+        {
+            public string url;
+            public string requestBody;
+            public string expectedResponseBody;
+            public string actualResponseBody;
+            public string result;
+            public string resultReport;
+        }
+        #endregion
     }
 }

@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Mento.Script.OpenAPI</RootNamespace>
     <AssemblyName>Mento.Script.OpenAPI</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,13 +34,15 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aliyun.OpenServices, Version=1.1.4814.33850, Culture=neutral, PublicKeyToken=0ad4175f0dac0b9b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\Aliyun.OpenServices.dll</HintPath>
     </Reference>
-    <Reference Include="DifferenceEngine">
+    <Reference Include="DifferenceEngine, Version=1.0.5354.22058, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Lib\DifferenceEngine.dll</HintPath>
     </Reference>
     <Reference Include="fastJSON, Version=1.9.8.0, Culture=neutral, processorArchitecture=MSIL">
@@ -106,6 +109,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\Microsoft.Practices.Unity.Interception.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.WindowsFabric.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\Microsoft.WindowsFabric.Common.dll</HintPath>
@@ -114,68 +122,57 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\Microsoft.WindowsFabric.Data.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="nunit.framework">
       <HintPath>..\..\..\..\Lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="Schneider.REM.BL.Administration">
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Administration.dll</HintPath>
+    <Reference Include="Schneider.REM.BL.Common">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Schneider.REM.BL.Administration.Common">
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Administration.Common.dll</HintPath>
+    <Reference Include="Schneider.REM.BL.Common.Validation">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Common.Validation.dll</HintPath>
     </Reference>
-    <Reference Include="Schneider.REM.BL.Administration.DataContract, Version=1.4.0.19, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Administration.DataContract.dll</HintPath>
+    <Reference Include="Schneider.REM.BL.Customer.Common">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Customer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Schneider.REM.BL.Administration.Interface">
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Administration.Interface.dll</HintPath>
+    <Reference Include="Schneider.REM.BL.Customer.DataContract">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Customer.DataContract.dll</HintPath>
     </Reference>
-    <Reference Include="Schneider.REM.BL.API">
-      <HintPath>..\..\..\lib\Schneider.REM.BL.API.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Common, Version=1.4.0.19, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Common.Validation, Version=1.4.0.19, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Common.Validation.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Customer">
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Customer.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Customer.Common, Version=1.4.0.19, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Customer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Customer.DataContract, Version=1.4.0.19, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Customer.DataContract.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Customer.Interface">
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Customer.Interface.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Dashboard">
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Dashboard.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Dashboard.Common">
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Dashboard.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Dashboard.DataContract">
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Dashboard.DataContract.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Dashboard.Interface">
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Dashboard.Interface.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Energy.Common, Version=1.4.0.19, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Schneider.REM.BL.Energy.Common.dll</HintPath>
+    <Reference Include="Schneider.REM.BL.Energy.Common">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Energy.Common.dll</HintPath>
     </Reference>
     <Reference Include="Schneider.REM.BL.Energy.DataContract">
-      <HintPath>..\..\..\..\..\..\Jazz\Trunk\Jazz\Src\BL\Energy\Energy.DataContract\bin\Debug\Schneider.REM.BL.Energy.DataContract.dll</HintPath>
+      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Energy.DataContract.dll</HintPath>
+    </Reference>
+    <Reference Include="Schneider.REM.Common">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Schneider.REM.DA.Administration.Common">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Administration.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Schneider.REM.DA.Administration.Entity">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Administration.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Schneider.REM.DA.Common">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Schneider.REM.DA.Customer.Common">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Customer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Schneider.REM.DA.Customer.Entity">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Customer.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="Schneider.REM.DA.Energy.Common">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Energy.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Schneider.REM.DA.Energy.Entity">
+      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Energy.Entity.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -184,6 +181,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompareTxtFiles.cs" />
+    <Compile Include="EnergyViewDataDtoConvertor.cs" />
+    <Compile Include="FastJsonHelper.cs" />
+    <Compile Include="JsonHelper.cs" />
+    <Compile Include="UnixTimeConvertor.cs" />
     <Compile Include="ExportToTextFiles.cs" />
     <Compile Include="EnergyViewAPI.cs" />
     <Compile Include="ConvertJson.cs" />

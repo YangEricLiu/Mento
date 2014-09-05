@@ -14,6 +14,9 @@ namespace Mento.Script.OpenAPI
         public string TargetEnergyData;
         public string EnergyData;
         public string Target;
+        public string Name;
+        public string Type;
+        public string TimeSpan;
     }
 
     public class EnergyViewDataDtoConvertor
@@ -35,13 +38,15 @@ namespace Mento.Script.OpenAPI
                 JObject data = (JObject)targetEnergyDataArrays[i];
 
                 JArray tedata = (JArray)data["TargetEnergyData"];                  
-                //JObject energyData = (JObject)tedata[0]["EnergyData"];
-                //JObject target = (JObject)tedata[0]["Target"];
+                JObject target = (JObject)tedata[0]["Target"];
 
                 tmpevd.EnergyViewDatas = data.ToString();
                 tmpevd.TargetEnergyData = tedata.ToString();
                 tmpevd.EnergyData = tedata[0]["EnergyData"].ToString();
-                tmpevd.Target = tedata[0]["Target"].ToString();
+                tmpevd.Target = target.ToString();
+                tmpevd.Name = target["Name"].ToString();
+                tmpevd.Type = target["Type"].ToString();
+                tmpevd.TimeSpan = target["TimeSpan"].ToString();
 
                 evd.Add(tmpevd);
             }

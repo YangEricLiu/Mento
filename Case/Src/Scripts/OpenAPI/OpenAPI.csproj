@@ -181,11 +181,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompareTxtFiles.cs" />
+    <Compile Include="CompareResponseBody.cs" />
     <Compile Include="EnergyViewDataDtoConvertor.cs" />
     <Compile Include="FastJsonHelper.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="UnixTimeConvertor.cs" />
-    <Compile Include="ExportToTextFiles.cs" />
+    <Compile Include="CompareBodyHelper.cs" />
     <Compile Include="EnergyViewAPI.cs" />
     <Compile Include="ConvertJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

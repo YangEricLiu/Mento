@@ -14,7 +14,7 @@ namespace Mento.Script.OpenAPI
         private static string addString = reportSignals + "Lines added at ";
         private static string deleteString = reportSignals + "Lines deleted at ";
         private static string replaceString = reportSignals + "Lines replaced at ";
-        private static string titleString = "Difference Report - " + DateTime.Now.ToString();
+        private static string titleString = "Difference Report - " + DateTime.Now.ToString() + "\n";
 
         #region Maybe use this in future for good format of failed text file
         
@@ -160,6 +160,8 @@ namespace Mento.Script.OpenAPI
 
         #endregion
 
+        #region private method for maybe not used on the current openapi framework
+        
         private static void CompareReports(string sFile, string dFile, string failedFileName, CompareReport reports, string path)
         {
             DateTime dt = DateTime.Now;
@@ -169,10 +171,6 @@ namespace Mento.Script.OpenAPI
             StreamWriter sw = new StreamWriter(actualFileName);
 
             sw.WriteLine(titleString);
-            sw.WriteLine(reportSignals);
-            sw.WriteLine("Source file is         " + sFile + "\r\n");
-            sw.WriteLine("Destintion file is     " + dFile);
-            sw.WriteLine(reportSignals);
             foreach (object o in reports.AddDestinationStrings)
             {
                 sw.WriteLine(o.ToString());
@@ -192,7 +190,33 @@ namespace Mento.Script.OpenAPI
             sw.Dispose();
         }
 
-        public static bool CompareTextFiles(string sFile, string dFile, string path, string failedFileName)
+        private static string CompareReports(string sFile, string dFile, CompareReport reports)
+        {
+            DateTime dt = DateTime.Now;
+
+            StringBuilder finalReport = new System.Text.StringBuilder();
+
+            finalReport.Append(titleString);
+            finalReport.Append(reportSignals);
+            foreach (object o in reports.AddDestinationStrings)
+            {
+                finalReport.Append(o.ToString());
+            }
+
+            foreach (object o in reports.DeleteSourceStrings)
+            {
+                finalReport.Append(o.ToString());
+            }
+
+            foreach (object o in reports.ReplaceStrings)
+            {
+                finalReport.Append(o.ToString());
+            }
+
+            return finalReport.ToString();
+        }
+
+        private static bool CompareTextFiles(string sFile, string dFile, string path, string failedFileName)
         {
             DiffList_TextFile sLF = null;
             DiffList_TextFile dLF = null;
@@ -230,7 +254,46 @@ namespace Mento.Script.OpenAPI
             return IsEqual;
         }
 
+        #endregion
 
+        public static string CompareTextFiles(string sFile, string dFile)
+        {
+            DiffList_TextFile sLF = null;
+            DiffList_TextFile dLF = null;
+            bool IsEqual = true;
+            string reportStr = null;
+
+            try
+            {
+                sLF = new DiffList_TextFile(sFile);
+                dLF = new DiffList_TextFile(dFile);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            try
+            {
+                double time = 0;
+                DiffEngine de = new DiffEngine();
+                time = de.ProcessDiff(sLF, dLF, DiffEngineLevel.FastImperfect);
+
+                ArrayList rep = de.DiffReport();
+                CompareReport theReports = Results(sLF, dLF, rep, time, out IsEqual);
+
+                if (!IsEqual)
+                {
+                    reportStr = CompareReports(sFile, dFile, theReports);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return reportStr;
+        }
 
         public struct CompareReport
         {

@@ -92,16 +92,25 @@ namespace Mento.Script.OpenAPI
 
                             foreach (EnergyViewDataBody jd in jds)
                             {
-                                Console.Out.WriteLine(jd.EnergyViewDatas);
-                                Console.Out.WriteLine("\n\n");
+                                //Console.Out.WriteLine(jd.EnergyViewDatas);
+                                //Console.Out.WriteLine("\n\n");
 
-                                Console.Out.WriteLine(jd.TargetEnergyData);
-                                Console.Out.WriteLine("\n\n");
+                                //Console.Out.WriteLine(jd.TargetEnergyData);
+                                //Console.Out.WriteLine("\n\n");
 
-                                Console.Out.WriteLine(jd.EnergyData);
-                                Console.Out.WriteLine("\n\n");
+                                //Console.Out.WriteLine(jd.EnergyData);
+                                //Console.Out.WriteLine("\n\n");
 
                                 Console.Out.WriteLine(jd.Target);
+                                Console.Out.WriteLine("\n\n");
+
+                                Console.Out.WriteLine(jd.Name);
+                                Console.Out.WriteLine("\n\n");
+
+                                Console.Out.WriteLine(jd.Type);
+                                Console.Out.WriteLine("\n\n");
+
+                                Console.Out.WriteLine(jd.TimeSpan);
                                 Console.Out.WriteLine("\n\n");
                             }
                                   

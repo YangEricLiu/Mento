@@ -12,8 +12,8 @@ namespace Mento.Script.OpenAPI
     public class CompareBodyHelper
     {
         private static string EnergyAnalysis = "EnergyAnalysis/";
-        private static string Ranking = "Ranking/";
-        private static string Labelling = "Labeling/";
+        //private static string Ranking = "Ranking/";
+        //private static string Labelling = "Labeling/";
         private static string pathDestination = ExecutionConfig.destinationExpectedResponseBodyDirectory + EnergyAnalysis;
         private static string pathSource = ExecutionConfig.sourceResponseBodyDirectory + EnergyAnalysis;
         //private static string pathFailed = ExecutionConfig.failedResponseBodyDirectory + EnergyAnalysis;

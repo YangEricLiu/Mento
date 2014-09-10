@@ -112,7 +112,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsAllGridTagsUnchecked());
         }
 
-
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-2")]
@@ -208,6 +207,44 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
             //Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(EnergyAnalysis.EAPath, input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0], dashboard.WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-5359")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-5359")]
+        public void EnergyAnalysisRawDataDisplay_5359(EnergyViewOptionData input)
+        {
+            //Go to CathyRawData -〉Select 原始数据楼A.
+            HomePagePanel.SelectCustomer("CathyRawData");
+            TimeManager.LongPause();
+
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+            TimeManager.MediumPause();
+
+            //Select time range 2014/01/01 to 2014/01/21.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //3. Select optional step=Raw step.
+            //4. Click 查看数据.
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Raw data should be display well.
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
         }
     }
 }

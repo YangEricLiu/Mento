@@ -675,5 +675,37 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //In step 6, warning message should popup "缺少供暖面积属性". 
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-5467")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-5467")]
+        public void ViewConsumptionUnitIndicator_5467(UnitIndicatorData input)
+        {
+            //Go to Unit indicator, select Energy->BuildingA_KT_P1_Electricity_ 之前七天 to view chart.
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            //Select the BuildingPrecision from Hierarchy Tree.
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.LongPause();
+
+            //Click Function Type button, select Energy Consumption. Verify precision display for Unit display.
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[0]);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
+            Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
+        }
     }
 }

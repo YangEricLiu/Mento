@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A", "园区A", "楼宇A"]],
+			"tagNames":["BuildingA_KT_P1_Electricity"],
+		},
+		"ExpectedData":
+		{
+
+		}
+	}
+]

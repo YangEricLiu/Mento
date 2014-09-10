@@ -1228,7 +1228,7 @@ namespace Mento.Utility
             handler.OpenOrCreate();
 
             //Get Worksheet object 
-            Microsoft.Office.Interop.Excel.Worksheet mySheet = handler.AddWorksheet(sheetName);
+            Excel.Worksheet mySheet = handler.GetWorksheet(sheetName);
 
             for (int i = 2; i <= mySheet.Cells.CurrentRegion.Rows.Count; i++)
             {
@@ -1248,7 +1248,7 @@ namespace Mento.Utility
 
             Excel.Range temp = (Excel.Range)mySheet.Cells[2, columnNum];
             string strValue = temp.Text.ToString();
-            tmpoac.url = "strValue";
+            tmpoac.url = strValue;
 
             temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 1];
             strValue = temp.Text.ToString();
@@ -1289,8 +1289,8 @@ namespace Mento.Utility
             handler.OpenOrCreate();
 
             //Get Worksheet object 
-            Microsoft.Office.Interop.Excel.Worksheet sheet = handler.AddWorksheet(sheetName);
-            ImportOpenAPICaseToExcel(data, sheet, rowIndex);
+            Excel.Worksheet mySheet = handler.GetWorksheet(sheetName);
+            ImportOpenAPICaseToExcel(data, mySheet, rowIndex);
 
             handler.Save();
             handler.Dispose();

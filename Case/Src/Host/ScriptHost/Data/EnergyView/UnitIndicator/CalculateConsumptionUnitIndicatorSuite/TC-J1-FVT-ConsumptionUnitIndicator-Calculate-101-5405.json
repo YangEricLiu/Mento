@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabeliing1"]],
+			"TagNames":["Labellingtag1"],
+			"failedFileName":["F-ConsumptionUnitIndicatorCalculate101-5405-M.xls", "F-ConsumptionUnitIndicatorCalculate101-5405-W.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2009-10-03",
+				"EndDate":"2014-07-22",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionUnitIndicatorCalculate101-5405-M.xls", "ConsumptionUnitIndicatorCalculate101-5405-W.xls"],
+		}
+	}
+]

@@ -701,6 +701,7 @@
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-2.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-3.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageTrendChartSuite\TC-J1-FVT-CostUsage-TrendChar-002-5581.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTrendChartSuite\TC-J1-FVT-CostUsage-TrendChar-002-2.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTrendChartSuite\TC-J1-FVT-CostUsage-TrendChar-002-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\AdditionalTagsDataVerificationSuite\TC-J1-FVT-AdditionalTagsDataVerification-DataView-101-1.json" />
@@ -732,9 +733,11 @@
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite\TC-J1-FVT-MultipleTagsComparision-DataView-001-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite\TC-J1-FVT-MultipleTagsComparision-DataView-001-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyMultiTagsTrendChartSuite\TC-J1-FVT-MultipleTagsComparision-TrendChart-001-1.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-5359.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-3.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodePieChartSuite\TC-J1-FVT-SingleHierarchyNode-PieChart-101-3.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodePieChartSuite\TC-J1-FVT-SingleHierarchyNode-PieChart-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-2.json" />
@@ -831,6 +834,7 @@
     <None Include="Data\EnergyView\UnitIndicator\CalculateCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-Calculate-101-4.json" />
     <None Include="Data\EnergyView\UnitIndicator\CalculateCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-Calculate-101-5.json" />
     <None Include="Data\EnergyView\UnitIndicator\CalculateCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-Calculate-101-6.json" />
+    <None Include="Data\EnergyView\UnitIndicator\CalculateConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-5405.json" />
     <None Include="Data\EnergyView\UnitIndicator\CalculateConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\CalculateConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-3871.json" />
     <None Include="Data\EnergyView\UnitIndicator\CalculateCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-Calculate-101-1.json" />
@@ -871,6 +875,7 @@
     <None Include="Data\EnergyView\UnitIndicator\ViewCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-View-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-View-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-View-101-3923.json" />
+    <None Include="Data\EnergyView\UnitIndicator\ViewConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-View-101-5467.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-View-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-View-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-View-101-3.json" />

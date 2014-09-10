@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagNames":["V6_BuildingBC"],
+			"failedFileName":["F-SingleHierarchyNode-PieChart-101-3-0.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["SingleHierarchyNode-PieChart-101-3-0.xls"],
+		}
+	}
+]

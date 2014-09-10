@@ -313,7 +313,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-3871")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-3871")]
-        public void CalculateConsumptionUnitIndicator3871(UnitIndicatorData input)
+        public void CalculateConsumptionUnitIndicator_3871(UnitIndicatorData input)
         {
             //Goto "NancyOtherCustomer3/NancyOtherSite/BuildingRanking2"
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -353,6 +353,60 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             //Step is "Year"
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-5405")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-5405")]
+        public void CalculateConsumptionUnitIndicator_5405(UnitIndicatorData input)
+        {
+            //1. Go to Unit indicator. Select NancyOtherCustomer3.->BuildingLabeliing1->Labellingtag1
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[0]);
+            TimeManager.ShortPause();
+
+            //Select time range 2009/10/03 to 2014/07/22. Optional step=Week/Month to display trend chart.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Step is "Month"
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Step is "Week"
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);

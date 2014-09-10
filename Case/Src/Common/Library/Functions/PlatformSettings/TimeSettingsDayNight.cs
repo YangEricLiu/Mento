@@ -253,7 +253,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             if (output.CommonName != null)
             {
-                return NameTextField.GetInvalidTips().Contains(output.CommonName);
+                return NameTextField.GetInvalidTips().Equals(output.CommonName);
             }
             else
                 return true;

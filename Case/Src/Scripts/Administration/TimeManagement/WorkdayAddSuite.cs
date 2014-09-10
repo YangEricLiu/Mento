@@ -10,8 +10,10 @@ using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
-using Mento.ScriptCommon.TestData.Administration;
 using Mento.ScriptCommon.Library;
+using Mento.ScriptCommon.TestData.Administration;
+using Mento.TestApi.TestData;
+using Mento.TestApi.TestData.Attribute;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
@@ -198,6 +200,41 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorkday.ClickCancelButton();
             TimeManager.ShortPause();
             Assert.IsFalse(TimeSettingsWorkday.IsCancelButtonDisplayed());
+        }
+        #endregion
+
+        #region TestCase3 AddCommonFieldsIllegal
+        [Test]
+        [ManualCaseID("TC-J1-FVT-TimeManagementWorkday-Add-003")]
+        [CaseID("TC-J1-FVT-TimeManagementWorkday-Add-003")]
+        [Priority("6")]
+        [IllegalInputValidation(typeof(WorkdayCalendarData[]))]
+        public void AddCommonFieldsIllegal(WorkdayCalendarData testData)
+        {
+            //Click '+ Calendar' button.
+            TimeSettingsWorkday.PrepareToAddWorkdayCalendar();
+            TimeManager.ShortPause();
+
+            //Input illegal inputs for common fields: name
+            TimeSettingsWorkday.FillInName(testData.InputData.CommonName);
+
+            //Click "Save" button.
+            TimeSettingsWorkday.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //verify that the saving is failed and error messages are displayed below the fields.
+            Assert.IsTrue(TimeSettingsWorkday.IsSaveButtonDisplayed());
+            Assert.IsTrue(TimeSettingsWorkday.IsCancelButtonDisplayed());
+            Assert.IsFalse(TimeSettingsWorkday.IsModifyButtonDisplayed());
+
+            Assert.IsTrue(TimeSettingsWorkday.IsNameInvalidMsgCorrect(testData.ExpectedData));
+
+            //Click 'Cancel' button to quit the addition.
+            TimeSettingsWorkday.ClickCancelButton();
+            TimeManager.ShortPause();
+            Assert.IsFalse(TimeSettingsWorkday.IsCancelButtonDisplayed());
+            TimeManager.ShortPause();
         }
         #endregion
     }

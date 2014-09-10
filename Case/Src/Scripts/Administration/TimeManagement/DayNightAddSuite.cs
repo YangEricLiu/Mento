@@ -10,8 +10,10 @@ using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
-using Mento.ScriptCommon.TestData.Administration;
 using Mento.ScriptCommon.Library;
+using Mento.ScriptCommon.TestData.Administration;
+using Mento.TestApi.TestData;
+using Mento.TestApi.TestData.Attribute;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
@@ -157,6 +159,41 @@ namespace Mento.Script.Administration.TimeManagement
             Assert.IsTrue(TimeSettingsDayNight.IsNameInvalidMsgCorrect(testData.ExpectedData));
             Assert.IsTrue(TimeSettingsDayNight.IsRangeInvalidMsgCorrect(testData.ExpectedData, 1));
 
+            //Click 'Cancel' button to quit the addition.
+            TimeSettingsDayNight.ClickCancelButton();
+            TimeManager.ShortPause();
+            Assert.IsFalse(TimeSettingsDayNight.IsCancelButtonDisplayed());
+            TimeManager.ShortPause();
+        }
+        #endregion
+
+        #region TestCase3 AddCommonFieldsIllegal
+        [Test]
+        [ManualCaseID("TC-J1-FVT-TimeManagementDayNight-Add-003")]
+        [CaseID("TC-J1-FVT-TimeManagementDayNight-Add-003")]
+        [Priority("6")]        
+        [IllegalInputValidation(typeof(DayNightCalendarData[]))]
+        public void AddCommonFieldsIllegal(DayNightCalendarData testData)
+        {
+            //Click '+ Calendar' button.
+            TimeSettingsDayNight.PrepareToAddDaynightCalendar();
+            TimeManager.ShortPause();
+
+            //Input illegal inputs for common fields: name
+            TimeSettingsDayNight.FillInName(testData.InputData.CommonName);
+
+            //Click "Save" button.
+            TimeSettingsDayNight.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //verify that the saving is failed and error messages are displayed below the fields.
+            Assert.IsTrue(TimeSettingsDayNight.IsSaveButtonDisplayed());
+            Assert.IsTrue(TimeSettingsDayNight.IsCancelButtonDisplayed());
+            Assert.IsFalse(TimeSettingsDayNight.IsModifyButtonDisplayed());
+
+            Assert.IsTrue(TimeSettingsDayNight.IsNameInvalidMsgCorrect(testData.ExpectedData));
+            
             //Click 'Cancel' button to quit the addition.
             TimeSettingsDayNight.ClickCancelButton();
             TimeManager.ShortPause();

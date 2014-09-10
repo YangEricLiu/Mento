@@ -10,8 +10,10 @@ using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
 using Mento.Framework.Attributes;
 using Mento.Framework.Script;
-using Mento.ScriptCommon.TestData.Administration;
 using Mento.ScriptCommon.Library;
+using Mento.ScriptCommon.TestData.Administration;
+using Mento.TestApi.TestData;
+using Mento.TestApi.TestData.Attribute;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
@@ -158,6 +160,41 @@ namespace Mento.Script.Administration.TimeManagement
             //Click 'Cancel' button to quit the addition.
             TimeSettingsHeatingCoolingSeason.ClickCancelButton();
             TimeManager.MediumPause();
+        }
+        #endregion
+
+        #region TestCase3 AddCommonFieldsIllegal
+        [Test]
+        [ManualCaseID("TC-J1-FVT-TimeManagementHCSeason-Add-003")]
+        [CaseID("TC-J1-FVT-TimeManagementHCSeason-Add-003")]
+        [Priority("6")]
+        [IllegalInputValidation(typeof(HeatingCoolingSeasonCalendarData[]))]
+        public void AddCommonFieldsIllegal(HeatingCoolingSeasonCalendarData testData)
+        {
+            //Click '+ Calendar' button.
+            TimeSettingsHeatingCoolingSeason.PrepareToAddHeatingCoolingSeasonCalendar();
+            TimeManager.ShortPause();
+
+            //Input illegal inputs for common fields: name
+            TimeSettingsHeatingCoolingSeason.FillInName(testData.InputData.CommonName);
+
+            //Click "Save" button.
+            TimeSettingsHeatingCoolingSeason.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //verify that the saving is failed and error messages are displayed below the fields.
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsSaveButtonDisplayed());
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsCancelButtonDisplayed());
+            Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsModifyButtonDisplayed());
+
+            Assert.IsTrue(TimeSettingsHeatingCoolingSeason.IsNameInvalidMsgCorrect(testData.ExpectedData));
+
+            //Click 'Cancel' button to quit the addition.
+            TimeSettingsHeatingCoolingSeason.ClickCancelButton();
+            TimeManager.ShortPause();
+            Assert.IsFalse(TimeSettingsHeatingCoolingSeason.IsCancelButtonDisplayed());
+            TimeManager.ShortPause();
         }
         #endregion
     }

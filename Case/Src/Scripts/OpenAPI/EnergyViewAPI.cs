@@ -14,6 +14,7 @@ using Mento.ScriptCommon.TestData.OpenAPI;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Schneider.REM.BL.Energy.DataContract;
+using Mento.Utility;
 
 namespace Mento.Script.OpenAPI
 {
@@ -125,6 +126,30 @@ namespace Mento.Script.OpenAPI
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        [Test]
+        [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]
+        public void EnergyAnalysisOpenAPI2(OpenAPIData input)
+        {
+            string pathTestCase = @"D:\OpenApiTestCasesSource.xlsx";
+            string sheetName = "Energy view-饼图接口";
+            string pathCaseResult = @"D:\OpenApiTestCasesResult.xlsx";
+
+            OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, sheetName);
+            for (int i = 0; i < Cases.Length; i++)
+            {
+                Console.Out.WriteLine(Cases[i].url);
+                Console.Out.WriteLine(Cases[i].requestBody);
+                Console.Out.WriteLine(Cases[i].expectedResponseBody);
+                Console.Out.WriteLine(Cases[i].actualResponseBody);
+                //Console.Out.WriteLine(Cases[i - 1].result);
+                //Console.Out.WriteLine(Cases[i - 1].resultReport);
+                Console.Out.WriteLine("\n\n");
+                //ExcelHelper.ImportOpenAPICasesToExcel(Cases[i-1], pathCaseResult, sheetName, 2*i);
+            }
+
+            ExcelHelper.ImportOpenAPICasesToExcel(Cases, pathCaseResult, sheetName);
         }
     }
 }

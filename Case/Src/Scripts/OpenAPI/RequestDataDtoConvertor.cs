@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Mento.Script.OpenAPI
 {
-    public struct EnergyViewDataBody
+    public struct RequestDataBody
     {
         public string EnergyViewDatas;
         public string TargetEnergyData;
@@ -19,18 +19,15 @@ namespace Mento.Script.OpenAPI
         public string TimeSpan;
     }
 
-    public class EnergyViewDataDtoConvertor
+    public class RequestDataDtoConvertor
     {
-        public static EnergyViewDataBody[] GetEnergyViewDataDtoGroups(string sourceOrginal)
+        public static void GetEnergyViewDataDtoGroups(string sourceOrginal)
         {
             string source = ConvertJson.String2Json(sourceOrginal);
 
-            JArray targetEnergyDataArrays = JsonHelper.Deserialize2Array(source);
+            JObject jo1 = (JObject)JsonConvert.DeserializeObject(source);
 
-            if (targetEnergyDataArrays.Count == 0)
-            {
-                return null; 
-            }
+            JArray targetEnergyDataArrays = JsonHelper.Deserialize2Array(source);
 
             var evd = new List<EnergyViewDataBody>();
             EnergyViewDataBody tmpevd = new EnergyViewDataBody();
@@ -53,7 +50,7 @@ namespace Mento.Script.OpenAPI
                 evd.Add(tmpevd);
             }
 
-            return evd.ToArray();
+            //return evd.ToArray();
         }
     }
 }

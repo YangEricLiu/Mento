@@ -182,6 +182,7 @@
   <ItemGroup>
     <Compile Include="CompareTxtFiles.cs" />
     <Compile Include="CompareResponseBody.cs" />
+    <Compile Include="RequestDataDtoConvertor.cs" />
     <Compile Include="EnergyViewDataDtoConvertor.cs" />
     <Compile Include="FastJsonHelper.cs" />
     <Compile Include="JsonHelper.cs" />

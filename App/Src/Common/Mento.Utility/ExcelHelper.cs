@@ -1230,7 +1230,7 @@ namespace Mento.Utility
             //Get Worksheet object 
             Excel.Worksheet mySheet = handler.GetWorksheet(sheetName);
 
-            for (int i = 2; i <= mySheet.Cells.CurrentRegion.Rows.Count; i++)
+            for (int i = 2; i <= mySheet.Cells.CurrentRegion.Rows.Count; i = i + 2)
             {
                 tmpoac = ImportToOpenAPICase(mySheet, i);
 
@@ -1242,7 +1242,7 @@ namespace Mento.Utility
 
         public static OpenAPICases ImportToOpenAPICase(Excel.Worksheet mySheet, int rowIndex)
         {
-            int columnNum = 13;
+            int columnNum = 12;
 
             OpenAPICases tmpoac = new OpenAPICases();
 
@@ -1262,13 +1262,13 @@ namespace Mento.Utility
             strValue = temp.Text.ToString();
             tmpoac.actualResponseBody = strValue;
             
-            temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
-            strValue = temp.Text.ToString();
-            tmpoac.result = strValue;
+            //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
+            //strValue = temp.Text.ToString();
+            //tmpoac.result = strValue;
 
-            temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
-            strValue = temp.Text.ToString();
-            tmpoac.resultReport = strValue;
+            //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
+            //strValue = temp.Text.ToString();
+            //tmpoac.resultReport = strValue;
 
             return tmpoac;
         }
@@ -1277,20 +1277,20 @@ namespace Mento.Utility
 
         #region Import OpenAPI cases to excel
 
-        public static void ImportOpenAPICasesToExcel(OpenAPICases data, string fileName, string sheetName, int rowIndex)
+        public static void ImportOpenAPICasesToExcel(OpenAPICases[] datas, string fileName, string sheetName)
         {
-            FileInfo excelFile = new FileInfo(fileName);
-            if (!excelFile.Directory.Exists)
-                excelFile.Directory.Create();
-
             //Open excel file which restore scripts data
-            ExcelHelper handler = new ExcelHelper(fileName, true);
+            ExcelHelper handler = new ExcelHelper(fileName);
 
             handler.OpenOrCreate();
 
             //Get Worksheet object 
             Excel.Worksheet mySheet = handler.GetWorksheet(sheetName);
-            ImportOpenAPICaseToExcel(data, mySheet, rowIndex);
+
+            for (int i = 0; i < datas.Length; i = i + 2)
+            {
+                ImportOpenAPICaseToExcel(datas[i], mySheet, i + 2); 
+            }
 
             handler.Save();
             handler.Dispose();
@@ -1298,7 +1298,7 @@ namespace Mento.Utility
 
         public static void ImportOpenAPICaseToExcel(OpenAPICases data, Excel.Worksheet sheet, int rowIndex)
         {
-            int columnIndex = 13;
+            int columnIndex = 12;
 
             sheet.Cells[rowIndex, columnIndex] = data.url;
             sheet.Cells[rowIndex, columnIndex + 1] = data.requestBody;
@@ -1309,18 +1309,18 @@ namespace Mento.Utility
         }
 
         #endregion
-
-        #region For OpenAPI anylaze cases
-
-        public struct OpenAPICases
-        {
-            public string url;
-            public string requestBody;
-            public string expectedResponseBody;
-            public string actualResponseBody;
-            public string result;
-            public string resultReport;
-        }
-        #endregion
     }
+
+    #region For OpenAPI anylaze cases
+
+    public struct OpenAPICases
+    {
+        public string url;
+        public string requestBody;
+        public string expectedResponseBody;
+        public string actualResponseBody;
+        public string result;
+        public string resultReport;
+    }
+    #endregion
 }

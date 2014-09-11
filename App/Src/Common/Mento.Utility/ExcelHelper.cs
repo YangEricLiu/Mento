@@ -1256,6 +1256,11 @@ namespace Mento.Utility
 
             temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 2];
             strValue = temp.Text.ToString();
+            //Console.Out.WriteLine("In Excel\n");
+            //Console.Out.WriteLine(rowIndex.ToString());
+            //Console.Out.WriteLine("\n");
+            //Console.Out.WriteLine(strValue);
+            //Console.Out.WriteLine("\n");
             tmpoac.expectedResponseBody = strValue;
 
             temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 3];

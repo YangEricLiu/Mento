@@ -10,15 +10,16 @@ namespace Mento.Script.OpenAPI
 {
     public class CompareResponseBody
     {
-        public static CompareReport CompareEnergyUseResponseBody(string expectedResponseBody, string actualResponseBody, out bool outResult)
-        {            
-            EnergyViewDataBody[] expectedData = EnergyViewDataDtoConvertor.GetEnergyViewDataDtoGroups(expectedResponseBody);
-            EnergyViewDataBody[] actualData = EnergyViewDataDtoConvertor.GetEnergyViewDataDtoGroups(actualResponseBody);
+        public static CompareReport CompareEnergyUseResponseBody(string expectedResponseBodyStr, string actualResponseBodyStr, out bool outResult)
+        {
+            string expectedResponseBody = ConvertJson.String2Json(expectedResponseBodyStr);
+            string actualResponseBody = ConvertJson.String2Json(actualResponseBodyStr);
+            
             CompareReport report = new CompareReport();
 
             #region Confirm that if respons body is empty
-            
-            CompareStringResult resultEmpty = IsResponseBodyEqual(expectedResponseBody, actualResponseBody);
+
+            CompareStringResult resultEmpty = IsResponseBodyEqual(expectedResponseBodyStr, actualResponseBodyStr);
 
             switch (resultEmpty)
             { 
@@ -45,7 +46,7 @@ namespace Mento.Script.OpenAPI
             #region confirm that if response body return error code message
 
             //format6--当期望值或实际值是errorcode
-            CompareStringErrorResult resultError = IsResponseBodyErrorMsgEqual(expectedResponseBody, actualResponseBody);
+            CompareStringErrorResult resultError = IsResponseBodyErrorMsgEqual(expectedResponseBodyStr, actualResponseBodyStr);
 
             switch (resultError)
             {
@@ -69,6 +70,10 @@ namespace Mento.Script.OpenAPI
             }
 
             #endregion
+
+            EnergyViewDataBody[] expectedData = EnergyViewDataDtoConvertor.GetEnergyViewDataDtoGroups(expectedResponseBody);
+            EnergyViewDataBody[] actualData = EnergyViewDataDtoConvertor.GetEnergyViewDataDtoGroups(actualResponseBody);
+
 
             #region confirm if there is no data but structure only
             //format5-完全没有TargetEnergyData内容的情况，即response只是：TargetEnergyData[]
@@ -99,14 +104,14 @@ namespace Mento.Script.OpenAPI
             {
                 outResult = false;
                 report.errorMessage = "actual response body block is more than Expected response body";
-                report.detailedInfo = CompareBodyHelper.CompareResponseBodyByFiles(actualResponseBody, expectedResponseBody);
+                report.detailedInfo = CompareBodyHelper.CompareResponseBodyByFiles(expectedResponseBody, actualResponseBody);
                 return report;
             }
             else if (expectedData.Length > actualData.Length)
             {
                 outResult = false;
                 report.errorMessage = "actual response body block is less than Expected response body";
-                report.detailedInfo = CompareBodyHelper.CompareResponseBodyByFiles(actualResponseBody, expectedResponseBody);
+                report.detailedInfo = CompareBodyHelper.CompareResponseBodyByFiles(expectedResponseBody, actualResponseBody);
                 return report;
             }
 
@@ -204,32 +209,32 @@ namespace Mento.Script.OpenAPI
             }
             
             return false;
-        }
+        }     
+    }
 
-        public struct CompareReport
-        {
-            public string errorMessage;
-            public string detailedInfo;
-        }
+    public struct CompareReport
+    {
+        public string errorMessage;
+        public string detailedInfo;
+    }
 
-        public enum CompareStringResult
-        { 
-            bothEmpty = 1,
-            exEmpty = 2,
-            acEmpty = 3,
-            notEqual = 4,
-            equal = 5,
-            error = 6,
-        }
+    public enum CompareStringResult
+    {
+        bothEmpty = 1,
+        exEmpty = 2,
+        acEmpty = 3,
+        notEqual = 4,
+        equal = 5,
+        error = 6,
+    }
 
-        public enum CompareStringErrorResult
-        {
-            bothNoError = 1,
-            exError = 2,
-            acError = 3,
-            notEqual = 4,
-            equal = 5,
-            error = 6,
-        }
+    public enum CompareStringErrorResult
+    {
+        bothNoError = 1,
+        exError = 2,
+        acError = 3,
+        notEqual = 4,
+        equal = 5,
+        error = 6,
     }
 }

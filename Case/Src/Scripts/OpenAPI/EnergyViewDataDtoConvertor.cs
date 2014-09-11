@@ -23,9 +23,7 @@ namespace Mento.Script.OpenAPI
     {
         public static EnergyViewDataBody[] GetEnergyViewDataDtoGroups(string sourceOrginal)
         {
-            string source = ConvertJson.String2Json(sourceOrginal);
-
-            JArray targetEnergyDataArrays = JsonHelper.Deserialize2Array(source);
+            JArray targetEnergyDataArrays = JsonHelper.Deserialize2Array(sourceOrginal);
 
             if (targetEnergyDataArrays.Count == 0)
             {

@@ -30,7 +30,7 @@ namespace Mento.Script.OpenAPI
                 sw1.Close();
                 sw1.Dispose();
 
-                StreamWriter sw2 = new StreamWriter(exFileName);
+                StreamWriter sw2 = new StreamWriter(expectedFileName);
                 sw2.WriteLine(expectedResponseBody);
                 sw2.Close();
                 sw2.Dispose();     

@@ -141,9 +141,11 @@ namespace Mento.Script.OpenAPI
 
             for (int i = 0; i < expectedData.Length; i++)
             {
+                string headerInfo = "Header" + i.ToString() + "\n";
+
                 if (!String.Equals(expectedData[i].TargetEnergyData, actualData[i].TargetEnergyData))
                 {
-                    st.Append("期望值：" + expectedData[i].TargetEnergyData + "\n");
+                    st.Append(headerInfo  + "期望值：" + expectedData[i].TargetEnergyData + "\n");
                     st.Append("实际值：" + actualData[i].TargetEnergyData + "\n"); 
                 }
             }

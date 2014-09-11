@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织A", "园区A", "楼宇A"],
+			"TagNames":["BAV1Root"],
+			"failedFileName":["F-MultipleIntervalsComparasionDataView101-3934-0.xls", "F-MultipleIntervalsComparasionDataView101-3934-1.xls", "F-MultipleIntervalsComparasionDataView101-3934-2.xls", "F-MultipleIntervalsComparasionDataView101-3934-3.xls"],
+			"StartDate":["2012-7-1"],
+			"BaseStartDate":["2012-1-1"],
+			"BaseEndDate":["2012-12-31"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["MultipleIntervalsComparasionDataView101-3934-0.xls", "MultipleIntervalsComparasionDataView101-3934-1.xls", "MultipleIntervalsComparasionDataView101-3934-2.xls", "MultipleIntervalsComparasionDataView101-3934-3.xls"],
+		}
+	}
+]

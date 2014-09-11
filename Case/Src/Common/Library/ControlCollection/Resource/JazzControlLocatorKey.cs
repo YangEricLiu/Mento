@@ -787,6 +787,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxIntervalDialogBaseStartTime = "ComboBoxIntervalDialogBaseStartTime";
         public static string ComboBoxIntervalDialogBaseEndTime = "ComboBoxIntervalDialogBaseEndTime";
         public static string ComboBoxIntervalDialogAdditionStartTime = "ComboBoxIntervalDialogAdditionStartTime";
+        public static string ComboBoxIntervalDialogAdditionEndTime = "ComboBoxIntervalDialogAdditionEndTime";
         public static string ComboBoxWidgetMaxDialogDefaultTime = "ComboBoxWidgetMaxDialogDefaultTime";
         public static string ComboBoxLabelingYear = "ComboBoxLabelingYear";
         public static string ComboBoxLabelingMonth = "ComboBoxLabelingMonth";
@@ -1094,6 +1095,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string DatePickerIntervalDialogBaseStartDate = "DatePickerIntervalDialogBaseStartDate";
         public static string DatePickerIntervalDialogBaseEndDate = "DatePickerIntervalDialogBaseEndDate";
         public static string DatePickerIntervalDialogAdditionStartDate = "DatePickerIntervalDialogAdditionStartDate";
+        public static string DatePickerIntervalDialogAdditionEndDate = "DatePickerIntervalDialogAdditionEndDate";
 
         public static string DatePickerWidgetMaxDialogStartDate = "DatePickerWidgetMaxDialogStartDate";
         public static string DatePickerWidgetMaxDialogEndDate = "DatePickerWidgetMaxDialogEndDate";

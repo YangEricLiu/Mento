@@ -211,8 +211,6 @@ namespace Mento.Script.OpenAPI
 
             string expectedStr;
             string actualStr;
-            string exOutString;
-            string acOutString;
 
             CompareReport report = new CompareReport();
             bool isOutResult;
@@ -221,12 +219,6 @@ namespace Mento.Script.OpenAPI
             {
                 expectedStr = Cases[i].expectedResponseBody;
                 actualStr = Cases[i].actualResponseBody;
-
-                Console.Out.WriteLine("\n\n");
-                Console.Out.WriteLine(expectedStr);
-                Console.Out.WriteLine("\n\n");
-                Console.Out.WriteLine(actualStr);
-                Console.Out.WriteLine("\n\n");
 
                 report = CompareResponseBody.CompareEnergyUseResponseBody(expectedStr, actualStr, out isOutResult);
                 Console.Out.WriteLine(report.errorMessage);

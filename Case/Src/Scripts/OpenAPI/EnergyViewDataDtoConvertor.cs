@@ -37,7 +37,13 @@ namespace Mento.Script.OpenAPI
             {
                 JObject data = (JObject)targetEnergyDataArrays[i];
 
-                JArray tedata = (JArray)data["TargetEnergyData"];                  
+                JArray tedata = (JArray)data["TargetEnergyData"];
+
+                if (tedata.Count == 0)
+                {
+                    return null;
+                }
+
                 JObject target = (JObject)tedata[0]["Target"];
 
                 tmpevd.EnergyViewDatas = data.ToString();

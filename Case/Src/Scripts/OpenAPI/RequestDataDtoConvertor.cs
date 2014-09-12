@@ -10,47 +10,34 @@ namespace Mento.Script.OpenAPI
 {
     public struct RequestDataBody
     {
-        public string EnergyViewDatas;
-        public string TargetEnergyData;
-        public string EnergyData;
-        public string Target;
-        public string Name;
-        public string Type;
-        public string TimeSpan;
+        public string DataBody;
+        public string CustomerCode;
+        public string ViewOption;
+        public string TimeRanges;
+        public string ValueOptions;
+        public string TagCodes;
     }
 
     public class RequestDataDtoConvertor
     {
-        public static void GetEnergyViewDataDtoGroups(string sourceOrginal)
+        public static RequestDataBody GetRequestDataDtoGroup(string sourceOrginal)
         {
-            string source = ConvertJson.String2Json(sourceOrginal);
+            //string source = ConvertJson.String2Json(sourceOrginal);
 
-            JObject jo1 = (JObject)JsonConvert.DeserializeObject(source);
+            JObject requestData = (JObject)JsonConvert.DeserializeObject(sourceOrginal);
 
-            JArray targetEnergyDataArrays = JsonHelper.Deserialize2Array(source);
+            RequestDataBody tmprdb = new RequestDataBody();
 
-            var evd = new List<EnergyViewDataBody>();
-            EnergyViewDataBody tmpevd = new EnergyViewDataBody();
+            tmprdb.DataBody = requestData.ToString();
+            tmprdb.CustomerCode = requestData["CustomerCode"].ToString();
+            tmprdb.ViewOption = requestData["ViewOption"].ToString();
+            tmprdb.TagCodes = requestData["TagCodes"].ToString();
 
-            for (int i = 0; i < targetEnergyDataArrays.Count; i++)
-            {
-                JObject data = (JObject)targetEnergyDataArrays[i];
+            JObject viewOption = (JObject)requestData["ViewOption"];
+            tmprdb.TimeRanges = viewOption["TimeRanges"].ToString();
+            tmprdb.ValueOptions = viewOption["ValueOptions"].ToString();
 
-                JArray tedata = (JArray)data["TargetEnergyData"];                  
-                JObject target = (JObject)tedata[0]["Target"];
-
-                tmpevd.EnergyViewDatas = data.ToString();
-                tmpevd.TargetEnergyData = tedata.ToString();
-                tmpevd.EnergyData = tedata[0]["EnergyData"].ToString();
-                tmpevd.Target = target.ToString();
-                tmpevd.Name = target["Name"].ToString();
-                tmpevd.Type = target["Type"].ToString();
-                tmpevd.TimeSpan = target["TimeSpan"].ToString();
-
-                evd.Add(tmpevd);
-            }
-
-            //return evd.ToArray();
+            return tmprdb;
         }
     }
 }

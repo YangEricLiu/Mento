@@ -77,19 +77,22 @@ namespace Mento.Script.OpenAPI
                         using (var sr = new StreamReader(reponseStream, Encoding.UTF8))
                         {
                             string outString = ConvertJson.String2Json(sr.ReadToEnd().ToString());
-                            //string sa = sr.ReadToEnd().ToString();
-                            //Console.Out.Write(sa);
+                            string outString2 = ConvertJson.String2Json(body);
+
+                            string ttest = EnergyViewDataDtoConvertor.GetEnergyViewDataWithLocalTime(outString);
+                            Console.Out.WriteLine(ttest);
+                            
                             //Console.Out.WriteLine("\n\n");
                             //Console.Out.WriteLine(outString);
-                            string pathTestCase = @"D:\OpenApiTestCasesSource.xlsx";
-                            string sheetName = "Energy view-饼图接口";
-                            string pathCaseResult = @"D:\OpenApiTestCasesResult.xlsx";
+                            //string pathTestCase = @"D:\OpenApiTestCasesSource.xlsx";
+                            //string sheetName = "Energy view-饼图接口";
+                            //string pathCaseResult = @"D:\OpenApiTestCasesResult.xlsx";
 
-                            OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, sheetName);
+                            //OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, sheetName);
 
-                            Cases[0].expectedResponseBody = outString;
+                            //Cases[0].expectedResponseBody = outString;
 
-                            ExcelHelper.ImportOpenAPICasesToExcel(Cases, pathCaseResult, sheetName);
+                            //ExcelHelper.ImportOpenAPICasesToExcel(Cases, pathCaseResult, sheetName);
 
                             //JArray testja = JsonHelper.Deserialize2Array(outString);
 

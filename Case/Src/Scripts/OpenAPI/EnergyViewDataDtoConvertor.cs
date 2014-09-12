@@ -59,5 +59,30 @@ namespace Mento.Script.OpenAPI
 
             return evd.ToArray();
         }
+
+        public static string GetEnergyViewDataWithLocalTime(string sourceOrginal)
+        {
+            JArray targetEnergyDataArrays = JsonHelper.Deserialize2Array(sourceOrginal);
+            StringBuilder evd = new StringBuilder();
+            string other = "," + "\n";
+            evd.Append("[" + "\n");
+
+            for (int i = 0; i < targetEnergyDataArrays.Count; i++)
+            {
+                JObject data = (JObject)targetEnergyDataArrays[i];
+                if (i != (targetEnergyDataArrays.Count - 1))
+                {
+                    evd.Append(data.ToString() + other);
+                }
+                else
+                {
+                    evd.Append(data.ToString());
+                }
+            }
+
+            evd.Append("\n" + "]");
+
+            return evd.ToString();
+        }
     }
 }

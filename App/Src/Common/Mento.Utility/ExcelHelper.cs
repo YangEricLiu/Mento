@@ -161,7 +161,15 @@ namespace Mento.Utility
         /// <returns></returns> 
         public Excel.Worksheet GetWorksheet(string sheetName)
         {
-            return this.currentWorkbook.Sheets[sheetName] as Excel.Worksheet;
+            int count = this.currentWorkbook.Sheets.Count;
+
+            for (int i = 1; i < count; i++ )
+            {
+                if(sheetName == this.currentWorkbook.Sheets[i].Name)
+                    return this.currentWorkbook.Sheets[sheetName] as Excel.Worksheet;
+
+            }
+            return this.AddWorksheet(sheetName, false);
         }
 
         /// <summary> 
@@ -1282,17 +1290,26 @@ namespace Mento.Utility
 
         #region Import OpenAPI cases to excel
 
-        public static void ImportOpenAPICasesToExcel(OpenAPICases[] datas, string fileName, string sheetName)
+        public static void ImportOpenAPICasesToExcel(OpenAPICases[] datas,string sourceFileName, string resultFileName, string sheetName)
         {
+            //Copy to a new file when the file do not exist.
+            FileInfo sourceExcelFile = new FileInfo(sourceFileName);
+            FileInfo resultExcelFile = new FileInfo(resultFileName);
+
+            if (!resultExcelFile.Directory.Exists)
+                resultExcelFile.Directory.Create();
+            if (!resultExcelFile.Exists)
+                sourceExcelFile.CopyTo(resultFileName);
+
             //Open excel file which restore scripts data
-            ExcelHelper handler = new ExcelHelper(fileName);
+            ExcelHelper handler = new ExcelHelper(resultFileName);
 
             handler.OpenOrCreate();
 
             //Get Worksheet object 
             Excel.Worksheet mySheet = handler.GetWorksheet(sheetName);
 
-            for (int i = 0; i < datas.Length; i = i + 2)
+            for (int i = 0; i < datas.Length; i++)
             {
                 ImportOpenAPICaseToExcel(datas[i], mySheet, i + 2); 
             }

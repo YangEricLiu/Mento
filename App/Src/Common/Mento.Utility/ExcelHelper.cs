@@ -1262,17 +1262,16 @@ namespace Mento.Utility
             strValue = temp.Text.ToString();
             tmpoac.requestBody = strValue;
 
+            /*
+             * When use temp.Text.ToString(), just can get at most 8221 chars, so when there more than 8221 chars on cell, use 
+             * temp.Value.ToString();
+             */
             temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 2];
-            strValue = temp.Text.ToString();
-            //Console.Out.WriteLine("In Excel\n");
-            //Console.Out.WriteLine(rowIndex.ToString());
-            //Console.Out.WriteLine("\n");
-            //Console.Out.WriteLine(strValue);
-            //Console.Out.WriteLine("\n");
+            strValue = temp.Value.ToString();
             tmpoac.expectedResponseBody = strValue;
 
             temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 3];
-            strValue = temp.Text.ToString();
+            strValue = temp.Value.ToString();
             tmpoac.actualResponseBody = strValue;
             
             //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
@@ -1280,7 +1279,7 @@ namespace Mento.Utility
             //tmpoac.result = strValue;
 
             //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
-            //strValue = temp.Text.ToString();
+            //strValue = temp.Value.ToString();
             //tmpoac.resultReport = strValue;
 
             return tmpoac;

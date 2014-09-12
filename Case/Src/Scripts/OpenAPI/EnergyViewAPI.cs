@@ -79,8 +79,8 @@ namespace Mento.Script.OpenAPI
                             string outString = ConvertJson.String2Json(sr.ReadToEnd().ToString());
                             string outString2 = ConvertJson.String2Json(body);
 
-                            string ttest = EnergyViewDataDtoConvertor.GetEnergyViewDataWithLocalTime(outString);
-                            Console.Out.WriteLine(ttest);
+                            RequestDataBody ttest = RequestDataDtoConvertor.GetRequestDataDtoGroup(outString2);
+                            Console.Out.WriteLine(ttest.DataBody);
                             
                             //Console.Out.WriteLine("\n\n");
                             //Console.Out.WriteLine(outString);

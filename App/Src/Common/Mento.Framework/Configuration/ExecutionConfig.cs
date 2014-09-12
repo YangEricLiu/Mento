@@ -34,6 +34,7 @@ namespace Mento.Framework.Configuration
         private const string DESTINATIONEXPECTEDRESPONSEBODYDIRECTORY = "destinationExpectedResponseBodyDirectory";
         private const string FAILEDRESPONSEBODYDIRECTORY = "failedResponseBodyDirectory";
         private const string SOURCERESPONSEBODYDIRECTORY = "sourceResponseBodyDirectory";
+        private const string OPENAPITESTCASEDIRECTORY = "OpenAPITestCaseDirectory";
 
         private static string BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
@@ -80,6 +81,15 @@ namespace Mento.Framework.Configuration
                 return GetExecutionConfig(SOURCERESPONSEBODYDIRECTORY);
             }
         }
+
+        public static string OpenAPITestCaseDirectory
+        {
+            get
+            {
+                return GetExecutionConfig(OPENAPITESTCASEDIRECTORY);
+            }
+        }
+
 
         public static bool isCreateExpectedDataViewExcelFile
         {

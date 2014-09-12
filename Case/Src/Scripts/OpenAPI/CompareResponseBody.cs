@@ -33,9 +33,11 @@ namespace Mento.Script.OpenAPI
                     return report;
                 case CompareStringResult.equal:
                     outResult = true;
+                    report.errorMessage = "Expected Response body is equal to actual response body.\n";
                     return report;
                 case CompareStringResult.bothEmpty:
                     outResult = true;
+                    report.errorMessage = "Expected Response body and actual response bady are both empty.\n";
                     return report;
                 default:
                     break;                 

@@ -146,11 +146,11 @@ namespace Mento.Script.OpenAPI
 
         [Test]
         [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]
-        public void EnergyAnalysisOpenAPI2(OpenAPIData input)
+        public void ExcelReadAndWriteTest(OpenAPIData input)
         {
-            string pathTestCase = @"D:\OpenApiTestCasesSource.xlsx";
+            string pathTestCase = @"C:\OpenApiTestCasesSource.xlsx";
             string sheetName = "Energy view-饼图接口";
-            string pathCaseResult = @"D:\OpenApiTestCasesResult.xlsx";
+            string pathCaseResult = @"C:\OpenApiTestCasesResult.xlsx";
 
             OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, sheetName);
             for (int i = 0; i < Cases.Length; i++)
@@ -159,13 +159,10 @@ namespace Mento.Script.OpenAPI
                 Console.Out.WriteLine(Cases[i].requestBody);
                 Console.Out.WriteLine(Cases[i].expectedResponseBody);
                 Console.Out.WriteLine(Cases[i].actualResponseBody);
-                //Console.Out.WriteLine(Cases[i - 1].result);
-                //Console.Out.WriteLine(Cases[i - 1].resultReport);
                 Console.Out.WriteLine("\n\n");
-                //ExcelHelper.ImportOpenAPICasesToExcel(Cases[i-1], pathCaseResult, sheetName, 2*i);
             }
 
-            ExcelHelper.ImportOpenAPICasesToExcel(Cases, pathCaseResult, sheetName);
+            ExcelHelper.ImportOpenAPICasesToExcel(Cases, pathTestCase, pathCaseResult, sheetName);
         }
 
         [Test]
@@ -205,9 +202,9 @@ namespace Mento.Script.OpenAPI
 
         [Test]
         [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]
-        public void EnergyAnalysisOpenAPI4(OpenAPIData input)
+        public void CompareStringsTest(OpenAPIData input)
         {
-            string pathTestCase = @"D:\OpenApiTestCasesSource.xlsx";
+            string pathTestCase = @"C:\OpenApiTestCasesSource.xlsx";
             string sheetName = "Energy view-饼图接口";
 
             OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, sheetName);

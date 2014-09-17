@@ -4,8 +4,9 @@
 		{
 			"CommonName":"自定义能效标识3",
 			"Commodity":"$@Commodity_Water",
+			"Uom":"$@Uom_Ton",
 			"KPITypes":["$@Common.Glossary.DayNightRatio","$@EM.Unit.UnitPopulation"],
-			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade@$ 3",
+			"LabellingLevel":"3$@Setting.CustomizedLabeling.Grade@$",
 			"LabellingLevelValue":"3",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5.144",
@@ -25,8 +26,9 @@
 		{
 			"CommonName":"自定义能效标识3",
 			"Commodity":"$@Commodity_Water",
+			"Uom":"$@Uom_Ton",
 			"KPITypes":["$@Common.Glossary.DayNightRatio","$@EM.Unit.UnitPopulation"],
-			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade@$ 3",
+			"LabellingLevel":"3$@Setting.CustomizedLabeling.Grade@$",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5.14",
 			},

@@ -847,6 +847,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region CustomizedLabellingSetting
         public static string ComboBoxCustomizedLabellingCommodity = "CustomizedLabellingCommodity";
+        public static string ComboBoxCustomizedLabellingUom = "CustomizedLabellingUom";
         public static string ComboBoxCustomizedLabellingType = "CustomizedLabellingType";
         public static string ComboBoxCustomizedLabellingLevel = "CustomizedLabellingLevel";
 

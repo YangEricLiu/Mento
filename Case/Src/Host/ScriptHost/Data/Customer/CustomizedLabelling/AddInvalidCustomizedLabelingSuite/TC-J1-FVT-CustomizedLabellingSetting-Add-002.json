@@ -31,7 +31,7 @@
 			"CommonNames":["自定义能效标识1","$@Common.Label.MandatoryEmptyError"],
 			"Commodity":"$@Commodity_Electricity",
 			"KPIType":"$@EM.Unit.UnitPopulation",
-			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade 4",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade@$ 4",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
 			},

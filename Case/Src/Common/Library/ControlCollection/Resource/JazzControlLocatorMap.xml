@@ -806,6 +806,7 @@
           </ptagrawdata>
     <CustomizedLabellingSetting>
               <add key="CustomizedLabellingCommodity" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
+              <add key="CustomizedLabellingUom" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='UomID']]" type="XPath"/>
               <add key="CustomizedLabellingType" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='LabellingType']]" type="XPath"/>
               <add key="CustomizedLabellingLevel" value="//div[@id='st-customized-labeling-properties-form-body']//table[@id='st-labeling-level-triggerWrap']" type="XPath"/>     
     </CustomizedLabellingSetting>

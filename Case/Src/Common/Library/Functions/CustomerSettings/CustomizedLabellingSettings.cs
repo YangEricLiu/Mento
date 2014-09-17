@@ -29,6 +29,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region combox
         private static ComboBox CommodityComboBox = JazzComboBox.CustomizedLabellingCommodityComboBox;
+        private static ComboBox UomComboBox = JazzComboBox.CustomizedLabellingUomComboBox;
         private static ComboBox KPITypeComboBox = JazzComboBox.CustomizedLabellingTypeComboBox;
         private static ComboBox LabellingLevelComboBox = JazzComboBox.CustomizedLabellingLevelComboBox;
         #endregion
@@ -185,6 +186,16 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Change CustomizedLabellingUom combox
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void SelectUomComboBox(string ItemName)
+        {
+            UomComboBox.SelectItem(ItemName);
+        }
+
+        /// <summary>
         /// Select KPIType combox
         /// </summary>
         /// <param></param>
@@ -247,6 +258,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetCommodityComboBoxValue()
         {
             return CommodityComboBox.GetValue();
+        }
+
+        /// <summary>
+        /// Get CustomizedLabellingUomComboBox 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetUomComboBoxValue()
+        {
+            return UomComboBox.GetValue();
         }
 
         /// <summary>
@@ -387,6 +408,26 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetDescendingCustomizedLabellingButton()
         {
             return DescendingButton.GetRadioButtonText();
+        }
+
+        /// <summary>
+        /// Click Descending button 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickDescendingCustomizedLabellingButton()
+        {
+            DescendingButton.Click();
+        }
+
+        /// <summary>
+        /// Click Ascending button 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickAscendingCustomizedLabellingButton()
+        {
+            AscendingButton.Click();
         }
 
         #endregion

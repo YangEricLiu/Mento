@@ -81,19 +81,23 @@ namespace Mento.Script.OpenAPI
             //format5-完全没有TargetEnergyData内容的情况，即response只是：TargetEnergyData[]
             if (expectedData == null && actualData == null)
             {
-                outResult = true;
+                outResult = String.Equals(expectedData, actualData);
+
+                if (!outResult)
+                     report.errorMessage = "Expected and actual have no data, but the structure are different as [] and TargetEnergyData[]";
+
                 return report;
             }
             else if (!(expectedData == null) && actualData == null)
             {
                 outResult = false;
-                report.errorMessage = "Expected response body have return value, but actual not, only have TargetEnergyData[]";
+                report.errorMessage = "Expected response body have return value, but actual not, only have TargetEnergyData[] or []";
                 return report;
             }
             else if (expectedData == null && !(actualData == null))
             {
                 outResult = false;
-                report.errorMessage = "Actual response body have return value, but expected not, only have TargetEnergyData[]";
+                report.errorMessage = "Actual response body have return value, but expected not, only have TargetEnergyData[] or []";
                 return report;
             }
 

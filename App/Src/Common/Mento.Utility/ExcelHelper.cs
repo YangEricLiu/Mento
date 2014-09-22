@@ -1238,7 +1238,7 @@ namespace Mento.Utility
             //Get Worksheet object 
             Excel.Worksheet mySheet = handler.GetWorksheet(sheetName);
 
-            for (int i = 2; i <= mySheet.Cells.CurrentRegion.Rows.Count; i = i + 2)
+            for (int i = 2; i <= mySheet.Cells.CurrentRegion.Rows.Count; i++)
             {
                 tmpoac = ImportToOpenAPICase(mySheet, i);
 
@@ -1270,9 +1270,9 @@ namespace Mento.Utility
             strValue = temp.Value.ToString();
             tmpoac.expectedResponseBody = strValue;
 
-            temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 3];
-            strValue = temp.Value.ToString();
-            tmpoac.actualResponseBody = strValue;
+            //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 3];
+            //strValue = temp.Value.ToString();
+            //tmpoac.actualResponseBody = strValue;
             
             //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
             //strValue = temp.Text.ToString();
@@ -1308,7 +1308,7 @@ namespace Mento.Utility
             //Get Worksheet object 
             Excel.Worksheet mySheet = handler.GetWorksheet(sheetName);
 
-            for (int i = 0; i < datas.Length; i++)
+            for (int i = 0; i < datas.Count(); i++)
             {
                 ImportOpenAPICaseToExcel(datas[i], mySheet, i + 2); 
             }

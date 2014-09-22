@@ -143,14 +143,14 @@ namespace Mento.Script.OpenAPI
                 throw new Exception(ex.Message);
             }
         }
-
+        
         [Test]
         [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]
         public void ExcelReadAndWriteTest(OpenAPIData input)
         {
-            string pathTestCase = @"C:\OpenApiTestCasesSource.xlsx";
+            string pathTestCase = @"E:\OpenApiTestCasesSource.xlsx";
             string sheetName = "Energy view-饼图接口";
-            string pathCaseResult = @"C:\OpenApiTestCasesResult.xlsx";
+            string pathCaseResult = @"E:\OpenApiTestCasesResult.xlsx";
 
             OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, sheetName);
             for (int i = 0; i < Cases.Length; i++)
@@ -167,44 +167,9 @@ namespace Mento.Script.OpenAPI
 
         [Test]
         [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]
-        public void EnergyAnalysisOpenAPI3(OpenAPIData input)
-        {
-            string pathTestCase = @"D:\OpenApiTestCasesSource.xlsx";
-            string sheetName = "Energy view-饼图接口";
-            //string pathCaseResult = @"D:\OpenApiTestCasesResult.xlsx";
-            OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, sheetName);
-            //bool resultNew = true;
-
-            //string expectedStr = Cases[0].expectedResponseBody;
-            //string actualStr = Cases[0].actualResponseBody;
-
-            //Console.Out.WriteLine("\n\n");
-            //Console.Out.WriteLine(Cases[0].expectedResponseBody);
-            //Console.Out.WriteLine("\n\n");
-            //Console.Out.WriteLine(Cases[0].actualResponseBody);
-            //Console.Out.WriteLine("\n\n");
-
-            //string exOutString = ConvertJson.String2Json(expectedStr);
-            //Console.Out.WriteLine(exOutString);
-            //EnergyViewDataBody[] exjds = EnergyViewDataDtoConvertor.GetEnergyViewDataDtoGroups(exOutString);
-            //string acOutString = ConvertJson.String2Json(actualStr);
-            //Console.Out.WriteLine(acOutString);
-            //EnergyViewDataBody[] acjds = EnergyViewDataDtoConvertor.GetEnergyViewDataDtoGroups(acOutString);
-
-            //CompareReport report = new CompareReport();
-            ////report = CompareResponseBody.CompareMatchedResponseBody(exjds, acjds);
-            //report = CompareResponseBody.CompareEnergyUseResponseBody(exOutString, acOutString, out resultNew);
-            //Console.Out.WriteLine(report.errorMessage);
-            //Console.Out.WriteLine("\n\n");
-            //Console.Out.WriteLine(report.detailedInfo);
-            //Console.Out.WriteLine("\n\n");
-        }
-
-        [Test]
-        [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]
         public void CompareStringsTest(OpenAPIData input)
         {
-            string pathTestCase = @"C:\OpenApiTestCasesSource.xlsx";
+            string pathTestCase = @"E:\OpenApiTestCasesSource.xlsx";
             string sheetName = "Energy view-饼图接口";
 
             OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, sheetName);
@@ -226,6 +191,104 @@ namespace Mento.Script.OpenAPI
                 Console.Out.WriteLine(report.detailedInfo);
                 Console.Out.WriteLine("\n\n");
             }
+        }
+
+        [Test]
+        [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]
+        public void RequestToResponse(OpenAPIData input)
+        {
+            string appKey = "2spry01f9atshr08nljq21it";
+            string secret = "ThDhX8hX0MccCNEGgUHI89KK7gFg=";
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] ciphertext;
+            string pathTestCase = @"E:\OpenApiTestCasesSource.xlsx";
+            string sheetName = "Energy view-单层级多层级接口";
+
+            OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, sheetName);
+            string requestBody = "";
+            for (int i = 0; i < Cases.Length; i++)
+            {
+                requestBody = Cases[i].requestBody;
+                Console.Out.WriteLine(Cases[i].url);
+                Console.Out.WriteLine(Cases[i].requestBody);
+                Console.Out.WriteLine("\n\n");
+
+                WebRequest request = HttpWebRequest.Create(Cases[i].url);
+                request.ContentType = "application/json";
+                request.Headers.Add("X-Auth-AppKey", appKey);
+                request.Method = "POST";
+                ciphertext = md5.ComputeHash(UnicodeEncoding.UTF8.GetBytes(appKey + requestBody + secret));
+                string s = BitConverter.ToString(ciphertext).Replace("-", string.Empty);
+                request.Headers.Add("X-Auth-Fig", s);
+
+                var requestBodyBytes = Encoding.UTF8.GetBytes(requestBody);
+                using (var requestBodyStream = request.GetRequestStream())
+                {
+                    requestBodyStream.Write(requestBodyBytes, 0, requestBodyBytes.Length);
+                }
+                using (var repsonse = request.GetResponse())
+                {
+                    using (var reponseStream = repsonse.GetResponseStream())
+                    {
+                        using (var sr = new StreamReader(reponseStream, Encoding.UTF8))
+                        {
+                            string outString = ConvertJson.String2Json(sr.ReadToEnd().ToString());
+                            Cases[i].actualResponseBody = outString;
+                        }
+                    }
+                }
+                Console.Out.WriteLine("\n\n");
+                Console.Out.WriteLine("!!!!!!!!!!!!ResponseBody!!!!!!!!!!!!!!!!!!!!");
+                Console.Out.WriteLine(Cases[i].actualResponseBody);
+                Console.Out.WriteLine("!!!!!!!!!!!!ResponseBody!!!!!!!!!!!!!!!!!!!!");
+                Console.Out.WriteLine("\n\n");
+
+            }
+
+        }
+
+        [Test]
+        [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]
+        public void ReportTemplate(OpenAPIData input)
+        {
+            //Define the path for test case source excel file and result file
+            string pathTestCase = @"E:\OpenApiTestCasesSource.xlsx";
+            string sheetName = "Energy view-饼图接口";
+            string pathCaseResult = @"E:\OpenApiTestCasesResult.xlsx";
+
+            //Read the test cases data from excel to TestCases[]
+            OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, sheetName);
+            string expectedStr;
+            string actualStr;
+            CompareReport report = new CompareReport();
+            bool isOutResult;
+
+            //Compare the strings
+            for (int i = 0; i < Cases.Length; i++)
+            {
+                Console.Out.WriteLine(Cases[i].url);
+                Console.Out.WriteLine(Cases[i].requestBody);
+                Console.Out.WriteLine(Cases[i].expectedResponseBody);
+                Console.Out.WriteLine(Cases[i].actualResponseBody);
+                Console.Out.WriteLine("\n\n");
+
+                expectedStr = Cases[i].expectedResponseBody;
+                actualStr = Cases[i].actualResponseBody;
+
+                report = CompareResponseBody.CompareEnergyUseResponseBody(expectedStr, actualStr, out isOutResult);
+                if (true == isOutResult)
+                    Cases[i].result = "Pass:" + report.errorMessage;
+                else
+                    Cases[i].result = "Fail:" + report.errorMessage;
+                Cases[i].resultReport = report.detailedInfo;
+                Console.Out.WriteLine(report.errorMessage);
+                Console.Out.WriteLine("\n\n");
+                Console.Out.WriteLine(report.detailedInfo);
+                Console.Out.WriteLine("\n\n");
+            }
+
+            //Write the result to excel file
+            ExcelHelper.ImportOpenAPICasesToExcel(Cases, pathTestCase, pathCaseResult, sheetName);
         }
     }
 }

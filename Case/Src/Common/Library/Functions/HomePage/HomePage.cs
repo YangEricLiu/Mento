@@ -151,6 +151,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void SelectCustomer(string customerName)
         {
+
             SelectCustmerMenuButton.SelectOneItem(customerName);
 
             JazzMessageBox.LoadingMask.WaitLoading();

@@ -158,6 +158,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Labelling
 
         public static MenuButton LabellingIndustryConvertMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonLabellingIndustryConvert);
+        public static MenuButton CustomerLabellingIndustryMenuButton = GetControl<MenuButton>(JazzControlLocatorKey.MenuButtonCustomerLabellingIndustry);
 
         #endregion
 

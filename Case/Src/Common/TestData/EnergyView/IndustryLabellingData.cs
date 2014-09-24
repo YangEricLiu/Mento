@@ -28,6 +28,10 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public string[] UnitTypeValues { get; set; }
 
+        public string[] LabellingType { get; set; }
+
+        public string[] Labellings{ get; set; }
+
         public YearAndMonth[] YearAndMonth { get; set; }
 
         public string[] failedFileName { get; set; }

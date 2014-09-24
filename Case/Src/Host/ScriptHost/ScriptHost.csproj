@@ -791,6 +791,7 @@
     <None Include="Data\EnergyView\IndustryLabelling\CalculateIndustryLabellingWorkNotworkSuite\TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-1.json" />
     <None Include="Data\EnergyView\IndustryLabelling\CalculateIndustryLabellingWorkNotworkSuite\TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-2.json" />
     <None Include="Data\EnergyView\IndustryLabelling\CalculateIndustryLabellingWorkNotworkSuite\TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-3.json" />
+    <None Include="Data\EnergyView\IndustryLabelling\SelectCustomerLabellingSuite\TC-J1-FVT-SelectCustomerLabellingSuite-101-1.json" />
     <None Include="Data\EnergyView\IndustryLabelling\ViewIndustryLabellingConsumptionSuite\TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-1.json" />
     <None Include="Data\EnergyView\IndustryLabelling\ViewIndustryLabellingConsumptionSuite\TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-2.json" />
     <None Include="Data\EnergyView\IndustryLabelling\ViewIndustryLabellingConsumptionSuite\TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-3.json" />

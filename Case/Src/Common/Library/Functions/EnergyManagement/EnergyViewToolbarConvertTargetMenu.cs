@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.TestApi.WebUserInterface;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -19,6 +20,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MenuButton IndustryConvertTargetButton = JazzButton.IndustryConvertMenuButton;
         private static MenuButton CarbonIndustryConvertTargetButton = JazzButton.CarbonIndustryConvertMenuButton;
         private static MenuButton LabellingIndustryConvertTargetButton = JazzButton.LabellingIndustryConvertMenuButton;
+        private static MenuButton CustomerLabellingIndustryTargetButton = JazzButton.CustomerLabellingIndustryMenuButton;
 
         private static Dictionary<CarbonConvertTarget, string[]> CarbonMenuItems = new Dictionary<CarbonConvertTarget, string[]>()
         {
@@ -40,9 +42,16 @@ namespace Mento.ScriptCommon.Library.Functions
             {TagModeConvertTarget.MultipleHierarchyTag,new string[]{"$@EM.MultiHier"}},
         };
 
+        private static Dictionary<LabellingConvertTarget, string[]> LabellingMenuItems = new Dictionary<LabellingConvertTarget, string[]>()
+        {
+            {LabellingConvertTarget.IndustryLablling,new string[]{"$@Setting.Labeling.Label.CustomizedLabeling"}},
+            {LabellingConvertTarget.CustomerLablling,new string[]{"$@Setting.Labeling.Label.IndustryLabeling"}},
+
+        };
+
         private static Dictionary<UnitTypeConvertTarget, string[]> UnitTypeMenuItems = new Dictionary<UnitTypeConvertTarget, string[]>()
         {
-            {UnitTypeConvertTarget.UnitPopulation,new string[]{"$@EM.Unit.UnitPopulation"}},
+            {UnitTypeConvertTarget.UnitPopulation,new string[]{"$@EM.Unit.UnUnitTypeMenuItemstPopulation"}},
             {UnitTypeConvertTarget.UnitArea,new string[]{"$@EM.Unit.UnitArea"}},
             {UnitTypeConvertTarget.UnitHeatArea,new string[]{"$@EM.Unit.UnitWarmArea"}},
             {UnitTypeConvertTarget.UnitCoolArea,new string[]{"$@EM.Unit.UnitColdArea"}},
@@ -87,6 +96,15 @@ namespace Mento.ScriptCommon.Library.Functions
             LabellingIndustryConvertTargetButton.SelectOneItem(industry);
         }
 
+        public void SwitchCustomerLabellingIndustryMenuItem(string customerLabelling)
+        {
+            TimeManager.LongPause();
+            CustomerLabellingIndustryTargetButton.ClickAndHold();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            CustomerLabellingIndustryTargetButton.SelectOneItem(customerLabelling);
+        }
+
         public string GetIndustryButtonText()
         {
             return IndustryConvertTargetButton.GetText();
@@ -127,6 +145,13 @@ namespace Mento.ScriptCommon.Library.Functions
             TagModeConvertTargetButton.SelectItem(TagModeMenuItems[target]);
         }
 
+        public void SwitchLabellingMenuItem(LabellingConvertTarget target)
+        {
+
+            LabellingIndustryConvertTargetButton.SelectItem(LabellingMenuItems[target]);
+           
+        }
+
         public void SwitchUnitTypeMenuItem(UnitTypeConvertTarget target)
         {
             if (GetFuncModeConvertTargetButtonText().Contains("碳排放") || GetFuncModeConvertTargetButtonText().Contains("Carbon emission"))
@@ -137,6 +162,18 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 UnitTypeConvertTargetButton.SelectItem(UnitTypeMenuItems[target]);
             }        
+        }
+
+        public void SwitchCustomerLabellingMenuItem(string target)
+        {
+            if (LabellingIndustryConvertTargetButton.GetText().Equals("Customized labeling") || LabellingIndustryConvertTargetButton.GetText().Equals("自定义能效标识"))
+            {
+                CustomerLabellingIndustryTargetButton.SelectOneItem(target);
+            }
+            else
+            {
+                CustomerLabellingIndustryTargetButton.SelectOneItem(target);
+            }
         }
 
         public void SwitchUnitTypeMenuItem(string target)
@@ -202,6 +239,12 @@ namespace Mento.ScriptCommon.Library.Functions
     {
         SingleHierarchyTag,
         MultipleHierarchyTag,
+    }
+
+    public enum LabellingConvertTarget
+    {
+        IndustryLablling,
+        CustomerLablling,
     }
 
     public enum UnitTypeConvertTarget

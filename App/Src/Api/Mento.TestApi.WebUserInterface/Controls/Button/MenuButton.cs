@@ -60,9 +60,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             this.Click();
             TimeManager.FlashPause();
-
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             Locator itemLocator = GetMenuItemLocator(itemPath);
-
             ElementHandler.Click(FindChild(itemLocator));
 
             TimeManager.ShortPause();

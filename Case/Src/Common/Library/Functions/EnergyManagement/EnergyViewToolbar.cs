@@ -175,6 +175,16 @@ namespace Mento.ScriptCommon.Library.Functions
             ConvertTargetButton.SwitchIndustryMenuItem(industry);
         }
 
+        public void SelectIndustryOrCustomerLabellingConvertTarget(int LabellingType, string Labelling)
+        {
+            if (1 == LabellingType)
+                ConvertTargetButton.SwitchLabellingIndustryMenuItem(Labelling);
+            else
+                ConvertTargetButton.SwitchCustomerLabellingIndustryMenuItem(Labelling);
+        }
+
+        
+
         public void SelectRatioIndustryConvertTarget(string industry)
         {
             ConvertTargetButton.SwitchRatioIndustryMenuItem(industry);

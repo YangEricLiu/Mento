@@ -2,8 +2,9 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "楼宇BC"], ["NancyCustomer1", "园区测试多层级"]],
-			"TagNames":["V1_BuildingBC", "V2_BuildingBC", "V3_BuildingBC"],
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"], ["NancyCustomer1", "园区测试多层级", "楼宇BC"], ["SOHO", "GalaxySOHO"]],
+			"TagNames":["V1_BuildingBC", "V12_BuildingBC", "V14_BuildingBC"],
+			"Industries":[["$@Setting.Labeling.Label.CustomizedLabeling", "自定义能效标识10"], ["$@Setting.Labeling.Label.CustomizedLabeling", "自定义能效标识8"], ["$@Setting.Labeling.Label.CustomizedLabeling", "无"]],
 			"YearAndMonth":[{
 				"year":"2014",
 				"month":"01",
@@ -14,7 +15,6 @@
 			}],
 			"failedFileName":["F-ConsumptionUnitIndicatorIndustryLabelling-View-101-1-0.xls", "F-ConsumptionUnitIndicatorIndustryLabelling-View-101-1-1.xls"],
 		},
-		"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
 		"ExpectedData":
 		{
 			"UnitTypeValue":"$@EM.Unit.UnitPopulation",

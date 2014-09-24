@@ -8,7 +8,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class MenuButton : Button
     {
-        private static string MenuItemLocatorFormat = "//div[contains(@class,'x-menu-item') and a/span[text()='{0}']]";
+        //private static string MenuItemLocatorFormat = "//div[contains(@class,'x-menu-item') and a/span[text()='{0}']]";
+        private static string MenuItemLocatorFormat = "//span[text()='{0}']";
 
         public MenuButton(Locator locator) : base(locator) { }
 

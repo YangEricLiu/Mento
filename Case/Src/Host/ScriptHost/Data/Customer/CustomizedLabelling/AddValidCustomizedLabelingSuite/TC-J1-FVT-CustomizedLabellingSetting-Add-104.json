@@ -4,7 +4,8 @@
 		{
 			"CommonName":"自定义能效标识6",
 			"Commodity":"$@Commodity_AirQuality",
-			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade@$ 8",
+			"Uom":"$@Uom_µg/m³@$",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade|(8)",
 			"LabellingLevelValue":"8",
 			"KPIType":"$@EM.Unit.UnitArea",
 			"LabellingValue":[[{
@@ -42,7 +43,7 @@
 		{			
 			"CommonName":"自定义能效标识6",
 			"Commodity":"$@Commodity_AirQuality",
-			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade@$ 8",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade|(8)",
 			"KPIType":"$@EM.Unit.UnitArea",
 			"UOM":"$@Uom_µg/m³@$/$@Uom_m²",
 			"LabellingValue":[[{

@@ -6,7 +6,7 @@
 			"Commodity":"$@Commodity_Water",
 			"Uom":"$@Uom_Ton",
 			"KPITypes":["$@Common.Glossary.DayNightRatio","$@EM.Unit.UnitPopulation"],
-			"LabellingLevel":"3$@Setting.CustomizedLabeling.Grade@$",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade|(3)",
 			"LabellingLevelValue":"3",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5.144",
@@ -28,7 +28,7 @@
 			"Commodity":"$@Commodity_Water",
 			"Uom":"$@Uom_Ton",
 			"KPITypes":["$@Common.Glossary.DayNightRatio","$@EM.Unit.UnitPopulation"],
-			"LabellingLevel":"3$@Setting.CustomizedLabeling.Grade@$",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade|(3)",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"5.14",
 			},

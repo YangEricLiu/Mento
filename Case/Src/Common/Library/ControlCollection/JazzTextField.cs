@@ -131,6 +131,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region CustomizedLabellingSetting
         public static TextField TextFieldCustomizedLabellingName = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomizedLabellingName);
+        public static TextField TextFieldCustomizedLabellingComment = GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomizedLabellingComment);
         #endregion
         #endregion
 

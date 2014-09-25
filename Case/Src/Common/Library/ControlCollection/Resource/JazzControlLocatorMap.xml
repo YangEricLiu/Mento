@@ -258,10 +258,10 @@
               <add key="ButtonPTagSettingsDelete" value="//div[@id='st-ptag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
            </ptag>
            <ptagrawdata>
-              <add key="TagButtonPTagRawData" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Common.Button.Originaldata']]" type="XPath"/>
+              <add key="TagButtonPTagRawData" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.TagConfiguration.RawData']]" type="XPath"/>
               <add key="ButtonPTagRawDataSave" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonPTagRawDataCancel" value="//div[contains(@id,'rawdatapanel') and contains(@class,'x-tabpanel-child')]/div/div/div/div[contains(@class,'x-btn')][2]/em/button" type="XPath"/>
-              <add key="ButtonPTagRawDataModify" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.ChangeRecord']]" type="XPath"/>
+              <add key="ButtonPTagRawDataModify" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.TagConfiguration.History']]" type="XPath"/>
               <add key="ButtonPTagRawDataSaveAndSwitch" value="//div[contains(@class,'x-toolbar-footer-docked-bottom')]/div/div/div[1]/em/button" type="XPath"/>
               <add key="ButtonPTagRawDataDirectlySwitch" value="//div[contains(@class,'x-toolbar-footer-docked-bottom')]/div/div/div[2]/em/button" type="XPath"/>
               <add key="ButtonPTagRawDataCancelSwitch" value="//img[@class='x-tool-close']" type="XPath"/>
@@ -492,7 +492,7 @@
               <add key="ButtonModifyCustomerMapProperty" value="//div[@id='st-map-consumption-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="TabButtonCustomerMapPageProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.CustomerManagement.Label.MapPageInfo']]" type="XPath"/>
               <add key="TabButtonCustomerBasicProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
-
+CommentTextField
           </customermanagement>
           
           <BenchMark>
@@ -669,6 +669,7 @@
           </areadimensionsettings>
           <CustomizedLabellingSetting>
               <add key="TextFieldCustomizedLabellingName" value="//div[@id='st-customized-labeling-properties-form-body']/table[contains(@class, 'x-field')]/tbody/tr/td/input[@name='Name']" type="XPath"/>
+              <add key="TextFieldCustomizedLabellingComment" value="//div[@id='st-customized-labeling-properties-form-body']//textarea[@name='Comment']" type="XPath"/>
           </CustomizedLabellingSetting>
       </customersettings>
       <platformsettings>
@@ -807,7 +808,7 @@
           </ptagrawdata>
     <CustomizedLabellingSetting>
               <add key="CustomizedLabellingCommodity" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
-              <add key="CustomizedLabellingUom" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='UomID']]" type="XPath"/>
+              <add key="CustomizedLabellingUom" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
               <add key="CustomizedLabellingType" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='LabellingType']]" type="XPath"/>
               <add key="CustomizedLabellingLevel" value="//div[@id='st-customized-labeling-properties-form-body']//table[@id='st-labeling-level-triggerWrap']" type="XPath"/>     
     </CustomizedLabellingSetting>

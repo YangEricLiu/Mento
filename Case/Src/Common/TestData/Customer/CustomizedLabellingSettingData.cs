@@ -17,13 +17,16 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string ConfigurationUser { get; set; }
         public string[] Order { get; set; }
         public string Commodity { get; set; }
-        public string[] Commodities { get; set; }       
+        public string[] Commodities { get; set; }
+        public string Uom { get; set; }
+        public string[] Uoms { get; set; } 
         public string  KPIType { get; set; }
         public string[] KPITypes { get; set; }
         public string LabellingLevel { get; set; }
         public string[] LabellingLevels { get; set; }
         public string LabellingLevelValue { get; set; }
         public string[] LabellingLevelValues { get; set; }
+        public string Comments { get; set; }
         public LabellingValue[][] LabellingValue { get; set; }
     }
     public class CustomizedLabellingSettingExpectedData : ExpectedTestDataBase
@@ -33,7 +36,9 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string ConfigurationUser { get; set; }
         public string[] Order { get; set; }
         public string Commodity { get; set; }
-        public string[] Commodities { get; set; }       
+        public string[] Commodities { get; set; }
+        public string Uom { get; set; }
+        public string[] Uoms { get; set; } 
         public string KPIType { get; set; }
         public string[] KPITypes { get; set; }
         public string LabellingLevel { get; set; }
@@ -46,6 +51,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string[] Lastlabels { get; set; }
         public string UOM { get; set; }
         public string[] UOMs { get; set; }
+        public string Comments { get; set; }
         public LabellingValue[][] LabellingValue { get; set; }
     }
     public class LabellingValue

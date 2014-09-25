@@ -702,6 +702,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region  CustomizedLabellingSetting
         public static string TextFieldCustomizedLabellingName = "TextFieldCustomizedLabellingName";
+        public static string TextFieldCustomizedLabellingComment = "TextFieldCustomizedLabellingComment";
         #endregion
         #endregion
 

@@ -5,7 +5,7 @@
 			"CommonName":"自定义能效标识5",
 			"Commodities":["$@Commodity_Water","$@Commodity_Gas"],
 			"KPITypes":["$@EM.Unit.UnitArea","$@EM.WorkHolidayRatio"],
-			"LabellingLevels":["8$@Setting.CustomizedLabeling.Grade@$","6$@Setting.CustomizedLabeling.Grade@$"],
+			"LabellingLevels":["$@Setting.CustomizedLabeling.Grade|(8)","$@Setting.CustomizedLabeling.Grade|(6)"],
 			"LabellingLevelValues":["8","6"],
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
@@ -109,7 +109,7 @@
 		    "CommonName":"自定义能效标识5",
 			"Commodity":"$@Commodity_Gas",
 			"KPIType":"$@EM.WorkHolidayRatio",
-			"LabellingLevel":"6$@Setting.CustomizedLabeling.Grade@$",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade|(6)",
 			"LabellingValue":[
 			[{
 				"LabellingLeftValue":"",

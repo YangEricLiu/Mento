@@ -44,6 +44,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region textfield
         private static TextField NameTextField = JazzTextField.TextFieldCustomizedLabellingName;
+        private static TextField CommentTextField = JazzTextField.TextFieldCustomizedLabellingComment;
         #endregion
 
         #region label
@@ -133,6 +134,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInNameTextField(string input)
         {
             NameTextField.Fill(input);
+        }
+
+        /// <summary>
+        /// FillIn CustomizedLabellingComment TextField
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void FillInCommentTextField(string input)
+        {
+            CommentTextField.Fill(input);
         }
 
         /// <summary>
@@ -237,6 +248,45 @@ namespace Mento.ScriptCommon.Library.Functions
             return InputValueErrTips.IsLabelDisplayed();
         }
 
+        public Boolean IsNameInvalid()
+        {
+            return NameTextField.IsTextFieldValueInvalid();
+        }
+
+        public Boolean IsCommentsInvalid()
+        {
+            return CommentTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of name field is correct
+        /// </summary>
+        /// <param name="output">HierarchyExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsNameInvalidMsgCorrect(string output)
+        {
+            return NameTextField.GetInvalidTips().Contains(output);
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Comments field is correct
+        /// </summary>
+        /// <param name="output">HierarchyExpectedData</param>
+        /// <returns>whether the invalid message is true</returns>
+        public Boolean IsCommentsInvalidMsgCorrect(string output)
+        {
+            return CommentTextField.GetInvalidTips().Contains(output);
+        }
+
+        /// <summary>
+        /// Judge whether the textfield and its label are hidden
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsCommentHidden()
+        {
+            return CommentTextField.IsTextFieldHidden();
+        }
+
         #endregion
 
         #region GetValue
@@ -248,6 +298,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetNameTextFieldValue()
         {
             return NameTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get CustomizedLabellingCommentValue 
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public string GetCommentTextFieldValue()
+        {
+            return CommentTextField.GetValue();
         }
 
         /// <summary>

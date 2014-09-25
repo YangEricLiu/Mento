@@ -5,7 +5,7 @@
 			"CommonNames":["自定义能效标识10","自定义能效标识9"],
 			"Commodity":"$@Commodity_Electricity",
 			"KPIType":"$@EM.Unit.UnitArea",
-			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade@$ 3",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade|(3)",
 			"LabellingLevelValue":"3",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
@@ -27,7 +27,7 @@
 			"CommonName":"$@Message.M11600",
 			"Commodity":"$@Commodity_Electricity",
 			"KPIType":"$@EM.Unit.UnitArea",
-			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade@$ 3",
+			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade|(3)",
 			"LabellingLevelValue":"3",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",

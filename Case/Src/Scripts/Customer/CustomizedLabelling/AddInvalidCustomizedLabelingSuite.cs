@@ -6,6 +6,7 @@ using NUnit.Framework;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.TestData;
+using Mento.TestApi.TestData.Attribute;
 using System.IO;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
@@ -13,6 +14,7 @@ using Mento.Framework.Attributes;
 using Mento.Framework.Script;
 using Mento.ScriptCommon.TestData.Customer;
 using Mento.ScriptCommon.Library;
+using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.CustomizedLabelling
@@ -218,5 +220,31 @@ namespace Mento.Script.Customer.CustomizedLabelling
             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetLabellingNameInvalidTips());
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-004")]
+        [Type("BFT")]
+        [IllegalInputValidation(typeof(CustomizedLabellingSettingData[]))]
+        public void AddIllegalCustomizedLabelling(CustomizedLabellingSettingData input)
+        {
+            //Click "+能效标识" button 
+            CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();
+            TimeManager.LongPause();
+
+            //Input valid Labelling name. 
+            CustomizedLabellingSettings.FillInNameTextField(input.InputData.CommonName);
+            TimeManager.MediumPause();
+
+            CustomizedLabellingSettings.FillInCommentTextField(input.InputData.Comments);
+            TimeManager.MediumPause();
+
+            CustomizedLabellingSettings.ClickSaveButton();
+            TimeManager.LongPause();
+
+            //Verify that the error message popup and the input field is invalid
+            Assert.IsFalse(CustomizedLabellingSettings.IsCommentsInvalid());
+            Assert.IsTrue(CustomizedLabellingSettings.IsNameInvalid());
+            Assert.IsTrue(CustomizedLabellingSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData.Comments));
+            Assert.IsTrue(CustomizedLabellingSettings.IsNameInvalidMsgCorrect(input.ExpectedData.CommonName));
+        }
     }
 }

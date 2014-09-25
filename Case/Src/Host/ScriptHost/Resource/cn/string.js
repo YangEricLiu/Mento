@@ -50,7 +50,7 @@ I18N.Dashboard.Label.Others = '其他人员';
 I18N.Dashboard.Label.WriteComment = '写下评论：';
 I18N.Dashboard.Label.FreshLatestComments = '刷新最新评论';
 I18N.Dashboard.Label.LoadMore = '加载更多评论';
-I18N.Dashboard.Label.ShareFrom = '由{0}共享';
+I18N.Dashboard.Label.ShareFrom = '由';
 I18N.Dashboard.Label.Share = '共享';
 I18N.Dashboard.Label.CancelShare = '取消共享';
 I18N.Dashboard.Label.Comment = '评论';
@@ -335,7 +335,7 @@ I18N.Setting.TargetBaseline.MonthlyTB = '月{0}';
 I18N.Setting.TargetBaseline.YearlyTB = '年{0}';
 I18N.Setting.TargetBaseline.SpecialValue = '补充日期';
 I18N.Setting.TargetBaseline.TargetValue = '目标值';
-I18N.Setting.TargetBaseline.FromDate = '开始时间';
+I18N.Setting.TargetBaseline.FromDate = '时间区间';
 I18N.Setting.TargetBaseline.ToDate = '到';
 I18N.Setting.TargetBaseline.YearField = '年度';
 I18N.Setting.TargetBaseline.UOMField = '{0}##Common.Glossary.UOM##';
@@ -352,7 +352,7 @@ I18N.Setting.TagConfiguration.FormulaItemType.AdvanceProperty = '高级属性';
 I18N.Setting.TagConfiguration.InvalidFormula = '##Common.Glossary.Formula##的格式有误，请检查。';
 
 //tag raw data
-I18N.Setting.TagConfiguration.AccumulatedValue = '能耗累积值/';
+I18N.Setting.TagConfiguration.AccumulatedValue = '能耗累计值/';
 I18N.Setting.TagConfiguration.DifferenceValue = '能耗差值/';
 I18N.Setting.TagConfiguration.Status = '修改状态';
 I18N.Setting.TagConfiguration.Modified = '已修改';
@@ -487,7 +487,7 @@ I18N.Setting.Labeling.Label.LabelingGrade = '能效标识级别';
 I18N.Setting.Labeling.Label.DataYear = '数据来源';
 
 I18N.Setting.CustomizedLabeling = {};
-I18N.Setting.CustomizedLabeling.Grade = '{0}级';
+I18N.Setting.CustomizedLabeling.Grade = '级';
 I18N.Setting.CustomizedLabeling.OrderMode = '排列方式';
 I18N.Setting.CustomizedLabeling.Ascending = '正序';
 I18N.Setting.CustomizedLabeling.Declining = '倒序';
@@ -560,7 +560,7 @@ I18N.EM.WorkHolidayRatio = '工休比';
 I18N.EM.AddCompareTimespan = '添加时间段';
 I18N.EM.OKAndDraw = '确定并绘图';
 I18N.EM.DeleteAllTimespan = '删除全部对比时间段';
-I18N.EM.DeleteCompareTime = '清空全部“对比时间段”吗？';
+I18N.EM.DeleteCompareTime = '清空全部”对比时间段”吗？';
 I18N.EM.MaxTimeRange = '多时间段比较最大5个';
 I18N.EM.RUClearAll = '清空所有已选“数据点”与“对比时间段”吗？';
 I18N.EM.AllTags = '全部数据点';
@@ -573,8 +573,6 @@ I18N.EM.Day = '天';
 I18N.EM.Month = '月';
 I18N.EM.Year = '年';
 I18N.EM.Clock24 = '24点';
-I18N.EM.Clock24InWidget = '24点';
-I18N.EM.Clock24Minute0 = '24点00';
 I18N.EM.MultiHierButton = '数据点';
 I18N.EM.TimeRangeIsWrong = '时间范围不正确';
 I18N.EM.OutTimeRange = '超出了时间范围';
@@ -637,9 +635,9 @@ I18N.EM.Ratio.TargetValue = '目标值';
 I18N.EM.Ratio.BaseValue = '基准值';
 
 I18N.EM.Legend = {};
-I18N.EM.Legend.ToLine = '切换至折线图显示';
-I18N.EM.Legend.ToColumn = '切换至柱状图显示';
-I18N.EM.Legend.ToStacking = '切换至堆积图显示';
+I18N.EM.Legend.ToLine = '切换至线形显示';
+I18N.EM.Legend.ToColumn = '切换至柱体显示';
+I18N.EM.Legend.ToStacking = '切换至堆积柱图显示';
 
 I18N.EM.Labeling = {};
 I18N.EM.Labeling.LowEnergy = '低能耗';
@@ -770,6 +768,8 @@ I18N.Common.Button.Exit = '退出';
 I18N.Common.Button.Clear = '清空';
 I18N.Common.Button.Send = '发送';
 I18N.Common.Button.Confirmed = '已确认';
+I18N.Common.Button.ChangeRecord = '修改记录';
+I18N.Common.Button.Originaldata = '原始数据';
 
 I18N.Common.Operation.ResetZoom = '取消放大/缩小';
 I18N.Common.Operation.ResetZoom1vs1 = '缩放至1:1';
@@ -844,7 +844,7 @@ I18N.Common.DateRange.LastMonth = '上月';
 I18N.Common.DateRange.ThisYear = '今年';
 I18N.Common.DateRange.LastYear = '去年';
 I18N.Common.DateRange.Customerize = '自定义';
-I18N.Common.DateRange.CustomerizeTime = '自定义';
+I18N.Common.DateRange.CustomerizeTime = '自定义时间';
 I18N.Common.DateRange.RelativedTime = '相对时间';
 
 I18N.Common.GraphType.Line = '折线图';
@@ -1025,7 +1025,6 @@ I18N.Setting.Calendar.StartMonth = '开始月份';
 I18N.Setting.Calendar.EndMonth = '结束月份';
 I18N.Setting.Calendar.Date = '日';
 I18N.Setting.Calendar.SeansonType = '季节类型';
-I18N.Setting.Calendar.MonthDayFromTo = '{0}月{1}日到{2}月{3}日';
 
 //worktime
 I18N.Setting.Calendar.WorkTime = '工作时间';
@@ -1234,7 +1233,7 @@ I18N.Setting.CustomerManagement.Label.Coal = '煤总量';
 I18N.Setting.CustomerManagement.Label.CoalOil = '煤油总量';
 I18N.Setting.CustomerManagement.Label.SelectTip = '请选择在用户地图页焦点楼宇节点下需要同时显示的能源信息类型。';
 I18N.Setting.CustomerManagement.Label.AtleastOneConsumption = '请至少选择1项。';
-I18N.Setting.CustomerManagement.Label.AtleastOneAtMostFive = '请至少选择1项，最多可选择5项。';
+I18N.Setting.CustomerManagement.Label.AtleastOneAtMostFive = '请至少选择1项，最多可选择5项。'; 
 
 //user
 I18N.Setting.User = {};
@@ -1265,7 +1264,7 @@ I18N.Setting.User.EnergyConsultant = '能源工程顾问';
 I18N.Setting.User.Technicist = '技术人员';
 I18N.Setting.User.CustomerManager = '客户管理员';
 I18N.Setting.User.EnergyManager = '能源经理';
-I18N.Setting.User.EnergyEngineer = '能源工程师';
+I18N.Setting.User.EnergyEngineer = '能源经理';
 I18N.Setting.User.DeptManager = '部门经理';
 I18N.Setting.User.Manager = '管理层';
 I18N.Setting.User.BusinessPerson = '业务人员';
@@ -1318,8 +1317,8 @@ I18N.Setting.ContactUs.CustomerName = '公司';
 I18N.Setting.ContactUs.Title = '职务';
 I18N.Setting.ContactUs.Comment = '描述';
 I18N.Setting.ContactUs.Failed = '发送失败！';
-I18N.Setting.ContactUs.InfoLine1 = '如有任何问题或需要，';
-I18N.Setting.ContactUs.InfoLine2 = '欢迎随时联系我们。';
+I18N.Setting.ContactUs.InfoLine1 = "如有任何问题或需要，";
+I18N.Setting.ContactUs.InfoLine2 = "欢迎随时联系我们。";
 I18N.Setting.ContactUs.Submit = '提交';
 I18N.Setting.ContactUs.SendMail = '发送邮件';
 I18N.Setting.ContactUs.RemTelophone = '联系电话';
@@ -1378,15 +1377,15 @@ I18N.Setting.SPManagement.MailSent = '邮件已发送。';
 
 //QR Code
 I18N.Setting.QRCode = {};
-I18N.Setting.QRCode.Site = '微站点';
-I18N.Setting.QRCode.iPad = 'iPad客户端';
-I18N.Setting.QRCode.SiteTitle = '云能效微站点';
-I18N.Setting.QRCode.ProductName = '云能效';
-I18N.Setting.QRCode.iPad1 = '使用iPad上的二维码扫描软件';
-I18N.Setting.QRCode.iPad2 = '拍摄上方二维码即可立即下载';
-I18N.Setting.QRCode.Site1 = '使用微信扫描上方二维码';
-I18N.Setting.QRCode.Site2 = '即可添加该订阅号';
-I18N.Setting.QRCode.iPadTitle = '云能效iPad客户端';
+I18N.Setting.QRCode.Site = "微站点";
+I18N.Setting.QRCode.iPad = "iPad客户端";
+I18N.Setting.QRCode.SiteTitle = "云能效微站点";
+I18N.Setting.QRCode.ProductName = "云能效";
+I18N.Setting.QRCode.iPad1 = "使用iPad上的二维码扫描软件";
+I18N.Setting.QRCode.iPad2 = "拍摄上方二维码即可立即下载";
+I18N.Setting.QRCode.Site1 = "使用微信扫描上方二维码";
+I18N.Setting.QRCode.Site2 = "即可添加该订阅号";
+I18N.Setting.QRCode.iPadTitle = "云能效iPad客户端";
 
 //widget template 
 I18N.Setting.Template = {};
@@ -1639,8 +1638,8 @@ I18N.Message.M08213 = I18N.format(I18N.Message.UpdateConcurrency, I18N.Common.Gl
 I18N.Message.M08214 = '当前区域维度节点无子节点';   //for energy view single tag to pie chart
 
 
-I18N.Message.M09001 = '数据已被删除，界面将被刷新。';
-I18N.Message.M09002 = '数据已被他人修改，界面将被刷新。';
+I18N.Message.M09101 = '数据已被删除，界面将被刷新。';
+I18N.Message.M09102 = '数据已被他人修改，界面将被刷新。';
 I18N.Message.M09107 = '数据已被他人修改，请点击“确定”开始重新加载数据。';
 I18N.Message.M09112 = '对应的##Common.Glossary.Tag##已被删除，马上为您刷新。';
 I18N.Message.M09113 = '计算前请先设置计算规则。';

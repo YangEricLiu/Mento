@@ -221,6 +221,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string MenuButtonLabellingIndustryConvert = "MenuButtonLabellingIndustryConvert";
         public static string MenuButtonCustomerLabellingIndustry = "MenuButtonCustomerLabellingIndustry";
+        public static string MenuButtonIndustryLabellingIndustry = "MenuButtonIndustryLabellingIndustry";
 
         #endregion
 

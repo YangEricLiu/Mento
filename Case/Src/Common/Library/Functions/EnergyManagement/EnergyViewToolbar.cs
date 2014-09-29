@@ -7,6 +7,8 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.TestData.EnergyView;
 using Mento.Framework.Exceptions;
+using Mento.ScriptCommon.Library.Functions.EnergyManagement;
+using System.Collections;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -18,6 +20,8 @@ namespace Mento.ScriptCommon.Library.Functions
         //StartTimeComboBox
         private static ComboBox StartTimeComboBox = JazzComboBox.EnergyViewStartTimeComboBox;
 
+        private static MenuButton IndustyLabellinglist = JazzButton.IndustryLabellingIndustryMenuButton;
+        private static MenuButton CustomerIndustyLabellinglist = JazzButton.CustomerLabellingIndustryMenuButton;
         //EndDatePicker
         private static DatePicker EndDatePicker = JazzDatePicker.EnergyUsageEndDateDatePicker;
         //EndTimeComboBox
@@ -193,6 +197,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectLabellingIndustryConvertTarget(string[] industry)
         {
             MoreMenu.SwitchLabellingIndustryMenuItem(industry);
+        }
+
+        public ArrayList GetIndustryLabellingDropdownListItems()
+        {
+            return IndustyLabellinglist.GetCurrentDropdownListItems();
         }
 
         public string GetLabellingIndustryButtonText()

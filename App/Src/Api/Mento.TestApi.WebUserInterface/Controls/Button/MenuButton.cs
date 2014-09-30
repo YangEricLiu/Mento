@@ -102,6 +102,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return GetMenuItem(itemText).GetAttribute("class").Contains("x-menu-item-disabled");
         }
 
+        public bool IsMenuItemExist(string itemText)
+        {
+            this.Click();
+            return GetMenuItem(itemText).GetAttribute("class").Contains("x-menu-item-text");
+        }
+
         private void ToggleCheckItem(string itemText)
         {
             ElementHandler.Click(GetMenuItem(itemText), 15, 10);

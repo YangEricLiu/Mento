@@ -347,7 +347,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
          [Test]
          [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-105")]
          [Type("BFT")]
-         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabelingSuite), "TC-J1-FVT-CustomizedLabellingSetting-Add-106")]
+         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabelingSuite), "TC-J1-FVT-CustomizedLabellingSetting-Add-105")]
          public void AddCustomizedLabelingValidInput(CustomizedLabellingSettingData input)
          {
              //Click "+能效标识" button 

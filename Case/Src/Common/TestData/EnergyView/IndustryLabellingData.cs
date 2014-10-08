@@ -42,6 +42,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
     public class IndustryLabellingOutput : ExpectedTestDataBase
     {
         public string UnitTypeValue { get; set; }
+        public string[] UnitTypeValues { get; set; }
         public string IndustryValue { get; set; }
         public string[] popupNotes { get; set; }
         public string ClearAllMessage { get; set; }

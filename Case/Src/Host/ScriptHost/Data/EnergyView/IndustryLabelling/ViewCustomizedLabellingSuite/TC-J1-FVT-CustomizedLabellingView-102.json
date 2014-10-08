@@ -1,0 +1,39 @@
+﻿[
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"],
+				"TagsName":["Labellingtag1", "LabellingtagAreadimension","LabellingtagSystemdimension"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling2"],
+				"TagsName":["Labellingtag2","LabellingtagWithoutNull"],
+			}],
+			"SystemDimensionPath":[["BuildingLabelling1", "$@SystemDimensionTemplateItem_HVAC"]],
+			"Industries":[["$@Setting.Labeling.Label.CustomizedLabeling", "BuildingLabellingWorkNonwork"],["$@Setting.Labeling.Label.CustomizedLabeling", "BuildingLabellingWorkNonworkInverted"]],
+			"UnitTypeValue":"$@EM.WorkHolidayRatio",
+			"YearAndMonth":[{
+				"year":"2013",
+				"month":"10",
+			},
+			{
+			    "year":"2013",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+			"DashboardInfo":[{
+				"WigetName":"LabellingConsumption1012_2",
+				"HierarchyName":["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling2"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"CustomizedLabelling1012_2",
+			}],
+			"failedFileName":["F-CustomizedLabelling-View-102-2-0.xls", "F-CustomizedLabelling-View-102-2-1.xls", "F-CustomizedLabelling-View-102-2-2.xls", "F-CustomizedLabelling-View-102-2-3.xls"],
+		},
+		"ExpectedData":
+		{
+			"UnitTypeValue":"$@EM.WorkHolidayRatio",
+			"IndustryValue":"BuildingLabellingWorkNonwork",
+			"expectedFileName":["CustomizedLabelling-View-102-2-0.xls", "CustomizedLabelling-View-102-2-1.xls", "CustomizedLabelling-View-102-2-2.xls", "CustomizedLabelling-View-102-2-3.xls"],
+		}
+	}
+]

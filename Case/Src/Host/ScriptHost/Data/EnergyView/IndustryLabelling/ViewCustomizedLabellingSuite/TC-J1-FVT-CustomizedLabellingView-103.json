@@ -1,0 +1,36 @@
+﻿[
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"],
+				"TagsName":["Labellingtag1", "LabellingtagAreadimension","LabellingtagSystemdimension"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling2"],
+				"TagsName":["Labellingtag2","LabellingtagWithoutNull"],
+			}],
+			"SystemDimensionPath":[["BuildingLabelling1", "$@SystemDimensionTemplateItem_HVAC"]],
+			"Industries":[["$@Setting.Labeling.Label.CustomizedLabeling", "BuildingLabellingDayNight"],["$@Setting.Labeling.Label.CustomizedLabeling", "BuildingLabellingDayNightInverted"]],
+			"UnitTypeValue":"$@EM.DayNightRatio",
+			"YearAndMonth":[{
+				"year":"2013",
+				"month":"10",
+			},
+			{
+			    "year":"2013",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+			"DashboardInfo":[{
+				"HierarchyName":["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling2"],
+			}],
+			"failedFileName":["F-CustomizedLabelling-View-103-2-0.xls", "F-CustomizedLabelling-View-103-2-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"UnitTypeValue":"$@EM.DayNightRatio",
+			"IndustryValue":"BuildingLabellingDayNight",
+			"expectedFileName":["CustomizedLabelling-View-103-2-0.xls", "CustomizedLabelling-View-103-2-1.xls"],
+		}
+	}
+]

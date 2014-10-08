@@ -33,10 +33,7 @@
 		{
 			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
 			"IndustryValue":"$@Zone_Cold_Region$@Industry_All_Industries",
-			"popupNotes":["$@Message.M02501", "$@EM.CompareTagsAreFull"],
-			"ClearAllMessage":"$@EM.RUClearAll",
 			"expectedFileName":["ConsumptionUnitIndicatorIndustryLabelling-View-101-2-0.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-2-1.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-2-2.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-2-3.xls"],
-			"texts":["$@Common.Button.DefaultDate", "$@Common.Button.ShowCalendar"],
 		}
 	}
 ]

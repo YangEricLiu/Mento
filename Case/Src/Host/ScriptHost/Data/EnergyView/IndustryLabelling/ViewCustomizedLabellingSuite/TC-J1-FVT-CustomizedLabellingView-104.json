@@ -1,0 +1,36 @@
+﻿[
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"],
+				"TagsName":["Labellingtag1", "LabellingtagAreadimension","LabellingtagSystemdimension"],
+			},
+			{
+				"HierarchyPath":["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling2"],
+				"TagsName":["Labellingtag2","LabellingtagWithoutNull"],
+			}],
+			"SystemDimensionPath":[["BuildingLabelling1", "$@SystemDimensionTemplateItem_HVAC"]],
+			"Industries":[["$@Setting.Labeling.Label.CustomizedLabeling", "BuildingLabellingOriginalValue"],["$@Setting.Labeling.Label.CustomizedLabeling", "BuildingLabellingOriginalValueInverted"]],
+			"UnitTypeValue":"$@EM.Unit.UnitOriginal",
+			"YearAndMonth":[{
+				"year":"2013",
+				"month":"10",
+			},
+			{
+			    "year":"2013",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+			"DashboardInfo":[{
+				"HierarchyName":["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling2"],
+			}],
+			"failedFileName":["F-CustomizedLabelling-View-104-2-0.xls", "F-CustomizedLabelling-View-104-2-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"UnitTypeValue":"$@EM.Unit.UnitOriginal",
+			"IndustryValue":"BuildingLabellingOriginalValue",
+			"expectedFileName":["CustomizedLabelling-View-104-2-0.xls", "CustomizedLabelling-View-104-2-1.xls"],
+		}
+	}
+]

@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling2"]],
+			"TagNames":["Labellingtag2", "LabellingtagWithoutNull"],
+			"Industries":[["$@Setting.Labeling.Label.CustomizedLabeling", "BuildingLabellingUnitPerson"],["$@Setting.Labeling.Label.CustomizedLabeling", "BuildingLabellingUnitHCAreaInverted"]],
+			"YearAndMonth":[{
+				"year":"2013",
+				"month":"10",
+			},
+			{
+			    "year":"2013",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+			"failedFileName":["F-CustomizedLabelling-View-101-1-0.xls", "F-CustomizedLabelling-View-101-1-1.xls"],
+		},
+		"ExpectedData":
+		{
+			"UnitTypeValues":["$@EM.Unit.UnitPopulation","$@EM.Unit.UnitWarmArea"],
+			"expectedFileName":["CustomizedLabelling-View-101-1-0.xls", "CustomizedLabelling-View-101-1-1.xls"],
+		}
+	}
+]

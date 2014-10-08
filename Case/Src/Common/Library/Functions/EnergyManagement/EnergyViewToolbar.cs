@@ -201,7 +201,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public ArrayList GetIndustryLabellingDropdownListItems()
         {
-            return IndustyLabellinglist.GetCurrentDropdownListItems();
+            return null;
+            //return IndustyLabellinglist.GetCurrentDropdownListItems();
         }
 
         public string GetLabellingIndustryButtonText()

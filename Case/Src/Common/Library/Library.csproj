@@ -79,7 +79,6 @@
     <Compile Include="Functions\ClientAccess\DemoAccessSetting.cs" />
     <Compile Include="Functions\CustomerSettings\PTagRawData.cs" />
     <Compile Include="Functions\CustomerSettings\CustomizedLabellingSettings.cs" />
-    <Compile Include="Functions\EnergyManagement\ArrayList.cs" />
     <Compile Include="Functions\EnergyManagement\CarbonUsagePanel.cs" />
     <Compile Include="Functions\EnergyManagement\ChartViewOperation.cs" />
     <Compile Include="Functions\EnergyManagement\IndustryLabellingPanel.cs" />

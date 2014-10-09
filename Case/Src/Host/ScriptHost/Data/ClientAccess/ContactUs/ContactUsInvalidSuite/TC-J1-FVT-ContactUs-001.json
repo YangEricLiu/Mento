@@ -5,13 +5,11 @@
 			"Name":"王欣",
 			"Telephone":"123",
 			"Company":"西门子",
-			"Title":"ab",
-			"DescriptionFields":"ab",
 			"Customer":"$@Setting.Role.SPManagement",
 		},
 		"ExpectedData":
 		{
-			
+			"InvalidMessages":["$@Common.Label.MandatoryEmptyError"],
 		}
 	}
 ]

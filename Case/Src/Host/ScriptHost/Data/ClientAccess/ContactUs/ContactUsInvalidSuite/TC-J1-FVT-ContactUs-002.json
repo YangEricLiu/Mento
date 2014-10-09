@@ -2,14 +2,20 @@
 	{
 		"InputData":
 		{
-			"Name":"王欣",
-			"Telephone":"123",
-			"Company":"西门子",
+			"Names":["I@English","(@","m文CAPITALhars 1234_F中文CAPITALh000","中文CAPITALchars 1234_F","中文CAPITALhars 1234_F中文CAPITALh","王欣"],
+			"Telephones":["电话abc12 45","-123456","010--12345","-01012345","01012345-","123"],
+			"Companys":["@","&*","中文@","chars@","chars@","chars@","西门子"],
+			"Titles":["$%^","$%^","$%^中文","chars$%^","chars$%^","ab"],
+			"DescriptionFieldss":["$%^","$%^","$%^中文","chars$%^","chars$%^","ab"],
 			"Customer":"$@Setting.Role.SPManagement",
 		},
 		"ExpectedData":
 		{
-			"InvalidMessages":["$@Common.Label.MandatoryEmptyError"],
+			"Name":"$@Common.Label.PersonNameRegexError",
+			"Telephone":"$@Common.Label.TelephoneRegexError",
+			"Company":"$@Common.Label.CustomerNameRegexError",
+			"Title":"$@Common.Label.CommentRegexError",
+			"DescriptionFields":"$@Common.Label.CommentRegexError",
 		}
 	}
 ]

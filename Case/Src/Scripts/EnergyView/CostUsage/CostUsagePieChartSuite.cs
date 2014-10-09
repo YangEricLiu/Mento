@@ -66,7 +66,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
         
@@ -78,7 +78,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[1]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[1]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
@@ -112,7 +112,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[2], input.InputData.SystemDimensionPath);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[2], input.InputData.SystemDimensionPath);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
@@ -124,7 +124,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[3], input.InputData.SystemDimensionPath);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[3], input.InputData.SystemDimensionPath);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
@@ -156,7 +156,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[4], input.InputData.AreaDimensionPath);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[4], input.InputData.AreaDimensionPath);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
 
@@ -168,7 +168,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[5], input.InputData.AreaDimensionPath);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[5], input.InputData.AreaDimensionPath);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
 
@@ -206,7 +206,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
@@ -218,7 +218,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[1]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[1]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
@@ -235,7 +235,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[2]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[2]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
@@ -247,7 +247,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[3]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[1], input.ExpectedData.expectedFileName[3]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
@@ -264,7 +264,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[2], input.ExpectedData.expectedFileName[4]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[2], input.ExpectedData.expectedFileName[4]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
 
@@ -276,7 +276,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[2], input.ExpectedData.expectedFileName[5]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[2], input.ExpectedData.expectedFileName[5]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
         }
@@ -322,7 +322,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
                 Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-                CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i]);
+                CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i]);
                 TimeManager.MediumPause();
                 CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[i], input.InputData.failedFileName[i]);
             }
@@ -353,7 +353,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
                 Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-                CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i + 5]);
+                CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i + 5]);
                 TimeManager.MediumPause();
                 CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[i + 5], input.InputData.failedFileName[i + 5]);
             }
@@ -399,7 +399,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
                 Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-                CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i]);
+                CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i]);
                 TimeManager.MediumPause();
                 CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[i], input.InputData.failedFileName[i]);
             }
@@ -427,7 +427,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
                 Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-                CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i + 5]);
+                CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i + 5]);
                 TimeManager.MediumPause();
                 CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[i + 5], input.InputData.failedFileName[i + 5]);
             }
@@ -474,7 +474,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
                 Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-                CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i - 1]);
+                CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[i], input.ExpectedData.expectedFileName[i - 1]);
                 TimeManager.MediumPause();
                 CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[i - 1], input.InputData.failedFileName[i - 1]);
             }
@@ -509,7 +509,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
         }
@@ -561,7 +561,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //· Pie chart display correctly. TOU pie value are calculate correctly.
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
@@ -572,7 +572,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //· Pie chart display correctly. TOU pie value are calculate correctly.
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[1]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[1]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
@@ -583,7 +583,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //· Pie chart display correctly. TOU pie value are calculate correctly.
             Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
 
-            CostUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[2]);
+            CostUsage.ExportMulTimeDictionaryToExcel(input.InputData.Hierarchies, ManualTimeRange[0], input.ExpectedData.expectedFileName[2]);
             TimeManager.MediumPause();
             CostUsage.CompareDictionaryDataOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
         }

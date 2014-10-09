@@ -1,0 +1,51 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagNames":["V6_BuildingBC"],
+			"failedFileName":["F-MultipleIntervalsComparasionPieChart-101-1_BuildingBC.xls", "F-MultipleIntervalsComparasionPieChart-101-2_BuildingBC.xls", "F-MultipleIntervalsComparasionPieChart-101-3_BuildingBC.xls", "F-MultipleIntervalsComparasionPieChart-101-4_BuildingBC.xls", "F-MultipleIntervalsComparasionPieChart-101-5_BuildingBC.xls", "F-MultipleIntervalsComparasionPieChart-101-6_BuildingBC.xls"],
+			"DashboardInfo":{
+				"WigetName":"TimeSpanPieChart101",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_MulTimeSpanPieChart",
+			},
+			"ManualTimeRange":[
+			{
+				"StartDate":"2013-01-01",
+				"StartTime":"02:00",
+				"EndDate":"2013-02-13",					
+				"EndTime":"12:00",	
+			},
+			{
+				"StartDate":"2013-03-03",
+				"StartTime":"00:00",
+				"EndDate":"2013-04-15",					
+				"EndTime":"10:00",	
+			},
+			{
+				"StartDate":"2013-03-04",
+				"StartTime":"00:00",
+				"EndDate":"2013-04-16",					
+				"EndTime":"10:00",	
+			},
+			{
+				"StartDate":"2014-04-01",
+				"StartTime":"00:00",
+				"EndDate":"2014-05-03",					
+				"EndTime":"24:00",	
+			},
+			{
+				"StartDate":"2013-03-05",
+				"StartTime":"00:00",
+				"EndDate":"2013-04-17",					
+				"EndTime":"10:00",
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["MultipleIntervalsComparasionPieChart-101-1_BuildingBC.xls", "MultipleIntervalsComparasionPieChart-101-2_BuildingBC.xls", "MultipleIntervalsComparasionPieChart-101-3_BuildingBC.xls", "MultipleIntervalsComparasionPieChart-101-4_BuildingBC.xls", "MultipleIntervalsComparasionPieChart-101-5_BuildingBC.xls", "MultipleIntervalsComparasionPieChart-101-6_BuildingBC.xls"],
+		}
+	}
+]

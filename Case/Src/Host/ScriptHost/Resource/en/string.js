@@ -509,6 +509,8 @@ I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePreviousComboLabel = 'Previou
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious7Day = '7 days';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious30Day = '30 days';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious12Month = '12 months';
+I18N.EM.EnergyAnalyse.AddIntervalWindow.UserDefined = 'User-defined'
+I18N.EM.EnergyAnalyse.AddIntervalWindow.Relative = 'Relative'
 
 I18N.EM.ChooseFunctionMessage = 'Please select a function from thebpanel to display a chart.';
 I18N.EM.CenterBar.Button.DefaultDashboard = 'Default';

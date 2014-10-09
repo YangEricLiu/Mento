@@ -23,6 +23,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {EnergyViewType.Distribute,new string[] { "$@Common.GraphType.Pie" }},
         };
 
+
         private static Dictionary<TimeSpans, string[]> TimeSpanMenuItemDictionary = new Dictionary<TimeSpans, string[]>()
         {
             {TimeSpans.DeleteAllTimeSpans,new string[] { "$@EM.DeleteAllTimespan" }},

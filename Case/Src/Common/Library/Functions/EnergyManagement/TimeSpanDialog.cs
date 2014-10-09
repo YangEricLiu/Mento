@@ -5,6 +5,7 @@ using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.ScriptCommon.TestData.EnergyView;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -22,6 +23,15 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button IntervalDialogConfirmButton = JazzButton.IntervalDialogConfirmButton;
         private static Button IntervalDialogGiveUpButton = JazzButton.IntervalDialogGiveUpButton;
         private static Container ExcludeTimeIntervalsContainer = JazzContainer.ExcludeTimeIntervalsContainer;
+        private static ComboBox TimeTypeComboBox = JazzComboBox.TimeTypeComboBox;
+        private static Button UserDefinedTime = JazzButton.UserDefinedTime;
+        private static Button RelativeTime = JazzButton.RelativeTime;
+
+        private static Dictionary<CompareTimeType, string[]> MenuItemTimeType = new Dictionary<CompareTimeType, string[]>()
+        {
+            {CompareTimeType.UserDefined,new string[] { "$@EM.EnergyAnalyse.AddIntervalWindow.UserDefined" }},
+            {CompareTimeType.Relative,new string[] { "$@EM.EnergyAnalyse.AddIntervalWindow.Relative" }},
+        };
 
         #endregion
 
@@ -59,6 +69,24 @@ namespace Mento.ScriptCommon.Library.Functions
             Button DeleteTimeSpanButton = GetAdditionDeleteButton(position);
 
             DeleteTimeSpanButton.Click();
+        }
+
+        //public void SelectCompareTimeType(CompareTimeType timeType)
+        //{
+        //    TimeTypeComboBox.Click();
+        //    TimeManager.FlashPause();
+        //    TimeTypeComboBox.SelectItem(MenuItemTimeType[timeType]);
+        //}
+        public void SelectCompareTimeType(CompareTimeType timeType, int position)
+        {
+            ComboBox TimeTypeComboBox = GetCompareIntervalTypeComboBox(position);
+            TimeTypeComboBox.Click();
+            TimeManager.FlashPause();
+            if (CompareTimeType.UserDefined == timeType)
+                UserDefinedTime.Click();
+            else
+                RelativeTime.Click();
+            TimeTypeComboBox.GetValue();
         }
 
         #endregion
@@ -101,6 +129,14 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading();
         }
 
+        public void InputAdditionEndDate(string endTime, int position)
+        {
+            DatePicker AdditionEndDatePicker = GetAdditionEndDatePicker(position);
+
+            AdditionEndDatePicker.SelectDateItem(endTime);
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
         public void InputAdditionStartDate(DateTime startTime, int position)
         {
             DatePicker AdditionStartDatePicker = GetAdditionStartDatePicker(position);
@@ -112,11 +148,28 @@ namespace Mento.ScriptCommon.Library.Functions
         public void InputAdditionStartTime(string time, int position)
         {
             ComboBox AdditionStartTimeComboBox = GetAdditionStartComboBox(position);
-
+            
+            TimeManager.MediumPause();
             AdditionStartTimeComboBox.SelectItem(time);
             JazzMessageBox.LoadingMask.WaitLoading();
         }
+        
+        public void InputAdditionRelativeIntervalnumber(string time, int position)
+        {
+            ComboBox AdditionRelativeIntervalNumberComboBox = GetAdditionRelativeIntevalNumberComboBox(position);
 
+            TimeManager.MediumPause();
+            AdditionRelativeIntervalNumberComboBox.SelectItem(time);
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
+        public void InputAdditionEndTime(string time, int position)
+        {
+            ComboBox AdditionEndTimeComboBox = GetAdditionEndComboBox(position);
+
+            AdditionEndTimeComboBox.SelectItem(time);
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
         #endregion
 
         #region get value
@@ -126,6 +179,13 @@ namespace Mento.ScriptCommon.Library.Functions
             DatePicker AdditionStartDatePicker = GetAdditionStartDatePicker(position);
 
             return AdditionStartDatePicker.GetValue();
+        }
+
+        public string GetAdditionEndDateValue(int position)
+        {
+            DatePicker AdditionEndDatePicker = GetAdditionEndDatePicker(position);
+
+            return AdditionEndDatePicker.GetValue();
         }
 
         public string GetAdditionStartDateInvalidMsg(int position)
@@ -178,9 +238,29 @@ namespace Mento.ScriptCommon.Library.Functions
             return JazzDatePicker.GetOneDatePicker(JazzControlLocatorKey.DatePickerIntervalDialogAdditionStartDate, position);
         }
 
+        private DatePicker GetAdditionEndDatePicker(int position)
+        {
+            return JazzDatePicker.GetOneDatePicker(JazzControlLocatorKey.DatePickerIntervalDialogAdditionEndDate, position);
+        }
+
         private ComboBox GetAdditionStartComboBox(int position)
         {
             return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxIntervalDialogAdditionStartTime, position);
+        }
+
+        private ComboBox GetAdditionRelativeIntevalNumberComboBox(int position)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxIntervalDialogAdditionRelativeNumber, position);
+        }
+
+        private ComboBox GetCompareIntervalTypeComboBox(int position)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxTimeType, position);
+        }
+
+        private ComboBox GetAdditionEndComboBox(int position)
+        {
+            return JazzComboBox.GetOneComboBox(JazzControlLocatorKey.ComboBoxIntervalDialogAdditionEndTime, position);
         }
 
         private Button GetAdditionDeleteButton(int position)

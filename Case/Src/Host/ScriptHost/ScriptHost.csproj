@@ -719,9 +719,13 @@
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTrendChartSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TrendChart-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionDataViewSuite\TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionDataViewSuite\TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-2.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionDataViewSuite\TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionDataViewSuite\TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3371.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionDataViewSuite\TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3934.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionDataViewSuite\TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3949.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionPieChartSuite\TC-J1-FVT-MultipleIntervalsComparasion-PieChart-103.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionPieChartSuite\TC-J1-FVT-MultipleIntervalsComparasion-PieChart-102.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionPieChartSuite\TC-J1-FVT-MultipleIntervalsComparasion-PieChart-101.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleIntervalsComparasionTrendChartSuite\TC-J1-FVT-MultipleIntervalsComparasion-TrendChart-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultiTagsDataVerificationSuite\TC-J1-FVT-MultiTagsDataVerification-DataView-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultiTagsDataVerificationSuite\TC-J1-FVT-MultiTagsDataVerification-DataView-101-2.json" />
@@ -729,6 +733,8 @@
     <None Include="Data\EnergyView\EnergyAnalysis\MultiTagsDataVerificationSuite\TC-J1-FVT-MultiTagsDataVerification-DataView-101-5.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalInvalidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-001-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalInvalidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-001-2.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalValidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-102.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalValidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-101.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalValidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SetComparedIntervalValidSuite\TC-J1-FVT-MultipleIntervalsComparasion-Set-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite\TC-J1-FVT-MultipleTagsComparision-DataView-001-1.json" />

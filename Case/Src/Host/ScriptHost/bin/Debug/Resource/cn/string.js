@@ -509,6 +509,8 @@ I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePreviousComboLabel = '之前�
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious7Day = '个7天';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious30Day = '个30天';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious12Month = '个12月';
+I18N.EM.EnergyAnalyse.AddIntervalWindow.UserDefined = '自定义'
+I18N.EM.EnergyAnalyse.AddIntervalWindow.Relative = '相对时间'
 
 I18N.EM.ChooseFunctionMessage = '请从功能面板中选择功能以显示图表';
 I18N.EM.CenterBar.Button.DefaultDashboard = '默认';

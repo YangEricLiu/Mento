@@ -110,6 +110,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button IntervalDialogGiveUpButton = GetControl<Button>(JazzControlLocatorKey.ButtonIntervalDialogGiveUp);
 
         public static Button GiveUpStepWindowButton = GetControl<Button>(JazzControlLocatorKey.ButtonGiveUpStepWindow);
+
+        public static Button UserDefinedTime = GetControl<Button>(JazzControlLocatorKey.UserDefinedTime);
+        public static Button RelativeTime = GetControl<Button>(JazzControlLocatorKey.RelativeTime);
         #endregion
 
         #region Energy Analysis

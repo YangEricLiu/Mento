@@ -170,6 +170,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonDisplayStepWindow = "ButtonDisplayStepWindow";
         public static string ButtonGiveUpStepWindow = "ButtonGiveUpStepWindow";
 
+        public static string UserDefinedTime = "UserDefinedTime";
+        public static string RelativeTime = "RelativeTime";
         #endregion
 
         #region energy analysis
@@ -181,6 +183,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TabButtonEnergyViewALLTagsTab = "TabButtonEnergyViewALLTagsTab";
         public static string TabButtonEnergyViewSystemDimensionTagsTab = "TabButtonEnergyViewSystemDimensionTagsTab";
         public static string TabButtonEnergyViewAreaDimensionTagsTab = "TabButtonEnergyViewAreaDimensionTagsTab";
+
         #endregion
 
         #region rank
@@ -794,6 +797,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxWidgetMaxDialogDefaultTime = "ComboBoxWidgetMaxDialogDefaultTime";
         public static string ComboBoxLabelingYear = "ComboBoxLabelingYear";
         public static string ComboBoxLabelingMonth = "ComboBoxLabelingMonth";
+        public static string ComboBoxTimeType = "ComboBoxTimeType";
+        public static string ComboBoxIntervalDialogAdditionRelativeNumber = "ComboBoxIntervalDialogAdditionRelativeNumber";
 
         #endregion
 

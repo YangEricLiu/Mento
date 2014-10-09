@@ -57,6 +57,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
             this.SelectTrigger.Click();
         }
 
+        public void Click()
+        {
+            ElementHandler.Click(this.RootElement);
+            //this.RootElement.Click();
+        }
+
         /// <summary>
         /// Simulate the mouse select one item from drop down list
         /// </summary>
@@ -64,6 +70,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void SelectItem(string itemKey)
         {
+            
+            TimeManager.MediumPause();
             if (!String.IsNullOrEmpty(itemKey))
             {
                 var locator = GetComboBoxItemLocator(itemKey);
@@ -161,6 +169,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public Boolean IsComboxListEmpty()
         {
             return ElementHandler.Exists(ControlLocatorRepository.GetLocator(ControlLocatorKey.ComboBoxDropdownListItems), this.RootElement);
+        }
+
+        public void SelectItem(string[] p)
+        {
+            throw new NotImplementedException();
         }
     }
 }

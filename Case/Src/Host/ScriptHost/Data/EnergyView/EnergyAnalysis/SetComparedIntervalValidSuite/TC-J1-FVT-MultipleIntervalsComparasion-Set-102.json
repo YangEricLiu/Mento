@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagNames":["V1_BuildingBC"],
+			"failedFileName":["F-MultipleIntervalsComparasionDataView101_V1_BuildingBC.xls"],
+			"BaseStartDate":["2013-01-01"],
+			"BaseStartTime":["02:00"],
+			"BaseEndDate":["2013-02-13"],
+			"BaseEndTime":["12:00"],
+			"StartDate":["2012-04-30", "2012-02-29", "2000-01-01", "2000-01-01"],
+			"StartTime":["00:00", "04:00", "23:00", "23:00"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["MultipleIntervalsComparasionDataView101_V1_BuildingBC.xls"],
+			"BaseStartDateValue":["2013-01-01"],
+			"BaseStartTimeValue":["02:00"],
+			"BaseEndDateValue":["2013-02-13"],
+			"BaseEndTimeValue":["12:00"],
+		}
+	}
+]

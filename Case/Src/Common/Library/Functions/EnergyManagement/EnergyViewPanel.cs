@@ -521,6 +521,11 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.GetTrendChartLines();
         }
 
+        public int GetPieChartSpans()
+        {
+            return Chart.GetPieDistributions();
+        }
+
         public int GetTrendChartLinesMarkers()
         {
             return Chart.GetTrendChartLinesMarkers();
@@ -716,6 +721,22 @@ namespace Mento.ScriptCommon.Library.Functions
             return actualPieDict;
         }
 
+        public Dictionary<string, string> GetMulTimePieData(string[] hierarchyTag, ManualTimeRange manualTimeRange, string[] dimensionPaths = null)
+        {
+            Dictionary<string, string> actualPieDict = new Dictionary<string, string>();
+            var pieValues = Chart.GetPieDataLegendAndTexts();
+
+            actualPieDict.Add("Hierarchy", GetExpectedHierarchyPath(hierarchyTag, dimensionPaths));
+            actualPieDict.Add("TimeRange", GetExpectedTimeRange(manualTimeRange));
+
+            foreach (var pieValue in pieValues)
+            {
+                actualPieDict.Add(pieValue.tagOrCommodity, pieValue.valueAndUOM);
+            }
+
+            return actualPieDict;
+        }
+
         /// <summary>
         /// Export expected data to excel file
         /// </summary>
@@ -730,6 +751,22 @@ namespace Mento.ScriptCommon.Library.Functions
                 string actualFileName = Path.Combine(path, fileName);
                 JazzFunction.ChartViewOperation.MoveExpectedDataToExcel(expectedactualPieDict, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
             }
+        }
+
+        /// <summary>
+        /// Export expected data to excel file
+        /// </summary>
+        /// <param name="hierarchyPaths"></param>
+        public void ExportMulTimePieDictionaryToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName, string path, string[] dimensionPaths = null)
+        {
+            //if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+            //{
+            Dictionary<string, string> expectedactualPieDict = GetMulTimePieData(hierarchyPaths, manualTimeRange, dimensionPaths);
+
+                //Export to excel
+                string actualFileName = Path.Combine(path, fileName);
+                JazzFunction.ChartViewOperation.MoveExpectedDataToExcel(expectedactualPieDict, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
+            //}
         }
 
         /// <summary>

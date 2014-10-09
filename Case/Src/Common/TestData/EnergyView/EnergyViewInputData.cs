@@ -78,6 +78,12 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         List, 
         Distribute 
     }
+
+    public enum CompareTimeType
+    {
+        UserDefined,
+        Relative
+    }
         
     public enum DefaultTimeRange
     {

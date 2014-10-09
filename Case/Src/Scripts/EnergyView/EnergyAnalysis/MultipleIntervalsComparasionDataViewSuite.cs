@@ -441,5 +441,118 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3")]
+        public void VerifyRawStepAndSwitchType(TimeSpansData input)
+        {
+            //NancyCostCustomer2>组织A>园区A>楼宇A 
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.ShortPause();
+
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            //Select tag 'BuildingA_P1_Electricity',
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+            TimeManager.MediumPause();
+
+            //There are two time spans as below:
+            //Span1:  去年
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
+            TimeManager.MediumPause();
+
+            //Check tag and view data view
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
+
+            //Open time span dialog and add some more special time ranges to verify
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+
+            //Span2:  2012-12-01 00:00 to 2013-12-01 24:00
+            TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, 2);
+            TimeManager.ShortPause();
+            TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[0], 2);
+            TimeManager.ShortPause();
+            TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[0], 2);
+            TimeManager.ShortPause();
+            TimeSpanDialog.InputAdditionEndDate(input.InputData.EndDate[0], 2);
+            TimeManager.ShortPause();
+            TimeSpanDialog.InputAdditionEndTime(input.InputData.EndTime[0], 2);
+            TimeManager.ShortPause();
+            TimeSpanDialog.ClickConfirmButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Select chart type 'DataView', click 查询数据.
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Verify data values of 'Month' step are displayed by default. And all data display correct
+            TimeManager.LongPause();
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Change step to Hour
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //The number of total pages are correct.
+            //Page1 of data values of 'Raw' step are displayed correctly.
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+            //Switch back to line chart
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.Line);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Two lines display out, no data miss
+            Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
+
+            //Switch back to Data View
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Change back to data view and change step to Day
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //The number of total pages are correct.
+            //Page1 of data values of 'Day' step are displayed correctly.
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+
+            //Change back to data view and change step to Week
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //The number of total pages are correct.
+            //Page1 of data values of 'Week' step are displayed correctly.
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+
+        }
     }
 }

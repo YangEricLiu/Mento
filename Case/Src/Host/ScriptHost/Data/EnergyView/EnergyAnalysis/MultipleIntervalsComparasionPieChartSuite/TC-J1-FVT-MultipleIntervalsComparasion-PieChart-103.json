@@ -1,0 +1,27 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织A","园区A","楼宇A"],
+			"TagNames":["BAV1Root"],
+			"failedFileName":["F-MultipleIntervalsComparasionPieChart-103-1_BuildingBC.xls"],
+			"DashboardInfo":{
+				"WigetName":"TimeSpanPieChart103-1",
+				"HierarchyName":["NancyCostCustomer2","组织A","园区A","楼宇A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"Dashboard_MulTimeSpanPieChart",
+			},
+			"ManualTimeRange":[
+			{
+				"StartDate":"2012-12-01",
+				"StartTime":"00:00",
+				"EndDate":"2013-12-01",					
+				"EndTime":"24:00",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["MultipleIntervalsComparasionPieChart-103-1_BuildingBC.xls"],
+		}
+	}
+]

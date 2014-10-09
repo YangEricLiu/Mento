@@ -32,6 +32,10 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public string[] StartTime { get; set; }
 
+        public string[] EndDate { get; set; }
+
+        public string[] EndTime { get; set; }
+
         public string[] BaseStartDate { get; set; }
 
         public string[] BaseStartTime { get; set; }
@@ -39,6 +43,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] BaseEndDate { get; set; }
 
         public string[] BaseEndTime { get; set; }
+
+        public ManualTimeRange[] ManualTimeRange { get; set; }
     }
 
     public class TimeSpansOutputData : ExpectedTestDataBase

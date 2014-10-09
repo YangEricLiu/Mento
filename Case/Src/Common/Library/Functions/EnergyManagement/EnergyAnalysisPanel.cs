@@ -306,6 +306,15 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Export expected dictionary data to excel file
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportMulTimePieDictionaryToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName)
+        {
+            ExportMulTimePieDictionaryToExcel(hierarchyPaths, manualTimeRange, fileName, EAPiePath);
+        }
+
+        /// <summary>
         /// Import expected data file and compare to the data view currently, if not equal, export to another file
         /// </summary>
         /// <param name="expectedFileName"></param>

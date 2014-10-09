@@ -227,6 +227,15 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Export expected data table to excel file for Multime pie
+        /// </summary>
+        /// <param name="displayStep"></param>
+        public void ExportMulTimeDictionaryToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName, string[] dimensionPaths = null)
+        {
+            ExportMulTimePieDictionaryToExcel(hierarchyPaths, manualTimeRange, fileName, CostPiePath, dimensionPaths);
+        }
+
+        /// <summary>
         /// Import expected data file and compare to the data view currently, if not equal, export to another file
         /// </summary>
         /// <param name="expectedFileName"></param>

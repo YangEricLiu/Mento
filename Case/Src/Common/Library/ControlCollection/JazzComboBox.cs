@@ -29,6 +29,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox WidgetMaxDialogDefaultTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWidgetMaxDialogDefaultTime);
         public static ComboBox LabelingYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingYear);
         public static ComboBox LabelingMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingMonth);
+        public static ComboBox TimeTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTimeType);
+
 
         #endregion
 

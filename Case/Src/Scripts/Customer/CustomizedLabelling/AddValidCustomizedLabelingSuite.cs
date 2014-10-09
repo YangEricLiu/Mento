@@ -43,7 +43,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             //Click "+能效标识" button 
             CustomizedLabellingSettings.ClickAddCustomizedLabellingButton();
             TimeManager.LongPause();
-            
+
             //Input valid Labelling name. 
             CustomizedLabellingSettings.FillInNameTextField(input.InputData.CommonName);
             TimeManager.MediumPause();
@@ -60,7 +60,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
             //check labelingGrade count
             int count = Convert.ToInt32(input.InputData.LabellingLevelValue);
-            Assert.AreEqual(count,CustomizedLabellingSettings.GetLabellingGradeCount());
+            Assert.AreEqual(count, CustomizedLabellingSettings.GetLabellingGradeCount());
 
             //Select KPI type=昼夜比.
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[0]);
@@ -104,9 +104,9 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
             //Auto change level B right border=10.
             Assert.AreEqual(input.ExpectedData.LabellingValue[0][1].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(2));
-            
+
             //Go to view status display Labelling successfully the same as before save.
-            Assert.AreEqual(input.ExpectedData.CommonName,CustomizedLabellingSettings.GetNameTextFieldValue());
+            Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
             Assert.AreEqual(input.ExpectedData.Commodity, input.InputData.Commodity);
             Assert.AreEqual(input.ExpectedData.Uom, input.InputData.Uom);
             Assert.AreEqual(input.ExpectedData.LabellingLevel, input.InputData.LabellingLevel);

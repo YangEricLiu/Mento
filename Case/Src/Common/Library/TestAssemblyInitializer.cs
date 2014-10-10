@@ -23,7 +23,7 @@ namespace Mento.ScriptCommon.Library
 
             //JazzFunction.LoginPage.LoginToCustomer();
             //JazzFunction.LoginPage.LoginWithOption("Admin", "P@ssw0rd", "REM管理平台");
-            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rd", "'云能效'系统管理");
+            JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "'云能效'系统管理");
         }
 
         public static void InitializePlatformWithOption(string userName, string passWord, string customer)

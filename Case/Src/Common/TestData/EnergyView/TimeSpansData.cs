@@ -58,6 +58,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] BaseStartTimeValue { get; set; }
         public string[] BaseEndDateValue { get; set; }
         public string[] BaseEndTimeValue { get; set; }
+        public string[] EndDateValue { get; set; }
         public string[] EndTimeValue { get; set; }
         public string[] ErrorMessage { get; set; }
         public string[] DeleteMessages { get; set; }

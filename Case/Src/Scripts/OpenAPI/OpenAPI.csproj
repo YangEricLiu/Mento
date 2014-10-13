@@ -47,10 +47,23 @@
     </Reference>
     <Reference Include="fastJSON, Version=1.9.8.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\fastJSON.dll</HintPath>
+      <HintPath>..\..\..\..\Lib\fastJSON.dll</HintPath>
     </Reference>
-    <Reference Include="LitJson">
+    <Reference Include="LitJson, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Lib\LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Mento.Framework, Version=0.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Mento.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Mento.TestApi.TestData, Version=0.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Mento.TestApi.TestData.dll</HintPath>
+    </Reference>
+    <Reference Include="Mento.Utility, Version=0.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Mento.Utility.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ApplicationServer.Caching.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -122,8 +135,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\Microsoft.WindowsFabric.Data.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
-    <Reference Include="nunit.framework">
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Schneider.REM.BL.Common">
@@ -195,21 +212,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
-      <Project>{2076af41-49f1-4c46-af54-b21ed42b07c3}</Project>
-      <Name>Mento.TestApi.TestData</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.WebUserInterface\Mento.TestApi.WebUserInterface.csproj">
       <Project>{fcbefbbd-ad47-4c0c-8a56-773b0b328edd}</Project>
       <Name>Mento.TestApi.WebUserInterface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\App\Src\Common\Mento.Framework\Mento.Framework.csproj">
-      <Project>{12D162B3-1ED8-4854-A7F0-C68EE94B8317}</Project>
-      <Name>Mento.Framework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\App\Src\Common\Mento.Utility\Mento.Utility.csproj">
-      <Project>{c3ec8be0-f643-4126-9ce6-deb029ae1564}</Project>
-      <Name>Mento.Utility</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Common\TestData\TestData.csproj">
       <Project>{f463bf99-e570-46de-a384-fe533482558d}</Project>

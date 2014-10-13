@@ -105,7 +105,7 @@
   <add key="InnerMonthPickerCancel" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-buttons']/div[contains(@class,'x-btn') and em/button/span[@class='$@Common.Button.Cancel2']]" type ="XPath"/>
   <add key="InnerMonthPickerYearItem" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[contains(@class, 'x-monthpicker-year')]/a[text()='$#itemKey']" type ="XPath"/>
   <add key="InnerMonthPickerMonthItem" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-months']/div[contains(@class, 'x-monthpicker-month')]/a[text()='$#itemKey']" type ="XPath"/>
-  <add key="DatePickerDayItem" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]/div/table[@class='x-datepicker-inner']/tbody/tr/td/a/em/span[text()='$#itemKey']" type ="XPath"/>
+  <add key="DatePickerDayItem" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]/div/table[@class='x-datepicker-inner']/tbody/tr/td[contains(@class,'x-datepicker-active')]/a/em/span[text()='$#itemKey']" type ="XPath"/>
 
   <!--Window-->
   <add key="WindowTitle" value="div[contains(@class,'x-window-header-default')]/div/div/div/div[contains(@class,'x-window-header-text-container')]" type="XPath"/>

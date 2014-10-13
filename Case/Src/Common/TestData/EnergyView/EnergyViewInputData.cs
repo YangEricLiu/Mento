@@ -84,6 +84,22 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         UserDefined,
         Relative
     }
+
+    public enum OriginalTimeType
+    {
+        UserDefined,
+        Last7days,
+        Last30days,
+        Last12months,
+        Today,
+        Yesterday,
+        Thisweek,
+        Lastweek,
+        Thismonth,
+        Lastmonth,
+        Thisyear,
+        Lastyear
+    }
         
     public enum DefaultTimeRange
     {

@@ -759,14 +759,14 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <param name="hierarchyPaths"></param>
         public void ExportMulTimePieDictionaryToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName, string path, string[] dimensionPaths = null)
         {
-            //if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
-            //{
+            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+            {
             Dictionary<string, string> expectedactualPieDict = GetMulTimePieData(hierarchyPaths, manualTimeRange, dimensionPaths);
 
                 //Export to excel
                 string actualFileName = Path.Combine(path, fileName);
                 JazzFunction.ChartViewOperation.MoveExpectedDataToExcel(expectedactualPieDict, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
-            //}
+            }
         }
 
         /// <summary>

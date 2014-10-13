@@ -96,7 +96,7 @@ namespace Mento.Framework.Configuration
             get
             {
                 bool result = true;
-                bool.TryParse(GetExecutionConfig(ISCREATEEXPECTEDDATAVIEWEXCELFILE), out result);
+                //bool.TryParse(GetExecutionConfig(ISCREATEEXPECTEDDATAVIEWEXCELFILE), out result);
                 return result;
             }
         }
@@ -106,7 +106,7 @@ namespace Mento.Framework.Configuration
             get
             {
                 bool result = false;
-                bool.TryParse(GetExecutionConfig(ISCOMPAREEXPECTEDDATAVIEWEXCELFILE), out result);
+                //bool.TryParse(GetExecutionConfig(ISCOMPAREEXPECTEDDATAVIEWEXCELFILE), out result);
                 return result;
             }
         }

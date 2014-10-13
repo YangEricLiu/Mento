@@ -11,41 +11,41 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Get Position DatePicker Method
         public static DatePicker GetOneDatePicker(string key, int positionIndex)
         {
-            return GetControl<DatePicker>(key, positionIndex);
+            return GetControl<DatePicker>(key, positionIndex) ;
         }
         #endregion
 
         #region Energy View
-        public static DatePicker EnergyUsageStartDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerEnergyUsageStartDate);
-        public static DatePicker EnergyUsageEndDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerEnergyUsageEndDate);
+        public static DatePicker EnergyUsageStartDateDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerEnergyUsageStartDate);}}
+        public static DatePicker EnergyUsageEndDateDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerEnergyUsageEndDate);}}
 
-        public static DatePicker UnitKPIStartDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerUnitKPIStartDate);
-        public static DatePicker UnitKPIEndDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerUnitKPIEndDate);
+        public static DatePicker UnitKPIStartDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerUnitKPIStartDate);}}
+        public static DatePicker UnitKPIEndDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerUnitKPIEndDate);}}
 
-        public static DatePicker BaseIntervalDialogStartDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogBaseStartDate);
-        public static DatePicker BaseIntervalDialogEndDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogBaseEndDate);
+        public static DatePicker BaseIntervalDialogStartDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogBaseStartDate);}}
+        public static DatePicker BaseIntervalDialogEndDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerIntervalDialogBaseEndDate);}}
 
-        public static DatePicker WidgetMaxDialogStartDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerWidgetMaxDialogStartDate);
-        public static DatePicker WidgetMaxDialogEndDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerWidgetMaxDialogEndDate);
+        public static DatePicker WidgetMaxDialogStartDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerWidgetMaxDialogStartDate);}}
+        public static DatePicker WidgetMaxDialogEndDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerWidgetMaxDialogEndDate);}}
 
         #endregion
 
         #region Customer settings
         #region KPITag settings
-        public static DatePicker KPITargetBaselineSpecialdayRuleStartDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleStartDate);
-        public static DatePicker KPITargetBaselineSpecialdayRuleEndDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleEndDate);        
+        public static DatePicker KPITargetBaselineSpecialdayRuleStartDateDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleStartDate);}}
+        public static DatePicker KPITargetBaselineSpecialdayRuleEndDateDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerKPITargetBaselineSpecialdayRuleEndDate);}}        
         #endregion
 
         #region PTag RawData
-        public static DatePicker PTagRawDataStartDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerPTagRawDataStartDate);
-        public static DatePicker PTagRawDataEndDateDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerPTagRawDataEndDate);
+        public static DatePicker PTagRawDataStartDateDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerPTagRawDataStartDate);}}
+        public static DatePicker PTagRawDataEndDateDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerPTagRawDataEndDate);}}
         #endregion
 
         #endregion
 
 		#region Platform Setting
         #region Customer Management
-        public static DatePicker OperationTimeDatePicker = GetControl<DatePicker>(JazzControlLocatorKey.DatePickerOperationTime);
+        public static DatePicker OperationTimeDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerOperationTime);}}
         #endregion
         #endregion
 

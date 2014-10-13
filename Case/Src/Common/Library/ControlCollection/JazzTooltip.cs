@@ -11,13 +11,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region home page
 
-        public static Tooltip ShareUserTooltip = GetControl<Tooltip>(JazzControlLocatorKey.TooltipShareUser);
+        public static Tooltip ShareUserTooltip { get { return GetControl<Tooltip>(JazzControlLocatorKey.TooltipShareUser);}}
 
         #endregion
 
         #region Associate
 
-        public static Tooltip AssociatedInfoTooltip = GetControl<Tooltip>(JazzControlLocatorKey.TooltipAssociatedInfo);
+        public static Tooltip AssociatedInfoTooltip { get { return GetControl<Tooltip>(JazzControlLocatorKey.TooltipAssociatedInfo); } }
 
         #endregion
 

@@ -10,7 +10,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
     {
         #region energy view
 
-            public static Window WindowMessageInfos = GetControl<Window>(JazzControlLocatorKey.WindowMessageInfos);
+            public static Window WindowMessageInfos {  get { return GetControl<Window>(JazzControlLocatorKey.WindowMessageInfos);}}
 
         #endregion
 
@@ -18,19 +18,19 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
             #region hierarchy cost property
 
-            public static Window FactorWindow = GetControl<Window>(JazzControlLocatorKey.WindowFactor);
+            public static Window FactorWindow { get { return GetControl<Window>(JazzControlLocatorKey.WindowFactor); } }
 
             #endregion
 
             #region TargetBaseline
 
-            public static Window TBCalendarInfoWindow = GetControl<Window>(JazzControlLocatorKey.WindowTBCalendarInfo);
+            public static Window TBCalendarInfoWindow { get { return GetControl<Window>(JazzControlLocatorKey.WindowTBCalendarInfo); } }
 
             #endregion
 
             #region RawDataSwitch
 
-            public static Window SwitchTimeWindow = GetControl<Window>(JazzControlLocatorKey.WindowSwitchTime);
+            public static Window SwitchTimeWindow { get { return GetControl<Window>(JazzControlLocatorKey.WindowSwitchTime); } }
         
             #endregion
         

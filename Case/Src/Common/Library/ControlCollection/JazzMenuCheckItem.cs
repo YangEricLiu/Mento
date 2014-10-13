@@ -9,7 +9,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
     public sealed class JazzMenuCheckItem : JazzControlCollection
     {
         #region Associated 
-        public static MenuCheckItem AssociateStatus = GetControl<MenuCheckItem>(JazzControlLocatorKey.AssociateStatusMenuCheckItem);
+        public static MenuCheckItem AssociateStatus { get { return GetControl<MenuCheckItem>(JazzControlLocatorKey.AssociateStatusMenuCheckItem); } }
         #endregion     
     }
 }

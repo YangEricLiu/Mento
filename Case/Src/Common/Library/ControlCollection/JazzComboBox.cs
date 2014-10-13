@@ -11,160 +11,160 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Get Position ComboBox Method
         public static ComboBox GetOneComboBox(string key, int positionIndex)
         {
-            return GetControl<ComboBox>(key, positionIndex);
+            return GetControl<ComboBox>(key, positionIndex) ;
         }
         #endregion
 
         #region Login
-        public static ComboBox LoginCustomerOptionComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLoginCustomerOption);
+        public static ComboBox LoginCustomerOptionComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLoginCustomerOption);}}
         #endregion
 
         #region Energy view
-        public static ComboBox EnergyViewStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewStartTime);
-        public static ComboBox EnergyViewEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewEndTime);
-        public static ComboBox EnergyViewSaveDashboardHierarchyComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewSaveDashboardHierarchy);
-        public static ComboBox EnergyViewSaveDashboardDashboardComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewSaveDashboardDashboard);
-        public static ComboBox BaseIntervalDialogStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxIntervalDialogBaseStartTime);
-        public static ComboBox BaseIntervalDialogEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxIntervalDialogBaseEndTime);
-        public static ComboBox WidgetMaxDialogDefaultTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWidgetMaxDialogDefaultTime);
-        public static ComboBox LabelingYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingYear);
-        public static ComboBox LabelingMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingMonth);
-        public static ComboBox TimeTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTimeType);
+        public static ComboBox EnergyViewStartTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewStartTime);}}
+        public static ComboBox EnergyViewEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewEndTime);}}
+        public static ComboBox EnergyViewSaveDashboardHierarchyComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewSaveDashboardHierarchy);}}
+        public static ComboBox EnergyViewSaveDashboardDashboardComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxEnergyViewSaveDashboardDashboard);}}
+        public static ComboBox BaseIntervalDialogStartTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxIntervalDialogBaseStartTime);}}
+        public static ComboBox BaseIntervalDialogEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxIntervalDialogBaseEndTime);}}
+        public static ComboBox WidgetMaxDialogDefaultTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWidgetMaxDialogDefaultTime);}}
+        public static ComboBox LabelingYearComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingYear);}}
+        public static ComboBox LabelingMonthComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingMonth);}}
+        public static ComboBox TimeTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTimeType);}}
 
 
         #endregion
 
         #region Customer settings
         #region Hierarchy property settings
-        public static ComboBox HierarchySettingsHierarchyTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchySettingsHierarchyType);
-        public static ComboBox HierarchyIndustryIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchyIndustryId);
-        public static ComboBox HierarchyZoneIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchyZoneId);
+        public static ComboBox HierarchySettingsHierarchyTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchySettingsHierarchyType);}}
+        public static ComboBox HierarchyIndustryIdComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchyIndustryId);}}
+        public static ComboBox HierarchyZoneIdComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchyZoneId);}}
 
-        public static ComboBox WorkdayEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayEffectiveYear, 1);
-        public static ComboBox WorkdayCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarName, 1);
-        public static ComboBox WorktimeCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorktimeCalendarName, 1);
+        public static ComboBox WorkdayEffectiveYearComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayEffectiveYear, 1);}}
+        public static ComboBox WorkdayCalendarNameComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarName, 1);}}
+        public static ComboBox WorktimeCalendarNameComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorktimeCalendarName, 1);}}
 
-        public static ComboBox HeatingCoolingEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingEffectiveYear, 1);
-        public static ComboBox HeatingCoolingCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingCalendarName, 1);
+        public static ComboBox HeatingCoolingEffectiveYearComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingEffectiveYear, 1);}}
+        public static ComboBox HeatingCoolingCalendarNameComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingCalendarName, 1);}}
 
-        public static ComboBox DayNightEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightEffectiveYear, 1);
-        public static ComboBox DayNightCalendarNameComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightCalendarName, 1);
+        public static ComboBox DayNightEffectiveYearComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightEffectiveYear, 1);}}
+        public static ComboBox DayNightCalendarNameComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightCalendarName, 1);}}
 
-        public static ComboBox ElectricPriceModeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxElectricPriceMode, 1);
-        public static ComboBox DemandCostTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDemandCostType, 1);
-        public static ComboBox TouTariffIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTouTariffId, 1);
-        public static ComboBox FactorTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxFactorType, 1);
-        public static ComboBox RealTagIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxRealTagId, 1);
-        public static ComboBox ReactiveTagIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxReactiveTagId, 1);
-        public static ComboBox HourTagIdComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHourTagId, 1);
+        public static ComboBox ElectricPriceModeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxElectricPriceMode, 1);}}
+        public static ComboBox DemandCostTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDemandCostType, 1);}}
+        public static ComboBox TouTariffIdComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTouTariffId, 1);}}
+        public static ComboBox FactorTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxFactorType, 1);}}
+        public static ComboBox RealTagIdComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxRealTagId, 1);}}
+        public static ComboBox ReactiveTagIdComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxReactiveTagId, 1);}}
+        public static ComboBox HourTagIdComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHourTagId, 1);}}
         #endregion
         
         #region PTag settings
-        public static ComboBox PTagSettingsCommodityComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagSettingsCommodity);
-        public static ComboBox PTagSettingsUomComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagSettingsUom);
-        public static ComboBox PTagSettingsCalculationTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagSettingsCalculationType);
+        public static ComboBox PTagSettingsCommodityComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagSettingsCommodity);}}
+        public static ComboBox PTagSettingsUomComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagSettingsUom);}}
+        public static ComboBox PTagSettingsCalculationTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagSettingsCalculationType);}}
         #endregion
 
         #region VTag settings
-        public static ComboBox VTagSettingsCommodityComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVTagSettingsCommodity);
-        public static ComboBox VTagSettingsUomComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVTagSettingsUom);
-        public static ComboBox VTagSettingsCalculationTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVTagSettingsCalculationType);
-        public static ComboBox VTagSettingsCalculationStepComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVTagSettingsCalculationStep);
+        public static ComboBox VTagSettingsCommodityComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVTagSettingsCommodity);}}
+        public static ComboBox VTagSettingsUomComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVTagSettingsUom);}}
+        public static ComboBox VTagSettingsCalculationTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVTagSettingsCalculationType);}}
+        public static ComboBox VTagSettingsCalculationStepComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVTagSettingsCalculationStep);}}
         #endregion
         
         #region KPITag settings
-        public static ComboBox KPITagSettingsUomComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITagSettingsUom);
-        public static ComboBox KPITagSettingsCalculationTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITagSettingsCalculationType);
-        public static ComboBox KPITagSettingsCalculationStepComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITagSettingsCalculationStep);
-        public static ComboBox KPITargetBaselineEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineEffectiveYear);
-        public static ComboBox KPITargetBaselineWorkdayRuleEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineWorkdayRuleEndTime);
-        public static ComboBox KPITargetBaselineNonworkdayRuleEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineNonworkdayRuleEndTime);
-        public static ComboBox KPITargetBaselineSpecialdayRuleStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineSpecialdayRuleStartTime);
-        public static ComboBox KPITargetBaselineSpecialdayRuleEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineSpecialdayRuleEndTime);        
+        public static ComboBox KPITagSettingsUomComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITagSettingsUom);}}
+        public static ComboBox KPITagSettingsCalculationTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITagSettingsCalculationType);}}
+        public static ComboBox KPITagSettingsCalculationStepComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITagSettingsCalculationStep);}}
+        public static ComboBox KPITargetBaselineEffectiveYearComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineEffectiveYear);}}
+        public static ComboBox KPITargetBaselineWorkdayRuleEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineWorkdayRuleEndTime);}}
+        public static ComboBox KPITargetBaselineNonworkdayRuleEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineNonworkdayRuleEndTime);}}
+        public static ComboBox KPITargetBaselineSpecialdayRuleStartTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineSpecialdayRuleStartTime);}}
+        public static ComboBox KPITargetBaselineSpecialdayRuleEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxKPITargetBaselineSpecialdayRuleEndTime);}}        
         #endregion
 
         #region CustomizedLabellingSetting
-        public static ComboBox CustomizedLabellingCommodityComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingCommodity);
-        public static ComboBox CustomizedLabellingUomComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingUom);
-        public static ComboBox CustomizedLabellingTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingType);
-        public static ComboBox CustomizedLabellingLevelComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingLevel);
+        public static ComboBox CustomizedLabellingCommodityComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingCommodity);}}
+        public static ComboBox CustomizedLabellingUomComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingUom);}}
+        public static ComboBox CustomizedLabellingTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingType);}}
+        public static ComboBox CustomizedLabellingLevelComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCustomizedLabellingLevel);}}
         #endregion
 
         #region PTagRawData
-        public static ComboBox PTagRawDataStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagRawDataStartTime);
-        public static ComboBox PTagRawDataEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagRawDataEndTime);
+        public static ComboBox PTagRawDataStartTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagRawDataStartTime);}}
+        public static ComboBox PTagRawDataEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagRawDataEndTime);}}
         #endregion
         #endregion
 
         #region Platform settings
         #region Workday
-        public static ComboBox WorkdayCalendarSpecialDateTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarSpecialDateType, 1);
-        public static ComboBox WorkdayCalendarStartMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarStartMonth, 1);
-        public static ComboBox WorkdayCalendarStartDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarStartDate, 1);
-        public static ComboBox WorkdayCalendarEndMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarEndMonth, 1);
-        public static ComboBox WorkdayCalendarEndDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarEndDate, 1);
+        public static ComboBox WorkdayCalendarSpecialDateTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarSpecialDateType, 1);}}
+        public static ComboBox WorkdayCalendarStartMonthComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarStartMonth, 1);}}
+        public static ComboBox WorkdayCalendarStartDateComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarStartDate, 1);}}
+        public static ComboBox WorkdayCalendarEndMonthComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarEndMonth, 1);}}
+        public static ComboBox WorkdayCalendarEndDateComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorkdayCalendarEndDate, 1);}}
         #endregion 
 
         #region Worktime
-        public static ComboBox WorktimeCalendarStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorktimeCalendarStartTime, 1);
-        public static ComboBox WorktimeCalendarEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorktimeCalendarEndTime, 1);
+        public static ComboBox WorktimeCalendarStartTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorktimeCalendarStartTime, 1);}}
+        public static ComboBox WorktimeCalendarEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWorktimeCalendarEndTime, 1);}}
         #endregion
 
         #region HeatingCoolingSeason
-        public static ComboBox HeatingCoolingSeasonCalendarColdWarmTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmType, 1);
-        public static ComboBox HeatingCoolingSeasonCalendarColdWarmStartMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmStartMonth, 1);
-        public static ComboBox HeatingCoolingSeasonCalendarColdWarmStartDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmStartDate, 1);
-        public static ComboBox HeatingCoolingSeasonCalendarColdWarmEndMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmEndMonth, 1);
-        public static ComboBox HeatingCoolingSeasonCalendarColdWarmEndDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmEndDate, 1);
+        public static ComboBox HeatingCoolingSeasonCalendarColdWarmTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmType, 1);}}
+        public static ComboBox HeatingCoolingSeasonCalendarColdWarmStartMonthComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmStartMonth, 1);}}
+        public static ComboBox HeatingCoolingSeasonCalendarColdWarmStartDateComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmStartDate, 1);}}
+        public static ComboBox HeatingCoolingSeasonCalendarColdWarmEndMonthComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmEndMonth, 1);}}
+        public static ComboBox HeatingCoolingSeasonCalendarColdWarmEndDateComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHeatingCoolingSeasonCalendarColdWarmEndDate, 1);}}
         #endregion
 
         #region DayNight
-        public static ComboBox DayNightCalendarStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightCalendarStartTime, 1);
-        public static ComboBox DayNightCalendarEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightCalendarEndTime, 1);
+        public static ComboBox DayNightCalendarStartTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightCalendarStartTime, 1);}}
+        public static ComboBox DayNightCalendarEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxDayNightCalendarEndTime, 1);}}
         #endregion
 
         #region Carbonfactor
-        public static ComboBox CarbonFactorSourceComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCarbonFactorSource, 1);
-        public static ComboBox CarbonFactorDestinationComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCarbonFactorDestination, 1);
-        public static ComboBox CarbonFactorEffectiveYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCarbonFactorEffectiveYear, 1);
+        public static ComboBox CarbonFactorSourceComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCarbonFactorSource, 1);}}
+        public static ComboBox CarbonFactorDestinationComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCarbonFactorDestination, 1);}}
+        public static ComboBox CarbonFactorEffectiveYearComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxCarbonFactorEffectiveYear, 1);}}
         #endregion
 
         #region TOU
-        public static ComboBox TOUBasicPropertyPeakStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyPeakStartTime, 1);
-        public static ComboBox TOUBasicPropertyPeakEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyPeakEndTime, 1);
-        public static ComboBox TOUBasicPropertyValleyStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyValleyStartTime, 1);
-        public static ComboBox TOUBasicPropertyValleyEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyValleyEndTime, 1);
-        public static ComboBox TOUPulsePeakPropertyStartMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyStartMonth, 1);
-        public static ComboBox TOUPulsePeakPropertyStartDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyStartDate, 1);
-        public static ComboBox TOUPulsePeakPropertyEndMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyEndMonth, 1);
-        public static ComboBox TOUPulsePeakPropertyEndDateComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyEndDate, 1);
-        public static ComboBox TOUPulsePeakPropertyStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyStartTime, 1);
-        public static ComboBox TOUPulsePeakPropertyEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyEndTime, 1);
+        public static ComboBox TOUBasicPropertyPeakStartTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyPeakStartTime, 1);}}
+        public static ComboBox TOUBasicPropertyPeakEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyPeakEndTime, 1);}}
+        public static ComboBox TOUBasicPropertyValleyStartTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyValleyStartTime, 1);}}
+        public static ComboBox TOUBasicPropertyValleyEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUBasicPropertyValleyEndTime, 1);}}
+        public static ComboBox TOUPulsePeakPropertyStartMonthComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyStartMonth, 1);}}
+        public static ComboBox TOUPulsePeakPropertyStartDateComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyStartDate, 1);}}
+        public static ComboBox TOUPulsePeakPropertyEndMonthComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyEndMonth, 1);}}
+        public static ComboBox TOUPulsePeakPropertyEndDateComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyEndDate, 1);}}
+        public static ComboBox TOUPulsePeakPropertyStartTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyStartTime, 1);}}
+        public static ComboBox TOUPulsePeakPropertyEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxTOUPulsePeakPropertyEndTime, 1);}}
         #endregion
 
         #region User Setting
-        public static ComboBox UserTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserType, 1);
-        public static ComboBox UserAssociatedCustomerComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserAssociatedCustomer, 1);
+        public static ComboBox UserTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserType, 1);}}
+        public static ComboBox UserAssociatedCustomerComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserAssociatedCustomer, 1);}}
 
-        public static ComboBox UserTitleComboxBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboxBoxUserTitle, 1);
+        public static ComboBox UserTitleComboxBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboxBoxUserTitle, 1);}}
         #endregion
 
         #region User Profile
-        public static ComboBox UserProfileTypeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserProfileType, 1);
-        public static ComboBox UserProfileAssociatedCustomerComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserProfileAssociatedCustomer, 1);
+        public static ComboBox UserProfileTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserProfileType, 1);}}
+        public static ComboBox UserProfileAssociatedCustomerComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserProfileAssociatedCustomer, 1);}}
         #endregion
 
         #region BenchMark
-        public static ComboBox BenchmarkComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxBenchmark, 1);
+        public static ComboBox BenchmarkComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxBenchmark, 1);}}
 
         #endregion
 
         #region Labeling
-        public static ComboBox IndustryComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingIndustry, 1);
-        public static ComboBox ClimateRegionComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingClimateRegion, 1);
-        public static ComboBox EnergyEfficiencyLabelingLevelComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingEnergyEfficiencyLabelingLevel, 1);
-        public static ComboBox StartYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingStartYear, 1);
-        public static ComboBox EndYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingEndYear, 1);
+        public static ComboBox IndustryComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingIndustry, 1);}}
+        public static ComboBox ClimateRegionComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingClimateRegion, 1);}}
+        public static ComboBox EnergyEfficiencyLabelingLevelComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingEnergyEfficiencyLabelingLevel, 1);}}
+        public static ComboBox StartYearComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingStartYear, 1);}}
+        public static ComboBox EndYearComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLabelingEndYear, 1);}}
 
         #endregion
 
@@ -172,11 +172,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Home Page
 
-        public static ComboBox WidgetMaxDialogStartTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWidgetMaxDialogStartTime);
-        public static ComboBox WidgetMaxDialogEndTimeComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWidgetMaxDialogEndTime);
+        public static ComboBox WidgetMaxDialogStartTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWidgetMaxDialogStartTime);}}
+        public static ComboBox WidgetMaxDialogEndTimeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxWidgetMaxDialogEndTime);}}
 
-        public static ComboBox MaxWidgetLabelingYearComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxMaxWidgetLabelingYear);
-        public static ComboBox MaxWidgetLabelingMonthComboBox = GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxMaxWidgetLabelingMonth);
+        public static ComboBox MaxWidgetLabelingYearComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxMaxWidgetLabelingYear);}}
+        public static ComboBox MaxWidgetLabelingMonthComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxMaxWidgetLabelingMonth);}}
 
         #endregion
     }

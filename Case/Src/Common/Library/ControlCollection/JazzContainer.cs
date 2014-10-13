@@ -14,34 +14,34 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Hierarchy property settings containers
 
-        public static Container PeopleItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerPeopleItems);
-        public static Container PeopleErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerPeopleErrorTips);
-        public static Container WorkdayErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerWorkdayErrorTips);
-        public static Container HCErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerHCErrorTips);
-        public static Container DayNightErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerDayNightErrorTips);
-        public static Container HierarchyBuildingPictureContainer = GetControl<Container>(JazzControlLocatorKey.ContainerHierarchyBuildingPicture);
+        public static Container PeopleItemsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerPeopleItems);}}
+        public static Container PeopleErrorTipsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerPeopleErrorTips);}}
+        public static Container WorkdayErrorTipsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerWorkdayErrorTips);}}
+        public static Container HCErrorTipsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerHCErrorTips);}}
+        public static Container DayNightErrorTipsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerDayNightErrorTips);}}
+        public static Container HierarchyBuildingPictureContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerHierarchyBuildingPicture);}}
 
         #endregion
 
         #region Hierarchy Cost Property
 
-        public static Container WaterCostValueItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerWaterCostValueItems);
-        public static Container ElectricCostValueItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerElectricCostValueItems);
+        public static Container WaterCostValueItemsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerWaterCostValueItems);}}
+        public static Container ElectricCostValueItemsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerElectricCostValueItems);}}
 
         #endregion
 
         #region Associate
 
-        public static Container AssociatedTagsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerAssociatedTags);
+        public static Container AssociatedTagsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerAssociatedTags);}}
         
         #endregion
 
         #region TargetBaseline
 
-        public static Container TBCalendarInfoContainer = GetControl<Container>(JazzControlLocatorKey.ContainerTBCalendarInfo);
-        public static Container TBWorkdayRuleContainer = GetControl<Container>(JazzControlLocatorKey.ContainerTBWorkdayRule);
-        public static Container TBNonworkdayRuleContainer = GetControl<Container>(JazzControlLocatorKey.ContainerTBNonworkdayRule);
-        public static Container TBSpecialdayRuleContainer = GetControl<Container>(JazzControlLocatorKey.ContainerTBSpecialdayRule);
+        public static Container TBCalendarInfoContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerTBCalendarInfo);}}
+        public static Container TBWorkdayRuleContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerTBWorkdayRule);}}
+        public static Container TBNonworkdayRuleContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerTBNonworkdayRule);}}
+        public static Container TBSpecialdayRuleContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerTBSpecialdayRule);}}
         
         #endregion
 
@@ -49,12 +49,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region HomePage
 
-        public static Container ContainerWidgetsToDashboard = GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsToDashboard);
-        public static Container ShareWindowToContainer = GetControl<Container>(JazzControlLocatorKey.ContainerShareWindowTo);
-        public static Container DashboardsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerDashboards);
-        public static Container ContainerWidgetsToMyShare = GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsToMyShare);
-        public static Container WidgetsNamesToMyShareContainer = GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsNamesToMyShare);
-        public static Container CommentsOnMaxwidgetContainer = GetControl<Container>(JazzControlLocatorKey.ContainerCommentsOnMaxwidget);
+        public static Container ContainerWidgetsToDashboard{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsToDashboard);}}
+        public static Container ShareWindowToContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerShareWindowTo);}}
+        public static Container DashboardsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerDashboards);}}
+        public static Container ContainerWidgetsToMyShare{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsToMyShare);}}
+        public static Container WidgetsNamesToMyShareContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsNamesToMyShare);}}
+        public static Container CommentsOnMaxwidgetContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerCommentsOnMaxwidget);}}
         
         #endregion
 
@@ -62,9 +62,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region energy analysis
 
-        public static Container MultiHierarchyPanelContainer = GetControl<Container>(JazzControlLocatorKey.ContainerMultiHierarchyPanel);
-        public static Container ExcludeTimeIntervalsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerExcludeTimeIntervals);
-        public static Container MultiHierarchysContainer = GetControl<Container>(JazzControlLocatorKey.ContainerMultiHierarchys);
+        public static Container MultiHierarchyPanelContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerMultiHierarchyPanel);}}
+        public static Container ExcludeTimeIntervalsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerExcludeTimeIntervals);}}
+        public static Container MultiHierarchysContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerMultiHierarchys);}}
 
         
         #endregion
@@ -74,31 +74,31 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region platform setting
 
         #region TimeManagment containers
-        public static Container CalendarItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerCalendarItems);
-        public static Container CalendarColdWarmItemsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerColdWarmCalendarItems);
+        public static Container CalendarItemsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerCalendarItems);}}
+        public static Container CalendarColdWarmItemsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerColdWarmCalendarItems);}}
         #endregion
 
         #region TOU containers
-        public static Container TOU24HoursErrorTipsContainer = GetControl<Container>(JazzControlLocatorKey.ContainerTOU24HoursErrorTips);
+        public static Container TOU24HoursErrorTipsContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerTOU24HoursErrorTips);}}
         #endregion
         
         #region UserRoleType
-        public static Container ContainerPermissionCustomerizeItems = GetControl<Container>(JazzControlLocatorKey.ContainerPermissionCustomerizeItems);
+        public static Container ContainerPermissionCustomerizeItems{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerPermissionCustomerizeItems);}}
 
-        public static Container ContainerPermissionPublicTypeItems = GetControl<Container>(JazzControlLocatorKey.ContainerPermissionPublicTypeItems);
+        public static Container ContainerPermissionPublicTypeItems{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerPermissionPublicTypeItems);}}
 
         #endregion
 
         #region User
-        public static Container ContainerDisplayPermissionCustomerizeItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionCustomerizeItems);
+        public static Container ContainerDisplayPermissionCustomerizeItems{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionCustomerizeItems);}}
 
-        public static Container ContainerDisplayPermissionPublicTypeItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionPublicTypeItems);
-        public static Container ContainerDisplayPermissionItems = GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionItems);
+        public static Container ContainerDisplayPermissionPublicTypeItems{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionPublicTypeItems);}}
+        public static Container ContainerDisplayPermissionItems{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerDisplayPermissionItems);}}
 
         #endregion
 
         #region CustomerMapInfo
-        public static Container ContainerCustomerMapInfo = GetControl<Container>(JazzControlLocatorKey.ContainerCustomerMapInfo);
+        public static Container ContainerCustomerMapInfo{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerCustomerMapInfo);}}
         #endregion
 
         #region BenchMark

@@ -1,0 +1,25 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级"], ["NancyCustomer1", "园区测试多层级", "楼宇BAD"], ["NancyCustomer1", "园区测试多层级", "楼宇BC"], ["SOHO", "GalaxySOHO"]],
+			"TagNames":["V1_BuildingBC", "V12_BuildingBC", "V14_BuildingBC"],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling",""]],
+		},
+		"ExpectedData":
+		{
+			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
+			"Industries":["$@Setting.Benchmark.Zone.SubtropicalRegio$@Setting.Benchmark.Industry.AllIndustry", "$@Setting.Benchmark.Zone.AllZone$@Setting.Benchmark.Industry.AllIndustry"],
+			"popupNotes":["$@EM.Labeling.NonBuilding", "$@Message.M02501", "$@EM.CompareTagsAreFull"],
+			"expectedFileName":["ConsumptionUnitIndicatorIndustryLabelling-View-101-1-0.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-1-1.xls"],
+		}
+	}
+]

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
+using System.Collections;
+
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -88,6 +90,29 @@ namespace Mento.TestApi.WebUserInterface.Controls
             if (IsItemChecked(itemText))
             {
                 ToggleCheckItem(itemText);
+            }
+        }
+
+        public ArrayList GetSecondLevelMenuListItems(string itemPath)
+        {
+            this.Click();
+            Locator itemLocator = GetMenuItemLocator(itemPath);
+            ElementHandler.Float(FindChild(itemLocator));
+
+            ArrayList items = new ArrayList();
+            foreach (IWebElement item in CurrentMenuButtonDropdownListItems)
+            {
+                items.Add(item.Text);
+            }
+
+            return items;
+        }
+
+        protected IWebElement[] CurrentMenuButtonDropdownListItems
+        {
+            get
+            {
+                return FindChildren(ControlLocatorRepository.GetLocator(ControlLocatorKey.MenuButtonDropdownListItems));
             }
         }
 

@@ -187,7 +187,10 @@ namespace Mento.ScriptCommon.Library.Functions
                 ConvertTargetButton.SwitchCustomerLabellingIndustryMenuItem(Labelling);
         }
 
-        
+        public ArrayList GetIndustryLabellingMenuListItems(string industry)
+        {
+            return MoreMenu.GetLabellingSecondLevelMenuItem(industry);
+        }
 
         public void SelectRatioIndustryConvertTarget(string industry)
         {

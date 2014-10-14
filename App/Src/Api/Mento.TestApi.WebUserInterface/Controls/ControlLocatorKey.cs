@@ -54,6 +54,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string AscendingCustomizedLabellingButton = "AscendingCustomizedLabellingButton";
         #endregion
 
+        #region MenuButton locators
+        public static string MenuButtonTrigger = "MenuButtonTrigger";
+        public static string MenuButtonInput = "MenuButtonInput";
+        public static string MenuButtonItem = "MenuButtonItem";
+        public static string MenuButtonDropdownListItems = "MenuButtonDropdownListItems";
+        #endregion
+
         #region ComboBox locators
         public static string ComboBoxTrigger = "ComboBoxTrigger";
         public static string ComboBoxInput = "ComboBoxInput";

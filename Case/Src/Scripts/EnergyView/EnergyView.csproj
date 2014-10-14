@@ -103,6 +103,7 @@
     <Compile Include="IndustryLabelling\CalculateIndustryLabellingConsumptionSuite.cs" />
     <Compile Include="IndustryLabelling\CalculateIndustryLabellingDayNightSuite.cs" />
     <Compile Include="IndustryLabelling\CalculateIndustryLabellingWorkNotworkSuite.cs" />
+    <Compile Include="IndustryLabelling\SelectIndustryLabellingSuite.cs" />
     <Compile Include="IndustryLabelling\ViewCustomizedLabellingSuite.cs" />
     <Compile Include="IndustryLabelling\SelectCustomerLabellingSuite.cs" />
     <Compile Include="IndustryLabelling\ViewIndustryLabellingDayNightSuite.cs" />

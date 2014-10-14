@@ -5,6 +5,7 @@ using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.TestApi.WebUserInterface;
+using System.Collections;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -73,6 +74,10 @@ namespace Mento.ScriptCommon.Library.Functions
             LabellingIndustryConvertButton.SelectItemLabelling(menuItems);
         }
 
+        public ArrayList GetLabellingSecondLevelMenuItem(string menuItems)
+        {
+            return LabellingIndustryConvertButton.GetSecondLevelMenuListItems(menuItems);
+        }
 
         public string GetLabellingIndustryValue()
         {

@@ -191,7 +191,7 @@
           <add key="MenuButtonLabellingIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[starts-with(@id,'button')]" type="XPath"/>
           <add key="MenuButtonCustomerLabellingIndustry" value="//a[@class='x-menu-item-link']/span[text()='$@Setting.Labeling.Label.CustomizedLabeling']" type="XPath"/>
           <add key="MenuButtonIndustryLabellingIndustry" value="//a[@class='x-menu-item-link']/span[text()='$@Setting.Labeling.Label.IndustryLabeling']" type="XPath"/>
-
+          <add key="MenuButtonDropdownListItems" value = "//div[contains(@class,'x-panel-default x-menu') and not(contains(@style,'visibility: hidden'))]//div/a/span[@class='x-menu-item-text')]" type ="XPath"/>
           <add key="ButtonEnergyViewAddTimeSpan" value="//div[contains(@id,'splitbutton') and em/button/span[text()='$@EM.AddCompareTime']]" type="XPath"/>
           <add key="ButtonEnergyViewRemoveAll" value="em-chartgrid-topbar-del" type="ID"/>
           <add key="MenuButtonEnergyViewConvertTarget" value="//div[@id='em-content-center-region-body']/div/div/div/div[starts-with(@id,'button')]" type="XPath"/>

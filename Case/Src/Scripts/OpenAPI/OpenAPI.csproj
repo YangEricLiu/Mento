@@ -143,48 +143,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="Schneider.REM.BL.Common">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Common.Validation">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Common.Validation.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Customer.Common">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Customer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Customer.DataContract">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Customer.DataContract.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Energy.Common">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Energy.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.BL.Energy.DataContract">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.BL.Energy.DataContract.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.Common">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.DA.Administration.Common">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Administration.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.DA.Administration.Entity">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Administration.Entity.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.DA.Common">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.DA.Customer.Common">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Customer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.DA.Customer.Entity">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Customer.Entity.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.DA.Energy.Common">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Energy.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Schneider.REM.DA.Energy.Entity">
-      <HintPath>..\..\..\..\Lib\Schneider.REM.DA.Energy.Entity.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />

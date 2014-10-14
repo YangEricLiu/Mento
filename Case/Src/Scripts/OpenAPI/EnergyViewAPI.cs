@@ -13,7 +13,7 @@ using Mento.TestApi.TestData;
 using Mento.ScriptCommon.TestData.OpenAPI;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Schneider.REM.BL.Energy.DataContract;
+//using Schneider.REM.BL.Energy.DataContract;
 using Mento.Utility;
 
 namespace Mento.Script.OpenAPI

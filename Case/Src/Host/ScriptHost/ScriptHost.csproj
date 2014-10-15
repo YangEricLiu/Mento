@@ -334,10 +334,15 @@
     <None Include="Data\Administration\User\ViewRoleTypeSuite\TC-J1-FVT-UserManagement-ViewRoleType-3.json" />
     <None Include="Data\Administration\User\ViewRoleTypeSuite\TC-J1-FVT-UserManagement-ViewRoleType-2.json" />
     <None Include="Data\Administration\User\ViewRoleTypeSuite\TC-J1-FVT-UserManagement-ViewRoleType-1.json" />
-    <None Include="Data\ClientAccess\ContactUs\ContactUsInvalidSuite\TC-J1-FVT-ContactUs-004.json" />
     <None Include="Data\ClientAccess\ContactUs\ContactUsInvalidSuite\TC-J1-FVT-ContactUs-003.json" />
     <None Include="Data\ClientAccess\ContactUs\ContactUsInvalidSuite\TC-J1-FVT-ContactUs-001.json" />
     <None Include="Data\ClientAccess\ContactUs\ContactUsInvalidSuite\TC-J1-FVT-ContactUs-002.json" />
+    <None Include="Data\ClientAccess\UserProfile\UserProfileModifyInvalidSuite\TC-J1-FVT-UserProfile-Modify-001-2.json" />
+    <None Include="Data\ClientAccess\UserProfile\UserProfileModifyValidSuite\TC-J1-FVT-UserProfile-Modify-101-1.json" />
+    <None Include="Data\ClientAccess\UserProfile\UserProfileModifyValidSuite\TC-J1-FVT-UserProfile-Modify-101-2.json" />
+    <None Include="Data\ClientAccess\UserProfile\UserProfileModifyValidSuite\TC-J1-FVT-UserProfile-Modify-101-3.json" />
+    <None Include="Data\ClientAccess\UserProfile\UserProfileModifyValidSuite\TC-J1-FVT-UserProfile-View-101-1.json" />
+    <None Include="Data\ClientAccess\UserProfile\UserProfileModifyInvalidSuite\TC-J1-FVT-UserProfile-Modify-001-1.json" />
     <None Include="Data\ClientAccess\DemoAccess\DemoAccessInvalidSuite\TC-J1-FVT-DemoAccess-001.json" />
     <None Include="Data\ClientAccess\DemoAccess\DemoAccessInvalidSuite\TC-J1-FVT-DemoAccess-003.json" />
     <None Include="Data\ClientAccess\ContactUs\ContactUsValidSuite\TC-J1-FVT-ContactUs-101.json" />

@@ -150,8 +150,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region User Profile
-        public static ComboBox UserProfileTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserProfileType, 1);}}
-        public static ComboBox UserProfileAssociatedCustomerComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserProfileAssociatedCustomer, 1);}}
+        public static ComboBox UserProfileRoleTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserProfileRoleType, 1);}}
+        public static ComboBox UserProfileTitleComboBox { get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxUserProfileTitle, 1); } }
         #endregion
 
         #region BenchMark

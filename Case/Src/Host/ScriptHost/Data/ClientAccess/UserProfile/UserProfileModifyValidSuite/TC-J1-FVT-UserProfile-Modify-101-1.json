@@ -1,0 +1,21 @@
+﻿[
+	{
+		"InputData":
+		{
+			"RealName":"宋晓红更新",
+			"Telephone":"1531111",
+			"Email":"Update-nancy.song@schneider-electric.com",
+			"Comments":"",
+			"Title":"客户管理员",
+		},
+		"ExpectedData":
+		{
+			"Name":"Nancy",
+			"RealName":"宋晓红更新",
+			"Telephone":"1531111",
+			"Email":"Update-nancy.song@schneider-electric.com",
+			"Title":"客户管理员",
+			"Type":"服务商管理员",
+		}
+	}
+]

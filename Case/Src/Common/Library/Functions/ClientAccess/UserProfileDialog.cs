@@ -5,7 +5,7 @@ using System.Text;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
-using Mento.ScriptCommon.TestData.Administration;
+using Mento.ScriptCommon.TestData.ClientAccess;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
@@ -16,8 +16,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Locator Locator = new Locator("/div[@id='st-userprofile-personalinfo-window']", ByType.ID);
         private static Button ModifyButton = JazzButton.UserProfileModifyButton;
         private static Button SaveButton = JazzButton.UserProfileSaveButton;
-        private static Button CancelButton = UserProfileDialog.CancelButton;
-        private static Button CloseButton = UserProfileDialog.CloseButton;
+        private static Button CancelButton = JazzButton.UserProfileCancelButton;
+        private static Button CloseButton = JazzButton.UserProfileCloseButton;
 
         private static Label Title = UserProfileDialog.Title;
 
@@ -25,11 +25,10 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField RealNameTextField = JazzTextField.UserProfileRealNameTextField;
         private static TextField TelephoneTextField = JazzTextField.UserProfileTelephoneTextField;
         private static TextField EmailTextField = JazzTextField.UserProfileEmailTextField;
-        private static TextField TitleTextField = JazzTextField.UserProfileTitleTextField;
         private static TextField CommentTextField = JazzTextField.UserProfileCommentTextField;
 
-        private static ComboBox UserTypeComboBox = JazzComboBox.UserProfileTypeComboBox;
-        private static ComboBox UserAssociatedCustomerComboBox = JazzComboBox.UserProfileAssociatedCustomerComboBox;
+        private static ComboBox UserProfileRoleTypeComboBox = JazzComboBox.UserProfileRoleTypeComboBox;
+        private static ComboBox UserProfileTitleComboBox = JazzComboBox.UserProfileTitleComboBox;
 
         internal UserProfileDialog()
             : base(Locator)
@@ -72,11 +71,84 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void ClickSaveButton()
         {
-            CloseButton.Click();
+            SaveButton.Click();
         }
 
         /// <summary>
-        /// Input name, realname comments etc. of all user field
+        /// Verify whether the Name field enable
+        /// </summary>
+        public Boolean IsNameTextFieldEnable()
+        {
+            return NameTextField.IsFieldEnabled();
+        }
+
+        /// <summary>
+        /// Verify whether the RoleType combobox enable
+        /// </summary>
+        public Boolean IsRoleTypeComboboxEnable()
+        {
+            return UserProfileRoleTypeComboBox.IsComboBoxTextEnabled();
+        }
+
+        public Boolean IsCommentsInvalid()
+        {
+            return CommentTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Comments field is correct
+        /// </summary>
+        /// <param name="output">ProfileExpectedData</param>
+        /// <returns>whether the invalid message is true</returns>
+        public Boolean IsCommentsInvalidMsgCorrect(string output)
+        {
+            return CommentTextField.GetInvalidTips().Contains(output);
+        }
+
+        public Boolean IsRealNameInvalid()
+        {
+            return RealNameTextField.IsTextFieldValueInvalid();
+        }
+        /// <summary>
+        /// Judge whether invalid message of name field is correct
+        /// </summary>
+        /// <param name="output">ProfileExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsRealNameInvalidMsgCorrect(string output)
+        {
+            return RealNameTextField.GetInvalidTips().Contains(output);
+        }
+
+        public Boolean IsEmailInvalid()
+        {
+            return EmailTextField.IsTextFieldValueInvalid();
+        }
+        /// <summary>
+        /// Judge whether invalid message of email field is correct
+        /// </summary>
+        /// <param name="output">ProfileExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsEmailInvalidMsgCorrect(string output)
+        {
+            return EmailTextField.GetInvalidTips().Contains(output);
+        }
+
+        public Boolean IsTelephoneInvalid()
+        {
+            return TelephoneTextField.IsTextFieldValueInvalid();
+        }
+        /// <summary>
+        /// Judge whether invalid message of name field is correct
+        /// </summary>
+        /// <param name="output">ProfileExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsTelephoneInvalidMsgCorrect(string output)
+        {
+            return TelephoneTextField.GetInvalidTips().Contains(output);
+        }
+
+        /// <summary>
+        /// Input realname comments etc. of all user field
         /// </summary>
         /// <param name="input">Test data</param>
         /// <returns></returns>
@@ -86,8 +158,8 @@ namespace Mento.ScriptCommon.Library.Functions
             RealNameTextField.Fill(input.RealName);
             TelephoneTextField.Fill(input.Telephone);
             EmailTextField.Fill(input.Email);
-            TitleTextField.Fill(input.Title);
-            CommentTextField.Fill(input.Comment);
+            CommentTextField.Fill(input.Comments);
+            UserProfileTitleComboBox.SelectItem(input.Title);
 
         }
 
@@ -99,16 +171,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void FillInRealName(string realname)
         {
             RealNameTextField.Fill(realname);
-        }
-
-        /// <summary>
-        /// Input title of the new user 
-        /// </summary>
-        /// <param name="title">user title</param>
-        /// <returns></returns>
-        public void FillInTitle(string title)
-        {
-            TitleTextField.Fill(title);
         }
 
         /// <summary>
@@ -142,15 +204,13 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// After click save button, waiting for add successful message box pop up
+        /// Input Title of the new user 
         /// </summary>
-        /// <param name="timeout">Waiting time</param>
+        /// <param name="type">Title</param>
         /// <returns></returns>
-
-        public string UserProfileTitle()
+        public void FillInType(string title)
         {
-            return GetTitle();
-
+            UserProfileTitleComboBox.SelectItem(title);
         }
 
         /// <summary>
@@ -180,27 +240,27 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>type value</returns>
         public string GetTypeValue()
         {
-            return UserTypeComboBox.GetValue();
+            return UserProfileRoleTypeComboBox.GetValue();
         }
 
         /// <summary>
-        /// Get the user associatedcustomer expected value
+        /// Get the user Title expected value
         /// </summary>
-        /// <param name = "associatedcustomer">associatedcustomer key</param>
-        /// <returns>type value</returns>
-        public string GetAssociatedCustomerValue()
-        {
-            return UserAssociatedCustomerComboBox.GetValue();
-        }
-
-        /// <summary>
-        /// Get the user title expected value
-        /// </summary>
-        /// <param name></param>
+        /// <param name = "Title">Title key</param>
         /// <returns>type value</returns>
         public string GetTitleValue()
         {
-            return TitleTextField.GetValue();
+            return UserProfileTitleComboBox.GetValue();
+        }
+
+        /// <summary>
+        /// Get the user RoleType expected value
+        /// </summary>
+        /// <param name = "Title">RoleType key</param>
+        /// <returns>RoleType value</returns>
+        public string GetRoleTypeValue()
+        {
+            return UserProfileRoleTypeComboBox.GetValue();
         }
 
         /// <summary>
@@ -231,6 +291,15 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetCommentValue()
         {
             return CommentTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Judge whether the textfield and its label are hidden
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsCommentHidden()
+        {
+            return CommentTextField.IsTextFieldHidden();
         }
 
     }

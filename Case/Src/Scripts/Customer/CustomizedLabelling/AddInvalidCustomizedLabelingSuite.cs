@@ -243,7 +243,6 @@ namespace Mento.Script.Customer.CustomizedLabelling
             //Verify that the error message popup and the input field is invalid
             Assert.IsFalse(CustomizedLabellingSettings.IsCommentsInvalid());
             Assert.IsTrue(CustomizedLabellingSettings.IsNameInvalid());
-            Assert.IsTrue(CustomizedLabellingSettings.IsCommentsInvalidMsgCorrect(input.ExpectedData.Comments));
             Assert.IsTrue(CustomizedLabellingSettings.IsNameInvalidMsgCorrect(input.ExpectedData.CommonName));
         }
     }

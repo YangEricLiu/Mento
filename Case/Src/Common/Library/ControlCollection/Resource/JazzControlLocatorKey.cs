@@ -604,7 +604,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region UserProfile
-        public static string TextFieldUserProfileTitle = "TextFieldUserProfileTitle";
+
         public static string TextFieldUserProfileEmail = "TextFieldUserProfileEmail";
         public static string TextFieldUserProfileTelephone = "TextFieldUserProfileTelephone";
         public static string TextFieldUserProfileComment = "TextFieldUserProfileComment";
@@ -780,8 +780,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region UserProfile
-        public static string ComboBoxUserProfileType = "ComboBoxUserProfileType";
-        public static string ComboBoxUserProfileAssociatedCustomer = "ComboBoxUserProfileAssociatedCustomer";
+        public static string ComboBoxUserProfileRoleType = "ComboBoxUserProfileRoleType";
+        public static string ComboBoxUserProfileTitle = "ComboBoxUserProfileTitle";
         #endregion
 
         #region energyview

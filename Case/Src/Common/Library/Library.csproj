@@ -94,7 +94,7 @@
     <Compile Include="Functions\EnergyManagement\EnergyViewPanel.cs" />
     <Compile Include="Functions\EnergyManagement\TabbedEnergyViewPanel.cs" />
     <Compile Include="Functions\HomePage\HomePage.cs" />
-    <Compile Include="Functions\HomePage\UserPasswordDialog.cs" />
+    <Compile Include="Functions\ClientAccess\UserPasswordDialog.cs" />
     <Compile Include="Functions\PlatformSettings\IndustryLabelingSetting.cs" />
     <Compile Include="Functions\PlatformSettings\IndustryBenchmarkSetting.cs" />
     <Compile Include="Functions\PlatformSettings\TOUPulsePeakTariffSettings.cs" />
@@ -120,11 +120,11 @@
     <Compile Include="Functions\CustomerSettings\KPITagSettings.cs" />
     <Compile Include="Functions\PlatformSettings\TimeSettingsWorkday.cs" />
     <Compile Include="Functions\CustomerSettings\SystemDimensionSettings.cs" />
-    <Compile Include="Functions\HomePage\UserProfile.cs" />
-    <Compile Include="Functions\HomePage\UserProfileDialog.cs" />
+    <Compile Include="Functions\ClientAccess\PersonalMgtMenu.cs" />
+    <Compile Include="Functions\ClientAccess\UserProfileDialog.cs" />
     <Compile Include="Functions\PlatformSettings\UserDataScopePermission.cs" />
     <Compile Include="Functions\PlatformSettings\FunctionRoleTypePermissionSettings.cs" />
-    <Compile Include="Functions\UserSettings.cs" />
+    <Compile Include="Functions\PlatformSettings\UserSettings.cs" />
     <Compile Include="Functions\CustomerSettings\UserTypePermissionSettings.cs" />
     <Compile Include="Functions\HomePage\Widget.cs" />
     <Compile Include="JazzFunction.cs" />

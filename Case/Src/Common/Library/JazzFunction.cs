@@ -423,15 +423,28 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
-        private static UserProfile _UserProfile;
-        public static UserProfile UserProfile
+        private static UserProfileDialog _UserProfileDialog;
+        public static UserProfileDialog UserProfileDialog
         {
             get
             {
-                if (_UserProfile == null)
-                    _UserProfile = new UserProfile();
+                if (_UserProfileDialog == null)
+                    _UserProfileDialog = new UserProfileDialog();
 
-                return _UserProfile;
+                return _UserProfileDialog;
+            }
+
+        }
+
+        private static PersonalMgtMenu _PersonalMgtMenu;
+        public static PersonalMgtMenu PersonalMgtMenu
+        {
+            get
+            {
+                if (_PersonalMgtMenu == null)
+                    _PersonalMgtMenu = new PersonalMgtMenu();
+
+                return _PersonalMgtMenu;
             }
 
         }

@@ -1,0 +1,17 @@
+﻿[
+	{
+		"InputData":
+		{
+		},
+		"ExpectedData":
+		{
+			"Name":"Nancy",
+			"RealName":"宋晓红",
+			"Telephone":"153",
+			"Email":"xiaohong-nancy.song@schneider-electric.com",
+			"Comments":"12345",
+			"Title":"$@Customer_EnergyEngineer@$",
+			"Type":"服务商管理员",
+		}
+	}
+]

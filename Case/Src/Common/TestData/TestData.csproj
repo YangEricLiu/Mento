@@ -49,7 +49,7 @@
     <Compile Include="Administration\IndustryBenchmarkData.cs" />
     <Compile Include="Administration\UserDataPermissionData.cs" />
     <Compile Include="Administration\RoleTypePermissionData.cs" />
-    <Compile Include="Administration\UserPasswordData.cs" />
+    <Compile Include="ClientAccess\UserPasswordData.cs" />
     <Compile Include="Administration\TOUPulsePeakTariffSettingsData.cs" />
     <Compile Include="Administration\TOUBasicTariffSettingsData.cs" />
     <Compile Include="Administration\CustomerManagementData.cs" />
@@ -57,8 +57,7 @@
     <Compile Include="Administration\TimeSettingsDayNightData.cs" />
     <Compile Include="Administration\TimeSettingsWortimeData.cs" />
     <Compile Include="Administration\TimeSettingsWordayData.cs" />
-    <Compile Include="Administration\UserAndProfileData.cs" />
-    <Compile Include="Administration\UserProfileData.cs" />
+    <Compile Include="ClientAccess\UserProfileData.cs" />
     <Compile Include="Administration\UserSettingsData.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -19,7 +19,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
 {
    public class AddValidCustomizedLabelingSuite
     {
-        private CustomizedLabellingSettings CustomizedLabellingSettings = JazzFunction.CustomizedLabellingSettings;
+       private CustomizedLabellingSettings CustomizedLabellingSettings = JazzFunction.CustomizedLabellingSettings;
 
         [SetUp]
         public void CaseSetUp()

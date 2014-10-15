@@ -1,0 +1,47 @@
+﻿/*using common.json*/
+
+[
+	{
+		"InputData":
+		{
+		},
+		"ExpectedData":
+		{
+		}
+	},
+
+	{
+		"InputData":
+		{
+		},
+		"ExpectedData":
+		{
+		}
+	},
+
+	{
+		"InputData":
+		{
+		},
+		"ExpectedData":
+		{
+		}
+	},
+
+	{
+		"InputData":
+		{
+		},
+		"ExpectedData":
+		{
+		}
+	},
+	{
+		"InputData":
+		{
+		},
+		"ExpectedData":
+		{
+		}
+	},
+]

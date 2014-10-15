@@ -142,10 +142,10 @@
       <UserProfile>
           <add key="ButtonUserProfile" value="//div[@id='header-userprofile-container-innerCt']/img" type="XPath"/>
           <add key="MenuButtonUserProfileView" value="header-btn-personalinfo" type="ID"/>
-          <add key="ButtonUserProfileModify" value="st-userprofile-profilepanel-update" type="ID"/>
-          <add key="ButtonUserProfileCancel" value="st-userprofile-profilepanel-cancel" type="ID"/>
-          <add key="ButtonUserProfileSave" value="st-userprofile-profilepanel-save" type="ID"/>
-          <add key="ButtonUserProfileClose" value="//div[@id='st-userprofile-personalinfo-window_header-targetEl']/div[2]/img" type="XPath"/>
+          <add key="ButtonUserProfileModify" value="//div[contains(@class,'x-toolbar-footer')]//em/button/span[text()='$@Common.Operation.Update']" type="XPath"/>
+          <add key="ButtonUserProfileCancel" value="//div[contains(@class,'x-toolbar-footer')]//em/button/span[text()='$@Common.Button.Cancel']" type="XPath"/>
+          <add key="ButtonUserProfileSave" value="//div[contains(@class,'x-toolbar-footer')]//em/button/span[text()='$@Common.Button.Save']" type="XPath"/>
+          <add key="ButtonUserProfileClose" value="//img[@class='x-tool-close']" type="XPath"/>
           <add key="MenuButtonExitJazz" value="//div[contains(@id, 'menuitem') and a/span[text()='$@Setting.UserProfile.Logout']]" type="XPath"/>
           <add key="MenuButtonModifyUserPassword" value="//div[contains(@id, 'menuitem') and a/span[text()='$@Setting.UserProfile.ChangePassword']]" type="XPath"/>
       </UserProfile>
@@ -579,13 +579,12 @@ CommentTextField
           <add key="TextFieldUserComment" value="//div[@id='st-user-properties-form-body']//textarea[@name='Comment']" type="XPath"/>
       </User>
       <UserProfile>
-          <add key="TextFieldUserProfileTitle" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@id='st-userprofile-title-field-inputEl']" type="XPath"/>
           <add key="TextFieldUserProfileEmail" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@id='st-userprofile-email-field-inputEl']" type="XPath"/>
           <add key="TextFieldUserProfileTelephone" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@name='Telephone']" type="XPath"/>
-          <add key="TextFieldUserProfileComment" value="//table[@id='st-userprofile-personalinfo-panel-body']//textarea[@id='st-userprofile-comment-field-inputEl']" type="XPath"/>
+          <add key="TextFieldUserProfileComment" value="//div[@id='st-userprofile-personalinfo-panel-body']//textarea[@name='Comment']" type="XPath"/>
           <add key="TextFieldUserProfileName" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@id='st-userprofile-personalinfo-name-inputEl']" type="XPath"/>
-          <add key="TextFieldUserProfileRealName" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@name='RealName']" type="XPath"/>
-          <add key="TextFieldUserOriginalPassword" value="st-userprofile-resetpassword-originalpassword-inputEl" type="ID"/>
+          <add key="TextFieldUserProfileRealName" value="//div[@id='st-userprofile-personalinfo-panel-body']//input[@type='text' and @name='RealName']" type="XPath"/>
+        <add key="TextFieldUserOriginalPassword" value="st-userprofile-resetpassword-originalpassword-inputEl" type="ID"/>
           <add key="TextFieldUserNewPassword" value="st-userprofile-resetpassword-newpassword-inputEl" type="ID"/>
           <add key="TextFieldUserConfirmPassword" value="st-userprofile-resetpassword-confirmpassword-inputEl" type="ID"/>
       </UserProfile>
@@ -740,8 +739,8 @@ CommentTextField
 
       </User>
       <UserProfile>
-          <add key="ComboBoxUserProfileType" value="st-userprofile-personalinfo-usertype-triggerWrap" type="ID"/>
-          <add key="ComboBoxUserProfileAssociatedCustomer" value="st-userprofile-personalinfo-firstcustomer-triggerWrap" type="ID"/>
+          <add key="ComboBoxUserProfileTitle" value="st-userprofile-personalinfo-title-triggerWrap" type="ID"/>
+          <add key="ComboBoxUserProfileRoleType" value="st-userprofile-personalinfo-usertype-triggerWrap" type="ID"/>
       </UserProfile>
       <energyview>
           <add key="ComboBoxEnergyViewStartTime" value="//div[@id='em-content-center-region-body']/div/div/div/div/div/table[2]//table[contains(@id,'combobox') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>

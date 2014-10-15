@@ -5,7 +5,7 @@ using System.Text;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
-using Mento.ScriptCommon.TestData.Administration;
+using Mento.ScriptCommon.TestData.ClientAccess;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
@@ -19,8 +19,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField NewPasswordTestField = JazzTextField.UserNewPasswordTextField;
         private static TextField ConfirmPasswordTextField = JazzTextField.UserConfirmPasswordTextField;
 
-        private static ComboBox UserTypeComboBox = JazzComboBox.UserProfileTypeComboBox;
-        private static ComboBox UserAssociatedCustomerComboBox = JazzComboBox.UserProfileAssociatedCustomerComboBox;
+        private static ComboBox UserProfileRoleTypeComboBox = JazzComboBox.UserProfileRoleTypeComboBox;
+        private static ComboBox UserAssociatedTitleComboBox = JazzComboBox.UserProfileTitleComboBox;
 
         internal UserPasswordDialog()
             : base(Locator)

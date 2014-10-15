@@ -5,9 +5,9 @@ using System.Text;
 using Mento.TestApi.TestData;
 using Mento.Utility;
 
-namespace Mento.ScriptCommon.TestData.Administration
+namespace Mento.ScriptCommon.TestData.ClientAccess
 {
-    public class UserPasswordData : TestDataBase<UserInputData, UserExpectedData>
+    public class UserPasswordData : TestDataBase<PasswordInputData, PasswordExpectedData>
     {
     }
 

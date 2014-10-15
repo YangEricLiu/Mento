@@ -5,7 +5,7 @@ using System.Text;
 using Mento.TestApi.TestData;
 using Mento.Utility;
 
-namespace Mento.ScriptCommon.TestData.Administration
+namespace Mento.ScriptCommon.TestData.ClientAccess
 {
     public class UserProfileData : TestDataBase<UserProfileInputData, UserProfileExpectedData>
     {
@@ -16,22 +16,24 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string Name { get; set; }
         public string RealName { get; set; }
         public string Type { get; set; }
-        public string AssociatedCustomer { get; set; }
         public string Title { get; set; }
         public string Telephone { get; set; }
         public string Email { get; set; }
-        public string Comment { get; set; }
+        public string Comments { get; set; }
+        public string[] TypeList { get; set; }
+        public string[] TitleList { get; set; }
 
-        public UserProfileInputData(string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comment)
+        public UserProfileInputData(string name, string realname, string type, string title, string telephone, string email, string comments, string[] typeList, string[] titleList)
         {
             this.Name = name;
             this.RealName = realname;
             this.Type = type;
-            this.AssociatedCustomer = associatedcustomer;
             this.Title = title;
             this.Telephone = telephone;
             this.Email = email;
-            this.Comment = comment;
+            this.Comments = comments;
+            this.TitleList = titleList;
+            this.TypeList = typeList;
         }
     }
     public class UserProfileExpectedData : ExpectedTestDataBase
@@ -39,22 +41,24 @@ namespace Mento.ScriptCommon.TestData.Administration
             public string Name { get; set; }
             public string RealName { get; set; }
             public string Type { get; set; }
-            public string AssociatedCustomer { get; set; }
             public string Title { get; set; }
             public string Telephone { get; set; }
             public string Email { get; set; }
-            public string Comment { get; set; }
+            public string Comments { get; set; }
+            public string[] TypeList { get; set; }
+            public string[] TitleList { get; set; }
 
-            public UserProfileExpectedData(string name, string realname, string type, string associatedcustomer, string title, string telephone, string email, string comment)
+            public UserProfileExpectedData(string name, string realname, string type, string title, string telephone, string email, string comments, string[] typeList, string[] titleList)
             {
                 this.Name = name;
                 this.RealName = realname;
                 this.Type = type;
-                this.AssociatedCustomer = associatedcustomer;
                 this.Title = title;
                 this.Telephone = telephone;
                 this.Email = email;
-                this.Comment = comment;
+                this.Comments = comments;
+                this.TitleList = titleList;
+                this.TypeList = typeList;
             }        
         }
 }

@@ -1506,6 +1506,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonUserProfileCancel);}
         }
+        public static Button UserProfileCloseButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonUserProfileClose); }
+        }
         public static Button UserProfileModifyButton 
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonUserProfileModify);}

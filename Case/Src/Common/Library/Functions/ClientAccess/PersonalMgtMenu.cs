@@ -5,7 +5,7 @@ using System.Text;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.WebUserInterface;
-using Mento.ScriptCommon.TestData.Administration;
+using Mento.ScriptCommon.TestData.ClientAccess;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 
@@ -14,7 +14,7 @@ namespace Mento.ScriptCommon.Library.Functions
     /// <summary>
     /// The business logic implement of User Profile.
     /// </summary>
-    public class UserProfile
+    public class PersonalMgtMenu
     {
         
         private static Button MenuButton = JazzButton.UserProfileButton;

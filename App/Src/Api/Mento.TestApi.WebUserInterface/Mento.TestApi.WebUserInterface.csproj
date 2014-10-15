@@ -12,10 +12,10 @@
     <AssemblyName>Mento.TestApi.WebUserInterface</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>%24/Mento/Trunk/App/Src/Api/Mento.TestApi.WebUserInterface</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://10.177.1.111:8080/tfs/kara</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

@@ -1055,6 +1055,11 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #endregion
 
+
+        public static object GetLegendNumber()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public enum TagTabs { HierarchyTag, SystemDimensionTab, AreaDimensionTab, }

@@ -1,0 +1,22 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"TagNames":["V1_BuildingBC"],
+			"StartDate":["2012-04-30","2012-02-29","2012-02-14"],
+			"StartTime":["00:00","04:00","04:00"],
+			"EndDate":["2012-06-12","2012-04-12","2012-07-12"],
+			"EndTime":["10:00","14:00","10:00"],
+			"BaseStartDate":["2013-01-01"],
+			"BaseStartTime":["02:00"],
+			"BaseEndDate":["2013-02-13"],
+			"BaseEndTime":["12:00"],
+		},
+		"ExpectedData":
+		{
+			"EndDateValue":["2012-06-12","2012-04-12","2012-07-12"],
+			"EndTimeValue":["10:00","14:00","10:00"],
+		}
+	}
+]

@@ -1,0 +1,15 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"TagNames":["BuildingA_P1_Electricity"],
+		},
+		"ExpectedData":
+		{
+			"ClearAllMessage":"$@EM.DeleteCompareTime",
+			"DeleteAllMessage":"$@EM.RUClearAll",
+			"DeleteMessages":["$@EM.DeleteAllTimespan", "$@Common.Button.DeleteAll"],
+		}
+	}
+]

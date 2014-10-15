@@ -869,8 +869,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
  
         [Test]
-        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-105")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-105")]
+        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-106")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-106")]
         public void ModifyComparedIntervalsWhenOriginalIsRelativeAndNotModified(TimeSpansData input)
         {
             //Select one tag and view data view
@@ -906,11 +906,14 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
                 Assert.AreEqual("", TimeSpanDialog.GetAdditionRelativeValue(i + 1));
 
                 //Set all the compared intervals to relative time.
-                TimeSpanDialog.InputAdditionRelativeValue((i + 6).ToString(), i);
+                TimeSpanDialog.InputAdditionRelativeValue((i + 3).ToString(), i);
             }
 
             //Change type of the first compared interval from relative to absolute time. 
             TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, 2);
+
+            //Check Text for previous is cleared
+            Assert.AreNotEqual("$#EM.EnergyAnalyse.AddIntervalWindow.CompareTimePreviousComboLabel", TimeSpanDialog.GetAdditionStartDateInvalidMsg(2));
 
             //Check The original time range is not change in time pick menu
             Assert.AreEqual(startDate, TimeSpanDialog.GetBaseStartDateValue());
@@ -930,107 +933,32 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //Check The other compared interval keep as before.
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(3));
-            Assert.AreEqual("", TimeSpanDialog.GetAdditionRelativeValue(3));
+            Assert.AreEqual("9", TimeSpanDialog.GetAdditionRelativeValue(3));
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(4));
-            //Assert.AreEqual()
+            Assert.AreEqual("10", TimeSpanDialog.GetAdditionRelativeValue(4));
 
+            //Change type and time of the second compared interval to absolute time: 2013-6-1 00:00 to 2012-7-15 24:00
+            TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, 3);
+            TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[1], 3);
+            TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[1], 3);
+            TimeSpanDialog.InputAdditionEndDate(input.InputData.EndDate[1], 3);
+            TimeSpanDialog.InputAdditionEndTime(input.InputData.EndTime[1], 3);
 
-            //Get default original time from energy view toolbar
-            //string startDate = EnergyViewToolbar.GetStartDate();
-            //string startTime = EnergyViewToolbar.GetStartTime();
-            //string endDate = EnergyViewToolbar.GetEndDate();
-            //string endTime = EnergyViewToolbar.GetEndTime();
-
-            //Click  'Add Compared Interval' button
-            EnergyViewToolbar.ClickTimeSpanButton();
-            TimeManager.ShortPause();
-
-            //Check 'Add Compared Interval' dialog is displayed with above original time range
+            //Check the display value
             Assert.AreEqual(startDate, TimeSpanDialog.GetBaseStartDateValue());
             Assert.AreEqual(startTime, TimeSpanDialog.GetBaseStartTimeValue());
             Assert.AreEqual(endDate, TimeSpanDialog.GetBaseEndDateValue());
             Assert.AreEqual(endTime, TimeSpanDialog.GetBaseEndTimeValue());
-
-            //Check the default Original time type is relative
-            Assert.AreEqual(OriginalTimeType.Last7days, TimeSpanDialog.GetOriginalTimeType());
-
-            //Check the default compared interval time type is relative
-            Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(2));
-
-            //Check the multiple new compared intervals are displayed with blank time
-            for (int i = 3; i <= 5; i++)
-            {
-                //Click  'Add Compared Interval' link button in the dialog multiple times. And check the time is blank.
-                TimeSpanDialog.ClickAddTimeSpanButton();
-                TimeManager.FlashPause();
-                Assert.AreEqual("", TimeSpanDialog.GetAdditionRelativeValue(i));
-            }
-
-            //Select Start Date Time for all the compared intervals.
-            for (int i = 2; i <= 5; i++)
-            {
-                //Select the compared intervl as user-defined
-                TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, i);
-                TimeManager.FlashPause();
-
-                //Set the start time and date
-                TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[i - 2], i);
-                TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[i - 2], i);
-
-                //Check All end time are set automatically and keep the same time range with original time, but editable.
-                Assert.AreEqual(input.ExpectedData.EndDateValue[i - 2], TimeSpanDialog.GetAdditionEndDateValue(i));
-                Assert.AreEqual(input.ExpectedData.EndTimeValue[i - 2], TimeSpanDialog.GetAdditionEndTimeValue(i));
-
-                //Check the end time is editable.
-                TimeSpanDialog.InputAdditionEndDate(input.InputData.EndDate[i - 2], i);
-                TimeSpanDialog.InputAdditionEndTime(input.InputData.EndTime[i - 2], i);
-
-            }
-
-            //Change original time type form dropdown list to absolute time, e.g: 2014-3-20 0:00 to 2014-4-20 24:00
-            TimeSpanDialog.InputBaseStartDate(input.InputData.BaseStartDate[0]);
-            TimeSpanDialog.InputBaseStartTime(input.InputData.BaseStartTime[0]);
-            TimeSpanDialog.InputBaseEndDate(input.InputData.BaseEndDate[0]);
-            TimeSpanDialog.InputBaseEndTime(input.InputData.BaseEndTime[0]);
-
-            //Check All compared intervals will be cleared up
-            Assert.AreEqual("", TimeSpanDialog.GetAdditionStartDateValue(2));
-            Assert.AreEqual("", TimeSpanDialog.GetAdditionEndDateValue(2));
-            Assert.AreEqual(3, TimeSpanDialog.GetExcludeIntervals());
-
-            //Select Start Date Time for all the compared intervals again.
-            //Input the first compared interval start time
-            TimeSpanDialog.InputAdditionStartDate(input.InputData.StartTime[0], 2);
-            TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[0], 2);
-
-            //Check the first end time is correctly
-            Assert.AreEqual(input.ExpectedData.EndDateValue[4], TimeSpanDialog.GetAdditionEndDateValue(2));
-            Assert.AreEqual(input.ExpectedData.EndTimeValue[4], TimeSpanDialog.GetAdditionEndTimeValue(2));
-
-            //Check the first end time is editable.
-            TimeSpanDialog.InputAdditionEndDate(input.InputData.EndDate[4], 2);
-            TimeSpanDialog.InputAdditionEndTime(input.InputData.EndTime[4], 2);
-
-            //Set and check the 2th~4th compared intervals
-            for (int i = 3; i <= 5; i++)
-            {
-                //Click 'Add Compared Interval' link button in the dialog multiple times
-                TimeSpanDialog.ClickAddTimeSpanButton();
-                TimeManager.FlashPause();
-
-                //Set the start time and date
-                TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[i - 2], i);
-                TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[i - 2], i);
-
-                //Check All end time are set automatically and keep the same time range with original time, but editable.
-                Assert.AreEqual(input.ExpectedData.EndDateValue[i + 2], TimeSpanDialog.GetAdditionEndDateValue(i));
-                Assert.AreEqual(input.ExpectedData.EndTimeValue[i + 2], TimeSpanDialog.GetAdditionEndTimeValue(i));
-
-                //Check the end time is editable.
-                TimeSpanDialog.InputAdditionEndDate(input.InputData.EndDate[i + 2], i);
-                TimeSpanDialog.InputAdditionEndTime(input.InputData.EndTime[i + 2], i);
-
-            }
+            Assert.AreEqual(input.ExpectedData.StartDateValue[0], TimeSpanDialog.GetAdditionStartDateValue(2));
+            Assert.AreEqual(input.ExpectedData.StartTimeValue[0], TimeSpanDialog.GetAdditionStartTimeValue(2));
+            Assert.AreEqual(input.ExpectedData.EndDateValue[0], TimeSpanDialog.GetAdditionEndDateValue(2));
+            Assert.AreEqual(input.ExpectedData.EndTimeValue[0], TimeSpanDialog.GetAdditionEndTimeValue(2));
+            Assert.AreEqual(input.ExpectedData.StartDateValue[1], TimeSpanDialog.GetAdditionStartDateValue(3));
+            Assert.AreEqual(input.ExpectedData.StartTimeValue[1], TimeSpanDialog.GetAdditionStartTimeValue(3));
+            Assert.AreEqual(input.ExpectedData.EndDateValue[1], TimeSpanDialog.GetAdditionEndDateValue(3));
+            Assert.AreEqual(input.ExpectedData.EndTimeValue[1], TimeSpanDialog.GetAdditionEndTimeValue(3));
+            Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(4));
+            Assert.AreEqual("10", TimeSpanDialog.GetAdditionRelativeValue(4));
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
@@ -1041,102 +969,312 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
             TimeManager.ShortPause();
 
-            //Open More Menu list and change original time to "上月"
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastMonth);
-            TimeManager.MediumPause();
-
-            //Check All compared intervals will be cleared up(All compared intervals will not be cleared up)
-            //?
-
-            //Click 'Add Compared Interval' button and set all the compared intervals again
+            //Open the above multiple interval comparasion
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
-            TimeSpanDialog.ClickDeleteTimeSpanButton(5);
-            TimeManager.ShortPause();
-            for (int i = 1; i <= 3; i++)
-            {
-                TimeSpanDialog.SelectCompareTimeType(CompareTimeType.Relative, i + 1);
-                TimeManager.FlashPause();
-                TimeSpanDialog.InputAdditionRelativeValue(i.ToString(), i + 1);
-                TimeManager.ShortPause();
-            }
+
+            //Check The intervals set above are stored and displayed in the dialog when open next time. 
+            Assert.AreEqual(startDate, TimeSpanDialog.GetBaseStartDateValue());
+            Assert.AreEqual(startTime, TimeSpanDialog.GetBaseStartTimeValue());
+            Assert.AreEqual(endDate, TimeSpanDialog.GetBaseEndDateValue());
+            Assert.AreEqual(endTime, TimeSpanDialog.GetBaseEndTimeValue());
+            Assert.AreEqual(input.ExpectedData.StartDateValue[0], TimeSpanDialog.GetAdditionStartDateValue(2));
+            Assert.AreEqual(input.ExpectedData.StartTimeValue[0], TimeSpanDialog.GetAdditionStartTimeValue(2));
+            Assert.AreEqual(input.ExpectedData.EndDateValue[0], TimeSpanDialog.GetAdditionEndDateValue(2));
+            Assert.AreEqual(input.ExpectedData.EndTimeValue[0], TimeSpanDialog.GetAdditionEndTimeValue(2));
+            Assert.AreEqual(input.ExpectedData.StartDateValue[1], TimeSpanDialog.GetAdditionStartDateValue(3));
+            Assert.AreEqual(input.ExpectedData.StartTimeValue[1], TimeSpanDialog.GetAdditionStartTimeValue(3));
+            Assert.AreEqual(input.ExpectedData.EndDateValue[1], TimeSpanDialog.GetAdditionEndDateValue(3));
+            Assert.AreEqual(input.ExpectedData.EndTimeValue[1], TimeSpanDialog.GetAdditionEndTimeValue(3));
+            Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(4));
+            Assert.AreEqual("10", TimeSpanDialog.GetAdditionRelativeValue(4));
+
+            //Change type of the second compared interval to relatived: 之前第4个月
+            TimeSpanDialog.SelectCompareTimeType(CompareTimeType.Relative, 3);
+            TimeSpanDialog.InputAdditionRelativeValue("9", 3);
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //Check
+            //Check Chart display out correctly.
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
             TimeManager.ShortPause();
 
-            //Open More Menu list and change original time to "去年"
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-107")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-107")]
+        public void ModifyComparedIntervalsWhenOriginalIsAbsoluteAndNotModified(TimeSpansData input)
+        {
+            //Select one tag and view data view
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //Check All compared intervals will be cleared up
-            //?
-
-            //Click  'Add Compared Interval' button and set all the compared intervals again
-            for (int i = 1; i <= 3; i++)
-            {
-                TimeSpanDialog.SelectCompareTimeType(CompareTimeType.Relative, i + 1);
-                TimeManager.FlashPause();
-                TimeSpanDialog.InputAdditionRelativeValue(i.ToString(), i + 1);
-                TimeManager.ShortPause();
-            }
-
-            //Click 'Yes & Draw' button
-            TimeSpanDialog.ClickConfirmButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //Check
-            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            //Open 'Single Hierarchy Node' function (单层级数据点), 
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             TimeManager.ShortPause();
 
-            //From time control, change original time to 2013-3-20 0:00 to 2013-4-20 24:00
+            //Set Original time range to 2013/01/01 02:00 to 2013/02/13 12:00 
             EnergyViewToolbar.SetDateRange(input.InputData.BaseStartDate[0], input.InputData.BaseEndDate[0]);
             EnergyViewToolbar.SetTimeRange(input.InputData.BaseStartTime[0], input.InputData.BaseEndTime[0]);
 
-            //Select Start Date Time for all the compared intervals again.
+            //Click  'Add Compared Interval' button
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
+
+            //'Add Compared Interval' dialog is displayed with above original time range ('2013/01/01 02:00 to 2012/02/13 12:00')
+            Assert.AreEqual(TimeSpanDialog.GetBaseStartDateValue(), input.InputData.BaseStartDate[0]);
+            Assert.AreEqual(TimeSpanDialog.GetBaseStartTimeValue(), input.InputData.BaseStartTime[0]);
+            Assert.AreEqual(TimeSpanDialog.GetBaseEndDateValue(), input.InputData.BaseEndDate[0]);
+            Assert.AreEqual(TimeSpanDialog.GetBaseEndTimeValue(), input.InputData.BaseEndTime[0]);
+
+            //The compared interval time type is changed to absolute
+            Assert.AreEqual(CompareTimeType.UserDefined, TimeSpanDialog.GetCompareTimeType(2));
+
             for (int i = 3; i <= 5; i++)
             {
                 //Click  'Add Compared Interval' link button in the dialog multiple times.
                 TimeSpanDialog.ClickAddTimeSpanButton();
                 TimeManager.FlashPause();
-            }
-            for (int i = 2; i <= 5; i++)
-            {
-                //Select the compared intervl as user-defined
-                TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, i);
-                TimeManager.FlashPause();
 
-                //Set the start time and date
+                //Multiple new empty compared intervals are displayed with blank Start Date Time and End Date Time.
+                Assert.AreEqual("", TimeSpanDialog.GetAdditionStartDateValue(i));
+                Assert.AreEqual("", TimeSpanDialog.GetAdditionEndDateValue(i));
+            }
+
+            //Select Start Date Time  for all the compared intervals.
+            for (int i = 2; i <= 3; i++ )
+            {
+                TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, i);
                 TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[i - 2], i);
                 TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[i - 2], i);
 
                 //Check All end time are set automatically and keep the same time range with original time, but editable.
                 Assert.AreEqual(input.ExpectedData.EndDateValue[i - 2], TimeSpanDialog.GetAdditionEndDateValue(i));
                 Assert.AreEqual(input.ExpectedData.EndTimeValue[i - 2], TimeSpanDialog.GetAdditionEndTimeValue(i));
-
-                //Check the end time is editable.
                 TimeSpanDialog.InputAdditionEndDate(input.InputData.EndDate[i - 2], i);
                 TimeSpanDialog.InputAdditionEndTime(input.InputData.EndTime[i - 2], i);
-
             }
+
+            //Change end time of the first compared interval from 2012-06-12 10:00 TO 2012-07-12 10:00
+            TimeSpanDialog.InputAdditionEndDate(input.InputData.EndDate[2], 2);
+            TimeSpanDialog.InputAdditionEndTime(input.InputData.EndTime[2], 2);
+
+            //Check The original time range is not change in time pick menu
+            Assert.AreEqual(TimeSpanDialog.GetBaseStartDateValue(), input.InputData.BaseStartDate[0]);
+            Assert.AreEqual(TimeSpanDialog.GetBaseStartTimeValue(), input.InputData.BaseStartTime[0]);
+            Assert.AreEqual(TimeSpanDialog.GetBaseEndDateValue(), input.InputData.BaseEndDate[0]);
+            Assert.AreEqual(TimeSpanDialog.GetBaseEndTimeValue(), input.InputData.BaseEndTime[0]);
+
+            //Check The end time of the first interval change to 2012-07-12 10:00 without error
+            Assert.AreEqual(input.ExpectedData.EndDateValue[2], TimeSpanDialog.GetAdditionEndDateValue(2));
+            Assert.AreEqual(input.ExpectedData.EndTimeValue[2], TimeSpanDialog.GetAdditionEndTimeValue(2));
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //Check
+            //Check Chart display out correctly.
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
             TimeManager.ShortPause();
 
+            //Open the above multipleintervalcomparasion
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+
+            //Change start time of the second compared interval from 2012-02-29, 04:00 to 2012-02-14 04:00
+            TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[2], 3);
+            TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[2], 3);
+
+            //Check The start and end time of are not changed in time pick up menu both for Original and Compared intervals.
+            Assert.AreEqual(TimeSpanDialog.GetBaseStartDateValue(), input.InputData.BaseStartDate[0]);
+            Assert.AreEqual(TimeSpanDialog.GetBaseStartTimeValue(), input.InputData.BaseStartTime[0]);
+            Assert.AreEqual(TimeSpanDialog.GetBaseEndDateValue(), input.InputData.BaseEndDate[0]);
+            Assert.AreEqual(TimeSpanDialog.GetBaseEndTimeValue(), input.InputData.BaseEndTime[0]);
+
+            //Click 'Yes & Draw' button
+            TimeSpanDialog.ClickConfirmButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check Chart display out correctly.
+            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            TimeManager.ShortPause();
+
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-108")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-108")]
+        public void RemoveComparedIntervals(TimeSpansData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.LongPause();
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            TimeManager.MediumPause();
+
+            //Select one tag and view data view
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Open 'Single Hierarchy Node' function (单层级数据点), 
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+            TimeManager.ShortPause();
+
+            //上周, Click  'Add Compared Interval' button， select 之前第1个7天, click '确定并绘图'
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastWeek);
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+            TimeSpanDialog.InputAdditionRelativeValue("1", 2);
+            TimeSpanDialog.ClickConfirmButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check The default step is Day
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
+
+            //Click  'Add Compared Interval' button to open the dialog
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+
+            //From the dialog, Click 'x' to delete one compared interval. Click 'Yes'
+            TimeSpanDialog.ClickDeleteTimeSpanButton(2);
+            Assert.AreEqual(4, TimeSpanDialog.GetExcludeIntervals());
+            TimeSpanDialog.ClickConfirmButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check The series for compared interval is removed from chart directly.
+            Assert.IsTrue(1 >= EnergyAnalysis.GetTrendChartLines());
+
+            //The default step should still be Day
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
+
+            //Add compared intervals
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+            TimeSpanDialog.InputAdditionRelativeValue((1).ToString(), 2);
+            TimeManager.FlashPause();
+            for (int i = 3; i <= 5; i++ )
+            {
+                TimeSpanDialog.ClickAddTimeSpanButton();
+                TimeManager.FlashPause();
+                TimeSpanDialog.InputAdditionRelativeValue((i - 1).ToString(), i);
+                TimeManager.FlashPause();
+            }
+
+            TimeSpanDialog.ClickConfirmButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //From the legend area, Click 'x' icon delete one compared interval.
+            //EnergyViewPanel.ClickLegendItem("");
+
+            //From the dialog, Click 'x' to delete ALL compared intervals one by one.Click 'Yes' button
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+            for (int i = 2; i <= 5; i++)
+            {
+                TimeSpanDialog.ClickDeleteTimeSpanButton(i);
+                TimeManager.FlashPause();
+            }
+            Assert.AreEqual(4, TimeSpanDialog.GetExcludeIntervals());
+            TimeSpanDialog.ClickConfirmButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check 'Remove All Compared Intervals' button is unavailable since all compared intervals are deleted.
+            Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
+            Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled(input.ExpectedData.DeleteMessages[0]));
+
+            //The default step should still be Day
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
+
+            //Click '查看数据' button
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //All compared time series in chart are removed and only the tag's original series is displayed.
+            //Assert.AreEqual(1, EnergyViewPanel.GetLegendNumber());
+            //Assert.AreEqual(true, EnergyAnalysisPanel.IsLegendItemExists(input.InputData.TagNames[0]));
+
+            //Add multiple compared intervals successfully again.
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+            TimeSpanDialog.InputAdditionRelativeValue("1",2);
+            TimeManager.FlashPause();
+            for (int i = 3; i <= 5; i++)
+            {
+                TimeSpanDialog.ClickAddTimeSpanButton();
+                TimeManager.FlashPause();
+                TimeSpanDialog.InputAdditionRelativeValue((i - 1).ToString(), i);
+                TimeManager.FlashPause();
+            }
+            TimeSpanDialog.ClickConfirmButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Click 'Remove All Compared Intervals' button, then cancel
+            EnergyViewToolbar.TimeSpan(TimeSpans.DeleteAllTimeSpans);
+            TimeManager.ShortPause();
+
+            //Popup message 'Clear all compared intervals?' for confirmation.
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
+
+            //Click 'Cancel'.
+            JazzMessageBox.MessageBox.GiveUp();
+            TimeManager.MediumPause();
+
+            //Check All compared intervals are still there and NOT cleared.
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.MediumPause();
+            Assert.AreEqual(0, TimeSpanDialog.GetExcludeIntervals());
+            //TimeSpanDialog.ClickGiveUpButton();
+
+            //Remove the first and second compared intervals
+            TimeSpanDialog.ClickDeleteTimeSpanButton(2);
+            TimeSpanDialog.ClickDeleteTimeSpanButton(3);
+
+            //Check The first and second compared intervals are removed.
+            //Original and the third compared intervals are left.
+            Assert.AreEqual(2, TimeSpanDialog.GetExcludeIntervals());
+            Assert.AreNotEqual("", TimeSpanDialog.GetBaseStartDateValue());
+            Assert.AreNotEqual("", TimeSpanDialog.GetBaseEndDateValue());
+            Assert.AreEqual("3", TimeSpanDialog.GetAdditionRelativeValue(2));
+
+            //Click link '添加时间段' button some times and check the locations that new intervals added to
+            for (int i = 4; i <= 5; i++ )
+            {
+                TimeSpanDialog.ClickAddTimeSpanButton();
+                TimeManager.FlashPause();
+                //Check The new intervals should added to below the last interval.
+                Assert.AreEqual("", TimeSpanDialog.GetAdditionRelativeValue(i));
+            }
+            TimeSpanDialog.ClickConfirmButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Click 'Delete All' button from 'More' menu.
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
+            TimeManager.ShortPause();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.DeleteAllMessage));
+            JazzMessageBox.MessageBox.Clear();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsFalse(EnergyViewToolbar.IsTimeSpanButtonEnable());
         }
     }
 }

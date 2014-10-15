@@ -492,7 +492,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.ShortPause();
             TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[0], 2);
             TimeManager.ShortPause();
-
+            
             //Check the end time are set automatically and keep the same time range with original time, but editable.(e.g, last month is June, then end time should be '2014-03-14 2:00')
             Assert.AreEqual(input.ExpectedData.EndDateValue[0], TimeSpanDialog.GetAdditionEndDateValue(2));
             Assert.AreEqual(input.ExpectedData.EndTimeValue[0], TimeSpanDialog.GetAdditionEndTimeValue(2));
@@ -911,9 +911,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //Change type of the first compared interval from relative to absolute time. 
             TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, 2);
-
-            //Check Text for previous is cleared
-            Assert.AreNotEqual("$#EM.EnergyAnalyse.AddIntervalWindow.CompareTimePreviousComboLabel", TimeSpanDialog.GetAdditionStartDateInvalidMsg(2));
 
             //Check The original time range is not change in time pick menu
             Assert.AreEqual(startDate, TimeSpanDialog.GetBaseStartDateValue());

@@ -403,5 +403,142 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
 
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CarbonUsage-DataView-001-4")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-4")]
+        public void CarbonUsageRawValueDisplayForTotal(CarbonUsageData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.LongPause();
+            CarbonUsage.NavigateToCarbonUsage();
+            TimeManager.MediumPause();
+
+            CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Set date range and change to data view
+            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 29), new DateTime(2012, 8, 4));
+            TimeManager.ShortPause();
+
+            //Go to 介质总览 to display Data view. Click Optional step=Raw step
+            CarbonUsage.SelectCommodity();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Check Raw chart display successfully.
+            Assert.IsTrue(CarbonUsage.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Day));
+
+            //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+
+            //On homepage, check the dashboards
+            CarbonUsage.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.MediumPause();
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard[0].DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CarbonUsage-DataView-001-5")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-5")]
+        public void CarbonUsageRawValueDisplayForSingleCommodity(CarbonUsageData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.LongPause();
+            CarbonUsage.NavigateToCarbonUsage();
+            TimeManager.MediumPause();
+
+            CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Set date range and change to data view
+            EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 29), new DateTime(2012, 8, 4));
+            TimeManager.ShortPause();
+
+            //Go to 介质单项 电 to display Data view. Click Optional step=Raw step
+            CarbonUsage.SelectCommodity(input.InputData.commodityNames[0]);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Check Raw chart display successfully.
+            Assert.IsTrue(CarbonUsage.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Day));
+
+            //Go to 介质单项 自来水 to display Data view. Click Optional step=Raw step
+            CarbonUsage.SelectCommodity(input.InputData.commodityNames[1]);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Check Raw chart display successfully.
+            Assert.IsTrue(CarbonUsage.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Day));
+
+            //Go to 介质单项 煤 to display Data view. Click Optional step=Raw step
+            CarbonUsage.SelectCommodity(input.InputData.commodityNames[2]);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Check Warning message 
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.StepMessage[0]));
+            CarbonUsage.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+
+            //On homepage, check the dashboards
+            CarbonUsage.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.MediumPause();
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard[0].DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+        }
     }
 }

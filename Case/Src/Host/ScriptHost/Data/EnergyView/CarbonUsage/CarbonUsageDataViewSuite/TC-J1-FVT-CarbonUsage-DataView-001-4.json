@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A","楼宇A"],
+			"commodityNames":["$@Commodity_Electricity"],
+			"DashboardInfo":[{
+				"WigetName":"CarbonUsageRawStepElectricity",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"RawStepAutomationTest",
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

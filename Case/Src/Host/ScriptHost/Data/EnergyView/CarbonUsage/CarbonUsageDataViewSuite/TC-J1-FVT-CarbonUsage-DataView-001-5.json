@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织B", "园区C","楼宇D"],
+			"commodityNames":["$@Commodity_Electricity","$@Commodity_Water", "$@Commodity_Coal"],
+			"DashboardInfo":[{
+				"WigetName":"CarbonUsageRawStepWater",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"RawStepAutomationTest",
+			}],
+		},
+		"ExpectedData":
+		{
+			"StepMessage":["$@EM.StepError|(\"$@EM.UseRaw@$\")"],
+		}
+	}
+]

@@ -174,6 +174,30 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public bool IsCommodityChecked(string commodityName)
+        {
+            //total
+            if (commodityName == null)
+            {
+                if (TotalCommotidyGrid.IsNoEnabledCheckbox())
+                    return false;
+                else
+                    return true;
+            }
+            else //specified commodity
+            {
+                
+                //TotalCommotidyGrid.UncheckRowCheckbox(2, "$@EM.SingleCommodity", false);
+                //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                //TimeManager.MediumPause();
+                if (CommodityGrid.IsRowChecked(2, commodityName, false))
+                    return true;
+                else
+                    return false;
+            }
+
+        }
+
         #endregion
 
         #region data view operation

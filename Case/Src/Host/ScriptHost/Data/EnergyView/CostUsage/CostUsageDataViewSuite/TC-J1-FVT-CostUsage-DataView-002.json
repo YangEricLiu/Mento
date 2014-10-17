@@ -1,0 +1,26 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2","组织B", "园区C", "楼宇D"],
+			"SystemDimensionPath":["楼宇D", "$@SystemDimensionTemplateItem_HVAC"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-07-29",
+				"EndDate":"2012-08-04",	
+			}],
+			"DashboardInfo":{
+				"WigetName":"CostUsageRawStepTotal",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"RawStepAutomationTest",
+			},
+			"failedFileName":["F-CostUsageDataView002.xls"],
+		},
+		"ExpectedData":
+		{
+			"StepMessage":["$@EM.StepError|(\"$@EM.UseRaw@$\")"],
+			"expectedFileName":["CostUsageDataView002.xls"],
+		}
+	}
+]

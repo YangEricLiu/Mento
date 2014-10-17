@@ -224,5 +224,160 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-DataView-002")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-002")]
+        public void CostUsageRawValueDisplayForTotal(CostUsageData input)
+        {
+            //Navigate to Energy Management. Go to Cost chart view. Navigate to Hierarchy list 组织B->园区C>楼宇D&空调.
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.SwitchTagTab(TagTabs.SystemDimensionTab);
+            TimeManager.ShortPause();
+
+            CostUsage.SelectSystemDimension(input.InputData.SystemDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Change manually defined time range to 2012/07/29-2012/08/04. 
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //Go to 介质总览 to display Data view. Click Optional step=Raw step.
+            CostUsage.SelectCommodity();
+            EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Check Warning message 
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.StepMessage[0]));
+            CostUsage.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Check Commodity=煤 is uncheck.
+            Assert.AreEqual(true, CostUsage.IsCommodityChecked(input.InputData.commodityNames[0]));
+            Assert.AreEqual(false, CostUsage.IsCommodityChecked(input.InputData.commodityNames[1]));
+            Assert.AreEqual(false, CostUsage.IsCommodityChecked(input.InputData.commodityNames[2]));
+
+            //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+
+            //On homepage, check the dashboards
+            CostUsage.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.MediumPause();
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUsage-DataView-003")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-003")]
+        public void CostUsageRawValueDisplayForSingleCommodity(CostUsageData input)
+        {
+            //Change Hierarchy list to 组织A->园区A->楼宇A-〉空调, then go to 介质单项.
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            CostUsage.SwitchTagTab(TagTabs.SystemDimensionTab);
+            TimeManager.ShortPause();
+
+            CostUsage.SelectSystemDimension(input.InputData.SystemDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Change manually defined time range to 2012/07/29-2012/08/04. 
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //Select Commodity=电 to display Data view. Click Optional step=Raw step.
+            CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
+            EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            CostUsage.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Check Raw chart display successfully.
+            Assert.IsTrue(CostUsage.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(CostUsage.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsTrue(CostUsage.IsDisplayStepDisplayed(DisplayStep.Day));
+
+            //Select Commodity=水 to display Data view.
+            CostUsage.SelectCommodity(input.InputData.commodityNames[1]);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Check Raw chart display successfully.Warning message and uncheck Commodity=水
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.StepMessage[0]));
+            CostUsage.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Check commodity=水 is uncheck
+            Assert.AreEqual(true, CostUsage.IsCommodityChecked(input.InputData.commodityNames[0]));
+            Assert.AreEqual(false, CostUsage.IsCommodityChecked(input.InputData.commodityNames[1]));
+            Assert.AreEqual(false, CostUsage.IsCommodityChecked(input.InputData.commodityNames[2]));
+
+            //Select Commodity=煤 to display Data view.
+            CostUsage.SelectCommodity(input.InputData.commodityNames[2]);
+            EnergyViewToolbar.View(EnergyViewType.List);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            CostUsage.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Check Warning message 
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.StepMessage[0]));
+            CostUsage.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Check Commodity=煤 is uncheck.
+            Assert.AreEqual(true, CostUsage.IsCommodityChecked(input.InputData.commodityNames[0]));
+            Assert.AreEqual(false, CostUsage.IsCommodityChecked(input.InputData.commodityNames[1]));
+            Assert.AreEqual(false, CostUsage.IsCommodityChecked(input.InputData.commodityNames[2]));
+
+            //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+
+            //On homepage, check the dashboards
+            CostUsage.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.MediumPause();
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+        }
     }
 }

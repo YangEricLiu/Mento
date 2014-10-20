@@ -743,7 +743,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldCustomerName = "TextFieldCustomerName";
         public static string TextFieldCustomerCode = "TextFieldCustomerCode";
         public static string TextFieldCustomerAddress = "TextFieldCustomerAddress";
-        public static string TextFieldCustomerManager = "TextFieldCustomerManager";
+        public static string TextFieldCustomerResponsiblePerson = "TextFieldCustomerResponsiblePerson";
         public static string TextFieldCustomerTelephone = "TextFieldCustomerTelephone";
         public static string TextFieldCustomerEmail = "TextFieldCustomerEmail";
         public static string TextFieldCustomerComment = "TextFieldCustomerComment";
@@ -1398,6 +1398,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region Customer Management
         public static string ContainerCustomerMapInfo = "ContainerCustomerMapInfo";
+        public static string ContainerCustomerAdmin = "ContainerCustomerAdmin";
+
         #endregion
 
         #region IndustryBenchMark

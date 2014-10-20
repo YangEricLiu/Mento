@@ -701,7 +701,7 @@ CommentTextField
               <add key="TextFieldCustomerName" value="st-customer-name-inputEl" type="ID"/>
               <add key="TextFieldCustomerCode" value="//input[@type='text'and @name='Code']" type="XPath"/>
               <add key="TextFieldCustomerAddress" value="//input[@type='text'and @name='Address']" type="XPath"/>
-              <add key="TextFieldCustomerManager" value="//input[@type='text'and @name='Manager']" type="XPath"/>
+              <add key="TextFieldCustomerResponsiblePerson" value="//input[@type='text'and @name='Manager']" type="XPath"/>
               <add key="TextFieldCustomerTelephone" value="//input[@type='text'and @name='Telephone']" type="XPath"/>
               <add key="TextFieldCustomerEmail" value="//input[@type='text'and @name='Email']" type="XPath"/>
               <add key="TextFieldCustomerComment" value="st-customer-comment-inputEl" type="ID"/>
@@ -1275,6 +1275,8 @@ CommentTextField
     </TOU>
     <CustomerManagement>
         <add key="ContainerCustomerMapInfo" value="//div[@id='st-map-consumption-form-targetEl']/div[contains(@id,'container')]//label[text()='$@Setting.Benchmark.Label.AtleastOneZone']" type="XPath"/>
+        <add key="ContainerCustomerAdmin" value="//div[@id='st-customer-properties-form-body']//table[contains(@class, 'x-form-item') and tbody/tr/td/label[text()='客户管理员']]//div" type="XPath"/>      
+    
     </CustomerManagement>
   </platformsettings>
   

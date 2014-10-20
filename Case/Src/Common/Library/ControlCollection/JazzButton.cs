@@ -1732,7 +1732,27 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.WidgetConfirmCancelShareButton);}
         }
-
+        public static Button WidgetTemplateQuickCreateButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonWidgetTemplateQuickCreate); }
+        }   
+        public static Button WidgetTemplateQuickCreateCloseButton 
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonWidgetTemplateQuickCreateClose); }
+        }
+        public static Button WidgetTemplateFilterButton 
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonWidgetTemplateFilter); }
+        } 
+        public static Button WidgetTemplateApplyFilterButton 
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonWidgetTemplateApplyFilter); }
+        } 
+        public static Button WidgetTemplateCancelFilterButton 
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonWidgetTemplateCancelFilter); }
+        }
+            
         #endregion
 
         #region My Share

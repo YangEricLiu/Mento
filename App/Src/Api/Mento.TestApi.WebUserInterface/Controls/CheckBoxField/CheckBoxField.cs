@@ -34,6 +34,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
         }
+        //Verify checkbox in widget template is checked.
+        public Boolean IsWidgetTemplateChecked(string itemName)
+        {
+            IWebElement checkbox = GetCheckBoxFieldElementInWidgetTemplate(itemName);
+
+            return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
+        }
 
         /// <summary>
         /// verfiy whether the item unchecked.
@@ -45,6 +52,18 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return !(checkbox.GetAttribute("class").Contains(CHECKEDCLASS));
         }
+        /// <summary>
+        /// verfiy whether the item unchecked in widget template.
+        /// </summary>
+        /// <param name="locator"></param>
+        public Boolean IsWidgetTemplateUnChecked(string itemName)
+        {
+            IWebElement checkbox = GetCheckBoxFieldElementInWidgetTemplate(itemName);
+
+            return !(checkbox.GetAttribute("class").Contains(CHECKEDCLASS));
+        }
+
+
 
         public Boolean IsAllDataScopeItemChecked()
         {
@@ -96,6 +115,23 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
             
         }
+        // checkbox check in widget template
+        public void CheckInWidgetTemplate(string itemName)
+        {
+            IWebElement checkbox = GetCheckBoxInputElementInWidgetTemplate(itemName);
+
+            if (!IsWidgetTemplateChecked(itemName))
+                checkbox.Click();
+        }
+
+        // uncheckbox check in widget template
+        public void UncheckInWidgetTemplate(string itemName)
+        {
+            IWebElement checkbox = GetCheckBoxInputElementInWidgetTemplate(itemName);
+
+            if (IsWidgetTemplateUnChecked(itemName))
+                checkbox.Click();
+        }
 
         //common checkbox disabled 
         public Boolean IsAllItemDisabled()
@@ -118,6 +154,27 @@ namespace Mento.TestApi.WebUserInterface.Controls
             IWebElement checkbox =this.RootElement;
             return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
         }
+         //Get check in widget template
+
+         private Locator GetCheckBoxFieldLocatorInWidgetTemplate(string itemName)
+         {
+             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxTable), ITEMNAME, itemName);
+         }
+
+         private Locator GetCheckBoxInputLocatorInWidgetTemplate(string itemName)
+         {
+             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxInput), ITEMNAME, itemName);
+         }
+         //for widget template---cathy
+
+         private IWebElement GetCheckBoxFieldElementInWidgetTemplate(string itemName)
+         {
+             return FindChild(GetCheckBoxFieldLocatorInWidgetTemplate(itemName));
+         }
+         private IWebElement GetCheckBoxInputElementInWidgetTemplate(string itemName)
+         {
+             return FindChild(GetCheckBoxInputLocatorInWidgetTemplate(itemName));
+         }
 
         /// <summary>
         /// Judge if the checkbox item is enabled

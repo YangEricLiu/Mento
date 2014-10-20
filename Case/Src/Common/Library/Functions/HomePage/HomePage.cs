@@ -213,8 +213,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ExitJazz()
         {
-            JazzFunction.UserProfile.NavigatorToUserProfile();
-            JazzFunction.UserProfile.ExitJazz();
+            JazzFunction.PersonalMgtMenu.NavigatorToUserProfile();
+            JazzFunction.PersonalMgtMenu.ExitJazz();
             TimeManager.LongPause();
             JazzMessageBox.MessageBox.Quit();
             JazzMessageBox.LoadingMask.WaitLoading(15);

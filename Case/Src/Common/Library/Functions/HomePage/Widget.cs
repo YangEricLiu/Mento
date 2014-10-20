@@ -67,6 +67,23 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button MaxWidgetRightCommentButton = JazzButton.MaxWidgetRightCommentButton;
         private static Container CommentsOnMaxwidgetContainer = JazzContainer.CommentsOnMaxwidgetContainer;
 
+        private static Button WidgetTemplateQuickCreateButton = JazzButton.WidgetTemplateQuickCreateButton;
+        private static Button WidgetTemplateQuickCreateCloseButton = JazzButton.WidgetTemplateQuickCreateCloseButton;
+        private static Button WidgetTemplateFilterButton = JazzButton.WidgetTemplateFilterButton;
+        private static Button WidgetTemplateApplyFilterButton = JazzButton.WidgetTemplateApplyFilterButton;
+        private static Button WidgetTemplateCancelFilterButton = JazzButton.WidgetTemplateCancelFilterButton;
+        private static CheckBoxField CheckBoxWidgetTemplateTable = JazzCheckBox.WidgetTemplateTableCheckBox;
+        private static CheckBoxField CheckBoxWidgetTemplateInput = JazzCheckBox.WidgetTemplateInputCheckBox;
+        private static Button SelectHierarchyButton = JazzButton.EnergyViewSelectHierarchyButton;
+        private static MenuButton FuncModeConvertTargetButton = JazzButton.FuncModeConvertMenuButton;
+        private static EnergyViewToolbarConvertTargetMenu ConvertTargetButton = new EnergyViewToolbarConvertTargetMenu();
+        private static MenuButton RadioTypeConvertTargetButton = JazzButton.RadioTypeConvertMenuButton;
+        private static MenuButton RankTypeConvertTargetButton = JazzButton.RankTypeConvertMenuButton;
+        private static MenuButton CarbonConvertTargetButton = JazzButton.EnergyViewConvertTargetMenuButton;
+        private static Button PeakValleyButton = JazzButton.EnergyViewPeakValleyButton;
+        private static Button EnergyDisplayStepMonthButton = JazzButton.EnergyDisplayStepMonthButton;
+
+
         protected override Chart Chart
         {
             get { return JazzChart.WidgetMaxDialogChart; }
@@ -459,5 +476,128 @@ namespace Mento.ScriptCommon.Library.Functions
             return CommentsOnMaxwidgetContainer.GetSpecialElementText(position);
         }
         #endregion
+
+        #region widget template operation
+
+        //click 快速创建 button
+        public void ClickWidgetTemplateQuickCreateButton()
+        {
+            WidgetTemplateQuickCreateButton.Click();
+        }
+
+        //Click close button
+        public void ClickWidgetTemplateQuickCreateButtonCloseButton()
+        {
+            WidgetTemplateQuickCreateCloseButton.Click();
+        }
+
+        //Click widget filter button
+        public void ClickWidgetTemplateFilterButton()
+        {
+            WidgetTemplateFilterButton.Click();
+        }
+
+        //Click widget apply filter button
+        public void ClickWidgetTemplateApplyFilterButton()
+        {
+            WidgetTemplateApplyFilterButton.Click();
+        }
+
+        //Click widget cancel filter button
+        public void ClickWidgetTemplateCancelFilterButton()
+        {
+            WidgetTemplateCancelFilterButton.Click();
+        }
+
+        //Check 行为 check box.
+        public void CheckWidgetTemplateCheckBox(string name)
+        {
+            CheckBoxWidgetTemplateInput.CheckInWidgetTemplate(name);
+        }
+
+        //Uncheck 行为 check box.
+        public void UncheckWidgetTemplateCheckBox(string name)
+        {
+            CheckBoxWidgetTemplateInput.UncheckInWidgetTemplate(name);
+        }
+
+        //判断目标对象checkbox 是否check status   
+        public Boolean IsWidgetTemplateChecked(string name)
+        {
+            return CheckBoxWidgetTemplateInput.IsWidgetTemplateChecked(name);
+        }
+
+        //判断目标对象其他checkbox 为 uncheck status   
+        public Boolean IsWidgetTemplateUnChecked(string name)
+        {
+            return CheckBoxWidgetTemplateInput.IsWidgetTemplateUnChecked(name);
+        }
+        //get text for electHierarchyButton
+        public string GetSelectHierarchyButtonText()
+        {
+            return SelectHierarchyButton.GetText();
+        }
+
+        //click electHierarchyButton
+        public void ClickSelectHierarchyButtonText()
+        {
+            SelectHierarchyButton.Click();
+        }
+        public string GetFuncModeConvertTargetButtonText()
+        {
+            return FuncModeConvertTargetButton.GetText();
+        }
+        public string GetUnitTypeButtonText()
+        {
+            return ConvertTargetButton.GetUnitTypeButtonText();
+        }
+
+        public string GetRadioTypeConvertTargetButtonText()
+        {
+            return RadioTypeConvertTargetButton.GetText();
+
+        }
+
+        public string GetCarbonConvertTargetButtonText()
+        {
+            return CarbonConvertTargetButton.GetText();
+
+        }
+
+        public bool IsPeakValleyButtonEnabled()
+        {
+            return PeakValleyButton.IsEnabled();
+
+        }
+        public bool IsPeakValleyButtonPressed()
+        {
+            return PeakValleyButton.IsPressed();
+
+        }
+        public bool IsEnergyDisplayStepMonthButtonPressed()
+        {
+            return EnergyDisplayStepMonthButton.IsPressed();
+
+        }
+
+        //public bool IsSingleCommodityElectricCheckBoxChecked(String name)
+        //{
+        //    return SingleCommodityElectricCheckBox.IsChecked(name);
+        //}
+
+        private Locator GetWidgetTemplateTableLocator(string itemResourceVariable1, string itemResourceVariable2)
+        {
+             string value = string.Format(CheckBoxWidgetTemplateTable.ToString(), itemResourceVariable1, itemResourceVariable2);
+
+            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(value), ByType.XPath);
+        }
+
+        //private Locator GetWidgetTemplateInputLocator(string itemResourceVariable1, string itemResourceVariable2)
+        //{
+        //    return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(CheckBoxWidgetTemplateInput, itemResourceVariable1, itemResourceVariable2)), ByType.XPath);
+        //}
+
+        #endregion
+
     }
 }

@@ -257,7 +257,12 @@ namespace Mento.ScriptCommon.Library.Functions
 
             return EnjoyWidgetNameMin.IsLabelExisted();
         }
+        public bool IsWidgetExistedOnQuickCreateWidget(string name)
+        {
+            Label QuickCreateWidgetNameMin = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelQuickCreateWidgetNameMin, name);
 
+            return QuickCreateWidgetNameMin.IsLabelExisted();
+        }
         public bool IsShareWidgetUnread(string name)
         {
             Label WidgetNameMin = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelWidgetNameMin, name);
@@ -575,6 +580,13 @@ namespace Mento.ScriptCommon.Library.Functions
 
             return OneWidgetNameMin.GetLabelTextValue();
         }
+        public void ClickOnWidgetTemplateField(string name)
+        {
+            Label WidgetField = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelQuickCreateWidgetField, name);
+
+            WidgetField.Click();
+        }
+
 
         public string GetOneDashboardNamePosition(int positionIndex)
         {
@@ -625,6 +637,11 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
 
             ClickOnWidget(name);
+        }
+        //Click widget field in widget template
+        public void ClickWidgetTemplateField(string name)
+        {
+            ClickOnWidgetTemplateField(name);
         }
 
         public void RenameWidgetOpen(string name)

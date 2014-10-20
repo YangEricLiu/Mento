@@ -167,6 +167,11 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.MediumPause();
         }
 
+        public bool IsCustomerExistedInCustomerSelectionDialog(string customerName)
+        {
+            return SelectCustmerMenuButton.IsMenuItemExist(customerName);
+        }
+
         public bool IsTrendDrawnOnWidgetMin()
         {
             return true;

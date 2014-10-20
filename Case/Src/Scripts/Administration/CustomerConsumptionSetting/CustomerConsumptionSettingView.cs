@@ -26,7 +26,7 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
         [SetUp]
         public void CaseSetUp()
         {
-            CustomerManageSetting.NavigateToCustmerSetting();
+            CustomerManageSetting.NavigateToCustomerSetting();
             TimeManager.MediumPause();
         }
 
@@ -46,7 +46,7 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
         public void ViewCustomerConsumptionSetting(CustomerManagementData input)
         {
             //Industry.Select an old existing customer which didn't defined consumption setting for map before.
-            CustomerManageSetting.FocusOnCustomer(input.InputData.Name);
+            CustomerManageSetting.FocusOnCustomer(input.InputData.CommonName);
 
             //Open 'Consumption Setting For Map' (地图页信息) tab.
             CustomerManageSetting.NavigateToCustmerMapPageInfoSetting();
@@ -74,7 +74,7 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
         public void ViewSettedCustomerConsumptionSetting(CustomerManagementData input)
         {
             //Industry.Select a customer which has already defined consumption setting for map successfully.
-            CustomerManageSetting.FocusOnCustomer(input.InputData.Name);
+            CustomerManageSetting.FocusOnCustomer(input.InputData.CommonName);
 
             //Open 'Consumption Setting For Map' (地图页信息) tab.
             CustomerManageSetting.NavigateToCustmerMapPageInfoSetting();

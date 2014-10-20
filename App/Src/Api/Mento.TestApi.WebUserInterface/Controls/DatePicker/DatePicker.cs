@@ -130,7 +130,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 FindChild(locator).Click();
             }
         }
-
+        /// <summary>
+        /// Judge if the Container is enabled /add by Cathy
+        /// </summary>
+        /// <returns>True if the button is enable, false if not </returns>
+        public bool IsEnabled()
+        {
+            return this.SelectInput.Enabled;
+        }
         /// <summary>
         /// Convert string "xxxx-xx-xx" to DateTime
         /// </summary>

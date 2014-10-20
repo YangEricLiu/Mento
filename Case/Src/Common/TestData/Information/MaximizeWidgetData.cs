@@ -11,7 +11,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
     }
 
     public class MaximizeWidgetInput : InputTestDataBase
-    { 
+    {
         public DefaultTimeRange? DefaultTimeRange { get; set; }
         public DashboardInformationList[] DashboardInfo { get; set; }
         public TimeInterval[] TimeIntervalList { get; set; }
@@ -19,6 +19,9 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] newWidgetName { get; set; }
         public string[] Hierarchies { get; set; }
         public string TagName { get; set; }
+        public FilterConditionInfo[] FilterConditionInfo { get; set; }
+        public string[][] HierarchyInfo { get; set; }
+        public string[] WidgetNames { get; set; }
     }
 
     public class MaximizeWidgetOutput : ExpectedTestDataBase
@@ -28,6 +31,13 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] widgetComment { get; set; }
         public string[] invalidMessage { get; set; }
         public string[] messages { get; set; }
+        public string WidgetName { get; set; }
+        public string[] WidgetNames { get; set; }
+        public string[] UnitTypeValue { get; set; }
+        public string[] FuncTypeValue { get; set; }
+        public string[] RadioTypeValue { get; set; }
+        public string[] CarbonConvertTypeValue { get; set; }
+
     }
 
 
@@ -51,4 +61,9 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string EndTime { get; set; }
     }
 
+    public class FilterConditionInfo
+    {
+        public string[] FilterPropertiesName { get; set; }
+        public string[] TargetObject { get; set; }
+    }
 }

@@ -36,6 +36,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region CheckBox of Widget template
+        public static CheckBoxField WidgetTemplateTableCheckBox = GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxWidgetTemplateTable);
+        public static CheckBoxField WidgetTemplateInputCheckBox = GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxWidgetTemplateInput);
+
+        #endregion
+
 
     }
 }

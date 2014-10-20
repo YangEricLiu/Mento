@@ -258,9 +258,9 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-            TimeManager.MediumPause();
-            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            //CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            //TimeManager.MediumPause();
+            //CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Check Warning message 
             Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.StepMessage[0]));
@@ -268,10 +268,10 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            //Check Commodity=煤 is uncheck.
-            Assert.AreEqual(true, CostUsage.IsCommodityChecked(input.InputData.commodityNames[0]));
-            Assert.AreEqual(false, CostUsage.IsCommodityChecked(input.InputData.commodityNames[1]));
-            Assert.AreEqual(false, CostUsage.IsCommodityChecked(input.InputData.commodityNames[2]));
+            //Check display step is not raw but still day. 
+            Assert.AreEqual(true, CostUsage.IsDisplayStepPressed(DisplayStep.Day));
+            Assert.AreEqual(false, CostUsage.IsDisplayStepPressed(DisplayStep.Hour));
+            Assert.AreEqual(false, CostUsage.IsDisplayStepPressed(DisplayStep.Raw));
 
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;
@@ -348,9 +348,6 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.SelectCommodity(input.InputData.commodityNames[2]);
             EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-            CostUsage.ClickDisplayStep(DisplayStep.Raw);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 

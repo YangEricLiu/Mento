@@ -47,6 +47,17 @@ namespace Mento.ScriptCommon.Library
                 return _ContactUsPage;
             }
         }
+        private static CommodifyUomSetting _CommodifyUomSetting;
+        public static CommodifyUomSetting CommodifyUomSetting
+        {
+            get
+            {
+                if (_CommodifyUomSetting == null)
+                    _CommodifyUomSetting = new CommodifyUomSetting();
+
+                return _CommodifyUomSetting;
+            }
+        }
 
         private static Navigator _Navigator;
         public static Navigator Navigator

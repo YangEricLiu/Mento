@@ -168,7 +168,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField CustomerNameTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerName); }}
         public static TextField CustomercodeTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerCode); }}
         public static TextField CustomerAddressTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerAddress); }}
-        public static TextField CustomerManagerTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerManager); }}
+        public static TextField CustomerResponsiblePersonTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerResponsiblePerson); } }
         public static TextField CustomerTelephoneTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerTelephone); }}
         public static TextField CustomerEmailTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerEmail); }}
         public static TextField CustomerCommentTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldCustomerComment); }}

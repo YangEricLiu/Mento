@@ -28,19 +28,24 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SaveCustomerMapProperty = JazzButton.SaveCustomerMapPropertyButton;
         private static Button CancelCustomerMapProperty = JazzButton.CancelCustomerMapPropertyButton;
         private static Button ModifyCustomerMapProperty = JazzButton.ModifyCustomerMapPropertyButton;
+        private static Button CancelCustomer = JazzButton.CancelCustomerButton;
+        private static Button DeleteCustomer = JazzButton.DeleteCustomerButton;
+        private static Button UpdateCustomer = JazzButton.UpdateCustomerButton;
+        private static Grid CustomersList = JazzGrid.CustomerList;
 
         private static TabButton MapPagePropertyTab = JazzButton.MapPagePropertyTabButton;
         private static TabButton BasicPropertyTab = JazzButton.BasicPropertyTabButton;
 
         private static TextField CustomerName = JazzTextField.CustomerNameTextField;
-        private static TextField Customercode = JazzTextField.CustomercodeTextField;
+        private static TextField CustomerCode = JazzTextField.CustomercodeTextField;
         private static TextField CustomerAddress = JazzTextField.CustomerAddressTextField;
-        private static TextField CustomerManager = JazzTextField.CustomerManagerTextField;
+        private static TextField CustomerResponsiblePerson = JazzTextField.CustomerResponsiblePersonTextField;
         private static TextField CustomerTelephone = JazzTextField.CustomerTelephoneTextField;
-        private static TextField CustomerEmail = JazzTextField.CustomerCommentTextField;
+        private static TextField CustomerEmail = JazzTextField.CustomerEmailTextField;
         private static TextField CustomerComment = JazzTextField.CustomerCommentTextField;
         private static DatePicker CustomerOperationTime = JazzDatePicker.OperationTimeDatePicker;
         private static TextField UploadLogoTextField = JazzTextField.UploadLogoTextField;
+        private static Container CustomerAdminContainer = JazzContainer.ContainerCustomerAdmin;
 
         private static Grid CustomerList = JazzGrid.CustomerList;
 
@@ -53,11 +58,20 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region Common
-        public void NavigateToCustmerSetting()
+        public void NavigateToCustomerSetting()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CustomerManagementCustomer);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
+        }
+        /// <summary>
+        /// Click Modify button to update add user
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void ClickUpdateCustomer()
+        {
+            UpdateCustomer.Click();
         }
 
         public void NavigateToCustmerBasicInfoSetting()
@@ -93,10 +107,31 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
         }
 
-        public void FocusOnCustomer(string customerName)
+        public bool FocusOnCustomer(string customerName)
         {
-            CustomerList.FocusOnRow(1,customerName);
+            try
+            {
+                CustomerList.FocusOnRow(1, customerName);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
+        public Boolean FocusOnUser(string customerName)
+        {
+            try
+            {
+                CustomerList.FocusOnRow(1, customerName);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
 
         public void CheckMapInformation(string mapInfoType)
         {
@@ -150,22 +185,177 @@ namespace Mento.ScriptCommon.Library.Functions
             UploadLogoTextField.Append(picturePath);
         }
 
-        public void FillInCustomerInfo(CustomerInputData　inputData)
+        public void FillInCustomerInfo(CustomerInputData inputData)
         {
-            CustomerName.Fill(inputData.Name);
-            Customercode.Fill(inputData.code);
-            //UploadLogoPicture(inputData.LogoPath);
+            CustomerName.Fill(inputData.CommonName);
+            CustomerCode.Fill(inputData.Code);
+            UploadLogoPicture(inputData.LogoPath);
             CustomerAddress.Fill(inputData.Address);
-            CustomerManager.Fill(inputData.ResponsiblePerson);
+            CustomerResponsiblePerson.Fill(inputData.RealName);
             CustomerTelephone.Fill(inputData.Telephone);
             CustomerEmail.Fill(inputData.Email);
             CustomerOperationTime.SelectDateItem(inputData.OperationTime);
-            CustomerComment.Fill(inputData.Comment);
+            CustomerComment.Fill(inputData.Comments);
         }
+
 
         public void ClickSaveButton()
         {
             SaveCustomer.Click();
+        }
+        /// <summary>
+        /// The button is for delete.
+        /// </summary>
+        public void ClickDeleteButton()
+        {
+            DeleteCustomer.Click();
+        }
+
+        /// <summary>
+        /// The button is for delete in message box.
+        /// </summary>
+        public void ClickMsgBoxDeleteButton()
+        {
+            JazzMessageBox.MessageBox.Delete();
+        }
+
+        public void ClickMsgBoxGiveUpButton()
+        {
+            JazzMessageBox.MessageBox.GiveUp();
+        }
+        public void ClickMsgBoxCloseButton()
+        {
+            JazzMessageBox.MessageBox.Close();
+        }
+
+
+        /// <summary>
+        /// The button is for Cancel.
+        /// </summary>
+        public void ClickCancelButton()
+        {
+            CancelCustomer.Click();
+        }
+        /// <summary>
+        /// Navigate to EnergyView Page
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void NavigatorToEnergyView()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
+            TimeManager.ShortPause();
+        }
+
+        #endregion
+
+        #region item operation
+        /// <summary>
+        /// Input name, realname comments etc. of all user field
+        /// </summary>
+        /// <param name="input">Test data</param>
+        /// <returns></returns>
+        /// 
+        public void FillInName(string name)
+        {
+            CustomerName.Fill(name);
+        }
+
+        public void FillInCode(string code)
+        {
+            CustomerCode.Fill(code);
+        }
+
+        public void FillInAddress(string address)
+        {
+            CustomerAddress.Fill(address);
+        }
+
+        public void FillInResponsiblePerson(string responsiblePerson)
+        {
+            CustomerResponsiblePerson.Fill(responsiblePerson);
+        }
+
+        public void FillInTelephone(string telephone)
+        {
+            CustomerTelephone.Fill(telephone);
+        }
+
+        public void FillInEmail(string email)
+        {
+            CustomerEmail.Fill(email);
+        }
+
+        public void FillInComments(string comments)
+        {
+            CustomerComment.Fill(comments);
+        }
+        #endregion
+
+        #region get value
+        /// <summary>
+        /// Get name expected value
+        /// </summary>
+        /// <param name = "name">name key</param>
+        /// <returns>Name value</returns>
+        public string GetNameValue()
+        {
+            return CustomerName.GetValue();
+        }
+
+        /// <summary>
+        /// verify whether the customer exist the user list
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean IsCustomerOnList(string customerName)
+        {
+            return CustomersList.IsRowExist(1, customerName);
+        }
+
+        public string GetCodeValue()
+        {
+            return CustomerCode.GetValue();
+        }
+
+        public string GetAddressValue()
+        {
+            return CustomerAddress.GetValue();
+        }
+
+        public string GetResponsiblePersonValue()
+        {
+            return CustomerResponsiblePerson.GetValue();
+        }
+
+
+        public string GetTelephoneValue()
+        {
+            return CustomerTelephone.GetValue();
+        }
+
+        public string GetEmailValue()
+        {
+            return CustomerEmail.GetValue();
+        }
+
+        /// <summary>
+        /// return Comment value
+        /// </summary>
+        /// <returns></returns>
+        public string GetCommentsValue()
+        {
+            return CustomerComment.GetValue();
+        }
+
+        /// <summary>
+        /// return CustomerAdmin value
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        public string GetCustomerAdminTexts()
+        {
+            return CustomerAdminContainer.GetContainerTexts();
         }
         #endregion
 
@@ -322,5 +512,93 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return SaveCustomerMapProperty.IsDisplayed();
         }
+        /// <summary>
+        /// Verfiy Comment test field hidden.
+        /// </summary>
+        public Boolean IsCustomerCommentHidden()
+        {
+            return CustomerComment.IsTextFieldHidden();
+        }
+
+        /// <summary>
+        /// Verfiy CustomerAdminContainer display.
+        /// </summary>
+        public Boolean IsCustomerAdminDisplayed()
+        {
+            return CustomerAdminContainer.IsMapInfoContainerDisplayed();
+        }
+
+        /// <summary>
+        /// Verfiy Save button display.
+        /// </summary>
+
+        public bool IsSaveButtonDisplayed()
+        {
+            return SaveCustomer.IsDisplayed();
+        }
+
+        /// <summary>
+        /// Verfiy Operationtime display.
+        /// </summary>
+
+        public bool IsOperationtimeEnable()
+        {
+            return CustomerOperationTime.IsEnabled();
+        }
+
+        /// <summary>
+        /// Verfiy customer name error message display correct.
+        /// </summary>
+
+        public Boolean IsNameInvalidMsgCorrect(CustomerExpectedData output)
+        {
+            return CustomerName.GetInvalidTips().Contains(output.CommonName);
+        }
+
+        /// <summary>
+        /// Verfiy customer name error message display correct.
+        /// </summary>
+
+        public Boolean IsCodeInvalidMsgCorrect(CustomerExpectedData output)
+        {
+            return CustomerCode.GetInvalidTips().Contains(output.Code);
+        }
+
+        /// <summary>
+        /// Verfiy customer name error message display correct.
+        /// </summary>
+
+        public Boolean IsAddressInvalidMsgCorrect(CustomerExpectedData output)
+        {
+            return CustomerAddress.GetInvalidTips().Contains(output.Address);
+        }
+
+        /// <summary>
+        /// Verfiy customer name error message display correct.
+        /// </summary>
+
+        public Boolean IsResponsiblePersonInvalidMsgCorrect(CustomerExpectedData output)
+        {
+            return CustomerResponsiblePerson.GetInvalidTips().Contains(output.RealName);
+        }
+
+        /// <summary>
+        /// Verfiy customer name error message display correct.
+        /// </summary>
+
+        public Boolean IsTelephoneInvalidMsgCorrect(CustomerExpectedData output)
+        {
+            return CustomerTelephone.GetInvalidTips().Contains(output.Telephone);
+        }
+
+        /// <summary>
+        /// Verfiy customer name error message display correct.
+        /// </summary>
+
+        public Boolean IsEmailInvalidMsgCorrect(CustomerExpectedData output)
+        {
+            return CustomerEmail.GetInvalidTips().Contains(output.Email);
+        }
+        
     }
 }

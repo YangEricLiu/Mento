@@ -99,6 +99,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region CustomerMapInfo
         public static Container ContainerCustomerMapInfo{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerCustomerMapInfo);}}
+        public static Container ContainerCustomerAdmin = GetControl<Container>(JazzControlLocatorKey.ContainerCustomerAdmin);
+        
         #endregion
 
         #region BenchMark

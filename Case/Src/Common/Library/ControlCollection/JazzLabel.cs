@@ -99,6 +99,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Label AnnotationTextLabel{ get { return GetControl<Label>(JazzControlLocatorKey.LabelAnnotationText);}}
         public static Label MaxWidgetCommentLabel{ get { return GetControl<Label>(JazzControlLocatorKey.LabelMaxWidgetComment);}}
         public static Label SaveDashboardDialogHierarchyLabel{ get { return GetControl<Label>(JazzControlLocatorKey.LabelSaveDashboardDialogHierarchy);}}
+
+        public static Label QuickCreateWidgetNameMinLabel = GetControl<Label>(JazzControlLocatorKey.LabelQuickCreateWidgetNameMin);
+        public static Label QuickCreateWidgetFieldLabel = GetControl<Label>(JazzControlLocatorKey.LabelQuickCreateWidgetField);
+        public static Label WidgetTemplateNameMinLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetTemplateNameMin);
+          
         #endregion
 
         #region Energy View

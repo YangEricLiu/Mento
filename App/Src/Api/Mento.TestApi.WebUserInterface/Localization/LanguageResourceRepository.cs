@@ -29,10 +29,9 @@ namespace Mento.TestApi.WebUserInterface
                     var stringsResource = ParseStringResource();
                     var appResource = ParseAppResource();
                     var databaseResource = ParseDatabaseResource();
+                    var extResource = ParseExtResource();
 
-                    //_ResourceDictionary = ParseStringResource().Union(ParseDataResource()).ToDictionary(item => item.Key, item => item.Value);
-
-                    _ResourceDictionary = stringsResource.Union(appResource).Union(databaseResource).ToDictionary(item => item.Key, item => item.Value);
+                    _ResourceDictionary = stringsResource.Union(appResource).Union(databaseResource).Union(extResource).ToDictionary(item => item.Key, item => item.Value);
                 }
 
                 return _ResourceDictionary;
@@ -233,6 +232,13 @@ namespace Mento.TestApi.WebUserInterface
             //return lineList;
         }
 
+        private static Dictionary<string, string> ParseExtResource()
+        {
+            string filePath = Path.Combine(GetResourceFileDirectory(), Project.LocalizationDatabaseResourceName);
+
+            return ExtLanguageResourceLoader.GetExtLanguageResource(filePath);
+        }
+
         private static string GetResourceFileDirectory()
         {
             if (ExecutionContext.Language.HasValue)
@@ -254,6 +260,228 @@ namespace Mento.TestApi.WebUserInterface
             else
             {
                 throw new ApiException("Execution context was not initialize correctly, parameter 'language' is null.");
+            }
+        }
+    }
+
+    public static class ExtLanguageResourceLoader
+    {
+        public static Dictionary<string, string> GetExtLanguageResource(string resourceFullName)
+        {
+            Dictionary<string, string> langages = new Dictionary<string, string>();
+
+            using (var reader = new StreamReader(resourceFullName))
+            {
+                Stack<String> stack = new Stack<string>();
+
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine().Trim();
+
+                    if (IsIgnoreLine(line))
+                        continue;
+
+                    //if a line has a start curly brace, push stack, if a line has an end curly brace pop stack & calculate what's in the package
+                    string cleanLine = Regex.Replace(line, "\".+\"", "");
+
+                    PushKey(stack, line, cleanLine);
+
+                    PopKey(stack, cleanLine);
+
+                    if (!cleanLine.Contains("{") && !cleanLine.Contains("}"))
+                    {
+                        if (stack.Count > 1)
+                        {
+                            if (IsDropUnneedLine(stack, line))
+                                continue;
+
+                            string languageKey = ConstructLanguageKey(stack);
+
+                            KeyValuePair<string, string> property = GetProperty(line);
+
+                            langages.Add(languageKey + property.Key, property.Value);
+                        }
+                    }
+                }
+
+                if (stack.Count > 0)
+                {
+                    throw new Exception("Stack is not empty!");
+                }
+            }
+
+            return langages;
+        }
+
+        private static bool IsIgnoreLine(string line)
+        {
+            bool isInBlockComment = false;
+
+            if (String.IsNullOrEmpty(line)) //ignore empty lines
+                return true;
+
+            if (line.StartsWith("//")) //ignore simple comments
+                return true;
+
+            if (line.StartsWith("/*"))
+            { //start of block comments
+                isInBlockComment = true;
+            }
+            if (line.EndsWith("*/"))
+            { //end of block comments
+                isInBlockComment = false;
+                //ignore this line too
+                return true;
+            }
+
+            if (isInBlockComment) //ignore block comments
+                return true;
+
+            return false;
+        }
+
+        private static void PushKey(Stack<string> stack, string line, string cleanLine)
+        {
+            if (cleanLine.Contains("{"))
+            {
+                string stackKey = line;
+                if (line.StartsWith("Ext.onReady"))
+                {
+                    stackKey = "Root";
+                }
+                else if (line.StartsWith("if"))
+                {
+                    stackKey = "if";
+                }
+                else if (line.StartsWith("Ext.define"))
+                {
+                    stackKey = line.Split('"')[1];
+                }
+                else if (line.StartsWith("Ext.apply"))
+                {
+                    stackKey = stack.Peek() == "if" ? line.Split('(')[1].Split(',')[0] : "{";
+                }
+                else if (Regex.Match(line, ".+:.?{").Success)
+                {
+                    stackKey = line.Split(':')[0].Trim();
+                }
+                else if (Regex.Match(line, ".+=.?{").Success)
+                {
+                    stackKey = line.Split('=')[0].Trim();
+                }
+
+                stack.Push(stackKey);
+            }
+        }
+
+        private static void PopKey(Stack<string> stack, string cleanLine)
+        {
+            if (cleanLine.Contains("}"))
+            {
+                string result = stack.Pop();
+            }
+        }
+
+        private static bool IsDropUnneedLine(Stack<string> stack, string line)
+        {
+            return line.StartsWith("override") || stack.Peek().StartsWith("parseCodes") || Regex.Match(stack.Peek(), @"function.?\(.*\)").Success;
+        }
+
+        private static string ConstructLanguageKey(Stack<string> stack)
+        {
+            string languageKey = String.Empty;
+
+            for (int i = 0; i < stack.Count; i++)
+            {
+                string element = stack.ElementAt<string>(stack.Count - i - 1);
+                if (element == "Root" || element == "if" || element == "{")
+                    continue;
+
+                languageKey += stack.ElementAt<string>(stack.Count - i - 1) + ".";
+            }
+
+            return languageKey.Replace(".locale.zh_CN", "").Replace(".locale.en", "");
+        }
+
+        private static KeyValuePair<string, string> GetProperty(string line)
+        {
+            string propertyName = String.Empty, propertyValue = String.Empty;
+
+            if (line.Contains("=") && line.Contains(";"))
+            {
+                var equalSignIndex = line.IndexOf('=');
+                propertyName = line.Substring(0, equalSignIndex);
+                propertyValue = line.Substring(equalSignIndex + 1).Trim().TrimEnd(';');
+            }
+            else
+            {
+                var match2 = Regex.Match(line, @"(.+?):(.+)(,)?");
+                if (match2.Success)
+                {
+                    propertyName = match2.Groups[1].Value.Trim();
+                    propertyValue = match2.Groups[2].Value.Trim();
+                }
+            }
+
+            propertyValue = propertyValue.TrimStart('"');
+            propertyValue = propertyValue.TrimEnd('"');
+
+            return new KeyValuePair<string, string>(propertyName, propertyValue);
+        }
+
+        [Obsolete("Use 'GetExtLanguageResource' instead")]
+        public static void ParseLanguageResource()
+        {
+            using (var reader = new StreamReader("locale/ext-lang-zh_CN.js"))
+            {
+                int status = 0; // 0: not in block, 1: in block
+                string temp = "";
+                Dictionary<string, string> langages = new Dictionary<string, string>();
+                string className = String.Empty;
+
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine().Trim();
+
+                    if (line.StartsWith("Ext.define"))
+                    {
+                        temp = line;
+                        status = 1;
+                        continue;
+                    }
+                    if (status == 1 && line.EndsWith("}"))
+                    {
+                        Console.WriteLine("");
+                        //Console.WriteLine("End of '{0}'", temp);
+                        status = 0;
+                    }
+
+                    if (status == 1) // in block, starts to record the properties
+                    {
+                        Match match = Regex.Match(line, @"(.+)\:(.+)(\,)?");
+                        if (match.Success)
+                        {
+                            if (line.StartsWith("override"))
+                            {
+                                className = line.Split('"')[1];
+                            }
+                            else
+                            {
+                                if (!String.IsNullOrEmpty(className) && !line.Contains("function ("))
+                                {
+                                    string propertyName = match.Groups[1].Value.Trim();
+                                    string propertyVaue = match.Groups[2].Value.Trim();
+
+                                    Console.WriteLine("{0}.{1}:{2}", className, propertyName, propertyVaue);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("WARN:Not a valid property!");
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

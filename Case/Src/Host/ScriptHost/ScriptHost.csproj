@@ -146,7 +146,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="IEDriverServer.exe" />
+    <Content Include="Resource\cn\ext-lang.js" />
     <Content Include="Resource\cn\string.js" />
+    <Content Include="Resource\en\ext-lang.js" />
     <Content Include="Resource\en\string.js" />
     <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_schema_data.sql" />
     <Content Include="SqlScript\TearDown\14dbo_Trigger.sql" />

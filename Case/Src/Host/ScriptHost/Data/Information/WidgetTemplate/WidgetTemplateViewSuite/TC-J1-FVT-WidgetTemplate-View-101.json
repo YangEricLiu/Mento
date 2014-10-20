@@ -1,0 +1,82 @@
+﻿[
+	{
+		"InputData":
+		{
+			
+		},
+		"ExpectedData":
+		{
+			"WidgetName": "$@Setting.Template.Radio",
+		}
+	},
+	{
+		"InputData":
+		{
+			
+		},
+		"ExpectedData":
+		{
+			"WidgetName": "$@Setting.Template.Cost",
+		}
+	},
+	{
+		"InputData":
+		{
+			
+		},
+		"ExpectedData":
+		{
+			"WidgetName": "$@Setting.Template.PeakValley",
+		}
+	},
+	{
+		"InputData":
+		{
+			
+		},
+		"ExpectedData":
+		{
+			"WidgetName": "$@Setting.Template.Carbon",
+		}
+	},
+	{
+		"InputData":
+		{
+			
+		},
+		"ExpectedData":
+		{
+			"WidgetName": "$@Setting.Template.PerMCost",
+		}
+	},
+	{
+		"InputData":
+		{
+			
+		},
+		"ExpectedData":
+		{
+			"WidgetName": "$@Setting.Template.Labelling",
+		}
+	},
+	{
+		"InputData":
+		{
+			
+		},
+		"ExpectedData":
+		{
+			"WidgetName": "$@Setting.Template.Ranking",
+		}
+	},
+	{
+		"InputData":
+		{
+			
+		},
+		"ExpectedData":
+		{
+			"WidgetName": "$@Setting.Template.Max",
+		}
+	},
+]

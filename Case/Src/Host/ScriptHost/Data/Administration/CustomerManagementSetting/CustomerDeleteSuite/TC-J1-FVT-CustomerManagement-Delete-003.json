@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+		    "CommonName":"custC",	
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"custD",
+			"Message":"$@Common.Label.ConfirmDelete|(custA),(),()@$ $@Common.Button.Delete@$ $@Common.Button.Cancel@$",
+		}
+	}
+]

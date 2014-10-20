@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{
+		    "CommonName":"CustomerWithoutUser",	
+		},
+		"ExpectedData":
+		{
+			"Message":"$@Common.Label.ConfirmDelete|(CustomerWithoutUser),(),()@$ $@Common.Button.Delete@$ $@Common.Button.Cancel@$",
+		}
+	}
+]

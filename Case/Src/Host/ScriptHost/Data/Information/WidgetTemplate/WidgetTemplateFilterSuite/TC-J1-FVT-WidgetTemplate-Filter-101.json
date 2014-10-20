@@ -1,0 +1,31 @@
+﻿[
+	{
+		"InputData":
+		{
+		      "FilterConditionInfo":[{
+				"FilterPropertiesName":["$@HomePage.Label.Target"],
+				"TargetObject":["管理", "建筑", "设备", "行为"],
+			},
+			{
+				"FilterPropertiesName":["$@HomePage.Label.FunctionType"],
+				"TargetObject":["能效分析", "碳排放","成本","单位指标","时段能耗比","能效标识","集团排名"],
+			},
+			{
+				"FilterPropertiesName":["$@HomePage.Label.EnergyObject"],
+				"TargetObject":["能源消耗", "碳排放","成本帐单"],
+			},
+			{
+				"FilterPropertiesName":["$@HomePage.Label.ChartType"],
+				"TargetObject":["折线图", "柱状图","能效标识图"],
+			},
+			{
+				"FilterPropertiesName":["$@HomePage.Label.TimeRange"],
+				"TargetObject":["按年", "按月"],
+			}],
+		},
+		"ExpectedData":
+		{
+			  "WidgetNames":["$@Setting.Template.Radio", "$@Setting.Template.Cost", "$@Setting.Template.PeakValley", "$@Setting.Template.Carbon", "$@Setting.Template.PerMCost", "$@Setting.Template.Labelling", "$@Setting.Template.Ranking","$@Setting.Template.Max"],			
+		}
+	}
+]

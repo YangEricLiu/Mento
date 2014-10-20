@@ -1,0 +1,23 @@
+﻿[
+	{
+		"InputData":
+		{	
+		    "CommonName":"CustomerForModifyNotRequiredFields1",
+		    "Comments":"备注abcABC012589_  ()-[]{}#&,;.~+%!@$^&*",
+		},
+		"ExpectedData":
+		{	
+			"Comments":"备注abcABC012589_  ()-[]{}#&,;.~+%!@$^&*",
+		}
+	},
+	{
+		"InputData":
+		{	
+		    "CommonName":"CustomerForModifyNotRequiredFields2",
+		    "Comments":"",
+		},
+		"ExpectedData":
+		{	
+	    }
+	}
+]

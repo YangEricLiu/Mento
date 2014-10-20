@@ -1,0 +1,22 @@
+﻿[
+	{
+		"InputData":
+		{
+		    "RealName":"",
+			"CommonName":"",
+			"Address":"",
+			"Email":"",
+			"Telephone":"",
+			"Code":"",
+		},
+		"ExpectedData":
+		{
+		    "RealName":"$@Common.Label.MandatoryEmptyError",
+			"CommonName":"$@Common.Label.MandatoryEmptyError",
+			"Address":"$@Common.Label.MandatoryEmptyError",
+			"Email":"$@Common.Label.MandatoryEmptyError",
+			"Telephone":"$@Common.Label.MandatoryEmptyError",
+			"Code":"$@Common.Label.MandatoryEmptyError",
+		}
+	}
+]

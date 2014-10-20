@@ -1,0 +1,14 @@
+﻿[
+	{
+		"InputData":
+		{
+		    "CommonName":"CustomerFor重名验证",
+			"Code":"Cust_1",
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"$@Common.Label.DuplicatedName",
+			"Code":"$@Message.M11351",
+		}
+	}
+]

@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+		    "CommonName":"custA",	
+		},
+		"ExpectedData":
+		{
+		    "CommonName":"custB",
+			"Message":"$@Message.UnassociateCustomerLogout@$ $@Common.Button.Confirm@$",
+		}
+	}
+]

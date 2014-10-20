@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+		    "CommonName":"NewName",
+			"Code":"NewCode",	
+		},
+		"ExpectedData":
+		{
+			"RealName":"aa",
+			"CommonName":"CustomerForModifyCancelled",
+			"Address":"aa",
+			"Email":"1@1.com",
+			"Telephone":"0",
+			"Code":"aa",
+			"Comments":"aa",
+		}
+	}
+]

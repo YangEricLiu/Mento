@@ -1,0 +1,25 @@
+﻿[
+	{
+		"InputData":
+		{
+			"RealName":"Wh +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F)[{]#&~+%}000",
+			"CommonName":"m文CAPITALhars 1234_F中文CAPITALhm文CAPITALhars 1234_F中文CAPITALhm文CAPITALhars 1234_F中文CAPITALh)[{]#&~+%}000",
+			"Address":"望京东路1_2xxxabcABC012589_  ()-[]{}#&,;.~+%!@$^&* 123123467890123456789123456789123456789012334_200Char000",
+			"Email":"1.1.1.1.1.1.1@2-2.com",
+			"Telephone":"0",
+			"Code":"ch +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F)[{]#&~+%}000",
+			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F000"	
+		},
+		"ExpectedData":
+		{
+			"RealName":"Wh +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F)[{]#&~+%}",
+			"CommonName":"m文CAPITALhars 1234_F中文CAPITALhm文CAPITALhars 1234_F中文CAPITALhm文CAPITALhars 1234_F中文CAPITALh)[{]#&~+%}",
+			"Address":"望京东路1_2xxxabcABC012589_  ()-[]{}#&,;.~+%!^&* 123123467890123456789123456789123456789012334_200Char00",
+			"Email":"1.1.1.1.1.1.1@2-2.com",
+			"Telephone":"0",
+			"Code":"ch +-.#&_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_Fchars123_F)[{]#&~+%}",
+			"Comments":"汉字CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F中文CAPITALhars 1234_F",
+			"CustomerAdmin":"amber，oscar"
+		}
+	}
+]

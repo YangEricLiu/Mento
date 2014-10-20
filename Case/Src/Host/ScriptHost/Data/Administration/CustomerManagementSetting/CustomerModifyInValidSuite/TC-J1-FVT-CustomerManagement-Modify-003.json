@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{
+		    "RealName":"!",
+			"CommonName":"!",
+			"Email":"!",
+			"Telephone":"!",
+			"Code":"!",
+		},
+		"ExpectedData":
+		{
+		    "RealName":"$@Common.Label.PersonNameRegexError",
+			"CommonName":"$@Common.Label.CustomerNameRegexError",
+			"Email":"$@Common.Label.EmailRegexError",
+			"Telephone":"$@Common.Label.TelephoneRegexError",
+			"Code":"$@Common.Label.CodeRegexError",
+		}
+	}
+]

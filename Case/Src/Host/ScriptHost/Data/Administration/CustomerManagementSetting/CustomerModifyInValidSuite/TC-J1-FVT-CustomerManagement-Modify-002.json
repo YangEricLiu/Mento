@@ -1,0 +1,29 @@
+﻿[
+	{
+		"InputData":
+		{
+		    "CommonName":"CustomerForFieldsNotEditable1",  
+		},
+		"ExpectedData":
+		{	
+		}
+	},
+	{
+		"InputData":
+		{
+		    "CommonName":"CustomerForFieldsNotEditable2",
+		},
+		"ExpectedData":
+		{
+		}
+	},
+	{
+		"InputData":
+		{
+		    "CommonName":"CustomerForFieldsNotEditable3",
+		},
+		"ExpectedData":
+		{
+		}
+	}
+]

@@ -572,6 +572,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonMyShareWidgetMaximize = "ButtonMyShareWidgetMaximize";
         public static string ButtonMyShareWidgetShare = "ButtonMyShareWidgetShare";
         public static string ButtonMaxWidgetRightComment = "ButtonMaxWidgetRightComment";
+
+        public static string ButtonWidgetTemplateQuickCreate = "WidgetTemplateQuickCreateButton";
+        public static string ButtonWidgetTemplateQuickCreateClose = "WidgetTemplateQuickCreateCloseButton";
+        public static string ButtonWidgetTemplateFilter = "WidgetTemplateFilterButton";
+        public static string ButtonWidgetTemplateApplyFilter = "WidgetTemplateApplyFilterButton";
+        public static string ButtonWidgetTemplateCancelFilter = "WidgetTemplateCancelFilterButton";
         #endregion
 
         #endregion
@@ -1167,6 +1173,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string CheckBoxFieldCustomerMapProperty = "CheckBoxFieldCustomerMapProperty";
 
         public static string CheckBoxPtagIsAccumulated = "CheckBoxPtagIsAccumulated";
+
+        public static string CheckBoxWidgetTemplateTable = "CheckBoxWidgetTemplateTable";
+        public static string CheckBoxWidgetTemplateInput = "CheckBoxWidgetTemplateInput";
         #endregion
 
         #region Label
@@ -1263,6 +1272,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelMyShareWidgetShareUser = "LabelMyShareWidgetShareUser";
 
         public static string LabelSaveDashboardDialogHierarchy = "LabelSaveDashboardDialogHierarchy";
+        public static string LabelQuickCreateWidgetNameMin = "LabelQuickCreateWidgetNameMin";
+        public static string LabelWidgetTemplateNameMin = "LabelWidgetTemplateNameMin";
+        public static string LabelQuickCreateWidgetField = "LabelQuickCreateWidgetField";
         #endregion
 
         #region Energy View

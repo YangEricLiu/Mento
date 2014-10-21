@@ -1323,7 +1323,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static LinkButton TOUPulsePeakPropertyAddMoreRangesButton 
         {
             get { return  GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonTOUPulsePeakPropertyAddMoreRanges);  }
-        }      
+        }
+        public static LinkButton NotConfigPeakValleyMessageCloseButton
+        {
+            get { return GetControl<LinkButton>(JazzControlLocatorKey.ButtonNotConfigPeakValleyMessageClose); }
+        }   
         #endregion
 
         #region Customer settings buttons

@@ -22,6 +22,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public FilterConditionInfo[] FilterConditionInfo { get; set; }
         public string[][] HierarchyInfo { get; set; }
         public string[] WidgetNames { get; set; }
+        public string[] MoreMenuItems { get; set; }
     }
 
     public class MaximizeWidgetOutput : ExpectedTestDataBase

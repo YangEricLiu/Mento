@@ -6,6 +6,13 @@
 			["CommodityTestCustomer", "org1"],["NancyCostCustomer2","组织A", "园区A", "楼宇B"],["NancyCostCustomer2","组织A", "园区A", "楼宇A"],,["NancyCostCustomer2","组织B", "园区C", "楼宇F"]],
 			"WidgetNames":["$@Setting.Template.Radio", "$@Setting.Template.Cost", "$@Setting.Template.PeakValley", "$@Setting.Template.Carbon", "$@Setting.Template.PerMCost", "$@Setting.Template.Labelling", "$@Setting.Template.Ranking","$@Setting.Template.Max"],	
 		    "TagName":"BBV1Root",
+			"MoreMenuItems":[[$@Common.Button.DefaultDate],[$@Common.Button.ShowCalendar]],
+			"DashboardInfo":[{
+				"WigetNames":["$@EM.Labeling.ViewLabeling"]
+				"HierarchyName":["NancyCostCustomer2","组织A", "园区A", "楼宇B"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"峰谷展示1",
+			},
 		},
 		"ExpectedData":
 		{

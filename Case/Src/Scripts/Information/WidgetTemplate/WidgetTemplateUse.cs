@@ -135,7 +135,7 @@ namespace Mento.Script.Information.WidgetTemplate
 
 
             //年逐月电峰谷用电成本 with config TOU building
-            //omePagePanel.SelectCustomer("NancyCostCustomer2");
+            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
             //Widget.NavigateToAllDashboard();
             //TimeManager.MediumPause();
             //TimeManager.LongPause();
@@ -154,66 +154,92 @@ namespace Mento.Script.Information.WidgetTemplate
             //Assert.IsTrue(costPanel.IsColumnChartDrawn());
             //TimeManager.LongPause();
 
-            //年逐月电峰谷用电成本 without config TOU building
+            ////年逐月电峰谷用电成本 without config TOU building
+            //Widget.NavigateToAllDashboard();
+            //TimeManager.MediumPause();
+            //TimeManager.LongPause();
+            //TimeManager.LongPause();
+            //HomePagePanel.SelectHierarchyNode(hierarchy[3]);
+            //TimeManager.LongPause();
+            //Widget.ClickWidgetTemplateQuickCreateButton();
+            //HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[2]);
+            //TimeManager.LongPause();
+            //TimeManager.LongPause();
+            //TimeManager.LongPause();
+            //Assert.IsTrue(Widget.IsPopMsgCorrect(input.ExpectedData.messages[1]));
+            //Widget.ClickNotConfigPeakValleyMessageCloseButton();
+            //Assert.IsFalse(costPanel.IsCommodityChecked(input.ExpectedData.CommodityValue[0]));
+            //Assert.IsFalse(Widget.IsPeakValleyButtonEnabled());
+
+            ////年逐月电峰谷用电成本 no electricity
+            //Widget.NavigateToAllDashboard();
+            //TimeManager.MediumPause();
+            //TimeManager.LongPause();
+            //TimeManager.LongPause();
+            //HomePagePanel.SelectHierarchyNode(hierarchy[4]);
+            //TimeManager.LongPause();
+            //Widget.ClickWidgetTemplateQuickCreateButton();
+            //HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[2]);
+            //TimeManager.LongPause();
+            //TimeManager.LongPause();
+            //Assert.IsFalse(costPanel.IsCommodityChecked(input.ExpectedData.CommodityValue[0]));
+            //Assert.IsFalse(Widget.IsPeakValleyButtonEnabled());
+
+            ////年逐月电峰谷用电成本 no building
+            //Widget.NavigateToAllDashboard();
+            //TimeManager.MediumPause();
+            //TimeManager.LongPause();
+            //TimeManager.LongPause();
+            //HomePagePanel.SelectHierarchyNode(hierarchy[1]);
+            //TimeManager.LongPause();
+            //Widget.ClickWidgetTemplateQuickCreateButton();
+            //HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[2]);
+            //TimeManager.LongPause();
+            //TimeManager.LongPause();
+            //Assert.IsFalse(Widget.IsPeakValleyButtonEnabled());
+
+            ////年逐月电峰谷用电成本 without hierarchy
+            //Widget.NavigateToAllDashboard();
+            //TimeManager.MediumPause();
+            //TimeManager.LongPause();
+            //TimeManager.LongPause();
+            //Widget.ClickWidgetTemplateQuickCreateButton();
+            //HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[2]);
+            //TimeManager.LongPause();
+            //Assert.AreEqual(Widget.GetSelectHierarchyButtonText(), "请选择层级结构");
+            //TimeManager.LongPause();
+            //Assert.IsFalse(costPanel.IsCommodityChecked(input.ExpectedData.CommodityValue[0]));
+            //Assert.IsFalse(Widget.IsPeakValleyButtonEnabled());
+
+            ////from map page
+            //JazzFunction.Navigator.NavigateHome();
+
+        }
+        [CaseID("TC-J1-FVT-WidgetTemplate-Use-102")]
+        [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(WidgetTemplateUseSuite), "TC-J1-FVT-WidgetTemplate-Use-102")]
+        public void WidgetTemplateUse102(MaximizeWidgetData input)
+        {
+            var hierarchy = input.InputData.HierarchyInfo;
+            var dashboard = input.InputData.DashboardInfo;
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
             Widget.NavigateToAllDashboard();
             TimeManager.MediumPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(hierarchy[3]);
+            HomePagePanel.SelectHierarchyNode(hierarchy[2]);
             TimeManager.LongPause();
             Widget.ClickWidgetTemplateQuickCreateButton();
-            HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[2]);
+            HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[5]);
             TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
-            Assert.IsTrue(Widget.IsPopMsgCorrect(input.ExpectedData.messages[1]));
-            Widget.ClickNotConfigPeakValleyMessageCloseButton();
-            Assert.IsFalse(costPanel.IsCommodityChecked(input.ExpectedData.CommodityValue[0]));
-            Assert.IsFalse(Widget.IsPeakValleyButtonEnabled());
-
-            //年逐月电峰谷用电成本 no electricity
-            Widget.NavigateToAllDashboard();
+            EnergyAnalysis.CheckTag(input.InputData.TagName);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(hierarchy[4]);
-            TimeManager.LongPause();
-            Widget.ClickWidgetTemplateQuickCreateButton();
-            HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[2]);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            Assert.IsFalse(costPanel.IsCommodityChecked(input.ExpectedData.CommodityValue[0]));
-            Assert.IsFalse(Widget.IsPeakValleyButtonEnabled());
-
-            //年逐月电峰谷用电成本 no building
-            Widget.NavigateToAllDashboard();
-            TimeManager.MediumPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(hierarchy[1]);
-            TimeManager.LongPause();
-            Widget.ClickWidgetTemplateQuickCreateButton();
-            HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[2]);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            Assert.IsFalse(Widget.IsPeakValleyButtonEnabled());
-
-            //年逐月电峰谷用电成本 without hierarchy
-            Widget.NavigateToAllDashboard();
-            TimeManager.MediumPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            Widget.ClickWidgetTemplateQuickCreateButton();
-            HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[2]);
-            TimeManager.LongPause();
-            Assert.AreEqual(Widget.GetSelectHierarchyButtonText(), "请选择层级结构");
-            TimeManager.LongPause();
-            Assert.IsFalse(costPanel.IsCommodityChecked(input.ExpectedData.CommodityValue[0]));
-            Assert.IsFalse(Widget.IsPeakValleyButtonEnabled());
-
-            //from map page
-            JazzFunction.Navigator.NavigateHome();
-
+            EnergyViewToolbar.IsMoreMenuItemDisabled(input.InputData.MoreMenuItems[0]);
+            EnergyViewToolbar.IsMoreMenuItemDisabled(input.InputData.MoreMenuItems[1]);
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetNames[0], dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
         }
     }
 }

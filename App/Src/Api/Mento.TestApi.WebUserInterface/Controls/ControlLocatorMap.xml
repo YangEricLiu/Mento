@@ -58,6 +58,7 @@
   <add key="GridAllRows" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]/td[$#cellIndex]/div" type ="XPath"/>
   <add key="GridRowSelected" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class, 'x-grid-row-focused')]/td[$#cellIndex]/div" type ="XPath"/>
   <add key="GridRow" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]" type ="XPath"/>
+  <add key="GridOneRow" value = "//tr[contains(@class,'x-grid-row-alt')]/../tr[$#rowIndex]/td[$#cellIndex]/div" type ="XPath"/>
   <add key="GridRowLabelling" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td/div[text()='$#cellText1'] and td/div[text()='$#cellText2']]" type ="XPath"/>
   <add key="GridRowChecker" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[contains(@class,'x-grid-cell-checkcolumn')]/div/div" type ="XPath"/>
   <add key="GridCellText" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[td[$#cellIndex]/div[text()='$#cellText']]/td[$#cellIndex2]/div" type ="XPath"/>

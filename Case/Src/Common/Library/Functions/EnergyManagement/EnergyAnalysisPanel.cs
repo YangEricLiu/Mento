@@ -192,6 +192,15 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Get the data of cell
+        /// </summary>
+        /// <param name="cellIndex"></param>
+        public string GetCellData(int rowIndex, int columnIndex)
+        {
+            return TagGrid.GetCellData(rowIndex + 1, columnIndex);
+        }
+
+        /// <summary>
         /// Focus on the tag of left region
         /// </summary>
         /// <param name="tagName"></param>

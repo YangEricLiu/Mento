@@ -526,6 +526,11 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
+            //Check Commodity=煤 is unchecked.
+            Assert.AreEqual(true, CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[0]));
+            Assert.AreEqual(true, CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[1]));
+            Assert.AreEqual(false, CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[2]));
+
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);

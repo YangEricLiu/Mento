@@ -658,6 +658,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return GetRow(cellIndex).Text;
         }
 
+        public string GetCellData(int rowIndex, int columnIndex)
+        {
+            return GetOneRow(rowIndex, columnIndex).Text;
+        }
         
         public string[] GetRowsData(int cellIndex)
         {
@@ -678,6 +682,34 @@ namespace Mento.TestApi.WebUserInterface.Controls
             var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridRowSelected);
 
             Hashtable variables = new Hashtable() { { CELLINDEXVARIABLE, cellIndex } };
+
+            if (IsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < PageCount)
+                {
+                    if (IsRowExistOnCurrentPage(cellIndex))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(rowLocator, variables));
+        }
+
+        public virtual IWebElement GetOneRow(int rowIndex, int cellIndex, bool Paging = true)
+        {
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridOneRow);
+
+            Hashtable variables = new Hashtable() { { ROWINDEXVARIABLE, rowIndex },{ CELLINDEXVARIABLE, cellIndex } };
 
             if (IsPageToolBarExisted() && Paging)
             {

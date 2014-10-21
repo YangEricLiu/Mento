@@ -71,6 +71,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region Grid locators
         public static string GridRows = "GridRows";
         public static string GridRow = "GridRow";
+        public static string GridOneRow = "GridOneRow";
         public static string GridRowSelected = "GridRowSelected";
         public static string GridRowChecker = "GridRowChecker";
         //public static string GridRowSelector = "GridRowSelector";

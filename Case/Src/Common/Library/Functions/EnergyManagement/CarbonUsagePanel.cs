@@ -115,7 +115,25 @@ namespace Mento.ScriptCommon.Library.Functions
                 JazzMessageBox.LoadingMask.WaitLoading();
             }
         }
+        public bool IsCommodityChecked(string commodityName)
+        {
+            //total
+            if (commodityName == null)
+            {
+                if (TotalCommotidyGrid.IsNoEnabledCheckbox())
+                    return false;
+                else
+                    return true;
+            }
+            else //specified commodity
+            {
+                if (CommodityGrid.IsRowChecked(2, commodityName, false))
+                    return true;
+                else
+                    return false;
+            }
 
+        }
         #endregion
 
         #region data view operation

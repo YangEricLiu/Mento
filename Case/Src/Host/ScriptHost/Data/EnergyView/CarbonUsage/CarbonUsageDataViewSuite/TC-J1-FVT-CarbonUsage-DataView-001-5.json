@@ -7,7 +7,7 @@
 			"DashboardInfo":[{
 				"WigetName":"CarbonUsageRawStepWater",
 				"HierarchyName":["NancyCostCustomer2", "组织A"],
-				"IsCreateDashboard":"true",
+				"IsCreateDashboard":"false",
 				"DashboardName":"RawStepAutomationTest",
 			}],
 		},

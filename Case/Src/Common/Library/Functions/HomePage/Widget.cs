@@ -66,6 +66,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField MaxWidgetRightCommentTextField = JazzTextField.MaxWidgetRightCommentTextField;
         private static Button MaxWidgetRightCommentButton = JazzButton.MaxWidgetRightCommentButton;
         private static Container CommentsOnMaxwidgetContainer = JazzContainer.CommentsOnMaxwidgetContainer;
+        private static Button NotConfigPeakValleyMessageCloseButton = JazzButton.NotConfigPeakValleyMessageCloseButton;
 
         private static Button WidgetTemplateQuickCreateButton = JazzButton.WidgetTemplateQuickCreateButton;
         private static Button WidgetTemplateQuickCreateCloseButton = JazzButton.WidgetTemplateQuickCreateCloseButton;
@@ -574,11 +575,6 @@ namespace Mento.ScriptCommon.Library.Functions
             return PeakValleyButton.IsPressed();
 
         }
-        public bool IsEnergyDisplayStepMonthButtonPressed()
-        {
-            return EnergyDisplayStepMonthButton.IsPressed();
-
-        }
 
         //public bool IsSingleCommodityElectricCheckBoxChecked(String name)
         //{
@@ -596,7 +592,29 @@ namespace Mento.ScriptCommon.Library.Functions
         //{
         //    return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(CheckBoxWidgetTemplateInput, itemResourceVariable1, itemResourceVariable2)), ByType.XPath);
         //}
-
+        public Boolean IsPopMsgCorrect(string name)
+        {
+            if (name != null)
+            {
+                return GetMessageText().Contains(name);
+            }
+            else
+                return true;
+        }
+        /// <summary>
+        /// Get message in the pop up message box. 
+        /// </summary>
+        /// <returns></returns>
+        public string GetMessageText()
+        {
+            JazzMessageBox.LoadingMask.WaitLoading();
+            return JazzMessageBox.MessageBox.GetMessage();
+        }
+        //Click close button
+        public void ClickNotConfigPeakValleyMessageCloseButton()
+        {
+            NotConfigPeakValleyMessageCloseButton.Click();
+        }
         #endregion
 
     }

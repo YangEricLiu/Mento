@@ -485,6 +485,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LinkButtonTOUPulsePeakPropertyAddMoreRanges = "LinkButtonTOUPulsePeakPropertyAddMoreRanges";
         public static string ButtonTOUPulsePeakPropertyDeleteWholeRange = "ButtonTOUPulsePeakPropertyDeleteWholeRange";
         public static string ButtonTOUPulsePeakPropertyDeleteRangeItem = "ButtonTOUPulsePeakPropertyDeleteRangeItem";
+        public static string ButtonNotConfigPeakValleyMessageClose = "ButtonNotConfigPeakValleyMessageClose";
         #endregion
 
         #region BenchMark
@@ -1273,7 +1274,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string LabelSaveDashboardDialogHierarchy = "LabelSaveDashboardDialogHierarchy";
         public static string LabelQuickCreateWidgetNameMin = "LabelQuickCreateWidgetNameMin";
-        public static string LabelWidgetTemplateNameMin = "LabelWidgetTemplateNameMin";
+        //public static string LabelWidgetTemplateNameMin = "LabelWidgetTemplateNameMin";
         public static string LabelQuickCreateWidgetField = "LabelQuickCreateWidgetField";
         #endregion
 

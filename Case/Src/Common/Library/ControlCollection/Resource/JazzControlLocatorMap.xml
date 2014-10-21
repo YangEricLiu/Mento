@@ -486,6 +486,8 @@
               <add key="LinkButtonTOUPulsePeakPropertyAddMoreRanges" value="//div[@id='st-tou-peakproperty-addpeakdatetime']//a[(text()='$@Setting.TOUTariff.AddPulsePeakDateTime')]" type="XPath"/>
               <add key="ButtonTOUPulsePeakPropertyDeleteWholeRange" value="//div[@id='st-tou-peakproperty-deltool']//img[contains(@class,'x-tool-close')]" type="XPath"/>
               <add key="ButtonTOUPulsePeakPropertyDeleteRangeItem" value="//div[@id='st-tou-pulsepeaktimerange']/table[$#positionIndex]//div[@class='x-column-inner']//img[contains(@class,'x-tool-close')]" type="XPath"/>
+              <add key="ButtonNotConfigPeakValleyMessageClose" value="//img[@class='x-tool-close']" type="XPath"/>
+
           </TOU>
           <customermanagement>
               <add key="ButtonAddCustomer" value="st-customer-grid-add" type="ID"/>

@@ -31,6 +31,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button BasicPropertyDeleteButton = JazzButton.TOUBasicPropertyDeleteButton;
         private static Button BasicPropertyDeletePeakRangeItemButton = JazzButton.TOUBasicPropertyDeletePeakRangeItemButton;
         private static Button BasicPropertyDeleteValleyRangeItemButton = JazzButton.TOUBasicPropertyDeleteValleyRangeItemButton;
+        private static Button NotConfigPeakValleyMessageCloseButton = JazzButton.NotConfigPeakValleyMessageCloseButton;
         private static LinkButton BasicPropertyAddMorePeakRangesButton = JazzButton.TOUBasicPropertyAddMorePeakRangesButton;
         private static LinkButton BasicPropertyAddMoreValleyRangesButton = JazzButton.TOUBasicPropertyAddMoreValleyRangesButton;
         private static TextField BasicPropertyNameTextField = JazzTextField.TOUBasicPropertyNameTextField;

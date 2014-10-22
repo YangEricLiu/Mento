@@ -21,7 +21,7 @@
 		"ExpectedData":
 		{
 			"expectedFileName":["MultipleIntervalsComparasionDataView101-1-D-V2_BuildingBC.xls", "MultipleIntervalsComparasionDataView101-1-D-2V2_BuildingBC.xls", "MultipleIntervalsComparasionDataView101-1-D-22V2_BuildingBC.xls", "MultipleIntervalsComparasionDataView101-1-D-5V2_VBuildingBC.xls"],
-			"EndTimeValue":["2013年01月17日24点00分", "2013年01月19日 22点00分"],
+			"EndTimeValue":["24:00", "22:00"],
 		}
 	}
 ]

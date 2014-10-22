@@ -95,7 +95,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             TimeManager.MediumPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.messages[0]));
-            JazzMessageBox.MessageBox.Confirm();
+            JazzMessageBox.MessageBox.OK();
             Assert.IsFalse(EnergyAnalysis.IsTagChecked(input.InputData.TagNames[2]));
             //Assert.IsTrue(EnergyViewToolbar.IsTimeSpanButtonEnable());
 
@@ -159,47 +159,5 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsFalse(EnergyViewToolbar.IsTimeSpanButtonEnable());
         }
 
-        [Test]
-        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-001-2")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalInvalidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-001-2")]
-        public void SetCompareIntervalInvalidInput(TimeSpansData input)
-        {
-            //Open 'Single Hierarchy Node' function (单层级数据点), 
-            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-            
-            //Only one tag is selected, and time range of first span is valid, Click  'Add Compared Interval' button
-            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
-            TimeManager.ShortPause();
-
-            //Click  'Add Compared Interval' button
-            EnergyViewToolbar.ClickTimeSpanButton();
-            TimeManager.ShortPause();
-
-            //One compared interval is empty, click 'Yes'
-            TimeSpanDialog.ClickConfirmButton();
-            Assert.IsTrue(TimeSpanDialog.GetAdditionStartDateInvalidMsg(2).Contains(input.ExpectedData.StartDateValue[0]));
-
-            //Set Start time of compared interval to be Today, so that its End time will become future time, click 'Yes'
-            DateTime today = new DateTime();
-            today = DateTime.Now;
-            TimeSpanDialog.InputAdditionStartDate(today, 2);
-            TimeManager.ShortPause();
-            TimeSpanDialog.ClickConfirmButton();
-            TimeManager.ShortPause();
-            Assert.IsTrue(TimeSpanDialog.GetAdditionStartDateInvalidMsg(2).Contains(input.ExpectedData.StartDateValue[1]));
-
-            //the Start time of first interval so that start time of compared interval becomes earlier than 2000-01-01, click 'Yes'
-            TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[0], 2);
-            TimeManager.MediumPause();
-            TimeSpanDialog.InputBaseStartDate(input.InputData.BaseStartDate[0]);
-            TimeManager.ShortPause();
-            TimeSpanDialog.ClickConfirmButton();
-            Assert.IsTrue(TimeSpanDialog.GetAdditionStartDateInvalidMsg(2).Contains(input.ExpectedData.StartDateValue[2]));
-            //Click 'Cancel' after above message occurs.
-            TimeSpanDialog.ClickGiveUpButton();
-            TimeManager.ShortPause();
-        }
     }
 }

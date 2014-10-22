@@ -285,8 +285,8 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
-            /*
-            //Time range = 2012-6-10 to 2012-7-10
+            
+            //Time range = 2012-7-15 to 2012-7-15
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
 
@@ -303,7 +303,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
 
-            //Time range = 2012-8-10 to 2012-8-25
+           // Time range = 2012-8-14 to 2012-8-16
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             TimeManager.ShortPause();
 
@@ -320,7 +320,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
 
-            //Time range = 2013-7-25 to 2013-8-4
+            //Time range = 2013-7-30 to 2013-8-4
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
             TimeManager.ShortPause();
 
@@ -336,7 +336,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[8], DisplayStep.Default);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[8], input.InputData.failedFileName[8]);
-        */
+        
         }
     }
 }

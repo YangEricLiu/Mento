@@ -74,6 +74,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause();
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();

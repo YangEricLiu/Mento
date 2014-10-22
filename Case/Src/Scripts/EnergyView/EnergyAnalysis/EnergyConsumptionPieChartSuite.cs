@@ -64,7 +64,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             {
                 MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[i].HierarchyPath);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.ShortPause();
+                TimeManager.LongPause();
 
                 MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[i].TagsName[0]);
                 TimeManager.ShortPause();
@@ -105,8 +105,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             var dashboard = input.InputData.DashboardInfos;
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
             TimeManager.LongPause();
+            TimeManager.LongPause();
 
-            //Time range = C. 2013/01/01 23:00 to 2013/03/01 3:00.
+            //Time range = C. 2013/01/01 23:00 to 2013/02/01 3:00.
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             EnergyViewToolbar.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
             TimeManager.ShortPause();
@@ -135,6 +136,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.CompareDictionaryDataForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
             EnergyViewToolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
+            TimeManager.LongPause();
             TimeManager.LongPause();
 
             //Time range = E. 2012/12/13 23:00 to 2014/03/01 4:00.

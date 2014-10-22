@@ -97,7 +97,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLinesMarkers());
+            Assert.AreEqual(336, EnergyAnalysis.GetTrendChartLinesMarkers());
 
             //Change the End Time in first date range, 
             EnergyViewToolbar.ClickTimeSpanButton();

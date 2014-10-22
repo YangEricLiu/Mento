@@ -6,7 +6,7 @@
 			"TagNames":["V_GreeineBuilding_Coal", "V_GreeineBuilding_Ele", "V_GreeineBuilding_Gas", "V_GreeineBuilding_Hot","V_GreeineBuilding_Water","V_GreenieBuilding_Cold"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
-				"EndDate":"2013-12-18",	
+				"EndDate":"2013-1-1",	
 			},
 			{
 				"StartDate":"2012-1-10",
@@ -34,7 +34,7 @@
 			"TagNames":["V1_BuildingBC","V2_BuildingBC","V3_BuildingBC"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
-				"EndDate":"2013-12-18",	
+				"EndDate":"2013-1-1",		
 			},
 			{
 				"StartDate":"2012-1-10",
@@ -62,7 +62,7 @@
 			"TagNames":["CalculationTypeAvg","CalculationTypeMax","CalculationTypeMin","CalculationTypeMinIs0"],
 			"ManualTimeRange":[{
 				"StartDate":"2012-1-1",
-				"EndDate":"2013-12-18",	
+				"EndDate":"2013-1-1",	
 			},
 			{
 				"StartDate":"2012-1-10",

@@ -176,11 +176,6 @@ namespace Mento.Script.EnergyView.CostUsage
 
             Assert.IsTrue(CostUsage.IsTrendChartDrawn());
 
-            //Save to dashboard
-            var dashboard = input.InputData.DashboardInfo;
-            EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
-            TimeManager.MediumPause();
-
             //Set date range less than 7 days
             EnergyViewToolbar.SetDateRange(new DateTime(2012, 7, 23), new DateTime(2012, 7, 25));
             TimeManager.MediumPause();
@@ -242,6 +237,9 @@ namespace Mento.Script.EnergyView.CostUsage
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.ShowCalendarHeatCool);
             TimeManager.MediumPause();
 
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+
             //On homepage, check the dashboard
             CostUsage.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
@@ -299,7 +297,7 @@ namespace Mento.Script.EnergyView.CostUsage
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
 
-            //Select Commodity=电， change to TOU pie chart.
+            //Select Commodity=电， change to TOU chart.
             CostUsage.SelectCommodity(input.InputData.commodityNames);
 
             EnergyViewToolbar.ShowPeakValley();
@@ -327,9 +325,10 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //· Pie chart display correctly. TOU pie value are calculate correctly.
+            //· Pie chart display correctly. TOU column value are calculate correctly.
             Assert.IsTrue(CostUsage.IsColumnChartDrawn());
 
+            //Change to Stack chart.
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.Stack);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -338,15 +337,24 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //· Pie chart display correctly. TOU pie value are calculate correctly.
+            //· Stack chart display correctly. 
             Assert.IsTrue(CostUsage.IsColumnChartDrawn());
 
             CostUsage.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //· Pie chart display correctly. TOU pie value are calculate correctly.
-            Assert.IsTrue(CostUsage.IsColumnChartDrawn()); ;
+            //· Stack chart display correctly. 
+            Assert.IsTrue(CostUsage.IsColumnChartDrawn()); 
+
+            //Nancy add TOU pie chart, please make it work as well.
+
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            Assert.IsTrue(CostUsage.IsPieChartDrawn()); 
+            
         }
 
         [Test]
@@ -380,7 +388,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             //· Warning message pop up show "峰谷不支持Raw"
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[1]));
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
             JazzMessageBox.MessageBox.OK();
             TimeManager.MediumPause();
 

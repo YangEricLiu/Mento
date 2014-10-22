@@ -59,7 +59,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.LongPause();
 
             CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();

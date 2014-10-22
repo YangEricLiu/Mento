@@ -127,6 +127,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
             MultiHieCompareWindow.CheckTag(input.InputData.TagNames[0]);
+            TimeManager.ShortPause();
 
             MultiHieCompareWindow.SwitchTagTab(TagTabs.AreaDimensionTab);
             MultiHieCompareWindow.SelectAreaDimension(input.InputData.MultipleHiearchyPath[1]);

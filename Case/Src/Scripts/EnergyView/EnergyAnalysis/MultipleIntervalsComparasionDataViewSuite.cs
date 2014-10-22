@@ -281,13 +281,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
+            //EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            //TimeManager.MediumPause();
 
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
+            //TimeManager.MediumPause();
+            //EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
         }
 
@@ -506,15 +506,15 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Change step to Hour
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
+            //EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            //TimeManager.MediumPause();
 
-            //The number of total pages are correct.
-            //Page1 of data values of 'Raw' step are displayed correctly.
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            ////The number of total pages are correct.
+            ////Page1 of data values of 'Raw' step are displayed correctly.
+            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            //TimeManager.MediumPause();
+            //EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Switch back to line chart
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.Line);

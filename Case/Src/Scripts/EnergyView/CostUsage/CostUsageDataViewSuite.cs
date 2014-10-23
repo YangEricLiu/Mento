@@ -254,13 +254,10 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            //change step to raw
             CostUsage.ClickDisplayStep(DisplayStep.Raw);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-
-            //CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-            //TimeManager.MediumPause();
-            //CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Check Warning message 
             Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.StepMessage[0]));
@@ -272,6 +269,11 @@ namespace Mento.Script.EnergyView.CostUsage
             Assert.AreEqual(true, CostUsage.IsDisplayStepPressed(DisplayStep.Day));
             Assert.AreEqual(false, CostUsage.IsDisplayStepPressed(DisplayStep.Hour));
             Assert.AreEqual(false, CostUsage.IsDisplayStepPressed(DisplayStep.Raw));
+
+            //check data
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;
@@ -361,6 +363,11 @@ namespace Mento.Script.EnergyView.CostUsage
             Assert.AreEqual(true, CostUsage.IsCommodityChecked(input.InputData.commodityNames[0]));
             Assert.AreEqual(false, CostUsage.IsCommodityChecked(input.InputData.commodityNames[1]));
             Assert.AreEqual(false, CostUsage.IsCommodityChecked(input.InputData.commodityNames[2]));
+
+            //check data
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;

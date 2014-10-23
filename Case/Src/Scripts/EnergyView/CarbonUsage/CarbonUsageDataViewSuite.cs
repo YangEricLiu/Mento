@@ -444,6 +444,11 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Hour));
             Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Day));
 
+            //Check data
+            CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
@@ -530,6 +535,11 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.AreEqual(true, CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[0]));
             Assert.AreEqual(true, CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[1]));
             Assert.AreEqual(false, CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[2]));
+
+            //Check data
+            CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;

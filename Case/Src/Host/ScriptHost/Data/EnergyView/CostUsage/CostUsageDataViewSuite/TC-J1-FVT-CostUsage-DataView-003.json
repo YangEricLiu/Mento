@@ -15,11 +15,12 @@
 				"IsCreateDashboard":"false",
 				"DashboardName":"RawStepAutomationTest",
 			},
-
+			"failedFileName":["F-CostUsageDataView003.xls"],
 		},
 		"ExpectedData":
 		{
 			"StepMessage":["$@EM.StepError|(\"$@EM.UseRaw@$\")"],
+			"expectedFileName":["CostUsageDataView003.xls"],
 		}
 	}
 ]

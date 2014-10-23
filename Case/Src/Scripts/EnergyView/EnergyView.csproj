@@ -82,6 +82,7 @@
     <Compile Include="EnergyAnalysis\AdditionalTagsDataVerificationSuite.cs" />
     <Compile Include="EnergyAnalysis\EnergyConsumptionPieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionPieChartSuite.cs" />
+    <Compile Include="EnergyAnalysis\MonitorDataIssues.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodePieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\MultiTagsDataVerificationSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsTrendChartSuite.cs" />
@@ -98,8 +99,8 @@
     <Compile Include="EnergyManagement\PredefinedTimeDataVerificationSuite.cs" />
     <Compile Include="EnergyManagement\SaveToDashboardSuite.cs" />
     <Compile Include="EnergyManagement\SetTimeRangeValidSuite.cs" />
-    <Compile Include="EnergyManagement\SetAllDisplayStepSuite.cs" />
-    <Compile Include="EnergyManagement\SetDisplayStepSuite.cs" />
+    <Compile Include="EnergyManagement\SetDisplayStepValidSuite.cs" />
+    <Compile Include="EnergyManagement\SetDisplayStepInvalidSuite.cs" />
     <Compile Include="IndustryLabelling\CalculateIndustryLabellingConsumptionSuite.cs" />
     <Compile Include="IndustryLabelling\CalculateIndustryLabellingDayNightSuite.cs" />
     <Compile Include="IndustryLabelling\CalculateIndustryLabellingWorkNotworkSuite.cs" />

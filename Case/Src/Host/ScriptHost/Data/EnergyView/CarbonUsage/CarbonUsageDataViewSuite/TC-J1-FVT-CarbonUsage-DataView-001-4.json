@@ -7,13 +7,14 @@
 			"DashboardInfo":[{
 				"WigetName":"CarbonUsageRawStepElectricity",
 				"HierarchyName":["NancyCostCustomer2", "组织A"],
-				"IsCreateDashboard":"true",
+				"IsCreateDashboard":"false",
 				"DashboardName":"RawStepAutomationTest",
 			}],
+			"failedFileName":["F-CarbonUsageDataView001-4.xls"],
 		},
 		"ExpectedData":
 		{
-			
+			"expectedFileName":["F-CarbonUsageDataView001-4.xls"],
 		}
 	}
 ]

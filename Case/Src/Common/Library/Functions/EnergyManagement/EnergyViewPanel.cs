@@ -215,6 +215,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             switch (step)
             {
+                case DisplayStep.Raw:
+                    //"Hourly" step
+                    return EnergyDisplayStepRawButton.Exists();
                 case DisplayStep.Hour:
                     //"Hourly" step
                     return EnergyDisplayStepHourButton.Exists();

@@ -51,7 +51,6 @@
     <Compile Include="ContactUs\ContactUsInvalidSuite.cs" />
     <Compile Include="ContactUs\ContactUsValidSuite.cs" />
     <Compile Include="UserProfile\UserProfileModifyInvalidSuite.cs" />
-    <Compile Include="UserProfile\UserProfileModifyValidSuite.cs" />
     <Compile Include="DemoAccess\DemoAccessInvalidSuite.cs" />
     <Compile Include="DemoAccess\DemoAccessValidSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />

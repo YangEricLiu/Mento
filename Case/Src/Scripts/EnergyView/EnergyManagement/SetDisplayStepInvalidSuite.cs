@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-SetDisplayStep-001"), CreateTime("2013-08-22"), Owner("Emma")]
-    public class SetDisplayStepSuite : TestSuiteBase
+    public class SetDisplayStepInvalidSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -45,10 +45,11 @@ namespace Mento.Script.EnergyView.EnergyManagement
         private static HomePage HomePagePanel = JazzFunction.HomePage;
         private static CostPanel CostPanel = JazzFunction.CostPanel;
         private static CarbonUsagePanel CarbonPanel = JazzFunction.CarbonUsagePanel;
+        private static RatioPanel RatioPanel = JazzFunction.RatioPanel;
 
         [Test]
         [CaseID("TC-J1-FVT-SetDisplayStep-001-1")]
-        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-1")]
+        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepInvalidSuite), "TC-J1-FVT-SetDisplayStep-001-1")]
         public void EnergyAnalysisSetDisplayStep123(DisplayStepData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -138,7 +139,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-SetDisplayStep-001-2")]
-        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-1")]
+        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepInvalidSuite), "TC-J1-FVT-SetDisplayStep-001-1")]
         public void EnergyAnalysisSetDisplayStep4(DisplayStepData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -191,7 +192,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-SetDisplayStep-001-3")]
-        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-1")]
+        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepInvalidSuite), "TC-J1-FVT-SetDisplayStep-001-1")]
         public void EnergyAnalysisSetDisplayStep5(DisplayStepData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -298,7 +299,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-SetDisplayStep-001-4")]
-        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-1")]
+        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepInvalidSuite), "TC-J1-FVT-SetDisplayStep-001-1")]
         public void EnergyAnalysisSetDisplayStep6(DisplayStepData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -371,7 +372,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-SetDisplayStep-001-5")]
-        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-2")]
+        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepInvalidSuite), "TC-J1-FVT-SetDisplayStep-001-2")]
         public void CostSetDisplayStep8(DisplayStepData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -556,7 +557,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-SetDisplayStep-001-7")]
-        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepSuite), "TC-J1-FVT-SetDisplayStep-001-4")]
+        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepInvalidSuite), "TC-J1-FVT-SetDisplayStep-001-4")]
         public void CostSetDisplayStep10To16(DisplayStepData input)
         {
             //10. Select NancyOtherSite->BuildingMultipleSteps
@@ -730,5 +731,141 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.LongPause();
         }
         */
+
+
+        [Test]
+        [CaseID("TC-J1-FVT-SetDisplayStep-001-6")]
+        [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepInvalidSuite), "TC-J1-FVT-SetDisplayStep-001-6")]
+        public void RawStep(DisplayStepData input)
+        {
+            //10. Select NancyOtherSite->BuildingMultipleSteps
+            CostPanel.SelectHierarchy(input.InputData.Hierarchies);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //V(H)
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[2]);
+            TimeManager.ShortPause();
+
+            //Selected Time Range=2012/07/29-2012/08/03
+            //Selected Time Range=2012/07/01-2012/07/31
+            var timeRange = input.InputData.ManualTimeRange;
+            for (int i = 0; i < 2; i++)
+            {
+                EnergyViewToolbar.SetDateRange(timeRange[i].StartDate, timeRange[i].EndDate);
+                TimeManager.MediumPause();
+
+                //Click view button
+                EnergyViewToolbar.ClickViewButton();
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+
+                //Change option=Raw step
+                EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+                //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+
+                //Check Showing message in dialog  '换个步长试试'.
+                Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
+                Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
+                Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
+                EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Day);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
+
+                //Change option=Raw step again
+                EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+                //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+
+                //Check Hide dialog when select cancel, Display original view before selection. 
+                Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
+                Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
+                Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
+                EnergyAnalysis.ClickGiveupButtonOnWindow();
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.LongPause();
+                Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
+            }
+
+            //For multiple data sources, one step in Optional Steps is not supported by one source.
+            //P(H) 
+            EnergyAnalysis.UncheckTag(input.InputData.TagNames[1]);
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[2]);
+            TimeManager.ShortPause();
+
+            //Selected Time Range=2012/07/29-2012/08/03
+            EnergyViewToolbar.SetDateRange(timeRange[0].StartDate, timeRange[0].EndDate);
+            TimeManager.MediumPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Change step to raw
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Select tag "VH_SiteS1"
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[1]);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Showing message in dialog and display available step=day&hour for selection.
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
+            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
+            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
+            EnergyAnalysis.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Check Hide dialog. Display original view before selection.  Uncheck V(H).
+            Assert.AreEqual(false, EnergyAnalysis.IsTagChecked(input.InputData.TagNames[1]));
+            TimeManager.ShortPause();
+
+            //Select P(H) and V(D) go to data view in energy view. Click Option=hour.
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[3]);
+            TimeManager.ShortPause();
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Selected Time Range=2012/07/01-2012/08/01
+            EnergyViewToolbar.SetDateRange(timeRange[2].StartDate, timeRange[2].EndDate);
+            TimeManager.MediumPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //check Showing message in dialog  'Pop message中显示的“推荐步长”按钮最多3枚，按照从小到大的顺序，超出的不显示。'.
+            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[1]));
+            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
+            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Week));
+            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
+            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
+            EnergyAnalysis.ClickGiveupButtonOnWindow();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Go to Ratio indicator. Selected a DayNightP from NancyOtherCustomter3. Formula=V(H). Aggregate Step=day.
+            RatioPanel.NavigateToRatio();
+            TimeManager.MediumPause();
+            RatioPanel.SelectHierarchy(input.InputData.OtherHierarchies);
+            TimeManager.LongPause();
+            RatioPanel.CheckTag(input.InputData.TagNames[4]);
+            TimeManager.ShortPause();
+
+            //Selected Time Range=2012/07/01-2012/07/01
+            EnergyViewToolbar.SetDateRange(timeRange[3].StartDate, timeRange[3].EndDate);
+            TimeManager.MediumPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Check No Optional step=Raw optional button.
+            Assert.AreEqual(false, EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
+        }
     }
 }

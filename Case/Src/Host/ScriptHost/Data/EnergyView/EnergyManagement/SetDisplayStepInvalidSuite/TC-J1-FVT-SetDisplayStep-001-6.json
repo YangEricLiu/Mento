@@ -1,0 +1,30 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingMultipleSteps"],
+			"OtherHierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingDayNight"],
+			"TagNames":["VM_SiteS1", "VH_SiteS1", "PH_SiteS1", "VD_SiteS1", "DayNightP"],
+			"ManualTimeRange":[{				
+				"StartDate":"2012-7-29",
+				"EndDate":"2012-8-3",	
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-7-31",	
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-8-1",	
+			},
+			{
+				"StartDate":"2012-7-1",
+				"EndDate":"2012-7-1",			
+			}],
+		},
+		"ExpectedData":
+		{
+			"messages":["$@EM.StepError|(\"$@EM.UseRaw\")", "$@EM.StepError|(\"$@EM.UseHour\")"],
+		}
+	}
+]

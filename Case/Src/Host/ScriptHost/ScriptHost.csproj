@@ -757,6 +757,7 @@
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite\TC-J1-FVT-MultipleTagsComparision-DataView-001-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite\TC-J1-FVT-MultipleTagsComparision-DataView-001-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyMultiTagsTrendChartSuite\TC-J1-FVT-MultipleTagsComparision-TrendChart-001-1.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-4.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-5359.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeDataViewSuite\TC-J1-FVT-SingleHierarchyNode-DataView-101-2.json" />
@@ -794,6 +795,7 @@
     <None Include="Data\EnergyView\EnergyManagement\SaveToDashboardSuite\TC-J1-FVT-SaveToDashboard-101-Cost-1.json" />
     <None Include="Data\EnergyView\EnergyManagement\SaveToDashboardSuite\TC-J1-FVT-SaveToDashboard-101-EA-2.json" />
     <None Include="Data\EnergyView\EnergyManagement\SaveToDashboardSuite\TC-J1-FVT-SaveToDashboard-101-Ratio-1.json" />
+    <None Include="Data\EnergyView\EnergyManagement\SetDisplayStepInvalidSuite\TC-J1-FVT-SetDisplayStep-001-6.json" />
     <None Include="Data\EnergyView\EnergyManagement\SetDisplayStepValidSuite\TC-J1-FVT-SetDisplayStep-101-1.json" />
     <None Include="Data\EnergyView\EnergyManagement\SetDisplayStepValidSuite\TC-J1-FVT-SetDisplayStep-101-2.json" />
     <None Include="Data\EnergyView\EnergyManagement\SetDisplayStepValidSuite\TC-J1-FVT-SetDisplayStep-101-3.json" />

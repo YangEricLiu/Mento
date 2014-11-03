@@ -246,5 +246,83 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Raw data should be display well.
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-4")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-4")]
+        public void RawValueDisplay(EnergyViewOptionData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.LongPause();
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Set date range
+            EnergyViewToolbar.SetDateRange(input.InputData.ManualTimeRange[0].StartDate,input.InputData.ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //Select BuildingA_P1_Electricity to display Data view
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Click Optional step=Raw step.
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //Check Raw chart display successfully.
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
+
+            //Select  BuildingA_P2_Water to display Data view.
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[1]);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check Raw chart display successfully.
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
+
+            //Select  BuildingA_P3_Coal to display Data view.
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[2]);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check Raw chart display successfully.
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
+
+            //Click "Save to dashboard"（保存到仪表盘）to save the Data view to Hierarchy node dashboard.
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //On homepage, check the dashboard
+            EnergyAnalysis.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.Pause(5000);
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+
+            //check The Data view Save to dashboard successfully.
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+
+        }
+
     }
 }

@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A","园区A","楼宇A"],
+			"MultiSelectedHiearchyPath":["NancyCostCustomer2","组织A","园区A","楼宇A","空调"],
+			"TagNames":["BuildingA_P1_Electricity","BuildingA_P2_Water","BuildingA_P3_Coal","BuildingA_KT_P1_Electricy"],
+			"ManualTimeRange":[{				
+				"StartDate":"2012-7-29",
+				"EndDate":"2012-8-4",	
+			}],
+			"DashboardInfo":{
+				"WigetName":"MultipleDataView1013",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"AutoTestRawStep",
+			},
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

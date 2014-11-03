@@ -284,5 +284,83 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-3")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionDataViewSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-3")]
+        public void RawValueDisplay(EnergyViewOptionData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.LongPause();
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            TimeManager.MediumPause();
+
+            //Go to Multiple hierarchy noe. Select Hierarchy list to 组织A->园区A->楼宇A.
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Change manually defined time range to 2012/07/29-2012/08/04. 
+            EnergyViewToolbar.SetDateRange(input.InputData.ManualTimeRange[0].StartDate, input.InputData.ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //Select BuildingA_P1_Electricity to display Data view. Click Optional step=Raw step.
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+            TimeManager.ShortPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Select  BuildingA_P2_Water to display Data view.
+            //Select  BuildingA_P3_Coal to display Data view.
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[1]);
+            TimeManager.ShortPause();
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[2]);
+            TimeManager.ShortPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check Raw chart display successfully.
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Select other hierarchy node of 组织A->园区A->楼宇D.
+            EnergyAnalysis.SelectHierarchy(input.InputData.MultiSelectedHiearchyPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Select tag BuildingA_KT_P1_Electricy.    
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[3]);
+            TimeManager.ShortPause();
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Click "Save to dashboard"（保存到仪表盘）to save the Data view to Hierarchy node dashboard.
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
+
+            //On homepage, check the dashboard
+            EnergyAnalysis.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.Pause(5000);
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+
+            //check The Data view Save to dashboard successfully.
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+        }
     }
 }

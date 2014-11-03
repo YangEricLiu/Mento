@@ -725,6 +725,7 @@
     <None Include="Data\EnergyView\EnergyAnalysis\EnergyConsumptionPieChartSuite\TC-J1-FVT-EnergyConsumption-PieChart-101-4.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MonitorDataIssues\TC-J1-FVT-MonitorDataIssues.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionDataViewSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-1.json" />
+    <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionDataViewSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-3.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionDataViewSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite\TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-2.json" />

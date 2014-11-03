@@ -7,7 +7,7 @@
 			"DashboardInfo":{
 				"WigetName":"SingleDataView1014",
 				"HierarchyName":["NancyCostCustomer2", "组织A"],
-				"IsCreateDashboard":"true",
+				"IsCreateDashboard":"false",
 				"DashboardName":"AutoTestRawStep",
 			},
 			"ManualTimeRange":[{				

@@ -1756,7 +1756,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             get { return GetControl<Button>(JazzControlLocatorKey.ButtonWidgetTemplateCancelFilter); }
         }
-            
+        public static LinkButton CheckEnergyInfoLinkButton
+        {
+            get { return GetControl<LinkButton>(JazzControlLocatorKey.LinkButtonCheckEnergyInfo); }
+        }
         #endregion
 
         #region My Share

@@ -23,6 +23,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[][] HierarchyInfo { get; set; }
         public string[] WidgetNames { get; set; }
         public string[] MoreMenuItems { get; set; }
+
     }
 
     public class MaximizeWidgetOutput : ExpectedTestDataBase
@@ -53,6 +54,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string newDashboardName { get; set; }
         public string[] DashboardNames { get; set; }
         public string Comment { get; set; }
+        public string[] ShareUsers { get; set; }
     }
 
     public class TimeInterval

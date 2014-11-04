@@ -55,7 +55,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Container ContainerWidgetsToMyShare{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsToMyShare);}}
         public static Container WidgetsNamesToMyShareContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerWidgetsNamesToMyShare);}}
         public static Container CommentsOnMaxwidgetContainer{ get { return GetControl<Container>(JazzControlLocatorKey.ContainerCommentsOnMaxwidget);}}
-        
+        //public static Label BuildingFieldLabel { get { return GetControl<Container>(JazzControlLocatorKey.LabelBuildingField); } }     
         #endregion
 
         #region EnergyView

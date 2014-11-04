@@ -120,6 +120,8 @@
             <add key="WidgetTemplateFilterButton" value="db-wt-filter" type="ID"/>
             <add key="WidgetTemplateApplyFilterButton" value="db-wt-applyfilter" type="ID"/>
             <add key="WidgetTemplateCancelFilterButton" value="db-wt-cancelfilter" type="ID"/>
+            <add key="LinkButtonCheckEnergyInfo" value="//div[contains(@id,'remlinkbutton')]/a[text()='$@Dashboard.Label.MoreInfo']" type="XPath"/>
+           
       </HomePage>
       
       <!--User Management Begin-->
@@ -1174,6 +1176,8 @@ CommentTextField
 
     <add key="LabelQuickCreateWidgetNameMin" value="//label[text()='$#nameIndex']" type="XPath"/>
     <add key="LabelQuickCreateWidgetField" value="//div[label[text()='$#nameIndex']]/img" type="XPath"/>
+    <add key="LabelBuildingField" value="//div[contains(@id,'container')]/label[text()='$#nameIndex']" type="XPath"/>     
+     
     </HomePage>
     
     <EnergyView>
@@ -1259,7 +1263,7 @@ CommentTextField
       <add key="ContainerWidgetsToMyShare" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]" type="XPath"/>
       <add key="ContainerWidgetsNamesToMyShare" value="//div[@id='hp-dashboard-share-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class, 'x-widget-header-text-container')]/span" type="XPath"/>
       <add key="ContainerCommentsOnMaxwidget" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id, 'commentcontainer')]/div[2]/div/div/div[2]/div[contains(@id, 'commentwidget')]" type="XPath"/>
-
+      
   </Homopage>
     
   <EnergyView>
@@ -1289,7 +1293,7 @@ CommentTextField
     </TOU>
     <CustomerManagement>
         <add key="ContainerCustomerMapInfo" value="//div[@id='st-map-consumption-form-targetEl']/div[contains(@id,'container')]//label[text()='$@Setting.Benchmark.Label.AtleastOneZone']" type="XPath"/>
-        <add key="ContainerCustomerAdmin" value="//div[@id='st-customer-properties-form-body']//table[contains(@class, 'x-form-item') and tbody/tr/td/label[text()='客户管理员']]//div" type="XPath"/>      
+        <add key="ContainerCustomerAdmin" value="//div[@id='st-customer-properties-form-body']//table[contains(@class, 'x-form-item') and tbody/tr/td/label[text()='$@Setting.CustomerManagement.Label.Administrator']]//div" type="XPath"/>      
     
     </CustomerManagement>
   </platformsettings>

@@ -6,21 +6,19 @@
 			["CommodityTestCustomer", "org1"],["NancyCostCustomer2","组织A", "园区A", "楼宇B"],["NancyCostCustomer2","组织A", "园区A", "楼宇A"],,["NancyCostCustomer2","组织B", "园区C", "楼宇F"]],
 			"WidgetNames":["$@Setting.Template.Radio", "$@Setting.Template.Cost", "$@Setting.Template.PeakValley", "$@Setting.Template.Carbon", "$@Setting.Template.PerMCost", "$@Setting.Template.Labelling", "$@Setting.Template.Ranking","$@Setting.Template.Max"],	
 		    "TagName":"BBV1Root",
-			"MoreMenuItems":[[$@Common.Button.DefaultDate],[$@Common.Button.ShowCalendar]],
+			"MoreMenuItems":["$@Common.Button.DefaultDate","$@Common.Button.ShowCalendar"],
 			"DashboardInfo":[{
-				"WigetNames":["$@EM.Labeling.ViewLabeling"]
+				"WigetNames":["$@EM.Labeling.ViewLabeling","Ranking"],
 				"HierarchyName":["NancyCostCustomer2","组织A", "园区A", "楼宇B"],
-				"IsCreateDashboard":"true",
-				"DashboardName":"峰谷展示1",
-			},
+				"IsCreateDashboard":"false",
+				"DashboardName":"13",
+				"ShareUsers":["ShareUserE"]
+			}],	
+			"newWidgetName":["ModifyValidName"],
 		},
 		"ExpectedData":
 		{
 		    "messages":["$@EM.Labeling.NonBuilding","$@Message.M02408"],
-			"UnitTypeValue":["$@EM.Unit.UnitArea","$@EM.Rank.RankByArea"],
-			"FuncTypeValue":["$@EM.KpiModeEM","$@EM.KpiModeCarbon","$@EM.KpiModeCost"],
-			"RadioTypeValue":["$@Common.Glossary.DayNightRatio","$@EM.WorkHolidayRatio"],
-			"CarbonConvertTypeValue":["$@Common.CarbonUomType.StandardCoal","$@Common.CarbonUomType.CO2","$@Common.CarbonUomType.Tree"],
 			"CommodityValue":["$@Common.Commodity.Electric","$@Common.Commodity.Water"],
 		},	
 	},

@@ -67,7 +67,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button MaxWidgetRightCommentButton = JazzButton.MaxWidgetRightCommentButton;
         private static Container CommentsOnMaxwidgetContainer = JazzContainer.CommentsOnMaxwidgetContainer;
         private static Button NotConfigPeakValleyMessageCloseButton = JazzButton.NotConfigPeakValleyMessageCloseButton;
-
+       
         private static Button WidgetTemplateQuickCreateButton = JazzButton.WidgetTemplateQuickCreateButton;
         private static Button WidgetTemplateQuickCreateCloseButton = JazzButton.WidgetTemplateQuickCreateCloseButton;
         private static Button WidgetTemplateFilterButton = JazzButton.WidgetTemplateFilterButton;
@@ -83,7 +83,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MenuButton CarbonConvertTargetButton = JazzButton.EnergyViewConvertTargetMenuButton;
         private static Button PeakValleyButton = JazzButton.EnergyViewPeakValleyButton;
         private static Button EnergyDisplayStepMonthButton = JazzButton.EnergyDisplayStepMonthButton;
-
+        private static LinkButton CheckEnergyInfoLinkButton = JazzButton.CheckEnergyInfoLinkButton;
+        
 
         protected override Chart Chart
         {
@@ -615,6 +616,12 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             NotConfigPeakValleyMessageCloseButton.Click();
         }
+        //Click link button
+        public void ClickCheckEnergyInfoLinkButton()
+        {
+            CheckEnergyInfoLinkButton.Click();
+        } 
+        
         #endregion
 
     }

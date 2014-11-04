@@ -586,6 +586,12 @@ namespace Mento.ScriptCommon.Library.Functions
 
             WidgetField.Click();
         }
+        public void ClickOnBuildingField(string name)
+        {
+            Label BuildingField = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelBuildingField, name);
+
+            BuildingField.Click();
+        }
 
 
         public string GetOneDashboardNamePosition(int positionIndex)

@@ -579,6 +579,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonWidgetTemplateFilter = "WidgetTemplateFilterButton";
         public static string ButtonWidgetTemplateApplyFilter = "WidgetTemplateApplyFilterButton";
         public static string ButtonWidgetTemplateCancelFilter = "WidgetTemplateCancelFilterButton";
+        public static string LinkButtonCheckEnergyInfo = "LinkButtonCheckEnergyInfo";
+       
         #endregion
 
         #endregion
@@ -1276,6 +1278,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string LabelQuickCreateWidgetNameMin = "LabelQuickCreateWidgetNameMin";
         //public static string LabelWidgetTemplateNameMin = "LabelWidgetTemplateNameMin";
         public static string LabelQuickCreateWidgetField = "LabelQuickCreateWidgetField";
+        public static string LabelBuildingField = "LabelBuildingField";
         #endregion
 
         #region Energy View
@@ -1373,6 +1376,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ContainerWidgetsToMyShare = "ContainerWidgetsToMyShare";
         public static string ContainerWidgetsNamesToMyShare = "ContainerWidgetsNamesToMyShare";
         public static string ContainerCommentsOnMaxwidget = "ContainerCommentsOnMaxwidget";
+        
 
         #endregion
 

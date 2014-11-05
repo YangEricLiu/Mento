@@ -168,12 +168,24 @@
     <None Include="Data\Administration\CarbonFactor\ModifyCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Modify-004.json" />
     <None Include="Data\Administration\CarbonFactor\ModifyCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Modify-101.json" />
     <None Include="Data\Administration\CarbonFactor\ModifyCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Modify-102.json" />
+    <None Include="Data\Administration\CommodityAndUOMSetting\CommodityAndUOMSettingSuite\TC-J1-FVT-CommodityAndUOMSetting-View-101.json" />
+    <None Include="Data\Administration\CommodityAndUOMSetting\CommodityAndUOMSettingSuite\TC-J1-FVT-CommodityAndUOMSetting-View-102.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingModifyInvalid\TC-J1-FVT-CustomerConsumptionSetting-Modify-001-3.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingModifyInvalid\TC-J1-FVT-CustomerConsumptionSetting-Modify-001-2.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingModifyInvalid\TC-J1-FVT-CustomerConsumptionSetting-Modify-001-1.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingModifyValid\TC-J1-FVT-CustomerConsumptionSetting-Modify-101-1.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingView\TC-J1-FVT-CustomerConsumptionSettingView-View-101-2.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingView\TC-J1-FVT-CustomerConsumptionSettingView-View-101-1.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerDeleteSuite\TC-J1-FVT-CustomerManagement-Delete-001.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerDeleteSuite\TC-J1-FVT-CustomerManagement-Delete-002.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerDeleteSuite\TC-J1-FVT-CustomerManagement-Delete-003.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyInValidSuite\TC-J1-FVT-CustomerManagement-Modify-001.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyInValidSuite\TC-J1-FVT-CustomerManagement-Modify-002.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyInValidSuite\TC-J1-FVT-CustomerManagement-Modify-003.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyInValidSuite\TC-J1-FVT-CustomerManagement-Modify-004.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyInValidSuite\TC-J1-FVT-CustomerManagement-Modify-005.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyValidSuite\TC-J1-FVT-CustomerManagement-Modify-101.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyValidSuite\TC-J1-FVT-CustomerManagement-Modify-102.json" />
     <None Include="Data\Administration\CustomerOperation\SmokeTestAddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkAddInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Add-001-1.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkAddInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Add-001-2.json" />
@@ -1063,6 +1075,10 @@
     <None Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\TC-J1-FVT-Widget-Add-101-1.json" />
     <None Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\TC-J1-FVT-Widget-Add-101-2.json" />
     <None Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\TC-J1-FVT-Widget-Add-101-3.json" />
+    <None Include="Data\Information\WidgetTemplate\WidgetTemplateFilterSuite\TC-J1-FVT-WidgetTemplate-Filter-101.json" />
+    <None Include="Data\Information\WidgetTemplate\WidgetTemplateUseSuite\TC-J1-FVT-WidgetTemplate-Use-102.json" />
+    <None Include="Data\Information\WidgetTemplate\WidgetTemplateUseSuite\TC-J1-FVT-WidgetTemplate-Use-101.json" />
+    <None Include="Data\Information\WidgetTemplate\WidgetTemplateViewSuite\TC-J1-FVT-WidgetTemplate-View-101.json" />
     <None Include="Data\OpenAPI\EnergyViewAPI\TC-J1-FVT-EnergyAnalysisOpenAPI-101-1.json" />
     <None Include="Data\System\Example\IllegalTestSuite\TC-J1-Example-002.json" />
   </ItemGroup>

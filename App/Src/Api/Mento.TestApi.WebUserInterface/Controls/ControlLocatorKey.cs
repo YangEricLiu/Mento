@@ -141,6 +141,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string PermissionCheckBoxTable = "PermissionCheckBoxTable";
         public static string CheckBoxTable = "CheckBoxTable";
         public static string CheckBoxInput = "CheckBoxInput";
+
+        public static string CheckBoxWidgetTemplateTable = "CheckBoxWidgetTemplateTable";
+        public static string CheckBoxWidgetTemplateInput = "CheckBoxWidgetTemplateInput";
         #endregion
 
         #region Container locators

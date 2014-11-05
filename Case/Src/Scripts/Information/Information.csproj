@@ -79,6 +79,9 @@
     <Compile Include="Widgets\RenameWidgetSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WidgetTemplate\WidgetTemplateFilter.cs" />
+    <Compile Include="WidgetTemplate\WidgetTemplateUse.cs" />
+    <Compile Include="WidgetTemplate\WidgetTemplateView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Host\ScriptHost\App.config">

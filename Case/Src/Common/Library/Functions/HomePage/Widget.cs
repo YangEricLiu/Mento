@@ -16,6 +16,7 @@ using Mento.ScriptCommon.TestData.EnergyView;
 using System.Data;
 using System.IO;
 using Mento.Framework.Configuration;
+using OpenQA.Selenium;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -84,8 +85,10 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button PeakValleyButton = JazzButton.EnergyViewPeakValleyButton;
         private static Button EnergyDisplayStepMonthButton = JazzButton.EnergyDisplayStepMonthButton;
         private static LinkButton CheckEnergyInfoLinkButton = JazzButton.CheckEnergyInfoLinkButton;
-        
 
+        private static string ITEMRESOURCEVARIABLE1 = "itemResourceVariable1";
+        private static string ITEMRESOURCEVARIABLE2 = "itemResourceVariable2";
+        
         protected override Chart Chart
         {
             get { return JazzChart.WidgetMaxDialogChart; }
@@ -512,28 +515,29 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         //Check 行为 check box.
-        public void CheckWidgetTemplateCheckBox(string name)
+        public void CheckWidgetTemplateCheckBox(string name1, string name2)
         {
-            CheckBoxWidgetTemplateInput.CheckInWidgetTemplate(name);
+            CheckBoxWidgetTemplateInput.CheckInWidgetTemplate(name1, name2);
         }
 
         //Uncheck 行为 check box.
-        public void UncheckWidgetTemplateCheckBox(string name)
+        public void UncheckWidgetTemplateCheckBox(string name1, string name2)
         {
-            CheckBoxWidgetTemplateInput.UncheckInWidgetTemplate(name);
+            CheckBoxWidgetTemplateInput.UncheckInWidgetTemplate(name1, name2);
         }
 
         //判断目标对象checkbox 是否check status   
-        public Boolean IsWidgetTemplateChecked(string name)
+        public Boolean IsWidgetTemplateChecked(string name1, string name2)
         {
-            return CheckBoxWidgetTemplateInput.IsWidgetTemplateChecked(name);
+            return CheckBoxWidgetTemplateInput.IsWidgetTemplateChecked(name1, name2);
         }
 
         //判断目标对象其他checkbox 为 uncheck status   
-        public Boolean IsWidgetTemplateUnChecked(string name)
+        public Boolean IsWidgetTemplateUnChecked(string name1, string name2)
         {
-            return CheckBoxWidgetTemplateInput.IsWidgetTemplateUnChecked(name);
+            return CheckBoxWidgetTemplateInput.IsWidgetTemplateUnChecked(name1, name2);
         }
+
         //get text for electHierarchyButton
         public string GetSelectHierarchyButtonText()
         {
@@ -577,22 +581,20 @@ namespace Mento.ScriptCommon.Library.Functions
 
         }
 
-        //public bool IsSingleCommodityElectricCheckBoxChecked(String name)
+        //private Locator GetWidgetTemplateTableLocator(string itemResourceVariable1, string itemResourceVariable2)
         //{
-        //    return SingleCommodityElectricCheckBox.IsChecked(name);
+        //     string value = string.Format(CheckBoxWidgetTemplateTable.ToString(), itemResourceVariable1, itemResourceVariable2);
+
+        //    return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(value), ByType.XPath);
         //}
-
-        private Locator GetWidgetTemplateTableLocator(string itemResourceVariable1, string itemResourceVariable2)
-        {
-             string value = string.Format(CheckBoxWidgetTemplateTable.ToString(), itemResourceVariable1, itemResourceVariable2);
-
-            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(value), ByType.XPath);
-        }
 
         //private Locator GetWidgetTemplateInputLocator(string itemResourceVariable1, string itemResourceVariable2)
         //{
-        //    return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(CheckBoxWidgetTemplateInput, itemResourceVariable1, itemResourceVariable2)), ByType.XPath);
+        //    string value = string.Format(CheckBoxWidgetTemplateInput.ToString (), itemResourceVariable1, itemResourceVariable2);
+
+        //    return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(value), ByType.XPath);
         //}
+        
         public Boolean IsPopMsgCorrect(string name)
         {
             if (name != null)
@@ -620,7 +622,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickCheckEnergyInfoLinkButton()
         {
             CheckEnergyInfoLinkButton.Click();
-        } 
+        }
         
         #endregion
 

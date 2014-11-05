@@ -55,9 +55,13 @@
     <Compile Include="CarbonFactor\AddCarbonFactorSuite.cs" />
     <Compile Include="CarbonFactor\DeleteCarbonFactorSuite.cs" />
     <Compile Include="CarbonFactor\ModifyCarbonFactorSuite.cs" />
+    <Compile Include="CommodityAndUOMSetting\CommodityUOMVerify.cs" />
     <Compile Include="CustomerConsumptionSetting\CustomerConsumptionSettingModifyInvalid.cs" />
     <Compile Include="CustomerConsumptionSetting\CustomerConsumptionSettingModifyValid.cs" />
     <Compile Include="CustomerConsumptionSetting\CustomerConsumptionSettingView.cs" />
+    <Compile Include="CustomerManagementSetting\CustomerDeleteSuite.cs" />
+    <Compile Include="CustomerManagementSetting\CustomerModifyInvalidSuite.cs" />
+    <Compile Include="CustomerManagementSetting\CustomerModifyValidSuite.cs" />
     <Compile Include="CustomerOperation\SmokeTestAddCustomerSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkViewSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkAddValidSuite.cs" />

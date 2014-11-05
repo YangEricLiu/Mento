@@ -18,11 +18,12 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string CustomerName { get; set; }
         public string[] newWidgetName { get; set; }
         public string[] Hierarchies { get; set; }
-        public string TagName { get; set; }
-        public FilterConditionInfo[] FilterConditionInfo { get; set; }
+        public string TagName { get; set; }     
         public string[][] HierarchyInfo { get; set; }
         public string[] WidgetNames { get; set; }
         public string[] MoreMenuItems { get; set; }
+        public string[] FilterPropertiesName { get; set; }
+        public string[] TargetObject { get; set; }
 
     }
 
@@ -65,9 +66,4 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string EndTime { get; set; }
     }
 
-    public class FilterConditionInfo
-    {
-        public string[] FilterPropertiesName { get; set; }
-        public string[] TargetObject { get; set; }
-    }
 }

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
+using System.Collections;
+using System.Data;
+using System.Text.RegularExpressions;
+using Mento.Utility;
 
 namespace Mento.TestApi.WebUserInterface.Controls
 {
@@ -14,6 +18,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         protected const string CHECKEDCLASS = "x-form-cb-checked";
         protected const string PERMISSIONNAME = "permissionName";
         protected const string ITEMNAME = "itemName";
+        private static string ITEMRESOURCEVARIABLE1 = "itemResourceVariable1";
+        private static string ITEMRESOURCEVARIABLE2 = "itemResourceVariable2";
+        private static Locator CheckBoxWidgetTemplateInput = new Locator("div[lable[text()='$#itemResourceVariable1']]//div[label[text()='$#itemResourceVariable2']]/table/tbody/tr/td[2]/input", ByType.XPath);
+        
 
         /// <summary>
         /// locator parameter must be root element of a CheckBoxField
@@ -34,14 +42,21 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
         }
+        ////Verify checkbox in widget template is checked.
+        //public Boolean IsWidgetTemplateChecked(string itemName)
+        //{
+        //    IWebElement checkbox = GetCheckBoxFieldElementInWidgetTemplate(itemName);
+
+        //    return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
+        //}
         //Verify checkbox in widget template is checked.
-        public Boolean IsWidgetTemplateChecked(string itemName)
+
+        public Boolean IsWidgetTemplateChecked(string itemName1, string itemName2)
         {
-            IWebElement checkbox = GetCheckBoxFieldElementInWidgetTemplate(itemName);
+            IWebElement checkbox = GetWidgetTemplateInputElement(itemName1, itemName2);
 
             return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
         }
-
         /// <summary>
         /// verfiy whether the item unchecked.
         /// </summary>
@@ -52,18 +67,25 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return !(checkbox.GetAttribute("class").Contains(CHECKEDCLASS));
         }
-        /// <summary>
-        /// verfiy whether the item unchecked in widget template.
-        /// </summary>
-        /// <param name="locator"></param>
-        public Boolean IsWidgetTemplateUnChecked(string itemName)
+        ///// <summary>
+        ///// verfiy whether the item unchecked in widget template.
+        ///// </summary>
+        ///// <param name="locator"></param>
+        //public Boolean IsWidgetTemplateUnChecked(string itemName)
+        //{
+        //    IWebElement checkbox = GetCheckBoxFieldElementInWidgetTemplate(itemName);
+
+        //    return !(checkbox.GetAttribute("class").Contains(CHECKEDCLASS));
+        //}
+
+        //uncheck item in widget template
+
+        public Boolean IsWidgetTemplateUnChecked(string itemName1, string itemName2)
         {
-            IWebElement checkbox = GetCheckBoxFieldElementInWidgetTemplate(itemName);
+            IWebElement checkbox = GetWidgetTemplateInputElement(itemName1, itemName2);
 
             return !(checkbox.GetAttribute("class").Contains(CHECKEDCLASS));
         }
-
-
 
         public Boolean IsAllDataScopeItemChecked()
         {
@@ -87,6 +109,24 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 checkbox.Click();
         }
 
+        //check filter checkbox
+        public void CheckInWidgetTemplate(string itemName1, string itemName2)
+        {
+            IWebElement checkbox = GetWidgetTemplateInputElement(itemName1, itemName2);
+            if (!IsWidgetTemplateChecked(itemName1, itemName2))
+            checkbox.Click();
+        }
+        //Uncheck filter checkbox
+        public Boolean UncheckInWidgetTemplate(string itemName1, string itemName2)
+        {
+            IWebElement checkbox = GetWidgetTemplateInputElement(itemName1, itemName2);
+            if (!IsWidgetTemplateChecked(itemName1, itemName2))
+            {
+                checkbox.Click();
+                return true;
+            }
+            return false;
+        }
         // common checkbox check
         public void CommonCheck(string itemName)
         {
@@ -115,24 +155,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
             
         }
-        // checkbox check in widget template
-        public void CheckInWidgetTemplate(string itemName)
-        {
-            IWebElement checkbox = GetCheckBoxInputElementInWidgetTemplate(itemName);
-
-            if (!IsWidgetTemplateChecked(itemName))
-                checkbox.Click();
-        }
-
-        // uncheckbox check in widget template
-        public void UncheckInWidgetTemplate(string itemName)
-        {
-            IWebElement checkbox = GetCheckBoxInputElementInWidgetTemplate(itemName);
-
-            if (IsWidgetTemplateUnChecked(itemName))
-                checkbox.Click();
-        }
-
+        
         //common checkbox disabled 
         public Boolean IsAllItemDisabled()
         {
@@ -164,16 +187,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
          private Locator GetCheckBoxInputLocatorInWidgetTemplate(string itemName)
          {
              return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxInput), ITEMNAME, itemName);
-         }
-         //for widget template---cathy
-
-         private IWebElement GetCheckBoxFieldElementInWidgetTemplate(string itemName)
-         {
-             return FindChild(GetCheckBoxFieldLocatorInWidgetTemplate(itemName));
-         }
-         private IWebElement GetCheckBoxInputElementInWidgetTemplate(string itemName)
-         {
-             return FindChild(GetCheckBoxInputLocatorInWidgetTemplate(itemName));
          }
 
         /// <summary>
@@ -241,13 +254,39 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxInput), ITEMNAME, itemName);
         }
-        /*
+       /*
         private Locator GetCheckBoxFieldLocator(string itemName)
         {
             string CheckBoxLocatorFormat = Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxTable), ITEMNAME, itemName).Value;
             return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(CheckBoxLocatorFormat, itemName)), ByType.XPath);
         }
         */
+        private Locator GetWidgetTemplateTableLocator(string itemResourceVariable1, string itemResourceVariable2)
+        {
+            Hashtable variables = new Hashtable() { { ITEMRESOURCEVARIABLE1, itemResourceVariable1 }, { ITEMRESOURCEVARIABLE2, itemResourceVariable2 } };
+
+            var itemLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxWidgetTemplateTable);
+
+            return Locator.GetVariableLocator(itemLocator, variables);
+        }
+
+        private Locator GetWidgetTemplateInputLocator(string itemResourceVariable1, string itemResourceVariable2)
+        {
+            Hashtable variables = new Hashtable() { { ITEMRESOURCEVARIABLE1, itemResourceVariable1 }, { ITEMRESOURCEVARIABLE2, itemResourceVariable2 } };
+
+            return Locator.GetVariableLocator(CheckBoxWidgetTemplateInput, variables);
+        }
+
+        private IWebElement GetWidgetTemplateInputElement(string itemName1, string itemName2)
+        {
+            return FindChild(GetWidgetTemplateInputLocator(itemName1, itemName2));
+        }
+
+        private IWebElement GetWidgetTemplateTableElement(string itemName1, string itemName2)
+        {
+            return FindChild(GetWidgetTemplateTableLocator(itemName1, itemName2));
+        }
+
         private IWebElement GetPermissonFieldElement(string permissionName)
         {
             return FindChild(GetPermissonFieldLocator(permissionName));

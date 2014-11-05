@@ -1086,8 +1086,9 @@ CommentTextField
 
     <add key="CheckBoxWidgetTemplate" value="//div[@id='db-wt-item-targetaction-innerCt']/table[contains(@id,'checkboxfield')]" type="XPath"/>
 
-    <add key="CheckBoxWidgetTemplateTable" value = "//div[lable[text()='{0}']]//div[label[text()='{1}']]/table" type ="XPath"/>
-    <add key="CheckBoxWidgetTemplateInput" value = "//div[lable[text()='{0}']]//div[label[text()='{1}']]/table/tbody/tr/td[2]/input" type ="XPath"/>
+    <add key="CheckBoxWidgetTemplateTable" value = "//div[lable[text()='[$#itemResourceVariable1]']]//div[label[text()='[$#itemResourceVariable2]']]/table" type ="XPath"/>
+    <add key="CheckBoxWidgetTemplateInput" value = "//div[lable[text()='[$#itemResourceVariable1]']]//div[label[text()='[$#itemResourceVariable2]']]/table/tbody/tr/td[2]/input" type ="XPath"/>
+
 
   </CheckBox>
   <!--CheckBoxField End-->

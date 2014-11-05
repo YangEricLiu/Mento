@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administration\CarbonFactorSettingsData.cs" />
+    <Compile Include="Administration\CommodityAndUomData.cs" />
     <Compile Include="Administration\IndustryLabelingData.cs" />
     <Compile Include="Administration\IndustryBenchmarkData.cs" />
     <Compile Include="Administration\UserDataPermissionData.cs" />

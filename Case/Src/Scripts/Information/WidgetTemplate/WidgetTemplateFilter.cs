@@ -48,13 +48,14 @@ namespace Mento.Script.Information.WidgetTemplate
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(WidgetTemplateFilterSuite), "TC-J1-FVT-WidgetTemplate-Filter-101")]
         public void WidgetTemplateFilter101(MaximizeWidgetData input)
         {
-            var filtercondition = input.InputData.FilterConditionInfo;
+            //var filtercondition = input.InputData.FilterConditionInfo;
             var widgetname = input.ExpectedData.WidgetNames;
             Widget.ClickWidgetTemplateQuickCreateButton();
             Widget.ClickWidgetTemplateFilterButton();
             TimeManager.LongPause();
+            TimeManager.LongPause();
             //Check 行为，filter 年逐月能耗工休比
-            //Widget.CheckWidgetTemplateCheckBox(filtercondition[0].TargetObject[3]);
+            Widget.CheckWidgetTemplateCheckBox(input.InputData.FilterPropertiesName[0], input.InputData.TargetObject[3]);
             TimeManager.LongPause();
             Widget.ClickWidgetTemplateApplyFilterButton();
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnQuickCreateWidget(widgetname[0]));

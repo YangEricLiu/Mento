@@ -20,7 +20,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
         protected const string ITEMNAME = "itemName";
         private static string ITEMRESOURCEVARIABLE1 = "itemResourceVariable1";
         private static string ITEMRESOURCEVARIABLE2 = "itemResourceVariable2";
-        private static Locator CheckBoxWidgetTemplateInput = new Locator("div[lable[text()='$#itemResourceVariable1']]//div[label[text()='$#itemResourceVariable2']]/table/tbody/tr/td[2]/input", ByType.XPath);
         
 
         /// <summary>
@@ -261,30 +260,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(CheckBoxLocatorFormat, itemName)), ByType.XPath);
         }
         */
-        private Locator GetWidgetTemplateTableLocator(string itemResourceVariable1, string itemResourceVariable2)
+        
+        private IWebElement GetWidgetTemplateInputElement(string itemResourceVariable1, string itemResourceVariable2)
         {
             Hashtable variables = new Hashtable() { { ITEMRESOURCEVARIABLE1, itemResourceVariable1 }, { ITEMRESOURCEVARIABLE2, itemResourceVariable2 } };
 
-            var itemLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxWidgetTemplateTable);
-
-            return Locator.GetVariableLocator(itemLocator, variables);
-        }
-
-        private Locator GetWidgetTemplateInputLocator(string itemResourceVariable1, string itemResourceVariable2)
-        {
-            Hashtable variables = new Hashtable() { { ITEMRESOURCEVARIABLE1, itemResourceVariable1 }, { ITEMRESOURCEVARIABLE2, itemResourceVariable2 } };
-
-            return Locator.GetVariableLocator(CheckBoxWidgetTemplateInput, variables);
-        }
-
-        private IWebElement GetWidgetTemplateInputElement(string itemName1, string itemName2)
-        {
-            return FindChild(GetWidgetTemplateInputLocator(itemName1, itemName2));
-        }
-
-        private IWebElement GetWidgetTemplateTableElement(string itemName1, string itemName2)
-        {
-            return FindChild(GetWidgetTemplateTableLocator(itemName1, itemName2));
+            return FindChild(Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxWidgetTemplateInput), variables));
         }
 
         private IWebElement GetPermissonFieldElement(string permissionName)

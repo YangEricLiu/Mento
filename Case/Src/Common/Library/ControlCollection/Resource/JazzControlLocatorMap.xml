@@ -1084,11 +1084,7 @@ CommentTextField
     <add key="CheckBoxBenchMark" value="//div[@id='st-benchmark-properties-form-targetEl']//table[contains(@id,'checkboxfield')]" type="XPath"/>
     <add key="CheckBoxPtagIsAccumulated" value="//div[@id='st-ptag-form-body']/table[contains(@id,'checkboxfield')]" type="XPath"/>
 
-    <add key="CheckBoxWidgetTemplate" value="//div[@id='db-wt-item-targetaction-innerCt']/table[contains(@id,'checkboxfield')]" type="XPath"/>
-
-    <add key="CheckBoxWidgetTemplateTable" value = "//div[lable[text()='[$#itemResourceVariable1]']]//div[label[text()='[$#itemResourceVariable2]']]/table" type ="XPath"/>
-    <add key="CheckBoxWidgetTemplateInput" value = "//div[lable[text()='[$#itemResourceVariable1]']]//div[label[text()='[$#itemResourceVariable2]']]/table/tbody/tr/td[2]/input" type ="XPath"/>
-
+    <add key="CheckBoxWidgetTemplateTable" value="//div[@id='db-wt-item-targetaction-innerCt']/table[contains(@id,'checkboxfield')]" type="XPath"/>
 
   </CheckBox>
   <!--CheckBoxField End-->

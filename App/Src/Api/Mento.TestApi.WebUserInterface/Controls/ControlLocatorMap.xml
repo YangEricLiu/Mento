@@ -120,8 +120,6 @@
   <add key="PermissionCheckBoxTable" value = "//table[contains(@id,'displayfield') and tbody/tr/td/label[text()='$#permissionName']]/../table[contains(@id,'checkboxfield')]" type ="XPath"/>
   <add key="CheckBoxTable" value = "//table[contains(@id,'checkboxfield') and tbody/tr/td/label[text()='$#itemName']]" type ="XPath"/>
   <add key="CheckBoxInput" value = "//table[contains(@id,'checkboxfield') and tbody/tr/td/label[text()='$#itemName']]/tbody/tr/td/input" type ="XPath"/>
-
-  <add key="CheckBoxWidgetTemplateTable" value = "//div[lable[text()='$#itemResourceVariable1']]//div[label[text()='$#itemResourceVariable2']]/table" type ="XPath"/>
   <add key="CheckBoxWidgetTemplateInput" value = "//div[lable[text()='$#itemResourceVariable1']]//div[label[text()='$#itemResourceVariable2']]/table/tbody/tr/td[2]/input" type ="XPath"/>
 
   <!--Container-->

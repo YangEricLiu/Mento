@@ -74,8 +74,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button WidgetTemplateFilterButton = JazzButton.WidgetTemplateFilterButton;
         private static Button WidgetTemplateApplyFilterButton = JazzButton.WidgetTemplateApplyFilterButton;
         private static Button WidgetTemplateCancelFilterButton = JazzButton.WidgetTemplateCancelFilterButton;
+
         private static CheckBoxField CheckBoxWidgetTemplateTable = JazzCheckBox.WidgetTemplateTableCheckBox;
-        private static CheckBoxField CheckBoxWidgetTemplateInput = JazzCheckBox.WidgetTemplateInputCheckBox;
+        
         private static Button SelectHierarchyButton = JazzButton.EnergyViewSelectHierarchyButton;
         private static MenuButton FuncModeConvertTargetButton = JazzButton.FuncModeConvertMenuButton;
         private static EnergyViewToolbarConvertTargetMenu ConvertTargetButton = new EnergyViewToolbarConvertTargetMenu();
@@ -85,10 +86,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button PeakValleyButton = JazzButton.EnergyViewPeakValleyButton;
         private static Button EnergyDisplayStepMonthButton = JazzButton.EnergyDisplayStepMonthButton;
         private static LinkButton CheckEnergyInfoLinkButton = JazzButton.CheckEnergyInfoLinkButton;
-
-        private static string ITEMRESOURCEVARIABLE1 = "itemResourceVariable1";
-        private static string ITEMRESOURCEVARIABLE2 = "itemResourceVariable2";
-        
+                
         protected override Chart Chart
         {
             get { return JazzChart.WidgetMaxDialogChart; }
@@ -517,25 +515,26 @@ namespace Mento.ScriptCommon.Library.Functions
         //Check 行为 check box.
         public void CheckWidgetTemplateCheckBox(string name1, string name2)
         {
-            CheckBoxWidgetTemplateInput.CheckInWidgetTemplate(name1, name2);
+            CheckBoxWidgetTemplateTable.CheckInWidgetTemplate(name1, name2);
+
         }
 
         //Uncheck 行为 check box.
         public void UncheckWidgetTemplateCheckBox(string name1, string name2)
         {
-            CheckBoxWidgetTemplateInput.UncheckInWidgetTemplate(name1, name2);
+            CheckBoxWidgetTemplateTable.UncheckInWidgetTemplate(name1, name2);
         }
 
         //判断目标对象checkbox 是否check status   
         public Boolean IsWidgetTemplateChecked(string name1, string name2)
         {
-            return CheckBoxWidgetTemplateInput.IsWidgetTemplateChecked(name1, name2);
+            return CheckBoxWidgetTemplateTable.IsWidgetTemplateChecked(name1, name2);
         }
 
         //判断目标对象其他checkbox 为 uncheck status   
         public Boolean IsWidgetTemplateUnChecked(string name1, string name2)
         {
-            return CheckBoxWidgetTemplateInput.IsWidgetTemplateUnChecked(name1, name2);
+            return CheckBoxWidgetTemplateTable.IsWidgetTemplateUnChecked(name1, name2);
         }
 
         //get text for electHierarchyButton

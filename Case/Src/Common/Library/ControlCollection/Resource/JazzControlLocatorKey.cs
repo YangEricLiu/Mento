@@ -1180,7 +1180,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string CheckBoxPtagIsAccumulated = "CheckBoxPtagIsAccumulated";
 
         public static string CheckBoxWidgetTemplateTable = "CheckBoxWidgetTemplateTable";
-        public static string CheckBoxWidgetTemplateInput = "CheckBoxWidgetTemplateInput";
+        
         #endregion
 
         #region Label

@@ -257,7 +257,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.CloseLegendItem(input.InputData.UnitIndicatorLegend[0].BenchmarkValue);
             TimeManager.ShortPause();
-            Assert.AreEqual("$@Setting.Benchmark.Label.IndustryBaseLineValue", IndustryConvertTargetButton.GetText());
+            Assert.AreEqual(input.ExpectedData.IndustryValue, IndustryConvertTargetButton.GetText());
             UnitKPIPanel.UncheckTag(input.InputData.tagNames[1]);
             Assert.AreEqual(input.ExpectedData.Industries, EnergyViewToolbar.GetBenchmarkMenulist("Energy"));
             TimeManager.MediumPause();

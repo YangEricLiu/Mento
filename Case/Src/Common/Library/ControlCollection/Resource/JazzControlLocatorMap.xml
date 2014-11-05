@@ -170,8 +170,9 @@
           <add key="MenuButtonUnitTypeConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[2]" type="XPath"/>
           <add key="MenuButtonCarbonUnitTypeConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[3]" type="XPath"/>
           <add key="MenuButtonRadioTypeConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[2]" type="XPath"/>
+          <!--<add key="MenuButtonIndustryConvert" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.SearchData']]/preceding-sibling::/em" type="XPath"/>-->
           <add key="MenuButtonIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[3]" type="XPath"/>
-          <add key="MenuButtonCarbonIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[4]" type="XPath"/>
+        <add key="MenuButtonCarbonIndustryConvert" value="//div[@id='em-content-center-region-body']/div/div/div/div[4]" type="XPath"/>
         
         <!--Greenie modified at 2013.10.28-->
           <add key="MenuButtonRankTypeConvert" value="//div[@id='em-rank-chartgridpanel']/div/div/div[3]" type="XPath"/>

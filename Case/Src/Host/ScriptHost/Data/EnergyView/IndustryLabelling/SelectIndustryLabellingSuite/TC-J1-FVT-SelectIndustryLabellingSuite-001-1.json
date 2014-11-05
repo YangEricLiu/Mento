@@ -1,0 +1,25 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级"], ["NancyCustomer1"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling1"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling2"]],
+			"TagNames":["Labellingtag12", "IndustryLabelling", "Labellingtag14"],
+			"AreaDimensionPath":[["BuildingLabelling1", "一层"]],
+			"SystemDimensionPath":[["BuildingLabelling1", "$@SystemDimensionTemplateItem_HVAC"]],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling",""]],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+		},
+		"ExpectedData":
+		{
+			"popupNotes":["$@EM.Labeling.NonBuilding", "$@EM.Labeling.DifferentCommodity"],
+			"Industries":["$@Zone_Cold_Region$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel",  "$@Zone_Cold_Region$@Industry_All_Industries"],
+		}
+	}							
+]

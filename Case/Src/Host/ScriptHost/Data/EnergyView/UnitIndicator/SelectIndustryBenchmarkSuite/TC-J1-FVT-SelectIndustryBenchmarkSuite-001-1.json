@@ -1,0 +1,50 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "BuildingLabelling2"], ["NancyCustomer1", "园区测试多层级"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling1"]],
+			"TagNames":["Labellingtag12", "IndustryLabelling", "Labellingtag14", "V9_BuildingBC", "Labellingtag2"],
+			"AreaDimensionPath":["BuildingLabelling1", "1层"],
+			"SystemDimensionPath":["NancyCustomer1", "$@SystemDimensionTemplateItem_PowerSystem"],
+			"MultipleHiearchyPath":[["NancyCustomer1","$@SystemDimensionTemplateItem_PowerSystem"]],
+			"MultiSelectedHiearchyPath":["NancyCustomer1/园区测试多层级/BuildingLabelling2", "NancyCustomer1"],
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling2"],
+				"TagsName":["Labellingtag2"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling3"],
+				"TagsName":["Labellingtag3"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1"],
+				"TagsName":["V9_BuildingBC"],
+             },
+			 			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling1"],
+				"TagsName":["Labellingtag12"],
+             }
+			],
+			"Commodity":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"Industries":["$@Zone_Cold_Region$@Industry_Hotel", "$@Setting.Benchmark.Label.None", "$@Zone_All_Zones$@Industry_Hotel"],
+			"UnitIndicatorLegend":[{
+				"BenchmarkValue":"$@Zone_Cold_Region$@Industry_Hotel",
+			}],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+		},
+		"ExpectedData":
+		{
+			"popupNotes":["$@EM.Labeling.NonBuilding", "$@EM.Labeling.DifferentCommodity", "$@EM.CompareTagsAreFull"],
+			"ClearAllMessage":"$@EM.RUClearAll",
+			"IndustryValue": "$@Setting.Benchmark.Label.IndustryBaseLineValue",
+			"Industries":["$@Setting.Benchmark.Label.None", "$@Zone_Cold_Region$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel",  "$@Zone_Cold_Region$@Industry_All_Industries"],
+		}
+	}							
+]

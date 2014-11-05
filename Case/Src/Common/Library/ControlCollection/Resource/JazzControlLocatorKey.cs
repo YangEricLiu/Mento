@@ -213,10 +213,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region unit
 
         public static string MenuButtonIndustryConvert = "MenuButtonIndustryConvert";
+        public static string MenuButtonCarbonIndustryConvert = "MenuButtonCarbonIndustryConvert";
         public static string TabButtonUnitIndicatorALLTagsTab = "TabButtonUnitIndicatorALLTagsTab";
         public static string TabButtonUnitIndicatorSystemDimensionTagsTab = "TabButtonUnitIndicatorSystemDimensionTagsTab";
         public static string TabButtonUnitIndicatorAreaDimensionTagsTab = "TabButtonEUnitIndicatorAreaDimensionTagsTab";
-        public static string MenuButtonCarbonIndustryConvert = "MenuButtonCarbonIndustryConvert";
+
+        
 
         #endregion
 

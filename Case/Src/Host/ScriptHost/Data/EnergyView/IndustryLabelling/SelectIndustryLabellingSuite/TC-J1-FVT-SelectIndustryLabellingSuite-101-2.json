@@ -1,0 +1,90 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "BuildingLabelling9"]],
+			"TagNames":["Labellingtag9"],
+			"SystemDimensionPath":[["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"]],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling",""]],
+		},
+		"ExpectedData":
+		{
+			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
+			"Industries":["$@Zone_Extreme_Cold_Region_B$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel", "$@Zone_Extreme_Cold_Region_B$@Industry_All_Industries"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "BuildingLabelling10"]],
+			"TagNames":["Labellingtag10"],
+			"SystemDimensionPath":[["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"]],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling",""]],
+		},
+		"ExpectedData":
+		{
+			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
+			"Industries":["$@Setting.Benchmark.Label.None"],
+		}
+	},
+{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "BuildingLabelling11"]],
+			"TagNames":["Labellingtag11"],
+			"SystemDimensionPath":[["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"]],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling",""]],
+		},
+		"ExpectedData":
+		{
+			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
+			"Industries":["$@Zone_All_Zones$@Industry_School"],
+		}
+	},
+{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "楼宇BAD"]],
+			"TagNames":["V11_BuildingBC"],
+			"SystemDimensionPath":[["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"]],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling",""]],
+		},
+		"ExpectedData":
+		{
+			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
+			"Industries":["$@Setting.Labeling.Label.IndustryLabeling", "$@Setting.Labeling.Label.CustomizedLabeling"],
+		}
+	}							
+]

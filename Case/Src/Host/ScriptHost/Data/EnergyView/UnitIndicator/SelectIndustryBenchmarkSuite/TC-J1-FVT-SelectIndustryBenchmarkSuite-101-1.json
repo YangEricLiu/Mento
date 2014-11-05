@@ -1,0 +1,184 @@
+﻿[
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling2"],
+				"TagsName":["Labellingtag2"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling3"],
+				"TagsName":["Labellingtag3"],
+			}],
+			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+		},
+		"ExpectedData":
+		{
+			"Industries":["$@Setting.Benchmark.Label.None", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel_Five_stat", "$@Zone_All_Zones$@Industry_Hotel_Five_stat", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel", "$@Zone_Extreme_Cold_Region_A$@Industry_All_Industries"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling3"],
+				"TagsName":["Labellingtag3"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling4"],
+				"TagsName":["Labellingtag4"],
+			}],
+			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+		},
+		"ExpectedData":
+		{
+			"Industries":["$@Setting.Benchmark.Label.None", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel_Five_stat", "$@Zone_All_Zones$@Industry_Hotel_Five_stat", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel", "$@Zone_Extreme_Cold_Region_A$@Industry_All_Industries", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel_Three_stat", "$@Zone_All_Zones$@Industry_Hotel_Three_stat"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling3"],
+				"TagsName":["Labellingtag3"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling5"],
+				"TagsName":["Labellingtag5"],
+			}],
+			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+		},
+		"ExpectedData":
+		{
+			"Industries":["$@Setting.Benchmark.Label.None", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel_Five_stat", "$@Zone_All_Zones$@Industry_Hotel_Five_stat", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel", "$@Zone_Extreme_Cold_Region_A$@Industry_All_Industries", "$@Zone_Temperate_Region$@Industry_Hotel_Five_stat", "$@Zone_Temperate_Region$@Industry_Hotel", "$@Zone_Temperate_Region$@Industry_All_Industries"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling6"],
+				"TagsName":["Labellingtag6"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling7"],
+				"TagsName":["Labellingtag7"],
+			}],
+			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+		},
+		"ExpectedData":
+		{
+			"Industries":["$@Setting.Benchmark.Label.None", "$@Zone_Extreme_Cold_Region_A$@Industry_Supermarket", "$@Zone_All_Zones$@Industry_Supermarket", "$@Zone_Extreme_Cold_Region_A$@Industry_All_Industries", "$@Zone_Cold_Region$@Industry_Clothing_retail", "$@Zone_All_Zones$@Industry_Clothing_retail", "$@Zone_Cold_Region$@Industry_All_Industries"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling3"],
+				"TagsName":["Labellingtag3"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling6"],
+				"TagsName":["Labellingtag6"],
+			}],
+			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+		},
+		"ExpectedData":
+		{
+			"Industries":["$@Setting.Benchmark.Label.None", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel_Five_stat", "$@Zone_All_Zones$@Industry_Hotel_Five_stat", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel", "$@Zone_Extreme_Cold_Region_A$@Industry_All_Industries", "$@Zone_Extreme_Cold_Region_A$@Industry_Supermarket", "$@Zone_All_Zones$@Industry_Supermarket"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling3"],
+				"TagsName":["Labellingtag3"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling8"],
+				"TagsName":["Labellingtag8"],
+			}],
+			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+		},
+		"ExpectedData":
+		{
+			"Industries":["$@Setting.Benchmark.Label.None", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel_Five_stat", "$@Zone_All_Zones$@Industry_Hotel_Five_stat", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel", "$@Zone_Extreme_Cold_Region_A$@Industry_All_Industries", "$@Zone_Temperate_Region$@Industry_Hotel_Three_stat", "$@Zone_All_Zones$@Industry_Hotel_Three_stat", "$@Zone_Temperate_Region$@Industry_Hotel", "$@Zone_Temperate_Region$@Industry_All_Industries"],
+		}
+	},	
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling6"],
+				"TagsName":["Labellingtag6"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling8"],
+				"TagsName":["Labellingtag8"],
+			}],
+			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			},
+			{
+			    "year":"2012",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+		},
+		"ExpectedData":
+		{
+			"Industries":["$@Setting.Benchmark.Label.None", "$@Zone_Temperate_Region$@Industry_Hotel_Three_stat", "$@Zone_All_Zones$@Industry_Hotel_Three_stat", "$@Zone_Temperate_Region$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel", "$@Zone_Temperate_Region$@Industry_All_Industries", "$@Zone_Extreme_Cold_Region_A$@Industry_Supermarket", "$@Zone_All_Zones$@Industry_Supermarket", "$@Zone_Extreme_Cold_Region_A$@Industry_All_Industries"],
+		}
+	}				
+]

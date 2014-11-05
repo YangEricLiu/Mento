@@ -50,8 +50,9 @@
   <add key="ComboBoxItem" value = "//div[contains(@class,'x-boundlist-floating') and not(contains(@style,'display: none'))]/div/ul/li[@role='option' and text()='$#itemKey']" type ="XPath"/><!--need change, child can not found with //xpath-->
   <add key="ComboBoxDropdownListItems" value = "//div[contains(@class,'x-boundlist-floating') and not(contains(@style,'display: none'))]/div/ul/li[contains(@class, 'x-boundlist-item')]" type ="XPath"/>
   <!--need change, child can not found with //xpath-->
-
+  <add key="MenuButtonDropdownListItems" value = "//div[contains(@class,'x-panel-default x-menu') and not(contains(@style,'visibility: hidden'))][last()]//div/a/span[@class='x-menu-item-text']" type ="XPath"/>
   <!--Grid-->
+  <add key="MenuButtonIndustryLabellingIndustry" value="//a[@class='x-menu-item-link']/span[text()='$@Setting.Labeling.Label.IndustryLabeling']" type="XPath"/>
   <add key="GridHeader" value = "div.x-grid-header-ct" type ="CssSelector"/><!--not use-->
   <add key="GridFooter" value = "div[last()]" type ="XPath"/><!--not use-->
   <add key="GridRows" value = "div/div/table[contains(@class,'x-grid-table')]/tbody/tr[contains(@class,'x-grid-row')]" type ="XPath"/>

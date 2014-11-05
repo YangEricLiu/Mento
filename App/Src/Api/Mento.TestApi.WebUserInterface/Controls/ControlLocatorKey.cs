@@ -59,6 +59,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string MenuButtonInput = "MenuButtonInput";
         public static string MenuButtonItem = "MenuButtonItem";
         public static string MenuButtonDropdownListItems = "MenuButtonDropdownListItems";
+        public static string MenuButtonIndustryLabellingIndustry = "MenuButtonIndustryLabellingIndustry";
         #endregion
 
         #region ComboBox locators
@@ -100,6 +101,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public static string GridCellIndex5 = "GridCellIndex5";
         #endregion
+
 
         #region MonthPicker locators
         public static string MonthPickerTrigger = "MonthPickerTrigger";

@@ -13,6 +13,9 @@ namespace Mento.ScriptCommon.Library.Functions
     {
         private static MenuButton MoreButton = JazzButton.EnergyViewMoreButton;
         private static MenuButton LabellingIndustryConvertButton = JazzButton.LabellingIndustryConvertMenuButton;
+        private static MenuButton IndustryConvertTargetButton = JazzButton.IndustryConvertMenuButton;
+        private static MenuButton CarbonIndustryConvertTargetButton = JazzButton.CarbonIndustryConvertMenuButton;
+        public static string MenuButtonCarbonIndustryConvert = "MenuButtonCarbonIndustryConvert";
 
         #region more button
         
@@ -37,7 +40,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {EnergyViewMoreOption.ShowCalendarNonWorkday,new string[]{"$@Common.Button.ShowCalendar", "$@Common.Button.Calendar.ShowHoliday"}},
             {EnergyViewMoreOption.ShowCalendarHeatCool,new string[]{"$@Common.Button.ShowCalendar", "$@Common.Button.Calendar.ShowHC"}},
         };
-
+        private static EnergyViewToolbarConvertTargetMenu ConvertTargetButton = new EnergyViewToolbarConvertTargetMenu();
         internal EnergyViewToolbarMoreMenu() { }
 
         public void SwitchMenuItem(EnergyViewMoreOption moreOption)
@@ -77,6 +80,14 @@ namespace Mento.ScriptCommon.Library.Functions
         public ArrayList GetLabellingSecondLevelMenuItem(string menuItems)
         {
             return LabellingIndustryConvertButton.GetSecondLevelMenuListItems(menuItems);
+        }
+
+        public ArrayList GetBenchmarkMenuItemsList(string buttonType)
+        {
+            if("Carbon" == buttonType)
+                return CarbonIndustryConvertTargetButton.GetBenchmarkMenulistItems();
+            else
+                return IndustryConvertTargetButton.GetBenchmarkMenulistItems();
         }
 
         public string GetLabellingIndustryValue()

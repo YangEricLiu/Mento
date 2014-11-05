@@ -5,6 +5,8 @@ using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.TestApi.WebUserInterface;
+using System.Collections;
+using OpenQA.Selenium;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -21,7 +23,6 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MenuButton CarbonIndustryConvertTargetButton = JazzButton.CarbonIndustryConvertMenuButton;
         private static MenuButton LabellingIndustryConvertTargetButton = JazzButton.LabellingIndustryConvertMenuButton;
         private static MenuButton CustomerLabellingIndustryTargetButton = JazzButton.CustomerLabellingIndustryMenuButton;
-
         private static Dictionary<CarbonConvertTarget, string[]> CarbonMenuItems = new Dictionary<CarbonConvertTarget, string[]>()
         {
             {CarbonConvertTarget.StandardCoal,new string[]{"$@Common.CarbonUomType.StandardCoal"}},
@@ -32,7 +33,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Dictionary<FuncModeConvertTarget, string[]> FuncModeMenuItems = new Dictionary<FuncModeConvertTarget, string[]>()
         {
             {FuncModeConvertTarget.Energy,new string[]{"$@EM.Title.EnergyConsumption"}},
-            {FuncModeConvertTarget.Carbon,new string[]{"$@EM.Title.CarbonUnit"}},
+            {FuncModeConvertTarget.Carbon,new string[]{"$@EM.KpiModeCarbon"}},
             {FuncModeConvertTarget.Cost,new string[]{"$@EM.Title.CostUnit"}},
         };
 

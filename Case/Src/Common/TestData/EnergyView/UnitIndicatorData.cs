@@ -30,11 +30,17 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public string[] Commodity { get; set; }
 
+        public YearAndMonth[] YearAndMonth { get; set; }
+
         public string Industry { get; set; }
 
         public string[] Industries { get; set; }
 
         public string CarbonType { get; set; }
+
+        public string[] MultiSelectedHiearchyPath { get; set; }
+
+        public string[][] MultipleHiearchyPath { get; set; }
 
         public string UnitIndicatorType { get; set; }
 
@@ -46,6 +52,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] expectedFileName { get; set; }
         public string UnitTypeValue { get; set; }
         public string IndustryValue { get; set; }
+        public string[] Industries { get; set; }
         public UnitIndicatorLegend[] UnitIndicatorLegend { get; set; }
         public string[] popupNotes { get; set; }
         public string ClearAllMessage { get; set; }
@@ -61,4 +68,5 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string BaselineValue { get; set; }
         public string BenchmarkValue { get; set; }
     }
+
 }

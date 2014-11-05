@@ -296,6 +296,28 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public void UnSelectSingleCommodityUnitCost()
+        {
+            //if (commodityNames == null || commodityNames.Length <= 0)
+            //{
+                UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
+            //}
+            //else //specified commodity
+            //{
+            //    UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
+            //    JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            //    TimeManager.MediumPause();
+
+            //    foreach (var commodity in commodityNames)
+            //    {
+            //        UnitCostCommodityGrid.CheckRowCheckbox(2, commodity, false);
+            //        JazzMessageBox.LoadingMask.WaitLoading();
+            //    }
+            //}
+        }
+
         public void SelectSingleCommodityUnitCost(string commodity)
         {
             UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
@@ -306,6 +328,7 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.LoadingMask.WaitLoading();
 
         }
+
 
         public void UnselectSingleCommodityUnitCost(string commodity)
         {

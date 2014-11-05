@@ -11,7 +11,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
     public class MenuButton : Button
     {
         //private static string MenuItemLocatorFormat = "//div[contains(@class,'x-menu-item') and a/span[text()='{0}']]";
-        private static string MenuItemLocatorFormat = "//span[text()='{0}']";
+        private static string MenuItemLocatorFormat = "//span[contains(@class, 'x-menu-item-text') and text()='{0}']";
 
         public MenuButton(Locator locator) : base(locator) { }
 
@@ -98,7 +98,21 @@ namespace Mento.TestApi.WebUserInterface.Controls
             this.Click();
             Locator itemLocator = GetMenuItemLocator(itemPath);
             ElementHandler.Float(FindChild(itemLocator));
+            ElementHandler.Float(FindChild(itemLocator));
+            TimeManager.LongPause();
+            ArrayList items = new ArrayList();
+            foreach (IWebElement item in CurrentMenuButtonDropdownListItems)
+            {
+                items.Add(item.Text);
+            }
 
+            return items;
+        }
+
+        public ArrayList GetBenchmarkMenulistItems()
+        {
+            this.Click();
+            TimeManager.LongPause();
             ArrayList items = new ArrayList();
             foreach (IWebElement item in CurrentMenuButtonDropdownListItems)
             {

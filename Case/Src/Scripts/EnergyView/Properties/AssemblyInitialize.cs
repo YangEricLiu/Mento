@@ -14,7 +14,7 @@ namespace Mento.Script.EnergyView
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.InitializeWithOption("AutoTestAdmin", "123456Qq", "NancyCustomer1");
+            TestAssemblyInitializer.InitializeWithOption("SchneiderelectricChina", "P@ssw0rdChina", "NancyCustomer1");
         }
 
         [TearDown]

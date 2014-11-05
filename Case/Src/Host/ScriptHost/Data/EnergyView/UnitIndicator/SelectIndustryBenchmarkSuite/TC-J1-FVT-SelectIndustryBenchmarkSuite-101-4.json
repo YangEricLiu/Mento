@@ -1,0 +1,19 @@
+﻿[
+   {
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "BuildingLabelling5"]],
+			"TagNames":["Labellingtag5"],
+			"Commodity":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
+			"YearAndMonth":[{
+				"year":"2014",
+				"month":"01",
+			}],
+		},
+		"ExpectedData":
+		{
+			"Industries":["$@Setting.Benchmark.Label.None", "$@Zone_Temperate_Region$@Industry_Hotel_Five_stat", "$@Zone_All_Zones$@Industry_Hotel_Five_stat", "$@Zone_Temperate_Region$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel", "$@Zone_Temperate_Region$@Industry_All_Industries"],
+		}
+	}							
+]

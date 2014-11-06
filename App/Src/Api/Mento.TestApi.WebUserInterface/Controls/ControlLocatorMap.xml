@@ -120,7 +120,7 @@
   <add key="PermissionCheckBoxTable" value = "//table[contains(@id,'displayfield') and tbody/tr/td/label[text()='$#permissionName']]/../table[contains(@id,'checkboxfield')]" type ="XPath"/>
   <add key="CheckBoxTable" value = "//table[contains(@id,'checkboxfield') and tbody/tr/td/label[text()='$#itemName']]" type ="XPath"/>
   <add key="CheckBoxInput" value = "//table[contains(@id,'checkboxfield') and tbody/tr/td/label[text()='$#itemName']]/tbody/tr/td/input" type ="XPath"/>
-  <add key="CheckBoxWidgetTemplateInput" value = "//div[lable[text()='$#itemResourceVariable1']]//div[label[text()='$#itemResourceVariable2']]/table/tbody/tr/td[2]/input" type ="XPath"/>
+  <add key="CheckBoxWidgetTemplateInput" value = "//div[label[text()='$#itemResourceVariable1']]//div[label[text()='$#itemResourceVariable2']]/table/tbody/tr/td[contains(@class, 'x-form-item-body')]/input" type ="XPath"/>
 
   <!--Container-->
   <add key="CustomerMapInfoSetMesaage"  value="//div[@id='st-map-consumption-form-targetEl']/div[contains(@id,'container')]//label[text()='$@Setting.CustomerManagement.Label.AtleastOneConsumption']" type="XPath"/>

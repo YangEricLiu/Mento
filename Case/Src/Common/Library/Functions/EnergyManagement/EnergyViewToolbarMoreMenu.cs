@@ -15,6 +15,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static MenuButton LabellingIndustryConvertButton = JazzButton.LabellingIndustryConvertMenuButton;
         private static MenuButton IndustryConvertTargetButton = JazzButton.IndustryConvertMenuButton;
         private static MenuButton CarbonIndustryConvertTargetButton = JazzButton.CarbonIndustryConvertMenuButton;
+        private static MenuButton UnitTypeConvertTargetButton = JazzButton.UnitTypeConvertMenuButton;
         public static string MenuButtonCarbonIndustryConvert = "MenuButtonCarbonIndustryConvert";
 
         #region more button
@@ -88,6 +89,11 @@ namespace Mento.ScriptCommon.Library.Functions
                 return CarbonIndustryConvertTargetButton.GetBenchmarkMenulistItems();
             else
                 return IndustryConvertTargetButton.GetBenchmarkMenulistItems();
+        }
+
+        public ArrayList GetUnitTypeMenuItemsList()
+        {
+            return UnitTypeConvertTargetButton.GetUnitTypeMenulistItems();
         }
 
         public string GetLabellingIndustryValue()

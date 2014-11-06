@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCustomer1", "园区测试多层级", "BuildingLabelling2"], ["NancyCustomer1", "园区测试多层级"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling1"]],
-			"TagNames":["Labellingtag12", "IndustryLabelling", "Labellingtag14", "V9_BuildingBC"],
+			"TagNames":["Labellingtag12", "IndustryLabelling", "Labellingtag14", "V9_BuildingBC", "Labellingtag2"],
 			"AreaDimensionPath":["BuildingLabelling1", "1层"],
 			"SystemDimensionPath":["NancyCustomer1", "$@SystemDimensionTemplateItem_PowerSystem"],
 			"MultipleHiearchyPath":[["NancyCustomer1","$@SystemDimensionTemplateItem_PowerSystem"]],

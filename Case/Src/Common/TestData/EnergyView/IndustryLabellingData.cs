@@ -45,6 +45,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] Industries { get; set; }
         public string[] UnitTypeValues { get; set; }
         public string IndustryValue { get; set; }
+        public string[] IndustryValues { get; set; }
         public string[] popupNotes { get; set; }
         public string ClearAllMessage { get; set; }
         public string[][] LabellingTooltips { get; set; }

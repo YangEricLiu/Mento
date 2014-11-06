@@ -33,7 +33,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Dictionary<FuncModeConvertTarget, string[]> FuncModeMenuItems = new Dictionary<FuncModeConvertTarget, string[]>()
         {
             {FuncModeConvertTarget.Energy,new string[]{"$@EM.Title.EnergyConsumption"}},
-            {FuncModeConvertTarget.Carbon,new string[]{"$@EM.KpiModeCarbon"}},
+            {FuncModeConvertTarget.Carbon,new string[]{"$@EM.Title.CarbonUnit"}},
             {FuncModeConvertTarget.Cost,new string[]{"$@EM.Title.CostUnit"}},
         };
 
@@ -52,7 +52,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Dictionary<UnitTypeConvertTarget, string[]> UnitTypeMenuItems = new Dictionary<UnitTypeConvertTarget, string[]>()
         {
-            {UnitTypeConvertTarget.UnitPopulation,new string[]{"$@EM.Unit.UnUnitTypeMenuItemstPopulation"}},
+            {UnitTypeConvertTarget.UnitPopulation,new string[]{"$@EM.Unit.UnitPopulation"}},
             {UnitTypeConvertTarget.UnitArea,new string[]{"$@EM.Unit.UnitArea"}},
             {UnitTypeConvertTarget.UnitHeatArea,new string[]{"$@EM.Unit.UnitWarmArea"}},
             {UnitTypeConvertTarget.UnitCoolArea,new string[]{"$@EM.Unit.UnitColdArea"}},

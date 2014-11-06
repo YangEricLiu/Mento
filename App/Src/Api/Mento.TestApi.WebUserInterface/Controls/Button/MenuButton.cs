@@ -122,6 +122,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return items;
         }
 
+        public ArrayList GetUnitTypeMenulistItems()
+        {
+            this.Click();
+            TimeManager.LongPause();
+            ArrayList items = new ArrayList();
+            foreach (IWebElement item in CurrentMenuButtonDropdownListItems)
+            {
+                items.Add(item.Text);
+            }
+
+            return items;
+        }
+
         protected IWebElement[] CurrentMenuButtonDropdownListItems
         {
             get

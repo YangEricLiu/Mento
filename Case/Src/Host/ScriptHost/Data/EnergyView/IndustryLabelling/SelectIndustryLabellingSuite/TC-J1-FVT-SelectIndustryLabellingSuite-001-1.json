@@ -2,11 +2,11 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyCustomer1", "园区测试多层级"], ["NancyCustomer1"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling1"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling2"]],
-			"TagNames":["Labellingtag12", "IndustryLabelling", "Labellingtag14"],
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级"], ["NancyCustomer1"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling1"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling2"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling10"]],
+			"TagNames":["Labellingtag12", "IndustryLabelling", "Labellingtag14", "Labellingtag10", "Labellingtag2"],
 			"AreaDimensionPath":[["BuildingLabelling1", "一层"]],
 			"SystemDimensionPath":[["BuildingLabelling1", "$@SystemDimensionTemplateItem_HVAC"]],
-			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling",""]],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling",""],["$@Setting.Labeling.Label.CustomizedLabeling", "SelectIndustryLabelling"]],
 			"YearAndMonth":[{
 				"year":"2014",
 				"month":"01",
@@ -15,11 +15,30 @@
 			    "year":"2012",
 				"month":"$@DateTimeFormat.HighFormat.FullYear",
 			}],
+			"MultipleHierarchyAndtags":[{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling2"],
+				"TagsName":["Labellingtag2"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling3"],
+				"TagsName":["Labellingtag3"],
+			},
+			{
+				"HierarchyPath":["NancyCustomer1"],
+				"TagsName":["V9_BuildingBC"],
+             },
+			 {
+				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling1"],
+				"TagsName":["Labellingtag12"],
+             }
+			],
 		},
 		"ExpectedData":
 		{
 			"popupNotes":["$@EM.Labeling.NonBuilding", "$@EM.Labeling.DifferentCommodity"],
-			"Industries":["$@Zone_Cold_Region$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel",  "$@Zone_Cold_Region$@Industry_All_Industries"],
+			"IndustryValues": ["$@Setting.Benchmark.Label.IndustryBaseLineValue", "$@Setting.Benchmark.Label.SelectLabelling", "$@Zone_Cold_Region$@Industry_Hotel"],
+			"ClearAllMessage":"$@EM.RUClearAll",
+			"Industries":["$@Zone_Cold_Region$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel", "$@Zone_Cold_Region$@Industry_All_Industries"],
 		}
 	}							
 ]

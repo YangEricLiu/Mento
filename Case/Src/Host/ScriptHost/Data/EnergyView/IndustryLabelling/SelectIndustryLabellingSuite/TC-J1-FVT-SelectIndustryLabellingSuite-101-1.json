@@ -192,7 +192,7 @@
 		"ExpectedData":
 		{
 			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
-			"Industries":["$@Zone_Temperate_Region$@Industry_Hotel_Three_stat", "$@Zone_All_Zones$@Industry_Hotel_Three_stat", "$@Zone_Temperate_Region$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel", "$@Zone_Temperate_Region$@Industry_All_Industries", "$@Zone_Extreme_Cold_Region_A$@Industry_Supermarket", "$@Zone_All_Zones$@Industry_Supermarket", "$@Zone_Extreme_Cold_Region_A$@Industry_All_Industries"],
+			"Industries":["$@Zone_Extreme_Cold_Region_A$@Industry_Supermarket", "$@Zone_All_Zones$@Industry_Supermarket", "$@Zone_Extreme_Cold_Region_A$@Industry_All_Industries", "$@Zone_Temperate_Region$@Industry_Hotel_Three_stat", "$@Zone_All_Zones$@Industry_Hotel_Three_stat", "$@Zone_Temperate_Region$@Industry_Hotel", "$@Zone_All_Zones$@Industry_Hotel", "$@Zone_Temperate_Region$@Industry_All_Industries"],
 		}
 	}			
 ]

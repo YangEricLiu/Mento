@@ -169,7 +169,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //Uncheck Labellingtag12,
             IndustryLabellingPanel.SwitchTagTab(TagTabs.HierarchyTag);
             IndustryLabellingPanel.UncheckTag(input.InputData.tagNames[0]);
-            // Assert.AreEqual("寒冷地区酒店", LabellingIndustryConvertButton.GetText());
+            // Assert.AreEqual(input.ExpectedData.IndustryValues[0], LabellingIndustryConvertButton.GetText());
             Assert.AreEqual(input.ExpectedData.IndustryValues[2], LabellingIndustryConvertButton.GetText());
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[1]);
             //time 2014-01
@@ -183,6 +183,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //选择BuildingLabelling2，
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[3]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             Assert.AreEqual(true, LabellingIndustryConvertButton.IsEnabled());
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[4]);

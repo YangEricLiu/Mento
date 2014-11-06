@@ -26,6 +26,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
     public class SelectIndustryLabellingSuite : TestSuiteBase
     {
         private static IndustryLabellingPanel IndustryLabellingPanel = JazzFunction.IndustryLabellingPanel;
+        private static RatioPanel RadioPanel = JazzFunction.RatioPanel;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
@@ -34,6 +35,8 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         private static MenuButton LabellingIndustryConvertButton = JazzButton.LabellingIndustryConvertMenuButton;
         //private static EnergyViewToolbarConvertTargetMenu ConvertTargetButton = new EnergyViewToolbarConvertTargetMenu();
         private static MenuButton UnitTypeConvertTargetButton = JazzButton.UnitTypeConvertMenuButton;
+        private static MenuButton IndustryConvertTargetButton = JazzButton.IndustryConvertMenuButton;
+
         [SetUp]
         public void CaseSetUp()
         {
@@ -166,9 +169,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //Uncheck Labellingtag12,
             IndustryLabellingPanel.SwitchTagTab(TagTabs.HierarchyTag);
             IndustryLabellingPanel.UncheckTag(input.InputData.tagNames[0]);
-            Assert.AreEqual("寒冷地区酒店", LabellingIndustryConvertButton.GetText());
+            // Assert.AreEqual("寒冷地区酒店", LabellingIndustryConvertButton.GetText());
+            Assert.AreEqual(input.ExpectedData.IndustryValues[2], LabellingIndustryConvertButton.GetText());
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[1]);
-           //time 2014-01
+            //time 2014-01
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
 
@@ -181,6 +185,67 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
             Assert.AreEqual(true, LabellingIndustryConvertButton.IsEnabled());
+            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[4]);
+
+            //Click "删除所有" and 确定
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
+            TimeManager.MediumPause();
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
+            JazzMessageBox.MessageBox.Clear();
+            TimeManager.LongPause();
+            //Assert.AreEqual("$@Zone_Extreme_Cold_Region_A$@Industry_Hotel_Five_stat", LabellingIndustryConvertButton.GetText());
+            TimeManager.LongPause();
+
+            //验证多层级不同介质
+            EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
+            TimeManager.LongPause();
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[3].HierarchyPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[3].TagsName[0]);
+            TimeManager.ShortPause();
+
+            MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[1].HierarchyPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+            MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[0]);
+            TimeManager.ShortPause();
+
+            MultiHieCompareWindow.ClickConfirmButton();
+            TimeManager.LongPause();
+            Assert.AreEqual(false, LabellingIndustryConvertButton.IsEnabled());
+            TimeManager.LongPause();
+            //切换到Ratio indicator，验证ConvertTargetButton status状态
+            RadioPanel.NavigateToRatio();
+            TimeManager.MediumPause();
+            Assert.AreEqual(input.ExpectedData.IndustryValues[0], IndustryConvertTargetButton.GetText());
+            TimeManager.LongPause();
+            //切换到Labelling，验证行业labelling为空，自定义不为空
+            IndustryLabellingPanel.NavigateToIndustryLabelling();
+            TimeManager.MediumPause();
+            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[4]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[3]);
+            TimeManager.ShortPause();
+            Assert.AreEqual(input.ExpectedData.IndustryValues[1], LabellingIndustryConvertButton.GetText());
+            EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);
+            Assert.AreEqual("SelectIndustryLabelling", LabellingIndustryConvertButton.GetText());
+        }
+        [Test]
+        [CaseID("TC-J1-FVT-SelectIndustryLabellingSuite-001-2")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(SelectIndustryLabellingSuite), "TC-J1-FVT-SelectIndustryLabellingSuite-001-2")]
+        public void SelectIndustyLabelling04(IndustryLabellingData input)
+        {
+
+            //Select "园区测试多层级", 非楼宇节点
+            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
+            Assert.AreEqual(input.ExpectedData.UnitTypeValues, EnergyViewToolbar.GetUnitTypeMenulist());
         }  
     }
 }

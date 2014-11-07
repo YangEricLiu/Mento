@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <SccProjectName>%24/Mento/Trunk/App/Src/Common/Mento.Framework</SccProjectName>
     <SccLocalPath>.</SccLocalPath>
-    <SccAuxPath>http://wacn0016-vs2010:8080/tfs/kara</SccAuxPath>
+    <SccAuxPath>http://10.177.1.111:8080/tfs/kara</SccAuxPath>
     <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

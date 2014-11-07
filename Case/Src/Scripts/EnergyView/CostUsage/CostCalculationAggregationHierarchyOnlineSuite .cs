@@ -107,5 +107,60 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-CostCalculation-001-2")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostCalculationAggregationHierarchyOnlineSuite), "TC-J1-FVT-CostCalculation-001-2")]
+        public void CostUsageRawValueDisplayForHierarchy(CostUsageData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.LongPause();
+
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
+
+            //Go to Cost chart view. Navigate to Hierarchy list, then go to 介质单项.
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Change manually defined time range to 2012/07/29-2012/08/04.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //"单项" = 电 +　自来水 + 煤 and display trend chart.
+            CostUsage.SelectCommodity(input.InputData.commodityNames);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //"Raw"
+            CostUsage.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //介质总览
+            CostUsage.SelectCommodity();
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //"Raw"
+            CostUsage.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+        }
     }
 }

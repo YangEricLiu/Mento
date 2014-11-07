@@ -104,5 +104,62 @@ namespace Mento.Script.EnergyView.CarbonUsage
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-StandCoalCalculation-001-3")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonCalculationAggregationHierarchyOnlineSuite), "TC-J1-FVT-StandCoalCalculation-001-3")]
+        public void CarbonUsageRawValueDisplayForHierarchy(CarbonUsageData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
+
+            CarbonUsage.NavigateToCarbonUsage();
+            TimeManager.MediumPause();
+
+            //Navigate to Hierarchy list 组织A->园区A->楼宇A, then go to 介质单项.
+            CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //"电" + "自来水" + "煤"
+            CarbonUsage.SelectCommodity(input.InputData.commodityNames);
+            TimeManager.ShortPause();
+
+            //Change manually defined time range to 2012/07/29-2012/08/04.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //"Raw"
+            CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //介质总览
+            CarbonUsage.SelectCommodity();
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //"Raw"
+            CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+        }
     }
 }

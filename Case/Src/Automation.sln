@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Administration", "Scripts\Administration\Administration.csproj", "{C0E96FFA-5126-4486-B74D-5000569A4EAC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer", "Scripts\Customer\Customer.csproj", "{8CE3B60E-099B-436A-84AA-88313B01610D}"
@@ -45,7 +47,7 @@ Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 15
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://wacn0016-vs2010:8080/tfs/kara
+		SccTeamFoundationServer = http://10.177.1.111:8080/tfs/kara
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = Scripts\\Customer\\Customer.csproj
 		SccProjectTopLevelParentUniqueName1 = Automation.sln

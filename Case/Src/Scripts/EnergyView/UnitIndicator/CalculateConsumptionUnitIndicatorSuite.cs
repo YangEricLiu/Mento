@@ -411,6 +411,82 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-2")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-2")]
+        public void CalculateCostUnitIndicatorRawValue(UnitIndicatorData input)
+        {
+            //Go to NancyCostCustomer2. Go to Function Unit indicator. Select the 楼宇A from Hierarchy Tree. Click Function Type button, select Energy Analysis..
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //UnitKPIPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            //TimeManager.MediumPause();
+
+            //Change manually defined time range to 2012/07/29-2012/08/04.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.MediumPause();
+
+            //Select BuildingA_P1_Electricity to display trend chart; Optional step=Raw; 
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[0]);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Select  BuildingA_P2_Water to display trend chart; Optional step=Raw; 
+            UnitKPIPanel.UncheckTag(input.InputData.tagNames[0]);
+            UnitKPIPanel.CheckTag(input.InputData.tagNames[1]);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+            //Select 1 more Hierarchy to 组织A->园区A->楼宇B.
+            //UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
+            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            //TimeManager.MediumPause();
+
+            ////Select tags:BuildingB_P1_Electricity,BuildingB_P2_Water,BuildingB_P3_Coal; Optional step=Raw;
+            //UnitKPIPanel.CheckTag(input.InputData.tagNames[2]);
+            //UnitKPIPanel.CheckTag(input.InputData.tagNames[3]);
+            //UnitKPIPanel.CheckTag(input.InputData.tagNames[4]);
+
+            ////check value
+            //UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            //TimeManager.MediumPause();
+            //UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+
+        }
     }
 }
 

@@ -318,5 +318,46 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostCalculation-002-3")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostCalculationAggregationDimensionOnlineSuite), "TC-J1-FVT-CostCalculation-002-3")]
+        public void CostUsageRawValueDisplayForSystemDimension(CostUsageData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.LongPause();
+
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
+
+            //Hierarchy list 组织A->园区A->楼宇A, then go to 介质单项.
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //go to 空调 System Dimension.
+            CostUsage.SwitchTagTab(TagTabs.SystemDimensionTab);
+            TimeManager.ShortPause();
+
+            CostUsage.SelectSystemDimension(input.InputData.SystemDimensionPath);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Set time range
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //"单项" = 电，水，煤
+            CostUsage.SelectCommodity(input.InputData.commodityNames);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);       
+        }
     }
 }

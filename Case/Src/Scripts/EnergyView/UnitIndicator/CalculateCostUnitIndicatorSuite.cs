@@ -825,5 +825,189 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-10")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-10")]
+        public void CalculateCostUnitIndicatorRawValue(UnitIndicatorData input)
+        {
+            //NancyCostCustomer2. Go to Function Unit indicator. Select the 楼宇A
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.ShortPause();
+
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
+            TimeManager.ShortPause();
+
+            //Change manually defined time range to 2012/07/29-2012/08/04.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //Select Commodity=电 to display trend chart; Optional step=Raw; Unit=单位人口
+            //Select Commodity=水 to display trend chart; Optional step=Raw; Unit=单位人口.
+            //Select Commodity=煤 to display trend chart; Optional step=Raw; Unit=单位人口.
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[0]);
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[1]);
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[2]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.View(EnergyViewType.Line);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Go to 介质总览 to display trend chart; Optional step=Raw; Unit=单位人口.
+            UnitKPIPanel.SelectCommodityUnitCost();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+            //Change Hierarchy list to 组织A->园区A->楼宇B, then go to 介质单项.
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+            TimeManager.LongPause();
+
+            //Select Commodity=电 to display trend chart; Optional step=Raw; Unit=单位人口/单位面积（人口=面积）.
+            //Select Commodity=水 to display trend chart; Optional step=day; Unit=单位人口/单位面积（人口=面积）.
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[0]);
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[1]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitArea);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+
+            //Go to 介质总览 to display trend chart; Optional step=Raw; Unit=单位人口/单位面积（人口=面积）.
+            UnitKPIPanel.SelectCommodityUnitCost();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitArea);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+
+            //Change Hierarchy list to 组织A->园区A, then go to 介质单项.
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Select Commodity=电 to display trend chart; Optional step=Raw; Unit=单位人口.
+            //Select Commodity=水 to display trend chart; Optional step=Raw; Unit=单位人口.
+            //Select Commodity=煤 to display trend chart; Optional step=Raw; Unit=单位人口.
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[0]);
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[1]);
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[2]);
+            TimeManager.MediumPause();
+            TimeManager.LongPause();
+
+            EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitPopulation);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.Line);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
+
+            //Go to 介质总览 to display trend chart; Optional step=Raw; Unit=单位人口.
+            UnitKPIPanel.SelectCommodityUnitCost();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check value
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
+
+            //Change Hierarchy list to 组织A->园区B->楼宇C, then go to 空调 System Dimension.
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[3]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SwitchTagTab(TagTabs.SystemDimensionTab);
+            TimeManager.MediumPause();
+
+            UnitKPIPanel.SelectSystemDimension(input.InputData.SystemDimensionPath);
+            TimeManager.MediumPause();
+
+            //Change manually defined time range to 2012/07/29-2012/08/04. Optional step=Raw step
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //Select Commodity=电 to display trend chart.
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[0]);
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            //TimeManager.LongPause();
+
+            //Check value
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Default);
+            TimeManager.MediumPause();
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
+        }
     }
 }

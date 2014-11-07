@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2", "组织A","园区A", "楼宇A"],["NancyCostCustomer2", "组织A","园区A", "楼宇B"]],
+			"TagNames":["BuildingA_P1_Electricity","BuildingA_P2_Water"],
+			"failedFileName":["F-ConsumptionUnitIndicatorCalculate101-2-1.xls", "F-ConsumptionUnitIndicatorCalculate101-2-2.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-7-29",
+				"EndDate":"2012-8-4",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["ConsumptionUnitIndicatorCalculate101-2-1.xls", "ConsumptionUnitIndicatorCalculate101-2-2.xls"],
+		}
+	}
+]

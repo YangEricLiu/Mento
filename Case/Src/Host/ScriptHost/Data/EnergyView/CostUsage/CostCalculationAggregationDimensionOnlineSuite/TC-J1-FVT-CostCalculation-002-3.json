@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"SystemDimensionPath":["楼宇A", "$@SystemDimensionTemplateItem_HVAC"],
+			"commodityNames":["$@Commodity_Electricity"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-7-29",
+				"EndDate":"2012-8-4",	
+			}],
+			"failedFileName":["F-CostCalculation-002-2-2-0.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostCalculation-002-2-2-0.xls"],
+		}
+	}
+]

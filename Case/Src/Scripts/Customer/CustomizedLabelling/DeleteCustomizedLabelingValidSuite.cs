@@ -68,7 +68,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             TimeManager.LongPause();
             TimeManager.LongPause();
 
-            //· The labeling still display in labeling list correctly.
+            //· The labeling still Not display in labeling list correctly.
             Assert.IsFalse(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
 
         }

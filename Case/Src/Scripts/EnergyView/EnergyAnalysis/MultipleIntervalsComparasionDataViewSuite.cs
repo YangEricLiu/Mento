@@ -463,8 +463,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //There are two time spans as below:
-            //Span1:  去年
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
+            //Span1:  2012-12-01 00:00 to 2013-02-01 24:00
+            EnergyViewToolbar.SetDateRange(input.InputData.BaseStartDate[0],input.InputData.BaseEndDate[0]);
+            EnergyViewToolbar.SetTimeRange(input.InputData.BaseStartTime[0],input.InputData.BaseEndTime[0]);
             TimeManager.MediumPause();
 
             //Check tag and view data view
@@ -478,7 +479,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
 
-            //Span2:  2012-12-01 00:00 to 2013-12-01 24:00
+            //Span2:  2013-02-01 00:00 to 2013-05-01 24:00
             TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, 2);
             TimeManager.ShortPause();
             TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[0], 2);
@@ -505,16 +506,17 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
-            //Change step to Hour
-            //EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
-            //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            //TimeManager.MediumPause();
+            //Change step to Raw
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
 
-            ////The number of total pages are correct.
-            ////Page1 of data values of 'Raw' step are displayed correctly.
-            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-            //TimeManager.MediumPause();
-            //EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            //The number of total pages are correct.
+            Assert.AreEqual(432,EnergyAnalysis.GetPageCount());
+            //Page1 of data values of 'Raw' step are displayed correctly.
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Switch back to line chart
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.Line);
@@ -537,6 +539,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //The number of total pages are correct.
+            Assert.AreEqual(5, EnergyAnalysis.GetPageCount());
             //Page1 of data values of 'Day' step are displayed correctly.
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
@@ -548,6 +551,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //The number of total pages are correct.
+            Assert.AreEqual(1, EnergyAnalysis.GetPageCount());
             //Page1 of data values of 'Week' step are displayed correctly.
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
             TimeManager.MediumPause();

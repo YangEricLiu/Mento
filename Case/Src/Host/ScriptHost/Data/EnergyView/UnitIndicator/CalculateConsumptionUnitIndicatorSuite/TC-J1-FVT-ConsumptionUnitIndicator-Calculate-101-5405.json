@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabeliing1"]],
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"]],
 			"TagNames":["Labellingtag1"],
 			"failedFileName":["F-ConsumptionUnitIndicatorCalculate101-5405-M.xls", "F-ConsumptionUnitIndicatorCalculate101-5405-W.xls"],
 			"ManualTimeRange":[{

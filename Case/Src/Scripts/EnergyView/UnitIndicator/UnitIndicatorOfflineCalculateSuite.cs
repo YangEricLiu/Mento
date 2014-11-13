@@ -75,6 +75,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -96,10 +99,14 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //check on data view, · 500*10/1000=5
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
@@ -114,10 +121,13 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //check on data view· 500*7/1000=0.7
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
@@ -138,6 +148,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //· BuildingRanking50 is change from last to first by ASED. 
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3]);
@@ -154,6 +165,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //· BuildingRanking50 is change from last to first by ASED. 
             CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4]);
@@ -168,6 +181,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.ShortPause();
 
             EnergyViewToolbar.ClickViewButton();
+            TimeManager.LongPause();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 

@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":["CathyRawData", "原始数据组织A", "原始数据园区A", "原始数据楼A"],
-			"TagNames":["Raw_PA_Electricity2"],
+			"TagNames":["Raw_PA_Electricity"],
 			"ManualTimeRange":[{
 				"StartDate":"2014-01-01",
 				"EndDate":"2014-01-21",	

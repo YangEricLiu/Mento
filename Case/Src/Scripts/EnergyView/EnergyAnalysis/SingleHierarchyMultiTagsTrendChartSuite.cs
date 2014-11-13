@@ -65,6 +65,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Select V(6) under Area dimension node to draw Data view.
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             EnergyViewToolbar.ClickViewButton();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -80,10 +83,12 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
             Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
+            TimeManager.LongPause();
 
             //Check one more vtag V(2) on system dimension
             EnergyAnalysis.SwitchTagTab(TagTabs.SystemDimensionTab);
             EnergyAnalysis.SelectSystemDimension(input.InputData.SystemDimensionPath);
+            TimeManager.LongPause();
             EnergyAnalysis.CheckTag(input.InputData.TagNames[2]);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -99,44 +104,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
             Assert.AreEqual(4, EnergyAnalysis.GetTrendChartLines());
-
-            //Check other 5 vtags.
-            EnergyAnalysis.CheckTags(input.InputData.MoreTagNames);
-
-            //Check vtag V(Null) checkbox. V(Null) is new created, not offline calculation, no energy data display. 
-            EnergyAnalysis.CheckTag(input.InputData.TagNames[4]);
-            EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            Assert.AreEqual(9, EnergyAnalysis.GetTrendChartLines());
-
-            //can't check any tags checkbox on All Tag list/System dimension/Area dimension tab
-            Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());
-            EnergyAnalysis.SwitchTagTab(TagTabs.SystemDimensionTab);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());
-            EnergyAnalysis.SwitchTagTab(TagTabs.AreaDimensionTab);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());
-
-            //Remove selection vtag V(14) from checkbox, The checkbox can be checked 
-            EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-            EnergyAnalysis.UncheckTag(input.InputData.TagNames[4]);
-            TimeManager.ShortPause();
-            Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
-
-            //Select one more vtag V(13) in the display tags list.
-            EnergyAnalysis.CheckTag(input.InputData.TagNames[5]);
-            EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            Assert.AreEqual(10, EnergyAnalysis.GetTrendChartLines());
 
             //Click "Save to dashboard"to save the Data view to Hierarchy node dashboard
             var dashboard = input.InputData.DashboardInfo;

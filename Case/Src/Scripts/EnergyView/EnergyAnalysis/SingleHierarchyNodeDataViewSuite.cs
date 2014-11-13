@@ -133,7 +133,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
-            Assert.IsTrue(EnergyAnalysis.IsNoDataInEnergyGrid());
+            //Assert.IsTrue(EnergyAnalysis.IsNoDataInEnergyGrid());
 
             //Uncheck tag V_Null_BuildingBC, and select another tag v14
             EnergyAnalysis.UncheckTag(input.InputData.TagNames[0]);

@@ -100,7 +100,6 @@
     <Compile Include="EnergyManagement\SaveToDashboardSuite.cs" />
     <Compile Include="EnergyManagement\SetTimeRangeValidSuite.cs" />
     <Compile Include="EnergyManagement\SetDisplayStepValidSuite.cs" />
-    <Compile Include="EnergyManagement\SetDisplayStepInvalidSuite.cs" />
     <Compile Include="IndustryLabelling\CalculateIndustryLabellingConsumptionSuite.cs" />
     <Compile Include="IndustryLabelling\CalculateIndustryLabellingDayNightSuite.cs" />
     <Compile Include="IndustryLabelling\CalculateIndustryLabellingWorkNotworkSuite.cs" />
@@ -170,8 +169,11 @@
       <Link>App.config</Link>
       <SubType>Designer</SubType>
     </None>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="EnergyAnalysis\Report1.rdlc" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -177,6 +177,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             UnitKPIPanel.CheckTag(input.InputData.tagNames[1]);
             TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitPopulation);
             TimeManager.ShortPause();
@@ -288,6 +289,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
             TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitPopulation);

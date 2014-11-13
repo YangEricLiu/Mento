@@ -424,7 +424,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //Go to 介质总览 to display Data view. Click Optional step=Raw step
             CarbonUsage.SelectCommodity();
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             TimeManager.LongPause();
@@ -444,9 +444,14 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Hour));
             Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Day));
 
+            TimeManager.LongPause();
+
             //Check data
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
@@ -484,7 +489,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //Go to 介质单项 电 to display Data view. Click Optional step=Raw step
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[0]);
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             TimeManager.LongPause();
@@ -506,7 +511,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //Go to 介质单项 自来水 to display Data view. Click Optional step=Raw step
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[1]);
-            EnergyViewToolbar.ClickViewButton();
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             TimeManager.LongPause();

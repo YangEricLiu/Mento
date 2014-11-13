@@ -331,7 +331,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
+            //Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month)); No need to verify press?
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
 
             //Select multiple tags from multiple hierarchy node BuildingBC and BuildingBAD and Dimension node to display column chart view.

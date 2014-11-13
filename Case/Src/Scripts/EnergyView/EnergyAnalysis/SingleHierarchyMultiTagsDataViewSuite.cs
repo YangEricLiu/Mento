@@ -75,6 +75,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
@@ -121,7 +122,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
-            //Check other 5 vtags.
+            //Check other 25 vtags.
             EnergyAnalysis.CheckTags(input.InputData.MoreTagNames);
 
             //Check vtag V(Null) checkbox. V(Null) is new created, not offline calculation, no energy data display. 
@@ -133,7 +134,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
-
+       
             //can't check any tags checkbox on All Tag list/System dimension/Area dimension tab
             Assert.IsTrue(EnergyAnalysis.IsNoEnabledCheckbox());
             EnergyAnalysis.SwitchTagTab(TagTabs.SystemDimensionTab);
@@ -168,23 +169,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
             TimeManager.LongPause();
 
-            //Click  "删除所有" option then cancel
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
-            TimeManager.LongPause();
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
-            JazzMessageBox.MessageBox.GiveUp();
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
-            
-            //Click  "删除所有" option then confirm
-            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
-            TimeManager.MediumPause();
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
-            JazzMessageBox.MessageBox.Clear();
-            TimeManager.MediumPause();
-            Assert.IsFalse(EnergyAnalysis.IsDataViewDrawn());
-            Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
-
             //On homepage, check the dashboard
             EnergyAnalysis.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
@@ -195,7 +179,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
-            //Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(EnergyAnalysis.EAPath, input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5], dashboard.WigetName));
         }
 
         [Test]
@@ -224,6 +207,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsTagOnListByName(input.InputData.TagNames[1]));
             Assert.IsTrue(EnergyAnalysis.IsTagOnListByName(input.InputData.TagNames[2]));
             Assert.IsTrue(EnergyAnalysis.IsTagOnListByName(input.InputData.TagNames[3]));
-        }
+
+          }
     }
 }

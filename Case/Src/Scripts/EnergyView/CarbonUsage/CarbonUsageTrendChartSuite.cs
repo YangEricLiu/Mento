@@ -266,7 +266,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             //Set date range 
-            EnergyViewToolbar.SetDateRange(new DateTime(2011, 4, 1), new DateTime(2011, 4, 5));
+            EnergyViewToolbar.SetDateRange(new DateTime(2010, 4, 1), new DateTime(2010, 4, 5));
             TimeManager.ShortPause();
 
             //Select display chart type is "标煤", Select "TotalEnergyConsumption(总览)" option

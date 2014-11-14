@@ -466,6 +466,28 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return pieDict;
         }
 
+        public int GetPieChartShowSpans()
+        {
+
+            IWebElement pie = FindChild(PieLocator);
+            IWebElement[] piePaths = ElementHandler.FindElements(PathLocator, pie).ToArray();
+            int pieNumbers = piePaths.Length / 2;
+            int hiddenSpan = 0;
+
+            foreach (IWebElement piePath in piePaths)
+            {
+                pieNumbers--;
+                if (pieNumbers >= 0)
+                {
+                    bool isHidden = piePath.GetAttribute("visibility").Contains("hidden");
+                    if (isHidden)
+                        hiddenSpan++;
+                }
+                else
+                    break;
+            }
+            return piePaths.Length / 2 - hiddenSpan;
+        }
         #endregion
 
         #region Common

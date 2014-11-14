@@ -529,6 +529,12 @@ namespace Mento.ScriptCommon.Library.Functions
             return Chart.GetPieDistributions();
         }
 
+        public int GetPieChartShowSpans()
+        {
+            return Chart.GetPieChartShowSpans();
+        }
+
+
         public int GetTrendChartLinesMarkers()
         {
             return Chart.GetTrendChartLinesMarkers();
@@ -590,6 +596,25 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             Chart.CloseLegendItem(legendName);
         }
+
+        //public void ClosePieLegendItem(int index)
+        //{
+
+        //    IWebElement PieChartLegendCloseButton = GetPieChartLegendCloseButton(index + 1);
+        //    //Button PieChartLegendCloseButton = GetPieChartLegendCloseButton(index+1);
+        //    PieChartLegendCloseButton.Click();
+        //}
+        //private Button GetPieChartLegendCloseButton(int positionIndex)
+        //{
+        //    return JazzButton.GetOneButton(JazzControlLocatorKey.PieChartLegendCloseButton, positionIndex);
+        //}
+
+        //private IWebElement GetPieChartLegendCloseButton(int positionIndex)
+        //{
+        //    Locator PieChartLegendCloseButton = new Locator("//g[contains(@class,'highcharts-legend']/g/g/g[$#positionIndex]/rect[2]", ByType.XPath);
+        //    IWebElement PieChartLegendCloseButtonItem = ElementHandler.FindElement(PieChartLegendCloseButton);
+        //    return PieChartLegendCloseButtonItem;
+        //}
 
         public void HideLineCurveLegend(string legendName)
         {

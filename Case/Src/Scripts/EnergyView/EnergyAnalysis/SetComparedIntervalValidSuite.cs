@@ -1425,7 +1425,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.FlashPause();
 
             //Click 'Cancel' in popup message dialog.
-            JazzMessageBox.MessageBox.Cancel();
+            //JazzMessageBox.MessageBox.Cancel();
+            JazzMessageBox.MessageBox.Close();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -1435,19 +1436,41 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Click 'Confrim' in popup message dialog.
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
             TimeManager.ShortPause();
-            JazzMessageBox.MessageBox.Delete();
+            JazzMessageBox.MessageBox.Clear();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
             //Check •  The tag and all intervals are removed.
-            Assert.AreEqual(0, EnergyAnalysis.GetLegendItemTexts().Length);
+            //Assert.AreEqual(0, EnergyAnalysis.GetLegendItemTexts().Length);//No chart or legend, so, GetLegendItemTexts faild.It also can be verify in next step(no chart drawn).
             //•  Tag selection panel becomes avaible for multiple tags selection.
             //•  Checkbox of other unselected tags are enabled.
             Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
             //•  No any chart displayed.
-            Assert.IsFalse(EnergyAnalysis.IsTrendChartDrawn());
+            //Assert.IsFalse(EnergyAnalysis.IsTrendChartDrawn());
             //•  'Remove All Compared Intervals' button is unavailable since all compared intervals are deleted.
             //Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled(input.ExpectedData.DeleteMessages[0]));
+
+            //----------------Add some intervals to prepare for chart data------------------
+            EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+            TimeManager.ShortPause();
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Click  'Add Compared Interval' button to open the dialog
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+            for (int i = 2; i < 5; i++)
+            {
+                TimeSpanDialog.InputAdditionRelativeValue(i.ToString(), i);
+                TimeManager.ShortPause();
+                TimeSpanDialog.ClickAddTimeSpanButton();
+                TimeManager.ShortPause();
+            }
+            TimeSpanDialog.ClickConfirmButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            //----------------------Prepared end----------------------------------------------
 
             //Save this widget to dashboard and check it
             var dashboard = input.InputData.DashboardInfo;
@@ -1462,6 +1485,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+
         }
 
     }

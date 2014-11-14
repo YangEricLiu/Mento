@@ -175,78 +175,78 @@ namespace Mento.ScriptCommon.Library.Functions
             string strType = TimeTypeComboBox.GetValue();
             switch (strType)
             {
-                case "$@EM.EnergyAnalyse.AddIntervalWindow.UserDefined":
+                //case "$@EM.EnergyAnalyse.AddIntervalWindow.UserDefined":
+                //    return OriginalTimeType.UserDefined;
+                //case "$@Common.DateRange.Last7Day":
+                //    return OriginalTimeType.Last7days;
+                //case "$@Common.DateRange.Last30Day":
+                //    return OriginalTimeType.Last30days;
+                //case "$@Common.DateRange.Last12Month":
+                //    return OriginalTimeType.Last12months;
+                //case "$@Common.DateRange.Today":
+                //    return OriginalTimeType.Today;
+                //case "$@Common.DateRange.Yesterday":
+                //    return OriginalTimeType.Yesterday;
+                //case "$@Common.DateRange.ThisWeek":
+                //    return OriginalTimeType.Thisweek;
+                //case "$@Common.DateRange.LastWeek":
+                //    return OriginalTimeType.Lastweek;
+                //case "$@Common.DateRange.ThisMonth":
+                //    return OriginalTimeType.Thismonth;
+                //case "$@Common.DateRange.LastMonth":
+                //    return OriginalTimeType.Lastmonth;
+                //case "$@Common.DateRange.ThisYear":
+                //    return OriginalTimeType.Thisyear;
+                //case "$@Common.DateRange.LastYear":
+                //    return OriginalTimeType.Lastyear;
+                case "User-defined":
                     return OriginalTimeType.UserDefined;
-                case "$@Common.DateRange.Last7Day":
+                case "Last 7 days":
                     return OriginalTimeType.Last7days;
-                case "$@Common.DateRange.Last30Day":
+                case "Last 30 days":
                     return OriginalTimeType.Last30days;
-                case "$@Common.DateRange.Last12Month":
+                case "Last 12 months":
                     return OriginalTimeType.Last12months;
-                case "$@Common.DateRange.Today":
+                case "Today":
                     return OriginalTimeType.Today;
-                case "$@Common.DateRange.Yesterday":
+                case "Yesterday":
                     return OriginalTimeType.Yesterday;
-                case "$@Common.DateRange.ThisWeek":
+                case "This week":
                     return OriginalTimeType.Thisweek;
-                case "$@Common.DateRange.LastWeek":
+                case "Last week":
                     return OriginalTimeType.Lastweek;
-                case "$@Common.DateRange.ThisMonth":
+                case "This month":
                     return OriginalTimeType.Thismonth;
-                case "$@Common.DateRange.LastMonth":
+                case "Last month":
                     return OriginalTimeType.Lastmonth;
-                case "$@Common.DateRange.ThisYear":
+                case "This year":
                     return OriginalTimeType.Thisyear;
-                case "$@Common.DateRange.LastYear":
+                case "Last year":
                     return OriginalTimeType.Lastyear;
-                //case "User-defined":
-                //    return OriginalTimeType.UserDefined;
-                //case "Last 7 days":
-                //    return OriginalTimeType.Last7days;
-                //case "Last 30 days":
-                //    return OriginalTimeType.Last30days;
-                //case "Last 12 months":
-                //    return OriginalTimeType.Last12months;
-                //case "Today":
-                //    return OriginalTimeType.Today;
-                //case "Yesterday":
-                //    return OriginalTimeType.Yesterday;
-                //case "This week":
-                //    return OriginalTimeType.Thisweek;
-                //case "Last week":
-                //    return OriginalTimeType.Lastweek;
-                //case "This month":
-                //    return OriginalTimeType.Thismonth;
-                //case "Last month":
-                //    return OriginalTimeType.Lastmonth;
-                //case "This year":
-                //    return OriginalTimeType.Thisyear;
-                //case "Last year":
-                //    return OriginalTimeType.Lastyear;
-                //case " 自定义":
-                //    return OriginalTimeType.UserDefined;
-                //case "最近7天":
-                //    return OriginalTimeType.Last7days;
-                //case "最近30天":
-                //    return OriginalTimeType.Last30days;
-                //case "最近12月":
-                //    return OriginalTimeType.Last12months;
-                //case "今天":
-                //    return OriginalTimeType.Today;
-                //case "昨天":
-                //    return OriginalTimeType.Yesterday;
-                //case "本周":
-                //    return OriginalTimeType.Thisweek;
-                //case "上周":
-                //    return OriginalTimeType.Lastweek;
-                //case "本月":
-                //    return OriginalTimeType.Thismonth;
-                //case "上月":
-                //    return OriginalTimeType.Lastmonth;
-                //case "今年":
-                //    return OriginalTimeType.Thisyear;
-                //case "去年":
-                //    return OriginalTimeType.Lastyear;
+                case " 自定义":
+                    return OriginalTimeType.UserDefined;
+                case "最近7天":
+                    return OriginalTimeType.Last7days;
+                case "最近30天":
+                    return OriginalTimeType.Last30days;
+                case "最近12月":
+                    return OriginalTimeType.Last12months;
+                case "今天":
+                    return OriginalTimeType.Today;
+                case "昨天":
+                    return OriginalTimeType.Yesterday;
+                case "本周":
+                    return OriginalTimeType.Thisweek;
+                case "上周":
+                    return OriginalTimeType.Lastweek;
+                case "本月":
+                    return OriginalTimeType.Thismonth;
+                case "上月":
+                    return OriginalTimeType.Lastmonth;
+                case "今年":
+                    return OriginalTimeType.Thisyear;
+                case "去年":
+                    return OriginalTimeType.Lastyear;
                 default:
                     return OriginalTimeType.Last7days;
                     //break;

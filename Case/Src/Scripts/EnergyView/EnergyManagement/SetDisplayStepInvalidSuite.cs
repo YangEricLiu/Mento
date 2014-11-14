@@ -732,7 +732,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
         }
         */
 
-
         [Test]
         [CaseID("TC-J1-FVT-SetDisplayStep-001-6")]
         [MultipleTestDataSource(typeof(DisplayStepData[]), typeof(SetDisplayStepInvalidSuite), "TC-J1-FVT-SetDisplayStep-001-6")]

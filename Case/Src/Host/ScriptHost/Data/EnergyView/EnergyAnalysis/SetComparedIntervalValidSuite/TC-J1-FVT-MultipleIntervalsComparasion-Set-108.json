@@ -4,6 +4,12 @@
 		{
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
 			"TagNames":["BuildingA_P1_Electricity"],
+			"DashboardInfo":{
+				"WigetName":"MultipleIntervalsRemoved",
+				"HierarchyName":["NancyCostCustomer2", "组织A"],
+				"IsCreateDashboard":"true",
+				"DashboardName":"Dashboard_MulTimeSpan",
+			},
 		},
 		"ExpectedData":
 		{

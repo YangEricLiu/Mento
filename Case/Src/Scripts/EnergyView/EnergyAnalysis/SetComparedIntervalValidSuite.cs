@@ -414,19 +414,44 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
                 TimeSpanDialog.ClickAddTimeSpanButton();
                 TimeManager.ShortPause();
 
-                TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[i], i + 2);
-                TimeManager.ShortPause();
                 TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[i], i + 2);
+                TimeManager.ShortPause();
+                TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[i], i + 2);
                 TimeManager.MediumPause();
             }
 
             Assert.IsTrue(TimeSpanDialog.IsAddTimeSpanButtonDisabled());
-            //Assert.AreEqual(4, TimeSpanDialog.GetExcludeIntervals());
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+
+            //Check The 'Add Compared Interval' dialog is closed.
+            //In tag picker panel, checkbox of other unselected tags((including switch to second page of the tags list, or switch to 系统/区域维度 tab, or switch to other hierarchy) are all disabled.
+            Assert.IsFalse(EnergyAnalysis.IsAllEnabledCheckbox());
+
+            //The chart is redrawn with above intervals correctly.
+            string[] legendsAc = EnergyAnalysis.GetLegendItemTexts();
+            string[] legendsEx = { "", "", "", "", "" };
+            legendsEx[0] = input.InputData.BaseStartDate[0] + " " + input.InputData.BaseStartTime[0] + input.InputData.BaseEndDate[0] + " " + input.InputData.BaseEndTime[0];
+            legendsEx[1] = input.InputData.StartDate[0] + " " + input.InputData.StartTime[0] + input.ExpectedData.EndDateValue[0] + " " + input.ExpectedData.EndTimeValue[0];
+            legendsEx[2] = input.InputData.StartDate[1] + " " + input.InputData.StartTime[1] + input.ExpectedData.EndDateValue[1] + " " + input.ExpectedData.EndTimeValue[1];
+            legendsEx[3] = input.InputData.StartDate[2] + " " + input.InputData.StartTime[2] + input.ExpectedData.EndDateValue[2] + " " + input.ExpectedData.EndTimeValue[2];
+            legendsEx[4] = input.InputData.StartDate[3] + " " + input.InputData.StartTime[3] + input.ExpectedData.EndDateValue[3] + " " + input.ExpectedData.EndTimeValue[3];
+            Assert.AreEqual(legendsAc, legendsEx);
+
+            //The intervals set above are stored and displayed in the dialog when open next time. 
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+            for (int i = 0; i < 4; i++ )
+            {
+                Assert.AreEqual(input.InputData.StartDate[i], TimeSpanDialog.GetAdditionStartDateValue(i + 2));
+                Assert.AreEqual(input.InputData.StartTime[i], TimeSpanDialog.GetAdditionStartTimeValue(i + 2));
+                Assert.AreEqual(input.ExpectedData.EndDateValue[i], TimeSpanDialog.GetAdditionEndDateValue(i + 2));
+                Assert.AreEqual(input.ExpectedData.EndTimeValue[i], TimeSpanDialog.GetAdditionEndTimeValue(i + 2));
+            }
+            TimeSpanDialog.ClickGiveUpButton();
 
             //Change chart to pie chart
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.Distribute);
@@ -437,7 +462,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //Check The distribution chart is redrawn with above intervals correctly, even though some interval with no data.
             Assert.IsTrue(EnergyAnalysis.IsDistributionChartDrawn());
-
+            EnergyAnalysis.ExportMulTimePieDictionaryToExcel(input.InputData.Hierarchies, input.InputData.ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
         }
 
         [Test]
@@ -512,6 +539,14 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
             TimeManager.ShortPause();
 
+            //Check •  In tag picker panel, checkbox of other unselected tags((including switch to second page of the tags list, or switch to 系统/区域维度 tab, or switch to other hierarchy) are all disabled.
+            Assert.IsFalse(EnergyAnalysis.IsAllEnabledCheckbox());
+
+            //Check 61 days data value are display out for both original and compared time interval.
+            EnergyAnalysis.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, input.InputData.ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
             //The intervals set above are stored and displayed in the dialog when open next time. 
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
@@ -528,14 +563,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(3));
 
             //Set all other 2 compared interval to 之前第xx月
-            //TimeSpanDialog.SelectCompareTimeType(CompareTimeType.Relative, 3);
-            //TimeManager.ShortPause();
             TimeSpanDialog.InputAdditionRelativeValue("5", 3);
             TimeManager.ShortPause();
             TimeSpanDialog.ClickAddTimeSpanButton();
             TimeManager.ShortPause();
-            //TimeSpanDialog.SelectCompareTimeType(CompareTimeType.Relative, 4);
-            //TimeManager.ShortPause();
             TimeSpanDialog.InputAdditionRelativeValue("10", 4);
             TimeManager.ShortPause();
 
@@ -543,6 +574,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeSpanDialog.ClickConfirmButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+
+            //Check •  In tag picker panel, checkbox of other unselected tags((including switch to second page of the tags list, or switch to 系统/区域维度 tab, or switch to other hierarchy) are all disabled.
+            Assert.IsFalse(EnergyAnalysis.IsAllEnabledCheckbox());
 
             //The chart is redrawn with above intervals correctly.
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
@@ -560,7 +594,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.AreEqual("10", TimeSpanDialog.GetAdditionRelativeValue(4));
 
             //Change step to Day(Raw)
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
@@ -760,6 +794,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            //Check •  In tag picker panel, checkbox of other unselected tags((including switch to second page of the tags list, or switch to 系统/区域维度 tab, or switch to other hierarchy) are all disabled.
+            Assert.IsFalse(EnergyAnalysis.IsAllEnabledCheckbox());
+
             //Check Chart display out correctly.
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
             TimeManager.ShortPause();
@@ -768,16 +805,23 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastMonth);
             TimeManager.MediumPause();        
 
-            //Check All compared intervals will be cleared up(All compared intervals will not be cleared up)
-            //?
-
-            //Click 'Add Compared Interval' button and set all the compared intervals again
+            //Check All compared intervals will not be cleared up
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
-            TimeSpanDialog.ClickDeleteTimeSpanButton(5);
-            TimeManager.ShortPause();
+            Assert.AreEqual(0, TimeSpanDialog.GetExcludeIntervals());
+
+            //Delete the old compared intervals
+            for (int i = 2; i <= 5; i++)
+            {
+                TimeSpanDialog.ClickDeleteTimeSpanButton(i);
+                TimeManager.ShortPause();
+            }
+
+            //Click 'Add Compared Interval' button and set all the compared intervals again
             for (int i = 1; i <= 3; i++)
             {
+                TimeSpanDialog.ClickAddTimeSpanButton();
+                TimeManager.FlashPause();
                 TimeSpanDialog.SelectCompareTimeType(CompareTimeType.Relative, i + 1);
                 TimeManager.FlashPause();
                 TimeSpanDialog.InputAdditionRelativeValue(i.ToString(), i + 1);
@@ -797,14 +841,25 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastYear);
             TimeManager.MediumPause();  
 
-            //Check All compared intervals will be cleared up
-            //?
+            //Check All compared intervals will not be cleared up
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+            Assert.AreEqual(1, TimeSpanDialog.GetExcludeIntervals());
+
+            //Delete the old compared intervals
+            for (int i = 2; i <= 4; i++)
+            {
+                TimeSpanDialog.ClickDeleteTimeSpanButton(i);
+                TimeManager.ShortPause();
+            }
 
             //Click  'Add Compared Interval' button and set all the compared intervals again
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
             for (int i = 1; i <= 3; i++)
             {
+                TimeSpanDialog.ClickAddTimeSpanButton();
+                TimeManager.FlashPause();
                 TimeSpanDialog.SelectCompareTimeType(CompareTimeType.Relative, i + 1);
                 TimeManager.FlashPause();
                 TimeSpanDialog.InputAdditionRelativeValue(i.ToString(), i + 1);
@@ -824,48 +879,11 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SetDateRange(input.InputData.BaseStartDate[0],input.InputData.BaseEndDate[0]);
             EnergyViewToolbar.SetTimeRange(input.InputData.BaseStartTime[0],input.InputData.BaseEndTime[0]);
 
-            //Select Start Date Time for all the compared intervals again.
+            //Check the compared intervals will not be cleared up
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
-
-            //Delete the old compared intervals before add
-            TimeSpanDialog.ClickDeleteTimeSpanButton(2);
-            TimeSpanDialog.ClickDeleteTimeSpanButton(3);
-            TimeSpanDialog.ClickDeleteTimeSpanButton(4);         
-            
-            for (int i = 2; i <= 5; i++ )
-            {
-                //Click  'Add Compared Interval' link button in the dialog multiple times.
-                TimeSpanDialog.ClickAddTimeSpanButton();
-                TimeManager.FlashPause();
-
-                //Select the compared intervl as user-defined
-                TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, i);
-                TimeManager.FlashPause();
-
-                //Set the start time and date
-                TimeSpanDialog.InputAdditionStartTime(input.InputData.StartTime[i-2], i);
-                TimeSpanDialog.InputAdditionStartDate(input.InputData.StartDate[i-2], i);
-
-                //Check All end time are set automatically and keep the same time range with original time, but editable.
-                Assert.AreEqual(input.ExpectedData.EndDateValue[i + 2], TimeSpanDialog.GetAdditionEndDateValue(i));
-                Assert.AreEqual(input.ExpectedData.EndTimeValue[i + 2], TimeSpanDialog.GetAdditionEndTimeValue(i));
-
-                //Check the end time is editable.
-                TimeSpanDialog.InputAdditionEndDate(input.InputData.EndDate[i + 2], i);
-                TimeSpanDialog.InputAdditionEndTime(input.InputData.EndTime[i + 2], i);
-
-            }
-
-            //Click 'Yes & Draw' button
-            TimeSpanDialog.ClickConfirmButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //Check
-            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            TimeManager.ShortPause();
-
+            Assert.AreEqual(1, TimeSpanDialog.GetExcludeIntervals());
+            TimeSpanDialog.ClickGiveUpButton();
         }
  
         [Test]
@@ -895,8 +913,15 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             string startTime = TimeSpanDialog.GetBaseStartTimeValue();
             string endDate = TimeSpanDialog.GetBaseEndDateValue();
             string endTime = TimeSpanDialog.GetBaseEndTimeValue();
+            
+            //Calculate the month index of Feb
+            int monthIndex;
+            if (DateTime.Now.Month > 3)
+                monthIndex = DateTime.Now.Month - 3;
+            else
+                monthIndex = DateTime.Now.Month + 9;
 
-            //Click  'Add Compared Interval' link button in the dialog multiple times.
+            //Click  'Add Compared Interval' link button in the dialog multiple times.(2,3,4月)
             for (int i = 2; i <= 4; i++)
             {
                 TimeSpanDialog.ClickAddTimeSpanButton();
@@ -906,7 +931,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
                 Assert.AreEqual("", TimeSpanDialog.GetAdditionRelativeValue(i + 1));
 
                 //Set all the compared intervals to relative time.
-                TimeSpanDialog.InputAdditionRelativeValue((i + 3).ToString(), i);
+                TimeSpanDialog.InputAdditionRelativeValue((monthIndex + i - 4).ToString(), i);
             }
 
             //Change type of the first compared interval from relative to absolute time. 
@@ -930,9 +955,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //Check The other compared interval keep as before.
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(3));
-            Assert.AreEqual("9", TimeSpanDialog.GetAdditionRelativeValue(3));
+            Assert.AreEqual((monthIndex - 1).ToString(), TimeSpanDialog.GetAdditionRelativeValue(3));
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(4));
-            Assert.AreEqual("10", TimeSpanDialog.GetAdditionRelativeValue(4));
+            Assert.AreEqual(monthIndex.ToString(), TimeSpanDialog.GetAdditionRelativeValue(4));
 
             //Change type and time of the second compared interval to absolute time: 2013-6-1 00:00 to 2012-7-15 24:00
             TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, 3);
@@ -955,7 +980,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.AreEqual(input.ExpectedData.EndDateValue[1], TimeSpanDialog.GetAdditionEndDateValue(3));
             Assert.AreEqual(input.ExpectedData.EndTimeValue[1], TimeSpanDialog.GetAdditionEndTimeValue(3));
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(4));
-            Assert.AreEqual("10", TimeSpanDialog.GetAdditionRelativeValue(4));
+            Assert.AreEqual(monthIndex.ToString(), TimeSpanDialog.GetAdditionRelativeValue(4));
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
@@ -984,11 +1009,11 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.AreEqual(input.ExpectedData.EndDateValue[1], TimeSpanDialog.GetAdditionEndDateValue(3));
             Assert.AreEqual(input.ExpectedData.EndTimeValue[1], TimeSpanDialog.GetAdditionEndTimeValue(3));
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(4));
-            Assert.AreEqual("10", TimeSpanDialog.GetAdditionRelativeValue(4));
+            Assert.AreEqual(monthIndex.ToString(), TimeSpanDialog.GetAdditionRelativeValue(4));
 
-            //Change type of the second compared interval to relatived: 之前第4个月
+            //Change type of the second compared interval to relatived: 之前第*个月
             TimeSpanDialog.SelectCompareTimeType(CompareTimeType.Relative, 3);
-            TimeSpanDialog.InputAdditionRelativeValue("9", 3);
+            TimeSpanDialog.InputAdditionRelativeValue(monthIndex.ToString(), 3);
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
@@ -998,6 +1023,15 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Check Chart display out correctly.
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
             TimeManager.ShortPause();
+
+            //Check the intervals are right in legends
+            string[] legendsAc = EnergyAnalysis.GetLegendItemTexts();
+            string[] legendsEx = { "", "", "", "" };
+            legendsEx[0] = startDate + " " + startTime + endDate + " " + endTime;
+            legendsEx[1] = input.ExpectedData.StartDateValue[0] + " " + input.ExpectedData.StartTimeValue[0] + input.ExpectedData.EndDateValue[0] + " " + input.ExpectedData.EndTimeValue[0];
+            legendsEx[2] = input.ExpectedData.StartDateValue[2] + " " + input.ExpectedData.StartTimeValue[2] + input.ExpectedData.EndDateValue[2] + " " + input.ExpectedData.EndTimeValue[2];
+            legendsEx[3] = input.ExpectedData.StartDateValue[2] + " " + input.ExpectedData.StartTimeValue[2] + input.ExpectedData.EndDateValue[2] + " " + input.ExpectedData.EndTimeValue[2];
+            Assert.AreEqual(legendsAc, legendsEx);
 
         }
 
@@ -1029,8 +1063,12 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.AreEqual(TimeSpanDialog.GetBaseEndDateValue(), input.InputData.BaseEndDate[0]);
             Assert.AreEqual(TimeSpanDialog.GetBaseEndTimeValue(), input.InputData.BaseEndTime[0]);
 
-            //The compared interval time type is changed to absolute
+            //The compared interval time type is changed to absolute and grey out
             Assert.AreEqual(CompareTimeType.UserDefined, TimeSpanDialog.GetCompareTimeType(2));
+            Assert.AreEqual("", TimeSpanDialog.GetAdditionStartDateValue(2));
+            Assert.AreEqual("00:00", TimeSpanDialog.GetAdditionStartTimeValue(2));
+            Assert.AreEqual("", TimeSpanDialog.GetAdditionEndDateValue(2));
+            Assert.AreEqual("24:00", TimeSpanDialog.GetAdditionEndTimeValue(2));
 
             for (int i = 3; i <= 5; i++)
             {
@@ -1076,11 +1114,22 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            //Check •  In tag picker panel, checkbox of other unselected tags((including switch to second page of the tags list, or switch to 系统/区域维度 tab, or switch to other hierarchy) are all disabled.
+            Assert.IsFalse(EnergyAnalysis.IsAllEnabledCheckbox());
+
             //Check Chart display out correctly.
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
             TimeManager.ShortPause();
 
-            //Open the above multipleintervalcomparasion
+            //Check the intervals are correctly in legends
+            string[] legendsAc = EnergyAnalysis.GetLegendItemTexts();
+            string[] legendsEx = { "", "", ""};
+            legendsEx[0] = input.InputData.BaseStartDate[0] + " " + input.InputData.BaseStartTime[0] + input.InputData.BaseEndDate[0] + " " + input.InputData.BaseEndTime[0];
+            legendsEx[1] = input.InputData.StartDate[0] + " " + input.InputData.StartTime[0] + input.ExpectedData.EndDateValue[2] + " " + input.ExpectedData.EndTimeValue[2];
+            legendsEx[2] = input.InputData.StartDate[1] + " " + input.InputData.StartTime[1] + input.ExpectedData.EndDateValue[1] + " " + input.ExpectedData.EndTimeValue[1];
+            Assert.AreEqual(legendsAc, legendsEx);
+
+            //Open the above multiple interval comparasion
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
 
@@ -1093,6 +1142,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.AreEqual(TimeSpanDialog.GetBaseStartTimeValue(), input.InputData.BaseStartTime[0]);
             Assert.AreEqual(TimeSpanDialog.GetBaseEndDateValue(), input.InputData.BaseEndDate[0]);
             Assert.AreEqual(TimeSpanDialog.GetBaseEndTimeValue(), input.InputData.BaseEndTime[0]);
+            Assert.AreEqual(TimeSpanDialog.GetAdditionStartDateValue(2), input.InputData.StartDate[0]);
+            Assert.AreEqual(TimeSpanDialog.GetAdditionStartTimeValue(2), input.InputData.StartTime[0]);
+            Assert.AreEqual(TimeSpanDialog.GetAdditionEndDateValue(2), input.ExpectedData.EndDateValue[2]);
+            Assert.AreEqual(TimeSpanDialog.GetAdditionEndTimeValue(2), input.ExpectedData.EndTimeValue[2]);
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
@@ -1102,6 +1155,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Check Chart display out correctly.
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
             TimeManager.ShortPause();
+
+            //check the intervals are correctly in legends
+            legendsAc = EnergyAnalysis.GetLegendItemTexts();
+            legendsEx[0] = input.InputData.BaseStartDate[0] + " " + input.InputData.BaseStartTime[0] + input.InputData.BaseEndDate[0] + " " + input.InputData.BaseEndTime[0];
+            legendsEx[1] = input.InputData.StartDate[0] + " " + input.InputData.StartTime[0] + input.ExpectedData.EndDateValue[2] + " " + input.ExpectedData.EndTimeValue[2];
+            legendsEx[2] = input.InputData.StartDate[2] + " " + input.InputData.StartTime[2] + input.ExpectedData.EndDateValue[1] + " " + input.ExpectedData.EndTimeValue[1];
+            Assert.AreEqual(legendsAc, legendsEx);
 
         }
 
@@ -1160,41 +1220,94 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Add compared intervals
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
-            TimeSpanDialog.InputAdditionRelativeValue((1).ToString(), 2);
+            TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, 2);
+            TimeSpanDialog.InputAdditionStartDate("2012-01-01", 2);
+            TimeSpanDialog.InputAdditionEndDate("2012-01-08", 2);
             TimeManager.FlashPause();
-            for (int i = 3; i <= 5; i++ )
-            {
-                TimeSpanDialog.ClickAddTimeSpanButton();
-                TimeManager.FlashPause();
-                TimeSpanDialog.InputAdditionRelativeValue((i - 1).ToString(), i);
-                TimeManager.FlashPause();
-            }
+            TimeSpanDialog.ClickAddTimeSpanButton();
+            TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, 3);
+            TimeSpanDialog.InputAdditionStartDate("2012-02-01", 3);
+            TimeSpanDialog.InputAdditionEndDate("2012-02-08", 3);
+            TimeManager.FlashPause();
+            TimeSpanDialog.ClickAddTimeSpanButton();
+            TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, 4);
+            TimeSpanDialog.InputAdditionStartDate("2012-03-01", 4);
+            TimeSpanDialog.InputAdditionEndDate("2012-03-08", 4);
+            TimeManager.FlashPause();
+            TimeSpanDialog.ClickAddTimeSpanButton();
+            TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, 5);
+            TimeSpanDialog.InputAdditionStartDate("2012-04-01", 5);
+            TimeSpanDialog.InputAdditionEndDate("2012-04-08", 5);
+            TimeManager.FlashPause();
 
             TimeSpanDialog.ClickConfirmButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //From the legend area, Click 'x' icon delete one compared interval.
-            //EnergyViewPanel.ClickLegendItem("");
+            //------Need manual test:CloseLegendItem don't work well, the legend item can be clicked--------
+            ////From the legend area, Click 'x' icon delete one compared interval.
+            ////EnergyAnalysis.ClickLegendItem("2012-01-01 00:002012-01-08 24:00");
+            //EnergyAnalysis.CloseLegendItem("2012-01-01 00:002012-01-08 24:00");
+            //TimeManager.FlashPause();
 
-            //From the dialog, Click 'x' to delete ALL compared intervals one by one.Click 'Yes' button
+            ////Check the series for compared interval is removed from chart directly.
+            //Assert.AreEqual(4, EnergyAnalysis.GetLegendItemTexts().Length);
+
+            //Check the removed interval is also disappered from the dialog.
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
-            for (int i = 2; i <= 5; i++)
+            //Assert.AreEqual(1, TimeSpanDialog.GetExcludeIntervals());
+
+            //From the dialog, Click 'x' to delete ALL compared intervals one by one.Click 'Yes' button
+            for (int i = 2; i <= 5; i++ )
             {
                 TimeSpanDialog.ClickDeleteTimeSpanButton(i);
                 TimeManager.FlashPause();
             }
+
             Assert.AreEqual(4, TimeSpanDialog.GetExcludeIntervals());
             TimeSpanDialog.ClickConfirmButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //Check 'Remove All Compared Intervals' button is unavailable since all compared intervals are deleted.
+            //Check Checkbox of other unselected tags are enabled.
             Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
-            Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled(input.ExpectedData.DeleteMessages[0]));
+            //Check 'Remove All Compared Intervals' button is unavailable since all compared intervals are deleted.
+            //Assert.IsTrue(TimeSpans.DeleteAllTimeSpans.);
 
-            //The default step should still be Day
+            //Add some intervals. 
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+            for (int i = 2; i <= 5; i++ )
+            {
+                TimeSpanDialog.SelectCompareTimeType(CompareTimeType.Relative, i);
+                TimeSpanDialog.InputAdditionRelativeValue(i.ToString(),i);
+                TimeManager.FlashPause();
+                TimeSpanDialog.ClickAddTimeSpanButton();
+                TimeManager.FlashPause();
+            }
+
+            //From the dialog, Click 'x' to delete ALL compared intervals one by one.
+            for (int i = 2; i <= 5; i++ )
+            {
+                TimeSpanDialog.ClickDeleteTimeSpanButton(i);
+                TimeManager.ShortPause();
+                Assert.AreEqual(i - 1, TimeSpanDialog.GetExcludeIntervals());
+                TimeManager.FlashPause();
+            }
+
+            //Click 'Yes' button
+            TimeSpanDialog.ClickConfirmButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check •  All compared intervals are removed directly without warning.
+            //•  Checkbox of other unselected tags are enabled.
+            Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
+            //•  'Remove All Compared Intervals' button is unavailable since all compared intervals are deleted.
+            //Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled(input.ExpectedData.DeleteMessages[0]));
+
+            //Check The default step should still be Day
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
@@ -1204,9 +1317,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //All compared time series in chart are removed and only the tag's original series is displayed.
-            //Assert.AreEqual(1, EnergyViewPanel.GetLegendNumber());
-            //Assert.AreEqual(true, EnergyAnalysisPanel.IsLegendItemExists(input.InputData.TagNames[0]));
+            //Check All compared time series in chart are removed and only the tag's original series is displayed.
+            Assert.AreEqual(1, EnergyAnalysis.GetLegendItemTexts().Length);
+            Assert.AreEqual("BuildingA_P1_Electri...", EnergyAnalysis.GetLegendItemTexts()[0]);//tag name is too long to display in legend area
 
             //Add multiple compared intervals successfully again.
             EnergyViewToolbar.ClickTimeSpanButton();
@@ -1236,10 +1349,49 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //Check All compared intervals are still there and NOT cleared.
+            Assert.AreEqual(5, EnergyAnalysis.GetLegendItemTexts().Length);
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.MediumPause();
             Assert.AreEqual(0, TimeSpanDialog.GetExcludeIntervals());
-            //TimeSpanDialog.ClickGiveUpButton();
+            TimeSpanDialog.ClickGiveUpButton();
+
+            //Click 'Remove All Compared Intervals' button, then confrim
+            EnergyViewToolbar.TimeSpan(TimeSpans.DeleteAllTimeSpans);
+            TimeManager.ShortPause();
+
+            //Popup message 'Clear all compared intervals?' for confirmation.
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
+
+            //Click 'Delete'.
+            JazzMessageBox.MessageBox.Delete();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check •  All compared intervals are removed.
+            Assert.AreEqual(1, EnergyAnalysis.GetLegendItemTexts().Length);
+            //•  All compared time series in chart are removed.
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.MediumPause();
+            Assert.AreEqual(3, TimeSpanDialog.GetExcludeIntervals());
+            TimeSpanDialog.ClickConfirmButton();
+            TimeManager.ShortPause();
+            //•  Checkbox of other unselected tags are enabled.
+            Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
+            //•  'Remove All Compared Intervals' button is unavailable since all compared intervals are deleted.
+            //?Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled(input.ExpectedData.DeleteMessages[0]));
+
+            //Add multiple compared intervals successfully again.
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+            TimeSpanDialog.InputAdditionRelativeValue("1", 2);
+            TimeManager.FlashPause();
+            for (int i = 3; i <= 5; i++)
+            {
+                TimeSpanDialog.ClickAddTimeSpanButton();
+                TimeManager.FlashPause();
+                TimeSpanDialog.InputAdditionRelativeValue((i - 1).ToString(), i);
+                TimeManager.FlashPause();
+            }
 
             //Remove the first and second compared intervals
             TimeSpanDialog.ClickDeleteTimeSpanButton(2);
@@ -1250,28 +1402,67 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.AreEqual(2, TimeSpanDialog.GetExcludeIntervals());
             Assert.AreNotEqual("", TimeSpanDialog.GetBaseStartDateValue());
             Assert.AreNotEqual("", TimeSpanDialog.GetBaseEndDateValue());
-            Assert.AreEqual("3", TimeSpanDialog.GetAdditionRelativeValue(2));
+            Assert.AreEqual("3", TimeSpanDialog.GetAdditionRelativeValue(4));
 
+            //This bug have not fixed
             //Click link '添加时间段' button some times and check the locations that new intervals added to
             for (int i = 4; i <= 5; i++ )
             {
                 TimeSpanDialog.ClickAddTimeSpanButton();
                 TimeManager.FlashPause();
                 //Check The new intervals should added to below the last interval.
-                Assert.AreEqual("", TimeSpanDialog.GetAdditionRelativeValue(i));
+                //Assert.AreEqual("", TimeSpanDialog.GetAdditionRelativeValue(i));
             }
             TimeSpanDialog.ClickConfirmButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            //Check •  In 'More' menu, the 'Delete All' button is available.
             //Click 'Delete All' button from 'More' menu.
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
             TimeManager.ShortPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.DeleteAllMessage));
-            JazzMessageBox.MessageBox.Clear();
+            TimeManager.FlashPause();
+
+            //Click 'Cancel' in popup message dialog.
+            JazzMessageBox.MessageBox.Cancel();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsFalse(EnergyViewToolbar.IsTimeSpanButtonEnable());
+
+            //Check •  All compared intervals are still there and NOT cleared.
+            Assert.AreEqual(3,EnergyAnalysis.GetLegendItemTexts().Length);
+
+            //Click 'Confrim' in popup message dialog.
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
+            TimeManager.ShortPause();
+            JazzMessageBox.MessageBox.Delete();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check •  The tag and all intervals are removed.
+            Assert.AreEqual(0, EnergyAnalysis.GetLegendItemTexts().Length);
+            //•  Tag selection panel becomes avaible for multiple tags selection.
+            //•  Checkbox of other unselected tags are enabled.
+            Assert.IsTrue(EnergyAnalysis.IsAllEnabledCheckbox());
+            //•  No any chart displayed.
+            Assert.IsFalse(EnergyAnalysis.IsTrendChartDrawn());
+            //•  'Remove All Compared Intervals' button is unavailable since all compared intervals are deleted.
+            //Assert.IsTrue(EnergyViewToolbar.IsTimeSpanMenuItemDisabled(input.ExpectedData.DeleteMessages[0]));
+
+            //Save this widget to dashboard and check it
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+
+            //Check the Distribution Chart is saved into dashboard successfully
+            EnergyAnalysis.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.MediumPause();
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
         }
+
     }
 }

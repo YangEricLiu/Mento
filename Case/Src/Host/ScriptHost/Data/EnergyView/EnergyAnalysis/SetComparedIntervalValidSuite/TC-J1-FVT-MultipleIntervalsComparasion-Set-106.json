@@ -4,17 +4,17 @@
 		{
 			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
 			"TagNames":["V1_BuildingBC"],
-			"StartDate":["2012-03-15","2013-06-01"],
+			"StartDate":["2012-03-15","2012-06-01"],
 			"StartTime":["00:00","00:00"],
-			"EndDate":["2012-04-14","2013-07-15"],
+			"EndDate":["2012-04-14","2012-07-15"],
 			"EndTime":["24:00","24:00"],
 		},
 		"ExpectedData":
 		{
-			"StartDateValue":["2012-03-15","2013-06-01"],
-			"StartTimeValue":["00:00","00:00"],
-			"EndDateValue":["2012-04-14","2013-07-15"],
-			"EndTimeValue":["24:00","24:00"],
+			"StartDateValue":["2012-03-15","2012-06-01","2014-02-01"],
+			"StartTimeValue":["00:00","00:00","00:00"],
+			"EndDateValue":["2012-04-14","2012-07-15","2014-02-28"],
+			"EndTimeValue":["24:00","24:00","24:00"],
 		}
 	}
 ]

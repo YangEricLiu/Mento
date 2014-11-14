@@ -553,7 +553,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
         }
-        */
+        */ 
 
         [Test]
         [CaseID("TC-J1-FVT-SetDisplayStep-001-7")]

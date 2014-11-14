@@ -81,7 +81,7 @@
     <Compile Include="CostUsage\CostUsageDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\AdditionalTagsDataVerificationSuite.cs" />
     <Compile Include="EnergyAnalysis\EnergyConsumptionPieChartSuite.cs" />
-    <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionPieChartSuite1.cs" />
+    <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionPieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\MonitorDataIssues.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodePieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\MultiTagsDataVerificationSuite.cs" />

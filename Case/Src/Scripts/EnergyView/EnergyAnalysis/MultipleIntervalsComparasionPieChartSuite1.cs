@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-MultipleIntervalsComparasion-DistributionChart"), CreateTime("2014-09-23"), Owner("Linda")]
-    public class MultipleIntervalsComparasionPieChartSuite : TestSuiteBase
+    public class MultipleIntervalsComparasionPieChartSuite1 : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -45,7 +45,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-PieChart-101")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionPieChartSuite), "TC-J1-FVT-MultipleIntervalsComparasion-PieChart-101")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionPieChartSuite1), "TC-J1-FVT-MultipleIntervalsComparasion-PieChart-101")]
         public void ViewSingleTagPiechartAndSaveToDashboard(TimeSpansData input)
         {
             //Select the BuildingBC node in Pre-condition from Hierarchy list
@@ -243,7 +243,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-PieChart-102")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionPieChartSuite), "TC-J1-FVT-MultipleIntervalsComparasion-PieChart-102")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionPieChartSuite1), "TC-J1-FVT-MultipleIntervalsComparasion-PieChart-102")]
         public void ViewSingleTagPiechartAndSaveToDashboard2(TimeSpansData input)
         {
             //Select the BuildingBC node in Pre-condition from Hierarchy list
@@ -324,7 +324,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-PieChart-103")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionPieChartSuite), "TC-J1-FVT-MultipleIntervalsComparasion-PieChart-103")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionPieChartSuite1), "TC-J1-FVT-MultipleIntervalsComparasion-PieChart-103")]
         public void MultipleIntervalsAlignedCorrectlyEspeciallyWithMissingData(TimeSpansData input)
         {
             //NancyCostCustomer2>组织A>园区A>楼宇A 

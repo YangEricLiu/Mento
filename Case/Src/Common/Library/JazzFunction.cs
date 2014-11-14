@@ -335,6 +335,17 @@ namespace Mento.ScriptCommon.Library
                 return _HierarchyPeopleAreaSettings;
             }
         }
+        private static BasicIndustryAndZoneSetting _BasicIndustryAndZoneSetting;
+        public static BasicIndustryAndZoneSetting BasicIndustryAndZoneSetting
+        {
+            get
+            {
+                if (_BasicIndustryAndZoneSetting == null)
+                    _BasicIndustryAndZoneSetting = new BasicIndustryAndZoneSetting();
+
+                return _BasicIndustryAndZoneSetting;
+            }
+        }
 
         private static EnergyAnalysisPanel _EnergyAnalysisPanel;
         public static EnergyAnalysisPanel EnergyAnalysisPanel

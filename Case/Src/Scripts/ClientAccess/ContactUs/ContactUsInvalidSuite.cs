@@ -23,26 +23,10 @@ namespace Mento.Script.ClientAccess.ContactUs
     {
         private static ContactUsSetting ContactUsSetting = JazzFunction.ContactUsPage;
 
-        #region  TestCase1  ContactUsLinkNotAvailable
+        #region  TestCase1  ContactUsWithRequiredFieldsEmpty
         [Test]
         [CaseID("TC-J1-FVT-ContactUs-001")]
         [MultipleTestDataSource(typeof(ContactUsData[]), typeof(ContactUsInvalidSuite), "TC-J1-FVT-ContactUs-001")]
-        public void ContactUsLinkNotAvailable(ContactUsData input)
-        {
-            //Login in with the user that is not a demo user.Open the homepage.
-            TestAssemblyInitializer.InitializeWithOption("SchneiderElectricChina", "P@ssw0rd", input.InputData.Customer);
-            TimeManager.LongPause();
-
-            //Go to verify Contact Us.
-            //Contact Us is not list in the right corner.
-            Assert.IsFalse(ContactUsSetting.ContactUsButtonIsVisiable());
-        }
-        #endregion
-
-        #region  TestCase2  ContactUsWithRequiredFieldsEmpty
-        [Test]
-        [CaseID("TC-J1-FVT-ContactUs-002")]
-        [MultipleTestDataSource(typeof(ContactUsData[]), typeof(ContactUsInvalidSuite), "TC-J1-FVT-ContactUs-002")]
         public void ContactUsWithRequiredFieldsEmpty(ContactUsData input)
         {
             //Open the homepage via click the hyperlink send for created demo user.
@@ -82,10 +66,10 @@ namespace Mento.Script.ClientAccess.ContactUs
         }
         #endregion
 
-        #region  TestCase3  ContactUsWithInvalid
+        #region  TestCase2  ContactUsWithInvalid
         [Test]
-        [CaseID("TC-J1-FVT-ContactUs-003")]
-        [MultipleTestDataSource(typeof(ContactUsData[]), typeof(ContactUsInvalidSuite), "TC-J1-FVT-ContactUs-003")]
+        [CaseID("TC-J1-FVT-ContactUs-002")]
+        [MultipleTestDataSource(typeof(ContactUsData[]), typeof(ContactUsInvalidSuite), "TC-J1-FVT-ContactUs-002")]
         public void ContactUsWithInvalid(ContactUsData input)
         {
             //Open the homepage via click the hyperlink send for created demo user.
@@ -156,10 +140,10 @@ namespace Mento.Script.ClientAccess.ContactUs
 
         #endregion
 
-        #region  TestCase4  ContactUsCancelledandClosed
+        #region  TestCase3  ContactUsCancelledandClosed
         [Test]
-        [CaseID("TC-J1-FVT-ContactUs-004")]
-        [MultipleTestDataSource(typeof(ContactUsData[]), typeof(ContactUsInvalidSuite), "TC-J1-FVT-ContactUs-004")]
+        [CaseID("TC-J1-FVT-ContactUs-003")]
+        [MultipleTestDataSource(typeof(ContactUsData[]), typeof(ContactUsInvalidSuite), "TC-J1-FVT-ContactUs-003")]
         public void ContactUsCancelledandClosed(ContactUsData input)
         {
             //Open the homepage via click the hyperlink send for created demo user.

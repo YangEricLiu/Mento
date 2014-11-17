@@ -45,6 +45,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] BaseEndTime { get; set; }
 
         public ManualTimeRange[] ManualTimeRange { get; set; }
+
+        public string[][] RelativeIntervalsItems { get; set; }
     }
 
     public class TimeSpansOutputData : ExpectedTestDataBase

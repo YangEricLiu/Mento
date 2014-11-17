@@ -175,5 +175,18 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             throw new NotImplementedException();
         }
+
+        public ArrayList GetRelativeIntervalsMenulistItems()
+        {
+            this.Click();
+            TimeManager.LongPause();
+            ArrayList items = new ArrayList();
+            foreach (IWebElement item in CurrentComboBoxDropdownListItems)
+            {
+                items.Add(item.Text);
+            }
+
+            return items;
+        }
     }
 }

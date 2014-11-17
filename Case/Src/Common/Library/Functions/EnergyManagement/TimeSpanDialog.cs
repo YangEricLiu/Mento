@@ -6,6 +6,7 @@ using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.ScriptCommon.TestData.EnergyView;
+using System.Collections;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -403,6 +404,12 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetBaseEndTimeValue()
         {
             return BaseEndTimeComboBox.GetValue();
+        }
+
+        public ArrayList GetRelativeIntervalsMenuItemsList(int position)
+        {
+            ComboBox AdditionRelativeComboBox = GetAdditionRelativeIntevalNumberComboBox(position);
+            return AdditionRelativeComboBox.GetRelativeIntervalsMenulistItems();
         }
 
         #endregion

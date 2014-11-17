@@ -639,14 +639,25 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Check the default compared interval time type is relative
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(2));
 
-            //Open dropdown list of 第xx天 and select 2
+            //Open dropdown list of 第xx天 And check Option list is 1-10.
+            Assert.AreEqual(input.InputData.RelativeIntervalsItems[0],TimeSpanDialog.GetRelativeIntervalsMenuItemsList(2));
+                 
+            //select 2
             TimeSpanDialog.InputAdditionRelativeValue("2", 2);
             TimeManager.ShortPause();
+
+            //+Store data for check save data
+            //...
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+
+            //The 'Add Compared Interval' dialog is closed.
+            //In tag picker panel, checkbox of other unselected tags((including switch to second page of the tags list, or switch to 系统/区域维度 tab, or switch to other hierarchy) are all disabled.
+            Assert.IsFalse(EnergyAnalysis.IsAllEnabledCheckbox());
+            TimeManager.ShortPause();
 
             //Check Chart display out correctly.
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
@@ -655,6 +666,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Click  'Add Compared Interval' button again
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
+
+            //Check The original time interval and compared time interval keep the same with above.
+            Assert.AreEqual(startDate, TimeSpanDialog.GetBaseStartDateValue());
+            Assert.AreEqual(startTime, TimeSpanDialog.GetBaseStartTimeValue());
+            Assert.AreEqual(endDate, TimeSpanDialog.GetBaseEndDateValue());
+            Assert.AreEqual(endTime, TimeSpanDialog.GetBaseEndTimeValue());
+            Assert.AreEqual("2", TimeSpanDialog.GetAdditionRelativeValue(2));
 
             //Check User can add 3 more relative time compared interval. 
             //Multiple new compared intervals are displayed with relative compared interval
@@ -674,9 +692,59 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            //Check •  The 'Add Compared Interval' dialog is closed.
+            //•  In tag picker panel, checkbox of other unselected tags((including switch to second page of the tags list, or switch to 系统/区域维度 tab, or switch to other hierarchy) are all disabled.
+            Assert.IsFalse(EnergyAnalysis.IsAllEnabledCheckbox());
+            TimeManager.ShortPause();
+            
             //Chart display out correctly.
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
+            //Check The intervals set above are stored and displayed in the dialog when open next time. 
+            EnergyViewToolbar.ClickTimeSpanButton();
+            TimeManager.ShortPause();
+            Assert.AreEqual(startDate, TimeSpanDialog.GetBaseStartDateValue());
+            Assert.AreEqual(startTime, TimeSpanDialog.GetBaseStartTimeValue());
+            Assert.AreEqual(endDate, TimeSpanDialog.GetBaseEndDateValue());
+            Assert.AreEqual(endTime, TimeSpanDialog.GetBaseEndTimeValue());
+            Assert.AreEqual("2", TimeSpanDialog.GetAdditionRelativeValue(2));
+            Assert.AreEqual("3", TimeSpanDialog.GetAdditionRelativeValue(3));
+            Assert.AreEqual("5", TimeSpanDialog.GetAdditionRelativeValue(4));
+            Assert.AreEqual("7", TimeSpanDialog.GetAdditionRelativeValue(5));
+
+            //Verify all the relative time interval for original time: 今天/昨天,本周/上周,本月/上月,今年/去年,之前30天，之前12月
+            //Check The compared interval selection and text
+            //今天/昨天 1-31
+            TimeSpanDialog.SelectOriginalTimeType(OriginalTimeType.Today);
+            Assert.AreEqual(input.InputData.RelativeIntervalsItems[1], TimeSpanDialog.GetRelativeIntervalsMenuItemsList(2));
+            TimeSpanDialog.SelectOriginalTimeType(OriginalTimeType.Yesterday);
+            Assert.AreEqual(input.InputData.RelativeIntervalsItems[1], TimeSpanDialog.GetRelativeIntervalsMenuItemsList(2));
+
+            //本周/上周 1-10
+            TimeSpanDialog.SelectOriginalTimeType(OriginalTimeType.Thisweek);
+            Assert.AreEqual(input.InputData.RelativeIntervalsItems[0], TimeSpanDialog.GetRelativeIntervalsMenuItemsList(2));
+            TimeSpanDialog.SelectOriginalTimeType(OriginalTimeType.Lastweek);
+            Assert.AreEqual(input.InputData.RelativeIntervalsItems[0], TimeSpanDialog.GetRelativeIntervalsMenuItemsList(2));
+
+            //本月/上月 1-24
+            TimeSpanDialog.SelectOriginalTimeType(OriginalTimeType.Lastmonth);
+            Assert.AreEqual(input.InputData.RelativeIntervalsItems[2], TimeSpanDialog.GetRelativeIntervalsMenuItemsList(2));
+            TimeSpanDialog.SelectOriginalTimeType(OriginalTimeType.Thismonth);
+            Assert.AreEqual(input.InputData.RelativeIntervalsItems[2], TimeSpanDialog.GetRelativeIntervalsMenuItemsList(2));
+
+            //今年/去年 1-10
+            TimeSpanDialog.SelectOriginalTimeType(OriginalTimeType.Thisyear);
+            Assert.AreEqual(input.InputData.RelativeIntervalsItems[0], TimeSpanDialog.GetRelativeIntervalsMenuItemsList(2));
+            TimeSpanDialog.SelectOriginalTimeType(OriginalTimeType.Lastyear);
+            Assert.AreEqual(input.InputData.RelativeIntervalsItems[0], TimeSpanDialog.GetRelativeIntervalsMenuItemsList(2));
+
+            //之前30天 1-24
+            TimeSpanDialog.SelectOriginalTimeType(OriginalTimeType.Last30days);
+            Assert.AreEqual(input.InputData.RelativeIntervalsItems[2], TimeSpanDialog.GetRelativeIntervalsMenuItemsList(2));
+
+            //之前12月 1-10
+            TimeSpanDialog.SelectOriginalTimeType(OriginalTimeType.Last12months);
+            Assert.AreEqual(input.InputData.RelativeIntervalsItems[0], TimeSpanDialog.GetRelativeIntervalsMenuItemsList(2));
         }
 
         [Test]

@@ -73,7 +73,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
 
             //verify text
-            Assert.AreEqual("夏热冬暖地区全行业", LabellingIndustryConvertButton.GetText());
+            Assert.AreEqual(input.ExpectedData.Industries[0], LabellingIndustryConvertButton.GetText());
 
             //选择自定义能效标识10
             TimeManager.LongPause();
@@ -103,7 +103,8 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.LongPause();
             TimeManager.LongPause();
             //verify text
-            Assert.AreEqual("寒冷地区全行业", LabellingIndustryConvertButton.GetText());
+            //Assert.AreEqual("寒冷地区全行业", LabellingIndustryConvertButton.GetText());
+            Assert.AreEqual(input.ExpectedData.Industries[1], LabellingIndustryConvertButton.GetText());
 
             //Select 园区测试多层级", "楼宇BAD", tag V12_BuildingBC
             TimeManager.LongPause();
@@ -113,7 +114,8 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.ShortPause();
 
             //verify text
-            Assert.AreEqual("夏热冬暖地区全行业", LabellingIndustryConvertButton.GetText());
+            //Assert.AreEqual("夏热冬暖地区全行业", LabellingIndustryConvertButton.GetText());
+            Assert.AreEqual(input.ExpectedData.Industries[0], LabellingIndustryConvertButton.GetText());
             TimeManager.LongPause();
 
             //Select “SOHO，“GalaxySOHO"
@@ -127,10 +129,12 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //选择自定义能效标无
             TimeManager.LongPause();
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[2]);
-            //
+
+            //View button is enable, and KPI button is ready only
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            Assert.AreEqual(false, UnitTypeConvertTargetButton.IsEnabled());
         }
     }
 }

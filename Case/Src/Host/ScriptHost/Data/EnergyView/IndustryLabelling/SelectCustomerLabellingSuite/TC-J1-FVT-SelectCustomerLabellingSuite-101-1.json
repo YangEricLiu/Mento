@@ -20,7 +20,7 @@
 			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
 			"IndustryValue":"$@Zone_Cold_Region$@Industry_All_Industries",
 			"popupNotes":["$@EM.Labeling.NonBuilding", "$@Message.M02501", "$@EM.CompareTagsAreFull"],
-			"expectedFileName":["ConsumptionUnitIndicatorIndustryLabelling-View-101-1-0.xls", "ConsumptionUnitIndicatorIndustryLabelling-View-101-1-1.xls"],
+			"Industries":["$@Zone_Subtropical_Region$@Industry_All_Industries", "$@Zone_Cold_Region$@Industry_All_Industries"],
 		}
 	}
 ]

@@ -605,7 +605,7 @@ CommentTextField
           <add key="TextFieldEnergyViewSaveDashboardWidgetName" value="//div[contains(@id,'widgetsavewindow')]/div[contains(@class,'x-window-body')]/table/tbody/tr[td/label[text()='$@Common.Glossary.WidgetName']]//input[contains(@class,'x-form-field')]" type="XPath"/>
           <add key="TextFieldEnergyViewSaveDashboardDashboardName" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]//input[@name='newDashboardField']" type="XPath"/>
           <add key="TextFieldWidgetAnnotation" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]//textarea[@name='Comment']" type="XPath"/>
-      </energyview>
+    </energyview>
       <customersettings>
           <hierarchysettings>
               <add key="TextFieldHierarchySettingsName" value="//div[@id='st-hier-properties-form-body']//input[@type='text' and @name='Name']" type="XPath"/>

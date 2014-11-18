@@ -3,6 +3,7 @@
 		"InputData":
 		{	
 			"OriginalName":"PTag_AutomationCase",
+			"Uoms":["$@Uom_KWH","$@Uom_Ton"],
 
 		},
 		"ExpectedData":

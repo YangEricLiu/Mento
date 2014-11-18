@@ -229,7 +229,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
             TimeManager.LongPause();                              
             Assert.AreEqual("12", PTagRawDataGrid.GetCellValue(2));
-            //Assert.AreEqual("能耗差值/千瓦时", PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"));
+            //Assert.AreEqual("能耗差值/千瓦时", PTagRawDataGrid.GetTitleValueType());
             
             //Click Switch button it is Difference Value now.  
             PTagRawData.ClickSwitchOriginalValueButton();
@@ -237,7 +237,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
             TimeManager.LongPause();
             Assert.AreEqual("10", PTagRawDataGrid.GetCellValue(2));
-            //Assert.AreEqual("能耗累积值/千瓦时", PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"));
+            //Assert.AreEqual("能耗累积值/千瓦时", PTagRawDataGrid.GetTitleValueType());
         }
 
         [Test]
@@ -248,21 +248,24 @@ namespace Mento.Script.Customer.TagManagement
         {
             //Navigate to Raw Data tab, Select a tag that UOM is KWH
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
+            TimeManager.LongPause();
             PTagRawData.SwitchToRawDataTab();
-
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             //The UOM display with KWH is grid view.
-            Assert.Greater(PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"),"/千瓦时");
+            Assert.AreEqual(PTagRawDataGrid.GetUomInRawDataGrid(), input.InputData.Uoms[0]);
             TimeManager.LongPause();
 
             //Select another tag that UOM is ton.
-            PTagSettings.FocusOnPTagByName("CalculationTypeMinIs0");
+            PTagSettings.FocusOnPTagByName("Ptag_LR_Coal1");
             PTagRawData.SwitchToRawDataTab();
             TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
 
             //The UOM display with Ton accordingly.
-            Assert.Greater(PTagRawDataGrid.GetTitleValueType("能耗累积值/千瓦时", "能耗差值/千瓦时"), "/吨");
+            Assert.AreEqual(PTagRawDataGrid.GetUomInRawDataGrid(), input.InputData.Uoms[1]);
 
         }
 

@@ -7,6 +7,7 @@ using Mento.TestApi.WebUserInterface;
 using Mento.TestApi.WebUserInterface.ControlCollection;
 using Mento.ScriptCommon.TestData.EnergyView;
 using System.Collections;
+using OpenQA.Selenium;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -27,6 +28,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox TimeTypeComboBox = JazzComboBox.TimeTypeComboBox;
         private static Button UserDefinedTime = JazzButton.UserDefinedTime;
         private static Button RelativeTime = JazzButton.RelativeTime;
+        private static Locator MutipleIntervalsTextLocator = new Locator("//table[contains(@id,'addintervalwindow')]/tbody/tr/td/div/div[1]/label[2]", ByType.XPath);
 
         private static Dictionary<CompareTimeType, string[]> MenuItemComparedTimeType = new Dictionary<CompareTimeType, string[]>()
         {
@@ -410,6 +412,12 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             ComboBox AdditionRelativeComboBox = GetAdditionRelativeIntevalNumberComboBox(position);
             return AdditionRelativeComboBox.GetRelativeIntervalsMenulistItems();
+        }
+
+        public string GetComparedIntervalsText(int position)
+        {
+            IWebElement[] rawDataTooltips = FindChildren(MutipleIntervalsTextLocator);
+            return rawDataTooltips[position-1].Text;
         }
 
         #endregion

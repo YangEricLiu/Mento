@@ -648,6 +648,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //+Store data for check save data
             //...
+            string text2 = TimeSpanDialog.GetComparedIntervalsText(2);
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();

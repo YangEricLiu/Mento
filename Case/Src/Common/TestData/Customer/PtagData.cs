@@ -26,6 +26,7 @@ namespace Mento.ScriptCommon.TestData.Customer
         public ManualTimeRange[] ManualTimeRange { get; set; }
         public int[] RowID { get; set; }
         public string[] TestData { get; set; }
+        public string[] Uoms { get; set; }
 
     }
 

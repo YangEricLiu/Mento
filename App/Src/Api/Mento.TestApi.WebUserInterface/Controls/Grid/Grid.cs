@@ -256,16 +256,26 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// </summary>
         /// <param name="cellName"></param>
         /// <returns></returns>
-        public string GetTitleValueType(string str1, string str2)
+        public string GetTitleValueType()
         {
-           
-            var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridHeaderhideValueType);
+            var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.GridHeaderShowValueType);
             IWebElement gridHeaderValueTypeControl = ElementHandler.FindElement(locator, container: this.RootElement);
-            if (str1 == gridHeaderValueTypeControl.Text)
-            { return str2; }
-            else
-            { return str1; }
+            return gridHeaderValueTypeControl.Text;
+        }
 
+        /// <summary>
+        /// Get the string of uom from the grid header
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public string GetUomInRawDataGrid()
+        {
+            string fullStr = GetTitleValueType();
+            string[] subStr = fullStr.Split('/');
+            if ("" != subStr[1])
+                return subStr[1];
+            else
+                return fullStr;
         }
 
         /// <summary>

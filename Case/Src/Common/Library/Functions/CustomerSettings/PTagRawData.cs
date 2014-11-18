@@ -50,7 +50,6 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button RawDataLeftButton = JazzButton.PTagRawDataLeftButton;
         private static Button RawDataRightButton = JazzButton.PTagRawDataRightButton;
 
-        //private static Window SwitchTimeWindow = JazzWindow.SwitchTimeWindow;
         private static Locator SwitchTimeWindow = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.WindowSwitchTime);
 
         #endregion
@@ -318,7 +317,6 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns>True if the UI elemrnt exist, false if not</returns>
         public bool IsExisted(string itemKey)
         {
-            //Locator itemLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.GridPTagRawDataFirstRow);
             Locator itemLocator = JazzControlLocatorRepository.GetLocator(itemKey);
             return ElementHandler.Exists(itemLocator);
         }

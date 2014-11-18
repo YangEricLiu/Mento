@@ -6,17 +6,22 @@
 			"CarbonTypeStandardCoal":"$@Common.CarbonUomType.StandardCoal",
 			"CarbonTypeCO2":"$@Common.CarbonUomType.CO2",
 			"CarbonTypeTree":"$@Common.CarbonUomType.Tree",
+			"commodityNames":["$@Commodity_Electricity"],
+			"ManualTimeRange":[{
+				"StartDate":"2010-7-1",
+				"EndDate":"2014-7-28",	
+			}],
 			"DashboardInfo":[{
 				"WigetName":"CarbonSingle2Tree",
 				"HierarchyName":["NancyCustomer1", "GreenieSite", "GreenieBuilding"],
 				"IsCreateDashboard":"true",
 				"DashboardName":"TotalEnergyConsumptionDataview",
 			}],
-			"failedFileName":["F-CarbonUsageDataView001-2-H-total.xls", "F-CarbonUsageDataView001-2-H-TotalCO2.xls", "F-CarbonUsageDataView001-2-H-TotalTree.xls"],
+			"failedFileName":["F-CarbonUsageDataView001-2-H-total.xls", "F-CarbonUsageDataView001-2-H-TotalCO2.xls", "F-CarbonUsageDataView001-2-H-TotalTree.xls","F-CarbonUsageDataView001-2-Electricity.xls"],
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["CarbonUsageDataView001-2-H-total.xls", "CarbonUsageDataView001-2-H-TotalCO2.xls", "CarbonUsageDataView001-2-H-TotalTree.xls"],
+			"expectedFileName":["CarbonUsageDataView001-2-H-total.xls", "CarbonUsageDataView001-2-H-TotalCO2.xls", "CarbonUsageDataView001-2-H-TotalTree.xls", "CarbonUsageDataView001-2-Electricity.xls"],
 		}
 	}
 ]

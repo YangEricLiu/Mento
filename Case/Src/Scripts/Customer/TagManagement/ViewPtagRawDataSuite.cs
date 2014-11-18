@@ -229,7 +229,6 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
             TimeManager.LongPause();                              
             Assert.AreEqual("12", PTagRawDataGrid.GetCellValue(2));
-            //Assert.AreEqual("能耗差值/千瓦时", PTagRawDataGrid.GetTitleValueType());
             
             //Click Switch button it is Difference Value now.  
             PTagRawData.ClickSwitchOriginalValueButton();
@@ -237,7 +236,6 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
             TimeManager.LongPause();
             Assert.AreEqual("10", PTagRawDataGrid.GetCellValue(2));
-            //Assert.AreEqual("能耗累积值/千瓦时", PTagRawDataGrid.GetTitleValueType());
         }
 
         [Test]

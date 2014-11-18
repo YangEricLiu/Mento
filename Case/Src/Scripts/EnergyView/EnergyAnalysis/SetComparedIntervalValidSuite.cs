@@ -646,9 +646,23 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeSpanDialog.InputAdditionRelativeValue("2", 2);
             TimeManager.ShortPause();
 
-            //+Store data for check save data
-            //...
-            string text2 = TimeSpanDialog.GetComparedIntervalsText(2);
+            //+get the text string in dialog
+            string ActText = TimeSpanDialog.GetComparedIntervalsText(2);
+
+            //+Calculate the first compared interval(start date and end date)
+            DateTime StartCompareInterval = DateTime.Now.AddDays(-20);//含当日，故-20而不是-21
+            DateTime EndCompareInterval = DateTime.Now.AddDays(-14);
+            
+            //+Format in Zh version："xxxx年xx月xx日 到 xxxx年xx月xx日"
+            string ExpTextZh = StartCompareInterval.ToString("yyyy年MM月dd日") + " 到 " + EndCompareInterval.ToString("yyyy年MM月dd日");
+            //+Format in En version: 10/29, 2014 To 11/04, 2014
+            string ExpTextEn = StartCompareInterval.ToString("MM/dd, yyyy") + " To " + EndCompareInterval.ToString("MM/dd, yyyy");
+            
+            //Check Text displayed beside 之前第2个7天
+            if ((ActText == ExpTextZh) || (ActText == ExpTextEn))
+                Assert.Pass();
+            else
+                Assert.Fail();
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
@@ -1083,6 +1097,12 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Change type of the second compared interval to relatived: 之前第*个月
             TimeSpanDialog.SelectCompareTimeType(CompareTimeType.Relative, 3);
             TimeSpanDialog.InputAdditionRelativeValue(monthIndex.ToString(), 3);
+
+            //Check Text followed is 2014年2月
+            if(("2014年2月" == TimeSpanDialog.GetComparedIntervalsText(3)) ||("02, 2014" == TimeSpanDialog.GetComparedIntervalsText(3)))
+                Assert.Pass();
+            else
+                Assert.Fail();
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();

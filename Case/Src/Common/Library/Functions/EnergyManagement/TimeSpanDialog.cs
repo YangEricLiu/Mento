@@ -417,7 +417,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetComparedIntervalsText(int position)
         {
             IWebElement[] rawDataTooltips = FindChildren(MutipleIntervalsTextLocator);
-            return rawDataTooltips[position-1].Text;
+            return rawDataTooltips[position-2].Text;
         }
 
         #endregion

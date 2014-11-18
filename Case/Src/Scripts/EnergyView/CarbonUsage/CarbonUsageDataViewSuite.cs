@@ -219,7 +219,10 @@ namespace Mento.Script.EnergyView.CarbonUsage
             CarbonUsage.SelectCommodity();
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
+            for (int i = 0; i < 10; i++ )
+            {
+                TimeManager.LongPause();
+            }
             CarbonUsage.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -233,9 +236,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            CarbonUsage.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
 
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Hour);
             TimeManager.MediumPause();
@@ -244,9 +244,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //Change from default display "二氧化碳" to "树"
             EnergyViewToolbar.SelectCarbonConvertTarget(input.InputData.CarbonTypeTree);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-            CarbonUsage.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -268,6 +265,45 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard[0].DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+
+            //Choose NancyCostCustomer2.
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
+
+            //Swtich 碳排放，
+            CarbonUsage.NavigateToCarbonUsage();
+            TimeManager.MediumPause();
+
+            //select 组织A，园区A，
+            string [] hierarchy = {"NancyCostCustomer2","组织A","园区A"};
+            CarbonUsage.SelectHierarchy(hierarchy);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //介质单项：电
+            CarbonUsage.SelectCommodity(input.InputData.commodityNames);
+            TimeManager.ShortPause();
+
+            //Select time of "2010/7/1 00:00 to 2014/7/28 24:00".
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
+
+            //Click 查看数据,then click 数据表.
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Select 年 in step.
+            CarbonUsage.ClickDisplayStep(DisplayStep.Year);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check the data rows in table.
+            CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);              
+            
         }
 
         [Test]
@@ -537,9 +573,9 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.LongPause();
 
             //Check Commodity=煤 is unchecked.
-            Assert.AreEqual(true, CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[0]));
-            Assert.AreEqual(true, CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[1]));
-            Assert.AreEqual(false, CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[2]));
+            Assert.IsTrue(CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[0]));
+            Assert.IsTrue(CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[1]));
+            Assert.IsFalse(CarbonUsage.IsCommodityChecked(input.InputData.commodityNames[2]));
 
             //Check data
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);

@@ -96,8 +96,8 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual("2", PTagRawDataGrid.GetCellValue(3));
 
             //Verify if the relevant Status fields as Modified.
-            Assert.AreEqual("已修改", PTagRawDataGrid.GetCellStatus(2));
-            Assert.AreEqual("已修改", PTagRawDataGrid.GetCellStatus(3));
+            Assert.AreEqual(input.InputData.Comments, PTagRawDataGrid.GetCellStatus(2));
+            Assert.AreEqual(input.InputData.Comments, PTagRawDataGrid.GetCellStatus(3));
         
         }
 

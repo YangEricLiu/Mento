@@ -10,6 +10,7 @@
 				"EndDate":"2014-1-7",	
 				"EndTime":"24:00",	
 			}],
+			"Comments":"$@Setting.TagConfiguration.Modified",
 		},
 		"ExpectedData":
 		{

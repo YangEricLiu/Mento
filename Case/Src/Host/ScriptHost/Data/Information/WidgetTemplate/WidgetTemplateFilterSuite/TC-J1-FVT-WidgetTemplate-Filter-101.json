@@ -4,7 +4,7 @@
 		{
 		       
 			  "FilterPropertiesName":["$@HomePage.Label.Target","$@HomePage.Label.FunctionType","$@HomePage.Label.EnergyObject","$@HomePage.Label.ChartType","$@HomePage.Label.TimeRange"],
-		      "TargetObject":["管理","建筑","设备","行为","能效分析","碳排放","成本","单位指标","时段能耗比","能效标识","集团排名","能源消耗","成本帐单","折线图","柱状图","能效标识图","按年","按月"],
+		      "TargetObject":["管理", "建筑", "设备", "行为","能效分析", "碳排放","成本","单位指标","时段能耗比","能效标识","集团排名","能源消耗", "碳排放","成本帐单","折线图", "柱状图","能效标识图","按年", "按月"],
 		},
 		"ExpectedData":
 		{

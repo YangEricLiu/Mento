@@ -280,6 +280,53 @@ namespace Mento.Script.EnergyView.CostUsage
         }
 
         [Test]
+        [CaseID("TC-J1-FVT-CostUsage-TOU-005-1")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-1")]
+        public void TOUPieChart(CostUsageData input)
+        {
+            //Go to NancyCostCustomer2->楼宇B， go to Cost.
+            JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
+
+            CostUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Change manually defined time range to 2012/07/04-2012/09/03.
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+
+            //Select Commodity=电， change to TOU pie chart.
+            CostUsage.SelectCommodity(input.InputData.commodityNames);
+
+            JazzFunction.EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(CostUsage.IsDistributionChartDrawn());
+
+            //Click "Save to dashboard"（保存到仪表盘）to save the Pie chart to Hierarchy node dashboard.
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+
+            //+On homepage, check the dashboard
+            CostUsage.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+
+            //Check ·The Pie chart Save to dashboard successfully.
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+            HomePagePanel.MaximizeWidget(dashboard.WigetName);
+            TimeManager.MediumPause();
+
+        }
+
+        [Test]
         [CaseID("TC-J1-FVT-CostUsage-TOU-005-2")]
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-2")]
         public void TOUChart(CostUsageData input)
@@ -299,12 +346,17 @@ namespace Mento.Script.EnergyView.CostUsage
 
             //Select Commodity=电， change to TOU chart.
             CostUsage.SelectCommodity(input.InputData.commodityNames);
-
             EnergyViewToolbar.ShowPeakValley();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(CostUsage.IsTrendChartDrawn());
 
+            //Check value
+            CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //change to column chart view
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.Column);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -316,12 +368,12 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             //· Warning message pop up show "峰谷不支持Raw"
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[1]));
+            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
             JazzMessageBox.MessageBox.OK();
             TimeManager.MediumPause();
 
             //Change other Optional step=Day/Week/Month
-            CostUsage.ClickDisplayStep(DisplayStep.Day);
+            CostUsage.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -340,7 +392,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //· Stack chart display correctly. 
             Assert.IsTrue(CostUsage.IsColumnChartDrawn());
 
-            CostUsage.ClickDisplayStep(DisplayStep.Month);
+            CostUsage.ClickDisplayStep(DisplayStep.Day);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -348,13 +400,29 @@ namespace Mento.Script.EnergyView.CostUsage
             Assert.IsTrue(CostUsage.IsColumnChartDrawn()); 
 
             //Nancy add TOU pie chart, please make it work as well.
-
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.Distribute);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            Assert.IsTrue(CostUsage.IsPieChartDrawn());
 
-            Assert.IsTrue(CostUsage.IsPieChartDrawn()); 
-            
+            //Click "Save to dashboard"（保存到仪表盘）to save the Pie chart to Hierarchy node dashboard.
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+
+            //+On homepage, check the dashboard
+            CostUsage.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+
+            //Check ·The Pie chart Save to dashboard successfully.
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+            HomePagePanel.MaximizeWidget(dashboard.WigetName);
+            TimeManager.MediumPause();
         }
 
         [Test]

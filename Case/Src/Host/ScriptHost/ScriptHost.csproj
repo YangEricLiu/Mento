@@ -723,6 +723,7 @@
     <None Include="Data\EnergyView\CostUsage\CostUsagePieChartSuite\TC-J1-FVT-CostUsage-RuleUpdate-Pie-101-3.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsagePieChartSuite\TC-J1-FVT-CostUsage-RuleUpdate-Pie-101-4.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUDataViewSuite\TC-J1-FVT-CostUsage-TOU-DataView-101-1.json" />
+    <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-005-1.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-005-3.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-005-2.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTOUSuite\TC-J1-FVT-CostUsage-TOU-Column-005-1.json" />

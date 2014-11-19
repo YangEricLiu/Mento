@@ -8,18 +8,15 @@
 				"StartDate":"2012-07-04",
 				"EndDate":"2012-09-03",	
 			}],
-			"failedFileName":["F-CostUsageTOUD005-2.xls"],
 			"DashboardInfo":{
-				"WigetName":"CostTOU2",
+				"WigetName":"CostTOUPieElec1",
 				"HierarchyName":["NancyCostCustomer2","组织A", "园区B"],
-				"IsCreateDashboard":"false",
+				"IsCreateDashboard":"true",
 				"DashboardName":"CostTOU",
 			},
 		},
 		"ExpectedData":
 		{
-			"StepMessage":["$@Message.M02407"],
-			"expectedFileName":["CostUsageTOU005-2.xls"],
 		}
 	}
 ]

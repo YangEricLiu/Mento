@@ -6,17 +6,19 @@
 			"TagNames":["BuildingA_P1_Electricity","BuildingA_P2_Water","BuildingA_P3_Coal"],
 			"DashboardInfo":{
 				"WigetName":"SingleDataView1014",
-				"HierarchyName":["NancyCostCustomer2", "组织A"],
-				"IsCreateDashboard":"false",
+				"HierarchyName":["NancyCostCustomer2", "组织A","园区B"],
+				"IsCreateDashboard":"true",
 				"DashboardName":"AutoTestRawStep",
 			},
 			"ManualTimeRange":[{				
 				"StartDate":"2012-7-29",
 				"EndDate":"2012-8-4",	
 			}],
+			"failedFileName":["F-SingleHierarchyNodeDataView101-4-A.xls"],
 		},
 		"ExpectedData":
 		{
+			"expectedFileName":["SingleHierarchyNodeDataView101-4-A.xls"],
 		}
 	}
 ]

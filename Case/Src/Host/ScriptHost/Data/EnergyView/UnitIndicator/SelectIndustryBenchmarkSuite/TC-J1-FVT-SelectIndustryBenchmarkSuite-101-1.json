@@ -10,7 +10,7 @@
 				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling3"],
 				"TagsName":["Labellingtag3"],
 			}],
-			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
+	
 			"YearAndMonth":[{
 				"year":"2014",
 				"month":"01",
@@ -36,7 +36,6 @@
 				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling4"],
 				"TagsName":["Labellingtag4"],
 			}],
-			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
 			"YearAndMonth":[{
 				"year":"2014",
 				"month":"01",
@@ -62,7 +61,6 @@
 				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling5"],
 				"TagsName":["Labellingtag5"],
 			}],
-			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
 			"YearAndMonth":[{
 				"year":"2014",
 				"month":"01",
@@ -88,7 +86,6 @@
 				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling7"],
 				"TagsName":["Labellingtag7"],
 			}],
-			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
 			"YearAndMonth":[{
 				"year":"2014",
 				"month":"01",
@@ -114,7 +111,6 @@
 				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling6"],
 				"TagsName":["Labellingtag6"],
 			}],
-			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
 			"YearAndMonth":[{
 				"year":"2014",
 				"month":"01",
@@ -140,7 +136,6 @@
 				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling8"],
 				"TagsName":["Labellingtag8"],
 			}],
-			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
 			"YearAndMonth":[{
 				"year":"2014",
 				"month":"01",
@@ -166,7 +161,6 @@
 				"HierarchyPath":["NancyCustomer1", "园区测试多层级", "BuildingLabelling8"],
 				"TagsName":["Labellingtag8"],
 			}],
-			"SystemDimensionPath":["楼宇BC", "$@SystemDimensionTemplateItem_HVAC"],
 			"YearAndMonth":[{
 				"year":"2014",
 				"month":"01",

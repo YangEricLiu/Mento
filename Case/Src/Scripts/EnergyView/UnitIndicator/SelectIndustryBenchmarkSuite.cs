@@ -33,7 +33,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
         private static Widget Widget = JazzFunction.Widget;
         private static MenuButton LabellingIndustryConvertButton = JazzButton.LabellingIndustryConvertMenuButton;
-        //private static EnergyViewToolbarConvertTargetMenu ConvertTargetButton = new EnergyViewToolbarConvertTargetMenu();
         private static MenuButton UnitTypeConvertTargetButton = JazzButton.UnitTypeConvertMenuButton;
         private static MenuButton IndustryConvertTargetButton = JazzButton.IndustryConvertMenuButton;
 
@@ -55,7 +54,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-SelectIndustryBenchmark-101-1")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SelectIndustryBenchmarkSuite), "TC-J1-FVT-SelectIndustryBenchmarkSuite-101-1")]
-        public void SelectIndustyBenchmark01(UnitIndicatorData input)
+        public void SelectIndustryBenchmarkMultipleHierachies(UnitIndicatorData input)
         {
 
             //Switch to "多层级数据点"
@@ -89,7 +88,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-SelectIndustryLabellingSuite-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SelectIndustryBenchmarkSuite), "TC-J1-FVT-SelectIndustryBenchmarkSuite-101-2")]
-        public void SelectIndustyBenchmark02(UnitIndicatorData input)
+        public void SelectIndustryBenchmarkSignleHierachyNotConfig(UnitIndicatorData input)
         {
 
             //Select 园区测试多层级", "楼宇XX", tagXX
@@ -109,7 +108,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-SelectIndustryLabellingSuite-101-3")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SelectIndustryBenchmarkSuite), "TC-J1-FVT-SelectIndustryBenchmarkSuite-101-3")]
-        public void SelectIndustyBenchmark03(UnitIndicatorData input)
+        public void SelectIndustryBenchmarkNone(UnitIndicatorData input)
         {
 
             //Select 园区测试多层级", "楼宇XX", tagXX
@@ -121,7 +120,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             //与期望结果对比
             TimeManager.LongPause();
-            Assert.AreEqual(false, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsFalse(IndustryConvertTargetButton.IsEnabled());
             TimeManager.LongPause();
             TimeManager.MediumPause();
         }
@@ -129,7 +128,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-SelectIndustryLabellingSuite-101-4")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SelectIndustryBenchmarkSuite), "TC-J1-FVT-SelectIndustryBenchmarkSuite-101-4")]
-        public void SelectIndustyBenchmark04(UnitIndicatorData input)
+        public void SelectIndustryBenchmarkCarbon(UnitIndicatorData input)
         {
 
             //Select 园区测试多层级", "楼宇XX", tagXX
@@ -152,7 +151,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-SelectIndustryLabellingSuite-101-5")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SelectIndustryBenchmarkSuite), "TC-J1-FVT-SelectIndustryBenchmarkSuite-101-5")]
-        public void SelectIndustyBenchmark05(UnitIndicatorData input)
+        public void SelectIndustryBenchmarkCost(UnitIndicatorData input)
         {
 
             //Select 园区测试多层级", "楼宇XX", tagXX
@@ -175,7 +174,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-SelectIndustryLabellingSuite-001-1")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(SelectIndustryBenchmarkSuite), "TC-J1-FVT-SelectIndustryBenchmarkSuite-001-1")]
-        public void SelectIndustyBenchmark06(UnitIndicatorData input)
+        public void IndustryBenchmarkButtonUnavailable(UnitIndicatorData input)
         {
             //select Carbon/Cost 总览   
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
@@ -186,17 +185,21 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.LongPause();
             UnitKPIPanel.SelectCommodityUnitCost();
             TimeManager.LongPause();
+
             //行业基准值 button is disale
-            Assert.AreEqual(false, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsFalse(IndustryConvertTargetButton.IsEnabled());
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+
             //Unit indicator chart display without benchmark chart
             Assert.IsFalse(UnitKPIPanel.IsLegendItemExists(input.InputData.UnitIndicatorLegend[0].BenchmarkValue));
+
             //select Cost, not select any commodity
             UnitKPIPanel.UnSelectSingleCommodityUnitCost();
-            Assert.AreEqual(true, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsTrue(IndustryConvertTargetButton.IsEnabled());
             TimeManager.MediumPause();
+
             //园区节点
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -204,23 +207,28 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
+
             //总览
             UnitKPIPanel.SelectCommodityUnitCost();
             TimeManager.LongPause();
-            Assert.AreEqual(false, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsFalse(IndustryConvertTargetButton.IsEnabled());
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+
+            //Verify benchmark line not draw out
             Assert.IsFalse(UnitKPIPanel.IsLegendItemExists(input.InputData.UnitIndicatorLegend[0].BenchmarkValue));
+
             //介质单项
             UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[0]);
             TimeManager.LongPause();
-            Assert.AreEqual(false, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsFalse(IndustryConvertTargetButton.IsEnabled());
             TimeManager.MediumPause();
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsFalse(UnitKPIPanel.IsLegendItemExists(input.InputData.UnitIndicatorLegend[0].BenchmarkValue));
+
             //区域数据点
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
@@ -232,9 +240,10 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             UnitKPIPanel.SelectCommodityUnitCost();
             TimeManager.LongPause();
-            Assert.AreEqual(false, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsFalse(IndustryConvertTargetButton.IsEnabled());
             TimeManager.LongPause();
 
+            //Different commodities, benchmark button is not enable
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Energy);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -244,10 +253,11 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.CheckTag(input.InputData.tagNames[2]);
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[2]));
             TimeManager.LongPause();
-            Assert.AreEqual(false, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsFalse(IndustryConvertTargetButton.IsEnabled());
 
+            //Same commodity, benchmark line can be draw out.
             UnitKPIPanel.UncheckTag(input.InputData.tagNames[0]);
-            Assert.AreEqual(true, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsTrue(IndustryConvertTargetButton.IsEnabled());
             EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industries[0]);
             TimeManager.ShortPause();
             EnergyViewToolbar.ClickViewButton();
@@ -255,9 +265,12 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             Assert.IsTrue(UnitKPIPanel.IsLegendItemExists(input.InputData.UnitIndicatorLegend[0].BenchmarkValue));
 
+            //Close benchmark legend,  行业基准值 change to show 行业基准值.
             UnitKPIPanel.CloseLegendItem(input.InputData.UnitIndicatorLegend[0].BenchmarkValue);
             TimeManager.ShortPause();
             Assert.AreEqual(input.ExpectedData.IndustryValue, IndustryConvertTargetButton.GetText());
+
+            //None, 寒冷地区酒店，全部区域酒店，寒冷地区全行业from dropdown list.
             UnitKPIPanel.UncheckTag(input.InputData.tagNames[1]);
             Assert.AreEqual(input.ExpectedData.Industries, EnergyViewToolbar.GetBenchmarkMenulist("Energy"));
             TimeManager.MediumPause();
@@ -266,15 +279,16 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.AreEqual(input.ExpectedData.Industries, EnergyViewToolbar.GetBenchmarkMenulist("Energy"));
             TimeManager.MediumPause();
 
+            //Change another building, The button is enabled even if there isn't any tags selected.
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
-            Assert.AreEqual(true, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsTrue(IndustryConvertTargetButton.IsEnabled());
             TimeManager.LongPause();
 
+            //Select multiple tags Labellingtag2 from BuildingLabellingtag2
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
             TimeManager.LongPause();
-            //Select multiple tags Labellingtag2 from BuildingLabellingtag2
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[0].HierarchyPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
@@ -283,17 +297,14 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.ShortPause();
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.LongPause();
-            Assert.AreEqual(true, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsTrue(IndustryConvertTargetButton.IsEnabled());
 
             UnitKPIPanel.ClickMultipleHierarchyAddTagsButton();
-            //TimeManager.MediumPause();
-            //MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[0].HierarchyPath);
-            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
             MultiHieCompareWindow.ClickDeleteXButton(input.InputData.MultiSelectedHiearchyPath[0], input.InputData.tagNames[4]);
             TimeManager.ShortPause();
 
-            //选择系统数据点
+            //选择系统数据点, check Benchamrk dropdown list
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[2].HierarchyPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -306,20 +317,22 @@ namespace Mento.Script.EnergyView.UnitIndicator
             MultiHieCompareWindow.CheckTag(input.InputData.tagNames[3]);
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.LongPause();
-            Assert.AreEqual(true, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsTrue(IndustryConvertTargetButton.IsEnabled());
             //Assert.AreEqual(input.ExpectedData.Industries[0], EnergyViewToolbar.GetBenchmarkMenulist("Energy"));
 
+            //Unselect NancyCustomer1, tag V9_BuildingBC
             UnitKPIPanel.ClickMultipleHierarchyAddTagsButton();
             TimeManager.LongPause();
             MultiHieCompareWindow.ClickDeleteXButton(input.InputData.MultiSelectedHiearchyPath[1], input.InputData.tagNames[3]);
             TimeManager.LongPause();
+
+            //Go to Multiple hierarchy node comparation mode. check Labellingtag2 from Buildinglabelling2. Select 1 Labellingtag3 tag from Buildinglabelling3 and 确定.
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[0].HierarchyPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
             MultiHieCompareWindow.SwitchTagTab(TagTabs.HierarchyTag);
             MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[0].TagsName[0]);
-            TimeManager.ShortPause();
-            //Go to Multiple hierarchy node comparation mode. check Labellingtag2 from Buildinglabelling2. Select 1 Labellingtag3 tag from Buildinglabelling3 and 确定.
+            TimeManager.ShortPause();           
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[1].HierarchyPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
@@ -330,13 +343,14 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.LongPause();
             EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industries[2]);
             TimeManager.LongPause();
+
             //Click "删除所有" and 确定
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
             TimeManager.MediumPause();
             Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.ClearAllMessage));
             JazzMessageBox.MessageBox.Clear();
             TimeManager.LongPause();
-            Assert.AreEqual(false, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsFalse(IndustryConvertTargetButton.IsEnabled());
             TimeManager.LongPause();
 
             //验证多层级不同介质
@@ -358,7 +372,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.LongPause();
-            Assert.AreEqual(false, IndustryConvertTargetButton.IsEnabled());
+            Assert.IsFalse(IndustryConvertTargetButton.IsEnabled());
             TimeManager.LongPause();
 
             //切换到Ratio验证ConvertTargetButton status

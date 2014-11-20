@@ -176,7 +176,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             for (int i = 0; i < input.InputData.ManualTimeRange.Length; i++)
             {
-                EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+                EnergyViewToolbar.SetDateRange(ManualTimeRange[i].StartDate, ManualTimeRange[i].EndDate);
                 TimeManager.ShortPause();
 
                 //Check tag and view data view
@@ -184,9 +184,9 @@ namespace Mento.Script.EnergyView.CorporateRanking
                 JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
                 TimeManager.MediumPause();
 
-                CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0]);
+                CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[i]);
                 TimeManager.MediumPause();
-                CorporateRanking.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+                CorporateRanking.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[i], input.InputData.failedFileName[i]);
             }
         }
 

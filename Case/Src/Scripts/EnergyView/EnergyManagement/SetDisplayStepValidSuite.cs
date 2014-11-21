@@ -383,7 +383,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
-                //Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));//? There is no raw step in UI, but it can be found raw step in code.
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));//not repro:? There is no raw step in UI, but it can be found raw step in code.
 
                 //Click all Optional Steps to change chart view.
                 EnergyViewToolbar.View(EnergyViewType.Line);
@@ -398,7 +398,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
-                //Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));//?
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
 
                 //back to intinial
                 EnergyAnalysis.UncheckTag(input.InputData.TagNames[0]);
@@ -433,7 +433,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 //Default is month
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
-                //Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));//?
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
@@ -448,7 +448,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 //Default is month 
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
-                //Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));//?
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
@@ -462,7 +462,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Year));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
-                //Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));//?
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Month));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
 
@@ -499,7 +499,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
                 //Default is month
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
-                //Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));//?
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
@@ -514,7 +514,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
                 //Default is month 
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
-                //Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));//?
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
@@ -529,7 +529,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Year));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Week));
                 Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
-                //Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));//?
+                Assert.IsFalse(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Month));
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
 

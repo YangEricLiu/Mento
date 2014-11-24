@@ -73,7 +73,10 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button WidgetTemplateQuickCreateCloseButton = JazzButton.WidgetTemplateQuickCreateCloseButton;
         private static Button WidgetTemplateFilterButton = JazzButton.WidgetTemplateFilterButton;
         private static Button WidgetTemplateApplyFilterButton = JazzButton.WidgetTemplateApplyFilterButton;
-        private static Button WidgetTemplateCancelFilterButton = JazzButton.WidgetTemplateCancelFilterButton;
+        private static Button WidgetTemplateCancelFilterButton = JazzButton.WidgetTemplateCancelFilterButton; 
+        private static Button WidgetTemplateClearFilterButton = JazzButton.WidgetTemplateClearFilterButton;
+        private static Button WidgetTemplateCloseFilterButton = JazzButton.WidgetTemplateCloseFilterButton;
+        private static Label WidgetTemplateCriteriaLabel = JazzLabel.WidgetTemplateCriteriaLabel;
 
         private static CheckBoxField CheckBoxWidgetTemplateTable = JazzCheckBox.WidgetTemplateTableCheckBox;
         
@@ -580,20 +583,6 @@ namespace Mento.ScriptCommon.Library.Functions
 
         }
 
-        //private Locator GetWidgetTemplateTableLocator(string itemResourceVariable1, string itemResourceVariable2)
-        //{
-        //     string value = string.Format(CheckBoxWidgetTemplateTable.ToString(), itemResourceVariable1, itemResourceVariable2);
-
-        //    return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(value), ByType.XPath);
-        //}
-
-        //private Locator GetWidgetTemplateInputLocator(string itemResourceVariable1, string itemResourceVariable2)
-        //{
-        //    string value = string.Format(CheckBoxWidgetTemplateInput.ToString (), itemResourceVariable1, itemResourceVariable2);
-
-        //    return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(value), ByType.XPath);
-        //}
-        
         public Boolean IsPopMsgCorrect(string name)
         {
             if (name != null)
@@ -622,6 +611,51 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             CheckEnergyInfoLinkButton.Click();
         }
+        //Click close button in criteria
+        public void ClickWidgetTemplateCloseFilterButton(String name)
+        {
+            Button WidgetTemplateCloseFilterButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWidgetTemplateCloseFilter, name);
+            WidgetTemplateCloseFilterButton.Click();
+        }
+
+        //Click  'Clean Criteria' ('清空筛选条件') button
+        public void ClickWidgetTemplateClearFilterButton()
+        {
+            WidgetTemplateClearFilterButton.Click();
+        }
+        /// <summary>
+        /// Is WidgetTemplateQuickCreateButton button  display
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <returns></returns>
+        public bool IsWidgetTemplateQuickCreateButtonExisted()
+        {
+            return JazzButton.WidgetTemplateQuickCreateButton.IsExisted();
+        }
+        /// <summary>
+        /// Is clearfilter button  display
+        /// </summary>
+        /// <param name="name">name</param>
+        /// <returns></returns>
+        public bool IsClearFilterButtonExisted()
+        {
+            return JazzButton.WidgetTemplateClearFilterButton.IsExisted();
+        }
+
+        //verify label criteria exist
+        public Boolean IsCriteriaLabelTextsCorrect(string[] names)
+        {
+            //Label WidgetField = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelWidgetTemplateCriteria, names[i]);
+            return WidgetTemplateCriteriaLabel.IsLabelTextsExisted(names);
+        }
+
+        //verify label criteria exist
+        public Boolean IsCriteriaLabelTextCorrect(string name)
+        {
+            Label WidgetField = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelWidgetTemplateCriteria, name);
+            return WidgetField.IsLabelTextExisted(name);
+        }
+
         
         #endregion
 

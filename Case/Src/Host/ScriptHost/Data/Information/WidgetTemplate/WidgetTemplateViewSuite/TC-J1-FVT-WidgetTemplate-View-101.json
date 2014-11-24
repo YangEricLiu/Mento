@@ -6,77 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"WidgetName": "$@Setting.Template.Radio",
-		}
-	},
-	{
-		"InputData":
-		{
-			
-		},
-		"ExpectedData":
-		{
-			"WidgetName": "$@Setting.Template.Cost",
-		}
-	},
-	{
-		"InputData":
-		{
-			
-		},
-		"ExpectedData":
-		{
-			"WidgetName": "$@Setting.Template.PeakValley",
-		}
-	},
-	{
-		"InputData":
-		{
-			
-		},
-		"ExpectedData":
-		{
-			"WidgetName": "$@Setting.Template.Carbon",
-		}
-	},
-	{
-		"InputData":
-		{
-			
-		},
-		"ExpectedData":
-		{
-			"WidgetName": "$@Setting.Template.PerMCost",
-		}
-	},
-	{
-		"InputData":
-		{
-			
-		},
-		"ExpectedData":
-		{
-			"WidgetName": "$@Setting.Template.Labelling",
-		}
-	},
-	{
-		"InputData":
-		{
-			
-		},
-		"ExpectedData":
-		{
-			"WidgetName": "$@Setting.Template.Ranking",
-		}
-	},
-	{
-		"InputData":
-		{
-			
-		},
-		"ExpectedData":
-		{
-			"WidgetName": "$@Setting.Template.Max",
+			"WidgetNames":["$@Setting.Template.Radio", "$@Setting.Template.Cost", "$@Setting.Template.PeakValley", "$@Setting.Template.Carbon", "$@Setting.Template.PerMCost", "$@Setting.Template.Labelling", "$@Setting.Template.Ranking","$@Setting.Template.Max"],
 		}
 	},
 ]

@@ -43,13 +43,20 @@ namespace Mento.Script.Information.WidgetTemplate
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-WidgetTemplate-View-101")]
+        [CaseID("TC-J1-FVT-WidgetTemplate-View-101"), CreateTime("2014-11-20"), Owner("Cathy")]
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(WidgetTemplateViewSuite), "TC-J1-FVT-WidgetTemplate-View-101")]
         public void WidgetTemplateView101(MaximizeWidgetData input)
         {
             Widget.ClickWidgetTemplateQuickCreateButton();
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnQuickCreateWidget(input.ExpectedData.WidgetName));
+            //All template display there
+            for (int i = 0; i < 8; i++)
+            {
+                Assert.IsTrue(HomePagePanel.IsWidgetExistedOnQuickCreateWidget(input.ExpectedData.WidgetNames[i]));
+            }
+            //Click close button
             Widget.ClickWidgetTemplateQuickCreateButtonCloseButton();
+            //Verify 快速创建 button display
+            Assert.IsTrue(Widget.IsWidgetTemplateQuickCreateButtonExisted());
         }
     }
 }

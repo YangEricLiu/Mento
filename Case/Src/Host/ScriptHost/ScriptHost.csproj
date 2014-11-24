@@ -1085,7 +1085,9 @@
     <None Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\TC-J1-FVT-Widget-Add-101-2.json" />
     <None Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\TC-J1-FVT-Widget-Add-101-3.json" />
     <None Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\TC-J1-FVT-Widget-Add-101-4.json" />
+    <None Include="Data\Information\WidgetTemplate\WidgetTemplateFilterSuite\TC-J1-FVT-WidgetTemplate-Filter-002.json" />
     <None Include="Data\Information\WidgetTemplate\WidgetTemplateFilterSuite\TC-J1-FVT-WidgetTemplate-Filter-101.json" />
+    <None Include="Data\Information\WidgetTemplate\WidgetTemplateFilterSuite\TC-J1-FVT-WidgetTemplate-Filter-001.json" />
     <None Include="Data\Information\WidgetTemplate\WidgetTemplateUseSuite\TC-J1-FVT-WidgetTemplate-Use-101.json" />
     <None Include="Data\Information\WidgetTemplate\WidgetTemplateUseSuite\TC-J1-FVT-WidgetTemplate-Use-102.json" />
     <None Include="Data\Information\WidgetTemplate\WidgetTemplateViewSuite\TC-J1-FVT-WidgetTemplate-View-101.json" />

@@ -41,6 +41,7 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] RadioTypeValue { get; set; }
         public string[] CarbonConvertTypeValue { get; set; }
         public string[] CommodityValue { get; set; }
+        public string[] HierarchyName { get; set; }
 
     }
 

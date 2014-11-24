@@ -52,7 +52,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public Boolean IsWidgetTemplateChecked(string itemName1, string itemName2)
         {
-            IWebElement checkbox = GetWidgetTemplateInputElement(itemName1, itemName2);
+            IWebElement checkbox = GetWidgetTemplateFieldElement(itemName1, itemName2);
 
             return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
         }
@@ -81,7 +81,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public Boolean IsWidgetTemplateUnChecked(string itemName1, string itemName2)
         {
-            IWebElement checkbox = GetWidgetTemplateInputElement(itemName1, itemName2);
+            IWebElement checkbox = GetWidgetTemplateFieldElement(itemName1, itemName2);
 
             return !(checkbox.GetAttribute("class").Contains(CHECKEDCLASS));
         }
@@ -116,15 +116,23 @@ namespace Mento.TestApi.WebUserInterface.Controls
             checkbox.Click();
         }
         //Uncheck filter checkbox
-        public Boolean UncheckInWidgetTemplate(string itemName1, string itemName2)
+        //public Boolean UncheckInWidgetTemplate(string itemName1, string itemName2)
+        //{
+        //    IWebElement checkbox = GetWidgetTemplateInputElement(itemName1, itemName2);
+        //    if (!IsWidgetTemplateChecked(itemName1, itemName2))
+        //    {
+        //        checkbox.Click();
+        //        return true;
+        //    }
+        //    return false;
+        //}
+        public void UncheckInWidgetTemplate(string itemName1, string itemName2)
         {
             IWebElement checkbox = GetWidgetTemplateInputElement(itemName1, itemName2);
-            if (!IsWidgetTemplateChecked(itemName1, itemName2))
+            if (IsWidgetTemplateChecked(itemName1, itemName2))
             {
-                checkbox.Click();
-                return true;
-            }
-            return false;
+                checkbox.Click();  
+            } 
         }
         // common checkbox check
         public void CommonCheck(string itemName)
@@ -266,6 +274,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
             Hashtable variables = new Hashtable() { { ITEMRESOURCEVARIABLE1, itemResourceVariable1 }, { ITEMRESOURCEVARIABLE2, itemResourceVariable2 } };
 
             return FindChild(Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxWidgetTemplateInput), variables));
+        }
+        private IWebElement GetWidgetTemplateFieldElement(string itemResourceVariable1, string itemResourceVariable2)
+        {
+            Hashtable variables = new Hashtable() { { ITEMRESOURCEVARIABLE1, itemResourceVariable1 }, { ITEMRESOURCEVARIABLE2, itemResourceVariable2 } };
+
+            return FindChild(Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.CheckBoxWidgetTemplateTable), variables));
         }
 
         private IWebElement GetPermissonFieldElement(string permissionName)

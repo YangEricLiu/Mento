@@ -1739,8 +1739,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button WidgetTemplateQuickCreateButton
         {
             get { return GetControl<Button>(JazzControlLocatorKey.ButtonWidgetTemplateQuickCreate); }
-        }   
-        public static Button WidgetTemplateQuickCreateCloseButton 
+        }
+        public static Button WidgetTemplateQuickCreateCloseButton
         {
             get { return GetControl<Button>(JazzControlLocatorKey.ButtonWidgetTemplateQuickCreateClose); }
         }
@@ -1755,6 +1755,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button WidgetTemplateCancelFilterButton 
         {
             get { return GetControl<Button>(JazzControlLocatorKey.ButtonWidgetTemplateCancelFilter); }
+        }
+        public static Button WidgetTemplateClearFilterButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonWidgetTemplateClearFilter); }
+        }
+        public static Button WidgetTemplateCloseFilterButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonWidgetTemplateCloseFilter); }
         }
         public static LinkButton CheckEnergyInfoLinkButton
         {

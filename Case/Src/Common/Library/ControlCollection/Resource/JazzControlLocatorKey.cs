@@ -576,11 +576,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonMyShareWidgetShare = "ButtonMyShareWidgetShare";
         public static string ButtonMaxWidgetRightComment = "ButtonMaxWidgetRightComment";
 
-        public static string ButtonWidgetTemplateQuickCreate = "WidgetTemplateQuickCreateButton";
-        public static string ButtonWidgetTemplateQuickCreateClose = "WidgetTemplateQuickCreateCloseButton";
-        public static string ButtonWidgetTemplateFilter = "WidgetTemplateFilterButton";
-        public static string ButtonWidgetTemplateApplyFilter = "WidgetTemplateApplyFilterButton";
-        public static string ButtonWidgetTemplateCancelFilter = "WidgetTemplateCancelFilterButton";
+        public static string ButtonWidgetTemplateQuickCreate = "ButtonWidgetTemplateQuickCreate";
+        public static string ButtonWidgetTemplateQuickCreateClose = "ButtonWidgetTemplateQuickCreateClose";
+        public static string ButtonWidgetTemplateFilter = "ButtonWidgetTemplateFilter";
+        public static string ButtonWidgetTemplateApplyFilter = "ButtonWidgetTemplateApplyFilter";
+        public static string ButtonWidgetTemplateCancelFilter = "ButtonWidgetTemplateCancelFilter";
+        public static string ButtonWidgetTemplateClearFilter = "ButtonWidgetTemplateClearFilter";
+        public static string ButtonWidgetTemplateCloseFilter = "ButtonWidgetTemplateCloseFilter";
         public static string LinkButtonCheckEnergyInfo = "LinkButtonCheckEnergyInfo";
        
         #endregion
@@ -1281,6 +1283,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         //public static string LabelWidgetTemplateNameMin = "LabelWidgetTemplateNameMin";
         public static string LabelQuickCreateWidgetField = "LabelQuickCreateWidgetField";
         public static string LabelBuildingField = "LabelBuildingField";
+        public static string LabelWidgetTemplateCriteria = "LabelWidgetTemplateCriteria";
+
         #endregion
 
         #region Energy View

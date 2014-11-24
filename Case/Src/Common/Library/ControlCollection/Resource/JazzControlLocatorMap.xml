@@ -115,13 +115,15 @@
             <add key="LinkButtonMaxWidgetAddComment" value="//div[contains(@id,'widgetmaxwindow') and contains(@class,'x-widget-max-window')]//div[contains(@id, 'remlinkbutton') and a[text()='$@Dashboard.Add']]" type="XPath"/>
             <add key="ButtonMaxWidgetRightComment" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id, 'commentcontainer')]/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Dashboard.Label.Comment']]" type="XPath"/>
 
-            <add key="WidgetTemplateQuickCreateButton" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@HomePage.Label.Create']]" type="XPath"/>
-            <add key="WidgetTemplateQuickCreateCloseButton" value="//div[contains(@id,'hp-widgettemplate-window') and contains(@class,'x-window-default-closable')]/div/div/div[contains(@id,'hp-widgettemplate-window_header-innerCt')]//div[contains(@class,'x-tool-default')]/img" type="XPath"/>
-            <add key="WidgetTemplateFilterButton" value="db-wt-filter" type="ID"/>
-            <add key="WidgetTemplateApplyFilterButton" value="db-wt-applyfilter" type="ID"/>
-            <add key="WidgetTemplateCancelFilterButton" value="db-wt-cancelfilter" type="ID"/>
-            <add key="LinkButtonCheckEnergyInfo" value="//div[contains(@id,'remlinkbutton')]/a[text()='$@Dashboard.Label.MoreInfo']" type="XPath"/>
-           
+            <add key="LinkButtonCheckEnergyInfo" value="//div[contains(@id,'remlinkbutton')]/a[text()='$@Dashboard.Label.MoreInfo']" type="XPath" /> 
+            <add key="ButtonWidgetTemplateQuickCreate" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@HomePage.Label.Create']]" type="XPath"/>
+            <add key="ButtonWidgetTemplateQuickCreateClose" value="//div[contains(@id,'hp-widgettemplate-window') and contains(@class,'x-window-default-closable')]/div/div/div[contains(@id,'hp-widgettemplate-window_header-innerCt')]//div[contains(@class,'x-tool-default')]/img" type="XPath"/>
+            <add key="ButtonWidgetTemplateFilter" value="db-wt-filter" type="ID"/>
+            <add key="ButtonWidgetTemplateApplyFilter" value="db-wt-applyfilter" type="ID"/>
+            <add key="ButtonWidgetTemplateCancelFilter" value="db-wt-cancelfilter" type="ID"/>
+            <add key="ButtonWidgetTemplateClearFilter" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@HomePage.Label.ClearFilter'] and not(contains(@style,'display: none'))]" type="XPath"/>
+            <add key="ButtonWidgetTemplateCloseFilter" value="//div[contains(@class,'x-column-inner') and table/tbody/tr/td/label[text()='$#nameIndex']]/div[contains(@class,'x-tool-default')]/img" type="XPath"/>
+      
       </HomePage>
       
       <!--User Management Begin-->
@@ -1173,6 +1175,7 @@ CommentTextField
     <add key="LabelQuickCreateWidgetNameMin" value="//label[text()='$#nameIndex']" type="XPath"/>
     <add key="LabelQuickCreateWidgetField" value="//div[label[text()='$#nameIndex']]/img" type="XPath"/>
     <add key="LabelBuildingField" value="//div[contains(@id,'container')]/label[text()='$#nameIndex']" type="XPath"/>     
+    <add key="LabelWidgetTemplateCriteria" value="//label[text()='$#nameIndex']" type="XPath"/>     
      
     </HomePage>
     

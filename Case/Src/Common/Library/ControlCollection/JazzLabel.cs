@@ -103,6 +103,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Label QuickCreateWidgetNameMinLabel = GetControl<Label>(JazzControlLocatorKey.LabelQuickCreateWidgetNameMin);
         public static Label QuickCreateWidgetFieldLabel = GetControl<Label>(JazzControlLocatorKey.LabelQuickCreateWidgetField);
         //public static Label WidgetTemplateNameMinLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetTemplateNameMin);
+        public static Label WidgetTemplateCriteriaLabel = GetControl<Label>(JazzControlLocatorKey.LabelWidgetTemplateCriteria);
+        
           
         #endregion
 

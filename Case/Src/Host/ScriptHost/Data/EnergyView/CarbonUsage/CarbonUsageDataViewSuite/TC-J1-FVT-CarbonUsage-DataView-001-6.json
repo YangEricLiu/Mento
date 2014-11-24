@@ -1,0 +1,25 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "BuildingMultipleCommodities"],
+			"DashboardInfo":[{
+				"WigetName":"CarbonUsageAllCommoditiesView",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"AutomationTest",
+			}],
+			"ManualTimeRange":[{
+				"StartDate":"2013-12-31",
+				"StartTime":"12:00",
+				"EndDate":"2014-10-31",
+				"EndTime":"08:00",
+			}],
+			"failedFileName":["F-CarbonUsageDataView001-6-pie.xls","F-CarbonUsageDataView001-6-list.xls","F-CarbonUsageDataView001-6-line.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["F-CarbonUsageDataView001-6-pie.xls","F-CarbonUsageDataView001-6-list.xls","F-CarbonUsageDataView001-6-line.xls"],
+		}
+	}
+]

@@ -105,8 +105,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-StandCoalCalculation-001-3")]
-        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonCalculationAggregationHierarchyOnlineSuite), "TC-J1-FVT-StandCoalCalculation-001-3")]
+        [CaseID("TC-J1-FVT-CarbonCalculation-001-3")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonCalculationAggregationHierarchyOnlineSuite), "TC-J1-FVT-CarbonCalculation-001-3")]
         public void CarbonUsageRawValueDisplayForHierarchy(CarbonUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");

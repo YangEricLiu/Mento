@@ -44,6 +44,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
         private static CarbonUsagePanel CarbonUsage = JazzFunction.CarbonUsagePanel;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
+        private static EnergyViewPanel EnergyViewPanel = JazzFunction.EnergyAnalysisPanel;
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsage-DataView-001-1")]
@@ -595,6 +596,101 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard[0].DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CarbonUsage-DataView-001-6")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-6")]
+        public void AllCommoditiesView(CarbonUsageData input)
+        {
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.LongPause();
+            CarbonUsage.NavigateToCarbonUsage();
+            TimeManager.MediumPause();
+
+            CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //select time range=Select time range 2013/12/31 12:00 to 2014/10/31 8:00
+            EnergyViewToolbar.SetDateRange(input.InputData.ManualTimeRange[0].StartDate, input.InputData.ManualTimeRange[0].EndDate);
+            EnergyViewToolbar.SetTimeRange(input.InputData.ManualTimeRange[0].StartTime, input.InputData.ManualTimeRange[0].EndTime);
+            TimeManager.ShortPause();
+
+            //Select 总览 to display Data view. Click Optional step=month
+            CarbonUsage.SelectCommodity();
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+            CarbonUsage.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Export to excel. Verify the export data value compared with the data view.
+            CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Keep select time range 2013/12/31 12:00 to 2014/10/31 8:00 to view pie chart.
+            EnergyViewToolbar.View(EnergyViewType.Distribute);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Check · There are 11 Commodities display pie chart view.
+            CarbonUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, input.InputData.ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            TimeManager.MediumPause();
+            CarbonUsage.CompareDictionaryDataOfCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Change chart type to Data view. Select time range 上周， change chart type to the data view.Optional step=Hour
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastWeek);
+            TimeManager.ShortPause();
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            for (int i = 0; i < 15; i++)//Change chart type from pie, it will take very long time to load new chart
+            {
+                TimeManager.LongPause();
+            }
+            CarbonUsage.ClickDisplayStep(DisplayStep.Hour);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Export to excel. Verify the export data value compared with the data vgetlinesiew.
+            CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1],DisplayStep.Hour);
+            TimeManager.MediumPause();
+            //Check· The excel value is equal to the data before export.
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+            //Select time range 上月， change chart type to trend chart  to view.
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastMonth);
+            TimeManager.ShortPause();
+            EnergyViewToolbar.View(EnergyViewType.Line);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
+
+            //Check · There are 11 lines in trend chart.
+            //Assert.AreEqual(10, EnergyViewPanel.GetTrendChartLines());//It is not 11 lines when no data for some lines.
+            CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            TimeManager.MediumPause();
+            CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+
+            //Save to dashboard. Go to dashboard to verify the dashboard chart value.
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+
+            //On homepage, check the dashboards
+            CarbonUsage.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
+            TimeManager.MediumPause();
+            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard[0].DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+
+            //Check · There are 11 lines in trend chart.
+            HomePagePanel.ClickOnWidget(dashboard[0].WigetName);
+            TimeManager.ShortPause();
+            //Assert.AreEqual(10, EnergyViewPanel.GetTrendChartLines());//It is not 11 lines when no data for some lines.
         }
     }
 }

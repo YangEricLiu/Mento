@@ -1,0 +1,25 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级", "BuildingMultipleCommodities"],
+			"ManualTimeRange":[{
+				"StartDate":"2013-12-31",
+				"StartTime":"12:00",
+				"EndDate":"2014-10-31",
+				"EndTime":"08:00",
+			}],
+			"DashboardInfo":{
+				"WigetName":"CostUsageAllCommoditiesView",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"AutomationTest",
+			},
+			"failedFileName":["F-CostUsageDataView004-pie.xls","F-CostUsageDataView004-list.xls","F-CostUsageDataView004-line.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUsageDataView004-pie.xls","CostUsageDataView004-list.xls","CostUsageDataView004-line.xls"],
+		}
+	}
+]

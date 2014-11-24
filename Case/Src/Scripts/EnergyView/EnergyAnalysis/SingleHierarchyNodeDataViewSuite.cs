@@ -307,7 +307,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Check value 
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]));
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Click "Save to dashboard"（保存到仪表盘）to save the Data view to Hierarchy node dashboard.
             var dashboard = input.InputData.DashboardInfo;
@@ -329,5 +329,50 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-5")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-5")]
+        public void SingleHie30Tagslimit(EnergyViewOptionData input)
+        {
+            //Go to NancyCustomer1->园区测试多层级-> BuildingPieVerify. 
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.LongPause();
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Select time range=上个月
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastMonth);
+            TimeManager.ShortPause();
+
+            //Select Totally 30 tags Vpie1 to Vpie30 .
+            for (int i = 1; i < 31; i++ )
+            {
+                EnergyAnalysis.CheckTag("Vpie"+i.ToString());
+            }
+
+            //view dataview.
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check · The data view is can draw with totally 30 tags.
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Change to trend chart view.
+            EnergyViewToolbar.View(EnergyViewType.Line);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check · The trend chart show 30 lines correctly.
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+        }
     }
 }

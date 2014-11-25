@@ -1,0 +1,30 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyOtherCustomer3", "NancyOtherSite", "BuildingMultipleSteps"],
+			"TagNames":["PH_SiteS1", "VH_SiteS1", "VD_SiteS1", "VM_SiteS1"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-18",	
+			},
+			{
+				"StartDate":"2012-1-10",
+				"EndDate":"2012-2-10",	
+			},
+			{
+				"StartDate":"2012-11-10",
+				"EndDate":"2012-12-25",	
+			},
+			{
+				"StartDate":"2013-1-10",
+				"EndDate":"2013-2-10",	
+			}],
+			"failedFileName":["F-AdditionalTagsDataVerification-101-1-P1V1V2-Y-0.xls", "F-AdditionalTagsDataVerification-101-1-P1V1V2-M-1.xls", "F-AdditionalTagsDataVerification-101-1-P1V1-W-2.xls", "F-AdditionalTagsDataVerification-101-1-P1V1-D-3.xls", "F-AdditionalTagsDataVerification-101-1-P1-H-4.xls", "F-AdditionalTagsDataVerification-101-1-P1-H-5.xls", "F-AdditionalTagsDataVerification-101-1-P1-H-6.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["AdditionalTagsDataVerification-101-1-P1V1V2-Y-0.xls", "AdditionalTagsDataVerification-101-1-P1V1V2-M-1.xls", "AdditionalTagsDataVerification-101-1-P1V1-W-2.xls", "AdditionalTagsDataVerification-101-1-P1V1-D-3.xls", "AdditionalTagsDataVerification-101-1-P1-H-4.xls", "AdditionalTagsDataVerification-101-1-P1-H-5.xls", "AdditionalTagsDataVerification-101-1-P1-H-6.xls"],
+		}
+	}
+]

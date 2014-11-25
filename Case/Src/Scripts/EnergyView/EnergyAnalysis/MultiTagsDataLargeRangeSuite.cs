@@ -22,8 +22,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// </summary>
     [TestFixture]
     //[Ignore("ignore")]
-    [ManualCaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101"), CreateTime("2013-12-19"), Owner("Amber")]
-    public class MultiTagsDataVerificationSuite : TestSuiteBase
+    [ManualCaseID("TC-J1-AutoOnly-MultiTagsDataVerification-DataView-101"), CreateTime("2013-12-19"), Owner("Amber")]
+    public class MultiTagsDataLargeRangeSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -51,7 +51,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101-1")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataVerificationSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-1")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataLargeRangeSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-1")]
         public void MultiTagsDataVerification01(EnergyViewOptionData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -182,7 +182,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101-2")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataVerificationSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-2")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataLargeRangeSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-2")]
         public void MultiTagsDataVerification02(EnergyViewOptionData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -302,9 +302,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101-4")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataVerificationSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-4")]
-        public void MultiTagsDataVerification04(EnergyViewOptionData input)
+        [CaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101-3")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataLargeRangeSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-3")]
+        public void MultiTagsDataVerification03(EnergyViewOptionData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
             TimeManager.LongPause();
@@ -428,8 +428,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
        
         [Test]
-        [CaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101-5")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataVerificationSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-5")]
+        [CaseID("TC-J1-FVT-MultiTagsDataVerification-DataView-101-4")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultiTagsDataLargeRangeSuite), "TC-J1-FVT-MultiTagsDataVerification-DataView-101-4")]
         public void MultiTagsDataVerification05(EnergyViewOptionData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");

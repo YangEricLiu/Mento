@@ -370,8 +370,14 @@ namespace Mento.TestApi.TestData
             }
 
             MatchCollection simpleMatches = MatchLanguageKeys(raw, KEYFORMATSIMPLE);
-
+            List<Match> matchList = new List<Match>();
             foreach (Match match in simpleMatches)
+            {
+                matchList.Add(match);
+            }
+            var sortedMatches = matchList.OrderByDescending(m => m.Groups[2].Value.Length).ToArray();
+
+            foreach (Match match in sortedMatches)
             {
                 string key = match.Groups[2].Value;
                 string value = ResolveResourceValue(key); //process value if it contains recursive definitions

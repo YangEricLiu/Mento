@@ -42,7 +42,8 @@ namespace Mento.ScriptCommon.TestData.EnergyView
         public string[] CarbonConvertTypeValue { get; set; }
         public string[] CommodityValue { get; set; }
         public string[] HierarchyName { get; set; }
-
+        public string[] TimeName { get; set; }
+        public string[] BenchmarkName { get; set; }
     }
 
 

@@ -15,6 +15,9 @@
 			"RadioTypeValue":["$@Common.Glossary.DayNightRatio","$@EM.WorkHolidayRatio"],
 			"CarbonConvertTypeValue":["$@Common.CarbonUomType.StandardCoal","$@Common.CarbonUomType.CO2","$@Common.CarbonUomType.Tree"],
 			"CommodityValue":["$@Common.Commodity.Electric","$@Common.Commodity.Water"],
+			"HierarchyName":["buildingA","$@EM.Rank.HierTitle","org1","$@Common.Label.EmptyHierarchyText"],
+			"TimeName":["2013","$@DateTimeFormat.HighFormat.FullYear","2013-01-01","2013-12-31"],
+			"BenchmarkName":["$@Setting.Benchmark.Zone.ColdA$@Setting.Benchmark.Industry.OfficeBuilding"],
 		},	
 	},
 ]

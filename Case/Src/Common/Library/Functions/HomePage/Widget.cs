@@ -41,6 +41,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static ComboBox WidgetMaxDialogEndTime = JazzComboBox.WidgetMaxDialogEndTimeComboBox;
         private static ComboBox MaxWidgetLabelingYearComboBox = JazzComboBox.MaxWidgetLabelingYearComboBox;
         private static ComboBox MaxWidgetLabelingMonthComboBox = JazzComboBox.MaxWidgetLabelingMonthComboBox;
+        private static ComboBox LabelingYearComboBox = JazzComboBox.LabelingYearComboBox;
+        private static ComboBox LabelingMonthComboBox = JazzComboBox.LabelingMonthComboBox;
 
         private static DatePicker WidgetMaxDialogStartDate = JazzDatePicker.WidgetMaxDialogStartDatePicker;
         private static DatePicker WidgetMaxDialogEndDate = JazzDatePicker.WidgetMaxDialogEndDatePicker;
@@ -89,6 +91,11 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button PeakValleyButton = JazzButton.EnergyViewPeakValleyButton;
         private static Button EnergyDisplayStepMonthButton = JazzButton.EnergyDisplayStepMonthButton;
         private static LinkButton CheckEnergyInfoLinkButton = JazzButton.CheckEnergyInfoLinkButton;
+        private static MenuButton LabellingIndustryConvertMenuButton = JazzButton.LabellingIndustryConvertMenuButton;
+        private static MenuButton EnergyViewConvertTargetMenuButton = JazzButton.EnergyViewConvertTargetMenuButton;
+        private static DatePicker StartDatePicker = JazzDatePicker.EnergyUsageStartDateDatePicker;
+        private static DatePicker EndDatePicker = JazzDatePicker.EnergyUsageEndDateDatePicker;
+        private static Button RankSelectHierarchyButton = JazzButton.RankSelectHierarchyButton;
                 
         protected override Chart Chart
         {
@@ -655,8 +662,48 @@ namespace Mento.ScriptCommon.Library.Functions
             Label WidgetField = JazzLabel.GetOneLabelByName(JazzControlLocatorKey.LabelWidgetTemplateCriteria, name);
             return WidgetField.IsLabelTextExisted(name);
         }
+        //Get combox value for year
+        public string GetComboxYearText()
+        {
+            return LabelingYearComboBox.GetValue();
+        }
+        //Get combox value for month
+        public string GetComboxMonthText()
+        {
+            return LabelingMonthComboBox.GetValue();
+        }
+        //Get  value for labeling button
+        public string GetMenuButtonLabellingIndustryConvertText()
+        {
+            return LabellingIndustryConvertMenuButton.GetText();
+        }
 
-        
+        //Get  value for labeling button
+        public string GetMenuButtonEnergyViewConvertTargetText()
+        {
+            return EnergyViewConvertTargetMenuButton.GetText();
+        }
+
+        //Get  value for StartDatePicker
+        public string GetStartDatePickerText()
+        {
+            return StartDatePicker.GetValue();
+        }
+        //Get  value for EndDatePicker
+        public string GetEndDatePickerText()
+        {
+            return EndDatePicker.GetValue();
+        }
+        //Get  value for RankSelectHierarchyButton
+        public string GetRankSelectHierarchyButtonText()
+        {
+            return RankSelectHierarchyButton.GetText();
+        }
+        //Get  value for RankTypeConvertTargetButton 
+        public string GetRankTypeConvertTargetButtonText()
+        {
+            return RankTypeConvertTargetButton.GetText();
+        }
         #endregion
 
     }

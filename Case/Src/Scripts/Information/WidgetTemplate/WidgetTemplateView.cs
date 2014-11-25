@@ -45,7 +45,7 @@ namespace Mento.Script.Information.WidgetTemplate
         [Test]
         [CaseID("TC-J1-FVT-WidgetTemplate-View-101"), CreateTime("2014-11-20"), Owner("Cathy")]
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(WidgetTemplateViewSuite), "TC-J1-FVT-WidgetTemplate-View-101")]
-        public void WidgetTemplateView101(MaximizeWidgetData input)
+        public void ViewWidgetTemplate(MaximizeWidgetData input)
         {
             Widget.ClickWidgetTemplateQuickCreateButton();
             //All template display there

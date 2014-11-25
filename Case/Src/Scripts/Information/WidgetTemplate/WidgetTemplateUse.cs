@@ -36,7 +36,7 @@ namespace Mento.Script.Information.WidgetTemplate
         [SetUp]
         public void CaseSetUp()
         {
-            //HomePagePanel.SelectCustomer("CommodityTestCustomer");
+            HomePagePanel.SelectCustomer("CommodityTestCustomer");
             Widget.NavigateToAllDashboard();
             TimeManager.MediumPause();
         }
@@ -48,38 +48,62 @@ namespace Mento.Script.Information.WidgetTemplate
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-WidgetTemplate-Use-101")]
+        [CaseID("TC-J1-FVT-WidgetTemplate-Use-101"), CreateTime("2014-10-9"), Owner("Cathy")]
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(WidgetTemplateUseSuite), "TC-J1-FVT-WidgetTemplate-Use-101")]
-        public void WidgetTemplateUse101(MaximizeWidgetData input)
+        public void WidgetTemplateParameters(MaximizeWidgetData input)
         {
             var hierarchy = input.InputData.HierarchyInfo;
             HomePagePanel.SelectHierarchyNode(hierarchy[0]);
             Widget.ClickWidgetTemplateQuickCreateButton();
             HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[5]);
-            //判断
-           Assert.AreEqual(Widget.GetSelectHierarchyButtonText(), "buildingA");
+            TimeManager.MediumPause();
+            TimeManager.MediumPause();
+            TimeManager.LongPause();
+            //判断 associate hierarchy, not tag check
+            Assert.AreEqual(input.ExpectedData.HierarchyName[0],Widget.GetSelectHierarchyButtonText());
             EnergyAnalysis.IsAllGridTagsUnchecked();
-             Assert.AreEqual(input.ExpectedData.UnitTypeValue[0], Widget.GetFuncModeConvertTargetButtonText());
+            TimeManager.MediumPause();
+            TimeManager.MediumPause();
+            TimeManager.LongPause();
+            //2013,全年，请选择能效标识, 单位面积
+            Assert.AreEqual(input.ExpectedData.TimeName[0], Widget.GetComboxYearText());
+            Assert.AreEqual(input.ExpectedData.TimeName[1], Widget.GetComboxMonthText());
+            Assert.AreEqual(input.ExpectedData.BenchmarkName[0], Widget.GetMenuButtonLabellingIndustryConvertText());
+            Assert.AreEqual(input.ExpectedData.UnitTypeValue[0], Widget.GetMenuButtonEnergyViewConvertTargetText());
             
+            //choose a not building hierarchy node
             Widget.NavigateToAllDashboard();
             TimeManager.MediumPause();
             HomePagePanel.SelectHierarchyNode(hierarchy[1]);
             Widget.ClickWidgetTemplateQuickCreateButton();
             HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[5]);
+            TimeManager.MediumPause();
+            TimeManager.MediumPause();
+            TimeManager.LongPause();
             UserDataScope.IsHierarchyNodeChecked(hierarchy[1]);
-           Assert.AreEqual(Widget.GetSelectHierarchyButtonText(), hierarchy[1]);
-            //判断 "该节点为非楼宇节点，请重新选择节点"
+            //判断节点名称
+            Assert.AreEqual(Widget.GetSelectHierarchyButtonText(), input.ExpectedData.HierarchyName[2]);
+            //判断 "该节点为非楼宇节点，请重新选择节点", 单位面积
+            Assert.AreEqual(input.ExpectedData.UnitTypeValue[0], Widget.GetMenuButtonEnergyViewConvertTargetText());
             Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
+            //Click rangking widget
             Widget.NavigateToAllDashboard();
             TimeManager.MediumPause();
             HomePagePanel.SelectHierarchyNode(hierarchy[1]);
             Widget.ClickWidgetTemplateQuickCreateButton();
             HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[6]);
-            Assert.IsFalse(UserDataScope.IsHierarchyNodeChecked(hierarchy[1]));
-            Assert.AreEqual(input.ExpectedData.UnitTypeValue[1], Widget.GetUnitTypeButtonText());
+            //判断 请选择层级结点进行排名，能耗， 单位面积排名 start and end time
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            Assert.AreEqual(input.ExpectedData.HierarchyName[1], Widget.GetRankSelectHierarchyButtonText());
+            Assert.AreEqual(input.ExpectedData.UnitTypeValue[1], Widget.GetRankTypeConvertTargetButtonText());
             Assert.AreEqual(input.ExpectedData.FuncTypeValue[0], Widget.GetFuncModeConvertTargetButtonText());
+            Assert.AreEqual(input.ExpectedData.TimeName[2], Widget.GetStartDatePickerText());
+            Assert.AreEqual(input.ExpectedData.TimeName[3], Widget.GetEndDatePickerText());
 
+            //Click 年逐月能耗工休比
             Widget.NavigateToAllDashboard();
             TimeManager.MediumPause();
             HomePagePanel.SelectHierarchyNode(hierarchy[1]);
@@ -87,9 +111,14 @@ namespace Mento.Script.Information.WidgetTemplate
             HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[0]);
             EnergyAnalysis.IsAllGridTagsUnchecked();
             TimeManager.LongPause();
+            //判断工休比 start and end time 行业基准值 button disabled
             Assert.AreEqual(input.ExpectedData.RadioTypeValue[1], Widget.GetRadioTypeConvertTargetButtonText());
+            Assert.AreEqual(input.ExpectedData.TimeName[2], Widget.GetStartDatePickerText());
+            Assert.AreEqual(input.ExpectedData.TimeName[3], Widget.GetEndDatePickerText());
+            
             TimeManager.LongPause();
 
+            //Click 年逐月平米能耗
             Widget.NavigateToAllDashboard();
             TimeManager.MediumPause();
             TimeManager.LongPause();
@@ -103,6 +132,7 @@ namespace Mento.Script.Information.WidgetTemplate
             Assert.AreEqual(input.ExpectedData.UnitTypeValue[0], Widget.GetUnitTypeButtonText());
             TimeManager.LongPause();
 
+            //Click 年最大需量控制
             Widget.NavigateToAllDashboard();
             TimeManager.MediumPause();
             TimeManager.LongPause();
@@ -112,6 +142,7 @@ namespace Mento.Script.Information.WidgetTemplate
             HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[7]);
             EnergyAnalysis.IsAllGridTagsUnchecked();
 
+            //Click 年逐月碳排放
             Widget.NavigateToAllDashboard();
             TimeManager.MediumPause();
             TimeManager.LongPause();
@@ -148,11 +179,13 @@ namespace Mento.Script.Information.WidgetTemplate
             TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
+            TimeManager.LongPause();
             Assert.IsTrue(costPanel.IsCommodityChecked(input.ExpectedData.CommodityValue[0]));
             TimeManager.LongPause();
             TimeManager.LongPause();
             Assert.IsTrue(Widget.IsPeakValleyButtonPressed());
-            Assert.IsTrue(costPanel.IsColumnChartDrawn());
+            //Make sure 2013 have data value
+            //Assert.IsTrue(costPanel.IsColumnChartDrawn());
             TimeManager.LongPause();
 
             //年逐月电峰谷用电成本 without config TOU building
@@ -183,7 +216,10 @@ namespace Mento.Script.Information.WidgetTemplate
             HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[2]);
             TimeManager.LongPause();
             TimeManager.LongPause();
-            Assert.IsFalse(costPanel.IsCommodityChecked(input.ExpectedData.CommodityValue[0]));
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            Assert.IsTrue(costPanel.IsNoSingleCommodity());
             Assert.IsFalse(Widget.IsPeakValleyButtonEnabled());
 
             //年逐月电峰谷用电成本 no building
@@ -207,9 +243,13 @@ namespace Mento.Script.Information.WidgetTemplate
             Widget.ClickWidgetTemplateQuickCreateButton();
             HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[2]);
             TimeManager.LongPause();
-            Assert.AreEqual(Widget.GetSelectHierarchyButtonText(), "请选择层级结构");
+            Assert.AreEqual(input.ExpectedData.HierarchyName[3], Widget.GetSelectHierarchyButtonText());
             TimeManager.LongPause();
-            Assert.IsFalse(costPanel.IsCommodityChecked(input.ExpectedData.CommodityValue[0]));
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            Assert.IsTrue(costPanel.IsNoSingleCommodity());
             Assert.IsFalse(Widget.IsPeakValleyButtonEnabled());
 
             //from map page
@@ -222,10 +262,20 @@ namespace Mento.Script.Information.WidgetTemplate
             Widget.ClickWidgetTemplateQuickCreateButton();
             TimeManager.LongPause();
             HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[5]);
+            //2013,全年，请选择能效标识, 单位面积
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            Assert.AreEqual(input.ExpectedData.TimeName[0], Widget.GetComboxYearText());
+            Assert.AreEqual(input.ExpectedData.TimeName[1], Widget.GetComboxMonthText());
+            Assert.AreEqual(input.ExpectedData.BenchmarkName[0], Widget.GetMenuButtonLabellingIndustryConvertText());
+            Assert.AreEqual(input.ExpectedData.UnitTypeValue[0], Widget.GetMenuButtonEnergyViewConvertTargetText());
          }
-        [CaseID("TC-J1-FVT-WidgetTemplate-Use-102")]
+        [CaseID("TC-J1-FVT-WidgetTemplate-Use-102"), CreateTime("2014-10-13"), Owner("Cathy")]
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(WidgetTemplateUseSuite), "TC-J1-FVT-WidgetTemplate-Use-102")]
-        public void WidgetTemplateUse102(MaximizeWidgetData input)
+        public void UseWidgetTemplate(MaximizeWidgetData input)
         {
             var hierarchy = input.InputData.HierarchyInfo;
             var dashboard = input.InputData.DashboardInfo;
@@ -237,7 +287,7 @@ namespace Mento.Script.Information.WidgetTemplate
             HomePagePanel.SelectHierarchyNode(hierarchy[2]);
             TimeManager.LongPause();
             Widget.ClickWidgetTemplateQuickCreateButton();
-            HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[5]);
+            HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[0]);
             TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
@@ -248,7 +298,13 @@ namespace Mento.Script.Information.WidgetTemplate
             TimeManager.MediumPause();
             EnergyViewToolbar.IsMoreMenuItemDisabled(input.InputData.MoreMenuItems[0]);
             EnergyViewToolbar.IsMoreMenuItemDisabled(input.InputData.MoreMenuItems[1]);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetNames[0], dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             Widget.NavigateToAllDashboard();
             TimeManager.MediumPause();
             TimeManager.LongPause();
@@ -277,6 +333,8 @@ namespace Mento.Script.Information.WidgetTemplate
             TimeManager.ShortPause();
             JazzMessageBox.MessageBox.Delete();
             TimeManager.MediumPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             Assert.IsFalse(HomePagePanel.IsWidgetExistedOnDashboard(input.InputData.newWidgetName[0]));
 
             HomePagePanel.SelectHierarchyNode(hierarchy[2]);

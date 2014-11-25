@@ -46,7 +46,7 @@ namespace Mento.Script.Information.WidgetTemplate
         [Test]
         [CaseID("TC-J1-FVT-WidgetTemplate-Filter-101"), CreateTime("2014-11-19"), Owner("Cathy")]
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(WidgetTemplateFilterSuite), "TC-J1-FVT-WidgetTemplate-Filter-101")]
-        public void WidgetTemplateFilter101(MaximizeWidgetData input)
+        public void FilterWidgetTemplateValid(MaximizeWidgetData input)
         {
             var widgetname = input.ExpectedData.WidgetNames;
             Widget.ClickWidgetTemplateQuickCreateButton();
@@ -245,7 +245,7 @@ namespace Mento.Script.Information.WidgetTemplate
         }
         [CaseID("TC-J1-FVT-WidgetTemplate-Filter-001"), CreateTime("2014-11-20"), Owner("Cathy")]
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(WidgetTemplateFilterSuite), "TC-J1-FVT-WidgetTemplate-Filter-001")]
-        public void WidgetTemplateFilter001(MaximizeWidgetData input)
+        public void FilterWidgetTemplateCancelled(MaximizeWidgetData input)
         {
             var widgetname = input.ExpectedData.WidgetNames;
             Widget.ClickWidgetTemplateQuickCreateButton();
@@ -382,7 +382,7 @@ namespace Mento.Script.Information.WidgetTemplate
         }
         [CaseID("TC-J1-FVT-WidgetTemplate-Filter-002"), CreateTime("2014-11-20"), Owner("Cathy")]
         [MultipleTestDataSource(typeof(MaximizeWidgetData[]), typeof(WidgetTemplateFilterSuite), "TC-J1-FVT-WidgetTemplate-Filter-002")]
-        public void WidgetTemplateFilter002(MaximizeWidgetData input)
+        public void CleanFilterCriteria(MaximizeWidgetData input)
         {
             var widgetname = input.ExpectedData.WidgetNames;
             Widget.ClickWidgetTemplateQuickCreateButton();

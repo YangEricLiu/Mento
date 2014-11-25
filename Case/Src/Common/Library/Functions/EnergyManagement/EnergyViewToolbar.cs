@@ -331,6 +331,9 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SaveToDashboard(string widgetName, string[] hierarchyName, bool isCreateDashboard, string dashboardName)
         {
             MoreMenu.SwitchMenuItem(EnergyViewMoreOption.ToDashboard);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             TimeManager.FlashPause();
 
             DashboardDialog.Save(widgetName, hierarchyName, isCreateDashboard, dashboardName);

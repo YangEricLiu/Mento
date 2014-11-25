@@ -43,17 +43,22 @@ namespace Mento.ScriptCommon.Library.Functions
         public void Save(string widgetName, string[] hierarchyNamePath, bool isCreateDashboard, string dashboardName)
         {
             WidgetNameTextbox.Fill(widgetName);
-            
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             if (hierarchyNamePath != null)
             {
                 WidgetSaveHierarchy.Click();
-                WidgetSaveHierarchyTree.SelectNode(hierarchyNamePath); 
+                TimeManager.LongPause();
+                WidgetSaveHierarchyTree.SelectNode(hierarchyNamePath);
+                TimeManager.LongPause();
             }   
             TimeManager.LongPause();
             if (isCreateDashboard)
             {
                 CreateDashboardButton.Click();
+                TimeManager.LongPause();
                 DashboardNameTextbox.Fill(dashboardName);
+                TimeManager.LongPause();
             }
             else
             {

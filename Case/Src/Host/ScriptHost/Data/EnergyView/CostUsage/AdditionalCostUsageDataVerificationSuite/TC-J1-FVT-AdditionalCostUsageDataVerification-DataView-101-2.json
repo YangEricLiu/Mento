@@ -1,0 +1,118 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A"],
+			"SystemDimensionPath":["园区A", "$@SystemDimensionTemplateItem_HVAC"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-1",	
+			},
+			{
+				"StartDate":"2012-7-15",
+				"EndDate":"2012-7-15",	
+			},
+			{
+				"StartDate":"2012-8-14",
+				"EndDate":"2012-8-16",	
+			},
+			{
+				"StartDate":"2013-7-30",
+				"EndDate":"2013-8-4",
+			}],
+			"failedFileName":["F-AdditionalCostUsageDataVerification园区A空调-101-2-Total-Y-0.xls", "F-AdditionalCostUsageDataVerification园区A空调-101-2-Total-M-1.xls", "F-AdditionalCostUsageDataVerification园区A空调-101-2-Y-2.xls", "F-AdditionalCostUsageDataVerification园区A空调-101-2-M-3.xls", "F-AdditionalCostUsageDataVerification园区A空调-101-2-W-4.xls", "F-AdditionalCostUsageDataVerification园区A空调-101-2-D-5.xls", "F-AdditionalCostUsageDataVerification园区A空调-101-2-H-6.xls", "F-AdditionalCostUsageDataVerification园区A空调-101-2-H-7.xls","F-AdditionalCostUsageDataVerification园区A空调-101-2-H-8.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["AdditionalCostUsageDataVerification园区A空调-101-2-Total-Y-0.xls", "AdditionalCostUsageDataVerification园区A空调-101-2-Total-M-1.xls", "AdditionalCostUsageDataVerification园区A空调-101-2-Y-2.xls", "AdditionalCostUsageDataVerification园区A空调-101-2-M-3.xls", "AdditionalCostUsageDataVerification园区A空调-101-2-W-4.xls", "AdditionalCostUsageDataVerification园区A空调-101-2-D-5.xls", "AdditionalCostUsageDataVerification园区A空调-101-2-H-6.xls", "AdditionalCostUsageDataVerification园区A空调-101-2-H-7.xls","AdditionalCostUsageDataVerification园区A空调-101-2-H-8.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区B"],
+			"SystemDimensionPath":["园区B", "$@SystemDimensionTemplateItem_HVAC"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-1",	
+			},
+			{
+				"StartDate":"2012-7-15",
+				"EndDate":"2012-7-15",	
+			},
+			{
+				"StartDate":"2012-8-14",
+				"EndDate":"2012-8-16",	
+			},
+			{
+				"StartDate":"2013-7-30",
+				"EndDate":"2013-8-4",	
+			}],
+			"failedFileName":["F-AdditionalCostUsageDataVerification园区B空调-101-2-Total-Y-0.xls", "F-AdditionalCostUsageDataVerification园区B空调-101-2-Total-M-1.xls", "F-AdditionalCostUsageDataVerification园区B空调-101-2-Y-2.xls", "F-AdditionalCostUsageDataVerification园区B空调-101-2-M-3.xls", "F-AdditionalCostUsageDataVerification园区B空调-101-2-W-4.xls", "F-AdditionalCostUsageDataVerification园区B空调-101-2-D-5.xls", "F-AdditionalCostUsageDataVerification园区B空调-101-2-H-6.xls", "F-AdditionalCostUsageDataVerification园区B空调-101-2-H-7.xls","F-AdditionalCostUsageDataVerification园区B空调-101-2-H-8.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["AdditionalCostUsageDataVerification园区B空调-101-2-Total-Y-0.xls", "AdditionalCostUsageDataVerification园区B空调-101-2-Total-M-1.xls", "AdditionalCostUsageDataVerification园区B空调-101-2-Y-2.xls", "AdditionalCostUsageDataVerification园区B空调-101-2-M-3.xls", "AdditionalCostUsageDataVerification园区B空调-101-2-W-4.xls", "AdditionalCostUsageDataVerification园区B空调-101-2-D-5.xls", "AdditionalCostUsageDataVerification园区B空调-101-2-H-6.xls", "AdditionalCostUsageDataVerification园区B空调-101-2-H-7.xls","AdditionalCostUsageDataVerification园区B空调-101-2-H-8.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A"],
+			"SystemDimensionPath":["组织A", "$@SystemDimensionTemplateItem_HVAC"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-1",	
+			},
+			{
+				"StartDate":"2012-7-15",
+				"EndDate":"2012-7-15",	
+			},
+			{
+				"StartDate":"2012-8-14",
+				"EndDate":"2012-8-16",	
+			},
+			{
+				"StartDate":"2013-7-30",
+				"EndDate":"2013-8-4",	
+			}],
+			"failedFileName":["F-AdditionalCostUsageDataVerification组织A空调-101-2-Total-Y-0.xls", "F-AdditionalCostUsageDataVerification组织A空调-101-2-Total-M-1.xls", "F-AdditionalCostUsageDataVerification组织A空调-101-2-Y-2.xls", "F-AdditionalCostUsageDataVerification组织A空调-101-2-M-3.xls", "F-AdditionalCostUsageDataVerification组织A空调-101-2-W-4.xls", "F-AdditionalCostUsageDataVerification组织A空调-101-2-D-5.xls", "F-AdditionalCostUsageDataVerification组织A空调-101-2-H-6.xls", "F-AdditionalCostUsageDataVerification组织A空调-101-2-H-7.xls","F-AdditionalCostUsageDataVerification组织A空调-101-2-H-8.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["AdditionalCostUsageDataVerification组织A空调-101-2-Total-Y-0.xls", "AdditionalCostUsageDataVerification组织A空调-101-2-Total-M-1.xls", "AdditionalCostUsageDataVerification组织A空调-101-2-Y-2.xls", "AdditionalCostUsageDataVerification组织A空调-101-2-M-3.xls", "AdditionalCostUsageDataVerification组织A空调-101-2-W-4.xls", "AdditionalCostUsageDataVerification组织A空调-101-2-D-5.xls", "AdditionalCostUsageDataVerification组织A空调-101-2-H-6.xls", "AdditionalCostUsageDataVerification组织A空调-101-2-H-7.xls","AdditionalCostUsageDataVerification组织A空调-101-2-H-8.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2"],
+			"SystemDimensionPath":["NancyCostCustomer2", "$@SystemDimensionTemplateItem_HVAC"],
+			"commodityNames":["$@Commodity_Electricity", "$@Commodity_Water","$@Commodity_Coal"],
+			"ManualTimeRange":[{
+				"StartDate":"2012-1-1",
+				"EndDate":"2013-12-1",	
+			},
+			{
+				"StartDate":"2012-7-15",
+				"EndDate":"2012-7-15",	
+			},
+			{
+				"StartDate":"2012-8-14",
+				"EndDate":"2012-8-16",	
+			},
+			{
+				"StartDate":"2013-7-30",
+				"EndDate":"2013-8-4",	
+			}],
+			"failedFileName":["F-AdditionalCostUsageDataVerification客户空调-101-2-Total-Y-0.xls", "F-AdditionalCostUsageDataVerification客户空调-101-2-Total-M-1.xls", "F-AdditionalCostUsageDataVerification客户空调-101-2-Y-2.xls", "F-AdditionalCostUsageDataVerification客户空调-101-2-M-3.xls", "F-AdditionalCostUsageDataVerification客户空调-101-2-W-4.xls", "F-AdditionalCostUsageDataVerification客户空调-101-2-D-5.xls", "F-AdditionalCostUsageDataVerification客户空调-101-2-H-6.xls", "F-AdditionalCostUsageDataVerification客户空调-101-2-H-7.xls","F-AdditionalCostUsageDataVerification客户空调-101-2-H-8.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["AdditionalCostUsageDataVerification客户空调-101-2-Total-Y-0.xls", "AdditionalCostUsageDataVerification客户空调-101-2-Total-M-1.xls", "AdditionalCostUsageDataVerification客户空调-101-2-Y-2.xls", "AdditionalCostUsageDataVerification客户空调-101-2-M-3.xls", "AdditionalCostUsageDataVerification客户空调-101-2-W-4.xls", "AdditionalCostUsageDataVerification客户空调-101-2-D-5.xls", "AdditionalCostUsageDataVerification客户空调-101-2-H-6.xls", "AdditionalCostUsageDataVerification客户空调-101-2-H-7.xls", "AdditionalCostUsageDataVerification客户空调-101-2-H-8.xls"],
+		}
+	}
+]

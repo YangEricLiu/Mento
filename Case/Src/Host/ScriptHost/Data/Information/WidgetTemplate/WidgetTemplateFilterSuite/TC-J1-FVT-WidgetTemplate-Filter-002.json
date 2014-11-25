@@ -3,8 +3,8 @@
 		"InputData":
 		{
 		       
-			  "FilterPropertiesName":["$@HomePage.Label.Target","$@HomePage.Label.Target","$@HomePage.Label.Target","$@HomePage.Label.Target","$@HomePage.Label.FunctionType","$@HomePage.Label.FunctionType","$@HomePage.Label.FunctionType","$@HomePage.Label.FunctionType","$@HomePage.Label.FunctionType","$@HomePage.Label.FunctionType","$@HomePage.Label.FunctionType","$@HomePage.Label.EnergyObject","$@HomePage.Label.EnergyObject","$@HomePage.Label.EnergyObject","$@HomePage.Label.ChartType","$@HomePage.Label.ChartType","$@HomePage.Label.ChartType","$@HomePage.Label.TimeRange","$@HomePage.Label.TimeRange"],
-		      "TargetObject":["管理","建筑","设备","行为","能效分析","碳排放","成本","单位指标","时段能耗比","能效标识","集团排名","能源消耗","碳排放","成本账单","折线图","柱状图","能效标识图","按年","按月"],
+			  "FilterPropertiesName":["$@HomePage.Label.Target","$@HomePage.Label.FunctionType","$@HomePage.Label.EnergyObject","$@HomePage.Label.ChartType","$@HomePage.Label.TimeRange"],
+		      "TargetObject":["$@HomePage.Label.TargetManagement","$@HomePage.Label.TargetBuilding","$@HomePage.Label.TargetDevice","$@HomePage.Label.TargetAction","$@HomePage.Label.FunctionTypeEnergyConsumption","$@HomePage.Label.FunctionTypeCarbon","$@HomePage.Label.FunctionTypeCost","$@HomePage.Label.FunctionTypeUnit","$@HomePage.Label.FunctionTypeRatio","$@HomePage.Label.FunctionTypeLabeling","$@HomePage.Label.FunctionTypeRanking","$@HomePage.Label.EnergyObjectEnergyConsumption","$@HomePage.Label.EnergyObjectCarbon","$@HomePage.Label.EnergyObjectCost","$@HomePage.Label.ChartTypeLine","$@HomePage.Label.ChartTypeColumn","$@HomePage.Label.ChartTypeLabeling","$@HomePage.Label.TimeRangeYear","$@HomePage.Label.TimeRangeMonth"],
 		},
 		"ExpectedData":
 		{

@@ -704,5 +704,106 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Assert.AreEqual(3, UnitKPIPanel.GetTrendChartLines());
             //Assert.AreEqual(6, UnitKPIPanel.GetTrendChartLinesMarkers());
         }
+
+        [Test]
+        [CaseID("TC-J1-FVT-CostUnitIndicator-View-101-5")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-View-101-5")]
+        public void AllCommoditiesUnitCostView(UnitIndicatorData input)
+        {
+            //Go to UnitCost function. Navigate to NancyCustomer1 -> 园区测试多层级->BuildingMultipleCommodities.
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.ShortPause();
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
+            TimeManager.LongPause();
+
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //select time range=Select time range 2013/12/31 12:00 to 2014/10/31 8:00,
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
+
+            //select 总览
+            UnitKPIPanel.SelectCommodityUnitCost();
+            TimeManager.ShortPause();
+
+            //change chart type to data view to view. Optional step=Month.
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Export to excel. Verify the export data value compared with the data view.
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            //Check · The excel value is equal to the data before export.
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Select totally 3 Commodities 天然气+软水+汽油  to Data view
+            UnitKPIPanel.SelectCommodityUnitCost(input.InputData.Commodity);
+            TimeManager.ShortPause();
+
+            //Select time range 上周
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastWeek);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //change chart type to the data view.Optional step=Hour
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Export to excel. Verify the export data value compared with the data view.
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            //Check · The excel value is equal to the data before export.
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+            //Change to select time range 上月
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastMonth);
+            TimeManager.ShortPause();
+
+            //change chart type to trend chart  to view.
+            EnergyViewToolbar.View(EnergyViewType.Line);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check ·  There is 1 Benchmark line in trend chart.
+            Assert.AreEqual(6, EnergyAnalysis.GetLegendItemTexts().Length);//6 legends include:Calculated,Original for 3 commodity.
+            //Assert.AreEqual(3, EnergyAnalysis.GetTrendChartLines());//no line for no data
+
+            //Save to dashboard. Go to dashboard to verify the dashboard chart value.
+            var dashboard = input.InputData.DashboardInfo[0];
+            EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+
+            //On homepage, check the dashboards
+            UnitKPIPanel.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.MediumPause();
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+
+            //Check ·  There is 1 Benchmark line in trend chart.
+            HomePagePanel.ClickOnWidget(dashboard.WigetName);
+            //Assert.AreEqual(6, WidgetMaxChartDlg.GetLegendItemTexts().Length);
+            //Assert.AreEqual(3, EnergyAnalysis.GetTrendChartLines());//no line for no data
+        }
     }
 }

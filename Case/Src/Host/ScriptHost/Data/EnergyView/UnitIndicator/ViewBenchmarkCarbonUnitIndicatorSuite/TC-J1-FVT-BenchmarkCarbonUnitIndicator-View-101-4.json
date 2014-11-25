@@ -1,0 +1,30 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1","园区测试多层级", "BuildingMultipleCommodities"]],
+			"Commodity":["$@Commodity_Petrol","$@Commodity_SoftWater","$@Commodity_CoalOil"],
+			"Industries":["$@Zone_Cold_Region$@Industry_Clothing_retail"],
+			"DashboardInfo":[{
+				"WigetName":"ViewBenchmarkCarbonUnitIndicator",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"AutomationTest",
+			}],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2013-12-31",
+				"StartTime":"12:00",
+				"EndDate":"2014-10-31",
+				"EndTime":"08:00",
+			}],
+
+			"failedFileName":["F-BenchmarkCarbonUnitIndicator-View-101-4-petrol.xls", "F-BenchmarkCarbonUnitIndicator-View-101-4-softWater.xls"],
+			
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCarbonUnitIndicator-View-101-4-petrol.xls", "BenchmarkCarbonUnitIndicator-View-101-4-softWater.xls"],
+		}
+	}
+]

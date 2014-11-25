@@ -15,6 +15,7 @@ using Mento.TestApi.TestData;
 using System.Data;
 using Mento.Utility;
 
+
 namespace Mento.Script.EnergyView.UnitIndicator
 {
     /// <summary>
@@ -49,6 +50,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
         private static Widget Widget = JazzFunction.Widget;
+        private static WidgetMaxChartDialog WidgetMaxChartDlg = JazzFunction.WidgetMaxChartDialog;
 
         [Test]
         [CaseID("TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-1")]
@@ -312,6 +314,113 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzWindow.WindowMessageInfos.Quit();
             TimeManager.ShortPause();
             Assert.IsTrue(UnitKPIPanel.EntirelyNoChartDrawn());
+        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-4")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewBenchmarkCostUnitIndicatorSuite), "TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-4")]
+        public void AllCommoditiesUnitCostBenchmarkView(UnitIndicatorData input)
+        {
+            //Go to UnitCost function. Navigate to NancyCustomer1 -> 园区测试多层级->BuildingMultipleCommodities.
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.ShortPause();
+            UnitKPIPanel.NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+
+            EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Cost);
+            TimeManager.LongPause();
+
+            UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //select time range=Select time range 2013/12/31 12:00 to 2014/10/31 8:00,
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            EnergyViewToolbar.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
+
+            //Select 行业+区域=服装零售寒冷地区. Select 单项->低压蒸汽
+            EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industries[0]);
+            TimeManager.LongPause();
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[0]);
+            TimeManager.ShortPause();
+
+            //change chart type to data view to view. Optional step=Month.
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Export to excel. Verify the export data value compared with the data view.
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            //Check · The excel value is equal to the data before export.
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+            //Change to select commodity 柴油  to Data view
+            UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[0]);
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[1]);
+            TimeManager.ShortPause();
+
+            //Select time range 上周
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastWeek);
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
+            //change chart type to the data view.Optional step=Hour
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Export to excel. Verify the export data value compared with the data view.
+            UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            //Check · The excel value is equal to the data before export.
+            UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+
+            //Change Commodity= 冷量.
+            UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[1]);
+            UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[2]);
+            TimeManager.ShortPause();
+
+            //Change to select time range 上月
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastMonth);
+            TimeManager.ShortPause();
+
+            //change chart type to trend chart  to view.
+            EnergyViewToolbar.View(EnergyViewType.Line);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check ·  There is 1 Benchmark line in trend chart.
+            Assert.AreEqual(5, EnergyAnalysis.GetLegendItemTexts().Length);//5 legends include:Calculated,Target,Baseline,Original and Benchmark(Cold region Clothing retail)
+            //Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
+
+            //Save to dashboard. Go to dashboard to verify the dashboard chart value.
+            var dashboard = input.InputData.DashboardInfo[0];
+            EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+
+            //On homepage, check the dashboards
+            UnitKPIPanel.NavigateToAllDashBoards();
+            HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
+            TimeManager.MediumPause();
+            HomePagePanel.ClickDashboardButton(dashboard.DashboardName);
+            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+            TimeManager.MediumPause();
+            Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+
+            //Check ·  There is 1 Benchmark line in trend chart.
+            HomePagePanel.ClickOnWidget(dashboard.WigetName);
+            //Assert.AreEqual(5, WidgetMaxChartDlg.GetLegendItemTexts().Length);//5 legends include:Calculated,Target,Baseline,Original and Benchmark(Cold region Clothing retail)
+            //Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
         }
     }
 }

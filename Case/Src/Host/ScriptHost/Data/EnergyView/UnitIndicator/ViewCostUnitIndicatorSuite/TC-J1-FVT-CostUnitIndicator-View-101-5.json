@@ -1,0 +1,27 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1","园区测试多层级", "BuildingMultipleCommodities"]],
+			"Commodity":["$@Commodity_Gas","$@Commodity_SoftWater","$@Commodity_Petrol"],
+			"DashboardInfo":[{
+				"WigetName":"ViewCostUnitIndicator",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"AutomationTest",
+			}],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2013-12-31",
+				"StartTime":"12:00",
+				"EndDate":"2014-10-31",
+				"EndTime":"08:00",
+			}],
+			"failedFileName":["F-CostUnitIndicator-View-101-5-overview.xls", "F-CarbonUnitIndicator-View-101-5-single.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["CostUnitIndicator-View-101-5-overview.xls", "CarbonUnitIndicator-View-101-5-single.xls"],
+		}
+	}
+]

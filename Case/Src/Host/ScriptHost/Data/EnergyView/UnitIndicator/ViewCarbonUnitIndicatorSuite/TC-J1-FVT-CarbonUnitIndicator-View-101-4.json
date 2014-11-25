@@ -1,0 +1,30 @@
+﻿[
+	{
+		"InputData":
+		{
+			
+			"Hierarchies":[["NancyCustomer1","园区测试多层级", "BuildingMultipleCommodities"]],
+			"Commodity":["$@Commodity_LowPressureSteam","$@Commodity_DieselOil","$@Commodity_HeatQ"],
+			"DashboardInfo":[{
+				"WigetName":"ViewCarbonUnitIndicator",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"AutomationTest",
+			}],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2013-12-31",
+				"StartTime":"12:00",
+				"EndDate":"2014-10-31",
+				"EndTime":"08:00",
+			}],
+			"failedFileName":["F-CarbonUnitIndicator101-4-overview.xls", "F-CarbonUnitIndicator101-4-single.xls"],
+		},
+		"ExpectedData":
+		{
+
+			"expectedFileName":["CarbonUnitIndicator101-4-overview.xls", "CarbonUnitIndicator101-4-single.xls"],
+			
+		}
+	}
+]

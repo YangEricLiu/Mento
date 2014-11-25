@@ -1,0 +1,28 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCustomer1","园区测试多层级", "BuildingMultipleCommodities"]],
+			"Commodity":["$@Commodity_LowPressureSteam","$@Commodity_DieselOil","$@Commodity_CoolQ"],
+			"Industries":["$@Zone_Cold_Region$@Industry_Clothing_retail"],
+			"DashboardInfo":[{
+				"WigetName":"ViewBenchmarkCostUnitIndicator",
+				"HierarchyName":["NancyCustomer1", "园区测试多层级"],
+				"IsCreateDashboard":"false",
+				"DashboardName":"AutomationTest",
+			}],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2013-12-31",
+				"StartTime":"12:00",
+				"EndDate":"2014-10-31",
+				"EndTime":"08:00",
+			}],
+			"failedFileName":["F-BenchmarkCostUnitIndicator-View-101-4-LowPressureSteam.xls", "F-BenchmarkCarbonUnitIndicator-View-101-4-DieselOil.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["BenchmarkCostUnitIndicator-View-101-4-LowPressureSteam.xls", "BenchmarkCarbonUnitIndicator-View-101-4-DieselOil.xls"],
+		}
+	}
+]

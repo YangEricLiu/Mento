@@ -47,7 +47,7 @@ namespace Mento.Script.EnergyView.CostUsage
         private static CostPanel CostUsage = JazzFunction.CostPanel;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
-        private static EnergyViewPanel EnergyViewPanel= JazzFunction.EnergyAnalysisPanel;
+        private static EnergyAnalysisPanel EnergyAnalysisPanel = JazzFunction.EnergyAnalysisPanel;
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-DataView-001-1")]
@@ -460,7 +460,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.LongPause();
 
             //Check · There are 11 lines in trend chart.
-            //Assert.AreEqual(11, EnergyViewPanel.GetTrendChartLines());//It is not 11 lines when no data for some lines.
+            //Assert.AreEqual(11, EnergyAnalysisPanel.GetTrendChartLines());//It is not 11 lines when no data for some lines.
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
             CostUsage.CompareDataViewCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
@@ -482,7 +482,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Check · There are 11 lines in trend chart.
             HomePagePanel.ClickOnWidget(dashboard.WigetName);
             TimeManager.ShortPause();
-            //Assert.AreEqual(11, EnergyViewPanel.GetTrendChartLines());//It is not 11 lines when no data for some lines.
+            //Assert.AreEqual(11, EnergyAnalysisPanel.GetTrendChartLines());//It is not 11 lines when no data for some lines.
         }
     }
 }

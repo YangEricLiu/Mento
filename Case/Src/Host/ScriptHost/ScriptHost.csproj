@@ -931,14 +931,17 @@
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorOfflineCalculateSuite\TC-J1-FVT-UnitIndicator-OfflineCalculate-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\UnitIndicatorOfflineCalculateSuite\TC-J1-FVT-UnitIndicator-OfflineCalculate-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewBenchmarkCarbonUnitIndicatorSuite\TC-J1-FVT-BenchmarkCarbonUnitIndicator-View-101-1.json" />
+    <None Include="Data\EnergyView\UnitIndicator\ViewBenchmarkCarbonUnitIndicatorSuite\TC-J1-FVT-BenchmarkCarbonUnitIndicator-View-101-4.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewBenchmarkCarbonUnitIndicatorSuite\TC-J1-FVT-BenchmarkCarbonUnitIndicator-View-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewBenchmarkConsumptionUnitIndicatorSuite\TC-J1-FVT-BenchmarkConsumptionUnitIndicator-View-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewBenchmarkConsumptionUnitIndicatorSuite\TC-J1-FVT-BenchmarkConsumptionUnitIndicator-View-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewBenchmarkConsumptionUnitIndicatorSuite\TC-J1-FVT-BenchmarkConsumptionUnitIndicator-View-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewBenchmarkCostUnitIndicatorSuite\TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-1.json" />
+    <None Include="Data\EnergyView\UnitIndicator\ViewBenchmarkCostUnitIndicatorSuite\TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-4.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewBenchmarkCostUnitIndicatorSuite\TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-View-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-View-101-2.json" />
+    <None Include="Data\EnergyView\UnitIndicator\ViewCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-View-101-4.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-View-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCarbonUnitIndicatorSuite\TC-J1-FVT-CarbonUnitIndicator-View-101-3923.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewConsumptionUnitIndicatorSuite\TC-J1-FVT-ConsumptionUnitIndicator-View-101-5467.json" />
@@ -950,6 +953,7 @@
     <None Include="Data\EnergyView\UnitIndicator\ViewCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-View-101-1.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-View-101-2.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-View-101-3.json" />
+    <None Include="Data\EnergyView\UnitIndicator\ViewCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-View-101-5.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-View-101-4.json" />
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-037.json" />
     <None Include="Data\EnergyView\Usage\SmokeTestSingleTagSuite\TC-J1-SmokeTest-038.json" />
@@ -1138,6 +1142,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resource\en\DB.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

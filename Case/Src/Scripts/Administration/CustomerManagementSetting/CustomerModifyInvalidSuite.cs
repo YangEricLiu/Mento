@@ -6,6 +6,7 @@ using NUnit.Framework;
 using Mento.Framework;
 using Mento.Utility;
 using Mento.TestApi.TestData;
+using Mento.TestApi.TestData.Attribute;
 using System.IO;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library.Functions;
@@ -39,7 +40,7 @@ namespace Mento.Script.Administration.CustomerManagementSetting
             //JazzFunction.TimeSettingsWorkday.NavigatorToWorkdayCalendarSetting();
         }
 
-         #region Test case1 modify can be cancelled success
+        #region Test case1 modify can be cancelled success
             [Test]
             [ManualCaseID("TC-J1-FVT-CustomerManagement-Modify-001")]
             [CaseID("TC-J1-FVT-CustomerManagement-Modify-001")]
@@ -64,13 +65,13 @@ namespace Mento.Script.Administration.CustomerManagementSetting
                 Assert.IsFalse(CustomerManageSetting.IsSaveButtonDisplayed());
 
                 //Verify modify success
-                Assert.AreEqual(CustomerManageSetting.GetNameValue(), input.ExpectedData.CommonName);
-                Assert.AreEqual(CustomerManageSetting.GetCodeValue(), input.ExpectedData.Code);
-                Assert.AreEqual(CustomerManageSetting.GetAddressValue(), input.ExpectedData.Address);
-                Assert.AreEqual(CustomerManageSetting.GetResponsiblePersonValue(), input.ExpectedData.RealName);
-                Assert.AreEqual(CustomerManageSetting.GetTelephoneValue(), input.ExpectedData.Telephone);
-                Assert.AreEqual(CustomerManageSetting.GetEmailValue(), input.ExpectedData.Email);
-                Assert.AreEqual(CustomerManageSetting.GetCommentsValue(), input.ExpectedData.Comments);
+                Assert.AreEqual(input.ExpectedData.CommonName,CustomerManageSetting.GetNameValue() );
+                Assert.AreEqual(input.ExpectedData.Code,CustomerManageSetting.GetCodeValue());
+                Assert.AreEqual(input.ExpectedData.Address,CustomerManageSetting.GetAddressValue());
+                Assert.AreEqual(input.ExpectedData.RealName,CustomerManageSetting.GetResponsiblePersonValue());
+                Assert.AreEqual(input.ExpectedData.Telephone,CustomerManageSetting.GetTelephoneValue());
+                Assert.AreEqual(input.ExpectedData.Email,CustomerManageSetting.GetEmailValue());
+                Assert.AreEqual(input.ExpectedData.Comments,CustomerManageSetting.GetCommentsValue());
 
                 CustomerManageSetting.ClickUpdateCustomer();
                 TimeManager.LongPause();
@@ -86,17 +87,17 @@ namespace Mento.Script.Administration.CustomerManagementSetting
                 TimeManager.LongPause();
 
                 //Verify modify success
-                Assert.AreEqual(CustomerManageSetting.GetNameValue(), input.ExpectedData.CommonName);
-                Assert.AreEqual(CustomerManageSetting.GetCodeValue(), input.ExpectedData.Code);
-                Assert.AreEqual(CustomerManageSetting.GetAddressValue(), input.ExpectedData.Address);
-                Assert.AreEqual(CustomerManageSetting.GetResponsiblePersonValue(), input.ExpectedData.RealName);
-                Assert.AreEqual(CustomerManageSetting.GetTelephoneValue(), input.ExpectedData.Telephone);
-                Assert.AreEqual(CustomerManageSetting.GetEmailValue(), input.ExpectedData.Email);
-                Assert.AreEqual(CustomerManageSetting.GetCommentsValue(), input.ExpectedData.Comments);
+                Assert.AreEqual(input.ExpectedData.CommonName,CustomerManageSetting.GetNameValue());
+                Assert.AreEqual(input.ExpectedData.Code,CustomerManageSetting.GetCodeValue());
+                Assert.AreEqual(input.ExpectedData.Address,CustomerManageSetting.GetAddressValue());
+                Assert.AreEqual(input.ExpectedData.RealName,CustomerManageSetting.GetResponsiblePersonValue());
+                Assert.AreEqual(input.ExpectedData.Telephone,CustomerManageSetting.GetTelephoneValue());
+                Assert.AreEqual(input.ExpectedData.Email,CustomerManageSetting.GetEmailValue());
+                Assert.AreEqual(input.ExpectedData.Comments,CustomerManageSetting.GetCommentsValue());
             }
      #endregion
   
-     #region    Test case2 Some Fields not editable
+        #region    Test case2 Some Fields not editable
          
             [Test]
             [ManualCaseID("TC-J1-FVT-CustomerManagement-Modify-002")]
@@ -104,25 +105,12 @@ namespace Mento.Script.Administration.CustomerManagementSetting
             [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(CustomerModifyInvalidSuite), "TC-J1-FVT-CustomerManagement-Modify-002")]
             public void VerifyCustomerAdmin(CustomerManagementData input)
             {
-                if (input.InputData.CommonName == "CustomerForFieldsNotEditable1")
-                {
-                    String s1 = "未选择";
+               
                     CustomerManageSetting.FocusOnCustomer(input.InputData.CommonName);
                     TimeManager.LongPause();
 
                     //Verify CustomerAdmin is "未选择".
-                    Assert.AreEqual(CustomerManageSetting.GetCustomerAdminTexts(), s1);          
-
-                }
-
-                else if (input.InputData.CommonName == "CustomerForFieldsNotEditable2")
-                {
-                    String s2 = "User_CustomerManager";
-                    CustomerManageSetting.FocusOnCustomer(input.InputData.CommonName);
-                    TimeManager.LongPause();
-
-                    //Verify CustomerAdmin is "User_CustomerManager1".
-                    Assert.AreEqual(CustomerManageSetting.GetCustomerAdminTexts(), s2);
+                    Assert.AreEqual(input.ExpectedData.CustomerAdminName[0], CustomerManageSetting.GetCustomerAdminTexts());
 
                     CustomerManageSetting.ClickUpdateCustomer();
                     TimeManager.LongPause();
@@ -134,26 +122,6 @@ namespace Mento.Script.Administration.CustomerManagementSetting
 
                     //Verify CustomerAdminContainer missing
                     Assert.IsFalse(CustomerManageSetting.IsCustomerAdminDisplayed());
-                }
-                else
-                {
-                    String s3 = "User_CustomerManager1，User_CustomerManager2";
-                    CustomerManageSetting.FocusOnCustomer(input.InputData.CommonName);
-                    TimeManager.LongPause();
-
-                    //Verify CustomerAdmin is "User_CustomerManager1,User_CustomerManager2".
-                    Assert.AreEqual(CustomerManageSetting.GetCustomerAdminTexts(), s3);
-                    CustomerManageSetting.ClickUpdateCustomer();
-                    TimeManager.LongPause();
-                    TimeManager.LongPause();
-                    TimeManager.ShortPause();
-
-                    //Verify OperationTime disabled and not editable
-                    Assert.IsFalse(CustomerManageSetting.IsOperationtimeEnable());
-
-                    //Verify CustomerAdminContainer missing
-                    Assert.IsFalse(CustomerManageSetting.IsCustomerAdminDisplayed());
-                }
             }
          
         #endregion
@@ -164,7 +132,7 @@ namespace Mento.Script.Administration.CustomerManagementSetting
         [Test]
         [ManualCaseID("TC-J1-FVT-CustomerManagement-Modify-003")]
         [CaseID("TC-J1-FVT-CustomerManagement-Modify-003")]
-        [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(CustomerModifyInvalidSuite), "TC-J1-FVT-CustomerManagement-Modify-003")]
+        [IllegalInputValidation(typeof(CustomerManagementData[]))]
         public void VerifyErrormessage2(CustomerManagementData input)
         {
 

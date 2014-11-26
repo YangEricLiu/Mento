@@ -132,7 +132,10 @@
       <Name>Platform</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Debug\Data\Customer\HierarchyConfiguration\BasicIndustryAndZoneVerify\BasicIndustryAndZoneSettingSuite\" />
+    <Folder Include="Data\Administration\BasicIndustryAndZoneSettingSuite\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Resource\cn\data.js" />
     <Content Include="bin\Debug\Resource\cn\string.js">
@@ -152,7 +155,8 @@
     <Content Include="Resource\en\string.js" />
     <Content Include="SqlScript\TearDown\13dbo_Tariff_Adjustment_schema_data.sql" />
     <Content Include="SqlScript\TearDown\14dbo_Trigger.sql" />
-    <None Include="bin\Debug\Data\Customer\HierarchyConfiguration\BasicIndustryAndZoneSettingSuite\TC-J1-FVT-BasicIndustryAndZoneSetting-View-101.json" />
+    <None Include="bin\Debug\Data\Administration\BasicIndustryAndZoneVerify\BasicIndustryAndZoneSettingSuite\TC-J1-FVT-BasicIndustryAndZoneSetting-View-101.json" />
+    <None Include="bin\Debug\Data\Customer\HierarchyConfiguration\BasicIndustryAndZoneVerify\TC-J1-FVT-BasicIndustryAndZoneSetting-View-101.json" />
     <None Include="Data\Administration\CarbonFactor\AddCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Add-005.json" />
     <None Include="Data\Administration\CarbonFactor\AddCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Add-003.json" />
     <None Include="Data\Administration\CarbonFactor\AddCarbonFactorSuite\TC-J1-FVT-ConversionFactorSetting-Add-002.json" />
@@ -185,6 +189,7 @@
     <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyInValidSuite\TC-J1-FVT-CustomerManagement-Modify-003.json" />
     <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyInValidSuite\TC-J1-FVT-CustomerManagement-Modify-004.json" />
     <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyInValidSuite\TC-J1-FVT-CustomerManagement-Modify-005.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyValidSuite\TC-J1-FVT-CustomerManagement-Modify-103.json" />
     <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyValidSuite\TC-J1-FVT-CustomerManagement-Modify-101.json" />
     <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyValidSuite\TC-J1-FVT-CustomerManagement-Modify-102.json" />
     <None Include="Data\Administration\CustomerOperation\SmokeTestAddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
@@ -406,7 +411,6 @@
     <Content Include="Data\Customer\HierarchyConfiguration\DeleteAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-Delete-001-DeleteAreaNodeThenCancel.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\DeleteAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteNonLeafAreaNode.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\DeleteAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteandVerifyEverywhere.json" />
-    <None Include="Data\Customer\HierarchyConfiguration\BasicIndustryAndZoneSettingSuite\TC-J1-FVT-BasicIndustryAndZoneSetting-View-101.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-4.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-3.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-2.json" />

@@ -1,6 +1,36 @@
 ﻿[
 	{
-	   "InputData":
+		"InputData":
+		{
+		    "Commoditys":["$@Commodity_Other"],	
+		},
+		"ExpectedData":
+		{
+			"UOMs":["$@Uom_RMB","$@Uom_m²","$@Uom_kgce","$@Uom_kgCO₂","$@Uom_Tree","$@Uom_Person","$@Uom_null"],
+		}
+	},
+	{
+		"InputData":
+		{
+		    "Commoditys":["$@Commodity_Electricity"],	
+		},
+		"ExpectedData":
+		{
+			"UOMs":["$@Uom_KWH","$@Uom_m²","$@Uom_KVARH","$@Uom_KVAH","$@Uom_KW","$@Uom_KVA","$@Uom_KVAR","$@Uom_VOLTS","$@Uom_AMPS"],
+		}
+	},
+	{
+		"InputData":
+		{
+		    "Commoditys":["$@Commodity_Water"],	
+		},
+		"ExpectedData":
+		{
+			"UOMs":["$@Uom_m³","$@Uom_m²","$@Uom_m³/s","$@Uom_Ton","$@Uom_°C"],
+		}
+	},
+	{
+		"InputData":
 		{
 		    "Commoditys":["$@Commodity_Gas"],	
 		},
@@ -10,7 +40,7 @@
 		}
 	},
 	{
-	   "InputData":
+		"InputData":
 		{
 		    "Commoditys":["$@Commodity_SoftWater"],	
 		},
@@ -73,6 +103,16 @@
 		"InputData":
 		{
 		    "Commoditys":["$@Commodity_Coal"],	
+		},
+		"ExpectedData":
+		{
+			"UOMs":["$@Uom_kg","$@Uom_Ton"],
+		}
+	},
+	{
+		"InputData":
+		{
+		    "Commoditys":["$@Commodity_CoalOil"],	
 		},
 		"ExpectedData":
 		{

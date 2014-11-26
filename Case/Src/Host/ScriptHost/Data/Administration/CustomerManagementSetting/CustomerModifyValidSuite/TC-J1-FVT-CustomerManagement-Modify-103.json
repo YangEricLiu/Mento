@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{	
+		    "CommonName":"CustomerForModifyNotRequiredFields2",
+		    "Comments":"",
+		},
+		"ExpectedData":
+		{	
+	    }
+	}
+]

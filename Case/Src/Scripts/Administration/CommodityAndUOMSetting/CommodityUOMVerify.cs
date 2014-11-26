@@ -52,7 +52,7 @@ namespace Mento.Script.Administration.CommodityAndUOMSetting
         public void VerifyCommodityCorrect(CommodityAndUomData input)
         {
             HomePagePanel.SelectCustomer("CommodityTestCustomer");
-            //Verify Commodity and UOM is Ptag setting page
+            //Verify Commodity is Ptag setting page
             string Name1 = "Ptagtest1";
             CommodifyUomSetting.FocusOnPTagByName(Name1);
             TimeManager.LongPause();
@@ -61,7 +61,7 @@ namespace Mento.Script.Administration.CommodityAndUOMSetting
             //Verify Commodity as expect.
             Assert.AreEqual(input.ExpectedData.Commoditys, CommodifyUomSetting.GetPCommodityComboBoxList());
 
-            //Verify Commodity and UOM is Vtag setting page
+            //Verify Commodity is Vtag setting page
             VTagSettings.NavigatorToVTagSetting();
             string Name2 = "Vtagtest1";
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -74,7 +74,7 @@ namespace Mento.Script.Administration.CommodityAndUOMSetting
             //Verify Commodity as expect.
             Assert.AreEqual(input.ExpectedData.Commoditys, CommodifyUomSetting.GetVCommodityComboBoxList());
 
-            //Verify Commodity and UOM in Customize labeling page
+            //Verify Commodity in Customize labeling page
             CustomizedLabellingSettings.NavigatorToCustomizedLabelling();
             string Name3 = "CustomizeLabeling1";
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -91,13 +91,13 @@ namespace Mento.Script.Administration.CommodityAndUOMSetting
         #region TestCase1 Verify Commoditys display correct
         [Test]
         [ManualCaseID("TC-J1-FVT-CommodityAndUOMSetting-View-102")]
-        [CaseID("TC-J1-FVT-CommodityAndUOMSetting-View-102")]
+        [CaseID("TC-J1-FVT-CommodityAndUOMSetting-View-102"), CreateTime("2014-10-9"), Owner("Cathy")]
         [Priority("4")]
         [MultipleTestDataSource(typeof(CommodityAndUomData[]), typeof(CommodityAndUOMSettingSuite), "TC-J1-FVT-CommodityAndUOMSetting-View-102")]
         public void VerifyUOMCorrect(CommodityAndUomData input)
         {
            
-            //Verify Commodity and UOM is Ptag setting page
+            //Verify UOM is Ptag setting page
             string Name1 = "Ptagtest1";
             CommodifyUomSetting.FocusOnPTagByName(Name1);
             TimeManager.LongPause();
@@ -108,7 +108,7 @@ namespace Mento.Script.Administration.CommodityAndUOMSetting
             //Verify UOM as expect.
             Assert.AreEqual(input.ExpectedData.UOMs, CommodifyUomSetting.GetPUOMsComboBoxList());
 
-            //Verify Commodity and UOM is Vtag setting page
+            //Verify UOM is Vtag setting page
             VTagSettings.NavigatorToVTagSetting();
             string Name2 = "Vtagtest1";
             JazzMessageBox.LoadingMask.WaitLoading();
@@ -122,7 +122,7 @@ namespace Mento.Script.Administration.CommodityAndUOMSetting
             //Verify UOM as expect.
             Assert.AreEqual(input.ExpectedData.UOMs, CommodifyUomSetting.GetVUOMsComboBoxList());
 
-            //Verify Commodity and UOM in Customize labeling page
+            //Verify UOM in Customize labeling page
             CustomizedLabellingSettings.NavigatorToCustomizedLabelling();
             string Name3 = "CustomizeLabeling1";
             JazzMessageBox.LoadingMask.WaitLoading();

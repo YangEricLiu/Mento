@@ -99,8 +99,6 @@ namespace Mento.Script.Administration.CustomerManagementSetting
         [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(CustomerModifyValidSuite), "TC-J1-FVT-CustomerManagement-Modify-102")]
         public void VerifyCommentField(CustomerManagementData input)
         {
-            if (input.InputData.CommonName == "CustomerForModifyNotRequiredFields1")
-            {
                 CustomerManageSetting.FocusOnCustomer(input.InputData.CommonName);
                 TimeManager.LongPause();
 
@@ -118,9 +116,15 @@ namespace Mento.Script.Administration.CustomerManagementSetting
 
                 //Verify modify success
                 Assert.AreEqual(CustomerManageSetting.GetCommentsValue(), input.ExpectedData.Comments);
-            }
-            else
-            {
+        }
+        #endregion
+        #region test case 3 modification for not required fields are not displayed in view mode
+        [Test]
+        [ManualCaseID("TC-J1-FVT-CustomerManagement-Modify-102")]
+        [CaseID("TC-J1-FVT-CustomerManagement-Modify-102")]
+        [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(CustomerModifyValidSuite), "TC-J1-FVT-CustomerManagement-Modify-103")]
+        public void VerifyCommentField1(CustomerManagementData input)
+        {
                 CustomerManageSetting.FocusOnCustomer(input.InputData.CommonName);
                 TimeManager.LongPause();
 
@@ -137,8 +141,7 @@ namespace Mento.Script.Administration.CustomerManagementSetting
                 TimeManager.LongPause();
 
                 //Verify Comment text field disappear
-                Assert.IsTrue(CustomerManageSetting.IsCustomerCommentHidden());
-            }
+                Assert.IsTrue(CustomerManageSetting.IsCustomerCommentHidden());         
         }
         #endregion
     }

@@ -56,6 +56,7 @@ namespace Mento.ScriptCommon.TestData.Administration
         public string ErrorMessage { get; set; }
         public string[] MapOptions { get; set; }
         public string CustomerAdmin { get; set; }
+        public string[] CustomerAdminName { get; set; }
 
         public CustomerExpectedData(string commonName, string code, string logoPath, string address, string realName, string telephone, string email, string operationTime, string comments, string message, string[] mapOptions, string customerAdmin)
         {

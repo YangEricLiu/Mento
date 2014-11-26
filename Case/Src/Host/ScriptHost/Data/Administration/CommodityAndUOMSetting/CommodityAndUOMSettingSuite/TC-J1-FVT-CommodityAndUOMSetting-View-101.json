@@ -7,7 +7,6 @@
 		{
 		   
 		    "Commoditys":["$@Commodity_Other","$@Commodity_Electricity","$@Commodity_Water","$@Commodity_Gas","$@Commodity_SoftWater","$@Commodity_Petrol","$@Commodity_LowPressureSteam","$@Commodity_DieselOil","$@Commodity_HeatQ","$@Commodity_CoolQ","$@Commodity_Coal","$@Common.Commodity.Kerosene","$@Commodity_AirQuality"],	
-		 
 		}
 	}
 ]

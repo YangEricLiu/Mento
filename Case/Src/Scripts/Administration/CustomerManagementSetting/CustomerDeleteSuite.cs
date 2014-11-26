@@ -21,7 +21,7 @@ namespace Mento.Script.Administration.CustomerManagementSetting
     [TestFixture]
     [Owner("Cathy")]
     [CreateTime("2014-09-23")]
-    [ManualCaseID("TC-J1-FVT-CustomerManagement-Delete-102")]
+    [ManualCaseID("TC-J1-FVT-CustomerManagement-Delete-001")]
     public class CustomerDeleteSuite : TestSuiteBase
     {
         private CustomerManagement CustomerManageSetting = JazzFunction.CustomerManagement;
@@ -80,36 +80,17 @@ namespace Mento.Script.Administration.CustomerManagementSetting
             CustomerManageSetting.NavigateToCustomerSetting();
             TimeManager.LongPause();
             TimeManager.LongPause();
-
-            CustomerManageSetting.FocusOnCustomer(input.ExpectedData.CommonName);
-            TimeManager.LongPause();
-
-            CustomerManageSetting.ClickDeleteButton();
-            TimeManager.LongPause();
-
-            CustomerManageSetting.ClickMsgBoxDeleteButton();
-            TimeManager.LongPause();
-
-            Assert.IsFalse(CustomerManageSetting.IsCustomerOnList(input.ExpectedData.CommonName));
-
-            UserSettings.NavigatorToUserSetting();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-
-            UserSettings.FocusOnUser("UserB");
-            Assert.IsTrue(UserSettings.IsUserOnList("UserB"));
-            Assert.IsTrue(UserSettings.IsUserOnList("UserC"));
             
             //Re-select a deleted customer to display error message
 
-            HomePagePanel.SelectCustomer("custA");
+            HomePagePanel.SelectCustomer(input.InputData.CommonName);
             Assert.AreEqual(JazzMessageBox.MessageBox.GetMessage(), input.ExpectedData.Message);
             CustomerManageSetting.ClickMsgBoxCloseButton();
             TimeManager.LongPause();
             JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "$@Login.Label.SPManagement");
             TimeManager.LongPause();
-            
-            HomePagePanel.IsCustomerExistedInCustomerSelectionDialog("custA");
+
+            Assert.IsFalse(HomePagePanel.IsCustomerExistedInCustomerSelectionDialog(input.InputData.CommonName));
 
         }
         #endregion

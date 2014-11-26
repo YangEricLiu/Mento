@@ -2,28 +2,34 @@
 	{
 		"InputData":
 		{
-		    "CommonName":"CustomerForFieldsNotEditable1",  
+		    "CommonName":"CustomerForFieldsNotEditable1", 
+			
 		},
 		"ExpectedData":
 		{	
+		   "CustomerAdminName":["$@Common.Glossary.NoSelected"]
 		}
 	},
 	{
 		"InputData":
 		{
 		    "CommonName":"CustomerForFieldsNotEditable2",
+			
 		},
 		"ExpectedData":
 		{
+		    "CustomerAdminName":["User_CustomerManager"]
 		}
 	},
 	{
 		"InputData":
 		{
 		    "CommonName":"CustomerForFieldsNotEditable3",
+			
 		},
 		"ExpectedData":
 		{
+		    "CustomerAdminName":["User_CustomerManager1，User_CustomerManager2"]
 		}
 	}
 ]

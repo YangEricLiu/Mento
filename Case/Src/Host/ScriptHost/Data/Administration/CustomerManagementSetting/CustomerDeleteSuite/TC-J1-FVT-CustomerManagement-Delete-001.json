@@ -6,8 +6,17 @@
 		},
 		"ExpectedData":
 		{
-		    "CommonName":"custB",
-			"Message":"$@Message.UnassociateCustomerLogout@$ $@Common.Button.Confirm@$",
+		    "Message":"$@Message.UnassociateCustomerLogout@$ $@Common.Button.Confirm@$",
+		}
+	},
+	{
+		"InputData":
+		{
+		    "CommonName":"custB",	
+		},
+		"ExpectedData":
+		{
+		   "Message":"$@Message.UnassociateCustomerLogout@$ $@Common.Button.Confirm@$",
 		}
 	}
 ]

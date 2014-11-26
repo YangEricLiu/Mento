@@ -61,7 +61,6 @@
     <Compile Include="HierarchyConfiguration\AddValidAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\AssociateSytemDimension.cs" />
     <Compile Include="HierarchyConfiguration\AddInvalidAreaDimension.cs" />
-    <Compile Include="HierarchyConfiguration\BasicIndustryAndZoneVerify.cs" />
     <Compile Include="HierarchyConfiguration\DeleteAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\ModifyInvalidAreaDimension.cs" />
     <Compile Include="HierarchyConfiguration\ModifyValidAreaDimension.cs" />

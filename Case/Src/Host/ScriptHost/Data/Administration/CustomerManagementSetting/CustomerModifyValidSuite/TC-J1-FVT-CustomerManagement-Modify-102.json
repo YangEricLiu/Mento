@@ -9,15 +9,5 @@
 		{	
 			"Comments":"备注abcABC012589_  ()-[]{}#&,;.~+%!@$^&*",
 		}
-	},
-	{
-		"InputData":
-		{	
-		    "CommonName":"CustomerForModifyNotRequiredFields2",
-		    "Comments":"",
-		},
-		"ExpectedData":
-		{	
-	    }
 	}
 ]

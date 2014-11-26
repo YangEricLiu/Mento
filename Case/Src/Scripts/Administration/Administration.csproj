@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicIndustryAndZoneVerify\BasicIndustryAndZoneVerify.cs" />
     <Compile Include="CarbonFactor\AddCarbonFactorSuite.cs" />
     <Compile Include="CarbonFactor\DeleteCarbonFactorSuite.cs" />
     <Compile Include="CarbonFactor\ModifyCarbonFactorSuite.cs" />

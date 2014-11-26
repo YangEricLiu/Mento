@@ -16,7 +16,7 @@
 		},
 		"ExpectedData":
 		{
-			"UOMs":["$@Uom_KWH","$@Uom_m²","$@Uom_KVARH","$@Uom_KVAH","$@Uom_KW","$@Uom_KVA","$@Uom_KVAR","$@Uom_VOLTS","$@Uom_AMPS"],
+			"UOMs":["$@Uom_KWH","$@Uom_KVARH","$@Uom_KVAH","$@Uom_KW","$@Uom_KVA","$@Uom_KVAR","$@Uom_VOLTS","$@Uom_AMPS"],
 		}
 	},
 	{
@@ -26,7 +26,7 @@
 		},
 		"ExpectedData":
 		{
-			"UOMs":["$@Uom_m³","$@Uom_m²","$@Uom_m³/s","$@Uom_Ton","$@Uom_°C"],
+			"UOMs":["$@Uom_m³","$@Uom_m³/s","$@Uom_Ton","$@Uom_°C"],
 		}
 	},
 	{

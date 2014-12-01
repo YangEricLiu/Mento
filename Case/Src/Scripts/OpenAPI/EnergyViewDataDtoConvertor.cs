@@ -23,7 +23,7 @@ namespace Mento.Script.OpenAPI
     {
         public static EnergyViewDataBody[] GetEnergyViewDataDtoGroups(string sourceOrginal)
         {
-            JArray targetEnergyDataArrays = JsonHelper.Deserialize2Array(sourceOrginal);
+            dynamic targetEnergyDataArrays = JsonHelper.Deserialize2Array(sourceOrginal);
 
             if (targetEnergyDataArrays.Count == 0)
             {
@@ -62,7 +62,7 @@ namespace Mento.Script.OpenAPI
 
         public static string GetEnergyViewDataWithLocalTime(string sourceOrginal)
         {
-            JArray targetEnergyDataArrays = JsonHelper.Deserialize2Array(sourceOrginal);
+            dynamic targetEnergyDataArrays = JsonHelper.Deserialize2Array(sourceOrginal);
             StringBuilder evd = new StringBuilder();
             string other = "," + "\n";
             evd.Append("[" + "\n");

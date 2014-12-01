@@ -5,6 +5,7 @@ using System.Text;
 using DifferenceEngine;
 using System.Collections;
 using System.IO;
+using Mento.Utility;
 
 namespace Mento.Script.OpenAPI
 {
@@ -12,8 +13,19 @@ namespace Mento.Script.OpenAPI
     {
         public static CompareReport CompareEnergyUseResponseBody(string expectedResponseBodyStr, string actualResponseBodyStr, out bool outResult)
         {
-            string expectedResponseBody = ConvertJson.String2Json(expectedResponseBodyStr);
-            string actualResponseBody = ConvertJson.String2Json(actualResponseBodyStr);
+            string expectedResponseBody;
+            string actualResponseBody;
+            //string[] spliter = { "\r\n        ", "{\r\n            " };
+            //string[] EBLine = expectedResponseBodyStr.Split(spliter, 0);
+            //string[] ABLine = actualResponseBodyStr.Split(spliter, 0);
+            //if (EBLine.Length > 6)
+            //    expectedResponseBody = expectedResponseBodyStr;
+            //else
+                expectedResponseBody = ConvertJson.String2Json(expectedResponseBodyStr);
+            //if (ABLine.Length > 6)
+            //    actualResponseBody = actualResponseBodyStr;
+            //else
+                actualResponseBody = ConvertJson.String2Json(actualResponseBodyStr);
             
             CompareReport report = new CompareReport();
 
@@ -156,7 +168,7 @@ namespace Mento.Script.OpenAPI
                 }
             }
 
-            report.errorMessage = "The actual response body not euqal to actual response body, and both the body have the same blocks";
+            report.errorMessage = "The actual response body not euqal to expected response body, and both the body have the same blocks";
             report.detailedInfo = st.ToString();
 
             return report;
@@ -217,7 +229,39 @@ namespace Mento.Script.OpenAPI
             }
             
             return false;
-        }     
+        }
+
+        public static OpenAPICases[] CompareCases(OpenAPICases[] Cases)
+        {
+            string expectedStr;
+            string actualStr;
+            CompareReport report = new CompareReport();
+            bool isOutResult;
+
+            for (int i = 0; i < Cases.Length; i++)
+            {
+                Console.Out.WriteLine(Cases[i].url);
+                Console.Out.WriteLine(Cases[i].requestBody);
+                Console.Out.WriteLine(Cases[i].expectedResponseBody);
+                Console.Out.WriteLine(Cases[i].actualResponseBody);
+                Console.Out.WriteLine("\n\n");
+
+                expectedStr = Cases[i].expectedResponseBody;
+                actualStr = Cases[i].actualResponseBody;
+
+                report = CompareEnergyUseResponseBody(expectedStr, actualStr, out isOutResult);
+                if (true == isOutResult)
+                    Cases[i].result = "Pass:" + report.errorMessage;
+                else
+                    Cases[i].result = "Fail:" + report.errorMessage;
+                Cases[i].resultReport = report.detailedInfo;
+                Console.Out.WriteLine(report.errorMessage);
+                Console.Out.WriteLine("\n\n");
+                Console.Out.WriteLine(report.detailedInfo);
+                Console.Out.WriteLine("\n\n");
+            }
+            return Cases;
+        }
     }
 
     public struct CompareReport

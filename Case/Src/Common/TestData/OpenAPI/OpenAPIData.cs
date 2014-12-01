@@ -13,7 +13,15 @@ namespace Mento.ScriptCommon.TestData.OpenAPI
     public class OpenAPIInput : InputTestDataBase
     {
         public string url { get; set; }
-        public string RequestBody { get; set; }
+
+        //public string RequestBody { get; set; }
+
+        //public string TestCasePath { get; set; }
+
+        //public string CaseResultPath { get; set; }
+
+        public string SheetName { get; set; }
+
         public string FailedFileName { get; set; }
     }
 

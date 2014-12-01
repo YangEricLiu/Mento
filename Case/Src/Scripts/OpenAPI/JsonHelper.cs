@@ -118,10 +118,10 @@ namespace Mento.Script.OpenAPI
             }
         }
 
-        public static JArray Deserialize2Array(string source)
+        public static dynamic Deserialize2Array(string source)
         {
-            JArray ja = (JArray)JsonConvert.DeserializeObject(source);
-
+            //JArray ja = (JArray)JsonConvert.DeserializeObject(source);
+            dynamic ja = JsonConvert.DeserializeObject(source);
             return ja;
         }
 

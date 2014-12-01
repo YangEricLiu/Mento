@@ -88,7 +88,7 @@ namespace Mento.Script.Administration.CommodityAndUOMSetting
         }
         #endregion
        
-        #region TestCase1 Verify Commoditys display correct
+        #region TestCase1 Verify UOMs display correct
         [Test]
         [ManualCaseID("TC-J1-FVT-CommodityAndUOMSetting-View-102")]
         [CaseID("TC-J1-FVT-CommodityAndUOMSetting-View-102"), CreateTime("2014-10-9"), Owner("Cathy")]

@@ -5,7 +5,7 @@
 			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling11"], ["NancyOtherCustomer3", "Site", "BuildingRanking1"]],
 			"TagNames":["Labellingtag11", "RankingtagbenchmarkWater"],
 			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
-			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Subtropical_Region$@Industry_Hotel_Three_stat"], ["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Subtropical_Region$@Industry_Hotel_Four_star"]],
+			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Subtropical_Region$@Industry_Hotel_Three_stat"], ["$@Setting.Labeling.Label.IndustryLabeling", "$@Setting.Benchmark.Zone.ColdA$@Industry_Hotel_Four_star"]],
 			"YearAndMonth":[{
 				"year":"2012",
 				"month":"10",

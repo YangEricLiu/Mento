@@ -36,7 +36,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         {
             JazzFunction.Navigator.NavigateHome();
 
-            HomePagePanel.SelectCustomer("NancyCustomer1");
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.LongPause();
         }
 
@@ -114,10 +114,12 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.LongPause();
 
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[0].HierarchyPath);
+            TimeManager.MediumPause();
             MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[0].TagsName[0]);
             TimeManager.ShortPause();
 
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[1].HierarchyPath);
+            TimeManager.MediumPause();
             MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[0]);
             TimeManager.ShortPause();
 
@@ -159,6 +161,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
+            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
+            TimeManager.ShortPause();
+
             //夏热冬暖酒店三星级行业
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[0]);
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
@@ -181,7 +186,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //夏热冬暖酒店四星级行业
+            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[1]);
+            TimeManager.ShortPause();
+
+            //严寒地区A区酒店四星级行业
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
 

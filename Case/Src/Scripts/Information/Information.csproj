@@ -74,7 +74,7 @@
     <Compile Include="WidgetCollaborativeShare\WidgetCollaborativeShareValidSuite.cs" />
     <Compile Include="Widgets\AnnotationViewSuite.cs" />
     <Compile Include="Widgets\SaveWidgetToDashboardSuite.cs" />
-    <Compile Include="Widgets\MaximizeWidgetSuite.cs" />
+    <Compile Include="Widgets\MaximizeWidgetSuite__obsolete closed cases.cs" />
     <Compile Include="Widgets\DeleteWidgetSuite.cs" />
     <Compile Include="Widgets\RenameWidgetSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />

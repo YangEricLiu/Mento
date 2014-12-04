@@ -1102,6 +1102,8 @@
     <None Include="Data\Information\WidgetTemplate\WidgetTemplateUseSuite\TC-J1-FVT-WidgetTemplate-Use-101.json" />
     <None Include="Data\Information\WidgetTemplate\WidgetTemplateUseSuite\TC-J1-FVT-WidgetTemplate-Use-102.json" />
     <None Include="Data\Information\WidgetTemplate\WidgetTemplateViewSuite\TC-J1-FVT-WidgetTemplate-View-101.json" />
+    <None Include="Data\OpenAPI\EnergyViewAPI\TC-J1-FVT-BluesEnergyMobileServiceAPI-101-1.json" />
+    <None Include="Data\OpenAPI\EnergyViewAPI\TC-J1-FVT-BluesBuildingMobileServiceAPI-101-1.json" />
     <None Include="Data\OpenAPI\EnergyViewAPI\TC-J1-FVT-EnergyAnalysisOpenAPI-101-1.json" />
     <None Include="Data\System\Example\IllegalTestSuite\TC-J1-Example-002.json" />
   </ItemGroup>

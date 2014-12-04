@@ -36,8 +36,8 @@ namespace Mento.Script.OpenAPI
 
         private static string appKey = "2spry01f9atshr08nljq21it";
         private static string secret = "ThDhX8hX0MccCNEGgUHI89KK7gFg=";
-        private static string pathTestCase = @"E:\OpenApi Test Cases_1.7.1.1.xlsx";
-        private static string pathCaseResult = @"E:\OpenApi Test Cases_1.7.1.1_Result.xlsx";
+        private static string pathTestCase = @"D:\Blues Building Mobile Service API Test Cases.xlsx";
+        private static string pathCaseResult = @"D:\Blues Building Mobile Service API Test Cases-R.xlsx";
 
         //[Test]
         //[MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]
@@ -298,6 +298,55 @@ namespace Mento.Script.OpenAPI
         [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]
         public void JazzCases(OpenAPIData input)
         {
+            bool IsUpdateFlag = false;
+            //Read test cases from excel to TestCases[]          
+            OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, input.InputData.SheetName);
+
+            //Get response body from request body in Cases[]
+            Cases = RequestDataDtoConvertor.RequestToResponse(Cases, appKey, secret, IsUpdateFlag);
+
+            //Compare expected response body and actual response body in Cases[]
+            if (!IsUpdateFlag)//Do not need compare response bodys when update cases in excel file
+                Cases = CompareResponseBody.CompareCases(Cases);
+
+            //Write the result in Cases[] to excel file
+            ExcelHelper.ImportOpenAPICasesToExcel(Cases, pathTestCase, pathCaseResult, input.InputData.SheetName);
+        }
+
+        [Test]
+        [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-BluesBuildingMobileServiceAPI-101-1")]
+        public void BluesCasesBuilding(OpenAPIData input)
+        {
+            //string appKey = "2spry01f9atshr08nljq21it";
+            //string secret = "ThDhX8hX0MccCNEGgUHI89KK7gFg=";
+            //string pathTestCase = @"D:\BluesBuildingMobileServiceAPI Test Cases.xlsx";
+            //string pathCaseResult = @"D:\BluesBuildingMobileServiceAPI Test Cases_R.xlsx";
+
+
+            bool IsUpdateFlag = false;
+            //Read test cases from excel to TestCases[]          
+            OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, input.InputData.SheetName);
+
+            //Get response body from request body in Cases[]
+            Cases = RequestDataDtoConvertor.RequestToResponse(Cases, appKey, secret, IsUpdateFlag);
+
+            //Compare expected response body and actual response body in Cases[]
+            if (!IsUpdateFlag)//Do not need compare response bodys when update cases in excel file
+                Cases = CompareResponseBody.CompareCases(Cases);
+
+            //Write the result in Cases[] to excel file
+            ExcelHelper.ImportOpenAPICasesToExcel(Cases, pathTestCase, pathCaseResult, input.InputData.SheetName);
+        }
+        [Test]
+        [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-BluesEnergyMobileServiceAPI-101-1")]
+        public void BluesCasesEnergy(OpenAPIData input)
+        {
+            //string appKey = "2spry01f9atshr08nljq21it";
+            //string secret = "ThDhX8hX0MccCNEGgUHI89KK7gFg=";
+            //string pathTestCase = @"D:\BluesBuildingMobileServiceAPI Test Cases.xlsx";
+            //string pathCaseResult = @"D:\BluesBuildingMobileServiceAPI Test Cases_R.xlsx";
+
+
             bool IsUpdateFlag = false;
             //Read test cases from excel to TestCases[]          
             OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, input.InputData.SheetName);

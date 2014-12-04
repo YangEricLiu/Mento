@@ -1,0 +1,110 @@
+﻿[
+	{
+		"InputData":
+		{
+			"SheetName":"Energy view-饼图接口",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Energy view-单层级多层级接口",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Energy view-多时间",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Energy view-单位指标",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Energy view-时段能耗比",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Energy view-能效对标等级接口",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Energy view-Ranking接口",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Carbon-饼图接口",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Carbon",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Carbon-Ranking",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Carbon-单位指标",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Carbon-Benchmark",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Cost-饼图接口",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Cost-峰谷用电饼图",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Cost ",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Cost-Ranking",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Cost-单位指标",
+		},
+	},
+	{
+		"InputData":
+		{
+			"SheetName":"Cost-Benchmark",
+		},
+	}
+]

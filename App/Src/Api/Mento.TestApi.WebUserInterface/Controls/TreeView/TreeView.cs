@@ -37,8 +37,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public Boolean ClickNode(string nodeText)
         {
             // Greenie modified
+            TimeManager.ShortPause();
             if (this.GetTreeNodeElement(nodeText).Enabled)
             {
+                TimeManager.LongPause();
                 this.GetTreeNodeElement(nodeText).Click();
                 return true;
             }
@@ -58,11 +60,20 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public void ExpandNode(string nodeText)
         {
             //if the node is not expanded, click expand icon
+            //if (!IsNodeExpanded(nodeText))
+            //{
+            //    ClickNodeExpander(nodeText);
+
+            //    //pause to wait animate finish
+            //    TimeManager.MediumPause();
+            //}
+
+            //For a bug, it should click twice when the node is expanded
+            ClickNodeExpander(nodeText);
+            TimeManager.MediumPause();
             if (!IsNodeExpanded(nodeText))
             {
                 ClickNodeExpander(nodeText);
-
-                //pause to wait animate finish
                 TimeManager.MediumPause();
             }
         }

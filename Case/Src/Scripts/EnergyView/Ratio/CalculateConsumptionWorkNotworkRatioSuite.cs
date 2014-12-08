@@ -113,7 +113,8 @@ namespace Mento.Script.EnergyView.Ratio
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Week);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            //EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 

@@ -20,7 +20,7 @@
 			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
 			"IndustryValue":"$@Zone_Cold_Region$@Industry_All_Industries",
 			"popupNotes":["$@EM.Labeling.NonBuilding", "$@Message.M02501", "$@EM.CompareTagsAreFull"],
-			"Industries":["$@Zone_Subtropical_Region$@Industry_All_Industries", "$@Zone_Cold_Region$@Industry_All_Industries"],
+			"Industries":["$@Zone_Subtropical_Region$@Industry_All_Industries", "$@Zone_Cold_Region$@Industry_Clothing_retail"],
 		}
 	}
 ]

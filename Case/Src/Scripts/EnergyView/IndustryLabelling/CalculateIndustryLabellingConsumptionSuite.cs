@@ -224,6 +224,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
+            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
+            TimeManager.ShortPause();
+
             //夏热冬暖酒店三星级行业
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[0]);
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
@@ -245,6 +248,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
+
+            IndustryLabellingPanel.CheckTag(input.InputData.tagNames[1]);
+            TimeManager.ShortPause();
 
             //夏热冬暖酒店五星级行业
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);

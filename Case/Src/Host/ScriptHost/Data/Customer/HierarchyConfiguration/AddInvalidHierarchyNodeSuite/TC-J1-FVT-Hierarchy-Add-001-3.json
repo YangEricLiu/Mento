@@ -33,7 +33,7 @@
 			"Code":"AutoBuilding001",
 			"Type":"Building",
 			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
-			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
+			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":
 		{
@@ -74,7 +74,7 @@
 			"Code":"AutoBuilding001",
 			"Type":"Building",
 			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
-			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
+			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":
 		{
@@ -89,7 +89,7 @@
 			"Code":"AutoBuilding001",
 			"Type":"Building",
 			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
-			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
+			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":
 		{

@@ -33,7 +33,7 @@
 			"Code":"BuildCancel",
 			"Type":"Building",
 			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
-			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
+			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":
 		{
@@ -48,7 +48,7 @@
 			"Code":"BuildCancel2",
 			"Type":"Building",
 			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
-			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
+			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":
 		{
@@ -63,7 +63,7 @@
 			"Code":"BuildCancel3",
 			"Type":"Building",
 			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
-			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
+			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":
 		{

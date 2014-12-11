@@ -1655,6 +1655,7 @@ I18N.Message.M09158 = '##Common.Glossary.Tag## is not associated with hierarchy 
 I18N.Message.M09159 = 'The calendar property of the hierarchy tree associated with ##Common.Glossary.Tag## is empty. Please set the calendar for the hierarchy tree first.';
 I18N.Message.M09160 = 'The data of this year in the calendar property of the hierarchy tree associated with ##Common.Glossary.Tag## is empty. Please set the calendar property of this year for the hierarchy tree first.';
 I18N.Message.M09115 = 'The minimum value for this field is -999999999.999999';
+I18N.Message.M09116 = 'The minimum value for this field is 0.000001';
 
 //Cost concurrency error
 I18N.Message.M10007 = 'Electricity price in peak/valley/normal period cannot be displayed by hour.';
@@ -1664,6 +1665,7 @@ I18N.Message.M10017 = I18N.format(I18N.Message.DeletionConcurrency, I18N.Common.
 I18N.Message.M10019 = 'Demand cost Tag is invalid data.';
 I18N.Message.M10020 = 'Reactive energy Tag is invalid data.';
 I18N.Message.M10021 = 'Active energy Tag is invalid data.';
+I18N.Message.M10022 = '1.2.3 is not a valid number';
 
 I18N.Message.M11012 = 'This customer has been referred to by hierarchy and thus cannot be deleted.';
 I18N.Message.M11351 = 'Code is repeated';

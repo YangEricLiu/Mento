@@ -455,16 +455,16 @@ I18N.Setting.Benchmark.Industry.AllIndustry = 'All the industries';
 I18N.Setting.Benchmark.Industry.OfficeBuilding = 'Office building';
 I18N.Setting.Benchmark.Industry.DataCenter = 'Data center';
 I18N.Setting.Benchmark.Industry.Hotel = 'Hotel';
-I18N.Setting.Benchmark.Industry.TwoStarAndBelowHotel = 'Hotel (3-star and below)';
+I18N.Setting.Benchmark.Industry.TwoStarAndBelowHotel = 'Hotel (2-star and below)';
 I18N.Setting.Benchmark.Industry.ThreeStarHotel = 'Hotel (3-star)';
 I18N.Setting.Benchmark.Industry.FourStarHotel = 'Hotel (4-star)';
 I18N.Setting.Benchmark.Industry.FiveStarHotel = 'Hotel (5-star)';
-I18N.Setting.Benchmark.Industry.Hospital = ' Hospital';
+I18N.Industry_Hospital = ' Hospital';
 I18N.Setting.Benchmark.Industry.School = ' School';
 I18N.Setting.Benchmark.Industry.Retail = ' Retail industry';
 I18N.Setting.Benchmark.Industry.Supermarket = ' Supermarket';
 I18N.Setting.Benchmark.Industry.ClothingRetails = ' Clothing retailing';
-I18N.Setting.Benchmark.Industry.Mall = ' Shopping mall';
+I18N.Setting.Benchmark.Industry.Mall = ' Mall';
 I18N.Setting.Benchmark.Industry.Communication = ' Communication';
 I18N.Setting.Benchmark.Industry.CommunicationRoom = ' Computer room';
 I18N.Setting.Benchmark.Industry.BaseStation = ' Communication base station';
@@ -1654,6 +1654,8 @@ I18N.Message.M09157 = 'The corresponding ##Common.Glossary.Tag## has been delete
 I18N.Message.M09158 = '##Common.Glossary.Tag## is not associated with hierarchy tree and dimension tree. Please associate ##Common.Glossary.Tag## with them.';
 I18N.Message.M09159 = 'The calendar property of the hierarchy tree associated with ##Common.Glossary.Tag## is empty. Please set the calendar for the hierarchy tree first.';
 I18N.Message.M09160 = 'The data of this year in the calendar property of the hierarchy tree associated with ##Common.Glossary.Tag## is empty. Please set the calendar property of this year for the hierarchy tree first.';
+I18N.Message.M09115 = 'The minimum value for this field is -999999999.999999';
+I18N.Message.M09116 = 'The minimum value for this field is 0.000001';
 
 //Cost concurrency error
 I18N.Message.M10007 = 'Electricity price in peak/valley/normal period cannot be displayed by hour.';
@@ -1663,6 +1665,7 @@ I18N.Message.M10017 = I18N.format(I18N.Message.DeletionConcurrency, I18N.Common.
 I18N.Message.M10019 = 'Demand cost Tag is invalid data.';
 I18N.Message.M10020 = 'Reactive energy Tag is invalid data.';
 I18N.Message.M10021 = 'Active energy Tag is invalid data.';
+I18N.Message.M10022 = '1.2.3 is not a valid number';
 
 I18N.Message.M11012 = 'This customer has been referred to by hierarchy and thus cannot be deleted.';
 I18N.Message.M11351 = 'Code is repeated';

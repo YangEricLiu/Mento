@@ -32,7 +32,7 @@
 			"CommonName":"BuildCancel",
 			"Code":"BuildCancel",
 			"Type":"Building",
-			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Industry":"$@Industry_Data_Center",
 			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":
@@ -47,7 +47,7 @@
 			"CommonName":"BuildCancel2",
 			"Code":"BuildCancel2",
 			"Type":"Building",
-			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Industry":"$@Industry_Data_Center",
 			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":
@@ -62,7 +62,7 @@
 			"CommonName":"BuildCancel3",
 			"Code":"BuildCancel3",
 			"Type":"Building",
-			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Industry":"$@Industry_Data_Center",
 			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":

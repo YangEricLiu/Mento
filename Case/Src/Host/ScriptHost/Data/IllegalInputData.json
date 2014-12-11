@@ -117,7 +117,7 @@
 			"Channel":"$@Common.Label.MandatoryEmptyError",
 			"IntegerValue":"$@Common.Label.MandatoryEmptyError",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"该输入项的最小值是 0.000001",
+			"DoubleNonNagtiveValue":"$@Message.M09116",
 			"Comments":"$%^中文",
 			"FeedbackComments":"",
 		}
@@ -199,7 +199,7 @@
 			"Channel":"$@Common.Label.MandatoryEmptyError",
 			"IntegerValue":"$@Common.Label.MandatoryEmptyError",
 			"DoubleNagtiveValue":"",
-			"DoubleNonNagtiveValue":"1.2.3 不是有效数值",
+			"DoubleNonNagtiveValue":"$@Message.M10022",
 			"Comments":"chars$%^",
 			"FeedbackComments":"",
 		}

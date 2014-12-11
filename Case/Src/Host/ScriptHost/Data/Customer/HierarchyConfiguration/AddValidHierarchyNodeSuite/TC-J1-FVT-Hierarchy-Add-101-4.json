@@ -19,7 +19,7 @@
 			"CommonName":"EmptyCommentBuilding",
 			"Code":"EmptyCommentBuilding",
 			"Type":"Building",
-			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Industry":"$@Industry_Data_Center",
 			"Zone":"$@Setting.Benchmark.Zone.TemperateRegion",
 		},
 		"ExpectedData":

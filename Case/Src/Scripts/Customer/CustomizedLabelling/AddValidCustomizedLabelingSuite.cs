@@ -371,13 +371,14 @@ namespace Mento.Script.Customer.CustomizedLabelling
              }
              //Save
              CustomizedLabellingSettings.ClickSaveButton();
-             TimeManager.LongPause();
+             JazzMessageBox.LoadingMask.WaitLoading();
+             TimeManager.MediumPause();
 
-             Assert.AreEqual(input.InputData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
-             Assert.AreEqual(input.InputData.Comments, CustomizedLabellingSettings.GetCommentTextFieldValue());
+             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
+             Assert.AreEqual(input.ExpectedData.Comments, CustomizedLabellingSettings.GetCommentTextFieldValue());
 
              //The labelling name/create user/create time display in labelling grid. 
-             Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
+             Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.ExpectedData.CommonName));
          }
     }           
 }

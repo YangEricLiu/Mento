@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Industry":"$@Setting.Benchmark.Industry.Hotel",
+			"Industry":"$@Industry_Hotel",
 			"ClimateRegion":"$@Setting.Benchmark.Zone.ColdA",
 			"ClimateRegions":["$@Zone_All_Zones","$@Setting.Benchmark.Zone.ColdB","$@Setting.Benchmark.Zone.ColdRegion","$@Setting.Benchmark.Zone.HotSummerColdWinterRegion","$@Setting.Benchmark.Zone.SubtropicalRegion","$@Setting.Benchmark.Zone.TemperateRegion"],
 			"EnergyEfficiencyLabellingLevel":"3$@Setting.CustomizedLabeling.Grade",

@@ -37,7 +37,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public Boolean ClickNode(string nodeText)
         {
             // Greenie modified
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             if (this.GetTreeNodeElement(nodeText).Enabled)
             {
                 TimeManager.LongPause();

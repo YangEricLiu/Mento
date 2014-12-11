@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Industrys":["$@Industry_Office_Building","$@Setting.Benchmark.Industry.DataCenter"],
+			"Industrys":["$@Industry_Office_Building","$@Industry_Data_Center"],
 			"ClimateRegion":"$@Setting.Benchmark.Zone.ColdA",
 			"EnergyEfficiencyLabellingLevels":["5$@Setting.CustomizedLabeling.Grade","3$@Setting.CustomizedLabeling.Grade"],
 			"StartYears":["2008","2012"],
@@ -10,7 +10,7 @@
 		},
 		"ExpectedData":
 		{
-			"Industrys":["$@Industry_Office_Building","$@Setting.Benchmark.Industry.DataCenter"],
+			"Industrys":["$@Industry_Office_Building","$@Industry_Data_Center"],
 			"ClimateRegion":"$@Setting.Benchmark.Zone.ColdA",
 			"EnergyEfficiencyLabellingLevels":["5$@Setting.CustomizedLabeling.Grade","3$@Setting.CustomizedLabeling.Grade"],
 			"StartYears":["2008","2012"],

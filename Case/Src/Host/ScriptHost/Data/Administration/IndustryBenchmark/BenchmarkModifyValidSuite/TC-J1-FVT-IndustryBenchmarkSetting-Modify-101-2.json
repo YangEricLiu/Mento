@@ -2,12 +2,12 @@
 	{
 		"InputData":
 		{	
-			"Industry":"$@Setting.Benchmark.Industry.Hotel",
+			"Industry":"$@Industry_Hotel",
 			"ClimaticRegions":["$@Setting.Benchmark.Zone.ColdA", "$@Setting.Benchmark.Zone.TemperateRegion"],
 		},
 		"ExpectedData":
 		{	
-			"Industrys":["$@Setting.Benchmark.Industry.Hotel"],
+			"Industrys":["$@Industry_Hotel"],
 			"ClimaticRegions":["$@Setting.Benchmark.Zone.ColdA", "$@Setting.Benchmark.Zone.TemperateRegion"],
 		}
 	}

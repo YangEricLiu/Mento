@@ -90,6 +90,15 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return HierarchyIndustryIdComboBox.GetCurrentDropdownListItems();
         }
+        ///// <summary>
+        ///// Return industry ComboBox value
+        ///// </summary>
+        ///// <param></param>
+        ///// <returns></returns>
+        //public string[] GetIndustryIdComboBoxStrings()
+        //{
+        //    return HierarchyIndustryIdComboBox.GetCurrentDropdownStrings();
+        //}
         /// <summary>
         /// Return zone ComboBox value
         /// </summary>

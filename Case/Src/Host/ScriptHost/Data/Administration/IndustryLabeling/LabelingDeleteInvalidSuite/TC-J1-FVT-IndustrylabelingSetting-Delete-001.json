@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Industry":"$@Setting.Benchmark.Industry.School",
+			"Industry":"$@Industry_School",
 			"ClimateRegion":"$@Setting.Benchmark.Zone.TemperateRegion",
 
 		},

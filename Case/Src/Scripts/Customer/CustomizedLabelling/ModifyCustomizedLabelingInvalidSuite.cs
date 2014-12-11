@@ -46,6 +46,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
             //Click Cancel button directly.
             CustomizedLabellingSettings.ClickCancelButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
 
             //check the labeling's data
             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
@@ -100,6 +102,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
             //Click Cancel button directly.
             CustomizedLabellingSettings.ClickCancelButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
 
             //Go to select "Modify to 自定义能效标识9"
             CustomizedLabellingSettings.FocusOnCustomizedLabelling(input.InputData.CommonNames[0]);
@@ -140,6 +144,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
             //Click Save button.
             CustomizedLabellingSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
 
             //· labeling save to labeling list successfully without modified any fields.
             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
@@ -191,6 +197,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
             CustomizedLabellingSettings.ClickModifyButton();
             CustomizedLabellingSettings.FillInNameTextField(input.InputData.CommonNames[1]);
             CustomizedLabellingSettings.ClickSaveButton();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
 
             //·Red line and error message display at 名称.
             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetLabellingNameInvalidTips());
@@ -215,8 +223,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
             CustomizedLabellingSettings.ClickModifyButton();
             CustomizedLabellingSettings.FillInNameTextField(input.InputData.CommonNames[1]);
             CustomizedLabellingSettings.ClickSaveButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
 
             //·Redline display at name.
             Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetLabellingNameInvalidTips());

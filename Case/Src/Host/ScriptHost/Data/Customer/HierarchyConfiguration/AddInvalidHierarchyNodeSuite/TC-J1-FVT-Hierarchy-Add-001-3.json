@@ -32,7 +32,7 @@
 			"CommonName":"TestSameCodewithBuilding",
 			"Code":"AutoBuilding001",
 			"Type":"Building",
-			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Industry":"$@Industry_Data_Center",
 			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":
@@ -73,7 +73,7 @@
 			"CommonName":"TestSameCodewithBuilding1",
 			"Code":"AutoBuilding001",
 			"Type":"Building",
-			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Industry":"$@Industry_Data_Center",
 			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":
@@ -88,7 +88,7 @@
 			"CommonName":"TestSameCodewithBuilding2",
 			"Code":"AutoBuilding001",
 			"Type":"Building",
-			"Industry":"$@Setting.Benchmark.Industry.DataCenter",
+			"Industry":"$@Industry_Data_Center",
 			"Zone":"$@Setting.Benchmark.Zone.ColdRegion",
 		},
 		"ExpectedData":

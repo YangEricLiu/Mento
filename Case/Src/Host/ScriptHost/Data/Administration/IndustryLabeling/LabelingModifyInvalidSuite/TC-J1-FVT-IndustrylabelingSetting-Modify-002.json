@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Industry":"$@Setting.Benchmark.Industry.AllIndustry",
+			"Industry":"$@Industry_All_Industries",
 			"ClimateRegion":"$@Setting.Benchmark.Zone.ColdB",
 			"EnergyEfficiencyLabellingLevel":"3$@Setting.CustomizedLabeling.Grade",
 			"StartYear":"2012",

@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCustomer1", "园区测试多层级","BuildingPieVerify"],
+			"failedFileName":["F-SingleHierarchyNodeTrendChart101-4.xls"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["SingleHierarchyNodeTrendChart101-4.xls"],
+		}
+	}
+]

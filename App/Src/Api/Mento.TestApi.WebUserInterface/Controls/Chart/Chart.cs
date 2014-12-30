@@ -312,7 +312,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 }
             }
 
-            return haveLine - 1 - noLine;
+            //return haveLine - 1 - noLine;
+            return haveLine - 1;
         }
 
         public int GetTrendChartLinesMarkers()

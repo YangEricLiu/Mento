@@ -200,5 +200,42 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));        }
+
+        [Test]
+        [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-4")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-4")]
+        public void TrendChart30TagsLimit(EnergyViewOptionData input)
+        {
+            //Go to NancyCustomer1->园区测试多层级-> BuildingPieVerify. 
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.LongPause();
+            EnergyAnalysis.NavigateToEnergyAnalysis();
+            TimeManager.MediumPause();
+
+            EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            //Select time range=上个月
+            EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastMonth);
+            TimeManager.ShortPause();
+
+            //Select Totally 30 tags Vpie1 to Vpie30 .
+            for (int i = 1; i < 31; i++)
+            {
+                EnergyAnalysis.CheckTag("Vpie" + i.ToString());
+            }
+
+            //view dataview.
+            EnergyViewToolbar.View(EnergyViewType.Line);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Check · The trend chart is can draw with totally 30 tags.
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+
+        }
     }
 }

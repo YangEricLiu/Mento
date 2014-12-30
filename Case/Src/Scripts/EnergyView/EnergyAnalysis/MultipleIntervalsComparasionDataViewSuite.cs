@@ -514,9 +514,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //The number of total pages are correct.
             Assert.AreEqual(432,EnergyAnalysis.GetPageCount());
             //Page1 of data values of 'Raw' step are displayed correctly.
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            //TimeManager.MediumPause();
+            //EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Switch back to line chart
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.Line);

@@ -100,6 +100,24 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return items;
         }
 
+        ///// <summary>
+        ///// Get the items of current dropdown list
+        ///// </summary>
+        ///// <returns></returns>
+        //public string [] GetCurrentDropdownStrings()
+        //{
+        //    string[] items = { };
+        //    DisplayItems();
+        //    int i = 0;
+        //    foreach (IWebElement item in CurrentComboBoxDropdownListItems)
+        //    {
+        //        items[i] = item.Text;
+        //        if (i < CurrentComboBoxDropdownListItems.Length)
+        //            i++;
+        //    }
+        //    return items;
+        //}
+
         /// <summary>
         /// Get the value of combo box
         /// </summary>

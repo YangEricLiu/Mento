@@ -181,7 +181,7 @@ namespace Mento.Script.EnergyView.CostUsage
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-Pie-101-2")]
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsagePieChartSuite), "TC-J1-FVT-CostUsage-Pie-101-2")]
-        public void CostUsagePieChartForMoreTags(CostUsageData input)
+        public void CostUsagePieChartForMoreCommodities(CostUsageData input)
         {
             //Go to Cost function.Navigate to NancyCustomer1 -> BuildingMultipleCommodities to select 总览 to view pie chart.
             JazzFunction.HomePage.SelectCustomer("NancyCustomer1");

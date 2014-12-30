@@ -44,7 +44,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static TimeSpanDialog TimeSpanDialog = JazzFunction.TimeSpanDialog;
 
         [Test]
-        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-PieChart-101")]
+        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-PieChart-101"), ManualCaseID("TC-J1-FVT-MultipleIntervalsComparasion-DistributionChart-101")]
         [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionPieChartSuite), "TC-J1-FVT-MultipleIntervalsComparasion-PieChart-101")]
         public void ViewSingleTagPiechartAndSaveToDashboard(TimeSpansData input)
         {
@@ -242,7 +242,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-PieChart-102")]
+        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-PieChart-102"), ManualCaseID("TC-J1-FVT-MultipleIntervalsComparasion-DistributionChart-102")]
         [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionPieChartSuite), "TC-J1-FVT-MultipleIntervalsComparasion-PieChart-102")]
         public void ViewSingleTagPiechartAndSaveToDashboard2(TimeSpansData input)
         {
@@ -323,7 +323,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-PieChart-103")]
+        [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-PieChart-103"), ManualCaseID("TC-J1-FVT-MultipleIntervalsComparasion-DistributionChart-105")]
         [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionPieChartSuite), "TC-J1-FVT-MultipleIntervalsComparasion-PieChart-103")]
         public void MultipleIntervalsAlignedCorrectlyEspeciallyWithMissingData(TimeSpansData input)
         {

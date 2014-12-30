@@ -388,7 +388,7 @@ namespace Mento.Script.EnergyView.CostUsage
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-DataView-004")]
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-004")]
-        public void AllCommoditiesView(CostUsageData input)
+        public void AllCommoditiesCostView(CostUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.LongPause();

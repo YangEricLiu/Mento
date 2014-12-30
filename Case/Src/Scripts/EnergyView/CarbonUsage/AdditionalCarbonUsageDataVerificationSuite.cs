@@ -104,6 +104,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
+            //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 

@@ -76,6 +76,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //"Hour"
             CarbonUsage.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
             TimeManager.MediumPause();
 
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);

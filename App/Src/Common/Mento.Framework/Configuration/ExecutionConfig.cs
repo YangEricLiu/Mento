@@ -105,7 +105,7 @@ namespace Mento.Framework.Configuration
         {
             get
             {
-                bool result = false;
+                bool result = true;
                 //bool.TryParse(GetExecutionConfig(ISCOMPAREEXPECTEDDATAVIEWEXCELFILE), out result);
                 return result;
             }

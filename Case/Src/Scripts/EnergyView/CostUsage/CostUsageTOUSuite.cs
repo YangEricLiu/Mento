@@ -51,7 +51,7 @@ namespace Mento.Script.EnergyView.CostUsage
         private static WidgetMaxChartDialog WidgetMaxChart = JazzFunction.WidgetMaxChartDialog;
 
         [Test]
-        [CaseID("TC-J1-FVT-CostUsage-TOU-Column-005-1")]
+        [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-1")]
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-1")]
         public void TOUDataViewColumnWeek(CostUsageData input)
         {
@@ -107,7 +107,7 @@ namespace Mento.Script.EnergyView.CostUsage
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-CostUsage-TOU-Column-005-2")]
+        [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-2")]
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-2")]
         public void TOUDataViewColumnMonth(CostUsageData input)
         {
@@ -153,7 +153,7 @@ namespace Mento.Script.EnergyView.CostUsage
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-CostUsage-TOU-Column-005-3")]
+        [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-3")]
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-3")]
         public void TOUDataViewColumnDisable(CostUsageData input)
         {

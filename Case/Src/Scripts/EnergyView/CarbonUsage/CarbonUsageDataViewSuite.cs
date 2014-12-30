@@ -464,13 +464,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
@@ -485,9 +478,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //Check data
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             TimeManager.LongPause();
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
@@ -528,13 +518,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             TimeManager.LongPause();
             CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -601,7 +584,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsage-DataView-001-6")]
         [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-6")]
-        public void AllCommoditiesView(CarbonUsageData input)
+        public void AllCommoditiesCarbonView(CarbonUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.LongPause();

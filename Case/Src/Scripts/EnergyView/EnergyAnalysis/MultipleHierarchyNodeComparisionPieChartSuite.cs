@@ -21,8 +21,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// 
     /// </summary>
     [TestFixture]
-    [ManualCaseID("TC-J1-FVT-EnergyConsumption-PieChart-101"), CreateTime("2014-05-30"), Owner("Emma")]
-    public class EnergyConsumptionPieChartSuite : TestSuiteBase
+    [ManualCaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101"), CreateTime("2014-05-30"), Owner("Emma")]
+    public class MultipleHierarchyNodeComparisionPieChartSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -45,9 +45,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
 
         [Test]
-        [CaseID("TC-J1-FVT-EnergyConsumption-PieChart-101-1")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(EnergyConsumptionPieChartSuite), "TC-J1-FVT-EnergyConsumption-PieChart-101-1")]
-        public void EnergyConsumptionPieChart01(EnergyViewOptionData input)
+        [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-1")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionPieChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-1")]
+        public void MultipleHierarchyNodeComparisionPieChart01(EnergyViewOptionData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.ShortPause();
@@ -158,9 +158,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-EnergyConsumption-PieChart-101-2")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(EnergyConsumptionPieChartSuite), "TC-J1-FVT-EnergyConsumption-PieChart-101-2")]
-        public void EnergyConsumptionPieChart02(EnergyViewOptionData input)
+        [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-2")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionPieChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-2")]
+        public void MultipleHierarchyNodeComparisionPieChart02(EnergyViewOptionData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -214,9 +214,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-EnergyConsumption-PieChart-101-3")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(EnergyConsumptionPieChartSuite), "TC-J1-FVT-EnergyConsumption-PieChart-101-3")]
-        public void EnergyConsumptionPieChart03(EnergyViewOptionData input)
+        [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-3")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionPieChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-3")]
+        public void MultipleHierarchyNodeComparisionPieChart03(EnergyViewOptionData input)
         {
             //Go to UT tool. Go to Energy Analysis. Select NancyCustomer1, select 10 tags under the same hierarchy node BuildingPieVerify to pie chart.
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -241,9 +241,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-EnergyConsumption-PieChart-101-4")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(EnergyConsumptionPieChartSuite), "TC-J1-FVT-EnergyConsumption-PieChart-101-4")]
-        public void EnergyConsumptionPieChart04(EnergyViewOptionData input)
+        [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-4")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionPieChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-4")]
+        public void MultipleHierarchyNodeComparisionPieChart04(EnergyViewOptionData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.ShortPause();
@@ -278,9 +278,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-EnergyConsumption-PieChart-101-5")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(EnergyConsumptionPieChartSuite), "TC-J1-FVT-EnergyConsumption-PieChart-101-5")]
-        public void EnergyConsumptionPieChart05(EnergyViewOptionData input)
+        [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-5")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionPieChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-5")]
+        public void MultipleHierarchyNodeComparisionPieChart05(EnergyViewOptionData input)
         {
             //Go to NancyOtherCustomer3->Labellingtag1.
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");

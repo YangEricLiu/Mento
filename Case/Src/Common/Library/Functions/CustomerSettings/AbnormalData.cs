@@ -16,54 +16,55 @@ namespace Mento.ScriptCommon.Library.Functions
     /// <summary>
     /// The business logic implement of ptag rawdata configuration.
     /// </summary>
-    public class PTagRawData
+    public class AbnormalData
     {
-        internal PTagRawData()
+        internal AbnormalData()
         {
         }
 
-        #region ptag controls
+        #region AbnormalData controls
 
-        private static Grid PTagList = JazzGrid.PTagSettingsPTagList;
+        private static Grid AbnormalRecordList = JazzGrid.AbnormalRecordList;
 
-        //StartDatePicker
-        private static DatePicker StartDatePicker = JazzDatePicker.PTagRawDataStartDateDatePicker;
-        //StartTimeComboBox
-        private static ComboBox StartTimeComboBox = JazzComboBox.PTagRawDataStartTimeComboBox;
+        //StartDatePicker and StartTimeComboBox
+        private static DatePicker StartDatePicker = JazzDatePicker.VEERawDataStartDateDatePicker;
+        private static ComboBox StartTimeComboBox = JazzComboBox.VEERawDataStartTimeComboBox;
 
-        //EndDatePicker
-        private static DatePicker EndDatePicker = JazzDatePicker.PTagRawDataEndDateDatePicker;
-        //EndTimeComboBox
-        private static ComboBox EndTimeComboBox = JazzComboBox.PTagRawDataEndTimeComboBox;
+        //EndDatePicker and EndTimeComboBox
+        private static DatePicker EndDatePicker = JazzDatePicker.VEERawDataEndDateDatePicker;
+        private static ComboBox EndTimeComboBox = JazzComboBox.VEERawDataEndTimeComboBox;
 
-        private static TabButton RawDataTab = JazzButton.PTagRawDataTabButton;
-        private static Button RawDataModifyButton = JazzButton.PTagRawDataModifyButton;
-        private static Button RawDataSaveButton = JazzButton.PTagRawDataSaveButton;
-        private static Button RawDataCancelButton = JazzButton.PTagRawDataCancelButton;
-        private static Grid GridPTagRawData = JazzGrid.GridPTagRawData;
+        private static Grid GridVEERawData = JazzGrid.GridVEERawData;
+        private static Button RawDataSaveButton = JazzButton.VEERawDataSaveButton;
+        private static Button RawDataCancelButton = JazzButton.VEERawDataCancelButton;
+        private static Button BatchOperationButton = JazzButton.VEEBatchOperationButton;
+        private static MenuButton BatchModifyButton = JazzButton.VEEBatchModifyButton;
+        private static MenuButton BatchRevertButton = JazzButton.VEEBatchRevertButton;
+        private static MenuButton BatchIgnoreButton = JazzButton.VEEBatchIgnoreButton;
 
-        private static Button RawDataSaveAndSwitchButton = JazzButton.PTagRawDataSaveAndSwitchButton;
-        private static Button RawDataDirectlySwitchButton = JazzButton.PTagRawDataDirectlySwitchButton;
-        private static Button RawDataCancelSwitchButton = JazzButton.PTagRawDataCancelSwitchButton;
-        private static Button RawDataSwitchDifferenceValueButton = JazzButton.PTagRawDataSwitchDifferenceValueButton;
-        private static Button RawDataSwitchOriginalValueButton = JazzButton.PTagRawDataSwitchOriginalValueButton;
-        private static Button RawDataLeftButton = JazzButton.PTagRawDataLeftButton;
-        private static Button RawDataRightButton = JazzButton.PTagRawDataRightButton;
+        private static Button VEERawDataSaveAndSwitchButton = JazzButton.VEERawDataSaveAndSwitchButton;
+        private static Button VEERawDataDirectlySwitchButton = JazzButton.VEERawDataDirectlySwitchButton;
+        private static Button VEERawDataCancelSwitchButton = JazzButton.VEERawDataCancelSwitchButton;
+        private static Button VEERawDataSwitchDifferenceValueButton = JazzButton.VEERawDataSwitchDifferenceValueButton;
+        private static Button VEERawDataSwitchOriginalValueButton = JazzButton.VEERawDataSwitchOriginalValueButton;
+        private static Button VEERawDataLeftButton = JazzButton.VEERawDataLeftButton;
+        private static Button VEERawDataRightButton = JazzButton.VEERawDataRightButton;
 
         private static Locator SwitchTimeWindow = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.WindowSwitchTime);
 
         #endregion
 
-        #region Ptag RawData Operation
+        #region AbnormalData Operation
 
         /// <summary>
-        /// Click Raw Data tab button to edit Raw data of ptag.
+        /// Navigate to Abnormal Record Page
         /// </summary>
+        /// <param></param>
         /// <returns></returns>
-        public void SwitchToRawDataTab()
+        public void NavigatorToAbnormalRecord()
         {
-            RawDataTab.Click();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AbnormalRecord);
+            TimeManager.ShortPause();
         }
 
         /// <summary>
@@ -77,29 +78,16 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
         }
 
-
-
         /// <summary>
-        /// Navigate to Ptag Configuration Page
+        /// Focus abnormal record by tag name
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public void NavigatorToPtagSetting()
-        {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsP);
-            TimeManager.ShortPause();
-        }
-
-        /// <summary>
-        /// Focus ptag by name
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
-        public Boolean FocusOnPTagByName(string ptagName)
+        public Boolean FocusOnRecordByName(string tagName)
         {
             try
             {
-                PTagList.FocusOnRow(1, ptagName);
+                AbnormalRecordList.FocusOnRow(5, tagName);
                 return true;
             }
             catch(Exception)
@@ -109,15 +97,15 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
-        /// Focus ptag by name
+        /// Focus abnormal record by rule name
         /// </summary>
         /// <param></param>
         /// <returns></returns>
-        public Boolean FocusOnPTagByCode(string ptagCode)
+        public Boolean FocusOnRecordByRule(string rule)
         {
             try
             {
-                PTagList.FocusOnRow(2, ptagCode);
+                AbnormalRecordList.FocusOnRow(2, rule);
                 return true;
             }
             catch (Exception)
@@ -126,6 +114,41 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        /// <summary>
+        /// Focus abnormal record by data type
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean FocusOnRecordByDataType(string dataType)
+        {
+            try
+            {
+                AbnormalRecordList.FocusOnRow(3, dataType);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Check abnormal records by tag names
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean CheckRecordsByTagName(string tagName)
+        {
+            try
+            {
+                AbnormalRecordList.CheckRowCheckbox(5, tagName);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         #endregion
 
         #region Basic Property Operations
@@ -138,7 +161,6 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             RawDataSaveButton.Click();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
         }
 
         /// <summary>
@@ -152,10 +174,24 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <summary>
         /// Click "Modify Record" Button
         /// </summary>
-        public void ClickModifyRawDataButton()
+        public void ClickBatchOperationButton()
         {
-            RawDataModifyButton.Click();
-            TimeManager.LongPause();
+            BatchOperationButton.Click();
+        }
+
+        public void ClickBatchModifyButton()
+        {
+            BatchModifyButton.Click();
+        }
+
+        public void ClickBatchRevertButton()
+        {
+            BatchRevertButton.Click();
+        }
+
+        public void ClickBatchIgnoreButton()
+        {
+            BatchIgnoreButton.Click();
         }
 
         /// <summary>
@@ -163,8 +199,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickLeftButton()
         {
-            RawDataLeftButton.Click();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            VEERawDataLeftButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
         }
 
@@ -173,8 +209,8 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickRightButton()
         {
-            RawDataRightButton.Click();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            VEERawDataRightButton.Click();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
         }
 
@@ -183,8 +219,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickSwitchDifferenceValueButton()
         {
-            RawDataSwitchDifferenceValueButton.Click();
+            VEERawDataSwitchDifferenceValueButton.Click();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
         }
 
         /// <summary>
@@ -192,8 +229,9 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickSwitchOriginalValueButton()
         {
-            RawDataSwitchOriginalValueButton.Click();
+            VEERawDataSwitchOriginalValueButton.Click();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
         }
 
         /// <summary>
@@ -203,8 +241,8 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             if (ElementHandler.Exists(SwitchTimeWindow))
             {
-                RawDataSaveAndSwitchButton.Click();
-                JazzMessageBox.LoadingMask.WaitLoading();
+                VEERawDataSaveAndSwitchButton.Click();
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             }
 
         }
@@ -216,8 +254,8 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             if(ElementHandler.Exists(SwitchTimeWindow))
             {
-                RawDataDirectlySwitchButton.Click();
-                JazzMessageBox.LoadingMask.WaitLoading();
+                VEERawDataDirectlySwitchButton.Click();
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             }
 
         }
@@ -229,14 +267,14 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             if (ElementHandler.Exists(SwitchTimeWindow))
             {
-                RawDataCancelSwitchButton.Click();
+                VEERawDataCancelSwitchButton.Click();
                 JazzMessageBox.LoadingMask.WaitLoading();
             }
 
         }
 
         /// <summary>
-        /// Set date range for PTag RawData
+        /// Set date range for abnormal record
         /// </summary>
         public void SetDateRange(string startTime, string endTime)
         {
@@ -247,8 +285,8 @@ namespace Mento.ScriptCommon.Library.Functions
             }
             if (" " != endTime)
             { 
-                EndDatePicker.SelectDateItem(endTime); 
-                JazzMessageBox.LoadingMask.WaitChartMaskerLoading(); 
+                EndDatePicker.SelectDateItem(endTime);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             }
 
             if (EndTimeComboBox.Exists() && EndTimeComboBox.IsDisplayed())
@@ -262,13 +300,13 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             if (" " != startTime)
             { 
-                StartTimeComboBox.SelectItem(startTime); 
-                JazzMessageBox.LoadingMask.WaitChartMaskerLoading(); 
+                StartTimeComboBox.SelectItem(startTime);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             }
             if (" " != endTime)
             { 
-                EndTimeComboBox.SelectItem(endTime); 
-                JazzMessageBox.LoadingMask.WaitChartMaskerLoading(); 
+                EndTimeComboBox.SelectItem(endTime);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             }
         }
 
@@ -292,32 +330,32 @@ namespace Mento.ScriptCommon.Library.Functions
             return EndTimeComboBox.GetValue();
         }
 
-        public void ClickSwitchWindowSSBtn()
-        {
-            if (ElementHandler.Exists(SwitchTimeWindow))
-            {
-                RawDataSaveAndSwitchButton.Click();
-                JazzMessageBox.LoadingMask.WaitLoading();
-            }
-        }
+        //public void ClickSwitchWindowSSBtn()
+        //{
+        //    if (ElementHandler.Exists(SwitchTimeWindow))
+        //    {
+        //        VEERawDataSaveAndSwitchButton.Click();
+        //        JazzMessageBox.LoadingMask.WaitLoading();
+        //    }
+        //}
 
-        public void ClickSwitchWindowDSBtn()
-        {
-            if (ElementHandler.Exists(SwitchTimeWindow))
-            {
-                RawDataDirectlySwitchButton.Click();
-                JazzMessageBox.LoadingMask.WaitLoading();
-            }
-        }
+        //public void ClickSwitchWindowDSBtn()
+        //{
+        //    if (ElementHandler.Exists(SwitchTimeWindow))
+        //    {
+        //        VEERawDataDirectlySwitchButton.Click();
+        //        JazzMessageBox.LoadingMask.WaitLoading();
+        //    }
+        //}
 
-        public void CloseSwitchTimeWindow()
-        {
-            if (ElementHandler.Exists(SwitchTimeWindow))
-            {
-                RawDataCancelSwitchButton.Click();
-                JazzMessageBox.LoadingMask.WaitLoading();
-            }
-        }
+        //public void CloseSwitchTimeWindow()
+        //{
+        //    if (ElementHandler.Exists(SwitchTimeWindow))
+        //    {
+        //        VEERawDataCancelSwitchButton.Click();
+        //        JazzMessageBox.LoadingMask.WaitLoading();
+        //    }
+        //}
 
 
         #endregion

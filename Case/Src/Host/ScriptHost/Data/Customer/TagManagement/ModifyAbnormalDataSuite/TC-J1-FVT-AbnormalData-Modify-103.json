@@ -1,0 +1,25 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagNames":["PTag_AutomationCase"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2014-01-03",
+				"StartTime":"01:00",
+				"EndDate":"2014-01-03",	
+				"EndTime":"02:00",		
+			},
+			{
+				"StartDate":"2014-01-03",
+				"StartTime":"01:00",
+				"EndDate":"2014-01-03",	
+				"EndTime":"03:00",		
+			}],
+		},
+		"ExpectedData":
+		{
+
+		}
+	}
+]

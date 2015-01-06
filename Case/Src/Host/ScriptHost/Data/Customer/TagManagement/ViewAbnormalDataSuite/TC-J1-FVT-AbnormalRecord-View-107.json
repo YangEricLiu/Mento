@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagNames":["PTag_AutomationCase","lindaTestNull"],
+			"Uoms":["$@Uom_KWH","$@Uom_Ton"],
+		},
+		"ExpectedData":
+		{
+
+		}
+	}
+]

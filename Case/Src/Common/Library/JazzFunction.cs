@@ -95,6 +95,18 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static AbnormalData _AbnormalData;
+        public static AbnormalData AbnormalData
+        {
+            get
+            {
+                if (_AbnormalData == null)
+                    _AbnormalData = new AbnormalData();
+
+                return _AbnormalData;
+            }
+        }
+
         private static PTagRawData _PTagRawData;
         public static PTagRawData PTagRawData
         {

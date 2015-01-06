@@ -108,9 +108,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid AssociationTagList{ get { return GetControl<Grid>(JazzControlLocatorKey.GridAssociationTagList);}}
 
         public static Grid PTagSettingsPTagList{ get { return GetControl<Grid>(JazzControlLocatorKey.GridPTagSettingsPTagList);}}
+
+        public static Grid AbnormalRecordList { get { return GetControl<Grid>(JazzControlLocatorKey.GridAbnormalRecordList); } }
+
         public static Grid CustomizedLabellingListGrid{ get { return GetControl<Grid>(JazzControlLocatorKey.GridCustomizedLabellingList);}}
 
         public static Grid GridPTagRawData{ get { return GetControl<Grid>(JazzControlLocatorKey.GridPTagRawData);}}
+
+        public static Grid GridVEERawData { get { return GetControl<Grid>(JazzControlLocatorKey.GridVEERawData); } }
 
         public static Grid UserListGrid
         {

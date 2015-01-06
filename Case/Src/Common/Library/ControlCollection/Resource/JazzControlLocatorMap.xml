@@ -61,6 +61,7 @@
             <add key="ButtonNavigatorTagSettingsP" value="st-menu-ptagmgr" type="ID"/>
             <add key="ButtonNavigatorTagSettingsV" value="st-menu-vtagmgr" type="ID"/>
             <add key="ButtonNavigatorTagSettingsKPI" value="st-menu-kpimgr" type="ID"/>
+            <add key="ButtonNavigatorAbnormalRecord" value="st-menu-veeexception" type="ID"/>
             <add key="ButtonNavigatorHierarchySettingsHierarchy" value="st-menu-hierarchy" type="ID"/>
             <add key="ButtonNavigatorHierarchySettingsSystemDimension" value="st-menu-systemdimension" type="ID"/>
             <add key="ButtonNavigatorHierarchySettingsAreaDimension" value="st-menu-areadimension" type="ID"/>
@@ -284,6 +285,21 @@
               <add key="ButtonPTagRawDataRight" value="//div[contains(@id,'rawdatachartpanel') and contains(@id,'targetEl')]/div[contains(@class,'container')]/div[2]/em/button" type="XPath"/>
              
           </ptagrawdata>
+           <veerawdata>
+              <add key="ButtonVEERawDataSave" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+              <add key="ButtonVEERawDataCancel" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+              <add key="ButtonVEEBatchOperation" value="//div[contains(@id,'rawdatapanel')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.BatchOperation']]" type="XPath"/>
+              <add key="ButtonVEEBatchModify" value="//div[contains(@id,'menu')]//a[contains(@id,'menuitem')]/span[text()='$@Common.Button.BatchModify']" type="XPath"/>
+              <add key="ButtonVEEBatchRevert" value="//div[contains(@id,'menu')]//a[contains(@id,'menuitem')]/span[text()='$@Common.Button.BatchRevert']" type="XPath"/>
+              <add key="ButtonVEEBatchIgnore" value="//div[contains(@id,'menu')]//a[contains(@id,'menuitem')]/span[text()='$@Common.Button.BatchIgnore']" type="XPath"/>
+              <add key="ButtonVEERawDataSaveAndSwitch" value="//div[contains(@class,'x-toolbar-footer-docked-bottom')]/div/div/div[2]/em/button" type="XPath"/>
+              <add key="ButtonVEERawDataDirectlySwitch" value="//div[contains(@class,'x-toolbar-footer-docked-bottom')]/div/div/div[3]/em/button" type="XPath"/>
+              <add key="ButtonVEERawDataCancelSwitch" value="//img[@class='x-tool-close']" type="XPath"/>
+              <add key="ButtonVEERawDataSwitchDifferenceValue" value="//span[@id='accumulate_button' and @class='x-column-header-inner-button']" type="XPath"/>
+              <add key="ButtonVEERawDataSwitchOriginalValue" value="//span[@id='difference_button' and @class='x-column-header-inner-button']" type="XPath"/>
+              <add key="ButtonVEERawDataLeft" value="//div[contains(@id,'panel') and contains(@id,'targetEl')]/div[contains(@class,'container')]/div[1]/em/button" type="XPath"/>
+              <add key="ButtonVEERawDataRight" value="//div[contains(@id,'panel') and contains(@id,'targetEl')]/div[contains(@class,'container')]/div[2]/em/button" type="XPath"/>          
+          </veerawdata>
           <vtag>
               <add key="TabButtonVTagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
               <!--text in this xpath need to be changed to a language variable-->
@@ -646,6 +662,9 @@ CommentTextField
                          
               <add key="TextFieldPtagRawDataValue" value="//input[@name='DataValue']" type="XPath"/>
           </ptagrawdata>
+          <veerawdata>                      
+              <add key="TextFieldVEERawDataValue" value="//input[@name='DataValue']" type="XPath"/>
+          </veerawdata>
           <vtagsettings>
               <add key="TextFieldVTagSettingsName" value="//div[@id='st-vtag-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
               <add key="TextFieldVTagSettingsCode" value="//div[@id='st-vtag-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
@@ -821,6 +840,11 @@ CommentTextField
             <add key="ComboBoxPTagRawDataStartTime" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]//table[2]//table[contains(@id,'combobox')]" type="XPath"/>
             <add key="ComboBoxPTagRawDataEndTime" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]//table[4]//table[contains(@id,'combobox')]" type="XPath"/>
           </ptagrawdata>
+          <veerawdata>
+            <add key="ComboBoxVEERawDataStartTime" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]//table[2]//table[contains(@id,'combobox')]" type="XPath"/>
+            <add key="ComboBoxVEERawDataEndTime" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]//table[4]//table[contains(@id,'combobox')]" type="XPath"/>
+            <add key="ComboBoxVEEBatchOperation" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]//table[4]//table[contains(@id,'combobox')]" type="XPath"/>
+          </veerawdata>
     <CustomizedLabellingSetting>
               <add key="CustomizedLabellingCommodity" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
               <add key="CustomizedLabellingUom" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
@@ -978,8 +1002,10 @@ CommentTextField
       <add key="GridKPITagSettingsKPITagList" value="st-kpi-grid" type="ID"/>
       <add key="GridAssociationTagList" value="//div[@id='st-tag-assoc-form-body']//div[contains(@class,'x-grid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
+      <add key="GridAbnormalRecordList" value="st-veerecord-grid" type="ID"/>
       <add key="GridCustomizedLabellingList" value="st-customized-labeling-grid" type="ID"/>
       <add key="GridPTagRawData" value="//div[contains(@id,'rawdatagridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
+      <add key="GridVEERawData" value="//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     </customersettings>
     
     <platformsettings>
@@ -1037,6 +1063,10 @@ CommentTextField
         <add key="DatePickerPTagRawDataStartDate" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
         <add key="DatePickerPTagRawDataEndDate" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
       </ptagrawdata>
+      <veerawdata>
+        <add key="DatePickerVEERawDataStartDate" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+        <add key="DatePickerVEERawDataEndDate" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+      </veerawdata>
     </CustomerSettings>
     <PlatformSettings>
       <customermanagement>
@@ -1208,6 +1238,7 @@ CommentTextField
     <add key="ChartSuperWidget" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../../../../../self::node()/div[contains(@class,'x-widget-body-default')]//div[@class='highcharts-container']" type="XPath"/>
     <add key="ChartMaxWidgetLabelling" value="//div[contains(@id,'widgetmaxwindow')]//div[contains(@id, 'labelingchartpanel') and contains(@class, 'x-panel-body-default')]/div[contains(@id, 'container')]" type="XPath"/>
     <add key="ChartPTagRawData" value="//div[contains(@id,'linechartcomponent')]" type="XPath"/>
+    <add key="ChartVEERawData" value="//div[contains(@id,'mixedtrendchartcomponent')]" type="XPath"/>
   </Chart>
   <!--Chart End-->
 

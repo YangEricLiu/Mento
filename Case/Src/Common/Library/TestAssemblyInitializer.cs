@@ -39,11 +39,9 @@ namespace Mento.ScriptCommon.Library
         public static void InitializeWithOption(string userName, string passWord, string customer)
         {
             InitializeExecutionContext();
-
             JazzBrowseManager.OpenJazz();
-
+            JazzMessageBox.LoadingMask.WaitLoading();
             JazzFunction.LoginPage.LoginWithOption(userName, passWord, customer);
-
             // Ali pop window 
         }
 

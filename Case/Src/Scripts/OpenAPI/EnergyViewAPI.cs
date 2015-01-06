@@ -36,8 +36,8 @@ namespace Mento.Script.OpenAPI
 
         private static string appKey = "2spry01f9atshr08nljq21it";
         private static string secret = "ThDhX8hX0MccCNEGgUHI89KK7gFg=";
-        private static string pathTestCase = @"D:\Blues Building Mobile Service API Test Cases.xlsx";
-        private static string pathCaseResult = @"D:\Blues Building Mobile Service API Test Cases-R.xlsx";
+        private static string pathTestCase = @"E:\OpenApi Test Cases_1.8.0.0.xlsx";
+        private static string pathCaseResult = @"E:\OpenApi Test Cases_1.8.0.0_Result.xlsx";
 
         //[Test]
         //[MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]

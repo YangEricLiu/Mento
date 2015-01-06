@@ -90,6 +90,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region VEE RawData
+
+        public static TextField VEERawDataValueTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldVEERawDataValue); } }
+
+        #endregion
+
         #region VTag settings
         public static TextField VTagSettingsNameTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldVTagSettingsName); }}
         public static TextField VTagSettingscodeTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldVTagSettingsCode); }}

@@ -25,7 +25,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             try
             {
-                ElementHandler.Wait(LoadingLocator, WaitType.ToAppear, timeout: maxtime <= 0 ? 1 : maxtime);
+                ElementHandler.Wait(LoadingLocator, WaitType.ToAppear, timeout: maxtime <= 0 ? 10 : maxtime);
 
                 TimeManager.ShortPause();
 

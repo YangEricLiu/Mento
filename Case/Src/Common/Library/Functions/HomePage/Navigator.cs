@@ -136,6 +136,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.TagSettingsP, new NavigatorItem(NavigationTarget.TagSettingsP,NavigationTarget.TagSettings,JazzButton.NavigatorTagSettingsPButton)},
             {NavigationTarget.TagSettingsV, new NavigatorItem(NavigationTarget.TagSettingsV,NavigationTarget.TagSettings,JazzButton.NavigatorTagSettingsVButton)},
             {NavigationTarget.TagSettingsKPI, new NavigatorItem(NavigationTarget.TagSettingsKPI, NavigationTarget.TagSettings,JazzButton.NavigatorTagSettingsKPIButton)},
+            {NavigationTarget.AbnormalRecord, new NavigatorItem(NavigationTarget.AbnormalRecord,NavigationTarget.TagSettings,JazzButton.NavigatorAbnormalRecordButton)},
             //--Hierarchy
             {NavigationTarget.HierarchySettingsHierarchy, new NavigatorItem(NavigationTarget.HierarchySettingsHierarchy, NavigationTarget.HierarchySettings,JazzButton.NavigatorHierarchySettingsHierarchyButton)},
             {NavigationTarget.HierarchySettingsSystemDimension, new NavigatorItem(NavigationTarget.HierarchySettingsSystemDimension,NavigationTarget.HierarchySettings,JazzButton.NavigatorHierarchySettingsSystemDimensionButton)},
@@ -228,6 +229,7 @@ namespace Mento.ScriptCommon.Library.Functions
         TagSettingsP = 22,
         TagSettingsV = 23,
         TagSettingsKPI = 24,
+        AbnormalRecord = 32,
         //--Hierarchy
         HierarchySettingsHierarchy = 25,
         HierarchySettingsSystemDimension = 26,

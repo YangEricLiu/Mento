@@ -550,6 +550,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTagSettingsKPI);}
         }//{NavigationTarget.TagSettingsKPI, new NavigatorItem(NavigationTarget.TagSettingsKPI, NavigationTarget.TagSettings,"st-menu-kpimgr-btnEl",ByType.ID)},
+        public static Button NavigatorAbnormalRecordButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAbnormalRecord); }
+        }
         //--Hierarchy
         public static Button NavigatorHierarchySettingsHierarchyButton 
         {
@@ -838,6 +842,63 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button PTagRawDataRightButton 
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonPTagRawDataRight);}
+        }
+
+        #endregion
+
+        #region VEE buttons
+
+        public static Button VEERawDataSaveButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERawDataSave); }
+        }
+        public static Button VEERawDataCancelButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERawDataCancel); }
+        }
+        public static Button VEEBatchOperationButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEEBatchOperation); }
+        }
+        public static MenuButton VEEBatchModifyButton
+        {
+            get { return GetControl<MenuButton>(JazzControlLocatorKey.ButtonVEEBatchOperation); }
+        }
+        public static MenuButton VEEBatchRevertButton
+        {
+            get { return GetControl<MenuButton>(JazzControlLocatorKey.ButtonVEEBatchOperation); }
+        }
+        public static MenuButton VEEBatchIgnoreButton
+        {
+            get { return GetControl<MenuButton>(JazzControlLocatorKey.ButtonVEEBatchOperation); }
+        }
+        public static Button VEERawDataSaveAndSwitchButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERawDataSaveAndSwitch); }
+        }
+        public static Button VEERawDataDirectlySwitchButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERawDataDirectlySwitch); }
+        }
+        public static Button VEERawDataCancelSwitchButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERawDataCancelSwitch); }
+        }
+        public static Button VEERawDataSwitchDifferenceValueButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERawDataSwitchDifferenceValue); }
+        }
+        public static Button VEERawDataSwitchOriginalValueButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERawDataSwitchOriginalValue); }
+        }
+        public static Button VEERawDataLeftButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERawDataLeft); }
+        }
+        public static Button VEERawDataRightButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERawDataRight); }
         }
 
         #endregion

@@ -68,6 +68,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorTagSettingsP = "ButtonNavigatorTagSettingsP";
         public static string ButtonNavigatorTagSettingsV = "ButtonNavigatorTagSettingsV";
         public static string ButtonNavigatorTagSettingsKPI = "ButtonNavigatorTagSettingsKPI";
+        public static string ButtonNavigatorAbnormalRecord = "ButtonNavigatorAbnormalRecord";
         public static string ButtonNavigatorHierarchySettingsHierarchy = "ButtonNavigatorHierarchySettingsHierarchy";
         public static string ButtonNavigatorHierarchySettingsSystemDimension = "ButtonNavigatorHierarchySettingsSystemDimension";
         public static string ButtonNavigatorHierarchySettingsAreaDimension = "ButtonNavigatorHierarchySettingsAreaDimension";
@@ -233,6 +234,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region customersettings
+
         #region ptag
         public static string ButtonPTagSettingsCreatePTag = "ButtonPTagSettingsCreatePTag";
         public static string ButtonPTagSettingsSave = "ButtonPTagSettingsSave";
@@ -251,6 +253,22 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonPTagRawDataLeft = "ButtonPTagRawDataLeft";
         public static string ButtonPTagRawDataRight = "ButtonPTagRawDataRight";
 
+        #endregion
+
+        #region vee
+        public static string ButtonVEERawDataSave = "ButtonVEERawDataSave";
+        public static string ButtonVEERawDataCancel = "ButtonVEERawDataCancel";
+        public static string ButtonVEEBatchOperation = "ButtonVEEBatchOperation";
+        public static string ButtonVEEBatchModify = "ButtonVEEBatchModify";
+        public static string ButtonVEEBatchRevert = "ButtonVEEBatchRevert";
+        public static string ButtonVEEBatchIgnore = "ButtonVEEBatchIgnore";
+        public static string ButtonVEERawDataSaveAndSwitch = "ButtonVEERawDataSaveAndSwitch";
+        public static string ButtonVEERawDataDirectlySwitch = "ButtonVEERawDataDirectlySwitch";
+        public static string ButtonVEERawDataCancelSwitch = "ButtonVEERawDataCancelSwitch";
+        public static string ButtonVEERawDataSwitchDifferenceValue = "ButtonVEERawDataSwitchDifferenceValue";
+        public static string ButtonVEERawDataSwitchOriginalValue = "ButtonVEERawDataSwitchOriginalValue";
+        public static string ButtonVEERawDataLeft = "ButtonVEERawDataLeft";
+        public static string ButtonVEERawDataRight = "ButtonVEERawDataRight";
         #endregion
 
         #region vtag
@@ -678,6 +696,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldPtagRawDataValue = "TextFieldPtagRawDataValue";
         #endregion
 
+        #region veerawdata
+
+        public static string TextFieldVEERawDataValue = "TextFieldVEERawDataValue";
+        #endregion
+
         #region vtagsettings
         public static string TextFieldVTagSettingsName = "TextFieldVTagSettingsName";
         public static string TextFieldVTagSettingsCode = "TextFieldVTagSettingsCode";
@@ -879,6 +902,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxPTagRawDataEndTime = "ComboBoxPTagRawDataEndTime";
         #endregion
 
+        #region veerawdata
+        public static string ComboBoxVEERawDataStartTime = "ComboBoxVEERawDataStartTime";
+        public static string ComboBoxVEERawDataEndTime = "ComboBoxVEERawDataEndTime";
+        public static string ComboBoxVEEBatchOperation = "ComboBoxVEEBatchOperation";
+        #endregion
+
         #endregion
 
         #region platformsettings
@@ -1065,8 +1094,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridKPITagSettingsKPITagList = "GridKPITagSettingsKPITagList";
         public static string GridAssociationTagList = "GridAssociationTagList";
         public static string GridPTagSettingsPTagList = "GridPTagSettingsPTagList";
+        public static string GridAbnormalRecordList = "GridAbnormalRecordList";
         public static string GridCustomizedLabellingList = "GridCustomizedLabellingList";
         public static string GridPTagRawData = "GridPTagRawData";
+        public static string GridVEERawData = "GridVEERawData";
         #endregion
 
         #region platformsettings
@@ -1133,6 +1164,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region PTagRawData
         public static string DatePickerPTagRawDataStartDate = "DatePickerPTagRawDataStartDate";
         public static string DatePickerPTagRawDataEndDate = "DatePickerPTagRawDataEndDate";
+        #endregion
+
+        #region VEERawData
+        public static string DatePickerVEERawDataStartDate = "DatePickerVEERawDataStartDate";
+        public static string DatePickerVEERawDataEndDate = "DatePickerVEERawDataEndDate";
         #endregion
 
         #endregion
@@ -1312,6 +1348,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ChartSuperWidget = "ChartSuperWidget";
         public static string ChartMaxWidgetLabelling = "ChartMaxWidgetLabelling";
         public static string ChartPTagRawData = "ChartPTagRawData";
+        public static string ChartVEERawData = "ChartVEERawData";
         #endregion
 
         #region Window

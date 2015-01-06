@@ -58,17 +58,9 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
            
             //Click Left button
             PTagRawData.ClickLeftButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             TimeManager.LongPause();
             
             //Verify new Start Time is 04/06 00:00 and End time is 04/10 24:00..
@@ -84,17 +76,9 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
 
             //Click Right button
             PTagRawData.ClickRightButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             TimeManager.LongPause();
 
             //Verify new Start Time is 04/16 00:00 and End time is 04/20 24:00.
@@ -122,10 +106,6 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
 
             //Display the raw data info in selected time range
             Assert.AreEqual(ManualTimeRange[0].StartDate, PTagRawData.GetBaseStartDateValue());
@@ -137,10 +117,6 @@ namespace Mento.Script.Customer.TagManagement
             //After change Start Time to 04/06 10:00, the End Time should be changed to 04/13 10:00.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             TimeManager.LongPause();
 
             //Display the raw data info in selected time range
@@ -154,10 +130,6 @@ namespace Mento.Script.Customer.TagManagement
             //(1999-12-31 23:00 ~ 2050-01-01 01:00)
             PTagRawData.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             TimeManager.LongPause();
 
             //The time controller for smaller than 2000-01-01 00:00 and larger than 2049-12-31 24:00 is not available for Start time
@@ -175,8 +147,6 @@ namespace Mento.Script.Customer.TagManagement
             //Navigate to Raw Data tab
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
             PTagRawData.SwitchToRawDataTab();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             TimeManager.LongPause();
 
             //Ensure that missed records will be filled for displaying with TimeStamp is "Filled value based on selected type", Value is Null and Status is Null
@@ -204,10 +174,6 @@ namespace Mento.Script.Customer.TagManagement
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
 
             //Click the 1&2 row and input two valid modified value.
             PTagRawDataGrid.FocusOnCell(2);
@@ -225,17 +191,13 @@ namespace Mento.Script.Customer.TagManagement
 
             //Switch to Difference Value and display them in both Line Chart and Grid View. 
             PTagRawData.ClickSwitchDifferenceValueButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();                              
-            Assert.AreEqual("12", PTagRawDataGrid.GetCellValue(2));
+            TimeManager.LongPause();                             
+            Assert.AreEqual("12", PTagRawDataGrid.GetCellValue(3));
             
             //Click Switch button it is Difference Value now.  
             PTagRawData.ClickSwitchOriginalValueButton();
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            Assert.AreEqual("10", PTagRawDataGrid.GetCellValue(2));
+            Assert.AreEqual("10", PTagRawDataGrid.GetCellValue(3));
         }
 
         [Test]
@@ -249,8 +211,6 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.LongPause();
             PTagRawData.SwitchToRawDataTab();
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             //The UOM display with KWH is grid view.
             Assert.AreEqual(PTagRawDataGrid.GetUomInRawDataGrid(), input.InputData.Uoms[0]);
             TimeManager.LongPause();
@@ -258,8 +218,6 @@ namespace Mento.Script.Customer.TagManagement
             //Select another tag that UOM is ton.
             PTagSettings.FocusOnPTagByName("Ptag_LR_Coal1");
             PTagRawData.SwitchToRawDataTab();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             TimeManager.LongPause();
 
             //The UOM display with Ton accordingly.

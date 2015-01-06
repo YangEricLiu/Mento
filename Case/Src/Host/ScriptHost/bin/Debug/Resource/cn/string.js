@@ -774,6 +774,10 @@ I18N.Common.Button.Send = '发送';
 I18N.Common.Button.Confirmed = '已确认';
 I18N.Common.Button.ChangeRecord = '修改记录';
 I18N.Common.Button.Originaldata = '原始数据';
+I18N.Common.Button.BatchOperation = '批量操作';
+I18N.Common.Button.BatchModify = '修改';
+I18N.Common.Button.BatchRevert = '修改撤回';
+I18N.Common.Button.BatchIgnore = '忽略';
 
 I18N.Common.Operation.ResetZoom = '取消放大/缩小';
 I18N.Common.Operation.ResetZoom1vs1 = '缩放至1:1';

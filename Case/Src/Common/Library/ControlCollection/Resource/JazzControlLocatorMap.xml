@@ -298,7 +298,17 @@
               <add key="ButtonVEERawDataSwitchDifferenceValue" value="//span[@id='accumulate_button' and @class='x-column-header-inner-button']" type="XPath"/>
               <add key="ButtonVEERawDataSwitchOriginalValue" value="//span[@id='difference_button' and @class='x-column-header-inner-button']" type="XPath"/>
               <add key="ButtonVEERawDataLeft" value="//div[contains(@id,'panel') and contains(@id,'targetEl')]/div[contains(@class,'container')]/div[1]/em/button" type="XPath"/>
-              <add key="ButtonVEERawDataRight" value="//div[contains(@id,'panel') and contains(@id,'targetEl')]/div[contains(@class,'container')]/div[2]/em/button" type="XPath"/>          
+              <add key="ButtonVEERawDataRight" value="//div[contains(@id,'panel') and contains(@id,'targetEl')]/div[contains(@class,'container')]/div[2]/em/button" type="XPath"/>    
+              
+              <add key="ButtonVEEAllData" value="//div[contains(@id,'batchmodifywindow')]//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.Radio.VEEAllData']]/input" type="XPath"/>
+              <add key="ButtonVEEAbnormal" value="//div[contains(@id,'batchmodifywindow')]//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.Radio.VEEAbnormal']]/input" type="XPath"/>          
+              <add key="ButtonVEEModifyValue" value="//div[contains(@id,'batchmodifywindow')]//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.Radio.VEEModifyValue']]/input" type="XPath"/>
+              <add key="ButtonVEEBackfillSource" value="//div[contains(@id,'batchmodifywindow')]//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.Radio.VEEBackfillSource']]/input" type="XPath"/>          
+              <add key="ButtonBatchModifyModifyAndSave" value="//div[contains(@id,'batchmodifywindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.ModifyAndSave']]" type="XPath"/>
+              <add key="ButtonBatchModifyGiveup" value="//div[contains(@id,'batchmodifywindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.BatchModifyGiveup']]" type="XPath"/> 
+              <add key="ButtonBatchModifyClose" value="//div[contains(@id,'batchmodifywindow')]/div[contains(@class,'x-tool') and img[contains(@id,'tool')]]" type="XPath"/>
+              <add key="ButtonMsgBatchModifyModifyAndSave" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.ModifyAndSave']]" type="XPath"/>
+              <add key="ButtonMsgBatchModifyGiveup" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.BatchModifyGiveup']]" type="XPath"/>
           </veerawdata>
           <vtag>
               <add key="TabButtonVTagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
@@ -664,6 +674,7 @@ CommentTextField
           </ptagrawdata>
           <veerawdata>                      
               <add key="TextFieldVEERawDataValue" value="//input[@name='DataValue']" type="XPath"/>
+              <add key="TextFieldBackfillValue" value="//input[@name='correctionValueInput']" type="XPath"/>
           </veerawdata>
           <vtagsettings>
               <add key="TextFieldVTagSettingsName" value="//div[@id='st-vtag-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
@@ -844,6 +855,9 @@ CommentTextField
             <add key="ComboBoxVEERawDataStartTime" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]//table[2]//table[contains(@id,'combobox')]" type="XPath"/>
             <add key="ComboBoxVEERawDataEndTime" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]//table[4]//table[contains(@id,'combobox')]" type="XPath"/>
             <add key="ComboBoxVEEBatchOperation" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]//table[4]//table[contains(@id,'combobox')]" type="XPath"/>
+            <add key="ComboBoxBatchModifyStartTime" value="//div[contains(@id,'batchmodifywindow')]/div[contains(@id,'dateselector')]/table[2]//table[contains(@id,'combobox')]" type="XPath"/>
+            <add key="ComboBoxBatchModifyEndTime" value="//div[contains(@id,'batchmodifywindow')]/div[contains(@id,'dateselector')]/table[4]//table[contains(@id,'combobox')]" type="XPath"/>
+            <add key="ComboBoxBatchModifyEndTime" value="//div[contains(@id,'batchmodifywindow')]/table[contains(@id,'radiogroup')]//table[contains(@id,'combobox')]//table[contains(@id,'combobox') and contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
           </veerawdata>
     <CustomizedLabellingSetting>
               <add key="CustomizedLabellingCommodity" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
@@ -1066,6 +1080,9 @@ CommentTextField
       <veerawdata>
         <add key="DatePickerVEERawDataStartDate" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]/table[1]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
         <add key="DatePickerVEERawDataEndDate" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'datefield')]]" type="XPath"/>
+        <add key="DatePickerBatchModifyStartDate" value="//div[contains(@id,'batchmodifywindow')]/div[contains(@id,'dateselector')]/table[1]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="DatePickerBatchModifyEndDate" value="//div[contains(@id,'batchmodifywindow')]/div[contains(@id,'dateselector')]/table[3]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+        <add key="DatePickerBackfillSource" value="//div[contains(@id,'batchmodifywindow')]/table[contains(@id,'radiogroup')]//table[contains(@id,'datefield')]//table[contains(@id,'datefield') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
       </veerawdata>
     </CustomerSettings>
     <PlatformSettings>
@@ -1115,6 +1132,7 @@ CommentTextField
 
     <add key="CheckBoxBenchMark" value="//div[@id='st-benchmark-properties-form-targetEl']//table[contains(@id,'checkboxfield')]" type="XPath"/>
     <add key="CheckBoxPtagIsAccumulated" value="//div[@id='st-ptag-form-body']/table[contains(@id,'checkboxfield')]" type="XPath"/>
+    <add key="CheckBoxBatchModifyAbnormalType" value="//div[contains(@id,'batchmodifywindow']/table[contains(@id,'checkboxgroup')]" type="XPath"/>
     <add key="CheckBoxWidgetTemplateTable" value="//div[@id='db-wt-item-targetaction-innerCt']/table[contains(@id,'checkboxfield')]" type="XPath"/>
    </CheckBox>
   <!--CheckBoxField End-->

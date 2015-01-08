@@ -94,6 +94,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static TextField VEERawDataValueTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldVEERawDataValue); } }
 
+        public static TextField BackfillValueTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldBackfillValue); } }
+
         #endregion
 
         #region VTag settings

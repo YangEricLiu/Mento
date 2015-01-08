@@ -44,6 +44,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region VEE RawData
         public static DatePicker VEERawDataStartDateDatePicker { get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerPTagRawDataStartDate); } }
         public static DatePicker VEERawDataEndDateDatePicker { get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerPTagRawDataEndDate); } }
+
+        public static DatePicker BatchModifyStartDatePicker { get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerBatchModifyStartDate); } }
+        public static DatePicker BatchModifyEndDatePicker { get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerBatchModifyEndDate); } }
+        public static DatePicker BackfillSourceDatePicker { get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerBackfillSource); } }
         #endregion
 
         #endregion

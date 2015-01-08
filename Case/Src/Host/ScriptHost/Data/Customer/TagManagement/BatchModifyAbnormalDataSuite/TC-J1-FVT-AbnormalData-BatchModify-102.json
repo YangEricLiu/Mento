@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"TagNames":["cathy1","lindaTestNull"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2014-12-30",
+				"StartTime":"00:00",
+				"EndDate":"2014-12-30",	
+				"EndTime":"24:00",		
+			}],
+		},
+		"ExpectedData":
+		{
+
+		}
+	}
+]

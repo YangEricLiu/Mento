@@ -658,6 +658,18 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static BatchModifyDialog _BatchModifyDialog;
+        public static BatchModifyDialog BatchModifyDialog
+        {
+            get
+            {
+                if (_BatchModifyDialog == null)
+                    _BatchModifyDialog = new BatchModifyDialog();
+
+                return _BatchModifyDialog;
+            }
+        }
+
         private static WidgetMaxChartDialog _WidgetMaxChartDialog;
         public static WidgetMaxChartDialog WidgetMaxChartDialog
         {

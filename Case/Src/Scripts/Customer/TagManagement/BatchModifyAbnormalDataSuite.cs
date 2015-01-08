@@ -27,6 +27,15 @@ namespace Mento.Script.Customer.TagManagement
         private AbnormalData AbnormalData = JazzFunction.AbnormalData;
         private static Grid VEERawDataGrid = JazzGrid.GridVEERawData;
         private static TextField VEERawDataValueNumberField = JazzTextField.VEERawDataValueTextField;
+        private static BatchModifyDialog BatchModifyDialog = JazzFunction.BatchModifyDialog;
+
+        private static RadioButton VEEAllDataRadioButton = JazzButton.VEEAllDataRadioButton;
+        private static RadioButton VEEAbnormalRadioButton = JazzButton.VEEAbnormalRadioButton;
+        private static RadioButton VEEModifyValueRadioButton = JazzButton.VEEModifyValueRadioButton;
+        private static RadioButton VEEBackfillSourceRadioButton = JazzButton.VEEBackfillSourceRadioButton;
+
+        private PTagSettings PTagSettings = JazzFunction.PTagSettings;
+        private PTagRawData PTagRawData = JazzFunction.PTagRawData;
 
         [SetUp]
         public void CaseSetUp()
@@ -42,7 +51,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-101")]
+        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-101"), ManualCaseID("TC-J1-FVT-AbnormalData-BatchModify-101")]
         [Type("FVT")]
         [MultipleTestDataSource(typeof(AbnormalRecordData[]), typeof(BatchModifyAbnormalDataSuite), "TC-J1-FVT-AbnormalData-BatchModify-101")]
         public void ModifyAndSaveViaSaveButtonAboveLineChart(AbnormalRecordData input)
@@ -58,399 +67,594 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.FlashPause();
 
             //Check .Pop up a dropdown list with ”修改“,”修改撤回“,”忽略“.
-            AbnormalData.IsExisted(input.InputData.TestData[0]);
-            AbnormalData.IsExisted(input.InputData.TestData[1]);
-            AbnormalData.IsExisted(input.InputData.TestData[2]);
+            AbnormalData.IsExisted(JazzControlLocatorKey.ButtonVEEBatchModify);
+            AbnormalData.IsExisted(JazzControlLocatorKey.ButtonVEEBatchRevert);
+            AbnormalData.IsExisted(JazzControlLocatorKey.ButtonVEEBatchIgnore);
 
             //Select 修改 item.
             AbnormalData.ClickBatchModifyButton();
             TimeManager.FlashPause();
 
-            //
-            //Navigate to Raw Data tab
-            AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.ShortPause();
+            //Check.Pop up a window name as "原始数据批量修改".
+            Assert.AreEqual(input.InputData.TestData[3], BatchModifyDialog.GetTitle());
 
-            //Set time range = 2014年01月01日00点00分-2014年1月7日24点00分
+            //Check .TagA and tagB can be display in 已选源 part.
+
+            //Check ."All data" is choose as default for "Abnormal type" and "Abnormal data record" radio button bottom can not list 5 checkboxs.
+            Assert.IsTrue(VEEAllDataRadioButton.IsRadioButtonChecked());
+            Assert.IsFalse(VEEAbnormalRadioButton.IsRadioButtonChecked());
+
+            //Check .Backfill source display blank as default.
+            Assert.IsTrue(VEEModifyValueRadioButton.IsRadioButtonChecked());
+            Assert.AreEqual(" ", BatchModifyDialog.GetBackfillValue());
+
+            //Choose a time range, such as 2014-1-1 00：00 to 2014-1-2 00：00
             var ManualTimeRange = input.InputData.ManualTimeRange;
+            BatchModifyDialog.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            BatchModifyDialog.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
+
+            //Check The time can be select success.
+            Assert.AreEqual(ManualTimeRange[0].StartDate, BatchModifyDialog.GetStartDateValue());
+            Assert.AreEqual(ManualTimeRange[0].EndDate, BatchModifyDialog.GetEndDateValue());
+            Assert.AreEqual(ManualTimeRange[0].StartTime, BatchModifyDialog.GetStartTimeValue());
+            Assert.AreEqual(ManualTimeRange[0].EndTime, BatchModifyDialog.GetStartTimeValue());
+
+            //Add modify value of 5 to input text field among "modify rule".
+            BatchModifyDialog.FillInModifyValueTextField("5");
+
+            //Click "modifyandsave"button.
+            BatchModifyDialog.ClickModifyAndSaveButton();
+            TimeManager.ShortPause();
+            BatchModifyDialog.ClickMessageBoxModifyAndSaveButton();
+            TimeManager.LongPause();
+
+            //Check the abnormal record.
             AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
 
-            //Check the line chart and rawdata grid exist
-            Assert.IsTrue(AbnormalData.IsExisted(JazzControlLocatorKey.ChartVEERawData));
-            Assert.IsTrue(AbnormalData.IsExisted(JazzControlLocatorKey.GridVEERawData));
-
-            //Click the first row (2014年01月01日00点00分-00点15分), and input a valid modified value.
-            VEERawDataGrid.FocusOnCell(3);
-            TimeManager.LongPause();
-            VEERawDataValueNumberField.Fill("1");
+            //+The backfill value is difference value, so should check the difference value
+            AbnormalData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
 
-            //Click another row (The second row:2014年01月01日00点15分-00点30分), and input a valid modified value.
-            VEERawDataGrid.FocusOnCell(4);
-            TimeManager.LongPause();
-            VEERawDataValueNumberField.Fill("2");
-            TimeManager.LongPause();
-            VEERawDataGrid.FocusOnCell(5);
-            TimeManager.LongPause();
-
-            //Click "Save" button
-            AbnormalData.ClickSaveRawDataButton();
-            TimeManager.LongPause();
-
-            //Verify the value 
-            Assert.AreEqual("1", VEERawDataGrid.GetCellValue(3));
-            Assert.AreEqual("2", VEERawDataGrid.GetCellValue(4));
-
-            //Verify if the relevant Status fields as Modified.
-            Assert.AreEqual(input.InputData.Comments, VEERawDataGrid.GetCellStatus(3));
-            Assert.AreEqual(input.InputData.Comments, VEERawDataGrid.GetCellStatus(4));
-
+            //+check record number is hours of time range * 4 
+            for(int i = 0; i < 4; i++)
+            {
+                VEERawDataGrid.FocusOnCell(i + 3);
+                TimeManager.MediumPause();
+                Assert.AreEqual("5", VEERawDataValueNumberField.GetValue());
+            }
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-102")]
+        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-102"), ManualCaseID("TC-J1-FVT-AbnormalData-BatchModify-102")]
         [Type("FVT")]
         [MultipleTestDataSource(typeof(AbnormalRecordData[]), typeof(BatchModifyAbnormalDataSuite), "TC-J1-FVT-AbnormalData-BatchModify-102")]
-        public void SaveAndQueryWhenContainsNotSavedModifications(AbnormalRecordData input)
+        public void VerifyForVtagRawDataCannotModify(AbnormalRecordData input)
         {
-            //Navigate to Raw Data tab
+            //Click the checkbox of a record's time range that is Vtag.
             AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.ShortPause();
 
-            //Set time range = 2014年1月2日00点00分-2014年1月2日24点00分
-            var ManualTimeRange = input.InputData.ManualTimeRange;
-            AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
-            TimeManager.LongPause();
-
-            //Click a row and input a valid modified value.
-            VEERawDataGrid.FocusOnCell(5);
+            //Click the input text field in grid and input a value for modify,then click save button
+            VEERawDataGrid.FocusOnCell(3);
             TimeManager.LongPause();
             VEERawDataValueNumberField.Fill("3");
 
-            //Change Start Time or End Time with there is any modified field.
-            AbnormalData.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
+            AbnormalData.ClickSaveRawDataButton();
             TimeManager.LongPause();
 
-            //Click "Save and Switch" button in popup warning message with two options: Save and switch, Directly switch.
-            AbnormalData.ClickSaveAndSwitchButton();
+            //Verify the data cannot be modify success.
+            Assert.AreNotEqual("3", VEERawDataGrid.GetCellValue(3));
+
+            //Select some ptags and vtags in checkbox.
+            AbnormalData.CheckRecordsByTagName(input.InputData.TagNames[0]);
+            TimeManager.FlashPause();
+            AbnormalData.CheckRecordsByTagName(input.InputData.TagNames[1]);
+            TimeManager.FlashPause();
+
+            //Click 批量操作 button.
+            AbnormalData.ClickBatchOperationButton();
+            TimeManager.FlashPause();
+
+            //Select 修改 item.
+            AbnormalData.ClickBatchModifyButton();
+            TimeManager.FlashPause();
+
+            //Verify all ptags and vtags can be display proper in 已选源
+
+            //+Choose a time range, such as 2014-1-1 00：00 to 2014-1-2 00：00
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            BatchModifyDialog.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            BatchModifyDialog.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
 
-            //Save the unsaved modifications into database and then go ahead with querying data
-            Assert.AreEqual("3", VEERawDataGrid.GetCellValue(5));
+            //+Add modify value of 5 to input text field among "modify rule".
+            BatchModifyDialog.FillInModifyValueTextField("5");
 
+            //+Click "modifyandsave"button.
+            BatchModifyDialog.ClickModifyAndSaveButton();
+            TimeManager.ShortPause();
+            BatchModifyDialog.ClickMessageBoxModifyAndSaveButton();
+            TimeManager.LongPause();
+
+            //.Verify ptags can be modify success.
+            AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.ShortPause();
+            AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
+
+            //+The backfill value is difference value, so should check the difference value
+            AbnormalData.ClickSwitchDifferenceValueButton();
+            TimeManager.LongPause();
+
+            //+check record number is hours of time range * 4 
+            for (int i = 0; i < 4; i++)
+            {
+                VEERawDataGrid.FocusOnCell(i + 3);
+                TimeManager.MediumPause();
+                Assert.AreNotEqual("5", VEERawDataValueNumberField.GetValue());
+            }
+
+            //.Verify vtags value not change.
+            AbnormalData.FocusOnRecordByName(input.InputData.TagNames[1]);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.ShortPause();
+            AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
+
+            //+The backfill value is difference value, so should check the difference value
+            AbnormalData.ClickSwitchDifferenceValueButton();
+            TimeManager.LongPause();
+
+            //+check record number is hours of time range * 4 
+            for (int i = 0; i < 4; i++)
+            {
+                VEERawDataGrid.FocusOnCell(i + 3);
+                TimeManager.MediumPause();
+                Assert.AreEqual("5", VEERawDataValueNumberField.GetValue());
+            }
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-103")]
+        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-103"), ManualCaseID("TC-J1-FVT-AbnormalData-BatchModify-103")]
         [Type("FVT")]
         [MultipleTestDataSource(typeof(AbnormalRecordData[]), typeof(BatchModifyAbnormalDataSuite), "TC-J1-FVT-AbnormalData-BatchModify-103")]
-        public void QueryDirectlyWhenContainsNotSavedModifications(AbnormalRecordData input)
+        public void SingleModifyReplaceByBatchModify(AbnormalRecordData input)
         {
-            //Navigate to Raw Data tab
+            //Click the checkbox of a record's time range that is Ptag.
+            AbnormalData.CheckRecordsByTagName(input.InputData.TagNames[0]);
+            TimeManager.FlashPause();
             AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.ShortPause();
 
-            //Set time range = 2014年1月3日1点00分-2014年1月3日2点00分
+            //Modify time record is 2014-1-1 00:00-00:15
             var ManualTimeRange = input.InputData.ManualTimeRange;
             AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
 
-            //Click and input a valid modified value.
-            VEERawDataGrid.FocusOnCell(4);
+            //Click the input text field in grid and input a value 6 for modify without click save button
+            VEERawDataGrid.FocusOnCell(3);
             TimeManager.LongPause();
-            VEERawDataValueNumberField.Fill("4.4");
+            VEERawDataValueNumberField.Fill("6");
             TimeManager.LongPause();
 
-            //Change Start Time or End Time with there is any modified field.
-            AbnormalData.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
-            TimeManager.LongPause();
+            //Check .Value display in input text field
+            Assert.AreNotEqual("6", VEERawDataGrid.GetCellValue(3));
 
             //Click 'Directly switch' button
             AbnormalData.ClickDirectlySwitchButton();
             TimeManager.LongPause();
 
-            //Discard the unsaved modifications will keep the original value in those cell and go ahead with querying data directly
-            Assert.AreNotEqual("4.4", VEERawDataGrid.GetCellValue(4));
+            //Check some abnormal record's time ranges
+            AbnormalData.CheckRecordsByTagName(input.InputData.TagNames[1]);
+            TimeManager.FlashPause();
 
+            //Click 批量操作 button and select 修改 item.
+            AbnormalData.ClickBatchOperationButton();
+            TimeManager.FlashPause();
+            AbnormalData.ClickBatchModifyButton();
+            TimeManager.FlashPause();
+
+            //Make sure 2014-1-1 00:00-00:15 record is abnormal data
+            BatchModifyDialog.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            BatchModifyDialog.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
+
+            //Select time range for batch modify, click abnormal data for all data,click fixed value radio button and input value 5 for input field.
+            BatchModifyDialog.FillInModifyValueTextField("5");
+
+            //Click "修改并保存" button.
+            BatchModifyDialog.ClickModifyAndSaveButton();
+            TimeManager.ShortPause();
+            BatchModifyDialog.ClickMessageBoxModifyAndSaveButton();
+            TimeManager.LongPause();
+
+            //--------------------Need update data-------------------------
+            //Check 2014-1-1 00:00-00:15 value should be 5.
+            for (int j = 0; j < 2; j++ )
+            {
+                AbnormalData.FocusOnRecordByName(input.InputData.TagNames[j]);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.ShortPause();
+                AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+                AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+                TimeManager.LongPause();
+
+                //+The backfill value is difference value, so should check the difference value
+                AbnormalData.ClickSwitchDifferenceValueButton();
+                TimeManager.LongPause();
+
+                //+check record number is hours of time range * 4 
+                for (int i = 0; i < 4; i++)
+                {
+                    VEERawDataGrid.FocusOnCell(i + 3);
+                    TimeManager.MediumPause();
+                    Assert.AreEqual("5", VEERawDataValueNumberField.GetValue());
+                }
+            }
+                
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-104")]
+        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-104"), ManualCaseID("TC-J1-FVT-AbnormalData-BatchModify-104")]
         [Type("FVT")]
         [MultipleTestDataSource(typeof(AbnormalRecordData[]), typeof(BatchModifyAbnormalDataSuite), "TC-J1-FVT-AbnormalData-BatchModify-104")]
-        public void VerifyCloseButtonInSaveAndQueryAndQueryDirectlyWindow(AbnormalRecordData input)
+        public void VerifyAddDataAndAverageBackFillValueModifyRule(AbnormalRecordData input)
         {
-            //Navigate to Raw Data tab
+            //Click the checkbox of a record's time range that is Ptag.
+            AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            AbnormalData.CheckRecordsByTagName(input.InputData.TagNames[0]);
+            TimeManager.ShortPause();
+
+            //Click 批量操作 button and select 修改 item.
+            AbnormalData.ClickBatchOperationButton();
+            TimeManager.FlashPause();
+            AbnormalData.ClickBatchModifyButton();
+            TimeManager.FlashPause();
+
+            //Select time range for batch modify
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            BatchModifyDialog.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            BatchModifyDialog.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
+
+            //click abnormal data for "全部所选数据"//This select is by default
+            //click average backfill modify radio button and select a backfill source.
+            VEEBackfillSourceRadioButton.Click();
+            TimeManager.FlashPause();
+            BatchModifyDialog.InputBackfillSourceDate("2014-01-04");
+            BatchModifyDialog.InputBackfillSourceTime("00:45");
+
+            //Click "修改并保存" button.
+            BatchModifyDialog.ClickModifyAndSaveButton();
+            TimeManager.ShortPause();
+            BatchModifyDialog.ClickMessageBoxModifyAndSaveButton();
+            TimeManager.LongPause();
+
+            //-------------Need update data------------------
+            //.Verify all data in select time range canbe modify correct (include abnormal data and normal data) and the data not include in select time range cannot be modify success.
             AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.ShortPause();
-
-            //Set time range
-            var ManualTimeRange = input.InputData.ManualTimeRange;
             AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
 
-            //Click a row and input a valid modified value.
-            VEERawDataGrid.FocusOnCell(6);
-            TimeManager.LongPause();
-            VEERawDataValueNumberField.Fill("5");
-
-            //Change Start Time or End Time with there is any modified field. Click "Close" button in pop up dialog.
-            AbnormalData.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
-            TimeManager.LongPause();
-            AbnormalData.ClickCancelSwitchButton();
+            //+The backfill value is difference value, so should check the difference value
+            AbnormalData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
 
-            //The Save & QueryAndQueryDirectly Window can be closed correctly.The time will return to the prior without modification.
-            Assert.AreEqual(ManualTimeRange[0].StartDate, AbnormalData.GetBaseStartDateValue());
-            Assert.AreEqual(ManualTimeRange[0].EndDate, AbnormalData.GetBaseEndDateValue());
-            Assert.AreEqual(ManualTimeRange[0].StartTime, AbnormalData.GetBaseStartTimeValue());
-            Assert.AreEqual(ManualTimeRange[0].EndTime, AbnormalData.GetBaseEndTimeValue());
-
+            //+check record number is hours of time range * 4 
+            for (int i = 0; i < 4; i++)
+            {
+                VEERawDataGrid.FocusOnCell(i + 3);
+                TimeManager.MediumPause();
+                Assert.AreEqual("5", VEERawDataValueNumberField.GetValue());
+            }
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-105")]
+        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-105"), ManualCaseID("TC-J1-FVT-AbnormalData-BatchModify-105")]
         [Type("FVT")]
         [MultipleTestDataSource(typeof(AbnormalRecordData[]), typeof(BatchModifyAbnormalDataSuite), "TC-J1-FVT-AbnormalData-BatchModify-105")]
-        public void VerifyDifferenceValueNotEditable(AbnormalRecordData input)
+        public void VerifyNormalSpikeAbnormalSpkeAndFixedValueRule(AbnormalRecordData input)
         {
-            //Navigate to Raw Data tab
+            //Click the checkbox of a record's time range that is Ptag.
+            AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            AbnormalData.CheckRecordsByTagName(input.InputData.TagNames[0]);
+            TimeManager.ShortPause();
+
+            //Click 批量操作 button and select 修改 item.
+            AbnormalData.ClickBatchOperationButton();
+            TimeManager.FlashPause();
+            AbnormalData.ClickBatchModifyButton();
+            TimeManager.FlashPause();
+
+            //Select time range for batch modify
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            BatchModifyDialog.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            BatchModifyDialog.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
+
+            //click abnormal data for "异常数据" radio button
+            VEEAbnormalRadioButton.Click();
+            TimeManager.FlashPause();
+
+            //Select 正常峰，异常峰
+            BatchModifyDialog.CheckAbnormalTypeCheckBox(input.InputData.AbnormalTypes[0]);
+            TimeManager.FlashPause();
+            BatchModifyDialog.CheckAbnormalTypeCheckBox(input.InputData.AbnormalTypes[1]);
+            TimeManager.FlashPause();
+
+            //click fixed value radio button and input value 5 for input field.
+            BatchModifyDialog.FillInModifyValueTextField("5");
+
+            //Click "修改并保存" button.
+            BatchModifyDialog.ClickModifyAndSaveButton();
+            TimeManager.ShortPause();
+            BatchModifyDialog.ClickMessageBoxModifyAndSaveButton();
+            TimeManager.LongPause();
+
+            //Check Verify abnormal data can be modify to 5.
             AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.ShortPause();
+            AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
 
+            //+The backfill value is difference value, so should check the difference value
             AbnormalData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
-            Assert.AreEqual(false, VEERawDataGrid.IsCellEdit(4));
+
+            //+check record number is hours of time range * 4 
+            for (int i = 0; i < 4; i++)
+            {
+                VEERawDataGrid.FocusOnCell(i + 3);
+                TimeManager.MediumPause();
+                Assert.AreEqual("5", VEERawDataValueNumberField.GetValue());
+            }
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-106")]
+        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-106"), ManualCaseID("TC-J1-FVT-AbnormalData-BatchModify-106")]
         [Type("FVT")]
         [MultipleTestDataSource(typeof(AbnormalRecordData[]), typeof(BatchModifyAbnormalDataSuite), "TC-J1-FVT-AbnormalData-BatchModify-106")]
-        public void VerifyDifferenceValueChangedAccordinglyAfterOriginalValueModified(AbnormalRecordData input)
+        public void VerifyNullNegativeSpecialAndAverageBackFillRule(AbnormalRecordData input)
         {
-            //Navigate to Raw Data tab
+            //Click the checkbox of a record's time range that is Ptag.
+            AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            AbnormalData.CheckRecordsByTagName(input.InputData.TagNames[0]);
+            TimeManager.ShortPause();
+
+            //Click 批量操作 button and select 修改 item.
+            AbnormalData.ClickBatchOperationButton();
+            TimeManager.FlashPause();
+            AbnormalData.ClickBatchModifyButton();
+            TimeManager.FlashPause();
+
+            //Select time range for batch modify
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            BatchModifyDialog.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            BatchModifyDialog.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
+
+            //click abnormal data for "异常数据" radio button
+            VEEAbnormalRadioButton.Click();
+            TimeManager.FlashPause();
+
+            //Select 空值，负值，特殊值
+            BatchModifyDialog.CheckAbnormalTypeCheckBox(input.InputData.AbnormalTypes[0]);
+            TimeManager.FlashPause();
+            BatchModifyDialog.CheckAbnormalTypeCheckBox(input.InputData.AbnormalTypes[1]);
+            TimeManager.FlashPause();
+            BatchModifyDialog.CheckAbnormalTypeCheckBox(input.InputData.AbnormalTypes[2]);
+            TimeManager.FlashPause();
+
+            //Click average backfill modify radio button and select a backfill source.
+            VEEBackfillSourceRadioButton.Click();
+            TimeManager.FlashPause();
+            BatchModifyDialog.InputBackfillSourceDate("2014-01-04");
+            BatchModifyDialog.InputBackfillSourceTime("00:45");
+
+            //Click "修改并保存" button.
+            BatchModifyDialog.ClickModifyAndSaveButton();
+            TimeManager.ShortPause();
+            BatchModifyDialog.ClickMessageBoxModifyAndSaveButton();
+            TimeManager.LongPause();
+
+            //Check Verify abnormal data can be modify to success.
             AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.ShortPause();
-
-            //Set time range
-            var ManualTimeRange = input.InputData.ManualTimeRange;
             AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
 
-            //Click and input two valid modified value.
-            VEERawDataGrid.FocusOnCell(8);
-            TimeManager.LongPause();
-            VEERawDataValueNumberField.Fill("6");
-            TimeManager.LongPause();
-
-            VEERawDataGrid.FocusOnCell(9);
-            TimeManager.LongPause();
-            VEERawDataValueNumberField.Fill("7");
-            TimeManager.LongPause();
-
-            VEERawDataGrid.FocusOnCell(7);
-            TimeManager.LongPause();
-
-            //Click Switch button in Original Value now
+            //+The backfill value is difference value, so should check the difference value
             AbnormalData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
-            Assert.AreEqual("1", VEERawDataGrid.GetCellValue(9));
 
-            //Click Left button to change display time range
-            AbnormalData.ClickLeftButton();
-            TimeManager.LongPause();
-
-            //Modify one cell under Value Column
-            VEERawDataGrid.FocusOnCell(10);
-            TimeManager.LongPause();
-            VEERawDataValueNumberField.Fill("8");
-            TimeManager.LongPause();
-
-            //Go to veify Save button can be used success
-            AbnormalData.ClickSaveRawDataButton();
-            TimeManager.LongPause();
-            Assert.AreEqual("8", VEERawDataGrid.GetCellValue(10));
+            //---------------Need update data-----------------------
+            //+check record number is hours of time range * 4 
+            for (int i = 0; i < 4; i++)
+            {
+                VEERawDataGrid.FocusOnCell(i + 3);
+                TimeManager.MediumPause();
+                Assert.AreEqual("5", VEERawDataValueNumberField.GetValue());
+            }
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-109")]
-        [Type("FVT")]
-        [MultipleTestDataSource(typeof(AbnormalRecordData[]), typeof(BatchModifyAbnormalDataSuite), "TC-J1-FVT-AbnormalData-BatchModify-109")]
-        public void ModifyDiffStatusCanBeSavedSuccess(AbnormalRecordData input)
-        {
-            //Navigate to Raw Data tab
-            AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.ShortPause();
-
-            //Set time range
-            var ManualTimeRange = input.InputData.ManualTimeRange;
-            AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
-            TimeManager.LongPause();
-
-            //Input the value from Null to valid status and click saved button
-            VEERawDataGrid.FocusOnCell(7);
-            TimeManager.LongPause();
-            VEERawDataValueNumberField.Fill("5");
-            AbnormalData.ClickSaveRawDataButton();
-            TimeManager.LongPause();
-
-            //The value can be saved in database successfully and without any error
-            Assert.AreEqual("5", VEERawDataGrid.GetCellValue(7));
-
-            //Input the value from valid to Null status and click saved button
-            VEERawDataGrid.FocusOnCell(7);
-            TimeManager.LongPause();
-            VEERawDataValueNumberField.Fill(" ");
-            AbnormalData.ClickSaveRawDataButton();
-            TimeManager.LongPause();
-
-            //The value can be saved in database successfully and without any error
-            Assert.AreEqual(" ", VEERawDataGrid.GetCellValue(7));
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-
-            //Switch to a tag that is not associate of any hierarchy node
-            AbnormalData.FocusOnRecordByName("PTag_AutomationTest");
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(); 
-            TimeManager.LongPause();
-
-            //Modify the value of tag
-            VEERawDataGrid.FocusOnCell(3);
-            TimeManager.LongPause();
-            VEERawDataValueNumberField.Fill("1");
-            AbnormalData.ClickSaveRawDataButton();
-            TimeManager.LongPause();
-
-            //The value can be saved in database successfully and without any error
-            Assert.AreEqual("1", VEERawDataGrid.GetCellValue(3));
-        }
-
-        [Test]
-        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-001")]
+        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-001"), ManualCaseID("TC-J1-FVT-AbnormalData-BatchModify-001")]
         [Type("FVT")]
         [MultipleTestDataSource(typeof(AbnormalRecordData[]), typeof(BatchModifyAbnormalDataSuite), "TC-J1-FVT-AbnormalData-BatchModify-001")]
-        public void VerifyCancelIconInGirdView(AbnormalRecordData input)
+        public void VerifyErrorMessageCheckInBatchModifyPage(AbnormalRecordData input)
         {
-            //Navigate to Raw Data tab
-            AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
+            //Switch 客户配置-数据点配置-计量数据P
+            PTagSettings.NavigatorToPtagSetting();
+            TimeManager.MediumPause();
+
+            //Check some tags
+            PTagSettings.FocusOnPTagByName(input.InputData.TagNames[0]);
+            PTagSettings.CheckPTagByTagName(input.InputData.TagNames[0]);
+            PTagSettings.CheckPTagByTagName(input.InputData.TagNames[1]);
+
+            //Click raw data tab.
+            PTagRawData.SwitchToRawDataTab();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+
+            //Click 批量操作 button and select 修改 item.
+            PTagRawData.ClickBatchOperationButton();
+            TimeManager.FlashPause();
+            PTagRawData.ClickBatchModifyButton();
+            TimeManager.FlashPause();
+
+            //Click close button near all tags in select tag source,//----------The "Modify and Save" button is gray out without any tag in select tag source
+            //no select time range, //-------------time is blank by default
+            //click abnormal data not check any checkbox,
+            VEEAbnormalRadioButton.Click();
+            //click fixed value radio button and without input any value for input field.//------------The radio button is checked by default, and the value is blank.
+
+            //Click "modifyandsave"button.
+            BatchModifyDialog.ClickModifyAndSaveButton();
             TimeManager.ShortPause();
 
-            //Set time range
+            //Check error messages
+            Assert.AreEqual(input.ExpectedData.Messages[0], BatchModifyDialog.GetTimeRangeTooltip());
+            Assert.AreEqual(input.ExpectedData.Messages[1], BatchModifyDialog.GetAbnormalTypeTooltip());
+            Assert.AreEqual(input.ExpectedData.Messages[2], BatchModifyDialog.GetBackfillValueTooltip());
+
+            //Select a time range.
             var ManualTimeRange = input.InputData.ManualTimeRange;
             AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
 
-            //Get the original value
-            string originalValue = VEERawDataGrid.GetCellValue(3);
+            //Check at least one abnormal type,such as normal spike.
+            VEEAbnormalRadioButton.Click();
+            BatchModifyDialog.CheckAbnormalTypeCheckBox(input.InputData.AbnormalTypes[0]);
+            TimeManager.FlashPause();
 
-            //Click the a row and input a valid modified value.
-            VEERawDataGrid.FocusOnCell(3);
-            TimeManager.LongPause();
-            VEERawDataValueNumberField.Fill("1.11");
-
-            //check change value as modified.
-            VEERawDataGrid.FocusOnCell(4);
+            //Choose the Average Backfill rule,without select  backfill source.//---------by default--------
+            //Click "modifyandsave"button.
+            BatchModifyDialog.ClickModifyAndSaveButton();
             TimeManager.ShortPause();
-            Assert.AreEqual("1.11", VEERawDataGrid.GetCellValue(3));
 
-            //Click Cancel icons in gird view to cancel the modifications.
-            VEERawDataGrid.ClickDeleteXBtnInRowDataGrid(3);
-            TimeManager.LongPause();
-
-            //The modifications can be cancel successfully, the value will keep original value
-            Assert.AreEqual(originalValue, VEERawDataGrid.GetCellValue(3));
+            //Check error messages
+            Assert.AreEqual(input.ExpectedData.Messages[2], BatchModifyDialog.GetBackfillValueTooltip());
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-002")]
+        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-002"), ManualCaseID("TC-J1-FVT-AbnormalData-BatchModify-002")]
         [Type("FVT")]
         [MultipleTestDataSource(typeof(AbnormalRecordData[]), typeof(BatchModifyAbnormalDataSuite), "TC-J1-FVT-AbnormalData-BatchModify-002")]
-        public void VerifyCancelButtonAboveLineChart(AbnormalRecordData input)
+        public void VerifyCancelButtonInBatchModifyPage(AbnormalRecordData input)
         {
-            //Navigate to Raw Data tab
-            AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.ShortPause();
+            //Switch 客户配置-数据点配置-计量数据P
+            PTagSettings.NavigatorToPtagSetting();
+            TimeManager.MediumPause();
 
-            //Set time range
+            //Check some tags
+            PTagSettings.FocusOnPTagByName(input.InputData.TagNames[0]);
+            PTagSettings.CheckPTagByTagName(input.InputData.TagNames[0]);
+            PTagSettings.CheckPTagByTagName(input.InputData.TagNames[1]);
+
+            //Click raw data tab.
+            PTagRawData.SwitchToRawDataTab();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+
+            //Click 批量操作 button and select 修改 item.
+            PTagRawData.ClickBatchOperationButton();
+            TimeManager.FlashPause();
+            PTagRawData.ClickBatchModifyButton();
+            TimeManager.FlashPause();
+
+            //CheckPop up 原始数据批量修改 window.
+            Assert.AreEqual(input.ExpectedData.Messages[0], BatchModifyDialog.GetTitle());
+
+            //Select time range for batch modify, 
             var ManualTimeRange = input.InputData.ManualTimeRange;
+            BatchModifyDialog.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            BatchModifyDialog.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
+
+            //click abnormal data for all data,//-------------by default-------------
+            //click fixed value radio button and input value 5 for input field.
+            BatchModifyDialog.FillInModifyValueTextField("5");
+
+            //Click Cancel button
+            BatchModifyDialog.ClickGiveUpButton();
+
+            //The window can be close success and changes can not be modify success.
             AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
 
-            //Get original value
-            String originalString1 = VEERawDataGrid.GetCellValue(3);
-            String originalString2 = VEERawDataGrid.GetCellValue(4);
-            String originalString3 = VEERawDataGrid.GetCellValue(5);
-
-            //Modify multiple raw data records under Value Column.
-            VEERawDataGrid.FocusOnCell(3);
-            TimeManager.ShortPause();
-            VEERawDataValueNumberField.Fill("1.1");
-            TimeManager.ShortPause();
-
-            VEERawDataGrid.FocusOnCell(4);
-            TimeManager.ShortPause();
-            VEERawDataValueNumberField.Fill("2.2");
-            TimeManager.ShortPause();
-
-            VEERawDataGrid.FocusOnCell(5);
-            TimeManager.ShortPause();
-            VEERawDataValueNumberField.Fill("3.3");
-            TimeManager.ShortPause();
-
-            //Click Cancel button above the line chart.
-            AbnormalData.ClickCancelRawDataButton();
+            //+The backfill value is difference value, so should check the difference value
+            AbnormalData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
 
-            //Those modifications can be cancel successfully, the value will keep originals
-            Assert.AreEqual(originalString1, VEERawDataGrid.GetCellValue(3));
-            Assert.AreEqual(originalString2, VEERawDataGrid.GetCellValue(4));
-            Assert.AreEqual(originalString3, VEERawDataGrid.GetCellValue(5));
-        }
+            //---------------Need update data-----------------------
+            //+check record number is hours of time range * 4 
+            for (int i = 0; i < 4; i++)
+            {
+                VEERawDataGrid.FocusOnCell(i + 3);
+                TimeManager.MediumPause();
+                Assert.AreNotEqual("5", VEERawDataValueNumberField.GetValue());
+            }
 
-        [Test]
-        [CaseID("TC-J1-FVT-AbnormalData-BatchModify-003")]
-        [Type("FVT")]
-        [MultipleTestDataSource(typeof(AbnormalRecordData[]), typeof(BatchModifyAbnormalDataSuite), "TC-J1-FVT-AbnormalData-BatchModify-003")]
-        public void ModifyWithInvalidValues(AbnormalRecordData input)
-        {
-            //Navigate to Raw Data tab
-            AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.ShortPause();
+            //Click 批量操作-修改 button
+            PTagRawData.ClickBatchOperationButton();
+            TimeManager.FlashPause();
+            PTagRawData.ClickBatchModifyButton();
+            TimeManager.FlashPause();
 
-            //Set time range
-            var ManualTimeRange = input.InputData.ManualTimeRange;
+            //CheckPop up 原始数据批量修改 window.
+            Assert.AreEqual(input.ExpectedData.Messages[0], BatchModifyDialog.GetTitle());
+
+            //Select time range for batch modify, 
+            BatchModifyDialog.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            BatchModifyDialog.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            TimeManager.LongPause();
+
+            //click abnormal data for all data,//-------by default------------
+            //click fixed value radio button and input value 5 for input field.
+            BatchModifyDialog.FillInModifyValueTextField("5");
+
+            //Click Close button
+            BatchModifyDialog.ClickCloseButton();
+
+            //The window can be close success and changes can not be modify success.
             AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
-            
-            //Click one row and input invalid modified value.
-            VEERawDataGrid.FocusOnCell(3);
-            TimeManager.ShortPause();
-            VEERawDataValueNumberField.Fill("invalid123");
-            TimeManager.ShortPause();
 
-            //Will showing error message and current value cannot be saved
-            Assert.AreNotEqual("invalid123", VEERawDataGrid.GetCellValue(3));
+            //+The backfill value is difference value, so should check the difference value
+            AbnormalData.ClickSwitchDifferenceValueButton();
+            TimeManager.LongPause();
+
+            //---------------Need update data-----------------------
+            //+check record number is hours of time range * 4 
+            for (int i = 0; i < 4; i++)
+            {
+                VEERawDataGrid.FocusOnCell(i + 3);
+                TimeManager.MediumPause();
+                Assert.AreNotEqual("5", VEERawDataValueNumberField.GetValue());
+            }
+    
         }
+
     }
 }

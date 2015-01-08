@@ -30,10 +30,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region CheckBox of Labeling
         #endregion
+
         #region CheckBox of Ptag
-
         public static CheckBoxField PtagIsAccumulatedCheckBox{ get { return GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxPtagIsAccumulated);}}
+        #endregion
 
+        #region CheckBox of VEE
+        public static CheckBoxField BatchModifyAbnormalTypeCheckBox { get { return GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxBatchModifyAbnormalType); } }
         #endregion
 
         #region CheckBox of Widget template

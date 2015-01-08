@@ -256,6 +256,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region vee
+        //Raw Data
         public static string ButtonVEERawDataSave = "ButtonVEERawDataSave";
         public static string ButtonVEERawDataCancel = "ButtonVEERawDataCancel";
         public static string ButtonVEEBatchOperation = "ButtonVEEBatchOperation";
@@ -269,6 +270,17 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonVEERawDataSwitchOriginalValue = "ButtonVEERawDataSwitchOriginalValue";
         public static string ButtonVEERawDataLeft = "ButtonVEERawDataLeft";
         public static string ButtonVEERawDataRight = "ButtonVEERawDataRight";
+
+        //Batch Modify
+        public static string ButtonVEEAllData = "ButtonVEEAllData";
+        public static string ButtonVEEAbnormal = "ButtonVEEAbnormal";
+        public static string ButtonVEEModifyValue = "ButtonVEEModifyValue";
+        public static string ButtonVEEBackfillSource = "ButtonVEEBackfillSource";
+        public static string ButtonBatchModifyModifyAndSave = "ButtonBatchModifyModifyAndSave";
+        public static string ButtonBatchModifyGiveup = "ButtonBatchModifyGiveup";
+        public static string ButtonBatchModifyClose = "ButtonBatchModifyClose";
+        public static string ButtonMsgBatchModifyModifyAndSave = "ButtonMsgBatchModifyModifyAndSave";
+        public static string ButtonMsgBatchModifyGiveup = "ButtonMsgBatchModifyGiveup";
         #endregion
 
         #region vtag
@@ -697,7 +709,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region veerawdata
-
+        public static string TextFieldBackfillValue = "TextFieldBackfillValue";
         public static string TextFieldVEERawDataValue = "TextFieldVEERawDataValue";
         #endregion
 
@@ -906,6 +918,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxVEERawDataStartTime = "ComboBoxVEERawDataStartTime";
         public static string ComboBoxVEERawDataEndTime = "ComboBoxVEERawDataEndTime";
         public static string ComboBoxVEEBatchOperation = "ComboBoxVEEBatchOperation";
+        public static string ComboBoxBatchModifyStartTime = "ComboBoxBatchModifyStartTime";
+        public static string ComboBoxBatchModifyEndTime = "ComboBoxBatchModifyEndTime";
+        public static string ComboBoxBackfillSourceTime = "ComboBoxBackfillSourceTime";
         #endregion
 
         #endregion
@@ -1169,6 +1184,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region VEERawData
         public static string DatePickerVEERawDataStartDate = "DatePickerVEERawDataStartDate";
         public static string DatePickerVEERawDataEndDate = "DatePickerVEERawDataEndDate";
+        public static string DatePickerBatchModifyStartDate = "DatePickerBatchModifyStartDate";
+        public static string DatePickerBatchModifyEndDate = "DatePickerBatchModifyEndDate";
+        public static string DatePickerBackfillSource = "DatePickerBackfillSource";
         #endregion
 
         #endregion
@@ -1216,6 +1234,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string CheckBoxFieldCustomerMapProperty = "CheckBoxFieldCustomerMapProperty";
 
         public static string CheckBoxPtagIsAccumulated = "CheckBoxPtagIsAccumulated";
+
+        public static string CheckBoxBatchModifyAbnormalType = "CheckBoxBatchModifyAbnormalType";
 
         public static string CheckBoxWidgetTemplateTable = "CheckBoxWidgetTemplateTable";
         

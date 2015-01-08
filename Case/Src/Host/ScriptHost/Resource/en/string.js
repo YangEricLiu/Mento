@@ -778,6 +778,17 @@ I18N.Common.Button.BatchOperation = 'Batch operation';
 I18N.Common.Button.BatchModify = 'Modify';
 I18N.Common.Button.BatchRevert = 'Revert';
 I18N.Common.Button.BatchIgnore = 'Ignore';
+I18N.Setting.Radio.VEEAllData = 'All Data';
+I18N.Setting.Radio.VEEAbnormal = 'Abnormal';
+I18N.Setting.Radio.VEEModifyValue = 'Modify';
+I18N.Setting.Radio.VEEBackfillSource = 'Back fill';
+I18N.Common.Button.ModifyAndSave = 'Modify and Save';
+I18N.Common.Button.BatchModifyGiveup = 'Give Up';
+I18N.Common.AbnormalType.NormalPeaks = 'For normal peaks ONLY';
+I18N.Common.AbnormalType.AbnormalPeaks = 'For abnormal peaks ONLY';
+I18N.Common.AbnormalType.Null = 'For null values ONLY';
+I18N.Common.AbnormalType.Negative = 'For negative values ONLY';
+I18N.Common.AbnormalType.Special = 'For special values ONLY';
 
 I18N.Common.Operation.ResetZoom = 'Cancel Zoom in/Zoom out';
 I18N.Common.Operation.ResetZoom1vs1 = 'Zoom to 1:1';
@@ -1742,6 +1753,9 @@ I18N.Message.M11600 = 'The customized labeling already exists under this custome
 I18N.Message.M11601 = 'Wrong user-defined energy labeling.';
 I18N.Message.M11602 = 'User-defined energy labeling levels are discontinuous.';
 I18N.Message.M11603 = 'Concurrent error. Please refresh.';
+
+I18N.Common.Window.BatchModify = 'Batch modification of original data';
+I18N.Message.AbnormalType = '请至少选择一项要批量修改的异常数据类型。';
 
 I18N.Message.M05003 = 'Illegal entry.'
 

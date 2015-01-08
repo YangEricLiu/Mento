@@ -52,6 +52,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Locator SwitchTimeWindow = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.WindowSwitchTime);
 
+        private static Button BatchOperationButton = JazzButton.VEEBatchOperationButton;
+        private static MenuButton BatchModifyButton = JazzButton.VEEBatchModifyButton;
         #endregion
 
         #region Ptag RawData Operation
@@ -319,7 +321,15 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public void ClickBatchOperationButton()
+        {
+            BatchOperationButton.Click();
+        }
 
+        public void ClickBatchModifyButton()
+        {
+            BatchModifyButton.Click();
+        }
         #endregion
 
         #region Verification

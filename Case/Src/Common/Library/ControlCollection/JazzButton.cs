@@ -900,7 +900,50 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERawDataRight); }
         }
+        public static RadioButton VEEAllDataRadioButton
+        {
+            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonCustomizedLabellingAscendingOrder); }
+        }
 
+        public static RadioButton VEEAbnormalRadioButton
+        {
+            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonCustomizedLabellingAscendingOrder); }
+        }
+
+        public static RadioButton VEEModifyValueRadioButton
+        {
+            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonCustomizedLabellingAscendingOrder); }
+        }
+
+        public static RadioButton VEEBackfillSourceRadioButton
+        {
+            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonCustomizedLabellingAscendingOrder); }
+        }
+
+        public static Button BatchModifyModifyAndSaveButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonBatchModifyModifyAndSave); }
+        }
+
+        public static Button BatchModifyGiveupButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonBatchModifyGiveup); }
+        }
+
+        public static Button BatchModifyCloseButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonBatchModifyClose); }
+        }
+
+        public static Button MsgBatchModifyModifyAndSaveButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonMsgBatchModifyModifyAndSave); }
+        }
+
+        public static Button MsgBatchModifyGiveupButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonMsgBatchModifyGiveup); }
+        }
         #endregion
 
         #region VTag settings buttons

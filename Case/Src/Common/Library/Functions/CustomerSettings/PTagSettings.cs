@@ -87,7 +87,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             try
             {
-                PTagList.FocusOnRow(1, ptagName);
+                PTagList.FocusOnRow(2, ptagName);
                 return true;
             }
             catch(Exception)
@@ -105,7 +105,43 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             try
             {
-                PTagList.FocusOnRow(2, ptagCode);
+                PTagList.FocusOnRow(3, ptagCode);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Check tags by tag names
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean CheckPTagByTagName(string tagName)
+        {
+            try
+            {
+                PTagList.CheckRowCheckbox(2, tagName);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Check tags by tag codes
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public Boolean CheckPTagByCode(string tagCode)
+        {
+            try
+            {
+                PTagList.CheckRowCheckbox(3, tagCode);
                 return true;
             }
             catch (Exception)

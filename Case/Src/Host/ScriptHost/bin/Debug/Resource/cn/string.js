@@ -778,6 +778,17 @@ I18N.Common.Button.BatchOperation = '批量操作';
 I18N.Common.Button.BatchModify = '修改';
 I18N.Common.Button.BatchRevert = '修改撤回';
 I18N.Common.Button.BatchIgnore = '忽略';
+I18N.Setting.Radio.VEEAllData = '全部所选数据';
+I18N.Setting.Radio.VEEAbnormal = '异常数据记录';
+I18N.Setting.Radio.VEEModifyValue = '修改为';
+I18N.Setting.Radio.VEEBackfillSource = '均分回填';
+I18N.Common.Button.ModifyAndSave = '修改并保存';
+I18N.Common.Button.BatchModifyGiveup = '放弃';
+I18N.Common.AbnormalType.NormalPeaks = '仅针对正常峰';
+I18N.Common.AbnormalType.AbnormalPeaks = '仅针对异常峰';
+I18N.Common.AbnormalType.Null = '仅针对空值';
+I18N.Common.AbnormalType.Negative = '仅针对负值';
+I18N.Common.AbnormalType.Special = '仅针对特殊值';
 
 I18N.Common.Operation.ResetZoom = '取消放大/缩小';
 I18N.Common.Operation.ResetZoom1vs1 = '缩放至1:1';
@@ -1743,5 +1754,9 @@ I18N.Message.M11601 = '自定义能效标识错误。';
 I18N.Message.M11602 = '自定义能效标识级别不连续。';
 I18N.Message.M11603 = '并发错误,请刷新。';
 
+I18N.Common.Window.BatchModify = '原始数据批量修改';
+I18N.Message.AbnormalType = '请至少选择一项要批量修改的异常数据类型。';
+
 I18N.Message.M05003 = '输入非法。'
+
 

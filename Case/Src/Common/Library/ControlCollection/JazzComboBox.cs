@@ -99,6 +99,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox VEERawDataStartTimeComboBox { get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVEERawDataStartTime); } }
         public static ComboBox VEERawDataEndTimeComboBox { get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVEERawDataEndTime); } }
         public static ComboBox VEEBatchOperationComboBox { get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxVEEBatchOperation); } }
+        public static ComboBox BatchModifyStartTimeComboBox { get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxBatchModifyStartTime); } }
+        public static ComboBox BatchModifyEndTimeComboBox { get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxBatchModifyEndTime); } }
+        public static ComboBox BackfillSourceTimeComboBox { get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxBackfillSourceTime); } }
         #endregion
 
         #endregion

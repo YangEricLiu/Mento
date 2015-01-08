@@ -127,7 +127,7 @@
     <value>树</value>
   </data>
   <data name="BLCOMMON_ProductInfo" xml:space="preserve">
-    <value>施耐德电气“云能效”管理</value>
+    <value>施耐德电气云能效管理</value>
   </data>
   <data name="Customer_BusinessPersonnal" xml:space="preserve">
     <value>业务人员</value>
@@ -326,25 +326,22 @@
     <value>yyyy/MM/DD HH:mm:ss</value>
   </data>
   <data name="Energy_TagDataModifyLogExportColumn_ModifyTime" xml:space="preserve">
-    <value>ModifyTime</value>
+    <value>修改时间</value>
   </data>
   <data name="Energy_TagDataModifyLogExportColumn_NewValue" xml:space="preserve">
-    <value>NewValue</value>
+    <value>修改值</value>
   </data>
   <data name="Energy_TagDataModifyLogExportColumn_OriginalValue" xml:space="preserve">
-    <value>OriginalValue</value>
+    <value>原始值</value>
   </data>
   <data name="Energy_TagDataModifyLogExportColumn_RecordTime" xml:space="preserve">
-    <value>RecordTime</value>
-  </data>
-  <data name="Energy_TagDataModifyLogExportColumn_TagId" xml:space="preserve">
-    <value>TagId</value>
+    <value>记录时间</value>
   </data>
   <data name="Energy_TagDataModifyLogExportColumn_UserId" xml:space="preserve">
-    <value>UserId</value>
+    <value>操作者</value>
   </data>
   <data name="Energy_TagDataModifyLogExportFileNameFormat" xml:space="preserve">
-    <value>{0}_ModifyHistory.xls</value>
+    <value>{0}_修改记录.xls</value>
   </data>
   <data name="Energy_TagDataModifyLogExport_DateTimeFormat" xml:space="preserve">
     <value>yyyy-MM-dd HH:mm:ss</value>
@@ -355,11 +352,11 @@
   <data name="HomePage_DemoIsBeingCreated" xml:space="preserve">
     <value>账号创建中，请稍候……</value>
   </data>
-  <data name="HomePage_Loading" xml:space="preserve">
-    <value>正在加载</value>
+  <data name="HomePage_LoadingEMOP" xml:space="preserve">
+    <value>正在加载云能效管理平台</value>
   </data>
-  <data name="HomePage_WelcomeToTrail" xml:space="preserve">
-    <value>欢迎试用</value>
+  <data name="HomePage_WelcomeToTrailEMOP" xml:space="preserve">
+    <value>欢迎试用云能效管理平台</value>
   </data>
   <data name="MobelAPI_CNStandard" xml:space="preserve">
     <value>中国标准</value>
@@ -368,7 +365,7 @@
     <value>美国标准</value>
   </data>
   <data name="WEBAPI_MailFeedbackBody" xml:space="preserve">
-    <value>运维管理员，您好！\r\n 反馈者：{0}\r\n姓名：{1}\r\n{2}\r\n时间：{3}\r\n 问题类型：{4}\r\n问题描述：{5}\r\n联系方式：{6}\r\n电子邮箱：{7}\r\n{8}意见反馈平台</value>
+    <value>运维管理员，您好！&lt;br/&gt;反馈者：{0}&lt;br/&gt;姓名：{1}&lt;br/&gt;{2}&lt;br/&gt;时间：{3}&lt;br/&gt; 问题类型：{4}&lt;br/&gt;问题描述：{5}&lt;br/&gt;联系方式：{6}&lt;br/&gt;电子邮箱：{7}&lt;br/&gt;{8}意见反馈平台</value>
   </data>
   <data name="STS_BackLoginPage" xml:space="preserve">
     <value>返回登录页</value>
@@ -388,8 +385,8 @@
   <data name="STS_LinkIsInvalid" xml:space="preserve">
     <value>链接无效!</value>
   </data>
-  <data name="STS_Literal_About" xml:space="preserve">
-    <value>关于</value>
+  <data name="STS_Literal_About_SE" xml:space="preserve">
+    <value>关于施耐德电气</value>
   </data>
   <data name="STS_Literal_Copyright" xml:space="preserve">
     <value>版权所有</value>
@@ -416,7 +413,7 @@
     <value>施耐德电气官方微博</value>
   </data>
   <data name="STS_Login" xml:space="preserve">
-    <value>登录</value>
+    <value>登    录</value>
   </data>
   <data name="STS_Password" xml:space="preserve">
     <value>登录密码</value>
@@ -455,13 +452,13 @@
     <value>描述</value>
   </data>
   <data name="WEBAPI_MailContactComment" xml:space="preserve">
-    <value>联系我们”信息描述：{0}\r\n</value>
+    <value>描述：{0}&lt;br/&gt;</value>
   </data>
   <data name="WEBAPI_MailContactTitle" xml:space="preserve">
-    <value>职位：{0}\r\n</value>
+    <value>职位：{0}&lt;br/&gt;</value>
   </data>
   <data name="WEBAPI_MailContactUsBody" xml:space="preserve">
-    <value>客户服务代表，您好！\r\n联系人姓名：{0}\r\n电话：{1}\r\n电子邮箱：{2}\r\n公司：{3}\r\n{4}{5}\r\n{6}</value>
+    <value>&lt;p&gt;客户服务代表，您好！&lt;br/&gt;联系人姓名：{0}&lt;br/&gt;电话：{1}&lt;br/&gt;电子邮箱：{2}&lt;br/&gt;公司：{3}&lt;br/&gt;{4}{5}&lt;br/&gt;{6}&lt;/p&gt;</value>
   </data>
   <data name="WEBAPI_MailContactUsTopic" xml:space="preserve">
     <value>来自{0}的“联系我们”信息</value>
@@ -497,7 +494,7 @@
     <value>yyyy-MM-dd HH:mm</value>
   </data>
   <data name="Common_EMOP" xml:space="preserve">
-    <value>“云能效”管理平台</value>
+    <value>云能效管理平台</value>
   </data>
   <data name="Common_SchneiderElectric" xml:space="preserve">
     <value>施耐德电气</value>
@@ -550,7 +547,7 @@
   <data name="STS_Literal_ContactUs_WechatSite" xml:space="preserve">
     <value>微站点</value>
   </data>
-  <data name="STS_Literal_iPadClient" xml:space="preserve">
+  <data name="STS_Literal_EMOP_iPadClient" xml:space="preserve">
     <value>云能效iPad客户端</value>
   </data>
   <data name="STS_Literal_iPad_QRDownload" xml:space="preserve">
@@ -581,7 +578,7 @@
     <value>邮件已发送到&lt;span class="highlight"&gt;{0}&lt;/span&gt;</value>
   </data>
   <data name="STS_Literal_SwitchLanguage_ConfirmContinue" xml:space="preserve">
-    <value>“云能效”将离开当前页面以完成语言切换，是否继续？</value>
+    <value>云能效将离开当前页面以完成语言切换，是否继续？</value>
   </data>
   <data name="STS_Trail_Title" xml:space="preserve">
     <value>欢迎试用施耐德电气云能效管理平台</value>
@@ -635,15 +632,201 @@
     <value>密码不能为空</value>
   </data>
   <data name="STS_Trail_InitPwdSetting_Title" xml:space="preserve">
-    <value>&lt;span class="hightlight"&gt;{0}&lt;/span&gt;，您好。欢迎登录施耐德电气“云能效”管理平台！</value>
+    <value>&lt;span class="hightlight"&gt;{0}&lt;/span&gt;，您好。欢迎登录施耐德电气云能效管理平台！</value>
   </data>
   <data name="STS_UserName_UserHasBeenDeleted" xml:space="preserve">
     <value>您的用户被删除了！请联系管理员。</value>
   </data>
-  <data name="Customer_TB_DefaultBaseline" xml:space="preserve">
+  <data name="TagImport_AccumulatedIsEmpty" xml:space="preserve">
+    <value>累计值为空或值非法;</value>
+  </data>
+  <data name="TagImport_CalculationStepIsEmpty" xml:space="preserve">
+    <value>计算步长为空或值非法;</value>
+  </data>
+  <data name="TagImport_CalculationStepIsNotValid" xml:space="preserve">
+    <value>步长值无效;</value>
+  </data>
+  <data name="TagImport_CalculationStepShouldNotBreakReferredTagsRules" xml:space="preserve">
+    <value>本数据点已被其他数据点引用，新的计算步长必须小于等于引用数据点的计算步长;</value>
+  </data>
+  <data name="TagImport_CalculationTypeIsEmpty" xml:space="preserve">
+    <value>计算方式为空或值非法;</value>
+  </data>
+  <data name="TagImport_ChannelIdIsNullOrEmpty" xml:space="preserve">
+    <value>Tag通道号为空或者非法;</value>
+  </data>
+  <data name="TagImport_ChannelIdIsOverLongMax" xml:space="preserve">
+    <value>Tag通道号超过(999999999999999)或小于1;</value>
+  </data>
+  <data name="TagImport_CodeExistNoSupportedCharcters" xml:space="preserve">
+    <value>Tag编码存在非法字符;</value>
+  </data>
+  <data name="TagImport_CodeIsDuplicate" xml:space="preserve">
+    <value>Tag编码重复;</value>
+  </data>
+  <data name="TagImport_CodeIsNullOrEmpty" xml:space="preserve">
+    <value>Tag编码为空;</value>
+  </data>
+  <data name="TagImport_CommentExistNoSupportedCharacters" xml:space="preserve">
+    <value>Tag备注存在非法字符;</value>
+  </data>
+  <data name="TagImport_CommodityIsEmpty" xml:space="preserve">
+    <value>介质为空;</value>
+  </data>
+  <data name="TagImport_EnergyConsumptionTagOfTheCommodityExists" xml:space="preserve">
+    <value>同一层级结点或同一维度结点上已有同介质的其他tag被标记为能耗数据点;</value>
+  </data>
+  <data name="TagImport_ExcelHeader_CalculationStep" xml:space="preserve">
+    <value>计算步长</value>
+  </data>
+  <data name="TagImport_ExcelHeader_CalculationType" xml:space="preserve">
+    <value>计算方式</value>
+  </data>
+  <data name="TagImport_ExcelHeader_ChannelID" xml:space="preserve">
+    <value>通道号</value>
+  </data>
+  <data name="TagImport_ExcelHeader_Code" xml:space="preserve">
+    <value>编码</value>
+  </data>
+  <data name="TagImport_ExcelHeader_Comment" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="TagImport_ExcelHeader_Commodity" xml:space="preserve">
+    <value>介质</value>
+  </data>
+  <data name="TagImport_ExcelHeader_IsAccumulated" xml:space="preserve">
+    <value>是否为累计值</value>
+  </data>
+  <data name="TagImport_ExcelHeader_MeterCode" xml:space="preserve">
+    <value>表编码</value>
+  </data>
+  <data name="TagImport_ExcelHeader_Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="TagImport_ExcelHeader_UOM" xml:space="preserve">
+    <value>单位</value>
+  </data>
+  <data name="TagImport_Failed" xml:space="preserve">
+    <value>失败</value>
+  </data>
+  <data name="TagImport_FailedReason" xml:space="preserve">
+    <value>失败原因</value>
+  </data>
+  <data name="TagImport_MeterCodeExistNotSupportedCharacters" xml:space="preserve">
+    <value>Tag表编码存在非法字符;</value>
+  </data>
+  <data name="TagImport_MeterCodeIsNullOrEmpty" xml:space="preserve">
+    <value>Tag表编码为空;</value>
+  </data>
+  <data name="TagImport_NameExistNotSupportedCharacters" xml:space="preserve">
+    <value>Tag名称存在非法字符;</value>
+  </data>
+  <data name="TagImport_NameIsNullOrEmpty" xml:space="preserve">
+    <value>Tag名称为空;</value>
+  </data>
+  <data name="TagImport_New" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="TagImport_Operation" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="TagImport_OverCodeMaxLenth" xml:space="preserve">
+    <value>Tag编码超过最大长度100;</value>
+  </data>
+  <data name="TagImport_OverCommmentMaxLenth" xml:space="preserve">
+    <value>Tag备注超过最大长度100;</value>
+  </data>
+  <data name="TagImport_OverMeterCodeMaxLenth" xml:space="preserve">
+    <value>Tag表编码超过最大长度100;</value>
+  </data>
+  <data name="TagImport_OverNameMaxLenth" xml:space="preserve">
+    <value>Tag名称长度超过100;</value>
+  </data>
+  <data name="TagImport_PTagMeterCodeAndChannelIdDuplicated" xml:space="preserve">
+    <value>Tag的表编码和通道号重复;</value>
+  </data>
+  <data name="TagImport_PTagNameIsDuplicated" xml:space="preserve">
+    <value>同一层级结点或同一维度结点上已关联相同名称的tag;</value>
+  </data>
+  <data name="TagImport_PTagUomIsUnsupportedForAppointedCommodity" xml:space="preserve">
+    <value>单位介质不匹配;</value>
+  </data>
+  <data name="TagImport_Secquence" xml:space="preserve">
+    <value>序号</value>
+  </data>
+  <data name="TagImport_Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="TagImport_Succeed" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="TagImport_TagIsExpired" xml:space="preserve">
+    <value>Tag已过期;</value>
+  </data>
+  <data name="TagImport_UnknownFailedReason" xml:space="preserve">
+    <value>未知失败原因</value>
+  </data>
+  <data name="TagImport_UOMIsEmpty" xml:space="preserve">
+    <value>单位为空;</value>
+  </data>
+  <data name="TagImport_Upgrade" xml:space="preserve">
+    <value>修改</value>
+  </data>
+  <data name="TagImport_VTagFormulaContainsInvalidTagSavingFailed" xml:space="preserve">
+    <value>虚拟数据点的计算公式包含非法的数据点，无法保存;</value>
+  </data>
+  <data name="Energy_DataExportColumn_Peak" xml:space="preserve">
+    <value>峰时</value>
+  </data>
+  <data name="Energy_DataExportColumn_Plain" xml:space="preserve">
+    <value>平时</value>
+  </data>
+  <data name="Energy_DataExportColumn_Valley" xml:space="preserve">
+    <value>谷时</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Daily" xml:space="preserve">
+    <value>每天</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hourly" xml:space="preserve">
+    <value>每小时</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Monthly" xml:space="preserve">
+    <value>每月</value>
+  </data>
+  <data name="TagImport_CaclationType_Avg" xml:space="preserve">
+    <value>平均值</value>
+  </data>
+  <data name="TagImport_CaclationType_Max" xml:space="preserve">
+    <value>最大值</value>
+  </data>
+  <data name="TagImport_CaclationType_Min" xml:space="preserve">
+    <value>最小值</value>
+  </data>
+  <data name="TagImport_CaclationType_Sum" xml:space="preserve">
+    <value>求和</value>
+  </data>
+  <data name="TagImport_IsAccumulated_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="TagImport_IsAccumulated_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="STS_Literal_EMOP_s" xml:space="preserve">
+    <value>云能效</value>
+  </data>
+  <data name="STS_Literal_iPadClient" xml:space="preserve">
+    <value>iPad客户端</value>
+  </data>
+  <data name="Customer_TB_DefaultBaselineName" xml:space="preserve">
     <value>基准值</value>
   </data>
-  <data name="Customer_TB_DefaultTarget" xml:space="preserve">
+  <data name="Customer_TB_DefaultTargetName" xml:space="preserve">
     <value>目标值</value>
+  </data>
+  <data name="Customer_InitPasswordEmailHeader" xml:space="preserve">
+    <value>欢迎使用{0}</value>
+  </data>
+  <data name="WebHost_IndexTitle" xml:space="preserve">
+    <value>施耐德电气云能效管理平台</value>
   </data>
 </root>

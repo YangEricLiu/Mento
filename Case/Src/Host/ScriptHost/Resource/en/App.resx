@@ -121,13 +121,13 @@
     <value>Creating account, please wait...</value>
   </data>
   <data name="Administration_CONSTUOM_PERSON_CODE" xml:space="preserve">
-    <value>People</value>
+    <value>Person</value>
   </data>
   <data name="Administration_CONSTUOM_TREE_CODE" xml:space="preserve">
     <value>Tree</value>
   </data>
   <data name="BLCOMMON_ProductInfo" xml:space="preserve">
-    <value>Schneider Electric EnergyMost Platform</value>
+    <value>Schneider Electric EnergyMost</value>
   </data>
   <data name="Customer_BusinessPersonnal" xml:space="preserve">
     <value>Business personnel</value>
@@ -170,7 +170,7 @@
     <value>Hi {0},&lt;p&gt;
             Welcome to use {7} &lt;br/&gt;
             Your account information is as follows: &lt;br/&gt;
-            Username: {1}&lt;br/&gt;
+            User name: {1}&lt;br/&gt;
             Name: {0}&lt;br/&gt;
             Job title: {5}&lt;br/&gt;
             Tel.: {2}&lt;br/&gt;
@@ -183,14 +183,14 @@
             &lt;/p&gt;</value>
   </data>
   <data name="Customer_InitPasswordEmailTopic" xml:space="preserve">
-    <value>Welcome to use{0}</value>
+    <value>Welcome to use {0}.</value>
   </data>
   <data name="Customer_PlatformAdmin" xml:space="preserve">
     <value>Platform administrator</value>
   </data>
   <data name="Customer_ResetPasswordEmailBody" xml:space="preserve">
     <value>Hi {0},&lt;p&gt;
-            You have applied to reset your{3}password at {2}.&lt;br/&gt;
+            You have applied to reset your {3} password at {2}.&lt;br/&gt;
             Please click the following link within 24 hours to reset your login password. &lt;br/&gt;
             &lt;a href='{1}'&gt;{1}&lt;/a&gt;&lt;br/&gt;
             Thanks for your support to {3}.&lt;br/&gt;
@@ -259,7 +259,7 @@
     <value>Overview</value>
   </data>
   <data name="Energy_DataExportColumn_BaselineValue" xml:space="preserve">
-    <value>Benchmark</value>
+    <value>Baseline</value>
   </data>
   <data name="Energy_DataExportColumn_CalcValue" xml:space="preserve">
     <value>Calculated value</value>
@@ -277,7 +277,7 @@
     <value>Name</value>
   </data>
   <data name="Energy_DataExportColumn_OrigValue" xml:space="preserve">
-    <value>Original value</value>
+    <value>Original</value>
   </data>
   <data name="Energy_DataExportColumn_Ranking" xml:space="preserve">
     <value>Ranking</value>
@@ -352,10 +352,10 @@
     <value>Creating account, please wait...</value>
   </data>
   <data name="HomePage_LoadingEMOP" xml:space="preserve">
-    <value>EnergyMost platform is loading</value>
+    <value>EnergyMost is loading</value>
   </data>
   <data name="HomePage_WelcomeToTrailEMOP" xml:space="preserve">
-    <value>Welcome to trial use EnergyMost platform</value>
+    <value>Welcome to trial use EnergyMost</value>
   </data>
   <data name="MobelAPI_CNStandard" xml:space="preserve">
     <value>Chinese standards</value>
@@ -364,13 +364,13 @@
     <value>American standards</value>
   </data>
   <data name="WEBAPI_MailFeedbackBody" xml:space="preserve">
-    <value>Dear operation and maintenance administrator!\r\n feedback provider: {0}\r\n name: {1}\r\n{2}\r\n time: {3}\r\n question type: {4}\r\n question description: {5}\r\n contact information: {6}\r\n e-mail: {7}\r\n{8}feedback platform</value>
+    <value>Dear operation and maintenance administrator!&lt;br/&gt; Feedback provider: {0}&lt;br/&gt; Name: {1}&lt;br/&gt;{2}&lt;br/&gt; Time: {3}&lt;br/&gt; Question type: {4}&lt;br/&gt;Question description: {5}&lt;br/&gt; Contact information: {6}&lt;br/&gt; E-mail: {7}&lt;br/&gt;{8} Feedback platform</value>
   </data>
   <data name="STS_BackLoginPage" xml:space="preserve">
     <value>Back to login page</value>
   </data>
   <data name="STS_UserName_UserNameShouldNotBeEmpty" xml:space="preserve">
-    <value>Username cannot be empty</value>
+    <value>User name cannot be empty</value>
   </data>
   <data name="STS_Email" xml:space="preserve">
     <value>E-mail address</value>
@@ -391,22 +391,22 @@
     <value>Copyright. All rights reserved.</value>
   </data>
   <data name="STS_Literal_Login_Col1" xml:space="preserve">
-    <value>Efficient management approaches</value>
+    <value>Effective management</value>
   </data>
   <data name="STS_Literal_Login_Col1_Sub" xml:space="preserve">
-    <value>operation and investment saving</value>
+    <value>for your cost saving</value>
   </data>
   <data name="STS_Literal_Login_Col2" xml:space="preserve">
-    <value>Expert service</value>
+    <value>Professional service</value>
   </data>
   <data name="STS_Literal_Login_Col2_Sub" xml:space="preserve">
-    <value>helps to promote the green development</value>
+    <value>for your green business</value>
   </data>
   <data name="STS_Literal_Login_Col3" xml:space="preserve">
-    <value>Scalable platform</value>
+    <value>Scalable system</value>
   </data>
   <data name="STS_Literal_Login_Col3_Sub" xml:space="preserve">
-    <value>constantly meet your business expansion</value>
+    <value>for your business growth</value>
   </data>
   <data name="STS_Literal_Weibo" xml:space="preserve">
     <value>Schneider Electric official Weibo</value>
@@ -433,13 +433,13 @@
     <value>Mail has been sent successfully. Please log into your mail box to click the link and start trial use.</value>
   </data>
   <data name="STS_UserName_UserDoesNotExist" xml:space="preserve">
-    <value>The username does not exist.</value>
+    <value>The user name does not exist.</value>
   </data>
   <data name="STS_UserName_UserIsUnavailable" xml:space="preserve">
-    <value>"Login failed, your username cannot be used for the moment."</value>
+    <value>"Login failed, your user name cannot be used for the moment."</value>
   </data>
   <data name="STS_UserName" xml:space="preserve">
-    <value>Username</value>
+    <value>User name</value>
   </data>
   <data name="WEBAPI_Company" xml:space="preserve">
     <value>Company</value>
@@ -451,13 +451,13 @@
     <value>Description</value>
   </data>
   <data name="WEBAPI_MailContactComment" xml:space="preserve">
-    <value>"Contact us "" information description:{0}\r\n"</value>
+    <value>Description: {0}&lt;br/&gt;</value>
   </data>
   <data name="WEBAPI_MailContactTitle" xml:space="preserve">
-    <value>Job title: {0}\r\n</value>
+    <value>Job title: {0}&lt;br/&gt;</value>
   </data>
   <data name="WEBAPI_MailContactUsBody" xml:space="preserve">
-    <value>Dear customer service representative,\r\n contact name: {0}\r\n tel.: {1}\r\n e-mail: {2}\r\n company: {3}\r\n{4}{5}\r\n{6}</value>
+    <value>Dear customer service representative,&lt;br/&gt; Contact name: {0}&lt;br/&gt; Tel.: {1}&lt;br/&gt; E-mail: {2}&lt;br/&gt; Company: {3}&lt;br/&gt;{4}{5}&lt;br/&gt;{6}</value>
   </data>
   <data name="WEBAPI_MailContactUsTopic" xml:space="preserve">
     <value>"Contact us" message from {0}</value>
@@ -493,7 +493,7 @@
     <value>yyyy-MM-dd HH:mm</value>
   </data>
   <data name="Common_EMOP" xml:space="preserve">
-    <value>EnergyMost Management Platform</value>
+    <value>EnergyMost</value>
   </data>
   <data name="Common_SchneiderElectric" xml:space="preserve">
     <value>Schneider Electric</value>
@@ -526,7 +526,7 @@
     <value>English letters, numbers, underlines and spacing are allowed.</value>
   </data>
   <data name="STS_Pwd_RequestPwdReset_Description" xml:space="preserve">
-    <value>Please enter your username and the e-mail address you have already filled out in the system, and click the continue button.</value>
+    <value>Please enter your user name and the e-mail address you have already filled out in the system, and click the continue button.</value>
   </data>
   <data name="STS_Pwd_RequestPwdReset_ForgotEmail" xml:space="preserve">
     <value>If you forgot the e-mail address submitted before, please contact your administrator.</value>
@@ -553,7 +553,7 @@
     <value>Download is available using QR code scanner on the iPad to scan the QR code above</value>
   </data>
   <data name="STS_Login_InputUserName" xml:space="preserve">
-    <value>Please enter your username</value>
+    <value>Please enter your user name</value>
   </data>
   <data name="STS_Login_PasswordIsIncorrect" xml:space="preserve">
     <value>Wrong login password</value>
@@ -580,7 +580,7 @@
     <value>"EnergyMost is about to leave the current page to finish language switch, do you want to continue?"</value>
   </data>
   <data name="STS_Trail_Title" xml:space="preserve">
-    <value>Welcome to try Schneider Electric EnergyMost Management Platform</value>
+    <value>Welcome to try Schneider Electric EnergyMost</value>
   </data>
   <data name="Common_HourlyFormat" xml:space="preserve">
     <value />
@@ -631,7 +631,7 @@
     <value>Password cannot be empty.</value>
   </data>
   <data name="STS_Trail_InitPwdSetting_Title" xml:space="preserve">
-    <value>"Hi &lt;span class=""hightlight""&gt;{0}&lt;/span&gt;, welcome to log into Schneider Electric EnergyMost Management Platform! "</value>
+    <value>"Hi &lt;span class=""hightlight""&gt;{0}&lt;/span&gt;, welcome to log into Schneider Electric EnergyMost! "</value>
   </data>
   <data name="STS_UserName_UserHasBeenDeleted" xml:space="preserve">
     <value>Your account has been deleted. Please contact the administrator.</value>
@@ -815,5 +815,17 @@
   </data>
   <data name="STS_Literal_iPadClient" xml:space="preserve">
     <value>iPad client</value>
+  </data>
+  <data name="Customer_TB_DefaultBaselineName" xml:space="preserve">
+    <value>Baseline</value>
+  </data>
+  <data name="Customer_TB_DefaultTargetName" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="Customer_InitPasswordEmailHeader" xml:space="preserve">
+    <value>Welcome to use {0}</value>
+  </data>
+  <data name="WebHost_IndexTitle" xml:space="preserve">
+    <value>Schneider Electric EnergyMost</value>
   </data>
 </root>

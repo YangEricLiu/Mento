@@ -57,6 +57,9 @@ namespace Mento.Script.Customer.TagManagement
         public void ModifyAndSaveViaSaveButtonAboveLineChart(AbnormalRecordData input)
         {
             //Check the checkbox of some abnormal records
+            AbnormalData.FocusOnRecordByName(input.InputData.TagNames[0]);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.ShortPause();
             AbnormalData.CheckRecordsByTagName(input.InputData.TagNames[0]);
             TimeManager.FlashPause();
             AbnormalData.CheckRecordsByTagName(input.InputData.TagNames[1]);
@@ -538,8 +541,8 @@ namespace Mento.Script.Customer.TagManagement
 
             //Select a time range.
             var ManualTimeRange = input.InputData.ManualTimeRange;
-            AbnormalData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            AbnormalData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
+            BatchModifyDialog.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            BatchModifyDialog.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
             TimeManager.LongPause();
 
             //Check at least one abnormal type,such as normal spike.
@@ -554,6 +557,10 @@ namespace Mento.Script.Customer.TagManagement
 
             //Check error messages
             Assert.AreEqual(input.ExpectedData.Messages[2], BatchModifyDialog.GetBackfillValueTooltip());
+
+            //+Close the dialog
+            BatchModifyDialog.ClickGiveUpButton();
+            TimeManager.FlashPause();
         }
 
         [Test]

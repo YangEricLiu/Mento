@@ -309,6 +309,8 @@
               <add key="ButtonBatchModifyClose" value="//div[contains(@id,'batchmodifywindow')]/div[contains(@class,'x-tool') and img[contains(@id,'tool')]]" type="XPath"/>
               <add key="ButtonMsgBatchModifyModifyAndSave" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.ModifyAndSave']]" type="XPath"/>
               <add key="ButtonMsgBatchModifyGiveup" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.BatchModifyGiveup']]" type="XPath"/>
+              <add key="ButtonBatchIgnoreIgnoreAndSave" value="//div[contains(@id,'batchmodifywindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.IgnoreAndSave']]" type="XPath"/>
+              <add key="ButtonMsgBatchIgnoreIgnoreAndSave" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.IgnoreAndSave']]" type="XPath"/>
           </veerawdata>
           <vtag>
               <add key="TabButtonVTagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>

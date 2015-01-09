@@ -54,6 +54,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Button BatchOperationButton = JazzButton.VEEBatchOperationButton;
         private static MenuButton BatchModifyButton = JazzButton.VEEBatchModifyButton;
+        private static MenuButton BatchIgnoreButton = JazzButton.VEEBatchIgnoreButton;
+        private static MenuButton BatchRevertButton = JazzButton.VEEBatchRevertButton;
         #endregion
 
         #region Ptag RawData Operation
@@ -329,6 +331,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickBatchModifyButton()
         {
             BatchModifyButton.Click();
+        }
+
+        public void ClickBatchIgnoreButton()
+        {
+            BatchIgnoreButton.Click();
+        }
+
+        public void ClickBatchRevertButton()
+        {
+            BatchRevertButton.Click();
         }
         #endregion
 

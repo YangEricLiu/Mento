@@ -530,6 +530,11 @@
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-4.json" />
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-2.json" />
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-1.json" />
+    <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-001.json" />
+    <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-002.json" />
+    <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-102.json" />
+    <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-103.json" />
+    <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-104.json" />
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-4012.json" />
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-3913.json" />
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-8.json" />

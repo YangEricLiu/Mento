@@ -944,6 +944,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             get { return GetControl<Button>(JazzControlLocatorKey.ButtonMsgBatchModifyGiveup); }
         }
+
+        public static Button BatchIgnoreIgnoreAndSaveButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonBatchIgnoreIgnoreAndSave); }
+        }
+
+        public static Button MsgBatchIgnoreIgnoreAndSaveButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonMsgBatchIgnoreIgnoreAndSave); }
+        }
         #endregion
 
         #region VTag settings buttons

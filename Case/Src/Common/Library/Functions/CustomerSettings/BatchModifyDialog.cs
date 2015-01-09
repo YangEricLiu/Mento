@@ -36,6 +36,8 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Locator AbnormalTypeTooltipLocator = new Locator("//div[contains(@id,'batchmodifywindow')]/table[contains(@id,'checkboxgroup')]/following-sibling::label", ByType.XPath);
         private static Locator BackfillValueTooltipLocator = new Locator("//div[contains(@id,'batchmodifywindow')]/table[contains(@id,'radiogroup')]/tbody/tr/td/div[contains(@id,'radiogroup')]/div/label", ByType.XPath);
 
+        private static Button IgnoreAndSaveButton = JazzButton.BatchIgnoreIgnoreAndSaveButton;
+        private static Button MsgIgnoreAndSaveButton = JazzButton.MsgBatchIgnoreIgnoreAndSaveButton;
         #endregion
 
         public BatchModifyDialog() : base(Locator) { }
@@ -45,6 +47,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickModifyAndSaveButton()
         {
             ModifyAndSaveButton.Click();
+        }
+
+        public void ClickIgnoreAndSaveButton()
+        {
+            IgnoreAndSaveButton.Click();
         }
 
         public void ClickGiveUpButton()
@@ -59,12 +66,17 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void ClickMessageBoxModifyAndSaveButton()
         {
-            ModifyAndSaveButton.Click();
+            MsgModifyAndSaveButton.Click();
+        }
+
+        public void ClickMessageBoxIgnoreAndSaveButton()
+        {
+            MsgIgnoreAndSaveButton.Click();
         }
 
         public void ClickMessageBoxGiveUpButton()
         {
-            GiveupButton.Click();
+            MsgGiveupButton.Click();
         }
 
         public void SetDateRange(string startTime, string endTime)

@@ -13,7 +13,7 @@
 		},
 		"ExpectedData":
 		{
-			"Messages":["$@Setting.VEEBatchModify.BatchIgnoreWindowTitle"],
+			"Messages":["$@Setting.VEEBatchModify.BatchRevertWindowTitle"],
 		}
 	}
 ]

@@ -25,15 +25,8 @@ namespace Mento.Script.Customer.TagManagement
     public class BatchIgnoreAbnormalDataSuite : TestSuiteBase
     {
         private static BatchModifyDialog BatchModifyDialog = JazzFunction.BatchModifyDialog;
-
-
         private AbnormalData AbnormalData = JazzFunction.AbnormalData;
-        private static Grid VEERawDataGrid = JazzGrid.GridVEERawData;
-        private static TextField VEERawDataValueNumberField = JazzTextField.VEERawDataValueTextField;
-        private static RadioButton VEEAllDataRadioButton = JazzButton.VEEAllDataRadioButton;
         private static RadioButton VEEAbnormalRadioButton = JazzButton.VEEAbnormalRadioButton;
-        private static RadioButton VEEModifyValueRadioButton = JazzButton.VEEModifyValueRadioButton;
-        private static RadioButton VEEBackfillSourceRadioButton = JazzButton.VEEBackfillSourceRadioButton;
         private PTagSettings PTagSettings = JazzFunction.PTagSettings;
         private PTagRawData PTagRawData = JazzFunction.PTagRawData;
 

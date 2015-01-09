@@ -3,18 +3,17 @@
 		"InputData":
 		{	
 			"TagNames":["PTag_AutomationCase","lindaTestNull"],
-			"TestData":["$@Common.Operation.Update","$@Common.Operation.RevertChange","$@Common.Operation.Ignore","$@Setting.VEEBatchModify.BatchModifyWindowTitle"],
 			"ManualTimeRange":[
 			{
-				"StartDate":"2014-1-1",
+				"StartDate":"2014-01-12",
 				"StartTime":"00:00",
-				"EndDate":"2014-1-1",	
+				"EndDate":"2014-01-13",	
 				"EndTime":"24:00",	
 			}],
 		},
 		"ExpectedData":
 		{
-
+			"Messages":["$@Setting.VEEBatchModify.BatchRevertWindowTitle"],
 		}
 	}
 ]

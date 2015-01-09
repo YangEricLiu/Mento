@@ -10,7 +10,7 @@
 				"EndDate":"2014-01-05",	
 				"EndTime":"24:00",	
 			}],
-			"AbnormalTypes":["$@Common.AbnormalType.Null","$@Common.AbnormalType.Negative","$@Common.AbnormalType.Special"],
+			"AbnormalTypes":["$@Setting.VEEBatchModify.NullValueOnly","$@Setting.VEEBatchModify.MinusValueOnly","$@Setting.VEEBatchModify.SpecialValueOnly"],
 		},
 		"ExpectedData":
 		{

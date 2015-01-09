@@ -87,6 +87,7 @@
     <Compile Include="TagManagement\AddValidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidVtagSuite.cs" />
+    <Compile Include="TagManagement\BatchRevertAbnormalDataSuite.cs" />
     <Compile Include="TagManagement\BatchIgnoreAbnormalDataSuite.cs" />
     <Compile Include="TagManagement\CalculateReviseTargetBaselineSuite.cs" />
     <Compile Include="TagManagement\DiffValueCalcPtagRawDataSuite.cs" />

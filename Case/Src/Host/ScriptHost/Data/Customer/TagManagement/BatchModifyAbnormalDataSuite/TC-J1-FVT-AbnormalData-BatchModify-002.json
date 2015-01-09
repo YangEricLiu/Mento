@@ -13,7 +13,7 @@
 		},
 		"ExpectedData":
 		{
-			"Messages":["$@Common.Window.BatchModify"],
+			"Messages":["$@Setting.VEEBatchModify.BatchModifyWindowTitle"],
 		}
 	}
 ]

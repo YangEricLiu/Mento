@@ -10,11 +10,11 @@
 				"EndDate":"2014-01-08",	
 				"EndTime":"24:00",	
 			}],
-			"AbnormalTypes":["$@Common.AbnormalType.NormalPeaks"],
+			"AbnormalTypes":["$@Setting.VEEBatchModify.CommonPeakOnly"],
 		},
 		"ExpectedData":
 		{
-			"Messages":["$@Common.Label.MandatoryEmptyError","$@Message.AbnormalType","$@Common.Label.MandatoryEmptyError"],
+			"Messages":["$@Common.Label.MandatoryEmptyError","$@Setting.VEEBatchModify.EmptyModifySelectionErrorLabel","$@Common.Label.MandatoryEmptyError"],
 		}
 	}
 ]

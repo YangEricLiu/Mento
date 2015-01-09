@@ -530,6 +530,9 @@
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-4.json" />
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-2.json" />
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-1.json" />
+    <None Include="Data\Customer\TagManagement\BatchRevertAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-001.json" />
+    <None Include="Data\Customer\TagManagement\BatchRevertAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-002.json" />
+    <None Include="Data\Customer\TagManagement\BatchRevertAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-101.json" />
     <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-001.json" />
     <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-002.json" />
     <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-102.json" />

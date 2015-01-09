@@ -32,13 +32,13 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Dictionary<CompareTimeType, string[]> MenuItemComparedTimeType = new Dictionary<CompareTimeType, string[]>()
         {
-            {CompareTimeType.UserDefined,new string[] { "$@EM.EnergyAnalyse.AddIntervalWindow.UserDefined" }},
-            {CompareTimeType.Relative,new string[] { "$@EM.EnergyAnalyse.AddIntervalWindow.Relative" }},
+            {CompareTimeType.UserDefined,new string[] { "$@Common.DateRange.Customerize" }},
+            {CompareTimeType.Relative,new string[] { "$@Common.DateRange.RelativedTime" }},
         };
 
         private static Dictionary<OriginalTimeType, string[]> MenuItemOriginalTimeType = new Dictionary<OriginalTimeType, string[]>()
         {
-            {OriginalTimeType.UserDefined,new string[] { "$@EM.EnergyAnalyse.AddIntervalWindow.UserDefined" }},
+            {OriginalTimeType.UserDefined,new string[] { "$@Common.DateRange.Customerize" }},
             {OriginalTimeType.Last7days,new string[] { "$@Common.DateRange.Last7Day" }},
             {OriginalTimeType.Last30days,new string[] { "$@Common.DateRange.Last30Day" }},
             {OriginalTimeType.Last12months,new string[] { "$@Common.DateRange.Last12Month" }},
@@ -102,10 +102,10 @@ namespace Mento.ScriptCommon.Library.Functions
             //TimeTypeComboBox.Click();
             TimeManager.FlashPause();
             if (CompareTimeType.UserDefined == timeType)
-                TimeTypeComboBox.SelectItem("$@EM.EnergyAnalyse.AddIntervalWindow.UserDefined");
+                TimeTypeComboBox.SelectItem("$@Common.DateRange.Customerize");
                 //UserDefinedTime.Click();
             else
-                TimeTypeComboBox.SelectItem("$@EM.EnergyAnalyse.AddIntervalWindow.Relative");
+                TimeTypeComboBox.SelectItem("$@Common.DateRange.RelativedTime");
                 //RelativeTime.Click();
             //TimeTypeComboBox.GetValue();
         }
@@ -131,7 +131,7 @@ namespace Mento.ScriptCommon.Library.Functions
             switch (timeType)
             {
                 case OriginalTimeType.UserDefined:
-                    TimeTypeComboBox.SelectItem("$@EM.EnergyAnalyse.AddIntervalWindow.UserDefined");
+                    TimeTypeComboBox.SelectItem("$@Common.DateRange.Customerize");
                     break;
                 case OriginalTimeType.Last7days:
                     TimeTypeComboBox.SelectItem("$@Common.DateRange.Last7Day");
@@ -178,7 +178,7 @@ namespace Mento.ScriptCommon.Library.Functions
             string strType = TimeTypeComboBox.GetValue();
             switch (strType)
             {
-                //case "$@EM.EnergyAnalyse.AddIntervalWindow.UserDefined":
+                //case "$@Common.DateRange.Customerize":
                 //    return OriginalTimeType.UserDefined;
                 //case "$@Common.DateRange.Last7Day":
                 //    return OriginalTimeType.Last7days;

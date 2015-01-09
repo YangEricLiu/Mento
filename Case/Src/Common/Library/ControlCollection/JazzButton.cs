@@ -950,9 +950,19 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             get { return GetControl<Button>(JazzControlLocatorKey.ButtonBatchIgnoreIgnoreAndSave); }
         }
 
+        public static Button BatchRevertRevertAndSaveButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonBatchRevertRevertAndSave); }
+        }
+
         public static Button MsgBatchIgnoreIgnoreAndSaveButton
         {
             get { return GetControl<Button>(JazzControlLocatorKey.ButtonMsgBatchIgnoreIgnoreAndSave); }
+        }
+
+        public static Button MsgBatchRevertRevertAndSaveButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonMsgBatchRevertRevertAndSave); }
         }
         #endregion
 

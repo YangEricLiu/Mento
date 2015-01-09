@@ -282,7 +282,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonMsgBatchModifyModifyAndSave = "ButtonMsgBatchModifyModifyAndSave";
         public static string ButtonMsgBatchModifyGiveup = "ButtonMsgBatchModifyGiveup";
         public static string ButtonBatchIgnoreIgnoreAndSave = "ButtonBatchIgnoreIgnoreAndSave";
+        public static string ButtonBatchRevertRevertAndSave = "ButtonBatchRevertRevertAndSave";
         public static string ButtonMsgBatchIgnoreIgnoreAndSave = "ButtonMsgBatchIgnoreIgnoreAndSave";
+        public static string ButtonMsgBatchRevertRevertAndSave = "ButtonMsgBatchRevertRevertAndSave";
         #endregion
 
         #region vtag

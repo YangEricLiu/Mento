@@ -37,7 +37,9 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Locator BackfillValueTooltipLocator = new Locator("//div[contains(@id,'batchmodifywindow')]/table[contains(@id,'radiogroup')]/tbody/tr/td/div[contains(@id,'radiogroup')]/div/label", ByType.XPath);
 
         private static Button IgnoreAndSaveButton = JazzButton.BatchIgnoreIgnoreAndSaveButton;
+        private static Button RevertAndSaveButton = JazzButton.BatchRevertRevertAndSaveButton;
         private static Button MsgIgnoreAndSaveButton = JazzButton.MsgBatchIgnoreIgnoreAndSaveButton;
+        private static Button MsgRevertAndSaveButton = JazzButton.MsgBatchRevertRevertAndSaveButton;
         #endregion
 
         public BatchModifyDialog() : base(Locator) { }
@@ -50,6 +52,11 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         public void ClickIgnoreAndSaveButton()
+        {
+            IgnoreAndSaveButton.Click();
+        }
+
+        public void ClickRevertAndSaveButton()
         {
             IgnoreAndSaveButton.Click();
         }
@@ -72,6 +79,10 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickMessageBoxIgnoreAndSaveButton()
         {
             MsgIgnoreAndSaveButton.Click();
+        }
+        public void ClickMessageBoxRevertAndSaveButton()
+        {
+            MsgRevertAndSaveButton.Click();
         }
 
         public void ClickMessageBoxGiveUpButton()

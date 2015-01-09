@@ -12,6 +12,7 @@ I18N.Setting.TargetBaseline.DefaultTarget = {};
 I18N.Setting.TargetBaseline.DefaultBaseline = {};
 //I18N.Setting.TOUTariff = {};
 I18N.Setting.TagConfiguration = {};
+I18N.Setting.VEEMonitorRule = {};
 
 I18N.EM = {};
 I18N.EM.EnergyAnalyse = {};
@@ -34,7 +35,7 @@ I18N.Dashboard.Label.Keepconcerning = 'Please continue to focus on energy consum
 I18N.Dashboard.Label.GoogleMapNotLoad = 'Map is unavailable. Please check the network.';
 I18N.Dashboard.Label.NoBuilding = 'Selected building has been deleted or authority has been changed. Refresh and try again.';
 I18N.Dashboard.Label.BuildingList = 'Buildings list';
-I18N.Dashboard.Label.MoreInfo = 'For more energy consumption information  >';
+I18N.Dashboard.Label.MoreInfo = 'For more dashboard information  >';
 I18N.Dashboard.Label.AllUsers = 'All personnel';
 I18N.Dashboard.Label.SelectedReceivers = 'Selected objects to send';
 I18N.Dashboard.Label.SelectedSharedReceivers = 'Selected objects to share';
@@ -82,6 +83,7 @@ I18N.Common.AggregationStep = {};
 I18N.Common.EnergyDataQuality = {};
 I18N.Common.DateRange = {};
 I18N.Common.GraphType = {};
+I18N.Common.YaxisType = {};
 I18N.Common.CarbonUomType = {};
 
 I18N.Message = {};
@@ -98,7 +100,7 @@ I18N.DateTimeFormat.ExtFormat.LongDateFormat = 'Y/m/d, Day of  the Week';
 I18N.DateTimeFormat.HighFormat.Millisecond = '%H:%M:%S:%L';
 I18N.DateTimeFormat.HighFormat.Second = '%H:%M:%S';
 I18N.DateTimeFormat.HighFormat.Minute = '%H:%M';
-I18N.DateTimeFormat.HighFormat.Hour = '%H';
+I18N.DateTimeFormat.HighFormat.Hour = '%H:00';
 I18N.DateTimeFormat.HighFormat.Day = '%m/%d';
 I18N.DateTimeFormat.HighFormat.Dayhour = '%H, %m/%d';
 I18N.DateTimeFormat.HighFormat.Week = '%m/%d';
@@ -108,8 +110,9 @@ I18N.DateTimeFormat.HighFormat.Year = '%Y';
 I18N.DateTimeFormat.HighFormat.FullDateTime = '%H:%M:%S, %m/%d,%Y';
 I18N.DateTimeFormat.HighFormat.FullDate = '%m/%d, %Y';
 I18N.DateTimeFormat.HighFormat.FullYear = 'Full-year';
-I18N.DateTimeFormat.IntervalFormat.Second = 'H:i,m:d, Y';
+I18N.DateTimeFormat.IntervalFormat.Second = 'H:i:s,m/d, Y';
 I18N.DateTimeFormat.IntervalFormat.FullMinute = 'H:i';
+I18N.DateTimeFormat.IntervalFormat.RangeFullMinute = 'H:i, m/d, Y';
 I18N.DateTimeFormat.IntervalFormat.Minute = 'H:i, m/d, Y';
 I18N.DateTimeFormat.IntervalFormat.FullHour = 'H, m/d, Y';
 I18N.DateTimeFormat.IntervalFormat.Hour = 'H';
@@ -244,6 +247,7 @@ I18N.Setting.Label.TagAssociation = 'Association';
 I18N.Setting.Label.TagMultipleImport = 'Bulk import';
 I18N.Setting.Label.Reselect = 'Reselect';
 I18N.Setting.Label.TagBatchImportLog = 'Import log';
+I18N.Setting.Label.TagCorrectionLog = 'Modification log';
 I18N.Setting.Label.ImportingTag = 'Data point is being imported from configuration file {0}.';
 I18N.Setting.Label.IncorrectFileType = 'Bulk import failed. The selected file does not conform to system rules. Please reselect and try again.';
 
@@ -291,6 +295,7 @@ I18N.Setting.Label.KPIBasicProperties = '##Setting.Label.BasicProperties##';
 I18N.Setting.Label.TOUBasicProperties = '##Setting.Label.BasicProperties##';
 I18N.Setting.Label.PulsePeakProperties = '##Common.Glossary.PulsePeak##';
 I18N.Setting.Label.ElectrovalenceUom = 'RMB/kwh';
+I18N.Setting.Label.Auto = 'Auto';
 
 // data permission 
 I18N.Setting.Label.CustomerDataPermission = 'Data authority';
@@ -344,6 +349,91 @@ I18N.Setting.TargetBaseline.EditCalculationBtnText = 'Correct';
 I18N.Setting.TargetBaseline.CalculatorBtnText = 'Calculate {0}';
 I18N.Setting.TargetBaseline.TargetWindowTitle = '{0} Year {1} (##Common.Glossary.UOM##: {2})';
 
+I18N.Setting.VEERecord = {};
+I18N.Setting.VEERecord.AbnormalDataRecord = 'Abnormal record';
+I18N.Setting.VEERecord.ErrorTimePeriod = 'Abnormal time interval';
+I18N.Setting.VEERecord.ErrorTagName = 'Name of abnormal data point';
+I18N.Setting.VEERecord.ErrorTagType = 'Type of data point';
+I18N.Setting.VEERecord.ErrorTagDataType = 'Data type';
+I18N.Setting.VEERecord.ModifyDatetime = 'Modified at';
+I18N.Setting.VEERecord.ModifyDatetimePeriod = 'Modified time interval';
+
+I18N.Setting.VEEBatchModify = {};
+
+I18N.Setting.VEEBatchModify.BatchModifyWindowTitle = 'Batch modification of original data';
+I18N.Setting.VEEBatchModify.BatchRevertWindowTitle = 'Batch revert of original data modifications';
+I18N.Setting.VEEBatchModify.BatchIgnoreWindowTitle = 'Batch ignore of abnormal data records';
+I18N.Setting.VEEBatchModify.Type = 'Data Type';
+I18N.Setting.VEEBatchModify.AllTags = 'All selected data';
+I18N.Setting.VEEBatchModify.ErrorData = 'Abnormal data records';
+I18N.Setting.VEEBatchModify.AllErrorData = 'All abnormal data records';
+I18N.Setting.VEEBatchModify.PatialErrorData = 'Partial abnormal data records';
+I18N.Setting.VEEBatchModify.AllErrorData = 'All abnormal data records';
+I18N.Setting.VEEBatchModify.PartialErrorData = 'Partial abnormal data records';
+I18N.Setting.VEEBatchModify.CommonPeakOnly = 'For normal peaks ONLY';
+I18N.Setting.VEEBatchModify.UncommonPeakOnly = 'For abnormal peaks ONLY';
+I18N.Setting.VEEBatchModify.NullValueOnly = 'For null values ONLY';
+I18N.Setting.VEEBatchModify.MinusValueOnly = 'For negative values ONLY';
+I18N.Setting.VEEBatchModify.SpecialValueOnly = 'For special values ONLY';
+I18N.Setting.VEEBatchModify.EmptyModifySelectionErrorLabel = 'Please choose at least one abnormal data type to be batch-modified.';
+I18N.Setting.VEEBatchModify.ModifyRule = 'Rule';
+I18N.Setting.VEEBatchModify.ChangeTo = 'Modify to';
+I18N.Setting.VEEBatchModify.DividedRule = 'Average backfill';
+I18N.Setting.VEEBatchModify.SourceTimeRange = 'Backfill source';
+I18N.Setting.VEEBatchModify.RevertRuleLabelTitle = 'Revert rule';
+I18N.Setting.VEEBatchModify.RevertRuleLabelContent = 'Revert the historic modification of all the selected data points and the data within the time interval to original values';
+I18N.Setting.VEEBatchModify.IgnoreRuleLabelContent = 'Ignore all the selected data points and the relevant abnormal data records within the time interval.';
+I18N.Setting.VEEBatchModify.SaveChangeButtonText = 'Modify and save';
+I18N.Setting.VEEBatchModify.SaveRevertButtonText = 'Revert and save';
+I18N.Setting.VEEBatchModify.SaveIgnoreButtonText = 'Ignore and save';
+I18N.Setting.VEEBatchModify.ShouldSelectTagMessage = 'Batch operation cannot be performed. Please select data points from the list on the left. ';
+I18N.Setting.VEEBatchModify.ConfirmModifyToValue = 'Are you sure to batch-modify the selected data points and the data within the time interval to {0}?';
+I18N.Setting.VEEBatchModify.ConfirmModifyToAvg = 'Are you sure to batch-modify the selected data points and the data within the time interval to the average backfill value of {0}?';
+I18N.Setting.VEEBatchModify.ConfirmRevert = 'Are you sure to revert the historic modification of the selected data points and the data within the time interval to original values?';
+I18N.Setting.VEEBatchModify.ConfirmIgnore = 'Are you sure to ignore all the selected data points and the relevant abnormal data records within the time interval?';
+
+
+I18N.Setting.VEEMonitorRule.AbnormalDataMonitortRule = 'V&E rule set';
+I18N.Setting.VEEMonitorRule.Scan = 'Scan All';
+I18N.Setting.VEEMonitorRule.Name = 'Name';
+I18N.Setting.VEEMonitorRule.Creator = 'Configured By';
+I18N.Setting.VEEMonitorRule.CreateTime = 'Configured On';
+I18N.Setting.VEEMonitorRule.MonitorRule = 'Rule set';
+I18N.Setting.VEEMonitorRule.MonitorTag = 'Data point';
+I18N.Setting.VEEMonitorRule.Monitor = 'Alarm Receiver';
+I18N.Setting.VEEMonitorRule.NormalPeak = 'Normal peak';
+I18N.Setting.VEEMonitorRule.AbnormalPeak = 'Abnormal peak';
+I18N.Setting.VEEMonitorRule.NullValue = 'Null value';
+I18N.Setting.VEEMonitorRule.NegativeValue = 'Negative value';
+I18N.Setting.VEEMonitorRule.SpecialValue = 'Special value';
+I18N.Setting.VEEMonitorRule.AtleaseOne = 'Please at least select one item';
+I18N.Setting.VEEMonitorRule.MonitorStartTime = 'Starting time';
+I18N.Setting.VEEMonitorRule.MonitorInterval = 'Scanning interval';
+I18N.Setting.VEEMonitorRule.MonitorDelayTime = 'Scan delay duration ';
+I18N.Setting.VEEMonitorRule.ScanTimeInfo = 'Every day, the scanning times are {0}.';
+I18N.Setting.VEEMonitorRule.MonitorStartTimeFormat = 'm/d, Y';
+I18N.Setting.VEEMonitorRule.NoMonitorDelay = 'No delay';
+I18N.Setting.VEEMonitorRule.Minute = 'Minute';
+I18N.Setting.VEEMonitorRule.AssociateUser = 'Associate alarm receiver';
+I18N.Setting.VEEMonitorRule.SelectedReceiver = 'Selected receiver';
+I18N.Setting.VEEMonitorRule.UnassociateTip = 'Cancel the correlation with the following persons.';
+I18N.Setting.VEEMonitorRule.TagName = 'Name of data point';
+I18N.Setting.VEEMonitorRule.TagType = 'Type of data point';
+I18N.Setting.VEEMonitorRule.TagCollectPeriod = 'Data acquisition/calculation interval';
+I18N.Setting.VEEMonitorRule.AssociateTag = 'Associate Data Points';
+I18N.Setting.VEEMonitorRule.SelectAllTags = 'Associate All';
+I18N.Setting.VEEMonitorRule.UnassociateOtherRuleTagTip = 'Terminate the association with the ruleset "{0}".';
+I18N.Setting.VEEMonitorRule.FirstScanTime = 'Every day, the first scanning time is 0:00.';
+I18N.Setting.VEEMonitorRule.ExplainN = 'N is the number of missing data before peak value.';
+I18N.Setting.VEEMonitorRule.AndGT = 'And >=';
+I18N.Setting.VEEMonitorRule.AndLT = 'And<';
+I18N.Setting.VEEMonitorRule.ScanAllTags = 'The system will scan all data after the time {1} at the next scanning time {0}. Continue?';
+I18N.Setting.VEEMonitorRule.SelectHierarchy = 'Please select hierarchical node.';
+I18N.Setting.VEEMonitorRule.SelectedMultiHierarchy = 'Multiple hierarchical nodes have been selected.';
+I18N.Setting.VEEMonitorRule.AssociateAll = 'Are you sure to append all the data points under this screening condition to the "Selected Tag" and connect them?';
+I18N.Setting.VEEMonitorRule.HierTreeOtherTags = 'Unassociated tags'
+
+
 I18N.Setting.TagConfiguration.FormulaItemType = {};
 I18N.Setting.TagConfiguration.FormulaItemType.PTag = '##Setting.Label.PTagManagement##';
 I18N.Setting.TagConfiguration.FormulaItemType.VTag = '##Setting.Label.VTagManagement##';
@@ -370,11 +460,11 @@ I18N.Setting.TagBatchImport.ImportDate = 'Import time';
 I18N.Setting.TagBatchImport.TagType = 'Tags type';
 I18N.Setting.TagBatchImport.Importer = 'Importer';
 I18N.Setting.TagBatchImport.File = 'Imported file';
-I18N.Setting.TagBatchImport.ConfigLog = 'Bulked import logs';
-I18N.Setting.TagBatchImport.ImportResult = '{0} pieces imported successfully ({1} pieces newly added, {2} pieces modified) and {3} pieces failed - {4} pieces in total.';
+I18N.Setting.TagBatchImport.ConfigLog = ' Bulked import logs';
+I18N.Setting.TagBatchImport.ImportResult = '{0} items are imported successfully ({1} items are newly added, {2} items are modified) and {3} items are failed - {4} itmes in total.';
 I18N.Setting.TagBatchImport.DownloadLog = 'Download log file';
 I18N.Setting.TagBatchImport.DownloadLogFile = 'Download import log';
-I18N.Setting.TagBatchImport.ToViewLog = 'detail records';
+I18N.Setting.TagBatchImport.ToViewLog = ' to check detail records';
 I18N.Setting.TagBatchImport.ImportResultView = 'Bulk import is completed. {0} pieces succeeded; {1} pieces failed; {2} in total.';
 
 I18N.Setting.TagBatchImport.ErrorMessage2 = 'File format error';
@@ -455,7 +545,7 @@ I18N.Setting.Benchmark.Industry.AllIndustry = 'All the industries';
 I18N.Setting.Benchmark.Industry.OfficeBuilding = 'Office building';
 I18N.Setting.Benchmark.Industry.DataCenter = 'Data center';
 I18N.Setting.Benchmark.Industry.Hotel = 'Hotel';
-I18N.Setting.Benchmark.Industry.TwoStarAndBelowHotel = 'Hotel (2-star and below)';
+I18N.Setting.Benchmark.Industry.TwoStarAndBelowHotel = 'Hotel (3-star and below)';
 I18N.Setting.Benchmark.Industry.ThreeStarHotel = 'Hotel (3-star)';
 I18N.Setting.Benchmark.Industry.FourStarHotel = 'Hotel (4-star)';
 I18N.Setting.Benchmark.Industry.FiveStarHotel = 'Hotel (5-star)';
@@ -464,7 +554,7 @@ I18N.Setting.Benchmark.Industry.School = ' School';
 I18N.Setting.Benchmark.Industry.Retail = ' Retail industry';
 I18N.Setting.Benchmark.Industry.Supermarket = ' Supermarket';
 I18N.Setting.Benchmark.Industry.ClothingRetails = ' Clothing retailing';
-I18N.Setting.Benchmark.Industry.Mall = ' Mall';
+I18N.Setting.Benchmark.Industry.Mall = ' Shopping mall';
 I18N.Setting.Benchmark.Industry.Communication = ' Communication';
 I18N.Setting.Benchmark.Industry.CommunicationRoom = ' Computer room';
 I18N.Setting.Benchmark.Industry.BaseStation = ' Communication base station';
@@ -509,8 +599,11 @@ I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePreviousComboLabel = 'Previou
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious7Day = '7 days';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious30Day = '30 days';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious12Month = '12 months';
-I18N.EM.EnergyAnalyse.AddIntervalWindow.UserDefined = 'User-defined'
-I18N.EM.EnergyAnalyse.AddIntervalWindow.Relative = 'Relative'
+I18N.EM.YAxisSetting = 'Y Axis Setting';
+I18N.EM.YAxisSettingTags = 'Relative Data';
+I18N.EM.YAxisTitle = 'Y Axis';
+I18N.EM.YAxisMinMaxValidation = 'Maximum value should be greater than minimum value.';
+
 
 I18N.EM.ChooseFunctionMessage = 'Please select a function from the panel to display a chart.';
 I18N.EM.CenterBar.Button.DefaultDashboard = 'Default';
@@ -761,6 +854,7 @@ I18N.Common.Button.Calendar = {};
 I18N.Common.Button.Calendar.ShowHC = 'HC seasons';
 I18N.Common.Button.Calendar.ShowHoliday = 'Non-work time';
 I18N.Common.Button.Calendar.ShowNone = 'None';
+I18N.Common.Button.BatchAction = 'Batch operation';
 
 I18N.Common.Button.Comparation = 'Compare';
 I18N.Common.Button.Confirm = 'Confirm';
@@ -771,26 +865,12 @@ I18N.Common.Button.Delete = 'Delete';
 I18N.Common.Button.Exit = 'Exit';
 I18N.Common.Button.Clear = 'Empty';
 I18N.Common.Button.Send = 'Send';
+I18N.Common.Button.GoOn = 'Continue';
 I18N.Common.Button.Confirmed = 'OK';
-I18N.Common.Button.ChangeRecord = 'Change Record';
-I18N.Common.Button.Originaldata = 'Original data';
-I18N.Common.Button.BatchOperation = 'Batch operation';
-I18N.Common.Button.BatchModify = 'Modify';
-I18N.Common.Button.BatchRevert = 'Revert';
-I18N.Common.Button.BatchIgnore = 'Ignore';
-I18N.Setting.Radio.VEEAllData = 'All Data';
-I18N.Setting.Radio.VEEAbnormal = 'Abnormal';
-I18N.Setting.Radio.VEEModifyValue = 'Modify';
-I18N.Setting.Radio.VEEBackfillSource = 'Back fill';
-I18N.Common.Button.ModifyAndSave = 'Modify and Save';
-I18N.Common.Button.BatchModifyGiveup = 'Give Up';
-I18N.Common.AbnormalType.NormalPeaks = 'For normal peaks ONLY';
-I18N.Common.AbnormalType.AbnormalPeaks = 'For abnormal peaks ONLY';
-I18N.Common.AbnormalType.Null = 'For null values ONLY';
-I18N.Common.AbnormalType.Negative = 'For negative values ONLY';
-I18N.Common.AbnormalType.Special = 'For special values ONLY';
-
-I18N.Common.Operation.ResetZoom = 'Cancel Zoom in/Zoom out';
+I18N.Common.Button.ClearAll = 'Clear All';
+I18N.Common.Operation.Ignore = 'Ignore';
+I18N.Common.Operation.RevertChange = 'Revert';
+I18N.Common.Operation.ResetZoom = 'Cancel zoom in/zoom out';
 I18N.Common.Operation.ResetZoom1vs1 = 'Zoom to 1:1';
 I18N.Common.Operation.Create = 'Add';
 I18N.Common.Operation.Retrieve = 'Inquire';
@@ -805,6 +885,16 @@ I18N.Common.Operation.Associate = 'Associate';
 I18N.Common.Operation.UnassociateTag = 'Disable association';
 I18N.Common.Operation.GoBack = 'Back';
 I18N.Common.Operation.GoBackToHierarchy = 'View in the building hierarchy';
+
+I18N.Common.CalcBenchmarkSetting = {};
+I18N.Common.CalcBenchmarkSetting.CalcuationBenchmark = 'Benchmark Calculation';
+I18N.Common.CalcBenchmarkSetting.Calcuated = 'Will be invovled in benchmark calculation';
+I18N.Common.CalcBenchmarkSetting.BelongsCostumerUnCalculated = 'This customer doesn\'t be involved in benchmark calculation';
+I18N.Common.CalcBenchmarkSetting.BelongsSPUnCalculated = 'This service provider doesn\'t be invloved in benchmark calculation';
+I18N.Common.CalcBenchmarkSetting.SevenDaysOnly = 'Only support to view Raw Data in 7 days.';
+I18N.Common.CalcBenchmarkSetting.MultipleConfirmMessage = 'To view the Raw Data, all compared time ranges will be cleared. Continue?';
+I18N.Common.CalcBenchmarkSetting.KeepSearching = 'Continue';
+I18N.Common.CalcBenchmarkSetting.NotSupportVtag = 'Viewing Raw Data is not supported for virtual tag.';
 
 I18N.Common.Label.EmptyHierarchyText = 'Please select hierarchy node';
 I18N.Common.Label.Loading = 'Loading, please wait...';
@@ -831,7 +921,8 @@ I18N.Common.Label.UnExpectedData = 'Illegal data exist. Pie chart is unavailable
 I18N.Common.Label.NameRegexError = '"Chinese characters, English letters, numbers, underlines, and spacing are allowed."';
 I18N.Common.Label.CustomerNameRegexError = 'Chinese characters, English letters, numbers, spacing, and brackets are allowed.';
 I18N.Common.Label.PersonNameRegexError = 'Chinese characters, English letters, and spacing are allowed.';
-I18N.Common.Label.CodeRegexError = 'English letters, numbers, underlines, +, ., -, _, #, & and spacing are allowed.';
+I18N.Common.Label.CodeRegexError = 'Chinese characters, English Letters, Numbers, Underline, Comma, (,), -, [,], #, &, :, ;, ., ~, %, +, /, |, \\ and Blank are allowed';
+I18N.Common.Label.CustomerCodeRegexError = 'Chinese characters, English Letters, Numbers, Underline, Comma, (,), -, [,], {,}, #, &, ;, ., ~, %, + and Blank are allowed';
 
 I18N.Common.Label.UserIdRegexError = 'English letters, numbers, underlines, and period are allowed.';
 I18N.Common.Label.PasswordRegexError = 'Please at least include numbers and letters in 6-20 digits. Half-width English letters, numbers, underlines and  !, @, #, $, %, ^, &, *, (, ) are allowed.';
@@ -871,8 +962,13 @@ I18N.Common.GraphType.Column = 'Column';
 I18N.Common.GraphType.Stack = 'Stack';
 I18N.Common.GraphType.Pie = 'Pie';
 I18N.Common.GraphType.Grid = 'Data sheet';
+I18N.Common.GraphType.Original = 'Raw Data';
+
+I18N.Common.YaxisType.Linear = 'Linear Y Axis';
+I18N.Common.YaxisType.Logarithmic = 'Logarithmic Y Axis';
 
 I18N.Common.Glossary.DemoUser = 'Demo account';
+I18N.Common.Glossary.TimePeriod = 'Time interval';
 
 I18N.Common.Glossary.PulsePeak = 'Peak season';
 I18N.Common.Glossary.PriceStrategy = 'Price strategy';
@@ -931,7 +1027,7 @@ I18N.Common.Glossary.DataValue = 'Numerical value';
 I18N.Common.Glossary.DataQuality = 'Quality';
 I18N.Common.Glossary.Comment = 'Remarks';
 I18N.Common.Glossary.Function = 'Function';
-I18N.Common.Glossary.Tag = 'Tags';
+I18N.Common.Glossary.Tag = 'Tag';
 I18N.Common.Glossary.Type = 'Type';
 I18N.Common.Glossary.Formula = 'Formula';
 I18N.Common.Glossary.MeterCode = 'Meter code';
@@ -941,6 +1037,7 @@ I18N.Common.Glossary.Alarm = 'Alarm';
 
 I18N.Common.Glossary.AccumulatedValueCal = 'Calculate with accumulated value';
 I18N.Common.Glossary.AccumulatedValue = 'Accumulated value';
+I18N.Common.Glossary.DifferenceValue = 'Difference value';
 
 I18N.Common.Glossary.CorrectionValue = 'Corrected value';
 I18N.Common.Glossary.TrendChart = 'Tendency chart';
@@ -971,6 +1068,7 @@ I18N.Common.Glossary.KPI = 'Key performance indication';
 I18N.Common.Glossary.Target = 'Target';
 I18N.Common.Glossary.Baseline = 'Baseline';
 I18N.Common.Glossary.DayNightRatio = 'Day-night ratio';
+I18N.Common.Glossary.Updator = 'Modified by';
 
 I18N.Common.Glossary.MonthName.January = 'Jan.';
 I18N.Common.Glossary.MonthName.February = 'Feb.';
@@ -1325,6 +1423,7 @@ I18N.Setting.Role.TagMapping = 'Association';
 I18N.Setting.Role.CustomerInfoView = 'View customer information';
 I18N.Setting.Role.CustomerInfoManagement = 'Manage customer information';
 I18N.Setting.Role.CustomLabeling = 'Customized labeling';
+I18N.Setting.Role.VEE = 'VEE';
 
 //contact us
 I18N.Setting.ContactUs = {};
@@ -1402,7 +1501,7 @@ I18N.Setting.QRCode.iPad = 'iPad client';
 I18N.Setting.QRCode.SiteTitle = 'EnergyMost Wei site';
 I18N.Setting.QRCode.ProductName = 'EnergyMost';
 I18N.Setting.QRCode.iPad1 = 'by QR scanner on iPad';
-I18N.Setting.QRCode.iPad2 = '????';
+I18N.Setting.QRCode.iPad2 = 'Scan the QR code above to download immediately.';
 I18N.Setting.QRCode.Site1 = 'scan the QR code above via WeChat';
 I18N.Setting.QRCode.Site2 = 'subscribe the App';
 I18N.Setting.QRCode.iPadTitle = 'EnergyMost iPad client';
@@ -1484,6 +1583,7 @@ I18N.Message.M02023 = 'Selected tags have different commodities, so pie charts c
 I18N.Message.M02009 = 'No data authority or the authority has been modified. Data cannot be inquired.';
 I18N.Message.M02407 = 'Electricity price in peak/valley/normal period cannot be displayed by hour.';
 I18N.Message.M02408 = 'This node is not configured with peak/valley period and thus cannot be displayed.';
+I18N.Message.M02027 = 'Can not view data because the step in record is smaller than supported minimum step.';
 
 I18N.Message.M02601 = 'Drawing cannot be created for the part lacking of circadian calendar. Please try again after setting.';//'{0}所对应的层级节点没有设置昼夜日历，无法查看昼夜比数据';
 I18N.Message.M02602 = 'Drawing cannot be created for the part lacking of work calendar. Please try again after setting.';//'{0}所对应的层级节点没有设置工作日历，无法查看公休比数据';
@@ -1669,8 +1769,6 @@ I18N.Message.M09157 = 'The corresponding ##Common.Glossary.Tag## has been delete
 I18N.Message.M09158 = '##Common.Glossary.Tag## is not associated with hierarchy tree and dimension tree. Please associate ##Common.Glossary.Tag## with them.';
 I18N.Message.M09159 = 'The calendar property of the hierarchy tree associated with ##Common.Glossary.Tag## is empty. Please set the calendar for the hierarchy tree first.';
 I18N.Message.M09160 = 'The data of this year in the calendar property of the hierarchy tree associated with ##Common.Glossary.Tag## is empty. Please set the calendar property of this year for the hierarchy tree first.';
-I18N.Message.M09115 = 'The minimum value for this field is -999999999.999999';
-I18N.Message.M09116 = 'The minimum value for this field is 0.000001';
 
 //Cost concurrency error
 I18N.Message.M10007 = 'Electricity price in peak/valley/normal period cannot be displayed by hour.';
@@ -1680,7 +1778,6 @@ I18N.Message.M10017 = I18N.format(I18N.Message.DeletionConcurrency, I18N.Common.
 I18N.Message.M10019 = 'Demand cost Tag is invalid data.';
 I18N.Message.M10020 = 'Reactive energy Tag is invalid data.';
 I18N.Message.M10021 = 'Active energy Tag is invalid data.';
-I18N.Message.M10022 = '1.2.3 is not a valid number';
 
 I18N.Message.M11012 = 'This customer has been referred to by hierarchy and thus cannot be deleted.';
 I18N.Message.M11351 = 'Code is repeated';
@@ -1754,8 +1851,14 @@ I18N.Message.M11601 = 'Wrong user-defined energy labeling.';
 I18N.Message.M11602 = 'User-defined energy labeling levels are discontinuous.';
 I18N.Message.M11603 = 'Concurrent error. Please refresh.';
 
-I18N.Common.Window.BatchModify = 'Batch modification of original data';
-I18N.Message.AbnormalType = '请至少选择一项要批量修改的异常数据类型。';
+I18N.Message.M05003 = 'Illegal entry.';
 
-I18N.Message.M05003 = 'Illegal entry.'
+I18N.Message.M20001 = 'Rule name is conflicted with existed rules.';
+I18N.Message.M20002 = 'Rule has been deleted.';
+I18N.Message.M20003 = 'Rule has been modified.';
+I18N.Message.M20006 = 'Client has been deleted.';
+I18N.Message.M20007 = 'Total rules over-limit.';
+I18N.Message.M20012 = 'Some data points have been correlated to other rules.';
+I18N.Message.M20013 = 'Can not modify the data of tags: {0}。';
+I18N.Message.M20014 = 'Some tags are deleted or not under the permission scope。';
 

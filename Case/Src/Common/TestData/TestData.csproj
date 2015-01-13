@@ -70,6 +70,7 @@
     <Compile Include="Customer\CustomizedLabellingSettingData.cs" />
     <Compile Include="Customer\ElectricityCostData.cs" />
     <Compile Include="Customer\IndustryZoneData.cs" />
+    <Compile Include="Customer\VEEData.cs" />
     <Compile Include="Customer\AbnormalRecordData.cs" />
     <Compile Include="Customer\VtagData.cs" />
     <Compile Include="Customer\AssociateTagData.cs" />

@@ -39,6 +39,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static CheckBoxField BatchModifyAbnormalTypeCheckBox { get { return GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxBatchModifyAbnormalType); } }
         #endregion
 
+        #region CheckBox of Veerule
+
+        public static CheckBoxField VEERuleCheckBox { get { return GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxVEERule); } }
+        public static CheckBoxField VEEIsNullCheckBox { get { return GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxVEEIsNull); } }
+        public static CheckBoxField VEEIsSpecialCheckBox { get { return GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxVEEIsSpecial); } }
+        public static CheckBoxField VEEIsNegativeCheckBox { get { return GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxVEEIsNegative); } }
+        
+        #endregion
+
         #region CheckBox of Widget template
 
         public static CheckBoxField WidgetTemplateTableCheckBox = GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxWidgetTemplateTable);    

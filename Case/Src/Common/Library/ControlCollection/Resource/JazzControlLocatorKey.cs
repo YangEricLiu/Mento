@@ -68,6 +68,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorTagSettingsP = "ButtonNavigatorTagSettingsP";
         public static string ButtonNavigatorTagSettingsV = "ButtonNavigatorTagSettingsV";
         public static string ButtonNavigatorTagSettingsKPI = "ButtonNavigatorTagSettingsKPI";
+        public static string ButtonNavigatorTagSettingsVEE = "ButtonNavigatorTagSettingsVEE";
         public static string ButtonNavigatorAbnormalRecord = "ButtonNavigatorAbnormalRecord";
         public static string ButtonNavigatorHierarchySettingsHierarchy = "ButtonNavigatorHierarchySettingsHierarchy";
         public static string ButtonNavigatorHierarchySettingsSystemDimension = "ButtonNavigatorHierarchySettingsSystemDimension";
@@ -253,6 +254,17 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonPTagRawDataLeft = "ButtonPTagRawDataLeft";
         public static string ButtonPTagRawDataRight = "ButtonPTagRawDataRight";
 
+        #endregion
+        #region VEERule
+        public static string ButtonVEERuleSettingsCreateRuleTag = "ButtonVEERuleSettingsCreateRuleTag";
+        public static string ButtonVEERuleSettingsModify = "ButtonVEERuleSettingsModify";
+        public static string ButtonVEERuleSettingsSave = "ButtonVEERuleSettingsSave";
+        public static string ButtonVEERuleSettingsCancel = "ButtonVEERuleSettingsCancel";
+        public static string ButtonVEERuleSettingsDelete = "ButtonVEERuleSettingsDelete";
+        public static string TabButtonVEERuleBasicProperty = "TabButtonVEERuleBasicProperty";
+        public static string TabButtonVEERuleAssociateTags = "TabButtonVEERuleAssociateTags";
+        public static string TabButtonVEERuleAssociateUsers = "TabButtonVEERuleAssociateUsers";
+        public static string ButtonVEERuleSettingsScan = "ButtonVEERuleSettingsScan";
         #endregion
 
         #region vee
@@ -707,6 +719,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldPTagSettingsComment = "TextFieldPTagSettingsComment";
         #endregion
 
+        #region VEEsettings
+        public static string TextFieldVEESettingsName = "TextFieldVEESettingsName";
+        public static string TextFieldVEESettingsSpikeGT = "TextFieldVEESettingsSpikeGT";
+        public static string TextFieldVEESettingsSpikeLT = "TextFieldVEESettingsSpikeLT";
+        public static string TextFieldVEESpecilaValue = "TextFieldVEESpecilaValue";
+       // public static string TextFieldVEEScan = "TextFieldVEEScan";
+        
+        #endregion
+
         #region ptagrawdata
 
         public static string TextFieldPtagRawDataValue = "TextFieldPtagRawDataValue";
@@ -885,6 +906,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxPTagSettingsCommodity = "ComboBoxPTagSettingsCommodity";
         public static string ComboBoxPTagSettingsUom = "ComboBoxPTagSettingsUom";
         public static string ComboBoxPTagSettingsCalculationType = "ComboBoxPTagSettingsCalculationType";
+        #endregion
+
+        #region VEE
+        public static string ComboBoxVEEScanInterval = "ComboBoxVEEScanInterval";
+        public static string ComboBoxVEEScanDelay = "ComboBoxVEEScanDelay";
         #endregion
 
         #region vtag
@@ -1115,6 +1141,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string GridPTagSettingsPTagList = "GridPTagSettingsPTagList";
         public static string GridAbnormalRecordList = "GridAbnormalRecordList";
         public static string GridCustomizedLabellingList = "GridCustomizedLabellingList";
+        public static string GridVEERuleSettingsVEERuleList = "GridVEERuleSettingsVEERuleList";
         public static string GridPTagRawData = "GridPTagRawData";
         public static string GridVEERawData = "GridVEERawData";
         #endregion
@@ -1198,6 +1225,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region PlatformSettings
         #region customermanagement
         public static string DatePickerOperationTime = "DatePickerOperationTime";
+        public static string DateVEEScanStartDatePicker = "DateVEEScanStartDatePicker";
         #endregion
 
         #endregion
@@ -1238,6 +1266,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string CheckBoxFieldCustomerMapProperty = "CheckBoxFieldCustomerMapProperty";
 
         public static string CheckBoxPtagIsAccumulated = "CheckBoxPtagIsAccumulated";
+        public static string CheckBoxVEERule = "CheckBoxVEERule";
+        public static string CheckBoxVEEIsNull = "CheckBoxVEEIsNull";
+        public static string CheckBoxVEEIsSpecial = "CheckBoxVEEIsSpecial";
+        public static string CheckBoxVEEIsNegative = "CheckBoxVEEIsNegative";
 
         public static string CheckBoxBatchModifyAbnormalType = "CheckBoxBatchModifyAbnormalType";
 

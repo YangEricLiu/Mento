@@ -130,7 +130,17 @@ namespace Mento.ScriptCommon.Library
                 return _VTagSettings;
             }
         }
+        private static VEERuleSettings _VEERuleSettings;
+        public static VEERuleSettings VEERuleSettings
+        {
+            get
+            {
+                if (_VEERuleSettings == null)
+                    _VEERuleSettings = new VEERuleSettings();
 
+                return _VEERuleSettings;
+            }
+        }
         private static KPITagSettings _KPITagSettings;
         public static KPITagSettings KPITagSettings
         {

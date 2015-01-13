@@ -107,6 +107,7 @@
     <Compile Include="TagManagement\DeletePtagSuite.cs" />
     <Compile Include="TagManagement\ModifyInvalidPtagSuite.cs" />
     <Compile Include="TagManagement\ModifyValidPtagSuite.cs" />
+    <Compile Include="TagManagement\ModifyValidVEERuleSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">
@@ -143,6 +144,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>del /F /S /Q $(TargetDir)Data

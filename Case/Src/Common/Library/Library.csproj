@@ -78,6 +78,7 @@
     <Compile Include="Functions\CustomerSettings\AssociateSettings.cs" />
     <Compile Include="Functions\ClientAccess\DemoAccessSetting.cs" />
     <Compile Include="Functions\CustomerSettings\BasicIndustryAndZoneSetting.cs" />
+    <Compile Include="Functions\CustomerSettings\VEERuleSettings.cs" />
     <Compile Include="Functions\CustomerSettings\AbnormalData.cs" />
     <Compile Include="Functions\CustomerSettings\PTagRawData.cs" />
     <Compile Include="Functions\CustomerSettings\CustomizedLabellingSettings.cs" />

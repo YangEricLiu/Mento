@@ -61,6 +61,7 @@
             <add key="ButtonNavigatorTagSettingsP" value="st-menu-ptagmgr" type="ID"/>
             <add key="ButtonNavigatorTagSettingsV" value="st-menu-vtagmgr" type="ID"/>
             <add key="ButtonNavigatorTagSettingsKPI" value="st-menu-kpimgr" type="ID"/>
+            <add key="ButtonNavigatorTagSettingsVEE" value="st-menu-veemonitor" type="ID"/>
             <add key="ButtonNavigatorAbnormalRecord" value="st-menu-veeexception" type="ID"/>
             <add key="ButtonNavigatorHierarchySettingsHierarchy" value="st-menu-hierarchy" type="ID"/>
             <add key="ButtonNavigatorHierarchySettingsSystemDimension" value="st-menu-systemdimension" type="ID"/>
@@ -327,7 +328,13 @@
               <add key="ButtonVTagSettingsModify" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonVTagSettingsDelete" value="//div[@id='st-vtag-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
           </vtag>
-
+          <veerule>
+              <add key="ButtonVEERuleSettingsCreateRuleTag" value="st-vee-monitor-grid-add" type="ID"/>
+              <add key="ButtonVEERuleSettingsModify" value="//div[@id='st-monitor-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+              <add key="ButtonVEERuleSettingsSave" value="//div[@id='st-monitor-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+              <add key="ButtonVEERuleSettingsCancel" value="//div[@id='st-monitor-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+              <add key="ButtonVEERuleSettingsDelete" value="//div[@id='st-monitor-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
+          </veerule>
           <kpitag>
               <add key="TabButtonKPITagSettingsBasicProperty" value="//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
               <!--text in this xpath need to be changed to a language variable-->
@@ -672,6 +679,13 @@ CommentTextField
               <add key="TextFieldPTagSettingsChannel" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='ChannelId']" type="XPath"/>
               <add key="TextFieldPTagSettingsComment" value="//div[@id='st-ptag-form-body']//textarea[@name='Comment']" type="XPath"/>
           </ptagsettings> 
+          <VEEsettings>
+              <add key="TextFieldVEESettingsName" value="//div[@id='st-monitor-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
+              <add key="TextFieldVEESettingsSpikeGT" value="//div[@id='st-monitor-form-body']//input[@type='text' and @name='SpikeGT']" type="XPath"/>
+              <add key="TextFieldVEESettingsSpikeLT" value="//div[@id='st-monitor-form-body']//input[@type='text' and @name='SpikeLT']" type="XPath"/>
+              <add key="TextFieldVEESpecilaValue" value="//div[@id='st-monitor-form-body']//input[@type='text' and @name='SpecialVal']" type="XPath"/>
+
+          </VEEsettings> 
           <ptagrawdata>
                          
               <add key="TextFieldPtagRawDataValue" value="//input[@name='DataValue']" type="XPath"/>
@@ -839,7 +853,10 @@ CommentTextField
               <add key="ComboBoxVTagSettingsCalculationType" value="//div[@id='st-vtag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
               <add key="ComboBoxVTagSettingsCalculationStep" value="//div[@id='st-vtag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
           </vtag>
-
+          <vee>
+              <add key="ComboBoxVEEScanInterval" value="//div[@id='st-monitor-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='Interval']]" type="XPath"/>
+              <add key="ComboBoxVEEScanDelay" value="//div[@id='st-monitor-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='Delay']]" type="XPath"/>
+          </vee>
           <kpitag>
               <add key="ComboBoxKPITagSettingsUom" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
               <add key="ComboBoxKPITagSettingsCalculationType" value="//div[@id='st-kpi-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
@@ -1022,6 +1039,7 @@ CommentTextField
       <add key="GridPTagSettingsPTagList" value="st-ptag-grid" type="ID"/>
       <add key="GridAbnormalRecordList" value="st-veerecord-grid" type="ID"/>
       <add key="GridCustomizedLabellingList" value="st-customized-labeling-grid" type="ID"/>
+      <add key="GridVEERuleSettingsVEERuleList" value="st-vee-monitor-grid" type="ID"/>
       <add key="GridPTagRawData" value="//div[contains(@id,'rawdatagridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
       <add key="GridVEERawData" value="//div[contains(@id,'gridpanel') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
     </customersettings>
@@ -1088,6 +1106,9 @@ CommentTextField
         <add key="DatePickerBatchModifyEndDate" value="//div[contains(@id,'batchmodifywindow')]/div[contains(@id,'dateselector')]/table[3]//table[contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
         <add key="DatePickerBackfillSource" value="//div[contains(@id,'batchmodifywindow')]/table[contains(@id,'radiogroup')]//table[contains(@id,'datefield')]//table[contains(@id,'datefield') and contains(@class,'x-form-trigger-wrap')]" type="XPath"/>
       </veerawdata>
+      <VEERules>
+        <add key="DateVEEScanStartDatePicker" value="value=//div[@class='x-panel-body' and contains(@id,'st-monitor-form-body')]/table[3]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'StartTime')]]" type="XPath"/>
+      </VEERules>
     </CustomerSettings>
     <PlatformSettings>
       <customermanagement>
@@ -1136,6 +1157,10 @@ CommentTextField
 
     <add key="CheckBoxBenchMark" value="//div[@id='st-benchmark-properties-form-targetEl']//table[contains(@id,'checkboxfield')]" type="XPath"/>
     <add key="CheckBoxPtagIsAccumulated" value="//div[@id='st-ptag-form-body']/table[contains(@id,'checkboxfield')]" type="XPath"/>
+    <add key="CheckBoxVEERule" value="//div[@id='st-monitor-form-body']//table[contains(@id,'checkboxfield')]" type="XPath"/>
+    <add key="CheckBoxVEEIsNull" value="//div[@id='st-monitor-form-body']//table[tbody/tr//label[text()='$@Setting.VEEMonitorRule.NullValue']]" type="XPath"/>
+    <add key="CheckBoxVEEIsSpecial" value="//div[@id='st-monitor-form-body']//table[tbody/tr//label[text()='$@Setting.VEEMonitorRule.SpecialValue']]" type="XPath"/>
+    <add key="CheckBoxVEEIsNegative" value="//div[@id='st-monitor-form-body']//table[tbody/tr//label[text()='$@Setting.VEEMonitorRule.NegativeValue']]" type="XPath"/>
     <add key="CheckBoxBatchModifyAbnormalType" value="//div[contains(@id,'batchmodifywindow']/table[contains(@id,'checkboxgroup')]" type="XPath"/>
     <add key="CheckBoxWidgetTemplateTable" value="//div[@id='db-wt-item-targetaction-innerCt']/table[contains(@id,'checkboxfield')]" type="XPath"/>
    </CheckBox>

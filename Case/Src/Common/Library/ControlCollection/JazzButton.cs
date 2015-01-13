@@ -550,6 +550,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTagSettingsKPI);}
         }//{NavigationTarget.TagSettingsKPI, new NavigatorItem(NavigationTarget.TagSettingsKPI, NavigationTarget.TagSettings,"st-menu-kpimgr-btnEl",ByType.ID)},
+        public static Button NavigatorTagSettingsVEEButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorTagSettingsVEE); }
+        }//{NavigationTarget.TagSettingsP, new NavigatorItem(NavigationTarget.TagSettingsP,NavigationTarget.TagSettings,"st-menu-ptagmgr-btnEl",ByType.ID)},    
         public static Button NavigatorAbnormalRecordButton
         {
             get { return GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorAbnormalRecord); }
@@ -963,6 +967,46 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button MsgBatchRevertRevertAndSaveButton
         {
             get { return GetControl<Button>(JazzControlLocatorKey.ButtonMsgBatchRevertRevertAndSave); }
+        }
+        #endregion
+
+        #region VEERule settings buttons
+        public static Button VEERuleSettingsCreateRuleButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERuleSettingsCreateRuleTag); }
+        }
+
+        public static Button VEERuleSettingsModifyButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERuleSettingsModify); }
+        }
+        public static Button VEERuleSettingsSaveButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERuleSettingsSave); }
+        }
+        public static Button VEERuleSettingsCancelButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERuleSettingsCancel); }
+        }
+        public static Button VEERuleSettingsDeleteButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERuleSettingsDelete); }
+        }
+        public static Button VEERuleSettingsScanButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonVEERuleSettingsScan); }
+        }
+        public static TabButton VEERuleBasicPropertyTabButton
+        {
+            get { return GetControl<TabButton>(JazzControlLocatorKey.TabButtonVEERuleBasicProperty); }
+        }
+        public static TabButton VEERuleAssociateTagsTabButton
+        {
+            get { return GetControl<TabButton>(JazzControlLocatorKey.TabButtonVEERuleAssociateTags); }
+        }
+        public static TabButton VEERuleAssociateUsersTabButton
+        {
+            get { return GetControl<TabButton>(JazzControlLocatorKey.TabButtonVEERuleAssociateUsers); }
         }
         #endregion
 

@@ -50,12 +50,17 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static DatePicker BackfillSourceDatePicker { get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerBackfillSource); } }
         #endregion
 
+        #region VEE Rules
+        public static DatePicker VEEScanStartDatePicker { get { return GetControl<DatePicker>(JazzControlLocatorKey.DateVEEScanStartDatePicker); } }
+        #endregion
         #endregion
 
 		#region Platform Setting
         #region Customer Management
         public static DatePicker OperationTimeDatePicker{ get { return GetControl<DatePicker>(JazzControlLocatorKey.DatePickerOperationTime);}}
         #endregion
+
+
         #endregion
 
     }

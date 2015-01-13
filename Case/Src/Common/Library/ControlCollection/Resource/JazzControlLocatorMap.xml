@@ -304,7 +304,7 @@
               <add key="ButtonVEEAllData" value="//div[contains(@id,'batchmodifywindow')]//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.VEEBatchModify.AllTags']]/input" type="XPath"/>
               <add key="ButtonVEEAbnormal" value="//div[contains(@id,'batchmodifywindow')]//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.VEERecord.AbnormalDataRecord']]/input" type="XPath"/>          
               <add key="ButtonVEEModifyValue" value="//div[contains(@id,'batchmodifywindow')]//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.VEEBatchModify.ChangeTo']]/input" type="XPath"/>
-              <add key="ButtonVEEBackfillSource" value="//div[contains(@id,'batchmodifywindow')]//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@etting.VEEBatchModify.DividedRule']]/input" type="XPath"/>          
+              <add key="ButtonVEEBackfillSource" value="//div[contains(@id,'batchmodifywindow')]//table[contains(@id,'radiofield')]/tbody/tr/td[label[text()='$@Setting.VEEBatchModify.DividedRule']]/input" type="XPath"/>          
               <add key="ButtonBatchModifyModifyAndSave" value="//div[contains(@id,'batchmodifywindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.VEEBatchModify.SaveChangeButtonText']]" type="XPath"/>
               <add key="ButtonBatchModifyGiveup" value="//div[contains(@id,'batchmodifywindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/> 
               <add key="ButtonBatchModifyClose" value="//div[contains(@id,'batchmodifywindow')]/div[contains(@class,'x-tool') and img[contains(@id,'tool')]]" type="XPath"/>

@@ -89,7 +89,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Check .Backfill source display blank as default.
             Assert.IsTrue(VEEModifyValueRadioButton.IsRadioButtonChecked());
-            Assert.AreEqual(" ", BatchModifyDialog.GetBackfillValue());
+            Assert.AreEqual("", BatchModifyDialog.GetBackfillValue());
 
             //Choose a time range, such as 2014-1-1 00：00 to 2014-1-2 00：00
             var ManualTimeRange = input.InputData.ManualTimeRange;

@@ -878,7 +878,7 @@ CommentTextField
             <add key="ComboBoxVEEBatchOperation" value="//div[@class='x-column-inner' and contains(@id,'dateselector')]//table[4]//table[contains(@id,'combobox')]" type="XPath"/>
             <add key="ComboBoxBatchModifyStartTime" value="//div[contains(@id,'batchmodifywindow')]/div[contains(@id,'dateselector')]/table[2]//table[contains(@id,'combobox')]" type="XPath"/>
             <add key="ComboBoxBatchModifyEndTime" value="//div[contains(@id,'batchmodifywindow')]/div[contains(@id,'dateselector')]/table[4]//table[contains(@id,'combobox')]" type="XPath"/>
-            <add key="ComboBoxBatchModifyEndTime" value="//div[contains(@id,'batchmodifywindow')]/table[contains(@id,'radiogroup')]//table[contains(@id,'combobox')]//table[contains(@id,'combobox') and contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
+            <add key="ComboBoxBackfillSourceTime" value="//div[contains(@id,'batchmodifywindow')]/table[contains(@id,'radiogroup')]//table[contains(@id,'combobox')]//table[contains(@id,'combobox') and contains(@class, 'x-form-trigger-wrap')]" type="XPath"/>
           </veerawdata>
     <CustomizedLabellingSetting>
               <add key="CustomizedLabellingCommodity" value="//div[@id='st-customized-labeling-properties-form-body']//table[contains(@class,'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
@@ -1307,6 +1307,10 @@ CommentTextField
     <RawData>
       <add key="WindowSwitchTime" value="//div[contains(@id,'window') and contains(@class, 'x-window-default')]" type="XPath"/>
     </RawData>
+
+    <VEERawData>
+      <add key="WindowVEESwitchTime" value="//div[contains(@id,'messagebox') and contains(@class, 'x-window-default')]" type="XPath"/>
+    </VEERawData>
   </Window>
   <!--Window End-->
 

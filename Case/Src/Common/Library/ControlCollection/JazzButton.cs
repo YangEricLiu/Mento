@@ -866,15 +866,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         }
         public static MenuButton VEEBatchModifyButton
         {
-            get { return GetControl<MenuButton>(JazzControlLocatorKey.ButtonVEEBatchOperation); }
+            get { return GetControl<MenuButton>(JazzControlLocatorKey.ButtonVEEBatchModify); }
         }
         public static MenuButton VEEBatchRevertButton
         {
-            get { return GetControl<MenuButton>(JazzControlLocatorKey.ButtonVEEBatchOperation); }
+            get { return GetControl<MenuButton>(JazzControlLocatorKey.ButtonVEEBatchRevert); }
         }
         public static MenuButton VEEBatchIgnoreButton
         {
-            get { return GetControl<MenuButton>(JazzControlLocatorKey.ButtonVEEBatchOperation); }
+            get { return GetControl<MenuButton>(JazzControlLocatorKey.ButtonVEEBatchIgnore); }
         }
         public static Button VEERawDataSaveAndSwitchButton
         {
@@ -906,22 +906,22 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         }
         public static RadioButton VEEAllDataRadioButton
         {
-            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonCustomizedLabellingAscendingOrder); }
+            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonVEEAllData); }
         }
 
         public static RadioButton VEEAbnormalRadioButton
         {
-            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonCustomizedLabellingAscendingOrder); }
+            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonVEEAbnormal); }
         }
 
         public static RadioButton VEEModifyValueRadioButton
         {
-            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonCustomizedLabellingAscendingOrder); }
+            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonVEEModifyValue); }
         }
 
         public static RadioButton VEEBackfillSourceRadioButton
         {
-            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonCustomizedLabellingAscendingOrder); }
+            get { return GetControl<RadioButton>(JazzControlLocatorKey.ButtonVEEBackfillSource); }
         }
 
         public static Button BatchModifyModifyAndSaveButton

@@ -85,8 +85,8 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual("2", VEERawDataGrid.GetCellValue(4));
 
             //Verify if the relevant Status fields as Modified.
-            Assert.AreEqual(input.InputData.Comments, VEERawDataGrid.GetCellStatus(3));
-            Assert.AreEqual(input.InputData.Comments, VEERawDataGrid.GetCellStatus(4));
+            Assert.AreEqual(input.ExpectedData.Messages[0], VEERawDataGrid.GetCellStatus(3));
+            Assert.AreEqual(input.ExpectedData.Messages[0], VEERawDataGrid.GetCellStatus(4));
 
         }
 
@@ -244,17 +244,24 @@ namespace Mento.Script.Customer.TagManagement
             VEERawDataGrid.FocusOnCell(7);
             TimeManager.LongPause();
 
+            AbnormalData.ClickSaveRawDataButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+
             //Click Switch button in Original Value now
             AbnormalData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
-            Assert.AreEqual("1", VEERawDataGrid.GetCellValue(9));
+            Assert.AreEqual("1", VEERawDataGrid.GetCellDiffValue(9));
 
             //Click Left button to change display time range
             AbnormalData.ClickLeftButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+
+            //+Click switch button
+            AbnormalData.ClickSwitchOriginalValueButton();
             TimeManager.LongPause();
 
             //Modify one cell under Value Column
-            VEERawDataGrid.FocusOnCell(10);
+            VEERawDataGrid.FocusOnCell(10);//It can't fill diff value
             TimeManager.LongPause();
             VEERawDataValueNumberField.Fill("8");
             TimeManager.LongPause();

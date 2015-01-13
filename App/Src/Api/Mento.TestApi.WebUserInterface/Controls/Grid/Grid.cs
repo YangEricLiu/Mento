@@ -177,7 +177,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
-        /// Simulate mouse focus on the cell 
+        /// Simulate mouse focus on the cell for original value
         /// </summary>
         /// <param name="cellName"></param>
         /// <returns></returns>
@@ -227,6 +227,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <param name="cellName"></param>
         /// <returns></returns>
         public string GetCellValue(int rowIndex, int cellIndex2 = 2, bool Paging = true)
+        {
+            return this.GetCell(rowIndex, cellIndex2, Paging).Text;
+        }
+
+        /// <summary>
+        /// Get the value from the different value cell 
+        /// </summary>
+        /// <param name="cellName"></param>
+        /// <returns></returns>
+        public string GetCellDiffValue(int rowIndex, int cellIndex2 = 3, bool Paging = true)
         {
             return this.GetCell(rowIndex, cellIndex2, Paging).Text;
         }

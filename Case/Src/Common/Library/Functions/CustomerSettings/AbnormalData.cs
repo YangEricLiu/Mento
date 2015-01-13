@@ -50,7 +50,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button VEERawDataLeftButton = JazzButton.VEERawDataLeftButton;
         private static Button VEERawDataRightButton = JazzButton.VEERawDataRightButton;
 
-        private static Locator SwitchTimeWindow = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.WindowSwitchTime);
+        private static Locator VEESwitchTimeWindow = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.WindowVEESwitchTime);
 
         #endregion
 
@@ -239,7 +239,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickSaveAndSwitchButton()
         {
-            if (ElementHandler.Exists(SwitchTimeWindow))
+            if (ElementHandler.Exists(VEESwitchTimeWindow))
             {
                 VEERawDataSaveAndSwitchButton.Click();
                 JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -252,7 +252,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickDirectlySwitchButton()
         {
-            if(ElementHandler.Exists(SwitchTimeWindow))
+            if(ElementHandler.Exists(VEESwitchTimeWindow))
             {
                 VEERawDataDirectlySwitchButton.Click();
                 JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -265,7 +265,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         public void ClickCancelSwitchButton()
         {
-            if (ElementHandler.Exists(SwitchTimeWindow))
+            if (ElementHandler.Exists(VEESwitchTimeWindow))
             {
                 VEERawDataCancelSwitchButton.Click();
                 JazzMessageBox.LoadingMask.WaitLoading();

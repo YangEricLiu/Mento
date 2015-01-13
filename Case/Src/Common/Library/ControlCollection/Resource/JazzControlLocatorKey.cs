@@ -1431,7 +1431,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Customer RawData
 
         public static string WindowSwitchTime = "WindowSwitchTime";
-
+        public static string WindowVEESwitchTime = "WindowVEESwitchTime";
         #endregion
         
         #endregion

@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"TagNames":["PTag_AutomationCase","PTag_AutomationTest"],
+			"TagNames":["PTag_AutomationCase","LindaTestNull"],
 			"ManualTimeRange":[
 			{
 				"StartDate":"2014-01-06",

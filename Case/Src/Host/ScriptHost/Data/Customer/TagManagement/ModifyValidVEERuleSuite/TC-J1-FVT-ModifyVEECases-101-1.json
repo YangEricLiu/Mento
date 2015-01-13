@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"OriginalName":"testconfigtime",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"testconfigtime",
+			"SpikeGT":"344",
+			"SpikeLT":"3",
+			"Special":"36",
+			"ScanInterval":"1$@EM.Hour", 
+			"ScanDelay":"$@Setting.VEEMonitorRule.NoMonitorDelay",
+		
+		}
+	}
+]

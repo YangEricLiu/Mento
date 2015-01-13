@@ -1,0 +1,27 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonNameArray":["testconfigtime","VEEAutoTest1"],
+		    "CommonName": "testconfigtimeupdate",
+			"VEERules":["$@Setting.VEEMonitorRule.NullValue","$@Setting.VEEMonitorRule.NegativeValue","$@Setting.VEEMonitorRule.SpecialValue","$@Setting.VEEMonitorRule.NormalPeak"],
+			"SpikeGT": "350",
+			"SpikeLT": "50",
+			"Special": "60",
+			"ScanInterval":"2$@EM.Hour", 
+			"ScanDelay":"15$@Setting.VEEMonitorRule.Minute",
+			"ManualTimeRange":"2014-12-31",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"testconfigtimeupdate",
+			"CommonNameArray":["testconfigtime","VEEAutoTest1"],
+			"SpikeGT": "350",
+			"SpikeLT": "50",
+			"Special": "60",
+			"ScanIntervalArray":["1$@EM.Hour","2$@EM.Hour"], 
+			"ScanDelayArray":["$@Setting.VEEMonitorRule.NoMonitorDelay","15$@Setting.VEEMonitorRule.Minute"],
+		
+		}
+	}
+]

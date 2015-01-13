@@ -117,6 +117,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static Grid GridVEERawData { get { return GetControl<Grid>(JazzControlLocatorKey.GridVEERawData); } }
        
+        public static Grid VEERuleSettingsVEERuleList { get { return GetControl<Grid>(JazzControlLocatorKey.GridVEERuleSettingsVEERuleList); } }
+
         public static Grid UserListGrid
         {
             get { return GetControl<Grid>(JazzControlLocatorKey.GridUserList); }

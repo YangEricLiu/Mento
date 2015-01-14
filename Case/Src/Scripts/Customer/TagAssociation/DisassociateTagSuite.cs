@@ -204,6 +204,7 @@ namespace Mento.Script.Customer.TagAssociation
 
             //Select 不可关联 checkbox.
             AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
+            TimeManager.ShortPause();
             AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);
 
             //The tag is not list in there.
@@ -240,6 +241,7 @@ namespace Mento.Script.Customer.TagAssociation
 
             //Check 不可关联 checkbox.
             AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
+            TimeManager.ShortPause();
             AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);      
             TimeManager.LongPause();
 
@@ -257,6 +259,7 @@ namespace Mento.Script.Customer.TagAssociation
 
             //Select checkbox of the tag disassociated in step6
             AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[0]);
+            TimeManager.ShortPause();
             AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[1]);
             TimeManager.LongPause();
 
@@ -268,6 +271,7 @@ namespace Mento.Script.Customer.TagAssociation
 
             //Refresh the tag list or switch to other pages then switch back. The tag which was dissociated in step6 disappeared from '不可关联' list now.
             AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
+            TimeManager.ShortPause();
             AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);      
             TimeManager.LongPause();
             Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.TagName));

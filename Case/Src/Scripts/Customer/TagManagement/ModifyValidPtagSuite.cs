@@ -162,6 +162,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //1. Verify that ptag is updated on vtag formula tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+            TimeManager.ShortPause();
             JazzFunction.VTagSettings.FocusOnVTagByName(vtagName);
             JazzFunction.VTagSettings.SwitchToFormulaTab();
             JazzFunction.VTagSettings.ClickModifyFormulaButton();
@@ -176,6 +177,7 @@ namespace Mento.Script.Customer.TagManagement
             
             //3. Verify that ptag is updated on energy view tag list and  its legend name
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.ShortPause();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.CommonName);

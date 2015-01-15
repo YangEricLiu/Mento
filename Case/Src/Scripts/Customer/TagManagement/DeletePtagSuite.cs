@@ -227,7 +227,7 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
-            string msgText2 = JazzMessageBox.MessageBox.GetMessage();
+            string msgText2 = JazzMessageBox.MessageBox.GetMessage();//????How get message after delete?
             Assert.IsTrue(msgText2.Contains(input.ExpectedData.MessageArray[1]));
 
             //Click "OK" button

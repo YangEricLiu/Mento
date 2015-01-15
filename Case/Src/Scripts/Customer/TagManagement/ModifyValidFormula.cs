@@ -153,6 +153,7 @@ namespace Mento.Script.Customer.TagManagement
       public void ModifyTagCode(VtagData input)
       {
           VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
+          TimeManager.LongPause();
           VTagSettings.SwitchToFormulaTab();
           TimeManager.LongPause();
           TimeManager.LongPause();
@@ -192,6 +193,7 @@ namespace Mento.Script.Customer.TagManagement
           JazzFunction.HierarchySettings.ClickCreateChildHierarchyButton();
           JazzFunction.HierarchySettings.FillInName("Building1");
           JazzFunction.HierarchySettings.FillIncode("Building1");
+          TimeManager.ShortPause();
           JazzFunction.HierarchySettings.FillInType(input.InputData.HierarchyType);
           TimeManager.MediumPause();
           JazzFunction.HierarchySettings.FillInIndustry(input.InputData.Industry);
@@ -203,6 +205,7 @@ namespace Mento.Script.Customer.TagManagement
           JazzFunction.HierarchyPeopleAreaSettings.ClickPeopleAreaTab();
           TimeManager.MediumPause();
           JazzFunction.HierarchyPeopleAreaSettings.ClickPeopleAreaCreateButton();
+          TimeManager.ShortPause();
           JazzFunction.HierarchyPeopleAreaSettings.InputHeatingAreaValue("1");
           JazzFunction.HierarchyPeopleAreaSettings.ClickSaveButton();
           JazzMessageBox.LoadingMask.WaitSubMaskLoading();

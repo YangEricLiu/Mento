@@ -40,7 +40,8 @@ namespace Mento.Script.Customer.TagManagement
         [TearDown]
         public void CaseTearDown()
         {
-            PtagSettings.NavigatorToEnergyView();
+            //PtagSettings.NavigatorToEnergyView();
+            PtagSettings.NavigatorToPtagSetting();
             TimeManager.MediumPause();
         }
 

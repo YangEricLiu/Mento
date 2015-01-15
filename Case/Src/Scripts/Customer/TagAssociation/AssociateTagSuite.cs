@@ -357,7 +357,7 @@ namespace Mento.Script.Customer.TagAssociation
             //• Loading icon appear and check box is gray and cannot be select.
             TimeManager.LongPause();
             Association.IsAllTagsDisabled();
-            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
+            Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));//The tag in grid when check 可关联,why it in grid when check 不可关联?
 
             //Check 可关联 checkbox again.
             Association.CheckAssociatedCheckbox(input.InputData.HeaderName[0]);

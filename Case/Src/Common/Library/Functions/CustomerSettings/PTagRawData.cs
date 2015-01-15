@@ -103,7 +103,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             try
             {
-                PTagList.FocusOnRow(1, ptagName);
+                PTagList.FocusOnRow(2, ptagName);
                 return true;
             }
             catch(Exception)
@@ -121,7 +121,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             try
             {
-                PTagList.FocusOnRow(2, ptagCode);
+                PTagList.FocusOnRow(3, ptagCode);
                 return true;
             }
             catch (Exception)

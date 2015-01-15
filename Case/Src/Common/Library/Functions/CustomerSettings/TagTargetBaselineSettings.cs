@@ -104,7 +104,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FocusOnPTagByName(string ptagName)
         {
-            PTagList.FocusOnRow(1, ptagName);
+            PTagList.FocusOnRow(2, ptagName);
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Mento.ScriptCommon.Library.Functions
         /// <returns></returns>
         public void FocusOnVTagByName(string vtagName)
         {
-            VTagList.FocusOnRow(1, vtagName);
+            VTagList.FocusOnRow(2, vtagName);
         }
 
         /// <summary>

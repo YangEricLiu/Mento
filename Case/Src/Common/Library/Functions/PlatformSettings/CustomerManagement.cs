@@ -159,7 +159,7 @@ namespace Mento.ScriptCommon.Library.Functions
             int i = 0;
             while (i < mapInfoType.Length)
             {
-                if (CustomerMapInfoCheckBoxField.CommonUnCheck(mapInfoType[i]))
+                if (CustomerMapInfoCheckBoxField.IsCommonUnCheck(mapInfoType[i]))
                 {
                     i++;
                 }

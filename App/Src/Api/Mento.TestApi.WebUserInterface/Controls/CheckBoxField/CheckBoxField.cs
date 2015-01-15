@@ -143,8 +143,24 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 checkbox.Click();
         }
 
+        public void CommonUnCheck(string itemName)
+        {
+            IWebElement checkbox = GetCheckBoxInputElement(itemName);
+            try
+            {
+                if (IsCommonChecked(itemName))
+                {
+                    checkbox.Click();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
         // common uncheckbox check
-        public Boolean CommonUnCheck(string itemName)
+        public Boolean IsCommonUnCheck(string itemName)
         {
             IWebElement checkbox = GetCheckBoxFieldElement(itemName);
             try
@@ -160,7 +176,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 return false;
             }
-            
+
         }
         
         //common checkbox disabled 

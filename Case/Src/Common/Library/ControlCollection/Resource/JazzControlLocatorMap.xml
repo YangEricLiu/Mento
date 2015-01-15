@@ -151,7 +151,7 @@
       </User>
 
       <UserProfile>
-          <add key="ButtonUserProfile" value="//div[@id='header-userprofile-container-innerCt']/img" type="XPath"/>
+          <add key="ButtonUserProfile" value="header-btn-userprofile" type="ID"/>
           <add key="MenuButtonUserProfileView" value="header-btn-personalinfo" type="ID"/>
           <add key="ButtonUserProfileModify" value="//div[contains(@class,'x-toolbar-footer')]//em/button/span[text()='$@Common.Operation.Update']" type="XPath"/>
           <add key="ButtonUserProfileCancel" value="//div[contains(@class,'x-toolbar-footer')]//em/button/span[text()='$@Common.Button.Cancel']" type="XPath"/>

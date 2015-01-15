@@ -38,7 +38,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void ScriptTearDown()
         {
-            JazzFunction.LoginPage.RefreshJazz();
+            // JazzFunction.LoginPage.RefreshJazz();
+            JazzFunction.Navigator.NavigateHome();
         }
 
         [Test]

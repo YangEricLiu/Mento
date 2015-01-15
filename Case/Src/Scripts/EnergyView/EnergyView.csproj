@@ -137,7 +137,6 @@
     <Compile Include="UnitIndicator\ViewCarbonUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\ViewCostUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\CalculateConsumptionUnitIndicatorSuite.cs" />
-    <Compile Include="Usage\SmokeTestSingleTagSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">

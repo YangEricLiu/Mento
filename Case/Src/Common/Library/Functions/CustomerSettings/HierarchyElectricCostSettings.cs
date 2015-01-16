@@ -54,7 +54,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickCostPropertyTabButton_Update()
         {
             CostProperty.Click();
-            CostUpdate.WaitControlDisplayed();     
+            CostUpdate.WaitControlDisplayed();
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         public bool IsCostPropertyTabButtonEnabled()

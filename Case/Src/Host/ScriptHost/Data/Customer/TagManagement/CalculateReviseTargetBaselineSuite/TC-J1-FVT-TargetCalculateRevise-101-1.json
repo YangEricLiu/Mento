@@ -8,19 +8,19 @@
 		},
 		"ExpectedData":
 		{
-			"AnnualCalculatedValue":"3523.5",
-			"JanuaryCalculatedValue":"297",
-			"FebruaryCalculatedValue":"283.5",
-			"MarchCalculatedValue":"297",
-			"AprilCalculatedValue":"283.5",
-			"MayCalculatedValue":"310.5",
-			"JuneCalculatedValue":"283.5",
-			"JulyCalculatedValue":"297",
-			"AugustCalculatedValue":"310.5",
-			"SeptemberCalculatedValue":"270",
-			"OctoberCalculatedValue":"310.5",
-			"NovemberCalculatedValue":"297",
-			"DecemberCalculatedValue":"283.5",
+			"AnnualCalculatedValue":"20088",
+			"JanuaryCalculatedValue":"1728",
+			"FebruaryCalculatedValue":"1704",
+			"MarchCalculatedValue":"1584",
+			"AprilCalculatedValue":"1704",
+			"MayCalculatedValue":"1656",
+			"JuneCalculatedValue":"1680",
+			"JulyCalculatedValue":"1656",
+			"AugustCalculatedValue":"1704",
+			"SeptemberCalculatedValue":"1680",
+			"OctoberCalculatedValue":"1680",
+			"NovemberCalculatedValue":"1680",
+			"DecemberCalculatedValue":"1632",
 		}
 	}
 ]

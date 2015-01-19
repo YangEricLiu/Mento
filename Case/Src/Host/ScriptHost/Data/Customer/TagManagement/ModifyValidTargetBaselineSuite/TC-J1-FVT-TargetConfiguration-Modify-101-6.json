@@ -16,7 +16,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"$@Common.Glossary.Baseline",
+			"TargetBaselineName":"New基准值123",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-0.xls"],
 		}
 	},
@@ -37,7 +37,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"$@EM.Ratio.BaseValue",
+			"TargetBaselineName":"Change第二次New基准值123",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-1.xls"],
 		}
 	},
@@ -58,7 +58,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"$@EM.Ratio.BaseValue",
+			"TargetBaselineName":"New基准值123",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-2.xls"],
 		}
 	},
@@ -79,7 +79,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"$@EM.Ratio.BaseValue",
+			"TargetBaselineName":"Change第二次New基准值123",
 			"expectedFileName":["TargetConfiguration-Modify-101-6-3.xls"],
 		}
 	}

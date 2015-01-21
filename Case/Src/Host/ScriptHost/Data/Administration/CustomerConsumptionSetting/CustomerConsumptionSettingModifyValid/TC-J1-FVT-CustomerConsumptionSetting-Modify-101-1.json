@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Name":"customerC",
+			"CommonName":"customerC",
 			"MapOptions":["$@Setting.CustomerManagement.Label.Gas","$@Setting.CustomerManagement.Label.Water"],
 		},
 		"ExpectedData":

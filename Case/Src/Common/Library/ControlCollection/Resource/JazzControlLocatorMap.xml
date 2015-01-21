@@ -1150,7 +1150,7 @@ CommentTextField
 
     <add key="CheckBoxFieldUserTypePermission" value="//div[@id='st-usertype-properties-form-body']/div[contains(@id, 'privilegepanel')]/div/fieldset[legend/div/label[text()='$@Setting.Role.Role']]/div/table[contains(@id, 'privilegeitem')]" type="XPath"/>
     
-    <add key="CheckBoxFieldUserDataAllHierarchyNode" value="//div[contains(@id,'datapermissiontreewindow')]//div//div//table[1]" type="XPath"/>
+    <add key="CheckBoxFieldUserDataAllHierarchyNode" value="//div[contains(@id,'datapermissiontreewindow') and contains(@id,'targetEl')]/table[1]" type="XPath"/>
     <add key="CheckBoxFieldUserAllDataScope" value="//div[@id='st-user-datarange-form']/table/tbody/tr/td/table[contains(@id,'checkboxfield')]" type="XPath"/>
 
     <add key="CheckBoxFieldCustomerMapProperty" value="//div[@id='st-map-consumption-form-targetEl']//table[contains(@id,'checkboxfield')]" type="XPath"/>

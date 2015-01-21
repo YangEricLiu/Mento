@@ -38,7 +38,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         public void CaseTearDown()
         {
             //HierarchySettings.NavigatorToNonHierarchy();
-            JazzFunction.LoginPage.RefreshJazz();
+            //JazzFunction.LoginPage.RefreshJazz();
+            JazzFunction.Navigator.NavigateHome();
         }
 
         [Test]

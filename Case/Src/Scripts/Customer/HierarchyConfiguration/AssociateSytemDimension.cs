@@ -59,7 +59,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //2.Associate Level 1 dimension node by select the checkbox: Select ‘动力’ checkbox.
             //The Level 1 dimension node ('动力') is associated.
             SystemSettings.CheckSystemDimensionNodePath(input.InputData.SystemDimensionItemPath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
             SystemSettings.CloseSystemDimensionDialog();
             TimeManager.MediumPause();

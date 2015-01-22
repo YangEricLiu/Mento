@@ -276,6 +276,33 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public bool IsStartDateEnable(string startTime)
+        {
+            try
+            {
+                StartDatePicker.SelectDateItem(startTime);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public bool IsEndDateEnable(string endTime)
+        {
+            try
+            {
+                EndDatePicker.SelectDateItem(endTime);
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public string GetBaseStartDateValue()
         {
             return StartDatePicker.GetValue();

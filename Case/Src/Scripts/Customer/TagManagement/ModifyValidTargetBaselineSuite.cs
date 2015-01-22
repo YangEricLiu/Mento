@@ -41,7 +41,8 @@ namespace Mento.Script.Customer.TagManagement
         public void CaseTearDown()
         {
             //PtagSettings.NavigatorToEnergyView();
-            PtagSettings.NavigatorToPtagSetting();
+            //PtagSettings.NavigatorToPtagSetting();
+            PVtagTargetBaselineSettings.NavigatorToTagSetting();
             TimeManager.MediumPause();
         }
 
@@ -558,6 +559,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual(input.InputData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameValue());
 
             PVtagTargetBaselineSettings.ClickCalculateBaselineButton();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(); 
             TimeManager.MediumPause();
 
             //Click '修正计算值'(and saved), 

@@ -88,7 +88,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual("24:00", PTagRawData.GetBaseEndTimeValue());
 
             //Display raw data in selected time range.
-            Assert.AreEqual("16",PTagRawDataGrid.GetCellValue(3));
+            Assert.AreEqual("16",PTagRawDataGrid.GetCellValue(2));
         }
 
         [Test]
@@ -128,14 +128,16 @@ namespace Mento.Script.Customer.TagManagement
 
             //Set Start Time is less than 2000-01-01 00:00, and end time is larger than 2049-12-31 24:00
             //(1999-12-31 23:00 ~ 2050-01-01 01:00)
-            PTagRawData.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
-            PTagRawData.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
-            TimeManager.LongPause();
+            //PTagRawData.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
+            //PTagRawData.SetTimeRange(ManualTimeRange[2].StartTime, ManualTimeRange[2].EndTime);
+            //TimeManager.LongPause();
 
             //The time controller for smaller than 2000-01-01 00:00 and larger than 2049-12-31 24:00 is not available for Start time
-            Assert.AreNotEqual(ManualTimeRange[2].StartDate, PTagRawData.GetBaseStartDateValue());
-            Assert.AreNotEqual(ManualTimeRange[2].EndDate, PTagRawData.GetBaseEndDateValue());
+            //Assert.AreNotEqual(ManualTimeRange[2].StartDate, PTagRawData.GetBaseStartDateValue());
+            //Assert.AreNotEqual(ManualTimeRange[2].EndDate, PTagRawData.GetBaseEndDateValue());
 
+            Assert.False(PTagRawData.IsStartDateEnable(ManualTimeRange[2].StartDate));
+            Assert.False(PTagRawData.IsEndDateEnable(ManualTimeRange[2].EndDate));
         }
 
         [Test]
@@ -197,7 +199,7 @@ namespace Mento.Script.Customer.TagManagement
             //Click Switch button it is Difference Value now.  
             PTagRawData.ClickSwitchOriginalValueButton();
             TimeManager.LongPause();
-            Assert.AreEqual("10", PTagRawDataGrid.GetCellValue(3));
+            Assert.AreEqual("10", PTagRawDataGrid.GetCellValue(2));
         }
 
         [Test]

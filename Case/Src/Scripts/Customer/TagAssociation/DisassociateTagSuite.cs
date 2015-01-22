@@ -49,7 +49,7 @@ namespace Mento.Script.Customer.TagAssociation
             //navigate and select node
             //AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             
-            int i =1;
+            int i =0;
             while (i<=3)
             {
                 AssociateSettings.NavigateToHierarchyAssociate();
@@ -85,7 +85,7 @@ namespace Mento.Script.Customer.TagAssociation
                 //Go to Energy Usage Analysis, select above hierarchy node then select ‘全部数据点’ try to find the above tag.
 
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
-                Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.SelectHierarchy(HierarchyNewPath));
+                JazzFunction.EnergyAnalysisPanel.SelectHierarchy(HierarchyNewPath);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.LongPause();
                 Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[i]));

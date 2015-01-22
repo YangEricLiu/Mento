@@ -55,17 +55,13 @@ namespace Mento.Script.Customer.TagManagement
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.ShortPause();
 
             //Click Switch button when it is Original Value now.  
             PTagRawData.ClickSwitchDifferenceValueButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.ShortPause();
 
             //Switch to Difference Value and display them in both Line Chart and Grid View. Verify the Difference Value is correct.
             Assert.AreEqual("20", PTagRawDataGrid.GetCellValue(2));
@@ -94,24 +90,20 @@ namespace Mento.Script.Customer.TagManagement
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.ShortPause();
 
             //Click Switch button when it is Original Value now.  
             PTagRawData.ClickSwitchDifferenceValueButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.ShortPause();
 
             //Switch to Difference Value and display them in both Line Chart and Grid View. Verify the Difference Value is correct.
-            Assert.AreEqual("20", PTagRawDataGrid.GetCellValue(2));
-            Assert.AreEqual("42", PTagRawDataGrid.GetCellValue(3));
-            Assert.AreEqual(" ", PTagRawDataGrid.GetCellValue(4));
-            Assert.AreEqual("38", PTagRawDataGrid.GetCellValue(5));
-            Assert.AreEqual("19", PTagRawDataGrid.GetCellValue(6));
+            Assert.AreEqual("20", PTagRawDataGrid.GetCellValue(3));
+            Assert.AreEqual("42", PTagRawDataGrid.GetCellValue(4));
+            Assert.AreEqual(" ", PTagRawDataGrid.GetCellValue(5));
+            Assert.AreEqual("38", PTagRawDataGrid.GetCellValue(6));
+            Assert.AreEqual("19", PTagRawDataGrid.GetCellValue(7));
 
             //Go Energy Usage Analysis, select the tag and check Raw step.
             //Verify the data list in Raw step is the same as Difference Value as this tag is accumulated tag.
@@ -133,23 +125,19 @@ namespace Mento.Script.Customer.TagManagement
             var ManualTimeRange = input.InputData.ManualTimeRange;
             PTagRawData.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[0].StartTime, ManualTimeRange[0].EndTime);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.ShortPause();
 
             //Click Switch button when it is Original Value now.  
             PTagRawData.ClickSwitchDifferenceValueButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.ShortPause();
 
             //Switch to Difference Value and display them in both Line Chart and Grid View. Verify the Difference Value in  2014-1-1 00:15 is Null as the meter reaches its max value.
-            Assert.AreEqual("100", PTagRawDataGrid.GetCellValue(2));
-            Assert.AreEqual(" ", PTagRawDataGrid.GetCellValue(3));
-            Assert.AreEqual("100", PTagRawDataGrid.GetCellValue(4));
+            Assert.AreEqual("100", PTagRawDataGrid.GetCellValue(3));
+            Assert.AreEqual(" ", PTagRawDataGrid.GetCellValue(4));
             Assert.AreEqual("100", PTagRawDataGrid.GetCellValue(5));
+            Assert.AreEqual("100", PTagRawDataGrid.GetCellValue(6));
 
             //Go Energy Usage Analysis, select the tag and check Raw step.
             //Verify the data list in Raw step is the same as Difference Value as this tag is accumulated tag.

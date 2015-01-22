@@ -7,7 +7,7 @@
 		},
 		"ExpectedData":
 		{	
-			"MapOptions":["$@Setting.CustomerManagement.Label.Gas","$@Setting.CustomerManagement.Label.SoftWater","$@Setting.CustomerManagement.Label.Petrol","$@Setting.CustomerManagement.Label.LowPressureSteam","$@Setting.CustomerManagement.Label.DieselOi","$@Setting.CustomerManagement.Label.HeatQ ","$@Setting.CustomerManagement.Label.CoolQ","$@Setting.CustomerManagement.Label.Coal","$@Setting.CustomerManagement.Label.CoalOil"],
+			"MapOptions":["$@Setting.CustomerManagement.Label.Gas","$@Setting.CustomerManagement.Label.SoftWater","$@Setting.CustomerManagement.Label.Petrol","$@Setting.CustomerManagement.Label.LowPressureSteam","$@Setting.CustomerManagement.Label.DieselOi","$@Setting.CustomerManagement.Label.HeatQ","$@Setting.CustomerManagement.Label.CoolQ","$@Setting.CustomerManagement.Label.Coal","$@Setting.CustomerManagement.Label.CoalOil"],
 		}
 	}
 ]

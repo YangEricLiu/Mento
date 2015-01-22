@@ -19,13 +19,13 @@
 				"HierarchyName":["NancyCostCustomer2", "RenameDashboardSuiteOrg", "RenameDashboardSuiteSite"],
 				"IsCreateDashboard":"false",
 				"DashboardName":"Dashboard_Rename_101_1_D",
-				"newDashboardName":"m文CAPITALhars 1234_F中文CAPITALh000",
+				"newDashboardName":"m文CAPITALhars 1234_F中文CAPITALh000m文CAPITALhars 1234_F中文CAPITALh000m文CAPITALhars 1234_F中文CAPITALh000m000",
 			}],
 			"CustomerName":"NancyCostCustomer2",
 		},
 		"ExpectedData":
 		{
-			"newDashboardNames":["onlychars", "中文CAPITALchars 1234_F", "m文CAPITALhars 1234_F中文CAPITALh"],
+			"newDashboardNames":["onlychars", "中文CAPITALchars 1234_F", "m文CAPITALhars 1234_F中文CAPITALh000m文CAPITALhars 1234_F中文CAPITALh000m文CAPITALhars 1234_F中文CAPITALh000m"],
 		}
 	}
 ]

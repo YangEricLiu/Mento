@@ -61,10 +61,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Lib\Mento.TestApi.TestData.dll</HintPath>
     </Reference>
-    <Reference Include="Mento.Utility, Version=0.1.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Lib\Mento.Utility.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.ApplicationServer.Caching.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\Microsoft.ApplicationServer.Caching.Client.dll</HintPath>
@@ -173,6 +169,10 @@
     <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.WebUserInterface\Mento.TestApi.WebUserInterface.csproj">
       <Project>{fcbefbbd-ad47-4c0c-8a56-773b0b328edd}</Project>
       <Name>Mento.TestApi.WebUserInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\App\Src\Common\Mento.Utility\Mento.Utility.csproj">
+      <Project>{c3ec8be0-f643-4126-9ce6-deb029ae1564}</Project>
+      <Name>Mento.Utility</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Common\TestData\TestData.csproj">
       <Project>{f463bf99-e570-46de-a384-fe533482558d}</Project>

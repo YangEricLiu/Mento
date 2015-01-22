@@ -114,8 +114,10 @@ namespace Mento.Script.Information.Share
             TimeManager.LongPause();
         }
 
+        /*Ensure that user can Not share dashboard to other user when there is 10 dashboards which at most, but now there is not limit dashboard number, so ignore it*/
         [Test]
         [CaseID("TC-J1-FVT-Dashboard-Share-001-3")]
+        [Ignore("ignore")]
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(ShareDashboardInvalidSuite), "TC-J1-FVT-Dashboard-Share-001-3")]
         public void ShareDashboardFailed03(ShareDashboardData input)
         {
@@ -145,8 +147,10 @@ namespace Mento.Script.Information.Share
             Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
         }
 
+        /*Ensure that user can Not share dashboard to other user when there is 10 dashboards which at most, but now there is not limit dashboard number, so ignore it*/
         [Test]
         [CaseID("TC-J1-FVT-Dashboard-Share-001-4")]
+        [Ignore("ignore")]
         [MultipleTestDataSource(typeof(ShareDashboardData[]), typeof(ShareDashboardInvalidSuite), "TC-J1-FVT-Dashboard-Share-001-4")]
         public void ShareDashboardFailed04(ShareDashboardData input)
         {

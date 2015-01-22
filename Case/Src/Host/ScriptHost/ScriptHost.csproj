@@ -989,7 +989,6 @@
     <None Include="Data\EnergyView\UnitIndicator\ViewCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-View-101-3.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-View-101-4.json" />
     <None Include="Data\EnergyView\UnitIndicator\ViewCostUnitIndicatorSuite\TC-J1-FVT-CostUnitIndicator-View-101-5.json" />
-    
     <Content Include="Resource\cn\data.js" />
     <Content Include="SqlScript\Setup\initialization.sql" />
     <Content Include="SqlScript\Setup\initialization.xml">
@@ -1027,7 +1026,7 @@
     <None Include="Data\Information\Dashboard\MarkFavoriteDashboardSuite\TC-J1-FVT-Dashboard-MarkFavorite-101-1.json" />
     <None Include="Data\Information\Dashboard\RenameDashboardSuite\TC-J1-FVT-Dashboard-Rename-101-1.json" />
     <None Include="Data\Information\Dashboard\RenameDashboardSuite\TC-J1-FVT-Dashboard-Rename-101-2.json" />
-    <None Include="Data\Information\Dashboard\RenameDashboardSuite\TC-J1-FVT-Dashboard-Rename-101-3.json" />
+    <None Include="Data\Information\Widgets\SaveWidgetToDashboardSuite\TC-J1-FVT-Dashboard-Rename-101-3.json" />
     <None Include="Data\Information\Share\DashboardShareViewSendInfoSuite\TC-J1-FVT-Dashboard-Share-102-1.json" />
     <None Include="Data\Information\Share\DashboardShareViewSendInfoSuite\TC-J1-FVT-Dashboard-Share-102-4.json" />
     <None Include="Data\Information\Share\MarkDashboardReadValidSuite\TC-J1-FVT-Dashboard-MarkRead-101-1.json" />

@@ -11,7 +11,7 @@
 				"WigetNames":["$@EM.Labeling.ViewLabeling","Ranking"],
 				"HierarchyName":["NancyCostCustomer2","组织A", "园区A", "楼宇B"],
 				"IsCreateDashboard":"false",
-				"DashboardName":"13",
+				"DashboardName":"UseWidgetTemplate",
 				"ShareUsers":["ShareUserE"]
 			}],	
 			"newWidgetName":["ModifyValidName"],

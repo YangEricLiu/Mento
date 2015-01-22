@@ -153,8 +153,8 @@ namespace Mento.ScriptCommon.Library.Functions
         {
 
             SelectCustmerMenuButton.SelectOneItem(customerName);
-
-            JazzMessageBox.LoadingMask.WaitLoading();
+            //JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.MediumPause();
 
             if (JazzMessageBox.MessageBox.Exists())
             {
@@ -163,8 +163,6 @@ namespace Mento.ScriptCommon.Library.Functions
                     JazzMessageBox.MessageBox.OK();
                 }
             }
-
-            TimeManager.MediumPause();
         }
 
         public bool IsCustomerExistedInCustomerSelectionDialog(string customerName)

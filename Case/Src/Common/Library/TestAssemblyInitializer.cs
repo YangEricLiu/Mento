@@ -15,6 +15,8 @@ namespace Mento.ScriptCommon.Library
 {
     public static class TestAssemblyInitializer
     {
+        private static int WAITLONGTIME = 1500;
+
         public static void Initialize()
         {
             InitializeExecutionContext();
@@ -40,7 +42,8 @@ namespace Mento.ScriptCommon.Library
         {
             InitializeExecutionContext();
             JazzBrowseManager.OpenJazz();
-            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.Pause(WAITLONGTIME);
+            //JazzMessageBox.LoadingMask.WaitLoading();
             JazzFunction.LoginPage.LoginWithOption(userName, passWord, customer);
             // Ali pop window 
         }

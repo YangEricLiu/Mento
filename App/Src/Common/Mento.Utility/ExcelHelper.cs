@@ -1255,11 +1255,13 @@ namespace Mento.Utility
             OpenAPICases tmpoac = new OpenAPICases();
 
             Excel.Range temp = (Excel.Range)mySheet.Cells[2, columnNum];
-            string strValue = temp.Text.ToString();
+            //string strValue = temp.Text.ToString();
+            string strValue = temp.Value.ToString();
             tmpoac.url = strValue;
 
             temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 1];
-            strValue = temp.Text.ToString();
+            //strValue = temp.Text.ToString();
+            strValue = temp.Value.ToString();
             tmpoac.requestBody = strValue;
 
             /*

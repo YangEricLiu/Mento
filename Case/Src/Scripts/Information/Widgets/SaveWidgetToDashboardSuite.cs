@@ -153,7 +153,7 @@ namespace Mento.Script.Information.Widgets
             //Select another dashboard which is not full and add widget into it.
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[5].WidgetName, dashboard[5].HierarchyName, dashboard[5].IsCreateDashboard, dashboard[5].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
+            TimeManager.MediumPause();
 
             //Widget can be added to it successfully without error.
             Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
@@ -186,7 +186,7 @@ namespace Mento.Script.Information.Widgets
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[4].WidgetName, dashboard[4].HierarchyName, dashboard[4].IsCreateDashboard, dashboard[4].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
+            TimeManager.MediumPause();
 
             //Widget can be added to it successfully without error.
             Assert.AreEqual(input.ExpectedData.messages[1], HomePagePanel.GetPopNotesValue());
@@ -201,8 +201,10 @@ namespace Mento.Script.Information.Widgets
             SaveToDs.ClickCancelButton();
         }
 
+        /*Ensure that user can save dashboard successful when there is 10 dashboards which at most, but now there is not limit dashboard number, so ignore it*/
         [Test]
         [CaseID("TC-J1-FVT-Widget-Add-101-3")]
+        [Ignore("ignore")]
         [MultipleTestDataSource(typeof(RenameDashboardData[]), typeof(SaveWidgetToDashboardSuite), "TC-J1-FVT-Widget-Add-101-3")]
         public void SaveWidgetToFullDashboards(RenameDashboardData input)
         {

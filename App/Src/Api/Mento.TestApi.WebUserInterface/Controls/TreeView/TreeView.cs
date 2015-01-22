@@ -108,7 +108,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 //ExpandNode(nodesText[i]);
 
                 //wait the next item appear
-                if (nextNodeLocator != null)
+                if (nextNodeLocator != null && !(IsNodeExpanded(nodesText[i])))
                 {
                     ExpandNode(nodesText[i]);
                     ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear, container: this.RootElement);

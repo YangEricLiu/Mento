@@ -77,14 +77,12 @@ namespace Mento.Script.Information.WidgetTemplate
             HomePagePanel.SelectHierarchyNode(hierarchy[1]);
             Widget.ClickWidgetTemplateQuickCreateButton();
             HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[5]);
-            TimeManager.MediumPause();
-            TimeManager.MediumPause();
             TimeManager.LongPause();
             UserDataScope.IsHierarchyNodeChecked(hierarchy[1]);
             //判断节点名称
-            Assert.AreEqual(Widget.GetSelectHierarchyButtonText(), input.ExpectedData.HierarchyName[2]);
+            Assert.AreEqual(input.ExpectedData.HierarchyName[2], Widget.GetSelectHierarchyButtonText());
             //判断 "该节点为非楼宇节点，请重新选择节点", 单位面积
-            Assert.AreEqual(input.ExpectedData.UnitTypeValue[0], Widget.GetMenuButtonEnergyViewConvertTargetText());
+            //Assert.AreEqual(input.ExpectedData.UnitTypeValue[0], Widget.GetMenuButtonEnergyViewConvertTargetText());
             Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
 
             //Click rangking widget
@@ -177,11 +175,7 @@ namespace Mento.Script.Information.WidgetTemplate
             Widget.ClickWidgetTemplateQuickCreateButton();
             HomePagePanel.ClickWidgetTemplateField(input.InputData.WidgetNames[2]);
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             Assert.IsTrue(costPanel.IsCommodityChecked(input.ExpectedData.CommodityValue[0]));
-            TimeManager.LongPause();
             TimeManager.LongPause();
             Assert.IsTrue(Widget.IsPeakValleyButtonPressed());
             //Make sure 2013 have data value

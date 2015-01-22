@@ -12,6 +12,7 @@ I18N.Setting.TargetBaseline.DefaultTarget = {};
 I18N.Setting.TargetBaseline.DefaultBaseline = {};
 //I18N.Setting.TOUTariff = {};
 I18N.Setting.TagConfiguration = {};
+I18N.Setting.VEEMonitorRule = {};
 
 I18N.EM = {};
 I18N.EM.EnergyAnalyse = {};
@@ -34,7 +35,7 @@ I18N.Dashboard.Label.Keepconcerning = '请持续关注能耗变化。';
 I18N.Dashboard.Label.GoogleMapNotLoad = '地图不可用，请检查网络。';
 I18N.Dashboard.Label.NoBuilding = '所选楼宇已被删除或者更改权限，请刷新后重试。';
 I18N.Dashboard.Label.BuildingList = '楼宇列表';
-I18N.Dashboard.Label.MoreInfo = '查看更多能耗信息 >';
+I18N.Dashboard.Label.MoreInfo = '仪表盘信息 >';
 I18N.Dashboard.Label.AllUsers = '全部人员';
 I18N.Dashboard.Label.SelectedReceivers = '已选发送对象';
 I18N.Dashboard.Label.SelectedSharedReceivers = '已选共享对象';
@@ -82,6 +83,7 @@ I18N.Common.AggregationStep = {};
 I18N.Common.EnergyDataQuality = {};
 I18N.Common.DateRange = {};
 I18N.Common.GraphType = {};
+I18N.Common.YaxisType = {};
 I18N.Common.CarbonUomType = {};
 
 I18N.Message = {};
@@ -110,6 +112,7 @@ I18N.DateTimeFormat.HighFormat.FullDate = '%Y年%m月%d日';
 I18N.DateTimeFormat.HighFormat.FullYear = '全年';
 I18N.DateTimeFormat.IntervalFormat.Second = 'Y年m月d日 H点i分s秒';
 I18N.DateTimeFormat.IntervalFormat.FullMinute = 'Y年m月d日 H点i分';
+I18N.DateTimeFormat.IntervalFormat.RangeFullMinute = 'Y年m月d日 H点i分';
 I18N.DateTimeFormat.IntervalFormat.Minute = 'H点i分';
 I18N.DateTimeFormat.IntervalFormat.FullHour = 'Y年m月d日H点';
 I18N.DateTimeFormat.IntervalFormat.Hour = 'H点';
@@ -244,6 +247,7 @@ I18N.Setting.Label.TagAssociation = '数据点关联';
 I18N.Setting.Label.TagMultipleImport = '批量导入';
 I18N.Setting.Label.Reselect = '重新选择';
 I18N.Setting.Label.TagBatchImportLog = '批量导入日志';
+I18N.Setting.Label.TagCorrectionLog = '数据修改日志';
 I18N.Setting.Label.ImportingTag = '正在从配置文件{0}导入数据点。';
 I18N.Setting.Label.IncorrectFileType = '批量导入失败。所选导入文件不符合系统规则，请重新选择后再试。';
 
@@ -291,6 +295,7 @@ I18N.Setting.Label.KPIBasicProperties = '##Setting.Label.BasicProperties##';
 I18N.Setting.Label.TOUBasicProperties = '##Setting.Label.BasicProperties##';
 I18N.Setting.Label.PulsePeakProperties = '##Common.Glossary.PulsePeak##';
 I18N.Setting.Label.ElectrovalenceUom = '元/千瓦时';
+I18N.Setting.Label.Auto = '自动';
 
 // data permission 
 I18N.Setting.Label.CustomerDataPermission = '客户数据权限';
@@ -343,6 +348,91 @@ I18N.Setting.TargetBaseline.CalculationRule = '计算规则';
 I18N.Setting.TargetBaseline.EditCalculationBtnText = '修正计算值';
 I18N.Setting.TargetBaseline.CalculatorBtnText = '计算{0}';
 I18N.Setting.TargetBaseline.TargetWindowTitle = '{0}年度{1} (##Common.Glossary.UOM##: {2})';
+
+I18N.Setting.VEERecord = {};
+I18N.Setting.VEERecord.AbnormalDataRecord = '异常数据记录';
+I18N.Setting.VEERecord.ErrorTimePeriod = '异常时间段';
+I18N.Setting.VEERecord.ErrorTagName = '异常数据点名称';
+I18N.Setting.VEERecord.ErrorTagType = '数据点类型';
+I18N.Setting.VEERecord.ErrorTagDataType = '数据类型';
+I18N.Setting.VEERecord.ModifyDatetime = '修改时间';
+I18N.Setting.VEERecord.ModifyDatetimePeriod = '修改时间段';
+
+I18N.Setting.VEEBatchModify = {};
+
+I18N.Setting.VEEBatchModify.BatchModifyWindowTitle = '原始数据批量修改';
+I18N.Setting.VEEBatchModify.BatchRevertWindowTitle = '原始数据修改批量撤回';
+I18N.Setting.VEEBatchModify.BatchIgnoreWindowTitle = '异常数据记录批量忽略';
+I18N.Setting.VEEBatchModify.Type = '异常类型';
+I18N.Setting.VEEBatchModify.AllTags = '全部所选数据';
+I18N.Setting.VEEBatchModify.ErrorData = '异常数据记录';
+I18N.Setting.VEEBatchModify.AllErrorData = '全部异常数据记录';
+I18N.Setting.VEEBatchModify.PatialErrorData = '部分异常数据记录';
+I18N.Setting.VEEBatchModify.AllErrorData = '全部异常数据记录';
+I18N.Setting.VEEBatchModify.PartialErrorData = '部分异常数据记录';
+I18N.Setting.VEEBatchModify.CommonPeakOnly = '仅针对正常峰';
+I18N.Setting.VEEBatchModify.UncommonPeakOnly = '仅针对异常峰';
+I18N.Setting.VEEBatchModify.NullValueOnly = '仅针对空值';
+I18N.Setting.VEEBatchModify.MinusValueOnly = '仅针对负值';
+I18N.Setting.VEEBatchModify.SpecialValueOnly = '仅针对特殊值';
+I18N.Setting.VEEBatchModify.EmptyModifySelectionErrorLabel = '请至少选择一项要批量修改的异常数据类型。';
+I18N.Setting.VEEBatchModify.ModifyRule = '修改规则';
+I18N.Setting.VEEBatchModify.ChangeTo = '修改为';
+I18N.Setting.VEEBatchModify.DividedRule = '均分回填';
+I18N.Setting.VEEBatchModify.SourceTimeRange = '回填源';
+I18N.Setting.VEEBatchModify.RevertRuleLabelTitle = '撤回修改规则';
+I18N.Setting.VEEBatchModify.RevertRuleLabelContent = '将所选数据点与时间段内数据的历史修改全部撤回，至初始值。';
+I18N.Setting.VEEBatchModify.IgnoreRuleLabelContent = '将所选数据点与时间段内相关异常数据记录全部忽略';
+I18N.Setting.VEEBatchModify.SaveChangeButtonText = '修改并保存';
+I18N.Setting.VEEBatchModify.SaveRevertButtonText = '撤回并保存';
+I18N.Setting.VEEBatchModify.SaveIgnoreButtonText = '忽略并保存';
+I18N.Setting.VEEBatchModify.ShouldSelectTagMessage = '无法执行批量操作。请先在左侧列表中选择想要操作的数据点。';
+I18N.Setting.VEEBatchModify.ConfirmModifyToValue = '确定将所选数据点与时间段内数据批量修改为{0}吗？';
+I18N.Setting.VEEBatchModify.ConfirmModifyToAvg = '确定将所选数据点与时间段内数据批量修改为{0}的均分回填值吗？';
+I18N.Setting.VEEBatchModify.ConfirmRevert = '确定将所选数据点与时间段内数据的历史修改全部撤回，至初始值吗？';
+I18N.Setting.VEEBatchModify.ConfirmIgnore = '确定将所选数据点与时间段内相关异常数据记录全部忽略吗？';
+
+
+I18N.Setting.VEEMonitorRule.AbnormalDataMonitortRule = '异常数据监测规则';
+I18N.Setting.VEEMonitorRule.Scan = '扫描全部';
+I18N.Setting.VEEMonitorRule.Name = '名称';
+I18N.Setting.VEEMonitorRule.Creator = '配置人';
+I18N.Setting.VEEMonitorRule.CreateTime = '配置时间';
+I18N.Setting.VEEMonitorRule.MonitorRule = '监测规则集';
+I18N.Setting.VEEMonitorRule.MonitorTag = '监测数据点';
+I18N.Setting.VEEMonitorRule.Monitor = '报警接受人';
+I18N.Setting.VEEMonitorRule.NormalPeak = '正常峰';
+I18N.Setting.VEEMonitorRule.AbnormalPeak = '异常峰';
+I18N.Setting.VEEMonitorRule.NullValue = '空值';
+I18N.Setting.VEEMonitorRule.NegativeValue = '负值';
+I18N.Setting.VEEMonitorRule.SpecialValue = '特殊值';
+I18N.Setting.VEEMonitorRule.AtleaseOne = '请至少选择一项';
+I18N.Setting.VEEMonitorRule.MonitorStartTime = '监测起始时间';
+I18N.Setting.VEEMonitorRule.MonitorInterval = '监测扫描间隔';
+I18N.Setting.VEEMonitorRule.MonitorDelayTime = '扫描延后时长';
+I18N.Setting.VEEMonitorRule.ScanTimeInfo = '每日异常数据监测扫描时间为{0}';
+I18N.Setting.VEEMonitorRule.MonitorStartTimeFormat = 'Y年m月d日';
+I18N.Setting.VEEMonitorRule.NoMonitorDelay = '无延时';
+I18N.Setting.VEEMonitorRule.Minute = '分钟';
+I18N.Setting.VEEMonitorRule.AssociateUser = '关联报警接收人';
+I18N.Setting.VEEMonitorRule.SelectedReceiver = '已选接收人';
+I18N.Setting.VEEMonitorRule.UnassociateTip = '解除与以下人的关联关系';
+I18N.Setting.VEEMonitorRule.TagName = '数据点名称';
+I18N.Setting.VEEMonitorRule.TagType = '数据点类型';
+I18N.Setting.VEEMonitorRule.TagCollectPeriod = '数据采集/计算周期';
+I18N.Setting.VEEMonitorRule.AssociateTag = '关联监测数据点';
+I18N.Setting.VEEMonitorRule.SelectAllTags = '全选并关联';
+I18N.Setting.VEEMonitorRule.UnassociateOtherRuleTagTip = '解除与异常数据监测规则集"{0}"的关联关系  ';
+I18N.Setting.VEEMonitorRule.FirstScanTime = '每日首次监测扫描时间为0: 00。';
+I18N.Setting.VEEMonitorRule.ExplainN = 'N为峰值前缺失数据的数量';
+I18N.Setting.VEEMonitorRule.AndGT = '并 >= ';
+I18N.Setting.VEEMonitorRule.AndLT = '并 < ';
+I18N.Setting.VEEMonitorRule.ScanAllTags = '系统将在下一个监测扫描时间{0}扫描监测起始时间{1}后监测数据点的全部数据。是否继续？';
+I18N.Setting.VEEMonitorRule.SelectHierarchy = '请选择层级节点';
+I18N.Setting.VEEMonitorRule.SelectedMultiHierarchy = '已选多项层级节点';
+I18N.Setting.VEEMonitorRule.AssociateAll = '确定将该筛选条件下所有数据点均添加到“已选数据点”列表，并进行关联吗？';
+I18N.Setting.VEEMonitorRule.HierTreeOtherTags = '其他未关联数据点'
+
 
 I18N.Setting.TagConfiguration.FormulaItemType = {};
 I18N.Setting.TagConfiguration.FormulaItemType.PTag = '##Setting.Label.PTagManagement##';
@@ -509,8 +599,11 @@ I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePreviousComboLabel = '之前�
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious7Day = '个7天';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious30Day = '个30天';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious12Month = '个12月';
-I18N.EM.EnergyAnalyse.AddIntervalWindow.UserDefined = '自定义'
-I18N.EM.EnergyAnalyse.AddIntervalWindow.Relative = '相对时间'
+I18N.EM.YAxisSetting = 'Y坐标轴设置';
+I18N.EM.YAxisSettingTags = '相关数据点';
+I18N.EM.YAxisTitle = 'Y坐标轴';
+I18N.EM.YAxisMinMaxValidation = '最大值应大于最小值';
+
 
 I18N.EM.ChooseFunctionMessage = '请从功能面板中选择功能以显示图表';
 I18N.EM.CenterBar.Button.DefaultDashboard = '默认';
@@ -743,7 +836,7 @@ I18N.Common.UOM.MM = '分';
 
 I18N.Common.Per = {};
 I18N.Common.Per.Person = '/人';
-I18N.Common.Per.m2 = '/平方米';
+I18N.Common.Per.m2 = '/M²';
 
 I18N.Common.Button.Share = '共享';
 I18N.Common.Button.PieChart = '饼图';
@@ -761,6 +854,7 @@ I18N.Common.Button.Calendar = {};
 I18N.Common.Button.Calendar.ShowHC = '冷暖季';
 I18N.Common.Button.Calendar.ShowHoliday = '非工作时间';
 I18N.Common.Button.Calendar.ShowNone = '无';
+I18N.Common.Button.BatchAction = '批量操作';
 
 I18N.Common.Button.Comparation = '比较';
 I18N.Common.Button.Confirm = '确定';
@@ -771,25 +865,11 @@ I18N.Common.Button.Delete = '删除';
 I18N.Common.Button.Exit = '退出';
 I18N.Common.Button.Clear = '清空';
 I18N.Common.Button.Send = '发送';
+I18N.Common.Button.GoOn = '继续';
 I18N.Common.Button.Confirmed = '已确认';
-I18N.Common.Button.ChangeRecord = '修改记录';
-I18N.Common.Button.Originaldata = '原始数据';
-I18N.Common.Button.BatchOperation = '批量操作';
-I18N.Common.Button.BatchModify = '修改';
-I18N.Common.Button.BatchRevert = '修改撤回';
-I18N.Common.Button.BatchIgnore = '忽略';
-I18N.Setting.Radio.VEEAllData = '全部所选数据';
-I18N.Setting.Radio.VEEAbnormal = '异常数据记录';
-I18N.Setting.Radio.VEEModifyValue = '修改为';
-I18N.Setting.Radio.VEEBackfillSource = '均分回填';
-I18N.Common.Button.ModifyAndSave = '修改并保存';
-I18N.Common.Button.BatchModifyGiveup = '放弃';
-I18N.Common.AbnormalType.NormalPeaks = '仅针对正常峰';
-I18N.Common.AbnormalType.AbnormalPeaks = '仅针对异常峰';
-I18N.Common.AbnormalType.Null = '仅针对空值';
-I18N.Common.AbnormalType.Negative = '仅针对负值';
-I18N.Common.AbnormalType.Special = '仅针对特殊值';
-
+I18N.Common.Button.ClearAll = '全部清空';
+I18N.Common.Operation.Ignore = '忽略';
+I18N.Common.Operation.RevertChange = '修改撤回';
 I18N.Common.Operation.ResetZoom = '取消放大/缩小';
 I18N.Common.Operation.ResetZoom1vs1 = '缩放至1:1';
 I18N.Common.Operation.Create = '新增';
@@ -805,6 +885,16 @@ I18N.Common.Operation.Associate = '关联';
 I18N.Common.Operation.UnassociateTag = '解除关联';
 I18N.Common.Operation.GoBack = '返回';
 I18N.Common.Operation.GoBackToHierarchy = '在建筑层级中查看';
+
+I18N.Common.CalcBenchmarkSetting = {};
+I18N.Common.CalcBenchmarkSetting.CalcuationBenchmark = '能效标识计算';
+I18N.Common.CalcBenchmarkSetting.Calcuated = '参与能效标识大数据计算';
+I18N.Common.CalcBenchmarkSetting.BelongsCostumerUnCalculated = '该层级节点所属客户未参加能效标识大数据计算';
+I18N.Common.CalcBenchmarkSetting.BelongsSPUnCalculated = '该客户所属服务提供商未参加能效标识大数据计算';
+I18N.Common.CalcBenchmarkSetting.SevenDaysOnly = '原始数据仅可查看7天以内的数据。';
+I18N.Common.CalcBenchmarkSetting.MultipleConfirmMessage = '查看原始步长下的原始数据，将清空所有对比时间，是否继续？';
+I18N.Common.CalcBenchmarkSetting.KeepSearching = '继续查看';
+I18N.Common.CalcBenchmarkSetting.NotSupportVtag = '计量数据V类型的数据点不支持原始数据查看功能。';
 
 I18N.Common.Label.EmptyHierarchyText = '请选择层级结构';
 I18N.Common.Label.Loading = '加载中，请稍候...';
@@ -831,7 +921,8 @@ I18N.Common.Label.UnExpectedData = '存在非法数据，无法绘制饼图';
 I18N.Common.Label.NameRegexError = '允许汉字，英文字母，数字，下划线和空格';
 I18N.Common.Label.CustomerNameRegexError = '允许汉字，英文字母，数字，空格和小括号';
 I18N.Common.Label.PersonNameRegexError = '允许汉字，英文字母和空格';
-I18N.Common.Label.CodeRegexError = '允许英文字母，数字，下划线，+，.，-，_，#，&和空格';
+I18N.Common.Label.CodeRegexError = '允许中文，英文字母，数字，下划线，逗号，（，），-，[，]，#，&，:，;，.，~，%，+，/，|，\\ 和空格';
+I18N.Common.Label.CustomerCodeRegexError = '允许中文，英文字母，数字，下划线，逗号，（，），-，[，]，{，}，#，&，;，.，~，%，+ 和空格';
 
 I18N.Common.Label.UserIdRegexError = '允许英文字母，数字，下划线和句点';
 I18N.Common.Label.PasswordRegexError = '请至少包含数字和字母，允许半角英文字母, 数字,下划线和 !, @, #, $, %, ^, &, *, (, ) ，6－20位';
@@ -871,8 +962,13 @@ I18N.Common.GraphType.Column = '柱状图';
 I18N.Common.GraphType.Stack = '堆积图';
 I18N.Common.GraphType.Pie = '饼状图';
 I18N.Common.GraphType.Grid = '数据表';
+I18N.Common.GraphType.Original = '原始数据';
+
+I18N.Common.YaxisType.Linear = '线性Y轴';
+I18N.Common.YaxisType.Logarithmic = '对数Y轴';
 
 I18N.Common.Glossary.DemoUser = '演示用户';
+I18N.Common.Glossary.TimePeriod = '时间段';
 
 I18N.Common.Glossary.PulsePeak = '峰值季节';
 I18N.Common.Glossary.PriceStrategy = '价格策略';
@@ -941,6 +1037,7 @@ I18N.Common.Glossary.Alarm = '报警';
 
 I18N.Common.Glossary.AccumulatedValueCal = '使用累积值计算';
 I18N.Common.Glossary.AccumulatedValue = '累积值';
+I18N.Common.Glossary.DifferenceValue = '差值';
 
 I18N.Common.Glossary.CorrectionValue = '修正值';
 I18N.Common.Glossary.TrendChart = '趋势图';
@@ -971,6 +1068,7 @@ I18N.Common.Glossary.KPI = '关键能效指标';
 I18N.Common.Glossary.Target = '目标值';
 I18N.Common.Glossary.Baseline = '基准值';
 I18N.Common.Glossary.DayNightRatio = '昼夜比';
+I18N.Common.Glossary.Updator = '修改者';
 
 I18N.Common.Glossary.MonthName.January = '一月';
 I18N.Common.Glossary.MonthName.February = '二月';
@@ -1325,6 +1423,7 @@ I18N.Setting.Role.TagMapping = '数据点关联';
 I18N.Setting.Role.CustomerInfoView = '客户信息查看';
 I18N.Setting.Role.CustomerInfoManagement = '客户信息管理';
 I18N.Setting.Role.CustomLabeling = '自定义能效标识';
+I18N.Setting.Role.VEE = 'VEE';
 
 //contact us
 I18N.Setting.ContactUs = {};
@@ -1484,6 +1583,7 @@ I18N.Message.M02023 = '所选数据点介质不同，无法共同绘制饼状图
 I18N.Message.M02009 = '没有数据权限或权限已被修改，无法查询数据';
 I18N.Message.M02407 = '峰谷平电价展示不支持按原始/小时展示';
 I18N.Message.M02408 = '该节点未设置峰谷时段，无法展示';
+I18N.Message.M02027 = '该异常记录中数据点的步长小于当前支持的最小步长，无法查看。';
 
 I18N.Message.M02601 = '缺少昼夜日历的部分，无法绘图。请设置后再试。';//'{0}所对应的层级节点没有设置昼夜日历，无法查看昼夜比数据';
 I18N.Message.M02602 = '缺少工作日历的部分，无法绘图。请设置后再试。';//'{0}所对应的层级节点没有设置工作日历，无法查看公休比数据';
@@ -1669,8 +1769,6 @@ I18N.Message.M09157 = '对应的##Common.Glossary.Tag##已被删除，马上为�
 I18N.Message.M09158 = '##Common.Glossary.Tag##未被关联至层级树和维度树，请先将##Common.Glossary.Tag##关联。';
 I18N.Message.M09159 = '##Common.Glossary.Tag##所关联的层级树日历属性为空，请先为层级树设置日历。';
 I18N.Message.M09160 = '##Common.Glossary.Tag##所关联的层级树日历属性该年数据为空，请先为层级树设置该年日历属性。';
-I18N.Message.M09115 = '该输入项最小值是 -999999999.999999';
-I18N.Message.M09116 = '该输入项的最小值是 0.000001';
 
 //Cost concurrency error
 I18N.Message.M10007 = '峰谷平电价展示不支持按小时展示';
@@ -1680,7 +1778,6 @@ I18N.Message.M10017 = I18N.format(I18N.Message.DeletionConcurrency, I18N.Common.
 I18N.Message.M10019 = '需量成本Tag为无效数据';
 I18N.Message.M10020 = '无功电量Tag为无效数据';
 I18N.Message.M10021 = '有功电量Tag为无效数据';
-I18N.Message.M10022 = '1.2.3 不是有效数值';
 
 I18N.Message.M11012 = '该客户被层级引用，不能删除！';
 I18N.Message.M11351 = '编码重复';
@@ -1754,9 +1851,14 @@ I18N.Message.M11601 = '自定义能效标识错误。';
 I18N.Message.M11602 = '自定义能效标识级别不连续。';
 I18N.Message.M11603 = '并发错误,请刷新。';
 
-I18N.Common.Window.BatchModify = '原始数据批量修改';
-I18N.Message.AbnormalType = '请至少选择一项要批量修改的异常数据类型。';
+I18N.Message.M05003 = '输入非法。';
 
-I18N.Message.M05003 = '输入非法。'
-
+I18N.Message.M20001 = '规则名称重复。';
+I18N.Message.M20002 = '规则已经被删除。';
+I18N.Message.M20003 = '规则已经被修改。';
+I18N.Message.M20006 = '客户已经被删除。';
+I18N.Message.M20007 = '规则总额超限。';
+I18N.Message.M20012 = '部分数据点已关联到其他规则。';
+I18N.Message.M20013 = '无法修改以下数据点的数据：{0}。';
+I18N.Message.M20014 = '部分数据点已被删除或没有数据权限。';
 

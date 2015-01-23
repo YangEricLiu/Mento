@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-AdditionalCarbonUsageDataVerification-DataView-101"), CreateTime("2013-12-25"), Owner("Cathy")]
-    public class AdditionalCarbonUsageDataVerificationSuite : TestSuiteBase
+    public class P4_AdditionalCarbonUsageDataVerificationSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -50,7 +50,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
         [Test]
         [CaseID("TC-J1-FVT-AdditionalCarbonUsageDataVerification-DataView-101-1")]
-        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(AdditionalCarbonUsageDataVerificationSuite), "TC-J1-FVT-AdditionalCarbonUsageDataVerification-DataView-101-1")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(P4_AdditionalCarbonUsageDataVerificationSuite), "TC-J1-FVT-AdditionalCarbonUsageDataVerification-DataView-101-1")]
         public void AdditionalCarbonUsageDataVerification01(CarbonUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCustomer1");

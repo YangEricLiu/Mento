@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-CarbonUsageDataVerification-DataView-101"), CreateTime("2013-12-20"), Owner("Amber")]
-    public class CarbonUsageDataVerificationSuite : TestSuiteBase
+    public class P4_CarbonUsageDataVerificationSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -46,7 +46,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsageDataVerification-DataView-101-1")]
-        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataVerificationSuite), "TC-J1-FVT-CarbonUsageDataVerification-DataView-101-1")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(P4_CarbonUsageDataVerificationSuite), "TC-J1-FVT-CarbonUsageDataVerification-DataView-101-1")]
         public void CarbonUsageDataVerification01(CarbonUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -206,7 +206,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsageDataVerification-DataView-101-2")]
-        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataVerificationSuite), "TC-J1-FVT-CarbonUsageDataVerification-DataView-101-2")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(P4_CarbonUsageDataVerificationSuite), "TC-J1-FVT-CarbonUsageDataVerification-DataView-101-2")]
         public void CarbonUsageDataVerification02(CarbonUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");

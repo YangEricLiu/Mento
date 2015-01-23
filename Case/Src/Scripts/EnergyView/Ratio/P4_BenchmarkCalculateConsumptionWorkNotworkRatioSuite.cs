@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.Ratio
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-BenchmarkConsumptionWorkNotworkRatio-Calculate-101"), CreateTime("2013-12-18"), Owner("Emma")]
-    public class BenchmarkCalculateConsumptionWorkNotworkRatioSuite : TestSuiteBase
+    public class P4_BenchmarkCalculateConsumptionWorkNotworkRatioSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -51,7 +51,7 @@ namespace Mento.Script.EnergyView.Ratio
 
         [Test]
         [CaseID("TC-J1-FVT-BenchmarkConsumptionWorkNotworkRatio-Calculate-101-1")]
-        [MultipleTestDataSource(typeof(RatioData[]), typeof(BenchmarkCalculateConsumptionWorkNotworkRatioSuite), "TC-J1-FVT-BenchmarkConsumptionWorkNotworkRatio-Calculate-101-1")]
+        [MultipleTestDataSource(typeof(RatioData[]), typeof(P4_BenchmarkCalculateConsumptionWorkNotworkRatioSuite), "TC-J1-FVT-BenchmarkConsumptionWorkNotworkRatio-Calculate-101-1")]
         public void BenchmarkCalculateConsumptionWorkNotworkRatio01(RatioData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Go to Energy Ratio Indicator. 
@@ -105,7 +105,7 @@ namespace Mento.Script.EnergyView.Ratio
 
         [Test]
         [CaseID("TC-J1-FVT-BenchmarkConsumptionWorkNotworkRatio-Calculate-101-2")]
-        [MultipleTestDataSource(typeof(RatioData[]), typeof(BenchmarkCalculateConsumptionWorkNotworkRatioSuite), "TC-J1-FVT-BenchmarkConsumptionWorkNotworkRatio-Calculate-101-2")]
+        [MultipleTestDataSource(typeof(RatioData[]), typeof(P4_BenchmarkCalculateConsumptionWorkNotworkRatioSuite), "TC-J1-FVT-BenchmarkConsumptionWorkNotworkRatio-Calculate-101-2")]
         public void BenchmarkCalculateConsumptionWorkNotworkRatio02(RatioData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Go to Energy Ratio Indicator.

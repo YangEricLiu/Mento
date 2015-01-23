@@ -21,8 +21,8 @@ namespace Mento.Script.EnergyView.IndustryLabelling
     /// 
     /// </summary>
     [TestFixture]
-    [ManualCaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101"), CreateTime("2014-03-05"), Owner("Emma")]
-    public class CalculateIndustryLabellingWorkNotworkSuite : TestSuiteBase
+    [ManualCaseID("TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101"), CreateTime("2014-03-05"), Owner("Emma")]
+    public class P4_CalculateIndustryLabellingConsumptionSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -36,7 +36,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         {
             JazzFunction.Navigator.NavigateHome();
 
-            HomePagePanel.SelectCustomer("NancyCustomer1");
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.LongPause();
         }
 
@@ -48,9 +48,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         private static Widget Widget = JazzFunction.Widget;
 
         [Test]
-        [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-1")]
-        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(CalculateIndustryLabellingWorkNotworkSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-1")]
-        public void CalculateWorkNotworkIndustryLabelling01(IndustryLabellingData input)
+        [CaseID("TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-1")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P4_CalculateIndustryLabellingConsumptionSuite), "TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-1")]
+        public void CalculateVConsumptIndustryLabelling01(IndustryLabellingData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Labelling view.  
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -59,12 +59,12 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.NavigateToIndustryLabelling();
             TimeManager.MediumPause();
             
-            //Go to Labeling. Labellingtag1, select Unit=昼夜比 行业&区域=夏热冬暖酒店三星级行业;time range=2012/10 to view chart.  
+            //Go to Labeling. Labellingtag18, select Unit=单位人口 行业&区域=夏热冬暖酒店三星级行业;time range=2012/10 to view chart.  
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //Select BuildingLabelling1, select Labellingtag1, select a 行业区域=热冬暖酒店三星级行业 option to view chart. 
+            //Select BuildingLabelling8, select Labellingtag8, select a 行业区域=热冬暖酒店三星级行业 option to view chart. 
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
             TimeManager.ShortPause();         
 
@@ -114,12 +114,12 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.LongPause();
 
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[0].HierarchyPath);
-            TimeManager.ShortPause(); 
+            TimeManager.MediumPause();
             MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[0].TagsName[0]);
             TimeManager.ShortPause();
 
             MultiHieCompareWindow.SelectHierarchyNode(input.InputData.MultipleHierarchyAndtags[1].HierarchyPath);
-            TimeManager.ShortPause(); 
+            TimeManager.MediumPause();
             MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[0]);
             TimeManager.ShortPause();
 
@@ -145,9 +145,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-2")]
-        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(CalculateIndustryLabellingWorkNotworkSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-2")]
-        public void SP2_CalculateWorkNotworkIndustryLabelling02(IndustryLabellingData input)
+        [CaseID("TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-2")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P4_CalculateIndustryLabellingConsumptionSuite), "TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-2")]
+        public void SP2_CalculateVConsumptIndustryLabelling02(IndustryLabellingData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Labelling view.  
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -162,7 +162,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
-            TimeManager.ShortPause(); 
+            TimeManager.ShortPause();
 
             //夏热冬暖酒店三星级行业
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[0]);
@@ -187,9 +187,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[1]);
-            TimeManager.ShortPause(); 
+            TimeManager.ShortPause();
 
-            //夏热冬暖酒店四星级行业
+            //严寒地区A区酒店四星级行业
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
 
@@ -208,9 +208,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-3")]
-        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(CalculateIndustryLabellingWorkNotworkSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-3")]
-        public void SP3_CalculateWorkNotworkIndustryLabelling03(IndustryLabellingData input)
+        [CaseID("TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-3")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P4_CalculateIndustryLabellingConsumptionSuite), "TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-Calculate-101-3")]
+        public void SP3_CalculateVConsumptIndustryLabelling03(IndustryLabellingData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Labelling view.  
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -225,7 +225,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
-            TimeManager.ShortPause(); 
+            TimeManager.ShortPause();
 
             //夏热冬暖酒店三星级行业
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[0]);
@@ -250,7 +250,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
 
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[1]);
-            TimeManager.ShortPause(); 
+            TimeManager.ShortPause();
 
             //夏热冬暖酒店五星级行业
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);

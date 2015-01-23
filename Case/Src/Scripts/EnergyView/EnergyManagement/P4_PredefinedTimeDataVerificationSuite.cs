@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-PredefinedTimeDataVerification-DataView-101"), CreateTime("2014-04-16"), Owner("Emma")]
-    public class PredefinedTimeDataVerificationSuite : TestSuiteBase
+    public class P4_PredefinedTimeDataVerificationSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -47,7 +47,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-1")]
-        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-1")]
+        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(P4_PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-1")]
         public void EnergyAnalysisPredefinedVerification(EnergyViewPredefinedData input)
         {
             EnergyAnalysis.NavigateToEnergyAnalysis();
@@ -107,7 +107,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-2")]
-        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-2")]
+        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(P4_PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-2")]
         public void CarbonUsagePredefinedVerification(EnergyViewPredefinedData input)
         {
             CarbonUsage.NavigateToCarbonUsage();
@@ -167,7 +167,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-3")]
-        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-3")]
+        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(P4_PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-3")]
         public void CostUsagePredefinedVerification(EnergyViewPredefinedData input)
         {
             CostUsage.NavigateToCostUsage();
@@ -227,7 +227,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-4")]
-        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-4")]
+        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(P4_PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-4")]
         public void UnitIndicatorPredefinedVerification01(EnergyViewPredefinedData input)
         {
             UnitKPIPanel.NavigateToUnitIndicator();
@@ -287,7 +287,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-5")]
-        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-5")]
+        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(P4_PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-5")]
         public void UnitIndicatorPredefinedVerification02(EnergyViewPredefinedData input)
         {
             UnitKPIPanel.NavigateToUnitIndicator();
@@ -350,7 +350,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-6")]
-        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-6")]
+        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(P4_PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-6")]
         public void UnitIndicatorPredefinedVerification03(EnergyViewPredefinedData input)
         {
             UnitKPIPanel.NavigateToUnitIndicator();
@@ -413,7 +413,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
         [Test]
         [CaseID("TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-7")]
-        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-7")]
+        [MultipleTestDataSource(typeof(EnergyViewPredefinedData[]), typeof(P4_PredefinedTimeDataVerificationSuite), "TC-J1-FVT-PredefinedTimeDataVerification-DataView-101-7")]
         public void RatioPredefinedVerification(EnergyViewPredefinedData input)
         {
             RadioPanel.NavigateToRatio();

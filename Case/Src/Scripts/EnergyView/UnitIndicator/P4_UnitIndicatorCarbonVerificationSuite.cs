@@ -23,7 +23,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     [TestFixture]
     //[Ignore("ignore")]
     [ManualCaseID("TC-J1-FVT-UnitIndicatorCarbonVerification-101"), CreateTime("2013-12-26"), Owner("Emma")]
-    public class UnitIndicatorCarbonVerificationSuite : TestSuiteBase
+    public class P4_UnitIndicatorCarbonVerificationSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -54,7 +54,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorCarbonVerification-101-1")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorCarbonVerificationSuite), "TC-J1-FVT-UnitIndicatorCarbonVerification-101-1")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_UnitIndicatorCarbonVerificationSuite), "TC-J1-FVT-UnitIndicatorCarbonVerification-101-1")]
         public void UnitIndicatorCarbonVerification01(UnitIndicatorData input)
         {
             //Select "NancyOtherCustomer3"
@@ -141,7 +141,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorCarbonVerification-101-2")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorCarbonVerificationSuite), "TC-J1-FVT-UnitIndicatorCarbonVerification-101-2")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_UnitIndicatorCarbonVerificationSuite), "TC-J1-FVT-UnitIndicatorCarbonVerification-101-2")]
         public void UnitIndicatorCarbonVerification02(UnitIndicatorData input)
         {
             //Select "NancyCostCustomer2"
@@ -322,7 +322,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorCarbonVerification-101-3")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorCarbonVerificationSuite), "TC-J1-FVT-UnitIndicatorCarbonVerification-101-3")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_UnitIndicatorCarbonVerificationSuite), "TC-J1-FVT-UnitIndicatorCarbonVerification-101-3")]
         public void UnitIndicatorCarbonVerification03(UnitIndicatorData input)
         {
             //Select "NancyOtherCustomer3"

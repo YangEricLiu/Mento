@@ -283,8 +283,8 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         #region xxxx
         [Test]
-        [CaseID("TC-J1-FVT-RankingBug-Calculate-107-4")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(RankingDataviewAddForBug), "TC-J1-FVT-RankingBug-Calculate-107-4")]
+        [CaseID("TC-J1-FVT-RankingBug-Calculate-107-5")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(RankingDataviewAddForBug), "TC-J1-FVT-RankingBug-Calculate-107-5")]
         public void CalcElecLastYearAverageCarbonRankingData(CorporateRankingData input)
         {
             //1.Go to Ranking, Select NancyCostCustomer2 -> 楼宇A, 
@@ -368,8 +368,8 @@ namespace Mento.Script.EnergyView.CorporateRanking
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-RankingBug-Calculate-107-4")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(RankingDataviewAddForBug), "TC-J1-FVT-RankingBug-Calculate-107-4")]
+        [CaseID("TC-J1-FVT-RankingBug-Calculate-107-6")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(RankingDataviewAddForBug), "TC-J1-FVT-RankingBug-Calculate-107-6")]
         public void CalcWaterLastYearAverageCarbonRankingData(CorporateRankingData input)
         {
             //1.Go to Ranking, Select NancyCostCustomer2 -> 楼宇A, 
@@ -452,8 +452,8 @@ namespace Mento.Script.EnergyView.CorporateRanking
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-RankingBug-Calculate-107-4")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(RankingDataviewAddForBug), "TC-J1-FVT-RankingBug-Calculate-107-4")]
+        [CaseID("TC-J1-FVT-RankingBug-Calculate-107-7")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(RankingDataviewAddForBug), "TC-J1-FVT-RankingBug-Calculate-107-7")]
         public void CalcCoalLastYearAverageCarbonRankingData(CorporateRankingData input)
         {
             //1.Go to Ranking, Select NancyCostCustomer2 -> 楼宇A, 
@@ -539,9 +539,9 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         #region auuuu
         [Test]
-        [CaseID("TC-J1-FVT-RankingBug-Calculate-107-5")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(RankingDataviewAddForBug), "TC-J1-FVT-RankingBug-Calculate-107-5")]
-        public void CalcSiteCarbonRankingDatat(CorporateRankingData input)
+        [CaseID("TC-J1-FVT-RankingBug-Calculate-107-4")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(RankingDataviewAddForBug), "TC-J1-FVT-RankingBug-Calculate-107-4")]
+        public void CalcSiteCarbonRankingData(CorporateRankingData input)
         {
             //1.Go to ranking, select '碳排放', select 楼A, 
             JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
@@ -631,9 +631,9 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.MediumPause();
 
             //no data
-            CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0]);
+            CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3]);
             TimeManager.MediumPause();
-            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[0]);
             TimeManager.LongPause();
             TimeManager.LongPause();
              
@@ -650,9 +650,9 @@ namespace Mento.Script.EnergyView.CorporateRanking
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1]);
+            CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4]);
             TimeManager.MediumPause();
-            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[1]);
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -669,9 +669,9 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.MediumPause();
 
             //no data
-            CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2]);
+            CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5]);
             TimeManager.MediumPause();
-            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[2]);
             TimeManager.LongPause();
             TimeManager.LongPause();
         }

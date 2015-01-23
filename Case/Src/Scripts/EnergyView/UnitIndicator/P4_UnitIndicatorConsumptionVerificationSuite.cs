@@ -23,7 +23,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     [TestFixture]
     //[Ignore("ignore")]
     [ManualCaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101"), CreateTime("2013-11-14"), Owner("Emma")]
-    public class UnitIndicatorConsumptionVerificationSuite : TestSuiteBase
+    public class P4_UnitIndicatorConsumptionVerificationSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -52,7 +52,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-1")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-1")]
         public void UnitIndicatorConsumptionVerification01_p1(UnitIndicatorData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -126,7 +126,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-2")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-2")]
         public void UnitIndicatorConsumptionVerification01_v1(UnitIndicatorData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -200,7 +200,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-3")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-1-3")]
         public void UnitIndicatorConsumptionVerification01_v2(UnitIndicatorData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -257,7 +257,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-2")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-2")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-2")]
         public void UnitIndicatorConsumptionVerification02(UnitIndicatorData input)
         {
             //select "NancyCostCustomer2"
@@ -345,7 +345,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-3")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-3")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-3")]
         public void UnitIndicatorConsumptionVerification03(UnitIndicatorData input)
         {
             //Select "NancyOtherCustomer3"
@@ -399,7 +399,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-4")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-4")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-4")]
         public void UnitIndicatorConsumptionVerification04(UnitIndicatorData input)
         {
             //Select "NancyOtherCustomer3"
@@ -448,7 +448,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-UnitIndicatorConsumptionVerification-101-5")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-5")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_UnitIndicatorConsumptionVerificationSuite), "TC-J1-FVT-UnitIndicatorConsumptionVerification-101-5")]
         public void UnitIndicatorConsumptionVerification05(UnitIndicatorData input)
         {
             //select "NancyCostCustomer2"

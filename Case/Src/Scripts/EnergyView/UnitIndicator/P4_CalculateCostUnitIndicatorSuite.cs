@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101"), CreateTime("2013-11-14"), Owner("Emma")]
-    public class CalculateCostUnitIndicatorSuite : TestSuiteBase
+    public class P4_CalculateCostUnitIndicatorSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -46,7 +46,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-1")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-1")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-1")]
         public void CalculateCostUnitIndicator01(UnitIndicatorData input)
         {
             //Go to NancyCostCustomer2. Go to Function Unit indicator. Select the 楼宇A from Hierarchy Tree. Click Function Type button, select Cost, 
@@ -137,7 +137,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-2")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-2")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-2")]
         public void CalculateCostUnitIndicator02(UnitIndicatorData input)
         {
             //Change Hierarchy list to 组织A->园区A->楼宇B, then go to 介质单项.
@@ -230,7 +230,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-3")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-3")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-3")]
         public void CalculateCostUnitIndicator03(UnitIndicatorData input)
         {
             //Change Hierarchy list to 组织A->园区A, then go to 介质单项.
@@ -320,7 +320,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-4")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-4")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-4")]
         public void CalculateCostUnitIndicator04(UnitIndicatorData input)
         {
             //Change Hierarchy list to 组织A, then go to 介质单项.
@@ -381,7 +381,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-5")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-5")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-5")]
         public void CalculateCostUnitIndicator05(UnitIndicatorData input)
         {
             //Change Hierarchy list to Customer is NancyCostCustomer2, then go to 介质单项.
@@ -429,7 +429,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-6")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-6")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-6")]
         public void CalculateCostUnitIndicator06(UnitIndicatorData input)
         {
             //Navigate to Hierarchy list 组织A->园区A->楼宇A, then go to 一层 Area Dimension.
@@ -541,7 +541,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-7")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-7")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-7")]
         public void CalculateCostUnitIndicator07(UnitIndicatorData input)
         {
             //Navigate to Hierarchy list 组织A->园区A->楼宇A, then go to 空调 System Dimension.
@@ -653,7 +653,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-8")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-8")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-8")]
         public void CalculateCostUnitIndicator08(UnitIndicatorData input)
         {
             //Special calculation. Select the 楼宇A from Hierarchy Tree. Click Function Type button, select Cost, then go to 介质单项.
@@ -709,7 +709,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-9")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-9")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-9")]
         public void CalculateCostUnitIndicator09(UnitIndicatorData input)
         {
             //Special calculation. Select the 园区A from Hierarchy Tree. Click Function Type button, select Cost, then go to 介质单项.
@@ -828,7 +828,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-10")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-10")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-10")]
         public void CalculateCostUnitIndicatorRawValue(UnitIndicatorData input)
         {
             //NancyCostCustomer2. Go to Function Unit indicator. Select the 楼宇A

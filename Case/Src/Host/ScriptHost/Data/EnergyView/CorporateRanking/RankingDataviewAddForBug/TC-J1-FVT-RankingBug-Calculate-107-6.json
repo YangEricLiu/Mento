@@ -1,0 +1,19 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇A"], ["NancyCostCustomer2","组织A","园区A","楼宇B"]],
+			"commodityNames":["$@Commodity_Electricity","$@Commodity_Water","$@Commodity_Coal"],
+			"failedFileName":["F-TC-J1-FVT-RankingBug-Calculate-107-6-1-Water-AverageRank-LastYear-Carbon-标煤.xls","F-TC-J1-FVT-RankingBug-Calculate-107-6-2-Water-AverageRank-LastYear-Carbon-Co2.xls","F-TC-J1-FVT-RankingBug-Calculate-107-6-3-Water-UnitArea-LastYear-Year-Carbon-Tree.xls"],
+			"ManualTimeRange":[
+			{
+				"StartDate":"2012-1-1",
+				"EndDate":"2012-12-31",	
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["TC-J1-FVT-RankingBug-Calculate-107-6-1-Water-AverageRank-LastYear-Carbon-标煤.xls","TC-J1-FVT-RankingBug-Calculate-107-6-2-Water-AverageRank-LastYear-Carbon-Co2.xls","TC-J1-FVT-RankingBug-Calculate-107-6-3-Water-UnitArea-LastYear-Year-Carbon-Tree.xls"],
+		}
+	}
+]

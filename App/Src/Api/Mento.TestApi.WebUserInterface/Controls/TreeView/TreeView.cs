@@ -60,22 +60,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public void ExpandNode(string nodeText)
         {
             //if the node is not expanded, click expand icon
-            //if (!IsNodeExpanded(nodeText))
-            //{
-            //    ClickNodeExpander(nodeText);
-
-            //    //pause to wait animate finish
-            //    TimeManager.MediumPause();
-            //}
-
-            //For a bug, it should click twice when the node is expanded
-            ClickNodeExpander(nodeText);
-            TimeManager.MediumPause();
             if (!IsNodeExpanded(nodeText))
             {
                 ClickNodeExpander(nodeText);
+
+                //pause to wait animate finish
                 TimeManager.MediumPause();
             }
+
+            //For a bug, it should click twice when the node is expanded
+            //ClickNodeExpander(nodeText);
+            //TimeManager.MediumPause();
+            //if (!IsNodeExpanded(nodeText))
+            //{
+            //    ClickNodeExpander(nodeText);
+            //    TimeManager.MediumPause();
+            //}
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 //ExpandNode(nodesText[i]);
 
                 //wait the next item appear
-                if (nextNodeLocator != null && !(IsNodeExpanded(nodesText[i])))
+                if (nextNodeLocator != null)
                 {
                     ExpandNode(nodesText[i]);
                     ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear, container: this.RootElement);

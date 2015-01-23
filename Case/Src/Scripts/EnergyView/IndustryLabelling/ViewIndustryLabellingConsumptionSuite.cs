@@ -61,7 +61,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
             TimeManager.ShortPause();         
 
-            //time 2014-01
+            //time 2014-12
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
 
@@ -71,8 +71,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
             //·Labelling chart display with v(1).
             Assert.AreEqual(input.ExpectedData.UnitTypeValue, EnergyViewToolbar.GetUnitTypeButtonText());
-
-            //Assert.AreEqual(4, IndustryLabellingPanel.GetLabellingNumber());
 
             string labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.ExpectedData.IndustryValue, input.ExpectedData.UnitTypeValue);
             IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
@@ -94,7 +92,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[1]);
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[2]);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[2]));
             Assert.AreEqual(input.ExpectedData.IndustryValue, EnergyViewToolbar.GetLabellingIndustryButtonText());
 

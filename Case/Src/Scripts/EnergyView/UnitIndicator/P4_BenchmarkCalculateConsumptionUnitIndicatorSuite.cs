@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-BenckmarkConsumptionUnitIndicator-Calculate-101"), CreateTime("2013-12-16"), Owner("Emma")]
-    public class BenckmarkCalculateConsumptionUnitIndicatorSuite : TestSuiteBase
+    public class P4_BenchmarkCalculateConsumptionUnitIndicatorSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -46,7 +46,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-BenckmarkConsumptionUnitIndicator-Calculate-101-1")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(BenckmarkCalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-BenckmarkConsumptionUnitIndicator-Calculate-101-1")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_BenchmarkCalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-BenckmarkConsumptionUnitIndicator-Calculate-101-1")]
         public void BenckmarkCalculateConsumptionUnitIndicator01(UnitIndicatorData input)
         {
             //select "NancyOtherCustomer3"
@@ -140,7 +140,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-BenckmarkConsumptionUnitIndicator-Calculate-101-2")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(BenckmarkCalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-BenckmarkConsumptionUnitIndicator-Calculate-101-2")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_BenchmarkCalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-BenckmarkConsumptionUnitIndicator-Calculate-101-2")]
         public void BenckmarkCalculateConsumptionUnitIndicator02(UnitIndicatorData input)
         {
             //select hierarchy "NancyCustomer1/园区测试多层级/楼宇BC"

@@ -172,7 +172,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //Assert.AreEqual(8, IndustryLabellingPanel.GetLabellingNumber());
             labellingInfo1 = IndustryLabellingPanel.GetMultiLabellingInfo(input.InputData.MultipleHierarchyAndtags, input.InputData.YearAndMonth[0], input.InputData.Industries[1][1], input.ExpectedData.UnitTypeValue);
             IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[1], labellingInfo1);
             TimeManager.MediumPause();
@@ -207,10 +206,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             Widget.ClickViewLabellingDataButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
-
-            Assert.AreEqual(8, Widget.GetLabellingNumber());
             Widget.CompareMaxWidgetStringData(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3], IndustryLabellingPanel.IndustryLabellingPath);
-
             Widget.ClickCloseMaxDialogButton();
         }
 

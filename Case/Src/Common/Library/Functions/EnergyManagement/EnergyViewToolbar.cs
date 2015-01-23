@@ -331,10 +331,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SaveToDashboard(string widgetName, string[] hierarchyName, bool isCreateDashboard, string dashboardName)
         {
             MoreMenu.SwitchMenuItem(EnergyViewMoreOption.ToDashboard);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.FlashPause();
+            TimeManager.MediumPause();
 
             DashboardDialog.Save(widgetName, hierarchyName, isCreateDashboard, dashboardName);
         }
@@ -342,7 +339,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SaveToDashboardThenCancel(string widgetName, string[] hierarchyName, bool isCreateDashboard, string dashboardName)
         {
             MoreMenu.SwitchMenuItem(EnergyViewMoreOption.ToDashboard);
-            TimeManager.FlashPause();
+            TimeManager.MediumPause();
 
             DashboardDialog.SaveThenCancel(widgetName, hierarchyName, isCreateDashboard, dashboardName);
         }
@@ -350,7 +347,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SaveToDashboardwithAnnotation(string widgetName, string[] hierarchyName, bool isCreateDashboard, string dashboardName, string comment)
         {
             MoreMenu.SwitchMenuItem(EnergyViewMoreOption.ToDashboard);
-            TimeManager.FlashPause();
+            TimeManager.MediumPause();
 
             DashboardDialog.SaveWithAnnotation(widgetName, hierarchyName, isCreateDashboard, dashboardName, comment);
         }

@@ -21,8 +21,8 @@ namespace Mento.Script.EnergyView.IndustryLabelling
     /// 
     /// </summary>
     [TestFixture]
-    [ManualCaseID("TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-Calculate-101"), CreateTime("2014-03-05"), Owner("Emma")]
-    public class CalculateIndustryLabellingDayNightSuite : TestSuiteBase
+    [ManualCaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101"), CreateTime("2014-03-05"), Owner("Emma")]
+    public class P4_CalculateIndustryLabellingWorkNotworkSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -48,9 +48,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         private static Widget Widget = JazzFunction.Widget;
 
         [Test]
-        [CaseID("TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-Calculate-101-1")]
-        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(CalculateIndustryLabellingDayNightSuite), "TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-Calculate-101-1")]
-        public void CalculateDayNightIndustryLabelling01(IndustryLabellingData input)
+        [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-1")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P4_CalculateIndustryLabellingWorkNotworkSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-1")]
+        public void CalculateWorkNotworkIndustryLabelling01(IndustryLabellingData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Labelling view.  
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -145,9 +145,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-Calculate-101-2")]
-        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(CalculateIndustryLabellingDayNightSuite), "TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-Calculate-101-2")]
-        public void SP2_CalculateDayNightIndustryLabelling02(IndustryLabellingData input)
+        [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-2")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P4_CalculateIndustryLabellingWorkNotworkSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-2")]
+        public void SP2_CalculateWorkNotworkIndustryLabelling02(IndustryLabellingData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Labelling view.  
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -189,7 +189,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[1]);
             TimeManager.ShortPause(); 
 
-            //严寒地区A区酒店四星级行业
+            //夏热冬暖酒店四星级行业
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
 
@@ -208,9 +208,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-Calculate-101-3")]
-        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(CalculateIndustryLabellingDayNightSuite), "TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-Calculate-101-3")]
-        public void SP3_CalculateDayNightIndustryLabelling03(IndustryLabellingData input)
+        [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-3")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P4_CalculateIndustryLabellingWorkNotworkSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-3")]
+        public void SP3_CalculateWorkNotworkIndustryLabelling03(IndustryLabellingData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Labelling view.  
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");

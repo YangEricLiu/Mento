@@ -3,8 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2","组织A","园区A","楼宇A"], ["NancyCostCustomer2","组织A","园区A","楼宇B"]],
-			"commodityNames":["$@Commodity_Water"],
-			"failedFileName":["F-TC-J1-FVT-RankingBug-Calculate-107-4-1-Water-TotalRank-标煤-LastYear.xls","F-TC-J1-FVT-RankingBug-Calculate-107-4-2-Water-TotalRank-Co2-LastYear.xls","F-TC-J1-FVT-RankingBug-Calculate-107-4-3-Water-TotalRank-LastYear.xls"],
+			"commodityNames":["$@Commodity_Electricity","$@Commodity_Water","$@Commodity_Coal"],
+			"failedFileName":["F-TC-J1-FVT-RankingBug-Calculate-107-5-1-Elec-AverageRank-LastYear-Carbon-标煤.xls","F-TC-J1-FVT-RankingBug-Calculate-107-5-2-Elec-AverageRank-LastYear-Carbon-Co2.xls","F-TC-J1-FVT-RankingBug-Calculate-107-5-3-Elec-UnitArea-LastYear-Year-Carbon-Tree.xls"],
 			"ManualTimeRange":[
 			{
 				"StartDate":"2012-1-1",
@@ -13,7 +13,7 @@
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["TC-J1-FVT-RankingBug-Calculate-107-4-1-Water-TotalRank-标煤-LastYear.xls","TC-J1-FVT-RankingBug-Calculate-107-4-2-Water-TotalRank-Co2-LastYear.xls","TC-J1-FVT-RankingBug-Calculate-107-4-3-Water-TotalRank-LastYear.xls"],
+			"expectedFileName":["TC-J1-FVT-RankingBug-Calculate-107-5-1-Elec-AverageRank-LastYear-Carbon-标煤.xls","TC-J1-FVT-RankingBug-Calculate-107-5-2-Elec-AverageRank-LastYear-Carbon-Co2.xls","TC-J1-FVT-RankingBug-Calculate-107-5-3-Elec-UnitArea-LastYear-Year-Carbon-Tree.xls"],
 		}
 	}
 ]

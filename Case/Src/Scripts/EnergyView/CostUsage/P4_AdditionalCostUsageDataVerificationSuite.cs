@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CostUsage
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101"), CreateTime("2013-12-23"), Owner("Cathy")]
-    public class AdditionalCostUsageDataVerificationSuite : TestSuiteBase
+    public class P4_AdditionalCostUsageDataVerificationSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -46,7 +46,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101-1")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(AdditionalCostUsageDataVerificationSuite), "TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101-1")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P4_AdditionalCostUsageDataVerificationSuite), "TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101-1")]
         public void AdditionalCostUsageDataVerification01(CostUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -188,7 +188,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101-2")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(AdditionalCostUsageDataVerificationSuite), "TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101-2")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P4_AdditionalCostUsageDataVerificationSuite), "TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101-2")]
         public void AdditionalCostUsageDataVerification02(CostUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");

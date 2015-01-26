@@ -257,7 +257,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             //change step to raw
             CostUsage.ClickDisplayStep(DisplayStep.Raw);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();//弹出提示框，不需要Load Chart，无需等待时间太长
             TimeManager.MediumPause();
 
             //Check Warning message 
@@ -332,7 +332,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Select Commodity=水 to display Data view.
             CostUsage.SelectCommodity(input.InputData.commodityNames[1]);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();//弹出提示框，不需要Load Chart，无需等待时间太长
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -351,7 +351,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.SelectCommodity(input.InputData.commodityNames[2]);
             EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();//弹出提示框，不需要Load Chart，无需等待时间太长
             TimeManager.LongPause();
 
             //Check Warning message 

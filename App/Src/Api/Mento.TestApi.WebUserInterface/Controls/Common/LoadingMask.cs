@@ -14,7 +14,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static Locator WidgetsContainerLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.WidgetsContainerLoadingLocator);
         private static Locator CalendarLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.CalendarLoadingLocator);
         private static Locator JumpLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.JumpLoadingLocator);
-        private static Locator PopNotesLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.PopNotesLocator);  
+        private static Locator PopNotesLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.PopNotesLocator);
+        private static Locator MyShareLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.MyShareLocator);
 
         public LoadingMask()
             : base(LoadingLocator)
@@ -84,6 +85,24 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 TimeManager.ShortPause();
 
                 ElementHandler.Wait(DashboardHeaderLoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 5 : maxtime);
+
+                TimeManager.ShortPause();
+            }
+            catch (Exception ex)
+            {
+                //throw;
+            }
+        }
+
+        public void WaitMyShareLoading(int maxtime = 0)
+        {
+            try
+            {
+                //ElementHandler.Wait(MyShareLocator, WaitType.ToAppear, timeout: maxtime <= 0 ? 1 : maxtime);
+
+                //TimeManager.ShortPause();
+
+                ElementHandler.Wait(MyShareLocator, WaitType.ToAppear, timeout: maxtime <= 0 ? 60 : maxtime);
 
                 TimeManager.ShortPause();
             }

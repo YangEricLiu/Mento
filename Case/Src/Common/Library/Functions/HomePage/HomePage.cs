@@ -24,6 +24,7 @@ namespace Mento.ScriptCommon.Library.Functions
     /// </summary>
     public class HomePage
     {
+        private static int WAITMYSHARE = 2000;
 
         internal HomePage()
         {
@@ -124,6 +125,9 @@ namespace Mento.ScriptCommon.Library.Functions
         public void NavigateToMyShare()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.MyShare);
+            JazzMessageBox.LoadingMask.WaitMyShareLoading();
+
+            TimeManager.Pause(WAITMYSHARE);
         }
 
 
@@ -153,7 +157,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
 
             SelectCustmerMenuButton.SelectOneItem(customerName);
-            //JazzMessageBox.LoadingMask.WaitLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             if (JazzMessageBox.MessageBox.Exists())

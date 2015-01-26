@@ -88,7 +88,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //Navigate to homepage, then to "Collaborative Widget " tab.  
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //WidgetA mirror display at the top of thumbnail list of under UserA.
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -98,7 +97,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //WidgetA mirror display at the top of thumbnail list of under UserA.
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -108,7 +106,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[2].LoginName, dashboard[0].Receivers[2].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //WidgetA mirror display at the top of thumbnail list of under UserA.
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -150,7 +147,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //There is a widgetA with nameA appears in "Collaborative Widget " tab.
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -184,7 +180,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //·There is a new widgetA with the same nameA appear in "Collaborative Widget " and will not appear error message for duplicate name .
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -245,7 +240,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //There are two widget appear in "Collaborative Widget " tab. One is widgetA with nameA, the other is widgetB with nameA.
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -256,7 +250,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Click Edit button in widgetA in thumbnail list.
             HomePagePanel.CancelMyShareWidgetOpen(dashboard[0].WidgetName);
@@ -270,7 +263,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[1].WidgetName));
             TimeManager.ShortPause();
@@ -309,7 +301,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             // to "Collaborative Widget " tab.
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
             TimeManager.ShortPause();
@@ -318,7 +309,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
             TimeManager.ShortPause();
@@ -356,7 +346,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             // to "Collaborative Widget " tab.
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
             TimeManager.ShortPause();
@@ -365,7 +354,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
             TimeManager.ShortPause();

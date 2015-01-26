@@ -28,7 +28,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["$@Dashboard.Label.ShareFrom@$ShareUserB$@Dashboard.Label.Share"],			
+			"messages":["$@Dashboard.Label.ShareFrom|(ShareUserB)"],			
 		}
 	}
 ]

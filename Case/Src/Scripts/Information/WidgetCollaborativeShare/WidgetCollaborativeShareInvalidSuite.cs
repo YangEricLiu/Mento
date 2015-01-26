@@ -90,7 +90,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //WidgetA cannot appear in UserA,UserB and UserC's Collaborative Widget  tab page
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
             Assert.IsFalse(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
             TimeManager.ShortPause();
 
@@ -116,7 +115,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //WidgetA cannot appear in UserA,UserB and UserC's Collaborative Widget  tab page
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
             Assert.IsFalse(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
             TimeManager.ShortPause();
         }

@@ -27,6 +27,12 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         [SetUp]
         public void CaseSetUp()
         {
+            JazzFunction.Navigator.NavigateHome();
+            TimeManager.LongPause();
+
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.LongPause();
+
             IndustryLabellingPanel.NavigateToIndustryLabelling();
             TimeManager.MediumPause();
         }
@@ -52,13 +58,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewIndustryLabellingDayNightSuite), "TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-View-101-1")]
         public void ViewDayNightIndustryLabelling01(IndustryLabellingData input)
         {
-            //Go to NancyOtherCustomer3. Go to Function Labelling view. 
-            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
-            TimeManager.ShortPause();
-
-            IndustryLabellingPanel.NavigateToIndustryLabelling();
-            TimeManager.MediumPause();
-            
+            //Go to NancyOtherCustomer3. Go to Function Labelling view.      
             //Select the BuildingDayNight from Hierarchy Tree
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -141,12 +141,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         public void ViewDayNightIndustryLabelling02(IndustryLabellingData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Labelling view. 
-            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
-            TimeManager.ShortPause();
-
-            IndustryLabellingPanel.NavigateToIndustryLabelling();
-            TimeManager.MediumPause();
-
             //Switch to "多层级数据点"
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
             TimeManager.LongPause();
@@ -211,12 +205,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         public void ViewDayNightIndustryLabelling03(IndustryLabellingData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Labelling view.  
-            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
-            TimeManager.ShortPause();
-
-            IndustryLabellingPanel.NavigateToIndustryLabelling();
-            TimeManager.MediumPause();
-
             //Select BuildingLabelling1, select Labellingtag1, 
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -225,7 +213,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
             TimeManager.ShortPause();
 
-            //select a 行业区域=夏热冬暖酒店三星级行业; Go to 昼夜比 option, time range=2012/10 to view chart.
+            //select a 行业区域=夏热冬暖酒店三星级行业; Go to 昼夜比 option, time range=2012/10 to view chart.(There is no data from 2012-10 to 2015-01)
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[0]);
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
@@ -235,7 +223,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
             string labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[0], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
             IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[0], labellingInfo1);
             TimeManager.MediumPause();
@@ -249,7 +236,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //Assert.AreEqual(6, IndustryLabellingPanel.GetLabellingNumber());
             labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[1], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
             IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[1], labellingInfo1);
             TimeManager.MediumPause();

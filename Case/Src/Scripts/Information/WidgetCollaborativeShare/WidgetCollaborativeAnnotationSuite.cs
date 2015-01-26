@@ -77,7 +77,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //Login to Jazz with UserA.Navigate to homepage, then to "Collaborative Widget " tab.
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //There is a widgetA appear in "Collaborative Widget " with the blank annotation.
             HomePagePanel.FloatOnMyShareEditCommentButton(dashboard[0].WidgetName);
@@ -109,7 +108,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
+
             HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);
             TimeManager.ShortPause();
 
@@ -154,7 +153,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //Navigate to homepage, then to "Collaborative Widget " tab.
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //There is a widgetA appear in "Collaborative Widget " with the annotation.
             HomePagePanel.FloatOnMyShareEditCommentButton(dashboard[0].WidgetName);
@@ -208,7 +206,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //Navigate to homepage, then to "Collaborative Widget " tab.
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //·There is a widgetA appear in "Collaborative Widget " with the modified annotation.
             HomePagePanel.FloatOnMyShareEditCommentButton(dashboard[0].WidgetName);
@@ -249,7 +246,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
 
             //Navigate to homepage, then to "Collaborative Widget " tab.
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //There is a widgetA appear in "Collaborative Widget " with the empty annotation in field.
             HomePagePanel.FloatOnMyShareEditCommentButton(dashboard[0].WidgetName);
@@ -270,7 +266,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             //Login to Jazz with UserA. Navigate to homepage->Dashboard->Widget Mirror tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Mouse over the annotation icon.The tooltip display with Add button.
             HomePagePanel.FloatOnMyShareEditCommentButton(dashboard[0].WidgetName);
@@ -302,7 +297,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Mouse over the annotation icon. The tooltip display properly.
             HomePagePanel.FloatOnMyShareEditCommentButton(dashboard[0].WidgetName);
@@ -313,7 +307,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Mouse over the annotation icon.The tooltip display well with Edit button
             //Click Edit button and modify the annotation to empty and then click Confirm button.
@@ -346,7 +339,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             //Login to Jazz with UserB. Navigate to homepage->Dashboard->Widget Mirror tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Click the schema picture area in widgetA.Go to verify annotation.The annotation is blank.
             HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);
@@ -358,7 +350,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Click the schema picture area in widgetA.The annotation is blank with Add button is available.
             //Add annotation in annotation field and click "Confirm" button.
@@ -393,8 +384,7 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
-            
+          
             //Click the schema picture area in widgetA.Click Edit button in annotation.
             HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);
             Widget.ClickEditMaxWidgetCommentButton();

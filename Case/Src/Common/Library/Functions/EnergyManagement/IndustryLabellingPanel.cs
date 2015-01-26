@@ -130,9 +130,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void CheckTag(string tagName)
         {
             TagGrid.CheckRowCheckbox(2, tagName);
-
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.MediumPause();
+            TimeManager.ShortPause();
         }
 
         public bool IsTagChecked(string tagName)

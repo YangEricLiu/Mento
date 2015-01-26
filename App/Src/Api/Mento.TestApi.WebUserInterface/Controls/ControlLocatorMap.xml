@@ -9,6 +9,7 @@
   <add key="CalendarLoadingLocator" value = "//div[@id='st-hier-calendar-form-body']/div[contains(@class,'x-component x-component-default') and not(contains(@style, 'display: none;'))]/div/div[@class='x-loading-spinner-large']" type ="XPath"/>
   <add key="JumpLoadingLocator" value = "//div[contains(@id,'jumpingwindow') and text()='$@HomePage.Label.DashboardMessage.Jumping']" type ="XPath"/>
   <add key="PopNotesLocator" value = "//div[@id='popnotes-div']/div[@class='msg']/p" type ="XPath"/>
+  <add key="MyShareLocator" value = "//div[@id='hp-dashboard-share-ct' and not(contains(@style, 'display: none;'))]" type ="XPath"/>
   
   <!--<add key="CreateSuccessMessageBox" value="//div[contains(@class,'x-message-box') and div/div/div/div/em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>
   <add key="CreateSuccessMessageBoxOkButton" value="//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Label.OKButton']]" type="XPath"/>-->

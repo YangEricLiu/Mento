@@ -10,8 +10,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class MenuButton : Button
     {
-        //private static string MenuItemLocatorFormat = "//div[contains(@class,'x-menu-item') and a/span[text()='{0}']]";
-        private static string MenuItemLocatorFormat = "//span[contains(@class, 'x-menu-item-text') and text()='{0}']";
+        private static string MenuItemLocatorFormat = "//div[contains(@id, 'menuitem') and a/span[contains(@class, 'x-menu-item-text') and text()='{0}']]";
 
         public MenuButton(Locator locator) : base(locator) { }
 
@@ -151,6 +150,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public bool IsMenuItemDisabled(string itemText)
         {
             this.Click();
+            TimeManager.MediumPause();
             return GetMenuItem(itemText).GetAttribute("class").Contains("x-menu-item-disabled");
         }
 

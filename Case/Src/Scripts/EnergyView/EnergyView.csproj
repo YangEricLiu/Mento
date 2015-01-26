@@ -83,7 +83,7 @@
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionPieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionPieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\MonitorDataIssues.cs" />
-    <Compile Include="EnergyAnalysis\MultiTagsDataLargeRangeSuite.cs" />
+    <Compile Include="EnergyAnalysis\P4_MultiTagsDataVerificationSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodePieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsTrendChartSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite.cs" />

@@ -57,7 +57,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             //Login to Jazz with UserA. Navigate to homepage->Dashboard->Collaborative Widget  tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Click "Subscriber User List" button in widgetA.
             HomePagePanel.ClickShareMyShareWidgetButton(dashboard[0].WidgetName);
@@ -84,7 +83,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[2].LoginName, dashboard[0].Receivers[2].Password, dashboard[0].HierarchyName[0]);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //There is a widgetA appear in "Collaborative Widget " with the new annotation.
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -93,7 +91,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[3].LoginName, dashboard[0].Receivers[3].Password, dashboard[0].HierarchyName[0]);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //There is a widgetA appear in "Collaborative Widget " with the new annotation.
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -110,7 +107,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             //Login to Jazz with UserB. Navigate to homepage->Dashboard->Collaborative Widget  tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Click "Subscriber User List" button in widgetA.
             HomePagePanel.ClickShareMyShareWidgetButton(dashboard[0].WidgetName);
@@ -137,7 +133,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[2].LoginName, dashboard[0].Receivers[2].Password, dashboard[0].HierarchyName[0]);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //There is a widgetA appear in "Collaborative Widget " with the new annotation.
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -146,7 +141,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[3].LoginName, dashboard[0].Receivers[3].Password, dashboard[0].HierarchyName[0]);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //There is a widgetA appear in "Collaborative Widget " with the new annotation.
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -162,7 +156,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             //Login to Jazz with UserA. Navigate to homepage->Dashboard->Collaborative Widget  tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Click "Subscriber User List"  button in widgetA.
             HomePagePanel.ClickShareMyShareWidgetButton(dashboard[0].WidgetName);
@@ -205,7 +198,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //.Only one widgetA keep display in thumbnail list of UserB.The new widgetA doesn't display in UserB.
             Assert.AreEqual(1, HomePagePanel.GetSameWidgetNameNumberofMyShare(dashboard[0].WidgetName));
@@ -271,7 +263,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             //Login to Jazz with UserB. Navigate to homepage->Dashboard->Widget Mirror tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Open subscriber user list window.
             HomePagePanel.ClickShareMyShareWidgetButton(dashboard[0].WidgetName);
@@ -287,7 +278,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Open subscriber user list window.
             HomePagePanel.ClickShareMyShareWidgetButton(dashboard[0].WidgetName);
@@ -326,7 +316,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             //Login to Jazz with UserA. Navigate to homepage->Dashboard->Widget Mirror tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Click "Subscriber User List" button in widgetA.
             HomePagePanel.ClickShareMyShareWidgetButton(dashboard[0].WidgetName);
@@ -354,7 +343,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //WidgetA is disappear in thumbnail list of UserB.
             Assert.IsFalse(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -363,7 +351,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[2].LoginName, dashboard[0].Receivers[2].Password, dashboard[0].HierarchyName[0]);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Click "Subscriber User List" button in widgetA.
             HomePagePanel.ClickShareMyShareWidgetButton(dashboard[0].WidgetName);
@@ -390,7 +377,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //WidgetA is display in thumbnail list of UserB.
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -406,7 +392,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             //Login to Jazz with UserA. Navigate to homepage->Dashboard->Widget Mirror tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Click "Subscriber User List" button in widgetA.
             HomePagePanel.ClickShareMyShareWidgetButton(dashboard[0].WidgetName);
@@ -439,7 +424,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //.WidgetA is disappear in thumbnail list of UserB.
             Assert.IsFalse(HomePagePanel.IsWidgetExistedOnMyShare(dashboard[0].WidgetName));
@@ -455,7 +439,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             //Login to Jazz with UserB. Navigate to homepage->Dashboard->Widget Mirror tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[1].LoginName, dashboard[0].Receivers[1].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
             
             //Click "Subscriber User List" button in widgetA.
             HomePagePanel.ClickShareMyShareWidgetButton(dashboard[0].WidgetName);

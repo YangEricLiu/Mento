@@ -58,7 +58,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             //Login to Jazz with UserA. Navigate to homepage->Dashboard->Widget Mirror tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //Click the schema picture for widgetA.
             HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);
@@ -105,7 +104,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             HomePagePanel.ExitJazz();
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //.The info in widgetA of "由UserA共享" cannot change to "由UserAA共享"。
             Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetMyShareWidgetShareUser(dashboard[0].WidgetName));
@@ -129,7 +127,6 @@ namespace Mento.Script.Information.WidgetCollaborativeShare
             //Login to Jazz with UserA. Navigate to homepage->Dashboard->Collaborative Widget  tab.
             JazzFunction.LoginPage.LoginWithOption(dashboard[0].Receivers[0].LoginName, dashboard[0].Receivers[0].Password, null);
             HomePagePanel.NavigateToMyShare();
-            TimeManager.Pause(15);
 
             //.Display the Collaborative Widget  in maximized size.
             HomePagePanel.MaximizeMyShareWidget(dashboard[0].WidgetName);

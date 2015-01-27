@@ -252,28 +252,28 @@
   <data name="AdvancedProperty_CoolingArea" xml:space="preserve">
     <value>Cooling area</value>
   </data>
-  <data name="Industry_All Industries" xml:space="preserve">
+  <data name="Industry_All_Industries" xml:space="preserve">
     <value>All industries</value>
   </data>
-  <data name="Industry_Office Building" xml:space="preserve">
+  <data name="Industry_Office_Building" xml:space="preserve">
     <value>Office building</value>
   </data>
-  <data name="Industry_Data Center" xml:space="preserve">
+  <data name="Industry_Data_Center" xml:space="preserve">
     <value>Data center</value>
   </data>
   <data name="Industry_Hotel" xml:space="preserve">
     <value>Hotel</value>
   </data>
-  <data name="Industry_Hotel  Two-star and below " xml:space="preserve">
+  <data name="Industry_Hotel_Two_star_and_below" xml:space="preserve">
     <value>Hotel (2-star and below)</value>
   </data>
-  <data name="Industry_Hotel  Three-stat " xml:space="preserve">
+  <data name="Industry_Hotel_Three_stat" xml:space="preserve">
     <value>Hotel (3-star)</value>
   </data>
-  <data name="Industry_Hotel  Four-star " xml:space="preserve">
+  <data name="Industry_Hotel_Four_star" xml:space="preserve">
     <value>Hotel (4-star)</value>
   </data>
-  <data name="Industry_Hotel  Five-stat " xml:space="preserve">
+  <data name="Industry_Hotel_Five_stat" xml:space="preserve">
     <value>Hotel (5-star)</value>
   </data>
   <data name="Industry_Hospital" xml:space="preserve">
@@ -288,7 +288,7 @@
   <data name="Industry_Supermarket" xml:space="preserve">
     <value>Supermarket</value>
   </data>
-  <data name="Industry_Clothing retail" xml:space="preserve">
+  <data name="Industry_Clothing_retail" xml:space="preserve">
     <value>Clothing retailing</value>
   </data>
   <data name="Industry_Mall" xml:space="preserve">
@@ -297,16 +297,16 @@
   <data name="Industry_Telecommunication" xml:space="preserve">
     <value>Telecommunication</value>
   </data>
-  <data name="Industry_Telecommunication workshop" xml:space="preserve">
+  <data name="Industry_Telecommunication_workshop" xml:space="preserve">
     <value>Telecommunication work shop</value>
   </data>
-  <data name="Industry_Telecommunication base station" xml:space="preserve">
+  <data name="Industry_Telecommunication_base_station" xml:space="preserve">
     <value>Telecommunication base station</value>
   </data>
-  <data name="Industry_Telecommunication business hall" xml:space="preserve">
+  <data name="Industry_Telecommunication_business_hall" xml:space="preserve">
     <value>Telecommunication business hall</value>
   </data>
-  <data name="Industry_Rail Transit" xml:space="preserve">
+  <data name="Industry_Rail_Transit" xml:space="preserve">
     <value>Rail transit</value>
   </data>
   <data name="Industry_Airport" xml:space="preserve">
@@ -534,25 +534,25 @@
   <data name="SystemDimensionTemplateItem_Other" xml:space="preserve">
     <value>Others</value>
   </data>
-  <data name="Zone_All Zones" xml:space="preserve">
+  <data name="Zone_All_Zones" xml:space="preserve">
     <value>All zones</value>
   </data>
-  <data name="Zone_Extreme Cold Region A" xml:space="preserve">
+  <data name="Zone_Extreme_Cold_Region_A" xml:space="preserve">
     <value>Extreme cold region A</value>
   </data>
-  <data name="Zone_Extreme Cold Region B" xml:space="preserve">
+  <data name="Zone_Extreme_Cold_Region_B" xml:space="preserve">
     <value>Extreme cold region B</value>
   </data>
-  <data name="Zone_Cold Region" xml:space="preserve">
+  <data name="Zone_Cold_Region" xml:space="preserve">
     <value>Cold region</value>
   </data>
-  <data name="Zone_Hot Summer and Cold Winter Region" xml:space="preserve">
+  <data name="Zone_Hot_Summer_and_Cold_Winter_Region" xml:space="preserve">
     <value>Hot summer and cold winter region</value>
   </data>
-  <data name="Zone_Subtropical Region" xml:space="preserve">
+  <data name="Zone_Subtropical_Region" xml:space="preserve">
     <value>Subtropical region</value>
   </data>
-  <data name="Zone_Temperate Region" xml:space="preserve">
+  <data name="Zone_Temperate_Region" xml:space="preserve">
     <value>Temperate region</value>
   </data>
 </root>

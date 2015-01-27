@@ -10,12 +10,16 @@ using Mento.Framework.Configuration;
 using Mento.Framework.Execution;
 using System.Configuration;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.ScriptCommon.TestData.EnergyView;
+
 
 namespace Mento.ScriptCommon.Library
 {
     public static class TestAssemblyInitializer
     {
         private static int WAITLONGTIME = 1500;
+        public static List<DashboardInformation> CaseDownDashboardInfos = new List<DashboardInformation>();
+
 
         public static void Initialize()
         {

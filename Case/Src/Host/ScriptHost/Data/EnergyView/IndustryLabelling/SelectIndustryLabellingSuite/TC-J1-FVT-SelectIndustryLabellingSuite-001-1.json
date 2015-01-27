@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyCustomer1", "园区测试多层级"], ["NancyCustomer1"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling1"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling2"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling10"]],
+			"Hierarchies":[["NancyCustomer1", "园区测试多层级"], ["NancyCustomer1"], ["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling2"], ["NancyCustomer1", "园区测试多层级", "BuildingLabelling10"]],
 			"TagNames":["Labellingtag12", "IndustryLabelling", "Labellingtag14", "Labellingtag10", "Labellingtag2"],
 			"AreaDimensionPath":[["BuildingLabelling1", "一层"]],
 			"SystemDimensionPath":[["BuildingLabelling1", "$@SystemDimensionTemplateItem_HVAC"]],

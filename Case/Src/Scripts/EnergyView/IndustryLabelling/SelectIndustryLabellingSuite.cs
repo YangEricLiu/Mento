@@ -57,6 +57,11 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(SelectIndustryLabellingSuite), "TC-J1-FVT-SelectIndustryLabellingSuite-101-1")]
         public void SelectIndustyLabelling01(IndustryLabellingData input)
         {
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
+            TimeManager.LongPause();
+
+            IndustryLabellingPanel.NavigateToIndustryLabelling();
+            TimeManager.MediumPause();
 
             //Switch to "多层级数据点"
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
@@ -98,7 +103,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(SelectIndustryLabellingSuite), "TC-J1-FVT-SelectIndustryLabellingSuite-101-2")]
         public void SelectIndustyLabelling02(IndustryLabellingData input)
         {
-
             //Select 园区测试多层级", "楼宇XX", tagXX
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -240,7 +244,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(SelectIndustryLabellingSuite), "TC-J1-FVT-SelectIndustryLabellingSuite-001-2")]
         public void SelectIndustyLabelling04(IndustryLabellingData input)
         {
-
             //Select "园区测试多层级", 非楼宇节点
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();

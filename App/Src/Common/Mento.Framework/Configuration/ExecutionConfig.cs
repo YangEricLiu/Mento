@@ -35,6 +35,7 @@ namespace Mento.Framework.Configuration
         private const string FAILEDRESPONSEBODYDIRECTORY = "failedResponseBodyDirectory";
         private const string SOURCERESPONSEBODYDIRECTORY = "sourceResponseBodyDirectory";
         private const string OPENAPITESTCASEDIRECTORY = "OpenAPITestCaseDirectory";
+        private const string ISDELETEDASHBOARDSAFTEREXECUTION = "IsDeleteDashboardsAfterExecution";
 
         private static string BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
@@ -231,6 +232,16 @@ namespace Mento.Framework.Configuration
             {
                 bool result = false;
                 bool.TryParse(GetExecutionConfig(ISREFRESHSCRIPTSONEXECUTION), out result);
+                return result;
+            }
+        }
+
+        public static bool IsDeleteDashboardsAfterExecution
+        {
+            get
+            {
+                bool result = true;
+                bool.TryParse(GetExecutionConfig(ISDELETEDASHBOARDSAFTEREXECUTION), out result);
                 return result;
             }
         }

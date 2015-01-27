@@ -5,13 +5,14 @@ using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.ScriptCommon.TestData.EnergyView;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
     public class SaveToDashboardDialog : Window
     {
         private static Locator Locator = new Locator("//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window')]", ByType.XPath);
-        
+
         public SaveToDashboardDialog() : base(Locator) { }
 
         //Widget name textbox
@@ -65,6 +66,16 @@ namespace Mento.ScriptCommon.Library.Functions
             }
 
             base.Confirm();
+
+            //store the dashboards infos prepare to delete when complete running.
+            DashboardInformation CaseDownDashboardInfo = new DashboardInformation();
+
+            CaseDownDashboardInfo.DashboardName = dashboardName;
+            CaseDownDashboardInfo.IsCreateDashboard = isCreateDashboard;
+            CaseDownDashboardInfo.WigetName = widgetName;
+            CaseDownDashboardInfo.HierarchyName = hierarchyNamePath;
+
+            TestAssemblyInitializer.CaseDownDashboardInfos.Add(CaseDownDashboardInfo);
         }
 
         public void SaveThenCancel(string widgetName, string[] hierarchyNamePath, bool isCreateDashboard, string dashboardName)

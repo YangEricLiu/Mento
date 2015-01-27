@@ -16,6 +16,7 @@ using Mento.ScriptCommon.TestData.EnergyView;
 using System.Data;
 using System.IO;
 using Mento.Framework.Configuration;
+using Mento.ScriptCommon.Library;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -345,7 +346,43 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             RenameDashboardSave.Click();
         }
-        
+
+        public void DeleteDashboardsAfterExecution()
+        {
+           
+            if (ExecutionConfig.IsDeleteDashboardsAfterExecution)
+            {
+                int ds = TestAssemblyInitializer.CaseDownDashboardInfos.Count;
+
+                for (int oneds = 0; oneds < ds; oneds++)
+                {
+                    if (TestAssemblyInitializer.CaseDownDashboardInfos[oneds].IsCreateDashboard)
+                    {
+
+                        SelectCustomer(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].HierarchyName[0]);
+                        TimeManager.MediumPause();
+
+                        NavigateToAllDashboard();
+                        TimeManager.MediumPause();
+
+                        SelectHierarchyNode(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].HierarchyName);
+                        TimeManager.LongPause();
+
+                        ClickDashboardButton(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].DashboardName);
+                        JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+                        TimeManager.LongPause();
+
+                        //Click 'Delete' button on top of the dashboard.
+                        ClickDeleteDashboardButton(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].DashboardName);
+                        TimeManager.ShortPause();
+
+                        //Click "Delete"
+                        JazzMessageBox.MessageBox.Delete();
+                        TimeManager.LongPause();
+                    }
+                }                 
+            }
+        }
         #endregion
 
         #region favorite

@@ -59,12 +59,12 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.NavigateToIndustryLabelling();
             TimeManager.MediumPause();
             
-            //Go to Labeling. Labellingtag18, select Unit=单位人口 行业&区域=夏热冬暖酒店三星级行业;time range=2012/10 to view chart.  
+            //Go to Labeling. Labellingtag1, select Unit=单位人口 行业&区域=夏热冬暖酒店三星级行业;time range=2012/10 to view chart.  
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //Select BuildingLabelling8, select Labellingtag8, select a 行业区域=热冬暖酒店三星级行业 option to view chart. 
+            //Select BuildingLabelling1, select Labellingtag1, select a 行业区域=热冬暖酒店三星级行业 option to view chart. 
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
             TimeManager.ShortPause();         
 
@@ -83,7 +83,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
             IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
-            //Select BuildingLabelling21, select 行业&区域=全行业全区域;time range=2012/10 to view chart. 
+            //Select BuildingLabelling9, select 行业&区域=全行业全区域;time range=2012/10 to view chart. 
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();

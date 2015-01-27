@@ -10,8 +10,8 @@
 				"HierarchyPath":["NancyOtherCustomer3", "NancyOtherSite", "BuildingNotConvertStandardUOM"],
 				"TagsName":["NotStandardUOMkg"],
 			}],
-			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"], ["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling21"]],
-			"TagNames":["Labellingtag1", "Labellingtag21"],
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling1"], ["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling9"]],
+			"TagNames":["Labellingtag1", "Labellingtag9"],
 			"UnitTypeValue":"$@EM.Unit.UnitPopulation",
 			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Subtropical_Region$@Industry_Hotel_Three_stat"], ["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Temperate_Region$@Industry_Supermarket"], ["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Subtropical_Region$@Industry_Hotel_Three_stat"]],
 			"YearAndMonth":[{
@@ -20,7 +20,7 @@
 			},
 			{
 				"year":"2013",
-				"month":"01",
+				"month":"10",
 			},
 			{
 				"year":"2012",

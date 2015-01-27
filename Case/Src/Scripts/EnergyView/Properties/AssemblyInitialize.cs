@@ -5,6 +5,7 @@ using System.Text;
 using NUnit.Framework;
 using Mento.TestApi.WebUserInterface;
 using Mento.ScriptCommon.Library;
+using Mento.ScriptCommon.Library.Functions;
 
 namespace Mento.Script.EnergyView
 {
@@ -20,7 +21,10 @@ namespace Mento.Script.EnergyView
         [TearDown]
         public void RunAfterAnyTests()
         {
-            TestAssemblyInitializer.Desctuct();
+            //delete the dashboards which add when running 
+            JazzFunction.HomePage.DeleteDashboardsAfterExecution();
+
+            TestAssemblyInitializer.Desctuct();       
         }
     }
 }

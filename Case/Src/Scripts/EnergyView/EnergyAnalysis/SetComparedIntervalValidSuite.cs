@@ -274,7 +274,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsFalse(EnergyAnalysis.IsAllEnabledCheckbox());
 
             //Check 61 days data value are display out for both original and compared time interval.
-            EnergyAnalysis.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, input.InputData.ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
@@ -310,7 +310,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsFalse(EnergyAnalysis.IsAllEnabledCheckbox());
 
             //The chart is redrawn with above intervals correctly.
-            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //The intervals set above are stored and displayed in the dialog when open next time. 
             EnergyViewToolbar.ClickTimeSpanButton();
@@ -324,13 +326,20 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(4));
             Assert.AreEqual("10", TimeSpanDialog.GetAdditionRelativeValue(4));
 
+            //+Click 'Yes & Draw' button
+            TimeSpanDialog.ClickConfirmButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
             //Change step to Day(Raw)
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
             //Chart display out correctly.
-            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
+            TimeManager.MediumPause();
+            EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
         }
 

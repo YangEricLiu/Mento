@@ -135,7 +135,7 @@ namespace Mento.Script.Administration.CustomerManagementSetting
             CustomerManageSetting.ClickDeleteButton();
             TimeManager.LongPause();
 
-            //Assert.AreEqual(JazzMessageBox.MessageBox.GetMessage(), input.ExpectedData.Message);
+            Assert.AreEqual(JazzMessageBox.MessageBox.GetMessage(), input.ExpectedData.Message);
 
             CustomerManageSetting.ClickMsgBoxGiveUpButton();
             TimeManager.LongPause();

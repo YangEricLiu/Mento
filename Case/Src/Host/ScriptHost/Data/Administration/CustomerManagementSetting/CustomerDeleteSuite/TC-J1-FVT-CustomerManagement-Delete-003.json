@@ -7,7 +7,7 @@
 		"ExpectedData":
 		{
 		    "CommonName":"custD",
-			"Message":"$@Common.Label.ConfirmDelete|(custA),(),()@$ $@Common.Button.Delete@$ $@Common.Button.Cancel@$",
+			"Message":"$@Common.Label.ConfirmDelete|(custC),(),()@$ $@Common.Button.Delete@$ $@Common.Button.Cancel@$",
 		}
 	}
 ]

@@ -82,6 +82,18 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.Labeling);
         }
 
+        public void LabellingCaseSetUp()
+        {
+            NavigateToIndustryLabelling();
+            TimeManager.MediumPause();
+        }
+
+        public void LabellingCaseTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
+        }
+
         #endregion
 
         #region Tag operations

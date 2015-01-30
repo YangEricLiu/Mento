@@ -54,6 +54,18 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
         }
 
+        public void VEERuleSettingsCaseSetUp()
+        {
+            NavigatorToTagSettingsVEE();
+            TimeManager.MediumPause();
+        }
+
+        public void VEERuleSettingsCaseTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            TimeManager.LongPause();
+        }
+
         /// <summary>
         /// Navigate to EnergyView
         /// </summary>

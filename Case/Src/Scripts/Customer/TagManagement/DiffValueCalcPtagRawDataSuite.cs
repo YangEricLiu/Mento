@@ -31,14 +31,13 @@ namespace Mento.Script.Customer.TagManagement
         [SetUp]
         public void CaseSetUp()
         {
-            PTagSettings.NavigatorToPtagSetting();
-            TimeManager.MediumPause();
+            PTagSettings.PTagSettingCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            PTagSettings.PTagSettingCaseTearDown();
         }
 
         [Test]

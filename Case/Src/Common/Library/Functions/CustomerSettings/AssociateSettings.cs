@@ -78,6 +78,18 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
         }
 
+        public void AssociateTagCaseSetUp()
+        {
+            NavigateToHierarchyAssociate();
+            TimeManager.MediumPause();
+        }
+
+        public void AssociateTagCaseTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            TimeManager.LongPause();
+        }
+
         /// <summary>
         /// Navigate to systemdimension associate setting
         /// </summary>

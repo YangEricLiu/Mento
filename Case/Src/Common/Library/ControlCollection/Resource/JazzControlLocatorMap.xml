@@ -88,13 +88,13 @@
             <add key="ButtonWidgetShare" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-sendcopy-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetRename" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-rename-tool')]/img" type="XPath"/>
             <add key="ButtonWidgetEnjoy" value="//div[@id='hp-dashboard-ct']/div[contains(@class,'x-container-default')]/div[contains(@class,'x-widget-default')]//div[contains(@class,'x-widget-header-text-container')and span[text()='$#nameIndex']]/../div[contains(@class,'x-widget-share-tool')]/img" type="XPath"/>
-            <add key="ButtonHomepageToDashboard" value="//div[@id='map-canvas-container']/div/div[contains(@class,'x-btn') and em/button/span[contains(text(),'$@Common.Glossary.Dashboard')]]" type="XPath"/>
-            <!--<add key="ButtonHomepageToDashboard" value="//div[@id='map-canvas-container']/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Dashboard.Label.ToMainDashboard']]" type="XPath"/>-->
+            <add key="ButtonHomepageToDashboard" value="//div[@id='map-canvas-container']/div/div[contains(@class,'x-btn') and em/button/span[contains(text(),'$@Dashboard.Label.ToMainDashboard')]]" type="XPath"/>
+            <!--<add key="ButtonHomepageToDashboard" value="//div[@id='map-canvas-container']/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Glossary.Dashboard']]" type="XPath"/>-->
 
             <add key="ButtonDashboardFavorite" value="//div[@id='hp-dashboard-list-targetEl']/div[span[text()='$#nameIndex']]/span[@class='x-dsbd-btn-icon']" type="XPath"/>
             <add key="ButtonDashboardShare" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[1]/img" type="XPath"/>
             <add key="ButtonDashboardRename" value="//div[contains(@class,'x-dsbd-btn-menu') and not(contains(@style,'visibility: hidden;'))]/div/div[2]/img" type="XPath"/>
-            <add key="ButtonDashboardDelete" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='删除仪表盘' or text()='DeleteDashboard']" type="XPath"/>
+            <add key="ButtonDashboardDelete" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='删除仪表盘' or text()='Delete dashboard']" type="XPath"/>
             <add key="ButtonRenameDashboardSave" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
             <add key="ButtonRenameDashboardCancel" value="//div[contains(@id,'dashboardwindow')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
             <add key="ButtonDashboardFavoriteLevel" value="//div[@id='hp-dashboard-ct_hd-hierCtEl']/a" type="XPath"/>
@@ -215,8 +215,9 @@
           <add key="WidgetName" value="//div[@id='hp-dashboard-ct-body']//div[2]//span[text()='表3']" type="XPath"/>
           <add key="ButtonDeleteWidget" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='删除小组件' or text()='DeleteWidget']" type="XPath"/>
           <add key="ButtonCancelShareWidget" value="//div[contains(@id,'dashboardwindow') and contains(@class,'x-window-body-default')]/div/a[text()='$@Dashboard.Label.CancelShareWidget']" type="XPath"/>
-          <add key="RadioButtonCreateNewDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='$@Dashboard.ToNewDashboard']]/input" type="XPath"/>
-          <add key="RadioButtonExistedDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='$@Dashboard.OriginalDashboardsTitle']]/input" type="XPath"/>
+          <add key="RadioButtonCreateNewDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')][2]/tbody/tr/td[2]/input" type="XPath"/>
+          <!--<add key="RadioButtonCreateNewDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[text()='$@Dashboard.ToNewDashboard']]/input" type="XPath"/>-->
+          <add key="RadioButtonExistedDashboard" value="//div[contains(@id,'widgetsavewindow') and contains(@class,'x-window-body-default')]/table[contains(@id,'radiofield')]//td[label[contains(text(),'$@Dashboard.OriginalDashboardsTitle')]]/input" type="XPath"/>
           <add key="ButtonDashboardHierarchyName" value="hp-dsbd-hier-name-btnEl" type="ID"/>
           <add key="DeleteWidgetConfirmButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
           <add key="DeleteWidgetCancelButton" value="//div[contains(@id,'messagebox')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
@@ -677,7 +678,11 @@ CommentTextField
               <add key="TextFieldPTagSettingsCode" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='Code']" type="XPath"/>
               <add key="TextFieldPTagSettingsMeterCode" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='MeterCode']" type="XPath"/>
               <add key="TextFieldPTagSettingsChannel" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='ChannelId']" type="XPath"/>
-              <add key="TextFieldPTagSettingsComment" value="//div[@id='st-ptag-form-body']//textarea[@name='Comment']" type="XPath"/>
+             
+              <add key="TextFieldPTagSettingsSlope" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='Slope']" type="XPath"/>
+              <add key="TextFieldPTagSettingsOffset" value="//div[@id='st-ptag-form-body']//input[@type='text' and @name='Offset']" type="XPath"/>
+              
+            <add key="TextFieldPTagSettingsComment" value="//div[@id='st-ptag-form-body']//textarea[@name='Comment']" type="XPath"/>
           </ptagsettings> 
           <VEEsettings>
               <add key="TextFieldVEESettingsName" value="//div[@id='st-monitor-form-body']//input[@type='text' and @name='Name']" type="XPath"/>
@@ -845,6 +850,7 @@ CommentTextField
           <ptag>
               <add key="ComboBoxPTagSettingsCommodity" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
               <add key="ComboBoxPTagSettingsUom" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
+              <add key="ComboBoxPTagSettingsCollectCycle" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='采集周期']]" type="XPath"/>
               <add key="ComboBoxPTagSettingsCalculationType" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
           </ptag>
           <vtag>

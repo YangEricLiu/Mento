@@ -34,19 +34,17 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         private static MenuButton LabellingIndustryConvertButton = JazzButton.LabellingIndustryConvertMenuButton;
         //private static EnergyViewToolbarConvertTargetMenu ConvertTargetButton = new EnergyViewToolbarConvertTargetMenu();
         private static MenuButton UnitTypeConvertTargetButton = JazzButton.UnitTypeConvertMenuButton;
+
         [SetUp]
         public void CaseSetUp()
         {
-            IndustryLabellingPanel.NavigateToIndustryLabelling();
-            TimeManager.MediumPause();
+            IndustryLabellingPanel.LabellingCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.LongPause();
+            IndustryLabellingPanel.LabellingCaseTearDown();
         }
 
         [Test]

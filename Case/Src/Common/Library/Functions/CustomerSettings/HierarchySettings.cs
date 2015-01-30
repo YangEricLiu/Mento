@@ -103,6 +103,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectHierarchyNode(string treeNodeName)
         {
             HierarchyTree.FocusOnNode(treeNodeName);
+            TimeManager.LongPause();
         }
 
         /// <summary>
@@ -115,6 +116,7 @@ namespace Mento.ScriptCommon.Library.Functions
             try
             {
                 HierarchyTree.SelectNode(treeNodePath);
+                TimeManager.LongPause();
                 return true;
             }
             catch (Exception)

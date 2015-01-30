@@ -29,20 +29,18 @@ namespace Mento.Script.Customer.TagManagement
         private static Chart PTagRawDataLineChart = JazzChart.PTagRawDataLineChart;
         private static Grid PTagRawDataGrid = JazzGrid.GridPTagRawData;
         private static TextField PtagRawDataValueNumberField = JazzTextField.PtagRawDataValueTextField;
-        
+
         [SetUp]
         public void CaseSetUp()
         {
-            PTagSettings.NavigatorToPtagSetting();
-            TimeManager.MediumPause();
+            PTagSettings.PTagSettingCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            PTagSettings.PTagSettingCaseTearDown();
         }
-
 
         [Test]
         [CaseID("TC-J1-FVT-PtagRawData-Modify-101")]

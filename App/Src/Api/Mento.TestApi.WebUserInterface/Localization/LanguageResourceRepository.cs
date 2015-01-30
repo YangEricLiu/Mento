@@ -11,6 +11,7 @@ using Mento.Framework.Exceptions;
 using System.Text.RegularExpressions;
 using System.Resources;
 using System.Reflection;
+using Mento.Framework.Configuration;
 
 namespace Mento.TestApi.WebUserInterface
 {
@@ -192,6 +193,12 @@ namespace Mento.TestApi.WebUserInterface
                     {
                         string key = cursor.Key.ToString().Trim();
                         string value = cursor.Value.ToString().Trim();
+  
+                        if (ExecutionConfig.Language == "EN")
+                        {
+                            //for labelling and ratio english version only
+                            value = cursor.Value.ToString();
+                        }
 
                         if (key.Contains(ASCII.SPACE))
                             key = key.Replace(ASCII.SPACE, ASCII.UNDERSCORE);

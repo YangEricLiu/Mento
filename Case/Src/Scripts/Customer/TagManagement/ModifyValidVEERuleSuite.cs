@@ -28,14 +28,13 @@ namespace Mento.Script.Customer.TagManagement
         [SetUp]
         public void CaseSetUp()
         {
-            VEERuleSettings.NavigatorToTagSettingsVEE();
-            TimeManager.MediumPause();
+            VEERuleSettings.VEERuleSettingsCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            VEERuleSettings.NavigatorToEnergyView();
+            VEERuleSettings.VEERuleSettingsCaseTearDown();
         }
 
         [Test]

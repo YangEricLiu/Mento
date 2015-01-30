@@ -27,17 +27,13 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         [SetUp]
         public void CaseSetUp()
         {
-            IndustryLabellingPanel.NavigateToIndustryLabelling();
-            TimeManager.MediumPause();
+            IndustryLabellingPanel.LabellingCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
-
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.LongPause();
+            IndustryLabellingPanel.LabellingCaseTearDown();
         }
 
         private static IndustryLabellingPanel IndustryLabellingPanel = JazzFunction.IndustryLabellingPanel;
@@ -85,7 +81,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
 
             //Select the BuildingBC from Hierarchy Tree.time range="2012 全年", 行业区域=寒冷地区全行业. Select multiple tag V（1）+V(2) +V(3) with the same commodity to display Labelling chart view.
-            //IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
+            IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
@@ -171,6 +167,10 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.ShortPause();
 
+            //time 2014-10
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[2].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[2].month);
+
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -204,6 +204,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //· Display blank chart.
             Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
 
+            /*no value
             //Select 1 tag V(12) from hierarchy node BuildingBAD, Unit=单位供冷面积 to display Labelling chart view.
             //Open "多层级数据点" again
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();
@@ -214,7 +215,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[2]);
+            MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[1]);
             TimeManager.ShortPause();
 
             MultiHieCompareWindow.ClickConfirmButton();
@@ -259,7 +260,8 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //Assert.AreEqual(7, Widget.GetLabellingNumber());
             Widget.CompareMaxWidgetStringData(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3], IndustryLabellingPanel.IndustryLabellingPath);
 
-            Widget.ClickCloseMaxDialogButton();         
+            Widget.ClickCloseMaxDialogButton();    
+            */
         }
 
         [Test]
@@ -311,9 +313,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //严寒地区B区地区办公建筑
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);
 
-            //time 2014-12
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
-            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
+            //time 2013-01
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
 
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -357,7 +359,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //温和地区超市
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[2]);
 
-            //time 2014-01
+            //time 2014-12
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
 

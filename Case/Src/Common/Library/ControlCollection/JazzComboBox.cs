@@ -63,6 +63,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static ComboBox PTagSettingsCommodityComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagSettingsCommodity);}}
         public static ComboBox PTagSettingsUomComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagSettingsUom);}}
         public static ComboBox PTagSettingsCalculationTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagSettingsCalculationType);}}
+        public static ComboBox PTagSettingsCollectCycleComboBox { get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxPTagSettingsCollectCycle); } }
+
         #endregion
 
         #region VEE settings

@@ -10,6 +10,7 @@ using Mento.Utility;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using Mento.TestApi.WebUserInterface;
+using Mento.Framework.Configuration;
 
 namespace Mento.TestApi.TestData
 {
@@ -384,7 +385,15 @@ namespace Mento.TestApi.TestData
 
                 value = value.Replace("\"", "\\\"");
 
-                raw = raw.Replace("$@" + key, value.Trim().Replace("<br/>", string.Empty));
+                if (ExecutionConfig.Language == "EN")
+                {
+                    //for labelling and ratio english version only
+                    raw = raw.Replace("$@" + key, value.Replace("<br/>", string.Empty));
+                }
+                else
+                {
+                    raw = raw.Replace("$@" + key, value.Trim().Replace("<br/>", string.Empty));
+                }            
             }
 
             //throw new Exception(raw);

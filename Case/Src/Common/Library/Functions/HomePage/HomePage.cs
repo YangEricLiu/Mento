@@ -348,11 +348,13 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         public void DeleteDashboardsAfterExecution()
-        {
-           
+        {       
             if (ExecutionConfig.IsDeleteDashboardsAfterExecution)
             {
                 int ds = TestAssemblyInitializer.CaseDownDashboardInfos.Count;
+
+                JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+                TimeManager.LongPause();
 
                 for (int oneds = 0; oneds < ds; oneds++)
                 {
@@ -368,17 +370,21 @@ namespace Mento.ScriptCommon.Library.Functions
                         SelectHierarchyNode(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].HierarchyName);
                         TimeManager.LongPause();
 
-                        ClickDashboardButton(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].DashboardName);
-                        JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
-                        TimeManager.LongPause();
+                        //Judge if dashboard existed
+                        if (IsDashboardButtonExisted(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].DashboardName))
+                        {
+                            ClickDashboardButton(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].DashboardName);
+                            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
+                            TimeManager.LongPause();
 
-                        //Click 'Delete' button on top of the dashboard.
-                        ClickDeleteDashboardButton(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].DashboardName);
-                        TimeManager.ShortPause();
+                            //Click 'Delete' button on top of the dashboard.
+                            ClickDeleteDashboardButton(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].DashboardName);
+                            TimeManager.ShortPause();
 
-                        //Click "Delete"
-                        JazzMessageBox.MessageBox.Delete();
-                        TimeManager.LongPause();
+                            //Click "Delete"
+                            JazzMessageBox.MessageBox.Delete();
+                            TimeManager.LongPause();
+                        }
                     }
                 }                 
             }

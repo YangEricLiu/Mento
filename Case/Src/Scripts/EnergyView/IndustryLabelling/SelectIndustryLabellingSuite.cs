@@ -40,16 +40,13 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         [SetUp]
         public void CaseSetUp()
         {
-            IndustryLabellingPanel.NavigateToIndustryLabelling();
-            TimeManager.MediumPause();
+            IndustryLabellingPanel.LabellingCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.LongPause();
+            IndustryLabellingPanel.LabellingCaseTearDown();
         }
 
         [Test]

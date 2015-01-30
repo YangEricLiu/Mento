@@ -84,6 +84,12 @@ namespace Mento.ScriptCommon.Library.Functions
             SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
         }
 
+        public void RankingCaseTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
+        }
+
         #region Hierarchy operations
 
         public Boolean CheckHierarchyNode(string[] hierarchyNames)

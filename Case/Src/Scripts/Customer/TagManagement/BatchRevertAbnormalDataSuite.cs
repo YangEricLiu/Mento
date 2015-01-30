@@ -32,14 +32,13 @@ namespace Mento.Script.Customer.TagManagement
         [SetUp]
         public void CaseSetUp()
         {
-            AbnormalData.NavigatorToAbnormalRecord();
-            TimeManager.MediumPause();
+            AbnormalData.AbnormalDataCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            AbnormalData.AbnormalDataCaseTearDown();
         }
 
         [Test]

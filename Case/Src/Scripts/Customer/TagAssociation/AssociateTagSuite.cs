@@ -30,14 +30,13 @@ namespace Mento.Script.Customer.TagAssociation
         [SetUp]
         public void CaseSetUp()
         {
-            Association.NavigateToHierarchyAssociate();
-            TimeManager.MediumPause();
+            Association.AssociateTagCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            Association.NavigateToNonAssociate();
+            Association.AssociateTagCaseTearDown();
         }
 
         private void AssociateOnWhichNode(AssociateTagData input)

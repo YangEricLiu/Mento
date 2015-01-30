@@ -254,7 +254,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonPTagRawDataLeft = "ButtonPTagRawDataLeft";
         public static string ButtonPTagRawDataRight = "ButtonPTagRawDataRight";
 
+
         #endregion
+
         #region VEERule
         public static string ButtonVEERuleSettingsCreateRuleTag = "ButtonVEERuleSettingsCreateRuleTag";
         public static string ButtonVEERuleSettingsModify = "ButtonVEERuleSettingsModify";
@@ -717,6 +719,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string TextFieldPTagSettingsMeterCode = "TextFieldPTagSettingsMeterCode";
         public static string TextFieldPTagSettingsChannel = "TextFieldPTagSettingsChannel";
         public static string TextFieldPTagSettingsComment = "TextFieldPTagSettingsComment";
+
+        public static string TextFieldPTagSettingsSlope = "TextFieldPTagSettingsSlope";
+        public static string TextFieldPTagSettingsOffset = "TextFieldPTagSettingsOffset";
         #endregion
 
         #region VEEsettings
@@ -906,6 +911,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ComboBoxPTagSettingsCommodity = "ComboBoxPTagSettingsCommodity";
         public static string ComboBoxPTagSettingsUom = "ComboBoxPTagSettingsUom";
         public static string ComboBoxPTagSettingsCalculationType = "ComboBoxPTagSettingsCalculationType";
+        public static string ComboBoxPTagSettingsCollectCycle = "ComboBoxPTagSettingsCollectCycle";
         #endregion
 
         #region VEE

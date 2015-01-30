@@ -57,6 +57,18 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyRadio);
         }
 
+        public void RatioCaseSetUp()
+        {
+            NavigateToRatio();
+            TimeManager.MediumPause();
+        }
+
+        public void RatioCaseTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
+        }
+
         # region Hierarchy Tree control
 
         public Boolean SelectSystemDimensionNode(string[] systemDimensionPath)

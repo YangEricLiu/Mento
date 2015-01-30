@@ -29,14 +29,13 @@ namespace Mento.Script.Customer.TagManagement
         [SetUp]
         public void CaseSetUp()
         {
-            PVtagTargetBaselineSettings.NavigatorToTagSetting();
-            TimeManager.MediumPause();
+            PVtagTargetBaselineSettings.TagTargetBaselineSettingsCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            PtagSettings.NavigatorToEnergyView();
+            PVtagTargetBaselineSettings.TagTargetBaselineSettingsCaseTearDown();
         }
 
         private void PickupPtagOrVtag(KPITargetBaselineData input)

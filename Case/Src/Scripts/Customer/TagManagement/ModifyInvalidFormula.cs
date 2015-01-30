@@ -29,15 +29,15 @@ namespace Mento.Script.Customer.TagManagement
         [SetUp]
         public void CaseSetUp()
         {
-            VTagSettings.NavigatorToVTagSetting();
-            TimeManager.MediumPause();
+            VTagSettings.VTagSettingCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            VTagSettings.VTagSettingCaseTearDown();
         }
+
         /// <summary>
         /// Prepare Data:  1. Make sure the vtags have been added "PtagForCheckVtagFormula"  
         ///                          2. VtagForFormula001 VtagForFormula002 VtagForFormula003 

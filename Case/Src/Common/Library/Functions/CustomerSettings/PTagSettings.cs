@@ -56,6 +56,18 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
         }
 
+        public void PTagSettingCaseSetUp()
+        {
+            NavigatorToPtagSetting();
+            TimeManager.MediumPause();
+        }
+
+        public void PTagSettingCaseTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            TimeManager.LongPause();
+        }
+
         /// <summary>
         /// Navigate to Ptag Configuration Page
         /// </summary>

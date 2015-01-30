@@ -97,6 +97,18 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
         }
 
+        public void TagTargetBaselineSettingsCaseSetUp()
+        {
+            NavigatorToTagSetting();
+            TimeManager.MediumPause();
+        }
+
+        public void TagTargetBaselineSettingsCaseTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            TimeManager.LongPause();
+        }
+
         /// <summary>
         /// Select one ptag by ptag name
         /// </summary>

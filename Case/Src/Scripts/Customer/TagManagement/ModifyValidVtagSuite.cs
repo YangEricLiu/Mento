@@ -28,15 +28,15 @@ namespace Mento.Script.Customer.TagManagement
         [SetUp]
         public void CaseSetUp()
         {
-            VTagSettings.NavigatorToVTagSetting();
-            TimeManager.MediumPause();
+            VTagSettings.VTagSettingCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            VTagSettings.VTagSettingCaseTearDown();
         }
+
         /// <summary>
         /// Precondition: 1. make sure the hiearchy node has been added  "自动化测试"/"AutoSite_Vtag"/"CheckModifyVtag"
         /// Prepare Data: 1. add area dimension "一层" and system dimension "空调" for associate tag and lightened in either dimension Node

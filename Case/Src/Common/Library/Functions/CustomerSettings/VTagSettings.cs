@@ -66,6 +66,18 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
         }
 
+        public void VTagSettingCaseSetUp()
+        {
+            NavigatorToVTagSetting();
+            TimeManager.MediumPause();
+        }
+
+        public void VTagSettingCaseTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            TimeManager.LongPause();
+        }
+
         /// <summary>
         /// Click Formula tab button to edit formula of vtag/KPI.
         /// </summary>

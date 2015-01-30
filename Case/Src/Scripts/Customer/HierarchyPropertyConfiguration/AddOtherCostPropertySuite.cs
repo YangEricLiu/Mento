@@ -207,6 +207,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void AddDupCostThenRevise(OtherCostData input)
         {
             //Select buidling node "AddPeopleProperty"
+            TimeManager.LongPause();
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.ShortPause();
 

@@ -29,7 +29,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void CaseSetUp()
         {
             HierarchySetting.NavigatorToHierarchySetting();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
         }
 
         [TearDown]
@@ -204,6 +204,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-1")]
         public void AddCancelSaveForFixed(ElectricfixedCostData input)
         {
+            TimeManager.MediumPause();
             HierarchySetting.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
 

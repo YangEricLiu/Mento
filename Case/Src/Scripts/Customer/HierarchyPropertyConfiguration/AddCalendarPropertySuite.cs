@@ -142,6 +142,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "+" button for '冷暖季'
             CalendarSettings.ClickHeatingCoolingCreateButton();
+            TimeManager.ShortPause();
             CalendarSettings.FillInHeatingCoolingCalendarValue_N(input.InputData, 1);
             TimeManager.ShortPause();
 

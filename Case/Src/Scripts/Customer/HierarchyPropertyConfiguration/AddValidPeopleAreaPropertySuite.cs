@@ -29,6 +29,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         {
             HierarchySetting.NavigatorToHierarchySetting();
             TimeManager.MediumPause();
+            TimeManager.LongPause();
         }
 
         [TearDown]

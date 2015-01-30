@@ -19,7 +19,7 @@ namespace Mento.Script.Administration.IndustryLabeling
 {
     [TestFixture]
     [Owner("Amber")]
-    [CreateTime("20Industry4-2-25")]
+    [CreateTime("2014-2-25")]
     public class LabelingAddValidSuite : TestSuiteBase
     {
         private static IndustryLabelingSetting IndustryLabelingSetting = JazzFunction.IndustryLabelingSetting;

@@ -48,6 +48,7 @@ namespace Mento.Script.Administration.TimeManagement
         public void AddValidDayNight(DayNightCalendarData testData)
         {
             //Click '+ Calendar' button.
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeSettingsDayNight.PrepareToAddDaynightCalendar();
             TimeManager.ShortPause();
 
@@ -90,6 +91,7 @@ namespace Mento.Script.Administration.TimeManagement
         public void AddDayNightCancelled(DayNightCalendarData testData)
         {
             //Click '+ Calendar' button.
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeSettingsDayNight.PrepareToAddDaynightCalendar();
             TimeManager.ShortPause();
 
@@ -139,6 +141,7 @@ namespace Mento.Script.Administration.TimeManagement
         public void AddInvalidDayNight(DayNightCalendarData testData)
         {
             //Click '+ Calendar' button.
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeSettingsDayNight.PrepareToAddDaynightCalendar();
             TimeManager.ShortPause();
 
@@ -176,6 +179,7 @@ namespace Mento.Script.Administration.TimeManagement
         public void AddCommonFieldsIllegal(DayNightCalendarData testData)
         {
             //Click '+ Calendar' button.
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeSettingsDayNight.PrepareToAddDaynightCalendar();
             TimeManager.ShortPause();
 

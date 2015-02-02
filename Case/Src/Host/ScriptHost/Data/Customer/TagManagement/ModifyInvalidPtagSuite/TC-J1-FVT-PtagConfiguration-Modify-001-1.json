@@ -10,6 +10,7 @@
 			"Commodity":"$@Commodity_SoftWater",
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Min",
+			"CollectCycle":"15$@Setting.VEEMonitorRule.Minute",
 		},
 		"ExpectedData":
 		{
@@ -20,6 +21,7 @@
 			"Commodity":"$@Commodity_Water",
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
+			"CollectCycle":"15$@Setting.VEEMonitorRule.Minute",
 		}
 	}
 ]

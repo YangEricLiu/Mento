@@ -66,7 +66,13 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(PTagSettings.IsMeterCodeInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(PTagSettings.IsChannelInvalid());
             Assert.IsTrue(PTagSettings.IsChannelInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(PTagSettings.IsSlopeInvalid());
+            Assert.IsTrue(PTagSettings.IsSlopeInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(PTagSettings.IsOffsetInvalid());
+            Assert.IsTrue(PTagSettings.IsOffsetInvalidMsgCorrect(input.ExpectedData));
             Assert.IsFalse(PTagSettings.IsCommentsInvalid());
+            Assert.IsFalse(PTagSettings.IsSlopeInvalid());
+            Assert.IsFalse(PTagSettings.IsOffsetInvalid());
         }
 
         [Test]
@@ -101,6 +107,8 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(PTagSettings.IsUomInvalidMsgCorrect(input.ExpectedData));
             Assert.IsTrue(PTagSettings.IsCalculationTypeInvalid());
             Assert.IsTrue(PTagSettings.IsCalculationTypeInvalidMsgCorrect(input.ExpectedData));
+            Assert.IsTrue(PTagSettings.IsCollectCycleInvalid());
+            Assert.IsTrue(PTagSettings.IsCollectCycleInvalidMsgCorrect(input.ExpectedData));
             Assert.IsFalse(PTagSettings.IsCommentsInvalid());
         }
 

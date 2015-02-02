@@ -20,13 +20,17 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Channel { get; set; }
         public string Commodity { get; set; }
         public string Uom { get; set; }
+        public string CollectCycle { get; set; }
         public string CalculationType { get; set; }
+        public string Slope { get; set; }
+        public string Offset { get; set; }
         public string Comments { get; set; }
         public string AccumulateText { get; set; }        
         public ManualTimeRange[] ManualTimeRange { get; set; }
         public int[] RowID { get; set; }
         public string[] TestData { get; set; }
         public string[] Uoms { get; set; }
+        public string DoubleNagtiveValue { get; set; }
 
     }
 
@@ -39,11 +43,15 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Channel { get; set; }
         public string Commodity { get; set; }
         public string Uom { get; set; }
+        public string CollectCycle { get; set; }
         public string CalculationType { get; set; }
+        public string Slope { get; set; }
+        public string Offset { get; set; }
         public string Comments { get; set; }
         public string Message { get; set; }
         public string[] MessageArray { get; set; }
         public string AccumulateText { get; set; }
+        public string DoubleNagtiveValue { get; set; }
     }
 
     public class ManualTimeRange

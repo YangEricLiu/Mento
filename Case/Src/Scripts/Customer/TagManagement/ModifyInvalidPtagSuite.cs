@@ -70,6 +70,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual(PTagSettings.GetCommodityExpectedValue(input.ExpectedData.Commodity), PTagSettings.GetCommodityValue());
             Assert.AreEqual(PTagSettings.GetUomExpectedValue(input.ExpectedData.Uom), PTagSettings.GetUomValue());
             Assert.AreEqual(PTagSettings.GetCalculationTypeExpectedValue(input.ExpectedData.CalculationType), PTagSettings.GetCalculationTypeValue());
+            Assert.AreEqual(PTagSettings.GetCollectCycleExpectedValue(input.InputData.CollectCycle), PTagSettings.GetCollectCycleValue());
         }
 
         [Test]

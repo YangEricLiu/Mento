@@ -160,6 +160,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void LoginWithOption(string userName, string passWord, string customerName)
         {
             JazzTextField.LoginUserNameTextField.Fill(userName);
+            //JazzTextField.LoginUserNameTextField.Fill(userName + "_2");
             JazzTextField.LoginPasswordTextField.Fill(passWord);
 
             JazzButton.LoginSubmitButton.Click();

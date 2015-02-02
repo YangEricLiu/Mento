@@ -7,12 +7,18 @@
 			"Commodity":"$@Commodity_Electricity",
 			"Uom":"$@Uom_KWH",
 			"CalculationType":"Sum",
+			"CollectCycle":"15$@Setting.VEEMonitorRule.Minute",
+			"Slope":"0";
+			"Offset":"0";
 		},
 		"ExpectedData":
 		{
 			"Commodity":"$@Commodity_Electricity",
 			"Uom":"$@Uom_KWH",
 			"CalculationType":"Sum",
+			"CollectCycle":"15$@Setting.VEEMonitorRule.Minute",
+			"Slope":"0";
+			"Offset":"0";
 		}
 	},
 	{
@@ -21,12 +27,18 @@
 			"Commodity":"$@Commodity_Water",
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
+			"CollectCycle":"30$@Setting.VEEMonitorRule.Minute",
+			"Slope":"99999999";
+			"Offset":"99999999";
 		},
 		"ExpectedData":
 		{
 			"Commodity":"$@Commodity_Water",
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
+			"CollectCycle":"30$@Setting.VEEMonitorRule.Minute",
+			"Slope":"99999999";
+			"Offset":"99999999";
 		}
 	},
 	{
@@ -35,12 +47,18 @@
 			"Commodity":"$@Commodity_LowPressureSteam",
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
+			"CollectCycle":"$@Common.AggregationStep.Hourly",
+			"Slope":"99999999.999999";
+			"Offset":"99999999.999999";
 		},
 		"ExpectedData":
 		{
 			"Commodity":"$@Commodity_LowPressureSteam",
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
+			"CollectCycle":"$@Common.AggregationStep.Hourly",
+			"Slope":"99999999.999999";
+			"Offset":"99999999.999999";
 		}
 	},
 	{
@@ -49,12 +67,18 @@
 			"Commodity":"$@Commodity_HeatQ",
 			"Uom":"$@Uom_KWH",
 			"CalculationType":"Min",
+			"CollectCycle":"$@Common.AggregationStep.Daily",
+			"Slope":"1";
+			"Offset":"1";
 		},
 		"ExpectedData":
 		{
 			"Commodity":"$@Commodity_HeatQ",
 			"Uom":"$@Uom_KWH",
 			"CalculationType":"Min",
+			"CollectCycle":"$@Common.AggregationStep.Daily",
+			"Slope":"1";
+			"Offset":"1";
 		}
 	},
 	{
@@ -63,12 +87,18 @@
 			"Commodity":"$@Commodity_Water",
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
+			"CollectCycle":"$@Common.AggregationStep.Monthly",
+			"Slope":"10abc";
+			"Offset":"10abc";
 		},
 		"ExpectedData":
 		{
 			"Commodity":"$@Commodity_Water",
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
+			"CollectCycle":"$@Common.AggregationStep.Monthly",
+			"Slope":"10";
+			"Offset":"10";
 		}
 	}
 ]

@@ -82,6 +82,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField PTagSettingsMetercodeTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsMeterCode); }}
         public static TextField PTagSettingsChannelTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsChannel); }}
         public static TextField PTagSettingsCommentTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsComment); }}
+        public static TextField PTagSettingsSlopeTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsSlope); }}
+        public static TextField PTagSettingsOffsetTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldPTagSettingsOffset); }} 
         #endregion
 
         #region VEE settings

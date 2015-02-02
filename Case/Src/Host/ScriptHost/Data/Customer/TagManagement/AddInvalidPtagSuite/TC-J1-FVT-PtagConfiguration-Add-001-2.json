@@ -13,6 +13,7 @@
 			"Commodity":"$@Common.Label.MandatoryEmptyError",
 			"Uom":"$@Common.Label.MandatoryEmptyError",
 			"CalculationType":"$@Common.Label.MandatoryEmptyError",
+			"CollectCycle":"$@Common.Label.MandatoryEmptyError",
 		}
 	}
 ]

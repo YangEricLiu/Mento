@@ -36,9 +36,12 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField CodeTextField = JazzTextField.PTagSettingsCodeTextField;
         private static TextField MetercodeTextField = JazzTextField.PTagSettingsMetercodeTextField;
         private static TextField ChannelTextField = JazzTextField.PTagSettingsChannelTextField;
+        private static TextField SlopeTextField = JazzTextField.PTagSettingsSlopeTextField;
+        private static TextField OffsetTextField = JazzTextField.PTagSettingsOffsetTextField;
         private static ComboBox CommodityComboBox = JazzComboBox.PTagSettingsCommodityComboBox;
         private static ComboBox UomComboBox = JazzComboBox.PTagSettingsUomComboBox;
         private static ComboBox CalculationTypeComboBox = JazzComboBox.PTagSettingsCalculationTypeComboBox;
+        private static ComboBox CollectCycleComboBox = JazzComboBox.PTagSettingsCollectCycleComboBox;
         private static TextField CommentTextField = JazzTextField.PTagSettingsCommentTextField;
 
         #endregion
@@ -264,7 +267,10 @@ namespace Mento.ScriptCommon.Library.Functions
             ChannelTextField.Fill(input.Channel);
             CommodityComboBox.SelectItem(input.Commodity);
             UomComboBox.SelectItem(input.Uom);
+            CollectCycleComboBox.SelectItem(input.CollectCycle);
             CalculationTypeComboBox.SelectItem(input.CalculationType);
+            SlopeTextField.Fill(input.Slope);
+            OffsetTextField.Fill(input.Offset);
             CommentTextField.Fill(input.Comments);
         }
 
@@ -375,12 +381,39 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Get the tag slope actual value
+        /// </summary>
+        /// <returns></returns>
+        public string GetSlopeValue()
+        {
+            return SlopeTextField.GetValue();
+        }
+
+        /// <summary>
+        /// Get the tag Offset actual value
+        /// </summary>
+        /// <returns></returns>
+        public string GetOffsetValue()
+        {
+            return OffsetTextField.GetValue();
+        }
+
+        /// <summary>
         /// Get the tag Commodity actual value
         /// </summary>
         /// <returns></returns>
         public string GetCommodityValue()
         {
             return CommodityComboBox.GetValue();
+        }
+
+        /// <summary>
+        /// Get the tag CollectCycle actual value
+        /// </summary>
+        /// <returns></returns>
+        public string GetCollectCycleValue()
+        {
+            return CollectCycleComboBox.GetValue();
         }
 
         /// <summary>
@@ -391,6 +424,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public string GetCommodityExpectedValue(string itemKey)
         {
             return CommodityComboBox.GetActualValue(itemKey);
+        }
+
+        /// <summary>
+        /// Get the tag CollectCycle expected value, for language sensitive
+        /// </summary>
+        /// <param name = "itemKey">Commodity key</param>
+        /// <returns>Key value</returns>
+        public string GetCollectCycleExpectedValue(string itemKey)
+        {
+            return CollectCycleComboBox.GetActualValue(itemKey);
         }
 
         /// <summary>
@@ -451,6 +494,24 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsCommentHidden()
         {
             return CommentTextField.IsTextFieldHidden();
+        }
+
+        /// <summary>
+        /// Judge whether the textfield and its label are hidden
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsSlopeHidden()
+        {
+            return SlopeTextField.IsTextFieldHidden();
+        }
+
+        /// <summary>
+        /// Judge whether the textfield and its label are hidden
+        /// </summary>
+        /// <returns>True if it is hidden, false if not</returns>
+        public Boolean IsOffsetHidden()
+        {
+            return OffsetTextField.IsTextFieldHidden();
         }
 
         /// <summary>
@@ -534,6 +595,24 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge whether the Slope textfield is invalid
+        /// </summary>
+        /// <returns>True if the channel is invalid, false if not</returns>
+        public Boolean IsSlopeInvalid()
+        {
+            return SlopeTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether the Offset textfield is invalid
+        /// </summary>
+        /// <returns>True if the channel is invalid, false if not</returns>
+        public Boolean IsOffsetInvalid()
+        {
+            return OffsetTextField.IsTextFieldValueInvalid();
+        }
+
+        /// <summary>
         /// Judge whether invalid message of code field is correct
         /// </summary>
         /// <param name="output">PtagExpectedData</param>
@@ -541,6 +620,26 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsChannelInvalidMsgCorrect(PtagExpectedData output)
         {
             return ChannelTextField.GetInvalidTipsForNumberField().Contains(output.Channel);
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Slope field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsSlopeInvalidMsgCorrect(PtagExpectedData output)
+        {
+            return SlopeTextField.GetInvalidTipsForNumberField().Contains(output.DoubleNagtiveValue);
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of Offset field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsOffsetInvalidMsgCorrect(PtagExpectedData output)
+        {
+            return OffsetTextField.GetInvalidTipsForNumberField().Contains(output.DoubleNagtiveValue);
         }
 
         /// <summary>
@@ -627,6 +726,25 @@ namespace Mento.ScriptCommon.Library.Functions
         public Boolean IsCalculationTypeInvalidMsgCorrect(PtagExpectedData output)
         {
             return CalculationTypeComboBox.GetInvalidTips().Contains(output.CalculationType);
+        }
+
+        /// <summary>
+        /// Judge whether the CollectCycle textfield is invalid
+        /// </summary>
+        /// <returns>True if the CollectCycle is invalid, false if not</returns>
+        public Boolean IsCollectCycleInvalid()
+        {
+            return CollectCycleComboBox.IsComboBoxValueInvalid();
+        }
+
+        /// <summary>
+        /// Judge whether invalid message of type field is correct
+        /// </summary>
+        /// <param name="output">PtagExpectedData</param>
+        /// <returns>whether the invalid message is ture</returns>
+        public Boolean IsCollectCycleInvalidMsgCorrect(PtagExpectedData output)
+        {
+            return CollectCycleComboBox.GetInvalidTips().Contains(output.CalculationType);
         }
 
         #endregion

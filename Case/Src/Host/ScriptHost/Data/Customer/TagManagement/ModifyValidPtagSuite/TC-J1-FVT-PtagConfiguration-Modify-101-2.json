@@ -11,6 +11,8 @@
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
 			"Comments":"",
+			"Slope":"";
+			"Offset":"";
 		},
 		"ExpectedData":
 		{

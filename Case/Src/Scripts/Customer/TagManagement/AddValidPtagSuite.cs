@@ -64,8 +64,11 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual(input.ExpectedData.Meter, PTagSettings.GetMetercodeValue());
             Assert.AreEqual(input.ExpectedData.Channel, PTagSettings.GetChannelIdValue());
             Assert.AreEqual(PTagSettings.GetCommodityExpectedValue(input.InputData.Commodity), PTagSettings.GetCommodityValue());
+            Assert.AreEqual(PTagSettings.GetCollectCycleExpectedValue(input.InputData.CollectCycle), PTagSettings.GetCollectCycleValue());
             Assert.AreEqual(PTagSettings.GetUomExpectedValue(input.InputData.Uom), PTagSettings.GetUomValue());
             Assert.AreEqual(PTagSettings.GetCalculationTypeExpectedValue(input.InputData.CalculationType), PTagSettings.GetCalculationTypeValue());
+            Assert.AreEqual(input.ExpectedData.Slope, PTagSettings.GetSlopeValue());
+            Assert.AreEqual(input.ExpectedData.Offset, PTagSettings.GetOffsetValue());
             Assert.AreEqual(input.ExpectedData.Comments, PTagSettings.GetCommentValue());
         }
 
@@ -91,6 +94,8 @@ namespace Mento.Script.Customer.TagManagement
             //Verify that ptag added successfully
             PTagSettings.FocusOnPTagByName(input.InputData.CommonName);
             Assert.IsTrue(PTagSettings.IsCommentHidden());
+            Assert.IsTrue(PTagSettings.IsSlopeHidden());
+            Assert.IsTrue(PTagSettings.IsOffsetHidden());
         }
 
         [Test]

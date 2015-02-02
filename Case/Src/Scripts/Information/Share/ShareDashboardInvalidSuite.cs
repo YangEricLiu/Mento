@@ -66,7 +66,7 @@ namespace Mento.Script.Information.Share
             HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
             TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
 
-            //There users(UserC and UserB) display
+            //There userC, B not display
             Assert.IsFalse(ShareWindow.IsShareUserExistedOnWindow(dashboard[0].ShareUsers[0]));
             Assert.IsFalse(ShareWindow.IsShareUserExistedOnWindow(dashboard[0].ShareUsers[1]));
 

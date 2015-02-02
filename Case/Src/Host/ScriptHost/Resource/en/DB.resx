@@ -535,24 +535,24 @@
     <value>Others</value>
   </data>
   <data name="Zone_All_Zones" xml:space="preserve">
-    <value>All zones</value>
+    <value>All zones </value>
   </data>
   <data name="Zone_Extreme_Cold_Region_A" xml:space="preserve">
-    <value>Extreme cold region A</value>
+    <value>Extreme cold region A </value>
   </data>
   <data name="Zone_Extreme_Cold_Region_B" xml:space="preserve">
-    <value>Extreme cold region B</value>
+    <value>Extreme cold region B </value>
   </data>
   <data name="Zone_Cold_Region" xml:space="preserve">
-    <value>Cold region</value>
+    <value>Cold region </value>
   </data>
   <data name="Zone_Hot_Summer_and_Cold_Winter_Region" xml:space="preserve">
-    <value>Hot summer and cold winter region</value>
+    <value>Hot summer and cold winter region </value>
   </data>
   <data name="Zone_Subtropical_Region" xml:space="preserve">
-    <value>Subtropical region</value>
+    <value>Subtropical region </value>
   </data>
   <data name="Zone_Temperate_Region" xml:space="preserve">
-    <value>Temperate region</value>
+    <value>Temperate region </value>
   </data>
 </root>

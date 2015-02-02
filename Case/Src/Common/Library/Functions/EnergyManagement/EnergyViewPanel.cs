@@ -343,18 +343,18 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return EnergyDataGrid.GetCurrentPageData();
         }
-
-        /*
+    
         public DataTable GetAllData()
         {
             return EnergyDataGrid.GetAllData();
         }
-        */
 
+        /* this just for 1.6 to 1.7 update, but still we get data use it. so we have to use it on 1.9 test 
         public DataTable GetAllData()
         {
             return EnergyDataGrid.GetAllDataWithoutNull();
         }
+        */
 
         public ExcelHelper.CellsValue[] GetHeaderData()
         {

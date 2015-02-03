@@ -248,7 +248,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 {
                     haveLine++;
                 }
-                else if (markersExisted && isMarkersVisible)
+                else if (markersExisted || isMarkersVisible)
                 {
                     haveMarkers++;
                 }
@@ -306,7 +306,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 {
                     noLine++;
                 }
-                else if (pathExisted && isVisible)
+                else if (pathExisted || isVisible)
                 {
                     haveLine++;
                 }

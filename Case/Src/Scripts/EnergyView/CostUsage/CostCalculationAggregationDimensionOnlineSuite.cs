@@ -35,8 +35,7 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
-
-            HomePagePanel.SelectCustomer("NancyCustomer1");
+            //HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.MediumPause();
         }
 

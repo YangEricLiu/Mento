@@ -35,13 +35,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
-
-            HomePagePanel.SelectCustomer("NancyCustomer1");
+            //HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.MediumPause();
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
         }
 
         private static CarbonUsagePanel CarbonUsage = JazzFunction.CarbonUsagePanel;
@@ -53,11 +48,11 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(P4_AdditionalCarbonUsageDataVerificationSuite), "TC-J1-FVT-AdditionalCarbonUsageDataVerification-DataView-101-1")]
         public void AdditionalCarbonUsageDataVerification01(CarbonUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.MediumPause();
+            //HomePagePanel.SelectCustomer("NancyCustomer1");
+            //TimeManager.MediumPause();
 
-            CarbonUsage.NavigateToCarbonUsage();
-            TimeManager.MediumPause();
+            //CarbonUsage.NavigateToCarbonUsage();
+            //TimeManager.MediumPause();
 
             //select "NancyCustomer1/GreenieSite/GreenieBuilding"
             CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);

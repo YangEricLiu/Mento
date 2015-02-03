@@ -36,7 +36,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
         {
             JazzFunction.Navigator.NavigateHome();
 
-            HomePagePanel.SelectCustomer("NancyCustomer1");
+            //HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.MediumPause();
         }
 

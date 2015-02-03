@@ -36,7 +36,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
         {
             JazzFunction.Navigator.NavigateHome();
             //HomePagePanel.ExitJazz();
-
             //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
             //TimeManager.MediumPause();
         }

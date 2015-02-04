@@ -113,10 +113,12 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SelectFuncModeConvertTarget(FuncModeConvertTarget.Carbon);
             TimeManager.ShortPause();
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[0]);
 
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -158,9 +160,12 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.AverageRank);
             TimeManager.ShortPause();
 
+            CorporateRanking.SelectCommodity(input.InputData.Commodity[0]);
+
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
+            TimeManager.LongPause();
             TimeManager.LongPause();
             TimeManager.LongPause();
 
@@ -175,6 +180,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.UnitAreaRank);
             TimeManager.ShortPause();
+            CorporateRanking.SelectCommodity(input.InputData.Commodity[0]);
 
             EnergyViewToolbar.ClickViewButton();
             TimeManager.LongPause();

@@ -27,11 +27,14 @@ namespace Mento.ScriptCommon.Library.Functions
 
             for (var i = 0; i < pathButtons.Length; i++)
             {
+                JazzMessageBox.LoadingMask.WaitLoading();
+                //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.MediumPause();
                 pathButtons[i].Click();
 
-                //JazzMessageBox.LoadingMask.WaitLoading();
+                JazzMessageBox.LoadingMask.WaitLoading();
                 //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.LongPause();
+                TimeManager.MediumPause();
             }
         }
 

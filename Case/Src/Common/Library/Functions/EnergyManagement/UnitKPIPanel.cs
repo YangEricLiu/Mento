@@ -103,6 +103,18 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.Rank);
         }
 
+        public void UnitIndicatorCaseSetUp()
+        {
+            NavigateToUnitIndicator();
+            TimeManager.MediumPause();
+        }
+
+        public void UnitIndicatorCaseTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
+        }
+
         #endregion
 
         #region Tag operations

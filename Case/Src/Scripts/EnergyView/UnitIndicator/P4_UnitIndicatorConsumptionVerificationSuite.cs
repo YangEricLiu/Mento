@@ -28,21 +28,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [SetUp]
         public void CaseSetUp()
         {
-            UnitKPIPanel.NavigateToUnitIndicator();
-            TimeManager.MediumPause();
+            UnitKPIPanel.UnitIndicatorCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
-        {   
-            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
-            TimeManager.LongPause();
-
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
+        {
+            UnitKPIPanel.UnitIndicatorCaseTearDown();
         }
+
 
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;

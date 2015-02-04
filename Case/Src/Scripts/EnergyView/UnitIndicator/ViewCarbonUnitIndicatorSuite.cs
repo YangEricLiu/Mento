@@ -27,18 +27,13 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [SetUp]
         public void CaseSetUp()
         {
-            UnitKPIPanel.NavigateToUnitIndicator();
-            TimeManager.MediumPause();
+            UnitKPIPanel.UnitIndicatorCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
+            UnitKPIPanel.UnitIndicatorCaseTearDown();
         }
 
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;
@@ -282,7 +277,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Select multiple Commodities 电+水+煤 from 楼宇A node to display column chart view.
             UnitKPIPanel.SelectCommodityUnitCarbon(input.InputData.Commodity);
             TimeManager.MediumPause();
-            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[1]));
+            //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[1]));
 
             EnergyViewToolbar.View(EnergyViewType.Column);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -374,7 +369,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Select multiple Commodities 电+水+煤 
             UnitKPIPanel.SelectCommodityUnitCarbon(input.InputData.Commodity);
             TimeManager.MediumPause();
-            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[1]));
+            //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[1]));
 
             //Change different time range
             //a. Today/Yesterday

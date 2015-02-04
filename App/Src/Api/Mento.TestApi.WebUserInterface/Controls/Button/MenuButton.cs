@@ -12,9 +12,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
     {
         //for english version
         //private static string MenuItemLocatorFormat = "//div[contains(@id, 'menuitem') and a/span[contains(@class, 'x-menu-item-text') and contains(text(),'{0}')]]";
-        //private static string MenuItemLocatorFormat = "//div[contains(@id, 'menuitem') and a/span[contains(@class, 'x-menu-item-text') and text()='{0}']]";
 
-        private static string MenuItemLocatorFormat = "//div[contains(@id, 'menuitem')]/a/span[contains(@class, 'x-menu-item-text') and text()='{0}']";
+        private static string MenuItemLocatorFormat = "//div[contains(@id, 'menuitem') and a/span[contains(@class, 'x-menu-item-text') and text()='{0}']]";
+
         public MenuButton(Locator locator) : base(locator) { }
 
         public void SelectItem(string[] itemPath)

@@ -386,6 +386,37 @@ namespace Mento.ScriptCommon.Library.Functions
                             TimeManager.LongPause();
                         }
                     }
+                    else
+                    {
+                        SelectCustomer(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].HierarchyName[0]);
+                        TimeManager.MediumPause();
+
+                        NavigateToAllDashboard();
+                        TimeManager.MediumPause();
+
+                        SelectHierarchyNode(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].HierarchyName);
+                        TimeManager.LongPause();
+
+                        //Judge if dashboard existed
+                        if (IsDashboardButtonExisted(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].DashboardName))
+                        {
+                            ClickDashboardButton(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].DashboardName);
+                            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
+                            TimeManager.LongPause();
+
+                            //Judge if widget existed
+                            if (IsWidgetExistedOnDashboard(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].WigetName))
+                            {
+                                //From the dashboard, select a widget, click 'Delete' button on the widget title.
+                                DeleteWidgetOpen(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].WigetName);
+                                TimeManager.ShortPause();
+
+                                //Click "Delete"
+                                JazzMessageBox.MessageBox.Delete();
+                                TimeManager.LongPause();
+                            }
+                        }
+                    }
                 }                 
             }
         }

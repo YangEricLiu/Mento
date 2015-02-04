@@ -27,23 +27,15 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [SetUp]
         public void CaseSetUp()
         {
-            UnitKPIPanel.NavigateToUnitIndicator();
-            TimeManager.MediumPause();
+            UnitKPIPanel.UnitIndicatorCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
-
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.LongPause();
-
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
+            UnitKPIPanel.UnitIndicatorCaseTearDown();
         }
+
 
         private static UnitKPIPanel UnitKPIPanel = JazzFunction.UnitKPIPanel;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
@@ -127,7 +119,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             //·Warining message show not defined 单位人口."缺少人口属性的部分无法绘制，请设置后再试".
-            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+            //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
             Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
 
             //Select the BuildingBC from Hierarchy Tree.time range="去年", 行业基准值=寒冷地区服装零售. Select multiple tag V（1）+V(2) +V(3) with the same commodity to display trend chart view
@@ -366,7 +358,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             //·Warining message show not defined 单位人口."缺少人口属性的部分无法绘制，请设置后再试".
-            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+            //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
 
             //·Chart display 单位人口.
             Assert.IsTrue(UnitKPIPanel.IsColumnChartDrawn());

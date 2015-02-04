@@ -28,6 +28,7 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CaseSetUp()
         {
             JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
             CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
         }
@@ -35,13 +36,8 @@ namespace Mento.Script.EnergyView.CostUsage
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
-            TimeManager.LongPause();
-
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
+            JazzFunction.Navigator.NavigateHome();
+            TimeManager.MediumPause();
         }
 
         private static CostPanel CostUsage = JazzFunction.CostPanel;
@@ -480,8 +476,8 @@ namespace Mento.Script.EnergyView.CostUsage
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
 
             //Check · There are 11 lines in trend chart.
-            HomePagePanel.ClickOnWidget(dashboard.WigetName);
-            TimeManager.ShortPause();
+            //HomePagePanel.ClickOnWidget(dashboard.WigetName);
+            //TimeManager.ShortPause();
             //Assert.AreEqual(11, EnergyAnalysisPanel.GetTrendChartLines());//It is not 11 lines when no data for some lines.
         }
     }

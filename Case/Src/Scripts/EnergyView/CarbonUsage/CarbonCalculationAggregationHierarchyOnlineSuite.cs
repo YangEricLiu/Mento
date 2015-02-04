@@ -36,8 +36,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
-            //HomePagePanel.SelectCustomer("NancyCustomer1");
+            JazzFunction.Navigator.NavigateHome();
             TimeManager.MediumPause();
         }
 
@@ -50,12 +49,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonCalculationAggregationHierarchyOnlineSuite), "TC-J1-FVT-StandCoalCalculation-001-1")]
         public void CarbonCalculationAggregationHierarchyOnline01(CarbonUsageData input)
         {
-            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            //TimeManager.MediumPause();
-
-            //CarbonUsage.NavigateToCarbonUsage();
-            //TimeManager.MediumPause();
-
             //Navigate to Hierarchy list 组织A->园区A->楼宇A, then go to 介质单项.
             CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -111,12 +104,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonCalculationAggregationHierarchyOnlineSuite), "TC-J1-FVT-CarbonCalculation-001-3")]
         public void CarbonUsageRawValueDisplayForHierarchy(CarbonUsageData input)
         {
-            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            //TimeManager.MediumPause();
-
-            //CarbonUsage.NavigateToCarbonUsage();
-            //TimeManager.MediumPause();
-
             //Navigate to Hierarchy list 组织A->园区A->楼宇A, then go to 介质单项.
             CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();

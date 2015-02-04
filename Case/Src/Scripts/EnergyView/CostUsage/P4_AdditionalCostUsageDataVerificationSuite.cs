@@ -27,6 +27,8 @@ namespace Mento.Script.EnergyView.CostUsage
         [SetUp]
         public void CaseSetUp()
         {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
             CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
         }
@@ -35,8 +37,6 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
-
-            HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.LongPause();
         }
 
@@ -49,11 +49,11 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P4_AdditionalCostUsageDataVerificationSuite), "TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101-1")]
         public void AdditionalCostUsageDataVerification01(CostUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.MediumPause();
+            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            //TimeManager.MediumPause();
 
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
+            //CostUsage.NavigateToCostUsage();
+            //TimeManager.MediumPause();
 
             //select "NancyCostCustomer2/组织A/园区A"
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -191,11 +191,11 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P4_AdditionalCostUsageDataVerificationSuite), "TC-J1-FVT-AdditionalCostUsageDataVerification-DataView-101-2")]
         public void AdditionalCostUsageDataVerification02(CostUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.MediumPause();
+            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            //TimeManager.MediumPause();
 
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
+            //CostUsage.NavigateToCostUsage();
+            //TimeManager.MediumPause();
 
             //select "NancyCostCustomer2/组织A/园区A/空调"
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);

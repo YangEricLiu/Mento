@@ -34,7 +34,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            JazzFunction.Navigator.NavigateHome();
             TimeManager.LongPause();
         }
 
@@ -238,7 +238,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
-
         }
 
         [Test]
@@ -318,8 +317,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
-
-
         }
 
         [Test]
@@ -396,8 +393,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
-
-
         }
     }
 }

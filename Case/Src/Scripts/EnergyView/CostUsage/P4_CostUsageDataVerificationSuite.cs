@@ -28,6 +28,8 @@ namespace Mento.Script.EnergyView.CostUsage
         [SetUp]
         public void CaseSetUp()
         {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.LongPause();
             CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
         }
@@ -36,14 +38,7 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
-
-            HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.MediumPause();
-
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
         }
 
         private static CostPanel CostUsage = JazzFunction.CostPanel;
@@ -206,11 +201,11 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P4_CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-2")]
         public void CostUsageDataVerification02(CostUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
+            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            //TimeManager.LongPause();
 
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
+            //CostUsage.NavigateToCostUsage();
+            //TimeManager.MediumPause();
 
             //Hierarchy = NancyCostCustomer2/组织A/园区A/楼宇A or B
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -424,11 +419,11 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P4_CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-4")]
         public void CostUsageDataVerification04(CostUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
+            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            //TimeManager.LongPause();
 
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
+            //CostUsage.NavigateToCostUsage();
+            //TimeManager.MediumPause();
 
             //Hierarchy = NancyCostCustomer2/组织A/园区A/楼宇B/空调
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -653,11 +648,11 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P4_CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-5")]
         public void CostUsageDataVerification05(CostUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
+            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            //TimeManager.LongPause();
 
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
+            //CostUsage.NavigateToCostUsage();
+            //TimeManager.MediumPause();
 
             //Hierarchy = NancyCostCustomer2/组织A/园区A/楼宇B/一层
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -882,11 +877,11 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P4_CostUsageDataVerificationSuite), "TC-J1-FVT-CostUsageDataVerification-DataView-101-6")]
         public void CostUsageDataVerification06(CostUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
+            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            //TimeManager.LongPause();
 
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
+            //CostUsage.NavigateToCostUsage();
+            //TimeManager.MediumPause();
 
             //Hierarchy = NancyCostCustomer2/组织A/园区B/楼宇C
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);

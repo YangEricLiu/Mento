@@ -223,6 +223,12 @@ namespace Mento.Script.EnergyView.CarbonUsage
         public void CarbontUsagePieChartForMoreTags(CarbonUsageData input)
         {
             //Go to Carbon function.Navigate to NancyCustomer1 -> BuildingMultipleCommodities to select 总览 to view pie chart.
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.MediumPause();
+
+            CarbonUsage.NavigateToCarbonUsage();
+            TimeManager.MediumPause();
+
             CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();

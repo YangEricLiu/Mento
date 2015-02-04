@@ -27,6 +27,8 @@ namespace Mento.Script.EnergyView.CostUsage
         [SetUp]
         public void CaseSetUp()
         {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.LongPause();
             CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
         }
@@ -35,7 +37,6 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
-            //HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.MediumPause();
         }
 
@@ -48,12 +49,6 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostCalculationAggregationDimensionOnlineSuite), "TC-J1-FVT-CostCalculation-002-1")]
         public void CostCalculationAggregationDimensionOnline01(CostUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
-
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
-
             //Hierarchy list 组织A->园区A->楼宇A, then go to 介质单项.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -114,12 +109,6 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostCalculationAggregationDimensionOnlineSuite), "TC-J1-FVT-CostCalculation-002-2")]
         public void CostCalculationAggregationDimensionOnline02(CostUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
-
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
-
             //Hierarchy list 组织A->园区A->楼宇A, then go to 介质单项.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -180,13 +169,6 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostCalculationAggregationDimensionOnlineSuite), "TC-J1-FVT-CostCalculation-002-1-2")]
         public void CostCalculationAggregationDimensionOnline0102(CostUsageData input)
         {
-            //Change Hierarchy list to 组织A->园区A->楼宇A, then go to 特殊 Dimension.
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
-
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
-
             //Hierarchy list 组织A->园区A->楼宇A, then go to 介质单项.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -256,13 +238,6 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostCalculationAggregationDimensionOnlineSuite), "TC-J1-FVT-CostCalculation-002-2-2")]
         public void CostCalculationAggregationDimensionOnline0202(CostUsageData input)
         {
-            //Change Hierarchy list to 组织A->园区A->楼宇A
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
-
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
-
             //Hierarchy list 组织A->园区A->楼宇A, then go to 二层 Area Dimension.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -323,12 +298,6 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostCalculationAggregationDimensionOnlineSuite), "TC-J1-FVT-CostCalculation-002-3")]
         public void CostUsageRawValueDisplayForSystemDimension(CostUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
-
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
-
             //Hierarchy list 组织A->园区A->楼宇A, then go to 介质单项.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();

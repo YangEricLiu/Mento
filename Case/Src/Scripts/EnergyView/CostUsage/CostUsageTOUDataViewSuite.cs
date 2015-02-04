@@ -28,6 +28,7 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CaseSetUp()
         {
             JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
             CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
         }
@@ -35,14 +36,8 @@ namespace Mento.Script.EnergyView.CostUsage
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateHome();
-            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            JazzFunction.Navigator.NavigateHome();
             TimeManager.LongPause();
-
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
         }
 
         private static CostPanel CostUsage = JazzFunction.CostPanel;

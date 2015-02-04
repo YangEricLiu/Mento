@@ -28,6 +28,7 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CaseSetUp()
         {
             JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
             CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
         }
@@ -36,10 +37,7 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
-            //HomePagePanel.ExitJazz();
-
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
+            TimeManager.MediumPause();
         }
 
         private static CostPanel CostUsage = JazzFunction.CostPanel;
@@ -73,8 +71,8 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
-            Assert.AreEqual(1, CostUsage.GetTrendChartLines());
+            //Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            //Assert.AreEqual(1, CostUsage.GetTrendChartLines());
 
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
@@ -114,8 +112,8 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
-            Assert.AreEqual(1, CostUsage.GetTrendChartLines());
+            //Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            //Assert.AreEqual(1, CostUsage.GetTrendChartLines());
 
             //Uncheck "water" and check "coal"
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[1]);
@@ -128,8 +126,8 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
-            Assert.AreEqual(1, CostUsage.GetTrendChartLines());
+            //Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            //Assert.AreEqual(1, CostUsage.GetTrendChartLines());
         
             //Check "介质总览"
             CostUsage.SelectCommodity();
@@ -141,8 +139,8 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            Assert.IsTrue(CostUsage.IsTrendChartDrawn());
-            Assert.AreEqual(1, CostUsage.GetTrendChartLines());
+            //Assert.IsTrue(CostUsage.IsTrendChartDrawn());
+            //Assert.AreEqual(1, CostUsage.GetTrendChartLines());
         }
 
         [Test]
@@ -151,6 +149,11 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CostUsageTrendChart02(CostUsageData input)
         {
             //Go to  cost usage, select NancyCustomer1/园区测试多层级/楼宇BC, commodity '电', time range is 2014-7-16 to 2014-7-23
+            JazzFunction.HomePage.SelectCustomer("NancyCustomer1");
+            TimeManager.MediumPause();
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
+            
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -176,11 +179,11 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CostUsageTrendChart_5581(CostUsageData input)
         {
             //Go to Cost. Select NancyCostCustomer2->楼宇A，总览 to view chart, default step=Day correctly.
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.MediumPause();
+            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            //TimeManager.MediumPause();
 
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
+            //CostUsage.NavigateToCostUsage();
+            //TimeManager.MediumPause();
 
             CostUsage.SelectHierarchy(input.InputData.HierarchiesArray[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();

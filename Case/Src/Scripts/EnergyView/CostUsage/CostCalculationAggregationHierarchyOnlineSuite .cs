@@ -27,6 +27,8 @@ namespace Mento.Script.EnergyView.CostUsage
         [SetUp]
         public void CaseSetUp()
         {
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.LongPause();
             CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
         }
@@ -47,11 +49,11 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostCalculationAggregationHierarchyOnlineSuite), "TC-J1-FVT-CostCalculation-001-1")]
         public void CostCalculationAggregationHierarchyOnline01(CostUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
+            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            //TimeManager.LongPause();
 
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
+            //CostUsage.NavigateToCostUsage();
+            //TimeManager.MediumPause();
 
             //Hierarchy list 组织A->园区A->楼宇A, then go to 介质单项.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -105,11 +107,11 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostCalculationAggregationHierarchyOnlineSuite), "TC-J1-FVT-CostCalculation-001-2")]
         public void CostUsageRawValueDisplayForHierarchy(CostUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();
+            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            //TimeManager.LongPause();
 
-            CostUsage.NavigateToCostUsage();
-            TimeManager.MediumPause();
+            //CostUsage.NavigateToCostUsage();
+            //TimeManager.MediumPause();
 
             //Go to Cost chart view. Navigate to Hierarchy list, then go to 介质单项.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);

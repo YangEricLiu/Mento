@@ -27,6 +27,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [SetUp]
         public void CaseSetUp()
         {
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.MediumPause();
             CarbonUsage.NavigateToCarbonUsage();
             TimeManager.MediumPause();
         }
@@ -35,9 +37,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
-            //HomePagePanel.ExitJazz();
-            //JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TimeManager.MediumPause();
+            TimeManager.MediumPause();
         }
 
         private static CarbonUsagePanel CarbonUsage = JazzFunction.CarbonUsagePanel;
@@ -436,8 +436,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
-
-
         }
 
         [Test]
@@ -585,10 +583,10 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-6")]
         public void AllCommoditiesCarbonView(CarbonUsageData input)
         {
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.LongPause();
-            CarbonUsage.NavigateToCarbonUsage();
-            TimeManager.MediumPause();
+            //HomePagePanel.SelectCustomer("NancyCustomer1");
+            //TimeManager.LongPause();
+            //CarbonUsage.NavigateToCarbonUsage();
+            //TimeManager.MediumPause();
 
             CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -670,8 +668,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
 
             //Check · There are 11 lines in trend chart.
-            HomePagePanel.ClickOnWidget(dashboard[0].WigetName);
-            TimeManager.ShortPause();
+            //HomePagePanel.ClickOnWidget(dashboard[0].WigetName);
+            //TimeManager.ShortPause();
             //Assert.AreEqual(10, EnergyViewPanel.GetTrendChartLines());//It is not 11 lines when no data for some lines.
         }
     }

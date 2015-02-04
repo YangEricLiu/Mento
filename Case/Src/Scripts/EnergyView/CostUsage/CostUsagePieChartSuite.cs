@@ -28,6 +28,7 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CaseSetUp()
         {
             JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
+            TimeManager.MediumPause();
             CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
         }
@@ -36,6 +37,7 @@ namespace Mento.Script.EnergyView.CostUsage
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
+            TimeManager.MediumPause();
         }
 
         private static CostPanel CostUsage = JazzFunction.CostPanel;
@@ -185,6 +187,7 @@ namespace Mento.Script.EnergyView.CostUsage
         {
             //Go to Cost function.Navigate to NancyCustomer1 -> BuildingMultipleCommodities to select 总览 to view pie chart.
             JazzFunction.HomePage.SelectCustomer("NancyCustomer1");
+            TimeManager.MediumPause();
             CostUsage.NavigateToCostUsage();
             TimeManager.MediumPause();
 

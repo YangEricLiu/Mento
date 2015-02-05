@@ -12,7 +12,7 @@
 			"DashboardInfo":{
 				"WigetName":"MultipleDataView1013",
 				"HierarchyName":["NancyCostCustomer2", "组织A"],
-				"IsCreateDashboard":"false",
+				"IsCreateDashboard":"true",
 				"DashboardName":"AutoTestRawStep",
 			},
 		},

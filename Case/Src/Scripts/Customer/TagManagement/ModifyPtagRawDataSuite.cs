@@ -247,7 +247,7 @@ namespace Mento.Script.Customer.TagManagement
             //Click Switch button in Original Value now
             PTagRawData.ClickSwitchDifferenceValueButton();
             TimeManager.LongPause();
-            Assert.AreEqual("1", PTagRawDataGrid.GetCellValue(7));
+            Assert.AreEqual("1", PTagRawDataGrid.GetCellValue(8));
 
             //Click Left button to change display time range
             PTagRawData.ClickLeftButton();

@@ -11,8 +11,8 @@
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
 			"Comments":"",
-			"Slope":"";
-			"Offset":"";
+			"Slope":"",
+			"Offset":"",
 		},
 		"ExpectedData":
 		{
@@ -23,6 +23,7 @@
 			"Commodity":"$@Commodity_Water",
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
+			"CollectCycle":"15$@Setting.VEEMonitorRule.Minute",
 		}
 	}
 ]

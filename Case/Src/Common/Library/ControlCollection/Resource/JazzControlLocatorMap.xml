@@ -850,7 +850,7 @@ CommentTextField
           <ptag>
               <add key="ComboBoxPTagSettingsCommodity" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CommodityId']]" type="XPath"/>
               <add key="ComboBoxPTagSettingsUom" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='UomId']]" type="XPath"/>
-              <add key="ComboBoxPTagSettingsCollectCycle" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='采集周期']]" type="XPath"/>
+              <add key="ComboBoxPTagSettingsCollectCycle" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationStep']]" type="XPath"/>
               <add key="ComboBoxPTagSettingsCalculationType" value="//div[@id='st-ptag-form-body']//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='CalculationType']]" type="XPath"/>
           </ptag>
           <vtag>

@@ -26,9 +26,9 @@ namespace Mento.Script.EnergyView.CarbonUsage
     {
         [SetUp]
         public void CaseSetUp()
-        {
+        {          
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            TimeManager.LongPause();       
+            JazzMessageBox.LoadingMask.WaitLoading();     
             CarbonUsage.NavigateToCarbonUsage();
             TimeManager.MediumPause();
         }
@@ -64,7 +64,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.ShortPause();
            
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //"Hour"
@@ -86,7 +86,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //"Hour"

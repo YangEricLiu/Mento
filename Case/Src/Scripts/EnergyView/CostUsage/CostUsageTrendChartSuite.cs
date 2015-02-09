@@ -71,9 +71,6 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //Assert.IsTrue(CostUsage.IsTrendChartDrawn());
-            //Assert.AreEqual(1, CostUsage.GetTrendChartLines());
-
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
@@ -112,9 +109,6 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //Assert.IsTrue(CostUsage.IsTrendChartDrawn());
-            //Assert.AreEqual(1, CostUsage.GetTrendChartLines());
-
             //Uncheck "water" and check "coal"
             CostUsage.DeSelectCommodity(input.InputData.commodityNames[1]);
             CostUsage.SelectCommodity(input.InputData.commodityNames[2]);
@@ -125,9 +119,6 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-
-            //Assert.IsTrue(CostUsage.IsTrendChartDrawn());
-            //Assert.AreEqual(1, CostUsage.GetTrendChartLines());
         
             //Check "介质总览"
             CostUsage.SelectCommodity();
@@ -138,9 +129,6 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-
-            //Assert.IsTrue(CostUsage.IsTrendChartDrawn());
-            //Assert.AreEqual(1, CostUsage.GetTrendChartLines());
         }
 
         [Test]
@@ -178,13 +166,6 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTrendChartSuite), "TC-J1-FVT-CostUsage-TrendChar-002-5581")]
         public void CostUsageTrendChart_5581(CostUsageData input)
         {
-            //Go to Cost. Select NancyCostCustomer2->楼宇A，总览 to view chart, default step=Day correctly.
-            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            //TimeManager.MediumPause();
-
-            //CostUsage.NavigateToCostUsage();
-            //TimeManager.MediumPause();
-
             CostUsage.SelectHierarchy(input.InputData.HierarchiesArray[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();

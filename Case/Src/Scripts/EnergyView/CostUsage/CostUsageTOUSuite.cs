@@ -79,7 +79,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Assert.IsTrue(CostUsage.IsTrendChartDrawn());
 
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
@@ -131,7 +131,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Assert.AreEqual(3, CostUsage.GetTrendChartLines());
 
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
@@ -279,11 +279,6 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-1")]
         public void TOUPieChart(CostUsageData input)
         {
-            //Go to NancyCostCustomer2->楼宇B， go to Cost.
-            //JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
-            //CostUsage.NavigateToCostUsage();
-            //TimeManager.MediumPause();
-
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -326,11 +321,6 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-2")]
         public void TOUChart(CostUsageData input)
         {
-            //Go to NancyCostCustomer2->楼宇B， go to Cost.
-            //JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
-            //CostUsage.NavigateToCostUsage();
-            //TimeManager.MediumPause();
-
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -425,11 +415,6 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-3")]
         public void TOUButtonStatus(CostUsageData input)
         {
-            //Go to Cost in 楼B, select commodify electricity.
-            //JazzFunction.HomePage.SelectCustomer("NancyCostCustomer2");
-            //CostUsage.NavigateToCostUsage();
-            //TimeManager.MediumPause();
-
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();

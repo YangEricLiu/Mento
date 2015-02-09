@@ -70,7 +70,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //"单项" = 电 +　自来水 + 煤
             CostUsage.SelectCommodity(input.InputData.commodityNames);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //""
@@ -91,7 +91,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //""
@@ -130,7 +130,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //"单项" = 电 +　自来水 + 煤
             CostUsage.SelectCommodity(input.InputData.commodityNames);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //""
@@ -151,7 +151,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //""
@@ -189,7 +189,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //"单项" = 电
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
@@ -204,7 +204,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //"单项" = 电
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
@@ -219,7 +219,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //"单项" = 电
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
@@ -257,7 +257,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //"单项" = 电
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
@@ -271,7 +271,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
@@ -285,7 +285,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);

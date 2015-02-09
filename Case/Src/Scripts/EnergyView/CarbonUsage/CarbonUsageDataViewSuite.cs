@@ -291,7 +291,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //Click 查看数据,then click 数据表.
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //Select 年 in step.
@@ -407,7 +407,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
             //"Year"
@@ -459,7 +459,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //Go to 介质总览 to display Data view. Click Optional step=Raw step
             CarbonUsage.SelectCommodity();
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -514,7 +514,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //Go to 介质单项 电 to display Data view. Click Optional step=Raw step
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -529,9 +529,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //Go to 介质单项 自来水 to display Data view. Click Optional step=Raw step
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[1]);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
             //Check Raw chart display successfully.
@@ -542,15 +540,13 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //Go to 介质单项 煤 to display Data view. Click Optional step=Raw step
             CarbonUsage.SelectCommodity(input.InputData.commodityNames[2]);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
             //Check Warning message 
             Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.StepMessage[0]));
             CarbonUsage.ClickGiveupButtonOnWindow();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
 
             //Check Commodity=煤 is unchecked.
@@ -583,11 +579,6 @@ namespace Mento.Script.EnergyView.CarbonUsage
         [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-6")]
         public void AllCommoditiesCarbonView(CarbonUsageData input)
         {
-            //HomePagePanel.SelectCustomer("NancyCustomer1");
-            //TimeManager.LongPause();
-            //CarbonUsage.NavigateToCarbonUsage();
-            //TimeManager.MediumPause();
-
             CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -600,7 +591,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //Select 总览 to display Data view. Click Optional step=month
             CarbonUsage.SelectCommodity();
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             CarbonUsage.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -625,7 +616,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastWeek);
             TimeManager.ShortPause();
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             for (int i = 0; i < 15; i++)//Change chart type from pie, it will take very long time to load new chart
             {
                 TimeManager.LongPause();

@@ -49,12 +49,6 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostCalculationAggregationHierarchyOnlineSuite), "TC-J1-FVT-CostCalculation-001-1")]
         public void CostCalculationAggregationHierarchyOnline01(CostUsageData input)
         {
-            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            //TimeManager.LongPause();
-
-            //CostUsage.NavigateToCostUsage();
-            //TimeManager.MediumPause();
-
             //Hierarchy list 组织A->园区A->楼宇A, then go to 介质单项.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -68,12 +62,12 @@ namespace Mento.Script.EnergyView.CostUsage
             //"单项" = 电 +　自来水 + 煤
             CostUsage.SelectCommodity(input.InputData.commodityNames);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //"Hour"
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
@@ -89,12 +83,12 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //"Hour"
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);

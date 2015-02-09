@@ -63,11 +63,11 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Hour);
@@ -107,7 +107,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.SelectCommodity(input.InputData.commodityNames[1]);
             EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
@@ -127,7 +127,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //Assert.IsTrue(CostUsage.IsDataViewDrawn());
@@ -170,7 +170,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.SelectCommodity();
             EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
@@ -201,7 +201,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.SelectCommodity();
             EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             CostUsage.ClickDisplayStep(DisplayStep.Month);
@@ -248,7 +248,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.SelectCommodity();
             EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
             //change step to raw
@@ -314,7 +314,7 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             CostUsage.ClickDisplayStep(DisplayStep.Raw);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -403,7 +403,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Select 总览 to display Data view. Click Optional step=month
             CostUsage.SelectCommodity();
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             CostUsage.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -428,11 +428,11 @@ namespace Mento.Script.EnergyView.CostUsage
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastWeek);
             TimeManager.ShortPause();
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            for (int i = 0; i < 15; i++)//Change chart type from pie, it will take very long time to load new chart
-            {
-                TimeManager.LongPause();
-            }
+            JazzMessageBox.LoadingMask.WaitLoading();
+            //for (int i = 0; i < 15; i++)//Change chart type from pie, it will take very long time to load new chart
+            //{
+            //    TimeManager.LongPause();
+            //}
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();

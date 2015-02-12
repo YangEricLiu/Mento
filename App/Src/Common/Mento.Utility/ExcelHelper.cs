@@ -7,6 +7,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Mento.Utility
 {
@@ -598,8 +599,50 @@ namespace Mento.Utility
                 for (int j = 1; j <= mySheet.Cells.CurrentRegion.Columns.Count; j++)
                 {
                     Excel.Range temp = (Excel.Range)mySheet.Cells[i, j];
-
                     string strValue = temp.Text.ToString();
+
+                    //Just for v1.9
+                    string strValue19 = " "; 
+                  
+                    //Just for v1.9
+                    if (1 == j)
+                    {
+                        //Console.Out.WriteLine("#" + strValue);
+                        if (Regex.IsMatch(strValue, @"\d{2}点-\d{2}点"))
+                        {
+                            if (strValue.Contains("23点-24点"))
+                            {
+                                strValue19 = strValue;
+                                strValue19 = strValue19.Replace("年", "-").Replace("月", "-").Replace("日", "").Replace("23点-24点", "");
+                                DateTime time19 = Convert.ToDateTime(strValue19);
+                                time19 = time19.AddDays(1);
+                                strValue19 = time19.ToString("yyyy年MM月dd日");
+                                strValue = strValue19 + "00点";
+                            }
+                            else
+                            {
+                                strValue = Regex.Replace(strValue, @"\d{2}点-", "");
+                            }
+                            
+                            //Console.Out.WriteLine(j.ToString() + strValue);
+                        }
+                        else if (Regex.IsMatch(strValue, @"\d{2}点\d{2}分\-\d{2}点\d{2}分"))
+                        {
+                            if (strValue.Contains("23点45分-24点00分"))
+                            {
+                                strValue19 = strValue;
+                                strValue19 = strValue19.Replace("年", "-").Replace("月", "-").Replace("日", "").Replace(" 23点45分-24点00分", "");
+                                DateTime time19 = Convert.ToDateTime(strValue19);
+                                time19 = time19.AddDays(1);
+                                strValue19 = time19.ToString("yyyy年MM月dd日");
+                                strValue = strValue19 + " 00点00分";
+                            }
+                            else
+                            {
+                                strValue = Regex.Replace(strValue, @"\d{2}点\d{2}分\-", "");
+                            }                 
+                        }
+                    }
                     myRow[j - 1] = strValue;
                 }
                 dt.Rows.Add(myRow);

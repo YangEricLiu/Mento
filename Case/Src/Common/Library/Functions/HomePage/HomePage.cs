@@ -80,7 +80,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
             string year = now.Year.ToString();
             string month = now.Month.ToString().PadLeft(2, '0');
-            string day = now.Day.ToString();
+            string day = now.Day.ToString().PadLeft(2, '0');
 
             string time = year + month + day;
 

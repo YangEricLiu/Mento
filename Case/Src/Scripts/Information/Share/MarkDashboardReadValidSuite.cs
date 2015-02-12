@@ -129,7 +129,7 @@ namespace Mento.Script.Information.Share
             TimeManager.LongPause();
 
             Assert.AreEqual(input.ExpectedData.messages[0], HomePagePanel.GetPopNotesValue());
-            TimeManager.Pause(60000);
+            TimeManager.LongPause();
 
             HomePagePanel.ClickShareDashboardButton(dashboard[0].DashboardName);
             TimeManager.Pause(HomePagePanel.WAITSHAREWINDOWTIME);
@@ -153,7 +153,6 @@ namespace Mento.Script.Information.Share
             Assert.IsTrue(HomePagePanel.IsShareDashboardUnreadPosition(2));
             string newName = dashboard[0].DashboardName + "_" + HomePagePanel.GetShareCurrentTime();
             Assert.IsTrue(HomePagePanel.GetOneDashboardNamePosition(1).Contains(newName));
-            //Assert.AreEqual(newName, HomePagePanel.GetOneDashboardNamePosition(1));
 
             //Click the dashboardA+timestamp name from dashboard list.
             HomePagePanel.ClickDashboardButtonPosition(2);

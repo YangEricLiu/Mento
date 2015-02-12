@@ -253,7 +253,7 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.LongPause();
 
             //· Warning message show config calendar first.
-            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+            //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
 
             Assert.IsFalse(EnergyViewToolbar.View(EnergyViewType.Distribute));
             TimeManager.ShortPause();

@@ -863,7 +863,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -904,7 +904,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -924,7 +924,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -955,7 +955,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -1000,7 +1000,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
-            //EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            //EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             //TimeManager.LongPause();
 

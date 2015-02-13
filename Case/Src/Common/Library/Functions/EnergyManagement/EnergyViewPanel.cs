@@ -20,7 +20,7 @@ namespace Mento.ScriptCommon.Library.Functions
         private static Button SelectHierarchyButton = JazzButton.EnergyViewSelectHierarchyButton;
         private static HierarchyTree HierarchyTree = JazzTreeView.EnergyViewHierarchyTree;
 
-        private static ToggleButton EnergyDisplayStepRawButton = JazzButton.EnergyDisplayStepRawButton;
+        private static ToggleButton EnergyDisplayStepMinButton = JazzButton.EnergyDisplayStepMinButton;
         private static ToggleButton EnergyDisplayStepHourButton = JazzButton.EnergyDisplayStepHourButton;
         private static ToggleButton EnergyDisplayStepDayButton = JazzButton.EnergyDisplayStepDayButton;
         private static ToggleButton EnergyDisplayStepWeekButton = JazzButton.EnergyDisplayStepWeekButton;
@@ -39,7 +39,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Dictionary<DisplayStep, string> DisplayStepItem = new Dictionary<DisplayStep, string>()
         {
-            {DisplayStep.Raw, "$@EM.UseRaw"},
+            {DisplayStep.Min, "$@EM.UseRaw"},
             {DisplayStep.Hour, "$@EM.UseHour"},
             {DisplayStep.Day, "$@EM.UseDay"},
             {DisplayStep.Week, "$@EM.UseWeek"},
@@ -114,9 +114,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             switch (step)
             {
-                case DisplayStep.Raw:
+                case DisplayStep.Min:
                     //click "Raw" step
-                    EnergyDisplayStepRawButton.Click();
+                    EnergyDisplayStepMinButton.Click();
                     break;
                 case DisplayStep.Hour:
                     //click "Hourly" step
@@ -184,9 +184,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             switch (step)
             {
-                case DisplayStep.Raw:
+                case DisplayStep.Min:
                     //"Hourly" step
-                    return EnergyDisplayStepRawButton.IsButtonPressed();
+                    return EnergyDisplayStepMinButton.IsButtonPressed();
                 case DisplayStep.Hour:
                     //"Hourly" step
                     return EnergyDisplayStepHourButton.IsButtonPressed();
@@ -215,9 +215,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             switch (step)
             {
-                case DisplayStep.Raw:
+                case DisplayStep.Min:
                     //"Hourly" step
-                    return EnergyDisplayStepRawButton.Exists();
+                    return EnergyDisplayStepMinButton.Exists();
                 case DisplayStep.Hour:
                     //"Hourly" step
                     return EnergyDisplayStepHourButton.Exists();
@@ -1091,5 +1091,5 @@ namespace Mento.ScriptCommon.Library.Functions
     }
 
     public enum TagTabs { HierarchyTag, SystemDimensionTab, AreaDimensionTab, }
-    public enum DisplayStep { Raw, Hour, Day, Week, Month, Year, Default}
+    public enum DisplayStep { Min, Hour, Day, Week, Month, Year, Default}
 }

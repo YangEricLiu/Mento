@@ -147,7 +147,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string DeleteWidgetConfirmButton = "DeleteWidgetConfirmButton";
         public static string DeleteWidgetCancelButton = "DeleteWidgetCancelButton";
 
-        public static string ButtonEnergyDisplayStepRaw = "ButtonEnergyDisplayStepRaw";
+        public static string ButtonEnergyDisplayStepMin = "ButtonEnergyDisplayStepMin";
         public static string ButtonEnergyDisplayStepHour = "ButtonEnergyDisplayStepHour";
         public static string ButtonEnergyDisplayStepDay = "ButtonEnergyDisplayStepDay";
         public static string ButtonEnergyDisplayStepWeek = "ButtonEnergyDisplayStepWeek";

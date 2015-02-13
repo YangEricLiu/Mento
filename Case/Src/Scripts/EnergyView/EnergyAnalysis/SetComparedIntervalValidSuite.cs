@@ -326,7 +326,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //Change step to Day(Raw)
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
@@ -1019,7 +1019,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Check The default step is Day
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
-            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Min));
 
             //Click  'Add Compared Interval' button to open the dialog
             EnergyViewToolbar.ClickTimeSpanButton();
@@ -1038,7 +1038,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //The default step should still be Day
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
-            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Min));
 
             //Add compared intervals
             EnergyViewToolbar.ClickTimeSpanButton();
@@ -1133,7 +1133,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Check The default step should still be Day
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
-            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Min));
 
             //Click '查看数据' button
             EnergyViewToolbar.ClickViewButton();

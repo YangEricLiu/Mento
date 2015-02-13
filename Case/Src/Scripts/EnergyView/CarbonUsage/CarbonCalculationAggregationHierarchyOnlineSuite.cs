@@ -123,7 +123,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             //"Raw"
-            CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
+            CarbonUsage.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -141,7 +141,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.MediumPause();
 
             //"Raw"
-            CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
+            CarbonUsage.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 

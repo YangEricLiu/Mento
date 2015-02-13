@@ -192,7 +192,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.LongPause();
 
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
-            Assert.IsFalse(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsFalse(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Min));
         }
     }
 }

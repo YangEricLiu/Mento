@@ -252,7 +252,7 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             //change step to raw
-            CostUsage.ClickDisplayStep(DisplayStep.Raw);
+            CostUsage.ClickDisplayStep(DisplayStep.Min);
             //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();//弹出提示框，不需要Load Chart，无需等待时间太长
             TimeManager.MediumPause();
 
@@ -265,7 +265,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Check display step is not raw but still day. 
             Assert.AreEqual(true, CostUsage.IsDisplayStepPressed(DisplayStep.Day));
             Assert.AreEqual(false, CostUsage.IsDisplayStepPressed(DisplayStep.Hour));
-            Assert.AreEqual(false, CostUsage.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.AreEqual(false, CostUsage.IsDisplayStepPressed(DisplayStep.Min));
 
             //check data
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
@@ -316,12 +316,12 @@ namespace Mento.Script.EnergyView.CostUsage
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-            CostUsage.ClickDisplayStep(DisplayStep.Raw);
+            CostUsage.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
             //Check Raw chart display successfully.
-            Assert.IsTrue(CostUsage.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(CostUsage.IsDisplayStepPressed(DisplayStep.Min));
             Assert.IsTrue(CostUsage.IsDisplayStepDisplayed(DisplayStep.Hour));
             Assert.IsTrue(CostUsage.IsDisplayStepDisplayed(DisplayStep.Day));
 

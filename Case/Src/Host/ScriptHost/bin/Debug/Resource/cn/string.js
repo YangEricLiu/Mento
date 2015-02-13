@@ -663,6 +663,7 @@ I18N.EM.SystemTag = '系统数据点';
 I18N.EM.AreaTag = '区域数据点';
 I18N.EM.Week = '周';
 I18N.EM.Raw = '原始';
+I18N.EM.Min = '分钟';
 I18N.EM.Hour = '小时';
 I18N.EM.Day = '天';
 I18N.EM.Month = '月';

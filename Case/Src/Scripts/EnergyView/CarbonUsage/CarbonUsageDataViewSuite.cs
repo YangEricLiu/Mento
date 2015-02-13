@@ -461,13 +461,13 @@ namespace Mento.Script.EnergyView.CarbonUsage
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-            CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
+            CarbonUsage.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             TimeManager.LongPause();
 
             //Check Raw chart display successfully.
-            Assert.IsTrue(CarbonUsage.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(CarbonUsage.IsDisplayStepPressed(DisplayStep.Min));
             Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Hour));
             Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Day));
 
@@ -516,13 +516,13 @@ namespace Mento.Script.EnergyView.CarbonUsage
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-            CarbonUsage.ClickDisplayStep(DisplayStep.Raw);
+            CarbonUsage.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             TimeManager.LongPause();
 
             //Check Raw chart display successfully.
-            Assert.IsTrue(CarbonUsage.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(CarbonUsage.IsDisplayStepPressed(DisplayStep.Min));
             Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Hour));
             Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Day));
 
@@ -533,7 +533,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             TimeManager.LongPause();
 
             //Check Raw chart display successfully.
-            Assert.IsTrue(CarbonUsage.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(CarbonUsage.IsDisplayStepPressed(DisplayStep.Min));
             Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Hour));
             Assert.IsTrue(CarbonUsage.IsDisplayStepDisplayed(DisplayStep.Day));
 
@@ -610,7 +610,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             //Check · There are 11 Commodities display pie chart view.
             CarbonUsage.ExportExpectedDictionaryToExcel(input.InputData.Hierarchies, input.InputData.ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
             TimeManager.MediumPause();
-            CarbonUsage.CompareDictionaryDataOfCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            //CarbonUsage.CompareDictionaryDataOfCarbonUsage(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Change chart type to Data view. Select time range 上周， change chart type to the data view.Optional step=Hour
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastWeek);

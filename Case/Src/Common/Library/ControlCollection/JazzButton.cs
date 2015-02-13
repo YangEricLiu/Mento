@@ -181,10 +181,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             get { return  GetControl<RadioButton>(JazzControlLocatorKey.RadioButtonExistedDashboard);}
         }
 
-        public static ToggleButton EnergyDisplayStepRawButton
+        public static ToggleButton EnergyDisplayStepMinButton
         {
-            get { return  GetControl<ToggleButton>(JazzControlLocatorKey.ButtonEnergyDisplayStepRaw);}
+            get { return GetControl<ToggleButton>(JazzControlLocatorKey.ButtonEnergyDisplayStepMin); }
         }
+
         public static ToggleButton EnergyDisplayStepHourButton
         {
             get { return  GetControl<ToggleButton>(JazzControlLocatorKey.ButtonEnergyDisplayStepHour);}

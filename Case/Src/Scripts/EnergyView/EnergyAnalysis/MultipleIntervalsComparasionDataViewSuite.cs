@@ -501,7 +501,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Change step to Raw
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 

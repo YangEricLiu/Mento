@@ -87,7 +87,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         //                string fileName = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss");
         //                EnergyAnalysis.ExportExpectedDataTableToExcel(fileName + "_dayStep.xls", DisplayStep.Default);
 
-        //                EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+        //                EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
         //                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
         //                TimeManager.LongPause();
 

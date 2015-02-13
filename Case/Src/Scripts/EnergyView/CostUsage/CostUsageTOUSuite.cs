@@ -348,7 +348,7 @@ namespace Mento.Script.EnergyView.CostUsage
             Assert.IsTrue(CostUsage.IsColumnChartDrawn());
 
             //Try to click Optional step=Raw.
-            CostUsage.ClickDisplayStep(DisplayStep.Raw);
+            CostUsage.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 

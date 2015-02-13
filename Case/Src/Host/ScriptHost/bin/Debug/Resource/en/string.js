@@ -663,6 +663,7 @@ I18N.EM.SystemTag = 'System tags';
 I18N.EM.AreaTag = 'Region tags';
 I18N.EM.Week = 'Week';
 I18N.EM.Raw = 'Raw';
+I18N.EM.Min = 'Raw';
 I18N.EM.Hour = 'Hour';
 I18N.EM.Day = 'Day';
 I18N.EM.Month = 'Month';

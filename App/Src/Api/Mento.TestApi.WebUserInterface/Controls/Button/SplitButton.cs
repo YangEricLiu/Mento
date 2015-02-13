@@ -29,7 +29,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
                 ElementHandler.Click(FindChild(itemLocator));
 
-                TimeManager.ShortPause();
+                TimeManager.LongPause();
             }
         }
 

@@ -49,9 +49,9 @@ namespace Mento.ScriptCommon.Library.Functions
             MoreButton.SelectItem(MenuItems[moreOption]);
         }
 
-        public bool IsMenuItemDisabled(string text)
+        public bool IsMoreMenuItemDisabled(string text)
         {
-            return MoreButton.IsMenuItemDisabled(text);
+            return MoreButton.IsMoreMenuItemDisabled(text);
         }
 
         public void OpenMoreButton()

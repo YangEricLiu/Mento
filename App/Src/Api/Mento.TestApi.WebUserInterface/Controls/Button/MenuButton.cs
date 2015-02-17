@@ -15,6 +15,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         //private static string MenuItemLocatorFormat = "//div[contains(@id, 'menuitem') and a/span[contains(@class, 'x-menu-item-text') and text()='{0}']]";
         private static string MenuItemLocatorFormat = "//div[contains(@id, 'menuitem')]/a/span[contains(@class, 'x-menu-item-text') and text()='{0}']";
+        private static string MoreMenuItemLocatorFormat = "//div[contains(@id, 'menuitem') and a/span[contains(@class, 'x-menu-item-text') and text()='{0}']]";
+
         public MenuButton(Locator locator) : base(locator) { }
 
         public void SelectItem(string[] itemPath)
@@ -157,6 +159,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return GetMenuItem(itemText).GetAttribute("class").Contains("x-menu-item-disabled");
         }
 
+        public bool IsMoreMenuItemDisabled(string itemText)
+        {
+            this.Click();
+            TimeManager.MediumPause();
+            return GetMoreMenuItem(itemText).GetAttribute("class").Contains("x-menu-item-disabled");
+        }
+
         public bool IsMenuItemExist(string itemText)
         {
             this.Click();
@@ -173,9 +182,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return FindChild(GetMenuItemLocator(itemResourceVariable));
         }
 
+        private IWebElement GetMoreMenuItem(string itemResourceVariable)
+        {
+            return FindChild(GetMoreMenuItemLocator(itemResourceVariable));
+        }
+
         private Locator GetMenuItemLocator(string itemResourceVariable)
         {
             return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(MenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
+        }
+
+        private Locator GetMoreMenuItemLocator(string itemResourceVariable)
+        {
+            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(MoreMenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
         }
     }
 }

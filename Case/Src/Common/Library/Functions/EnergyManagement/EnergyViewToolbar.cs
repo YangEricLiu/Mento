@@ -149,7 +149,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public bool IsMoreMenuItemDisabled(string text)
         {
-            return MoreMenu.IsMenuItemDisabled(text);
+            return MoreMenu.IsMoreMenuItemDisabled(text);
         }
 
         public void TimeSpan(TimeSpans span)

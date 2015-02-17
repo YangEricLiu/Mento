@@ -27,14 +27,13 @@ namespace Mento.Script.EnergyView.CorporateRanking
         [SetUp]
         public void CaseSetUp()
         {
-            CorporateRanking.NavigateToCorporateRanking();
-            TimeManager.MediumPause();
+            CorporateRanking.RankingCaseSetUp();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            CorporateRanking.RankingCaseTearDown();
         }
 
         private static RankPanel CorporateRanking = JazzFunction.RankPanel;

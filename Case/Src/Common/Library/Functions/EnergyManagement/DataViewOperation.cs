@@ -254,7 +254,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 return false;
             }
 
-            if (expectedDataTable == null && actualDataTable != null)
+            if ((expectedDataTable == null && actualDataTable != null) || (expectedDataTable.Rows.Count == 0 && actualDataTable.Rows.Count != 0))
             {
                 diversityTable = actualDataTable.Copy();
 
@@ -270,7 +270,7 @@ namespace Mento.ScriptCommon.Library.Functions
                 return false;
             }
 
-            if (expectedDataTable != null && actualDataTable == null)
+            if ((expectedDataTable != null && actualDataTable == null) || (expectedDataTable.Rows.Count != 0 && actualDataTable.Rows.Count == 0))
             {
                 diversityTable = expectedDataTable.Copy();
 

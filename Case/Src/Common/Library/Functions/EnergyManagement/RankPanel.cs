@@ -61,6 +61,17 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.Rank);
         }
 
+        public void RankingCaseSetUp()
+        {
+            NavigateToCorporateRanking();
+            TimeManager.MediumPause();
+        }
+
+        public void RankingCaseTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
+        }
 
         protected override Chart Chart
         {
@@ -82,12 +93,6 @@ namespace Mento.ScriptCommon.Library.Functions
 
             SelectSystemDimensionButton = JazzButton.RankSelectSystemDimensionButton;
             SystemDimensionTree = JazzTreeView.EnergyViewSystemDimensionTree;
-        }
-
-        public void RankingCaseTearDown()
-        {
-            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
-            TimeManager.LongPause();
         }
 
         #region Hierarchy operations

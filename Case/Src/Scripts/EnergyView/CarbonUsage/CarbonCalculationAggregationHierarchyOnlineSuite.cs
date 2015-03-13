@@ -122,8 +122,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //"Raw"
-            CarbonUsage.ClickDisplayStep(DisplayStep.Min);
+            //"Raw"->"Hour"//不支持分钟步长
+            CarbonUsage.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 

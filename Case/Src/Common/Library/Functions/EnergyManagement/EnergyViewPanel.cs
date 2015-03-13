@@ -39,7 +39,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         private static Dictionary<DisplayStep, string> DisplayStepItem = new Dictionary<DisplayStep, string>()
         {
-            {DisplayStep.Min, "$@EM.UseRaw"},
+            {DisplayStep.Min, "$@EM.UseMin"},
             {DisplayStep.Hour, "$@EM.UseHour"},
             {DisplayStep.Day, "$@EM.UseDay"},
             {DisplayStep.Week, "$@EM.UseWeek"},

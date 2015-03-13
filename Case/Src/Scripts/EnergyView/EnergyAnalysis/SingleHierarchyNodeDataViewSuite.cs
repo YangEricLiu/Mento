@@ -239,7 +239,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -272,13 +272,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //Click Optional step=Raw step.
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             TimeManager.LongPause();
 
             //Check Raw chart display successfully.
-            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Min));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
 
@@ -289,7 +289,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //Check Raw chart display successfully.
-            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Min));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
 
@@ -300,7 +300,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //Check Raw chart display successfully.
-            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Min));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
 

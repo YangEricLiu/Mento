@@ -686,6 +686,7 @@ I18N.EM.Unit.UnitArea = ' Unit area ';
 I18N.EM.Unit.UnitColdArea = ' Unit cooling area ';
 I18N.EM.Unit.UnitWarmArea = ' Unit heating area ';
 
+I18N.EM.UseMin = 'By min';
 I18N.EM.UseRaw = 'By raw';
 I18N.EM.UseWeek = 'By week';
 I18N.EM.UseHour = 'By hour';

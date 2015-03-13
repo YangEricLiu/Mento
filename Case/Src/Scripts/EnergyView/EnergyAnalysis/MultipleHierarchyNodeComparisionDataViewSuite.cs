@@ -310,7 +310,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
@@ -325,7 +325,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //Check Raw chart display successfully.
-            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Raw));
+            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Min));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Hour));
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Day));
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -339,7 +339,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Select tag BuildingA_KT_P1_Electricy.    
             EnergyAnalysis.CheckTag(input.InputData.TagNames[3]);
             TimeManager.ShortPause();
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();

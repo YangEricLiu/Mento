@@ -686,6 +686,7 @@ I18N.EM.Unit.UnitArea = '单位面积';
 I18N.EM.Unit.UnitColdArea = '单位供冷面积';
 I18N.EM.Unit.UnitWarmArea = '单位采暖面积';
 
+I18N.EM.UseMin = '按分钟';
 I18N.EM.UseRaw = '按原始';
 I18N.EM.UseWeek = '按周';
 I18N.EM.UseHour = '按小时';

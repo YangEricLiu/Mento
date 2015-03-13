@@ -760,7 +760,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 TimeManager.LongPause();
 
                 //Change option=Raw step
-                EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+                EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
                 //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
                 TimeManager.LongPause();
 
@@ -774,7 +774,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
 
                 //Change option=Raw step again
-                EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+                EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
                 //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
                 TimeManager.LongPause();
 
@@ -802,7 +802,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.LongPause();
 
             //Change step to raw
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Raw);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
 
@@ -864,7 +864,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.LongPause();
 
             //Check No Optional step=Raw optional button.
-            Assert.AreEqual(false, EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Raw));
+            Assert.AreEqual(false, EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Min));
         }
     }
 }

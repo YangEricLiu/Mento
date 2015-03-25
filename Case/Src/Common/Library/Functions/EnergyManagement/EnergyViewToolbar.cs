@@ -101,6 +101,8 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 EndTimeComboBox.SelectItem("24:00");
             }
+
+            TimeManager.ShortPause();
         }
 
         public void SetTimeRange(string startTime, string endTime)
@@ -127,7 +129,7 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             ViewButton.ClickView();
 
-            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
         }
 
         public bool IsTimeSpanButtonEnable()
@@ -205,6 +207,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectRatioIndustryConvertTarget(string industry)
         {
             ConvertTargetButton.SwitchRatioIndustryMenuItem(industry);
+            TimeManager.ShortPause();
         }
 
         public void SelectLabellingIndustryConvertTarget(string[] industry)

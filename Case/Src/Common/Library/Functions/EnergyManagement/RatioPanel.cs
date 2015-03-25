@@ -118,9 +118,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void CheckTag(string tagName)
         {
             TagGrid.CheckRowCheckbox(2, tagName);
-
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.MediumPause();
         }
 
         public bool IsTagChecked(string tagName)
@@ -136,9 +133,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void UncheckTag(string tagName)
         {
             TagGrid.UncheckRowCheckbox(2, tagName);
-
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.MediumPause();
         }
 
         public void CheckTags(string[] tagNames)

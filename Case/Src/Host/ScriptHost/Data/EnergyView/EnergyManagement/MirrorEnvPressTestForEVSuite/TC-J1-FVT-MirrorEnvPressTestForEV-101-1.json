@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["HM 中国", "Area01", "CN0101"],
+			"TagNames":["CN0101_01_01", "CN0101_02_01", "CN0101_03_01", "CN0101_04_01", "CN0101_05_01"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["HM 中国", "Area20", "CN0140"],
+			"TagNames":["CN0140_01_01", "CN140", "CN0140_01_02"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

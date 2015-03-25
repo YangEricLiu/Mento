@@ -184,7 +184,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.ShortPause();
 
-            //Select 公休比 to view data, 2014.1
+            //Select 昼夜比 to view data, 2014.1
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);

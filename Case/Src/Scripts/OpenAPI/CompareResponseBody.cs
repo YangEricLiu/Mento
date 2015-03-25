@@ -6,6 +6,7 @@ using DifferenceEngine;
 using System.Collections;
 using System.IO;
 using Mento.Utility;
+using System.Text.RegularExpressions;
 
 namespace Mento.Script.OpenAPI
 {
@@ -15,17 +16,20 @@ namespace Mento.Script.OpenAPI
         {
             string expectedResponseBody;
             string actualResponseBody;
+
             //string[] spliter = { "\r\n        ", "{\r\n            " };
             //string[] EBLine = expectedResponseBodyStr.Split(spliter, 0);
             //string[] ABLine = actualResponseBodyStr.Split(spliter, 0);
             //if (EBLine.Length > 6)
             //    expectedResponseBody = expectedResponseBodyStr;
             //else
-                expectedResponseBody = ConvertJson.String2Json(expectedResponseBodyStr);
+                //expectedResponseBody = ConvertJson.String2Json(expectedResponseBodyStr);
+                expectedResponseBody = expectedResponseBodyStr;
             //if (ABLine.Length > 6)
             //    actualResponseBody = actualResponseBodyStr;
             //else
-                actualResponseBody = ConvertJson.String2Json(actualResponseBodyStr);
+               // actualResponseBody = ConvertJson.String2Json(actualResponseBodyStr);
+                actualResponseBody = actualResponseBodyStr;
             
             CompareReport report = new CompareReport();
 
@@ -87,7 +91,6 @@ namespace Mento.Script.OpenAPI
 
             EnergyViewDataBody[] expectedData = EnergyViewDataDtoConvertor.GetEnergyViewDataDtoGroups(expectedResponseBody);
             EnergyViewDataBody[] actualData = EnergyViewDataDtoConvertor.GetEnergyViewDataDtoGroups(actualResponseBody);
-
 
             #region confirm if there is no data but structure only
             //format5-完全没有TargetEnergyData内容的情况，即response只是：TargetEnergyData[]
@@ -161,10 +164,10 @@ namespace Mento.Script.OpenAPI
             {
                 string headerInfo = "Header" + i.ToString() + "\n";
 
-                if (!String.Equals(expectedData[i].TargetEnergyData, actualData[i].TargetEnergyData))
+                if (!String.Equals(expectedData[i].EnergyViewDatas, actualData[i].EnergyViewDatas))
                 {
-                    st.Append(headerInfo  + "期望值：" + expectedData[i].TargetEnergyData + "\n");
-                    st.Append("实际值：" + actualData[i].TargetEnergyData + "\n"); 
+                    st.Append(headerInfo + "期望值：" + expectedData[i].EnergyViewDatas + "\n");
+                    st.Append("实际值：" + actualData[i].EnergyViewDatas + "\n"); 
                 }
             }
 
@@ -240,14 +243,14 @@ namespace Mento.Script.OpenAPI
 
             for (int i = 0; i < Cases.Length; i++)
             {
-                Console.Out.WriteLine(Cases[i].url);
-                Console.Out.WriteLine(Cases[i].requestBody);
-                Console.Out.WriteLine(Cases[i].expectedResponseBody);
-                Console.Out.WriteLine(Cases[i].actualResponseBody);
-                Console.Out.WriteLine("\n\n");
-
                 expectedStr = Cases[i].expectedResponseBody;
                 actualStr = Cases[i].actualResponseBody;
+
+                if (Cases[i].url.Contains("Aggregate") || Cases[i].url.Contains("Ranking") || Cases[i].requestBody.Contains("RankingType"))
+                {
+                    expectedStr = FilterStrings(expectedStr);
+                    actualStr = FilterStrings(actualStr);
+                }
 
                 report = CompareEnergyUseResponseBody(expectedStr, actualStr, out isOutResult);
                 if (true == isOutResult)
@@ -255,15 +258,26 @@ namespace Mento.Script.OpenAPI
                 else
                     Cases[i].result = "Fail:" + report.errorMessage;
                 Cases[i].resultReport = report.detailedInfo;
-                Console.Out.WriteLine(report.errorMessage);
-                Console.Out.WriteLine("\n\n");
-                Console.Out.WriteLine(report.detailedInfo);
-                Console.Out.WriteLine("\n\n");
             }
             return Cases;
         }
+
+        private static string FilterStrings(string body)
+        {
+            string filterResult = body;
+
+            if (Regex.IsMatch(body, @".LocalTime.\:..Date.\d+..."))
+            {
+                string tmp = Regex.Replace(body, @".LocalTime.\:..Date.\d+...", "");
+                filterResult = Regex.Replace(tmp, @"\r\n\s*\r\n", "\r\n");
+            }
+
+
+            return filterResult;
+        }
     }
 
+    
     public struct CompareReport
     {
         public string errorMessage;

@@ -3,9 +3,8 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingConvertStandardUOM"], ["NancyOtherCustomer3","NancyOtherSite","BuildingRanking50"]],
-			"commodityNames":["$@Commodity_DieselOil","$@Commodity_Electricity"],
-			"failedFileName":["F-CostRankingDataView004-1-Elec.xls","F-CostRankingDataView004-2-Elec.xls","F-CostRankingDataView004-3-Elec.xls","F-CostRankingDataView004-4-Elec.xls","F-CostRankingDataView004-5-Elec.xls","F-CostRankingDataView004-6-Elec.xls"],
-			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","$@SystemDimensionTemplateItem_HVAC"],
+			"commodityNames":["$@Commodity_DieselOil"],
+			"failedFileName":["F-CostRankingDataView004-1-Elec.xls"],
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-1-3",	
@@ -13,7 +12,7 @@
 		},
 		"ExpectedData":
 		{
-			"expectedFileName":["CostRankingDataView004-1-Elec.xls","CostRankingDataView004-2-Elec.xls","CostRankingDataView004-3-Elec.xls","CostRankingDataView004-4-Elec.xls","CostRankingDataView004-5-Elec.xls","CostRankingDataView004-6-Elec.xls"],
+			"expectedFileName":["CostRankingDataView004-1-Elec.xls"],
 		}
 	}
 ]

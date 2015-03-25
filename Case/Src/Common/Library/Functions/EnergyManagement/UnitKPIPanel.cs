@@ -201,9 +201,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void CheckTag(string tagName)
         {
             TagGrid.CheckRowCheckbox(2, tagName);
-
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.MediumPause();
         }
 
         public bool IsTagChecked(string tagName)
@@ -214,9 +211,6 @@ namespace Mento.ScriptCommon.Library.Functions
         public void UncheckTag(string tagName)
         {
             TagGrid.UncheckRowCheckbox(2, tagName);
-
-            JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.MediumPause();
         }
 
         public void CheckTags(string[] tagNames)
@@ -235,8 +229,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsCarbonSingleCommodityNotExisted()
         {
             UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
+            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
 
             return UnitCarbonCommodityGrid.IsNoRowOnGrid();
         }
@@ -251,13 +245,13 @@ namespace Mento.ScriptCommon.Library.Functions
             else //specified commodity
             {
                 UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
-                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.MediumPause();
+                //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.ShortPause();
 
                 foreach (var commodity in commodityNames)
                 {
                     UnitCarbonCommodityGrid.CheckRowCheckbox(2, commodity, false);
-                    JazzMessageBox.LoadingMask.WaitLoading();
+                    //JazzMessageBox.LoadingMask.WaitLoading();
                 }
             }
         }
@@ -266,23 +260,22 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             UnitCarbonTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
 
             UnitCarbonCommodityGrid.CheckRowCheckbox(2, commodity, false);
-            JazzMessageBox.LoadingMask.WaitLoading();
+            //JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         public void UnselectSingleCommodityUnitCarbon(string commodity)
         {
             UnitCarbonCommodityGrid.UncheckRowCheckbox(2, commodity, false);
-            JazzMessageBox.LoadingMask.WaitLoading();
+            //JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         public bool IsCostSingleCommodityNotExisted()
         {
             UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
+            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
 
             return UnitCostCommodityGrid.IsNoRowOnGrid();
         }
@@ -297,13 +290,13 @@ namespace Mento.ScriptCommon.Library.Functions
             else //specified commodity
             {
                 UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
-                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.MediumPause();
+                //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.ShortPause();
 
                 foreach (var commodity in commodityNames)
                 {
                     UnitCostCommodityGrid.CheckRowCheckbox(2, commodity, false);
-                    JazzMessageBox.LoadingMask.WaitLoading();
+                    //JazzMessageBox.LoadingMask.WaitLoading();
                 }
             }
         }
@@ -313,9 +306,8 @@ namespace Mento.ScriptCommon.Library.Functions
             //if (commodityNames == null || commodityNames.Length <= 0)
             //{
                 UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
-                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.MediumPause();
-            //}
+                //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.ShortPause();
             //else //specified commodity
             //{
             //    UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
@@ -334,10 +326,9 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             UnitCostTotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
 
             UnitCostCommodityGrid.CheckRowCheckbox(2, commodity, false);
-            JazzMessageBox.LoadingMask.WaitLoading();
+            //JazzMessageBox.LoadingMask.WaitLoading();
 
         }
 
@@ -345,7 +336,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void UnselectSingleCommodityUnitCost(string commodity)
         {
             UnitCostCommodityGrid.UncheckRowCheckbox(2, commodity, false);
-            JazzMessageBox.LoadingMask.WaitLoading();
+            //JazzMessageBox.LoadingMask.WaitLoading();
         }
 
 

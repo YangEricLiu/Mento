@@ -2,10 +2,9 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingNullTest"],["NancyOtherCustomer3","NancyNoCalendarSite"]],
+			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingNullTest"]],
 			"commodityNames":["$@Commodity_Electricity"],
 			"failedFileName":["F-ConsumptionRankingDataView006-1-Elec.xls"],
-			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","$@SystemDimensionTemplateItem_HVAC"],
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-1-7",	

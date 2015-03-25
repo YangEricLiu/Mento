@@ -54,7 +54,7 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.NavigateToRatio();
             TimeManager.MediumPause();
 
-            //Select the BuildingDayNight from Hierarchy Tree, select 昼夜比 option. Select DayNightP to view data
+            //Select the BuildingWorkNonwork from Hierarchy Tree, select 昼夜比 option. Select WorkNotworkP to view data
             RadioPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -66,7 +66,7 @@ namespace Mento.Script.EnergyView.Ratio
             EnergyViewToolbar.SelectRadioTypeConvertTarget(RadioTypeConvertTarget.WorkNonRadio);
             TimeManager.ShortPause();
 
-            //Time range 2012-12-30 to 2013-1-31
+            //Time range 2012-10-27 to 2013-2-10
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
 
@@ -120,6 +120,7 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
+            //2013-2-10 to 2013-6-21
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             TimeManager.ShortPause();
 
@@ -136,6 +137,7 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
+            //2012-9-21 to 2013-2-10
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
             TimeManager.ShortPause();
 

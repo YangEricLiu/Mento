@@ -382,7 +382,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
         public void CalcWaterPreDefinedTimeTotalConsumptionRanking(CorporateRankingData input)
         {
             //Select the NancyOtherCustomer3, select BuildingCostYearToDay from Hierarchy Tree.
-            //JazzFunction.HomePage.SelectCustomer("NancyCostCustomer3");
+            //JazzFunction.HomePage.SelectCustomer("NancyOtherCustomer3");
             //CorporateRanking.NavigateToCorporateRanking();
             TimeManager.MediumPause();
             CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[0]);

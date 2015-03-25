@@ -55,7 +55,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             IndustryLabellingPanel.NavigateToIndustryLabelling();
             TimeManager.MediumPause();
             
-            //Go to Labeling. Labellingtag1, select Unit=昼夜比 行业&区域=夏热冬暖酒店三星级行业;time range=2012/10 to view chart.  
+            //Go to Labeling. Labellingtag1, select Unit=工休比 行业&区域=夏热冬暖酒店三星级行业;time range=2012/10 to view chart.  
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();

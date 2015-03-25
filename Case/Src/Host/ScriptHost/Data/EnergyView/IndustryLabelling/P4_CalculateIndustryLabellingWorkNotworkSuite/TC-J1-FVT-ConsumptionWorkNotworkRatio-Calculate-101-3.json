@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling19"], ["NancyOtherCustomer3", "BuildingRanking3"]],
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling19"], ["NancyOtherCustomer3", "NancyOtherSite","BuildingRanking3"]],
 			"TagNames":["Labellingtag19", "Rankingtag3"],
 			"UnitTypeValue":"$@EM.WorkHolidayRatio",
 			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Subtropical_Region$@Industry_Hotel_Three_stat"], ["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Extreme_Cold_Region_A$@Industry_Hotel_Five_stat"]],

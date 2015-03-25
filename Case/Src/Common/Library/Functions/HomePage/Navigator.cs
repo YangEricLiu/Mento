@@ -29,12 +29,11 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 //JazzMessageBox.LoadingMask.WaitLoading();
                 //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                //TimeManager.MediumPause();
                 pathButtons[i].Click();
 
                 //JazzMessageBox.LoadingMask.WaitLoading();
                 //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.MediumPause();
+                TimeManager.FlashPause();
             }
         }
 

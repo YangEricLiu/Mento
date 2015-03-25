@@ -3,7 +3,7 @@
 		"InputData":
 		{
 			"Hierarchies":[["NancyCostCustomer2","组织A","园区A"]],
-			"commodityNames":["$@Commodity_Electricity","$@Commodity_Water","$@Commodity_Coal","$@EM.TotalCommodity"],
+			"commodityNames":["$@Commodity_Electricity", "$@EM.TotalCommodity"],
 			"failedFileName":["F-TC-J1-FVT-CostRanking-Calculate-101-5-Elec-AverageRank-Custom.xls","F-TC-J1-FVT-CostRanking-Calculate-101-5-Total-AverageRank-Custom.xls","F-TC-J1-FVT-CostRanking-Calculate-101-5-Total-TotalRank-Custom-Month.xls","F-TC-J1-FVT-CostRanking-Calculate-101-5-Total-AverageRank-Custom-Month.xls"],
 			"ManualTimeRange":[
 			{

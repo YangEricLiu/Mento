@@ -10,7 +10,7 @@ namespace Mento.Script.OpenAPI
 {
     public class CompareTxtFiles
     {
-        private static string reportSignals = "\r\n================================================================================\r\n";
+        private static string reportSignals = "\r\n=========\r\n";
         private static string addString = reportSignals + "Lines added at ";
         private static string deleteString = reportSignals + "Lines deleted at ";
         private static string replaceString = reportSignals + "Lines replaced at ";

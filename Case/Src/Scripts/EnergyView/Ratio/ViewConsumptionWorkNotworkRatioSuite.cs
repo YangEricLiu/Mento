@@ -199,7 +199,7 @@ namespace Mento.Script.EnergyView.Ratio
             //· Check 3 tags at most
             Assert.IsTrue(RadioPanel.IsAllTagsDisabled());
 
-            //Select the BuildingWorkNonwork from Hierarchy Tree, select 公休比 option. Select WorkNotworkP, 行业基准值=严寒地区B区地区办公建筑行业 to view chart.
+            //Select the BuildingNullTest from Hierarchy Tree, select 公休比 option. Select NullTestTag1
             RadioPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -228,7 +228,7 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
 
-            //Go to NancyCustomer1, select BuildingBAD which is not define calendar. Select V(11), 行业基准值=夏热冬暖地区轨学校行业 to display 公休比.
+            //Go to NancyCustomer1, select GreenieBuilding which is not define calendar. Select V(11), 行业基准值=夏热冬暖地区轨学校行业 to display 公休比.
             HomePagePanel.SelectCustomer("NancyCustomer1");
             TimeManager.ShortPause();
 

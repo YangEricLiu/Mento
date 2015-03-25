@@ -134,7 +134,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[0]);
 
-            //time 2014-01
+            //time 2013-10
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
             EnergyViewToolbar.ClickViewButton();
@@ -187,7 +187,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             labellingInfo1 = IndustryLabellingPanel.GetMultiLabellingInfo(input.InputData.MultipleHierarchyAndtags, input.InputData.YearAndMonth[1], input.InputData.Industries[1][1], input.ExpectedData.UnitTypeValue);
             IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[3], labellingInfo1);
          
-            //Go to widget maximize view. Change time range to 2012 全年.
+            //Go to widget maximize view. Change time range to 2013 全年.
             EnergyAnalysis.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
             TimeManager.MediumPause();
@@ -241,7 +241,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[0]);
 
-            //time 2014-01
+            //time 2013-10
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
             EnergyViewToolbar.ClickViewButton();

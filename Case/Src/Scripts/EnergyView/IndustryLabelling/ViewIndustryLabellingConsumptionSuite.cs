@@ -135,6 +135,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.LongPause();
 
+            //寒冷地区全行业
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[0]);
 
             //time 2014-12

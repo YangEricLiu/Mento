@@ -126,7 +126,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
 
-            //time 2013-01
+            //time 2013-10
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
 
@@ -252,7 +252,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             EnergyViewToolbar.SelectLabellingIndustryConvertTarget(input.InputData.Industries[1]);
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValue);
 
-            //time 2012/10 
+            //time 2013/01 
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
 

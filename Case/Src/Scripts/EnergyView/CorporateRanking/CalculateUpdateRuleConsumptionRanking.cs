@@ -151,7 +151,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.NavigateToCorporateRanking();
             TimeManager.MediumPause();
 
-            //Go to NancyCostCustomer2->楼宇D/园区C/楼宇A/楼宇D空调， Unit=总排名， select time range to Data View. 
+            //Go to NancyCostCustomer2->园区C/楼宇A/楼宇D空调， Unit=总排名， select time range to Data View. 
             CorporateRanking.ClickSelectHierarchyButton();
             CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[0]);
             CorporateRanking.OnlyCheckHierarchyNode(input.InputData.Hierarchies[1]);

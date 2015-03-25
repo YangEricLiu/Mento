@@ -436,7 +436,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
 
             //2.Change to 总览 to display Data view.
-            CorporateRanking.SelectCommodity(input.InputData.commodityNames[1]);
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[3]);
 
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();

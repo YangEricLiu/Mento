@@ -62,7 +62,7 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.CheckTag(input.InputData.tagNames[0]);
             TimeManager.ShortPause();
 
-            //Verify the calculation result of 行业基准值=全区域全行业.
+            //Verify the calculation result of 行业基准值=严寒地区B区酒店四星级
             EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[0]);
 
             //Time range 2013-1-1 to 2013-12-1
@@ -124,7 +124,7 @@ namespace Mento.Script.EnergyView.Ratio
             EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[0]);
             TimeManager.ShortPause();
 
-            //Time range 2012-10-1 to 2013-4-1
+            //Time range 2012-9-11 to 2013-4-21
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();

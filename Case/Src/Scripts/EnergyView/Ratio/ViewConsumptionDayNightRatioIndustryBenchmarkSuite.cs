@@ -47,30 +47,27 @@ namespace Mento.Script.EnergyView.Ratio
         [MultipleTestDataSource(typeof(RatioData[]), typeof(ViewConsumptionDayNightRatioIndustryBenchmarkSuite), "TC-J1-FVT-ConsumptionDayNightRatioIndustryBenchmark-View-101-1")]
         public void ViewConsumptionDayNightRatioIndustryBenchmark01(RatioData input)
         {
-            //Go to NancyOtherCustomer3. Go to Function Go to Energy Ratio Indicator. 
+            //1. Go to NancyOtherCustomer3. 
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
-            TimeManager.ShortPause();
 
+            //2. Go to Function Go to Energy Ratio Indicator. 
             RadioPanel.NavigateToRatio();
-            TimeManager.MediumPause();
 
-            //Select the BuildingDayNight from Hierarchy Tree, select 昼夜比 option. Select 行业基准值=严寒地区B区地区数据中心行业. Select DayNightP to view chart.
+            //3. Select the "BuildingDayNight", 昼夜比(default).
             RadioPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
 
+            //4. Select "DayNightP"
             RadioPanel.CheckTag(input.InputData.tagNames[0]);
-            TimeManager.ShortPause();
 
+            //5. Select 行业基准值=严寒地区B区地区数据中心行业
             EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[0]);
-            TimeManager.ShortPause();
-
-            //Change different time range, 
-            //2013/07/01-2013/07/03 day
+            
+            //6. Change different time range, 
+            //a. 2013/07/01-2013/07/03 day
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
 
+            //data view
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -84,14 +81,17 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
+            //7. save to dashboard
+            //BuildingDayNight, DayNightRatioBenchView1011->DayNightRatioBenchView1011_1
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
             TimeManager.LongPause();
 
-            //2013/09/10-2013/11/05 week
+            //b. 2013/09/10-2013/11/05 week
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
 
+            //data view
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -105,10 +105,11 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-            //2013/01/01-2013/12/31 Month
+            //c. 2013/01/01-2013/12/31 Month
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             TimeManager.ShortPause();
 
+            //data view
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -122,14 +123,16 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
+            //7. save to dashboard
+            //BuildingDayNight, DayNightRatioBenchView1011->DayNightRatioBenchView1011_2
             EnergyViewToolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
             TimeManager.LongPause();
 
-
-            //2011/01/01-2013/12/31 year
+            //d. 2011/01/01-2013/12/31 year
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
             TimeManager.ShortPause();
 
+            //data view
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -143,9 +146,10 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
+            //7. save to dashboard
+            //BuildingDayNight, DayNightRatioBenchView1011->DayNightRatioBenchView1011_2
             EnergyViewToolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
             TimeManager.LongPause();
-
         }
 
         [Test]
@@ -153,51 +157,46 @@ namespace Mento.Script.EnergyView.Ratio
         [MultipleTestDataSource(typeof(RatioData[]), typeof(ViewConsumptionDayNightRatioIndustryBenchmarkSuite), "TC-J1-FVT-ConsumptionDayNightRatioIndustryBenchmark-View-101-2")]
         public void ViewConsumptionDayNightRatioIndustryBenchmark02(RatioData input)
         {
-            //Go to NancyOtherCustomer3. Go to Function Go to Energy Ratio Indicator. 
+            //1. Go to NancyOtherCustomer
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
-            TimeManager.ShortPause();
 
+            //2. Go to Function Go to Energy Ratio Indicator
             RadioPanel.NavigateToRatio();
-            TimeManager.MediumPause();
 
-            //Select the BuildingCostYearToDay from Hierarchy Tree, select 昼夜比 option. Select 行业基准值=夏热冬冷地区轨道交通行业. Select P1_YearToDay+V1_YearToDay+V2_YearToDay to view chart.
+            //3. Select the "BuildingCostYearToDay" 昼夜比(default)
             RadioPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
 
+            //4. Select P1_YearToDay+V1_YearToDay+V2_YearToDay to view chart.
             RadioPanel.CheckTag(input.InputData.tagNames[0]);
             RadioPanel.CheckTag(input.InputData.tagNames[1]);
             RadioPanel.CheckTag(input.InputData.tagNames[2]);
-            TimeManager.ShortPause();
 
-            EnergyViewToolbar.ClickViewButton();
-            TimeManager.LongPause();
+            EnergyViewToolbar.ClickViewButton();         
             TimeManager.LongPause();
 
+            //5. Messagebox popup, default is 7 days, not support "month" step
             Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
             JazzWindow.WindowMessageInfos.Quit();
             TimeManager.ShortPause();
 
+            //6. All tags auto un-selected
             Assert.IsFalse(RadioPanel.IsTagChecked(input.InputData.tagNames[0]));
             Assert.IsFalse(RadioPanel.IsTagChecked(input.InputData.tagNames[1]));
             Assert.IsFalse(RadioPanel.IsTagChecked(input.InputData.tagNames[2]));
             Assert.IsTrue(RadioPanel.EntirelyNoChartDrawn());
 
-            //Select the BuildingWorkNonwork from Hierarchy Tree, select 昼夜比 option. Select WorkNotworkP, 行业基准值=严寒地区B区地区办公建筑 to view chart.
+            //7. Select the "BuildingWorkNonwork" from Hierarchy Tree, 昼夜比(default). 
             RadioPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
 
+            //8. Select "WorkNotworkP"
             RadioPanel.CheckTag(input.InputData.tagNames[4]);
-            TimeManager.ShortPause();
 
+            //9. 行业基准值=严寒地区B区地区办公建筑 to view chart.
             EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[1]);
-            TimeManager.ShortPause();
 
-            //Select time range 2013/01/01 to 2013/01/07; Optional step=Day.
+            //10. Select time range 2013/01/01 to 2013/01/07; Optional step=Day.
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();

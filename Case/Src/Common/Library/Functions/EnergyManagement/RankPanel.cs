@@ -102,12 +102,10 @@ namespace Mento.ScriptCommon.Library.Functions
             try
             {
                 SelectHierarchyButton.Click();
-                TimeManager.LongPause();
-                HierarchyTree.ExpandNodePath(hierarchyNames);
-                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.MediumPause();
-                HierarchyTree.CheckNode(hierarchyNames.Last());
                 TimeManager.ShortPause();
+                HierarchyTree.ExpandNodePath(hierarchyNames);
+                TimeManager.ShortPause();
+                HierarchyTree.CheckNode(hierarchyNames.Last());
                 return true;
             }
             catch (Exception)
@@ -119,10 +117,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public void OnlyCheckHierarchyNode(string[] hierarchyNames)
         {
             HierarchyTree.ExpandNodePath(hierarchyNames);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-            HierarchyTree.CheckNode(hierarchyNames.Last());
             TimeManager.ShortPause();
+            HierarchyTree.CheckNode(hierarchyNames.Last());
         }
 
         public Boolean UnCheckHierarchyNode(string[] hierarchyNames)
@@ -130,8 +126,7 @@ namespace Mento.ScriptCommon.Library.Functions
             try
             {
                 SelectHierarchyButton.Click();
-                //if(JazzCheckBox.UserDataAllHierarchyNodeCheckBoxField.IsChecked())
-                TimeManager.LongPause();
+                TimeManager.ShortPause();
                 HierarchyTree.ExpandNodePath(hierarchyNames);
                 HierarchyTree.CheckNode(hierarchyNames.Last());
                 return true;
@@ -146,8 +141,6 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             try
             {
-                //if(JazzCheckBox.UserDataAllHierarchyNodeCheckBoxField.IsChecked())
-                TimeManager.LongPause();
                 HierarchyTree.ExpandNodePath(hierarchyNames);
                 HierarchyTree.UncheckNode(hierarchyNames.Last());
                 return true;
@@ -231,13 +224,13 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectCommodity(string commodityName)
         {
             CommodityRank.CheckRowCheckbox(2, commodityName, false);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
         }
 
         public void SelectSystemCommodity(string commodityName)
         {
             SystemCommodityRank.CheckRowCheckbox(2, commodityName, false);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
         }
         /*
         public void SelectCommodityCarbon(string commodityName)

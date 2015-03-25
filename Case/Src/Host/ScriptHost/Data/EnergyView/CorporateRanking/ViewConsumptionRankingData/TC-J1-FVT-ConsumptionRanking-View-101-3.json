@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingRankin10"],["NancyOtherCustomer3","NancyOtherSite","BuildingMultipleSteps"],["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"]],
+			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingRanking10"],["NancyOtherCustomer3","NancyOtherSite","BuildingMultipleSteps"],["NancyOtherCustomer3","NancyOtherSite","BuildingCostYearToDay"]],
 			"commodityNames":["$@Commodity_Electricity","$@Commodity_Coal"],
 			"failedFileName":["F-TC-J1-FVT-ConsumptionRanking-View-101-3-1-Elec-TotalRank-Custom-2012.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-3-2-Elec-AverageRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-3-3-Elec-TotalRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-3-4-Coal-TotalRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-3-5-Elec-TotalRank-Custom.xls","F-TC-J1-FVT-ConsumptionRanking-View-101-3-6-Elec-TotalRank-Custom.xls"],
 			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","$@SystemDimensionTemplateItem_HVAC"],

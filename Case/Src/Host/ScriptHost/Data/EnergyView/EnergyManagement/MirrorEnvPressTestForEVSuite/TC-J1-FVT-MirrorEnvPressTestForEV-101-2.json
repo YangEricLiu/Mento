@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["HM 中国", "Area01", "CN0101"],
+			"commodityNames":["$@Commodity_Electricity"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"Hierarchies":["HM 中国", "Area20", "CN0140"],
+			"commodityNames":["$@Commodity_Electricity"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

@@ -106,13 +106,13 @@ namespace Mento.ScriptCommon.Library.Functions
             else //specified commodity
             {
                 TotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
-                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.MediumPause();
+                //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.ShortPause();
 
                 foreach (var commodity in commodityNames)
                 {
                     CommodityGrid.CheckRowCheckbox(2, commodity, false);
-                    JazzMessageBox.LoadingMask.WaitLoading();
+                    //JazzMessageBox.LoadingMask.WaitLoading();
                 }
             }
         }
@@ -128,10 +128,9 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 TotalCommotidyGrid.CheckRowCheckbox(2, "$@EM.SingleCommodity", false);
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.MediumPause();
 
                 CommodityGrid.CheckRowCheckbox(2, commodityNames, false);
-                JazzMessageBox.LoadingMask.WaitLoading();
+                //JazzMessageBox.LoadingMask.WaitLoading();
             }
         }
 
@@ -145,13 +144,13 @@ namespace Mento.ScriptCommon.Library.Functions
             else //specified commodity
             {
                 TotalCommotidyGrid.UncheckRowCheckbox(2, "$@EM.SingleCommodity", false);
-                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.MediumPause();
+                //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.ShortPause();
 
                 foreach (var commodity in commodityNames)
                 {
                     CommodityGrid.UncheckRowCheckbox(2, commodity, false);
-                    JazzMessageBox.LoadingMask.WaitLoading();
+                    //JazzMessageBox.LoadingMask.WaitLoading();
                 }
             }
         }
@@ -166,11 +165,11 @@ namespace Mento.ScriptCommon.Library.Functions
             else //specified commodity
             {
                 TotalCommotidyGrid.UncheckRowCheckbox(2, "$@EM.SingleCommodity", false);
-                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-                TimeManager.MediumPause();
+                //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                TimeManager.ShortPause();
 
                 CommodityGrid.UncheckRowCheckbox(2, commodityNames, false);
-                JazzMessageBox.LoadingMask.WaitLoading();
+                //JazzMessageBox.LoadingMask.WaitLoading();
             }
         }
 

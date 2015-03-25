@@ -172,6 +172,8 @@ namespace Mento.Script.EnergyView.CorporateRanking
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
 
+            EnergyViewToolbar.SelectRankTypeConvertTarget(RankTypeConvertTarget.AverageRank);
+
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
@@ -212,7 +214,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
             TimeManager.LongPause();
             CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
 
-            //Time range="2010/01/01-2012/12/31 to view data.
+            //Time range="2012/01/01-2012/12/31 to view data.
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
@@ -309,34 +311,6 @@ namespace Mento.Script.EnergyView.CorporateRanking
             CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
             TimeManager.LongPause();
             TimeManager.LongPause();
-            
-            //Check 1 more the BuildingNoCalendarNoCost from Hierarchy Tree,
-            CorporateRanking.CheckHierarchyNode(input.InputData.Hierarchies[2]);
-            CorporateRanking.ClickConfirmHiearchyButton();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-            //@@@@@@@@@@@@@@@@@@@@@@@No 冷量
-            /*
-            //. Commodity selection list display 1 more commodity=冷量.
-            Assert.IsTrue(CorporateRanking.IsCommodityExist(input.InputData.commodityNames[4]));
-            //Commodity="冷量", click to view chart.
-            CorporateRanking.SelectCommodity(input.InputData.commodityNames[4]);
-            EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-            //·No warning message and ranking chart display the blank chart .since that 冷量 not define Carbon factor
-            Assert.IsFalse(CorporateRanking.IsNoDataInEnergyGrid());
-            CorporateRanking.ExportRankingExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5]);
-            TimeManager.MediumPause();
-            CorporateRanking.CompareDataViewOfCostUsage(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-             */
         }
 
         [Test]

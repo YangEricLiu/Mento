@@ -27,62 +27,107 @@ namespace Mento.Script.OpenAPI
 
             if (targetEnergyDataArrays.Count == 0)
             {
-                return null; 
+                return null;
             }
 
             var evd = new List<EnergyViewDataBody>();
             EnergyViewDataBody tmpevd = new EnergyViewDataBody();
 
-            for (int i = 0; i < targetEnergyDataArrays.Count; i++)
+            if (targetEnergyDataArrays.GetType() == typeof(Newtonsoft.Json.Linq.JArray))
             {
-                JObject data = (JObject)targetEnergyDataArrays[i];
-
-                JArray tedata = (JArray)data["TargetEnergyData"];
-
-                if (tedata.Count == 0)
+                if (!sourceOrginal.Contains("TargetEnergyData"))
                 {
-                    return null;
+                    for (int i = 0; i < targetEnergyDataArrays.Count; i++)
+                    {
+                        JObject data = (JObject)targetEnergyDataArrays[i];
+
+                        tmpevd.EnergyViewDatas = data.ToString();
+                    }
                 }
+                else
+                {              
+                    for (int i = 0; i < targetEnergyDataArrays.Count; i++)
+                    {
+                        JObject data = (JObject)targetEnergyDataArrays[i];
 
-                JObject target = (JObject)tedata[0]["Target"];
+                        JArray tedata = (JArray)data["TargetEnergyData"];
 
-                tmpevd.EnergyViewDatas = data.ToString();
-                tmpevd.TargetEnergyData = tedata.ToString();
-                tmpevd.EnergyData = tedata[0]["EnergyData"].ToString();
-                tmpevd.Target = target.ToString();
-                tmpevd.Name = target["Name"].ToString();
-                tmpevd.Type = target["Type"].ToString();
-                tmpevd.TimeSpan = target["TimeSpan"].ToString();
+                        if (tedata.Count == 0)
+                        {
+                            return null;
+                        }
 
+                        //JObject target = (JObject)tedata[0]["Target"];
+
+                        tmpevd.EnergyViewDatas = data.ToString();
+
+                        tmpevd.TargetEnergyData = tedata.ToString();
+                        tmpevd.EnergyData = tedata[0]["EnergyData"].ToString();
+                        //tmpevd.Target = target.ToString();
+                        //tmpevd.Name = target["Name"].ToString();
+                        //tmpevd.Type = target["Type"].ToString();
+                        //tmpevd.TimeSpan = target["TimeSpan"].ToString();
+                        evd.Add(tmpevd);
+                    }
+                }
+            }
+            else if (targetEnergyDataArrays.GetType() == typeof(Newtonsoft.Json.Linq.JObject))
+            {
+                JObject targetEnergyDataObject = JsonHelper.Deserialize2Object(sourceOrginal);
+
+                tmpevd.EnergyViewDatas = targetEnergyDataObject.ToString();
+
+                JArray tedata2 = (JArray)targetEnergyDataObject["TargetEnergyData"];
+                //JObject target2 = (JObject)tedata2[0]["Target"];
+
+
+                tmpevd.TargetEnergyData = tedata2.ToString();
+                tmpevd.EnergyData = tedata2[0]["EnergyData"].ToString();
+                //tmpevd.Target = target2.ToString();
+                //tmpevd.Name = target2["Name"].ToString();
+                //tmpevd.Type = target2["Type"].ToString();
+                //tmpevd.TimeSpan = target2["TimeSpan"].ToString();
                 evd.Add(tmpevd);
             }
-
+            
             return evd.ToArray();
         }
-
+        
         public static string GetEnergyViewDataWithLocalTime(string sourceOrginal)
         {
             dynamic targetEnergyDataArrays = JsonHelper.Deserialize2Array(sourceOrginal);
             StringBuilder evd = new StringBuilder();
-            string other = "," + "\n";
-            evd.Append("[" + "\n");
-
-            for (int i = 0; i < targetEnergyDataArrays.Count; i++)
+            string datas = "";
+    
+            if (targetEnergyDataArrays.GetType() == typeof(Newtonsoft.Json.Linq.JObject))
             {
-                JObject data = (JObject)targetEnergyDataArrays[i];
-                if (i != (targetEnergyDataArrays.Count - 1))
+                JObject targetEnergyDataObject = JsonHelper.Deserialize2Object(sourceOrginal);
+                evd.Append(targetEnergyDataObject.ToString());
+                datas = evd.ToString();
+            }
+            else if (targetEnergyDataArrays.GetType() == typeof(Newtonsoft.Json.Linq.JArray))
+            {
+                string other = "," + "\n";
+                evd.Append("[" + "\n");
+
+                for (int i = 0; i < targetEnergyDataArrays.Count; i++)
                 {
-                    evd.Append(data.ToString() + other);
+                    JObject data = (JObject)targetEnergyDataArrays[i];
+                    if (i != (targetEnergyDataArrays.Count - 1))
+                    {
+                        evd.Append(data.ToString() + other);
+                    }
+                    else
+                    {
+                        evd.Append(data.ToString());
+                    }
                 }
-                else
-                {
-                    evd.Append(data.ToString());
-                }
+
+                evd.Append("\n" + "]");
+                datas = evd.ToString();
             }
 
-            evd.Append("\n" + "]");
-
-            return evd.ToString();
-        }
+            return datas;
+        }    
     }
 }

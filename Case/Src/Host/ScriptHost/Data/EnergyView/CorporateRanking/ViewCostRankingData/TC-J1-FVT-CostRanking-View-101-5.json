@@ -5,7 +5,6 @@
 			"Hierarchies":[["NancyOtherCustomer3","NancyOtherSite","BuildingNullTest"]],
 			"commodityNames":["$@Commodity_Electricity"],
 			"failedFileName":["F-CostRankingDataView005-1-Elec.xls","F-CostRankingDataView005-2-Elec.xls"],
-			"SystemDimensionPath":["$@Common.Glossary.SystemDimension","$@SystemDimensionTemplateItem_HVAC"],
 			"ManualTimeRange":[{
 				"StartDate":"2013-1-1",
 				"EndDate":"2013-1-7",	

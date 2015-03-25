@@ -204,7 +204,7 @@ namespace Mento.Script.EnergyView.Ratio
             EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[1]);
             TimeManager.ShortPause();
 
-            //Select time range 2013/01/01 to 2013/02/07; Optional step=Day.
+            //Select time range 2013/01/01 to 2013/02/07; Optional step=week.
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
             TimeManager.ShortPause();
@@ -264,6 +264,7 @@ namespace Mento.Script.EnergyView.Ratio
             EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[1]);
             TimeManager.ShortPause();
 
+            //Select time range 2013/01/01 to 2013/04/28; Optional step=Week.
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
 
@@ -297,6 +298,7 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.CheckTag(input.InputData.tagNames[3]);
             TimeManager.ShortPause();
 
+            //Select time range 2013/01/01 to 2013/04/28; Optional step=Week.
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
 
             EnergyViewToolbar.ClickViewButton();

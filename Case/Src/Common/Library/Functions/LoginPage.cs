@@ -164,7 +164,7 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzTextField.LoginPasswordTextField.Fill(passWord);
 
             JazzButton.LoginSubmitButton.Click();
-            TimeManager.Pause(WAITVERYLONGTIME);
+            //TimeManager.Pause(WAITVERYLONGTIME);
 
             if (String.IsNullOrEmpty(customerName))
             {
@@ -176,22 +176,17 @@ namespace Mento.ScriptCommon.Library.Functions
                     }
                 }
 
-                TimeManager.ShortPause();
-
-                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
-                TimeManager.MediumPause();
+                ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 5);
             }
             else
             {
-                ElementHandler.Wait(OptionWindowLocator, WaitType.ToAppear, timeout: 300);
-                TimeManager.MediumPause();
+                ElementHandler.Wait(OptionWindowLocator, WaitType.ToAppear, timeout: 30);
 
                 if (ElementHandler.Exists(OptionWindowLocator))
                 {
                     LoginCustomerOption.SelectItem(customerName);
                     TimeManager.ShortPause();
                     LoginCustomerOptionConfirm.Click();
-                    TimeManager.Pause(5000);
 
                     if (JazzMessageBox.MessageBox.Exists())
                     {
@@ -200,11 +195,7 @@ namespace Mento.ScriptCommon.Library.Functions
                             JazzMessageBox.MessageBox.OK();
                         }
                     }
-
-                    TimeManager.ShortPause();
-
-                    ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
-                    TimeManager.MediumPause();
+                    ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 5);
                 }
                 else
                 {

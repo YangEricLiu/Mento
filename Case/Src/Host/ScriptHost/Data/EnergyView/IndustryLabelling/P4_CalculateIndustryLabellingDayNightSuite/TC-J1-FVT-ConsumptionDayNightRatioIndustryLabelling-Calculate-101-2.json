@@ -2,8 +2,8 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling11"], ["NancyOtherCustomer3", "Site", "BuildingRanking1"]],
-			"TagNames":["Labellingtag11", "RankingtagbenchmarkWater"],
+			"Hierarchies":[["NancyOtherCustomer3", "园区能耗标识", "BuildingLabelling11"], ["NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1"]],
+			"TagNames":["Labellingtag11", "Rankingtag1"],
 			"UnitTypeValue":"$@Common.Glossary.DayNightRatio",
 			"Industries":[["$@Setting.Labeling.Label.IndustryLabeling", "$@Zone_Subtropical_Region$@Industry_Hotel_Three_stat"], ["$@Setting.Labeling.Label.IndustryLabeling", "$@Setting.Benchmark.Zone.ColdA$@Industry_Hotel_Four_star"]],
 			"YearAndMonth":[{

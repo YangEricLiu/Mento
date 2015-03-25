@@ -264,7 +264,11 @@ namespace Mento.ScriptCommon.Library.Functions
             try
             {
                 SelectHierarchyButton.Click();
+                TimeManager.ShortPause();
                 HierarchyTree.SelectNode(hierarchyNames);
+
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+
                 return true;
             }
             catch (Exception)
@@ -1091,5 +1095,5 @@ namespace Mento.ScriptCommon.Library.Functions
     }
 
     public enum TagTabs { HierarchyTag, SystemDimensionTab, AreaDimensionTab, }
-    public enum DisplayStep { Min, Hour, Day, Week, Month, Year, Default}
+    public enum DisplayStep { Min, Hour, Day, Week, Month, Year, Default,Raw}
 }

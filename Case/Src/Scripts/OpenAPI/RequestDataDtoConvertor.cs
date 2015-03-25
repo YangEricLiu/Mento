@@ -9,6 +9,7 @@ using Mento.Utility;
 using System.Security.Cryptography;
 using System.Net;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Mento.Script.OpenAPI
 {
@@ -20,6 +21,9 @@ namespace Mento.Script.OpenAPI
         public string TimeRanges;
         public string ValueOptions;
         public string TagCodes;
+        public string DataOption;
+        public string step;
+        public string ProcessPrecision;
     }
 
     public class RequestDataDtoConvertor
@@ -51,12 +55,14 @@ namespace Mento.Script.OpenAPI
             byte[] ciphertext;
 
             string requestBody = "";
+
             for (int i = 0; i < Cases.Length; i++)
             {
                 requestBody = Cases[i].requestBody;
-                Console.Out.WriteLine(Cases[i].url);
-                Console.Out.WriteLine(Cases[i].requestBody);
-                Console.Out.WriteLine("\n\n");
+
+                string jsonFormatRequestBody = ConvertJson.String2Json(requestBody);
+                string jsonAndLocalTimeFormatRequestBody = EnergyViewDataDtoConvertor.GetEnergyViewDataWithLocalTime(jsonFormatRequestBody);
+                Cases[i].formatRequestBody = jsonAndLocalTimeFormatRequestBody;
 
                 WebRequest request = HttpWebRequest.Create(Cases[i].url);
                 request.ContentType = "application/json";
@@ -77,21 +83,24 @@ namespace Mento.Script.OpenAPI
                     {
                         using (var sr = new StreamReader(responseStream, Encoding.UTF8))
                         {
-                            string outString = ConvertJson.String2Json(sr.ReadToEnd().ToString());
+                            string jsonFormatResponseBody = ConvertJson.String2Json(sr.ReadToEnd().ToString());                            
+                            string jsonAndLocalTimeFormatResponseBody = EnergyViewDataDtoConvertor.GetEnergyViewDataWithLocalTime(jsonFormatResponseBody);
+                            
                             //response body save to expectedResponseBody when update cases
                             if (true == flagUpdate)
-                                Cases[i].expectedResponseBody = outString;
+                            {
+                                Cases[i].expectedResponseBody = jsonFormatResponseBody;
+                                Cases[i].formatExpectedResponseBody= jsonAndLocalTimeFormatResponseBody;
+                            }
                             else
-                                Cases[i].actualResponseBody = outString;
+                            {
+                                Cases[i].actualResponseBody = jsonFormatResponseBody;
+                                Cases[i].formatActualResponseBody = jsonAndLocalTimeFormatResponseBody;
+
+                            }            
                         }
                     }
                 }
-                //Console.Out.WriteLine("\n\n");
-                //Console.Out.WriteLine("!!!!!!!!!!!!ResponseBody!!!!!!!!!!!!!!!!!!!!");
-                //Console.Out.WriteLine(Cases[i].actualResponseBody);
-                //Console.Out.WriteLine("!!!!!!!!!!!!ResponseBody!!!!!!!!!!!!!!!!!!!!");
-                //Console.Out.WriteLine("\n\n");
-
             }
             return Cases;
         }

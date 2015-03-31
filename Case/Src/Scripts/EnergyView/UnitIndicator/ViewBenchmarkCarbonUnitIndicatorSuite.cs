@@ -131,7 +131,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
-            Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
+            //Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
 
             //Change different time range, 楼宇B
             //a. 2012/07/01 3:30-2012/07/01 15:30 hour

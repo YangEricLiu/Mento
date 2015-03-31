@@ -140,10 +140,14 @@ namespace Mento.Script.EnergyView.CarbonUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //"Raw"
-            CarbonUsage.ClickDisplayStep(DisplayStep.Min);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
+            //"Minute"
+            //楼宇B和园区A总览不支持分钟步长
+            if(input.InputData.Hierarchies.Contains("楼宇A"))
+            { 
+                CarbonUsage.ClickDisplayStep(DisplayStep.Min);           
+                JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+                TimeManager.MediumPause();
+            }
 
             //Check value
             CarbonUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);

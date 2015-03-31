@@ -197,7 +197,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
+            //Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
             //back to "多层级数据点", the hierarchy button is display "请选择层级结构"
             EnergyAnalysis.ClickMultipleHierarchyAddTagsButton();

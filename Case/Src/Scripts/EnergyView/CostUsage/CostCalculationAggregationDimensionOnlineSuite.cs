@@ -269,7 +269,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            CostUsage.SelectCommodity(input.InputData.commodityNames[0]);
+            CostUsage.SelectCommodity(input.InputData.commodityNames[1]);
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();

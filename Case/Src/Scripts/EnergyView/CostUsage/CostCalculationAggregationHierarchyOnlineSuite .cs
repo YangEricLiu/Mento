@@ -123,7 +123,7 @@ namespace Mento.Script.EnergyView.CostUsage
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //"Raw"
+            //"Min"
             CostUsage.ClickDisplayStep(DisplayStep.Min);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
@@ -137,12 +137,20 @@ namespace Mento.Script.EnergyView.CostUsage
             CostUsage.SelectCommodity();
             TimeManager.ShortPause();
 
-            EnergyViewToolbar.ClickViewButton();
+            //"Min"
+            //Water do not support min step for BuildingB and SiteA
+            //if(input.InputData.Hierarchies.Contains("楼宇A"))
+            //{
+            CostUsage.ClickDisplayStep(DisplayStep.Min);
+            //}
+            //else
+            //{
+            //    CostUsage.ClickDisplayStep(DisplayStep.Hour);
+            //}
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //"Raw"
-            CostUsage.ClickDisplayStep(DisplayStep.Min);
+            EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 

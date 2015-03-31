@@ -161,7 +161,8 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
-            for (int i = 0; i < input.InputData.WorkdayRuleRecordNumber; i++)
+            //for (int i = 0; i < input.InputData.WorkdayRuleRecordNumber; i++)
+            for (int i = 0; i < 1; i++)//There is only one time
             {
                 Assert.AreEqual(input.ExpectedData.WorkdayRuleEndTime[i], PVtagTargetBaselineSettings.GetWorkdayEndtimeValue(i + 1));
                 Assert.AreEqual(input.ExpectedData.WorkdayRuleValue[i], PVtagTargetBaselineSettings.GetWorkdayRuleValue(i + 1));
@@ -177,7 +178,8 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
-            for (int i = 0; i < (input.InputData.WorkdayRuleRecordNumber-1); i++)
+            //for (int i = 0; i < (input.InputData.WorkdayRuleRecordNumber-1); i++)
+            for (int i = 0; i < 1; i++)//There is only one time
             {
                 Assert.AreEqual(input.ExpectedData.WorkdayRuleEndTime[i+3], PVtagTargetBaselineSettings.GetWorkdayEndtimeValue(i + 1));
                 Assert.AreEqual(input.ExpectedData.WorkdayRuleValue[i+3], PVtagTargetBaselineSettings.GetWorkdayRuleValue(i + 1));

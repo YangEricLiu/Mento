@@ -420,7 +420,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             IWebElement pie = FindChild(PieLocator);
             IWebElement[] piePaths = ElementHandler.FindElements(PathLocator, pie).ToArray();
-            int pieNumbers = piePaths.Length / 2;
+            int pieNumbers = piePaths.Length;
 
             return pieNumbers;
         }
@@ -472,7 +472,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             IWebElement pie = FindChild(PieLocator);
             IWebElement[] piePaths = ElementHandler.FindElements(PathLocator, pie).ToArray();
-            int pieNumbers = piePaths.Length / 2;
+            int pieNumbers = piePaths.Length;
             int hiddenSpan = 0;
 
             foreach (IWebElement piePath in piePaths)
@@ -487,7 +487,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 else
                     break;
             }
-            return piePaths.Length / 2 - hiddenSpan;
+            return piePaths.Length - hiddenSpan;
         }
         #endregion
 

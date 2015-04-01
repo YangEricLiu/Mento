@@ -156,8 +156,14 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
             Assert.IsTrue(MultiHieCompareWindow.IsNoEnabledCheckbox());
 
+            //当有popupnotes出现的时候，这里是“对比数据点已选满”，“确认”这个按钮就点击不上（在服务器上有这种情况，本机没有）
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+
             MultiHieCompareWindow.ClickConfirmButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //PH_SiteS1 change to disable to check.(PH_SiteS1 enable to check when uncheck V(H)_SiteS1)
             //Open "多层级数据点" again
@@ -180,6 +186,12 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //对比数据点已选满
             Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
             Assert.IsTrue(MultiHieCompareWindow.IsNoEnabledCheckbox());
+
+            //当有popupnotes出现的时候，这里是“对比数据点已选满”，“确认”这个按钮就点击不上（在服务器上有这种情况，本机没有）
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.ShortPause();

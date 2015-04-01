@@ -1,0 +1,22 @@
+﻿[
+	{
+		"InputData":
+		{
+			"MultipleHierarchyAndtags":[
+			{
+				"HierarchyPath":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
+				"TagsName":["BBV1Root"],
+			}],
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"TagNames":["BAV1Root"],
+			"YearAndMonth":[{
+				"year":"2015",
+				"month":"$@DateTimeFormat.HighFormat.FullYear",
+			}],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

@@ -141,6 +141,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         }
 
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-Calculate-101-2")]
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P4_CalculateIndustryLabellingDayNightSuite), "TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-Calculate-101-2")]
         public void SP2_CalculateDayNightIndustryLabelling02(IndustryLabellingData input)
@@ -204,6 +205,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         }
 
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-Calculate-101-3")]
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P4_CalculateIndustryLabellingDayNightSuite), "TC-J1-FVT-ConsumptionDayNightRatioIndustryLabelling-Calculate-101-3")]
         public void SP3_CalculateDayNightIndustryLabelling03(IndustryLabellingData input)

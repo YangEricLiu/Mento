@@ -163,10 +163,13 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             MultiHieCompareWindow.CheckTag(input.InputData.MultipleHierarchyAndtags[1].TagsName[0]);
-            TimeManager.ShortPause();
-
+            
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
             MultiHieCompareWindow.ClickConfirmButton();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause(); ;
 
             //time 2014-10
             IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[2].year);

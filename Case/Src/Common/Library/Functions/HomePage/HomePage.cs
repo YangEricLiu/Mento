@@ -140,7 +140,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool SelectHierarchyNode(string[] treePath)
         {
             AllDashboardsHierarchyTreeButton.Click();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             try
             {
@@ -365,7 +365,7 @@ namespace Mento.ScriptCommon.Library.Functions
                         TimeManager.MediumPause();
 
                         NavigateToAllDashboard();
-                        TimeManager.MediumPause();
+                        TimeManager.LongPause();
 
                         SelectHierarchyNode(TestAssemblyInitializer.CaseDownDashboardInfos[oneds].HierarchyName);
                         TimeManager.LongPause();

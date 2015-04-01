@@ -88,6 +88,7 @@
     <Compile Include="Customer\KPITargetBaselineData.cs" />
     <Compile Include="Customer\SystemDimensionData.cs" />
     <Compile Include="EnergyView\CarbonUsageData.cs" />
+    <Compile Include="EnergyView\SmokeTestEnergyViewData.cs" />
     <Compile Include="EnergyView\EnergyViewPredefinedData.cs" />
     <Compile Include="EnergyView\IndustryLabellingData.cs" />
     <Compile Include="EnergyView\RatioData.cs" />

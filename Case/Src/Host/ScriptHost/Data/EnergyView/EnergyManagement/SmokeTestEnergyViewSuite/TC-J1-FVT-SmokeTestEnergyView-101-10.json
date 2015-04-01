@@ -1,0 +1,13 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇A"],
+			"commodityNames":["$@Commodity_Electricity", "$@EM.TotalCommodity"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

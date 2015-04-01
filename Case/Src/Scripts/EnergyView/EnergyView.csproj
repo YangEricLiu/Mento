@@ -96,7 +96,7 @@
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodeDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodeTrendChartSuite.cs" />
-    <Compile Include="EnergyManagement\MirrorEnvPressTestForEVSuite.cs" />
+    <Compile Include="EnergyManagement\SmokeTestEnergyViewSuite.cs" />
     <Compile Include="EnergyManagement\P4_PredefinedTimeDataVerificationSuite.cs" />
     <Compile Include="EnergyManagement\SaveToDashboardSuite.cs" />
     <Compile Include="EnergyManagement\SetDisplayStepInvalidSuite.cs" />

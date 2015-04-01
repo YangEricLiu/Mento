@@ -557,6 +557,10 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
             EnergyViewToolbar.SetDateRange(ManualTimeRange[9].StartDate, ManualTimeRange[9].EndDate);
             TimeManager.LongPause();
+
+            CorporateRanking.SelectCommodity(input.InputData.commodityNames[0]);
+            TimeManager.ShortPause();
+
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();

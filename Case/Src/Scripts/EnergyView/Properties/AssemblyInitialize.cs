@@ -15,7 +15,7 @@ namespace Mento.Script.EnergyView
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.InitializeWithOption("ShareUserG", "123456Qq", "NancyCustomer1");
+            TestAssemblyInitializer.InitializeWithOption("ShareUserK", "123456Qq", "NancyCustomer1");
         }
 
         [TearDown]

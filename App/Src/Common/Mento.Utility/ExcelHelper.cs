@@ -1298,12 +1298,10 @@ namespace Mento.Utility
             OpenAPICases tmpoac = new OpenAPICases();
 
             Excel.Range temp = (Excel.Range)mySheet.Cells[2, columnNum];
-            //string strValue = temp.Text.ToString();
             string strValue = temp.Value.ToString();
             tmpoac.url = strValue;
 
             temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 1];
-            //strValue = temp.Text.ToString();
             strValue = temp.Value.ToString();
             tmpoac.requestBody = strValue;
 
@@ -1311,19 +1309,19 @@ namespace Mento.Utility
              * When use temp.Text.ToString(), just can get at most 8221 chars, so when there more than 8221 chars on cell, use 
              * temp.Value.ToString();
              */
-            //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 2];
-            //strValue = temp.Value.ToString();
-            //tmpoac.expectedResponseBody = strValue;
+            temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 3];
+            strValue = temp.Value.ToString();
+            tmpoac.expectedResponseBody = strValue;
 
-            //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 3];
+            //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
             //strValue = temp.Value.ToString();
             //tmpoac.actualResponseBody = strValue;
-            
-            //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
+
+            //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 5];
             //strValue = temp.Text.ToString();
             //tmpoac.result = strValue;
 
-            //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 4];
+            //temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 6];
             //strValue = temp.Value.ToString();
             //tmpoac.resultReport = strValue;
 
@@ -1368,10 +1366,16 @@ namespace Mento.Utility
 
             sheet.Cells[rowIndex, columnIndex] = data.url;
             sheet.Cells[rowIndex, columnIndex + 1] = data.requestBody;
-            sheet.Cells[rowIndex, columnIndex + 2] = data.expectedResponseBody;
-            sheet.Cells[rowIndex, columnIndex + 3] = data.actualResponseBody;
-            sheet.Cells[rowIndex, columnIndex + 4] = data.result;
-            sheet.Cells[rowIndex, columnIndex + 5] = data.resultReport;
+            sheet.Cells[rowIndex, columnIndex + 2] = data.formatRequestBody;
+            sheet.Cells[rowIndex, columnIndex + 3] = data.expectedResponseBody;
+            sheet.Cells[rowIndex, columnIndex + 4] = data.actualResponseBody;
+            if (!String.IsNullOrEmpty(data.formatExpectedResponseBody))
+            {
+                sheet.Cells[rowIndex, columnIndex + 5] = data.formatExpectedResponseBody;
+            }
+            sheet.Cells[rowIndex, columnIndex + 6] = data.formatActualResponseBody;
+            sheet.Cells[rowIndex, columnIndex + 7] = data.result;
+            sheet.Cells[rowIndex, columnIndex + 8] = data.resultReport;
         }
 
         #endregion
@@ -1383,8 +1387,11 @@ namespace Mento.Utility
     {
         public string url;
         public string requestBody;
+        public string formatRequestBody;
         public string expectedResponseBody;
         public string actualResponseBody;
+        public string formatExpectedResponseBody;
+        public string formatActualResponseBody;
         public string result;
         public string resultReport;
     }

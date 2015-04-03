@@ -232,7 +232,7 @@
     <value>Name</value>
   </data>
   <data name="ENERGYCONST_KPIBASELINEHEADER" xml:space="preserve">
-    <value>Benchmark</value>
+    <value>Baseline</value>
   </data>
   <data name="ENERGYCONST_KPIEXPORTTITLE" xml:space="preserve">
     <value>Key energy efficiency indicator</value>
@@ -827,5 +827,245 @@
   </data>
   <data name="WebHost_IndexTitle" xml:space="preserve">
     <value>Schneider Electric EnergyMost</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Min15" xml:space="preserve">
+    <value>15 mins</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Min30" xml:space="preserve">
+    <value>30 mins</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Yearly" xml:space="preserve">
+    <value>Per year</value>
+  </data>
+  <data name="TagImport_ExcelHeader_Offset" xml:space="preserve">
+    <value>Offset</value>
+  </data>
+  <data name="TagImport_ExcelHeader_Slope" xml:space="preserve">
+    <value>Slope</value>
+  </data>
+  <data name="DataImpExp_COMMON_Climate" xml:space="preserve">
+    <value>Climate region</value>
+  </data>
+  <data name="DataImpExp_COMMON_HierarchyCode" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="DataImpExp_COMMON_Industry" xml:space="preserve">
+    <value>Industry involved</value>
+  </data>
+  <data name="DataImpExp_COMMON_Level1" xml:space="preserve">
+    <value>Level 1</value>
+  </data>
+  <data name="DataImpExp_COMMON_Level2" xml:space="preserve">
+    <value>Level 2</value>
+  </data>
+  <data name="DataImpExp_COMMON_Level3" xml:space="preserve">
+    <value>Level 3</value>
+  </data>
+  <data name="DataImpExp_COMMON_Level4" xml:space="preserve">
+    <value>Level 4</value>
+  </data>
+  <data name="DataImpExp_COMMON_Level5" xml:space="preserve">
+    <value>Level 5</value>
+  </data>
+  <data name="DataImpExp_COMMON_Level6" xml:space="preserve">
+    <value>Level 6</value>
+  </data>
+  <data name="DataImpExp_COMMON_Level7" xml:space="preserve">
+    <value>Level 7</value>
+  </data>
+  <data name="DataImpExp_COMMON_NeedCompute" xml:space="preserve">
+    <value>Industry Benchmark Calculation</value>
+  </data>
+  <data name="DataImpExp_COMMON_NodeType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="DataImpExp_COMMON_Notes" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="DataImpExp_COMMON_PrimaryTag" xml:space="preserve">
+    <value>Consumption Tag</value>
+  </data>
+  <data name="DataImpExp_COMMON_TagCode" xml:space="preserve">
+    <value>Tag Code</value>
+  </data>
+  <data name="DataImpExp_COMMON_TagName" xml:space="preserve">
+    <value>Tag Name</value>
+  </data>
+  <data name="NodeExistsButGetDataFailure" xml:space="preserve">
+    <value>There are nodes with the same codes, but the attempt to obtain the data of node with the Code being {0} fails!</value>
+  </data>
+  <data name="OneAndOnlyOneColumn" xml:space="preserve">
+    <value>The operation is failed, because there must be one and only one column filled in the seven columns from Hierarchy 1 to Hierarchy 7!</value>
+  </data>
+  <data name="TagAssociationFailure" xml:space="preserve">
+    <value>The correlation of data points is failed!</value>
+  </data>
+  <data name="TagCodeAndTagNameNotMatch" xml:space="preserve">
+    <value>The operation is failed, because the number {0} of data point does not match with the name {1} of data point!</value>
+  </data>
+  <data name="DataImpExp_MSG_ArgumentCustomerIDIsInvalidation" xml:space="preserve">
+    <value>Failed in authentication because customer ID is invalid.</value>
+  </data>
+  <data name="DataImpExp_MSG_ClimateValueIsNotExists" xml:space="preserve">
+    <value>Failed in data validation beause zone value [{0}] at row [{1}] is not existed in system.</value>
+  </data>
+  <data name="DataImpExp_MSG_ColumnNameIsNotMatch" xml:space="preserve">
+    <value>Failed in file validation because target column title is not existed.</value>
+  </data>
+  <data name="DataImpExp_MSG_CustomerHasNoAuthorization" xml:space="preserve">
+    <value>Failed in authentication because user has no data permission.</value>
+  </data>
+  <data name="DataImpExp_MSG_FileIsNotExcelFile" xml:space="preserve">
+    <value>Failed in file validation because file can not be treated as Excel file.</value>
+  </data>
+  <data name="DataImpExp_MSG_FileNotExistsTheNamedSheet" xml:space="preserve">
+    <value>Failed in file validation because target sheet is not exist.</value>
+  </data>
+  <data name="DataImpExp_MSG_FirstNodeIsNotRootNode" xml:space="preserve">
+    <value>The operation is failed, because the effective data in Row 1 in Excel sheet must be root node!</value>
+  </data>
+  <data name="DataImpExp_MSG_FoundBlackExcelRow" xml:space="preserve">
+    <value>Data in Row [{0}] can't be identified.</value>
+  </data>
+  <data name="DataImpExp_MSG_HaveNotRootNode" xml:space="preserve">
+    <value>Failed in data validation becuase root node is missed.</value>
+  </data>
+  <data name="DataImpExp_MSG_HierarchyInfoIsNotExits" xml:space="preserve">
+    <value>Failed in data validation because [{0}] </value>
+  </data>
+  <data name="DataImpExp_MSG_IndustryValueIsNotExists" xml:space="preserve">
+    <value>Failed in data validation because industry value [{0}] at row [{1}] is not existed in system.</value>
+  </data>
+  <data name="DataImpExp_MSG_NodeExistsButGetDataFailure" xml:space="preserve">
+    <value>Can not get the data of Tag [Code {0}] at row [{1}].</value>
+  </data>
+  <data name="DataImpExp_MSG_NodeTypeValueIsNotExists" xml:space="preserve">
+    <value>Failed in data validation because node type [{0}] at row [{1}] is not existed in system.</value>
+  </data>
+  <data name="DataImpExp_MSG_OneAndOnlyOneColumn" xml:space="preserve">
+    <value>Failed in data validation because hierachy node info at row [{1}] can't be found.</value>
+  </data>
+  <data name="DataImpExp_MSG_OperationSuccessed" xml:space="preserve">
+    <value>Operation is success.</value>
+  </data>
+  <data name="DataImpExp_MSG_ServiceContextCurrentUserInvalidation" xml:space="preserve">
+    <value>Failed in authentication because current user is not existed.</value>
+  </data>
+  <data name="DataImpExp_MSG_SheetFormatIsWrong" xml:space="preserve">
+    <value>Failed in initialization because the first row is not column title or the column's number is not mached with target number.</value>
+  </data>
+  <data name="DataImpExp_MSG_SheetUsedColumnCNTNotMatch" xml:space="preserve">
+    <value>Failed in file validation because column number in file is not same with template column number.</value>
+  </data>
+  <data name="DataImpExp_MSG_TagAssociationFailure" xml:space="preserve">
+    <value>Association is failed because related hierarchy can not be found.</value>
+  </data>
+  <data name="DataImpExp_MSG_TagCodeAndTagNameNotMatch" xml:space="preserve">
+    <value>Failed in data validation because name of tag [code {0} - name {1}] at row [{2}] is not matched.</value>
+  </data>
+  <data name="DataImpExp_MSG_TagCodeIsNotExits" xml:space="preserve">
+    <value>Failed in data validation because tag [code {0}] at row [{1}] is not existed.</value>
+  </data>
+  <data name="DataImpExp_MSG_TagCodeValueIsNotExists" xml:space="preserve">
+    <value>Failed in data validation because tag code [{0}] at row [{1}] is empty in file.</value>
+  </data>
+  <data name="DataImpExp_MSG_TreeNodeLevelisIntteruption" xml:space="preserve">
+    <value>Failed in data validation because parent node at row [{0}] is missed or failed in operation.</value>
+  </data>
+  <data name="DataImpExp_MSG_UploadedFileInvalidation" xml:space="preserve">
+    <value>Failed in file valiation becaues it is not complete.</value>
+  </data>
+  <data name="DataImpExp_MSG_UserHasNoAuthorization" xml:space="preserve">
+    <value>Failed in authentication because user has no function permission.</value>
+  </data>
+  <data name="DataImpExp_StaticValues_HierarchyTemplateFileName" xml:space="preserve">
+    <value>DataImp-HierarchyTemplateFileName-EN_xlsx</value>
+  </data>
+  <data name="DataImpExp_StaticValues_TagTemplateFileName" xml:space="preserve">
+    <value>DataImp-TagTemplateFileName-EN_xls</value>
+  </data>
+  <data name="DataImpExp_COMMON_DateTime" xml:space="preserve">
+    <value>DateTime</value>
+  </data>
+  <data name="DataImpExp_COMMON_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DataImpExp_COMMON_NO" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="DataImpExp_COMMON_Result" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="DataImpExp_MSG_RootNodeMustBeValide" xml:space="preserve">
+    <value>Operation is failed. The first valid data row must be a level 1 node.</value>
+  </data>
+  <data name="DataImpExp_StaticValues_FALSE" xml:space="preserve">
+    <value>False</value>
+  </data>
+  <data name="DataImpExp_StaticValues_TRUE" xml:space="preserve">
+    <value>True</value>
+  </data>
+  <data name="DataImpExp_MSG_HierarchyRelationIsInvalid" xml:space="preserve">
+    <value>Failed in logic validation because node [code {0} - name {1} - type {2}] at row [{3}] can not associate with parent node [code {4} - name {5} - type {6}].</value>
+  </data>
+  <data name="DataImpExp_MSG_FieldValueIsInvalid" xml:space="preserve">
+    <value>Failed in data validation because value in Row [{0}] and Column[{1}] is invalid.</value>
+  </data>
+  <data name="DataImpExp_MSG_NodeCodeIsDuplication" xml:space="preserve">
+    <value>Failed in data validation beause code of node [node {0} - name {1}] at row [{2}] is duplicate.</value>
+  </data>
+  <data name="DataImpExp_MSG_NodeNameIsDuplication" xml:space="preserve">
+    <value>Failed in data validation beause name of node [node {0} - name {1}] at row [{2}] is duplicate.</value>
+  </data>
+  <data name="DataImpExp_MSG_CustomerNodeTypeIsNowAllowed" xml:space="preserve">
+    <value>Failed in data validation because customer type node at row [{0}] is not allowed.</value>
+  </data>
+  <data name="DataImpExp_X_TAG_EnergyConsumptionTagIsValidForBuilding" xml:space="preserve">
+    <value>Tag at row [{0}] is not valid for energy consumption.</value>
+  </data>
+  <data name="DataImpExp_X_TAG_ParameterIsIncorrect" xml:space="preserve">
+    <value>Tag\'s parameter is not corrent at row [{0}]</value>
+  </data>
+  <data name="DataImpExp_X_TAG_TagIsExpired" xml:space="preserve">
+    <value>Tag at row [{0}] is expired.</value>
+  </data>
+  <data name="DataImpExp_X_TAG_TagIsNotAssociatedToAreaDimension" xml:space="preserve">
+    <value>Tag at row [{0}] can not be associated with area dimension node.</value>
+  </data>
+  <data name="DataImpExp_X_TAG_TagIsNotAssociatedToHierarchy" xml:space="preserve">
+    <value>Tag at row [{0}] can not be associated with hierarchy node.</value>
+  </data>
+  <data name="DataImpExp_X_TAG_TagIsNotAssociatedToSystemDimension" xml:space="preserve">
+    <value>Tag at row [{0}] can not be associated with system dimension node.</value>
+  </data>
+  <data name="DataImpExp_X_TAG_TagsContainEnergyConsumptionTagOfTheCommodity" xml:space="preserve">
+    <value>Tag at row [{0}] contains the consumption commodity.</value>
+  </data>
+  <data name="DataImpExp_X_TAG_TagUomGroupIsNotEnergyConsumptionGroup" xml:space="preserve">
+    <value>Tag\'s UOM Group is not a energy consumption group at row [{0}].</value>
+  </data>
+  <data name="DataImpExp_MSG_NodeCodeIsInvalid" xml:space="preserve">
+    <value>Failed in data validation because tag\'s code {0} is invalid at row [{1}].</value>
+  </data>
+  <data name="DataImpExp_MSG_NodeNameIsInvalid" xml:space="preserve">
+    <value>Failed in data validation because tag\'s name {0} is invalid at row [{1}].</value>
+  </data>
+  <data name="DataImpExp_MSG_UserHasNoTagAssoiationAuthorization" xml:space="preserve">
+    <value>Failed in authentication because current user has no permission about "Tag Mapping"</value>
+  </data>
+  <data name="DataImpExp_MSG_NodeCodeContainsIllegalCharacters" xml:space="preserve">
+    <value>Failed in data validation because code [{0}] contains unsupported characters at row[{1}].</value>
+  </data>
+  <data name="DataImpExp_MSG_NodeCodeIsTooLong" xml:space="preserve">
+    <value>Failed in data validation because length of node code [{0}] is larger than {1} characters at row [{2}].</value>
+  </data>
+  <data name="DataImpExp_MSG_NodeNameContainsIllegalCharacters" xml:space="preserve">
+    <value>Failed in data validation because name [{0}] contains unsupported character at row [{1}].</value>
+  </data>
+  <data name="DataImpExp_MSG_NodeNameIsTooLong" xml:space="preserve">
+    <value>Failed in data validation because length of node name [{0}] is larger than {1} characters at row [{2}].</value>
+  </data>
+  <data name="DataImpExp_MSG_TagHasExistsAssoiation" xml:space="preserve">
+    <value>Tag association is failed because tag [code {0}] has been associated at row [{1}]</value>
   </data>
 </root>

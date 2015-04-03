@@ -255,25 +255,25 @@
   <data name="Industry_All Industries" xml:space="preserve">
     <value>全行业</value>
   </data>
-  <data name="Industry_Office_Building" xml:space="preserve">
+  <data name="Industry_Office Building" xml:space="preserve">
     <value>办公建筑</value>
   </data>
-  <data name="Industry_Data_Center" xml:space="preserve">
+  <data name="Industry_Data Center" xml:space="preserve">
     <value>数据中心</value>
   </data>
   <data name="Industry_Hotel" xml:space="preserve">
     <value>酒店</value>
   </data>
-  <data name="Industry_Hotel_Two_star_and_below" xml:space="preserve">
+  <data name="Industry_Hotel  Two-star and below " xml:space="preserve">
     <value>酒店（二星级及以下）</value>
   </data>
-  <data name="Industry_Hotel_Three_stat" xml:space="preserve">
+  <data name="Industry_Hotel  Three-stat " xml:space="preserve">
     <value>酒店（三星级）</value>
   </data>
-  <data name="Industry_Hotel_Four_star" xml:space="preserve">
+  <data name="Industry_Hotel  Four-star " xml:space="preserve">
     <value>酒店（四星级）</value>
   </data>
-  <data name="Industry_Hotel_Five_stat" xml:space="preserve">
+  <data name="Industry_Hotel  Five-stat " xml:space="preserve">
     <value>酒店（五星级）</value>
   </data>
   <data name="Industry_Hospital" xml:space="preserve">
@@ -288,7 +288,7 @@
   <data name="Industry_Supermarket" xml:space="preserve">
     <value>超市</value>
   </data>
-  <data name="Industry_Clothing_retail" xml:space="preserve">
+  <data name="Industry_Clothing retail" xml:space="preserve">
     <value>服装零售</value>
   </data>
   <data name="Industry_Mall" xml:space="preserve">
@@ -297,16 +297,16 @@
   <data name="Industry_Telecommunication" xml:space="preserve">
     <value>通讯</value>
   </data>
-  <data name="Industry_Telecommunication_workshop" xml:space="preserve">
+  <data name="Industry_Telecommunication workshop" xml:space="preserve">
     <value>机房</value>
   </data>
-  <data name="Industry_Telecommunication_base_station" xml:space="preserve">
+  <data name="Industry_Telecommunication base station" xml:space="preserve">
     <value>通讯基站</value>
   </data>
-  <data name="Industry_Telecommunication_business_hall" xml:space="preserve">
+  <data name="Industry_Telecommunication business hall" xml:space="preserve">
     <value>通讯营业厅</value>
   </data>
-  <data name="Industry_Rail_Transit" xml:space="preserve">
+  <data name="Industry_Rail Transit" xml:space="preserve">
     <value>轨道交通</value>
   </data>
   <data name="Industry_Airport" xml:space="preserve">
@@ -534,25 +534,28 @@
   <data name="SystemDimensionTemplateItem_Other" xml:space="preserve">
     <value>其他</value>
   </data>
-  <data name="Zone_All_Zones" xml:space="preserve">
+  <data name="Zone_All Zones" xml:space="preserve">
     <value>全部区域</value>
   </data>
-  <data name="Zone_Extreme_Cold_Region_A" xml:space="preserve">
+  <data name="Zone_Extreme Cold Region A" xml:space="preserve">
     <value>严寒地区A区</value>
   </data>
-  <data name="Zone_Extreme_Cold_Region_B" xml:space="preserve">
+  <data name="Zone_Extreme Cold Region B" xml:space="preserve">
     <value>严寒地区B区</value>
   </data>
-  <data name="Zone_Cold_Region" xml:space="preserve">
+  <data name="Zone_Cold Region" xml:space="preserve">
     <value>寒冷地区</value>
   </data>
-  <data name="Zone_Hot Summer_and_Cold_Winter_Region" xml:space="preserve">
+  <data name="Zone_Hot Summer and Cold Winter Region" xml:space="preserve">
     <value>夏热冬冷地区</value>
   </data>
-  <data name="Zone_Subtropical_Region" xml:space="preserve">
+  <data name="Zone_Subtropical Region" xml:space="preserve">
     <value>夏热冬暖地区</value>
   </data>
-  <data name="Zone_Temperate_Region" xml:space="preserve">
+  <data name="Zone_Temperate Region" xml:space="preserve">
     <value>温和地区</value>
+  </data>
+  <data name="Uom_RH%" xml:space="preserve">
+    <value>相对湿度百分比</value>
   </data>
 </root>

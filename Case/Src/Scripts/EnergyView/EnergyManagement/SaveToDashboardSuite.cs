@@ -111,22 +111,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName)); 
+            TimeManager.LongPause();         
         }
 
         [Test]
@@ -155,6 +140,8 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 MultiHieCompareWindow.CheckTags(input.InputData.MultipleHierarchyAndtags[i].TagsName);
                 TimeManager.ShortPause();
             }
+
+            TimeManager.Pause(10000);
 
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.ShortPause();
@@ -193,20 +180,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName)); 
         }
 
         [Test]
@@ -271,21 +244,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName)); 
         }
 
         [Test]
@@ -359,21 +317,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName)); 
         }
 
         [Test]
@@ -443,21 +386,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName)); 
         }
 
         [Test]
@@ -521,22 +449,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName)); 
+            TimeManager.LongPause(); 
         }
 
         [Test]
@@ -606,21 +519,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
         [Test]
@@ -690,21 +588,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
         [Test]
@@ -758,20 +641,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
         }
 
         [Test]
@@ -800,6 +669,8 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 MultiHieCompareWindow.CheckTags(input.InputData.MultipleHierarchyAndtags[i].TagsName);
                 TimeManager.ShortPause();
             }
+
+            TimeManager.Pause(10000);
 
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.ShortPause();
@@ -846,20 +717,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
         }
 
         [Test]
@@ -913,20 +770,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
         }
 
         [Test]
@@ -955,6 +798,8 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 MultiHieCompareWindow.CheckTags(input.InputData.MultipleHierarchyAndtags[i].TagsName);
                 TimeManager.ShortPause();
             }
+
+            TimeManager.Pause(10000);
 
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.ShortPause();
@@ -997,20 +842,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
         }
 
         [Test]
@@ -1068,20 +899,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
         [Test]
@@ -1149,20 +966,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
         [Test]
@@ -1222,20 +1025,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
         [Test]
@@ -1293,20 +1082,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
         [Test]
@@ -1374,20 +1149,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
         [Test]
@@ -1447,20 +1208,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
         }
 
         [Test]
@@ -1500,10 +1247,13 @@ namespace Mento.Script.EnergyView.EnergyManagement
             IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //单位人口 2013全年
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
             TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[0]);
@@ -1516,10 +1266,13 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause(); 
+            TimeManager.LongPause();
 
             //昼夜比 2014全年
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
+            
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[1]);
@@ -1532,10 +1285,13 @@ namespace Mento.Script.EnergyView.EnergyManagement
             IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //昼夜比 2013全年
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
             TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[1]);
@@ -1548,10 +1304,13 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //工休比 2014全年
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
+            
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[2]);
@@ -1564,10 +1323,13 @@ namespace Mento.Script.EnergyView.EnergyManagement
             IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[4].WigetName, dashboard[4].HierarchyName, dashboard[4].IsCreateDashboard, dashboard[4].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //工休比 2013全年
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
             TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[2]);
@@ -1580,23 +1342,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[5].WigetName, dashboard[5].HierarchyName, dashboard[5].IsCreateDashboard, dashboard[5].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[4].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[5].WigetName));
         }
 
         [Test]
@@ -1626,6 +1371,8 @@ namespace Mento.Script.EnergyView.EnergyManagement
                 TimeManager.ShortPause();
             }
 
+            TimeManager.Pause(10000);
+
             MultiHieCompareWindow.ClickConfirmButton();
             TimeManager.ShortPause();
 
@@ -1644,10 +1391,13 @@ namespace Mento.Script.EnergyView.EnergyManagement
             IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //单位人口 2013全年
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
             TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[0]);
@@ -1660,10 +1410,13 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //昼夜比 2014全年
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
+            
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[1]);
@@ -1676,10 +1429,13 @@ namespace Mento.Script.EnergyView.EnergyManagement
             IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //昼夜比 2013全年
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
             TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[1]);
@@ -1692,10 +1448,13 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[3].WigetName, dashboard[3].HierarchyName, dashboard[3].IsCreateDashboard, dashboard[3].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //工休比 2014全年
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
+            
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[0].month);
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[0].year);
             TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[2]);
@@ -1708,10 +1467,13 @@ namespace Mento.Script.EnergyView.EnergyManagement
             IndustryLabellingPanel.Toolbar.SaveToDashboard(dashboard[4].WigetName, dashboard[4].HierarchyName, dashboard[4].IsCreateDashboard, dashboard[4].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
             //工休比 2013全年
-            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
+            
             IndustryLabellingPanel.SetMonth(input.InputData.YearAndMonth[1].month);
+            IndustryLabellingPanel.SetYear(input.InputData.YearAndMonth[1].year);
             TimeManager.MediumPause();
 
             EnergyViewToolbar.SelectLabellingUnitTypeConvertTarget(input.InputData.UnitTypeValues[2]);
@@ -1724,23 +1486,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[5].WigetName, dashboard[5].HierarchyName, dashboard[5].IsCreateDashboard, dashboard[5].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[4].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[5].WigetName));
         }
 
         [Test]
@@ -1885,23 +1630,6 @@ namespace Mento.Script.EnergyView.EnergyManagement
             CorporateRanking.Toolbar.SaveToDashboard(dashboard[5].WigetName, dashboard[5].HierarchyName, dashboard[5].IsCreateDashboard, dashboard[5].DashboardName);
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
-
-            //Add widget successfully into the dashboard and displayed in the last available space.
-            Widget.NavigateToAllDashboard();
-            TimeManager.LongPause();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading(15);
-            TimeManager.LongPause();
-
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[1].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[2].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[3].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[4].WigetName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[5].WigetName));
         }
     }
 }

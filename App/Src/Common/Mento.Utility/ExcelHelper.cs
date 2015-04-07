@@ -443,14 +443,12 @@ namespace Mento.Utility
         /// <param name="table">data from array</param> 
         public void ImportDataTable(Excel.Worksheet sheet, string headerTitle, bool showTitle, string[] headers, int rowNumber, int columnNumber, DataTable table)
         {
-            int columns = table.Columns.Count;
-            int rows = table.Rows.Count;
-
             int titleRowIndex = rowNumber;
             int headerRowIndex = rowNumber;
             Excel.Range titleRange = null;
             decimal tmp;
 
+            /* In general, show title is false
             if (showTitle)
             {
                 headerRowIndex++;
@@ -461,6 +459,7 @@ namespace Mento.Utility
                 this.SetRangeFormat(titleRange, 16, Excel.Constants.xlAutomatic, Excel.Constants.xlColor1, Excel.Constants.xlCenter);
                 titleRange.Value2 = headerTitle;
             }
+             */
 
             //add table header
             if (headers != null)
@@ -472,33 +471,37 @@ namespace Mento.Utility
                     m++;
                 }
             }
-            
+
+            if (table != null)
+            { 
+
+            int columns = table.Columns.Count;
+            int rows = table.Rows.Count;
+
             //add data for each row
-            //if (table != null)
-            //{ 
-                for (int i = 0; i < rows; i++)
-                {
-                    for (int j = 0; j < columns; j++)
-                    {               
-                        sheet.Cells[headerRowIndex + i + 1, j + columnNumber] = table.Rows[i][j];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {               
+                    sheet.Cells[headerRowIndex + i + 1, j + columnNumber] = table.Rows[i][j];
 
-                        Excel.Range temp2 = (Excel.Range)sheet.Cells[headerRowIndex + i + 1, j + columnNumber];
-                        string value = table.Rows[i][j].ToString();
+                    Excel.Range temp2 = (Excel.Range)sheet.Cells[headerRowIndex + i + 1, j + columnNumber];
+                    string value = table.Rows[i][j].ToString();
 
-                        if (value.Contains("年") && value.Contains("月"))
-                        {
-                            temp2.NumberFormat = "yyyy年mm月";
-                        }
+                    if (value.Contains("年") && value.Contains("月"))
+                    {
+                        temp2.NumberFormat = "yyyy年mm月";
+                    }
 
-                        if (decimal.TryParse(value, out tmp))
-                        {                       
-                            SetCellNumberFormat(temp2, value);
-                        }  
-                    }             
-                }
+                    if (decimal.TryParse(value, out tmp))
+                    {                       
+                        SetCellNumberFormat(temp2, value);
+                    }  
+                }             
+            }
 
-                sheet.get_Range("A1", "M1").ColumnWidth = 30;
-            //}
+            sheet.get_Range("A1", "M1").ColumnWidth = 30;
+            }
         }
 
         private void SetCellNumberFormat(Excel.Range cell, string value)
@@ -586,7 +589,6 @@ namespace Mento.Utility
         public DataTable GetDataTableFromExcel(Excel.Worksheet mySheet)
         {
             DataTable dt = new DataTable();
-            dt = null;
 
             for (int j = 1; j <= mySheet.Cells.CurrentRegion.Columns.Count; j++)
             {
@@ -936,7 +938,6 @@ namespace Mento.Utility
         public static void ExportToExcelWithHeaderSheet(DataTable data, string fileName, string sheetName, CellsValue[] headersSheet2, string[] headersSheet1 = null)
         {
             if ((headersSheet1 == null || headersSheet1.Length <= 0) && (data != null))
-            //if (headersSheet1 == null || headersSheet1.Length <= 0)
             {
                 var columns = new List<string>();
                 foreach (DataColumn column in data.Columns)
@@ -1314,7 +1315,7 @@ namespace Mento.Utility
              * When use temp.Text.ToString(), just can get at most 8221 chars, so when there more than 8221 chars on cell, use 
              * temp.Value.ToString();
              */
-            temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 2];
+            temp = (Excel.Range)mySheet.Cells[rowIndex, columnNum + 3];
             strValue = temp.Value.ToString();
             tmpoac.expectedResponseBody = strValue;
 

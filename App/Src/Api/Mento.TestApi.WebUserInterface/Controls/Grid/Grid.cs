@@ -1248,7 +1248,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public DataTable GetAllData()
         {
-            DataTable data = null;
+            DataTable data = new DataTable();
 
             if (!this.IsNoRowOnGrid())
             {
@@ -1257,8 +1257,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
                 for (int pageIndex = 1; pageIndex <= PageCount; pageIndex++)
                 {
-                    if (data == null)
+                    //if (data == null)
+                    if (CurrentPage == 1 || CurrentPage == 0)
+                    {
                         data = GetCurrentPageData();
+                    }                    
                     else
                         data.Merge(GetCurrentPageData());
 
@@ -1268,7 +1271,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                         TimeManager.LongPause();
                     }
                 }
-            }
+           }
          
             return data;
         }

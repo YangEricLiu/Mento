@@ -702,7 +702,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
         }
     }
 }

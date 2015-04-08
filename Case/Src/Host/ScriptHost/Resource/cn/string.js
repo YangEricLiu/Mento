@@ -876,6 +876,10 @@ I18N.EM.Report.ExportTimeLabel = '导出时间标签';
 I18N.EM.Report.ExportStepError = '存在数据点不支持的步长，请检查';
 I18N.EM.Report.ExportTagUnassociated = '数据点已被解关联';
 
+I18N.EM.Export = {};
+I18N.EM.Export.Preview = '导出图片预览';
+
+
 I18N.EM.ShowAlarmList = '显示报警列表';
 I18N.EM.HideAlarmList = '隐藏报警列表';
 I18N.EM.Date = '日期';
@@ -986,6 +990,7 @@ I18N.Common.Button.ColumnChart = '柱状图';
 I18N.Common.Button.GridView = '数据表';
 I18N.Common.Button.SearchData = '查看数据';
 I18N.Common.Button.More = '更多';
+I18N.Common.Button.ModifyMore = '更多参数修改';
 I18N.Common.Button.DefaultDate = '默认时间';
 I18N.Common.Button.ToDashboard = '至仪表盘';
 I18N.Common.Button.Export = '图表导出';

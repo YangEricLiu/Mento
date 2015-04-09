@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CostUsage
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-CostUsage-TOU-DataView-101"), CreateTime("2014-1-7"), Owner("Emma")]
-    public class CostUsageTOUDataViewSuite : TestSuiteBase
+    public class P1_CostUsageTOUDataViewSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -47,7 +47,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-101-1")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUDataViewSuite), "TC-J1-FVT-CostUsage-TOU-DataView-101-1")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageTOUDataViewSuite), "TC-J1-FVT-CostUsage-TOU-DataView-101-1")]
         public void TOUDataViewVerification01(CostUsageData input)
         {
             //Select "NancyCostCustomer2/组织A/园区A/楼宇B"

@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-MultipleIntervalsComparasion-DataView-101"), CreateTime("2013-08-13"), Owner("Emma")]
-    public class MultipleIntervalsComparasionDataViewSuite : TestSuiteBase
+    public class P1_MultipleIntervalsComparasionDataViewSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -45,8 +45,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-1")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-1")]
-        public void AddTimeSpanDataViewAndVerify(TimeSpansData input)
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-1")]
+        public void P1_AddTimeSpanDataViewAndVerify(TimeSpansData input)
         {
             //"+时间段" button is disabled when there is no tag selected
             Assert.IsFalse(EnergyViewToolbar.IsTimeSpanButtonEnable());
@@ -144,8 +144,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-2")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-2")]
-        public void AddTimeSpanDataViewAndSaveToDashboard(TimeSpansData input)
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-2")]
+        public void P1_AddTimeSpanDataViewAndSaveToDashboard(TimeSpansData input)
         {
             //Select one tag and view data view
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -213,7 +213,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3934")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3934")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3934")]
         public void CheckStepDayDisplay3934(TimeSpansData input)
         {
             //Select NancyCostCustomer2->楼宇A
@@ -287,7 +287,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3949")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3949")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3949")]
         public void CheckStepDayDisplayMissingData3949(TimeSpansData input)
         {
             //Select NancyCostCustomer2->楼宇A
@@ -361,7 +361,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3371")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3371")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3371")]
         public void SP2_VerifyTheRecordsWithNullData3371(TimeSpansData input)
         {
             //From SP2, select Customer 'NancyOtherCustomer3' , 
@@ -438,8 +438,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3")]
-        public void VerifyRawStepAndSwitchType(TimeSpansData input)
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_MultipleIntervalsComparasionDataViewSuite), "TC-J1-FVT-MultipleIntervalsComparasion-DataView-101-3")]
+        public void P1_VerifyRawStepAndSwitchType(TimeSpansData input)
         {
             //NancyCostCustomer2>组织A>园区A>楼宇A 
             HomePagePanel.SelectCustomer("NancyCostCustomer2");

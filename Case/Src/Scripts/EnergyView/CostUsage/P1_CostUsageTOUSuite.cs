@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CostUsage
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-CostUsage-TOU-005"), CreateTime("2013-08-16"), Owner("Emma")]
-    public class CostUsageTOUSuite : TestSuiteBase
+    public class P1_CostUsageTOUSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -47,7 +47,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-1")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-1")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-1")]
         public void TOUDataViewColumnWeek(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -103,7 +103,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-2")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-2")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-2")]
         public void TOUDataViewColumnMonth(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -149,7 +149,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-TOU-DataView-005-3")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-3")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-Column-005-3")]
         public void TOUDataViewColumnDisable(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -276,7 +276,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-TOU-005-1")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-1")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-1")]
         public void TOUPieChart(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -318,7 +318,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-TOU-005-2")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-2")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-2")]
         public void TOUChart(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -412,7 +412,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-TOU-005-3")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-3")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageTOUSuite), "TC-J1-FVT-CostUsage-TOU-005-3")]
         public void TOUButtonStatus(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);

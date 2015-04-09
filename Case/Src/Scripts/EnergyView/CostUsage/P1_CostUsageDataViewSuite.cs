@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CostUsage
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-CostUsage-DataView-001"), CreateTime("2013-08-16"), Owner("Emma")]
-    public class CostUsageDataViewSuite : TestSuiteBase
+    public class P1_CostUsageDataViewSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -47,8 +47,8 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-DataView-001-1")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-001-1")]
-        public void CostUsageDataView(CostUsageData input)
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-001-1")]
+        public void P1_CostUsageDataView(CostUsageData input)
         {
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -153,7 +153,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-DataView-001-3842")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-001-3842")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-001-3842")]
         public void CostUsageDataView3842(CostUsageData input)
         {
             //goto "NancyCostCustomer2/组织A/园区A/楼宇A"
@@ -224,8 +224,8 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-DataView-002")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-002")]
-        public void CostUsageRawValueDisplayForTotal(CostUsageData input)
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-002")]
+        public void P1_CostUsageRawValueDisplayForTotal(CostUsageData input)
         {
             //Navigate to Energy Management. Go to Cost chart view. Navigate to Hierarchy list 组织B->园区C>楼宇D&空调.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -290,7 +290,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-DataView-003")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-003")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-003")]
         public void CostUsageRawValueDisplayForSingleCommodity(CostUsageData input)
         {
             //Change Hierarchy list to 组织A->园区A->楼宇A-〉空调, then go to 介质单项.
@@ -383,7 +383,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CostUsage-DataView-004")]
-        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-004")]
+        [MultipleTestDataSource(typeof(CostUsageData[]), typeof(P1_CostUsageDataViewSuite), "TC-J1-FVT-CostUsage-DataView-004")]
         public void AllCommoditiesCostView(CostUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCustomer1");
@@ -429,10 +429,6 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.ShortPause();
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitLoading();
-            //for (int i = 0; i < 15; i++)//Change chart type from pie, it will take very long time to load new chart
-            //{
-            //    TimeManager.LongPause();
-            //}
             CostUsage.ClickDisplayStep(DisplayStep.Hour);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();

@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarbonUsage\CarbonUsageDataViewSuite.cs" />
+    <Compile Include="CarbonUsage\P1_CarbonUsageDataViewSuite.cs" />
     <Compile Include="CarbonUsage\CarbonUsageTrendChartSuite.cs" />
     <Compile Include="CarbonUsage\P4_CarbonUsageDataVerificationSuite.cs" />
     <Compile Include="CarbonUsage\P4_AdditionalCarbonUsageDataVerificationSuite.cs" />
@@ -74,11 +74,11 @@
     <Compile Include="CostUsage\CostUsagePieChartSuite.cs" />
     <Compile Include="CostUsage\CostCalculationAggregationDimensionOnlineSuite.cs" />
     <Compile Include="CostUsage\CostCalculationAggregationHierarchyOnlineSuite .cs" />
-    <Compile Include="CostUsage\CostUsageTOUDataViewSuite.cs" />
+    <Compile Include="CostUsage\P1_CostUsageTOUDataViewSuite.cs" />
     <Compile Include="CostUsage\P4_CostUsageDataVerificationSuite.cs" />
-    <Compile Include="CostUsage\CostUsageTOUSuite.cs" />
+    <Compile Include="CostUsage\P1_CostUsageTOUSuite.cs" />
     <Compile Include="CostUsage\CostUsageTrendChartSuite.cs" />
-    <Compile Include="CostUsage\CostUsageDataViewSuite.cs" />
+    <Compile Include="CostUsage\P1_CostUsageDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\P4_AdditionalTagsDataVerificationSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionPieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionPieChartSuite.cs" />
@@ -89,8 +89,8 @@
     <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionTrendChartSuite.cs" />
     <Compile Include="EnergyAnalysis\SetComparedIntervalInvalidSuite.cs" />
-    <Compile Include="EnergyAnalysis\SetComparedIntervalValidSuite.cs" />
-    <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionDataViewSuite.cs" />
+    <Compile Include="EnergyAnalysis\P1_SetComparedIntervalValidSuite.cs" />
+    <Compile Include="EnergyAnalysis\P1_MultipleIntervalsComparasionDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionTrendChartSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionDataViewSuite.cs" />

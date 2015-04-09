@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-101"), CreateTime("2013-08-13"), Owner("Emma")]
-    public class SetComparedIntervalValidSuite : TestSuiteBase
+    public class P1_SetComparedIntervalValidSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -45,7 +45,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-101")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-101")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-101")]
         public void AddAbsoluteComparedIntervalsWhenOriginalIsAbsolute(TimeSpansData input)
         {
             //Select one tag and view data view
@@ -194,7 +194,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-102")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-102")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-102")]
         public void AddAbsoluteComparedIntervalsWhenOriginalIsRelative(TimeSpansData input)
         {
             //Select one tag and view data view
@@ -270,8 +270,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Check 61 days data value are display out for both original and compared time interval.
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
-
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            
             //The intervals set above are stored and displayed in the dialog when open next time. 
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.ShortPause();
@@ -306,7 +306,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //The chart is redrawn with above intervals correctly.
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
-            EnergyAnalysis.CompareDictionaryDataOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //The intervals set above are stored and displayed in the dialog when open next time. 
             EnergyViewToolbar.ClickTimeSpanButton();
@@ -339,7 +339,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-103")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-103")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-103")]
         public void AddRelativeComparedIntervalsWhenOriginalIsRelative(TimeSpansData input)
         {
             //Select one tag and view data view
@@ -498,7 +498,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-104")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-104")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-104")]
         public void ModifyOriginalThenComparedIntervalsWillBeCleared(TimeSpansData input)
         {
             //Select one tag and view data view
@@ -705,7 +705,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
  
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-106")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-106")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-106")]
         public void ModifyComparedIntervalsWhenOriginalIsRelativeAndNotModified(TimeSpansData input)
         {
             //Select one tag and view data view
@@ -738,7 +738,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             else
                 monthIndex = DateTime.Now.Month + 9;
 
-            //Click  'Add Compared Interval' link button in the dialog multiple times.(2,3,4月)
+            //Click  'Add Compared Interval' link button in the dialog multiple times.(2,1,12月)
             for (int i = 2; i <= 4; i++)
             {
                 TimeSpanDialog.ClickAddTimeSpanButton();
@@ -748,7 +748,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
                 Assert.AreEqual("", TimeSpanDialog.GetAdditionRelativeValue(i + 1));
 
                 //Set all the compared intervals to relative time.
-                TimeSpanDialog.InputAdditionRelativeValue((monthIndex + i - 4).ToString(), i);
+                TimeSpanDialog.InputAdditionRelativeValue((monthIndex + i - 2).ToString(), i);
             }
 
             //Change type of the first compared interval from relative to absolute time. 
@@ -772,9 +772,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             //Check The other compared interval keep as before.
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(3));
-            Assert.AreEqual((monthIndex - 1).ToString(), TimeSpanDialog.GetAdditionRelativeValue(3));
+            Assert.AreEqual((monthIndex + 1).ToString(), TimeSpanDialog.GetAdditionRelativeValue(3));
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(4));
-            Assert.AreEqual(monthIndex.ToString(), TimeSpanDialog.GetAdditionRelativeValue(4));
+            Assert.AreEqual((monthIndex + 2).ToString(), TimeSpanDialog.GetAdditionRelativeValue(4));
 
             //Change type and time of the second compared interval to absolute time: 2013-6-1 00:00 to 2012-7-15 24:00
             TimeSpanDialog.SelectCompareTimeType(CompareTimeType.UserDefined, 3);
@@ -860,7 +860,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-107")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-107")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-107")]
         public void ModifyComparedIntervalsWhenOriginalIsAbsoluteAndNotModified(TimeSpansData input)
         {
             //Select one tag and view data view
@@ -990,7 +990,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleIntervalsComparasion-Set-108")]
-        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-108")]
+        [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-108")]
         public void RemoveComparedIntervals(TimeSpansData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -1033,7 +1033,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //Check The series for compared interval is removed from chart directly.
-            Assert.IsTrue(1 >= EnergyAnalysis.GetTrendChartLines());
+            // Assert.IsTrue(1 >= EnergyAnalysis.GetTrendChartLines());
 
             //The default step should still be Day
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
@@ -1141,7 +1141,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //Check All compared time series in chart are removed and only the tag's original series is displayed.
-            Assert.AreEqual(1, EnergyAnalysis.GetLegendItemTexts().Length);
+            Assert.AreEqual(3, EnergyAnalysis.GetLegendItemTexts().Length);//There are 2 more legends for 目标值 and 基准值 when only a tag.
             Assert.AreEqual("BuildingA_P1_Electri...", EnergyAnalysis.GetLegendItemTexts()[0]);//tag name is too long to display in legend area
 
             //Add multiple compared intervals successfully again.
@@ -1191,7 +1191,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //Check •  All compared intervals are removed.
-            Assert.AreEqual(1, EnergyAnalysis.GetLegendItemTexts().Length);
+            Assert.AreEqual(3, EnergyAnalysis.GetLegendItemTexts().Length);//There are 2 more legends for 目标值 and 基准值 when only a tag.
             //•  All compared time series in chart are removed.
             EnergyViewToolbar.ClickTimeSpanButton();
             TimeManager.MediumPause();

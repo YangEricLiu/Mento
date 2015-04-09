@@ -290,10 +290,14 @@ I18N.Setting.Hierarchy.RelocatePosition = '重新标记';
 I18N.Setting.Hierarchy.MapSettingExplaination = '标记状态下不可拖拽以移动地图显示区域。请确定要标记的位置后再点击“标记位置”按钮。';
 I18N.Setting.Hierarchy.NoMarkerSetMessage = '请标记地图位置后再保存。';
 I18N.Setting.Hierarchy.ChildArea = '子区域';
+I18N.Setting.Hierarchy.MeterCount = '标记数量';
+I18N.Setting.Hierarchy.PTagCount = '计量数据P数量';
+I18N.Setting.Hierarchy.VTagCount = '计量数据V数量';
 
 I18N.Setting.Label.BasicProperties = '基础属性';
 I18N.Setting.Label.HierarchyNodeBasicProperties = '##Setting.Label.BasicProperties##';
 I18N.Setting.Label.HierarchyNodeCalendarProperties = '日历属性';
+I18N.Setting.Label.HierarchyNodeAdminProperties = '管理员';
 I18N.Setting.Label.HierarchyNodeCostProperties = '成本属性';
 I18N.Setting.Label.HierarchyNodePopulationNAreaProperties = '人口面积';
 I18N.Setting.Label.PTagBasicProperties = '##Setting.Label.BasicProperties##';
@@ -481,6 +485,7 @@ I18N.Setting.TagConfiguration.History = '修改记录';
 I18N.Setting.TagConfiguration.SaveAndSwitch = '保存并切换';
 I18N.Setting.TagConfiguration.Switch = '直接切换';
 I18N.Setting.TagConfiguration.SwitchTip = '您有未保存的修改项，切换时间段后将会放弃这些修改内容。';
+I18N.Setting.TagConfiguration.TagNameCode = '数据点名称：{0}   编码：{1}';
 //tag raw data
 
 I18N.Setting.TagBatchImport = {};
@@ -1291,6 +1296,16 @@ I18N.Setting.CarbonFactor.ConfirmDelete = '确认删除“{0}”到“{1}”的#
 //calendar
 I18N.Setting.Calendar = {};
 
+//admin
+I18N.Setting.Admin = {};
+I18N.Setting.Admin.AdminLabel = '管理员';
+I18N.Setting.Admin.Position = '职务';
+I18N.Setting.Admin.MobileOrTeleNeeded = '手机、座机至少填写一项';
+I18N.Setting.Admin.Mobile = '手机';
+I18N.Setting.Admin.Telephone = '座机';
+I18N.Setting.Admin.Email = '邮箱';
+//I18N.Setting.Admin.Email = '手机和座机不能同时为空，请至少填写一项';
+
 //workday
 I18N.Setting.Calendar.WorkDay = '工作日';
 I18N.Setting.Calendar.Holiday = '非工作日';
@@ -1357,6 +1372,8 @@ I18N.Setting.Calendar.ColdTitle = '供冷季区间：'
 I18N.Setting.Calendar.NightTitle = '黑夜时间：'
 I18N.Setting.Calendar.NightContent = '白昼时间以外均为黑夜时间'
 I18N.Setting.Calendar.DayTitle = '白昼时间：'
+
+I18N.Setting.Admin.TabName = '管理员'
 
 //mk alarm
 I18N.Setting.Alarm = {};

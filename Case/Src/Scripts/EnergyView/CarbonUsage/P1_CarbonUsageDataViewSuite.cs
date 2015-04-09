@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-CarbonUsage-DataView-001"), CreateTime("2013-08-16"), Owner("Emma")]
-    public class CarbonUsageDataViewSuite : TestSuiteBase
+    public class P1_CarbonUsageDataViewSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -47,8 +47,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsage-DataView-001-1")]
-        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-1")]
-        public void SingleCommodityDataView(CarbonUsageData input)
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(P1_CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-1")]
+        public void P1_SingleCommodityDataView(CarbonUsageData input)
         {
             CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -200,8 +200,8 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsage-DataView-001-2")]
-        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-2")]
-        public void TotalCommodityDataView(CarbonUsageData input)
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(P1_CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-2")]
+        public void P1_TotalCommodityDataView(CarbonUsageData input)
         {
             CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -308,7 +308,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsage-DataView-001-3")]
-        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-3")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(P1_CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-3")]
         public void NofactorSingleCommodityDataView(CarbonUsageData input)
         {
             CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);
@@ -383,7 +383,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsage-DataView-101-1")]
-        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-101-1")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(P1_CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-101-1")]
         public void CarbonDataRows5507(CarbonUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -440,7 +440,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsage-DataView-001-4")]
-        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-4")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(P1_CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-4")]
         public void CarbonUsageRawValueDisplayForTotal(CarbonUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -495,7 +495,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsage-DataView-001-5")]
-        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-5")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(P1_CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-5")]
         public void CarbonUsageRawValueDisplayForSingleCommodity(CarbonUsageData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -576,7 +576,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUsage-DataView-001-6")]
-        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-6")]
+        [MultipleTestDataSource(typeof(CarbonUsageData[]), typeof(P1_CarbonUsageDataViewSuite), "TC-J1-FVT-CarbonUsage-DataView-001-6")]
         public void AllCommoditiesCarbonView(CarbonUsageData input)
         {
             CarbonUsage.SelectHierarchy(input.InputData.Hierarchies);

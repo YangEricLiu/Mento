@@ -2008,7 +2008,7 @@ I18N.Message.M21705 = 'Duplicated report name.';
 I18N.Message.M21702 = 'The report is modified. Will refresh it soon.';
 I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';I18N.DateTimeFormat.ConsecutiveTime = {};
 I18N.DateTimeFormat.ConsecutiveTime.DayHourMinute = '{0}天{1}小时{2}分';
-I18N.Setting.Hierarchy.MeterCount = '标记数量';
+I18N.Setting.Hierarchy.MeterCount = '表计数量';
 I18N.Setting.Hierarchy.PTagCount = '计量数据P数量';
 I18N.Setting.Hierarchy.VTagCount = '计量数据V数量';
 I18N.Setting.Label.HierarchyNodeAdminProperties = '管理员';

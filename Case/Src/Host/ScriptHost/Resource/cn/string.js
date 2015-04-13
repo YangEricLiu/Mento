@@ -290,7 +290,7 @@ I18N.Setting.Hierarchy.RelocatePosition = '重新标记';
 I18N.Setting.Hierarchy.MapSettingExplaination = '标记状态下不可拖拽以移动地图显示区域。请确定要标记的位置后再点击“标记位置”按钮。';
 I18N.Setting.Hierarchy.NoMarkerSetMessage = '请标记地图位置后再保存。';
 I18N.Setting.Hierarchy.ChildArea = '子区域';
-I18N.Setting.Hierarchy.MeterCount = '标记数量';
+I18N.Setting.Hierarchy.MeterCount = '表计数量';
 I18N.Setting.Hierarchy.PTagCount = '计量数据P数量';
 I18N.Setting.Hierarchy.VTagCount = '计量数据V数量';
 

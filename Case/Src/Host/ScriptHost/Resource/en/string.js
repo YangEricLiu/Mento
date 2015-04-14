@@ -78,6 +78,7 @@ I18N.DateTimeFormat = {};
 I18N.DateTimeFormat.ExtFormat = {};
 I18N.DateTimeFormat.HighFormat = {};
 I18N.DateTimeFormat.IntervalFormat = {};
+I18N.DateTimeFormat.ConsecutiveTime = {};
 I18N.Common.TagType = {};
 I18N.Common.CaculationType = {};
 I18N.Common.AggregationStep = {};
@@ -125,6 +126,7 @@ I18N.DateTimeFormat.IntervalFormat.MonthDate = 'm/d';
 I18N.DateTimeFormat.IntervalFormat.Year = 'Y';
 I18N.DateTimeFormat.IntervalFormat.FullDateTime = 'H:i:s, m/d, Y';
 I18N.DateTimeFormat.IntervalFormat.FullDate = 'm/d, Y';
+I18N.DateTimeFormat.ConsecutiveTime.DayHourMinute = 'Day {0} Hour {1} Minute {2}';
 
 I18N.HomePage.Label.Myshare = 'My sharing';
 I18N.HomePage.Label.MyFavoriteDashboardNodeName = 'My favorites';
@@ -288,10 +290,14 @@ I18N.Setting.Hierarchy.RelocatePosition = 'Re-flag';
 I18N.Setting.Hierarchy.MapSettingExplaination = 'Dragging to move map display area is not permitted under labeling state. Please confirm the position to be labeled and then press the "Label Position" button.';
 I18N.Setting.Hierarchy.NoMarkerSetMessage = 'Please flag map position before saving.';
 I18N.Setting.Hierarchy.ChildArea = 'Subdomain';
+I18N.Setting.Hierarchy.MeterCount = 'Tag No.';
+I18N.Setting.Hierarchy.PTagCount = 'Physical Tag No.';
+I18N.Setting.Hierarchy.VTagCount = 'Virtual Tag No.';
 
 I18N.Setting.Label.BasicProperties = 'Properties';
 I18N.Setting.Label.HierarchyNodeBasicProperties = '##Setting.Label.BasicProperties##';
 I18N.Setting.Label.HierarchyNodeCalendarProperties = 'Calendar';
+I18N.Setting.Label.HierarchyNodeAdminProperties = 'Admin';
 I18N.Setting.Label.HierarchyNodeCostProperties = 'Cost';
 I18N.Setting.Label.HierarchyNodePopulationNAreaProperties = 'Population & Area';
 I18N.Setting.Label.PTagBasicProperties = '##Setting.Label.BasicProperties##';
@@ -360,11 +366,17 @@ I18N.Setting.TargetBaseline.AlarmThresholdTip = 'When the data goes beyond the s
 I18N.Setting.VEERecord = {};
 I18N.Setting.VEERecord.AbnormalDataRecord = 'Abnormal record';
 I18N.Setting.VEERecord.ErrorTimePeriod = 'Abnormal time interval';
-I18N.Setting.VEERecord.ErrorTagName = 'Name of abnormal data point';
+I18N.Setting.VEERecord.ConsecutiveTime = 'Duration';
+I18N.Setting.VEERecord.ErrorTagName = 'Data Name';
+I18N.Setting.VEERecord.ErrorTagCode = 'Data Code';
 I18N.Setting.VEERecord.ErrorTagType = 'Type of data point';
 I18N.Setting.VEERecord.ErrorTagDataType = 'Data type';
 I18N.Setting.VEERecord.ModifyDatetime = 'Modified at';
 I18N.Setting.VEERecord.ModifyDatetimePeriod = 'Modified time interval';
+I18N.Setting.VEERecord.SimilarTitle = 'Filtering same type records';
+I18N.Setting.VEERecord.SimilarContent = 'There are {3} records for Rule Set {0}, Rule {1} and Duration {2}, will you select them all?';
+I18N.Setting.VEERecord.SimilarMute = 'No popup dialog for same recrods';
+I18N.Setting.VEERecord.SimilarChosen = 'Check';
 
 I18N.Setting.VEEBatchModify = {};
 
@@ -409,7 +421,18 @@ I18N.Setting.VEEMonitorRule.CreateTime = 'Configured On';
 I18N.Setting.VEEMonitorRule.MonitorRule = 'Rule set';
 I18N.Setting.VEEMonitorRule.MonitorTag = 'Data point';
 I18N.Setting.VEEMonitorRule.Monitor = 'Alarm Receiver';
-I18N.Setting.VEEMonitorRule.NormalPeak = 'Normal peak';
+I18N.Setting.VEEMonitorRule.MonitorMail = 'Alarm Mail';
+I18N.Setting.VEEMonitorRule.NotificationRule = 'Mail Rule';
+I18N.Setting.VEEMonitorRule.NotificationRuleSetter = 'Rule Setting';
+I18N.Setting.VEEMonitorRule.NotificationRuleTip = 'Alarm receiver will receive the alarm mail if the duration or number of missing data exceeds the defined parameters.';
+I18N.Setting.VEEMonitorRule.ContinuousTime = 'Set by duration of Missing data';
+I18N.Setting.VEEMonitorRule.NullNumber = 'Set by number of Missing data';
+I18N.Setting.VEEMonitorRule.Percent = 'Set by percetage of Missing data';
+I18N.Setting.VEEMonitorRule.RawStep = 'Raw step';
+I18N.Setting.VEEMonitorRule.NullNumberTitle = 'No, of Missing data';
+I18N.Setting.VEEMonitorRule.VEERange = 'Abnormal duration';
+
+I18N.Setting.VEEMonitorRule.NormalPeak = 'Normal Spike';
 I18N.Setting.VEEMonitorRule.AbnormalPeak = 'Abnormal peak';
 I18N.Setting.VEEMonitorRule.NullValue = 'Null value';
 I18N.Setting.VEEMonitorRule.NegativeValue = 'Negative value';
@@ -439,7 +462,8 @@ I18N.Setting.VEEMonitorRule.ScanAllTags = 'The system will scan all data after t
 I18N.Setting.VEEMonitorRule.SelectHierarchy = 'Please select hierarchical node.';
 I18N.Setting.VEEMonitorRule.SelectedMultiHierarchy = 'Multiple hierarchical nodes have been selected.';
 I18N.Setting.VEEMonitorRule.AssociateAll = 'Are you sure to append all the data points under this screening condition to the "Selected Tag" and connect them?';
-I18N.Setting.VEEMonitorRule.HierTreeOtherTags = 'Unassociated tags'
+I18N.Setting.VEEMonitorRule.HierTreeOtherTags = 'Unassociated tags';
+I18N.Setting.VEEMonitorRule.SpecailValueTip = 'n is special value';
 
 
 I18N.Setting.TagConfiguration.FormulaItemType = {};
@@ -461,6 +485,7 @@ I18N.Setting.TagConfiguration.History = 'Change Record';
 I18N.Setting.TagConfiguration.SaveAndSwitch = 'Save and switch';
 I18N.Setting.TagConfiguration.Switch = 'Directly switch';
 I18N.Setting.TagConfiguration.SwitchTip = '"Some of the changes you have made have not been saved. If you switch to the time period, you will discard these changes."';
+I18N.Setting.TagConfiguration.TagNameCode = 'data name:{0}  code: {1}';
 //tag raw data
 
 I18N.Setting.TagBatchImport = {};
@@ -656,9 +681,12 @@ I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePreviousComboLabel = 'Previou
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious7Day = '7 days';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious30Day = '30 days';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious12Month = '12 months';
+I18N.EM.EnergyAnalyse.TagSelectTooltip = 'Chosen data {0}/{1}';
+I18N.EM.EnergyAnalyse.TagSelectOverMaxTooltip = 'Chosen data {0}/{1}, new added data number exceeds the maximum number. Please select the data one by one.';
 I18N.EM.YAxisSetting = 'Y Axis Setting';
 I18N.EM.YAxisSettingTags = 'Relative Data';
 I18N.EM.YAxisTitle = 'Y Axis';
+I18N.EM.PieNegtive = 'Not support Negative value in Pie.';
 I18N.EM.YAxisMinMaxValidation = 'Maximum value should be greater than minimum value.';
 
 
@@ -847,11 +875,15 @@ I18N.EM.Report.DuplicatedName = 'File is existed. Please rename and upload it ag
 I18N.EM.Report.NeedUploadTemplate = 'Please upload new template.';
 I18N.EM.Report.StepError = 'Select tag does not support step {0}, please select step {1}.';
 I18N.EM.Report.StepError2 = 'Selected tag does not support step {0} and has no supported step in current time range. Please modify tag or time range.';
-I18N.EM.Report.ExportFormat = 'Export Report Format';
-I18N.EM.Report.ExportTagName = 'Tag Name';
-I18N.EM.Report.ExportTimeLabel = 'Timestamp';
-I18N.EM.Report.ExportStepError = 'Some steps can not be supported by selected tags';
-I18N.EM.Report.ExportTagUnassociated = 'Tags have been unassociated from hierarchy';
+I18N.EM.Report.ExportFormat = 'Report Export Format';
+I18N.EM.Report.ExportTagName = 'Export Data Name';
+I18N.EM.Report.ExportTimeLabel = 'Export Time Label';
+I18N.EM.Report.ExportStepError = 'There is unsupported step, please check it.';
+I18N.EM.Report.ExportTagUnassociated = 'Data is unassociated.';
+
+I18N.EM.Export = {};
+I18N.EM.Export.Preview = 'Preview';
+
 
 I18N.EM.ShowAlarmList = 'Display alarm list';
 I18N.EM.HideAlarmList = 'Hide alarm list';
@@ -963,6 +995,7 @@ I18N.Common.Button.ColumnChart = 'Column chart';
 I18N.Common.Button.GridView = 'Data sheet';
 I18N.Common.Button.SearchData = 'Create';
 I18N.Common.Button.More = 'More';
+I18N.Common.Button.ModifyMore = 'More Modification';
 I18N.Common.Button.DefaultDate = 'Default time';
 I18N.Common.Button.ToDashboard = 'To dashboard';
 I18N.Common.Button.Export = 'Chart export';
@@ -1058,8 +1091,10 @@ I18N.Common.Label.EmailRegexError = 'Please enter in the format of "user@example
 I18N.Common.Label.TelephoneRegexError = 'Numbers and dashes are allowed but dashes may not appear in succession or used at beginning or end.';
 I18N.Common.Label.AddressRegexError = 'Chinese characters, half-width English letters, numbers, underlines, dashes, and spacing are allowed.';
 I18N.Common.Label.PositiveRegexError = 'Only enter a positive value in this item.';
+I18N.Common.Label.UrlRegexError = 'Please input as format "http://www.spdomain.com/login".';
 
-I18N.Common.Label.TimeConflict = 'Time periods conflict.';
+
+I18N.Common.Label.TimeConflict = 'Conflict time duration.';
 I18N.Common.Label.DuplicatedName = 'This name already exists.';
 I18N.Common.Label.TimeZoneConflict = 'Time scope is overlapped.';
 I18N.Common.Label.TimeOverlap = 'Time scope is overlapped. Please check it.';
@@ -1261,6 +1296,16 @@ I18N.Setting.CarbonFactor.ConfirmDelete = 'Are you sure to delete ##Setting.Carb
 //calendar
 I18N.Setting.Calendar = {};
 
+//admin
+I18N.Setting.Admin = {};
+I18N.Setting.Admin.AdminLabel = 'Admin';
+I18N.Setting.Admin.Position = 'Position';
+I18N.Setting.Admin.MobileOrTeleNeeded = 'Please input the mobile or telephone.';
+I18N.Setting.Admin.Mobile = 'Mobile';
+I18N.Setting.Admin.Telephone = 'Telephone';
+I18N.Setting.Admin.Email = 'Mailbox';
+//I18N.Setting.Admin.Email = '手机和座机不能同时为空，请至少填写一项';
+
 //workday
 I18N.Setting.Calendar.WorkDay = 'Workday';
 I18N.Setting.Calendar.Holiday = 'Non-work day';
@@ -1327,6 +1372,8 @@ I18N.Setting.Calendar.ColdTitle = 'Cooling season:'
 I18N.Setting.Calendar.NightTitle = 'Night time'
 I18N.Setting.Calendar.NightContent = 'Time except daytime is all night time.'
 I18N.Setting.Calendar.DayTitle = 'Daytime:'
+
+I18N.Setting.Admin.TabName = 'Admin'
 
 //mk alarm
 I18N.Setting.Alarm = {};
@@ -1628,6 +1675,10 @@ I18N.Setting.SPManagement.Address = 'Address';
 I18N.Setting.SPManagement.Telephone = 'Tel.';
 I18N.Setting.SPManagement.Email = 'Email';
 I18N.Setting.SPManagement.StartDate = 'Operation start time';
+I18N.Setting.SPManagement.LoginUrl = 'Page after failed login';
+I18N.Setting.SPManagement.LoginUrlTip = 'Please input the address which will be jumped after failed login';
+I18N.Setting.SPManagement.LogOutUrl = 'Logout Page';
+I18N.Setting.SPManagement.LogOutUrlTip = 'Please input the addres which will be jumped after logout.';
 I18N.Setting.SPManagement.Status = 'Operation state';
 I18N.Setting.SPManagement.SendMail = 'Send mail';
 I18N.Setting.SPManagement.MailSent = 'Mail has been sent.';
@@ -2006,47 +2057,4 @@ I18N.Message.M20014 = 'Some tags are deleted or not under the permission scope�
 I18N.Message.M21707 = 'Report {0} is deleted. Will refresh report list soon.';
 I18N.Message.M21705 = 'Duplicated report name.';
 I18N.Message.M21702 = 'The report is modified. Will refresh it soon.';
-I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';I18N.DateTimeFormat.ConsecutiveTime = {};
-I18N.DateTimeFormat.ConsecutiveTime.DayHourMinute = '{0}天{1}小时{2}分';
-I18N.Setting.Hierarchy.MeterCount = '表计数量';
-I18N.Setting.Hierarchy.PTagCount = '计量数据P数量';
-I18N.Setting.Hierarchy.VTagCount = '计量数据V数量';
-I18N.Setting.Label.HierarchyNodeAdminProperties = '管理员';
-I18N.Setting.VEERecord.ConsecutiveTime = '连续时长';
-I18N.Setting.VEERecord.ErrorTagCode = '数据点编码';
-I18N.Setting.VEERecord.SimilarTitle = '同类异常数据记录筛选';
-I18N.Setting.VEERecord.SimilarContent = '异常规则集 {0}，异常类型 {1}， 异常时间段 {2} 的异常记录共有{3}条， 全部选中吗？';
-I18N.Setting.VEERecord.SimilarMute = '同类的记录不再显示此对话框';
-I18N.Setting.VEERecord.SimilarChosen = '选中';
-I18N.Setting.VEEMonitorRule.MonitorMail = '报警邮件';
-I18N.Setting.VEEMonitorRule.NotificationRule = '邮件通知规则';
-I18N.Setting.VEEMonitorRule.NotificationRuleSetter = '通知规则设置';
-I18N.Setting.VEEMonitorRule.NotificationRuleTip = '当空值的时长或个数超过通知规则所设置参数时，报警接受人将收到报警邮件。';
-I18N.Setting.VEEMonitorRule.ContinuousTime = '按空值连续时时长设置';
-I18N.Setting.VEEMonitorRule.NullNumber = '按空值个数设置';
-I18N.Setting.VEEMonitorRule.Percent = '按空值所占百分比设置';
-I18N.Setting.VEEMonitorRule.RawStep = '原始步长';
-I18N.Setting.VEEMonitorRule.NullNumberTitle = '空值个数';
-I18N.Setting.VEEMonitorRule.VEERange = '异常时长';
-I18N.Setting.VEEMonitorRule.SpecailValueTip = 'n为特殊值';
-I18N.Setting.TagConfiguration.TagNameCode = '数据点名称：{0}   编码：{1}';
-I18N.EM.EnergyAnalyse.TagSelectTooltip = '已选数据点 {0}/{1}';
-I18N.EM.EnergyAnalyse.TagSelectOverMaxTooltip = '已选数据点 {0}/{1}，新增全选的数据点数量超出了可选范围，无法全选。请逐一选择目标数据点。';
-I18N.EM.PieNegtive = '负值不支持饼状图显示。';
-I18N.EM.Export = {};
-I18N.EM.Export.Preview = '导出图片预览';
-I18N.Common.Button.ModifyMore = '更多参数修改';
-I18N.Common.Label.UrlRegexError = '请按照"http://www.spdomain.com/login"的格式输入';
-I18N.Setting.Admin = {};
-I18N.Setting.Admin.AdminLabel = '管理员';
-I18N.Setting.Admin.Position = '职务';
-I18N.Setting.Admin.MobileOrTeleNeeded = '手机、座机至少填写一项';
-I18N.Setting.Admin.Mobile = '手机';
-I18N.Setting.Admin.Telephone = '座机';
-I18N.Setting.Admin.Email = '邮箱';
-//I18N.Setting.Admin.Email = '手机和座机不能同时为空，请至少填写一项';
-I18N.Setting.Admin.TabName = '管理员'
-I18N.Setting.SPManagement.LoginUrl = '登录失败返回页面';
-I18N.Setting.SPManagement.LoginUrlTip = '请填写网址，登录失败后页面会自动跳转到所填网址。';
-I18N.Setting.SPManagement.LogOutUrl = '退出页面';
-I18N.Setting.SPManagement.LogOutUrlTip = '请填写网址，退出系统时会自动跳转至所填网址。';
+I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';

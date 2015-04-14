@@ -555,4 +555,7 @@
   <data name="Zone_Temperate Region" xml:space="preserve">
     <value>Temperate region</value>
   </data>
+  <data name="Uom_RH%" xml:space="preserve">
+    <value>RH%</value>
+  </data>
 </root>

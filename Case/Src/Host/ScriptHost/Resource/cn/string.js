@@ -57,6 +57,14 @@ I18N.Dashboard.Label.Share = '共享';
 I18N.Dashboard.Label.CancelShare = '取消共享';
 I18N.Dashboard.Label.Comment = '评论';
 
+I18N.Dashboard.Label.DashboardModify = {};
+I18N.Dashboard.Label.DashboardModify.SaveCurrent = '保存当前修改';
+I18N.Dashboard.Label.DashboardModify.OverrideWidget = '覆盖原组件';
+I18N.Dashboard.Label.DashboardModify.SaveAsWidget = '另存为新组建';
+I18N.Dashboard.Label.DashboardModify.SaveAsMsg = '至当前组件所在仪表盘';
+I18N.Dashboard.Label.DashboardModify.WidgetName = '组件名称';
+I18N.Dashboard.Label.DashboardModify.NewWidgetNameAppendix = '-副本';
+
 I18N.Navigator = {};
 I18N.Navigator.Hierarchy = {};
 I18N.Navigator.Hierarchy.Menu = {};
@@ -996,6 +1004,7 @@ I18N.Common.Button.GridView = '数据表';
 I18N.Common.Button.SearchData = '查看数据';
 I18N.Common.Button.More = '更多';
 I18N.Common.Button.ModifyMore = '更多参数修改';
+I18N.Common.Button.ModifyMoreMsg = '请保存后再进行更多参数修改。';
 I18N.Common.Button.DefaultDate = '默认时间';
 I18N.Common.Button.ToDashboard = '至仪表盘';
 I18N.Common.Button.Export = '图表导出';

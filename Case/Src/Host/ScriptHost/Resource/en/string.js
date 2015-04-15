@@ -57,6 +57,14 @@ I18N.Dashboard.Label.Share = 'Shared';
 I18N.Dashboard.Label.CancelShare = 'Cancel sharing';
 I18N.Dashboard.Label.Comment = 'Comments';
 
+I18N.Dashboard.Label.DashboardModify = {};
+I18N.Dashboard.Label.DashboardModify.SaveCurrent = 'Save current modification.';
+I18N.Dashboard.Label.DashboardModify.OverrideWidget = 'Overwrite';
+I18N.Dashboard.Label.DashboardModify.SaveAsWidget = 'Save as new widget';
+I18N.Dashboard.Label.DashboardModify.SaveAsMsg = 'Save into current dashboard';
+I18N.Dashboard.Label.DashboardModify.WidgetName = 'Widget name';
+I18N.Dashboard.Label.DashboardModify.NewWidgetNameAppendix = ' - Copy';
+
 I18N.Navigator = {};
 I18N.Navigator.Hierarchy = {};
 I18N.Navigator.Hierarchy.Menu = {};
@@ -996,6 +1004,7 @@ I18N.Common.Button.GridView = 'Data sheet';
 I18N.Common.Button.SearchData = 'Create';
 I18N.Common.Button.More = 'More';
 I18N.Common.Button.ModifyMore = 'More Modification';
+I18N.Common.Button.ModifyMoreMsg = 'Please save it first before more modification.';
 I18N.Common.Button.DefaultDate = 'Default time';
 I18N.Common.Button.ToDashboard = 'To dashboard';
 I18N.Common.Button.Export = 'Chart export';

@@ -78,15 +78,14 @@ namespace Mento.Script.OpenAPI
                 tmpevd.EnergyViewDatas = targetEnergyDataObject.ToString();
 
                 JArray tedata2 = (JArray)targetEnergyDataObject["TargetEnergyData"];
-                //JObject target2 = (JObject)tedata2[0]["Target"];
-
 
                 tmpevd.TargetEnergyData = tedata2.ToString();
-                tmpevd.EnergyData = tedata2[0]["EnergyData"].ToString();
-                //tmpevd.Target = target2.ToString();
-                //tmpevd.Name = target2["Name"].ToString();
-                //tmpevd.Type = target2["Type"].ToString();
-                //tmpevd.TimeSpan = target2["TimeSpan"].ToString();
+
+                if("[]" != tmpevd.TargetEnergyData)
+                {
+                    tmpevd.EnergyData = tedata2[0]["EnergyData"].ToString();
+                }           
+
                 evd.Add(tmpevd);
             }
             

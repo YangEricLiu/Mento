@@ -64,6 +64,8 @@ I18N.Dashboard.Label.DashboardModify.SaveAsWidget = '另存为新组建';
 I18N.Dashboard.Label.DashboardModify.SaveAsMsg = '至当前组件所在仪表盘';
 I18N.Dashboard.Label.DashboardModify.WidgetName = '组件名称';
 I18N.Dashboard.Label.DashboardModify.NewWidgetNameAppendix = '-副本';
+I18N.Dashboard.Label.DashboardModify.OverrideSavedMsg = '修改已覆盖至当前组件';
+I18N.Dashboard.Label.DashboardModify.SaveAsSavedMsg = '修改已另存为新组建';
 
 I18N.Navigator = {};
 I18N.Navigator.Hierarchy = {};
@@ -382,7 +384,7 @@ I18N.Setting.VEERecord.ErrorTagDataType = '数据类型';
 I18N.Setting.VEERecord.ModifyDatetime = '修改时间';
 I18N.Setting.VEERecord.ModifyDatetimePeriod = '修改时间段';
 I18N.Setting.VEERecord.SimilarTitle = '同类异常数据记录筛选';
-I18N.Setting.VEERecord.SimilarContent = '异常规则集 {0}，异常类型 {1}， 异常时间段 {2} 的异常记录共有{3}条， 全部选中吗？';
+I18N.Setting.VEERecord.SimilarContent = '异常规则集“{0}”，异常类型“{1}”， 异常时间段“{2}”的异常记录共有{3}条， 全部选中吗？';
 I18N.Setting.VEERecord.SimilarMute = '同类的记录不再显示此对话框';
 I18N.Setting.VEERecord.SimilarChosen = '选中';
 

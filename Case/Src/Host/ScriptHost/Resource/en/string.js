@@ -2067,4 +2067,4 @@ I18N.Message.M21707 = 'Report {0} is deleted. Will refresh report list soon.';
 I18N.Message.M21705 = 'Duplicated report name.';
 I18N.Message.M21702 = 'The report is modified. Will refresh it soon.';
 I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';I18N.Dashboard.Label.DashboardModify.OverrideSavedMsg = '修改已覆盖至当前组件';
-I18N.Dashboard.Label.DashboardModify.SaveAsSavedMsg = '修改已另存为新组建';
+I18N.Dashboard.Label.DashboardModify.SaveAsSavedMsg = '修改已另存为新组件';

@@ -60,12 +60,12 @@ I18N.Dashboard.Label.Comment = '评论';
 I18N.Dashboard.Label.DashboardModify = {};
 I18N.Dashboard.Label.DashboardModify.SaveCurrent = '保存当前修改';
 I18N.Dashboard.Label.DashboardModify.OverrideWidget = '覆盖原组件';
-I18N.Dashboard.Label.DashboardModify.SaveAsWidget = '另存为新组建';
+I18N.Dashboard.Label.DashboardModify.SaveAsWidget = '另存为新组件';
 I18N.Dashboard.Label.DashboardModify.SaveAsMsg = '至当前组件所在仪表盘';
 I18N.Dashboard.Label.DashboardModify.WidgetName = '组件名称';
 I18N.Dashboard.Label.DashboardModify.NewWidgetNameAppendix = '-副本';
 I18N.Dashboard.Label.DashboardModify.OverrideSavedMsg = '修改已覆盖至当前组件';
-I18N.Dashboard.Label.DashboardModify.SaveAsSavedMsg = '修改已另存为新组建';
+I18N.Dashboard.Label.DashboardModify.SaveAsSavedMsg = '修改已另存为新组件';
 
 I18N.Navigator = {};
 I18N.Navigator.Hierarchy = {};

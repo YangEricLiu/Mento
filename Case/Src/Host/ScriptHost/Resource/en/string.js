@@ -52,7 +52,7 @@ I18N.Dashboard.Label.Others = 'Other persons';
 I18N.Dashboard.Label.WriteComment = 'Write down comments:';
 I18N.Dashboard.Label.FreshLatestComments = 'Refreshing latest comments';
 I18N.Dashboard.Label.LoadMore = 'Loading more comments';
-I18N.Dashboard.Label.ShareFrom = 'Shared since {0}';
+I18N.Dashboard.Label.ShareFrom = 'Shared by {0}';
 I18N.Dashboard.Label.Share = 'Shared';
 I18N.Dashboard.Label.CancelShare = 'Cancel sharing';
 I18N.Dashboard.Label.Comment = 'Comments';
@@ -64,6 +64,8 @@ I18N.Dashboard.Label.DashboardModify.SaveAsWidget = 'Save as new widget';
 I18N.Dashboard.Label.DashboardModify.SaveAsMsg = 'Save into current dashboard';
 I18N.Dashboard.Label.DashboardModify.WidgetName = 'Widget name';
 I18N.Dashboard.Label.DashboardModify.NewWidgetNameAppendix = ' - Copy';
+I18N.Dashboard.Label.DashboardModify.OverrideSavedMsg = 'Modification has overwritten current widget.';
+I18N.Dashboard.Label.DashboardModify.SaveAsSavedMsg = 'Modification has be saved as a new widget.';
 
 I18N.Navigator = {};
 I18N.Navigator.Hierarchy = {};
@@ -382,8 +384,8 @@ I18N.Setting.VEERecord.ErrorTagDataType = 'Data type';
 I18N.Setting.VEERecord.ModifyDatetime = 'Modified at';
 I18N.Setting.VEERecord.ModifyDatetimePeriod = 'Modified time interval';
 I18N.Setting.VEERecord.SimilarTitle = 'Filtering same type records';
-I18N.Setting.VEERecord.SimilarContent = 'There are {3} records for Rule Set {0}, Rule {1} and Duration {2}, will you select them all?';
-I18N.Setting.VEERecord.SimilarMute = 'No popup dialog for same recrods';
+I18N.Setting.VEERecord.SimilarContent = 'There are {3} records for Rule Set "{0}", Data Type "{1}" and Duration "{2}", will you select them all?';
+I18N.Setting.VEERecord.SimilarMute = 'No popup dialog for same records';
 I18N.Setting.VEERecord.SimilarChosen = 'Check';
 
 I18N.Setting.VEEBatchModify = {};
@@ -493,7 +495,7 @@ I18N.Setting.TagConfiguration.History = 'Change Record';
 I18N.Setting.TagConfiguration.SaveAndSwitch = 'Save and switch';
 I18N.Setting.TagConfiguration.Switch = 'Directly switch';
 I18N.Setting.TagConfiguration.SwitchTip = '"Some of the changes you have made have not been saved. If you switch to the time period, you will discard these changes."';
-I18N.Setting.TagConfiguration.TagNameCode = 'data name:{0}  code: {1}';
+I18N.Setting.TagConfiguration.TagNameCode = 'Tag name:{0}  code: {1}';
 //tag raw data
 
 I18N.Setting.TagBatchImport = {};
@@ -2066,5 +2068,4 @@ I18N.Message.M20014 = 'Some tags are deleted or not under the permission scope�
 I18N.Message.M21707 = 'Report {0} is deleted. Will refresh report list soon.';
 I18N.Message.M21705 = 'Duplicated report name.';
 I18N.Message.M21702 = 'The report is modified. Will refresh it soon.';
-I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';I18N.Dashboard.Label.DashboardModify.OverrideSavedMsg = '修改已覆盖至当前组件';
-I18N.Dashboard.Label.DashboardModify.SaveAsSavedMsg = '修改已另存为新组件';
+I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';

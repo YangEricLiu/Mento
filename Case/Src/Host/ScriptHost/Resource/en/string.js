@@ -570,7 +570,7 @@ I18N.Setting.HierarchyBatchImport.ErrorMessage999 = 'Request is failed because i
 //I18N.Setting.HierarchyBatchImport.ErrorMessage8 = '您没有该功能权限'
 //I18N.Setting.HierarchyBatchImport.ErrorMessage9 = '您没有该数据权限'
 
-I18N.Setting.TagAssociation.UnassociateTip = 'Cancel the correlation with the following persons.';
+I18N.Setting.TagAssociation.UnassociateTip = 'Cancel the correlation with the following tags.';
 I18N.Setting.TagAssociation.Associatiable = 'Can be associated';
 I18N.Setting.TagAssociation.Unassociatiable = 'Cannot be associated';
 I18N.Setting.TagAssociation.AssociatedStatus = 'Status';
@@ -1926,7 +1926,7 @@ I18N.Message.M06196 = 'The current hierarchy node does not include data points t
 I18N.Message.M06197 = 'The current system dimension does not include data points that have the same commodity unit as this data point.';
 I18N.Message.M06198 = 'The current region dimension does not include data points that have the same commodity unit as this data point.';
 I18N.Message.M06200 = I18N.format(I18N.Message.DeletionConcurrency, I18N.Common.Glossary.Customer);
-I18N.Message.M06201 = '##Common.Glossary.CalculationStep## cannot be changed to “{0}”. Since this ##Common.Glossary.Tag## has a reference relation to other ##Common.Glossary.Tag##, the ##Common.Glossary.CalculationStep## referring to ##Common.Glossary.Tag# must be larger than or equal to ##Common.Glossary.CalculationStep## of ##Common.Glossary.Tag## referred.';
+I18N.Message.M06201 = '##Common.Glossary.CalculationStep## cannot be changed to “{0}”. Since this ##Common.Glossary.Tag## has a reference relation to other ##Common.Glossary.Tag##, the ##Common.Glossary.CalculationStep## referring to ##Common.Glossary.Tag## must be larger than or equal to ##Common.Glossary.CalculationStep## of ##Common.Glossary.Tag## referred.';
 I18N.Message.M06202 = 'Energy consumption data points with the same commodity already exist under the corresponding node.';
 I18N.Message.M06203 = 'This ##Common.Glossary.Tag## is not energy consumption data.';
 

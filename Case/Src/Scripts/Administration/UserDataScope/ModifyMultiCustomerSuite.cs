@@ -29,6 +29,7 @@ namespace Mento.Script.Administration.UserDataScope
         public void CaseSetUp()
         {
             UserDataPermissionSettings.NavigatorToUserSetting();
+            TimeManager.LongPause();
             TimeManager.MediumPause();
         }
 
@@ -47,8 +48,9 @@ namespace Mento.Script.Administration.UserDataScope
         {
             // Focus on a new created user, open datascope tab. 
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
-            UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.MediumPause();
             UserDataPermissionSettings.ClickModifyButton();
             TimeManager.ShortPause();
             // Check multiple customers 
@@ -220,8 +222,9 @@ namespace Mento.Script.Administration.UserDataScope
         {
             // Focus on a new created user, open datascope tab. 
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
-            UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.MediumPause();
             UserDataPermissionSettings.ClickModifyButton();
             //Check  customerA and customerB 
             UserDataPermissionSettings.CheckCustomer(input.InputData.CustomerList[0]);
@@ -355,8 +358,9 @@ namespace Mento.Script.Administration.UserDataScope
             
             // Focus on a new created user, open datascope tab. 
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
-            UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
+            UserDataPermissionSettings.SwitchToDataPermissionTab();
+            TimeManager.MediumPause();
             UserDataPermissionSettings.ClickModifyButton();
 
             //Select customerD and select 全部层级节点数据权限 option and saved datascope successfully.

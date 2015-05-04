@@ -29,6 +29,7 @@ namespace Mento.Script.Administration.UserDataScope
         public void CaseSetUp()
         {
             UserDataPermissionSettings.NavigatorToUserSetting();
+            TimeManager.LongPause();
             TimeManager.MediumPause();
         }
 
@@ -56,8 +57,11 @@ namespace Mento.Script.Administration.UserDataScope
 
             //Switch to function role type and back
             JazzFunction.FunctionRoleTypePermissionSettings.NavigatorToFunctionPermissionSettings();
+            TimeManager.LongPause();
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UserManagementUser);
+            TimeManager.LongPause();
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            TimeManager.LongPause();
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
             UserDataPermissionSettings.ClickModifyButton();

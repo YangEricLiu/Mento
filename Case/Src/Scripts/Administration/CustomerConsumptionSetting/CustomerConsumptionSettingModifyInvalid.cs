@@ -27,7 +27,7 @@ namespace Mento.Script.Administration.CustomerConsumptionSetting
         public void CaseSetUp()
         {
             CustomerManageSetting.NavigateToCustomerSetting();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
         }
 
         [TearDown]

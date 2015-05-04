@@ -29,6 +29,7 @@ namespace Mento.Script.Administration.User
         public void CaseSetUp()
         {
             UserSettings.NavigatorToUserSetting();
+            TimeManager.LongPause();
             TimeManager.MediumPause();
         }
 

@@ -29,6 +29,7 @@ namespace Mento.Script.Administration.UserDataScope
         public void CaseSetUp()
         {
             UserDataPermissionSettings.NavigatorToUserSetting();
+            TimeManager.LongPause();
             TimeManager.MediumPause();
         }
 

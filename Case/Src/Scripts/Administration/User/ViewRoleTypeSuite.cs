@@ -104,6 +104,7 @@ namespace Mento.Script.Administration.User
 
             //Verify
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UserManagementUser);
+            TimeManager.LongPause();
             UserSettings.FocusOnUser(input.InputData.CommonName);
             UserSettings.ClickViewFunctionPermissionLinkButton();
             TimeManager.ShortPause();

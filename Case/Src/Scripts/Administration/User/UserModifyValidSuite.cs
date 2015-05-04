@@ -44,8 +44,10 @@ namespace Mento.Script.Administration.User
         public void ModifyValidUser(UserSettingsData input)
         {
             string userName = "UserForCheckAll";
-            
-            Assert.IsTrue(UserSettings.FocusOnUser(userName));
+
+            TimeManager.ShortPause();
+            UserSettings.FocusOnUser(userName);
+            //Assert.IsTrue(UserSettings.FocusOnUser(userName));
             UserSettings.ClickModifyButton();
             TimeManager.ShortPause();
             UserSettings.FillInRealName(input.InputData.RealName);

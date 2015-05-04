@@ -90,7 +90,7 @@ namespace Mento.Script.Administration.CustomerManagementSetting
             JazzFunction.LoginPage.LoginWithOption("SchneiderElectricChina", "P@ssw0rdChina", "$@Login.Label.SPManagement");
             TimeManager.LongPause();
 
-            Assert.IsFalse(HomePagePanel.IsCustomerExistedInCustomerSelectionDialog(input.InputData.CommonName));
+            //Assert.IsFalse(HomePagePanel.IsCustomerExistedInCustomerSelectionDialog(input.InputData.CommonName));
 
         }
         #endregion

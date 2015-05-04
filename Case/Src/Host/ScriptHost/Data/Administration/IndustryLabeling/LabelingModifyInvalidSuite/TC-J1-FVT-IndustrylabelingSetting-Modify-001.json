@@ -4,7 +4,7 @@
 		{	
 			"Industry":"$@Industry_All_Industries",
 			"ClimateRegion":"$@Setting.Benchmark.Zone.ColdA",
-			"EnergyEfficiencyLabellingLevels":["3$@Setting.CustomizedLabeling.Grade","5$@Setting.CustomizedLabeling.Grade"],
+			"EnergyEfficiencyLabellingLevels":["$@Setting.CustomizedLabeling.Grade|(3)","$@Setting.CustomizedLabeling.Grade|(5)"],
 			"StartYears":["2012","2013"],
 			"StartYear":"2014",
 		},

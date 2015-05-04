@@ -2,11 +2,11 @@
 	{
 		"InputData":
 		{	
-			"HierarchyNodePath":["CommodityTestCustomer", "AutoSite002", "AutoBuilding002"],
+			"HierarchyNodePath":["CommodityTestCustomer", "AutoSite002", "AutoBuilding002"]
 		},
 		"ExpectedData":
 		{
-		    "Industry":["$@Industry_Office_Building", "$@Industry_Data_Center", "$@Industry_Hotel_Two_star_and_below", "$@Industry_Hotel_Three-stat", "$@Industry_Hotel_Four-star", "$@Industry_Hotel_Five_stat", "$@Industry_Hospital", "$@Industry_School", "$@Industry_Supermarket", "$@Industry_Clothing_retail", "$@Industry_Mall", "$@Industry_Telecommunication_workshop", "$@Industry_Telecommunication_base_station", "$@Industry_Telecommunication_business_hall", "$@Industry_Rail_Transit", "$@Industry_Airport", "$@Industry_Manufacturing"],
+		    "Industry":["$@Setting.Benchmark.Industry.OfficeBuilding", "$@Setting.Benchmark.Industry.DataCenter", "$@Setting.Benchmark.Industry.TwoStarAndBelowHotel", "$@Setting.Benchmark.Industry.ThreeStarHotel", "$@Setting.Benchmark.Industry.FourStarHotel", "$@Setting.Benchmark.Industry.FiveStarHotel", "$@Setting.Benchmark.Industry.Hospital", "$@Setting.Benchmark.Industry.School", "$@Setting.Benchmark.Industry.Supermarket", "$@Setting.Benchmark.Industry.ClothingRetails", "$@Setting.Benchmark.Industry.Mall", "$@Setting.Benchmark.Industry.CommunicationRoom", "$@Setting.Benchmark.Industry.BaseStation", "$@Setting.Benchmark.Industry.TelecommunicationsBusinessHall", "$@Setting.Benchmark.Industry.RailTransport", "$@Setting.Benchmark.Industry.Airport", "$@Setting.Benchmark.Industry.Manufacture"],
 		    "Zone":["$@Setting.Benchmark.Zone.ColdA", "$@Setting.Benchmark.Zone.ColdB", "$@Setting.Benchmark.Zone.ColdRegion", "$@Setting.Benchmark.Zone.HotSummerColdWinterRegion", "$@Setting.Benchmark.Zone.SubtropicalRegion", "$@Setting.Benchmark.Zone.TemperateRegion"],
 		} 
 	}

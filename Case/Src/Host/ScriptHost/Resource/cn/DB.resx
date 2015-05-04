@@ -555,7 +555,7 @@
   <data name="Zone_Temperate Region" xml:space="preserve">
     <value>温和地区</value>
   </data>
-  <data name="Uom_RH%" xml:space="preserve">
+  <data name="Uom_RH" xml:space="preserve">
     <value>相对湿度百分比</value>
   </data>
 </root>

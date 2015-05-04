@@ -30,6 +30,7 @@ namespace Mento.Script.Administration.UserDataScope
         public void CaseSetUp()
         {
             UserDataPermissionSettings.NavigatorToUserSetting();
+            TimeManager.LongPause();
             TimeManager.MediumPause();
         }
 
@@ -363,6 +364,7 @@ namespace Mento.Script.Administration.UserDataScope
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
             Assert.IsFalse(UserDataPermissionSettings.AreAllEditDataPermissionLinkButtonDisable());
+            TimeManager.ShortPause();
             Assert.IsTrue(UserDataPermissionSettings.IsAllDataScopeCheckBoxDisabled());
             Assert.IsTrue(UserDataPermissionSettings.IsAllDataCheckboxChecked());
             

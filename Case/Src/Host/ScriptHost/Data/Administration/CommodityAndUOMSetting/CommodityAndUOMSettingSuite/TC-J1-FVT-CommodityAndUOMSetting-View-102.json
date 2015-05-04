@@ -126,7 +126,7 @@
 		},
 		"ExpectedData":
 		{
-			"UOMs":["$@Uom_°C","$@Uom_µg/m³","$@Uom_Percentage"],
+			"UOMs":["$@Uom_°C","$@Uom_µg/m³","$@Uom_Percentage","$@Uom_RH","$@Uom_RH","$@Uom_RH"],
 		}
 	},
 ]

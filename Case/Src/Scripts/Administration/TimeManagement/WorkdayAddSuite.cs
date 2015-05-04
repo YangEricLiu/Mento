@@ -219,6 +219,7 @@ namespace Mento.Script.Administration.TimeManagement
             TimeSettingsWorkday.FillInName(testData.InputData.CommonName);
 
             //Click "Save" button.
+            TimeManager.MediumPause();
             TimeSettingsWorkday.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();

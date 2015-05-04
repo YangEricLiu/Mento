@@ -6,7 +6,7 @@
 			"Industrys":["$@Industry_All_Industries","$@Industry_Office_Building","$@Industry_Data_Center","$@Industry_Hotel","$@Industry_Hotel_Two_star_and_below","$@Industry_Hotel_Three-stat","$@Industry_Hotel_Four-star","$@Industry_Hotel_Five_stat","$@Industry_Hospital","$@Industry_School","$@Industry_Retail","$@Industry_Supermarket","$@Industry_Clothing_retail","$@Industry_Mall","$@Industry_Telecommunication","$@Industry_Telecommunication_workshop","$@Industry_Telecommunication_base_station","$@Industry_Telecommunication_business_hall","$@Industry_Rail_Transit","$@Industry_Airport","$@Industry_Manufacturing"],
 			"ClimateRegion":"$@Setting.Benchmark.Zone.ColdB",
 			"ClimateRegions":["$@Zone_All_Zones","$@Setting.Benchmark.Zone.ColdA","$@Setting.Benchmark.Zone.ColdB","$@Setting.Benchmark.Zone.ColdRegion","$@Setting.Benchmark.Zone.HotSummerColdWinterRegion","$@Setting.Benchmark.Zone.SubtropicalRegion","$@Setting.Benchmark.Zone.TemperateRegion"],
-			"EnergyEfficiencyLabellingLevel":"3$@Setting.CustomizedLabeling.Grade",
+			"EnergyEfficiencyLabellingLevel":"$@Setting.CustomizedLabeling.Grade|(3)",
 
 		},
 			"ExpectedData":

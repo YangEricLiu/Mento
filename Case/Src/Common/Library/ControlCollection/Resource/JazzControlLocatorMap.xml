@@ -373,7 +373,7 @@
               <add key="ButtonHierarchySettingsDelete" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
           </hierarchy>
           <hierarchycalendar>
-              <add key="TabButtonCalendarProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[2]" type="XPath"/>
+              <add key="TabButtonCalendarProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[em/button/span[text()='$@Setting.Label.HierarchyNodeCalendarProperties']]" type="XPath"/>
               <add key="ButtonCalendarCreate" value="//div[@id = 'st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.Label.HierarchyNodeCalendarProperties']]" type="XPath"/>
               <add key="ButtonCalendarSave" value="//div[@id='st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonCalendarCancel" value="//div[@id='st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
@@ -387,7 +387,7 @@
               <add key="ButtonDayNightDelete" value="//td[@id='st-hierarchy-calendar-daynight-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
           </hierarchycalendar>
           <hierarchypeoplearea>
-              <add key="TabButtonPeopleAreaProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[4]" type="XPath"/>
+              <add key="TabButtonPeopleAreaProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[em/button/span[text()='$@Setting.Label.HierarchyNodePopulationNAreaProperties']]" type="XPath"/>
               <add key="ButtonPeopleAreaCreate" value="//div[@id = 'st-hier-dynamic-property-form']//div[contains(@class, 'x-btn') and em/button/span[text() = '$@Setting.Label.HierarchyNodePopulationNAreaProperties']]" type="XPath"/>
               <add key="ButtonPeopleAreaSave" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonPeopleAreaCancel" value="//div[@id='st-hier-dynamic-property-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
@@ -396,7 +396,7 @@
               <add key="ButtonDeletePeopleItem" value="//table[@id='st-hierarchy-dynamic-population-value-container']//td[@id='st-hierarchy-dynamic-population-value-container-bodyEl']/table[contains(@id,'fieldcontainer')][$#positionIndex]//div[contains(@class,'x-tool')]/img" type="XPath"/>
           </hierarchypeoplearea>
           <hierarchycost>
-              <add key="TabButtonCostProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[3]" type="XPath"/>
+              <add key="TabButtonCostProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[em/button/span[text()='$@Setting.Label.HierarchyNodeCostProperties']]" type="XPath"/>
               <add key="ButtonCostCreate" value="//div[@id = 'st-hier-cost-form']//div[contains(@class, 'x-btn') and em/button/span[text() = '$@Setting.Label.HierarchyNodeCostProperties']]" type="XPath"/>
               <add key="ButtonCostSave" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
               <add key="ButtonCostCancel" value="//div[@id='st-hier-cost-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>

@@ -2068,4 +2068,8 @@ I18N.Message.M20014 = 'Some tags are deleted or not under the permission scope�
 I18N.Message.M21707 = 'Report {0} is deleted. Will refresh report list soon.';
 I18N.Message.M21705 = 'Duplicated report name.';
 I18N.Message.M21702 = 'The report is modified. Will refresh it soon.';
-I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';
+I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';I18N.EM.EnergyAnalyse.SumSymbol = 'Σ';
+I18N.EM.EnergyAnalyse.SumData = '数据求和';
+I18N.EM.EnergyAnalyse.Sum = '总计';
+I18N.EM.EnergyAnalyse.DataPoint = '数据点';
+I18N.EM.EnergyAnalyse.SumWithSymbol = '总计：';

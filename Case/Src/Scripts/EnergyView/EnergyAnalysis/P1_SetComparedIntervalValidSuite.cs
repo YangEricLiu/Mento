@@ -797,7 +797,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.AreEqual(input.ExpectedData.EndDateValue[1], TimeSpanDialog.GetAdditionEndDateValue(3));
             Assert.AreEqual(input.ExpectedData.EndTimeValue[1], TimeSpanDialog.GetAdditionEndTimeValue(3));
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(4));
-            Assert.AreEqual(monthIndex.ToString(), TimeSpanDialog.GetAdditionRelativeValue(4));
+            Assert.AreEqual((monthIndex+2).ToString(), TimeSpanDialog.GetAdditionRelativeValue(4));
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
@@ -826,14 +826,14 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.AreEqual(input.ExpectedData.EndDateValue[1], TimeSpanDialog.GetAdditionEndDateValue(3));
             Assert.AreEqual(input.ExpectedData.EndTimeValue[1], TimeSpanDialog.GetAdditionEndTimeValue(3));
             Assert.AreEqual(CompareTimeType.Relative, TimeSpanDialog.GetCompareTimeType(4));
-            Assert.AreEqual(monthIndex.ToString(), TimeSpanDialog.GetAdditionRelativeValue(4));
+            Assert.AreEqual((monthIndex+2).ToString(), TimeSpanDialog.GetAdditionRelativeValue(4));
 
             //Change type of the second compared interval to relatived: 之前第*个月
             TimeSpanDialog.SelectCompareTimeType(CompareTimeType.Relative, 3);
             TimeSpanDialog.InputAdditionRelativeValue(monthIndex.ToString(), 3);
 
             //Check Text followed is 2014年2月
-            if(("2014年2月" == TimeSpanDialog.GetComparedIntervalsText(3)) ||("02, 2014" == TimeSpanDialog.GetComparedIntervalsText(3)))
+            if(("2015年2月" == TimeSpanDialog.GetComparedIntervalsText(3)) ||("02, 2015" == TimeSpanDialog.GetComparedIntervalsText(3)))
                 Assert.Pass();
             else
                 Assert.Fail();
@@ -852,7 +852,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             string[] legendsEx = { "", "", "", "" };
             legendsEx[0] = startDate + " " + startTime + endDate + " " + endTime;
             legendsEx[1] = input.ExpectedData.StartDateValue[0] + " " + input.ExpectedData.StartTimeValue[0] + input.ExpectedData.EndDateValue[0] + " " + input.ExpectedData.EndTimeValue[0];
-            legendsEx[2] = input.ExpectedData.StartDateValue[2] + " " + input.ExpectedData.StartTimeValue[2] + input.ExpectedData.EndDateValue[2] + " " + input.ExpectedData.EndTimeValue[2];
+            legendsEx[2] = input.ExpectedData.StartDateValue[1] + " " + input.ExpectedData.StartTimeValue[1] + input.ExpectedData.EndDateValue[1] + " " + input.ExpectedData.EndTimeValue[1];
             legendsEx[3] = input.ExpectedData.StartDateValue[2] + " " + input.ExpectedData.StartTimeValue[2] + input.ExpectedData.EndDateValue[2] + " " + input.ExpectedData.EndTimeValue[2];
             Assert.AreEqual(legendsAc, legendsEx);
 
@@ -1191,6 +1191,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             //Check •  All compared intervals are removed.
+            EnergyViewToolbar.ClickViewButton();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
             Assert.AreEqual(3, EnergyAnalysis.GetLegendItemTexts().Length);//There are 2 more legends for 目标值 and 基准值 when only a tag.
             //•  All compared time series in chart are removed.
             EnergyViewToolbar.ClickTimeSpanButton();
@@ -1300,6 +1303,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
 
             //Check the Distribution Chart is saved into dashboard successfully
+            TimeManager.LongPause();
             EnergyAnalysis.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
             TimeManager.MediumPause();

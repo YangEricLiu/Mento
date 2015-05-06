@@ -48,6 +48,7 @@ namespace Mento.Script.Customer.TagManagement
             if (String.Equals(input.InputData.TagType, "Ptag"))
             {
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsP);
+                TimeManager.LongPause();
                 PVtagTargetBaselineSettings.FocusOnPTagByName(input.InputData.TagName);
                 TimeManager.MediumPause();
             }
@@ -55,6 +56,7 @@ namespace Mento.Script.Customer.TagManagement
             if (String.Equals(input.InputData.TagType, "Vtag"))
             {
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+                TimeManager.LongPause();
                 PVtagTargetBaselineSettings.FocusOnVTagByName(input.InputData.TagName);
                 TimeManager.MediumPause();
             } 
@@ -281,7 +283,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
             PVtagTargetBaselineSettings.ClickCancelButton();
             TimeManager.MediumPause();
-            Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[0], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1));
+            Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[1], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1));
 
             //Delete one special day rule then save, delete successful 
             PVtagTargetBaselineSettings.ClickModifyCalculationRuleButton();

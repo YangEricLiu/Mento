@@ -43,6 +43,7 @@ namespace Mento.Script.Customer.TagManagement
             if (String.Equals(input.InputData.TagType, "Ptag"))
             {
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsP);
+                TimeManager.LongPause();
                 PVtagTargetBaselineSettings.FocusOnPTagByName(input.InputData.TagName);
                 TimeManager.MediumPause();
             }
@@ -50,6 +51,7 @@ namespace Mento.Script.Customer.TagManagement
             if (String.Equals(input.InputData.TagType, "Vtag"))
             {
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+                TimeManager.LongPause();
                 PVtagTargetBaselineSettings.FocusOnVTagByName(input.InputData.TagName);
                 TimeManager.MediumPause();
             } 

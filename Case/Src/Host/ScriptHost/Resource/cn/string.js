@@ -304,6 +304,15 @@ I18N.Setting.Hierarchy.MeterCount = '表计数量';
 I18N.Setting.Hierarchy.PTagCount = '计量数据P数量';
 I18N.Setting.Hierarchy.VTagCount = '计量数据V数量';
 
+I18N.Setting.Hierarchy.DeleteMessage = '删除层级节点"{0}"吗？您将同时删除层级节点下所有的信息和仪表盘。';
+I18N.Setting.Hierarchy.DeleteError = {};
+I18N.Setting.Hierarchy.DeleteError.M850 = '层级节点"{0}"关联了Facilitymost,无法被删除。';
+I18N.Setting.Hierarchy.DeleteError.JazzError = '无法删除层级节点"{0}"。请先删除该节点下的所有{1}。';
+I18N.Setting.Hierarchy.DeleteError.Children = '子节点';
+I18N.Setting.Hierarchy.DeleteError.TagRelation = '数据点关联关系';
+I18N.Setting.Hierarchy.DeleteError.Errors2 = '{0}和{1}';
+I18N.Setting.Hierarchy.DeleteError.Errors3 = '{0},{1}和{2}';
+
 I18N.Setting.Label.BasicProperties = '基础属性';
 I18N.Setting.Label.HierarchyNodeBasicProperties = '##Setting.Label.BasicProperties##';
 I18N.Setting.Label.HierarchyNodeCalendarProperties = '日历属性';
@@ -619,7 +628,7 @@ I18N.Setting.Benchmark.Label.IndustryEnegyBenchmark = '行业能效对标配置'
 I18N.Setting.Benchmark.Label.ClimateZone = '气候分区';
 I18N.Setting.Benchmark.Label.IndustryBenchmark = '行业对标';
 I18N.Setting.Benchmark.Label.SelectTip = '请选择需要平台计算的能效对标针对的行业及区域。';
-I18N.Setting.Benchmark.Label.AtleastOneZone = '请至少选择1项。';
+I18N.Setting.Benchmark.Label.AtleastOneZone = '请至少选择一项。';
 I18N.Setting.Benchmark.Label.Industry = '行业';
 I18N.Setting.Benchmark.Label.IndustryBaseLineValue = '行业基准值';
 
@@ -695,6 +704,7 @@ I18N.EM.EnergyAnalyse.TagSelectTooltip = '已选数据点 {0}/{1}';
 I18N.EM.EnergyAnalyse.TagSelectOverMaxTooltip = '已选数据点 {0}/{1}，新增全选的数据点数量超出了可选范围，无法全选。请逐一选择目标数据点。';
 I18N.EM.EnergyAnalyse.SumSymbol = 'Σ';
 I18N.EM.EnergyAnalyse.SumData = '数据求和';
+I18N.EM.EnergyAnalyse.SumDataMoreThan1000Error = '当前数据超出计算范围，无法求和，请换个步长或时间段试试。';
 I18N.EM.EnergyAnalyse.Sum = '总计';
 I18N.EM.EnergyAnalyse.DataPoint = '数据点';
 I18N.EM.EnergyAnalyse.SumWithSymbol = '总计：';

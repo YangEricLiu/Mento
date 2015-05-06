@@ -113,7 +113,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.AreEqual(ManualTimeRange[0].EndTime, PTagRawData.GetBaseEndTimeValue());
             Assert.AreEqual("11",PTagRawDataGrid.GetCellValue(2));
 
-            //After change Start Time to 04/06 10:00, the End Time should be changed to 04/13 10:00.
+            //After change Start Time to 04/07 10:00, the End Time should be changed to 04/13 10:00.
             PTagRawData.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             PTagRawData.SetTimeRange(ManualTimeRange[1].StartTime, ManualTimeRange[1].EndTime);
             TimeManager.LongPause();

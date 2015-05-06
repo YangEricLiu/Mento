@@ -527,6 +527,15 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         /// <summary>
+        /// Judge whether the Comments textfield is display
+        /// </summary>
+        /// <returns>True if the Comments is display, false if not</returns>
+        public Boolean IsCommentsDisplayed()
+        {
+            return CommentTextField.IsFieldDisplayed();
+        }
+
+        /// <summary>
         /// Judge whether invalid message of Comments field is correct
         /// </summary>
         /// <param name="output">HierarchyExpectedData</param>

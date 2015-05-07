@@ -375,7 +375,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
@@ -384,7 +384,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsFalse(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
 
             EnergyViewToolbar.View(EnergyViewType.Column);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
@@ -403,7 +403,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
@@ -412,7 +412,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsFalse(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
 
             EnergyViewToolbar.View(EnergyViewType.Column);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             Assert.IsTrue(RadioPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
@@ -441,6 +441,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Input an valid name to input box again. and the name can be display correct.
             PVtagTargetBaselineSettings.FillBaselineName(input.InputData.TargetBaselineName);
+            TimeManager.LongPause();
             Assert.AreEqual(input.InputData.TargetBaselineName, PVtagTargetBaselineSettings.GetTargetNameValue());
 
             //Navigate to 能源管理->单位指标->能耗，select the tag in step3,select time and click 查看数据 and 图表导出.
@@ -455,7 +456,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
@@ -464,7 +465,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsFalse(UnitKPIPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
 
             EnergyViewToolbar.View(EnergyViewType.Column);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
@@ -483,7 +484,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             Assert.IsTrue(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));
@@ -492,7 +493,7 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsFalse(RadioPanel.IsLineLegendItemShown(input.InputData.UnitIndicatorLegend[0].OriginalValue));
 
             EnergyViewToolbar.View(EnergyViewType.Column);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             Assert.IsTrue(RadioPanel.IsColumnLegendItemShown(input.InputData.UnitIndicatorLegend[0].CaculationValue));

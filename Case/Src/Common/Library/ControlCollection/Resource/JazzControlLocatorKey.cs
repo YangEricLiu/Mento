@@ -9,6 +9,18 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
     {
         #region Button
 
+        #region Pop
+
+        public static string PopButtonLoginSubmit = "PopButtonLoginSubmit";
+        public static string PopTextFieldLoginUserName = "PopTextFieldLoginUserName";
+        public static string PopTextFieldLoginPassword = "PopTextFieldLoginPassword";
+
+        public static string PopMenuButtonCustomer = "PopMenuButtonCustomer";
+        public static string PopMenuItemCustomer = "PopMenuItemCustomer";
+        public static string PopbButtonConfirm = "PopbButtonConfirm";
+
+        #endregion
+
         #region login
         public static string ButtonLoginSubmit = "ButtonLoginSubmit";
         public static string ButtonLoginCustomerOptionConfirm = "ButtonLoginCustomerOptionConfirm";
@@ -346,6 +358,18 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonHierarchySettingsCancel = "ButtonHierarchySettingsCancel";
         public static string ButtonHierarchySettingsModify = "ButtonHierarchySettingsModify";
         public static string ButtonHierarchySettingsDelete = "ButtonHierarchySettingsDelete";
+        #endregion
+
+        #region administratorInfo
+
+        public static string TabButtonAdministratorInfoProperty = "TabButtonAdministratorInfoProperty";
+        public static string ButtonAdministratorInfoCreate = "ButtonAdministratorInfoCreate";
+        public static string ButtonAdministratorInfoAppend = "ButtonAdministratorInfoAppend";
+        public static string ButtonAdministratorInfoDelete = "ButtonAdministratorInfoDelete";
+        public static string ButtonAdministratorInfoSave = "ButtonAdministratorInfoSave";
+        public static string ButtonAdministratorInfoCancel = "ButtonAdministratorInfoCancel";
+        public static string ButtonAdministratorInfoUpdate = "ButtonAdministratorInfoUpdate";
+
         #endregion
 
         #region hierarchycalendar
@@ -692,6 +716,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region hierarchypeopertysettings
+
+        public static string TextFieldAdministratorInfoRealName = "TextFieldAdministratorInfoRealName";
+        public static string TextFieldAdministratorInfoPosition = "TextFieldAdministratorInfoPosition";
+        public static string TextFieldAdministratorInfoMobile = "TextFieldAdministratorInfoMobile";
+        public static string TextFieldAdministratorInfoTelephone = "TextFieldAdministratorInfoTelephone";
+        public static string TextFieldAdministratorInfoEmail = "TextFieldAdministratorInfoEmail";
+
         public static string TextFieldTotalAreaValue = "TextFieldTotalAreaValue";
         public static string TextFieldHeatingAreaValue = "TextFieldHeatingAreaValue";
         public static string TextFieldCoolingAreaValue = "TextFieldCoolingAreaValue";

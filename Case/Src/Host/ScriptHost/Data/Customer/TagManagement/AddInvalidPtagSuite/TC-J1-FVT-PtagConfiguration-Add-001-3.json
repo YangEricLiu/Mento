@@ -9,6 +9,7 @@
 			"Commodity":"$@Commodity_Electricity",
 			"Uom":"$@Uom_KWH",
 			"CalculationType":"Sum",
+			"CollectCycle":"15$@Setting.VEEMonitorRule.Minute",
 		},
 		"ExpectedData":
 		{

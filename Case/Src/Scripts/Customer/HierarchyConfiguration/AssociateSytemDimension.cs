@@ -38,8 +38,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void ScriptTearDown()
         {
-            // JazzFunction.LoginPage.RefreshJazz();
-            JazzFunction.Navigator.NavigateHome();
+            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            TimeManager.LongPause();
         }
 
         [Test]
@@ -52,6 +52,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             SystemSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
             SystemSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
             SystemSettings.ShowSystemDimensionDialog();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
@@ -66,7 +67,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Expand system dimension tree and verify
             Assert.IsTrue(SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath));
-            //Assert.IsTrue(SystemSettings.IsSystemDimensionNodeDisplayed(input.InputData.SystemDimensionItemPath.Last()));
         }
 
         [Test]
@@ -164,6 +164,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             
             //2. Verify it is display on energy analysis
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.MediumPause();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
@@ -171,10 +172,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
             
-            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.SelectSystemDimension(input.ExpectedData.SystemDimensionPath));
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-            
+            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.SelectSystemDimension(input.ExpectedData.SystemDimensionPath));    
         }
     }
 }

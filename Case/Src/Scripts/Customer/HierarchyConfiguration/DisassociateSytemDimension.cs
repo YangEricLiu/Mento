@@ -35,8 +35,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void ScriptTearDown()
         {
-            //JazzFunction.LoginPage.RefreshJazz();
-            JazzFunction.Navigator.NavigateHome();
+            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            TimeManager.LongPause();          
         }
 
         [Test]
@@ -74,8 +74,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //Expand system dimension tree and verify the node is not disassociated
             SystemSettings.SelectSystemDimensionNodePath(input.ExpectedData.SystemDimensionPath);
-            TimeManager.MediumPause();
-            Assert.IsTrue(SystemSettings.IsSystemDimensionNodeDisplayed(input.InputData.SystemDimensionItemPath.Last()));
         }
 
         [Test]

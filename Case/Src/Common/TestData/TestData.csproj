@@ -67,6 +67,7 @@
     <Compile Include="Common\DateValue.cs" />
     <Compile Include="Common\TimeRange.cs" />
     <Compile Include="Customer\AddKPIData.cs" />
+    <Compile Include="Customer\AdministratorInfoData.cs" />
     <Compile Include="Customer\CustomizedLabellingSettingData.cs" />
     <Compile Include="Customer\ElectricityCostData.cs" />
     <Compile Include="Customer\IndustryZoneData.cs" />

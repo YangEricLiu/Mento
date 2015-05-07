@@ -119,14 +119,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
                 Assert.IsTrue(HierarchySettings.IsTypeContainsSite());
                 Assert.IsTrue(HierarchySettings.IsTypeContainsBuilding());
 
-                //Click "Save" button
-                TimeManager.MediumPause();
+                //Click "Save" button            
                 HierarchySettings.ClickSaveButton();
-                TimeManager.ShortPause();
-
-                //confirm message box
-                //HierarchySettings.ConfirmCreateOKMagBox();
-                TimeManager.LongPause();
+                TimeManager.MediumPause();
             }
 
             //Click the level 5 orgnization
@@ -171,24 +166,28 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             HierarchySettings.ClickCreateChildHierarchyButton();
             HierarchySettings.FillInHierarchyNode(input.InputData);
+            TimeManager.ShortPause();
 
             //Click "Save" button
-            TimeManager.ShortPause();
             HierarchySettings.ClickSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Verify hierarchy node has been added correctly everywhere
             //1. verify on system dimension configration
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
+            TimeManager.LongPause();
+
             JazzFunction.SystemDimensionSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
             JazzFunction.SystemDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
 
             //2. verify on area dimension configration
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
+            TimeManager.LongPause();
             JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
             JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
+            TimeManager.LongPause();
 
             //3. verify on hierarchy for data association
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
@@ -196,18 +195,21 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //4. verify on system dimension for data association
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationSystemDimension);
+            TimeManager.LongPause();
             JazzFunction.SystemDimensionSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
             JazzFunction.SystemDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
 
             //5. verify on system dimension for data association
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
+            TimeManager.LongPause();
             JazzFunction.AreaDimensionSettings.ShowHierarchyTree();
             TimeManager.ShortPause();
             JazzFunction.AreaDimensionSettings.SelectHierarchyNodePath(input.ExpectedData.HierarchyNodePath);
 
             //6. verify on energy analysis on energy view
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
         }
     }

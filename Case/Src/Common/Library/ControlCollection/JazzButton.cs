@@ -41,6 +41,30 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         }
         #endregion
 
+        #region Pop
+
+        public static Button PopLoginSubmitButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.PopButtonLoginSubmit); }
+        }
+
+        public static Button PopMenuButtonCustomer
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.PopMenuButtonCustomer); }
+        }
+
+        public static Button PopMenuItemCustomer
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.PopMenuItemCustomer); }
+        }
+
+        public static Button PopbButtonConfirm
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.PopbButtonConfirm); }
+        }
+
+        #endregion
+
         #region Login buttons
         public static Button LoginSubmitButton
         {
@@ -612,6 +636,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region Customer settings buttons
+
         #region Hierarchy settings buttons
         public static Button HierarchySettingsCreateChildHierarchyButton 
         {
@@ -635,6 +660,33 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         }
 
         #region Hierarchy property settings buttons
+
+        public static TabButton AdministratorInfoPropertyTabButton
+        {
+            get { return GetControl<TabButton>(JazzControlLocatorKey.TabButtonAdministratorInfoProperty); }
+        }
+        public static Button AdministratorInfoCreateButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonAdministratorInfoCreate); }
+        }
+        public static Button AdministratorInfoAppendButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonAdministratorInfoAppend); }
+        }
+        public static Button AdministratorInfoSaveButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonAdministratorInfoSave); }
+        }
+        public static Button AdministratorInfoCancelButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonAdministratorInfoCancel); }
+        }
+        public static Button AdministratorInfoUpdateButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonAdministratorInfoUpdate); }
+        }
+
+
         public static TabButton CalendarPropertyTabButton 
         {
             get { return  GetControl<TabButton>(JazzControlLocatorKey.TabButtonCalendarProperty);}
@@ -685,6 +737,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             get { return  GetControl<LinkButton>(JazzControlLocatorKey.ButtonDayNightDelete, 1);}
         }
 
+
+
         public static TabButton PeopleAreaPropertyTabButton 
         {
             get { return  GetControl<TabButton>(JazzControlLocatorKey.TabButtonPeopleAreaProperty);}
@@ -713,6 +767,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonDeletePeopleItem, 1);}
         }
+
+
+
 
         public static TabButton CostPropertyTabButton 
         {
@@ -779,6 +836,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonLowPressureSteamCostCreate);}
         }
         #endregion
+
         #endregion
 
         #region PTag settings buttons
@@ -1242,6 +1300,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         }
         
         #endregion
+
         #region CustomizedLabellingSetting
         public static Button CreatCustomizedLabellingButton 
         {

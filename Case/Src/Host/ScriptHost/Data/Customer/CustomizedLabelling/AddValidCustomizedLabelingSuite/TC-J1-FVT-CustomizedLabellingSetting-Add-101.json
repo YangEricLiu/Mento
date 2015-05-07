@@ -19,7 +19,7 @@
 				"LabellingLeftValue":"10",
 			}],
 			[{
-			"LabellingLeftValue":"10000000000000000000000",
+			"LabellingLeftValue":"1000000000",
 			}]]
 		},
 		"ExpectedData":
@@ -40,12 +40,12 @@
 				"LabellingLeftValue":"10",
 			}],
 			[{
-			"LabellingLeftValue":"$@Common.Label.OverValueError",
+			"LabellingLeftValue":"该输入项的最大值是 999999999.999999",
 			}]],
 			"Order":["$@Setting.CustomizedLabeling.Declining","$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
-			"UOM":"$@Uom_Ton$@ENERGYRANK_APDX",
+			"UOM":"Ton$@ENERGYRANK_APDX",
 		}
 	}
 ]

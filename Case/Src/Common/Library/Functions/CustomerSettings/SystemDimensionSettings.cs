@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.TestApi.WebUserInterface;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -64,6 +65,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void SelectHierarchyNodePath(string[] hierarchyNodePath)
         {
             DimensionHierarchyTree.SelectNode(hierarchyNodePath);
+            TimeManager.MediumPause();
         }
 
         #endregion

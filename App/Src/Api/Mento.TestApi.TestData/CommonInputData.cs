@@ -29,6 +29,8 @@ namespace Mento.TestApi.TestData
         public string DoubleNonNagtiveValue { get; set; }
         public string Comments { get; set; }
         public string FeedbackComments { get; set; }
+        public string Mobile { get; set; }
+        public string Position { get; set; }
     }
 
     public class CommonExpectedData
@@ -49,5 +51,7 @@ namespace Mento.TestApi.TestData
         public string DoubleNonNagtiveValue { get; set; }
         public string Comments { get; set; }
         public string FeedbackComments { get; set; }
+        public string Mobile { get; set; }
+        public string Position { get; set; }
     }
 }

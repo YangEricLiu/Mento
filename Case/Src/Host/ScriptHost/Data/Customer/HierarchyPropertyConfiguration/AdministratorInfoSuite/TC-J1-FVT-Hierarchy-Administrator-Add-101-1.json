@@ -1,0 +1,69 @@
+﻿/*using CommonInputData.json*/
+
+[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["NancyCostCustomer2", "组织A" ,"园区A", "楼宇A"],
+			"ValidChar":"123",
+			"InvalidChar":"=ee",
+		},
+		"ExpectedData":
+		{
+			"ValidChar":"123",
+			"InvalidChar":"=ee",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["NancyCostCustomer2", "组织A" ,"园区A", "楼宇B"],
+			"ValidChar":"123",
+			"InvalidChar":"=ee",
+		},
+		"ExpectedData":
+		{
+			"ValidChar":"123",
+			"InvalidChar":"=ee",	
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["NancyCostCustomer2", "组织A" ,"园区B", "楼宇C"],
+			"ValidChar":"123",
+			"InvalidChar":"=ee",
+		},
+		"ExpectedData":
+		{
+			"ValidChar":"123",
+			"InvalidChar":"=ee",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["NancyCostCustomer2", "组织B" ,"园区C"],
+			"ValidChar":"123",
+			"InvalidChar":"=ee",
+		},
+		"ExpectedData":
+		{
+			"ValidChar":"123",
+			"InvalidChar":"=ee",
+		}
+	},
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["NancyCostCustomer2", "组织B" ,"园区C", "楼宇D"],
+			"ValidChar":"123",
+			"InvalidChar":"=ee",
+		},
+		"ExpectedData":
+		{
+			"ValidChar":"123",
+			"InvalidChar":"=ee",
+		}
+	}
+]

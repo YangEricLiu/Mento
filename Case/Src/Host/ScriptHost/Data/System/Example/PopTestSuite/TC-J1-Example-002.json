@@ -1,0 +1,18 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"CommonNameArray":["$@Common.Commodity.Electric","$@Common.Commodity.Petrol","煤","$@Common.Commodity.HeatQ","$@Common.Commodity.Water"],
+			"Meter":"$@HomePage.Message.ShareFail|($@Common.Glossary.Dashboard),(Dashboard_Share_001_2),($@Message.M05023_Sub1|(ShareUserE))",
+			"Channel":"1",
+			"Commodity":"$@Common.Commodity.Electric$@EM.Ratio.CaculateValue",
+			"Uom":"$@HomePage.Label.TargetManagement",
+			"CalculationType":"“DayNight$@EM.DashboardSaved",
+			"Comments":"$@I18N.Setting.TargetBaseline.TargetWindowTitle|(aaa),(vvv),($@I18N.Setting.Hierarchy.Menu.CreateSite)",
+		},
+		"ExpectedData":
+		{
+			"CommonName":"$@I18N.Setting.Hierarchy.Menu.CreateAreaLv1@$$@I18N.Setting.TargetBaseline.TargetWindowTitle|(aaa),(vvv),($@I18N.Setting.Hierarchy.Menu.CreateSite)",
+		}
+	}
+]

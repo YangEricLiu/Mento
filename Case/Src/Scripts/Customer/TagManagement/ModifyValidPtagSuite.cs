@@ -186,10 +186,9 @@ namespace Mento.Script.Customer.TagManagement
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.CommonName);
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.ExpectedData.CommonName);
             JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(30);
             TimeManager.MediumPause();
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("PtagForModifyCheckAl..."));
-            //JazzFunction.EnergyAnalysisPanel.ClickLegendItem("PtagForModifyCheckAl...");
         }
 
         [Test]

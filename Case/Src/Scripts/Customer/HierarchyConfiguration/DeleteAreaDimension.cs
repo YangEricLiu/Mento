@@ -23,26 +23,20 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [ManualCaseID("TC-J1-FVT-AreaDimensionConfiguration-001")]
     public class DeleteAreaDimension : TestSuiteBase
     {
+        private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
+        private static AreaDimensionSettings AreaSettings = JazzFunction.AreaDimensionSettings;
+
         [SetUp]
         public void ScriptSetUp()
         {
-            /*
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettings);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
             HierarchySettings.NavigatorToHierarchySetting();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-             */
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
         }
 
         [TearDown]
         public void ScriptTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            AreaSettings.NavigateToNonAreaDimensionSetting();
         }
 
         /// <summary>
@@ -56,18 +50,14 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(DeleteAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-Delete-001-DeleteAreaNodeThenCancel")]
         public void DeleteAreaNodeThenCancel(AreaDimensionData input)
         {
-            var AreaSettings = JazzFunction.AreaDimensionSettings;
-            TimeManager.ShortPause();
-
             //Select a Building node.	
-            //The Area dimension is light and enable to select.
-            AreaSettings.ShowHierarchyTree();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
+
+            AreaSettings.NavigateToAreaDimensionSetting();
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
             //Click "删除" button and "取消"
             AreaSettings.ClickDeleteButton();
             //TimeManager.ShortPause();
@@ -93,17 +83,14 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(DeleteAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteLeafAreaNode")]
         public void DeleteLeafAreaNode(AreaDimensionData input)
         {
-            var AreaSettings = JazzFunction.AreaDimensionSettings;
-            TimeManager.ShortPause();
+            //Select a Building node.	
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
 
-            AreaSettings.ShowHierarchyTree();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
+            AreaSettings.NavigateToAreaDimensionSetting();
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
+
             //Click "删除" button and "确认"
             AreaSettings.ClickDeleteButton();
             //Verify that message box popup for confirm delete
@@ -125,9 +112,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //  Could not select the node path
             Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath));
-
-
-
         }
 
 
@@ -137,20 +121,18 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(DeleteAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteNonLeafAreaNode")]
         public void DeleteNonLeafAreaNode(AreaDimensionData input)
         {
-            var AreaSettings = JazzFunction.AreaDimensionSettings;
-            TimeManager.ShortPause();
             string[] AreaNode2 = new string[] {"楼宇配置测试","L1","L2" };
             string[] AreaNode1 = new string[] {"楼宇配置测试","L1"};
             string[] Message = new string[] {"删除区域维度节点 “L1” 吗？", "您将同时删除区域维度节点下所有的子节点，数据点关联关系，以及间接关联的所有信息。"};
 
-            AreaSettings.ShowHierarchyTree();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            //Select a Building node.	
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
+
+            AreaSettings.NavigateToAreaDimensionSetting();
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
+
             //Click "删除" button and "确认"
             AreaSettings.ClickDeleteButton();
             //Verify that message box popup for confirm delete
@@ -252,20 +234,13 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(DeleteAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteandVerifyEverywhere")]
         public void DeleteandVerifyEverywhere(AreaDimensionData input)
         {
-
-            var AreaSettings = JazzFunction.AreaDimensionSettings;
-
             //Select a Building node.	
-            //The Area dimension is light and enable to select.
-            TimeManager.ShortPause();
-            AreaSettings.ShowHierarchyTree();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
+
+            AreaSettings.NavigateToAreaDimensionSetting();
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //TimeManager.LongPause();
+            TimeManager.MediumPause();
 
             AreaSettings.ClickDeleteButton();
             //Verify that message box popup for confirm delete

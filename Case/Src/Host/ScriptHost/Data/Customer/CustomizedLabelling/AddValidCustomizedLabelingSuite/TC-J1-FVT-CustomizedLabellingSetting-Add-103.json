@@ -198,8 +198,9 @@
 			}]],
 			"Firstlabels":["<=",">"],
 			"Lastlabels":[">","<="],
-			"UOMs":["$@Uom_Ton$@ENERGYRANK_APDX","$@Uom_m³$@ENERGYRANK_APDX"],
+			"UOMs":["Ton$@ENERGYRANK_APDX","m³$@ENERGYRANK_APDX"],
 			"Order":["$@Setting.CustomizedLabeling.Ascending","$@Setting.CustomizedLabeling.Declining"],
+			"ConfigurationUser":"PerfTestCustomer",
 		}
 	}
 ]

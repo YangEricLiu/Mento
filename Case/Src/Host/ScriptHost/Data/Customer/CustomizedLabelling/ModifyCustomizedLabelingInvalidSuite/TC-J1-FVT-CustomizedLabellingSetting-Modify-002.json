@@ -20,7 +20,7 @@
 			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
-			"UOM":"$@Uom_KWH@$/$@Uom_m²",
+			"UOM":"KWH/M²",
 		},
 		"ExpectedData":
 		{
@@ -42,7 +42,7 @@
 			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
-			"UOM":"$@Uom_KWH@$/$@Uom_m²",
+			"UOM":"KWH/M²",
 		}
 	}
 ]

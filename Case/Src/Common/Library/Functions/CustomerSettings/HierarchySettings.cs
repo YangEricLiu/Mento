@@ -133,6 +133,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public void NavigatorToHierarchySetting()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettings);
+            TimeManager.LongPause();
+            TimeManager.LongPause();
         }
 
         /// <summary>

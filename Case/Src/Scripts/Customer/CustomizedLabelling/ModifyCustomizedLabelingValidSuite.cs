@@ -31,7 +31,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [TearDown]
         public void CaseTearDown()
         {
-            CustomizedLabellingSettings.NavigatorToCustomizedLabelling();
+            CustomizedLabellingSettings.NavigatorToNonCustomizedLabelling();
         }
 
         [Test]
@@ -64,6 +64,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
             int count = Convert.ToInt32(input.InputData.LabellingLevelValues[0]);
             Assert.AreEqual(count, CustomizedLabellingSettings.GetLabellingGradeCount());
 
+            //这里有个问题，对于中文版，有些单位还是习惯性的用缩写英文表示，没有显示成中文，这个后续会和UI确认
             //Check UOM
             for (int num = 0; num < Convert.ToInt32(input.InputData.LabellingLevelValues[0]); num++)
             {
@@ -108,7 +109,6 @@ namespace Mento.Script.Customer.CustomizedLabelling
             CustomizedLabellingSettings.ClickSaveButton();
             TimeManager.LongPause();
             TimeManager.LongPause();
-            
 
             //Go to select "Modify to 自定义能效标识8"
             CustomizedLabellingSettings.FocusOnCustomizedLabelling(input.InputData.CommonNames[1]);
@@ -119,10 +119,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
             //Click Save button.
             CustomizedLabellingSettings.ClickSaveButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            
             Assert.IsTrue(CustomizedLabellingSettings.IsInputValueErrTipsDisplayed());
 
             //Change B right border from 2 to 5.

@@ -1,0 +1,21 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["NancyCostCustomer2", "组织A" ,"园区A"],
+			"RealName":"测试手机和座机只添加一个的情况ABC",
+			"Position":"美女高级测试开发工程师",
+			"Telephone":"123-456-789",
+			"Mobile":"86-123456789",
+			"Email":"12345@qq.com"
+		},
+		"ExpectedData":
+		{
+			"RealName":"测试手机和座机只添加一个的情况ABC",
+			"Position":"美女高级测试开发工程师",
+			"Telephone":"123-456-789",
+			"Mobile":"86-123456789",
+			"Email":"12345@qq.com"	
+		}
+	}
+]

@@ -45,7 +45,7 @@
 			"Commodity":"$@Commodity_AirQuality",
 			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade|(8)",
 			"KPIType":"$@EM.Unit.UnitArea",
-			"UOM":"$@Uom_µg/m³@$/$@Uom_m²",
+			"UOM":"µg/m³/M²",
 			"LabellingValue":[[{
 				"LabellingLeftValue":"1",
 			},

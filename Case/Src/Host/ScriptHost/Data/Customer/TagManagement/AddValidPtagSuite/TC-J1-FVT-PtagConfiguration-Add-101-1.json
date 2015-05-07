@@ -8,8 +8,8 @@
 			"Uom":"$@Uom_KWH",
 			"CalculationType":"Sum",
 			"CollectCycle":"15$@Setting.VEEMonitorRule.Minute",
-			"Slope":"0";
-			"Offset":"0";
+			"Slope":"0",
+			"Offset":"0",
 		},
 		"ExpectedData":
 		{
@@ -17,8 +17,8 @@
 			"Uom":"$@Uom_KWH",
 			"CalculationType":"Sum",
 			"CollectCycle":"15$@Setting.VEEMonitorRule.Minute",
-			"Slope":"0";
-			"Offset":"0";
+			"Slope":"0",
+			"Offset":"0",
 		}
 	},
 	{
@@ -28,8 +28,8 @@
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
 			"CollectCycle":"30$@Setting.VEEMonitorRule.Minute",
-			"Slope":"99999999";
-			"Offset":"99999999";
+			"Slope":"999999",
+			"Offset":"999999",
 		},
 		"ExpectedData":
 		{
@@ -37,8 +37,8 @@
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
 			"CollectCycle":"30$@Setting.VEEMonitorRule.Minute",
-			"Slope":"99999999";
-			"Offset":"99999999";
+			"Slope":"999999",
+			"Offset":"999999",
 		}
 	},
 	{
@@ -48,8 +48,8 @@
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
 			"CollectCycle":"$@Common.AggregationStep.Hourly",
-			"Slope":"99999999.999999";
-			"Offset":"99999999.999999";
+			"Slope":"1000000",
+			"Offset":"1000000",
 		},
 		"ExpectedData":
 		{
@@ -57,8 +57,8 @@
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Max",
 			"CollectCycle":"$@Common.AggregationStep.Hourly",
-			"Slope":"99999999.999999";
-			"Offset":"99999999.999999";
+			"Slope":"1000000",
+			"Offset":"1000000",
 		}
 	},
 	{
@@ -68,8 +68,8 @@
 			"Uom":"$@Uom_KWH",
 			"CalculationType":"Min",
 			"CollectCycle":"$@Common.AggregationStep.Daily",
-			"Slope":"1";
-			"Offset":"1";
+			"Slope":"1",
+			"Offset":"1",
 		},
 		"ExpectedData":
 		{
@@ -77,8 +77,8 @@
 			"Uom":"$@Uom_KWH",
 			"CalculationType":"Min",
 			"CollectCycle":"$@Common.AggregationStep.Daily",
-			"Slope":"1";
-			"Offset":"1";
+			"Slope":"1",
+			"Offset":"1",
 		}
 	},
 	{
@@ -88,8 +88,8 @@
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
 			"CollectCycle":"$@Common.AggregationStep.Monthly",
-			"Slope":"10abc";
-			"Offset":"10abc";
+			"Slope":"10abc",
+			"Offset":"10abc",
 		},
 		"ExpectedData":
 		{
@@ -97,8 +97,8 @@
 			"Uom":"$@Uom_Ton",
 			"CalculationType":"Avg",
 			"CollectCycle":"$@Common.AggregationStep.Monthly",
-			"Slope":"10";
-			"Offset":"10";
+			"Slope":"10",
+			"Offset":"10",
 		}
 	}
 ]

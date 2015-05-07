@@ -293,7 +293,7 @@ I18N.Setting.Label.HierarchyImportLog = '配置导入日志';
 I18N.Setting.Label.HierarchyTagsSetting = '层级数据';
 I18N.Setting.Label.SystemDimensionTagsSetting = '##Common.Glossary.SystemDimension##数据';
 I18N.Setting.Label.AreaDimensionTagsSetting = '##Common.Glossary.AreaDimension##数据';
-I18N.Setting.Hierarchy.Message.DeleteTip = '<br/>您将同时删除层级节点下所有的子节点，维度结构，数据点关联关系，以及间接关联的所有信息';
+I18N.Setting.Hierarchy.Message.DeleteTip = '<br/>您将同时删除层级节点下所有的信息和仪表盘';
 I18N.Setting.Label.MapSetting = '地图信息';
 I18N.Setting.Hierarchy.LocatePosition = '标记位置';
 I18N.Setting.Hierarchy.RelocatePosition = '重新标记';
@@ -1126,7 +1126,7 @@ I18N.Common.Label.TimeZoneConflict = '时间区间重叠';
 I18N.Common.Label.TimeOverlap = '时间区间重叠，请检查。';
 I18N.Common.Label.CommoEmptyText = '请选择';
 I18N.Common.Label.MandatoryEmptyError = '必填项。';
-I18N.Common.Label.OverValueError = '该输入项的最大值是 999999999。';
+I18N.Common.Label.OverValueError = '该输入项的最大值是 999999999.999999';
 I18N.Common.Label.UnspecifyCommodity = '不指定##Common.Glossary.Commodity##';
 
 I18N.Common.DateRange.Last7Day = '最近7天';

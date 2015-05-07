@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"CommonNames":["自定义能效标识10","？"],
+			"CommonNames":["自定义能效标识10","<>"],
 			"Commodity":"$@Commodity_Electricity",
 			"KPIType":"$@EM.Unit.UnitArea",
 			"LabellingLevel":"$@Setting.CustomizedLabeling.Grade|(3)",
@@ -23,7 +23,7 @@
 			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
-			"UOM":"$@Uom_KWH@$/$@Uom_m²",
+			"UOM":"",
 		},
 		"ExpectedData":
 		{
@@ -43,12 +43,12 @@
 				"LabellingLeftValue":"2",				
 			}],
 			[{
-				"LabellingLeftValue":"$@Message.M09115",
+				"LabellingLeftValue":"该输入项的最小值是 -999999999.999999",
 			}]],
 			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
-			"UOM":"$@Uom_KWH@$/$@Uom_m²",
+			"UOM":"",
 		}
 	}
 ]

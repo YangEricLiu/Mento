@@ -21,6 +21,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static TextField LoginUserNameTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldLoginUserName); }}
         public static TextField LoginPasswordTextField { get { return GetControl<TextField>(JazzControlLocatorKey.TextFieldLoginPassword); }}
+
+        public static TextField PopLoginUserNameTextField { get { return GetControl<TextField>(JazzControlLocatorKey.PopTextFieldLoginUserName); } }
+        public static TextField PopLoginPasswordTextField { get { return GetControl<TextField>(JazzControlLocatorKey.PopTextFieldLoginPassword); } }
         #endregion
 
         #region DemoAccess

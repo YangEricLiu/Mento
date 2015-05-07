@@ -112,9 +112,7 @@ namespace Mento.Script.Customer.TagManagement
              JazzMessageBox.MessageBox.Delete();
              JazzMessageBox.LoadingMask.WaitLoading();
              TimeManager.MediumPause();
-            
-
-           
+                      
              //1. Verify that Vtag is deleted from Vtag list
              JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
              JazzMessageBox.LoadingMask.WaitSubMaskLoading();

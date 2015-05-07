@@ -140,12 +140,12 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool SelectHierarchyNode(string[] treePath)
         {
             AllDashboardsHierarchyTreeButton.Click();
-            TimeManager.LongPause();
+            TimeManager.Pause(8000);
 
             try
             {
                 AllDashboardsTree.SelectNode(treePath);
-                TimeManager.Pause(8000);
+                TimeManager.LongPause();
                 return true;
             }
             catch (Exception Ex)
@@ -479,6 +479,7 @@ namespace Mento.ScriptCommon.Library.Functions
             FloatOnDashboardNameButton(name);
 
             ShareDashboardButton.Click();
+            TimeManager.Pause(WAITSHAREWINDOWTIME);
         }
 
         public bool IsShareDashboardButtonExisted(string name)
@@ -773,6 +774,8 @@ namespace Mento.ScriptCommon.Library.Functions
             Button shareButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWidgetShare, name);
 
             shareButton.Click();
+            TimeManager.Pause(WAITSHAREWINDOWTIME);
+            TimeManager.Pause(WAITSHAREWINDOWTIME);
         }
 
         public void ClickEnjoyWidgetButton(string name)

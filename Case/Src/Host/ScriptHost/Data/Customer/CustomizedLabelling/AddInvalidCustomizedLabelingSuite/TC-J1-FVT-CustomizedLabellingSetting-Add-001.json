@@ -53,7 +53,7 @@
 			"Order":["$@Setting.CustomizedLabeling.Ascending"],
 			"Firstlabel":"<=",
 			"Lastlabel":">",
-			"UOM":"$@Uom_KWH$@ENERGYRANK_APDX",
+			"UOM":"KWH$@ENERGYRANK_APDX",
 		}
 	}
 ]

@@ -73,6 +73,7 @@
     <Compile Include="HierarchyPropertyConfiguration\AddInvalidPeopleAreaPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddCalendarPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\AddElecCostPropertySuite.cs" />
+    <Compile Include="HierarchyPropertyConfiguration\AdministratorInfoSuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\ModifyElecCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\ModifyOtherCostPropertySuite.cs" />
     <Compile Include="HierarchyPropertyConfiguration\ModifyCalendarPropertySuite.cs" />
@@ -140,9 +141,6 @@
       <Link>App.config</Link>
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

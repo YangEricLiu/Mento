@@ -65,6 +65,12 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
         }
 
+        public void NavigatorToNonCustomizedLabelling()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettings);
+            TimeManager.ShortPause();
+        }
+
         /// <summary>
         /// Click "add CustomizedLabelling" button to add one ptag
         /// </summary>

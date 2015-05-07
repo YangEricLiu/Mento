@@ -31,7 +31,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [TearDown]
         public void CaseTearDown()
         {
-            CustomizedLabellingSettings.NavigatorToCustomizedLabelling();
+            CustomizedLabellingSettings.NavigatorToNonCustomizedLabelling();
         }
 
         [Test]

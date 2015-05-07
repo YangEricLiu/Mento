@@ -2,7 +2,14 @@
 <WebElement>
   <!--Button Begin-->
     <Button>
-      <login>
+      <login>     
+            <Pop>
+              <add key="PopButtonLoginSubmit" value = "//span[@class='mui-raised-button-label']" type="XPath"/>
+              <add key="PopMenuButtonCustomer" value = "//div[@data-reactid='.0.0.0.0.0:1.0.0.0']" type="XPath"/>
+              <add key="PopMenuItemCustomer" value = "//span[text()='NancyCostCustomer2']" type="XPath"/>
+              <add key="PopbButtonConfirm" value = "//span[text()='确定']" type="XPath"/>
+
+            </Pop>
             <add key="ButtonLoginSubmit" value = "btnSubmit" type="ID"/>
             <add key="ButtonLoginCustomerOptionConfirm" value = "//div[contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
         </login>
@@ -372,6 +379,15 @@
               <add key="ButtonHierarchySettingsModify" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="ButtonHierarchySettingsDelete" value="//div[@id='st-hier-properties-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Delete']]" type="XPath"/>
           </hierarchy>
+          <administratorInfo>
+              <add key="TabButtonAdministratorInfoProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[2]" type="XPath"/>
+              <add key="ButtonAdministratorInfoCreate" value="//div[@id = 'st-hier-admin-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='管理员']]" type="XPath"/>
+              <add key="ButtonAdministratorInfoAppend" value="st-hierarchy-admin-add-toolEl" type="ID"/>
+              <add key="ButtonAdministratorInfoDelete" value="//td[@id='st-hierarchy-adminitems-container-bodyEl']/table[$#positionIndex]//div[contains(@id, 'tool') and contains(@class, 'x-tool')]/img" type="XPath"/>
+              <add key="ButtonAdministratorInfoSave" value="//div[@id='st-hier-admin-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Save']]" type="XPath"/>
+              <add key="ButtonAdministratorInfoCancel" value="//div[@id='st-hier-admin-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
+              <add key="ButtonAdministratorInfoUpdate" value="//div[@id='st-hier-admin-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
+          </administratorInfo>
           <hierarchycalendar>
               <add key="TabButtonCalendarProperty" value="//div[contains(@id, 'tabbar') and contains(@id, 'targetEl')]/div[em/button/span[text()='$@Setting.Label.HierarchyNodeCalendarProperties']]" type="XPath"/>
               <add key="ButtonCalendarCreate" value="//div[@id = 'st-hier-calendar-form']/div[contains(@id, 'toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Setting.Label.HierarchyNodeCalendarProperties']]" type="XPath"/>
@@ -545,7 +561,7 @@
               <add key="ButtonModifyCustomerMapProperty" value="//div[@id='st-map-consumption-form']//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Operation.Update']]" type="XPath"/>
               <add key="TabButtonCustomerMapPageProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.CustomerManagement.Label.MapPageInfo']]" type="XPath"/>
               <add key="TabButtonCustomerBasicProperty" value="//div[@id='st-customer-tab-panel']//div[contains(@class,'x-tab') and em/button/span[text()='$@Setting.Label.BasicProperties']]" type="XPath"/>
-CommentTextField
+
           </customermanagement>
           
           <BenchMark>
@@ -603,6 +619,10 @@ CommentTextField
   <!--TextField Begin-->
   <TextField>
       <login>
+        <Pop>
+          <add key="PopTextFieldLoginUserName" value = "//input[@data-reactid='.0.0.1.0.0.0.0.0']" type = "XPath"/>
+          <add key="PopTextFieldLoginPassword" value="//input[@data-reactid='.0.0.1.0.0.1.0.0']" type = "XPath"/>
+        </Pop>
           <add key="TextFieldLoginUserName" value = "username" type = "ID"/>
           <add key="TextFieldLoginPassword" value="password" type="ID"/>
       </login>
@@ -653,6 +673,12 @@ CommentTextField
               <add key="TextFieldHierarchySettingsComment" value="//div[@id='st-hier-properties-form-body']//textarea[@name='Comment']" type="XPath"/>
           </hierarchysettings>
           <hierarchypeopertysettings>
+              <add key="TextFieldAdministratorInfoRealName" value="//td[@id='st-hierarchy-adminitems-container-bodyEl']/table[$#positionIndex]//input[@name='RealName']" type="XPath"/>
+              <add key="TextFieldAdministratorInfoPosition" value="//td[@id='st-hierarchy-adminitems-container-bodyEl']/table[$#positionIndex]//input[@name='Position']" type="XPath"/>
+              <add key="TextFieldAdministratorInfoMobile" value="//td[@id='st-hierarchy-adminitems-container-bodyEl']/table[$#positionIndex]//input[@name='Mobile']" type="XPath"/>
+              <add key="TextFieldAdministratorInfoTelephone" value="//td[@id='st-hierarchy-adminitems-container-bodyEl']/table[$#positionIndex]//input[@name='Telephone']" type="XPath"/>
+              <add key="TextFieldAdministratorInfoEmail" value="//td[@id='st-hierarchy-adminitems-container-bodyEl']/table[$#positionIndex]//input[@name='Email']" type="XPath"/>
+            
               <add key="TextFieldTotalAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-totalarea-container']//input[@type='text' and @name='TotalAreaValue']" type="XPath"/>
               <add key="TextFieldHeatingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-heatingarea-container']//input[@type='text' and @name='HeatingAreaValue']" type="XPath"/>
               <add key="TextFieldCoolingAreaValue" value="//div[@id='st-hierarchy-dynamicproperty-coolingarea-container']//input[@type='text' and @name='CoolingAreaValue']" type="XPath"/>
@@ -1196,7 +1222,7 @@ CommentTextField
       </TargetBaseline>
       
       <CustomizedLabellingSetting>
-         <add key="LabelInputValueErrTips" value="//div[@id='st-customized-labeling-properties-form-body']/label[text()='$@Setting.CustomizedLabeling.ErrorMessage2']" type="XPath"/>
+         <add key="LabelInputValueErrTips" value="//div[@id='st-customized-labeling-properties-form-body']/div/label[text()='$@Setting.CustomizedLabeling.ErrorMessage2']" type="XPath"/>
       </CustomizedLabellingSetting>
 
     </CustomerSettings>

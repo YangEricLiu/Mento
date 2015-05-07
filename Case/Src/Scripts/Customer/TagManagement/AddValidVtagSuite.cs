@@ -122,9 +122,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.MediumPause();
             // Verify is there  any trend chart display (temp method)
             
-            TimeManager.MediumPause();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTrendChartDrawn());
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists(input.InputData.CommonName));
         }
 

@@ -66,6 +66,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void NavigateToHierarchyAssociate()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationHierarchy);
+            TimeManager.MediumPause();
         }
 
         /// <summary>
@@ -81,12 +82,13 @@ namespace Mento.ScriptCommon.Library.Functions
         public void AssociateTagCaseSetUp()
         {
             NavigateToHierarchyAssociate();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
+            TimeManager.LongPause();
         }
 
         public void AssociateTagCaseTearDown()
         {
-            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CustomizedLabelling);
             TimeManager.LongPause();
         }
 
@@ -302,6 +304,12 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool IsAllTagsDisabled()
         {
             return TagList.IsNoEnabledCheckbox();
+        }
+
+        public void GoToPage(int pageNum)
+        {
+            TagList.GotoPage(pageNum);
+            TimeManager.LongPause();
         }
 
         /// <summary>

@@ -1,0 +1,23 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["NancyCostCustomer2", "组织A"],
+			"RealName":"valid名字",
+			"Position":"valid职务",
+			"Mobile":"123456789",
+			"Telephone":"334-4343-3344",
+			"Email":"235@qq.com",
+			"ValidChar":"123",
+			"InvalidChar":"=ee",
+		},
+		"ExpectedData":
+		{
+			"RealName":"valid名字",
+			"Position":"valid职务",
+			"Mobile":"123456789",
+			"Telephone":"334-4343-3344",
+			"Email":"235@qq.com",
+		}
+	}
+]

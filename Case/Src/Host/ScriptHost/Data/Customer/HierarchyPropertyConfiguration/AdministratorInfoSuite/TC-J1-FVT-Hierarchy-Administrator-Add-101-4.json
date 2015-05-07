@@ -1,0 +1,20 @@
+﻿[
+	{
+		"InputData":
+		{	
+			"HierarchyNodePath":["NancyCostCustomer2", "组织A" ,"园区B"],
+			"RealName":"valid名字",
+			"Position":"valid职务",
+			"Mobile":"123456789",
+			"Telephone":"334-4343-3344",
+			"Email":"235@qq.com",
+		},
+		"ExpectedData":
+		{
+			"RealName":"$@Common.Label.MandatoryEmptyError",
+			"Position":"$@Common.Label.MandatoryEmptyError",
+			"Telephone":"手机、座机至少填写一项",
+			"Email":"$@Common.Label.MandatoryEmptyError",	
+		}
+	}
+]

@@ -14,13 +14,13 @@ namespace Mento.Script.Platform
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.Initialize();
+            //TestAssemblyInitializer.Initialize();
         }
 
         [TearDown]
         public void RunAfterAnyTests()
         {
-            TestAssemblyInitializer.Desctuct();
+            //TestAssemblyInitializer.Desctuct();
         }
     }
 }

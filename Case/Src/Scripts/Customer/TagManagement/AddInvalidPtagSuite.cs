@@ -46,7 +46,7 @@ namespace Mento.Script.Customer.TagManagement
         {
             //Click "+" button and fill ptag field with invalid input
             PTagSettings.ClickAddPtagButton();
-            PTagSettings.FillInPtag(input.InputData);
+            PTagSettings.FillInPtagVerification(input.InputData);
             TimeManager.MediumPause();
             //Click "Save" button
             PTagSettings.ClickSaveButton();
@@ -71,8 +71,6 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(PTagSettings.IsOffsetInvalid());
             Assert.IsTrue(PTagSettings.IsOffsetInvalidMsgCorrect(input.ExpectedData));
             Assert.IsFalse(PTagSettings.IsCommentsInvalid());
-            Assert.IsFalse(PTagSettings.IsSlopeInvalid());
-            Assert.IsFalse(PTagSettings.IsOffsetInvalid());
         }
 
         [Test]
@@ -110,6 +108,8 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(PTagSettings.IsCollectCycleInvalid());
             Assert.IsTrue(PTagSettings.IsCollectCycleInvalidMsgCorrect(input.ExpectedData));
             Assert.IsFalse(PTagSettings.IsCommentsInvalid());
+            Assert.IsFalse(PTagSettings.IsSlopeInvalid());
+            Assert.IsFalse(PTagSettings.IsOffsetInvalid());
         }
 
         [Test]
@@ -127,9 +127,9 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
-            //verify add successful
-            //Assert.IsTrue(PTagSettings.IsSaveButtonDisplayed());
-           //Assert.IsTrue(PTagSettings.IsCancelButtonDisplayed());
+            //verify add not successful
+            Assert.IsTrue(PTagSettings.IsSaveButtonDisplayed());
+            Assert.IsTrue(PTagSettings.IsCancelButtonDisplayed());
 
             //Verify that the error message popup and the input field is invalid
             Assert.IsTrue(PTagSettings.IscodeInvalid());

@@ -35,7 +35,8 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         [TearDown]
         public void CaseTearDown()
         {
-            HierarchySetting.NavigatorToNonHierarchy();
+            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            TimeManager.LongPause(); 
         }
 
         [Test]

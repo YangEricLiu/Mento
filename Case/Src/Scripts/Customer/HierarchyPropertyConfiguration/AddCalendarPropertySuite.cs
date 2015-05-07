@@ -28,7 +28,6 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void CaseSetUp()
         {
             HierarchySettings.NavigatorToHierarchySetting();
-            TimeManager.MediumPause();
         }
 
         [TearDown]
@@ -216,6 +215,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         {
             //Select hierarchy 
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.LongPause();
 
             //Click calendar tab and create button "+日历属性"
             CalendarSettings.ClickCalendarTab();

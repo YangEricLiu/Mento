@@ -96,7 +96,7 @@
 			"Order":["$@Setting.CustomizedLabeling.Ascending","$@Setting.CustomizedLabeling.Declining"],
 			"Firstlabels":["<=",">"],
 			"Lastlabels":[">","<="],
-			"UOM":"$@Uom_KWH@$/$@Uom_m²",
+			"UOM":"KWH/M²",
 		}
 	}
 ]

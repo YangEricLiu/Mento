@@ -138,7 +138,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.ShortPause();
 
             //Verify the comments not display
-            Assert.IsFalse(HierarchySettings.IsCommentsDisplayed());
+            Assert.IsTrue(HierarchySettings.IsCommentHidden());
         }
 
         [Test]

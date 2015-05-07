@@ -94,12 +94,14 @@ namespace Mento.ScriptCommon.Library.Functions
         public void NavigatorToTagSetting()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettings);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(8);
             TimeManager.ShortPause();
         }
 
         public void TagTargetBaselineSettingsCaseSetUp()
         {
             NavigatorToTagSetting();
+
             TimeManager.MediumPause();
         }
 
@@ -435,6 +437,7 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.LongPause();
             JazzMessageBox.MessageBox.OK();
             JazzMessageBox.LoadingMask.WaitLoading(maxtime: 60);
+            TimeManager.MediumPause();
         }
         #endregion
 

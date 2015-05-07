@@ -238,6 +238,18 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+        private static AdministratorInfoSetting _AdministratorInfoSetting;
+        public static AdministratorInfoSetting AdministratorInfoSetting
+        {
+            get
+            {
+                if (_AdministratorInfoSetting == null)
+                    _AdministratorInfoSetting = new AdministratorInfoSetting();
+
+                return _AdministratorInfoSetting;
+            }
+        }
+
         private static TimeSettingsWorkday _TimeSettingsWorkday;
         public static TimeSettingsWorkday TimeSettingsWorkday
         {

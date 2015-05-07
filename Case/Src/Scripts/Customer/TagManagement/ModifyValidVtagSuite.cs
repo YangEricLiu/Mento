@@ -89,10 +89,6 @@ namespace Mento.Script.Customer.TagManagement
             string updatedFormula = "{vtag|VtagCodeModified}";
 
             //Click "Modify" button and input new code to vtag field
-
-
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
             VTagSettings.FocusOnVTagByName(input.ExpectedData.CommonName);
             TimeManager.LongPause();
 
@@ -182,12 +178,10 @@ namespace Mento.Script.Customer.TagManagement
             
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.InputData.CommonName);
             JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(30);
             TimeManager.MediumPause();
             // No data here  
-            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("VtagNameModified"));
-            //Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("水"));
-            
+            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("VtagNameModified"));            
         }
       
         [Test]

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Mento.TestApi.WebUserInterface.Controls;
 using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.TestApi.WebUserInterface;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -29,6 +30,18 @@ namespace Mento.ScriptCommon.Library.Functions
         private static TextField NameTextField = JazzTextField.AreaDimensionSettingsNameTextField;
         private static TextField CommentTextField = JazzTextField.AreaDimensionSettingsCommentTextField;
 
+
+        public void NavigateToAreaDimensionSetting()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
+            TimeManager.MediumPause();
+        }
+
+        public void NavigateToNonAreaDimensionSetting()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettings);
+            TimeManager.MediumPause();
+        }
 
         public void ShowHierarchyTree()
         {

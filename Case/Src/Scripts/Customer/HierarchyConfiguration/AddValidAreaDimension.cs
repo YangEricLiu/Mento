@@ -23,26 +23,20 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     [ManualCaseID("TC-J1-FVT-AreaDimensionConfiguration-101")]
     public class AddValidAreaDimension : TestSuiteBase
     {
+        private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
+        private static AreaDimensionSettings AreaSettings = JazzFunction.AreaDimensionSettings;
+
         [SetUp]
         public void ScriptSetUp()
         {
-            /*
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettings);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
             HierarchySettings.NavigatorToHierarchySetting();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-            */
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
         }
 
         [TearDown]
         public void ScriptTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            AreaSettings.NavigateToNonAreaDimensionSetting();
         }
 
         /// <summary>
@@ -54,19 +48,14 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-AddAreaCancel")]
         public void AddAreaCancel(AreaDimensionData input)
         {
-            var AreaSettings = JazzFunction.AreaDimensionSettings;
-            TimeManager.ShortPause();
-
             //Select a Building node.	
-            //The Area dimension is light and enable to select.
-            AreaSettings.ShowHierarchyTree();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
+
+            AreaSettings.NavigateToAreaDimensionSetting();
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //Click "子区域" button to add Area node.	
+            TimeManager.MediumPause();
+
             //The Area property display and enable to input.
             AreaSettings.ClickCreateAreaDimensionButton();
 
@@ -79,15 +68,11 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.ShortPause();
 
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
+
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //TimeManager.MediumPause();
-            //AreaSettings.ShowHierarchyTree();
-            //TimeManager.MediumPause();
-            //AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            //TimeManager.MediumPause();
+            TimeManager.MediumPause();
+
             Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath));
         }
 
@@ -97,18 +82,13 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-AddValidAreaNode")]
         public void AddValidAreaNode(AreaDimensionData input)
         {
-            var AreaSettings = JazzFunction.AreaDimensionSettings;
-            TimeManager.ShortPause();
-
             //Select a Building node.	
-            //The Area dimension is light and enable to select.
-            AreaSettings.ShowHierarchyTree();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
+
+            AreaSettings.NavigateToAreaDimensionSetting();
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
 
             //Click "子区域" button to add Area node.	
             //The Area property display and enable to input.
@@ -126,9 +106,10 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //Verify the area node has been created under the correct hierarchy path
             
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
             //AreaSettings.ShowHierarchyTree();
             //TimeManager.MediumPause();
             //AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -144,20 +125,14 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-FiveLevelsAreaNodes")]
         public void FiveLevelsAreaNodes(AreaDimensionData input)
         {
-            var AreaSettings = JazzFunction.AreaDimensionSettings;
-
-            TimeManager.ShortPause();
-
             //Select a Building node.	
-            //The Area dimension is light and enable to select.
-            AreaSettings.ShowHierarchyTree();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
+
+            AreaSettings.NavigateToAreaDimensionSetting();
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
+
             int AreaNodeLength = input.ExpectedData.AreaNodePath.Length;
             for (int i = 1; i < (AreaNodeLength); i++)
             {
@@ -180,9 +155,11 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             // Verify the correct  areaNode is successfully created
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
             //AreaSettings.ShowHierarchyTree();
             //TimeManager.MediumPause();
             //AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -198,18 +175,13 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-AddLongestArea")]
         public void AddLongestArea(AreaDimensionData input)
         {
-            var AreaSettings = JazzFunction.AreaDimensionSettings;
-            TimeManager.ShortPause();
-
             //Select a Building node.	
-            //The Area dimension is light and enable to select.
-            AreaSettings.ShowHierarchyTree();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
+
+            AreaSettings.NavigateToAreaDimensionSetting();
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
 
             //Click "子区域" button to add Area node.	
             //The Area property display and enable to input.
@@ -224,9 +196,11 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             // Verify the correct  areaNode is successfully created
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
             //AreaSettings.ShowHierarchyTree();
             //TimeManager.MediumPause();
             //AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -243,16 +217,14 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-OrgandSiteNodeAddArea")]
         public void OrgandSiteNodeAddArea(AreaDimensionData input)
         {
-            var AreaSettings = JazzFunction.AreaDimensionSettings;
-
-            TimeManager.ShortPause();
-
             //Select a Building node.	
-            //The Area dimension is light and enable to select.
-            AreaSettings.ShowHierarchyTree();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
+
+            AreaSettings.NavigateToAreaDimensionSetting();
+            AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
+            TimeManager.MediumPause();
+
             Assert.IsFalse(AreaSettings.IsCreateAreaDimensionButtonEnabled());
         }
 
@@ -263,22 +235,13 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-AddValidAndVerify")]
         public void AddValidAndVerify(AreaDimensionData input)
         {
-            
-            var AreaSettings = JazzFunction.AreaDimensionSettings;
-
             //Select a Building node.	
-            //The Area dimension is light and enable to select.
-            TimeManager.ShortPause();
-
-            //Select a Building node.	
-            //The Area dimension is light and enable to select.
-            AreaSettings.ShowHierarchyTree();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
+
+            AreaSettings.NavigateToAreaDimensionSetting();
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
 
             //Click "子区域" button to add Area node.	
             //The Area property display and enable to input.
@@ -300,9 +263,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             //AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             
             Assert.IsTrue(AreaSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath));
-            TimeManager.MediumPause();
-            
-
+            TimeManager.MediumPause();          
             
             //2. Energy Analysis area node added
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
@@ -313,10 +274,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.LongPause();
 
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.SelectAreaDimension(input.ExpectedData.AreaNodePath));
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.SelectAreaDimension(input.ExpectedData.AreaNodePath));
-            //TimeManager.MediumPause();
-
         }
 
 
@@ -326,22 +283,13 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-EmptyItemNotDisplay")]
         public void EmptyItemNotDisplay(AreaDimensionData input)
         {
-            var AreaSettings = JazzFunction.AreaDimensionSettings;
-
             //Select a Building node.	
-            //The Area dimension is light and enable to select.
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
 
-            //Select a Building node.	
-            //The Area dimension is light and enable to select.
-            AreaSettings.ShowHierarchyTree();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
+            AreaSettings.NavigateToAreaDimensionSetting();
             AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //TimeManager.LongPause();
+            TimeManager.MediumPause();
 
             //Click "子区域" button to add Area node.	
             //The Area property display and enable to input.

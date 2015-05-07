@@ -67,7 +67,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         public void PTagSettingCaseTearDown()
         {
-            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            NavigatorToCustomizedLabeling();
             TimeManager.LongPause();
         }
 
@@ -82,6 +82,11 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
         }
 
+        public void NavigatorToCustomizedLabeling()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CustomizedLabelling);
+            TimeManager.ShortPause();
+        }
 
         /// <summary>
         /// Click "add ptag" button to add one ptag
@@ -259,6 +264,21 @@ namespace Mento.ScriptCommon.Library.Functions
         /// </summary>
         /// <param name="input">Test data</param>
         /// <returns></returns>
+        public void FillInPtagVerification(PtagInputData input)
+        {
+            NameTextField.Fill(input.CommonName);
+            CodeTextField.Fill(input.Code);
+            MetercodeTextField.Fill(input.Meter);
+            ChannelTextField.Fill(input.Channel);
+            CommodityComboBox.SelectItem(input.Commodity);
+            UomComboBox.SelectItem(input.Uom);
+            CollectCycleComboBox.SelectItem(input.CollectCycle);
+            CalculationTypeComboBox.SelectItem(input.CalculationType);
+            SlopeTextField.Fill(input.DoubleNagtiveValue);
+            OffsetTextField.Fill(input.DoubleNagtiveValue);
+            CommentTextField.Fill(input.Comments);
+        }
+
         public void FillInPtag(PtagInputData input)
         {
             NameTextField.Fill(input.CommonName);

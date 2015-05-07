@@ -31,7 +31,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         [TearDown]
         public void CaseTearDown()
         {
-            CustomizedLabellingSettings.NavigatorToCustomizedLabelling();
+            CustomizedLabellingSettings.NavigatorToNonCustomizedLabelling();
         }
 
         [Test]
@@ -69,13 +69,14 @@ namespace Mento.Script.Customer.CustomizedLabelling
             //Check AscendingCustomizedLabellingButton is "倒序"
             Assert.AreEqual(input.ExpectedData.Order[0], CustomizedLabellingSettings.GetDescendingCustomizedLabellingButton());
 
-            //Change to select KPI type=单位人口.
+            //Change to select KPI type=单位人口.(这里改变以后就直接是正序了，不再是倒序)
             CustomizedLabellingSettings.SelectKPITypeComboBox(input.InputData.KPITypes[1]);
 
             //check labelingGrade Firstlabel&Lastlabel.
             Assert.AreEqual(input.ExpectedData.Firstlabel, CustomizedLabellingSettings.GetLabellingGradeFirstLabel());
             Assert.AreEqual(input.ExpectedData.Lastlabel, CustomizedLabellingSettings.GetLabellingGradeLastLabel());
 
+            //这里有个问题，对于中文版，有些单位还是习惯性的用缩写英文表示，没有显示成中文，这个后续会和UI确认
             //Check UOM
             for (int num = 0; num < Convert.ToInt32(input.InputData.LabellingLevelValue.ToString()); num++)
             {
@@ -84,15 +85,19 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
             //Input Labelling level A<=5.144.
             CustomizedLabellingSettings.FillInLabellingLevelLeftValue(1, input.InputData.LabellingValue[0][0].LabellingLeftValue);
+            TimeManager.LongPause();
 
-            //Input Labelling level C=10000000000000000000000.
+            //Input Labelling level C=1000000000.
             CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, input.InputData.LabellingValue[1][0].LabellingLeftValue);
-            TimeManager.ShortPause();
-            Assert.AreEqual(input.ExpectedData.LabellingValue[1][0].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftInvalidMassage(3));
+            TimeManager.LongPause();
+            TimeManager.LongPause();
 
+            Assert.AreEqual(input.ExpectedData.LabellingValue[1][0].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftInvalidMassage(3));
+            
             //Input Labelling level C=10.
             CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, "");
             CustomizedLabellingSettings.FillInLabellingLevelLeftValue(3, input.InputData.LabellingValue[0][2].LabellingLeftValue);
+            TimeManager.LongPause();
 
             //Save
             CustomizedLabellingSettings.ClickSaveButton();
@@ -111,10 +116,12 @@ namespace Mento.Script.Customer.CustomizedLabelling
             Assert.AreEqual(input.ExpectedData.Uom, input.InputData.Uom);
             Assert.AreEqual(input.ExpectedData.LabellingLevel, input.InputData.LabellingLevel);
             Assert.AreEqual(input.ExpectedData.KPITypes[1], input.InputData.KPITypes[1]);
-            Assert.IsTrue(CustomizedLabellingSettings.IsCommentHidden());
 
             //The labelling name/create user/create time display in labelling grid. 
             Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.ExpectedData.CommonName));
+
+            //有个bug，现在备注是空的时候不隐藏，每次到这里会失败
+            Assert.IsTrue(CustomizedLabellingSettings.IsCommentHidden());        
         }
          
          [Test]
@@ -140,7 +147,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
              int count = Convert.ToInt32(input.InputData.LabellingLevelValue);
              Assert.AreEqual(count, CustomizedLabellingSettings.GetLabellingGradeCount());
 
-            //Check UOM
+            //这里有个问题，对于中文版，有些单位还是习惯性的用缩写英文表示，没有显示成中文，这个后续会和UI确认
+            //check UOM
             for (int num = 0; num < Convert.ToInt32(input.InputData.LabellingLevelValue.ToString()); num++)
             {
                 Assert.AreEqual(input.ExpectedData.UOM, CustomizedLabellingSettings.GetLabellingUOMValue(num + 1));
@@ -307,7 +315,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
              int count = Convert.ToInt32(input.InputData.LabellingLevelValue);
              Assert.AreEqual(count, CustomizedLabellingSettings.GetLabellingGradeCount());
 
-             //Check UOM
+             //这里有个问题，对于中文版，有些单位还是习惯性的用缩写英文表示，没有显示成中文，这个后续会和UI确认
+            //Check UOM
              for (int num = 0; num < Convert.ToInt32(input.InputData.LabellingLevelValue.ToString()); num++)
              {
                  Assert.AreEqual(input.ExpectedData.UOM, CustomizedLabellingSettings.GetLabellingUOMValue(num + 1));
@@ -372,13 +381,10 @@ namespace Mento.Script.Customer.CustomizedLabelling
              //Save
              CustomizedLabellingSettings.ClickSaveButton();
              JazzMessageBox.LoadingMask.WaitLoading();
-             TimeManager.MediumPause();
+             TimeManager.LongPause();
 
              Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());
              Assert.AreEqual(input.ExpectedData.Comments, CustomizedLabellingSettings.GetCommentTextFieldValue());
-
-             //The labelling name/create user/create time display in labelling grid. 
-             Assert.IsTrue(CustomizedLabellingSettings.IslabelingNameExist(input.ExpectedData.CommonName));
          }
     }           
 }

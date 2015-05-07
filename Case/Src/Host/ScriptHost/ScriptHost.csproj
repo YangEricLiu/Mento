@@ -463,6 +463,12 @@
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-4.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-2.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\AddValidPeopleAreaPropertySuite\TC-J1-FVT-PopulationAreaConfiguration-Add-101-1.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AdministratorInfoSuite\TC-J1-FVT-Hierarchy-Administrator-Modify-101-2.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AdministratorInfoSuite\TC-J1-FVT-Hierarchy-Administrator-Modify-101-1.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AdministratorInfoSuite\TC-J1-FVT-Hierarchy-Administrator-Add-101-4.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AdministratorInfoSuite\TC-J1-FVT-Hierarchy-Administrator-Add-101-3.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AdministratorInfoSuite\TC-J1-FVT-Hierarchy-Administrator-Add-101-2.json" />
+    <None Include="Data\Customer\HierarchyPropertyConfiguration\AdministratorInfoSuite\TC-J1-FVT-Hierarchy-Administrator-Add-101-1.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Modify-001-1.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Modify-101-4.json" />
     <None Include="Data\Customer\HierarchyPropertyConfiguration\ModifyCalendarPropertySuite\TC-J1-FVT-CalendarConfiguration-Modify-101-3.json" />
@@ -1143,6 +1149,7 @@
     <None Include="Data\OpenAPI\EnergyViewAPI\TC-J1-FVT-BluesEnergyMobileServiceAPI-101-1.json" />
     <None Include="Data\OpenAPI\EnergyViewAPI\TC-J1-FVT-BluesBuildingMobileServiceAPI-101-1.json" />
     <None Include="Data\OpenAPI\EnergyViewAPI\TC-J1-FVT-EnergyAnalysisOpenAPI-101-1.json" />
+    <None Include="Data\System\Example\PopTestSuite\TC-J1-Example-002.json" />
     <None Include="Data\System\Example\IllegalTestSuite\TC-J1-Example-002.json" />
   </ItemGroup>
   <ItemGroup>
@@ -1176,6 +1183,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Resource\cn\App.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource\cn\DB.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1183,6 +1191,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resource\en\App.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource\en\DB.resx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

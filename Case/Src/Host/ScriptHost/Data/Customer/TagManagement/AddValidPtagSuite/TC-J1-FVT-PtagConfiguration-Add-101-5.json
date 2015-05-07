@@ -11,8 +11,8 @@
 			"CalculationType":"Sum",
 			"AccumulateText":"$@Common.Glossary.AccumulatedValueCal",
 			"CollectCycle":"15$@Setting.VEEMonitorRule.Minute",
-			"Slope":"1";
-			"Offset":"1";
+			"Slope":"1",
+			"Offset":"1",
 		},
 		"ExpectedData":
 		{

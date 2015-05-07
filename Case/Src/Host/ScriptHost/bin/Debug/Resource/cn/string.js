@@ -57,6 +57,16 @@ I18N.Dashboard.Label.Share = '共享';
 I18N.Dashboard.Label.CancelShare = '取消共享';
 I18N.Dashboard.Label.Comment = '评论';
 
+I18N.Dashboard.Label.DashboardModify = {};
+I18N.Dashboard.Label.DashboardModify.SaveCurrent = '保存当前修改';
+I18N.Dashboard.Label.DashboardModify.OverrideWidget = '覆盖原组件';
+I18N.Dashboard.Label.DashboardModify.SaveAsWidget = '另存为新组件';
+I18N.Dashboard.Label.DashboardModify.SaveAsMsg = '至当前组件所在仪表盘';
+I18N.Dashboard.Label.DashboardModify.WidgetName = '组件名称';
+I18N.Dashboard.Label.DashboardModify.NewWidgetNameAppendix = '-副本';
+I18N.Dashboard.Label.DashboardModify.OverrideSavedMsg = '修改已覆盖至当前组件';
+I18N.Dashboard.Label.DashboardModify.SaveAsSavedMsg = '修改已另存为新组件';
+
 I18N.Navigator = {};
 I18N.Navigator.Hierarchy = {};
 I18N.Navigator.Hierarchy.Menu = {};
@@ -78,6 +88,7 @@ I18N.DateTimeFormat = {};
 I18N.DateTimeFormat.ExtFormat = {};
 I18N.DateTimeFormat.HighFormat = {};
 I18N.DateTimeFormat.IntervalFormat = {};
+I18N.DateTimeFormat.ConsecutiveTime = {};
 I18N.Common.TagType = {};
 I18N.Common.CaculationType = {};
 I18N.Common.AggregationStep = {};
@@ -125,6 +136,7 @@ I18N.DateTimeFormat.IntervalFormat.MonthDate = 'm月d日';
 I18N.DateTimeFormat.IntervalFormat.Year = 'Y年';
 I18N.DateTimeFormat.IntervalFormat.FullDateTime = 'Y年m月d日 H点i分s秒';
 I18N.DateTimeFormat.IntervalFormat.FullDate = 'Y年m月d日';
+I18N.DateTimeFormat.ConsecutiveTime.DayHourMinute = '{0}天{1}小时{2}分';
 
 I18N.HomePage.Label.Myshare = '我的共享';
 I18N.HomePage.Label.MyFavoriteDashboardNodeName = '我的收藏';
@@ -281,17 +293,21 @@ I18N.Setting.Label.HierarchyImportLog = '配置导入日志';
 I18N.Setting.Label.HierarchyTagsSetting = '层级数据';
 I18N.Setting.Label.SystemDimensionTagsSetting = '##Common.Glossary.SystemDimension##数据';
 I18N.Setting.Label.AreaDimensionTagsSetting = '##Common.Glossary.AreaDimension##数据';
-I18N.Setting.Hierarchy.Message.DeleteTip = '<br/>您将同时删除层级节点下所有的子节点，维度结构，数据点关联关系，以及间接关联的所有信息';
+I18N.Setting.Hierarchy.Message.DeleteTip = '<br/>您将同时删除层级节点下所有的信息和仪表盘';
 I18N.Setting.Label.MapSetting = '地图信息';
 I18N.Setting.Hierarchy.LocatePosition = '标记位置';
 I18N.Setting.Hierarchy.RelocatePosition = '重新标记';
 I18N.Setting.Hierarchy.MapSettingExplaination = '标记状态下不可拖拽以移动地图显示区域。请确定要标记的位置后再点击“标记位置”按钮。';
 I18N.Setting.Hierarchy.NoMarkerSetMessage = '请标记地图位置后再保存。';
 I18N.Setting.Hierarchy.ChildArea = '子区域';
+I18N.Setting.Hierarchy.MeterCount = '表计数量';
+I18N.Setting.Hierarchy.PTagCount = '计量数据P数量';
+I18N.Setting.Hierarchy.VTagCount = '计量数据V数量';
 
 I18N.Setting.Label.BasicProperties = '基础属性';
 I18N.Setting.Label.HierarchyNodeBasicProperties = '##Setting.Label.BasicProperties##';
 I18N.Setting.Label.HierarchyNodeCalendarProperties = '日历属性';
+I18N.Setting.Label.HierarchyNodeAdminProperties = '管理员';
 I18N.Setting.Label.HierarchyNodeCostProperties = '成本属性';
 I18N.Setting.Label.HierarchyNodePopulationNAreaProperties = '人口面积';
 I18N.Setting.Label.PTagBasicProperties = '##Setting.Label.BasicProperties##';
@@ -360,11 +376,17 @@ I18N.Setting.TargetBaseline.AlarmThresholdTip = '当数据高于基准值所设�
 I18N.Setting.VEERecord = {};
 I18N.Setting.VEERecord.AbnormalDataRecord = '异常数据记录';
 I18N.Setting.VEERecord.ErrorTimePeriod = '异常时间段';
-I18N.Setting.VEERecord.ErrorTagName = '异常数据点名称';
+I18N.Setting.VEERecord.ConsecutiveTime = '连续时长';
+I18N.Setting.VEERecord.ErrorTagName = '数据点名称';
+I18N.Setting.VEERecord.ErrorTagCode = '数据点编码';
 I18N.Setting.VEERecord.ErrorTagType = '数据点类型';
 I18N.Setting.VEERecord.ErrorTagDataType = '数据类型';
 I18N.Setting.VEERecord.ModifyDatetime = '修改时间';
 I18N.Setting.VEERecord.ModifyDatetimePeriod = '修改时间段';
+I18N.Setting.VEERecord.SimilarTitle = '同类异常数据记录筛选';
+I18N.Setting.VEERecord.SimilarContent = '异常规则集“{0}”，异常类型“{1}”， 异常时间段“{2}”的异常记录共有{3}条， 全部选中吗？';
+I18N.Setting.VEERecord.SimilarMute = '同类的记录不再显示此对话框';
+I18N.Setting.VEERecord.SimilarChosen = '选中';
 
 I18N.Setting.VEEBatchModify = {};
 
@@ -473,6 +495,7 @@ I18N.Setting.TagConfiguration.History = '修改记录';
 I18N.Setting.TagConfiguration.SaveAndSwitch = '保存并切换';
 I18N.Setting.TagConfiguration.Switch = '直接切换';
 I18N.Setting.TagConfiguration.SwitchTip = '您有未保存的修改项，切换时间段后将会放弃这些修改内容。';
+I18N.Setting.TagConfiguration.TagNameCode = '数据点名称：{0}   编码：{1}';
 //tag raw data
 
 I18N.Setting.TagBatchImport = {};
@@ -596,7 +619,7 @@ I18N.Setting.Benchmark.Label.IndustryEnegyBenchmark = '行业能效对标配置'
 I18N.Setting.Benchmark.Label.ClimateZone = '气候分区';
 I18N.Setting.Benchmark.Label.IndustryBenchmark = '行业对标';
 I18N.Setting.Benchmark.Label.SelectTip = '请选择需要平台计算的能效对标针对的行业及区域。';
-I18N.Setting.Benchmark.Label.AtleastOneZone = '请至少选择一项。';
+I18N.Setting.Benchmark.Label.AtleastOneZone = '请至少选择1项。';
 I18N.Setting.Benchmark.Label.Industry = '行业';
 I18N.Setting.Benchmark.Label.IndustryBaseLineValue = '行业基准值';
 
@@ -670,6 +693,11 @@ I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious30Day = '个30天';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious12Month = '个12月';
 I18N.EM.EnergyAnalyse.TagSelectTooltip = '已选数据点 {0}/{1}';
 I18N.EM.EnergyAnalyse.TagSelectOverMaxTooltip = '已选数据点 {0}/{1}，新增全选的数据点数量超出了可选范围，无法全选。请逐一选择目标数据点。';
+I18N.EM.EnergyAnalyse.SumSymbol = 'Σ';
+I18N.EM.EnergyAnalyse.SumData = '数据求和';
+I18N.EM.EnergyAnalyse.Sum = '总计';
+I18N.EM.EnergyAnalyse.DataPoint = '数据点';
+I18N.EM.EnergyAnalyse.SumWithSymbol = '总计：';
 I18N.EM.YAxisSetting = 'Y坐标轴设置';
 I18N.EM.YAxisSettingTags = '相关数据点';
 I18N.EM.YAxisTitle = 'Y坐标轴';
@@ -868,6 +896,10 @@ I18N.EM.Report.ExportTimeLabel = '导出时间标签';
 I18N.EM.Report.ExportStepError = '存在数据点不支持的步长，请检查';
 I18N.EM.Report.ExportTagUnassociated = '数据点已被解关联';
 
+I18N.EM.Export = {};
+I18N.EM.Export.Preview = '导出图片预览';
+
+
 I18N.EM.ShowAlarmList = '显示报警列表';
 I18N.EM.HideAlarmList = '隐藏报警列表';
 I18N.EM.Date = '日期';
@@ -978,6 +1010,8 @@ I18N.Common.Button.ColumnChart = '柱状图';
 I18N.Common.Button.GridView = '数据表';
 I18N.Common.Button.SearchData = '查看数据';
 I18N.Common.Button.More = '更多';
+I18N.Common.Button.ModifyMore = '更多参数修改';
+I18N.Common.Button.ModifyMoreMsg = '请保存后再进行更多参数修改。';
 I18N.Common.Button.DefaultDate = '默认时间';
 I18N.Common.Button.ToDashboard = '至仪表盘';
 I18N.Common.Button.Export = '图表导出';
@@ -1082,7 +1116,7 @@ I18N.Common.Label.TimeZoneConflict = '时间区间重叠';
 I18N.Common.Label.TimeOverlap = '时间区间重叠，请检查。';
 I18N.Common.Label.CommoEmptyText = '请选择';
 I18N.Common.Label.MandatoryEmptyError = '必填项。';
-I18N.Common.Label.OverValueError = '该输入项的最大值是 999999999。';
+I18N.Common.Label.OverValueError = '该输入项的最大值是 999999999.999999';
 I18N.Common.Label.UnspecifyCommodity = '不指定##Common.Glossary.Commodity##';
 
 I18N.Common.DateRange.Last7Day = '最近7天';
@@ -1278,6 +1312,16 @@ I18N.Setting.CarbonFactor.ConfirmDelete = '确认删除“{0}”到“{1}”的#
 //calendar
 I18N.Setting.Calendar = {};
 
+//admin
+I18N.Setting.Admin = {};
+I18N.Setting.Admin.AdminLabel = '管理员';
+I18N.Setting.Admin.Position = '职务';
+I18N.Setting.Admin.MobileOrTeleNeeded = '手机、座机至少填写一项';
+I18N.Setting.Admin.Mobile = '手机';
+I18N.Setting.Admin.Telephone = '座机';
+I18N.Setting.Admin.Email = '邮箱';
+//I18N.Setting.Admin.Email = '手机和座机不能同时为空，请至少填写一项';
+
 //workday
 I18N.Setting.Calendar.WorkDay = '工作日';
 I18N.Setting.Calendar.Holiday = '非工作日';
@@ -1344,6 +1388,8 @@ I18N.Setting.Calendar.ColdTitle = '供冷季区间：'
 I18N.Setting.Calendar.NightTitle = '黑夜时间：'
 I18N.Setting.Calendar.NightContent = '白昼时间以外均为黑夜时间'
 I18N.Setting.Calendar.DayTitle = '白昼时间：'
+
+I18N.Setting.Admin.TabName = '管理员'
 
 //mk alarm
 I18N.Setting.Alarm = {};

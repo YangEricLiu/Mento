@@ -56,7 +56,9 @@ namespace Mento.Script.Customer.TagAssociation
                 //Navigate to areadimension
                 Association.NavigateToAreaDimensionAssociate();
                 AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaDimensionPath);
-            }       
+            }
+
+            TimeManager.MediumPause();
         }
 
         private void CheckEVOnWhichNode(AssociateTagData input)
@@ -77,6 +79,8 @@ namespace Mento.Script.Customer.TagAssociation
                 Association.NavigateToAreaDimensionAssociate();
                 AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaDimensionPath);
             }
+
+            TimeManager.MediumPause();
         }
 
         [Test]
@@ -210,6 +214,9 @@ namespace Mento.Script.Customer.TagAssociation
             {
                 Assert.IsFalse(Association.IsRemoveTagExisted(tagName));
             }
+
+            Association.GoToPage(1);
+            TimeManager.MediumPause();
 
             foreach (string tagName in input.InputData.RemovedTagNames)
             {
@@ -351,6 +358,7 @@ namespace Mento.Script.Customer.TagAssociation
 
             //Check 不可关联 checkbox.
             Association.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);
+            TimeManager.LongPause();
             Association.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
 
             //• Loading icon appear and check box is gray and cannot be select.
@@ -360,6 +368,7 @@ namespace Mento.Script.Customer.TagAssociation
 
             //Check 可关联 checkbox again.
             Association.CheckAssociatedCheckbox(input.InputData.HeaderName[0]);
+            TimeManager.LongPause();
             Association.UncheckAssociatedCheckbox(input.InputData.HeaderName[1]);       
             TimeManager.LongPause();
 

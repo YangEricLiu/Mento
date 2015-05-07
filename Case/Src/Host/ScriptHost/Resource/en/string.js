@@ -304,6 +304,15 @@ I18N.Setting.Hierarchy.MeterCount = 'Tag No.';
 I18N.Setting.Hierarchy.PTagCount = 'Physical Tag No.';
 I18N.Setting.Hierarchy.VTagCount = 'Virtual Tag No.';
 
+I18N.Setting.Hierarchy.DeleteMessage = 'Delete hierarchy node "{0}"? All information and dashboards under this hiearchy node will be removed.';
+I18N.Setting.Hierarchy.DeleteError = {};
+I18N.Setting.Hierarchy.DeleteError.M850 = 'Hierarchy node "{0}" is used in FacilityMost, so it can not be deleted.';
+I18N.Setting.Hierarchy.DeleteError.JazzError = 'Can not delete hierarchy node "{0}". Please delete all nodes {1} under this node first.';
+I18N.Setting.Hierarchy.DeleteError.Children = 'Child node';
+I18N.Setting.Hierarchy.DeleteError.TagRelation = 'Tag Association';
+I18N.Setting.Hierarchy.DeleteError.Errors2 = '{0} and {1}';
+I18N.Setting.Hierarchy.DeleteError.Errors3 = '{0},{1} and {2}';
+
 I18N.Setting.Label.BasicProperties = 'Properties';
 I18N.Setting.Label.HierarchyNodeBasicProperties = '##Setting.Label.BasicProperties##';
 I18N.Setting.Label.HierarchyNodeCalendarProperties = 'Calendar';
@@ -693,6 +702,12 @@ I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious30Day = '30 days';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious12Month = '12 months';
 I18N.EM.EnergyAnalyse.TagSelectTooltip = 'Chosen data {0}/{1}';
 I18N.EM.EnergyAnalyse.TagSelectOverMaxTooltip = 'Chosen data {0}/{1}, new added data number exceeds the maximum number. Please select the data one by one.';
+I18N.EM.EnergyAnalyse.SumSymbol = 'Σ';
+I18N.EM.EnergyAnalyse.SumData = 'Data Sum';
+I18N.EM.EnergyAnalyse.SumDataMoreThan1000Error = 'Can not sum these data because they are exceed the limitiation. Please try another step or time duration.';
+I18N.EM.EnergyAnalyse.Sum = 'Total';
+I18N.EM.EnergyAnalyse.DataPoint = 'Tag';
+I18N.EM.EnergyAnalyse.SumWithSymbol = 'Total:';
 I18N.EM.YAxisSetting = 'Y Axis Setting';
 I18N.EM.YAxisSettingTags = 'Relative Data';
 I18N.EM.YAxisTitle = 'Y Axis';
@@ -996,7 +1011,7 @@ I18N.Common.UOM.MM = 'Cent';
 
 I18N.Common.Per = {};
 I18N.Common.Per.Person = '/person';
-I18N.Common.Per.m2 = '/m2';
+I18N.Common.Per.m2 = '/M²';
 
 I18N.Common.Button.Share = 'Share';
 I18N.Common.Button.PieChart = 'Pie chart';
@@ -2068,17 +2083,4 @@ I18N.Message.M20014 = 'Some tags are deleted or not under the permission scope�
 I18N.Message.M21707 = 'Report {0} is deleted. Will refresh report list soon.';
 I18N.Message.M21705 = 'Duplicated report name.';
 I18N.Message.M21702 = 'The report is modified. Will refresh it soon.';
-I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';I18N.Setting.Hierarchy.DeleteMessage = '删除层级节点"{0}"吗？您将同时删除层级节点下所有的信息和仪表盘。';
-I18N.Setting.Hierarchy.DeleteError = {};
-I18N.Setting.Hierarchy.DeleteError.M850 = '层级节点"{0}"关联了Facilitymost,无法被删除。';
-I18N.Setting.Hierarchy.DeleteError.JazzError = '无法删除层级节点"{0}"。请先删除该节点下的所有{1}。';
-I18N.Setting.Hierarchy.DeleteError.Children = '子节点';
-I18N.Setting.Hierarchy.DeleteError.TagRelation = '数据点关联关系';
-I18N.Setting.Hierarchy.DeleteError.Errors2 = '{0}和{1}';
-I18N.Setting.Hierarchy.DeleteError.Errors3 = '{0},{1}和{2}';
-I18N.EM.EnergyAnalyse.SumSymbol = 'Σ';
-I18N.EM.EnergyAnalyse.SumData = '数据求和';
-I18N.EM.EnergyAnalyse.SumDataMoreThan1000Error = '当前数据超出计算范围，无法求和，请换个步长或时间段试试。';
-I18N.EM.EnergyAnalyse.Sum = '总计';
-I18N.EM.EnergyAnalyse.DataPoint = '数据点';
-I18N.EM.EnergyAnalyse.SumWithSymbol = '总计：';
+I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';

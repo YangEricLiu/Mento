@@ -743,7 +743,7 @@ I18N.EM.SystemDimension.TreeButton = '请选择系统维度';
 I18N.EM.AreaDimension.TreeButton = '请选择区域维度';
 I18N.EM.CannotShowCalendarByTimeRange = '看不到日历背景？换个时间段试试';
 I18N.EM.CannotShowCalendarByStep = '当前步长不支持显示{0}背景色';
-I18N.EM.SystemDimension.UncheckNodeQuestion = '删除系统维度节点”{0}”吗？<br/> 您将同时删除系统维度节点下所有的数据点关联关系。';
+I18N.EM.SystemDimension.UncheckNodeQuestion = '删除系统维度节点”{0}”吗？';
 I18N.EM.CompareTagsAreFull = '对比数据点已选满。';
 I18N.EM.MultiTimeCompare = '正在进行多时间段对比，请删除该数据点后重新选取';
 I18N.EM.TouCompare = '峰谷展示';
@@ -1190,7 +1190,7 @@ I18N.Common.Glossary.Dimension = '维度';
 I18N.Common.Glossary.SystemDimension = '系统维度';
 I18N.Common.Glossary.AreaDimension = '区域维度';
 I18N.Common.Glossary.AreaDimensionNode = '区域维度节点';
-I18N.Common.Glossary.AreaDimensionNodeDeleteTip = '<br/>您将同时删除区域维度节点下所有的子节点，数据点关联关系，以及间接关联的所有信息。';
+I18N.Common.Glossary.AreaDimensionNodeDeleteTip = '<br/>您将同时删除区域维度节点下的所有信息。';
 I18N.Common.Glossary.DimensionNode = '维度节点';
 I18N.Common.Glossary.DimensionTree = '维度结构';
 I18N.Common.Glossary.System = '系统';
@@ -1890,7 +1890,7 @@ I18N.Message.M04052 = '勾选当前##Common.Glossary.DimensionNode##前，必须
 I18N.Message.M04053 = I18N.format(I18N.Message.UpdateConcurrency, I18N.Common.Glossary.DimensionNode);
 I18N.Message.M04054 = '反勾选当前##Common.Glossary.DimensionNode##前，必须确保它的所有子节点未被勾选。';
 I18N.Message.M04055 = '当前系统维度节点无子节点';   //for energy view single tag to pie chart
-
+I18N.Message.M04056 = '无法删除该系统维度节点。请先删除该节点下的所有数据点关联关系。';
 /******
 Dashboard Error Code, NOTE that for error of 
 05002
@@ -1971,10 +1971,10 @@ I18N.Message.M08208 = '##Common.Glossary.Name##重复';
 I18N.Message.M08209 = '当前的##Common.Glossary.DimensionNode##的级次超出最大长度，无法保存。';
 I18N.Message.M08210 = '当前的##Common.Glossary.DimensionNode##的父节点已被删除，界面将被刷新。';
 I18N.Message.M08211 = '当前的##Common.Glossary.DimensionNode##已被他人删除，界面将被刷新。';
-I18N.Message.M08212 = '当前的##Common.Glossary.DimensionNode##存在子节点，无法删除。';
+I18N.Message.M08212 = '无法删除该区域维度节点。请先删除该节点下的所有子节点。';
 I18N.Message.M08213 = I18N.format(I18N.Message.UpdateConcurrency, I18N.Common.Glossary.DimensionNode);
 I18N.Message.M08214 = '当前区域维度节点无子节点';   //for energy view single tag to pie chart
-
+I18N.Message.M08215 = '无法删除该区域维度节点。请先删除该节点下的所有数据点关联关系。';
 
 I18N.Message.M09001 = '数据已被删除，界面将被刷新。';
 I18N.Message.M09002 = '数据已被他人修改，界面将被刷新。';

@@ -34,13 +34,13 @@ namespace Mento.Script.Administration.CommodityAndUOMSetting
             HomePagePanel.SelectCustomer("CommodityTestCustomer");
             PTagSettings.NavigatorToPtagSetting();
             TimeManager.MediumPause();
-
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            
+            HomePagePanel.SelectCustomer("$@Login.Label.SPManagement");
+            TimeManager.MediumPause();
         }
         
         #region TestCase1 Verify Commoditys display correct

@@ -21,34 +21,4 @@
 			"LabelText":["$@Setting.Calendar.DefaultDayNight"],
 		}
 	},	
-	{
-		"InputData":
-		{	
-			"TimeRange":[{"StartTime": "00:00", "EndTime": "24:00"}],
-		},
-		"ExpectedData":
-		{
-			"LabelText":["$@Setting.Calendar.DefaultDayNight"],
-		}
-	},
-	{
-		"InputData":
-		{	
-			"TimeRange":[{"StartTime": "00:00", "EndTime": "24:00"}],
-		},
-		"ExpectedData":
-		{
-			"LabelText":["$@Setting.Calendar.DefaultDayNight"],
-		}
-	},
-	{
-		"InputData":
-		{	
-			"TimeRange":[{"StartTime": "00:00", "EndTime": "24:00"}],
-		},
-		"ExpectedData":
-		{
-			"LabelText":["$@Setting.Calendar.DefaultDayNight"],
-		}
-	},
 ]

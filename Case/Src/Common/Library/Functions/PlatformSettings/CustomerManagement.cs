@@ -58,12 +58,24 @@ namespace Mento.ScriptCommon.Library.Functions
         #endregion
 
         #region Common
+
+        /// <summary>
+        /// Navigate to Time setting
+        /// </summary>
+        /// <param></param>
+        /// <returns></returns>
+        public void NavigatorToTimeSettings()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettings);
+        }
+
         public void NavigateToCustomerSetting()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.CustomerManagementCustomer);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
         }
+
         /// <summary>
         /// Click Modify button to update add user
         /// </summary>

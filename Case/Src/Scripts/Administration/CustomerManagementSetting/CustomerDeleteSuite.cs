@@ -40,6 +40,8 @@ namespace Mento.Script.Administration.CustomerManagementSetting
         [TearDown]
         public void CaseTearDown()
         {
+            CustomerManageSetting.NavigatorToTimeSettings();
+            TimeManager.MediumPause();
         }
 
         private static HomePage HomePagePanel = JazzFunction.HomePage;

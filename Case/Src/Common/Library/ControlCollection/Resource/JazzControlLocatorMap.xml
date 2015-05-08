@@ -1144,7 +1144,7 @@
     </CustomerSettings>
     <PlatformSettings>
       <customermanagement>
-        <add key="DatePickerOperationTime" value="//td[@id='st-customer-starttime-bodyEl']/table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartTime']]" type="XPath"/>
+        <add key="DatePickerOperationTime" value="//td[@id='datefield']/table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[@name='StartTime']]" type="XPath"/>
       </customermanagement>
     </PlatformSettings>
 

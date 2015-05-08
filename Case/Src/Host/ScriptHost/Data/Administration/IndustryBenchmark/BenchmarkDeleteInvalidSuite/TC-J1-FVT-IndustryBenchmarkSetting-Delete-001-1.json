@@ -4,11 +4,11 @@
 		{	
 			"Industry":"$@Industry_Hotel",
 			"ClimaticRegions":["$@Zone_All_Zones","$@Setting.Benchmark.Zone.ColdA"],
-			"Industrys":["$@Industry_All_Industries","$@Industry_Office_Building","$@Industry_Data_Center","$@Industry_Hotel_Two_star_and_below","$@Industry_Hotel_Four-star","$@Industry_Hotel_Five_stat","$@Industry_Hospital","$@Industry_School","$@Industry_Retail","$@Industry_Supermarket","$@Industry_Clothing_retail","$@Industry_Mall","$@Industry_Telecommunication","$@Industry_Telecommunication_workshop","$@Industry_Telecommunication_base_station","$@Industry_Telecommunication_business_hall","$@Industry_Rail_Transit","$@Industry_Airport","$@Industry_Manufacturing"],
+			"Industrys":["$@Industry_All_Industries","$@Industry_Office_Building","$@Industry_Data_Center","$@Industry_Hotel__Two-star_and_below","$@Industry_Hotel__Four-star","$@Industry_Hotel__Five-stat","$@Industry_Hospital","$@Industry_School","$@Industry_Retail","$@Industry_Supermarket","$@Industry_Clothing_retail","$@Industry_Mall","$@Industry_Telecommunication","$@Industry_Telecommunication_workshop","$@Industry_Telecommunication_base_station","$@Industry_Telecommunication_business_hall","$@Industry_Rail_Transit","$@Industry_Airport","$@Industry_Manufacturing"],
 		},
 		"ExpectedData":
 		{	
-			"Industry":"$@Industry_Hotel_Three_stat",
+			"Industry":"$@Industry_Hotel__Three-stat",
 			"ClimaticRegions":["$@Setting.Benchmark.Zone.ColdB","$@Setting.Benchmark.Zone.ColdRegion","$@Setting.Benchmark.Zone.HotSummerColdWinterRegion","$@Setting.Benchmark.Zone.SubtropicalRegion","$@Setting.Benchmark.Zone.TemperateRegion"],
 		}
 	}

@@ -19,7 +19,7 @@ namespace Mento.Script.Administration.IndustryBenchmark
 {
     [TestFixture]
     [Owner("Greenie")]
-    [CreateTime("2013-1y0-10")]
+    [CreateTime("2013-10-10")]
     public class BenchmarkDeleteValidSuite : TestSuiteBase
     {
         private static IndustryBenchmarkSetting IndustryBenchmarkSetting = JazzFunction.IndustryBenchmarkSetting;
@@ -33,8 +33,8 @@ namespace Mento.Script.Administration.IndustryBenchmark
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
-            //TimeManager.MediumPause();
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
+            TimeManager.MediumPause();
         }
 
         #region TestCase1 DeleteIndustryBenchmarkValid

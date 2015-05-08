@@ -192,7 +192,6 @@
     <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyValidSuite\TC-J1-FVT-CustomerManagement-Modify-103.json" />
     <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyValidSuite\TC-J1-FVT-CustomerManagement-Modify-101.json" />
     <None Include="Data\Administration\CustomerManagementSetting\CustomerModifyValidSuite\TC-J1-FVT-CustomerManagement-Modify-102.json" />
-    <None Include="Data\Administration\CustomerOperation\SmokeTestAddCustomerSuite\TC-J1-SmokeTest-033-001.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkAddInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Add-001-1.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkAddInvalidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Add-001-2.json" />
     <None Include="Data\Administration\IndustryBenchmark\BenchmarkAddValidSuite\TC-J1-FVT-IndustryBenchmarkSetting-Add-101-1.json" />
@@ -1031,11 +1030,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\Administration\ExampleSuite\TA-Example-008.json" />
-    <Content Include="Data\Administration\ExampleSuite\TA-Example-009.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\TC-J1-SmokeTest-Hierarchy-001.json" />
-    <Content Include="Data\Administration\LoginSuite\TA-Trial-Login-001.json" />
-    <Content Include="Data\Administration\ShowTimeSuite\TC-J1-ShowTime-001.json" />
     <None Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\TA-Hierarchy-002.json" />
     <None Include="Data\Customer\HierarchyConfiguration\HierarchyManagementSuite\TA-Hierarchy-003.json" />
     <None Include="Data\IllegalInputData.json" />

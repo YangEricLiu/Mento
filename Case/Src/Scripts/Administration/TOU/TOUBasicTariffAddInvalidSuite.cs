@@ -33,8 +33,8 @@ namespace Mento.Script.Administration.TOU
         [TearDown]
         public void CaseTearDown()
         {
-            //TOUBasicTariffSettings.NavigatorToTimeSettings();
-            //TimeManager.MediumPause();
+            TOUBasicTariffSettings.NavigatorToTimeSettings();
+            TimeManager.MediumPause();
         }
 
         #region TestCase1 AddTOUCancelled

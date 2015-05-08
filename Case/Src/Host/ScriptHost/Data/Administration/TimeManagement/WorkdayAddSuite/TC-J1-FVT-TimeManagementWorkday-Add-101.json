@@ -20,35 +20,5 @@
 		{
 			"LabelText":["$@Setting.Calendar.DefaultWorkDay"],
 		}
-	},	
-	{
-		"InputData":
-		{	
-			"SpecialDate":[{"Type": "$@Setting.Calendar.Holiday", "StartMonth": "01", "StartDate": "01", "EndMonth": "12", "EndDate": "31"}],
-		},
-		"ExpectedData":
-		{
-			"LabelText":["$@Setting.Calendar.DefaultWorkDay"],
-		}
-	},	
-	{
-		"InputData":
-		{	
-			"SpecialDate":[{"Type": "$@Setting.Calendar.Holiday", "StartMonth": "01", "StartDate": "01", "EndMonth": "12", "EndDate": "31"}],
-		},
-		"ExpectedData":
-		{
-			"LabelText":["$@Setting.Calendar.DefaultWorkDay"],
-		}
-	},	
-	{
-		"InputData":
-		{	
-			"SpecialDate":[{"Type": "$@Setting.Calendar.Holiday", "StartMonth": "01", "StartDate": "01", "EndMonth": "12", "EndDate": "31"}],
-		},
-		"ExpectedData":
-		{
-			"LabelText":["$@Setting.Calendar.DefaultWorkDay"],
-		}
-	},	
+	},		
 ]

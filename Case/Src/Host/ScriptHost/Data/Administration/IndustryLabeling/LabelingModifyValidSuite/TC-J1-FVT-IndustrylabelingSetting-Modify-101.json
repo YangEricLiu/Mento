@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{	
-			"Industry":"$@Industry_Hotel_Three-stat",
+			"Industry":"$@Industry_Hotel__Three-stat",
 			"ClimateRegion":"$@Setting.Benchmark.Zone.ColdA",
 			"EnergyEfficiencyLabellingLevels":["$@Setting.CustomizedLabeling.Grade|(3)","$@Setting.CustomizedLabeling.Grade|(4)","$@Setting.CustomizedLabeling.Grade|(5)","$@Setting.CustomizedLabeling.Grade|(6)","$@Setting.CustomizedLabeling.Grade|(7)","$@Setting.CustomizedLabeling.Grade|(8)"],
 			"StartYear":"2008",

@@ -63,7 +63,6 @@
     <Compile Include="CustomerManagementSetting\CustomerDeleteSuite.cs" />
     <Compile Include="CustomerManagementSetting\CustomerModifyInvalidSuite.cs" />
     <Compile Include="CustomerManagementSetting\CustomerModifyValidSuite.cs" />
-    <Compile Include="CustomerOperation\SmokeTestAddCustomerSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkViewSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkAddValidSuite.cs" />
     <Compile Include="IndustryBenchmark\BenchmarkAddInvalidSuite.cs" />

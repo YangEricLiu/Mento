@@ -33,8 +33,8 @@ namespace Mento.Script.Administration.IndustryBenchmark
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
-            //TimeManager.MediumPause();
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettingsWorkday);
+            TimeManager.MediumPause();
         }
 
         #region TestCase1 ViewMapAndLocation

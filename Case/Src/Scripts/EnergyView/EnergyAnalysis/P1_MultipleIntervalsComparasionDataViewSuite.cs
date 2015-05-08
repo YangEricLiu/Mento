@@ -62,6 +62,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             
             //Check tag and view data view
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
+            TimeManager.MediumPause();
             JazzFunction.EnergyViewToolbar.View(EnergyViewType.List);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();

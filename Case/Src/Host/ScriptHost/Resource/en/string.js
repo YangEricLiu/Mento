@@ -1126,7 +1126,7 @@ I18N.Common.Label.TimeZoneConflict = 'Time scope is overlapped.';
 I18N.Common.Label.TimeOverlap = 'Time scope is overlapped. Please check it.';
 I18N.Common.Label.CommoEmptyText = 'Please select';
 I18N.Common.Label.MandatoryEmptyError = 'Required';
-I18N.Common.Label.OverValueError = 'The maximum of this entry is  999999999.';
+I18N.Common.Label.OverValueError = 'The maximum of this entry is  999999999.999999.';
 I18N.Common.Label.UnspecifyCommodity = 'Not specifying ##Common.Glossary.Commodity##';
 
 I18N.Common.DateRange.Last7Day = 'Last 7 days';

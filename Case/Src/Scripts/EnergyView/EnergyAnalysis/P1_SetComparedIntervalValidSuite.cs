@@ -27,6 +27,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [SetUp]
         public void CaseSetUp()
         {
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.LongPause();
             EnergyAnalysis.NavigateToEnergyAnalysis();
             TimeManager.MediumPause();
         }
@@ -393,10 +395,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             string ExpTextEn = StartCompareInterval.ToString("MM/dd, yyyy") + " To " + EndCompareInterval.ToString("MM/dd, yyyy");
             
             //Check Text displayed beside 之前第2个7天
-            if ((ActText == ExpTextZh) || (ActText == ExpTextEn))
-                Assert.Pass();
-            else
-                Assert.Fail();
+            Assert.IsTrue((ActText == ExpTextZh) || (ActText == ExpTextEn));
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
@@ -833,10 +832,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeSpanDialog.InputAdditionRelativeValue(monthIndex.ToString(), 3);
 
             //Check Text followed is 2014年2月
-            if(("2015年2月" == TimeSpanDialog.GetComparedIntervalsText(3)) ||("02, 2015" == TimeSpanDialog.GetComparedIntervalsText(3)))
-                Assert.Pass();
-            else
-                Assert.Fail();
+            Assert.IsTrue(("2015年02月" == TimeSpanDialog.GetComparedIntervalsText(3)) || ("02, 2015" == TimeSpanDialog.GetComparedIntervalsText(3)));
 
             //Click 'Yes & Draw' button
             TimeSpanDialog.ClickConfirmButton();
@@ -852,8 +848,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             string[] legendsEx = { "", "", "", "" };
             legendsEx[0] = startDate + " " + startTime + endDate + " " + endTime;
             legendsEx[1] = input.ExpectedData.StartDateValue[0] + " " + input.ExpectedData.StartTimeValue[0] + input.ExpectedData.EndDateValue[0] + " " + input.ExpectedData.EndTimeValue[0];
-            legendsEx[2] = input.ExpectedData.StartDateValue[1] + " " + input.ExpectedData.StartTimeValue[1] + input.ExpectedData.EndDateValue[1] + " " + input.ExpectedData.EndTimeValue[1];
-            legendsEx[3] = input.ExpectedData.StartDateValue[2] + " " + input.ExpectedData.StartTimeValue[2] + input.ExpectedData.EndDateValue[2] + " " + input.ExpectedData.EndTimeValue[2];
+            legendsEx[2] = input.ExpectedData.StartDateValue[2] + " " + input.ExpectedData.StartTimeValue[2] + input.ExpectedData.EndDateValue[2] + " " + input.ExpectedData.EndTimeValue[2];
+            legendsEx[3] = input.ExpectedData.StartDateValue[3] + " " + input.ExpectedData.StartTimeValue[3] + input.ExpectedData.EndDateValue[3] + " " + input.ExpectedData.EndTimeValue[3];
             Assert.AreEqual(legendsAc, legendsEx);
 
         }

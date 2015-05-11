@@ -47,6 +47,7 @@ namespace Mento.Script.Administration.UserDataScope
         {
             // Focus on a new created user, open datascope tab. 
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            TimeManager.ShortPause();
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
             //Verify all customers checkbox is unchecked and "编辑数据权限" link is gray out and save button disable
@@ -66,7 +67,7 @@ namespace Mento.Script.Administration.UserDataScope
             UserDataPermissionSettings.CloseTreeWindow();
             TimeManager.ShortPause();
         }
-
+        
         [Test]
         [CaseID("TC-J1-FVT-UserDataScope-Add-102-AddDataScope-2")]
         [MultipleTestDataSource(typeof(UserDataPermissionData[]), typeof(AddSingleCustomersValidSuite), "TC-J1-FVT-UserDataScope-Add-102-AddDataScope-2")]

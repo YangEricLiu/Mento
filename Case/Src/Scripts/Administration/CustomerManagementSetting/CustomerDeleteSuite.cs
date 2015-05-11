@@ -158,6 +158,11 @@ namespace Mento.Script.Administration.CustomerManagementSetting
             TimeManager.LongPause();
             TimeManager.LongPause();
             CustomerManageSetting.NavigatorToEnergyView();
+
+            //go out page
+            HomePagePanel.SelectCustomer("$@Login.Label.SPManagement");
+            TimeManager.LongPause();
+            TimeManager.LongPause();
         }
         #endregion
     }

@@ -61,7 +61,10 @@ namespace Mento.Script.Administration.UserDataScope
         public void AddThenSwitch(UserDataPermissionData input)
         {
             // Focus on a new created user, open datascope tab. 
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            TimeManager.ShortPause();
             UserDataPermissionSettings.SwitchToDataPermissionTab();
             TimeManager.ShortPause();
             //Verify all customers checkbox is unchecked and "编辑数据权限" link is gray out and save button disable
@@ -73,9 +76,14 @@ namespace Mento.Script.Administration.UserDataScope
 
             //Switch to function role type and back
             JazzFunction.FunctionRoleTypePermissionSettings.NavigatorToFunctionPermissionSettings();
+            TimeManager.LongPause();
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.UserManagementUser);
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
             JazzFunction.UserSettings.FocusOnUser(input.InputData.UserName);
+            TimeManager.ShortPause();
             UserDataPermissionSettings.SwitchToDataPermissionTab();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
 
             // View the data permission 

@@ -187,6 +187,9 @@ namespace Mento.Script.Administration.TimeManagement
             //Click "Save" button.
             TimeSettingsWorktime.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
+
+            //Click "Save" button again for auto issue.
+            TimeSettingsWorktime.ClickSaveButton();
             TimeManager.LongPause();
 
             //verify that the saving is failed and error messages are displayed below the fields.

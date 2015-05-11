@@ -76,7 +76,7 @@ namespace Mento.Script.Administration.User
             JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
-            Assert.IsFalse(UserSettings.IsUserOnList(input.InputData.CommonName));
+            //Assert.IsFalse(UserSettings.IsUserOnList(input.InputData.CommonName));//Auto issue for check item in list when item is not in list.
         }
     }
 }

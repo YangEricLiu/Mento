@@ -101,11 +101,11 @@ namespace Mento.Script.EnergyView.CostUsage
         [MultipleTestDataSource(typeof(CostUsageData[]), typeof(CostCalculationAggregationHierarchyOnlineSuite), "TC-J1-FVT-CostCalculation-001-2")]
         public void CostUsageRawValueDisplayForHierarchy(CostUsageData input)
         {
-            //HomePagePanel.SelectCustomer("NancyCostCustomer2");
-            //TimeManager.LongPause();
+            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            TimeManager.LongPause();
 
-            //CostUsage.NavigateToCostUsage();
-            //TimeManager.MediumPause();
+            CostUsage.NavigateToCostUsage();
+            TimeManager.MediumPause();
 
             //Go to Cost chart view. Navigate to Hierarchy list, then go to 介质单项.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);

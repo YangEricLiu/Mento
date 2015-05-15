@@ -49,6 +49,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         public void ViewSingleTagPiechartAndSaveToDashboard(TimeSpansData input)
         {
             //Select the BuildingBC node in Pre-condition from Hierarchy list
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.LongPause();
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -74,7 +76,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsDistributionChartDrawn());
 
             //The legend displays tag name when there is first default time span only.
-            Assert.AreEqual(input.InputData.TagNames[0],EnergyAnalysis.GetLegendItemTexts()[0]);
+            Assert.AreEqual(input.InputData.TagNames[0], EnergyAnalysis.GetLegendItemTexts()[0]);
 
             //The value display for V(6) on hour level is 80*6=480. 
             //The UOM display is as defined in tag property.//No Uom display in pie chart
@@ -228,6 +230,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Click 'Save to dashboard'（保存到仪表盘）to save the Distribution Chart to Hierarchy node dashboard(Or Customized dashboard, or Home page dashboard). 
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
 
             //Check the Distribution Chart is saved into dashboard successfully
             EnergyAnalysis.NavigateToAllDashBoards();
@@ -307,6 +310,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Click 'Save to dashboard'（保存到仪表盘）to save the Distribution Chart to Hierarchy node dashboard(Or Customized dashboard, or Home page dashboard). 
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
 
             //Check the Distribution Chart is saved into dashboard successfully
             EnergyAnalysis.NavigateToAllDashBoards();
@@ -383,6 +387,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Click 'Save to dashboard'（保存到仪表盘）to save the Distribution Chart to Hierarchy node dashboard(Or Customized dashboard, or Home page dashboard). 
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
 
             //Check the Distribution Chart is saved into dashboard successfully
             EnergyAnalysis.NavigateToAllDashBoards();

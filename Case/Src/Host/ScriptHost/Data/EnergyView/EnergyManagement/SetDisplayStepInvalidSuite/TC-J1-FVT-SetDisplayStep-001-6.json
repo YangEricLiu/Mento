@@ -24,7 +24,7 @@
 		},
 		"ExpectedData":
 		{
-			"messages":["$@EM.StepError|(\"$@EM.UseMin\")", "$@EM.StepError|(\"$@EM.UseHour\")"],
+			"messages":["$@EM.StepError|(\"$@EM.UseRaw\")", "$@EM.StepError|(\"$@EM.UseHour\")"],
 		}
 	}
 ]

@@ -234,6 +234,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
 
             //On homepage, check the dashboard
             CostUsage.NavigateToAllDashBoards();
@@ -251,27 +252,27 @@ namespace Mento.Script.EnergyView.CostUsage
             TimeManager.MediumPause();
 
             //Set date range less than 7 days
-            WidgetMaxChart.InputEndDate(new DateTime(2012, 7, 25));
-            TimeManager.ShortPause();
-            WidgetMaxChart.ClickViewButton();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            CostUsage.ClickDisplayStep(DisplayStep.Hour);
-            TimeManager.MediumPause();
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
-            JazzMessageBox.MessageBox.OK();
-            TimeManager.MediumPause();
+            //WidgetMaxChart.InputEndDate(new DateTime(2012, 7, 25));
+            //TimeManager.ShortPause();
+            //WidgetMaxChart.ClickViewButton();
+            //TimeManager.LongPause();
+            //TimeManager.LongPause();
+            //CostUsage.ClickDisplayStep(DisplayStep.Hour);
+            //TimeManager.MediumPause();
+            //Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
+            //JazzMessageBox.MessageBox.OK();
+            //TimeManager.MediumPause();
 
-            WidgetMaxChart.InputEndDate(new DateTime(2012, 7, 23));
-            WidgetMaxChart.SelectStartTime("10:00");
-            TimeManager.ShortPause();
-            WidgetMaxChart.ClickViewButton();
-            TimeManager.MediumPause();
-            Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
-            JazzMessageBox.MessageBox.OK();
-            TimeManager.MediumPause();
+            //WidgetMaxChart.InputEndDate(new DateTime(2012, 7, 23));
+            //WidgetMaxChart.SelectStartTime("10:00");
+            //TimeManager.ShortPause();
+            //WidgetMaxChart.ClickViewButton();
+            //TimeManager.MediumPause();
+            //Assert.IsTrue(JazzMessageBox.MessageBox.GetMessage().Contains(input.ExpectedData.StepMessage[0]));
+            //JazzMessageBox.MessageBox.OK();
+            //TimeManager.MediumPause();
 
-            WidgetMaxChart.ClickCloseButton();
+            //WidgetMaxChart.ClickCloseButton();
         }
 
         [Test]
@@ -298,6 +299,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Click "Save to dashboard"（保存到仪表盘）to save the Pie chart to Hierarchy node dashboard.
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
 
             //+On homepage, check the dashboard
             CostUsage.NavigateToAllDashBoards();
@@ -393,6 +395,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Click "Save to dashboard"（保存到仪表盘）to save the Pie chart to Hierarchy node dashboard.
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
 
             //+On homepage, check the dashboard
             CostUsage.NavigateToAllDashBoards();
@@ -407,6 +410,10 @@ namespace Mento.Script.EnergyView.CostUsage
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
             HomePagePanel.MaximizeWidget(dashboard.WigetName);
+            TimeManager.MediumPause();
+
+            //Close the maximize widget for next case starting
+            WidgetMaxChart.ClickCloseButton();
             TimeManager.MediumPause();
         }
 

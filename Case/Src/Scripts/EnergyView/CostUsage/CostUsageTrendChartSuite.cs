@@ -74,6 +74,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
 
             //On homepage, check the dashboard
             CostUsage.NavigateToAllDashBoards();

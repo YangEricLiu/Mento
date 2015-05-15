@@ -149,6 +149,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         public void P1_AddTimeSpanDataViewAndSaveToDashboard(TimeSpansData input)
         {
             //Select one tag and view data view
+            HomePagePanel.SelectCustomer("NancyCustomer1");
+            TimeManager.MediumPause();
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -200,6 +202,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
 
             //On homepage, check the dashboard
+            TimeManager.MediumPause();
             EnergyAnalysis.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
             TimeManager.MediumPause();
@@ -350,13 +353,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
+            //EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
+            //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            //TimeManager.MediumPause();
 
-            EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
-            TimeManager.MediumPause();
-            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
+            //EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[3], DisplayStep.Default);
+            //TimeManager.MediumPause();
+            //EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
         }
 

@@ -77,6 +77,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
 
             //On homepage, check the dashboard
             CostUsage.NavigateToAllDashBoards();
@@ -256,16 +257,17 @@ namespace Mento.Script.EnergyView.CostUsage
             //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();//弹出提示框，不需要Load Chart，无需等待时间太长
             TimeManager.MediumPause();
 
+            //界面中支持分钟步长，没有信息框弹出
             //Check Warning message 
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.StepMessage[0]));
-            CostUsage.ClickGiveupButtonOnWindow();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
+            //Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.StepMessage[0]));
+            //CostUsage.ClickGiveupButtonOnWindow();
+            //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            //TimeManager.LongPause();
 
-            //Check display step is not raw but still day. 
-            Assert.AreEqual(true, CostUsage.IsDisplayStepPressed(DisplayStep.Day));
-            Assert.AreEqual(false, CostUsage.IsDisplayStepPressed(DisplayStep.Hour));
-            Assert.AreEqual(false, CostUsage.IsDisplayStepPressed(DisplayStep.Min));
+            ////Check display step is not raw but still day. 
+            //Assert.AreEqual(true, CostUsage.IsDisplayStepPressed(DisplayStep.Day));
+            //Assert.AreEqual(false, CostUsage.IsDisplayStepPressed(DisplayStep.Hour));
+            //Assert.AreEqual(false, CostUsage.IsDisplayStepPressed(DisplayStep.Min));
 
             //check data
             CostUsage.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
@@ -275,6 +277,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
 
             //On homepage, check the dashboards
             CostUsage.NavigateToAllDashBoards();
@@ -369,6 +372,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Click "Save to dashboard" to save the Data view to Home page dashboard named "CarbonWidgetHomeDataview"
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
 
             //On homepage, check the dashboards
             CostUsage.NavigateToAllDashBoards();
@@ -460,6 +464,7 @@ namespace Mento.Script.EnergyView.CostUsage
             //Save to dashboard. Go to dashboard to verify the dashboard chart value.
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
 
             //On homepage, check the dashboards
             CostUsage.NavigateToAllDashBoards();

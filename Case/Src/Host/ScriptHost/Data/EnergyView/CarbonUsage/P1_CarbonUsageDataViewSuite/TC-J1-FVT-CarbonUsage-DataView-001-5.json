@@ -14,7 +14,7 @@
 		},
 		"ExpectedData":
 		{
-			"StepMessage":["$@EM.StepError|(\"$@EM.UseMin@$\")"],
+			"StepMessage":["$@EM.StepError|(\"$@EM.UseRaw@$\")"],
 			"expectedFileName":["F-CarbonUsageDataView001-5.xls"],
 		}
 	}

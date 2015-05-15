@@ -88,6 +88,7 @@ namespace Mento.Script.EnergyView.CostUsage
             var dashboard = input.InputData.DashboardInfos;
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
             TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //Change Hierarchy list to 组织A, then go to 空调 System Dimension.
             CostUsage.SelectHierarchy(input.InputData.HierarchiesArray[0]);
@@ -132,6 +133,7 @@ namespace Mento.Script.EnergyView.CostUsage
 
             EnergyViewToolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
             TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //Change Hierarchy list to 楼宇A, then go to 一层 Area Dimension.
             CostUsage.SelectHierarchy(input.InputData.Hierarchies);

@@ -19,7 +19,7 @@
 		},
 		"ExpectedData":
 		{
-			"StepMessage":["$@EM.StepError|(\"$@EM.UseMin@$\")"],
+			"StepMessage":["$@EM.StepError|(\"$@EM.UseRaw@$\")"],
 			"expectedFileName":["CostUsageDataView003.xls"],
 		}
 	}

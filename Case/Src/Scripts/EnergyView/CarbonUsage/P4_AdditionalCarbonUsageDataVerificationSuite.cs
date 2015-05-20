@@ -95,6 +95,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
             CarbonUsage.CompareDataViewCarbonUsage(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Select "介质单项" = "电"+"自来水"+"煤"
+            TimeManager.MediumPause();
             CarbonUsage.SelectCommodity(input.InputData.commodityNames);
             TimeManager.ShortPause();
 

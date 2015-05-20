@@ -331,7 +331,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
 
             //ManualTimeRange[0]
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             //Select "介质单项"="电"+"自来水"+"煤"
             CarbonUsage.SelectCommodity(input.InputData.commodityNames);
